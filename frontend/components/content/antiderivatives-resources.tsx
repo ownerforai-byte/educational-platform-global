@@ -383,6 +383,15 @@ export function AntiderivativesResources() {
         <CardContent className="space-y-3">
           {[
             {
+              id: "math-xi-unit-06-doc",
+              title: "NEB Class 11 Calculus — Official Master Resource Document",
+              description:
+                "Comprehensive guide covering Limits & Continuity, Derivatives from first principles, Differentiation rules & methods, Tangents/Normals, Max/Min, LMVT, and Integration by parts with Professor's Theory & Viva bank.",
+              url: "/materials/Math_XI_Unit_06_calculus.docx",
+              pdfUrl: "/materials/Math_XI_Unit_06_calculus.docx",
+              tags: ["Unit 6 Document", "DOCX", "Theory & Viva Bank", "Calculus Master Guide"],
+            },
+            {
               id: "ex-18-1",
               title: "Exercise 18.1 — Introduction to Antiderivatives",
               description:

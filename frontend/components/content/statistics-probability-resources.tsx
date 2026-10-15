@@ -467,7 +467,8 @@ function DistributionsVisual() {
     }
     return vals;
   }, [n, p]);
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   const maxProb = Math.max(...pmf.map((v) => v.prob), 0.001);
   const chartW = 520;
@@ -651,6 +652,53 @@ const THEORY_SECTIONS = [
 export function StatisticsProbabilityResources() {
   return (
     <div className="space-y-6">
+      {/* Official Master Resource Document */}
+      <Card className="border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-blue-100 dark:bg-blue-900/40 rounded-lg">
+              <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">
+                Statistics &amp; Probability — Resources
+              </CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                Official NEB Class 11 Curriculum Document &amp; Study Notes
+              </p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex items-start gap-3 p-3 rounded-lg border bg-background/60 hover:bg-accent/50 transition-colors">
+            <FileText className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h4 className="text-sm font-semibold">NEB Class 11 Statistics &amp; Probability — Official Master Resource Document</h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                Measures of dispersion (Range, QD, MD, SD), Coefficient of Variation, Karl Pearson &amp; Bowley skewness, addition &amp; multiplication rules, and Bayes theorem with Professor Theory &amp; Viva bank.
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                  Unit 5 Document
+                </span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                  DOCX
+                </span>
+                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                  Dispersion &amp; Probability
+                </span>
+              </div>
+            </div>
+            <Button asChild size="sm" variant="outline" className="shrink-0">
+              <a href="/materials/Math_XI_Unit_05_statistics-probability.docx">
+                <ExternalLink className="w-3.5 h-3.5 mr-1" />
+                Open
+              </a>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Interactive Visuals */}
       <Card className="border-purple-200 dark:border-purple-800 bg-gradient-to-br from-purple-50/50 to-transparent dark:from-purple-950/20">
         <CardHeader className="pb-3">

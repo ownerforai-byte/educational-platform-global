@@ -437,6 +437,15 @@ export function NumericalIntegrationResources() {
         <CardContent className="space-y-3">
           {[
             {
+              id: "math-xi-unit-07-doc",
+              title: "NEB Class 11 Computational Methods & Mechanics — Official Master Resource Document",
+              description:
+                "Bisection & Newton-Raphson methods, Trapezoidal & Simpson's numerical integration, Statics (Lami's theorem & friction), and Dynamics & projectiles with Professor's Theory & Viva bank.",
+              url: "/materials/Math_XI_Unit_07_computational-mechanics.docx",
+              pdfUrl: "/materials/Math_XI_Unit_07_computational-mechanics.docx",
+              tags: ["Unit 7 Document", "DOCX", "Theory & Viva Bank", "Numerical & Mechanics"],
+            },
+            {
               id: "ex-20-1",
               title: "Exercise 20.1 — Numerical Integration",
               description:

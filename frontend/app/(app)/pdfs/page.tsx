@@ -16,8 +16,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MathMarkdown } from "@/components/content/math-markdown";
-import { downloadFileName, pdfViewerHref } from "@/lib/pdf-src";
-import { PHYSICS_XI_UNIT_RESOURCES } from "@/lib/physics-xi-resources";
 
 type Kind = "pdf" | "html" | "md" | "docx";
 type Subject = "Biology" | "Physics" | "Chemistry" | "Mathematics";
@@ -50,16 +48,6 @@ const DOCS: Doc[] = [
     kind: "pdf",
   },
   {
-    key: "pioneer-grade11-biology-examcram-original",
-    title: "Pioneer Grade 11 Biology — Exam Cram (Original)",
-    subject: "Biology",
-    topic: "Class 11 · Full syllabus",
-    description:
-      "The source cram file behind the Enhanced edition — every Class 11 Biology unit condensed onto rapid-revision pages.",
-    href: `${PDFS_DIR}/pioneer-grade11-biology-examcram-original.pdf`,
-    kind: "pdf",
-  },
-  {
     key: "bacteria-nutrition-classified-v2",
     title: "Nutrition in Bacteria — Fully Classified",
     subject: "Biology",
@@ -77,16 +65,6 @@ const DOCS: Doc[] = [
     description:
       "Sixteen probable long-answer questions with full model answers, diagrams and marking points.",
     href: `${PDFS_DIR}/biology-8mark-long-questions.pdf`,
-    kind: "pdf",
-  },
-  {
-    key: "biology-8mark-core-outlets",
-    title: "Biology — 8-Mark Core Outlets",
-    subject: "Biology",
-    topic: "Class 11 · Night-before",
-    description:
-      "Night-before deck — one card per question, so every probable 8-mark outlet is a single flip.",
-    href: `${PDFS_DIR}/biology-8mark-core-outlets.pdf`,
     kind: "pdf",
   },
   {
@@ -175,16 +153,6 @@ const DOCS: Doc[] = [
     kind: "html",
   },
   {
-    key: "neb-physics-all-probable-questions-answers-diagrams",
-    title: "NEB Physics — All Probable Questions, Answers & Diagrams",
-    subject: "Physics",
-    topic: "Class 11 · Probable set",
-    description:
-      "The whole probable set in one illustrated page — long questions with model answers, MCQs and labelled diagrams.",
-    href: `${MAT_DIR}/neb-physics-all-probable-questions-answers-diagrams.html`,
-    kind: "html",
-  },
-  {
     key: "physics-mcq-test",
     title: "Physics — MCQ Test",
     subject: "Physics",
@@ -211,15 +179,6 @@ const DOCS: Doc[] = [
     href: `${MAT_DIR}/physics-conceptual-question-bank.docx`,
     kind: "docx",
   },
-  ...PHYSICS_XI_UNIT_RESOURCES.map((r) => ({
-    key: `physics-xi-unit-${r.unitNo}`,
-    title: `Physics XI — Unit ${r.unitNo}: ${r.unitName}`,
-    subject: "Physics" as Subject,
-    topic: `Unit ${r.unitNo} · ${r.contentArea}`,
-    description: `${r.titleBlock.subtitle} (${r.stats.questionCount} questions, ${r.stats.tableCount} compare tables, ${r.stats.theoryCount} theory items).`,
-    href: r.docxUrl,
-    kind: "docx" as Kind,
-  })),
 
   // ── Chemistry ─────────────────────────────────────────────────────────
   {
@@ -230,16 +189,6 @@ const DOCS: Doc[] = [
     description: "Optimised multiple-choice practice set.",
     href: `${MAT_DIR}/chemistry-mcq-test.md`,
     kind: "md",
-  },
-  {
-    key: "neb-chem11-probable-long-qs-atomic-bonding-periodic",
-    title: "NEB Chemistry 11 — Probable Long Questions",
-    subject: "Chemistry",
-    topic: "Class 11 · Probable set",
-    description:
-      "Probable long-answer questions across Atomic Structure, Chemical Bonding and the Periodic Table.",
-    href: `${MAT_DIR}/neb-chem11-probable-long-qs-atomic-bonding-periodic.docx`,
-    kind: "docx",
   },
 
   // ── Mathematics ───────────────────────────────────────────────────────
@@ -322,19 +271,20 @@ export default function PdfLibraryPage() {
     [filter],
   );
 
-  // Only Markdown reads inline — it is rendered by this app. PDFs and HTML
-  // never do: their "Open" button hands the URL to the viewer tab below
-  // (`/pdfs/read`), and DOCX has no renderer, so it stays a plain open.
   const open = (doc: Doc) => {
-    if (doc.kind !== "md") return;
-    setMdText("");
-    setMdLoading(true);
-    setActive(doc);
-    fetch(doc.href)
-      .then((r) => r.text())
-      .then((t) => setMdText(t))
-      .catch(() => setMdText("Could not load this document."))
-      .finally(() => setMdLoading(false));
+    if (doc.kind === "md") {
+      setMdText("");
+      setMdLoading(true);
+      setActive(doc);
+      fetch(doc.href)
+        .then((r) => r.text())
+        .then((t) => setMdText(t))
+        .catch(() => setMdText("Could not load this document."))
+        .finally(() => setMdLoading(false));
+    } else {
+      setMdText("");
+      setActive(doc);
+    }
     requestAnimationFrame(() => {
       document.getElementById("study-reader")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -355,8 +305,7 @@ export default function PdfLibraryPage() {
           <div>
             <h1 className="text-2xl md:text-3xl font-bold tracking-tight">📄 Study Materials</h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              All PDFs and notes, classified by subject — each opens in its own app tab, or
-              download a copy. Open and download are always two separate buttons.
+              All PDFs and notes, classified by subject — open them right here or download a copy.
             </p>
           </div>
         </div>
@@ -446,17 +395,9 @@ export default function PdfLibraryPage() {
                       {doc.description}
                     </p>
 
-                    {/* Two clearly separate actions. Open never downloads:
-                        PDF/HTML go to the in-app viewer tab (/pdfs/read),
-                        markdown reads inline, DOCX has no renderer so it stays
-                        a plain open. Download only ever saves the file. */}
+                    {/* Three clear actions: Open · Download · Close */}
                     <div className="mt-4 flex flex-wrap items-center gap-2">
-                      {doc.kind === "md" ? (
-                        <Button size="sm" onClick={() => open(doc)}>
-                          <BookOpen className="h-4 w-4 mr-1.5" />
-                          Open
-                        </Button>
-                      ) : doc.kind === "docx" ? (
+                      {doc.kind === "docx" ? (
                         <Button size="sm" asChild>
                           <a href={doc.href} target="_blank" rel="noreferrer noopener">
                             <BookOpen className="h-4 w-4 mr-1.5" />
@@ -464,22 +405,26 @@ export default function PdfLibraryPage() {
                           </a>
                         </Button>
                       ) : (
-                        <Button size="sm" asChild>
-                          <a
-                            href={pdfViewerHref(doc.href, doc.title)}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            <BookOpen className="h-4 w-4 mr-1.5" />
-                            Open
-                          </a>
+                        <Button size="sm" onClick={() => open(doc)}>
+                          <BookOpen className="h-4 w-4 mr-1.5" />
+                          Open
                         </Button>
                       )}
                       <Button variant="outline" size="sm" asChild>
-                        <a href={doc.href} download={downloadFileName(doc.href, doc.title)}>
+                        <a href={doc.href} download>
                           <Download className="h-4 w-4 mr-1.5" />
                           Download
                         </a>
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={close}
+                        disabled={!isOpen}
+                        title={isOpen ? "Close this document" : "Open a document to close it"}
+                      >
+                        <X className="h-4 w-4 mr-1.5" />
+                        Close
                       </Button>
                     </div>
                   </div>
@@ -490,8 +435,8 @@ export default function PdfLibraryPage() {
         );
       })}
 
-      {/* Inline reader — markdown only; PDFs and HTML open in their own tab. */}
-      {active && active.kind === "md" && (
+      {/* Inline reader */}
+      {active && active.kind !== "docx" && (
         <div
           id="study-reader"
           className="rounded-2xl border border-primary/20 bg-card shadow-lg overflow-hidden scroll-mt-20"
@@ -505,7 +450,7 @@ export default function PdfLibraryPage() {
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <Button variant="outline" size="sm" asChild>
-                <a href={active.href} download={downloadFileName(active.href, active.title)}>
+                <a href={active.href} download>
                   <Download className="h-4 w-4 mr-1.5" />
                   Download
                 </a>
@@ -517,13 +462,24 @@ export default function PdfLibraryPage() {
             </div>
           </div>
 
-          <div className="max-w-3xl px-6 py-5">
-            {mdLoading ? (
-              <p className="text-sm text-muted-foreground">Loading document…</p>
-            ) : (
-              <MathMarkdown content={mdText} className="prose-sm" />
-            )}
-          </div>
+          {active.kind === "md" ? (
+            <div className="max-w-3xl px-6 py-5">
+              {mdLoading ? (
+                <p className="text-sm text-muted-foreground">Loading document…</p>
+              ) : (
+                <MathMarkdown content={mdText} className="prose-sm" />
+              )}
+            </div>
+          ) : (
+            <div className="w-full bg-white">
+              <iframe
+                src={active.href}
+                title={active.title}
+                className="h-[78vh] min-h-[480px] w-full"
+                style={{ border: 0 }}
+              />
+            </div>
+          )}
         </div>
       )}
 

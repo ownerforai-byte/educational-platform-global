@@ -25,7 +25,8 @@ import { getTopicPath } from "@/features/syllabus/content-router";
 import { getTopicEntryBySlug } from "@/lib/syllabus";
 import type { SyllabusUnit } from "@/lib/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PhysicsUnitResourceDoc } from "./physics-unit-resource-doc";
+import { Button } from "@/components/ui/button";
+import { FileText, ExternalLink } from "lucide-react";
 
 type ContentTabsProps = {
   classSlug: string;
@@ -95,15 +96,6 @@ function renderResources(
   topicSlug: string,
   topicTitle: string,
 ): ReactNode {
-  // Class 11 Physics — authoritative unit resource document preview
-  if (subjectSlug === "physics") {
-    return (
-      <div className="space-y-4">
-        <PhysicsUnitResourceDoc unitId={unitId} />
-      </div>
-    );
-  }
-
   // Class 11 Algebra — topic-level classification within the unit section
   if (unitId === "algebra" && subjectSlug === "mathematics") {
     const sub = ALGEBRA_TOPIC_RESOURCES.find((r) => topicSlug.includes(r.keyword));
@@ -113,12 +105,27 @@ function renderResources(
           <h2 className="text-2xl font-semibold tracking-tight">{ALGEBRA_SECTION.title}</h2>
           <p className="text-sm text-muted-foreground">{ALGEBRA_SECTION.description}</p>
         </div>
+        <div className="flex items-start gap-3 p-3 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50/40 dark:bg-blue-950/20">
+          <FileText className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+          <div className="flex-1 min-w-0">
+            <h4 className="text-sm font-semibold">NEB Class 11 Algebra — Official Master Resource Document</h4>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              Complete unit notes covering Logic, Real Numbers, Functions, Curves, Sequences, Matrices, Quadratics, Complex Numbers, and Binomial Theorem.
+            </p>
+          </div>
+          <Button asChild size="sm" variant="outline" className="shrink-0">
+            <a href="/materials/Math_XI_Unit_01_algebra.docx">
+              <ExternalLink className="w-3.5 h-3.5 mr-1" />
+              Download DOCX
+            </a>
+          </Button>
+        </div>
         {sub ? (
           <ResourceCard title={sub.title} description={sub.description} Component={sub.component} />
         ) : (
           <EmptyState
-            title="Under progress — will be added in a future update"
-            description={`Interactive resources for ${topicTitle} are under progress and will be added in a future update.`}
+            title="Coming soon"
+            description={`Interactive resources for ${topicTitle} will be available here.`}
           />
         )}
       </div>
@@ -130,8 +137,8 @@ function renderResources(
   if (!spec) {
     return (
       <EmptyState
-        title="Under progress — will be added in a future update"
-        description={`Resources for ${topicTitle} are under progress and will be added in a future update.`}
+        title="Coming soon"
+        description={`Resources for ${topicTitle} will be available here.`}
       />
     );
   }
