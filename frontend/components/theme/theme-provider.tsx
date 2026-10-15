@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
 const GOOGLE_FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap";
@@ -263,9 +263,9 @@ export function ThemeProvider({
     head.append(stylesheet);
   }, [liteMode]);
 
-  const value = {
-    theme,
-    setTheme: (newTheme: Theme) => {
+  // Stable callbacks so the memoized context value never changes on re-render.
+  const setTheme = useCallback(
+    (newTheme: Theme) => {
       try {
         window.localStorage.setItem(storageKey, newTheme);
       } catch {
@@ -274,9 +274,11 @@ export function ThemeProvider({
       setResolvedTheme(applyTheme(newTheme));
       setThemeState(newTheme);
     },
-    resolvedTheme,
-    liteMode,
-    setLiteMode: (enabled: boolean) => {
+    [storageKey],
+  );
+
+  const setLiteMode = useCallback(
+    (enabled: boolean) => {
       try {
         window.localStorage.setItem(liteStorageKey, String(enabled));
       } catch {
@@ -291,7 +293,19 @@ export function ThemeProvider({
       }
       setLiteModeState(enabled);
     },
-  };
+    [liteStorageKey],
+  );
+
+  const value = useMemo<ThemeProviderState>(
+    () => ({
+      theme,
+      setTheme,
+      resolvedTheme,
+      liteMode,
+      setLiteMode,
+    }),
+    [theme, setTheme, resolvedTheme, liteMode, setLiteMode],
+  );
 
   return (
     <ThemeProviderContext.Provider value={value}>
@@ -306,3 +320,4 @@ export const useTheme = () => {
     throw new Error("useTheme must be used within a ThemeProvider");
   return context;
 };
+

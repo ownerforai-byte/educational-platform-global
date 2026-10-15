@@ -5,7 +5,7 @@ import { Coins, ArrowUpRight, Sparkles } from "lucide-react";
 import { getUserCredits } from "@/lib/api/credits";
 import Link from "next/link";
 
-const POLL_INTERVAL = 30000; // Refresh every 30s for active users
+const POLL_INTERVAL = 30_000; // Refresh every 30s for active users
 
 export function CreditBadge({ className = "" }: { className?: string }) {
   const [credits, setCredits] = useState<number | null>(null);
@@ -15,6 +15,8 @@ export function CreditBadge({ className = "" }: { className?: string }) {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const prevCreditsRef = useRef<number | null>(null);
 
+  // Stable fetch — NO dependency on `credits` (that caused an infinite loop:
+  // setCredits → new fetchCredits identity → useEffect restart → fetch → setCredits → ♻️).
   const fetchCredits = useCallback(async () => {
     try {
       const data = await getUserCredits();
@@ -24,21 +26,21 @@ export function CreditBadge({ className = "" }: { className?: string }) {
       }
       setIsAuthenticated(true);
       const newCredits = data.credits;
-      
+
       if (prevCreditsRef.current !== null && newCredits !== prevCreditsRef.current) {
         setJustChanged(true);
         setTimeout(() => setJustChanged(false), 2000);
       }
-      
+
+      setLastCredits(prevCreditsRef.current);
       prevCreditsRef.current = newCredits;
-      setLastCredits(credits);
       setCredits(newCredits);
     } catch {
       setIsAuthenticated(false);
     } finally {
       setIsLoading(false);
     }
-  }, [credits]);
+  }, []); // ← stable identity: never re-created
 
   useEffect(() => {
     fetchCredits();
