@@ -63,6 +63,7 @@ export function idleImport<T>(loader: () => Promise<T>, options: { timeoutMs?: n
  */
 export function idlePrefetchHref(href: string, options: { timeoutMs?: number } = {}): () => void {
   if (typeof document === "undefined") return () => {};
+  if (document.documentElement.dataset.lite === "true") return () => {};
 
   let link: HTMLLinkElement | null = null;
   const cancel = onIdle(() => {
@@ -87,7 +88,8 @@ export function idlePrefetchHref(href: string, options: { timeoutMs?: number } =
 
 /** Warms an image into the HTTP cache without blocking the main thread. */
 export function idlePreloadImage(src: string, options: { timeoutMs?: number } = {}): () => void {
-  if (typeof window === "undefined") return () => {};
+  if (typeof window === "undefined" || typeof document === "undefined") return () => {};
+  if (document.documentElement.dataset.lite === "true") return () => {};
   const cancel = onIdle(() => {
     try {
       const img = new Image();

@@ -58,15 +58,19 @@ const seedStar = (s: Star3D, randomDepth: boolean) => {
  */
 export function StarField() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const { resolvedTheme } = useTheme();
-  const dark = resolvedTheme === "dark";
+  const { resolvedTheme, liteMode } = useTheme();
+  const dark = resolvedTheme === "dark" && !liteMode;
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // The space stream only makes sense on the dark/space themes.
-    if (!dark) return;
+    // The space stream only makes sense on dark/space themes, and must be completely stopped in Lite / Low-Data mode.
+    if (!dark || liteMode) {
+      const ctx = canvas.getContext("2d");
+      if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -223,14 +227,14 @@ export function StarField() {
       window.removeEventListener("resize", onResize);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [dark]);
+  }, [dark, liteMode]);
 
   return (
     <canvas
       ref={canvasRef}
       className="starfield"
       aria-hidden="true"
-      style={dark ? undefined : { display: "none" }}
+      style={dark && !liteMode ? undefined : { display: "none" }}
     />
   );
 }

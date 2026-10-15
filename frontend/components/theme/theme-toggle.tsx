@@ -127,6 +127,20 @@ export function ThemeToggle({
             {activeOption.label}
           </span>
         )}
+        {!compact && liteMode && (
+          <span className="flex items-center gap-0.5 rounded-md bg-primary/15 px-1.5 py-0.5 text-[9px] font-bold text-primary shrink-0">
+            <Zap className="h-2.5 w-2.5" />
+            <span>Lite</span>
+          </span>
+        )}
+        {compact && liteMode && (
+          <span
+            className="absolute -top-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-primary text-[8px] font-bold text-primary-foreground shadow-xs"
+            title="Lite mode active"
+          >
+            <Zap className="h-2 w-2" />
+          </span>
+        )}
         {!compact && <ChevronDown className="h-3 w-3 text-muted-foreground shrink-0" />}
       </button>
 
@@ -152,13 +166,13 @@ export function ThemeToggle({
               aria-checked={liteMode}
               aria-label="Lite mode"
               onClick={() => setLiteMode(!liteMode)}
-              className="flex w-full items-center justify-between rounded-xl border border-border/60 px-3 py-2 text-left hover:bg-muted/60"
+              className="flex w-full items-center justify-between rounded-xl border border-border/60 px-3 py-2 text-left hover:bg-muted/60 transition-colors"
             >
               <span className="flex items-center gap-2">
-                <Zap className="h-4 w-4 text-primary" aria-hidden="true" />
+                <Zap className="h-4 w-4 text-primary shrink-0" aria-hidden="true" />
                 <span>
-                  <span className="block text-xs font-bold text-foreground">Lite mode</span>
-                  <span className="block text-[10px] text-muted-foreground">Less data, fewer visual effects</span>
+                  <span className="block text-xs font-bold text-foreground">Lite mode (low data)</span>
+                  <span className="block text-[10px] text-muted-foreground">Saves data &amp; battery · Stops background animations</span>
                 </span>
               </span>
               <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${liteMode ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>

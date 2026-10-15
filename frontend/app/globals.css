@@ -1423,22 +1423,95 @@ html, body {
 
 /* Lite mode retains every route and interaction, while removing optional
    effects and external font traffic for low-bandwidth or reduced-data users. */
-html[data-lite="true"] *,
-html[data-lite="true"] *::before,
-html[data-lite="true"] *::after {
+html[data-lite="true"] *:not(.animate-spin):not([data-allow-animation="true"]),
+html[data-lite="true"] *:not(.animate-spin)::before,
+html[data-lite="true"] *:not(.animate-spin)::after,
+html.lite *:not(.animate-spin):not([data-allow-animation="true"]),
+html.lite *:not(.animate-spin)::before,
+html.lite *:not(.animate-spin)::after {
   animation: none !important;
   transition: none !important;
   scroll-behavior: auto !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
   text-shadow: none !important;
 }
-html[data-lite="true"] .bg-mesh { background-image: none !important; }
-html[data-lite="true"] .starfield { display: none !important; }
+
+html[data-lite="true"],
+html.lite {
+  --surface-glass: hsl(var(--card)) !important;
+  --surface-glass-border: hsl(var(--border)) !important;
+}
+
+/* When backdrop-filter is disabled in low data mode, enforce solid opaque backgrounds
+   so content and text behind floating headers, dropdowns, and cards do not bleed through */
+html[data-lite="true"] header,
+html.lite header {
+  background-color: hsl(var(--background)) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html[data-lite="true"] nav,
+html[data-lite="true"] [role="dialog"],
+html[data-lite="true"] [role="menu"],
+html[data-lite="true"] [data-radix-popper-content-wrapper] > *,
+html[data-lite="true"] .bg-card\/60,
+html[data-lite="true"] .bg-card\/70,
+html[data-lite="true"] .bg-card\/80,
+html[data-lite="true"] .bg-card\/90,
+html[data-lite="true"] .bg-card\/95,
+html[data-lite="true"] .bg-background\/70,
+html[data-lite="true"] .bg-background\/80,
+html[data-lite="true"] .bg-background\/90,
+html[data-lite="true"] .bg-slate-900\/80,
+html[data-lite="true"] .bg-slate-900\/90,
+html[data-lite="true"] .bg-slate-900\/95,
+html[data-lite="true"] .bg-slate-950\/90,
+html[data-lite="true"] .bg-slate-950\/60,
+html[data-lite="true"] .backdrop-blur,
+html[data-lite="true"] .backdrop-blur-sm,
+html[data-lite="true"] .backdrop-blur-md,
+html[data-lite="true"] .backdrop-blur-lg,
+html[data-lite="true"] .backdrop-blur-xl,
+html.lite nav,
+html.lite [role="dialog"],
+html.lite [role="menu"],
+html.lite [data-radix-popper-content-wrapper] > *,
+html.lite .bg-card\/60,
+html.lite .bg-card\/70,
+html.lite .bg-card\/80,
+html.lite .bg-card\/90,
+html.lite .bg-card\/95,
+html.lite .bg-background\/70,
+html.lite .bg-background\/80,
+html.lite .bg-background\/90,
+html.lite .bg-slate-900\/80,
+html.lite .bg-slate-900\/90,
+html.lite .bg-slate-900\/95,
+html.lite .bg-slate-950\/90,
+html.lite .bg-slate-950\/60,
+html.lite .backdrop-blur,
+html.lite .backdrop-blur-sm,
+html.lite .backdrop-blur-md,
+html.lite .backdrop-blur-lg,
+html.lite .backdrop-blur-xl {
+  background-color: hsl(var(--card)) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+html[data-lite="true"] .bg-mesh,
+html.lite .bg-mesh { background-image: none !important; }
+html[data-lite="true"] .starfield,
+html.lite .starfield { display: none !important; }
 html[data-lite="true"] .grain-overlay::before,
 html[data-lite="true"] .card-viz::before,
 html[data-lite="true"] .card-viz::after,
-html[data-lite="true"] .viz-canvas::before { display: none !important; }
+html[data-lite="true"] .viz-canvas::before,
+html.lite .grain-overlay::before,
+html.lite .card-viz::before,
+html.lite .card-viz::after,
+html.lite .viz-canvas::before { display: none !important; }
 .scroll-smooth { scroll-behavior: smooth; }
 
 /* ─── PHONE-SCREEN BASE TUNING (2026-09-30) ─────────────────────────────── */

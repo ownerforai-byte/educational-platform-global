@@ -96,6 +96,9 @@ export function loadData<T>(relPath: string): Promise<T> {
 
 /** Warms a `/data` asset in the background; never throws, never blocks. */
 export function prefetchData(relPath: string): void {
+  if (typeof document !== "undefined" && document.documentElement.dataset.lite === "true") {
+    return;
+  }
   try {
     void loadData(relPath).catch((error: unknown) => {
       reportClientError("loadData:prefetch", error, { path: relPath });

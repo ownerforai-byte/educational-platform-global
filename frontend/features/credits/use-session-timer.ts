@@ -54,20 +54,28 @@ export function useSessionTimer(
 
   onExpireRef.current = onExpire;
 
-  // Frame-by-frame loop: re-derive "now", sweep expired windows, bump frame.
+  const hasActiveUnlocks = Object.keys(unlocks).length > 0;
+
+  // 1-second cadence timer: only ticks when there are active unlock windows to count down.
+  // Replaced high-frequency requestAnimationFrame (which caused 144Hz re-renders and RESULT_CODE_HUNG).
   useEffect(() => {
-    let rafId = 0;
-    const loop = () => {
+    if (!hasActiveUnlocks) return;
+
+    const tick = () => {
       pruneExpired();
       setFrame((n) => (n + 1) % 1_000_000);
-      rafId = requestAnimationFrame(loop);
     };
-    rafId = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(rafId);
-  }, []);
+
+    // Run first tick immediately to prune any already expired windows
+    tick();
+
+    const intervalId = window.setInterval(tick, 1000);
+    return () => window.clearInterval(intervalId);
+  }, [hasActiveUnlocks]);
 
   // Fire onExpire exactly once per module key per window.
   useEffect(() => {
+    if (!hasActiveUnlocks) return;
     const now = currentEpochSeconds();
 
     for (const [key, expiresAt] of Object.entries(unlocks)) {
@@ -85,7 +93,7 @@ export function useSessionTimer(
     for (const key of Array.from(firedRef.current)) {
       if (!(key in unlocks)) firedRef.current.delete(key);
     }
-  }, [unlocks, frame]);
+  }, [unlocks, frame, hasActiveUnlocks]);
 
   const remaining = useCallback(
     (key: string) => {

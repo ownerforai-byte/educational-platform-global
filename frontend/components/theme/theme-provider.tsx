@@ -187,7 +187,12 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme);
   const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">("light");
-  const [liteMode, setLiteModeState] = useState(false);
+  const [liteMode, setLiteModeState] = useState<boolean>(() => {
+    if (typeof document !== "undefined") {
+      return document.documentElement.dataset.lite === "true";
+    }
+    return false;
+  });
 
   useEffect(() => {
     let initialTheme = theme;
@@ -225,6 +230,7 @@ export function ThemeProvider({
     const enabled = savedLiteMode === null ? connectionIsConstrained : savedLiteMode === "true";
     setLiteModeState(enabled);
     document.documentElement.dataset.lite = String(enabled);
+    document.documentElement.classList.toggle("lite", enabled);
   }, [liteStorageKey]);
 
   // Keep the page's chosen fonts, but fetch Google Fonts only after first
@@ -277,6 +283,7 @@ export function ThemeProvider({
         // The preference remains active in memory for this session.
       }
       document.documentElement.dataset.lite = String(enabled);
+      document.documentElement.classList.toggle("lite", enabled);
       if (enabled) {
         document.getElementById("ravi-google-fonts")?.remove();
         document.getElementById("ravi-fonts-preconnect")?.remove();

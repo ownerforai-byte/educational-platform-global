@@ -244,22 +244,40 @@ export function CreditProvider({ children }: { children: ReactNode }) {
     [unlocks, pending, refresh],
   );
 
-  const value: CreditContextValue = {
-    user,
-    isLoading,
-    coins,
-    unlocks,
-    isAuthenticated,
-    isUnlocked,
-    remainingClock: timer.remainingClock,
-    costOf,
-    openModule,
-    requestAccess,
-    dismissNotice,
-    noticeOpen,
-    noticeTitle,
-    error,
-  };
+  const value = useMemo<CreditContextValue>(
+    () => ({
+      user,
+      isLoading,
+      coins,
+      unlocks,
+      isAuthenticated,
+      isUnlocked,
+      remainingClock: timer.remainingClock,
+      costOf,
+      openModule,
+      requestAccess,
+      dismissNotice,
+      noticeOpen,
+      noticeTitle,
+      error,
+    }),
+    [
+      user,
+      isLoading,
+      coins,
+      unlocks,
+      isAuthenticated,
+      isUnlocked,
+      timer.remainingClock,
+      costOf,
+      openModule,
+      requestAccess,
+      dismissNotice,
+      noticeOpen,
+      noticeTitle,
+      error,
+    ],
+  );
 
   return (
     <CreditContext.Provider value={value}>

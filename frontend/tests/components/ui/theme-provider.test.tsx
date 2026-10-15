@@ -83,6 +83,7 @@ describe("appearance preferences", () => {
     expect(screen.getByTestId("lite")).toHaveTextContent("true");
     expect(localStorage.getItem("neb-lite-mode")).toBe("true");
     expect(document.documentElement.dataset.lite).toBe("true");
+    expect(document.documentElement.classList.contains("lite")).toBe(true);
     expect(document.getElementById("ravi-google-fonts")).toBeNull();
   });
 
@@ -95,5 +96,6 @@ describe("appearance preferences", () => {
 
     await waitFor(() => expect(document.documentElement.dataset.lite).toBe("true"));
     expect(screen.getByTestId("lite")).toHaveTextContent("true");
+    expect(document.documentElement.classList.contains("lite")).toBe(true);
   });
 });
