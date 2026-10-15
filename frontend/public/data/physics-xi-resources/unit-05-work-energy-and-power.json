@@ -1,0 +1,488 @@
+{
+  "unitNo": 5,
+  "unitId": "work-energy-and-power",
+  "unitName": "Work, Energy and Power",
+  "contentArea": "Mechanics",
+  "docxFileName": "Physics_XI_Unit_05_work-energy-power.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_05_work-energy-power.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 5: WORK, ENERGY AND POWER   Content Area: Mechanics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 134,
+    "tableCount": 5,
+    "questionCount": 17,
+    "theoryCount": 9,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Angle θ (F vs s)",
+        "cosθ",
+        "Nature of work",
+        "Example"
+      ],
+      "rows": [
+        [
+          "0°",
+          "+1",
+          "Positive (assisting)",
+          "Pulling a sledge forward"
+        ],
+        [
+          "90°",
+          "0",
+          "Zero",
+          "Uniform circular motion: F ⊥ v"
+        ],
+        [
+          "180°",
+          "−1",
+          "Negative (resisting)",
+          "Friction while sliding"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Type",
+        "Formula",
+        "Used for"
+      ],
+      "rows": [
+        [
+          "Average",
+          "P = W/t",
+          "Power over an interval"
+        ],
+        [
+          "Instantaneous",
+          "P = dW/dt = F·v",
+          "Power at a moment; max when F ∥ v"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "KE",
+        "PE"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "½mv²",
+          "mgh (or ½kx², −GMm/r)"
+        ],
+        [
+          "Depends on",
+          "Velocity (frame-dependent)",
+          "Position in a field"
+        ],
+        [
+          "Minimum",
+          "0",
+          "Can be negative (zero set at ∞ for gravity)"
+        ],
+        [
+          "Conserved alone?",
+          "No",
+          "No — exchanges with KE"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Situation",
+        "ME = KE + PE",
+        "Reason"
+      ],
+      "rows": [
+        [
+          "Only conservative forces",
+          "Constant",
+          "W_nc = 0"
+        ],
+        [
+          "With friction",
+          "Decreases",
+          "Lost to heat (internal energy)"
+        ],
+        [
+          "External work done",
+          "Changes by W_ext",
+          "Work–energy for the whole system"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Elastic",
+        "Inelastic (perfectly)"
+      ],
+      "rows": [
+        [
+          "Restitution e",
+          "e = 1",
+          "e = 0 (bodies stick)"
+        ],
+        [
+          "Momentum",
+          "Conserved",
+          "Conserved"
+        ],
+        [
+          "KE",
+          "Conserved",
+          "Not conserved (→ heat/sound/deformation)"
+        ],
+        [
+          "Example",
+          "Ideal billiard / glass balls",
+          "Bullet embedded in a sandbag"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define work. State when work is done.",
+      "answer": "Work is done when a force displaces a body in its direction: W = F·s = Fscosθ. Work is zero if there is no displacement or the force is perpendicular to the displacement.",
+      "shortcut": "W = Fscosθ; θ=90° → W=0; θ=0 → W=Fs.",
+      "example": "Holding a 10 kg bag still (no displacement) → zero work."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Find work done by a 20 N force moving a block 5 m at 30° to the displacement.",
+      "answer": "W = Fscosθ = 20×5×cos30° = 100×0.866 = 86.6 J.",
+      "shortcut": "Use the component of F along displacement.",
+      "example": "≈ 87 J of positive work."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Explain work done by a variable force.",
+      "answer": "For a variable force, work is the integral W = ∫ F dx over the path; graphically it equals the area under the F–x curve.",
+      "shortcut": "W = area under F–x graph.",
+      "example": "Spring: W = ½kx² comes from ∫kx dx."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Why is work a scalar though force and displacement are vectors?",
+      "answer": "Work is a scalar because it is the dot product of force and displacement: W = F·s = Fscosθ, which has magnitude only, no direction (it can be positive, negative or zero). ▥ 5.1 Work Done  —  Compare / Contrast Tables Sign of Work: Chart by Angle ▣ 5.2 Power",
+      "shortcut": "Dot product → scalar.",
+      "example": "Lifting does positive work, friction does negative work."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Define power and give its SI unit.",
+      "answer": "Power is the rate of doing work: P = W/t. Instantaneous power P = F·v. SI unit = watt (1 W = 1 J/s).",
+      "shortcut": "P = W/t or P = Fv.",
+      "example": "Lifting 100 J in 2 s → P = 50 W."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. A crane lifts 500 kg through 4 m in 10 s. Find its power.",
+      "answer": "W = mgh = 500×9.8×4 = 19600 J. P = W/t = 19600/10 = 1960 W ≈ 1.96 kW.",
+      "shortcut": "P = mgh/t.",
+      "example": "≈ 1.96 kW."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Two people climb the same staircase; who does more work and who has greater power?",
+      "answer": "The heavier person does more work (more mgh). The one who takes less time has greater power (P = W/t), whether he is lighter or heavier. ▥ 5.2 Power  —  Compare / Contrast Tables Average vs Instantaneous Power ▣ 5.3 Work-Energy Theorem & KE/PE",
+      "shortcut": "More mass → more work; less time → more power.",
+      "example": "A slow heavy climber has high work but low power."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. State and prove the work-energy theorem.",
+      "answer": "The net work done on a body equals its change in kinetic energy: W_net = ½mv² − ½mu². From F=ma and s=(v²−u²)/2a, F·s = ma·(v²−u²)/2a = ½m(v²−u²).",
+      "shortcut": "W_net = ΔKE = ½m(v²−u²).",
+      "example": "A 2 kg body speeds up 3→5 m/s → ΔKE = 16 J of work."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Define kinetic and potential energy with examples.",
+      "answer": "KE = ½mv² (energy of motion), e.g. a moving car. PE = mgh (gravitational, energy of position), e.g. water behind a dam; also ½kx² for a spring.",
+      "shortcut": "KE=½mv²; PE=mgh or ½kx².",
+      "example": "A swinging pendulum trades PE and KE."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. A 1000 kg car moving at 20 m/s brakes to rest. Find work done by the brakes.",
+      "answer": "W = ΔKE = 0 − ½(1000)(400) = −200000 J. The brakes do 2×10⁵ J of (negative) work, removed as heat. ▥ 5.3 Work-Energy Theorem & KE/PE  —  Compare / Contrast Tables Kinetic Energy vs Potential Energy ▣ 5.4 Conservation of Energy",
+      "shortcut": "Work to stop = initial KE.",
+      "example": "200 kJ dissipated."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. State the law of conservation of energy.",
+      "answer": "Energy can neither be created nor destroyed; it changes form. Total energy of an isolated system remains constant: KE + PE = constant (when only conservative forces act).",
+      "shortcut": "Top: PE max, KE=0. Bottom: KE max, PE=0. Total constant.",
+      "example": "A falling object: mgh at top = ½mv² at bottom."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Find the speed of a body falling from 80 m (from rest).",
+      "answer": "By mgh = ½mv², v = √(2gh) = √(2×9.8×80) = √1568 ≈ 39.6 m/s.",
+      "shortcut": "v = √(2gh).",
+      "example": "≈ 40 m/s just before impact."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. Explain energy changes in a simple pendulum.",
+      "answer": "At the extreme positions height (and PE) is maximum and speed (KE) is zero; at the lowest point KE is maximum and PE is minimum. Total mechanical energy stays constant (ignoring air resistance). ▥ 5.4 Conservation of Energy  —  Compare / Contrast Tables Mechanical Energy: When Is it Conserved? ▣ 5.5 Conservative & Non-conservative Forces; Collisions",
+      "shortcut": "PE ↔ KE, total constant.",
+      "example": "Swing is fastest at the bottom."
+    },
+    {
+      "type": "neb",
+      "question": "Q14. Define conservative and non-conservative forces with examples.",
+      "answer": "Conservative forces: work is path-independent and total work around a closed loop is zero (gravity, spring, electrostatic). Non-conservative: work depends on path, converts energy to other forms (friction, air resistance).",
+      "shortcut": "Gravity/spring = conservative; friction = non-conservative.",
+      "example": "Sliding down a rough incline loses mechanical energy to heat."
+    },
+    {
+      "type": "neb",
+      "question": "Q15. Distinguish elastic and inelastic collisions.",
+      "answer": "Elastic collision: both momentum and kinetic energy are conserved (e.g. ideal gas molecules). Inelastic collision: momentum is conserved but KE is not (part converts to heat/sound); perfectly inelastic bodies stick together.",
+      "shortcut": "Elastic: KE conserved. Inelastic: KE lost. Momentum conserved in both.",
+      "example": "Billiard balls ≈ elastic; car crashes are inelastic."
+    },
+    {
+      "type": "neb",
+      "question": "Q16. In a perfectly inelastic collision, is momentum or kinetic energy conserved?",
+      "answer": "Momentum is conserved (no external force). Kinetic energy is not conserved; some is converted to heat, sound and deformation. The bodies move with a common final velocity.",
+      "shortcut": "Inelastic: Σp conserved, KE not.",
+      "example": "Two clay balls stick together and slow down."
+    },
+    {
+      "type": "neb",
+      "question": "Q17. Coefficient of restitution e. What is e for elastic and perfectly inelastic collision?",
+      "answer": "e = relative speed of separation / relative speed of approach. For an elastic collision e = 1; for a perfectly inelastic collision (bodies stick) e = 0. ▥ 5.5 Conservative & Non-conservative Forces; Collisions  —  Compare / Contrast Tables Elastic vs Inelastic Collision PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "e=1 elastic; e=0 perfectly inelastic; 0<e<1 partially.",
+      "example": "Rubber ball has higher e than a clay ball."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the work-energy theorem.",
+      "answer": "Net work = ma×s = ma(v²−u²)/2a = ½m(v²−u²) = ΔKE. So W_net = change in kinetic energy, regardless of the forces involved.",
+      "shortcut": "W_net = ΔKE = ½m(v²−u²).",
+      "example": "A force speeding a body up stores the work as KE."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the energy stored in a stretched spring (elastic potential energy).",
+      "answer": "Work = area under the F–x graph; for Hooke's law F = kx this is a triangle: U = ½·F·Δx = ½kx². Energy density = ½(stress)(strain).",
+      "shortcut": "U = ½kx² = ½Fx.",
+      "example": "A 100 N over 0.1 m stores 5 J."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. Define work, kinetic energy and potential energy with units.",
+      "answer": "Work = force × displacement along the force (J). KE = ½mv² (J) – energy of motion. PE (grav) = mgh (J) – energy of position. All in joules.",
+      "shortcut": "W=Fs ; KE=½mv² ; PE=mgh.",
+      "example": "A lifted 10 kg at 2 m → PE = 196 J."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T4. State the law of conservation of energy and apply it to a falling body.",
+      "answer": "Energy is neither created nor destroyed; it changes form. A body falling from rest: mgh at the top = ½mv² at the bottom, so v = √(2gh).",
+      "shortcut": "mgh ↔ ½mv² (free fall).",
+      "example": "Drop 5 m → v = √(98) ≈ 9.9 m/s."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T5. Compare elastic and inelastic collisions (with coefficient of restitution).",
+      "answer": "Elastic: both momentum and KE conserved, e = 1 (ideal gas, billiard). Inelastic: momentum conserved but KE lost, e < 1; perfectly inelastic (bodies stick), e = 0, maximum KE lost.",
+      "shortcut": "Elastic e=1; perfectly inelastic e=0.",
+      "example": "Car crash = inelastic; pool balls ≈ elastic."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the work-energy theorem's application in braking.",
+      "answer": "The braking (friction) force does negative work equal to the loss in KE: W = −½mv². The work dissipated is converted to heat in the brakes; this fixes the minimum stopping distance.",
+      "shortcut": "W_brake = −KE → heat.",
+      "example": "Stopping a car converts KE into thermal energy."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain conservative and non-conservative forces with examples.",
+      "answer": "Conservative (gravity, spring, electrostatic): work depends only on end points, zero around a closed loop, and a potential energy can be defined. Non-conservative (friction, air drag): work depends on path, converts mechanical energy to heat, no potential energy.",
+      "shortcut": "Gravity = conservative; friction = non-conservative.",
+      "example": "Sliding down a rough ramp loses energy to heat."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why is the total energy of a bound system negative?",
+      "answer": "Because zero energy is set at infinite separation; since binding holds the system together, its total energy lies below that zero, i.e. negative. Unbound systems have E ≥ 0.",
+      "shortcut": "E_total < 0 → bound; = 0 threshold; > 0 unbound.",
+      "example": "A satellite in orbit has negative total energy."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T9. A 1500 kg car travels at 30 m/s and stops in 5 s. Find the average braking force and distance.",
+      "answer": "a = (0−30)/5 = −6 m/s². F = ma = 1500×6 = 9000 N (retarding). s = (u²)/(2×6) = 900/12 = 75 m.",
+      "shortcut": "F=ma; s=u²/2|a|.",
+      "example": "75 m stopping distance; 9 kN force."
+    }
+  ],
+  "formulas": [
+    "W = F·s = Fscosθ ; W(variable)=∫F dx.",
+    "KE = ½mv² ; PE(mg) = mgh ; Work-Energy: W_net = ΔKE.",
+    "Conservative force → potential energy; non-conservative (friction) → heat.",
+    "Power P = W/t = Fv ; SI unit watt = J/s."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 5: WORK, ENERGY AND POWER   Content Area: Mechanics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 5.1 Work Done",
+    "Q1. Define work. State when work is done.",
+    "Answer:  Work is done when a force displaces a body in its direction: W = F·s = Fscosθ. Work is zero if there is no displacement or the force is perpendicular to the displacement.",
+    "⚡ Shortcut:  W = Fscosθ; θ=90° → W=0; θ=0 → W=Fs.",
+    "Example:  Holding a 10 kg bag still (no displacement) → zero work.",
+    "Q2. Find work done by a 20 N force moving a block 5 m at 30° to the displacement.",
+    "Answer:  W = Fscosθ = 20×5×cos30° = 100×0.866 = 86.6 J.",
+    "⚡ Shortcut:  Use the component of F along displacement.",
+    "Example:  ≈ 87 J of positive work.",
+    "Q3. Explain work done by a variable force.",
+    "Answer:  For a variable force, work is the integral W = ∫ F dx over the path; graphically it equals the area under the F–x curve.",
+    "⚡ Shortcut:  W = area under F–x graph.",
+    "Example:  Spring: W = ½kx² comes from ∫kx dx.",
+    "Q4. Why is work a scalar though force and displacement are vectors?",
+    "Answer:  Work is a scalar because it is the dot product of force and displacement: W = F·s = Fscosθ, which has magnitude only, no direction (it can be positive, negative or zero).",
+    "⚡ Shortcut:  Dot product → scalar.",
+    "Example:  Lifting does positive work, friction does negative work.",
+    "▥ 5.1 Work Done  —  Compare / Contrast Tables",
+    "Sign of Work: Chart by Angle",
+    "▣ 5.2 Power",
+    "Q5. Define power and give its SI unit.",
+    "Answer:  Power is the rate of doing work: P = W/t. Instantaneous power P = F·v. SI unit = watt (1 W = 1 J/s).",
+    "⚡ Shortcut:  P = W/t or P = Fv.",
+    "Example:  Lifting 100 J in 2 s → P = 50 W.",
+    "Q6. A crane lifts 500 kg through 4 m in 10 s. Find its power.",
+    "Answer:  W = mgh = 500×9.8×4 = 19600 J. P = W/t = 19600/10 = 1960 W ≈ 1.96 kW.",
+    "⚡ Shortcut:  P = mgh/t.",
+    "Example:  ≈ 1.96 kW.",
+    "Q7. Two people climb the same staircase; who does more work and who has greater power?",
+    "Answer:  The heavier person does more work (more mgh). The one who takes less time has greater power (P = W/t), whether he is lighter or heavier.",
+    "⚡ Shortcut:  More mass → more work; less time → more power.",
+    "Example:  A slow heavy climber has high work but low power.",
+    "▥ 5.2 Power  —  Compare / Contrast Tables",
+    "Average vs Instantaneous Power",
+    "▣ 5.3 Work-Energy Theorem & KE/PE",
+    "Q8. State and prove the work-energy theorem.",
+    "Answer:  The net work done on a body equals its change in kinetic energy: W_net = ½mv² − ½mu². From F=ma and s=(v²−u²)/2a, F·s = ma·(v²−u²)/2a = ½m(v²−u²).",
+    "⚡ Shortcut:  W_net = ΔKE = ½m(v²−u²).",
+    "Example:  A 2 kg body speeds up 3→5 m/s → ΔKE = 16 J of work.",
+    "Q9. Define kinetic and potential energy with examples.",
+    "Answer:  KE = ½mv² (energy of motion), e.g. a moving car. PE = mgh (gravitational, energy of position), e.g. water behind a dam; also ½kx² for a spring.",
+    "⚡ Shortcut:  KE=½mv²; PE=mgh or ½kx².",
+    "Example:  A swinging pendulum trades PE and KE.",
+    "Q10. A 1000 kg car moving at 20 m/s brakes to rest. Find work done by the brakes.",
+    "Answer:  W = ΔKE = 0 − ½(1000)(400) = −200000 J. The brakes do 2×10⁵ J of (negative) work, removed as heat.",
+    "⚡ Shortcut:  Work to stop = initial KE.",
+    "Example:  200 kJ dissipated.",
+    "▥ 5.3 Work-Energy Theorem & KE/PE  —  Compare / Contrast Tables",
+    "Kinetic Energy vs Potential Energy",
+    "▣ 5.4 Conservation of Energy",
+    "Q11. State the law of conservation of energy.",
+    "Answer:  Energy can neither be created nor destroyed; it changes form. Total energy of an isolated system remains constant: KE + PE = constant (when only conservative forces act).",
+    "⚡ Shortcut:  Top: PE max, KE=0. Bottom: KE max, PE=0. Total constant.",
+    "Example:  A falling object: mgh at top = ½mv² at bottom.",
+    "Q12. Find the speed of a body falling from 80 m (from rest).",
+    "Answer:  By mgh = ½mv², v = √(2gh) = √(2×9.8×80) = √1568 ≈ 39.6 m/s.",
+    "⚡ Shortcut:  v = √(2gh).",
+    "Example:  ≈ 40 m/s just before impact.",
+    "Q13. Explain energy changes in a simple pendulum.",
+    "Answer:  At the extreme positions height (and PE) is maximum and speed (KE) is zero; at the lowest point KE is maximum and PE is minimum. Total mechanical energy stays constant (ignoring air resistance).",
+    "⚡ Shortcut:  PE ↔ KE, total constant.",
+    "Example:  Swing is fastest at the bottom.",
+    "▥ 5.4 Conservation of Energy  —  Compare / Contrast Tables",
+    "Mechanical Energy: When Is it Conserved?",
+    "▣ 5.5 Conservative & Non-conservative Forces; Collisions",
+    "Q14. Define conservative and non-conservative forces with examples.",
+    "Answer:  Conservative forces: work is path-independent and total work around a closed loop is zero (gravity, spring, electrostatic). Non-conservative: work depends on path, converts energy to other forms (friction, air resistance).",
+    "⚡ Shortcut:  Gravity/spring = conservative; friction = non-conservative.",
+    "Example:  Sliding down a rough incline loses mechanical energy to heat.",
+    "Q15. Distinguish elastic and inelastic collisions.",
+    "Answer:  Elastic collision: both momentum and kinetic energy are conserved (e.g. ideal gas molecules). Inelastic collision: momentum is conserved but KE is not (part converts to heat/sound); perfectly inelastic bodies stick together.",
+    "⚡ Shortcut:  Elastic: KE conserved. Inelastic: KE lost. Momentum conserved in both.",
+    "Example:  Billiard balls ≈ elastic; car crashes are inelastic.",
+    "Q16. In a perfectly inelastic collision, is momentum or kinetic energy conserved?",
+    "Answer:  Momentum is conserved (no external force). Kinetic energy is not conserved; some is converted to heat, sound and deformation. The bodies move with a common final velocity.",
+    "⚡ Shortcut:  Inelastic: Σp conserved, KE not.",
+    "Example:  Two clay balls stick together and slow down.",
+    "Q17. Coefficient of restitution e. What is e for elastic and perfectly inelastic collision?",
+    "Answer:  e = relative speed of separation / relative speed of approach. For an elastic collision e = 1; for a perfectly inelastic collision (bodies stick) e = 0.",
+    "⚡ Shortcut:  e=1 elastic; e=0 perfectly inelastic; 0<e<1 partially.",
+    "Example:  Rubber ball has higher e than a clay ball.",
+    "▥ 5.5 Conservative & Non-conservative Forces; Collisions  —  Compare / Contrast Tables",
+    "Elastic vs Inelastic Collision",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the work-energy theorem.",
+    "Answer:  Net work = ma×s = ma(v²−u²)/2a = ½m(v²−u²) = ΔKE. So W_net = change in kinetic energy, regardless of the forces involved.",
+    "⚡ Short / exam line:  W_net = ΔKE = ½m(v²−u²).",
+    "Example:  A force speeding a body up stores the work as KE.",
+    "[Derive] T2. Derive the energy stored in a stretched spring (elastic potential energy).",
+    "Answer:  Work = area under the F–x graph; for Hooke's law F = kx this is a triangle: U = ½·F·Δx = ½kx². Energy density = ½(stress)(strain).",
+    "⚡ Short / exam line:  U = ½kx² = ½Fx.",
+    "Example:  A 100 N over 0.1 m stores 5 J.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. Define work, kinetic energy and potential energy with units.",
+    "Answer:  Work = force × displacement along the force (J). KE = ½mv² (J) – energy of motion. PE (grav) = mgh (J) – energy of position. All in joules.",
+    "⚡ Short / exam line:  W=Fs ; KE=½mv² ; PE=mgh.",
+    "Example:  A lifted 10 kg at 2 m → PE = 196 J.",
+    "[State] T4. State the law of conservation of energy and apply it to a falling body.",
+    "Answer:  Energy is neither created nor destroyed; it changes form. A body falling from rest: mgh at the top = ½mv² at the bottom, so v = √(2gh).",
+    "⚡ Short / exam line:  mgh ↔ ½mv² (free fall).",
+    "Example:  Drop 5 m → v = √(98) ≈ 9.9 m/s.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T5. Compare elastic and inelastic collisions (with coefficient of restitution).",
+    "Answer:  Elastic: both momentum and KE conserved, e = 1 (ideal gas, billiard). Inelastic: momentum conserved but KE lost, e < 1; perfectly inelastic (bodies stick), e = 0, maximum KE lost.",
+    "⚡ Short / exam line:  Elastic e=1; perfectly inelastic e=0.",
+    "Example:  Car crash = inelastic; pool balls ≈ elastic.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T6. Explain the work-energy theorem's application in braking.",
+    "Answer:  The braking (friction) force does negative work equal to the loss in KE: W = −½mv². The work dissipated is converted to heat in the brakes; this fixes the minimum stopping distance.",
+    "⚡ Short / exam line:  W_brake = −KE → heat.",
+    "Example:  Stopping a car converts KE into thermal energy.",
+    "[Explain] T7. Explain conservative and non-conservative forces with examples.",
+    "Answer:  Conservative (gravity, spring, electrostatic): work depends only on end points, zero around a closed loop, and a potential energy can be defined. Non-conservative (friction, air drag): work depends on path, converts mechanical energy to heat, no potential energy.",
+    "⚡ Short / exam line:  Gravity = conservative; friction = non-conservative.",
+    "Example:  Sliding down a rough ramp loses energy to heat.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why is the total energy of a bound system negative?",
+    "Answer:  Because zero energy is set at infinite separation; since binding holds the system together, its total energy lies below that zero, i.e. negative. Unbound systems have E ≥ 0.",
+    "⚡ Short / exam line:  E_total < 0 → bound; = 0 threshold; > 0 unbound.",
+    "Example:  A satellite in orbit has negative total energy.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T9. A 1500 kg car travels at 30 m/s and stops in 5 s. Find the average braking force and distance.",
+    "Answer:  a = (0−30)/5 = −6 m/s². F = ma = 1500×6 = 9000 N (retarding). s = (u²)/(2×6) = 900/12 = 75 m.",
+    "⚡ Short / exam line:  F=ma; s=u²/2|a|.",
+    "Example:  75 m stopping distance; 9 kN force.",
+    "★ Quick-formula memos (this unit)",
+    "W = F·s = Fscosθ ; W(variable)=∫F dx.",
+    "KE = ½mv² ; PE(mg) = mgh ; Work-Energy: W_net = ΔKE.",
+    "Conservative force → potential energy; non-conservative (friction) → heat.",
+    "Power P = W/t = Fv ; SI unit watt = J/s."
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "unitNo": 22,
+  "unitId": "capacitor",
+  "unitName": "Capacitor",
+  "contentArea": "Electricity & Magnetism",
+  "docxFileName": "Physics_XI_Unit_22_capacitor.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_22_capacitor.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 22: CAPACITOR   Content Area: Electricity & Magnetism",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 115,
+    "tableCount": 4,
+    "questionCount": 13,
+    "theoryCount": 10,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Factor",
+        "Effect on C"
+      ],
+      "rows": [
+        [
+          "Plate area A ↑",
+          "C ∝ A"
+        ],
+        [
+          "Separation d ↓",
+          "C ∝ 1/d"
+        ],
+        [
+          "Dielectric inserted",
+          "C × K (relative permittivity)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Series",
+        "Parallel"
+      ],
+      "rows": [
+        [
+          "Equivalent",
+          "1/C = Σ 1/Cᵢ",
+          "C = Σ Cᵢ"
+        ],
+        [
+          "Voltage",
+          "Splits (sum = V)",
+          "Same V on all"
+        ],
+        [
+          "Charge",
+          "Same Q on all",
+          "Splits (sum = Q)"
+        ],
+        [
+          "Resulting C",
+          "Smaller than any member",
+          "Larger than any member"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Formula",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "U = ½CV²",
+          "In terms of C, V"
+        ],
+        [
+          "U = Q²/2C",
+          "In terms of Q, C"
+        ],
+        [
+          "U = ½QV",
+          "Symmetric"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Material",
+        "Behaviour",
+        "Effect on C"
+      ],
+      "rows": [
+        [
+          "Conductor",
+          "E inside = 0, charges rearrange",
+          "Shorts out"
+        ],
+        [
+          "Dielectric (polar)",
+          "Polarises, lowers internal E",
+          "C increases × K"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define capacitance and find that of a parallel-plate capacitor.",
+      "answer": "Capacitance C = Q/V (charge per unit potential difference), unit farad (F). A parallel-plate capacitor has C = ε₀A/d (in vacuum), increasing with plate area A and decreasing with separation d.",
+      "shortcut": "C = ε₀A/d ; C ∝ A/d.",
+      "example": "Doubling A doubles C; doubling d halves C."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Find C for a 0.1 m², 1 mm plate capacitor in air.",
+      "answer": "C = ε₀A/d = 8.85×10⁻¹²×0.1/0.001 = 8.85×10⁻¹⁰ F ≈ 0.885 nF.",
+      "shortcut": "C = ε₀A/d.",
+      "example": "≈ 0.89 nF."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. State the equivalent capacitance for capacitors in series and in parallel.",
+      "answer": "Series: 1/C_eq = 1/C₁ + 1/C₂ + … (all same charge). Parallel: C_eq = C₁ + C₂ + … (all same voltage).",
+      "shortcut": "Series: add reciprocals; Parallel: add directly.",
+      "example": "Two 4 μF in series → 2 μF; in parallel → 8 μF."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Two capacitors 3 μF and 6 μF are in series. Find C_eq and the voltage across each if 9 V is applied.",
+      "answer": "C_eq = (3×6)/(3+6) = 18/9 = 2 μF. Charge Q = C_eq V = 2×9 = 18 μC. Across 3 μF: V=18/3=6 V; across 6 μF: V=18/6=3 V (smaller C, larger V).",
+      "shortcut": "Series Q same; C_eq = product/sum; V ∝ 1/C.",
+      "example": "3 μF gets 6 V, 6 μF gets 3 V."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Explain the effect of inserting a dielectric slab.",
+      "answer": "A dielectric polarizes (bound charges appear), reducing the field and increasing the capacitance by the relative permittivity K: C_new = K C_air. It also lowers the breakdown field and the energy stored for a given voltage.",
+      "shortcut": "C_new = K C_air ; dielectric reduces the field.",
+      "example": "K≈5 (ceramic) gives ~5× larger capacitance."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define polarization and displacement field.",
+      "answer": "Polarization P is the dipole moment per unit volume of a dielectric (P = N p). The electric displacement D = ε₀E + P; for a linear dielectric D = εE, and the free charge is related by ∇·D = ρ_free. ▥ 22.1–22.3 Capacitance, Parallel Plate & Combinations  —  Compare / Contrast Tables Capacitance: What Determines C Series vs Parallel Capacitor Combinations ▣ 22.4 Energy of a Charged Capacitor",
+      "shortcut": "P = dipole/volume ; D = εE ; D depends on free charge.",
+      "example": "A ferroelectric has a large P."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Find the energy stored in a capacitor and show U = ½CV².",
+      "answer": "Charging, each bit dq needs Vdq of work; integrating gives U = ½CV² = Q²/2C. The energy resides in the electric field between the plates.",
+      "shortcut": "U = ½CV² = Q²/2C.",
+      "example": "A 2 μF at 10 V stores ½×2×10⁻⁶×100 = 100 μJ."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Find the energy density in the field of a parallel-plate capacitor.",
+      "answer": "Total energy U = ½CV²; volume = A d. Energy density u = U/(Ad) = ½ε₀E² (for air, E = V/d). Energy is stored in the field.",
+      "shortcut": "u = ½ε₀E².",
+      "example": "Higher E → more stored energy density."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Two capacitors (1 and 2 F) are charged to 10 V in parallel then discharged through a resistor. Find total energy dissipated.",
+      "answer": "Energy in each: ½(1)(100)=50 J and ½(2)(100)=100 J; total = 150 J, which is dissipated as heat in the resistor.",
+      "shortcut": "U = ½CV² summed; heat = total stored.",
+      "example": "150 J lost as heat."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Explain energy storage in a capacitor battery (capsule).",
+      "answer": "A capacitor battery stores charge separated on conductors (plates), holding energy in the electric field; the equivalent capacitance of the battery determines how much charge it can hold at a given voltage, and the stored energy is ½CV². ▥ 22.4 Energy of a Charged Capacitor  —  Compare / Contrast Tables Energy in a Capacitor: Three Equivalent Forms ▣ 22.5 Dielectrics & Polarization (extra)",
+      "shortcut": "Battery: equivalent C; U = ½CV².",
+      "example": "A 1000 F supercap battery at 5 V stores ~12 500 J."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Differentiate free charge and bound charge in a dielectric.",
+      "answer": "Free charge is mobile charge (e.g. on a plate); bound charge is the polarization charge (P·n) that appears at dielectric surfaces and is not freely mobile. The two cancel inside a bulk dielectric.",
+      "shortcut": "Free = plates; Bound = surface of the dielectric.",
+      "example": "The bound surface charge reduces the field inside."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Explain displacement (D) and why it is useful for capacitors.",
+      "answer": "D = ε₀E + P is the electric displacement field; in a linear dielectric D = εE. D depends only on free charge, which is convenient for capacitor problems where one wants to use the free (not the bound) charge in Gauss's law.",
+      "shortcut": "D = εE ; ∇·D = ρ_free.",
+      "example": "Using D one can apply Gauss's law with only free charge."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. How does a dielectric increase a capacitor's breakdown voltage?",
+      "answer": "A good dielectric has a high dielectric strength (resistance to breakdown) and traps charge, so the capacitor can be charged to a higher voltage before the insulating medium breaks down. This lets one store more energy in a given volume. ▥ 22.5 Dielectrics & Polarization (extra)  —  Compare / Contrast Tables Conductor vs Dielectric (in a field) PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "High K + high dielectric strength → higher V_breakdown.",
+      "example": "Ceramic caps use dielectrics for higher voltage."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the capacitance of a parallel-plate capacitor.",
+      "answer": "The field between the plates is E = σ/ε₀ = Q/(ε₀A). The potential difference is V = E·d = Qd/(ε₀A). Hence C = Q/V = ε₀A/d.",
+      "shortcut": "V = Ed ; E = Q/ε₀A → C = ε₀A/d.",
+      "example": "Air ~ ε₀; a dielectric replaces ε₀ by ε = ε₀ε_r."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the energy stored in a charged capacitor (U = ½CV²).",
+      "answer": "Charging, a small charge dq requires a potential Vdq of work; integrating from 0 to Q gives U = ½QV = ½CV² = Q²/2C. The energy is stored in the electric field between the plates.",
+      "shortcut": "U = ½CV² = Q²/2C.",
+      "example": "A 2 μF at 10 V stores 100 μJ."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. Define capacitance and state the formula for a parallel-plate capacitor.",
+      "answer": "Capacitance C = Q/V (charge per unit potential difference), in farads (F). A parallel-plate capacitor in vacuum has C = ε₀A/d, increasing with plate area A and decreasing with separation d.",
+      "shortcut": "C = Q/V ; C_parallel-plate = ε₀A/d.",
+      "example": "Larger plates or closer spacing → bigger C."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T4. Compare the behaviour of capacitors and resistors in series/parallel.",
+      "answer": "Resistors in series add directly (R_eq = ΣR); in parallel their reciprocals add. Capacitors do the opposite: in series their reciprocals add (1/C_eq = Σ1/C); in parallel they add directly (C_eq = ΣC). This is the classic exam trap.",
+      "shortcut": "R: series add; C: parallel add.",
+      "example": "Memorize the opposite behaviour."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the series and parallel combinations of capacitors.",
+      "answer": "Series: the same charge is on each and 1/C_eq = 1/C₁ + 1/C₂ + … (like resistors in parallel). Parallel: the same voltage and C_eq = C₁ + C₂ + … (like resistors in series).",
+      "shortcut": "Series: add reciprocals; Parallel: add directly.",
+      "example": "Two 4 μF: series 2 μF, parallel 8 μF."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the effect of inserting a dielectric slab into a capacitor.",
+      "answer": "A dielectric polarizes (bound charges appear at its surfaces), reducing the field for the same free charge; the capacitance rises by the relative permittivity K: C_new = K C_air. The dielectric also raises the breakdown voltage, allowing more energy to be stored in the same volume.",
+      "shortcut": "C_new = K C_air ; higher breakdown.",
+      "example": "Ceramic (K≈5) gives ~5× the air capacitance."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain polarization and the displacement field D.",
+      "answer": "Polarization P is the dipole moment per unit volume (P = Np). The electric displacement D = ε₀E + P; for a linear dielectric D = εE, and ∇·D = ρ_free. D is useful because it depends only on free charge, not the bound polarization charge.",
+      "shortcut": "P = dipole/volume ; D = εE ; ∇·D = ρ_free.",
+      "example": "Applying Gauss's law to D uses free charge only."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain a variable capacitor and its use in tuning.",
+      "answer": "A variable capacitor has rotating plates whose overlap area A changes; C = ε₀A/d varies with the position, so rotating the plates tunes a circuit's resonant frequency. Used in radio and old TVs to select stations.",
+      "shortcut": "C = ε₀A/d ; rotating plates changes A.",
+      "example": "Old radios use a variable capacitor to tune."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T9. Explain the energy density in the electric field of a capacitor.",
+      "answer": "The total energy U = ½CV²; per unit volume, u = ½ε₀E² (in air). This shows that the energy is stored in the field, not on the plates themselves — a capacitor stores energy in the space between its plates.",
+      "shortcut": "u = ½ε₀E² (energy in the field).",
+      "example": "Higher E → more energy stored."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. Two 4 μF capacitors are in series across 20 V. Find the charge on each and the energy of each.",
+      "answer": "C_eq = 4×4/8 = 2 μF. Q = C_eq V = 2×20 = 40 μC on each (series). Voltage splits: V₁ = Q/C₁ = 10 V, V₂ = 10 V. U₁ = ½CV² = ½×4e-6×100 = 2×10⁻⁴ J each.",
+      "shortcut": "Series: same Q; V = Q/C.",
+      "example": "Each stores 0.2 mJ, total 0.4 mJ."
+    }
+  ],
+  "formulas": [
+    "C = Q/V ; Parallel plate C = ε₀A/d.",
+    "Series: 1/C_eq = Σ1/Cᵢ ; Parallel: C_eq = ΣCᵢ.",
+    "Energy U = ½CV² = Q²/2C ; Dielectric: C→K C."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 22: CAPACITOR   Content Area: Electricity & Magnetism",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 22.1–22.3 Capacitance, Parallel Plate & Combinations",
+    "Q1. Define capacitance and find that of a parallel-plate capacitor.",
+    "Answer:  Capacitance C = Q/V (charge per unit potential difference), unit farad (F). A parallel-plate capacitor has C = ε₀A/d (in vacuum), increasing with plate area A and decreasing with separation d.",
+    "⚡ Shortcut:  C = ε₀A/d ; C ∝ A/d.",
+    "Example:  Doubling A doubles C; doubling d halves C.",
+    "Q2. Find C for a 0.1 m², 1 mm plate capacitor in air.",
+    "Answer:  C = ε₀A/d = 8.85×10⁻¹²×0.1/0.001 = 8.85×10⁻¹⁰ F ≈ 0.885 nF.",
+    "⚡ Shortcut:  C = ε₀A/d.",
+    "Example:  ≈ 0.89 nF.",
+    "Q3. State the equivalent capacitance for capacitors in series and in parallel.",
+    "Answer:  Series: 1/C_eq = 1/C₁ + 1/C₂ + … (all same charge). Parallel: C_eq = C₁ + C₂ + … (all same voltage).",
+    "⚡ Shortcut:  Series: add reciprocals; Parallel: add directly.",
+    "Example:  Two 4 μF in series → 2 μF; in parallel → 8 μF.",
+    "Q4. Two capacitors 3 μF and 6 μF are in series. Find C_eq and the voltage across each if 9 V is applied.",
+    "Answer:  C_eq = (3×6)/(3+6) = 18/9 = 2 μF. Charge Q = C_eq V = 2×9 = 18 μC. Across 3 μF: V=18/3=6 V; across 6 μF: V=18/6=3 V (smaller C, larger V).",
+    "⚡ Shortcut:  Series Q same; C_eq = product/sum; V ∝ 1/C.",
+    "Example:  3 μF gets 6 V, 6 μF gets 3 V.",
+    "Q5. Explain the effect of inserting a dielectric slab.",
+    "Answer:  A dielectric polarizes (bound charges appear), reducing the field and increasing the capacitance by the relative permittivity K: C_new = K C_air. It also lowers the breakdown field and the energy stored for a given voltage.",
+    "⚡ Shortcut:  C_new = K C_air ; dielectric reduces the field.",
+    "Example:  K≈5 (ceramic) gives ~5× larger capacitance.",
+    "Q6. Define polarization and displacement field.",
+    "Answer:  Polarization P is the dipole moment per unit volume of a dielectric (P = N p). The electric displacement D = ε₀E + P; for a linear dielectric D = εE, and the free charge is related by ∇·D = ρ_free.",
+    "⚡ Shortcut:  P = dipole/volume ; D = εE ; D depends on free charge.",
+    "Example:  A ferroelectric has a large P.",
+    "▥ 22.1–22.3 Capacitance, Parallel Plate & Combinations  —  Compare / Contrast Tables",
+    "Capacitance: What Determines C",
+    "Series vs Parallel Capacitor Combinations",
+    "▣ 22.4 Energy of a Charged Capacitor",
+    "Q7. Find the energy stored in a capacitor and show U = ½CV².",
+    "Answer:  Charging, each bit dq needs Vdq of work; integrating gives U = ½CV² = Q²/2C. The energy resides in the electric field between the plates.",
+    "⚡ Shortcut:  U = ½CV² = Q²/2C.",
+    "Example:  A 2 μF at 10 V stores ½×2×10⁻⁶×100 = 100 μJ.",
+    "Q8. Find the energy density in the field of a parallel-plate capacitor.",
+    "Answer:  Total energy U = ½CV²; volume = A d. Energy density u = U/(Ad) = ½ε₀E² (for air, E = V/d). Energy is stored in the field.",
+    "⚡ Shortcut:  u = ½ε₀E².",
+    "Example:  Higher E → more stored energy density.",
+    "Q9. Two capacitors (1 and 2 F) are charged to 10 V in parallel then discharged through a resistor. Find total energy dissipated.",
+    "Answer:  Energy in each: ½(1)(100)=50 J and ½(2)(100)=100 J; total = 150 J, which is dissipated as heat in the resistor.",
+    "⚡ Shortcut:  U = ½CV² summed; heat = total stored.",
+    "Example:  150 J lost as heat.",
+    "Q10. Explain energy storage in a capacitor battery (capsule).",
+    "Answer:  A capacitor battery stores charge separated on conductors (plates), holding energy in the electric field; the equivalent capacitance of the battery determines how much charge it can hold at a given voltage, and the stored energy is ½CV².",
+    "⚡ Shortcut:  Battery: equivalent C; U = ½CV².",
+    "Example:  A 1000 F supercap battery at 5 V stores ~12 500 J.",
+    "▥ 22.4 Energy of a Charged Capacitor  —  Compare / Contrast Tables",
+    "Energy in a Capacitor: Three Equivalent Forms",
+    "▣ 22.5 Dielectrics & Polarization (extra)",
+    "Q11. Differentiate free charge and bound charge in a dielectric.",
+    "Answer:  Free charge is mobile charge (e.g. on a plate); bound charge is the polarization charge (P·n) that appears at dielectric surfaces and is not freely mobile. The two cancel inside a bulk dielectric.",
+    "⚡ Shortcut:  Free = plates; Bound = surface of the dielectric.",
+    "Example:  The bound surface charge reduces the field inside.",
+    "Q12. Explain displacement (D) and why it is useful for capacitors.",
+    "Answer:  D = ε₀E + P is the electric displacement field; in a linear dielectric D = εE. D depends only on free charge, which is convenient for capacitor problems where one wants to use the free (not the bound) charge in Gauss's law.",
+    "⚡ Shortcut:  D = εE ; ∇·D = ρ_free.",
+    "Example:  Using D one can apply Gauss's law with only free charge.",
+    "Q13. How does a dielectric increase a capacitor's breakdown voltage?",
+    "Answer:  A good dielectric has a high dielectric strength (resistance to breakdown) and traps charge, so the capacitor can be charged to a higher voltage before the insulating medium breaks down. This lets one store more energy in a given volume.",
+    "⚡ Shortcut:  High K + high dielectric strength → higher V_breakdown.",
+    "Example:  Ceramic caps use dielectrics for higher voltage.",
+    "▥ 22.5 Dielectrics & Polarization (extra)  —  Compare / Contrast Tables",
+    "Conductor vs Dielectric (in a field)",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the capacitance of a parallel-plate capacitor.",
+    "Answer:  The field between the plates is E = σ/ε₀ = Q/(ε₀A). The potential difference is V = E·d = Qd/(ε₀A). Hence C = Q/V = ε₀A/d.",
+    "⚡ Short / exam line:  V = Ed ; E = Q/ε₀A → C = ε₀A/d.",
+    "Example:  Air ~ ε₀; a dielectric replaces ε₀ by ε = ε₀ε_r.",
+    "[Derive] T2. Derive the energy stored in a charged capacitor (U = ½CV²).",
+    "Answer:  Charging, a small charge dq requires a potential Vdq of work; integrating from 0 to Q gives U = ½QV = ½CV² = Q²/2C. The energy is stored in the electric field between the plates.",
+    "⚡ Short / exam line:  U = ½CV² = Q²/2C.",
+    "Example:  A 2 μF at 10 V stores 100 μJ.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. Define capacitance and state the formula for a parallel-plate capacitor.",
+    "Answer:  Capacitance C = Q/V (charge per unit potential difference), in farads (F). A parallel-plate capacitor in vacuum has C = ε₀A/d, increasing with plate area A and decreasing with separation d.",
+    "⚡ Short / exam line:  C = Q/V ; C_parallel-plate = ε₀A/d.",
+    "Example:  Larger plates or closer spacing → bigger C.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T4. Compare the behaviour of capacitors and resistors in series/parallel.",
+    "Answer:  Resistors in series add directly (R_eq = ΣR); in parallel their reciprocals add. Capacitors do the opposite: in series their reciprocals add (1/C_eq = Σ1/C); in parallel they add directly (C_eq = ΣC). This is the classic exam trap.",
+    "⚡ Short / exam line:  R: series add; C: parallel add.",
+    "Example:  Memorize the opposite behaviour.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain the series and parallel combinations of capacitors.",
+    "Answer:  Series: the same charge is on each and 1/C_eq = 1/C₁ + 1/C₂ + … (like resistors in parallel). Parallel: the same voltage and C_eq = C₁ + C₂ + … (like resistors in series).",
+    "⚡ Short / exam line:  Series: add reciprocals; Parallel: add directly.",
+    "Example:  Two 4 μF: series 2 μF, parallel 8 μF.",
+    "[Explain] T6. Explain the effect of inserting a dielectric slab into a capacitor.",
+    "Answer:  A dielectric polarizes (bound charges appear at its surfaces), reducing the field for the same free charge; the capacitance rises by the relative permittivity K: C_new = K C_air. The dielectric also raises the breakdown voltage, allowing more energy to be stored in the same volume.",
+    "⚡ Short / exam line:  C_new = K C_air ; higher breakdown.",
+    "Example:  Ceramic (K≈5) gives ~5× the air capacitance.",
+    "[Explain] T7. Explain polarization and the displacement field D.",
+    "Answer:  Polarization P is the dipole moment per unit volume (P = Np). The electric displacement D = ε₀E + P; for a linear dielectric D = εE, and ∇·D = ρ_free. D is useful because it depends only on free charge, not the bound polarization charge.",
+    "⚡ Short / exam line:  P = dipole/volume ; D = εE ; ∇·D = ρ_free.",
+    "Example:  Applying Gauss's law to D uses free charge only.",
+    "[Explain] T8. Explain a variable capacitor and its use in tuning.",
+    "Answer:  A variable capacitor has rotating plates whose overlap area A changes; C = ε₀A/d varies with the position, so rotating the plates tunes a circuit's resonant frequency. Used in radio and old TVs to select stations.",
+    "⚡ Short / exam line:  C = ε₀A/d ; rotating plates changes A.",
+    "Example:  Old radios use a variable capacitor to tune.",
+    "[Explain] T9. Explain the energy density in the electric field of a capacitor.",
+    "Answer:  The total energy U = ½CV²; per unit volume, u = ½ε₀E² (in air). This shows that the energy is stored in the field, not on the plates themselves — a capacitor stores energy in the space between its plates.",
+    "⚡ Short / exam line:  u = ½ε₀E² (energy in the field).",
+    "Example:  Higher E → more energy stored.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. Two 4 μF capacitors are in series across 20 V. Find the charge on each and the energy of each.",
+    "Answer:  C_eq = 4×4/8 = 2 μF. Q = C_eq V = 2×20 = 40 μC on each (series). Voltage splits: V₁ = Q/C₁ = 10 V, V₂ = 10 V. U₁ = ½CV² = ½×4e-6×100 = 2×10⁻⁴ J each.",
+    "⚡ Short / exam line:  Series: same Q; V = Q/C.",
+    "Example:  Each stores 0.2 mJ, total 0.4 mJ.",
+    "★ Quick-formula memos (this unit)",
+    "C = Q/V ; Parallel plate C = ε₀A/d.",
+    "Series: 1/C_eq = Σ1/Cᵢ ; Parallel: C_eq = ΣCᵢ.",
+    "Energy U = ½CV² = Q²/2C ; Dielectric: C→K C."
+  ]
+}

@@ -1,0 +1,489 @@
+{
+  "unitNo": 24,
+  "unitId": "nuclear-physics",
+  "unitName": "Nuclear Physics",
+  "contentArea": "Modern Physics",
+  "docxFileName": "Physics_XI_Unit_24_nuclear-physics.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_24_nuclear-physics.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 24: NUCLEAR PHYSICS   Content Area: Modern Physics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 118,
+    "tableCount": 6,
+    "questionCount": 12,
+    "theoryCount": 11,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Property",
+        "α",
+        "β⁻",
+        "γ"
+      ],
+      "rows": [
+        [
+          "Nature",
+          "He nucleus (2p,2n)",
+          "Electron + antineutrino",
+          "High-energy photon"
+        ],
+        [
+          "Charge",
+          "+2e",
+          "−e",
+          "0"
+        ],
+        [
+          "Mass number",
+          "4",
+          "0",
+          "0"
+        ],
+        [
+          "Penetrating",
+          "Low (paper stops)",
+          "Medium (aluminium)",
+          "High (lead/concrete)"
+        ],
+        [
+          "Ionising",
+          "Very strong",
+          "Moderate",
+          "Weak"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Fact",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Nuclear density",
+          "≈ 2.3×10¹⁷ kg/m³ (massive)"
+        ],
+        [
+          "Radius formula",
+          "R = R₀ A^(1/3), R₀ = 1.2×10⁻¹⁵ m"
+        ],
+        [
+          "Why same for all",
+          "Density independent of A (volume ∝ A)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Definition",
+        "Formula"
+      ],
+      "rows": [
+        [
+          "Mass defect Δm",
+          "Σ masses of nucleons − actual mass",
+          "Δm > 0"
+        ],
+        [
+          "Binding energy",
+          "Energy equivalent of Δm",
+          "BE = Δm c²"
+        ],
+        [
+          "Einstein relation",
+          "Mass–energy convertibility",
+          "E = Δm c²"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Region",
+        "Observation"
+      ],
+      "rows": [
+        [
+          "A ≈ 56 (Fe)",
+          "Maximum BE/A ≈ 8.8 MeV (most stable)"
+        ],
+        [
+          "Light nuclei (A < 20)",
+          "Lower BE/A → fusion releases energy"
+        ],
+        [
+          "Heavy nuclei (A > 200)",
+          "Lower BE/A → fission releases energy"
+        ],
+        [
+          "Peak = why",
+          "Fusion light & fission heavy both climb toward Fe peak"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Fission",
+        "Fusion"
+      ],
+      "rows": [
+        [
+          "What happens",
+          "Heavy nucleus splits",
+          "Light nuclei combine"
+        ],
+        [
+          "Released from",
+          "A > 200 (U, Pu)",
+          "A < 20 (D, T, H)"
+        ],
+        [
+          "Fuel",
+          "Enriched U-235, Pu-239",
+          "D, T, H isotopes"
+        ],
+        [
+          "By-product",
+          "Radioactive waste, high-Z fragments",
+          "He, no long-lived waste"
+        ],
+        [
+          "Trigger",
+          "Slow (thermal) neutrons",
+          "Extreme T (~10⁸ K), confinement"
+        ],
+        [
+          "Energy per kg",
+          "≈ 8×10¹³ J",
+          "≈ 3.4×10¹⁴ J (larger)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Process",
+        "What happens",
+        "Energy condition"
+      ],
+      "rows": [
+        [
+          "Creation",
+          "E → particle–antiparticle pair",
+          "E ≥ 2mc² + KE"
+        ],
+        [
+          "Annihilation",
+          "Particle + antiparticle → photons",
+          "mc² + KE → E_photons"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Describe the Rutherford (gold-foil) experiment and its conclusion about the nucleus.",
+      "answer": "α-particles fired at thin gold foil: most passed through (atom mostly empty), a few deflected, a very few (~1 in 20 000) bounced back. Conclusion: a tiny, dense, positively charged nucleus (radius ~10⁻¹⁵ m) contains nearly all the mass and positive charge.",
+      "shortcut": "Most pass → empty; some back-scatter → tiny dense + nucleus.",
+      "example": "The nucleus is ~100 000× smaller than the atom."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. State the formula for nuclear radius and nuclear density.",
+      "answer": "Nuclear radius R = R₀A^(1/3), R₀ ≈ 1.2 fm (1.2×10⁻¹⁵ m). Since volume ∝ R³ ∝ A and mass ∝ A, nuclear density ρ ≈ 1.8×10¹⁷ kg/m³, essentially independent of A (nearly constant for all nuclei).",
+      "shortcut": "R = 1.2A^(1/3) fm ; ρ ≈ 1.8×10¹⁷ kg/m³ (constant).",
+      "example": "A uranium and a lithium nucleus have almost the same density."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Write Einstein's mass-energy relation and the u–MeV conversion.",
+      "answer": "E = mc². Using 1 u = 931 MeV/c², a mass defect of 1 u corresponds to 931 MeV of binding energy.",
+      "shortcut": "1 u = 931 MeV/c² ; E = Δm·931 MeV.",
+      "example": "A 2 u defect gives 1862 MeV of energy."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Define mass defect and binding energy.",
+      "answer": "Mass defect Δm is the difference between the total mass of the separated nucleons and the actual nuclear mass: Δm = [Zm_p + (A−Z)m_n] − m_nucleus. Binding energy BE = Δm·c² (the energy needed to disassemble the nucleus). ▥ 24.1–24.4 Nucleus, Density & Mass-Energy  —  Compare / Contrast Tables Alpha vs Beta vs Gamma Radiation Nuclear Density Table Mass Defect vs Mass-Energy Equivalence ▣ 24.5 Packing Fraction & BE per Nucleon",
+      "shortcut": "BE = Δm·c² = Δm(u)×931 MeV.",
+      "example": "He-4: 2p+2n mass > He-4 mass; the difference is the BE."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Define packing fraction and what it indicates.",
+      "answer": "Packing fraction = [Zm_p + (A−Z)m_n − m_nucleus]/A, roughly the fractional mass defect per nucleon. It indicates how tightly bound the nucleons are; a larger (more negative) value means a more stable nucleus.",
+      "shortcut": "PF ∝ (mass defect)/A; more negative → more stable.",
+      "example": "Medium nuclei have the most negative packing fraction."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Explain the BE/nucleon curve and why iron is the most stable.",
+      "answer": "BE per nucleon rises from H, peaks near A ≈ 56 (iron group, ~8.8 MeV), then slowly falls for heavy nuclei. Iron has the maximum BE/nucleon, so it is the most tightly bound (most stable); light nuclei can fuse (gain BE), heavy can fission (gain BE).",
+      "shortcut": "Peak at A≈56 (Fe); max stability; light → fuse, heavy → split.",
+      "example": "Fusion of light H releases energy; fission of U-235 releases energy."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Find the binding energy of helium-4 (mass = 4.0015 u; m_p=1.0073, m_n=1.0087 u).",
+      "answer": "Mass of parts = 2(1.0073)+2(1.0087) = 4.0320 u. Δm = 4.0320 − 4.0015 = 0.0305 u. BE = 0.0305×931 ≈ 28.4 MeV; BE/nucleon ≈ 7.1 MeV. ▥ 24.5 Packing Fraction & BE per Nucleon  —  Compare / Contrast Tables BE per Nucleon Curve: Key Reading ▣ 24.6–24.7 Creation/Annihilation & Fission/Fusion",
+      "shortcut": "Δm = Σparts − m_nucleus ; BE = Δm×931.",
+      "example": "≈ 28.4 MeV total."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Explain particle creation and annihilation (pair production/annihilation).",
+      "answer": "A photon of sufficient energy (≥2mc²) can convert into a particle–antiparticle pair (pair production). When a particle meets its antiparticle, they annihilate into photons (e⁻+e⁺→2γ). Mass and energy are interconverted via E = mc².",
+      "shortcut": "γ→pair if E≥2mc² ; particle+antiparticle→γγ.",
+      "example": "An electron–positron pair annihilates into two 511 keV gamma rays."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Differentiate nuclear fission and nuclear fusion.",
+      "answer": "Fission: a heavy nucleus splits into lighter fragments, releasing energy (chain reaction, e.g. U-235 + n → Ba + Kr + 3n + ~200 MeV). Fusion: light nuclei combine into a heavier one, releasing energy (e.g. 4 H → He + energy, powers the Sun). Both follow E = Δm c².",
+      "shortcut": "Fission: heavy → light; Fusion: light → heavy. Both release BE.",
+      "example": "Fission in reactors/bombs; fusion in the Sun/H-bombs."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Why is energy released in both fission and fusion?",
+      "answer": "In both, the products have a higher BE/nucleon than the reactants; the 'missing' mass (mass defect) is converted to energy (E = Δm c²). Fusion of light nuclei climbs toward the Fe peak; fission of heavy nuclei also climbs toward it.",
+      "shortcut": "Products bind more tightly → mass defect → energy.",
+      "example": "A small mass loss gives a huge energy (c² factor)."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Explain a chain reaction and what is needed to sustain it.",
+      "answer": "A chain reaction occurs when neutrons from one fission induce further fissions. It is self-sustaining when the reproduction factor (avg neutrons causing new fissions per fission) ≥ 1; <1 dies out, >1 grows (supercritical). Moderators slow neutrons; control rods absorb them.",
+      "shortcut": "Sustained when # new fissions ≥ previous; moderator slows, rods absorb.",
+      "example": "U-235 + slow neutron is most easily fissionable."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. What is the advantage of fusion over fission (environment)?",
+      "answer": "Fusion of light isotopes (e.g. D-T) produces far less long-lived radioactive waste than fission, no high-level spent fuel, and the fuel (deuterium, lithium) is very abundant; it also has no risk of a meltdown. Energy density per fuel mass is higher. ▥ 24.6–24.7 Creation/Annihilation & Fission/Fusion  —  Compare / Contrast Tables Nuclear Fusion vs Fission Creation vs Annihilation of Matter PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Less waste, abundant fuel, no meltdown; huge energy.",
+      "example": "The Sun has fused hydrogen for billions of years."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the binding energy from the mass defect.",
+      "answer": "Mass defect Δm = [Zm_p + (A−Z)m_n] − m_nucleus (the 'missing' mass). Binding energy BE = Δm·c²; using 1 u = 931 MeV, BE = Δm(in u) × 931 MeV. This is the energy needed to disassemble the nucleus into its nucleons.",
+      "shortcut": "Δm = Σparts − m_nucleus ; BE = Δm×931 MeV.",
+      "example": "He-4 has Δm ≈ 0.0305 u → BE ≈ 28.4 MeV."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. State the formula for nuclear radius and nuclear density.",
+      "answer": "Nuclear radius R = R₀A^(1/3) with R₀ ≈ 1.2 fm (1.2×10⁻¹⁵ m). Since volume ∝ R³ ∝ A and mass ∝ A, the nuclear density is nearly constant, ρ ≈ 1.8×10¹⁷ kg/m³, independent of A (all nuclei have roughly the same density).",
+      "shortcut": "R = 1.2A^(1/3) fm ; ρ ≈ 1.8×10¹⁷ kg/m³.",
+      "example": "A uranium and a lithium nucleus have nearly the same density."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T3. Compare nuclear fission and fusion (with advantages/disadvantages).",
+      "answer": "Fission: heavy → light (chain reaction, U-235), ~200 MeV/event, produces radioactive waste, no high-temperature requirement (feasible today). Fusion: light → heavy (needs extreme T to overcome Coulomb barrier), ~4× energy per fuel mass, no long-lived waste, but harder to control (experimental).",
+      "shortcut": "Fission: ready today, waste; Fusion: cleaner, harder.",
+      "example": "Both move toward the iron BE peak."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain the Rutherford (gold-foil) experiment and its conclusions about the nucleus.",
+      "answer": "α-particles were fired at thin gold foil: most passed straight through (atom is mostly empty space), a few deflected at large angles, a very few bounced back. Rutherford concluded that the positive charge and nearly all the mass are concentrated in a tiny nucleus (radius ~10⁻¹⁵ m), far smaller than the atom (~10⁻¹⁰ m).",
+      "shortcut": "Most pass → empty; some back-scatter → tiny dense + nucleus.",
+      "example": "The nucleus is ~100 000× smaller than the atom."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain mass number, atomic number and isotopes.",
+      "answer": "The atomic number Z is the number of protons (defines the element); the mass number A is protons + neutrons; the number of neutrons is N = A − Z. Isotopes are the same Z, different N (same element, different A), differing in mass and stability.",
+      "shortcut": "Z: element; A: total nucleons; N = A−Z ; isotope = same Z, different N.",
+      "example": "Carbon-12 and Carbon-14 are isotopes."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain Einstein's mass-energy relation and pair production/annihilation.",
+      "answer": "Mass and energy are equivalent: E = mc². A photon with energy ≥ 2mc² can produce a particle–antiparticle pair (pair production); when a particle meets its antiparticle, they annihilate into photons of total energy 2mc². This underlies creation/annihilation processes.",
+      "shortcut": "E = mc² ; γ → pair if E ≥ 2mc² ; pair → γγ.",
+      "example": "Electron–positron annihilation gives two 511 keV photons."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the BE/nucleon curve and why iron is the most stable.",
+      "answer": "BE per nucleon rises from H, peaks near A ≈ 56 (iron group, ~8.8 MeV), then slowly falls for heavy nuclei. Iron has the maximum BE/nucleon, so it is the most tightly bound (most stable). Light nuclei can fuse to gain BE; heavy nuclei can fission to gain BE; both move toward the iron peak.",
+      "shortcut": "Peak at A≈56 (Fe); most stable.",
+      "example": "Fusion of light H and fission of U-235 both release energy."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain nuclear fission and a chain reaction.",
+      "answer": "In fission, a heavy nucleus (e.g. U-235) absorbs a slow neutron and splits into two lighter fragments plus 2–3 neutrons and ~200 MeV; these neutrons can induce more fissions. If the reproduction factor (new fissions per old fission) is ≥ 1, the chain reaction is sustained; a moderator slows neutrons and control rods absorb them to regulate it.",
+      "shortcut": "Sustained when ≥1 new fission per old fission; moderator + rods.",
+      "example": "Reactor control uses boron/cadmium control rods."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T9. Explain nuclear fusion and the proton-proton chain in the Sun.",
+      "answer": "In fusion, light nuclei combine into a heavier one with higher BE/nucleon, releasing the mass defect as energy. In the Sun, the proton-proton chain fuses four protons into a helium-4 nucleus (via two deuterons), releasing ~26.7 MeV and positrons/neutrinos. This is the Sun's energy source (and of H-bombs).",
+      "shortcut": "Light + light → heavier + energy (toward Fe peak).",
+      "example": "The Sun's pp chain: 4p → He-4 + energy + 2ν + 2e⁺."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T10. Professor: 'Why does fission of U-235 need slow neutrons?'",
+      "answer": "U-235 is fissionable only with slow (thermal) neutrons; a fast neutron has too much kinetic energy and is more likely to pass through without being captured. A moderator (water, graphite) slows the neutrons to thermal energies, making fission far more likely.",
+      "shortcut": "U-235 + thermal neutron → fission (slow neutrons).",
+      "example": "Moderators slow neutrons to make fission probable."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T11. Find the binding energy and BE/nucleon of helium-4 (mass = 4.0015 u; m_p = 1.0073, m_n = 1.0087 u).",
+      "answer": "Mass of parts = 2(1.0073)+2(1.0087) = 4.0320 u. Δm = 4.0320 − 4.0015 = 0.0305 u. BE = 0.0305×931 ≈ 28.4 MeV; BE/nucleon ≈ 7.1 MeV.",
+      "shortcut": "Δm = Σparts − m_nucleus ; BE = Δm×931.",
+      "example": "≈ 28.4 MeV total; 7.1 MeV per nucleon."
+    }
+  ],
+  "formulas": [
+    "Radius R = R₀A^(1/3), R₀≈1.2 fm ; nuclear density ≈1.8×10¹⁷ kg/m³ (A-independent).",
+    "E = mc² ; 1 u = 931 MeV ; Mass defect Δm = (Zm_p+(A−Z)m_n) − m_nucleus.",
+    "BE/nucleon: max near A≈56 (Fe) → most stable; high for light & heavy."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 24: NUCLEAR PHYSICS   Content Area: Modern Physics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 24.1–24.4 Nucleus, Density & Mass-Energy",
+    "Q1. Describe the Rutherford (gold-foil) experiment and its conclusion about the nucleus.",
+    "Answer:  α-particles fired at thin gold foil: most passed through (atom mostly empty), a few deflected, a very few (~1 in 20 000) bounced back. Conclusion: a tiny, dense, positively charged nucleus (radius ~10⁻¹⁵ m) contains nearly all the mass and positive charge.",
+    "⚡ Shortcut:  Most pass → empty; some back-scatter → tiny dense + nucleus.",
+    "Example:  The nucleus is ~100 000× smaller than the atom.",
+    "Q2. State the formula for nuclear radius and nuclear density.",
+    "Answer:  Nuclear radius R = R₀A^(1/3), R₀ ≈ 1.2 fm (1.2×10⁻¹⁵ m). Since volume ∝ R³ ∝ A and mass ∝ A, nuclear density ρ ≈ 1.8×10¹⁷ kg/m³, essentially independent of A (nearly constant for all nuclei).",
+    "⚡ Shortcut:  R = 1.2A^(1/3) fm ; ρ ≈ 1.8×10¹⁷ kg/m³ (constant).",
+    "Example:  A uranium and a lithium nucleus have almost the same density.",
+    "Q3. Write Einstein's mass-energy relation and the u–MeV conversion.",
+    "Answer:  E = mc². Using 1 u = 931 MeV/c², a mass defect of 1 u corresponds to 931 MeV of binding energy.",
+    "⚡ Shortcut:  1 u = 931 MeV/c² ; E = Δm·931 MeV.",
+    "Example:  A 2 u defect gives 1862 MeV of energy.",
+    "Q4. Define mass defect and binding energy.",
+    "Answer:  Mass defect Δm is the difference between the total mass of the separated nucleons and the actual nuclear mass: Δm = [Zm_p + (A−Z)m_n] − m_nucleus. Binding energy BE = Δm·c² (the energy needed to disassemble the nucleus).",
+    "⚡ Shortcut:  BE = Δm·c² = Δm(u)×931 MeV.",
+    "Example:  He-4: 2p+2n mass > He-4 mass; the difference is the BE.",
+    "▥ 24.1–24.4 Nucleus, Density & Mass-Energy  —  Compare / Contrast Tables",
+    "Alpha vs Beta vs Gamma Radiation",
+    "Nuclear Density Table",
+    "Mass Defect vs Mass-Energy Equivalence",
+    "▣ 24.5 Packing Fraction & BE per Nucleon",
+    "Q5. Define packing fraction and what it indicates.",
+    "Answer:  Packing fraction = [Zm_p + (A−Z)m_n − m_nucleus]/A, roughly the fractional mass defect per nucleon. It indicates how tightly bound the nucleons are; a larger (more negative) value means a more stable nucleus.",
+    "⚡ Shortcut:  PF ∝ (mass defect)/A; more negative → more stable.",
+    "Example:  Medium nuclei have the most negative packing fraction.",
+    "Q6. Explain the BE/nucleon curve and why iron is the most stable.",
+    "Answer:  BE per nucleon rises from H, peaks near A ≈ 56 (iron group, ~8.8 MeV), then slowly falls for heavy nuclei. Iron has the maximum BE/nucleon, so it is the most tightly bound (most stable); light nuclei can fuse (gain BE), heavy can fission (gain BE).",
+    "⚡ Shortcut:  Peak at A≈56 (Fe); max stability; light → fuse, heavy → split.",
+    "Example:  Fusion of light H releases energy; fission of U-235 releases energy.",
+    "Q7. Find the binding energy of helium-4 (mass = 4.0015 u; m_p=1.0073, m_n=1.0087 u).",
+    "Answer:  Mass of parts = 2(1.0073)+2(1.0087) = 4.0320 u. Δm = 4.0320 − 4.0015 = 0.0305 u. BE = 0.0305×931 ≈ 28.4 MeV; BE/nucleon ≈ 7.1 MeV.",
+    "⚡ Shortcut:  Δm = Σparts − m_nucleus ; BE = Δm×931.",
+    "Example:  ≈ 28.4 MeV total.",
+    "▥ 24.5 Packing Fraction & BE per Nucleon  —  Compare / Contrast Tables",
+    "BE per Nucleon Curve: Key Reading",
+    "▣ 24.6–24.7 Creation/Annihilation & Fission/Fusion",
+    "Q8. Explain particle creation and annihilation (pair production/annihilation).",
+    "Answer:  A photon of sufficient energy (≥2mc²) can convert into a particle–antiparticle pair (pair production). When a particle meets its antiparticle, they annihilate into photons (e⁻+e⁺→2γ). Mass and energy are interconverted via E = mc².",
+    "⚡ Shortcut:  γ→pair if E≥2mc² ; particle+antiparticle→γγ.",
+    "Example:  An electron–positron pair annihilates into two 511 keV gamma rays.",
+    "Q9. Differentiate nuclear fission and nuclear fusion.",
+    "Answer:  Fission: a heavy nucleus splits into lighter fragments, releasing energy (chain reaction, e.g. U-235 + n → Ba + Kr + 3n + ~200 MeV). Fusion: light nuclei combine into a heavier one, releasing energy (e.g. 4 H → He + energy, powers the Sun). Both follow E = Δm c².",
+    "⚡ Shortcut:  Fission: heavy → light; Fusion: light → heavy. Both release BE.",
+    "Example:  Fission in reactors/bombs; fusion in the Sun/H-bombs.",
+    "Q10. Why is energy released in both fission and fusion?",
+    "Answer:  In both, the products have a higher BE/nucleon than the reactants; the 'missing' mass (mass defect) is converted to energy (E = Δm c²). Fusion of light nuclei climbs toward the Fe peak; fission of heavy nuclei also climbs toward it.",
+    "⚡ Shortcut:  Products bind more tightly → mass defect → energy.",
+    "Example:  A small mass loss gives a huge energy (c² factor).",
+    "Q11. Explain a chain reaction and what is needed to sustain it.",
+    "Answer:  A chain reaction occurs when neutrons from one fission induce further fissions. It is self-sustaining when the reproduction factor (avg neutrons causing new fissions per fission) ≥ 1; <1 dies out, >1 grows (supercritical). Moderators slow neutrons; control rods absorb them.",
+    "⚡ Shortcut:  Sustained when # new fissions ≥ previous; moderator slows, rods absorb.",
+    "Example:  U-235 + slow neutron is most easily fissionable.",
+    "Q12. What is the advantage of fusion over fission (environment)?",
+    "Answer:  Fusion of light isotopes (e.g. D-T) produces far less long-lived radioactive waste than fission, no high-level spent fuel, and the fuel (deuterium, lithium) is very abundant; it also has no risk of a meltdown. Energy density per fuel mass is higher.",
+    "⚡ Shortcut:  Less waste, abundant fuel, no meltdown; huge energy.",
+    "Example:  The Sun has fused hydrogen for billions of years.",
+    "▥ 24.6–24.7 Creation/Annihilation & Fission/Fusion  —  Compare / Contrast Tables",
+    "Nuclear Fusion vs Fission",
+    "Creation vs Annihilation of Matter",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the binding energy from the mass defect.",
+    "Answer:  Mass defect Δm = [Zm_p + (A−Z)m_n] − m_nucleus (the 'missing' mass). Binding energy BE = Δm·c²; using 1 u = 931 MeV, BE = Δm(in u) × 931 MeV. This is the energy needed to disassemble the nucleus into its nucleons.",
+    "⚡ Short / exam line:  Δm = Σparts − m_nucleus ; BE = Δm×931 MeV.",
+    "Example:  He-4 has Δm ≈ 0.0305 u → BE ≈ 28.4 MeV.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T2. State the formula for nuclear radius and nuclear density.",
+    "Answer:  Nuclear radius R = R₀A^(1/3) with R₀ ≈ 1.2 fm (1.2×10⁻¹⁵ m). Since volume ∝ R³ ∝ A and mass ∝ A, the nuclear density is nearly constant, ρ ≈ 1.8×10¹⁷ kg/m³, independent of A (all nuclei have roughly the same density).",
+    "⚡ Short / exam line:  R = 1.2A^(1/3) fm ; ρ ≈ 1.8×10¹⁷ kg/m³.",
+    "Example:  A uranium and a lithium nucleus have nearly the same density.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T3. Compare nuclear fission and fusion (with advantages/disadvantages).",
+    "Answer:  Fission: heavy → light (chain reaction, U-235), ~200 MeV/event, produces radioactive waste, no high-temperature requirement (feasible today). Fusion: light → heavy (needs extreme T to overcome Coulomb barrier), ~4× energy per fuel mass, no long-lived waste, but harder to control (experimental).",
+    "⚡ Short / exam line:  Fission: ready today, waste; Fusion: cleaner, harder.",
+    "Example:  Both move toward the iron BE peak.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T4. Explain the Rutherford (gold-foil) experiment and its conclusions about the nucleus.",
+    "Answer:  α-particles were fired at thin gold foil: most passed straight through (atom is mostly empty space), a few deflected at large angles, a very few bounced back. Rutherford concluded that the positive charge and nearly all the mass are concentrated in a tiny nucleus (radius ~10⁻¹⁵ m), far smaller than the atom (~10⁻¹⁰ m).",
+    "⚡ Short / exam line:  Most pass → empty; some back-scatter → tiny dense + nucleus.",
+    "Example:  The nucleus is ~100 000× smaller than the atom.",
+    "[Explain] T5. Explain mass number, atomic number and isotopes.",
+    "Answer:  The atomic number Z is the number of protons (defines the element); the mass number A is protons + neutrons; the number of neutrons is N = A − Z. Isotopes are the same Z, different N (same element, different A), differing in mass and stability.",
+    "⚡ Short / exam line:  Z: element; A: total nucleons; N = A−Z ; isotope = same Z, different N.",
+    "Example:  Carbon-12 and Carbon-14 are isotopes.",
+    "[Explain] T6. Explain Einstein's mass-energy relation and pair production/annihilation.",
+    "Answer:  Mass and energy are equivalent: E = mc². A photon with energy ≥ 2mc² can produce a particle–antiparticle pair (pair production); when a particle meets its antiparticle, they annihilate into photons of total energy 2mc². This underlies creation/annihilation processes.",
+    "⚡ Short / exam line:  E = mc² ; γ → pair if E ≥ 2mc² ; pair → γγ.",
+    "Example:  Electron–positron annihilation gives two 511 keV photons.",
+    "[Explain] T7. Explain the BE/nucleon curve and why iron is the most stable.",
+    "Answer:  BE per nucleon rises from H, peaks near A ≈ 56 (iron group, ~8.8 MeV), then slowly falls for heavy nuclei. Iron has the maximum BE/nucleon, so it is the most tightly bound (most stable). Light nuclei can fuse to gain BE; heavy nuclei can fission to gain BE; both move toward the iron peak.",
+    "⚡ Short / exam line:  Peak at A≈56 (Fe); most stable.",
+    "Example:  Fusion of light H and fission of U-235 both release energy.",
+    "[Explain] T8. Explain nuclear fission and a chain reaction.",
+    "Answer:  In fission, a heavy nucleus (e.g. U-235) absorbs a slow neutron and splits into two lighter fragments plus 2–3 neutrons and ~200 MeV; these neutrons can induce more fissions. If the reproduction factor (new fissions per old fission) is ≥ 1, the chain reaction is sustained; a moderator slows neutrons and control rods absorb them to regulate it.",
+    "⚡ Short / exam line:  Sustained when ≥1 new fission per old fission; moderator + rods.",
+    "Example:  Reactor control uses boron/cadmium control rods.",
+    "[Explain] T9. Explain nuclear fusion and the proton-proton chain in the Sun.",
+    "Answer:  In fusion, light nuclei combine into a heavier one with higher BE/nucleon, releasing the mass defect as energy. In the Sun, the proton-proton chain fuses four protons into a helium-4 nucleus (via two deuterons), releasing ~26.7 MeV and positrons/neutrinos. This is the Sun's energy source (and of H-bombs).",
+    "⚡ Short / exam line:  Light + light → heavier + energy (toward Fe peak).",
+    "Example:  The Sun's pp chain: 4p → He-4 + energy + 2ν + 2e⁺.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T10. Professor: 'Why does fission of U-235 need slow neutrons?'",
+    "Answer:  U-235 is fissionable only with slow (thermal) neutrons; a fast neutron has too much kinetic energy and is more likely to pass through without being captured. A moderator (water, graphite) slows the neutrons to thermal energies, making fission far more likely.",
+    "⚡ Short / exam line:  U-235 + thermal neutron → fission (slow neutrons).",
+    "Example:  Moderators slow neutrons to make fission probable.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T11. Find the binding energy and BE/nucleon of helium-4 (mass = 4.0015 u; m_p = 1.0073, m_n = 1.0087 u).",
+    "Answer:  Mass of parts = 2(1.0073)+2(1.0087) = 4.0320 u. Δm = 4.0320 − 4.0015 = 0.0305 u. BE = 0.0305×931 ≈ 28.4 MeV; BE/nucleon ≈ 7.1 MeV.",
+    "⚡ Short / exam line:  Δm = Σparts − m_nucleus ; BE = Δm×931.",
+    "Example:  ≈ 28.4 MeV total; 7.1 MeV per nucleon.",
+    "★ Quick-formula memos (this unit)",
+    "Radius R = R₀A^(1/3), R₀≈1.2 fm ; nuclear density ≈1.8×10¹⁷ kg/m³ (A-independent).",
+    "E = mc² ; 1 u = 931 MeV ; Mass defect Δm = (Zm_p+(A−Z)m_n) − m_nucleus.",
+    "BE/nucleon: max near A≈56 (Fe) → most stable; high for light & heavy."
+  ]
+}

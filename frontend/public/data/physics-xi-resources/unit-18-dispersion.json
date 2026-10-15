@@ -1,0 +1,352 @@
+{
+  "unitNo": 18,
+  "unitId": "dispersion",
+  "unitName": "Dispersion",
+  "contentArea": "Waves & Optics",
+  "docxFileName": "Physics_XI_Unit_18_dispersion.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_18_dispersion.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 18: DISPERSION   Content Area: Waves & Optics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 104,
+    "tableCount": 3,
+    "questionCount": 11,
+    "theoryCount": 10,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Aspect",
+        "Pure (no overlap)",
+        "Ordinary"
+      ],
+      "rows": [
+        [
+          "Construction",
+          "Two prisms (or dispersive + non-dispersive)",
+          "Single prism"
+        ],
+        [
+          "Colours separated?",
+          "Yes, all seven",
+          "Only some (violet, red edges)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aberration",
+        "Cause",
+        "Fix"
+      ],
+      "rows": [
+        [
+          "Chromatic",
+          "Dispersion (λ-dependent n)",
+          "Achromatic combination (crown + flint)"
+        ],
+        [
+          "Spherical",
+          "Marginal rays focus differently",
+          "Parabolic surface / stop"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Condition",
+        "Requirement"
+      ],
+      "rows": [
+        [
+          "Net deviation cancelled",
+          "δ₁ + δ₂ = 0 with sign flip"
+        ],
+        [
+          "Net dispersion zero",
+          "(δV−δR)₁ + (δV−δR)₂ = 0"
+        ],
+        [
+          "Result",
+          "Two colours (say red & violet) focus together"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define a pure spectrum and how to obtain one.",
+      "answer": "A pure spectrum is one in which a single color (monochromatic) appears, without overlapping colors or white. Use a prism + a narrow slit to isolate one wavelength; otherwise a 'simple spectrum' has color mixtures.",
+      "shortcut": "Single-wavelength → pure spectrum; prism + slit isolates.",
+      "example": "A prism gives a simple (broad) spectrum; a slit gives pure."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Define dispersive power and its significance.",
+      "answer": "Dispersive power ω = (δ_v − δ_r)/δ_m, the ratio of the difference in violet and red deviations to the mean deviation. It measures how effectively a prism/lens separates colors; flint glass has a larger ω.",
+      "shortcut": "ω = (δ_v−δ_r)/δ ; larger ω → more dispersion.",
+      "example": "Flint glass disperses colors more than crown glass."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Explain chromatic aberration and spherical aberration.",
+      "answer": "Chromatic aberration is due to the wavelength-dependence of refractive index; different colors focus at different points, causing colored fringes. Spherical aberration is due to the use of spherical surfaces: marginal and paraxial rays focus at different points, giving a blurred image.",
+      "shortcut": "Chromatic = color focus error; spherical = ray-angle focus error.",
+      "example": "A simple lens shows color fringes (chromatic) and blur (spherical)."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. How are chromatic aberration and spherical aberration corrected? (mention two.)",
+      "answer": "Chromatic: combine two lenses of different materials (crown + flint) to make an achromatic doublet. Spherical: use aspherical (parabolic) mirrors/lenses or a stop to use only paraxial rays; or apodize with a small aperture.",
+      "shortcut": "Achromatic doublet for chromatic; aspheric/stop for spherical.",
+      "example": "A photographic lens is an achromatic doublet."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Define angular and linear magnification and when each is useful.",
+      "answer": "Linear magnification m = h'/h = −v/u (ratio of image and object sizes); angular magnification M = angle image subtends / angle object subtends. Linear is for real-size images (e.g. telescope, camera); angular is for instruments where image sizes are not directly comparable (e.g. magnifying glass).",
+      "shortcut": "m = −v/u (linear); M = θ'/θ (angular).",
+      "example": "A magnifying glass has high M and small m."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. A lens has P = +4 D and another has P = +2 D in contact. Find the combined power and focal length.",
+      "answer": "For thin lenses in contact, powers add: P_total = 4+2 = 6 D, f = 1/6 ≈ 0.167 m = 16.7 cm (converging). ▥ 18.1–18.2 Pure Spectrum & Aberrations  —  Compare / Contrast Tables Pure Spectrum vs Ordinary (White) Spectrum Chromatic vs Spherical Aberration ▣ 18.3 Achromatism & Applications",
+      "shortcut": "P_total = P₁+P₂ ; f = 1/P_total.",
+      "example": "A +6 D combined, f ≈ 16.7 cm."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. State the condition for an achromatic doublet of two prisms/lenses.",
+      "answer": "For achromatism, the net deviation for two colors must be zero while the net dispersion is not: (n_F−1)A + (n_C−1)A' = 0, or (ωA+ω'A') = 0 (for two chosen colors). For two thin lenses: (f_F−f_C)+ (f'_F−f'_C) = 0; equivalently 1/f_achrom = ω(1/f + 1/f').",
+      "shortcut": "(n_F−1)A+(n_C−1)A' = 0 ; or P_total = ω(P₁+P₂).",
+      "example": "A crown + flint pair is an achromat."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Explain an achromatic lens and why it is used in cameras.",
+      "answer": "An achromatic lens is a combination of a converging crown-glass and a diverging flint-glass lens (or the reverse) chosen so that chromatic aberration for two colors is eliminated while preserving dispersion. This sharpens color detail, so it is used in cameras and microscopes.",
+      "shortcut": "Crown + flint cancels two-color chromatic error.",
+      "example": "Your phone camera lens uses an achromat."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. How does a prism spectroscope work?",
+      "answer": "White light through a slit enters a prism; dispersion separates wavelengths into a spectrum (minimum-deviation position), and a telescope with a scale at the eyepiece measures each line's minimum deviation to identify wavelengths (compare with known values).",
+      "shortcut": "Prism + slit + telescope + scale; measure δ_m per color.",
+      "example": "Each spectral line's δ_m identifies its wavelength."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. What is a Fraunhofer line? Give an example.",
+      "answer": "Fraunhofer lines are dark absorption lines in the solar spectrum caused by elements in the sun absorbing specific wavelengths. The D-line (yellow) is sodium (D₁, D₂ ≈ 589 nm), used in spectroscopy.",
+      "shortcut": "Spectral absorption lines; D-line = sodium yellow.",
+      "example": "The D line lets one identify sodium in stars."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Why is a prism preferred to a diffraction grating for high-resolution work?",
+      "answer": "A diffraction grating gives more orders and higher angular dispersion per unit than a prism for high-resolution work; for short wavelengths (UV/X-ray) a grating works better, while a prism is simpler for the visible with a continuous, monotonic spectrum. ▥ 18.3 Achromatism & Applications  —  Compare / Contrast Tables Achromatism: Two-Lens Pair PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Grating: higher dispersion, multi-order; prism: simple, continuous.",
+      "example": "A high-resolution spectrometer uses a grating."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T1. State the conditions for an achromatic doublet.",
+      "answer": "For two thin lenses (materials of different dispersion) to be achromatic for two colors (e.g. F and C), their combined power must be the same for both: (n_F−1)/f_1 + (n_C−1)/f_1 = (n_F−1)/f_2 + (n_C−1)/f_2, giving the achromatic condition (ω/ f_1 + ω′/ f_2) = 0 while the net power is nonzero.",
+      "shortcut": "(ω/f₁+ω′/f₂) = 0 ; net power ≠ 0.",
+      "example": "Used in a crown + flint doublet."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T2. Compare a prism and a diffraction grating as spectrosopes.",
+      "answer": "A prism gives a continuous, monotonic spectrum with good resolution in the visible but poor at short (UV/X-ray) wavelengths and a single order. A grating gives multiple orders, higher and linear dispersion, and works into UV/X-ray; the price is overlapping orders (need a filter).",
+      "shortcut": "Grating: higher dispersion, multi-order; prism: simple, monotonic.",
+      "example": "High-resolution spectrometers use gratings."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T3. Explain chromatic aberration and how it is corrected.",
+      "answer": "Because refractive index depends on wavelength, a simple lens forms different-colored images at different foci (violet closer, red farther), causing colored fringes. Correction uses an achromatic doublet: a converging crown lens plus a diverging flint lens chosen so two colors focus together, greatly reducing the fringing.",
+      "shortcut": "Crown + flint → two colors co-focus.",
+      "example": "Camera lenses are achromatic doublets."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain spherical aberration and how it is reduced.",
+      "answer": "Marginal rays (far from the axis) of a spherical surface focus at a different point than paraxial rays, blurring the image. It is reduced by using aspherical (parabolic) surfaces, by a smaller aperture (stop) using only paraxial rays, or by combining surfaces of different shapes.",
+      "shortcut": "Marginal vs paraxial foci → blur.",
+      "example": "A small aperture sharpens a lens (higher f-number)."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain a pure spectrum and how a prism gives a 'simple' vs 'pure' spectrum.",
+      "answer": "A pure spectrum shows one wavelength at a time (no overlap). A prism gives a 'simple' spectrum that is not pure, because different colors have different angular spreads; to obtain a pure (monochromatic) spectrum a narrow slit plus a second prism (or a lens) is used to isolate a single line.",
+      "shortcut": "Prism alone → simple (mixed) spectrum; + slit/lens → pure.",
+      "example": "Spectral lines are isolated by a slit + telescope."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the dispersive power of a material and the Fraunhofer lines.",
+      "answer": "Dispersive power ω measures how strongly a material spreads the spectrum; a material of high ω (flint glass) gives a more spread-out spectrum. Fraunhofer lines are the dark absorption lines in the solar spectrum used to label and identify colors and elements.",
+      "shortcut": "High ω → more spread; Fraunhofer lines are the solar absorption lines.",
+      "example": "The D-line (yellow) is sodium."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain a spectroscope's components and use.",
+      "answer": "A spectroscope has a collimating slit, a prism (dispersion), a telescope/eyepiece with a scale, and sometimes a compensator; it turns a prism's dispersion into a readable spectrum so one can measure a line's deviation and hence its wavelength, or compare colors.",
+      "shortcut": "Slit + prism + telescope + scale; measure deviation.",
+      "example": "Used to read spectra and to check lamp wavelengths."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain how a lens combination corrects chromatic aberration (achromatism).",
+      "answer": "By joining a converging lens of one material (crown, low dispersion) to a diverging lens of another (flint, high dispersion), one can make the net power for two chosen colors equal, so their images coincide while a dispersion remains to separate colors. This is an achromatic doublet.",
+      "shortcut": "Crown + flint cancel two-color error, keep dispersion.",
+      "example": "Reduces colored fringes in photography."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T9. Why is a crown-glass lens used with a flint-glass lens in a telescope?",
+      "answer": "Crown has a high refractive index but low dispersive power; flint has a high dispersive power. The achromatic pair makes the two colors (F and C) focus at the same point, canceling chromatic aberration while maintaining strong net magnification; this reduces colored fringes in the eyepiece.",
+      "shortcut": "Different dispersions → two-color cancellation.",
+      "example": "Telescopes are achromatic (crown + flint) doublets."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. Two thin lenses: f₁ = +20 cm (crown, ω₁=0.5), f₂ = −40 cm (flint, ω₂=1.0). Find the combined focal length and check achromatic.",
+      "answer": "1/f = 1/20 − 1/40 = 1/40 → f = 40 cm. Achromatic: (ω₁/f₁+ω₂/f₂) = (0.5/20) + (1.0/−40) = 0.025 − 0.025 = 0 → condition satisfied; the pair is achromatic.",
+      "shortcut": "Achromatic: Σω/f = 0.",
+      "example": "f = 40 cm, and the pair is achromatic."
+    }
+  ],
+  "formulas": [
+    "Dispersive power ω = (δ_v−δ_r)/δ ; flint glass > crown glass.",
+    "Achromatic doublet: (n_F−1)A + (n_C−1)A' = 0 ; (ωA+ω'A') = 0 for two colors.",
+    "Chromatic aberration: colour fringes; Spherical aberration: central vs marginal rays."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 18: DISPERSION   Content Area: Waves & Optics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 18.1–18.2 Pure Spectrum & Aberrations",
+    "Q1. Define a pure spectrum and how to obtain one.",
+    "Answer:  A pure spectrum is one in which a single color (monochromatic) appears, without overlapping colors or white. Use a prism + a narrow slit to isolate one wavelength; otherwise a 'simple spectrum' has color mixtures.",
+    "⚡ Shortcut:  Single-wavelength → pure spectrum; prism + slit isolates.",
+    "Example:  A prism gives a simple (broad) spectrum; a slit gives pure.",
+    "Q2. Define dispersive power and its significance.",
+    "Answer:  Dispersive power ω = (δ_v − δ_r)/δ_m, the ratio of the difference in violet and red deviations to the mean deviation. It measures how effectively a prism/lens separates colors; flint glass has a larger ω.",
+    "⚡ Shortcut:  ω = (δ_v−δ_r)/δ ; larger ω → more dispersion.",
+    "Example:  Flint glass disperses colors more than crown glass.",
+    "Q3. Explain chromatic aberration and spherical aberration.",
+    "Answer:  Chromatic aberration is due to the wavelength-dependence of refractive index; different colors focus at different points, causing colored fringes. Spherical aberration is due to the use of spherical surfaces: marginal and paraxial rays focus at different points, giving a blurred image.",
+    "⚡ Shortcut:  Chromatic = color focus error; spherical = ray-angle focus error.",
+    "Example:  A simple lens shows color fringes (chromatic) and blur (spherical).",
+    "Q4. How are chromatic aberration and spherical aberration corrected? (mention two.)",
+    "Answer:  Chromatic: combine two lenses of different materials (crown + flint) to make an achromatic doublet. Spherical: use aspherical (parabolic) mirrors/lenses or a stop to use only paraxial rays; or apodize with a small aperture.",
+    "⚡ Shortcut:  Achromatic doublet for chromatic; aspheric/stop for spherical.",
+    "Example:  A photographic lens is an achromatic doublet.",
+    "Q5. Define angular and linear magnification and when each is useful.",
+    "Answer:  Linear magnification m = h'/h = −v/u (ratio of image and object sizes); angular magnification M = angle image subtends / angle object subtends. Linear is for real-size images (e.g. telescope, camera); angular is for instruments where image sizes are not directly comparable (e.g. magnifying glass).",
+    "⚡ Shortcut:  m = −v/u (linear); M = θ'/θ (angular).",
+    "Example:  A magnifying glass has high M and small m.",
+    "Q6. A lens has P = +4 D and another has P = +2 D in contact. Find the combined power and focal length.",
+    "Answer:  For thin lenses in contact, powers add: P_total = 4+2 = 6 D, f = 1/6 ≈ 0.167 m = 16.7 cm (converging).",
+    "⚡ Shortcut:  P_total = P₁+P₂ ; f = 1/P_total.",
+    "Example:  A +6 D combined, f ≈ 16.7 cm.",
+    "▥ 18.1–18.2 Pure Spectrum & Aberrations  —  Compare / Contrast Tables",
+    "Pure Spectrum vs Ordinary (White) Spectrum",
+    "Chromatic vs Spherical Aberration",
+    "▣ 18.3 Achromatism & Applications",
+    "Q7. State the condition for an achromatic doublet of two prisms/lenses.",
+    "Answer:  For achromatism, the net deviation for two colors must be zero while the net dispersion is not: (n_F−1)A + (n_C−1)A' = 0, or (ωA+ω'A') = 0 (for two chosen colors). For two thin lenses: (f_F−f_C)+ (f'_F−f'_C) = 0; equivalently 1/f_achrom = ω(1/f + 1/f').",
+    "⚡ Shortcut:  (n_F−1)A+(n_C−1)A' = 0 ; or P_total = ω(P₁+P₂).",
+    "Example:  A crown + flint pair is an achromat.",
+    "Q8. Explain an achromatic lens and why it is used in cameras.",
+    "Answer:  An achromatic lens is a combination of a converging crown-glass and a diverging flint-glass lens (or the reverse) chosen so that chromatic aberration for two colors is eliminated while preserving dispersion. This sharpens color detail, so it is used in cameras and microscopes.",
+    "⚡ Shortcut:  Crown + flint cancels two-color chromatic error.",
+    "Example:  Your phone camera lens uses an achromat.",
+    "Q9. How does a prism spectroscope work?",
+    "Answer:  White light through a slit enters a prism; dispersion separates wavelengths into a spectrum (minimum-deviation position), and a telescope with a scale at the eyepiece measures each line's minimum deviation to identify wavelengths (compare with known values).",
+    "⚡ Shortcut:  Prism + slit + telescope + scale; measure δ_m per color.",
+    "Example:  Each spectral line's δ_m identifies its wavelength.",
+    "Q10. What is a Fraunhofer line? Give an example.",
+    "Answer:  Fraunhofer lines are dark absorption lines in the solar spectrum caused by elements in the sun absorbing specific wavelengths. The D-line (yellow) is sodium (D₁, D₂ ≈ 589 nm), used in spectroscopy.",
+    "⚡ Shortcut:  Spectral absorption lines; D-line = sodium yellow.",
+    "Example:  The D line lets one identify sodium in stars.",
+    "Q11. Why is a prism preferred to a diffraction grating for high-resolution work?",
+    "Answer:  A diffraction grating gives more orders and higher angular dispersion per unit than a prism for high-resolution work; for short wavelengths (UV/X-ray) a grating works better, while a prism is simpler for the visible with a continuous, monotonic spectrum.",
+    "⚡ Shortcut:  Grating: higher dispersion, multi-order; prism: simple, continuous.",
+    "Example:  A high-resolution spectrometer uses a grating.",
+    "▥ 18.3 Achromatism & Applications  —  Compare / Contrast Tables",
+    "Achromatism: Two-Lens Pair",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T1. State the conditions for an achromatic doublet.",
+    "Answer:  For two thin lenses (materials of different dispersion) to be achromatic for two colors (e.g. F and C), their combined power must be the same for both: (n_F−1)/f_1 + (n_C−1)/f_1 = (n_F−1)/f_2 + (n_C−1)/f_2, giving the achromatic condition (ω/ f_1 + ω′/ f_2) = 0 while the net power is nonzero.",
+    "⚡ Short / exam line:  (ω/f₁+ω′/f₂) = 0 ; net power ≠ 0.",
+    "Example:  Used in a crown + flint doublet.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T2. Compare a prism and a diffraction grating as spectrosopes.",
+    "Answer:  A prism gives a continuous, monotonic spectrum with good resolution in the visible but poor at short (UV/X-ray) wavelengths and a single order. A grating gives multiple orders, higher and linear dispersion, and works into UV/X-ray; the price is overlapping orders (need a filter).",
+    "⚡ Short / exam line:  Grating: higher dispersion, multi-order; prism: simple, monotonic.",
+    "Example:  High-resolution spectrometers use gratings.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T3. Explain chromatic aberration and how it is corrected.",
+    "Answer:  Because refractive index depends on wavelength, a simple lens forms different-colored images at different foci (violet closer, red farther), causing colored fringes. Correction uses an achromatic doublet: a converging crown lens plus a diverging flint lens chosen so two colors focus together, greatly reducing the fringing.",
+    "⚡ Short / exam line:  Crown + flint → two colors co-focus.",
+    "Example:  Camera lenses are achromatic doublets.",
+    "[Explain] T4. Explain spherical aberration and how it is reduced.",
+    "Answer:  Marginal rays (far from the axis) of a spherical surface focus at a different point than paraxial rays, blurring the image. It is reduced by using aspherical (parabolic) surfaces, by a smaller aperture (stop) using only paraxial rays, or by combining surfaces of different shapes.",
+    "⚡ Short / exam line:  Marginal vs paraxial foci → blur.",
+    "Example:  A small aperture sharpens a lens (higher f-number).",
+    "[Explain] T5. Explain a pure spectrum and how a prism gives a 'simple' vs 'pure' spectrum.",
+    "Answer:  A pure spectrum shows one wavelength at a time (no overlap). A prism gives a 'simple' spectrum that is not pure, because different colors have different angular spreads; to obtain a pure (monochromatic) spectrum a narrow slit plus a second prism (or a lens) is used to isolate a single line.",
+    "⚡ Short / exam line:  Prism alone → simple (mixed) spectrum; + slit/lens → pure.",
+    "Example:  Spectral lines are isolated by a slit + telescope.",
+    "[Explain] T6. Explain the dispersive power of a material and the Fraunhofer lines.",
+    "Answer:  Dispersive power ω measures how strongly a material spreads the spectrum; a material of high ω (flint glass) gives a more spread-out spectrum. Fraunhofer lines are the dark absorption lines in the solar spectrum used to label and identify colors and elements.",
+    "⚡ Short / exam line:  High ω → more spread; Fraunhofer lines are the solar absorption lines.",
+    "Example:  The D-line (yellow) is sodium.",
+    "[Explain] T7. Explain a spectroscope's components and use.",
+    "Answer:  A spectroscope has a collimating slit, a prism (dispersion), a telescope/eyepiece with a scale, and sometimes a compensator; it turns a prism's dispersion into a readable spectrum so one can measure a line's deviation and hence its wavelength, or compare colors.",
+    "⚡ Short / exam line:  Slit + prism + telescope + scale; measure deviation.",
+    "Example:  Used to read spectra and to check lamp wavelengths.",
+    "[Explain] T8. Explain how a lens combination corrects chromatic aberration (achromatism).",
+    "Answer:  By joining a converging lens of one material (crown, low dispersion) to a diverging lens of another (flint, high dispersion), one can make the net power for two chosen colors equal, so their images coincide while a dispersion remains to separate colors. This is an achromatic doublet.",
+    "⚡ Short / exam line:  Crown + flint cancel two-color error, keep dispersion.",
+    "Example:  Reduces colored fringes in photography.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T9. Why is a crown-glass lens used with a flint-glass lens in a telescope?",
+    "Answer:  Crown has a high refractive index but low dispersive power; flint has a high dispersive power. The achromatic pair makes the two colors (F and C) focus at the same point, canceling chromatic aberration while maintaining strong net magnification; this reduces colored fringes in the eyepiece.",
+    "⚡ Short / exam line:  Different dispersions → two-color cancellation.",
+    "Example:  Telescopes are achromatic (crown + flint) doublets.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. Two thin lenses: f₁ = +20 cm (crown, ω₁=0.5), f₂ = −40 cm (flint, ω₂=1.0). Find the combined focal length and check achromatic.",
+    "Answer:  1/f = 1/20 − 1/40 = 1/40 → f = 40 cm. Achromatic: (ω₁/f₁+ω₂/f₂) = (0.5/20) + (1.0/−40) = 0.025 − 0.025 = 0 → condition satisfied; the pair is achromatic.",
+    "⚡ Short / exam line:  Achromatic: Σω/f = 0.",
+    "Example:  f = 40 cm, and the pair is achromatic.",
+    "★ Quick-formula memos (this unit)",
+    "Dispersive power ω = (δ_v−δ_r)/δ ; flint glass > crown glass.",
+    "Achromatic doublet: (n_F−1)A + (n_C−1)A' = 0 ; (ωA+ω'A') = 0 for two colors.",
+    "Chromatic aberration: colour fringes; Spherical aberration: central vs marginal rays."
+  ]
+}

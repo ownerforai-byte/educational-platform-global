@@ -1,0 +1,413 @@
+{
+  "unitNo": 25,
+  "unitId": "solids",
+  "unitName": "Solids",
+  "contentArea": "Modern Physics",
+  "docxFileName": "Physics_XI_Unit_25_solids.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_25_solids.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 25: SOLIDS   Content Area: Modern Physics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 109,
+    "tableCount": 4,
+    "questionCount": 11,
+    "theoryCount": 11,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Type",
+        "E_g (eV)",
+        "Conduction band",
+        "Valence band",
+        "Uses"
+      ],
+      "rows": [
+        [
+          "Conductor (metal)",
+          "0 (bands overlap)",
+          "Always",
+          "—",
+          "Wires"
+        ],
+        [
+          "Semiconductor",
+          "Small (~0.7–3 eV)",
+          "Gap",
+          "Si (1.1), Ge (0.7)",
+          "Diodes, ICs"
+        ],
+        [
+          "Insulator",
+          "Large (> 5 eV)",
+          "Wide gap",
+          "Ceramics, glass",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Factor",
+        "Effect"
+      ],
+      "rows": [
+        [
+          "E_g ↑",
+          "Fewer e⁻ cross → resistance ↑"
+        ],
+        [
+          "Temperature ↑ (semiconductor)",
+          "More carriers → resistance ↓ (opposite to metals)"
+        ],
+        [
+          "Doping",
+          "Intentionally adds carriers"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Intrinsic (pure)",
+        "Extrinsic (doped)"
+      ],
+      "rows": [
+        [
+          "Carrier source",
+          "Thermally generated e⁻–h pairs",
+          "Donor/acceptor impurity levels"
+        ],
+        [
+          "Conductivity",
+          "Low, T-dependent",
+          "Much higher, tunable"
+        ],
+        [
+          "n = p?",
+          "Yes (n = p)",
+          "No (n-type n > p; p-type p > n)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "n-type",
+        "p-type"
+      ],
+      "rows": [
+        [
+          "Dopant",
+          "Pentavalent (P, As)",
+          "Trivalent (B, Ga)"
+        ],
+        [
+          "Majority carrier",
+          "Electrons",
+          "Holes"
+        ],
+        [
+          "Minority carrier",
+          "Holes",
+          "Electrons"
+        ],
+        [
+          "Fermi level",
+          "Toward C-band",
+          "Toward V-band"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Explain energy bands in solids.",
+      "answer": "In a solid, atoms are close that their atomic orbitals overlap into broad energy bands (valence band, conduction band) separated by a forbidden band gap E_g. Electrons can move in bands; they cannot have energies in the gap.",
+      "shortcut": "Close-packed atoms → orbitals merge into bands; gap in between.",
+      "example": "The gap size E_g decides the electrical type."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Distinguish metals, insulators and semiconductors using band theory.",
+      "answer": "Metal: valence and conduction bands overlap (or partially filled) → electrons move freely (good conductor). Insulator: very large gap E_g (>3 eV) → few electrons in conduction band (poor conductor). Semiconductor: small gap E_g (~1 eV) → some conduction, sensitive to temperature.",
+      "shortcut": "Metal: bands overlap; Insulator: large E_g; Semiconductor: small E_g.",
+      "example": "Si (1.1 eV) is a semiconductor; glass is an insulator."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Why does a semiconductor's conductivity increase with temperature?",
+      "answer": "Raising T excites more valence electrons across the small band gap into the conduction band, creating electron–hole pairs; more charge carriers mean higher conductivity (the opposite of a metal, whose carriers scatter more at high T).",
+      "shortcut": "T ↑ → more e⁻–h⁺ pairs → σ ↑ (semiconductors).",
+      "example": "A sensor's resistance falls as it warms up."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Define band gap and its effect on optical absorption.",
+      "answer": "The band gap E_g is the minimum energy to lift a valence electron into the conduction band. A material absorbs photons with hν ≥ E_g (and transmits/reflects the rest); larger E_g means absorption at shorter (bluer) wavelengths.",
+      "shortcut": "Absorb if hν ≥ E_g; larger gap → shorter wavelength.",
+      "example": "Diamond (E_g≈5.5 eV) is transparent in the visible."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Explain why metals are shiny and good conductors.",
+      "answer": "A partially-filled band (or overlapping bands) leaves many free electrons that move under an applied field, giving high conductivity; the same electrons reflect incident light, so metals look shiny. ▥ 25.1–25.2 Energy Bands & Band Theory of Solids  —  Compare / Contrast Tables Conductor vs Semiconductor vs Insulator (band picture) Band Theory: What the Gap Controls ▣ 25.3 Intrinsic & Extrinsic Semiconductors",
+      "shortcut": "Free electrons → conduction + reflection (shine).",
+      "example": "Copper's free electrons make it both conductive and reflective."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define intrinsic semiconductor.",
+      "answer": "An intrinsic semiconductor is a pure semiconductor (e.g. Si, Ge) where the number of free electrons equals the number of holes (n₀ = p₀), both arising from thermal excitation across the gap; its resistivity is relatively high.",
+      "shortcut": "Pure: n = p (equal carriers); high resistivity.",
+      "example": "Pure silicon at room temperature."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Explain extrinsic (doped) semiconductors: n-type and p-type.",
+      "answer": "Doping adds impurities: n-type uses a 5-valent donor (e.g. P in Si) adding extra electrons (majority carriers e⁻); p-type uses a 3-valent acceptor (e.g. B in Si) creating holes (majority carriers h⁺). Doping greatly increases conductivity.",
+      "shortcut": "n-type: donor (5-valent) → extra e⁻; p-type: acceptor (3-valent) → holes.",
+      "example": "P-doped Si is n-type; B-doped Si is p-type."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Explain a p–n junction diode and its I–V behaviour.",
+      "answer": "Joining p- and n-type forms a depletion layer and a built-in potential. Forward bias (p +ve) reduces the barrier, allowing current after ~0.7 V (Si); reverse bias widens the barrier, blocking current until breakdown. The I–V curve is asymmetric (rectifier).",
+      "shortcut": "Forward: ~0.7 V (Si) conducts; Reverse: blocks (except breakdown).",
+      "example": "A diode lets current one way only."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. What is an electron–hole recombination and where is it used?",
+      "answer": "A conduction-band electron falls into a valence-band hole, annihilating both carriers (may emit light in a direct-gap semiconductor). Recombination is the working principle of an LED (light emitted) and of charge storage in a solar cell when separated.",
+      "shortcut": "e⁻ + h⁺ → recombine (may emit a photon).",
+      "example": "An LED glows when carriers recombine."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Compare the effect of doping on the Fermi level.",
+      "answer": "In an intrinsic semiconductor the Fermi level is near mid-gap. Doping shifts it: n-type moves it toward the conduction band (more e⁻); p-type moves it toward the valence band (more h⁺), reflecting the dominant carrier type.",
+      "shortcut": "n-type: Fermi ↑ (toward C); p-type: Fermi ↓ (toward V).",
+      "example": "The Fermi position tells the majority carrier."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Explain the use of semiconductors in a solar cell.",
+      "answer": "A p–n junction solar cell absorbs sunlight, generating electron–hole pairs; the junction's built-in field separates them, producing a photocurrent and voltage. Connecting many cells in series gives a usable DC voltage for power. ▥ 25.3 Intrinsic & Extrinsic Semiconductors  —  Compare / Contrast Tables Intrinsic vs Extrinsic Semiconductor n-type vs p-type Semiconductor PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Light → e⁻–h⁺ pairs → junction separates them → current.",
+      "example": "Rooftop PV panels are arrays of p–n solar cells."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T1. Compare the conduction in metals, insulators and semiconductors, including temperature effects.",
+      "answer": "Metal: many free electrons; conductivity falls slightly with temperature (more scattering). Insulator: large gap, negligible conduction. Semiconductor: small gap; conductivity rises strongly with temperature (more e⁻–h⁺ pairs), the opposite of a metal.",
+      "shortcut": "Metal: T↑ σ↓ ; Insulator: insulates ; Semiconductor: T↑ σ↑.",
+      "example": "A sensor's resistance falls as it warms up."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T2. Explain the band theory of solids and how orbitals form bands.",
+      "answer": "In a solid, atoms are close that their atomic orbitals overlap and broaden into energy bands (valence band, conduction band) separated by a forbidden band gap E_g. Electrons can occupy bands; they cannot have energies in the gap. The band structure (filling and gap size) determines the electrical type.",
+      "shortcut": "Close atoms → orbitals merge into bands; gap between V and C.",
+      "example": "The gap size E_g sets the material type."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T3. Explain the energy-band structure of a metal and why it conducts.",
+      "answer": "In a metal, the valence and conduction bands overlap (or the band is only partially filled), so there are free electrons that can move under a small applied field, giving high conductivity. The same free electrons reflect light, making metals shiny.",
+      "shortcut": "Metal: bands overlap/partially filled → free e⁻ → conductive.",
+      "example": "Copper's free electrons make it both conductive and reflective."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain the band structure of an insulator and why it does not conduct.",
+      "answer": "In an insulator, the valence band is full and the conduction band empty, separated by a large band gap (E_g > ~3 eV). At room temperature very few electrons have enough energy to cross the gap, so there are almost no carriers and it does not conduct.",
+      "shortcut": "Insulator: large E_g (>3 eV) → few carriers.",
+      "example": "Glass, rubber, plastic have large gaps → insulators."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the band structure of a semiconductor and intrinsic conduction.",
+      "answer": "A semiconductor has a small band gap (~1 eV for Si). At room temperature some valence electrons thermally cross into the conduction band, creating a free electron and a hole; the conductivity rises with temperature. In an intrinsic (pure) semiconductor, n = p (equal electrons and holes).",
+      "shortcut": "Semiconductor: small E_g (~1 eV); n = p intrinsic.",
+      "example": "Si (1.1 eV) conducts a little at room temperature."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain n-type and p-type (extrinsic) semiconductors by doping.",
+      "answer": "Doping adds impurities: n-type uses a 5-valent donor (e.g. P in Si) adding extra conduction electrons (majority carriers e⁻); p-type uses a 3-valent acceptor (e.g. B in Si) creating holes (majority carriers h⁺). Doping greatly increases the conductivity.",
+      "shortcut": "n-type: donor → e⁻ ; p-type: acceptor → h⁺.",
+      "example": "P-doped Si is n-type; B-doped Si is p-type."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain a p–n junction diode and its forward/reverse behaviour.",
+      "answer": "Joining p- and n-type forms a depletion layer and a built-in potential. Forward bias (p positive) reduces the barrier, allowing current after ~0.7 V (Si); reverse bias widens the barrier, blocking current until breakdown. The asymmetric I–V makes it a rectifier.",
+      "shortcut": "Forward ~0.7 V (Si); reverse blocks (except breakdown).",
+      "example": "A diode conducts one way only."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain how a solar cell converts light to electricity.",
+      "answer": "A p–n junction solar cell absorbs sunlight, generating electron–hole pairs; the junction's built-in field separates them, pulling electrons to the n-side and holes to the p-side, producing a photocurrent and a voltage. Connecting many cells in series gives a usable DC voltage for power.",
+      "shortcut": "Light → e⁻–h⁺ pairs → junction separates them → current.",
+      "example": "Rooftop PV panels are arrays of p–n solar cells."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T9. Explain an LED and the role of band gap in its colour.",
+      "answer": "An LED is a forward-biased p–n junction; when an electron in the conduction band recombines with a hole in the valence band, it emits a photon of energy hν ≈ E_g, so the colour (wavelength) is set by the band gap. A larger E_g gives a bluer (shorter) wavelength.",
+      "shortcut": "hν ≈ E_g ; larger E_g → bluer.",
+      "example": "A 1.6 eV LED emits red; a 3 eV LED emits blue/UV."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T10. Professor: 'What is a hole and how does it behave as a charge carrier?'",
+      "answer": "A hole is the absence of an electron in a filled valence band; when a neighbouring electron fills it, the hole 'moves' the other way, behaving as a positive charge carrier. It is not a real particle but a useful way to describe positive current flow in a semiconductor.",
+      "shortcut": "Hole = absence of e⁻, acts like + charge.",
+      "example": "In p-type, holes are the majority carriers."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T11. An LED uses a semiconductor with E_g = 2.0 eV. Estimate its emission wavelength.",
+      "answer": "hν ≈ E_g → λ = hc/E_g = (1240 eV·nm)/2.0 eV ≈ 620 nm (red light).",
+      "shortcut": "λ = hc/E_g ; 1240 eV·nm shortcut.",
+      "example": "≈ 620 nm, a red LED."
+    }
+  ],
+  "formulas": [
+    "Energy bands: valence (V), conduction (C), gap E_g between them.",
+    "Metal: V & C overlap/merged; Insulator: E_g large (>~3 eV); Semiconductor: E_g small (~1 eV).",
+    "Intrinsic: equal e⁻ & h⁺ ; Doping: n-type (donor, e⁻ rich), p-type (acceptor, h⁺ rich).",
+    "Diode: p-n junction; forward ~0.7 V (Si)."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 25: SOLIDS   Content Area: Modern Physics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 25.1–25.2 Energy Bands & Band Theory of Solids",
+    "Q1. Explain energy bands in solids.",
+    "Answer:  In a solid, atoms are close that their atomic orbitals overlap into broad energy bands (valence band, conduction band) separated by a forbidden band gap E_g. Electrons can move in bands; they cannot have energies in the gap.",
+    "⚡ Shortcut:  Close-packed atoms → orbitals merge into bands; gap in between.",
+    "Example:  The gap size E_g decides the electrical type.",
+    "Q2. Distinguish metals, insulators and semiconductors using band theory.",
+    "Answer:  Metal: valence and conduction bands overlap (or partially filled) → electrons move freely (good conductor). Insulator: very large gap E_g (>3 eV) → few electrons in conduction band (poor conductor). Semiconductor: small gap E_g (~1 eV) → some conduction, sensitive to temperature.",
+    "⚡ Shortcut:  Metal: bands overlap; Insulator: large E_g; Semiconductor: small E_g.",
+    "Example:  Si (1.1 eV) is a semiconductor; glass is an insulator.",
+    "Q3. Why does a semiconductor's conductivity increase with temperature?",
+    "Answer:  Raising T excites more valence electrons across the small band gap into the conduction band, creating electron–hole pairs; more charge carriers mean higher conductivity (the opposite of a metal, whose carriers scatter more at high T).",
+    "⚡ Shortcut:  T ↑ → more e⁻–h⁺ pairs → σ ↑ (semiconductors).",
+    "Example:  A sensor's resistance falls as it warms up.",
+    "Q4. Define band gap and its effect on optical absorption.",
+    "Answer:  The band gap E_g is the minimum energy to lift a valence electron into the conduction band. A material absorbs photons with hν ≥ E_g (and transmits/reflects the rest); larger E_g means absorption at shorter (bluer) wavelengths.",
+    "⚡ Shortcut:  Absorb if hν ≥ E_g; larger gap → shorter wavelength.",
+    "Example:  Diamond (E_g≈5.5 eV) is transparent in the visible.",
+    "Q5. Explain why metals are shiny and good conductors.",
+    "Answer:  A partially-filled band (or overlapping bands) leaves many free electrons that move under an applied field, giving high conductivity; the same electrons reflect incident light, so metals look shiny.",
+    "⚡ Shortcut:  Free electrons → conduction + reflection (shine).",
+    "Example:  Copper's free electrons make it both conductive and reflective.",
+    "▥ 25.1–25.2 Energy Bands & Band Theory of Solids  —  Compare / Contrast Tables",
+    "Conductor vs Semiconductor vs Insulator (band picture)",
+    "Band Theory: What the Gap Controls",
+    "▣ 25.3 Intrinsic & Extrinsic Semiconductors",
+    "Q6. Define intrinsic semiconductor.",
+    "Answer:  An intrinsic semiconductor is a pure semiconductor (e.g. Si, Ge) where the number of free electrons equals the number of holes (n₀ = p₀), both arising from thermal excitation across the gap; its resistivity is relatively high.",
+    "⚡ Shortcut:  Pure: n = p (equal carriers); high resistivity.",
+    "Example:  Pure silicon at room temperature.",
+    "Q7. Explain extrinsic (doped) semiconductors: n-type and p-type.",
+    "Answer:  Doping adds impurities: n-type uses a 5-valent donor (e.g. P in Si) adding extra electrons (majority carriers e⁻); p-type uses a 3-valent acceptor (e.g. B in Si) creating holes (majority carriers h⁺). Doping greatly increases conductivity.",
+    "⚡ Shortcut:  n-type: donor (5-valent) → extra e⁻; p-type: acceptor (3-valent) → holes.",
+    "Example:  P-doped Si is n-type; B-doped Si is p-type.",
+    "Q8. Explain a p–n junction diode and its I–V behaviour.",
+    "Answer:  Joining p- and n-type forms a depletion layer and a built-in potential. Forward bias (p +ve) reduces the barrier, allowing current after ~0.7 V (Si); reverse bias widens the barrier, blocking current until breakdown. The I–V curve is asymmetric (rectifier).",
+    "⚡ Shortcut:  Forward: ~0.7 V (Si) conducts; Reverse: blocks (except breakdown).",
+    "Example:  A diode lets current one way only.",
+    "Q9. What is an electron–hole recombination and where is it used?",
+    "Answer:  A conduction-band electron falls into a valence-band hole, annihilating both carriers (may emit light in a direct-gap semiconductor). Recombination is the working principle of an LED (light emitted) and of charge storage in a solar cell when separated.",
+    "⚡ Shortcut:  e⁻ + h⁺ → recombine (may emit a photon).",
+    "Example:  An LED glows when carriers recombine.",
+    "Q10. Compare the effect of doping on the Fermi level.",
+    "Answer:  In an intrinsic semiconductor the Fermi level is near mid-gap. Doping shifts it: n-type moves it toward the conduction band (more e⁻); p-type moves it toward the valence band (more h⁺), reflecting the dominant carrier type.",
+    "⚡ Shortcut:  n-type: Fermi ↑ (toward C); p-type: Fermi ↓ (toward V).",
+    "Example:  The Fermi position tells the majority carrier.",
+    "Q11. Explain the use of semiconductors in a solar cell.",
+    "Answer:  A p–n junction solar cell absorbs sunlight, generating electron–hole pairs; the junction's built-in field separates them, producing a photocurrent and voltage. Connecting many cells in series gives a usable DC voltage for power.",
+    "⚡ Shortcut:  Light → e⁻–h⁺ pairs → junction separates them → current.",
+    "Example:  Rooftop PV panels are arrays of p–n solar cells.",
+    "▥ 25.3 Intrinsic & Extrinsic Semiconductors  —  Compare / Contrast Tables",
+    "Intrinsic vs Extrinsic Semiconductor",
+    "n-type vs p-type Semiconductor",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T1. Compare the conduction in metals, insulators and semiconductors, including temperature effects.",
+    "Answer:  Metal: many free electrons; conductivity falls slightly with temperature (more scattering). Insulator: large gap, negligible conduction. Semiconductor: small gap; conductivity rises strongly with temperature (more e⁻–h⁺ pairs), the opposite of a metal.",
+    "⚡ Short / exam line:  Metal: T↑ σ↓ ; Insulator: insulates ; Semiconductor: T↑ σ↑.",
+    "Example:  A sensor's resistance falls as it warms up.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T2. Explain the band theory of solids and how orbitals form bands.",
+    "Answer:  In a solid, atoms are close that their atomic orbitals overlap and broaden into energy bands (valence band, conduction band) separated by a forbidden band gap E_g. Electrons can occupy bands; they cannot have energies in the gap. The band structure (filling and gap size) determines the electrical type.",
+    "⚡ Short / exam line:  Close atoms → orbitals merge into bands; gap between V and C.",
+    "Example:  The gap size E_g sets the material type.",
+    "[Explain] T3. Explain the energy-band structure of a metal and why it conducts.",
+    "Answer:  In a metal, the valence and conduction bands overlap (or the band is only partially filled), so there are free electrons that can move under a small applied field, giving high conductivity. The same free electrons reflect light, making metals shiny.",
+    "⚡ Short / exam line:  Metal: bands overlap/partially filled → free e⁻ → conductive.",
+    "Example:  Copper's free electrons make it both conductive and reflective.",
+    "[Explain] T4. Explain the band structure of an insulator and why it does not conduct.",
+    "Answer:  In an insulator, the valence band is full and the conduction band empty, separated by a large band gap (E_g > ~3 eV). At room temperature very few electrons have enough energy to cross the gap, so there are almost no carriers and it does not conduct.",
+    "⚡ Short / exam line:  Insulator: large E_g (>3 eV) → few carriers.",
+    "Example:  Glass, rubber, plastic have large gaps → insulators.",
+    "[Explain] T5. Explain the band structure of a semiconductor and intrinsic conduction.",
+    "Answer:  A semiconductor has a small band gap (~1 eV for Si). At room temperature some valence electrons thermally cross into the conduction band, creating a free electron and a hole; the conductivity rises with temperature. In an intrinsic (pure) semiconductor, n = p (equal electrons and holes).",
+    "⚡ Short / exam line:  Semiconductor: small E_g (~1 eV); n = p intrinsic.",
+    "Example:  Si (1.1 eV) conducts a little at room temperature.",
+    "[Explain] T6. Explain n-type and p-type (extrinsic) semiconductors by doping.",
+    "Answer:  Doping adds impurities: n-type uses a 5-valent donor (e.g. P in Si) adding extra conduction electrons (majority carriers e⁻); p-type uses a 3-valent acceptor (e.g. B in Si) creating holes (majority carriers h⁺). Doping greatly increases the conductivity.",
+    "⚡ Short / exam line:  n-type: donor → e⁻ ; p-type: acceptor → h⁺.",
+    "Example:  P-doped Si is n-type; B-doped Si is p-type.",
+    "[Explain] T7. Explain a p–n junction diode and its forward/reverse behaviour.",
+    "Answer:  Joining p- and n-type forms a depletion layer and a built-in potential. Forward bias (p positive) reduces the barrier, allowing current after ~0.7 V (Si); reverse bias widens the barrier, blocking current until breakdown. The asymmetric I–V makes it a rectifier.",
+    "⚡ Short / exam line:  Forward ~0.7 V (Si); reverse blocks (except breakdown).",
+    "Example:  A diode conducts one way only.",
+    "[Explain] T8. Explain how a solar cell converts light to electricity.",
+    "Answer:  A p–n junction solar cell absorbs sunlight, generating electron–hole pairs; the junction's built-in field separates them, pulling electrons to the n-side and holes to the p-side, producing a photocurrent and a voltage. Connecting many cells in series gives a usable DC voltage for power.",
+    "⚡ Short / exam line:  Light → e⁻–h⁺ pairs → junction separates them → current.",
+    "Example:  Rooftop PV panels are arrays of p–n solar cells.",
+    "[Explain] T9. Explain an LED and the role of band gap in its colour.",
+    "Answer:  An LED is a forward-biased p–n junction; when an electron in the conduction band recombines with a hole in the valence band, it emits a photon of energy hν ≈ E_g, so the colour (wavelength) is set by the band gap. A larger E_g gives a bluer (shorter) wavelength.",
+    "⚡ Short / exam line:  hν ≈ E_g ; larger E_g → bluer.",
+    "Example:  A 1.6 eV LED emits red; a 3 eV LED emits blue/UV.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T10. Professor: 'What is a hole and how does it behave as a charge carrier?'",
+    "Answer:  A hole is the absence of an electron in a filled valence band; when a neighbouring electron fills it, the hole 'moves' the other way, behaving as a positive charge carrier. It is not a real particle but a useful way to describe positive current flow in a semiconductor.",
+    "⚡ Short / exam line:  Hole = absence of e⁻, acts like + charge.",
+    "Example:  In p-type, holes are the majority carriers.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T11. An LED uses a semiconductor with E_g = 2.0 eV. Estimate its emission wavelength.",
+    "Answer:  hν ≈ E_g → λ = hc/E_g = (1240 eV·nm)/2.0 eV ≈ 620 nm (red light).",
+    "⚡ Short / exam line:  λ = hc/E_g ; 1240 eV·nm shortcut.",
+    "Example:  ≈ 620 nm, a red LED.",
+    "★ Quick-formula memos (this unit)",
+    "Energy bands: valence (V), conduction (C), gap E_g between them.",
+    "Metal: V & C overlap/merged; Insulator: E_g large (>~3 eV); Semiconductor: E_g small (~1 eV).",
+    "Intrinsic: equal e⁻ & h⁺ ; Doping: n-type (donor, e⁻ rich), p-type (acceptor, h⁺ rich).",
+    "Diode: p-n junction; forward ~0.7 V (Si)."
+  ]
+}

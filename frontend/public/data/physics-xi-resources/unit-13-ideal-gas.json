@@ -1,0 +1,416 @@
+{
+  "unitNo": 13,
+  "unitId": "ideal-gas",
+  "unitName": "Ideal Gas",
+  "contentArea": "Heat & Thermodynamics",
+  "docxFileName": "Physics_XI_Unit_13_ideal-gas.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_13_ideal-gas.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 13: IDEAL GAS   Content Area: Heat & Thermodynamics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 113,
+    "tableCount": 4,
+    "questionCount": 12,
+    "theoryCount": 10,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Assumption",
+        "Ideal gas",
+        "Real gas"
+      ],
+      "rows": [
+        [
+          "Molecule size",
+          "Point (no volume)",
+          "Finite volume"
+        ],
+        [
+          "Interactions",
+          "No forces except collisions",
+          "Attractive forces at moderate T"
+        ],
+        [
+          "Law",
+          "PV = nRT exactly",
+          "Deviates at high P, low T (van der Waals)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Process",
+        "Isobaric (P const)",
+        "Isothermal (T const)"
+      ],
+      "rows": [
+        [
+          "PV-graph",
+          "Straight line through origin",
+          "Rectangular hyperbola"
+        ],
+        [
+          "Work",
+          "W = PΔV",
+          "W = nRT ln(V₂/V₁)"
+        ],
+        [
+          "ΔU",
+          "n C_V ΔT > 0",
+          "0 (ideal gas)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Speed",
+        "Mean ¯",
+        "RMS",
+        "Most-probable"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "√(8kT/πm)",
+          "√(3kT/m)",
+          "√(2kT/m)"
+        ],
+        [
+          "Relation",
+          "—",
+          "v_rms = √(9/8)·v_mean = √(3/2)·v_mp",
+          "—"
+        ],
+        [
+          "Used for",
+          "Average velocity",
+          "Mean KE = 3kT/2 per molecule",
+          "—"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "C_V",
+        "C_P"
+      ],
+      "rows": [
+        [
+          "Degrees",
+          "Translation only for monatomic",
+          "Translation + … (work term)"
+        ],
+        [
+          "Monatomic",
+          "5R/2",
+          "7R/2 → γ = 7/5"
+        ],
+        [
+          "Diatomic",
+          "5R/2 (5 dof)",
+          "7R/2 → γ = 7/5 ≈ 1.4"
+        ],
+        [
+          "Relation",
+          "C_P − C_V = R",
+          "γ = C_P/C_V"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Write the ideal gas equation and the molecular form.",
+      "answer": "PV = nRT = (N/N_A)RT = Nk_BT, where k_B = R/N_A is Boltzmann's constant (1.38×10⁻²³ J/K). It is valid at high pressure & temperature where intermolecular forces and molecular volume are negligible.",
+      "shortcut": "PV = Nk_B T ; k_B = R/N_A.",
+      "example": "1 mole: PV = RT."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. State the ideal gas assumptions.",
+      "answer": "(i) Molecules are point masses with no volume. (ii) No intermolecular forces except during perfectly elastic collisions. (iii) Collisions with walls are elastic. (iv) Obeys PV = nRT.",
+      "shortcut": "Point particles, elastic, no forces → ideal gas.",
+      "example": "Real gases approach ideal at low P, high T."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Find the volume of 2 moles of gas at 300 K and 2 atm (R = 0.0821 L·atm/mol·K).",
+      "answer": "V = nRT/P = 2×0.0821×300/2 = 24.6 L. ▥ 13.1–13.2 Ideal Gas Equation & Molecular Properties  —  Compare / Contrast Tables Ideal Gas vs Real Gas Isobaric vs Isothermal Processes ▣ 13.3–13.6 Kinetic Theory & RMS Speed",
+      "shortcut": "V = nRT/P.",
+      "example": "≈ 24.6 L."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Derive the expression for the pressure exerted by an ideal gas (kinetic theory).",
+      "answer": "A molecule of mass m, speed v, hitting a wall reverses momentum, giving Δp per molecule and N molecules in volume V gives P = ⅓(Nm/molecule)⟨v²⟩ = ⅓(ρ)v_rms². Using N molecules, P = (1/3)(N m v_rms²)/V = (2/3)(N/V)⟨K⟩.",
+      "shortcut": "P = ⅓(Nm/M)v_rms² = ⅓ρv_rms² ; P ∝ T.",
+      "example": "Pressure arises from wall collisions, not from gravity."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Relate temperature to average translational kinetic energy.",
+      "answer": "The mean translational kinetic energy per molecule is ⟨K⟩ = 3/2 k_BT; per mole ⟨K⟩ = 3/2 RT. Hence temperature is a direct measure of average translational KE.",
+      "shortcut": "⟨K⟩ = 3/2 kT per molecule; 3/2 RT per mole.",
+      "example": "Higher T → faster molecules."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define root-mean-square speed and give its formula.",
+      "answer": "v_rms = √(⟨v²⟩) = √(3RT/M) for a gas of molar mass M (or √(3kT/m) per molecule). It is the speed that gives the same kinetic energy as the average.",
+      "shortcut": "v_rms = √(3RT/M); heavier M → slower.",
+      "example": "H₂ (light) has larger v_rms than O₂ at same T."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Find the v_rms of nitrogen (M=28 g/mol) at 300 K.",
+      "answer": "v_rms = √(3RT/M) = √(3×8.314×300/0.028) = √(269 429) ≈ 519 m/s.",
+      "shortcut": "v_rms = √(3RT/M).",
+      "example": "≈ 520 m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. State two gas kinetic properties that depend on temperature.",
+      "answer": "Mean translational KE and v_rms both depend on absolute temperature (∝ T and √T respectively), while the distribution of molecular speeds (Maxwell-Boltzmann) broadens with increasing T. ▥ 13.3–13.6 Kinetic Theory & RMS Speed  —  Compare / Contrast Tables Three Molecular Speeds (mean, rms, most-probable) ▣ 13.7 Heat Capacities",
+      "shortcut": "⟨K⟩ ∝ T ; v_rms ∝ √T.",
+      "example": "Heating a gas widens the speed spread."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Define molar heat capacities C_v and C_p; state Mayer's relation.",
+      "answer": "C_v is heat to raise 1 mole by 1 K at constant volume; C_p at constant pressure. Mayer's relation: C_p − C_v = R. For monatomic ideal gas C_v = 3R/2, C_p = 5R/2.",
+      "shortcut": "C_p − C_v = R ; monatomic: C_v=3R/2, C_p=5R/2.",
+      "example": "C_p > C_v because part of the heat goes into work at constant P."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Why is C_p greater than C_v?",
+      "answer": "At constant pressure, part of the supplied heat does expansion work (PΔV), so more heat is required to raise the temperature than at constant volume: C_p = C_v + R (Mayer).",
+      "shortcut": "C_p = C_v + R (heat does expansion work).",
+      "example": "Raising 1 mole at constant P needs more heat."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Compute C_v and C_p for a monatomic ideal gas (R = 8.314).",
+      "answer": "C_v = 3R/2 = 12.47 J/mol·K; C_p = 5R/2 = 20.79 J/mol·K; difference = R = 8.314 J/mol·K.",
+      "shortcut": "C_v=12.5, C_p=20.8 J/mol·K.",
+      "example": "He/Ar (monatomic) use these values."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Explain heat capacity of solids using the equipartition/Debye model (qualitatively).",
+      "answer": "In a solid each atom vibrates with 3 translational + 3 rotational DOF, giving C_v ≈ 3R per mole at high T (Dulong–Petit). At low T the heat capacity falls ~T³ (Debye), because phonon modes freeze out. ▥ 13.7 Heat Capacities  —  Compare / Contrast Tables C_V vs C_P and γ for Gases PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Solids ≈ 3R/mol at high T; ∝T³ at low T.",
+      "example": "Ice near 0 K has much lower c than near room T."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the pressure exerted by a gas from the kinetic theory.",
+      "answer": "A molecule of mass m, velocity components (vₓ,v_y,v_z) hitting a wall reverses vₓ; momentum change per collision = 2mvₓ. For N molecules in volume V, the mean pressure P = ⅓(ρ)v_rms² = (1/3)(Nm/M)⟨v²⟩. This links pressure to molecular KE.",
+      "shortcut": "P = ⅓ρ v_rms² = (2/3)(N/V)⟨K⟩.",
+      "example": "Pressure is due to molecular impacts on the walls."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the mean translational kinetic energy per molecule.",
+      "answer": "From PV = (1/3)Nm⟨v²⟩/V and PV = Nk_BT, equating gives (1/2)m⟨v²⟩ = (3/2)k_BT. So the mean translational KE per molecule = 3/2 k_BT; per mole = 3/2 RT.",
+      "shortcut": "⟨K⟩ = 3/2 k_B T.",
+      "example": "Temperature is a direct measure of average molecular KE."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T3. Derive the molar heat capacities of an ideal gas and Mayer's relation.",
+      "answer": "For a monatomic ideal gas, by equipartition each translational DOF contributes (1/2)R, so C_v = 3R/2. At constant pressure extra energy does work, so C_p = C_v + R = 5R/2. Mayer's relation: C_p − C_v = R.",
+      "shortcut": "Monatomic: C_v=3R/2, C_p=5R/2, C_p−C_v=R.",
+      "example": "C_p > C_v because part of the heat does expansion work."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T4. State the ideal gas equation and the law of Boyle and Charles combined.",
+      "answer": "The ideal gas equation is PV = nRT. Boyle's law (PV = const at constant T) and Charles's law (V/T = const at constant P) combine with Avogadro's law to give PV = nRT; molecularly, PV = Nk_BT.",
+      "shortcut": "PV = nRT = Nk_B T ; k_B = R/N_A.",
+      "example": "At fixed T, PV is constant; at fixed P, V ∝ T."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T5. Compare the heat capacities of gases and solids.",
+      "answer": "Gases have well-defined C_v and C_p (C_p > C_v by R), with values depending on molecular complexity (more DOF for polyatomic). Solids have C_v ≈ 3R per mole at room temperature (Dulong-Petit) but fall as T³ at very low T.",
+      "shortcut": "Gas: C_p > C_v; Solid: ~3R at high T, ∝T³ at low T.",
+      "example": "Water has a much higher c than metals."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain root-mean-square speed and how it depends on temperature and molar mass.",
+      "answer": "v_rms = √⟨v²⟩ = √(3k_BT/m) = √(3RT/M). It increases with √T and decreases with √M: at the same temperature, lighter gases have higher v_rms. The Maxwell-Boltzmann distribution broadens with T.",
+      "shortcut": "v_rms = √(3RT/M); heavier → slower.",
+      "example": "H₂ (light) has a larger v_rms than O₂ at the same T."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the kinetic-molecular model of an ideal gas.",
+      "answer": "Assumptions: (i) many small particles in constant random motion; (ii) collisions with the walls and each other are perfectly elastic; (iii) no intermolecular forces except at collision; (iv) particle volume is negligible. These give PV = Nk_BT and connect pressure to molecular KE.",
+      "shortcut": "Point particles, elastic, no forces → PV=Nk_BT.",
+      "example": "Real gases approach this at low P, high T."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain the equipartition theorem and the Dulong-Petit law for solids.",
+      "answer": "Equipartition: each quadratic degree of freedom carries (1/2)k_BT of energy. For a monatomic gas: 3 translational DOF → (3/2)k_BT per molecule. For a solid, each atom vibrates in 3 directions (kinetic + potential) → 3k_BT → C_v ≈ 3R per mole (Dulong-Petit) at high T.",
+      "shortcut": "Solids ≈ 3R/mol; gases monatomic = 3/2 R.",
+      "example": "Dulong-Petit explains the ~constant solid specific heat."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T9. Why does the heat capacity of a solid decrease at very low temperature?",
+      "answer": "At low T, many vibrational (phonon) modes are frozen out, so fewer modes are available to absorb energy; the heat capacity falls roughly as T³ (Debye's law), instead of the Dulong-Petit 3R.",
+      "shortcut": "Low T → phonons freeze out → C_v ∝ T³.",
+      "example": "Ice near 0 K has a much lower c than at room temperature."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. Find the rms speed of oxygen (M = 32 g/mol) at 300 K and the mean KE per molecule.",
+      "answer": "v_rms = √(3RT/M) = √(3×8.314×300/0.032) = √(234 400) ≈ 484 m/s. Mean KE = (3/2)k_BT = 1.5×1.38×10⁻²³×300 ≈ 6.21×10⁻²¹ J.",
+      "shortcut": "v_rms = √(3RT/M); ⟨K⟩ = 3/2 k_B T.",
+      "example": "≈ 484 m/s; 6.2×10⁻²¹ J per molecule."
+    }
+  ],
+  "formulas": [
+    "PV = nRT ; P = nkBT (kinetic: P = ⅓ (Nm/m)v_rms²).",
+    "v_rms = √(3RT/M) = √(3kT/m).",
+    "KE per molecule = 3/2 kT ; per mole = 3/2 RT.",
+    "C_v = 3/2 R, C_p = 5/2 R (monatomic); C_p−C_v = R (Mayer)."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 13: IDEAL GAS   Content Area: Heat & Thermodynamics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 13.1–13.2 Ideal Gas Equation & Molecular Properties",
+    "Q1. Write the ideal gas equation and the molecular form.",
+    "Answer:  PV = nRT = (N/N_A)RT = Nk_BT, where k_B = R/N_A is Boltzmann's constant (1.38×10⁻²³ J/K). It is valid at high pressure & temperature where intermolecular forces and molecular volume are negligible.",
+    "⚡ Shortcut:  PV = Nk_B T ; k_B = R/N_A.",
+    "Example:  1 mole: PV = RT.",
+    "Q2. State the ideal gas assumptions.",
+    "Answer:  (i) Molecules are point masses with no volume. (ii) No intermolecular forces except during perfectly elastic collisions. (iii) Collisions with walls are elastic. (iv) Obeys PV = nRT.",
+    "⚡ Shortcut:  Point particles, elastic, no forces → ideal gas.",
+    "Example:  Real gases approach ideal at low P, high T.",
+    "Q3. Find the volume of 2 moles of gas at 300 K and 2 atm (R = 0.0821 L·atm/mol·K).",
+    "Answer:  V = nRT/P = 2×0.0821×300/2 = 24.6 L.",
+    "⚡ Shortcut:  V = nRT/P.",
+    "Example:  ≈ 24.6 L.",
+    "▥ 13.1–13.2 Ideal Gas Equation & Molecular Properties  —  Compare / Contrast Tables",
+    "Ideal Gas vs Real Gas",
+    "Isobaric vs Isothermal Processes",
+    "▣ 13.3–13.6 Kinetic Theory & RMS Speed",
+    "Q4. Derive the expression for the pressure exerted by an ideal gas (kinetic theory).",
+    "Answer:  A molecule of mass m, speed v, hitting a wall reverses momentum, giving Δp per molecule and N molecules in volume V gives P = ⅓(Nm/molecule)⟨v²⟩ = ⅓(ρ)v_rms². Using N molecules, P = (1/3)(N m v_rms²)/V = (2/3)(N/V)⟨K⟩.",
+    "⚡ Shortcut:  P = ⅓(Nm/M)v_rms² = ⅓ρv_rms² ; P ∝ T.",
+    "Example:  Pressure arises from wall collisions, not from gravity.",
+    "Q5. Relate temperature to average translational kinetic energy.",
+    "Answer:  The mean translational kinetic energy per molecule is ⟨K⟩ = 3/2 k_BT; per mole ⟨K⟩ = 3/2 RT. Hence temperature is a direct measure of average translational KE.",
+    "⚡ Shortcut:  ⟨K⟩ = 3/2 kT per molecule; 3/2 RT per mole.",
+    "Example:  Higher T → faster molecules.",
+    "Q6. Define root-mean-square speed and give its formula.",
+    "Answer:  v_rms = √(⟨v²⟩) = √(3RT/M) for a gas of molar mass M (or √(3kT/m) per molecule). It is the speed that gives the same kinetic energy as the average.",
+    "⚡ Shortcut:  v_rms = √(3RT/M); heavier M → slower.",
+    "Example:  H₂ (light) has larger v_rms than O₂ at same T.",
+    "Q7. Find the v_rms of nitrogen (M=28 g/mol) at 300 K.",
+    "Answer:  v_rms = √(3RT/M) = √(3×8.314×300/0.028) = √(269 429) ≈ 519 m/s.",
+    "⚡ Shortcut:  v_rms = √(3RT/M).",
+    "Example:  ≈ 520 m/s.",
+    "Q8. State two gas kinetic properties that depend on temperature.",
+    "Answer:  Mean translational KE and v_rms both depend on absolute temperature (∝ T and √T respectively), while the distribution of molecular speeds (Maxwell-Boltzmann) broadens with increasing T.",
+    "⚡ Shortcut:  ⟨K⟩ ∝ T ; v_rms ∝ √T.",
+    "Example:  Heating a gas widens the speed spread.",
+    "▥ 13.3–13.6 Kinetic Theory & RMS Speed  —  Compare / Contrast Tables",
+    "Three Molecular Speeds (mean, rms, most-probable)",
+    "▣ 13.7 Heat Capacities",
+    "Q9. Define molar heat capacities C_v and C_p; state Mayer's relation.",
+    "Answer:  C_v is heat to raise 1 mole by 1 K at constant volume; C_p at constant pressure. Mayer's relation: C_p − C_v = R. For monatomic ideal gas C_v = 3R/2, C_p = 5R/2.",
+    "⚡ Shortcut:  C_p − C_v = R ; monatomic: C_v=3R/2, C_p=5R/2.",
+    "Example:  C_p > C_v because part of the heat goes into work at constant P.",
+    "Q10. Why is C_p greater than C_v?",
+    "Answer:  At constant pressure, part of the supplied heat does expansion work (PΔV), so more heat is required to raise the temperature than at constant volume: C_p = C_v + R (Mayer).",
+    "⚡ Shortcut:  C_p = C_v + R (heat does expansion work).",
+    "Example:  Raising 1 mole at constant P needs more heat.",
+    "Q11. Compute C_v and C_p for a monatomic ideal gas (R = 8.314).",
+    "Answer:  C_v = 3R/2 = 12.47 J/mol·K; C_p = 5R/2 = 20.79 J/mol·K; difference = R = 8.314 J/mol·K.",
+    "⚡ Shortcut:  C_v=12.5, C_p=20.8 J/mol·K.",
+    "Example:  He/Ar (monatomic) use these values.",
+    "Q12. Explain heat capacity of solids using the equipartition/Debye model (qualitatively).",
+    "Answer:  In a solid each atom vibrates with 3 translational + 3 rotational DOF, giving C_v ≈ 3R per mole at high T (Dulong–Petit). At low T the heat capacity falls ~T³ (Debye), because phonon modes freeze out.",
+    "⚡ Shortcut:  Solids ≈ 3R/mol at high T; ∝T³ at low T.",
+    "Example:  Ice near 0 K has much lower c than near room T.",
+    "▥ 13.7 Heat Capacities  —  Compare / Contrast Tables",
+    "C_V vs C_P and γ for Gases",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the pressure exerted by a gas from the kinetic theory.",
+    "Answer:  A molecule of mass m, velocity components (vₓ,v_y,v_z) hitting a wall reverses vₓ; momentum change per collision = 2mvₓ. For N molecules in volume V, the mean pressure P = ⅓(ρ)v_rms² = (1/3)(Nm/M)⟨v²⟩. This links pressure to molecular KE.",
+    "⚡ Short / exam line:  P = ⅓ρ v_rms² = (2/3)(N/V)⟨K⟩.",
+    "Example:  Pressure is due to molecular impacts on the walls.",
+    "[Derive] T2. Derive the mean translational kinetic energy per molecule.",
+    "Answer:  From PV = (1/3)Nm⟨v²⟩/V and PV = Nk_BT, equating gives (1/2)m⟨v²⟩ = (3/2)k_BT. So the mean translational KE per molecule = 3/2 k_BT; per mole = 3/2 RT.",
+    "⚡ Short / exam line:  ⟨K⟩ = 3/2 k_B T.",
+    "Example:  Temperature is a direct measure of average molecular KE.",
+    "[Derive] T3. Derive the molar heat capacities of an ideal gas and Mayer's relation.",
+    "Answer:  For a monatomic ideal gas, by equipartition each translational DOF contributes (1/2)R, so C_v = 3R/2. At constant pressure extra energy does work, so C_p = C_v + R = 5R/2. Mayer's relation: C_p − C_v = R.",
+    "⚡ Short / exam line:  Monatomic: C_v=3R/2, C_p=5R/2, C_p−C_v=R.",
+    "Example:  C_p > C_v because part of the heat does expansion work.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T4. State the ideal gas equation and the law of Boyle and Charles combined.",
+    "Answer:  The ideal gas equation is PV = nRT. Boyle's law (PV = const at constant T) and Charles's law (V/T = const at constant P) combine with Avogadro's law to give PV = nRT; molecularly, PV = Nk_BT.",
+    "⚡ Short / exam line:  PV = nRT = Nk_B T ; k_B = R/N_A.",
+    "Example:  At fixed T, PV is constant; at fixed P, V ∝ T.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T5. Compare the heat capacities of gases and solids.",
+    "Answer:  Gases have well-defined C_v and C_p (C_p > C_v by R), with values depending on molecular complexity (more DOF for polyatomic). Solids have C_v ≈ 3R per mole at room temperature (Dulong-Petit) but fall as T³ at very low T.",
+    "⚡ Short / exam line:  Gas: C_p > C_v; Solid: ~3R at high T, ∝T³ at low T.",
+    "Example:  Water has a much higher c than metals.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T6. Explain root-mean-square speed and how it depends on temperature and molar mass.",
+    "Answer:  v_rms = √⟨v²⟩ = √(3k_BT/m) = √(3RT/M). It increases with √T and decreases with √M: at the same temperature, lighter gases have higher v_rms. The Maxwell-Boltzmann distribution broadens with T.",
+    "⚡ Short / exam line:  v_rms = √(3RT/M); heavier → slower.",
+    "Example:  H₂ (light) has a larger v_rms than O₂ at the same T.",
+    "[Explain] T7. Explain the kinetic-molecular model of an ideal gas.",
+    "Answer:  Assumptions: (i) many small particles in constant random motion; (ii) collisions with the walls and each other are perfectly elastic; (iii) no intermolecular forces except at collision; (iv) particle volume is negligible. These give PV = Nk_BT and connect pressure to molecular KE.",
+    "⚡ Short / exam line:  Point particles, elastic, no forces → PV=Nk_BT.",
+    "Example:  Real gases approach this at low P, high T.",
+    "[Explain] T8. Explain the equipartition theorem and the Dulong-Petit law for solids.",
+    "Answer:  Equipartition: each quadratic degree of freedom carries (1/2)k_BT of energy. For a monatomic gas: 3 translational DOF → (3/2)k_BT per molecule. For a solid, each atom vibrates in 3 directions (kinetic + potential) → 3k_BT → C_v ≈ 3R per mole (Dulong-Petit) at high T.",
+    "⚡ Short / exam line:  Solids ≈ 3R/mol; gases monatomic = 3/2 R.",
+    "Example:  Dulong-Petit explains the ~constant solid specific heat.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T9. Why does the heat capacity of a solid decrease at very low temperature?",
+    "Answer:  At low T, many vibrational (phonon) modes are frozen out, so fewer modes are available to absorb energy; the heat capacity falls roughly as T³ (Debye's law), instead of the Dulong-Petit 3R.",
+    "⚡ Short / exam line:  Low T → phonons freeze out → C_v ∝ T³.",
+    "Example:  Ice near 0 K has a much lower c than at room temperature.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. Find the rms speed of oxygen (M = 32 g/mol) at 300 K and the mean KE per molecule.",
+    "Answer:  v_rms = √(3RT/M) = √(3×8.314×300/0.032) = √(234 400) ≈ 484 m/s. Mean KE = (3/2)k_BT = 1.5×1.38×10⁻²³×300 ≈ 6.21×10⁻²¹ J.",
+    "⚡ Short / exam line:  v_rms = √(3RT/M); ⟨K⟩ = 3/2 k_B T.",
+    "Example:  ≈ 484 m/s; 6.2×10⁻²¹ J per molecule.",
+    "★ Quick-formula memos (this unit)",
+    "PV = nRT ; P = nkBT (kinetic: P = ⅓ (Nm/m)v_rms²).",
+    "v_rms = √(3RT/M) = √(3kT/m).",
+    "KE per molecule = 3/2 kT ; per mole = 3/2 RT.",
+    "C_v = 3/2 R, C_p = 5/2 R (monatomic); C_p−C_v = R (Mayer)."
+  ]
+}

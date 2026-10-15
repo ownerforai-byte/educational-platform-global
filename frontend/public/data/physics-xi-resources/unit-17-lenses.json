@@ -1,0 +1,354 @@
+{
+  "unitNo": 17,
+  "unitId": "lenses",
+  "unitName": "Lenses",
+  "contentArea": "Waves & Optics",
+  "docxFileName": "Physics_XI_Unit_17_lenses.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_17_lenses.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 17: LENSES   Content Area: Waves & Optics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 98,
+    "tableCount": 3,
+    "questionCount": 10,
+    "theoryCount": 10,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Aspect",
+        "Converging (convex)",
+        "Diverging (concave)"
+      ],
+      "rows": [
+        [
+          "Focal length",
+          "Positive",
+          "Negative"
+        ],
+        [
+          "Power P = 1/f",
+          "Positive",
+          "Negative (dioptric, m⁻¹)"
+        ],
+        [
+          "Parallel ray",
+          "Converges to real focus",
+          "Appears to diverge from virtual focus"
+        ],
+        [
+          "Image of real object",
+          "Can be real or virtual",
+          "Always virtual, erect, diminished"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Sign rule"
+      ],
+      "rows": [
+        [
+          "Distances",
+          "Measured from lens pole"
+        ],
+        [
+          "Opposite to incident light",
+          "Negative (u for real object)"
+        ],
+        [
+          "Same as incident light",
+          "Positive"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Formula",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Lensmaker",
+          "1/f = (n−1)[1/R₁ − 1/R₂]",
+          "Signs of R per convention"
+        ],
+        [
+          "Power",
+          "P = 1/f (m⁻¹)",
+          "Unit = dioptre"
+        ],
+        [
+          "Combined power",
+          "P = P₁ + P₂",
+          "Lenses in contact"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. State the lens formula and sign convention.",
+      "answer": "For a thin lens: 1/f = 1/v + 1/u (Cartesian sign convention). Distances measured from the optical centre: object distance u negative if on the incident side; f positive for a convex (converging) lens, negative for a concave (diverging) lens.",
+      "shortcut": "1/f = 1/v + 1/u ; converging f>0, diverging f<0.",
+      "example": "u = −2f → v = −2f (image at C, real)."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Write the lensmaker's formula and explain its terms.",
+      "answer": "1/f = (n−1)[1/R₁ − 1/R₂], where n is the relative refractive index and R₁, R₂ are the radii of curvature of the two surfaces (positive/negative per sign convention). It links focal length to material and curvature.",
+      "shortcut": "1/f = (n−1)(1/R₁−1/R₂); more curved or higher n → shorter f.",
+      "example": "A biconvex lens with R₁=+R, R₂=−R gives 1/f = 2(n−1)/R."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Define the power of a lens and its SI unit.",
+      "answer": "Power P = 1/f (f in metres), measured in dioptres (D). For convex P>0, for concave P<0. The power of two thin lenses in contact adds: P_total = P₁ + P₂.",
+      "shortcut": "P = 1/f(m); in D; add powers for thin-lens combinations.",
+      "example": "A 20 cm convex lens → P = +5 D."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Find the focal length and power of a double-convex lens with R₁ = R₂ = 20 cm, n = 1.5.",
+      "answer": "1/f = (n−1)(1/R₁ − 1/R₂) = 0.5(1/0.2 − 1/(−0.2)) = 0.5(5+5) = 5 m⁻¹ → f = 0.2 m = 20 cm. Power P = 1/0.2 = +5 D.",
+      "shortcut": "1/f = (n−1)(1/R₁−1/R₂) ; P = 1/f.",
+      "example": "f = 20 cm, P = +5 D."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Explain a magnifying glass (simple microscope) and angular magnification M = 1 + D/f.",
+      "answer": "A simple microscope (magnifying glass) holds an object within the near-point focal distance f, producing a virtual erect image at the near-point D. The angular magnification is M = D/f (image at infinity) or M = 1 + D/f (image at the near-point D = 25 cm).",
+      "shortcut": "M = 1 + D/f for near-point viewing; D/f for infinity.",
+      "example": "f = 5 cm, D = 25 cm → M = 6×."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. A compound microscope with objective f_o = 0.5 cm and eyepiece f_e = 2 cm. Estimate magnification when image at infinity.",
+      "answer": "For an image at infinity, M ≈ (L/f_o)(D/f_e), with L ≈ 15 cm tube length, D = 25 cm: M ≈ (15/0.5)(25/2) = 30×12.5 = 375×.",
+      "shortcut": "M ≈ (L/f_o)(D/f_e) (image at infinity).",
+      "example": "≈ 375× magnification."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Define magnification of a lens and state its sign convention.",
+      "answer": "Linear magnification m = h'/h = −v/u. A negative m means the image is inverted; positive m means it is erect. The magnitude |m| is the size ratio image/object.",
+      "shortcut": "m = −v/u ; sign: + = erect, − = inverted.",
+      "example": "An object at 2f gives m = −1 (same size, inverted)."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Find the image position for an object 15 cm in front of a convex lens of f = 10 cm.",
+      "answer": "Use 1/f = 1/u + 1/v (magnitudes, convex lens): 1/v = 1/10 − 1/15 = 1/30, so v = 30 cm (real, on the opposite side). Magnification m = v/u = 30/15 = 2, so the image is real, inverted and 2× the object size.",
+      "shortcut": "1/v = 1/f − 1/u ; m = v/u. Object between f and 2f gives an image beyond 2f, magnified.",
+      "example": "Image 30 cm from the lens, m = −2 (inverted, 2×)."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. How do you find the combined power of two thin lenses in contact?",
+      "answer": "The powers simply add: P_total = P₁ + P₂ (each P = 1/f in metres). This is the basis of correcting the eye's vision with spectacle lenses of the right total power.",
+      "shortcut": "P_total = P₁ + P₂ ; D = m⁻¹.",
+      "example": "+4 D and −1 D in contact give +3 D."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Explain why a concave lens always forms a virtual, erect and diminished image.",
+      "answer": "A concave (diverging) lens spreads rays; the refracted rays diverge and never actually meet, so they appear to come from a point between the lens and the focus — a virtual, erect, diminished image, regardless of object position. ▥ 17.1–17.3 Spherical Lenses, Lensmaker & Power  —  Compare / Contrast Tables Converging vs Diverging Lens Sign Convention (Cartesian) Quick Chart Lensmaker's Formula & Power PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Concave: always virtual, erect, diminished (between F and lens).",
+      "example": "Used to correct myopia (short-sightedness)."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the lens formula 1/f = 1/v + 1/u.",
+      "answer": "For a thin convex lens with paraxial rays, using similar triangles from the principal rays (one parallel, one through the centre) gives u/v = (f)/(v−f) → (v−f)/v = f/u → 1/u + 1/v = 1/f.",
+      "shortcut": "Paraxial ray geometry → 1/f = 1/u+1/v.",
+      "example": "Valid for small angles near the axis."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the lensmaker's formula.",
+      "answer": "For a thin lens in air, summing the refraction at the two spherical surfaces (first: (n−1)/R₁, second: −(n−1)/R₂) gives 1/f = (n−1)[1/R₁ − 1/R₂]. It links focal length to refractive index and the two radii.",
+      "shortcut": "1/f = (n−1)(1/R₁−1/R₂).",
+      "example": "More curved (smaller R) or higher n → shorter f."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. State the lens formula and the sign convention.",
+      "answer": "1/f = 1/v + 1/u (Cartesian, distances from the optical centre). u negative on the incident side; f positive for a converging (convex) lens, negative for a diverging (concave) lens. Magnification m = −v/u.",
+      "shortcut": "1/f = 1/v+1/u ; converging f>0, diverging f<0.",
+      "example": "A real image has v>0, m<0."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T4. Compare a magnifying glass, a microscope and a telescope.",
+      "answer": "Magnifying glass: magnifies a nearby object (angular, M = D/f). Microscope: magnifies a very small near object by two stages (M = L/f_o × D/f_e, very large). Telescope: magnifies distant objects (M = f_o/f_e, moderate). Each serves a different distance/scale.",
+      "shortcut": "Magnifier: near small; Microscope: very small near; Telescope: far.",
+      "example": "The magnification formulas differ by design."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the power of a lens and the power of a lens combination.",
+      "answer": "Power P = 1/f (f in metres), in dioptres; positive for converging, negative for diverging. Two thin lenses in contact have combined power P_total = P₁ + P₂, and for two separated lenses P_total = P₁+P₂ − P₁P₂d/f₁f₂.",
+      "shortcut": "P = 1/f(m) ; in contact P = P₁+P₂.",
+      "example": "Spectacle correction uses the right total power."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the simple (convex) magnifying glass and angular magnification.",
+      "answer": "A simple microscope holds an object within the focal length so the eye sees an enlarged virtual image at the near point D. Angular magnification M = D/f (image at infinity) or M = 1 + D/f (image at the near point).",
+      "shortcut": "M = D/f or 1 + D/f ; D = 25 cm.",
+      "example": "A 5 cm lens gives M = 6× at the near point."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the compound microscope and its magnification.",
+      "answer": "A compound microscope uses a short-focal-length objective to form a real, magnified intermediate image, which a long-focal-length eyepiece magnifies further. The total magnification is M = (L/f_o)(1 + D/f_e) (image at near point) or M = (L/f_o)(D/f_e) (image at infinity).",
+      "shortcut": "M = (L/f_o)(1+D/f_e) or (L/f_o)(D/f_e).",
+      "example": "Gives hundreds to thousands of times magnification."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain the astronomical telescope (image at infinity).",
+      "answer": "An astronomical telescope uses a long-focal-length objective to form a real image at its focus, then a short-focal-length eyepiece views it. The angular magnification is M = f_o/f_e; to see stars it is adjusted so the final image is at infinity (tube length ≈ f_o + f_e).",
+      "shortcut": "M = f_o/f_e ; f_o > f_e.",
+      "example": "Eyepiece magnifies the objective's image."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T9. Explain the terrestrial telescope and why it is longer.",
+      "answer": "A terrestrial telescope inverts the astronomical image with an additional erecting lens (or prism), and because of this extra lens it needs a longer tube: tube length = f_o + f_e + 4f″ (f″ = the erecting lens focal length), so it is longer and gives lower magnification than an equal-diameter astronomical telescope.",
+      "shortcut": "Adding an erector lens increases the tube length.",
+      "example": "Used to see ground objects upright."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A compound microscope has objective f_o = 0.5 cm and eyepiece f_e = 2 cm, tube L = 15 cm. Find magnification (image at infinity).",
+      "answer": "M ≈ (L/f_o)(D/f_e) = (15/0.5)(25/2) = 30×12.5 = 375×.",
+      "shortcut": "M ≈ (L/f_o)(D/f_e).",
+      "example": "≈ 375× magnification."
+    }
+  ],
+  "formulas": [
+    "Lens formula: 1/f = 1/v + 1/u ; 1/f = (n−1)(1/R₁−1/R₂) (lensmaker).",
+    "Power P = 1/f(m) in diopters ; sign: converging f>0, diverging f<0.",
+    "Magnifying glass (simple microscope) angular magnification M = 1 + D/f."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 17: LENSES   Content Area: Waves & Optics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 17.1–17.3 Spherical Lenses, Lensmaker & Power",
+    "Q1. State the lens formula and sign convention.",
+    "Answer:  For a thin lens: 1/f = 1/v + 1/u (Cartesian sign convention). Distances measured from the optical centre: object distance u negative if on the incident side; f positive for a convex (converging) lens, negative for a concave (diverging) lens.",
+    "⚡ Shortcut:  1/f = 1/v + 1/u ; converging f>0, diverging f<0.",
+    "Example:  u = −2f → v = −2f (image at C, real).",
+    "Q2. Write the lensmaker's formula and explain its terms.",
+    "Answer:  1/f = (n−1)[1/R₁ − 1/R₂], where n is the relative refractive index and R₁, R₂ are the radii of curvature of the two surfaces (positive/negative per sign convention). It links focal length to material and curvature.",
+    "⚡ Shortcut:  1/f = (n−1)(1/R₁−1/R₂); more curved or higher n → shorter f.",
+    "Example:  A biconvex lens with R₁=+R, R₂=−R gives 1/f = 2(n−1)/R.",
+    "Q3. Define the power of a lens and its SI unit.",
+    "Answer:  Power P = 1/f (f in metres), measured in dioptres (D). For convex P>0, for concave P<0. The power of two thin lenses in contact adds: P_total = P₁ + P₂.",
+    "⚡ Shortcut:  P = 1/f(m); in D; add powers for thin-lens combinations.",
+    "Example:  A 20 cm convex lens → P = +5 D.",
+    "Q4. Find the focal length and power of a double-convex lens with R₁ = R₂ = 20 cm, n = 1.5.",
+    "Answer:  1/f = (n−1)(1/R₁ − 1/R₂) = 0.5(1/0.2 − 1/(−0.2)) = 0.5(5+5) = 5 m⁻¹ → f = 0.2 m = 20 cm. Power P = 1/0.2 = +5 D.",
+    "⚡ Shortcut:  1/f = (n−1)(1/R₁−1/R₂) ; P = 1/f.",
+    "Example:  f = 20 cm, P = +5 D.",
+    "Q5. Explain a magnifying glass (simple microscope) and angular magnification M = 1 + D/f.",
+    "Answer:  A simple microscope (magnifying glass) holds an object within the near-point focal distance f, producing a virtual erect image at the near-point D. The angular magnification is M = D/f (image at infinity) or M = 1 + D/f (image at the near-point D = 25 cm).",
+    "⚡ Shortcut:  M = 1 + D/f for near-point viewing; D/f for infinity.",
+    "Example:  f = 5 cm, D = 25 cm → M = 6×.",
+    "Q6. A compound microscope with objective f_o = 0.5 cm and eyepiece f_e = 2 cm. Estimate magnification when image at infinity.",
+    "Answer:  For an image at infinity, M ≈ (L/f_o)(D/f_e), with L ≈ 15 cm tube length, D = 25 cm: M ≈ (15/0.5)(25/2) = 30×12.5 = 375×.",
+    "⚡ Shortcut:  M ≈ (L/f_o)(D/f_e) (image at infinity).",
+    "Example:  ≈ 375× magnification.",
+    "Q7. Define magnification of a lens and state its sign convention.",
+    "Answer:  Linear magnification m = h'/h = −v/u. A negative m means the image is inverted; positive m means it is erect. The magnitude |m| is the size ratio image/object.",
+    "⚡ Shortcut:  m = −v/u ; sign: + = erect, − = inverted.",
+    "Example:  An object at 2f gives m = −1 (same size, inverted).",
+    "Q8. Find the image position for an object 15 cm in front of a convex lens of f = 10 cm.",
+    "Answer:  Use 1/f = 1/u + 1/v (magnitudes, convex lens): 1/v = 1/10 − 1/15 = 1/30, so v = 30 cm (real, on the opposite side). Magnification m = v/u = 30/15 = 2, so the image is real, inverted and 2× the object size.",
+    "⚡ Shortcut:  1/v = 1/f − 1/u ; m = v/u. Object between f and 2f gives an image beyond 2f, magnified.",
+    "Example:  Image 30 cm from the lens, m = −2 (inverted, 2×).",
+    "Q9. How do you find the combined power of two thin lenses in contact?",
+    "Answer:  The powers simply add: P_total = P₁ + P₂ (each P = 1/f in metres). This is the basis of correcting the eye's vision with spectacle lenses of the right total power.",
+    "⚡ Shortcut:  P_total = P₁ + P₂ ; D = m⁻¹.",
+    "Example:  +4 D and −1 D in contact give +3 D.",
+    "Q10. Explain why a concave lens always forms a virtual, erect and diminished image.",
+    "Answer:  A concave (diverging) lens spreads rays; the refracted rays diverge and never actually meet, so they appear to come from a point between the lens and the focus — a virtual, erect, diminished image, regardless of object position.",
+    "⚡ Shortcut:  Concave: always virtual, erect, diminished (between F and lens).",
+    "Example:  Used to correct myopia (short-sightedness).",
+    "▥ 17.1–17.3 Spherical Lenses, Lensmaker & Power  —  Compare / Contrast Tables",
+    "Converging vs Diverging Lens",
+    "Sign Convention (Cartesian) Quick Chart",
+    "Lensmaker's Formula & Power",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the lens formula 1/f = 1/v + 1/u.",
+    "Answer:  For a thin convex lens with paraxial rays, using similar triangles from the principal rays (one parallel, one through the centre) gives u/v = (f)/(v−f) → (v−f)/v = f/u → 1/u + 1/v = 1/f.",
+    "⚡ Short / exam line:  Paraxial ray geometry → 1/f = 1/u+1/v.",
+    "Example:  Valid for small angles near the axis.",
+    "[Derive] T2. Derive the lensmaker's formula.",
+    "Answer:  For a thin lens in air, summing the refraction at the two spherical surfaces (first: (n−1)/R₁, second: −(n−1)/R₂) gives 1/f = (n−1)[1/R₁ − 1/R₂]. It links focal length to refractive index and the two radii.",
+    "⚡ Short / exam line:  1/f = (n−1)(1/R₁−1/R₂).",
+    "Example:  More curved (smaller R) or higher n → shorter f.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. State the lens formula and the sign convention.",
+    "Answer:  1/f = 1/v + 1/u (Cartesian, distances from the optical centre). u negative on the incident side; f positive for a converging (convex) lens, negative for a diverging (concave) lens. Magnification m = −v/u.",
+    "⚡ Short / exam line:  1/f = 1/v+1/u ; converging f>0, diverging f<0.",
+    "Example:  A real image has v>0, m<0.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T4. Compare a magnifying glass, a microscope and a telescope.",
+    "Answer:  Magnifying glass: magnifies a nearby object (angular, M = D/f). Microscope: magnifies a very small near object by two stages (M = L/f_o × D/f_e, very large). Telescope: magnifies distant objects (M = f_o/f_e, moderate). Each serves a different distance/scale.",
+    "⚡ Short / exam line:  Magnifier: near small; Microscope: very small near; Telescope: far.",
+    "Example:  The magnification formulas differ by design.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain the power of a lens and the power of a lens combination.",
+    "Answer:  Power P = 1/f (f in metres), in dioptres; positive for converging, negative for diverging. Two thin lenses in contact have combined power P_total = P₁ + P₂, and for two separated lenses P_total = P₁+P₂ − P₁P₂d/f₁f₂.",
+    "⚡ Short / exam line:  P = 1/f(m) ; in contact P = P₁+P₂.",
+    "Example:  Spectacle correction uses the right total power.",
+    "[Explain] T6. Explain the simple (convex) magnifying glass and angular magnification.",
+    "Answer:  A simple microscope holds an object within the focal length so the eye sees an enlarged virtual image at the near point D. Angular magnification M = D/f (image at infinity) or M = 1 + D/f (image at the near point).",
+    "⚡ Short / exam line:  M = D/f or 1 + D/f ; D = 25 cm.",
+    "Example:  A 5 cm lens gives M = 6× at the near point.",
+    "[Explain] T7. Explain the compound microscope and its magnification.",
+    "Answer:  A compound microscope uses a short-focal-length objective to form a real, magnified intermediate image, which a long-focal-length eyepiece magnifies further. The total magnification is M = (L/f_o)(1 + D/f_e) (image at near point) or M = (L/f_o)(D/f_e) (image at infinity).",
+    "⚡ Short / exam line:  M = (L/f_o)(1+D/f_e) or (L/f_o)(D/f_e).",
+    "Example:  Gives hundreds to thousands of times magnification.",
+    "[Explain] T8. Explain the astronomical telescope (image at infinity).",
+    "Answer:  An astronomical telescope uses a long-focal-length objective to form a real image at its focus, then a short-focal-length eyepiece views it. The angular magnification is M = f_o/f_e; to see stars it is adjusted so the final image is at infinity (tube length ≈ f_o + f_e).",
+    "⚡ Short / exam line:  M = f_o/f_e ; f_o > f_e.",
+    "Example:  Eyepiece magnifies the objective's image.",
+    "[Explain] T9. Explain the terrestrial telescope and why it is longer.",
+    "Answer:  A terrestrial telescope inverts the astronomical image with an additional erecting lens (or prism), and because of this extra lens it needs a longer tube: tube length = f_o + f_e + 4f″ (f″ = the erecting lens focal length), so it is longer and gives lower magnification than an equal-diameter astronomical telescope.",
+    "⚡ Short / exam line:  Adding an erector lens increases the tube length.",
+    "Example:  Used to see ground objects upright.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A compound microscope has objective f_o = 0.5 cm and eyepiece f_e = 2 cm, tube L = 15 cm. Find magnification (image at infinity).",
+    "Answer:  M ≈ (L/f_o)(D/f_e) = (15/0.5)(25/2) = 30×12.5 = 375×.",
+    "⚡ Short / exam line:  M ≈ (L/f_o)(D/f_e).",
+    "Example:  ≈ 375× magnification.",
+    "★ Quick-formula memos (this unit)",
+    "Lens formula: 1/f = 1/v + 1/u ; 1/f = (n−1)(1/R₁−1/R₂) (lensmaker).",
+    "Power P = 1/f(m) in diopters ; sign: converging f>0, diverging f<0.",
+    "Magnifying glass (simple microscope) angular magnification M = 1 + D/f."
+  ]
+}

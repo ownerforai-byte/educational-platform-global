@@ -10,7 +10,9 @@ import {
   FlaskConical,
   Brain,
   Calculator,
+  FileText,
 } from "lucide-react";
+import { PhysicsUnitResourceDoc } from "@/components/content/physics-unit-resource-doc";
 
 export function ChapterDetailView({
   classSlug,
@@ -118,6 +120,22 @@ export function ChapterDetailView({
           </div>
         )}
       </section>
+
+      {/* 3. UNIT RESOURCES SECTION */}
+      {subjectSlug === "physics" && (
+        <section className="space-y-4 pt-2">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-bold tracking-tight text-foreground flex items-center gap-2">
+              <FileText className="h-5 w-5 text-primary" />
+              <span>Unit Resources &amp; Document Preview</span>
+            </h2>
+            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary">
+              NEB Class 11 Physics
+            </span>
+          </div>
+          <PhysicsUnitResourceDoc unitId={unitId} />
+        </section>
+      )}
 
       {/* Navigation Footer */}
       <div className="pt-4 border-t border-border/60 flex items-center justify-between text-xs">

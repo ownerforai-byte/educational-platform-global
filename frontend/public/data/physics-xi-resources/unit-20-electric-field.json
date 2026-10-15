@@ -1,0 +1,378 @@
+{
+  "unitNo": 20,
+  "unitId": "electric-field",
+  "unitName": "Electric Field",
+  "contentArea": "Electricity & Magnetism",
+  "docxFileName": "Physics_XI_Unit_20_electric-field.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_20_electric-field.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 20: ELECTRIC FIELD   Content Area: Electricity & Magnetism",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 105,
+    "tableCount": 3,
+    "questionCount": 10,
+    "theoryCount": 11,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Quantity",
+        "Field E",
+        "Potential V"
+      ],
+      "rows": [
+        [
+          "Nature",
+          "Vector",
+          "Scalar"
+        ],
+        [
+          "Unit",
+          "N/C (= V/m)",
+          "volt"
+        ],
+        [
+          "Relation",
+          "E = −dV/dr",
+          "V = work per unit charge"
+        ],
+        [
+          "Field lines",
+          "Point along E",
+          "Run from + to −"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Rule",
+        "Statement"
+      ],
+      "rows": [
+        [
+          "Start/end",
+          "From + charges, terminate on − (or ∞)"
+        ],
+        [
+          "Density",
+          "Field strength ∝ line density"
+        ],
+        [
+          "Crossing",
+          "Lines never cross"
+        ],
+        [
+          "At conductor surface",
+          "Perpendicular to surface"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Symmetry",
+        "Gaussian surface",
+        "Result"
+      ],
+      "rows": [
+        [
+          "Spherical",
+          "Concentric sphere",
+          "E·4πr² = Q_enc/ε₀"
+        ],
+        [
+          "Infinite plane",
+          "Pillbox",
+          "E = σ/2ε₀ (infinite sheet)"
+        ],
+        [
+          "Cylindrical",
+          "Coaxial cylinder",
+          "E·2πrL = Q_enc/ε₀"
+        ],
+        [
+          "Conductor",
+          "Inside conductor",
+          "E = 0 (charge on surface only)"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define electric field and find it for a point charge.",
+      "answer": "Electric field E is the force per unit positive test charge: E = F/q. For a point charge E = (1/4πε₀)(q/r²), radially outward for +q and inward for −q.",
+      "shortcut": "E = kq/r² (direction from + to −).",
+      "example": "E of a 1 μC charge at 0.3 m: 9×10⁹×10⁻⁶/0.09 = 1×10⁵ N/C."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Describe electric field lines and their properties.",
+      "answer": "Field lines represent the field; they start on + and end on −, never cross (field is single-valued), are denser where E is larger, and are perpendicular to conductors' surfaces. The number per unit area ∝ E.",
+      "shortcut": "+ → −; never cross; density ∝ E.",
+      "example": "A dipole's lines curve from + to − outside."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Find the field at the midpoint between +q at x=0 and −q at x=1 m.",
+      "answer": "Field from each at the midpoint is kq/0.5², both point in the same direction (from + to −): E = 2(kq/0.25) = 8kq/m² toward the negative charge.",
+      "shortcut": "Add the two (same direction) for +,− pair.",
+      "example": "For q = 1 μC: E = 8×9×10³ = 7.2×10⁴ N/C."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Explain how Gauss's law can be used to find the field of a spherically symmetric charge.",
+      "answer": "By symmetry, E is radial and constant on a spherical Gaussian surface. Gauss's law ∮E·dA = Q_enc/ε₀ gives E(4πr²) = Q/ε₀ → E = Q/(4πε₀r²), the same as Coulomb's law. ▥ 20.1 Electric Field & Field Lines  —  Compare / Contrast Tables Electric Field vs Electric Potential Electric Field Line Rules (quick chart) ▣ 20.2–20.3 Gauss's Law & Applications",
+      "shortcut": "Spherical symmetry → E·A = Q_enc/ε₀ ; A = 4πr².",
+      "example": "A charged conducting sphere has E=0 inside, outside like a point charge."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. State Gauss's law and define electric flux.",
+      "answer": "Gauss's law: the net electric flux through any closed surface equals the enclosed charge divided by ε₀: ∮E·dA = Q_enc/ε₀. Electric flux Φ = ∫E·dA (units V·m).",
+      "shortcut": "Φ = Q_enc/ε₀.",
+      "example": "A closed surface with 2 C inside has Φ = 2/ε₀ V·m."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Using Gauss's law find the field of an infinite charged plane of surface density σ.",
+      "answer": "Choose a pillbox Gaussian surface straddling the plane. Φ = E(2A) = σA/ε₀ → E = σ/(2ε₀). A surface charge on a conductor gives E = σ/ε₀ just outside.",
+      "shortcut": "Sheet: σ/2ε₀ ; conductor surface: σ/ε₀.",
+      "example": "Double-sheet gives σ/ε₀, half for each sheet."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Using Gauss's law find the field of an infinite line charge of linear density λ.",
+      "answer": "Use a cylindrical Gaussian surface of radius r and length L. Flux = E(2πrL) = λL/ε₀ → E = λ/(2πε₀r), radially outward.",
+      "shortcut": "Cylinder: E = λ/(2πε₀r).",
+      "example": "Field falls as 1/r for a line charge."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Find the field just outside a charged conducting plate with σ = 4×10⁻⁶ C/m².",
+      "answer": "For a conductor, E = σ/ε₀ = 4×10⁻⁶/(8.85×10⁻¹²) ≈ 4.5×10⁵ N/C, perpendicular to the surface (E = 0 inside the conductor).",
+      "shortcut": "E = σ/ε₀ outside a conductor.",
+      "example": "≈ 4.5×10⁵ N/C outward."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Explain why the electric field inside a conductor in electrostatic equilibrium is zero.",
+      "answer": "Free charges move until the excess resides on the surface; any internal field would push charges, contradicting equilibrium, so E_inside = 0. Also the surface is an equipotential and E is perpendicular to it.",
+      "shortcut": "E_inside = 0 ; charges live on the surface.",
+      "example": "A cavity inside a conductor also has zero field if it contains no charge."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. A uniformly charged solid sphere (total Q, radius R) — find E at r < R.",
+      "answer": "For r < R, Q_enc = Q(r/R)³; Gauss's law gives E(4πr²) = Q_enc/ε₀ → E = Qr/(4πε₀R³), proportional to r (zero at the centre). ▥ 20.2–20.3 Gauss's Law & Applications  —  Compare / Contrast Tables Gauss's Law: When It Helps PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Inside: E ∝ r ; outside: E ∝ 1/r².",
+      "example": "At the centre E = 0; at the surface it is maximum."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the field of a charged conducting sphere using Gauss's law.",
+      "answer": "By spherical symmetry, E is radial and constant on a spherical Gaussian surface. For r < R, Q_enc = 0 → E = 0 (inside the conductor). For r > R, Q_enc = Q → E(4πr²) = Q/ε₀ → E = Q/(4πε₀r²), like a point charge at the centre.",
+      "shortcut": "Inside E=0; outside E = Q/(4πε₀r²).",
+      "example": "A charged conducting sphere's interior is field-free."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the field of an infinite line charge using Gauss's law.",
+      "answer": "By cylindrical symmetry, E is radial and constant on a cylindrical Gaussian surface of radius r, length L: E(2πrL) = λL/ε₀ → E = λ/(2πε₀r), falling as 1/r.",
+      "shortcut": "E = λ/(2πε₀r).",
+      "example": "Field of a long wire falls off as 1/r."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. State the formula for the electric field of a point charge and of a uniform infinite sheet.",
+      "answer": "Point charge: E = (1/4πε₀)(q/r²), radial. Uniform infinite sheet: E = σ/(2ε₀), constant and perpendicular to the sheet. A conducting surface just outside: E = σ/ε₀.",
+      "shortcut": "Point: kq/r² ; sheet: σ/2ε₀.",
+      "example": "Bigger charge/density → bigger field."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T4. State Gauss's law and define electric flux.",
+      "answer": "Gauss's law: the net electric flux through any closed surface equals the enclosed charge divided by ε₀: ∮E·dA = Q_enc/ε₀. Electric flux Φ = ∫E·dA (units V·m); it is the field 'flowing' through a surface.",
+      "shortcut": "Φ = Q_enc/ε₀ ; units V·m.",
+      "example": "A closed surface with 1 C inside has Φ = 1/ε₀ V·m."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain electric field lines and their properties.",
+      "answer": "Field lines are drawn so that the tangent gives the field direction and their density ∝ field strength; they start on positive charges and end on negative charges, never cross, and meet a conductor's surface at right angles. This is a qualitative way to map E.",
+      "shortcut": "Lines: + → −, density ∝ E, never cross, ⟂ conductor.",
+      "example": "A dipole's lines bow from + to −; a single charge's radiate out."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the field of a parallel-plate capacitor (conducting plates).",
+      "answer": "Between two oppositely charged conducting plates, the fields add: E = σ/ε₀, uniform and perpendicular to the plates (outside, they cancel). This uniform field is why a capacitor stores energy and exerts a force on a charge between its plates.",
+      "shortcut": "E = σ/ε₀ between the plates; uniform.",
+      "example": "The field in an ideal parallel-plate capacitor is constant."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain how Gauss's law is used for a charged infinite plane (sheet).",
+      "answer": "Take a pillbox Gaussian surface straddling the sheet; by symmetry the flux through the two end caps is 2EA, the side contributes zero, and Q_enc = σA. So 2EA = σA/ε₀ → E = σ/(2ε₀) (per side; a conductor surface gives σ/ε₀ since both sides contribute).",
+      "shortcut": "Pillbox: E = σ/2ε₀ per side.",
+      "example": "A single infinite sheet gives σ/2ε₀ on each side."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain a Faraday cage and its shielding principle.",
+      "answer": "A closed conducting enclosure redistributes its charges so that the internal electric field is zero; external fields are cancelled by induced surface charges. This is why a metal car or a shielded cable protects its interior from static/electrostatic fields.",
+      "shortcut": "Closed conductor → E_inside = 0 (shielding).",
+      "example": "A metal car in a thunderstorm protects the occupants."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T9. Why is the electric field inside a conductor in electrostatic equilibrium zero?",
+      "answer": "Free charges in the conductor move until they cancel any internal field; if a field remained, it would continue to push charges, contradicting equilibrium. Hence E_inside = 0 and all excess charge sits on the surface (where the field is perpendicular).",
+      "shortcut": "E_in = 0 ; charges on the surface.",
+      "example": "A metal cavity shields its interior (Faraday cage)."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T10. Professor: 'Is Gauss's law more fundamental than Coulomb's law, or the other way round?'",
+      "answer": "In vacuum Gauss's law (from Coulomb) is equivalent to Coulomb's law for point charges, but Gauss's law is more useful for symmetric charge distributions because it gives E directly from symmetry without integrating. In a medium, Gauss's law for D = ε₀E + P is more general (depends on free charge only).",
+      "shortcut": "Both are equivalent; Gauss is more general for D.",
+      "example": "Gauss's law is the shortcut for symmetric fields."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T11. An infinite line charge has λ = 2 μC/m. Find the field at r = 0.1 m.",
+      "answer": "E = λ/(2πε₀r) = 2×10⁻⁶/(2π×8.85×10⁻¹²×0.1) = 2×10⁻⁶/(5.56×10⁻¹²) ≈ 3.6×10⁵ N/C.",
+      "shortcut": "E = λ/(2πε₀r).",
+      "example": "≈ 3.6×10⁵ N/C."
+    }
+  ],
+  "formulas": [
+    "E = F/q ; for a point: E = (1/4πε₀)q/r².",
+    "Electric flux Φ = ∫E·dA ; Gauss: Φ = Q_enc/ε₀.",
+    "Field of infinite sheet σ/ε₀ ; infinite line λ/(2πε₀r) ; conducting surface σ/ε₀ just outside."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 20: ELECTRIC FIELD   Content Area: Electricity & Magnetism",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 20.1 Electric Field & Field Lines",
+    "Q1. Define electric field and find it for a point charge.",
+    "Answer:  Electric field E is the force per unit positive test charge: E = F/q. For a point charge E = (1/4πε₀)(q/r²), radially outward for +q and inward for −q.",
+    "⚡ Shortcut:  E = kq/r² (direction from + to −).",
+    "Example:  E of a 1 μC charge at 0.3 m: 9×10⁹×10⁻⁶/0.09 = 1×10⁵ N/C.",
+    "Q2. Describe electric field lines and their properties.",
+    "Answer:  Field lines represent the field; they start on + and end on −, never cross (field is single-valued), are denser where E is larger, and are perpendicular to conductors' surfaces. The number per unit area ∝ E.",
+    "⚡ Shortcut:  + → −; never cross; density ∝ E.",
+    "Example:  A dipole's lines curve from + to − outside.",
+    "Q3. Find the field at the midpoint between +q at x=0 and −q at x=1 m.",
+    "Answer:  Field from each at the midpoint is kq/0.5², both point in the same direction (from + to −): E = 2(kq/0.25) = 8kq/m² toward the negative charge.",
+    "⚡ Shortcut:  Add the two (same direction) for +,− pair.",
+    "Example:  For q = 1 μC: E = 8×9×10³ = 7.2×10⁴ N/C.",
+    "Q4. Explain how Gauss's law can be used to find the field of a spherically symmetric charge.",
+    "Answer:  By symmetry, E is radial and constant on a spherical Gaussian surface. Gauss's law ∮E·dA = Q_enc/ε₀ gives E(4πr²) = Q/ε₀ → E = Q/(4πε₀r²), the same as Coulomb's law.",
+    "⚡ Shortcut:  Spherical symmetry → E·A = Q_enc/ε₀ ; A = 4πr².",
+    "Example:  A charged conducting sphere has E=0 inside, outside like a point charge.",
+    "▥ 20.1 Electric Field & Field Lines  —  Compare / Contrast Tables",
+    "Electric Field vs Electric Potential",
+    "Electric Field Line Rules (quick chart)",
+    "▣ 20.2–20.3 Gauss's Law & Applications",
+    "Q5. State Gauss's law and define electric flux.",
+    "Answer:  Gauss's law: the net electric flux through any closed surface equals the enclosed charge divided by ε₀: ∮E·dA = Q_enc/ε₀. Electric flux Φ = ∫E·dA (units V·m).",
+    "⚡ Shortcut:  Φ = Q_enc/ε₀.",
+    "Example:  A closed surface with 2 C inside has Φ = 2/ε₀ V·m.",
+    "Q6. Using Gauss's law find the field of an infinite charged plane of surface density σ.",
+    "Answer:  Choose a pillbox Gaussian surface straddling the plane. Φ = E(2A) = σA/ε₀ → E = σ/(2ε₀). A surface charge on a conductor gives E = σ/ε₀ just outside.",
+    "⚡ Shortcut:  Sheet: σ/2ε₀ ; conductor surface: σ/ε₀.",
+    "Example:  Double-sheet gives σ/ε₀, half for each sheet.",
+    "Q7. Using Gauss's law find the field of an infinite line charge of linear density λ.",
+    "Answer:  Use a cylindrical Gaussian surface of radius r and length L. Flux = E(2πrL) = λL/ε₀ → E = λ/(2πε₀r), radially outward.",
+    "⚡ Shortcut:  Cylinder: E = λ/(2πε₀r).",
+    "Example:  Field falls as 1/r for a line charge.",
+    "Q8. Find the field just outside a charged conducting plate with σ = 4×10⁻⁶ C/m².",
+    "Answer:  For a conductor, E = σ/ε₀ = 4×10⁻⁶/(8.85×10⁻¹²) ≈ 4.5×10⁵ N/C, perpendicular to the surface (E = 0 inside the conductor).",
+    "⚡ Shortcut:  E = σ/ε₀ outside a conductor.",
+    "Example:  ≈ 4.5×10⁵ N/C outward.",
+    "Q9. Explain why the electric field inside a conductor in electrostatic equilibrium is zero.",
+    "Answer:  Free charges move until the excess resides on the surface; any internal field would push charges, contradicting equilibrium, so E_inside = 0. Also the surface is an equipotential and E is perpendicular to it.",
+    "⚡ Shortcut:  E_inside = 0 ; charges live on the surface.",
+    "Example:  A cavity inside a conductor also has zero field if it contains no charge.",
+    "Q10. A uniformly charged solid sphere (total Q, radius R) — find E at r < R.",
+    "Answer:  For r < R, Q_enc = Q(r/R)³; Gauss's law gives E(4πr²) = Q_enc/ε₀ → E = Qr/(4πε₀R³), proportional to r (zero at the centre).",
+    "⚡ Shortcut:  Inside: E ∝ r ; outside: E ∝ 1/r².",
+    "Example:  At the centre E = 0; at the surface it is maximum.",
+    "▥ 20.2–20.3 Gauss's Law & Applications  —  Compare / Contrast Tables",
+    "Gauss's Law: When It Helps",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the field of a charged conducting sphere using Gauss's law.",
+    "Answer:  By spherical symmetry, E is radial and constant on a spherical Gaussian surface. For r < R, Q_enc = 0 → E = 0 (inside the conductor). For r > R, Q_enc = Q → E(4πr²) = Q/ε₀ → E = Q/(4πε₀r²), like a point charge at the centre.",
+    "⚡ Short / exam line:  Inside E=0; outside E = Q/(4πε₀r²).",
+    "Example:  A charged conducting sphere's interior is field-free.",
+    "[Derive] T2. Derive the field of an infinite line charge using Gauss's law.",
+    "Answer:  By cylindrical symmetry, E is radial and constant on a cylindrical Gaussian surface of radius r, length L: E(2πrL) = λL/ε₀ → E = λ/(2πε₀r), falling as 1/r.",
+    "⚡ Short / exam line:  E = λ/(2πε₀r).",
+    "Example:  Field of a long wire falls off as 1/r.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. State the formula for the electric field of a point charge and of a uniform infinite sheet.",
+    "Answer:  Point charge: E = (1/4πε₀)(q/r²), radial. Uniform infinite sheet: E = σ/(2ε₀), constant and perpendicular to the sheet. A conducting surface just outside: E = σ/ε₀.",
+    "⚡ Short / exam line:  Point: kq/r² ; sheet: σ/2ε₀.",
+    "Example:  Bigger charge/density → bigger field.",
+    "[State] T4. State Gauss's law and define electric flux.",
+    "Answer:  Gauss's law: the net electric flux through any closed surface equals the enclosed charge divided by ε₀: ∮E·dA = Q_enc/ε₀. Electric flux Φ = ∫E·dA (units V·m); it is the field 'flowing' through a surface.",
+    "⚡ Short / exam line:  Φ = Q_enc/ε₀ ; units V·m.",
+    "Example:  A closed surface with 1 C inside has Φ = 1/ε₀ V·m.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain electric field lines and their properties.",
+    "Answer:  Field lines are drawn so that the tangent gives the field direction and their density ∝ field strength; they start on positive charges and end on negative charges, never cross, and meet a conductor's surface at right angles. This is a qualitative way to map E.",
+    "⚡ Short / exam line:  Lines: + → −, density ∝ E, never cross, ⟂ conductor.",
+    "Example:  A dipole's lines bow from + to −; a single charge's radiate out.",
+    "[Explain] T6. Explain the field of a parallel-plate capacitor (conducting plates).",
+    "Answer:  Between two oppositely charged conducting plates, the fields add: E = σ/ε₀, uniform and perpendicular to the plates (outside, they cancel). This uniform field is why a capacitor stores energy and exerts a force on a charge between its plates.",
+    "⚡ Short / exam line:  E = σ/ε₀ between the plates; uniform.",
+    "Example:  The field in an ideal parallel-plate capacitor is constant.",
+    "[Explain] T7. Explain how Gauss's law is used for a charged infinite plane (sheet).",
+    "Answer:  Take a pillbox Gaussian surface straddling the sheet; by symmetry the flux through the two end caps is 2EA, the side contributes zero, and Q_enc = σA. So 2EA = σA/ε₀ → E = σ/(2ε₀) (per side; a conductor surface gives σ/ε₀ since both sides contribute).",
+    "⚡ Short / exam line:  Pillbox: E = σ/2ε₀ per side.",
+    "Example:  A single infinite sheet gives σ/2ε₀ on each side.",
+    "[Explain] T8. Explain a Faraday cage and its shielding principle.",
+    "Answer:  A closed conducting enclosure redistributes its charges so that the internal electric field is zero; external fields are cancelled by induced surface charges. This is why a metal car or a shielded cable protects its interior from static/electrostatic fields.",
+    "⚡ Short / exam line:  Closed conductor → E_inside = 0 (shielding).",
+    "Example:  A metal car in a thunderstorm protects the occupants.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T9. Why is the electric field inside a conductor in electrostatic equilibrium zero?",
+    "Answer:  Free charges in the conductor move until they cancel any internal field; if a field remained, it would continue to push charges, contradicting equilibrium. Hence E_inside = 0 and all excess charge sits on the surface (where the field is perpendicular).",
+    "⚡ Short / exam line:  E_in = 0 ; charges on the surface.",
+    "Example:  A metal cavity shields its interior (Faraday cage).",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T10. Professor: 'Is Gauss's law more fundamental than Coulomb's law, or the other way round?'",
+    "Answer:  In vacuum Gauss's law (from Coulomb) is equivalent to Coulomb's law for point charges, but Gauss's law is more useful for symmetric charge distributions because it gives E directly from symmetry without integrating. In a medium, Gauss's law for D = ε₀E + P is more general (depends on free charge only).",
+    "⚡ Short / exam line:  Both are equivalent; Gauss is more general for D.",
+    "Example:  Gauss's law is the shortcut for symmetric fields.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T11. An infinite line charge has λ = 2 μC/m. Find the field at r = 0.1 m.",
+    "Answer:  E = λ/(2πε₀r) = 2×10⁻⁶/(2π×8.85×10⁻¹²×0.1) = 2×10⁻⁶/(5.56×10⁻¹²) ≈ 3.6×10⁵ N/C.",
+    "⚡ Short / exam line:  E = λ/(2πε₀r).",
+    "Example:  ≈ 3.6×10⁵ N/C.",
+    "★ Quick-formula memos (this unit)",
+    "E = F/q ; for a point: E = (1/4πε₀)q/r².",
+    "Electric flux Φ = ∫E·dA ; Gauss: Φ = Q_enc/ε₀.",
+    "Field of infinite sheet σ/ε₀ ; infinite line λ/(2πε₀r) ; conducting surface σ/ε₀ just outside."
+  ]
+}

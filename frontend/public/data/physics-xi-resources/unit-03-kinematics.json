@@ -1,0 +1,549 @@
+{
+  "unitNo": 3,
+  "unitId": "kinematics",
+  "unitName": "Kinematics",
+  "contentArea": "Mechanics",
+  "docxFileName": "Physics_XI_Unit_03_kinematics.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_03_kinematics.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 3: KINEMATICS   Content Area: Mechanics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 151,
+    "tableCount": 5,
+    "questionCount": 21,
+    "theoryCount": 9,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Quantity",
+        "Average",
+        "Instantaneous"
+      ],
+      "rows": [
+        [
+          "Definition",
+          "Change per interval Δt",
+          "Limit as Δt → 0"
+        ],
+        [
+          "Formula",
+          "Δx/Δt, Δv/Δt",
+          "dx/dt, dv/dt"
+        ],
+        [
+          "Used for",
+          "Whole trip",
+          "A particular moment"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Situation",
+        "Relative velocity"
+      ],
+      "rows": [
+        [
+          "A seen from B",
+          "vAB = vA − vB (vector)"
+        ],
+        [
+          "Rain falling on a walking man",
+          "v(rain w.r.t. man) = v_rain − v_man"
+        ],
+        [
+          "Boat in a flowing river",
+          "v(boat w.r.t. ground) = v(boat w.r.t. water) + v_stream"
+        ],
+        [
+          "Two bodies moving toward each other",
+          "v_rel = v1 + v2 (speeds add)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Equation",
+        "Given",
+        "Find",
+        "Watch-out"
+      ],
+      "rows": [
+        [
+          "v = u + at",
+          "u, a, t",
+          "v",
+          "Constant a only"
+        ],
+        [
+          "s = ut + ½at²",
+          "u, a, t",
+          "s",
+          "No v needed"
+        ],
+        [
+          "v² = u² + 2as",
+          "u, a, s",
+          "v",
+          "No t needed"
+        ],
+        [
+          "s = (u+v)t/2",
+          "u, v, t",
+          "s",
+          "No a needed"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Thrown up (speed u)",
+        "Thrown down (speed u)"
+      ],
+      "rows": [
+        [
+          "Time to reach top",
+          "u/g",
+          "— (none)"
+        ],
+        [
+          "Time to hit ground",
+          "u/g + √(2h/g)",
+          "√(2h/g)"
+        ],
+        [
+          "Speed at ground",
+          "√(u² + 2gh)",
+          "√(u² + 2gh)"
+        ],
+        [
+          "Key fact",
+          "Landing speed depends on u² + 2gh, not direction",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "At highest point",
+        "At landing"
+      ],
+      "rows": [
+        [
+          "Vertical velocity",
+          "0",
+          "−u sinθ"
+        ],
+        [
+          "Time",
+          "T/2",
+          "T = 2u sinθ/g"
+        ],
+        [
+          "Height",
+          "H = u²sin²θ / 2g",
+          "0"
+        ],
+        [
+          "Horizontal position",
+          "R/2",
+          "R = u² sin2θ / g"
+        ],
+        [
+          "Horizontal speed",
+          "u cosθ (constant)",
+          "u cosθ (constant)"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define instantaneous velocity.",
+      "answer": "Instantaneous velocity is the velocity at a particular instant, equal to the limit of Δs/Δt as Δt→0, i.e. v = ds/dt.",
+      "shortcut": "Instantaneous = derivative; average = Δs/Δt.",
+      "example": "Speedometer reading is instantaneous speed."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Define acceleration. State its SI unit.",
+      "answer": "Acceleration is the rate of change of velocity, a = dv/dt. SI unit = m s⁻².",
+      "shortcut": "a = Δv/Δt (or dv/dt).",
+      "example": "0 to 60 m/s in 20 s → a = 3 m/s²."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Distinguish uniform and non-uniform acceleration.",
+      "answer": "Uniform acceleration: equal change in velocity in equal times (a constant). Non-uniform: change varies with time (a not constant), e.g. a body moving in a circle.",
+      "shortcut": "constant a → uniform; changing a → non-uniform.",
+      "example": "Free fall = uniform (a=g); car braking = non-uniform."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Find velocity and acceleration for s = 5t − t² at t = 3 s.",
+      "answer": "v = ds/dt = 5 − 2t → at t=3, v = −1 m/s (1 m/s opposite). a = d²s/dt² = −2 m/s² (constant).",
+      "shortcut": "v = 1st derivative of s; a = 2nd derivative.",
+      "example": "Negative v means the particle reverses direction."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. What is the significance of the slope of a displacement-time graph?",
+      "answer": "The slope (gradient) of a s–t graph equals velocity. A steeper slope → larger speed; zero slope → body at rest; negative slope → motion opposite to positive direction. ▥ 3.1 Instantaneous Velocity & Acceleration  —  Compare / Contrast Tables Average vs Instantaneous Velocity & Acceleration ▣ 3.2 Relative Velocity",
+      "shortcut": "slope of s-t = v; slope of v-t = a.",
+      "example": "Horizontal s-t line → body stationary."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define relative velocity of A with respect to B.",
+      "answer": "Relative velocity of A w.r.t. B is V_AB = V_A − V_B, the velocity at which A appears to move when observed from B.",
+      "shortcut": "V_AB = V_A − V_B (opposite object first minus reference).",
+      "example": "Train A 30 m/s, B 20 m/s same line → A w.r.t. B = 10 m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Two trains move in opposite directions at 20 m/s and 30 m/s. Find relative speed.",
+      "answer": "Opposite directions → add: relative speed = 20 + 30 = 50 m/s.",
+      "shortcut": "Same direction → subtract; opposite → add.",
+      "example": "A passenger on the 20 m/s train sees the other at 50 m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. A man walks on a moving train. Express his velocity w.r.t. the ground.",
+      "answer": "If the train's velocity is V and his velocity on the train is u, his ground velocity is V + u (same line, vector sum). ▥ 3.2 Relative Velocity  —  Compare / Contrast Tables Relative Velocity: Standard Situations ▣ 3.3 Equations of Motion",
+      "shortcut": "Add velocities in same direction; subtract if he walks opposite.",
+      "example": "Train 15 m/s + man 3 m/s forward = 18 m/s w.r.t. ground."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Derive v = u + at using a v-t graph.",
+      "answer": "On a v–t graph of uniform acceleration, v = u + (slope)×t, and slope = a. Hence v = u + at.",
+      "shortcut": "Area under v-t = s; slope = a; final height = u + at.",
+      "example": "u=2, a=3, t=4 → v = 14 m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. A body starts from rest and moves 96 m in 8 s with uniform acceleration. Find a.",
+      "answer": "s = ½at² → 96 = ½·a·64 → a = 3 m/s².",
+      "shortcut": "From rest: s = ½at², v = at, v² = 2as.",
+      "example": "v = at = 3×8 = 24 m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Find the stopping distance of a car at 30 m/s with deceleration 5 m/s².",
+      "answer": "v² = u² + 2as, with v=0: 0 = 900 − 2·5·s → s = 90 m.",
+      "shortcut": "Use v²=u²+2as when time is not given.",
+      "example": "Hence the minimum safe braking distance is 90 m."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. State and derive s = ut + ½at².",
+      "answer": "s = (average velocity)×t = [(u+v)/2]t = [(u+u+at)/2]t = ut + ½at². ▥ 3.3 Equations of Motion  —  Compare / Contrast Tables Equations of Motion: Which One to Use ▣ 3.4 Freely Falling Body",
+      "shortcut": "From v=u+at in average-velocity form.",
+      "example": "u=0,a=2,t=5 → s=25 m."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. Define a freely falling body and state its acceleration.",
+      "answer": "A freely falling body is one falling under gravity only, ignoring air resistance. Its acceleration is g ≈ 9.8 m/s² downward, so u=0, a=g.",
+      "shortcut": "From rest: v = gt, h = ½gt².",
+      "example": "After 2 s, v = 19.6 m/s, h = 19.6 m."
+    },
+    {
+      "type": "neb",
+      "question": "Q14. Time of fall from a 44.1 m height.",
+      "answer": "h = ½gt² → 44.1 = ½(9.8)t² → t² = 9 → t = 3 s.",
+      "shortcut": "t = √(2h/g).",
+      "example": "A stone dropped from a 44.1 m tower hits the ground in 3 s."
+    },
+    {
+      "type": "neb",
+      "question": "Q15. Why do all bodies fall with the same acceleration in a vacuum?",
+      "answer": "In a vacuum there is no air resistance, so the only force is gravity. Since F=mg and a=F/m=g, the mass cancels and every body has the same acceleration g regardless of mass.",
+      "shortcut": "In vacuum: a = g for all, mass-independent.",
+      "example": "Feather and coin fall together on the Moon."
+    },
+    {
+      "type": "neb",
+      "question": "Q16. Find the height of a tower if a body takes 4 s to fall from its top.",
+      "answer": "h = ½gt² = ½(9.8)(16) = 78.4 m. ▥ 3.4 Freely Falling Body  —  Compare / Contrast Tables Body Thrown Up vs Down from a Height h ▣ 3.5 Projectile Motion",
+      "shortcut": "h = ½gt².",
+      "example": "Tower ≈ 78.4 m tall."
+    },
+    {
+      "type": "neb",
+      "question": "Q17. Define projectile motion and state its assumptions.",
+      "answer": "Projectile motion is the motion of a body thrown into the air under gravity only. Assumptions: neglect air resistance, g constant, motion in a vertical plane, acceleration only vertical.",
+      "shortcut": "Horizontal: uniform velocity. Vertical: uniformly accelerated.",
+      "example": "A ball thrown at an angle traces a parabola."
+    },
+    {
+      "type": "neb",
+      "question": "Q18. Derive the range of a projectile R = u²sin2θ/g.",
+      "answer": "Time of flight T = 2u sinθ/g. Range = horizontal velocity × T = (u cosθ)(2u sinθ/g) = u²(2sinθcosθ)/g = u²sin2θ/g.",
+      "shortcut": "Range = u cosθ × (2u sinθ/g) → u²sin2θ/g.",
+      "example": "u=20 m/s, θ=45° → R = 400/9.8 ≈ 40.8 m."
+    },
+    {
+      "type": "neb",
+      "question": "Q19. At what angle is the range maximum and what is R_max?",
+      "answer": "R = u²sin2θ/g is maximum when sin2θ = 1, i.e. 2θ = 90°, θ = 45°. Then R_max = u²/g.",
+      "shortcut": "θ=45° → R_max = u²/g.",
+      "example": "Same launch speed, 45° gives the farthest range."
+    },
+    {
+      "type": "neb",
+      "question": "Q20. Find the maximum height of a projectile launched at 30° with u = 20 m/s.",
+      "answer": "H = u²sin²θ/2g = (400)(0.25)/19.6 = 100/19.6 ≈ 5.1 m.",
+      "shortcut": "H = u²sin²θ/2g (vertical component).",
+      "example": "Vertical launch speed u sinθ = 10 m/s → H ≈ 5.1 m."
+    },
+    {
+      "type": "neb",
+      "question": "Q21. Find the time of flight for a 45° launch with u = 10 m/s.",
+      "answer": "T = 2u sinθ/g = 2(10)(0.707)/9.8 ≈ 1.44 s. ▥ 3.5 Projectile Motion  —  Compare / Contrast Tables Projectile Motion: Values at the Apex vs Landing PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "T = 2u sinθ/g.",
+      "example": "The projectile is in the air ≈ 1.44 s."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive v² = u² + 2as without using time.",
+      "answer": "From s = (u+v)t/2 and v = u+at → t=(v−u)/a. Then s = (u+v)(v−u)/2a = (v²−u²)/2a → v²=u²+2as.",
+      "shortcut": "Eliminate t between two equations.",
+      "example": "Used when time is not given."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the time of flight, maximum height and range of a projectile.",
+      "answer": "T = 2u sinθ/g ; H = u²sin²θ/2g ; R = u²sin2θ/g. From T, use vertical motion (symmetry) for H, and R = horizontal speed × T.",
+      "shortcut": "Memorize the three; all come from components.",
+      "example": "Max range at 45°: R_max = u²/g."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. Write the four kinematic equations for uniform acceleration.",
+      "answer": "v=u+at ; s=ut+½at² ; v²=u²+2as ; s=(u+v)t/2. All assume constant a.",
+      "shortcut": "Pick the one missing the unknown (no time → v²=u²+2as).",
+      "example": "0-50 m/s²·3 s → v=15 m/s, s=22.5 m."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T4. Compare the motion of a body falling vertically with that of a projectile.",
+      "answer": "Vertical fall: only vertical motion (u=0 downward). Projectile: both horizontal (uniform) and vertical (accelerated) motion. Both have the same vertical acceleration g and the same time-to-reach-the-ground from the same height.",
+      "shortcut": "Vertical = 1D; Projectile = 2D with same g.",
+      "example": "From same height, both hit the ground in √(2h/g) time."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the graphical treatment of motion (s-t and v-t graphs).",
+      "answer": "Slope of s-t = velocity; slope of v-t = acceleration; area under v-t = displacement. A horizontal s-t → rest; curved s-t → acceleration.",
+      "shortcut": "s-t slope=v; v-t slope=a; area under v-t = s.",
+      "example": "Constant-velocity v-t gives a rectangle area = vt."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain projectile motion as two independent components.",
+      "answer": "Horizontal: no force → uniform velocity u cosθ. Vertical: gravity → uniformly accelerated u sinθ with g. The combined path is a parabola; time depends only on the vertical motion.",
+      "shortcut": "Separate x and y; treat independently.",
+      "example": "Same launch: 30° and 60° give equal ranges."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T7. Why is the trajectory of a projectile a parabola?",
+      "answer": "Because x ∝ t (constant horizontal speed) and y ∝ t − g t²/2 (accelerated). Eliminating t gives y = x tanθ − gx²/(2u²cos²θ), a quadratic in x → a parabola.",
+      "shortcut": "y is quadratic in x → parabola.",
+      "example": "Air resistance would distort it from a parabola."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T8. Professor: 'Two bodies, one dropped, one fired horizontally from the same height. Which hits first and why?'",
+      "answer": "Both hit at the same instant, because vertical motion is independent of horizontal motion; both start vertical speed 0 and fall h = ½gt². The horizontal one merely travels further horizontally.",
+      "shortcut": "Vertical time = √(2h/g) for both.",
+      "example": "Galileo's famous thought experiment."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T9. A ball is thrown at 20 m/s, 45°. Find range, max height and time of flight.",
+      "answer": "T = 2(20)(sin45)/9.8 = 2(20)(0.707)/9.8 ≈ 2.88 s. H = u²sin²θ/2g = 400×0.5/19.6 ≈ 10.2 m. R = u²sin2θ/g = 400×1/9.8 ≈ 40.8 m.",
+      "shortcut": "45°: sinθ=cosθ=0.707, sin2θ=1.",
+      "example": "Classic 45° launch."
+    }
+  ],
+  "formulas": [
+    "Equations (const a): v=u+at; s=ut+½at²; v²=u²+2as; s=(u+v)t/2.",
+    "Free fall: u=0, a=g=9.8 m/s². Height of fall h=½gt².",
+    "Projectile: range R = u²sin2θ/g (max at θ=45°); H = u²sin²θ/2g; T = 2u sinθ/g.",
+    "Graph: slope of s-t = v; area under v-t = s; slope of v-t = a."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 3: KINEMATICS   Content Area: Mechanics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 3.1 Instantaneous Velocity & Acceleration",
+    "Q1. Define instantaneous velocity.",
+    "Answer:  Instantaneous velocity is the velocity at a particular instant, equal to the limit of Δs/Δt as Δt→0, i.e. v = ds/dt.",
+    "⚡ Shortcut:  Instantaneous = derivative; average = Δs/Δt.",
+    "Example:  Speedometer reading is instantaneous speed.",
+    "Q2. Define acceleration. State its SI unit.",
+    "Answer:  Acceleration is the rate of change of velocity, a = dv/dt. SI unit = m s⁻².",
+    "⚡ Shortcut:  a = Δv/Δt (or dv/dt).",
+    "Example:  0 to 60 m/s in 20 s → a = 3 m/s².",
+    "Q3. Distinguish uniform and non-uniform acceleration.",
+    "Answer:  Uniform acceleration: equal change in velocity in equal times (a constant). Non-uniform: change varies with time (a not constant), e.g. a body moving in a circle.",
+    "⚡ Shortcut:  constant a → uniform; changing a → non-uniform.",
+    "Example:  Free fall = uniform (a=g); car braking = non-uniform.",
+    "Q4. Find velocity and acceleration for s = 5t − t² at t = 3 s.",
+    "Answer:  v = ds/dt = 5 − 2t → at t=3, v = −1 m/s (1 m/s opposite). a = d²s/dt² = −2 m/s² (constant).",
+    "⚡ Shortcut:  v = 1st derivative of s; a = 2nd derivative.",
+    "Example:  Negative v means the particle reverses direction.",
+    "Q5. What is the significance of the slope of a displacement-time graph?",
+    "Answer:  The slope (gradient) of a s–t graph equals velocity. A steeper slope → larger speed; zero slope → body at rest; negative slope → motion opposite to positive direction.",
+    "⚡ Shortcut:  slope of s-t = v; slope of v-t = a.",
+    "Example:  Horizontal s-t line → body stationary.",
+    "▥ 3.1 Instantaneous Velocity & Acceleration  —  Compare / Contrast Tables",
+    "Average vs Instantaneous Velocity & Acceleration",
+    "▣ 3.2 Relative Velocity",
+    "Q6. Define relative velocity of A with respect to B.",
+    "Answer:  Relative velocity of A w.r.t. B is V_AB = V_A − V_B, the velocity at which A appears to move when observed from B.",
+    "⚡ Shortcut:  V_AB = V_A − V_B (opposite object first minus reference).",
+    "Example:  Train A 30 m/s, B 20 m/s same line → A w.r.t. B = 10 m/s.",
+    "Q7. Two trains move in opposite directions at 20 m/s and 30 m/s. Find relative speed.",
+    "Answer:  Opposite directions → add: relative speed = 20 + 30 = 50 m/s.",
+    "⚡ Shortcut:  Same direction → subtract; opposite → add.",
+    "Example:  A passenger on the 20 m/s train sees the other at 50 m/s.",
+    "Q8. A man walks on a moving train. Express his velocity w.r.t. the ground.",
+    "Answer:  If the train's velocity is V and his velocity on the train is u, his ground velocity is V + u (same line, vector sum).",
+    "⚡ Shortcut:  Add velocities in same direction; subtract if he walks opposite.",
+    "Example:  Train 15 m/s + man 3 m/s forward = 18 m/s w.r.t. ground.",
+    "▥ 3.2 Relative Velocity  —  Compare / Contrast Tables",
+    "Relative Velocity: Standard Situations",
+    "▣ 3.3 Equations of Motion",
+    "Q9. Derive v = u + at using a v-t graph.",
+    "Answer:  On a v–t graph of uniform acceleration, v = u + (slope)×t, and slope = a. Hence v = u + at.",
+    "⚡ Shortcut:  Area under v-t = s; slope = a; final height = u + at.",
+    "Example:  u=2, a=3, t=4 → v = 14 m/s.",
+    "Q10. A body starts from rest and moves 96 m in 8 s with uniform acceleration. Find a.",
+    "Answer:  s = ½at² → 96 = ½·a·64 → a = 3 m/s².",
+    "⚡ Shortcut:  From rest: s = ½at², v = at, v² = 2as.",
+    "Example:  v = at = 3×8 = 24 m/s.",
+    "Q11. Find the stopping distance of a car at 30 m/s with deceleration 5 m/s².",
+    "Answer:  v² = u² + 2as, with v=0: 0 = 900 − 2·5·s → s = 90 m.",
+    "⚡ Shortcut:  Use v²=u²+2as when time is not given.",
+    "Example:  Hence the minimum safe braking distance is 90 m.",
+    "Q12. State and derive s = ut + ½at².",
+    "Answer:  s = (average velocity)×t = [(u+v)/2]t = [(u+u+at)/2]t = ut + ½at².",
+    "⚡ Shortcut:  From v=u+at in average-velocity form.",
+    "Example:  u=0,a=2,t=5 → s=25 m.",
+    "▥ 3.3 Equations of Motion  —  Compare / Contrast Tables",
+    "Equations of Motion: Which One to Use",
+    "▣ 3.4 Freely Falling Body",
+    "Q13. Define a freely falling body and state its acceleration.",
+    "Answer:  A freely falling body is one falling under gravity only, ignoring air resistance. Its acceleration is g ≈ 9.8 m/s² downward, so u=0, a=g.",
+    "⚡ Shortcut:  From rest: v = gt, h = ½gt².",
+    "Example:  After 2 s, v = 19.6 m/s, h = 19.6 m.",
+    "Q14. Time of fall from a 44.1 m height.",
+    "Answer:  h = ½gt² → 44.1 = ½(9.8)t² → t² = 9 → t = 3 s.",
+    "⚡ Shortcut:  t = √(2h/g).",
+    "Example:  A stone dropped from a 44.1 m tower hits the ground in 3 s.",
+    "Q15. Why do all bodies fall with the same acceleration in a vacuum?",
+    "Answer:  In a vacuum there is no air resistance, so the only force is gravity. Since F=mg and a=F/m=g, the mass cancels and every body has the same acceleration g regardless of mass.",
+    "⚡ Shortcut:  In vacuum: a = g for all, mass-independent.",
+    "Example:  Feather and coin fall together on the Moon.",
+    "Q16. Find the height of a tower if a body takes 4 s to fall from its top.",
+    "Answer:  h = ½gt² = ½(9.8)(16) = 78.4 m.",
+    "⚡ Shortcut:  h = ½gt².",
+    "Example:  Tower ≈ 78.4 m tall.",
+    "▥ 3.4 Freely Falling Body  —  Compare / Contrast Tables",
+    "Body Thrown Up vs Down from a Height h",
+    "▣ 3.5 Projectile Motion",
+    "Q17. Define projectile motion and state its assumptions.",
+    "Answer:  Projectile motion is the motion of a body thrown into the air under gravity only. Assumptions: neglect air resistance, g constant, motion in a vertical plane, acceleration only vertical.",
+    "⚡ Shortcut:  Horizontal: uniform velocity. Vertical: uniformly accelerated.",
+    "Example:  A ball thrown at an angle traces a parabola.",
+    "Q18. Derive the range of a projectile R = u²sin2θ/g.",
+    "Answer:  Time of flight T = 2u sinθ/g. Range = horizontal velocity × T = (u cosθ)(2u sinθ/g) = u²(2sinθcosθ)/g = u²sin2θ/g.",
+    "⚡ Shortcut:  Range = u cosθ × (2u sinθ/g) → u²sin2θ/g.",
+    "Example:  u=20 m/s, θ=45° → R = 400/9.8 ≈ 40.8 m.",
+    "Q19. At what angle is the range maximum and what is R_max?",
+    "Answer:  R = u²sin2θ/g is maximum when sin2θ = 1, i.e. 2θ = 90°, θ = 45°. Then R_max = u²/g.",
+    "⚡ Shortcut:  θ=45° → R_max = u²/g.",
+    "Example:  Same launch speed, 45° gives the farthest range.",
+    "Q20. Find the maximum height of a projectile launched at 30° with u = 20 m/s.",
+    "Answer:  H = u²sin²θ/2g = (400)(0.25)/19.6 = 100/19.6 ≈ 5.1 m.",
+    "⚡ Shortcut:  H = u²sin²θ/2g (vertical component).",
+    "Example:  Vertical launch speed u sinθ = 10 m/s → H ≈ 5.1 m.",
+    "Q21. Find the time of flight for a 45° launch with u = 10 m/s.",
+    "Answer:  T = 2u sinθ/g = 2(10)(0.707)/9.8 ≈ 1.44 s.",
+    "⚡ Shortcut:  T = 2u sinθ/g.",
+    "Example:  The projectile is in the air ≈ 1.44 s.",
+    "▥ 3.5 Projectile Motion  —  Compare / Contrast Tables",
+    "Projectile Motion: Values at the Apex vs Landing",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive v² = u² + 2as without using time.",
+    "Answer:  From s = (u+v)t/2 and v = u+at → t=(v−u)/a. Then s = (u+v)(v−u)/2a = (v²−u²)/2a → v²=u²+2as.",
+    "⚡ Short / exam line:  Eliminate t between two equations.",
+    "Example:  Used when time is not given.",
+    "[Derive] T2. Derive the time of flight, maximum height and range of a projectile.",
+    "Answer:  T = 2u sinθ/g ; H = u²sin²θ/2g ; R = u²sin2θ/g. From T, use vertical motion (symmetry) for H, and R = horizontal speed × T.",
+    "⚡ Short / exam line:  Memorize the three; all come from components.",
+    "Example:  Max range at 45°: R_max = u²/g.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. Write the four kinematic equations for uniform acceleration.",
+    "Answer:  v=u+at ; s=ut+½at² ; v²=u²+2as ; s=(u+v)t/2. All assume constant a.",
+    "⚡ Short / exam line:  Pick the one missing the unknown (no time → v²=u²+2as).",
+    "Example:  0-50 m/s²·3 s → v=15 m/s, s=22.5 m.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T4. Compare the motion of a body falling vertically with that of a projectile.",
+    "Answer:  Vertical fall: only vertical motion (u=0 downward). Projectile: both horizontal (uniform) and vertical (accelerated) motion. Both have the same vertical acceleration g and the same time-to-reach-the-ground from the same height.",
+    "⚡ Short / exam line:  Vertical = 1D; Projectile = 2D with same g.",
+    "Example:  From same height, both hit the ground in √(2h/g) time.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain the graphical treatment of motion (s-t and v-t graphs).",
+    "Answer:  Slope of s-t = velocity; slope of v-t = acceleration; area under v-t = displacement. A horizontal s-t → rest; curved s-t → acceleration.",
+    "⚡ Short / exam line:  s-t slope=v; v-t slope=a; area under v-t = s.",
+    "Example:  Constant-velocity v-t gives a rectangle area = vt.",
+    "[Explain] T6. Explain projectile motion as two independent components.",
+    "Answer:  Horizontal: no force → uniform velocity u cosθ. Vertical: gravity → uniformly accelerated u sinθ with g. The combined path is a parabola; time depends only on the vertical motion.",
+    "⚡ Short / exam line:  Separate x and y; treat independently.",
+    "Example:  Same launch: 30° and 60° give equal ranges.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T7. Why is the trajectory of a projectile a parabola?",
+    "Answer:  Because x ∝ t (constant horizontal speed) and y ∝ t − g t²/2 (accelerated). Eliminating t gives y = x tanθ − gx²/(2u²cos²θ), a quadratic in x → a parabola.",
+    "⚡ Short / exam line:  y is quadratic in x → parabola.",
+    "Example:  Air resistance would distort it from a parabola.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T8. Professor: 'Two bodies, one dropped, one fired horizontally from the same height. Which hits first and why?'",
+    "Answer:  Both hit at the same instant, because vertical motion is independent of horizontal motion; both start vertical speed 0 and fall h = ½gt². The horizontal one merely travels further horizontally.",
+    "⚡ Short / exam line:  Vertical time = √(2h/g) for both.",
+    "Example:  Galileo's famous thought experiment.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T9. A ball is thrown at 20 m/s, 45°. Find range, max height and time of flight.",
+    "Answer:  T = 2(20)(sin45)/9.8 = 2(20)(0.707)/9.8 ≈ 2.88 s. H = u²sin²θ/2g = 400×0.5/19.6 ≈ 10.2 m. R = u²sin2θ/g = 400×1/9.8 ≈ 40.8 m.",
+    "⚡ Short / exam line:  45°: sinθ=cosθ=0.707, sin2θ=1.",
+    "Example:  Classic 45° launch.",
+    "★ Quick-formula memos (this unit)",
+    "Equations (const a): v=u+at; s=ut+½at²; v²=u²+2as; s=(u+v)t/2.",
+    "Free fall: u=0, a=g=9.8 m/s². Height of fall h=½gt².",
+    "Projectile: range R = u²sin2θ/g (max at θ=45°); H = u²sin²θ/2g; T = 2u sinθ/g.",
+    "Graph: slope of s-t = v; area under v-t = s; slope of v-t = a."
+  ]
+}

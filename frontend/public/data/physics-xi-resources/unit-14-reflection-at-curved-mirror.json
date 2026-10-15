@@ -1,0 +1,369 @@
+{
+  "unitNo": 14,
+  "unitId": "reflection-at-curved-mirror",
+  "unitName": "Reflection at Curved Mirrors",
+  "contentArea": "Waves & Optics",
+  "docxFileName": "Physics_XI_Unit_14_curved-mirrors.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_14_curved-mirrors.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 14: REFLECTION AT CURVED MIRRORS   Content Area: Waves & Optics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 103,
+    "tableCount": 3,
+    "questionCount": 10,
+    "theoryCount": 10,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Aspect",
+        "Real",
+        "Virtual"
+      ],
+      "rows": [
+        [
+          "Can it be projected on screen?",
+          "Yes",
+          "No"
+        ],
+        [
+          "Ray behaviour",
+          "Rays actually converge",
+          "Rays appear to diverge"
+        ],
+        [
+          "In concave mirror",
+          "Object outside focus (O, F)",
+          "Object inside focus"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Concave",
+        "Convex"
+      ],
+      "rows": [
+        [
+          "Focal length f",
+          "Positive (real focus)",
+          "Negative (virtual focus)"
+        ],
+        [
+          "Object beyond C",
+          "Real, inverted, smaller",
+          "Virtual, erect, diminished"
+        ],
+        [
+          "Object between C & F",
+          "Real, inverted, larger",
+          "—"
+        ],
+        [
+          "Object inside F",
+          "Virtual, erect, larger",
+          "Virtual, erect, diminished"
+        ],
+        [
+          "Common use",
+          "Shaving / telescope mirror",
+          "Rear-view (wide FOV)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Concave",
+        "Convex"
+      ],
+      "rows": [
+        [
+          "f",
+          "+|f|",
+          "−|f|"
+        ],
+        [
+          "Image when object at F",
+          "At infinity",
+          "At infinity"
+        ],
+        [
+          "Focal length C/R",
+          "f = R/2",
+          "f = −R/2"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define real and virtual images with an example each.",
+      "answer": "A real image is formed where reflected (or refracted) rays actually meet; it can be caught on a screen (e.g. concave mirror beyond F). A virtual image is where rays only appear to diverge from; it cannot be projected (e.g. plane mirror, convex mirror, concave between F and pole).",
+      "shortcut": "Real → screen-catchable; Virtual → seen only.",
+      "example": "Your mirror image is virtual; a projectable image is real."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. State three differences between real and virtual images.",
+      "answer": "(i) Real forms where rays meet; virtual where rays diverge. (ii) Real can be projected on a screen; virtual cannot. (iii) Real is inverted (magnification negative); virtual is erect.",
+      "shortcut": "Real: meet, project, inverted; Virtual: diverge, no screen, erect.",
+      "example": "Rear-view mirror (convex) always gives a virtual, erect, diminished image."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Explain why a convex mirror always forms a virtual, erect and diminished image.",
+      "answer": "A convex mirror diverges rays; reflected rays never actually meet but appear to meet behind the mirror, so the image is virtual. It lies between the mirror and the focus, hence diminished and erect. ▥ 14.1 Real & Virtual Images  —  Compare / Contrast Tables Real vs Virtual Image ▣ 14.2 Mirror Formula",
+      "shortcut": "Convex → always virtual, erect, diminished (wide field of view).",
+      "example": "Used in vehicle side mirrors (objects appear smaller, wider view)."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. State the mirror formula and sign convention.",
+      "answer": "For a spherical mirror: 1/f = 1/v + 1/u (Cartesian sign convention). Distances measured from the pole: u, v, f negative if on the real (incident-light) side; f negative for concave, positive for convex. f = R/2.",
+      "shortcut": "1/f = 1/v + 1/u ; f = R/2 (concave f<0, convex f>0).",
+      "example": "R=40 cm concave → f = −20 cm."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Find the image position and magnification for a concave mirror with R = 40 cm and object at 30 cm.",
+      "answer": "f = R/2 = −20 cm. 1/v = 1/f − 1/u = 1/(−20) − 1/(−30) = (−3+2)/60 = −1/60 → v = −60 cm. m = −v/u = −(−60)/(−30) = −2 (real, inverted, 2× magnified).",
+      "shortcut": "use 1/v = 1/f − 1/u; m = −v/u.",
+      "example": "Image 60 cm in front, 2× larger, inverted, real."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. An object is placed at the centre of curvature of a concave mirror. Where is the image?",
+      "answer": "At the centre of curvature, u = R = −2f. By symmetry the image forms at C (v = −R), real, inverted and same size (m = −1).",
+      "shortcut": "At C: image at C, real, inverted, same size.",
+      "example": "A 10 cm tall object gives a 10 cm tall image at C."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. A convex mirror (R = 30 cm) forms an image of an object 40 cm away. Find image position and size if object height 5 cm.",
+      "answer": "f = +15 cm. 1/v = 1/15 − 1/40 = (8−3)/120 = 5/120 → v = 24 cm (virtual, behind mirror). m = −v/u = −24/40 = −0.6; image height = 0.6×5 = 3 cm (erect, diminished).",
+      "shortcut": "Convex f>0; m = −v/u, |m|<1 → diminished.",
+      "example": "A 3 cm erect image behind the mirror."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. A concave mirror forms a real image 3× the object size. Where is the object? (f = 10 cm.)",
+      "answer": "m = −3 (inverted, real) → −v/u = −3 → v = 3u. Using 1/v + 1/u = 1/f: 1/(3u) + 1/u = 1/10 → (1/3+1)/u = 1/10 → (4/3)/u = 1/10 → u = 40/3 ≈ 13.3 cm (between F and C).",
+      "shortcut": "Real m<0; substitute v=3u in the mirror formula.",
+      "example": "Object ≈13.3 cm from the pole."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Explain how a concave mirror can act as both a magnifying mirror and a shaving mirror.",
+      "answer": "When the object is between F and the pole, the image is virtual, erect and magnified — used as a shaving/makeup mirror. An object just outside F gives a large real image.",
+      "shortcut": "Object near pole → virtual, erect, magnified.",
+      "example": "Barber's mirror produces a magnified face."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. State the Cartesian sign convention used in the mirror formula.",
+      "answer": "All distances are measured from the pole along the principal axis: incident light travels from left to right; object distance u, image distance v and focal length f are negative if on the incident (left/real) side and positive on the opposite (right/virtual) side. For a concave mirror f < 0, for a convex mirror f > 0. ▥ 14.2 Mirror Formula  —  Compare / Contrast Tables Concave vs Convex Mirror (image behaviour) Mirror Formula Quick-Reference PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Left/real side negative; right/virtual side positive; concave f<0, convex f>0.",
+      "example": "A concave mirror with R = 40 cm has f = −20 cm."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the mirror formula 1/f = 1/u + 1/v.",
+      "answer": "Consider a small object on the principal axis near the pole, ray to a point at height h making angle θ: using small angles tanθ ≈ sinθ, from the image triangle tanθ = h/|v| and the object triangle tanθ = h/|u|, combining the geometry of the reflection gives 1/u + 1/v = 1/f (with signs).",
+      "shortcut": "Paraxial (small-angle) ray geometry → 1/u+1/v = 1/f.",
+      "example": "f = R/2 for a spherical mirror."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. State the mirror formula and the sign convention used.",
+      "answer": "1/f = 1/u + 1/v with the Cartesian convention: all distances from the pole, negative on the incident (real) side. f = R/2; for a concave mirror f is negative, for a convex mirror f is positive. Magnification m = −v/u.",
+      "shortcut": "1/f = 1/u+1/v ; m = −v/u ; f = R/2.",
+      "example": "Concave f<0, convex f>0."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T3. Compare a concave and a convex mirror across properties.",
+      "answer": "Both are spherical with f = R/2. Concave: converging, can form real or virtual images, f < 0, used as shaving/telescope mirror. Convex: diverging, always virtual/erect/diminished, f > 0, used in side mirrors and street lamps.",
+      "shortcut": "Concave: converging, real possible; Convex: diverging, only virtual.",
+      "example": "Concave magnifies; convex gives a wider view."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain image formation by a concave mirror for the five object regions.",
+      "answer": "Beyond C: real, inverted, diminished. At C: real, inverted, same size. Between C and F: real, inverted, magnified. At F: image at infinity. Between F and pole: virtual, erect, magnified. Concave covers all cases.",
+      "shortcut": "Region determines real/virtual, size, orientation.",
+      "example": "Between F and pole gives the magnified (shaving) image."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain image formation by a convex mirror (why always virtual, erect, diminished).",
+      "answer": "A convex mirror diverges all rays; the reflected rays never actually meet but appear to diverge from a point behind the mirror, so the image is always virtual, erect and diminished, lying between the pole and the focus. Its field of view is wide.",
+      "shortcut": "Convex → always virtual, erect, diminished.",
+      "example": "Used as vehicle side-mirrors (wider view, smaller objects)."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the applications of concave mirrors (telescope, shaving, vehicle headlight).",
+      "answer": "A shaving/makeup mirror uses the virtual, magnified image when the object is between F and the pole. A telescope uses a large concave mirror (parabolic to avoid aberration) to gather light. A headlight uses the lamp at the focus so reflected rays emerge parallel.",
+      "shortcut": "Shaving (F–pole), telescope (parabolic), headlight (lamp at F).",
+      "example": "Each exploits a specific image region."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain a Cassegrain telescope (concave mirrors).",
+      "answer": "It uses a concave (primary) and a convex (secondary) mirror; parallel rays reflect off the primary toward its focus but strike the convex secondary, which reflects them back through a hole in the primary to the eyepiece. This shortens the tube and gathers more light.",
+      "shortcut": "Concave + convex secondary → compact light path.",
+      "example": "Used in modern astronomical telescopes."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why are mirror aberrations a problem and how are they reduced?",
+      "answer": "Spherical mirrors suffer spherical aberration (marginal and paraxial rays focus differently), blurring the image; a parabolic (aspherical) mirror or a small aperture (stop) using only paraxial rays reduces this. Achromatic combinations correct colour-related errors in lenses.",
+      "shortcut": "Parabolic mirror / stop → reduce aberration.",
+      "example": "Telescopes use parabolas, not simple spheres."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T9. Professor: 'If an object is at the focus of a concave mirror, where does the image form and what is the magnification?'",
+      "answer": "At the focus, the reflected rays are parallel, so the image forms at infinity and the magnification is infinite (the image is 'very large and spread out'). Practical systems keep the object just outside F to get a finite, large image.",
+      "shortcut": "At F → image at infinity, m → ∞.",
+      "example": "Used to make parallel beams (projectors)."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A concave mirror of R = 20 cm has an object at u = 12 cm. Find image position and magnification.",
+      "answer": "f = −10 cm. 1/v = 1/f − 1/u = 1/(−10) − 1/(−12) = −0.1+0.0833 = −0.01667 → v = −60 cm. m = −v/u = 60/12 = 5 (real, inverted, 5×).",
+      "shortcut": "1/v = 1/f − 1/u ; m = −v/u.",
+      "example": "Image 60 cm in front, 5× magnified."
+    }
+  ],
+  "formulas": [
+    "Mirror formula: 1/f = 1/u + 1/v (f = R/2).",
+    "Magnification m = −v/u = h_i/h_o ; |m|>1 enlarged.",
+    "Real image: light actually meets; virtual: rays appear to diverge.",
+    "Concave: F real; Convex: F virtual (both mirrors)."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 14: REFLECTION AT CURVED MIRRORS   Content Area: Waves & Optics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 14.1 Real & Virtual Images",
+    "Q1. Define real and virtual images with an example each.",
+    "Answer:  A real image is formed where reflected (or refracted) rays actually meet; it can be caught on a screen (e.g. concave mirror beyond F). A virtual image is where rays only appear to diverge from; it cannot be projected (e.g. plane mirror, convex mirror, concave between F and pole).",
+    "⚡ Shortcut:  Real → screen-catchable; Virtual → seen only.",
+    "Example:  Your mirror image is virtual; a projectable image is real.",
+    "Q2. State three differences between real and virtual images.",
+    "Answer:  (i) Real forms where rays meet; virtual where rays diverge. (ii) Real can be projected on a screen; virtual cannot. (iii) Real is inverted (magnification negative); virtual is erect.",
+    "⚡ Shortcut:  Real: meet, project, inverted; Virtual: diverge, no screen, erect.",
+    "Example:  Rear-view mirror (convex) always gives a virtual, erect, diminished image.",
+    "Q3. Explain why a convex mirror always forms a virtual, erect and diminished image.",
+    "Answer:  A convex mirror diverges rays; reflected rays never actually meet but appear to meet behind the mirror, so the image is virtual. It lies between the mirror and the focus, hence diminished and erect.",
+    "⚡ Shortcut:  Convex → always virtual, erect, diminished (wide field of view).",
+    "Example:  Used in vehicle side mirrors (objects appear smaller, wider view).",
+    "▥ 14.1 Real & Virtual Images  —  Compare / Contrast Tables",
+    "Real vs Virtual Image",
+    "▣ 14.2 Mirror Formula",
+    "Q4. State the mirror formula and sign convention.",
+    "Answer:  For a spherical mirror: 1/f = 1/v + 1/u (Cartesian sign convention). Distances measured from the pole: u, v, f negative if on the real (incident-light) side; f negative for concave, positive for convex. f = R/2.",
+    "⚡ Shortcut:  1/f = 1/v + 1/u ; f = R/2 (concave f<0, convex f>0).",
+    "Example:  R=40 cm concave → f = −20 cm.",
+    "Q5. Find the image position and magnification for a concave mirror with R = 40 cm and object at 30 cm.",
+    "Answer:  f = R/2 = −20 cm. 1/v = 1/f − 1/u = 1/(−20) − 1/(−30) = (−3+2)/60 = −1/60 → v = −60 cm. m = −v/u = −(−60)/(−30) = −2 (real, inverted, 2× magnified).",
+    "⚡ Shortcut:  use 1/v = 1/f − 1/u; m = −v/u.",
+    "Example:  Image 60 cm in front, 2× larger, inverted, real.",
+    "Q6. An object is placed at the centre of curvature of a concave mirror. Where is the image?",
+    "Answer:  At the centre of curvature, u = R = −2f. By symmetry the image forms at C (v = −R), real, inverted and same size (m = −1).",
+    "⚡ Shortcut:  At C: image at C, real, inverted, same size.",
+    "Example:  A 10 cm tall object gives a 10 cm tall image at C.",
+    "Q7. A convex mirror (R = 30 cm) forms an image of an object 40 cm away. Find image position and size if object height 5 cm.",
+    "Answer:  f = +15 cm. 1/v = 1/15 − 1/40 = (8−3)/120 = 5/120 → v = 24 cm (virtual, behind mirror). m = −v/u = −24/40 = −0.6; image height = 0.6×5 = 3 cm (erect, diminished).",
+    "⚡ Shortcut:  Convex f>0; m = −v/u, |m|<1 → diminished.",
+    "Example:  A 3 cm erect image behind the mirror.",
+    "Q8. A concave mirror forms a real image 3× the object size. Where is the object? (f = 10 cm.)",
+    "Answer:  m = −3 (inverted, real) → −v/u = −3 → v = 3u. Using 1/v + 1/u = 1/f: 1/(3u) + 1/u = 1/10 → (1/3+1)/u = 1/10 → (4/3)/u = 1/10 → u = 40/3 ≈ 13.3 cm (between F and C).",
+    "⚡ Shortcut:  Real m<0; substitute v=3u in the mirror formula.",
+    "Example:  Object ≈13.3 cm from the pole.",
+    "Q9. Explain how a concave mirror can act as both a magnifying mirror and a shaving mirror.",
+    "Answer:  When the object is between F and the pole, the image is virtual, erect and magnified — used as a shaving/makeup mirror. An object just outside F gives a large real image.",
+    "⚡ Shortcut:  Object near pole → virtual, erect, magnified.",
+    "Example:  Barber's mirror produces a magnified face.",
+    "Q10. State the Cartesian sign convention used in the mirror formula.",
+    "Answer:  All distances are measured from the pole along the principal axis: incident light travels from left to right; object distance u, image distance v and focal length f are negative if on the incident (left/real) side and positive on the opposite (right/virtual) side. For a concave mirror f < 0, for a convex mirror f > 0.",
+    "⚡ Shortcut:  Left/real side negative; right/virtual side positive; concave f<0, convex f>0.",
+    "Example:  A concave mirror with R = 40 cm has f = −20 cm.",
+    "▥ 14.2 Mirror Formula  —  Compare / Contrast Tables",
+    "Concave vs Convex Mirror (image behaviour)",
+    "Mirror Formula Quick-Reference",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the mirror formula 1/f = 1/u + 1/v.",
+    "Answer:  Consider a small object on the principal axis near the pole, ray to a point at height h making angle θ: using small angles tanθ ≈ sinθ, from the image triangle tanθ = h/|v| and the object triangle tanθ = h/|u|, combining the geometry of the reflection gives 1/u + 1/v = 1/f (with signs).",
+    "⚡ Short / exam line:  Paraxial (small-angle) ray geometry → 1/u+1/v = 1/f.",
+    "Example:  f = R/2 for a spherical mirror.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T2. State the mirror formula and the sign convention used.",
+    "Answer:  1/f = 1/u + 1/v with the Cartesian convention: all distances from the pole, negative on the incident (real) side. f = R/2; for a concave mirror f is negative, for a convex mirror f is positive. Magnification m = −v/u.",
+    "⚡ Short / exam line:  1/f = 1/u+1/v ; m = −v/u ; f = R/2.",
+    "Example:  Concave f<0, convex f>0.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T3. Compare a concave and a convex mirror across properties.",
+    "Answer:  Both are spherical with f = R/2. Concave: converging, can form real or virtual images, f < 0, used as shaving/telescope mirror. Convex: diverging, always virtual/erect/diminished, f > 0, used in side mirrors and street lamps.",
+    "⚡ Short / exam line:  Concave: converging, real possible; Convex: diverging, only virtual.",
+    "Example:  Concave magnifies; convex gives a wider view.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T4. Explain image formation by a concave mirror for the five object regions.",
+    "Answer:  Beyond C: real, inverted, diminished. At C: real, inverted, same size. Between C and F: real, inverted, magnified. At F: image at infinity. Between F and pole: virtual, erect, magnified. Concave covers all cases.",
+    "⚡ Short / exam line:  Region determines real/virtual, size, orientation.",
+    "Example:  Between F and pole gives the magnified (shaving) image.",
+    "[Explain] T5. Explain image formation by a convex mirror (why always virtual, erect, diminished).",
+    "Answer:  A convex mirror diverges all rays; the reflected rays never actually meet but appear to diverge from a point behind the mirror, so the image is always virtual, erect and diminished, lying between the pole and the focus. Its field of view is wide.",
+    "⚡ Short / exam line:  Convex → always virtual, erect, diminished.",
+    "Example:  Used as vehicle side-mirrors (wider view, smaller objects).",
+    "[Explain] T6. Explain the applications of concave mirrors (telescope, shaving, vehicle headlight).",
+    "Answer:  A shaving/makeup mirror uses the virtual, magnified image when the object is between F and the pole. A telescope uses a large concave mirror (parabolic to avoid aberration) to gather light. A headlight uses the lamp at the focus so reflected rays emerge parallel.",
+    "⚡ Short / exam line:  Shaving (F–pole), telescope (parabolic), headlight (lamp at F).",
+    "Example:  Each exploits a specific image region.",
+    "[Explain] T7. Explain a Cassegrain telescope (concave mirrors).",
+    "Answer:  It uses a concave (primary) and a convex (secondary) mirror; parallel rays reflect off the primary toward its focus but strike the convex secondary, which reflects them back through a hole in the primary to the eyepiece. This shortens the tube and gathers more light.",
+    "⚡ Short / exam line:  Concave + convex secondary → compact light path.",
+    "Example:  Used in modern astronomical telescopes.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why are mirror aberrations a problem and how are they reduced?",
+    "Answer:  Spherical mirrors suffer spherical aberration (marginal and paraxial rays focus differently), blurring the image; a parabolic (aspherical) mirror or a small aperture (stop) using only paraxial rays reduces this. Achromatic combinations correct colour-related errors in lenses.",
+    "⚡ Short / exam line:  Parabolic mirror / stop → reduce aberration.",
+    "Example:  Telescopes use parabolas, not simple spheres.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T9. Professor: 'If an object is at the focus of a concave mirror, where does the image form and what is the magnification?'",
+    "Answer:  At the focus, the reflected rays are parallel, so the image forms at infinity and the magnification is infinite (the image is 'very large and spread out'). Practical systems keep the object just outside F to get a finite, large image.",
+    "⚡ Short / exam line:  At F → image at infinity, m → ∞.",
+    "Example:  Used to make parallel beams (projectors).",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A concave mirror of R = 20 cm has an object at u = 12 cm. Find image position and magnification.",
+    "Answer:  f = −10 cm. 1/v = 1/f − 1/u = 1/(−10) − 1/(−12) = −0.1+0.0833 = −0.01667 → v = −60 cm. m = −v/u = 60/12 = 5 (real, inverted, 5×).",
+    "⚡ Short / exam line:  1/v = 1/f − 1/u ; m = −v/u.",
+    "Example:  Image 60 cm in front, 5× magnified.",
+    "★ Quick-formula memos (this unit)",
+    "Mirror formula: 1/f = 1/u + 1/v (f = R/2).",
+    "Magnification m = −v/u = h_i/h_o ; |m|>1 enlarged.",
+    "Real image: light actually meets; virtual: rays appear to diverge.",
+    "Concave: F real; Convex: F virtual (both mirrors)."
+  ]
+}

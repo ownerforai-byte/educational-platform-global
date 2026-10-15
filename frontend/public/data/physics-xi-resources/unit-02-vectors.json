@@ -1,0 +1,379 @@
+{
+  "unitNo": 2,
+  "unitId": "vectors",
+  "unitName": "Vectors",
+  "contentArea": "Mechanics",
+  "docxFileName": "Physics_XI_Unit_02_vectors.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_02_vectors.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 2: VECTORS   Content Area: Mechanics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 108,
+    "tableCount": 3,
+    "questionCount": 13,
+    "theoryCount": 8,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Law",
+        "Setup",
+        "Result"
+      ],
+      "rows": [
+        [
+          "Triangle",
+          "Place vectors head-to-tail in sequence",
+          "Closing side = resultant"
+        ],
+        [
+          "Parallelogram",
+          "Both vectors co-initial",
+          "Diagonal through common origin = resultant"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Formula",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Ax",
+          "A cosθ",
+          "θ measured from x-axis"
+        ],
+        [
+          "Ay",
+          "A sinθ",
+          "Sign follows the quadrant"
+        ],
+        [
+          "|A|",
+          "√(Ax² + Ay²)",
+          "Magnitude from components"
+        ],
+        [
+          "Direction",
+          "θ = tan⁻¹(Ay/Ax)",
+          "Always check quadrant"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Dot A·B",
+        "Cross A×B"
+      ],
+      "rows": [
+        [
+          "Result",
+          "Scalar",
+          "Vector ⊥ plane of A and B"
+        ],
+        [
+          "Formula",
+          "AB cosθ",
+          "AB sinθ n̂"
+        ],
+        [
+          "Zero when",
+          "θ = 90° (perpendicular)",
+          "θ = 0° (parallel)"
+        ],
+        [
+          "Maximum when",
+          "θ = 0°",
+          "θ = 90°"
+        ],
+        [
+          "Standard example",
+          "Work W = F·s",
+          "Torque τ = r×F"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. State the triangle law of vector addition.",
+      "answer": "If two vectors are represented by two sides of a triangle taken in order, the third side (head to tail) represents the resultant in magnitude and direction.",
+      "shortcut": "Draw a→b head-to-tail; the closing side = a+b.",
+      "example": "Walking 3 m N then 4 m E → resultant 5 m NE (3-4-5 triangle)."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. State the parallelogram law of vector addition.",
+      "answer": "If two vectors acting at a point are the adjacent sides of a parallelogram, the diagonal from that point is the resultant. R = √(A²+B²+2ABcosθ), direction tanα = Bsinθ/(A+Bcosθ).",
+      "shortcut": "R² = A² + B² + 2ABcosθ; θ is the angle between them.",
+      "example": "A=3,B=4,θ=90° → R=5 N at 53° from A."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. State the polygon law of vectors.",
+      "answer": "If several vectors are represented by the sides of a polygon in order, the closing side represents the resultant; if the polygon closes, the resultant is zero.",
+      "shortcut": "Closed loop → Σ = 0.",
+      "example": "A+B+C+D+E=0 when they form a closed pentagon in sequence."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Find the resultant of two equal vectors inclined at 120°.",
+      "answer": "R = √(A²+A²+2A²cos120°) = √(2A² − A²) = A. The resultant equals each vector and bisects the angle.",
+      "shortcut": "θ=120° → R = A (since cos120° = −½).",
+      "example": "Two 10 N forces 120° apart → 10 N resultant along the bisector."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. When is the resultant of two vectors maximum and minimum?",
+      "answer": "Maximum (A+B) when θ=0° (same direction). Minimum (|A−B|) when θ=180° (opposite). ▥ 2.1 Laws of Vector Addition  —  Compare / Contrast Tables The Two Laws of Vector Addition ▣ 2.2 Resolution of Vectors & Unit Vectors",
+      "shortcut": "θ=0 → add; θ=180 → subtract.",
+      "example": "3 N & 4 N → max 7 N, min 1 N."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Resolve a vector A into its x and y components.",
+      "answer": "Aₓ = A cosθ, Aᵧ = A sinθ, where θ is measured from the positive x-axis. Then A = Aₓî + Aᵧĵ.",
+      "shortcut": "cos goes with the axis the angle is measured from; sin goes perpendicular.",
+      "example": "A=10 at 60°: Aₓ=10cos60°=5, Aᵧ=10sin60°=8.66 → A=5î+8.66ĵ."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Define unit vectors î and ĵ and state their properties.",
+      "answer": "Unit vectors have magnitude 1 and point along the axes: î along x, ĵ along y. Properties: î·ĵ=0, î·î=1, î×ĵ=k̂.",
+      "shortcut": "Dot of perpendicular unit vectors = 0; same = 1.",
+      "example": "Any vector can be written A = Aₓî + Aᵧĵ using these."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Given A = 3î + 4ĵ, find its magnitude and direction.",
+      "answer": "|A| = √(3²+4²) = 5. Direction θ = tan⁻¹(Aᵧ/Aₓ) = tan⁻¹(4/3) = 53°.",
+      "shortcut": "Magnitude = √(sum of squares); angle = tan⁻¹(y/x).",
+      "example": "A classic 3-4-5 vector."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Explain resolution of a vector into two components along two axes.",
+      "answer": "Drop perpendiculars from the tip of the vector onto each axis; the intercepts give the components. Along x and y: Aₓ=Acosθ, Aᵧ=Asinθ; the original equals the vector sum of its components. ▥ 2.2 Resolution of Vectors & Unit Vectors  —  Compare / Contrast Tables Resolution of a Vector: Formula Sheet ▣ 2.3 Scalar & Vector Products",
+      "shortcut": "Component = projection of the vector onto the axis.",
+      "example": "A force 20 N at 30° to vertical → horizontal = 20sin30°=10 N, vertical = 20cos30°=17.3 N."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Define the scalar (dot) product of two vectors.",
+      "answer": "A·B = ABcosθ, a scalar. It equals the product of one vector and the projection of the other onto it.",
+      "shortcut": "Dot product → ABcosθ; perpendicular vectors give 0.",
+      "example": "Work = F·s = Fscosθ; gravity·horizontal displacement = 0."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Define the vector (cross) product and give its magnitude and direction.",
+      "answer": "A×B is a vector of magnitude ABsinθ, direction perpendicular to the plane by the right-hand rule (fingers a→b, thumb gives result).",
+      "shortcut": "Cross → ABsinθ; parallel vectors give 0, perpendicular give max AB.",
+      "example": "Torque τ = r×F; at right angle τ = rF."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. If A = 2î+3ĵ and B = 4î−î, compute A·B and the angle.",
+      "answer": "Treat B = 3î; A·B = (2)(3)+(3)(0)=6. |A|=√13,|B|=3 → cosθ=6/(3√13)=2/√13, θ≈54°.",
+      "shortcut": "Dot = Σ(xᵢxᵢ'); angle via cosθ = A·B/(|A||B|).",
+      "example": "Used to find angles between forces."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. Show that two vectors with A·B = 0 are perpendicular.",
+      "answer": "Since A·B = ABcosθ, if A·B = 0 (A,B≠0) then cosθ = 0, so θ = 90°. Hence the vectors are perpendicular. ▥ 2.3 Scalar & Vector Products  —  Compare / Contrast Tables Scalar (Dot) vs Vector (Cross) Product PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Zero dot product ⟹ 90°.",
+      "example": "î·ĵ = 0, so axes are perpendicular."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the resultant of two vectors from the parallelogram law.",
+      "answer": "Place vectors as adjacent sides; by the law of cosines on the triangle, R² = A² + B² + 2ABcosθ, and the direction angle α from the first vector satisfies tanα = Bsinθ/(A+Bcosθ).",
+      "shortcut": "R = √(A²+B²+2ABcosθ).",
+      "example": "θ=90° → R = √(A²+B²); θ=0 → A+B; θ=180 → |A−B|."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Resolve a vector into rectangular components and find magnitude/direction.",
+      "answer": "For A at angle θ to x: Aₓ = Acosθ, Aᵧ = Asinθ. Magnitude |A| = √(Aₓ²+Aᵧ²); direction θ = tan⁻¹(Aᵧ/Aₓ).",
+      "shortcut": "A = Aₓî + Aᵧĵ; check both components.",
+      "example": "10 at 60° → 5î + 8.66ĵ; |A|=10."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. Define a vector and a scalar; give two of each.",
+      "answer": "Scalar: fully described by magnitude (mass, time, energy). Vector: needs magnitude AND direction (force, velocity, displacement).",
+      "shortcut": "Scalar = number; Vector = number + direction.",
+      "example": "Temperature scalar; momentum vector."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T4. Write the scalar and vector products of unit vectors î, ĵ, k̂.",
+      "answer": "î·î = 1, î·ĵ = 0; î×ĵ = k̂, ĵ×k̂ = î, k̂×î = ĵ... (cyclic). These define orientation.",
+      "shortcut": "Same→1, perpendicular→0; cross follows right-hand rule.",
+      "example": "Used to add/subtract vector components."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T5. Compare scalar and vector products; when is each zero?",
+      "answer": "Scalar (dot): A·B = ABcosθ, a scalar; zero when θ=90° (perpendicular). Vector (cross): A×B = ABsinθ n̂, a vector; zero when θ=0 or 180° (parallel).",
+      "shortcut": "Dot: cos, ⟂→0; Cross: sin, ∥→0.",
+      "example": "Work uses dot; torque uses cross."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the polygon law of vectors and use it to show a closed loop sums to zero.",
+      "answer": "Vectors placed head-to-tail form a polygon; if the last tip meets the first, the resultant is zero. Used for the equilibrium of forces: forces in a closed polygon balance.",
+      "shortcut": "Closed head-to-tail → Σ = 0.",
+      "example": "A body at rest under coplanar forces → force polygon closes."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T7. A professor asks: 'Give the physical meaning of A·B and A×B.'",
+      "answer": "A·B = projection of B on A times |A| — measures 'how much of B is along A' (work = F·s). A×B is perpendicular to both, magnitude = area of the parallelogram spanned (torque = r×F).",
+      "shortcut": "Dot = aligned part; Cross = perpendicular/area part.",
+      "example": "F·s = work; r×F = torque."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T8. Three forces 5 N, 8 N, 10 N act on a body and keep it in equilibrium. Find the angle between the 8 N and 10 N forces.",
+      "answer": "Since they balance, 5 N = |8×10| resultant of the other two in opposition. R² = 8²+10²−2(8)(10)cosφ = 5² → 164 − 160cosφ = 25 → cosφ = 139/160 → φ ≈ 29°.",
+      "shortcut": "Use |R| of the two = the third (closure).",
+      "example": "Equilibrium means the force triangle closes."
+    }
+  ],
+  "formulas": [
+    "A+B via parallelogram: |A+B|=√(A²+B²+2ABcosθ). θ=90° → √(A²+B²). θ=180° → |A−B|.",
+    "Unit vectors: A = Aₓî + Aᵧĵ ; |A| = √(Aₓ²+Aᵧ²), θ = tan⁻¹(Aᵧ/Aₓ).",
+    "Scalar product A·B = ABcosθ (dot). Vector product |A×B| = ABsinθ, direction by right-hand rule.",
+    "Polygon law: vectors in head-to-tail forming a closed polygon sum to zero."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 2: VECTORS   Content Area: Mechanics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 2.1 Laws of Vector Addition",
+    "Q1. State the triangle law of vector addition.",
+    "Answer:  If two vectors are represented by two sides of a triangle taken in order, the third side (head to tail) represents the resultant in magnitude and direction.",
+    "⚡ Shortcut:  Draw a→b head-to-tail; the closing side = a+b.",
+    "Example:  Walking 3 m N then 4 m E → resultant 5 m NE (3-4-5 triangle).",
+    "Q2. State the parallelogram law of vector addition.",
+    "Answer:  If two vectors acting at a point are the adjacent sides of a parallelogram, the diagonal from that point is the resultant. R = √(A²+B²+2ABcosθ), direction tanα = Bsinθ/(A+Bcosθ).",
+    "⚡ Shortcut:  R² = A² + B² + 2ABcosθ; θ is the angle between them.",
+    "Example:  A=3,B=4,θ=90° → R=5 N at 53° from A.",
+    "Q3. State the polygon law of vectors.",
+    "Answer:  If several vectors are represented by the sides of a polygon in order, the closing side represents the resultant; if the polygon closes, the resultant is zero.",
+    "⚡ Shortcut:  Closed loop → Σ = 0.",
+    "Example:  A+B+C+D+E=0 when they form a closed pentagon in sequence.",
+    "Q4. Find the resultant of two equal vectors inclined at 120°.",
+    "Answer:  R = √(A²+A²+2A²cos120°) = √(2A² − A²) = A. The resultant equals each vector and bisects the angle.",
+    "⚡ Shortcut:  θ=120° → R = A (since cos120° = −½).",
+    "Example:  Two 10 N forces 120° apart → 10 N resultant along the bisector.",
+    "Q5. When is the resultant of two vectors maximum and minimum?",
+    "Answer:  Maximum (A+B) when θ=0° (same direction). Minimum (|A−B|) when θ=180° (opposite).",
+    "⚡ Shortcut:  θ=0 → add; θ=180 → subtract.",
+    "Example:  3 N & 4 N → max 7 N, min 1 N.",
+    "▥ 2.1 Laws of Vector Addition  —  Compare / Contrast Tables",
+    "The Two Laws of Vector Addition",
+    "▣ 2.2 Resolution of Vectors & Unit Vectors",
+    "Q6. Resolve a vector A into its x and y components.",
+    "Answer:  Aₓ = A cosθ, Aᵧ = A sinθ, where θ is measured from the positive x-axis. Then A = Aₓî + Aᵧĵ.",
+    "⚡ Shortcut:  cos goes with the axis the angle is measured from; sin goes perpendicular.",
+    "Example:  A=10 at 60°: Aₓ=10cos60°=5, Aᵧ=10sin60°=8.66 → A=5î+8.66ĵ.",
+    "Q7. Define unit vectors î and ĵ and state their properties.",
+    "Answer:  Unit vectors have magnitude 1 and point along the axes: î along x, ĵ along y. Properties: î·ĵ=0, î·î=1, î×ĵ=k̂.",
+    "⚡ Shortcut:  Dot of perpendicular unit vectors = 0; same = 1.",
+    "Example:  Any vector can be written A = Aₓî + Aᵧĵ using these.",
+    "Q8. Given A = 3î + 4ĵ, find its magnitude and direction.",
+    "Answer:  |A| = √(3²+4²) = 5. Direction θ = tan⁻¹(Aᵧ/Aₓ) = tan⁻¹(4/3) = 53°.",
+    "⚡ Shortcut:  Magnitude = √(sum of squares); angle = tan⁻¹(y/x).",
+    "Example:  A classic 3-4-5 vector.",
+    "Q9. Explain resolution of a vector into two components along two axes.",
+    "Answer:  Drop perpendiculars from the tip of the vector onto each axis; the intercepts give the components. Along x and y: Aₓ=Acosθ, Aᵧ=Asinθ; the original equals the vector sum of its components.",
+    "⚡ Shortcut:  Component = projection of the vector onto the axis.",
+    "Example:  A force 20 N at 30° to vertical → horizontal = 20sin30°=10 N, vertical = 20cos30°=17.3 N.",
+    "▥ 2.2 Resolution of Vectors & Unit Vectors  —  Compare / Contrast Tables",
+    "Resolution of a Vector: Formula Sheet",
+    "▣ 2.3 Scalar & Vector Products",
+    "Q10. Define the scalar (dot) product of two vectors.",
+    "Answer:  A·B = ABcosθ, a scalar. It equals the product of one vector and the projection of the other onto it.",
+    "⚡ Shortcut:  Dot product → ABcosθ; perpendicular vectors give 0.",
+    "Example:  Work = F·s = Fscosθ; gravity·horizontal displacement = 0.",
+    "Q11. Define the vector (cross) product and give its magnitude and direction.",
+    "Answer:  A×B is a vector of magnitude ABsinθ, direction perpendicular to the plane by the right-hand rule (fingers a→b, thumb gives result).",
+    "⚡ Shortcut:  Cross → ABsinθ; parallel vectors give 0, perpendicular give max AB.",
+    "Example:  Torque τ = r×F; at right angle τ = rF.",
+    "Q12. If A = 2î+3ĵ and B = 4î−î, compute A·B and the angle.",
+    "Answer:  Treat B = 3î; A·B = (2)(3)+(3)(0)=6. |A|=√13,|B|=3 → cosθ=6/(3√13)=2/√13, θ≈54°.",
+    "⚡ Shortcut:  Dot = Σ(xᵢxᵢ'); angle via cosθ = A·B/(|A||B|).",
+    "Example:  Used to find angles between forces.",
+    "Q13. Show that two vectors with A·B = 0 are perpendicular.",
+    "Answer:  Since A·B = ABcosθ, if A·B = 0 (A,B≠0) then cosθ = 0, so θ = 90°. Hence the vectors are perpendicular.",
+    "⚡ Shortcut:  Zero dot product ⟹ 90°.",
+    "Example:  î·ĵ = 0, so axes are perpendicular.",
+    "▥ 2.3 Scalar & Vector Products  —  Compare / Contrast Tables",
+    "Scalar (Dot) vs Vector (Cross) Product",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the resultant of two vectors from the parallelogram law.",
+    "Answer:  Place vectors as adjacent sides; by the law of cosines on the triangle, R² = A² + B² + 2ABcosθ, and the direction angle α from the first vector satisfies tanα = Bsinθ/(A+Bcosθ).",
+    "⚡ Short / exam line:  R = √(A²+B²+2ABcosθ).",
+    "Example:  θ=90° → R = √(A²+B²); θ=0 → A+B; θ=180 → |A−B|.",
+    "[Derive] T2. Resolve a vector into rectangular components and find magnitude/direction.",
+    "Answer:  For A at angle θ to x: Aₓ = Acosθ, Aᵧ = Asinθ. Magnitude |A| = √(Aₓ²+Aᵧ²); direction θ = tan⁻¹(Aᵧ/Aₓ).",
+    "⚡ Short / exam line:  A = Aₓî + Aᵧĵ; check both components.",
+    "Example:  10 at 60° → 5î + 8.66ĵ; |A|=10.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. Define a vector and a scalar; give two of each.",
+    "Answer:  Scalar: fully described by magnitude (mass, time, energy). Vector: needs magnitude AND direction (force, velocity, displacement).",
+    "⚡ Short / exam line:  Scalar = number; Vector = number + direction.",
+    "Example:  Temperature scalar; momentum vector.",
+    "[State] T4. Write the scalar and vector products of unit vectors î, ĵ, k̂.",
+    "Answer:  î·î = 1, î·ĵ = 0; î×ĵ = k̂, ĵ×k̂ = î, k̂×î = ĵ... (cyclic). These define orientation.",
+    "⚡ Short / exam line:  Same→1, perpendicular→0; cross follows right-hand rule.",
+    "Example:  Used to add/subtract vector components.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T5. Compare scalar and vector products; when is each zero?",
+    "Answer:  Scalar (dot): A·B = ABcosθ, a scalar; zero when θ=90° (perpendicular). Vector (cross): A×B = ABsinθ n̂, a vector; zero when θ=0 or 180° (parallel).",
+    "⚡ Short / exam line:  Dot: cos, ⟂→0; Cross: sin, ∥→0.",
+    "Example:  Work uses dot; torque uses cross.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T6. Explain the polygon law of vectors and use it to show a closed loop sums to zero.",
+    "Answer:  Vectors placed head-to-tail form a polygon; if the last tip meets the first, the resultant is zero. Used for the equilibrium of forces: forces in a closed polygon balance.",
+    "⚡ Short / exam line:  Closed head-to-tail → Σ = 0.",
+    "Example:  A body at rest under coplanar forces → force polygon closes.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T7. A professor asks: 'Give the physical meaning of A·B and A×B.'",
+    "Answer:  A·B = projection of B on A times |A| — measures 'how much of B is along A' (work = F·s). A×B is perpendicular to both, magnitude = area of the parallelogram spanned (torque = r×F).",
+    "⚡ Short / exam line:  Dot = aligned part; Cross = perpendicular/area part.",
+    "Example:  F·s = work; r×F = torque.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T8. Three forces 5 N, 8 N, 10 N act on a body and keep it in equilibrium. Find the angle between the 8 N and 10 N forces.",
+    "Answer:  Since they balance, 5 N = |8×10| resultant of the other two in opposition. R² = 8²+10²−2(8)(10)cosφ = 5² → 164 − 160cosφ = 25 → cosφ = 139/160 → φ ≈ 29°.",
+    "⚡ Short / exam line:  Use |R| of the two = the third (closure).",
+    "Example:  Equilibrium means the force triangle closes.",
+    "★ Quick-formula memos (this unit)",
+    "A+B via parallelogram: |A+B|=√(A²+B²+2ABcosθ). θ=90° → √(A²+B²). θ=180° → |A−B|.",
+    "Unit vectors: A = Aₓî + Aᵧĵ ; |A| = √(Aₓ²+Aᵧ²), θ = tan⁻¹(Aᵧ/Aₓ).",
+    "Scalar product A·B = ABcosθ (dot). Vector product |A×B| = ABsinθ, direction by right-hand rule.",
+    "Polygon law: vectors in head-to-tail forming a closed polygon sum to zero."
+  ]
+}

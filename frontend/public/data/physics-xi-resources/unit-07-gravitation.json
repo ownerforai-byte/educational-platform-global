@@ -1,0 +1,606 @@
+{
+  "unitNo": 7,
+  "unitId": "gravitation",
+  "unitName": "Gravitation",
+  "contentArea": "Mechanics",
+  "docxFileName": "Physics_XI_Unit_07_gravitation.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_07_gravitation.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 7: GRAVITATION   Content Area: Mechanics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 156,
+    "tableCount": 7,
+    "questionCount": 20,
+    "theoryCount": 11,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Quantity",
+        "Field g-field",
+        "Potential V"
+      ],
+      "rows": [
+        [
+          "Nature",
+          "Vector (toward mass)",
+          "Scalar (negative around a mass)"
+        ],
+        [
+          "Formula (point mass)",
+          "GM/r²",
+          "−GM/r"
+        ],
+        [
+          "Unit",
+          "N/kg (= m/s²)",
+          "J/kg"
+        ],
+        [
+          "Relation",
+          "g = −dV/dr",
+          "V is work per unit mass"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "V (potential)",
+        "U (potential energy)"
+      ],
+      "rows": [
+        [
+          "Defined for",
+          "Unit mass",
+          "Mass m"
+        ],
+        [
+          "Formula",
+          "−GM/r",
+          "−GMm/r"
+        ],
+        [
+          "Unit",
+          "J/kg",
+          "J"
+        ],
+        [
+          "Relation",
+          "U = mV",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Feature",
+        "g at pole",
+        "g at equator"
+      ],
+      "rows": [
+        [
+          "Rotational effect",
+          "No centrifugal reduction",
+          "Reduced by ω²R"
+        ],
+        [
+          "Radius",
+          "Smaller (polar radius)",
+          "Larger (equatorial bulge)"
+        ],
+        [
+          "Value",
+          "≈ 9.832 m/s²",
+          "≈ 9.780 m/s²"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "",
+        "Altitude h",
+        "Depth d"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "g′ = g(1 − h/R)²",
+          "g′ = g(1 − d/R)"
+        ],
+        [
+          "Valid for",
+          "h ≪ R (outside)",
+          "d ≪ R (inside, uniform earth)"
+        ],
+        [
+          "Behaviour",
+          "Decreases quadratically",
+          "Decreases linearly"
+        ],
+        [
+          "At centre",
+          "—",
+          "g = 0"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Centre of mass",
+        "Centre of gravity"
+      ],
+      "rows": [
+        [
+          "Definition",
+          "Point where total mass acts",
+          "Point where resultant weight acts"
+        ],
+        [
+          "Depends on",
+          "Mass distribution only",
+          "Mass distribution + g-field"
+        ],
+        [
+          "Co-incide?",
+          "—",
+          "Yes, when g is uniform"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Geostationary",
+        "Polar / Sun-synchronous"
+      ],
+      "rows": [
+        [
+          "Orbit",
+          "Equatorial, circular",
+          "Polar, near-circular"
+        ],
+        [
+          "Period",
+          "24 h (one day)",
+          "≈ 12 h sun-sync"
+        ],
+        [
+          "Appears",
+          "Fixed at one point of sky",
+          "Passes over poles"
+        ],
+        [
+          "Use",
+          "TV / communications",
+          "Weather, Earth mapping"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Formula",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Kinetic",
+          "GMm / 2r",
+          "Half of |PE| (virial theorem)"
+        ],
+        [
+          "Potential",
+          "−GMm / r",
+          "Zero at infinity"
+        ],
+        [
+          "Total",
+          "−GMm / 2r",
+          "Binding energy = −E_total"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. State Newton's law of gravitation.",
+      "answer": "Every particle attracts every other with a force proportional to the product of their masses and inversely proportional to the square of the distance: F = GMm/r², along the line joining their centres.",
+      "shortcut": "F = GMm/r² (inverse-square, always attractive).",
+      "example": "Doubling r quarters the gravitational force."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Define gravitational field strength and find it at Earth's surface.",
+      "answer": "Gravitational field strength is the force per unit mass at a point: g = F/m = GM/r². At Earth's surface, g = GM/R² ≈ 9.8 N/kg.",
+      "shortcut": "g = GM/r² (N/kg = m/s²).",
+      "example": "Field is strongest at the surface, weaker with altitude."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Find G from given g, M and R of Earth.",
+      "answer": "G = gR²/M. Using g = 9.8, R = 6.4×10⁶ m, M = 6×10²⁴ kg: G ≈ 6.7×10⁻¹¹ N·m²/kg².",
+      "shortcut": "G = gR²/M.",
+      "example": "≈ 6.7×10⁻¹¹ (SI)."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. How does the gravitational force between two bodies change if their distance is halved?",
+      "answer": "Since F ∝ 1/r², halving the distance multiplies the force by (2)² = 4. ▥ 7.1–7.2 Law of Gravitation & Field Strength  —  Compare / Contrast Tables Gravitational Field Intensity vs Potential ▣ 7.3 Gravitational Potential & Energy",
+      "shortcut": "Inverse-square: (2)² = 4×, (3)² = 9×.",
+      "example": "Closer objects attract much more strongly."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Define gravitational potential and potential energy at a point.",
+      "answer": "Gravitational potential is the work done per unit mass bringing a unit mass from infinity to the point: V = −GM/r. Potential energy of mass m: U = mV = −GMm/r (negative, zero at infinity).",
+      "shortcut": "V = −GM/r ; U = −GMm/r.",
+      "example": "Closer to a mass → more negative potential."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Why is gravitational potential energy negative?",
+      "answer": "Zero is defined at infinity. Since gravity is attractive, work must be done against it to bring a mass from infinity to a point, so the stored potential energy is less than zero (negative).",
+      "shortcut": "Reference U=0 at ∞; attraction makes it negative.",
+      "example": "A bound orbit has negative total energy."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Find the gravitational potential at Earth's surface.",
+      "answer": "V = −GM/R² × R = −gR = −9.8×6.4×10⁶ ≈ −6.27×10⁷ J/kg. ▥ 7.3 Gravitational Potential & Energy  —  Compare / Contrast Tables Gravitational Potential vs Potential Energy ▣ 7.4 Variation of g with Altitude & Depth",
+      "shortcut": "V_surface = −gR.",
+      "example": "≈ −6.3×10⁷ J/kg."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. How does g vary with altitude? Derive g(h)=g₀(1−h/R).",
+      "answer": "At height h, g(h) = GM/(R+h)². For h ≪ R, g(h) ≈ g₀(1 − h/R). So g decreases with altitude.",
+      "shortcut": "g(h) = g₀(1−h/R) (small h).",
+      "example": "At h = R, g becomes g₀/4."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. How does g vary with depth? Derive g(d)=g₀(1−d/R).",
+      "answer": "Only the mass within the sphere of radius (R−d) contributes: g(d) = g₀(R−d)/R = g₀(1−d/R). It falls linearly to zero at the centre.",
+      "shortcut": "g(d) = g₀(1−d/R); g=0 at the core.",
+      "example": "At depth R/2, g = g₀/2."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. At what height does g reduce to half its surface value?",
+      "answer": "g(h)=g₀/2 → 1/(1+h/R)² = ½ → 1+h/R = √2 → h = (√2−1)R ≈ 0.414R ≈ 2650 km. ▥ 7.4 Variation of g with Altitude & Depth  —  Compare / Contrast Tables g at Poles vs Equator g with Altitude vs with Depth ▣ 7.5 Centre of Mass & Centre of Gravity",
+      "shortcut": "h = (√2−1)R for half g.",
+      "example": "≈ 2650 km above the surface."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Define centre of mass and centre of gravity.",
+      "answer": "Centre of mass: point where the whole mass may be considered concentrated, R_cm = Σmᵢrᵢ/Σmᵢ. Centre of gravity: point through which the total weight acts. In a uniform gravitational field they coincide.",
+      "shortcut": "x_cm = Σmᵢxᵢ/M ; CG = COM when g uniform.",
+      "example": "A uniform rod: COM at its midpoint."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Find the centre of mass of two masses 2 kg at x=0 and 3 kg at x=5 m.",
+      "answer": "x_cm = (2×0 + 3×5)/(2+3) = 15/5 = 3 m from the origin.",
+      "shortcut": "x_cm = Σmx/M.",
+      "example": "Sits at x = 3 m."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. Where is the centre of gravity of a uniform triangular lamina?",
+      "answer": "At the centroid, the intersection of the medians, located ⅓ of the altitude from the base (⅔ from the vertex). ▥ 7.5 Centre of Mass & Centre of Gravity  —  Compare / Contrast Tables Centre of Mass vs Centre of Gravity ▣ 7.6–7.7 Satellite Motion & Escape Velocity",
+      "shortcut": "Triangle CG = centroid (1/3 from base).",
+      "example": "A uniform rod's CG is at its midpoint."
+    },
+    {
+      "type": "neb",
+      "question": "Q14. Find the orbital velocity of a satellite just above Earth's surface.",
+      "answer": "mv²/r = GMm/r² → v = √(GM/r). At r = R: v = √(gR) ≈ √(9.8×6.4×10⁶) ≈ 7900 m/s ≈ 7.9 km/s (first cosmic velocity).",
+      "shortcut": "v_orbit = √(gR²/r) = √(GM/r).",
+      "example": "≈ 7.9 km/s at low orbit."
+    },
+    {
+      "type": "neb",
+      "question": "Q15. Derive the time period of a satellite T = 2π√(r³/GM).",
+      "answer": "Centripetal force from gravity: mv²/r = GMm/r² → v = √(GM/r). Period T = circumference/speed = 2πr/v = 2π√(r³/GM).",
+      "shortcut": "T = 2π√(r³/GM); T² ∝ r³ (Kepler).",
+      "example": "Higher orbit → longer period."
+    },
+    {
+      "type": "neb",
+      "question": "Q16. Derive the escape velocity v_e = √(2gR).",
+      "answer": "Total energy at surface = ½mv_e² − GMm/R. To escape, set final energy ≥ 0: ½mv_e² = GMm/R → v_e = √(2GM/R) = √(2gR) ≈ 11.2 km/s.",
+      "shortcut": "v_e = √2 · v_orbit(surface) = √(2gR) ≈ 11.2 km/s.",
+      "example": "Faster than circular speed by √2."
+    },
+    {
+      "type": "neb",
+      "question": "Q17. Relation between escape and orbital velocity at the surface.",
+      "answer": "v_e/v_orbit = √(2gR)/√(gR) = √2. So escape velocity is √2 times the (low) orbital velocity. ▥ 7.6–7.7 Satellite Motion & Escape Velocity  —  Compare / Contrast Tables Geostationary vs Polar (Sun-synchronous) Satellite ▣ 7.8–7.10 Satellite Energy, Geostationary & GPS",
+      "shortcut": "v_e = √2 × v_orbit.",
+      "example": "≈ 11.2 vs 7.9 km/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q18. Find the total energy of a satellite in orbit and its KE and PE.",
+      "answer": "For circular orbit: KE = GMm/2r, PE = −GMm/r, so Total E = −GMm/2r. Total energy is negative (bound system); KE = −(Total E).",
+      "shortcut": "KE = +GMm/2r, PE = −GMm/r, E_total = −GMm/2r.",
+      "example": "Higher orbit → less (less negative) total energy."
+    },
+    {
+      "type": "neb",
+      "question": "Q19. What is a geostationary satellite? State its features.",
+      "answer": "A geostationary satellite orbits Earth in the equatorial plane in the same direction, with period equal to Earth's rotation (24 h), appearing fixed over one point. Orbit height ≈ 36 000 km, radius ≈ 42 200 km.",
+      "shortcut": "T=24 h, r≈42 200 km, over equator.",
+      "example": "Used for TV & weather (e.g. GEO satellites)."
+    },
+    {
+      "type": "neb",
+      "question": "Q20. How does GPS work and why are many satellites needed?",
+      "answer": "GPS uses a constellation of satellites (usually 24+, in 3 orbital planes). Each transmits a timed signal; a receiver measures time-of-arrival from ≥4 satellites to trilaterate its position (3 for position, the 4th for the clock offset). ▥ 7.8–7.10 Satellite Energy, Geostationary & GPS  —  Compare / Contrast Tables Orbital Energy Table (circular orbit) PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Measure travel-time × c to each satellite → position; need ≥4.",
+      "example": "Your phone fixes a location using several GPS sats."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive g in terms of G, M and R of the Earth.",
+      "answer": "The gravitational force on mass m at the surface equals its weight: G M m/R² = mg → g = GM/R². Hence the surface gravitational field strength follows from Earth's mass and radius.",
+      "shortcut": "g = GM/R².",
+      "example": "≈ 9.8 m/s²."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive g(h) = g₀(1 − h/R) at altitude.",
+      "answer": "g(h) = GM/(R+h)² = g₀(R²/(R+h)²). For h ≪ R, (R+h)² ≈ R²(1+2h/R) → g(h) ≈ g₀(1 − h/R), so g decreases with height.",
+      "shortcut": "Small-h expansion → linear drop.",
+      "example": "At h = R, g = g₀/4 (exact)."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T3. Derive g(d) = g₀(1 − d/R) at depth.",
+      "answer": "Only the mass of the sphere of radius (R−d) contributes (shell theorem): g(d) = G·[4/3π(R−d)³ρ] / (R−d)² = g₀(R−d)/R = g₀(1 − d/R). Linear to zero at the centre.",
+      "shortcut": "Inside: g falls linearly to 0.",
+      "example": "At the core g = 0; at R/2 depth g = g₀/2."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T4. Derive the escape velocity and its relation to orbital velocity.",
+      "answer": "Escape: total energy = ½mv² − GMm/r set ≥ 0 → v_e = √(2GM/r) = √(2gR) at the surface ≈ 11.2 km/s. Ratio to the circular (orbital) speed = √2.",
+      "shortcut": "v_e = √(2gR) = √2 v_orbit.",
+      "example": "A satellite must reach 11.2 km/s to escape Earth."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T5. State Newton's law of universal gravitation and the value of G.",
+      "answer": "Every particle attracts every other with a force proportional to the product of their masses and inversely proportional to the square of the distance: F = Gm₁m₂/r². G ≈ 6.67×10⁻¹¹ N·m²/kg² (measured by Cavendish).",
+      "shortcut": "F ∝ m₁m₂/r² ; G=6.67e-11.",
+      "example": "Doubling r quarters the force."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain how Cavendish measured G.",
+      "answer": "Two small lead masses were brought near two larger ones on a torsion balance; the tiny gravitational torque twisted a fine fibre. Knowing the masses and the twist (via a light beam), the force — and hence G — was found. This 'weighed the Earth.'",
+      "shortcut": "Torsion balance: measure the tiny twist → G.",
+      "example": "G found ≈ 6.7×10⁻¹¹ SI."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the centre of mass and centre of gravity, and when they differ.",
+      "answer": "Centre of mass: point where the whole mass can be concentrated, R_cm = Σmᵢrᵢ/Σmᵢ. Centre of gravity: point where total weight acts. In a uniform gravitational field they coincide; in a non-uniform field they can separate.",
+      "shortcut": "Uniform g → coincide; non-uniform → separate.",
+      "example": "An extended body in Earth's field is nearly at the same point."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain the motion of a satellite: orbital velocity and time period.",
+      "answer": "Gravity provides the centripetal force: GMm/r² = mv²/r → v = √(GM/r). Period T = 2πr/v = 2π√(r³/GM), which is Kepler's third law (T² ∝ r³).",
+      "shortcut": "v = √(GM/r) ; T = 2π√(r³/GM).",
+      "example": "Low orbit: v ≈ 7.9 km/s; higher orbit slower & longer."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T9. Explain a geostationary satellite and its characteristics.",
+      "answer": "Orbits Earth in the equatorial plane, prograde, with a period equal to Earth's rotation (≈24 h / 86 400 s), so it appears fixed over one point. Radius ≈ 42 200 km (altitude ≈ 36 000 km).",
+      "shortcut": "T = 24 h; r ≈ 42 200 km; over equator.",
+      "example": "Used for communications and weather over a fixed region."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T10. Explain how GPS works and why multiple satellites are needed.",
+      "answer": "GPS uses a constellation of satellites (typically 24+) in 3 planes. Each transmits a time-stamped signal; a receiver measures the travel time to each satellite to trilaterate its position (3 satellites give position, a 4th corrects the receiver clock).",
+      "shortcut": "trilateration: need ≥ 4 for time + position.",
+      "example": "Your phone fixes a location from several GPS satellites."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T11. Find the orbital speed and period of a satellite 1000 km above Earth (R = 6400 km, g = 9.8).",
+      "answer": "v = √(gR²/r) = √(9.8×(6.4×10⁶)²/7.4×10⁶) ≈ √(5.65×10⁷) ≈ 7.5 km/s. T = 2πr/v = 2π(7.4×10⁶)/7500 ≈ 6200 s ≈ 1.7 h.",
+      "shortcut": "v=√(gR²/r); T=2πr/v.",
+      "example": "≈ 7.5 km/s, ~1.7 h."
+    }
+  ],
+  "formulas": [
+    "F = GMm/r² ; g = GM/R² ; g∝1/r².",
+    "g(h)=g₀(1−h/R) ; g(d)=g₀(1−d/R) (approx).",
+    "Orbital v = √(gR²/r) ; T = 2π√(r³/GM).",
+    "Escape v_e = √(2gR) = √2 v_orbit at surface ≈ 11.2 km/s ; U = −GMm/r."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 7: GRAVITATION   Content Area: Mechanics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 7.1–7.2 Law of Gravitation & Field Strength",
+    "Q1. State Newton's law of gravitation.",
+    "Answer:  Every particle attracts every other with a force proportional to the product of their masses and inversely proportional to the square of the distance: F = GMm/r², along the line joining their centres.",
+    "⚡ Shortcut:  F = GMm/r² (inverse-square, always attractive).",
+    "Example:  Doubling r quarters the gravitational force.",
+    "Q2. Define gravitational field strength and find it at Earth's surface.",
+    "Answer:  Gravitational field strength is the force per unit mass at a point: g = F/m = GM/r². At Earth's surface, g = GM/R² ≈ 9.8 N/kg.",
+    "⚡ Shortcut:  g = GM/r² (N/kg = m/s²).",
+    "Example:  Field is strongest at the surface, weaker with altitude.",
+    "Q3. Find G from given g, M and R of Earth.",
+    "Answer:  G = gR²/M. Using g = 9.8, R = 6.4×10⁶ m, M = 6×10²⁴ kg: G ≈ 6.7×10⁻¹¹ N·m²/kg².",
+    "⚡ Shortcut:  G = gR²/M.",
+    "Example:  ≈ 6.7×10⁻¹¹ (SI).",
+    "Q4. How does the gravitational force between two bodies change if their distance is halved?",
+    "Answer:  Since F ∝ 1/r², halving the distance multiplies the force by (2)² = 4.",
+    "⚡ Shortcut:  Inverse-square: (2)² = 4×, (3)² = 9×.",
+    "Example:  Closer objects attract much more strongly.",
+    "▥ 7.1–7.2 Law of Gravitation & Field Strength  —  Compare / Contrast Tables",
+    "Gravitational Field Intensity vs Potential",
+    "▣ 7.3 Gravitational Potential & Energy",
+    "Q5. Define gravitational potential and potential energy at a point.",
+    "Answer:  Gravitational potential is the work done per unit mass bringing a unit mass from infinity to the point: V = −GM/r. Potential energy of mass m: U = mV = −GMm/r (negative, zero at infinity).",
+    "⚡ Shortcut:  V = −GM/r ; U = −GMm/r.",
+    "Example:  Closer to a mass → more negative potential.",
+    "Q6. Why is gravitational potential energy negative?",
+    "Answer:  Zero is defined at infinity. Since gravity is attractive, work must be done against it to bring a mass from infinity to a point, so the stored potential energy is less than zero (negative).",
+    "⚡ Shortcut:  Reference U=0 at ∞; attraction makes it negative.",
+    "Example:  A bound orbit has negative total energy.",
+    "Q7. Find the gravitational potential at Earth's surface.",
+    "Answer:  V = −GM/R² × R = −gR = −9.8×6.4×10⁶ ≈ −6.27×10⁷ J/kg.",
+    "⚡ Shortcut:  V_surface = −gR.",
+    "Example:  ≈ −6.3×10⁷ J/kg.",
+    "▥ 7.3 Gravitational Potential & Energy  —  Compare / Contrast Tables",
+    "Gravitational Potential vs Potential Energy",
+    "▣ 7.4 Variation of g with Altitude & Depth",
+    "Q8. How does g vary with altitude? Derive g(h)=g₀(1−h/R).",
+    "Answer:  At height h, g(h) = GM/(R+h)². For h ≪ R, g(h) ≈ g₀(1 − h/R). So g decreases with altitude.",
+    "⚡ Shortcut:  g(h) = g₀(1−h/R) (small h).",
+    "Example:  At h = R, g becomes g₀/4.",
+    "Q9. How does g vary with depth? Derive g(d)=g₀(1−d/R).",
+    "Answer:  Only the mass within the sphere of radius (R−d) contributes: g(d) = g₀(R−d)/R = g₀(1−d/R). It falls linearly to zero at the centre.",
+    "⚡ Shortcut:  g(d) = g₀(1−d/R); g=0 at the core.",
+    "Example:  At depth R/2, g = g₀/2.",
+    "Q10. At what height does g reduce to half its surface value?",
+    "Answer:  g(h)=g₀/2 → 1/(1+h/R)² = ½ → 1+h/R = √2 → h = (√2−1)R ≈ 0.414R ≈ 2650 km.",
+    "⚡ Shortcut:  h = (√2−1)R for half g.",
+    "Example:  ≈ 2650 km above the surface.",
+    "▥ 7.4 Variation of g with Altitude & Depth  —  Compare / Contrast Tables",
+    "g at Poles vs Equator",
+    "g with Altitude vs with Depth",
+    "▣ 7.5 Centre of Mass & Centre of Gravity",
+    "Q11. Define centre of mass and centre of gravity.",
+    "Answer:  Centre of mass: point where the whole mass may be considered concentrated, R_cm = Σmᵢrᵢ/Σmᵢ. Centre of gravity: point through which the total weight acts. In a uniform gravitational field they coincide.",
+    "⚡ Shortcut:  x_cm = Σmᵢxᵢ/M ; CG = COM when g uniform.",
+    "Example:  A uniform rod: COM at its midpoint.",
+    "Q12. Find the centre of mass of two masses 2 kg at x=0 and 3 kg at x=5 m.",
+    "Answer:  x_cm = (2×0 + 3×5)/(2+3) = 15/5 = 3 m from the origin.",
+    "⚡ Shortcut:  x_cm = Σmx/M.",
+    "Example:  Sits at x = 3 m.",
+    "Q13. Where is the centre of gravity of a uniform triangular lamina?",
+    "Answer:  At the centroid, the intersection of the medians, located ⅓ of the altitude from the base (⅔ from the vertex).",
+    "⚡ Shortcut:  Triangle CG = centroid (1/3 from base).",
+    "Example:  A uniform rod's CG is at its midpoint.",
+    "▥ 7.5 Centre of Mass & Centre of Gravity  —  Compare / Contrast Tables",
+    "Centre of Mass vs Centre of Gravity",
+    "▣ 7.6–7.7 Satellite Motion & Escape Velocity",
+    "Q14. Find the orbital velocity of a satellite just above Earth's surface.",
+    "Answer:  mv²/r = GMm/r² → v = √(GM/r). At r = R: v = √(gR) ≈ √(9.8×6.4×10⁶) ≈ 7900 m/s ≈ 7.9 km/s (first cosmic velocity).",
+    "⚡ Shortcut:  v_orbit = √(gR²/r) = √(GM/r).",
+    "Example:  ≈ 7.9 km/s at low orbit.",
+    "Q15. Derive the time period of a satellite T = 2π√(r³/GM).",
+    "Answer:  Centripetal force from gravity: mv²/r = GMm/r² → v = √(GM/r). Period T = circumference/speed = 2πr/v = 2π√(r³/GM).",
+    "⚡ Shortcut:  T = 2π√(r³/GM); T² ∝ r³ (Kepler).",
+    "Example:  Higher orbit → longer period.",
+    "Q16. Derive the escape velocity v_e = √(2gR).",
+    "Answer:  Total energy at surface = ½mv_e² − GMm/R. To escape, set final energy ≥ 0: ½mv_e² = GMm/R → v_e = √(2GM/R) = √(2gR) ≈ 11.2 km/s.",
+    "⚡ Shortcut:  v_e = √2 · v_orbit(surface) = √(2gR) ≈ 11.2 km/s.",
+    "Example:  Faster than circular speed by √2.",
+    "Q17. Relation between escape and orbital velocity at the surface.",
+    "Answer:  v_e/v_orbit = √(2gR)/√(gR) = √2. So escape velocity is √2 times the (low) orbital velocity.",
+    "⚡ Shortcut:  v_e = √2 × v_orbit.",
+    "Example:  ≈ 11.2 vs 7.9 km/s.",
+    "▥ 7.6–7.7 Satellite Motion & Escape Velocity  —  Compare / Contrast Tables",
+    "Geostationary vs Polar (Sun-synchronous) Satellite",
+    "▣ 7.8–7.10 Satellite Energy, Geostationary & GPS",
+    "Q18. Find the total energy of a satellite in orbit and its KE and PE.",
+    "Answer:  For circular orbit: KE = GMm/2r, PE = −GMm/r, so Total E = −GMm/2r. Total energy is negative (bound system); KE = −(Total E).",
+    "⚡ Shortcut:  KE = +GMm/2r, PE = −GMm/r, E_total = −GMm/2r.",
+    "Example:  Higher orbit → less (less negative) total energy.",
+    "Q19. What is a geostationary satellite? State its features.",
+    "Answer:  A geostationary satellite orbits Earth in the equatorial plane in the same direction, with period equal to Earth's rotation (24 h), appearing fixed over one point. Orbit height ≈ 36 000 km, radius ≈ 42 200 km.",
+    "⚡ Shortcut:  T=24 h, r≈42 200 km, over equator.",
+    "Example:  Used for TV & weather (e.g. GEO satellites).",
+    "Q20. How does GPS work and why are many satellites needed?",
+    "Answer:  GPS uses a constellation of satellites (usually 24+, in 3 orbital planes). Each transmits a timed signal; a receiver measures time-of-arrival from ≥4 satellites to trilaterate its position (3 for position, the 4th for the clock offset).",
+    "⚡ Shortcut:  Measure travel-time × c to each satellite → position; need ≥4.",
+    "Example:  Your phone fixes a location using several GPS sats.",
+    "▥ 7.8–7.10 Satellite Energy, Geostationary & GPS  —  Compare / Contrast Tables",
+    "Orbital Energy Table (circular orbit)",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive g in terms of G, M and R of the Earth.",
+    "Answer:  The gravitational force on mass m at the surface equals its weight: G M m/R² = mg → g = GM/R². Hence the surface gravitational field strength follows from Earth's mass and radius.",
+    "⚡ Short / exam line:  g = GM/R².",
+    "Example:  ≈ 9.8 m/s².",
+    "[Derive] T2. Derive g(h) = g₀(1 − h/R) at altitude.",
+    "Answer:  g(h) = GM/(R+h)² = g₀(R²/(R+h)²). For h ≪ R, (R+h)² ≈ R²(1+2h/R) → g(h) ≈ g₀(1 − h/R), so g decreases with height.",
+    "⚡ Short / exam line:  Small-h expansion → linear drop.",
+    "Example:  At h = R, g = g₀/4 (exact).",
+    "[Derive] T3. Derive g(d) = g₀(1 − d/R) at depth.",
+    "Answer:  Only the mass of the sphere of radius (R−d) contributes (shell theorem): g(d) = G·[4/3π(R−d)³ρ] / (R−d)² = g₀(R−d)/R = g₀(1 − d/R). Linear to zero at the centre.",
+    "⚡ Short / exam line:  Inside: g falls linearly to 0.",
+    "Example:  At the core g = 0; at R/2 depth g = g₀/2.",
+    "[Derive] T4. Derive the escape velocity and its relation to orbital velocity.",
+    "Answer:  Escape: total energy = ½mv² − GMm/r set ≥ 0 → v_e = √(2GM/r) = √(2gR) at the surface ≈ 11.2 km/s. Ratio to the circular (orbital) speed = √2.",
+    "⚡ Short / exam line:  v_e = √(2gR) = √2 v_orbit.",
+    "Example:  A satellite must reach 11.2 km/s to escape Earth.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T5. State Newton's law of universal gravitation and the value of G.",
+    "Answer:  Every particle attracts every other with a force proportional to the product of their masses and inversely proportional to the square of the distance: F = Gm₁m₂/r². G ≈ 6.67×10⁻¹¹ N·m²/kg² (measured by Cavendish).",
+    "⚡ Short / exam line:  F ∝ m₁m₂/r² ; G=6.67e-11.",
+    "Example:  Doubling r quarters the force.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T6. Explain how Cavendish measured G.",
+    "Answer:  Two small lead masses were brought near two larger ones on a torsion balance; the tiny gravitational torque twisted a fine fibre. Knowing the masses and the twist (via a light beam), the force — and hence G — was found. This 'weighed the Earth.'",
+    "⚡ Short / exam line:  Torsion balance: measure the tiny twist → G.",
+    "Example:  G found ≈ 6.7×10⁻¹¹ SI.",
+    "[Explain] T7. Explain the centre of mass and centre of gravity, and when they differ.",
+    "Answer:  Centre of mass: point where the whole mass can be concentrated, R_cm = Σmᵢrᵢ/Σmᵢ. Centre of gravity: point where total weight acts. In a uniform gravitational field they coincide; in a non-uniform field they can separate.",
+    "⚡ Short / exam line:  Uniform g → coincide; non-uniform → separate.",
+    "Example:  An extended body in Earth's field is nearly at the same point.",
+    "[Explain] T8. Explain the motion of a satellite: orbital velocity and time period.",
+    "Answer:  Gravity provides the centripetal force: GMm/r² = mv²/r → v = √(GM/r). Period T = 2πr/v = 2π√(r³/GM), which is Kepler's third law (T² ∝ r³).",
+    "⚡ Short / exam line:  v = √(GM/r) ; T = 2π√(r³/GM).",
+    "Example:  Low orbit: v ≈ 7.9 km/s; higher orbit slower & longer.",
+    "[Explain] T9. Explain a geostationary satellite and its characteristics.",
+    "Answer:  Orbits Earth in the equatorial plane, prograde, with a period equal to Earth's rotation (≈24 h / 86 400 s), so it appears fixed over one point. Radius ≈ 42 200 km (altitude ≈ 36 000 km).",
+    "⚡ Short / exam line:  T = 24 h; r ≈ 42 200 km; over equator.",
+    "Example:  Used for communications and weather over a fixed region.",
+    "[Explain] T10. Explain how GPS works and why multiple satellites are needed.",
+    "Answer:  GPS uses a constellation of satellites (typically 24+) in 3 planes. Each transmits a time-stamped signal; a receiver measures the travel time to each satellite to trilaterate its position (3 satellites give position, a 4th corrects the receiver clock).",
+    "⚡ Short / exam line:  trilateration: need ≥ 4 for time + position.",
+    "Example:  Your phone fixes a location from several GPS satellites.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T11. Find the orbital speed and period of a satellite 1000 km above Earth (R = 6400 km, g = 9.8).",
+    "Answer:  v = √(gR²/r) = √(9.8×(6.4×10⁶)²/7.4×10⁶) ≈ √(5.65×10⁷) ≈ 7.5 km/s. T = 2πr/v = 2π(7.4×10⁶)/7500 ≈ 6200 s ≈ 1.7 h.",
+    "⚡ Short / exam line:  v=√(gR²/r); T=2πr/v.",
+    "Example:  ≈ 7.5 km/s, ~1.7 h.",
+    "★ Quick-formula memos (this unit)",
+    "F = GMm/r² ; g = GM/R² ; g∝1/r².",
+    "g(h)=g₀(1−h/R) ; g(d)=g₀(1−d/R) (approx).",
+    "Orbital v = √(gR²/r) ; T = 2π√(r³/GM).",
+    "Escape v_e = √(2gR) = √2 v_orbit at surface ≈ 11.2 km/s ; U = −GMm/r."
+  ]
+}

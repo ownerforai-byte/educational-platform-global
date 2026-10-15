@@ -1,0 +1,406 @@
+{
+  "unitNo": 1,
+  "unitId": "physical-quantities",
+  "unitName": "Physical Quantities",
+  "contentArea": "Mechanics",
+  "docxFileName": "Physics_XI_Unit_01_physical-quantities.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_01_physical-quantities.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 1: PHYSICAL QUANTITIES   Content Area: Mechanics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 99,
+    "tableCount": 4,
+    "questionCount": 10,
+    "theoryCount": 9,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Aspect",
+        "Precision",
+        "Accuracy"
+      ],
+      "rows": [
+        [
+          "Meaning",
+          "Closeness of repeated readings to each other",
+          "Closeness to the true value"
+        ],
+        [
+          "Depends on",
+          "Spread / small standard deviation",
+          "Zero-error + correct calibration"
+        ],
+        [
+          "Improved by",
+          "More careful, repeated readings",
+          "Correcting systematic & zero errors"
+        ],
+        [
+          "Example",
+          "4.2, 4.3, 4.1 g (tight cluster)",
+          "mean 4.2 g when true value = 4.2 g"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Fundamental (base)",
+        "Derived"
+      ],
+      "rows": [
+        [
+          "Depends on",
+          "Independent of others",
+          "Combination of fundamentals"
+        ],
+        [
+          "SI count",
+          "7 base units",
+          "Hundreds of derived units"
+        ],
+        [
+          "Units",
+          "m, kg, s, A, K, mol, cd",
+          "m/s, N, J, Pa"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Dimensional formula",
+        "SI unit"
+      ],
+      "rows": [
+        [
+          "Velocity",
+          "L T⁻¹",
+          "m/s"
+        ],
+        [
+          "Acceleration",
+          "L T⁻²",
+          "m/s²"
+        ],
+        [
+          "Force",
+          "M L T⁻²",
+          "N"
+        ],
+        [
+          "Pressure",
+          "M L⁻¹ T⁻²",
+          "Pa"
+        ],
+        [
+          "Energy / Work",
+          "M L² T⁻²",
+          "J"
+        ],
+        [
+          "Power",
+          "M L² T⁻³",
+          "W"
+        ],
+        [
+          "G (constant)",
+          "M⁻¹ L³ T⁻²",
+          "N·m²/kg²"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Task",
+        "Possible?",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Verify homogeneous equations",
+          "Yes",
+          "Term-by-term for + and −"
+        ],
+        [
+          "Find dimensions of unknown constants",
+          "Yes",
+          "e.g. G = M⁻¹L³T⁻²"
+        ],
+        [
+          "Find numerical constants (½, 2π)",
+          "No",
+          "Only powers of M, L, T"
+        ],
+        [
+          "Verify sin, log, exponential",
+          "No",
+          "Their arguments must be dimensionless"
+        ],
+        [
+          "Tell vector from scalar",
+          "No",
+          "Work & torque share M L² T⁻²"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define significant figures. State any two rules.",
+      "answer": "Significant figures are the meaningful digits in a measured value. Rules: all non-zero digits are significant; zeros between significant digits are significant; leading zeros are not significant; trailing zeros after a decimal are significant.",
+      "shortcut": "Count every non-zero digit; keep internal & decimal-point trailing zeros; drop leading zeros.",
+      "example": "0.004050 → 4 significant figures (4,0,5,0)."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. State the difference between precision and accuracy with an example.",
+      "answer": "Precision = closeness of repeated measurements to each other. Accuracy = closeness to the true value. A value can be precise but inaccurate (consistent wrong) or accurate but imprecise.",
+      "shortcut": "Precision → spread; Accuracy → distance from true value.",
+      "example": "Repeated 4.2,4.3,4.1 g is precise; if true is 5.0 g it is not accurate."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. What is a fundamental (base) unit? Give SI base units of two quantities.",
+      "answer": "A fundamental unit is the standard unit of a fundamental quantity independent of others. Examples: metre (length), kilogram (mass), second (time), ampere (current), kelvin (temperature).",
+      "shortcut": "7 SI base units: m, kg, s, A, K, mol, cd.",
+      "example": "Mass = kilogram, time = second."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Define parallax error and how it is avoided.",
+      "answer": "Parallax error is the apparent shift between the pointer and the scale reading because the eye is not directly above the scale. Avoid it by placing a mirror below the scale or keeping the eye perpendicular to the scale at the point of reading. ▥ 1.1 Precision, Significant Figures & Units  —  Compare / Contrast Tables Precision vs Accuracy (classic contrast) Fundamental vs Derived Quantities ▣ 1.2 Dimensions & Dimensional Analysis",
+      "shortcut": "Eye ⟂ to scale, eye-line on the pointer.",
+      "example": "Galvanometer/scale with a mirror → read when image of pointer overlaps pointer."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Define dimensional analysis. State two uses.",
+      "answer": "Dimensional analysis expresses a physical quantity as a product of powers of base dimensions M, L, T. Uses: (i) verify dimensional homogeneity of an equation, (ii) find the dimensions of a quantity, (iii) convert units, (iv) derive a relation among quantities.",
+      "shortcut": "Write the formula, replace each symbol by M,L,T powers, simplify exponents.",
+      "example": "Dimension of pressure = [F/A] = MLT⁻²/L² = ML⁻¹T⁻²."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Write dimensional formulas of velocity, pressure and torque.",
+      "answer": "Velocity [v]=LT⁻¹. Pressure [P]=ML⁻¹T⁻². Torque [τ]=M L² T⁻² (force × lever arm).",
+      "shortcut": "velocity L/T; pressure F/area; torque like energy ML²T⁻².",
+      "example": "Note torque and energy share M L² T⁻² but differ (torque is a vector)."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Verify dimensionally that [Work] = [torque].",
+      "answer": "Work = force × displacement = MLT⁻²·L = ML²T⁻². Torque = force × arm = MLT⁻²·L = ML²T⁻². Both = ML²T⁻², hence dimensionally equal.",
+      "shortcut": "Both reduce to force × length → ML²T⁻².",
+      "example": "Unit of both: joule (N·m)."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. State two limitations of dimensional analysis.",
+      "answer": "(i) It cannot verify relations involving addition/subtraction or trigonometric/logarithmic functions. (ii) It cannot find numerical constants, and it gives no information about vectors vs scalars (torque & energy have same dimensions).",
+      "shortcut": "Dimensional analysis fails for +, −, sin, log, and constants (like ½).",
+      "example": "v = u + at is verified term-by-term, not the whole sum at once."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Find the dimensions of G using Newton's law of gravitation F = Gm₁m₂/r².",
+      "answer": "G = Fr²/(m₁m₂). Dimensions = (MLT⁻²)(L²)/M² = M⁻¹L³T⁻².",
+      "shortcut": "G = F L² / M² → M⁻¹L³T⁻².",
+      "example": "SI unit of G: N·m²/kg² = m³ kg⁻¹ s⁻²."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Verify dimensionally E = ½ m v².",
+      "answer": "RHS = mass × velocity² = M(LT⁻¹)² = ML²T⁻². Energy [E] = work = ML²T⁻². LHS = RHS, so the equation is dimensionally correct (constant ½ is ignored). ▥ 1.2 Dimensions & Dimensional Analysis  —  Compare / Contrast Tables Dimensions of Common Quantities (quick lookup) What Dimensional Analysis Can / Cannot Do PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "½ is dimensionless; check only M,L,T.",
+      "example": "Same check confirms kinetic-energy formula."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the dimensions of the gravitational constant G.",
+      "answer": "From F = Gm₁m₂/r²: G = Fr²/(m₁m₂). Dimensions = (MLT⁻²)(L²)/M² = M⁻¹L³T⁻².",
+      "shortcut": "G = F L² / M².",
+      "example": "SI unit: N·m²/kg² = m³kg⁻¹s⁻²."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. Define accuracy and precision; how are they different?",
+      "answer": "Accuracy = closeness to the true value (systematic errors matter). Precision = reproducibility of repeated readings (random error / least-count). A result can be precise but inaccurate (consistent bias) or accurate but imprecise (scattered, mean ≈ true).",
+      "shortcut": "Precise = small spread; Accurate = near true value.",
+      "example": "Repeated 4.2,4.1,4.3 g is precise; if true = 5.0 g it is not accurate."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. List the seven SI base units with their quantities.",
+      "answer": "Length–metre, mass–kilogram, time–second, current–ampere, temperature–kelvin, amount–mole, luminous intensity–candela. These are independent (fundamental); all others are derived.",
+      "shortcut": "7 base: m, kg, s, A, K, mol, cd.",
+      "example": "SI units are the international standard for all measurements."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T4. What is a derived unit? Give two with dimensions.",
+      "answer": "Derived units are formed by combining base units. Pressure = N/m² = Pa → ML⁻¹T⁻²; Energy = N·m = J → ML²T⁻².",
+      "shortcut": "Write quantity → replace by M,L,T powers.",
+      "example": "Force (N), power (W) are also derived."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T5. Compare systematic and random errors; how is each reduced?",
+      "answer": "Systematic: one-sided, due to instrument bias (zero error, calibration) → reduce by calibration & correcting zero. Random: scatter about the true value from fluctuating conditions → reduce by repeating and averaging, guarding against parallax.",
+      "shortcut": "Systematic = offset; Random = scatter.",
+      "example": "A biased ruler = systematic; shaky hand = random."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the method of finding the density of a solid by a spring balance + water (displacement).",
+      "answer": "Weigh the solid in air (m₁). Submerge it in water and weigh (m₂, apparent weight). Upthrust = (m₁−m₂)g = weight of displaced water = V·ρ_w·g → Volume V = (m₁−m₂)/ρ_w. Density = m₁/V = m₁ρ_w/(m₁−m₂).",
+      "shortcut": "V = displaced volume; ρ = m/V (Archimedes).",
+      "example": "A 50 g stone displacing 20 cm³ water → ρ = 2.5 g/cm³."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the use of a Vernier scale (least count). How is the reading taken?",
+      "answer": "A Vernier scale subdivides the main scale: least count = 1 main-division / N vernier-divisions. Reading = whole main scale + (vernier division coinciding × least count).",
+      "shortcut": "L.C. = MSD/N; reading = M + (v×L.C.).",
+      "example": "LC = 0.01 mm; reading 12 mm + (35×0.01)=12.35 mm."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why do we express a final answer with the correct number of significant figures?",
+      "answer": "To reflect the precision of the least-precise measurement: propagating more digits than the data support gives a false sense of accuracy. The answer's significant figures match the least-precise input.",
+      "shortcut": "Match sig-figs to least-precise term.",
+      "example": "3.0 (2 s.f.) × 2.50 (3 s.f.) → answer to 2 s.f."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T9. A professor asks: 'If I double the length and halve the cross-section of a wire, what happens to its resistance? What law tells me?'",
+      "answer": "R = ρL/A. Doubling L and halving A makes R increase by 4× (L↑×2, A↓×2 → R×4). This is the resistance (resistivity) law.",
+      "shortcut": "R ∝ L/A → 4×.",
+      "example": "ρ is a material property, L and A geometry."
+    }
+  ],
+  "formulas": [
+    "[F]=MLT⁻², [E]=[Work]=ML²T⁻², [P]=ML⁻¹T⁻², [G]=M⁻¹L³T⁻²",
+    "Dimensional formula = write in M, L, T powers; ignore pure numbers and constants.",
+    "Significant figures: non-zero = sig; zeros between/marked decimal = sig; leading zeros = NOT sig.",
+    "Precision = closeness of repeated values; Accuracy = closeness to true value."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 1: PHYSICAL QUANTITIES   Content Area: Mechanics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 1.1 Precision, Significant Figures & Units",
+    "Q1. Define significant figures. State any two rules.",
+    "Answer:  Significant figures are the meaningful digits in a measured value. Rules: all non-zero digits are significant; zeros between significant digits are significant; leading zeros are not significant; trailing zeros after a decimal are significant.",
+    "⚡ Shortcut:  Count every non-zero digit; keep internal & decimal-point trailing zeros; drop leading zeros.",
+    "Example:  0.004050 → 4 significant figures (4,0,5,0).",
+    "Q2. State the difference between precision and accuracy with an example.",
+    "Answer:  Precision = closeness of repeated measurements to each other. Accuracy = closeness to the true value. A value can be precise but inaccurate (consistent wrong) or accurate but imprecise.",
+    "⚡ Shortcut:  Precision → spread; Accuracy → distance from true value.",
+    "Example:  Repeated 4.2,4.3,4.1 g is precise; if true is 5.0 g it is not accurate.",
+    "Q3. What is a fundamental (base) unit? Give SI base units of two quantities.",
+    "Answer:  A fundamental unit is the standard unit of a fundamental quantity independent of others. Examples: metre (length), kilogram (mass), second (time), ampere (current), kelvin (temperature).",
+    "⚡ Shortcut:  7 SI base units: m, kg, s, A, K, mol, cd.",
+    "Example:  Mass = kilogram, time = second.",
+    "Q4. Define parallax error and how it is avoided.",
+    "Answer:  Parallax error is the apparent shift between the pointer and the scale reading because the eye is not directly above the scale. Avoid it by placing a mirror below the scale or keeping the eye perpendicular to the scale at the point of reading.",
+    "⚡ Shortcut:  Eye ⟂ to scale, eye-line on the pointer.",
+    "Example:  Galvanometer/scale with a mirror → read when image of pointer overlaps pointer.",
+    "▥ 1.1 Precision, Significant Figures & Units  —  Compare / Contrast Tables",
+    "Precision vs Accuracy (classic contrast)",
+    "Fundamental vs Derived Quantities",
+    "▣ 1.2 Dimensions & Dimensional Analysis",
+    "Q5. Define dimensional analysis. State two uses.",
+    "Answer:  Dimensional analysis expresses a physical quantity as a product of powers of base dimensions M, L, T. Uses: (i) verify dimensional homogeneity of an equation, (ii) find the dimensions of a quantity, (iii) convert units, (iv) derive a relation among quantities.",
+    "⚡ Shortcut:  Write the formula, replace each symbol by M,L,T powers, simplify exponents.",
+    "Example:  Dimension of pressure = [F/A] = MLT⁻²/L² = ML⁻¹T⁻².",
+    "Q6. Write dimensional formulas of velocity, pressure and torque.",
+    "Answer:  Velocity [v]=LT⁻¹. Pressure [P]=ML⁻¹T⁻². Torque [τ]=M L² T⁻² (force × lever arm).",
+    "⚡ Shortcut:  velocity L/T; pressure F/area; torque like energy ML²T⁻².",
+    "Example:  Note torque and energy share M L² T⁻² but differ (torque is a vector).",
+    "Q7. Verify dimensionally that [Work] = [torque].",
+    "Answer:  Work = force × displacement = MLT⁻²·L = ML²T⁻². Torque = force × arm = MLT⁻²·L = ML²T⁻². Both = ML²T⁻², hence dimensionally equal.",
+    "⚡ Shortcut:  Both reduce to force × length → ML²T⁻².",
+    "Example:  Unit of both: joule (N·m).",
+    "Q8. State two limitations of dimensional analysis.",
+    "Answer:  (i) It cannot verify relations involving addition/subtraction or trigonometric/logarithmic functions. (ii) It cannot find numerical constants, and it gives no information about vectors vs scalars (torque & energy have same dimensions).",
+    "⚡ Shortcut:  Dimensional analysis fails for +, −, sin, log, and constants (like ½).",
+    "Example:  v = u + at is verified term-by-term, not the whole sum at once.",
+    "Q9. Find the dimensions of G using Newton's law of gravitation F = Gm₁m₂/r².",
+    "Answer:  G = Fr²/(m₁m₂). Dimensions = (MLT⁻²)(L²)/M² = M⁻¹L³T⁻².",
+    "⚡ Shortcut:  G = F L² / M² → M⁻¹L³T⁻².",
+    "Example:  SI unit of G: N·m²/kg² = m³ kg⁻¹ s⁻².",
+    "Q10. Verify dimensionally E = ½ m v².",
+    "Answer:  RHS = mass × velocity² = M(LT⁻¹)² = ML²T⁻². Energy [E] = work = ML²T⁻². LHS = RHS, so the equation is dimensionally correct (constant ½ is ignored).",
+    "⚡ Shortcut:  ½ is dimensionless; check only M,L,T.",
+    "Example:  Same check confirms kinetic-energy formula.",
+    "▥ 1.2 Dimensions & Dimensional Analysis  —  Compare / Contrast Tables",
+    "Dimensions of Common Quantities (quick lookup)",
+    "What Dimensional Analysis Can / Cannot Do",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the dimensions of the gravitational constant G.",
+    "Answer:  From F = Gm₁m₂/r²: G = Fr²/(m₁m₂). Dimensions = (MLT⁻²)(L²)/M² = M⁻¹L³T⁻².",
+    "⚡ Short / exam line:  G = F L² / M².",
+    "Example:  SI unit: N·m²/kg² = m³kg⁻¹s⁻².",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T2. Define accuracy and precision; how are they different?",
+    "Answer:  Accuracy = closeness to the true value (systematic errors matter). Precision = reproducibility of repeated readings (random error / least-count). A result can be precise but inaccurate (consistent bias) or accurate but imprecise (scattered, mean ≈ true).",
+    "⚡ Short / exam line:  Precise = small spread; Accurate = near true value.",
+    "Example:  Repeated 4.2,4.1,4.3 g is precise; if true = 5.0 g it is not accurate.",
+    "[State] T3. List the seven SI base units with their quantities.",
+    "Answer:  Length–metre, mass–kilogram, time–second, current–ampere, temperature–kelvin, amount–mole, luminous intensity–candela. These are independent (fundamental); all others are derived.",
+    "⚡ Short / exam line:  7 base: m, kg, s, A, K, mol, cd.",
+    "Example:  SI units are the international standard for all measurements.",
+    "[State] T4. What is a derived unit? Give two with dimensions.",
+    "Answer:  Derived units are formed by combining base units. Pressure = N/m² = Pa → ML⁻¹T⁻²; Energy = N·m = J → ML²T⁻².",
+    "⚡ Short / exam line:  Write quantity → replace by M,L,T powers.",
+    "Example:  Force (N), power (W) are also derived.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T5. Compare systematic and random errors; how is each reduced?",
+    "Answer:  Systematic: one-sided, due to instrument bias (zero error, calibration) → reduce by calibration & correcting zero. Random: scatter about the true value from fluctuating conditions → reduce by repeating and averaging, guarding against parallax.",
+    "⚡ Short / exam line:  Systematic = offset; Random = scatter.",
+    "Example:  A biased ruler = systematic; shaky hand = random.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T6. Explain the method of finding the density of a solid by a spring balance + water (displacement).",
+    "Answer:  Weigh the solid in air (m₁). Submerge it in water and weigh (m₂, apparent weight). Upthrust = (m₁−m₂)g = weight of displaced water = V·ρ_w·g → Volume V = (m₁−m₂)/ρ_w. Density = m₁/V = m₁ρ_w/(m₁−m₂).",
+    "⚡ Short / exam line:  V = displaced volume; ρ = m/V (Archimedes).",
+    "Example:  A 50 g stone displacing 20 cm³ water → ρ = 2.5 g/cm³.",
+    "[Explain] T7. Explain the use of a Vernier scale (least count). How is the reading taken?",
+    "Answer:  A Vernier scale subdivides the main scale: least count = 1 main-division / N vernier-divisions. Reading = whole main scale + (vernier division coinciding × least count).",
+    "⚡ Short / exam line:  L.C. = MSD/N; reading = M + (v×L.C.).",
+    "Example:  LC = 0.01 mm; reading 12 mm + (35×0.01)=12.35 mm.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why do we express a final answer with the correct number of significant figures?",
+    "Answer:  To reflect the precision of the least-precise measurement: propagating more digits than the data support gives a false sense of accuracy. The answer's significant figures match the least-precise input.",
+    "⚡ Short / exam line:  Match sig-figs to least-precise term.",
+    "Example:  3.0 (2 s.f.) × 2.50 (3 s.f.) → answer to 2 s.f.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T9. A professor asks: 'If I double the length and halve the cross-section of a wire, what happens to its resistance? What law tells me?'",
+    "Answer:  R = ρL/A. Doubling L and halving A makes R increase by 4× (L↑×2, A↓×2 → R×4). This is the resistance (resistivity) law.",
+    "⚡ Short / exam line:  R ∝ L/A → 4×.",
+    "Example:  ρ is a material property, L and A geometry.",
+    "★ Quick-formula memos (this unit)",
+    "[F]=MLT⁻², [E]=[Work]=ML²T⁻², [P]=ML⁻¹T⁻², [G]=M⁻¹L³T⁻²",
+    "Dimensional formula = write in M, L, T powers; ignore pure numbers and constants.",
+    "Significant figures: non-zero = sig; zeros between/marked decimal = sig; leading zeros = NOT sig.",
+    "Precision = closeness of repeated values; Accuracy = closeness to true value."
+  ]
+}

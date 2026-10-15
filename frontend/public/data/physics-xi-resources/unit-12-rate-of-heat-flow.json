@@ -1,0 +1,368 @@
+{
+  "unitNo": 12,
+  "unitId": "rate-of-heat-flow",
+  "unitName": "Rate of Heat Flow",
+  "contentArea": "Heat & Thermodynamics",
+  "docxFileName": "Physics_XI_Unit_12_rate-of-heat-flow.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_12_rate-of-heat-flow.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 12: RATE OF HEAT FLOW   Content Area: Heat & Thermodynamics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 102,
+    "tableCount": 3,
+    "questionCount": 10,
+    "theoryCount": 10,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Mode",
+        "Conduction",
+        "Convection",
+        "Radiation"
+      ],
+      "rows": [
+        [
+          "Needs medium?",
+          "Yes (solid)",
+          "Yes (fluid)",
+          "No (works in vacuum)"
+        ],
+        [
+          "Carrier",
+          "Lattice vibrations / e⁻",
+          "Bulk fluid motion",
+          "EM waves"
+        ],
+        [
+          "Law",
+          "Fourier: H ∝ ΔT/ℓ",
+          "Newton cooling (fluid)",
+          "Stefan–Boltzmann: P ∝ T⁴"
+        ],
+        [
+          "Fastest?",
+          "Depends",
+          "Can be fast (forced)",
+          "Only in vacuum"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Property",
+        "Black body",
+        "White body"
+      ],
+      "rows": [
+        [
+          "Emission",
+          "Best emitter (ε = 1)",
+          "Poor emitter"
+        ],
+        [
+          "Absorption",
+          "Best absorber",
+          "Reflects, poor absorber"
+        ],
+        [
+          "Emissivity",
+          "1 (ideal)",
+          "≈ 0"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Law",
+        "Stefan–Boltzmann",
+        "Wien"
+      ],
+      "rows": [
+        [
+          "Statement",
+          "P/A = εσT⁴",
+          "λ_max = b/T (b = 2.9×10⁻³ m·K)"
+        ],
+        [
+          "Tells us",
+          "Total power ∝ T⁴",
+          "Peak wavelength vs T"
+        ],
+        [
+          "Use",
+          "Cooling, star brightness",
+          "Colour → temperature"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define thermal conductivity and write the conduction formula.",
+      "answer": "Thermal conductivity k is the rate of heat flow per unit area and per unit temperature gradient. For a slab: P = Q/t = kA(T₁−T₂)/d (W), so k = (Q d)/(t A ΔT).",
+      "shortcut": "P = kAΔT/d (higher k → better conductor).",
+      "example": "Copper has high k (≈400 W/m·K); wood low."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Find the rate of heat loss through a 4 cm thick brick wall (k = 0.7 W/m·K, area 10 m², 40 °C difference).",
+      "answer": "P = kAΔT/d = (0.7 × 10 × 40)/0.04 = 7000 W. A larger area and thinner wall (low d) raise the loss; adding insulation (low k) reduces it.",
+      "shortcut": "P = kAΔT/d ; add insulation to reduce P.",
+      "example": "≈ 7000 W through the wall."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Explain convection and give an example of natural convection.",
+      "answer": "Convection is heat transfer by the bulk motion of a fluid. Natural convection arises from density differences (hot fluid rises, cold sinks); e.g. warm air rising in a room.",
+      "shortcut": "Hot → less dense → rises; cold → sinks.",
+      "example": "Sea-breeze: land heats, warm air rises, sea air flows in."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. A 0.2 m thick wall of k = 0.5 W/m·K has 20 °C difference across it. Find heat flow per unit area.",
+      "answer": "Per unit area P/A = kΔT/d = 0.5×20/0.2 = 50 W/m².",
+      "shortcut": "P/A = kΔT/d.",
+      "example": "50 W per m² of wall."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Why is a double-glazed window a good insulator?",
+      "answer": "The trapped air gap between the two panes has low thermal conductivity and suppresses convection, reducing heat flow by conduction/convection and thus insulating the window. ▥ 12.1 Conduction & 12.2 Convection  —  Compare / Contrast Tables Conduction vs Convection vs Radiation ▣ 12.3–12.5 Radiation & Stefan-Boltzmann Law",
+      "shortcut": "Air gap → low k + less convection → insulates.",
+      "example": "Double glazing keeps rooms warmer in winter."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define black-body radiation and a black body.",
+      "answer": "A black body is an ideal absorber (absorbs all incident radiation) and the most efficient emitter. Black-body radiation is the spectrum emitted by it, depending only on temperature (continuous, no color dependence).",
+      "shortcut": "Black body: perfect absorber & emitter; radiation depends only on T.",
+      "example": "A cavity with a small hole approximates a black body."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. State the Stefan-Boltzmann law.",
+      "answer": "The total power radiated per unit area by a black body is proportional to the fourth power of its absolute temperature: P/A = σT⁴, σ = 5.67×10⁻⁸ W m⁻² K⁻⁴. For a real (gray) body P/A = εσT⁴ (ε ≤ 1).",
+      "shortcut": "P = εσAT⁴; T ↑ doubles P ↑16×.",
+      "example": "Stars shine because of T⁴ dependence."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Find the net radiative loss per second of a 0.1 m² black surface at 300 K in 270 K surroundings.",
+      "answer": "P = εσA(T⁴ − T_s⁴) = (1)(5.67×10⁻⁸)(0.1)[(300)⁴−(270)⁴]. 300⁴=8.1×10⁹, 270⁴=5.31×10⁸; diff≈7.57×10⁹. P ≈ 5.67×10⁻⁸×0.1×7.57×10⁹ ≈ 43 W.",
+      "shortcut": "P = εσA(T⁴−T_s⁴); use the difference of fourth powers.",
+      "example": "≈ 43 W net loss."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Explain why dark (black) objects absorb and radiate better than white ones.",
+      "answer": "Dark surfaces have high absorptivity/emissivity, so they absorb more solar radiation and emit more thermal radiation than white (shiny) surfaces, which reflect. Hence a black car heats faster than a white one.",
+      "shortcut": "Black = high ε (good absorber & emitter); white = low ε, reflective.",
+      "example": "Painting a water tank black heats the water faster."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Why does the solar constant (~1360 W/m²) vary through the day and seasons?",
+      "answer": "Because the angle of incidence of sunlight changes (zenith angle) and Earth's orbit is elliptical, so the energy per unit area per second hitting the top of the atmosphere varies, being greatest near noon at the equator in summer. ▥ 12.3–12.5 Radiation & Stefan-Boltzmann Law  —  Compare / Contrast Tables Black Body vs White Body Stefan–Boltzmann vs Wien's Law PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Tilt + elliptical orbit → variable solar constant.",
+      "example": "Summer noon at the equator gives the largest value."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the expression for thermal conductivity from a steady slab.",
+      "answer": "In steady state, the heat flow Q through a slab of area A, thickness d and temperature difference ΔT in time t is P = Q/t. Defining k by P = kAΔT/d gives k = Qd/(tAΔT); larger k means a better conductor. This is the definition used to measure k.",
+      "shortcut": "k = Qd/(tAΔT).",
+      "example": "Measured with guarded plates or a lagged bar."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. State the Stefan-Boltzmann law and the net radiation formula.",
+      "answer": "Power radiated per unit area by a black body is P/A = σT⁴, σ = 5.67×10⁻⁸ W m⁻² K⁻⁴. A real body: P/A = εσT⁴. The net radiative exchange with surroundings at T_s is P = εσA(T⁴ − T_s⁴).",
+      "shortcut": "P = εσAT⁴ ; net = εσA(T⁴−T_s⁴).",
+      "example": "Doubling T increases P by 16."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. Define thermal conductivity and write the heat-flow (Fourier) formula.",
+      "answer": "Thermal conductivity k is the rate of heat flow per unit area per unit temperature gradient: P = Q/t = kA(T₁−T₂)/d. Its unit is W m⁻¹ K⁻¹; k is the material's conductive power.",
+      "shortcut": "P = kAΔT/d ; k = Qd/(tAΔT).",
+      "example": "Copper k≈400 (high); wood k≈0.1 (low)."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T4. Compare conduction, convection and radiation as heat-transfer modes.",
+      "answer": "Conduction: through matter by molecular collisions (needs a medium, no bulk motion). Convection: by bulk fluid motion (needs a fluid). Radiation: electromagnetic (needs no medium, works in vacuum), proportional to T⁴.",
+      "shortcut": "Conduction=particles; Convection=fluid motion; Radiation=EM, no medium.",
+      "example": "A pot on a stove (conduction), boiling (convection), the Sun (radiation)."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain convection and distinguish natural from forced convection.",
+      "answer": "Convection transfers heat by bulk fluid motion. Natural: caused by density differences (hot rises, cold sinks). Forced: driven by a fan/pump. Example: sea breeze is natural; a fan-cooled CPU is forced.",
+      "shortcut": "Natural = density-driven; Forced = external fan/pump.",
+      "example": "A pot of boiling water circulates by natural convection."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain black-body radiation and an ideal radiator.",
+      "answer": "A black body is a perfect absorber and (by Kirchhoff) the most efficient emitter. Its radiation spectrum depends only on temperature; a real 'ideal' radiator is designed to be a near-black body (matte black) to maximize emission/absorption.",
+      "shortcut": "Black body: absorbs all; emits only per T (Kirchhoff).",
+      "example": "A small cavity with a hole is a good black-body model."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the use of a lagged box / domestic hot-water storage.",
+      "answer": "Insulation (low-k lag) slows conductive, convective and radiative heat loss, keeping water hot for longer. A reflective (shiny) interior reduces radiative loss; trapped air reduces convection. So lag = low k + suppressed convection + reflective surface.",
+      "shortcut": "Low k + no convection + shiny → keeps heat in.",
+      "example": "Reduces the heating energy needed to keep water hot."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain a thermos flask (vacuum flask) and the loss it prevents.",
+      "answer": "A vacuum flask has two silvered walls with the vacuum between (stops conduction and convection), the stopper minimizes convection, and the shiny surfaces reduce radiation. Together it keeps hot/cold contents hot/cold for hours.",
+      "shortcut": "Vacuum + silvering + stopper → blocks all three modes.",
+      "example": "Keeps tea hot or ice cold."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T9. Why does a double-glazed window insulate better than a single pane?",
+      "answer": "The trapped air gap between the two panes has very low thermal conductivity and suppresses convection, so conductive/convective heat flow is greatly reduced; the two panes also reflect some radiation. Hence the overall heat loss is lower.",
+      "shortcut": "Air gap → low k + less convection → insulates.",
+      "example": "Same principle as a thermos flask."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A 0.1 m² black surface at 300 K in 270 K surroundings. Find net radiative loss.",
+      "answer": "P = εσA(T⁴−T_s⁴) = (1)(5.67×10⁻⁸)(0.1)[300⁴ − 270⁴] = 5.67×10⁻⁸×0.1×(8.1×10⁹ − 5.31×10⁸) ≈ 43 W.",
+      "shortcut": "net = εσA(T⁴−T_s⁴).",
+      "example": "≈ 43 W lost to the surroundings."
+    }
+  ],
+  "formulas": [
+    "Conduction: P = kA(T₁−T₂)/d (W) ; k = thermal conductivity.",
+    "Convection: Newton cooling −dQ/dt = hS(T−T_s).",
+    "Stefan–Boltzmann: P/A = εσT⁴ ; σ = 5.67×10⁻⁸ W m⁻² K⁻⁴.",
+    "Net radiation = εσ(A)(T⁴ − T_s⁴)."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 12: RATE OF HEAT FLOW   Content Area: Heat & Thermodynamics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 12.1 Conduction & 12.2 Convection",
+    "Q1. Define thermal conductivity and write the conduction formula.",
+    "Answer:  Thermal conductivity k is the rate of heat flow per unit area and per unit temperature gradient. For a slab: P = Q/t = kA(T₁−T₂)/d (W), so k = (Q d)/(t A ΔT).",
+    "⚡ Shortcut:  P = kAΔT/d (higher k → better conductor).",
+    "Example:  Copper has high k (≈400 W/m·K); wood low.",
+    "Q2. Find the rate of heat loss through a 4 cm thick brick wall (k = 0.7 W/m·K, area 10 m², 40 °C difference).",
+    "Answer:  P = kAΔT/d = (0.7 × 10 × 40)/0.04 = 7000 W. A larger area and thinner wall (low d) raise the loss; adding insulation (low k) reduces it.",
+    "⚡ Shortcut:  P = kAΔT/d ; add insulation to reduce P.",
+    "Example:  ≈ 7000 W through the wall.",
+    "Q3. Explain convection and give an example of natural convection.",
+    "Answer:  Convection is heat transfer by the bulk motion of a fluid. Natural convection arises from density differences (hot fluid rises, cold sinks); e.g. warm air rising in a room.",
+    "⚡ Shortcut:  Hot → less dense → rises; cold → sinks.",
+    "Example:  Sea-breeze: land heats, warm air rises, sea air flows in.",
+    "Q4. A 0.2 m thick wall of k = 0.5 W/m·K has 20 °C difference across it. Find heat flow per unit area.",
+    "Answer:  Per unit area P/A = kΔT/d = 0.5×20/0.2 = 50 W/m².",
+    "⚡ Shortcut:  P/A = kΔT/d.",
+    "Example:  50 W per m² of wall.",
+    "Q5. Why is a double-glazed window a good insulator?",
+    "Answer:  The trapped air gap between the two panes has low thermal conductivity and suppresses convection, reducing heat flow by conduction/convection and thus insulating the window.",
+    "⚡ Shortcut:  Air gap → low k + less convection → insulates.",
+    "Example:  Double glazing keeps rooms warmer in winter.",
+    "▥ 12.1 Conduction & 12.2 Convection  —  Compare / Contrast Tables",
+    "Conduction vs Convection vs Radiation",
+    "▣ 12.3–12.5 Radiation & Stefan-Boltzmann Law",
+    "Q6. Define black-body radiation and a black body.",
+    "Answer:  A black body is an ideal absorber (absorbs all incident radiation) and the most efficient emitter. Black-body radiation is the spectrum emitted by it, depending only on temperature (continuous, no color dependence).",
+    "⚡ Shortcut:  Black body: perfect absorber & emitter; radiation depends only on T.",
+    "Example:  A cavity with a small hole approximates a black body.",
+    "Q7. State the Stefan-Boltzmann law.",
+    "Answer:  The total power radiated per unit area by a black body is proportional to the fourth power of its absolute temperature: P/A = σT⁴, σ = 5.67×10⁻⁸ W m⁻² K⁻⁴. For a real (gray) body P/A = εσT⁴ (ε ≤ 1).",
+    "⚡ Shortcut:  P = εσAT⁴; T ↑ doubles P ↑16×.",
+    "Example:  Stars shine because of T⁴ dependence.",
+    "Q8. Find the net radiative loss per second of a 0.1 m² black surface at 300 K in 270 K surroundings.",
+    "Answer:  P = εσA(T⁴ − T_s⁴) = (1)(5.67×10⁻⁸)(0.1)[(300)⁴−(270)⁴]. 300⁴=8.1×10⁹, 270⁴=5.31×10⁸; diff≈7.57×10⁹. P ≈ 5.67×10⁻⁸×0.1×7.57×10⁹ ≈ 43 W.",
+    "⚡ Shortcut:  P = εσA(T⁴−T_s⁴); use the difference of fourth powers.",
+    "Example:  ≈ 43 W net loss.",
+    "Q9. Explain why dark (black) objects absorb and radiate better than white ones.",
+    "Answer:  Dark surfaces have high absorptivity/emissivity, so they absorb more solar radiation and emit more thermal radiation than white (shiny) surfaces, which reflect. Hence a black car heats faster than a white one.",
+    "⚡ Shortcut:  Black = high ε (good absorber & emitter); white = low ε, reflective.",
+    "Example:  Painting a water tank black heats the water faster.",
+    "Q10. Why does the solar constant (~1360 W/m²) vary through the day and seasons?",
+    "Answer:  Because the angle of incidence of sunlight changes (zenith angle) and Earth's orbit is elliptical, so the energy per unit area per second hitting the top of the atmosphere varies, being greatest near noon at the equator in summer.",
+    "⚡ Shortcut:  Tilt + elliptical orbit → variable solar constant.",
+    "Example:  Summer noon at the equator gives the largest value.",
+    "▥ 12.3–12.5 Radiation & Stefan-Boltzmann Law  —  Compare / Contrast Tables",
+    "Black Body vs White Body",
+    "Stefan–Boltzmann vs Wien's Law",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the expression for thermal conductivity from a steady slab.",
+    "Answer:  In steady state, the heat flow Q through a slab of area A, thickness d and temperature difference ΔT in time t is P = Q/t. Defining k by P = kAΔT/d gives k = Qd/(tAΔT); larger k means a better conductor. This is the definition used to measure k.",
+    "⚡ Short / exam line:  k = Qd/(tAΔT).",
+    "Example:  Measured with guarded plates or a lagged bar.",
+    "[Derive] T2. State the Stefan-Boltzmann law and the net radiation formula.",
+    "Answer:  Power radiated per unit area by a black body is P/A = σT⁴, σ = 5.67×10⁻⁸ W m⁻² K⁻⁴. A real body: P/A = εσT⁴. The net radiative exchange with surroundings at T_s is P = εσA(T⁴ − T_s⁴).",
+    "⚡ Short / exam line:  P = εσAT⁴ ; net = εσA(T⁴−T_s⁴).",
+    "Example:  Doubling T increases P by 16.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. Define thermal conductivity and write the heat-flow (Fourier) formula.",
+    "Answer:  Thermal conductivity k is the rate of heat flow per unit area per unit temperature gradient: P = Q/t = kA(T₁−T₂)/d. Its unit is W m⁻¹ K⁻¹; k is the material's conductive power.",
+    "⚡ Short / exam line:  P = kAΔT/d ; k = Qd/(tAΔT).",
+    "Example:  Copper k≈400 (high); wood k≈0.1 (low).",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T4. Compare conduction, convection and radiation as heat-transfer modes.",
+    "Answer:  Conduction: through matter by molecular collisions (needs a medium, no bulk motion). Convection: by bulk fluid motion (needs a fluid). Radiation: electromagnetic (needs no medium, works in vacuum), proportional to T⁴.",
+    "⚡ Short / exam line:  Conduction=particles; Convection=fluid motion; Radiation=EM, no medium.",
+    "Example:  A pot on a stove (conduction), boiling (convection), the Sun (radiation).",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain convection and distinguish natural from forced convection.",
+    "Answer:  Convection transfers heat by bulk fluid motion. Natural: caused by density differences (hot rises, cold sinks). Forced: driven by a fan/pump. Example: sea breeze is natural; a fan-cooled CPU is forced.",
+    "⚡ Short / exam line:  Natural = density-driven; Forced = external fan/pump.",
+    "Example:  A pot of boiling water circulates by natural convection.",
+    "[Explain] T6. Explain black-body radiation and an ideal radiator.",
+    "Answer:  A black body is a perfect absorber and (by Kirchhoff) the most efficient emitter. Its radiation spectrum depends only on temperature; a real 'ideal' radiator is designed to be a near-black body (matte black) to maximize emission/absorption.",
+    "⚡ Short / exam line:  Black body: absorbs all; emits only per T (Kirchhoff).",
+    "Example:  A small cavity with a hole is a good black-body model.",
+    "[Explain] T7. Explain the use of a lagged box / domestic hot-water storage.",
+    "Answer:  Insulation (low-k lag) slows conductive, convective and radiative heat loss, keeping water hot for longer. A reflective (shiny) interior reduces radiative loss; trapped air reduces convection. So lag = low k + suppressed convection + reflective surface.",
+    "⚡ Short / exam line:  Low k + no convection + shiny → keeps heat in.",
+    "Example:  Reduces the heating energy needed to keep water hot.",
+    "[Explain] T8. Explain a thermos flask (vacuum flask) and the loss it prevents.",
+    "Answer:  A vacuum flask has two silvered walls with the vacuum between (stops conduction and convection), the stopper minimizes convection, and the shiny surfaces reduce radiation. Together it keeps hot/cold contents hot/cold for hours.",
+    "⚡ Short / exam line:  Vacuum + silvering + stopper → blocks all three modes.",
+    "Example:  Keeps tea hot or ice cold.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T9. Why does a double-glazed window insulate better than a single pane?",
+    "Answer:  The trapped air gap between the two panes has very low thermal conductivity and suppresses convection, so conductive/convective heat flow is greatly reduced; the two panes also reflect some radiation. Hence the overall heat loss is lower.",
+    "⚡ Short / exam line:  Air gap → low k + less convection → insulates.",
+    "Example:  Same principle as a thermos flask.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A 0.1 m² black surface at 300 K in 270 K surroundings. Find net radiative loss.",
+    "Answer:  P = εσA(T⁴−T_s⁴) = (1)(5.67×10⁻⁸)(0.1)[300⁴ − 270⁴] = 5.67×10⁻⁸×0.1×(8.1×10⁹ − 5.31×10⁸) ≈ 43 W.",
+    "⚡ Short / exam line:  net = εσA(T⁴−T_s⁴).",
+    "Example:  ≈ 43 W lost to the surroundings.",
+    "★ Quick-formula memos (this unit)",
+    "Conduction: P = kA(T₁−T₂)/d (W) ; k = thermal conductivity.",
+    "Convection: Newton cooling −dQ/dt = hS(T−T_s).",
+    "Stefan–Boltzmann: P/A = εσT⁴ ; σ = 5.67×10⁻⁸ W m⁻² K⁻⁴.",
+    "Net radiation = εσ(A)(T⁴ − T_s⁴)."
+  ]
+}

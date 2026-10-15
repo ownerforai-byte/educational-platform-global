@@ -1,0 +1,345 @@
+{
+  "unitNo": 9,
+  "unitId": "heat-and-temperature",
+  "unitName": "Heat and Temperature",
+  "contentArea": "Heat & Thermodynamics",
+  "docxFileName": "Physics_XI_Unit_09_heat-and-temperature.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_09_heat-and-temperature.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 9: HEAT AND TEMPERATURE   Content Area: Heat & Thermodynamics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 97,
+    "tableCount": 3,
+    "questionCount": 10,
+    "theoryCount": 9,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Aspect",
+        "Heat",
+        "Temperature"
+      ],
+      "rows": [
+        [
+          "Nature",
+          "Energy in transit",
+          "State quantity (property of body)"
+        ],
+        [
+          "Unit",
+          "Joule (cal)",
+          "Kelvin (°C)"
+        ],
+        [
+          "Depends on",
+          "Mass & type of body",
+          "Average molecular KE only"
+        ],
+        [
+          "Flows from",
+          "Hot → cold",
+          "The quantity that sets the direction of heat flow"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Law",
+        "Statement idea",
+        "Used for"
+      ],
+      "rows": [
+        [
+          "Zeroth",
+          "Thermal equilibrium is transitive (A~B, B~C ⇒ A~C)",
+          "Thermometer validity, temperature"
+        ],
+        [
+          "First",
+          "Energy conserved: ΔU = Q − W",
+          "Accounting internal energy, heat, work"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Advantage",
+        "Limitation"
+      ],
+      "rows": [
+        [
+          "Scale",
+          "Linear, wide range",
+          "Not ideal at very low/high T"
+        ],
+        [
+          "Mercury",
+          "High conductivity, doesn't wet glass",
+          "Toxic; poor for cryogenic use"
+        ],
+        [
+          "Range",
+          "Good",
+          "Glass bulb constrains extremes"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define temperature and state what it measures.",
+      "answer": "Temperature is the physical quantity that determines the direction of heat flow between bodies; it measures the degree of hotness of a body (related to average molecular kinetic energy).",
+      "shortcut": "Temperature → sets hot→cold heat direction; ∝ average KE (translational) for gases.",
+      "example": "A cup of tea cools because heat flows to the colder room."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Distinguish heat and thermal (internal) energy.",
+      "answer": "Heat is energy in transfer due to a temperature difference (J, in transit). Thermal/internal energy is the total microscopic (kinetic + potential) energy stored in the particles of a body at a given temperature — it is a property of the body itself, not a flow.",
+      "shortcut": "Heat = energy flowing (J); Thermal energy = stored energy (property of body).",
+      "example": "The water in a hot tank has high thermal energy; when it loses energy to a room, that transferred energy is heat."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Explain thermal equilibrium.",
+      "answer": "Thermal equilibrium is the state of bodies in contact where no net heat flows between them, i.e. they share a common temperature. Reaching it is a process that can occur without any net heat flow afterward.",
+      "shortcut": "Same T ⟹ thermal equilibrium ⟹ no net heat flow.",
+      "example": "Ice + water end at 0 °C (equilibrium) if heat balances."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. State the Zeroth law of thermodynamics and its use.",
+      "answer": "If two bodies are each in thermal equilibrium with a third, they are in thermal equilibrium with each other. It justifies the use of a thermometer: a thermometer in equilibrium with a body indicates that body's temperature.",
+      "shortcut": "A~B and A~C ⟹ B~C; basis of the thermometer.",
+      "example": "A thermometer shows 37 °C → body is at 37 °C."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Explain the 273.15 offset between the Celsius and Kelvin scales.",
+      "answer": "The Kelvin scale uses the same size degree as Celsius but starts at absolute zero (0 K = −273.15 °C). So T(K) = T(°C) + 273.15; absolute zero is the temperature where a gas's volume (ideal) would be zero, i.e. the reference of the thermodynamic scale.",
+      "shortcut": "T(K) = °C + 273.15 ; 0 K = −273.15 °C.",
+      "example": "27 °C = 300 K (since 27 + 273 = 300)."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Why is a gas thermometer preferred over a liquid-in-glass thermometer for a standard scale?",
+      "answer": "Gas thermometers have very low, nearly constant specific heat and obey ideal-gas behaviour, so their readings are insensitive to the thermometer substance (pressure depends only on T), making them well-suited to the absolute (thermodynamic) scale. Liquids have limited ranges and depend on material properties. ▥ 9.1–9.2 Thermal Energy & Zeroth Law  —  Compare / Contrast Tables Heat vs Temperature Zeroth Law vs First Law ▣ 9.3 Mercury Thermometer",
+      "shortcut": "Gas (constant V/P) → material-insensitive → ideal for the Kelvin standard.",
+      "example": "The standard Celsius scale was originally defined via gas thermometry."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Explain the working principle of a mercury-in-glass thermometer.",
+      "answer": "Mercury expands uniformly (and approximately linearly) with temperature, so the length of the mercury column in a capillary marks the temperature on a calibrated scale. It is filled up to the bulb and has a fine capillary.",
+      "shortcut": "Linear (uniform) expansion of Hg → length marks °C.",
+      "example": "−39 °C to 357 °C range makes mercury useful."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Explain a constant-volume (gas) thermometer and why it is a good standard.",
+      "answer": "A gas bulb of fixed volume is connected to a manometer; as temperature changes, the pressure changes (P ∝ T at constant V), so pressure reads temperature. It is a good standard because gas properties are insensitive to the thermometer material and it works over a wide range; it is the basis of the ideal-gas (absolute) scale.",
+      "shortcut": "Constant V → P ∝ T; insensitivity to material makes it standard.",
+      "example": "Used to define the Kelvin (thermodynamic) temperature scale."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Why is mercury a good thermometer liquid? State two limitations.",
+      "answer": "Mercury is visible, does not wet glass, has a high boiling and low freezing point, and expands uniformly. Limitations: mercury is toxic; below 0 °C an alcohol/paraffin thermometer is preferred (alcohol freezes less).",
+      "shortcut": "Hg: visible, non-wetting, wide range, linear; but toxic, not for very low T.",
+      "example": "Lab thermometers often use alcohol for low-temperature work."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. How is the 0 °C and 100 °C fixed on a Celsius scale?",
+      "answer": "0 °C is the freezing point of pure ice and 100 °C is the boiling point of pure water, both at 1 atm; the interval is divided into 100 equal parts. This uses the two-fixed-point (ice & steam) calibration. ▥ 9.3 Mercury Thermometer  —  Compare / Contrast Tables Mercury Thermometer: Pros & Cons PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Ice point = 0 °C, steam point = 100 °C (1 atm).",
+      "example": "Calibrate between the two fixed points."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T1. Define temperature and heat; explain their difference.",
+      "answer": "Temperature is the property that determines the direction of heat flow (hot to cold) and measures the degree of hotness. Heat is the energy in transit due to a temperature difference; it is not a property of the body but energy being transferred.",
+      "shortcut": "Temperature = property (sets direction); Heat = energy in transit (J).",
+      "example": "A hot body 'has' high temperature; it 'loses' heat when placed near a cold one."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. State the Zeroth law of thermodynamics and its significance.",
+      "answer": "If two bodies are each in thermal equilibrium with a third, they are in equilibrium with each other. It justifies the use of a thermometer as the 'third body' and defines temperature as a state function.",
+      "shortcut": "A~B and A~C → B~C; basis of thermometry.",
+      "example": "A thermometer in equilibrium with a body reads that body's temperature."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T3. Compare the Celsius and Kelvin scales; write their relationship.",
+      "answer": "Celsius uses 0 °C (ice) and 100 °C (steam) as fixed points; Kelvin uses absolute zero (0 K) and has no negative values. The two are linked by T(K) = T(°C) + 273.15; the size of one degree is the same.",
+      "shortcut": "K = °C + 273.15 ; 0 K = −273.15 °C.",
+      "example": "27 °C = 300 K."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain the molecular concept of thermal energy, heat and temperature.",
+      "answer": "Temperature is a measure of the average kinetic energy of the molecules. Thermal (internal) energy is the total microscopic energy (kinetic + potential) of all molecules. Heat is the transfer of energy between bodies because of a temperature difference, due to molecular collisions.",
+      "shortcut": "T ∝ avg KE; internal energy = total; heat = transfer.",
+      "example": "A colder body's molecules have lower average KE; contact transfers energy to the hotter one."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain why heat flows from a hot body to a cold one, and not the reverse.",
+      "answer": "Molecules in the hotter body have higher average kinetic energy; on contact they transfer energy to the colder body's slower molecules. The reverse (net cold→hot without work) would decrease total entropy, violating the second law.",
+      "shortcut": "Hot→cold until equal T; reverse needs work (2nd law).",
+      "example": "A refrigerator only moves heat cold→hot using work."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain how a mercury thermometer uses thermal equilibrium as a working principle.",
+      "answer": "The mercury in the bulb comes to thermal equilibrium with the body; its uniform linear expansion with temperature moves the column to a mark on a calibrated scale, which then reads the body's temperature.",
+      "shortcut": "Equilibrium → uniform Hg expansion → length marks °C.",
+      "example": "Mercury reaches the body's temperature, then its level is read."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the method of mixtures briefly (as a heat-transfer principle).",
+      "answer": "In an insulated calorimeter, heat lost by the hot body equals heat gained by the cooler water and the vessel: m_hot c_hot(T_hot − T_f) = [m_w c_w + C_cal](T_f − T_w). This applies the principle of conservation of energy (no heat lost to surroundings).",
+      "shortcut": "Heat lost = heat gained (insulated).",
+      "example": "Used to find the specific heat of an unknown solid."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why is the Kelvin scale called an absolute scale?",
+      "answer": "Because it starts at absolute zero, the temperature at which the molecular kinetic energy would be minimum (an ideal gas's volume tends to zero), so it has no negative values and is based on absolute molecular energy.",
+      "shortcut": "0 K = absolute zero → no negatives → 'absolute'.",
+      "example": "It is the SI temperature scale."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T9. Professor: 'A gas thermometer and a mercury thermometer disagree at 100 °C. Which is more reliable and why?'",
+      "answer": "For a standard scale the gas thermometer is more reliable, because a gas's pressure (at constant volume) is nearly insensitive to the thermometer material and obeys the ideal-gas law, whereas mercury expansion has small non-linearities and depends on glass. Hence the gas thermometer better approximates the thermodynamic (ideal) scale.",
+      "shortcut": "Gas = material-insensitive → better standard.",
+      "example": "The ideal-gas scale defines the true Celsius/Kelvin points."
+    }
+  ],
+  "formulas": [
+    "Temperature = degree of hotness (zeroth law); measured by expansion / thermoelectric / resistance.",
+    "Heat flows hot→cold until thermal equilibrium (same T).",
+    "Thermal equilibrium: no net heat flow between bodies in contact.",
+    "Absolute temperature T(K)=°C+273.15."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 9: HEAT AND TEMPERATURE   Content Area: Heat & Thermodynamics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 9.1–9.2 Thermal Energy & Zeroth Law",
+    "Q1. Define temperature and state what it measures.",
+    "Answer:  Temperature is the physical quantity that determines the direction of heat flow between bodies; it measures the degree of hotness of a body (related to average molecular kinetic energy).",
+    "⚡ Shortcut:  Temperature → sets hot→cold heat direction; ∝ average KE (translational) for gases.",
+    "Example:  A cup of tea cools because heat flows to the colder room.",
+    "Q2. Distinguish heat and thermal (internal) energy.",
+    "Answer:  Heat is energy in transfer due to a temperature difference (J, in transit). Thermal/internal energy is the total microscopic (kinetic + potential) energy stored in the particles of a body at a given temperature — it is a property of the body itself, not a flow.",
+    "⚡ Shortcut:  Heat = energy flowing (J); Thermal energy = stored energy (property of body).",
+    "Example:  The water in a hot tank has high thermal energy; when it loses energy to a room, that transferred energy is heat.",
+    "Q3. Explain thermal equilibrium.",
+    "Answer:  Thermal equilibrium is the state of bodies in contact where no net heat flows between them, i.e. they share a common temperature. Reaching it is a process that can occur without any net heat flow afterward.",
+    "⚡ Shortcut:  Same T ⟹ thermal equilibrium ⟹ no net heat flow.",
+    "Example:  Ice + water end at 0 °C (equilibrium) if heat balances.",
+    "Q4. State the Zeroth law of thermodynamics and its use.",
+    "Answer:  If two bodies are each in thermal equilibrium with a third, they are in thermal equilibrium with each other. It justifies the use of a thermometer: a thermometer in equilibrium with a body indicates that body's temperature.",
+    "⚡ Shortcut:  A~B and A~C ⟹ B~C; basis of the thermometer.",
+    "Example:  A thermometer shows 37 °C → body is at 37 °C.",
+    "Q5. Explain the 273.15 offset between the Celsius and Kelvin scales.",
+    "Answer:  The Kelvin scale uses the same size degree as Celsius but starts at absolute zero (0 K = −273.15 °C). So T(K) = T(°C) + 273.15; absolute zero is the temperature where a gas's volume (ideal) would be zero, i.e. the reference of the thermodynamic scale.",
+    "⚡ Shortcut:  T(K) = °C + 273.15 ; 0 K = −273.15 °C.",
+    "Example:  27 °C = 300 K (since 27 + 273 = 300).",
+    "Q6. Why is a gas thermometer preferred over a liquid-in-glass thermometer for a standard scale?",
+    "Answer:  Gas thermometers have very low, nearly constant specific heat and obey ideal-gas behaviour, so their readings are insensitive to the thermometer substance (pressure depends only on T), making them well-suited to the absolute (thermodynamic) scale. Liquids have limited ranges and depend on material properties.",
+    "⚡ Shortcut:  Gas (constant V/P) → material-insensitive → ideal for the Kelvin standard.",
+    "Example:  The standard Celsius scale was originally defined via gas thermometry.",
+    "▥ 9.1–9.2 Thermal Energy & Zeroth Law  —  Compare / Contrast Tables",
+    "Heat vs Temperature",
+    "Zeroth Law vs First Law",
+    "▣ 9.3 Mercury Thermometer",
+    "Q7. Explain the working principle of a mercury-in-glass thermometer.",
+    "Answer:  Mercury expands uniformly (and approximately linearly) with temperature, so the length of the mercury column in a capillary marks the temperature on a calibrated scale. It is filled up to the bulb and has a fine capillary.",
+    "⚡ Shortcut:  Linear (uniform) expansion of Hg → length marks °C.",
+    "Example:  −39 °C to 357 °C range makes mercury useful.",
+    "Q8. Explain a constant-volume (gas) thermometer and why it is a good standard.",
+    "Answer:  A gas bulb of fixed volume is connected to a manometer; as temperature changes, the pressure changes (P ∝ T at constant V), so pressure reads temperature. It is a good standard because gas properties are insensitive to the thermometer material and it works over a wide range; it is the basis of the ideal-gas (absolute) scale.",
+    "⚡ Shortcut:  Constant V → P ∝ T; insensitivity to material makes it standard.",
+    "Example:  Used to define the Kelvin (thermodynamic) temperature scale.",
+    "Q9. Why is mercury a good thermometer liquid? State two limitations.",
+    "Answer:  Mercury is visible, does not wet glass, has a high boiling and low freezing point, and expands uniformly. Limitations: mercury is toxic; below 0 °C an alcohol/paraffin thermometer is preferred (alcohol freezes less).",
+    "⚡ Shortcut:  Hg: visible, non-wetting, wide range, linear; but toxic, not for very low T.",
+    "Example:  Lab thermometers often use alcohol for low-temperature work.",
+    "Q10. How is the 0 °C and 100 °C fixed on a Celsius scale?",
+    "Answer:  0 °C is the freezing point of pure ice and 100 °C is the boiling point of pure water, both at 1 atm; the interval is divided into 100 equal parts. This uses the two-fixed-point (ice & steam) calibration.",
+    "⚡ Shortcut:  Ice point = 0 °C, steam point = 100 °C (1 atm).",
+    "Example:  Calibrate between the two fixed points.",
+    "▥ 9.3 Mercury Thermometer  —  Compare / Contrast Tables",
+    "Mercury Thermometer: Pros & Cons",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T1. Define temperature and heat; explain their difference.",
+    "Answer:  Temperature is the property that determines the direction of heat flow (hot to cold) and measures the degree of hotness. Heat is the energy in transit due to a temperature difference; it is not a property of the body but energy being transferred.",
+    "⚡ Short / exam line:  Temperature = property (sets direction); Heat = energy in transit (J).",
+    "Example:  A hot body 'has' high temperature; it 'loses' heat when placed near a cold one.",
+    "[State] T2. State the Zeroth law of thermodynamics and its significance.",
+    "Answer:  If two bodies are each in thermal equilibrium with a third, they are in equilibrium with each other. It justifies the use of a thermometer as the 'third body' and defines temperature as a state function.",
+    "⚡ Short / exam line:  A~B and A~C → B~C; basis of thermometry.",
+    "Example:  A thermometer in equilibrium with a body reads that body's temperature.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T3. Compare the Celsius and Kelvin scales; write their relationship.",
+    "Answer:  Celsius uses 0 °C (ice) and 100 °C (steam) as fixed points; Kelvin uses absolute zero (0 K) and has no negative values. The two are linked by T(K) = T(°C) + 273.15; the size of one degree is the same.",
+    "⚡ Short / exam line:  K = °C + 273.15 ; 0 K = −273.15 °C.",
+    "Example:  27 °C = 300 K.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T4. Explain the molecular concept of thermal energy, heat and temperature.",
+    "Answer:  Temperature is a measure of the average kinetic energy of the molecules. Thermal (internal) energy is the total microscopic energy (kinetic + potential) of all molecules. Heat is the transfer of energy between bodies because of a temperature difference, due to molecular collisions.",
+    "⚡ Short / exam line:  T ∝ avg KE; internal energy = total; heat = transfer.",
+    "Example:  A colder body's molecules have lower average KE; contact transfers energy to the hotter one.",
+    "[Explain] T5. Explain why heat flows from a hot body to a cold one, and not the reverse.",
+    "Answer:  Molecules in the hotter body have higher average kinetic energy; on contact they transfer energy to the colder body's slower molecules. The reverse (net cold→hot without work) would decrease total entropy, violating the second law.",
+    "⚡ Short / exam line:  Hot→cold until equal T; reverse needs work (2nd law).",
+    "Example:  A refrigerator only moves heat cold→hot using work.",
+    "[Explain] T6. Explain how a mercury thermometer uses thermal equilibrium as a working principle.",
+    "Answer:  The mercury in the bulb comes to thermal equilibrium with the body; its uniform linear expansion with temperature moves the column to a mark on a calibrated scale, which then reads the body's temperature.",
+    "⚡ Short / exam line:  Equilibrium → uniform Hg expansion → length marks °C.",
+    "Example:  Mercury reaches the body's temperature, then its level is read.",
+    "[Explain] T7. Explain the method of mixtures briefly (as a heat-transfer principle).",
+    "Answer:  In an insulated calorimeter, heat lost by the hot body equals heat gained by the cooler water and the vessel: m_hot c_hot(T_hot − T_f) = [m_w c_w + C_cal](T_f − T_w). This applies the principle of conservation of energy (no heat lost to surroundings).",
+    "⚡ Short / exam line:  Heat lost = heat gained (insulated).",
+    "Example:  Used to find the specific heat of an unknown solid.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why is the Kelvin scale called an absolute scale?",
+    "Answer:  Because it starts at absolute zero, the temperature at which the molecular kinetic energy would be minimum (an ideal gas's volume tends to zero), so it has no negative values and is based on absolute molecular energy.",
+    "⚡ Short / exam line:  0 K = absolute zero → no negatives → 'absolute'.",
+    "Example:  It is the SI temperature scale.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T9. Professor: 'A gas thermometer and a mercury thermometer disagree at 100 °C. Which is more reliable and why?'",
+    "Answer:  For a standard scale the gas thermometer is more reliable, because a gas's pressure (at constant volume) is nearly insensitive to the thermometer material and obeys the ideal-gas law, whereas mercury expansion has small non-linearities and depends on glass. Hence the gas thermometer better approximates the thermodynamic (ideal) scale.",
+    "⚡ Short / exam line:  Gas = material-insensitive → better standard.",
+    "Example:  The ideal-gas scale defines the true Celsius/Kelvin points.",
+    "★ Quick-formula memos (this unit)",
+    "Temperature = degree of hotness (zeroth law); measured by expansion / thermoelectric / resistance.",
+    "Heat flows hot→cold until thermal equilibrium (same T).",
+    "Thermal equilibrium: no net heat flow between bodies in contact.",
+    "Absolute temperature T(K)=°C+273.15."
+  ]
+}

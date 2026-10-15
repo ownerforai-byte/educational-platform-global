@@ -1,0 +1,383 @@
+{
+  "unitNo": 21,
+  "unitId": "potential-potential-difference-and-potential-energy",
+  "unitName": "Potential & Potential Energy",
+  "contentArea": "Electricity & Magnetism",
+  "docxFileName": "Physics_XI_Unit_21_potential-energy.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_21_potential-energy.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 21: POTENTIAL & POTENTIAL ENERGY   Content Area: Electricity & Magnetism",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 106,
+    "tableCount": 4,
+    "questionCount": 11,
+    "theoryCount": 10,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Quantity",
+        "Symbol / formula",
+        "Unit"
+      ],
+      "rows": [
+        [
+          "Potential",
+          "V = kq/r (J/C)",
+          "volt"
+        ],
+        [
+          "PE",
+          "U = qV (J)",
+          "joule"
+        ],
+        [
+          "Potential difference",
+          "V_A − V_B = −W/q",
+          "volt"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Fact",
+        "Value / meaning"
+      ],
+      "rows": [
+        [
+          "1 eV",
+          "Energy gained by 1 e⁻ moving through 1 V"
+        ],
+        [
+          "Joule conversion",
+          "1 eV = 1.6×10⁻¹⁹ J"
+        ],
+        [
+          "1 MeV",
+          "10⁶ eV (nuclear-scale energies)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Property",
+        "Field lines",
+        "Equipotentials"
+      ],
+      "rows": [
+        [
+          "What they show",
+          "Direction & strength of E",
+          "Same V everywhere on it"
+        ],
+        [
+          "Relation",
+          "⊥ to equipotentials (E is steepest descent of V)",
+          "—"
+        ],
+        [
+          "Work moving a charge",
+          "Along field: energy changes",
+          "Along equipotential: zero work"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "E",
+        "−dV/dr"
+      ],
+      "rows": [
+        [
+          "Meaning",
+          "Force per unit charge",
+          "Rate of fall of potential"
+        ],
+        [
+          "Relation",
+          "E = −dV/dr (exact)",
+          "In uniform field: E = V/d"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define electric potential and potential difference.",
+      "answer": "Electric potential V at a point is the work done per unit positive charge in bringing it from infinity to that point: V = U/q. Potential difference ΔV between two points is the work per unit charge: ΔV = W/q. SI unit = volt (V) = J/C.",
+      "shortcut": "V = U/q ; ΔV = W/q.",
+      "example": "A 9 V battery moves charge so each coulomb gains 9 J of energy."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Find the potential due to a +3 μC charge at 0.1 m (k=9×10⁹).",
+      "answer": "V = kq/r = 9×10⁹×3×10⁻⁶/0.1 = 2.7×10⁵ V = 270 kV.",
+      "shortcut": "V = kq/r (scalar, add algebraically).",
+      "example": "≈ 270 kV."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Define the electron volt and its value in joules.",
+      "answer": "One electron volt (eV) is the energy gained by an electron moving through a potential difference of 1 V: 1 eV = e×1 V = 1.6×10⁻¹⁹ J. It is a unit of energy, not of potential.",
+      "shortcut": "1 eV = 1.6×10⁻¹⁹ J.",
+      "example": "A 100 eV electron has kinetic energy 1.6×10⁻¹⁷ J."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. State the relation between potential and electric field for a uniform field.",
+      "answer": "Potential difference is related to field by ΔV = −∫E·dl; for a uniform field over distance d, ΔV = −Ed, so E = −dV/dx. The field points from high to low potential.",
+      "shortcut": "E = −dV/dx ; E points high→low V.",
+      "example": "A uniform 100 V/m field drops 20 V over 0.2 m."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. A 2 C charge is moved between points A (V=50 V) and B (V=20 V). Find the work done by the external agent.",
+      "answer": "W_external = q(V_B − V_A) = 2(20 − 50) = −60 J (the external agent does −60 J; the field does +60 J). ▥ 21.1 Potential, Potential Difference & Electron Volt  —  Compare / Contrast Tables Potential vs Potential Energy vs Potential Difference Electron Volt (eV) — Quick Reference ▣ 21.2–21.3 Equipotential & Potential Gradient",
+      "shortcut": "W_ext = q(V_f − V_i).",
+      "example": "The field does positive work moving + charge from high to low V."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define equipotential surfaces and state their properties.",
+      "answer": "An equipotential surface is a surface on which the potential is the same everywhere. Properties: no work is done moving a charge along it, the electric field is perpendicular to it, and equipotentials never cross.",
+      "shortcut": "E ⟂ equipotential ; no work on it.",
+      "example": "A charged conductor's surface is equipotential."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Find the potential energy of two charges +q and −q separated by 0.2 m, q = 1 μC.",
+      "answer": "U = kq₁q₂/r = 9×10⁹×(1×10⁻⁶)(−1×10⁻⁶)/0.2 = −45×10⁻⁶ = −4.5×10⁻⁵ J (negative, attractive bound pair).",
+      "shortcut": "U = kq₁q₂/r (sign matters).",
+      "example": "−4.5×10⁻⁵ J; it takes that much to separate them."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Explain potential gradient and its relation to electric field.",
+      "answer": "Potential gradient is the rate of change of potential with distance in the direction of the field: |dV/dx|. The electric field magnitude equals the negative potential gradient: E = −dV/dx (V decreases in the field direction).",
+      "shortcut": "E = −dV/dx (magnitude = |dV/dx|).",
+      "example": "Between two 1 cm plates at 10 V: E = 10/0.01 = 1000 V/m."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. The potential of a charge distribution is V = kQ/r. Find the field from it.",
+      "answer": "E = −dV/dr = −d/dr(kQ/r) = kQ/r² (radial), the same as Coulomb's law (potential → field via gradient).",
+      "shortcut": "E = −dV/dr.",
+      "example": "Differentiate V = kQ/r to recover E = kQ/r²."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. How does a charged conducting sphere distribute its charge and what is V at its centre?",
+      "answer": "Charge resides on the surface (uniform for a sphere); the potential is constant everywhere inside (equal to the surface value V = kQ/R) and E inside is zero. So the centre potential is kQ/R.",
+      "shortcut": "V_inside = V_surface = kQ/R ; E_inside = 0.",
+      "example": "A 1 m radius sphere with Q has V = kQ at the centre."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Find the work to bring a +1 μC charge to the surface of a +2 μC sphere of radius 0.1 m from infinity.",
+      "answer": "W = qΔV = q(V − 0) = (1×10⁻⁶)(kQ/r) = (1×10⁻⁶)(9×10⁹×2×10⁻⁶/0.1) = 1×10⁻⁶×1.8×10⁵ = 0.18 J. ▥ 21.2–21.3 Equipotential & Potential Gradient  —  Compare / Contrast Tables Equipotential vs Field Lines Potential Gradient vs Field Intensity PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "W = q(kQ/r).",
+      "example": "0.18 J of work."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the potential of a point charge and of a set of charges.",
+      "answer": "For a single charge, V = kq/r. For several charges, the potential is the algebraic sum (a scalar, so we add, not vector-add): V = Σkqᵢ/rᵢ. This is the key reason potential is often easier than the field.",
+      "shortcut": "V = Σkqᵢ/rᵢ (scalar sum).",
+      "example": "Point charge at 0.1 m, q = 3 μC → 2.7×10⁵ V."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the relation E = −dV/dx for a uniform field.",
+      "answer": "For a uniform field, moving a charge q a distance dx in the field direction does work −qE dx = q dV, so dV/dx = −E, i.e. E = −dV/dx (the field points from high to low potential). Magnitude |E| = |dV/dx|.",
+      "shortcut": "E = −dV/dx ; high → low V.",
+      "example": "Two parallel plates 1 cm apart at 10 V: E = 1000 V/m."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. Define electric potential, potential difference and the electron volt.",
+      "answer": "Potential V at a point = work per unit positive charge from infinity (J/C, volt). Potential difference ΔV = work per unit charge between two points. An electron volt (eV) is the energy gained by an electron moving through 1 V: 1 eV = 1.6×10⁻¹⁹ J.",
+      "shortcut": "V = U/q ; ΔV = W/q ; 1 eV = 1.6e-19 J.",
+      "example": "9 V battery → each coulomb gains 9 J."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T4. Compare the electric field and the electric potential.",
+      "answer": "The field E is a vector, the force per unit charge, and depends on the direction; the potential V is a scalar, the work per unit charge, and can be added algebraically. E = −∇V links them; V is easier for multiple charges (scalar sum).",
+      "shortcut": "E: vector, force; V: scalar, energy. E = −∇V.",
+      "example": "Add potentials as scalars; add fields as vectors."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain equipotential surfaces and their relation to the field.",
+      "answer": "An equipotential surface is everywhere the same potential; no work is done moving a charge along it, and the electric field is perpendicular to it (E = −∇V). Equipotentials never cross; the spacing of lines reflects the field strength.",
+      "shortcut": "E ⟂ equipotential ; no work on it ; never cross.",
+      "example": "A charged conductor's surface is equipotential."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain potential energy of two charges and its sign.",
+      "answer": "U = kq₁q₂/r. If the charges are like, U > 0 (work must be done to bring them together); if unlike, U < 0 (they attract, releasing energy as they approach). The negative value for opposite charges means a bound state.",
+      "shortcut": "U = kq₁q₂/r ; sign matters.",
+      "example": "An electron in an atom is a bound (negative U) state."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the potential of a charged conducting sphere and inside it.",
+      "answer": "For a conducting sphere of radius R and charge Q, V = kQ/r outside (as if a point charge); inside the conductor, the potential is constant and equal to the surface value kQ/R (since E_inside = 0). This is why the surface is equipotential and the centre has the same potential.",
+      "shortcut": "Outside V = kQ/r ; inside V = kQ/R (constant).",
+      "example": "The potential inside a charged conductor is uniform."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain potential gradient and how a voltmeter measures it.",
+      "answer": "The potential gradient is |dV/dx|, the potential change per unit distance, equal to the field magnitude. A voltmeter measures the potential difference between two points; for a uniform field, E = V/d (field = gradient).",
+      "shortcut": "E = |dV/dx| ; V_m across plates = E·d.",
+      "example": "A probe voltmeter reads the potential difference."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T9. Professor: 'If I bring two equal positive charges together, is the potential energy at infinity higher or lower? Why?'",
+      "answer": "It is lower at a finite separation and higher at infinity: to separate two like charges, one must do work against their mutual repulsion, so the system's potential energy increases (U ∝ 1/r). At infinity U = 0; as they approach, U becomes positive and large.",
+      "shortcut": "Like charges: U > 0, grows as they approach.",
+      "example": "Separating like charges requires work."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A 2 C charge is moved from a point at 50 V to one at 20 V. Find the work done by the external agent and by the field.",
+      "answer": "W_ext = q(V_B − V_A) = 2(20 − 50) = −60 J (external does −60 J); the field does +60 J (moves + charge from high to low potential, doing positive work).",
+      "shortcut": "W_ext = qΔV ; W_field = −W_ext.",
+      "example": "The field does 60 J of work."
+    }
+  ],
+  "formulas": [
+    "V = U/q ; V(point) = kq/r ; ΔV = −∫E·dl.",
+    "PE of two charges U = kq₁q₂/r ; U = qV.",
+    "1 eV = 1.6×10⁻¹⁹ J ; equipotential ⟂ E."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 21: POTENTIAL & POTENTIAL ENERGY   Content Area: Electricity & Magnetism",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 21.1 Potential, Potential Difference & Electron Volt",
+    "Q1. Define electric potential and potential difference.",
+    "Answer:  Electric potential V at a point is the work done per unit positive charge in bringing it from infinity to that point: V = U/q. Potential difference ΔV between two points is the work per unit charge: ΔV = W/q. SI unit = volt (V) = J/C.",
+    "⚡ Shortcut:  V = U/q ; ΔV = W/q.",
+    "Example:  A 9 V battery moves charge so each coulomb gains 9 J of energy.",
+    "Q2. Find the potential due to a +3 μC charge at 0.1 m (k=9×10⁹).",
+    "Answer:  V = kq/r = 9×10⁹×3×10⁻⁶/0.1 = 2.7×10⁵ V = 270 kV.",
+    "⚡ Shortcut:  V = kq/r (scalar, add algebraically).",
+    "Example:  ≈ 270 kV.",
+    "Q3. Define the electron volt and its value in joules.",
+    "Answer:  One electron volt (eV) is the energy gained by an electron moving through a potential difference of 1 V: 1 eV = e×1 V = 1.6×10⁻¹⁹ J. It is a unit of energy, not of potential.",
+    "⚡ Shortcut:  1 eV = 1.6×10⁻¹⁹ J.",
+    "Example:  A 100 eV electron has kinetic energy 1.6×10⁻¹⁷ J.",
+    "Q4. State the relation between potential and electric field for a uniform field.",
+    "Answer:  Potential difference is related to field by ΔV = −∫E·dl; for a uniform field over distance d, ΔV = −Ed, so E = −dV/dx. The field points from high to low potential.",
+    "⚡ Shortcut:  E = −dV/dx ; E points high→low V.",
+    "Example:  A uniform 100 V/m field drops 20 V over 0.2 m.",
+    "Q5. A 2 C charge is moved between points A (V=50 V) and B (V=20 V). Find the work done by the external agent.",
+    "Answer:  W_external = q(V_B − V_A) = 2(20 − 50) = −60 J (the external agent does −60 J; the field does +60 J).",
+    "⚡ Shortcut:  W_ext = q(V_f − V_i).",
+    "Example:  The field does positive work moving + charge from high to low V.",
+    "▥ 21.1 Potential, Potential Difference & Electron Volt  —  Compare / Contrast Tables",
+    "Potential vs Potential Energy vs Potential Difference",
+    "Electron Volt (eV) — Quick Reference",
+    "▣ 21.2–21.3 Equipotential & Potential Gradient",
+    "Q6. Define equipotential surfaces and state their properties.",
+    "Answer:  An equipotential surface is a surface on which the potential is the same everywhere. Properties: no work is done moving a charge along it, the electric field is perpendicular to it, and equipotentials never cross.",
+    "⚡ Shortcut:  E ⟂ equipotential ; no work on it.",
+    "Example:  A charged conductor's surface is equipotential.",
+    "Q7. Find the potential energy of two charges +q and −q separated by 0.2 m, q = 1 μC.",
+    "Answer:  U = kq₁q₂/r = 9×10⁹×(1×10⁻⁶)(−1×10⁻⁶)/0.2 = −45×10⁻⁶ = −4.5×10⁻⁵ J (negative, attractive bound pair).",
+    "⚡ Shortcut:  U = kq₁q₂/r (sign matters).",
+    "Example:  −4.5×10⁻⁵ J; it takes that much to separate them.",
+    "Q8. Explain potential gradient and its relation to electric field.",
+    "Answer:  Potential gradient is the rate of change of potential with distance in the direction of the field: |dV/dx|. The electric field magnitude equals the negative potential gradient: E = −dV/dx (V decreases in the field direction).",
+    "⚡ Shortcut:  E = −dV/dx (magnitude = |dV/dx|).",
+    "Example:  Between two 1 cm plates at 10 V: E = 10/0.01 = 1000 V/m.",
+    "Q9. The potential of a charge distribution is V = kQ/r. Find the field from it.",
+    "Answer:  E = −dV/dr = −d/dr(kQ/r) = kQ/r² (radial), the same as Coulomb's law (potential → field via gradient).",
+    "⚡ Shortcut:  E = −dV/dr.",
+    "Example:  Differentiate V = kQ/r to recover E = kQ/r².",
+    "Q10. How does a charged conducting sphere distribute its charge and what is V at its centre?",
+    "Answer:  Charge resides on the surface (uniform for a sphere); the potential is constant everywhere inside (equal to the surface value V = kQ/R) and E inside is zero. So the centre potential is kQ/R.",
+    "⚡ Shortcut:  V_inside = V_surface = kQ/R ; E_inside = 0.",
+    "Example:  A 1 m radius sphere with Q has V = kQ at the centre.",
+    "Q11. Find the work to bring a +1 μC charge to the surface of a +2 μC sphere of radius 0.1 m from infinity.",
+    "Answer:  W = qΔV = q(V − 0) = (1×10⁻⁶)(kQ/r) = (1×10⁻⁶)(9×10⁹×2×10⁻⁶/0.1) = 1×10⁻⁶×1.8×10⁵ = 0.18 J.",
+    "⚡ Shortcut:  W = q(kQ/r).",
+    "Example:  0.18 J of work.",
+    "▥ 21.2–21.3 Equipotential & Potential Gradient  —  Compare / Contrast Tables",
+    "Equipotential vs Field Lines",
+    "Potential Gradient vs Field Intensity",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the potential of a point charge and of a set of charges.",
+    "Answer:  For a single charge, V = kq/r. For several charges, the potential is the algebraic sum (a scalar, so we add, not vector-add): V = Σkqᵢ/rᵢ. This is the key reason potential is often easier than the field.",
+    "⚡ Short / exam line:  V = Σkqᵢ/rᵢ (scalar sum).",
+    "Example:  Point charge at 0.1 m, q = 3 μC → 2.7×10⁵ V.",
+    "[Derive] T2. Derive the relation E = −dV/dx for a uniform field.",
+    "Answer:  For a uniform field, moving a charge q a distance dx in the field direction does work −qE dx = q dV, so dV/dx = −E, i.e. E = −dV/dx (the field points from high to low potential). Magnitude |E| = |dV/dx|.",
+    "⚡ Short / exam line:  E = −dV/dx ; high → low V.",
+    "Example:  Two parallel plates 1 cm apart at 10 V: E = 1000 V/m.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. Define electric potential, potential difference and the electron volt.",
+    "Answer:  Potential V at a point = work per unit positive charge from infinity (J/C, volt). Potential difference ΔV = work per unit charge between two points. An electron volt (eV) is the energy gained by an electron moving through 1 V: 1 eV = 1.6×10⁻¹⁹ J.",
+    "⚡ Short / exam line:  V = U/q ; ΔV = W/q ; 1 eV = 1.6e-19 J.",
+    "Example:  9 V battery → each coulomb gains 9 J.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T4. Compare the electric field and the electric potential.",
+    "Answer:  The field E is a vector, the force per unit charge, and depends on the direction; the potential V is a scalar, the work per unit charge, and can be added algebraically. E = −∇V links them; V is easier for multiple charges (scalar sum).",
+    "⚡ Short / exam line:  E: vector, force; V: scalar, energy. E = −∇V.",
+    "Example:  Add potentials as scalars; add fields as vectors.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain equipotential surfaces and their relation to the field.",
+    "Answer:  An equipotential surface is everywhere the same potential; no work is done moving a charge along it, and the electric field is perpendicular to it (E = −∇V). Equipotentials never cross; the spacing of lines reflects the field strength.",
+    "⚡ Short / exam line:  E ⟂ equipotential ; no work on it ; never cross.",
+    "Example:  A charged conductor's surface is equipotential.",
+    "[Explain] T6. Explain potential energy of two charges and its sign.",
+    "Answer:  U = kq₁q₂/r. If the charges are like, U > 0 (work must be done to bring them together); if unlike, U < 0 (they attract, releasing energy as they approach). The negative value for opposite charges means a bound state.",
+    "⚡ Short / exam line:  U = kq₁q₂/r ; sign matters.",
+    "Example:  An electron in an atom is a bound (negative U) state.",
+    "[Explain] T7. Explain the potential of a charged conducting sphere and inside it.",
+    "Answer:  For a conducting sphere of radius R and charge Q, V = kQ/r outside (as if a point charge); inside the conductor, the potential is constant and equal to the surface value kQ/R (since E_inside = 0). This is why the surface is equipotential and the centre has the same potential.",
+    "⚡ Short / exam line:  Outside V = kQ/r ; inside V = kQ/R (constant).",
+    "Example:  The potential inside a charged conductor is uniform.",
+    "[Explain] T8. Explain potential gradient and how a voltmeter measures it.",
+    "Answer:  The potential gradient is |dV/dx|, the potential change per unit distance, equal to the field magnitude. A voltmeter measures the potential difference between two points; for a uniform field, E = V/d (field = gradient).",
+    "⚡ Short / exam line:  E = |dV/dx| ; V_m across plates = E·d.",
+    "Example:  A probe voltmeter reads the potential difference.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T9. Professor: 'If I bring two equal positive charges together, is the potential energy at infinity higher or lower? Why?'",
+    "Answer:  It is lower at a finite separation and higher at infinity: to separate two like charges, one must do work against their mutual repulsion, so the system's potential energy increases (U ∝ 1/r). At infinity U = 0; as they approach, U becomes positive and large.",
+    "⚡ Short / exam line:  Like charges: U > 0, grows as they approach.",
+    "Example:  Separating like charges requires work.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A 2 C charge is moved from a point at 50 V to one at 20 V. Find the work done by the external agent and by the field.",
+    "Answer:  W_ext = q(V_B − V_A) = 2(20 − 50) = −60 J (external does −60 J); the field does +60 J (moves + charge from high to low potential, doing positive work).",
+    "⚡ Short / exam line:  W_ext = qΔV ; W_field = −W_ext.",
+    "Example:  The field does 60 J of work.",
+    "★ Quick-formula memos (this unit)",
+    "V = U/q ; V(point) = kq/r ; ΔV = −∫E·dl.",
+    "PE of two charges U = kq₁q₂/r ; U = qV.",
+    "1 eV = 1.6×10⁻¹⁹ J ; equipotential ⟂ E."
+  ]
+}

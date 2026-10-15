@@ -1,0 +1,519 @@
+{
+  "unitNo": 4,
+  "unitId": "dynamics",
+  "unitName": "Dynamics",
+  "contentArea": "Mechanics",
+  "docxFileName": "Physics_XI_Unit_04_dynamics.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_04_dynamics.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 4: DYNAMICS   Content Area: Mechanics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 133,
+    "tableCount": 5,
+    "questionCount": 16,
+    "theoryCount": 10,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Quantity",
+        "p (momentum)",
+        "J (impulse)"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "mv",
+          "F·Δt"
+        ],
+        [
+          "Unit",
+          "kg·m/s",
+          "N·s (same dimension)"
+        ],
+        [
+          "Conserved?",
+          "Yes, in isolated system",
+          "No — a process quantity"
+        ],
+        [
+          "Key relation",
+          "J = Δp (impulse–momentum theorem)",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Condition",
+        "Conserved?",
+        "Reason"
+      ],
+      "rows": [
+        [
+          "Σ F_ext = 0 (isolated system)",
+          "Yes",
+          "F_ext = dp/dt = 0"
+        ],
+        [
+          "Short violent collision (F_int ≫ F_ext)",
+          "Yes (approx.)",
+          "External force negligible during impact"
+        ],
+        [
+          "Any open system",
+          "No",
+          "Momentum leaves/enters with mass flow"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Lift motion",
+        "Apparent weight N",
+        "Reason"
+      ],
+      "rows": [
+        [
+          "At rest / uniform speed",
+          "N = mg",
+          "a = 0"
+        ],
+        [
+          "Accelerating up with a",
+          "N = m(g + a) (heavier)",
+          "N must exceed mg"
+        ],
+        [
+          "Accelerating down with a",
+          "N = m(g − a) (lighter)",
+          "a < g"
+        ],
+        [
+          "Free fall (a = g)",
+          "N = 0 (weightless)",
+          "Lift and body fall together"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Translational",
+        "Rotational",
+        "Analogy"
+      ],
+      "rows": [
+        [
+          "Position s",
+          "Angle θ",
+          "Along line vs about axis"
+        ],
+        [
+          "Velocity v = ds/dt",
+          "Angular ω = dθ/dt",
+          ""
+        ],
+        [
+          "Force F",
+          "Torque τ = r×F",
+          ""
+        ],
+        [
+          "Newton II: F = ma",
+          "τ = Iα",
+          ""
+        ],
+        [
+          "Momentum p = mv",
+          "Angular L = Iω",
+          ""
+        ],
+        [
+          "KE = ½mv²",
+          "KE_rot = ½Iω²",
+          ""
+        ],
+        [
+          "Work = F·s",
+          "Work = τ·θ",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Type",
+        "Static s",
+        "Kinetic k",
+        "Rolling r"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "≤ μs N (up to max)",
+          "μk N",
+          "very small"
+        ],
+        [
+          "Occurs when",
+          "Tendency to slip, no slip",
+          "Sliding in contact",
+          "Rolling without slipping"
+        ],
+        [
+          "Coefficient",
+          "μs (largest)",
+          "μk",
+          "much smaller"
+        ],
+        [
+          "Direction",
+          "Opposes tendency of slip",
+          "Opposes slip",
+          "Opposes rolling"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define linear momentum and state its SI unit.",
+      "answer": "Linear momentum is the product of mass and velocity, p = mv. SI unit = kg m s⁻¹ (vector, same direction as v).",
+      "shortcut": "p = mv (vector).",
+      "example": "1000 kg car at 20 m/s → p = 20000 kg·m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Define impulse and relate it to momentum.",
+      "answer": "Impulse is the product of the force and the time for which it acts, J = Ft. By impulse-momentum theorem, impulse equals the change in momentum: J = Δp = FΔt.",
+      "shortcut": "J = FΔt = Δp (area under F-t graph).",
+      "example": "A 5 N force for 0.4 s → J = 2 N·s (momentum change)."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. State Newton's second law in its general form.",
+      "answer": "The net external force equals the rate of change of momentum: F = dp/dt. For constant mass, F = ma. ▥ 4.1 Linear Momentum & Impulse  —  Compare / Contrast Tables Momentum vs Impulse ▣ 4.2 Conservation of Linear Momentum",
+      "shortcut": "F = dp/dt; if m const, F = ma.",
+      "example": "Faster momentum change → larger force."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. State the law of conservation of momentum.",
+      "answer": "If the net external force on a system is zero, the total linear momentum of the system remains constant: Σp_before = Σp_after.",
+      "shortcut": "No external force → m₁v₁+m₂v₂ = m₁v₁′+m₂v₂′.",
+      "example": "A gun recoils when it fires (both momenta equal and opposite)."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. A 2 kg and a 3 kg body collide and stick; before: 2 kg at 6 m/s, 3 kg at rest. Find common velocity.",
+      "answer": "Perfectly inelastic: m₁v₁+m₂v₂ = (m₁+m₂)v → 2×6+3×0 = 5v → v = 12/5 = 2.4 m/s.",
+      "shortcut": "Stick together → v = m₁v₁/(m₁+m₂).",
+      "example": "The combined body moves at 2.4 m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Explain recoil of a gun using conservation of momentum.",
+      "answer": "Initially total momentum is zero. After firing, bullet (mass m, speed v) gains forward momentum mv; the gun (M) recoils with momentum MV backward, so mv = MV, V = mv/M. ▥ 4.2 Conservation of Linear Momentum  —  Compare / Contrast Tables When is Linear Momentum Conserved? ▣ 4.3 Application of Newton's Laws",
+      "shortcut": "V_recoil = (bullet m / gun M) × bullet v.",
+      "example": "M=5 kg, m=0.05 kg, v=200 m/s → V = 2 m/s backward."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. State Newton's third law and give two applications.",
+      "answer": "To every action there is an equal and opposite reaction; the forces act on different bodies. Applications: walking (foot pushes ground), propulsion of a rocket, gun recoil.",
+      "shortcut": "Action and reaction are on different bodies, never cancel each other.",
+      "example": "A rocket expels gas backward; gas pushes rocket forward."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. A 10 kg body is pulled on a rough surface by a 50 N horizontal force, μ=0.2. Find acceleration.",
+      "answer": "N = mg = 98 N; friction f = μN = 19.6 N. Net = 50−19.6 = 30.4 N; a = 30.4/10 = 3.04 m/s².",
+      "shortcut": "a = (F − μmg)/m.",
+      "example": "≈ 3 m/s²."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Explain why a rider leans while taking a turn.",
+      "answer": "To balance the centripetal force, the rider leans so that the resultant of weight and normal reaction passes through the centre; the horizontal component of the normal reaction provides the required centripetal force. ▥ 4.3 Application of Newton's Laws  —  Compare / Contrast Tables Newton's Laws: Apparent Weight in a Lift ▣ 4.4 Moment, Torque & Equilibrium",
+      "shortcut": "Tilt to supply horizontal centripetal component.",
+      "example": "Bicycle rider leans into the curve."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Define moment (torque) and its SI unit.",
+      "answer": "Moment of a force about a point is the product of the force and the perpendicular distance of its line of action from the point: τ = rF. SI unit = N·m.",
+      "shortcut": "τ = r × F (perpendicular distance only).",
+      "example": "A 5 N force 0.3 m from a pivot → τ = 1.5 N·m."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. State the conditions for a body to be in equilibrium.",
+      "answer": "(i) Translational equilibrium: ΣF = 0. (ii) Rotational equilibrium: Στ = 0 about any point.",
+      "shortcut": "Both forces and moments must balance.",
+      "example": "A balanced see-saw satisfies both conditions."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Explain the principle of moments and its use in a lever.",
+      "answer": "For rotational equilibrium, the algebraic sum of clockwise moments equals the sum of anticlockwise moments about any point. In a lever this lets a small force at a long arm balance a large force at a short arm. ▥ 4.4 Moment, Torque & Equilibrium  —  Compare / Contrast Tables Translational vs Rotational: Quantity Pairs ▣ 4.5 Solid Friction",
+      "shortcut": "Σ(M_clockwise)=Σ(M_anticlockwise); lever: F×d = W×d′.",
+      "example": "A seesaw balances when F₁d₁ = F₂d₂."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. State the laws of solid friction.",
+      "answer": "(i) Friction is proportional to the normal reaction (f ∝ N). (ii) It is independent of the area of contact. (iii) It is independent of sliding velocity (roughly). (iv) It depends on the nature of surfaces. (v) Limiting friction > sliding friction.",
+      "shortcut": "f = μN; μ_k < μ_s; independent of area & speed.",
+      "example": "Heavy object is harder to slide (larger N → larger f)."
+    },
+    {
+      "type": "neb",
+      "question": "Q14. Distinguish static, limiting and dynamic (kinetic) friction.",
+      "answer": "Static friction acts when bodies are at rest (self-adjusts up to a maximum). Limiting friction is the maximum static friction just before motion. Dynamic friction acts during sliding and is slightly less than limiting.",
+      "shortcut": "Rest → static; threshold → limiting; sliding → kinetic (< limiting).",
+      "example": "You must push harder to start sliding than to keep sliding."
+    },
+    {
+      "type": "neb",
+      "question": "Q15. A 15 kg block on a horizontal floor, μ_s=0.4. Minimum force to start motion?",
+      "answer": "Limiting friction = μ_s mg = 0.4×15×9.8 = 58.8 N. A horizontal force just above 58.8 N starts motion.",
+      "shortcut": "F_min = μ_s mg.",
+      "example": "≈ 59 N."
+    },
+    {
+      "type": "neb",
+      "question": "Q16. Why is the coefficient of kinetic friction less than that of static friction?",
+      "answer": "When surfaces are at rest the microscopic irregularities interlock, requiring more force to break; once sliding, the interlock is partially broken and fewer asperities engage, so kinetic friction is lower. ▥ 4.5 Solid Friction  —  Compare / Contrast Tables Static vs Kinetic vs Rolling Friction PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "μ_k < μ_s due to broken interlocking asperities.",
+      "example": "Starting a load is harder than keeping it moving."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the impulse-momentum theorem.",
+      "answer": "F = dp/dt → FΔt = Δp (constant mass: Ft = m(v−u)). The impulse Ft equals the change in momentum; graphically it is the area under the F–t curve.",
+      "shortcut": "J = FΔt = Δp.",
+      "example": "A cushiony landing spreads force over more time → smaller F."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the expression for the recoil velocity of a gun.",
+      "answer": "Initial momentum zero. After firing: mv_bullet = MV_gun (opposite directions) → V_gun = (m/M)v_bullet.",
+      "shortcut": "V = (bullet m / gun M)·v_bullet.",
+      "example": "Gun is much heavier → small recoil velocity."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. State Newton's three laws of motion.",
+      "answer": "I: body stays at rest/uniform motion unless a net force acts (inertia). II: F = dp/dt (= ma for constant mass). III: to every action an equal and opposite reaction (on different bodies).",
+      "shortcut": "I inertia; II F=ma; III action-reaction.",
+      "example": "A book stays put until pushed; it accelerates when pushed."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T4. State the conditions for equilibrium (translational and rotational).",
+      "answer": "Translational: ΣF = 0 (no linear acceleration). Rotational: Στ about any point = 0 (no angular acceleration). Both must hold for a body to be in complete static equilibrium.",
+      "shortcut": "ΣF=0 and Στ=0.",
+      "example": "A balanced see-saw satisfies both."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the concept of inertia and its dependence on mass.",
+      "answer": "Inertia is the tendency of a body to resist changes in its state of motion; it is measured by mass (larger mass → more inertia). This is the content of the first law.",
+      "shortcut": "Inertia ∝ mass (resistance to change).",
+      "example": "A loaded truck is harder to stop than a bicycle."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the conservation of linear momentum with an example.",
+      "answer": "If the net external force on a system is zero, total momentum stays constant. In a collision: m₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′. Example: recoil of a gun (momentum of bullet = that of gun, opposite).",
+      "shortcut": "ΣF_ext = 0 → Σp constant.",
+      "example": "Muzzle: mv_bullet = MV_gun."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain moment of a force and torque with an example.",
+      "answer": "Moment (torque) of a force about a point = force × perpendicular distance from the point: τ = rF sinθ. It measures the turning effect; SI unit N·m. A spanner: longer handle → larger τ for the same force.",
+      "shortcut": "τ = r F⊥ ; unit N·m.",
+      "example": "Longer lever arm = easier to open a jar."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain the laws of solid friction and their verification.",
+      "answer": "(i) f ∝ N (µ constant); (ii) independent of area of contact; (iii) independent of sliding speed; (iv) depend on the nature of surfaces; (v) limiting friction > kinetic friction. Verified by pulling a block on an inclined plane / horizontal, plotting f vs N (straight line through origin).",
+      "shortcut": "f = µN ; verify by f–N plot.",
+      "example": "Heavier block → larger friction (f ∝ N)."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T9. Professor: 'Why is it harder to start a heavy crate moving than to keep it moving?'",
+      "answer": "Because limiting (static) friction is larger than kinetic (dynamic) friction; the interlocked surface asperities resist the start. Once sliding, fewer asperities engage → lower friction.",
+      "shortcut": "µ_s > µ_k → start needs more force.",
+      "example": "This is why you 'break the static' then it eases."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A 4 kg block is pulled by 30 N on a rough floor, µ=0.2, g=10. Find the friction and acceleration.",
+      "answer": "N = mg = 40 N. Friction f = µN = 8 N. Net = 30−8 = 22 N. a = 22/4 = 5.5 m/s².",
+      "shortcut": "f=µN; a=(F−f)/m.",
+      "example": "≈ 5.5 m/s²."
+    }
+  ],
+  "formulas": [
+    "p = mv ; Impulse = Δp = Ft ; F = dp/dt.",
+    "Momentum conserved when net external force = 0: m₁v₁+m₂v₂ = (m₁+m₂)v.",
+    "Torque τ = r×F ; equilibrium: ΣF=0 and Στ=0.",
+    "Friction: f_s ≤ μ_sN, f_k = μ_kN ; μ_k < μ_s."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 4: DYNAMICS   Content Area: Mechanics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 4.1 Linear Momentum & Impulse",
+    "Q1. Define linear momentum and state its SI unit.",
+    "Answer:  Linear momentum is the product of mass and velocity, p = mv. SI unit = kg m s⁻¹ (vector, same direction as v).",
+    "⚡ Shortcut:  p = mv (vector).",
+    "Example:  1000 kg car at 20 m/s → p = 20000 kg·m/s.",
+    "Q2. Define impulse and relate it to momentum.",
+    "Answer:  Impulse is the product of the force and the time for which it acts, J = Ft. By impulse-momentum theorem, impulse equals the change in momentum: J = Δp = FΔt.",
+    "⚡ Shortcut:  J = FΔt = Δp (area under F-t graph).",
+    "Example:  A 5 N force for 0.4 s → J = 2 N·s (momentum change).",
+    "Q3. State Newton's second law in its general form.",
+    "Answer:  The net external force equals the rate of change of momentum: F = dp/dt. For constant mass, F = ma.",
+    "⚡ Shortcut:  F = dp/dt; if m const, F = ma.",
+    "Example:  Faster momentum change → larger force.",
+    "▥ 4.1 Linear Momentum & Impulse  —  Compare / Contrast Tables",
+    "Momentum vs Impulse",
+    "▣ 4.2 Conservation of Linear Momentum",
+    "Q4. State the law of conservation of momentum.",
+    "Answer:  If the net external force on a system is zero, the total linear momentum of the system remains constant: Σp_before = Σp_after.",
+    "⚡ Shortcut:  No external force → m₁v₁+m₂v₂ = m₁v₁′+m₂v₂′.",
+    "Example:  A gun recoils when it fires (both momenta equal and opposite).",
+    "Q5. A 2 kg and a 3 kg body collide and stick; before: 2 kg at 6 m/s, 3 kg at rest. Find common velocity.",
+    "Answer:  Perfectly inelastic: m₁v₁+m₂v₂ = (m₁+m₂)v → 2×6+3×0 = 5v → v = 12/5 = 2.4 m/s.",
+    "⚡ Shortcut:  Stick together → v = m₁v₁/(m₁+m₂).",
+    "Example:  The combined body moves at 2.4 m/s.",
+    "Q6. Explain recoil of a gun using conservation of momentum.",
+    "Answer:  Initially total momentum is zero. After firing, bullet (mass m, speed v) gains forward momentum mv; the gun (M) recoils with momentum MV backward, so mv = MV, V = mv/M.",
+    "⚡ Shortcut:  V_recoil = (bullet m / gun M) × bullet v.",
+    "Example:  M=5 kg, m=0.05 kg, v=200 m/s → V = 2 m/s backward.",
+    "▥ 4.2 Conservation of Linear Momentum  —  Compare / Contrast Tables",
+    "When is Linear Momentum Conserved?",
+    "▣ 4.3 Application of Newton's Laws",
+    "Q7. State Newton's third law and give two applications.",
+    "Answer:  To every action there is an equal and opposite reaction; the forces act on different bodies. Applications: walking (foot pushes ground), propulsion of a rocket, gun recoil.",
+    "⚡ Shortcut:  Action and reaction are on different bodies, never cancel each other.",
+    "Example:  A rocket expels gas backward; gas pushes rocket forward.",
+    "Q8. A 10 kg body is pulled on a rough surface by a 50 N horizontal force, μ=0.2. Find acceleration.",
+    "Answer:  N = mg = 98 N; friction f = μN = 19.6 N. Net = 50−19.6 = 30.4 N; a = 30.4/10 = 3.04 m/s².",
+    "⚡ Shortcut:  a = (F − μmg)/m.",
+    "Example:  ≈ 3 m/s².",
+    "Q9. Explain why a rider leans while taking a turn.",
+    "Answer:  To balance the centripetal force, the rider leans so that the resultant of weight and normal reaction passes through the centre; the horizontal component of the normal reaction provides the required centripetal force.",
+    "⚡ Shortcut:  Tilt to supply horizontal centripetal component.",
+    "Example:  Bicycle rider leans into the curve.",
+    "▥ 4.3 Application of Newton's Laws  —  Compare / Contrast Tables",
+    "Newton's Laws: Apparent Weight in a Lift",
+    "▣ 4.4 Moment, Torque & Equilibrium",
+    "Q10. Define moment (torque) and its SI unit.",
+    "Answer:  Moment of a force about a point is the product of the force and the perpendicular distance of its line of action from the point: τ = rF. SI unit = N·m.",
+    "⚡ Shortcut:  τ = r × F (perpendicular distance only).",
+    "Example:  A 5 N force 0.3 m from a pivot → τ = 1.5 N·m.",
+    "Q11. State the conditions for a body to be in equilibrium.",
+    "Answer:  (i) Translational equilibrium: ΣF = 0. (ii) Rotational equilibrium: Στ = 0 about any point.",
+    "⚡ Shortcut:  Both forces and moments must balance.",
+    "Example:  A balanced see-saw satisfies both conditions.",
+    "Q12. Explain the principle of moments and its use in a lever.",
+    "Answer:  For rotational equilibrium, the algebraic sum of clockwise moments equals the sum of anticlockwise moments about any point. In a lever this lets a small force at a long arm balance a large force at a short arm.",
+    "⚡ Shortcut:  Σ(M_clockwise)=Σ(M_anticlockwise); lever: F×d = W×d′.",
+    "Example:  A seesaw balances when F₁d₁ = F₂d₂.",
+    "▥ 4.4 Moment, Torque & Equilibrium  —  Compare / Contrast Tables",
+    "Translational vs Rotational: Quantity Pairs",
+    "▣ 4.5 Solid Friction",
+    "Q13. State the laws of solid friction.",
+    "Answer:  (i) Friction is proportional to the normal reaction (f ∝ N). (ii) It is independent of the area of contact. (iii) It is independent of sliding velocity (roughly). (iv) It depends on the nature of surfaces. (v) Limiting friction > sliding friction.",
+    "⚡ Shortcut:  f = μN; μ_k < μ_s; independent of area & speed.",
+    "Example:  Heavy object is harder to slide (larger N → larger f).",
+    "Q14. Distinguish static, limiting and dynamic (kinetic) friction.",
+    "Answer:  Static friction acts when bodies are at rest (self-adjusts up to a maximum). Limiting friction is the maximum static friction just before motion. Dynamic friction acts during sliding and is slightly less than limiting.",
+    "⚡ Shortcut:  Rest → static; threshold → limiting; sliding → kinetic (< limiting).",
+    "Example:  You must push harder to start sliding than to keep sliding.",
+    "Q15. A 15 kg block on a horizontal floor, μ_s=0.4. Minimum force to start motion?",
+    "Answer:  Limiting friction = μ_s mg = 0.4×15×9.8 = 58.8 N. A horizontal force just above 58.8 N starts motion.",
+    "⚡ Shortcut:  F_min = μ_s mg.",
+    "Example:  ≈ 59 N.",
+    "Q16. Why is the coefficient of kinetic friction less than that of static friction?",
+    "Answer:  When surfaces are at rest the microscopic irregularities interlock, requiring more force to break; once sliding, the interlock is partially broken and fewer asperities engage, so kinetic friction is lower.",
+    "⚡ Shortcut:  μ_k < μ_s due to broken interlocking asperities.",
+    "Example:  Starting a load is harder than keeping it moving.",
+    "▥ 4.5 Solid Friction  —  Compare / Contrast Tables",
+    "Static vs Kinetic vs Rolling Friction",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the impulse-momentum theorem.",
+    "Answer:  F = dp/dt → FΔt = Δp (constant mass: Ft = m(v−u)). The impulse Ft equals the change in momentum; graphically it is the area under the F–t curve.",
+    "⚡ Short / exam line:  J = FΔt = Δp.",
+    "Example:  A cushiony landing spreads force over more time → smaller F.",
+    "[Derive] T2. Derive the expression for the recoil velocity of a gun.",
+    "Answer:  Initial momentum zero. After firing: mv_bullet = MV_gun (opposite directions) → V_gun = (m/M)v_bullet.",
+    "⚡ Short / exam line:  V = (bullet m / gun M)·v_bullet.",
+    "Example:  Gun is much heavier → small recoil velocity.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. State Newton's three laws of motion.",
+    "Answer:  I: body stays at rest/uniform motion unless a net force acts (inertia). II: F = dp/dt (= ma for constant mass). III: to every action an equal and opposite reaction (on different bodies).",
+    "⚡ Short / exam line:  I inertia; II F=ma; III action-reaction.",
+    "Example:  A book stays put until pushed; it accelerates when pushed.",
+    "[State] T4. State the conditions for equilibrium (translational and rotational).",
+    "Answer:  Translational: ΣF = 0 (no linear acceleration). Rotational: Στ about any point = 0 (no angular acceleration). Both must hold for a body to be in complete static equilibrium.",
+    "⚡ Short / exam line:  ΣF=0 and Στ=0.",
+    "Example:  A balanced see-saw satisfies both.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain the concept of inertia and its dependence on mass.",
+    "Answer:  Inertia is the tendency of a body to resist changes in its state of motion; it is measured by mass (larger mass → more inertia). This is the content of the first law.",
+    "⚡ Short / exam line:  Inertia ∝ mass (resistance to change).",
+    "Example:  A loaded truck is harder to stop than a bicycle.",
+    "[Explain] T6. Explain the conservation of linear momentum with an example.",
+    "Answer:  If the net external force on a system is zero, total momentum stays constant. In a collision: m₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′. Example: recoil of a gun (momentum of bullet = that of gun, opposite).",
+    "⚡ Short / exam line:  ΣF_ext = 0 → Σp constant.",
+    "Example:  Muzzle: mv_bullet = MV_gun.",
+    "[Explain] T7. Explain moment of a force and torque with an example.",
+    "Answer:  Moment (torque) of a force about a point = force × perpendicular distance from the point: τ = rF sinθ. It measures the turning effect; SI unit N·m. A spanner: longer handle → larger τ for the same force.",
+    "⚡ Short / exam line:  τ = r F⊥ ; unit N·m.",
+    "Example:  Longer lever arm = easier to open a jar.",
+    "[Explain] T8. Explain the laws of solid friction and their verification.",
+    "Answer:  (i) f ∝ N (µ constant); (ii) independent of area of contact; (iii) independent of sliding speed; (iv) depend on the nature of surfaces; (v) limiting friction > kinetic friction. Verified by pulling a block on an inclined plane / horizontal, plotting f vs N (straight line through origin).",
+    "⚡ Short / exam line:  f = µN ; verify by f–N plot.",
+    "Example:  Heavier block → larger friction (f ∝ N).",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T9. Professor: 'Why is it harder to start a heavy crate moving than to keep it moving?'",
+    "Answer:  Because limiting (static) friction is larger than kinetic (dynamic) friction; the interlocked surface asperities resist the start. Once sliding, fewer asperities engage → lower friction.",
+    "⚡ Short / exam line:  µ_s > µ_k → start needs more force.",
+    "Example:  This is why you 'break the static' then it eases.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A 4 kg block is pulled by 30 N on a rough floor, µ=0.2, g=10. Find the friction and acceleration.",
+    "Answer:  N = mg = 40 N. Friction f = µN = 8 N. Net = 30−8 = 22 N. a = 22/4 = 5.5 m/s².",
+    "⚡ Short / exam line:  f=µN; a=(F−f)/m.",
+    "Example:  ≈ 5.5 m/s².",
+    "★ Quick-formula memos (this unit)",
+    "p = mv ; Impulse = Δp = Ft ; F = dp/dt.",
+    "Momentum conserved when net external force = 0: m₁v₁+m₂v₂ = (m₁+m₂)v.",
+    "Torque τ = r×F ; equilibrium: ΣF=0 and Στ=0.",
+    "Friction: f_s ≤ μ_sN, f_k = μ_kN ; μ_k < μ_s."
+  ]
+}

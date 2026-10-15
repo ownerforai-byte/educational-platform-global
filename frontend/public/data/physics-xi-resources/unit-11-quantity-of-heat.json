@@ -1,0 +1,376 @@
+{
+  "unitNo": 11,
+  "unitId": "quantity-of-heat",
+  "unitName": "Quantity of Heat",
+  "contentArea": "Heat & Thermodynamics",
+  "docxFileName": "Physics_XI_Unit_11_quantity-of-heat.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_11_quantity-of-heat.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 11: QUANTITY OF HEAT   Content Area: Heat & Thermodynamics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 99,
+    "tableCount": 4,
+    "questionCount": 10,
+    "theoryCount": 9,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Idea",
+        "Newton law of cooling",
+        "Specific heat c"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "−dQ/dt ∝ (T − T₀)",
+          "Q = mcΔT"
+        ],
+        [
+          "Depends on",
+          "Surface, surroundings",
+          "Material & phase"
+        ],
+        [
+          "Used for",
+          "Rapid temperature change",
+          "Amount of heat for ΔT"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "c_P",
+        "c_V"
+      ],
+      "rows": [
+        [
+          "Gas relation",
+          "c_P − c_V = R (Joule's) formula",
+          "—"
+        ],
+        [
+          "γ",
+          "γ = c_P / c_V > 1",
+          "γ = c_P/c_V"
+        ],
+        [
+          "Which is larger?",
+          "c_P > c_V (extra work expanding)",
+          "—"
+        ],
+        [
+          "Solids/liquids",
+          "≈ equal",
+          "≈ equal"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "L_f (fusion)",
+        "L_v (vaporisation)"
+      ],
+      "rows": [
+        [
+          "Phase change",
+          "Solid ↔ Liquid",
+          "Liquid ↔ Gas"
+        ],
+        [
+          "Magnitude",
+          "Smaller",
+          "Larger (need to break free of attraction)"
+        ],
+        [
+          "Water",
+          "3.34×10⁵ J/kg",
+          "2.26×10⁶ J/kg"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Point",
+        "Triple",
+        "Critical"
+      ],
+      "rows": [
+        [
+          "Meaning",
+          "S, L, V coexist",
+          "Vapour–liquid boundary ends"
+        ],
+        [
+          "Water",
+          "0.01 °C, 610 Pa",
+          "374 °C, 22.06 MPa"
+        ],
+        [
+          "Above?",
+          "—",
+          "Supercritical fluid"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. State Newton's law of cooling.",
+      "answer": "The rate of loss of heat of a body is proportional to the temperature difference between the body and its surroundings: −dQ/dt = hS(T − T_s) (constant h, S, T_s).",
+      "shortcut": "Rate ∝ (T − T_s); hotter → cools faster.",
+      "example": "Tea cools fast when hot, slowly when near room T."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Define specific heat capacity. State its SI unit.",
+      "answer": "Specific heat capacity is the heat required to raise the temperature of unit mass of a substance by 1 °C: c = Q/(mΔT). SI unit = J kg⁻¹ K⁻¹.",
+      "shortcut": "c = Q/(mΔT).",
+      "example": "Water c ≈ 4180 J/kg·K (high, why it's a good coolant)."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Explain the method of mixtures to find specific heat of a solid.",
+      "answer": "Heat the solid to a known temperature, drop it into a known mass of cooler water in an insulated calorimeter. Heat lost = heat gained: m_s c_s(T_s−T_f) = [m_w c_w + C_cal](T_f−T_w). Solve for c_s.",
+      "shortcut": "heat lost = heat gained; solve for the unknown c.",
+      "example": "A hot metal chip cools the water; equate the energies."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Why does water have a high specific heat? State a practical consequence.",
+      "answer": "Water has a high specific heat (≈4180 J/kg·K), so it can absorb/release large heat with little temperature change. It is used as a coolant in engines and for coast-moderating ocean water temperatures.",
+      "shortcut": "High c → big heat with small ΔT; coolant use.",
+      "example": "An engine radiator uses water's high c."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Find the heat needed to raise 2 kg of water from 20 °C to 80 °C.",
+      "answer": "Q = mcΔT = 2×4180×60 = 501 600 J ≈ 5.02×10⁵ J. ▥ 11.1 Newton's Law of Cooling & 11.2 Specific Heat  —  Compare / Contrast Tables Newton's Law of Cooling vs Specific Heat Specific Heat: c at constant P vs c at constant V ▣ 11.3–11.5 Latent Heat & Triple Point",
+      "shortcut": "Q = mcΔT.",
+      "example": "≈ 0.5 MJ."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define latent heat and specific latent heat.",
+      "answer": "Latent heat is the heat absorbed or released during a change of state at constant temperature. Specific latent heat is that per unit mass: L = Q/m, in J/kg. It is large because it breaks/reforms intermolecular bonds.",
+      "shortcut": "L = Q/m ; no ΔT during phase change.",
+      "example": "Water at 100 °C absorbs 2.26×10⁶ J/kg to become steam."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Find the heat to convert 100 g of ice at 0 °C into water at 0 °C. L_f = 3.34×10⁵ J/kg.",
+      "answer": "Q = mL_f = 0.1×3.34×10⁵ = 33 400 J = 3.34×10⁴ J.",
+      "shortcut": "Q = mL_f at 0 °C.",
+      "example": "≈ 33 kJ of latent heat of fusion."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Differentiate latent heat of fusion and vaporization.",
+      "answer": "Latent heat of fusion (L_f) is for solid ⇄ liquid; latent heat of vaporization (L_v) is for liquid ⇄ gas. L_v is much larger because vaporization requires overcoming intermolecular forces to go to a gas (large volume increase).",
+      "shortcut": "L_v > L_f (vaporization overcomes more forces).",
+      "example": "Water: L_f≈3.3×10⁵, L_v≈2.26×10⁶ J/kg."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Define the triple point of a substance.",
+      "answer": "The triple point is the unique combination of temperature and pressure at which the solid, liquid and gas phases coexist in equilibrium. It is a fixed calibration point; for water it is 0.01 °C and 611 Pa.",
+      "shortcut": "S+L+G coexist; water: 0.01 °C, 611 Pa.",
+      "example": "The 273.16 K fixed point of the Kelvin scale (historically)."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Explain why dry ice (solid CO₂) sublimates at normal pressure.",
+      "answer": "At 1 atm the CO₂ triple point (−56.6 °C, 5.1 atm) is above 1 atm, so solid CO₂ cannot exist as a liquid at 1 atm; it changes directly to gas (sublimation). ▥ 11.3–11.5 Latent Heat & Triple Point  —  Compare / Contrast Tables Latent Heat of Fusion vs Vaporisation Triple Point vs Critical Point PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "1 atm < triple-point pressure → sublimation, no liquid.",
+      "example": "Dry ice vanishes without liquid, giving fog."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the method of mixtures for the specific heat of a solid.",
+      "answer": "Heat the solid to T_s, put it into m_w water at T_w in a calorimeter of heat capacity C_cal. Heat lost = heat gained: m_s c_s(T_s−T_f) = [m_w c_w + C_cal](T_f − T_w). Solve for c_s.",
+      "shortcut": "c_s = [m_w c_w + C_cal](T_f−T_w) / [m_s(T_s−T_f)].",
+      "example": "Assumes an insulated vessel (no loss)."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. Define specific heat capacity, specific latent heat and the units.",
+      "answer": "Specific heat c = Q/(mΔT) (J kg⁻¹ K⁻¹) — heat to raise unit mass by 1 K. Specific latent heat L = Q/m (J kg⁻¹) — heat for unit mass to change state at constant T.",
+      "shortcut": "c: per °C per mass; L: per mass, no ΔT.",
+      "example": "Water c≈4180; L_f(ice)≈3.3×10⁵; L_v(water)≈2.26×10⁶ J/kg."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T3. Compare the specific heats of metals and non-metals.",
+      "answer": "Metals have low specific heats (high thermal conductivity, few degrees of freedom per atom for heat); non-metals like water and wood have high specific heats (more energy to raise temperature). This is why metals heat up quickly and water resists temperature change.",
+      "shortcut": "Metals: low c; water/insulators: high c.",
+      "example": "A metal spoon heats fast; a cup of water heats slowly."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain Newton's law of cooling and its logarithmic plot.",
+      "answer": "The rate of heat loss is proportional to the excess temperature: −dQ/dt = hS(T − T_s). Integrating gives T − T_s = (T₀ − T_s)e^{−kt}, so ln(T − T_s) is linear in time with negative slope; the body cools faster when hotter.",
+      "shortcut": "ln(T−T_s) vs t = straight line.",
+      "example": "A hot cup cools quickly at first, slowly later."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain latent heat of fusion and vaporization, and why L_v > L_f.",
+      "answer": "Fusion (solid⇄liquid) and vaporization (liquid⇄gas) occur at constant temperature with heat going into breaking intermolecular bonds. L_v is much larger because vaporization requires overcoming all cohesive forces and a large volume increase, far more than melting.",
+      "shortcut": "L_v ≫ L_f (vaporization breaks more bonds).",
+      "example": "Water: L_v≈2.26×10⁶ vs L_f≈3.3×10⁵ J/kg."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the method of the ice calorimeter to find L_f.",
+      "answer": "Weigh known hot water (or a hot body) and add it to a known mass of ice at 0 °C in an insulated container; the melted-ice mass gives the heat absorbed. L_f = [heat given up by hot water] / [mass of ice melted] (correcting for water cooling).",
+      "shortcut": "L_f = heat supplied / ice melted.",
+      "example": "Measures the latent heat of fusion of ice."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the triple point and its role in the temperature scale.",
+      "answer": "The triple point is the unique (T, P) where solid, liquid and gas coexist in equilibrium. For water it is 0.01 °C and 611 Pa, and it was historically used as the fixed 273.16 K reference for the thermodynamic scale.",
+      "shortcut": "S+L+G coexist; water: 0.01 °C, 611 Pa.",
+      "example": "It defines a reproducible calibration point."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why does the temperature of a substance stay constant during a change of state?",
+      "answer": "The added heat goes into doing work against intermolecular forces (latent heat), changing the arrangement of particles, rather than increasing their kinetic energy; since temperature measures kinetic energy, it stays constant until the change is complete.",
+      "shortcut": "All heat → latent (breaks bonds), not KE → T constant.",
+      "example": "Ice stays at 0 °C while melting."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T9. Find the total heat to convert 100 g of ice at −10 °C to water at 30 °C. (c_ice=2000, c_w=4180, L_f=3.34×10⁵ J/kg).",
+      "answer": "Q1 = mc_iceΔT = 0.1×2000×10 = 2000 J. Q2 = mL_f = 0.1×3.34×10⁵ = 33400 J. Q3 = mc_wΔT = 0.1×4180×30 = 12540 J. Total ≈ 47940 J ≈ 4.8×10⁴ J.",
+      "shortcut": "Sum: warm ice + melt + warm water.",
+      "example": "≈ 4.8×10⁴ J."
+    }
+  ],
+  "formulas": [
+    "Q = m c ΔT ; Specific heat c = Q/(mΔT) (J kg⁻¹K⁻¹).",
+    "Newton cooling: −dQ/dt = hS(T−T_s); ln θ linear in t (constant surroundings).",
+    "Latent heat L = Q/m ; fusion ≈ 3.3×10⁵ J/kg, vaporization ≈ 2.26×10⁶ J/kg (water).",
+    "Triple point: single T,P where solid, liquid, gas coexist (water: 0.01 °C, 611 Pa)."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 11: QUANTITY OF HEAT   Content Area: Heat & Thermodynamics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 11.1 Newton's Law of Cooling & 11.2 Specific Heat",
+    "Q1. State Newton's law of cooling.",
+    "Answer:  The rate of loss of heat of a body is proportional to the temperature difference between the body and its surroundings: −dQ/dt = hS(T − T_s) (constant h, S, T_s).",
+    "⚡ Shortcut:  Rate ∝ (T − T_s); hotter → cools faster.",
+    "Example:  Tea cools fast when hot, slowly when near room T.",
+    "Q2. Define specific heat capacity. State its SI unit.",
+    "Answer:  Specific heat capacity is the heat required to raise the temperature of unit mass of a substance by 1 °C: c = Q/(mΔT). SI unit = J kg⁻¹ K⁻¹.",
+    "⚡ Shortcut:  c = Q/(mΔT).",
+    "Example:  Water c ≈ 4180 J/kg·K (high, why it's a good coolant).",
+    "Q3. Explain the method of mixtures to find specific heat of a solid.",
+    "Answer:  Heat the solid to a known temperature, drop it into a known mass of cooler water in an insulated calorimeter. Heat lost = heat gained: m_s c_s(T_s−T_f) = [m_w c_w + C_cal](T_f−T_w). Solve for c_s.",
+    "⚡ Shortcut:  heat lost = heat gained; solve for the unknown c.",
+    "Example:  A hot metal chip cools the water; equate the energies.",
+    "Q4. Why does water have a high specific heat? State a practical consequence.",
+    "Answer:  Water has a high specific heat (≈4180 J/kg·K), so it can absorb/release large heat with little temperature change. It is used as a coolant in engines and for coast-moderating ocean water temperatures.",
+    "⚡ Shortcut:  High c → big heat with small ΔT; coolant use.",
+    "Example:  An engine radiator uses water's high c.",
+    "Q5. Find the heat needed to raise 2 kg of water from 20 °C to 80 °C.",
+    "Answer:  Q = mcΔT = 2×4180×60 = 501 600 J ≈ 5.02×10⁵ J.",
+    "⚡ Shortcut:  Q = mcΔT.",
+    "Example:  ≈ 0.5 MJ.",
+    "▥ 11.1 Newton's Law of Cooling & 11.2 Specific Heat  —  Compare / Contrast Tables",
+    "Newton's Law of Cooling vs Specific Heat",
+    "Specific Heat: c at constant P vs c at constant V",
+    "▣ 11.3–11.5 Latent Heat & Triple Point",
+    "Q6. Define latent heat and specific latent heat.",
+    "Answer:  Latent heat is the heat absorbed or released during a change of state at constant temperature. Specific latent heat is that per unit mass: L = Q/m, in J/kg. It is large because it breaks/reforms intermolecular bonds.",
+    "⚡ Shortcut:  L = Q/m ; no ΔT during phase change.",
+    "Example:  Water at 100 °C absorbs 2.26×10⁶ J/kg to become steam.",
+    "Q7. Find the heat to convert 100 g of ice at 0 °C into water at 0 °C. L_f = 3.34×10⁵ J/kg.",
+    "Answer:  Q = mL_f = 0.1×3.34×10⁵ = 33 400 J = 3.34×10⁴ J.",
+    "⚡ Shortcut:  Q = mL_f at 0 °C.",
+    "Example:  ≈ 33 kJ of latent heat of fusion.",
+    "Q8. Differentiate latent heat of fusion and vaporization.",
+    "Answer:  Latent heat of fusion (L_f) is for solid ⇄ liquid; latent heat of vaporization (L_v) is for liquid ⇄ gas. L_v is much larger because vaporization requires overcoming intermolecular forces to go to a gas (large volume increase).",
+    "⚡ Shortcut:  L_v > L_f (vaporization overcomes more forces).",
+    "Example:  Water: L_f≈3.3×10⁵, L_v≈2.26×10⁶ J/kg.",
+    "Q9. Define the triple point of a substance.",
+    "Answer:  The triple point is the unique combination of temperature and pressure at which the solid, liquid and gas phases coexist in equilibrium. It is a fixed calibration point; for water it is 0.01 °C and 611 Pa.",
+    "⚡ Shortcut:  S+L+G coexist; water: 0.01 °C, 611 Pa.",
+    "Example:  The 273.16 K fixed point of the Kelvin scale (historically).",
+    "Q10. Explain why dry ice (solid CO₂) sublimates at normal pressure.",
+    "Answer:  At 1 atm the CO₂ triple point (−56.6 °C, 5.1 atm) is above 1 atm, so solid CO₂ cannot exist as a liquid at 1 atm; it changes directly to gas (sublimation).",
+    "⚡ Shortcut:  1 atm < triple-point pressure → sublimation, no liquid.",
+    "Example:  Dry ice vanishes without liquid, giving fog.",
+    "▥ 11.3–11.5 Latent Heat & Triple Point  —  Compare / Contrast Tables",
+    "Latent Heat of Fusion vs Vaporisation",
+    "Triple Point vs Critical Point",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the method of mixtures for the specific heat of a solid.",
+    "Answer:  Heat the solid to T_s, put it into m_w water at T_w in a calorimeter of heat capacity C_cal. Heat lost = heat gained: m_s c_s(T_s−T_f) = [m_w c_w + C_cal](T_f − T_w). Solve for c_s.",
+    "⚡ Short / exam line:  c_s = [m_w c_w + C_cal](T_f−T_w) / [m_s(T_s−T_f)].",
+    "Example:  Assumes an insulated vessel (no loss).",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T2. Define specific heat capacity, specific latent heat and the units.",
+    "Answer:  Specific heat c = Q/(mΔT) (J kg⁻¹ K⁻¹) — heat to raise unit mass by 1 K. Specific latent heat L = Q/m (J kg⁻¹) — heat for unit mass to change state at constant T.",
+    "⚡ Short / exam line:  c: per °C per mass; L: per mass, no ΔT.",
+    "Example:  Water c≈4180; L_f(ice)≈3.3×10⁵; L_v(water)≈2.26×10⁶ J/kg.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T3. Compare the specific heats of metals and non-metals.",
+    "Answer:  Metals have low specific heats (high thermal conductivity, few degrees of freedom per atom for heat); non-metals like water and wood have high specific heats (more energy to raise temperature). This is why metals heat up quickly and water resists temperature change.",
+    "⚡ Short / exam line:  Metals: low c; water/insulators: high c.",
+    "Example:  A metal spoon heats fast; a cup of water heats slowly.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T4. Explain Newton's law of cooling and its logarithmic plot.",
+    "Answer:  The rate of heat loss is proportional to the excess temperature: −dQ/dt = hS(T − T_s). Integrating gives T − T_s = (T₀ − T_s)e^{−kt}, so ln(T − T_s) is linear in time with negative slope; the body cools faster when hotter.",
+    "⚡ Short / exam line:  ln(T−T_s) vs t = straight line.",
+    "Example:  A hot cup cools quickly at first, slowly later.",
+    "[Explain] T5. Explain latent heat of fusion and vaporization, and why L_v > L_f.",
+    "Answer:  Fusion (solid⇄liquid) and vaporization (liquid⇄gas) occur at constant temperature with heat going into breaking intermolecular bonds. L_v is much larger because vaporization requires overcoming all cohesive forces and a large volume increase, far more than melting.",
+    "⚡ Short / exam line:  L_v ≫ L_f (vaporization breaks more bonds).",
+    "Example:  Water: L_v≈2.26×10⁶ vs L_f≈3.3×10⁵ J/kg.",
+    "[Explain] T6. Explain the method of the ice calorimeter to find L_f.",
+    "Answer:  Weigh known hot water (or a hot body) and add it to a known mass of ice at 0 °C in an insulated container; the melted-ice mass gives the heat absorbed. L_f = [heat given up by hot water] / [mass of ice melted] (correcting for water cooling).",
+    "⚡ Short / exam line:  L_f = heat supplied / ice melted.",
+    "Example:  Measures the latent heat of fusion of ice.",
+    "[Explain] T7. Explain the triple point and its role in the temperature scale.",
+    "Answer:  The triple point is the unique (T, P) where solid, liquid and gas coexist in equilibrium. For water it is 0.01 °C and 611 Pa, and it was historically used as the fixed 273.16 K reference for the thermodynamic scale.",
+    "⚡ Short / exam line:  S+L+G coexist; water: 0.01 °C, 611 Pa.",
+    "Example:  It defines a reproducible calibration point.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why does the temperature of a substance stay constant during a change of state?",
+    "Answer:  The added heat goes into doing work against intermolecular forces (latent heat), changing the arrangement of particles, rather than increasing their kinetic energy; since temperature measures kinetic energy, it stays constant until the change is complete.",
+    "⚡ Short / exam line:  All heat → latent (breaks bonds), not KE → T constant.",
+    "Example:  Ice stays at 0 °C while melting.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T9. Find the total heat to convert 100 g of ice at −10 °C to water at 30 °C. (c_ice=2000, c_w=4180, L_f=3.34×10⁵ J/kg).",
+    "Answer:  Q1 = mc_iceΔT = 0.1×2000×10 = 2000 J. Q2 = mL_f = 0.1×3.34×10⁵ = 33400 J. Q3 = mc_wΔT = 0.1×4180×30 = 12540 J. Total ≈ 47940 J ≈ 4.8×10⁴ J.",
+    "⚡ Short / exam line:  Sum: warm ice + melt + warm water.",
+    "Example:  ≈ 4.8×10⁴ J.",
+    "★ Quick-formula memos (this unit)",
+    "Q = m c ΔT ; Specific heat c = Q/(mΔT) (J kg⁻¹K⁻¹).",
+    "Newton cooling: −dQ/dt = hS(T−T_s); ln θ linear in t (constant surroundings).",
+    "Latent heat L = Q/m ; fusion ≈ 3.3×10⁵ J/kg, vaporization ≈ 2.26×10⁶ J/kg (water).",
+    "Triple point: single T,P where solid, liquid, gas coexist (water: 0.01 °C, 611 Pa)."
+  ]
+}

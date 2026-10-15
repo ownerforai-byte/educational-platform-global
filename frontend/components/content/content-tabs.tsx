@@ -25,6 +25,7 @@ import { getTopicPath } from "@/features/syllabus/content-router";
 import { getTopicEntryBySlug } from "@/lib/syllabus";
 import type { SyllabusUnit } from "@/lib/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PhysicsUnitResourceDoc } from "./physics-unit-resource-doc";
 
 type ContentTabsProps = {
   classSlug: string;
@@ -94,6 +95,15 @@ function renderResources(
   topicSlug: string,
   topicTitle: string,
 ): ReactNode {
+  // Class 11 Physics — authoritative unit resource document preview
+  if (subjectSlug === "physics") {
+    return (
+      <div className="space-y-4">
+        <PhysicsUnitResourceDoc unitId={unitId} />
+      </div>
+    );
+  }
+
   // Class 11 Algebra — topic-level classification within the unit section
   if (unitId === "algebra" && subjectSlug === "mathematics") {
     const sub = ALGEBRA_TOPIC_RESOURCES.find((r) => topicSlug.includes(r.keyword));

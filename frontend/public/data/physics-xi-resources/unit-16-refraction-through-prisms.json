@@ -1,0 +1,331 @@
+{
+  "unitNo": 16,
+  "unitId": "refraction-through-prisms",
+  "unitName": "Refraction through Prisms",
+  "contentArea": "Waves & Optics",
+  "docxFileName": "Physics_XI_Unit_16_prisms.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_16_prisms.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 16: REFRACTION THROUGH PRISMS   Content Area: Waves & Optics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 100,
+    "tableCount": 2,
+    "questionCount": 10,
+    "theoryCount": 10,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Quantity",
+        "At minimum deviation",
+        "General"
+      ],
+      "rows": [
+        [
+          "Symmetry",
+          "i = e, r₁ = r₂",
+          "—"
+        ],
+        [
+          "Formula",
+          "n = sin[(A+δ)/2] / sin(A/2)",
+          "n via full Snell steps"
+        ],
+        [
+          "Best use",
+          "Find n of glass",
+          "—"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Deviation δ",
+        "Dispersion D"
+      ],
+      "rows": [
+        [
+          "Meaning",
+          "Total bend of ray",
+          "Angular separation of two colours"
+        ],
+        [
+          "Formula",
+          "δ = i + e − A",
+          "D = δ_V − δ_R (for violet & red)"
+        ],
+        [
+          "Depends on",
+          "Angle, index",
+          "Dispersion of material (n_V > n_R)"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define the angle of minimum deviation of a prism.",
+      "answer": "It is the smallest possible deviation of the central ray for a given prism, occurring when the ray passes symmetrically (angle of incidence = angle of emergence) and the ray lies parallel to the base inside the prism.",
+      "shortcut": "δ_min when i₁ = i₂ and ray ∥ base.",
+      "example": "At δ_min the refraction is symmetric."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Derive the refractive index from minimum deviation: n = sin[(A+δ_m)/2] / sin(A/2).",
+      "answer": "At δ_min, i₁ = i₂ = i and r₁ = r₂ = A/2. From i = (δ_m + A)/2, applying Snell's law n = sin i / sin r gives n = sin[(A+δ_m)/2]/sin(A/2).",
+      "shortcut": "n = sin[(A+δ_m)/2]/sin(A/2).",
+      "example": "Measure A and δ_m → n."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. A prism of A = 60° has minimum deviation δ_m = 40°. Find its refractive index.",
+      "answer": "n = sin[(60+40)/2]/sin(60/2) = sin50/sin30 = 0.766/0.5 = 1.53.",
+      "shortcut": "n = sin[(A+δ)/2]/sin(A/2).",
+      "example": "≈ 1.53."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Explain a prism spectroscope briefly.",
+      "answer": "White light passing through a prism disperses into its colors (refractive index depends on wavelength). A telescope with a scale at the minimum-deviation position lets one measure n for each spectral line and hence identify wavelengths.",
+      "shortcut": "Prism + telescope + spectral scale; dispersion separates colors.",
+      "example": "A prism separates white light into a rainbow band."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Find the angle of deviation of a prism A = 60° with n = 1.5 for a ray passing at minimum deviation.",
+      "answer": "At minimum deviation n = sin[(A+δ)/2]/sin(A/2) → sin[(60+δ)/2] = 1.5×sin30 = 0.75 → (60+δ)/2 = 48.6° → δ ≈ 37°. ▥ 16.1–16.2 Minimum Deviation & Refractive Index  —  Compare / Contrast Tables Minimum Deviation in a Prism (what it gives) ▣ 16.3 Small-Angle Prism Deviation & Dispersion",
+      "shortcut": "Use δ_m: sin[(A+δ)/2] = n·sin(A/2).",
+      "example": "≈ 37° minimum deviation."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Show that for a small-angle prism, δ = (n−1)A.",
+      "answer": "For A small (in radians), the deviation δ = i₁ + i₂ − A. At minimum deviation and small angles, i₂ ≈ (n−1)A/2 and i₁ ≈ (n−1)A/2, so δ = (n−1)A.",
+      "shortcut": "δ = (n−1)A (radians).",
+      "example": "A 2° prism, n=1.5 → δ = 1°."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Explain dispersive power of a prism and its dependence.",
+      "answer": "Dispersive power ω = (δ_v − δ_r)/δ, the ratio of the violet deviation to the mean deviation. It measures how well the prism separates colors and is larger for the crown/glass prism with high ω (flint glass has higher ω than crown glass).",
+      "shortcut": "ω = (δ_v−δ_r)/δ; flint > crown.",
+      "example": "Flint glass splits colors more (bigger ω)."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. State achromatism and its application.",
+      "answer": "Achromatism means correcting chromatic aberration by combining prisms/lenses so that two colors have the same net effect: (n_F−1)A + (n_C−1)A' = 0 while still dispersing. This is the principle of an achromatic doublet lens.",
+      "shortcut": "Combine two prisms; net deviation zero, dispersion not.",
+      "example": "Achromatic lenses combine crown + flint glass."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Find the deviation of a 1° prism with n = 1.61.",
+      "answer": "δ = (n−1)A = 0.61×1° = 0.61°.",
+      "shortcut": "δ = (n−1)A.",
+      "example": "≈ 0.61°."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Why does violet bend more than red in a prism?",
+      "answer": "Refractive index decreases with increasing wavelength (n_blue > n_red), so shorter (violet) wavelengths have a larger index and a larger deviation. This is dispersion; the violet edge is always more refracted. ▥ 16.3 Small-Angle Prism Deviation & Dispersion  —  Compare / Contrast Tables Dispersion vs Deviation PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "n decreases as λ increases → violet bends most.",
+      "example": "Rainbow: violet inside, red outside."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the refractive index of a prism at minimum deviation: n = sin[(A+δ_m)/2]/sin(A/2).",
+      "answer": "At δ_min, i = (δ_m + A)/2 and r = A/2. Applying Snell's law n = sin i / sin r gives n = sin[(A+δ_m)/2]/sin(A/2). Measuring A and δ_m yields n.",
+      "shortcut": "n = sin[(A+δ)/2]/sin(A/2).",
+      "example": "A standard prism-index measurement."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. State the minimum-deviation condition for a prism.",
+      "answer": "At minimum deviation the ray passes symmetrically: angle of incidence = angle of emergence (i₁ = i₂), and the refracted ray lies parallel to the base. Then i = (δ_m + A)/2 and r = A/2.",
+      "shortcut": "At δ_min: i₁ = i₂, ray ∥ base.",
+      "example": "Symmetric passage → the least bend."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T3. Compare a prism and a diffraction grating as dispersive elements.",
+      "answer": "A prism disperses by wavelength-dependent refractive index (dispersion varies nonlinearly with λ, poor at short wavelengths). A grating disperses by interference (angular separation linear in λ, works over a wide range and gives multiple orders). Gratings give higher dispersion but prisms are continuous and simpler.",
+      "shortcut": "Prism: n(λ) dispersion; Grating: interference, linear in λ.",
+      "example": "High-resolution work favors gratings."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain deviation in a small-angle prism and its use in a spectroscope.",
+      "answer": "For small angles, the deviation of a thin prism is δ = (n−1)A (in radians), independent of the incident angle; this simple, proportional deviation is used in a small-angle prism spectroscope (or in the Fritsch/Abbe setups) to spread colors in a compact instrument.",
+      "shortcut": "δ = (n−1)A (small angle).",
+      "example": "Thin prisms are used in prism-spectroscopes and in laser alignment."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the prism spectroscope and how wavelengths are identified.",
+      "answer": "White light through a slit is dispersed by a prism into a spectrum; a telescope with a scale at the eyepiece measures each spectral line's minimum deviation δ_m, from which n is computed and the wavelength identified against a reference.",
+      "shortcut": "Slit + prism + telescope + scale; measure δ_m per color.",
+      "example": "Each line's δ_m gives its n and hence λ."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain dispersive power of a prism and its significance.",
+      "answer": "Dispersive power ω = (δ_v − δ_r)/δ_m, the ratio of the violet–red deviation to the mean deviation. It measures how well the prism separates colors and is larger for flint glass than for crown glass, so a flint prism gives more color spread.",
+      "shortcut": "ω = (δ_v−δ_r)/δ ; larger ω → more dispersion.",
+      "example": "Flint glass splits colors more than crown glass."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the Achromatic condition for two prisms.",
+      "answer": "Two prisms (of different materials) are in opposition so that the net deviation for two colors is zero while the net dispersion remains: (n_F−1)A + (n_C−1)A′ = 0, or (ωA+ω′A′)=0. This produces a 'deviation without dispersion' (achromatism), the idea later adapted to an achromatic doublet lens.",
+      "shortcut": "(n_F−1)A+(n_C−1)A′ = 0 ; (ωA+ω′A′)=0.",
+      "example": "Used in an achromatic doublet lens."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why does a prism split white light into a spectrum (why does violet bend most)?",
+      "answer": "The refractive index decreases with increasing wavelength (n_violet > n_red), so shorter wavelengths are refracted more; violet therefore bends most and red the least, separating the white into a fan of colors. This is the basis of all prism dispersion.",
+      "shortcut": "n decreases with λ → violet most bent.",
+      "example": "Rainbow: violet inside, red outside."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T9. A prism of A = 60° has minimum deviation δ_m = 40°. Find its refractive index.",
+      "answer": "n = sin[(60+40)/2]/sin(60/2) = sin50/sin30 = 0.766/0.5 ≈ 1.53.",
+      "shortcut": "n = sin[(A+δ)/2]/sin(A/2).",
+      "example": "≈ 1.53."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A thin (small-angle) prism has A = 1° and n = 1.61. Find its deviation.",
+      "answer": "δ = (n−1)A = 0.61×1° = 0.61°.",
+      "shortcut": "δ = (n−1)A.",
+      "example": "≈ 0.61°."
+    }
+  ],
+  "formulas": [
+    "δ = (i₁+i₂) − A ; minimum deviation δ_m: (i₁=i₂=A? no) ; (n−1) = sin[(A+δ_m)/2]/sin(A/2).",
+    "Small-angle prism: δ = (n−1)A.",
+    "Divergence = (n−1)A; achromatism: (ω−1)A = 0."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 16: REFRACTION THROUGH PRISMS   Content Area: Waves & Optics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 16.1–16.2 Minimum Deviation & Refractive Index",
+    "Q1. Define the angle of minimum deviation of a prism.",
+    "Answer:  It is the smallest possible deviation of the central ray for a given prism, occurring when the ray passes symmetrically (angle of incidence = angle of emergence) and the ray lies parallel to the base inside the prism.",
+    "⚡ Shortcut:  δ_min when i₁ = i₂ and ray ∥ base.",
+    "Example:  At δ_min the refraction is symmetric.",
+    "Q2. Derive the refractive index from minimum deviation: n = sin[(A+δ_m)/2] / sin(A/2).",
+    "Answer:  At δ_min, i₁ = i₂ = i and r₁ = r₂ = A/2. From i = (δ_m + A)/2, applying Snell's law n = sin i / sin r gives n = sin[(A+δ_m)/2]/sin(A/2).",
+    "⚡ Shortcut:  n = sin[(A+δ_m)/2]/sin(A/2).",
+    "Example:  Measure A and δ_m → n.",
+    "Q3. A prism of A = 60° has minimum deviation δ_m = 40°. Find its refractive index.",
+    "Answer:  n = sin[(60+40)/2]/sin(60/2) = sin50/sin30 = 0.766/0.5 = 1.53.",
+    "⚡ Shortcut:  n = sin[(A+δ)/2]/sin(A/2).",
+    "Example:  ≈ 1.53.",
+    "Q4. Explain a prism spectroscope briefly.",
+    "Answer:  White light passing through a prism disperses into its colors (refractive index depends on wavelength). A telescope with a scale at the minimum-deviation position lets one measure n for each spectral line and hence identify wavelengths.",
+    "⚡ Shortcut:  Prism + telescope + spectral scale; dispersion separates colors.",
+    "Example:  A prism separates white light into a rainbow band.",
+    "Q5. Find the angle of deviation of a prism A = 60° with n = 1.5 for a ray passing at minimum deviation.",
+    "Answer:  At minimum deviation n = sin[(A+δ)/2]/sin(A/2) → sin[(60+δ)/2] = 1.5×sin30 = 0.75 → (60+δ)/2 = 48.6° → δ ≈ 37°.",
+    "⚡ Shortcut:  Use δ_m: sin[(A+δ)/2] = n·sin(A/2).",
+    "Example:  ≈ 37° minimum deviation.",
+    "▥ 16.1–16.2 Minimum Deviation & Refractive Index  —  Compare / Contrast Tables",
+    "Minimum Deviation in a Prism (what it gives)",
+    "▣ 16.3 Small-Angle Prism Deviation & Dispersion",
+    "Q6. Show that for a small-angle prism, δ = (n−1)A.",
+    "Answer:  For A small (in radians), the deviation δ = i₁ + i₂ − A. At minimum deviation and small angles, i₂ ≈ (n−1)A/2 and i₁ ≈ (n−1)A/2, so δ = (n−1)A.",
+    "⚡ Shortcut:  δ = (n−1)A (radians).",
+    "Example:  A 2° prism, n=1.5 → δ = 1°.",
+    "Q7. Explain dispersive power of a prism and its dependence.",
+    "Answer:  Dispersive power ω = (δ_v − δ_r)/δ, the ratio of the violet deviation to the mean deviation. It measures how well the prism separates colors and is larger for the crown/glass prism with high ω (flint glass has higher ω than crown glass).",
+    "⚡ Shortcut:  ω = (δ_v−δ_r)/δ; flint > crown.",
+    "Example:  Flint glass splits colors more (bigger ω).",
+    "Q8. State achromatism and its application.",
+    "Answer:  Achromatism means correcting chromatic aberration by combining prisms/lenses so that two colors have the same net effect: (n_F−1)A + (n_C−1)A' = 0 while still dispersing. This is the principle of an achromatic doublet lens.",
+    "⚡ Shortcut:  Combine two prisms; net deviation zero, dispersion not.",
+    "Example:  Achromatic lenses combine crown + flint glass.",
+    "Q9. Find the deviation of a 1° prism with n = 1.61.",
+    "Answer:  δ = (n−1)A = 0.61×1° = 0.61°.",
+    "⚡ Shortcut:  δ = (n−1)A.",
+    "Example:  ≈ 0.61°.",
+    "Q10. Why does violet bend more than red in a prism?",
+    "Answer:  Refractive index decreases with increasing wavelength (n_blue > n_red), so shorter (violet) wavelengths have a larger index and a larger deviation. This is dispersion; the violet edge is always more refracted.",
+    "⚡ Shortcut:  n decreases as λ increases → violet bends most.",
+    "Example:  Rainbow: violet inside, red outside.",
+    "▥ 16.3 Small-Angle Prism Deviation & Dispersion  —  Compare / Contrast Tables",
+    "Dispersion vs Deviation",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the refractive index of a prism at minimum deviation: n = sin[(A+δ_m)/2]/sin(A/2).",
+    "Answer:  At δ_min, i = (δ_m + A)/2 and r = A/2. Applying Snell's law n = sin i / sin r gives n = sin[(A+δ_m)/2]/sin(A/2). Measuring A and δ_m yields n.",
+    "⚡ Short / exam line:  n = sin[(A+δ)/2]/sin(A/2).",
+    "Example:  A standard prism-index measurement.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T2. State the minimum-deviation condition for a prism.",
+    "Answer:  At minimum deviation the ray passes symmetrically: angle of incidence = angle of emergence (i₁ = i₂), and the refracted ray lies parallel to the base. Then i = (δ_m + A)/2 and r = A/2.",
+    "⚡ Short / exam line:  At δ_min: i₁ = i₂, ray ∥ base.",
+    "Example:  Symmetric passage → the least bend.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T3. Compare a prism and a diffraction grating as dispersive elements.",
+    "Answer:  A prism disperses by wavelength-dependent refractive index (dispersion varies nonlinearly with λ, poor at short wavelengths). A grating disperses by interference (angular separation linear in λ, works over a wide range and gives multiple orders). Gratings give higher dispersion but prisms are continuous and simpler.",
+    "⚡ Short / exam line:  Prism: n(λ) dispersion; Grating: interference, linear in λ.",
+    "Example:  High-resolution work favors gratings.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T4. Explain deviation in a small-angle prism and its use in a spectroscope.",
+    "Answer:  For small angles, the deviation of a thin prism is δ = (n−1)A (in radians), independent of the incident angle; this simple, proportional deviation is used in a small-angle prism spectroscope (or in the Fritsch/Abbe setups) to spread colors in a compact instrument.",
+    "⚡ Short / exam line:  δ = (n−1)A (small angle).",
+    "Example:  Thin prisms are used in prism-spectroscopes and in laser alignment.",
+    "[Explain] T5. Explain the prism spectroscope and how wavelengths are identified.",
+    "Answer:  White light through a slit is dispersed by a prism into a spectrum; a telescope with a scale at the eyepiece measures each spectral line's minimum deviation δ_m, from which n is computed and the wavelength identified against a reference.",
+    "⚡ Short / exam line:  Slit + prism + telescope + scale; measure δ_m per color.",
+    "Example:  Each line's δ_m gives its n and hence λ.",
+    "[Explain] T6. Explain dispersive power of a prism and its significance.",
+    "Answer:  Dispersive power ω = (δ_v − δ_r)/δ_m, the ratio of the violet–red deviation to the mean deviation. It measures how well the prism separates colors and is larger for flint glass than for crown glass, so a flint prism gives more color spread.",
+    "⚡ Short / exam line:  ω = (δ_v−δ_r)/δ ; larger ω → more dispersion.",
+    "Example:  Flint glass splits colors more than crown glass.",
+    "[Explain] T7. Explain the Achromatic condition for two prisms.",
+    "Answer:  Two prisms (of different materials) are in opposition so that the net deviation for two colors is zero while the net dispersion remains: (n_F−1)A + (n_C−1)A′ = 0, or (ωA+ω′A′)=0. This produces a 'deviation without dispersion' (achromatism), the idea later adapted to an achromatic doublet lens.",
+    "⚡ Short / exam line:  (n_F−1)A+(n_C−1)A′ = 0 ; (ωA+ω′A′)=0.",
+    "Example:  Used in an achromatic doublet lens.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why does a prism split white light into a spectrum (why does violet bend most)?",
+    "Answer:  The refractive index decreases with increasing wavelength (n_violet > n_red), so shorter wavelengths are refracted more; violet therefore bends most and red the least, separating the white into a fan of colors. This is the basis of all prism dispersion.",
+    "⚡ Short / exam line:  n decreases with λ → violet most bent.",
+    "Example:  Rainbow: violet inside, red outside.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T9. A prism of A = 60° has minimum deviation δ_m = 40°. Find its refractive index.",
+    "Answer:  n = sin[(60+40)/2]/sin(60/2) = sin50/sin30 = 0.766/0.5 ≈ 1.53.",
+    "⚡ Short / exam line:  n = sin[(A+δ)/2]/sin(A/2).",
+    "Example:  ≈ 1.53.",
+    "[Numerical] T10. A thin (small-angle) prism has A = 1° and n = 1.61. Find its deviation.",
+    "Answer:  δ = (n−1)A = 0.61×1° = 0.61°.",
+    "⚡ Short / exam line:  δ = (n−1)A.",
+    "Example:  ≈ 0.61°.",
+    "★ Quick-formula memos (this unit)",
+    "δ = (i₁+i₂) − A ; minimum deviation δ_m: (i₁=i₂=A? no) ; (n−1) = sin[(A+δ_m)/2]/sin(A/2).",
+    "Small-angle prism: δ = (n−1)A.",
+    "Divergence = (n−1)A; achromatism: (ω−1)A = 0."
+  ]
+}

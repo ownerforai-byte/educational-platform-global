@@ -1,0 +1,483 @@
+{
+  "unitNo": 6,
+  "unitId": "circular-motion",
+  "unitName": "Circular Motion",
+  "contentArea": "Mechanics",
+  "docxFileName": "Physics_XI_Unit_06_circular-motion.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_06_circular-motion.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 6: CIRCULAR MOTION   Content Area: Mechanics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 129,
+    "tableCount": 5,
+    "questionCount": 15,
+    "theoryCount": 10,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Linear",
+        "Angular",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Displacement s",
+          "Angle θ",
+          "Path vs swept angle"
+        ],
+        [
+          "v = ds/dt",
+          "ω = dθ/dt",
+          ""
+        ],
+        [
+          "a_t = dv/dt",
+          "α = dω/dt",
+          ""
+        ],
+        [
+          "v = rω",
+          "Tangential speed",
+          ""
+        ],
+        [
+          "a_t = rα ; a_c = rω²",
+          "Tangential + centripetal",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Centripetal",
+        "Centrifugal"
+      ],
+      "rows": [
+        [
+          "Nature",
+          "Real force",
+          "Fictitious (apparent) force"
+        ],
+        [
+          "Frame",
+          "Inertial",
+          "Rotating"
+        ],
+        [
+          "Direction",
+          "Toward the centre",
+          "Away from the centre"
+        ],
+        [
+          "Example",
+          "Tension keeping the stone in a circle",
+          "You are pressed against the car door"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Simple pendulum",
+        "Conical pendulum"
+      ],
+      "rows": [
+        [
+          "Motion",
+          "Swing in a vertical plane",
+          "Bob describes a horizontal circle"
+        ],
+        [
+          "Tension equations",
+          "T = mg cosθ at the ends",
+          "T cosθ = mg ; T sinθ = mω²r"
+        ],
+        [
+          "Provides centripetal",
+          "No (zero at extremes)",
+          "Yes: T sinθ = mω²r"
+        ],
+        [
+          "Period",
+          "T = 2π√(l/g)",
+          "T = 2π√(h/g), h = vertical length"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Position",
+        "Tension",
+        "Key condition"
+      ],
+      "rows": [
+        [
+          "Bottom",
+          "T = mg + mv²/r (maximum)",
+          "—"
+        ],
+        [
+          "Top",
+          "T = mv²/r − mg (minimum)",
+          "String stays taut: v² ≥ rg (min. √(5rg) to just complete)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Unbanked road (friction only)",
+        "Banked road (ideal, no friction needed)"
+      ],
+      "rows": [
+        [
+          "Source of centripetal force",
+          "Friction μmg",
+          "Horizontal component of normal force"
+        ],
+        [
+          "Maximum / design speed",
+          "v² ≤ μg (slip when exceeded)",
+          "v = √(rg tanθ)"
+        ],
+        [
+          "Friction at design speed",
+          "Necessary",
+          "Not needed"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define angular displacement, angular velocity and angular acceleration.",
+      "answer": "Angular displacement θ = arc/radius (rad). Angular velocity ω = dθ/dt (rad s⁻¹). Angular acceleration α = dω/dt (rad s⁻²).",
+      "shortcut": "θ(rad)=s/r ; ω=v/r ; α=a_t/r.",
+      "example": "One full turn: θ=2π rad, ω=2π/T."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Relate linear and angular quantities for a body moving in a circle.",
+      "answer": "v = rω, centripetal (radial) acceleration a_c = rω² = v²/r, tangential acceleration a_t = rα. Total acceleration a = √(a_c²+a_t²).",
+      "shortcut": "multiply the angular quantity by r to get the linear one.",
+      "example": "r=0.5 m, ω=4 rad/s → v=2 m/s, a_c=8 m/s²."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Show that the period T and angular velocity are related by ω = 2π/T.",
+      "answer": "In one period the body covers 2π rad, so ω = (2π rad)/(T s) = 2π/T. Also f = 1/T, so ω = 2πf. ▥ 6.1–6.2 Angular Quantities & Relations  —  Compare / Contrast Tables Linear vs Angular Quantities ▣ 6.3–6.4 Centripetal Acceleration & Force",
+      "shortcut": "ω = 2π/T = 2πf.",
+      "example": "T=0.5 s → ω = 4π rad/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Define centripetal acceleration and give its magnitude and direction.",
+      "answer": "Centripetal acceleration is the radial acceleration toward the centre of the circular path: a_c = v²/r = ω²r, always directed toward the centre (perpendicular to velocity).",
+      "shortcut": "a_c = v²/r, inward; no 'centrifugal' in an inertial frame.",
+      "example": "r=2 m, v=4 m/s → a_c = 8 m/s² toward the centre."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Define centripetal force. Give three examples.",
+      "answer": "Centripetal force is the net inward force required for circular motion: F_c = mv²/r = mω²r. Examples: tension of a string (whirl), gravity (satellite), normal reaction on a banked road, static friction on a car turning.",
+      "shortcut": "F_c = mv²/r; whatever supplies it counts.",
+      "example": "Moon's centripetal force is Earth's gravity."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. A stone (m=0.5 kg) on a 1 m string is whirled at 4 m/s. Find the tension.",
+      "answer": "T = mv²/r = 0.5×16/1 = 8 N (at the horizontal position). ▥ 6.3–6.4 Centripetal Acceleration & Force  —  Compare / Contrast Tables Centripetal vs Centrifugal ▣ 6.7 Conical Pendulum",
+      "shortcut": "T = mv²/r.",
+      "example": "≈ 8 N tension."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Explain a conical pendulum and derive T = 2π√(lcosθ/g).",
+      "answer": "A bob on a string describes a horizontal cone with the string at angle θ to the vertical. Vertical balance Tcosθ = mg; horizontal Tsinθ = mω²r with r = l sinθ. Dividing: g/tanθ = ω²l → ω² = g/(lcosθ), so T = 2π√(lcosθ/g).",
+      "shortcut": "T = 2π√(lcosθ/g).",
+      "example": "Larger θ → shorter period."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. What provides the centripetal force in a conical pendulum?",
+      "answer": "The horizontal component of the string tension, T sinθ, provides the centripetal force; the vertical component T cosθ balances the weight.",
+      "shortcut": "Tsinθ = mω²r ; Tcosθ = mg.",
+      "example": "The bob sweeps a cone, like a lighthouse."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. A conical pendulum of length 1 m makes θ = 60°. Find its period.",
+      "answer": "T = 2π√(lcosθ/g) = 2π√(1×0.5/9.8) = 2π√(0.051) ≈ 2π×0.226 ≈ 1.42 s. ▥ 6.7 Conical Pendulum  —  Compare / Contrast Tables Conical Pendulum vs Simple Pendulum ▣ 6.8 Motion in a Vertical Circle",
+      "shortcut": "T = 2π√(lcosθ/g).",
+      "example": "≈ 1.4 s."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Find the minimum speed of a body at the top of a vertical circle.",
+      "answer": "At the top, tension + mg provide centripetal force. For the limiting case T=0: mg = mv²/r → v_top = √(gr). This is the minimum speed to complete the loop.",
+      "shortcut": "v_top(min) = √(gr).",
+      "example": "r=2 m → √(19.6) ≈ 4.4 m/s at the top."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Find the minimum speed at the bottom to complete the vertical circle.",
+      "answer": "Using energy between top (v_top=√gr) and bottom: ½mv_b² = ½mv_t² + mg(2r) → v_b = √(5gr).",
+      "shortcut": "v_bottom(min) = √(5gr).",
+      "example": "r=2 m → √(98) ≈ 9.9 m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Explain why a ball tied to a string cannot complete a vertical circle below v_bottom = √(5gr).",
+      "answer": "To keep the string taut at the top requires v_top ≥ √gr. Energy then gives the corresponding bottom speed; below √(5gr) the top condition fails and the string goes slack before the top. ▥ 6.8 Motion in a Vertical Circle  —  Compare / Contrast Tables Vertical Circle: Tension Chart ▣ 6.9 Banking of Roads",
+      "shortcut": "Need ≥√(5gr) at bottom to finish the loop.",
+      "example": "Swing riders must be fast enough at the bottom."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. Derive the ideal banking angle tanθ = v²/(rg).",
+      "answer": "On a banked road with no friction, the horizontal component of the normal reaction provides centripetal force: Nsinθ = mv²/r and Ncosθ = mg. Dividing: tanθ = v²/(rg).",
+      "shortcut": "tanθ = v²/(rg) — no friction needed at ideal speed.",
+      "example": "r=50 m, v=20 m/s → tanθ = 400/490 ≈ 0.82 → θ ≈ 39°."
+    },
+    {
+      "type": "neb",
+      "question": "Q14. Why are roads banked on curves?",
+      "answer": "Banking supplies part (or all, at the design speed) of the centripetal force via the horizontal component of the normal reaction, reducing reliance on friction and improving safety at higher speeds.",
+      "shortcut": "Tilt so that N has an inward component.",
+      "example": "Races' corners are steeper (higher design speed)."
+    },
+    {
+      "type": "neb",
+      "question": "Q15. A car on a 40 m radius curve is banked at θ with v = 15 m/s. Find θ.",
+      "answer": "tanθ = v²/(rg) = 225/(40×9.8) = 0.574 → θ = tan⁻¹(0.574) ≈ 30°. ▥ 6.9 Banking of Roads  —  Compare / Contrast Tables Banked vs Unbanked Curve PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "θ = tan⁻¹(v²/rg).",
+      "example": "≈ 30° banking."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the centripetal acceleration and force.",
+      "answer": "A point moving in a circle of radius r with speed v changes direction by dθ in time dt; the velocity vector turns, giving a radial acceleration a = v dθ/dt = vω = v²/r = ω²r, toward the centre. Force F = ma = mv²/r.",
+      "shortcut": "a_c = v²/r = ω²r (inward); F_c = mv²/r.",
+      "example": "Tension in a string provides F_c for a whirled object."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the minimum speed at the top and bottom of a vertical circle.",
+      "answer": "At the top, T + mg = mv²/r; minimum when T = 0 → v_top = √(gr). Energy from bottom to top: ½mv_b² = ½mv_t² + 2mgr → v_bottom = √(5gr).",
+      "shortcut": "v_top=√gr ; v_bottom=√5gr.",
+      "example": "A roller-coaster must keep the string/track taut."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T3. Derive the condition for the ideal banking angle tanθ = v²/rg.",
+      "answer": "On a banked road with no friction, N sinθ = mv²/r (inward) and N cosθ = mg. Dividing: tanθ = v²/(rg). At this angle, the required centripetal force is fully supplied by the road normal, so no friction is needed.",
+      "shortcut": "tanθ = v²/(rg).",
+      "example": "For a 40 m radius and 15 m/s, θ ≈ 30°."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T4. Define angular displacement, angular velocity and angular acceleration with units.",
+      "answer": "θ (rad); ω = dθ/dt (rad/s); α = dω/dt (rad/s²). One revolution = 2π rad; ω = 2π/T = 2πf.",
+      "shortcut": "θ, ω, α.",
+      "example": "60 rev/min = 2π rad × 1/... = 6.28 rad/s."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T5. Compare uniform circular motion and uniform linear motion.",
+      "answer": "Uniform circular: speed constant but velocity changes (direction), so there is a centripetal acceleration; needs a centripetal force. Uniform linear: constant velocity, zero acceleration, no net force.",
+      "shortcut": "UCM: a_c present; ULM: a = 0.",
+      "example": "Both need zero net force? No — UCM needs inward force."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the relation between angular and linear quantities.",
+      "answer": "For a point at radius r: s = rθ, v = rω, a_c = rα (tangential) and a_c(radial) = rω² = v²/r. Total a = √(a_t²+a_c²).",
+      "shortcut": "multiply the angular quantity by r.",
+      "example": "Edge of a 0.5 m wheel at 4 rad/s → v = 2 m/s."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain centripetal force and give three examples of its source.",
+      "answer": "Centripetal force is not a new force but the net inward force required for circular motion. Sources: string tension (whirled stone), gravity (planet orbit), normal/friction (car on a curve, banking).",
+      "shortcut": "F_c = mv²/r; whatever points inward.",
+      "example": "Moon: gravity is its centripetal force."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain the conical pendulum and derive its period.",
+      "answer": "A bob on a string sweeps a horizontal cone at angle θ. T cosθ = mg (vertical), T sinθ = mω²r (horizontal) with r = l sinθ. Dividing: g = ω²l cosθ → T = 2π√(lcosθ/g).",
+      "shortcut": "T = 2π√(lcosθ/g).",
+      "example": "Larger θ → shorter period."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T9. Explain why roads are banked on curves.",
+      "answer": "Banking provides part (or all, at design speed) of the centripetal force via the horizontal component of the normal reaction, reducing the reliance on friction. It improves safety at speed and lets a car take the curve without skidding.",
+      "shortcut": "Banking → inward N component → less friction needed.",
+      "example": "Races' corners are steeper (higher design speed)."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A 1 kg stone on a 1 m string is whirled at 3 m/s. Find the tension and the period.",
+      "answer": "T = mv²/r = 1×9/1 = 9 N. Period T_period = 2πr/v = 2π(1)/3 ≈ 2.09 s.",
+      "shortcut": "Tension = mv²/r; T_period = 2πr/v.",
+      "example": "≈ 9 N, 2.1 s."
+    }
+  ],
+  "formulas": [
+    "ω = dθ/dt ; a_c = v²/r = ω²r ; a_t = rα.",
+    "v = rω ; centripetal force F_c = mv²/r = mω²r.",
+    "Vertical circle min. speed at top = √(gr); at bottom = √(5gr).",
+    "Banking: tanθ = v²/(rg) ; conical pendulum T = 2π√(lcosθ/g)."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 6: CIRCULAR MOTION   Content Area: Mechanics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 6.1–6.2 Angular Quantities & Relations",
+    "Q1. Define angular displacement, angular velocity and angular acceleration.",
+    "Answer:  Angular displacement θ = arc/radius (rad). Angular velocity ω = dθ/dt (rad s⁻¹). Angular acceleration α = dω/dt (rad s⁻²).",
+    "⚡ Shortcut:  θ(rad)=s/r ; ω=v/r ; α=a_t/r.",
+    "Example:  One full turn: θ=2π rad, ω=2π/T.",
+    "Q2. Relate linear and angular quantities for a body moving in a circle.",
+    "Answer:  v = rω, centripetal (radial) acceleration a_c = rω² = v²/r, tangential acceleration a_t = rα. Total acceleration a = √(a_c²+a_t²).",
+    "⚡ Shortcut:  multiply the angular quantity by r to get the linear one.",
+    "Example:  r=0.5 m, ω=4 rad/s → v=2 m/s, a_c=8 m/s².",
+    "Q3. Show that the period T and angular velocity are related by ω = 2π/T.",
+    "Answer:  In one period the body covers 2π rad, so ω = (2π rad)/(T s) = 2π/T. Also f = 1/T, so ω = 2πf.",
+    "⚡ Shortcut:  ω = 2π/T = 2πf.",
+    "Example:  T=0.5 s → ω = 4π rad/s.",
+    "▥ 6.1–6.2 Angular Quantities & Relations  —  Compare / Contrast Tables",
+    "Linear vs Angular Quantities",
+    "▣ 6.3–6.4 Centripetal Acceleration & Force",
+    "Q4. Define centripetal acceleration and give its magnitude and direction.",
+    "Answer:  Centripetal acceleration is the radial acceleration toward the centre of the circular path: a_c = v²/r = ω²r, always directed toward the centre (perpendicular to velocity).",
+    "⚡ Shortcut:  a_c = v²/r, inward; no 'centrifugal' in an inertial frame.",
+    "Example:  r=2 m, v=4 m/s → a_c = 8 m/s² toward the centre.",
+    "Q5. Define centripetal force. Give three examples.",
+    "Answer:  Centripetal force is the net inward force required for circular motion: F_c = mv²/r = mω²r. Examples: tension of a string (whirl), gravity (satellite), normal reaction on a banked road, static friction on a car turning.",
+    "⚡ Shortcut:  F_c = mv²/r; whatever supplies it counts.",
+    "Example:  Moon's centripetal force is Earth's gravity.",
+    "Q6. A stone (m=0.5 kg) on a 1 m string is whirled at 4 m/s. Find the tension.",
+    "Answer:  T = mv²/r = 0.5×16/1 = 8 N (at the horizontal position).",
+    "⚡ Shortcut:  T = mv²/r.",
+    "Example:  ≈ 8 N tension.",
+    "▥ 6.3–6.4 Centripetal Acceleration & Force  —  Compare / Contrast Tables",
+    "Centripetal vs Centrifugal",
+    "▣ 6.7 Conical Pendulum",
+    "Q7. Explain a conical pendulum and derive T = 2π√(lcosθ/g).",
+    "Answer:  A bob on a string describes a horizontal cone with the string at angle θ to the vertical. Vertical balance Tcosθ = mg; horizontal Tsinθ = mω²r with r = l sinθ. Dividing: g/tanθ = ω²l → ω² = g/(lcosθ), so T = 2π√(lcosθ/g).",
+    "⚡ Shortcut:  T = 2π√(lcosθ/g).",
+    "Example:  Larger θ → shorter period.",
+    "Q8. What provides the centripetal force in a conical pendulum?",
+    "Answer:  The horizontal component of the string tension, T sinθ, provides the centripetal force; the vertical component T cosθ balances the weight.",
+    "⚡ Shortcut:  Tsinθ = mω²r ; Tcosθ = mg.",
+    "Example:  The bob sweeps a cone, like a lighthouse.",
+    "Q9. A conical pendulum of length 1 m makes θ = 60°. Find its period.",
+    "Answer:  T = 2π√(lcosθ/g) = 2π√(1×0.5/9.8) = 2π√(0.051) ≈ 2π×0.226 ≈ 1.42 s.",
+    "⚡ Shortcut:  T = 2π√(lcosθ/g).",
+    "Example:  ≈ 1.4 s.",
+    "▥ 6.7 Conical Pendulum  —  Compare / Contrast Tables",
+    "Conical Pendulum vs Simple Pendulum",
+    "▣ 6.8 Motion in a Vertical Circle",
+    "Q10. Find the minimum speed of a body at the top of a vertical circle.",
+    "Answer:  At the top, tension + mg provide centripetal force. For the limiting case T=0: mg = mv²/r → v_top = √(gr). This is the minimum speed to complete the loop.",
+    "⚡ Shortcut:  v_top(min) = √(gr).",
+    "Example:  r=2 m → √(19.6) ≈ 4.4 m/s at the top.",
+    "Q11. Find the minimum speed at the bottom to complete the vertical circle.",
+    "Answer:  Using energy between top (v_top=√gr) and bottom: ½mv_b² = ½mv_t² + mg(2r) → v_b = √(5gr).",
+    "⚡ Shortcut:  v_bottom(min) = √(5gr).",
+    "Example:  r=2 m → √(98) ≈ 9.9 m/s.",
+    "Q12. Explain why a ball tied to a string cannot complete a vertical circle below v_bottom = √(5gr).",
+    "Answer:  To keep the string taut at the top requires v_top ≥ √gr. Energy then gives the corresponding bottom speed; below √(5gr) the top condition fails and the string goes slack before the top.",
+    "⚡ Shortcut:  Need ≥√(5gr) at bottom to finish the loop.",
+    "Example:  Swing riders must be fast enough at the bottom.",
+    "▥ 6.8 Motion in a Vertical Circle  —  Compare / Contrast Tables",
+    "Vertical Circle: Tension Chart",
+    "▣ 6.9 Banking of Roads",
+    "Q13. Derive the ideal banking angle tanθ = v²/(rg).",
+    "Answer:  On a banked road with no friction, the horizontal component of the normal reaction provides centripetal force: Nsinθ = mv²/r and Ncosθ = mg. Dividing: tanθ = v²/(rg).",
+    "⚡ Shortcut:  tanθ = v²/(rg) — no friction needed at ideal speed.",
+    "Example:  r=50 m, v=20 m/s → tanθ = 400/490 ≈ 0.82 → θ ≈ 39°.",
+    "Q14. Why are roads banked on curves?",
+    "Answer:  Banking supplies part (or all, at the design speed) of the centripetal force via the horizontal component of the normal reaction, reducing reliance on friction and improving safety at higher speeds.",
+    "⚡ Shortcut:  Tilt so that N has an inward component.",
+    "Example:  Races' corners are steeper (higher design speed).",
+    "Q15. A car on a 40 m radius curve is banked at θ with v = 15 m/s. Find θ.",
+    "Answer:  tanθ = v²/(rg) = 225/(40×9.8) = 0.574 → θ = tan⁻¹(0.574) ≈ 30°.",
+    "⚡ Shortcut:  θ = tan⁻¹(v²/rg).",
+    "Example:  ≈ 30° banking.",
+    "▥ 6.9 Banking of Roads  —  Compare / Contrast Tables",
+    "Banked vs Unbanked Curve",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the centripetal acceleration and force.",
+    "Answer:  A point moving in a circle of radius r with speed v changes direction by dθ in time dt; the velocity vector turns, giving a radial acceleration a = v dθ/dt = vω = v²/r = ω²r, toward the centre. Force F = ma = mv²/r.",
+    "⚡ Short / exam line:  a_c = v²/r = ω²r (inward); F_c = mv²/r.",
+    "Example:  Tension in a string provides F_c for a whirled object.",
+    "[Derive] T2. Derive the minimum speed at the top and bottom of a vertical circle.",
+    "Answer:  At the top, T + mg = mv²/r; minimum when T = 0 → v_top = √(gr). Energy from bottom to top: ½mv_b² = ½mv_t² + 2mgr → v_bottom = √(5gr).",
+    "⚡ Short / exam line:  v_top=√gr ; v_bottom=√5gr.",
+    "Example:  A roller-coaster must keep the string/track taut.",
+    "[Derive] T3. Derive the condition for the ideal banking angle tanθ = v²/rg.",
+    "Answer:  On a banked road with no friction, N sinθ = mv²/r (inward) and N cosθ = mg. Dividing: tanθ = v²/(rg). At this angle, the required centripetal force is fully supplied by the road normal, so no friction is needed.",
+    "⚡ Short / exam line:  tanθ = v²/(rg).",
+    "Example:  For a 40 m radius and 15 m/s, θ ≈ 30°.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T4. Define angular displacement, angular velocity and angular acceleration with units.",
+    "Answer:  θ (rad); ω = dθ/dt (rad/s); α = dω/dt (rad/s²). One revolution = 2π rad; ω = 2π/T = 2πf.",
+    "⚡ Short / exam line:  θ, ω, α.",
+    "Example:  60 rev/min = 2π rad × 1/... = 6.28 rad/s.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T5. Compare uniform circular motion and uniform linear motion.",
+    "Answer:  Uniform circular: speed constant but velocity changes (direction), so there is a centripetal acceleration; needs a centripetal force. Uniform linear: constant velocity, zero acceleration, no net force.",
+    "⚡ Short / exam line:  UCM: a_c present; ULM: a = 0.",
+    "Example:  Both need zero net force? No — UCM needs inward force.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T6. Explain the relation between angular and linear quantities.",
+    "Answer:  For a point at radius r: s = rθ, v = rω, a_c = rα (tangential) and a_c(radial) = rω² = v²/r. Total a = √(a_t²+a_c²).",
+    "⚡ Short / exam line:  multiply the angular quantity by r.",
+    "Example:  Edge of a 0.5 m wheel at 4 rad/s → v = 2 m/s.",
+    "[Explain] T7. Explain centripetal force and give three examples of its source.",
+    "Answer:  Centripetal force is not a new force but the net inward force required for circular motion. Sources: string tension (whirled stone), gravity (planet orbit), normal/friction (car on a curve, banking).",
+    "⚡ Short / exam line:  F_c = mv²/r; whatever points inward.",
+    "Example:  Moon: gravity is its centripetal force.",
+    "[Explain] T8. Explain the conical pendulum and derive its period.",
+    "Answer:  A bob on a string sweeps a horizontal cone at angle θ. T cosθ = mg (vertical), T sinθ = mω²r (horizontal) with r = l sinθ. Dividing: g = ω²l cosθ → T = 2π√(lcosθ/g).",
+    "⚡ Short / exam line:  T = 2π√(lcosθ/g).",
+    "Example:  Larger θ → shorter period.",
+    "[Explain] T9. Explain why roads are banked on curves.",
+    "Answer:  Banking provides part (or all, at design speed) of the centripetal force via the horizontal component of the normal reaction, reducing the reliance on friction. It improves safety at speed and lets a car take the curve without skidding.",
+    "⚡ Short / exam line:  Banking → inward N component → less friction needed.",
+    "Example:  Races' corners are steeper (higher design speed).",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A 1 kg stone on a 1 m string is whirled at 3 m/s. Find the tension and the period.",
+    "Answer:  T = mv²/r = 1×9/1 = 9 N. Period T_period = 2πr/v = 2π(1)/3 ≈ 2.09 s.",
+    "⚡ Short / exam line:  Tension = mv²/r; T_period = 2πr/v.",
+    "Example:  ≈ 9 N, 2.1 s.",
+    "★ Quick-formula memos (this unit)",
+    "ω = dθ/dt ; a_c = v²/r = ω²r ; a_t = rα.",
+    "v = rω ; centripetal force F_c = mv²/r = mω²r.",
+    "Vertical circle min. speed at top = √(gr); at bottom = √(5gr).",
+    "Banking: tanθ = v²/(rg) ; conical pendulum T = 2π√(lcosθ/g)."
+  ]
+}

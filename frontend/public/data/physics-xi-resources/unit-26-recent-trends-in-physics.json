@@ -1,0 +1,576 @@
+{
+  "unitNo": 26,
+  "unitId": "recent-trends-in-physics",
+  "unitName": "Recent Trends in Physics",
+  "contentArea": "Modern Physics",
+  "docxFileName": "Physics_XI_Unit_26_recent-trends.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_26_recent-trends.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 26: RECENT TRENDS IN PHYSICS   Content Area: Modern Physics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 143,
+    "tableCount": 6,
+    "questionCount": 15,
+    "theoryCount": 15,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Particle",
+        "Antiparticle",
+        "Charge",
+        "Mass"
+      ],
+      "rows": [
+        [
+          "Electron e⁻",
+          "Positron e⁺",
+          "−1",
+          "Equal"
+        ],
+        [
+          "Proton p",
+          "Antiproton p̄",
+          "+1",
+          "Equal"
+        ],
+        [
+          "Neutron n",
+          "Antineutron n̄",
+          "0",
+          "Equal"
+        ],
+        [
+          "Photon γ",
+          "Itself",
+          "0",
+          "0"
+        ],
+        [
+          "Matter + antimatter",
+          "Annihilate on contact",
+          "—",
+          "→ photons"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Type",
+        "Members",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Baryon",
+          "3 quarks (baryon number +1)",
+          "Proton udu, neutron udd"
+        ],
+        [
+          "Meson",
+          "quark–antiquark (B = 0)",
+          "Pion u d̄, kaon s q̄"
+        ],
+        [
+          "Lepton",
+          "Not a hadron (no strong force)",
+          "e, μ, ν"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Observation",
+        "Prediction / support"
+      ],
+      "rows": [
+        [
+          "Redshift of distant galaxies",
+          "Universe expanding (Hubble–Lemaitre)"
+        ],
+        [
+          "CMB (2.725 K)",
+          "Remnant thermal glow after recombination"
+        ],
+        [
+          "Abundance of H/He (~75/25 %)",
+          "Predicted by Big-Bang nucleosynthesis"
+        ],
+        [
+          "Hubble law v = H₀ d",
+          "d = 3×10⁸ ly, H₀ ≈ 70 km/s/Mpc"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Value / formula"
+      ],
+      "rows": [
+        [
+          "Hubble–Lemaitre",
+          "v = H₀ d (redshift ∝ distance)"
+        ],
+        [
+          "H₀ (rough)",
+          "≈ 70 km/s per Mpc"
+        ],
+        [
+          "Age estimate",
+          "t ≈ 1/H₀ ≈ 14 Gyr"
+        ],
+        [
+          "CMB temperature",
+          "2.725 K today"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Object",
+        "Mass limit",
+        "Radius / size",
+        "Physics"
+      ],
+      "rows": [
+        [
+          "White dwarf",
+          "< 1.4 M☉ (Chandrasekhar)",
+          "~ Earth-size",
+          "Electron degeneracy pressure"
+        ],
+        [
+          "Neutron star",
+          "1.4–3 M☉",
+          "~ 10 km",
+          "Neutron degeneracy; strong fields"
+        ],
+        [
+          "Black hole",
+          "> ~3 M☉",
+          "R_s = 2GM/c² (event horizon)",
+          "Gravity overwhelms all pressure"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "GW",
+        "EM"
+      ],
+      "rows": [
+        [
+          "Carries",
+          "Spacetime curvature (ripples)",
+          "Electric & magnetic fields"
+        ],
+        [
+          "Speed",
+          "c",
+          "c (in vacuum)"
+        ],
+        [
+          "Sources",
+          "Merger of compact binaries",
+          "Accelerating charges, atoms, stars"
+        ],
+        [
+          "Detected by",
+          "LIGO/Virgo/KAGRA (strain ~10⁻²¹)",
+          "Radio, visible, gamma-ray telescopes"
+        ],
+        [
+          "Mass?",
+          "Gravitational energy only",
+          "Photon mass = 0 (massless but carries E=hf)"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. List the families (generations) of fundamental particles.",
+      "answer": "Matter particles (fermions, spin ½) come in three generations: quarks (u,d / c,s / t,b) and leptons (e,ν_e / μ,ν_μ / τ,ν_τ); plus their antiparticles. Force carriers (bosons, spin 1): photon, gluons, W/Z; and the Higgs (spin 0).",
+      "shortcut": "3 generations × (quark, lepton) + antiparticles + force carriers.",
+      "example": "Generation 1: u,d, e, ν_e (the everyday particles)."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Define a quark and distinguish baryons from mesons.",
+      "answer": "Quarks are fundamental fermions carrying colour charge that combine into hadrons. Baryons = 3 quarks (e.g. proton uud, neutron udd); mesons = quark + antiquark (e.g. pion u d̄). They are held by the strong (colour) force.",
+      "shortcut": "Baryon = qqq ; Meson = q q̄.",
+      "example": "Proton (uud), neutron (udd), pion (u d̄)."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. What is an antiparticle and how does it differ from its particle?",
+      "answer": "An antiparticle has the same mass and spin but opposite charge (and opposite internal quantum numbers). E.g. positron has charge +e, anti-neutrino is distinct. Particle + antiparticle can annihilate into photons.",
+      "shortcut": "Same mass, opposite charge; e⁺ is antiparticle of e⁻.",
+      "example": "Matter–antimatter annihilation releases energy."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Explain lepton number and its conservation.",
+      "answer": "Leptons (e, μ, τ, ν) have lepton number +1, antileptons −1. Lepton number is conserved in interactions; e.g. in beta decay an electron (L=1) is accompanied by an anti-electron-neutrino (L=−1), net 0.",
+      "shortcut": "L: leptons +1, antileptons −1; conserved.",
+      "example": "n → p + e⁻ + ν̄_e conserves lepton number."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. What are the fundamental forces and their carrier particles?",
+      "answer": "Four: Strong (gluons, quarks), Electromagnetic (photon, charge), Weak (W/Z, beta decay), Gravitational (graviton, hypothetical, mass). The first three are described by quantum gauge theories; gravity by general relativity (classical). ▥ 26.1 Particle Physics & Antiparticles  —  Compare / Contrast Tables Particle vs Antiparticle (quick pairs) Hadron Classification ▣ 26.2 The Universe, Big Bang & Hubble's Law",
+      "shortcut": "Strong=gluon, EM=photon, Weak=W/Z, Gravity=graviton.",
+      "example": "Fusion involves the strong (binding) & weak (flavour change) forces."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. State Hubble's law and what it implies.",
+      "answer": "Hubble's law: recession velocity v = H₀ d (v proportional to distance d, H₀ ≈ 70 km/s/Mpc). It implies the universe is expanding — distant galaxies recede faster because the space between us and them has stretched more.",
+      "shortcut": "v = H₀d ; farther → faster → expansion.",
+      "example": "A galaxy twice as far recedes twice as fast."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Explain redshift and its use as evidence for the Big Bang.",
+      "answer": "Light from receding galaxies is stretched to longer (redder) wavelengths. The observed redshift of most galaxies (and the cosmic microwave background) supports an early hot, dense state that has been expanding since the Big Bang ~13.8 billion years ago.",
+      "shortcut": "Recession → redshift; CMB + redshift → Big Bang.",
+      "example": "The CMB is the afterglow of the hot early universe."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. State what 'dark matter' is and how it is inferred.",
+      "answer": "Dark matter is a non-luminous mass inferred from galaxy rotation curves (stars orbit faster than visible mass explains), gravitational lensing, and the CMB anisotropies; it does not emit/absorb light, only gravitates, and makes up ~27% of the universe's mass-energy.",
+      "shortcut": "Invisible mass; extra gravitational pull; ~27% of the universe.",
+      "example": "Galaxy halos extend far beyond the visible disk."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Describe the Big Bang model briefly.",
+      "answer": "The universe began ~13.8 Gyr ago from an extremely hot, dense state and has been expanding and cooling since; the CMB (3 K now) is the relic radiation, and light elements (H, He) formed in the first minutes. It is supported by Hubble expansion, CMB and element abundances. ▥ 26.2 The Universe, Big Bang & Hubble's Law  —  Compare / Contrast Tables Big Bang: Evidence Table Hubble's Law & the Expansion of the Universe Black Hole vs Neutron Star vs White Dwarf Gravitational Waves vs Electromagnetic Waves ▣ Black Holes & Gravitational Waves",
+      "shortcut": "Hot dense start → expansion + cooling; CMB = relic.",
+      "example": "The CMB is the oldest light we can observe."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Define a black hole and find the Schwarzschild radius.",
+      "answer": "A black hole is a region from which nothing, not even light, can escape; its boundary is the event horizon. For a non-rotating mass M, the Schwarzschild radius r_s = 2GM/c². Inside r_s the escape velocity exceeds c.",
+      "shortcut": "r_s = 2GM/c² ; v_esc = c at r_s.",
+      "example": "For the Sun, r_s ≈ 3 km; a black hole has this radius."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. What is the escape velocity at a black hole's horizon and why is it c?",
+      "answer": "At the Schwarzschild radius, the escape velocity equals the speed of light c, so not even light can escape; this defines the event horizon. Objects crossing it cannot return (classically).",
+      "shortcut": "v_esc(r_s) = c → event horizon.",
+      "example": "A star collapsing inside r_s becomes a black hole."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Explain gravitational waves and how they were detected.",
+      "answer": "Gravitational waves are ripples in spacetime curvature produced by accelerating masses with a changing quadrupole moment (e.g. two orbiting black holes merging). LIGO detected them (2015) as tiny, time-varying stretches in the lengths of two perpendicular laser arms, matching the predicted chirp signal.",
+      "shortcut": "Ripples in spacetime; LIGO measures arm-length changes.",
+      "example": "Merging black-hole 'chirp' observed in 2015."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. How do black-hole mergers produce gravitational waves?",
+      "answer": "Two black holes spiral inward, radiating gravitational waves (quadrupole), losing orbital energy and angular momentum; the final merger and ringdown emit a characteristic chirp that carries the mass and spin information of the system.",
+      "shortcut": "Inspiral → merger → ringdown chirp; energy radiated as GWs.",
+      "example": "The 2015 GW150914 event was two ~30 M⊙ black holes."
+    },
+    {
+      "type": "neb",
+      "question": "Q14. What is the Hawking effect of a black hole (qualitatively)?",
+      "answer": "Quantum effects near the horizon allow a black hole to emit thermal (Hawking) radiation, slowly losing mass and eventually evaporating (for sufficiently small ones); the temperature is inversely proportional to its mass, so large black holes are extremely cold.",
+      "shortcut": "Black hole radiates; T ∝ 1/M (smaller = hotter).",
+      "example": "A stellar black hole is colder than the CMB."
+    },
+    {
+      "type": "neb",
+      "question": "Q15. Explain the role of CMB anisotropies in cosmology.",
+      "answer": "Tiny temperature variations in the 3 K CMB map the density fluctuations in the early universe; these grew into the galaxies and large-scale structure we see today, and their pattern constrains cosmological parameters (composition, age, curvature). PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "CMB spots → seed structure; test cosmological parameters.",
+      "example": "COBE/WMAP/Planck measured these anisotropies."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T1. Explain the classification of fundamental particles (quarks and leptons).",
+      "answer": "Quarks (6 flavours: u,d,c,s,t,b) carry colour charge and combine into hadrons: baryons (3 quarks, e.g. proton uud, neutron udd) and mesons (quark + antiquark, e.g. pion u d̄). Leptons (e, μ, τ and their neutrinos ν_e, ν_μ, ν_τ) feel only weak and EM forces (not the strong force). They come in three generations, plus antiparticles.",
+      "shortcut": "Quarks (hadrons) + leptons; 3 generations + antiparticles.",
+      "example": "The everyday particles (e, u, d) are generation 1."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T2. Explain antiparticles and matter–antimatter annihilation.",
+      "answer": "Every particle has an antiparticle of the same mass and spin but opposite charge and internal quantum numbers (e.g. positron e⁺, anti-neutrino). When a particle meets its antiparticle, they annihilate into photons (energy), converting their mass via E = mc². This is the basis of PET imaging.",
+      "shortcut": "Same mass, opposite charge; e⁺ is antiparticle of e⁻.",
+      "example": "Matter–antimatter annihilation releases energy as photons."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T3. Explain the four fundamental forces and their carriers.",
+      "answer": "Strong (gluons, holds quarks together in hadrons/nuclei), Electromagnetic (photons, between charges), Weak (W/Z bosons, beta decay and flavour change), and Gravitational (graviton, hypothetical, between mass). The first three are described by quantum gauge theories; gravity is classical (general relativity) at this scale.",
+      "shortcut": "Strong=gluon, EM=photon, Weak=W/Z, Gravity=graviton.",
+      "example": "Fusion involves strong (binding) and weak (flavour change) forces."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain lepton number and its conservation in beta decay.",
+      "answer": "Leptons (e, μ, τ, ν) have lepton number +1; antileptons −1. Lepton number is conserved in every interaction. In beta-minus decay, a neutron decays into a proton, an electron (L=+1) and an anti-electron-neutrino (L=−1), giving net lepton number 0 both before and after.",
+      "shortcut": "L: leptons +1, antileptons −1; conserved.",
+      "example": "n → p + e⁻ + ν̄_e conserves lepton number."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the Big Bang model and its supporting evidence.",
+      "answer": "The universe began ~13.8 billion years ago from an extremely hot, dense state and has been expanding and cooling since. Evidence: Hubble expansion (galaxies recede with v = H₀d), the cosmic microwave background (3 K relic radiation), and the abundance of light elements (H, He) formed in the first minutes.",
+      "shortcut": "Hot dense start → expansion + cooling; CMB + expansion + elements.",
+      "example": "The CMB is the oldest light we can observe."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain Hubble's law and what it implies about the universe.",
+      "answer": "Hubble's law: a galaxy's recession velocity is proportional to its distance, v = H₀d (H₀ ≈ 70 km/s/Mpc). This means the space between distant galaxies is stretching — the farther a galaxy is, the faster it recedes — the signature of a uniformly expanding universe.",
+      "shortcut": "v = H₀d ; farther → faster → expansion.",
+      "example": "A galaxy twice as far recedes twice as fast."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain redshift and its role as evidence for the expanding universe.",
+      "answer": "Light from receding galaxies is stretched to longer (redder) wavelengths; the farther a galaxy is, the larger its redshift. The observed redshift of most galaxies, together with the CMB, supports an early hot, dense state that has been expanding since the Big Bang.",
+      "shortcut": "Recession → redshift; more redshift = farther = faster.",
+      "example": "The CMB is the afterglow of the hot early universe."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain dark matter and how it is inferred.",
+      "answer": "Dark matter is non-luminous mass inferred from its gravity: galaxy rotation curves (stars orbit faster than visible mass alone explains), gravitational lensing, and CMB anisotropies. It does not emit or absorb light, only gravitates, and makes up about 27% of the universe's mass-energy. It cannot be ordinary (baryonic) matter.",
+      "shortcut": "Invisible mass; extra gravity; ~27% of the universe.",
+      "example": "Galaxy halos extend far beyond the visible disk."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T9. Explain a black hole and the event horizon.",
+      "answer": "A black hole is a region of spacetime from which nothing, not even light, can escape; its boundary is the event horizon, at the Schwarzschild radius r_s = 2GM/c². Inside r_s the escape velocity exceeds c, so anything crossing it cannot return (classically). A mass that collapses inside its r_s becomes a black hole.",
+      "shortcut": "r_s = 2GM/c² ; v_esc = c at r_s.",
+      "example": "For the Sun, r_s ≈ 3 km; a black hole is a mass inside its r_s."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T10. Explain gravitational waves and how LIGO detected them.",
+      "answer": "Gravitational waves are ripples in spacetime produced by accelerating masses with a changing quadrupole moment (e.g. two orbiting black holes merging). LIGO detected them (2015) as tiny, time-varying changes in the lengths of two perpendicular laser arms, matching the predicted 'chirp' signal of a merger.",
+      "shortcut": "Ripples in spacetime; LIGO measures arm-length changes.",
+      "example": "The 2015 GW150914 event was two ~30 solar-mass black holes merging."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T11. Explain how black-hole mergers produce gravitational waves.",
+      "answer": "Two black holes spiral inward, radiating gravitational waves that carry away orbital energy and angular momentum; the inspiral, merger and ringdown produce a characteristic chirp whose frequency and amplitude encode the masses and spins of the system. These waves stretch and squeeze space as they pass.",
+      "shortcut": "Inspiral → merger → ringdown chirp; energy radiated as GWs.",
+      "example": "GW150914: two ~30 M⊙ black holes inspiral and merge."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T12. Explain Hawking radiation qualitatively.",
+      "answer": "Quantum effects near the horizon allow a black hole to emit thermal (Hawking) radiation, slowly losing mass and, for a sufficiently small black hole, eventually evaporating. The Hawking temperature is inversely proportional to the mass, so large black holes are extremely cold (colder than the CMB) and evaporation is negligibly slow.",
+      "shortcut": "T_H ∝ 1/M ; small = hot, large = cold.",
+      "example": "A stellar black hole is colder than the CMB (2.7 K)."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T13. Explain the role of CMB anisotropies in cosmology.",
+      "answer": "Tiny temperature variations in the ~3 K CMB map the density fluctuations in the early universe; these grew into the galaxies and large-scale structure we see today. Their pattern (power spectrum) constrains cosmological parameters such as composition, age and curvature of the universe.",
+      "shortcut": "CMB spots → seed structure; test cosmological parameters.",
+      "example": "COBE/WMAP/Planck measured these anisotropies."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T14. Professor: 'What is the difference between dark matter and dark energy?'",
+      "answer": "Dark matter gravitates and clumps (holding galaxies together); it makes up ~27% of the universe. Dark energy is a smooth, non-clumping component that drives the accelerated expansion of the universe; it makes up ~68% and behaves like a positive cosmological constant (vacuum energy).",
+      "shortcut": "Dark matter: clumps, 27% ; Dark energy: smooth, 68%, drives expansion.",
+      "example": "Dark energy's pressure sign is negative."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T15. Estimate the Schwarzschild radius of a 10 solar-mass black hole (M⊙ = 2×10³⁰ kg, G = 6.67×10⁻¹¹, c = 3×10⁸).",
+      "answer": "r_s = 2GM/c² = 2(6.67×10⁻¹¹)(10×2×10³⁰)/(9×10¹⁶) = (2.668×10²¹)/(9×10¹⁶) ≈ 2.96×10⁴ m ≈ 30 km.",
+      "shortcut": "r_s = 2GM/c² ; 1 M⊙ ≈ 3 km → 10 M⊙ ≈ 30 km.",
+      "example": "≈ 30 km event-horizon radius."
+    }
+  ],
+  "formulas": [
+    "Quarks: 6 flavors; hadrons = baryons (3 quarks) & mesons (quark+antiquark).",
+    "Leptons: e, μ, τ + neutrinos (weak/EM only, no strong).",
+    "Hubble: v = H₀d ; Redshift of distant galaxies → expanding universe.",
+    "Black hole: horizon at r_s = 2GM/c² ; gravitational waves: ripples in spacetime."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 26: RECENT TRENDS IN PHYSICS   Content Area: Modern Physics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 26.1 Particle Physics & Antiparticles",
+    "Q1. List the families (generations) of fundamental particles.",
+    "Answer:  Matter particles (fermions, spin ½) come in three generations: quarks (u,d / c,s / t,b) and leptons (e,ν_e / μ,ν_μ / τ,ν_τ); plus their antiparticles. Force carriers (bosons, spin 1): photon, gluons, W/Z; and the Higgs (spin 0).",
+    "⚡ Shortcut:  3 generations × (quark, lepton) + antiparticles + force carriers.",
+    "Example:  Generation 1: u,d, e, ν_e (the everyday particles).",
+    "Q2. Define a quark and distinguish baryons from mesons.",
+    "Answer:  Quarks are fundamental fermions carrying colour charge that combine into hadrons. Baryons = 3 quarks (e.g. proton uud, neutron udd); mesons = quark + antiquark (e.g. pion u d̄). They are held by the strong (colour) force.",
+    "⚡ Shortcut:  Baryon = qqq ; Meson = q q̄.",
+    "Example:  Proton (uud), neutron (udd), pion (u d̄).",
+    "Q3. What is an antiparticle and how does it differ from its particle?",
+    "Answer:  An antiparticle has the same mass and spin but opposite charge (and opposite internal quantum numbers). E.g. positron has charge +e, anti-neutrino is distinct. Particle + antiparticle can annihilate into photons.",
+    "⚡ Shortcut:  Same mass, opposite charge; e⁺ is antiparticle of e⁻.",
+    "Example:  Matter–antimatter annihilation releases energy.",
+    "Q4. Explain lepton number and its conservation.",
+    "Answer:  Leptons (e, μ, τ, ν) have lepton number +1, antileptons −1. Lepton number is conserved in interactions; e.g. in beta decay an electron (L=1) is accompanied by an anti-electron-neutrino (L=−1), net 0.",
+    "⚡ Shortcut:  L: leptons +1, antileptons −1; conserved.",
+    "Example:  n → p + e⁻ + ν̄_e conserves lepton number.",
+    "Q5. What are the fundamental forces and their carrier particles?",
+    "Answer:  Four: Strong (gluons, quarks), Electromagnetic (photon, charge), Weak (W/Z, beta decay), Gravitational (graviton, hypothetical, mass). The first three are described by quantum gauge theories; gravity by general relativity (classical).",
+    "⚡ Shortcut:  Strong=gluon, EM=photon, Weak=W/Z, Gravity=graviton.",
+    "Example:  Fusion involves the strong (binding) & weak (flavour change) forces.",
+    "▥ 26.1 Particle Physics & Antiparticles  —  Compare / Contrast Tables",
+    "Particle vs Antiparticle (quick pairs)",
+    "Hadron Classification",
+    "▣ 26.2 The Universe, Big Bang & Hubble's Law",
+    "Q6. State Hubble's law and what it implies.",
+    "Answer:  Hubble's law: recession velocity v = H₀ d (v proportional to distance d, H₀ ≈ 70 km/s/Mpc). It implies the universe is expanding — distant galaxies recede faster because the space between us and them has stretched more.",
+    "⚡ Shortcut:  v = H₀d ; farther → faster → expansion.",
+    "Example:  A galaxy twice as far recedes twice as fast.",
+    "Q7. Explain redshift and its use as evidence for the Big Bang.",
+    "Answer:  Light from receding galaxies is stretched to longer (redder) wavelengths. The observed redshift of most galaxies (and the cosmic microwave background) supports an early hot, dense state that has been expanding since the Big Bang ~13.8 billion years ago.",
+    "⚡ Shortcut:  Recession → redshift; CMB + redshift → Big Bang.",
+    "Example:  The CMB is the afterglow of the hot early universe.",
+    "Q8. State what 'dark matter' is and how it is inferred.",
+    "Answer:  Dark matter is a non-luminous mass inferred from galaxy rotation curves (stars orbit faster than visible mass explains), gravitational lensing, and the CMB anisotropies; it does not emit/absorb light, only gravitates, and makes up ~27% of the universe's mass-energy.",
+    "⚡ Shortcut:  Invisible mass; extra gravitational pull; ~27% of the universe.",
+    "Example:  Galaxy halos extend far beyond the visible disk.",
+    "Q9. Describe the Big Bang model briefly.",
+    "Answer:  The universe began ~13.8 Gyr ago from an extremely hot, dense state and has been expanding and cooling since; the CMB (3 K now) is the relic radiation, and light elements (H, He) formed in the first minutes. It is supported by Hubble expansion, CMB and element abundances.",
+    "⚡ Shortcut:  Hot dense start → expansion + cooling; CMB = relic.",
+    "Example:  The CMB is the oldest light we can observe.",
+    "▥ 26.2 The Universe, Big Bang & Hubble's Law  —  Compare / Contrast Tables",
+    "Big Bang: Evidence Table",
+    "Hubble's Law & the Expansion of the Universe",
+    "Black Hole vs Neutron Star vs White Dwarf",
+    "Gravitational Waves vs Electromagnetic Waves",
+    "▣ Black Holes & Gravitational Waves",
+    "Q10. Define a black hole and find the Schwarzschild radius.",
+    "Answer:  A black hole is a region from which nothing, not even light, can escape; its boundary is the event horizon. For a non-rotating mass M, the Schwarzschild radius r_s = 2GM/c². Inside r_s the escape velocity exceeds c.",
+    "⚡ Shortcut:  r_s = 2GM/c² ; v_esc = c at r_s.",
+    "Example:  For the Sun, r_s ≈ 3 km; a black hole has this radius.",
+    "Q11. What is the escape velocity at a black hole's horizon and why is it c?",
+    "Answer:  At the Schwarzschild radius, the escape velocity equals the speed of light c, so not even light can escape; this defines the event horizon. Objects crossing it cannot return (classically).",
+    "⚡ Shortcut:  v_esc(r_s) = c → event horizon.",
+    "Example:  A star collapsing inside r_s becomes a black hole.",
+    "Q12. Explain gravitational waves and how they were detected.",
+    "Answer:  Gravitational waves are ripples in spacetime curvature produced by accelerating masses with a changing quadrupole moment (e.g. two orbiting black holes merging). LIGO detected them (2015) as tiny, time-varying stretches in the lengths of two perpendicular laser arms, matching the predicted chirp signal.",
+    "⚡ Shortcut:  Ripples in spacetime; LIGO measures arm-length changes.",
+    "Example:  Merging black-hole 'chirp' observed in 2015.",
+    "Q13. How do black-hole mergers produce gravitational waves?",
+    "Answer:  Two black holes spiral inward, radiating gravitational waves (quadrupole), losing orbital energy and angular momentum; the final merger and ringdown emit a characteristic chirp that carries the mass and spin information of the system.",
+    "⚡ Shortcut:  Inspiral → merger → ringdown chirp; energy radiated as GWs.",
+    "Example:  The 2015 GW150914 event was two ~30 M⊙ black holes.",
+    "Q14. What is the Hawking effect of a black hole (qualitatively)?",
+    "Answer:  Quantum effects near the horizon allow a black hole to emit thermal (Hawking) radiation, slowly losing mass and eventually evaporating (for sufficiently small ones); the temperature is inversely proportional to its mass, so large black holes are extremely cold.",
+    "⚡ Shortcut:  Black hole radiates; T ∝ 1/M (smaller = hotter).",
+    "Example:  A stellar black hole is colder than the CMB.",
+    "Q15. Explain the role of CMB anisotropies in cosmology.",
+    "Answer:  Tiny temperature variations in the 3 K CMB map the density fluctuations in the early universe; these grew into the galaxies and large-scale structure we see today, and their pattern constrains cosmological parameters (composition, age, curvature).",
+    "⚡ Shortcut:  CMB spots → seed structure; test cosmological parameters.",
+    "Example:  COBE/WMAP/Planck measured these anisotropies.",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T1. Explain the classification of fundamental particles (quarks and leptons).",
+    "Answer:  Quarks (6 flavours: u,d,c,s,t,b) carry colour charge and combine into hadrons: baryons (3 quarks, e.g. proton uud, neutron udd) and mesons (quark + antiquark, e.g. pion u d̄). Leptons (e, μ, τ and their neutrinos ν_e, ν_μ, ν_τ) feel only weak and EM forces (not the strong force). They come in three generations, plus antiparticles.",
+    "⚡ Short / exam line:  Quarks (hadrons) + leptons; 3 generations + antiparticles.",
+    "Example:  The everyday particles (e, u, d) are generation 1.",
+    "[Explain] T2. Explain antiparticles and matter–antimatter annihilation.",
+    "Answer:  Every particle has an antiparticle of the same mass and spin but opposite charge and internal quantum numbers (e.g. positron e⁺, anti-neutrino). When a particle meets its antiparticle, they annihilate into photons (energy), converting their mass via E = mc². This is the basis of PET imaging.",
+    "⚡ Short / exam line:  Same mass, opposite charge; e⁺ is antiparticle of e⁻.",
+    "Example:  Matter–antimatter annihilation releases energy as photons.",
+    "[Explain] T3. Explain the four fundamental forces and their carriers.",
+    "Answer:  Strong (gluons, holds quarks together in hadrons/nuclei), Electromagnetic (photons, between charges), Weak (W/Z bosons, beta decay and flavour change), and Gravitational (graviton, hypothetical, between mass). The first three are described by quantum gauge theories; gravity is classical (general relativity) at this scale.",
+    "⚡ Short / exam line:  Strong=gluon, EM=photon, Weak=W/Z, Gravity=graviton.",
+    "Example:  Fusion involves strong (binding) and weak (flavour change) forces.",
+    "[Explain] T4. Explain lepton number and its conservation in beta decay.",
+    "Answer:  Leptons (e, μ, τ, ν) have lepton number +1; antileptons −1. Lepton number is conserved in every interaction. In beta-minus decay, a neutron decays into a proton, an electron (L=+1) and an anti-electron-neutrino (L=−1), giving net lepton number 0 both before and after.",
+    "⚡ Short / exam line:  L: leptons +1, antileptons −1; conserved.",
+    "Example:  n → p + e⁻ + ν̄_e conserves lepton number.",
+    "[Explain] T5. Explain the Big Bang model and its supporting evidence.",
+    "Answer:  The universe began ~13.8 billion years ago from an extremely hot, dense state and has been expanding and cooling since. Evidence: Hubble expansion (galaxies recede with v = H₀d), the cosmic microwave background (3 K relic radiation), and the abundance of light elements (H, He) formed in the first minutes.",
+    "⚡ Short / exam line:  Hot dense start → expansion + cooling; CMB + expansion + elements.",
+    "Example:  The CMB is the oldest light we can observe.",
+    "[Explain] T6. Explain Hubble's law and what it implies about the universe.",
+    "Answer:  Hubble's law: a galaxy's recession velocity is proportional to its distance, v = H₀d (H₀ ≈ 70 km/s/Mpc). This means the space between distant galaxies is stretching — the farther a galaxy is, the faster it recedes — the signature of a uniformly expanding universe.",
+    "⚡ Short / exam line:  v = H₀d ; farther → faster → expansion.",
+    "Example:  A galaxy twice as far recedes twice as fast.",
+    "[Explain] T7. Explain redshift and its role as evidence for the expanding universe.",
+    "Answer:  Light from receding galaxies is stretched to longer (redder) wavelengths; the farther a galaxy is, the larger its redshift. The observed redshift of most galaxies, together with the CMB, supports an early hot, dense state that has been expanding since the Big Bang.",
+    "⚡ Short / exam line:  Recession → redshift; more redshift = farther = faster.",
+    "Example:  The CMB is the afterglow of the hot early universe.",
+    "[Explain] T8. Explain dark matter and how it is inferred.",
+    "Answer:  Dark matter is non-luminous mass inferred from its gravity: galaxy rotation curves (stars orbit faster than visible mass alone explains), gravitational lensing, and CMB anisotropies. It does not emit or absorb light, only gravitates, and makes up about 27% of the universe's mass-energy. It cannot be ordinary (baryonic) matter.",
+    "⚡ Short / exam line:  Invisible mass; extra gravity; ~27% of the universe.",
+    "Example:  Galaxy halos extend far beyond the visible disk.",
+    "[Explain] T9. Explain a black hole and the event horizon.",
+    "Answer:  A black hole is a region of spacetime from which nothing, not even light, can escape; its boundary is the event horizon, at the Schwarzschild radius r_s = 2GM/c². Inside r_s the escape velocity exceeds c, so anything crossing it cannot return (classically). A mass that collapses inside its r_s becomes a black hole.",
+    "⚡ Short / exam line:  r_s = 2GM/c² ; v_esc = c at r_s.",
+    "Example:  For the Sun, r_s ≈ 3 km; a black hole is a mass inside its r_s.",
+    "[Explain] T10. Explain gravitational waves and how LIGO detected them.",
+    "Answer:  Gravitational waves are ripples in spacetime produced by accelerating masses with a changing quadrupole moment (e.g. two orbiting black holes merging). LIGO detected them (2015) as tiny, time-varying changes in the lengths of two perpendicular laser arms, matching the predicted 'chirp' signal of a merger.",
+    "⚡ Short / exam line:  Ripples in spacetime; LIGO measures arm-length changes.",
+    "Example:  The 2015 GW150914 event was two ~30 solar-mass black holes merging.",
+    "[Explain] T11. Explain how black-hole mergers produce gravitational waves.",
+    "Answer:  Two black holes spiral inward, radiating gravitational waves that carry away orbital energy and angular momentum; the inspiral, merger and ringdown produce a characteristic chirp whose frequency and amplitude encode the masses and spins of the system. These waves stretch and squeeze space as they pass.",
+    "⚡ Short / exam line:  Inspiral → merger → ringdown chirp; energy radiated as GWs.",
+    "Example:  GW150914: two ~30 M⊙ black holes inspiral and merge.",
+    "[Explain] T12. Explain Hawking radiation qualitatively.",
+    "Answer:  Quantum effects near the horizon allow a black hole to emit thermal (Hawking) radiation, slowly losing mass and, for a sufficiently small black hole, eventually evaporating. The Hawking temperature is inversely proportional to the mass, so large black holes are extremely cold (colder than the CMB) and evaporation is negligibly slow.",
+    "⚡ Short / exam line:  T_H ∝ 1/M ; small = hot, large = cold.",
+    "Example:  A stellar black hole is colder than the CMB (2.7 K).",
+    "[Explain] T13. Explain the role of CMB anisotropies in cosmology.",
+    "Answer:  Tiny temperature variations in the ~3 K CMB map the density fluctuations in the early universe; these grew into the galaxies and large-scale structure we see today. Their pattern (power spectrum) constrains cosmological parameters such as composition, age and curvature of the universe.",
+    "⚡ Short / exam line:  CMB spots → seed structure; test cosmological parameters.",
+    "Example:  COBE/WMAP/Planck measured these anisotropies.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T14. Professor: 'What is the difference between dark matter and dark energy?'",
+    "Answer:  Dark matter gravitates and clumps (holding galaxies together); it makes up ~27% of the universe. Dark energy is a smooth, non-clumping component that drives the accelerated expansion of the universe; it makes up ~68% and behaves like a positive cosmological constant (vacuum energy).",
+    "⚡ Short / exam line:  Dark matter: clumps, 27% ; Dark energy: smooth, 68%, drives expansion.",
+    "Example:  Dark energy's pressure sign is negative.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T15. Estimate the Schwarzschild radius of a 10 solar-mass black hole (M⊙ = 2×10³⁰ kg, G = 6.67×10⁻¹¹, c = 3×10⁸).",
+    "Answer:  r_s = 2GM/c² = 2(6.67×10⁻¹¹)(10×2×10³⁰)/(9×10¹⁶) = (2.668×10²¹)/(9×10¹⁶) ≈ 2.96×10⁴ m ≈ 30 km.",
+    "⚡ Short / exam line:  r_s = 2GM/c² ; 1 M⊙ ≈ 3 km → 10 M⊙ ≈ 30 km.",
+    "Example:  ≈ 30 km event-horizon radius.",
+    "★ Quick-formula memos (this unit)",
+    "Quarks: 6 flavors; hadrons = baryons (3 quarks) & mesons (quark+antiquark).",
+    "Leptons: e, μ, τ + neutrinos (weak/EM only, no strong).",
+    "Hubble: v = H₀d ; Redshift of distant galaxies → expanding universe.",
+    "Black hole: horizon at r_s = 2GM/c² ; gravitational waves: ripples in spacetime."
+  ]
+}

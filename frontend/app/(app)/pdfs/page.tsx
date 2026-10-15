@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { downloadFileName, pdfViewerHref } from "@/lib/pdf-src";
+import { PHYSICS_XI_UNIT_RESOURCES } from "@/lib/physics-xi-resources";
 
 type Kind = "pdf" | "html" | "md" | "docx";
 type Subject = "Biology" | "Physics" | "Chemistry" | "Mathematics";
@@ -210,6 +211,15 @@ const DOCS: Doc[] = [
     href: `${MAT_DIR}/physics-conceptual-question-bank.docx`,
     kind: "docx",
   },
+  ...PHYSICS_XI_UNIT_RESOURCES.map((r) => ({
+    key: `physics-xi-unit-${r.unitNo}`,
+    title: `Physics XI — Unit ${r.unitNo}: ${r.unitName}`,
+    subject: "Physics" as Subject,
+    topic: `Unit ${r.unitNo} · ${r.contentArea}`,
+    description: `${r.titleBlock.subtitle} (${r.stats.questionCount} questions, ${r.stats.tableCount} compare tables, ${r.stats.theoryCount} theory items).`,
+    href: r.docxUrl,
+    kind: "docx" as Kind,
+  })),
 
   // ── Chemistry ─────────────────────────────────────────────────────────
   {

@@ -1,0 +1,418 @@
+{
+  "unitNo": 15,
+  "unitId": "refraction-at-plane-surfaces",
+  "unitName": "Refraction at Plane Surfaces",
+  "contentArea": "Waves & Optics",
+  "docxFileName": "Physics_XI_Unit_15_refraction-plane.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_15_refraction-plane.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 15: REFRACTION AT PLANE SURFACES   Content Area: Waves & Optics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 117,
+    "tableCount": 4,
+    "questionCount": 13,
+    "theoryCount": 10,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Aspect",
+        "Reflection",
+        "Refraction"
+      ],
+      "rows": [
+        [
+          "Speed of wave",
+          "Unchanged",
+          "Changes (new medium)"
+        ],
+        [
+          "Angle",
+          "i = r",
+          "n₁ sin i = n₂ sin r"
+        ],
+        [
+          "Direction",
+          "Same medium side",
+          "Bends toward/away from normal"
+        ],
+        [
+          "Law named",
+          "Law of reflection",
+          "Snell's law"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Type",
+        "Definition",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Relative",
+          "n = n₁/n₂",
+          "Depends on both media"
+        ],
+        [
+          "Absolute",
+          "n = c/v in vacuum",
+          "≥ 1 (1.33 water, 1.5 glass)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Apparent depth",
+        "Real depth"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "Real depth / n",
+          "d"
+        ],
+        [
+          "Position",
+          "Higher",
+          "Actual (in glass)"
+        ],
+        [
+          "Used for",
+          "Estimating pond depth",
+          "—"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "TIR",
+        "Ordinary reflection"
+      ],
+      "rows": [
+        [
+          "Requires",
+          "Optically denser → rarer & i > i_c",
+          "Any boundary"
+        ],
+        [
+          "Critical angle",
+          "sin i_c = 1/n",
+          "—"
+        ],
+        [
+          "Example",
+          "Fibre optics, mirage",
+          "Mirror, surface of pond"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. State the laws of refraction.",
+      "answer": "(i) Incident ray, refracted ray and the normal are coplanar. (ii) Snell's law: n₁ sin θ₁ = n₂ sin θ₂ (ratio of sines is constant for a pair of media).",
+      "shortcut": "n₁sin θ₁ = n₂sin θ₂ (Snell).",
+      "example": "From air (n=1) into glass (n=1.5) at 30°: sin r = sin30/1.5 = 0.333 → r ≈ 19.5°."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Define refractive index of a medium.",
+      "answer": "Refractive index is the ratio of the speed of light in vacuum to that in the medium: n = c/v. It also equals sin(angle in rarer)/sin(angle in denser) for the two media.",
+      "shortcut": "n = c/v ; air ≈ 1, water ≈ 1.33, glass ≈ 1.5.",
+      "example": "Light in water travels at c/1.33 ≈ 2.25×10⁸ m/s."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Find the angle of refraction for light entering water (n = 1.33) at 45° from air.",
+      "answer": "n₁sin θ₁ = n₂sin θ₂ → 1×sin45 = 1.33 sin θ₂ → sin θ₂ = 0.707/1.33 = 0.532 → θ₂ ≈ 32.1°.",
+      "shortcut": "θ₂ = sin⁻¹(sin θ₁ / n₂).",
+      "example": "≈ 32°."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Explain apparent depth of a pool.",
+      "answer": "An object underwater appears shallower than it really is because rays bend away from the normal emerging from the denser medium; the eye traces them back in a straight line, making the bottom look closer. Apparent depth ≈ real depth / n.",
+      "shortcut": "Apparent depth = real depth / n.",
+      "example": "A 1.33 m pool looks ~1 m deep."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. Two media have refractive indices 1.2 and 1.5. Find relative index of medium 2 w.r.t. 1.",
+      "answer": "n₂₁ = n₂/n₁ = 1.5/1.2 = 1.25 (light goes from 1 to 2 bends toward the normal). ▥ 15.1–15.2 Laws of Refraction & Refractive Index  —  Compare / Contrast Tables Reflection vs Refraction Absolute vs Relative Refractive Index ▣ 15.3 Lateral Shift",
+      "shortcut": "n_rel = n₂/n₁; n_rel > 1 → toward normal.",
+      "example": "n₂₁ = 1.25, n₁₂ = 0.8."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Derive the lateral shift through a glass slab of thickness d.",
+      "answer": "A ray entering a slab at angle i, refracting to r, emerges parallel but laterally displaced. Lateral shift t = d·sin(i − r)/cos r.",
+      "shortcut": "t = d·sin(i−r)/cos r.",
+      "example": "A thicker slab / larger i gives a bigger shift."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. A 5 cm thick glass slab (n=1.5) is hit at 45°. Find the lateral shift.",
+      "answer": "sin r = sin45/1.5 = 0.471 → r = 28.1°. t = d·sin(45−28.1)/cos 28.1 = 5×sin16.9/0.882 = 5×0.291/0.882 ≈ 1.65 cm.",
+      "shortcut": "t = d·sin(i−r)/cos r.",
+      "example": "≈ 1.6 cm shift."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Why does a glass slab not disperse white light (chromatic) as a prism does?",
+      "answer": "The faces are parallel, so the emergent ray is parallel to the incident ray with no net angular deviation; different colors suffer equal lateral shifts and recombine, so no color separation (a wedge/prism, not parallel faces, separates them). ▥ 15.3 Lateral Shift  —  Compare / Contrast Tables Apparent vs Real Depth in Refraction ▣ 15.4 Total Internal Reflection",
+      "shortcut": "Parallel faces → no net deviation → no dispersion.",
+      "example": "A prism has angled faces → white light splits into a spectrum."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Define total internal reflection (TIR). State the two conditions.",
+      "answer": "TIR is the complete reflection of light back into a denser medium when it strikes the interface with a rarer medium. Conditions: (i) light travels from a denser to a rarer medium, and (ii) the angle of incidence exceeds the critical angle i_c (sin i_c = 1/n).",
+      "shortcut": "denser→rarer AND i > i_c ; sin i_c = 1/n.",
+      "example": "Optical fiber works by TIR."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Find the critical angle for glass-air (n = 1.5).",
+      "answer": "sin i_c = 1/n = 1/1.5 = 0.667 → i_c = 41.8°.",
+      "shortcut": "i_c = sin⁻¹(1/n).",
+      "example": "≈ 42°; larger i_c for lower index."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Explain the working of an optical fibre using TIR.",
+      "answer": "Core has a higher index than the cladding. Light entering at a small angle is totally internally reflected at the core-cladding boundary, bouncing down the fibre with very little loss, carrying information as light pulses.",
+      "shortcut": "n_core > n_clad; repeated TIR carries the signal.",
+      "example": "Fibers send high-speed data by TIR."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. Why does a diamond 'sparkle' more than a glass? (relation to critical angle.)",
+      "answer": "Diamond's high refractive index (≈2.42) gives a small critical angle (i_c ≈ 24°). A large fraction of light entering is TIR'd multiple times before exiting, increasing brilliance and sparkle. Cut facets are aligned with this.",
+      "shortcut": "Higher n → smaller i_c → more internal reflection.",
+      "example": "Diamond i_c≈24° vs glass ~42°."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. A swimmer is underwater looking up. Explain the 'circle of light' effect.",
+      "answer": "Only rays from within a cone (half-angle i_c) can escape the water to air; outside this cone TIR keeps them trapped. To the swimmer the world above appears as a bright circle (Snell's window) surrounded by TIR (the water's surface). ▥ 15.4 Total Internal Reflection  —  Compare / Contrast Tables Total Internal Reflection vs Ordinary Reflection PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "i_c ≈ 48.8° for water-air; world seen through a circular window.",
+      "example": "The window edges correspond to the critical angle."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive the lateral shift through a glass slab of thickness d.",
+      "answer": "A ray entering a slab at angle i, refracting to r, emerges parallel but laterally displaced. From the geometry, the lateral shift t = d·sin(i − r)/cos r, where r is found from Snell's law (sin r = sin i / n).",
+      "shortcut": "t = d·sin(i−r)/cos r.",
+      "example": "Thicker slab or larger i → larger shift."
+    },
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T2. Derive the condition for total internal reflection and the critical angle.",
+      "answer": "TIR occurs when light goes from a denser to a rarer medium (n_d > n_r) and the incidence angle exceeds the critical angle i_c where the refraction angle is 90°: sin i_c = n_r/n_d = 1/n (for air). Beyond i_c no ray is refracted — all light reflects internally.",
+      "shortcut": "TIR: denser→rarer AND i > i_c ; sin i_c = 1/n.",
+      "example": "Glass-air i_c≈42°; water-air i_c≈48.8°."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. State the laws of refraction (Snell's law) and define refractive index.",
+      "answer": "Laws: (i) incident, refracted and normal are coplanar; (ii) n₁sin θ₁ = n₂sin θ₂ (constant ratio). Refractive index n = c/v (speed in vacuum / in medium) = sin θ_rare/sin θ_dense.",
+      "shortcut": "n₁sin θ₁ = n₂sin θ₂ ; n = c/v.",
+      "example": "Air≈1, water≈1.33, glass≈1.5, diamond≈2.4."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T4. Compare total internal reflection with ordinary (partial) reflection.",
+      "answer": "Ordinary reflection at an air-water surface is partial (some refracts, some reflects) for any angle; TIR is total (nothing refracts) but only beyond the critical angle and only from the denser side. TIR is therefore lossless and used for guiding light.",
+      "shortcut": "Partial at any angle; TIR total but i > i_c, denser side.",
+      "example": "A prism can totally reflect where a surface only partly reflects."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain apparent depth and the refraction seen in a pool.",
+      "answer": "A submerged object looks shallower because rays bend away from the normal emerging from the denser water; the eye traces them back straight, so the bottom appears closer: apparent depth = real depth / n. This is why a pool looks shallower than it is.",
+      "shortcut": "Apparent depth = real depth / n.",
+      "example": "A 1.33 m pool looks ~1 m deep."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain total internal reflection and its applications (optical fibre, mirage, diamond).",
+      "answer": "TIR lets light stay trapped in a denser medium (like the core of an optical fibre or the atmosphere near the ground). Optical fibres transmit data as light by repeated TIR; a mirage is TIR in the air gradient; a diamond's small critical angle gives intense internal reflection and sparkle.",
+      "shortcut": "TIR → fibre, mirage, diamond.",
+      "example": "n_core > n_clad keeps the light guided."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the working of an optical fibre.",
+      "answer": "Light is launched into a high-index core; at the low-index cladding interface the angle exceeds i_c, so each incidence is a TIR bounce. The light propagates down the fibre with minimal loss, carrying information as pulses (or as in a medical endoscope).",
+      "shortcut": "n_core > n_clad; repeated TIR carries the signal.",
+      "example": "Fibre-optic communications and endoscopes."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain a mirage as TIR in air (superior and inferior).",
+      "answer": "Near hot ground the air temperature decreases with height, so the refractive index increases upward; light rays curve upward (continuous refraction ≈ TIR), forming an inferior mirage (a 'pool' below). In a cold inversion (superior), rays curve downward, giving a floating image above the surface (Fata Morgana).",
+      "shortcut": "Temperature gradient → index gradient → curved rays.",
+      "example": "Inferior mirage: a fake water pool on the road."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T9. Why does a diamond 'sparkle' more than a glass stone?",
+      "answer": "Diamond's high refractive index (~2.4) gives a very small critical angle (~24°); a large fraction of entering light is TIR'd many times before exiting, and the facets are cut to favour this, giving intense internal reflection and colour sparkle. Glass has a larger i_c and scatters more.",
+      "shortcut": "Higher n → smaller i_c → more TIR → sparkle.",
+      "example": "The cut is aligned with the small critical angle."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A 5 cm thick glass slab (n = 1.5) is hit at 45°. Find the lateral shift.",
+      "answer": "sin r = sin45/1.5 = 0.471 → r = 28.1°. t = 5·sin(45−28.1)/cos28.1 = 5×0.291/0.882 ≈ 1.65 cm.",
+      "shortcut": "t = d·sin(i−r)/cos r.",
+      "example": "≈ 1.6 cm shift."
+    }
+  ],
+  "formulas": [
+    "n = sin i / sin r ; n = c/v (also = apparent depth factor for normal).",
+    "Lateral shift t = (d sin(i−r))/cos r.",
+    "TIR when light goes fast→slow and i > i_c ; sin i_c = 1/n.",
+    "n₁ sin θ₁ = n₂ sin θ₂ (Snell's law)."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 15: REFRACTION AT PLANE SURFACES   Content Area: Waves & Optics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 15.1–15.2 Laws of Refraction & Refractive Index",
+    "Q1. State the laws of refraction.",
+    "Answer:  (i) Incident ray, refracted ray and the normal are coplanar. (ii) Snell's law: n₁ sin θ₁ = n₂ sin θ₂ (ratio of sines is constant for a pair of media).",
+    "⚡ Shortcut:  n₁sin θ₁ = n₂sin θ₂ (Snell).",
+    "Example:  From air (n=1) into glass (n=1.5) at 30°: sin r = sin30/1.5 = 0.333 → r ≈ 19.5°.",
+    "Q2. Define refractive index of a medium.",
+    "Answer:  Refractive index is the ratio of the speed of light in vacuum to that in the medium: n = c/v. It also equals sin(angle in rarer)/sin(angle in denser) for the two media.",
+    "⚡ Shortcut:  n = c/v ; air ≈ 1, water ≈ 1.33, glass ≈ 1.5.",
+    "Example:  Light in water travels at c/1.33 ≈ 2.25×10⁸ m/s.",
+    "Q3. Find the angle of refraction for light entering water (n = 1.33) at 45° from air.",
+    "Answer:  n₁sin θ₁ = n₂sin θ₂ → 1×sin45 = 1.33 sin θ₂ → sin θ₂ = 0.707/1.33 = 0.532 → θ₂ ≈ 32.1°.",
+    "⚡ Shortcut:  θ₂ = sin⁻¹(sin θ₁ / n₂).",
+    "Example:  ≈ 32°.",
+    "Q4. Explain apparent depth of a pool.",
+    "Answer:  An object underwater appears shallower than it really is because rays bend away from the normal emerging from the denser medium; the eye traces them back in a straight line, making the bottom look closer. Apparent depth ≈ real depth / n.",
+    "⚡ Shortcut:  Apparent depth = real depth / n.",
+    "Example:  A 1.33 m pool looks ~1 m deep.",
+    "Q5. Two media have refractive indices 1.2 and 1.5. Find relative index of medium 2 w.r.t. 1.",
+    "Answer:  n₂₁ = n₂/n₁ = 1.5/1.2 = 1.25 (light goes from 1 to 2 bends toward the normal).",
+    "⚡ Shortcut:  n_rel = n₂/n₁; n_rel > 1 → toward normal.",
+    "Example:  n₂₁ = 1.25, n₁₂ = 0.8.",
+    "▥ 15.1–15.2 Laws of Refraction & Refractive Index  —  Compare / Contrast Tables",
+    "Reflection vs Refraction",
+    "Absolute vs Relative Refractive Index",
+    "▣ 15.3 Lateral Shift",
+    "Q6. Derive the lateral shift through a glass slab of thickness d.",
+    "Answer:  A ray entering a slab at angle i, refracting to r, emerges parallel but laterally displaced. Lateral shift t = d·sin(i − r)/cos r.",
+    "⚡ Shortcut:  t = d·sin(i−r)/cos r.",
+    "Example:  A thicker slab / larger i gives a bigger shift.",
+    "Q7. A 5 cm thick glass slab (n=1.5) is hit at 45°. Find the lateral shift.",
+    "Answer:  sin r = sin45/1.5 = 0.471 → r = 28.1°. t = d·sin(45−28.1)/cos 28.1 = 5×sin16.9/0.882 = 5×0.291/0.882 ≈ 1.65 cm.",
+    "⚡ Shortcut:  t = d·sin(i−r)/cos r.",
+    "Example:  ≈ 1.6 cm shift.",
+    "Q8. Why does a glass slab not disperse white light (chromatic) as a prism does?",
+    "Answer:  The faces are parallel, so the emergent ray is parallel to the incident ray with no net angular deviation; different colors suffer equal lateral shifts and recombine, so no color separation (a wedge/prism, not parallel faces, separates them).",
+    "⚡ Shortcut:  Parallel faces → no net deviation → no dispersion.",
+    "Example:  A prism has angled faces → white light splits into a spectrum.",
+    "▥ 15.3 Lateral Shift  —  Compare / Contrast Tables",
+    "Apparent vs Real Depth in Refraction",
+    "▣ 15.4 Total Internal Reflection",
+    "Q9. Define total internal reflection (TIR). State the two conditions.",
+    "Answer:  TIR is the complete reflection of light back into a denser medium when it strikes the interface with a rarer medium. Conditions: (i) light travels from a denser to a rarer medium, and (ii) the angle of incidence exceeds the critical angle i_c (sin i_c = 1/n).",
+    "⚡ Shortcut:  denser→rarer AND i > i_c ; sin i_c = 1/n.",
+    "Example:  Optical fiber works by TIR.",
+    "Q10. Find the critical angle for glass-air (n = 1.5).",
+    "Answer:  sin i_c = 1/n = 1/1.5 = 0.667 → i_c = 41.8°.",
+    "⚡ Shortcut:  i_c = sin⁻¹(1/n).",
+    "Example:  ≈ 42°; larger i_c for lower index.",
+    "Q11. Explain the working of an optical fibre using TIR.",
+    "Answer:  Core has a higher index than the cladding. Light entering at a small angle is totally internally reflected at the core-cladding boundary, bouncing down the fibre with very little loss, carrying information as light pulses.",
+    "⚡ Shortcut:  n_core > n_clad; repeated TIR carries the signal.",
+    "Example:  Fibers send high-speed data by TIR.",
+    "Q12. Why does a diamond 'sparkle' more than a glass? (relation to critical angle.)",
+    "Answer:  Diamond's high refractive index (≈2.42) gives a small critical angle (i_c ≈ 24°). A large fraction of light entering is TIR'd multiple times before exiting, increasing brilliance and sparkle. Cut facets are aligned with this.",
+    "⚡ Shortcut:  Higher n → smaller i_c → more internal reflection.",
+    "Example:  Diamond i_c≈24° vs glass ~42°.",
+    "Q13. A swimmer is underwater looking up. Explain the 'circle of light' effect.",
+    "Answer:  Only rays from within a cone (half-angle i_c) can escape the water to air; outside this cone TIR keeps them trapped. To the swimmer the world above appears as a bright circle (Snell's window) surrounded by TIR (the water's surface).",
+    "⚡ Shortcut:  i_c ≈ 48.8° for water-air; world seen through a circular window.",
+    "Example:  The window edges correspond to the critical angle.",
+    "▥ 15.4 Total Internal Reflection  —  Compare / Contrast Tables",
+    "Total Internal Reflection vs Ordinary Reflection",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive the lateral shift through a glass slab of thickness d.",
+    "Answer:  A ray entering a slab at angle i, refracting to r, emerges parallel but laterally displaced. From the geometry, the lateral shift t = d·sin(i − r)/cos r, where r is found from Snell's law (sin r = sin i / n).",
+    "⚡ Short / exam line:  t = d·sin(i−r)/cos r.",
+    "Example:  Thicker slab or larger i → larger shift.",
+    "[Derive] T2. Derive the condition for total internal reflection and the critical angle.",
+    "Answer:  TIR occurs when light goes from a denser to a rarer medium (n_d > n_r) and the incidence angle exceeds the critical angle i_c where the refraction angle is 90°: sin i_c = n_r/n_d = 1/n (for air). Beyond i_c no ray is refracted — all light reflects internally.",
+    "⚡ Short / exam line:  TIR: denser→rarer AND i > i_c ; sin i_c = 1/n.",
+    "Example:  Glass-air i_c≈42°; water-air i_c≈48.8°.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T3. State the laws of refraction (Snell's law) and define refractive index.",
+    "Answer:  Laws: (i) incident, refracted and normal are coplanar; (ii) n₁sin θ₁ = n₂sin θ₂ (constant ratio). Refractive index n = c/v (speed in vacuum / in medium) = sin θ_rare/sin θ_dense.",
+    "⚡ Short / exam line:  n₁sin θ₁ = n₂sin θ₂ ; n = c/v.",
+    "Example:  Air≈1, water≈1.33, glass≈1.5, diamond≈2.4.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T4. Compare total internal reflection with ordinary (partial) reflection.",
+    "Answer:  Ordinary reflection at an air-water surface is partial (some refracts, some reflects) for any angle; TIR is total (nothing refracts) but only beyond the critical angle and only from the denser side. TIR is therefore lossless and used for guiding light.",
+    "⚡ Short / exam line:  Partial at any angle; TIR total but i > i_c, denser side.",
+    "Example:  A prism can totally reflect where a surface only partly reflects.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain apparent depth and the refraction seen in a pool.",
+    "Answer:  A submerged object looks shallower because rays bend away from the normal emerging from the denser water; the eye traces them back straight, so the bottom appears closer: apparent depth = real depth / n. This is why a pool looks shallower than it is.",
+    "⚡ Short / exam line:  Apparent depth = real depth / n.",
+    "Example:  A 1.33 m pool looks ~1 m deep.",
+    "[Explain] T6. Explain total internal reflection and its applications (optical fibre, mirage, diamond).",
+    "Answer:  TIR lets light stay trapped in a denser medium (like the core of an optical fibre or the atmosphere near the ground). Optical fibres transmit data as light by repeated TIR; a mirage is TIR in the air gradient; a diamond's small critical angle gives intense internal reflection and sparkle.",
+    "⚡ Short / exam line:  TIR → fibre, mirage, diamond.",
+    "Example:  n_core > n_clad keeps the light guided.",
+    "[Explain] T7. Explain the working of an optical fibre.",
+    "Answer:  Light is launched into a high-index core; at the low-index cladding interface the angle exceeds i_c, so each incidence is a TIR bounce. The light propagates down the fibre with minimal loss, carrying information as pulses (or as in a medical endoscope).",
+    "⚡ Short / exam line:  n_core > n_clad; repeated TIR carries the signal.",
+    "Example:  Fibre-optic communications and endoscopes.",
+    "[Explain] T8. Explain a mirage as TIR in air (superior and inferior).",
+    "Answer:  Near hot ground the air temperature decreases with height, so the refractive index increases upward; light rays curve upward (continuous refraction ≈ TIR), forming an inferior mirage (a 'pool' below). In a cold inversion (superior), rays curve downward, giving a floating image above the surface (Fata Morgana).",
+    "⚡ Short / exam line:  Temperature gradient → index gradient → curved rays.",
+    "Example:  Inferior mirage: a fake water pool on the road.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T9. Why does a diamond 'sparkle' more than a glass stone?",
+    "Answer:  Diamond's high refractive index (~2.4) gives a very small critical angle (~24°); a large fraction of entering light is TIR'd many times before exiting, and the facets are cut to favour this, giving intense internal reflection and colour sparkle. Glass has a larger i_c and scatters more.",
+    "⚡ Short / exam line:  Higher n → smaller i_c → more TIR → sparkle.",
+    "Example:  The cut is aligned with the small critical angle.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A 5 cm thick glass slab (n = 1.5) is hit at 45°. Find the lateral shift.",
+    "Answer:  sin r = sin45/1.5 = 0.471 → r = 28.1°. t = 5·sin(45−28.1)/cos28.1 = 5×0.291/0.882 ≈ 1.65 cm.",
+    "⚡ Short / exam line:  t = d·sin(i−r)/cos r.",
+    "Example:  ≈ 1.6 cm shift.",
+    "★ Quick-formula memos (this unit)",
+    "n = sin i / sin r ; n = c/v (also = apparent depth factor for normal).",
+    "Lateral shift t = (d sin(i−r))/cos r.",
+    "TIR when light goes fast→slow and i > i_c ; sin i_c = 1/n.",
+    "n₁ sin θ₁ = n₂ sin θ₂ (Snell's law)."
+  ]
+}

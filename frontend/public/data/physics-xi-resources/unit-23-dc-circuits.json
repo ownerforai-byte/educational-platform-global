@@ -1,0 +1,451 @@
+{
+  "unitNo": 23,
+  "unitId": "dc-circuits",
+  "unitName": "DC Circuits",
+  "contentArea": "Electricity & Magnetism",
+  "docxFileName": "Physics_XI_Unit_23_dc-circuits.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_23_dc-circuits.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 23: DC CIRCUITS   Content Area: Electricity & Magnetism",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 116,
+    "tableCount": 5,
+    "questionCount": 13,
+    "theoryCount": 10,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Quantity",
+        "Resistance R",
+        "Resistivity ρ"
+      ],
+      "rows": [
+        [
+          "Formula",
+          "R = V/I",
+          "ρ = RA/L"
+        ],
+        [
+          "Depends on",
+          "Material, shape, T",
+          "Material & T only (intrinsic)"
+        ],
+        [
+          "Unit",
+          "ohm (Ω)",
+          "Ω·m"
+        ],
+        [
+          "T dependence",
+          "R = R₀[1+αΔT] (metals)",
+          "ρ likewise"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Series",
+        "Parallel"
+      ],
+      "rows": [
+        [
+          "Equivalent",
+          "R = ΣRᵢ",
+          "1/R = Σ 1/Rᵢ"
+        ],
+        [
+          "Current",
+          "Same through all",
+          "Splits"
+        ],
+        [
+          "Voltage",
+          "Splits",
+          "Same across all"
+        ],
+        [
+          "Resulting R",
+          "Larger than any member",
+          "Smaller than any member"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Formula",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Output",
+          "V_out = V_in × R₂/(R₁+R₂)",
+          "Taps off part of V_in"
+        ],
+        [
+          "Loaded output",
+          "Lower (parallel load lowers R₂_eff)",
+          "R_load ≫ R₂ to keep division"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "EMF E",
+        "Terminal V"
+      ],
+      "rows": [
+        [
+          "Meaning",
+          "Energy per unit charge (no current)",
+          "V across terminals under load"
+        ],
+        [
+          "Formula",
+          "E (fixed by chemistry)",
+          "V = E − Ir"
+        ],
+        [
+          "When equal",
+          "No internal loss",
+          "Open circuit (I = 0)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Formula",
+        "Unit"
+      ],
+      "rows": [
+        [
+          "Work/energy",
+          "W = VIt = I²Rt",
+          "Joule"
+        ],
+        [
+          "Power",
+          "P = VI = I²R = V²/R",
+          "Watt"
+        ],
+        [
+          "Joule heating",
+          "P = I²R (in a resistor)",
+          "—"
+        ],
+        [
+          "Efficiency (cell)",
+          "η = V/E = R/(R+r)",
+          "Maximum P at R = r"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define current and the drift velocity relation I = nAvq.",
+      "answer": "Current is the rate of flow of charge: I = dQ/dt. For a conductor, I = nAvq, where n = charge-carrier density, A = cross-section, v_d = drift velocity, q = charge per carrier.",
+      "shortcut": "I = nAvq ; v_d = I/(nAq).",
+      "example": "A small drift velocity (mm/s) can carry a large I."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. State Ohm's law and define resistivity.",
+      "answer": "Ohm's law: V = IR (V ∝ I for a conductor at constant temperature), so R = V/I. Resistivity ρ is a material property: R = ρL/A, unit Ω·m; conductivity σ = 1/ρ.",
+      "shortcut": "R = ρL/A ; σ = 1/ρ.",
+      "example": "Copper ρ ≈ 1.7×10⁻⁸ Ω·m (very conductive)."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Find the resistance of a 10 m copper wire (ρ = 1.7×10⁻⁸, A = 1 mm²).",
+      "answer": "R = ρL/A = 1.7×10⁻⁸×10/(1×10⁻⁶) = 0.17 Ω.",
+      "shortcut": "R = ρL/A.",
+      "example": "≈ 0.17 Ω."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Explain the V–I characteristic of a filament (non-ohmic) vs a wire (ohmic).",
+      "answer": "An ohmic conductor has a straight-line V–I (R constant); a filament lamp has a curve that flattens at high voltage because its resistance rises with temperature, so it is non-ohmic.",
+      "shortcut": "Ohmic → straight line; filament → curve (R↑ with T).",
+      "example": "A diode has an exponential (non-ohmic) V–I."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. How do temperature and length affect the resistance of a metal?",
+      "answer": "For a metal, resistance increases with temperature (higher vibration → more collisions, R = R₀(1+αT)). A longer wire has more resistance (R ∝ L), a thicker one has less (R ∝ 1/A). ▥ 23.1–23.2 Current, Drift Velocity, Resistance & Resistivity  —  Compare / Contrast Tables Resistance vs Resistivity ▣ 23.3–23.6 Series/Parallel, Potential Divider & EMF",
+      "shortcut": "R ∝ L/A ; metals: R ↑ with T.",
+      "example": "A long, thin copper wire has high resistance."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. State the equivalent resistance for series and for parallel combinations.",
+      "answer": "Series: R_eq = R₁+R₂+… (same current, add voltages). Parallel: 1/R_eq = 1/R₁ + 1/R₂ + … (same voltage, currents add).",
+      "shortcut": "Series: add R; Parallel: add 1/R.",
+      "example": "Two 4 Ω in series = 8 Ω; in parallel = 2 Ω."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Three resistors 2, 4, 6 Ω are in parallel. Find R_eq.",
+      "answer": "1/R_eq = 1/2+1/4+1/6 = (6+3+2)/12 = 11/12 → R_eq = 12/11 ≈ 1.09 Ω.",
+      "shortcut": "1/R_eq = Σ1/Rᵢ.",
+      "example": "≈ 1.09 Ω."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Explain a potential divider and its voltage ratio.",
+      "answer": "A potential divider divides a supply voltage V across two series resistors R₁ and R₂. The output voltage across R₂ is V₂ = V·R₂/(R₁+R₂), useful to obtain a smaller voltage without drawing much current.",
+      "shortcut": "V₂ = V·R₂/(R₁+R₂).",
+      "example": "R₁=R₂ → output is half the supply."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. Define electromotive force (emf) and terminal voltage; relate them.",
+      "answer": "Emf ε is the energy supplied per unit charge by a source (ideal, no internal loss). Terminal voltage is the usable voltage: V_term = ε − Ir, where r is the internal resistance and I the current. When I=0, V_term = ε.",
+      "shortcut": "V_term = ε − Ir ; r = (ε−V)/I.",
+      "example": "A battery drops terminal V under load (internal r)."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. A 12 V battery (r=1 Ω) supplies 5 A. Find the terminal voltage.",
+      "answer": "V_term = ε − Ir = 12 − 5×1 = 7 V. ▥ 23.3–23.6 Series/Parallel, Potential Divider & EMF  —  Compare / Contrast Tables Series vs Parallel Resistance Potential Divider (voltage divider) EMF vs Terminal Potential Difference (in a cell) ▣ 23.7 Work & Power in Electrical Circuits",
+      "shortcut": "V_term = ε − Ir.",
+      "example": "The internal drop is 5 V; only 7 V at the terminals."
+    },
+    {
+      "type": "neb",
+      "question": "Q11. Find the power and work done by a current in a resistor.",
+      "answer": "Power P = IV = I²R = V²/R. Work (heat) in time t: W = Pt = I²Rt (Joule heating). Higher current or resistance dissipates more power as heat.",
+      "shortcut": "P = I²R = V²/R ; W = Pt.",
+      "example": "A 4 Ω at 2 A: P = 16 W; in 10 s, 160 J."
+    },
+    {
+      "type": "neb",
+      "question": "Q12. A 60 W, 220 V bulb is on for 5 hours. Find the energy and cost (Rs 8/kWh).",
+      "answer": "Energy = P·t = 60×5 = 300 Wh = 0.3 kWh. Cost = 0.3×8 = Rs 2.4. (Energy in J = 300×3600 = 1.08×10⁶ J.)",
+      "shortcut": "E(kWh) = P(kW)×t(h); cost = kWh×rate.",
+      "example": "0.3 kWh, Rs 2.4."
+    },
+    {
+      "type": "neb",
+      "question": "Q13. Explain the difference between power and energy in a circuit.",
+      "answer": "Power is the rate at which energy is transferred (J/s = watt); energy is the total work done over time (J = watt×time). A high-power device transfers energy faster; a long time accumulates a lot of energy even at moderate power. ▥ 23.7 Work & Power in Electrical Circuits  —  Compare / Contrast Tables Work, Power & Energy in DC Circuits PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "P (W) vs E (J or kWh) = P×t.",
+      "example": "A 100 W bulb for 10 h uses 1 kWh of energy."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T1. State Ohm's law and define resistivity and conductivity.",
+      "answer": "Ohm's law: at constant temperature, V ∝ I, so R = V/I. Resistivity ρ (a material property, Ω·m) and conductivity σ = 1/ρ; R = ρL/A, independent of geometry for a given material.",
+      "shortcut": "V = IR ; R = ρL/A ; σ = 1/ρ.",
+      "example": "Copper ρ ≈ 1.7×10⁻⁸ Ω·m (high σ)."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T2. Explain drift velocity and its relation to current.",
+      "answer": "Free electrons in a metal move randomly at high speed but, under a field, acquire a small net drift velocity v_d opposite to the field. The current is I = nAv_dq, where n is the carrier density, A the area, q the carrier charge; this relates macroscopic current to microscopic drift.",
+      "shortcut": "I = nAv_dq ; v_d = I/(nAq).",
+      "example": "A small v_d (mm/s) can carry a large I."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T3. Explain the current-voltage characteristic of an ohmic and a non-ohmic device.",
+      "answer": "An ohmic device (metal wire) has a straight-line V–I (constant R). A non-ohmic device (diode, filament lamp) curves: a diode conducts only above ~0.7 V (Si) in one direction; a filament's resistance rises with temperature, so its V–I flattens at high voltage.",
+      "shortcut": "Ohmic: straight line; Non-ohmic: curve (diode exponential).",
+      "example": "A diode has an exponential I–V characteristic."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain resistances in series and in parallel, and the potential divider.",
+      "answer": "Series: same current, R_eq = R₁+R₂+…; Parallel: same voltage, 1/R_eq = Σ1/R. A potential divider (two series resistors) gives V₂ = V·R₂/(R₁+R₂), producing a smaller, fixed fraction of the supply voltage without drawing much current.",
+      "shortcut": "Series add; Parallel add reciprocals; divider V₂ = V·R₂/(R₁+R₂).",
+      "example": "Used to set a reference voltage."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain emf, terminal voltage and internal resistance.",
+      "answer": "Emf ε is the energy supplied per unit charge by a source (ideal, no internal loss). The terminal voltage is what is available: V_term = ε − Ir, where r is the internal resistance and I the current. Under load the terminal voltage drops; at open circuit (I=0) V_term = ε.",
+      "shortcut": "V_term = ε − Ir ; r = (ε−V)/I.",
+      "example": "A battery 'sags' under heavy current because of its internal r."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain work and power in an electrical circuit, and Joule heating.",
+      "answer": "Power P = IV = I²R = V²/R; energy W = Pt = I²Rt (Joule heating, lost as heat in a resistor). Higher current or resistance dissipates more power as heat; this is why wires warm and fuses blow when overloaded.",
+      "shortcut": "P = I²R = V²/R ; heat = I²Rt.",
+      "example": "A fuse melts when I²Rt exceeds its heat capacity."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain Kirchhoff's rules and apply them to a junction.",
+      "answer": "Kirchhoff's junction rule: the sum of currents entering a node equals the sum leaving (charge conservation). The loop rule: the algebraic sum of voltages around any closed loop is zero (energy conservation). These let one solve complex circuits by current and potential equations.",
+      "shortcut": "Junction: ΣI_in = ΣI_out ; Loop: ΣV = 0.",
+      "example": "At a T-junction, current splits; the loop rule balances all drops and emfs."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T8. Explain a Wheatstone bridge and the balance condition.",
+      "answer": "A Wheatstone bridge is a network of four resistors forming a diamond with a galvanometer between two opposite points. It is balanced when R₁/R₂ = R₃/R₄ (no current through the galvanometer), letting one find an unknown resistance by adjusting a known one.",
+      "shortcut": "Balance: R₁/R₂ = R₃/R₄.",
+      "example": "Used to measure unknown resistances precisely."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T9. Why does a series circuit have higher total resistance than a parallel one?",
+      "answer": "In series, the same current must pass through every resistor, so the drops add: R_eq = R₁+R₂+… > any single R. In parallel, current divides among several paths, so the equivalent resistance is less than the smallest individual resistor.",
+      "shortcut": "Series: same I, drops add → R_eq > largest; Parallel: I divides → R_eq < smallest.",
+      "example": "Adding more parallel resistors always lowers R_eq."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. A 12 V source (r = 2 Ω) drives a 6 Ω load. Find the current and terminal voltage.",
+      "answer": "R_total = 6 + 2 = 8 Ω. I = 12/8 = 1.5 A. V_term = ε − Ir = 12 − 1.5×2 = 9 V (or V = IR = 1.5×6 = 9 V).",
+      "shortcut": "I = ε/(R+r) ; V_term = IR.",
+      "example": "Current 1.5 A, terminal 9 V."
+    }
+  ],
+  "formulas": [
+    "I = nAvq (drift) ; R = ρL/A ; Conductivity σ = 1/ρ.",
+    "V–I: Ohmic (linear) vs Non-Ohmic.",
+    "Series: R_eq=ΣR ; Parallel: 1/R_eq=Σ1/R.",
+    "Potential divider: V₂ = V·R₂/(R₁+R₂) ; emf ε, V_term = ε − Ir."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 23: DC CIRCUITS   Content Area: Electricity & Magnetism",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 23.1–23.2 Current, Drift Velocity, Resistance & Resistivity",
+    "Q1. Define current and the drift velocity relation I = nAvq.",
+    "Answer:  Current is the rate of flow of charge: I = dQ/dt. For a conductor, I = nAvq, where n = charge-carrier density, A = cross-section, v_d = drift velocity, q = charge per carrier.",
+    "⚡ Shortcut:  I = nAvq ; v_d = I/(nAq).",
+    "Example:  A small drift velocity (mm/s) can carry a large I.",
+    "Q2. State Ohm's law and define resistivity.",
+    "Answer:  Ohm's law: V = IR (V ∝ I for a conductor at constant temperature), so R = V/I. Resistivity ρ is a material property: R = ρL/A, unit Ω·m; conductivity σ = 1/ρ.",
+    "⚡ Shortcut:  R = ρL/A ; σ = 1/ρ.",
+    "Example:  Copper ρ ≈ 1.7×10⁻⁸ Ω·m (very conductive).",
+    "Q3. Find the resistance of a 10 m copper wire (ρ = 1.7×10⁻⁸, A = 1 mm²).",
+    "Answer:  R = ρL/A = 1.7×10⁻⁸×10/(1×10⁻⁶) = 0.17 Ω.",
+    "⚡ Shortcut:  R = ρL/A.",
+    "Example:  ≈ 0.17 Ω.",
+    "Q4. Explain the V–I characteristic of a filament (non-ohmic) vs a wire (ohmic).",
+    "Answer:  An ohmic conductor has a straight-line V–I (R constant); a filament lamp has a curve that flattens at high voltage because its resistance rises with temperature, so it is non-ohmic.",
+    "⚡ Shortcut:  Ohmic → straight line; filament → curve (R↑ with T).",
+    "Example:  A diode has an exponential (non-ohmic) V–I.",
+    "Q5. How do temperature and length affect the resistance of a metal?",
+    "Answer:  For a metal, resistance increases with temperature (higher vibration → more collisions, R = R₀(1+αT)). A longer wire has more resistance (R ∝ L), a thicker one has less (R ∝ 1/A).",
+    "⚡ Shortcut:  R ∝ L/A ; metals: R ↑ with T.",
+    "Example:  A long, thin copper wire has high resistance.",
+    "▥ 23.1–23.2 Current, Drift Velocity, Resistance & Resistivity  —  Compare / Contrast Tables",
+    "Resistance vs Resistivity",
+    "▣ 23.3–23.6 Series/Parallel, Potential Divider & EMF",
+    "Q6. State the equivalent resistance for series and for parallel combinations.",
+    "Answer:  Series: R_eq = R₁+R₂+… (same current, add voltages). Parallel: 1/R_eq = 1/R₁ + 1/R₂ + … (same voltage, currents add).",
+    "⚡ Shortcut:  Series: add R; Parallel: add 1/R.",
+    "Example:  Two 4 Ω in series = 8 Ω; in parallel = 2 Ω.",
+    "Q7. Three resistors 2, 4, 6 Ω are in parallel. Find R_eq.",
+    "Answer:  1/R_eq = 1/2+1/4+1/6 = (6+3+2)/12 = 11/12 → R_eq = 12/11 ≈ 1.09 Ω.",
+    "⚡ Shortcut:  1/R_eq = Σ1/Rᵢ.",
+    "Example:  ≈ 1.09 Ω.",
+    "Q8. Explain a potential divider and its voltage ratio.",
+    "Answer:  A potential divider divides a supply voltage V across two series resistors R₁ and R₂. The output voltage across R₂ is V₂ = V·R₂/(R₁+R₂), useful to obtain a smaller voltage without drawing much current.",
+    "⚡ Shortcut:  V₂ = V·R₂/(R₁+R₂).",
+    "Example:  R₁=R₂ → output is half the supply.",
+    "Q9. Define electromotive force (emf) and terminal voltage; relate them.",
+    "Answer:  Emf ε is the energy supplied per unit charge by a source (ideal, no internal loss). Terminal voltage is the usable voltage: V_term = ε − Ir, where r is the internal resistance and I the current. When I=0, V_term = ε.",
+    "⚡ Shortcut:  V_term = ε − Ir ; r = (ε−V)/I.",
+    "Example:  A battery drops terminal V under load (internal r).",
+    "Q10. A 12 V battery (r=1 Ω) supplies 5 A. Find the terminal voltage.",
+    "Answer:  V_term = ε − Ir = 12 − 5×1 = 7 V.",
+    "⚡ Shortcut:  V_term = ε − Ir.",
+    "Example:  The internal drop is 5 V; only 7 V at the terminals.",
+    "▥ 23.3–23.6 Series/Parallel, Potential Divider & EMF  —  Compare / Contrast Tables",
+    "Series vs Parallel Resistance",
+    "Potential Divider (voltage divider)",
+    "EMF vs Terminal Potential Difference (in a cell)",
+    "▣ 23.7 Work & Power in Electrical Circuits",
+    "Q11. Find the power and work done by a current in a resistor.",
+    "Answer:  Power P = IV = I²R = V²/R. Work (heat) in time t: W = Pt = I²Rt (Joule heating). Higher current or resistance dissipates more power as heat.",
+    "⚡ Shortcut:  P = I²R = V²/R ; W = Pt.",
+    "Example:  A 4 Ω at 2 A: P = 16 W; in 10 s, 160 J.",
+    "Q12. A 60 W, 220 V bulb is on for 5 hours. Find the energy and cost (Rs 8/kWh).",
+    "Answer:  Energy = P·t = 60×5 = 300 Wh = 0.3 kWh. Cost = 0.3×8 = Rs 2.4. (Energy in J = 300×3600 = 1.08×10⁶ J.)",
+    "⚡ Shortcut:  E(kWh) = P(kW)×t(h); cost = kWh×rate.",
+    "Example:  0.3 kWh, Rs 2.4.",
+    "Q13. Explain the difference between power and energy in a circuit.",
+    "Answer:  Power is the rate at which energy is transferred (J/s = watt); energy is the total work done over time (J = watt×time). A high-power device transfers energy faster; a long time accumulates a lot of energy even at moderate power.",
+    "⚡ Shortcut:  P (W) vs E (J or kWh) = P×t.",
+    "Example:  A 100 W bulb for 10 h uses 1 kWh of energy.",
+    "▥ 23.7 Work & Power in Electrical Circuits  —  Compare / Contrast Tables",
+    "Work, Power & Energy in DC Circuits",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T1. State Ohm's law and define resistivity and conductivity.",
+    "Answer:  Ohm's law: at constant temperature, V ∝ I, so R = V/I. Resistivity ρ (a material property, Ω·m) and conductivity σ = 1/ρ; R = ρL/A, independent of geometry for a given material.",
+    "⚡ Short / exam line:  V = IR ; R = ρL/A ; σ = 1/ρ.",
+    "Example:  Copper ρ ≈ 1.7×10⁻⁸ Ω·m (high σ).",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T2. Explain drift velocity and its relation to current.",
+    "Answer:  Free electrons in a metal move randomly at high speed but, under a field, acquire a small net drift velocity v_d opposite to the field. The current is I = nAv_dq, where n is the carrier density, A the area, q the carrier charge; this relates macroscopic current to microscopic drift.",
+    "⚡ Short / exam line:  I = nAv_dq ; v_d = I/(nAq).",
+    "Example:  A small v_d (mm/s) can carry a large I.",
+    "[Explain] T3. Explain the current-voltage characteristic of an ohmic and a non-ohmic device.",
+    "Answer:  An ohmic device (metal wire) has a straight-line V–I (constant R). A non-ohmic device (diode, filament lamp) curves: a diode conducts only above ~0.7 V (Si) in one direction; a filament's resistance rises with temperature, so its V–I flattens at high voltage.",
+    "⚡ Short / exam line:  Ohmic: straight line; Non-ohmic: curve (diode exponential).",
+    "Example:  A diode has an exponential I–V characteristic.",
+    "[Explain] T4. Explain resistances in series and in parallel, and the potential divider.",
+    "Answer:  Series: same current, R_eq = R₁+R₂+…; Parallel: same voltage, 1/R_eq = Σ1/R. A potential divider (two series resistors) gives V₂ = V·R₂/(R₁+R₂), producing a smaller, fixed fraction of the supply voltage without drawing much current.",
+    "⚡ Short / exam line:  Series add; Parallel add reciprocals; divider V₂ = V·R₂/(R₁+R₂).",
+    "Example:  Used to set a reference voltage.",
+    "[Explain] T5. Explain emf, terminal voltage and internal resistance.",
+    "Answer:  Emf ε is the energy supplied per unit charge by a source (ideal, no internal loss). The terminal voltage is what is available: V_term = ε − Ir, where r is the internal resistance and I the current. Under load the terminal voltage drops; at open circuit (I=0) V_term = ε.",
+    "⚡ Short / exam line:  V_term = ε − Ir ; r = (ε−V)/I.",
+    "Example:  A battery 'sags' under heavy current because of its internal r.",
+    "[Explain] T6. Explain work and power in an electrical circuit, and Joule heating.",
+    "Answer:  Power P = IV = I²R = V²/R; energy W = Pt = I²Rt (Joule heating, lost as heat in a resistor). Higher current or resistance dissipates more power as heat; this is why wires warm and fuses blow when overloaded.",
+    "⚡ Short / exam line:  P = I²R = V²/R ; heat = I²Rt.",
+    "Example:  A fuse melts when I²Rt exceeds its heat capacity.",
+    "[Explain] T7. Explain Kirchhoff's rules and apply them to a junction.",
+    "Answer:  Kirchhoff's junction rule: the sum of currents entering a node equals the sum leaving (charge conservation). The loop rule: the algebraic sum of voltages around any closed loop is zero (energy conservation). These let one solve complex circuits by current and potential equations.",
+    "⚡ Short / exam line:  Junction: ΣI_in = ΣI_out ; Loop: ΣV = 0.",
+    "Example:  At a T-junction, current splits; the loop rule balances all drops and emfs.",
+    "[Explain] T8. Explain a Wheatstone bridge and the balance condition.",
+    "Answer:  A Wheatstone bridge is a network of four resistors forming a diamond with a galvanometer between two opposite points. It is balanced when R₁/R₂ = R₃/R₄ (no current through the galvanometer), letting one find an unknown resistance by adjusting a known one.",
+    "⚡ Short / exam line:  Balance: R₁/R₂ = R₃/R₄.",
+    "Example:  Used to measure unknown resistances precisely.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T9. Why does a series circuit have higher total resistance than a parallel one?",
+    "Answer:  In series, the same current must pass through every resistor, so the drops add: R_eq = R₁+R₂+… > any single R. In parallel, current divides among several paths, so the equivalent resistance is less than the smallest individual resistor.",
+    "⚡ Short / exam line:  Series: same I, drops add → R_eq > largest; Parallel: I divides → R_eq < smallest.",
+    "Example:  Adding more parallel resistors always lowers R_eq.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. A 12 V source (r = 2 Ω) drives a 6 Ω load. Find the current and terminal voltage.",
+    "Answer:  R_total = 6 + 2 = 8 Ω. I = 12/8 = 1.5 A. V_term = ε − Ir = 12 − 1.5×2 = 9 V (or V = IR = 1.5×6 = 9 V).",
+    "⚡ Short / exam line:  I = ε/(R+r) ; V_term = IR.",
+    "Example:  Current 1.5 A, terminal 9 V.",
+    "★ Quick-formula memos (this unit)",
+    "I = nAvq (drift) ; R = ρL/A ; Conductivity σ = 1/ρ.",
+    "V–I: Ohmic (linear) vs Non-Ohmic.",
+    "Series: R_eq=ΣR ; Parallel: 1/R_eq=Σ1/R.",
+    "Potential divider: V₂ = V·R₂/(R₁+R₂) ; emf ε, V_term = ε − Ir."
+  ]
+}

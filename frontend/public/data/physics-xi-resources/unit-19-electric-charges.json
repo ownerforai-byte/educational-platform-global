@@ -1,0 +1,377 @@
+{
+  "unitNo": 19,
+  "unitId": "electric-charges",
+  "unitName": "Electric Charges",
+  "contentArea": "Electricity & Magnetism",
+  "docxFileName": "Physics_XI_Unit_19_electric-charges.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_19_electric-charges.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 19: ELECTRIC CHARGES   Content Area: Electricity & Magnetism",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 103,
+    "tableCount": 4,
+    "questionCount": 10,
+    "theoryCount": 10,
+    "formulaCount": 3
+  },
+  "tables": [
+    {
+      "headers": [
+        "Method",
+        "Mechanism",
+        "Final charge"
+      ],
+      "rows": [
+        [
+          "Conduction (contact)",
+          "Transfer of electrons by touch",
+          "Same sign as source"
+        ],
+        [
+          "Induction",
+          "Separation of charges without contact",
+          "Opposite sign to nearby source"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Positive",
+        "Negative"
+      ],
+      "rows": [
+        [
+          "Carrier",
+          "Proton deficiency",
+          "Excess electrons"
+        ],
+        [
+          "Electron flow",
+          "—",
+          "Negative → positive (conventional opposite)"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Aspect",
+        "Coulomb (electric)",
+        "Newton (gravitational)"
+      ],
+      "rows": [
+        [
+          "Force",
+          "F = kq₁q₂/r²",
+          "F = Gm₁m₂/r²"
+        ],
+        [
+          "Can be repulsive?",
+          "Yes (like signs)",
+          "No (always attractive)"
+        ],
+        [
+          "Strength",
+          "Enormously stronger",
+          "Very weak"
+        ],
+        [
+          "Unit of constant",
+          "k = 1/4πε₀ = 9×10⁹",
+          "G = 6.67×10⁻¹¹"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Electric E",
+        "Gravitational g"
+      ],
+      "rows": [
+        [
+          "Formula (point)",
+          "kq/r²",
+          "GM/r²"
+        ],
+        [
+          "Unit",
+          "N/C = V/m",
+          "N/kg"
+        ],
+        [
+          "Direction",
+          "Away + / toward −",
+          "Always toward mass"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define electric charge and its properties.",
+      "answer": "Electric charge is a property of matter that experiences electromagnetic force. Properties: it is quantized (q = ne, e = 1.6×10⁻¹⁹ C), conserved (total charge in a closed system is constant), and additive; like charges repel, unlike attract.",
+      "shortcut": "q = ne ; conserved ; like repel, unlike attract.",
+      "example": "An electron has q = −e = −1.6×10⁻¹⁹ C."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Explain charging by friction (triboelectric effect).",
+      "answer": "When two insulators are rubbed, electrons transfer from the more easily ionized material to the other, so one becomes positive and the other negative. E.g. glass rubbed with silk loses electrons → glass +, silk −.",
+      "shortcut": "Rub → electron transfer → + and −; charge is conserved.",
+      "example": "Plastic rubbed with fur → plastic negative."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. Explain charging by induction with a conductor.",
+      "answer": "Bring a charged rod near a conductor (not touching). Free charges redistribute (induction); then connect the far end to ground briefly to remove the charge of the sign that is repelled; removing the ground and rod leaves the conductor charged opposite to the rod, without contact.",
+      "shortcut": "Rod → separation → ground one side → rod removed → net opposite charge.",
+      "example": "A neutral ball near a + rod becomes + on the far side and − on the near side."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. State the two types of charge and the SI unit of charge.",
+      "answer": "Two types: positive (protons, lacks electrons) and negative (electrons). SI unit of charge is the coulomb (C); 1 C = charge of 6.25×10¹⁸ electrons. Charge is conserved. ▥ 19.1–19.2 Charges & Charging by Induction  —  Compare / Contrast Tables Conduction vs Induction (charging methods) Positive vs Negative Charge ▣ 19.3–19.4 Coulomb's Law & Multiple Charges",
+      "shortcut": "+ and − ; unit C ; conserved.",
+      "example": "A capacitor of 1 F holds 1 C at 1 V."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. State Coulomb's law.",
+      "answer": "The electrostatic force between two point charges is proportional to the product of the charges and inversely proportional to the square of the distance: F = (1/4πε₀)(q₁q₂/r²), 1/4πε₀ = 9×10⁹ N·m²/C²; it acts along the line joining them.",
+      "shortcut": "F = kq₁q₂/r², k = 9×10⁹.",
+      "example": "Doubling a charge or halving r changes F by 2 or 4 respectively."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Two charges of 2 μC and 3 μC are 0.3 m apart. Find the force.",
+      "answer": "F = 9×10⁹×(2×10⁻⁶)(3×10⁻⁶)/(0.3)² = 9×10⁹×6×10⁻¹²/0.09 = 54×10⁻³/0.09 = 0.6 N.",
+      "shortcut": "F = kq₁q₂/r².",
+      "example": "0.6 N repulsive (both +)."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. Explain the principle of superposition for electric forces.",
+      "answer": "The net force on a charge due to several others is the vector sum of the individual forces each exerts (superposition). Forces are added as vectors, not scalars.",
+      "shortcut": "F_net = ΣFᵢ (vector sum).",
+      "example": "Place a charge at the corner of a square of charges; add the two diagonal forces."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. In the example, two equal +q are placed at the ends of a 1 m line; find the position of a third charge q that makes the net force on a central test charge zero.",
+      "answer": "By symmetry the point is the midpoint (x = 0.5 m), where the two equal forces from each +q cancel. A neutral test charge there feels zero net force.",
+      "shortcut": "Symmetric → midpoint is the zero-force point.",
+      "example": "Test charge at the center has F_net = 0."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. A 5 μC charge is at the origin and a 10 μC charge at x = 1 m. Find the point on the line where the field is zero.",
+      "answer": "Between them: 9×10⁹×5/x² = 9×10⁹×10/(1−x)² → 5/x² = 10/(1−x)² → (1−x)/x = √2 → x = 1/(1+√2) = 0.414 m from the 5 μC charge.",
+      "shortcut": "E_zero between opposite-same-sign charges at ratio √(q₂/q₁) from the smaller.",
+      "example": "≈ 0.414 m from the 5 μC."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Why does Coulomb's law fail for extended charged bodies?",
+      "answer": "Coulomb's law holds for point charges; an extended body is integrated (superposition) into point contributions, so it is used in integral form rather than a simple r² rule. Also for polarizable conductors the charge distribution depends on the situation, so it is not a fixed pair. ▥ 19.3–19.4 Coulomb's Law & Multiple Charges  —  Compare / Contrast Tables Coulomb's Law vs Newton's Gravitation Electric vs Gravitational Field Intensity PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Integrate over the distribution (superposition) for extended bodies.",
+      "example": "A charged rod: sum dF over its length to find the force."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive Coulomb's law from the definition of electric field.",
+      "answer": "The field of a point charge q is E = kq/r². A test charge q₂ in this field feels F = q₂E = (kq₁q₂)/r², which is Coulomb's law; the constant k = 1/4πε₀ is fixed by experiment.",
+      "shortcut": "F = q₂E → F = kq₁q₂/r².",
+      "example": "From field to force is a one-line step."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. State the types of charge and the property of quantization.",
+      "answer": "Two types: positive (proton) and negative (electron). Charge is quantized: any observable charge is an integer multiple of the elementary charge e = 1.6×10⁻¹⁹ C (q = ne), and total charge in a closed system is conserved.",
+      "shortcut": "q = ne ; conserved ; e = 1.6e-19 C.",
+      "example": "An object has ±n electron-worth of charge."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T3. State Coulomb's law and the SI unit of charge.",
+      "answer": "Coulomb's law: the electrostatic force between two point charges is F = (1/4πε₀)(q₁q₂/r²), k = 1/4πε₀ = 9×10⁹ N·m²/C², along the line joining them. The SI unit of charge is the coulomb (C).",
+      "shortcut": "F = kq₁q₂/r² ; k = 9e9 ; unit C.",
+      "example": "Like repel, unlike attract; inverse-square."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T4. Compare a conductor and an insulator in electrostatics.",
+      "answer": "A conductor has mobile charge carriers (free electrons); charge redistributes and resides on its surface, and its interior field is zero. An insulator has bound charges; charge stays where placed and the interior field is not zero. Examples: metal vs plastic/wood.",
+      "shortcut": "Conductor: mobile, surface charge, E_in=0; Insulator: fixed, bulk charge.",
+      "example": "A charged metal sphere vs a charged plastic rod."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain the three methods of charging: friction, contact, induction.",
+      "answer": "Friction (rubbing): electrons transfer between two insulators (one +, one −). Contact: a charged conductor touches a neutral one, sharing charge. Induction: a charged rod near a conductor rearranges its charge; grounding one side and removing the rod leaves a net opposite charge, without contact.",
+      "shortcut": "Friction, contact (sharing), induction (no contact).",
+      "example": "A charged comb attracting paper = induction/friction."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain the principle of superposition for electric forces.",
+      "answer": "The net force on a charge is the vector sum of the forces each other charge exerts on it (each pair acts independently). Forces are added as vectors, so geometry (angles) determines the result — a straight-line addition of magnitudes is not enough.",
+      "shortcut": "F_net = ΣFᵢ (vector sum).",
+      "example": "Place a charge at a corner of a square of four charges and add the two forces."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain why a charged conductor distributes charge on its surface.",
+      "answer": "Free charges in a conductor repel each other and move to the surface until the field inside is zero (electrostatic equilibrium). Hence excess charge resides on the outer surface, denser at sharp points. This is the basis of a lightning rod.",
+      "shortcut": "Excess charge lives on the surface; denser at sharp points.",
+      "example": "A charged sphere's interior field is zero."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why does a charged balloon stick to a wall?",
+      "answer": "The balloon's charge polarizes the neutral wall (induction): opposite charges in the wall are drawn nearer, so the attractive force over the near layer exceeds the repulsion, and the balloon sticks. This is electrostatic induction plus a slight air-pressure effect.",
+      "shortcut": "Induced opposite charge → attraction.",
+      "example": "Rub a balloon on hair then stick it to the ceiling."
+    },
+    {
+      "type": "theory",
+      "category": "Viva  (viva-voce probing)",
+      "question": "[Viva] T9. Professor: 'What happens to the force between two charges if the medium is water instead of air?'",
+      "answer": "The force decreases by the factor 1/ε_r (relative permittivity). Water has ε_r ≈ 80, so F_water = F_air/80 — Coulomb's force is about 80 times weaker in water.",
+      "shortcut": "F ∝ 1/ε_r ; water ~80× weaker.",
+      "example": "Dielectric constants reduce electrostatic forces."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T10. Two equal charges 4 μC are 0.5 m apart. Find the force and the point on the line where the field is zero.",
+      "answer": "F = 9×10⁹×(4×10⁻⁶)²/0.25 = 9×10⁹×16×10⁻¹²/0.25 = 576 N. The field is zero at the midpoint (x = 0.25 m), where the two equal symmetric fields cancel.",
+      "shortcut": "F = kq²/r² ; midpoint = zero field.",
+      "example": "576 N repulsion; zero field at 0.25 m."
+    }
+  ],
+  "formulas": [
+    "Charge q is in C ; e = 1.6×10⁻¹⁹ C (quantized).",
+    "Coulomb: F = (1/4πε₀)(q₁q₂/r²), 1/4πε₀ = 9×10⁹ N·m²/C².",
+    "Like charges repel, unlike attract; superposition adds forces vectorially."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 19: ELECTRIC CHARGES   Content Area: Electricity & Magnetism",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 19.1–19.2 Charges & Charging by Induction",
+    "Q1. Define electric charge and its properties.",
+    "Answer:  Electric charge is a property of matter that experiences electromagnetic force. Properties: it is quantized (q = ne, e = 1.6×10⁻¹⁹ C), conserved (total charge in a closed system is constant), and additive; like charges repel, unlike attract.",
+    "⚡ Shortcut:  q = ne ; conserved ; like repel, unlike attract.",
+    "Example:  An electron has q = −e = −1.6×10⁻¹⁹ C.",
+    "Q2. Explain charging by friction (triboelectric effect).",
+    "Answer:  When two insulators are rubbed, electrons transfer from the more easily ionized material to the other, so one becomes positive and the other negative. E.g. glass rubbed with silk loses electrons → glass +, silk −.",
+    "⚡ Shortcut:  Rub → electron transfer → + and −; charge is conserved.",
+    "Example:  Plastic rubbed with fur → plastic negative.",
+    "Q3. Explain charging by induction with a conductor.",
+    "Answer:  Bring a charged rod near a conductor (not touching). Free charges redistribute (induction); then connect the far end to ground briefly to remove the charge of the sign that is repelled; removing the ground and rod leaves the conductor charged opposite to the rod, without contact.",
+    "⚡ Shortcut:  Rod → separation → ground one side → rod removed → net opposite charge.",
+    "Example:  A neutral ball near a + rod becomes + on the far side and − on the near side.",
+    "Q4. State the two types of charge and the SI unit of charge.",
+    "Answer:  Two types: positive (protons, lacks electrons) and negative (electrons). SI unit of charge is the coulomb (C); 1 C = charge of 6.25×10¹⁸ electrons. Charge is conserved.",
+    "⚡ Shortcut:  + and − ; unit C ; conserved.",
+    "Example:  A capacitor of 1 F holds 1 C at 1 V.",
+    "▥ 19.1–19.2 Charges & Charging by Induction  —  Compare / Contrast Tables",
+    "Conduction vs Induction (charging methods)",
+    "Positive vs Negative Charge",
+    "▣ 19.3–19.4 Coulomb's Law & Multiple Charges",
+    "Q5. State Coulomb's law.",
+    "Answer:  The electrostatic force between two point charges is proportional to the product of the charges and inversely proportional to the square of the distance: F = (1/4πε₀)(q₁q₂/r²), 1/4πε₀ = 9×10⁹ N·m²/C²; it acts along the line joining them.",
+    "⚡ Shortcut:  F = kq₁q₂/r², k = 9×10⁹.",
+    "Example:  Doubling a charge or halving r changes F by 2 or 4 respectively.",
+    "Q6. Two charges of 2 μC and 3 μC are 0.3 m apart. Find the force.",
+    "Answer:  F = 9×10⁹×(2×10⁻⁶)(3×10⁻⁶)/(0.3)² = 9×10⁹×6×10⁻¹²/0.09 = 54×10⁻³/0.09 = 0.6 N.",
+    "⚡ Shortcut:  F = kq₁q₂/r².",
+    "Example:  0.6 N repulsive (both +).",
+    "Q7. Explain the principle of superposition for electric forces.",
+    "Answer:  The net force on a charge due to several others is the vector sum of the individual forces each exerts (superposition). Forces are added as vectors, not scalars.",
+    "⚡ Shortcut:  F_net = ΣFᵢ (vector sum).",
+    "Example:  Place a charge at the corner of a square of charges; add the two diagonal forces.",
+    "Q8. In the example, two equal +q are placed at the ends of a 1 m line; find the position of a third charge q that makes the net force on a central test charge zero.",
+    "Answer:  By symmetry the point is the midpoint (x = 0.5 m), where the two equal forces from each +q cancel. A neutral test charge there feels zero net force.",
+    "⚡ Shortcut:  Symmetric → midpoint is the zero-force point.",
+    "Example:  Test charge at the center has F_net = 0.",
+    "Q9. A 5 μC charge is at the origin and a 10 μC charge at x = 1 m. Find the point on the line where the field is zero.",
+    "Answer:  Between them: 9×10⁹×5/x² = 9×10⁹×10/(1−x)² → 5/x² = 10/(1−x)² → (1−x)/x = √2 → x = 1/(1+√2) = 0.414 m from the 5 μC charge.",
+    "⚡ Shortcut:  E_zero between opposite-same-sign charges at ratio √(q₂/q₁) from the smaller.",
+    "Example:  ≈ 0.414 m from the 5 μC.",
+    "Q10. Why does Coulomb's law fail for extended charged bodies?",
+    "Answer:  Coulomb's law holds for point charges; an extended body is integrated (superposition) into point contributions, so it is used in integral form rather than a simple r² rule. Also for polarizable conductors the charge distribution depends on the situation, so it is not a fixed pair.",
+    "⚡ Shortcut:  Integrate over the distribution (superposition) for extended bodies.",
+    "Example:  A charged rod: sum dF over its length to find the force.",
+    "▥ 19.3–19.4 Coulomb's Law & Multiple Charges  —  Compare / Contrast Tables",
+    "Coulomb's Law vs Newton's Gravitation",
+    "Electric vs Gravitational Field Intensity",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive Coulomb's law from the definition of electric field.",
+    "Answer:  The field of a point charge q is E = kq/r². A test charge q₂ in this field feels F = q₂E = (kq₁q₂)/r², which is Coulomb's law; the constant k = 1/4πε₀ is fixed by experiment.",
+    "⚡ Short / exam line:  F = q₂E → F = kq₁q₂/r².",
+    "Example:  From field to force is a one-line step.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T2. State the types of charge and the property of quantization.",
+    "Answer:  Two types: positive (proton) and negative (electron). Charge is quantized: any observable charge is an integer multiple of the elementary charge e = 1.6×10⁻¹⁹ C (q = ne), and total charge in a closed system is conserved.",
+    "⚡ Short / exam line:  q = ne ; conserved ; e = 1.6e-19 C.",
+    "Example:  An object has ±n electron-worth of charge.",
+    "[State] T3. State Coulomb's law and the SI unit of charge.",
+    "Answer:  Coulomb's law: the electrostatic force between two point charges is F = (1/4πε₀)(q₁q₂/r²), k = 1/4πε₀ = 9×10⁹ N·m²/C², along the line joining them. The SI unit of charge is the coulomb (C).",
+    "⚡ Short / exam line:  F = kq₁q₂/r² ; k = 9e9 ; unit C.",
+    "Example:  Like repel, unlike attract; inverse-square.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T4. Compare a conductor and an insulator in electrostatics.",
+    "Answer:  A conductor has mobile charge carriers (free electrons); charge redistributes and resides on its surface, and its interior field is zero. An insulator has bound charges; charge stays where placed and the interior field is not zero. Examples: metal vs plastic/wood.",
+    "⚡ Short / exam line:  Conductor: mobile, surface charge, E_in=0; Insulator: fixed, bulk charge.",
+    "Example:  A charged metal sphere vs a charged plastic rod.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T5. Explain the three methods of charging: friction, contact, induction.",
+    "Answer:  Friction (rubbing): electrons transfer between two insulators (one +, one −). Contact: a charged conductor touches a neutral one, sharing charge. Induction: a charged rod near a conductor rearranges its charge; grounding one side and removing the rod leaves a net opposite charge, without contact.",
+    "⚡ Short / exam line:  Friction, contact (sharing), induction (no contact).",
+    "Example:  A charged comb attracting paper = induction/friction.",
+    "[Explain] T6. Explain the principle of superposition for electric forces.",
+    "Answer:  The net force on a charge is the vector sum of the forces each other charge exerts on it (each pair acts independently). Forces are added as vectors, so geometry (angles) determines the result — a straight-line addition of magnitudes is not enough.",
+    "⚡ Short / exam line:  F_net = ΣFᵢ (vector sum).",
+    "Example:  Place a charge at a corner of a square of four charges and add the two forces.",
+    "[Explain] T7. Explain why a charged conductor distributes charge on its surface.",
+    "Answer:  Free charges in a conductor repel each other and move to the surface until the field inside is zero (electrostatic equilibrium). Hence excess charge resides on the outer surface, denser at sharp points. This is the basis of a lightning rod.",
+    "⚡ Short / exam line:  Excess charge lives on the surface; denser at sharp points.",
+    "Example:  A charged sphere's interior field is zero.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why does a charged balloon stick to a wall?",
+    "Answer:  The balloon's charge polarizes the neutral wall (induction): opposite charges in the wall are drawn nearer, so the attractive force over the near layer exceeds the repulsion, and the balloon sticks. This is electrostatic induction plus a slight air-pressure effect.",
+    "⚡ Short / exam line:  Induced opposite charge → attraction.",
+    "Example:  Rub a balloon on hair then stick it to the ceiling.",
+    "▹ Viva  (viva-voce probing)",
+    "[Viva] T9. Professor: 'What happens to the force between two charges if the medium is water instead of air?'",
+    "Answer:  The force decreases by the factor 1/ε_r (relative permittivity). Water has ε_r ≈ 80, so F_water = F_air/80 — Coulomb's force is about 80 times weaker in water.",
+    "⚡ Short / exam line:  F ∝ 1/ε_r ; water ~80× weaker.",
+    "Example:  Dielectric constants reduce electrostatic forces.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T10. Two equal charges 4 μC are 0.5 m apart. Find the force and the point on the line where the field is zero.",
+    "Answer:  F = 9×10⁹×(4×10⁻⁶)²/0.25 = 9×10⁹×16×10⁻¹²/0.25 = 576 N. The field is zero at the midpoint (x = 0.25 m), where the two equal symmetric fields cancel.",
+    "⚡ Short / exam line:  F = kq²/r² ; midpoint = zero field.",
+    "Example:  576 N repulsion; zero field at 0.25 m.",
+    "★ Quick-formula memos (this unit)",
+    "Charge q is in C ; e = 1.6×10⁻¹⁹ C (quantized).",
+    "Coulomb: F = (1/4πε₀)(q₁q₂/r²), 1/4πε₀ = 9×10⁹ N·m²/C².",
+    "Like charges repel, unlike attract; superposition adds forces vectorially."
+  ]
+}

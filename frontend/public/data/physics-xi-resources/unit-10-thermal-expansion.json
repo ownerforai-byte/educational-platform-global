@@ -1,0 +1,346 @@
+{
+  "unitNo": 10,
+  "unitId": "thermal-expansion",
+  "unitName": "Thermal Expansion",
+  "contentArea": "Heat & Thermodynamics",
+  "docxFileName": "Physics_XI_Unit_10_thermal-expansion.docx",
+  "docxUrl": "/materials/physics-xi/Physics_XI_Unit_10_thermal-expansion.docx",
+  "titleBlock": {
+    "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "heading": "UNIT 10: THERMAL EXPANSION   Content Area: Heat & Thermodynamics",
+    "subtitle": "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples"
+  },
+  "stats": {
+    "paragraphCount": 98,
+    "tableCount": 3,
+    "questionCount": 10,
+    "theoryCount": 9,
+    "formulaCount": 4
+  },
+  "tables": [
+    {
+      "headers": [
+        "Type",
+        "Coefficient",
+        "Expansion",
+        "Relation"
+      ],
+      "rows": [
+        [
+          "Length",
+          "α (per °C)",
+          "ΔL = LαΔT",
+          "—"
+        ],
+        [
+          "Area",
+          "β",
+          "ΔA = AβΔT",
+          "β ≈ 2α"
+        ],
+        [
+          "Volume",
+          "γ",
+          "ΔV = VγΔT",
+          "γ ≈ 3α"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Quantity",
+        "Apparent expansion",
+        "Real expansion"
+      ],
+      "rows": [
+        [
+          "What it measures",
+          "Liquid rise vs container",
+          "Liquid's own volume change"
+        ],
+        [
+          "Coefficient",
+          "γ_app",
+          "γ_real"
+        ],
+        [
+          "Relation",
+          "γ_real = γ_app + γ_glass",
+          "Glass expands too"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Fact",
+        "Statement"
+      ],
+      "rows": [
+        [
+          "Law",
+          "Molar heat capacity of most elements ≈ 3R ≈ 25 J/mol·K"
+        ],
+        [
+          "Mass-specific",
+          "Mass-specific heat ≈ 0.11 cal/g°C"
+        ],
+        [
+          "Validity",
+          "Good at high T; fails for light atoms (Be, C, diamond) at low T"
+        ]
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "neb",
+      "question": "Q1. Define linear expansivity α and write the formula.",
+      "answer": "α is the fractional increase in length per unit rise in temperature: α = ΔL/(L₀ΔT). So L = L₀(1+αΔT).",
+      "shortcut": "L = L₀(1+αΔT).",
+      "example": "α ≈ 12×10⁻⁶ /°C for iron."
+    },
+    {
+      "type": "neb",
+      "question": "Q2. Relate cubic, superficial and linear expansion coefficients.",
+      "answer": "For isotropic solids, superficial β = 2α and cubic γ = 3α. Thus a solid's volume change per degree is three times its linear change.",
+      "shortcut": "β = 2α, γ = 3α.",
+      "example": "A cube: each edge grows with α, volume with 3α."
+    },
+    {
+      "type": "neb",
+      "question": "Q3. An iron rail of length 1.5 m, α = 11×10⁻⁶/°C, is heated by 50 °C. Find its increase in length.",
+      "answer": "ΔL = αLΔT = 11×10⁻⁶×1.5×50 = 8.25×10⁻⁴ m = 0.825 mm.",
+      "shortcut": "ΔL = αLΔT.",
+      "example": "≈ 0.8 mm; gaps left in rails to avoid buckling."
+    },
+    {
+      "type": "neb",
+      "question": "Q4. Explain why gaps are left between railway joints and in bridges.",
+      "answer": "With temperature the rails expand; without gaps they would buckle or stress the structure. The gap absorbs the thermal expansion ΔL = αLΔT, preventing damage.",
+      "shortcut": "Gap absorbs ΔL = αLΔT; thermal stress avoidance.",
+      "example": "Expansion joints on bridges open with heat."
+    },
+    {
+      "type": "neb",
+      "question": "Q5. A glass cube (α = 9×10⁻⁶/°C) of side 2 cm is heated by 40 °C. Find change in volume.",
+      "answer": "ΔV = γVΔT = 3αVΔT = 3×9×10⁻⁶×(2³)×40 = 3×9×10⁻⁶×8×40 = 8.64×10⁻³ cm³. ▥ 10.1–10.2 Linear, Superficial & Cubic Expansion  —  Compare / Contrast Tables Linear vs Superficial vs Cubic Expansion ▣ 10.3 Liquid Expansion & 10.4 Dulong-Petit",
+      "shortcut": "Use γ = 3α for volume change.",
+      "example": "≈ 8.6×10⁻³ cm³ expansion."
+    },
+    {
+      "type": "neb",
+      "question": "Q6. Define absolute and apparent expansion of a liquid.",
+      "answer": "Absolute expansion = the true volume change of the liquid. Apparent expansion = what is observed, which is the liquid's expansion minus the container's expansion (the container also expands, so the liquid appears to rise less).",
+      "shortcut": "γ_app = γ_abs − γ_vessel.",
+      "example": "The same liquid in a larger vessel shows less rise."
+    },
+    {
+      "type": "neb",
+      "question": "Q7. A glass vessel (cubic γ_v=27×10⁻⁶/°C) holds mercury. Mercury's absolute γ=180×10⁻⁶/°C. Find apparent expansion.",
+      "answer": "γ_app = γ_abs − γ_v = 180×10⁻⁶ − 27×10⁻⁶ = 153×10⁻⁶ /°C.",
+      "shortcut": "γ_app = γ_abs − γ_v.",
+      "example": "≈ 1.53×10⁻⁴ /°C."
+    },
+    {
+      "type": "neb",
+      "question": "Q8. Explain the anomalous (reverse) expansion of water between 0 °C and 4 °C.",
+      "answer": "Water contracts as it cools from 4 °C to 0 °C, so it is densest at 4 °C. This is anomalous and is why ice floats: the top layer can freeze while water below stays at 4 °C, protecting life in lakes.",
+      "shortcut": "Water densest at 4 °C; ice (0 °C) less dense → floats.",
+      "example": "Lakes freeze top-down because of this anomaly."
+    },
+    {
+      "type": "neb",
+      "question": "Q9. State Dulong and Petit's law.",
+      "answer": "The molar specific heat of most crystalline solids at (moderately high) temperature is approximately constant: C_m ≈ 3R ≈ 25 J mol⁻¹ K⁻¹, independent of the element.",
+      "shortcut": "Molar C_v of solids ≈ 3R ≈ 25 J/mol·K.",
+      "example": "A metal's heat capacity per mole is ~ 25 J/K."
+    },
+    {
+      "type": "neb",
+      "question": "Q10. Two solid bars, α₁, α₂ and equal lengths. The coefficient of the composite? State how to find it.",
+      "answer": "For a composite bar in series, use the total change: L(α₁LΔT+α₂LΔT) = L(α₁+α₂)ΔT. A single effective α (equal-length halves) would be (α₁+α₂)/2; in general use series/parallel combination of the individual ΔL. ▥ 10.3 Liquid Expansion & 10.4 Dulong-Petit  —  Compare / Contrast Tables Apparent vs Real Expansion of Liquids Dulong–Petit: What It Says PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+      "shortcut": "Sum ΔL of each part; equal halves → α_eff = (α₁+α₂)/2.",
+      "example": "Invar + steel reduces the overall expansion."
+    }
+  ],
+  "theoryItems": [
+    {
+      "type": "theory",
+      "category": "Derive  (derivations & long answers)",
+      "question": "[Derive] T1. Derive that γ = 3α for a solid.",
+      "answer": "A cube of side L₀ expands to L₀(1+αΔT). Volume V = L³ ≈ L₀³[1+3αΔT] (ignoring higher terms). Since V = V₀(1+γΔT), comparing gives γ = 3α.",
+      "shortcut": "V ∝ L³ → (1+3αΔT) → γ = 3α.",
+      "example": "A rod, a plate and a block of the same solid expand consistently."
+    },
+    {
+      "type": "theory",
+      "category": "State  (definitions, laws & formulae)",
+      "question": "[State] T2. Define linear, superficial and cubical expansivity.",
+      "answer": "Linear α = fractional increase in length per °C (L = L₀(1+αΔT)). Superficial β = 2α (area). Cubical γ = 3α (volume). For isotropic solids β = 2α, γ = 3α.",
+      "shortcut": "α: length; β=2α: area; γ=3α: volume.",
+      "example": "α≈12×10⁻⁶/°C for iron → γ≈36×10⁻⁶/°C."
+    },
+    {
+      "type": "theory",
+      "category": "Compare  (compare & contrast)",
+      "question": "[Compare] T3. Compare the expansion of solids and liquids.",
+      "answer": "Solids expand in all three dimensions (α, β, γ) and stay rigid. Liquids expand only in volume (no fixed shape) and show apparent expansion depending on the container. Solids have well-defined α; liquids have only γ.",
+      "shortcut": "Solids: 3-D rigid; Liquids: volume only, container-dependent.",
+      "example": "A solid bar stretches; a liquid just increases its level."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T4. Explain the measurement of linear expansion using a brass bar and a micrometer.",
+      "answer": "The bar of known length L₀ at temperature θ₁ is clamped at one end; the free end, on heating to θ₂, pushes a lever/micrometer. Measuring the micrometer reading change ΔL gives α = ΔL/(L₀ΔT). α = measured extension / (L₀·ΔT).",
+      "shortcut": "α = ΔL/(L₀ΔT) with a lever gauge.",
+      "example": "Gives α of a metal; used for expansion coefficients."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T5. Explain absolute and apparent expansion of a liquid and their relation.",
+      "answer": "Absolute expansion = the true change in liquid volume. Apparent = the observed change, which is the liquid's absolute expansion minus the container's expansion (the vessel also expands). Hence γ_app = γ_abs − γ_vessel.",
+      "shortcut": "γ_app = γ_abs − γ_vessel.",
+      "example": "The same liquid shows less rise in a larger vessel."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T6. Explain Dulong and Petit's law and its use.",
+      "answer": "The molar specific heat of most crystalline solids is nearly constant, C_m ≈ 3R ≈ 25 J mol⁻¹ K⁻¹, independent of the element (at moderately high T). It lets one find an element's atomic mass from its specific heat: atomic mass × specific heat ≈ 25.",
+      "shortcut": "Molar C_v ≈ 3R ≈ 25 J/mol·K.",
+      "example": "A low specific heat implies a high atomic mass."
+    },
+    {
+      "type": "theory",
+      "category": "Explain  (working / principle / application)",
+      "question": "[Explain] T7. Explain the anomalous expansion of water between 0 °C and 4 °C and its consequences.",
+      "answer": "Water contracts as it cools from 4 °C to 0 °C, so it is densest at 4 °C. This is why lakes freeze from the top down, ice floats, and aquatic life survives in winter.",
+      "shortcut": "Densest at 4 °C; ice (0 °C) is less dense.",
+      "example": "A thermometric scale for water must account for this anomaly."
+    },
+    {
+      "type": "theory",
+      "category": "Why  (conceptual & 'why' questions)",
+      "question": "[Why] T8. Why do bi-metal strips bend on heating, and how is this used?",
+      "answer": "The two metals have different α; on heating, the metal with larger α expands more and goes to the outer side, bending the strip. This is used in thermostats and fire alarms: at a preset temperature the strip bends enough to close an electrical contact.",
+      "shortcut": "Different α → differential expansion → bending.",
+      "example": "A thermostat switches heating off at the set temperature."
+    },
+    {
+      "type": "theory",
+      "category": "Numerical  (long numericals / problems)",
+      "question": "[Numerical] T9. A brass ring (α = 19×10⁻⁶/°C, D = 10 cm at 20 °C) must fit a 10.10 cm steel rod. Find the temperature to heat the ring.",
+      "answer": "Ring D(T) = 10(1+19×10⁻⁶·ΔT). Set = 10.10 → 1+19×10⁻⁶·ΔT = 1.010 → 19×10⁻⁶·ΔT = 0.010 → ΔT = 0.010/(1.9×10⁻⁵) ≈ 526 °C → T ≈ 546 °C.",
+      "shortcut": "D(T) = D₀(1+αΔT).",
+      "example": "≈ 546 °C to slip the ring over the rod."
+    }
+  ],
+  "formulas": [
+    "Linear ΔL=αLΔT ; Superficial ΔA=2αAΔT ; Cubic ΔV=3αVΔT.",
+    "γ = 3α ; β(surface) = 2α.",
+    "Apparent liquid expansion = γ_abs − γ_container.",
+    "Dulong-Petit: Molar specific heat of solids ≈ 3R ≈ 25 J mol⁻¹K⁻¹."
+  ],
+  "rawParagraphs": [
+    "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+    "UNIT 10: THERMAL EXPANSION   Content Area: Heat & Thermodynamics",
+    "All-possible NEB questions  •  short precise answers  •  exam shortcuts  •  worked examples",
+    "▣ 10.1–10.2 Linear, Superficial & Cubic Expansion",
+    "Q1. Define linear expansivity α and write the formula.",
+    "Answer:  α is the fractional increase in length per unit rise in temperature: α = ΔL/(L₀ΔT). So L = L₀(1+αΔT).",
+    "⚡ Shortcut:  L = L₀(1+αΔT).",
+    "Example:  α ≈ 12×10⁻⁶ /°C for iron.",
+    "Q2. Relate cubic, superficial and linear expansion coefficients.",
+    "Answer:  For isotropic solids, superficial β = 2α and cubic γ = 3α. Thus a solid's volume change per degree is three times its linear change.",
+    "⚡ Shortcut:  β = 2α, γ = 3α.",
+    "Example:  A cube: each edge grows with α, volume with 3α.",
+    "Q3. An iron rail of length 1.5 m, α = 11×10⁻⁶/°C, is heated by 50 °C. Find its increase in length.",
+    "Answer:  ΔL = αLΔT = 11×10⁻⁶×1.5×50 = 8.25×10⁻⁴ m = 0.825 mm.",
+    "⚡ Shortcut:  ΔL = αLΔT.",
+    "Example:  ≈ 0.8 mm; gaps left in rails to avoid buckling.",
+    "Q4. Explain why gaps are left between railway joints and in bridges.",
+    "Answer:  With temperature the rails expand; without gaps they would buckle or stress the structure. The gap absorbs the thermal expansion ΔL = αLΔT, preventing damage.",
+    "⚡ Shortcut:  Gap absorbs ΔL = αLΔT; thermal stress avoidance.",
+    "Example:  Expansion joints on bridges open with heat.",
+    "Q5. A glass cube (α = 9×10⁻⁶/°C) of side 2 cm is heated by 40 °C. Find change in volume.",
+    "Answer:  ΔV = γVΔT = 3αVΔT = 3×9×10⁻⁶×(2³)×40 = 3×9×10⁻⁶×8×40 = 8.64×10⁻³ cm³.",
+    "⚡ Shortcut:  Use γ = 3α for volume change.",
+    "Example:  ≈ 8.6×10⁻³ cm³ expansion.",
+    "▥ 10.1–10.2 Linear, Superficial & Cubic Expansion  —  Compare / Contrast Tables",
+    "Linear vs Superficial vs Cubic Expansion",
+    "▣ 10.3 Liquid Expansion & 10.4 Dulong-Petit",
+    "Q6. Define absolute and apparent expansion of a liquid.",
+    "Answer:  Absolute expansion = the true volume change of the liquid. Apparent expansion = what is observed, which is the liquid's expansion minus the container's expansion (the container also expands, so the liquid appears to rise less).",
+    "⚡ Shortcut:  γ_app = γ_abs − γ_vessel.",
+    "Example:  The same liquid in a larger vessel shows less rise.",
+    "Q7. A glass vessel (cubic γ_v=27×10⁻⁶/°C) holds mercury. Mercury's absolute γ=180×10⁻⁶/°C. Find apparent expansion.",
+    "Answer:  γ_app = γ_abs − γ_v = 180×10⁻⁶ − 27×10⁻⁶ = 153×10⁻⁶ /°C.",
+    "⚡ Shortcut:  γ_app = γ_abs − γ_v.",
+    "Example:  ≈ 1.53×10⁻⁴ /°C.",
+    "Q8. Explain the anomalous (reverse) expansion of water between 0 °C and 4 °C.",
+    "Answer:  Water contracts as it cools from 4 °C to 0 °C, so it is densest at 4 °C. This is anomalous and is why ice floats: the top layer can freeze while water below stays at 4 °C, protecting life in lakes.",
+    "⚡ Shortcut:  Water densest at 4 °C; ice (0 °C) less dense → floats.",
+    "Example:  Lakes freeze top-down because of this anomaly.",
+    "Q9. State Dulong and Petit's law.",
+    "Answer:  The molar specific heat of most crystalline solids at (moderately high) temperature is approximately constant: C_m ≈ 3R ≈ 25 J mol⁻¹ K⁻¹, independent of the element.",
+    "⚡ Shortcut:  Molar C_v of solids ≈ 3R ≈ 25 J/mol·K.",
+    "Example:  A metal's heat capacity per mole is ~ 25 J/K.",
+    "Q10. Two solid bars, α₁, α₂ and equal lengths. The coefficient of the composite? State how to find it.",
+    "Answer:  For a composite bar in series, use the total change: L(α₁LΔT+α₂LΔT) = L(α₁+α₂)ΔT. A single effective α (equal-length halves) would be (α₁+α₂)/2; in general use series/parallel combination of the individual ΔL.",
+    "⚡ Shortcut:  Sum ΔL of each part; equal halves → α_eff = (α₁+α₂)/2.",
+    "Example:  Invar + steel reduces the overall expansion.",
+    "▥ 10.3 Liquid Expansion & 10.4 Dulong-Petit  —  Compare / Contrast Tables",
+    "Apparent vs Real Expansion of Liquids",
+    "Dulong–Petit: What It Says",
+    "PROFESSOR'S THEORY & VIVA BANK   — the kinds of theory a professor / examiner actually asks",
+    "▹ Derive  (derivations & long answers)",
+    "[Derive] T1. Derive that γ = 3α for a solid.",
+    "Answer:  A cube of side L₀ expands to L₀(1+αΔT). Volume V = L³ ≈ L₀³[1+3αΔT] (ignoring higher terms). Since V = V₀(1+γΔT), comparing gives γ = 3α.",
+    "⚡ Short / exam line:  V ∝ L³ → (1+3αΔT) → γ = 3α.",
+    "Example:  A rod, a plate and a block of the same solid expand consistently.",
+    "▹ State  (definitions, laws & formulae)",
+    "[State] T2. Define linear, superficial and cubical expansivity.",
+    "Answer:  Linear α = fractional increase in length per °C (L = L₀(1+αΔT)). Superficial β = 2α (area). Cubical γ = 3α (volume). For isotropic solids β = 2α, γ = 3α.",
+    "⚡ Short / exam line:  α: length; β=2α: area; γ=3α: volume.",
+    "Example:  α≈12×10⁻⁶/°C for iron → γ≈36×10⁻⁶/°C.",
+    "▹ Compare  (compare & contrast)",
+    "[Compare] T3. Compare the expansion of solids and liquids.",
+    "Answer:  Solids expand in all three dimensions (α, β, γ) and stay rigid. Liquids expand only in volume (no fixed shape) and show apparent expansion depending on the container. Solids have well-defined α; liquids have only γ.",
+    "⚡ Short / exam line:  Solids: 3-D rigid; Liquids: volume only, container-dependent.",
+    "Example:  A solid bar stretches; a liquid just increases its level.",
+    "▹ Explain  (working / principle / application)",
+    "[Explain] T4. Explain the measurement of linear expansion using a brass bar and a micrometer.",
+    "Answer:  The bar of known length L₀ at temperature θ₁ is clamped at one end; the free end, on heating to θ₂, pushes a lever/micrometer. Measuring the micrometer reading change ΔL gives α = ΔL/(L₀ΔT). α = measured extension / (L₀·ΔT).",
+    "⚡ Short / exam line:  α = ΔL/(L₀ΔT) with a lever gauge.",
+    "Example:  Gives α of a metal; used for expansion coefficients.",
+    "[Explain] T5. Explain absolute and apparent expansion of a liquid and their relation.",
+    "Answer:  Absolute expansion = the true change in liquid volume. Apparent = the observed change, which is the liquid's absolute expansion minus the container's expansion (the vessel also expands). Hence γ_app = γ_abs − γ_vessel.",
+    "⚡ Short / exam line:  γ_app = γ_abs − γ_vessel.",
+    "Example:  The same liquid shows less rise in a larger vessel.",
+    "[Explain] T6. Explain Dulong and Petit's law and its use.",
+    "Answer:  The molar specific heat of most crystalline solids is nearly constant, C_m ≈ 3R ≈ 25 J mol⁻¹ K⁻¹, independent of the element (at moderately high T). It lets one find an element's atomic mass from its specific heat: atomic mass × specific heat ≈ 25.",
+    "⚡ Short / exam line:  Molar C_v ≈ 3R ≈ 25 J/mol·K.",
+    "Example:  A low specific heat implies a high atomic mass.",
+    "[Explain] T7. Explain the anomalous expansion of water between 0 °C and 4 °C and its consequences.",
+    "Answer:  Water contracts as it cools from 4 °C to 0 °C, so it is densest at 4 °C. This is why lakes freeze from the top down, ice floats, and aquatic life survives in winter.",
+    "⚡ Short / exam line:  Densest at 4 °C; ice (0 °C) is less dense.",
+    "Example:  A thermometric scale for water must account for this anomaly.",
+    "▹ Why  (conceptual & 'why' questions)",
+    "[Why] T8. Why do bi-metal strips bend on heating, and how is this used?",
+    "Answer:  The two metals have different α; on heating, the metal with larger α expands more and goes to the outer side, bending the strip. This is used in thermostats and fire alarms: at a preset temperature the strip bends enough to close an electrical contact.",
+    "⚡ Short / exam line:  Different α → differential expansion → bending.",
+    "Example:  A thermostat switches heating off at the set temperature.",
+    "▹ Numerical  (long numericals / problems)",
+    "[Numerical] T9. A brass ring (α = 19×10⁻⁶/°C, D = 10 cm at 20 °C) must fit a 10.10 cm steel rod. Find the temperature to heat the ring.",
+    "Answer:  Ring D(T) = 10(1+19×10⁻⁶·ΔT). Set = 10.10 → 1+19×10⁻⁶·ΔT = 1.010 → 19×10⁻⁶·ΔT = 0.010 → ΔT = 0.010/(1.9×10⁻⁵) ≈ 526 °C → T ≈ 546 °C.",
+    "⚡ Short / exam line:  D(T) = D₀(1+αΔT).",
+    "Example:  ≈ 546 °C to slip the ring over the rod.",
+    "★ Quick-formula memos (this unit)",
+    "Linear ΔL=αLΔT ; Superficial ΔA=2αAΔT ; Cubic ΔV=3αVΔT.",
+    "γ = 3α ; β(surface) = 2α.",
+    "Apparent liquid expansion = γ_abs − γ_container.",
+    "Dulong-Petit: Molar specific heat of solids ≈ 3R ≈ 25 J mol⁻¹K⁻¹."
+  ]
+}
