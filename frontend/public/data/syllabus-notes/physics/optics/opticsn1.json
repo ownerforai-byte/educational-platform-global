@@ -1,0 +1,88 @@
+{
+  "title": "OPTICS N1",
+  "unitSlug": "optics",
+  "topicSlug": "opticsn1",
+  "topicTitle": "OPTICS N1",
+  "relevance": 40,
+  "notes": [
+    "Geometrical optics treats light as rays and predicts reflection and refraction without tracking wave phase. It is useful when optical elements are much larger than visible wavelengths.",
+    "At a reflecting boundary i=r; at a refracting boundary n1 sin i=n2 sin r. A higher-index medium has lower light speed, v=c/n.",
+    "When light travels from higher to lower refractive index, refraction bends away from the normal. Above the critical angle c, total internal reflection occurs: sin c=n2/n1.",
+    "Example: glass n1=1.50 to air n2=1.00 gives c=sin⁻¹(1/1.50)≈41.8°. At incidence 50° there is TIR; at 30° the ray refracts into air.",
+    "When an opening approaches the wavelength, diffraction spreads the wave and a ray-only model is insufficient; interference and polarisation also require wave optics."
+  ],
+  "confusion": [
+    "A low-to-high index ray cannot undergo total internal reflection.",
+    "At exactly the critical angle the refracted ray grazes the boundary."
+  ],
+  "practice": [
+    "Find critical angle from water n=1.33 to air.",
+    "List both requirements for total internal reflection.",
+    "Why does a narrow slit require a wave model?"
+  ],
+  "universalFacts": [
+    "TIR requires high-to-low refractive index and i>c.",
+    "Angles are from the normal.",
+    "Wave effects matter at wavelength-sized openings."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics",
+  "examples": [
+    "Glass-to-air at n=1.50 has c≈41.8°.",
+    "At 50° incidence on glass-to-air, total internal reflection occurs."
+  ],
+  "practiceQuestions": [
+    "Find critical angle from water n=1.33 to air.",
+    "List both requirements for total internal reflection.",
+    "Why does a narrow slit require a wave model?"
+  ],
+  "formulas": [
+    "Reflection: i=r; refraction: n1 sin i=n2 sin r.",
+    "Critical angle sin c=n2/n1 for n1>n2."
+  ],
+  "keyPoints": [
+    "TIR requires high-to-low refractive index and i>c.",
+    "Angles are from the normal.",
+    "Wave effects matter at wavelength-sized openings."
+  ],
+  "summary": "Ray optics combines reflection, refraction and total internal reflection to explain common paths; wave optics is needed at wavelength scales.",
+  "specialNotes": [
+    "A low-to-high index ray cannot undergo total internal reflection.",
+    "At exactly the critical angle the refracted ray grazes the boundary."
+  ],
+  "importantStatements": [
+    "TIR requires high-to-low refractive index and i>c.",
+    "Angles are from the normal.",
+    "Wave effects matter at wavelength-sized openings."
+  ],
+  "importantNotes": [
+    "TIR requires high-to-low refractive index and i>c.",
+    "Angles are from the normal.",
+    "Wave effects matter at wavelength-sized openings."
+  ],
+  "examShortTricks": [
+    "Reflection: i=r; refraction: n1 sin i=n2 sin r.",
+    "Critical angle sin c=n2/n1 for n1>n2."
+  ],
+  "examNotes": [
+    "Find critical angle from water n=1.33 to air.",
+    "List both requirements for total internal reflection.",
+    "Why does a narrow slit require a wave model?"
+  ],
+  "importantConcepts": [
+    "TIR requires high-to-low refractive index and i>c.",
+    "Angles are from the normal.",
+    "Wave effects matter at wavelength-sized openings."
+  ],
+  "importantTasks": [
+    "Find critical angle from water n=1.33 to air.",
+    "List both requirements for total internal reflection.",
+    "Why does a narrow slit require a wave model?"
+  ],
+  "specificConditions": [
+    "**Optical Principles:** The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁sinθ₁ = n₂sinθ₂). These laws derive from Fermat's principle of least time.",
+    "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
+    "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  ],
+  "duplicateType": 1
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Energy Bands in Solids",
+  "unitSlug": "solids",
+  "topicSlug": "energy-bands",
+  "topicTitle": "Energy Bands in Solids",
+  "relevance": 100,
+  "notes": [
+    "When many atoms form a solid, interactions split atomic energy levels into closely spaced allowed bands separated by forbidden energy gaps. Electrons cannot occupy energies in an ideal band gap.",
+    "The valence band contains bonding electrons; the conduction band contains mobile carriers. The gap Eg=Ec−Ev and the band filling help explain conductivity.",
+    "Metals have partially filled bands or overlapping bands. Insulators have a large gap and very few room-temperature carriers. Semiconductors have a smaller gap, so thermal or optical excitation can promote electrons into the conduction band.",
+    "In an intrinsic semiconductor, promoting an electron leaves a hole in the valence band. Both the electron and the hole can carry current; heating can therefore increase carrier concentration.",
+    "A photon can excite an electron across the gap if hν≥Eg. This underlies photoconductivity and semiconductor photodetectors."
+  ],
+  "confusion": [
+    "A band gap is a forbidden energy range, not a physical gap in the material.",
+    "Band gap alone does not determine conductivity without carrier concentration and mobility."
+  ],
+  "practice": [
+    "Compare band diagrams for metal, semiconductor and insulator.",
+    "Find threshold wavelength for Eg=1.5 eV using hc≈1240 eV·nm.",
+    "Why can heating an intrinsic semiconductor increase conductivity?"
+  ],
+  "universalFacts": [
+    "Allowed bands and forbidden gaps arise in the periodic solid.",
+    "Carrier concentration and mobility jointly determine conductivity.",
+    "An electron promoted to conduction leaves a hole."
+  ],
+  "examples": [
+    "For Eg=2.0 eV, λthreshold≈1240/2.0=620 nm.",
+    "Thermal promotion across the gap creates one conduction electron and one valence-band hole."
+  ],
+  "practiceQuestions": [
+    "Compare band diagrams for metal, semiconductor and insulator.",
+    "Find threshold wavelength for Eg=1.5 eV using hc≈1240 eV·nm.",
+    "Why can heating an intrinsic semiconductor increase conductivity?"
+  ],
+  "formulas": [
+    "Band gap Eg=Ec−Ev.",
+    "Photon excitation: hν≥Eg; threshold wavelength λ≤hc/Eg."
+  ],
+  "keyPoints": [
+    "Allowed bands and forbidden gaps arise in the periodic solid.",
+    "Carrier concentration and mobility jointly determine conductivity.",
+    "An electron promoted to conduction leaves a hole."
+  ],
+  "summary": "Band theory explains conductivity through allowed energy bands, gaps and carrier availability. Thermal and optical excitation can create mobile electron–hole pairs.",
+  "specialNotes": [
+    "A band gap is a forbidden energy range, not a physical gap in the material.",
+    "Band gap alone does not determine conductivity without carrier concentration and mobility."
+  ],
+  "importantStatements": [
+    "Allowed bands and forbidden gaps arise in the periodic solid.",
+    "Carrier concentration and mobility jointly determine conductivity.",
+    "An electron promoted to conduction leaves a hole."
+  ],
+  "importantNotes": [
+    "Allowed bands and forbidden gaps arise in the periodic solid.",
+    "Carrier concentration and mobility jointly determine conductivity.",
+    "An electron promoted to conduction leaves a hole."
+  ],
+  "examShortTricks": [
+    "Band gap Eg=Ec−Ev.",
+    "Photon excitation: hν≥Eg; threshold wavelength λ≤hc/Eg."
+  ],
+  "examNotes": [
+    "Compare band diagrams for metal, semiconductor and insulator.",
+    "Find threshold wavelength for Eg=1.5 eV using hc≈1240 eV·nm.",
+    "Why can heating an intrinsic semiconductor increase conductivity?"
+  ],
+  "importantConcepts": [
+    "Allowed bands and forbidden gaps arise in the periodic solid.",
+    "Carrier concentration and mobility jointly determine conductivity.",
+    "An electron promoted to conduction leaves a hole."
+  ],
+  "importantTasks": [
+    "Compare band diagrams for metal, semiconductor and insulator.",
+    "Find threshold wavelength for Eg=1.5 eV using hc≈1240 eV·nm.",
+    "Why can heating an intrinsic semiconductor increase conductivity?"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "energy-bands-in-solids",
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "visualType": "energy-bands-semiconductor"
+}

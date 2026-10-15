@@ -5,13 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { LogIn, LogOut, ChevronsUp, Palette } from "lucide-react";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
+
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { isNavItemActive } from "@/lib/nav-active";
 import { NAV_SECTIONS, type NavItem } from "@/lib/navigation";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
  * The menu DATA lives in lib/navigation.ts — one list shared with the mobile
@@ -296,7 +297,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             </button>
             {!collapsedSections.theme && (
               <div className="mt-1 px-1">
-                <ThemeToggle />
+                <ThemeToggle ariaLabel="Choose Theme Palette" />
               </div>
             )}
           </section>
@@ -304,7 +305,22 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
       </div>
 
       {/* Bottom action */}
-      <div className="border-t border-border/40 p-2.5 shrink-0">
+      <div className="border-t border-border/40 p-2.5 shrink-0 space-y-2">
+        {/* Navigation Theme Switcher */}
+        {collapsed ? (
+          <div className="flex justify-center" title="Change theme">
+            <ThemeToggle compact={true} variant="dropdown" showLabel={false} ariaLabel="Choose Theme Palette" />
+          </div>
+        ) : (
+          <div className="flex items-center justify-between px-2.5 py-1.5 rounded-xl bg-card/60 border border-border/60">
+            <span className="text-[11px] font-semibold text-muted-foreground flex items-center gap-1.5">
+              <Palette className="h-3.5 w-3.5 text-primary" />
+              <span>Theme</span>
+            </span>
+            <ThemeToggle variant="dropdown" showLabel={true} ariaLabel="Choose Theme Palette" />
+          </div>
+        )}
+
         {isLoggedIn ? (
           <button
             onClick={handleLogout}

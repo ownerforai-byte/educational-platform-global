@@ -1,0 +1,88 @@
+{
+  "title": "Mirrors and Lenses",
+  "unitSlug": "optics",
+  "topicSlug": "on1",
+  "topicTitle": "Mirrors and Lenses",
+  "relevance": 70,
+  "notes": [
+    "Mirrors form images by reflection; lenses form images by refraction. Principal rays for a spherical mirror include a parallel ray reflected through F and a ray through C reflected back; for a thin lens, a parallel ray passes through (or appears from) F.",
+    "Use the proper signed equations: mirror 1/f=1/u+1/v and thin lens 1/f=1/v−1/u under the stated real-positive mirror and Cartesian lens conventions. Magnification conventions also differ: mirror m=−v/u; lens m=v/u.",
+    "Worked mirror example: concave f=15 cm and object distance u=30 cm give 1/v=1/15−1/30=1/30, so v=30 cm and m=−1: real, inverted and same size.",
+    "Worked lens example: f=+10 cm and real object u=−30 cm give 1/v=1/10−1/30=1/15, so v=+15 cm and m=−0.5: real, inverted and half-size.",
+    "Ray diagrams provide an independent check on equation signs, image orientation, size and whether the image can be caught on a screen."
+  ],
+  "confusion": [
+    "Do not copy a mirror formula into a lens problem unchanged.",
+    "Simple equations assume paraxial rays and thin optical elements."
+  ],
+  "practice": [
+    "For a convex lens f=+12 cm and u=−36 cm, find v and m.",
+    "Why must mirror and lens sign conventions be distinguished?",
+    "Construct a ray diagram for an object between F and C of a concave mirror."
+  ],
+  "universalFacts": [
+    "Equations and ray sketches should agree.",
+    "Mirrors and lenses use different signed image equations.",
+    "Image size depends on object distance as well as focal length."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics",
+  "examples": [
+    "Concave mirror f=15 cm,u=30 cm gives v=30 cm,m=−1.",
+    "Converging lens f=10 cm,u=−30 cm gives v=15 cm,m=−0.5."
+  ],
+  "practiceQuestions": [
+    "For a convex lens f=+12 cm and u=−36 cm, find v and m.",
+    "Why must mirror and lens sign conventions be distinguished?",
+    "Construct a ray diagram for an object between F and C of a concave mirror."
+  ],
+  "formulas": [
+    "Mirror: 1/f=1/u+1/v, m=−v/u (real-positive convention).",
+    "Lens: 1/f=1/v−1/u, m=v/u (Cartesian convention)."
+  ],
+  "keyPoints": [
+    "Equations and ray sketches should agree.",
+    "Mirrors and lenses use different signed image equations.",
+    "Image size depends on object distance as well as focal length."
+  ],
+  "summary": "Mirrors and lenses share ray-construction logic but use different signed image equations. Apply the correct convention, then classify image position, orientation and size.",
+  "specialNotes": [
+    "Do not copy a mirror formula into a lens problem unchanged.",
+    "Simple equations assume paraxial rays and thin optical elements."
+  ],
+  "importantStatements": [
+    "Equations and ray sketches should agree.",
+    "Mirrors and lenses use different signed image equations.",
+    "Image size depends on object distance as well as focal length."
+  ],
+  "importantNotes": [
+    "Equations and ray sketches should agree.",
+    "Mirrors and lenses use different signed image equations.",
+    "Image size depends on object distance as well as focal length."
+  ],
+  "examShortTricks": [
+    "Mirror: 1/f=1/u+1/v, m=−v/u (real-positive convention).",
+    "Lens: 1/f=1/v−1/u, m=v/u (Cartesian convention)."
+  ],
+  "examNotes": [
+    "For a convex lens f=+12 cm and u=−36 cm, find v and m.",
+    "Why must mirror and lens sign conventions be distinguished?",
+    "Construct a ray diagram for an object between F and C of a concave mirror."
+  ],
+  "importantConcepts": [
+    "Equations and ray sketches should agree.",
+    "Mirrors and lenses use different signed image equations.",
+    "Image size depends on object distance as well as focal length."
+  ],
+  "importantTasks": [
+    "For a convex lens f=+12 cm and u=−36 cm, find v and m.",
+    "Why must mirror and lens sign conventions be distinguished?",
+    "Construct a ray diagram for an object between F and C of a concave mirror."
+  ],
+  "specificConditions": [
+    "**Thin Lens/Mirror Approximation:** The mirror equation (1/f = 1/u + 1/v) and lens formula (1/f = 1/v - 1/u) assume thin optics where thickness is negligible. For thick lenses, principal planes must be used. Sign convention (Cartesian): distances measured from pole/lens center; positive in direction of incident light for u, opposite for v/f.",
+    "**Spherical Aberration:** Paraxial rays (close to axis) follow the simple formulas. Non-paraxial rays focus at different points, causing spherical aberration. The formulas assume paraxial approximation (small angles, sin θ ≈ θ).",
+    "**Lens/Mirror Power:** Power P = 1/f (meters) in diopters. Converging (convex lens, concave mirror): P > 0. Diverging (concave lens, convex mirror): P < 0. Powers add for thin lenses in contact: P_total = Σ P_i."
+  ],
+  "duplicateType": 1
+}

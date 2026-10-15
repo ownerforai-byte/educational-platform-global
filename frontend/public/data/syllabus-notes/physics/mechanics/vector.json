@@ -5,53 +5,80 @@
   "topicTitle": "Vector",
   "relevance": 55,
   "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "A vector has magnitude and direction. Displacement, velocity, acceleration and force are vectors; distance, speed, mass and energy are scalars.",
+    "Choose axes and resolve A into Ax=A cosθ, Ay=A sinθ when θ is measured from +x. Components are signed according to their direction and are added separately.",
+    "Worked example: a 10 N force at 30° above +x has Fx=8.66 N and Fy=5.00 N. Recovering its magnitude gives √(8.66²+5.00²)≈10 N.",
+    "Add vectors by components: (3,4)+(−1,2)=(2,6), with magnitude √40≈6.32. The dot product ABcosθ is scalar; the cross product has magnitude ABsinθ and a perpendicular direction.",
+    "Check a result against the diagram: the resultant should lie between the component directions, and its magnitude should not exceed the sum of component magnitudes."
   ],
   "confusion": [
-    "Check formula conditions."
+    "The angle in component formulas must be measured from the stated axis.",
+    "A negative component indicates direction, not negative length."
   ],
-  "practice": [],
+  "practice": [
+    "Resolve a 20 m vector at 60° above +x.",
+    "Find the angle between perpendicular vectors using their dot product.",
+    "Why is path length not added as a vector?"
+  ],
   "universalFacts": [
-    "Foundational for advanced topics."
+    "Set axes and angle reference before resolving.",
+    "Components carry signs; magnitude is nonnegative.",
+    "Check resultant direction and magnitude geometrically."
   ],
   "animation3D": "mechanics",
   "motionGraphics": "mechanics",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "10 N at 30° gives components (8.66,5.00) N.",
+    "(3,4)+(−1,2)=(2,6), magnitude≈6.32."
+  ],
+  "practiceQuestions": [
+    "Resolve a 20 m vector at 60° above +x.",
+    "Find the angle between perpendicular vectors using their dot product.",
+    "Why is path length not added as a vector?"
+  ],
   "formulas": [
-    "Resultant of two vectors: $R = \\sqrt{A^2 + B^2 + 2AB\\cos\\theta}$, with $\\tan\\alpha = \\frac{B\\sin\\theta}{A + B\\cos\\theta}$.",
-    "Scalar (dot) product: $\\vec{A}\\cdot\\vec{B} = AB\\cos\\theta$; vector (cross) product: $|\\vec{A}\\times\\vec{B}| = AB\\sin\\theta$.",
-    "Unit vector and resolution: $\\hat{A} = \\vec{A}/|A|$, $A_x = A\\cos\\theta$, $A_y = A\\sin\\theta$, $A = \\sqrt{A_x^2 + A_y^2}$."
+    "Ax=Acosθ, Ay=Asinθ; |A|=√(Ax²+Ay²).",
+    "A·B=ABcosθ; |A×B|=ABsinθ."
   ],
   "keyPoints": [
-    "Dot product is maximum at θ = 0° and zero at 90°; the cross product is the reverse — that pairing is the fastest way to pick the right operator."
+    "Set axes and angle reference before resolving.",
+    "Components carry signs; magnitude is nonnegative.",
+    "Check resultant direction and magnitude geometrically."
   ],
-  "summary": "Vector covers essential principles and applications.",
+  "summary": "Vector calculations become systematic through components: resolve, add componentwise, then recover magnitude and direction. Scalars do not use this procedure.",
   "specialNotes": [
-    "Check conditions for Vector.",
-    "Vector connects to other topics."
+    "The angle in component formulas must be measured from the stated axis.",
+    "A negative component indicates direction, not negative length."
   ],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
+  "importantStatements": [
+    "Set axes and angle reference before resolving.",
+    "Components carry signs; magnitude is nonnegative.",
+    "Check resultant direction and magnitude geometrically."
+  ],
+  "importantNotes": [
+    "Set axes and angle reference before resolving.",
+    "Components carry signs; magnitude is nonnegative.",
+    "Check resultant direction and magnitude geometrically."
+  ],
+  "examShortTricks": [
+    "Ax=Acosθ, Ay=Asinθ; |A|=√(Ax²+Ay²).",
+    "A·B=ABcosθ; |A×B|=ABsinθ."
+  ],
   "examNotes": [
-    "Focus on Vector problems - significant marks."
+    "Resolve a 20 m vector at 60° above +x.",
+    "Find the angle between perpendicular vectors using their dot product.",
+    "Why is path length not added as a vector?"
   ],
-  "mcs": [
-    {
-      "question": "Which describes Vector?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+  "importantConcepts": [
+    "Set axes and angle reference before resolving.",
+    "Components carry signs; magnitude is nonnegative.",
+    "Check resultant direction and magnitude geometrically."
   ],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "importantTasks": [
+    "Resolve a 20 m vector at 60° above +x.",
+    "Find the angle between perpendicular vectors using their dot product.",
+    "Why is path length not added as a vector?"
+  ],
   "duplicateType": 1,
   "visualType": "vector-basics"
 }

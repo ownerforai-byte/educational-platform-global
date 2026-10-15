@@ -5,51 +5,79 @@
   "topicTitle": "Physics and Measurement",
   "relevance": 40,
   "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "A physical quantity is a measurable property expressed as magnitude and unit, such as 2.5 m or 4.0 s. A number without a unit is incomplete unless the quantity is dimensionless.",
+    "SI base quantities include length (m), mass (kg), time (s), current (A), temperature (K), amount (mol) and luminous intensity (cd). Derived units combine these; 1 N=1 kg m s⁻².",
+    "Scalars have magnitude only (mass, time, energy); vectors have magnitude and direction (displacement, velocity, force). Their addition rules differ.",
+    "Example: 3 m east followed by 4 m north gives path length 7 m but displacement magnitude √(3²+4²)=5 m. Distance and displacement are different quantities.",
+    "Weight is gravitational force measured in newtons; mass is measured in kilograms. Near Earth W=mg, but mass does not change when the gravitational field changes."
   ],
   "confusion": [
-    "Check formula conditions."
+    "A negative vector component indicates direction, not negative magnitude.",
+    "Do not report weight in kilograms or mass in newtons."
   ],
-  "practice": [],
+  "practice": [
+    "Classify force, mass, time and energy as scalar or vector.",
+    "Find resultant displacement for 6 m east and 8 m north.",
+    "Why are 5 kg and 5 N not interchangeable?"
+  ],
   "universalFacts": [
-    "Foundational for advanced topics."
+    "A measurement needs a unit.",
+    "Scalars and vectors obey different addition rules.",
+    "Mass is not weight; distance is not displacement."
   ],
   "animation3D": "mechanics",
   "motionGraphics": "mechanics",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "3 m east then 4 m north gives 5 m displacement but 7 m path length.",
+    "A 2 kg mass weighs about 19.6 N near Earth for g=9.8 m s⁻²."
+  ],
+  "practiceQuestions": [
+    "Classify force, mass, time and energy as scalar or vector.",
+    "Find resultant displacement for 6 m east and 8 m north.",
+    "Why are 5 kg and 5 N not interchangeable?"
+  ],
   "formulas": [
-    "Fundamental (base) quantities: mass, length, time, electric current, temperature, amount of substance and luminous intensity.",
-    "Derived unit from the base units, e.g. 1 N = 1 kg m s⁻² and 1 J = 1 kg m² s⁻²."
+    "1 N=1 kg m s⁻²; 1 J=1 kg m² s⁻².",
+    "Speed=distance/time; velocity=displacement/time and includes direction."
   ],
   "keyPoints": [
-    "Base units: kg, m, s, A, K, mol, cd — every other unit is built from these and is therefore derived."
+    "A measurement needs a unit.",
+    "Scalars and vectors obey different addition rules.",
+    "Mass is not weight; distance is not displacement."
   ],
-  "summary": "Physics and Measurement covers essential principles and applications.",
+  "summary": "Physics uses quantities, units and correct mathematical structure. Distinguishing scalar from vector quantities prevents errors in displacement, velocity and force calculations.",
   "specialNotes": [
-    "Check conditions for Physics and Measurement.",
-    "Physics and Measurement connects to other topics."
+    "A negative vector component indicates direction, not negative magnitude.",
+    "Do not report weight in kilograms or mass in newtons."
   ],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
+  "importantStatements": [
+    "A measurement needs a unit.",
+    "Scalars and vectors obey different addition rules.",
+    "Mass is not weight; distance is not displacement."
+  ],
+  "importantNotes": [
+    "A measurement needs a unit.",
+    "Scalars and vectors obey different addition rules.",
+    "Mass is not weight; distance is not displacement."
+  ],
+  "examShortTricks": [
+    "1 N=1 kg m s⁻²; 1 J=1 kg m² s⁻².",
+    "Speed=distance/time; velocity=displacement/time and includes direction."
+  ],
   "examNotes": [
-    "Focus on Physics and Measurement problems - significant marks."
+    "Classify force, mass, time and energy as scalar or vector.",
+    "Find resultant displacement for 6 m east and 8 m north.",
+    "Why are 5 kg and 5 N not interchangeable?"
   ],
-  "mcs": [
-    {
-      "question": "Which describes Physics and Measurement?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+  "importantConcepts": [
+    "A measurement needs a unit.",
+    "Scalars and vectors obey different addition rules.",
+    "Mass is not weight; distance is not displacement."
   ],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "importantTasks": [
+    "Classify force, mass, time and energy as scalar or vector.",
+    "Find resultant displacement for 6 m east and 8 m north.",
+    "Why are 5 kg and 5 N not interchangeable?"
+  ],
   "duplicateType": 1
 }

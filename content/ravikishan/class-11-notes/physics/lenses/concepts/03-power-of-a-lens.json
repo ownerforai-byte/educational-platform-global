@@ -1,0 +1,89 @@
+{
+  "title": "Power of a Lens",
+  "unitSlug": "lenses",
+  "topicSlug": "power-of-a-lens",
+  "topicTitle": "Power of a lens",
+  "relevance": 100,
+  "notes": [
+    "Lens power measures convergence or divergence: P=1/f when f is in metres. Its SI-derived unit is the dioptre, 1 D=1 m⁻¹. A converging lens has positive power and a diverging lens negative power in air.",
+    "Worked example: f=+25 cm=+0.25 m gives P=+4 D. A diverging lens with f=−50 cm=−0.50 m has P=−2 D.",
+    "Thin lenses in contact have additive powers. A +4 D lens and −1.5 D lens make Peq=+2.5 D, so feq=1/2.5=0.40 m.",
+    "Power is not magnification: focal length determines power, while image size and orientation also depend on object distance through the lens equation.",
+    "For separated lenses the equivalent power includes separation; the simple algebraic sum applies only when thin lenses are in contact or separation is negligible."
+  ],
+  "confusion": [
+    "Using centimetres directly produces a power 100 times too large.",
+    "Separated or thick lens systems require an additional relation."
+  ],
+  "practice": [
+    "Find power for f=−40 cm.",
+    "Two thin lenses of +3 D and −5 D are in contact. Find feq.",
+    "Why is lens power not magnification?"
+  ],
+  "universalFacts": [
+    "Convert focal length to metres before calculating dioptres.",
+    "Add powers algebraically only for thin lenses in contact.",
+    "The sign distinguishes convergence from divergence."
+  ],
+  "animation3D": "lenses",
+  "motionGraphics": "lenses",
+  "examples": [
+    "f=+0.25 m gives +4 D; f=−0.50 m gives −2 D.",
+    "+4 D and −1.5 D in contact give +2.5 D, feq=0.40 m."
+  ],
+  "practiceQuestions": [
+    "Find power for f=−40 cm.",
+    "Two thin lenses of +3 D and −5 D are in contact. Find feq.",
+    "Why is lens power not magnification?"
+  ],
+  "formulas": [
+    "P=1/f with f in metres; 1 D=1 m⁻¹.",
+    "Contact thin lenses: Peq=ΣPi and feq=1/Peq."
+  ],
+  "keyPoints": [
+    "Convert focal length to metres before calculating dioptres.",
+    "Add powers algebraically only for thin lenses in contact.",
+    "The sign distinguishes convergence from divergence."
+  ],
+  "summary": "Lens power is signed reciprocal focal length in metres. Contact lens powers add, but magnification still depends on object position.",
+  "specialNotes": [
+    "Using centimetres directly produces a power 100 times too large.",
+    "Separated or thick lens systems require an additional relation."
+  ],
+  "importantStatements": [
+    "Convert focal length to metres before calculating dioptres.",
+    "Add powers algebraically only for thin lenses in contact.",
+    "The sign distinguishes convergence from divergence."
+  ],
+  "importantNotes": [
+    "Convert focal length to metres before calculating dioptres.",
+    "Add powers algebraically only for thin lenses in contact.",
+    "The sign distinguishes convergence from divergence."
+  ],
+  "examShortTricks": [
+    "P=1/f with f in metres; 1 D=1 m⁻¹.",
+    "Contact thin lenses: Peq=ΣPi and feq=1/Peq."
+  ],
+  "examNotes": [
+    "Find power for f=−40 cm.",
+    "Two thin lenses of +3 D and −5 D are in contact. Find feq.",
+    "Why is lens power not magnification?"
+  ],
+  "importantConcepts": [
+    "Convert focal length to metres before calculating dioptres.",
+    "Add powers algebraically only for thin lenses in contact.",
+    "The sign distinguishes convergence from divergence."
+  ],
+  "importantTasks": [
+    "Find power for f=−40 cm.",
+    "Two thin lenses of +3 D and −5 D are in contact. Find feq.",
+    "Why is lens power not magnification?"
+  ],
+  "specificConditions": [
+    "**Lens Power Definition:** Power $P = 1/f$ (in meters) measured in diopters (D). A converging lens has $P > 0$, a diverging lens has $P < 0$. Power is additive for thin lenses in contact: $P_{total} = \\sum P_i$.",
+    "**Combination of Thin Lenses:** For thin lenses in contact, the total focal length is given by $1/f_{total} = \\sum 1/f_i$, or equivalently $P_{total} = \\sum P_i$. This assumes negligible separation between lenses. For separated lenses, use the equivalent focal length formula including the separation $d$.",
+    "**Power vs Magnification:** Lens power $P = 1/f$ relates to focal length, not directly to magnification. Magnification $m = v/u = f/(f-u)$ depends on object distance. A high-power lens (short $f$) gives larger magnification for a given object distance, but $m$ is not simply proportional to $P$."
+  ],
+  "duplicateType": 1,
+  "visualType": "power-concept"
+}

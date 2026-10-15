@@ -1,0 +1,89 @@
+{
+  "title": "Quantity of Heat",
+  "unitSlug": "heat-and-temperature",
+  "topicSlug": "quantity-of-heat",
+  "topicTitle": "Quantity of Heat",
+  "relevance": 45,
+  "notes": [
+    "Heat Q is energy transferred because of a temperature difference. For a temperature change without phase change, Q=mcΔT, where m is mass and c is specific heat capacity. A temperature difference has the same numerical size in kelvins and degrees Celsius.",
+    "Heat capacity C=Q/ΔT applies to the whole object; specific heat c=C/m is per unit mass. A 0.50 kg aluminium block with c=900 J kg⁻¹ K⁻¹ heated by 20 K needs Q=0.50×900×20=9000 J.",
+    "During melting or boiling, temperature remains constant while latent heat changes phase: Q=mL. Melting 0.10 kg of ice at 0°C requires 0.10×334000=33400 J before the resulting water is warmed.",
+    "For an insulated calorimeter, energy conservation gives ΣQ=0: heat lost by hot parts equals heat gained by cold parts. Include the calorimeter and any phase changes when specified.",
+    "Example: 0.20 kg water heated by 15 K with c=4200 J kg⁻¹ K⁻¹ needs Q=0.20×4200×15=12600 J."
+  ],
+  "confusion": [
+    "Do not use Q=mcΔT across an interval that includes melting or boiling.",
+    "Celsius is not an absolute temperature for gas-law calculations."
+  ],
+  "practice": [
+    "Find the heat to raise 0.20 kg water by 15 K using c=4200 J kg⁻¹ K⁻¹.",
+    "Why is temperature constant during melting?",
+    "Write the energy balance for hot metal placed in cooler water."
+  ],
+  "universalFacts": [
+    "Use mcΔT for sensible heating and mL for phase change.",
+    "Temperature differences can use °C or K; absolute temperature must use K.",
+    "Calorimetry assumes negligible exchange with surroundings unless corrected."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature",
+  "examples": [
+    "0.50 kg aluminium, c=900 and ΔT=20 K requires 9.0 kJ.",
+    "0.10 kg ice melting at 0°C requires 33.4 kJ using Lf=334 kJ kg⁻¹."
+  ],
+  "practiceQuestions": [
+    "Find the heat to raise 0.20 kg water by 15 K using c=4200 J kg⁻¹ K⁻¹.",
+    "Why is temperature constant during melting?",
+    "Write the energy balance for hot metal placed in cooler water."
+  ],
+  "formulas": [
+    "No phase change: Q=mcΔT; heat capacity C=mc.",
+    "Phase change: Q=mL; isolated calorimetry: ΣQ=0."
+  ],
+  "keyPoints": [
+    "Use mcΔT for sensible heating and mL for phase change.",
+    "Temperature differences can use °C or K; absolute temperature must use K.",
+    "Calorimetry assumes negligible exchange with surroundings unless corrected."
+  ],
+  "summary": "Heat calculations separate temperature change from phase change: Q=mcΔT and Q=mL. Insulated calorimetry follows energy conservation.",
+  "specialNotes": [
+    "Do not use Q=mcΔT across an interval that includes melting or boiling.",
+    "Celsius is not an absolute temperature for gas-law calculations."
+  ],
+  "importantStatements": [
+    "Use mcΔT for sensible heating and mL for phase change.",
+    "Temperature differences can use °C or K; absolute temperature must use K.",
+    "Calorimetry assumes negligible exchange with surroundings unless corrected."
+  ],
+  "importantNotes": [
+    "Use mcΔT for sensible heating and mL for phase change.",
+    "Temperature differences can use °C or K; absolute temperature must use K.",
+    "Calorimetry assumes negligible exchange with surroundings unless corrected."
+  ],
+  "examShortTricks": [
+    "No phase change: Q=mcΔT; heat capacity C=mc.",
+    "Phase change: Q=mL; isolated calorimetry: ΣQ=0."
+  ],
+  "examNotes": [
+    "Find the heat to raise 0.20 kg water by 15 K using c=4200 J kg⁻¹ K⁻¹.",
+    "Why is temperature constant during melting?",
+    "Write the energy balance for hot metal placed in cooler water."
+  ],
+  "importantConcepts": [
+    "Use mcΔT for sensible heating and mL for phase change.",
+    "Temperature differences can use °C or K; absolute temperature must use K.",
+    "Calorimetry assumes negligible exchange with surroundings unless corrected."
+  ],
+  "importantTasks": [
+    "Find the heat to raise 0.20 kg water by 15 K using c=4200 J kg⁻¹ K⁻¹.",
+    "Why is temperature constant during melting?",
+    "Write the energy balance for hot metal placed in cooler water."
+  ],
+  "specificConditions": [
+    "**Heat Capacity Definition:** Heat capacity $C = \\Delta Q/\\Delta T$ is the heat required to raise temperature by 1 K. Specific heat capacity $c = C/m$ is per unit mass (J/kg·K). Molar heat capacity $C_m = C/n$ is per mole (J/mol·K).",
+    "**Phase Change Latent Heat:** During phase change (melting, boiling), temperature is constant while heat is absorbed/released as latent heat: $Q = mL$. Latent heat of fusion $L_f$ (solid↔liquid) and vaporization $L_v$ (liquid↔gas) are material properties.",
+    "**Calorimetry Principle:** In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating $m_1 c_1 (T_f - T_1) = m_2 c_2 (T_2 - T_f)$."
+  ],
+  "duplicateType": 1,
+  "visualType": "heat-transfer"
+}

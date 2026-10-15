@@ -4,45 +4,81 @@
   "topicSlug": "spherical-lens-and-angular-magnification",
   "topicTitle": "Spherical lenses, angular magnification",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "notes": [
+    "A spherical lens has two refracting surfaces that are portions of spheres. A convex lens is usually converging in air; a concave lens is usually diverging. Immersion in a medium with a different refractive index can alter this behaviour.",
+    "Linear magnification m=hi/ho=v/u in the Cartesian lens convention compares image and object heights. Its magnitude gives size ratio; its sign indicates orientation.",
+    "Angular magnification M=β/α compares the angle subtended at the eye with the instrument to that without it. For a simple magnifier with near point D, M≈1+D/f; for relaxed viewing at infinity, M≈D/f.",
+    "Worked example: a magnifier with f=5.0 cm used at the conventional near point D=25 cm gives M≈1+25/5=6. A shorter focal length gives greater angular magnification.",
+    "The near point is a convention (often 25 cm for a normal eye). Real comfortable viewing distance varies; a magnifier also has a limited field of view and depth of focus."
+  ],
+  "confusion": [
+    "Near-point formulas assume an ideal thin magnifier and paraxial rays.",
+    "Do not use centimetres for one distance and metres for the other."
+  ],
+  "practice": [
+    "Estimate relaxed-eye magnification for f=4 cm and D=25 cm.",
+    "How does angular magnification differ from linear magnification?",
+    "What does negative linear magnification indicate?"
+  ],
+  "universalFacts": [
+    "Linear magnification compares sizes; angular magnification compares visual angles.",
+    "Use consistent units for D and f.",
+    "The stated near point is conventional, not universal."
+  ],
   "animation3D": "lenses",
   "motionGraphics": "lenses",
   "examples": [
-    "Application of Spherical Lenses and Angular Magnification"
+    "f=5 cm, D=25 cm gives near-point M≈6.",
+    "Image height 8 mm from an object 2 mm high gives |m|=4."
   ],
   "practiceQuestions": [
-    "Q1. Define Spherical Lenses and Angular Magnification.",
-    "Q3. Problem on Spherical Lenses and Angular Magnification."
+    "Estimate relaxed-eye magnification for f=4 cm and D=25 cm.",
+    "How does angular magnification differ from linear magnification?",
+    "What does negative linear magnification indicate?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Thin-lens equation: 1/f=1/v−1/u; linear magnification m=v/u.",
+    "Simple magnifier: M≈1+D/f at near point; M≈D/f for relaxed eye."
+  ],
   "keyPoints": [
-    "Application of Spherical Lenses and Angular Magnification",
-    "Connection of Spherical Lenses and Angular Magnification to other topics"
+    "Linear magnification compares sizes; angular magnification compares visual angles.",
+    "Use consistent units for D and f.",
+    "The stated near point is conventional, not universal."
   ],
-  "summary": "Spherical Lenses and Angular Magnification covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "A lens magnifier increases the visual angle of a nearby object. Distinguish angular magnification from image-size magnification, and state the viewing convention used.",
+  "specialNotes": [
+    "Near-point formulas assume an ideal thin magnifier and paraxial rays.",
+    "Do not use centimetres for one distance and metres for the other."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Spherical lenses, angular magnification",
-    "Statement 2: Theorem related to Spherical lenses, angular magnification",
-    "Statement 3: Condition for Spherical lenses, angular magnification to be valid",
-    "Statement 4: Principle governing Spherical lenses, angular magnification",
-    "Statement 5: Corollary or consequence of Spherical lenses, angular magnification"
+    "Linear magnification compares sizes; angular magnification compares visual angles.",
+    "Use consistent units for D and f.",
+    "The stated near point is conventional, not universal."
   ],
   "importantNotes": [
-    "Spherical Lenses and Angular Magnification is based on fundamental principles."
+    "Linear magnification compares sizes; angular magnification compares visual angles.",
+    "Use consistent units for D and f.",
+    "The stated near point is conventional, not universal."
   ],
   "examShortTricks": [
-    "Recall the formula for Spherical Lenses and Angular Magnification."
+    "Thin-lens equation: 1/f=1/v−1/u; linear magnification m=v/u.",
+    "Simple magnifier: M≈1+D/f at near point; M≈D/f for relaxed eye."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Estimate relaxed-eye magnification for f=4 cm and D=25 cm.",
+    "How does angular magnification differ from linear magnification?",
+    "What does negative linear magnification indicate?"
+  ],
   "importantConcepts": [
-    "Definition and significance of Spherical Lenses and Angular Magnification."
+    "Linear magnification compares sizes; angular magnification compares visual angles.",
+    "Use consistent units for D and f.",
+    "The stated near point is conventional, not universal."
   ],
-  "importantTasks": [],
+  "importantTasks": [
+    "Estimate relaxed-eye magnification for f=4 cm and D=25 cm.",
+    "How does angular magnification differ from linear magnification?",
+    "What does negative linear magnification indicate?"
+  ],
   "specificConditions": [
     "**Thin Lens Approximation:** The lens maker's formula $\\frac{1}{f} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$ assumes a *thin* lens (thickness $\\ll$ radii of curvature). For thick lenses, the full Gullstrand formula with principal planes must be used.",
     "**Sign Convention for Radii:** Using the Cartesian sign convention (light travels left to right): $R$ is positive if the center of curvature is to the *right* of the surface (convex toward incident light), negative if to the *left* (concave). This is opposite to some older conventions.",

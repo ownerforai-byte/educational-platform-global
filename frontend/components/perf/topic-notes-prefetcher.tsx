@@ -84,6 +84,7 @@ export function notesManifestPath(subjectSlug: string): string {
 /** True when the browser's own hints say background fetching is unwelcome. */
 export function networkAllowsPrefetch(): boolean {
   if (typeof navigator === "undefined") return false;
+  if (typeof document !== "undefined" && document.documentElement.dataset.lite === "true") return false;
   if (navigator.onLine === false) return false;
   const connection = (
     navigator as Navigator & {

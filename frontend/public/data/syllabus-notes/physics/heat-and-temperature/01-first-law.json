@@ -1,0 +1,88 @@
+{
+  "title": "First Law of Thermodynamics",
+  "unitSlug": "heat-and-temperature",
+  "topicSlug": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
+  "topicTitle": "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
+  "relevance": 83,
+  "notes": [
+    "The first law is energy conservation for a thermodynamic system. With heat Q positive into the system and work W positive when done by the system, ΔU=Q−W. Internal energy U is a state function; heat and work are energy transfers across the boundary.",
+    "For a gas expanding against constant pressure, W=PΔV. If 500 J of heat enters and the gas does 180 J of work, then ΔU=500−180=320 J.",
+    "At constant volume, boundary work is zero, so Q=ΔU if no other work is present. In an adiabatic process Q=0 and ΔU=−W. Over a full cycle ΔU=0, hence net Q=net W.",
+    "For a monatomic ideal gas ΔU=(3/2)nRΔT. For 2 mol heated by 10 K, ΔU≈(3/2)(2)(8.314)(10)=249 J, independent of the path between the states.",
+    "A p–V diagram makes work visible: work done by a gas is the area under the process curve, W=∫P dV. Expansion gives positive work under this convention; compression gives negative work."
+  ],
+  "confusion": [
+    "Some books define work on the system as positive and write ΔU=Q+Won; do not mix conventions.",
+    "At constant volume, Q=ΔU only if no other work is present."
+  ],
+  "practice": [
+    "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
+    "What does the first law imply for a complete cycle?",
+    "Compare adiabatic expansion with constant-volume heating."
+  ],
+  "universalFacts": [
+    "State the sign convention before substituting values.",
+    "Q and W depend on path; ΔU depends only on endpoints.",
+    "For a cycle, ΔU=0."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature",
+  "examples": [
+    "Q=500 J into a gas and W=180 J by it gives ΔU=320 J.",
+    "At fixed volume, 250 J of heat gives ΔU=250 J when no other work occurs."
+  ],
+  "practiceQuestions": [
+    "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
+    "What does the first law imply for a complete cycle?",
+    "Compare adiabatic expansion with constant-volume heating."
+  ],
+  "formulas": [
+    "First law: ΔU=Q−W with Q into system and W by system positive.",
+    "At constant external pressure W=PΔV; monatomic ideal gas ΔU=(3/2)nRΔT."
+  ],
+  "keyPoints": [
+    "State the sign convention before substituting values.",
+    "Q and W depend on path; ΔU depends only on endpoints.",
+    "For a cycle, ΔU=0."
+  ],
+  "summary": "The first law accounts for heat and work as energy transfers: ΔU=Q−W when work by the system is positive. Apply the convention consistently to expansion, compression, adiabatic and cyclic processes.",
+  "specialNotes": [
+    "Some books define work on the system as positive and write ΔU=Q+Won; do not mix conventions.",
+    "At constant volume, Q=ΔU only if no other work is present."
+  ],
+  "importantStatements": [
+    "State the sign convention before substituting values.",
+    "Q and W depend on path; ΔU depends only on endpoints.",
+    "For a cycle, ΔU=0."
+  ],
+  "importantNotes": [
+    "State the sign convention before substituting values.",
+    "Q and W depend on path; ΔU depends only on endpoints.",
+    "For a cycle, ΔU=0."
+  ],
+  "examShortTricks": [
+    "First law: ΔU=Q−W with Q into system and W by system positive.",
+    "At constant external pressure W=PΔV; monatomic ideal gas ΔU=(3/2)nRΔT."
+  ],
+  "examNotes": [
+    "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
+    "What does the first law imply for a complete cycle?",
+    "Compare adiabatic expansion with constant-volume heating."
+  ],
+  "importantConcepts": [
+    "State the sign convention before substituting values.",
+    "Q and W depend on path; ΔU depends only on endpoints.",
+    "For a cycle, ΔU=0."
+  ],
+  "importantTasks": [
+    "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
+    "What does the first law imply for a complete cycle?",
+    "Compare adiabatic expansion with constant-volume heating."
+  ],
+  "specificConditions": [
+    "**Energy Conservation Foundation:** The first law ($\\Delta U = Q - W$) is energy conservation applied to thermodynamic systems. Internal energy $U$ is a state function; heat $Q$ and work $W$ are path-dependent energy transfers. The sign convention: $Q > 0$ when heat enters the system, $W > 0$ when work is done BY the system.",
+    "**Process Dependence:** $Q$ and $W$ depend on the thermodynamic path (isothermal, adiabatic, isobaric, isochoric), but $\\Delta U$ depends only on initial and final states. For a cyclic process, $\\Delta U = 0$ and $Q = W$ — net heat in equals net work out.",
+    "**Work in Thermodynamics:** Only $PV$-work is considered in the basic first law: $W = \\int P_{ext} dV$. Reversible work uses the system pressure $W = \\int P dV$. Other work forms (electrical, surface tension, magnetic) must be added as extra terms if present."
+  ],
+  "duplicateType": 1
+}

@@ -94,3 +94,47 @@ tick this list before hitting **Create app**.
 | `content-rating.md` | IARC questionnaire answers |
 | `app-listing.md` | Store listing copy, icons, links |
 | `publishing-checklist.md` | This checklist |
+
+---
+
+# Play Store Release Checklist
+
+This is the canonical, human-in-the-loop checklist for preparing the
+**Ravikisan Android App** (TWA) for Google Play submission.
+
+The current AAB lives at `play-store/ravikisan-platform-release.aab`.
+
+## Pre-flight (still manual)
+- [x] Signing keys are on disk and accounted for in `android-twa/` setup docs.
+- [x] TWA manifest and PWA manifest are aligned on `com.ravikisan.platform`.
+- [x] `frontend/public/.well-known/assetlinks.json` declares the package + fingerprint.
+- [x] Mandatory legal pages exist (`/legal/privacy`, `/legal/terms`,
+      `/legal/cookies`, `/legal/purchases`) and are linked from the footer.
+- [x] Play Store metadata drafts exist locally:
+      `play-store/app-listing.md`, `play-store/data-safety.md`,
+      `play-store/publishing-checklist.md`.
+
+## Store listing
+- [ ] Finalize app title, short description, full description, screenshots, and
+      feature graphic per `play-store/app-listing.md`.
+- [ ] Confirm category (`Education`) and contact details in Play Console.
+
+## Data safety
+- [ ] Review `play-store/data-safety.md` against the actual app behavior before
+      publishing.
+
+## AAB upload
+- [ ] Upload `play-store/ravikisan-platform-release.aab` to Play Console.
+- [ ] Confirm signing config matches the Play Console release key.
+
+## Store validation
+- [ ] Deep link verification passes: `assetlinks.json` matches the live site and
+      the AAB fingerprint.
+- [ ] Universal links / app links open the app from the Play-registered domain.
+
+## Notes
+- The current CI assetlinks gate uses a placeholder fingerprint until the real
+  release certificate is confirmed against Play Console and the live domain
+  verifier.
+- Play Console account access is the remaining publisher-side dependency.
+

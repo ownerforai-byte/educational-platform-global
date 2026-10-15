@@ -1,0 +1,90 @@
+{
+  "title": "Discovery of Nucleus",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "nucleus-discovery",
+  "topicTitle": "Discovery of Nucleus",
+  "relevance": 100,
+  "notes": [
+    "Rutherford, Geiger and Marsden directed alpha particles at thin gold foil. Most passed almost straight through; a small fraction deflected sharply and very few returned. These observations could not be explained by positive charge spread uniformly through the atom.",
+    "Rutherford inferred a tiny, dense, positively charged nucleus containing nearly all atomic mass, surrounded by electrons; most atomic volume is empty space. Nuclear radius is about 10⁻¹⁵ m versus atomic radius about 10⁻¹⁰ m.",
+    "For a head-on alpha particle, its kinetic energy converts to electrostatic potential energy at closest approach: Eα=(1/4πε₀)(2Ze²/rmin). Thus rmin=(1/4πε₀)(2Ze²/Eα), under the Coulomb-scattering model.",
+    "Nuclear notation ᴬ_ZX gives proton number Z, nucleon number A and neutron number N=A−Z. Isotopes share Z but have different A; isobars share A but have different Z.",
+    "Example: uranium-235 has Z=92, A=235 and N=143. Its nuclear charge is +92e."
+  ],
+  "confusion": [
+    "Do not claim the experiment established a modern planetary electron orbit.",
+    "Closest-approach estimates assume Coulomb interaction and head-on motion."
+  ],
+  "practice": [
+    "Give two observations and corresponding inferences from Rutherford scattering.",
+    "Find neutron number for ²³⁸₉₂U.",
+    "Why did a small fraction of alpha particles scatter through large angles?"
+  ],
+  "universalFacts": [
+    "Most particles passing through implies mostly empty atomic volume.",
+    "Rare large deflections imply concentrated positive charge.",
+    "Isotopes share proton number but differ in neutron number."
+  ],
+  "animation3D": "nuclear-physics",
+  "motionGraphics": "nuclear-physics",
+  "examples": [
+    "For ²³⁵₉₂U, N=235−92=143.",
+    "The nuclear radius scale is roughly 10⁵ times smaller than atomic radius."
+  ],
+  "practiceQuestions": [
+    "Give two observations and corresponding inferences from Rutherford scattering.",
+    "Find neutron number for ²³⁸₉₂U.",
+    "Why did a small fraction of alpha particles scatter through large angles?"
+  ],
+  "formulas": [
+    "N=A−Z; nuclear charge=+Ze.",
+    "Head-on closest approach: rmin=(1/4πε₀)(2Ze²/Eα) for an alpha particle."
+  ],
+  "keyPoints": [
+    "Most particles passing through implies mostly empty atomic volume.",
+    "Rare large deflections imply concentrated positive charge.",
+    "Isotopes share proton number but differ in neutron number."
+  ],
+  "summary": "Rutherford scattering revealed a compact, positively charged nucleus and mostly empty atomic volume. Nuclear notation records proton, neutron and nucleon counts.",
+  "specialNotes": [
+    "Do not claim the experiment established a modern planetary electron orbit.",
+    "Closest-approach estimates assume Coulomb interaction and head-on motion."
+  ],
+  "importantStatements": [
+    "Most particles passing through implies mostly empty atomic volume.",
+    "Rare large deflections imply concentrated positive charge.",
+    "Isotopes share proton number but differ in neutron number."
+  ],
+  "importantNotes": [
+    "Most particles passing through implies mostly empty atomic volume.",
+    "Rare large deflections imply concentrated positive charge.",
+    "Isotopes share proton number but differ in neutron number."
+  ],
+  "examShortTricks": [
+    "N=A−Z; nuclear charge=+Ze.",
+    "Head-on closest approach: rmin=(1/4πε₀)(2Ze²/Eα) for an alpha particle."
+  ],
+  "examNotes": [
+    "Give two observations and corresponding inferences from Rutherford scattering.",
+    "Find neutron number for ²³⁸₉₂U.",
+    "Why did a small fraction of alpha particles scatter through large angles?"
+  ],
+  "importantConcepts": [
+    "Most particles passing through implies mostly empty atomic volume.",
+    "Rare large deflections imply concentrated positive charge.",
+    "Isotopes share proton number but differ in neutron number."
+  ],
+  "importantTasks": [
+    "Give two observations and corresponding inferences from Rutherford scattering.",
+    "Find neutron number for ²³⁸₉₂U.",
+    "Why did a small fraction of alpha particles scatter through large angles?"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "nucleus-discovery-density-mass-number-and-atomic-number",
+  "visualType": "nuclear-model",
+  "specificConditions": [
+    "**Rutherford Scattering Experiment:** Alpha particles were fired at a thin gold foil. Most passed through with little deflection, but a few scattered at large angles (>90°). This disproved the Thomson plum-pudding model and established the nuclear model: a tiny, dense, positively charged nucleus containing most of the atom's mass.",
+    "**Nuclear Size vs Atom Size:** The nucleus is ~10⁻¹⁵ m (1-10 fm) while the atom is ~10⁻¹⁰ m (1 Å). The nucleus occupies ~10⁻¹⁵ of the atomic volume but contains >99.9% of the mass. The rest is empty space where electrons orbit.",
+    "**Nuclear Density:** Nearly constant for all nuclei: ρ = mass/volume ≈ A·1.67×10⁻²⁷ kg / (4/3 π (1.2×10⁻¹⁵ A¹ᐟ³)³) ≈ 2.3×10¹⁷ kg/m³. This constancy supports the liquid-drop model and the idea that nucleons are closely packed."
+  ]
+}

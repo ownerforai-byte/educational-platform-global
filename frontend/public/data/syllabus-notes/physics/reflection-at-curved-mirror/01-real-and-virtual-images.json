@@ -4,24 +4,80 @@
   "topicSlug": "real-and-virtual-images",
   "topicTitle": "Real and virtual images",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "notes": [
+    "A real image forms where reflected rays physically converge. It can be projected onto a screen and is commonly inverted for a single concave-mirror image of a real object beyond F.",
+    "A virtual image forms where reflected rays only appear to originate when extended backward. It cannot be projected on a screen; a plane mirror forms an upright virtual image behind the mirror.",
+    "For a concave mirror, an object beyond F generally gives a real image; an object between pole and F gives a virtual, upright, magnified image. A convex mirror gives a virtual, upright, diminished image for a real object.",
+    "Ray test: follow reflected rays forward. If they meet, the image is real; if only backward extensions meet, it is virtual. This geometric test is more reliable than judging whether the image seems behind the mirror.",
+    "Example: a shaving mirror used close to the face has the face inside the concave mirror’s focal length, producing an upright virtual magnified image."
+  ],
+  "confusion": [
+    "Virtual describes ray geometry, not image brightness.",
+    "State the equation’s sign convention when giving image distances."
+  ],
+  "practice": [
+    "Compare real and virtual images by ray convergence and screen projection.",
+    "Where is the image for an object between P and F of a concave mirror?",
+    "Can a convex mirror form a real image of a real object?"
+  ],
+  "universalFacts": [
+    "Real rays meet; virtual rays do not.",
+    "Object position controls mirror image type.",
+    "A screen test distinguishes a real image."
+  ],
   "animation3D": "reflection-at-curved-mirror",
   "motionGraphics": "reflection-at-curved-mirror",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Real and Virtual Images covers essential principles and applications.",
-  "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
-  "mcs": [],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "examples": [
+    "A plane mirror produces a virtual image at equal distance behind the mirror.",
+    "A concave mirror with an object inside F forms an upright virtual image."
+  ],
+  "practiceQuestions": [
+    "Compare real and virtual images by ray convergence and screen projection.",
+    "Where is the image for an object between P and F of a concave mirror?",
+    "Can a convex mirror form a real image of a real object?"
+  ],
+  "formulas": [
+    "Mirror equation: 1/f=1/u+1/v in a real-positive convention.",
+    "Magnification m=−v/u; negative indicates inverted orientation."
+  ],
+  "keyPoints": [
+    "Real rays meet; virtual rays do not.",
+    "Object position controls mirror image type.",
+    "A screen test distinguishes a real image."
+  ],
+  "summary": "Ray geometry defines image type: physical convergence forms a real image, while backward extensions form a virtual image. This predicts screen projection and orientation.",
+  "specialNotes": [
+    "Virtual describes ray geometry, not image brightness.",
+    "State the equation’s sign convention when giving image distances."
+  ],
+  "importantStatements": [
+    "Real rays meet; virtual rays do not.",
+    "Object position controls mirror image type.",
+    "A screen test distinguishes a real image."
+  ],
+  "importantNotes": [
+    "Real rays meet; virtual rays do not.",
+    "Object position controls mirror image type.",
+    "A screen test distinguishes a real image."
+  ],
+  "examShortTricks": [
+    "Mirror equation: 1/f=1/u+1/v in a real-positive convention.",
+    "Magnification m=−v/u; negative indicates inverted orientation."
+  ],
+  "examNotes": [
+    "Compare real and virtual images by ray convergence and screen projection.",
+    "Where is the image for an object between P and F of a concave mirror?",
+    "Can a convex mirror form a real image of a real object?"
+  ],
+  "importantConcepts": [
+    "Real rays meet; virtual rays do not.",
+    "Object position controls mirror image type.",
+    "A screen test distinguishes a real image."
+  ],
+  "importantTasks": [
+    "Compare real and virtual images by ray convergence and screen projection.",
+    "Where is the image for an object between P and F of a concave mirror?",
+    "Can a convex mirror form a real image of a real object?"
+  ],
   "duplicateType": 1
 }

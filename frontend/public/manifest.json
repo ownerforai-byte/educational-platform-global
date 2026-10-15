@@ -23,5 +23,15 @@
   ],
   "categories": ["education", "utilities"],
   "lang": "en",
-  "dir": "ltr"
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.ravikisan.platform"
+    }
+  ],
+  "android_arguments": "credit",
+  "bluish_manifest_url": "https://ravikisan.vercel.app/manifest.json"
 }

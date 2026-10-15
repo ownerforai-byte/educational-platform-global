@@ -14,6 +14,8 @@ import { AIWidget } from "@/components/layout/ai-widget";
 import { FocusTimer } from "@/components/r1/focus-timer";
 import { SiteWelcome } from "@/components/layout/site-welcome";
 
+const THEME_BOOTSTRAP = `(function(){try{var c=document.documentElement,s=localStorage.getItem("neb-theme"),t=s||"nebula",m={light:0,sepia:0,system:window.matchMedia("(prefers-color-scheme: dark)").matches?1:0,dark:1,cyberpunk:1,emerald:1,nord:1,amber:1,oled:1,nebula:1};if(!(t in m))t="nebula";var d=!!m[t],n=navigator.connection,l=localStorage.getItem("neb-lite-mode");if(l===null)l=String(!!(n&&(n.saveData||n.effectiveType==="2g"||n.effectiveType==="slow-2g")));c.classList.add(d?"dark":"light",t);c.dataset.theme=t;c.dataset.lite=l;c.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
+
 export const metadata: Metadata = {
   title: "Ravikisan's Platform",
   description: "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.",
@@ -41,10 +43,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-    <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#3b82f6" />
+    <script
+      id="theme-bootstrap"
+      dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }}
+    />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Ravikisan's Platform" />
@@ -53,8 +57,6 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
         <QueryProvider>
           <ThemeProvider defaultTheme="nebula" storageKey="neb-theme">
-            {/* Permanent "Nebula Sky" starfield: mounted once, shows the
-                flashing-stars backdrop on every page (dark themes only). */}
             <StarField />
             <AuthProvider>
               <CreditProvider>

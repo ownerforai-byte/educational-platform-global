@@ -5,52 +5,80 @@
   "topicTitle": "Errors",
   "relevance": 40,
   "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "Random errors vary unpredictably between readings; repeated measurements and averaging reduce their influence. Systematic errors shift results consistently because of calibration, zero offset or method and are not removed by simple repetition.",
+    "Accuracy is closeness to an accepted value; precision is agreement among repeated readings. A set can be precise but inaccurate if a systematic offset is present.",
+    "If a true value is known, absolute error is |xmeasured−xtrue|; relative error is absolute error divided by the reference value; percentage error is 100 times relative error.",
+    "Example: readings 10.2, 10.3 and 10.1 cm average to 10.2 cm. Compared with accepted 10.0 cm, absolute error is 0.2 cm and percentage error is 2%.",
+    "Check an instrument’s zero before use, repeat readings where possible, report units and uncertainty, and avoid unsupported digits beyond the instrument resolution."
   ],
   "confusion": [
-    "Check formula conditions."
+    "A small spread does not prove accuracy.",
+    "Do not report more digits than the instrument supports."
   ],
-  "practice": [],
+  "practice": [
+    "Distinguish accuracy from precision.",
+    "How can repeated readings reduce random error but not a zero offset?",
+    "A length is 4.00±0.04 cm. Find percentage uncertainty."
+  ],
   "universalFacts": [
-    "Foundational for advanced topics."
+    "Repeats estimate scatter and reduce random uncertainty.",
+    "Calibration and zero checks address systematic error.",
+    "Report uncertainty with units and sensible significant figures."
   ],
   "animation3D": "mechanics",
   "motionGraphics": "mechanics",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "10.2, 10.3, 10.1 cm average to 10.2 cm; against 10.0 cm error is 2%.",
+    "A scale that reads 0.5 g high on every object has a systematic zero error."
+  ],
+  "practiceQuestions": [
+    "Distinguish accuracy from precision.",
+    "How can repeated readings reduce random error but not a zero offset?",
+    "A length is 4.00±0.04 cm. Find percentage uncertainty."
+  ],
   "formulas": [
-    "Mean absolute error: $\\Delta a_{mean} = \\frac{|\\Delta a_1| + |\\Delta a_2| + \\cdots + |\\Delta a_n|}{n}$.",
-    "Relative error $= \\Delta a / a_{mean}$, and percentage error $= \\frac{\\Delta a}{a_{mean}} \\times 100\\%$."
+    "Mean x̄=Σxi/N.",
+    "Percentage error=(absolute error/reference magnitude)×100%."
   ],
   "keyPoints": [
-    "The true value is reported as $a_{mean} \\pm \\Delta a_{mean}$; quoting more decimals than that interval is meaningless."
+    "Repeats estimate scatter and reduce random uncertainty.",
+    "Calibration and zero checks address systematic error.",
+    "Report uncertainty with units and sensible significant figures."
   ],
-  "summary": "Errors covers essential principles and applications.",
+  "summary": "Measurement uncertainty has random and systematic causes. Repetition improves random estimates; calibration and method checks are needed for systematic offsets.",
   "specialNotes": [
-    "Check conditions for Errors.",
-    "Errors connects to other topics."
+    "A small spread does not prove accuracy.",
+    "Do not report more digits than the instrument supports."
   ],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
+  "importantStatements": [
+    "Repeats estimate scatter and reduce random uncertainty.",
+    "Calibration and zero checks address systematic error.",
+    "Report uncertainty with units and sensible significant figures."
+  ],
+  "importantNotes": [
+    "Repeats estimate scatter and reduce random uncertainty.",
+    "Calibration and zero checks address systematic error.",
+    "Report uncertainty with units and sensible significant figures."
+  ],
+  "examShortTricks": [
+    "Mean x̄=Σxi/N.",
+    "Percentage error=(absolute error/reference magnitude)×100%."
+  ],
   "examNotes": [
-    "Focus on Errors problems - significant marks."
+    "Distinguish accuracy from precision.",
+    "How can repeated readings reduce random error but not a zero offset?",
+    "A length is 4.00±0.04 cm. Find percentage uncertainty."
   ],
-  "mcs": [
-    {
-      "question": "Which describes Errors?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+  "importantConcepts": [
+    "Repeats estimate scatter and reduce random uncertainty.",
+    "Calibration and zero checks address systematic error.",
+    "Report uncertainty with units and sensible significant figures."
   ],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "importantTasks": [
+    "Distinguish accuracy from precision.",
+    "How can repeated readings reduce random error but not a zero offset?",
+    "A length is 4.00±0.04 cm. Find percentage uncertainty."
+  ],
   "duplicateType": 1,
   "visualType": "error-analysis"
 }

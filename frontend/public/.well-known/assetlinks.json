@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ravikisan.platform",
+      "sha256_cert_fingerprints": [
+        "EFFCF16F6CCB5292A21F9C2F28D74236799E7F4C000000000000000000000000"
+      ]
+    }
+  }
+]

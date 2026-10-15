@@ -11,6 +11,7 @@ import { isNavItemActive } from "@/lib/nav-active";
 import { isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { NAV_SECTIONS } from "@/lib/navigation";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
  * Section + item data lives in lib/navigation.ts — one shared list, also used
@@ -178,8 +179,12 @@ export function MobileNav() {
               )}
             </div>
 
-            {/* Scrollable links */}
             <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto pr-1 space-y-4">
+              {/* In-drawer theme customization block */}
+              <div className="px-1">
+                <ThemeToggle variant="inline" />
+              </div>
+
               {filteredSections.length === 0 && <p role="status" className="px-3 py-4 text-sm text-muted-foreground">No destinations match “{searchQuery}”. Try a subject or tool name.</p>}
               {filteredSections.map((sec) => (
                 <div key={sec.id} className="space-y-1">

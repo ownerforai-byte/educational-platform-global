@@ -8,162 +8,235 @@
   "motionGraphics": "work-energy-power",
   "duplicateType": 1,
   "visualType": "power-concept",
+  "notes": [
+    "Power is the rate of energy transfer: average P=ΔW/Δt and instantaneous P=dW/dt. Its SI unit is watt, 1 W=1 J s⁻¹.",
+    "For translation, dW=F⃗·dr⃗ gives P=F⃗·v⃗=Fv cosθ. Only the force component parallel to velocity transfers energy; a perpendicular centripetal force does no work in uniform circular motion.",
+    "Worked example: a 200 kg load rises steadily at 0.50 m s⁻¹. The lifting force is mg=1960 N for g=9.8 m s⁻², so useful power is Fv=980 W. In 10 s the load rises 5 m and gains 9800 J, confirming P=W/t=980 W.",
+    "At constant speed, net power is zero because engine power balances resistive forces. For rotation, P=τ⃗·ω⃗; efficiency η=Pout/Pin distinguishes useful output from input.",
+    "A 50 N force at 60° to a crate moving at 3.0 m s⁻¹ transfers energy at P=50×3×cos60°=75 W, not 150 W."
+  ],
+  "formulas": [
+    "Average P=ΔW/Δt; instantaneous P=dW/dt.",
+    "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
+  ],
+  "examples": [
+    "Raising 200 kg at 0.50 m s⁻¹ requires 980 W of useful power.",
+    "A 50 N force at 60° while moving at 3 m s⁻¹ gives 75 W."
+  ],
+  "practiceQuestions": [
+    "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+    "Why does centripetal force do zero work in uniform circular motion?",
+    "An 80% efficient motor takes 2 kW. Find useful output."
+  ],
+  "keyPoints": [
+    "Use the force component parallel to velocity.",
+    "At constant speed net power is zero though a motor may deliver positive power.",
+    "State whether input or output power is requested."
+  ],
+  "summary": "Power measures energy-transfer rate. For translation it is the force–velocity dot product; practical machines distinguish useful output from losses.",
+  "specificConditions": [
+    "P=F⃗·v⃗ uses instantaneous force and velocity; it applies even when force changes with time.",
+    "For efficiency, state whether the requested power is input or useful output."
+  ],
   "enrichedContent": {
     "notes": [
-      "**Power:** Class 11 concept.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
+      "Power is the rate of energy transfer: average P=ΔW/Δt and instantaneous P=dW/dt. Its SI unit is watt, 1 W=1 J s⁻¹.",
+      "For translation, dW=F⃗·dr⃗ gives P=F⃗·v⃗=Fv cosθ. Only the force component parallel to velocity transfers energy; a perpendicular centripetal force does no work in uniform circular motion.",
+      "Worked example: a 200 kg load rises steadily at 0.50 m s⁻¹. The lifting force is mg=1960 N for g=9.8 m s⁻², so useful power is Fv=980 W. In 10 s the load rises 5 m and gains 9800 J, confirming P=W/t=980 W.",
+      "At constant speed, net power is zero because engine power balances resistive forces. For rotation, P=τ⃗·ω⃗; efficiency η=Pout/Pin distinguishes useful output from input.",
+      "A 50 N force at 60° to a crate moving at 3.0 m s⁻¹ transfers energy at P=50×3×cos60°=75 W, not 150 W."
     ],
     "confusion": [
-      "Distinguish concepts in Power.",
-      "Check formula conditions."
+      "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
+      "Motor output is not the net power on a constant-speed vehicle."
     ],
     "practice": [
-      "Solve 5 problems on Power.",
-      "Derive the key formula for Power."
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "universalFacts": [
-      "Power appears in exams.",
-      "Foundational for advanced topics."
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "examples": [
-      "Application of Power",
-      "Numerical problem on Power",
-      "Daily life use of Power"
+      "Raising 200 kg at 0.50 m s⁻¹ requires 980 W of useful power.",
+      "A 50 N force at 60° while moving at 3 m s⁻¹ gives 75 W."
     ],
     "practiceQuestions": [
-      "Q1. Define Power.",
-      "Q2. Key formula for Power.",
-      "Q3. Problem on Power."
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "formulas": [
-      "Formula for Power: [insert from textbook].",
-      "Key relationship: [variable formula]."
+      "Average P=ΔW/Δt; instantaneous P=dW/dt.",
+      "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
     ],
     "keyPoints": [
-      "Core principle of Power",
-      "Application of Power",
-      "Connection of Power to other topics"
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
-    "summary": "Power covers essential principles and applications.",
+    "summary": "Power measures energy-transfer rate. For translation it is the force–velocity dot product; practical machines distinguish useful output from losses.",
     "specialNotes": [
-      "Check conditions for Power.",
-      "Power connects to other topics."
+      "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
+      "Motor output is not the net power on a constant-speed vehicle."
     ],
     "importantStatements": [
-      "Statement 1: Definition of Power",
-      "Statement 2: Theorem related to Power",
-      "Statement 3: Condition for Power to be valid",
-      "Statement 4: Principle governing Power",
-      "Statement 5: Corollary or consequence of Power"
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "importantNotes": [
-      "Power is based on fundamental principles."
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "examShortTricks": [
-      "Recall the formula for Power."
+      "Average P=ΔW/Δt; instantaneous P=dW/dt.",
+      "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
     ],
     "examNotes": [
-      "Focus on Power problems - significant marks."
-    ],
-    "mcs": [
-      {
-        "question": "Which describes Power?",
-        "options": [
-          "Correct definition",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "importantConcepts": [
-      "Definition and significance of Power."
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "importantTasks": [
-      "Solve 5 problems on Power."
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "exercises": [],
     "visualization": {}
   },
   "originalContent": {
     "notes": [
-      "**Power:** Class 11 concept.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
+      "Power is the rate of energy transfer: average P=ΔW/Δt and instantaneous P=dW/dt. Its SI unit is watt, 1 W=1 J s⁻¹.",
+      "For translation, dW=F⃗·dr⃗ gives P=F⃗·v⃗=Fv cosθ. Only the force component parallel to velocity transfers energy; a perpendicular centripetal force does no work in uniform circular motion.",
+      "Worked example: a 200 kg load rises steadily at 0.50 m s⁻¹. The lifting force is mg=1960 N for g=9.8 m s⁻², so useful power is Fv=980 W. In 10 s the load rises 5 m and gains 9800 J, confirming P=W/t=980 W.",
+      "At constant speed, net power is zero because engine power balances resistive forces. For rotation, P=τ⃗·ω⃗; efficiency η=Pout/Pin distinguishes useful output from input.",
+      "A 50 N force at 60° to a crate moving at 3.0 m s⁻¹ transfers energy at P=50×3×cos60°=75 W, not 150 W."
     ],
     "confusion": [
-      "Distinguish concepts in Power.",
-      "Check formula conditions."
+      "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
+      "Motor output is not the net power on a constant-speed vehicle."
     ],
     "practice": [
-      "Solve 5 problems on Power.",
-      "Derive the key formula for Power."
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "universalFacts": [
-      "Power appears in exams.",
-      "Foundational for advanced topics."
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "examples": [
-      "Application of Power",
-      "Numerical problem on Power",
-      "Daily life use of Power"
+      "Raising 200 kg at 0.50 m s⁻¹ requires 980 W of useful power.",
+      "A 50 N force at 60° while moving at 3 m s⁻¹ gives 75 W."
     ],
     "practiceQuestions": [
-      "Q1. Define Power.",
-      "Q2. Key formula for Power.",
-      "Q3. Problem on Power."
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "formulas": [
-      "Formula for Power: [insert from textbook].",
-      "Key relationship: [variable formula]."
+      "Average P=ΔW/Δt; instantaneous P=dW/dt.",
+      "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
     ],
     "keyPoints": [
-      "Core principle of Power",
-      "Application of Power",
-      "Connection of Power to other topics"
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
-    "summary": "Power covers essential principles and applications.",
+    "summary": "Power measures energy-transfer rate. For translation it is the force–velocity dot product; practical machines distinguish useful output from losses.",
     "specialNotes": [
-      "Check conditions for Power.",
-      "Power connects to other topics."
+      "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
+      "Motor output is not the net power on a constant-speed vehicle."
     ],
     "importantStatements": [
-      "Statement 1: Definition of Power",
-      "Statement 2: Theorem related to Power",
-      "Statement 3: Condition for Power to be valid",
-      "Statement 4: Principle governing Power",
-      "Statement 5: Corollary or consequence of Power"
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "importantNotes": [
-      "Power is based on fundamental principles."
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "examShortTricks": [
-      "Recall the formula for Power."
+      "Average P=ΔW/Δt; instantaneous P=dW/dt.",
+      "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
     ],
     "examNotes": [
-      "Focus on Power problems - significant marks."
-    ],
-    "mcs": [
-      {
-        "question": "Which describes Power?",
-        "options": [
-          "Correct definition",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "importantConcepts": [
-      "Definition and significance of Power."
+      "Use the force component parallel to velocity.",
+      "At constant speed net power is zero though a motor may deliver positive power.",
+      "State whether input or output power is requested."
     ],
     "importantTasks": [
-      "Solve 5 problems on Power."
+      "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+      "Why does centripetal force do zero work in uniform circular motion?",
+      "An 80% efficient motor takes 2 kW. Find useful output."
     ],
     "exercises": [],
     "visualization": {}
-  }
+  },
+  "confusion": [
+    "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
+    "Motor output is not the net power on a constant-speed vehicle."
+  ],
+  "practice": [
+    "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+    "Why does centripetal force do zero work in uniform circular motion?",
+    "An 80% efficient motor takes 2 kW. Find useful output."
+  ],
+  "universalFacts": [
+    "Use the force component parallel to velocity.",
+    "At constant speed net power is zero though a motor may deliver positive power.",
+    "State whether input or output power is requested."
+  ],
+  "specialNotes": [
+    "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
+    "Motor output is not the net power on a constant-speed vehicle."
+  ],
+  "importantStatements": [
+    "Use the force component parallel to velocity.",
+    "At constant speed net power is zero though a motor may deliver positive power.",
+    "State whether input or output power is requested."
+  ],
+  "importantNotes": [
+    "Use the force component parallel to velocity.",
+    "At constant speed net power is zero though a motor may deliver positive power.",
+    "State whether input or output power is requested."
+  ],
+  "examShortTricks": [
+    "Average P=ΔW/Δt; instantaneous P=dW/dt.",
+    "Translation P=F⃗·v⃗; rotation P=τ⃗·ω⃗; efficiency η=Pout/Pin."
+  ],
+  "examNotes": [
+    "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+    "Why does centripetal force do zero work in uniform circular motion?",
+    "An 80% efficient motor takes 2 kW. Find useful output."
+  ],
+  "importantConcepts": [
+    "Use the force component parallel to velocity.",
+    "At constant speed net power is zero though a motor may deliver positive power.",
+    "State whether input or output power is requested."
+  ],
+  "importantTasks": [
+    "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
+    "Why does centripetal force do zero work in uniform circular motion?",
+    "An 80% efficient motor takes 2 kW. Find useful output."
+  ]
 }

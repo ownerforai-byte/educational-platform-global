@@ -5,51 +5,79 @@
   "topicTitle": "L,S,A,Q and N",
   "relevance": 40,
   "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "This legacy heading groups basic measurement practice. Record a measured quantity as a numerical value and unit; choose direct measurement when possible and a geometric or displacement method when it is not.",
+    "Measure length with a suitable scale or vernier instrument, area from dimensions for regular shapes, and volume from geometry or liquid displacement for irregular solid objects that do not absorb or dissolve in water.",
+    "For a rectangular plate A=lb; for a cylinder V=πr²h. A graduated cylinder gives an irregular object’s volume from the rise in water level, provided the object is fully submerged without trapped air.",
+    "Worked example: a 2.0 cm by 3.0 cm by 4.0 cm block has V=24 cm³. If its mass is 60 g, density ρ=m/V=2.5 g cm⁻³=2500 kg m⁻³.",
+    "Record instrument resolution, repeat readings when useful, keep units consistent and round the final derived quantity to a justified precision. The title acronym is retained from the source rather than expanded speculatively."
   ],
   "confusion": [
-    "Check formula conditions."
+    "The source acronym is ambiguous; do not infer an unsupported expansion.",
+    "Do not mix cm³ with m³ or grams with kilograms in one calculation."
   ],
-  "practice": [],
+  "practice": [
+    "Describe a safe displacement method to find an irregular stone’s volume.",
+    "Convert 2.7 g cm⁻³ to kg m⁻³.",
+    "Why should repeated readings be averaged before reporting?"
+  ],
   "universalFacts": [
-    "Foundational for advanced topics."
+    "A measurement requires magnitude and unit.",
+    "Select a method matched to shape and material.",
+    "Track units through each calculation."
   ],
   "animation3D": "mechanics",
   "motionGraphics": "mechanics",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "A 2×3×4 cm block has V=24 cm³; with mass 60 g, ρ=2.5 g cm⁻³.",
+    "If a stone raises water from 40 mL to 55 mL, its volume is 15 cm³."
+  ],
+  "practiceQuestions": [
+    "Describe a safe displacement method to find an irregular stone’s volume.",
+    "Convert 2.7 g cm⁻³ to kg m⁻³.",
+    "Why should repeated readings be averaged before reporting?"
+  ],
   "formulas": [
-    "Equations of motion: $v = u + at$, $s = ut + \\frac{1}{2}at^2$, $v^2 = u^2 + 2as$.",
-    "Distance in the nth second: $s_n = u + \\frac{a}{2}(2n - 1)$."
+    "Rectangle area A=lb; cylinder volume V=πr²h.",
+    "Density ρ=m/V; 1 g cm⁻³=1000 kg m⁻³."
   ],
   "keyPoints": [
-    "The three equations assume uniform acceleration only; use $s_n = u + a(2n-1)/2$ for 'nth second' questions instead of subtracting two sums."
+    "A measurement requires magnitude and unit.",
+    "Select a method matched to shape and material.",
+    "Track units through each calculation."
   ],
-  "summary": "L,S,A,Q and N covers essential principles and applications.",
+  "summary": "Reliable measurement requires an appropriate method, unit and justified precision. Derived area, volume and density values inherit uncertainty from measured dimensions and mass.",
   "specialNotes": [
-    "Check conditions for L,S,A,Q and N.",
-    "L,S,A,Q and N connects to other topics."
+    "The source acronym is ambiguous; do not infer an unsupported expansion.",
+    "Do not mix cm³ with m³ or grams with kilograms in one calculation."
   ],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
+  "importantStatements": [
+    "A measurement requires magnitude and unit.",
+    "Select a method matched to shape and material.",
+    "Track units through each calculation."
+  ],
+  "importantNotes": [
+    "A measurement requires magnitude and unit.",
+    "Select a method matched to shape and material.",
+    "Track units through each calculation."
+  ],
+  "examShortTricks": [
+    "Rectangle area A=lb; cylinder volume V=πr²h.",
+    "Density ρ=m/V; 1 g cm⁻³=1000 kg m⁻³."
+  ],
   "examNotes": [
-    "Focus on L,S,A,Q and N problems - significant marks."
+    "Describe a safe displacement method to find an irregular stone’s volume.",
+    "Convert 2.7 g cm⁻³ to kg m⁻³.",
+    "Why should repeated readings be averaged before reporting?"
   ],
-  "mcs": [
-    {
-      "question": "Which describes L,S,A,Q and N?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+  "importantConcepts": [
+    "A measurement requires magnitude and unit.",
+    "Select a method matched to shape and material.",
+    "Track units through each calculation."
   ],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "importantTasks": [
+    "Describe a safe displacement method to find an irregular stone’s volume.",
+    "Convert 2.7 g cm⁻³ to kg m⁻³.",
+    "Why should repeated readings be averaged before reporting?"
+  ],
   "duplicateType": 1
 }

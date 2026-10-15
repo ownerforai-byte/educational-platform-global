@@ -4,45 +4,81 @@
   "topicSlug": "average-translational-kinetic-energy-of-gas-molecule",
   "topicTitle": "Average translational kinetic energy of gas molecule",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "notes": [
+    "Kinetic theory relates pressure to molecular motion: pV=(1/3)Nm⟨c²⟩. Combining this with pV=NkBT gives (1/2)m⟨c²⟩=(3/2)kBT, the average translational kinetic energy per molecule.",
+    "At fixed absolute temperature, different ideal-gas molecules have equal mean translational kinetic energy. Their speeds differ because a lighter molecule needs greater speed to have the same kinetic energy.",
+    "Per mole, the mean translational kinetic energy is (3/2)RT. At 300 K this is about (3/2)(8.314)(300)=3.74 kJ mol⁻¹, or 6.21×10⁻²¹ J per molecule.",
+    "The result is for translation only. In a monatomic ideal gas it accounts for all classical internal energy; diatomic and polyatomic gases can also store energy in rotation and vibration.",
+    "The root-mean-square speed follows from the same result: vrms=√(3kBT/m)=√(3RT/M). Use molecular mass with kB or molar mass with R."
+  ],
+  "confusion": [
+    "Do not confuse kB per molecule with R per mole.",
+    "Polyatomic-gas internal energy may include rotational and vibrational modes."
+  ],
+  "practice": [
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
+  ],
+  "universalFacts": [
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
+  ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
   "examples": [
-    "Application of Average Translational Kinetic Energy of Gas Molecule"
+    "At 300 K, mean translational energy per mole≈3.74 kJ.",
+    "At equal temperature, helium and oxygen have equal mean translational energy, but helium has larger rms speed."
   ],
   "practiceQuestions": [
-    "Q1. Define Average Translational Kinetic Energy of Gas Molecule.",
-    "Q3. Problem on Average Translational Kinetic Energy of Gas Molecule."
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Per molecule: ⟨Etrans⟩=(3/2)kBT.",
+    "Per mole: ⟨Etrans⟩=(3/2)RT; vrms=√(3RT/M)."
+  ],
   "keyPoints": [
-    "Application of Average Translational Kinetic Energy of Gas Molecule",
-    "Connection of Average Translational Kinetic Energy of Gas Molecule to other topics"
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
   ],
-  "summary": "Average Translational Kinetic Energy of Gas Molecule covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "Kinetic theory gives ⟨Etrans⟩=(3/2)kBT per molecule. Temperature fixes mean translational energy; molecular mass determines the associated speed distribution.",
+  "specialNotes": [
+    "Do not confuse kB per molecule with R per mole.",
+    "Polyatomic-gas internal energy may include rotational and vibrational modes."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Average translational kinetic energy of gas molecule",
-    "Statement 2: Theorem related to Average translational kinetic energy of gas molecule",
-    "Statement 3: Condition for Average translational kinetic energy of gas molecule to be valid",
-    "Statement 4: Principle governing Average translational kinetic energy of gas molecule",
-    "Statement 5: Corollary or consequence of Average translational kinetic energy of gas molecule"
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
   ],
   "importantNotes": [
-    "Average Translational Kinetic Energy of Gas Molecule is based on fundamental principles."
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
   ],
   "examShortTricks": [
-    "Recall the formula for Average Translational Kinetic Energy of Gas Molecule."
+    "Per molecule: ⟨Etrans⟩=(3/2)kBT.",
+    "Per mole: ⟨Etrans⟩=(3/2)RT; vrms=√(3RT/M)."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
+  ],
   "importantConcepts": [
-    "Definition and significance of Average Translational Kinetic Energy of Gas Molecule."
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
   ],
-  "importantTasks": [],
+  "importantTasks": [
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
+  ],
   "specificConditions": [
     "**Equipartition Result:** The average translational kinetic energy per molecule is $\\langle KE_{trans} \rangle = \frac{3}{2} k_B T = \frac{3}{2} \frac{R}{N_A} T$. This comes from 3 translational degrees of freedom, each contributing $\frac{1}{2} k_B T$ via equipartition.",
     "**Temperature Proportionality:** $\\langle KE_{trans} \rangle \\propto T$ — absolute temperature is a direct measure of average translational kinetic energy. This is why Kelvin scale is fundamental: at $T=0$, translational KE is zero (classically).",

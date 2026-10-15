@@ -1,0 +1,90 @@
+{
+  "title": "Thermal Equilibrium and Zeroth Law",
+  "unitSlug": "heat-and-temperature",
+  "topicSlug": "thermal-equilibrium-zeroth-law",
+  "topicTitle": "Thermal Equilibrium and Zeroth Law",
+  "relevance": 83,
+  "notes": [
+    "Two systems are in thermal equilibrium when no net heat flows between them after thermal contact. In ordinary conditions they then have equal temperature, but not necessarily equal internal energy: mass and material also matter.",
+    "The zeroth law states that if A is in thermal equilibrium with C and B is in equilibrium with C, then A and B are in equilibrium with each other. This transitive property allows temperature to be measured consistently.",
+    "A thermometer is system C. Allow it to reach a stable reading on body A, then place the same calibrated thermometer on B. Equal stable readings imply A and B have equal temperatures.",
+    "Example: a thermometer initially at 20°C placed in warm water gains energy until it and the water reach a common temperature. The final temperature need not equal either initial temperature.",
+    "Temperature predicts the direction of spontaneous heat transfer: energy flows from higher temperature to lower temperature until equilibrium, unless work or another process intervenes."
+  ],
+  "confusion": [
+    "Heat is energy in transfer, not a stored substance in an equilibrium body.",
+    "Equal temperatures do not imply equal masses or internal energies."
+  ],
+  "practice": [
+    "State the zeroth law and identify the thermometer’s role.",
+    "Can equal-temperature objects have different internal energies? Explain.",
+    "Why wait for a thermometer reading to stabilise?"
+  ],
+  "universalFacts": [
+    "Temperature determines the direction of spontaneous heat flow.",
+    "Thermometry depends on the transitivity of thermal equilibrium.",
+    "Equal temperature does not imply equal heat capacity or energy."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature",
+  "examples": [
+    "Two objects read 25°C on the same equilibrated thermometer; their temperatures match even if their masses differ.",
+    "A stable thermometer reading indicates that thermometer and body have reached equilibrium."
+  ],
+  "practiceQuestions": [
+    "State the zeroth law and identify the thermometer’s role.",
+    "Can equal-temperature objects have different internal energies? Explain.",
+    "Why wait for a thermometer reading to stabilise?"
+  ],
+  "formulas": [
+    "Thermal equilibrium: no net heat transfer on contact.",
+    "Zeroth law: A↔C and B↔C in equilibrium implies A↔B in equilibrium."
+  ],
+  "keyPoints": [
+    "Temperature determines the direction of spontaneous heat flow.",
+    "Thermometry depends on the transitivity of thermal equilibrium.",
+    "Equal temperature does not imply equal heat capacity or energy."
+  ],
+  "summary": "The zeroth law makes temperature comparison possible: systems in equilibrium with the same thermometer are in equilibrium with each other.",
+  "specialNotes": [
+    "Heat is energy in transfer, not a stored substance in an equilibrium body.",
+    "Equal temperatures do not imply equal masses or internal energies."
+  ],
+  "importantStatements": [
+    "Temperature determines the direction of spontaneous heat flow.",
+    "Thermometry depends on the transitivity of thermal equilibrium.",
+    "Equal temperature does not imply equal heat capacity or energy."
+  ],
+  "importantNotes": [
+    "Temperature determines the direction of spontaneous heat flow.",
+    "Thermometry depends on the transitivity of thermal equilibrium.",
+    "Equal temperature does not imply equal heat capacity or energy."
+  ],
+  "examShortTricks": [
+    "Thermal equilibrium: no net heat transfer on contact.",
+    "Zeroth law: A↔C and B↔C in equilibrium implies A↔B in equilibrium."
+  ],
+  "examNotes": [
+    "State the zeroth law and identify the thermometer’s role.",
+    "Can equal-temperature objects have different internal energies? Explain.",
+    "Why wait for a thermometer reading to stabilise?"
+  ],
+  "importantConcepts": [
+    "Temperature determines the direction of spontaneous heat flow.",
+    "Thermometry depends on the transitivity of thermal equilibrium.",
+    "Equal temperature does not imply equal heat capacity or energy."
+  ],
+  "importantTasks": [
+    "State the zeroth law and identify the thermometer’s role.",
+    "Can equal-temperature objects have different internal energies? Explain.",
+    "Why wait for a thermometer reading to stabilise?"
+  ],
+  "specificConditions": [
+    "**Thermal Equilibrium Definition:** Two systems are in thermal equilibrium if no net heat flows between them when brought into thermal contact. This means they have the *same temperature*. Thermal equilibrium is a transitive, symmetric, and reflexive relation.",
+    "**Zeroth Law Statement:** If system A is in thermal equilibrium with system B, and B is in thermal equilibrium with system C, then A is in thermal equilibrium with C. This transitive property allows temperature to be defined as a state variable that can be measured with a thermometer.",
+    "**Thermometer as 'System B':** The Zeroth law justifies using a thermometer: the thermometer (B) reaches equilibrium with the system (A), and if two systems give the same reading on the same thermometer, they are in equilibrium with each other."
+  ],
+  "duplicateType": 2,
+  "tabGroup": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
+  "visualType": "zeroth-law"
+}

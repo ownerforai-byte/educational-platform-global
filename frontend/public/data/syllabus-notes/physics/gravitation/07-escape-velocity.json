@@ -7,119 +7,187 @@
   "animation3D": "gravitation",
   "motionGraphics": "gravitation",
   "visualType": "satellite-orbit",
+  "notes": [
+    "Escape velocity is the minimum speed at radius r that lets an object reach infinity with zero final speed when no further thrust or drag acts. With gravitational potential energy zero at infinity, energy conservation gives (1/2)mv²−GMm/r=0.",
+    "Solving gives ve=√(2GM/r). At the surface r=R, g=GM/R², so ve=√(2gR). The escaping object’s mass cancels, so the ideal threshold is independent of its mass.",
+    "Worked Earth estimate: g=9.81 m s⁻² and R=6.37×10⁶ m give ve=√(2gR)≈1.12×10⁴ m s⁻¹=11.2 km s⁻¹.",
+    "At altitude h, use r=R+h: ve(h)/ve(0)=√[R/(R+h)]. At h=R, local escape speed is 1/√2 of its surface value.",
+    "Circular orbital speed at the same radius is vc=√(GM/r), so ve=√2 vc. This is an ideal energy threshold; real launches must account for atmosphere, rotation, gravity losses and propulsion."
+  ],
+  "formulas": [
+    "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
+    "At the same radius, ve=√2 vc where vc=√(GM/r)."
+  ],
+  "examples": [
+    "Earth: √(2×9.81×6.37×10⁶)≈11.2 km s⁻¹.",
+    "At h=R, ve(h)/ve(0)=1/√2."
+  ],
+  "practiceQuestions": [
+    "Derive escape speed using energy conservation.",
+    "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+    "Why is escape speed independent of projectile mass?"
+  ],
+  "keyPoints": [
+    "At escape threshold, total mechanical energy is zero at infinity.",
+    "Use r=R+h for altitude, not the surface radius.",
+    "The orbital-speed relation compares both speeds at the same radius."
+  ],
+  "summary": "Energy conservation gives ve=√(2GM/R)=√(2gR) for an ideal surface launch. It is independent of projectile mass and √2 times circular speed at the same radius.",
+  "specificConditions": [
+    "At altitude h, use r=R+h in v_e=√(2GM/r); do not reuse the surface radius in the general expression.",
+    "The derivation assumes no air resistance, spherical symmetry, negligible external bodies and no continuing thrust after launch."
+  ],
   "enrichedContent": {
     "notes": [
-      "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
+      "Escape velocity is the minimum speed at radius r that lets an object reach infinity with zero final speed when no further thrust or drag acts. With gravitational potential energy zero at infinity, energy conservation gives (1/2)mv²−GMm/r=0.",
+      "Solving gives ve=√(2GM/r). At the surface r=R, g=GM/R², so ve=√(2gR). The escaping object’s mass cancels, so the ideal threshold is independent of its mass.",
+      "Worked Earth estimate: g=9.81 m s⁻² and R=6.37×10⁶ m give ve=√(2gR)≈1.12×10⁴ m s⁻¹=11.2 km s⁻¹.",
+      "At altitude h, use r=R+h: ve(h)/ve(0)=√[R/(R+h)]. At h=R, local escape speed is 1/√2 of its surface value.",
+      "Circular orbital speed at the same radius is vc=√(GM/r), so ve=√2 vc. This is an ideal energy threshold; real launches must account for atmosphere, rotation, gravity losses and propulsion."
     ],
     "confusion": [
-      "Check formula conditions: $v_e = \\sqrt{\\frac{2GM}{R}}$ assumes no air resistance."
+      "The formula neglects air resistance, rotation, external bodies and continued thrust.",
+      "Escape speed is not the practical rocket delta-v from the launch pad."
     ],
     "practice": [
-      "Derive the key formula $v_e = \\sqrt{2gR}$ from energy conservation."
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
     ],
     "universalFacts": [
-      "Foundational for advanced topics."
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
-    "examples": [],
+    "examples": [
+      "Earth: √(2×9.81×6.37×10⁶)≈11.2 km s⁻¹.",
+      "At h=R, ve(h)/ve(0)=1/√2."
+    ],
     "practiceQuestions": [
-      "Q2. Key formula: $v_e = \\sqrt{\\frac{2GM}{R}}$."
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
     ],
     "formulas": [
-      "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$",
-      "Key relationship: $v_e = \\sqrt{2} \\cdot v_0$ (escape velocity = √2 × orbital velocity)"
+      "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
+      "At the same radius, ve=√2 vc where vc=√(GM/r)."
     ],
     "keyPoints": [
-      "Core principle: $v_e = \\sqrt{\\frac{2GM}{R}}$"
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
-    "summary": "Escape Velocity is the minimum speed needed for an object to escape a gravitational field: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$.",
+    "summary": "Energy conservation gives ve=√(2GM/R)=√(2gR) for an ideal surface launch. It is independent of projectile mass and √2 times circular speed at the same radius.",
     "specialNotes": [
-      "Check conditions for Escape Velocity: $v_e = \\sqrt{2gR}$ assumes no atmosphere.",
-      "Escape Velocity connects to other topics: $v_e = \\sqrt{2} \\cdot v_0$."
+      "The formula neglects air resistance, rotation, external bodies and continued thrust.",
+      "Escape speed is not the practical rocket delta-v from the launch pad."
     ],
-    "importantStatements": [],
+    "importantStatements": [
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
+    ],
     "importantNotes": [
-      "Escape Velocity is based on fundamental principles: $KE + PE = 0$ at infinity."
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
     "examShortTricks": [
-      "Recall the formula: $v_e = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
+      "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
+      "At the same radius, ve=√2 vc where vc=√(GM/r)."
     ],
     "examNotes": [
-      "Focus on Escape Velocity problems - significant marks."
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
     ],
-    "mcs": [
-      {
-        "question": "Which describes Escape Velocity?",
-        "options": [
-          "Correct definition: $v_e = \\sqrt{\\frac{2GM}{R}}$",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
+    "importantConcepts": [
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
-    "importantConcepts": [],
-    "importantTasks": [],
+    "importantTasks": [
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
+    ],
     "exercises": [],
     "visualization": {}
   },
   "originalContent": {
     "notes": [
-      "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
+      "Escape velocity is the minimum speed at radius r that lets an object reach infinity with zero final speed when no further thrust or drag acts. With gravitational potential energy zero at infinity, energy conservation gives (1/2)mv²−GMm/r=0.",
+      "Solving gives ve=√(2GM/r). At the surface r=R, g=GM/R², so ve=√(2gR). The escaping object’s mass cancels, so the ideal threshold is independent of its mass.",
+      "Worked Earth estimate: g=9.81 m s⁻² and R=6.37×10⁶ m give ve=√(2gR)≈1.12×10⁴ m s⁻¹=11.2 km s⁻¹.",
+      "At altitude h, use r=R+h: ve(h)/ve(0)=√[R/(R+h)]. At h=R, local escape speed is 1/√2 of its surface value.",
+      "Circular orbital speed at the same radius is vc=√(GM/r), so ve=√2 vc. This is an ideal energy threshold; real launches must account for atmosphere, rotation, gravity losses and propulsion."
     ],
     "confusion": [
-      "Check formula conditions: $v_e = \\sqrt{\\frac{2GM}{R}}$ assumes no air resistance."
+      "The formula neglects air resistance, rotation, external bodies and continued thrust.",
+      "Escape speed is not the practical rocket delta-v from the launch pad."
     ],
     "practice": [
-      "Derive the key formula $v_e = \\sqrt{2gR}$ from energy conservation."
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
     ],
     "universalFacts": [
-      "Foundational for advanced topics."
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
-    "examples": [],
+    "examples": [
+      "Earth: √(2×9.81×6.37×10⁶)≈11.2 km s⁻¹.",
+      "At h=R, ve(h)/ve(0)=1/√2."
+    ],
     "practiceQuestions": [
-      "Q2. Key formula: $v_e = \\sqrt{\\frac{2GM}{R}}$."
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
     ],
     "formulas": [
-      "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$",
-      "Key relationship: $v_e = \\sqrt{2} \\cdot v_0$ (escape velocity = √2 × orbital velocity)"
+      "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
+      "At the same radius, ve=√2 vc where vc=√(GM/r)."
     ],
     "keyPoints": [
-      "Core principle: $v_e = \\sqrt{\\frac{2GM}{R}}$"
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
-    "summary": "Escape Velocity is the minimum speed needed for an object to escape a gravitational field: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$.",
+    "summary": "Energy conservation gives ve=√(2GM/R)=√(2gR) for an ideal surface launch. It is independent of projectile mass and √2 times circular speed at the same radius.",
     "specialNotes": [
-      "Check conditions for Escape Velocity: $v_e = \\sqrt{2gR}$ assumes no atmosphere.",
-      "Escape Velocity connects to other topics: $v_e = \\sqrt{2} \\cdot v_0$."
+      "The formula neglects air resistance, rotation, external bodies and continued thrust.",
+      "Escape speed is not the practical rocket delta-v from the launch pad."
     ],
-    "importantStatements": [],
+    "importantStatements": [
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
+    ],
     "importantNotes": [
-      "Escape Velocity is based on fundamental principles: $KE + PE = 0$ at infinity."
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
     "examShortTricks": [
-      "Recall the formula: $v_e = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
+      "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
+      "At the same radius, ve=√2 vc where vc=√(GM/r)."
     ],
     "examNotes": [
-      "Focus on Escape Velocity problems - significant marks."
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
     ],
-    "mcs": [
-      {
-        "question": "Which describes Escape Velocity?",
-        "options": [
-          "Correct definition: $v_e = \\sqrt{\\frac{2GM}{R}}$",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
+    "importantConcepts": [
+      "At escape threshold, total mechanical energy is zero at infinity.",
+      "Use r=R+h for altitude, not the surface radius.",
+      "The orbital-speed relation compares both speeds at the same radius."
     ],
-    "importantConcepts": [],
-    "importantTasks": [],
+    "importantTasks": [
+      "Derive escape speed using energy conservation.",
+      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+      "Why is escape speed independent of projectile mass?"
+    ],
     "exercises": [],
     "visualization": {},
     "specificConditions": [
@@ -127,5 +195,52 @@
       "**Relation to Orbital Velocity:** $v_e = \\sqrt{2} \\cdot v_0$ where $v_0 = \\sqrt{GM/R}$ is the circular orbital velocity at the surface. The factor $\\sqrt{2} \\approx 1.414$ means escape requires 41% more speed than a low circular orbit.",
       "**No Atmosphere Assumption:** The formula assumes no air resistance. In reality, atmospheric drag requires higher initial speed for Earth; for the Moon (no atmosphere), the formula is exact. Also assumes a spherically symmetric, non-rotating body."
     ]
-  }
+  },
+  "confusion": [
+    "The formula neglects air resistance, rotation, external bodies and continued thrust.",
+    "Escape speed is not the practical rocket delta-v from the launch pad."
+  ],
+  "practice": [
+    "Derive escape speed using energy conservation.",
+    "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+    "Why is escape speed independent of projectile mass?"
+  ],
+  "universalFacts": [
+    "At escape threshold, total mechanical energy is zero at infinity.",
+    "Use r=R+h for altitude, not the surface radius.",
+    "The orbital-speed relation compares both speeds at the same radius."
+  ],
+  "specialNotes": [
+    "The formula neglects air resistance, rotation, external bodies and continued thrust.",
+    "Escape speed is not the practical rocket delta-v from the launch pad."
+  ],
+  "importantStatements": [
+    "At escape threshold, total mechanical energy is zero at infinity.",
+    "Use r=R+h for altitude, not the surface radius.",
+    "The orbital-speed relation compares both speeds at the same radius."
+  ],
+  "importantNotes": [
+    "At escape threshold, total mechanical energy is zero at infinity.",
+    "Use r=R+h for altitude, not the surface radius.",
+    "The orbital-speed relation compares both speeds at the same radius."
+  ],
+  "examShortTricks": [
+    "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
+    "At the same radius, ve=√2 vc where vc=√(GM/r)."
+  ],
+  "examNotes": [
+    "Derive escape speed using energy conservation.",
+    "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+    "Why is escape speed independent of projectile mass?"
+  ],
+  "importantConcepts": [
+    "At escape threshold, total mechanical energy is zero at infinity.",
+    "Use r=R+h for altitude, not the surface radius.",
+    "The orbital-speed relation compares both speeds at the same radius."
+  ],
+  "importantTasks": [
+    "Derive escape speed using energy conservation.",
+    "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
+    "Why is escape speed independent of projectile mass?"
+  ]
 }

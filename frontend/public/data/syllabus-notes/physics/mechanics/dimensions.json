@@ -5,52 +5,79 @@
   "topicTitle": "Dimensions",
   "relevance": 55,
   "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "Dimensions express a quantity using base quantities. In mechanics, mass M, length L and time T give velocity [v]=LT⁻¹, acceleration [a]=LT⁻² and force [F]=MLT⁻².",
+    "Find dimensions from definitions: work W=Fs gives [W]=ML²T⁻²; power P=W/t gives [P]=ML²T⁻³. Pressure is force per area, [p]=ML⁻¹T⁻².",
+    "Dimensional homogeneity requires every term added in an equation to have the same dimensions. In s=ut+(1/2)at², both ut and at² have dimension L.",
+    "Worked check: in v²=u²+2as, v² and u² are L²T⁻²; as is (LT⁻²)L=L²T⁻². The equation is dimensionally possible, though this test cannot prove it is correct.",
+    "Dimensional analysis can check units and infer powers in a relation, but cannot determine dimensionless constants such as 1/2 or functions involving dimensionless variables."
   ],
   "confusion": [
-    "Check formula conditions."
+    "Dimensions differ from units: length has dimension L and SI unit metre.",
+    "A dimensionally correct equation may still be physically wrong."
   ],
-  "practice": [],
+  "practice": [
+    "Find dimensions of pressure and gravitational constant G.",
+    "Check x=vt+(1/2)at² dimensionally.",
+    "Can dimensional analysis find the numerical factor 2?"
+  ],
   "universalFacts": [
-    "Foundational for advanced topics."
+    "Derive dimensions from defining relations.",
+    "Only like dimensions may be added.",
+    "Dimensional correctness is necessary, not sufficient."
   ],
   "animation3D": "mechanics",
   "motionGraphics": "mechanics",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "In s=ut+(1/2)at², every term has dimension L.",
+    "v²=u²+2as is homogeneous with dimension L²T⁻²."
+  ],
+  "practiceQuestions": [
+    "Find dimensions of pressure and gravitational constant G.",
+    "Check x=vt+(1/2)at² dimensionally.",
+    "Can dimensional analysis find the numerical factor 2?"
+  ],
   "formulas": [
-    "Dimensional formula of a quantity: $[Q] = M^a L^b T^c$ (add A, K, mol, cd when the quantity needs them).",
-    "Principle of homogeneity: every term of a valid physical equation must have identical dimensions.",
-    "Dimensions give the unit: $[\\eta] = ML^{-1}T^{-1}$ ⟹ viscosity is measured in Pa s."
+    "[v]=LT⁻¹; [a]=LT⁻²; [F]=MLT⁻².",
+    "[W]=ML²T⁻²; [P]=ML²T⁻³; [pressure]=ML⁻¹T⁻²."
   ],
   "keyPoints": [
-    "Homogeneity tests an equation's form but never fixes the dimensionless factors (½, 2π) — a dimensionally correct equation can still be wrong."
+    "Derive dimensions from defining relations.",
+    "Only like dimensions may be added.",
+    "Dimensional correctness is necessary, not sufficient."
   ],
-  "summary": "Dimensions covers essential principles and applications.",
+  "summary": "Dimensional analysis checks the powers of base units in equations and catches inconsistent terms, but cannot supply all constants or prove a physical law.",
   "specialNotes": [
-    "Check conditions for Dimensions.",
-    "Dimensions connects to other topics."
+    "Dimensions differ from units: length has dimension L and SI unit metre.",
+    "A dimensionally correct equation may still be physically wrong."
   ],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
+  "importantStatements": [
+    "Derive dimensions from defining relations.",
+    "Only like dimensions may be added.",
+    "Dimensional correctness is necessary, not sufficient."
+  ],
+  "importantNotes": [
+    "Derive dimensions from defining relations.",
+    "Only like dimensions may be added.",
+    "Dimensional correctness is necessary, not sufficient."
+  ],
+  "examShortTricks": [
+    "[v]=LT⁻¹; [a]=LT⁻²; [F]=MLT⁻².",
+    "[W]=ML²T⁻²; [P]=ML²T⁻³; [pressure]=ML⁻¹T⁻²."
+  ],
   "examNotes": [
-    "Focus on Dimensions problems - significant marks."
+    "Find dimensions of pressure and gravitational constant G.",
+    "Check x=vt+(1/2)at² dimensionally.",
+    "Can dimensional analysis find the numerical factor 2?"
   ],
-  "mcs": [
-    {
-      "question": "Which describes Dimensions?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+  "importantConcepts": [
+    "Derive dimensions from defining relations.",
+    "Only like dimensions may be added.",
+    "Dimensional correctness is necessary, not sufficient."
   ],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "importantTasks": [
+    "Find dimensions of pressure and gravitational constant G.",
+    "Check x=vt+(1/2)at² dimensionally.",
+    "Can dimensional analysis find the numerical factor 2?"
+  ],
   "duplicateType": 1
 }

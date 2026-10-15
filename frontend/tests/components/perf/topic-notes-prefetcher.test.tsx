@@ -3,7 +3,7 @@
  * intent-driven topic notes prefetching layer.
  */
 
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import {
   TOPIC_ROUTE_PATTERN,
   TOPIC_TRACKS,
@@ -77,8 +77,23 @@ describe("topic-notes-prefetcher: route parsing", () => {
 });
 
 describe("topic-notes-prefetcher: network heuristics", () => {
+  afterEach(() => {
+    document.documentElement.removeAttribute("data-lite");
+  });
+
   it("returns a boolean under the current test environment", () => {
     // navigator exists in vitest (jsdom) so it should return true or false cleanly
     expect(typeof networkAllowsPrefetch()).toBe("boolean");
+  });
+
+  it("does not prefetch in Lite mode even when the network is fast", () => {
+    Object.defineProperty(navigator, "onLine", { configurable: true, value: true });
+    Object.defineProperty(navigator, "connection", {
+      configurable: true,
+      value: { saveData: false, effectiveType: "4g" },
+    });
+    document.documentElement.dataset.lite = "true";
+
+    expect(networkAllowsPrefetch()).toBe(false);
   });
 });

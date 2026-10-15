@@ -145,3 +145,15 @@ cell-architecture-studio/
 
 # local API tokens (never commit)
 cloudflare-token.txt
+
+
+# ── Android TWA wrapper (local build only; signing keys and build trees stay out) ──
+android-twa/node_modules/
+android-twa/android/
+android-twa/android/local.properties
+android-twa/*.aab
+android-twa/android-keystore.jks
+android-twa/keystore.jks
+android-twa/*.jks
+android-twa/*.keystore
+android-twa/release/

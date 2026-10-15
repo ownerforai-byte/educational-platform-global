@@ -4,45 +4,81 @@
   "topicSlug": "ideal-gas-equation",
   "topicTitle": "Ideal gas equation",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "notes": [
+    "The ideal-gas equation combines Boyle’s, Charles’s and Avogadro’s laws: PV=nRT. P is absolute pressure, V volume, n amount in moles, T absolute temperature and R=8.314 J mol⁻¹ K⁻¹.",
+    "Always convert Celsius using T(K)=t(°C)+273.15 and use consistent units. For 1.00 mol at 300 K in 24.6 L, P≈(8.314×300)/0.0246=1.01×10⁵ Pa.",
+    "For fixed amount n, PV/T stays constant between equilibrium states: P1V1/T1=P2V2/T2. In a sealed rigid vessel heated from 300 K to 450 K, pressure rises by the factor 450/300=1.5.",
+    "The model assumes molecules have negligible volume and exert no long-range intermolecular forces except during elastic collisions. Real gases approach ideal behaviour at low pressure and high temperature.",
+    "Use absolute rather than gauge pressure in the equation. If a gauge pressure is given, add atmospheric pressure before substituting."
+  ],
+  "confusion": [
+    "Never substitute Celsius into PV=nRT.",
+    "Gauge pressure is not absolute pressure."
+  ],
+  "practice": [
+    "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
+    "A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure.",
+    "Why do real gases deviate near condensation?"
+  ],
+  "universalFacts": [
+    "Use absolute pressure and kelvin temperature.",
+    "1 L=10⁻³ m³; maintain consistent units.",
+    "The combined gas law assumes the amount of gas is fixed."
+  ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
   "examples": [
-    "Application of Ideal Gas Equation"
+    "1 mol at 300 K in 24.6 L gives P≈1.01×10⁵ Pa.",
+    "Heating a sealed rigid gas from 300 K to 450 K multiplies pressure by 1.5."
   ],
   "practiceQuestions": [
-    "Q1. Define Ideal Gas Equation.",
-    "Q3. Problem on Ideal Gas Equation."
+    "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
+    "A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure.",
+    "Why do real gases deviate near condensation?"
   ],
-  "formulas": [],
+  "formulas": [
+    "PV=nRT; R=8.314 J mol⁻¹ K⁻¹.",
+    "At fixed n: P1V1/T1=P2V2/T2; T is in kelvins."
+  ],
   "keyPoints": [
-    "Application of Ideal Gas Equation",
-    "Connection of Ideal Gas Equation to other topics"
+    "Use absolute pressure and kelvin temperature.",
+    "1 L=10⁻³ m³; maintain consistent units.",
+    "The combined gas law assumes the amount of gas is fixed."
   ],
-  "summary": "Ideal Gas Equation covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "PV=nRT relates equilibrium gas variables when temperature and units are handled consistently. For fixed amount, PV/T is constant; real gases deviate near condensation and high pressure.",
+  "specialNotes": [
+    "Never substitute Celsius into PV=nRT.",
+    "Gauge pressure is not absolute pressure."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Ideal gas equation",
-    "Statement 2: Theorem related to Ideal gas equation",
-    "Statement 3: Condition for Ideal gas equation to be valid",
-    "Statement 4: Principle governing Ideal gas equation",
-    "Statement 5: Corollary or consequence of Ideal gas equation"
+    "Use absolute pressure and kelvin temperature.",
+    "1 L=10⁻³ m³; maintain consistent units.",
+    "The combined gas law assumes the amount of gas is fixed."
   ],
   "importantNotes": [
-    "Ideal Gas Equation is based on fundamental principles."
+    "Use absolute pressure and kelvin temperature.",
+    "1 L=10⁻³ m³; maintain consistent units.",
+    "The combined gas law assumes the amount of gas is fixed."
   ],
   "examShortTricks": [
-    "Recall the formula for Ideal Gas Equation."
+    "PV=nRT; R=8.314 J mol⁻¹ K⁻¹.",
+    "At fixed n: P1V1/T1=P2V2/T2; T is in kelvins."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
+    "A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure.",
+    "Why do real gases deviate near condensation?"
+  ],
   "importantConcepts": [
-    "Definition and significance of Ideal Gas Equation."
+    "Use absolute pressure and kelvin temperature.",
+    "1 L=10⁻³ m³; maintain consistent units.",
+    "The combined gas law assumes the amount of gas is fixed."
   ],
-  "importantTasks": [],
+  "importantTasks": [
+    "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
+    "A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure.",
+    "Why do real gases deviate near condensation?"
+  ],
   "specificConditions": [
     "**Ideal Gas Assumptions:** The equation $PV = nRT$ assumes (1) molecules are point particles with zero volume, (2) no intermolecular forces except during elastic collisions, (3) motion is random and obeys Newton's laws. These hold best at high temperature and low pressure; real gases deviate near condensation.",
     "**Universal Gas Constant:** $R = 8.314 \text{ J/mol·K}$ is the same for all ideal gases. It connects macroscopic ($P, V, n, T$) to microscopic ($k_B, N_A$) via $R = N_A k_B$. The value depends on units: $R = 0.0821 \text{ L·atm/mol·K}$ in common chemistry units.",

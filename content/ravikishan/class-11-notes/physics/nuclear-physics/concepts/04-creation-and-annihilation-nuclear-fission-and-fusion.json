@@ -4,45 +4,81 @@
   "topicSlug": "creation-and-annihilation-nuclear-fission-and-fusion",
   "topicTitle": "Creation and annihilation; nuclear fission and fusion",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "notes": [
+    "Annihilation occurs when a particle meets its antiparticle; rest mass may convert to photons while energy, momentum and charge remain conserved. For an electron and positron initially at rest, two photons travel in opposite directions so total momentum is zero.",
+    "An electron rest energy is mec²=0.511 MeV. An at-rest electron–positron pair can produce two 0.511 MeV photons, total energy 1.022 MeV.",
+    "Pair production is the reverse: a sufficiently energetic photon creates an electron and positron near a nucleus. The nucleus recoils, allowing momentum conservation; one photon cannot create the pair in empty space while conserving both energy and momentum.",
+    "The photon threshold is at least 2mec²=1.022 MeV. Any energy above threshold becomes kinetic energy of the pair and recoil.",
+    "Creation/annihilation of particle–antiparticle pairs is distinct from nuclear fission and fusion, although all processes obey mass-energy conservation."
+  ],
+  "confusion": [
+    "A single photon cannot create a pair in free space while conserving momentum.",
+    "The 1.022 MeV threshold is specific to an electron–positron pair."
+  ],
+  "practice": [
+    "Why are two photons normally produced in annihilation of a pair initially at rest?",
+    "Find the pair-production threshold in joules.",
+    "Why must pair production occur near another body?"
+  ],
+  "universalFacts": [
+    "Conserve momentum as well as energy.",
+    "Pair production has a threshold set by rest masses.",
+    "Annihilation does not violate charge conservation."
+  ],
   "animation3D": "nuclear-physics",
   "motionGraphics": "nuclear-physics",
   "examples": [
-    "Application of Creation, Annihilation, Fission and Fusion"
+    "At-rest e⁻e⁺ annihilation gives two opposite 0.511 MeV photons.",
+    "A 1.50 MeV photon leaves at most 0.478 MeV for pair kinetic energy and nuclear recoil."
   ],
   "practiceQuestions": [
-    "Q1. Define Creation, Annihilation, Fission and Fusion.",
-    "Q3. Problem on Creation, Annihilation, Fission and Fusion."
+    "Why are two photons normally produced in annihilation of a pair initially at rest?",
+    "Find the pair-production threshold in joules.",
+    "Why must pair production occur near another body?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Electron rest energy mec²=0.511 MeV; pair threshold=1.022 MeV.",
+    "Pair-production energy balance: Eγ=2mec²+Kpair+Knucleus."
+  ],
   "keyPoints": [
-    "Application of Creation, Annihilation, Fission and Fusion",
-    "Connection of Creation, Annihilation, Fission and Fusion to other topics"
+    "Conserve momentum as well as energy.",
+    "Pair production has a threshold set by rest masses.",
+    "Annihilation does not violate charge conservation."
   ],
-  "summary": "Creation, Annihilation, Fission and Fusion covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "Pair creation and annihilation convert energy between photons and particle rest mass. Threshold energy and momentum conservation determine what processes are allowed.",
+  "specialNotes": [
+    "A single photon cannot create a pair in free space while conserving momentum.",
+    "The 1.022 MeV threshold is specific to an electron–positron pair."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Creation and annihilation; nuclear fission and fusion",
-    "Statement 2: Theorem related to Creation and annihilation; nuclear fission and fusion",
-    "Statement 3: Condition for Creation and annihilation; nuclear fission and fusion to be valid",
-    "Statement 4: Principle governing Creation and annihilation; nuclear fission and fusion",
-    "Statement 5: Corollary or consequence of Creation and annihilation; nuclear fission and fusion"
+    "Conserve momentum as well as energy.",
+    "Pair production has a threshold set by rest masses.",
+    "Annihilation does not violate charge conservation."
   ],
   "importantNotes": [
-    "Creation, Annihilation, Fission and Fusion is based on fundamental principles."
+    "Conserve momentum as well as energy.",
+    "Pair production has a threshold set by rest masses.",
+    "Annihilation does not violate charge conservation."
   ],
   "examShortTricks": [
-    "Recall the formula for Creation, Annihilation, Fission and Fusion."
+    "Electron rest energy mec²=0.511 MeV; pair threshold=1.022 MeV.",
+    "Pair-production energy balance: Eγ=2mec²+Kpair+Knucleus."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Why are two photons normally produced in annihilation of a pair initially at rest?",
+    "Find the pair-production threshold in joules.",
+    "Why must pair production occur near another body?"
+  ],
   "importantConcepts": [
-    "Definition and significance of Creation, Annihilation, Fission and Fusion."
+    "Conserve momentum as well as energy.",
+    "Pair production has a threshold set by rest masses.",
+    "Annihilation does not violate charge conservation."
   ],
-  "importantTasks": [],
+  "importantTasks": [
+    "Why are two photons normally produced in annihilation of a pair initially at rest?",
+    "Find the pair-production threshold in joules.",
+    "Why must pair production occur near another body?"
+  ],
   "duplicateType": 1,
   "visualType": "nuclear-fission-fusion",
   "specificConditions": [

@@ -5,79 +5,79 @@
   "topicTitle": "M,P Errors",
   "relevance": 40,
   "notes": [
-    "**M,P Errors:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "Repeated readings have a mean value and a spread. A common school estimate of mean absolute error is the average of |xi−x̄|; probable error is sometimes defined as 0.6745 times the mean absolute error for normally distributed random errors.",
+    "For sums and differences, a conservative maximum-error estimate adds absolute uncertainties: z=x±y gives Δz≈Δx+Δy. For products or quotients, relative uncertainties add: Δz/|z|≈Δx/|x|+Δy/|y|.",
+    "For a power law z=xⁿ, relative uncertainty is approximately |n|Δx/|x|. Thus a 1% radius error gives about 2% area error for A=πr².",
+    "Worked example: L=10.0±0.1 cm and W=5.0±0.1 cm. For A=LW, fractional uncertainty≈0.1/10+0.1/5=0.03, or 3%; A=50 cm² with estimated uncertainty 1.5 cm².",
+    "These are first-order rules for small uncertainties. State the method and avoid suggesting an exact result when measurements are approximate."
   ],
   "confusion": [
-    "Distinguish concepts in M,P Errors.",
-    "Check formula conditions."
+    "Probable-error terminology varies by textbook; state its statistical convention.",
+    "First-order rules assume small uncertainties and do not replace a full statistical model."
   ],
   "practice": [
-    "Solve 5 problems on M,P Errors.",
-    "Derive the key formula for M,P Errors."
+    "Find relative uncertainty in V=πr²h if r has 2% and h 1% uncertainty.",
+    "Estimate the absolute uncertainty in x−y for x=8.0±0.2, y=3.0±0.1.",
+    "Why do relative uncertainties add for a product?"
   ],
   "universalFacts": [
-    "M,P Errors appears in exams.",
-    "Foundational for advanced topics."
+    "Keep absolute and relative errors distinct.",
+    "A squared quantity doubles percentage uncertainty to first order.",
+    "Round the value consistently with its uncertainty."
   ],
   "animation3D": "mechanics",
   "motionGraphics": "mechanics",
   "examples": [
-    "Application of M,P Errors",
-    "Numerical problem on M,P Errors",
-    "Daily life use of M,P Errors"
+    "A=πr² with a 1% radius uncertainty has about 2% area uncertainty.",
+    "10.0±0.1 cm by 5.0±0.1 cm gives 50 cm² with about 3% uncertainty."
   ],
   "practiceQuestions": [
-    "Q1. Define M,P Errors.",
-    "Q2. Key formula for M,P Errors.",
-    "Q3. Problem on M,P Errors."
+    "Find relative uncertainty in V=πr²h if r has 2% and h 1% uncertainty.",
+    "Estimate the absolute uncertainty in x−y for x=8.0±0.2, y=3.0±0.1.",
+    "Why do relative uncertainties add for a product?"
   ],
   "formulas": [
-    "Maximum fractional error: for $Z = AB$ or $Z = A/B$, $\\frac{\\Delta Z}{Z} = \\frac{\\Delta A}{A} + \\frac{\\Delta B}{B}$.",
-    "For $Z = A^n B^m / C^p$, $\\frac{\\Delta Z}{Z} = n\\frac{\\Delta A}{A} + m\\frac{\\Delta B}{B} + p\\frac{\\Delta C}{C}$."
+    "Mean absolute error=(Σ|xi−x̄|)/N; probable error≈0.6745×mean absolute error under a normal-error convention.",
+    "For z=xⁿ, Δz/|z|≈|n|Δx/|x|; for products/quotients, relative errors add."
   ],
   "keyPoints": [
-    "Errors always ADD, never cancel: a quotient of two measured quantities is no more precise than the worse of the two."
+    "Keep absolute and relative errors distinct.",
+    "A squared quantity doubles percentage uncertainty to first order.",
+    "Round the value consistently with its uncertainty."
   ],
-  "summary": "M,P Errors covers essential principles and applications.",
+  "summary": "Error propagation depends on how measured quantities combine: add absolute errors for sums and relative errors for products and powers.",
   "specialNotes": [
-    "Check conditions for M,P Errors.",
-    "M,P Errors connects to other topics."
+    "Probable-error terminology varies by textbook; state its statistical convention.",
+    "First-order rules assume small uncertainties and do not replace a full statistical model."
   ],
   "importantStatements": [
-    "Statement 1: Definition of M,P Errors",
-    "Statement 2: Theorem related to M,P Errors",
-    "Statement 3: Condition for M,P Errors to be valid",
-    "Statement 4: Principle governing M,P Errors",
-    "Statement 5: Corollary or consequence of M,P Errors"
+    "Keep absolute and relative errors distinct.",
+    "A squared quantity doubles percentage uncertainty to first order.",
+    "Round the value consistently with its uncertainty."
   ],
   "importantNotes": [
-    "M,P Errors is based on fundamental principles."
+    "Keep absolute and relative errors distinct.",
+    "A squared quantity doubles percentage uncertainty to first order.",
+    "Round the value consistently with its uncertainty."
   ],
   "examShortTricks": [
-    "Recall the formula for M,P Errors."
+    "Mean absolute error=(Σ|xi−x̄|)/N; probable error≈0.6745×mean absolute error under a normal-error convention.",
+    "For z=xⁿ, Δz/|z|≈|n|Δx/|x|; for products/quotients, relative errors add."
   ],
   "examNotes": [
-    "Focus on M,P Errors problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Which describes M,P Errors?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+    "Find relative uncertainty in V=πr²h if r has 2% and h 1% uncertainty.",
+    "Estimate the absolute uncertainty in x−y for x=8.0±0.2, y=3.0±0.1.",
+    "Why do relative uncertainties add for a product?"
   ],
   "importantConcepts": [
-    "Definition and significance of M,P Errors."
+    "Keep absolute and relative errors distinct.",
+    "A squared quantity doubles percentage uncertainty to first order.",
+    "Round the value consistently with its uncertainty."
   ],
   "importantTasks": [
-    "Solve 5 problems on M,P Errors."
+    "Find relative uncertainty in V=πr²h if r has 2% and h 1% uncertainty.",
+    "Estimate the absolute uncertainty in x−y for x=8.0±0.2, y=3.0±0.1.",
+    "Why do relative uncertainties add for a product?"
   ],
   "duplicateType": 1,
   "visualType": "error-analysis"

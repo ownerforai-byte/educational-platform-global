@@ -1,0 +1,88 @@
+{
+  "title": "N1",
+  "unitSlug": "optics",
+  "topicSlug": "n1",
+  "topicTitle": "N1",
+  "relevance": 40,
+  "notes": [
+    "Geometrical optics represents light by rays travelling in straight lines through a uniform medium. At reflection, incident ray, reflected ray and normal lie in one plane, with angle of incidence equal to angle of reflection.",
+    "At refraction, Snell’s law n1 sin i=n2 sin r uses angles measured from the normal. Frequency stays constant across a stationary boundary while speed and wavelength change.",
+    "Worked example: a ray enters glass with n=1.50 from air at i=30°. sin r=sin30°/1.50=1/3, giving r≈19.5°; the ray bends toward the normal.",
+    "When light goes from higher to lower index, it bends away from the normal. If incidence exceeds the critical angle, total internal reflection occurs, with sin c=n2/n1.",
+    "Ray optics works when apertures and obstacles are much larger than wavelength; diffraction and interference require a wave description when dimensions approach wavelength."
+  ],
+  "confusion": [
+    "At i=c the refracted ray travels along the boundary; TIR occurs for i>c.",
+    "Frequency does not change at a stationary boundary."
+  ],
+  "practice": [
+    "A ray enters water (n=1.33) from air at 45°. Find r.",
+    "State conditions for total internal reflection.",
+    "When is a ray model inadequate?"
+  ],
+  "universalFacts": [
+    "Draw the normal before measuring optical angles.",
+    "Higher-index entry bends toward the normal.",
+    "TIR requires high-to-low index and i>c."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics",
+  "examples": [
+    "Air-to-glass n=1.50 at 30° gives r≈19.5°.",
+    "Glass n=1.50 to air has critical angle c≈41.8°."
+  ],
+  "practiceQuestions": [
+    "A ray enters water (n=1.33) from air at 45°. Find r.",
+    "State conditions for total internal reflection.",
+    "When is a ray model inadequate?"
+  ],
+  "formulas": [
+    "Reflection: i=r. Refraction: n1 sin i=n2 sin r.",
+    "Critical angle for n1>n2: sin c=n2/n1; wave relation v=fλ."
+  ],
+  "keyPoints": [
+    "Draw the normal before measuring optical angles.",
+    "Higher-index entry bends toward the normal.",
+    "TIR requires high-to-low index and i>c."
+  ],
+  "summary": "Reflection, refraction and total internal reflection predict many optical paths. Angles are measured from the normal, and the ray model fails at wavelength-scale apertures.",
+  "specialNotes": [
+    "At i=c the refracted ray travels along the boundary; TIR occurs for i>c.",
+    "Frequency does not change at a stationary boundary."
+  ],
+  "importantStatements": [
+    "Draw the normal before measuring optical angles.",
+    "Higher-index entry bends toward the normal.",
+    "TIR requires high-to-low index and i>c."
+  ],
+  "importantNotes": [
+    "Draw the normal before measuring optical angles.",
+    "Higher-index entry bends toward the normal.",
+    "TIR requires high-to-low index and i>c."
+  ],
+  "examShortTricks": [
+    "Reflection: i=r. Refraction: n1 sin i=n2 sin r.",
+    "Critical angle for n1>n2: sin c=n2/n1; wave relation v=fλ."
+  ],
+  "examNotes": [
+    "A ray enters water (n=1.33) from air at 45°. Find r.",
+    "State conditions for total internal reflection.",
+    "When is a ray model inadequate?"
+  ],
+  "importantConcepts": [
+    "Draw the normal before measuring optical angles.",
+    "Higher-index entry bends toward the normal.",
+    "TIR requires high-to-low index and i>c."
+  ],
+  "importantTasks": [
+    "A ray enters water (n=1.33) from air at 45°. Find r.",
+    "State conditions for total internal reflection.",
+    "When is a ray model inadequate?"
+  ],
+  "specificConditions": [
+    "**Optical Principles:** The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁sinθ₁ = n₂sinθ₂). These laws derive from Fermat's principle of least time.",
+    "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
+    "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  ],
+  "duplicateType": 1
+}

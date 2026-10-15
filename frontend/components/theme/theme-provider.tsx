@@ -2,6 +2,9 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
+const GOOGLE_FONTS_URL =
+  "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap";
+
 export type Theme =
   | "light"
   | "dark"
@@ -30,8 +33,8 @@ export interface ThemeOption {
 export const THEME_OPTIONS: ThemeOption[] = [
   {
     id: "light",
-    label: "Clean Slate",
-    description: "Crisp, daylight educational theme",
+    label: "Light Mode",
+    description: "Bright, clean reading with clear contrast",
     badge: "Daylight",
     colors: { bg: "#f8fafc", primary: "#2563eb", border: "#cbd5e1" },
     isDark: false,
@@ -100,24 +103,37 @@ export const THEME_OPTIONS: ThemeOption[] = [
     colors: { bg: "#0b0f22", primary: "#b4c2ff", border: "#2a3355" },
     isDark: true,
   },
+  {
+    id: "system",
+    label: "System",
+    description: "Follow your device's light or dark preference",
+    badge: "Auto",
+    colors: { bg: "#f8fafc", primary: "#334155", border: "#cbd5e1" },
+    isDark: false,
+  },
 ];
 
 type ThemeProviderProps = {
   children: React.ReactNode;
   defaultTheme?: Theme;
   storageKey?: string;
+  liteStorageKey?: string;
 };
 
 type ThemeProviderState = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   resolvedTheme: "dark" | "light";
+  liteMode: boolean;
+  setLiteMode: (enabled: boolean) => void;
 };
 
 const initialState: ThemeProviderState = {
   theme: "system",
   setTheme: () => null,
   resolvedTheme: "light",
+  liteMode: false,
+  setLiteMode: () => null,
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
@@ -134,53 +150,140 @@ const ALL_THEME_CLASSES = [
   "nebula",
 ];
 
+export function isTheme(value: string | null): value is Theme {
+  return value === "system" || ALL_THEME_CLASSES.includes(value ?? "");
+}
+
+/** Apply a theme synchronously so a deliberate switch never waits for a reload. */
+function applyTheme(theme: Theme): "dark" | "light" {
+  const activeTheme =
+    theme === "system"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+      : theme;
+  const isDark = THEME_OPTIONS.find((option) => option.id === activeTheme)?.isDark ?? false;
+  const root = document.documentElement;
+
+  root.classList.remove(...ALL_THEME_CLASSES);
+  root.classList.add(isDark ? "dark" : "light", activeTheme);
+  root.dataset.theme = activeTheme;
+  root.style.colorScheme = isDark ? "dark" : "light";
+
+  const themeColor = THEME_OPTIONS.find((option) => option.id === activeTheme)?.colors.bg;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute(
+    "content",
+    themeColor ?? (isDark ? "#0f172a" : "#f8fafc"),
+  );
+
+  return isDark ? "dark" : "light";
+}
+
 export function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "neb-theme",
+  liteStorageKey = "neb-lite-mode",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
   const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">("light");
+  const [liteMode, setLiteModeState] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(storageKey) as Theme | null;
-    if (stored) setTheme(stored);
-  }, [storageKey]);
+    let initialTheme = theme;
+    try {
+      const stored = window.localStorage.getItem(storageKey);
+      if (isTheme(stored)) initialTheme = stored;
+    } catch {
+      // Storage can be unavailable in private browsing; keep the in-memory theme.
+    }
+
+    if (initialTheme !== theme) setThemeState(initialTheme);
+    setResolvedTheme(applyTheme(initialTheme));
+
+    if (initialTheme !== "system") return;
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const syncSystemTheme = () => setResolvedTheme(applyTheme("system"));
+    media.addEventListener?.("change", syncSystemTheme);
+    return () => media.removeEventListener?.("change", syncSystemTheme);
+  }, [theme, storageKey]);
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove(...ALL_THEME_CLASSES);
+    let savedLiteMode: string | null = null;
+    try {
+      savedLiteMode = window.localStorage.getItem(liteStorageKey);
+    } catch {
+      // Continue with connection hints when storage is unavailable.
+    }
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const connectionIsConstrained =
+      connection?.saveData === true ||
+      connection?.effectiveType === "slow-2g" ||
+      connection?.effectiveType === "2g";
+    const enabled = savedLiteMode === null ? connectionIsConstrained : savedLiteMode === "true";
+    setLiteModeState(enabled);
+    document.documentElement.dataset.lite = String(enabled);
+  }, [liteStorageKey]);
 
-    let activeTheme = theme;
-    if (activeTheme === "system") {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      activeTheme = prefersDark ? "dark" : "light";
+  // Keep the page's chosen fonts, but fetch Google Fonts only after first
+  // paint and never fetch them while Lite mode is active.
+  useEffect(() => {
+    if (
+      liteMode ||
+      document.documentElement.dataset.lite === "true" ||
+      document.getElementById("ravi-google-fonts")
+    ) return;
+    const head = document.head;
+
+    for (const [id, href] of [
+      ["ravi-fonts-preconnect", "https://fonts.googleapis.com"],
+      ["ravi-fonts-static-preconnect", "https://fonts.gstatic.com"],
+    ]) {
+      if (document.getElementById(id)) continue;
+      const link = document.createElement("link");
+      link.id = id;
+      link.rel = "preconnect";
+      link.href = href;
+      if (href.includes("gstatic")) link.crossOrigin = "anonymous";
+      head.append(link);
     }
 
-    const selectedConfig = THEME_OPTIONS.find((t) => t.id === activeTheme);
-    const isDark = selectedConfig ? selectedConfig.isDark : activeTheme === "dark";
-
-    // Set base class (light or dark for Tailwind dark: utility compatibility)
-    if (isDark) {
-      root.classList.add("dark");
-      setResolvedTheme("dark");
-    } else {
-      root.classList.add("light");
-      setResolvedTheme("light");
-    }
-
-    // Set specific theme class
-    root.classList.add(activeTheme);
-    root.setAttribute("data-theme", activeTheme);
-  }, [theme]);
+    const stylesheet = document.createElement("link");
+    stylesheet.id = "ravi-google-fonts";
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = GOOGLE_FONTS_URL;
+    head.append(stylesheet);
+  }, [liteMode]);
 
   const value = {
     theme,
     setTheme: (newTheme: Theme) => {
-      localStorage.setItem(storageKey, newTheme);
-      setTheme(newTheme);
+      try {
+        window.localStorage.setItem(storageKey, newTheme);
+      } catch {
+        // Theme switching still works for this session when storage is blocked.
+      }
+      setResolvedTheme(applyTheme(newTheme));
+      setThemeState(newTheme);
     },
     resolvedTheme,
+    liteMode,
+    setLiteMode: (enabled: boolean) => {
+      try {
+        window.localStorage.setItem(liteStorageKey, String(enabled));
+      } catch {
+        // The preference remains active in memory for this session.
+      }
+      document.documentElement.dataset.lite = String(enabled);
+      if (enabled) {
+        document.getElementById("ravi-google-fonts")?.remove();
+        document.getElementById("ravi-fonts-preconnect")?.remove();
+        document.getElementById("ravi-fonts-static-preconnect")?.remove();
+      }
+      setLiteModeState(enabled);
+    },
   };
 
   return (

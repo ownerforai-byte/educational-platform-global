@@ -1,0 +1,88 @@
+{
+  "title": "N3",
+  "unitSlug": "optics",
+  "topicSlug": "n3",
+  "topicTitle": "N3",
+  "relevance": 40,
+  "notes": [
+    "A converging thin lens brings parallel paraxial rays to a real focus; a diverging lens makes them spread as if from a virtual focus. The optical centre and principal foci lie on the principal axis.",
+    "With Cartesian convention and light travelling left to right, the thin-lens equation is 1/f=1/v−1/u. A real object has u<0; a real image has v>0.",
+    "Worked example: f=+15 cm and u=−30 cm give 1/v=1/15−1/30=1/30, so v=+30 cm. Magnification m=v/u=−1: real, inverted and same size.",
+    "A diverging lens has f<0 and forms a virtual, upright, diminished image of a real object. Ray diagrams check signs and whether an image can be caught on a screen.",
+    "Lens power is P=1/f when f is in metres. A short focal length means high magnitude of power, but image size still depends on object placement."
+  ],
+  "confusion": [
+    "Do not use the mirror equation in a lens problem.",
+    "The simple lens equation assumes a thin lens and paraxial rays."
+  ],
+  "practice": [
+    "An object is 24 cm from a converging lens with f=8 cm. Find v and m.",
+    "What does negative magnification indicate?",
+    "Can a virtual image be projected onto a screen?"
+  ],
+  "universalFacts": [
+    "Use one sign convention throughout.",
+    "Real rays meet; virtual rays only appear to meet.",
+    "A virtual image cannot be directly projected onto a screen."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics",
+  "examples": [
+    "f=+15 cm and u=−30 cm give v=+30 cm and m=−1.",
+    "A diverging lens has negative focal length and a virtual image for a real object."
+  ],
+  "practiceQuestions": [
+    "An object is 24 cm from a converging lens with f=8 cm. Find v and m.",
+    "What does negative magnification indicate?",
+    "Can a virtual image be projected onto a screen?"
+  ],
+  "formulas": [
+    "Thin lens: 1/f=1/v−1/u; m=v/u.",
+    "Lens power P=1/f with f in metres."
+  ],
+  "keyPoints": [
+    "Use one sign convention throughout.",
+    "Real rays meet; virtual rays only appear to meet.",
+    "A virtual image cannot be directly projected onto a screen."
+  ],
+  "summary": "Thin-lens equations and ray diagrams connect focal length to image position and magnification. Signed distances encode real/virtual and upright/inverted outcomes.",
+  "specialNotes": [
+    "Do not use the mirror equation in a lens problem.",
+    "The simple lens equation assumes a thin lens and paraxial rays."
+  ],
+  "importantStatements": [
+    "Use one sign convention throughout.",
+    "Real rays meet; virtual rays only appear to meet.",
+    "A virtual image cannot be directly projected onto a screen."
+  ],
+  "importantNotes": [
+    "Use one sign convention throughout.",
+    "Real rays meet; virtual rays only appear to meet.",
+    "A virtual image cannot be directly projected onto a screen."
+  ],
+  "examShortTricks": [
+    "Thin lens: 1/f=1/v−1/u; m=v/u.",
+    "Lens power P=1/f with f in metres."
+  ],
+  "examNotes": [
+    "An object is 24 cm from a converging lens with f=8 cm. Find v and m.",
+    "What does negative magnification indicate?",
+    "Can a virtual image be projected onto a screen?"
+  ],
+  "importantConcepts": [
+    "Use one sign convention throughout.",
+    "Real rays meet; virtual rays only appear to meet.",
+    "A virtual image cannot be directly projected onto a screen."
+  ],
+  "importantTasks": [
+    "An object is 24 cm from a converging lens with f=8 cm. Find v and m.",
+    "What does negative magnification indicate?",
+    "Can a virtual image be projected onto a screen?"
+  ],
+  "specificConditions": [
+    "**Optical Principles:** The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁sinθ₁ = n₂sinθ₂). These laws derive from Fermat's principle of least time.",
+    "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
+    "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  ],
+  "duplicateType": 1
+}

@@ -1,0 +1,89 @@
+{
+  "title": "Chromatic and Spherical Aberration",
+  "unitSlug": "dispersion",
+  "topicSlug": "chromatic-and-spherical-aberration",
+  "topicTitle": "Chromatic and spherical aberration",
+  "relevance": 100,
+  "notes": [
+    "Chromatic aberration is colour fringing caused by a lens having different focal lengths for different wavelengths. In ordinary glass, blue/violet light is refracted more strongly than red, so their images do not share one focus.",
+    "Longitudinal chromatic aberration is the axial separation Δf=|fv−fr| of two colour foci. Transverse chromatic aberration is a wavelength-dependent lateral image displacement, often visible at the edge of a wide field.",
+    "Spherical aberration has a different cause: marginal and paraxial rays of the same colour focus at different points because the surface is spherical. It can be reduced with an aperture stop or aspheric surfaces.",
+    "Worked comparison: if red focuses at 50.0 cm and blue at 49.0 cm, longitudinal chromatic aberration is 1.0 cm. This is axial focus separation, not a 1 cm sideways image shift.",
+    "An achromatic doublet pairs converging crown glass with diverging flint glass so two selected colours focus together. Stopping down reduces marginal-ray error but does not remove material dispersion."
+  ],
+  "confusion": [
+    "Stopping down does not make glass non-dispersive.",
+    "Primary achromatism reduces selected colour separation but may leave secondary spectrum."
+  ],
+  "practice": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "universalFacts": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion",
+  "examples": [
+    "Red and blue foci at 20.4 cm and 20.0 cm have Δf=0.4 cm.",
+    "An achromatic doublet reduces colour separation; stopping down mainly reduces spherical aberration."
+  ],
+  "practiceQuestions": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "formulas": [
+    "Longitudinal chromatic aberration: Δf=|fv−fr|.",
+    "For a thin lens in air: 1/f=(n−1)(1/R1−1/R2); n depends on wavelength."
+  ],
+  "keyPoints": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "summary": "Chromatic aberration comes from wavelength-dependent focal length; spherical aberration comes from paraxial–marginal focus separation. Their corrections differ.",
+  "specialNotes": [
+    "Stopping down does not make glass non-dispersive.",
+    "Primary achromatism reduces selected colour separation but may leave secondary spectrum."
+  ],
+  "importantStatements": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "importantNotes": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "examShortTricks": [
+    "Longitudinal chromatic aberration: Δf=|fv−fr|.",
+    "For a thin lens in air: 1/f=(n−1)(1/R1−1/R2); n depends on wavelength."
+  ],
+  "examNotes": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "importantConcepts": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "importantTasks": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "duplicateType": 1,
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
+  "visualType": "chromatic-aberration"
+}

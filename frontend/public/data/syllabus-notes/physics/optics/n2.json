@@ -1,0 +1,88 @@
+{
+  "title": "N2",
+  "unitSlug": "optics",
+  "topicSlug": "n2",
+  "topicTitle": "N2",
+  "relevance": 40,
+  "notes": [
+    "A plane mirror forms an image where backward extensions of reflected rays meet. The image is virtual, upright, equal in size and as far behind the mirror as the object is in front.",
+    "For a spherical mirror, pole P and centre of curvature C define the axis; for paraxial rays the principal focus F is halfway to C, so f=R/2.",
+    "A concave mirror can form real or virtual images according to object position. A convex mirror gives an upright, diminished virtual image for a real object, providing a wide field of view.",
+    "Worked example: a concave mirror has f=10 cm and object distance u=30 cm in a real-positive convention. 1/v=1/10−1/30=1/15, so v=15 cm; m=−v/u=−0.5.",
+    "Principal ray construction uses a ray parallel to the axis reflected through F and a ray through C reflected back along itself. Their intersection gives image position."
+  ],
+  "confusion": [
+    "The displayed mirror equation uses a real-positive convention.",
+    "f=R/2 assumes a spherical mirror and paraxial rays."
+  ],
+  "practice": [
+    "A concave mirror has f=12 cm and u=36 cm. Find v and m.",
+    "Why is a plane-mirror image virtual?",
+    "Give one advantage of a convex vehicle mirror."
+  ],
+  "universalFacts": [
+    "Object position determines concave-mirror image type.",
+    "A convex mirror trades image size for field of view.",
+    "The spherical-mirror focus is halfway to C for paraxial rays."
+  ],
+  "animation3D": "optics",
+  "motionGraphics": "optics",
+  "examples": [
+    "u=30 cm, f=10 cm concave gives v=15 cm and m=−0.5.",
+    "A plane mirror gives equal object and image distances and unit magnification."
+  ],
+  "practiceQuestions": [
+    "A concave mirror has f=12 cm and u=36 cm. Find v and m.",
+    "Why is a plane-mirror image virtual?",
+    "Give one advantage of a convex vehicle mirror."
+  ],
+  "formulas": [
+    "Spherical mirror: f=R/2 for paraxial rays.",
+    "Mirror equation 1/f=1/u+1/v; magnification m=−v/u in real-positive convention."
+  ],
+  "keyPoints": [
+    "Object position determines concave-mirror image type.",
+    "A convex mirror trades image size for field of view.",
+    "The spherical-mirror focus is halfway to C for paraxial rays."
+  ],
+  "summary": "Spherical mirrors form images by reflection. Use the paraxial relation f=R/2 and a consistent mirror equation to determine image position and type.",
+  "specialNotes": [
+    "The displayed mirror equation uses a real-positive convention.",
+    "f=R/2 assumes a spherical mirror and paraxial rays."
+  ],
+  "importantStatements": [
+    "Object position determines concave-mirror image type.",
+    "A convex mirror trades image size for field of view.",
+    "The spherical-mirror focus is halfway to C for paraxial rays."
+  ],
+  "importantNotes": [
+    "Object position determines concave-mirror image type.",
+    "A convex mirror trades image size for field of view.",
+    "The spherical-mirror focus is halfway to C for paraxial rays."
+  ],
+  "examShortTricks": [
+    "Spherical mirror: f=R/2 for paraxial rays.",
+    "Mirror equation 1/f=1/u+1/v; magnification m=−v/u in real-positive convention."
+  ],
+  "examNotes": [
+    "A concave mirror has f=12 cm and u=36 cm. Find v and m.",
+    "Why is a plane-mirror image virtual?",
+    "Give one advantage of a convex vehicle mirror."
+  ],
+  "importantConcepts": [
+    "Object position determines concave-mirror image type.",
+    "A convex mirror trades image size for field of view.",
+    "The spherical-mirror focus is halfway to C for paraxial rays."
+  ],
+  "importantTasks": [
+    "A concave mirror has f=12 cm and u=36 cm. Find v and m.",
+    "Why is a plane-mirror image virtual?",
+    "Give one advantage of a convex vehicle mirror."
+  ],
+  "specificConditions": [
+    "**Optical Principles:** The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁sinθ₁ = n₂sinθ₂). These laws derive from Fermat's principle of least time.",
+    "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
+    "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  ],
+  "duplicateType": 1
+}

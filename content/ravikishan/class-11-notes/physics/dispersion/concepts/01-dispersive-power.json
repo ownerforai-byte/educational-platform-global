@@ -1,0 +1,90 @@
+{
+  "title": "Dispersive Power",
+  "unitSlug": "dispersion",
+  "topicSlug": "dispersive-power",
+  "topicTitle": "Dispersive Power",
+  "relevance": 100,
+  "notes": [
+    "White light contains a range of wavelengths. In ordinary glass, refractive index is greater for violet than red, so violet bends more through a prism: this wavelength-dependent separation is dispersion.",
+    "For a thin prism of apex angle A and small deviations, a colour with refractive index n has deviation δ=(n−1)A. Therefore the red–violet angular spread is Δδ=(nv−nr)A.",
+    "Dispersive power compares colour spread with mean yellow deviation: ω=(δv−δr)/δy=(nv−nr)/(ny−1). It is dimensionless and describes relative dispersion of the material, not the prism angle.",
+    "Worked example: nv=1.532, nr=1.514 and ny=1.523 give ω=0.018/0.523≈0.0344. A higher ω means more red–violet separation for the same mean deviation.",
+    "The thin-prism ratio follows by dividing Δδ=(nv−nr)A by δy=(ny−1)A; A cancels. In a different surrounding medium, use refractive indices relative to that medium."
+  ],
+  "confusion": [
+    "Do not confuse dispersive power with total deviation; total deviation depends on apex angle.",
+    "Use small-angle thin-prism relations only within their approximation."
+  ],
+  "practice": [
+    "Find ω for nv=1.60, nr=1.58 and ny=1.59.",
+    "Explain why dispersive power is dimensionless.",
+    "Distinguish angular dispersion from mean deviation."
+  ],
+  "universalFacts": [
+    "For normal dispersion in glass, violet deviates more than red.",
+    "Dispersive power is a relative spread; total deviation also depends on A.",
+    "The thin-prism formula assumes small angles."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion",
+  "examples": [
+    "A=4°, nred=1.50 and nviolet=1.52 give deviations 2.00° and 2.08°; spread=0.08°.",
+    "nv=1.532, nr=1.514, ny=1.523 gives ω≈0.0344."
+  ],
+  "practiceQuestions": [
+    "Find ω for nv=1.60, nr=1.58 and ny=1.59.",
+    "Explain why dispersive power is dimensionless.",
+    "Distinguish angular dispersion from mean deviation."
+  ],
+  "formulas": [
+    "δ=(n−1)A for a thin prism at small angles.",
+    "ω=(δv−δr)/δy=(nv−nr)/(ny−1) for a prism in air."
+  ],
+  "keyPoints": [
+    "For normal dispersion in glass, violet deviates more than red.",
+    "Dispersive power is a relative spread; total deviation also depends on A.",
+    "The thin-prism formula assumes small angles."
+  ],
+  "summary": "A prism separates colours because refractive index varies with wavelength. For a thin prism, ω=(nv−nr)/(ny−1) measures relative colour spread.",
+  "specialNotes": [
+    "Do not confuse dispersive power with total deviation; total deviation depends on apex angle.",
+    "Use small-angle thin-prism relations only within their approximation."
+  ],
+  "importantStatements": [
+    "For normal dispersion in glass, violet deviates more than red.",
+    "Dispersive power is a relative spread; total deviation also depends on A.",
+    "The thin-prism formula assumes small angles."
+  ],
+  "importantNotes": [
+    "For normal dispersion in glass, violet deviates more than red.",
+    "Dispersive power is a relative spread; total deviation also depends on A.",
+    "The thin-prism formula assumes small angles."
+  ],
+  "examShortTricks": [
+    "δ=(n−1)A for a thin prism at small angles.",
+    "ω=(δv−δr)/δy=(nv−nr)/(ny−1) for a prism in air."
+  ],
+  "examNotes": [
+    "Find ω for nv=1.60, nr=1.58 and ny=1.59.",
+    "Explain why dispersive power is dimensionless.",
+    "Distinguish angular dispersion from mean deviation."
+  ],
+  "importantConcepts": [
+    "For normal dispersion in glass, violet deviates more than red.",
+    "Dispersive power is a relative spread; total deviation also depends on A.",
+    "The thin-prism formula assumes small angles."
+  ],
+  "importantTasks": [
+    "Find ω for nv=1.60, nr=1.58 and ny=1.59.",
+    "Explain why dispersive power is dimensionless.",
+    "Distinguish angular dispersion from mean deviation."
+  ],
+  "duplicateType": 2,
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
+  "tabGroup": "pure-spectrum-and-dispersive-power",
+  "visualType": "dispersion"
+}

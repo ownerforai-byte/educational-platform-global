@@ -1,0 +1,90 @@
+{
+  "title": "Nuclear Fission and Fusion",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "fission-fusion",
+  "topicTitle": "Nuclear Fission and Fusion",
+  "relevance": 100,
+  "notes": [
+    "Fission splits a heavy nucleus into medium-mass fragments, often after neutron absorption. Fusion combines light nuclei. Either can release energy when products have greater total binding energy than reactants.",
+    "Reaction energy follows mass-energy conservation: Q=(mi−mf)c². Positive Q means the final rest mass is lower and the difference appears as kinetic energy, radiation or excitation.",
+    "Uranium-235 fission can release several neutrons. A sustained chain reaction requires, on average, enough neutrons to induce further fissions; a reactor controls this multiplication with neutron absorbers and moderators.",
+    "Deuterium–tritium fusion can form helium-4 and a neutron, releasing about 17.6 MeV. The positively charged nuclei must approach closely despite Coulomb repulsion, requiring high temperature and adequate confinement.",
+    "Fission is used in nuclear power stations; fusion powers stars. Practical fusion requires maintaining a hot dense plasma long enough for reaction energy to exceed losses."
+  ],
+  "confusion": [
+    "Mass is converted to other forms of energy; total energy is conserved.",
+    "High temperature alone does not guarantee useful fusion; confinement matters."
+  ],
+  "practice": [
+    "Contrast fission and fusion by reactant mass and mechanism.",
+    "A reaction has mass defect 0.020 u. Estimate released energy in MeV.",
+    "What does k=0.95 imply for a chain reaction?"
+  ],
+  "universalFacts": [
+    "Energy comes from reduced total rest mass.",
+    "Fission splits heavy nuclei; fusion combines light nuclei.",
+    "Fusion must overcome or tunnel through Coulomb repulsion."
+  ],
+  "animation3D": "nuclear-physics",
+  "motionGraphics": "nuclear-physics",
+  "examples": [
+    "D+T→⁴He+n releases approximately 17.6 MeV.",
+    "A fission chain is sustained only when enough emitted neutrons cause later fissions."
+  ],
+  "practiceQuestions": [
+    "Contrast fission and fusion by reactant mass and mechanism.",
+    "A reaction has mass defect 0.020 u. Estimate released energy in MeV.",
+    "What does k=0.95 imply for a chain reaction?"
+  ],
+  "formulas": [
+    "Q=(mi−mf)c²; 1 u c²≈931.5 MeV.",
+    "Chain factor k<1 subcritical, k=1 critical, k>1 supercritical."
+  ],
+  "keyPoints": [
+    "Energy comes from reduced total rest mass.",
+    "Fission splits heavy nuclei; fusion combines light nuclei.",
+    "Fusion must overcome or tunnel through Coulomb repulsion."
+  ],
+  "summary": "Fission and fusion release energy when products are more tightly bound, with Q=(mi−mf)c². Fission can multiply neutrons; fusion needs extreme conditions.",
+  "specialNotes": [
+    "Mass is converted to other forms of energy; total energy is conserved.",
+    "High temperature alone does not guarantee useful fusion; confinement matters."
+  ],
+  "importantStatements": [
+    "Energy comes from reduced total rest mass.",
+    "Fission splits heavy nuclei; fusion combines light nuclei.",
+    "Fusion must overcome or tunnel through Coulomb repulsion."
+  ],
+  "importantNotes": [
+    "Energy comes from reduced total rest mass.",
+    "Fission splits heavy nuclei; fusion combines light nuclei.",
+    "Fusion must overcome or tunnel through Coulomb repulsion."
+  ],
+  "examShortTricks": [
+    "Q=(mi−mf)c²; 1 u c²≈931.5 MeV.",
+    "Chain factor k<1 subcritical, k=1 critical, k>1 supercritical."
+  ],
+  "examNotes": [
+    "Contrast fission and fusion by reactant mass and mechanism.",
+    "A reaction has mass defect 0.020 u. Estimate released energy in MeV.",
+    "What does k=0.95 imply for a chain reaction?"
+  ],
+  "importantConcepts": [
+    "Energy comes from reduced total rest mass.",
+    "Fission splits heavy nuclei; fusion combines light nuclei.",
+    "Fusion must overcome or tunnel through Coulomb repulsion."
+  ],
+  "importantTasks": [
+    "Contrast fission and fusion by reactant mass and mechanism.",
+    "A reaction has mass defect 0.020 u. Estimate released energy in MeV.",
+    "What does k=0.95 imply for a chain reaction?"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "creation-and-annihilation-nuclear-fission-and-fusion",
+  "visualType": "nuclear-reactions",
+  "specificConditions": [
+    "**Fission vs Fusion Energy Release:** Both release energy by moving toward higher $BE/A$ (iron peak). Fission splits heavy nuclei ($A > 56$) into medium fragments. Fusion combines light nuclei ($A < 56$) into heavier ones. Both increase the average $BE/A$ of the system.",
+    "**Chain Reaction Requirement:** Fission of $^{235}$U by thermal neutrons produces ~2.4 fast neutrons/fission. A sustained chain reaction requires at least 1 neutron to cause another fission ($k \\ge 1$). Critical mass is the minimum mass where neutron losses are balanced by productions. Moderators (graphite, water) slow neutrons to thermal energies to increase capture probability.",
+    "**Fusion Conditions:** Requires extreme temperature ($T \\sim 10^7-10^8$ K) for nuclei to overcome Coulomb barrier ($kT \\sim 1$ keV vs barrier $\\sim 1$ MeV). Quantum tunneling allows fusion at lower energies. Plasma confinement (magnetic/inertial) is needed to maintain density and temperature long enough for significant fusion (Lawson criterion: $n\\tau > 10^{20}$ m⁻³·s)."
+  ]
+}

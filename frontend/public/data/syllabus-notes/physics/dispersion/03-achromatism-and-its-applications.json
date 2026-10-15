@@ -1,0 +1,89 @@
+{
+  "title": "Achromatism and Its Applications",
+  "unitSlug": "dispersion",
+  "topicSlug": "achromatism-and-its-applications",
+  "topicTitle": "Achromatism and its applications",
+  "relevance": 100,
+  "notes": [
+    "An optical pair is achromatic for two chosen colours when their wavelength-dependent deviations cancel and both colours share a final focus. The lenses remain dispersive individually; their effects compensate.",
+    "For two thin lenses in contact with signed focal lengths f1,f2 and dispersive powers ω1,ω2, primary achromatism requires ω1/f1+ω2/f2=0. A crown converging lens is commonly paired with a more dispersive flint diverging lens.",
+    "Worked design: f1=+20 cm, ω1=0.02 and ω2=0.04 require 0.02/20+0.04/f2=0, giving f2=−40 cm. The negative sign identifies a diverging flint element.",
+    "The net power is 1/F=1/f1+1/f2, so the doublet can remain converging while cancelling colour spread. Camera, telescope and microscope objectives use achromatic groups to reduce coloured fringes.",
+    "Primary achromatism corrects two selected wavelengths; other colours may still form a secondary spectrum. More elaborate apochromatic systems correct additional wavelengths."
+  ],
+  "confusion": [
+    "Do not omit the negative focal length of the diverging lens.",
+    "The simple condition assumes thin lenses in contact."
+  ],
+  "practice": [
+    "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
+    "Why can an achromatic doublet still converge?",
+    "Does primary achromatism correct every visible wavelength?"
+  ],
+  "universalFacts": [
+    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
+    "Keep focal-length signs in the achromatism equation.",
+    "Two-colour correction can leave secondary spectrum."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion",
+  "examples": [
+    "f1=+20 cm, ω1=0.02 and ω2=0.04 require f2=−40 cm.",
+    "A pair with powers +5 D and −2 D has net +3 D and F≈+0.333 m."
+  ],
+  "practiceQuestions": [
+    "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
+    "Why can an achromatic doublet still converge?",
+    "Does primary achromatism correct every visible wavelength?"
+  ],
+  "formulas": [
+    "Contact thin doublet: ω1/f1+ω2/f2=0.",
+    "Net power: 1/F=1/f1+1/f2."
+  ],
+  "keyPoints": [
+    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
+    "Keep focal-length signs in the achromatism equation.",
+    "Two-colour correction can leave secondary spectrum."
+  ],
+  "summary": "An achromatic doublet balances wavelength dispersion with signed lens powers: ω1/f1+ω2/f2=0. It reduces but does not eliminate every colour error.",
+  "specialNotes": [
+    "Do not omit the negative focal length of the diverging lens.",
+    "The simple condition assumes thin lenses in contact."
+  ],
+  "importantStatements": [
+    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
+    "Keep focal-length signs in the achromatism equation.",
+    "Two-colour correction can leave secondary spectrum."
+  ],
+  "importantNotes": [
+    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
+    "Keep focal-length signs in the achromatism equation.",
+    "Two-colour correction can leave secondary spectrum."
+  ],
+  "examShortTricks": [
+    "Contact thin doublet: ω1/f1+ω2/f2=0.",
+    "Net power: 1/F=1/f1+1/f2."
+  ],
+  "examNotes": [
+    "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
+    "Why can an achromatic doublet still converge?",
+    "Does primary achromatism correct every visible wavelength?"
+  ],
+  "importantConcepts": [
+    "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
+    "Keep focal-length signs in the achromatism equation.",
+    "Two-colour correction can leave secondary spectrum."
+  ],
+  "importantTasks": [
+    "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
+    "Why can an achromatic doublet still converge?",
+    "Does primary achromatism correct every visible wavelength?"
+  ],
+  "duplicateType": 1,
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
+  "visualType": "achromatism"
+}

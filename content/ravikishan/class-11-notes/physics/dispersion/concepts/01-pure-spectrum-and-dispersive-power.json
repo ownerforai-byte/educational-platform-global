@@ -4,45 +4,81 @@
   "topicSlug": "pure-spectrum-and-dispersive-power",
   "topicTitle": "Pure spectrum and dispersive power",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "notes": [
+    "A prism forms a spectrum because refractive index varies with wavelength. In normal dispersion, violet has a larger index and deviation than red. A pure spectrum has narrow, well-separated colour images with little overlap.",
+    "For a thin prism, angular dispersion is Δδ=(nv−nr)A and yellow mean deviation is δy=(ny−1)A. Their ratio is ω=Δδ/δy=(nv−nr)/(ny−1).",
+    "Worked example: if δy=3° and ω=0.06, the red–violet spread is Δδ=0.18°. A material with twice the dispersive power gives twice the spread at the same mean deviation.",
+    "To obtain a purer spectrum, use a narrow slit, collimate the incident beam and focus the dispersed rays with a lens. A wide slit broadens each colour image and causes neighbouring bands to overlap.",
+    "A spectrometer uses a collimator slit and telescope to form and inspect a sharp spectrum. Resolution improves when the source image is narrow and the optical alignment is correct."
+  ],
+  "confusion": [
+    "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
+    "The thin-prism ratio assumes small deviations."
+  ],
+  "practice": [
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
+  ],
+  "universalFacts": [
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
+  ],
   "animation3D": "dispersion",
   "motionGraphics": "dispersion",
   "examples": [
-    "Application of Pure Spectrum and Dispersive Power"
+    "δy=3° and ω=0.06 give Δδ=0.18°.",
+    "Reducing slit width sharpens spectral lines but also reduces light intensity."
   ],
   "practiceQuestions": [
-    "Q1. Define Pure Spectrum and Dispersive Power.",
-    "Q3. Problem on Pure Spectrum and Dispersive Power."
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Δδ=(nv−nr)A; δy=(ny−1)A.",
+    "ω=Δδ/δy=(nv−nr)/(ny−1)."
+  ],
   "keyPoints": [
-    "Application of Pure Spectrum and Dispersive Power",
-    "Connection of Pure Spectrum and Dispersive Power to other topics"
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
   ],
-  "summary": "Pure Spectrum and Dispersive Power covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "A pure spectrum requires narrow, collimated light and well-separated colour images. Thin-prism dispersive power is ω=(nv−nr)/(ny−1).",
+  "specialNotes": [
+    "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
+    "The thin-prism ratio assumes small deviations."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Pure spectrum and dispersive power",
-    "Statement 2: Theorem related to Pure spectrum and dispersive power",
-    "Statement 3: Condition for Pure spectrum and dispersive power to be valid",
-    "Statement 4: Principle governing Pure spectrum and dispersive power",
-    "Statement 5: Corollary or consequence of Pure spectrum and dispersive power"
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
   ],
   "importantNotes": [
-    "Pure Spectrum and Dispersive Power is based on fundamental principles."
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
   ],
   "examShortTricks": [
-    "Recall the formula for Pure Spectrum and Dispersive Power."
+    "Δδ=(nv−nr)A; δy=(ny−1)A.",
+    "ω=Δδ/δy=(nv−nr)/(ny−1)."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
+  ],
   "importantConcepts": [
-    "Definition and significance of Pure Spectrum and Dispersive Power."
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
   ],
-  "importantTasks": [],
+  "importantTasks": [
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
+  ],
   "duplicateType": 1,
   "specificConditions": [
     "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",

@@ -5,51 +5,79 @@
   "topicTitle": "Error Propagation & Significant Figures Rules",
   "relevance": 40,
   "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "Significant figures communicate measurement precision. In 0.00450 m there are three significant figures: leading zeros locate the decimal; the final zero after the decimal is significant.",
+    "For multiplication or division, round the final result to the fewest significant figures among measured inputs. For addition or subtraction, round to the least precise decimal place.",
+    "Example: 2.34×1.2=2.808 rounds to 2.8 (two significant figures). But 12.11+0.3=12.41 rounds to 12.4 (one decimal place).",
+    "Keep guard digits in intermediate steps and round once at the end. Exact counts and defined conversion factors do not limit significant figures.",
+    "For powers, propagate measurement uncertainty before rounding: if A=πr², a 1% uncertainty in r gives approximately 2% uncertainty in A."
   ],
   "confusion": [
-    "Check formula conditions."
+    "Do not apply the fewest-significant-figures rule to addition.",
+    "Exact counted values do not impose measurement precision."
   ],
-  "practice": [],
+  "practice": [
+    "How many significant figures are in 0.006070?",
+    "Round 8.764×2.1 correctly.",
+    "Why do addition and multiplication use different rounding rules?"
+  ],
   "universalFacts": [
-    "Foundational for advanced topics."
+    "Leading zeros are placeholders, not significant.",
+    "Round at the end of multistep calculations.",
+    "Use decimal-place rules for sums and significant-figure rules for products."
   ],
   "animation3D": "mechanics",
   "motionGraphics": "mechanics",
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "2.34×1.2=2.8 to two significant figures.",
+    "12.11+0.3=12.4 to one decimal place."
+  ],
+  "practiceQuestions": [
+    "How many significant figures are in 0.006070?",
+    "Round 8.764×2.1 correctly.",
+    "Why do addition and multiplication use different rounding rules?"
+  ],
   "formulas": [
-    "In multiplication and division the result keeps as many significant figures as the LEAST precise factor.",
-    "In addition and subtraction the result keeps as many decimal places as the LEAST precise term."
+    "Multiplication/division: fewest significant figures.",
+    "Addition/subtraction: least precise decimal place; percentage uncertainty≈100Δx/x."
   ],
   "keyPoints": [
-    "Round only at the end — rounding each intermediate step is the standard way to lose the last digit."
+    "Leading zeros are placeholders, not significant.",
+    "Round at the end of multistep calculations.",
+    "Use decimal-place rules for sums and significant-figure rules for products."
   ],
-  "summary": "Error Propagation & Significant Figures Rules covers essential principles and applications.",
+  "summary": "Significant figures and uncertainty keep reported precision tied to measurements. Apply the operation-specific rule and avoid premature rounding.",
   "specialNotes": [
-    "Check conditions for Error Propagation & Significant Figures Rules.",
-    "Error Propagation & Significant Figures Rules connects to other topics."
+    "Do not apply the fewest-significant-figures rule to addition.",
+    "Exact counted values do not impose measurement precision."
   ],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
+  "importantStatements": [
+    "Leading zeros are placeholders, not significant.",
+    "Round at the end of multistep calculations.",
+    "Use decimal-place rules for sums and significant-figure rules for products."
+  ],
+  "importantNotes": [
+    "Leading zeros are placeholders, not significant.",
+    "Round at the end of multistep calculations.",
+    "Use decimal-place rules for sums and significant-figure rules for products."
+  ],
+  "examShortTricks": [
+    "Multiplication/division: fewest significant figures.",
+    "Addition/subtraction: least precise decimal place; percentage uncertainty≈100Δx/x."
+  ],
   "examNotes": [
-    "Focus on Error Propagation & Significant Figures Rules problems - significant marks."
+    "How many significant figures are in 0.006070?",
+    "Round 8.764×2.1 correctly.",
+    "Why do addition and multiplication use different rounding rules?"
   ],
-  "mcs": [
-    {
-      "question": "Which describes Error Propagation & Significant Figures Rules?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+  "importantConcepts": [
+    "Leading zeros are placeholders, not significant.",
+    "Round at the end of multistep calculations.",
+    "Use decimal-place rules for sums and significant-figure rules for products."
   ],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "importantTasks": [
+    "How many significant figures are in 0.006070?",
+    "Round 8.764×2.1 correctly.",
+    "Why do addition and multiplication use different rounding rules?"
+  ],
   "duplicateType": 1
 }

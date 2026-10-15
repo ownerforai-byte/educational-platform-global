@@ -1,0 +1,88 @@
+{
+  "title": "Lens Maker's Formula",
+  "unitSlug": "lenses",
+  "topicSlug": "lens-maker-s-formula",
+  "topicTitle": "Lens maker's formula",
+  "relevance": 100,
+  "notes": [
+    "The lens-maker relation predicts focal length from material and curvature. For a thin lens in air, 1/f=(n−1)(1/R1−1/R2), where n is lens refractive index and R1,R2 are signed radii in a stated convention.",
+    "For light travelling left to right, a biconvex lens commonly has R1>0 and R2<0, so the curvature contributions add to positive converging power. Do not substitute unsigned radii into a signed formula.",
+    "Worked example: n=1.50, R1=+20 cm and R2=−20 cm give 1/f=0.50(1/20+1/20)=0.05 cm⁻¹, hence f=+20 cm.",
+    "In a surrounding medium use relative index nrel=nlens/nmedium. As nrel approaches 1, the lens bends light less and |f| increases; a lens can change sign if the surrounding medium has a larger index.",
+    "The formula assumes a thin lens and paraxial rays. Thick lenses require principal-plane treatment, and very wide ray bundles show aberrations."
+  ],
+  "confusion": [
+    "The formula assumes a thin lens and paraxial rays.",
+    "Do not replace signed radii by their magnitudes."
+  ],
+  "practice": [
+    "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
+    "Why do radii carry signs?",
+    "How does immersion in a higher-index liquid change lens power?"
+  ],
+  "universalFacts": [
+    "Focal length depends on curvature and relative refractive index.",
+    "A consistent sign convention is essential.",
+    "The thin-lens formula neglects centre thickness."
+  ],
+  "animation3D": "lenses",
+  "motionGraphics": "lenses",
+  "examples": [
+    "n=1.50, R1=+20 cm and R2=−20 cm give f=+20 cm.",
+    "If relative index tends to 1, lens power tends to zero and focal length magnitude grows."
+  ],
+  "practiceQuestions": [
+    "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
+    "Why do radii carry signs?",
+    "How does immersion in a higher-index liquid change lens power?"
+  ],
+  "formulas": [
+    "Thin lens in air: 1/f=(n−1)(1/R1−1/R2).",
+    "In a medium use nrel=nlens/nmedium; keep length units consistent."
+  ],
+  "keyPoints": [
+    "Focal length depends on curvature and relative refractive index.",
+    "A consistent sign convention is essential.",
+    "The thin-lens formula neglects centre thickness."
+  ],
+  "summary": "The lens-maker formula links curvature and relative refractive index to focal length. Signed radii and the surrounding medium determine the correct optical power.",
+  "specialNotes": [
+    "The formula assumes a thin lens and paraxial rays.",
+    "Do not replace signed radii by their magnitudes."
+  ],
+  "importantStatements": [
+    "Focal length depends on curvature and relative refractive index.",
+    "A consistent sign convention is essential.",
+    "The thin-lens formula neglects centre thickness."
+  ],
+  "importantNotes": [
+    "Focal length depends on curvature and relative refractive index.",
+    "A consistent sign convention is essential.",
+    "The thin-lens formula neglects centre thickness."
+  ],
+  "examShortTricks": [
+    "Thin lens in air: 1/f=(n−1)(1/R1−1/R2).",
+    "In a medium use nrel=nlens/nmedium; keep length units consistent."
+  ],
+  "examNotes": [
+    "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
+    "Why do radii carry signs?",
+    "How does immersion in a higher-index liquid change lens power?"
+  ],
+  "importantConcepts": [
+    "Focal length depends on curvature and relative refractive index.",
+    "A consistent sign convention is essential.",
+    "The thin-lens formula neglects centre thickness."
+  ],
+  "importantTasks": [
+    "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
+    "Why do radii carry signs?",
+    "How does immersion in a higher-index liquid change lens power?"
+  ],
+  "specificConditions": [
+    "**Thin Lens Approximation:** The lens maker's formula $\\frac{1}{f} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$ assumes a *thin* lens (thickness $\\ll$ radii of curvature). For thick lenses, the full Gullstrand formula with principal planes must be used.",
+    "**Sign Convention for Radii:** Using the Cartesian sign convention (light travels left to right): $R$ is positive if the center of curvature is to the *right* of the surface (convex toward incident light), negative if to the *left* (concave). This is opposite to some older conventions.",
+    "**Material and Medium Dependence:** The formula uses relative refractive index $n = n_{lens}/n_{medium}$. For a lens in air, $n_{medium} \\approx 1$. If immersed in water ($n \\approx 1.33$), the focal length increases by factor $n_{lens}/n_{water}$ relative to air."
+  ],
+  "duplicateType": 1
+}
