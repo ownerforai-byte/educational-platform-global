@@ -2450,7 +2450,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="100" width="500" height="180" rx="10" fill="#38bdf8" fillOpacity="0.05" stroke="#38bdf8" strokeWidth="3" />
 
@@ -2516,7 +2516,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="80" y="50" width="540" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
 
@@ -2583,7 +2583,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" />
 
@@ -2617,7 +2617,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" />
 
@@ -2643,7 +2643,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <polygon points="350,60 200,300 500,300" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="3" />
 
@@ -2671,7 +2671,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="60" y1="180" x2="640" y2="180" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -2701,7 +2701,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <circle cx="350" cy="180" r="60" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="3" />
 
@@ -2727,7 +2727,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <circle cx="350" cy="180" r="20" fill="#ef4444" fillOpacity="0.4" stroke="#ef4444" strokeWidth="2" />
 
@@ -2755,7 +2755,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="300" x2="620" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -2783,7 +2783,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="100" y1="180" x2="200" y2="180" stroke="#64748b" strokeWidth="2" />
 
@@ -2819,7 +2819,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="100" y1="180" x2="220" y2="180" stroke="#64748b" strokeWidth="2" />
 
@@ -2849,7 +2849,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="200" y="100" width="300" height="160" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
 
@@ -2877,7 +2877,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <circle cx="200" cy="180" r="50" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2" />
 
@@ -2913,7 +2913,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <circle cx="250" cy="180" r="80" fill="#ef4444" fillOpacity="0.2" stroke="#ef4444" strokeWidth="3" />
 
@@ -2943,7 +2943,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <circle cx="250" cy="180" r="50" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="2" />
 
@@ -2975,7 +2975,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <text x="180" y="50" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">FISSION</text>
 
@@ -3019,7 +3019,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="300" x2="640" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -3092,7 +3092,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="60" width="500" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3122,7 +3122,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -3152,7 +3152,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -3182,7 +3182,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="150" y="140" width="400" height="80" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3204,7 +3204,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -3238,7 +3238,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="280" x2="660" y2="280" stroke="#64748b" strokeWidth="2" />
 
@@ -3272,7 +3272,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="80" y="60" width="540" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3300,7 +3300,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <polygon points="200,280 400,120 600,280 400,440" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="5 3" />
 
@@ -3332,7 +3332,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3356,7 +3356,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="50" width="500" height="260" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3384,7 +3384,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -3421,7 +3421,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="300" x2="660" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -3451,7 +3451,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="60" width="500" height="240" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3477,7 +3477,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="100" width="500" height="150" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3503,7 +3503,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="80" y="50" width="250" height="120" rx="8" fill="#38bdf8" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3537,7 +3537,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="60" width="500" height="200" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3563,7 +3563,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <line x1="80" y1="200" x2="660" y2="200" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
 
@@ -3597,7 +3597,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="150" y="120" width="400" height="120" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3621,7 +3621,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="80" y="50" width="540" height="80" rx="8" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="2" />
 
@@ -3649,7 +3649,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="80" y="50" width="540" height="70" rx="8" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3681,7 +3681,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="50" width="500" height="100" rx="10" fill="#38bdf8" fillOpacity="0.1" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3712,7 +3712,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="300" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3742,7 +3742,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3762,7 +3762,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="100" width="500" height="160" rx="10" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
 
@@ -3778,35 +3778,6 @@ export function DerivationVisual({
 
 
 
-      case "direction-cosines":
-
-        return (
-
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
-
-            <line x1="100" y1="300" x2="600" y2="300" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-
-            <line x1="100" y1="300" x2="100" y2="50" stroke="#64748b" strokeWidth="2" markerEnd="url(#arrow)" />
-
-            <line x1="100" y1="300" x2="300" y2="100" stroke="#38bdf8" strokeWidth="3.5" markerEnd="url(#arrow)" />
-
-            <circle cx="200" cy="200" r="3" fill="#ef4444" />
-
-            <path d="M 140 300 A 40 40 0 0 1 145 260" fill="none" stroke="#f59e0b" strokeWidth="2" />
-
-            <text x="150" y="280" fill="#f59e0b" fontSize="11" fontWeight="bold">α</text>
-
-            <path d="M 100 260 A 40 40 0 0 0 140 255" fill="none" stroke="#10b981" strokeWidth="2" />
-
-            <text x="115" y="250" fill="#10b981" fontSize="11" fontWeight="bold">β</text>
-
-            <rect x="200" y="320" width="300" height="35" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
-
-            <text x="350" y="343" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">cos²α + cos²β + cos²γ = 1</text>
-
-          </svg>
-
-        );
 
 
 
@@ -3814,7 +3785,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="60" width="500" height="180" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3838,7 +3809,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3864,7 +3835,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="80" width="500" height="200" rx="10" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
 
@@ -3888,7 +3859,7 @@ export function DerivationVisual({
 
         return (
 
-          <svg viewBox="0 0 700 360" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 360" className="w-full h-auto select-none">
 
             <rect x="100" y="60" width="500" height="250" rx="10" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
 
@@ -3911,7 +3882,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
 
@@ -3947,7 +3918,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="60" width="540" height="280" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
 
@@ -3970,52 +3941,46 @@ case "avogadros-law-deduction":
         );
 
       case "quantum-numbers":
-
         return (
-
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
-
-            <text x="350" y="80" fill="#10b981" fontSize="16" fontWeight="bold" textAnchor="middle">Quantum Numbers Table</text>
-
-            {[
-
-              {q:"n",name:"Principal",desc:"Energy level, shell size",val:"1,2,3...",color:"#38bdf8"},
-
-              {q:"l",name:"Azimuthal",desc:"Subshell shape (s,p,d,f)",val:"0 to n-1",color:"#10b981"},
-
-              {q:"m_l",name:"Magnetic",desc:"Orbital orientation in space",val:"-l to +l",color:"#f59e0b"},
-
-              {q:"m_s",name:"Spin",desc:"Electron spin direction",val:"+½ or -½",color:"#ef4444"}
-
-            ].map((qn,i) => (
-
-              <g key={i}>
-
-                <rect x="90+i*155" y="110" width="140" height="180" rx="8" fill={qn.color} fillOpacity="0.15" stroke={qn.color} strokeWidth="2"/>
-
-                <text x="160+i*155" y="145" fill={qn.color} fontSize="28" fontWeight="bold" textAnchor="middle">{qn.q}</text>
-
-                <text x="160+i*155" y="175" fill="#cbd5e1" fontSize="11" fontWeight="bold" textAnchor="middle">{qn.name}</text>
-
-                <text x="160+i*155" y="205" fill="#cbd5e1" fontSize="10" textAnchor="middle">{qn.desc}</text>
-
-                <text x="160+i*155" y="240" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">{qn.val}</text>
-
-              </g>
-
-            ))}
-
+          <svg viewBox="0 0 700 500" className="w-full h-auto select-none">
+            <rect x="60" y="40" width="580" height="420" rx="12" fill="#0f172a" stroke="#06b6d4" strokeWidth="2"/>
+            <text x="350" y="70" textAnchor="middle" fill="#06b6d4" fontSize="16" fontWeight="bold">Quantum Numbers</text>
+            <rect x="80" y="90" width="260" height="180" rx="6" fill="#1e293b" stroke="#06b6d4"/>
+            <text x="210" y="115" textAnchor="middle" fill="#06b6d4" fontSize="12" fontWeight="bold">Principal (n)</text>
+            <text x="90" y="140" fill="#e2e8f0" fontSize="10">· Energy level/shell</text>
+            <text x="90" y="160" fill="#e2e8f0" fontSize="10">· n = 1, 2, 3...</text>
+            <text x="90" y="180" fill="#e2e8f0" fontSize="10">· Determines size</text>
+            <text x="90" y="200" fill="#e2e8f0" fontSize="10">· Max electrons: 2n²</text>
+            <text x="90" y="225" fill="#94a3b8" fontSize="10">Example: n=2 → 8 e⁻ max</text>
+            <rect x="370" y="90" width="260" height="180" rx="6" fill="#1e293b" stroke="#10b981"/>
+            <text x="500" y="115" textAnchor="middle" fill="#10b981" fontSize="12" fontWeight="bold">Azimuthal (l)</text>
+            <text x="380" y="140" fill="#e2e8f0" fontSize="10">· Subshell shape</text>
+            <text x="380" y="160" fill="#e2e8f0" fontSize="10">· l = 0 to n-1</text>
+            <text x="380" y="180" fill="#e2e8f0" fontSize="10">· s,p,d,f orbitals</text>
+            <text x="380" y="200" fill="#e2e8f0" fontSize="10">· Determines angular mom.</text>
+            <text x="380" y="225" fill="#94a3b8" fontSize="10">l=0(s), 1(p), 2(d), 3(f)</text>
+            <rect x="80" y="290" width="260" height="160" rx="6" fill="#1e293b" stroke="#f59e0b"/>
+            <text x="210" y="315" textAnchor="middle" fill="#f59e0b" fontSize="12" fontWeight="bold">Magnetic (ml)</text>
+            <text x="90" y="340" fill="#e2e8f0" fontSize="10">· Orbital orientation</text>
+            <text x="90" y="360" fill="#e2e8f0" fontSize="10">· ml = -l to +l</text>
+            <text x="90" y="380" fill="#e2e8f0" fontSize="10">· Number of orbitals</text>
+            <text x="90" y="400" fill="#e2e8f0" fontSize="10">· Each holds 2 e⁻</text>
+            <text x="90" y="430" fill="#94a3b8" fontSize="10">l=1 → ml=-1,0,+1 (3 p-orbitals)</text>
+            <rect x="370" y="290" width="260" height="160" rx="6" fill="#1e293b" stroke="#ec4899"/>
+            <text x="500" y="315" textAnchor="middle" fill="#ec4899" fontSize="12" fontWeight="bold">Spin (ms)</text>
+            <text x="380" y="340" fill="#e2e8f0" fontSize="10">· Electron spin direction</text>
+            <text x="380" y="360" fill="#e2e8f0" fontSize="10">· ms = +½ or -½</text>
+            <text x="380" y="380" fill="#e2e8f0" fontSize="10">· Up ↑ or down ↓</text>
+            <text x="380" y="400" fill="#e2e8f0" fontSize="10">· Pauli exclusion principle</text>
+            <text x="380" y="430" fill="#94a3b8" fontSize="10">No two e⁻ share all 4 quantum #'s</text>
           </svg>
-
         );
 
       case "vsepr-theory":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
 
@@ -4063,7 +4028,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
 
@@ -4105,7 +4070,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
 
@@ -4141,7 +4106,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
 
@@ -4177,7 +4142,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
 
@@ -4207,7 +4172,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
 
@@ -4253,7 +4218,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
 
@@ -4288,58 +4253,42 @@ case "avogadros-law-deduction":
         );
 
       case "le-chateliers-principle":
-
         return (
-
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
-
-            <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#a855f7" strokeWidth="2"/>
-
-            <text x="350" y="80" fill="#a855f7" fontSize="16" fontWeight="bold" textAnchor="middle">Le Chatelier's Principle</text>
-
-            <rect x="120" y="110" width="460" height="70" rx="8" fill="#a855f7" fillOpacity="0.15" stroke="#a855f7" strokeWidth="2"/>
-
-            <text x="350" y="150" fill="#c084fc" fontSize="13" textAnchor="middle">If system at equilibrium is disturbed, it shifts to counteract change</text>
-
-            {[
-
-              {disturb:"Concentration",shift:"Shifts away from added substance",color:"#38bdf8"},
-
-              {disturb:"Temperature",shift:"Shifts in endothermic direction",color:"#ef4444"},
-
-              {disturb:"Pressure",shift:"Shifts to fewer moles side",color:"#10b981"}
-
-            ].map((l,i) => (
-
-              <rect key={i} x={100+i*190} y="200" width={170} height={120} rx={8} fill={l.color} fillOpacity={0.1} stroke={l.color} strokeWidth={2}/>
-
-            ))}
-
-            {["#38bdf8","#ef4444","#10b981"].map((c,i) => (
-
-              <text key={i} x={185+i*190} y={235} fill={c} fontSize={11} fontWeight={"bold"} textAnchor={"middle"}>{c==="#38bdf8"?"Concentration":c==="#ef4444"?"Temperature":"Pressure"}</text>
-
-            ))}
-
-            {[
-
-              {x:100,y:255,text:"Increases",color:"#38bdf8"},
-
-              {x:290,y:255,text:"Endo ↑ shifts",color:"#ef4444"},
-
-              {x:480,y:255,text:"Fewer moles",color:"#10b981"}
-
-            ].map((t,i) => <text key={i} x={t.x} y={t.y} fill={t.color} fontSize={10} textAnchor={"middle"}>{t.text}</text>)}
-
+          <svg viewBox="0 0 700 500" className="w-full h-auto select-none">
+            <rect x="60" y="40" width="580" height="420" rx="12" fill="#0f172a" stroke="#06b6d4" strokeWidth="2"/>
+            <text x="350" y="70" textAnchor="middle" fill="#06b6d4" fontSize="16" fontWeight="bold">Le Chatelier's Principle</text>
+            <rect x="80" y="90" width="540" height="60" rx="6" fill="#1e293b" stroke="#06b6d4"/>
+            <text x="350" y="125" textAnchor="middle" fill="#e2e8f0" fontSize="14">If a system at equilibrium is disturbed, it shifts to counteract the disturbance</text>
+            <rect x="80" y="170" width="170" height="120" rx="6" fill="#1e293b" stroke="#22c55e"/>
+            <text x="165" y="200" textAnchor="middle" fill="#22c55e" fontSize="12" fontWeight="bold">Concentration</text>
+            <text x="100" y="235" fill="#e2e8f0" fontSize="10">Add reactant → shift RIGHT</text>
+            <text x="100" y="255" fill="#e2e8f0" fontSize="10">Add product → shift LEFT</text>
+            <text x="100" y="275" fill="#e2e8f0" fontSize="10">Remove substance →</text>
+            <text x="100" y="290" fill="#94a3b8" fontSize="10">fill the gap</text>
+            <rect x="270" y="170" width="170" height="120" rx="6" fill="#1e293b" stroke="#f59e0b"/>
+            <text x="355" y="200" textAnchor="middle" fill="#f59e0b" fontSize="12" fontWeight="bold">Pressure (gas)</text>
+            <text x="290" y="235" fill="#e2e8f0" fontSize="10">Increase P → fewer moles</text>
+            <text x="290" y="255" fill="#e2e8f0" fontSize="10">Decrease P → more moles</text>
+            <text x="290" y="275" fill="#94a3b8" fontSize="10">Only affects gaseous</text>
+            <text x="290" y="290" fill="#94a3b8" fontSize="10">species</text>
+            <rect x="460" y="170" width="170" height="120" rx="6" fill="#1e293b" stroke="#ef4444"/>
+            <text x="545" y="200" textAnchor="middle" fill="#ef4444" fontSize="12" fontWeight="bold">Temperature</text>
+            <text x="480" y="235" fill="#e2e8f0" fontSize="10">Exothermic: ↑T → shift LEFT</text>
+            <text x="480" y="255" fill="#e2e8f0" fontSize="10">Endothermic: ↑T → shift RIGHT</text>
+            <text x="480" y="275" fill="#94a3b8" fontSize="10">Treat heat as reactant/product</text>
+            <rect x="80" y="310" width="540" height="80" rx="6" fill="#1e293b" stroke="#8b5cf6"/>
+            <text x="350" y="345" textAnchor="middle" fill="#8b5cf6" fontSize="14" fontWeight="bold">Catalyst: Does NOT shift equilibrium</text>
+            <text x="350" y="370" textAnchor="middle" fill="#94a3b8" fontSize="12">Both forward and reverse rates increase equally</text>
+            <rect x="80" y="400" width="540" height="30" rx="6" fill="#1e293b" stroke="#22c55e"/>
+            <text x="350" y="420" textAnchor="middle" fill="#e2e8f0" fontSize="11">Haber Process: N₂ + 3H₂ ⇌ 2NH₃ + heat → High P, low T favor NH₃</text>
           </svg>
-
         );
 
       case "haber-process-flow":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2"/>
 
@@ -4377,7 +4326,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#10b981" strokeWidth="2"/>
 
@@ -4419,7 +4368,7 @@ case "avogadros-law-deduction":
 
         return (
 
-          <svg viewBox="0 0 700 400" className="w.full h-auto select-none">
+          <svg viewBox="0 0 700 400" className="w-full h-auto select-none">
 
             <rect x="80" y="40" width="540" height="320" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
 
@@ -5207,28 +5156,6 @@ case "avogadros-law-deduction":
 
 
       // ============ CHEMISTRY VISUALIZATIONS ============
-      case "bohr-hydrogen-atom":
-        return (
-          <svg viewBox="0 0 700 500" className="w-full h-auto select-none">
-            <rect x="60" y="40" width="580" height="420" rx="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2"/>
-            <text x="350" y="70" textAnchor="middle" fill="#f59e0b" fontSize="16" fontWeight="bold">Bohr Model of Hydrogen Atom</text>
-            <circle cx="350" cy="250" r="15" fill="#ef4444"/>
-            <text x="350" y="255" textAnchor="middle" fill="white" fontSize="8">+</text>
-            {[1,2,3,4].map(n => (
-              <circle key={n} cx="350" cy="250" r={40*n} fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray={n===1?"":"5,3"}/>
-            ))}
-            <circle cx={350+40} cy="250" r="6" fill="#22c55e"/>
-            <text x={350+50} y="255" fill="#22c55e" fontSize="10">n=1</text>
-            <circle cx={350} cy={250-80} r="6" fill="#22c55e"/>
-            <text x={350+10} y={240} fill="#22c55e" fontSize="10">n=2</text>
-            <rect x="80" y="380" width="260" height="60" rx="6" fill="#1e293b" stroke="#f59e0b"/>
-            <text x="210" y="405" textAnchor="middle" fill="#f59e0b" fontSize="12">E_n = -13.6/n^2 eV</text>
-            <text x="210" y="425" textAnchor="middle" fill="#94a3b8" fontSize="10">Quantized energy levels</text>
-            <rect x="380" y="380" width="240" height="60" rx="6" fill="#1e293b" stroke="#8b5cf6"/>
-            <text x="500" y="405" textAnchor="middle" fill="#8b5cf6" fontSize="10">Spectral Series</text>
-            <text x="390" y="425" fill="#e2e8f0" fontSize="9">Lyman (UV) · Balmer (Visible)</text>
-          </svg>
-        );
       case "rutherford-alpha-scattering":
         return (
           <svg viewBox="0 0 700 500" className="w-full h-auto select-none">
@@ -5285,41 +5212,6 @@ case "avogadros-law-deduction":
             <text x="380" y="365" fill="#8b5cf6" fontSize="10">· Brackett: n→4 (IR)</text>
             <text x="380" y="390" fill="#ec4899" fontSize="10">· Pfund: n→5 (IR)</text>
             <text x="380" y="420" fill="#94a3b8" fontSize="10">Rydberg: 1/λ = R(1/n²-1/m²)</text>
-          </svg>
-        );
-      case "quantum-numbers":
-        return (
-          <svg viewBox="0 0 700 500" className="w-full h-auto select-none">
-            <rect x="60" y="40" width="580" height="420" rx="12" fill="#0f172a" stroke="#06b6d4" strokeWidth="2"/>
-            <text x="350" y="70" textAnchor="middle" fill="#06b6d4" fontSize="16" fontWeight="bold">Quantum Numbers</text>
-            <rect x="80" y="90" width="260" height="180" rx="6" fill="#1e293b" stroke="#06b6d4"/>
-            <text x="210" y="115" textAnchor="middle" fill="#06b6d4" fontSize="12" fontWeight="bold">Principal (n)</text>
-            <text x="90" y="140" fill="#e2e8f0" fontSize="10">· Energy level/shell</text>
-            <text x="90" y="160" fill="#e2e8f0" fontSize="10">· n = 1, 2, 3...</text>
-            <text x="90" y="180" fill="#e2e8f0" fontSize="10">· Determines size</text>
-            <text x="90" y="200" fill="#e2e8f0" fontSize="10">· Max electrons: 2n²</text>
-            <text x="90" y="225" fill="#94a3b8" fontSize="10">Example: n=2 → 8 e⁻ max</text>
-            <rect x="370" y="90" width="260" height="180" rx="6" fill="#1e293b" stroke="#10b981"/>
-            <text x="500" y="115" textAnchor="middle" fill="#10b981" fontSize="12" fontWeight="bold">Azimuthal (l)</text>
-            <text x="380" y="140" fill="#e2e8f0" fontSize="10">· Subshell shape</text>
-            <text x="380" y="160" fill="#e2e8f0" fontSize="10">· l = 0 to n-1</text>
-            <text x="380" y="180" fill="#e2e8f0" fontSize="10">· s,p,d,f orbitals</text>
-            <text x="380" y="200" fill="#e2e8f0" fontSize="10">· Determines angular mom.</text>
-            <text x="380" y="225" fill="#94a3b8" fontSize="10">l=0(s), 1(p), 2(d), 3(f)</text>
-            <rect x="80" y="290" width="260" height="160" rx="6" fill="#1e293b" stroke="#f59e0b"/>
-            <text x="210" y="315" textAnchor="middle" fill="#f59e0b" fontSize="12" fontWeight="bold">Magnetic (ml)</text>
-            <text x="90" y="340" fill="#e2e8f0" fontSize="10">· Orbital orientation</text>
-            <text x="90" y="360" fill="#e2e8f0" fontSize="10">· ml = -l to +l</text>
-            <text x="90" y="380" fill="#e2e8f0" fontSize="10">· Number of orbitals</text>
-            <text x="90" y="400" fill="#e2e8f0" fontSize="10">· Each holds 2 e⁻</text>
-            <text x="90" y="430" fill="#94a3b8" fontSize="10">l=1 → ml=-1,0,+1 (3 p-orbitals)</text>
-            <rect x="370" y="290" width="260" height="160" rx="6" fill="#1e293b" stroke="#ec4899"/>
-            <text x="500" y="315" textAnchor="middle" fill="#ec4899" fontSize="12" fontWeight="bold">Spin (ms)</text>
-            <text x="380" y="340" fill="#e2e8f0" fontSize="10">· Electron spin direction</text>
-            <text x="380" y="360" fill="#e2e8f0" fontSize="10">· ms = +½ or -½</text>
-            <text x="380" y="380" fill="#e2e8f0" fontSize="10">· Up ↑ or down ↓</text>
-            <text x="380" y="400" fill="#e2e8f0" fontSize="10">· Pauli exclusion principle</text>
-            <text x="380" y="430" fill="#94a3b8" fontSize="10">No two e⁻ share all 4 quantum #'s</text>
           </svg>
         );
       case "orbital-shapes-s-p":
@@ -5589,37 +5481,6 @@ case "avogadros-law-deduction":
             <text x="390" y="320" fill="#ef4444" fontSize="10">Zn: 0 → +2 (oxidized, reducing agent)</text>
             <text x="390" y="340" fill="#22c55e" fontSize="10">Cu: +2 → 0 (reduced, oxidizing agent)</text>
             <text x="500" y="365" textAnchor="middle" fill="#94a3b8" fontSize="10">Electrons flow from Zn to Cu²⁺</text>
-          </svg>
-        );
-      case "le-chateliers-principle":
-        return (
-          <svg viewBox="0 0 700 500" className="w-full h-auto select-none">
-            <rect x="60" y="40" width="580" height="420" rx="12" fill="#0f172a" stroke="#06b6d4" strokeWidth="2"/>
-            <text x="350" y="70" textAnchor="middle" fill="#06b6d4" fontSize="16" fontWeight="bold">Le Chatelier's Principle</text>
-            <rect x="80" y="90" width="540" height="60" rx="6" fill="#1e293b" stroke="#06b6d4"/>
-            <text x="350" y="125" textAnchor="middle" fill="#e2e8f0" fontSize="14">If a system at equilibrium is disturbed, it shifts to counteract the disturbance</text>
-            <rect x="80" y="170" width="170" height="120" rx="6" fill="#1e293b" stroke="#22c55e"/>
-            <text x="165" y="200" textAnchor="middle" fill="#22c55e" fontSize="12" fontWeight="bold">Concentration</text>
-            <text x="100" y="235" fill="#e2e8f0" fontSize="10">Add reactant → shift RIGHT</text>
-            <text x="100" y="255" fill="#e2e8f0" fontSize="10">Add product → shift LEFT</text>
-            <text x="100" y="275" fill="#e2e8f0" fontSize="10">Remove substance →</text>
-            <text x="100" y="290" fill="#94a3b8" fontSize="10">fill the gap</text>
-            <rect x="270" y="170" width="170" height="120" rx="6" fill="#1e293b" stroke="#f59e0b"/>
-            <text x="355" y="200" textAnchor="middle" fill="#f59e0b" fontSize="12" fontWeight="bold">Pressure (gas)</text>
-            <text x="290" y="235" fill="#e2e8f0" fontSize="10">Increase P → fewer moles</text>
-            <text x="290" y="255" fill="#e2e8f0" fontSize="10">Decrease P → more moles</text>
-            <text x="290" y="275" fill="#94a3b8" fontSize="10">Only affects gaseous</text>
-            <text x="290" y="290" fill="#94a3b8" fontSize="10">species</text>
-            <rect x="460" y="170" width="170" height="120" rx="6" fill="#1e293b" stroke="#ef4444"/>
-            <text x="545" y="200" textAnchor="middle" fill="#ef4444" fontSize="12" fontWeight="bold">Temperature</text>
-            <text x="480" y="235" fill="#e2e8f0" fontSize="10">Exothermic: ↑T → shift LEFT</text>
-            <text x="480" y="255" fill="#e2e8f0" fontSize="10">Endothermic: ↑T → shift RIGHT</text>
-            <text x="480" y="275" fill="#94a3b8" fontSize="10">Treat heat as reactant/product</text>
-            <rect x="80" y="310" width="540" height="80" rx="6" fill="#1e293b" stroke="#8b5cf6"/>
-            <text x="350" y="345" textAnchor="middle" fill="#8b5cf6" fontSize="14" fontWeight="bold">Catalyst: Does NOT shift equilibrium</text>
-            <text x="350" y="370" textAnchor="middle" fill="#94a3b8" fontSize="12">Both forward and reverse rates increase equally</text>
-            <rect x="80" y="400" width="540" height="30" rx="6" fill="#1e293b" stroke="#22c55e"/>
-            <text x="350" y="420" textAnchor="middle" fill="#e2e8f0" fontSize="11">Haber Process: N₂ + 3H₂ ⇌ 2NH₃ + heat → High P, low T favor NH₃</text>
           </svg>
         );
       case "alkanes":
@@ -6182,31 +6043,6 @@ case "avogadros-law-deduction":
         );
 
       // ============ PHYSICS VISUALIZATIONS ============
-      case "projectile-motion":
-        return (
-          <svg viewBox="0 0 700 500" className="w-full h-auto select-none">
-            <rect x="60" y="40" width="580" height="420" rx="12" fill="#0f172a" stroke="#ef4444" strokeWidth="2"/>
-            <text x="350" y="70" textAnchor="middle" fill="#ef4444" fontSize="16" fontWeight="bold">Projectile Motion</text>
-            {/* Trajectory */}
-            <path d="M 100 380 Q 250 100 500 380" fill="none" stroke="#22c55e" strokeWidth="3" strokeDasharray="8,4"/>
-            <circle cx="100" cy="380" r="8" fill="#3b82f6"/>
-            <text x="100" y="410" textAnchor="middle" fill="#3b82f6" fontSize="10">Launch (θ)</text>
-            <circle cx="500" cy="380" r="8" fill="#f59e0b"/>
-            <text x="500" y="410" textAnchor="middle" fill="#f59e0b" fontSize="10">Range (R)</text>
-            <circle cx="300" cy="130" r="8" fill="#ec4899"/>
-            <text x="300" y="110" textAnchor="middle" fill="#ec4899" fontSize="10">Max Height (H)</text>
-            {/* Components */}
-            <line x1="100" y1="380" x2="200" y2="380" stroke="#ef4444" strokeWidth="2"/>
-            <text x="150" y="395" textAnchor="middle" fill="#ef4444" fontSize="10">v_x = u cosθ</text>
-            <line x1="100" y1="380" x2="100" y2="280" stroke="#3b82f6" strokeWidth="2"/>
-            <text x="80" y="330" textAnchor="middle" fill="#3b82f6" fontSize="10">v_y = u sinθ</text>
-            {/* Formulas */}
-            <rect x="80" y="430" width="260" height="60" rx="6" fill="#1e293b" stroke="#22c55e"/>
-            <text x="210" y="455" textAnchor="middle" fill="#22c55e" fontSize="12">R = u²sin(2θ)/g</text>
-            <rect x="370" y="430" width="260" height="60" rx="6" fill="#1e293b" stroke="#3b82f6"/>
-            <text x="500" y="455" textAnchor="middle" fill="#3b82f6" fontSize="12">H = u²sin²θ/2g</text>
-          </svg>
-        );
       case "ohms-law":
         return (
           <svg viewBox="0 0 700 500" className="w-full h-auto select-none">

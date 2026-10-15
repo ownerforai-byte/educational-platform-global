@@ -232,39 +232,39 @@ interface NoteFile {
 function buildClassifiedNotes(note: NoteFile): ClassifiedNoteGroup | null {
   const conditions: string[] = Array.isArray(note.specialNotes)
     ? note.specialNotes.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-        .map((x) => x.trim())
+      .map((x) => x.trim())
     : [];
   const solvedPyqs: string[] = Array.isArray(note.practice)
     ? note.practice.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-        .map((x) => x.trim())
+      .map((x) => x.trim())
     : [];
   const examShortTricks: string[] = Array.isArray(note.examShortTricks)
     ? note.examShortTricks.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-        .map((x) => x.trim())
+      .map((x) => x.trim())
     : [];
   const mcs: Array<{ question: string; options: string[]; answer: string; explanation: string }> =
     Array.isArray(note.mcs)
       ? note.mcs.filter(
-          (x): x is { question: string; options: string[]; answer: string; explanation: string } =>
-            x &&
-            typeof x === "object" &&
-            Array.isArray(x.options) &&
-            typeof (x as Record<string, unknown>).question === "string" &&
-            typeof (x as Record<string, unknown>).answer === "string" &&
-            typeof (x as Record<string, unknown>).explanation === "string",
-        )
+        (x): x is { question: string; options: string[]; answer: string; explanation: string } =>
+          x &&
+          typeof x === "object" &&
+          Array.isArray(x.options) &&
+          typeof (x as Record<string, unknown>).question === "string" &&
+          typeof (x as Record<string, unknown>).answer === "string" &&
+          typeof (x as Record<string, unknown>).explanation === "string",
+      )
       : [];
   const confusion: string[] = Array.isArray(note.confusion)
     ? note.confusion.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-        .map((x) => x.trim())
+      .map((x) => x.trim())
     : [];
   const importantNotes: string[] = Array.isArray(note.importantNotes)
     ? note.importantNotes.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-        .map((x) => x.trim())
+      .map((x) => x.trim())
     : [];
   const importantStatements: string[] = Array.isArray(note.importantStatements)
     ? note.importantStatements.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-        .map((x) => x.trim())
+      .map((x) => x.trim())
     : [];
 
   const hasAny =
@@ -429,8 +429,8 @@ async function loadSubjectFormulaSheet(subjectSlug: string): Promise<FormulaShee
       const ann = normalizeAnnotation(noteAnnotations[i], "");
       if (!ann) continue;
       let formula: string | undefined;
-    const rawFormula = (noteAnnotations[i] as Record<string, unknown>).formula;
-    if (typeof rawFormula === "string") formula = rawFormula;
+      const rawFormula = (noteAnnotations[i] as Record<string, unknown>).formula;
+      if (typeof rawFormula === "string") formula = rawFormula;
       if (typeof formula !== "string" || !formula.trim()) {
         formula = positional[i];
       }
