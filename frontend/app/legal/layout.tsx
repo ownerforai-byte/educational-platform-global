@@ -12,6 +12,8 @@ const NAV = [
   { label: "Terms of Service", href: "/legal/terms" },
   { label: "Cookie Policy", href: "/legal/cookies" },
   { label: "Purchases & Refunds", href: "/legal/purchases" },
+  { label: "Data Safety", href: "/legal/data-safety" },
+  { label: "Content Rating", href: "/legal/content-rating" },
 ];
 
 export default function LegalLayout({ children }: { children: React.ReactNode }) {

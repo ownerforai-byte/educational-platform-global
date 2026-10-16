@@ -277,6 +277,20 @@ export function Footer() {
               <span>Purchases</span>
             </Link>
             <span>·</span>
+            <Link
+              href="/legal/data-safety"
+              className="inline-flex items-center gap-1 hover:text-primary transition-colors"
+            >
+              <span>Data Safety</span>
+            </Link>
+            <span>·</span>
+            <Link
+              href="/legal/content-rating"
+              className="inline-flex items-center gap-1 hover:text-primary transition-colors"
+            >
+              <span>Content Rating</span>
+            </Link>
+            <span>·</span>
             {/* Owner request (2026-09-30): the notice board is reachable from
                 here — it is a public, never-gated page that is not advertised
                 on the home screen. Pricing is NOT linked from the footer any
