@@ -1,86 +1,120 @@
 {
-  "title": "Nuclear density; mass number; atomic number",
+  "title": "Nuclear Density; Mass Number; Atomic Number",
   "unitSlug": "nuclear-physics",
   "topicSlug": "nuclear-density-mass-number-atomic-number",
   "topicTitle": "Nuclear density; mass number; atomic number",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Nuclear density; mass number; atomic number — Nuclear Physics, Physics (class-11-notes).",
-    "**Tested.** define it · list: nuclear density, mass number, atomic number · one worked example · one misconception each.",
-    "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "**Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars).",
-    "**Mass number.** one-line definition + one-line exam use.",
-    "**Atomic number.** one-line definition + one-line exam use."
-  ],
-  "confusion": [
-    "❌ treat \"Nuclear density\" as one blob → ✅ split into: nuclear density, mass number, atomic number.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).."
-  ],
-  "bounds": [
-    "Covers only: nuclear density, mass number, atomic number (within Nuclear Physics).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
-    "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
-  ],
-  "practice": [
-    "define + example each sub-idea: nuclear density, mass number, atomic number.",
-    "one worked example for \"Nuclear density; mass number; atomic number\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Nuclear density; mass number; atomic number\" with one example.",
-    "compare \"Nuclear density\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Nuclear density; mass number; atomic number\" and verify the answer is plausible."
-  ],
+    "Mass Number (A): Total number of nucleons (protons + neutrons) in nucleus. A = Z + N. Dimensionless integer. Nuclei with same A but different Z are isobars.",
+    "Atomic Number (Z): Number of protons in nucleus = number of electrons in neutral atom. Determines element identity and chemical properties. Nuclei with same Z but different N are isotopes.",
+    "Neutron Number (N): Number of neutrons = A - Z. Nuclei with same N but different Z are isotones.",
+    "Nuclear Density: Density ρ = mass/volume. Nuclear mass ≈ A × m_p (m_p ≈ 1.67 × 10⁻²⁷ kg). Volume = (4/3)πR³ = (4/3)π(R₀A^(1/3))³ = (4/3)πR₀³A. Density ρ = A·m_p / ((4/3)πR₀³A) = 3m_p/(4πR₀³) — INDEPENDENT of A!",
+    "Nuclear Density Value: ρ ≈ 2.3 × 10¹⁷ kg/m³ — about 10¹⁴ times denser than ordinary matter. Comparable to neutron star density.",
+    "Nuclear Size: Radius R = R₀A^(1/3), R₀ ≈ 1.2 × 10⁻¹⁵ m. Volume ∝ A — nucleus grows linearly with nucleon count, explaining constant density.",
+    "Isobars, Isotopes, Isotones: Isobars: same A, different Z. Isotopes: same Z, different A (same element). Isotones: same N, different Z.",
+    "Nuclear Mass vs Atomic Mass: Nuclear mass = atomic mass - mass of Z electrons + binding energy of electrons/c² (electron binding negligible, ~eV scale vs MeV nuclear)."],
+  "specificConditions": [
+    "Constant Nuclear Density: The result ρ ≈ constant applies to all nuclei (light and heavy) — strong evidence that nuclear force saturates and nucleons are tightly packed.",
+    "Approximate Radius Formula: R = R₀A^(1/3) is empirical, valid for A > ~10. Very light nuclei show deviations.",
+    "Atomic Mass Unit: 1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c². Carbon-12 defined as exactly 12 u."],
   "formulas": [
-    "BE = Δm c²",
-    "N = N₀ e^(−λt)",
-    "t_½ = ln2 / λ"
-  ],
-  "numericals": [
-    "Use  BE = Δm c²  — pick reasonable values, solve, and check the units.",
-    "Use  N = N₀ e^(−λt)  — pick reasonable values, solve, and check the units.",
-    "Use  t_½ = ln2 / λ  — pick reasonable values, solve, and check the units."
-  ],
+    "Mass number: A = Z + N",
+    "Neutron number: N = A - Z",
+    "Nuclear radius: R = R₀A^(1/3), R₀ ≈ 1.2 fm",
+    "Nuclear volume: V = (4/3)πR₀³A",
+    "Nuclear density: ρ = 3m_p/(4πR₀³) ≈ 2.3 × 10¹⁷ kg/m³",
+    "1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c²",
+    "Atomic mass ≈ nuclear mass + Z·m_e"],
   "keyPoints": [
-    "• Nuclear density",
-    "• Mass number",
-    "• Atomic number"
-  ],
-  "summary": "Nuclear density; mass number; atomic number (Nuclear Physics, Physics, class-11-notes) covers Nuclear density, mass number, atomic number. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "A = Z + N: mass number = protons + neutrons.",
+    "Z determines element identity; N determines neutron count.",
+    "Nuclear density ≈ 2.3 × 10¹⁷ kg/m³ — same for all nuclei.",
+    "Nuclear density is INDEPENDENT of mass number A.",
+    "Isotopes: same Z; Isobars: same A; Isotones: same N.",
+    "R = R₀A^(1/3): nuclear volume grows linearly with A."],
+  "importantStatements": [
+    "Statement 1: Mass number A = Z + N where Z is atomic number and N is neutron number.",
+    "Statement 2: Atomic number Z equals proton number and defines the element.",
+    "Statement 3: Nuclear density ρ ≈ 2.3 × 10¹⁷ kg/m³ is approximately the same for all nuclei.",
+    "Statement 4: Nuclear density is independent of mass number A.",
+    "Statement 5: Nuclear radius R = R₀A^(1/3) with R₀ ≈ 1.2 fm."],
+  "importantNotes": [
+    "Nuclear density being constant means nuclear force is short-range and saturates — each nucleon interacts only with nearest neighbors.",
+    "1 u = 931.5 MeV/c² is the key conversion for nuclear energy calculations.",
+    "Isotopes have same chemical properties (same Z/electron configuration) but different nuclear properties.",
+    "Nuclear density (~10¹⁷ kg/m³) is vastly greater than atomic density (~10³ kg/m³) because atom is mostly empty space."],
+  "examShortTricks": [
+    "Nuclear density is the SAME for all nuclei — memorize ≈ 2.3 × 10¹⁷ kg/m³.",
+    "R = R₀A^(1/3) — volume ∝ A, radius ∝ A^(1/3).",
+    "Isotopes: same Z; Isobars: same A; Isotones: same N.",
+    "1 u = 931.5 MeV/c² for mass-energy conversions.",
+    "N = A - Z for neutron count."],
+  "examNotes": [
+    "NEB frequently asks for nuclear density calculation and why it is constant.",
+    "Distinguish isotopes, isobars, isotones — common conceptual question.",
+    "Calculate nuclear radius from mass number.",
+    "Understand atomic mass unit and MeV/c² conversion."],
+  "examples": [
+    "Nuclear density: ρ = 3(1.67×10⁻²⁷)/(4π(1.2×10⁻¹⁵)³) ≈ 2.3 × 10¹⁷ kg/m³.",
+    "Carbon-12: Z = 6, A = 12, N = 6. Radius R = 1.2 × 12^(1/3) ≈ 2.7 fm.",
+    "Uranium-238: Z = 92, A = 238, N = 146. Radius R = 1.2 × 238^(1/3) ≈ 7.4 fm.",
+    "Isotopes of hydrogen: ¹H (Z=1,N=0), ²H/D (Z=1,N=1), ³H/T (Z=1,N=2)."],
+  "practiceQuestions": [
+    "Q1. Define mass number, atomic number, and neutron number with examples.",
+    "Q2. Show that nuclear density is independent of mass number A.",
+    "Q3. Calculate nuclear density and compare with ordinary matter density.",
+    "Q4. Distinguish between isotopes, isobars, and isotones with examples.",
+    "Q5. Calculate radius of gold nucleus (A = 197) and uranium nucleus (A = 238).",
+    "Q6. Convert 1 u to kg and to MeV/c²."],
+  "practice": [
+    "Calculate Z, N, A for given nuclides.",
+    "Compute nuclear density from fundamental constants.",
+    "Find nuclear radius using R = R₀A^(1/3).",
+    "Classify nuclides as isotopes/isobars/isotones.",
+    "Convert between u, kg, and MeV/c²."],
+  "universalFacts": [
+    "All nuclei have essentially the same density — unlike atoms whose densities vary widely.",
+    "Neutron stars have densities comparable to nuclear density — they are essentially giant nuclei held by gravity.",
+    "The constancy of nuclear density implies nuclear force saturates — each nucleon interacts with only a few neighbors.",
+    "1 u is defined such that carbon-12 atom has mass exactly 12 u."],
+  "confusion": [
+    "Confusing mass number A with atomic mass: A is integer count; atomic mass is in u (includes mass defect).",
+    "Thinking isotopes have different chemical properties: Same Z → same electrons → same chemistry.",
+    "Believing nuclear density varies with element: It is constant (~10¹⁷ kg/m³) for all nuclei.",
+    "Confusing isobars (same A) with isotopes (same Z).",
+    "Thinking neutrons contribute to chemical properties: Neutrons affect mass/nuclear stability, not chemistry."],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Nuclear density; mass number; atomic number\"?",
-      "options": [
-        "Nuclear density",
-        "Mass number",
-        "Unrelated topic",
-        "None of the above"
-      ],
-      "answer": "A",
-      "explanation": "Nuclear density is listed among the official sub-ideas of Nuclear density; mass number; atomic number; the others are not part of this topic."
+      "question": "Nuclear density is approximately:",
+      "options": ["10³ kg/m³", "10¹⁷ kg/m³", "10²⁰ kg/m³", "10⁻¹⁷ kg/m³"],
+      "answer": "B",
+      "explanation": "ρ ≈ 2.3 × 10¹⁷ kg/m³ — same for all nuclei."
     },
     {
-      "question": "A common examiner point on \"Nuclear density; mass number; atomic number\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "Nuclear density depends on mass number A as:",
+      "options": ["ρ ∝ A", "ρ ∝ A^(1/3)", "ρ ∝ A⁰ (independent)", "ρ ∝ 1/A"],
+      "answer": "C",
+      "explanation": "ρ = 3m_p/(4πR₀³) — independent of A."
+    },
+    {
+      "question": "Isotopes have same:",
+      "options": ["A", "Z", "N", "Mass"],
+      "answer": "B",
+      "explanation": "Isotopes have same atomic number Z but different A."
+    },
+    {
+      "question": "1 atomic mass unit equals:",
+      "options": ["931.5 MeV", "931.5 MeV/c²", "1.66 × 10⁻²⁷ kg", "Both B and C"],
+      "answer": "D",
+      "explanation": "1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c²."
+    },
+    {
+      "question": "Nuclear radius R = R₀A^(1/3) means volume is proportional to:",
+      "options": ["A", "A^(1/3)", "A²", "1/A"],
+      "answer": "A",
+      "explanation": "V = (4/3)πR₀³A — volume directly proportional to mass number."
+    }],
+  "animation3D": "nuclear-structure",
+  "motionGraphics": "nucleus-composition",
+  "visualType": "nucleus-composition",
+  "summary": "Mass number A = Z + N; atomic number Z defines element. Nuclear density ≈ 2.3 × 10¹⁷ kg/m³ is constant for all nuclei and independent of A. Nuclear radius R = R₀A^(1/3). Isotopes (same Z), isobars (same A), isotones (same N) classify nuclides."}

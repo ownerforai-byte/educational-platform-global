@@ -1,73 +1,119 @@
 {
-  "title": "Spherical lenses, angular magnification",
+  "title": "Spherical Lenses, Angular Magnification",
   "unitSlug": "lenses",
   "topicSlug": "spherical-lenses-angular-magnification",
   "topicTitle": "Spherical lenses, angular magnification",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Spherical lenses, angular magnification — Lenses, Physics (class-11-notes).",
-    "**Tested.** define it · list: spherical lenses, angular magnification · one worked example · one misconception each.",
-    "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "**Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "**Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe).",
-    "**Angular magnification.** one-line definition + one-line exam use."
-  ],
-  "confusion": [
-    "❌ treat \"Spherical lenses\" as one blob → ✅ split into: spherical lenses, angular magnification.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.."
-  ],
-  "bounds": [
-    "Covers only: spherical lenses, angular magnification (within Lenses).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
-    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
-  ],
-  "practice": [
-    "define + example each sub-idea: spherical lenses, angular magnification.",
-    "one worked example for \"Spherical lenses, angular magnification\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Spherical lenses, angular magnification\" with one example.",
-    "compare \"Spherical lenses\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Spherical lenses, angular magnification\" and verify the answer is plausible."
-  ],
+    "Spherical Lens: A lens is a transparent medium bounded by two spherical surfaces (or one plane and one spherical). Convex lens (converging) is thicker at center; concave lens (diverging) is thinner at center.",
+    "Lens Maker's Formula: $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$ where $\\mu$ is refractive index of lens material relative to medium, $R_1$ and $R_2$ are radii of curvature (Cartesian sign convention).",
+    "Lens Formula: $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ using sign convention (u negative for object on left). Magnification $m = v/u = h_i/h_o$.",
+    "Power of Lens: $P = 1/f$ (f in metres). Unit: dioptre (D). Convex lens has positive power; concave has negative power. Lenses in contact: $P = P_1 + P_2$.",
+    "Combination of Lenses: Two lenses separated by distance d: equivalent focal length $\\frac{1}{F} = \\frac{1}{f_1} + \\frac{1}{f_2} - \\frac{d}{f_1 f_2}$. Power: $P = P_1 + P_2 - d P_1 P_2$.",
+    "Angular Magnification: For a simple magnifier, angular magnification $M = \\theta_i/\\theta_o$. When image at near point: $M = 1 + D/f$; when image at infinity: $M = D/f$, where $D = 25\\text{ cm}$ (least distance of distinct vision).",
+    "Compound Microscope: Total magnification $M = m_o \\times m_e = (v_o/u_o)(1 + D/f_e)$ (final image at near point) or $(v_o/u_o)(D/f_e)$ (at infinity).",
+    "Astronomical Telescope: Angular magnification $M = f_o/f_e$ (normal adjustment, final at infinity) or $M = (f_o/f_e)(1 + f_e/D)$ (final at near point). Length $L = f_o + f_e$."],
+  "specificConditions": [
+    "Sign Convention: Light travels left to right. Distances measured from optical centre. Object distance u is negative (object on left), focal length f positive for convex, negative for concave.",
+    "Thin Lens Approximation: Lens formulas assume thin lens (thickness negligible compared to radii and object/image distances).",
+    "Paraxial Rays: Formulas valid for rays close to principal axis making small angles."],
   "formulas": [
-    "1/f = (μ−1)(1/R₁ − 1/R₂)",
-    "P = 1/f",
-    "n = sin((A+D)/2)/sin(A/2)"
-  ],
-  "numericals": [
-    "Use  1/f = (μ−1)(1/R₁ − 1/R₂)  — pick reasonable values, solve, and check the units.",
-    "Use  P = 1/f  — pick reasonable values, solve, and check the units.",
-    "Use  n = sin((A+D)/2)/sin(A/2)  — pick reasonable values, solve, and check the units."
-  ],
+    "Lens maker: $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$",
+    "Lens formula: $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$",
+    "Magnification: $m = v/u = h_i/h_o$",
+    "Power: $P = 1/f$ (dioptre, f in m)",
+    "Lenses in contact: $P = P_1 + P_2$",
+    "Angular magnification (image at D): $M = 1 + D/f$",
+    "Angular magnification (image at infinity): $M = D/f$",
+    "Compound microscope: $M = (v_o/u_o)(1 + D/f_e)$",
+    "Telescope: $M = f_o/f_e$ (normal adjustment)"],
   "keyPoints": [
-    "• Spherical lenses",
-    "• Angular magnification"
-  ],
-  "summary": "Spherical lenses, angular magnification (Lenses, Physics, class-11-notes) covers Spherical lenses, angular magnification. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "Convex lens converges; concave lens diverges.",
+    "Lens maker's formula relates f to μ, R₁, R₂.",
+    "Power P = 1/f in dioptres; positive for convex, negative for concave.",
+    "Angular magnification: M = 1 + D/f (near point), M = D/f (infinity).",
+    "Telescope magnification: M = fₒ/fₑ."],
+  "importantStatements": [
+    "Statement 1: Lens maker's formula: $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$.",
+    "Statement 2: Lens formula: $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ with sign convention.",
+    "Statement 3: Power of lens $P = 1/f$ measured in dioptres (D).",
+    "Statement 4: Angular magnification of simple magnifier: $M = 1 + D/f$ (near point), $M = D/f$ (infinity).",
+    "Statement 5: Astronomical telescope magnification: $M = f_o/f_e$ in normal adjustment."],
+  "importantNotes": [
+    "Always apply sign convention: u negative for real object, f positive for convex lens.",
+    "D = 25 cm is the standard least distance of distinct vision for normal eye.",
+    "For lenses in contact, powers add directly: P = P₁ + P₂.",
+    "Real images are inverted (m negative); virtual images are erect (m positive)."],
+  "examShortTricks": [
+    "Convex lens: f positive, P positive. Concave lens: f negative, P negative.",
+    "For magnifier: image at D → M = 1 + D/f; image at ∞ → M = D/f.",
+    "Telescope: M = fₒ/fₑ — long objective, short eyepiece for high magnification.",
+    "Lenses in contact: add powers, not focal lengths."],
+  "examNotes": [
+    "NEB frequently asks for lens maker's formula derivation and lens formula numericals.",
+    "Simple magnifier and telescope magnification are standard exam topics.",
+    "Power of lens and combination of lenses are common short-answer questions.",
+    "Sign convention errors lose marks — always state it clearly."],
+  "examples": [
+    "A convex lens has f = 20 cm. Power P = 1/0.20 = 5 D.",
+    "Lens with μ = 1.5, R₁ = +30 cm, R₂ = -30 cm (biconvex): 1/f = (1.5-1)(1/30 - 1/(-30)) = 0.5 × 2/30 = 1/30, so f = 30 cm.",
+    "Simple magnifier f = 5 cm. Image at D = 25 cm: M = 1 + 25/5 = 6. Image at infinity: M = 25/5 = 5.",
+    "Telescope fₒ = 100 cm, fₑ = 5 cm: M = 100/5 = 20×, length L = 105 cm."],
+  "practiceQuestions": [
+    "Q1. State and derive lens maker's formula.",
+    "Q2. Define power of a lens. What is its unit?",
+    "Q3. A convex lens of focal length 15 cm forms an image of an object placed 30 cm away. Find image position and magnification.",
+    "Q4. Calculate angular magnification of a simple microscope with f = 5 cm for normal adjustment.",
+    "Q5. Two lenses of powers +2 D and -3 D are in contact. Find equivalent focal length.",
+    "Q6. An astronomical telescope has fₒ = 120 cm and fₑ = 6 cm. Find magnification and length."],
+  "practice": [
+    "Apply lens maker's formula to find f from μ, R₁, R₂.",
+    "Use lens formula to find v, m for given u and f.",
+    "Calculate power of lenses and combinations.",
+    "Compute angular magnification for magnifier, microscope, telescope.",
+    "Solve numericals on lens combinations in contact."],
+  "universalFacts": [
+    "The human eye has a variable-focus lens (accommodation) and forms images on the retina.",
+    "Cameras use convex lens systems to focus light onto sensors/film.",
+    "Galileo's telescope used a convex objective and concave eyepiece; Kepler's design uses two convex lenses.",
+    "The magnifying power depends on the angle subtended at the eye, not the size of the image on the retina."],
+  "confusion": [
+    "Confusing lens formula sign: 1/v - 1/u = 1/f vs mirror formula 1/v + 1/u = 1/f.",
+    "Thinking magnification m = v/u applies to angular magnification: Linear m = v/u, angular M = θ'/θ — different concepts.",
+    "Believing power adds for separated lenses: Powers add only for lenses in contact (d = 0).",
+    "Using D = 25 cm for all eyes: D varies with age and individual (near point changes)."],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Spherical lenses, angular magnification\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "Power of a lens of focal length 50 cm is:",
+      "options": ["2 D", "0.5 D", "5 D", "0.2 D"],
+      "answer": "A",
+      "explanation": "P = 1/f = 1/0.5 m = 2 D."
+    },
+    {
+      "question": "Lens maker's formula depends on:",
+      "options": ["Refractive index only", "Radii of curvature only", "Refractive index and radii of curvature", "Focal length only"],
+      "answer": "C",
+      "explanation": "1/f = (μ-1)(1/R₁ - 1/R₂) — depends on μ, R₁, R₂."
+    },
+    {
+      "question": "Angular magnification of simple magnifier when image at near point:",
+      "options": ["D/f", "1 + D/f", "f/D", "1 - D/f"],
+      "answer": "B",
+      "explanation": "M = 1 + D/f when final image at least distance of distinct vision D."
+    },
+    {
+      "question": "Astronomical telescope magnification in normal adjustment:",
+      "options": ["fₑ/fₒ", "fₒ/fₑ", "fₒ + fₑ", "fₒ × fₑ"],
+      "answer": "B",
+      "explanation": "M = fₒ/fₑ for telescope in normal adjustment (final image at infinity)."
+    },
+    {
+      "question": "For two lenses in contact, equivalent power:",
+      "options": ["P₁ × P₂", "P₁ + P₂", "P₁ - P₂", "P₁/P₂"],
+      "answer": "B",
+      "explanation": "Powers add for lenses in contact: P = P₁ + P₂."
+    }],
+  "animation3D": "lenses",
+  "motionGraphics": "ray-diagrams-lens",
+  "visualType": "spherical-lens",
+  "summary": "Spherical lenses converge (convex) or diverge (concave) light. Lens maker's formula gives f from μ, R₁, R₂. Power P = 1/f in dioptres. Angular magnification for magnifier: M = 1 + D/f (near point) or D/f (infinity). Telescope: M = fₒ/fₑ."}

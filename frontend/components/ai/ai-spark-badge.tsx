@@ -9,6 +9,7 @@ import {
   aiSparkTierFor,
 } from "@/lib/ai/ai-spark-tiers";
 import { getAiSparkUsage } from "@/lib/api/ai";
+import { setLitePoll } from "@/lib/perf/lite";
 
 /**
  * AI SPARK BADGE (owner requests 2026-10-12 + 2026-10-13).
@@ -86,12 +87,13 @@ export function AiSparkBadge({ className = "" }: { className?: string }) {
     };
     sync();
     window.addEventListener("veer-ai-spark", sync);
-    const interval = setInterval(sync, 30_000); // pick up UTC rollover
+    // Lite (low data) mode stretches the 30s rollover check on every tick —
+    // the number still updates on every message via the event above.
+    const stopPoll = setLitePoll(sync, 30_000);
     return () => {
       window.removeEventListener("veer-ai-spark", sync);
-      clearInterval(interval);
+      stopPoll();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.email]);
 
   return (

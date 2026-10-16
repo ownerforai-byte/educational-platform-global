@@ -1,71 +1,102 @@
 {
-  "title": "Deviation in small-angle prism",
+  "title": "Deviation in Small-Angle Prism",
   "unitSlug": "refraction-through-prisms",
   "topicSlug": "deviation-in-small-angle-prism",
   "topicTitle": "Deviation in small-angle prism",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Deviation in small-angle prism — Refraction through Prisms, Physics (class-11-notes).",
-    "**Tested.** define it · list: deviation in small-angle prism · one worked example · one misconception each.",
-    "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "**Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "**Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
-  ],
-  "confusion": [
-    "❌ treat \"Deviation in small-angle prism\" as one blob → ✅ split into: deviation in small-angle prism.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.."
-  ],
-  "bounds": [
-    "Covers only: deviation in small-angle prism (within Refraction through Prisms).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
-    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
-  ],
-  "practice": [
-    "define + example each sub-idea: deviation in small-angle prism.",
-    "one worked example for \"Deviation in small-angle prism\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Deviation in small-angle prism\" with one example.",
-    "compare \"Deviation in small-angle prism\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Deviation in small-angle prism\" and verify the answer is plausible."
-  ],
+    "Small-Angle Prism: A prism with small refracting angle A (typically < 10°). For such prisms, the deviation is small and approximately independent of angle of incidence.",
+    "Small Angle Deviation Formula: D ≈ (μ - 1)A where μ is refractive index of prism material and A is prism angle (in radians). Derived from D_min formula using small angle approximations sin θ ≈ θ.",
+    "Derivation: At minimum deviation for small angles: sin((A+D)/2) ≈ (A+D)/2 and sin(A/2) ≈ A/2. So μ ≈ ((A+D)/2)/(A/2) = (A+D)/A = 1 + D/A. Therefore D ≈ (μ - 1)A.",
+    "Independence from Incidence: For small-angle prisms, deviation is nearly constant for a range of incidence angles — unlike large-angle prisms where D varies significantly with i.",
+    "Direct Vision Spectroscope: Uses small-angle crown and flint prisms arranged to produce dispersion without net deviation (direct vision) or deviation without dispersion (achromatic combination).",
+    "Applications: Simple spectroscopes, direct vision prisms, small angle deviation measurements in optics.",
+    "Limitations: Formula breaks down for large A (> 15-20°) or when angles are not small. Full prism formula must be used."],
+  "specificConditions": [
+    "Small Angle Requirement: A must be small (< 10°) and angles small for sin θ ≈ θ approximation.",
+    "Near Minimum Deviation: Formula derived at minimum deviation but approximately valid for nearby incidence angles.",
+    "Monochromatic Light: μ depends on wavelength — formula applies to one color at a time."],
   "formulas": [
-    "1/f = (μ−1)(1/R₁ − 1/R₂)",
-    "P = 1/f",
-    "n = sin((A+D)/2)/sin(A/2)"
-  ],
-  "numericals": [
-    "Use  1/f = (μ−1)(1/R₁ − 1/R₂)  — pick reasonable values, solve, and check the units.",
-    "Use  P = 1/f  — pick reasonable values, solve, and check the units.",
-    "Use  n = sin((A+D)/2)/sin(A/2)  — pick reasonable values, solve, and check the units."
-  ],
+    "Small angle deviation: D ≈ (μ - 1)A",
+    "Small angle prism formula: μ ≈ 1 + D/A",
+    "Full prism formula: μ = sin((A + D_min)/2) / sin(A/2)",
+    "Small angle sin approximation: sin θ ≈ θ (θ in radians)"],
   "keyPoints": [
-    "• Deviation in small-angle prism"
-  ],
-  "summary": "Deviation in small-angle prism (Refraction through Prisms, Physics, class-11-notes) covers Deviation in small-angle prism. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "Small-angle prism: D ≈ (μ - 1)A.",
+    "Deviation nearly independent of incidence angle.",
+    "Valid for A < 10° and small incidence angles.",
+    "μ ≈ 1 + D/A for quick calculation.",
+    "Breaks down for large angles — use full prism formula."],
+  "importantStatements": [
+    "Statement 1: For small-angle prism, deviation D ≈ (μ - 1)A.",
+    "Statement 2: Deviation is approximately independent of angle of incidence for small-angle prisms.",
+    "Statement 3: Formula derived using sin θ ≈ θ small angle approximation.",
+    "Statement 4: Valid for prism angle A < 10° approximately.",
+    "Statement 5: μ ≈ 1 + D/A gives refractive index from measured deviation."],
+  "importantNotes": [
+    "Convert A to radians if using D = (μ-1)A with dimensional consistency (though degrees work if consistent).",
+    "Approximation error grows as A increases — use full formula for precision.",
+    "This is why small prisms are used in direct vision spectroscopes — predictable deviation."],
+  "examShortTricks": [
+    "D = (μ-1)A — memorize for small angle prism.",
+    "Valid only for small A (< 10°).",
+    "μ = 1 + D/A — invert to find μ.",
+    "Full formula needed for large A prisms."],
+  "examNotes": [
+    "NEB asks for derivation of D = (μ-1)A from full prism formula.",
+    "Numericals on small angle prism deviation.",
+    "Distinguish when to use small angle vs full prism formula."],
+  "examples": [
+    "Prism A = 5°, μ = 1.5: D = (1.5-1)×5° = 2.5°.",
+    "Prism A = 3°, D measured = 1.2°: μ = 1 + 1.2/3 = 1.4.",
+    "Compare: Full formula for A = 5°, D = 2.5°: μ = sin(3.75°)/sin(2.5°) = 0.0654/0.0436 = 1.50 — matches small angle approx.",
+    "Large angle A = 60°, D_min = 38°: small angle formula gives D = (1.5-1)×60 = 30° — wrong (actual 38°). Shows approximation breakdown."],
+  "practiceQuestions": [
+    "Q1. Derive D ≈ (μ - 1)A for small-angle prism from the prism formula.",
+    "Q2. State the conditions under which small-angle approximation is valid.",
+    "Q3. Calculate deviation for a 4° prism of μ = 1.5.",
+    "Q4. Explain why deviation is nearly independent of incidence for small-angle prisms.",
+    "Q5. Compare small-angle result with full prism formula for A = 30°."],
+  "practice": [
+    "Calculate D = (μ-1)A for small prisms.",
+    "Derive small angle formula from full prism equation.",
+    "Compare results for small vs large angle prisms.",
+    "Find μ from measured D and known A."],
+  "universalFacts": [
+    "Small angle prisms are used in direct vision spectroscopes where the beam direction is unchanged but spectrum is visible.",
+    "The approximation sin θ ≈ θ has error < 1% for θ < 10° — justifies small angle prism use.",
+    "Amici prisms (direct vision) combine crown and flint glass small prisms for zero net deviation with dispersion."],
+  "confusion": [
+    "Using D = (μ-1)A for large angle prisms: Significant error — only valid for small A.",
+    "Thinking deviation is exactly independent of incidence: Only approximately true for small-angle prisms.",
+    "Forgetting radian/degree consistency in formulas.",
+    "Confusing small-angle deviation with minimum deviation of large prism."],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Deviation in small-angle prism\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "For small-angle prism, deviation D ≈",
+      "options": ["(μ-1)A", "(μ+1)A", "μA", "A/μ"],
+      "answer": "A",
+      "explanation": "D ≈ (μ - 1)A derived from sin θ ≈ θ approximation."
+    },
+    {
+      "question": "Small-angle prism formula is valid for:",
+      "options": ["All prism angles", "A < 10° approximately", "A > 30°", "A = 90° only"],
+      "answer": "B",
+      "explanation": "Approximation sin θ ≈ θ valid for small angles (< 10°)."
+    },
+    {
+      "question": "For small-angle prism, deviation is:",
+      "options": ["Strongly dependent on incidence", "Nearly independent of incidence", "Zero", "Maximum at normal incidence"],
+      "answer": "B",
+      "explanation": "Small angle prisms have nearly constant deviation over range of incidence angles."
+    },
+    {
+      "question": "Small angle approximation sin θ ≈ θ:",
+      "options": ["Valid for all θ", "Valid for small θ (< 10°)", "Valid only at θ = 0", "Never valid"],
+      "answer": "B",
+      "explanation": "Approximation good for small angles, error < 1% below 10°."
+    }],
+  "animation3D": "small-angle-prism",
+  "motionGraphics": "prism-deviation-small",
+  "visualType": "small-angle-prism",
+  "summary": "Small-angle prism deviation D ≈ (μ-1)A for A < 10°. Deviation nearly independent of incidence angle. Derived from sin θ ≈ θ approximation. Full prism formula needed for large angles."}

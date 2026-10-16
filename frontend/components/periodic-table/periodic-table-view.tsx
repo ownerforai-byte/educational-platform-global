@@ -9,6 +9,7 @@ import {
   type PeriodicFilterCategory,
 } from "@/lib/periodic-table";
 import { BlockExplorer } from "@/components/periodic-table/block-explorer";
+import { CeeSparkGate } from "@/components/periodic-table/cee-spark-gate";
 import {
   Atom,
   Search,
@@ -579,6 +580,7 @@ export function PeriodicTableView() {
                     ))}
                   </ul>
                 </div>
+                <CeeSparkGate compact>
                 <div className="space-y-1">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
                     <GraduationCap className="h-3.5 w-3.5" />
@@ -593,6 +595,7 @@ export function PeriodicTableView() {
                     ))}
                   </ul>
                 </div>
+                </CeeSparkGate>
               </div>
             )}
 
@@ -1132,6 +1135,7 @@ export function PeriodicTableView() {
             <div className="p-6 overflow-y-auto space-y-5 flex-1">
               {/* ── TAB 1: CEE PAST MCQS & TRAPS ───────────────────────────── */}
               {activeDossierTab === "pyqs" && (
+                <CeeSparkGate>
                 <div className="space-y-4">
                   {/* CEE Trap Alert */}
                   {selectedElement.ceeTrapAlert && (
@@ -1230,6 +1234,7 @@ export function PeriodicTableView() {
                     </div>
                   )}
                 </div>
+                </CeeSparkGate>
               )}
 
               {/* ── TAB 2: HALLMARK CHEMICAL REACTIONS ─────────────────────── */}
@@ -1283,8 +1288,9 @@ export function PeriodicTableView() {
                     </div>
                   )}
 
-                  {/* CEE High-Yield Summary */}
+                  {/* CEE High-Yield Summary — CEE bank, under the CEE Spark gate */}
                   {selectedElement.ceeHighYieldNotes && (
+                    <CeeSparkGate compact>
                     <div className="rounded-2xl border border-sky-500/30 bg-sky-500/5 p-4 text-xs space-y-1.5">
                       <span className="font-bold uppercase tracking-wider text-sky-500 flex items-center gap-1.5">
                         <GraduationCap className="h-3.5 w-3.5" />
@@ -1294,6 +1300,7 @@ export function PeriodicTableView() {
                         {selectedElement.ceeHighYieldNotes}
                       </p>
                     </div>
+                    </CeeSparkGate>
                   )}
 
                   {/* Key Ores & Minerals */}
@@ -1512,14 +1519,11 @@ export function PeriodicTableView() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-
+                    </div>                    <CeeSparkGate compact>
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4 space-y-2.5">
                       <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
                         <GraduationCap className="h-3.5 w-3.5" />
-                        <span>
-                          CEE High-Frequency Facts ({selectedBlockFilter.ceeFrequentFacts?.length ?? 0})
-                        </span>
+                        <span>CEE High-Frequency Facts ({selectedBlockFilter.ceeFrequentFacts?.length ?? 0})</span>
                       </span>
                       <ul className="space-y-2 text-xs text-foreground">
                         {selectedBlockFilter.ceeFrequentFacts?.map((fact, idx) => (
@@ -1530,6 +1534,7 @@ export function PeriodicTableView() {
                         ))}
                       </ul>
                     </div>
+                    </CeeSparkGate>
                   </div>
                 </div>
               )}

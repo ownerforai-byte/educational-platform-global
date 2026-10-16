@@ -153,7 +153,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
             {!isAuthenticated && (
               <p className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
                 <ShieldCheck className="h-3.5 w-3.5" />
-                Login works after administrative approval only
+                Login works after administrative approval and system verification only
               </p>
             )}
 

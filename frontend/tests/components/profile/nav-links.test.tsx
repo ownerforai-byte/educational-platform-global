@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 // ─── Mocks ──────────────────────────────────────────────────────────────────
 
@@ -26,17 +26,21 @@ vi.mock("next/link", () => ({
 
 const sessionState: { user: unknown } = { user: null };
 
+// Stable refs so a test can assert WHICH logout path the sidebar uses.
+const logoutUser = vi.fn();
+const logoutAction = vi.fn();
+
 vi.mock("@/features/auth/hooks/use-session", () => ({
   useSession: () => ({
     user: sessionState.user,
     isLoading: false,
     refresh: vi.fn(),
-    logoutUser: vi.fn(),
+    logoutUser,
   }),
 }));
 
 vi.mock("@/features/auth/actions", () => ({
-  logoutAction: vi.fn(),
+  logoutAction,
 }));
 
 import { SidebarNavigation } from "@/components/layout/sidebar-navigation";
@@ -103,6 +107,18 @@ describe("SidebarNavigation", () => {
     render(<SidebarNavigation />);
 
     expect(screen.queryByRole("link", { name: /owner console/i })).toBeNull();
+  });
+
+  it("logs out through the instant logoutUser path, never logoutAction", async () => {
+    // INSTANT LOGOUT: the sidebar must clear the local session first (the UI
+    // becomes a customer in the same click) instead of awaiting the backend
+    // logoutAction round-trip before anything happens on screen.
+    render(<SidebarNavigation />);
+
+    fireEvent.click(screen.getByRole("button", { name: /log out/i }));
+
+    await waitFor(() => expect(logoutUser).toHaveBeenCalledTimes(1));
+    expect(logoutAction).not.toHaveBeenCalled();
   });
 });
 

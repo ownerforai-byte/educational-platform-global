@@ -31,7 +31,8 @@ export default function ContentRating() {
       <section>
         <h2>2. Monetization & Ads</h2>
         <ul>
-          <li><strong>In-game Purchases / real-money value</strong> — As per app configuration (credits/premium if enabled; None if free)</li>
+          <li><strong>In-game Purchases / real-money value</strong> — Currently No</li>
+          <li><strong>Ads</strong> — Currently No</li>
           <li><strong>Ads</strong> — No</li>
         </ul>
       </section>

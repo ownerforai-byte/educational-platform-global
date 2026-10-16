@@ -1,77 +1,115 @@
 {
-  "title": "Conduction: thermal conductivity and measurement",
+  "title": "Conduction: Thermal Conductivity and Measurement",
   "unitSlug": "rate-of-heat-flow",
   "topicSlug": "conduction-thermal-conductivity-and-measurement",
   "topicTitle": "Conduction: thermal conductivity and measurement",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Conduction: thermal conductivity and measurement — Rate of Heat Flow, Physics (class-11-notes).",
-    "**Tested.** define it · list: conduction, thermal conductivity, measurement · one worked example · one misconception each.",
-    "**Thermal conductivity.** one-line definition + one-line exam use.",
-    "**Measurement.** one-line definition + one-line exam use."
-  ],
-  "confusion": [
-    "❌ treat \"Conduction\" as one blob → ✅ split into: conduction, thermal conductivity, measurement.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: conduction, thermal conductivity, measurement (within Rate of Heat Flow).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: conduction, thermal conductivity, measurement.",
-    "one worked example for \"Conduction: thermal conductivity and measurement\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Conduction: thermal conductivity and measurement\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Conduction: thermal conductivity and measurement\" with one example.",
-    "compare \"Conduction\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Conduction: thermal conductivity and measurement\" and verify the answer is plausible."
-  ],
+    "Thermal Conduction: Heat transfer through a material without bulk motion of the material. Energy passes from particle to particle via molecular collisions and free electron movement (in metals).",
+    "Rate of Heat Flow: For steady-state conduction through a slab of area A, thickness d, thermal conductivity k, temperature difference ΔT: dQ/dt = kAΔT/d = kA(T₁ - T₂)/d. This is Fourier's law of heat conduction.",
+    "Thermal Conductivity (k): Material property measuring ability to conduct heat. SI unit: W/(m·K). Metals have high k (silver ~429, copper ~401, aluminum ~237). Insulators have low k (wood ~0.1, air ~0.026).",
+    "Temperature Gradient: dQ/dt = -kA(dT/dx) — heat flows from high to low temperature. Negative sign indicates heat flows in direction of decreasing temperature.",
+    "Thermal Resistance: R = d/(kA) analogous to electrical resistance. Heat current H = ΔT/R. Series slabs: R_total = ΣRᵢ; same heat current through each.",
+    "Composite Slabs: For layers in series, interface temperatures found from equal heat current: H = k₁A(T₁-Tᵢ)/d₁ = k₂A(Tᵢ-T₂)/d₂. Temperature drop is larger across poorer conductor.",
+    "Good vs Bad Conductors: Good conductors (metals) — free electrons transfer energy efficiently. Bad conductors/insulators (wood, air, plastics) — few free electrons, lattice vibrations less effective.",
+    "Applications: Cooking utensils (copper/aluminum base, wooden handle), insulation (fibreglass, styrofoam), clothing (trapped air), cooking pots (metal bottom for conduction, plastic handle for insulation)."],
+  "specificConditions": [
+    "Steady State: Fourier's law applies in steady state (temperature at each point constant in time). Transient state requires heat equation.",
+    "One-Dimensional: Heat flow perpendicular to slab faces, no heat loss from sides (insulated).",
+    "Isotropic Material: k is same in all directions — true for most polycrystalline materials."],
   "formulas": [
-    "Governing equation for \"Conduction: thermal conductivity and measurement\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Conduction: thermal conductivity and measurement\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
-  ],
+    "Fourier's law: dQ/dt = kAΔT/d",
+    "Heat current: H = ΔT/R where R = d/(kA)",
+    "Series resistance: R_total = Σ dᵢ/(kᵢA)",
+    "Thermal conductivity unit: W/(m·K)",
+    "Temperature gradient: dT/dx"],
   "keyPoints": [
-    "• Conduction",
-    "• Thermal conductivity",
-    "• Measurement"
-  ],
-  "summary": "Conduction: thermal conductivity and measurement (Rate of Heat Flow, Physics, class-11-notes) covers Conduction, thermal conductivity, measurement. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "Conduction: heat transfer without material motion.",
+    "dQ/dt = kAΔT/d — Fourier's law of heat conduction.",
+    "k is material property; metals high, insulators low.",
+    "Thermal resistance R = d/(kA); series: R_total = ΣRᵢ.",
+    "Heat flows from hot to cold."],
+  "importantStatements": [
+    "Statement 1: Rate of heat conduction through a slab: dQ/dt = kAΔT/d.",
+    "Statement 2: Thermal conductivity k is a material property (W/(m·K)).",
+    "Statement 3: Thermal resistance R = d/(kA) — analogous to electrical resistance.",
+    "Statement 4: For slabs in series, total thermal resistance is sum of individual resistances.",
+    "Statement 5: Metals are good conductors due to free electrons; insulators are poor conductors."],
+  "importantNotes": [
+    "Steady state required — temperature at each point doesn't change with time.",
+    "One-dimensional flow assumed — sides insulated.",
+    "Thermal resistance concept simplifies composite slab problems.",
+    "Temperature drop is proportional to thermal resistance (larger drop across poorer conductor)."],
+  "examShortTricks": [
+    "H = kAΔT/d — remember H = ΔT/R form too.",
+    "Series slabs: same H through each; total R = R₁ + R₂ + ...",
+    "Temperature drop ∝ thermal resistance.",
+    "k unit: W/(m·K); good conductors k ≈ 100-400; insulators k < 1."],
+  "examNotes": [
+    "NEB frequently asks for Fourier's law derivation and numericals on composite slabs.",
+    "Calculate interface temperature in series slabs.",
+    "Compare thermal conductivities of materials.",
+    "Thermal resistance analogy to electrical resistance."],
+  "examples": [
+    "Copper slab A = 0.01 m², d = 0.005 m, ΔT = 100 K, k = 400 W/(m·K): dQ/dt = 400 × 0.01 × 100/0.005 = 80,000 W = 80 kW.",
+    "Two slabs: k₁ = 100, d₁ = 0.01, k₂ = 10, d₂ = 0.02, A = 0.1 m², ΔT_total = 90 K. R₁ = 0.01/(100×0.1) = 0.001 K/W; R₂ = 0.02/(10×0.1) = 0.02 K/W. H = 90/0.021 = 4286 W.",
+    "Air gap as insulator: k_air ≈ 0.026 W/(m·K) — double-pane windows use air gap to reduce conduction."],
+  "practiceQuestions": [
+    "Q1. State Fourier's law of heat conduction and define thermal conductivity.",
+    "Q2. Derive dQ/dt = kAΔT/d for steady-state conduction.",
+    "Q3. Explain thermal resistance and its analogy to electrical resistance.",
+    "Q4. Two slabs in series — find interface temperature given k₁, k₂, d₁, d₂, T₁, T₂.",
+    "Q5. Why are metals good conductors of heat but wood is not?",
+    "Q6. Calculate heat flow rate through a wall given dimensions, k, and temperature difference."],
+  "practice": [
+    "Calculate heat current through slabs using Fourier's law.",
+    "Find interface temperatures in composite slabs.",
+    "Compute thermal resistance for materials.",
+    "Compare heat conduction in different materials.",
+    "Solve steady-state conduction numericals."],
+  "universalFacts": [
+    "Diamond has highest thermal conductivity (~2000 W/(m·K)) — used in high-power electronics cooling.",
+    "Air is an excellent insulator (k ≈ 0.026 W/(m·K)) — trapped air in clothing and building insulation provides warmth.",
+    "Silver is the best metallic conductor (k ≈ 429 W/(m·K)), followed closely by copper (~401).",
+    "The thermal resistance analogy allows using circuit techniques for heat flow problems."],
+  "confusion": [
+    "Confusing thermal conductivity k with heat capacity: k measures heat transfer rate; heat capacity measures heat needed to raise temperature.",
+    "Thinking temperature drop is equal across series slabs: ΔTᵢ = H·Rᵢ — larger drop across larger resistance.",
+    "Believing heat flows from cold to hot: Heat always flows hot → cold spontaneously.",
+    "Confusing conduction with convection: Conduction needs no material motion; convection involves fluid motion.",
+    "Forgetting steady-state assumption in Fourier's law."],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Conduction: thermal conductivity and measurement\"?",
-      "options": [
-        "Conduction",
-        "Thermal conductivity",
-        "Unrelated topic",
-        "None of the above"
-      ],
-      "answer": "Conduction",
-      "explanation": "Conduction is listed among the official sub-ideas of Conduction: thermal conductivity and measurement; the others are not part of this topic."
+      "question": "Rate of heat conduction is proportional to:",
+      "options": ["ΔT/d", "d/ΔT", "A·d", "ΔT·d"],
+      "answer": "A",
+      "explanation": "dQ/dt = kAΔT/d — proportional to area and temperature difference, inversely proportional to thickness."
     },
     {
-      "question": "A common examiner point on \"Conduction: thermal conductivity and measurement\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "Thermal conductivity of metals is:",
+      "options": ["High", "Low", "Zero", "Temperature independent"],
+      "answer": "A",
+      "explanation": "Free electrons make metals excellent heat conductors."
+    },
+    {
+      "question": "Thermal resistance R = d/(kA):",
+      "options": ["Increases with k", "Decreases with d", "Increases with d", "Independent of A"],
+      "answer": "C",
+      "explanation": "R ∝ d — thicker slab = more resistance to heat flow."
+    },
+    {
+      "question": "For slabs in series, total thermal resistance:",
+      "options": ["1/R_total = Σ1/Rᵢ", "R_total = ΣRᵢ", "R_total = R₁ × R₂", "R_total = (R₁ + R₂)/2"],
+      "answer": "B",
+      "explanation": "Thermal resistances add in series like electrical resistances."
+    },
+    {
+      "question": "Heat flows from:",
+      "options": ["Cold to hot", "Hot to cold", "Either direction", "No flow at same temperature"],
+      "answer": "B",
+      "explanation": "Second law — heat flows from higher to lower temperature."
+    }],
+  "animation3D": "heat-conduction",
+  "motionGraphics": "thermal-resistance",
+  "visualType": "conduction",
+  "summary": "Thermal conduction transfers heat without material motion. Fourier's law: dQ/dt = kAΔT/d. Thermal resistance R = d/(kA); series resistances add. Metals conduct well (free electrons); insulators poorly. Steady-state, one-dimensional flow assumed."}

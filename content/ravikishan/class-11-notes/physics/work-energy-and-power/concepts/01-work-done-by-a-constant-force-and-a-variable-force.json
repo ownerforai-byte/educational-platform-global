@@ -1,64 +1,118 @@
 {
-  "title": "Work done by a constant force and a variable force",
+  "title": "Work Done by a Constant Force and a Variable Force",
   "unitSlug": "work-energy-and-power",
   "topicSlug": "work-done-by-a-constant-force-and-a-variable-force",
   "topicTitle": "Work done by a constant force and a variable force",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Work done by a constant force and a variable force — Work, Energy and Power, Physics (class-11-notes).",
-    "**Tested.** define it · list: work done by a constant force, a variable force · one worked example · one misconception each.",
-    "**A variable force.** one-line definition + one-line exam use."
-  ],
-  "confusion": [
-    "❌ treat \"Work done by a constant force\" as one blob → ✅ split into: work done by a constant force, a variable force.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: work done by a constant force, a variable force (within Work, Energy and Power).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: work done by a constant force, a variable force.",
-    "one worked example for \"Work done by a constant force and a variable force\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Work done by a constant force and a variable force\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Work done by a constant force and a variable force\" with one example.",
-    "compare \"Work done by a constant force\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Work done by a constant force and a variable force\" and verify the answer is plausible."
-  ],
+    "Work by Constant Force: W = F·d·cosθ = Fd cosθ where F is force magnitude, d is displacement, θ is angle between force and displacement vectors. SI unit: joule (J = N·m). Scalar quantity — can be positive, negative, or zero.",
+    "Work by Variable Force: When force varies with position, W = ∫F(x)·dx from x₁ to x₂. Graphically, W = area under F-x curve between limits. For F = kx (spring): W = ½kx².",
+    "Positive Work: Force component in direction of displacement (0° ≤ θ < 90°). Example: gravity on falling object, applied force pushing object forward.",
+    "Negative Work: Force component opposite to displacement (90° < θ ≤ 180°). Example: friction on sliding object, gravity on object thrown upward.",
+    "Zero Work: θ = 90° (force perpendicular to displacement) or d = 0 or F = 0. Example: centripetal force in circular motion, carrying object while walking horizontally.",
+    "Work-Energy Theorem: Net work on object equals change in kinetic energy: W_net = ΔK = ½mv_f² - ½mv_i². Valid for constant and variable forces, conservative and non-conservative.",
+    "Units: 1 J = 1 N·m = 1 kg·m²/s². Erg (CGS): 1 erg = 10⁻⁷ J. Electronvolt: 1 eV = 1.602×10⁻¹⁹ J."],
+  "specificConditions": [
+    "Dot Product: W = F·d·cosθ — only force component parallel to displacement does work.",
+    "Variable Force Integration: Must integrate F(x)·dx; cannot use W = Fd unless F constant.",
+    "Angle Definition: θ is angle between force and displacement vectors (tail-to-tail)."],
   "formulas": [
-    "Governing equation for \"Work done by a constant force and a variable force\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Work done by a constant force and a variable force\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
-  ],
+    "Constant force: W = Fd cosθ",
+    "Variable force: W = ∫F(x)·dx",
+    "Spring work: W = ½kx²",
+    "Work-energy theorem: W_net = ΔK = ½mv_f² − ½mv_i²",
+    "Dot product: W = F→ · d→",
+    "1 eV = 1.602 × 10⁻¹⁹ J"],
   "keyPoints": [
-    "• Work done by a constant force",
-    "• A variable force"
-  ],
-  "summary": "Work done by a constant force and a variable force (Work, Energy and Power, Physics, class-11-notes) covers Work done by a constant force, a variable force. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "W = Fd cosθ for constant force — scalar, can be +/-/zero.",
+    "Variable force: W = area under F-x curve = ∫F dx.",
+    "Spring: W = ½kx².",
+    "Work-energy theorem: W_net = ΔK (always valid).",
+    "Zero work when force ⟂ displacement (θ = 90°)."],
+  "importantStatements": [
+    "Statement 1: Work done by constant force W = Fd cosθ where θ is angle between force and displacement.",
+    "Statement 2: Work by variable force W = ∫F(x)·dx — area under F-x graph.",
+    "Statement 3: Work-energy theorem W_net = ΔK is valid for all forces.",
+    "Statement 4: Spring work W = ½kx² from Hooke's law integration.",
+    "Statement 5: Zero work when force perpendicular to displacement."],
+  "importantNotes": [
+    "Work is scalar — use dot product, not simple multiplication unless force ∥ displacement.",
+    "Friction always does negative work (opposes motion).",
+    "Work-energy theorem works even with non-conservative forces (friction).",
+    "Holding a heavy object stationary does no work on it (d = 0) despite physiological effort."],
+  "examShortTricks": [
+    "W = Fd cosθ — check angle between force and displacement.",
+    "Area under F-x graph = work for variable force.",
+    "Spring: W = ½kx² (area under linear F-x triangle).",
+    "W_net = ΔK — works with friction too.",
+    "Perpendicular force = zero work."],
+  "examNotes": [
+    "NEB frequently asks for work-energy theorem derivation and numericals on constant/variable force.",
+    "Distinguish work done by individual forces vs net work.",
+    "Calculate work from F-x graph area.",
+    "Spring compression/extension work problems."],
+  "examples": [
+    "Force 10 N at 30° to displacement 5 m: W = 10 × 5 × cos30° = 43.3 J.",
+    "Friction μk = 0.2, N = 50 N, distance 10 m: W_f = -0.2 × 50 × 10 = -100 J.",
+    "Spring k = 200 N/m compressed 0.1 m: W = ½ × 200 × 0.01 = 1 J.",
+    "Gravity on 2 kg falling 5 m: W = mgh = 2 × 9.8 × 5 = 98 J (force ∥ displacement).",
+    "Centripetal force on circular motion: W = 0 (force ⟂ velocity)."],
+  "practiceQuestions": [
+    "Q1. Define work done by a constant force and state its SI unit.",
+    "Q2. Derive W = Fd cosθ and discuss positive, negative, zero work cases.",
+    "Q3. How is work done by a variable force calculated? Give graphical interpretation.",
+    "Q4. State and prove work-energy theorem.",
+    "Q5. Calculate work done in stretching a spring (k = 100 N/m) by 0.2 m.",
+    "Q6. A 5 kg block is pulled 10 m by force 40 N at 30° to horizontal. Find work done."],
+  "practice": [
+    "Calculate W = Fd cosθ for various angles.",
+    "Compute work from F-x graph area.",
+    "Apply work-energy theorem to find final speed.",
+    "Calculate spring work W = ½kx².",
+    "Distinguish work by individual forces vs net work."],
+  "universalFacts": [
+    "James Joule established the mechanical equivalent of heat: 1 cal = 4.186 J, linking work and energy.",
+    "No work is done by centripetal force — yet it's essential for circular motion.",
+    "Human body does work even when holding a weight stationary (muscle fibers contract/release internally), but mechanical work on the weight is zero.",
+    "The electronvolt (eV) is natural unit in atomic/nuclear physics — energy of one electron through 1 V potential."],
+  "confusion": [
+    "Confusing force component parallel vs perpendicular to displacement: Only parallel component does work.",
+    "Thinking holding a weight stationary does work: d = 0 → W = 0 mechanically.",
+    "Using W = Fd without cosθ when force not parallel to displacement.",
+    "Believing friction always does negative work: Yes, kinetic friction always opposes relative motion → negative work.",
+    "Confusing work done by net force vs individual forces: W_net = ΔK; individual works sum to W_net."],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Work done by a constant force and a variable force\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "Work done is zero when:",
+      "options": ["Force is zero", "Displacement is zero", "Force ⟂ displacement", "All of the above"],
+      "answer": "D",
+      "explanation": "W = Fd cosθ — zero if F=0, d=0, or θ=90°."
+    },
+    {
+      "question": "Work-energy theorem states:",
+      "options": ["W = ΔU", "W_net = ΔK", "W = ΔE", "W = ΔP"],
+      "answer": "B",
+      "explanation": "Net work equals change in kinetic energy."
+    },
+    {
+      "question": "Work done by friction is:",
+      "options": ["Always positive", "Always negative", "Always zero", "Either positive or negative"],
+      "answer": "B",
+      "explanation": "Friction opposes motion → negative work."
+    },
+    {
+      "question": "Work done in stretching spring by x:",
+      "options": ["kx", "½kx²", "kx²", "2kx²"],
+      "answer": "B",
+      "explanation": "W = ∫₀ˣ kx' dx' = ½kx²."
+    },
+    {
+      "question": "SI unit of work is:",
+      "options": ["Watt", "Joule", "Newton", "Pascal"],
+      "answer": "B",
+      "explanation": "1 J = 1 N·m."
+    }],
+  "animation3D": "work-energy",
+  "motionGraphics": "work-force-displacement",
+  "visualType": "work-energy-theorem",
+  "summary": "Work by constant force W = Fd cosθ; by variable force W = ∫F dx = area under F-x graph. Work-energy theorem W_net = ΔK always holds. Spring work W = ½kx². Work is scalar, zero when force ⟂ displacement."}

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import { Coins, ArrowUpRight, Sparkles } from "lucide-react";
 import { getUserCredits } from "@/lib/api/credits";
+import { setLitePoll } from "@/lib/perf/lite";
 import Link from "next/link";
 
 const POLL_INTERVAL = 30_000; // Refresh every 30s for active users
@@ -44,8 +45,9 @@ export function CreditBadge({ className = "" }: { className?: string }) {
 
   useEffect(() => {
     fetchCredits();
-    const interval = setInterval(fetchCredits, POLL_INTERVAL);
-    return () => clearInterval(interval);
+    // Lite (low data) mode stretches POLL_INTERVAL on every tick — the
+    // balance still refreshes, just far less often on constrained networks.
+    return setLitePoll(fetchCredits, POLL_INTERVAL);
   }, [fetchCredits]);
 
   if (isLoading) {

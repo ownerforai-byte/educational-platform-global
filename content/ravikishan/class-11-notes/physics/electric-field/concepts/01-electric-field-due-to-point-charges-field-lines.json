@@ -1,73 +1,123 @@
 {
-  "title": "Electric field due to point charges; field lines",
+  "title": "Electric Field Due to Point Charges; Field Lines",
   "unitSlug": "electric-field",
   "topicSlug": "electric-field-due-to-point-charges-field-lines",
   "topicTitle": "Electric field due to point charges; field lines",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Electric field intensity.** The field at a point is the force per unit positive test charge placed there: E = F/q₀ = (1/4πε₀)q/r² for a point charge, directed away from a positive charge.",
-    "**Field lines.** These imaginary lines are drawn so that the tangent at any point gives the field direction and their density shows field strength.",
-    "**Field line rules.** Lines start on positive charges and end on negative ones, never cross each other, and never form closed loops in electrostatics.",
-    "**Uniform field.** Between two parallel oppositely charged plates the field is uniform (E = V/d), so a charge experiences the same force everywhere between the plates.",
-    "**Superposition.** The total field from several charges is the vector sum of their individual fields — the same principle that gives the net force."
-  ],
-  "confusion": [
-    "❌ treat \"Electric field due to point charges\" as one blob → ✅ split into: electric field due to point charges, field lines.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.."
-  ],
-  "bounds": [
-    "Covers only: electric field due to point charges, field lines (within Electric Field).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
-    "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
-  ],
-  "practice": [
-    "define + example each sub-idea: electric field due to point charges, field lines.",
-    "one worked example for \"Electric field due to point charges; field lines\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Electric field due to point charges; field lines\" with one example.",
-    "compare \"Electric field due to point charges\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Electric field due to point charges; field lines\" and verify the answer is plausible."
-  ],
+    "Electric Field Definition: The electric field $\\vec{E}$ at a point is the force $\\vec{F}$ experienced per unit positive test charge $q_0$ placed at that point: $\\vec{E} = \\vec{F}/q_0$. It is a vector quantity with SI unit N/C (equivalently V/m).",
+    "Field of a Point Charge: By Coulomb's law, the field due to a point charge $q$ at distance $r$ is $\\vec{E} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r^2}\\,\\hat{r} = k\\frac{q}{r^2}\\,\\hat{r}$, directed radially outward for positive $q$ and inward for negative $q$. $k = 8.99 \\times 10^9\\text{ N}\\cdot\\text{m}^2/\\text{C}^2$.",
+    "Field Lines: Imaginary curves whose tangent gives field direction; density of lines represents field strength. Lines start on positive charges, end on negative charges, never cross, never form closed loops in electrostatics.",
+    "Superposition Principle: The net field from multiple charges is the vector sum of individual fields: $\\vec{E}_\\text{net} = \\sum_i \\vec{E}_i$. This follows from linearity of Coulomb's law.",
+    "Uniform Field: Between two parallel oppositely charged plates, the field is uniform: $E = V/d$ or $E = \\sigma/\\varepsilon_0$ (for infinite plates). A charge experiences constant force everywhere between plates.",
+    "Dipole Field: For an electric dipole ($+q, -q$ separated by $2a$), axial field: $E_\\text{axial} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2pr}{(r^2-a^2)^2} \\approx \\frac{2kp}{r^3}$ (for $r \\gg a$). Equatorial field: $E_\\text{eq} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{p}{(r^2+a^2)^{3/2}} \\approx \\frac{kp}{r^3}$. Dipole moment $p = q(2a)$.",
+    "Field Inside Conductor: At electrostatic equilibrium, $\\vec{E} = 0$ inside a conductor. All excess charge resides on the surface. The surface is an equipotential."],
+  "specificConditions": [
+    "Test Charge Limit: The test charge $q_0$ must be infinitesimally small so it does not disturb the source charge distribution being measured.",
+    "Electrostatics Only: Field lines never form closed loops only in electrostatics. With changing magnetic fields (Faraday's law), induced electric fields form closed loops.",
+    "Point Charge Approximation: The formula $E = kq/r^2$ assumes a point charge or spherically symmetric distribution measured outside the sphere."],
   "formulas": [
-    "F = k q₁q₂/r²",
-    "E = F/q",
-    "∮E·dA = Q/ε₀",
-    "V = kq/r"
-  ],
-  "numericals": [
-    "Use  F = k q₁q₂/r²  — pick reasonable values, solve, and check the units.",
-    "Use  E = F/q  — pick reasonable values, solve, and check the units.",
-    "Use  ∮E·dA = Q/ε₀  — pick reasonable values, solve, and check the units."
-  ],
+    "Electric field: $\\vec{E} = \\vec{F}/q_0$",
+    "Point charge field: $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r^2} = k\\frac{q}{r^2}$",
+    "Coulomb's law: $F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2}$",
+    "Superposition: $\\vec{E}_\\text{net} = \\sum_i \\vec{E}_i$",
+    "Uniform field between plates: $E = V/d = \\sigma/\\varepsilon_0$",
+    "Dipole axial field: $E \\approx \\frac{2kp}{r^3}$",
+    "Dipole equatorial field: $E \\approx \\frac{kp}{r^3}$",
+    "Dipole moment: $p = q(2a)$"],
   "keyPoints": [
-    "• Electric field due to point charges",
-    "• Field lines"
-  ],
-  "summary": "Electric field due to point charges; field lines (Electric Field, Physics, class-11-notes) covers Electric field due to point charges, field lines. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "Electric field $\\vec{E} = \\vec{F}/q_0$ — force per unit positive test charge.",
+    "Point charge field: $E = kq/r^2$, radially outward (+) or inward (-).",
+    "Field lines: start (+), end (-), never cross, density = strength.",
+    "Superposition: net field is vector sum of individual fields.",
+    "Uniform field between parallel plates: $E = V/d$.",
+    "Inside conductor at equilibrium: $\\vec{E} = 0$."],
+  "importantStatements": [
+    "Statement 1: Electric field at a point is force per unit positive test charge: $\\vec{E} = \\vec{F}/q_0$.",
+    "Statement 2: Field due to point charge $q$ at distance $r$: $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{r^2}$.",
+    "Statement 3: Field lines start on positive charges and end on negative charges; they never cross.",
+    "Statement 4: Superposition principle — net field is vector sum of fields from individual charges.",
+    "Statement 5: Electric field inside a conductor at electrostatic equilibrium is zero."],
+  "importantNotes": [
+    "The test charge must be small enough not to alter the source charge distribution.",
+    "Field direction = force direction on positive test charge; opposite for negative charge.",
+    "Electric field is a vector — always add fields vectorially, not by magnitudes.",
+    "Near a point charge, field varies as $1/r^2$ — strong close to charge, weak far away."],
+  "examShortTricks": [
+    "Field due to +q points away; due to -q points toward.",
+    "Superposition: add vectors, draw diagram first, resolve components.",
+    "Between parallel plates: field is uniform ($E = V/d$) except near edges.",
+    "Inside conductor: E = 0 — all charge on surface.",
+    "Dipole field falls as $1/r^3$ (faster than point charge's $1/r^2$)."],
+  "examNotes": [
+    "NEB frequently asks for electric field due to point charge, superposition problems, and field line properties.",
+    "Draw field line diagrams for: single charge, dipole, two like charges, parallel plates.",
+    "Calculate field at a point due to multiple charges using components.",
+    "Distinguish electric field (N/C) from electric potential (V) — related but different."],
+  "examples": [
+    "Two charges $+3\\,\\mu\\text{C}$ and $-3\\,\\mu\\text{C}$ are 10 cm apart. Find field at midpoint. Solution: Both fields point same way (toward - charge). $E = 2 \\times (9\\times 10^9)(3\\times 10^{-6})/(0.05)^2 = 2.16 \\times 10^7\\text{ N/C}$.",
+    "A $+5\\,\\mu\\text{C}$ charge creates field at 2 m distance. $E = (9\\times 10^9)(5\\times 10^{-6})/4 = 11{}250\\text{ N/C}$, radially outward.",
+    "Between plates 2 cm apart with 100 V potential difference: $E = V/d = 100/0.02 = 5000\\text{ V/m}$, uniform.",
+    "Electron in field $1000\\text{ N/C}$: Force $F = eE = (1.6\\times 10^{-19})(1000) = 1.6\\times 10^{-16}\\text{ N}$, opposite to field direction."],
+  "practiceQuestions": [
+    "Q1. Define electric field and state its SI unit and dimensions.",
+    "Q2. Derive the expression for electric field due to a point charge.",
+    "Q3. State the properties of electric field lines with a diagram.",
+    "Q4. Two point charges $q_1 = +4\\,\\mu\\text{C}$ and $q_2 = -6\\,\\mu\\text{C}$ are placed 20 cm apart. Find the net electric field at the midpoint.",
+    "Q5. Explain why electric field lines never cross each other.",
+    "Q6. What is the electric field inside a charged conductor at electrostatic equilibrium?",
+    "Q7. Calculate the electric field at a point on the axial line of an electric dipole."],
+  "practice": [
+    "Calculate electric field due to single point charge at various distances.",
+    "Use superposition to find net field from multiple point charges.",
+    "Draw electric field line patterns for different charge configurations.",
+    "Compute force on a charge in a given field: $\\vec{F} = q\\vec{E}$.",
+    "Analyze uniform field between parallel plates.",
+    "Determine null point where net field is zero between two charges."],
+  "universalFacts": [
+    "The electric field concept was introduced by Michael Faraday to explain action-at-a-distance without instantaneous action.",
+    "Electric field lines are a visualization tool — they are not physical entities but help understand field structure.",
+    "The field inside a conductor being zero is why cars and airplanes are safe during lightning strikes (Faraday cage effect).",
+    "Electric field can exist in vacuum — it does not require a medium, unlike sound waves.",
+    "The superposition principle is exact for electric fields because Coulomb's law is linear."],
+  "confusion": [
+    "Confusing field direction for positive vs negative test charge: Field points in force direction on + charge, opposite on - charge.",
+    "Thinking field lines are real physical lines: They are imaginary visualization tools; the field exists continuously in space.",
+    "Assuming field strength is constant near a point charge: $E \\propto 1/r^2$ — it decreases rapidly with distance.",
+    "Adding field magnitudes instead of vectors: Electric field is a vector; use vector addition for multiple charges.",
+    "Believing field exists inside a charged conductor: At electrostatic equilibrium, E = 0 inside conductor material."],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Electric field due to point charges; field lines\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "Electric field is defined as:",
+      "options": ["Force per unit charge", "Force × charge", "Energy per unit charge", "Force per unit mass"],
+      "answer": "A",
+      "explanation": "$\\vec{E} = \\vec{F}/q_0$ — force per unit positive test charge."
+    },
+    {
+      "question": "Electric field lines:",
+      "options": ["Start on negative, end on positive", "Start on positive, end on negative", "Form closed loops", "Can cross each other"],
+      "answer": "B",
+      "explanation": "Field lines originate on positive charges and terminate on negative charges."
+    },
+    {
+      "question": "Electric field inside a conductor at electrostatic equilibrium:",
+      "options": ["Maximum", "Zero", "Non-zero but uniform", "Depends on charge"],
+      "answer": "B",
+      "explanation": "Free charges redistribute until internal field cancels to zero."
+    },
+    {
+      "question": "Field due to a point charge varies as:",
+      "options": ["1/r", "1/r²", "1/r³", "r²"],
+      "answer": "B",
+      "explanation": "Coulomb's law gives $E = kq/r^2$ — inverse square dependence."
+    },
+    {
+      "question": "The SI unit of electric field is:",
+      "options": ["N/C", "N·m²/C", "V/m", "Both N/C and V/m"],
+      "answer": "D",
+      "explanation": "1 N/C = 1 V/m — both are equivalent units for electric field."
+    }],
+  "animation3D": "electric-field",
+  "motionGraphics": "field-lines",
+  "visualType": "electric-field-lines",
+  "summary": "The electric field $\\vec{E} = \\vec{F}/q_0$ describes force per unit positive test charge. A point charge produces $E = kq/r^2$ radially. Field lines visualize field (start +, end -, never cross). Superposition gives net field from multiple charges. Field is uniform between parallel plates ($E = V/d$) and zero inside a conductor at equilibrium."}

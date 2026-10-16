@@ -1,62 +1,131 @@
 {
-  "title": "Thermal equilibrium as a working principle of a mercury t…",
+  "title": "Thermal Equilibrium — Mercury Thermometer",
   "unitSlug": "heat-and-temperature",
   "topicSlug": "thermal-equilibrium-as-a-working-principle-of-a-mercury-thermometer",
-  "topicTitle": "Thermal equilibrium as a working principle of a mercury thermometer",
-  "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "topicTitle": "Thermal Equilibrium as a Working Principle of a Mercury Thermometer",
+  "relevance": 70,
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature",
+  "visualType": "thermometer",
+  "summary": "A mercury thermometer works on the principle of thermal equilibrium and thermal expansion. When the thermometer bulb contacts a body, heat flows until both reach the same temperature (thermal equilibrium). Mercury expands uniformly and the level in the capillary tube indicates temperature.",
   "notes": [
-    "**Scope.** Thermal equilibrium as a working principle of a mercury t… — Heat and Temperature, Physics (class-11-notes).",
-    "**Tested.** define it · list: thermal equilibrium as a working principle of a mercury t… · one worked example · one misconception each."
+    "Thermal Equilibrium: Two bodies in thermal contact are in thermal equilibrium when they are at the same temperature and no net heat flows between them.",
+    "Zeroth Law of Thermodynamics: If bodies A and B are each in thermal equilibrium with body C, then A and B are in thermal equilibrium with each other. This establishes temperature as a measurable property.",
+    "Mercury Thermometer Working: The bulb contains mercury. When placed in contact with a body, mercury absorbs heat and expands. The expansion moves the mercury column up the capillary tube. The height is calibrated to read temperature.",
+    "Why Mercury: Mercury has uniform thermal expansion, high boiling point (357°C), low freezing point (-39°C), does not wet glass, and is easily visible due to its shiny surface.",
+    "Thermometer Calibration: Two fixed points are used — lower fixed point (ice point, 0°C) and upper fixed point (steam point, 100°C). The interval is divided into 100 equal parts (Celsius scale).",
+    "Temperature Reading: Temperature T = ((L_t - L_0)/(L_100 - L_0)) × 100°C, where L_t is length at temperature T, L_0 at ice point, L_100 at steam point."
   ],
-  "confusion": [
-    "❌ treat \"Thermal equilibrium as a working principle of a mercury t…\" as one blob → ✅ split into: thermal equilibrium as a working principle of a mercury t….",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: thermal equilibrium as a working principle of a mercury t… (within Heat and Temperature).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: thermal equilibrium as a working principle of a mercury t….",
-    "one worked example for \"Thermal equilibrium as a working principle of a mercury t…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Thermal equilibrium as a working principle of a mercury t…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Thermal equilibrium as a working principle of a mercury t…\" with one example.",
-    "compare \"Thermal equilibrium as a working principle of a mercury t…\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Thermal equilibrium as a working principle of a mercury t…\" and verify the answer is plausible."
+  "specificConditions": [
+    "Thermal Equilibrium Condition: The thermometer must be in good thermal contact with the body and left undisturbed until the mercury column becomes steady (no further change in level).",
+    "Uniform Bore Assumption: The capillary tube must have uniform cross-section so that equal temperature changes produce equal changes in mercury column length.",
+    "No Heat Loss: The thermometer should not exchange significant heat with the surroundings during measurement — ideally it measures only the body's temperature.",
+    "Range Limitation: Mercury thermometers are suitable for approximately -39°C to 357°C. Outside this range, mercury freezes or boils."
   ],
   "formulas": [
-    "Governing equation for \"Thermal equilibrium as a working principle of a mercury t…\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Thermal equilibrium as a working principle of a mercury t…\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
+    "Temperature from length: T = ((L_t - L_0)/(L_100 - L_0)) × 100°C",
+    "Linear expansion: ΔL = L₀ α ΔT, where α is coefficient of linear expansion",
+    "Zeroth Law: If T_A = T_C and T_B = T_C, then T_A = T_B (thermal equilibrium transitive property)"
   ],
   "keyPoints": [
-    "• Thermal equilibrium as a working principle of a mercury t…"
+    "Thermal equilibrium means equal temperature and no net heat flow.",
+    "Zeroth law establishes temperature as a valid measurable quantity.",
+    "Mercury thermometer works by thermal expansion at thermal equilibrium.",
+    "Calibration uses ice point (0°C) and steam point (100°C) as fixed points.",
+    "Temperature reading is proportional to mercury column length change."
   ],
-  "summary": "Thermal equilibrium as a working principle of a mercury t… (Heat and Temperature, Physics, class-11-notes) covers Thermal equilibrium as a working principle of a mercury t…. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Statement 1: Two bodies are in thermal equilibrium when they are at the same temperature.",
+    "Statement 2: The zeroth law of thermodynamics states that thermal equilibrium is transitive.",
+    "Statement 3: A mercury thermometer measures temperature through thermal expansion of mercury at equilibrium.",
+    "Statement 4: Thermometer calibration requires two fixed points: ice point (0°C) and steam point (100°C).",
+    "Statement 5: Temperature is proportional to the length of mercury column above the ice-point mark."
+  ],
+  "importantNotes": [
+    "Thermal equilibrium takes time — the thermometer must remain in contact until readings stabilize.",
+    "Mercury does not wet glass, ensuring smooth movement in the capillary tube.",
+    "The stem of the thermometer should be at the same temperature as the bulb for accurate readings.",
+    "Mercury's uniform expansion makes the temperature scale linear.",
+    "Parallax error can occur — read the meniscus at eye level."
+  ],
+  "examShortTricks": [
+    "Thermal equilibrium = same temperature, no heat flow.",
+    "Zeroth law = temperature is transitive (A=C, B=C → A=B).",
+    "Mercury expands uniformly — scale is linear.",
+    "Two fixed points: ice point (0°C) and steam point (100°C).",
+    "Read meniscus at eye level to avoid parallax error."
+  ],
+  "examNotes": [
+    "NEB frequently asks to explain the working of a mercury thermometer using thermal equilibrium.",
+    "Zeroth law questions often ask why temperature is a fundamental property.",
+    "Thermometer calibration formula T = ((L_t - L_0)/(L_100 - L_0)) × 100 is a standard numerical.",
+    "Advantages of mercury: uniform expansion, visible, doesn't wet glass, wide liquid range.",
+    "Limitations: cannot measure below -39°C or above 357°C."
+  ],
+  "examples": [
+    "Mercury column length at ice point L_0 = 10 cm, at steam point L_100 = 25 cm. At body temperature L_t = 16 cm: T = ((16-10)/(25-10)) × 100 = (6/15) × 100 = 40°C.",
+    "If L_t = 15 cm, L_0 = 10 cm, L_100 = 30 cm: T = ((15-10)/(30-10)) × 100 = (5/20) × 100 = 25°C.",
+    "A mercury thermometer reads 37°C for human body temperature — the normal temperature at thermal equilibrium with the body."
+  ],
+  "practiceQuestions": [
+    "Q1. Explain the working of a mercury thermometer based on thermal equilibrium.",
+    "Q2. State the zeroth law of thermodynamics and its significance.",
+    "Q3. Why is mercury used in thermometers instead of water or alcohol?",
+    "Q4. How is a mercury thermometer calibrated? What are the two fixed points?",
+    "Q5. Calculate temperature given mercury lengths at ice point, steam point, and unknown temperature.",
+    "Q6. What is parallax error and how can it be avoided in thermometer reading?"
+  ],
+  "practice": [
+    "Explain thermal equilibrium with everyday examples.",
+    "Apply the zeroth law to determine if two bodies are at the same temperature.",
+    "Use the calibration formula to compute temperature from mercury length.",
+    "List advantages and disadvantages of mercury thermometers.",
+    "Identify sources of error in temperature measurement."
+  ],
+  "universalFacts": [
+    "Daniel Gabriel Fahrenheit invented the mercury thermometer in 1714.",
+    "The Celsius scale was defined by Anders Celsius in 1742, originally with 0° as boiling point and 100° as freezing point (later inverted).",
+    "Mercury freezes at -38.83°C and boils at 356.7°C, giving a useful liquid range for thermometers.",
+    "Galileo's thermoscope (c. 1593) was an early temperature-measuring device without a scale.",
+    "The triple point of water (0.01°C) is now used as the fundamental fixed point for precise temperature measurement."
+  ],
+  "confusion": [
+    "Confusing thermal equilibrium with thermal expansion: Equilibrium = same temperature; Expansion = volume change due to temperature.",
+    "Thinking thermometer measures the body's temperature instantly: It takes time to reach thermal equilibrium.",
+    "Believing all liquids expand uniformly: Mercury's expansion is nearly uniform; water's is not (anomalous expansion near 4°C).",
+    "Confusing the two fixed points: Ice point = 0°C (lower fixed point), Steam point = 100°C (upper fixed point).",
+    "Thinking thermometer stem temperature doesn't matter: Stem conduction can affect accuracy."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Thermal equilibrium as a working principle of a mercury t…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "question": "A mercury thermometer works on the principle of:",
+      "options": ["Thermal conduction", "Thermal equilibrium and expansion", "Thermal radiation", "Thermal convection"],
+      "answer": "B",
+      "explanation": "Mercury reaches thermal equilibrium with the body and expands, moving the column."
+    },
+    {
+      "question": "The zeroth law of thermodynamics establishes:",
+      "options": ["Energy conservation", "Temperature as measurable", "Entropy increases", "Heat flows hot to cold"],
+      "answer": "B",
+      "explanation": "Zeroth law establishes that temperature is a valid, transitive measurable property."
+    },
+    {
+      "question": "Mercury is preferred in thermometers because:",
+      "options": ["It wets glass", "Uniform expansion", "Expands when cooled", "Freezes at 0°C"],
+      "answer": "B",
+      "explanation": "Mercury has uniform thermal expansion, doesn't wet glass, and has a wide liquid range."
+    },
+    {
+      "question": "Two fixed points for calibrating a Celsius thermometer:",
+      "options": ["0°C and 50°C", "0°C and 100°C", "32°F and 212°F", "-273°C and 100°C"],
+      "answer": "B",
+      "explanation": "Ice point (0°C) and steam point (100°C) are the two fixed points."
+    },
+    {
+      "question": "Parallax error in thermometer reading:",
+      "options": ["Reading from an angle", "Mercury sticking to glass", "Thermometer too short", "Wrong scale"],
+      "answer": "A",
+      "explanation": "Parallax error occurs when the scale is viewed from an angle instead of at eye level."
     }
   ]
 }

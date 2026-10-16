@@ -23,6 +23,15 @@ describe("Home subject rails owner gate", () => {
       home.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkGate>/)?.[0] ??
       "";
     expect(gate).toContain("<HomeSubjectRails />");
+    // 2026-10-16: the rails are a SERVER component (node:fs data modules) —
+    // the page renders them and hands the tree to the client audience switcher
+    // as a prop; the switcher must never import them (browser bundle).
+    expect(home).toContain("<HomeAudience");
+    expect(home).toContain("member={");
+    const audience = read("components/home/home-audience.tsx");
+    expect(audience).toContain("member: ReactNode");
+    expect(audience).toContain("{member}");
+    expect(audience).not.toContain("home-subject-rails");
   });
 
   it("hides the section instead of redirecting anyone", () => {

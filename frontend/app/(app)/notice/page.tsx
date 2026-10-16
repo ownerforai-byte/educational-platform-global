@@ -66,7 +66,7 @@ const NOTICES: Notice[] = [
     icon: ShieldCheck,
     title: "Accounts are approved by the owner",
     body:
-      "Login works after administrative approval only. Sign in with Google and your request is reviewed — until it is approved the account stays closed, and nothing you have written is lost.",
+      "Login works after administrative approval and system verification only. Sign in with Google and your request is reviewed — until it is approved the account stays closed, and nothing you have written is lost.",
   },
   {
     icon: Coins,

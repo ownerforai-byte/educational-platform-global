@@ -36,8 +36,36 @@ const SW_ROUTES = [
   "/offline",
 ];
 
-/** Install: precache the app shell. */
+/**
+ * LOW DATA: is the device on a constrained connection?
+ *
+ * Save-Data / 2g / slow-2g (reported by the Network Information API, the
+ * same hints app/layout.tsx uses to boot lite mode) must not pay for the
+ * upfront 16-route precache or for background revalidation of every cached
+ * asset — pages and assets cache lazily as they are actually visited.
+ */
+function networkIsConstrained() {
+  try {
+    const connection = self.navigator && self.navigator.connection;
+    if (!connection) return false;
+    return (
+      connection.saveData === true ||
+      connection.effectiveType === "2g" ||
+      connection.effectiveType === "slow-2g"
+    );
+  } catch {
+    return false;
+  }
+}
+
+/** Install: precache the app shell (skipped entirely under low data). */
 self.addEventListener("install", (event) => {
+  if (networkIsConstrained()) {
+    // Low data: fetching 16 HTML shells up front is exactly the spend the
+    // user asked to avoid. Routes fill the cache as they are visited.
+    self.skipWaiting();
+    return;
+  }
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
       // Cache each route independently — a single 404/redirect must not
@@ -129,17 +157,40 @@ async function networkFirst(request) {
 }
 
 /**
+ * Fetch with a time budget: on constrained networks a page must not wait on
+ * a connection that is barely moving. Budget 0 = plain fetch (no timeout).
+ */
+function fetchWithBudget(request, budgetMs) {
+  if (!budgetMs) return fetch(request);
+  const inflight = fetch(request);
+  // If the budget wins the race, the late reply must not surface as an
+  // unhandled rejection in the worker.
+  inflight.catch(function () {});
+  return Promise.race([
+    inflight,
+    new Promise(function (_, reject) {
+      setTimeout(function () {
+        reject(new Error("network budget exceeded"));
+      }, budgetMs);
+    }),
+  ]);
+}
+
+/**
  * Navigation (HTML page) strategy: network-first with cache refresh.
  *  - Always try the network first so the newest Vercel deploy is served.
  *  - On a successful fetch, overwrite the cached copy so the offline
  *    fallback and any cached copy reflect the current build.
  *  - Only when the network fails: serve the cached page; for a top-level
  *    navigation with no cache, fall back to the /offline page.
+ *  - LOW DATA: the network race runs on a short budget (3s), so a slow
+ *    connection answers from cache instead of hanging the navigation.
  */
 async function navigationNetworkFirst(request) {
   const cache = await caches.open(CACHE_NAME);
+  const budgetMs = networkIsConstrained() ? 3000 : 0;
   try {
-    const response = await fetch(request);
+    const response = await fetchWithBudget(request, budgetMs);
     if (response.ok) {
       cache.put(request, response.clone());
     }
@@ -157,17 +208,36 @@ async function staleWhileRevalidate(request, cacheName, isNavigation = false) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(request);
 
-  const fetchPromise = fetch(request).then(async (response) => {
+  // LOW DATA: when a cached copy exists, serve it WITHOUT the background
+  // re-fetch — revalidating every asset doubles the bytes a Save-Data user
+  // pays for. Staleness is bounded by the build's hashed URLs and by the
+  // caches cleaned in activate().
+  const revalidateInBackground = () => {
+    fetch(request)
+      .then(async (response) => {
+        if (response.ok) {
+          cache.put(request, response.clone());
+        }
+        return response;
+      })
+      .catch(() => {}); // network failure → keep the cached copy; real server statuses pass through
+  };
+
+  if (cached) {
+    // LOW DATA: on a constrained connection serve the cached copy WITHOUT
+    // the background re-fetch. Staleness is bounded by the build's hashed
+    // URLs and by the caches cleaned in activate().
+    if (!networkIsConstrained()) revalidateInBackground();
+    return cached;
+  }
+
+  // Nothing cached: this fetch IS the content — always hit the network.
+  try {
+    const response = await fetch(request);
     if (response.ok) {
       cache.put(request, response.clone());
     }
     return response;
-  }).catch(() => cached); // only network failure falls back to cache — real server statuses pass through
-
-  if (cached) return cached;
-
-  try {
-    return await fetchPromise;
   } catch {
     // Network and cache both unavailable:
     // serve the offline fallback page for navigations instead of failing.

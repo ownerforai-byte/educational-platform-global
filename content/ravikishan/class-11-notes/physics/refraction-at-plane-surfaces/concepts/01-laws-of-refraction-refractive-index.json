@@ -1,71 +1,117 @@
 {
-  "title": "Laws of refraction: refractive index",
+  "title": "Laws of Refraction: Refractive Index",
   "unitSlug": "refraction-at-plane-surfaces",
   "topicSlug": "laws-of-refraction-refractive-index",
   "topicTitle": "Laws of refraction: refractive index",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Laws of refraction: refractive index — Refraction at Plane Surfaces, Physics (class-11-notes).",
-    "**Tested.** define it · list: laws of refraction: refractive index · one worked example · one misconception each.",
-    "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "**Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "**Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
-  ],
-  "confusion": [
-    "❌ treat \"Laws of refraction: refractive index\" as one blob → ✅ split into: laws of refraction: refractive index.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.."
-  ],
-  "bounds": [
-    "Covers only: laws of refraction: refractive index (within Refraction at Plane Surfaces).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
-    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
-  ],
-  "practice": [
-    "define + example each sub-idea: laws of refraction: refractive index.",
-    "one worked example for \"Laws of refraction: refractive index\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Laws of refraction: refractive index\" with one example.",
-    "compare \"Laws of refraction: refractive index\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Laws of refraction: refractive index\" and verify the answer is plausible."
-  ],
+    "Refraction: Bending of light when it passes from one transparent medium to another due to change in speed of light in different media.",
+    "Laws of Refraction (Snell's Laws): (1) Incident ray, refracted ray, and normal at point of incidence all lie in the same plane. (2) The ratio of sine of angle of incidence to sine of angle of refraction is constant for a given pair of media: sin i / sin r = constant = ₂₁μ (refractive index of second medium w.r.t. first).",
+    "Refractive Index: ₂₁μ = v₁/v₂ = sin i / sin r. Absolute refractive index μ = c/v (ratio of speed in vacuum to speed in medium). μ ≥ 1, μ_vacuum = 1, μ_air ≈ 1.0003, μ_water ≈ 1.33, μ_glass ≈ 1.5, μ_diamond ≈ 2.42.",
+    "Optical Density: Medium with higher refractive index is optically denser. Light bends towards normal when entering denser medium, away from normal when entering rarer medium.",
+    "Lateral Shift: When light passes through a parallel-sided glass slab, emergent ray is parallel to incident ray but laterally displaced. Shift S = t·sin(i-r)/cos r where t = thickness.",
+    "Real and Apparent Depth: Object in denser medium viewed from rarer appears nearer: apparent depth = real depth / μ. Conversely, object in rarer viewed from denser appears farther: apparent depth = μ × real depth.",
+    "Refraction Through Multiple Media: sin i / sin r = constant at each interface. For parallel interfaces, emergent ray direction depends only on first and last medium: sin i₁ / sin r_final = μ_final/μ_initial."],
+  "specificConditions": [
+    "Snell's Law Validity: Applies to isotropic media, light ray (not wavefront), and transparent interface. Not valid for anisotropic crystals or absorbing media.",
+    "Small Angle Approximation: For small angles, sin θ ≈ tan θ ≈ θ (radians), so apparent depth formula simplifies.",
+    "Normal Incidence: i = 0 → r = 0 — no bending at normal incidence, only speed changes."],
   "formulas": [
-    "1/f = (μ−1)(1/R₁ − 1/R₂)",
-    "P = 1/f",
-    "n = sin((A+D)/2)/sin(A/2)"
-  ],
-  "numericals": [
-    "Use  1/f = (μ−1)(1/R₁ − 1/R₂)  — pick reasonable values, solve, and check the units.",
-    "Use  P = 1/f  — pick reasonable values, solve, and check the units.",
-    "Use  n = sin((A+D)/2)/sin(A/2)  — pick reasonable values, solve, and check the units."
-  ],
+    "Snell's law: sin i / sin r = ₂₁μ = v₁/v₂",
+    "Absolute refractive index: μ = c/v",
+    "Lateral shift: S = t·sin(i-r)/cos r",
+    "Apparent depth: d_app = d_real/μ (viewing from rarer)",
+    "Apparent depth: d_app = μ·d_real (viewing from denser)",
+    "Speed in medium: v = c/μ"],
   "keyPoints": [
-    "• Laws of refraction: refractive index"
-  ],
-  "summary": "Laws of refraction: refractive index (Refraction at Plane Surfaces, Physics, class-11-notes) covers Laws of refraction: refractive index. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "Refraction: bending due to speed change at interface.",
+    "Snell's law: sin i/sin r = constant (refractive index).",
+    "Absolute index μ = c/v ≥ 1.",
+    "Towards normal entering denser; away from normal entering rarer.",
+    "Lateral shift through parallel slab: emergent parallel to incident.",
+    "Apparent depth: d_app = d_real/μ (denser to rarer viewing)."],
+  "importantStatements": [
+    "Statement 1: Snell's law — sin i/sin r = constant for given pair of media.",
+    "Statement 2: Refractive index μ = c/v — ratio of speed in vacuum to speed in medium.",
+    "Statement 3: Light bends towards normal entering optically denser medium.",
+    "Statement 4: Through parallel-sided slab, emergent ray is parallel to incident ray with lateral shift.",
+    "Statement 5: Apparent depth = real depth/μ when viewed from rarer medium."],
+  "importantNotes": [
+    "Frequency remains constant during refraction; wavelength and speed change.",
+    "Refractive index depends on wavelength (dispersion) — blue bends more than red.",
+    "μ is dimensionless and characteristic of the medium-wavelength pair.",
+    "Normal incidence: no deviation, but speed and wavelength change."],
+  "examShortTricks": [
+    "Denser medium: bends towards normal (r < i). Rarer medium: bends away (r > i).",
+    "Apparent depth = real depth / μ (object in water viewed from air).",
+    "Lateral shift through glass slab: emergent ∥ incident, shifted sideways.",
+    "μ = c/v — higher μ means slower light in medium."],
+  "examNotes": [
+    "NEB frequently asks for Snell's law statement and verification experiment.",
+    "Calculate refractive index from real/apparent depth.",
+    "Lateral shift through glass slab numericals.",
+    "Draw ray diagrams for refraction at plane surfaces."],
+  "examples": [
+    "Light enters water (μ = 1.33) from air at i = 45°. sin r = sin 45°/1.33 = 0.707/1.33 = 0.532, r = 32.1°. Bends towards normal.",
+    "Object at bottom of pond 1 m deep viewed from air: apparent depth = 1/1.33 = 0.75 m.",
+    "Glass slab t = 6 cm, μ = 1.5, i = 60°: sin r = sin 60°/1.5 = 0.577, r = 35.3°. S = 6 × sin(24.7°)/cos(35.3°) = 6 × 0.418/0.816 = 3.07 cm.",
+    "Speed of light in glass (μ = 1.5): v = c/1.5 = 3×10⁸/1.5 = 2×10⁸ m/s."],
+  "practiceQuestions": [
+    "Q1. State Snell's laws of refraction and define refractive index.",
+    "Q2. Derive the relation between refractive index and speed of light: μ = c/v.",
+    "Q3. Explain lateral shift through a parallel-sided glass slab.",
+    "Q4. A fish at depth 2 m in water (μ = 1.33) appears at what depth when viewed from air?",
+    "Q5. Why does a pencil look bent when partially immersed in water?",
+    "Q6. Calculate the refractive index of glass if light travels at 2×10⁸ m/s in it."],
+  "practice": [
+    "Apply Snell's law to find angle of refraction.",
+    "Calculate refractive index from speed or angles.",
+    "Compute apparent depth and real depth.",
+    "Calculate lateral shift through glass slab.",
+    "Draw ray diagrams for air-glass-air refraction."],
+  "universalFacts": [
+    "Diamond's high refractive index (2.42) and small critical angle (24.4°) make it brilliant — multiple internal reflections trap light.",
+    "Mirages are caused by refraction in air layers of different temperatures/densities.",
+    "Atmospheric refraction makes the sun visible before actual sunrise and after sunset.",
+    "The refractive index of air varies with temperature and density — causes star twinkling (astronomical scintillation)."],
+  "confusion": [
+    "Confusing bending direction: Towards normal when entering denser (slower) medium; away when entering rarer.",
+    "Thinking apparent depth formula works both ways: d_app = d_real/μ only when viewing from rarer medium.",
+    "Believing frequency changes in refraction: Frequency stays constant; speed and wavelength change.",
+    "Confusing refractive index μ with relative index ₂₁μ.",
+    "Forgetting incident ray, refracted ray, normal are coplanar (first law)."],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Laws of refraction: refractive index\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "When light enters from air to glass, it bends:",
+      "options": ["Towards normal", "Away from normal", "No bending", "Parallel to surface"],
+      "answer": "A",
+      "explanation": "Glass is optically denser — light bends towards normal."
+    },
+    {
+      "question": "Refractive index μ = c/v means:",
+      "options": ["Light faster in medium", "Light slower in medium", "Speed unchanged", "Light stops"],
+      "answer": "B",
+      "explanation": "μ > 1 means v = c/μ < c — light slower in medium."
+    },
+    {
+      "question": "Apparent depth of object in water (μ=1.33) viewed from air:",
+      "options": ["Real depth × 1.33", "Real depth / 1.33", "Real depth", "Real depth × 2"],
+      "answer": "B",
+      "explanation": "d_app = d_real/μ when viewing from rarer medium."
+    },
+    {
+      "question": "Lateral shift in glass slab: emergent ray is:",
+      "options": ["Parallel to incident ray", "Perpendicular to incident ray", "At angle to incident ray", "Absorbed"],
+      "answer": "A",
+      "explanation": "For parallel faces, emergent ray ∥ incident ray with lateral displacement."
+    },
+    {
+      "question": "Snell's law: sin i/sin r =",
+      "options": ["μ₁/μ₂", "μ₂/μ₁", "v₂/v₁", "Both B and C"],
+      "answer": "D",
+      "explanation": "₂₁μ = sin i/sin r = v₁/v₂ = μ₂/μ₁."
+    }],
+  "animation3D": "refraction",
+  "motionGraphics": "snell-law",
+  "visualType": "refraction-plane-surface",
+  "summary": "Refraction is bending of light at medium interface due to speed change. Snell's law: sin i/sin r = μ. Absolute index μ = c/v. Light bends towards normal in denser medium. Parallel slab produces lateral shift. Apparent depth = real depth/μ (viewing from rarer)."}

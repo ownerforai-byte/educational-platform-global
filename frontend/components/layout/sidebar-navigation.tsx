@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { LogIn, LogOut, ChevronsUp, Palette } from "lucide-react";
 
-import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
@@ -151,7 +150,7 @@ interface SidebarNavigationProps {
 
 export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps) {
   const pathname = usePathname();
-  const { user: cachedUser, refresh } = useSession();
+  const { user: cachedUser, logoutUser } = useSession();
   // The session can hydrate from the client cache on the first render, which
   // the server never sees. Treat the viewer as signed out until mounted so the
   // first client pass matches the server HTML (no sidebar hydration mismatch).
@@ -197,8 +196,10 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     );
 
   const handleLogout = async () => {
-    await logoutAction();
-    refresh();
+    // INSTANT: logoutUser clears the session synchronously (owner console and
+    // paid surfaces re-lock in this click) and revokes the backend session in
+    // the background — no round-trip before the UI becomes a customer again.
+    await logoutUser();
   };
 
   return (

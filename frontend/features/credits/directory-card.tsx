@@ -117,7 +117,9 @@ const DIRECTORY: Portal[] = [
       { label: "Cell Organelles 3D", href: "/lab/bio-3d-organelles", category: "lab3d" },
       { label: "Physics 3D Suite", href: "/lab/ph-3d-mechanics-i", category: "lab3d" },
       { label: "Science Graph Bank", href: "/graphs", category: "visuals" },
-      { label: "Periodic Table & CEE", href: "/periodic-table", category: "lab3d" },
+      // CEE question bank is paid content (reference), not a free lab sim —
+      // it unlocks the same `/periodic-table` window the in-page CEE gate uses.
+      { label: "Periodic Table & CEE", href: "/periodic-table", category: "reference" },
     ],
   },
   {

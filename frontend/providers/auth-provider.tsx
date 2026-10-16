@@ -10,7 +10,7 @@ import {
 } from "react";
 import type { SessionUser } from "@/features/auth/types";
 import { ensureSession, logout as apiLogout, refreshSession } from "@/lib/api/auth";
-import { getStoredToken } from "@/lib/api-client";
+import { clearStoredToken, getStoredToken } from "@/lib/api-client";
 import {
   clearCachedSession,
   isTokenExpiringSoon,
@@ -152,17 +152,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [user]);
 
   const logoutUser = useCallback(async () => {
-    // Fire the backend call (best-effort); clear local state immediately.
-    try {
-      await apiLogout();
-    } catch {
-      // Even if the endpoint fails, the cookie is already being cleared.
-    }
-    // apiLogout() drops the persisted token + cached user; make sure the UI
-    // state follows even when the request threw.
+    // INSTANT LOGOUT (owner request: "when I clicked logout it must work now,
+    // like I am a customer — not an owner or a paid user").
+    //
+    // Flip the UI to signed-out BEFORE any network I/O: in this same click
+    // the owner console, premium surfaces, spark gates and unlock windows all
+    // re-lock. The backend revoke then runs in the background — `logout()`
+    // re-clears the local credentials itself, so even a failed attempt never
+    // leaves this client signed in.
+    clearStoredToken();
     clearCachedSession();
     setUser(null);
     setIsLoading(false);
+    void apiLogout().catch(() => {
+      // Best-effort revoke: local state is already signed out. apiLogout
+      // sends the POST with keepalive, so it usually lands even if the user
+      // navigates away immediately after clicking.
+    });
   }, []);
 
   return (

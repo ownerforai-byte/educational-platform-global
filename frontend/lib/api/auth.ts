@@ -83,6 +83,10 @@ export async function logout(): Promise<AuthLogoutResponse> {
   clearCachedSession();
   return apiFetch<AuthLogoutResponse>("/api/auth/logout", {
     method: "POST",
+    // The logout click is almost always followed by a navigation (or a tab
+    // close): keepalive lets the revoke + cookie-clear survive it even though
+    // the caller no longer waits on this request.
+    keepalive: true,
   });
 }
 

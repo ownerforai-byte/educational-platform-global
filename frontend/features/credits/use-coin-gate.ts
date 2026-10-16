@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { getPublicConfig } from "@/lib/api/config";
 import { COIN_GATE_EVENT } from "@/lib/coin-gate";
+import { setLitePoll } from "@/lib/perf/lite";
 
 /**
  * Live coin-gate flag, mirrored from GET /api/config.
@@ -24,7 +25,7 @@ import { COIN_GATE_EVENT } from "@/lib/coin-gate";
  */
 let current: boolean | null = null;
 let started = false;
-let intervalId: number | null = null;
+let stopPoll: (() => void) | null = null;
 const listeners = new Set<() => void>();
 
 function setCurrent(next: boolean) {
@@ -57,16 +58,18 @@ function start(): void {
   started = true;
   void load();
   window.addEventListener(COIN_GATE_EVENT, onBroadcast);
-  intervalId = window.setInterval(() => void load(), 15_000);
+  // Lite (low data) mode stretches this 15s poll on every tick — see
+  // lib/perf/lite.ts — so Save-Data users stop paying for config chatter.
+  stopPoll = setLitePoll(() => void load(), 15_000);
 }
 
 function stopIfIdle(): void {
   if (!started || listeners.size > 0) return;
   started = false;
   window.removeEventListener(COIN_GATE_EVENT, onBroadcast);
-  if (intervalId !== null) {
-    window.clearInterval(intervalId);
-    intervalId = null;
+  if (stopPoll !== null) {
+    stopPoll();
+    stopPoll = null;
   }
 }
 

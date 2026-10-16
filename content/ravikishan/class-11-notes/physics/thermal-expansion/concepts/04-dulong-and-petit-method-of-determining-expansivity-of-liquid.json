@@ -1,71 +1,113 @@
 {
-  "title": "Dulong and Petit method of determining expansivity of liquid",
+  "title": "Dulong and Petit Method of Determining Expansivity of Liquid",
   "unitSlug": "thermal-expansion",
   "topicSlug": "dulong-and-petit-method-of-determining-expansivity-of-liquid",
   "topicTitle": "Dulong and Petit method of determining expansivity of liquid",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Linear expansion definition:** When a solid is heated, its length increases. The fractional increase in length per unit rise in temperature is called the coefficient of linear expansion, $\\alpha$.",
-    "**Formula:** $\\Delta L = L_0 \\alpha \\Delta T$, where $L_0$ is the original length, $\\alpha$ is the coefficient of linear expansion (unit: K⁻¹ or °C⁻¹), and $\\Delta T$ is the temperature change.",
-    "**New length:** $L = L_0(1 + \\alpha\\Delta T)$. For small $\\alpha\\Delta T$, this is an excellent approximation. For large temperature ranges, $\\alpha$ may vary and must be treated as a function of temperature.",
-    "**Physical origin:** Heating increases the amplitude of atomic vibrations in the lattice. Because the interatomic potential is asymmetric (steeper on the compression side), the average separation increases with temperature, causing expansion.",
-    "**Coefficient of linear expansion for common materials:** Steel: $\\alpha \\approx 12 \\times 10^{-6}$ K⁻¹. Aluminum: $\\alpha \\approx 24 \\times 10^{-6}$ K⁻¹. Copper: $\\alpha \\approx 17 \\times 10^{-6}$ K⁻¹. Invar (Fe-Ni alloy): $\\alpha \\approx 1.2 \\times 10^{-6}$ K⁻¹. Quartz: $\\alpha \\approx 0.5 \\times 10^{-6}$ K⁻¹.",
-    "**Why metals expand more:** Metals with weaker interatomic bonds (larger bond length, lower melting point) tend to have larger $\\alpha$. Lead ($\\alpha \\approx 29 \\times 10^{-6}$) expands more than steel because its atomic bonds are weaker.",
-    "**Bimetallic strip:** Two metals with different $\\alpha$ bonded together bend when heated — the higher-$\\alpha$ metal expands more, forcing the strip to curve. Used in thermostats, circuit breakers, and temperature indicators.",
-    "**Railway tracks — expansion gaps:** Steel rails expand by $\\Delta L = L_0 \\alpha \\Delta T$. For a 12 m rail and $\\Delta T = 40°C$: $\\Delta L = 12 \\times 12 \\times 10^{-6} \\times 40 = 5.76$ mm. Gaps are left between rails to accommodate this expansion, otherwise buckling occurs.",
-    "**Measuring $\\alpha$ — Searle's apparatus:** A metal rod is heated uniformly. The expansion is measured by a micrometer screw gauge. $\\alpha = \\frac{\\Delta L}{L_0 \\Delta T}$. The apparatus minimizes errors from thermal expansion of the frame.",
-    "**Measuring $\\alpha$ — Hoke's apparatus:** Uses a glass tube filled with liquid. As the solid rod inside expands, it displaces liquid. The volume of displaced liquid gives $\\Delta L$ indirectly. This is an elegant optical-mechanical method."
-  ],
-  "confusion": [
-    "❌ treat \"Dulong\" as one blob → ✅ split into: dulong, petit method of determining expansivity of liquid.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: dulong, petit method of determining expansivity of liquid (within Thermal Expansion).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: dulong, petit method of determining expansivity of liquid.",
-    "one worked example for \"Dulong and Petit method of determining expansivity of liquid\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Dulong and Petit method of determining expansivity of liquid\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Dulong and Petit method of determining expansivity of liquid\" with one example.",
-    "compare \"Dulong\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Dulong and Petit method of determining expansivity of liquid\" and verify the answer is plausible."
-  ],
+    "Dulong and Petit's Method: Experimental method to determine absolute coefficient of expansion of a liquid using a U-tube with two limbs at different temperatures. One limb (hot) and one limb (cold) contain the same liquid; columns balance when pressures equal.",
+    "Principle: Pressure at same horizontal level in continuous liquid is equal. For two columns of heights h₁ (cold, t₁) and h₂ (hot, t₂) with densities ρ₁, ρ₂: h₁ρ₁g = h₂ρ₂g. Using ρ₂ = ρ₁/(1 + γΔt): derive γ = (h₁ - h₂)/(h₂·t₂ - h₁·t₁).",
+    "Formula: γ = (h₁ - h₂)/(h₂t₂ - h₁t₁) where h₁ = cold column height, h₂ = hot column height, t₁ = cold temperature, t₂ = hot temperature.",
+    "Absolute vs Apparent: Dulong-Petit gives absolute expansivity (liquid relative to vacuum) since the glass expansion cancels out in the pressure balance method.",
+    "Experimental Setup: U-tube with one limb in ice bath (0°C) and other in steam bath or heated bath. Adjust levels until balance, measure heights and temperatures.",
+    "Corrections: Account for vapor pressure of liquid, capillary effects, and non-uniform temperature along columns.",
+    "Applications: Used for liquids like water, mercury, alcohol where accurate expansivity needed for thermometer design and thermal engineering."],
+  "specificConditions": [
+    "Liquid Columns in Communication: Two limbs must contain same liquid connected at bottom — pressure equality at bottom.",
+    "Different Temperatures: One limb maintained at reference (e.g., 0°C), other at known higher temperature.",
+    "No Flow: Static equilibrium — liquid not flowing, columns stationary."],
   "formulas": [
-    "Governing equation for \"Dulong and Petit method of determining expansivity of liquid\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Dulong and Petit method of determining expansivity of liquid\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
-  ],
+    "Pressure balance: h₁ρ₁g = h₂ρ₂g",
+    "Density relation: ρ₂ = ρ₁/(1 + γΔt)",
+    "Expansivity: γ = (h₁ - h₂)/(h₂t₂ - h₁t₁)",
+    "Absolute expansivity: γ_absolute = γ_apparent + γ_glass"],
   "keyPoints": [
-    "• Dulong",
-    "• Petit method of determining expansivity of liquid"
-  ],
-  "summary": "Dulong and Petit method of determining expansivity of liquid (Thermal Expansion, Physics, class-11-notes) covers Dulong, Petit method of determining expansivity of liquid. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+    "Dulong-Petit determines absolute liquid expansivity using U-tube at two temperatures.",
+    "Pressure equality: h₁ρ₁ = h₂ρ₂ at same level.",
+    "Formula: γ = (h₁ - h₂)/(h₂t₂ - h₁t₁).",
+    "Method eliminates container expansion effect.",
+    "Requires two temperature baths and height measurements."],
+  "importantStatements": [
+    "Statement 1: Dulong-Petit method uses a U-tube with liquid columns at two different temperatures.",
+    "Statement 2: Pressure balance at bottom: h₁ρ₁g = h₂ρ₂g.",
+    "Statement 3: Absolute expansivity γ = (h₁ - h₂)/(h₂t₂ - h₁t₁).",
+    "Statement 4: Method gives absolute expansivity independent of container expansion.",
+    "Statement 5: One limb at reference temperature (0°C), other at measured higher temperature."],
+  "importantNotes": [
+    "The method determines absolute expansivity — glass expansion doesn't enter the formula.",
+    "Accuracy depends on precise height and temperature measurements.",
+    "Vapor pressure and capillary effects must be minimized or corrected.",
+    "Commonly used for mercury, water, alcohol expansivity determination."],
+  "examShortTricks": [
+    "γ = (h₁ - h₂)/(h₂t₂ - h₁t₁) — memorize formula.",
+    "h₁ = cold (denser, taller column), h₂ = hot (less dense, shorter column).",
+    "Denominator can be written h₂t₂ - h₁t₁ — check signs.",
+    "Method gives absolute expansivity directly."],
+  "examNotes": [
+    "NEB frequently asks to describe Dulong-Petit method with diagram and derive formula.",
+    "Derive from pressure balance h₁ρ₁ = h₂ρ₂.",
+    "Explain why method gives absolute (not apparent) expansivity.",
+    "State experimental procedure and precautions."],
+  "examples": [
+    "h₁ = 100 cm at t₁ = 0°C, h₂ = 96 cm at t₂ = 80°C: γ = (100-96)/(96×80 - 100×0) = 4/7680 = 5.2×10⁻⁴ /°C.",
+    "Water expansivity ~2.1×10⁻⁴ /°C (20-50°C range), mercury ~1.8×10⁻⁴ /°C.",
+    "If h₁ = h₂ (equal heights), γ = 0 — no expansion (or temperatures equal)."],
+  "practiceQuestions": [
+    "Q1. Describe Dulong-Petit method for determining absolute expansivity of a liquid.",
+    "Q2. Derive γ = (h₁ - h₂)/(h₂t₂ - h₁t₁) from pressure balance.",
+    "Q3. Explain why Dulong-Petit gives absolute expansivity.",
+    "Q4. Given h₁ = 120 cm at 0°C, h₂ = 115 cm at 100°C, find liquid expansivity.",
+    "Q5. What precautions are needed in Dulong-Petit experiment?",
+    "Q6. Distinguish between absolute and apparent expansivity of liquids."],
+  "practice": [
+    "Derive expansivity formula from pressure balance.",
+    "Calculate γ from measured h₁, h₂, t₁, t₂.",
+    "Describe experimental setup with diagram.",
+    "Explain absolute vs apparent expansivity.",
+    "Identify sources of error and corrections."],
+  "universalFacts": [
+    "Dulong and Petit (French physicists, early 19th century) also known for Dulong-Petit law of specific heat (c ≈ 3R for solids).",
+    "Mercury expansivity ~1.8×10⁻⁴ /°C makes it suitable for thermometers (uniform expansion).",
+    "Water expansivity varies with temperature — negative below 4°C, positive above.",
+    "Absolute expansivity needed for designing accurate liquid thermometers."],
+  "confusion": [
+    "Confusing absolute with apparent expansivity: Dulong-Petit gives absolute (no container correction needed).",
+    "Swapping h₁ and h₂ in formula: h₁ is colder/denser/taller column.",
+    "Thinking container expansion matters: It cancels in this method.",
+    "Forgetting temperatures must be different for measurement.",
+    "Using Celsius temperatures directly — fine since ΔT same in °C and K."],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Dulong and Petit method of determining expansivity of liquid\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
-}
+      "question": "Dulong-Petit method determines:",
+      "options": ["Apparent expansivity", "Absolute expansivity", "Linear expansivity", "Specific heat"],
+      "answer": "B",
+      "explanation": "Method gives absolute expansivity of liquid independent of container."
+    },
+    {
+      "question": "In Dulong-Petit formula γ = (h₁ - h₂)/(h₂t₂ - h₁t₁):",
+      "options": ["h₁ > h₂ always", "h₁ < h₂ always", "h₁ = h₂", "Either"],
+      "answer": "A",
+      "explanation": "Cold liquid denser → taller column h₁ > h₂."
+    },
+    {
+      "question": "Dulong-Petit uses:",
+      "options": ["Single temperature bath", "Two temperature baths", "Three temperature baths", "No temperature bath"],
+      "answer": "B",
+      "explanation": "One limb at reference temp, other at higher temp."
+    },
+    {
+      "question": "Pressure balance in U-tube:",
+      "options": ["h₁ = h₂", "h₁ρ₁ = h₂ρ₂", "h₁/ρ₁ = h₂/ρ₂", "h₁ + h₂ = constant"],
+      "answer": "B",
+      "explanation": "Equal pressure at same level in connected liquid: h₁ρ₁g = h₂ρ₂g."
+    },
+    {
+      "question": "Why absolute expansivity?:",
+      "options": ["Container expansion included", "Container expansion cancels", "No container used", "Vacuum container"],
+      "answer": "B",
+      "explanation": "Pressure balance method eliminates container expansion effect."
+    }],
+  "animation3D": "dulong-petit-method",
+  "motionGraphics": "liquid-expansion-utube",
+  "visualType": "dulong-petit",
+  "summary": "Dulong-Petit method determines absolute liquid expansivity using U-tube with columns at two temperatures. Pressure balance h₁ρ₁ = h₂ρ₂ gives γ = (h₁ - h₂)/(h₂t₂ - h₁t₁). Method eliminates container expansion, giving absolute expansivity directly."}

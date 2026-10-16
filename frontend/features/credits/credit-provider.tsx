@@ -158,8 +158,12 @@ export function CreditProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const isUnlocked = useCallback(
-    (key: string) => isUnlockedIn(unlocks, key),
-    [unlocks],
+    // A window only counts while a session is signed in. Unlock windows live
+    // in localStorage (per browser, not per account), so logging out must
+    // re-lock everything in the same click — a guest can never inherit the
+    // previous account's open windows.
+    (key: string) => isAuthenticated && isUnlockedIn(unlocks, key),
+    [isAuthenticated, unlocks],
   );
 
   const openModule = useCallback(

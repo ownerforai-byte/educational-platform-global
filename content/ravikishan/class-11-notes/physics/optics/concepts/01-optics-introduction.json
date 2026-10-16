@@ -3,15 +3,135 @@
   "unitSlug": "optics",
   "topicSlug": "optics-introduction",
   "topicTitle": "Optics — Introduction",
-  "relevance": 40,
+  "relevance": 75,
   "animation3D": "optics",
   "motionGraphics": "optics",
-  "summary": "Geometrical (ray) optics and wave optics: light obeys reflection and refraction (Snell's law) derived from Fermat's principle; interference, diffraction and polarization demand the wave picture. Ray optics is valid while object sizes and apertures are ≫ the wavelength.",
-  "specificConditions": [
-    "**Optical Principles:** The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁sinθ₁ = n₂sinθ₂). These laws derive from Fermat's principle of least time.",
-    "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
-    "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  "visualType": "ray-optics",
+  "summary": "Geometrical (ray) optics and wave optics: light obeys reflection and refraction (Snell's law) derived from Fermat's principle; interference, diffraction and polarization demand the wave picture. Ray optics is valid while object sizes and apertures are much greater than the wavelength.",
+  "notes": [
+    "Nature of Light: Light is an electromagnetic wave that exhibits both wave and particle (photon) behavior. Speed of light in vacuum c ≈ 3 × 10⁸ m/s.",
+    "Ray Optics (Geometrical Optics): Light travels in straight lines in a homogeneous medium. Valid when object sizes and apertures are much larger than the wavelength λ. Deals with reflection, refraction, and image formation by mirrors and lenses.",
+    "Wave Optics (Physical Optics): Explains interference, diffraction, and polarization — phenomena that cannot be explained by ray optics alone. Required when apertures or obstacles are comparable to λ.",
+    "Fermat's Principle of Least Time: Light travels between two points along the path that takes the least time. This principle derives both the law of reflection and Snell's law of refraction.",
+    "Reflection: Angle of incidence equals angle of reflection (i = r). The incident ray, reflected ray, and normal all lie in the same plane.",
+    "Refraction: When light passes from one medium to another, it bends. Snell's law: n₁ sin θ₁ = n₂ sin θ₂, where n is the refractive index of the medium.",
+    "Refractive Index: n = c/v, where v is the speed of light in the medium. Absolute refractive index is relative to vacuum. Relative refractive index ⁿ₂n₁ = v₁/v₂ = n₂/n₁."
   ],
-  "duplicateType": 1,
-  "notes": []
+  "specificConditions": [
+    "Optical Principles: The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁ sin θ₁ = n₂ sin θ₂). These laws derive from Fermat's principle of least time.",
+    "Wave Nature of Light: Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
+    "Approximations and Validity: Ray optics (geometrical optics) is valid when object sizes are much greater than wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  ],
+  "formulas": [
+    "Speed of light: c = λf, where c ≈ 3 × 10⁸ m/s in vacuum",
+    "Refractive index: n = c/v, where v is speed of light in the medium",
+    "Snell's law: n₁ sin θ₁ = n₂ sin θ₂",
+    "Law of reflection: angle of incidence i = angle of reflection r",
+    "Relative refractive index: ⁿ₂n₁ = v₁/v₂ = n₂/n₁"
+  ],
+  "keyPoints": [
+    "Light exhibits both wave and particle (photon) dual nature.",
+    "Ray optics is valid when object sizes ≫ wavelength λ.",
+    "Wave optics explains interference, diffraction, and polarization.",
+    "Fermat's principle of least time derives reflection and refraction laws.",
+    "Refractive index n = c/v measures how much light slows in a medium."
+  ],
+  "importantStatements": [
+    "Statement 1: The speed of light in vacuum is approximately 3 × 10⁸ m/s.",
+    "Statement 2: Snell's law states n₁ sin θ₁ = n₂ sin θ₂ for refraction at an interface.",
+    "Statement 3: The law of reflection states angle of incidence equals angle of reflection.",
+    "Statement 4: Fermat's principle of least time is the foundation of geometrical optics.",
+    "Statement 5: Wave optics is needed when apertures are comparable to the wavelength."
+  ],
+  "importantNotes": [
+    "Refractive index is dimensionless and has no units.",
+    "When light enters a denser medium, it bends towards the normal.",
+    "When light enters a rarer medium, it bends away from the normal.",
+    "The frequency of light remains unchanged during refraction; wavelength and speed change.",
+    "Total internal reflection occurs when light travels from denser to rarer medium beyond the critical angle."
+  ],
+  "examShortTricks": [
+    "n = c/v — higher n means slower light in medium.",
+    "Denser to rarer → bends away from normal.",
+    "Rarer to denser → bends towards normal.",
+    "i = r for reflection — always measure from normal.",
+    "c = λf — frequency stays constant across media."
+  ],
+  "examNotes": [
+    "NEB frequently asks to state and explain Snell's law and the laws of reflection.",
+    "Refractive index numericals: n = c/v, real depth/apparent depth = n.",
+    "Fermat's principle is often asked as a theoretical derivation question.",
+    "Distinguish between ray optics (images, mirrors, lenses) and wave optics (interference, diffraction)."
+  ],
+  "examples": [
+    "Light travels from air (n ≈ 1) into glass (n = 1.5). Speed in glass: v = c/n = (3 × 10⁸)/1.5 = 2 × 10⁸ m/s.",
+    "A ray strikes a plane mirror at 30° to the surface. Angle of incidence = 60° (from normal), angle of reflection = 60°.",
+    "Light passes from water (n = 1.33) to air (n = 1.00) at 45° incidence. Using Snell's law: 1.33 sin 45° = 1.00 sin θ₂ → sin θ₂ = 0.94 → θ₂ ≈ 70°."
+  ],
+  "practiceQuestions": [
+    "Q1. State the laws of reflection and explain how they are derived from Fermat's principle.",
+    "Q2. What is refractive index? How is it related to the speed of light in a medium?",
+    "Q3. State Snell's law of refraction and define each term.",
+    "Q4. When is ray optics valid? When is wave optics required?",
+    "Q5. Calculate the speed of light in a medium with refractive index 1.5.",
+    "Q6. Distinguish between geometrical optics and physical optics."
+  ],
+  "practice": [
+    "Apply Snell's law to compute refraction angles at various interfaces.",
+    "Calculate refractive index from speed of light measurements.",
+    "Draw ray diagrams for reflection at plane surfaces.",
+    "Solve numericals involving c = λf and n = c/v.",
+    "Identify situations requiring wave optics vs ray optics treatment."
+  ],
+  "universalFacts": [
+    "The speed of light in vacuum (c ≈ 3 × 10⁸ m/s) is a fundamental constant of nature.",
+    "Ibn al-Haytham (Alhazen) is considered the father of optics for his work on reflection and refraction.",
+    "Willebrord Snellius discovered the law of refraction in 1621, though it was published by Descartes.",
+    "The human eye is most sensitive to green-yellow light (~555 nm wavelength).",
+    "Fiber optics communication relies on total internal reflection to transmit light over long distances."
+  ],
+  "confusion": [
+    "Confusing reflection with refraction: Reflection = light bounces back; Refraction = light bends entering a new medium.",
+    "Thinking speed changes during reflection: Speed remains the same in the same medium during reflection.",
+    "Believing frequency changes during refraction: Frequency stays constant; only wavelength and speed change.",
+    "Measuring angles from the surface instead of the normal: All optical angles are measured from the normal.",
+    "Confusing refractive index with optical density: Higher n means optically denser, not necessarily physically denser."
+  ],
+  "mcs": [
+    {
+      "question": "The speed of light in vacuum is approximately:",
+      "options": ["3 × 10⁶ m/s", "3 × 10⁸ m/s", "3 × 10¹⁰ m/s", "3 × 10¹² m/s"],
+      "answer": "B",
+      "explanation": "c ≈ 3 × 10⁸ m/s is the speed of light in vacuum."
+    },
+    {
+      "question": "Refractive index n = c/v means:",
+      "options": ["Higher n = faster light", "Higher n = slower light", "n has no effect on speed", "n = v/c"],
+      "answer": "B",
+      "explanation": "n = c/v, so higher n means smaller v (slower light in the medium)."
+    },
+    {
+      "question": "According to the law of reflection:",
+      "options": ["i > r", "i < r", "i = r", "i + r = 90°"],
+      "answer": "C",
+      "explanation": "Angle of incidence equals angle of reflection, both measured from the normal."
+    },
+    {
+      "question": "Ray optics is valid when:",
+      "options": ["Object sizes ≪ λ", "Object sizes ≈ λ", "Object sizes ≫ λ", "Always valid"],
+      "answer": "C",
+      "explanation": "Geometrical optics applies when dimensions are much larger than the wavelength."
+    },
+    {
+      "question": "Which phenomenon requires wave optics?",
+      "options": ["Reflection", "Refraction", "Interference", "Image formation by lens"],
+      "answer": "C",
+      "explanation": "Interference is a wave phenomenon that cannot be explained by ray optics."
+    }
+  ],
+  "specificConditions": [
+    "Optical Principles: The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁ sin θ₁ = n₂ sin θ₂). These laws derive from Fermat's principle of least time.",
+    "Wave Nature of Light: Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
+    "Approximations and Validity: Ray optics (geometrical optics) is valid when object sizes are much greater than wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  ]
 }
