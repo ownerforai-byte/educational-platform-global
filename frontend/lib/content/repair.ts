@@ -143,16 +143,30 @@ export function pruneBlankEntries(note: Json, changes: RepairChange[]): void {
  * 3 — resolve an MCQ answer to the option LETTER the schema demands.
  *
  * Accepted shapes (measured in the corpus): `"C"`, `"(b)"`, `"A."`,
- * `"B — the velocity is zero"`, `"C (h ∝ t²)"`. Anything else — a bare `2`,
- * `"all of the above"`, `null` — is returned as null instead of guessed: a
- * silently wrong answer key is worse than a failing gate.
+ * `"B — the velocity is zero"`, `"C (h ∝ t²)"`, and the full option text
+ * (`"Anadromous migration"`, matched only when it equals exactly one option).
+ * Anything else — a bare `2`, `"all of the above"`, `null` — is returned as
+ * null instead of guessed: a silently wrong answer key is worse than a failing gate.
  */
 export function normalizeMcqAnswer(
   raw: unknown,
   optionCount: number,
+  options?: readonly unknown[],
 ): { answer: string; note?: string } | null {
   if (typeof raw !== "string") return null;
   const text = raw.trim();
+
+  // Exact option text first: an option such as "B-cells" must not be read as letter B.
+  if (Array.isArray(options)) {
+    const needle = text.toLowerCase();
+    const hits = options
+      .map((o, i) => ({ o, i }))
+      .filter(({ o }) => typeof o === "string" && o.trim().toLowerCase() === needle);
+    if (hits.length === 1 && hits[0].i < optionCount) {
+      return { answer: String.fromCharCode(65 + hits[0].i) };
+    }
+  }
+
   const m = /^[([]?\s*([A-Ha-h])\s*[)\].]?\s*(?:(?:—|–|-|:)\s*(.+)|\((.+)\))?$/.exec(text);
   if (!m) return null;
 
@@ -183,7 +197,7 @@ export function normalizeMcqAnswers(note: Json, changes: RepairChange[]): void {
     list.forEach((item, i) => {
       if (!isObj(item) || !Array.isArray(item.options)) return;
       if (typeof item.answer === "string" && /^[A-H]$/.test(item.answer.trim())) return; // already canonical
-      const fixed = normalizeMcqAnswer(item.answer, item.options.length);
+      const fixed = normalizeMcqAnswer(item.answer, item.options.length, item.options);
       if (!fixed) return;
 
       const before = JSON.stringify(item.answer);

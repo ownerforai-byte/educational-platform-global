@@ -100,12 +100,17 @@ describe("normalizeMcqAnswer", () => {
     expect(normalizeMcqAnswer("A.", 4)).toEqual({ answer: "A" });
     expect(normalizeMcqAnswer("C (h ∝ t²)", 4)).toEqual({ answer: "C", note: "h ∝ t²" });
     expect(normalizeMcqAnswer("B — the velocity is zero", 4)).toEqual({ answer: "B", note: "the velocity is zero" });
+    // Full option text maps to its letter; a letter-looking prefix inside an option does not win.
+    const opts = ["Anadromous migration", "B-cells", "Catadromous migration", "Dispersal"];
+    expect(normalizeMcqAnswer("Anadromous migration", 4, opts)).toEqual({ answer: "A" });
+    expect(normalizeMcqAnswer("b-cells", 4, opts)).toEqual({ answer: "B" });
   });
 
   it("refuses to guess", () => {
     expect(normalizeMcqAnswer(2, 4)).toBeNull(); // numeric index — 0- or 1-based? unknowable
     expect(normalizeMcqAnswer("2", 4)).toBeNull();
     expect(normalizeMcqAnswer("all of the above", 4)).toBeNull();
+    expect(normalizeMcqAnswer("Dispersal", 4)).toBeNull(); // no options passed, so option text cannot be matched
     expect(normalizeMcqAnswer("E", 4)).toBeNull(); // letter beyond the options
     expect(normalizeMcqAnswer(null, 4)).toBeNull();
   });
