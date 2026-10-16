@@ -74,10 +74,10 @@ function setSecurityHeaders(response: NextResponse) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
+      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://lqzjcwbkpeiqslqhxxmu.supabase.co https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
       // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
       // Supabase Storage, Google Drive previews, and the video players.
-      "frame-src 'self' https://tsvbksfegvdjwczzfdcx.supabase.co https://drive.google.com https://www.youtube.com https://player.vimeo.com",
+      "frame-src 'self' https://lqzjcwbkpeiqslqhxxmu.supabase.co https://tsvbksfegvdjwczzfdcx.supabase.co https://drive.google.com https://www.youtube.com https://player.vimeo.com",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",

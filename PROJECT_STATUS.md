@@ -325,7 +325,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
   the `0a52272b` ship push (and on the earlier completion push `7e6a9d26`). Gates: content schema / build parity / visuals / mindmaps /
   ledger (+ the mobile-responsive gate), frontend lint + typecheck + tests + build, backend
   tests + build, plus live smoke and the deployed content-ledger audit after deploys.
-- **Supabase project:** `tsvbksfegvdjwczzfdcx` (Management API token in `backend/.env`).
+- **Supabase project:** `lqzjcwbkpeiqslqhxxmu` (rn-global, ap-northeast-2; migrated 2026-10-16 from legacy `tsvbksfegvdjwczzfdcx` — Management API token in `backend/.env`).
 
 ### Auth architecture (as shipped 2026-09-25)
 - httpOnly cookies: `sb-access-token` (1h) + `sb-refresh-token` (30d), set at login/signup.

@@ -24,7 +24,8 @@ const LOCAL_DOC_ROOTS = ["/pdfs/", "/materials/"] as const;
 
 /** Hosts the CSP `frame-src` allowlist lets us embed (see `frontend/proxy.ts`). */
 const FRAME_HOSTS = new Set([
-  "tsvbksfegvdjwczzfdcx.supabase.co",
+  "lqzjcwbkpeiqslqhxxmu.supabase.co", // rn-global (current project)
+  "tsvbksfegvdjwczzfdcx.supabase.co", // legacy Storage bucket (kept for migrated doc URLs)
   "drive.google.com",
   "docs.google.com",
   "www.youtube.com",

@@ -35,6 +35,7 @@ describe("isViewableSrc", () => {
   it("accepts the CSP frame-src hosts and nothing else", () => {
     expect(isViewableSrc("https://drive.google.com/file/d/abc123/view?usp=sharing")).toBe(true);
     expect(isViewableSrc("https://tsvbksfegvdjwczzfdcx.supabase.co/object/public/bucket/a.pdf")).toBe(true);
+    expect(isViewableSrc("https://lqzjcwbkpeiqslqhxxmu.supabase.co/object/public/bucket/a.pdf")).toBe(true);
     expect(isViewableSrc("https://www.youtube.com/watch?v=abc")).toBe(true);
     expect(isViewableSrc("https://evil.example/file.pdf")).toBe(false);
     expect(isViewableSrc("javascript:alert(1)")).toBe(false);
@@ -70,6 +71,9 @@ describe("frameSrcFor", () => {
     expect(frameSrcFor("/pdfs/meiosis.pdf")).toBe("/pdfs/meiosis.pdf");
     expect(frameSrcFor("https://tsvbksfegvdjwczzfdcx.supabase.co/x.pdf")).toBe(
       "https://tsvbksfegvdjwczzfdcx.supabase.co/x.pdf",
+    );
+    expect(frameSrcFor("https://lqzjcwbkpeiqslqhxxmu.supabase.co/x.pdf")).toBe(
+      "https://lqzjcwbkpeiqslqhxxmu.supabase.co/x.pdf",
     );
   });
 });

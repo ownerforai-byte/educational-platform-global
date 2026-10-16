@@ -20,6 +20,7 @@ describe("proxy security headers", () => {
     expect(csp).toContain("https://www.youtube.com");
     expect(csp).toContain("https://player.vimeo.com");
     expect(csp).toContain("https://tsvbksfegvdjwczzfdcx.supabase.co");
+    expect(csp).toContain("https://lqzjcwbkpeiqslqhxxmu.supabase.co");
   });
 
   it("keeps clickjacking protection: same-origin framing only", () => {
