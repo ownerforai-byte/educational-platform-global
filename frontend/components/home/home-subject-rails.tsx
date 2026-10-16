@@ -8,6 +8,9 @@ import {
 } from "@/lib/home-subject-slides";
 import {
   HOME_RAIL_CLASS_12_SLUG,
+  HOME_RAIL_CLASS_SLUGS,
+  HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT,
+  HOME_RAIL_MAX_HOME_CARDS_PER_UNIT,
   groupReadyByUnit,
   loadHomeRailCorpus,
   toRailSlideData,
@@ -33,7 +36,6 @@ import { SubjectRails } from "./subject-rails";
 const CLASS_SLUG = "class-11-notes";
 /** Same 10-year window the PYQ bank page advertises, so the numbers match. */
 const MAX_YEARS = 10;
-
 /** The six rail subjects — read straight from the slide data, never duplicated. */
 const RAIL_SUBJECT_SLUGS = HOME_SUBJECT_RAILS.map((rail) => rail.slug);
 
@@ -126,18 +128,22 @@ export async function HomeSubjectRails() {
  *
  * `content/ravikishan/<class>/<subject>/<unit>/rails/*.rail.json`
  * (contract: frontend/AGENTS.md §9) carries one canonical card per syllabus
- * unit. Ready cards (draft flipped off, all nine rows written) stream here —
- * grouped under a divider per unit in syllabus order (Class 11 units, then
- * Class 12), after the hand-written opening cards and before the Class 12
- * teaser — so any agent adding content to the corpus changes what the home
- * page shows on the next build, with zero frontend edits. Draft/TODO
- * skeletons and broken files never reach the rail; `--check` reports them
- * instead. Class 12 cards retire the teaser once they exist.
+ * unit. The home page reads a bounded sample of ready cards per subject,
+ * grouped under unit dividers in syllabus order, so the loop stays small even
+ * as the full Class 11/12 corpus grows. The six-card quota applies separately
+ * to each class/subject. Draft/TODO skeletons and
+ * broken files never reach the rail; `--check` reports them instead. Class 12 cards retire
+ * the teaser once they exist.
  */
 function mergeCorpusRails(): HomeSubjectRail[] {
   let entries: HomeRailEntry[] = [];
   try {
-    entries = loadHomeRailCorpus();
+    entries = loadHomeRailCorpus(
+      undefined,
+      undefined,
+      HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT,
+      HOME_RAIL_MAX_HOME_CARDS_PER_UNIT,
+    );
   } catch {
     // Corpus unreadable (stripped build) — rails stream the built-in cards.
     return HOME_SUBJECT_RAILS;
@@ -162,8 +168,24 @@ function mergeCorpusRails(): HomeSubjectRail[] {
       ...data,
       icon: data.iconName,
     });
-    const grouped: HomeSubjectSlide[] = groups.flatMap((group) => [
-      {
+    const grouped: HomeSubjectSlide[] = [];
+    const remainingByClass: Record<string, number> = Object.fromEntries(
+      HOME_RAIL_CLASS_SLUGS.map((classSlug) => [
+        classSlug,
+        HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT,
+      ]),
+    );
+    let remainingCards = Object.values(remainingByClass).reduce(
+      (total, count) => total + count,
+      0,
+    );
+    for (const group of groups) {
+      if (remainingCards === 0) break;
+      const classRemaining = remainingByClass[group.classSlug] ?? 0;
+      if (classRemaining === 0) continue;
+      const entries = group.entries.slice(0, classRemaining);
+      if (entries.length === 0) continue;
+      grouped.push({
         tag: group.classSlug === HOME_RAIL_CLASS_12_SLUG ? "Class 12" : "Class 11",
         title: group.unitTitle,
         rows: [],
@@ -174,9 +196,11 @@ function mergeCorpusRails(): HomeSubjectRail[] {
           unitTitle: group.unitTitle,
           meta: `${group.classSlug === HOME_RAIL_CLASS_12_SLUG ? "Class 12" : "Class 11"} · ${group.entries.length} card${group.entries.length === 1 ? "" : "s"}`,
         },
-      },
-      ...group.entries.map((entry) => resolve(toRailSlideData(entry))),
-    ]);
+      });
+      grouped.push(...entries.map((entry) => resolve(toRailSlideData(entry))));
+      remainingByClass[group.classSlug] = classRemaining - entries.length;
+      remainingCards -= entries.length;
+    }
     const slides: HomeSubjectSlide[] = [...curated, ...grouped, ...teaser];
     return { ...rail, duration: rescaleDuration(rail.duration, rail.slides.length, slides.length), slides };
   });

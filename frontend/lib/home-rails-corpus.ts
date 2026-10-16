@@ -32,6 +32,9 @@ export const HOME_RAIL_CLASS_SLUGS = [
   HOME_RAIL_CLASS_12_SLUG,
 ] as const;
 export const HOME_RAIL_SCHEMA = "home-rail/v1";
+/** The home page shows one featured card from a few units per class/subject. */
+export const HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT = 6;
+export const HOME_RAIL_MAX_HOME_CARDS_PER_UNIT = 1;
 export const RAIL_DIR_NAME = "rails";
 export const RAIL_FILE_SUFFIX = ".rail.json";
 /** Row/card text starting with this marker counts as unwritten. */
@@ -281,81 +284,102 @@ export function buildRailSkeleton(
 }
 
 /**
- * Load every `rails/*.rail.json` card for Class 11. Never throws: a missing
- * dir contributes no entries, a broken file contributes an unreadable entry
- * the `--check` script reports (the rail itself only ever renders ready cards).
+ * Load `rails/*.rail.json` cards in syllabus order. By default this scans the
+ * full corpus for authoring tools and tests; the home page can pass a per-
+ * subject ready-card limit to avoid reading the entire corpus on each request.
+ * Never throws: missing dirs contribute no entries and broken files are
+ * reported as unreadable entries (the rail itself only renders ready cards).
  */
 export function loadHomeRailCorpus(
   corpusRoot = findCorpusRoot(),
   classSlugs: readonly string[] = HOME_RAIL_CLASS_SLUGS,
+  maxReadyEntriesPerSubject = Number.POSITIVE_INFINITY,
+  maxReadyEntriesPerUnit = Number.POSITIVE_INFINITY,
 ): HomeRailEntry[] {
   const entries: HomeRailEntry[] = [];
+  const readyCounts = new Map<string, number>();
+  const readyCountsByUnit = new Map<string, number>();
   for (const classSlug of classSlugs) {
     for (const subject of homeRailSubjects(classSlug)) {
       for (const unit of subject.units) {
-      const unitDir = resolveUnitContentDir(
-        corpusRoot,
-        classSlug,
-        subject.slug,
-        unit.id,
-      );
-      if (!unitDir) continue;
-      const railsDir = path.join(unitDir, RAIL_DIR_NAME);
-      if (!fs.existsSync(railsDir)) continue;
-      const files = fs
-        .readdirSync(railsDir)
-        .filter((f) => f.endsWith(RAIL_FILE_SUFFIX))
-        .sort((a, b) => {
-          const canonical = `${unit.id}${RAIL_FILE_SUFFIX}`;
-          if (a === canonical) return -1;
-          if (b === canonical) return 1;
-          return a.localeCompare(b);
-        });
-      for (const file of files) {
-        const abs = path.join(railsDir, file);
-        const rel = path
-          .relative(corpusRoot, abs)
-          .replaceAll(path.sep, "/");
-        let parsed: unknown;
-        try {
-          parsed = JSON.parse(fs.readFileSync(abs, "utf8"));
-        } catch (err) {
-          entries.push({
-            classSlug,
-            subjectSlug: subject.slug,
-            unitId: unit.id,
-            file: rel,
-            record: {} as HomeRailFile,
-            ready: false,
-            reasons: [`unparseable JSON: ${String(err).slice(0, 120)}`],
-          });
-          continue;
-        }
-        const shape = checkRailShape(parsed);
-        if (shape.length > 0) {
-          entries.push({
-            classSlug,
-            subjectSlug: subject.slug,
-            unitId: unit.id,
-            file: rel,
-            record: parsed as HomeRailFile,
-            ready: false,
-            reasons: shape,
-          });
-          continue;
-        }
-        const record = parsed as HomeRailFile;
-        const reasons = railReadiness(record);
-        entries.push({
+        const subjectKey = `${classSlug}/${subject.slug}`;
+        const unitKey = `${subjectKey}/${unit.id}`;
+        if ((readyCounts.get(subjectKey) ?? 0) >= maxReadyEntriesPerSubject) break;
+        if ((readyCountsByUnit.get(unitKey) ?? 0) >= maxReadyEntriesPerUnit) continue;
+        const unitDir = resolveUnitContentDir(
+          corpusRoot,
           classSlug,
-          subjectSlug: subject.slug,
-          unitId: unit.id,
-          file: rel,
-          record,
-          ready: reasons.length === 0,
-          reasons,
-        });
-      }
+          subject.slug,
+          unit.id,
+        );
+        if (!unitDir) continue;
+        const railsDir = path.join(unitDir, RAIL_DIR_NAME);
+        if (!fs.existsSync(railsDir)) continue;
+        const files = fs
+          .readdirSync(railsDir)
+          .filter((f) => f.endsWith(RAIL_FILE_SUFFIX))
+          .sort((a, b) => {
+            const canonical = `${unit.id}${RAIL_FILE_SUFFIX}`;
+            if (a === canonical) return -1;
+            if (b === canonical) return 1;
+            return a.localeCompare(b);
+          });
+        for (const file of files) {
+          const abs = path.join(railsDir, file);
+          const rel = path
+            .relative(corpusRoot, abs)
+            .replaceAll(path.sep, "/");
+          let parsed: unknown;
+          try {
+            parsed = JSON.parse(fs.readFileSync(abs, "utf8"));
+          } catch (err) {
+            entries.push({
+              classSlug,
+              subjectSlug: subject.slug,
+              unitId: unit.id,
+              file: rel,
+              record: {} as HomeRailFile,
+              ready: false,
+              reasons: [`unparseable JSON: ${String(err).slice(0, 120)}`],
+            });
+            continue;
+          }
+          const shape = checkRailShape(parsed);
+          if (shape.length > 0) {
+            entries.push({
+              classSlug,
+              subjectSlug: subject.slug,
+              unitId: unit.id,
+              file: rel,
+              record: parsed as HomeRailFile,
+              ready: false,
+              reasons: shape,
+            });
+            continue;
+          }
+          const record = parsed as HomeRailFile;
+          const reasons = railReadiness(record);
+          const ready = reasons.length === 0;
+          entries.push({
+            classSlug,
+            subjectSlug: subject.slug,
+            unitId: unit.id,
+            file: rel,
+            record,
+            ready,
+            reasons,
+          });
+          if (ready) {
+            readyCounts.set(subjectKey, (readyCounts.get(subjectKey) ?? 0) + 1);
+            readyCountsByUnit.set(unitKey, (readyCountsByUnit.get(unitKey) ?? 0) + 1);
+            if (
+              (readyCountsByUnit.get(unitKey) ?? 0) >= maxReadyEntriesPerUnit ||
+              (readyCounts.get(subjectKey) ?? 0) >= maxReadyEntriesPerSubject
+            ) {
+              break;
+            }
+          }
+        }
       }
     }
   }

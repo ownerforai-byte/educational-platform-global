@@ -6,6 +6,8 @@ import { SYLLABUS } from "@/lib/syllabus";
 import {
   HOME_RAIL_CLASS_12_SLUG,
   HOME_RAIL_CLASS_SLUG,
+  HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT,
+  HOME_RAIL_MAX_HOME_CARDS_PER_UNIT,
   HOME_RAIL_ROWS,
   buildRailSkeleton,
   groupReadyByUnit,
@@ -77,6 +79,46 @@ describe("home rail corpus", () => {
     for (const e of entries) {
       expect(e.file).toMatch(/\.rail\.json$/);
       expect(Array.isArray(e.reasons)).toBe(true);
+    }
+  });
+
+  it("bounds home-page corpus reads per class, subject, and unit", () => {
+    const entries = loadHomeRailCorpus(
+      corpusRoot(),
+      undefined,
+      HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT,
+      HOME_RAIL_MAX_HOME_CARDS_PER_UNIT,
+    );
+    const readyBySubject = new Map<string, number>();
+    for (const entry of entries) {
+      if (!entry.ready) continue;
+      const key = `${entry.classSlug}/${entry.subjectSlug}`;
+      readyBySubject.set(key, (readyBySubject.get(key) ?? 0) + 1);
+    }
+
+    for (const classSlug of [HOME_RAIL_CLASS_SLUG, HOME_RAIL_CLASS_12_SLUG]) {
+      const classData = SYLLABUS.find((item) => item.slug === classSlug);
+      expect(classData, `missing syllabus class ${classSlug}`).toBeDefined();
+      for (const subject of classData!.subjects) {
+        expect(readyBySubject.get(`${classSlug}/${subject.slug}`) ?? 0).toBeLessThanOrEqual(
+          HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT,
+        );
+      }
+    }
+    const class12 = SYLLABUS.find((item) => item.slug === HOME_RAIL_CLASS_12_SLUG);
+    expect(class12).toBeDefined();
+    expect(entries.filter((entry) => entry.ready).length).toBeLessThanOrEqual(
+      (class11.subjects.length + class12!.subjects.length) *
+        HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT,
+    );
+    const readyByUnit = new Map<string, number>();
+    for (const entry of entries) {
+      if (!entry.ready) continue;
+      const key = `${entry.classSlug}/${entry.subjectSlug}/${entry.unitId}`;
+      readyByUnit.set(key, (readyByUnit.get(key) ?? 0) + 1);
+    }
+    for (const count of readyByUnit.values()) {
+      expect(count).toBeLessThanOrEqual(HOME_RAIL_MAX_HOME_CARDS_PER_UNIT);
     }
   });
 
