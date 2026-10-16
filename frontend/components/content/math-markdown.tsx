@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
 import { registerVeerArtifact } from "@/components/content/veer-artifact";
 import { registerEduVisualInteractive } from "@/components/content/edu-visual";
+import { createLru } from "@/lib/perf/memo";
 
 // The pipeline can emit a <veer-artifact> mount point for a ```run fence; this
 // renderer is the one the chat (and every note surface) puts on screen, so it
@@ -11,6 +12,22 @@ registerVeerArtifact();
 // Automatically activate hover & click inspection interfaces for all SVG diagram
 // labels across every MathMarkdown surface (chat, notes, lessons, lab).
 registerEduVisualInteractive();
+
+/**
+ * Bounded LRU cache of rendered markdown/math HTML so re-renders (tab switches,
+ * quiz interactions, sliders) never re-run the synchronous unified + KaTeX
+ * pipeline on the same string.
+ */
+const renderedHtmlCache = createLru<string>(512);
+
+function renderCachedNoteHtml(content: string): string {
+  if (!content) return "";
+  const hit = renderedHtmlCache.get(content);
+  if (hit !== undefined) return hit;
+  const html = renderNoteHtml(content);
+  renderedHtmlCache.set(content, html);
+  return html;
+}
 
 type MathMarkdownProps = {
   content: string;
@@ -32,7 +49,7 @@ export function MathMarkdown({ content, className }: MathMarkdownProps) {
   return (
     <div
       className={cn("prose dark:prose-invert max-w-none", className)}
-      dangerouslySetInnerHTML={{ __html: renderNoteHtml(content) }}
+      dangerouslySetInnerHTML={{ __html: renderCachedNoteHtml(content) }}
     />
   );
 }

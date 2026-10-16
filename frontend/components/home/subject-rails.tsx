@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Compass, Lightbulb, Pause, Play, Zap } from "lucide-react";
 import {
@@ -505,7 +505,14 @@ function getAcademicEssentials(
 
 const ESSENTIAL_ICONS = [BookOpen, Lightbulb, Compass, Zap] as const;
 
-function SlideCard({  rail,
+/* Memoised: each rail renders its slide set twice (the second copy is the
+   seamless-loop duplicate), and a Pause/Play click re-renders only its own
+   rail section. Without this every card in that rail re-rendered too. The
+   props are stable references (rail, stats), so memo skips the unchanged
+   cards. */
+const SlideCard = memo(SlideCardView);
+
+function SlideCardView({  rail,
   slide,
   stats,
   cardIndex = 0,
@@ -715,8 +722,24 @@ function SlideCard({  rail,
  * that would be wrong is skipped rather than half-drawn. A drawing is inked on
  * white "paper" in both themes, exactly like a textbook figure.
  */
-function RailFigureBox({ figure }: { figure?: SubjectSlideFigure }) {
+/* The guard result depends only on the figure object, which is a stable
+   reference inside the rail data. Cache it so the duplicate copy and every
+   re-render reuse one guarded string instead of running the guard again. */
+const railFigureCache = new WeakMap<
+  SubjectSlideFigure,
+  ReturnType<typeof prepareRailFigure>
+>();
+
+function guardedRailFigure(figure: SubjectSlideFigure) {
+  const cached = railFigureCache.get(figure);
+  if (cached !== undefined) return cached;
   const prepared = prepareRailFigure(figure);
+  railFigureCache.set(figure, prepared);
+  return prepared;
+}
+
+function RailFigureBox({ figure }: { figure?: SubjectSlideFigure }) {
+  const prepared = figure ? guardedRailFigure(figure) : null;
   if (!prepared) return null;
   return (
     <figure className="rail-figure">

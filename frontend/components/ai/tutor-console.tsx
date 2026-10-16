@@ -79,6 +79,8 @@ import { AiSparkBadge, recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { StepCards } from "@/components/chat/step-cards";
+import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
@@ -1281,11 +1283,18 @@ export function TutorConsole({
                           12px base keeps long answers, wide GFM tables and
                           fenced-svg figures on screen without scrolling past
                           the concept (owner request 2026-10-08). */}
-                      <InteractiveMarkdown
-                        content={msg.content}
-                        blockCopy
-                        className="tutor-dense chat-prose text-[12px] leading-[1.55]"
-                      />
+                      {splitStepBlocks(msg.content).map((segment, segIndex) =>
+                        segment.kind === "steps" ? (
+                          <StepCards key={segIndex} steps={segment.steps} />
+                        ) : (
+                          <InteractiveMarkdown
+                            key={segIndex}
+                            content={segment.text}
+                            blockCopy
+                            className="tutor-dense chat-prose text-[12px] leading-[1.55]"
+                          />
+                        ),
+                      )}
                     </div>
 
                     {/* Shared per-answer actions — identical to the widget's */}

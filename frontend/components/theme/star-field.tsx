@@ -82,9 +82,11 @@ export function StarField() {
     let rafId = 0;
     let running = true;
     let lastTs = 0;
+    let lastDrawTs = 0;
+    const TARGET_FRAME_INTERVAL_MS = 32; // ~30 fps cap to keep main thread responsive
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const dpr = () => Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = () => Math.min(window.devicePixelRatio || 1, 1.5);
 
     const build = () => {
       width = window.innerWidth;
@@ -126,6 +128,11 @@ export function StarField() {
 
     const paintFrame = (ts: number) => {
       if (!running) return;
+      if (lastDrawTs && ts - lastDrawTs < TARGET_FRAME_INTERVAL_MS) {
+        rafId = requestAnimationFrame(paintFrame);
+        return;
+      }
+      lastDrawTs = ts;
       const dt = lastTs ? Math.min(0.05, (ts - lastTs) / 1000) : 0;
       lastTs = ts;
 

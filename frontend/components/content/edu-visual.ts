@@ -236,13 +236,21 @@ export function registerEduVisualInteractive(): void {
   });
 
   // Delegated mouseenter/mouseover
+  let lastHoveredPart: SVGGElement | null = null;
   document.addEventListener("mouseover", (e) => {
     const target = e.target as Element | null;
-    const partG = target?.closest<SVGGElement>(".edu-visual svg g");
+    if (!target || typeof target.closest !== "function") return;
+    const partG = target.closest<SVGGElement>(".edu-visual svg g");
     if (!partG) {
-      hideTip();
+      if (lastHoveredPart) {
+        lastHoveredPart = null;
+        hideTip();
+      }
       return;
     }
+
+    if (partG === lastHoveredPart) return;
+    lastHoveredPart = partG;
 
     const titleEl = partG.querySelector(":scope > title");
     const raw = (titleEl?.textContent ?? "").trim();
@@ -254,15 +262,20 @@ export function registerEduVisualInteractive(): void {
 
     const info = parsePartTitle(raw);
     showTip(partG, info);
-  });
+  }, { passive: true });
 
   // Delegated mouseleave
   document.addEventListener("mouseout", (e) => {
     const target = e.target as Element | null;
-    if (target?.closest(".edu-visual svg g")) {
+    if (!target || typeof target.closest !== "function") return;
+    const partG = target.closest<SVGGElement>(".edu-visual svg g");
+    if (partG) {
+      const related = (e as MouseEvent).relatedTarget as Element | null;
+      if (related && partG.contains(related)) return;
+      lastHoveredPart = null;
       hideTip();
     }
-  });
+  }, { passive: true });
 
   // Delegated click
   document.addEventListener("click", (e) => {

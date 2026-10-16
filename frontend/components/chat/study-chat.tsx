@@ -24,6 +24,8 @@ import {
 } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { StepCards } from "@/components/chat/step-cards";
+import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -304,7 +306,13 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
                 {m.role === "user" ? (
                   <p className="whitespace-pre-wrap">{m.content}</p>
                 ) : (
-                  <MathMarkdown content={m.content} className="chat-prose" />
+                  splitStepBlocks(m.content).map((segment, j) =>
+                    segment.kind === "steps" ? (
+                      <StepCards key={j} steps={segment.steps} />
+                    ) : (
+                      <MathMarkdown key={j} content={segment.text} className="chat-prose" />
+                    ),
+                  )
                 )}
               </div>
             </div>

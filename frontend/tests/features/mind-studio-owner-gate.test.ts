@@ -74,19 +74,15 @@ describe("Diagram Hub route layout — gate now owns the lock", () => {
     expect(page).toContain("Owner");
   });
 
-  it("shows the home launcher inside the owner gate only", () => {
+  it("keeps the Diagram Hub launcher off the home page (only the rails remain)", () => {
     const home = read("app/(app)/home/page.tsx");
-    expect(home).toContain("<HomeMindStudio />");
-    // The OwnerOnly helper itself still exists for the owner console.
+    expect(home).not.toContain("<HomeMindStudio />");
+    // The OwnerOnly helper itself still exists for the owner console and rails.
     expect(read("features/auth/owner-only.tsx")).toContain("isOwnerUser(user)");
-
-    // Every HomeMindStudio occurrence must sit inside an <OwnerOnly> block.
-    const gates = home.match(/<OwnerOnly>[\s\S]*?<\/OwnerOnly>/g) ?? [];
-    expect(gates.length).toBeGreaterThan(0);
-    expect(gates.some((g) => g.includes("<HomeMindStudio />"))).toBe(true);
-    // No bare launcher outside the gate.
-    const stripped = home.replace(/<OwnerOnly>[\s\S]*?<\/OwnerOnly>/g, "");
-    expect(stripped).not.toContain("<HomeMindStudio />");
+    // The rails stay behind the Spark gate (owner + Pro see them, others get the lock).
+    const gates =
+      home.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkGate>/g) ?? [];
+    expect(gates.some((g) => g.includes("<HomeSubjectRails />"))).toBe(true);
   });
 });
 

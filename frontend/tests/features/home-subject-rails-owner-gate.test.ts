@@ -14,12 +14,14 @@ import path from "node:path";
 const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 
 describe("Home subject rails owner gate", () => {
-  it("wraps the rails in OwnerOnly on the home page", () => {
+  it("wraps the rails in the Spark gate (owner + Pro) on the home page", () => {
     const home = read("app/(app)/home/page.tsx");
     expect(home).toContain(
-      'import { OwnerOnly } from "@/features/auth/owner-only"',
+      'import { HomeFeaturesSparkGate } from "@/components/home/home-features-spark-gate"',
     );
-    const gate = home.match(/<OwnerOnly>[\s\S]*?<\/OwnerOnly>/)?.[0] ?? "";
+    const gate =
+      home.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkGate>/)?.[0] ??
+      "";
     expect(gate).toContain("<HomeSubjectRails />");
   });
 

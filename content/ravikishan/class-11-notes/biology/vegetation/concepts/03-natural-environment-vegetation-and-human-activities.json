@@ -7,14 +7,19 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Natural environment-vegetation and human activities — Vegetation, Biology (class-11-notes).",
-    "**Tested.** define it · list: natural environment-vegetation, human activities · one worked example · one misconception each.",
-    "**Human activities.** one-line definition + one-line exam use."
+    "[Remember] Vegetation is the natural plant cover shaped by climate, altitude, soil and water; Nepal's steep altitudinal gradient packs tropical to alpine zones within 200 km.",
+    "[Remember] Altitudinal zones: tropical Terai sal forest (<1000 m) → subtropical Schima–Castanopsis (1000–2000 m) → temperate oak–rhododendron (2000–3000 m) → subalpine fir–birch → alpine meadows → nival lichens.",
+    "[Understand] Human activities that degrade vegetation: shifting cultivation, fuelwood cutting, overgrazing, forest fire, encroachment and road building; Terai deforestation and Chure degradation as classic cases.",
+    "[Understand] Consequences: soil erosion and landslides, loss of biodiversity and wildlife habitat, drying springs, heavier floods in the Terai plains.",
+    "[Apply] Protection table — in-situ (national parks, community forests, buffer zones) vs ex-situ (botanical gardens, seed banks) with two Nepali examples of each.",
+    "[Analyze] Community forestry of Nepal as a world-cited success: degraded mid-hill slopes restored by handing management to local user groups.",
+    "[Evaluate/Create] NEB answer frame: define with factors → altitude-zone table with dominants → three human pressures with Terai/Chure examples → two consequences → community-forestry conclusion."
   ],
   "confusion": [
-    "❌ treat \"Natural environment-vegetation\" as one blob → ✅ split into: natural environment-vegetation, human activities.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "Vegetation is natural plant cover; a planted crop field or garden is NOT natural vegetation.",
+    "Sal dominates the tropical Terai; rhododendron–oak dominates the temperate hills — do not swap them.",
+    "The tree line ends tall trees, not all plant life; alpine meadows and lichens grow above it.",
+    "Community forestry protects through local management; it is not a ban on all forest use."
   ],
   "bounds": [
     "Covers only: natural environment-vegetation, human activities (within Vegetation).",
@@ -22,35 +27,65 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: natural environment-vegetation, human activities.",
-    "one worked example for \"Natural environment-vegetation and human activities\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "List the altitudinal zones uphill with one dominant species each.",
+    "Mark Terai, Chure, mid-hills and alpine on a Nepal profile with one pressure each.",
+    "Recall card: zone → dominant → pressure → protection."
   ],
   "universalFacts": [
-    "answer pattern for \"Natural environment-vegetation and human activities\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Altitude mimics latitude: 1000 m of ascent resembles hundreds of km toward the poles.",
+    "Sal–Schima–oak–rhododendron–fir is the uphill dominant-species chant examiners expect.",
+    "Community forestry is Nepal's globally cited conservation success story."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Chitwan sal forest felled for settlement, then flooding worsens downstream each monsoon.",
+    "Mid-hill community forest restoring a bare slope within a decade of local management.",
+    "Chure sand–boulder mining drying village springs and destabilising the Siwalik range."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Natural environment-vegetation and human activities\" with one example.",
-    "compare \"Natural environment-vegetation\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Natural environment-vegetation and human activities\" and verify the answer is plausible."
+    "Describe the vegetation zones of Nepal with dominant species. (5)",
+    "Explain three human activities degrading Nepal's vegetation with examples. (3)",
+    "What is community forestry? Why is it called a success story of Nepal? (3)"
   ],
   "keyPoints": [
-    "• Natural environment-vegetation",
-    "• Human activities"
+    "Altitudinal zones with dominants",
+    "Three human pressures with examples",
+    "Two ecological consequences",
+    "Community-forestry protection model"
   ],
-  "summary": "Natural environment-vegetation and human activities (Vegetation, Biology, class-11-notes) covers Natural environment-vegetation, human activities. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Natural vegetation and human activities: altitudinal zones with dominants, Terai–Chure pressures, erosion and biodiversity consequences, community-forestry protection.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Natural environment-vegetation and human activities\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The dominant tree of the tropical Terai forest is:",
       "options": [
-        "True",
-        "False"
+        "Sal (Shorea robusta)",
+        "Rhododendron",
+        "Fir",
+        "Birch"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "Sal (Shorea robusta)",
+      "explanation": "Sal dominates below 1000 m; rhododendron–oak takes the temperate hills."
+    },
+    {
+      "question": "Chure degradation mainly causes:",
+      "options": [
+        "Spring drying and downstream floods",
+        "Glacier growth",
+        "Coral bleaching",
+        "Volcanic eruption"
+      ],
+      "answer": "Spring drying and downstream floods",
+      "explanation": "Siwalik/Chure mining destabilises slopes, dries springs and worsens Terai floods."
+    },
+    {
+      "question": "Nepal's world-cited forest protection model is:",
+      "options": [
+        "Community forestry",
+        "Zero forest use",
+        "Monoculture plantation",
+        "Open grazing"
+      ],
+      "answer": "Community forestry",
+      "explanation": "Local user-group management restored degraded mid-hill slopes within a decade."
     }
   ]
 }

@@ -7,14 +7,19 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Pesticides and their effects — Biota and Environment, Biology (class-11-notes).",
-    "**Tested.** define it · list: pesticides, their effects · one worked example · one misconception each.",
-    "**Their effects.** one-line definition + one-line exam use."
+    "[Remember] Pesticides are chemicals that kill pests: insecticides (insects), herbicides (weeds), fungicides (fungi), rodenticides (rats) — e.g. DDT, BHC, malathion, 2,4-D.",
+    "[Remember] Effects on pests: target kill and crop protection; effects beyond target — killing of pollinators and predators, pest resurgence and resistance after repeated use.",
+    "[Understand] Human-health effects: acute poisoning (nausea, tremor) and chronic effects (organ damage, suspected carcinogenicity); Terai farm workers face the highest exposure risk.",
+    "[Understand] Environmental effects: soil-microbe loss and fertility fall; water pollution and fish kills; biomagnification up food chains (classic case: DDT in birds); harm to bees and natural enemies.",
+    "[Apply] Safe-use table — read label dose, wear protection, spray with wind direction, observe waiting period before harvest, never wash sprayers in ponds or rivers.",
+    "[Analyze] Chemical control vs biological control vs IPM (Integrated Pest Management: resistant varieties + predators + need-based minimal spray); why blanket spraying fails in the long run.",
+    "[Evaluate/Create] NEB answer frame: define with classes → target vs non-target effects → health + environment with biomagnification → safe-use and IPM conclusion with a Terai paddy example."
   ],
   "confusion": [
-    "❌ treat \"Pesticides\" as one blob → ✅ split into: pesticides, their effects.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "Insecticide kills insects, herbicide kills weeds, fungicide kills fungi — match the suffix to the target.",
+    "Biomagnification is concentration rising UP the food chain; bioaccumulation is build-up within one body.",
+    "Pest resurgence happens because pesticides also kill predators — more spray can mean more pests later.",
+    "IPM reduces but does not always eliminate chemicals; 'zero spray' is not the NEB definition."
   ],
   "bounds": [
     "Covers only: pesticides, their effects (within Biota and Environment).",
@@ -22,35 +27,65 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: pesticides, their effects.",
-    "one worked example for \"Pesticides and their effects\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Define pesticide with its four classes and one example of each.",
+    "Sketch the biomagnification ladder (water → fish → bird) with rising concentration arrows.",
+    "Recall card: class → target → non-target effect → one safe-use rule."
   ],
   "universalFacts": [
-    "answer pattern for \"Pesticides and their effects\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "DDT and BHC are persistent organochlorines; malathion degrades faster — persistence decides exam answers.",
+    "Biomagnification explains why top predators suffer most even when water levels look low.",
+    "IPM is the NEB-expected conclusion for every pesticide long answer."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "DDT sprayed on paddy kills stem borers but also honeybees visiting nearby mustard.",
+    "Malathion runoff into a Terai pond kills fingerlings within days.",
+    "IPM plot: resistant rice variety plus spider conservation with spray only above threshold."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Pesticides and their effects\" with one example.",
-    "compare \"Pesticides\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Pesticides and their effects\" and verify the answer is plausible."
+    "Define pesticide and classify it with one example of each class. (3)",
+    "Explain the harmful effects of pesticides on human health and the environment. (4)",
+    "What is IPM? Why is it preferred over blanket chemical spraying? (3)"
   ],
   "keyPoints": [
-    "• Pesticides",
-    "• Their effects"
+    "Four pesticide classes with examples",
+    "Target vs non-target effects",
+    "Biomagnification and resistance",
+    "Safe use plus IPM conclusion"
   ],
-  "summary": "Pesticides and their effects (Biota and Environment, Biology, class-11-notes) covers Pesticides, their effects. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Pesticides and their effects: classes with examples, target and non-target effects, biomagnification and resistance, safe-use rules and IPM with Terai paddy examples.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Pesticides and their effects\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "2,4-D is classified as a:",
       "options": [
-        "True",
-        "False"
+        "Herbicide",
+        "Insecticide",
+        "Fungicide",
+        "Rodenticide"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "Herbicide",
+      "explanation": "Herbicides kill weeds; 2,4-D is the textbook herbicide example."
+    },
+    {
+      "question": "Rising DDT concentration from water to fish to birds is called:",
+      "options": [
+        "Biomagnification",
+        "Eutrophication",
+        "Nitrification",
+        "Succession"
+      ],
+      "answer": "Biomagnification",
+      "explanation": "Biomagnification is concentration rising up the food chain; DDT in birds is the classic case."
+    },
+    {
+      "question": "The NEB-expected conclusion of a pesticide long answer is:",
+      "options": [
+        "IPM",
+        "Blanket spraying",
+        "Zero fertiliser",
+        "Monoculture"
+      ],
+      "answer": "IPM",
+      "explanation": "Integrated Pest Management — resistant varieties plus predators with need-based minimal spray."
     }
   ]
 }

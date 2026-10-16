@@ -146,13 +146,17 @@ export function TopicNotesPrefetcher() {
     const seen = createLru<true>(64);
     const inFlight = new Set<string>();
 
+    let lastAnchor: HTMLAnchorElement | null = null;
+
     const handleIntent = (event: Event) => {
       if (!networkAllowsPrefetch()) return;
       if (inFlight.size >= MAX_CONCURRENT) return;
 
       const target = event.target as Element | null;
-      const anchor = target?.closest?.("a[href]") as HTMLAnchorElement | null;
-      if (!anchor) return;
+      if (!target || typeof target.closest !== "function") return;
+      const anchor = target.closest("a[href]") as HTMLAnchorElement | null;
+      if (!anchor || anchor === lastAnchor) return;
+      lastAnchor = anchor;
 
       const parts = parseTopicRoute(anchor.getAttribute("href") ?? "");
       if (!parts) return;

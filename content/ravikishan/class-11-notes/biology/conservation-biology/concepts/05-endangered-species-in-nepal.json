@@ -7,13 +7,19 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Endangered species in Nepal — Conservation Biology, Biology (class-11-notes).",
-    "**Tested.** define it · list: endangered species in nepal · one worked example · one misconception each."
+    "[Remember] IUCN ladder: Extinct → Critically Endangered (CR) → Endangered (EN) → Vulnerable (VU) → Near Threatened → Least Concern; threatened = CR + EN + VU only.",
+    "[Remember] Endangered mammals of Nepal: Bengal tiger, one-horned rhinoceros, snow leopard, red panda, hispid hare; birds: Bengal florican, vultures; reptiles: gharial, elongated tortoise.",
+    "[Understand] Why endangered: HIPPCO drivers — habitat loss and fragmentation, poaching and illegal trade, human–wildlife conflict, invasive species, pollution, climate pressure on Himalayan habitat.",
+    "[Understand] Where protected: Chitwan and Bardia (tiger, rhino, gharial, florican), Sagarmatha and Langtang (snow leopard, red panda), Koshi Tappu (wild buffalo, migratory birds).",
+    "[Apply] Strategy table — in-situ (national parks, reserves, conservation areas, buffer zones, corridors, anti-poaching) vs ex-situ (Central Zoo, breeding centres, seed/gene banks) with one species matched to each.",
+    "[Analyze/Evaluate] Success story: rhino rebound in Chitwan through in-situ protection plus community buffer zones; ongoing task: vulture recovery via diclofenac ban and vulture restaurants.",
+    "[Create] NEB answer frame: IUCN ladder → five Nepali endangered species with habitat → HIPPCO causes → in-situ/ex-situ strategies → rhino-success conclusion."
   ],
   "confusion": [
-    "❌ treat \"Endangered species in Nepal\" as one blob → ✅ split into: endangered species in nepal.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "Threatened = CR + EN + VU only; Near Threatened and Least Concern are NOT threatened categories.",
+    "Endangered (EN) is one step safer than Critically Endangered (CR) — keep the ladder order exact.",
+    "A national park is stricter than a conservation area; a zoo is ex-situ, not in-situ.",
+    "Listing a species is not protection — name the strategy (buffer zone, anti-poaching, corridor) with it."
   ],
   "bounds": [
     "Covers only: endangered species in nepal (within Conservation Biology).",
@@ -21,34 +27,65 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: endangered species in nepal.",
-    "one worked example for \"Endangered species in Nepal\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write the IUCN ladder CR → EN → VU → NT → LC from memory with one Nepali species each for CR/EN/VU.",
+    "Expand HIPPCO with one Nepal-specific cause per letter.",
+    "Match five species to their protected area on a blank Nepal outline."
   ],
   "universalFacts": [
-    "answer pattern for \"Endangered species in Nepal\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "IUCN Red List categories are global standards; Nepal's protected-area network is the main in-situ answer.",
+    "Tiger, rhino and snow leopard are the three most-asked Nepali endangered mammals.",
+    "HIPPCO is the examiner's favourite acronym for 'causes of extinction' questions."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "One-horned rhinoceros rebound in Chitwan through anti-poaching and buffer-zone management.",
+    "Snow leopard protected across Sagarmatha and Langtang with livestock-insurance schemes.",
+    "Vulture recovery through the diclofenac ban and community vulture restaurants."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Endangered species in Nepal\" with one example.",
-    "compare \"Endangered species in Nepal\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Endangered species in Nepal\" and verify the answer is plausible."
+    "Write the IUCN threatened categories with one Nepali species for each. (3)",
+    "Name five endangered species of Nepal with their habitats. (5)",
+    "Explain the causes of wildlife extinction and the in-situ/ex-situ strategies of Nepal. (5)"
   ],
   "keyPoints": [
-    "• Endangered species in Nepal"
+    "IUCN ladder CR–EN–VU",
+    "Five Nepali species with habitats",
+    "HIPPCO causes",
+    "In-situ/ex-situ strategies plus rhino success"
   ],
-  "summary": "Endangered species in Nepal (Conservation Biology, Biology, class-11-notes) covers Endangered species in Nepal. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Endangered species in Nepal: IUCN ladder, tiger–rhino–snow leopard–red panda–gharial with habitats, HIPPCO causes, in-situ and ex-situ strategies, Chitwan rhino success.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Endangered species in Nepal\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Which set lists threatened IUCN categories only?",
       "options": [
-        "True",
-        "False"
+        "CR, EN, VU",
+        "NT, LC, EW",
+        "CR, NT, LC",
+        "EN, VU, LC"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "CR, EN, VU",
+      "explanation": "Threatened = Critically Endangered + Endangered + Vulnerable."
+    },
+    {
+      "question": "The one-horned rhinoceros of Nepal is mainly protected at:",
+      "options": [
+        "Chitwan",
+        "Sagarmatha",
+        "Langtang",
+        "Rara"
+      ],
+      "answer": "Chitwan",
+      "explanation": "Chitwan (plus Bardia) shelters tiger, rhino, gharial and florican."
+    },
+    {
+      "question": "HIPPCO explains:",
+      "options": [
+        "Causes of extinction",
+        "Steps of mitosis",
+        "Stages of succession",
+        "Types of fossils"
+      ],
+      "answer": "Causes of extinction",
+      "explanation": "Habitat loss, Invasive species, Pollution, Population pressure, Climate change, Overexploitation."
     }
   ]
 }

@@ -229,21 +229,23 @@ export function TopicVerticalNotes({
           }
         }
 
-        // Fetch supplementary from ravikishan manifest if available
-        try {
-          const rkManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>("ravikishan/manifest.json");
-          if (!cancelled) {
-            const rkMatch = rkManifest.find((m) => {
-              const parts = m.path.split("/");
-              return (
-                parts.includes(unitId) &&
-                (m.data?.topicSlug === topicSlug || parts[parts.length - 1].includes(topicSlug))
-              );
-            });
-            if (rkMatch) setSupplementary(rkMatch.data);
+        // Fetch supplementary from ravikishan manifest only if primary syllabus-notes had no matches
+        if (relevant.length === 0) {
+          try {
+            const rkManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>("ravikishan/manifest.json");
+            if (!cancelled) {
+              const rkMatch = rkManifest.find((m) => {
+                const parts = m.path.split("/");
+                return (
+                  parts.includes(unitId) &&
+                  (m.data?.topicSlug === topicSlug || parts[parts.length - 1].includes(topicSlug))
+                );
+              });
+              if (rkMatch) setSupplementary(rkMatch.data);
+            }
+          } catch {
+            // Ignore if ravikishan manifest not present
           }
-        } catch {
-          // Ignore if ravikishan manifest not present
         }
 
         if (!cancelled) setLoading(false);

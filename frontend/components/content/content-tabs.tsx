@@ -76,6 +76,52 @@ const UNIT_RESOURCES: ResourceSpec[] = [
   { title: "Numerical Integration", description: "Trapezoidal rule, Simpson's rule, and numerical approximation methods.", component: NumericalIntegrationResources, match: (u, s) => u === "numerical-integration" && s === "mathematics" },
 ];
 
+// Nepali Math XI unit capsules (Mat. 007). Each unit's Resources tab leads with
+// exactly one capsule; the four calculus sub-units all belong to Unit 6.
+const MATH_NEPALI_CAPSULES: Record<number, { name: string; file: string }> = {
+  1: { name: "Algebra", file: "Math_XI_Unit_01_algebra_NP.docx" },
+  2: { name: "Trigonometry", file: "Math_XI_Unit_02_trigonometry_NP.docx" },
+  3: { name: "Analytic Geometry", file: "Math_XI_Unit_03_analytic-geometry_NP.docx" },
+  4: { name: "Vectors", file: "Math_XI_Unit_04_vectors_NP.docx" },
+  5: { name: "Statistics & Probability", file: "Math_XI_Unit_05_statistics-probability_NP.docx" },
+  6: { name: "Calculus", file: "Math_XI_Unit_06_calculus_NP.docx" },
+  7: { name: "Computational Methods / Mechanics", file: "Math_XI_Unit_07_computational-mechanics_NP.docx" },
+};
+
+const MATH_UNIT_CAPSULE_NO: Record<string, number> = {
+  algebra: 1,
+  trigonometry: 2,
+  "analytic-geometry": 3,
+  vectors: 4,
+  "statistics-and-probability": 5,
+  "limits-and-continuity": 6,
+  differentiation: 6,
+  "application-of-derivatives": 6,
+  antiderivatives: 6,
+  "numerical-integration": 7,
+};
+
+function NepaliCapsuleCard({ unitNo }: { unitNo: number }) {
+  const capsule = MATH_NEPALI_CAPSULES[unitNo];
+  return (
+    <div className="flex items-start gap-3 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50/40 dark:bg-emerald-950/20">
+      <FileText className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
+      <div className="flex-1 min-w-0">
+        <h4 className="text-sm font-semibold">Unit {unitNo} — {capsule.name}: नेपाली रिसोर्स केप्सुल</h4>
+        <p className="text-xs text-muted-foreground mt-0.5">
+          Likely NEB questions with short answers and exam shortcuts, comparison tables, professor&apos;s theory with viva bank, and a quick memo.
+        </p>
+      </div>
+      <Button asChild size="sm" variant="outline" className="shrink-0">
+        <a href={`/materials/${capsule.file}`} download>
+          <ExternalLink className="w-3.5 h-3.5 mr-1" />
+          Download DOCX
+        </a>
+      </Button>
+    </div>
+  );
+}
+
 function ResourceCard({ title, description, Component }: { title: string; description: string; Component: ComponentType }) {
   return (
     <Card className="border-primary/20">
@@ -91,6 +137,23 @@ function ResourceCard({ title, description, Component }: { title: string; descri
 }
 
 function renderResources(
+  unitId: string,
+  subjectSlug: string,
+  topicSlug: string,
+  topicTitle: string,
+): ReactNode {
+  const body = renderUnitResources(unitId, subjectSlug, topicSlug, topicTitle);
+  const capsuleNo = subjectSlug === "mathematics" ? MATH_UNIT_CAPSULE_NO[unitId] : undefined;
+  if (!capsuleNo) return body;
+  return (
+    <div className="space-y-4">
+      <NepaliCapsuleCard unitNo={capsuleNo} />
+      {body}
+    </div>
+  );
+}
+
+function renderUnitResources(
   unitId: string,
   subjectSlug: string,
   topicSlug: string,

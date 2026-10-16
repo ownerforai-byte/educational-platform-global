@@ -42,6 +42,8 @@ import {
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
+import { StepCards } from "@/components/chat/step-cards";
+import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import {
   GUEST_DAILY_LIMIT as MAX_GUEST_MESSAGES,
   readGuestCount,
@@ -1103,7 +1105,18 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   </div>
                   <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3">
                     <div className="text-xs leading-relaxed">
-                      <InteractiveMarkdown content={msg.content} blockCopy className="chat-prose" />
+                      {splitStepBlocks(msg.content).map((segment, segIndex) =>
+                        segment.kind === "steps" ? (
+                          <StepCards key={segIndex} steps={segment.steps} />
+                        ) : (
+                          <InteractiveMarkdown
+                            key={segIndex}
+                            content={segment.text}
+                            blockCopy
+                            className="chat-prose"
+                          />
+                        ),
+                      )}
                       {isStreaming && index === lastAssistantIndex && (
                         <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse rounded-sm bg-primary align-text-bottom" aria-hidden />
                       )}
