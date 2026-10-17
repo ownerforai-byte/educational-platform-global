@@ -188,6 +188,26 @@ const ExtendedFields = z.object({
   // ── language-specific notes: measured as { notes, importantStatements } ──
   nepali: NoteBlockSchema.optional(),
   grammar: NoteBlockSchema.optional(),
+
+  /**
+   * Attached material links — measured on the Nepali syllabus-PDF pass:
+   * `resources.pdf_notes = { label, url, kind }` pointing at files shipped
+   * under `/materials/…`. Producer-side metadata no renderer parses
+   * field-by-field yet, so the shape is permissive (`.passthrough()`): the
+   * key is DECLARED, not stripped — exactly the Extended-fields doctrine
+   * above, and the reason `.strict()` can stay on.
+   */
+  resources: z
+    .record(
+      z
+        .object({
+          label: z.string().max(300).optional(),
+          url: z.string().max(500),
+          kind: z.string().max(40).optional(),
+        })
+        .passthrough(),
+    )
+    .optional(),
 });
 
 /** The MCQ object shape used by `mcs` (the primary, consistent field). */
