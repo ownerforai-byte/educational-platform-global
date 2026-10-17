@@ -6,38 +6,80 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
+  "notes": [
+    "[Remember] Migration is the periodic, seasonal, two-way movement of animals between breeding and non-breeding habitats — distinct from one-way dispersal or permanent emigration.",
+    "[Remember] Fish migration: anadromous fishes move from sea to fresh water to breed (e.g. Hilsa ilisha ascending Terai rivers in monsoon); catadromous fishes move from fresh water to sea to breed (e.g. eels, Anguilla).",
+    "[Understand] Bird migration types: latitudinal or north–south (Siberian ducks wintering at Koshi Tappu and Chitwan), longitudinal, and altitudinal (pheasants and thrushes descending from hills to Terai in winter).",
+    "[Understand] Causes and triggers: breeding urge, food scarcity, shortening photoperiod, falling temperature and hormonal change; navigation uses the sun compass, star patterns, Earth's magnetic field and geographical landmarks.",
+    "[Apply] Contrast table — anadromous vs catadromous (direction, breeding ground, one example each); resident vs migratory vs partial-migrant birds with one Nepali example of each.",
+    "[Analyze] Advantages (safe breeding grounds, abundant seasonal food) versus costs (enormous energy demand, predation, barriers such as dams and habitat loss); homing instinct and ringing/banding studies as evidence.",
+    "[Evaluate/Create] NEB answer frame: define migration → classify fish and bird types → causes and navigation → Koshi Tappu/Chitwan and Terai-river examples → one advantage–cost line → labelled route sketch."
+  ],
+  "confusion": [
+    "Migration is two-way and seasonal; one-way dispersal or permanent emigration is NOT migration.",
+    "Anadromous = sea → river to breed; catadromous = river → sea to breed — do not swap the arrows.",
+    "Altitudinal migration (hills ↔ Terai) is still migration even though the distance is short.",
+    "Homing instinct and banding studies prove return journeys; do not claim birds 'get lost and stay'."
+  ],
   "bounds": [],
   "practice": [
-    "one worked example for \"Fish and bird migration\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Draw the anadromous vs catadromous arrow table from memory in under 3 minutes.",
+    "Recall card: triggers → navigation cues → one Nepali site → one cost."
   ],
   "universalFacts": [
-    "answer pattern for \"Fish and bird migration\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Migration is classified by direction and distance; examples earn full marks only with the breeding ground named.",
+    "Nepal's Koshi Tappu and Chitwan wetlands are classic wintering-ground examples for Siberian migrants.",
+    "Anadromous vs catadromous is a favourite 2-mark contrast — arrows plus one fish each."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Hilsa ascending Terai rivers in monsoon to spawn (anadromous).",
+    "Siberian ducks wintering at Koshi Tappu, returning north in spring (latitudinal bird migration).",
+    "Pheasants descending from high hills to lower valleys in winter (altitudinal migration)."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Fish and bird migration\" with one example.",
-    "compare \"Fish\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Fish and bird migration\" and verify the answer is plausible."
+    "Differentiate anadromous and catadromous fish migration with one example of each. (3)",
+    "Describe bird migration with its causes, navigation and two Nepali examples. (5)"
   ],
   "keyPoints": [
-    "• Fish",
-    "• Bird migration"
+    "Migration definition and two-way nature",
+    "Anadromous vs catadromous with examples",
+    "Bird types, causes and navigation",
+    "Koshi Tappu/Chitwan examples plus route sketch"
   ],
-  "summary": "Fish and bird migration (Biota and Environment, Biology, class-11-notes) covers Fish, bird migration. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Fish and bird migration: periodic two-way movement; anadromous vs catadromous fishes, latitudinal and altitudinal birds, causes, navigation, Koshi Tappu and Terai-river examples, advantage–cost balance.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Fish and bird migration\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Hilsa ascending Terai rivers in monsoon to breed is an example of:",
       "options": [
-        "True",
-        "False"
+        "Anadromous migration",
+        "Catadromous migration",
+        "Altitudinal migration",
+        "Dispersal"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "Anadromous fishes move from sea to fresh water to breed; Hilsa ascending rivers in monsoon is the NEB classic."
+    },
+    {
+      "question": "Siberian ducks wintering at Koshi Tappu demonstrate:",
+      "options": [
+        "Latitudinal migration",
+        "Catadromous migration",
+        "Emigration",
+        "Hibernation"
+      ],
+      "answer": "A",
+      "explanation": "North–south seasonal movement between breeding and wintering grounds is latitudinal migration."
+    },
+    {
+      "question": "Which navigation cue is used by migratory birds?",
+      "options": [
+        "Earth's magnetic field",
+        "Soil pH",
+        "Water BOD",
+        "Leaf shape"
+      ],
+      "answer": "A",
+      "explanation": "Birds navigate by sun compass, star patterns, magnetic field and landmarks."
     }
   ]
 }

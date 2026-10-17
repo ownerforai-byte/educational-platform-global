@@ -34,8 +34,7 @@
     "❌ Vapour density is the same as density. ✅ Vapour density is a *relative* quantity measured with respect to hydrogen (or air); density is an absolute mass per unit volume.",
     "❌ 1 mole of every gas occupies 22.4 L under all conditions. ✅ Only at STP (273.15 K, 1 atm); at other conditions use PV = nRT.",
     "❌ Molecular mass equals vapour density. ✅ Molecular mass = 2 × vapour density (for the hydrogen reference).",
-    "❌ Avogadro's law can be applied to a dissociating gas without correction. ✅ Dissociation/association changes the number of particles, so an apparent (abnormal) vapour density results.",
-    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
+    "❌ Avogadro's law can be applied to a dissociating gas without correction. ✅ Dissociation/association changes the number of particles, so an apparent (abnormal) vapour density results."
   ],
   "practice": [
     "State Avogadro's law and deduce the relation between molecular mass and vapour density.",
@@ -43,9 +42,7 @@
     "Calculate the molecular mass of a gas whose vapour density is 30.",
     "The vapour density of an oxide of nitrogen is 46; find its molecular formula if it contains 30.4% nitrogen.",
     "Explain how Avogadro's law established that hydrogen and oxygen are diatomic.",
-    "State the limitations of Avogadro's law.",
-    "one worked example for \"Avogadro's law and some deductions: molecular mass and va…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "State the limitations of Avogadro's law."
   ],
   "formulas": [
     "$$V\\propto n\\ \\text{at constant }T,P;\\qquad \\frac{V_{1}}{n_{1}}=\\frac{V_{2}}{n_{2}}$$",
@@ -65,8 +62,7 @@
   ],
   "examples": [
     "**Problem:** VD of a gas is 22; find its molar mass and the mass of 5.6 L at STP. **Solution:** M = 2 × 22 = 44 g mol⁻¹; n = 5.6/22.4 = 0.25 mol → mass = 0.25 × 44 = 11 g.",
-    "**Problem:** Calculate the number of molecules in 11.2 L of CH₄ at STP and the number of hydrogen atoms present. **Solution:** n = 11.2/22.4 = 0.5 mol → molecules = 0.5 × 6.022 × 10²³ = 3.011 × 10²³; H atoms = 4 × that = 1.204 × 10²⁴.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "**Problem:** Calculate the number of molecules in 11.2 L of CH₄ at STP and the number of hydrogen atoms present. **Solution:** n = 11.2/22.4 = 0.5 mol → molecules = 0.5 × 6.022 × 10²³ = 3.011 × 10²³; H atoms = 4 × that = 1.204 × 10²⁴."
   ],
   "importantNotes": [
     "Quote both numbers with the law: N_A = 6.022 × 10²³ mol⁻¹ and molar volume = 22.4 L at STP.",
@@ -81,11 +77,7 @@
     "• Molecular mass",
     "• Volume of gas"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Avogadro's law and some deductions: molecular mass and va…\" with one example.",
-    "compare \"Avogadro's law\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Avogadro's law and some deductions: molecular mass and va…\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "numericals": [
     "Use  n = m / M  — pick reasonable values, solve, and check the units.",
     "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",

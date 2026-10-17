@@ -1,64 +1,159 @@
 {
-  "title": "Calculations based on mole concept",
+  "title": "Calculations Based on Mole Concept",
   "unitSlug": "stoichiometry",
   "topicSlug": "calculations-based-on-mole-concept",
   "topicTitle": "Calculations based on mole concept",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**The mole.** One mole contains 6.022 × 10²³ entities (Avogadro's number, Nₐ); the molar mass M in g/mol equals the atomic or molecular mass numerically.",
-    "**Mass–moles conversion.** n = m/M; for example 36 g of water (M = 18 g/mol) is 2 mol. One mole of any gas at STP occupies 22.4 L.",
-    "**Percentage composition.** The percentage of an element = (mass of the element in one mole of compound ÷ molar mass) × 100.",
-    "**Empirical and molecular formula.** The empirical formula gives the simplest atomic ratio and the molecular formula the actual count; molecular mass ÷ empirical formula mass gives the multiplier.",
-    "**Limiting reagent and yield.** The limiting reagent governs product mass; percentage yield = (actual yield ÷ theoretical yield) × 100."
+    "Mole Concept Foundation: One mole contains exactly 6.022 × 10²³ entities (Avogadro's number Nₐ). The molar mass M (g/mol) of any substance equals its atomic or molecular mass numerically. This bridges the microscopic (atoms/molecules) and macroscopic (grams) worlds.",
+    "Mass-to-Moles Conversion: n = m/M where n = moles, m = mass in grams, M = molar mass in g/mol. Example: 36 g water (M = 18 g/mol) → n = 36/18 = 2 mol. This is the most fundamental stoichiometric calculation.",
+    "Moles-to-Particles Conversion: Number of particles N = n × Nₐ. Example: 0.5 mol CO₂ contains 0.5 × 6.022×10²³ = 3.011×10²³ molecules. Reverse: n = N/Nₐ when given particle count.",
+    "Molar Volume at STP: One mole of any ideal gas occupies 22.4 L at STP (0°C, 1 atm). n = V/22.4 for gases at STP. Example: 5.6 L O₂ at STP → n = 5.6/22.4 = 0.25 mol. Non-STP conditions require PV = nRT.",
+    "Percentage Composition: % of element = (mass of element in 1 mol compound / molar mass of compound) × 100. Example: In H₂O, %H = (2×1.008/18.015)×100 = 11.19%, %O = (16.00/18.015)×100 = 88.81%. Used to determine empirical formulas from experimental data.",
+    "Empirical Formula Determination: Step 1: Convert % composition to grams (assume 100 g sample). Step 2: Convert grams to moles for each element. Step 3: Divide all mole values by smallest mole value. Step 4: Multiply by integer if ratios are not whole numbers. Result gives simplest whole-number ratio of atoms.",
+    "Molecular Formula from Empirical: Molecular formula = (empirical formula)ₙ where n = molecular mass / empirical formula mass. Example: Empirical CH₂O (mass 30), molecular mass 180 → n = 180/30 = 6 → molecular formula C₆H₁₂O₆ (glucose).",
+    "Stoichiometric Calculations from Balanced Equations: Coefficients give mole ratios. For 2H₂ + O₂ → 2H₂O: 2 mol H₂ reacts with 1 mol O₂ to produce 2 mol H₂O. Convert given quantity to moles → use ratio → convert back to desired units.",
+    "Mass-Mass Stoichiometry: Given mass of reactant A, find mass of product B. Steps: mass A → moles A (÷M_A) → moles B (×ratio) → mass B (×M_B). Example: How much CO₂ from 100 g CaCO₃? CaCO₃→CaO+CO₂. n(CaCO₃)=100/100=1 mol → n(CO₂)=1 mol → m=44 g.",
+    "Mass-Volume Stoichiometry (Gases): For reactions involving gases, use molar volume. Example: Zn + 2HCl → ZnCl₂ + H₂. From 6.5 g Zn (0.1 mol), H₂ produced = 0.1 mol = 0.1×22.4 = 2.24 L at STP.",
+    "Solution Stoichiometry: Molarity M = n/V(L). n = M × V. Use in titration calculations: M₁V₁/n₁ = M₂V₂/n₂ where n₁,n₂ are coefficients. Example: 25 mL 0.1M NaOH neutralizes how many mL of 0.05M H₂SO₄? Ratio 2:1 → V = (0.1×25×1)/(0.05×2) = 25 mL.",
+    "Limiting Reagent Identification: Calculate moles of each reactant. Divide by coefficient in balanced equation. Smallest value identifies limiting reagent. All product calculations based on limiting reagent only. Excess reagent remains partially unreacted.",
+    "Theoretical Yield Calculation: Maximum possible product based on limiting reagent and stoichiometry. Actual yield is always less due to incomplete reactions, side reactions, and losses during purification.",
+    "Percentage Yield: % yield = (actual yield / theoretical yield) × 100. Industrial processes aim for >90%. Low yields indicate inefficiency, side reactions, or equilibrium limitations. NEB frequently asks numerical problems combining limiting reagent and % yield.",
+    "Percentage Purity: % purity = (mass of pure substance / mass of impure sample) × 100. Impure samples require correction before stoichiometric calculations. Example: 80% pure limestone means only 80 g CaCO₃ per 100 g sample participates in reaction."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
-  ],
-  "bounds": [
-    "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
-  ],
-  "practice": [
-    "one worked example for \"Calculations based on mole concept\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Calculations based on mole concept\" with one example.",
-    "compare \"Calculations based on mole concept\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Calculations based on mole concept\" and verify the answer is plausible."
+  "specificConditions": [
+    "STP Definition: Standard Temperature and Pressure = 0°C (273.15 K) and 1 atm (101.325 kPa). Molar volume 22.4 L applies ONLY at STP. At other conditions use PV = nRT.",
+    "Ideal Gas Assumption: Molar volume and simple gas stoichiometry assume ideal behavior. Real gases deviate at high pressure or low temperature.",
+    "Balanced Equation Required: All stoichiometric calculations must start with a correctly balanced chemical equation. Unbalanced equations give wrong mole ratios.",
+    "Consistent Units: Always convert to moles first, then to target units. Mixing grams and liters without conversion causes errors."
   ],
   "formulas": [
-    "n = m / M",
-    "n = V / 22.4 (g at STP)",
-    "% yield = (actual / theoretical) × 100"
-  ],
-  "numericals": [
-    "Use  n = m / M  — pick reasonable values, solve, and check the units.",
-    "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
-    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
+    "$n = \\frac{m}{M}$",
+    "$N = n \\times N_A$",
+    "$n = \\frac{V}{22.4}$ (gas at STP)",
+    "$\\% \\text{element} = \\frac{\\text{mass of element in 1 mol}}{\\text{molar mass}} \\times 100$",
+    "$n = \\frac{\\text{molecular mass}}{\\text{empirical formula mass}}$",
+    "$\\% \\text{yield} = \\frac{\\text{actual yield}}{\\text{theoretical yield}} \\times 100$",
+    "$M = \\frac{n}{V(L)}$"
   ],
   "keyPoints": [
-    "• Calculations based on mole concept"
+    "n = m/M is the gateway to all stoichiometric calculations.",
+    "Always convert to moles before applying mole ratios from balanced equations.",
+    "22.4 L/mol applies only to ideal gases at STP.",
+    "Empirical formula = simplest ratio; molecular formula = actual atom count.",
+    "Limiting reagent determines maximum product; excess reagent is leftover.",
+    "% yield compares actual vs theoretical; always ≤ 100%."
   ],
-  "summary": "Calculations based on mole concept (Stoichiometry, Chemistry, class-11-notes) covers Calculations based on mole concept. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "NEB exam pattern: Most stoichiometry numericals follow mass→moles→ratio→moles→mass/volume sequence.",
+    "Common error: Forgetting to balance the equation before calculating mole ratios.",
+    "For hydrated salts (e.g., CuSO₄·5H₂O), include water molecules in molar mass calculation.",
+    "In combustion analysis, carbon converts to CO₂ and hydrogen to H₂O — use these to find C and H content."
+  ],
+  "examShortTricks": [
+    "Mass↔Moles: divide by M to get moles, multiply by M to get mass.",
+    "Gas at STP: divide liters by 22.4 for moles.",
+    "Empirical formula: %→g→mol→divide by smallest→whole number ratio.",
+    "Limiting reagent: moles/coefficient — smallest wins.",
+    "% yield = actual/theoretical × 100."
+  ],
+  "examNotes": [
+    "Practice at least 10 mass-mass, 5 mass-volume, and 5 solution stoichiometry problems.",
+    "Memorize common molar masses: H₂O=18, CO₂=44, NaOH=40, H₂SO₄=98, CaCO₃=100.",
+    "Show all unit conversions explicitly — marks awarded for method even if arithmetic fails.",
+    "Check answer plausibility: % yield >100% means error; negative mass means wrong subtraction."
+  ],
+  "examples": [
+    "Calculate moles in 49 g H₂SO₄: n = 49/98 = 0.5 mol.",
+    "Volume of 0.25 mol NH₃ at STP: V = 0.25 × 22.4 = 5.6 L.",
+    "Empirical formula from 40% C, 6.67% H, 53.33% O: C=40/12=3.33, H=6.67/1=6.67, O=53.33/16=3.33 → divide by 3.33 → CH₂O.",
+    "From 2KClO₃→2KCl+3O₂, how much O₂ from 24.5 g KClO₃? n=24.5/122.5=0.2 mol KClO₃ → 0.3 mol O₂ → 6.72 L at STP.",
+    "If 10 g Mg reacts with excess HCl (Mg+2HCl→MgCl₂+H₂), theoretical H₂ = 10/24.3 = 0.412 mol = 9.22 L at STP. If actual = 8.5 L, % yield = 8.5/9.22×100 = 92.2%."
+  ],
+  "practiceQuestions": [
+    "Q1. Calculate the number of moles in 88 g CO₂.",
+    "Q2. What volume does 3.011×10²³ molecules of N₂ occupy at STP?",
+    "Q3. Determine the empirical formula of a compound containing 82.76% C and 17.24% H.",
+    "Q4. How many grams of NaOH are needed to neutralize 0.1 mol H₂SO₄?",
+    "Q5. In the reaction N₂+3H₂→2NH₃, if 28 g N₂ and 6 g H₂ react, identify the limiting reagent and calculate mass of NH₃ formed.",
+    "Q6. A 5 g sample of impure CaCO₃ produces 1.12 L CO₂ at STP on heating. Calculate percentage purity."
+  ],
+  "practice": [
+    "Convert between mass, moles, particles, and gas volume fluently.",
+    "Determine empirical and molecular formulas from percentage composition data.",
+    "Solve mass-mass, mass-volume, and solution stoichiometry problems.",
+    "Identify limiting reagents and calculate theoretical and percentage yields.",
+    "Apply percentage purity corrections to real-world sample calculations."
+  ],
+  "universalFacts": [
+    "Avogadro's number was determined experimentally by Jean Perrin (1908) using Brownian motion, confirming atomic theory.",
+    "The mole was redefined in 2019 as exactly 6.02214076×10²³ entities, fixing it as an exact constant.",
+    "Industrial ammonia synthesis (Haber process) achieves only ~15% single-pass yield but recycles unreacted gases for >98% overall conversion.",
+    "Analytical chemistry relies entirely on stoichiometric calculations for quantitative determination of unknown concentrations."
+  ],
+  "confusion": [
+    "Confusing molecular mass with molar mass: Molecular mass is dimensionless (relative); molar mass has units g/mol. Numerically equal but dimensionally different.",
+    "Using 22.4 L for non-STP conditions: Only valid at 0°C and 1 atm. Room temperature (25°C) gives ~24.5 L/mol.",
+    "Forgetting diatomic elements: H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂ exist as molecules. Atomic mass ≠ molecular mass for these.",
+    "Mixing up empirical and molecular formulas: Empirical is simplest ratio; molecular is actual. They can be identical (H₂O) or different (C₆H₁₂O₆ vs CH₂O).",
+    "Assuming 100% yield in calculations: Theoretical yield is maximum possible; actual is always less. Never use actual yield to predict reactant needs."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Calculations based on mole concept\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Number of moles in 36 g water is:",
       "options": [
-        "True",
-        "False"
+        "1 mol",
+        "2 mol",
+        "3 mol",
+        "0.5 mol"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "n = m/M = 36/18 = 2 mol."
+    },
+    {
+      "question": "Volume of 1 mol gas at STP is:",
+      "options": [
+        "11.2 L",
+        "22.4 L",
+        "24.5 L",
+        "44.8 L"
+      ],
+      "answer": "B",
+      "explanation": "Standard molar volume at STP (0°C, 1 atm) = 22.4 L."
+    },
+    {
+      "question": "Empirical formula of glucose (C₆H₁₂O₆) is:",
+      "options": [
+        "C₆H₁₂O₆",
+        "CH₂O",
+        "C₂H₄O₂",
+        "CHO"
+      ],
+      "answer": "B",
+      "explanation": "Simplest ratio: divide all subscripts by 6 → CH₂O."
+    },
+    {
+      "question": "In 2H₂ + O₂ → 2H₂O, if 4 mol H₂ and 3 mol O₂ react, limiting reagent is:",
+      "options": [
+        "H₂",
+        "O₂",
+        "Both equal",
+        "Neither"
+      ],
+      "answer": "A",
+      "explanation": "H₂/O₂ ratio needed = 2:1. Available 4:3. H₂ needs 2 mol O₂ but 3 available → H₂ limits."
+    },
+    {
+      "question": "Percentage yield is calculated as:",
+      "options": [
+        "Theoretical/Actual × 100",
+        "Actual/Theoretical × 100",
+        "(Actual−Theoretical)/Theoretical × 100",
+        "Actual + Theoretical"
+      ],
+      "answer": "B",
+      "explanation": "% yield = (actual yield / theoretical yield) × 100."
     }
   ]
 }

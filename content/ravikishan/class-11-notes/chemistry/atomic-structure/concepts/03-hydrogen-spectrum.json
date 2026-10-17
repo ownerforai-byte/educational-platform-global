@@ -71,8 +71,6 @@
     "Name the hydrogen series lying in the visible region and give the regions of the others.",
     "Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen.",
     "How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?",
-    "one worked example for \"Spectrum of hydrogen atom\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
     "Tabulate the five series of hydrogen with their regions, first members and series limits.",
     "How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?",
     "Calculate the series limit of the Paschen series.",
@@ -106,7 +104,6 @@
   "examples": [
     "**Problem:** Wavelength of the first Balmer line (n = 3 → 2). **Solution:** 1/λ = 1.097×10⁷(1/4 − 1/9) = 1.524×10⁶ m⁻¹ → λ = 656 nm (Hα).",
     "**Problem:** Energy of the photon for n = 4 → 2. **Solution:** ΔE = 13.6(1/4 − 1/16) = 2.55 eV; λ = 1240/2.55 ≈ 486 nm (Hβ).",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
     "**Problem:** Lines from n = 5 to ground. **Solution:** 5(5−1)/2 = 10 lines — 4 Lyman, 3 Balmer, 2 Paschen, 1 Brackett.",
     "**Problem:** Shortest Balmer wavelength. **Solution:** the series limit, n₂ → ∞: λ = 1/(R/4) = 4/R = 364.6 nm.",
     "**Problem:** λ of the Hβ line (4 → 2). **Solution:** ν̄ = 1.097×10⁷(1/4 − 1/16) = 1.097×10⁷ × 0.1875 = 2.057×10⁶ m⁻¹ → λ = 486 nm.",
@@ -124,11 +121,7 @@
   "keyPoints": [
     "• Spectrum of hydrogen atom"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Spectrum of hydrogen atom\" with one example.",
-    "compare \"Spectrum of hydrogen atom\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Spectrum of hydrogen atom\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "mcqs": [
     {
       "question": "A common examiner point on \"Spectrum of hydrogen atom\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",

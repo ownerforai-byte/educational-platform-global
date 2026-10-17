@@ -78,6 +78,7 @@ import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { AiSparkBadge, recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
+import { IDENTITY_REPLY } from "@/components/ai/ai-chat-interface";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
@@ -539,6 +540,10 @@ export function TutorConsole({
   const [thinkIdx, setThinkIdx] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const isIdentityAnswer = useCallback(
+    (content: string) => content.trim() === IDENTITY_REPLY.trim(),
+    [],
+  );
   const [guestCount, setGuestCount] = useState(0);
   const [enhancing, setEnhancing] = useState(false);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
@@ -1298,16 +1303,18 @@ export function TutorConsole({
                     </div>
 
                     {/* Shared per-answer actions — identical to the widget's */}
-                    <ChatMessageActions
-                      copied={copiedIndex === index}
-                      onCopy={() => handleCopy(msg.content, index)}
-                      isLatest={isLastAssistant}
-                      disabled={sending}
-                      onRegenerate={regenerate}
-                      onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
-                      onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
-                      onPractice={startPracticeQuiz}
-                    />
+                    {isIdentityAnswer(msg.content) ? null : (
+                      <ChatMessageActions
+                        copied={copiedIndex === index}
+                        onCopy={() => handleCopy(msg.content, index)}
+                        isLatest={isLastAssistant}
+                        disabled={sending}
+                        onRegenerate={regenerate}
+                        onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
+                        onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
+                        onPractice={startPracticeQuiz}
+                      />
+                    )}
                   </div>
                 </div>
               );

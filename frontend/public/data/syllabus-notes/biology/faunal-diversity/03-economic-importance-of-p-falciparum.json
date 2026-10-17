@@ -6,37 +6,82 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
+  "notes": [
+    "[Remember] Plasmodium falciparum is the protozoan causing malignant (cerebral) malaria — the deadliest human malaria, transmitted by female Anopheles mosquitoes; Nepal's Terai is the endemic zone.",
+    "[Remember] Life cycle in two hosts: asexual schizogony in humans (liver then red blood cells) and sexual sporogony in mosquitoes; P. falciparum shows accole/several ring forms and crescent (banana-shaped) gametocytes.",
+    "[Understand] Harmful importance: high fever with chills, haemolysis and anaemia, cerebral malaria, blackwater fever; resistant strains and drug resistance make it medically the most significant species.",
+    "[Understand] Diagnosis and control value: blood-smear study of P. falciparum teaches parasite structure; control — DDT/oil larvicides, bed nets, drainage, chloroquine/artemisinin therapy and surveillance in Terai districts.",
+    "[Apply] Table — P. vivax vs P. falciparum (relapse, severity, gametocyte shape, Schüffner's dots absent in falciparum); label the ring stage and gametocyte in a smear sketch.",
+    "[Analyze] Why falciparum kills more: heavy parasitaemia, infected-RBC stickiness blocking brain capillaries, rapid drug-resistance development.",
+    "[Evaluate/Create] NEB answer frame: define with vector → two-host cycle → symptoms and why malignant → vivax contrast table → Terai control measures."
+  ],
+  "confusion": [
+    "Falciparum malaria shows NO relapse from liver hypnozoites (unlike vivax) — do not claim relapse for falciparum.",
+    "Crescent (banana-shaped) gametocytes point to falciparum; round gametocytes with Schüffner's dots point to vivax.",
+    "'Economic importance' here is mostly harmful (disease burden) plus diagnostic and control value — state both sides.",
+    "Mosquito is the vector and second host, not a passive carrier; sporogony happens inside it."
+  ],
   "bounds": [],
   "practice": [
-    "one worked example for \"Economic importance of P. falciparum\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Draw the two-host life cycle wheel with schizogony and sporogony labelled.",
+    "Label ring stage and crescent gametocyte on a smear sketch.",
+    "Recall card: vector → cycle → symptom → control."
   ],
   "universalFacts": [
-    "answer pattern for \"Economic importance of P. falciparum\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Falciparum causes malignant tertian malaria with 48-hour fever cycles and possible cerebral blockage.",
+    "The crescent gametocyte is the single fastest identification mark in a blood smear.",
+    "Terai surveillance plus bed nets and larvicides is the standard Nepal control trio."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Crescent gametocytes in a Terai patient's smear confirming falciparum infection.",
+    "Cerebral malaria case from heavy parasitaemia blocking brain capillaries.",
+    "Village malaria camp: bed-net distribution plus drain clearing cutting new cases."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Economic importance of P. falciparum\" with one example.",
-    "compare \"Economic importance of P. falciparum\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Economic importance of P. falciparum\" and verify the answer is plausible."
+    "Describe the life cycle of Plasmodium falciparum in man and mosquito. (4)",
+    "Why is P. falciparum called malignant? Contrast it with P. vivax in a table. (4)",
+    "Explain the control measures of malaria in the Terai region of Nepal. (3)"
   ],
   "keyPoints": [
-    "• Economic importance of P. falciparum"
+    "Vector and two-host cycle",
+    "Ring and crescent-gametocyte marks",
+    "Malignant symptoms and why",
+    "Vivax contrast plus Terai control"
   ],
-  "summary": "Economic importance of P. falciparum (Faunal Diversity, Biology, class-11-notes) covers Economic importance of P. falciparum. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "P. falciparum: malignant malaria parasite, two-host cycle, ring and crescent marks, cerebral symptoms, vivax contrast table, Terai control measures.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Economic importance of P. falciparum\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Crescent (banana-shaped) gametocytes in a blood smear indicate:",
       "options": [
-        "True",
-        "False"
+        "Plasmodium falciparum",
+        "Plasmodium vivax",
+        "Entamoeba histolytica",
+        "Trypanosoma gambiense"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "Crescent gametocytes are the fastest falciparum mark; vivax shows round gametocytes with Schüffner's dots."
+    },
+    {
+      "question": "P. falciparum is called malignant because it causes:",
+      "options": [
+        "Cerebral malaria",
+        "Relapse from liver",
+        "Kala-azar",
+        "Sleeping sickness"
+      ],
+      "answer": "A",
+      "explanation": "Heavy parasitaemia blocks brain capillaries; falciparum shows no hypnozoite relapse."
+    },
+    {
+      "question": "Malaria transmission in Nepal's Terai is controlled by:",
+      "options": [
+        "Bed nets plus larvicides and drainage",
+        "Antibiotics in drinking water",
+        "Soil ploughing",
+        "Tree planting alone"
+      ],
+      "answer": "A",
+      "explanation": "Vector control plus surveillance is the standard Terai trio."
     }
   ]
 }

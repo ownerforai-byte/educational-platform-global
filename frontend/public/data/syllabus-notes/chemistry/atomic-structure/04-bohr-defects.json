@@ -75,7 +75,6 @@
     "❌ The uncertainty principle reflects imperfect instruments. ✅ It is a fundamental limit of nature, not a measurement limitation.",
     "❌ Bohr failed because orbits are not circular. ✅ The fatal objection is that a definite orbit (simultaneous r and p) cannot exist; probability orbitals replace them.",
     "❌ Zeeman splitting is explained by Bohr's model. ✅ It requires the magnetic quantum number and orbital magnetic moment of the quantum-mechanical model.",
-    "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)..",
     "❌ The M shell can hold 18 electrons before the N shell starts. ✅ The outermost shell is capped at 8; after 8 electrons in M, filling of N begins.",
     "❌ The Bohr–Bury scheme is a quantum-mechanical theory. ✅ It is a shell-filling rule set from the Bohr orbit picture; subshells and orbital shapes are absent.",
     "❌ 2n² applies to the outermost shell. ✅ 2n² is the *capacity*; the octet rule (8) restricts the valence shell's occupancy.",
@@ -92,8 +91,6 @@
     "How does Heisenberg's uncertainty principle destroy the concept of a Bohr orbit?",
     "Distinguish the Zeeman and Stark effects and explain why Bohr's model cannot explain them.",
     "Describe the modifications by Sommerfeld and Schrödinger that corrected Bohr's model.",
-    "one worked example for \"Defects of Bohr's theory\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
     "State the Bohr–Bury scheme with the 2n² and octet rules.",
     "Write the Bohr–Bury configuration of calcium (Z = 20) and point out where the scheme needs 4s before 3d.",
     "Why does the scheme fail for chromium and copper?",
@@ -138,7 +135,6 @@
   "examples": [
     "**Problem:** Why is the ground-state radius of He⁺ half that of hydrogen? **Solution:** r₁ = 0.529 n²/Z Å = 0.529/2 = 0.2645 Å — the formula works because He⁺ has one electron, and fails for neutral helium.",
     "**Problem:** Show a Bohr orbit violates the uncertainty principle for H (n = 1). **Solution:** a fixed r gives Δx ≈ 0 and a definite speed gives Δp ≈ 0, so Δx·Δp → 0 < h/4π — impossible; hence the orbit is not a real trajectory.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
     "**Problem:** Where does the Bohr–Bury scheme first fail? **Solution:** at potassium (Z = 19): the 2n²/sequence rules put the 19th electron in the M shell, but experiment and the (n + l) rule place it in 4s — the first sign that subshell energies, not shells, control filling.",
     "**Problem:** Why can Bohr's model not predict the relative brightness of Hα and Hβ? **Solution:** intensities depend on transition probabilities (population of levels and dipole strengths) — concepts absent from the model; quantum mechanics supplies them.",
     "**Problem:** Compute the electron's de Broglie wavelength in the n = 1 orbit (v = 2.18 × 10⁶ m s⁻¹). **Solution:** λ = h/mv = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 2.18×10⁶) = 3.33 × 10⁻¹⁰ m = 2πr₁ (r₁ = 0.529 Å) — the standing-wave condition verified."
@@ -157,11 +153,7 @@
   "keyPoints": [
     "• Defects of Bohr's theory"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Defects of Bohr's theory\" with one example.",
-    "compare \"Defects of Bohr's theory\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Defects of Bohr's theory\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "numericals": [
     "Use  En(H) = −13.6 Z²/n² eV  — pick reasonable values, solve, and check the units.",
     "Use  hν = ΔE  — pick reasonable values, solve, and check the units.",

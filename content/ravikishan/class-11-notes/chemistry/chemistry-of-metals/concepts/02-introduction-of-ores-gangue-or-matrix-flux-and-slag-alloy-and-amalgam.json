@@ -18,36 +18,21 @@
     "**Alloy.** one-line definition + one-line exam use.",
     "**Amalgam.** one-line definition + one-line exam use."
   ],
-  "confusion": [
-    "❌ treat \"Introduction of ores\" as one blob → ✅ split into: introduction of ores, gangue or matrix, flux.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc)).."
-  ],
+  "confusion": [],
   "bounds": [
     "Covers only: introduction of ores, gangue or matrix, flux, slag (within Chemistry of Metals).",
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc))."
   ],
-  "practice": [
-    "define + example each sub-idea: introduction of ores, gangue or matrix, flux, slag.",
-    "one worked example for \"Introduction of ores; gangue or matrix, flux and slag, al…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
+  "practice": [],
   "universalFacts": [
     "Transpose (AB)ᵀ = BᵀAᵀ. Inverse: A⁻¹ = adj(A)/det(A) (2×2: [d −b; −c a]/(ad−bc)).",
     "Properties: det(AB) = det A·det B; det A⁻¹ = 1/det A; det kA = kⁿ det A for n×n.",
     "Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I."
   ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Introduction of ores; gangue or matrix, flux and slag, al…\" with one example.",
-    "compare \"Introduction of ores\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Introduction of ores; gangue or matrix, flux and slag, al…\" and verify the answer is plausible."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
     "det([[a,b],[c,d]]) = ad − bc",
     "A⁻¹ = adj(A)/det(A)",

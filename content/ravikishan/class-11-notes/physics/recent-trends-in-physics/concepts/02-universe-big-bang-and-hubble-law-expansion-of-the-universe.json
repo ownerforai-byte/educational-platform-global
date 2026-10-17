@@ -1,77 +1,136 @@
 {
-  "title": "Universe: Big Bang and Hubble law — expansion of the Univ…",
+  "title": "Universe: Big Bang and Hubble's Law",
   "unitSlug": "recent-trends-in-physics",
   "topicSlug": "universe-big-bang-and-hubble-law-expansion-of-the-universe",
   "topicTitle": "Universe: Big Bang and Hubble law — expansion of the Universe",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "animation3D": "cosmology",
+  "motionGraphics": "expanding-universe",
+  "visualType": "big-bang-hubble",
+  "summary": "The Big Bang theory describes the universe originating from an extremely hot, dense state ~13.8 billion years ago and expanding ever since. Hubble's Law v = H₀d states that galaxies recede at speeds proportional to their distance, providing direct evidence for cosmic expansion. The Hubble constant H₀ ≈ 70 km/s/Mpc quantifies the current expansion rate.",
   "notes": [
-    "**Scope.** Universe: Big Bang and Hubble law — expansion of the Univ… — Recent Trends in Physics, Physics (class-11-notes).",
-    "**Tested.** define it · list: universe, big bang, hubble law — expansion of the universe · one worked example · one misconception each.",
-    "**Big Bang.** one-line definition + one-line exam use.",
-    "**Hubble law — expansion of the Universe.** one-line definition + one-line exam use."
+    "Big Bang Theory: The universe began as a singularity of infinite density and temperature approximately 13.8 × 10⁹ years ago. Space itself expanded, cooling the universe and allowing formation of subatomic particles, atoms, stars, and galaxies over time.",
+    "Cosmic Timeline: t = 0: Singularity. t < 10⁻⁴³ s: Planck epoch (quantum gravity). t ~ 10⁻³⁶ s: Inflationary epoch (exponential expansion). t ~ 3 min: Nucleosynthesis (H, He, Li formed). t ~ 380,000 yr: Recombination (CMB released). t ~ 400 Myr: First stars. t ~ 9 Gyr: Solar system forms.",
+    "Evidence for Big Bang: (1) Hubble's Law — galaxies receding proportionally to distance. (2) Cosmic Microwave Background (CMB) — 2.725 K blackbody radiation, uniform to 1 part in 10⁵. (3) Abundance of light elements — H:He ratio ~3:1 matches nucleosynthesis predictions. (4) Large-scale structure — galaxy distribution matches gravitational growth from initial fluctuations.",
+    "Hubble's Law: v = H₀d, where v is recession velocity, d is proper distance, and H₀ is Hubble constant. Discovered by Edwin Hubble in 1929 using Cepheid variable stars as standard candles. Current best estimate: H₀ ≈ 67–74 km/s/Mpc (tension between CMB and local measurements).",
+    "Interpretation of Redshift: Cosmological redshift z = Δλ/λ is NOT Doppler shift from motion through space. It results from stretching of photon wavelengths as space expands during transit. For small z: v ≈ cz; for large z: relativistic cosmology required.",
+    "Hubble Time and Age: t_H = 1/H₀ ≈ 14.4 Gyr gives rough age estimate assuming constant expansion. Actual age differs due to deceleration (matter domination) then acceleration (dark energy). Current age: 13.8 Gyr from ΛCDM model fitting.",
+    "Expansion of Space vs Motion Through Space: Galaxies are not flying apart through pre-existing space. Space itself is stretching, carrying galaxies with it. No center exists — every observer sees others receding. Analogy: dots on inflating balloon surface.",
+    "Dark Energy and Accelerated Expansion: Type Ia supernovae observations (1998) revealed expansion is accelerating, not slowing. Attributed to dark energy (Λ in Einstein's equations), constituting ~68% of total energy density. Fate: eternal accelerated expansion ('Big Freeze').",
+    "Limitations and Open Questions: Singularity problem (quantum gravity needed). Horizon problem (solved by inflation). Flatness problem (solved by inflation). Nature of dark matter (~27%) and dark energy (~68%). Multiverse speculation from eternal inflation."
   ],
-  "confusion": [
-    "❌ treat \"Universe\" as one blob → ✅ split into: universe, big bang, hubble law — expansion of the universe.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: universe, big bang, hubble law — expansion of the universe (within Recent Trends in Physics).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: universe, big bang, hubble law — expansion of the universe.",
-    "one worked example for \"Universe: Big Bang and Hubble law — expansion of the Univ…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Universe: Big Bang and Hubble law — expansion of the Univ…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Universe: Big Bang and Hubble law — expansion of the Univ…\" with one example.",
-    "compare \"Universe\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Universe: Big Bang and Hubble law — expansion of the Univ…\" and verify the answer is plausible."
+  "specificConditions": [
+    "Homogeneity and Isotropy: Cosmological principle assumes universe looks same everywhere (homogeneous) and in all directions (isotropic) on large scales (>100 Mpc). Validated by CMB uniformity and galaxy surveys.",
+    "General Relativity Framework: Expansion described by Friedmann-Lemaître-Robertson-Walker metric derived from Einstein's field equations. Newtonian mechanics insufficient for cosmological scales.",
+    "Redshift-Distance Relation Linear Only Locally: v = H₀d holds for z < 0.1. Higher redshifts require full relativistic treatment with scale factor a(t) and cosmological parameters Ω_m, Ω_Λ.",
+    "Hubble Constant Tension: Local distance ladder (Cepheids + SNe Ia) gives H₀ ≈ 73 km/s/Mpc; CMB (Planck satellite) gives H₀ ≈ 67.4 km/s/Mpc. Discrepancy unresolved — possible new physics or systematic errors."
   ],
   "formulas": [
-    "Governing equation for \"Universe: Big Bang and Hubble law — expansion of the Univ…\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Universe: Big Bang and Hubble law — expansion of the Univ…\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
+    "Hubble's Law: $v = H_0 d$",
+    "Redshift: $z = \\frac{\\lambda_{obs} - \\lambda_{emit}}{\\lambda_{emit}} = \\frac{a(t_{now})}{a(t_{emit})} - 1$",
+    "Hubble time: $t_H = \\frac{1}{H_0}$",
+    "Scale factor relation: $1 + z = \\frac{a(t_0)}{a(t)}$",
+    "Friedmann equation: $H^2 = \\frac{8\\pi G}{3}\\rho - \\frac{kc^2}{a^2} + \\frac{\\Lambda c^2}{3}$",
+    "Critical density: $\\rho_c = \\frac{3H_0^2}{8\\pi G}$"
   ],
   "keyPoints": [
-    "• Universe",
-    "• Big Bang",
-    "• Hubble law — expansion of the Universe"
+    "Universe originated ~13.8 Gyr ago from hot, dense state (Big Bang).",
+    "Hubble's Law v = H₀d proves cosmic expansion.",
+    "CMB at 2.725 K is relic radiation from recombination epoch.",
+    "Redshift measures expansion of space, not Doppler motion.",
+    "Dark energy drives accelerated expansion discovered in 1998.",
+    "H₀ tension between local and CMB measurements remains unsolved."
   ],
-  "summary": "Universe: Big Bang and Hubble law — expansion of the Univ… (Recent Trends in Physics, Physics, class-11-notes) covers Universe, Big Bang, Hubble law — expansion of the Universe. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Statement 1: Hubble's Law provides observational evidence that the universe is expanding uniformly.",
+    "Statement 2: Cosmic microwave background radiation confirms the hot Big Bang origin of the universe.",
+    "Statement 3: Cosmological redshift arises from expansion of space, not relative motion through space.",
+    "Statement 4: The universe has no center or edge — expansion occurs everywhere simultaneously.",
+    "Statement 5: Dark energy constitutes ~68% of cosmic energy density and causes accelerated expansion."
+  ],
+  "importantNotes": [
+    "1 Mpc = 3.26 million light-years = 3.086 × 10²² m.",
+    "CMB was accidentally discovered by Penzias and Wilson in 1965 (Nobel Prize 1978).",
+    "Georges Lemaître first proposed expanding universe and 'primeval atom' hypothesis in 1927, before Hubble's observations.",
+    "NEB asks to explain Hubble's Law, interpret redshift, and list evidence supporting Big Bang theory."
+  ],
+  "examShortTricks": [
+    "v = H₀d: linear relation between speed and distance.",
+    "Higher z → farther away → older lookback time.",
+    "CMB = afterglow of Big Bang at 2.725 K.",
+    "Three pillars: Expansion + CMB + Light element abundance.",
+    "Accelerating expansion → dark energy dominates today."
+  ],
+  "examNotes": [
+    "State Hubble's Law with units: H₀ in km/s/Mpc, d in Mpc, v in km/s.",
+    "Explain why redshift is cosmological, not Doppler, for distant galaxies.",
+    "List and explain three key evidences for Big Bang theory.",
+    "Discuss implications of accelerated expansion for fate of universe."
+  ],
+  "examples": [
+    "Galaxy at d = 100 Mpc: v = 70 × 100 = 7000 km/s. Redshift z ≈ v/c = 7000/300000 ≈ 0.023.",
+    "Hubble time: t_H = 1/(70 km/s/Mpc) = 1/(2.27×10⁻¹⁸ s⁻¹) ≈ 4.4×10¹⁷ s ≈ 14.0 Gyr.",
+    "CMB peak wavelength: λ_max = 2.9 mm·K / 2.725 K ≈ 1.06 mm (microwave region).",
+    "Lookback time for z = 1: Light emitted when universe was half its current size (~7.7 Gyr ago)."
+  ],
+  "practiceQuestions": [
+    "Q1. State Hubble's Law and explain its significance for cosmology.",
+    "Q2. Describe three lines of evidence supporting the Big Bang theory.",
+    "Q3. Distinguish cosmological redshift from Doppler redshift.",
+    "Q4. Calculate recession velocity of a galaxy 250 Mpc away (H₀ = 70 km/s/Mpc).",
+    "Q5. What is the cosmic microwave background and why is it important?",
+    "Q6. Explain how dark energy affects the expansion history of the universe."
+  ],
+  "practice": [
+    "Apply Hubble's Law to calculate distances or velocities for given redshifts.",
+    "Convert between H₀ units (km/s/Mpc ↔ s⁻¹ ↔ Gyr⁻¹).",
+    "Interpret CMB spectrum as blackbody radiation at 2.725 K.",
+    "Relate scale factor a(t) to observed redshift z.",
+    "Compare ages and sizes at different cosmological epochs."
+  ],
+  "universalFacts": [
+    "Edwin Hubble published his law in 1929; Georges Lemaître derived it theoretically in 1927 from general relativity.",
+    "The observable universe has radius ~46.5 billion light-years despite age 13.8 Gyr due to expansion during light travel.",
+    "Olbers' paradox (why night sky is dark) resolved by finite age and expansion redshifting distant starlight.",
+    "Future telescopes (Euclid, Roman) aim to resolve H₀ tension and constrain dark energy equation of state w."
+  ],
+  "confusion": [
+    "Thinking Big Bang was explosion IN space: It was expansion OF space itself — no pre-existing void.",
+    "Believing galaxies move THROUGH space: Comoving galaxies are stationary; space stretches between them.",
+    "Assuming universe expands into something: There is no 'outside' — spacetime is self-contained.",
+    "Confusing Hubble flow with peculiar motion: Local gravitational interactions cause deviations from pure Hubble flow.",
+    "Thinking CMB comes from stars: It predates star formation by hundreds of millions of years."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Universe: Big Bang and Hubble law — expansion of the Univ…\"?",
-      "options": [
-        "Universe",
-        "Big Bang",
-        "Unrelated topic",
-        "None of the above"
-      ],
-      "answer": "Universe",
-      "explanation": "Universe is listed among the official sub-ideas of Universe: Big Bang and Hubble law — expansion of the Univ…; the others are not part of this topic."
+      "question": "Hubble's Law states that:",
+      "options": ["All galaxies move at same speed", "Recession speed ∝ distance", "Closer galaxies recede faster", "Universe is contracting"],
+      "answer": "B",
+      "explanation": "v = H₀d: recession velocity proportional to proper distance."
     },
     {
-      "question": "A common examiner point on \"Universe: Big Bang and Hubble law — expansion of the Univ…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "question": "Cosmic microwave background temperature is approximately:",
+      "options": ["0 K", "2.7 K", "27 K", "2700 K"],
+      "answer": "B",
+      "explanation": "CMB measured at 2.725 K, consistent with cooled remnant of hot Big Bang."
+    },
+    {
+      "question": "Cosmological redshift is caused by:",
+      "options": ["Doppler effect", "Gravitational lensing", "Expansion of space", "Interstellar absorption"],
+      "answer": "C",
+      "explanation": "Wavelengths stretch as space expands during photon transit."
+    },
+    {
+      "question": "Current age of the universe is approximately:",
+      "options": ["4.5 billion years", "10 billion years", "13.8 billion years", "100 billion years"],
+      "answer": "C",
+      "explanation": "Best-fit ΛCDM model gives 13.8 ± 0.02 Gyr from Planck CMB data."
+    },
+    {
+      "question": "Accelerated expansion is attributed to:",
+      "options": ["Dark matter", "Dark energy", "Neutrinos", "Black holes"],
+      "answer": "B",
+      "explanation": "Dark energy (~68% of energy density) drives acceleration per supernova observations."
     }
   ]
 }

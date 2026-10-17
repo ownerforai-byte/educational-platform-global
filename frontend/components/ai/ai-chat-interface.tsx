@@ -91,6 +91,8 @@ const CAT_COLORS: Record<string, string> = {
   "Earth & Space": "text-indigo-500 bg-indigo-500/10 border-indigo-500/30",
 };
 
+export const IDENTITY_REPLY = "I'm Veer AI, trained by Ravikisan. Ravikisan — the founder and owner of this platform. He started this journey with his studies in grade 11 and built it in around 3 months with his own work — no extra member — a solo journey.";
+
 function sug(
   category: string,
   icon: React.ComponentType<{ className?: string }>,
@@ -294,6 +296,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const [streamPhase, setStreamPhase] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const isIdentityAnswer = useCallback(
+    (content: string) => content.trim() === IDENTITY_REPLY.trim(),
+    [],
+  );
   // Guest usage lives in localStorage — it must NEVER be read during render,
   // or the server HTML (always 0) won't match the hydrated client (the
   // 2026-09-26 hydration error on /chat: "7" vs "6"). Seed after mount.
@@ -1122,16 +1128,18 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                       )}
                     </div>
                     {/* Same per-answer actions as the tutor console, same position */}
-                    <ChatMessageActions
-                      copied={copiedIndex === index}
-                      onCopy={() => handleCopy(msg.content, index)}
-                      isLatest={index === lastAssistantIndex}
-                      disabled={sending}
-                      onRegenerate={regenerate}
-                      onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
-                      onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
-                      onPractice={startPracticeQuiz}
-                    />
+                    {isIdentityAnswer(msg.content) ? null : (
+                      <ChatMessageActions
+                        copied={copiedIndex === index}
+                        onCopy={() => handleCopy(msg.content, index)}
+                        isLatest={index === lastAssistantIndex}
+                        disabled={sending}
+                        onRegenerate={regenerate}
+                        onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
+                        onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
+                        onPractice={startPracticeQuiz}
+                      />
+                    )}
                   </div>
                 </div>
               );

@@ -39,9 +39,7 @@
     "Calculate the number of atoms per unit cell for simple cubic, BCC and FCC lattices, showing the share of corner, face and body-centre particles.",
     "Derive the relation between edge length and atomic radius for BCC and FCC cells.",
     "The edge length of a FCC unit cell of copper is 361 pm; calculate the density of copper (M = 63.5 g mol⁻¹).",
-    "State the limitations of the ideal unit-cell model.",
-    "one worked example for \"Introduction to unit crystal lattice and unit cell\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "State the limitations of the ideal unit-cell model."
   ],
   "formulas": [
     "$$\\text{Particles per cell: corner }\\frac{1}{8},\\ \\text{edge }\\frac{1}{4},\\ \\text{face }\\frac{1}{2},\\ \\text{body }1$$",
@@ -56,8 +54,7 @@
   ],
   "examples": [
     "**Problem:** Copper (FCC, a = 361 pm, M = 63.5 g mol⁻¹) — find the density. **Solution:** Z = 4; ρ = ZM/(a³N_A) = (4 × 63.5)/((3.61×10⁻⁸ cm)³ × 6.022×10²³) ≈ 8.97 g cm⁻³, matching the known value for copper.",
-    "**Problem:** Show that the radius of an atom in a BCC lattice is r = √3a/4. **Solution:** along the body diagonal of length √3a, the atoms touch: √3a = 4r, hence r = √3a/4 ≈ 0.433a.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "**Problem:** Show that the radius of an atom in a BCC lattice is r = √3a/4. **Solution:** along the body diagonal of length √3a, the atoms touch: √3a = 4r, hence r = √3a/4 ≈ 0.433a."
   ],
   "importantNotes": [
     "Quote the sharing fractions (1/8, 1/4, 1/2, 1) and Z values 1, 2, 4 — these are the most frequently asked points.",
@@ -69,11 +66,7 @@
     "• Introduction to unit crystal lattice",
     "• Unit cell"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Introduction to unit crystal lattice and unit cell\" with one example.",
-    "compare \"Introduction to unit crystal lattice\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Introduction to unit crystal lattice and unit cell\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "mcqs": [
     {
       "question": "A common examiner point on \"Introduction to unit crystal lattice and unit cell\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",

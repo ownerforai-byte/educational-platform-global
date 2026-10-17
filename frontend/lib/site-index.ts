@@ -8,6 +8,10 @@
  *
  * Rendered as: short opening → name → its link below.
  *
+ * Search is a front door, not an index: the global search bar (Ctrl K) and the
+ * quick-access pill both lead to /search, and that is where the whole library is
+ * searched — so /search is not a standalone card on the Everything Index page.
+ *
  * Server-only: this module pulls the heavy registries. The client renderer
  * imports just the types from ./site-index-types.
  */
@@ -143,7 +147,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
   groups.push({
     id: "start",
     name: "Start here",
-    opening: "The main doors: your dashboard, the curriculum spines and the tools that track your work.",
+    opening: "The main doors: your dashboard, the curriculum spines and the tools that track your work — search the whole library from the bar above (Ctrl K), not as a separate card.",
     entries: [
       {
         name: "Home",
@@ -187,12 +191,6 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         opening: "Class 12 in one place — six subjects, all units, notes, labs and derivations.",
         href: "/class-12-notes",
         meta: "Class XII",
-      },
-      {
-        name: "Search Index",
-        opening: "Type anything and search every note, chapter and topic on the platform at once.",
-        href: "/search",
-        meta: "Ctrl + K",
       },
       {
         name: "Visual Mindmaps",

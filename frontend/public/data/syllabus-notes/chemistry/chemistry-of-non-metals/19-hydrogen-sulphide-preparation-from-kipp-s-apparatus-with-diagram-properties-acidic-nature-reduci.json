@@ -12,29 +12,18 @@
     "**Fact.** Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h.",
     "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²)."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).."
-  ],
+  "confusion": [],
   "bounds": [
     "Limit to remember: line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²)."
   ],
-  "practice": [
-    "one worked example for \"Hydrogen sulphide: preparation from Kipp's apparatus (wit…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
+  "practice": [],
   "universalFacts": [
     "Line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).",
     "Pair of lines: a·S ≡ ax² + 2hxy + by²; represents a real pair iff h² ≥ ab. Angle between: tanθ = 2√(h²−ab)/(a+b).",
     "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
   ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Hydrogen sulphide: preparation from Kipp's apparatus (wit…\" with one example.",
-    "compare \"Hydrogen sulphide\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Hydrogen sulphide: preparation from Kipp's apparatus (wit…\" and verify the answer is plausible."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
     "d = |ax₁+by₁+c|/√(a²+b²)",
     "h² ≥ ab ⟺ real pair",

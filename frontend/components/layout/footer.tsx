@@ -173,13 +173,6 @@ const TIER_STRIP: {
       ["Veer AI", "/chat"],
     ],
   },
-  {
-    name: "Owner",
-    icon: ShieldCheck,
-    color: "text-emerald-500",
-    spark: "Unlimited",
-    links: [["Owner Console", "/owner"]],
-  },
 ];
 
 function FullFooter() {

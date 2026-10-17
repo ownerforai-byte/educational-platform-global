@@ -6,37 +6,82 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
+  "notes": [
+    "[Remember] Humans belong to order Primates, family Hominidae; anthropoid ancestors (dryopithecines) gave rise to hominins — humans did not evolve from living apes but share a common ancestor with them.",
+    "[Remember] Sequence: Dryopithecus → Australopithecus afarensis ('Lucy', bipedal, ~400 cc brain) → Homo habilis (tool maker, ~650 cc) → Homo erectus (fire, ~900 cc) → Homo sapiens neanderthalensis → Homo sapiens sapiens (~1350 cc).",
+    "[Understand] Key trends: habitual bipedalism, brain expansion, face flattening with chin, dental reduction, opposable thumb refinement, and prolonged infant dependency with culture and language.",
+    "[Understand] Evidence: fossils (Africa–Asia–Europe), tool industries (Oldowan, Acheulean), anatomically modern humans appearing ~300,000 years ago in Africa and spreading worldwide.",
+    "[Apply] Table contrasting Australopithecus vs Homo habilis vs Homo erectus vs modern man (posture, brain size, tools, one example each).",
+    "[Analyze/Evaluate] Why bipedalism first: freed hands for tools, energy-efficient travel; brain growth followed tool use and cooking — support with the Lucy-to-sapiens timeline.",
+    "[Create] NEB answer frame: position in classification → stage table with brain size → two trends explained → fossil/tool evidence → labelled timeline sketch."
+  ],
+  "confusion": [
+    "Humans did not evolve from living apes; both share an extinct common anthropoid ancestor.",
+    "Bipedalism came before major brain expansion — Lucy walked upright with a ~400 cc brain.",
+    "Homo habilis made tools, Homo erectus used fire; do not merge their achievements.",
+    "Neanderthals were a subspecies of Homo sapiens, not a separate failed genus."
+  ],
   "bounds": [],
   "practice": [
-    "one worked example for \"Evolution of modern man starting from anthropoid ancestor\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Order the six hominin stages with brain size and one trait each.",
+    "Draw the Lucy-to-sapiens timeline with posture and tool labels.",
+    "Recall card: stage → brain cc → tool → evidence."
   ],
   "universalFacts": [
-    "answer pattern for \"Evolution of modern man starting from anthropoid ancestor\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "Brain size roughly tripled from Australopithecus (~400 cc) to modern man (~1350 cc).",
+    "Bipedalism preceded tool culture; tool culture preceded agriculture and writing.",
+    "Fossil plus tool-industry evidence together make a complete NEB answer."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Australopithecus afarensis 'Lucy': upright walker, ~400 cc brain, no true tools.",
+    "Homo erectus: controlled fire, Acheulean hand axes, ~900 cc brain, first out-of-Africa spread.",
+    "Homo sapiens sapiens: ~1350 cc brain, language, art and agriculture."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Evolution of modern man starting from anthropoid ancestor\" with one example.",
-    "compare \"Evolution of modern man starting from anthropoid ancestor\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Evolution of modern man starting from anthropoid ancestor\" and verify the answer is plausible."
+    "Give the systematic position of man up to family with two characters of each rank. (3)",
+    "Describe the stages of human evolution from Australopithecus to modern man. (5)",
+    "Explain two major trends of human evolution with fossil evidence. (4)"
   ],
   "keyPoints": [
-    "• Evolution of modern man starting from anthropoid ancestor"
+    "Primate–Hominidae position",
+    "Six-stage sequence with brain sizes",
+    "Bipedalism and brain-expansion trends",
+    "Fossil and tool evidence plus timeline"
   ],
-  "summary": "Evolution of modern man starting from anthropoid ancestor (Evolutionary Biology, Biology, class-11-notes) covers Evolution of modern man starting from anthropoid ancestor. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Evolution of modern man: anthropoid ancestry, Lucy-to-sapiens stages with brain sizes, bipedalism and brain-expansion trends, fossil and tool evidence, labelled timeline.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Evolution of modern man starting from anthropoid ancestor\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "'Lucy' (Australopithecus afarensis) is famous for:",
       "options": [
-        "True",
-        "False"
+        "Bipedalism with ~400 cc brain",
+        "Fire use with ~900 cc brain",
+        "Agriculture with ~1350 cc brain",
+        "Flight with hollow bones"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "Lucy walked upright before major brain expansion — bipedalism first."
+    },
+    {
+      "question": "Homo erectus is distinguished by:",
+      "options": [
+        "Fire use and Acheulean tools",
+        "No tools at all",
+        "Agriculture and writing",
+        "Aquatic lifestyle"
+      ],
+      "answer": "A",
+      "explanation": "Homo erectus (~900 cc) controlled fire and spread out of Africa."
+    },
+    {
+      "question": "Modern man (Homo sapiens sapiens) has a brain of about:",
+      "options": [
+        "1350 cc",
+        "400 cc",
+        "650 cc",
+        "2000 cc"
+      ],
+      "answer": "A",
+      "explanation": "Brain size roughly tripled from Australopithecus to modern man."
     }
   ]
 }

@@ -20,36 +20,21 @@
     "**Molecular formula.** one-line definition + one-line exam use.",
     "**Empirical formula.** one-line definition + one-line exam use."
   ],
-  "confusion": [
-    "❌ treat \"Basic concepts of chemistry: atoms\" as one blob → ✅ split into: basic concepts of chemistry: atoms, molecules, relative masses of atoms.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
-  ],
+  "confusion": [],
   "bounds": [
     "Covers only: basic concepts of chemistry: atoms, molecules, relative masses of atoms, molecules (within Foundation and Fundamentals).",
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
   ],
-  "practice": [
-    "define + example each sub-idea: basic concepts of chemistry: atoms, molecules, relative masses of atoms, molecules.",
-    "one worked example for \"Basic concepts of chemistry: atoms, molecules, relative m…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
+  "practice": [],
   "universalFacts": [
     "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
     "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
     "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
   ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Basic concepts of chemistry: atoms, molecules, relative m…\" with one example.",
-    "compare \"Basic concepts of chemistry: atoms\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Basic concepts of chemistry: atoms, molecules, relative m…\" and verify the answer is plausible."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
     "n = m / M",
     "n = V / 22.4 (g at STP)",

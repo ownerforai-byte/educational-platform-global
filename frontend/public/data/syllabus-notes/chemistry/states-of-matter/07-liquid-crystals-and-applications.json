@@ -42,9 +42,7 @@
     "Explain the working of a twisted-nematic liquid crystal display.",
     "List four applications of liquid crystals in everyday life and industry.",
     "Explain how liquid crystals measure temperature and map thermal hot spots.",
-    "State the limitations of liquid-crystal materials in devices.",
-    "one worked example for \"Liquid crystals and their applications\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "State the limitations of liquid-crystal materials in devices."
   ],
   "formulas": [
     "$$\\text{Order parameter }S=\\tfrac{1}{2}\\left\\langle 3\\cos^{2}\\theta-1\\right\\rangle\\ (S=0\\ \\text{isotropic},\\ S=1\\ \\text{perfect crystal})$$",
@@ -59,8 +57,7 @@
   ],
   "examples": [
     "**Problem:** Why does an LCD watch darken in a very hot car? **Solution:** heating pushes the material above its mesophase range, the ordered phase is lost, polarisation can no longer be controlled and the display becomes unreadable.",
-    "**Problem:** A thermochromic LC strip shows red at 30 °C and blue at 35 °C. Why? **Solution:** the helical pitch shortens with rising temperature, so the reflected (Bragg) wavelength moves from red towards blue — a visual thermometer.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "**Problem:** A thermochromic LC strip shows red at 30 °C and blue at 35 °C. Why? **Solution:** the helical pitch shortens with rising temperature, so the reflected (Bragg) wavelength moves from red towards blue — a visual thermometer."
   ],
   "importantNotes": [
     "Describe the mesophase with both halves: 'ordered like a crystal, mobile like a liquid'.",
@@ -72,11 +69,7 @@
     "• Liquid crystals",
     "• Their applications"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Liquid crystals and their applications\" with one example.",
-    "compare \"Liquid crystals\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Liquid crystals and their applications\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "mcqs": [
     {
       "question": "A common examiner point on \"Liquid crystals and their applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",

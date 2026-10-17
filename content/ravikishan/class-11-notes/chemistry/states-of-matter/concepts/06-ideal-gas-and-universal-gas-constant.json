@@ -32,17 +32,14 @@
     "❌ An ideal gas is merely a light gas such as hydrogen. ✅ Ideality is about behaviour (no forces, no molecular volume), not mass; hydrogen merely approaches it best.",
     "❌ R changes from gas to gas. ✅ R is universal; only the real-gas constants a and b differ between gases.",
     "❌ R and k are the same constant. ✅ k = R/N_A is the per-molecule (Boltzmann) constant.",
-    "❌ PV = nRT works at 100 atm without error. ✅ Deviation becomes severe (Z ≠ 1) and the van der Waals equation is required.",
-    "❌ skip the key fact → ✅ ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩.."
+    "❌ PV = nRT works at 100 atm without error. ✅ Deviation becomes severe (Z ≠ 1) and the van der Waals equation is required."
   ],
   "practice": [
     "Explain why R is called universal and give its value in three sets of units.",
     "Calculate the molar mass of a gas of density 1.25 g L⁻¹ at 27 °C and 1 atm.",
     "Find the volume occupied by 8 g of oxygen at 27 °C and 750 mm Hg.",
     "Discuss the significance of R in the kinetic theory and in thermodynamics.",
-    "State the limitations of the ideal gas equation.",
-    "one worked example for \"Ideal gas and ideal gas equation; universal gas constant …\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "State the limitations of the ideal gas equation."
   ],
   "formulas": [
     "$$PV=nRT,\\qquad PV=\\frac{m}{M}RT,\\qquad PM=dRT,\\qquad P=CRT$$",
@@ -62,8 +59,7 @@
   ],
   "examples": [
     "**Problem:** Molar mass of a gas with d = 1.25 g L⁻¹ at 27 °C and 1 atm. **Solution:** M = dRT/P = (1.25 × 0.0821 × 300)/1 ≈ 30.8 g mol⁻¹.",
-    "**Problem:** Volume of 8 g O₂ at 27 °C and 750 mm Hg. **Solution:** n = 0.25 mol; V = nRT/P = (0.25 × 0.0821 × 300)/(750/760) ≈ 6.24 L.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "**Problem:** Volume of 8 g O₂ at 27 °C and 750 mm Hg. **Solution:** n = 0.25 mol; V = nRT/P = (0.25 × 0.0821 × 300)/(750/760) ≈ 6.24 L."
   ],
   "importantNotes": [
     "Convert T to kelvin and match R to the units used (8.314 with Pa and m³; 0.0821 with atm and L).",
@@ -77,11 +73,7 @@
     "• Universal gas constant",
     "• Its significance"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Ideal gas and ideal gas equation; universal gas constant …\" with one example.",
-    "compare \"Ideal gas\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Ideal gas and ideal gas equation; universal gas constant …\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "numericals": [
     "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
     "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",

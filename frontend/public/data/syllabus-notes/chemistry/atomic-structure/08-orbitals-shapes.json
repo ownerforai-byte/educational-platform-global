@@ -79,8 +79,6 @@
     "Why are s orbitals non-directional while p orbitals are directional? Give a chemical consequence.",
     "How many radial and angular nodes are there in a 3p orbital?",
     "Explain, using penetration, why 3s lies lower in energy than 3p in a multi-electron atom.",
-    "one worked example for \"Orbitals and shape of s and p orbitals only\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
     "Draw box diagrams for N, O and Ne and count unpaired electrons.",
     "State the three rules (Aufbau, Pauli, Hund) that govern box diagrams.",
     "Map the orbitals of the M shell with their capacities.",
@@ -111,7 +109,6 @@
   "examples": [
     "**Problem:** Total nodes in a 3p orbital? **Solution:** radial = n − l − 1 = 1; angular = l = 1; total = n − 1 = 2.",
     "**Problem:** How many electrons fill all p orbitals of the n = 3 shell? **Solution:** 2l + 1 = 3 orbitals × 2 = 6 electrons.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
     "**Problem:** Draw the box diagram for V (Z = 23). **Solution:** [Ar] 4s ↑↓, 3d ↑ ↑ ↑ → three unpaired d electrons, μ ≈ √15 ≈ 3.87 BM.",
     "**Problem:** Compare the probability of finding the 1s electron at r = a₀ and r = 0. **Solution:** the *radial probability* 4πr²|ψ|² vanishes at r = 0 (the r² factor) and peaks at a₀ — even though |ψ|² itself is largest at the nucleus; the two curves answer different questions."
   ],
@@ -130,11 +127,7 @@
     "• Shape of s",
     "• P orbitals only"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Orbitals and shape of s and p orbitals only\" with one example.",
-    "compare \"Orbitals\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Orbitals and shape of s and p orbitals only\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Orbitals and shape of s and p orbitals only\"?",

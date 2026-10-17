@@ -1,71 +1,23 @@
 {
-  "title": "Laws of stoichiometry",
+  "title": "Laws of Stoichiometry (Summary)",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
-  "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "relevance": 10,
   "notes": [
-    "**Law of conservation of mass.** Lavoisier: matter is neither created nor destroyed in a chemical reaction, so total reactant mass equals total product mass.",
-    "**Law of definite proportions.** Proust: a pure compound always contains the same elements in the same fixed proportion by mass, whatever its source — water is always 11.1% hydrogen and 88.9% oxygen by mass.",
-    "**Law of multiple proportions.** Dalton: when two elements form several compounds, the masses of one combining with a fixed mass of the other stand in simple whole-number ratios — CO and CO₂ contain 16 g and 32 g oxygen per 12 g carbon.",
-    "**Gay-Lussac's law of gaseous volumes.** Gaseous reactants and products at the same temperature and pressure combine in simple whole-number ratios of volume.",
-    "**Avogadro's law.** Equal volumes of gases at the same temperature and pressure contain equal numbers of molecules, which explains Gay-Lussac's volume ratios."
+    "This file is a summary reference. For complete detailed coverage of all stoichiometry laws, see the individual concept files: 01-law-of-conservation-of-mass.json, 02-law-of-definite-proportions.json, 03-law-of-multiple-proportions.json, 04-law-of-reciprocal-proportions.json, and 02-laws-stoichiometry.json.",
+    "Law of Conservation of Mass (Lavoisier): Total mass of reactants equals total mass of products in a chemical reaction.",
+    "Law of Definite Proportions (Proust): A pure compound always contains the same elements in fixed proportion by mass.",
+    "Law of Multiple Proportions (Dalton): When two elements form more than one compound, masses of one element combining with fixed mass of other are in simple whole-number ratios.",
+    "Law of Reciprocal Proportions (Richter): When two elements combine separately with a fixed mass of a third element, the ratio of their masses in which they combine with each other is either the same or a simple multiple.",
+    "Gay-Lussac's Law of Gaseous Volumes: Gases react in simple whole-number volume ratios at same temperature and pressure.",
+    "Avogadro's Law: Equal volumes of all gases at same temperature and pressure contain equal number of molecules."
   ],
-  "confusion": [
-    "❌ treat \"Laws of stoichiometry\" as one blob → ✅ split into: laws of stoichiometry.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
-  ],
-  "bounds": [
-    "Covers only: laws of stoichiometry (within Stoichiometry).",
-    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
-    "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
-  ],
-  "practice": [
-    "define + example each sub-idea: laws of stoichiometry.",
-    "one worked example for \"Laws of stoichiometry\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Laws of stoichiometry\" with one example.",
-    "compare \"Laws of stoichiometry\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Laws of stoichiometry\" and verify the answer is plausible."
-  ],
-  "formulas": [
-    "n = m / M",
-    "n = V / 22.4 (g at STP)",
-    "% yield = (actual / theoretical) × 100"
-  ],
-  "numericals": [
-    "Use  n = m / M  — pick reasonable values, solve, and check the units.",
-    "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
-    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
-  ],
+  "formulas": [],
   "keyPoints": [
-    "• Laws of stoichiometry"
+    "Five fundamental laws govern stoichiometric calculations.",
+    "These laws form the basis for quantitative chemistry.",
+    "See individual topic files for detailed explanations and examples."
   ],
-  "summary": "Laws of stoichiometry (Stoichiometry, Chemistry, class-11-notes) covers Laws of stoichiometry. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
-    {
-      "question": "A common examiner point on \"Laws of stoichiometry\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
+  "summary": "Overview reference for the five laws of stoichiometry. Detailed content is available in the individual concept files for each law."
 }

@@ -65,8 +65,6 @@
     "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
     "Calculate the de Broglie wavelength of an electron accelerated through 100 V.",
     "Describe the Davisson–Germer experiment as evidence for matter waves and give two applications of electron waves.",
-    "one worked example for \"Elementary idea of quantum mechanical model: de Broglie's…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid.",
     "Derive de Broglie's relation from the photon equations E = hν and E = mc².",
     "Calculate λ for an electron accelerated through 100 V and through 50 V.",
     "Describe the Davisson–Germer experiment and show how it verifies λ = h/mv.",
@@ -99,7 +97,6 @@
   "examples": [
     "**Problem:** de Broglie wavelength of an electron moving at 10⁶ m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 10⁶) = 7.27 × 10⁻¹⁰ m = 0.727 nm.",
     "**Problem:** Wavelength of a 1.0 g bullet moving at 300 m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(10⁻³ × 300) = 2.2 × 10⁻³³ m — many orders of magnitude smaller than any aperture, so no diffraction is observed.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
     "**Problem:** λ of an electron with KE = 13.6 eV. **Solution:** λ = 12.27/√13.6 ≈ 3.33 Å — exactly one circumference of the first Bohr orbit, linking the two topics.",
     "**Problem:** Why does the equation give discrete energies? **Solution:** acceptable ψ must be continuous, single-valued and normalisable; these boundary conditions are satisfied only for special values of E — the same logic that quantises a vibrating guitar string."
   ],
@@ -116,11 +113,7 @@
   "keyPoints": [
     "• Elementary idea of quantum mechanical model: de Broglie's…"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Elementary idea of quantum mechanical model: de Broglie's…\" with one example.",
-    "compare \"Elementary idea of quantum mechanical model: de Broglie's…\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Elementary idea of quantum mechanical model: de Broglie's…\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "mcqs": [
     {
       "question": "A common examiner point on \"Elementary idea of quantum mechanical model: de Broglie's…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",

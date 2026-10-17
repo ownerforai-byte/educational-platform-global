@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "heredity-and-evolution",
+  "unitTitle": "Heredity and Evolution",
+  "unitHours": 24,
+  "syllabusTopics": [
+    "Mendel's laws of inheritance — monohybrid and dihybrid cross",
+    "Incomplete dominance and codominance",
+    "Linkage and crossing over",
+    "Sex determination and sex-linked disorders",
+    "Chromosome theory of inheritance",
+    "Molecular basis of inheritance: DNA structure, replication, transcription, translation, gene regulation",
+    "Human genome project — objectives and significance",
+    "Evolution: evidences, adaptive radiation, Hardy-Weinberg equilibrium, human evolution"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Filled 2026-10-17 from the unit's verified concepts (molecular basis of inheritance, DNA structure/replication/transcription/translation/gene regulation) and syllabus scope; no Class-12 PYQ bank exists in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Molecular Inheritance · Class 12",
+    "title": "Central dogma — DNA to protein, one-way street",
+    "href": "/class-12-notes/biology",
+    "icon": "Microscope",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "DNA's double helix (Watson-Crick, 1953) stores heredity: antiparallel strands, deoxyribose sugar, A=T (2 H-bonds) and G≡C (3 H-bonds), complementary base pairing enabling faithful replication. Semiconservative replication (Meselson-Stahl) unwinds and copies each strand; transcription makes mRNA from the template; translation decodes mRNA in 3-base codons into amino acids via the genetic code (64 codons, 20 amino acids, AUG start, UAA/UAG/UGA stop). Gene regulation (lac operon: repressor + operator + promoter) switches genes on/off."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "DNA: A=T (2 H-bonds), G≡C (3 H-bonds) · replication: semiconservative (each daughter = old strand + new strand) · genetic code: 64 codons → 20 amino acids · AUG = start (Met) · stops: UAA, UAG, UGA · lac operon: repressor + operator + promoter (inducible, negative control) · human genome: ~3×10⁹ bp, ~20,000 genes"
+    },
+    {
+      "label": "Conditions",
+      "text": "Replication needs DNA polymerase, primase, ligase, helicase, and a template; transcription needs RNA polymerase and promoter; translation needs ribosomes (rRNA), tRNA with anticodons, and mRNA. The genetic code is universal, degenerate (multiple codons per amino acid), non-overlapping and commaless — conditions that make it robust to mutation."
+    },
+    {
+      "label": "Special cases",
+      "text": "HGP objectives: sequence all ~3 billion base pairs, identify all genes, map variations, and make data public (completed 2003). Adaptive radiation: Darwin's finches (14 species from one ancestor, beak shapes matched to food). Hardy-Weinberg: p²+2pq+q² = 1 — allele frequencies frozen without mutation, selection, migration, drift, or non-random mating."
+    },
+    {
+      "label": "Solved",
+      "text": "Central-dogma flow: DNA replication (semiconservative, each new molecule keeps one parental strand) → transcription (mRNA carries the code from nucleus to cytoplasm) → translation (ribosome reads codons, tRNA delivers amino acids, polypeptide folds). Gene regulation example: lac operon OFF when lactose absent (repressor bound); ON when lactose present (inducer removes repressor)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Central dogma has exceptions: reverse transcriptase (retroviruses, RNA→DNA), prions (protein-only inheritance). HGP's 'gene count' (~20,000) surprised everyone (fewer than expected). Hardy-Weinberg describes populations that by definition are NOT evolving — a null model, not reality."
+    },
+    {
+      "label": "Derivation",
+      "text": "Semiconservative replication derives from complementary base pairing: each strand templates its complement, so daughter molecules must each contain one parental strand — Meselson-Stahl confirmed with ¹⁵N/¹⁴N density gradients. The genetic code's degeneracy (61 sense codons → 20 amino acids) buffers against point mutations; wobble at the third position explains much of it."
+    },
+    {
+      "label": "Shortcut",
+      "text": "DNA→RNA→protein, with replication as the copy step. Code: 64 = 4³, 61 sense + 3 stop. HGP: sequence + map + function + public (4 objectives). Hardy-Weinberg: p²+2pq+q² = 1, equilibrium means no evolution."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: DNA structure with H-bond counts; replication/transcription/translation flow with enzymes; genetic code properties (universal, degenerate, non-overlapping); lac operon regulation; Hardy-Weinberg equilibrium with one violation consequence."
+    }
+  ]
+}

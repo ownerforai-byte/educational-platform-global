@@ -38,17 +38,14 @@
     "❌ The empirical formula can be found without the molecular mass. ✅ It can — but the molecular formula needs the molecular mass (or vapour density) to give n.",
     "❌ A ratio of 1 : 1.5 is acceptable as an empirical formula. ✅ Ratios must be whole numbers, so multiply by 2 to obtain 2 : 3.",
     "❌ Oxygen must always be estimated directly. ✅ In combustion analysis oxygen is normally found by difference (total mass − mass of C − mass of H).",
-    "❌ Two compounds with the same empirical formula are the same substance. ✅ They may be isomers or entirely different compounds with different molecular masses.",
-    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
+    "❌ Two compounds with the same empirical formula are the same substance. ✅ They may be isomers or entirely different compounds with different molecular masses."
   ],
   "practice": [
     "A compound contains 40% C, 6.67% H and 53.33% O and has molecular mass 180. Determine its empirical and molecular formula.",
     "0.2 g of an organic compound on combustion gives 0.44 g CO₂ and 0.18 g H₂O. Find its empirical formula.",
     "An oxide of nitrogen contains 30.4% nitrogen and has vapour density 46. Find its molecular formula.",
     "A hydrated salt contains 36.1% water of crystallisation and its anhydrous salt has molar mass 120 g mol⁻¹. Find the number of water molecules per formula unit.",
-    "Explain why an empirical formula alone cannot identify a compound, with a suitable example.",
-    "one worked example for \"Calculation of empirical and molecular formula from % com…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Explain why an empirical formula alone cannot identify a compound, with a suitable example."
   ],
   "formulas": [
     "$$\\text{molecular formula}=(\\text{empirical formula})_{n},\\qquad n=\\frac{\\text{molecular mass}}{\\text{empirical formula mass}}$$",
@@ -68,8 +65,7 @@
   ],
   "examples": [
     "**Problem:** 0.2 g of an organic compound gives 0.44 g CO₂ and 0.18 g H₂O. Find the empirical formula. **Solution:** mass C = 0.44 × 12/44 = 0.12 g (0.01 mol); mass H = 0.18 × 2/18 = 0.02 g (0.02 mol); oxygen by difference = 0.2 − 0.12 − 0.02 = 0.06 g = 0.00375 mol. Divide by 0.00375 → C : H : O = 2.67 : 5.33 : 1 → ×3 → 8 : 16 : 3, so the empirical formula is C₈H₁₆O₃ — illustrating how careful the ratio step must be.",
-    "**Problem:** An oxide of nitrogen contains 30.4% N and has VD = 46. **Solution:** N = 30.4/14 = 2.17, O = 69.6/16 = 4.35 → divide by 2.17 → 1 : 2, empirical formula NO₂, formula mass 46; n = 92/46 = 2 → molecular formula N₂O₄.",
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "**Problem:** An oxide of nitrogen contains 30.4% N and has VD = 46. **Solution:** N = 30.4/14 = 2.17, O = 69.6/16 = 4.35 → divide by 2.17 → 1 : 2, empirical formula NO₂, formula mass 46; n = 92/46 = 2 → molecular formula N₂O₄."
   ],
   "importantNotes": [
     "Learn the sequence exactly: percentage → mass → moles → divide by the smallest → whole numbers → n → molecular formula.",
@@ -82,11 +78,7 @@
     "• Molecular formula from % composition",
     "• Solving related numerical problems"
   ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Calculation of empirical and molecular formula from % com…\" with one example.",
-    "compare \"Calculation of empirical\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Calculation of empirical and molecular formula from % com…\" and verify the answer is plausible."
-  ],
+  "practiceQuestions": [],
   "numericals": [
     "Use  n = m / M  — pick reasonable values, solve, and check the units.",
     "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
