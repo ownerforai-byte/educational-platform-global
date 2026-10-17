@@ -3,16 +3,153 @@
   "unitSlug": "heat-and-temperature",
   "topicSlug": "quantity-of-heat",
   "topicTitle": "Quantity of Heat",
-  "relevance": 45,
+  "relevance": 75,
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature",
-  "summary": "Quantity of Heat covers essential principles and applications.",
-  "specificConditions": [
-    "**Heat Capacity Definition:** Heat capacity $C = \\Delta Q/\\Delta T$ is the heat required to raise temperature by 1 K. Specific heat capacity $c = C/m$ is per unit mass (J/kg·K). Molar heat capacity $C_m = C/n$ is per mole (J/mol·K).",
-    "**Phase Change Latent Heat:** During phase change (melting, boiling), temperature is constant while heat is absorbed/released as latent heat: $Q = mL$. Latent heat of fusion $L_f$ (solid↔liquid) and vaporization $L_v$ (liquid↔gas) are material properties.",
-    "**Calorimetry Principle:** In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating $m_1 c_1 (T_f - T_1) = m_2 c_2 (T_2 - T_f)$."
-  ],
-  "duplicateType": 1,
   "visualType": "heat-transfer",
-  "notes": []
+  "summary": "Quantity of heat is the energy transferred due to temperature difference. Specific heat capacity, heat capacity, latent heat, and calorimetry principle govern heat transfer calculations. Q = mcΔT for temperature change and Q = mL for phase change.",
+  "notes": [
+    "Heat: Energy transferred between bodies due to temperature difference. SI unit: joule (J). Heat flows from higher temperature to lower temperature.",
+    "Heat Capacity: C = Q/ΔT is the heat required to raise the temperature of a body by 1 K (or 1°C). Unit: J/K. Depends on mass and material of the body.",
+    "Specific Heat Capacity: c = C/m = Q/(mΔT) is the heat required to raise unit mass of a substance by 1 K. Unit: J/(kg·K). Characteristic property of the material.",
+    "Molar Heat Capacity: Cₘ = C/n = Q/(nΔT) is heat per mole. Unit: J/(mol·K). Used in thermodynamics and kinetic theory.",
+    "Calorimetry Principle: In an isolated system, heat lost by hot bodies equals heat gained by cold bodies. Assumes no heat loss to surroundings.",
+    "Latent Heat: Heat absorbed or released during phase change at constant temperature. Q = mL. L_f = latent heat of fusion (solid↔liquid), L_v = latent heat of vaporization (liquid↔gas).",
+    "Specific Latent Heat: L = Q/m is latent heat per unit mass. Unit: J/kg. Different for each substance and each phase change."
+  ],
+  "specificConditions": [
+    "Heat Capacity Definition: Heat capacity C = ΔQ/ΔT is the heat required to raise temperature by 1 K. Specific heat capacity c = C/m is per unit mass (J/kg·K). Molar heat capacity Cₘ = C/n is per mole (J/mol·K).",
+    "Phase Change Latent Heat: During phase change (melting, boiling), temperature is constant while heat is absorbed/released as latent heat: Q = mL. Latent heat of fusion L_f (solid↔liquid) and vaporization L_v (liquid↔gas) are material properties.",
+    "Calorimetry Principle: In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating m₁c₁(T_f - T₁) = m₂c₂(T₂ - T_f)."
+  ],
+  "formulas": [
+    "Heat transfer: Q = mcΔT",
+    "Heat capacity: C = Q/ΔT",
+    "Specific heat capacity: c = Q/(mΔT)",
+    "Molar heat capacity: Cₘ = Q/(nΔT)",
+    "Latent heat: Q = mL",
+    "Specific latent heat: L = Q/m",
+    "Calorimetry: m₁c₁(T_f - T₁) = m₂c₂(T₂ - T_f) (heat lost = heat gained)"
+  ],
+  "keyPoints": [
+    "Heat flows from higher temperature to lower temperature.",
+    "Specific heat capacity c = Q/(mΔT) is a characteristic property of material.",
+    "Water has high specific heat (4186 J/kg·K) — moderates climate.",
+    "During phase change, temperature remains constant despite heat absorption.",
+    "Calorimetry: heat lost = heat gained in an isolated system.",
+    "Latent heat of fusion L_f for melting; latent heat of vaporization L_v for boiling."
+  ],
+  "importantStatements": [],
+  "importantNotes": [
+    "Specific heat capacity is independent of mass — it depends only on the material.",
+    "Heat capacity C depends on both mass and material of the body.",
+    "During melting or boiling, temperature stays constant while heat is being absorbed.",
+    "Latent heat of vaporization is much larger than latent heat of fusion for most substances.",
+    "Calorimetry assumes perfect insulation — no heat exchange with surroundings."
+  ],
+  "examShortTricks": [
+    "Q = mcΔT — use for temperature change (no phase change).",
+    "Q = mL — use for phase change (constant temperature).",
+    "Heat lost = heat gained — calorimetry equation.",
+    "Water: c = 4186 J/kg·K, L_f = 3.34 × 10⁵ J/kg, L_v = 2.26 × 10⁶ J/kg.",
+    "Units: c in J/(kg·K), L in J/kg, Q in joules."
+  ],
+  "examNotes": [
+    "NEB frequently asks calorimetry numericals: mixing hot and cold bodies to find equilibrium temperature.",
+    "Specific heat determination by method of mixtures is a standard experiment.",
+    "Latent heat numericals: ice-steam mixtures with phase changes are common.",
+    "Distinguish between specific heat (per unit mass) and heat capacity (for the whole body).",
+    "Always check if phase change occurs — if yes, include Q = mL term."
+  ],
+  "examples": [
+    "Heat needed to raise 2 kg water from 20°C to 80°C: Q = mcΔT = 2 × 4186 × 60 = 502,320 J ≈ 502 kJ.",
+    "Heat to melt 0.5 kg ice at 0°C: Q = mL_f = 0.5 × 3.34 × 10⁵ = 167,000 J = 167 kJ.",
+    "200 g copper (c = 385 J/kg·K) at 100°C mixed with 300 g water at 20°C: equilibrium T found by m_cu c_cu (100-T) = m_w c_w (T-20).",
+    "Heat to vaporize 0.1 kg water at 100°C: Q = mL_v = 0.1 × 2.26 × 10⁶ = 226,000 J = 226 kJ."
+  ],
+  "practiceQuestions": [
+    "Q2. Calculate heat required to raise 3 kg of water from 25°C to 75°C.",
+    "Q3. State the principle of calorimetry and its assumptions.",
+    "Q4. What is latent heat of fusion? How does it differ from latent heat of vaporization?",
+    "Q5. A 500 g metal block at 100°C is placed in 200 g water at 20°C. Find equilibrium temperature.",
+    "Q6. Calculate heat needed to convert 0.2 kg ice at 0°C to water at 0°C."
+  ],
+  "practice": [
+    "Solve Q = mcΔT numericals for various substances.",
+    "Solve Q = mL numericals for melting and vaporization.",
+    "Apply calorimetry principle to mixing problems.",
+    "Determine specific heat by method of mixtures.",
+    "Solve mixed problems with both temperature change and phase change."
+  ],
+  "universalFacts": [
+    "Water has one of the highest specific heat capacities among common substances (4186 J/kg·K).",
+    "James Prescott Joule established the mechanical equivalent of heat: 1 cal = 4.186 J.",
+    "Joseph Black discovered latent heat and specific heat in the 18th century.",
+    "The high specific heat of water moderates coastal climates and helps regulate body temperature.",
+    "Latent heat of vaporization of water (2.26 × 10⁶ J/kg) is about 7 times the latent heat of fusion."
+  ],
+  "confusion": [
+    "Confusing heat capacity (for whole body) with specific heat capacity (per unit mass).",
+    "Thinking temperature rises during phase change: Temperature stays constant during melting/boiling.",
+    "Believing heat and temperature are the same: Heat is energy; temperature is degree of hotness.",
+    "Forgetting to convert units: mass to kg, temperature to K or °C (ΔT same in both), energy to J.",
+    "Assuming calorimetry works without insulation: Heat loss to surroundings causes error."
+  ],
+  "mcs": [
+    {
+      "question": "Specific heat capacity is heat required per:",
+      "options": [
+        "Unit mass per degree",
+        "Unit volume per degree",
+        "Whole body per degree",
+        "Unit area per degree"
+      ],
+      "answer": "A",
+      "explanation": "Specific heat capacity c = Q/(mΔT) — per unit mass per degree temperature change."
+    },
+    {
+      "question": "During melting of ice at 0°C:",
+      "options": [
+        "Temperature rises",
+        "Temperature falls",
+        "Temperature stays constant",
+        "Temperature first rises then falls"
+      ],
+      "answer": "C",
+      "explanation": "During phase change, temperature remains constant while heat is absorbed as latent heat."
+    },
+    {
+      "question": "Calorimetry principle states:",
+      "options": [
+        "Heat gained = heat lost",
+        "Heat gained > heat lost",
+        "Heat gained < heat lost",
+        "No heat transfer"
+      ],
+      "answer": "A",
+      "explanation": "In an isolated system, heat lost by hot body equals heat gained by cold body."
+    },
+    {
+      "question": "SI unit of specific heat capacity:",
+      "options": [
+        "J/kg",
+        "J/(kg·K)",
+        "J/K",
+        "J/mol"
+      ],
+      "answer": "B",
+      "explanation": "c = Q/(mΔT): joules per kilogram per kelvin = J/(kg·K)."
+    },
+    {
+      "question": "Water's specific heat capacity is approximately:",
+      "options": [
+        "418 J/(kg·K)",
+        "4186 J/(kg·K)",
+        "41860 J/(kg·K)",
+        "41.86 J/(kg·K)"
+      ],
+      "answer": "B",
+      "explanation": "Water has c ≈ 4186 J/(kg·K), one of the highest among common substances."
+    }
+  ]
 }

@@ -1,75 +1,162 @@
 {
-  "title": "Current-voltage relations; ohmic and non-ohmic resistance",
+  "title": "Current-Voltage Relations: Ohmic and Non-Ohmic Resistance",
   "unitSlug": "dc-circuits",
   "topicSlug": "current-voltage-relations-ohmic-and-non-ohmic-resistance",
   "topicTitle": "Current-voltage relations; ohmic and non-ohmic resistance",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
-    "**Fact.** Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
-    "**Fact.** Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
+    "Ohm's Law: For an ohmic conductor at constant physical conditions (especially temperature), the current $I$ flowing through it is directly proportional to the potential difference $V$ across its ends: $V = IR$, where $R$ is the resistance. The graph of $V$ vs $I$ is a straight line through the origin.",
+    "Resistance Definition: Resistance $R$ of a conductor is defined as the ratio of potential difference across it to the current through it: $R = V/I$. SI unit: ohm ($\\Omega = \text{V/A} = \text{V}^2/\text{W}$). Dimensions: $[M L^2 T^{-3} I^{-2}]$.",
+    "Resistivity: The resistance of a uniform conductor depends on its geometry and material: $R = \\rho L/A$, where $\\rho$ is resistivity (material property), $L$ is length, and $A$ is cross-sectional area. SI unit of $\\rho$: $\\Omega\\cdot\text{m}$. Conductivity $\\sigma = 1/\\rho$.",
+    "Ohmic Conductors: Conductors that obey Ohm's law ($V$-$I$ graph is linear) are called ohmic. Examples: metals at constant temperature, electrolytes, carbon resistors. Their resistance is independent of $V$ and $I$ (within limits).",
+    "Non-Ohmic Conductors: Conductors that do NOT obey Ohm's law ($V$-$I$ graph is non-linear). Examples: diode, transistor, thermistor, filament lamp, vacuum tube, electrolyte at high voltage. Their resistance varies with $V$ or $I$ (dynamic resistance $r_d = dV/dI$).",
+    "Temperature Dependence: For metals, resistance increases with temperature: $R_T = R_0(1 + \\alpha\\Delta T)$, where $\\alpha$ is temperature coefficient of resistance (positive for metals). For semiconductors, $\\alpha$ is negative (resistance decreases with temperature).",
+    "Filament Lamp: A filament lamp is non-ohmic because its temperature rises as current increases, changing its resistance. Cold resistance is lower than hot resistance.",
+    "Diode: A p-n junction diode conducts easily in forward bias (small resistance) and blocks in reverse bias (large resistance). Its $V$-$I$ characteristic is highly non-linear.",
+    "Superconductors: Below a critical temperature $T_c$, certain materials exhibit zero electrical resistance ($R = 0$) and expel magnetic fields (Meissner effect). Examples: mercury ($T_c \\approx 4.2\\text{ K}$), niobium-titanium alloys."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material).."
-  ],
-  "bounds": [
-    "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
-  ],
-  "practice": [
-    "one worked example for \"Current-voltage relations; ohmic and non-ohmic resistance\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
-    "Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
-    "Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Current-voltage relations; ohmic and non-ohmic resistance\" with one example.",
-    "compare \"Current-voltage relations\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Current-voltage relations; ohmic and non-ohmic resistance\" and verify the answer is plausible."
+  "specificConditions": [
+    "Ohm's Law Validity: Ohm's law $V = IR$ holds only for ohmic materials at constant temperature and other physical conditions. It is NOT a fundamental law of nature but an empirical observation valid for many conductors.",
+    "Dynamic vs Static Resistance: For non-ohmic devices, static resistance $R = V/I$ (at a point) differs from dynamic resistance $r_d = dV/dI$ (slope of V-I curve). The dynamic resistance is what matters for small-signal AC analysis.",
+    "Temperature Must Be Constant: Ohm's law assumes temperature stays constant. As current flows, Joule heating ($I^2R$) raises temperature, changing resistance — this is why filament lamps are non-ohmic."
   ],
   "formulas": [
-    "V = IR",
-    "P = IV = I²R = V²/R",
-    "V_term = E − Ir"
-  ],
-  "numericals": [
-    "Use  V = IR  — pick reasonable values, solve, and check the units.",
-    "Use  P = IV = I²R = V²/R  — pick reasonable values, solve, and check the units.",
-    "Use  V_term = E − Ir  — pick reasonable values, solve, and check the units."
+    "Ohm's law: $V = IR$",
+    "Resistance: $R = V/I$",
+    "Resistance of uniform conductor: $R = \\rho L/A$",
+    "Resistivity: $\\rho = RA/L$",
+    "Conductivity: $\\sigma = 1/\\rho$",
+    "Temperature dependence: $R_T = R_0(1 + \\alpha\\Delta T)$",
+    "Power: $P = VI = I^2R = V^2/R$",
+    "Dynamic resistance: $r_d = dV/dI$",
+    "Current density: $J = I/A = \\sigma E$",
+    "Microscopic Ohm's law: $\\vec{J} = \\sigma\\vec{E}$"
   ],
   "keyPoints": [
-    "• Current-voltage relations",
-    "• Ohmic",
-    "• Non-ohmic resistance"
+    "Ohm's law: $V = IR$ for ohmic conductors at constant temperature.",
+    "Resistance $R = V/I$; SI unit ohm ($\\Omega$).",
+    "Resistance depends on geometry and material: $R = \\rho L/A$.",
+    "Ohmic conductors have linear V-I graphs; non-ohmic have non-linear graphs.",
+    "Examples of non-ohmic: diode, filament lamp, thermistor, transistor.",
+    "Temperature coefficient $\\alpha$ is positive for metals, negative for semiconductors.",
+    "Dynamic resistance $r_d = dV/dI$ differs from static resistance $V/I$ for non-ohmic devices."
   ],
-  "summary": "Current-voltage relations; ohmic and non-ohmic resistance (DC Circuits, Physics, class-11-notes) covers Current-voltage relations, ohmic, non-ohmic resistance. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "Ohm's law is an empirical law, not fundamental — it applies only to ohmic materials at constant physical conditions.",
+    "Always distinguish between static resistance ($V/I$) and dynamic resistance ($dV/dI$) for non-ohmic devices.",
+    "Temperature changes during current flow can make an ohmic material behave non-ohmically (e.g., filament lamp).",
+    "Resistivity $\\rho$ is a material property independent of dimensions; resistance $R$ depends on both material and geometry."
+  ],
+  "examShortTricks": [
+    "Ohmic = linear V-I graph through origin; Non-ohmic = curved V-I graph.",
+    "Use $R = \\rho L/A$ — resistance increases with length, decreases with area.",
+    "Temperature effect: metals $R \\uparrow$ with $T \\uparrow$; semiconductors $R \\downarrow$ with $T \\uparrow$.",
+    "For diode in forward bias: resistance is small; reverse bias: resistance is very large.",
+    "Remember: $\\Omega = \\text{V/A}$; $\\rho$ unit is $\\Omega\\cdot\\text{m}$."
+  ],
+  "examNotes": [
+    "NEB frequently asks to state Ohm's law, define resistance and resistivity, and distinguish ohmic from non-ohmic conductors.",
+    "Numerical problems often involve $R = \\rho L/A$ with unit conversions (mm² to m²).",
+    "V-I graph analysis: slope gives resistance; identify ohmic vs non-ohmic from linearity.",
+    "Temperature coefficient problems: use $R_T = R_0(1 + \\alpha\\Delta T)$."
+  ],
+  "examples": [
+    "A copper wire has resistance $5\\,\\Omega$ at $20^\\circ\\text{C}$. If $\\alpha = 4.3 \\times 10^{-3}\\text{ K}^{-1}$, find resistance at $50^\\circ\\text{C}$. Solution: $R_{50} = 5[1 + 4.3\\times 10^{-3}(50-20)] = 5[1 + 0.129] = 5.645\\,\\Omega$.",
+    "A wire of length $2\\text{ m}$ and cross-section $1\\text{ mm}^2$ has resistance $4\\,\\Omega$. Find its resistivity. Solution: $\\rho = RA/L = (4 \\times 10^{-6})/2 = 2 \\times 10^{-6}\\,\\Omega\\cdot\text{m}$.",
+    "A $12\\text{ V}$ battery drives $2\\text{ A}$ through a resistor. Find resistance and power. Solution: $R = V/I = 12/2 = 6\\,\\Omega$; $P = VI = 12 \\times 2 = 24\\text{ W}$.",
+    "A filament lamp draws $0.5\\text{ A}$ at $6\\text{ V}$ when cold but $0.2\\text{ A}$ at $6\\text{ V}$ when hot. Cold $R = 12\\,\\Omega$, hot $R = 30\\,\\Omega$ — non-ohmic behavior due to temperature change."
+  ],
+  "practiceQuestions": [
+    "Q1. State Ohm's law and define resistance. Give its SI unit and dimensional formula.",
+    "Q2. Derive the expression $R = \\rho L/A$ for the resistance of a uniform conductor.",
+    "Q3. Distinguish between ohmic and non-ohmic conductors with examples.",
+    "Q4. A wire of length $3\\text{ m}$ and area $2\\text{ mm}^2$ has resistance $6\\,\\Omega$. Find its resistivity.",
+    "Q5. Explain why a filament lamp is non-ohmic.",
+    "Q6. The resistance of a metal is $10\\,\\Omega$ at $20^\\circ\\text{C}$ and $12\\,\\Omega$ at $70^\\circ\\text{C}$. Find the temperature coefficient of resistance.",
+    "Q7. What is dynamic resistance? How does it differ from static resistance for a diode?"
+  ],
+  "practice": [
+    "Calculate resistance from $V$ and $I$ measurements for ohmic and non-ohmic devices.",
+    "Use $R = \\rho L/A$ to find resistance, resistivity, length, or area.",
+    "Analyze V-I graphs to classify materials as ohmic or non-ohmic.",
+    "Apply $R_T = R_0(1 + \\alpha\\Delta T)$ for temperature-dependent resistance problems.",
+    "Compute power dissipation $P = VI = I^2R = V^2/R$ in circuits.",
+    "Determine dynamic resistance from V-I curve slope for non-ohmic devices."
+  ],
+  "universalFacts": [
+    "Ohm's law is an empirical observation, valid for many but not all materials — it is not a fundamental law like conservation of energy.",
+    "All materials become non-ohmic at sufficiently high electric fields or temperatures where breakdown occurs.",
+    "Superconductors have exactly zero resistance below their critical temperature — a macroscopic quantum phenomenon.",
+    "The temperature coefficient of resistance is positive for metals (lattice scattering increases) but negative for semiconductors (more carriers generated).",
+    "Semiconductor devices (diodes, transistors) are inherently non-ohmic and form the basis of modern electronics."
+  ],
+  "confusion": [
+    "Confusing ohmic with linear: Ohm's law requires linearity AND constant temperature; a heated metal is not ohmic even if its V-I graph looks linear at low currents.",
+    "Believing $R = V/I$ is always constant: For non-ohmic devices, $V/I$ changes with operating point; only $dV/dI$ (dynamic resistance) is meaningful locally.",
+    "Thinking resistivity changes with dimensions: $\\rho$ is an intrinsic material property; only $R$ changes with $L$ and $A$.",
+    "Assuming all metals obey Ohm's law perfectly: At very low temperatures or high fields, even metals deviate.",
+    "Confusing resistance with resistivity: Resistance depends on geometry; resistivity does not."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Current-voltage relations; ohmic and non-ohmic resistance\"?",
+      "question": "Ohm's law is valid for:",
       "options": [
-        "Current-voltage relations",
-        "Ohmic",
-        "Unrelated topic",
-        "None of the above"
+        "All materials",
+        "Only ohmic materials",
+        "Only semiconductors",
+        "Only insulators"
       ],
-      "answer": "A",
-      "explanation": "Current-voltage relations is listed among the official sub-ideas of Current-voltage relations; ohmic and non-ohmic resistance; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "Ohm's law is an empirical law valid only for ohmic conductors at constant temperature."
     },
     {
-      "question": "A common examiner point on \"Current-voltage relations; ohmic and non-ohmic resistance\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The V-I graph of a non-ohmic conductor is:",
       "options": [
-        "True",
-        "False"
+        "A straight line through origin",
+        "A curve",
+        "A horizontal line",
+        "A vertical line"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Non-ohmic conductors have non-linear V-I characteristics."
+    },
+    {
+      "question": "Resistivity $\\rho$ depends on:",
+      "options": [
+        "Length of conductor",
+        "Area of cross-section",
+        "Material and temperature",
+        "Applied voltage"
+      ],
+      "answer": "C",
+      "explanation": "Resistivity is an intrinsic property of the material and varies with temperature, not dimensions."
+    },
+    {
+      "question": "A filament lamp is non-ohmic because:",
+      "options": [
+        "Its temperature changes with current",
+        "It has no resistance",
+        "It obeys Ohm's law perfectly",
+        "It is a semiconductor"
+      ],
+      "answer": "A",
+      "explanation": "As current increases, the filament heats up, changing its resistance — so V/I is not constant."
+    },
+    {
+      "question": "Dynamic resistance $r_d$ is defined as:",
+      "options": [
+        "V/I",
+        "dV/dI",
+        "I/V",
+        "V²/I"
+      ],
+      "answer": "B",
+      "explanation": "Dynamic resistance is the slope of the V-I curve at a point: $r_d = dV/dI$."
     }
-  ]
+  ],
+  "animation3D": "ohmic-nonohmic",
+  "motionGraphics": "vi-graph",
+  "visualType": "vi-characteristic",
+  "summary": "Ohm's law ($V = IR$) defines resistance for ohmic conductors with linear V-I characteristics at constant temperature. Resistance depends on geometry and material via $R = \\rho L/A$. Non-ohmic conductors (diodes, filament lamps, thermistors) have non-linear V-I graphs where dynamic resistance $dV/dI$ differs from static resistance $V/I$. Temperature coefficient of resistance is positive for metals and negative for semiconductors."
 }

@@ -4,125 +4,151 @@
   "topicSlug": "boltzmann-rms-speed",
   "topicTitle": "Boltzmann Constant and RMS Speed",
   "relevance": 100,
-  "notes": [
-    "**Boltzmann Constant and RMS Speed:** This topic covers the fundamental concepts of boltzmann constant and rms speed in the physics curriculum.",
-    "Understanding boltzmann constant and rms speed is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to boltzmann constant and rms speed should be memorized and practiced regularly."
-  ],
-  "confusion": [
-    "Carefully distinguish between similar-looking concepts in boltzmann constant and rms speed.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
-  ],
-  "practice": [
-    "Solve at least 5 problems on boltzmann constant and rms speed from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
-  ],
-  "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding boltzmann constant and rms speed builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of boltzmann constant and rms speed span engineering, physics, economics, and computer science."
-  ],
   "animation3D": "ideal-gas",
-  "motionGraphics": "ideal-gas",
-  "examples": [],
-  "practiceQuestions": [
-    "Q2. Solve problems related to Boltzmann Constant and RMS Speed.",
-    "Q3. Differentiate between various aspects of Boltzmann Constant and RMS Speed.",
-    "Q4. Derive the key formula related to Boltzmann Constant and RMS Speed.",
-    "Q5. What are the applications of Boltzmann Constant and RMS Speed?"
+  "motionGraphics": "molecular-speeds",
+  "visualType": "rms-velocity",
+  "summary": "The Boltzmann constant k = R/N_A = 1.38 × 10⁻²³ J/K links macroscopic temperature to microscopic molecular energy. RMS speed v_rms = √(3kT/m) = √(3RT/M) characterizes the typical molecular speed in a gas at temperature T. At the same temperature, lighter molecules move faster; v_rms determines diffusion rates, effusion, and kinetic energy.",
+  "notes": [
+    "Boltzmann Constant Definition: k = R/N_A where R = 8.314 J/(mol·K) and N_A = 6.022 × 10²³ mol⁻¹. Value: k = 1.380649 × 10⁻²³ J/K (exact since 2019 SI redefinition). It converts temperature (kelvin) into energy (joules) per particle.",
+    "Physical Significance of k: Average translational KE per molecule = (3/2)kT. At 300 K, ⟨KE⟩ = (3/2)(1.38×10⁻²³)(300) ≈ 6.21 × 10⁻²¹ J ≈ 0.039 eV. This is the thermal energy scale governing molecular motion.",
+    "RMS Speed Formula: v_rms = √(⟨v²⟩) = √(3kT/m) = √(3RT/M), where m = molecular mass, M = molar mass. Derived from equating pressure expression P = (1/3)ρv²_rms with ideal gas law PV = nRT.",
+    "Speed Hierarchy: For Maxwell-Boltzmann distribution: v_mp = √(2kT/m) < v_avg = √(8kT/πm) < v_rms = √(3kT/m). Numerical ratio: v_mp : v_avg : v_rms ≈ 1.41 : 1.60 : 1.73 (or 1 : 1.13 : 1.22 normalized to v_mp).",
+    "Temperature Dependence: v_rms ∝ √T. Doubling absolute temperature increases v_rms by factor √2 ≈ 1.414. Cooling to 1/4 original T halves the rms speed.",
+    "Mass Dependence: v_rms ∝ 1/√M. At same T, hydrogen (M=2 g/mol) moves √(32/2) = 4 times faster than oxygen (M=32 g/mol). This explains why light gases escape planetary atmospheres more readily.",
+    "Typical Values at 300 K: H₂: 1920 m/s; He: 1370 m/s; N₂: 517 m/s; O₂: 483 m/s; CO₂: 412 m/s. All supersonic yet no bulk flow due to random directions.",
+    "Connection to Kinetic Energy: Total translational KE of n moles = (3/2)nRT = (3/2)NkT. Internal energy of monatomic ideal gas U = (3/2)nRT depends only on T, not V or P.",
+    "Effusion and Graham's Law: Rate of effusion ∝ v_rms ∝ 1/√M. Lighter gases effuse faster through small openings. Used in uranium enrichment (²³⁵UF₆ vs ²³⁸UF₆)."
+  ],
+  "specificConditions": [
+    "Ideal Gas Assumption: Formulas assume point particles with elastic collisions and no intermolecular forces. Real gases deviate at high P or low T.",
+    "Thermal Equilibrium Required: Maxwell-Boltzmann distribution and well-defined v_rms apply only at equilibrium. Non-equilibrium flows have different velocity distributions.",
+    "Translational Motion Only: v_rms refers to center-of-mass translational speed. Rotational and vibrational energies contribute to total internal energy but not to v_rms.",
+    "Classical Regime: Quantum effects become significant when de Broglie wavelength λ = h/(mv) approaches interparticle spacing. For most gases above ~10 K, classical treatment is valid."
   ],
   "formulas": [
-    "$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3kT}{m}}$, and $v_{avg} = \\sqrt{\\frac{8RT}{\\pi M}}$, $v_{mp} = \\sqrt{\\frac{2RT}{M}}$.",
-    "Ratio of the three speeds: $v_{mp} : v_{avg} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.41 : 1.60 : 1.73$."
+    "Boltzmann constant: $k = \\frac{R}{N_A} = 1.38 \\times 10^{-23} \\text{ J/K}$",
+    "RMS speed: $v_{rms} = \\sqrt{\\frac{3kT}{m}} = \\sqrt{\\frac{3RT}{M}}$",
+    "Most probable speed: $v_{mp} = \\sqrt{\\frac{2kT}{m}} = \\sqrt{\\frac{2RT}{M}}$",
+    "Average speed: $v_{avg} = \\sqrt{\\frac{8kT}{\\pi m}} = \\sqrt{\\frac{8RT}{\\pi M}}$",
+    "Average KE per molecule: $\\langle KE \\rangle = \\frac{3}{2} kT$",
+    "Speed ratio: $v_{mp} : v_{avg} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3}$"
   ],
   "keyPoints": [
-    "Kinetic temperature is rms temperature: at the same T every gas has the same ⟨KE⟩ but a lighter molecule moves faster as 1/√M."
-  ],
-  "summary": "Boltzmann Constant and RMS Speed is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Boltzmann Constant and RMS Speed applies",
-    "Note 2: Boltzmann Constant and RMS Speed connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Boltzmann Constant and RMS Speed",
-    "Note 4: Remember the units and dimensions involved in Boltzmann Constant and RMS Speed",
-    "Note 5: Boltzmann Constant and RMS Speed frequently appears in examination questions"
+    "k = 1.38 × 10⁻²³ J/K bridges macroscopic T and microscopic energy.",
+    "v_rms = √(3RT/M): depends on T and M, not on P or V directly.",
+    "At same T, all gases have same ⟨KE⟩ but different v_rms.",
+    "v_rms > v_avg > v_mp always for Maxwellian distribution.",
+    "Lighter molecules move faster: v_rms ∝ 1/√M.",
+    "Graham's law of effusion follows directly from v_rms ∝ 1/√M."
   ],
   "importantStatements": [],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Boltzmann Constant and RMS Speed",
-    "Note 3: Boltzmann Constant and RMS Speed has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Boltzmann Constant and RMS Speed",
-    "Note 5: Cross-check your answers using alternative methods for Boltzmann Constant and RMS Speed"
+    "Since 2019, k is defined exactly as 1.380649 × 10⁻²³ J/K, fixing the kelvin in terms of energy.",
+    "v_rms appears in pressure formula because pressure depends on ⟨v²⟩, not ⟨v⟩².",
+    "Escape velocity criterion: if v_rms > v_escape/6, significant atmospheric loss occurs over geological time.",
+    "NEB frequently asks numerical calculation of v_rms given T and M — ensure M in kg/mol."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Boltzmann Constant and RMS Speed formula",
-    "Trick 2: Elimination technique for Boltzmann Constant and RMS Speed MCQs",
-    "Trick 3: Dimensional analysis shortcut for Boltzmann Constant and RMS Speed",
-    "Trick 4: Memory aid for Boltzmann Constant and RMS Speed formulas",
-    "Trick 5: Time-saving approach for Boltzmann Constant and RMS Speed problems"
+    "v_rms = √(3RT/M): plug T in K, M in kg/mol, R = 8.314.",
+    "Same T → same ⟨KE⟩; lighter = faster.",
+    "Ratio v_mp:v_avg:v_rms = √2 : √(8/π) : √3 ≈ 1.41:1.60:1.73.",
+    "Double T → v_rms × √2; double M → v_rms ÷ √2.",
+    "Effusion rate ∝ 1/√M (Graham's law)."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Boltzmann Constant and RMS Speed",
-    "Exam Tip 2: Practice previous year questions on Boltzmann Constant and RMS Speed",
-    "Exam Tip 4: Learn the derivations for Boltzmann Constant and RMS Speed thoroughly",
-    "Exam Tip 5: Review common mistakes related to Boltzmann Constant and RMS Speed"
+    "Calculate v_rms numerically: convert M to kg/mol (e.g., O₂ = 0.032 kg/mol).",
+    "Compare speeds of two gases at same T using v₁/v₂ = √(M₂/M₁).",
+    "Explain why hydrogen escapes Earth's atmosphere but nitrogen does not.",
+    "Derive v_rms from P = (1/3)ρv²_rms and PV = nRT."
+  ],
+  "examples": [
+    "Oxygen at 27°C (300 K): v_rms = √(3×8.314×300/0.032) = √(233,812) ≈ 483 m/s.",
+    "Hydrogen at 300 K: v_rms = √(3×8.314×300/0.002) ≈ 1920 m/s. Ratio to O₂: √(32/2) = 4×.",
+    "At what T does N₂ have v_rms = 1000 m/s? T = Mv²/(3R) = 0.028×10⁶/(3×8.314) ≈ 1123 K.",
+    "Graham's law: H₂ effuses √(32/2) = 4 times faster than O₂ through a pinhole at same T and P."
+  ],
+  "practiceQuestions": [
+    "Q2. Derive the expression for rms speed of gas molecules.",
+    "Q3. Calculate v_rms for helium at 400 K. (M = 4 g/mol)",
+    "Q4. Compare rms speeds of H₂ and CO₂ at the same temperature.",
+    "Q5. State Graham's law of effusion and explain it using kinetic theory.",
+    "Q6. Why do the three speeds (v_mp, v_avg, v_rms) differ?"
+  ],
+  "practice": [
+    "Compute v_rms for various gases at standard and elevated temperatures.",
+    "Use speed ratios to find one speed given another.",
+    "Apply Graham's law to compare effusion rates.",
+    "Relate changes in T or M to changes in v_rms.",
+    "Convert between molecular mass m and molar mass M correctly."
+  ],
+  "universalFacts": [
+    "Ludwig Boltzmann (1844–1906) established statistical mechanics; his constant was named posthumously.",
+    "The 2019 SI redefinition fixed k exactly, making the kelvin dependent on the joule rather than water's triple point.",
+    "At room temperature, air molecules collide ~5 billion times per second with mean free path ~68 nm.",
+    "Neutron stars have surface temperatures ~10⁶ K; protons there have v_rms ~ 100 km/s."
+  ],
+  "confusion": [
+    "Confusing v_rms with average speed: v_rms = √(⟨v²⟩) ≠ ⟨v⟩. They differ by ~8% for Maxwellian gases.",
+    "Using M in g/mol instead of kg/mol: Must convert to SI (kg/mol) for v_rms in m/s.",
+    "Thinking heavier gases have higher KE at same T: All gases at same T have identical ⟨KE⟩ = (3/2)kT regardless of mass.",
+    "Believing v_rms depends on pressure: v_rms depends only on T and M for ideal gases; P affects density, not individual molecular speeds.",
+    "Assuming all molecules move at v_rms: Individual speeds vary widely; v_rms is a statistical measure of the distribution."
   ],
   "mcs": [
     {
-      "question": "The primary application of Boltzmann Constant and RMS Speed is in:",
+      "question": "Boltzmann constant k equals:",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "R × N_A",
+        "R / N_A",
+        "N_A / R",
+        "R + N_A"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "k = R/N_A = 8.314 / (6.022×10²³) = 1.38×10⁻²³ J/K."
     },
     {
-      "question": "For Boltzmann Constant and RMS Speed, which condition is necessary?",
+      "question": "At the same temperature, which gas has the highest rms speed?",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "O₂ (32 g/mol)",
+        "N₂ (28 g/mol)",
+        "He (4 g/mol)",
+        "CO₂ (44 g/mol)"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "v_rms ∝ 1/√M; helium has smallest M, hence highest speed."
     },
     {
-      "question": "What is the unit/dimension used in Boltzmann Constant and RMS Speed?",
+      "question": "If temperature quadruples, v_rms becomes:",
       "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
+        "Double",
+        "Quadruple",
+        "√2 times",
+        "Unchanged"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "v_rms ∝ √T; √(4T) = 2√T, so speed doubles."
     },
     {
-      "question": "Which statement about Boltzmann Constant and RMS Speed is FALSE?",
+      "question": "The correct ordering of molecular speeds is:",
       "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "v_rms < v_avg < v_mp",
+        "v_mp < v_avg < v_rms",
+        "v_avg < v_mp < v_rms",
+        "All equal"
       ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "For Maxwell-Boltzmann: v_mp < v_avg < v_rms always."
+    },
+    {
+      "question": "Average translational KE per molecule depends on:",
+      "options": [
+        "Molar mass",
+        "Pressure",
+        "Temperature only",
+        "Volume"
+      ],
+      "answer": "C",
+      "explanation": "⟨KE⟩ = (3/2)kT — function of absolute temperature alone."
     }
-  ],
-  "importantConcepts": [
-    "Concept 1: Core definition of Boltzmann Constant and RMS Speed",
-    "Concept 2: Key theorem or principle in Boltzmann Constant and RMS Speed",
-    "Concept 3: Important application area of Boltzmann Constant and RMS Speed",
-    "Concept 4: Fundamental relationship in Boltzmann Constant and RMS Speed",
-    "Concept 5: Connection between Boltzmann Constant and RMS Speed and other topics"
-  ],
-  "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Boltzmann Constant and RMS Speed",
-    "Task 2: Derive the main formula for Boltzmann Constant and RMS Speed",
-    "Task 3: Create a concept map for Boltzmann Constant and RMS Speed",
-    "Task 4: Practice previous year exam questions on Boltzmann Constant and RMS Speed",
-    "Task 5: Explain Boltzmann Constant and RMS Speed to a peer or study group"
   ]
 }

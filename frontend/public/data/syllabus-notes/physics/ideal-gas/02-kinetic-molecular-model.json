@@ -1,123 +1,156 @@
 {
-  "title": "Kinetic-Molecular Model",
+  "title": "Kinetic Molecular Model of an Ideal Gas",
   "unitSlug": "ideal-gas",
   "topicSlug": "kinetic-molecular-model",
   "topicTitle": "Kinetic-Molecular Model",
   "relevance": 100,
-  "notes": [
-    "**Kinetic-Molecular Model:** This topic covers the fundamental concepts of kinetic-molecular model in the physics curriculum.",
-    "Understanding kinetic-molecular model is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to kinetic-molecular model should be memorized and practiced regularly."
-  ],
-  "confusion": [
-    "Carefully distinguish between similar-looking concepts in kinetic-molecular model.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
-  ],
-  "practice": [
-    "Solve at least 5 problems on kinetic-molecular model from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
-  ],
-  "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding kinetic-molecular model builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of kinetic-molecular model span engineering, physics, economics, and computer science."
-  ],
   "animation3D": "ideal-gas",
-  "motionGraphics": "ideal-gas",
-  "examples": [],
-  "practiceQuestions": [
-    "Q2. Solve problems related to Kinetic-Molecular Model.",
-    "Q3. Differentiate between various aspects of Kinetic-Molecular Model.",
-    "Q4. Derive the key formula related to Kinetic-Molecular Model.",
-    "Q5. What are the applications of Kinetic-Molecular Model?"
+  "motionGraphics": "molecular-motion",
+  "visualType": "kinetic-theory",
+  "summary": "The kinetic molecular model explains gas behavior through random motion of molecules. Key assumptions: point particles, elastic collisions, no intermolecular forces except during collision, negligible volume compared to container. Derives pressure P = (1/3)ρv²_rms and connects macroscopic properties (P, V, T) to microscopic molecular motion.",
+  "notes": [
+    "Basic Postulates: (1) Gas consists of large number of identical molecules in random motion. (2) Molecular size ≪ mean separation (point masses). (3) Collisions with walls and between molecules are perfectly elastic. (4) No intermolecular forces except during brief collisions. (5) Time of collision ≪ time between collisions. (6) Newton's laws apply to each molecule.",
+    "Origin of Pressure: Pressure arises from momentum transfer when molecules collide with container walls. Each collision imparts impulse Δp = 2mv_x (for wall perpendicular to x-axis). Summing over all molecules and averaging gives P = (1/3)(N/V)m⟨v²⟩ = (1/3)ρv²_rms.",
+    "Root Mean Square Speed: v_rms = √(⟨v²⟩) = √(3RT/M) = √(3kT/m), where M is molar mass, m is molecular mass, k is Boltzmann constant. At same T, lighter molecules move faster.",
+    "Connection to Temperature: Average translational KE per molecule = (3/2)kT. Total translational KE of N molecules = (3/2)NkT = (3/2)nRT. Temperature is a measure of average molecular kinetic energy.",
+    "Ideal Gas Law Derivation: From P = (1/3)(N/V)m⟨v²⟩ and ⟨KE⟩ = (1/2)m⟨v²⟩ = (3/2)kT, we get PV = NkT = nRT — the ideal gas equation derived from microscopic mechanics.",
+    "Maxwell-Boltzmann Distribution: Molecular speeds follow a statistical distribution f(v) = 4π(m/2πkT)^(3/2) v² exp(-mv²/2kT). Most probable speed v_mp = √(2kT/m), average speed v_avg = √(8kT/πm), rms speed v_rms = √(3kT/m). Ratio v_mp : v_avg : v_rms ≈ 1 : 1.13 : 1.22.",
+    "Degrees of Freedom: Monatomic gas has 3 translational DOF → C_v = (3/2)R. Diatomic adds 2 rotational DOF at room T → C_v = (5/2)R. Vibrational modes activate at high T.",
+    "Mean Free Path: Average distance between collisions λ = 1/(√2 πd² n), where d is molecular diameter and n = N/V number density. At STP, λ ≈ 68 nm for air.",
+    "Limitations of Model: Assumes point particles and no interactions — fails at high pressure (finite volume matters) and low temperature (intermolecular attraction matters). Real gases require van der Waals corrections."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Kinetic-Molecular Model is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Kinetic-Molecular Model applies",
-    "Note 2: Kinetic-Molecular Model connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Kinetic-Molecular Model",
-    "Note 4: Remember the units and dimensions involved in Kinetic-Molecular Model",
-    "Note 5: Kinetic-Molecular Model frequently appears in examination questions"
+  "specificConditions": [
+    "Low Density Required: Model assumes molecular volume ≪ container volume. Valid when gas is dilute (low P, high T). Breaks down near condensation point.",
+    "Elastic Collisions Only: Energy conservation in collisions is essential. Inelastic collisions would cause temperature decay — not observed in equilibrium gases.",
+    "Large Number of Molecules: Statistical averaging requires N ≫ 1. Fluctuations become significant for very small systems (nanoscale).",
+    "Thermal Equilibrium Assumed: Maxwell-Boltzmann distribution applies only at equilibrium. Non-equilibrium flows require Boltzmann transport equation."
+  ],
+  "formulas": [
+    "Pressure: $P = \\frac{1}{3} \\rho v_{rms}^2 = \\frac{1}{3} \\frac{Nm}{V} \\langle v^2 \\rangle$",
+    "RMS speed: $v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3kT}{m}}$",
+    "Average KE per molecule: $\\langle KE \\rangle = \\frac{3}{2} kT$",
+    "Total translational KE: $E_k = \\frac{3}{2} nRT$",
+    "Most probable speed: $v_{mp} = \\sqrt{\\frac{2RT}{M}}$",
+    "Average speed: $v_{avg} = \\sqrt{\\frac{8RT}{\\pi M}}$",
+    "Mean free path: $\\lambda = \\frac{1}{\\sqrt{2} \\pi d^2 n}$"
+  ],
+  "keyPoints": [
+    "Gas pressure results from molecular collisions with container walls.",
+    "Temperature measures average translational kinetic energy: ⟨KE⟩ = (3/2)kT.",
+    "v_rms = √(3RT/M): lighter gases move faster at same temperature.",
+    "PV = nRT derives directly from kinetic theory postulates.",
+    "Speed distribution follows Maxwell-Boltzmann statistics.",
+    "Model valid for dilute gases; real gases need corrections at high P or low T."
   ],
   "importantStatements": [],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Kinetic-Molecular Model",
-    "Note 3: Kinetic-Molecular Model has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Kinetic-Molecular Model",
-    "Note 5: Cross-check your answers using alternative methods for Kinetic-Molecular Model"
+    "Boltzmann constant k = R/N_A = 1.38 × 10⁻²³ J/K links macroscopic and microscopic scales.",
+    "At 300 K, nitrogen molecules have v_rms ≈ 517 m/s — supersonic yet no wind because motion is random.",
+    "Equipartition theorem assigns (1/2)kT energy per quadratic degree of freedom.",
+    "NEB frequently asks derivation of P = (1/3)ρv²_rms and explanation of temperature-KE relationship."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Kinetic-Molecular Model formula",
-    "Trick 2: Elimination technique for Kinetic-Molecular Model MCQs",
-    "Trick 3: Dimensional analysis shortcut for Kinetic-Molecular Model",
-    "Trick 4: Memory aid for Kinetic-Molecular Model formulas",
-    "Trick 5: Time-saving approach for Kinetic-Molecular Model problems"
+    "P = (1/3)ρv²_rms — memorize as 'one-third rho v-squared'.",
+    "⟨KE⟩ = (3/2)kT — temperature IS kinetic energy (per molecule).",
+    "v_rms ∝ √(T/M) — double T increases speed by √2; double M decreases by √2.",
+    "Three speeds: v_mp < v_avg < v_rms (always in this order).",
+    "Monatomic C_v = 3R/2 comes from 3 translational DOF × (1/2)R each."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Kinetic-Molecular Model",
-    "Exam Tip 2: Practice previous year questions on Kinetic-Molecular Model",
-    "Exam Tip 4: Learn the derivations for Kinetic-Molecular Model thoroughly",
-    "Exam Tip 5: Review common mistakes related to Kinetic-Molecular Model"
+    "Derive pressure formula step-by-step: single molecule → wall collision → force → sum over N molecules → average.",
+    "Explain why real gases deviate from ideal behavior using kinetic theory limitations.",
+    "Calculate v_rms numerically given T and M — ensure units: M in kg/mol, R = 8.314 J/(mol·K).",
+    "Relate Brownian motion to kinetic theory evidence for molecular reality."
+  ],
+  "examples": [
+    "Nitrogen (M = 0.028 kg/mol) at 300 K: v_rms = √(3×8.314×300/0.028) ≈ 517 m/s.",
+    "Hydrogen vs Oxygen at same T: v_rms(H₂)/v_rms(O₂) = √(M_O₂/M_H₂) = √(32/2) = 4. Hydrogen moves 4× faster.",
+    "Pressure calculation: N = 10²³ molecules, m = 4.65×10⁻²⁶ kg (N₂), V = 0.0224 m³, v_rms = 517 m/s → P = (1/3)(10²³×4.65×10⁻²⁶/0.0224)(517)² ≈ 1.01×10⁵ Pa = 1 atm.",
+    "Mean free path of air at STP: d ≈ 3.7×10⁻¹⁰ m, n ≈ 2.69×10²⁵ m⁻³ → λ ≈ 6.8×10⁻⁸ m = 68 nm."
+  ],
+  "practiceQuestions": [
+    "Q1. State the postulates of kinetic molecular theory of gases.",
+    "Q2. Derive the expression P = (1/3)ρv²_rms from first principles.",
+    "Q3. Show that average translational KE per molecule is (3/2)kT.",
+    "Q4. Calculate v_rms for oxygen at 27°C. (M = 32 g/mol)",
+    "Q5. Explain how kinetic theory accounts for Boyle's law and Charles's law.",
+    "Q6. Why does kinetic theory fail for real gases at high pressure?"
+  ],
+  "practice": [
+    "Derive pressure formula showing all steps with diagram.",
+    "Compute v_rms, v_avg, v_mp for various gases at different temperatures.",
+    "Relate changes in T or M to changes in molecular speeds.",
+    "Explain deviations from ideality using kinetic theory assumptions.",
+    "Connect degrees of freedom to specific heat capacities."
+  ],
+  "universalFacts": [
+    "Daniel Bernoulli first proposed kinetic theory in 1738, but it was ignored until Clausius, Maxwell, and Boltzmann developed it rigorously (1857–1870s).",
+    "Brownian motion (observed 1827, explained by Einstein 1905) provided direct experimental confirmation of molecular motion.",
+    "At absolute zero (0 K), classical kinetic theory predicts zero molecular motion — quantum mechanics shows zero-point energy persists.",
+    "The Sun's core plasma obeys kinetic theory at 15 million K with v_rms ~ 500 km/s for protons."
+  ],
+  "confusion": [
+    "Thinking temperature measures total energy: It measures AVERAGE translational KE per molecule, not total internal energy.",
+    "Confusing v_rms with average speed: v_rms = √(⟨v²⟩) ≠ ⟨v⟩. They differ by ~8% for Maxwell distribution.",
+    "Believing molecules stop at 0°C: 0°C = 273 K; molecules still have substantial KE. Only at 0 K would classical motion cease.",
+    "Assuming all molecules move at same speed: Speeds follow a broad distribution; individual molecules constantly change speed via collisions.",
+    "Thinking pressure comes from molecular weight: Pressure arises from momentum transfer in collisions, not gravitational force on molecules."
   ],
   "mcs": [
     {
-      "question": "The primary application of Kinetic-Molecular Model is in:",
+      "question": "According to kinetic theory, gas pressure is caused by:",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "Gravitational pull on molecules",
+        "Molecular collisions with container walls",
+        "Intermolecular repulsion",
+        "Thermal expansion"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Pressure = rate of momentum transfer per unit area from wall collisions."
     },
     {
-      "question": "For Kinetic-Molecular Model, which condition is necessary?",
+      "question": "Average translational KE per molecule depends on:",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "Pressure only",
+        "Volume only",
+        "Temperature only",
+        "Both P and V"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "⟨KE⟩ = (3/2)kT — depends solely on absolute temperature."
     },
     {
-      "question": "What is the unit/dimension used in Kinetic-Molecular Model?",
+      "question": "If temperature doubles, v_rms becomes:",
       "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
+        "Double",
+        "Four times",
+        "√2 times",
+        "Unchanged"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "v_rms ∝ √T, so doubling T multiplies v_rms by √2."
     },
     {
-      "question": "Which statement about Kinetic-Molecular Model is FALSE?",
+      "question": "Which speed is greatest for a Maxwellian gas?",
       "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "Most probable",
+        "Average",
+        "RMS",
+        "All equal"
       ],
-      "answer": "C"
+      "answer": "C",
+      "explanation": "v_rms > v_avg > v_mp always for Maxwell-Boltzmann distribution."
+    },
+    {
+      "question": "Kinetic theory assumes intermolecular forces are:",
+      "options": [
+        "Always attractive",
+        "Always repulsive",
+        "Negligible except during collisions",
+        "Proportional to distance"
+      ],
+      "answer": "C",
+      "explanation": "Ideal gas model ignores forces except instantaneous elastic collisions."
     }
-  ],
-  "importantConcepts": [
-    "Concept 1: Core definition of Kinetic-Molecular Model",
-    "Concept 2: Key theorem or principle in Kinetic-Molecular Model",
-    "Concept 3: Important application area of Kinetic-Molecular Model",
-    "Concept 4: Fundamental relationship in Kinetic-Molecular Model",
-    "Concept 5: Connection between Kinetic-Molecular Model and other topics"
-  ],
-  "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Kinetic-Molecular Model",
-    "Task 2: Derive the main formula for Kinetic-Molecular Model",
-    "Task 3: Create a concept map for Kinetic-Molecular Model",
-    "Task 4: Practice previous year exam questions on Kinetic-Molecular Model",
-    "Task 5: Explain Kinetic-Molecular Model to a peer or study group"
   ]
 }

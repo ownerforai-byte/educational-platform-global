@@ -1,50 +1,152 @@
 {
-  "title": "Einstein's mass-energy relation",
+  "title": "Einstein's Mass-Energy Relation",
   "unitSlug": "nuclear-physics",
   "topicSlug": "einstein-s-mass-energy-relation",
   "topicTitle": "Einstein's mass-energy relation",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Einstein's mass-energy relation\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "notes": [
+    "Mass-Energy Equivalence: Einstein's special relativity (1905) established that mass and energy are equivalent: E = mc². A mass m at rest possesses rest energy E₀ = mc². This is the most famous equation in physics.",
+    "Rest Energy: Every particle has rest energy E₀ = m₀c² even when not moving. For electron: E₀ = 0.511 MeV; for proton: E₀ = 938 MeV; for 1 kg: E₀ = 9 × 10¹⁶ J (enough to power a city for years).",
+    "Mass Defect and Binding Energy: In nuclear reactions, the mass of products differs from reactants. The mass difference Δm appears as energy: ΔE = Δmc². This is the basis of nuclear fission and fusion energy.",
+    "Atomic Mass Unit Energy: 1 u = 931.5 MeV/c². A mass defect of 1 u releases 931.5 MeV — a convenient unit for nuclear calculations.",
+    "Pair Production and Annihilation: Energy can create matter (pair production: γ → e⁻ + e⁺, requires E ≥ 2m_ec² = 1.022 MeV) and matter can become energy (annihilation: e⁻ + e⁺ → 2γ).",
+    "Nuclear Binding Energy per Nucleon: Typical values ~8 MeV per nucleon. Iron-56 has maximum binding energy (~8.8 MeV/nucleon) — most stable nucleus. Fusion of light nuclei and fission of heavy nuclei both release energy by moving toward Fe-56.",
+    "Correspondence Principle: E = mc² reduces to Newtonian mechanics at v ≪ c. The kinetic energy correction: KE = (γ - 1)m₀c² ≈ ½m₀v² for small v."
   ],
-  "universalFacts": [
-    "answer pattern for \"Einstein's mass-energy relation\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Einstein's mass-energy relation\" with one example.",
-    "compare \"Einstein's mass-energy relation\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Einstein's mass-energy relation\" and verify the answer is plausible."
+  "specificConditions": [
+    "Rest Frame: E = mc² gives energy in the object's rest frame. For moving objects: E² = (pc)² + (m₀c²)² (energy-momentum relation).",
+    "Nuclear vs Chemical: Chemical reactions involve eV-scale energies (negligible mass change). Nuclear reactions involve MeV-scale energies (measurable mass defect).",
+    "Conservation: Mass-energy is conserved, not mass and energy separately. In E = mc², mass converts to energy and vice versa."
   ],
   "formulas": [
-    "Governing equation for \"Einstein's mass-energy relation\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Einstein's mass-energy relation\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
+    "Mass-energy equivalence: E = mc²",
+    "Rest energy: E₀ = m₀c²",
+    "Energy released: ΔE = Δmc²",
+    "1 u = 931.5 MeV/c²",
+    "Relativistic energy: E² = (pc)² + (m₀c²)²",
+    "Relativistic kinetic energy: KE = (γ - 1)m₀c²",
+    "Lorentz factor: γ = 1/√(1 - v²/c²)"
   ],
   "keyPoints": [
-    "• Einstein's mass-energy relation"
+    "E = mc² — mass and energy are equivalent and interchangeable.",
+    "Rest energy E₀ = m₀c² is enormous even for small mass.",
+    "Nuclear energy comes from mass defect: ΔE = Δmc².",
+    "1 u = 931.5 MeV/c² for nuclear calculations.",
+    "Pair production and annihilation demonstrate mass-energy conversion.",
+    "Iron-56 has maximum binding energy per nucleon (~8.8 MeV)."
   ],
-  "summary": "Einstein's mass-energy relation (Nuclear Physics, Physics, class-11-notes) covers Einstein's mass-energy relation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "c² = 9 × 10¹⁶ m²/s² — means tiny mass converts to enormous energy.",
+    "Chemical reactions involve eV energies — mass changes are too small to measure (~10⁻¹⁰ of mass).",
+    "Nuclear reactions involve MeV energies — mass defect is measurable (~0.1% of mass).",
+    "The sun converts ~4 million tonnes of mass to energy every second via fusion."
+  ],
+  "examShortTricks": [
+    "E = mc² — use c = 3 × 10⁸ m/s, c² = 9 × 10¹⁶ J/kg.",
+    "1 u = 931.5 MeV — quick conversion for nuclear mass defect.",
+    "Energy from mass defect: ΔE(MeV) = Δm(u) × 931.5.",
+    "Rest energy of electron = 0.511 MeV, proton = 938 MeV."
+  ],
+  "examNotes": [
+    "NEB frequently asks for E = mc² statement, rest energy calculation, and mass defect energy conversion.",
+    "Calculate energy released in fission/fusion using ΔE = Δmc².",
+    "Distinguish rest energy from relativistic total energy.",
+    "Pair production threshold energy = 2m_ec² = 1.022 MeV."
+  ],
+  "examples": [
+    "Energy from 1 kg mass: E = 1 × (3×10⁸)² = 9 × 10¹⁶ J.",
+    "Mass defect of 0.1 u: ΔE = 0.1 × 931.5 = 93.15 MeV.",
+    "Sun's mass-energy conversion: ~4 × 10⁹ kg/s converted to energy via fusion.",
+    "Electron rest energy: E₀ = (9.11×10⁻³¹)(3×10⁸)² = 8.2 × 10⁻¹⁴ J = 0.511 MeV."
+  ],
+  "practiceQuestions": [
+    "Q1. State Einstein's mass-energy relation and explain its significance.",
+    "Q2. Calculate rest energy of 1 g of matter.",
+    "Q3. A nuclear reaction has mass defect of 0.05 u. Find energy released in MeV and Joules.",
+    "Q4. Explain how E = mc² accounts for energy released in nuclear fission.",
+    "Q5. What is the threshold energy for electron-positron pair production?",
+    "Q6. Calculate the mass equivalent of 1 kWh of electrical energy."
+  ],
+  "practice": [
+    "Calculate rest energy E₀ = m₀c² for given masses.",
+    "Convert between u, kg, MeV, and Joules using 1 u = 931.5 MeV/c².",
+    "Compute energy from mass defect: ΔE = Δmc².",
+    "Solve fission/fusion energy problems.",
+    "Understand pair production and annihilation energy thresholds."
+  ],
+  "universalFacts": [
+    "The sun converts about 4 million tonnes of matter into energy every second through hydrogen fusion.",
+    "1 gram of matter completely converted yields ~9 × 10¹³ J — equivalent to ~21 kilotons of TNT (Hiroshima-scale bomb).",
+    "E = mc² was published in Einstein's 1905 'annus mirabilis' paper — one of four revolutionary papers that year.",
+    "Nuclear binding energy per nucleon (~8 MeV) is a million times larger than chemical binding energies (~eV)."
+  ],
+  "confusion": [
+    "Thinking mass is destroyed in nuclear reactions: Mass is converted to energy, total mass-energy is conserved.",
+    "Believing E = mc² applies only to nuclear reactions: It applies to ALL energy transformations (chemical, too, but mass change is negligible).",
+    "Confusing rest mass with relativistic mass: Modern physics uses invariant/rest mass m₀; E = m₀c² is rest energy.",
+    "Thinking c² is just a conversion factor: It is enormous (9 × 10¹⁶) — small mass = huge energy.",
+    "Believing mass can be negative: Mass is always positive; energy can be negative (binding energy) but mass-energy total is positive."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Einstein's mass-energy relation\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "E = mc² means:",
       "options": [
-        "True",
-        "False"
+        "Mass can be created from energy",
+        "Energy can be created from mass",
+        "Mass and energy are equivalent",
+        "Mass equals energy"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "Mass and energy are two forms of the same thing — interchangeable via c²."
+    },
+    {
+      "question": "Rest energy of 1 kg mass is:",
+      "options": [
+        "9 × 10¹⁶ J",
+        "9 × 10⁸ J",
+        "3 × 10⁸ J",
+        "1 J"
+      ],
+      "answer": "A",
+      "explanation": "E = mc² = 1 × (3 × 10⁸)² = 9 × 10¹⁶ J."
+    },
+    {
+      "question": "1 u of mass is equivalent to:",
+      "options": [
+        "931.5 MeV",
+        "931.5 MeV/c²",
+        "1 MeV",
+        "931.5 J"
+      ],
+      "answer": "B",
+      "explanation": "1 u = 931.5 MeV/c² — mass-energy equivalence unit."
+    },
+    {
+      "question": "In nuclear fission, energy comes from:",
+      "options": [
+        "Destruction of mass",
+        "Conversion of mass to energy",
+        "Creation of energy",
+        "Chemical reactions"
+      ],
+      "answer": "B",
+      "explanation": "Mass defect Δm is converted to energy ΔE = Δmc²."
+    },
+    {
+      "question": "Threshold energy for pair production is:",
+      "options": [
+        "0.511 MeV",
+        "1.022 MeV",
+        "938 MeV",
+        "931.5 MeV"
+      ],
+      "answer": "B",
+      "explanation": "2 × mₑc² = 2 × 0.511 = 1.022 MeV to create electron-positron pair."
     }
-  ]
+  ],
+  "animation3D": "mass-energy-equivalence",
+  "motionGraphics": "mass-energy",
+  "visualType": "mass-energy-equivalence",
+  "summary": "E = mc² establishes mass-energy equivalence. Rest energy E₀ = m₀c² is enormous. Nuclear reactions release energy via mass defect ΔE = Δmc². 1 u = 931.5 MeV/c². Pair production/annihilation demonstrate mass-energy interconversion."
 }

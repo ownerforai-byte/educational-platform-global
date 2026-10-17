@@ -3,15 +3,154 @@
   "unitSlug": "optics",
   "topicSlug": "mirrors-and-lenses",
   "topicTitle": "Mirrors and Lenses",
-  "relevance": 70,
+  "relevance": 75,
   "animation3D": "optics",
   "motionGraphics": "optics",
-  "summary": "Mirrors and Lenses covers essential principles and applications.",
-  "specificConditions": [
-    "**Thin Lens/Mirror Approximation:** The mirror equation (1/f = 1/u + 1/v) and lens formula (1/f = 1/v - 1/u) assume thin optics where thickness is negligible. For thick lenses, principal planes must be used. Sign convention (Cartesian): distances measured from pole/lens center; positive in direction of incident light for u, opposite for v/f.",
-    "**Spherical Aberration:** Paraxial rays (close to axis) follow the simple formulas. Non-paraxial rays focus at different points, causing spherical aberration. The formulas assume paraxial approximation (small angles, sin θ ≈ θ).",
-    "**Lens/Mirror Power:** Power P = 1/f (meters) in diopters. Converging (convex lens, concave mirror): P > 0. Diverging (concave lens, convex mirror): P < 0. Powers add for thin lenses in contact: P_total = Σ P_i."
+  "visualType": "mirrors-lenses",
+  "summary": "Mirrors and lenses form images by reflection and refraction. Plane mirrors form virtual images; spherical mirrors (concave/convex) and lenses use the mirror/lens formula with sign conventions to determine image position, size, and nature.",
+  "notes": [
+    "Plane Mirror: Forms a virtual, erect, same-sized image behind the mirror. Image distance equals object distance. Lateral inversion occurs (left-right reversed).",
+    "Spherical Mirrors: Concave (converging) and convex (diverging) mirrors. Key terms: pole (P), center of curvature (C), radius of curvature (R), focus (F), focal length (f = R/2), principal axis.",
+    "Mirror Formula: 1/f = 1/v + 1/u, where u = object distance, v = image distance, f = focal length. Sign convention: distances measured from pole; positive in direction of incident light.",
+    "Magnification: m = -v/u = h_i/h_o, where h_i is image height and h_o is object height. Negative m means inverted image.",
+    "Convex Lens: Converging lens. Thicker at center. Forms real inverted images (except when object within focal length). Lens formula: 1/f = 1/v - 1/u.",
+    "Concave Lens: Diverging lens. Thinner at center. Always forms virtual, erect, diminished images.",
+    "Power of Lens: P = 1/f (f in meters), unit: diopter (D). Convex lens: P > 0. Concave lens: P < 0. Lenses in contact: P = P₁ + P₂ + ...",
+    "Spherical Aberration: Marginal rays focus at different points than paraxial rays. Minimized by using small apertures or parabolic mirrors."
   ],
-  "duplicateType": 1,
-  "notes": []
+  "specificConditions": [
+    "Thin Lens/Mirror Approximation: The mirror equation (1/f = 1/u + 1/v) and lens formula (1/f = 1/v - 1/u) assume thin optics where thickness is negligible. For thick lenses, principal planes must be used. Sign convention (Cartesian): distances measured from pole/lens center; positive in direction of incident light for u, opposite for v/f.",
+    "Spherical Aberration: Paraxial rays (close to axis) follow the simple formulas. Non-paraxial rays focus at different points, causing spherical aberration. The formulas assume paraxial approximation (small angles, sin θ ≈ θ).",
+    "Lens/Mirror Power: Power P = 1/f (meters) in diopters. Converging (convex lens, concave mirror): P > 0. Diverging (concave lens, convex mirror): P < 0. Powers add for thin lenses in contact: P_total = Σ P_i."
+  ],
+  "formulas": [
+    "Mirror formula: 1/f = 1/v + 1/u",
+    "Lens formula: 1/f = 1/v - 1/u",
+    "Magnification: m = -v/u = h_i/h_o",
+    "Focal length and radius: f = R/2",
+    "Power of lens: P = 1/f (f in meters), unit: diopter",
+    "Lenses in contact: P = P₁ + P₂ + ..."
+  ],
+  "keyPoints": [
+    "Plane mirror: virtual, erect, same-size image, image distance = object distance.",
+    "Concave mirror: converging, can form real or virtual images depending on object position.",
+    "Convex mirror: diverging, always forms virtual, erect, diminished image.",
+    "Mirror formula: 1/f = 1/v + 1/u with sign convention.",
+    "Lens formula: 1/f = 1/v - 1/u with sign convention.",
+    "Power P = 1/f in diopters; convex positive, concave negative."
+  ],
+  "importantStatements": [],
+  "importantNotes": [
+    "Sign convention: distances measured from the optical center/pole; positive in the direction of incident light.",
+    "Real images are formed on the same side as the reflected/transmitted light; virtual images appear behind the mirror/lens.",
+    "Concave mirrors and convex lenses are converging; convex mirrors and concave lenses are diverging.",
+    "For a convex lens, when object is between F and the lens, the image is virtual, erect, and magnified (magnifying glass case).",
+    "Spherical aberration is reduced by using small apertures (paraxial approximation)."
+  ],
+  "examShortTricks": [
+    "Concave mirror: object beyond C → real, inverted, diminished image.",
+    "Concave mirror: object at C → real, inverted, same-size image.",
+    "Concave mirror: object between C and F → real, inverted, magnified image.",
+    "Convex lens: object beyond 2F → real, inverted, diminished image on other side.",
+    "Convex mirror: always virtual, erect, diminished image regardless of object position.",
+    "m = -v/u: negative magnification = inverted image."
+  ],
+  "examNotes": [
+    "NEB frequently asks for ray diagrams for concave mirror and convex lens at different object positions.",
+    "Mirror formula and lens formula numericals are standard exam questions.",
+    "Sign convention errors are common — always draw the diagram and mark signs carefully.",
+    "Power of lens and combination of lenses in contact are frequently tested.",
+    "Magnification formula connects image size to object size via distances."
+  ],
+  "examples": [
+    "Object 30 cm in front of concave mirror (f = 15 cm): 1/15 = 1/v + 1/(-30) → 1/v = 1/15 + 1/30 = 3/30 → v = 10 cm. Real image at 10 cm, m = -v/u = -10/(-30) = 1/3.",
+    "Convex lens (f = 20 cm), object 30 cm away: 1/20 = 1/v - 1/(-30) → 1/v = 1/20 - 1/30 = 1/60 → v = 60 cm. Real image, m = -60/(-30) = -2 (inverted, 2× magnified).",
+    "Convex lens (f = 10 cm), object 5 cm away (within focal length): 1/10 = 1/v - 1/(-5) → 1/v = 1/10 - 1/5 = -1/10 → v = -10 cm. Virtual image, m = -(-10)/(-5) = 2 (erect, 2× magnified)."
+  ],
+  "practiceQuestions": [
+    "Q1. Derive the mirror formula 1/f = 1/v + 1/u with sign convention.",
+    "Q2. An object is placed 20 cm from a concave mirror of focal length 15 cm. Find image position and magnification.",
+    "Q3. State the lens formula and explain the sign convention.",
+    "Q4. A convex lens of focal length 10 cm forms a real image 30 cm away. Find object distance and magnification.",
+    "Q5. Calculate the power of a convex lens with focal length 25 cm.",
+    "Q6. Draw ray diagrams for concave mirror when object is (a) beyond C, (b) at C, (c) between C and F."
+  ],
+  "practice": [
+    "Draw ray diagrams for concave mirror at all object positions.",
+    "Draw ray diagrams for convex lens at all object positions.",
+    "Solve mirror formula numericals with sign convention.",
+    "Solve lens formula numericals including power calculations.",
+    "Combine lenses in contact and compute equivalent power."
+  ],
+  "universalFacts": [
+    "The word 'focus' comes from Latin for 'hearth' — where sunlight converges to a point.",
+    "Concave mirrors are used in shaving mirrors, headlights, and reflecting telescopes.",
+    "Convex mirrors are used as rear-view mirrors in vehicles because they give a wider field of view.",
+    "The human eye uses a convex lens (crystalline lens) to focus light on the retina.",
+    "Galileo's telescope used a convex objective lens and concave eyepiece lens."
+  ],
+  "confusion": [
+    "Confusing mirror formula (1/f = 1/v + 1/u) with lens formula (1/f = 1/v - 1/u): The sign before 1/u differs.",
+    "Thinking convex mirrors always form real images: Convex mirrors always form virtual, erect, diminished images.",
+    "Believing magnification m = v/u without the negative sign: m = -v/u, the negative sign indicates inversion.",
+    "Confusing real and virtual images: Real images can be projected on a screen; virtual images cannot.",
+    "Using wrong sign convention: Always measure from pole/optical center and follow the Cartesian convention consistently."
+  ],
+  "mcs": [
+    {
+      "question": "A plane mirror forms an image that is:",
+      "options": [
+        "Real and inverted",
+        "Virtual and erect",
+        "Real and magnified",
+        "Virtual and diminished"
+      ],
+      "answer": "B",
+      "explanation": "Plane mirror forms a virtual, erect, same-sized image with lateral inversion."
+    },
+    {
+      "question": "The mirror formula is:",
+      "options": [
+        "1/f = 1/v - 1/u",
+        "1/f = 1/v + 1/u",
+        "1/f = u/v",
+        "f = u + v"
+      ],
+      "answer": "B",
+      "explanation": "Mirror formula: 1/f = 1/v + 1/u with proper sign convention."
+    },
+    {
+      "question": "A convex lens is also called:",
+      "options": [
+        "Diverging lens",
+        "Converging lens",
+        "Plane lens",
+        "Cylindrical lens"
+      ],
+      "answer": "B",
+      "explanation": "A convex lens converges light rays and is called a converging lens."
+    },
+    {
+      "question": "Power of a lens is measured in:",
+      "options": [
+        "Meters",
+        "Diopters",
+        "Watts",
+        "Joules"
+      ],
+      "answer": "B",
+      "explanation": "Power P = 1/f where f is in meters; unit is diopter (D)."
+    },
+    {
+      "question": "Magnification m = -v/u means negative m indicates:",
+      "options": [
+        "Erect image",
+        "Inverted image",
+        "Diminished image",
+        "Magnified image"
+      ],
+      "answer": "B",
+      "explanation": "Negative magnification indicates the image is inverted relative to the object."
+    }
+  ]
 }

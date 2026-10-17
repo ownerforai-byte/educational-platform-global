@@ -1,63 +1,158 @@
 {
-  "title": "Electromotive force of a source, internal resistance",
+  "title": "Electromotive Force of a Source, Internal Resistance",
   "unitSlug": "dc-circuits",
   "topicSlug": "electromotive-force-of-a-source-internal-resistance",
   "topicTitle": "Electromotive force of a source, internal resistance",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
-    "**Fact.** Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
-    "**Fact.** Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
+    "EMF Definition: Electromotive force (EMF, $\\mathcal{E}$) is the energy supplied by a source per unit charge to move charge through the complete circuit. It is NOT a force but a potential difference measured in volts. $\\mathcal{E} = W/q$ where $W$ is work done by the source and $q$ is charge moved.",
+    "Terminal Potential Difference: When current $I$ flows, the terminal voltage $V$ across the source terminals is $V = \\mathcal{E} - Ir$, where $r$ is internal resistance. The voltage drop $Ir$ inside the source is called lost volts.",
+    "Internal Resistance: Every real source (cell, battery, generator) has internal resistance $r$ due to electrolyte resistance, electrode resistance, and chemical factors. It causes the terminal voltage to drop below EMF when current is drawn.",
+    "Open Circuit: When $I = 0$ (open circuit), $V = \\mathcal{E}$ — the terminal voltage equals the EMF since there is no internal voltage drop.",
+    "Short Circuit: When terminals are shorted ($R = 0$), $I = \\mathcal{E}/r$ — maximum current flows, limited only by internal resistance. This can damage the source.",
+    "Cells in Series: For $n$ identical cells each of EMF $\\mathcal{E}$ and internal resistance $r$ in series: total EMF $= n\\mathcal{E}$, total internal resistance $= nr$, equivalent $V = n\\mathcal{E} - Inr$.",
+    "Cells in Parallel: For $n$ identical cells each of EMF $\\mathcal{E}$ and internal resistance $r$ in parallel: equivalent EMF $= \\mathcal{E}$, equivalent internal resistance $= r/n$ (current capacity increases).",
+    "Mixed Grouping: Cells in series-parallel combinations balance voltage and current requirements for specific applications.",
+    "Determination of EMF and Internal Resistance: Measure terminal voltage $V$ for different currents $I$. Plot $V$ vs $I$: y-intercept $= \\mathcal{E}$, slope $= -r$. Alternatively use a potentiometer for accurate EMF measurement.",
+    "Power Delivered: Power delivered to external load $R$ is $P = I^2R = (\\mathcal{E}/(R+r))^2 R$. Maximum power transfer occurs when $R = r$, with $P_\\text{max} = \\mathcal{E}^2/4r$."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material).."
-  ],
-  "bounds": [
-    "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
-  ],
-  "practice": [
-    "one worked example for \"Electromotive force of a source, internal resistance\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
-    "Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
-    "Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Electromotive force of a source, internal resistance\" with one example.",
-    "compare \"Electromotive force of a source\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Electromotive force of a source, internal resistance\" and verify the answer is plausible."
+  "specificConditions": [
+    "EMF vs Terminal Voltage: EMF $\\mathcal{E}$ is the open-circuit terminal voltage ($I=0$). Terminal voltage $V = \\mathcal{E} - Ir$ drops as current increases due to internal resistance.",
+    "Internal Resistance Effects: Internal resistance causes voltage drop ($Ir$), power loss ($I^2r$), and heating inside the source. It limits maximum deliverable current and power.",
+    "Maximum Power Transfer: Maximum power is delivered to load when load resistance equals internal resistance ($R = r$). This is important for matching circuits but not for efficiency (efficiency is only 50% at this point)."
   ],
   "formulas": [
-    "V = IR",
-    "P = IV = I²R = V²/R",
-    "V_term = E − Ir"
-  ],
-  "numericals": [
-    "Use  V = IR  — pick reasonable values, solve, and check the units.",
-    "Use  P = IV = I²R = V²/R  — pick reasonable values, solve, and check the units.",
-    "Use  V_term = E − Ir  — pick reasonable values, solve, and check the units."
+    "EMF: $\\mathcal{E} = W/q$",
+    "Terminal voltage: $V = \\mathcal{E} - Ir$",
+    "Lost volts: $V_\\text{lost} = Ir$",
+    "Circuit current: $I = \\mathcal{E}/(R + r)$",
+    "Cells in series: $\\mathcal{E}_\\text{eq} = n\\mathcal{E}$, $r_\\text{eq} = nr$",
+    "Cells in parallel: $\\mathcal{E}_\\text{eq} = \\mathcal{E}$, $r_\\text{eq} = r/n$",
+    "Power to load: $P = I^2R = (\\mathcal{E}/(R+r))^2 R$",
+    "Maximum power condition: $R = r$",
+    "Maximum power: $P_\\text{max} = \\mathcal{E}^2/4r$"
   ],
   "keyPoints": [
-    "• Electromotive force of a source",
-    "• Internal resistance"
+    "EMF is energy per unit charge supplied by the source; measured in volts.",
+    "Terminal voltage $V = \\mathcal{E} - Ir$; internal drop $Ir$ is called lost volts.",
+    "Open circuit: $V = \\mathcal{E}$; short circuit: $I = \\mathcal{E}/r$.",
+    "Cells in series add EMF and internal resistance; parallel cells reduce effective internal resistance.",
+    "Maximum power transfer when external resistance equals internal resistance ($R = r$)."
   ],
-  "summary": "Electromotive force of a source, internal resistance (DC Circuits, Physics, class-11-notes) covers Electromotive force of a source, internal resistance. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "EMF is measured in open circuit ($I=0$); terminal voltage is measured under load ($I \\neq 0$).",
+    "Internal resistance increases as a cell ages or discharges — old batteries have higher $r$ and lower terminal voltage under load.",
+    "Short-circuit current $I = \\mathcal{E}/r$ can be very large and damage the source — never short a battery.",
+    "EMF is not a force despite the name — it is energy per unit charge (volts)."
+  ],
+  "examShortTricks": [
+    "Open circuit: terminal voltage = EMF. Closed circuit: terminal voltage = EMF - Ir.",
+    "Series cells: EMFs add, internal resistances add. Parallel cells: EMF same, internal resistance divides.",
+    "Max power transfer: load R = internal r. Efficiency at max power = 50%.",
+    "Plot V vs I: y-intercept = EMF, slope magnitude = internal resistance r."
+  ],
+  "examNotes": [
+    "NEB frequently asks to derive $V = \\mathcal{E} - Ir$ and explain internal resistance effects.",
+    "Numericals on cells in series/parallel are common — calculate equivalent EMF and internal resistance.",
+    "Maximum power transfer condition ($R = r$) is a favourite conceptual question.",
+    "Potentiometer method for measuring EMF accurately (no current drawn from cell)."
+  ],
+  "examples": [
+    "A cell has EMF $1.5\\text{ V}$ and internal resistance $0.5\\,\\Omega$. Connected to a $4\\,\\Omega$ resistor: $I = 1.5/(4+0.5) = 0.333\\text{ A}$, terminal $V = 1.5 - 0.333\\times0.5 = 1.33\\text{ V}$. Lost volts = $0.17\\text{ V}$.",
+    "Three cells of EMF $2\\text{ V}$ each and $r = 0.2\\,\\Omega$ each in series: $\\mathcal{E}_\\text{total} = 6\\text{ V}$, $r_\\text{total} = 0.6\\,\\Omega$.",
+    "Three identical cells ($\\mathcal{E} = 1.5\\text{ V}$, $r = 0.3\\,\\Omega$) in parallel: $\\mathcal{E}_\\text{eq} = 1.5\\text{ V}$, $r_\\text{eq} = 0.1\\,\\Omega$.",
+    "A battery of EMF $12\\text{ V}$ and $r = 0.5\\,\\Omega$ delivers max power when $R = 0.5\\,\\Omega$. $P_\\text{max} = 12^2/(4\\times0.5) = 72\\text{ W}$."
+  ],
+  "practiceQuestions": [
+    "Q2. Derive the relation $V = \\mathcal{E} - Ir$ for a cell supplying current to an external circuit.",
+    "Q3. Three cells each of EMF $2\\text{ V}$ and internal resistance $0.5\\,\\Omega$ are connected in series. Find equivalent EMF and internal resistance.",
+    "Q4. Three identical cells of EMF $1.5\\text{ V}$ and $r = 0.3\\,\\Omega$ are connected in parallel. Find equivalent EMF and internal resistance.",
+    "Q5. A battery of EMF $10\\text{ V}$ and $r = 1\\,\\Omega$ is connected to $R = 9\\,\\Omega$. Find current, terminal voltage, and power delivered.",
+    "Q6. State the condition for maximum power transfer and find max power for $\\mathcal{E} = 12\\text{ V}$, $r = 2\\,\\Omega$.",
+    "Q7. How would you determine EMF and internal resistance of a cell experimentally?"
+  ],
+  "practice": [
+    "Calculate terminal voltage for given EMF, internal resistance, and load current.",
+    "Determine equivalent EMF and internal resistance for series/parallel cell combinations.",
+    "Apply maximum power transfer condition ($R = r$) to circuit problems.",
+    "Use V-I graph method to find EMF (intercept) and internal resistance (slope).",
+    "Compute power delivered to load and power wasted in internal resistance.",
+    "Solve problems involving mixed series-parallel cell groupings."
+  ],
+  "universalFacts": [
+    "EMF is not a force — despite the name, it is energy supplied per unit charge (volts).",
+    "A real cell's internal resistance increases as it discharges — old batteries sag under load.",
+    "Maximum power transfer occurs at $R = r$ but efficiency is only 50% — for efficiency, use $R \\gg r$.",
+    "The potential difference across a cell being charged is $V = \\mathcal{E} + Ir$ (charging current adds to EMF).",
+    "Potentiometer measures true EMF because it draws no current from the cell at balance point."
+  ],
+  "confusion": [
+    "Confusing EMF with terminal voltage: EMF is open-circuit voltage; terminal voltage drops under load due to $Ir$.",
+    "Thinking EMF is a force: EMF is energy per unit charge (volts), not a mechanical force.",
+    "Believing parallel cells add EMF: Parallel identical cells have same EMF as one cell; only current capacity increases.",
+    "Assuming max power = max efficiency: At $R = r$, power is max but efficiency is only 50%.",
+    "Ignoring internal resistance: Real sources always have internal resistance affecting terminal voltage."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Electromotive force of a source, internal resistance\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The terminal voltage of a cell supplying current is:",
       "options": [
-        "True",
-        "False"
+        "Equal to EMF",
+        "Less than EMF",
+        "Greater than EMF",
+        "Zero"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "$V = \\mathcal{E} - Ir$, so terminal voltage is less than EMF when current flows."
+    },
+    {
+      "question": "Internal resistance of a cell causes:",
+      "options": [
+        "Increase in terminal voltage",
+        "Decrease in terminal voltage",
+        "No effect on terminal voltage",
+        "Increase in EMF"
+      ],
+      "answer": "B",
+      "explanation": "Internal resistance causes voltage drop $Ir$, reducing terminal voltage below EMF."
+    },
+    {
+      "question": "Cells in parallel have equivalent:",
+      "options": [
+        "EMF added, r added",
+        "EMF same, r divided by n",
+        "EMF divided by n, r same",
+        "EMF same, r multiplied by n"
+      ],
+      "answer": "B",
+      "explanation": "Parallel identical cells: $\\mathcal{E}_\\text{eq} = \\mathcal{E}$, $r_\\text{eq} = r/n$."
+    },
+    {
+      "question": "Maximum power is delivered to load when:",
+      "options": [
+        "R = 0",
+        "R = r",
+        "R >> r",
+        "R << r"
+      ],
+      "answer": "B",
+      "explanation": "Maximum power transfer theorem: $R = r$ for max power to load."
+    },
+    {
+      "question": "Open circuit terminal voltage equals:",
+      "options": [
+        "Zero",
+        "EMF",
+        "Less than EMF",
+        "Greater than EMF"
+      ],
+      "answer": "B",
+      "explanation": "When $I = 0$, $V = \\mathcal{E} - 0 = \\mathcal{E}$."
     }
-  ]
+  ],
+  "animation3D": "emf-internal-resistance",
+  "motionGraphics": "cell-circuit",
+  "visualType": "battery-internal-resistance",
+  "summary": "EMF is the energy supplied per unit charge by a source; terminal voltage $V = \\mathcal{E} - Ir$ drops due to internal resistance. Cells in series add EMF and internal resistance; parallel cells keep EMF same but divide internal resistance. Maximum power transfer occurs when load resistance equals internal resistance."
 }

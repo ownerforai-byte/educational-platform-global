@@ -1,64 +1,157 @@
 {
-  "title": "Gravitational potential; gravitational potential energy",
+  "title": "Gravitational Potential; Gravitational Potential Energy",
   "unitSlug": "gravitation",
   "topicSlug": "gravitational-potential-gravitational-potential-energy",
   "topicTitle": "Gravitational potential; gravitational potential energy",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Newton: F = G m₁m₂/r²; g = GM/r²; at Earth's surface g = GM/R² ≈ 9.8 m/s².",
-    "**Fact.** Orbital velocity v = √(GM/r); time period T = 2π√(r³/GM); escape velocity v_esc = √(2GM/r) = √2·v_orbital (at same r).",
-    "**Fact.** For a uniform sphere, g ∝ r inside and g = 0 at the centre; g decreases as 1/r² outside."
+    "Gravitational Potential: Gravitational potential $V$ at a point is the work done per unit mass in bringing a test mass from infinity to that point: $V = W/m = -GM/r$. It is a scalar quantity with SI unit J/kg. Potential is zero at infinity (reference) and negative everywhere else.",
+    "Gravitational Potential Energy: Potential energy $U$ of mass $m$ at a point where potential is $V$: $U = mV = -GMm/r$. Near Earth's surface ($h \\ll R$): $U = mgh$ (relative to surface). Change in PE: $\\Delta U = mg\\Delta h$.",
+    "Work Done by Gravitational Force: Work done in moving mass $m$ from $r_1$ to $r_2$: $W = -\\Delta U = GMm(1/r_2 - 1/r_1)$. Work is path-independent (conservative force).",
+    "Gravitational Field and Potential Relation: $\\vec{g} = -\\nabla V$ or $g = -dV/dr$ for radial field. Field points in direction of decreasing potential.",
+    "Potential Due to Spherical Shell: Outside ($r > R$): $V = -GM/r$. Inside ($r < R$): $V = -GM/R$ (constant, equal to surface value). Field inside is zero but potential is not zero.",
+    "Potential Due to Solid Sphere: Outside ($r > R$): $V = -GM/r$. Inside ($r \\le R$): $V = -\\frac{GM}{2R^3}(3R^2 - r^2)$. At center: $V = -3GM/2R$.",
+    "Escape Velocity: Minimum speed to escape to infinity from surface: $v_\\text{esc} = \\sqrt{2GM/R} = \\sqrt{2gR}$. For Earth: $\\approx 11.2\\text{ km/s}$. Derived from energy conservation: $\\frac{1}{2}mv^2 - GMm/R = 0$.",
+    "Gravitational Potential is Scalar: Unlike field (vector), potential adds algebraically. Potential at a point due to multiple masses: $V = -\\sum Gm_i/r_i$."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ newton: f = g m₁m₂/r²; g = gm/r²; at earth's surface g = gm/r² ≈ 9.8 m/s².."
-  ],
-  "bounds": [
-    "Limit to remember: newton: f = g m₁m₂/r²; g = gm/r²; at earth's surface g = gm/r² ≈ 9.8 m/s²."
-  ],
-  "practice": [
-    "one worked example for \"Gravitational potential; gravitational potential energy\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Newton: F = G m₁m₂/r²; g = GM/r²; at Earth's surface g = GM/R² ≈ 9.8 m/s².",
-    "Orbital velocity v = √(GM/r); time period T = 2π√(r³/GM); escape velocity v_esc = √(2GM/r) = √2·v_orbital (at same r).",
-    "For a uniform sphere, g ∝ r inside and g = 0 at the centre; g decreases as 1/r² outside."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Gravitational potential; gravitational potential energy\" with one example.",
-    "compare \"Gravitational potential\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Gravitational potential; gravitational potential energy\" and verify the answer is plausible."
+  "specificConditions": [
+    "Reference at Infinity: Potential is defined with $V(\\infty) = 0$. This makes all finite-distance potentials negative — work must be done to separate masses.",
+    "Near-Surface Approximation: $U = mgh$ is valid only for $h \\ll R$ where $g$ is approximately constant. For large heights, use $U = -GMm/r$.",
+    "Potential is Not Field: Potential is scalar (can be negative), field is vector. $\\vec{g} = -\\nabla V$ — field points toward lower potential."
   ],
   "formulas": [
-    "g = GM/r²",
-    "v_orb = √(GM/r)",
-    "v_esc = √(2GM/r)",
-    "T² ∝ r³ (Kepler)"
-  ],
-  "numericals": [
-    "Use  g = GM/r²  — pick reasonable values, solve, and check the units.",
-    "Use  v_orb = √(GM/r)  — pick reasonable values, solve, and check the units.",
-    "Use  v_esc = √(2GM/r)  — pick reasonable values, solve, and check the units."
+    "Gravitational potential: $V = -GM/r$",
+    "Gravitational PE: $U = mV = -GMm/r$",
+    "Near surface PE: $U = mgh$ ($h \\ll R$)",
+    "Field-potential relation: $g = -dV/dr$",
+    "Work done: $W = -\\Delta U = GMm(1/r_2 - 1/r_1)$",
+    "Shell outside: $V = -GM/r$; inside: $V = -GM/R$",
+    "Solid sphere inside: $V = -\\frac{GM}{2R^3}(3R^2 - r^2)$",
+    "Escape velocity: $v_\\text{esc} = \\sqrt{2GM/R} = \\sqrt{2gR}$"
   ],
   "keyPoints": [
-    "• Gravitational potential",
-    "• Gravitational potential energy"
+    "Gravitational potential $V = -GM/r$ (scalar, J/kg, zero at infinity).",
+    "Potential energy $U = -GMm/r$; near surface $U = mgh$.",
+    "Potential is scalar — add algebraically for multiple masses.",
+    "$\\vec{g} = -\\nabla V$ — field points toward decreasing potential.",
+    "Shell: potential constant inside, $-GM/R$; field zero inside.",
+    "Escape velocity $v_\\text{esc} = \\sqrt{2GM/R} \\approx 11.2\\text{ km/s}$ for Earth."
   ],
-  "summary": "Gravitational potential; gravitational potential energy (Gravitation, Physics, class-11-notes) covers Gravitational potential, gravitational potential energy. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "Potential is negative because gravity is attractive — work must be done against gravity to move mass to infinity.",
+    "Reference point for potential is arbitrary; only differences matter physically. Infinity = 0 is conventional.",
+    "Inside a spherical shell, field is zero but potential is constant ($-GM/R$) — not zero.",
+    "Escape velocity is independent of the escaping object's mass."
+  ],
+  "examShortTricks": [
+    "Potential $V = -GM/r$ is always negative (infinity = 0 reference).",
+    "Near surface: use $U = mgh$; far from Earth: use $U = -GMm/r$.",
+    "Escape velocity: $v_\\text{esc} = \\sqrt{2gR}$ — no need for G and M if g and R known.",
+    "Potential is scalar — just add values, no vector components.",
+    "Orbital velocity is $\\sqrt{2}$ times smaller than escape velocity at same radius."
+  ],
+  "examNotes": [
+    "NEB frequently asks for derivation of gravitational potential and potential energy.",
+    "Distinguish potential (scalar, J/kg) from potential energy (scalar, J) and field (vector, N/kg).",
+    "Escape velocity derivation using energy conservation is a standard question.",
+    "Shell theorem results: field = 0 inside, potential = constant inside shell."
+  ],
+  "examples": [
+    "Potential at Earth's surface: $V = -GM/R = -(6.67\\times 10^{-11})(5.97\\times 10^{24})/(6.4\\times 10^6) = -6.25 \\times 10^7\\text{ J/kg}$.",
+    "PE of 2 kg mass at Earth's surface: $U = mV = 2 \\times (-6.25 \\times 10^7) = -1.25 \\times 10^8\\text{ J}$.",
+    "Escape velocity from Earth: $v_\\text{esc} = \\sqrt{2 \\times 9.8 \\times 6.4\\times 10^6} = 11{}200\\text{ m/s} = 11.2\\text{ km/s}$.",
+    "PE change lifting 5 kg by 10 m: $\\Delta U = mgh = 5 \\times 9.8 \\times 10 = 490\\text{ J}$."
+  ],
+  "practiceQuestions": [
+    "Q2. Derive $V = -GM/r$ for gravitational potential due to a point mass.",
+    "Q3. Show that escape velocity is $v_\\text{esc} = \\sqrt{2GM/R}$ using energy conservation.",
+    "Q4. Calculate gravitational potential at Earth's surface given $M = 5.97\\times 10^{24}\\text{ kg}$, $R = 6.4\\times 10^6\\text{ m}$.",
+    "Q5. Distinguish between gravitational potential and gravitational potential energy.",
+    "Q6. Find potential inside and outside a thin spherical shell of mass M and radius R.",
+    "Q7. A 10 kg mass is moved from Earth's surface to height 2R. Find change in potential energy."
+  ],
+  "practice": [
+    "Calculate gravitational potential due to point mass and spherical bodies.",
+    "Compute potential energy changes using $U = -GMm/r$ or $mgh$ as appropriate.",
+    "Derive and apply escape velocity formula.",
+    "Use relation $\\vec{g} = -\\nabla V$ to find field from potential.",
+    "Solve problems involving potential inside/outside spherical shells and solid spheres.",
+    "Calculate work done in moving masses in gravitational fields."
+  ],
+  "universalFacts": [
+    "Gravitational potential energy is negative because gravity is attractive — bound systems have negative total energy.",
+    "Escape velocity from Earth (11.2 km/s) is much higher than orbital velocity (7.9 km/s) — escaping requires $\\sqrt{2}$ times orbital speed.",
+    "Gravitational potential is a scalar — no direction, unlike gravitational field which is a vector.",
+    "The gravitational potential at the center of Earth is $-3GM/2R$ — about 1.5 times the surface value (more negative).",
+    "Black holes have escape velocity exceeding speed of light — nothing, not even light, can escape."
+  ],
+  "confusion": [
+    "Confusing potential (V, J/kg) with potential energy (U, J): $U = mV$ — multiply by mass.",
+    "Thinking potential is always positive: Gravitational potential is negative (infinity = 0 reference).",
+    "Believing field inside shell is zero means potential is also zero: Field = 0 but potential = constant ($-GM/R$).",
+    "Using $mgh$ for large heights: Valid only for $h \\ll R$; use $-GMm/r$ for space problems.",
+    "Confusing escape velocity with orbital velocity: $v_\\text{esc} = \\sqrt{2}\\,v_\\text{orb}$ at same radius."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Gravitational potential; gravitational potential energy\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Gravitational potential at infinity is taken as:",
       "options": [
-        "True",
-        "False"
+        "Zero",
+        "Maximum",
+        "Minimum",
+        "Undefined"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A",
+      "explanation": "Reference point for gravitational potential is infinity where V = 0."
+    },
+    {
+      "question": "Gravitational potential energy near Earth's surface is:",
+      "options": [
+        "-GMm/r",
+        "mgh",
+        "GMm/r",
+        "mgh/2"
+      ],
+      "answer": "B",
+      "explanation": "For h << R, U ≈ mgh relative to surface."
+    },
+    {
+      "question": "Escape velocity from Earth's surface is approximately:",
+      "options": [
+        "7.9 km/s",
+        "11.2 km/s",
+        "3.08 km/s",
+        "11.2 m/s"
+      ],
+      "answer": "B",
+      "explanation": "$v_\\text{esc} = \\sqrt{2gR} = \\sqrt{2 \\times 9.8 \\times 6.4\\times 10^6} \\approx 11.2\\text{ km/s}$."
+    },
+    {
+      "question": "Gravitational potential is a:",
+      "options": [
+        "Vector quantity",
+        "Scalar quantity",
+        "Tensor quantity",
+        "Neither"
+      ],
+      "answer": "B",
+      "explanation": "Potential is scalar — it has magnitude but no direction."
+    },
+    {
+      "question": "Electric field inside a charged conducting spherical shell is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Uniform",
+        "Non-zero"
+      ],
+      "answer": "B",
+      "explanation": "By Gauss's law, Q_enc = 0 inside shell, so field = 0."
     }
-  ]
+  ],
+  "animation3D": "gravitational-potential",
+  "motionGraphics": "potential-well",
+  "visualType": "gravitational-potential",
+  "summary": "Gravitational potential $V = -GM/r$ is work per unit mass from infinity; potential energy $U = mV = -GMm/r$ (or $mgh$ near surface). Potential is scalar and negative; field $\\vec{g} = -\\nabla V$ points toward lower potential. Escape velocity $v_\\text{esc} = \\sqrt{2GM/R}$ is the minimum speed to escape to infinity."
 }

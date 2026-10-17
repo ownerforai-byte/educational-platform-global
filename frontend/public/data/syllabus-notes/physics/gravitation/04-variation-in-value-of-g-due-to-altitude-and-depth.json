@@ -1,51 +1,153 @@
 {
-  "title": "Variation in value of 'g' due to altitude and depth",
+  "title": "Variation in Value of g due to Altitude and Depth",
   "unitSlug": "gravitation",
   "topicSlug": "variation-in-value-of-g-due-to-altitude-and-depth",
   "topicTitle": "Variation in value of 'g' due to altitude and depth",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Variation in value of 'g' due to altitude and depth\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "notes": [
+    "Acceleration Due to Gravity: At Earth's surface, $g = GM/R^2 \\approx 9.8\\text{ m/s}^2$. It varies with location due to altitude, depth, Earth's rotation, and shape.",
+    "Variation with Altitude: At height $h$ above surface: $g_h = GM/(R+h)^2 = g(1+h/R)^{-2} \\approx g(1 - 2h/R)$ for $h \\ll R$. Gravity decreases with altitude — inverse square law.",
+    "Variation with Depth: At depth $d$ below surface (assuming uniform density): $g_d = g(1 - d/R) = g(R-d)/R$. Gravity decreases linearly with depth, becoming zero at Earth's center.",
+    "Comparison: For small $h$ and $d$, decrease at height $h$ ($\\Delta g \\approx -2gh/R$) is twice the decrease at depth $d$ ($\\Delta g = -gd/R$). Gravity decreases faster with altitude than with depth.",
+    "Earth's Rotation: Effective gravity at latitude $\\lambda$: $g' = g - \\omega^2 R \\cos^2\\lambda$. Maximum at poles ($\\lambda = 90^\\circ$, no rotation effect), minimum at equator ($\\lambda = 0^\\circ$, maximum centrifugal reduction).",
+    "Earth's Shape: Earth is oblate (equatorial radius > polar radius). Since $g \\propto 1/R^2$, $g$ is higher at poles (closer to center) and lower at equator.",
+    "Combined Effects: The measured $g$ varies from about $9.78\\text{ m/s}^2$ at equator to $9.83\\text{ m/s}^2$ at poles due to rotation + shape + altitude."
   ],
-  "universalFacts": [
-    "answer pattern for \"Variation in value of 'g' due to altitude and depth\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Variation in value of 'g' due to altitude and depth\" with one example.",
-    "compare \"Variation in value of 'g' due to altitude\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Variation in value of 'g' due to altitude and depth\" and verify the answer is plausible."
+  "specificConditions": [
+    "Uniform Density Assumption: The depth formula $g_d = g(1-d/R)$ assumes Earth has uniform density. Real Earth has varying density, so actual variation is more complex.",
+    "Small Altitude Approximation: $g_h \\approx g(1-2h/R)$ is valid only for $h \\ll R$. For large heights, use full inverse-square formula.",
+    "Latitude Effect: Rotation effect on g depends on latitude — zero at poles, maximum at equator."
   ],
   "formulas": [
-    "Governing equation for \"Variation in value of 'g' due to altitude and depth\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Variation in value of 'g' due to altitude and depth\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
+    "Surface gravity: $g = GM/R^2$",
+    "At height h: $g_h = g(R/(R+h))^2 \\approx g(1 - 2h/R)$",
+    "At depth d: $g_d = g(1 - d/R) = g(R-d)/R$",
+    "At center: $g = 0$",
+    "Rotation effect: $g' = g - \\omega^2 R \\cos^2\\lambda$",
+    "Comparison: $\\Delta g_\\text{height} \\approx 2\\times\\Delta g_\\text{depth}$ for equal h and d"
   ],
   "keyPoints": [
-    "• Variation in value of 'g' due to altitude",
-    "• Depth"
+    "Gravity decreases with altitude: $g_h = g(R/(R+h))^2$.",
+    "Gravity decreases with depth: $g_d = g(1-d/R)$, zero at center.",
+    "For equal h and d, decrease at height is approximately twice decrease at depth.",
+    "Rotation reduces effective gravity most at equator, none at poles.",
+    "Earth's oblateness makes g higher at poles, lower at equator."
   ],
-  "summary": "Variation in value of 'g' due to altitude and depth (Gravitation, Physics, class-11-notes) covers Variation in value of 'g' due to altitude, depth. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "g decreases with both altitude and depth but at different rates.",
+    "At Earth's center, g = 0 (mass symmetrically distributed in all directions).",
+    "The depth formula assumes uniform density — real Earth has core, mantle, crust with different densities.",
+    "Rotation effect is a centrifugal effect in the rotating frame of Earth."
+  ],
+  "examShortTricks": [
+    "Height: $g_h \\approx g(1-2h/R)$; Depth: $g_d = g(1-d/R)$.",
+    "For same h = d: change at height is twice change at depth.",
+    "Zero at center, max at poles, min at equator.",
+    "Use binomial approximation $(1+x)^n \\approx 1+nx$ for small h/R."
+  ],
+  "examNotes": [
+    "NEB frequently asks to derive variation of g with altitude and depth.",
+    "Compare rate of decrease with height vs depth — a common conceptual question.",
+    "Numerical problems: find g at given height/depth, or find height/depth where g is a fraction of surface value.",
+    "Rotation effect: poles vs equator difference."
+  ],
+  "examples": [
+    "g at height 100 km: $g_h = 9.8(1 - 2\\times100/6400) = 9.8(1 - 0.03125) = 9.49\\text{ m/s}^2$.",
+    "g at depth 100 km: $g_d = 9.8(1 - 100/6400) = 9.8(1 - 0.015625) = 9.65\\text{ m/s}^2$.",
+    "g at height equal to R (h = R): $g_h = g(R/2R)^2 = g/4 = 2.45\\text{ m/s}^2$.",
+    "Depth where g = g/2: $g/2 = g(1-d/R) \\Rightarrow d = R/2 = 3200\\text{ km}$.",
+    "Height where g = g/2: $g/2 = g(R/(R+h))^2 \\Rightarrow R+h = R\\sqrt{2} \\Rightarrow h = 0.414R \\approx 2650\\text{ km}$."
+  ],
+  "practiceQuestions": [
+    "Q1. Derive expression for variation of g with altitude.",
+    "Q2. Derive expression for variation of g with depth (assume uniform density).",
+    "Q3. Compare the rate of decrease of g with altitude and depth.",
+    "Q4. Find height where g becomes 1% less than surface value.",
+    "Q5. Find depth where g becomes 50% of surface value.",
+    "Q6. Explain why g is maximum at poles and minimum at equator.",
+    "Q7. Calculate g at the top of Mount Everest (h ≈ 8.8 km)."
+  ],
+  "practice": [
+    "Calculate g at various heights using $g_h = g(R/(R+h))^2$.",
+    "Calculate g at various depths using $g_d = g(1-d/R)$.",
+    "Find height/depth where g is a specified fraction of surface value.",
+    "Compare altitude and depth effects for same numerical displacement.",
+    "Account for Earth's rotation in effective gravity at different latitudes."
+  ],
+  "universalFacts": [
+    "g varies from 9.78 m/s² at equator to 9.83 m/s² at poles — about 0.5% variation.",
+    "At Earth's center, a mass would be weightless because gravitational pulls from all directions cancel.",
+    "Satellites experience microgravity not because g is zero (g ≈ 8.7 m/s² at ISS altitude) but because they are in free fall.",
+    "The GRACE mission measures Earth's gravity field variations to study groundwater, ice sheets, and ocean currents.",
+    "Olympic records in jumping events are slightly easier at high altitude (lower g) and near equator."
+  ],
+  "confusion": [
+    "Thinking g decreases at same rate with height and depth: Height decrease (~2h/R) is approximately twice depth decrease (d/R).",
+    "Believing g is zero at Earth's center because no mass below: It's zero because mass surrounds symmetrically — pulls cancel.",
+    "Ignoring Earth's rotation in g variation: Rotation contributes significantly to equator-pole difference.",
+    "Using depth formula without uniform density assumption: Real Earth's density varies, so actual g(d) is not linear.",
+    "Confusing g variation with altitude vs gravitational potential variation."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Variation in value of 'g' due to altitude and depth\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Acceleration due to gravity at height h (h << R) is approximately:",
       "options": [
-        "True",
-        "False"
+        "g(1 + 2h/R)",
+        "g(1 - 2h/R)",
+        "g(1 - h/R)",
+        "g(1 + h/R)"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "$g_h = g(R/(R+h))^2 \\approx g(1 - 2h/R)$ using binomial expansion."
+    },
+    {
+      "question": "Acceleration due to gravity at depth d below surface:",
+      "options": [
+        "g(1 + d/R)",
+        "g(1 - d/R)",
+        "gd/R",
+        "g(1 - d²/R²)"
+      ],
+      "answer": "B",
+      "explanation": "Assuming uniform density, $g_d = g(1 - d/R)$ — decreases linearly with depth."
+    },
+    {
+      "question": "At Earth's center, acceleration due to gravity is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Equal to surface value",
+        "Twice surface value"
+      ],
+      "answer": "B",
+      "explanation": "At center, mass is symmetrically distributed — net gravitational pull is zero."
+    },
+    {
+      "question": "For equal small height h and depth d, the decrease in g is:",
+      "options": [
+        "Same at height and depth",
+        "Greater at depth",
+        "Greater at height",
+        "Zero at both"
+      ],
+      "answer": "C",
+      "explanation": "Height: Δg ≈ -2gh/R; Depth: Δg = -gd/R. Height decrease is twice depth decrease."
+    },
+    {
+      "question": "g is maximum at:",
+      "options": [
+        "Equator",
+        "Poles",
+        "Same everywhere",
+        "45° latitude"
+      ],
+      "answer": "B",
+      "explanation": "Poles: closer to Earth's center (oblateness) + no centrifugal effect from rotation."
     }
-  ]
+  ],
+  "animation3D": "variation-of-g",
+  "motionGraphics": "gravity-profile",
+  "visualType": "g-variation",
+  "summary": "Acceleration due to gravity decreases with altitude ($g_h \\approx g(1-2h/R)$) and depth ($g_d = g(1-d/R)$), becoming zero at Earth's center. Rotation and Earth's oblateness cause g to be maximum at poles and minimum at equator. For equal h and d, gravity decreases about twice as fast with altitude."
 }

@@ -1,61 +1,148 @@
 {
-  "title": "Energy bands in solids (qualitative ideas)",
+  "title": "Energy Bands in Solids (Qualitative Ideas)",
   "unitSlug": "solids",
   "topicSlug": "energy-bands-in-solids-qualitative-ideas",
   "topicTitle": "Energy bands in solids (qualitative ideas)",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Energy bands in solids (qualitative ideas)\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "notes": [
+    "Atomic Energy Levels: An isolated atom has discrete energy levels (1s, 2s, 2p, etc.). Electrons occupy these levels according to Pauli exclusion principle.",
+    "Formation of Energy Bands: When N atoms come together to form a solid, their wavefunctions overlap. Each atomic level splits into N closely spaced levels, forming an energy band. For macroscopic N (~10²³), levels form quasi-continuous bands.",
+    "Valence Band: The highest energy band containing electrons at 0 K. It may be fully or partially filled. Electrons in this band are bound to atoms.",
+    "Conduction Band: The next higher energy band, typically empty or partially filled at 0 K. Electrons here are free to move and conduct electricity.",
+    "Band Gap (E_g): The energy gap between valence band and conduction band where no electron states exist. Size determines electrical classification.",
+    "Energy vs Momentum (E-k diagram): In solids, electron energy depends on wavevector k. Bands form allowed ranges; gaps are forbidden ranges.",
+    "Pauli Exclusion: Each quantum state can hold max 2 electrons (spin up/down). Band filling determines whether material conducts."
   ],
-  "universalFacts": [
-    "answer pattern for \"Energy bands in solids (qualitative ideas)\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Energy bands in solids (qualitative ideas)\" with one example.",
-    "compare \"Energy bands in solids\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Energy bands in solids (qualitative ideas)\" and verify the answer is plausible."
+  "specificConditions": [
+    "Isolated Atom Limit: Discrete levels only for isolated atoms. Bands form only when atoms are close (interatomic interaction).",
+    "Temperature Effect: At T > 0, electrons can be thermally excited across band gap if k_BT is comparable to E_g.",
+    "Macroscopic Solid: Band concept requires large N — small clusters have discrete levels (quantum dots)."
   ],
   "formulas": [
-    "Governing equation for \"Energy bands in solids (qualitative ideas)\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Energy bands in solids (qualitative ideas)\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
+    "Band gap: E_g = E_conduction_bottom - E_valence_top",
+    "Number of states in band: ~2N (from N atoms, 2 electrons per state)",
+    "Fermi-Dirac: f(E) = 1/(exp((E-E_F)/k_BT) + 1)",
+    "Thermal energy at 300 K: k_BT ≈ 0.026 eV"
   ],
   "keyPoints": [
-    "• Energy bands in solids",
-    "• Qualitative ideas"
-  ],
-  "summary": "Energy bands in solids (qualitative ideas) (Solids, Physics, class-11-notes) covers Energy bands in solids, qualitative ideas. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these. Energy Bands in Solids covers essential principles and applications.",
-  "mcqs": [
-    {
-      "question": "A common examiner point on \"Energy bands in solids (qualitative ideas)\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
+    "Isolated atoms have discrete levels; solids have energy bands.",
+    "N atomic levels split into N closely spaced levels forming a band.",
+    "Valence band: highest occupied band at 0 K.",
+    "Conduction band: band above valence band where electrons conduct.",
+    "Band gap E_g: forbidden energy region between valence and conduction bands.",
+    "Band structure determines whether solid is metal, insulator, or semiconductor."
   ],
   "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "importantConcepts": [],
-  "notes": [],
-  "confusion": [],
-  "specialNotes": [],
-  "examNotes": [],
-  "importantTasks": [],
-  "animation3D": "physics",
-  "motionGraphics": "physics",
-  "visualType": "energy-bands-semiconductor"
+  "importantNotes": [
+    "Band gap determines conductivity: metals (no gap or overlap), semiconductors (small gap ~1 eV), insulators (large gap > 3 eV).",
+    "Fermi level E_F is the energy at which occupation probability is 1/2 at T = 0 K.",
+    "Only electrons near Fermi level participate in conduction — deep band electrons are too tightly bound.",
+    "Temperature excites electrons across gap if thermal energy k_BT is sufficient."
+  ],
+  "examShortTricks": [
+    "Metal: valence band partially filled or overlaps conduction band.",
+    "Insulator: full valence band, large gap (> 3 eV), empty conduction band.",
+    "Semiconductor: full valence band, small gap (~1 eV), some thermal excitation.",
+    "Band gap E_g determines conductivity category."
+  ],
+  "examNotes": [
+    "NEB frequently asks for qualitative explanation of band formation and classification.",
+    "Distinguish valence band, conduction band, and band gap clearly.",
+    "Explain why metals conduct and insulators don't using band picture.",
+    "Draw schematic band diagrams for metal, insulator, semiconductor."
+  ],
+  "examples": [
+    "Sodium: 3s band half-filled → metal (one valence electron per atom, band holds 2).",
+    "Diamond: valence band full, gap 5.5 eV → insulator.",
+    "Silicon: valence band full, gap 1.1 eV → semiconductor.",
+    "Magnesium: 3s band overlaps 3p band → metal despite even valence electrons."
+  ],
+  "practiceQuestions": [
+    "Q1. Explain qualitatively how energy bands form in solids from atomic energy levels.",
+    "Q2. Distinguish between valence band and conduction band.",
+    "Q4. Using band theory, explain why metals conduct but insulators do not.",
+    "Q5. Draw schematic energy band diagrams for metal, semiconductor, and insulator.",
+    "Q6. Why does the band concept require a large number of atoms?"
+  ],
+  "practice": [
+    "Draw band diagrams for metal, insulator, semiconductor.",
+    "Classify materials based on band gap size.",
+    "Explain conductivity using band theory.",
+    "Relate Fermi level to band positions.",
+    "Discuss temperature effect on band occupation."
+  ],
+  "universalFacts": [
+    "Band theory was developed by Bloch (1928), Wilson (1931), and Peierls using quantum mechanics.",
+    "The band gap of silicon (1.1 eV) corresponds to infrared wavelength (~1.1 μm) — Si is opaque to visible but transparent to IR.",
+    "Quantum dots (nanoscale clusters) have discrete levels instead of bands — size-tunable optical properties.",
+    "The Pauli exclusion principle is essential — without it, all electrons would collapse to the lowest state and no bands would form."
+  ],
+  "confusion": [
+    "Thinking bands are like atomic levels: Bands contain N closely spaced levels, not one level.",
+    "Believing valence electrons are the only ones in valence band: Core electrons also in bands but too tightly bound to conduct.",
+    "Confusing band gap with work function: Band gap is internal to material; work function is energy to remove electron from surface to vacuum.",
+    "Thinking all electrons in conduction band conduct: Only electrons near Fermi level participate significantly.",
+    "Believing bands exist in isolated atoms: Bands require interatomic overlap in solids."
+  ],
+  "mcs": [
+    {
+      "question": "Energy bands form in solids because:",
+      "options": [
+        "Atoms are isolated",
+        "Atomic energy levels split due to interatomic interaction",
+        "Electrons are removed",
+        "Nuclei merge"
+      ],
+      "answer": "B",
+      "explanation": "N atomic levels split into N closely spaced levels when atoms form a solid."
+    },
+    {
+      "question": "The valence band is:",
+      "options": [
+        "Always empty",
+        "Highest occupied band at 0 K",
+        "Same as conduction band",
+        "Above the band gap"
+      ],
+      "answer": "B",
+      "explanation": "Valence band is the highest energy band containing electrons at absolute zero."
+    },
+    {
+      "question": "Band gap E_g is:",
+      "options": [
+        "Energy of conduction band",
+        "Energy of valence band",
+        "Forbidden region between valence and conduction bands",
+        "Zero for all materials"
+      ],
+      "answer": "C",
+      "explanation": "Band gap is the energy range with no allowed electron states."
+    },
+    {
+      "question": "Metals conduct because:",
+      "options": [
+        "No band gap",
+        "Partially filled valence band or overlapping bands",
+        "Large band gap",
+        "Empty valence band"
+      ],
+      "answer": "B",
+      "explanation": "Electrons can move into empty states within the same band or overlapping band."
+    },
+    {
+      "question": "Band concept requires:",
+      "options": [
+        "Single atom",
+        "Few atoms",
+        "Large number of atoms (macroscopic solid)",
+        "Ionized atoms"
+      ],
+      "answer": "C",
+      "explanation": "Many atoms (N ~ 10²³) needed for levels to form quasi-continuous bands."
+    }
+  ],
+  "animation3D": "energy-bands",
+  "motionGraphics": "band-structure",
+  "visualType": "energy-bands-semiconductor",
+  "summary": "In solids, discrete atomic energy levels broaden into energy bands. Valence band (highest occupied at 0 K), conduction band (above, where electrons conduct), and band gap E_g (forbidden region between them). Band structure determines metal/semiconductor/insulator classification."
 }

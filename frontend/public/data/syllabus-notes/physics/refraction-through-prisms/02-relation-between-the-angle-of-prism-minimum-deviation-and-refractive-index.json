@@ -1,75 +1,150 @@
 {
-  "title": "Relation between the angle of prism, minimum deviation an…",
+  "title": "Relation Between Angle of Prism, Minimum Deviation and Refractive Index",
   "unitSlug": "refraction-through-prisms",
   "topicSlug": "relation-between-the-angle-of-prism-minimum-deviation-and-refractive-index",
   "topicTitle": "Relation between the angle of prism, minimum deviation and refractive index",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "**Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "**Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+    "Prism: A transparent optical element with flat, polished surfaces that refract light. Triangular prism has two refracting surfaces inclined at angle A (angle of prism).",
+    "Deviation: Angle between incident ray direction and emergent ray direction. Depends on angle of incidence i, prism angle A, and refractive index μ.",
+    "Minimum Deviation: At a particular angle of incidence, deviation D is minimum (D_min). At this position, ray passes symmetrically: i = e, r₁ = r₂ = r, and ray inside prism is parallel to base.",
+    "Prism Formula at Minimum Deviation: μ = sin((A + D_min)/2) / sin(A/2). This is the most important relation for determining refractive index of prism material.",
+    "Small Angle Prism: For thin prism (small A) and small angles: D_min ≈ (μ - 1)A. Deviation is independent of angle of incidence for small angles.",
+    "Relation r₁ + r₂ = A: At any incidence, sum of refraction angles at two faces equals prism angle.",
+    "Deviation Formula: D = i + e - A where i = incidence angle, e = emergence angle, A = prism angle.",
+    "Factors Affecting Deviation: Deviation depends on prism angle A, refractive index μ, wavelength of light (dispersion), and angle of incidence."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.."
-  ],
-  "bounds": [
-    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
-  ],
-  "practice": [
-    "one worked example for \"Relation between the angle of prism, minimum deviation an…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
-    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
-    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Relation between the angle of prism, minimum deviation an…\" with one example.",
-    "compare \"Relation between the angle of prism\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Relation between the angle of prism, minimum deviation an…\" and verify the answer is plausible."
+  "specificConditions": [
+    "Minimum Deviation Condition: i = e, r₁ = r₂ = A/2, ray inside parallel to base — only at this symmetric position is D = D_min.",
+    "Small Angle Approximation: D ≈ (μ-1)A valid only for small A (typically < 10°) and small angles of incidence.",
+    "Transparent Prism: Material must be transparent in the wavelength range used; absorption affects deviation measurement."
   ],
   "formulas": [
-    "1/f = (μ−1)(1/R₁ − 1/R₂)",
-    "P = 1/f",
-    "n = sin((A+D)/2)/sin(A/2)"
-  ],
-  "numericals": [
-    "Use  1/f = (μ−1)(1/R₁ − 1/R₂)  — pick reasonable values, solve, and check the units.",
-    "Use  P = 1/f  — pick reasonable values, solve, and check the units.",
-    "Use  n = sin((A+D)/2)/sin(A/2)  — pick reasonable values, solve, and check the units."
+    "Deviation: D = i + e - A",
+    "Angle relation: r₁ + r₂ = A",
+    "Minimum deviation: μ = sin((A + D_min)/2) / sin(A/2)",
+    "Small angle prism: D_min ≈ (μ - 1)A",
+    "At minimum deviation: i = e, r₁ = r₂ = A/2"
   ],
   "keyPoints": [
-    "• Relation between the angle of prism",
-    "• Minimum deviation",
-    "• Refractive index"
+    "Prism angle A = r₁ + r₂ at any incidence.",
+    "Deviation D = i + e - A.",
+    "At minimum deviation: i = e, r₁ = r₂ = A/2.",
+    "μ = sin((A + D_min)/2) / sin(A/2) — prism formula.",
+    "Small angle prism: D ≈ (μ - 1)A.",
+    "Deviation depends on μ, A, wavelength, and incidence angle."
   ],
-  "summary": "Relation between the angle of prism, minimum deviation an… (Refraction through Prisms, Physics, class-11-notes) covers Relation between the angle of prism, minimum deviation, refractive index. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "Minimum deviation position gives most accurate μ measurement.",
+    "D_min depends on wavelength — dispersion causes different colors to deviate differently.",
+    "The symmetric position (ray parallel to base) is easy to identify experimentally.",
+    "Small angle approximation simplifies calculations but loses accuracy for large A."
+  ],
+  "examShortTricks": [
+    "At D_min: i = e, r = A/2 — use this to simplify.",
+    "μ = sin((A+D_min)/2)/sin(A/2) — memorize this prism formula.",
+    "Small angle: D = (μ-1)A — quick estimate.",
+    "D = i + e - A — general deviation formula."
+  ],
+  "examNotes": [
+    "NEB frequently asks to derive prism formula μ = sin((A+D_min)/2)/sin(A/2).",
+    "Experimental determination of μ using spectrometer and minimum deviation method.",
+    "Small angle prism numericals using D = (μ-1)A.",
+    "Distinguish deviation (angle through which ray turns) from D_min."
+  ],
+  "examples": [
+    "Glass prism A = 60°, D_min = 37°. μ = sin((60+37)/2)/sin(60/2) = sin(48.5°)/sin(30°) = 0.749/0.5 = 1.498 ≈ 1.5.",
+    "Small angle prism A = 5°, μ = 1.5: D_min ≈ (1.5-1)×5° = 2.5°.",
+    "Prism A = 45°, D_min = 30°: μ = sin(37.5°)/sin(22.5°) = 0.609/0.383 = 1.59."
+  ],
+  "practiceQuestions": [
+    "Q1. Derive the prism formula μ = sin((A + D_min)/2) / sin(A/2).",
+    "Q2. What is minimum deviation? What is special about the ray path at minimum deviation?",
+    "Q3. For a small angled prism, show that D_min ≈ (μ - 1)A.",
+    "Q4. A prism of angle 60° gives minimum deviation of 38°. Find refractive index.",
+    "Q5. Derive D = i + e - A for deviation through a prism.",
+    "Q6. How does deviation depend on wavelength of light?"
+  ],
+  "practice": [
+    "Calculate μ from A and D_min using prism formula.",
+    "Derive prism formula geometrically.",
+    "Apply small angle approximation D = (μ-1)A.",
+    "Draw ray diagram at minimum deviation position.",
+    "Explain dispersion using deviation-wavelength dependence."
+  ],
+  "universalFacts": [
+    "The spectrometer with prism is the classic instrument for measuring refractive index accurately.",
+    "Dispersion (μ varies with λ) causes white light to split into colors — violet deviates most, red least.",
+    "Rainbow formation involves refraction, internal reflection, and refraction again in water droplets.",
+    "Prism binoculars and periscopes use total internal reflection in prisms instead of mirrors."
+  ],
+  "confusion": [
+    "Confusing deviation angle D with prism angle A.",
+    "Thinking minimum deviation occurs at any incidence: Only at symmetric position (i = e).",
+    "Using small angle formula D = (μ-1)A for large A: Only valid for small A.",
+    "Confusing angle of refraction r with angle of deviation D.",
+    "Forgetting that D_min depends on wavelength (dispersion)."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Relation between the angle of prism, minimum deviation an…\"?",
+      "question": "At minimum deviation, the ray inside prism is:",
       "options": [
-        "Relation between the angle of prism",
-        "Minimum deviation",
-        "Unrelated topic",
-        "None of the above"
+        "Parallel to base",
+        "Perpendicular to base",
+        "At 45° to base",
+        "Random"
       ],
       "answer": "A",
-      "explanation": "Relation between the angle of prism is listed among the official sub-ideas of Relation between the angle of prism, minimum deviation an…; the others are not part of this topic."
+      "explanation": "Symmetric passage: ray inside prism parallel to base."
     },
     {
-      "question": "A common examiner point on \"Relation between the angle of prism, minimum deviation an…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Prism formula for refractive index:",
       "options": [
-        "True",
-        "False"
+        "sin(A+D_min)/sin(A)",
+        "sin((A+D_min)/2)/sin(A/2)",
+        "sin(A)/sin(D_min)",
+        "tan(A)/tan(D_min)"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "μ = sin((A + D_min)/2) / sin(A/2)."
+    },
+    {
+      "question": "For small angled prism, deviation D ≈",
+      "options": [
+        "(μ-1)A",
+        "(μ+1)A",
+        "μA",
+        "A/μ"
+      ],
+      "answer": "A",
+      "explanation": "D_min ≈ (μ - 1)A for small A."
+    },
+    {
+      "question": "Deviation D = i + e - A: i and e are:",
+      "options": [
+        "Incidence and emergence angles",
+        "Two refraction angles",
+        "Prism angle and half deviation",
+        "Critical angles"
+      ],
+      "answer": "A",
+      "explanation": "i = angle of incidence, e = angle of emergence."
+    },
+    {
+      "question": "At minimum deviation:",
+      "options": [
+        "i ≠ e",
+        "i = e",
+        "i = 0",
+        "e = 0"
+      ],
+      "answer": "B",
+      "explanation": "Symmetric condition: incidence angle equals emergence angle."
     }
-  ]
+  ],
+  "animation3D": "prism-deviation",
+  "motionGraphics": "prism-ray-diagram",
+  "visualType": "prism-minimum-deviation",
+  "summary": "Prism deviation D = i + e - A with r₁ + r₂ = A. At minimum deviation (symmetric passage, i = e, r = A/2): μ = sin((A+D_min)/2)/sin(A/2). Small angle prism: D ≈ (μ-1)A. Deviation depends on μ, A, wavelength."
 }

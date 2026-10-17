@@ -197,13 +197,13 @@
   {
     "unitSlug": "dc-circuits",
     "topicSlug": "current-voltage-relations-ohmic-and-non-ohmic-resistance",
-    "title": "Current-voltage relations; ohmic and non-ohmic resistance",
-    "noteCount": 3,
+    "title": "Current-Voltage Relations: Ohmic and Non-Ohmic Resistance",
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-current-voltage-relations-ohmic-and-non-ohmic-resistance.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "dc-circuits",
@@ -230,13 +230,13 @@
   {
     "unitSlug": "dc-circuits",
     "topicSlug": "electromotive-force-of-a-source-internal-resistance",
-    "title": "Electromotive force of a source, internal resistance",
-    "noteCount": 3,
+    "title": "Electromotive Force of a Source, Internal Resistance",
+    "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-electromotive-force-of-a-source-internal-resistance.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "dc-circuits",
@@ -505,13 +505,13 @@
   {
     "unitSlug": "dynamics",
     "topicSlug": "solid-friction-laws-of-solid-friction-and-their-verifications",
-    "title": "Solid friction: laws of solid friction and their verifica…",
-    "noteCount": 0,
+    "title": "Solid Friction: Laws and Verification",
+    "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-solid-friction-laws-of-solid-friction-and-their-verifications.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "dynamics",
@@ -748,13 +748,13 @@
   {
     "unitSlug": "electric-field",
     "topicSlug": "application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor",
-    "title": "Application of Gauss law: field of a charge sphere, line …",
-    "noteCount": 5,
+    "title": "Application of Gauss Law: Field of a Charge Sphere, Line Charge, Charged Plane Conductor",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "electric-field",
@@ -781,13 +781,13 @@
   {
     "unitSlug": "electric-field",
     "topicSlug": "electric-field-due-to-point-charges-field-lines",
-    "title": "Electric field due to point charges; field lines",
-    "noteCount": 5,
+    "title": "Electric Field Due to Point Charges; Field Lines",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-electric-field-due-to-point-charges-field-lines.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "electric-field",
@@ -943,13 +943,13 @@
   {
     "unitSlug": "gravitation",
     "topicSlug": "gravitational-potential-gravitational-potential-energy",
-    "title": "Gravitational potential; gravitational potential energy",
-    "noteCount": 3,
+    "title": "Gravitational Potential; Gravitational Potential Energy",
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-gravitational-potential-gravitational-potential-energy.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "gravitation",
@@ -1036,13 +1036,24 @@
   {
     "unitSlug": "gravitation",
     "topicSlug": "variation-in-value-of-g-due-to-altitude-and-depth",
-    "title": "Variation in value of 'g' due to altitude and depth",
-    "noteCount": 0,
+    "title": "Variation in Value of g due to Altitude and Depth",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-variation-in-value-of-g-due-to-altitude-and-depth.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "heat-and-temperature",
+    "topicSlug": "change-of-phases-latent-heat",
+    "title": "Change of Phases and Latent Heat",
+    "noteCount": 26,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-change-of-phases-latent-heat.json",
+    "hasMcqs": false,
+    "universalFactsCount": 10
   },
   {
     "unitSlug": "heat-and-temperature",
@@ -1058,13 +1069,13 @@
   {
     "unitSlug": "heat-and-temperature",
     "topicSlug": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
-    "title": "Meaning of thermal equilibrium and Zeroth law of thermody…",
-    "noteCount": 4,
+    "title": "Thermal Equilibrium and Zeroth Law of Thermodynamics",
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "heat-and-temperature",
@@ -1093,12 +1104,12 @@
     "unitSlug": "heat-and-temperature",
     "topicSlug": "quantity-of-heat",
     "title": "Quantity of Heat",
-    "noteCount": 0,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-quantity-of-heat.json",
-    "hasMcqs": false,
-    "universalFactsCount": 0
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "heat-and-temperature",
@@ -1115,12 +1126,12 @@
     "unitSlug": "heat-and-temperature",
     "topicSlug": "temperature-scales",
     "title": "Temperature Scales",
-    "noteCount": 12,
+    "noteCount": 16,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "temperature-scales.json",
     "hasMcqs": false,
-    "universalFactsCount": 5
+    "universalFactsCount": 8
   },
   {
     "unitSlug": "heat-and-temperature",
@@ -1148,14 +1159,36 @@
   },
   {
     "unitSlug": "heat-and-temperature",
+    "topicSlug": "thermal-energy-heat-temperature-cause-direction",
+    "title": "Thermal Energy, Heat, and Temperature: Cause and Direction of Heat Flow",
+    "noteCount": 16,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-thermal-energy-heat-and-temperature-cause-and-direction-of-heat-flow.json",
+    "hasMcqs": false,
+    "universalFactsCount": 8
+  },
+  {
+    "unitSlug": "heat-and-temperature",
+    "topicSlug": "thermal-equilibrium-and-zeroth-law",
+    "title": "Thermal Equilibrium and Zeroth Law of Thermodynamics",
+    "noteCount": 14,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-thermal-equilibrium-and-zeroth-law-of-thermodynamics.json",
+    "hasMcqs": false,
+    "universalFactsCount": 8
+  },
+  {
+    "unitSlug": "heat-and-temperature",
     "topicSlug": "thermal-equilibrium-as-a-working-principle-of-a-mercury-thermometer",
-    "title": "Thermal equilibrium as a working principle of a mercury t…",
-    "noteCount": 0,
+    "title": "Thermal Equilibrium — Mercury Thermometer",
+    "noteCount": 6,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-thermal-equilibrium-as-a-working-principle-of-a-mercury-thermometer.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "ideal-gas",
@@ -1195,12 +1228,12 @@
     "unitSlug": "ideal-gas",
     "topicSlug": "boltzmann-rms-speed",
     "title": "Boltzmann Constant and RMS Speed",
-    "noteCount": 3,
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-boltzmann-rms-speed.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ideal-gas",
@@ -1217,12 +1250,12 @@
     "unitSlug": "ideal-gas",
     "topicSlug": "heat-capacities-gases",
     "title": "Heat Capacities of Gases",
-    "noteCount": 3,
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-heat-capacities-gases.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ideal-gas",
@@ -1238,13 +1271,13 @@
   {
     "unitSlug": "ideal-gas",
     "topicSlug": "kinetic-molecular-model",
-    "title": "Kinetic-Molecular Model",
-    "noteCount": 3,
+    "title": "Kinetic Molecular Model of an Ideal Gas",
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-kinetic-molecular-model.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ideal-gas",
@@ -1432,13 +1465,13 @@
   {
     "unitSlug": "lenses",
     "topicSlug": "spherical-lenses-angular-magnification",
-    "title": "Spherical lenses, angular magnification",
-    "noteCount": 3,
+    "title": "Spherical Lenses, Angular Magnification",
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-spherical-lenses-angular-magnification.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "mechanics",
@@ -1567,13 +1600,13 @@
   {
     "unitSlug": "nuclear-physics",
     "topicSlug": "creation-and-annihilation",
-    "title": "Creation and annihilation",
-    "noteCount": 0,
+    "title": "Creation and Annihilation",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-creation-and-annihilation.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "nuclear-physics",
@@ -1589,13 +1622,13 @@
   {
     "unitSlug": "nuclear-physics",
     "topicSlug": "einstein-s-mass-energy-relation",
-    "title": "Einstein's mass-energy relation",
-    "noteCount": 0,
+    "title": "Einstein's Mass-Energy Relation",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-einstein-s-mass-energy-relation.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "nuclear-physics",
@@ -1624,35 +1657,35 @@
   {
     "unitSlug": "nuclear-physics",
     "topicSlug": "mass-defect-packing-fraction-binding-energy-per-nucleon",
-    "title": "Mass defect, packing fraction, binding energy per nucleon",
-    "noteCount": 3,
+    "title": "Mass Defect, Packing Fraction, Binding Energy per Nucleon",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-mass-defect-packing-fraction-binding-energy-per-nucleon.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "nuclear-physics",
     "topicSlug": "nuclear-density-mass-number-atomic-number",
-    "title": "Nuclear density; mass number; atomic number",
-    "noteCount": 3,
+    "title": "Nuclear Density; Mass Number; Atomic Number",
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-nuclear-density-mass-number-atomic-number.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "nuclear-physics",
     "topicSlug": "nuclear-fission-and-fusion",
-    "title": "Nuclear fission and fusion",
-    "noteCount": 3,
+    "title": "Nuclear Fission and Fusion",
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "07-nuclear-fission-and-fusion.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "nuclear-physics",
@@ -1669,24 +1702,24 @@
   {
     "unitSlug": "nuclear-physics",
     "topicSlug": "nucleus-discovery-of-nucleus",
-    "title": "Nucleus: discovery of nucleus",
-    "noteCount": 0,
+    "title": "Nucleus: Discovery of Nucleus",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-nucleus-discovery-of-nucleus.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "optics",
     "topicSlug": "mirrors-and-lenses",
     "title": "Mirrors and Lenses",
-    "noteCount": 0,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-mirrors-and-lenses.json",
-    "hasMcqs": false,
-    "universalFactsCount": 0
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "optics",
@@ -1736,12 +1769,12 @@
     "unitSlug": "optics",
     "topicSlug": "optics-introduction",
     "title": "Optics — Introduction",
-    "noteCount": 0,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-optics-introduction.json",
-    "hasMcqs": false,
-    "universalFactsCount": 0
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "optics",
@@ -1767,47 +1800,23 @@
   },
   {
     "unitSlug": "physical-quantities",
-    "topicSlug": "dimensions-dimensional-analysis",
-    "title": "Dimensions and Dimensional Analysis",
-    "noteCount": 9,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-dimensions-dimensional-analysis.json",
-    "hasMcqs": true,
-    "universalFactsCount": 4
-  },
-  {
-    "unitSlug": "physical-quantities",
-    "topicSlug": "dimensions-dimensional-analysis",
+    "topicSlug": "dimensions-and-uses-of-dimensional-analysis",
     "title": "Dimensions and Uses of Dimensional Analysis",
     "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-dimensions-and-uses-of-dimensional-analysis-2.json",
-    "tabGroup": "dimensions-dimensional-analysis",
+    "duplicateType": 1,
+    "filename": "02-dimensions-and-uses-of-dimensional-analysis.json",
     "hasMcqs": true,
     "universalFactsCount": 4
   },
   {
     "unitSlug": "physical-quantities",
-    "topicSlug": "precision-significant-figures",
+    "topicSlug": "precision-and-significant-figures",
     "title": "Precision and Significant Figures",
     "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "01-precision-significant-figures.json",
-    "hasMcqs": true,
-    "universalFactsCount": 4
-  },
-  {
-    "unitSlug": "physical-quantities",
-    "topicSlug": "precision-significant-figures",
-    "title": "Precision and Significant Figures",
-    "noteCount": 10,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-precision-and-significant-figures-2.json",
-    "tabGroup": "precision-significant-figures",
+    "filename": "01-precision-and-significant-figures.json",
     "hasMcqs": true,
     "universalFactsCount": 4
   },
@@ -2061,13 +2070,13 @@
   {
     "unitSlug": "rate-of-heat-flow",
     "topicSlug": "conduction-thermal-conductivity-and-measurement",
-    "title": "Conduction: thermal conductivity and measurement",
-    "noteCount": 0,
+    "title": "Conduction: Thermal Conductivity and Measurement",
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-conduction-thermal-conductivity-and-measurement.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "rate-of-heat-flow",
@@ -2194,13 +2203,13 @@
   {
     "unitSlug": "recent-trends-in-physics",
     "topicSlug": "universe-big-bang-and-hubble-law-expansion-of-the-universe",
-    "title": "Universe: Big Bang and Hubble law — expansion of the Univ…",
-    "noteCount": 0,
+    "title": "Universe: Big Bang and Hubble's Law",
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-universe-big-bang-and-hubble-law-expansion-of-the-universe.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "reflection-at-curved-mirror",
@@ -2261,13 +2270,13 @@
   {
     "unitSlug": "refraction-at-plane-surfaces",
     "topicSlug": "laws-of-refraction-refractive-index",
-    "title": "Laws of refraction: refractive index",
-    "noteCount": 3,
+    "title": "Laws of Refraction: Refractive Index",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-laws-of-refraction-refractive-index.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "refraction-at-plane-surfaces",
@@ -2316,8 +2325,8 @@
   {
     "unitSlug": "refraction-through-prisms",
     "topicSlug": "deviation-in-small-angle-prism",
-    "title": "Deviation in small-angle prism",
-    "noteCount": 3,
+    "title": "Deviation in Small-Angle Prism",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-deviation-in-small-angle-prism.json",
@@ -2360,13 +2369,13 @@
   {
     "unitSlug": "refraction-through-prisms",
     "topicSlug": "relation-between-the-angle-of-prism-minimum-deviation-and-refractive-index",
-    "title": "Relation between the angle of prism, minimum deviation an…",
-    "noteCount": 3,
+    "title": "Relation Between Angle of Prism, Minimum Deviation and Refractive Index",
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-relation-between-the-angle-of-prism-minimum-deviation-and-refractive-index.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "solids",
@@ -2417,13 +2426,13 @@
   {
     "unitSlug": "solids",
     "topicSlug": "energy-bands-in-solids-qualitative-ideas",
-    "title": "Energy bands in solids (qualitative ideas)",
-    "noteCount": 0,
+    "title": "Energy Bands in Solids (Qualitative Ideas)",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-energy-bands-in-solids-qualitative-ideas.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "solids",
@@ -2440,12 +2449,12 @@
     "unitSlug": "solids",
     "topicSlug": "semiconductors",
     "title": "Intrinsic and Extrinsic Semiconductors",
-    "noteCount": 3,
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-semiconductors.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "thermal-expansion",
@@ -2461,13 +2470,13 @@
   {
     "unitSlug": "thermal-expansion",
     "topicSlug": "cubical-expansion-superficial-expansion-and-their-relation-with-linear-expansion",
-    "title": "Cubical expansion, superficial expansion and their relati…",
-    "noteCount": 3,
+    "title": "Cubical Expansion, Superficial Expansion and Their Relation with Linear Expansion",
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-cubical-expansion-superficial-expansion-and-their-relation-with-linear-expansion.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "thermal-expansion",
@@ -2494,13 +2503,13 @@
   {
     "unitSlug": "thermal-expansion",
     "topicSlug": "dulong-and-petit-method-of-determining-expansivity-of-liquid",
-    "title": "Dulong and Petit method of determining expansivity of liquid",
-    "noteCount": 10,
+    "title": "Dulong and Petit Method of Determining Expansivity of Liquid",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-dulong-and-petit-method-of-determining-expansivity-of-liquid.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "thermal-expansion",
@@ -2728,13 +2737,13 @@
   {
     "unitSlug": "work-energy-and-power",
     "topicSlug": "work-done-by-a-constant-force-and-a-variable-force",
-    "title": "Work done by a constant force and a variable force",
-    "noteCount": 0,
+    "title": "Work Done by a Constant Force and a Variable Force",
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-work-done-by-a-constant-force-and-a-variable-force.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "work-energy-and-power",

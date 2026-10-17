@@ -1,63 +1,154 @@
 {
-  "title": "Nuclear fission and fusion",
+  "title": "Nuclear Fission and Fusion",
   "unitSlug": "nuclear-physics",
   "topicSlug": "nuclear-fission-and-fusion",
   "topicTitle": "Nuclear fission and fusion",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "**Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+    "Nuclear Fission: Splitting of a heavy nucleus (A > 230) into two lighter nuclei (fission fragments) plus neutrons and energy. Example: ²³⁵U + n → ²³⁵U* → ¹⁴¹Ba + ⁹²Kr + 3n + ~200 MeV. Triggered by thermal (slow) neutron capture.",
+    "Chain Reaction: Fission releases neutrons (2-3 per event) that trigger more fissions. Critical mass: minimum mass for self-sustaining chain reaction. Subcritical: reaction dies; critical: steady; supercritical: exponential growth (explosion).",
+    "Nuclear Reactor: Controlled chain reaction. Components: fuel (²³⁵U/²³⁹Pu), moderator (heavy water, graphite) slows neutrons, control rods (boron, cadmium) absorb neutrons, coolant removes heat, concrete shield.",
+    "Nuclear Fusion: Joining of light nuclei (A < 20) into heavier nucleus, releasing energy. Example: ²H + ³H → ⁴He + n + 17.6 MeV. Requires extreme temperature (~10⁸ K) and pressure to overcome Coulomb repulsion.",
+    "Thermonuclear Fusion: Fusion occurring at high temperatures (stars, hydrogen bombs). In sun: proton-proton chain converts 4H → ⁴He + 2e⁺ + 2ν + γ (~26.7 MeV).",
+    "Energy Comparison: Fission: ~200 MeV per nucleus (~0.1% mass converted). Fusion: ~17.6 MeV per D-T reaction (~0.4% mass converted). Fusion releases more energy per unit mass.",
+    "Fission Fragments: Typically A ≈ 90-140, radioactive, undergo beta decay. Neutrons emitted: prompt (immediate) and delayed (from fission fragments, important for reactor control).",
+    "Fusion Fuel: Deuterium (²H from seawater) and tritium (³H from lithium). Deuterium is abundant — fusion fuel is virtually unlimited."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).."
-  ],
-  "bounds": [
-    "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
-  ],
-  "practice": [
-    "one worked example for \"Nuclear fission and fusion\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Nuclear fission and fusion\" with one example.",
-    "compare \"Nuclear fission\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Nuclear fission and fusion\" and verify the answer is plausible."
+  "specificConditions": [
+    "Criticality: Chain reaction self-sustains when each fission causes exactly one more fission (k = 1). k < 1 subcritical, k > 1 supercritical.",
+    "Fusion Temperature: ~10⁸ K needed — much hotter than sun's core (~1.5×10⁷ K) because terrestrial fusion uses D-T (easier than p-p).",
+    "Fissile vs Fertile: ²³⁵U, ²³³U, ²³⁹Pu are fissile (fission with thermal neutrons). ²³⁸U, ²³²Th are fertile (convert to fissile via neutron capture)."
   ],
   "formulas": [
-    "BE = Δm c²",
-    "N = N₀ e^(−λt)",
-    "t_½ = ln2 / λ"
-  ],
-  "numericals": [
-    "Use  BE = Δm c²  — pick reasonable values, solve, and check the units.",
-    "Use  N = N₀ e^(−λt)  — pick reasonable values, solve, and check the units.",
-    "Use  t_½ = ln2 / λ  — pick reasonable values, solve, and check the units."
+    "Energy per fission: ~200 MeV per ²³⁵U nucleus",
+    "Energy per D-T fusion: 17.6 MeV",
+    "Mass-energy: E = Δmc²",
+    "Fission: ²³⁵U + n → fragments + 2-3n + ~200 MeV",
+    "Fusion: ²H + ³H → ⁴He + n + 17.6 MeV",
+    "Sun: 4¹H → ⁴He + 2e⁺ + 2ν + ~26.7 MeV"
   ],
   "keyPoints": [
-    "• Nuclear fission",
-    "• Fusion"
+    "Fission: heavy nucleus splits, triggered by neutron, ~200 MeV released.",
+    "Fusion: light nuclei join, needs high T and P, ~17.6 MeV per D-T reaction.",
+    "Chain reaction: neutrons from one fission trigger more fissions.",
+    "Critical mass: minimum mass for self-sustaining chain reaction.",
+    "Reactor: controlled chain reaction with moderator, control rods, coolant.",
+    "Fusion powers stars; terrestrial fusion needs ~10⁸ K."
   ],
-  "summary": "Nuclear fission and fusion (Nuclear Physics, Physics, class-11-notes) covers Nuclear fission, fusion. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "Fission fragments are radioactive — nuclear waste problem.",
+    "Control rods absorb neutrons to regulate reactor power.",
+    "Moderator slows fast neutrons to thermal energies for efficient ²³⁵U fission.",
+    "Fusion has no long-lived radioactive waste and fuel is abundant, but confinement is technically difficult.",
+    "Hydrogen bomb uses fission primary to trigger fusion secondary."
+  ],
+  "examShortTricks": [
+    "Fission ~200 MeV/nucleus; Fusion ~17.6 MeV/D-T reaction.",
+    "Fusion releases MORE energy per kg than fission.",
+    "Chain reaction: k = 1 critical, k < 1 dies, k > 1 explodes.",
+    "Moderator slows neutrons; control rods absorb them."
+  ],
+  "examNotes": [
+    "NEB frequently asks to describe fission and fusion with examples and energy values.",
+    "Explain chain reaction and critical mass.",
+    "Describe nuclear reactor components and their functions.",
+    "Compare fission vs fusion (energy, fuel, waste, conditions).",
+    "Sun's energy from proton-proton fusion chain."
+  ],
+  "examples": [
+    "²³⁵U + n → ¹⁴¹Ba + ⁹²Kr + 3n + 200 MeV.",
+    "²H + ³H → ⁴He + n + 17.6 MeV.",
+    "1 kg ²³⁵U fission: ~8 × 10¹³ J — equivalent to ~20,000 tons TNT.",
+    "Sun converts 4 × 10⁹ kg/s mass to energy via fusion."
+  ],
+  "practiceQuestions": [
+    "Q1. Describe nuclear fission with an example and calculate energy released.",
+    "Q2. Describe nuclear fusion with an example and state conditions required.",
+    "Q3. Explain chain reaction and critical mass.",
+    "Q4. Describe a nuclear reactor with functions of each component.",
+    "Q5. Compare fission and fusion (energy, fuel, conditions, waste).",
+    "Q6. Explain how the sun produces energy via fusion."
+  ],
+  "practice": [
+    "Write balanced fission and fusion reactions.",
+    "Calculate energy released using ΔE = Δmc².",
+    "Explain chain reaction mechanism.",
+    "Describe reactor components and control mechanisms.",
+    "Compare fission and fusion advantages/disadvantages."
+  ],
+  "universalFacts": [
+    "First controlled fission chain reaction: Chicago Pile-1, 1942 (Enrico Fermi).",
+    "First atomic bomb (fission): Trinity test, 1945. First hydrogen bomb (fusion): 1952.",
+    "Commercial fusion power remains elusive — ITER project aims to demonstrate net energy gain.",
+    "Fusion fuel from seawater: deuterium is 1 in 6500 hydrogen atoms in ocean water."
+  ],
+  "confusion": [
+    "Confusing fission (split) with fusion (join).",
+    "Thinking fusion releases more per reaction: Per reaction fission releases more (~200 vs 17.6 MeV), but per kg fusion releases more.",
+    "Believing all uranium can fuel reactors: Only ²³⁵U (0.7% of natural uranium) is fissile with thermal neutrons.",
+    "Thinking fusion is easy: Needs extreme confinement (magnetic or inertial) — no commercial plant yet.",
+    "Confusing critical mass with criticality: Critical mass is amount; criticality (k=1) is the condition."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Nuclear fission and fusion\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Nuclear fission is:",
       "options": [
-        "True",
-        "False"
+        "Joining light nuclei",
+        "Splitting heavy nucleus",
+        "Radioactive decay",
+        "Pair production"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Fission = splitting of heavy nucleus into lighter fragments."
+    },
+    {
+      "question": "Energy released per ²³⁵U fission is approximately:",
+      "options": [
+        "17.6 MeV",
+        "200 MeV",
+        "26.7 MeV",
+        "931.5 MeV"
+      ],
+      "answer": "B",
+      "explanation": "Typical fission releases ~200 MeV per nucleus."
+    },
+    {
+      "question": "Nuclear fusion requires:",
+      "options": [
+        "Low temperature",
+        "High temperature and pressure",
+        "Only high pressure",
+        "Only low density"
+      ],
+      "answer": "B",
+      "explanation": "~10⁸ K to overcome Coulomb repulsion between nuclei."
+    },
+    {
+      "question": "Chain reaction is controlled in reactor by:",
+      "options": [
+        "Moderator only",
+        "Control rods only",
+        "Both moderator and control rods",
+        "Coolant only"
+      ],
+      "answer": "C",
+      "explanation": "Moderator slows neutrons; control rods absorb excess neutrons."
+    },
+    {
+      "question": "Which releases more energy per unit mass:",
+      "options": [
+        "Fission",
+        "Fusion",
+        "Same",
+        "Neither"
+      ],
+      "answer": "B",
+      "explanation": "Fusion converts ~0.4% mass vs fission ~0.1% — more energy per kg."
     }
-  ]
+  ],
+  "animation3D": "fission-fusion",
+  "motionGraphics": "nuclear-reactions",
+  "visualType": "fission-fusion",
+  "summary": "Fission splits heavy nuclei (~200 MeV, neutron-triggered, chain reaction). Fusion joins light nuclei (~17.6 MeV/D-T, needs ~10⁸ K). Chain reaction requires critical mass. Reactors control fission with moderator and control rods. Fusion powers stars and offers clean energy but is technically challenging."
 }

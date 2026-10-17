@@ -1,51 +1,147 @@
 {
-  "title": "Creation and annihilation",
+  "title": "Creation and Annihilation",
   "unitSlug": "nuclear-physics",
   "topicSlug": "creation-and-annihilation",
   "topicTitle": "Creation and annihilation",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Creation and annihilation\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "notes": [
+    "Pair Production: A high-energy photon (gamma ray) converts into an electron-positron pair near a nucleus: γ + nucleus → e⁻ + e⁺ + nucleus. The nucleus recoils to conserve momentum. Threshold energy: E_γ ≥ 2m_ec² = 1.022 MeV.",
+    "Pair Annihilation: An electron and positron collide and convert to photons: e⁻ + e⁺ → 2γ. Each photon has energy m_ec² = 0.511 MeV (if at rest), emitted in opposite directions (180° apart) to conserve momentum.",
+    "Energy Conservation: In pair production, photon energy = 2m_ec² + kinetic energies of pair + recoil of nucleus. In annihilation, total energy (rest + kinetic) converts to photon energy.",
+    "Momentum Conservation: A photon cannot produce an e⁻e⁺ pair in empty space — momentum cannot be conserved. A nearby nucleus (or electron) absorbs recoil momentum.",
+    "Charge Conservation: Pair production creates net charge 0 (−e + +e = 0); annihilation starts with net charge 0. Charge is conserved.",
+    "Applications: PET scans (positron emission tomography) use annihilation photons (511 keV each, back-to-back) for medical imaging. Positrons from radioactive tracers annihilate with electrons in tissue.",
+    "Matter-Antimatter Asymmetry: Universe appears dominated by matter with very little antimatter — one of the great unsolved problems in physics (baryon asymmetry)."
   ],
-  "universalFacts": [
-    "answer pattern for \"Creation and annihilation\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Creation and annihilation\" with one example.",
-    "compare \"Creation\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Creation and annihilation\" and verify the answer is plausible."
+  "specificConditions": [
+    "Threshold Energy: Pair production requires photon energy ≥ 1.022 MeV (2 × electron rest energy). Below threshold, no pair creation.",
+    "Third Body Required: Pair production cannot occur in vacuum — needs nucleus/electron to conserve momentum.",
+    "Photon Disappears: In pair production, the photon is completely absorbed — it does not survive."
   ],
   "formulas": [
-    "Governing equation for \"Creation and annihilation\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Creation and annihilation\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
+    "Pair production threshold: E_γ ≥ 2m_ec² = 1.022 MeV",
+    "Annihilation photon energy: E_γ = m_ec² = 0.511 MeV (each, at rest)",
+    "Mass-energy: E = mc²",
+    "Momentum conservation: p_photon = p_e⁻ + p_e⁺ + p_recoil"
   ],
   "keyPoints": [
-    "• Creation",
-    "• Annihilation"
+    "Pair production: γ → e⁻ + e⁺, needs E ≥ 1.022 MeV, needs nucleus.",
+    "Annihilation: e⁻ + e⁺ → 2γ, each photon 0.511 MeV (at rest).",
+    "Nucleus needed for momentum conservation in pair production.",
+    "PET scans use 511 keV annihilation photons for medical imaging.",
+    "Energy and momentum both conserved in creation/annihilation."
   ],
-  "summary": "Creation and annihilation (Nuclear Physics, Physics, class-11-notes) covers Creation, annihilation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "The photon disappears completely in pair production — all its energy goes into creating mass and kinetic energy.",
+    "In annihilation at rest, two 0.511 MeV photons go in exactly opposite directions (180°).",
+    "PET scan detection: coincident detection of two 511 keV photons localizes the annihilation point.",
+    "Antimatter (positron) is rare in the universe — created in cosmic rays, radioactive decay, particle accelerators."
+  ],
+  "examShortTricks": [
+    "Pair production threshold: 1.022 MeV = 2 × 0.511 MeV.",
+    "Annihilation photons: 0.511 MeV each, opposite directions.",
+    "Need nucleus for pair production (momentum conservation).",
+    "PET: 511 keV photons detected in coincidence."
+  ],
+  "examNotes": [
+    "NEB frequently asks to describe pair production and annihilation with energy thresholds.",
+    "Explain why nucleus is needed in pair production (momentum conservation).",
+    "Calculate threshold energy and photon energies.",
+    "PET scan application is a common real-world example."
+  ],
+  "examples": [
+    "Photon of 1.5 MeV produces e⁻e⁺ pair. Excess energy = 1.5 - 1.022 = 0.478 MeV shared as kinetic energy of pair and nuclear recoil.",
+    "Positron emitted in tissue annihilates with electron. Two 511 keV photons travel back-to-back — detected by PET scanner ring.",
+    "Electron and positron each with kinetic energy 0.1 MeV annihilate: Total photon energy = 2(0.511 + 0.1) = 1.222 MeV shared between two photons."
+  ],
+  "practiceQuestions": [
+    "Q1. Describe pair production and state the threshold energy condition.",
+    "Q2. Explain why a nucleus is necessary for pair production.",
+    "Q3. Describe pair annihilation and calculate photon energies.",
+    "Q4. How is pair annihilation used in PET scanning?",
+    "Q5. Can a photon create an electron-positron pair in empty space? Explain.",
+    "Q6. A 2 MeV photon undergoes pair production. Find total kinetic energy of the pair."
+  ],
+  "practice": [
+    "Calculate threshold energy for pair production.",
+    "Compute photon energies in annihilation (at rest and with kinetic energy).",
+    "Explain momentum conservation requirement for pair production.",
+    "Apply conservation laws (energy, momentum, charge) to creation/annihilation.",
+    "Describe PET scan working principle."
+  ],
+  "universalFacts": [
+    "Positron was predicted by Dirac (1928) and discovered by Anderson (1932) in cosmic rays.",
+    "Every particle has an antiparticle with same mass but opposite charge — predicted by quantum field theory.",
+    "The observable universe has matter-antimatter asymmetry — why matter dominates is unsolved.",
+    "Antimatter is used in PET scans and studied at CERN (antihydrogen trapping)."
+  ],
+  "confusion": [
+    "Thinking pair production can happen in empty space: Momentum conservation forbids it — need nucleus.",
+    "Believing annihilation produces one photon: Two photons needed for momentum conservation (at rest).",
+    "Confusing positron with proton: Positron = +e, same mass as electron; proton = +e, ~1836× electron mass.",
+    "Thinking photon survives in pair production: Photon is fully absorbed/converted.",
+    "Believing matter and antimatter are equally common: Universe is overwhelmingly matter."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Creation and annihilation\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Minimum photon energy for pair production is:",
       "options": [
-        "True",
-        "False"
+        "0.511 MeV",
+        "1.022 MeV",
+        "938 MeV",
+        "931.5 MeV"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "2 × mₑc² = 2 × 0.511 = 1.022 MeV."
+    },
+    {
+      "question": "Pair production requires:",
+      "options": [
+        "Empty space",
+        "A nucleus or electron nearby",
+        "Magnetic field",
+        "Electric field"
+      ],
+      "answer": "B",
+      "explanation": "Third body needed to conserve momentum."
+    },
+    {
+      "question": "Electron-positron annihilation at rest produces:",
+      "options": [
+        "One photon",
+        "Two photons of 0.511 MeV each",
+        "Two photons of 1.022 MeV each",
+        "Three photons"
+      ],
+      "answer": "B",
+      "explanation": "Two photons, each 0.511 MeV, emitted in opposite directions."
+    },
+    {
+      "question": "PET scan detects:",
+      "options": [
+        "511 keV photons",
+        "X-rays",
+        "Gamma rays of variable energy",
+        "Alpha particles"
+      ],
+      "answer": "A",
+      "explanation": "PET detects coincident 511 keV annihilation photons."
+    },
+    {
+      "question": "In pair production, the photon:",
+      "options": [
+        "Survives with reduced energy",
+        "Is completely absorbed",
+        "Splits into two photons",
+        "Is scattered"
+      ],
+      "answer": "B",
+      "explanation": "Photon energy is fully converted to mass + kinetic energy."
     }
-  ]
+  ],
+  "animation3D": "pair-production-annihilation",
+  "motionGraphics": "matter-antimatter",
+  "visualType": "creation-annihilation",
+  "summary": "Pair production (γ → e⁻ + e⁺, E ≥ 1.022 MeV) and annihilation (e⁻ + e⁺ → 2γ, 0.511 MeV each) demonstrate mass-energy conversion. A nucleus is needed for momentum conservation in production. PET scans use annihilation photons for medical imaging."
 }

@@ -1,75 +1,151 @@
 {
-  "title": "Cubical expansion, superficial expansion and their relati…",
+  "title": "Cubical Expansion, Superficial Expansion and Their Relation with Linear Expansion",
   "unitSlug": "thermal-expansion",
   "topicSlug": "cubical-expansion-superficial-expansion-and-their-relation-with-linear-expansion",
   "topicTitle": "Cubical expansion, superficial expansion and their relation with linear expansion",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Linear: ΔL = αL₀ΔT (α = coefficient of linear expansion). Superficial ΔA ≈ 2αA₀ΔT; cubical ΔV ≈ 3αV₀ΔT.",
-    "**Fact.** Liquid expansion: apparent vs absolute; glass volumetric expansivity ≈ 27×10⁻⁶ K⁻¹.",
-    "**Fact.** Dulong & Petit: c_m (solid) ≈ 3R ≈ 12.6 J mol⁻¹ K⁻¹ at moderate T."
+    "Linear Expansion: When a solid is heated, its length increases: ΔL = αL₀ΔT where α is coefficient of linear expansion (K⁻¹), L₀ original length, ΔT temperature rise.",
+    "Superficial (Area) Expansion: Area increases: ΔA = βA₀ΔT where β ≈ 2α is coefficient of superficial expansion. For isotropic solid, β = 2α.",
+    "Cubical (Volume) Expansion: Volume increases: ΔV = γV₀ΔT where γ ≈ 3α is coefficient of cubical expansion. For isotropic solid, γ = 3α.",
+    "Relations: α : β : γ = 1 : 2 : 3 for isotropic solids. β = 2α, γ = 3α.",
+    "Isotropic vs Anisotropic: Relations β = 2α, γ = 3α hold for isotropic materials. For anisotropic (crystals), expansion differs along different axes.",
+    "Liquid Expansion: Liquids have only cubical expansion (no fixed shape). Apparent expansion differs from real expansion due to container expansion.",
+    "Real vs Apparent Expansion of Liquids: γ_real = γ_apparent + γ_container. The container expands too, so apparent rise is less than real expansion.",
+    "Anomalous Expansion of Water: Water contracts from 0°C to 4°C (maximum density at 4°C), then expands above 4°C. Negative expansion coefficient below 4°C."
   ],
-  "confusion": [
-    "❌ skip the key fact → ✅ linear: δl = αl₀δt (α = coefficient of linear expansion). superficial δa ≈ 2αa₀δt; cubical δv ≈ 3αv₀δt.."
-  ],
-  "bounds": [
-    "Limit to remember: linear: δl = αl₀δt (α = coefficient of linear expansion). superficial δa ≈ 2αa₀δt; cubical δv ≈ 3αv₀δt."
-  ],
-  "practice": [
-    "one worked example for \"Cubical expansion, superficial expansion and their relati…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Linear: ΔL = αL₀ΔT (α = coefficient of linear expansion). Superficial ΔA ≈ 2αA₀ΔT; cubical ΔV ≈ 3αV₀ΔT.",
-    "Liquid expansion: apparent vs absolute; glass volumetric expansivity ≈ 27×10⁻⁶ K⁻¹.",
-    "Dulong & Petit: c_m (solid) ≈ 3R ≈ 12.6 J mol⁻¹ K⁻¹ at moderate T."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Cubical expansion, superficial expansion and their relati…\" with one example.",
-    "compare \"Cubical expansion\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Cubical expansion, superficial expansion and their relati…\" and verify the answer is plausible."
+  "specificConditions": [
+    "Isotropic Material: γ = 3α and β = 2α only for isotropic solids. Crystalline anisotropic materials have different α along different axes.",
+    "Small ΔT: Formulas assume constant α over temperature range. For large ΔT, α may vary.",
+    "Solid Container: For liquid expansion, container expansion must be accounted for to get real expansion."
   ],
   "formulas": [
-    "ΔL = αL₀ΔT",
-    "γ ≈ 3α",
-    "β ≈ 3α (volumetric)"
-  ],
-  "numericals": [
-    "Use  ΔL = αL₀ΔT  — pick reasonable values, solve, and check the units.",
-    "Use  γ ≈ 3α  — pick reasonable values, solve, and check the units.",
-    "Use  β ≈ 3α (volumetric)  — pick reasonable values, solve, and check the units."
+    "Linear: ΔL = αL₀ΔT",
+    "Superficial: ΔA = βA₀ΔT, β = 2α",
+    "Cubical: ΔV = γV₀ΔT, γ = 3α",
+    "Relation: α : β : γ = 1 : 2 : 3",
+    "New dimensions: L = L₀(1+αΔT), A = A₀(1+βΔT), V = V₀(1+γΔT)",
+    "Liquid real expansion: γ_real = γ_apparent + γ_container"
   ],
   "keyPoints": [
-    "• Cubical expansion",
-    "• Superficial expansion",
-    "• Their relation with linear expansion"
+    "Linear: ΔL = αL₀ΔT; coefficient α (K⁻¹).",
+    "Superficial: ΔA = βA₀ΔT, β = 2α.",
+    "Cubical: ΔV = γV₀ΔT, γ = 3α.",
+    "Relation α : β : γ = 1 : 2 : 3 for isotropic solids.",
+    "Relations valid only for isotropic materials.",
+    "Liquids have only volume expansion; real = apparent + container."
   ],
-  "summary": "Cubical expansion, superficial expansion and their relati… (Thermal Expansion, Physics, class-11-notes) covers Cubical expansion, superficial expansion, their relation with linear expansion. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "γ = 3α can be derived: V = L³ → ΔV/V ≈ 3ΔL/L → γ = 3α (neglecting higher order terms α², α³).",
+    "α values: steel ~12×10⁻⁶ K⁻¹, aluminum ~24×10⁻⁶ K⁻¹, copper ~17×10⁻⁶ K⁻¹, invar ~1.2×10⁻⁶ K⁻¹.",
+    "Higher order terms (α²ΔT², α³ΔT³) are negligible since α ~ 10⁻⁵ to 10⁻⁶.",
+    "Bimetallic strips use different α of two metals."
+  ],
+  "examShortTricks": [
+    "α : β : γ = 1 : 2 : 3 — memorize this ratio.",
+    "β = 2α, γ = 3α for isotropic solids.",
+    "New dimension = original × (1 + coefficient × ΔT).",
+    "Liquid real expansion: γ_r = γ_a + γ_c."
+  ],
+  "examNotes": [
+    "NEB frequently asks for derivation of γ = 3α and numericals on linear/volume expansion.",
+    "Distinguish real vs apparent expansion of liquids.",
+    "Calculate change in length, area, or volume given coefficient and ΔT.",
+    "Bimetallic strip and thermal stress applications."
+  ],
+  "examples": [
+    "Steel rod L₀ = 2 m, α = 12×10⁻⁶ K⁻¹, ΔT = 50 K: ΔL = 12×10⁻⁶ × 2 × 50 = 1.2×10⁻³ m = 1.2 mm.",
+    "Cube side 10 cm, α = 24×10⁻⁶ K⁻¹, ΔT = 100 K: ΔV = 3αV₀ΔT = 3×24×10⁻⁶ × 1000 × 100 = 0.72 cm³.",
+    "Mercury in glass: γ_real(Hg) = 1.8×10⁻⁴ K⁻¹, γ_glass = 2.5×10⁻⁵ K⁻¹. γ_apparent = 1.55×10⁻⁴ K⁻¹.",
+    "Water density maximum at 4°C — lakes freeze from top, protecting aquatic life."
+  ],
+  "practiceQuestions": [
+    "Q2. Derive the relation γ = 3α for an isotropic solid.",
+    "Q3. Show that β = 2α for isotropic solids.",
+    "Q4. A steel bridge 100 m long experiences ΔT = 30°C (α = 12×10⁻⁶ K⁻¹). Find expansion.",
+    "Q5. Distinguish real and apparent expansion of liquids.",
+    "Q6. Explain anomalous expansion of water and its significance."
+  ],
+  "practice": [
+    "Calculate ΔL, ΔA, ΔV given coefficient, original dimension, ΔT.",
+    "Use α:β:γ = 1:2:3 to find missing coefficient.",
+    "Solve liquid expansion problems (real vs apparent).",
+    "Calculate thermal stress in constrained expansion.",
+    "Apply bimetallic strip concept."
+  ],
+  "universalFacts": [
+    "Railway tracks have expansion gaps to prevent buckling in summer.",
+    "Invar (Fe-Ni alloy) has near-zero α — used in precision instruments, pendulum rods.",
+    "Concrete and steel have similar α (~12×10⁻⁶) — steel reinforcement bonds well with concrete.",
+    "Glass cookware (Pyrex) has low α to resist thermal shock."
+  ],
+  "confusion": [
+    "Applying γ = 3α to anisotropic crystals: Only valid for isotropic materials.",
+    "Forgetting container expansion in liquid problems: Real expansion = apparent + container.",
+    "Confusing coefficient of linear expansion with fractional expansion: α = ΔL/(L₀ΔT).",
+    "Using Celsius vs Kelvin for ΔT: Only ΔT matters, same in °C or K.",
+    "Neglecting higher order terms: α²ΔT² is tiny (~10⁻¹⁰) and ignored."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Cubical expansion, superficial expansion and their relati…\"?",
+      "question": "For isotropic solids, γ : β : α =",
       "options": [
-        "Cubical expansion",
-        "Superficial expansion",
-        "Unrelated topic",
-        "None of the above"
+        "1:2:3",
+        "3:2:1",
+        "1:1:1",
+        "3:1:2"
       ],
-      "answer": "A",
-      "explanation": "Cubical expansion is listed among the official sub-ideas of Cubical expansion, superficial expansion and their relati…; the others are not part of this topic."
+      "answer": "B",
+      "explanation": "γ = 3α, β = 2α, so γ:β:α = 3:2:1."
     },
     {
-      "question": "A common examiner point on \"Cubical expansion, superficial expansion and their relati…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Coefficient of cubical expansion is approximately:",
       "options": [
-        "True",
-        "False"
+        "α",
+        "2α",
+        "3α",
+        "4α"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C",
+      "explanation": "γ = 3α for isotropic solids."
+    },
+    {
+      "question": "A liquid's real expansion equals:",
+      "options": [
+        "Apparent expansion only",
+        "Container expansion only",
+        "Apparent + container expansion",
+        "Apparent − container expansion"
+      ],
+      "answer": "C",
+      "explanation": "γ_real = γ_apparent + γ_container."
+    },
+    {
+      "question": "Water shows anomalous expansion:",
+      "options": [
+        "Expands on heating from 0°C",
+        "Contracts on heating from 0°C to 4°C",
+        "Always expands",
+        "Never contracts"
+      ],
+      "answer": "B",
+      "explanation": "Water contracts from 0°C to 4°C (density maximum at 4°C)."
+    },
+    {
+      "question": "The relation α : β : γ = 1 : 2 : 3 applies to:",
+      "options": [
+        "All materials",
+        "Isotropic solids only",
+        "Liquids only",
+        "Gases only"
+      ],
+      "answer": "B",
+      "explanation": "Valid for isotropic solids where expansion is same in all directions."
     }
-  ]
+  ],
+  "animation3D": "thermal-expansion",
+  "motionGraphics": "expansion-coefficients",
+  "visualType": "thermal-expansion",
+  "summary": "Linear ΔL = αL₀ΔT, superficial ΔA = βA₀ΔT (β = 2α), cubical ΔV = γV₀ΔT (γ = 3α) for isotropic solids. α:β:γ = 1:2:3. Liquids have only volume expansion; real = apparent + container. Water shows anomalous expansion below 4°C."
 }

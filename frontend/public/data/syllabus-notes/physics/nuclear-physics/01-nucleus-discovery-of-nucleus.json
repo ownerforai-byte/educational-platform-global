@@ -1,51 +1,149 @@
 {
-  "title": "Nucleus: discovery of nucleus",
+  "title": "Nucleus: Discovery of Nucleus",
   "unitSlug": "nuclear-physics",
   "topicSlug": "nucleus-discovery-of-nucleus",
   "topicTitle": "Nucleus: discovery of nucleus",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Nucleus: discovery of nucleus\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "notes": [
+    "Atomic Models Timeline: Dalton's solid sphere (1808) → Thomson's plum pudding (1897) → Rutherford's nuclear model (1911) → Bohr's quantum model (1913). Each model addressed limitations of the previous.",
+    "Thomson's Plum Pudding Model: Atom as positively charged pudding with electrons embedded like plums. Could not explain alpha scattering results.",
+    "Rutherford's Alpha Scattering Experiment: Alpha particles from radioactive source directed at thin gold foil (~0.00004 cm). Most passed straight, some deflected at small angles, very few (~1 in 8000) bounced back at angles >90°.",
+    "Rutherford's Nuclear Model: Atom has tiny, dense, positively charged nucleus (~10⁻¹⁴ m) containing nearly all mass. Electrons revolve around nucleus at large distance (~10⁻¹⁰ m). Most of atom is empty space.",
+    "Nuclear Size: Nuclear radius R ≈ R₀A^(1/3) where R₀ ≈ 1.2 fm (10⁻¹⁵ m) and A is mass number. Nucleus is ~10⁴ times smaller than atom.",
+    "Nuclear Composition: Nucleus contains protons (Z = atomic number) and neutrons (N = neutron number). Mass number A = Z + N. Nucleus charge = +Ze.",
+    "Limitations of Rutherford Model: Could not explain atomic stability (accelerating electrons should radiate energy and spiral into nucleus) or line spectra."
   ],
-  "universalFacts": [
-    "answer pattern for \"Nucleus: discovery of nucleus\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Nucleus: discovery of nucleus\" with one example.",
-    "compare \"Nucleus\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Nucleus: discovery of nucleus\" and verify the answer is plausible."
+  "specificConditions": [
+    "Alpha Particle Source: Rutherford used alpha particles (helium nuclei, +2e charge, ~5 MeV energy) from radioactive decay (radium/polonium).",
+    "Thin Foil: Gold foil used because gold is highly malleable — can be made extremely thin (~400 atoms thick) so alpha particles interact with at most one atom.",
+    "Point Charge Approximation: Alpha particle treated as point charge; nucleus treated as point charge — valid since distances are much larger than nuclear/alpha sizes."
   ],
   "formulas": [
-    "Governing equation for \"Nucleus: discovery of nucleus\" — state with units, then use in one numerical."
-  ],
-  "numericals": [
-    "Set up the defining equation for \"Nucleus: discovery of nucleus\", substitute simple values, and compute the result with units.",
-    "Re-derive the standard result from first principles in ≤ 4 steps.",
-    "Apply it to one boundary case (where the limit applies) and state the answer."
+    "Impact parameter: $b$ — perpendicular distance of initial velocity from nucleus center",
+    "Scattering angle: $\\theta$ — related to impact parameter $b$ and energy",
+    "Closest approach: $d = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2Ze^2}{K}$ for head-on collision (K = alpha kinetic energy)",
+    "Nuclear radius: $R = R_0 A^{1/3}$, $R_0 \\approx 1.2\\text{ fm}$",
+    "Distance ratio: Atom/nucleus ≈ 10⁴"
   ],
   "keyPoints": [
-    "• Nucleus",
-    "• Discovery of nucleus"
+    "Rutherford's experiment revealed tiny, dense, positively charged nucleus.",
+    "Most alpha particles passed through gold foil — atom is mostly empty space.",
+    "Few bounced back — concentrated positive charge in nucleus.",
+    "Nuclear radius R = R₀A^(1/3), R₀ ≈ 1.2 fm.",
+    "Nucleus contains Z protons and N neutrons; A = Z + N."
   ],
-  "summary": "Nucleus: discovery of nucleus (Nuclear Physics, Physics, class-11-notes) covers Nucleus, discovery of nucleus. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [],
+  "importantNotes": [
+    "Only ~1 in 8000 alpha particles scattered by >90° — evidence of tiny nucleus.",
+    "Gold foil chosen for malleability (can be made atomically thin).",
+    "Impact parameter determines scattering angle — smaller b → larger deflection.",
+    "Distance of closest approach estimates upper limit of nuclear size."
+  ],
+  "examShortTricks": [
+    "Most passed straight → atom mostly empty.",
+    "Few deflected → small concentrated positive charge.",
+    "Very few bounced back → head-on collision with massive nucleus.",
+    "Nucleus is 10⁴ times smaller than atom.",
+    "R = R₀A^(1/3) for nuclear size estimation."
+  ],
+  "examNotes": [
+    "NEB frequently asks to describe Rutherford's alpha scattering experiment and draw conclusions.",
+    "Distance of closest approach calculation is a standard numerical.",
+    "Limitations of Rutherford model (stability, spectra) lead to Bohr model.",
+    "Alpha particle properties: +2e charge, helium nucleus, ~5 MeV energy."
+  ],
+  "examples": [
+    "Alpha particle (K = 5.5 MeV) head-on with gold nucleus (Z = 79): d = (9×10⁹)(2×79×(1.6×10⁻¹⁹)²)/(5.5×10⁶×1.6×10⁻¹⁹) ≈ 4.1 × 10⁻¹⁴ m.",
+    "Gold nucleus radius (A = 197): R = 1.2 × 197^(1/3) ≈ 1.2 × 5.8 ≈ 7 fm = 7 × 10⁻¹⁵ m.",
+    "If atom were size of football stadium, nucleus would be size of a marble at center."
+  ],
+  "practiceQuestions": [
+    "Q1. Describe Rutherford's alpha scattering experiment with observations and conclusions.",
+    "Q2. What is impact parameter? How is it related to scattering angle?",
+    "Q3. Calculate distance of closest approach for alpha particle of energy K approaching nucleus of charge Ze.",
+    "Q4. Estimate nuclear radius of gold (A = 197) using R = R₀A^(1/3).",
+    "Q5. State limitations of Rutherford's atomic model.",
+    "Q6. Why did most alpha particles pass through gold foil undeflected?"
+  ],
+  "practice": [
+    "Describe alpha scattering experiment setup, observations, conclusions.",
+    "Calculate impact parameter and scattering angle relationships.",
+    "Compute distance of closest approach for given alpha energy and nuclear charge.",
+    "Estimate nuclear radius using R = R₀A^(1/3).",
+    "Compare atomic vs nuclear dimensions."
+  ],
+  "universalFacts": [
+    "Rutherford's gold foil experiment (1911) is considered one of the most important experiments in physics history.",
+    "The term 'nucleus' was coined by Rutherford in 1912.",
+    "Geiger and Marsden were the students who actually performed the experiment under Rutherford's direction.",
+    "The backscattering fraction (~1/8000) was so surprising Rutherford said it was like 'firing a 15-inch shell at tissue paper and having it bounce back'."
+  ],
+  "confusion": [
+    "Confusing Thomson and Rutherford models: Thomson = positive pudding with electrons; Rutherford = tiny nucleus with electrons orbiting.",
+    "Thinking nucleus contains electrons: Nucleus contains only protons and neutrons (neutrons discovered later by Chadwick, 1932).",
+    "Believing all alpha particles bounce back: Only ~1/8000 scatter >90°; most pass through.",
+    "Confusing nuclear size with atomic size: Nucleus ~10⁻¹⁴ m, atom ~10⁻¹⁰ m — factor of 10⁴ difference.",
+    "Thinking Rutherford model explains spectra: It cannot explain line spectra or atomic stability."
+  ],
+  "mcs": [
     {
-      "question": "A common examiner point on \"Nucleus: discovery of nucleus\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "In Rutherford's experiment, most alpha particles:",
       "options": [
-        "True",
-        "False"
+        "Bounced back",
+        "Passed straight through",
+        "Were absorbed",
+        "Stopped in foil"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B",
+      "explanation": "Atom is mostly empty space — most alpha particles pass without interaction."
+    },
+    {
+      "question": "The nucleus contains nearly all the:",
+      "options": [
+        "Volume of atom",
+        "Mass of atom",
+        "Electrons of atom",
+        "Space of atom"
+      ],
+      "answer": "B",
+      "explanation": "Protons and neutrons in nucleus account for ~99.97% of atomic mass."
+    },
+    {
+      "question": "Nuclear radius is proportional to:",
+      "options": [
+        "A",
+        "A^(1/3)",
+        "A²",
+        "1/A"
+      ],
+      "answer": "B",
+      "explanation": "R = R₀A^(1/3) — radius proportional to cube root of mass number."
+    },
+    {
+      "question": "Alpha particle has charge:",
+      "options": [
+        "+e",
+        "+2e",
+        "-2e",
+        "0"
+      ],
+      "answer": "B",
+      "explanation": "Alpha particle is helium nucleus: 2 protons, charge +2e."
+    },
+    {
+      "question": "Distance of closest approach for head-on collision:",
+      "options": [
+        "Increases with alpha energy",
+        "Decreases with alpha energy",
+        "Independent of energy",
+        "Equals nuclear radius"
+      ],
+      "answer": "B",
+      "explanation": "d ∝ 1/K — higher energy alpha penetrates closer to nucleus."
     }
-  ]
+  ],
+  "animation3D": "rutherford-scattering",
+  "motionGraphics": "atomic-models",
+  "visualType": "nuclear-atom",
+  "summary": "Rutherford's alpha scattering experiment revealed a tiny, dense, positively charged nucleus (~10⁻¹⁴ m) containing nearly all atomic mass. Most of the atom is empty space. Nuclear radius R = R₀A^(1/3). Rutherford's model could not explain stability or spectra — leading to Bohr's quantum model."
 }
