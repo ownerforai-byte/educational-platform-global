@@ -460,25 +460,30 @@ router.get("/account-status", async (req: Request, res: Response) => {
   });
 });
 
-// ── Google sign-in (owner request: "continue with Google") ─────────────────
+// ── Social sign-in: Google + Facebook (owner request: "continue with Google") ─
 //
 // Server-driven Supabase OAuth so the frontend stays cookie-based and the
-// backend remains the single auth authority. The browser flow:
+// backend remains the single auth authority. Same browser flow for both
+// providers:
 //
-//   1. GET /api/auth/google
+//   1. GET /api/auth/<provider>
 //        · mints a PKCE verifier + S256 challenge, keeps the verifier in a
 //          short httpOnly cookie, and 302s the browser to Supabase's
-//          authorize URL for the Google provider.
-//   2. Google → Supabase → GET /api/auth/callback/google?code=...
+//          authorize URL for that provider.
+//   2. Provider → Supabase → GET /api/auth/callback/<provider>?code=...
 //        · exchanges `code` + the cookie verifier for a session (PKCE grant),
 //          runs the SAME owner-approval gate as password login, and either
 //          issues the session/refresh cookies + redirects to /home, or hands a
 //          signed status token to /welcome for a PENDING/REJECTED account.
 //
-// Both routes are guarded so a dev run without SUPABASE_URL (in-memory mock
-// store) answers a clean 501 instead of throwing on a missing client method.
+// Both route families are guarded so a dev run without SUPABASE_URL
+// (in-memory mock store) answers a clean 501 instead of throwing on a
+// missing client method.
 
-const googleEnabled = (): boolean =>
+const SOCIAL_PROVIDERS = ["google", "facebook"] as const;
+type SocialProvider = (typeof SOCIAL_PROVIDERS)[number];
+
+const socialAuthEnabled = (): boolean =>
   typeof process.env.SUPABASE_URL === "string" &&
   process.env.SUPABASE_URL.trim().length > 0 &&
   typeof process.env.SUPABASE_SERVICE_ROLE_KEY === "string" &&
@@ -495,146 +500,150 @@ function publicSiteBase(): string {
 }
 
 /**
- * GET /api/auth/google
- * 302 → Supabase /auth/v1/authorize?provider=google (PKCE)
+ * GET /api/auth/:provider (provider ∈ {google, facebook})
+ * 302 → Supabase /auth/v1/authorize?provider=<provider> (PKCE)
  * 501 → Supabase not configured (dev mock store)
  */
-router.get("/google", (_req: Request, res: Response) => {
-  if (!googleEnabled()) {
-    res.status(501).json({
-      error: "Google sign-in is not configured on this deployment.",
-    });
-    return;
-  }
+for (const provider of SOCIAL_PROVIDERS) {
+  router.get(`/${provider}`, (_req: Request, res: Response) => {
+    if (!socialAuthEnabled()) {
+      res.status(501).json({
+        error: `${provider === "google" ? "Google" : "Facebook"} sign-in is not configured on this deployment.`,
+      });
+      return;
+    }
 
-  const { verifier, challenge } = generatePkce();
-  setPkceCookie(res, verifier);
+    const { verifier, challenge } = generatePkce();
+    setPkceCookie(res, verifier);
 
-  const base = process.env.SUPABASE_URL!.replace(/\/+$/, "");
-  const callbackUrl = `${publicSiteBase()}/api/auth/callback/google`;
-  // Supabase authorize endpoint for PKCE OAuth: challenge goes out with the
-  // authorization code; the verifier stays in the httpOnly cookie until the
-  // browser returns with ?code=... on the callback route below.
-  const authorizeUrl =
-    `${base}/auth/v1/authorize` +
-    `?provider=google` +
-    `&code_challenge=${encodeURIComponent(challenge)}` +
-    `&code_challenge_method=S256` +
-    `&redirect_to=${encodeURIComponent(callbackUrl)}` +
-    `&skip_http_confirmation=true`;
+    const base = process.env.SUPABASE_URL!.replace(/\/+$/, "");
+    const callbackUrl = `${publicSiteBase()}/api/auth/callback/${provider}`;
+    // Supabase authorize endpoint for PKCE OAuth: challenge goes out with the
+    // authorization code; the verifier stays in the httpOnly cookie until the
+    // browser returns with ?code=... on the callback route below.
+    const authorizeUrl =
+      `${base}/auth/v1/authorize` +
+      `?provider=${provider}` +
+      `&code_challenge=${encodeURIComponent(challenge)}` +
+      `&code_challenge_method=S256` +
+      `&redirect_to=${encodeURIComponent(callbackUrl)}` +
+      `&skip_http_confirmation=true`;
 
-  res.redirect(authorizeUrl);
-});
-
-/**
- * GET /api/auth/callback/google?code=...&state=...
- * Exchanges the PKCE code for a session, applies the owner-approval gate, and
- * redirects: ACTIVE → /home (with session + refresh cookies); PENDING/REJECTED
- * → /welcome?status_token=... (no session issued).
- */
-router.get("/callback/google", async (req: Request, res: Response) => {
-  const verifier = (req.cookies?.[PKCE_COOKIE] as string | undefined) ?? "";
-  clearPkceCookie(res);
-
-  if (!googleEnabled()) {
-    res.status(501).json({ error: "Google sign-in is not configured." });
-    return;
-  }
-
-  // Supabase surfaces a declined/failed consent here instead of a code.
-  const oauthError = req.query.error;
-  if (oauthError) {
-    const desc =
-      typeof req.query.error_description === "string"
-        ? req.query.error_description
-        : "";
-    console.warn("[auth] google oauth error:", String(oauthError), desc);
-    res.redirect(302, `${publicSiteBase()}/login?google_error=1`);
-    return;
-  }
-
-  const code = typeof req.query.code === "string" ? req.query.code : "";
-  if (!code || !verifier) {
-    // No PKCE cookie (cleared/expired) → the challenge won't match; start over.
-    res.redirect(302, `${publicSiteBase()}/login`);
-    return;
-  }
-
-  // Exchange the PKCE code for a token directly against gotrue (the same grant
-  // the JS client uses internally: POST /auth/v1/token?grant_type=pkce with
-  // { auth_code, code_verifier }). This avoids persisting a user session on the
-  // shared service-role client, which would downgrade its later data writes to
-  // the user's RLS rights (the 2026-09-26 "402 despite reset" bug).
-  const base = process.env.SUPABASE_URL!.replace(/\/+$/, "");
-  // PKCE is a public-client exchange: it authenticates the request with an
-  // anon-class key. Prefer the public anon key; fall back to the service-role
-  // key (a valid gotrue apikey) so a deployment missing SUPABASE_ANON_KEY
-  // still works.
-  const exchangeKey =
-    process.env.SUPABASE_ANON_KEY?.trim() ||
-    process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ||
-    "";
-  const exchangeRes = await fetch(
-    `${base}/auth/v1/token?grant_type=pkce`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: exchangeKey,
-        Authorization: `Bearer ${exchangeKey}`,
-      },
-      body: JSON.stringify({ auth_code: code, code_verifier: verifier }),
-    },
-  ).catch((err: unknown) => {
-    console.warn("[auth] google code exchange network error:", (err as Error)?.message);
-    return null;
+    res.redirect(authorizeUrl);
   });
 
-  interface PkceTokens {
-    access_token?: string;
-    refresh_token?: string;
-    expires_in?: number;
-  }
-  let tokens: PkceTokens | null = null;
-  if (exchangeRes && exchangeRes.ok) {
-    const body = (await exchangeRes.json().catch(() => null)) as PkceTokens | null;
-    tokens = body;
-  }
-  const accessToken = tokens?.access_token;
-  if (!accessToken) {
-    console.warn("[auth] google code exchange failed or returned no token");
-    res.redirect(302, `${publicSiteBase()}/login?google_error=1`);
-    return;
-  }
+  /**
+   * GET /api/auth/callback/:provider?code=...&state=...
+   * Exchanges the PKCE code for a session, applies the owner-approval gate,
+   * and redirects: ACTIVE → /home (with session + refresh cookies);
+   * PENDING/REJECTED → /welcome?status_token=... (no session issued).
+   */
+  router.get(`/callback/${provider}`, async (req: Request, res: Response) => {
+    const verifier = (req.cookies?.[PKCE_COOKIE] as string | undefined) ?? "";
+    clearPkceCookie(res);
 
-  // Resolve the user the token belongs to (service-role, so RLS never applies).
-  const { data: me, error: meError } = await supabaseAdmin.auth.getUser(accessToken);
-  const user = me?.user;
-  if (meError || !user) {
-    console.warn("[auth] google user lookup failed:", meError?.message ?? "no user");
-    res.redirect(302, `${publicSiteBase()}/login?google_error=1`);
-    return;
-  }
+    if (!socialAuthEnabled()) {
+      res.status(501).json({
+        error: `${provider === "google" ? "Google" : "Facebook"} sign-in is not configured.`,
+      });
+      return;
+    }
 
-  // Same owner-approval gate as password login: PENDING/REJECTED accounts get
-  // NO session — hand the user a signed status token instead.
-  const accessStatus = await readAccessStatus(user.id);
-  if (accessStatus !== "ACTIVE") {
-    res.redirect(
-      302,
-      `${publicSiteBase()}/welcome?status_token=${encodeURIComponent(createStatusToken(user.id))}`,
-    );
-    return;
-  }
+    // Supabase surfaces a declined/failed consent here instead of a code.
+    const oauthError = req.query.error;
+    if (oauthError) {
+      const desc =
+        typeof req.query.error_description === "string"
+          ? req.query.error_description
+          : "";
+      console.warn(`[auth] ${provider} oauth error:`, String(oauthError), desc);
+      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
+      return;
+    }
 
-  const resolved = await resolveSessionUser(user.id, user.email ?? "");
-  const extended = await buildExtendedUser(resolved.id, resolved.email, resolved.role);
+    const code = typeof req.query.code === "string" ? req.query.code : "";
+    if (!code || !verifier) {
+      // No PKCE cookie (cleared/expired) → the challenge won't match; start over.
+      res.redirect(302, `${publicSiteBase()}/login`);
+      return;
+    }
 
-  setSessionCookie(res, accessToken, tokens?.expires_in);
-  if (tokens?.refresh_token) setRefreshCookie(res, tokens.refresh_token);
+    // Exchange the PKCE code for a token directly against gotrue (the same
+    // grant the JS client uses internally: POST /auth/v1/token?grant_type=pkce
+    // with { auth_code, code_verifier }). This avoids persisting a user session
+    // on the shared service-role client, which would downgrade its later data
+    // writes to the user's RLS rights (the 2026-09-26 "402 despite reset" bug).
+    const base = process.env.SUPABASE_URL!.replace(/\/+$/, "");
+    // PKCE is a public-client exchange: it authenticates the request with an
+    // anon-class key. Prefer the public anon key; fall back to the service-role
+    // key (a valid gotrue apikey) so a deployment missing SUPABASE_ANON_KEY
+    // still works.
+    const exchangeKey =
+      process.env.SUPABASE_ANON_KEY?.trim() ||
+      process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ||
+      "";
+    const exchangeRes = await fetch(
+      `${base}/auth/v1/token?grant_type=pkce`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: exchangeKey,
+          Authorization: `Bearer ${exchangeKey}`,
+        },
+        body: JSON.stringify({ auth_code: code, code_verifier: verifier }),
+      },
+    ).catch((err: unknown) => {
+      console.warn(`[auth] ${provider} code exchange network error:`, (err as Error)?.message);
+      return null;
+    });
 
-  res.redirect(302, `${publicSiteBase()}/home`);
-});
+    interface PkceTokens {
+      access_token?: string;
+      refresh_token?: string;
+      expires_in?: number;
+    }
+    let tokens: PkceTokens | null = null;
+    if (exchangeRes && exchangeRes.ok) {
+      const body = (await exchangeRes.json().catch(() => null)) as PkceTokens | null;
+      tokens = body;
+    }
+    const accessToken = tokens?.access_token;
+    if (!accessToken) {
+      console.warn(`[auth] ${provider} code exchange failed or returned no token`);
+      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
+      return;
+    }
+
+    // Resolve the user the token belongs to (service-role, so RLS never applies).
+    const { data: me, error: meError } = await supabaseAdmin.auth.getUser(accessToken);
+    const user = me?.user;
+    if (meError || !user) {
+      console.warn(`[auth] ${provider} user lookup failed:`, meError?.message ?? "no user");
+      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
+      return;
+    }
+
+    // Same owner-approval gate as password login: PENDING/REJECTED accounts get
+    // NO session — hand the user a signed status token instead.
+    const accessStatus = await readAccessStatus(user.id);
+    if (accessStatus !== "ACTIVE") {
+      res.redirect(
+        302,
+        `${publicSiteBase()}/welcome?status_token=${encodeURIComponent(createStatusToken(user.id))}`,
+      );
+      return;
+    }
+
+    const resolved = await resolveSessionUser(user.id, user.email ?? "");
+    const extended = await buildExtendedUser(resolved.id, resolved.email, resolved.role);
+
+    setSessionCookie(res, accessToken, tokens?.expires_in);
+    if (tokens?.refresh_token) setRefreshCookie(res, tokens.refresh_token);
+
+    res.redirect(302, `${publicSiteBase()}/home`);
+  });
+}
 
 /**
  * GET /api/auth/me

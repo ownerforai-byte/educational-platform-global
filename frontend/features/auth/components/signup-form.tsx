@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
-import { GoogleSignInButton } from "./google-signin-button";
+import { GoogleSignInButton, FacebookSignInButton } from "./google-signin-button";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
 
@@ -20,9 +20,15 @@ export function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  // Same as the login form: a failed Google consent lands back here with the
-  // flag so the user sees a hint instead of a blank form.
-  const [error, setError] = useState(searchParams.get("google_error") ? "Google sign-in did not complete. Please try again." : "");
+  // Same as the login form: a failed social consent lands back here with the
+  // provider flag so the user sees a hint instead of a blank form.
+  const [error, setError] = useState(() => {
+    const f = searchParams.get("facebook_error");
+    const g = searchParams.get("google_error");
+    if (f) return "Facebook sign-in did not complete. Please try again.";
+    if (g) return "Google sign-in did not complete. Please try again.";
+    return "";
+  });
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -149,7 +155,10 @@ export function SignupForm() {
         <div className="h-px flex-1 bg-border" />
       </div>
 
-      <GoogleSignInButton />
+      <div className="space-y-3">
+        <GoogleSignInButton />
+        <FacebookSignInButton />
+      </div>
 
       <p className="text-center text-sm text-muted-foreground">
         Already have an account?{" "}

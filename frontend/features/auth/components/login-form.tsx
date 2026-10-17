@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
-import { GoogleSignInButton } from "./google-signin-button";
+import { GoogleSignInButton, FacebookSignInButton } from "./google-signin-button";
 
 export function LoginForm() {
   const router = useRouter();
@@ -17,10 +17,16 @@ export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  // A failed Google OAuth consent (provider not enabled, user cancelled, or a
-  // network hiccup) returns the user to /login?google_error=1; surface that
-  // instead of a blank form.
-  const [error, setError] = useState(searchParams.get("google_error") ? "Google sign-in did not complete. Please try again." : "");
+  // A failed social OAuth consent (provider not enabled, user cancelled, or a
+  // network hiccup) returns the user to /login?<provider>_error=1; surface
+  // that instead of a blank form.
+  const [error, setError] = useState(() => {
+    const g = searchParams.get("google_error");
+    const f = searchParams.get("facebook_error");
+    if (f) return "Facebook sign-in did not complete. Please try again.";
+    if (g) return "Google sign-in did not complete. Please try again.";
+    return "";
+  });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -122,7 +128,10 @@ export function LoginForm() {
         <div className="h-px flex-1 bg-border" />
       </div>
 
-      <GoogleSignInButton />
+      <div className="space-y-3">
+        <GoogleSignInButton />
+        <FacebookSignInButton />
+      </div>
 
       <div className="flex items-center gap-3 pt-1">
         <div className="h-px flex-1 bg-border" />

@@ -184,16 +184,24 @@ export async function resetPassword(data: {
 }
 
 /**
- * Start the "Continue with Google" flow.
+ * Start the "Continue with <provider>" flow (google | facebook).
  *
  * This is a top-level navigation, NOT a background fetch: the browser is sent
- * to `GET /api/auth/google`, which mints a PKCE pair, stores the verifier in an
- * httpOnly cookie, and 302s the browser to Supabase's Google authorize URL.
- * After the user authorizes, Supabase returns to
- * `/api/auth/callback/google`, which exchanges the code, sets the
+ * to `GET /api/auth/<provider>`, which mints a PKCE pair, stores the verifier in
+ * an httpOnly cookie, and 302s the browser to Supabase's provider authorize
+ * URL. After the user authorizes, Supabase returns to
+ * `/api/auth/callback/<provider>`, which exchanges the code, sets the
  * session/refresh cookies and redirects to /home — so the AuthProvider picks
  * the user up on its next `ensureSession()`, exactly like a password login.
  */
+export function continueWithProvider(provider: "google" | "facebook"): void {
+  window.location.href = `/api/auth/${provider}`;
+}
+
 export function continueWithGoogle(): void {
-  window.location.href = "/api/auth/google";
+  continueWithProvider("google");
+}
+
+export function continueWithFacebook(): void {
+  continueWithProvider("facebook");
 }

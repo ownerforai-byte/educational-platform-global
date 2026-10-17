@@ -1,6 +1,6 @@
 "use client";
 
-import { continueWithGoogle } from "@/lib/api/auth";
+import { continueWithGoogle, continueWithFacebook } from "@/lib/api/auth";
 
 /**
  * The multicolor Google "G" mark. It's a brand asset, so an inline SVG keeps
@@ -52,6 +52,36 @@ export function GoogleSignInButton({ label = "Continue with Google" }: { label?:
       aria-label={label}
     >
       <GoogleGMark className="h-5 w-5" />
+      <span>{label}</span>
+    </button>
+  );
+}
+
+/**
+ * "Continue with Facebook" button — same top-level navigation pattern as the
+ * Google button, into `GET /api/auth/facebook` → Supabase Facebook authorize →
+ * consent → `GET /api/auth/callback/facebook` → session cookies → /home.
+ */
+function FacebookFMark({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 23.96V15.86H7.08V12.07H10.13V9.38C10.13 6.3 11.82 4.68 14.66 4.68C16.04 4.68 17.44 4.91 17.44 4.91V7.96H15.92C14.49 7.96 14.01 8.83 14.01 9.74V12.07H17.34L16.89 15.86H14.01V23.96C19.75 23.09 24 18.1 24 12.07Z"
+        fill="#1877F2"
+      />
+    </svg>
+  );
+}
+
+export function FacebookSignInButton({ label = "Continue with Facebook" }: { label?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => continueWithFacebook()}
+      className="flex h-11 w-full items-center justify-center gap-3 rounded-xl border border-border/70 bg-card text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+      aria-label={label}
+    >
+      <FacebookFMark className="h-5 w-5" />
       <span>{label}</span>
     </button>
   );
