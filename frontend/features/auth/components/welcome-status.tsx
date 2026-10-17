@@ -9,13 +9,16 @@ import {
   Home,
   Loader2,
   Lock,
+  Mail,
   RefreshCw,
   ShieldAlert,
+  Send,
   ShieldCheck,
   Sparkles,
   UserCheck,
 } from "lucide-react";
 import { apiFetch } from "@/lib/api-client";
+import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
 
 /**
  * Post-signup status screen (owner-approval flow, 2026-09-26).
@@ -63,7 +66,32 @@ const STEPS = [
   { icon: BadgeCheck, label: "Access granted", hint: "Sign in and start learning" },
 ];
 
+/**
+ * Seed the status token from `?status_token=...` when the Google OAuth
+ * callback hands a PENDING account straight here. Persist it to localStorage
+ * so the polling works on reload, then clear the query string so a manual
+ * refresh doesn't reseed an expired token.
+ */
+function useUrlStatusToken() {
+  useEffect(() => {
+    // Read the status token the Google callback hands over (?status_token=...).
+    // Done from window.location (not useSearchParams) so the /welcome page
+    // stays prerender-safe — no Suspense boundary required.
+    const url = new URL(window.location.href);
+    const fromUrl = url.searchParams.get("status_token");
+    if (!fromUrl) return;
+    try {
+      localStorage.setItem(TOKEN_KEY, fromUrl);
+    } catch {
+      /* storage blocked — the poll still works for this visit */
+    }
+    // Drop the query string so a manual refresh doesn't reseed an old token.
+    window.history.replaceState(null, "", window.location.pathname);
+  }, []);
+}
+
 export function WelcomeStatus() {
+  useUrlStatusToken();
   const [state, setState] = useState<StatusState>("loading");
   const [fullName, setFullName] = useState<string | null>(null);
   const [checks, setChecks] = useState(0);
@@ -121,11 +149,12 @@ export function WelcomeStatus() {
           <Sparkles className="h-4 w-4" />
           Your account was created successfully!
         </p>
-        {firstName && (
+        {fullName ? (
           <p className="mt-1 text-xs text-muted-foreground">
-            Welcome aboard, {firstName} — here&apos;s your access status.
+            Welcome aboard, {firstName} — checking the approval status of{" "}
+            <span className="font-semibold text-foreground">{fullName}</span>.
           </p>
-        )}
+        ) : null}
       </div>
 
       {/* ── Approval pipeline stepper ──────────────────────────────── */}
@@ -162,7 +191,14 @@ export function WelcomeStatus() {
                 {broken ? (
                   <ShieldAlert className="h-5 w-5" />
                 ) : current && state === "PENDING" ? (
-                  <Loader2 className="h-5 w-5 animate-spin" />
+                  // Infinite yellow "outgoing" pulse radiating from the
+                  // awaiting-approval clock (owner request 2026-10-17). The
+                  // clock stays put in the middle while a yellow ring expands
+                  // outward forever — the "something is on its way" signal.
+                  <span className="relative flex h-5 w-5 items-center justify-center">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/50" />
+                    <Clock3 className="relative h-5 w-5 text-amber-500" />
+                  </span>
                 ) : (
                   <Icon className="h-5 w-5" />
                 )}
@@ -257,6 +293,9 @@ export function WelcomeStatus() {
         />
       )}
 
+      {/* While waiting: the pending user can still send the owner a message. */}
+      {state === "PENDING" && <MessageOwnerBox name={fullName} />}
+
       {state === "ACTIVE" && (
         <StateCard
           icon={<BadgeCheck className="h-5 w-5 text-emerald-500" />}
@@ -277,11 +316,67 @@ export function WelcomeStatus() {
         />
       )}
 
-      {/* ── Trust footer ── */}
+      {/* Owner request 2026-10-17: a candid exit note for visitors. */}
+      <VisitorExitNote />
+
+      {/* ── Trust footer — kept, with its sign, below the note (owner 2026-10-17) ── */}
       <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
         Approval is handled manually by the platform owner — usually within a day.
       </p>
+    </div>
+  );
+}
+
+/**
+ * A pending user can write to the owner while they wait (owner request
+ * 2026-10-17: "also sending message do available"). The composer opens the
+ * sender's own mail app addressed to the owner, with their identity and the
+ * note prefilled — honest "sending" with no backend inbox to wire up.
+ */
+function MessageOwnerBox({ name }: { name: string | null }) {
+  const [message, setMessage] = useState("");
+  const first = name?.trim().split(/\s+/)[0] ?? "there";
+  const send = () => {
+    const subject = encodeURIComponent("Account approval — a note while I wait");
+    const body = encodeURIComponent(
+      `Hi Ravikisan,\n\nI'm waiting for account approval and wanted to send a quick note.\n\n${
+        message.trim() || "(no message)"
+      }\n\n— ${name ?? "A new student"}`,
+    );
+    window.location.href = `mailto:ravikisan1814@gmail.com?subject=${subject}&body=${body}`;
+  };
+  return (
+    <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-4">
+      <p className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+        <Mail className="h-3.5 w-3.5 text-amber-500" />
+        Send a message while you wait
+      </p>
+      <p className="mt-1 text-[11px] text-muted-foreground">
+        {name ? (
+          <>
+            Signed as{" "}
+            <span className="font-semibold text-foreground">{name}</span>.{" "}
+          </>
+        ) : null}
+        The owner reads every note — say hello, ask a question, or tell us what
+        you need.
+      </p>
+      <textarea
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder={`Hi ${first} — write your message here…`}
+        rows={3}
+        className="mt-2 w-full rounded-xl border border-border/70 bg-background/60 px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/70 focus:border-amber-500/50 focus:outline-none focus:ring-1 focus:ring-amber-500/30"
+      />
+      <button
+        type="button"
+        onClick={send}
+        className="mt-2 inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+      >
+        <Send className="h-3.5 w-3.5" />
+        Send to owner
+      </button>
     </div>
   );
 }

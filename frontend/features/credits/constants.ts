@@ -60,10 +60,15 @@ export const TOKEN_MATRIX: Record<ContentCategory, CategoryRule> = {
 export const UNLOCK_WINDOW_SECONDS = 1200;
 
 /**
- * Intercepted-action notice copy. DO NOT CHANGE A SINGLE WORD.
+ * Intercepted-action notice copy.
+ *
+ * Owner request 2026-10-17 ("change this from box … to login is mentored like
+ * at 8:00PM"): the closing line changed from "Login functions work properly
+ * only after final administrative verification and system approval." to say
+ * login is handled at 8:00 PM. Wording kept close to the owner's own.
  */
 export const NOTICE_COPY =
-  "Notice: Access to full write privileges requires clearance. Account creation runs on a manual check loop. Login functions work properly only after final administrative verification and system approval.";
+  "Notice: Access to full write privileges requires clearance. Account creation runs on a manual check loop. Login is mentored at 8:00 PM.";
 
 /** Internal portal entry path used by the notice's login button. */
 export const LOGIN_PATH = "/login";

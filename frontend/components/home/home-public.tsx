@@ -13,6 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { HomeOwnerNotice } from "./home-owner-notice";
+import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
 
 /**
  * HOME FOR PUBLIC (NON-PAID, SIGNED-OUT) VISITORS
@@ -35,7 +36,7 @@ import { HomeOwnerNotice } from "./home-owner-notice";
 
 /** The mandated access message — kept verbatim (owner wording, 2026-10-16). */
 export const ACCESS_NOTICE =
-  "Login works after administrative approval and system verification only for users.";
+  "Login works after administrative approval and system verification only.";
 
 const ACCESS_STEPS = [
   {
@@ -245,6 +246,11 @@ export function HomePublic() {
       {/* ── The owner's notice (verbatim quote + sign-in) ────────────────── */}
       <div className="mt-8">
         <HomeOwnerNotice />
+      </div>
+
+      {/* Owner request 2026-10-17: a candid exit note for visitors. */}
+      <div className="mt-6">
+        <VisitorExitNote />
       </div>
     </div>
   );

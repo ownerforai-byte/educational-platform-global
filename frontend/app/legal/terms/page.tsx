@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalDoc } from "../legal-doc";
+import { LegalBlurGate } from "../legal-blur-gate";
 
 export const metadata: Metadata = {
   title: "Terms of Service — Ravikisan's Platform",
@@ -56,12 +57,14 @@ export default function TermsOfService() {
 
       <section>
         <h2>5. AI features &amp; credits</h2>
-        <p>
-          “Veer” runs on third-party AI providers; output may be inaccurate.
-          Some AI actions consume <strong>credits</strong> from your daily pool;
-          when empty, the feature is unavailable until reset or top-up. We may
-          adjust costs or availability.
-        </p>
+        <LegalBlurGate>
+          <p>
+            “Veer” runs on third-party AI providers; output may be inaccurate.
+            Some AI actions consume <strong>credits</strong> from your daily pool;
+            when empty, the feature is unavailable until reset or top-up. We may
+            adjust costs or availability.
+          </p>
+        </LegalBlurGate>
       </section>
 
       <section>

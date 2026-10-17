@@ -40,7 +40,7 @@ describe("public home", () => {
     render(<HomePublic />);
     expect(
       screen.getByText(
-        "Login works after administrative approval and system verification only for users.",
+        "Login works after administrative approval and system verification only.",
       ),
     ).toBeInTheDocument();
   });

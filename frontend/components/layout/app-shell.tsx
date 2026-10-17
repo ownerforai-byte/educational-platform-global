@@ -3,10 +3,12 @@
 import { useEffect, useState, Suspense } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen, Atom, Bell } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Atom, Bell, Lock } from "lucide-react";
+import { useSession } from "@/features/auth/hooks/use-session";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { MobileQuickNav } from "./mobile-quick-nav";
+import { QuickAccessBar } from "./quick-access-bar";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { R1Shortcut } from "./r1-shortcut";
@@ -23,6 +25,9 @@ interface AppShellProps {
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const pathname = usePathname();
   const isChatRoom = pathname === "/chat" || pathname.startsWith("/chat/");
+  // Auth state drives the periodic-table header lock (owner request 2026-10-17:
+  // "lock for everything (also the periodic table in header)").
+  const { user } = useSession();
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   // Header stays permanently visible (owner request: pin toggle removed).
@@ -151,7 +156,14 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             >
               <Atom className="h-3.5 w-3.5 text-teal-500" />
               <span className="hidden sm:inline">Periodic Table</span>
-              <span className="text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
+              {user ? (
+                <span className="text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
+              ) : (
+                <span className="inline-flex items-center gap-0.5 text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">
+                  <Lock className="h-2.5 w-2.5" />
+                  Sign in
+                </span>
+              )}
             </Link>
 
             <CreditBadge className="hidden sm:flex" />
@@ -162,6 +174,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Suspense>
           </div>
         </div>
+        {/* Quick access — tier-gated pills below the search bar (owner 2026-10-17). */}
+        <QuickAccessBar />
       <MobileQuickNav />
       </header>
 

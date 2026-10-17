@@ -1,10 +1,13 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
+import { useSession } from "@/features/auth/hooks/use-session";
 import {
   Atom,
   BookOpen,
+  Crown,
   FlaskConical,
   GraduationCap,
   Bell,
@@ -16,11 +19,20 @@ import {
   Layers,
   Workflow,
   Compass,
+  Eye,
   Search,
   ShieldCheck,
+  User,
+  Zap,
 } from "lucide-react";
 
 /**
+ * OWNER UPDATE 2026-10-17: the PRO plan is "visible but hidden and opens with
+ * link in footer", and signed-out visitors get a SIMPLE footer (version +
+ * intro + PRO link). This supersedes the 2026-09-30 "remove plans from footer"
+ * note below — a PRO-plan link is back in the footer, and the public view is
+ * simplified.
+ *
  * Owner request (2026-09-30): "remove plans from footer completely".
  *
  * The footer used to carry a full Pro-plan pricing block (coin matrix for
@@ -37,7 +49,140 @@ import {
  * name is no longer a link. The platform's own brand and the copyright line are
  * the site's name rather than the owner's contact details and are untouched.
  */
+/**
+ * Footer — session-aware (owner request 2026-10-17). Signed-out visitors get a
+ * SIMPLE footer: brand + short intro + the hidden PRO-plan link + version +
+ * minimal legal. Signed-in members get the full directory below. The visitor
+ * version renders on the server and the first client pass (the session hydrates
+ * after mount), so there is no hydration mismatch; signed-in users swap to the
+ * rich footer once their session lands (it sits below the fold).
+ */
 export function Footer() {
+  const { user } = useSession();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted && user ? <FullFooter /> : <SimpleFooter />;
+}
+
+/** The simple public footer — intro, the hidden PRO-plan link, and version. */
+function SimpleFooter() {
+  return (
+    <footer className="border-t border-border/60 bg-card/60 backdrop-blur-xl mt-auto">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 py-8">
+        <div className="flex flex-col items-center gap-4 text-center">
+          <div className="flex items-center gap-2.5">
+            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20">
+              <span className="text-sm font-extrabold text-white">R</span>
+            </div>
+            <span className="font-bold text-sm tracking-tight text-foreground">
+              Ravikisan&apos;s Platform
+            </span>
+          </div>
+
+          <p className="max-w-xl text-xs leading-relaxed text-muted-foreground">
+            Nepal&apos;s open-access study platform for NEB (+2) Science — notes,
+            3D labs, derivations, PYQs and Veer, aligned to the CDC curriculum.
+            A simple overview for visitors; sign in to open the full library.
+          </p>
+
+          {/* The hidden PRO plan — visible but hidden, reachable from here. */}
+          <Link
+            href="/pro-plan"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-semibold text-amber-600 dark:text-amber-400 hover:bg-amber-500/15 transition-all"
+          >
+            <Crown className="h-3.5 w-3.5" />
+            See the PRO plan
+          </Link>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground">
+            <Link href="/legal/privacy" className="hover:text-primary transition-colors">
+              Privacy
+            </Link>
+            <span>·</span>
+            <Link href="/legal/terms" className="hover:text-primary transition-colors">
+              Terms
+            </Link>
+            <span>·</span>
+            <Link href="/notice" className="hover:text-primary transition-colors">
+              Notice
+            </Link>
+            <span
+              className="font-mono text-[10px] rounded-full border border-border/60 bg-muted/40 px-2 py-0.5 text-muted-foreground/80"
+              title="Platform version — v0.0001 was the first version (2026-10-01); every deployment after it adds 0.0001"
+            >
+              v{DEPLOY_VERSION}
+            </span>
+          </div>
+
+          <p className="text-[11px] text-muted-foreground">
+            © 2026 Ravikisan&apos;s Platform. Aligned with NEB / CDC Nepal standards.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/**
+ * Access tiers shown in the footer — arranged by tier, each with a symbol
+ * (owner request 2026-10-17: "arrange the access link in footer also according
+ * to tier with symbols"). Spark allowances mirror lib/ai/ai-spark-tiers.ts.
+ */
+const TIER_STRIP: {
+  name: string;
+  icon: typeof Eye;
+  color: string;
+  spark: string;
+  links: [string, string][];
+}[] = [
+  {
+    name: "Visitor",
+    icon: Eye,
+    color: "text-muted-foreground",
+    spark: "1 Veer spark / day",
+    links: [["Notice Board", "/notice"]],
+  },
+  {
+    name: "Member",
+    icon: User,
+    color: "text-sky-500",
+    spark: "7 Veer sparks / day",
+    links: [
+      ["My Profile", "/profile"],
+      ["Credits & Plan", "/credits"],
+    ],
+  },
+  {
+    name: "Plus",
+    icon: Zap,
+    color: "text-amber-500",
+    spark: "25 Veer sparks / day",
+    links: [
+      ["Home", "/"],
+      ["Class 11 Hub", "/class-11-notes"],
+    ],
+  },
+  {
+    name: "Pro",
+    icon: Crown,
+    color: "text-violet-500",
+    spark: "50 Veer sparks / day",
+    links: [
+      ["Class 12 Hub", "/class-12-notes"],
+      ["3D Labs", "/lab"],
+      ["Veer AI", "/chat"],
+    ],
+  },
+  {
+    name: "Owner",
+    icon: ShieldCheck,
+    color: "text-emerald-500",
+    spark: "Unlimited",
+    links: [["Owner Console", "/owner"]],
+  },
+];
+
+function FullFooter() {
   return (
     <footer className="border-t border-border/60 bg-card/60 backdrop-blur-xl mt-auto">
       <div className="mx-auto max-w-7xl px-4 md:px-6 py-10 sm:py-14 space-y-10">
@@ -184,6 +329,44 @@ export function Footer() {
           </div>
         </div>
 
+        {/* ── Access by tier — arranged with symbols (owner 2026-10-17) ── */}
+        <div>
+          <div className="flex items-center gap-3">
+            <div className="h-px flex-1 bg-border/70" />
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+              <Crown className="h-3.5 w-3.5 text-primary" />
+              Access by tier
+            </span>
+            <div className="h-px flex-1 bg-border/70" />
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {TIER_STRIP.map((t) => {
+              const Icon = t.icon;
+              return (
+                <div key={t.name} className="rounded-2xl border border-border/70 bg-muted/20 p-3">
+                  <p className="flex items-center gap-1.5 text-xs font-extrabold text-foreground">
+                    <Icon className={`h-4 w-4 ${t.color}`} />
+                    {t.name}
+                  </p>
+                  <p className="mt-1 text-[10px] font-semibold text-primary">{t.spark}</p>
+                  <ul className="mt-2 space-y-1">
+                    {t.links.map(([label, href]) => (
+                      <li key={href}>
+                        <Link
+                          href={href}
+                          className="text-[11px] text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* ── Curriculum Standards Alignment Banner ── */}
         <div className="grid gap-3 sm:grid-cols-2 rounded-2xl border border-border/70 bg-muted/20 p-4">
           <div className="flex items-start gap-3">
@@ -293,8 +476,8 @@ export function Footer() {
             <span>·</span>
             {/* Owner request (2026-09-30): the notice board is reachable from
                 here — it is a public, never-gated page that is not advertised
-                on the home screen. Pricing is NOT linked from the footer any
-                more; the plan page is reached from /ai and /credits. */}
+                on the home screen. The PRO plan IS linked from here now
+                (owner request 2026-10-17). */}
             {/* The owner's profile link used to sit after this one. It is on
                 /notice now, together with the mailto — one page holds the
                 contact details instead of every page carrying them. */}
@@ -312,6 +495,16 @@ export function Footer() {
             >
               <BellRing className="h-3 w-3" />
               <span>Notice Board</span>
+            </Link>
+            <span>·</span>
+            {/* Owner request 2026-10-17: the PRO plan is "visible but hidden and
+                opens with link in footer" — reachable from here. */}
+            <Link
+              href="/pro-plan"
+              className="inline-flex items-center gap-1 font-medium hover:text-primary transition-colors"
+            >
+              <Crown className="h-3 w-3" />
+              <span>PRO plan</span>
             </Link>
             <span
               className="font-mono text-[10px] rounded-full border border-border/60 bg-muted/40 px-2 py-0.5 text-muted-foreground/80"

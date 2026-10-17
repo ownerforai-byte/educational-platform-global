@@ -1,0 +1,16 @@
+{
+  "name": "@ravikisan/cline-tutor-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/cli.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@cline/sdk": "^0.0.94"
+  }
+}

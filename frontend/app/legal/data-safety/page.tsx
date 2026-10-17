@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalDoc } from "../legal-doc";
+import { LegalBlurGate } from "../legal-blur-gate";
 
 export const metadata: Metadata = {
   title: "Data Safety — Ravikisan's Platform",
@@ -21,16 +22,18 @@ export default function DataSafety() {
         <ul>
           <li><strong>Name</strong> — Yes (optional, account sign-up)</li>
           <li><strong>Email address</strong> — Yes (required for account creation)</li>
-          <li><strong>User ID</strong> — Yes (Supabase account ID)</li>
+          <li><strong>User ID</strong> — Yes (account ID)</li>
           <li><strong>Other content</strong> — Yes (study progress, bookmarks, AI chat/figure history, uploaded files, AI prompts)</li>
           <li><strong>App interaction</strong> — Yes (features used, errors/crashes)</li>
         </ul>
-        <h3>Data shared with third parties</h3>
-        <ul>
-          <li><strong>Supabase</strong> — Name, Email, User ID, Other content</li>
-          <li><strong>Vercel / Render</strong> — App interaction / technical logs</li>
-          <li><strong>AI provider (Veer)</strong> — Prompts, generated content, and User ID (for logged-in users)</li>
-        </ul>
+        <LegalBlurGate>
+          <h3>Data shared with third parties</h3>
+          <ul>
+            <li><strong>Supabase</strong> — Name, Email, User ID, Other content</li>
+            <li><strong>Vercel / Render</strong> — App interaction / technical logs</li>
+            <li><strong>AI provider (Veer)</strong> — Prompts, generated content, and User ID (for logged-in users)</li>
+          </ul>
+        </LegalBlurGate>
       </section>
 
       <section>

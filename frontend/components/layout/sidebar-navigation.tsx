@@ -10,7 +10,8 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { isNavItemActive } from "@/lib/nav-active";
-import { NAV_SECTIONS, type NavItem } from "@/lib/navigation";
+import { NAV_SECTIONS, navMinLevel, type NavItem } from "@/lib/navigation";
+import { hasLevel } from "@/lib/access-level";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
@@ -179,21 +180,30 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   const primaryItems =
     NAV_SECTIONS.find((section) => section.id === "primary")?.items ?? [];
 
+  // ACCESS LADDER (lib/access-level.ts): member → Student Desk, plus → +Home
+  // +Class 11, pro → every index, owner → everything. A signed-out visitor
+  // (rank 0) reaches none of the content indexes — they get the public
+  // overview + simple footer instead. `viewer` is null until the session
+  // mounts, matching the server HTML (no hydration mismatch).
+  const viewer = user ?? null;
+
+  /** Per-item gates: owner/R1 audience + the access-ladder index unlock. */
+  const visibleItems = (section: (typeof NAV_SECTIONS)[number]) =>
+    section.items.filter(
+      (item) =>
+        (item.ownerOnly ? isOwnerUser(user) : true) &&
+        (item.r1Only ? hasR1 : true) &&
+        hasLevel(viewer, navMinLevel(item, section))
+    );
+
   /** account → signed-in only; ownerOnly → owner emails; r1Only → owner + R1 grants. */
   const canSee = (section: (typeof NAV_SECTIONS)[number]) => {
     if (section.id === "account") return isLoggedIn;
     if (section.ownerOnly) return isOwnerUser(user);
     if (section.r1Only) return hasR1;
-    return true;
+    // Content sections appear only when at least one index is unlocked.
+    return visibleItems(section).length > 0;
   };
-
-  /** Per-item gates: owner-only entries and R1 entries never leak past their audience. */
-  const visibleItems = (section: (typeof NAV_SECTIONS)[number]) =>
-    section.items.filter(
-      (item) =>
-        (item.ownerOnly ? isOwnerUser(user) : true) &&
-        (item.r1Only ? hasR1 : true)
-    );
 
   const handleLogout = async () => {
     // INSTANT: logoutUser clears the session synchronously (owner console and
@@ -222,7 +232,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
       <div className="flex-1 overflow-y-auto px-2 py-3 space-y-1">
         {/* Quick Home & Search shortcuts */}
         <div className="mb-2 space-y-0.5">
-          {primaryItems.map((item) => {
+          {primaryItems.filter((item) => hasLevel(viewer, navMinLevel(item))).map((item) => {
             const ItemIcon = item.icon;
             const isActive = isNavItemActive(pathname, item.href);
             return (

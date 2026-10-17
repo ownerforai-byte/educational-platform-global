@@ -13,6 +13,7 @@
  */
 
 import type { ComponentType } from "react";
+import type { AccessLevel } from "@/lib/access-level";
 import {
   Home,
   BookOpen,
@@ -63,6 +64,12 @@ export type NavItem = {
   ownerOnly?: boolean;
   /** Rendered only for owner + R1-granted emails (the R1 daily-life layer). */
   r1Only?: boolean;
+  /**
+   * Minimum ACCESS LEVEL that unlocks this index (lib/access-level.ts).
+   * "member" = Student Desk · "plus" = +Home +Class 11 · "pro" = every index.
+   * Defaults to the section's level, then "member". Owner rung reaches all.
+   */
+  minLevel?: AccessLevel;
 };
 
 export type NavSection = {
@@ -74,19 +81,33 @@ export type NavSection = {
   ownerOnly?: boolean;
   /** Rendered only for owner + R1-granted emails (the R1 daily-life layer). */
   r1Only?: boolean;
+  /** Default minimum access level for every item in this section (see NavItem). */
+  minLevel?: AccessLevel;
   items: NavItem[];
 };
 
+/**
+ * Resolve the minimum access level that unlocks an item: the item's own level
+ * wins, then its section's, then the signed-in base rung. Shared by the sidebar
+ * and the mobile drawer so the two surfaces can never disagree on who sees an
+ * index.
+ */
+export function navMinLevel(
+  item: NavItem,
+  section?: Pick<NavSection, "minLevel">,
+): AccessLevel {
+  return item.minLevel ?? section?.minLevel ?? "member";
+}
+
 /** Quick shortcuts shown at the very top of both navigation surfaces. */
 const primaryItems: NavItem[] = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/site-index", label: "Everything Index", icon: ListTree, badge: "All", badgeClass: "bg-primary/15 text-primary" },
-  { href: "/search", label: "Search Index", icon: Search, badge: "Ctrl+K", badgeClass: "bg-muted text-muted-foreground border border-border/80" },
-  { href: "/levels", label: "Curriculum Levels", icon: Compass, badge: "Tracks", badgeClass: "bg-sky-500/15 text-sky-500" },
+  { href: "/", label: "Home", icon: Home, minLevel: "plus" },
+  { href: "/site-index", label: "Everything Index", icon: ListTree, badge: "All", badgeClass: "bg-primary/15 text-primary", minLevel: "pro" },
+  { href: "/levels", label: "Curriculum Levels", icon: Compass, badge: "Tracks", badgeClass: "bg-sky-500/15 text-sky-500", minLevel: "pro" },
 ];
 
 const curriculumItems: NavItem[] = [
-  { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500" },
+  { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500", minLevel: "plus" },
   { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, badge: "XII", badgeClass: "bg-violet-500/15 text-violet-500" },
   { href: "/subjects", label: "All 6 Subjects", icon: Layers, badge: "Core", badgeClass: "bg-emerald-500/15 text-emerald-500" },
   { href: "/pyqs", label: "Previous Year Questions", icon: History, badge: "Solved", badgeClass: "bg-teal-500/15 text-teal-500" },
@@ -161,11 +182,11 @@ const r1Items: NavItem[] = [
  */
 export const NAV_SECTIONS: NavSection[] = [
   { id: "primary", label: "Quick Access", icon: Compass, items: primaryItems },
-  { id: "curriculum", label: "Curriculum & Notes", icon: BookOpen, items: curriculumItems },
-  { id: "stem", label: "STEM Labs & Rigor", icon: FlaskConical, items: stemAndRigorItems },
-  { id: "tools", label: "Veer & Assessment", icon: Sparkles, items: toolsItems },
-  { id: "extended", label: "Knowledge & Prep", icon: Globe, items: extendedItems },
-  { id: "account", label: "Student Desk", icon: UserCheck, items: accountItems },
+  { id: "curriculum", label: "Curriculum & Notes", icon: BookOpen, minLevel: "pro", items: curriculumItems },
+  { id: "stem", label: "STEM Labs & Rigor", icon: FlaskConical, minLevel: "pro", items: stemAndRigorItems },
+  { id: "tools", label: "Veer & Assessment", icon: Sparkles, minLevel: "pro", items: toolsItems },
+  { id: "extended", label: "Knowledge & Prep", icon: Globe, minLevel: "pro", items: extendedItems },
+  { id: "account", label: "Student Desk", icon: UserCheck, minLevel: "member", items: accountItems },
   { id: "r1", label: "R1 · Daily Life", icon: Sparkles, r1Only: true, items: r1Items },
   { id: "owner", label: "Owner", icon: Crown, ownerOnly: true, items: ownerItems },
 ];

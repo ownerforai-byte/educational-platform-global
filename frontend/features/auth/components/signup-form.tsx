@@ -1,24 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff, User, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
+import { GoogleSignInButton } from "./google-signin-button";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
 
 export function SignupForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { refresh } = useAuth();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
+  // Same as the login form: a failed Google consent lands back here with the
+  // flag so the user sees a hint instead of a blank form.
+  const [error, setError] = useState(searchParams.get("google_error") ? "Google sign-in did not complete. Please try again." : "");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -136,6 +140,16 @@ export function SignupForm() {
         {loading ? "Creating account…" : "Create Account"}
         {!loading && <ArrowRight className="h-4 w-4" />}
       </Button>
+
+      <div className="flex items-center gap-3 pt-1">
+        <div className="h-px flex-1 bg-border" />
+        <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+          or
+        </span>
+        <div className="h-px flex-1 bg-border" />
+      </div>
+
+      <GoogleSignInButton />
 
       <p className="text-center text-sm text-muted-foreground">
         Already have an account?{" "}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalDoc } from "../legal-doc";
+import { LegalBlurGate } from "../legal-blur-gate";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Ravikisan's Platform",
@@ -68,41 +69,47 @@ export default function PrivacyPolicy() {
 
       <section>
         <h2>4. How we protect it</h2>
-        <p>
-          Data is stored on <strong>Supabase</strong> (PostgreSQL, auth,
-          storage) under our processor agreement. We use HTTPS/TLS, hashed
-          passwords, per-user row-level security, strict CORS, per-IP rate
-          limiting, and secure, httpOnly session cookies in production.
-        </p>
+        <LegalBlurGate>
+          <p>
+            Data is stored on <strong>Supabase</strong> (PostgreSQL, auth,
+            storage) under our processor agreement. We use HTTPS/TLS, hashed
+            passwords, per-user row-level security, strict CORS, per-IP rate
+            limiting, and secure, httpOnly session cookies in production.
+          </p>
+        </LegalBlurGate>
       </section>
 
       <section>
         <h2>5. Who we share it with (processors)</h2>
-        <p>We do <strong>not sell</strong> personal data. We use these service providers:</p>
-        <table>
-          <thead>
-            <tr><th>Provider</th><th>Handles</th><th>Role</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Supabase</td><td>Accounts, learning data, uploads, password emails</td><td>Processor / host</td></tr>
-            <tr><td>Vercel</td><td>Front-end hosting</td><td>Host</td></tr>
-            <tr><td>Render</td><td>Back-end API hosting</td><td>Host</td></tr>
-            <tr><td>AI provider (Veer)</td><td>AI prompt/response processing</td><td>Third-party AI</td></tr>
-          </tbody>
-        </table>
-        <p>
-          Data may be processed in <strong>Nepal</strong> and{" "}
-          <strong>India/US</strong> data centers.
-        </p>
+        <LegalBlurGate>
+          <p>We do <strong>not sell</strong> personal data. We use these service providers:</p>
+          <table>
+            <thead>
+              <tr><th>Provider</th><th>Handles</th><th>Role</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Supabase</td><td>Accounts, learning data, uploads, password emails</td><td>Processor / host</td></tr>
+              <tr><td>Vercel</td><td>Front-end hosting</td><td>Host</td></tr>
+              <tr><td>Render</td><td>Back-end API hosting</td><td>Host</td></tr>
+              <tr><td>AI provider (Veer)</td><td>AI prompt/response processing</td><td>Third-party AI</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Data may be processed in <strong>Nepal</strong> and{" "}
+            <strong>India/US</strong> data centers.
+          </p>
+        </LegalBlurGate>
       </section>
 
       <section>
         <h2>6. Cookies</h2>
-        <p>
-          Two <code>httpOnly</code> session cookies (<code>sb-access-token</code>,{" "}
-          <code>sb-refresh-token</code>) keep you signed in. No advertising or
-          analytics cookies. See the <Link className="font-medium" href="/legal/cookies">Cookie Policy</Link>.
-        </p>
+        <LegalBlurGate>
+          <p>
+            Two <code>httpOnly</code> session cookies (<code>sb-access-token</code>,{" "}
+            <code>sb-refresh-token</code>) keep you signed in. No advertising or
+            analytics cookies. See the <Link className="font-medium" href="/legal/cookies">Cookie Policy</Link>.
+          </p>
+        </LegalBlurGate>
       </section>
 
       <section>
@@ -143,9 +150,13 @@ export default function PrivacyPolicy() {
         <h2>11. Changes &amp; contact</h2>
         <p>
           Changes are posted with a new “Last updated” date. Email:{" "}
-          <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a> ·
-          Address: <code>Kalaiya-25, Bara, Madhesh Province, Nepal</code>
+          <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a>
         </p>
+        <LegalBlurGate compact>
+          <p>
+            Address: <code>Kalaiya-25, Bara, Madhesh Province, Nepal</code>
+          </p>
+        </LegalBlurGate>
       </section>
     </LegalDoc>
   );

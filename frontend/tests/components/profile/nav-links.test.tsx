@@ -125,12 +125,20 @@ describe("SidebarNavigation", () => {
 // ─── Mobile nav ─────────────────────────────────────────────────────────────
 
 describe("MobileNav", () => {
-  it("every My Profile entry (section + footer) opens /profile", () => {
+  it("every My Profile entry (section + footer) opens /profile", async () => {
     render(<MobileNav />);
 
     // Slide-in panel is closed initially — open it.
     fireEvent.click(screen.getByRole("button", { name: /open navigation/i }));
 
+    // The drawer renders through a portal and its session-driven entries settle
+    // asynchronously — wait for BOTH profile links so this is deterministic
+    // (it flaked under parallel jsdom load). The >= 2 assertion is unchanged.
+    await waitFor(() => {
+      expect(
+        screen.getAllByRole("link", { name: /my profile/i }).length,
+      ).toBeGreaterThanOrEqual(2); // section + footer
+    });
     const profileLinks = screen.getAllByRole("link", { name: /my profile/i });
     expect(profileLinks.length).toBeGreaterThanOrEqual(2); // section + footer
     for (const link of profileLinks) {

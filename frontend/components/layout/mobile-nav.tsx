@@ -10,7 +10,8 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
-import { NAV_SECTIONS } from "@/lib/navigation";
+import { NAV_SECTIONS, navMinLevel } from "@/lib/navigation";
+import { hasLevel } from "@/lib/access-level";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
@@ -85,6 +86,9 @@ export function MobileNav() {
         // Owner-only entries (AI chat) never reach non-owners, even by search.
         (item.ownerOnly ? isOwnerUser(user) : true) &&
         (item.r1Only ? hasR1 : true) &&
+        // Access ladder: each index unlocks at its rung (member → Student Desk;
+        // search now lives on the front quick-access bar, not the index).
+        hasLevel(user ?? null, navMinLevel(item, sec)) &&
         (searchQuery.trim() === ""
           ? true
           : item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -185,7 +189,16 @@ export function MobileNav() {
                 <ThemeToggle variant="inline" />
               </div>
 
-              {filteredSections.length === 0 && <p role="status" className="px-3 py-4 text-sm text-muted-foreground">No destinations match “{searchQuery}”. Try a subject or tool name.</p>}
+              {/* Empty SEARCH results only. With no active filter this is just
+                  the signed-out/limited view (a visitor reaches none of the
+                  content indexes by design — see lib/navigation.ts), not a
+                  "no matches" state, so the message must clear the moment the
+                  filter does. */}
+              {filteredSections.length === 0 && searchQuery.trim() !== "" && (
+                <p role="status" className="px-3 py-4 text-sm text-muted-foreground">
+                  No destinations match “{searchQuery}”. Try a subject or tool name.
+                </p>
+              )}
               {filteredSections.map((sec) => (
                 <div key={sec.id} className="space-y-1">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80 px-2.5 py-1">

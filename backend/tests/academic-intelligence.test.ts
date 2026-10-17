@@ -85,7 +85,7 @@ describe("master academic prompt composition", () => {
 
   test("keeps the tutor's identity and house style intact", () => {
     expect(PROMPT).toContain("you are veer");
-    expect(PROMPT).toContain("👋, i'm veer — feel free to clear your doubts.");
+    expect(PROMPT).toContain("👋, feel free to clear your thoughts.");
     expect(PROMPT).toContain("explore further:");
     expect(PROMPT).toContain("in short:");
     expect(PROMPT).toContain("never call yourself any other name or title");
@@ -97,7 +97,7 @@ describe("master academic prompt composition", () => {
     // The owner's own words, kept as ONE unbroken sentence — asserted on the
     // whitespace-collapsed haystack so a line wrap can never break it silently.
     const line =
-      "i am veer ai, trained and created by ravikisan. he is an undergraduate student who started this platform from the beginning of class 11, along with his studies.";
+      "i'm veer ai, trained by ravikisan. ravikisan — the founder and owner of this platform. he started this journey with his studies in grade 11 and built it in around 3 months with his own work — no extra member — a solo journey.";
     expect(PROMPT).toContain(line);
     expect(PROMPT).toContain("identity — who you are and who made you");
 

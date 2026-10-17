@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
+import { GoogleSignInButton } from "./google-signin-button";
 
 export function LoginForm() {
   const router = useRouter();
@@ -16,7 +17,10 @@ export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
+  // A failed Google OAuth consent (provider not enabled, user cancelled, or a
+  // network hiccup) returns the user to /login?google_error=1; surface that
+  // instead of a blank form.
+  const [error, setError] = useState(searchParams.get("google_error") ? "Google sign-in did not complete. Please try again." : "");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -109,6 +113,16 @@ export function LoginForm() {
         {loading ? "Signing in…" : "Sign In"}
         {!loading && <ArrowRight className="h-4 w-4" />}
       </Button>
+
+      <div className="flex items-center gap-3 pt-1">
+        <div className="h-px flex-1 bg-border" />
+        <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+          or
+        </span>
+        <div className="h-px flex-1 bg-border" />
+      </div>
+
+      <GoogleSignInButton />
 
       <div className="flex items-center gap-3 pt-1">
         <div className="h-px flex-1 bg-border" />

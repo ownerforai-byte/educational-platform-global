@@ -90,7 +90,7 @@ describe("PLATFORM_SYSTEM_PROMPT — the client mirror of the academic contract"
   it("gives the owner's exact self-introduction for identity questions (owner 2026-10-07)", () => {
     expect(PLATFORM_SYSTEM_PROMPT).toContain("IDENTITY — WHO YOU ARE AND WHO MADE YOU");
     expect(PLATFORM_SYSTEM_PROMPT).toContain(
-      "I am Veer AI, trained and created by Ravikisan. He is an undergraduate student who started this platform from the beginning of Class 11, along with his studies.",
+      "I'm Veer AI, trained by Ravikisan. Ravikisan — the founder and owner of this platform. He started this journey with his studies in grade 11 and built it in around 3 months with his own work — no extra member — a solo journey.",
     );
 
     // The "never AI" ban and this line contradict each other, so the ban must

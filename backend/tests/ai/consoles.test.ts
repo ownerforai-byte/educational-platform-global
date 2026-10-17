@@ -46,6 +46,11 @@ describe("NEPALI_CONSOLE_RULES — pure Nepali law", () => {
     expect(t).toContain("absolute language law");
     // The law must beat the generic mirror-the-student rules.
     expect(t).toContain("this law wins");
+    // The console understands English but still replies only in Nepali.
+    expect(t).toContain("you understand english");
+    expect(t).toContain("but you respond only in");
+    // Non-general terms get an English gloss in brackets.
+    expect(t).toContain("english gloss for non-general words");
     // Reply is Nepali whatever the question's language.
     expect(t).toContain("whatever language the question arrives in");
   });

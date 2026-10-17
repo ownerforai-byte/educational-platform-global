@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalDoc } from "../legal-doc";
+import { LegalBlurGate } from "../legal-blur-gate";
 
 export const metadata: Metadata = {
   title: "Cookie Policy — Ravikisan's Platform",
@@ -17,30 +18,32 @@ export default function CookiePolicy() {
     >
       <section>
         <h2>Cookies set</h2>
-        <table>
-          <thead>
-            <tr><th>Cookie</th><th>Purpose</th><th>Type</th><th>Lifetime</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>sb-access-token</code></td>
-              <td>Short-lived session (keeps you logged in)</td>
-              <td>Essential · httpOnly · Secure in production · SameSite=Lax</td>
-              <td>~1 hour, auto-refreshed</td>
-            </tr>
-            <tr>
-              <td><code>sb-refresh-token</code></td>
-              <td>Long-lived token to stay signed in</td>
-              <td>Essential · httpOnly · Secure · SameSite=Lax</td>
-              <td>30 days, rotated on refresh</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul>
-          <li>Both are <code>httpOnly</code> (not readable by page scripts).</li>
-          <li>In <strong>production</strong> both are flagged <code>Secure</code> (HTTPS only).</li>
-          <li><code>SameSite=Lax</code> limits cross-site sending (reduces CSRF risk).</li>
-        </ul>
+        <LegalBlurGate>
+          <table>
+            <thead>
+              <tr><th>Cookie</th><th>Purpose</th><th>Type</th><th>Lifetime</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>sb-access-token</code></td>
+                <td>Short-lived session (keeps you logged in)</td>
+                <td>Essential · httpOnly · Secure in production · SameSite=Lax</td>
+                <td>~1 hour, auto-refreshed</td>
+              </tr>
+              <tr>
+                <td><code>sb-refresh-token</code></td>
+                <td>Long-lived token to stay signed in</td>
+                <td>Essential · httpOnly · Secure · SameSite=Lax</td>
+                <td>30 days, rotated on refresh</td>
+              </tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>Both are <code>httpOnly</code> (not readable by page scripts).</li>
+            <li>In <strong>production</strong> both are flagged <code>Secure</code> (HTTPS only).</li>
+            <li><code>SameSite=Lax</code> limits cross-site sending (reduces CSRF risk).</li>
+          </ul>
+        </LegalBlurGate>
       </section>
 
       <section>
@@ -68,11 +71,13 @@ export default function CookiePolicy() {
 
       <section>
         <h2>Protection &amp; changes</h2>
-        <p>
-          Sessions are protected in transit (HTTPS) and at rest (Supabase). We
-          never read or log full passwords. We may update this policy; changes
-          are marked with a new date.
-        </p>
+        <LegalBlurGate>
+          <p>
+            Sessions are protected in transit (HTTPS) and at rest (Supabase). We
+            never read or log full passwords. We may update this policy; changes
+            are marked with a new date.
+          </p>
+        </LegalBlurGate>
       </section>
     </LegalDoc>
   );

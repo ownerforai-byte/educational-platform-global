@@ -13,10 +13,16 @@ const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
 /**
  * AI access policy (owner 2026-10-13: "restrict the ai spark to 1 for public,
  * 7 for member and unlimited for owner" + "create for plus and pro member
- * also like 25 and 50"). Veer chat is OPEN to every tier and metered per
- * tier by AI sparks. This REPLACES the 2026-10-05 owner-only gate (and its
- * old source pins in ai-owner-gate.test.ts) — the owner chose the open,
- * tier-metered policy on 2026-10-13.
+ * also like 25 and 50"). Veer chat is metered per tier by AI sparks. This
+ * REPLACES the 2026-10-05 owner-only gate (and its old source pins in
+ * ai-owner-gate.test.ts) — the owner chose the open, tier-metered policy on
+ * 2026-10-13.
+ *
+ * 2026-10-17: the floating Veer LAUNCHER is now locked under the spark gate —
+ * "lock ai widget under spark gate also". Pro + owner pass and open /chat;
+ * visitor / member / plus meet a lock that routes to /pro-plan. The /ai and
+ * /chat ROUTES stay public (AI-spark metered), so the gate is on the launcher
+ * surface, not an owner allowlist.
  */
 describe("AI spark tier table", () => {
   it("allowances: guest 1 · member 7 · plus 25 · pro 50 · owner unlimited", () => {
@@ -67,7 +73,7 @@ describe("AI spark tier table", () => {
   });
 });
 
-describe("Veer chat surfaces are open to every tier", () => {
+describe("Veer chat: routes stay public (metered), launcher sits under the spark gate", () => {
   it("the /ai and /chat layouts no longer gate on owner emails", () => {
     for (const p of ["app/(app)/ai/layout.tsx", "app/(app)/chat/layout.tsx"]) {
       const src = read(p);
@@ -76,9 +82,13 @@ describe("Veer chat surfaces are open to every tier", () => {
     }
   });
 
-  it("the floating Veer launcher is not owner-only any more", () => {
+  it("the floating Veer launcher is locked under the spark gate (Pro + owner)", () => {
     const src = read("components/layout/ai-widget.tsx");
+    // Gate is the ACCESS LADDER (Pro + owner pass), never the owner allowlist.
     expect(src).not.toContain("isOwnerUser");
+    expect(src).toContain("hasLevel");
+    // Below Pro the launcher locks and routes to the plan page.
+    expect(src).toContain("/pro-plan");
   });
 
   it("no Veer nav entry carries ownerOnly", () => {
