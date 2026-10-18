@@ -187,6 +187,11 @@ function cmdDone() {
     die(`merge failed — aborted, sandbox kept:\n${String(e.message).split("\n").slice(0, 8).join("\n")}`);
   }
   unlinkNodeModules(wt);
+  // The gate may regenerate tracked reports (an audit timestamp) or drop
+  // untracked artifacts. The tree was clean when the gate started and the
+  // merge is already done, so discard that generated noise before removal.
+  git("checkout -- .", { cwd: wt });
+  git("clean -fd", { cwd: wt });
   try {
     git(`worktree remove "${wt}"`, { cwd: ROOT });
     git(`branch -d ${br}`, { cwd: ROOT }); // -d only deletes a MERGED branch
@@ -201,7 +206,7 @@ function cmdAbandon() {
   const br = branchOf(name);
   let ahead = 0;
   try {
-    ahead = Number(git(`rev-list --count ${br} ^HEAD`, { cwd: ROOT })) || 0;
+    ahead = Number(git(`rev-list --count HEAD..${br}`, { cwd: ROOT })) || 0;
   } catch {
     ahead = 0;
   }
@@ -227,7 +232,7 @@ function cmdList() {
     const dirty = git("status --porcelain", { cwd: wt }).split("\n").filter(Boolean).length;
     let ahead = 0;
     try {
-      ahead = Number(git(`rev-list --count ${branchOf(n)} ^HEAD`, { cwd: ROOT })) || 0;
+      ahead = Number(git(`rev-list --count HEAD..${branchOf(n)}`, { cwd: ROOT })) || 0;
     } catch {
       ahead = 0;
     }
