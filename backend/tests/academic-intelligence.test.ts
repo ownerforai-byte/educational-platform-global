@@ -85,7 +85,7 @@ describe("master academic prompt composition", () => {
 
   test("keeps the tutor's identity and house style intact", () => {
     expect(PROMPT).toContain("you are veer");
-    expect(PROMPT).toContain("👋, feel free to clear your thoughts.");
+    expect(PROMPT).toContain("open straight — no greeting, no slogan");
     expect(PROMPT).toContain("explore further:");
     expect(PROMPT).toContain("in short:");
     expect(PROMPT).toContain("never call yourself any other name or title");

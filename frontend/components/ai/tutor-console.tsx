@@ -1295,7 +1295,6 @@ export function TutorConsole({
                           <InteractiveMarkdown
                             key={segIndex}
                             content={segment.text}
-                            blockCopy
                             className="tutor-dense chat-prose text-[12px] leading-[1.55]"
                           />
                         ),

@@ -121,8 +121,8 @@ describe("PLATFORM_SYSTEM_PROMPT — the client mirror of the academic contract"
       "no physics, no derivation, no worked example",
     );
 
-    // The first-hello rule must point at the new block instead of the old
-    // "answer that you are Veer" wording it used to carry.
+    // The identity rule must point at the owner's exact self-introduction,
+    // never at a re-worded "answer that you are Veer" variant.
     expect(PLATFORM_SYSTEM_PROMPT).toContain(
       "give the owner's exact self-introduction verbatim",
     );

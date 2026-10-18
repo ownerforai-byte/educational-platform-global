@@ -52,11 +52,6 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   const isLoggedIn = !!user;
   const [messages, setMessages] = useState<AIChatMessage[]>([
     { role: "system", content: PLATFORM_SYSTEM_PROMPT },
-    {
-      role: "assistant",
-      content:
-        "👋, feel free to clear your thoughts.",
-    },
   ]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
@@ -100,7 +95,8 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   }, [isLoggedIn]);
 
   const visibleMessages = messages.filter((m) => m.role !== "system");
-  const hasStarted = visibleMessages.length > 1;
+  // The empty-state hero + suggestions show until the student sends a message.
+  const hasStarted = visibleMessages.length > 0;
 
   const sendMessage = async (textOverride?: string) => {
     const text = (textOverride ?? input).trim();
@@ -207,14 +203,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   };
 
   const clearChat = () => {
-    setMessages([
-      { role: "system", content: PLATFORM_SYSTEM_PROMPT },
-      {
-        role: "assistant",
-        content:
-          "👋, feel free to clear your thoughts.",
-      },
-    ]);
+    setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
     setRestoredCount(null);
     if (isLoggedIn) clearChatHistory("default").catch(() => {});

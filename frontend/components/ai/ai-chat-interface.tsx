@@ -1118,7 +1118,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                           <InteractiveMarkdown
                             key={segIndex}
                             content={segment.text}
-                            blockCopy
                             className="chat-prose"
                           />
                         ),

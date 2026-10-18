@@ -92,14 +92,12 @@ describe("the copy button in a rendered reply", () => {
 });
 
 /**
- * PER-BLOCK COPY (owner request 2026-10-12): "make the reply of ai also in
- * block, like i can copy a particular block with one click". With `blockCopy`
- * on (the AI reply surfaces), every top-level block of a reply carries its own
- * button, each lifting exactly that block — formulas keep their $…$ LaTeX and
- * tables come out as pipe rows — while :::copy boxes keep their single
- * source-copy button and figures stay buttonless.
+ * Copy controls stay minimal on purpose: a reply's only per-chunk control is
+ * the :::copy box's own button (the whole-reply action row lives outside this
+ * component). No copy button ever lands on ordinary prose — so a reply carries
+ * at most one visible Copy per marked chunk, and never two competing controls.
  */
-describe("per-block one-click copy on AI replies", () => {
+describe("minimal copy controls on AI replies", () => {
   const writeText = vi.fn().mockResolvedValue(undefined);
 
   beforeEach(() => {
@@ -111,57 +109,19 @@ describe("per-block one-click copy on AI replies", () => {
     });
   });
 
-  it("gives every top-level block its own copy button, and each copies only its block", () => {
+  it("keeps exactly one button on a :::copy box and none on surrounding prose", () => {
     render(
       <InteractiveMarkdown
-        blockCopy
-        content={"First paragraph here.\n\nSecond paragraph here."}
-      />,
-    );
-    const buttons = screen.getAllByRole("button", { name: "Copy this block" });
-    expect(buttons).toHaveLength(2);
-
-    fireEvent.click(buttons[1]);
-    expect(writeText).toHaveBeenCalledTimes(1);
-    expect(writeText).toHaveBeenCalledWith("Second paragraph here.");
-  });
-
-  it("copies formulas as LaTeX and lists with real line breaks", () => {
-    render(
-      <InteractiveMarkdown
-        blockCopy
-        content={"Force is $F = ma$.\n\n- first item\n- second item"}
-      />,
-    );
-    const buttons = screen.getAllByRole("button", { name: "Copy this block" });
-    fireEvent.click(buttons[0]);
-    expect(writeText).toHaveBeenNthCalledWith(1, "Force is $F = ma$.");
-
-    fireEvent.click(buttons[1]);
-    expect(writeText).toHaveBeenNthCalledWith(2, "first item\nsecond item");
-  });
-
-  it("keeps exactly one button on a :::copy box and none on figures", () => {
-    render(
-      <InteractiveMarkdown
-        blockCopy
         content={
           ":::copy Final Answer\nThe answer is $x = 42$.\n:::\n\nA plain paragraph after."
         }
       />,
     );
     const buttons = screen.getAllByRole("button", { name: "Copy this block" });
-    // One for the :::copy box (markdown source) + one for the trailing paragraph.
-    expect(buttons).toHaveLength(2);
+    // One for the :::copy box (markdown source); the plain paragraph has none.
+    expect(buttons).toHaveLength(1);
 
     fireEvent.click(buttons[0]);
     expect(writeText).toHaveBeenNthCalledWith(1, "The answer is $x = 42$.");
-    fireEvent.click(buttons[1]);
-    expect(writeText).toHaveBeenNthCalledWith(2, "A plain paragraph after.");
-  });
-
-  it("adds no block buttons without the blockCopy opt-in (figure surfaces stay clean)", () => {
-    render(<InteractiveMarkdown content={"A note in a figure pipeline."} />);
-    expect(screen.queryByRole("button")).toBeNull();
   });
 });

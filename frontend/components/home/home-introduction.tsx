@@ -70,7 +70,7 @@ export async function HomeIntroduction() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Welcome — start here</span>
+            <span>Start here</span>
           </div>
 
           <h2 className="mt-4 text-2xl sm:text-4xl font-black tracking-tight text-foreground leading-tight">
@@ -81,7 +81,7 @@ export async function HomeIntroduction() {
           </h2>
 
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-            👋 Welcome aboard. This is a free study vault built for Nepali students
+            A free study vault built for Nepali students
             everywhere: Class 11 &amp; 12 notes, interactive 3D science labs, theorem
             proofs, derivations, exam countdowns, and Veer with a live internet
             connection — all in one place, all curriculum-aligned. No paywalls on the
