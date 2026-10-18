@@ -247,10 +247,6 @@ export function HomeCommandCenter({
                   <span>Grade 11 Master Hub</span>
                 </Link>
                 {[
-                  { label: "Class 11 Physics", href: "/class-11-notes/physics" },
-                  { label: "Class 11 Chemistry", href: "/class-11-notes/chemistry" },
-                  { label: "Class 11 Biology", href: "/class-11-notes/biology" },
-                  { label: "Class 11 Mathematics", href: "/class-11-notes/mathematics" },
                   { label: "Class 11 Derivations", href: "/derivations/class-11-notes" },
                   { label: "Class 11 Proofs", href: "/theorems/class-11-notes" },
                 ].map((item) => (
@@ -275,10 +271,6 @@ export function HomeCommandCenter({
                   <span>Grade 12 Master Hub</span>
                 </Link>
                 {[
-                  { label: "Class 12 Physics", href: "/class-12-notes/physics" },
-                  { label: "Class 12 Chemistry", href: "/class-12-notes/chemistry" },
-                  { label: "Class 12 Biology", href: "/class-12-notes/biology" },
-                  { label: "Class 12 Mathematics", href: "/class-12-notes/mathematics" },
                   { label: "Class 12 Derivations", href: "/derivations/class-12-notes" },
                   { label: "Class 12 Proofs", href: "/theorems/class-12-notes" },
                 ].map((item) => (
@@ -361,13 +353,6 @@ export function HomeCommandCenter({
                 >
                   <FlaskConical className="h-3.5 w-3.5" />
                   <span>Numerical Chemistry Calculations</span>
-                </Link>
-                <Link
-                  href="/ai-quiz"
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3.5 py-2 text-xs font-semibold text-foreground/80 hover:border-primary/40 hover:text-primary transition-all shadow-sm"
-                >
-                  <Target className="h-3.5 w-3.5 text-primary" />
-                  <span>Veer Timed Entrance Quizzes</span>
                 </Link>
               </>
             )}

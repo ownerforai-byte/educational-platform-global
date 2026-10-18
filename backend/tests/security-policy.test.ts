@@ -34,10 +34,8 @@ function credentialRoutes(app: express.Express) {
   app.use(rateLimit);
   app.post("/api/auth/login", (_req, res) => res.json({ ok: true }));
   app.post("/api/auth/signup", (_req, res) => res.json({ ok: true }));
-  app.get("/api/auth/google", (_req, res) => res.json({ ok: true }));
-  app.get("/api/auth/facebook", (_req, res) => res.json({ ok: true }));
-  app.get("/api/auth/callback/google", (_req, res) => res.json({ ok: true }));
-  app.get("/api/auth/callback/facebook", (_req, res) => res.json({ ok: true }));
+  app.post("/api/auth/oauth/csrf", (_req, res) => res.json({ ok: true }));
+  app.post("/api/auth/oauth/session", (_req, res) => res.json({ ok: true }));
   app.post("/api/auth/reset-password", (_req, res) => res.json({ ok: true }));
   app.post("/api/ai", (_req, res) => res.json({ ok: true }));
   app.get("/api/levels", (_req, res) => res.json({ ok: true }));
@@ -116,12 +114,14 @@ describe("rate limit tiers", () => {
     expect((await fetch(`${baseUrl}/api/levels`)).status).toBe(200);
   });
 
-  test("server-side OAuth starts and callbacks share the strict auth limit", async () => {
+  test("Facebook OAuth endpoints share the strict authentication rate limit", async () => {
     const { baseUrl } = await mountApp(credentialRoutes);
-    for (const endpoint of ["/api/auth/google", "/api/auth/facebook", "/api/auth/callback/google", "/api/auth/callback/facebook"]) {
+    const endpoints = ["/api/auth/oauth/csrf", "/api/auth/oauth/session"];
+    for (const endpoint of endpoints) {
       const statuses: number[] = [];
       for (let i = 0; i < 6; i += 1) {
-        statuses.push((await fetch(`${baseUrl}${endpoint}`)).status);
+        const response = await fetch(`${baseUrl}${endpoint}`, { method: "POST" });
+        statuses.push(response.status);
       }
       expect(statuses.slice(0, 5)).toEqual([200, 200, 200, 200, 200]);
       expect(statuses[5]).toBe(429);

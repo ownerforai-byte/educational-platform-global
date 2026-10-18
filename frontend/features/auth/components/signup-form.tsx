@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
-import { GoogleSignInButton, FacebookSignInButton } from "./google-signin-button";
+import { SocialAuthButtons } from "./social-auth-buttons";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
 
@@ -147,20 +147,17 @@ export function SignupForm() {
         {!loading && <ArrowRight className="h-4 w-4" />}
       </Button>
 
-      <div className="flex items-center gap-3 pt-1">
-        <div className="h-px flex-1 bg-border" />
+      <div className="flex items-center gap-3 py-1">
+        <div className="h-px flex-1 bg-border/80" />
         <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-          or
+          or sign up with
         </span>
-        <div className="h-px flex-1 bg-border" />
+        <div className="h-px flex-1 bg-border/80" />
       </div>
 
-      <div className="space-y-3">
-        <GoogleSignInButton />
-        <FacebookSignInButton />
-      </div>
+      <SocialAuthButtons mode="signup" disabled={loading} onError={setError} />
 
-      <p className="text-center text-sm text-muted-foreground">
+      <p className="pt-2 text-center text-sm text-muted-foreground">
         Already have an account?{" "}
         <Link href="/login" className="font-semibold text-primary hover:underline">
           Sign in

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { NextRequest } from "next/server";
-import { proxy } from "@/proxy";
+import { proxy, SUPABASE_ORIGIN } from "@/proxy";
 
 function headersFor(path: string) {
   return proxy(new NextRequest(`https://ravikisan.vercel.app${path}`)).headers;
@@ -15,12 +15,12 @@ describe("proxy security headers", () => {
     expect(csp).not.toContain("frame-src 'none'");
     expect(csp).toContain("frame-src 'self'");
 
-    // The origins the app actually embeds.
+    // The origins the app actually embeds. Supabase origin is env-driven so
+    // the CSP can never silently point at a stale project.
     expect(csp).toContain("https://drive.google.com");
     expect(csp).toContain("https://www.youtube.com");
     expect(csp).toContain("https://player.vimeo.com");
-    expect(csp).toContain("https://tsvbksfegvdjwczzfdcx.supabase.co");
-    expect(csp).toContain("https://lqzjcwbkpeiqslqhxxmu.supabase.co");
+    expect(csp).toContain(SUPABASE_ORIGIN);
   });
 
   it("keeps clickjacking protection: same-origin framing only", () => {

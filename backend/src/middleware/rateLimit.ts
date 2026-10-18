@@ -69,10 +69,8 @@ function tierFor(originalUrl: string | undefined): Tier {
     url.startsWith("/api/auth/login") ||
     url.startsWith("/api/auth/refresh") ||
     url.startsWith("/api/auth/signup") ||
-    url.startsWith("/api/auth/google") ||
-    url.startsWith("/api/auth/facebook") ||
-    url.startsWith("/api/auth/callback/google") ||
-    url.startsWith("/api/auth/callback/facebook")
+    url.startsWith("/api/auth/oauth/csrf") ||
+    url.startsWith("/api/auth/oauth/session")
   ) {
     return "auth";
   }
@@ -81,9 +79,8 @@ function tierFor(originalUrl: string | undefined): Tier {
   // provider gateway. Use originalUrl (not req.path) so the check works both
   // at the app level and when this middleware is reused inside a router.
   if (url.startsWith("/api/ai/guest")) return "guest-ai";
-  // Image drawing is public to every student but costs a real generation per
-  // call — matched on the exact path so the cheap image-history CRUD below it
-  // is not charged against the drawing budget. The Google image search joins
+  // Matched on the exact path so the cheap image-history CRUD below it is
+  // not charged against the drawing budget. The Google image search joins
   // this tier: it burns the free CSE quota (100/day) instead of a generation.
   const pathOnly = (url.split("?")[0] ?? "").replace(/\/+$/, "");
   if (
@@ -112,6 +109,12 @@ const TIERS: Record<Tier, TierLimit> = {
 };
 
 export function rateLimit(req: Request, res: Response, next: NextFunction) {
+  if (
+    req.originalUrl.startsWith("/api/auth/oauth/csrf") ||
+    req.originalUrl.startsWith("/api/auth/oauth/session")
+  ) {
+    res.setHeader("Cache-Control", "no-store");
+  }
   const tier = tierFor(req.originalUrl);
   const limit = TIERS[tier] ?? TIERS.default;
 

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
-import { GoogleSignInButton, FacebookSignInButton } from "./google-signin-button";
+import { SocialAuthButtons } from "./social-auth-buttons";
 
 export function LoginForm() {
   const router = useRouter();
@@ -17,16 +17,7 @@ export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  // A failed social OAuth consent (provider not enabled, user cancelled, or a
-  // network hiccup) returns the user to /login?<provider>_error=1; surface
-  // that instead of a blank form.
-  const [error, setError] = useState(() => {
-    const g = searchParams.get("google_error");
-    const f = searchParams.get("facebook_error");
-    if (f) return "Facebook sign-in did not complete. Please try again.";
-    if (g) return "Google sign-in did not complete. Please try again.";
-    return "";
-  });
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -58,7 +49,7 @@ export function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <label className="text-sm font-medium" htmlFor="email">Email</label>
         <div className="relative">
@@ -115,30 +106,31 @@ export function LoginForm() {
         </p>
       )}
 
-      <Button type="submit" className="h-11 w-full rounded-xl text-sm font-bold shadow-md shadow-primary/20" disabled={loading}>
+      <Button
+        type="submit"
+        className="h-11 w-full rounded-xl text-sm font-bold shadow-md shadow-primary/20"
+        disabled={loading}
+      >
         {loading ? "Signing in…" : "Sign In"}
         {!loading && <ArrowRight className="h-4 w-4" />}
       </Button>
 
-      <div className="flex items-center gap-3 pt-1">
-        <div className="h-px flex-1 bg-border" />
+      <div className="flex items-center gap-3 py-1">
+        <div className="h-px flex-1 bg-border/80" />
         <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-          or
+          or continue with
         </span>
-        <div className="h-px flex-1 bg-border" />
+        <div className="h-px flex-1 bg-border/80" />
       </div>
 
-      <div className="space-y-3">
-        <GoogleSignInButton />
-        <FacebookSignInButton />
-      </div>
+      <SocialAuthButtons mode="login" disabled={loading} onError={setError} />
 
-      <div className="flex items-center gap-3 pt-1">
-        <div className="h-px flex-1 bg-border" />
+      <div className="flex items-center gap-3 pt-2">
+        <div className="h-px flex-1 bg-border/80" />
         <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
           New here?
         </span>
-        <div className="h-px flex-1 bg-border" />
+        <div className="h-px flex-1 bg-border/80" />
       </div>
 
       <Link

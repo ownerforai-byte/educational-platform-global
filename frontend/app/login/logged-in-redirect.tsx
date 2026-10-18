@@ -14,7 +14,10 @@ export function LoggedInRedirect() {
 
   useEffect(() => {
     if (!isLoading && user) {
-      router.replace("/home");
+      const params = new URLSearchParams(window.location.search);
+      const next = params.get("next");
+      const target = next && next.startsWith("/") && !next.startsWith("//") ? next : "/home";
+      router.replace(target);
     }
   }, [isLoading, user, router]);
 

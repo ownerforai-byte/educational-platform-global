@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import express, { Express } from "express";
 import cookieParser from "cookie-parser";
 import { afterAll, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
@@ -11,6 +10,7 @@ vi.mock("../src/db/supabase", () => {
       getUser: vi.fn(),
       signOut: vi.fn(),
       refreshSession: vi.fn(),
+      resetPasswordForEmail: vi.fn(),
       admin: { updateUserById: vi.fn() },
     },
     from: vi.fn(),
@@ -45,6 +45,7 @@ import { createApp } from "../src/app";
 import { supabaseAdmin } from "../src/db/supabase";
 import { resetRateLimits } from "../src/middleware/rateLimit";
 import { requireAuth, requireRole, requireAdmin } from "../src/middleware/auth";
+import { verifyStatusToken } from "../src/utils/statusToken";
 
 const mocked = supabaseAdmin as unknown as {
   auth: {
@@ -53,51 +54,13 @@ const mocked = supabaseAdmin as unknown as {
     getUser: Mock;
     signOut: Mock;
     refreshSession: Mock;
+    resetPasswordForEmail: Mock;
     admin: { updateUserById: Mock };
   };
   from: Mock;
 };
 
 const VALID_TOKEN = "valid-access-token";
-
-function withSocialOAuthEnvironment(anonKey: string | null = "public-anon-test") {
-  const previous = {
-    SUPABASE_URL: process.env.SUPABASE_URL,
-    SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
-    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
-    FRONTEND_URL: process.env.FRONTEND_URL,
-  };
-  process.env.SUPABASE_URL = "https://oauth-project.example";
-  process.env.SUPABASE_SERVICE_ROLE_KEY = "service-role-test";
-  process.env.FRONTEND_URL = "http://frontend.test";
-  if (anonKey) process.env.SUPABASE_ANON_KEY = anonKey;
-  else delete process.env.SUPABASE_ANON_KEY;
-
-  return () => {
-    for (const [key, value] of Object.entries(previous)) {
-      if (value === undefined) delete process.env[key];
-      else process.env[key] = value;
-    }
-  };
-}
-
-function stubOAuthTokenExchange() {
-  const originalFetch = globalThis.fetch;
-  const requests: Array<{ url: string; init?: RequestInit }> = [];
-  vi.stubGlobal("fetch", async (input: RequestInfo | URL, init?: RequestInit) => {
-    const url = input instanceof Request ? input.url : String(input);
-    if (url.startsWith("https://oauth-project.example/")) {
-      requests.push({ url, init });
-      return new Response(JSON.stringify({
-        access_token: "oauth-access-test",
-        refresh_token: "oauth-refresh-test",
-        expires_in: 3600,
-      }), { status: 200, headers: { "Content-Type": "application/json" } });
-    }
-    return originalFetch(input, init);
-  });
-  return { requests, restore: () => vi.stubGlobal("fetch", originalFetch) };
-}
 
 function makeQueryChain(result: { data: unknown; error: unknown }) {
   const chain: Record<string, unknown> = {};
@@ -166,6 +129,10 @@ async function startServers() {
 beforeEach(() => {
   vi.clearAllMocks();
   mocked.auth.signOut.mockResolvedValue({ data: {}, error: null });
+  mocked.auth.getUser.mockResolvedValue({
+    data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" } } },
+    error: null,
+  });
   // The tiered limiter (strict 10/min on auth endpoints) must not leak hits
   // between tests — the suite makes many refresh/login calls per IP.
   resetRateLimits();
@@ -194,109 +161,203 @@ function setCookiesOf(res: Response): string[] {
 }
 
 describe("auth flow", () => {
-  test("server-side OAuth start issues a verifier cookie and S256 challenge", async () => {
-    const restoreEnv = withSocialOAuthEnvironment();
-    try {
-      const res = await fetch(`${baseUrl}/api/auth/google`, { redirect: "manual" });
-      expect(res.status).toBe(302);
-      const authorizeUrl = new URL(res.headers.get("location")!);
-      expect(authorizeUrl.searchParams.get("provider")).toBe("google");
-      expect(authorizeUrl.searchParams.get("redirect_to")).toBe(
-        "http://frontend.test/api/auth/callback/google",
-      );
-      expect(authorizeUrl.searchParams.get("code_challenge_method")).toBe("S256");
-      const cookie = setCookiesOf(res).find((value) => value.startsWith("sb-pkce-verifier="));
-      expect(cookie?.toLowerCase()).toContain("httponly");
-      expect(cookie?.toLowerCase()).toContain("max-age=600");
-      const verifier = cookie?.match(/sb-pkce-verifier=([^;]+)/)?.[1];
-      expect(verifier).toBeTruthy();
-      const challenge = createHash("sha256").update(verifier!).digest("base64url");
-      expect(authorizeUrl.searchParams.get("code_challenge")).toBe(challenge);
-    } finally {
-      restoreEnv();
+  test("OAuth CSRF endpoint issues a short-lived, origin-checked state cookie", async () => {
+    const res = await fetch(`${baseUrl}/api/auth/oauth/csrf`, {
+      method: "POST",
+      headers: { Origin: "http://localhost:5173" },
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as { csrfToken: string };
+    expect(body.csrfToken).toMatch(/^[a-f0-9]{64}$/);
+    expect(res.headers.get("cache-control")).toBe("no-store");
+    const cookie = setCookiesOf(res).find((value) => value.startsWith("oauth-csrf-token="));
+    expect(cookie).toContain(`oauth-csrf-token=${body.csrfToken}`);
+    expect(cookie?.toLowerCase()).toContain("httponly");
+    expect(cookie?.toLowerCase()).toContain("samesite=lax");
+  });
+
+  test("OAuth CSRF endpoint rejects untrusted and missing origins", async () => {
+    for (const origin of [undefined, "https://attacker.example"]) {
+      const res = await fetch(`${baseUrl}/api/auth/oauth/csrf`, {
+        method: "POST",
+        headers: origin ? { Origin: origin } : {},
+      });
+      expect(res.status).toBe(403);
+      expect(res.headers.get("cache-control")).toBe("no-store");
+      expect(setCookiesOf(res).some((cookie) => cookie.startsWith("oauth-csrf-token="))).toBe(false);
     }
   });
 
-  test("PKCE callback uses the public key and accepts its explicitly linked provider", async () => {
-    const restoreEnv = withSocialOAuthEnvironment();
-    const exchange = stubOAuthTokenExchange();
+  test("OAuth session rejects missing CSRF and invalid Supabase tokens", async () => {
+    const missingCsrf = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: { Origin: "http://localhost:5173", "Content-Type": "application/json" },
+      body: JSON.stringify({ accessToken: "token", refreshToken: "refresh", state: "a".repeat(64) }),
+    });
+    expect(missingCsrf.status).toBe(403);
+    expect(missingCsrf.headers.get("cache-control")).toBe("no-store");
+
+    const state = "b".repeat(64);
+    mocked.auth.getUser.mockResolvedValueOnce({ data: {}, error: { message: "Invalid token" } });
+    const invalidToken = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: "token", refreshToken: "refresh", state }),
+    });
+    expect(invalidToken.status).toBe(401);
+    expect(invalidToken.headers.get("cache-control")).toBe("no-store");
+  });
+
+  test("OAuth session validates the user, enforces owner approval and sets app cookies", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: {
-        id: "oauth-linked-user",
-        email: "linked@example.com",
-        app_metadata: { provider: "email", providers: ["email", "google"] },
-      } },
+      data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" }, app_metadata: { provider: "facebook" } } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 4, credits_limit: 100 });
-    try {
-      const res = await fetch(`${baseUrl}/api/auth/callback/google?code=one-time-code`, {
-        headers: { Cookie: "sb-pkce-verifier=verifier-test" },
-        redirect: "manual",
-      });
-      expect(res.status).toBe(302);
-      expect(res.headers.get("location")).toBe("http://frontend.test/home");
-      expect(exchange.requests).toHaveLength(1);
-      expect(exchange.requests[0].url).toBe(
-        "https://oauth-project.example/auth/v1/token?grant_type=pkce",
-      );
-      const requestBody = JSON.parse(String(exchange.requests[0].init?.body));
-      expect(requestBody).toEqual({ auth_code: "one-time-code", code_verifier: "verifier-test" });
-      const headers = exchange.requests[0].init?.headers as Record<string, string>;
-      expect(headers.apikey).toBe("public-anon-test");
-      expect(headers.Authorization).toBe("Bearer public-anon-test");
-      expect(headers.Authorization).not.toContain("service-role-test");
-      expect(mocked.auth.getUser).toHaveBeenCalledWith("oauth-access-test");
-      const cookies = setCookiesOf(res);
-      expect(cookies.some((cookie) => cookie.startsWith("sb-access-token=oauth-access-test"))).toBe(true);
-      expect(cookies.some((cookie) => cookie.startsWith("sb-refresh-token=oauth-refresh-test"))).toBe(true);
-    } finally {
-      exchange.restore();
-      restoreEnv();
-    }
+    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    const state = "c".repeat(64);
+
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.headers.get("cache-control")).toBe("no-store");
+    expect(await res.json()).toMatchObject({
+      user: { id: "oauth-user", email: "facebook@example.com", fullName: "Facebook Student" },
+      accessToken: VALID_TOKEN,
+    });
+    expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
+    const cookies = setCookiesOf(res);
+    expect(cookies.some((cookie) => cookie.startsWith(`sb-access-token=${VALID_TOKEN}`))).toBe(true);
+    expect(cookies.some((cookie) => cookie.startsWith("sb-refresh-token=valid-refresh"))).toBe(true);
+    expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
   });
 
-  test("OAuth callback rejects identities authenticated by a different provider", async () => {
-    const restoreEnv = withSocialOAuthEnvironment();
-    const exchange = stubOAuthTokenExchange();
+  test("OAuth session rejects providers outside the allowlist before issuing application cookies", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: {
-        id: "oauth-user",
-        email: "student@example.com",
-        app_metadata: { provider: "facebook", providers: ["facebook"] },
-      } },
+      data: { user: { id: "11111111-1111-4111-8111-111111111111", email: "student@example.com", app_metadata: { provider: "github" } } },
       error: null,
     });
-    try {
-      const res = await fetch(`${baseUrl}/api/auth/callback/google?code=one-time-code`, {
-        headers: { Cookie: "sb-pkce-verifier=verifier-test" },
-        redirect: "manual",
-      });
-      expect(res.status).toBe(302);
-      expect(res.headers.get("location")).toBe("http://frontend.test/login?google_error=1");
-      expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
-      expect(mocked.from).not.toHaveBeenCalled();
-    } finally {
-      exchange.restore();
-      restoreEnv();
-    }
+    const state = "e".repeat(64);
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
+    });
+    expect(res.status).toBe(401);
+    expect(res.headers.get("cache-control")).toBe("no-store");
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
   });
 
-  test("OAuth callback fails closed rather than falling back to the service-role key", async () => {
-    const restoreEnv = withSocialOAuthEnvironment(null);
-    const exchange = stubOAuthTokenExchange();
+  test("OAuth session accepts Google identities like Facebook ones", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" }, app_metadata: { provider: "google" } } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    const state = "f".repeat(64);
+
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+    });
+
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({
+      user: { id: "oauth-user", email: "google@example.com", fullName: "Google Student" },
+      accessToken: VALID_TOKEN,
+    });
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(true);
+  });
+
+  test("OAuth session accepts Google sign-ins linked to an existing email account", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: {
+        user: {
+          id: "oauth-user",
+          email: "ownerforai@example.com",
+          user_metadata: { full_name: "Linked Student" },
+          app_metadata: { provider: "email", providers: ["email", "google"] },
+          identities: [{ provider: "email" }, { provider: "google" }],
+        },
+      },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    const state = "9".repeat(64);
+
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+    });
+
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({
+      user: { id: "oauth-user", email: "ownerforai@example.com", fullName: "Linked Student" },
+      accessToken: VALID_TOKEN,
+    });
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(true);
+  });
+
+  test("OAuth session routes pending accounts to the approval screen without issuing cookies", async () => {
+    const userId = "11111111-1111-4111-8111-111111111111";
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: userId, email: "facebook@example.com", app_metadata: { provider: "facebook" } } },
+      error: null,
+    });
+    mockProfiles({ access_status: "PENDING" });
+    const state = "d".repeat(64);
+    const originalKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    process.env.SUPABASE_SERVICE_ROLE_KEY = "test-status-signing-key";
     try {
-      const res = await fetch(`${baseUrl}/api/auth/callback/google?code=one-time-code`, {
-        headers: { Cookie: "sb-pkce-verifier=verifier-test" },
-        redirect: "manual",
+      const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+        method: "POST",
+        headers: {
+          Origin: "http://localhost:5173",
+          Cookie: `oauth-csrf-token=${state}`,
+          "X-CSRF-Token": state,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
       });
-      expect(res.status).toBe(302);
-      expect(res.headers.get("location")).toBe("http://frontend.test/login?google_error=1");
-      expect(exchange.requests).toHaveLength(0);
+      expect(res.status).toBe(403);
+      expect(res.headers.get("cache-control")).toBe("no-store");
+      const payload = await res.json();
+      expect(payload).toMatchObject({ code: "PENDING_APPROVAL", user: null, accessToken: null });
+      expect(verifyStatusToken(payload.statusToken)).toBe(userId);
       expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
     } finally {
-      exchange.restore();
-      restoreEnv();
+      if (originalKey === undefined) delete process.env.SUPABASE_SERVICE_ROLE_KEY;
+      else process.env.SUPABASE_SERVICE_ROLE_KEY = originalKey;
     }
   });
 

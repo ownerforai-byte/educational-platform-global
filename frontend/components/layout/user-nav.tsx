@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSession } from "@/features/auth/hooks/use-session";
 import {
   User,
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 
 export function UserNav() {
+  const pathname = usePathname();
   const { user, isLoading, logoutUser } = useSession();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -35,12 +37,16 @@ export function UserNav() {
   }
 
   if (!user) {
-    // Signed-in users never see auth links (they are redirected away from
-    // /login and /signup anyway) — show a single sign-in entry point only.
+    // Preserve current page as ?next= so students return right to their current note
+    const signInHref =
+      pathname && pathname !== "/login" && pathname !== "/signup" && !pathname.startsWith("/auth/")
+        ? `/login?next=${encodeURIComponent(pathname)}`
+        : "/login";
+
     return (
       <div className="flex items-center gap-1.5 shrink-0">
         <Link
-          href="/login"
+          href={signInHref}
           className="inline-flex items-center gap-1.5 px-3 h-8 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 shadow-sm transition-opacity whitespace-nowrap"
         >
           Sign in

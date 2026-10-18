@@ -157,3 +157,8 @@ android-twa/keystore.jks
 android-twa/*.jks
 android-twa/*.keystore
 android-twa/release/
+
+# Broad guard: anything under the TWA wrapper or local build tooling stays out
+# even if it does not match the named patterns above.
+android-twa/
+tools/

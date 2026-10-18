@@ -1,10 +1,11 @@
 import { Request, Response, Router } from "express";
+import { randomBytes, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import { isProductionEnv } from "../config/env";
 import { createAuthClient, supabaseAdmin } from "../db/supabase";
 import { ensureDailyCredits } from "../utils/credits";
-import { createStatusToken, verifyStatusToken } from "../utils/statusToken";
 import { isR1GrantedEmail } from "../utils/r1Grants";
+import { createStatusToken, verifyStatusToken } from "../utils/statusToken";
 import {
   signInWithPassword,
   signUp,
@@ -19,6 +20,7 @@ import {
   buildSessionUser,
   isOwnerEmail,
 } from "../middleware/auth";
+import { isOriginAllowed } from "../middleware/cors";
 import type { SessionUser } from "../auth/types";
 import type {
   LoginResponse,
@@ -52,6 +54,10 @@ function setSessionCookie(res: Response, token: string, expiresInSec?: number): 
 /** The refresh token lives 30 days so users stay signed in past the 1h access token. */
 const REFRESH_COOKIE = "sb-refresh-token";
 const REFRESH_COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 30;
+const OAUTH_CSRF_COOKIE = "oauth-csrf-token";
+
+/** Social providers the app accepts for OAuth sessions — mirrors the login-form buttons. */
+const ALLOWED_OAUTH_PROVIDERS = new Set(["facebook", "google"]);
 
 function setRefreshCookie(res: Response, token: string): void {
   res.cookie(REFRESH_COOKIE, token, {
@@ -65,37 +71,6 @@ function clearSessionCookie(res: Response): void {
   res.clearCookie(REFRESH_COOKIE, cookieOptions());
 }
 
-// ── PKCE helpers for server-initiated Google OAuth ──────────────────────────
-//
-// Google sign-in is started from the browser (a normal GET), so the PKCE
-// verifier cannot be kept in a session-scoped store. It is carried in a short,
-// httpOnly cookie (`sb-pkce-verifier`) that the /api/auth/callback/google route
-// reads to finish the code exchange. The challenge is sent to Supabase on the
-// way out; the verifier is kept on the server until the code comes back.
-
-import { createHash, randomBytes } from "node:crypto";
-
-const PKCE_COOKIE = "sb-pkce-verifier";
-const PKCE_TTL_MS = 10 * 60 * 1000; // the OAuth round-trip must finish within 10 min
-
-function base64url(input: Buffer): string {
-  return input.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-}
-
-function generatePkce(): { verifier: string; challenge: string } {
-  const verifier = base64url(randomBytes(64));
-  const challenge = base64url(createHash("sha256").update(verifier).digest());
-  return { verifier, challenge };
-}
-
-function setPkceCookie(res: Response, verifier: string): void {
-  res.cookie(PKCE_COOKIE, verifier, { ...cookieOptions(), maxAge: PKCE_TTL_MS });
-}
-
-function clearPkceCookie(res: Response): void {
-  res.clearCookie(PKCE_COOKIE, cookieOptions());
-}
-
 // ── Validation schemas ─────────────────────────────────────────────────────
 
 const loginSchema = z.object({
@@ -107,6 +82,12 @@ const signupSchema = z.object({
   fullName: z.string().trim().min(2).max(80).optional(),
   email: z.string().email(),
   password: z.string().min(8).max(72),
+});
+
+const oauthSessionSchema = z.object({
+  accessToken: z.string().min(1).max(8192),
+  refreshToken: z.string().min(1).max(8192),
+  state: z.string().regex(/^[a-f0-9]{64}$/),
 });
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -206,6 +187,106 @@ const router = Router();
  * 400 → invalid payload
  * 401 → bad credentials
  */
+router.post("/oauth/csrf", (req: Request, res: Response) => {
+  const origin = req.get("origin");
+  if (!origin || !isOriginAllowed(origin)) {
+    res.setHeader("Cache-Control", "no-store");
+    res.status(403).json({ error: "OAuth sign-in is not allowed from this origin" });
+    return;
+  }
+
+  const csrfToken = randomBytes(32).toString("hex");
+  res.cookie(OAUTH_CSRF_COOKIE, csrfToken, {
+    ...cookieOptions(),
+    maxAge: 10 * 60 * 1000,
+  });
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Vary", "Origin");
+  res.json({ csrfToken });
+});
+
+router.post("/oauth/session", async (req: Request, res: Response) => {
+  const parsed = oauthSessionSchema.safeParse(req.body);
+  res.setHeader("Cache-Control", "no-store");
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid OAuth session" });
+    return;
+  }
+  const origin = req.get("origin");
+  if (!origin || !isOriginAllowed(origin)) {
+    res.status(403).json({ error: "OAuth session exchange is not allowed from this origin" });
+    return;
+  }
+  const csrfToken = req.get("x-csrf-token");
+  const cookieToken = req.cookies?.[OAUTH_CSRF_COOKIE] as string | undefined;
+  const csrfMatches =
+    csrfToken &&
+    cookieToken &&
+    /^[a-f0-9]{64}$/.test(csrfToken) &&
+    /^[a-f0-9]{64}$/.test(cookieToken) &&
+    timingSafeEqual(Buffer.from(csrfToken, "hex"), Buffer.from(cookieToken, "hex"));
+  if (!csrfMatches || parsed.data.state !== csrfToken) {
+    res.status(403).json({ error: "OAuth session exchange could not be verified" });
+    return;
+  }
+  try {
+    const { data, error } = await supabaseAdmin.auth.getUser(parsed.data.accessToken);
+    if (error || !data.user || !data.user.email) {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      res.status(401).json({ error: "OAuth authentication could not be verified" });
+      return;
+    }
+    // A Google/Facebook sign-in that links to an existing email/password
+    // account keeps "email" as the primary provider, so the allowlist must
+    // also accept any linked identity (identities never includes the primary
+    // provider itself, hence the two-part check).
+    const provider = data.user.app_metadata?.provider as string | undefined;
+    const linkedProviders = (data.user.identities ?? [])
+      .map((identity) => identity?.provider)
+      .filter((p): p is string => typeof p === "string");
+    const hasAllowedProvider =
+      (provider !== undefined && ALLOWED_OAUTH_PROVIDERS.has(provider)) ||
+      linkedProviders.some((p) => ALLOWED_OAUTH_PROVIDERS.has(p));
+    if (parsed.data.state !== csrfToken || !hasAllowedProvider) {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      res.status(401).json({ error: "OAuth authentication could not be verified" });
+      return;
+    }
+
+    const accessStatus = await readAccessStatus(data.user.id);
+    if (accessStatus !== "ACTIVE") {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      const pending = accessStatus === "PENDING";
+      const statusToken = pending ? createStatusToken(data.user.id) : undefined;
+      res.status(403).json({
+        error: pending ? "Account pending approval" : "Account not approved",
+        code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
+        message: pending
+          ? "Your account was created and is awaiting approval."
+          : "This account was not approved. Please contact the platform owner.",
+        ...(statusToken ? { statusToken } : {}),
+        ...(pending ? { user: null, accessToken: null } : {}),
+      });
+      return;
+    }
+
+    const role = await loadProfileRole(data.user.id);
+    const user = await buildExtendedUser(
+      data.user.id,
+      data.user.email,
+      role,
+      (data.user.user_metadata?.full_name as string | undefined) ?? null,
+    );
+    setSessionCookie(res, parsed.data.accessToken);
+    setRefreshCookie(res, parsed.data.refreshToken);
+    res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+    res.json({ user, accessToken: parsed.data.accessToken });
+  } catch (err) {
+    console.error("[auth] OAuth session validation failed:", err);
+    res.status(500).json({ error: "Could not complete sign-in" });
+  }
+});
+
 router.post("/login", async (req: Request, res: Response) => {
   const parsed = loginSchema.safeParse(req.body);
   if (!parsed.success) {
@@ -459,195 +540,6 @@ router.get("/account-status", async (req: Request, res: Response) => {
     fullName: (profile.full_name as string | null) ?? null,
   });
 });
-
-// ── Social sign-in: Google + Facebook (owner request: "continue with Google") ─
-//
-// Server-driven Supabase OAuth so the frontend stays cookie-based and the
-// backend remains the single auth authority. Same browser flow for both
-// providers:
-//
-//   1. GET /api/auth/<provider>
-//        · mints a PKCE verifier + S256 challenge, keeps the verifier in a
-//          short httpOnly cookie, and 302s the browser to Supabase's
-//          authorize URL for that provider.
-//   2. Provider → Supabase → GET /api/auth/callback/<provider>?code=...
-//        · exchanges `code` + the cookie verifier for a session (PKCE grant),
-//          runs the SAME owner-approval gate as password login, and either
-//          issues the session/refresh cookies + redirects to /home, or hands a
-//          signed status token to /welcome for a PENDING/REJECTED account.
-//
-// Both route families are guarded so a dev run without SUPABASE_URL
-// (in-memory mock store) answers a clean 501 instead of throwing on a
-// missing client method.
-
-const SOCIAL_PROVIDERS = ["google", "facebook"] as const;
-type SocialProvider = (typeof SOCIAL_PROVIDERS)[number];
-
-const socialAuthEnabled = (): boolean =>
-  typeof process.env.SUPABASE_URL === "string" &&
-  process.env.SUPABASE_URL.trim().length > 0 &&
-  typeof process.env.SUPABASE_SERVICE_ROLE_KEY === "string" &&
-  process.env.SUPABASE_SERVICE_ROLE_KEY.trim().length > 0;
-
-/** The public frontend origin (same-origin proxy) where cookies get set. */
-function publicSiteBase(): string {
-  const base =
-    process.env.FRONTEND_URL ||
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    process.env.PUBLIC_SITE_URL ||
-    "http://localhost:5173";
-  return base.replace(/\/+$/, "");
-}
-
-/**
- * GET /api/auth/:provider (provider ∈ {google, facebook})
- * 302 → Supabase /auth/v1/authorize?provider=<provider> (PKCE)
- * 501 → Supabase not configured (dev mock store)
- */
-for (const provider of SOCIAL_PROVIDERS) {
-  router.get(`/${provider}`, (_req: Request, res: Response) => {
-    if (!socialAuthEnabled()) {
-      res.status(501).json({
-        error: `${provider === "google" ? "Google" : "Facebook"} sign-in is not configured on this deployment.`,
-      });
-      return;
-    }
-
-    const { verifier, challenge } = generatePkce();
-    setPkceCookie(res, verifier);
-
-    const base = process.env.SUPABASE_URL!.replace(/\/+$/, "");
-    const callbackUrl = `${publicSiteBase()}/api/auth/callback/${provider}`;
-    // Supabase authorize endpoint for PKCE OAuth: challenge goes out with the
-    // authorization code; the verifier stays in the httpOnly cookie until the
-    // browser returns with ?code=... on the callback route below.
-    const authorizeUrl =
-      `${base}/auth/v1/authorize` +
-      `?provider=${provider}` +
-      `&code_challenge=${encodeURIComponent(challenge)}` +
-      `&code_challenge_method=S256` +
-      `&redirect_to=${encodeURIComponent(callbackUrl)}` +
-      `&skip_http_confirmation=true`;
-
-    res.redirect(authorizeUrl);
-  });
-
-  /**
-   * GET /api/auth/callback/:provider?code=...&state=...
-   * Exchanges the PKCE code for a session, applies the owner-approval gate,
-   * and redirects: ACTIVE → /home (with session + refresh cookies);
-   * PENDING/REJECTED → /welcome?status_token=... (no session issued).
-   */
-  router.get(`/callback/${provider}`, async (req: Request, res: Response) => {
-    const verifier = (req.cookies?.[PKCE_COOKIE] as string | undefined) ?? "";
-    clearPkceCookie(res);
-
-    if (!socialAuthEnabled()) {
-      res.status(501).json({
-        error: `${provider === "google" ? "Google" : "Facebook"} sign-in is not configured.`,
-      });
-      return;
-    }
-
-    // Supabase surfaces a declined/failed consent here instead of a code.
-    const oauthError = req.query.error;
-    if (oauthError) {
-      const desc =
-        typeof req.query.error_description === "string"
-          ? req.query.error_description
-          : "";
-      console.warn(`[auth] ${provider} oauth error:`, String(oauthError), desc);
-      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
-      return;
-    }
-
-    const code = typeof req.query.code === "string" ? req.query.code : "";
-    if (!code || !verifier) {
-      // No PKCE cookie (cleared/expired) → the challenge won't match; start over.
-      res.redirect(302, `${publicSiteBase()}/login`);
-      return;
-    }
-
-    // Exchange the PKCE code for a token directly against gotrue (the same
-    // grant the JS client uses internally: POST /auth/v1/token?grant_type=pkce
-    // with { auth_code, code_verifier }). This avoids persisting a user session
-    // on the shared service-role client, which would downgrade its later data
-    // writes to the user's RLS rights (the 2026-09-26 "402 despite reset" bug).
-    const base = process.env.SUPABASE_URL!.replace(/\/+$/, "");
-    // PKCE is a public-client exchange: it authenticates the request with an
-    // anon-class key. Never send a service-role key to an OAuth token endpoint.
-    const exchangeKey = process.env.SUPABASE_ANON_KEY?.trim() || "";
-    if (!exchangeKey) {
-      console.error(`[auth] ${provider} OAuth exchange is missing the public anon key`);
-      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
-      return;
-    }
-    const exchangeRes = await fetch(
-      `${base}/auth/v1/token?grant_type=pkce`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: exchangeKey,
-          Authorization: `Bearer ${exchangeKey}`,
-        },
-        body: JSON.stringify({ auth_code: code, code_verifier: verifier }),
-      },
-    ).catch((err: unknown) => {
-      console.warn(`[auth] ${provider} code exchange network error:`, (err as Error)?.message);
-      return null;
-    });
-
-    interface PkceTokens {
-      access_token?: string;
-      refresh_token?: string;
-      expires_in?: number;
-    }
-    let tokens: PkceTokens | null = null;
-    if (exchangeRes?.ok) {
-      const body = (await exchangeRes.json().catch(() => null)) as PkceTokens | null;
-      tokens = body;
-    }
-    const accessToken = tokens?.access_token;
-    if (!accessToken) {
-      console.warn(`[auth] ${provider} code exchange failed or returned no token`);
-      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
-      return;
-    }
-
-    // Resolve the user the token belongs to (service-role, so RLS never applies).
-    const { data: me, error: meError } = await supabaseAdmin.auth.getUser(accessToken);
-    const user = me?.user;
-    const linkedProviders = user?.app_metadata?.providers;
-    const providerMatches =
-      user?.app_metadata?.provider === provider ||
-      (Array.isArray(linkedProviders) && linkedProviders.includes(provider));
-    if (meError || !user?.email || !providerMatches) {
-      console.warn(`[auth] ${provider} OAuth identity verification failed`);
-      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
-      return;
-    }
-
-    // Same owner-approval gate as password login: PENDING/REJECTED accounts get
-    // NO session — hand the user a signed status token instead.
-    const accessStatus = await readAccessStatus(user.id);
-    if (accessStatus !== "ACTIVE") {
-      res.redirect(
-        302,
-        `${publicSiteBase()}/welcome?status_token=${encodeURIComponent(createStatusToken(user.id))}`,
-      );
-      return;
-    }
-
-    const resolved = await resolveSessionUser(user.id, user.email ?? "");
-    const extended = await buildExtendedUser(resolved.id, resolved.email, resolved.role);
-
-    setSessionCookie(res, accessToken, tokens?.expires_in);
-    if (tokens?.refresh_token) setRefreshCookie(res, tokens.refresh_token);
-
-    res.redirect(302, `${publicSiteBase()}/home`);
-  });
-}
 
 /**
  * GET /api/auth/me
