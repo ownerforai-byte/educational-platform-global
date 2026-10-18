@@ -15,6 +15,7 @@ import {
 import { DEEP_ANSWER_RULES } from "../src/ai/deep-answer";
 import { CLASS_SCOPE_RULES } from "../src/ai/class-scope";
 import { SOURCE_REGISTRY_RULES } from "../src/ai/source-registry";
+import { FIGURE_ARCHETYPE_GUIDE } from "../src/ai/academic-figures";
 
 /**
  * Contract suite for the Master Academic Intelligence System.
@@ -85,8 +86,11 @@ describe("master academic prompt composition", () => {
 
   test("keeps the tutor's identity and house style intact", () => {
     expect(PROMPT).toContain("you are veer");
-    expect(PROMPT).toContain("👋, i'm veer — feel free to clear your doubts.");
+    expect(PROMPT).toContain("i'm veer, your study mentor.");
+    expect(PROMPT).not.toContain("FIRST HELLO");
     expect(PROMPT).toContain("explore further:");
+    expect(PROMPT).toContain("related links last (only when useful)");
+    expect(PROMPT).toContain("never use retired /r-notes");
     expect(PROMPT).toContain("in short:");
     expect(PROMPT).toContain("never call yourself any other name or title");
     // No self-reference to the word AI (owner rule 2026-09-28).
@@ -111,47 +115,49 @@ describe("master academic prompt composition", () => {
     // not a rough picture — on every surface (note pages, topic pages, the figure
     // viewer, and the Image Hub).
 
-    expect(PROMPT).toContain("DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE (OWNER RULE) — TWO FENCE LANGUAGES, BOTH PAINTED");
-    expect(PROMPT).toContain("THE svg FENCE — best for ANY figure that must carry many labelled parts");
-    expect(PROMPT).toContain("THE rofem.svg FIGURE FENCE");
-    expect(PROMPT).toContain("SAME HOVER/EXPLAINER CONFIG FOR BOTH FENCE KINDS");
-    expect(PROMPT).toContain("<title>ONE-LINE name + what it does + how it links to / fits in the parts around it</title>");
+    expect(DEEP_ANSWER_RULES).toContain("DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE (OWNER RULE) — TWO FENCE LANGUAGES, BOTH PAINTED:");
+    expect(DEEP_ANSWER_RULES).toContain("THE svg FENCE — best for ANY figure that must carry many labelled parts");
+    expect(DEEP_ANSWER_RULES).toContain("THE rofem.svg FIGURE FENCE");
+    expect(DEEP_ANSWER_RULES).toContain("SAME HOVER/EXPLAINER CONFIG FOR BOTH FENCE KINDS");
+    expect(DEEP_ANSWER_RULES).toContain("<title>ONE-LINE name + what it does + how it links to / fits in the parts around it</title>");
 
     // The shared archetype guide (12 figure shapes: lifecycle, labelled structure,
     // apparatus, process, graph, circuit, ray, free-body, geometry, hierarchy,
     // comparison, timeline) is wired into the figure section on every request.
-    expect(PROMPT).toContain("${FIGURE_ARCHETYPE_GUIDE}");
-    expect(PROMPT).toContain("LIFE CYCLE");
-    expect(PROMPT).toContain("LABELLED STRUCTURE");
-    expect(PROMPT).toContain("every part an examiner can name");
+    expect(DEEP_ANSWER_RULES).toContain(FIGURE_ARCHETYPE_GUIDE);
+    expect(DEEP_ANSWER_RULES).toContain("LIFE CYCLE");
+    expect(DEEP_ANSWER_RULES).toContain("LABELLED STRUCTURE");
+    expect(DEEP_ANSWER_RULES).toContain("every part an examiner can name");
 
     // Allowed/forbidden SVG rules the model's drawings must respect — the same
     // set the renderer enforces (backend/src/ai/academic-figures.ts).
-    expect(PROMPT).toContain("ALLOWED elements ONLY: svg, g, title, text, tspan, rect, circle, ellipse, line, polyline, polygon, path");
-    expect(PROMPT).toContain("no url(#...) references");
-    expect(PROMPT).toContain("on-event attribute (onload/onclick/etc.)");
-    expect(PROMPT).toContain("no external files");
+    expect(DEEP_ANSWER_RULES).toContain("Allowed elements ONLY: svg, g, title, text, tspan, rect, circle, ellipse, line, polyline, polygon, path");
+    expect(DEEP_ANSWER_RULES).toContain("no url(#...) references");
+    expect(DEEP_ANSWER_RULES).toContain("ANY on-event attribute (onload/onclick/etc.)");
+    expect(DEEP_ANSWER_RULES).toContain("no external files");
 
-    // The figure is announced on its fence line and the tab/keyboard path is
-    // mentioned, so authors know the part is keyboard focusable.
-    expect(PROMPT).toContain("caption it on the fence line");
-    expect(PROMPT).toContain("hazard a reader can tab to");
+    // Figure captions are carried by the interactive-figure instructions.
+    expect(DEEP_ANSWER_RULES).toContain("Caption it on the fence line itself");
+    expect(DEEP_ANSWER_RULES).toContain("labelled parts");
 
-    // Wire the backend test double onto the figure module exactly as the real
-    // prompt does, so this assertion fails if the import breaks.
-    expect(PROMPT, "wires FIGURE_WRITER_SYSTEM").toContain("${FIGURE_WRITER_SYSTEM}");
+    // The vector writer has its own dedicated system prompt rather than being
+    // interpolated into every student-facing academic response.
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("FIGURE_WRITER_SYSTEM");
   });
 
-  test("tells every answer like a story, complete start to finish, from every attached source", () => {
-    expect(PROMPT).toContain("the story shape");
-    expect(PROMPT).toContain("complete knowledge, start to finish");
-    // Owner change 2026-09-30: the old "AT LEAST 2 and AT MOST 3 sources" ceiling
-    // is what capped complete answers — the tutor now uses every attached source,
-    // with the floor of two still in place.
-    expect(PROMPT).toContain("at least 2 sources and use every source attached to the message");
-    expect(PROMPT).toContain("never one source alone, and never an artificial ceiling");
-    expect(PROMPT).not.toContain("at most 3 sources");
-    expect(PROMPT).toContain("from its first idea to its present state in conceptual order");
+  test("keeps the concept walk proportional and sources honest", () => {
+    expect(PROMPT).toContain("keep breadth proportional to the request");
+    expect(PROMPT).toContain("never fabricate sources or force unnecessary citations");
+    expect(PROMPT).not.toContain("at least 2 sources");
+    expect(PROMPT).not.toContain("use every source attached");
+  });
+
+  test("uses relevant sources without arbitrary citation quotas", () => {
+    expect(PROMPT).toContain("the story shape — for substantial topic questions");
+    expect(PROMPT).toContain("use relevant attached sources");
+    expect(PROMPT).toContain("never fabricate sources or force unnecessary citations");
+    expect(PROMPT).not.toContain("at least 2 sources");
+    expect(PROMPT).not.toContain("use every source attached to the message");
   });
 
   test("academic rules define the specialist contract without imposing headings", () => {
@@ -165,8 +171,9 @@ describe("master academic prompt composition", () => {
     // token (it resolves to the loaded module strings at runtime).
     expect(MASTER_ACADEMIC_PROMPT.length).toBeGreaterThan(15_000);
     expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(60_000);
-    expect(MASTER_ACADEMIC_PROMPT).toContain("${FIGURE_ARCHETYPE_GUIDE}");
-    expect(MASTER_ACADEMIC_PROMPT).toContain("${FIGURE_WRITER_SYSTEM}");
+    expect(MASTER_ACADEMIC_PROMPT).toContain(FIGURE_ARCHETYPE_GUIDE);
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_ARCHETYPE_GUIDE}");
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_WRITER_SYSTEM}");
     expect(MASTER_ACADEMIC_PROMPT).not.toContain('`${"');
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${\"");
   });
@@ -247,22 +254,26 @@ describe("academic specialist contract coverage", () => {
     expect(ACADEMIC).toContain("part-of-speech");
   });
 
-  test("ships the five-section structural response template with exam focus", () => {
-    expect(ACADEMIC).toContain("formal textbook definition / lexical meaning");
-    expect(ACADEMIC).toContain("core theoretical principles & assumptions");
-    expect(ACADEMIC).toContain("complete mathematical derivation / chemical mechanism / biological process");
-    expect(ACADEMIC).toContain("technical vocabulary & etymology breakdown");
-    expect(ACADEMIC).toContain("standard neb examination application");
-    expect(ACADEMIC).toContain("4-mark");
-    expect(ACADEMIC).toContain("8-mark");
+  test("keeps academic formatting and depth proportional to the request", () => {
+    expect(ACADEMIC).toContain("Choose a structure that fits the question");
+    expect(ACADEMIC).toContain("Do not force headings, etymology, historical detail, or exam notes into a short answer");
+    expect(ACADEMIC).toContain("For a proof, derivation, or reaction mechanism");
+    expect(ACADEMIC).toContain("keep direct factual answers concise");
   });
 
-  test("tells answers as a dated, ascending story from history to the future", () => {
-    expect(ACADEMIC).toContain("history → present → future");
-    expect(ACADEMIC).toContain("ascending");
-    expect(ACADEMIC).toContain("extra keywords");
-    expect(ACADEMIC).toContain("ground every reply in the source");
-    expect(ACADEMIC).toContain("story-like flow");
+  test("keeps source use accurate without forcing a quote, date, or keyword list", () => {
+    expect(ACADEMIC).toContain("summarize accurately when that is clearer or more useful");
+    expect(ACADEMIC).toContain("Cite a source by name only when its attached material supports the claim");
+    expect(ACADEMIC).toContain("do not force a keyword list into every reply");
+    expect(ACADEMIC).not.toContain("ground every reply in the source");
+    expect(ACADEMIC).not.toContain("history → present → future");
+  });
+
+  test("keeps the taxonomy and process guidance conditional on question scope", () => {
+    expect(TAXONOMY).toContain("when a question asks about the five kingdoms");
+    expect(TAXONOMY).toContain("Include only the breadth the question calls for");
+    expect(TAXONOMY).toContain("when that makes the stages clearer");
+    expect(TAXONOMY).toContain("include one only when it adds value");
   });
 
   test("the search addendum keeps the academic floor", () => {
@@ -277,9 +288,9 @@ describe("academic specialist contract coverage", () => {
 
 
 describe("adaptive teaching contract (2026-09-28)", () => {
-  test("every reply teaches new words and adapts to the learner", () => {
-    expect(PROMPT).toContain("teach a new word in every reply");
-    expect(PROMPT).toContain("never repeat a word already taught earlier in this conversation");
+  test("vocabulary support is optional for brief turns and adapts to the learner", () => {
+    expect(PROMPT).toContain("vocabulary support — in teaching replies, introduce 1 to 3 useful new words");
+    expect(PROMPT).toContain("skip the vocabulary lesson for brief conversational turns");
     expect(PROMPT).toContain("understand the student, then teach in their way");
   });
 
@@ -290,11 +301,11 @@ describe("adaptive teaching contract (2026-09-28)", () => {
     expect(PROMPT).toContain("meet the feeling first");
   });
 
-  test("aims for many ideas in conceptual order, past to present", () => {
-    expect(PROMPT).toContain("large number of genuinely distinct ideas");
-    expect(PROMPT).toContain("conceptual order");
-    expect(PROMPT).toContain("past → present");
-    expect(PROMPT).toContain("exempt from the ordinary word target");
+  test("keeps the requested concept walk proportional", () => {
+    expect(PROMPT).toContain("the aim — conceptual order");
+    expect(PROMPT).toContain("keep breadth proportional to the request");
+    expect(PROMPT).not.toContain("large number of genuinely distinct ideas");
+    expect(PROMPT).not.toContain("exempt from the ordinary word target");
   });
 });
 

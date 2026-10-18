@@ -81,10 +81,26 @@ describe("PLATFORM_SYSTEM_PROMPT — the client mirror of the academic contract"
     expect(PLATFORM_SYSTEM_PROMPT).toContain("no placeholders, no TODO");
   });
 
-  it("no longer caps a complete answer at three sources", () => {
-    expect(PLATFORM_SYSTEM_PROMPT).toContain("use every source attached to the message");
-    expect(PLATFORM_SYSTEM_PROMPT).not.toContain("AT MOST 3");
-    expect(PLATFORM_SYSTEM_PROMPT).not.toContain("never more than three");
+  it("uses relevant attached sources without a forced citation quota", () => {
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("use relevant attached sources");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("never fabricate sources or force unnecessary citations");
+    expect(PLATFORM_SYSTEM_PROMPT).not.toContain("use every source attached to the message");
+    expect(PLATFORM_SYSTEM_PROMPT).not.toContain("AT LEAST 2 sources");
+  });
+
+  it("keeps casual turns concise and introduces Veer directly", () => {
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("greeting, thanks, small talk, or self-introduction gets a direct 1–3 sentence reply");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("I'm Veer, your study mentor.");
+    expect(PLATFORM_SYSTEM_PROMPT).not.toContain("FIRST HELLO — FIRST-REPLY ONLY");
+    expect(PLATFORM_SYSTEM_PROMPT).not.toContain("THE 250-WORD FLOOR PER TOPIC IS ABSOLUTE");
+  });
+
+  it("keeps related links optional, relevant, valid, and last", () => {
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("LINKS LAST — ONLY WHEN USEFUL");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("1–3 directly relevant links");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("Never use retired /r-notes");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("Skip links for greetings, thanks, small talk");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("Keep links as the final content");
   });
 
   it("mirrors the ChatGPT/Claude-grade reply craft", () => {

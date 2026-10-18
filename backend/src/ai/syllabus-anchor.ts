@@ -5,18 +5,16 @@
  * reply must (a) be anchored in the NEB syllabus — find where the asked thing
  * lives in the syllabus, or, when it lives outside it, find WHERE IT
  * ORIGINATES inside the syllabus and build from that origin up to the asked
- * thing; and (b) never be shorter than 150 words, scaling up with the depth
- * of the question — no matter how long a complete answer takes to produce.
+ * thing; and (b) match reply length to the question, keeping conversational
+ * and direct fact turns concise while scaling depth for substantive asks.
  *
  * Two halves:
  *   1. SYLLABUS ANCHOR — buildSyllabusAnchorBlock(): DB-backed match of the
  *      question against subjects/chapters/topics, producing a directive block
  *      injected into the system prompt of every chat request.
- *   2. REPLY FLOOR — REPLY_FLOOR_WORDS + wordCount() + enforceReplyFloor():
- *      a hard server-side floor on reply length with one expansion retry, so
- *      a too-short reply is never shipped even if the model ignores the
- *      prompt. The floor is a MINIMUM, never a target: derivations, proofs
- *      and full-topic answers run as long as the work requires.
+ *   2. QUESTION-SIZED DEPTH — floorWordsForQuestion() and enforceReplyFloor():
+ *      bounded server-side expansion for substantive asks; conversational and
+ *      concise direct questions have no minimum, while depth requests scale up.
  */
 
 import { supabaseAdmin } from "../db/supabase";
@@ -46,15 +44,15 @@ interface AnchorTopic {
   title: string;
 }
 
-/** Depth signal of a question — used only to SCALE the floor upward. */
+/** Depth signal of a question — used to select expansion guidance. */
 export type QuestionDepth = "shallow" | "medium" | "deep";
 
-/** The hard floor: no chat reply may ship below this word count for any topic. */
+/** Length floor for full-topic answers; brief and direct asks are exempt. */
 export const REPLY_FLOOR_WORDS = 250;
 
-/** Per-depth floors: the 250-word minimum scales with question depth. */
+/** Depth-based guidance expands only explicit or substantive depth requests. */
 export const DEPTH_FLOOR_WORDS: Record<QuestionDepth, number> = {
-  shallow: REPLY_FLOOR_WORDS, // 250
+  shallow: REPLY_FLOOR_WORDS,
   medium: 350,
   deep: 500,
 };
@@ -65,9 +63,9 @@ function escapeRegExp(s: string): string {
 
 /**
  * Classify the depth signal of a question.
- * "deep" = derivations, proofs, complete knowledge, historical timeline / events breakdowns;
- * "medium" = mechanisms, how/why it works, factors, features, properties, dates, comparisons;
- * "shallow" = definitions, facts, casual chat (still strictly held to the 250-word minimum floor).
+ * "deep" = explicit requests for thorough coverage, derivations or proofs;
+ * "medium" = mechanisms, explanations and comparisons;
+ * "shallow" = direct facts, definitions and conversational chat.
  */
 export function classifyQuestionDepth(question: string): QuestionDepth {
   const q = question.toLowerCase();
@@ -136,9 +134,40 @@ export function classifyQuestionDepth(question: string): QuestionDepth {
   return "shallow";
 }
 
-/** Floor for a question: 250 minimum per topic, scaled up by the depth signal. */
+/** Floor for a question: direct and brief asks stay concise; explicit depth requests scale. */
 export function floorWordsForQuestion(question: string): number {
+  if (isBriefQuestion(question) || isShortQuestion(question)) return 0;
   return DEPTH_FLOOR_WORDS[classifyQuestionDepth(question)];
+}
+
+const LONG_QUESTION_CUES = /\b(explain|derive|prove|compare|difference|mechanism|process|life cycle|teach me|make notes|complete notes|full chapter|in detail|detailed|step by step|what factors|features and properties|applications of)\b/i;
+
+/** Concise conversational/direct questions remain short; explicit depth requests do not. */
+export function isShortQuestion(question: string): boolean {
+  const q = question.trim();
+  return !!q && wordCount(q) <= 12 && !LONG_QUESTION_CUES.test(q) && classifyQuestionDepth(q) !== "deep";
+}
+
+/** Short conversational turns: greetings, thanks, small talk, and self-intros. */
+const BRIEF_PATTERNS: RegExp[] = [
+  /^(hi|hii+|hello|hey|namaste|namaskar|yo|hola)\b/,
+  /^good (morning|afternoon|evening|night)\b/,
+  /^(thanks|thank you|thx|ty|ok|okay|cool|nice|bye|goodbye)\b/,
+  /^(how are you|how r u|what'?s up|whats up)\b/,
+  /\bwho (are|r) (you|u)\b/,
+  /\bwhat (are|r) (you|u)\b/,
+  /\bwho (is|are) (this|veer)\b/,
+  /\bwhat('?s| is) your name\b/,
+  /\bintroduce yourself\b/,
+  /\btell me about (yourself|you)\b/,
+  /\bare you (an? )?(ai|bot|robot|human|chatgpt|gpt)\b/,
+  /^what can you do\b/,
+];
+
+/** Identifies conversational requests needing no academic context or length expansion. */
+export function isBriefQuestion(question: string): boolean {
+  const q = question.trim().toLowerCase();
+  return !!q && wordCount(q) <= 12 && BRIEF_PATTERNS.some((re) => re.test(q)) && !LONG_QUESTION_CUES.test(q);
 }
 
 /** Whitespace-token word count of a reply. */
@@ -270,28 +299,21 @@ export async function findSyllabusMatches(
 // ── 2. Reply floor (server-side enforcement) ────────────────────────────────
 
 /**
- * The retry instruction sent back to the model when a reply lands under the
- * floor. It demands expansion with substance — never padding — and repeats
- * the two hard constraints (syllabus core, no new facts invented).
+ * Retry instructions used when a substantive reply lands under its question's
+ * applicable floor. They demand expansion with substance, never padding.
  */
-export const EXPANSION_REQUEST = `Your previous reply is BELOW the platform's minimum length floor and must be expanded before the student sees it.
+export const EXPANSION_REQUEST = `Your previous reply is below the question's requested depth. Expand it before the student sees it.
 
-HARDCODED LAW: You must provide AT LEAST 250 words for this topic before moving on to another topic.
+Meet the applicable minimum length supplied with this request, if one is present. A concise factual answer or conversational reply does not need expansion.
 
-Expand it to AT LEAST the required minimum words by adding real knowledge depth and substance across these dimensions:
-1. Core Ideas & Historical Context: The foundational idea, who discovered or formulated it, and the exact historical date, year, or era.
-2. How and Why This Works: Detailed causal mechanism — why it happens, how the processes interact, scientific/logical principles, and explicit equations ($inline$ and $$display$$ LaTeX).
-3. Key Factors & Variables: What factors govern, influence, accelerate, inhibit, or alter it.
-4. Defining Features & Architecture: Structural characteristics, architectural traits, or defining components.
-5. Inherent Properties & Behaviors: Physical, chemical, or logical properties and how it behaves under varying conditions.
-6. Real-World Applications & Exam Focus: Practical applications, concrete worked example with units, and key exam pitfalls/misconceptions.
+Add only useful substance that answers the question: define core ideas, explain necessary mechanisms or reasoning, include relevant formulas and a worked example where useful, and address important limits or common errors.
 
-Hard constraints: Exhaust the current topic thoroughly with at least 250 words before concluding or switching topics; keep every fact already stated correct; invent NOTHING new; do not pad with repetition, filler, or restatement of sentences; maintain clean markdown/LaTeX formatting. Return ONLY the complete expanded reply, starting from the beginning of the answer — not a diff, not a commentary.`;
+Keep every fact already stated correct; invent NOTHING new; do not pad with repetition, filler, or restatement. Preserve clean markdown/LaTeX formatting. Return ONLY the complete revised reply, starting from the beginning of the answer — not a diff or commentary.`;
 
-/** The final-chance variant: sterner, sent when the first retry was still short. */
+/** The final-chance variant: a last attempt at meaningful depth without padding. */
 export const EXPANSION_REQUEST_STRICT = `${EXPANSION_REQUEST}
 
-THIS IS THE FINAL CHANCE. The previous attempt was STILL below the 250-word floor. Count your words as you write and do not stop before the minimum is reached: unfold the complete ideas, historical timeline/dates, full step-by-step mechanism, equations, influencing factors, features, and properties — genuine deep substance, never filler.`;
+THIS IS THE FINAL CHANCE. Add the remaining relevant explanation and reasoning the question needs. Do not stop at a bare conclusion when the student asked for depth, but do not add filler or force an irrelevant minimum.`;
 
 export interface FloorEnforcementResult {
   answer: string;
@@ -302,8 +324,8 @@ export interface FloorEnforcementResult {
 }
 
 /**
- * Enforce the reply floor server-side. If `answer` meets the floor it is
- * returned untouched. Otherwise `retry` gets up to `maxRetries` chances
+ * Enforce the applicable reply floor server-side. A floor of zero passes
+ * conversational/direct answers through untouched. Otherwise `retry` gets up to `maxRetries` chances
  * (default 2, override with AI_REPLY_FLOOR_RETRIES); the strict variant of
  * the expansion request is sent for the final attempt. The LONGEST acceptable
  * attempt wins: the floor never turns into a 500, and a closer-to-floor reply

@@ -174,11 +174,62 @@ describe("completeAnswer — repair order and bounds", () => {
     expect(res.notes.join(" ")).toContain("continuation failed");
   });
 
+  test("a brief self-introduction skips truncation continuation and length expansion", async () => {
+    const chat = vi.fn(async () => "I'm Veer, your study mentor.");
+    const res = await completeAnswer({ chat, messages, question: "who are you?" });
+
+    expect(chat).toHaveBeenCalledTimes(1);
+    expect(res.text).toBe("I'm Veer, your study mentor.");
+    expect(res.floor).toBe(0);
+    expect(res.expanded).toBe(false);
+    expect(res.continued).toBe(false);
+  });
+
+  test("a brief reply with a provider length signal is not continued or padded", async () => {
+    const chat = vi.fn(async () => "I'm Veer, your study mentor.");
+    const res = await completeAnswer({
+      chat,
+      messages,
+      question: "who are you?",
+      finishReason: () => "length",
+    });
+
+    expect(chat).toHaveBeenCalledTimes(1);
+    expect(res.text).toBe("I'm Veer, your study mentor.");
+    expect(res.continued).toBe(false);
+    expect(res.expanded).toBe(false);
+  });
+
+  test("a direct fact remains concise without expansion", async () => {
+    const chat = vi.fn(async () => "Enthalpy is the heat content of a system at constant pressure.");
+    const res = await completeAnswer({ chat, messages, question: "what is enthalpy?" });
+
+    expect(chat).toHaveBeenCalledTimes(1);
+    expect(res.floor).toBe(0);
+    expect(res.expanded).toBe(false);
+  });
+
+  test("explicit long asks still receive the depth expansion prompt", async () => {
+    const chat = vi.fn(async (turn: Array<{ content: string }>) => {
+      const last = turn[turn.length - 1]?.content ?? "";
+      if (last.includes("below the question's requested depth")) {
+        return "A capacitor stores charge through separation of charge across its dielectric. ".repeat(40);
+      }
+      return "A capacitor stores charge.";
+    });
+
+    const res = await completeAnswer({ chat, messages, question: "explain how a capacitor works" });
+
+    expect(chat).toHaveBeenCalledTimes(2);
+    expect(res.expanded).toBe(true);
+    expect(res.floor).toBe(350);
+  });
+
   test("the length floor still applies after truncation repair", async () => {
     // A short but complete answer must be expanded by the existing floor.
     const chat = vi.fn(async (turn: Array<{ content: string }>) => {
       const last = turn[turn.length - 1]?.content ?? "";
-      if (last.startsWith("Your previous reply is BELOW")) {
+      if (last.startsWith("Your previous reply is below the question's requested depth")) {
         return "A capacitor is a two-conductor system that stores charge on its plates. ".repeat(30);
       }
       return "A capacitor stores charge.";

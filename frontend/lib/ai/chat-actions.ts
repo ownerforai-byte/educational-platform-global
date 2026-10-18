@@ -1,10 +1,6 @@
 /**
  * Shared chat quick-action contract (widget + tutor console).
- *
- * Both surfaces offer the SAME per-answer actions in the SAME place (a row
- * directly under the answer): Copy · Regenerate · Go deeper · Keep it short ·
- * Practice quiz. The instruction text lives here so the two surfaces can never
- * drift apart, and so the wording is unit-testable.
+ * Both surfaces share the action wording and concise-answer detection.
  */
 
 /** Ask for more depth on the previous answer. */
@@ -13,7 +9,7 @@ export const GO_DEEPER_INSTRUCTION =
 
 /** Ask for a tighter version of the previous answer. */
 export const KEEP_IT_SHORT_INSTRUCTION =
-  "Keep it short now: same topic, same correctness, but compress it to the essentials — the core definition, the key formula(e), and one exam-ready line. Drop repetition, keep the 250-word minimum.";
+  "Keep it concise: answer the same question correctly in the shortest form that preserves the essential definition, formula, or reasoning. Do not add padding or repeat points.";
 
 /** Ask for revision notes across the whole thread. */
 export const SUMMARIZE_INSTRUCTION =
@@ -22,6 +18,17 @@ export const SUMMARIZE_INSTRUCTION =
 /** Text used when a student sends a photo with no typed question. */
 export const PHOTO_ONLY_PROMPT =
   "Read this photo carefully, tell me in one line what the question or diagram is, then teach it fully step by step.";
+
+
+/** Greetings, acknowledgments, and self-introductions do not need a copy affordance. */
+export function isBriefChatMessage(content: string): boolean {
+  const text = content.trim().replace(/^[*_`#\s]+|[*_`#\s]+$/g, "");
+  if (!text) return true;
+  return /^(?:hi|hello|hey|good morning|good afternoon|good evening)[!. ,]*(?:how can i help\??)?$/i.test(text)
+    || /^(?:thanks|thank you|you're welcome|you are welcome|no problem|sure|okay|ok|happy to help|glad to help)[!. ]*$/i.test(text)
+    || /^(?:i'?m|i am) veer\b.{0,90}$/i.test(text)
+    || /^(?:i'?m|i am) your (?:study )?(?:mentor|tutor)\b.{0,70}$/i.test(text);
+}
 
 /** Where the practice-quiz handoff stores its seed. */
 export const QUIZ_SEED_KEY = "neb_quiz_seed";

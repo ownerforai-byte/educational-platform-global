@@ -7,6 +7,7 @@ import {
   QUIZ_SEED_KEY,
   SUMMARIZE_INSTRUCTION,
   writeQuizSeed,
+  isBriefChatMessage,
 } from "@/lib/ai/chat-actions";
 
 /**
@@ -15,8 +16,8 @@ import {
  * send the same instructions — a drift here is invisible until students notice
  * one surface behaving differently, so the text is pinned.
  *
- * The 150-word floor is a platform rule (backend/src/ai/syllabus-anchor.ts), so
- * the "keep it short" instruction must never ask for a reply that breaks it.
+ * The follow-up wording and brief-answer copy visibility stay consistent across
+ * both the floating chat and the tutor console.
  */
 
 describe("quick-action instructions", () => {
@@ -37,10 +38,18 @@ describe("quick-action instructions", () => {
     expect(KEEP_IT_SHORT_INSTRUCTION.toLowerCase()).toContain("short");
   });
 
-  test("never asks for a reply below the 150-word floor", () => {
-    // "Keep it short" must stay compatible with the enforced 150-word minimum.
-    expect(KEEP_IT_SHORT_INSTRUCTION).toMatch(/\b\d{3}\b/);
-    expect(KEEP_IT_SHORT_INSTRUCTION).not.toMatch(/\b(half as long|one line only|brief)\b/i);
+  test("shorter asks for a concise answer without imposing a fixed minimum", () => {
+    expect(KEEP_IT_SHORT_INSTRUCTION).toContain("shortest form");
+    expect(KEEP_IT_SHORT_INSTRUCTION).not.toMatch(/\b\d{3}\b/);
+  });
+
+  test("identifies short conversational text for hiding the copy button", () => {
+    expect(isBriefChatMessage("I'm Veer, your study mentor.")).toBe(true);
+    expect(isBriefChatMessage("Thanks!")).toBe(true);
+    expect(isBriefChatMessage("**Hello!**")).toBe(true);
+    expect(isBriefChatMessage("**Kinetic energy** is energy of motion.")).toBe(false);
+    expect(isBriefChatMessage("A complete lesson with a worked example.\n\n- First point\n- Second point")).toBe(false);
+    expect(isBriefChatMessage("A long answer. ".repeat(20))).toBe(false);
   });
 
   test("photo-only prompt tells the model to read the image first", () => {

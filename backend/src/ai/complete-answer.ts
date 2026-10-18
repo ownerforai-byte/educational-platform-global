@@ -20,7 +20,7 @@
  */
 
 import { detectTruncation, describeVerdict, continuationRequest, joinContinued, MAX_CONTINUATIONS } from "./truncation";
-import { enforceReplyFloor, floorWordsForQuestion, type QuestionDepth } from "./syllabus-anchor";
+import { enforceReplyFloor, floorWordsForQuestion, isBriefQuestion, type QuestionDepth } from "./syllabus-anchor";
 import type { AIChatMessage } from "./service";
 
 export interface CompleteAnswerOptions {
@@ -65,7 +65,7 @@ export async function completeAnswer(opts: CompleteAnswerOptions): Promise<Compl
   let continuations = 0;
 
   // ── 2. Truncation repair (before the length floor: a cut answer is worse) ─
-  for (let i = 0; i < MAX_CONTINUATIONS; i++) {
+  for (let i = 0; !isBriefQuestion(opts.question) && i < MAX_CONTINUATIONS; i++) {
     const verdict = detectTruncation(text, opts.finishReason?.());
     if (!verdict.truncated) break;
     notes.push(describeVerdict(verdict));

@@ -127,12 +127,12 @@ interface DbTopic {
 
 interface GeneratedQuestion {
   prompt: string;
-  options: string[];
-  correctIndex: number;
-  difficulty: "easy" | "intermediate" | "hard";
-  subject: string;
-  topic: string;
-  explanation: string;
+  options: unknown[];
+  correctIndex: unknown;
+  difficulty: unknown;
+  subject: unknown;
+  topic: unknown;
+  explanation: unknown;
 }
 
 /**
@@ -189,7 +189,7 @@ router.post(
         subjectSlug,
         topic,
         difficulty = "intermediate",
-        count = 5,
+        count,
       } = req.body as {
         classSlug?: string;
         subjectSlug?: string;
@@ -208,7 +208,12 @@ router.post(
         return;
       }
 
-      const requestedCount = Math.min(Math.max(count, 1), 20);
+      if (count !== undefined && (typeof count !== "number" || !Number.isFinite(count))) {
+        res.status(400).json({ error: "count must be a finite number" });
+        return;
+      }
+
+      const requestedCount = Math.min(Math.max(count ?? 5, 1), 20);
       const aiService = getService();
 
       // Fetch syllabus context from Supabase with KEY TERMS extraction
@@ -403,31 +408,41 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
       }
 
       if (!parsed) {
-        res.status(502).json({
-          error: "Veer returned invalid question format",
-          raw: rawResponse.slice(0, 500),
-        });
+        res.status(502).json({ error: "Veer returned invalid question format" });
         return;
       }
 
       if (!Array.isArray(parsed.questions) || parsed.questions.length === 0) {
-        res.status(502).json({ error: "Veer returned no questions", raw: rawResponse.slice(0, 500) });
+        res.status(502).json({ error: "Veer returned no questions" });
         return;
       }
 
-      // Validate and normalise each question
+      // Treat model output as untrusted data: malformed options and answer
+      // indices must not become broken quiz UI or an incorrect answer key.
       const questions: GeneratedQuestion[] = parsed.questions
-        .filter((q) => q && typeof q.prompt === "string" && Array.isArray(q.options))
+        .filter((q) => {
+          if (!q || typeof q.prompt !== "string" || !q.prompt.trim()) return false;
+          if (!Array.isArray(q.options) || q.options.length !== 4) return false;
+          if (!q.options.every((option) => typeof option === "string" && option.trim())) return false;
+          return typeof q.correctIndex === "number" && Number.isInteger(q.correctIndex) && q.correctIndex >= 0 && q.correctIndex < 4;
+        })
         .slice(0, requestedCount)
         .map((q) => ({
-          prompt: q.prompt.trim(),
-          options: (q.options as string[]).map((o) => o.trim()).slice(0, 4),
-          correctIndex: Math.min(3, Math.max(0, Number(q.correctIndex) ?? 0)),
-          difficulty: (q.difficulty as GeneratedQuestion["difficulty"]) ?? difficulty,
-          subject: (q.subject as string) ?? subjectSlug,
-          topic: (q.topic as string) ?? topic ?? "General",
-          explanation: (q.explanation as string) ?? "",
+          prompt: (q.prompt as string).trim(),
+          options: (q.options as string[]).map((option) => option.trim()),
+          correctIndex: q.correctIndex as number,
+          difficulty: ["easy", "intermediate", "hard"].includes(q.difficulty as string)
+            ? q.difficulty as GeneratedQuestion["difficulty"]
+            : difficulty,
+          subject: typeof q.subject === "string" && q.subject.trim() ? q.subject.trim() : subjectSlug,
+          topic: typeof q.topic === "string" && q.topic.trim() ? q.topic.trim() : topic ?? "General",
+          explanation: typeof q.explanation === "string" ? q.explanation.trim() : "",
         }));
+
+      if (questions.length === 0) {
+        res.status(502).json({ error: "Veer returned no valid questions" });
+        return;
+      }
 
       const guestSlot = (req as GuestGateRequest).guestSlot;
 

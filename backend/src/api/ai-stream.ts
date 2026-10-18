@@ -29,11 +29,7 @@ import {
   detectTruncation,
   joinContinued,
 } from "../ai/truncation";
-import {
-  floorWordsForQuestion,
-  wordCount,
-  REPLY_FLOOR_WORDS,
-} from "../ai/syllabus-anchor";
+import { floorWordsForQuestion, wordCount, isBriefQuestion } from "../ai/syllabus-anchor";
 import { logServerError, newErrorId } from "../middleware/errors";
 
 /** Keep Render/Vercel from closing a stream that is quiet during research. */
@@ -163,7 +159,11 @@ export async function streamAnswerToStudent(
     // Truncation repair, streamed: the continuation is appended to the SAME
     // bubble chunk-by-chunk, so a long "complete knowledge" answer keeps
     // arriving instead of stopping mid-sentence at the model's token limit.
-    for (let i = 0; i < MAX_CONTINUATIONS; i += 1) {
+    const lastUserMsg =
+      [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+    const briefTurn = isBriefQuestion(lastUserMsg);
+
+    for (let i = 0; !briefTurn && i < MAX_CONTINUATIONS; i += 1) {
       const verdict = detectTruncation(acc, service.getLastFinishReason());
       if (!verdict.truncated) break;
       console.info(`${logLabel} reply repair: ${describeVerdict(verdict)}`);
@@ -190,12 +190,9 @@ export async function streamAnswerToStudent(
       break;
     }
 
-    // Length floor enforcement, streamed: ensure the answer satisfies the hardcoded
-    // 250-word minimum per topic. If the provider stopped early (e.g. 100-word brief reply),
-    // stream continuation passes with dimensional depth to hit at least 250 words.
-    const lastUserMsg =
-      [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-    const floor = Math.max(REPLY_FLOOR_WORDS, floorWordsForQuestion(lastUserMsg));
+    // Stream floor expansions only when the question's scope warrants them.
+    // Direct facts and brief conversational turns are allowed to finish naturally.
+    const floor = floorWordsForQuestion(lastUserMsg);
 
     for (let fRound = 0; fRound < 2 && wordCount(acc) < floor; fRound++) {
       const currentWords = wordCount(acc);

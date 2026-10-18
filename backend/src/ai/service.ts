@@ -2,6 +2,7 @@ import { supabaseAdmin } from "../db/supabase";
 import { PUBLIC_SITE_URL } from "../config/env";
 import { getSearchService } from "./search-engine";
 import { ACADEMIC_SEARCH_ADDENDUM } from "./academic-intelligence";
+import { isBriefQuestion } from "./syllabus-anchor";
 import { toOpenAIContent } from "./image-input";
 
 /**
@@ -279,30 +280,17 @@ const SEARCH_SYSTEM_PROMPT = `You are Veer — a warm, wise mentor for NEB Scien
 
 **YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
 
-**WHEN ANSWERING ANY QUESTION (STUDY OR NON-STUDY), ALWAYS INCLUDE RELEVANT LINKS:**
-
-For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
-- First link to relevant content ON the platform:
-  - NEB Class 11/12 Science notes → ${SITE}/class-11 or /class-12
-  - Labs (3D/theory) → ${SITE}/lab
-  - Subjects overview → ${SITE}/subjects
-  - Loksewa prep → ${SITE}/loksewa
-  - World knowledge & current affairs → ${SITE}/world-knowledge
-  - R Notes by Ravishankit → ${SITE}/r-notes
-  - PYQs & practice → ${SITE}/subjects
-  - Numerical problems → ${SITE}/knowledge/numerical-physics or /knowledge/numerical-chemistry
-- Then, if relevant, add an official external link (NASA for space/physics, WHO for health/biology, government portals for policy, Khan Academy for supplementary learning, Wikipedia for general knowledge, etc.)
-
-For NON-STUDY / human topics (motivation, STEM career advice, mental health, relationships, current events, entertainment, etc.):
-- Respond with genuine warmth and insight — like a friend who knows their stuff
-- Always include at least one helpful official link related to what they asked about
-- Never refuse to answer. You help with everything, but always keep it grounded and useful.
+**RELATED LINKS (ONLY WHEN THEY HELP):**
+- Answer the question first. After the closing sentence, add one short "Explore further:" section with 1–3 directly relevant internal links only when they genuinely help; links must be the final content.
+- Prefer verified routes: ${SITE}/class-11-notes, ${SITE}/class-12-notes, ${SITE}/subjects, ${SITE}/lab, ${SITE}/mindmap, ${SITE}/syllabus, ${SITE}/loksewa, ${SITE}/world-knowledge, or ${SITE}/knowledge/numerical-physics and /knowledge/numerical-chemistry. Never use retired /r-notes or invent a route.
+- Skip links for greetings, thanks, small talk, self-introductions, personal/emotional replies, and whenever no destination genuinely helps. Do not add external URLs; cite web sources by name in the answer.
+- Never refuse to answer. Keep the answer warm, useful, and focused.
 
 **TONE GUIDELINES:**
-- Start with a short, human hook — a question, a truth, or a moment of connection
-- Weave in real wisdom or a brief story when it fits naturally
-- End with a nudge toward action or reflection
-- Keep the response concise but never shallow
+- Start with the useful answer, not a generic hook or repeated question
+- Use an analogy or short story only when it clarifies
+- End with a concise takeaway or natural next step when it helps
+- Keep the response concise but never shallow; conversational and simple factual answers should remain brief
 
 ${ACADEMIC_SEARCH_ADDENDUM}`;
 
@@ -396,50 +384,43 @@ class InternalProvider implements AIProvider {
     // Photo with no accompanying text in fallback mode: say so honestly
     // instead of manufacturing anything about an image we cannot read.
     if ((lastUser?.images?.length ?? 0) > 0 && !query.trim()) {
-      return [
-        "I can see you attached a photo, but my offline fallback can't read images — and I won't guess at what it shows.",
-        "",
-        "Two ways forward: (1) type out the question (or the key lines) from the photo and I'll answer it from the syllabus right away, or (2) try again in a moment so the full tutor — which can read images — picks it up.",
-        "",
-        "Explore further:",
-        `- [All Subjects & PYQs](${SITE}/subjects)`,
-        "- [Ask me again with more detail](/chat)",
-      ].join("\n");
+      return "I can see you attached a photo, but my offline fallback can't read images — and I won't guess at what it shows. Please type out the question or key lines, or try again shortly so the full tutor can read it.";
+    }      // Conversational turns do not need a study nudge or links to unrelated pages.
+    if (isBriefQuestion(query)) {
+      const lowerQuery = query.toLowerCase();
+      if (/thanks|thank you|thx|ty/.test(lowerQuery)) return "You're welcome!";
+      if (/hi|hello|hey|namaste|namaskar/.test(lowerQuery)) return "Hi! What would you like to study today?";
+      if (/who are you|what are you|what is your name|introduce yourself|tell me about yourself/.test(lowerQuery)) {
+        return "I'm Veer, your study mentor. I can help with NEB topics, practice questions, and study guidance.";
+      }
+      return "I'm here to help. What would you like to know?";
     }
 
     const results = this.match(query, 5);
 
     if (!results.length) {
-      // Answer-first shape: honest answer now, verified internet link at the end.
+      // No verified platform destination matches, so do not attach generic links.
       const web = await this.findWebAnswer(query);
-      const lines = [
-        `Hey — I couldn't find "${shorten(query, 80)}" in the platform vault yet, so here's the honest answer: this one lives outside my notes for now.`,
-        "",
-      ];
       if (web) {
-        lines.push(`A safe, real source covering it: **${web.title}** — ${web.snippet}`);
-        lines.push("");
-      } else {
-        lines.push("I couldn't verify a trustworthy web source for it right now either — rather than guess, I'd point you to the closest subject area and we build from there.");
-        lines.push("");
+        return `I couldn't find "${shorten(query, 80)}" in the platform notes yet. A source that may help is **${web.title}**: ${web.snippet}
+
+[${web.title}](${web.url})`;
       }
-      lines.push("Explore further:");
-      lines.push(`- [All Subjects & PYQs](${SITE}/subjects)`);
-      if (web) lines.push(`- [${web.title}](${web.url}) (verified web source)`);
-      lines.push("- [Ask me again with more detail](/chat)");
-      return lines.join("\n");
+      return `I couldn't find "${shorten(query, 80)}" in the platform notes, and I couldn't verify a trustworthy source just now. If you share the subject or context, I can try a more focused answer.`;
     }
 
     const nudge = STUDY_NUDGES[hashQuery(query) % STUDY_NUDGES.length];
-    // ANSWER FIRST — quick take + study nudge, no links up top.
-    const lines = [buildQuickTake(results[0]), "", nudge, ""];
-    // LINKS LAST — one consolidated section at the very end.
-    lines.push("Explore further:");
-    for (const item of results.slice(0, 3)) {
-      const fullUrl = `${SITE}${item.url}`;
-      lines.push(`- [${item.title}](${fullUrl}) — ${item.type}`);
+    const lines = [buildQuickTake(results[0]), "", nudge];
+    const relevantResults = results
+      .filter((item) => item.url.startsWith("/") && item.title.trim())
+      .slice(0, 3);
+    if (relevantResults.length) {
+      lines.push("", "Explore further:");
+      for (const item of relevantResults) {
+        const fullUrl = `${SITE}${item.url}`;
+        lines.push(`- [${item.title}](${fullUrl}) - ${item.type}`);
+      }
     }
-    lines.push(`- [Practice past papers](${SITE}/subjects)`);
     return lines.join("\n");
   }
 
@@ -664,20 +645,20 @@ class AgnesProvider implements AIProvider {
     // Fetch real-time internet search context
     const searchService = getSearchService();
     const searchContext = await searchService.searchAsContext(query);
-
     const systemContent = `${SEARCH_SYSTEM_PROMPT}
 
-**PLATFORM NAVIGATION:**
-- Notes: /class-11 or /class-12
+**PLATFORM NAVIGATION (VERIFIED DESTINATIONS):**
+- Class 11 notes: /class-11-notes
+- Class 12 notes: /class-12-notes
 - Labs: /lab
-- Subjects: /subjects
+- Subjects and past papers: /subjects
+- Mind maps: /mindmap
+- Syllabus: /syllabus
 - Loksewa: /loksewa
-- World Knowledge: /world-knowledge
-- R Notes: /r-notes
-- PYQs: ${SITE}/subjects
-- Numericals: /knowledge/numerical-physics, /knowledge/numerical-chemistry
+- World knowledge: /world-knowledge
+- Numericals: /knowledge/numerical-physics or /knowledge/numerical-chemistry
 
-NEVER hallucinate features. Only reference real platform sections.`;
+Only link to a listed route when directly useful; never add generic or retired links. Never hallucinate features. Only reference real platform sections.`;
 
     const messages: AIChatMessage[] = [
       {

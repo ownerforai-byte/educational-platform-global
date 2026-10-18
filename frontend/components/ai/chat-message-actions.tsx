@@ -15,6 +15,8 @@ import { cn } from "@/lib/utils";
  */
 export interface ChatMessageActionsProps {
   copied: boolean;
+  /** Copy is useful for substantive answers, not greetings or one-line acknowledgments. */
+  showCopy?: boolean;
   onCopy: () => void;
   onRegenerate?: () => void;
   onDeeper?: () => void;
@@ -55,6 +57,7 @@ function ActionButton({
 
 export function ChatMessageActions({
   copied,
+  showCopy = true,
   onCopy,
   onRegenerate,
   onDeeper,
@@ -71,24 +74,26 @@ export function ChatMessageActions({
         className,
       )}
     >
-      <button
-        type="button"
-        onClick={onCopy}
-        title="Copy this answer (links stay clickable, URLs are stripped)"
-        className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
-      >
-        {copied ? (
-          <>
-            <Check className="h-3 w-3 text-emerald-500" />
-            <span className="text-emerald-500">Copied</span>
-          </>
-        ) : (
-          <>
-            <Copy className="h-3 w-3" />
-            <span>Copy</span>
-          </>
-        )}
-      </button>
+      {showCopy && (
+        <button
+          type="button"
+          onClick={onCopy}
+          title="Copy this answer (links stay clickable, URLs are stripped)"
+          className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
+        >
+          {copied ? (
+            <>
+              <Check className="h-3 w-3 text-emerald-500" />
+              <span className="text-emerald-500">Copied</span>
+            </>
+          ) : (
+            <>
+              <Copy className="h-3 w-3" />
+              <span>Copy</span>
+            </>
+          )}
+        </button>
+      )}
 
       {isLatest && (
         <>

@@ -73,19 +73,6 @@ export function Footer() {
               </Link>
             </div>
 
-            {/*
-              Creator credit — a name, deliberately NOT a link and with no
-              contact details beside it. Both moved to /notice on the owner's
-              request, so the footer no longer hands out his address. The
-              "Everything Index" badge above already carries the traffic this
-              column needs.
-            */}
-            <div className="pt-3 border-t border-border/40">
-              <p className="text-xs font-medium text-muted-foreground">
-                Made with curiosity by{" "}
-                <span className="font-bold text-foreground">Ravikisan</span>
-              </p>
-            </div>
           </div>
 
           {/* 2. Core Curriculum & Spines */}

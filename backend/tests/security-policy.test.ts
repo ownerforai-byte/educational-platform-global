@@ -34,6 +34,8 @@ function credentialRoutes(app: express.Express) {
   app.use(rateLimit);
   app.post("/api/auth/login", (_req, res) => res.json({ ok: true }));
   app.post("/api/auth/signup", (_req, res) => res.json({ ok: true }));
+  app.post("/api/auth/oauth/csrf", (_req, res) => res.json({ ok: true }));
+  app.post("/api/auth/oauth/session", (_req, res) => res.json({ ok: true }));
   app.post("/api/auth/reset-password", (_req, res) => res.json({ ok: true }));
   app.post("/api/ai", (_req, res) => res.json({ ok: true }));
   app.get("/api/levels", (_req, res) => res.json({ ok: true }));
@@ -110,6 +112,21 @@ describe("rate limit tiers", () => {
 
     // A normal content endpoint (60/min default) still fine after all that.
     expect((await fetch(`${baseUrl}/api/levels`)).status).toBe(200);
+  });
+
+  test("Facebook OAuth endpoints share the strict authentication rate limit", async () => {
+    const { baseUrl } = await mountApp(credentialRoutes);
+    const endpoints = ["/api/auth/oauth/csrf", "/api/auth/oauth/session"];
+    for (const endpoint of endpoints) {
+      const statuses: number[] = [];
+      for (let i = 0; i < 6; i += 1) {
+        const response = await fetch(`${baseUrl}${endpoint}`, { method: "POST" });
+        statuses.push(response.status);
+      }
+      expect(statuses.slice(0, 5)).toEqual([200, 200, 200, 200, 200]);
+      expect(statuses[5]).toBe(429);
+      resetRateLimits();
+    }
   });
 
   test("signup sits on the strict credential tier, not the 60/min default", async () => {

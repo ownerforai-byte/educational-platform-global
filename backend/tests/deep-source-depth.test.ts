@@ -468,10 +468,11 @@ describe("web grounding: real images and no truncation", () => {
   test("no images attached means no image section and no false promise", () => {
     const context = formatSearchContext([results[1]]);
     expect(context).not.toContain("[REAL IMAGE URLS ATTACHED");
-    expect(context).toContain("Ground the reply in at least two of these sources");
+    expect(context).toContain("Corroborate important or changing claims with multiple independent sources when available");
+    expect(context).not.toContain("at least two of these sources");
   });
 
-  test("a complete answer may use every gathered source", () => {
+  test("a complete answer receives gathered sources without a forced citation count", () => {
     const many = Array.from({ length: 6 }, (_, i) => ({
       title: `Source ${i}`,
       link: `https://example${i}.edu/x`,
@@ -479,8 +480,9 @@ describe("web grounding: real images and no truncation", () => {
       displayLink: `example${i}.edu`,
     }));
     const context = formatSearchContext(many);
-    expect(context).toContain("use EVERY result that adds a fact");
+    expect(context).toContain("Do not force a citation count or mention results that do not help");
     expect(context).not.toContain("never more than three");
+    expect(context).not.toContain("use EVERY result");
     for (const source of many) expect(context).toContain(source.link);
   });
 

@@ -57,6 +57,7 @@ import {
   ChatAttachPreview,
   MAX_ATTACHMENTS,
 } from "@/components/ai/chat-attachments";
+import { isBriefChatMessage } from "@/lib/ai/chat-actions";
 import {
   GO_DEEPER_INSTRUCTION,
   KEEP_IT_SHORT_INSTRUCTION,
@@ -1260,6 +1261,7 @@ export function TutorConsole({
                     {/* Shared per-answer actions — identical to the widget's */}
                     <ChatMessageActions
                       copied={copiedIndex === index}
+                      showCopy={!isBriefChatMessage(msg.content)}
                       onCopy={() => handleCopy(msg.content, index)}
                       isLatest={isLastAssistant}
                       disabled={sending}

@@ -127,3 +127,10 @@ test_*.py
 
 # local API tokens (never commit)
 cloudflare-token.txt
+
+# Local secrets / build tooling (never commit)
+env2
+android-twa/
+sdkerr.txt
+sdkout.txt
+tools/

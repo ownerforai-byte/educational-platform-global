@@ -1,4 +1,6 @@
 import { describe, expect, test } from "vitest";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { REPLY_CRAFT_RULES } from "../../src/ai/reply-craft";
 import {
   MASTER_ACADEMIC_PROMPT,
@@ -8,6 +10,11 @@ import { ARTIFACT_RULES } from "../../src/ai/artifact-rules";
 import { CLASS_SCOPE_RULES } from "../../src/ai/class-scope";
 import { DEEP_ANSWER_RULES } from "../../src/ai/deep-answer";
 import { SOURCE_REGISTRY_RULES } from "../../src/ai/source-registry";
+
+const SERVICE_SOURCE = readFileSync(
+  fileURLToPath(new URL("../../src/ai/service.ts", import.meta.url)),
+  "utf8",
+);
 
 describe("reply craft — the ChatGPT/Claude-grade layer", () => {
   test("reaches the model as its own layer in the master prompt", () => {
@@ -57,11 +64,25 @@ describe("reply craft — the ChatGPT/Claude-grade layer", () => {
     expect(REPLY_CRAFT_RULES).toContain("no wall of text");
   });
 
-  test("pins the self-check and the finished close (no cliffhangers)", () => {
+  test("pins the self-check and optional, relevant links as the final section", () => {
     expect(REPLY_CRAFT_RULES).toContain("SELF-CHECK BEFORE SENDING");
     expect(REPLY_CRAFT_RULES).toContain("CLOSE WITH THE NEXT MOVE");
     expect(REPLY_CRAFT_RULES).toContain("NO CLIFFHANGERS");
-    expect(REPLY_CRAFT_RULES).toContain("never an amputation");
+    expect(REPLY_CRAFT_RULES).toContain("links are the final content");
+    expect(REPLY_CRAFT_RULES).toContain("Skip links for greetings, thanks, small talk");
+    expect(REPLY_CRAFT_RULES).toContain("Never invent routes");
+    expect(REPLY_CRAFT_RULES).not.toContain("ALWAYS PRO");
+  });
+
+  test("keeps only existing, useful routes in navigation guidance", () => {
+    expect(PROFESSOR_STYLE_RULES).toContain("RELATED LINKS LAST (ONLY WHEN USEFUL)");
+    expect(PROFESSOR_STYLE_RULES).toContain("Class 11 notes (/class-11-notes)");
+    expect(PROFESSOR_STYLE_RULES).toContain("Never use retired /r-notes");
+    expect(PROFESSOR_STYLE_RULES).not.toContain("ALWAYS PRO");
+    expect(SERVICE_SOURCE).toContain("RELATED LINKS (ONLY WHEN THEY HELP)");
+    expect(SERVICE_SOURCE).toContain("Never use retired /r-notes or invent a route");
+    expect(SERVICE_SOURCE).toContain("**PLATFORM NAVIGATION (VERIFIED DESTINATIONS):**");
+    expect(SERVICE_SOURCE).not.toContain("- R Notes: /r-notes");
   });
 
   test("carries no template artefacts and keeps the master prompt a sane size", () => {

@@ -16,7 +16,7 @@ import {
  *  2. the request-body guard — count cap, per-image size cap, never throws;
  *  3. provider mapping — OpenAI-compatible parts (Agnes);
  *  4. the prompt instruction — read the photo, never invent its content,
- *     keep the 150-word floor.
+ *     follow the question's requested depth without padding brief answers.
  */
 
 /** A data URL whose base64 payload decodes to approximately `bytes`. */
@@ -97,11 +97,13 @@ describe("provider mapping", () => {
 });
 
 describe("imageInstruction", () => {
-  test("demands reading the photo, forbids invention, keeps the floor", () => {
+  test("demands reading the photo, forbids invention, and sizes the answer to the question", () => {
     const text = imageInstruction(2);
     expect(text).toContain("2 photos");
     expect(text).toContain("NEVER invent");
-    expect(text).toContain("250-word minimum");
+    expect(text).toContain("short direct questions stay concise");
+    expect(text).toContain("explanations and derivations include their necessary working");
+    expect(text).not.toContain("250-word minimum");
     expect(imageInstruction(1)).toContain("1 photo.");
   });
 });

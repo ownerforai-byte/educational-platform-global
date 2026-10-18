@@ -162,6 +162,32 @@ describe("streamAnswerToStudent", () => {
     expect(state.streamedAny).toBe(true);
   });
 
+  it("does not add a continuation or length padding to a brief self-introduction", async () => {
+    const { res, written } = fakeRes();
+    const channel = openSseChannel(res);
+    const { service, calls } = fakeService([{ deltas: ["I'm Veer, your study mentor."], finishReason: "stop" }]);
+    const state = newState();
+
+    const outcome = await streamAnswerToStudent({
+      channel,
+      service,
+      provider: "",
+      messages: [{ role: "user", content: "who are you?" }],
+      logLabel: "[AI test stream]",
+      doneExtras: {},
+      state,
+    });
+
+    const sent = events(written);
+    expect(outcome.status).toBe("done");
+    expect(calls()).toBe(1);
+    expect(sent.filter((e) => typeof e.content === "string").map((e) => e.content).join("")).toBe(
+      "I'm Veer, your study mentor.",
+    );
+    expect(sent.some((e) => typeof e.continuing === "number")).toBe(false);
+    expect(sent[sent.length - 1]).toMatchObject({ done: true, continued: false, continuations: 0 });
+  });
+
   it("continues a truncated answer on the SAME stream and says so", async () => {
     const { res, written } = fakeRes();
     const channel = openSseChannel(res);

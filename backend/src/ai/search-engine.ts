@@ -1,10 +1,9 @@
 /**
  * WebSearchService — multi-source real-time web search for answer grounding.
  *
- * Owner rule (2026-09-28): every reply gathers from AT LEAST 2 and AT MOST 3
- * sources at a time. The configured engines rotate call-by-call so no single
- * key absorbs all traffic; each engine is queried in parallel, results are
- * merged and de-duplicated by URL, then capped to the requested count.
+ * The configured engines rotate call-by-call so no single key absorbs all
+ * traffic; selected engines are queried in parallel and results are merged and
+ * de-duplicated by URL before being capped to the requested count.
  *
  * Engines (set at least one key in backend/.env):
  *   TAVILY_API_KEY     — https://app.tavily.com
@@ -54,9 +53,9 @@ function hostnameOf(url: string): string {
 }
 
 /**
- * Pick which engines answer THIS query: at least `min` (2) and at most `max`
- * (3) of the configured ones, rotated by `offset` so successive queries walk
- * through the whole pool. Fewer than `min` configured → use them all.
+ * Pick the configured engines for THIS query, rotated by `offset` so
+ * successive queries walk through the pool. If fewer than `min` are available,
+ * use all available engines.
  */
 export function selectProviders(
   available: string[],
@@ -419,9 +418,8 @@ export class WebSearchService {
  *
  * Pure and exported so the contract is testable without a network call — which
  * matters, because two of the owner's requirements live in this text: a
- * complete answer must be allowed to draw on ALL the gathered sources (the old
- * wording capped the reply at three), and real image URLs must reach the model
- * so it can put pictures inside the answer.
+ * relevant search results and real image URLs must reach the model, without
+ * imposing a minimum citation count or requiring irrelevant sources.
  */
 export function formatSearchContext(
   results: WebSearchResult[],
@@ -473,12 +471,7 @@ export function formatSearchContext(
   lines.push("[END OF SEARCH RESULTS]");
   lines.push("");
   lines.push(
-    "Use the above real-time search results to provide an accurate, up-to-date answer. " +
-      "Ground the reply in at least two of these sources, and use EVERY result that adds a fact " +
-      "about the asked concept — a complete answer may draw on all of them, so never drop a source " +
-      "that carries something the student needs. Credit sources by NAME in plain words " +
-      "(as per NASA, as per WHO) instead of dumping URLs, and prefer these results over your " +
-      "training data whenever they are relevant.",
+    "Use attached search results that genuinely support the answer. Corroborate important or changing claims with multiple independent sources when available, and credit sources by name where relevant. Prefer current results over training data for changing facts; state uncertainty when evidence is incomplete. Do not force a citation count or mention results that do not help.",
   );
 
   return lines.join("\n");

@@ -2,10 +2,10 @@ import { beforeEach, describe, expect, test, vi } from "vitest";
 
 /**
  * Contract suite for the SYLLABUS ANCHOR + REPLY FLOOR engine (owner
- * requirement 2026-09-29: no random replies, 150-word minimum that scales
- * with question depth). Pins:
+ * requirement 2026-09-29: no random replies, depth-sensitive minimums for
+ * substantive questions, and no length penalty for short turns). Pins:
  *
- *  1. the depth classifier and its floors (150 hard minimum, up-scaling);
+ *  1. the depth classifier, minimums, and conversational exemptions;
  *  2. syllabus matching — subject/unit/topic hits, word-boundary safety,
  *     graceful empty results;
  *  3. the anchor block contract — syllabus hits => scope directive, no hits
@@ -64,6 +64,8 @@ import {
   enforceReplyFloor,
   findSyllabusMatches,
   floorWordsForQuestion,
+  isBriefQuestion,
+  isShortQuestion,
   meetsReplyFloor,
   wordCount,
 } from "../src/ai/syllabus-anchor";
@@ -101,9 +103,20 @@ describe("classifyQuestionDepth", () => {
     expect(classifyQuestionDepth("what factors affect surface tension?")).toBe("medium");
   });
 
-  test("shallow for definitions, facts and casual chat (held to 250 floor)", () => {
+  test("shallow for definitions, facts and casual chat", () => {
     expect(classifyQuestionDepth("what is enthalpy?")).toBe("shallow");
     expect(classifyQuestionDepth("hi veer, feeling tired today")).toBe("shallow");
+  });
+
+  test("distinguishes conversational turns, short factual asks, and explicit depth asks", () => {
+    for (const question of ["hi", "thanks", "who are you?", "what are you?", "what is your name?", "what is enthalpy?", "why does ice float?"]) {
+      expect(isShortQuestion(question), question).toBe(true);
+    }
+    for (const question of ["explain enthalpy", "derive the lens formula", "hi, explain enthalpy"]) {
+      expect(isShortQuestion(question), question).toBe(false);
+    }
+    expect(isBriefQuestion("who are you?")).toBe(true);
+    expect(isBriefQuestion("hi, explain enthalpy")).toBe(false);
   });
 });
 
@@ -113,10 +126,12 @@ describe("floorWordsForQuestion", () => {
     expect(DEPTH_FLOOR_WORDS.shallow).toBe(250);
   });
 
-  test("the floor scales UP with question depth, never below 250", () => {
-    expect(floorWordsForQuestion("what is enthalpy?")).toBe(250);
-    expect(floorWordsForQuestion("why does ice float?")).toBe(350);
+  test("brief and concise questions skip expansion while depth requests retain scaled floors", () => {
+    expect(floorWordsForQuestion("who are you?")).toBe(0);
+    expect(floorWordsForQuestion("what is enthalpy?")).toBe(0);
+    expect(floorWordsForQuestion("why does ice float?")).toBe(0);
     expect(floorWordsForQuestion("derive the lens formula")).toBe(500);
+    expect(floorWordsForQuestion("explain the water cycle in detail")).toBe(500);
     for (const v of Object.values(DEPTH_FLOOR_WORDS)) expect(v).toBeGreaterThanOrEqual(250);
   });
 });
@@ -229,6 +244,12 @@ describe("enforceReplyFloor", () => {
     const out = await enforceReplyFloor("word ".repeat(100), 150, retry);
     expect(out.words).toBe(140);
     expect(out.expanded).toBe(true);
+  });
+
+  test("floor zero passes the original answer through without retries", async () => {
+    const out = await enforceReplyFloor("short direct answer", 0, retry);
+    expect(out).toEqual({ answer: "short direct answer", floor: 0, words: 3, expanded: false });
+    expect(retry).not.toHaveBeenCalled();
   });
 
   test("the original ships when retries fail or never help", async () => {
