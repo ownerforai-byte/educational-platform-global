@@ -1,77 +1,56 @@
 {
-  "title": "IUCN categories of threatened species: meaning of extinct…",
+  "title": "IUCN Categories of Threatened Species",
   "unitSlug": "conservation-biology",
   "topicSlug": "iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threaten",
-  "topicTitle": "IUCN categories of threatened species: meaning of extinct, endangered, vulnerable, rare and threatened species",
+  "topicTitle": "IUCN categories of threatened species: meaning of extinct, endangered, vulnerable, rare and threatened",
   "relevance": 100,
-  "source": "generated",
-  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "source": "NEB Class 11 Biology",
   "notes": [
-    "**Fact.** Colligative properties depend on number of solute particles: relative lowering of vapour pressure Δp/p = x₂ (Raoult).",
-    "**Fact.** Boiling-point elevation ΔT_b = K_b m; depression ΔT_f = K_f m; osmotic pressure π = CRT (dilute).",
-    "**Fact.** m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass."
-  ],
-  "confusion": [
-    "❌ skip the key fact → ✅ colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult).."
-  ],
-  "bounds": [
-    "Limit to remember: colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult)."
-  ],
-  "practice": [
-    "one worked example for \"IUCN categories of threatened species: meaning of extinct…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Colligative properties depend on number of solute particles: relative lowering of vapour pressure Δp/p = x₂ (Raoult).",
-    "Boiling-point elevation ΔT_b = K_b m; depression ΔT_f = K_f m; osmotic pressure π = CRT (dilute).",
-    "m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"IUCN categories of threatened species: meaning of extinct…\" with one example.",
-    "compare \"IUCN categories of threatened species: meaning of extinct\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"IUCN categories of threatened species: meaning of extinct…\" and verify the answer is plausible."
-  ],
-  "formulas": [
-    "ΔT_b = K_b m",
-    "π = CRT",
-    "Δp/p = x₂ (Raoult)"
-  ],
-  "numericals": [
-    "Use  ΔT_b = K_b m  — pick reasonable values, solve, and check the units.",
-    "Use  π = CRT  — pick reasonable values, solve, and check the units.",
-    "Use  Δp/p = x₂ (Raoult)  — pick reasonable values, solve, and check the units."
+    "The IUCN Red List is the world's most comprehensive inventory of the global conservation status of biological species, maintained by the International Union for Conservation of Nature.",
+    "Extinct (EX): no reasonable doubt that the last individual has died; no surveys can find it.",
+    "Extinct in the Wild (EW): survives only in captivity or cultivation, with no natural population.",
+    "Critically Endangered (CR): extremely high risk of extinction in the wild; e.g., population < 50 mature individuals or rapid decline.",
+    "Endangered (EN): very high risk of extinction in the wild; smaller populations or steeper declines than CR threshold.",
+    "Vulnerable (VU): high risk of extinction in the wild; larger populations than EN but still threatened.",
+    "Near Threatened (NT): close to qualifying for a threatened category.",
+    "Least Concern (LC): widespread and abundant; lowest risk of extinction.",
+    "Data Deficient (DD): insufficient information to assess extinction risk.",
+    "Not Evaluated (NE): not yet assessed against the criteria."
   ],
   "keyPoints": [
-    "• IUCN categories of threatened species: meaning of extinct",
-    "• Endangered",
-    "• Vulnerable",
-    "• Rare",
-    "• Threatened species"
+    "IUCN Red List = global species conservation status inventory",
+    "EX: no living individuals remain",
+    "EW: survives only in captivity/cultivation",
+    "CR, EN, VU = threatened categories (in decreasing severity)",
+    "NT: close to threatened",
+    "LC: lowest risk",
+    "DD: insufficient data; NE: not evaluated"
   ],
-  "summary": "IUCN categories of threatened species: meaning of extinct… (Conservation Biology, Biology, class-11-notes) covers IUCN categories of threatened species: meaning of extinct, endangered, vulnerable. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
-    {
-      "question": "Which of the following is a distinct sub-topic under \"IUCN categories of threatened species: meaning of extinct…\"?",
-      "options": [
-        "IUCN categories of threatened species: meaning of extinct",
-        "Endangered",
-        "Unrelated topic",
-        "None of the above"
-      ],
-      "answer": "A",
-      "explanation": "IUCN categories of threatened species: meaning of extinct is listed among the official sub-ideas of IUCN categories of threatened species: meaning of extinct…; the others are not part of this topic."
-    },
-    {
-      "question": "A common examiner point on \"IUCN categories of threatened species: meaning of extinct…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    }
-  ]
+  "confusion": [
+    "❌ 'Threatened' is a single category. ✅ 'Threatened' collectively refers to CR, EN, and VU.",
+    "❌ Rare species are always endangered. ✅ Rarity alone doesn't imply endangerment; population trend matters.",
+    "❌ Extinct in the wild means extinct. ✅ EW species still survive in captivity.",
+    "❌ Data deficient means safe. ✅ DD means unknown risk, not low risk."
+  ],
+  "examples": [
+    "Tiger — Endangered (EN)",
+    "One-horned rhinoceros — Vulnerable (VU)",
+    "Red panda — Endangered (EN)",
+    "Snow leopard — Vulnerable (VU)",
+    "Dodo — Extinct (EX)"
+  ],
+  "universalFacts": [
+    "IUCN Red List founded in 1964",
+    "Over 150,000 species assessed",
+    "More than 42,000 species threatened with extinction",
+    "Nepal has 27 mammal species listed as threatened"
+  ],
+  "practiceQuestions": [
+    "What is the difference between EW and EX?",
+    "List the IUCN categories in order of decreasing extinction risk.",
+    "Why is 'Data Deficient' not the same as 'Least Concern'?",
+    "Name three threatened species of Nepal and their IUCN status."
+  ],
+  "practice": [],
+  "summary": "The IUCN Red List uses standardized categories (EX, EW, CR, EN, VU, NT, LC, DD, NE) to assess extinction risk. Understanding these categories is essential for prioritizing conservation action and policy."
 }

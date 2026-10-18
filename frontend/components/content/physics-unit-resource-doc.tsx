@@ -98,10 +98,6 @@ export function PhysicsUnitResourceDoc({
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 
-  if (!meta) {
-    return null;
-  }
-
   const filteredQuestions = useMemo(() => {
     if (!fullData?.questions) return [];
     if (!searchQuery.trim()) return fullData.questions;
@@ -128,6 +124,10 @@ export function PhysicsUnitResourceDoc({
         item.example?.toLowerCase().includes(q)
     );
   }, [fullData, searchQuery]);
+
+  if (!meta) {
+    return null;
+  }
 
   return (
     <div
