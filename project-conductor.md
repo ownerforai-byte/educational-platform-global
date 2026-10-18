@@ -163,3 +163,8 @@ Full map and rules: **`BRANCHES.md`** (read it before touching branches).
 - Checks: `npm run check` (scoped to changed areas) before each commit,
   `npm run check:all` (full gate: content JSON + frontend tsc/tests + backend
   tsc/tests) before pushing `main`.
+- Sandbox flow (optional, per change set): `node scripts/worktree-flow.mjs
+  create|check|build|done|abandon|list` — a disposable `.worktrees/<name>`
+  worktree on a `cline/<name>` branch; edits, affected tests, and affected
+  builds all happen inside it; `done` gates, merges back into the main tree's
+  current branch, and removes the sandbox. Full map and rules: BRANCHES.md §5a.

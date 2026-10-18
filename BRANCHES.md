@@ -147,3 +147,29 @@ git checkout main && git merge <area-branch>
 npm run check:all                 # full gate before pushing main
 # push only when the user asks
 ```
+
+### 5a. Sandbox worktree flow (`cline/*` + `.worktrees/`)
+
+For change sets you want fully isolated from the main working tree — edits,
+affected tests, and affected builds all happen inside a disposable worktree;
+on green it merges back and deletes itself:
+
+```bash
+node scripts/worktree-flow.mjs create my-change     # .worktrees/my-change on cline/my-change
+# ... edit files under .worktrees/my-change/ ...
+git -C .worktrees/my-change add <files>
+git -C .worktrees/my-change commit -m "<type>: <why>"
+node scripts/worktree-flow.mjs check my-change      # scoped (affected-only) check inside it
+node scripts/worktree-flow.mjs done my-change       # gate -> merge into the main tree's
+                                                    # current branch -> remove worktree + branch
+node scripts/worktree-flow.mjs abandon my-change --force   # discard instead (unmerged commits!)
+node scripts/worktree-flow.mjs list                 # every sandbox: dirty + unmerged counts
+```
+
+Rules: run it from the main repo root (it refuses from inside a sandbox);
+`done` refuses a dirty sandbox — loose edits are never merged, commit first;
+`abandon` needs `--force` while the branch holds unmerged commits. Sandboxes
+share the main tree's `node_modules` via junctions/symlinks (no per-sandbox
+npm install), the junctions are unlinked before removal, `cline/*` branches
+are skipped by `scripts/push-area-branches.ps1`, and `.worktrees/` is
+gitignored — a sandbox is never pushed, so it costs no Vercel preview build.

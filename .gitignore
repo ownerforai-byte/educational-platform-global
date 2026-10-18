@@ -162,3 +162,6 @@ android-twa/release/
 # even if it does not match the named patterns above.
 android-twa/
 tools/
+
+# ── worktree-flow sandboxes (cline/* branches; see scripts/worktree-flow.mjs) ──
+.worktrees/
