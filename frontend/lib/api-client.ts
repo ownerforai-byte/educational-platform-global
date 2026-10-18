@@ -59,16 +59,59 @@ function buildHeaders(init?: RequestInit): Record<string, string> {
 }
 
 /** Auth endpoints that should NOT trigger a refresh loop. */
+const REFRESH_PATH = "/api/auth/refresh";
+
 function isAuthPath(path: string): boolean {
-  return (
-    path.startsWith("/api/auth/") &&
-    !path.startsWith("/api/auth/refresh") &&
-    path !== "/api/auth/refresh"
-  );
+  return path.startsWith("/api/auth/") && path !== REFRESH_PATH;
 }
 
 function unauthorizedError(): Error {
   return Object.assign(new Error("Unauthorized"), { status: 401, code: "UNAUTHORIZED" });
+}
+
+/** Result of a shared refresh attempt. */
+export interface SharedRefreshResult {
+  ok: boolean;
+  user?: unknown;
+  accessToken?: string;
+}
+
+let refreshFlight: Promise<SharedRefreshResult> | null = null;
+let refreshCooldownUntil = 0;
+/**
+ * Concurrent 401s (session revalidation, the retry path below, the provider's
+ * renewal) must collapse into ONE POST /api/auth/refresh. The backend auth
+ * tier allows only 5 requests/min, so an un-collapsed burst of refreshes on a
+ * single page load eats the whole budget and 429s the login/OAuth calls that
+ * follow. A short cooldown keeps a failed refresh from re-firing per caller.
+ */
+const REFRESH_COOLDOWN_MS = 5_000;
+
+export function refreshSessionShared(): Promise<SharedRefreshResult> {
+  if (refreshFlight) return refreshFlight;
+  const now = Date.now();
+  if (now < refreshCooldownUntil) {
+    return Promise.resolve({ ok: false });
+  }
+  refreshCooldownUntil = now + REFRESH_COOLDOWN_MS;
+  refreshFlight = fetch(`${API_BASE}${REFRESH_PATH}`, {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then(async (res) => {
+      if (!res.ok) return { ok: false };
+      const body = (await res.json().catch(() => ({}))) as {
+        user?: unknown;
+        accessToken?: string;
+      };
+      return { ok: true, user: body.user, accessToken: body.accessToken };
+    })
+    .catch(() => ({ ok: false }))
+    .finally(() => {
+      refreshFlight = null;
+    });
+  return refreshFlight;
 }
 
 async function request<T>(path: string, init?: RequestInit, isRetry = false): Promise<T> {
@@ -90,12 +133,9 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
 
   // Refresh-and-retry only for resource endpoints, and only once.
   if (response.status === 401 && !isRetry && !isAuthPath(path)) {
-    const refreshed = await fetch(`${API_BASE}/api/auth/refresh`, {
-      method: "POST",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
-    });
+    const refreshed = await refreshSessionShared();
     if (refreshed.ok) {
+      if (refreshed.accessToken) setStoredToken(refreshed.accessToken);
       return request<T>(path, init, true);
     }
     throw unauthorizedError();

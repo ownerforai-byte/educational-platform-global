@@ -10,6 +10,7 @@ vi.mock("../src/db/supabase", () => {
       getUser: vi.fn(),
       signOut: vi.fn(),
       refreshSession: vi.fn(),
+      resetPasswordForEmail: vi.fn(),
       admin: { updateUserById: vi.fn() },
     },
     from: vi.fn(),
@@ -44,6 +45,7 @@ import { createApp } from "../src/app";
 import { supabaseAdmin } from "../src/db/supabase";
 import { resetRateLimits } from "../src/middleware/rateLimit";
 import { requireAuth, requireRole, requireAdmin } from "../src/middleware/auth";
+import { verifyStatusToken } from "../src/utils/statusToken";
 
 const mocked = supabaseAdmin as unknown as {
   auth: {
@@ -52,6 +54,7 @@ const mocked = supabaseAdmin as unknown as {
     getUser: Mock;
     signOut: Mock;
     refreshSession: Mock;
+    resetPasswordForEmail: Mock;
     admin: { updateUserById: Mock };
   };
   from: Mock;
@@ -126,6 +129,10 @@ async function startServers() {
 beforeEach(() => {
   vi.clearAllMocks();
   mocked.auth.signOut.mockResolvedValue({ data: {}, error: null });
+  mocked.auth.getUser.mockResolvedValue({
+    data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" } } },
+    error: null,
+  });
   // The tiered limiter (strict 10/min on auth endpoints) must not leak hits
   // between tests — the suite makes many refresh/login calls per IP.
   resetRateLimits();
@@ -154,6 +161,206 @@ function setCookiesOf(res: Response): string[] {
 }
 
 describe("auth flow", () => {
+  test("OAuth CSRF endpoint issues a short-lived, origin-checked state cookie", async () => {
+    const res = await fetch(`${baseUrl}/api/auth/oauth/csrf`, {
+      method: "POST",
+      headers: { Origin: "http://localhost:5173" },
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as { csrfToken: string };
+    expect(body.csrfToken).toMatch(/^[a-f0-9]{64}$/);
+    expect(res.headers.get("cache-control")).toBe("no-store");
+    const cookie = setCookiesOf(res).find((value) => value.startsWith("oauth-csrf-token="));
+    expect(cookie).toContain(`oauth-csrf-token=${body.csrfToken}`);
+    expect(cookie?.toLowerCase()).toContain("httponly");
+    expect(cookie?.toLowerCase()).toContain("samesite=lax");
+  });
+
+  test("OAuth CSRF endpoint rejects untrusted and missing origins", async () => {
+    for (const origin of [undefined, "https://attacker.example"]) {
+      const res = await fetch(`${baseUrl}/api/auth/oauth/csrf`, {
+        method: "POST",
+        headers: origin ? { Origin: origin } : {},
+      });
+      expect(res.status).toBe(403);
+      expect(res.headers.get("cache-control")).toBe("no-store");
+      expect(setCookiesOf(res).some((cookie) => cookie.startsWith("oauth-csrf-token="))).toBe(false);
+    }
+  });
+
+  test("OAuth session rejects missing CSRF and invalid Supabase tokens", async () => {
+    const missingCsrf = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: { Origin: "http://localhost:5173", "Content-Type": "application/json" },
+      body: JSON.stringify({ accessToken: "token", refreshToken: "refresh", state: "a".repeat(64) }),
+    });
+    expect(missingCsrf.status).toBe(403);
+    expect(missingCsrf.headers.get("cache-control")).toBe("no-store");
+
+    const state = "b".repeat(64);
+    mocked.auth.getUser.mockResolvedValueOnce({ data: {}, error: { message: "Invalid token" } });
+    const invalidToken = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: "token", refreshToken: "refresh", state }),
+    });
+    expect(invalidToken.status).toBe(401);
+    expect(invalidToken.headers.get("cache-control")).toBe("no-store");
+  });
+
+  test("OAuth session validates the user, enforces owner approval and sets app cookies", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" }, app_metadata: { provider: "facebook" } } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    const state = "c".repeat(64);
+
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.headers.get("cache-control")).toBe("no-store");
+    expect(await res.json()).toMatchObject({
+      user: { id: "oauth-user", email: "facebook@example.com", fullName: "Facebook Student" },
+      accessToken: VALID_TOKEN,
+    });
+    expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
+    const cookies = setCookiesOf(res);
+    expect(cookies.some((cookie) => cookie.startsWith(`sb-access-token=${VALID_TOKEN}`))).toBe(true);
+    expect(cookies.some((cookie) => cookie.startsWith("sb-refresh-token=valid-refresh"))).toBe(true);
+    expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
+  });
+
+  test("OAuth session rejects providers outside the allowlist before issuing application cookies", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "11111111-1111-4111-8111-111111111111", email: "student@example.com", app_metadata: { provider: "github" } } },
+      error: null,
+    });
+    const state = "e".repeat(64);
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
+    });
+    expect(res.status).toBe(401);
+    expect(res.headers.get("cache-control")).toBe("no-store");
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+  });
+
+  test("OAuth session accepts Google identities like Facebook ones", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" }, app_metadata: { provider: "google" } } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    const state = "f".repeat(64);
+
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+    });
+
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({
+      user: { id: "oauth-user", email: "google@example.com", fullName: "Google Student" },
+      accessToken: VALID_TOKEN,
+    });
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(true);
+  });
+
+  test("OAuth session accepts Google sign-ins linked to an existing email account", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: {
+        user: {
+          id: "oauth-user",
+          email: "ownerforai@example.com",
+          user_metadata: { full_name: "Linked Student" },
+          app_metadata: { provider: "email", providers: ["email", "google"] },
+          identities: [{ provider: "email" }, { provider: "google" }],
+        },
+      },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    const state = "9".repeat(64);
+
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+    });
+
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({
+      user: { id: "oauth-user", email: "ownerforai@example.com", fullName: "Linked Student" },
+      accessToken: VALID_TOKEN,
+    });
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(true);
+  });
+
+  test("OAuth session routes pending accounts to the approval screen without issuing cookies", async () => {
+    const userId = "11111111-1111-4111-8111-111111111111";
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: userId, email: "facebook@example.com", app_metadata: { provider: "facebook" } } },
+      error: null,
+    });
+    mockProfiles({ access_status: "PENDING" });
+    const state = "d".repeat(64);
+    const originalKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    process.env.SUPABASE_SERVICE_ROLE_KEY = "test-status-signing-key";
+    try {
+      const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+        method: "POST",
+        headers: {
+          Origin: "http://localhost:5173",
+          Cookie: `oauth-csrf-token=${state}`,
+          "X-CSRF-Token": state,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
+      });
+      expect(res.status).toBe(403);
+      expect(res.headers.get("cache-control")).toBe("no-store");
+      const payload = await res.json();
+      expect(payload).toMatchObject({ code: "PENDING_APPROVAL", user: null, accessToken: null });
+      expect(verifyStatusToken(payload.statusToken)).toBe(userId);
+      expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+    } finally {
+      if (originalKey === undefined) delete process.env.SUPABASE_SERVICE_ROLE_KEY;
+      else process.env.SUPABASE_SERVICE_ROLE_KEY = originalKey;
+    }
+  });
+
   test("login success returns 200 and sets sb-access-token session cookie", async () => {
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {

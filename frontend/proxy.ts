@@ -1,5 +1,15 @@
 import { type NextRequest, NextResponse } from "next/server";
 
+/**
+ * Supabase project the frontend talks to. Driven by NEXT_PUBLIC_SUPABASE_URL so
+ * a project migration can never strand the CSP allowlist again — the 2026-10
+ * project switch left the old host hardcoded here, which made the OAuth
+ * settings pre-check fail with a CSP violation ("Failed to fetch" on login).
+ */
+export const SUPABASE_ORIGIN =
+  process.env.NEXT_PUBLIC_SUPABASE_URL?.trim().replace(/\/+$/, "") ||
+  "https://lqzjcwbkpeiqslqhxxmu.supabase.co";
+
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 120;
 const RATE_LIMIT_MAX_KEYS = 10_000;
@@ -74,10 +84,10 @@ function setSecurityHeaders(response: NextResponse) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
+      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} ${SUPABASE_ORIGIN} wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
       // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
       // Supabase Storage, Google Drive previews, and the video players.
-      "frame-src 'self' https://tsvbksfegvdjwczzfdcx.supabase.co https://drive.google.com https://www.youtube.com https://player.vimeo.com",
+      "frame-src 'self' " + SUPABASE_ORIGIN + " https://drive.google.com https://www.youtube.com https://player.vimeo.com",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",

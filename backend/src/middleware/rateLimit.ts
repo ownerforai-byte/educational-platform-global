@@ -59,7 +59,9 @@ function tierFor(originalUrl: string | undefined): Tier {
   if (
     url.startsWith("/api/auth/login") ||
     url.startsWith("/api/auth/refresh") ||
-    url.startsWith("/api/auth/signup")
+    url.startsWith("/api/auth/signup") ||
+    url.startsWith("/api/auth/oauth/csrf") ||
+    url.startsWith("/api/auth/oauth/session")
   ) {
     return "auth";
   }
@@ -86,6 +88,12 @@ const TIERS: Record<Tier, TierLimit> = {
 };
 
 export function rateLimit(req: Request, res: Response, next: NextFunction) {
+  if (
+    req.originalUrl.startsWith("/api/auth/oauth/csrf") ||
+    req.originalUrl.startsWith("/api/auth/oauth/session")
+  ) {
+    res.setHeader("Cache-Control", "no-store");
+  }
   const tier = tierFor(req.originalUrl);
   const limit = TIERS[tier] ?? TIERS.default;
 

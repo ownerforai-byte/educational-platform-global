@@ -1,4 +1,5 @@
 import { Request, Response, Router } from "express";
+import { randomBytes, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import { isProductionEnv } from "../config/env";
 import { createAuthClient, supabaseAdmin } from "../db/supabase";
@@ -18,6 +19,7 @@ import {
   buildSessionUser,
   isOwnerEmail,
 } from "../middleware/auth";
+import { isOriginAllowed } from "../middleware/cors";
 import type { SessionUser } from "../auth/types";
 import type {
   LoginResponse,
@@ -51,6 +53,10 @@ function setSessionCookie(res: Response, token: string, expiresInSec?: number): 
 /** The refresh token lives 30 days so users stay signed in past the 1h access token. */
 const REFRESH_COOKIE = "sb-refresh-token";
 const REFRESH_COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 30;
+const OAUTH_CSRF_COOKIE = "oauth-csrf-token";
+
+/** Social providers the app accepts for OAuth sessions — mirrors the login-form buttons. */
+const ALLOWED_OAUTH_PROVIDERS = new Set(["facebook", "google"]);
 
 function setRefreshCookie(res: Response, token: string): void {
   res.cookie(REFRESH_COOKIE, token, {
@@ -75,6 +81,12 @@ const signupSchema = z.object({
   fullName: z.string().trim().min(2).max(80).optional(),
   email: z.string().email(),
   password: z.string().min(8).max(72),
+});
+
+const oauthSessionSchema = z.object({
+  accessToken: z.string().min(1).max(8192),
+  refreshToken: z.string().min(1).max(8192),
+  state: z.string().regex(/^[a-f0-9]{64}$/),
 });
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -174,6 +186,106 @@ const router = Router();
  * 400 → invalid payload
  * 401 → bad credentials
  */
+router.post("/oauth/csrf", (req: Request, res: Response) => {
+  const origin = req.get("origin");
+  if (!origin || !isOriginAllowed(origin)) {
+    res.setHeader("Cache-Control", "no-store");
+    res.status(403).json({ error: "OAuth sign-in is not allowed from this origin" });
+    return;
+  }
+
+  const csrfToken = randomBytes(32).toString("hex");
+  res.cookie(OAUTH_CSRF_COOKIE, csrfToken, {
+    ...cookieOptions(),
+    maxAge: 10 * 60 * 1000,
+  });
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Vary", "Origin");
+  res.json({ csrfToken });
+});
+
+router.post("/oauth/session", async (req: Request, res: Response) => {
+  const parsed = oauthSessionSchema.safeParse(req.body);
+  res.setHeader("Cache-Control", "no-store");
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid OAuth session" });
+    return;
+  }
+  const origin = req.get("origin");
+  if (!origin || !isOriginAllowed(origin)) {
+    res.status(403).json({ error: "OAuth session exchange is not allowed from this origin" });
+    return;
+  }
+  const csrfToken = req.get("x-csrf-token");
+  const cookieToken = req.cookies?.[OAUTH_CSRF_COOKIE] as string | undefined;
+  const csrfMatches =
+    csrfToken &&
+    cookieToken &&
+    /^[a-f0-9]{64}$/.test(csrfToken) &&
+    /^[a-f0-9]{64}$/.test(cookieToken) &&
+    timingSafeEqual(Buffer.from(csrfToken, "hex"), Buffer.from(cookieToken, "hex"));
+  if (!csrfMatches || parsed.data.state !== csrfToken) {
+    res.status(403).json({ error: "OAuth session exchange could not be verified" });
+    return;
+  }
+  try {
+    const { data, error } = await supabaseAdmin.auth.getUser(parsed.data.accessToken);
+    if (error || !data.user || !data.user.email) {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      res.status(401).json({ error: "OAuth authentication could not be verified" });
+      return;
+    }
+    // A Google/Facebook sign-in that links to an existing email/password
+    // account keeps "email" as the primary provider, so the allowlist must
+    // also accept any linked identity (identities never includes the primary
+    // provider itself, hence the two-part check).
+    const provider = data.user.app_metadata?.provider as string | undefined;
+    const linkedProviders = (data.user.identities ?? [])
+      .map((identity) => identity?.provider)
+      .filter((p): p is string => typeof p === "string");
+    const hasAllowedProvider =
+      (provider !== undefined && ALLOWED_OAUTH_PROVIDERS.has(provider)) ||
+      linkedProviders.some((p) => ALLOWED_OAUTH_PROVIDERS.has(p));
+    if (parsed.data.state !== csrfToken || !hasAllowedProvider) {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      res.status(401).json({ error: "OAuth authentication could not be verified" });
+      return;
+    }
+
+    const accessStatus = await readAccessStatus(data.user.id);
+    if (accessStatus !== "ACTIVE") {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      const pending = accessStatus === "PENDING";
+      const statusToken = pending ? createStatusToken(data.user.id) : undefined;
+      res.status(403).json({
+        error: pending ? "Account pending approval" : "Account not approved",
+        code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
+        message: pending
+          ? "Your account was created and is awaiting approval."
+          : "This account was not approved. Please contact the platform owner.",
+        ...(statusToken ? { statusToken } : {}),
+        ...(pending ? { user: null, accessToken: null } : {}),
+      });
+      return;
+    }
+
+    const role = await loadProfileRole(data.user.id);
+    const user = await buildExtendedUser(
+      data.user.id,
+      data.user.email,
+      role,
+      (data.user.user_metadata?.full_name as string | undefined) ?? null,
+    );
+    setSessionCookie(res, parsed.data.accessToken);
+    setRefreshCookie(res, parsed.data.refreshToken);
+    res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+    res.json({ user, accessToken: parsed.data.accessToken });
+  } catch (err) {
+    console.error("[auth] OAuth session validation failed:", err);
+    res.status(500).json({ error: "Could not complete sign-in" });
+  }
+});
+
 router.post("/login", async (req: Request, res: Response) => {
   const parsed = loginSchema.safeParse(req.body);
   if (!parsed.success) {

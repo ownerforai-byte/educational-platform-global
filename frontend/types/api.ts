@@ -26,6 +26,11 @@ export interface AuthLoginResponse {
   accessToken?: string;
 }
 
+export interface OAuthSessionResponse {
+  user: SessionUser;
+  accessToken?: string;
+}
+
 export interface AuthSignupResponse {
   user: SessionUser | null;
   message?: string;
