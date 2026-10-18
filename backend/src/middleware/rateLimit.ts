@@ -68,7 +68,11 @@ function tierFor(originalUrl: string | undefined): Tier {
   if (
     url.startsWith("/api/auth/login") ||
     url.startsWith("/api/auth/refresh") ||
-    url.startsWith("/api/auth/signup")
+    url.startsWith("/api/auth/signup") ||
+    url.startsWith("/api/auth/google") ||
+    url.startsWith("/api/auth/facebook") ||
+    url.startsWith("/api/auth/callback/google") ||
+    url.startsWith("/api/auth/callback/facebook")
   ) {
     return "auth";
   }

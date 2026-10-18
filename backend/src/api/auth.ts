@@ -575,13 +575,13 @@ for (const provider of SOCIAL_PROVIDERS) {
     // writes to the user's RLS rights (the 2026-09-26 "402 despite reset" bug).
     const base = process.env.SUPABASE_URL!.replace(/\/+$/, "");
     // PKCE is a public-client exchange: it authenticates the request with an
-    // anon-class key. Prefer the public anon key; fall back to the service-role
-    // key (a valid gotrue apikey) so a deployment missing SUPABASE_ANON_KEY
-    // still works.
-    const exchangeKey =
-      process.env.SUPABASE_ANON_KEY?.trim() ||
-      process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ||
-      "";
+    // anon-class key. Never send a service-role key to an OAuth token endpoint.
+    const exchangeKey = process.env.SUPABASE_ANON_KEY?.trim() || "";
+    if (!exchangeKey) {
+      console.error(`[auth] ${provider} OAuth exchange is missing the public anon key`);
+      res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
+      return;
+    }
     const exchangeRes = await fetch(
       `${base}/auth/v1/token?grant_type=pkce`,
       {
@@ -604,7 +604,7 @@ for (const provider of SOCIAL_PROVIDERS) {
       expires_in?: number;
     }
     let tokens: PkceTokens | null = null;
-    if (exchangeRes && exchangeRes.ok) {
+    if (exchangeRes?.ok) {
       const body = (await exchangeRes.json().catch(() => null)) as PkceTokens | null;
       tokens = body;
     }
@@ -618,8 +618,12 @@ for (const provider of SOCIAL_PROVIDERS) {
     // Resolve the user the token belongs to (service-role, so RLS never applies).
     const { data: me, error: meError } = await supabaseAdmin.auth.getUser(accessToken);
     const user = me?.user;
-    if (meError || !user) {
-      console.warn(`[auth] ${provider} user lookup failed:`, meError?.message ?? "no user");
+    const linkedProviders = user?.app_metadata?.providers;
+    const providerMatches =
+      user?.app_metadata?.provider === provider ||
+      (Array.isArray(linkedProviders) && linkedProviders.includes(provider));
+    if (meError || !user?.email || !providerMatches) {
+      console.warn(`[auth] ${provider} OAuth identity verification failed`);
       res.redirect(302, `${publicSiteBase()}/login?${provider}_error=1`);
       return;
     }

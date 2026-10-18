@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import express, { Express } from "express";
 import cookieParser from "cookie-parser";
 import { afterAll, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
@@ -58,6 +59,45 @@ const mocked = supabaseAdmin as unknown as {
 };
 
 const VALID_TOKEN = "valid-access-token";
+
+function withSocialOAuthEnvironment(anonKey: string | null = "public-anon-test") {
+  const previous = {
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
+    FRONTEND_URL: process.env.FRONTEND_URL,
+  };
+  process.env.SUPABASE_URL = "https://oauth-project.example";
+  process.env.SUPABASE_SERVICE_ROLE_KEY = "service-role-test";
+  process.env.FRONTEND_URL = "http://frontend.test";
+  if (anonKey) process.env.SUPABASE_ANON_KEY = anonKey;
+  else delete process.env.SUPABASE_ANON_KEY;
+
+  return () => {
+    for (const [key, value] of Object.entries(previous)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  };
+}
+
+function stubOAuthTokenExchange() {
+  const originalFetch = globalThis.fetch;
+  const requests: Array<{ url: string; init?: RequestInit }> = [];
+  vi.stubGlobal("fetch", async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = input instanceof Request ? input.url : String(input);
+    if (url.startsWith("https://oauth-project.example/")) {
+      requests.push({ url, init });
+      return new Response(JSON.stringify({
+        access_token: "oauth-access-test",
+        refresh_token: "oauth-refresh-test",
+        expires_in: 3600,
+      }), { status: 200, headers: { "Content-Type": "application/json" } });
+    }
+    return originalFetch(input, init);
+  });
+  return { requests, restore: () => vi.stubGlobal("fetch", originalFetch) };
+}
 
 function makeQueryChain(result: { data: unknown; error: unknown }) {
   const chain: Record<string, unknown> = {};
@@ -154,6 +194,112 @@ function setCookiesOf(res: Response): string[] {
 }
 
 describe("auth flow", () => {
+  test("server-side OAuth start issues a verifier cookie and S256 challenge", async () => {
+    const restoreEnv = withSocialOAuthEnvironment();
+    try {
+      const res = await fetch(`${baseUrl}/api/auth/google`, { redirect: "manual" });
+      expect(res.status).toBe(302);
+      const authorizeUrl = new URL(res.headers.get("location")!);
+      expect(authorizeUrl.searchParams.get("provider")).toBe("google");
+      expect(authorizeUrl.searchParams.get("redirect_to")).toBe(
+        "http://frontend.test/api/auth/callback/google",
+      );
+      expect(authorizeUrl.searchParams.get("code_challenge_method")).toBe("S256");
+      const cookie = setCookiesOf(res).find((value) => value.startsWith("sb-pkce-verifier="));
+      expect(cookie?.toLowerCase()).toContain("httponly");
+      expect(cookie?.toLowerCase()).toContain("max-age=600");
+      const verifier = cookie?.match(/sb-pkce-verifier=([^;]+)/)?.[1];
+      expect(verifier).toBeTruthy();
+      const challenge = createHash("sha256").update(verifier!).digest("base64url");
+      expect(authorizeUrl.searchParams.get("code_challenge")).toBe(challenge);
+    } finally {
+      restoreEnv();
+    }
+  });
+
+  test("PKCE callback uses the public key and accepts its explicitly linked provider", async () => {
+    const restoreEnv = withSocialOAuthEnvironment();
+    const exchange = stubOAuthTokenExchange();
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: {
+        id: "oauth-linked-user",
+        email: "linked@example.com",
+        app_metadata: { provider: "email", providers: ["email", "google"] },
+      } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 4, credits_limit: 100 });
+    try {
+      const res = await fetch(`${baseUrl}/api/auth/callback/google?code=one-time-code`, {
+        headers: { Cookie: "sb-pkce-verifier=verifier-test" },
+        redirect: "manual",
+      });
+      expect(res.status).toBe(302);
+      expect(res.headers.get("location")).toBe("http://frontend.test/home");
+      expect(exchange.requests).toHaveLength(1);
+      expect(exchange.requests[0].url).toBe(
+        "https://oauth-project.example/auth/v1/token?grant_type=pkce",
+      );
+      const requestBody = JSON.parse(String(exchange.requests[0].init?.body));
+      expect(requestBody).toEqual({ auth_code: "one-time-code", code_verifier: "verifier-test" });
+      const headers = exchange.requests[0].init?.headers as Record<string, string>;
+      expect(headers.apikey).toBe("public-anon-test");
+      expect(headers.Authorization).toBe("Bearer public-anon-test");
+      expect(headers.Authorization).not.toContain("service-role-test");
+      expect(mocked.auth.getUser).toHaveBeenCalledWith("oauth-access-test");
+      const cookies = setCookiesOf(res);
+      expect(cookies.some((cookie) => cookie.startsWith("sb-access-token=oauth-access-test"))).toBe(true);
+      expect(cookies.some((cookie) => cookie.startsWith("sb-refresh-token=oauth-refresh-test"))).toBe(true);
+    } finally {
+      exchange.restore();
+      restoreEnv();
+    }
+  });
+
+  test("OAuth callback rejects identities authenticated by a different provider", async () => {
+    const restoreEnv = withSocialOAuthEnvironment();
+    const exchange = stubOAuthTokenExchange();
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: {
+        id: "oauth-user",
+        email: "student@example.com",
+        app_metadata: { provider: "facebook", providers: ["facebook"] },
+      } },
+      error: null,
+    });
+    try {
+      const res = await fetch(`${baseUrl}/api/auth/callback/google?code=one-time-code`, {
+        headers: { Cookie: "sb-pkce-verifier=verifier-test" },
+        redirect: "manual",
+      });
+      expect(res.status).toBe(302);
+      expect(res.headers.get("location")).toBe("http://frontend.test/login?google_error=1");
+      expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+      expect(mocked.from).not.toHaveBeenCalled();
+    } finally {
+      exchange.restore();
+      restoreEnv();
+    }
+  });
+
+  test("OAuth callback fails closed rather than falling back to the service-role key", async () => {
+    const restoreEnv = withSocialOAuthEnvironment(null);
+    const exchange = stubOAuthTokenExchange();
+    try {
+      const res = await fetch(`${baseUrl}/api/auth/callback/google?code=one-time-code`, {
+        headers: { Cookie: "sb-pkce-verifier=verifier-test" },
+        redirect: "manual",
+      });
+      expect(res.status).toBe(302);
+      expect(res.headers.get("location")).toBe("http://frontend.test/login?google_error=1");
+      expect(exchange.requests).toHaveLength(0);
+      expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+    } finally {
+      exchange.restore();
+      restoreEnv();
+    }
+  });
+
   test("login success returns 200 and sets sb-access-token session cookie", async () => {
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
