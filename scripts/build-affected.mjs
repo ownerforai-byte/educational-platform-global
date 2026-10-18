@@ -57,8 +57,8 @@ function changedFiles() {
   } catch {
     /* no origin/main yet — dirty files only */
   }
-  // Split before spreading: `...diff` alone would spread the multi-line string
-  // character-by-character and the unpushed-commit half would match nothing.
+  // `diff` is a multi-line string: split it into lines before spreading —
+  // `...diff` alone would spread it character-by-character.
   return new Set([...out, ...diff.split("\n")].filter(Boolean));
 }
 

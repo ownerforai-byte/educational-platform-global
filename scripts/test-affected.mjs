@@ -10,8 +10,8 @@
  *   1. the test file itself changed;
  *   2. it depends on a changed module at ANY import depth — the workspace
  *      import graph is walked in REVERSE from the edit, so a test that mounts
- *      the app through `src/app` is hit by a shared-util change two hops down
- *      (one-hop direct-import matching missed exactly that case);
+ *      the app through `src/app` is hit by a change to a shared util far
+ *      below it;
  *   3. name convention — a test named `foo.test.ts(x)` under `tests/` matches
  *      a changed `foo.ts(x)` in the same workspace;
  *   4. shared plumbing changed (vitest config / test setup) → the whole
@@ -65,10 +65,8 @@ function changedFiles() {
   } catch {
     /* no origin/main yet */
   }
-  // `diff` is a multi-line string: it MUST be split into lines before the
-  // spread, otherwise `...diff` spreads it character-by-character and the
-  // "commits not yet on origin/main" half of the affected set silently
-  // contributed nothing (every char failed the area prefix filters).
+  // `diff` is a multi-line string: split it into lines before spreading —
+  // `...diff` alone would spread it character-by-character.
   return new Set(
     [...out, ...diff.split("\n")]
       .filter(Boolean)
@@ -130,11 +128,10 @@ function resolveSpecifier(spec, fromFile, ws) {
 }
 
 // ── transitive affected graph ────────────────────────────────────────────────
-// One-hop matching (test → changed module) misses the common case: tests
-// mount the app through `src/app` or a router module, so a shared-util edit
-// two hops down never reached them. Build the workspace import graph once,
-// then reverse-reach from the changed modules: every file that transitively
-// depends on the edit is affected.
+// A test is affected when it depends on the edit at ANY import depth. The
+// workspace import graph is built once, then walked in reverse from the
+// changed modules: every file that transitively depends on the edit — and
+// every test importing that file — is affected.
 
 /** Heavy/noise directories that are never nodes of the module graph. */
 const GRAPH_SKIP_DIRS = new Set([
@@ -259,9 +256,8 @@ for (const [wsName, ws] of Object.entries(WORKSPACES)) {
   }
   if (wsChanged.length === 0) continue;
 
-  // (2) transitive: any module that — at any import depth — depends on a
-  //     changed file. A test that mounts the app through `src/app` is hit by
-  //     a shared-util edit two hops down, which one-hop matching missed.
+  // (2) transitive: the test depends on a changed module at any import depth
+  //     (via the reverse import graph above).
   const closure = reverseClosure(ws, wsChanged);
   const affected = new Set();
   for (const testFile of tests) {
