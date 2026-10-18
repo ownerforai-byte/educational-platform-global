@@ -18,6 +18,11 @@ import type { Request } from "express";
  * `req.ip` is undefined only when the socket address is unavailable; the
  * "unknown" fallback then buckets those rare requests together, which fails
  * CLOSED (one shared budget) instead of open.
+ *
+ * Deploy note: TRUST_PROXY_HOPS (config/server.ts) must match the real proxy
+ * chain (browser -> Vercel proxy -> Render is TWO hops, not one); too few
+ * trusted hops over-cluster users onto shared identities and throttle them
+ * collectively instead of per user.
  */
 export function getClientIp(req: Request): string {
   return req.ip ?? "unknown";
