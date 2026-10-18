@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import { getClientIp } from "../utils/clientIp";
 
 /**
  * Positive-number env parsing. `Number("abc")` is NaN, and a NaN limit
@@ -42,16 +43,6 @@ const AI_IMAGE_MAX_REQUESTS = positiveNumber(
 );
 
 const hits = new Map<string, { count: number; reset: number }>();
-
-function getClientId(req: Request): string {
-  const forwarded = req.headers["x-forwarded-for"];
-  const ip = forwarded
-    ? typeof forwarded === "string"
-      ? forwarded.split(",")[0]?.trim()
-      : forwarded[0]?.trim()
-    : req.ip ?? "unknown";
-  return ip;
-}
 
 type Tier = "auth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
 
@@ -135,7 +126,7 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
   // Per-tier isolation (Greptile review 2026-09-25): one shared counter let a
   // heavy curriculum page (>10 content calls) consume the login/refresh budget
   // and 429 the user's next authentication attempt.
-  const id = `${tier}:${getClientId(req)}`;
+  const id = `${tier}:${getClientIp(req)}`;
   const entry = hits.get(id);
 
   if (!entry || now > entry.reset) {

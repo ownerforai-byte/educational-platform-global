@@ -13,6 +13,7 @@ import {
   rollbackGuestSlot,
 } from "../utils/guestQuota";
 import { DAILY_CREDIT_POOL } from "../utils/credits";
+import { getClientIp } from "../utils/clientIp";
 
 const router = Router();
 
@@ -21,16 +22,6 @@ let _service: ReturnType<typeof createAIService> | null = null;
 function getService() {
   if (!_service) _service = createAIService();
   return _service;
-}
-
-/** Guest client IP (mirrors ai-guest.ts). */
-function getClientId(req: Request): string {
-  const forwarded = req.headers["x-forwarded-for"];
-  if (forwarded) {
-    const first = typeof forwarded === "string" ? forwarded.split(",")[0] : forwarded[0];
-    if (first?.trim()) return first.trim();
-  }
-  return req.ip ?? "unknown";
 }
 
 type GuestGateRequest = Request & {
@@ -59,7 +50,7 @@ async function authOrGuestQuota(req: Request, res: Response, next: NextFunction)
       return;
     }
 
-    const ip = getClientId(req);
+    const ip = getClientIp(req);
     const deviceId = getGuestDeviceId(req) ?? issueGuestDeviceCookie(res);
     const slot = await consumeGuestSlot(ip, deviceId);
     if (slot.status === "limited") {

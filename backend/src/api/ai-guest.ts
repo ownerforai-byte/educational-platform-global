@@ -17,6 +17,7 @@ import {
   startGuestQuotaCleanup,
 } from "../utils/guestQuota";
 import { DAILY_CREDIT_POOL } from "../utils/credits";
+import { getClientIp } from "../utils/clientIp";
 
 /**
  * Guest AI chat — DISABLED for non-owners (owner request 2026-10-05: AI under
@@ -30,16 +31,6 @@ const router = Router();
 // Install the hourly quota trim once, at app boot.
 startGuestQuotaCleanup();
 
-function getClientId(req: Request): string {
-  const forwarded = req.headers["x-forwarded-for"];
-  const ip = forwarded
-    ? typeof forwarded === "string"
-      ? forwarded.split(",")[0]?.trim()
-      : forwarded[0]?.trim()
-    : req.ip ?? "unknown";
-  return ip;
-}
-
 let _service: ReturnType<typeof createAIService> | null = null;
 function getService() {
   if (!_service) _service = createAIService();
@@ -47,7 +38,7 @@ function getService() {
 }
 
 router.post("/", rateLimit, requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
-  const ip = getClientId(req);
+  const ip = getClientIp(req);
   // Dual identity: the HttpOnly device cookie (minted here on first contact)
   // AND the IP must BOTH have quota left — clearing one never refills the
   // other (see utils/guestQuota for the full threat model).
