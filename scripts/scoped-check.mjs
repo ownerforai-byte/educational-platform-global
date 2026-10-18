@@ -43,7 +43,12 @@ function changedFiles() {
   } catch {
     /* no origin/main yet */
   }
-  return new Set([...out, ...diff].filter(Boolean));
+  // `diff` is a multi-line string: split it into lines before the spread —
+  // `...diff` alone would spread it character-by-character, and the
+  // "commits not yet on origin/main" half of the changed set would silently
+  // contribute nothing (every char fails the area prefix filters), so a
+  // committed-but-unpushed change would report "nothing to check".
+  return new Set([...out, ...diff.split("\n")].filter(Boolean));
 }
 
 function areasFor(files) {

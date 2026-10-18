@@ -31,6 +31,8 @@
     "dev:backend": "npm run dev --workspace=educational-platform-backend",
     "build": "npm run build --workspace=educational-platform-backend",
     "build:backend": "npm run build --workspace=educational-platform-backend",
+    "build:affected": "node scripts/build-affected.mjs",
+    "build:affected:list": "node scripts/build-affected.mjs --list",
     "start": "npm run start --workspace=educational-platform-backend",
     "start:backend": "npm run start --workspace=educational-platform-backend",
     "lint": "npm run lint --workspace=educational-platform-backend",

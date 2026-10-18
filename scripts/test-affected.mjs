@@ -8,8 +8,10 @@
  *
  * How a test is judged "affected":
  *   1. the test file itself changed;
- *   2. it imports a changed module (import specifiers are resolved to
- *      repo-relative paths, both `@/alias` and relative imports);
+ *   2. it depends on a changed module at ANY import depth — the workspace
+ *      import graph is walked in REVERSE from the edit, so a test that mounts
+ *      the app through `src/app` is hit by a shared-util change two hops down
+ *      (one-hop direct-import matching missed exactly that case);
  *   3. name convention — a test named `foo.test.ts(x)` under `tests/` matches
  *      a changed `foo.ts(x)` in the same workspace;
  *   4. shared plumbing changed (vitest config / test setup) → the whole
@@ -63,8 +65,12 @@ function changedFiles() {
   } catch {
     /* no origin/main yet */
   }
+  // `diff` is a multi-line string: it MUST be split into lines before the
+  // spread, otherwise `...diff` spreads it character-by-character and the
+  // "commits not yet on origin/main" half of the affected set silently
+  // contributed nothing (every char failed the area prefix filters).
   return new Set(
-    [...out, ...diff]
+    [...out, ...diff.split("\n")]
       .filter(Boolean)
       // `git status` reports renames as "old -> new"; the new name is the one
       // that matters for impact.
@@ -103,7 +109,7 @@ function importSpecifiers(source) {
 }
 
 /** Resolve one specifier to a repo-relative extensionless module key, or null. */
-function resolveSpecifier(spec, testFile, ws) {
+function resolveSpecifier(spec, fromFile, ws) {
   if (spec.startsWith("@/")) {
     const rest = spec.slice(2);
     for (const alias of ws.aliases) {
@@ -117,16 +123,111 @@ function resolveSpecifier(spec, testFile, ws) {
     return null;
   }
   if (spec.startsWith(".")) {
-    const abs = path.resolve(path.dirname(testFile), spec);
+    const abs = path.resolve(path.dirname(fromFile), spec);
     return moduleKey(path.relative(ROOT, abs));
   }
   return null; // bare package specifier — outside this repo
 }
 
+// ── transitive affected graph ────────────────────────────────────────────────
+// One-hop matching (test → changed module) misses the common case: tests
+// mount the app through `src/app` or a router module, so a shared-util edit
+// two hops down never reached them. Build the workspace import graph once,
+// then reverse-reach from the changed modules: every file that transitively
+// depends on the edit is affected.
+
+/** Heavy/noise directories that are never nodes of the module graph. */
+const GRAPH_SKIP_DIRS = new Set([
+  "node_modules", ".next", "dist", ".open-next", "coverage",
+  "public", "kb", ".turbo", ".vercel", ".wrangler", ".route-audit",
+]);
+
+/** Every module-graph file in one workspace (repo-relative, forward slashes). */
+function listModuleFiles(wsRoot) {
+  const out = [];
+  const walk = (dir) => {
+    let entries;
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return; // unreadable dir — skip it, never fail the tool on it
+    }
+    for (const e of entries) {
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) {
+        if (!GRAPH_SKIP_DIRS.has(e.name)) walk(f);
+      } else if (/\.(tsx?|jsx?|mjs|cjs)$/.test(e.name)) {
+        out.push(path.relative(ROOT, f).replace(/\\/g, "/"));
+      }
+    }
+  };
+  walk(path.join(ROOT, wsRoot));
+  return out;
+}
+
+/**
+ * Reverse import graph: depKey -> every importer of that key. `/index`
+ * equivalence: a spec of `foo` and the file `foo/index.ts` are the same node,
+ * so both spellings are registered on every edge (seeding below registers
+ * both spellings on the changed side too, so either style matches).
+ */
+function buildReverseGraph(ws) {
+  const importersOf = new Map();
+  for (const file of listModuleFiles(ws.srcRoot)) {
+    const key = moduleKey(file);
+    let source;
+    try {
+      source = fs.readFileSync(path.join(ROOT, file), "utf8");
+    } catch {
+      continue;
+    }
+    for (const spec of importSpecifiers(source)) {
+      const dep = resolveSpecifier(spec, file, ws);
+      if (!dep) continue;
+      for (const depKey of [dep, `${dep}/index`]) {
+        let set = importersOf.get(depKey);
+        if (!set) importersOf.set(depKey, (set = new Set()));
+        set.add(key);
+      }
+    }
+  }
+  return importersOf;
+}
+
+/**
+ * Every module key in the workspace that transitively depends on any changed
+ * file (the changed modules themselves included) — reverse BFS from the edit.
+ * Only keys that at least one file imports are seeded: a module nothing
+ * imports cannot affect any test.
+ */
+function reverseClosure(ws, wsChanged) {
+  const importersOf = buildReverseGraph(ws);
+  const closure = new Set();
+  const queue = [];
+  const seed = (key) => {
+    if (!importersOf.has(key) || closure.has(key)) return;
+    closure.add(key);
+    queue.push(key);
+  };
+  // Both spellings (`foo`, `foo/index`) so either import style matches.
+  for (const f of wsChanged) {
+    const key = moduleKey(f);
+    seed(key);
+    seed(`${key}/index`);
+  }
+  while (queue.length > 0) {
+    const dep = queue.pop();
+    for (const importer of importersOf.get(dep) ?? []) {
+      if (!closure.has(importer)) {
+        closure.add(importer);
+        queue.push(importer);
+      }
+    }
+  }
+  return closure;
+}
+
 const changed = changedFiles();
-const changedModules = new Set([...changed].map(moduleKey));
-// An import of `foo/index` should also count as using `foo`.
-for (const m of [...changedModules]) changedModules.add(`${m}/index`);
 
 const result = {}; // workspace -> test files
 
@@ -158,6 +259,10 @@ for (const [wsName, ws] of Object.entries(WORKSPACES)) {
   }
   if (wsChanged.length === 0) continue;
 
+  // (2) transitive: any module that — at any import depth — depends on a
+  //     changed file. A test that mounts the app through `src/app` is hit by
+  //     a shared-util edit two hops down, which one-hop matching missed.
+  const closure = reverseClosure(ws, wsChanged);
   const affected = new Set();
   for (const testFile of tests) {
     // (1) the test itself is part of the edit
@@ -166,19 +271,11 @@ for (const [wsName, ws] of Object.entries(WORKSPACES)) {
       continue;
     }
     const source = fs.readFileSync(path.join(ROOT, testFile), "utf8");
-    // (2) it imports a changed module — or is a corpus guard scanning all
-    //     source while some source file changed (route tree / link guards).
-    let hit = false;
+    let hit = closure.has(moduleKey(testFile));
+    // Corpus guard: tests that read the real app/ route tree and scan the
+    // whole source for links are affected by ANY source edit in the workspace.
     const specs = importSpecifiers(source);
-    if (sourceTouched && specs.some((s) => s.includes("helpers/route-tree"))) hit = true;
-    for (const spec of specs) {
-      if (hit) break;
-      const key = resolveSpecifier(spec, testFile, ws);
-      if (key && changedModules.has(key)) {
-        hit = true;
-        break;
-      }
-    }
+    if (!hit && sourceTouched && specs.some((s) => s.includes("helpers/route-tree"))) hit = true;
     // (3) name convention: tests/**/foo.test.ts ↔ changed **/foo.ts
     if (!hit) {
       const base = path.basename(testFile).replace(/\.(test|spec)\.(tsx?|jsx?|mjs)$/, "");

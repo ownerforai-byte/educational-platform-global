@@ -107,6 +107,17 @@ and the lab test suites under `frontend/tests/**lab**`.
 | nothing in those three | exits 0 with "nothing to check" |
 | before pushing `main` | `npm run check:all` — full gate (all three) |
 
+Two time-savers around the gates (2026-10-18):
+
+- `npm run test:affected` now walks the workspace import graph in REVERSE
+  from your edit, so a test that mounts the app through `src/app` is also
+  caught by a shared-util change two hops down (one-hop direct-import matching
+  missed exactly that). The full-gate rules (`check:all`, pre-push) are unchanged.
+- `npm run build:affected` builds only the areas with dirty/unpushed changes
+  (backend `tsc` build / frontend `next build`; "nothing to build" exits 0 when
+  neither changed). Backend typecheck is incremental (`.tsbuildinfo` cache,
+  gitignored), so repeat `tsc --noEmit` runs skip everything unchanged.
+
 `npm run check:content` runs the deeper content health scan
 (BOM repair + `_index.json` completeness — now exits 1 if any JSON stays
 unparseable) and then chains `check:schema`, the strict corpus + manifest
