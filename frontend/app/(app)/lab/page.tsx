@@ -488,7 +488,7 @@ function LabContent({
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Interactive Labs</h1>
         <p className="text-muted-foreground">
-          Explore concepts through interactive simulations and theory content
+          Explore concepts through interactive simulations and theory content — big picture: a lab is where a formula stops being a sentence and starts being something you can turn with your hands.
         </p>
       </div>
 

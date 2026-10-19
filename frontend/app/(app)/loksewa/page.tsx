@@ -31,7 +31,7 @@ export default function LoksewaPage() {
       <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-primary/8 via-background to-background p-8 md:p-10 shadow-lg">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">🏛️ Loksewa Knowledge</h1>
         <p className="mt-2 text-muted-foreground">
-          Prepare for Loksewa with curated materials and practice sets.
+          Prepare for Loksewa with curated materials and practice sets. Big picture: public service is the point where knowledge meets citizenship.
         </p>
       </div>
 

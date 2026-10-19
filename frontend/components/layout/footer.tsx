@@ -83,6 +83,7 @@ function SimpleFooter() {
             Nepal&apos;s open-access study platform for NEB (+2) Science — notes,
             3D labs, derivations, PYQs and Veer, aligned to the CDC curriculum.
             A simple overview for visitors; sign in to open the full library.
+            Mission: deepen every student without hiding the hard parts behind a paywall — the platform’s vision is depth first, breadth always.
           </p>
 
           {/* The hidden PRO plan — visible but hidden, reachable from here. */}

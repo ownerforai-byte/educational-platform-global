@@ -113,7 +113,7 @@ function SelectScreen({ onStart }: { onStart: (mode: QuizMode, subject: string, 
       <div>
         <h1 className="text-3xl font-bold tracking-tight">PYQ Practice</h1>
         <p className="mt-2 text-muted-foreground">
-          Test yourself with past year questions and misconception checks.
+          Test yourself with past year questions and misconception checks. Mission: the point of a quiz is not to prove you know it — it is to show you exactly what you still do not.
         </p>
       </div>
 

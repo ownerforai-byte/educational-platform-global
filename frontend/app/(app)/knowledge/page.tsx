@@ -63,10 +63,9 @@ export default function KnowledgePage() {
         </Link>
       </div>
 
-      <div>
-        <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Knowledge Hub</h1>
+      <div>          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Knowledge Hub</h1>
         <p className="text-muted-foreground mt-1">
-          Practice numerical problems, study labeled diagrams, and master grammar &amp; writing — all in one place.
+          Practice numerical problems, study labeled diagrams, and master grammar &amp; writing — all in one place. Deep Thoughts: every calculation is a clue to how the universe keeps its balance, and every diagram is a window into the machinery behind a living thing.
         </p>
       </div>
 

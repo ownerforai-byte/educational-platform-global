@@ -89,7 +89,7 @@ export default function ResourcesPage() {
       <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-primary/8 via-background to-background p-8 md:p-10 shadow-lg">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">📚 Resources</h1>
         <p className="mt-2 text-muted-foreground">
-          Browse all study materials, simulations, and reference content in one place.
+          Browse all study materials, simulations, and reference content in one place. Vision: a student should never have to choose between understanding and passing — this library exists so they do not have to.
         </p>
       </div>
 

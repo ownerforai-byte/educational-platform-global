@@ -50,7 +50,7 @@ export default function SyllabusPage() {
           Syllabus &amp; Curriculum Guidelines
         </h1>
         <p className="text-sm text-muted-foreground max-w-2xl">
-          Comprehensive curriculum structures, teaching hour allocations, unit weightages, and historical revisions for Class 11 and Class 12.
+          Comprehensive curriculum structures, teaching hour allocations, unit weightages, and historical revisions for Class 11 and Class 12. Deep Thoughts: a syllabus is not a cage — it is the shared map everyone is navigating, so a student can see the whole terrain up front.
         </p>
       </div>
 

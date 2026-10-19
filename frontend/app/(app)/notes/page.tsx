@@ -112,7 +112,7 @@ export default async function NotesPage() {
       <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-background to-background p-8 shadow-lg">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">📚 Notes</h1>
         <p className="mt-2 text-muted-foreground">
-          Imported notes from Ravikishan&apos;s export, organized by class, subject, and chapter.
+          Imported notes from Ravikishan&apos;s export, organized by class, subject, and chapter. Deep Thoughts: a note is not a souvenir of a lesson — it is the lesson still speaking after the lesson is over.
         </p>
       </div>
 

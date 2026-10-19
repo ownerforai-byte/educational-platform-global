@@ -23,7 +23,7 @@ import {
 export const metadata = {
   title: "Curriculum Levels & Academic Tracks | Global STEM Hub",
   description:
-    "Explore NEB Class 11, Class 12, CEE Entrance, Loksewa GK, and Interactive 3D STEM laboratories structured according to official curricula.",
+    "Explore NEB Class 11, Class 12, CEE Entrance, Loksewa GK, and Interactive 3D STEM laboratories structured according to official curricula — the platform’s north star: one student, every needed tool, no dead ends.",
 };
 
 export default async function LevelsPage() {

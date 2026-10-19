@@ -232,7 +232,7 @@ export default async function PyqBankPage() {
         <p className="max-w-2xl text-sm text-muted-foreground">
           Real NEB papers for {level} across every subject. Each paper is grouped by exam
           year, tagged with the syllabus unit it came from, and every question carries a full
-          worked solution.
+          worked solution. Deep Thoughts: an exam paper is not just a test — it is the clearest picture of what the board believes a student must know.
         </p>
       </div>
 

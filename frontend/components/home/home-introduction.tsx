@@ -76,7 +76,7 @@ export async function HomeIntroduction() {
             everywhere: Class 11 &amp; 12 notes, interactive 3D science labs, theorem
             proofs, derivations, exam countdowns, and Veer with a live internet
             connection — all in one place, all curriculum-aligned. No paywalls on the
-            path to understanding.
+            path to understanding. Vision: a student who drills the why alongside the how never arrives at the exam empty-handed.
           </p>
 
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

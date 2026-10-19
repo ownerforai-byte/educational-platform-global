@@ -4,7 +4,7 @@ import { SiteIndexView } from "@/components/index/site-index-view";
 export const metadata = {
   title: "Everything Index — Every Page, Routed From One Head Page",
   description:
-    "Complete index of the platform: every lab, graph, derivation, theorem, chapter and reference page, each with a short opening, its name and its link.",
+    "Complete index of the platform: every lab, graph, derivation, theorem, chapter and reference page, each with a short opening, its name and its link — one place to see the whole thing at once.",
 };
 
 /**

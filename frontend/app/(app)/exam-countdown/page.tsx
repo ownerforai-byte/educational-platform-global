@@ -276,7 +276,7 @@ export default function ExamCountdownPage() {
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Exam Countdown</h1>
         <p className="mt-2 text-muted-foreground">
-          Track your NEB exam dates and get a personalized revision plan.
+          Track your NEB exam dates and get a personalized revision plan. Vision: every day on the clock is a day you can spend on exactly the thing that will move the grade.
         </p>
       </div>
 
