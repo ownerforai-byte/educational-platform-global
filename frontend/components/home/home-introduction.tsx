@@ -1,14 +1,5 @@
 import Link from "next/link";
-import {
-  BookOpen,
-  Brain,
-  FlaskConical,
-  GraduationCap,
-  Sigma,
-  Sparkles,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
+import { BookOpen, Brain, FlaskConical, GraduationCap, Sigma, Sparkles, Zap, type LucideIcon } from "lucide-react";
 import { FORMULA_SUBJECTS, getFormulaSheetSummaries } from "@/lib/formula-sheet";
 
 const FORMULA_ICONS: Record<string, LucideIcon> = {
@@ -126,7 +117,9 @@ export async function HomeIntroduction() {
           ))}
         </div>
 
-        {/* Start-here strip */}
+        {/* Start-here strip — only the entries that don't already sit in the
+            journey cards above. Asking Veer is step 04 and the formula sheets
+            are steps 01–03, so the strip just opens each class's notes. */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
           <Link
             href="/class-11-notes"
@@ -141,20 +134,6 @@ export async function HomeIntroduction() {
           >
             <GraduationCap className="h-4 w-4" />
             Start Class 12
-          </Link>
-          <Link
-            href="/chat"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-2.5 text-xs font-bold text-emerald-600 transition-colors hover:bg-emerald-500/20 dark:text-emerald-400"
-          >
-            <Brain className="h-4 w-4" />
-            Clear a doubt now
-          </Link>
-          <Link
-            href="/lessons"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-4 py-2.5 text-xs font-semibold text-foreground/80 transition-colors hover:border-primary/40 hover:text-primary"
-          >
-            <BookOpen className="h-4 w-4 text-primary" />
-            Lessons library
           </Link>
         </div>
       </div>

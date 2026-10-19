@@ -32,16 +32,19 @@ const run = (cmd, args, opts = {}) => spawnSync(cmd, args, { shell: WIN, ...opts
 
 function changedFiles() {
   if (ALL) return null; // null => every area
-  // worktree changes + commits not yet on origin/main
+  // worktree changes + commits not yet on the base ref (default origin/main,
+  // overridable with SCOPED_CHECK_BASE so a worktree sandbox can scope to its
+  // own branch tip instead of the main integration's full unpushed set).
+  const base = process.env.SCOPED_CHECK_BASE ?? "origin/main";
   const out = git("status", "--porcelain", "--untracked-files=all")
     .split("\n")
     .filter(Boolean)
     .map((l) => l.slice(3));
   let diff = "";
   try {
-    diff = git("diff", "--name-only", "origin/main...HEAD");
+    diff = git("diff", "--name-only", `${base}...HEAD`);
   } catch {
-    /* no origin/main yet */
+    /* no base ref yet */
   }
   // `diff` is a multi-line string: split it into lines before spreading —
   // `...diff` alone would spread it character-by-character.

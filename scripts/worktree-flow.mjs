@@ -109,7 +109,16 @@ function unlinkNodeModules(wt) {
 }
 
 function runIn(cwd, npmArgs) {
-  return spawnSync("npm", npmArgs, { cwd, stdio: "inherit", shell: WIN });
+  // `npm run check` calls scoped-check.mjs, which defaults the diff base to
+  // origin/main. In a worktree sandbox, the sandbox branched from the main
+  // tree's current branch (main-integration), so origin/main is far older
+  // than the fork point and the gate would scan every unpushed commit on
+  // the integration branch. The sandbox's PARENT commit (the branch point
+  // it was forked from) is the right scope: the sandbox's dirty tree + its
+  // own new commits, nothing else.
+  const base = git(`rev-parse ${branchOf(name)}~1`, { cwd });
+  const env = { ...process.env, SCOPED_CHECK_BASE: base };
+  return spawnSync("npm", npmArgs, { cwd, stdio: "inherit", shell: WIN, env });
 }
 
 function cmdCreate() {
