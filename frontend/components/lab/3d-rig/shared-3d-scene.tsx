@@ -1,6 +1,7 @@
 "use client";
 
 import React, { Suspense, useEffect, useRef, useCallback } from "react";
+import { useLowData } from "@/lib/hooks/use-low-data";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, ContactShadows, Stats, Environment, Lightformer } from "@react-three/drei";
 import * as THREE from "three";
@@ -11,6 +12,7 @@ import { KnowledgeHotspot } from "./knowledge-hotspot";
 import { KnowledgeSpotPanelContent } from "./knowledge-spot-panel";
 import { SceneLoader } from "./scene-loader";
 import { SpotIndex } from "./spot-index";
+import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import type {
   SceneTier,
   SubjectAccentTokens,
@@ -145,6 +147,10 @@ export function Shared3DScene({
 }) {
   const tierState = useSceneTier(subject, tierOverride);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  // Low-data mode: skip the WebGL scene entirely and hand off to the static
+  // fallback. Saves the entire GPU+texture load on slow connections or when
+  // the user has explicitly enabled data-saver (see lib/hooks/use-low-data).
+  const { active: lite } = useLowData();
 
   // Bug #2 FIX: SpotIndex camera focus via callback (SpotIndex has no useThree)
   const handleCameraFocus = useCallback((_position: [number, number, number]) => {
@@ -182,7 +188,12 @@ export function Shared3DScene({
 
   return (
     <div className="relative w-full h-full min-h-[400px]">
-      {showDebug && (
+      {lite ? (
+        // Static fallback: same subject framing, zero WebGL cost.
+        <WebGLFallback message="Low-data mode is on — interactive scene disabled." />
+      ) : (
+        <>
+          {showDebug && (
         <div className="absolute top-2 left-2 z-10 rounded-md bg-background/80 px-2 py-1 text-[10px] font-mono text-muted-foreground backdrop-blur">
           <div>Tier: {tierState.tier}</div>
           <div>DPR: {tierState.clampedDpr}</div>
@@ -276,7 +287,9 @@ export function Shared3DScene({
         </Suspense>
 
         {showDebug && <Stats />}
-      </Canvas>
+        </Canvas>
+        </>
+      )}
 
       {/* Bug #1 FIX: panel outside Canvas -> pure Content, no Html/useThree */}
       {renderKnowledgePanel()}
