@@ -34,19 +34,6 @@ export async function getRavikishanNotes(
 }
 
 /**
- * Search across the syllabus and resources.
- */
-export async function searchContent(
-  query: string,
-  provider?: string
-): Promise<SearchResponse> {
-  return apiFetch<SearchResponse>("/api/search", {
-    method: "POST",
-    body: JSON.stringify({ query, provider }),
-  });
-}
-
-/**
  * Send a chat message to the AI assistant.
  */
 export async function chatWithAI(

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search, Loader2, BookOpen, ExternalLink, Sparkles } from "lucide-react";
 import { search } from "@/lib/api/ai";
@@ -18,6 +18,16 @@ export function SmartSearchPanel() {
   const [result, setResult] = useState<SearchResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Run the search once on mount when the URL carries ?q=… (the global search
+  // bar, footer and quick-access links all push here with the query set).
+  useEffect(() => {
+    const initial = new URLSearchParams(window.location.search).get("q")?.trim();
+    if (!initial) return;
+    setQuery(initial);
+    void runSearch(initial);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const runSearch = async (q?: string) => {
     const text = (q ?? query).trim();

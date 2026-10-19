@@ -113,7 +113,7 @@ const TOOLS: {
     ],
   },
   {
-    href: "/ai/search",
+    href: "/search",
     title: "Veer Curriculum Search",
     badge: "Find anything",
     description:
