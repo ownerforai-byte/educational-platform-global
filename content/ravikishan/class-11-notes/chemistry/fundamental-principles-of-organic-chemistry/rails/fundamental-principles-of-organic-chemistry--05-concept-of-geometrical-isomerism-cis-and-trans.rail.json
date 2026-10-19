@@ -1,0 +1,118 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "fundamental-principles-of-organic-chemistry",
+  "unitTitle": "Fundamental Principles of Organic Chemistry",
+  "syllabusTopics": [
+    "IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms)",
+    "Qualitative analysis of organic compounds (detection of N, S and halogens by Lassaigne's test)",
+    "Isomerism in organic compounds: definition and classification of isomerism",
+    "Structural isomerism and its types: chain isomerism, position isomerism, functional isomerism, metamerism and tautomerism",
+    "Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Preliminary idea of reaction mechanism: homolytic and heterolytic fission",
+    "Electrophiles, nucleophiles and free-radicals",
+    "Inductive effect: +I and -I effect",
+    "Resonance effect: +R and -R effect"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Organic Principles",
+    "title": "Resonance and isomerism — same atoms, different molecules",
+    "href": "/class-11-notes/chemistry",
+    "icon": "ScrollText",
+    "statKey": "pyq:chemistry"
+  },
+  "keyPoints": [
+    "Geometric isomerism arises from restricted rotation around double bonds (cis/trans) or chirality (d/l).",
+    "Chain isomerism involves different skeletal arrangements (straight vs branched chains).",
+    "Position isomerism occurs when functional groups are placed at different carbon positions.",
+    "Functional isomerism differs in the type of functional group present.",
+    "Metamerism involves different alkyl groups attached to a central atom (e.g., ethers, ketones).",
+    "Optical isomerism requires a chiral center with four different substituents.",
+    "Resonance stabilization delocalizes π electrons across multiple contributing structures.",
+    "Lassaigne's test detects nitrogen, sulfur, and halogens via sodium fusion.",
+    "Homolytic cleavage produces radicals; heterolytic cleavage produces ions (electrophile/nucleophile).",
+    "Inductive (+I/-I) effects transmit electron density through sigma bonds.",
+    "Resonance (+R/-R) effects involve electron movement through pi systems."
+  ],
+  "importantStatements": [
+    "Same molecular formula, different arrangement = isomers: structural (skeleton/position/group) vs stereo (cis-trans/chiral).",
+    "Resonance delocalizes π electrons, giving the real molecule greater stability than any single contributor.",
+    "Geometric constraints (rigid double bonds) prevent free rotation, enabling cis/trans isomerism.",
+    "Chiral centers with four different groups give rise to enantiomers (d and l forms).",
+    "Lassaigne's test fuses compound with Na to convert N→CN⁻, S→S²⁻, X→X⁻ for qualitative detection.",
+    "Inductive effects (+I = electron-donating, -I = electron-withdrawing) influence reactivity and stability.",
+    "Resonance energy of benzene (~150 kJ/mol) explains its exceptional stability compared to localized double bonds."
+  ],
+  "importantNotes": [
+    "Tautomerism (keto↔enol) is a dynamic form of structural isomerism involving proton migration.",
+    "Benzene's equal C-C bond lengths (1.39 Å) confirm delocalized π bonding.",
+    "Butan-2-ol (CH₃CH(OH)CH₂CH₃) is named butan-2-ol per IUPAC rules (lowest locant for OH group).",
+    "Lassaigne's test fails for volatile compounds that escape fusion or for mixtures with competing elements.",
+    "N-detection requires selective steps (FeSO₄/FeCl₃ discrimination) to distinguish from S presence."
+  ],
+  "examples": [
+    "2-butene: cis-2-butene (both methyl groups on same side of double bond) vs trans-2-butene (opposite sides).",
+    "Butan-2-ol: CH₃-CH(OH)-CH₂-CH₃, demonstrating position isomerism (OH on C2 vs C3).",
+    "Ozone: O=O⁺–O⁻ ↔ O⁻–O⁺=O (bent, equal bonds) illustrates resonance in ozone.",
+    "Benzene: Two Kekulé structures ↔ one 6π-delocalized hexagon (equal C-C bonds).",
+    "Lassaigne test: Na + C + N → NaCN (Prussian blue test) confirms nitrogen presence."
+  ],
+  "practiceQuestions": [
+    "Which isomer of 2-butene is cis-2-butene and which is trans-2-butene?",
+    "Why does 1-butene not exhibit geometric isomerism despite having a double bond?",
+    "Explain the difference between chain isomerism and positional isomerism using butan-2-ol as an example.",
+    "How does Lassaigne's test differentiate between nitrogen-containing and sulfur-containing compounds?"
+  ],
+  "practice": [
+    "Identify the geometric isomer (cis/trans) of 2-methyl-2-butene.",
+    "Draw the resonance structures for ozone highlighting the bent geometry.",
+    "Explain why butan-2-ol is named butan-2-ol rather than 2-butanol.",
+    "Describe the Lassaigne procedure for detecting nitrogen in organic compounds."
+  ],
+  "universalFacts": [
+    "Isomers have identical molecular formulas but different structural arrangements.",
+    "Geometric isomerism requires restricted rotation (typically around C=C double bonds).",
+    "Optical isomerism requires a chiral center (asymmetric carbon with four different groups).",
+    "Resonance stabilization lowers the energy of the molecule compared to localized structures.",
+    "IUPAC nomenclature prioritizes the principal functional group for numbering."
+  ],
+  "confusion": [
+    "Confusing geometric (cis/trans) isomerism with optical (d/l) isomerism – both arise from restricted rotation but involve different symmetry elements.",
+    "Thinking that all isomers have different molecular weights – isomers have identical molecular formulas.",
+    "Assuming all double bonds produce geometric isomers – only alkenes with ≥2 different substituents on each carbon can.",
+    "Mixing up Lassaigne's test for nitrogen with other qualitative tests for halogens or sulfur."
+  ],
+  "mcs": [
+    "IUPAC Nomenclature of Organic Compounds",
+    "Qualitative Analysis of Organic Compounds",
+    "Isomerism in Organic Compounds",
+    "Geometrical Isomerism (Cis-Trans)",
+    "Resonance Theory",
+    "Lassaigne's Test"
+  ],
+  "animation3D": [
+    "Rotating 2-butene to visualize cis vs trans conformations.",
+    "Animation of Lassaigne's test: sodium fusion followed by precipitation reactions.",
+    "3D model of benzene showing Kekulé structures vs delocalized ring."
+  ],
+  "motionGraphics": [
+    "Split-screen comparison of cis- and trans-2-butene with rotating views.",
+    "Timelapse of ozone formation and resonance structures.",
+    "Flowchart of Lassaigne's test steps with chemical equations."
+  ],
+  "visualType": [
+    "Diagrams: Newman projections for stereochemistry, Kekulé structures for resonance, molecular models for isomerism.",
+    "Infographics: Comparison table of isomer types (structural vs geometric vs optical).",
+    "Interactive 3D rotators for viewing molecular shapes."
+  ],
+  "summary": [
+    "Geometrical isomerism (cis/trans) results from restricted rotation around double bonds, while optical isomerism (d/l) arises from chiral centers. Both are crucial for understanding molecular shape and reactivity in organic chemistry.",
+    "Resonance delocalization stabilizes molecules like benzene, lowering their energy relative to localized structures.",
+    "Lassaigne's test and qualitative analysis methods enable detection of functional groups in organic compounds.",
+    "Understanding isomerism is foundational for predicting physical properties, biological activity, and reaction outcomes in organic synthesis."
+  ]
+}
