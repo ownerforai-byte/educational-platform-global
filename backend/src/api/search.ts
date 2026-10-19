@@ -97,8 +97,19 @@ router.post("/", async (req: Request, res: Response) => {
     const topics: DbTopic[] = topicsData ?? [];
 
     const q = query.toLowerCase();
+
+    // Topics — title match, ranked with exact-prefix hits first so the most
+    // likely target sits on top instead of an arbitrary slice order.
     const dbResults = topics
       .filter((topic: DbTopic) => topic.title.toLowerCase().includes(q))
+      .sort((a: DbTopic, b: DbTopic) => {
+        const at = a.title.toLowerCase();
+        const bt = b.title.toLowerCase();
+        const aStarts = at.startsWith(q) ? 0 : 1;
+        const bStarts = bt.startsWith(q) ? 0 : 1;
+        if (aStarts !== bStarts) return aStarts - bStarts;
+        return at.indexOf(q) - bt.indexOf(q);
+      })
       .slice(0, 10)
       .map((topic: DbTopic) => {
         const chapter = chapterSubjectMap.get(topic.chapter_id);
@@ -112,6 +123,40 @@ router.post("/", async (req: Request, res: Response) => {
           subject: subject?.name ?? "",
           class: cls?.name ?? "",
           url: `/${cls?.slug ?? ""}/${subject?.slug ?? ""}#${topic.slug}`,
+        };
+      });
+
+    // Resources — PYQs, question banks and other resource rows (the pyqs
+    // route reads this same table with type=QUIZ). Title match only: the
+    // metadata column shape varies by type, so the title is the one honest
+    // field every row carries.
+    const { data: resourcesData } = await supabaseAdmin
+      .from("resources")
+      .select("id, title, type, topic_id")
+      .eq("is_published", true);
+    const resourceResults = (resourcesData ?? [])
+      .filter(
+        (r: { title: string | null }) =>
+          typeof r.title === "string" && r.title.toLowerCase().includes(q),
+      )
+      .slice(0, 8)
+      .map((r: { id: string; title: string; type: string; topic_id: string | null }) => {
+        const topic = topics.find((t: DbTopic) => t.id === r.topic_id);
+        const chapter = topic ? chapterSubjectMap.get(topic.chapter_id) : undefined;
+        const subject = chapter ? subjectMap.get(chapter.subjectId) : null;
+        const cls = subject ? classMap.get(subject.classId) : null;
+        const typeLabel =
+          r.type === "QUIZ" ? "Past Question" : r.type.charAt(0) + r.type.slice(1).toLowerCase();
+        return {
+          id: `res-${r.id}`,
+          title: r.title,
+          type: typeLabel,
+          chapter: chapter?.title ?? "",
+          subject: subject?.name ?? "",
+          class: cls?.name ?? "",
+          url: topic
+            ? `/${cls?.slug ?? ""}/${subject?.slug ?? ""}#${topic.slug}`
+            : "/resources",
         };
       });
 
@@ -136,7 +181,7 @@ router.post("/", async (req: Request, res: Response) => {
 
     res.json({
       query,
-      results: [...results, ...dbResults],
+      results: [...results, ...dbResults, ...resourceResults],
       fallbackMessage: aiResult.fallbackMessage,
       syllabusHints,
       officialLink,
