@@ -67,7 +67,30 @@ router.get("/", requireAuth, requireR1Access, async (req: Request, res: Response
   }
 });
 
+// ── Lock window: an entry may be edited or deleted for JOURNAL_LOCK_HOURS
+//    after it is created. After that, the row is read-only and rejected with
+//    410 GONE so the student keeps a journal they cannot quietly rewrite. The
+//    constant lives in env (JOURNAL_LOCK_HOURS) so the window can be tuned
+//    without a code change. ────────────────────────────────────────────────
+const JOURNAL_LOCK_HOURS = Number(process.env.JOURNAL_LOCK_HOURS ?? 24);
+
+function isLocked(row: { created_at: string } | null | undefined): boolean {
+  if (!row) return false;
+  const created = new Date(row.created_at).getTime();
+  if (!Number.isFinite(created)) return false;
+  return Date.now() - created > JOURNAL_LOCK_HOURS * 3600 * 1000;
+}
+
+const LOCK_ERROR = {
+  error: "This journal entry is locked",
+  code: "JOURNAL_LOCKED",
+  reason: `entries are read-only ${JOURNAL_LOCK_HOURS}h after creation`,
+} as const;
+
 // ── PUT /api/r1/journal — create or replace the entry for one day ──────────
+// On update (existing row for the same user+date), the row's created_at is
+// checked: once the lock window has passed, the body is rejected before
+// Supabase is touched, so the row is never overwritten.
 
 router.put("/", requireAuth, requireR1Access, async (req: Request, res: Response) => {
   const parsed = journalSchema.safeParse(req.body);
@@ -78,6 +101,22 @@ router.put("/", requireAuth, requireR1Access, async (req: Request, res: Response
   try {
     const user = (req as AuthedRequest).user;
     const v = parsed.data;
+
+    // Look up the existing row first so we can honour the lock before writing.
+    const existing = await supabaseAdmin
+      .from("r1_journal")
+      .select("created_at")
+      .eq("user_id", user.id)
+      .eq("entry_date", v.entryDate)
+      .maybeSingle();
+    if (existing.error) {
+      serverError(res, existing.error);
+      return;
+    }
+    if (existing.data && isLocked(existing.data)) {
+      res.status(410).json(LOCK_ERROR);
+      return;
+    }
 
     const { data, error } = await supabaseAdmin
       .from("r1_journal")
@@ -108,28 +147,43 @@ router.put("/", requireAuth, requireR1Access, async (req: Request, res: Response
   }
 });
 
-// ── DELETE /api/r1/journal/:id (own rows only) ─────────────────────────────
+// ── DELETE /api/r1/journal/:id (own rows only, honour the lock) ───────────
 
 router.delete("/:id", requireAuth, requireR1Access, async (req: Request, res: Response) => {
   try {
     const user = (req as AuthedRequest).user;
-    const { data, error } = await supabaseAdmin
+
+    // Fetch the row first so we can refuse locked entries before touching
+    // them. The fetch is also the owner check (user_id) that DELETE used to
+    // express via its WHERE clause.
+    const existing = await supabaseAdmin
+      .from("r1_journal")
+      .select("id, user_id, created_at")
+      .eq("id", req.params.id)
+      .maybeSingle();
+    if (existing.error) {
+      serverError(res, existing.error);
+      return;
+    }
+    if (!existing.data || existing.data.user_id !== user.id) {
+      res.status(404).json({ error: "Not found" });
+      return;
+    }
+    if (isLocked(existing.data)) {
+      res.status(410).json(LOCK_ERROR);
+      return;
+    }
+
+    const { error } = await supabaseAdmin
       .from("r1_journal")
       .delete()
       .eq("id", req.params.id)
-      .eq("user_id", user.id)
-      .select("id")
-      .maybeSingle();
-
+      .eq("user_id", user.id);
     if (error) {
       serverError(res, error);
       return;
     }
-    if (!data) {
-      res.status(404).json({ error: "Not found" });
-      return;
-    }
-    res.json({ deleted: true, id: data.id });
+    res.json({ deleted: true, id: req.params.id });
   } catch (err) {
     serverError(res, err);
   }
