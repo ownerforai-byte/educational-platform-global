@@ -272,6 +272,9 @@ describe("R1 per-user scoping (no IDOR)", () => {
     ]);
     h.mockUser("user-a", GRANTED_EMAIL);
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
+    // The lock handler does an existing-row lookup first; for a brand-new entry
+    // the lookup is empty and the upsert response carries the new row.
+    h.enqueue("r1_journal", { data: null, error: null });
     h.enqueue("r1_journal", {
       data: [{ id: "j-1", entry_date: "2026-10-13", body: "today", tags: [] }],
       error: null,
