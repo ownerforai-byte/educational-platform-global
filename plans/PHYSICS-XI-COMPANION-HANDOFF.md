@@ -13,6 +13,9 @@ CONTINUE: Physics XI Academic Companion — deepen, test, commit EVERYTHING, pus
 
 CONTEXT — already on disk, do NOT redo:
 - Branch: main-integration. The Physics XI Academic Companion is ~70% built; the work below is the rest.
+- ALREADY COMMITTED AND PUSHED: the unit-level companion (dataset, routes, components, 104 published
+  documents, generator, tests) is on origin/main as b1ecb0cf, together with the CORE_FILES.md registration
+  of frontend/lib/physics-xi-academic.ts. This handoff describes the NEXT increment on top of that base.
 - Canonical dataset: frontend/public/data/physics-xi-academic/units.json — 26 units. Unit keys:
   unitNo, unitId, unitName, contentArea, slug, summary, facts[7], conditions[5],
   mysteries[2-3]{question,status,note}, prompts[3], keyNumbers[3-5]{label,value}, sources[3-6]{label,url}
@@ -107,7 +110,8 @@ Fix real failures. Do NOT weaken assertions or add lint/type suppressions to mak
 cannot run in this environment, report it as not-run — never as a pass.
 
 TASK 5 — COMMIT + PUSH (the user explicitly asked to commit ALL files regardless of which agent produced
-them, and to push to origin main):
+them, and to push to origin main). The base companion is already on origin/main (b1ecb0cf), so this task
+covers the deepening increment only — but keep the "commit everything in the tree" rule:
 - First: git status, git diff (staged + unstaged), git log -8 to match the repo's message style.
 - Secrets hygiene (AGENTS.md Rule 2): `git log -S "<key-value>" -- <file>` and
   `git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN=" -- . ':!node_modules' ':!*.md'` must be clean.

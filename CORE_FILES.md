@@ -75,6 +75,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/graphs.ts` | Registry for all science graphs and visual data banks. |
 | `frontend/lib/pyq-bank.ts` | Registry for past year question banks and solved papers. |
 | `frontend/lib/formula-sheet.ts` | Formula vault data and derivation link associations. |
+| `frontend/lib/physics-xi-academic.ts` | Physics XI Academic Companion registry — typed accessors over the 26-unit brief dataset (`frontend/public/data/physics-xi-academic/units.json`) plus the canonical brief/document URL helpers used by the `/resources/physics-xi` routes. The dataset is content; this file is the contract for it. |
 
 ---
 
