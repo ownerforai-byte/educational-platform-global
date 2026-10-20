@@ -7,7 +7,7 @@
  * wrong item for every sibling route that happened to start with the same text.
  */
 export function isNavItemActive(pathname: string, href: string): boolean {
+  if (href === "/" || href === "/home") return pathname === "/" || pathname === "/home";
   if (pathname === href) return true;
-  if (href === "/") return false;
   return pathname.startsWith(`${href}/`);
 }
