@@ -216,7 +216,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     <nav className="flex flex-col h-full">
       {/* Logo */}
       <div className="flex h-14 items-center justify-between px-4 border-b border-border/40 shrink-0">
-        <Link href="/" className="flex items-center gap-2.5 min-w-0">
+        <Link href="/home" className="flex items-center gap-2.5 min-w-0">
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20">
             <span className="text-xs font-extrabold text-white">R</span>
           </div>
