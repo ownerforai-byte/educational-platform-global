@@ -11,6 +11,15 @@
 - [ ] `npm run check` passes (scoped to what I changed)
 - [ ] `npm run check:all` passes (required: this targets `main`)
 - [ ] No secrets in the diff (`git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN="`)
+- [ ] **No Mass Reading / Scope Isolation:** Checked against `CORE_FILES.md`; no unrequested content files touched
+- [ ] **File Classification:** All modified/created files are classified below as `[IMPORTANT CORE FILE]` or `[CONTENT FILE]`
+
+## File Classification Report
+<!-- List each touched/created file and mark as [IMPORTANT CORE FILE] or [CONTENT FILE] -->
+<!-- e.g.:
+- `frontend/lib/navigation.ts` -> [IMPORTANT CORE FILE]
+- `content/ravikishan/.../01-topic.json` -> [CONTENT FILE]
+-->
 
 ## What & why
 

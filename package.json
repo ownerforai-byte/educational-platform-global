@@ -40,6 +40,8 @@
     "test": "npm run test:run --workspace=educational-platform-backend",
     "check": "node scripts/scoped-check.mjs",
     "check:all": "node scripts/scoped-check.mjs --all",
+    "check:core": "node scripts/classify-files.mjs --check-core",
+    "classify": "node scripts/classify-files.mjs",
     "test:affected": "node scripts/test-affected.mjs",
     "test:affected:list": "node scripts/test-affected.mjs --list",
     "check:content": "node scripts/content-health-check.mjs && npm run check:schema",

@@ -2,6 +2,8 @@
 
 > **Rule 0:** This file lives in the repository root. Any coding agent assigned to this project MUST read it before making an edit. It defines who does what, which model may be used for which task, and how work is scoped.
 >
+> **Rule 0a (CORE ISOLATION & NO MASS READING):** Read `CORE_FILES.md` to see the isolated list of main architecture and routing files. **DO NOT READ ALL FILES.** Over 8,000 files in the repo are content payloads. Only read the isolated routing files needed to place, create, and link your target file. When finished, mark whether touched files are **[IMPORTANT CORE FILE]** or **[CONTENT FILE]**.
+>
 > **Rule 0b (branches):** Read `BRANCHES.md` before creating, checking out, merging, or deleting any branch, and before editing files. It maps every area to one of the 48 area branches (`content/physics`, `feature/ai-chat`, `backend/auth-api`, `test/*`, `ci/*`…), names the 4 reserved worktree branches that must never be touched, and defines the scoped-check commands (`npm run check` / `npm run check:all`).
 
 > **Rule 2 (reproducibility):** Never commit a generated secret to git. Before committing, run `git log -S "<key-value>" -- <file>` and `git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN=" -- . ':!node_modules' ':!*.md'` to confirm the workspace is clean.
@@ -107,9 +109,11 @@ Use these labels as YAML/JSON block headers inside any task-tracking file or PR 
 
 ## 4. How to Use This Spec
 
-- Before **any** edit: read `project-conductor.md` + the target file(s).
+- Before **any** edit: read `CORE_FILES.md`, `project-conductor.md` + ONLY the target file(s). **Never mass-read files or explore content folders unless specifically asked.**
 - Before **any** edit touching branches or multiple areas: read `BRANCHES.md`.
 - Before **any commit**: run `git log -S` + `git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN=" -- . ':!node_modules' ':!*.md'` and confirm zero hits.
+- **Route and link**: Ensure any newly created page or endpoint is routed in `frontend/lib/navigation.ts`, `frontend/lib/site-index.ts`, or `backend/src/app.ts`.
+- **Mark files upon task completion**: Output a File Classification Report marking all modified/created files as `[IMPORTANT CORE FILE]` or `[CONTENT FILE]`. Update `CORE_FILES.md` if an important core architecture file was added.
 - Use the block types above in tracking files and PR descriptions so reviewers immediately know the intent of each change.
 - When in doubt about which model to delegate to, ask Cline first. Qwen 3.8/3.7 for core logic, GLM 5.3 for CRUD, MiniMax 2.6 Pro for UI, Solar Mini for tests.
 

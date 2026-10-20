@@ -12,6 +12,16 @@ This is a monorepo educational platform for NEB (+2) students in Nepal.
 
 ## Critical Rules
 
+### 0. HARDCODED AGENT BOUNDARIES: WHAT TO DO & WHAT TO AVOID
+- 🛑 **WHAT TO AVOID:**
+  - **DO NOT READ ALL FILES OR SCAN CONTENT DIRS.** Over 95% of the repository consists of repetitive content JSON files in `content/ravikishan/**`. Mass reading burns context and credits.
+  - Never explore content folders unless specifically ordered by the user for a single note.
+  - Never guess routing or create unlinked routes.
+- 🎯 **WHAT TO DO:**
+  - Read ONLY `CORE_FILES.md` and the single targeted routing file (`frontend/lib/navigation.ts`, `frontend/lib/syllabus.ts`, or `frontend/lib/site-index.ts`).
+  - Do only what is asked: create or edit the file and link it to its parent route/navigation.
+  - Conclude with the **File Classification**: mark touched files as `[IMPORTANT CORE FILE]` or `[CONTENT FILE]`.
+
 ### 1. Syllabus Is the Single Source of Truth
 `frontend/lib/syllabus.ts` contains ALL class/subject/unit/topic data. Every agent MUST read this file before adding any content. Never create content outside the syllabus structure.
 

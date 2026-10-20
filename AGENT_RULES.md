@@ -4,8 +4,24 @@ These rules are mandatory for every agent (orchestrator, `general` subagents,
 `explore` subagents, and Agent Manager sessions) that performs work in this
 repository.
 
+## 🚨 Hardcoded Boundary Rules: What to Do & What to Avoid
+
+### 🛑 What Every Agent MUST AVOID (Strictly Forbidden):
+1. **DO NOT READ ALL FILES OR BROWSE CONTENT FOLDERS.** Never run blanket directory sweeps or mass file reads on `content/ravikishan/**` or `frontend/public/data/**`. Over 8,000 files are payload data.
+2. **DO NOT GUESS OR INVENT ROUTES.** All routing lives in `frontend/lib/navigation.ts` and `frontend/lib/site-index.ts`.
+3. **DO NOT DRIFT OFF-TASK.** Do strictly what is requested. Never perform unrequested refactors, style rewrites, or widespread file renames.
+
+### 🎯 What Every Agent MUST DO:
+1. **Read ONLY the target file and its direct routing link from `CORE_FILES.md`.**
+2. **Link every created page/endpoint:**
+   - App pages → `frontend/lib/navigation.ts` & `frontend/lib/site-index.ts`
+   - Content topic → `frontend/lib/syllabus.ts`
+   - Backend APIs → `backend/src/app.ts`
+3. **Always conclude with the File Classification:**
+   Mark every modified/created file as `[IMPORTANT CORE FILE]` or `[CONTENT FILE]`. Update `CORE_FILES.md` if an important core file was introduced.
+
 ## Pre-work Checklist
-1. Every agent MUST read `PROJECT_STATUS.md` before starting work.
+1. Every agent MUST read `CORE_FILES.md` and `PROJECT_STATUS.md` before starting work.
 2. Every agent MUST read `AGENT_RULES.md` before modifying the project.
 2b. Every agent MUST read `BRANCHES.md` before creating, checking out, merging,
     or deleting any branch, and before editing files (it maps each area to its
