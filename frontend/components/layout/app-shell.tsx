@@ -7,7 +7,6 @@ import { PanelLeftClose, PanelLeftOpen, Atom, Bell, Lock } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
-import { MobileQuickNav } from "./mobile-quick-nav";
 import { QuickAccessBar } from "./quick-access-bar";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
