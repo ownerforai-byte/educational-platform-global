@@ -191,6 +191,20 @@ export const NAV_SECTIONS: NavSection[] = [
   { id: "owner", label: "Owner", icon: Crown, ownerOnly: true, items: ownerItems },
 ];
 
+/** Shared header shortcuts, resolved from the same access rules as the menus. */
+export const QUICK_NAV_ITEMS: NavItem[] = [
+  { href: "/search", label: "Search", icon: Search, minLevel: "visitor" },
+  ...["/home", "/class-11-notes", "/class-12-notes", "/subjects", "/lab", "/quiz", "/ai"].map((href) => {
+    const section = NAV_SECTIONS.find((entry) => entry.items.some((item) => item.href === href))!;
+    const item = section.items.find((entry) => entry.href === href)!;
+    const labels: Record<string, string> = {
+      "/class-11-notes": "Class 11", "/class-12-notes": "Class 12",
+      "/subjects": "Subjects", "/lab": "Labs", "/quiz": "Practice", "/ai": "AI tools",
+    };
+    return { ...item, label: labels[href] ?? item.label, minLevel: navMinLevel(item, section) };
+  }),
+];
+
 /** Flat list of every menu destination, in render order. */
 export const NAV_HREFS: string[] = NAV_SECTIONS.flatMap((section) =>
   section.items.map((item) => item.href),
