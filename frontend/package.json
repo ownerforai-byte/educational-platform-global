@@ -13,6 +13,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "content:validate": "vitest run tests/lib/content/schema-corpus.test.ts",
+    "resources:check": "node ../scripts/enrich-resource-docs.mjs --check",
     "postinstall": "node scripts/patch-rehype-katex.cjs"
   },
   "dependencies": {
