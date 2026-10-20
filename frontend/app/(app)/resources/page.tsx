@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  Atom,
   BookOpen,
   FileText,
   Flashlight,
@@ -71,6 +72,16 @@ const RESOURCE_CARDS = [
     gradient: "from-indigo-500 to-violet-400",
     bgLight: "bg-indigo-50 dark:bg-indigo-950/30",
     borderLight: "border-indigo-200 dark:border-indigo-800",
+  },
+  {
+    href: "/resources/physics-xi",
+    title: "Physics XI Academic Companion",
+    description:
+      "26 unit briefs: what the model asserts, the conditions it needs, the open questions, and where to read further.",
+    icon: Atom,
+    gradient: "from-cyan-500 to-sky-400",
+    bgLight: "bg-cyan-50 dark:bg-cyan-950/30",
+    borderLight: "border-cyan-200 dark:border-cyan-800",
   },
   {
     href: "/levels",

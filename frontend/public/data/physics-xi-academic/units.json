@@ -1,0 +1,1404 @@
+{
+  "title": "Physics XI — Academic Companion",
+  "subtitle": "Twenty-six unit briefs that connect NEB Class 11 Physics to the working edge of the subject: what the model asserts, the conditions under which it holds, the questions that are still open, and where to read further.",
+  "course": "Physics XI  |  NEB (Grade 11)  |  Phy. 101",
+  "units": [
+    {
+      "unitNo": 1,
+      "unitId": "physical-quantities",
+      "unitName": "Physical Quantities",
+      "contentArea": "Mechanics",
+      "slug": "unit-01-physical-quantities",
+      "summary": "Before any law can be applied, a measurement has to be given a number, a unit, a direction where it matters, and an uncertainty. This unit fixes that vocabulary, and the 2019 SI redefinition moved the definition of the kilogram from a physical artefact to a fixed number.",
+      "facts": [
+        "A physical quantity is a number multiplied by a unit; the unit is part of the quantity, not a label attached to it.",
+        "The SI defines seven base units (m, kg, s, A, K, mol, cd); every other unit is derived from them by definition, so the unit system is a language in which equations must be well-formed.",
+        "Since the 2019 redefinition the metre is fixed by c = 299 792 458 m/s exactly, the kilogram by the Planck constant h = 6.62607015e-34 J s exactly, and the kelvin by k = 1.380649e-23 J/K exactly.",
+        "Addition and subtraction demand matching dimensions; multiplication and division create new dimensions, which is why dimensional analysis can reject an equation before you compute anything.",
+        "Every measurement carries uncertainty: the final reported digit is uncertain, and the honest form of a result is best estimate plus or minus a bound.",
+        "Order-of-magnitude estimation (10^n) is a cheap sanity check: if the answer of a units question is 10^40, something has already gone wrong.",
+        "Dimensional homogeneity is a consistency test rather than a proof: an equation can be dimensionally perfect and still be wrong by a factor of two, a wrong sign, or an unaccounted dimensionless constant."
+      ],
+      "conditions": [
+        "Dimensional analysis only proves that an equation is dimensionally consistent, never that it is right; dimensionless constants such as pi, G and friction coefficients are invisible to the check.",
+        "The 'linear law' shape of Hooke's law is dimensionally consistent but only valid inside a small-strain regime, which is exactly the regime students assume without checking.",
+        "The modern kilogram is realised with Kibble and watt balances, so old textbooks that describe a platinum-iridium cylinder under lock and key are describing a definition that no longer holds.",
+        "Percentage errors are meaningful only for quantities measured on a ratio scale; a percentage change in temperature measured in Celsius is not comparable to the same change in kelvin.",
+        "The seven SI base units are a convention, not a discovery - a different set of definitions would describe the same physics, which is exactly why the 2019 redefinition changed the artefacts without changing a single law."
+      ],
+      "mysteries": [
+        {
+          "question": "How small can the uncertainty of a realised kilogram become before metrology, rather than physics, sets the limit?",
+          "status": "Frontier",
+          "note": "Quantum metrology keeps tightening traceability, but no fundamental floor on repeated mass comparison has been identified."
+        },
+        {
+          "question": "Should the SI keep seven base units, or fold constants such as the Boltzmann constant into a smaller set?",
+          "status": "Under active scrutiny",
+          "note": "The BIPM keeps this under periodic review; the debate is about definitional economy, not about new physics."
+        }
+      ],
+      "prompts": [
+        "Express the speed of light, the Planck constant and the Boltzmann constant in base SI units and check that each is dimensionally M^0 L^0 T^0 Theta^0.",
+        "Your calculator reports g = 9.8 m/s^2. How many digits of that answer are trustworthy, and how would you justify your choice from the measurement alone?",
+        "Design a dimensional check that catches the classic mistake of adding a mass to a force."
+      ],
+      "keyNumbers": [
+        { "label": "Speed of light (exact)", "value": "299 792 458 m/s" },
+        { "label": "Planck constant (exact)", "value": "6.62607015e-34 J s" },
+        { "label": "Boltzmann constant (exact)", "value": "1.380649e-23 J/K" },
+        { "label": "Standard gravity", "value": "9.80665 m/s^2 (by definition)" },
+        { "label": "Number of SI base units", "value": "7 (m, kg, s, A, K, mol, cd)" }
+      ],
+      "sources": [
+        { "label": "NIST: SI Units", "url": "https://www.nist.gov/pml/owm/metric-si/si-units" },
+        { "label": "NIST: Measurement uncertainty", "url": "https://physics.nist.gov/cuu/Uncertainty/basic.html" },
+        { "label": "OpenStax: University Physics Volume 1", "url": "https://openstax.org/books/university-physics-volume-1/pages/preface" },
+        { "label": "OpenStax: Dimensional Analysis", "url": "https://openstax.org/books/university-physics-volume-1/pages/1-4-dimensional-analysis" },
+        { "label": "OpenStax: Significant Figures", "url": "https://openstax.org/books/university-physics-volume-1/pages/1-6-significant-figures" }
+      ]
+    },
+    {
+      "unitNo": 2,
+      "unitId": "vectors",
+      "unitName": "Vectors",
+      "contentArea": "Mechanics",
+      "slug": "unit-02-vectors",
+      "summary": "Vectors are the bookkeeping that lets a physical law stay true no matter how you choose to look at the situation. The unit is about representation: when a scalar law becomes a vector law, and which errors in representation produce wrong answers that still look plausible.",
+      "facts": [
+        "A vector needs both magnitude and direction; two vectors of equal magnitude pointing in different directions are different vectors, unlike scalars.",
+        "Two vectors are equal only when they have identical magnitude and direction, regardless of the path taken to produce them, which is the formal statement of the principle of transmissibility.",
+        "Components are projections onto a chosen orthonormal frame; the frame is free to choose, but the numerical answer changes with the choice even though the physics does not.",
+        "The dot product A.B = AB cos(theta) is a scalar measuring alignment; the cross product magnitude |A x B| = AB sin(theta) is a scalar measuring perpendicularity, and the vector A x B is axial (a pseudovector).",
+        "Displacement, velocity, acceleration, force and momentum are vectors; speed, energy, temperature, mass and power are scalars.",
+        "Vector addition is commutative and associative, so the order in which forces are added cannot change the result - only the arithmetic errors can.",
+        "A vector needs three independent components in three dimensions, so a two-dimensional diagram silently drops one - the component the page cannot show is exactly the one a cross product uses."
+      ],
+      "conditions": [
+        "Component arithmetic is valid only inside a single orthonormal frame; mixing components taken from different frames produces a number with no meaning.",
+        "The cross product obeys the right-hand rule and is anti-commutative: A x B = -(B x A), so the order of the operands matters even though the magnitudes are equal.",
+        "Two drawn vectors of equal length that look perpendicular on paper are not perpendicular if the page is scaled unevenly; always check magnitude and direction numerically.",
+        "Adding forces that act on different bodies is a category error: Newton's third-law pairs cancel in the total but each acts on something else, so they cannot be merged into one resultant on one object.",
+        "The cross product is defined only in three dimensions, so the planar perpendicular you draw is a construction convention rather than a coordinate-independent operation."
+      ],
+      "mysteries": [
+        {
+          "question": "Why does the quantum description of angular momentum look so different from the classical spinning-top picture?",
+          "status": "Frontier",
+          "note": "Spin is not a literal rotation of a rigid body: it has no defined axis in the classical sense, yet behaves like an angular momentum with quantum numbers."
+        },
+        {
+          "question": "How does the quantum state of a spin-1/2 particle relate to the classical picture of a spinning top, if at all?",
+          "status": "Frontier",
+          "note": "The correspondence is suggestive but not exact: quantum angular momentum has no fixed axis, and the 1924 Stern-Gerlach experiment is still the cleanest experimental statement of the mismatch."
+        }
+      ],
+      "prompts": [
+        "Resolve a 30 N force applied at 40 degrees to the horizontal into components, then find the resultant with a second 20 N force at 120 degrees.",
+        "Find the angle between two vectors of equal magnitude whose sum and difference happen to have the same magnitude, and interpret the result.",
+        "Verify a x (b x c) = b(a.c) - c(a.b) with components, then use it to find the rotation axis of a rigid body."
+      ],
+      "keyNumbers": [
+        { "label": "Degrees in a radian", "value": "180/pi = 57.2958" },
+        { "label": "Resultant of two equal vectors at 120 degrees", "value": "equal to each one" },
+        { "label": "Components of a unit vector at 30 degrees to the x-axis", "value": "0.866 and 0.5" },
+        { "label": "Magnitude of the sum of two unit vectors at 90 degrees", "value": "sqrt(2) = 1.414" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 1", "url": "https://openstax.org/books/university-physics-volume-1/pages/preface" },
+        { "label": "OpenStax: College Physics 2e", "url": "https://openstax.org/books/college-physics-2e/pages/4-introduction-to-dynamics-newtons-laws-of-motion" },
+        { "label": "OpenStax: Scalars and Vectors", "url": "https://openstax.org/books/university-physics-volume-1/pages/2-1-scalars-and-vectors" },
+        { "label": "OpenStax: Algebra of Vectors", "url": "https://openstax.org/books/university-physics-volume-1/pages/2-3-algebra-of-vectors" }
+      ]
+    },
+    {
+      "unitNo": 3,
+      "unitId": "kinematics",
+      "unitName": "Kinematics",
+      "contentArea": "Mechanics",
+      "slug": "unit-03-kinematics",
+      "summary": "Kinematics describes how things move without saying why. Its power is the graph: a position-time graph carries velocity, acceleration and everything else inside it, and the constant-acceleration formulas are only a special case of what the graph can show.",
+      "facts": [
+        "Kinematics is the description of motion; dynamics is the explanation of motion. Newton's laws belong to the second half of the story.",
+        "v = u + at, s = ut + (1/2)at^2 and v^2 = u^2 + 2as all assume constant acceleration over the interval considered.",
+        "Acceleration is the rate of change of velocity, not of speed: a body moving in a circle at constant speed is accelerating continuously.",
+        "On a position-time graph the slope is velocity, the curvature is acceleration; the area under a velocity-time graph is displacement.",
+        "Near the Earth's surface a body in free fall accelerates at g = 9.8 m/s^2 downward, and the independence from mass holds only when air resistance is negligible.",
+        "The choice of sign convention (up positive or down positive) is a free decision; the physics is unchanged, but the arithmetic changes if you are inconsistent.",
+        "The three equations of motion are not three independent laws: they are one kinematic constraint written three ways, and they hold only for constant acceleration."
+      ],
+      "conditions": [
+        "The constant-acceleration formulas fail for air drag, terminal velocity, appreciable changes in g with altitude, and charged particles in fields.",
+        "A vertical throw and a free fall from rest have identical acceleration-time graphs even though their velocity graphs differ - a standard examination trap.",
+        "Average velocity over a closed round trip is zero while the average speed is not, because the average of a vector quantity is not the average of its magnitude.",
+        "Projectile motion ignores the Earth's curvature and rotation; those corrections matter for long-range artillery and for orbital projectiles, not for a 10 m throw.",
+        "Each equation of motion throws away the shape of the velocity-time graph, so two motions with the same initial and final velocity can still be different - the acceleration history is what gets lost."
+      ],
+      "mysteries": [
+        {
+          "question": "How precisely can the equivalence of free fall be tested as the mass of the test body is reduced?",
+          "status": "Under active scrutiny",
+          "note": "Drop-tower and lunar/planetary drop experiments push the test to ever smaller masses; any quantum-gravity signal would appear as a deviation from the predicted free-fall trajectory."
+        },
+        {
+          "question": "Does a trajectory carry more information than any observer can extract from it, given that measuring position disturbs the motion?",
+          "status": "Open question",
+          "note": "Quantum limits on phase-space resolution remain an active research topic, and the classical description hides the disturbance entirely."
+        }
+      ],
+      "prompts": [
+        "Derive v^2 = u^2 + 2as from the definition of average velocity, stating at each step where constant acceleration was used.",
+        "Sketch x-t, v-t and a-t graphs for a ball thrown vertically upward and mark every sign change.",
+        "A car travelling at 20 m/s brakes to rest in 2.5 s: find the retardation, then the reaction distance needed to avoid a collision."
+      ],
+      "keyNumbers": [
+        { "label": "Standard gravity", "value": "9.80665 m/s^2" },
+        { "label": "Typical terminal speed of a skydiver", "value": "about 55 m/s" },
+        { "label": "Speed of sound in air at 20 degrees C", "value": "about 343 m/s" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 1", "url": "https://openstax.org/books/university-physics-volume-1/pages/preface" },
+        { "label": "NASA: Dark Matter", "url": "https://science.nasa.gov/dark-matter/" },
+        { "label": "OpenStax: Motion with Constant Acceleration", "url": "https://openstax.org/books/university-physics-volume-1/pages/3-4-motion-with-constant-acceleration" },
+        { "label": "OpenStax: Free Fall", "url": "https://openstax.org/books/university-physics-volume-1/pages/3-5-free-fall" }
+      ]
+    },
+    {
+      "unitNo": 4,
+      "unitId": "dynamics",
+      "unitName": "Dynamics",
+      "contentArea": "Mechanics",
+      "slug": "unit-04-dynamics",
+      "summary": "Dynamics supplies the causes. Newton's three laws are the whole of classical mechanics for point masses, but the ways they are applied - free-body diagrams, variable mass, self-adjusting friction - decide whether an answer survives contact with reality.",
+      "facts": [
+        "The first law defines an inertial frame: one in which a free body keeps constant velocity, and the second law then reads F = ma.",
+        "F = ma is the constant-mass form. For a changing mass the correct statement is F = dp/dt, which is what lets a rocket accelerate.",
+        "Third-law pairs act on different bodies, are equal and opposite, and share the same line of interaction.",
+        "Mass measures inertia and is independent of g; weight is the gravitational force mg, so weight changes with location while mass does not.",
+        "A free-body diagram isolates one body and contains only interactions, never 'forces of motion'.",
+        "Static friction is self-adjusting, 0 <= f <= mu N; only at impending slip does it reach mu N, which is why pulling a box at constant speed needs less force than starting it.",
+        "Newton's second law is a rate law: the force at an instant fixes the change of momentum, so a larger force acting for a shorter time can deliver exactly the same impulse."
+      ],
+      "conditions": [
+        "F = ma assumes constant mass in an inertial frame; rockets, raindrops gaining mass from vapour, and chains picking up links all violate it.",
+        "Textbook problems neglect air resistance and buoyancy; both become dominant for light bodies, fine dust and falling feathers.",
+        "The classic 'lift and the Earth' third-law discussion fails because the force on the person and the force on the ground are not a third-law pair: the true partner of the person-Newton force is the person-Earth force.",
+        "Friction coefficients are empirical, depend on surface condition, cleanliness, humidity and sliding speed, and are not universal constants of the two materials.",
+        "Newton's laws assume an inertial frame and classical, instantaneous action; they hold to about one part in 10^10 of the speed of light and stop being fundamental at relativistic and quantum scales."
+      ],
+      "mysteries": [
+        {
+          "question": "Do smooth, globally defined solutions of the three-dimensional Navier-Stokes equations exist and remain smooth?",
+          "status": "Under active scrutiny",
+          "note": "The Clay Mathematics Institute announced an apparent solution in September 2026 and states that the work is still to be analysed and evaluated; it should be presented as announced, not as settled."
+        },
+        {
+          "question": "Can the transition from laminar to turbulent flow be predicted from first principles?",
+          "status": "Open question",
+          "note": "Direct numerical simulation still reaches only moderate Reynolds numbers, so the transition statistics remain an active research target."
+        }
+      ],
+      "prompts": [
+        "Draw free-body diagrams for a lift accelerating upward with total mass m and explain both readings of the word 'weight'.",
+        "Show that the third law does not prevent a rocket from accelerating: track the momentum carried away by the exhaust.",
+        "Estimate the terminal velocity of a raindrop using a quadratic drag law and compare the estimate with observation."
+      ],
+      "keyNumbers": [
+        { "label": "Newton's gravitational constant (exact)", "value": "6.67430e-11 m^3 kg^-1 s^-2" },
+        { "label": "Earth's mass", "value": "5.972e24 kg" },
+        { "label": "Force needed to accelerate 1 kg at 1 g", "value": "about 9.81 N" },
+        { "label": "Impulse of a car decelerating from 50 m/s in 0.05 s", "value": "about 250 N s per kg of mass" }
+      ],
+      "sources": [
+        { "label": "OpenStax: Newton's laws", "url": "https://openstax.org/books/college-physics-2e/pages/4-introduction-to-dynamics-newtons-laws-of-motion" },
+        { "label": "Clay: the Navier-Stokes problem", "url": "https://www.claymath.org/millennium/navier-stokes-equation/" },
+        { "label": "Clay: Navier-Stokes announcement, 11 September 2026", "url": "https://www.claymath.org/news/navier-stokes-announcement/" },
+        { "label": "OpenStax: Newton's Second Law", "url": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law" }
+      ]
+    },
+    {
+      "unitNo": 5,
+      "unitId": "work-energy-and-power",
+      "unitName": "Work, Energy and Power",
+      "contentArea": "Mechanics",
+      "slug": "unit-05-work-energy-and-power",
+      "summary": "Energy is the bookkeeping device that survives every form of friction. The work-energy theorem is the most useful sentence in mechanics: it replaces a force problem with an energy problem, and it stays valid even when the forces themselves are hard to compute.",
+      "facts": [
+        "Work done by a constant force is the scalar product W = F.s.cos(theta); only the component of the force along the displacement contributes.",
+        "The work-energy theorem states that the net work on a particle equals its change in kinetic energy, dK = W_net, whatever the forces turn out to be.",
+        "A conservative force depends on position only; for it a potential energy exists with W = -dU, and the closed-path integral of the force vanishes.",
+        "Near the Earth's surface gravity is conservative with U = m g h; the spring force is conservative with U = (1/2) k x^2.",
+        "Mechanical energy conservation (K + U constant) holds only when no non-conservative work (friction, drag, driving) is done.",
+        "Power is the rate of energy transfer: P = dW/dt, and for a constant force P = F.v, so a bicycle climbs steeply not because it does more work but because it does it faster.",
+        "Work is a path-independent energy transfer only for conservative forces; friction turns ordered mechanical energy into disordered thermal energy, which is why the work-energy theorem has to carry a friction term."
+      ],
+      "conditions": [
+        "Energy conservation is bookkeeping, not a claim that energy disappears: friction converts mechanical energy into internal energy and heats both surfaces.",
+        "Non-conservative forces cannot be described by a potential and must be handled through the work-energy theorem directly.",
+        "The constant-g potential m g h is a local approximation; the exact field potential is -GMm/r, and the two agree only for heights small compared with Earth's radius.",
+        "Efficiency is always defined against a specific output, can never exceed 1, and for most machines falls as the load rises because friction grows faster than useful work.",
+        "Power is a rate, not an amount: the same total energy can be delivered slowly or quickly, and the two are physically different because the time left to react is different."
+      ],
+      "mysteries": [
+        {
+          "question": "How is the energy dissipated by friction partitioned between the two rubbing surfaces?",
+          "status": "Frontier",
+          "note": "The partition depends on temperature, speed and material pair; tribology still models it empirically rather than from first principles."
+        },
+        {
+          "question": "Why does time run in one direction rather than both?",
+          "status": "Open question",
+          "note": "The second law is statistical in the standard account, and the deeper question of why the universe began in a very low-entropy state is not settled by that account."
+        }
+      ],
+      "prompts": [
+        "A block slides down a rough incline: write the full energy budget and predict where it stops, including the heat produced.",
+        "Compare the stopping distance of a car braking from 20 m/s with and without a reaction delay, and explain the difference in energy terms.",
+        "Derive the efficiency of a block on a rough incline pushing a load uphill, then check the result against a direct work calculation."
+      ],
+      "keyNumbers": [
+        { "label": "Power of a typical classroom lamp", "value": "about 40 W" },
+        { "label": "Energy in one kilogram of fat", "value": "about 37 MJ" },
+        { "label": "Energy of 1 kWh", "value": "3.6 MJ" },
+        { "label": "Efficiency of a modern electric motor", "value": "about 85 to 95 %" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 1", "url": "https://openstax.org/books/university-physics-volume-1/pages/preface" },
+        { "label": "NIST: Measurement uncertainty", "url": "https://physics.nist.gov/cuu/Uncertainty/basic.html" },
+        { "label": "OpenStax: Work-Energy Theorem", "url": "https://openstax.org/books/university-physics-volume-1/pages/7-3-work-energy-theorem" },
+        { "label": "OpenStax: Power", "url": "https://openstax.org/books/university-physics-volume-1/pages/7-4-power" }
+      ]
+    },
+    {
+      "unitNo": 6,
+      "unitId": "circular-motion",
+      "unitName": "Circular Motion",
+      "contentArea": "Mechanics",
+      "slug": "unit-06-circular-motion",
+      "summary": "Circular motion is where the vector treatment of force has to be taken seriously: the speed can be constant while the force is anything but, and the word 'centripetal' names a direction rather than a new kind of force.",
+      "facts": [
+        "Uniform circular motion has constant speed but constantly changing velocity, so the acceleration is a = v^2/r directed toward the centre.",
+        "'Centripetal force' is simply the name for the net inward force; it is supplied by tension, friction, gravity, magnetism or a normal reaction, not by an extra interaction.",
+        "In an inertial frame there is no outward force; the 'centrifugal force' of a rotating frame is a bookkeeping pseudo-force.",
+        "Banking a road removes the need for friction: the horizontal component of the normal reaction supplies the centripetal force.",
+        "For a conical pendulum omega^2 = g/r; for a circular orbit v^2 = GM/r.",
+        "The ground itself accelerates: Earth's rotation contributes about 0.034 m/s^2 at the equator, roughly 0.35 % of g, which is why effective g falls with latitude.",
+        "In uniform circular motion the acceleration has constant magnitude but a continuously rotating direction, so the velocity vector changes even though its size does not."
+      ],
+      "conditions": [
+        "The centripetal analysis assumes a circular path at constant speed; if the speed also changes, a tangential acceleration must be added to the radial one.",
+        "The maximum safe speed of a vehicle on a curve is set by the friction limit mu, not by the acceleration itself, and the banking angle shifts that limit.",
+        "Working in Earth's rotating frame requires fictitious forces; ignoring them underestimates the effective weight by about 0.35 % at the equator.",
+        "Orbital motion neglects drag, tidal perturbation and orbital precession, all of which matter for long-lived satellites.",
+        "The centrifugal force is real inside a rotating frame and fictitious in an inertial one; describing a rotating system only works if you say which frame you are using."
+      ],
+      "mysteries": [
+        {
+          "question": "Why do the outer parts of spiral galaxies rotate faster than their visible matter allows?",
+          "status": "Open question",
+          "note": "The standard explanation is an extended dark-matter halo, but the nature of that halo is unknown and no candidate particle has been confirmed (NASA)."
+        },
+        {
+          "question": "Why do large, stable polygonal vortices form in rotating fluids, such as the hexagon on Saturn?",
+          "status": "Open question",
+          "note": "Laboratory experiments reproduce polygonal vortices but do not yet explain the range of sizes and their stability in full."
+        }
+      ],
+      "prompts": [
+        "Derive the minimum speed at which a car can take a banked curve without depending on friction.",
+        "Explain with a free-body diagram why a standing passenger feels pushed outward on a turning bus.",
+        "Calculate the change in effective g at the equator caused by Earth's rotation and compare it with the measured value."
+      ],
+      "keyNumbers": [
+        { "label": "Earth's rotation period", "value": "23 h 56 m 4 s (sidereal)" },
+        { "label": "Centripetal acceleration at the equator", "value": "about 0.034 m/s^2" },
+        { "label": "Linear speed of the equator from Earth's rotation", "value": "about 465 m/s" },
+        { "label": "Period of a geostationary orbit", "value": "86 164 s (one sidereal day)" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 1", "url": "https://openstax.org/books/university-physics-volume-1/pages/preface" },
+        { "label": "NASA: Dark Matter", "url": "https://science.nasa.gov/dark-matter/" },
+        { "label": "OpenStax: Uniform and Nonuniform Circular Motion", "url": "https://openstax.org/books/university-physics-volume-1/pages/4-4-uniform-and-nonuniform-circular-motion" },
+        { "label": "OpenStax: Centripetal Force", "url": "https://openstax.org/books/university-physics-volume-1/pages/6-3-centripetal-force" }
+      ]
+    },
+    {
+      "unitNo": 7,
+      "unitId": "gravitation",
+      "unitName": "Gravitation",
+      "contentArea": "Mechanics",
+      "slug": "unit-07-gravitation",
+      "summary": "Newton's universal law is the first law of physics that is genuinely universal: the same constant appears for a falling apple and for a galaxy cluster. The unit also contains the sharpest tension between what the law predicts and what we can see.",
+      "facts": [
+        "F = G m1 m2 / r^2 with G = 6.67430e-11 m^3 kg^-1 s^-2, a constant fixed exactly in the 2019 SI and equal and opposite between the two bodies.",
+        "g = GM/R^2 = 9.80665 m/s^2 at the surface by definition; the local value varies with latitude and altitude, and in Nepal it is roughly 9.78 to 9.83 m/s^2.",
+        "Gravitational potential energy is U = -GMm/r, and the field satisfies g = -grad V, so field and potential are two views of one object.",
+        "Escape velocity from the surface is v_e = sqrt(2GM/R) = 11.2 km/s for Earth.",
+        "Kepler's three laws follow from the inverse-square law: elliptical orbits with the Sun at a focus, constant areal velocity, and T^2 proportional to a^3.",
+        "Galaxy rotation curves and gravitational lensing by clusters both show more gravitating mass than the visible matter accounts for.",
+        "The shell theorem makes spherical mass distributions tractable: outside a spherically symmetric body the field is exactly that of a point mass at the centre, which is why planetary orbits have closed-form solutions."
+      ],
+      "conditions": [
+        "Newtonian gravity is an excellent approximation for weak fields (GM/rc^2 much less than 1) and slow speeds (v much less than c); near a black-hole horizon and in the early universe it must be replaced by general relativity.",
+        "The shell theorem - treating an extended body as a point - needs spherical symmetry, and it fails for flattened or irregular mass distributions such as a disc galaxy or a mountain.",
+        "The constant-g treatment near the surface is valid only for heights small compared with Earth's radius; at 3000 m the reduction of g is already about 0.1 %.",
+        "Tidal effects, which come from the differential part of the field and scale as r^(-3), govern ocean tides and the Roche limit; the plain 1/r^2 force does not.",
+        "Kepler's laws are exact only for two bodies in an inverse-square field; with three or more bodies the orbits are not closed and no exact solution exists."
+      ],
+      "mysteries": [
+        {
+          "question": "What is dark matter made of, and has any candidate particle ever been detected directly?",
+          "status": "Open question",
+          "note": "No candidate has been confirmed; the evidence is gravitational and the identity is unknown (NASA)."
+        },
+        {
+          "question": "How did the first stars form, and how long before the first one lit up?",
+          "status": "Open question",
+          "note": "Dark matter provides the gravitational scaffolding, but the details of the first objects remain an active modelling challenge."
+        },
+        {
+          "question": "Can a stable system of planets be configured, and do real systems migrate between configurations?",
+          "status": "Frontier",
+          "note": "Planet-planet scattering, the Lidov-Kozai mechanism and post-Newtonian corrections are all active research areas."
+        }
+      ],
+      "prompts": [
+        "Compute the escape velocity from the Moon and compare it with the value needed for a crewed mission from Earth.",
+        "Measure g in your schoolyard with a simple pendulum, estimate the uncertainty, and compare with the predicted local value.",
+        "Derive Kepler's third law from Newton's law of gravitation and check it against the Moon's and Earth's orbital data."
+      ],
+      "keyNumbers": [
+        { "label": "Newton's constant G (exact)", "value": "6.67430e-11 m^3 kg^-1 s^-2" },
+        { "label": "Earth's escape velocity", "value": "11.2 km/s" },
+        { "label": "Sun's escape velocity", "value": "617.7 km/s" },
+        { "label": "Surface gravity on the Moon", "value": "about 1.62 m/s^2" }
+      ],
+      "sources": [
+        { "label": "NASA: Dark Matter", "url": "https://science.nasa.gov/dark-matter/" },
+        { "label": "OpenStax: University Physics Volume 1", "url": "https://openstax.org/books/university-physics-volume-1/pages/preface" },
+        { "label": "OpenStax: Newton's Law of Universal Gravitation", "url": "https://openstax.org/books/university-physics-volume-1/pages/13-1-newtons-law-of-universal-gravitation" },
+        { "label": "OpenStax: Kepler's Laws of Planetary Motion", "url": "https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion" }
+      ]
+    },
+    {
+      "unitNo": 8,
+      "unitId": "elasticity",
+      "unitName": "Elasticity",
+      "contentArea": "Mechanics",
+      "slug": "unit-08-elasticity",
+      "summary": "Elasticity turns 'how stiff is this material' into a measurable number with units of pressure, and it separates the regimes in which a material returns to its shape from the regimes in which it does not.",
+      "facts": [
+        "Stress is force per unit area; strain is fractional change in length; Hooke's law says stress is proportional to strain only within the linear elastic regime.",
+        "Young's modulus E = stress/strain has the dimensions of pressure and belongs to the material, not to the particular specimen you cut from it.",
+        "The stress-strain curve has recognisable regimes: linear elastic, yield, plastic flow, strain hardening, necking and fracture.",
+        "Ductile materials give warning before they fail; brittle materials such as glass and cast iron do not, which is why toughness and ductility are engineered separately.",
+        "The elastic limit is not the tensile strength: the first marks the end of recoverable deformation, the second the maximum stress the material carries.",
+        "The elastic energy stored per unit volume is (1/2) x stress x strain, and Poisson's ratio couples longitudinal strain to lateral contraction.",
+        "Stiffness and strength are different properties: the modulus says how much strain a given stress produces, the ultimate stress says how much stress the material survives, and a material can be strong without being stiff."
+      ],
+      "conditions": [
+        "Hooke's law needs small strains, an isotropic material, a uniform stress state and a fixed temperature; it fails for rubber (strongly non-Hookean), for plastics beyond the yield point, and for composites loaded off-axis.",
+        "Young's modulus depends on temperature and on rate: rubber's modulus rises with strain rate and falls with temperature, which is why a stretched rubber band stiffens when pulled faster.",
+        "Fatigue means cyclic loading below the yield strength can still fracture a component after many cycles, and a static tensile test cannot reveal it.",
+        "A hole or notch concentrates stress: the local peak stress, not the nominal stress, decides failure, so a small crack can dominate a design.",
+        "Poisson's ratio ties lateral strain to longitudinal strain, so no solid can be perfectly incompressible and perfectly isotropic at once; most engineering metals sit near 0.3."
+      ],
+      "mysteries": [
+        {
+          "question": "Can the strength of a material be predicted from its atomic structure alone?",
+          "status": "Frontier",
+          "note": "Dislocation theory explains strength qualitatively; quantitative prediction for real materials remains a research problem."
+        },
+        {
+          "question": "How do microscopic defects nucleate and grow into the cracks that end a component's life?",
+          "status": "Under active scrutiny",
+          "note": "The mechanisms are known in outline, and fatigue-life prediction for specific parts remains an engineering challenge."
+        }
+      ],
+      "prompts": [
+        "Plot a stress-strain curve for a steel wire or a plastic strip and label every regime you can identify.",
+        "Design an experiment to find Young's modulus of a bamboo strip, and state the dominant uncertainty in your result.",
+        "Explain, with an example, why a sharp crack is more dangerous than a round hole of the same size."
+      ],
+      "keyNumbers": [
+        { "label": "Young's modulus of steel", "value": "about 200 GPa" },
+        { "label": "Young's modulus of bone (along the shaft)", "value": "about 18 GPa" },
+        { "label": "Ultimate tensile strength of mild steel", "value": "about 400 MPa" },
+        { "label": "Bulk modulus of water", "value": "about 2.2 GPa" }
+      ],
+      "sources": [
+        { "label": "OpenStax: Stress, Strain and Elastic Modulus", "url": "https://openstax.org/books/university-physics-volume-1/pages/12-3-stress-strain-and-elastic-modulus" },
+        { "label": "OpenStax: University Physics Volume 1", "url": "https://openstax.org/books/university-physics-volume-1/pages/preface" },
+        { "label": "OpenStax: Conditions for Static Equilibrium", "url": "https://openstax.org/books/university-physics-volume-1/pages/12-1-conditions-for-static-equilibrium" },
+        { "label": "OpenStax: Elasticity and Plasticity", "url": "https://openstax.org/books/university-physics-volume-1/pages/12-4-elasticity-and-plasticity" }
+      ]
+    },
+    {
+      "unitNo": 9,
+      "unitId": "heat-and-temperature",
+      "unitName": "Heat and Temperature",
+      "contentArea": "Heat & Thermodynamics",
+      "slug": "unit-09-heat-and-temperature",
+      "summary": "The distinction between heat and temperature is the doorway to thermodynamics. Heat is energy in transit, temperature is a property of a body, and the zeroth law is what makes thermometers possible at all.",
+      "facts": [
+        "Heat is energy transferred because of a temperature difference; it is a process quantity, not a substance stored inside an object.",
+        "Temperature measures the average microscopic kinetic energy of particles, with the equipartition theorem distributing energy across the available degrees of freedom.",
+        "The zeroth law - if A equals B thermally and B equals C, then A equals C - is what makes a thermometer a thermometer.",
+        "Temperature is intensive; heat and internal energy are extensive, so they scale with the amount of matter.",
+        "The kelvin is defined by the Boltzmann constant, k = 1.380649e-23 J/K exactly, and is the only SI scale proportional to a true zero.",
+        "Thermal equilibrium is dynamic: microscopic energy exchange continues forever, but with no net flow in either direction.",
+        "Temperature is a state variable made meaningful by the zeroth law, while heat is a path-dependent transfer; the two are different kinds of quantity and are not interchangeable inside an equation."
+      ],
+      "conditions": [
+        "'Temperature equals average kinetic energy' is exact for a monatomic ideal gas; for molecules with rotation and vibration the equipartition theorem spreads the energy over more degrees of freedom.",
+        "A thermometer reading is the equilibrium temperature of the thermometer-object pair, so the reading lags and can measurably disturb a small object.",
+        "At nanometre and smaller scales, different definitions of temperature (electronic, vibrational, configurational) need not agree, so 'the temperature' of a nanoscale system can be ambiguous.",
+        "Temperature scales other than kelvin are proportional only over a limited range; Celsius and Fahrenheit diverge as you approach absolute zero.",
+        "Thermodynamic equilibrium requires thermal and mechanical balance together, so a sealed system can be at thermal equilibrium and still be pushing on its surroundings."
+      ],
+      "mysteries": [
+        {
+          "question": "Can two bodies at the same temperature still exchange heat?",
+          "status": "Under active scrutiny",
+          "note": "Yes - equilibrium is statistical and exchange continues in both directions, but the net flow vanishes; the statistical statement is what makes the zeroth law a law."
+        },
+        {
+          "question": "Is there a single, unique temperature for a system far from equilibrium?",
+          "status": "Open question",
+          "note": "Different definitions diverge for non-equilibrium and nanoscale systems, and no universal choice is settled."
+        }
+      ],
+      "prompts": [
+        "Rewrite the sentence 'the bucket of water has a lot of heat in it' so that it is physically correct, and explain what is wrong with the original.",
+        "Explain why a metal spoon feels colder than a wooden spoon at the same room temperature.",
+        "Derive the final temperature of two bodies placed in thermal contact from conservation of energy and a constant-heat-capacity model."
+      ],
+      "keyNumbers": [
+        { "label": "Boltzmann constant (exact)", "value": "1.380649e-23 J/K" },
+        { "label": "Absolute zero", "value": "-273.15 degrees C = 0 K" },
+        { "label": "Triple point of water", "value": "273.16 K at 611.657 Pa" },
+        { "label": "Typical room temperature", "value": "about 293 K (20 degrees C)" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "NASA: Webb's Mirrors", "url": "https://science.nasa.gov/mission/webb/webbs-mirrors/" },
+        { "label": "OpenStax: Temperature and Thermal Equilibrium", "url": "https://openstax.org/books/university-physics-volume-2/pages/1-1-temperature-and-thermal-equilibrium" },
+        { "label": "OpenStax: Thermometers and Temperature Scales", "url": "https://openstax.org/books/university-physics-volume-2/pages/1-2-thermometers-and-temperature-scales" }
+      ]
+    },
+    {
+      "unitNo": 10,
+      "unitId": "thermal-expansion",
+      "unitName": "Thermal Expansion",
+      "contentArea": "Heat & Thermodynamics",
+      "slug": "unit-10-thermal-expansion",
+      "summary": "Most solids expand when heated and water does something stranger. The coefficient of expansion is a property with a pedigree - it tracks bond strength - and it is the hidden variable in precision engineering, from railway gaps to cryogenic mirrors.",
+      "facts": [
+        "For modest temperature changes dL = alpha L dT; alpha is the linear coefficient of expansion and depends on material, temperature and direction.",
+        "Expansion coefficients are broadly inversely related to bond strength, so stiff, high-melting-point materials such as fused silica expand far less than rubber or lead.",
+        "Water is anomalous: it contracts on cooling from 100 degrees C to 4 degrees C and expands on freezing, which is why lakes freeze from the top down and pipes burst in winter.",
+        "A bimetallic strip converts a temperature change into mechanical motion - the working principle of every household thermostat.",
+        "The Gruneisen parameter links expansion to compressibility and heat capacity through alpha V K_s = gamma C_V.",
+        "Gaps in rails, joints in bridges and expansion joints in concrete are all the same idea: the material will change size, so the structure must allow it.",
+        "Thermal expansion comes from anharmonicity in the interatomic potential: the average separation between neighbours grows with temperature, and the expansion coefficient is that average increase per kelvin."
+      ],
+      "conditions": [
+        "The linear law is a first-order approximation; it fails for large temperature changes, near phase transitions and for anisotropic materials such as graphite or wood.",
+        "For an isotropic solid the volume coefficient is approximately three times the linear coefficient, and the equality holds only in the small-expansion limit.",
+        "Apparent expansion of a liquid must subtract the container's own expansion, which for mercury in glass can be about 2 % of the reading.",
+        "As temperature approaches absolute zero the expansion coefficient vanishes, which is why cryogenic instruments use alloys such as Invar and Kovar whose expansion is nearly zero.",
+        "The linear expansion law is a first-order approximation for small temperature changes; a body cooling towards absolute zero needs the integrated form, because the coefficient itself varies with temperature."
+      ],
+      "mysteries": [
+        {
+          "question": "Can thermal expansion be harnessed directly to produce useful electrical power?",
+          "status": "Frontier",
+          "note": "Thermal diodes, phase-change engines and flexoelectric effects are active research areas, but the efficiencies remain far below those of conventional heat engines."
+        },
+        {
+          "question": "Why does water expand when it freezes, when almost every other substance contracts?",
+          "status": "Open question",
+          "note": "Hydrogen bonds give ice an open lattice; the same anomaly is what lets a lake freeze from the top down."
+        }
+      ],
+      "prompts": [
+        "Design a bimetallic strip switch and calculate the tip displacement for a given temperature change.",
+        "Explain why a mercury thermometer left in a freezer shows a rise in reading rather than a fall.",
+        "Compare the thermal design of the JWST's cryogenic mirror segments with a classroom thermometer and state the common principle."
+      ],
+      "keyNumbers": [
+        { "label": "Linear expansion of aluminium", "value": "about 23e-6 per K" },
+        { "label": "Linear expansion of fused silica", "value": "about 0.5e-6 per K" },
+        { "label": "Volume expansion of water near 20 degrees C", "value": "about 2.1e-4 per K" },
+        { "label": "Linear expansion of steel", "value": "about 12e-6 per K" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "NASA: Webb's Mirrors", "url": "https://science.nasa.gov/mission/webb/webbs-mirrors/" },
+        { "label": "OpenStax: Thermal Expansion", "url": "https://openstax.org/books/university-physics-volume-2/pages/1-3-thermal-expansion" }
+      ]
+    },
+    {
+      "unitNo": 11,
+      "unitId": "quantity-of-heat",
+      "unitName": "Quantity of Heat",
+      "contentArea": "Heat & Thermodynamics",
+      "slug": "unit-11-quantity-of-heat",
+      "summary": "Quantity of heat is where the first law becomes arithmetic: energy accounting with a heat capacity, a latent heat and a clear statement of which system you are describing.",
+      "facts": [
+        "Q = m c dT requires no phase change, a constant specific heat over the range, and a clearly defined system.",
+        "Specific heat capacity is per unit mass; the molar heat capacity is C = M c, where M is the molar mass.",
+        "During a phase change the temperature stays constant while heat is added, because the energy goes into changing the structure rather than the motion of the particles.",
+        "Latent heat enters as Q = m L; the specific latent heat of vaporisation of water at 100 degrees C is about 2.26e6 J/kg.",
+        "Internal energy is a state function of the body; heat is the transfer, and the first law writes dQ = dU + dW with work done by the system positive.",
+        "Calorimetry rests on the statement that heat lost by the hot body equals heat gained by the cold one - true only for an isolated system.",
+        "Heat capacity is quoted along constant volume or constant pressure because only the path-independent change of internal energy is the same for both; the difference between them is the work done by expansion."
+      ],
+      "conditions": [
+        "The constant-c approximation fails for gases, whose heat capacity varies with temperature, and for any interval that crosses a phase change.",
+        "Latent heat is not a universal constant: it varies with pressure and temperature, and for water it falls as the critical point is approached.",
+        "Calorimetry assumes an isolated system; in a real cup the heat capacity of the container must be included, and it often dominates the error.",
+        "Specific heat of water is commonly approximated as 4.18 kJ/(kg.K) over 0 to 100 degrees C, but it varies by more than 1 % across that range.",
+        "Water's large specific heat is a symptom of hydrogen-bonded network rearrangements, not a separate slow-to-heat mechanism, and it is the reason oceans moderate coastal climate."
+      ],
+      "mysteries": [
+        {
+          "question": "How is energy distributed among the translational, rotational and vibrational modes of a molecule as its temperature rises?",
+          "status": "Under active scrutiny",
+          "note": "Equipartition gives the high-temperature limit and quantum theory gives the low-temperature limit; the crossover in real materials is modelled, not derived."
+        },
+        {
+          "question": "Can the heat capacity of a complex solid be computed from first principles to experimental accuracy?",
+          "status": "Frontier",
+          "note": "Modern ab initio methods approximate it well for simple crystals; no exact general theory exists."
+        }
+      ],
+      "prompts": [
+        "Plan a calorimetry experiment to determine the specific heat of a metal and list every systematic error you can foresee.",
+        "Show quantitatively why 1 kg of steam at 100 degrees C can release more energy than 1 kg of water at 100 degrees C.",
+        "Estimate the energy needed to heat a classroom by 10 degrees C and compare it with a student's daily food intake."
+      ],
+      "keyNumbers": [
+        { "label": "Specific heat of water", "value": "about 4.18 kJ/(kg.K)" },
+        { "label": "Latent heat of vaporisation of water (100 degrees C)", "value": "about 2.26e6 J/kg" },
+        { "label": "Specific latent heat of fusion of water at 0 degrees C", "value": "about 3.34e5 J/kg" },
+        { "label": "Energy to raise 1 kg of water by 1 K", "value": "about 4.18 kJ" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "NIST: Measurement uncertainty", "url": "https://physics.nist.gov/cuu/Uncertainty/basic.html" },
+        { "label": "OpenStax: Heat Transfer, Specific Heat and Calorimetry", "url": "https://openstax.org/books/university-physics-volume-2/pages/1-4-heat-transfer-specific-heat-and-calorimetry" },
+        { "label": "OpenStax: Phase Changes", "url": "https://openstax.org/books/university-physics-volume-2/pages/1-5-phase-changes" }
+      ]
+    },
+    {
+      "unitNo": 12,
+      "unitId": "rate-of-heat-flow",
+      "unitName": "Rate of Heat Flow",
+      "contentArea": "Heat & Thermodynamics",
+      "slug": "unit-12-rate-of-heat-flow",
+      "summary": "How fast energy moves as heat depends on the mechanism: contact, bulk motion of a fluid, or electromagnetic radiation. Each mechanism has its own law, its own geometry, and its own place where the textbook approximation fails.",
+      "facts": [
+        "Conduction transfers energy through a medium without moving the medium; convection moves bulk fluid; radiation needs no medium at all.",
+        "Fourier's law states dQ/dt = -k A dT/dx, with thermal conductivity k a material property and the minus sign meaning heat flows down the temperature gradient.",
+        "Newton's law of cooling gives the convective rate dQ/dt = h A (T_surface - T_fluid), with h the convection coefficient, which depends on flow conditions rather than on geometry alone.",
+        "The Stefan-Boltzmann law for a blackbody is P = epsilon sigma A T^4, with sigma = 5.670374419e-8 W/(m^2.K^4) exactly in the 2019 SI.",
+        "Thermal resistances add in series and parallel exactly like electrical resistances, with R = L/(kA) for a slab.",
+        "Building heat loss, the thermal performance of a wall, and the ability of a device to shed heat are all set by this network of resistances.",
+        "Conduction, convection and radiation are three separate mechanisms: conduction is the diffusion of particle energy through a medium, convection needs a moving fluid, and radiation needs no medium at all."
+      ],
+      "conditions": [
+        "Fourier's law in its simple slab form assumes steady or quasi-steady state with a one-dimensional gradient; fast transients with a sharp thermal front need the heat equation instead.",
+        "At nanometre gaps, interfacial (Kapitza) resistance dominates, so the bulk conductivity alone badly under-predicts the thermal resistance of a nanostructure.",
+        "Radiation dominates above a few hundred degrees Celsius and in vacuum, so insulation design that ignores it fails in exactly the conditions where it matters most.",
+        "The Stefan-Boltzmann law as written is for a blackbody; real surfaces need an emissivity, and a non-grey surface needs a spectral integral rather than a single epsilon.",
+        "Newton's law of cooling assumes convective loss to air near ambient temperature; at high temperature radiative loss dominates and the cooling curve changes shape."
+      ],
+      "mysteries": [
+        {
+          "question": "How is heat carried across a single atomic layer - by phonons, by electrons, or by something else?",
+          "status": "Frontier",
+          "note": "Ballistic, diffusive and hydrodynamic transport regimes have all been observed in graphene and other two-dimensional materials, and the boundaries between them are still being mapped."
+        },
+        {
+          "question": "How much cooling power will future quantum processors demand, and what will set the limit?",
+          "status": "Engineering frontier",
+          "note": "Cooling power rises steeply below about 20 K, and the practical limits of cryogenic infrastructure are an active engineering constraint."
+        }
+      ],
+      "prompts": [
+        "Calculate the heat loss through a wall, then repeat for a double-glazed design, and set out the thermal resistance network explicitly.",
+        "Explain why a metal spoon and a wooden spoon feel different although both conduct heat.",
+        "Design a method for measuring the emissivity of a dark surface using a lamp and a thermometer, and estimate its uncertainty."
+      ],
+      "keyNumbers": [
+        { "label": "Stefan-Boltzmann constant (exact)", "value": "5.670374419e-8 W/(m^2.K^4)" },
+        { "label": "Thermal conductivity of copper", "value": "about 400 W/(m.K)" },
+        { "label": "Thermal conductivity of still air", "value": "about 0.026 W/(m.K)" },
+        { "label": "Thermal resistance of 20 cm of brick (k = 0.7 W/(m.K))", "value": "about 0.29 K/W for 1 m^2" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "NASA: Webb's Mirrors", "url": "https://science.nasa.gov/mission/webb/webbs-mirrors/" },
+        { "label": "OpenStax: Mechanisms of Heat Transfer", "url": "https://openstax.org/books/university-physics-volume-2/pages/1-6-mechanisms-of-heat-transfer" }
+      ]
+    },
+    {
+      "unitNo": 13,
+      "unitId": "ideal-gas",
+      "unitName": "Ideal Gas",
+      "contentArea": "Heat & Thermodynamics",
+      "slug": "unit-13-ideal-gas",
+      "summary": "The ideal gas is a model with a stated domain: it works when molecules are far apart and barely interacting. Its real value is that it links temperature to microscopic motion, so the same equation can be read as a statement about atoms.",
+      "facts": [
+        "PV = nRT with R = 8.314462618 J/(mol.K) exactly in the 2019 SI, where n is the amount of substance in moles.",
+        "Boyle's, Charles's and Avogadro's laws are limiting cases of the ideal-gas equation, valid at low density and at temperatures well above condensation.",
+        "Kinetic theory gives P = (1/3)(N/V) m <v^2>, so the pressure of a gas is the momentum transfer from its molecules hitting the walls.",
+        "For a monatomic gas the mean translational kinetic energy is (3/2) k T, and the rms speed is sqrt(3RT/M).",
+        "The internal energy of an ideal gas depends only on temperature, U = n C_V T, and for a monatomic gas C_V = 3R/2.",
+        "Mayer's relation C_P - C_V = R follows from the first law together with the ideal-gas equation.",
+        "The ideal gas law is a limit rather than a definition: it holds exactly only at infinite dilution, and real gases show the condensation and critical behaviour the law cannot describe."
+      ],
+      "conditions": [
+        "The model needs negligible molecular volume and negligible intermolecular forces: low density and a temperature well above the condensation temperature.",
+        "The van der Waals equation (P + a n^2/V^2)(V - nb) = nRT corrects the two main failures - attractive forces (a) and finite molecular size (b).",
+        "Equipartition, and therefore the plateau value of the heat capacity, fails at low temperature where the quantum energy levels are not thermally populated.",
+        "A gas in equilibrium has a single pressure and temperature; a non-equilibrium gas has neither, so the equation of state cannot even be written down.",
+        "Kinetic theory needs equipartition, which fails once the quantum level spacing is comparable to kT - exactly why helium must be cooled below about 4 K to liquefy."
+      ],
+      "mysteries": [
+        {
+          "question": "Can translational motion be cooled below the quantum ground state of the confining potential?",
+          "status": "Frontier",
+          "note": "Laser and evaporative cooling reach picokelvin temperatures for motion, but a confinement potential has a lowest level that cannot be crossed; how that floor depends on the geometry is still open."
+        },
+        {
+          "question": "Why does the heat capacity of a gas rise in steps at low temperature while a solid's varies smoothly?",
+          "status": "Under active scrutiny",
+          "note": "Rotational and vibrational levels freeze out one by one below their characteristic temperatures - the Debye, rotor and oscillator models - which is settled for idealised cases and still refined for real materials."
+        }
+      ],
+      "prompts": [
+        "Compute the rms speed of nitrogen molecules at room temperature and compare it with the speed of sound in air.",
+        "Use the first law and C_V to show that the internal energy of an ideal gas depends only on temperature.",
+        "Plot the P-V diagrams of an ideal gas and a van der Waals gas and mark the region where real behaviour departs."
+      ],
+      "keyNumbers": [
+        { "label": "Molar gas constant (exact)", "value": "8.314462618 J/(mol.K)" },
+        { "label": "Room-temperature rms speed of N2", "value": "about 517 m/s" },
+        { "label": "Standard molar volume at 0 degrees C, 1 atm", "value": "22.414 L/mol" },
+        { "label": "Boiling point of liquid nitrogen at 1 atm", "value": "about 77 K (-196 degrees C)" }
+      ],
+      "sources": [
+        { "label": "OpenStax: the ideal gas law", "url": "https://openstax.org/books/college-physics-2e/pages/13-3-the-ideal-gas-law" },
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "OpenStax: Molecular Model of an Ideal Gas", "url": "https://openstax.org/books/university-physics-volume-2/pages/2-1-molecular-model-of-an-ideal-gas" },
+        { "label": "OpenStax: Heat Capacity and Equipartition of Energy", "url": "https://openstax.org/books/university-physics-volume-2/pages/2-3-heat-capacity-and-equipartition-of-energy" }
+      ]
+    },
+    {
+      "unitNo": 14,
+      "unitId": "reflection-at-curved-mirror",
+      "unitName": "Reflection at Curved Mirrors",
+      "contentArea": "Waves & Optics",
+      "slug": "unit-14-reflection-at-curved-mirror",
+      "summary": "Curved mirrors turn the law of reflection into an imaging device. Everything in the unit rests on one approximation - rays close to the principal axis - and on one convention that, used inconsistently, produces most of the wrong answers.",
+      "facts": [
+        "The focal length of a spherical mirror is half the radius of curvature, f = R/2; concave mirrors converge and convex mirrors diverge.",
+        "A convex mirror always produces a virtual, upright and diminished image of a real object, which is why it is the safe choice for a vehicle mirror.",
+        "The mirror equation 1/f = 1/v + 1/u and the magnification m = -v/u hold under the New Cartesian sign convention.",
+        "Three principal rays suffice for any ray diagram: parallel to the axis (reflected through the focus), through the centre of curvature (reflected back on itself), and through the focus (reflected parallel to the axis).",
+        "The point focus of a spherical mirror exists only in the paraxial approximation; spherical aberration grows rapidly with the aperture.",
+        "The 18 hexagonal segments of the JWST mirror are aligned to act as a single 6.5 m primary, focused to a precision of a small fraction of the width of a human hair.",
+        "A spherical mirror has a single focus only while the aperture is small compared with the radius of curvature; beyond that, spherical aberration spreads the focus and the image softens with age."
+      ],
+      "conditions": [
+        "Mirror and lens formulae are paraxial: the rays must be close to the principal axis. Wide apertures require real ray tracing or an aspherical surface such as a parabola.",
+        "A real image can be caught on a screen; a virtual image cannot be projected, which is the physical difference behind the two categories.",
+        "Mixing sign conventions is the single most common source of wrong signs; fix one convention and use it in every diagram.",
+        "For a mirror moving at speed, the image can appear to move faster than light; no information travels faster than light because the image is an optical construction, not a material object.",
+        "The mirror equation and magnification are paraxial results; a wide field of view needs aberration-corrected designs such as the Ritchey-Chretien and active mirrors like JWST's."
+      ],
+      "mysteries": [
+        {
+          "question": "Can an optical system form a perfect image of an extended object across a wide field of view?",
+          "status": "Open question",
+          "note": "Aberration theory rules out perfect imaging with simple surfaces; multi-element and wave-optics designs trade cost against the remaining errors, and no system is perfect."
+        },
+        {
+          "question": "How far can real-time adaptive optics push atmospheric correction for ground-based telescopes?",
+          "status": "Engineering frontier",
+          "note": "Correction works extremely well for well-resolved guide stars, and the limit is set by sensor speed, guide-star availability and photon flux."
+        }
+      ],
+      "prompts": [
+        "Construct ray diagrams for an object at infinity, beyond C, at C, between C and F, and at F for a concave mirror, and tabulate image position, nature and magnification.",
+        "Explain why a vehicle's wing mirror is convex rather than flat, and why the image of a following car looks smaller than it is.",
+        "A concave mirror has f = 20 cm and the object is 30 cm in front of it: find the image position and magnification, and decide whether the image is real."
+      ],
+      "keyNumbers": [
+        { "label": "JWST primary mirror diameter", "value": "6.5 m in 18 segments" },
+        { "label": "JWST mirror alignment tolerance", "value": "about 1/10000 of a human hair's width" },
+        { "label": "Focal length of a concave mirror of radius 20 cm", "value": "10 cm (f = R/2)" },
+        { "label": "Power of that mirror", "value": "5 dioptre (P = 1/f in metres)" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 3", "url": "https://openstax.org/books/university-physics-volume-3/pages/index" },
+        { "label": "NASA: Webb's Mirrors", "url": "https://science.nasa.gov/mission/webb/webbs-mirrors/" },
+        { "label": "OpenStax: The Law of Reflection", "url": "https://openstax.org/books/university-physics-volume-3/pages/1-2-the-law-of-reflection" },
+        { "label": "OpenStax: Spherical Mirrors", "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors" }
+      ]
+    },
+    {
+      "unitNo": 15,
+      "unitId": "refraction-at-plane-surfaces",
+      "unitName": "Refraction at Plane Surfaces",
+      "contentArea": "Waves & Optics",
+      "slug": "unit-15-refraction-at-plane-surfaces",
+      "summary": "Refraction at a plane boundary is Snell's law, but the interesting physics is in the consequences: the lateral shift through a slab, the shallower apparent depth of a pool, and total internal reflection, which is the whole basis of fibre optics.",
+      "facts": [
+        "Snell's law reads n1 sin(theta1) = n2 sin(theta2), with n = c/v the refractive index; the frequency of light is unchanged at the boundary while its speed and wavelength change.",
+        "A plane-parallel slab displaces the emergent ray sideways while keeping it parallel to the incident ray; the displacement grows with thickness and with obliquity.",
+        "Total internal reflection requires n1 > n2 and an incidence angle above the critical angle theta_c = arcsin(n2/n1), about 41.1 degrees for crown glass (n = 1.52) against air.",
+        "Viewed near-normally, an object in water appears shallower by a factor of about n, so a 1.5 m depth reads as about 1.1 m.",
+        "Optical fibres work by repeated total internal reflection; the acceptance angle is fixed by the numerical aperture of the core and cladding.",
+        "In the wave picture refraction follows from phase continuity at the boundary: the phase must match across it, which is Snell's law in a different costume.",
+        "Snell's law is a statement about phase continuity across a boundary: the change of direction is what keeps the wavefronts in step, and the same law governs light as a wave and as a quantum field."
+      ],
+      "conditions": [
+        "Snell's law assumes an isotropic, homogeneous, stationary, non-absorbing medium and a smooth interface; rough or moving boundaries change the result.",
+        "Near the critical angle the transmitted ray grazes the surface and the reflection coefficient approaches one.",
+        "The simple apparent-depth rule (divide by n) holds only for near-normal viewing; at oblique angles the correct factor is cos(theta')/cos(theta).",
+        "Dispersion - the wavelength dependence of n - is neglected in the basic model but must be included whenever white light is involved.",
+        "Fermat's principle fixes the path of least time rather than least distance, and that distinction is why a refracted ray bends towards the normal in a denser medium."
+      ],
+      "mysteries": [
+        {
+          "question": "Can an image be formed that is not limited by the diffraction limit?",
+          "status": "Frontier",
+          "note": "Superlenses using negative-index materials beat the diffraction limit at a single frequency; extending the idea to a usable bandwidth remains an open and difficult problem."
+        },
+        {
+          "question": "Why does light slow down in a medium without losing energy?",
+          "status": "Under active scrutiny",
+          "note": "The classical account through the material's dielectric response is standard, while the fully microscopic picture of coherent forward scattering is subtler."
+        }
+      ],
+      "prompts": [
+        "Compute the lateral shift of a ray through a glass slab and verify the prediction with a pencil, a glass block and a sheet of paper.",
+        "Design an optical fibre for a given numerical aperture and explain the role of the cladding.",
+        "Explain why a swimming pool looks shallower at the far end, and derive the apparent depth for oblique viewing."
+      ],
+      "keyNumbers": [
+        { "label": "Refractive index of crown glass", "value": "about 1.52" },
+        { "label": "Refractive index of water", "value": "about 1.333" },
+        { "label": "Critical angle, crown glass to air", "value": "about 41.1 degrees" },
+        { "label": "Critical angle for water to air", "value": "about 48.6 degrees" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 3", "url": "https://openstax.org/books/university-physics-volume-3/pages/index" },
+        { "label": "OpenStax: Refraction", "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction" },
+        { "label": "OpenStax: Total Internal Reflection", "url": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection" }
+      ]
+    },
+    {
+      "unitNo": 16,
+      "unitId": "refraction-through-prisms",
+      "unitName": "Refraction through Prisms",
+      "contentArea": "Waves & Optics",
+      "slug": "unit-16-refraction-through-prisms",
+      "summary": "A prism is a device that separates wavelengths as it bends them. The unit connects geometry to spectroscopy: the apex angle sets the deviation, the refractive index sets the dispersion, and the spectrum is the primary chemical and astronomical fingerprint of light.",
+      "facts": [
+        "A prism deviates light because its faces are not parallel, and it disperses light because the refractive index depends on wavelength - normally n is larger for blue than for red.",
+        "For a thin prism of small apex angle A, the deviation is approximately d = (n - 1) A.",
+        "The dispersive power w = (n_v - n_r)/(n_y - 1) is nearly constant for a given material, which is why glasses can be sorted into crown and flint families.",
+        "Minimum deviation occurs when the ray path is symmetric (i = e), giving n = sin((A + d_m)/2) / sin(A/2) - the standard laboratory method.",
+        "A hollow prism filled with a liquid measures that liquid's refractive index by the same minimum-deviation method.",
+        "The rainbow is refraction plus one internal reflection plus dispersion in water droplets, which is why the primary bow has an angle of about 42 degrees.",
+        "At minimum deviation the ray path is symmetric, so the refractive index can be measured without knowing the prism's apex angle precisely - which is why the spectrometer method is the reference technique."
+      ],
+      "conditions": [
+        "The thin-prism approximation requires a small apex angle; thick prisms need the exact two-surface treatment with Snell's law applied twice.",
+        "Dispersion is small - the index changes by only about 0.01 to 0.02 across the visible for glass - so a single prism gives a spectrum whose orders overlap and may need a second prism to isolate.",
+        "Deviation depends on the refractive index of the surrounding medium: a prism in water disperses far less than the same prism in air.",
+        "Refractive index depends on temperature as well as wavelength, so precision spectroscopy requires controlling the temperature of the prism.",
+        "The small-angle formula n = 1 + A/2D is an approximation that fails beyond about 10 degrees of deviation; real work uses the exact minimum-deviation relation."
+      ],
+      "mysteries": [
+        {
+          "question": "How do modern observatories push spectroscopy to fainter objects than the classical prism or grating allowed?",
+          "status": "Engineering frontier",
+          "note": "Very large telescopes, échelle spectrographs and interferometry have extended the reach, and each gain is limited by photon collection and detector noise."
+        },
+        {
+          "question": "Can a dispersive element be built that disperses without deviating, or deviates without dispersing?",
+          "status": "Frontier",
+          "note": "Compound and metamaterial designs approach these limits, but causality constrains how well an achromatic, deviation-free element can behave over a finite bandwidth."
+        }
+      ],
+      "prompts": [
+        "Given the deviation angles of red and violet light through a 60 degree prism, find the two refractive indices and hence the dispersive power.",
+        "Measure the angle of minimum deviation for a triangular glass prism, compute n, and repeat with a hollow prism filled with water.",
+        "Explain geometrically why the deviation of a prism does not grow in proportion to the thickness of the glass."
+      ],
+      "keyNumbers": [
+        { "label": "Typical prism apex angle", "value": "60 degrees" },
+        { "label": "Primary rainbow angle", "value": "about 42 degrees" },
+        { "label": "Dispersive power of crown glass", "value": "about 0.016" },
+        { "label": "Refractive index of diamond", "value": "about 2.42" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 3", "url": "https://openstax.org/books/university-physics-volume-3/pages/index" },
+        { "label": "NASA: Spectroscopy 101", "url": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/spectroscopy-101-types-of-spectra-and-spectroscopy/" },
+        { "label": "OpenStax: Dispersion", "url": "https://openstax.org/books/university-physics-volume-3/pages/1-5-dispersion" },
+        { "label": "OpenStax: Diffraction Gratings", "url": "https://openstax.org/books/university-physics-volume-3/pages/4-4-diffraction-gratings" }
+      ]
+    },
+    {
+      "unitNo": 17,
+      "unitId": "lenses",
+      "unitName": "Lenses",
+      "contentArea": "Waves & Optics",
+      "slug": "unit-17-lenses",
+      "summary": "Lenses bend light to make images, and the thin-lens equation is the workhorse of the entire unit. What separates school physics from optical engineering is the list of assumptions that equation hides: thinness, paraxial rays, and a single refractive index.",
+      "facts": [
+        "The thin-lens equation is 1/f = 1/v - 1/u under the usual sign convention, and the lensmaker's equation gives 1/f = (n - 1)(1/R1 - 1/R2) for a lens in air.",
+        "The power of a lens is P = 1/f in dioptres; for a lens immersed in a medium of index n_m it becomes (n_l/n_m - 1)(1/R1 - 1/R2).",
+        "A converging lens is thicker at the centre and a diverging lens is thinner at the centre; for a real object a diverging lens always gives a virtual, upright, diminished image.",
+        "In contact, P = P1 + P2; separated by a distance d, the equivalent power is 1/F = 1/f1 + 1/f2 - d/(f1 f2).",
+        "The human eye is a roughly 17 mm lens with a focal length of about 2.3 cm; accommodation works by changing the lens curvature so the image always lands on the retina.",
+        "Magnification m = v/u, and a real image is inverted and can be projected on a screen.",
+        "A lens forms a real or virtual image depending on where the object sits relative to the focal length, and the thin-lens treatment hides the thick-lens corrections and aberrations that real objectives need."
+      ],
+      "conditions": [
+        "The thin-lens equation requires a lens thin compared with its focal length and paraxial rays; real camera and telescope lenses are thick assemblies whose elements cancel aberrations.",
+        "Chromatic aberration means f depends on wavelength, so a single glass lens focuses blue and red at different distances; an achromatic doublet combines glasses of different dispersion to cancel it.",
+        "Spherical aberration grows with aperture, so stopping down a camera trades brightness for sharpness - until diffraction takes over.",
+        "Depth of field depends on aperture and focal length as well as on the sensor, so it is a property of the optical system, not of the camera body.",
+        "The lensmaker's equation assumes a thin lens in air; a thick or multi-element system is described by its principal planes and effective focal length instead."
+      ],
+      "mysteries": [
+        {
+          "question": "How do observatories image exoplanets that are thousands of light-years away and a few pixels across?",
+          "status": "Engineering frontier",
+          "note": "Coronagraphs, adaptive optics and interferometry are combined to suppress starlight by many orders of magnitude, and each step adds its own noise."
+        },
+        {
+          "question": "Is there a fundamental limit to how small an optical element can be before diffraction dominates?",
+          "status": "Open question",
+          "note": "Abbe's limit sets the classical bound and super-resolution can cross it only in restricted ways; how far this can be pushed for imaging remains an active question."
+        }
+      ],
+      "prompts": [
+        "Two thin lenses of focal length 10 cm and 15 cm are placed 5 cm apart: find the equivalent focal length and locate the image of an object 30 cm from the first lens.",
+        "Design an achromatic doublet from two glass types and explain the trade-off between focal length, spherical aberration and cost.",
+        "Explain why closing the aperture improves depth of field but introduces diffraction blur, and find the aperture that balances the two."
+      ],
+      "keyNumbers": [
+        { "label": "Focal length of the human eye", "value": "about 2.3 cm" },
+        { "label": "Airy disk angular radius at 550 nm (D = 0.1 m)", "value": "about 6.7 microradians (1.22 lambda / D)" },
+        { "label": "Refractive index of the human cornea", "value": "about 1.376" },
+        { "label": "Near point of a normal eye", "value": "about 25 cm" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 3", "url": "https://openstax.org/books/university-physics-volume-3/pages/index" },
+        { "label": "NASA: Webb's Mirrors", "url": "https://science.nasa.gov/mission/webb/webbs-mirrors/" },
+        { "label": "OpenStax: Thin Lenses", "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses" },
+        { "label": "OpenStax: The Eye", "url": "https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye" }
+      ]
+    },
+    {
+      "unitNo": 18,
+      "unitId": "dispersion",
+      "unitName": "Dispersion",
+      "contentArea": "Waves & Optics",
+      "slug": "unit-18-dispersion",
+      "summary": "Dispersion is the wavelength dependence of refractive index. It explains rainbows and chromatic aberration, it is the reason a spectrum carries chemical information, and it contains one of the sharpest traps in optics: the difference between phase velocity and the speed that carries information.",
+      "facts": [
+        "Dispersion means n depends on wavelength, so different colours bend by different amounts and a lens focuses them at different distances.",
+        "Cauchy's empirical form n = A + B/lambda^2 gives an approximate wavelength dependence in transparent regions.",
+        "Normal dispersion - n rising as lambda falls - is what produces the familiar spectrum order from red to violet.",
+        "Anomalous dispersion near an absorption band reverses the sign of dn/dlambda, and a dispersive prism can then select a single narrow band from white light.",
+        "The group velocity v_g = c/(n - lambda dn/dlambda) can exceed c or become negative in anomalously dispersive media without violating relativity, because the phase velocity carries no information.",
+        "A spectrum is a fingerprint: the blackbody shape gives temperature, the line positions give composition, and the Doppler shift gives motion.",
+        "Glass has a larger refractive index for blue light than for red, so short wavelengths are bent more and a prism sends violet towards the inside of the spectrum."
+      ],
+      "conditions": [
+        "Cauchy's two-parameter fit is valid only for normal dispersion in transparent regions; it diverges near a resonance and cannot describe absorption at all.",
+        "Information travels at the group velocity, so superluminal phase velocity is a feature of the mathematics, not a violation of causality.",
+        "At a boundary between media the frequency of light does not change; what changes is the speed and hence the wavelength - a classic examination trap.",
+        "Spectral lines are broadened by temperature, pressure and Doppler motion, and that broadening sets the precision with which a line centre can be measured.",
+        "In a dispersive medium the group velocity differs from the phase velocity, so the speed of light in glass quoted as c/n is a phase speed and not the speed at which a pulse front travels."
+      ],
+      "mysteries": [
+        {
+          "question": "Can a dispersion profile be engineered that resolves wavelengths beyond the diffraction limit of the device itself?",
+          "status": "Frontier",
+          "note": "Metasurface and metamaterial designs are actively pursuing this; causality and usable bandwidth are the limiting constraints."
+        },
+        {
+          "question": "How are atomic energy levels and their linewidths set, and how far can they be predicted from first principles?",
+          "status": "Under active scrutiny",
+          "note": "Spectroscopy is precise enough to test atomic theory at parts per billion, which keeps refining rather than contradicting it."
+        }
+      ],
+      "prompts": [
+        "Using Cauchy's formula and a measured index at two wavelengths, predict the order in which colours emerge from a prism.",
+        "Explain why the same prism shows a much narrower spectrum when immersed in water.",
+        "Compare the resolving power of a prism and a diffraction grating for the same beam width, and identify which is better for faint astronomical sources."
+      ],
+      "keyNumbers": [
+        { "label": "dn/dlambda for crown glass (visible)", "value": "about -5e-5 per nm" },
+        { "label": "Visible spectrum", "value": "about 380 nm to 750 nm" },
+        { "label": "Speed of light in crown glass (n = 1.52)", "value": "about 1.97e8 m/s" },
+        { "label": "Angular dispersion of a 60 degree crown-glass prism", "value": "about 1.0 degree" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 3", "url": "https://openstax.org/books/university-physics-volume-3/pages/index" },
+        { "label": "NASA: Spectroscopy 101", "url": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/spectroscopy-101-types-of-spectra-and-spectroscopy/" },
+        { "label": "OpenStax: Diffraction Gratings", "url": "https://openstax.org/books/university-physics-volume-3/pages/4-4-diffraction-gratings" },
+        { "label": "OpenStax: Circular Apertures and Resolution", "url": "https://openstax.org/books/university-physics-volume-3/pages/4-5-circular-apertures-and-resolution" }
+      ]
+    },
+    {
+      "unitNo": 19,
+      "unitId": "electric-charges",
+      "unitName": "Electric Charges",
+      "contentArea": "Electric & Magnetism",
+      "slug": "unit-19-electric-charges",
+      "summary": "Electric charge is the first conserved quantity a student meets that is exactly conserved in every known interaction. The unit also contains one of the cleanest pieces of evidence in all of physics: charge is quantised, and the quantum is exact.",
+      "facts": [
+        "Charge is quantised: the elementary charge e = 1.602176634e-19 C exactly, and every observed charge in ordinary matter is an integer multiple of it.",
+        "Coulomb's law F = k q1 q2 / r^2 holds with k = 8.9875517923e9 N.m^2/C^2, and like charges repel while unlike charges attract.",
+        "Charge is conserved in every known interaction, and electric charge is an exact conserved quantum number in the Standard Model.",
+        "Charging by friction transfers electrons between surfaces; charging by induction moves electrons without any contact at all.",
+        "Conductors allow charge to move freely and insulators do not; in electrostatic equilibrium the field inside a conductor is zero and excess charge sits on the surface, concentrating at sharp points.",
+        "Earthing works because the Earth is an enormous conductor held at nearly constant potential.",
+        "Charge is quantised in units of e; the fractional charges seen in the fractional quantum Hall effect are a many-body property of a correlated electron liquid, not evidence that the electron is divisible."
+      ],
+      "conditions": [
+        "Coulomb's law assumes static point charges in a uniform medium; extended bodies require integration and conductors require redistribution.",
+        "Charging by friction depends on the material pair, surface condition and humidity - the triboelectric order is a tendency, not a law.",
+        "The field inside a conductor is zero only in electrostatic equilibrium; a time-varying field drives currents inside it.",
+        "In semiconductors both electrons and holes carry current, so 'the charge carrier' model of a conductor has to be replaced by a two-carrier picture.",
+        "Coulomb's law is the static, vacuum result; for moving charges the magnetic field joins in, and an accelerating charge radiates, so the static formula alone no longer describes the system."
+      ],
+      "mysteries": [
+        {
+          "question": "Why is electric charge quantised, and can fractional charge ever be observed?",
+          "status": "Open question",
+          "note": "The Standard Model contains charge quantisation but does not derive it; quasiparticles with fractional charge do exist in certain condensed-matter states, which is a different phenomenon."
+        },
+        {
+          "question": "Is electric charge exactly conserved?",
+          "status": "Under active scrutiny",
+          "note": "Experiments constrain any violation to an extraordinarily small level; neutron-decay searches continue to sharpen that bound."
+        }
+      ],
+      "prompts": [
+        "Explain why a charged rod attracts a neutral paper strip, and draw the induced polarisation on the strip.",
+        "Predict the charge distribution on a hollow conducting sphere and on a sphere containing an off-centre cavity.",
+        "Compute how many electrons correspond to a charge of 1 nC and comment on what that says about the quantisation of charge."
+      ],
+      "keyNumbers": [
+        { "label": "Elementary charge (exact)", "value": "1.602176634e-19 C" },
+        { "label": "Coulomb constant", "value": "8.9875517923e9 N.m^2/C^2" },
+        { "label": "Charge of one electron", "value": "-1.602176634e-19 C" },
+        { "label": "Force between two protons 1 m apart", "value": "about 2.3e-28 N" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "NIST: SI Units", "url": "https://www.nist.gov/pml/owm/metric-si/si-units" },
+        { "label": "OpenStax: Electric Charge", "url": "https://openstax.org/books/university-physics-volume-2/pages/5-1-electric-charge" },
+        { "label": "OpenStax: Coulomb's Law", "url": "https://openstax.org/books/university-physics-volume-2/pages/5-3-coulombs-law" }
+      ]
+    },
+    {
+      "unitNo": 20,
+      "unitId": "electric-field",
+      "unitName": "Electric Field",
+      "contentArea": "Electric & Magnetism",
+      "slug": "unit-20-electric-field",
+      "summary": "The electric field turns a force law into a description of the space around a charge: it says what force a test charge would feel at every point, whether or not one is actually there.",
+      "facts": [
+        "The electric field is force per unit positive test charge, E = F/q, directed along the force on a positive test charge.",
+        "A point charge produces E = kq/r^2 directed radially, and superposition means the total field is the vector sum of the individual fields.",
+        "Field lines are a visualisation, not a count of anything: their density represents field strength, they start on positive charge and end on negative charge, and they never cross.",
+        "The field inside a conductor in electrostatic equilibrium is zero; the field of an infinite non-conducting sheet is sigma/(2 epsilon0), and of a conducting sheet sigma/epsilon0.",
+        "Because F = qE for any charge, the field can be treated as an independent variable - the reason Gauss's law is so powerful.",
+        "A moving charge creates a magnetic field as well, so the electric and magnetic fields of a charge are two aspects of a single electromagnetic field.",
+        "Field lines are bookkeeping: the number crossing a surface is proportional to the flux, so a denser bundle means a stronger field, even though the lines themselves have no physical substance."
+      ],
+      "conditions": [
+        "Closed-form field results exist only where symmetry is high enough - spherical, cylindrical or planar; any other distribution requires integration.",
+        "Electrostatic fields are conservative, so the work around a closed path vanishes and a scalar potential can be used instead.",
+        "In a dielectric the field is reduced by the relative permittivity, and polarisation P must be introduced; writing E = F/q with a 'free' charge only is wrong inside matter.",
+        "Electrostatic reasoning does not extend to time-varying fields: Maxwell's displacement current means a changing electric field generates a magnetic field.",
+        "Superposition is a statement about linear response, and real dielectrics are generally not linear, so polarisation and non-linear media need their own treatment."
+      ],
+      "mysteries": [
+        {
+          "question": "How does a charge act on matter that is not charged?",
+          "status": "Under active scrutiny",
+          "note": "The field picture handles it through polarisation; whether the field itself is physical or a bookkeeping device is a deeper interpretational question."
+        },
+        {
+          "question": "Can a static field be completely screened in any geometry?",
+          "status": "Open question",
+          "note": "Only conductors screen, and the shape of the screening conductor matters; a fully screened, shape-independent result is not generally available."
+        }
+      ],
+      "prompts": [
+        "Find the field on the axis of a uniformly charged ring and show where it reaches its maximum.",
+        "Show that two infinite sheets carrying opposite uniform charges produce a uniform field between them and zero outside.",
+        "Plot the field of an electric dipole along its axis and compare with the far-field 1/r^3 law."
+      ],
+      "keyNumbers": [
+        { "label": "Vacuum permittivity (exact)", "value": "8.8541878128e-12 F/m" },
+        { "label": "Field at 1 nm from a proton", "value": "about 1.4e9 V/m" },
+        { "label": "Field at the surface of a proton (radius 0.84 fm)", "value": "about 2.0e21 V/m" },
+        { "label": "Fair-weather field at the Earth's surface", "value": "about 100 to 150 V/m" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "OpenStax: Electric Field", "url": "https://openstax.org/books/university-physics-volume-2/pages/5-4-electric-field" },
+        { "label": "OpenStax: Electric Field Lines", "url": "https://openstax.org/books/university-physics-volume-2/pages/5-6-electric-field-lines" },
+        { "label": "OpenStax: Electric Flux", "url": "https://openstax.org/books/university-physics-volume-2/pages/6-1-electric-flux" }
+      ]
+    },
+    {
+      "unitNo": 21,
+      "unitId": "potential-potential-difference-and-potential-energy",
+      "unitName": "Potential & Potential Energy",
+      "contentArea": "Electric & Magnetism",
+      "slug": "unit-21-potential-potential-difference-and-potential-energy",
+      "summary": "Potential is the scalar alternative to the vector field. Because only differences are measurable, the zero of potential is a convention - and because the field is conservative, path never enters the answer.",
+      "facts": [
+        "Electric potential is energy per unit charge, V = U/q, and a potential difference is the work done per unit charge by the field.",
+        "For a point charge V = kq/r with V tending to zero at infinity, and the potential difference is dV = -E.dl along any path.",
+        "Only potential differences are physically meaningful; the choice of zero is a convention, and it changes no experiment.",
+        "The potential energy of a system of point charges is the sum of pairwise terms q1 q2/(4 pi epsilon0 r_ij); the self-energy of a continuous distribution requires a self-consistent calculation.",
+        "Equipotential surfaces are perpendicular to field lines, and the work in moving a charge between two points on the same equipotential is zero.",
+        "Potential is a scalar, which is why circuit and field problems are often shorter in potential language than in field language.",
+        "Potential is defined only up to an additive constant, so only differences are physical; a conductor is one equipotential surface, and the field is minus the gradient of the potential."
+      ],
+      "conditions": [
+        "The 1/r potential law assumes a point charge in vacuum; for a conductor the entire surface is one equipotential at a single value.",
+        "Potential differences are path-independent, so only the endpoints matter - but a potential difference between two points is not simply E.d unless the path is straight and along the field.",
+        "Moving a charge changes the stored energy of the whole system, and the work is shared between the field and the agent that moves it.",
+        "In a medium with permittivity epsilon the potential of a charge is reduced by the factor epsilon_r; the free charge does not change, the field does.",
+        "The expression U = qV holds for a conservative, time-independent field; in a time-varying field the work done on the charge also changes the energy stored in the field itself."
+      ],
+      "mysteries": [
+        {
+          "question": "How much energy is stored in an electromagnetic field, and how is it distributed in space?",
+          "status": "Under active scrutiny",
+          "note": "Classically the energy density is (1/2) epsilon E^2 plus a magnetic term; the quantum description in terms of photons remains less intuitive."
+        },
+        {
+          "question": "Can energy be extracted usefully from the vacuum?",
+          "status": "Frontier",
+          "note": "Casimir and related effects are real and measurable but tiny; extracting macroscopic energy from vacuum fluctuations is not established."
+        }
+      ],
+      "prompts": [
+        "Compute the potential on the axis of a uniformly charged disc and identify its far-field limit.",
+        "Show in one dimension that E = -dV/dx, using a finite-difference argument rather than calculus.",
+        "Compare the energy stored in a charged capacitor with the work required to charge it, and explain why they are equal."
+      ],
+      "keyNumbers": [
+        { "label": "Potential of one volt", "value": "1 joule per coulomb" },
+        { "label": "Field between the plates of a charged parallel-plate capacitor", "value": "sigma/epsilon0" },
+        { "label": "Potential of the Earth's surface relative to infinity", "value": "about -1.0e5 V" },
+        { "label": "Energy gained by an electron accelerated through 100 V", "value": "about 1.6e-17 J (100 eV)" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "OpenStax: Electric Potential Energy", "url": "https://openstax.org/books/university-physics-volume-2/pages/7-1-electric-potential-energy" },
+        { "label": "OpenStax: Electric Potential and Potential Difference", "url": "https://openstax.org/books/university-physics-volume-2/pages/7-2-electric-potential-and-potential-difference" },
+        { "label": "OpenStax: Equipotential Surfaces and Conductors", "url": "https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors" }
+      ]
+    },
+    {
+      "unitNo": 22,
+      "unitId": "capacitor",
+      "unitName": "Capacitor",
+      "contentArea": "Electric & Magnetism",
+      "slug": "unit-22-capacitor",
+      "summary": "A capacitor is an energy store defined by geometry and dielectric. The unit is where the parallel-plate formula gets derived from Gauss's law, and where students first meet the gap between an ideal component and a real one.",
+      "facts": [
+        "Capacitance is C = Q/V; for a parallel-plate capacitor C = epsilon0 epsilon_r A/d, so capacitance grows with area and shrinks with separation.",
+        "The energy stored is U = (1/2) C V^2 = Q^2/(2C), and the energy density in the dielectric is u = (1/2) epsilon E^2.",
+        "Capacitors in parallel add capacitance; in series the reciprocals add.",
+        "A capacitor stores energy rather than supplying it: an ideal charged capacitor discharges through any available path, and the discharge time constant is R C.",
+        "Real capacitors are limited by dielectric breakdown, leakage current, equivalent series resistance and self-inductance at high frequency.",
+        "Supercapacitors deliver far more power than batteries but store far less energy per kilogram, and the two technologies occupy different niches for that reason.",
+        "Capacitance depends on geometry and dielectric only, never on the charge or the voltage: adding dielectric raises the capacitance by the permittivity ratio, and a connected battery supplies the extra charge at unchanged voltage."
+      ],
+      "conditions": [
+        "The parallel-plate formula assumes the separation is much smaller than the plate dimensions, so fringing can be ignored, and that the dielectric fills the gap uniformly.",
+        "In a dielectric the bound charges reduce the field by 1/epsilon_r, but the energy per unit volume usually still increases because polarisation contributes.",
+        "At DC, leakage limits how long a charge can be held; at high frequency, inductance and ESR dominate, and the ideal capacitor stops being a capacitor.",
+        "Electrolytic capacitors are polar and will be destroyed by reverse voltage, while ceramic and film types are non-polar but have different leakage and stability behaviour.",
+        "The stored energy lives in the electric field, not in the charges; discharging a capacitor does not lose that energy, it converts it back into current and heat."
+      ],
+      "mysteries": [
+        {
+          "question": "How can more energy be stored at a higher voltage in a smaller volume?",
+          "status": "Engineering frontier",
+          "note": "Solid electrolytes, nanostructured dielectrics and breakdown engineering are all being pursued, and each trades cost, reliability and lifetime against energy density."
+        },
+        {
+          "question": "Is there a fundamental upper bound to the energy that can be stored in a given volume?",
+          "status": "Open question",
+          "note": "Fundamental limits exist, including the scale at which the vacuum itself breaks down, but they lie far above present engineering practice."
+        }
+      ],
+      "prompts": [
+        "Derive the capacitance of a parallel-plate capacitor from Gauss's law and the definition C = Q/V.",
+        "Compare the stored energy of a 1 F supercapacitor at 2.7 V with that of a 2000 mAh lithium-ion cell at 3.7 V, and compare their power delivery.",
+        "Design a smoothing network for a rectified supply and justify the ripple calculation with the RC time constant."
+      ],
+      "keyNumbers": [
+        { "label": "Energy in 1 F at 10 V", "value": "50 J" },
+        { "label": "Energy in a 2000 mAh cell at 3.7 V", "value": "about 26.6 kJ" },
+        { "label": "Energy stored in a 1 F supercapacitor at 2.7 V", "value": "about 3.6 J" },
+        { "label": "Relative permittivity of transformer oil", "value": "about 2.2" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "OpenStax: Capacitors and Capacitance", "url": "https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance" },
+        { "label": "OpenStax: Energy Stored in a Capacitor", "url": "https://openstax.org/books/university-physics-volume-2/pages/8-3-energy-stored-in-a-capacitor" },
+        { "label": "OpenStax: Capacitor with a Dielectric", "url": "https://openstax.org/books/university-physics-volume-2/pages/8-4-capacitor-with-a-dielectric" }
+      ]
+    },
+    {
+      "unitNo": 23,
+      "unitId": "dc-circuits",
+      "unitName": "DC Circuits",
+      "contentArea": "Electric & Magnetism",
+      "slug": "unit-23-dc-circuits",
+      "summary": "Circuit analysis is conservation law with a convenient vocabulary: charge conservation becomes Kirchhoff's current law, energy conservation becomes the loop law, and Ohm's law is the constitutive relation that connects them - where it is allowed to apply.",
+      "facts": [
+        "Ohm's law V = IR describes ohmic components only; a filament lamp and a diode are non-ohmic, with resistance that changes as current or temperature changes.",
+        "Kirchhoff's current law is charge conservation at a node; the loop law is energy conservation around a closed path.",
+        "Series resistances add and parallel conductances add, so series-parallel reduction is the workhorse method for solvable networks.",
+        "A source with internal resistance r delivers V = E - Ir, so its terminal voltage falls as the current it supplies rises.",
+        "Maximum power transfer to the load occurs when the load resistance equals the internal resistance, but then only half of the generated power reaches the load.",
+        "Joule heating P = I^2 R is why conductors and components get hot, and rated wattage is what limits safe operation.",
+        "Kirchhoff's laws are bookkeeping identities - charge conservation and energy conservation in disguise - so they hold for any lumped circuit regardless of the physics of the individual elements."
+      ],
+      "conditions": [
+        "The lumped-circuit model assumes ideal wires and components that are small compared with the wavelength; at high frequencies transmission lines and distributed effects take over.",
+        "Kirchhoff's laws assume quasi-static behaviour, so no charge accumulates inside the wires and each node has a well-defined potential.",
+        "Ohmic behaviour is temperature-dependent, so treating R as constant is an approximation that matters in power calculations.",
+        "A real battery is not a fixed source: its terminal voltage and internal resistance both depend on state of charge, temperature and current.",
+        "Series and parallel reduction assumes ideal wires and lumped elements; at high frequency the wire's own resistance and inductance take over and the ideal rules stop holding."
+      ],
+      "mysteries": [
+        {
+          "question": "What sets the energy floor for computing with superconducting circuits?",
+          "status": "Frontier",
+          "note": "Superconducting qubits and single-photon detectors push towards the energy-time uncertainty limit for readout, which is now the binding constraint in several architectures."
+        },
+        {
+          "question": "Can computation be performed with less energy per operation than a transistor switch requires?",
+          "status": "Open question",
+          "note": "Landauer sets a thermodynamic floor and the end of Moore's-law scaling has moved the constraint into interconnect and memory energy."
+        }
+      ],
+      "prompts": [
+        "Solve a two-loop circuit using Kirchhoff's laws, then verify the answer by series-parallel reduction.",
+        "Using the internal-resistance model, compare the efficiency for a load matched to the source with one that is not.",
+        "Explain from the electron's point of view why a wire carrying current is hotter than the same wire with no current."
+      ],
+      "keyNumbers": [
+        { "label": "Electrical power of a 60 W bulb", "value": "0.25 A at 240 V" },
+        { "label": "Cold resistance of a 100 W, 230 V lamp", "value": "about 529 ohms" },
+        { "label": "Resistance of 1 m of 1 mm^2 copper wire at 20 degrees C", "value": "about 0.017 ohms" },
+        { "label": "Power dissipated in a 1 kohm resistor at 10 V", "value": "0.1 W" }
+      ],
+      "sources": [
+        { "label": "OpenStax: University Physics Volume 2", "url": "https://openstax.org/books/university-physics-volume-2/pages/index" },
+        { "label": "NIST: SI Units", "url": "https://www.nist.gov/pml/owm/metric-si/si-units" },
+        { "label": "OpenStax: Resistivity and Resistance", "url": "https://openstax.org/books/university-physics-volume-2/pages/9-3-resistivity-and-resistance" },
+        { "label": "OpenStax: Ohm's Law", "url": "https://openstax.org/books/university-physics-volume-2/pages/9-4-ohms-law" },
+        { "label": "OpenStax: Kirchhoff's Rules", "url": "https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules" }
+      ]
+    },
+    {
+      "unitNo": 24,
+      "unitId": "nuclear-physics",
+      "unitName": "Nuclear Physics",
+      "contentArea": "Modern Physics",
+      "slug": "unit-24-nuclear-physics",
+      "summary": "Nuclear physics is where conservation laws become non-negotiable and where a handful of nucleons produce an enormous energy scale. The binding-energy curve is the centre of the unit: it explains why fusion and fission both release energy, and only in different regimes.",
+      "facts": [
+        "The nuclear radius scales as R = R0 A^(1/3) with R0 about 1.2 fm, which means nuclear density is roughly constant at about 2.3e17 kg/m^3.",
+        "Binding energy per nucleon peaks near iron-56 at about 8.8 MeV per nucleon, so fusion up to iron and fission beyond it both release energy.",
+        "Einstein's E = mc^2 converts the mass defect into binding energy; 1 u of mass corresponds to 931.5 MeV.",
+        "Radioactive decay is statistical: the half-life is a property of the nucleus, and no individual atom decides when it decays.",
+        "Neutron decay and nuclear reactions conserve charge, baryon number, energy, momentum and angular momentum, and every proposed reaction must satisfy all of them.",
+        "Doubly magic nuclei such as oxygen-16, with closed proton and neutron shells, show binding energies well above the smooth trend of their neighbours.",
+        "Binding energy per nucleon climbs to iron-56 and falls beyond it, which is the whole reason fusion powers stars and fission powers reactors: both release energy by moving matter towards the peak."
+      ],
+      "conditions": [
+        "The semi-empirical mass formula is fitted to known nuclei, so its predictions are most reliable in the region where the coefficients were fitted and degrade for exotic nuclei.",
+        "Alpha decay proceeds by quantum tunnelling, and the extreme sensitivity of the half-life to the alpha energy and Q-value - the Geiger-Nuttall relation - is the essential experimental handle.",
+        "Fission and fusion release energy only because the products sit nearer the peak of the binding-energy curve than the fuel does.",
+        "Quasi-stable nuclei are predicted by the liquid-drop model, but shell effects require the nuclear shell model, and neither is exact.",
+        "The liquid-drop model gets nuclear masses roughly right but misses the shell and pairing effects that explain the magic numbers and the fine structure of fission barriers."
+      ],
+      "mysteries": [
+        {
+          "question": "What is the neutrino's mass?",
+          "status": "Open question",
+          "note": "The US Department of Energy reported KATRIN's direct upper bound of 0.45 eV/c^2 in 2026; the exact value remains unknown."
+        },
+        {
+          "question": "How strong are the shell effects that make magic nuclei so stable?",
+          "status": "Under active scrutiny",
+          "note": "Magic numbers are firmly established experimentally, but their quantitative origin in the nucleon-nucleon interaction remains a subtle many-body problem."
+        },
+        {
+          "question": "What is the internal structure of the neutron?",
+          "status": "Frontier",
+          "note": "The neutron is not a point particle, and its charge and magnetic structure is being probed at accelerators and in precision atomic-physics experiments."
+        }
+      ],
+      "prompts": [
+        "Compute the binding energy per nucleon of a given isotope from the mass defect and place it relative to iron on the binding-energy curve.",
+        "Show that the activity of a radioactive sample falls exponentially, and estimate an age from the measured isotopic ratios.",
+        "Explain why the alpha-decay half-life is so sensitive to a small change in nuclear charge."
+      ],
+      "keyNumbers": [
+        { "label": "Energy equivalent of 1 u", "value": "931.5 MeV" },
+        { "label": "Binding energy per nucleon at iron-56", "value": "about 8.8 MeV" },
+        { "label": "Nuclear radius constant R0", "value": "about 1.2 fm" },
+        { "label": "Half-life of carbon-14", "value": "about 5730 years" }
+      ],
+      "sources": [
+        { "label": "US DOE: KATRIN narrows the range of the neutrino mass", "url": "https://www.energy.gov/science/np/articles/katrin-narrows-down-range-neutrinos-mass" },
+        { "label": "OpenStax: University Physics Volume 3", "url": "https://openstax.org/books/university-physics-volume-3/pages/index" },
+        { "label": "OpenStax: Properties of Nuclei", "url": "https://openstax.org/books/university-physics-volume-3/pages/10-1-properties-of-nuclei" },
+        { "label": "OpenStax: Nuclear Binding Energy", "url": "https://openstax.org/books/university-physics-volume-3/pages/10-2-nuclear-binding-energy" },
+        { "label": "OpenStax: Radioactive Decay", "url": "https://openstax.org/books/university-physics-volume-3/pages/10-3-radioactive-decay" }
+      ]
+    },
+    {
+      "unitNo": 25,
+      "unitId": "solids",
+      "unitName": "Solids",
+      "contentArea": "Modern Physics",
+      "slug": "unit-25-solids",
+      "summary": "Solid-state physics explains why metals conduct and insulators do not, why semiconductors conduct better when heated and metals worse, and why resistance can vanish altogether below a critical temperature.",
+      "facts": [
+        "In a solid, allowed energy levels broaden into bands; overlapping bands make a metal, while a gap between the valence and conduction bands makes a semiconductor or an insulator.",
+        "In a metal the conductivity falls as temperature rises because more scattering; in a semiconductor it rises because more carriers are excited across the gap.",
+        "The Fermi level sits at the top of the occupied states at 0 K in a metal, and the Fermi energy of copper is about 7 eV.",
+        "Carrier concentration in a semiconductor follows n proportional to T^(3/2) exp(-Eg/2kT), so the temperature dependence is exponential and steep.",
+        "Doping shifts the Fermi level and produces n-type or p-type material; the band gap itself is unchanged by doping.",
+        "Below the critical temperature a superconductor has exactly zero resistance and expels magnetic fields (the Meissner effect); BCS theory explains conventional superconductors through Cooper pairs.",
+        "The band structure is one object that explains whether a solid conducts, whether it is a semiconductor, and whether it becomes superconducting when it gets cold."
+      ],
+      "conditions": [
+        "Band theory assumes a periodic potential, so it describes crystals well and amorphous or strongly disordered materials poorly.",
+        "BCS theory accounts for conventional phonon-mediated superconductors but not the high-temperature cuprates, for which a complete microscopic understanding is still outstanding.",
+        "Superconductivity requires all three of T below T_c, current density below the critical value, and field below the critical field.",
+        "The temperature dependence of a semiconductor is exponential only in the extrinsic or intrinsic regimes described by the model; heavy doping and high fields break that description.",
+        "The nearly-free-electron model treats the ions as a periodic potential and the electrons as free particles; it breaks down for narrow bands, strong correlations and the high-temperature cuprates."
+      ],
+      "mysteries": [
+        {
+          "question": "What is the microscopic mechanism of high-temperature superconductivity in cuprates?",
+          "status": "Open question",
+          "note": "The US Department of Energy notes that a complete understanding of these newer materials remains an outstanding problem."
+        },
+        {
+          "question": "Can the critical temperature of a superconductor be predicted from its structure and composition?",
+          "status": "Frontier",
+          "note": "Deliberately doping a material has raised its critical temperature, and ORNL reports advances in hunting better superconducting materials, but reliable prediction remains out of reach."
+        }
+      ],
+      "prompts": [
+        "Sketch the band structure of a metal, a semiconductor and an insulator, and label the Fermi level in each.",
+        "Using band theory, explain why a metal's resistance rises with temperature while a semiconductor's falls.",
+        "Describe the Meissner effect and explain how it distinguishes a superconductor from a material that merely has very small resistance."
+      ],
+      "keyNumbers": [
+        { "label": "Fermi energy of copper", "value": "about 7 eV" },
+        { "label": "Band gap of silicon", "value": "about 1.12 eV" },
+        { "label": "Critical temperature of niobium", "value": "about 9.2 K" },
+        { "label": "Room-temperature conductivity of copper", "value": "about 5.9e7 S/m" }
+      ],
+      "sources": [
+        { "label": "US DOE: Superconductivity explained", "url": "https://www.energy.gov/science/doe-explainssuperconductivity" },
+        { "label": "ORNL: advances in superconducting materials", "url": "https://www.ornl.gov/news/ornl-study-advances-quest-better-superconducting-materials" },
+        { "label": "OpenStax: University Physics Volume 3", "url": "https://openstax.org/books/university-physics-volume-3/pages/index" },
+        { "label": "OpenStax: Band Theory of Solids", "url": "https://openstax.org/books/university-physics-volume-3/pages/9-5-band-theory-of-solids" },
+        { "label": "OpenStax: Superconductivity", "url": "https://openstax.org/books/university-physics-volume-3/pages/9-8-superconductivity" }
+      ]
+    },
+    {
+      "unitNo": 26,
+      "unitId": "recent-trends-in-physics",
+      "unitName": "Recent Trends in Physics",
+      "contentArea": "Modern Physics",
+      "slug": "unit-26-recent-trends-in-physics",
+      "summary": "The final unit is about the edge of the subject: the Standard Model and where it stops, the detection of gravitational waves and neutrino oscillations, and the questions that a generation of experiments is now narrowing - slowly, and honestly.",
+      "facts": [
+        "The Standard Model describes the particles and forces that have been confirmed in the laboratory, but it does not explain dark matter, dark energy, quantum gravity, or the cosmic matter-antimatter imbalance.",
+        "The LHCb collaboration at CERN observed CP violation in baryon decays - announced in March 2025 and published in Nature in July 2025 - adding a piece to the matter-antimatter puzzle, though the Standard Model's CP violation remains far too small to explain the observed imbalance (CERN).",
+        "The Higgs field gives mass to the W and Z bosons and to fermions through the Yukawa coupling, and the Higgs boson was observed at the LHC in 2012.",
+        "Neutrino oscillation proved that neutrinos have mass, which reshaped how the Standard Model is interpreted.",
+        "Gravitational waves were first detected in 2015 by LIGO, opening a new observational window on the universe.",
+        "Experiments in the frontier are statements of probability with controlled systematics: evidence means a statistically significant deviation, not proof.",
+        "The Standard Model accounts for three of the four forces and every confirmed particle, but not dark matter, dark energy, quantum gravity, or the matter-antimatter asymmetry."
+      ],
+      "conditions": [
+        "Every frontier claim carries an uncertainty; a null result constrains the strength of a coupling rather than proving absence.",
+        "The Standard Model is an effective description validated at the energies tested, and new physics could appear above them without invalidating it.",
+        "Numerical simulation is a third pillar of the subject, and it must be validated against analytically solvable limits and against experiment.",
+        "Observational limits and theoretical predictions live on different timescales; a bound announced by an experiment can tighten long before a theory explains it.",
+        "The Higgs field gives mass to the W and Z bosons and to the fermions, but most of the mass of everyday matter comes from the binding energy inside protons and neutrons, not from the Higgs."
+      ],
+      "mysteries": [
+        {
+          "question": "Why is there far more matter than antimatter in the universe?",
+          "status": "Open question",
+          "note": "CP violation is necessary but, in the Standard Model, far too small; mechanisms such as leptogenesis are candidate explanations under active study (CERN)."
+        },
+        {
+          "question": "What drives the accelerating expansion of the universe?",
+          "status": "Open question",
+          "note": "The observations are secure; the mechanism is not, and no confirmed detection of the responsible particle has been made."
+        },
+        {
+          "question": "Does gravity admit a consistent quantum description?",
+          "status": "Open question",
+          "note": "No fully consistent theory exists, and the attempts to build one have not yet produced testable predictions."
+        }
+      ],
+      "prompts": [
+        "Write down the particle content of the Standard Model and identify which observed phenomena it fails to explain.",
+        "Explain how the observation of neutrino oscillation implies a non-zero neutrino mass, and where the mass enters the oscillation formula.",
+        "Take one recent physics result and trace the chain from raw measurement through inference and model to the open question that remains."
+      ],
+      "keyNumbers": [
+        { "label": "Higgs boson mass", "value": "about 125.2 GeV" },
+        { "label": "Gravitational wave detection (LIGO)", "value": "September 2015" },
+        { "label": "KATRIN direct bound on the neutrino mass", "value": "0.45 eV/c^2" },
+        { "label": "Distance to the first gravitational-wave detection, GW150914", "value": "about 1.3 billion light years" },
+        { "label": "Age of the universe", "value": "about 13.8 billion years" }
+      ],
+      "sources": [
+        { "label": "CERN: a new piece in the matter-antimatter puzzle", "url": "https://home.cern/new-piece-matter-antimatter-puzzle/" },
+        { "label": "US DOE: KATRIN narrows the range of the neutrino mass", "url": "https://www.energy.gov/science/np/articles/katrin-narrows-down-range-neutrinos-mass" },
+        { "label": "US DOE: Superconductivity explained", "url": "https://www.energy.gov/science/doe-explainssuperconductivity" },
+        { "label": "NASA: Dark Matter", "url": "https://science.nasa.gov/dark-matter/" },
+        { "label": "OpenStax: The Standard Model", "url": "https://openstax.org/books/university-physics-volume-3/pages/11-5-the-standard-model" },
+        { "label": "OpenStax: The Big Bang", "url": "https://openstax.org/books/university-physics-volume-3/pages/11-6-the-big-bang" }
+      ]
+    }
+  ]
+}

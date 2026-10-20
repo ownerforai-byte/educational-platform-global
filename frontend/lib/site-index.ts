@@ -30,6 +30,7 @@ import {
 } from "./topic-visuals";
 import { SYLLABUS, getUnitTopicEntries } from "./syllabus";
 import { getTheoremProofRoutes, getSyllabusTheoremItems } from "./theorem-topics";
+import { PHYSICS_XI_ACADEMIC_UNITS } from "./physics-xi-academic";
 import type { SiteIndexEntry, SiteIndexGroup, SiteIndexLink } from "./site-index-types";
 
 export type { SiteIndexEntry, SiteIndexGroup, SiteIndexLink } from "./site-index-types";
@@ -397,7 +398,21 @@ export function buildSiteIndex(): SiteIndexGroup[] {
     }),
   });
 
-  /* 7. Veer studio — one dedicated page per tool, plus the wallet that feeds it. */
+  /* 7. Physics XI academic briefs — one deep page per syllabus unit. */
+  groups.push({
+    id: "physics-xi-academic",
+    name: "Physics XI academic briefs",
+    opening: `${PHYSICS_XI_ACADEMIC_UNITS.length} unit briefs — what the model asserts, the conditions it needs, the questions that are still open, and where to read further.`,
+    href: "/resources/physics-xi",
+    entries: PHYSICS_XI_ACADEMIC_UNITS.map((unit) => ({
+      name: `Unit ${unit.unitNo}: ${unit.unitName}`,
+      opening: oneLine(unit.summary, 132),
+      href: `/resources/physics-xi/${unit.unitId}`,
+      meta: unit.contentArea,
+    })),
+  });
+
+  /* 8. Veer studio — one dedicated page per tool, plus the wallet that feeds it. */
   groups.push({
     id: "ai",
     name: "Veer studio — one page per tool",
@@ -452,7 +467,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
     ],
   });
 
-  /* 8. Reference & practice — everything else, each with its own routed pages. */
+  /* 9. Reference & practice — everything else, each with its own routed pages. */
   groups.push({
     id: "reference",
     name: "Reference, practice & general knowledge",
