@@ -1,142 +1,77 @@
 import Link from "next/link";
-import { BookOpen, Brain, FlaskConical, GraduationCap, Sigma, Sparkles, Zap, type LucideIcon } from "lucide-react";
-import { FORMULA_SUBJECTS, getFormulaSheetSummaries } from "@/lib/formula-sheet";
+import { ArrowRight, BookOpen, FlaskConical, GraduationCap, History, ListTree, MessageSquare, Sigma } from "lucide-react";
 
-const FORMULA_ICONS: Record<string, LucideIcon> = {
-  physics: Zap,
-  mathematics: Sigma,
-  chemistry: FlaskConical,
-};
+const classes = [
+  { label: "Class 11", href: "/class-11-notes", description: "Build your foundations with subject notes and syllabus-organized chapters." },
+  { label: "Class 12", href: "/class-12-notes", description: "Continue your studies with subject resources and board-exam preparation." },
+];
 
-/**
- * Welcome introduction — the platform story plus the 4-step study journey.
- *
- * The journey cards were re-pointed at the formula sheets (owner request
- * 2026-10-04: "replace these … with physics, math and chemistry formula section
- * respectively"): steps 01–03 now open the Physics, Mathematics and Chemistry
- * formula sheets, each card carrying the real formula/unit counts extracted
- * from the shipped notes. Step 04 (Ask Veer) is unchanged.
- */
-export async function HomeIntroduction() {
-  let summaries: Awaited<ReturnType<typeof getFormulaSheetSummaries>> = [];
-  try {
-    summaries = await getFormulaSheetSummaries();
-  } catch {
-    // Notes tree unavailable (e.g. stripped build) — cards render without counts.
-  }
-  const bySlug = new Map(summaries.map((s) => [s.slug, s]));
+const tools = [
+  { title: "Past papers", href: "/pyqs", icon: History, description: "Review previous exam questions and worked solutions." },
+  { title: "Formula sheets", href: "/formulas", icon: Sigma, description: "Find key equations for physics, chemistry and mathematics." },
+  { title: "Interactive labs", href: "/lab", icon: FlaskConical, description: "Explore scientific concepts through models and simulations." },
+  { title: "Ask Veer", href: "/chat", icon: MessageSquare, description: "Get help with a concept or work through a study question." },
+];
 
-  const journeySteps = [
-    ...FORMULA_SUBJECTS.map((subject, index) => {
-      const summary = bySlug.get(subject.slug);
-      return {
-        step: `0${index + 1}`,
-        icon: FORMULA_ICONS[subject.slug] ?? BookOpen,
-        title: `${subject.name} Formula Sheet`,
-        text: `Every ${subject.name.toLowerCase()} formula the Class 11 notes carry${
-          summary
-            ? ` — ${summary.formulaCount} formulas across ${summary.unitCount} unit sheets`
-            : ""
-        }, in official syllabus order and grouped under the note each one came from.`,
-        href: `/formulas/${subject.slug}`,
-        cta: `Open ${subject.name} formulas`,
-      };
-    }),
-    {
-      step: "04",
-      icon: Brain,
-      title: "Ask Veer",
-      text: "Stuck at 2 AM? Veer answers doubts in plain language with live web citations — and generates practice questions from your own syllabus.",
-      href: "/chat",
-      cta: "Meet Veer",
-    },
-  ];
+const linkFocus = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
+/** A quiet entry point to existing study resources, not an autoplay content feed. */
+export function HomeIntroduction() {
   return (
-    <section className="relative border-b border-border/60 py-14 sm:py-16">
-      <div className="absolute top-8 right-1/3 h-64 w-64 rounded-full bg-sky-500/5 blur-[110px] pointer-events-none" />
-
-      <div className="relative mx-auto max-w-6xl px-4">
-        {/* Heading */}
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Start here</span>
-          </div>
-
-          <h2 className="mt-4 text-2xl sm:text-4xl font-black tracking-tight text-foreground leading-tight">
-            One platform for the whole NEB voyage —{" "}
-            <span className="bg-gradient-to-r from-sky-400 via-violet-400 to-emerald-400 bg-clip-text text-transparent">
-              from first chapter to final board exam
-            </span>
-          </h2>
-
-          <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-            A free study vault built for Nepali students
-            everywhere: Class 11 &amp; 12 notes, interactive 3D science labs, theorem
-            proofs, derivations, exam countdowns, and Veer with a live internet
-            connection — all in one place, all curriculum-aligned. No paywalls on the
-            path to understanding. Vision: a student who drills the why alongside the how never arrives at the exam empty-handed.
-          </p>
-
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Start with the formula sheets: every Physics, Mathematics and Chemistry
-            formula the notes carry, unit by unit in official syllabus order — or jump
-            straight to a subject below and the platform walks with you, topic by
-            topic.
-          </p>
+    <div className="mx-auto w-full max-w-6xl space-y-10 pb-8" data-testid="study-home">
+      <section className="border-b border-border pb-8 pt-2 sm:pt-4" aria-labelledby="home-title">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary">NEB Class 11 &amp; 12</p>
+        <h1 id="home-title" className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Your study workspace</h1>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          Choose your class, review a topic, or prepare for your next exam.
+          Your notes, practice questions and study tools are organized here.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/subjects" className={`inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 ${linkFocus}`}>
+            <BookOpen className="h-4 w-4" aria-hidden="true" />Browse subjects
+          </Link>
+          <Link href="/syllabus" className={`inline-flex min-h-11 items-center gap-2 rounded-lg border border-border bg-card px-5 text-sm font-medium transition-colors hover:bg-muted ${linkFocus}`}>
+            View syllabus<ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
+      </section>
 
-        {/* Journey steps */}
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {journeySteps.map(({ step, icon: Icon, title, text, href, cta }) => (
-            <Link
-              key={step}
-              href={href}
-              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card/70 p-5 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/5 hover:shadow-lg"
-            >
-              <div className="flex items-center justify-between">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <span className="font-mono text-xs font-bold text-muted-foreground/60">
-                  {step}
-                </span>
-              </div>
-
-              <h3 className="mt-4 text-base font-bold text-foreground">{title}</h3>
-              <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground">
-                {text}
-              </p>
-
-              <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-primary opacity-80 transition-opacity group-hover:opacity-100">
-                {cta}
-                <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
-              </span>
+      <section aria-labelledby="class-heading">
+        <h2 id="class-heading" className="text-xl font-semibold tracking-tight">Choose your class</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {classes.map((item) => (
+            <Link key={item.href} href={item.href} className={`group rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50 ${linkFocus}`}>
+              <GraduationCap className="h-6 w-6 text-primary" aria-hidden="true" />
+              <h3 className="mt-4 text-lg font-semibold">{item.label}</h3>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary">Open {item.label}<ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
             </Link>
           ))}
         </div>
+      </section>
 
-        {/* Start-here strip — only the entries that don't already sit in the
-            journey cards above. Asking Veer is step 04 and the formula sheets
-            are steps 01–03, so the strip just opens each class's notes. */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
-          <Link
-            href="/class-11-notes"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-sky-500/40 bg-sky-500/10 px-4 py-2.5 text-xs font-bold text-sky-600 transition-colors hover:bg-sky-500/20 dark:text-sky-400"
-          >
-            <GraduationCap className="h-4 w-4" />
-            Start Class 11
-          </Link>
-          <Link
-            href="/class-12-notes"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-violet-500/40 bg-violet-500/10 px-4 py-2.5 text-xs font-bold text-violet-600 transition-colors hover:bg-violet-500/20 dark:text-violet-400"
-          >
-            <GraduationCap className="h-4 w-4" />
-            Start Class 12
-          </Link>
+      <section aria-labelledby="tools-heading">
+        <h2 id="tools-heading" className="text-xl font-semibold tracking-tight">Study tools</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {tools.map(({ title, href, icon: Icon, description }) => (
+            <Link key={href} href={href} className={`rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/50 ${linkFocus}`}>
+              <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+              <h3 className="mt-4 text-sm font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+            </Link>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section aria-label="More resources" className="flex flex-col gap-4 rounded-xl border border-border bg-muted/20 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="text-sm font-semibold">Looking for another resource?</h2>
+          <p className="mt-1 text-sm text-muted-foreground">Browse the full directory for proofs, mindmaps, reference materials and more.</p>
+        </div>
+        <Link href="/site-index" className={`inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-medium text-primary hover:bg-muted ${linkFocus}`}>
+          <ListTree className="h-4 w-4" aria-hidden="true" />All resources
+        </Link>
+      </section>
+    </div>
   );
 }
