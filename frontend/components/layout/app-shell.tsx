@@ -64,7 +64,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <div className="flex h-full w-full items-center justify-center">
                 <div className="flex flex-col items-center gap-2">
                   <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-                  <span className="text-xs text-muted-foreground animate-pulse">Entering Veer Room...</span>
+                  <span className="text-xs text-muted-foreground animate-pulse">Loading study assistant...</span>
                 </div>
               </div>
             }
@@ -91,7 +91,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
            backdrop-blur goes with it: it can only filter what this opaque
            background already covers. The price is the nebula hint, and it is
            worth paying to never show content through the nav. */
-        className="pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background translate-y-0 shadow-md"
+        className="pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background translate-y-0"
       >
         {/* Three anchored columns keep the global search centered while the
             left navigation and right-side actions remain clearly separated. */}
@@ -114,7 +114,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Button>
 
             <Link
-              href="/"
+              href="/home"
               className="flex shrink-0 items-center gap-2 rounded-xl px-1.5 py-1 transition-all hover:bg-muted/60 group"
               aria-label="Ravikisan's Platform home"
               title="Ravikisan's Platform"

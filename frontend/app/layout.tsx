@@ -14,7 +14,7 @@ import { AIWidget } from "@/components/layout/ai-widget";
 import { FocusTimer } from "@/components/r1/focus-timer";
 import { SiteWelcome } from "@/components/layout/site-welcome";
 
-const THEME_BOOTSTRAP = `(function(){try{var c=document.documentElement,s=localStorage.getItem("neb-theme"),t=s||"nebula",m={light:0,sepia:0,system:window.matchMedia("(prefers-color-scheme: dark)").matches?1:0,dark:1,cyberpunk:1,emerald:1,nord:1,amber:1,oled:1,nebula:1};if(!(t in m))t="nebula";var d=!!m[t],n=navigator.connection,l=localStorage.getItem("neb-lite-mode");if(l===null)l=String(!!(n&&(n.saveData||n.effectiveType==="2g"||n.effectiveType==="slow-2g")));c.classList.add(d?"dark":"light",t);c.dataset.theme=t;c.dataset.lite=l;c.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
+const THEME_BOOTSTRAP = `(function(){try{var c=document.documentElement,s=localStorage.getItem("neb-theme"),t=s||"system",m={light:0,sepia:0,system:window.matchMedia("(prefers-color-scheme: dark)").matches?1:0,dark:1,cyberpunk:1,emerald:1,nord:1,amber:1,oled:1,nebula:1};if(!(t in m))t="system";var d=!!m[t],n=navigator.connection,l=localStorage.getItem("neb-lite-mode");if(l===null)l=String(!!(n&&(n.saveData||n.effectiveType==="2g"||n.effectiveType==="slow-2g")));c.classList.add(d?"dark":"light",t);c.dataset.theme=t;c.dataset.lite=l;c.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
 
 export const metadata: Metadata = {
   title: "Ravikisan's Platform",
@@ -54,9 +54,9 @@ export default function RootLayout({
     <meta name="apple-mobile-web-app-title" content="Ravikisan's Platform" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
   </head>
-      <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <QueryProvider>
-          <ThemeProvider defaultTheme="nebula" storageKey="neb-theme">
+          <ThemeProvider defaultTheme="system" storageKey="neb-theme">
             <StarField />
             <AuthProvider>
               <CreditProvider>
