@@ -40,7 +40,7 @@ const WORD_NAMESPACES =
   'xmlns:w="urn:schemas-microsoft-com:office:word" ' +
   'xmlns="http://www.w3.org/TR/REC-html40"';
 
-const HTML_STYLE = `body{font-family:Georgia,'Times New Roman',serif;line-height:1.55;color:#111;max-width:52em;margin:0 auto;padding:2em 1.5em}h1{font-size:1.7em;margin:0 0 .2em}h2{font-size:1.2em;margin:1.6em 0 .5em;border-bottom:1px solid #ccc;padding-bottom:.2em}h3{font-size:1em;margin:1.1em 0 .35em}.meta{color:#444;font-size:.92em}.summary{font-size:1.05em;font-style:italic;color:#222}ol,ul{margin:.4em 0 .8em;padding-left:1.4em}li{margin:.35em 0}table{border-collapse:collapse;width:100%;margin:.5em 0 1em}td,th{border:1px solid #999;padding:.45em .6em;text-align:left;vertical-align:top}th{background:#eee}.mystery{border-left:3px solid #888;padding:.1em 0 .1em .8em;margin:.8em 0}.status{font-size:.85em;color:#555;text-transform:uppercase;letter-spacing:.04em}a{color:#0b4f9c}.note{font-size:.88em;color:#444;border-top:1px solid #ccc;padding-top:.7em;margin-top:2em}@media print{body{max-width:none;padding:0}.mystery{page-break-inside:avoid}}`;
+const HTML_STYLE = `body{font-family:Georgia,'Times New Roman',serif;line-height:1.55;color:#111;max-width:52em;margin:0 auto;padding:2em 1.5em}h1{font-size:1.7em;margin:0 0 .2em}h2{font-size:1.2em;margin:1.6em 0 .5em;border-bottom:1px solid #ccc;padding-bottom:.2em}h3{font-size:1em;margin:1.1em 0 .35em}.meta{color:#444;font-size:.92em}.summary{font-size:1.05em;font-style:italic;color:#222}ol,ul{margin:.4em 0 .8em;padding-left:1.4em}li{margin:.35em 0}table{border-collapse:collapse;width:100%;margin:.5em 0 1em}td,th{border:1px solid #999;padding:.45em .6em;text-align:left;vertical-align:top}th{background:#eee}.mystery{border-left:3px solid #888;padding:.1em 0 .1em .8em;margin:.8em 0}.item{border-left:3px solid #aaa;padding:.1em 0 .1em .8em;margin:.8em 0}.status{font-size:.85em;color:#555;text-transform:uppercase;letter-spacing:.04em}a{color:#0b4f9c}.note{font-size:.88em;color:#444;border-top:1px solid #ccc;padding-top:.7em;margin-top:2em}@media print{body{max-width:none;padding:0}.mystery,.item{page-break-inside:avoid}}`;
 
 function esc(value) {
   return String(value)
@@ -74,6 +74,31 @@ function unitBody(unit, dataset) {
   const prompts = unit.prompts
     .map((prompt) => `<li>${esc(prompt)}</li>`)
     .join("");
+  const syllabusTopics = (unit.syllabusTopics ?? [])
+    .map((topic) => `<li>${esc(topic)}</li>`)
+    .join("");
+  const misconceptions = (unit.misconceptions ?? [])
+    .map(
+      (item) =>
+        `<div class="mystery"><p><b>“${esc(item.claim)}”</b></p>` +
+        `<p><b>Why it fails:</b> ${esc(item.why)}</p>` +
+        `<p><b>Correct:</b> ${esc(item.correction)}</p></div>`
+    )
+    .join("");
+  const workbook = (unit.workbook ?? [])
+    .map(
+      (item) =>
+        `<div class="item"><p class="status">${esc(item.kind)}</p>` +
+        `<p><b>${esc(item.question)}</b></p>` +
+        `<p><b>Answer:</b> ${esc(item.answer)}</p></div>`
+    )
+    .join("");
+  const nextSteps = (unit.nextSteps ?? [])
+    .map(
+      (step) =>
+        `<li><a href="${esc(step.href)}">${esc(step.label)}</a></li>`
+    )
+    .join("");
   const sources = unit.sources
     .map(
       (source) =>
@@ -89,9 +114,13 @@ function unitBody(unit, dataset) {
     `<p class="summary">${esc(unit.summary)}</p>`,
     `<h2>What the model asserts</h2><ol>${facts}</ol>`,
     `<h2>Conditions, assumptions and limits</h2><ul>${conditions}</ul>`,
+    `<h2>Exam coverage — ${(unit.syllabusTopics ?? []).length} NEB topics</h2><ul>${syllabusTopics}</ul>`,
+    `<h2>Common misconceptions — ${(unit.misconceptions ?? []).length} to unlearn</h2>${misconceptions}`,
+    `<h2>Workbook — ${(unit.workbook ?? []).length} questions with answers</h2>${workbook}`,
     `<h2>Key numbers</h2><table><tr><th>Quantity</th><th>Value</th></tr>${keyNumbers}</table>`,
     `<h2>Open questions and mysteries</h2>${mysteries}`,
     `<h2>Inquiry prompts</h2><ol>${prompts}</ol>`,
+    `<h2>Next steps on this platform</h2><ul>${nextSteps}</ul>`,
     `<h2>Further reading</h2><ul>${sources}</ul>`,
     `<p class="note">${esc(
       dataset.title

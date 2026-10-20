@@ -38,6 +38,15 @@ export function PhysicsXiAcademicGrid({
         unit.contentArea,
         unit.summary,
         ...unit.facts,
+        ...unit.conditions,
+        ...unit.syllabusTopics,
+        ...unit.misconceptions.flatMap((item) => [
+          item.claim,
+          item.why,
+          item.correction,
+        ]),
+        ...unit.workbook.flatMap((item) => [item.question, item.answer]),
+        ...unit.nextSteps.map((step) => step.label),
         ...unit.mysteries.map((mystery) => mystery.question),
       ]
         .join(" ")
@@ -72,7 +81,7 @@ export function PhysicsXiAcademicGrid({
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search units, facts, open questions"
+            placeholder="Search units, topics, misconceptions, workbook"
             aria-label="Search Physics XI academic units"
             className="w-full rounded-lg border border-border/60 bg-background py-2 pl-9 pr-3 text-sm outline-none focus:border-primary/60"
           />
@@ -106,6 +115,18 @@ export function PhysicsXiAcademicGrid({
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {unit.summary}
               </p>
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="rounded-full border border-border/60 px-2.5 py-0.5 text-xs text-muted-foreground">
+                  {unit.syllabusTopics.length} NEB topics
+                </span>
+                <span className="rounded-full border border-border/60 px-2.5 py-0.5 text-xs text-muted-foreground">
+                  {unit.misconceptions.length} misconceptions
+                </span>
+                <span className="rounded-full border border-border/60 px-2.5 py-0.5 text-xs text-muted-foreground">
+                  {unit.workbook.length} workbook questions
+                </span>
+              </div>
 
               <div className="mt-4 flex flex-wrap items-center gap-3 pt-1">
                 <Link

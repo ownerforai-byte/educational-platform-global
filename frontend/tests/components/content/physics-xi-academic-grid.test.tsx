@@ -21,6 +21,44 @@ function renderGrid() {
   );
 }
 
+/** The text the grid's search box actually looks at, per unit. */
+function searchableText(unit: (typeof PHYSICS_XI_ACADEMIC_UNITS)[number]): string {
+  return [
+    unit.unitName,
+    unit.contentArea,
+    unit.summary,
+    ...unit.facts,
+    ...unit.conditions,
+    ...unit.syllabusTopics,
+    ...unit.misconceptions.flatMap((item) => [item.claim, item.why, item.correction]),
+    ...unit.workbook.flatMap((item) => [item.question, item.answer]),
+    ...unit.nextSteps.map((step) => step.label),
+    ...unit.mysteries.map((mystery) => mystery.question),
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
+/**
+ * A word that occurs exactly once in the whole searchable corpus, so a
+ * search for it must leave exactly one card standing. The word is drawn
+ * from `layer` — the corpus of the field under test — but counted against
+ * `all`, so it cannot be a word another field happens to share.
+ */
+function uniqueTokenIn(layer: string[], all: string[]): string {
+  const counts = new Map<string, number>();
+  for (const text of all) {
+    for (const word of text.split(/[^a-z]+/)) {
+      if (word.length < 8) continue;
+      counts.set(word, (counts.get(word) ?? 0) + 1);
+    }
+  }
+  for (const word of layer.join(" ").split(/[^a-z]+/)) {
+    if (word.length >= 8 && counts.get(word) === 1) return word;
+  }
+  throw new Error("no unique token in the searchable corpus");
+}
+
 describe("PhysicsXiAcademicGrid", () => {
   it("renders a card for every unit brief", () => {
     renderGrid();
@@ -88,5 +126,77 @@ describe("PhysicsXiAcademicGrid", () => {
 
     expect(screen.getByText(first.facts[0])).toBeDefined();
     expect(screen.getByText(first.mysteries[0].question)).toBeDefined();
+  });
+
+  it("shows the exam coverage of every card", () => {
+    renderGrid();
+    const first = PHYSICS_XI_ACADEMIC_UNITS[0];
+    const card = screen.getAllByRole("article")[0];
+
+    expect(
+      within(card).getByText(`${first.syllabusTopics.length} NEB topics`),
+    ).toBeDefined();
+    expect(
+      within(card).getByText(`${first.misconceptions.length} misconceptions`),
+    ).toBeDefined();
+    expect(
+      within(card).getByText(`${first.workbook.length} workbook questions`),
+    ).toBeDefined();
+  });
+
+  it("opens a quick look with the exam-anchored layer", () => {
+    renderGrid();
+    const first = PHYSICS_XI_ACADEMIC_UNITS[0];
+    const card = screen.getAllByRole("article")[0];
+
+    fireEvent.click(within(card).getByRole("button", { name: /quick look/i }));
+
+    expect(
+      within(card).getAllByText(first.syllabusTopics[0]).length,
+    ).toBeGreaterThan(0);
+    expect(
+      within(card).getByText(`“${first.misconceptions[0].claim}”`),
+    ).toBeDefined();
+    expect(
+      within(card).getByText(first.workbook[0].question),
+    ).toBeDefined();
+  });
+
+  it("searches the exam-anchored layer", () => {
+    renderGrid();
+    const input = screen.getByLabelText(/search physics xi academic units/i);
+    const corpus = PHYSICS_XI_ACADEMIC_UNITS.map(searchableText);
+
+    const layers = [
+      {
+        name: "syllabus topic",
+        corpus: PHYSICS_XI_ACADEMIC_UNITS.flatMap((unit) => unit.syllabusTopics),
+      },
+      {
+        name: "misconception",
+        corpus: PHYSICS_XI_ACADEMIC_UNITS.flatMap((unit) =>
+          unit.misconceptions.flatMap((item) => [
+            item.claim,
+            item.why,
+            item.correction,
+          ]),
+        ),
+      },
+      {
+        name: "workbook",
+        corpus: PHYSICS_XI_ACADEMIC_UNITS.flatMap((unit) =>
+          unit.workbook.flatMap((item) => [item.question, item.answer]),
+        ),
+      },
+    ];
+
+    for (const layer of layers) {
+      const token = uniqueTokenIn(layer.corpus, corpus);
+      fireEvent.change(input, { target: { value: token } });
+      expect(
+        screen.getAllByRole("article").length,
+        `search for a ${layer.name} term`,
+      ).toBe(1);
+    }
   });
 });

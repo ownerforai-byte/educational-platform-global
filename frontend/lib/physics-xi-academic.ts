@@ -9,7 +9,10 @@
  *
  * Every unit brief answers four questions: what the model asserts, the
  * conditions under which it holds, the questions that are still open, and
- * where to read further.
+ * where to read further. The exam-anchored layer — the exact NEB topic
+ * titles, the three wrong beliefs the exam punishes, the three-item workbook
+ * and the platform's own next steps — is merged into the dataset by
+ * `scripts/build-physics-xi-academic.ts`.
  */
 import dataset from "@/public/data/physics-xi-academic/units.json";
 
@@ -29,6 +32,35 @@ export interface PhysicsXiSource {
   url: string;
 }
 
+/** A real student error, with why it fails and the correct statement. */
+export interface PhysicsXiMisconception {
+  claim: string;
+  why: string;
+  correction: string;
+}
+
+/** The three kinds of self-test item a workbook holds. */
+export type PhysicsXiWorkbookKind =
+  | "numerical"
+  | "derivation"
+  | "reasoning"
+  // The dataset is JSON, so a kind arrives as a plain string; the union keeps
+  // the three known kinds visible without rejecting one the dataset grows.
+  | (string & {});
+
+/** One self-test item: a numerical, a derivation and a reasoning question. */
+export interface PhysicsXiWorkbookItem {
+  kind: PhysicsXiWorkbookKind;
+  question: string;
+  answer: string;
+}
+
+/** A link into the platform's own material for this unit. */
+export interface PhysicsXiNextStep {
+  label: string;
+  href: string;
+}
+
 export interface PhysicsXiUnit {
   unitNo: number;
   unitId: string;
@@ -42,6 +74,11 @@ export interface PhysicsXiUnit {
   prompts: string[];
   keyNumbers: PhysicsXiKeyNumber[];
   sources: PhysicsXiSource[];
+  /** The exact NEB topic titles of this unit, taken from the syllabus. */
+  syllabusTopics: string[];
+  misconceptions: PhysicsXiMisconception[];
+  workbook: PhysicsXiWorkbookItem[];
+  nextSteps: PhysicsXiNextStep[];
 }
 
 export interface PhysicsXiAcademicDataset {
@@ -58,6 +95,12 @@ export const PHYSICS_XI_ACADEMIC_UNITS: PhysicsXiUnit[] = PHYSICS_XI_ACADEMIC.un
 /** Content areas in curriculum order — the filter axis of the reading surface. */
 export const PHYSICS_XI_CONTENT_AREAS: string[] = Array.from(
   new Set(PHYSICS_XI_ACADEMIC_UNITS.map((unit) => unit.contentArea)),
+);
+
+/** Every examinable NEB topic covered by the companion, across all units. */
+export const PHYSICS_XI_SYLLABUS_TOPIC_COUNT: number = PHYSICS_XI_ACADEMIC_UNITS.reduce(
+  (sum, unit) => sum + unit.syllabusTopics.length,
+  0,
 );
 
 /** Where the published documents are served from (static files under /public). */
@@ -100,6 +143,10 @@ export function isCompletePhysicsXiUnit(unit: PhysicsXiUnit): boolean {
     unit.mysteries.length > 0 &&
     unit.prompts.length > 0 &&
     unit.keyNumbers.length > 0 &&
-    unit.sources.length > 0
+    unit.sources.length > 0 &&
+    unit.syllabusTopics.length > 0 &&
+    unit.misconceptions.length > 0 &&
+    unit.workbook.length > 0 &&
+    unit.nextSteps.length > 0
   );
 }
