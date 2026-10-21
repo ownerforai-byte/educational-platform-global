@@ -1,16 +1,12 @@
-# CLAUDE.md — read before any edit
+# CLAUDE.md — Agent Entrypoint
 
-Every agent working in this repository must read, in order:
+Start with **`CORE_FILES.md`** and the 1 or 2 files directly relevant to your task. Do NOT chain-read every markdown file before making a targeted edit.
 
-1. **`CORE_FILES.md`** — **CRITICAL**: registry of isolated main architecture & routing files vs content files. **DO NOT READ ALL FILES.** Ignore content files unless explicitly asked.
-2. **`BRANCHES.md`** — branch map (48 area branches), reserved worktree
-   branches, and which `npm run check` applies to which area.
-   Required before creating, checking out, merging, or deleting any branch,
-   and before editing files.
-3. `AGENTS.md` — agentic workflow rules (secrets hygiene, acceptance gates, post-task file marking).
-4. `project-conductor.md` — roles, task labels, quality gates,
-   branch workflow (§7).
-5. `AGENT_RULES.md` — mandatory rules (syllabus order, safety, security, targeted reading).
+Consult the other workflow references **only when needed**:
+- **`CORE_FILES.md`** — **Always read first**: registry of isolated main architecture & routing files vs content files. **DO NOT READ ALL FILES.** Ignore content files unless explicitly asked.
+- **`BRANCHES.md`** — Read when creating, checking out, merging, deleting, or pushing branches (maps 48 area branches, reserved worktrees, and `npm run check` scopes).
+- **`AGENTS.md` / `AGENT_RULES.md`** — Core rules on secrets hygiene, syllabus ordering (`frontend/lib/syllabus.ts`), and post-task file classification.
+- **`project-conductor.md`** — Role assignment and task labels (`feature:`, `bugfix:`, etc.).
 
 ## Hard rules
 

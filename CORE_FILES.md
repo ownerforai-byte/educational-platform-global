@@ -40,6 +40,11 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/components/layout/app-shell.tsx` | Main UI layout container and responsive navigation shell. |
 | `frontend/lib/note-routes.ts` | Canonical routing logic for notes, mapping topics and legacy paths to current URLs. |
 | `frontend/app/auth/callback/page.tsx` | OAuth callback: exchanges provider code, sets app session cookies, drops supabase-js local records. |
+| `frontend/providers/auth-provider.tsx` | Client session state, silent token renewal, and instant logout provider. |
+| `frontend/features/auth/components/require-approval.tsx` | Global login and owner-approval route wall for `(app)` routes. |
+| `frontend/features/credits/route-gate.tsx` | Spark/coin route unlock gate for paid content categories. |
+| `frontend/components/navigation/back-button.tsx` | In-app history tracker and fallback back-to-home navigation control. |
+| `frontend/lib/ui/subject-visuals.ts` | Canonical per-subject visual identity (natural glyphs and color tokens). |
 
 ### B. Platform Foundations & System State
 | File | Role |
@@ -64,7 +69,7 @@ Whenever you need to know how the platform works and where things route, refer O
 ### D. AI & Core Service Engines
 | File | Role |
 |---|---|
-| `backend/src/ai/service.ts` | AI orchestration, provider fallback chain (Agnes → OpenRouter → Internal). |
+| `backend/src/ai/service.ts` | AI orchestration, provider fallback chain (Agnes → Internal). |
 | `backend/src/ai/prompts.ts` | Master academic prompt definitions. |
 | `frontend/lib/ai/prompts.ts` | Frontend prompt configuration and system prompt mirrors. |
 | `frontend/features/credits/constants.ts` | Tier quotas, credit pricing, coin gate constants. |

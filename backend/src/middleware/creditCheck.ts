@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
-import { extractToken, hasFullAccess, isOwnerEmail } from "./auth";
+import { extractToken, hasFullAccess, isOwnerEmail, type AuthedRequest } from "./auth";
 import { ensureDailyCredits, spendCredits, refundCredits, isCoinGateEnabled } from "../utils/credits";
 
 // ── Feature cost table ─────────────────────────────────────────────────────
@@ -19,6 +19,50 @@ const PREMIUM_FEATURES = {
 
 export type FeatureKey = keyof typeof PREMIUM_FEATURES;
 
+interface ResolvedCreditUser {
+  userId: string;
+  email: string | undefined;
+  role: string | null;
+  premiumStatus: boolean;
+}
+
+/**
+ * Resolve the authenticated user and profile flags, reusing `req.user` when
+ * `requireAuth` has already run on this request so we do not hit Supabase Auth
+ * and `profiles` a second time.
+ */
+async function resolveCreditUser(req: Request): Promise<ResolvedCreditUser | null> {
+  const existing = (req as Partial<AuthedRequest>).user;
+  if (existing?.id) {
+    return {
+      userId: existing.id,
+      email: existing.email || undefined,
+      role: existing.role ? existing.role.toUpperCase() : null,
+      premiumStatus: existing.premiumStatus === true,
+    };
+  }
+
+  const token = extractToken(req);
+  if (!token) return null;
+
+  const { data: authData, error: authError } = await supabaseAdmin.auth.getUser(token);
+  if (authError || !authData.user) return null;
+
+  const userId = authData.user.id;
+  const { data: profile } = await supabaseAdmin
+    .from("profiles")
+    .select("role, premium_status")
+    .eq("id", userId)
+    .maybeSingle();
+
+  return {
+    userId,
+    email: authData.user.email,
+    role: (profile?.role as string | undefined)?.toUpperCase() ?? null,
+    premiumStatus: profile?.premium_status ?? false,
+  };
+}
+
 /**
  * Express middleware: authenticate + check credits/premium for a feature.
  * Always pair with `requireAuth` first (so req.user is present) OR this
@@ -34,30 +78,13 @@ export function requireCredit(
 ): (req: Request, res: Response, next: NextFunction) => Promise<void> {
   return async (req, res, next) => {
     try {
-      // ── Resolve the authenticated user ──
-      const token = extractToken(req);
-      if (!token) {
+      const resolved = await resolveCreditUser(req);
+      if (!resolved) {
         res.status(401).json({ error: "Unauthorized" });
         return;
       }
 
-      const { data: authData, error: authError } = await supabaseAdmin.auth.getUser(token);
-      if (authError || !authData.user) {
-        res.status(401).json({ error: "Unauthorized" });
-        return;
-      }
-
-      const userId = authData.user.id;
-
-      // Load role + premium in one pass
-      const { data: profile } = await supabaseAdmin
-        .from("profiles")
-        .select("role, premium_status")
-        .eq("id", userId)
-        .maybeSingle();
-
-      const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
-      const premiumStatus = profile?.premium_status ?? false;
+      const { userId, email, role, premiumStatus } = resolved;
 
       // BILL-EVERYONE (corrected 2026-10-04): PRO is unlimited; owners are
       // free only while their toggle is OFF; students/customers always pay.
@@ -66,7 +93,7 @@ export function requireCredit(
         return;
       }
       const gateOn = await isCoinGateEnabled();
-      if (isOwnerEmail(authData.user.email) && !gateOn) {
+      if (isOwnerEmail(email) && !gateOn) {
         next();
         return;
       }
@@ -92,7 +119,7 @@ export function requireCredit(
       // Fresh daily pool first (lazy midnight reset), then an ATOMIC spend —
       // the old read-then-write deduction lost concurrent updates and could
       // spend a balance the user no longer had.
-      const ensured = await ensureDailyCredits(userId, authData.user.email, role, premiumStatus);
+      const ensured = await ensureDailyCredits(userId, email, role, premiumStatus);
       if (ensured.unlimited) {
         next();
         return;
@@ -148,27 +175,13 @@ export async function requirePremium(
   next: NextFunction,
 ): Promise<void> {
   try {
-    const token = extractToken(req);
-    if (!token) {
+    const resolved = await resolveCreditUser(req);
+    if (!resolved) {
       res.status(401).json({ error: "Unauthorized" });
       return;
     }
 
-    const { data: authData, error: authError } = await supabaseAdmin.auth.getUser(token);
-    if (authError || !authData.user) {
-      res.status(401).json({ error: "Unauthorized" });
-      return;
-    }
-
-    const userId = authData.user.id;
-    const { data: profile } = await supabaseAdmin
-      .from("profiles")
-      .select("role, premium_status")
-      .eq("id", userId)
-      .maybeSingle();
-
-    const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
-    const premiumStatus = profile?.premium_status ?? false;
+    const { role, premiumStatus } = resolved;
 
     if (!hasFullAccess(role, premiumStatus)) {
       res.status(402).json({

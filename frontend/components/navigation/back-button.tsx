@@ -61,7 +61,7 @@ export function BackButton({
       window.history.back();
     } else {
       // Deep link / fresh tab → straight back to the home dashboard, at top.
-      router.push("/", { scroll: true });
+      router.push("/home", { scroll: true });
     }
   };
 

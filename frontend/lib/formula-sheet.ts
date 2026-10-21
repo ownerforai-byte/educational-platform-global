@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { getSubjectSyllabus, type SubjectSyllabus } from "./syllabus";
 import { resolveUnitSlug } from "./syllabus-notes-manifest";
 import { isGeneratorJunkLine } from "./content/generator-junk";
+import { getSubjectVisual } from "./ui/subject-visuals";
 
 /**
  * formula-sheet — the Class 11 formula sheets for Physics, Mathematics and
@@ -69,9 +70,9 @@ export interface FormulaSheetMeta {
 
 /** The three subjects that have a formula sheet. Class 11 is the shipped corpus. */
 export const FORMULA_SUBJECTS: FormulaSheetMeta[] = [
-  { slug: "physics", name: "Physics", emoji: "⚡" },
-  { slug: "mathematics", name: "Mathematics", emoji: "🔢" },
-  { slug: "chemistry", name: "Chemistry", emoji: "🧪" },
+  { slug: "physics", name: "Physics", emoji: getSubjectVisual("physics").glyph },
+  { slug: "mathematics", name: "Mathematics", emoji: getSubjectVisual("mathematics").glyph },
+  { slug: "chemistry", name: "Chemistry", emoji: getSubjectVisual("chemistry").glyph },
 ];
 
 /** One source note and the formulas it contributes to its unit. */
@@ -94,7 +95,7 @@ const VALID_ANNOTATION_KINDS = new Set<FormulaAnnotationKind>([
   "shortcut",
 ]);
 
-function normalizeAnnotation(raw: unknown, formulaText: string): FormulaAnnotation | null {
+function normalizeAnnotation(raw: unknown): FormulaAnnotation | null {
   if (!raw || typeof raw !== "object") return null;
   const obj = raw as Record<string, unknown>;
   const kind = obj.kind;
@@ -210,6 +211,8 @@ interface NoteFile {
   universalFacts?: unknown;
   confusion?: unknown;
   practice?: unknown;
+  practiceQuestions?: unknown;
+  summary?: unknown;
   mcs?: unknown;
 }
 
@@ -234,14 +237,18 @@ function buildClassifiedNotes(note: NoteFile): ClassifiedNoteGroup | null {
     ? note.specialNotes.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
       .map((x) => x.trim())
     : [];
-  const solvedPyqs: string[] = Array.isArray(note.practice)
-    ? note.practice.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-      .map((x) => x.trim())
-    : [];
-  const examShortTricks: string[] = Array.isArray(note.examShortTricks)
-    ? note.examShortTricks.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
-      .map((x) => x.trim())
-    : [];
+  const solvedPyqs: string[] = [
+    ...(Array.isArray(note.practice) ? note.practice : []),
+    ...(Array.isArray(note.practiceQuestions) ? note.practiceQuestions : []),
+  ]
+    .filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+    .map((x) => x.trim());
+  const examShortTricks: string[] = [
+    ...(Array.isArray(note.examShortTricks) ? note.examShortTricks : []),
+    ...(Array.isArray(note.examNotes) ? note.examNotes : []),
+  ]
+    .filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+    .map((x) => x.trim());
   const mcs: Array<{ question: string; options: string[]; answer: string; explanation: string }> =
     Array.isArray(note.mcs)
       ? note.mcs.filter(
@@ -266,6 +273,13 @@ function buildClassifiedNotes(note: NoteFile): ClassifiedNoteGroup | null {
     ? note.importantStatements.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
       .map((x) => x.trim())
     : [];
+  const keyPointsFallback: string[] =
+    confusion.length + importantNotes.length + importantStatements.length === 0 &&
+    Array.isArray(note.keyPoints)
+      ? note.keyPoints
+          .filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+          .map((x) => x.trim())
+      : [];
 
   const hasAny =
     conditions.length +
@@ -274,7 +288,8 @@ function buildClassifiedNotes(note: NoteFile): ClassifiedNoteGroup | null {
     mcs.length +
     confusion.length +
     importantNotes.length +
-    importantStatements.length >
+    importantStatements.length +
+    keyPointsFallback.length >
     0;
   if (!hasAny) return null;
 
@@ -295,7 +310,7 @@ function buildClassifiedNotes(note: NoteFile): ClassifiedNoteGroup | null {
     conditions: conditions.slice(0, CAP),
     solvedPyqs: solvedPyqs.slice(0, CAP),
     examTricks: [...examShortTricks, ...mcsLines].slice(0, CAP),
-    hints: [...confusion, ...importantNotes, ...importantStatements]
+    hints: [...confusion, ...importantNotes, ...importantStatements, ...keyPointsFallback]
       .slice(0, CAP),
   };
 }
@@ -426,7 +441,7 @@ async function loadSubjectFormulaSheet(subjectSlug: string): Promise<FormulaShee
       : [];
     const linked: Array<{ ann: FormulaAnnotation; formula: string }> = [];
     for (let i = 0; i < noteAnnotations.length; i++) {
-      const ann = normalizeAnnotation(noteAnnotations[i], "");
+      const ann = normalizeAnnotation(noteAnnotations[i]);
       if (!ann) continue;
       let formula: string | undefined;
       const rawFormula = (noteAnnotations[i] as Record<string, unknown>).formula;

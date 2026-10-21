@@ -137,7 +137,7 @@ export function MobileNav() {
           >
             <div className="flex items-center justify-between pb-4 mb-2 border-b border-border/50">
               <Link
-                href="/"
+                href="/home"
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-2.5"
               >
