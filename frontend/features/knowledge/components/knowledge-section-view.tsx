@@ -63,7 +63,7 @@ export function KnowledgeSectionView({
               {hubLabel}
             </Link>
           </p>
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight mt-1">
+          <h1 className="mt-1 text-2xl font-bold tracking-tight md:text-3xl">
             {emoji} {section.name}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">{section.description}</p>

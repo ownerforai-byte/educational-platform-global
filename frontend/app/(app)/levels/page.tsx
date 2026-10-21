@@ -18,6 +18,8 @@ import {
   Award,
   ChevronRight,
   CheckCircle2,
+  Dna,
+  LineChart,
 } from "lucide-react";
 
 export const metadata = {
@@ -308,21 +310,24 @@ export default async function LevelsPage() {
               <div className="mt-4 pt-3 border-t border-border/50 flex flex-wrap gap-1.5">
                 <Link
                   href="/lab/bio-3d-organelles"
-                  className="text-[11px] font-semibold px-2.5 py-1 rounded-xl bg-card/90 border border-border/70 text-foreground/90 hover:border-emerald-500/50 hover:text-emerald-500 transition-all"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-xl bg-card/90 border border-border/70 text-foreground/90 hover:border-emerald-500/50 hover:text-emerald-500 transition-all"
                 >
-                  🧬 Cell Organelles 3D
+                  <span aria-hidden="true" className="shrink-0">🧬</span>
+                  Cell Organelles 3D
                 </Link>
                 <Link
                   href="/periodic-table"
-                  className="text-[11px] font-semibold px-2.5 py-1 rounded-xl bg-card/90 border border-border/70 text-foreground/90 hover:border-emerald-500/50 hover:text-emerald-500 transition-all"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-xl bg-card/90 border border-border/70 text-foreground/90 hover:border-emerald-500/50 hover:text-emerald-500 transition-all"
                 >
-                  ⚛️ 118 Periodic Table
+                  <span aria-hidden="true" className="shrink-0">🪨</span>
+                  118 Periodic Table
                 </Link>
                 <Link
                   href="/graphs"
-                  className="text-[11px] font-semibold px-2.5 py-1 rounded-xl bg-card/90 border border-border/70 text-foreground/90 hover:border-emerald-500/50 hover:text-emerald-500 transition-all"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-xl bg-card/90 border border-border/70 text-foreground/90 hover:border-emerald-500/50 hover:text-emerald-500 transition-all"
                 >
-                  📈 Science Graphs
+                  <span aria-hidden="true" className="shrink-0">📈</span>
+                  Science Graphs
                 </Link>
               </div>
             </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Activity, CalendarCheck, NotebookPen, Repeat } from "lucide-react";
-import { FunOpening } from "@/components/r1/fun-opening";
+import { PlatformOverview } from "@/components/r1/platform-overview";
 import { TimeTrackerCard } from "@/components/r1/time-tracker-card";
 import { TodayPanel } from "@/components/r1/today-panel";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -52,7 +52,7 @@ export default function R1HomePage() {
         </p>
       </section>
 
-      <FunOpening />
+      <PlatformOverview />
 
       <section>
         <h2 className="mb-3 text-sm font-semibold text-muted-foreground uppercase tracking-wide">

@@ -28,7 +28,7 @@ const navItems = [
 
 /**
  * R1 shell — the daily-life layer (owner + granted emails only).
- * Guests go to login; signed-in users without R1 access land on Fun (/home).
+ * Guests go to login; signed-in users without R1 access land on /home.
  */
 export default function R1Layout({ children }: { children: React.ReactNode }) {
   const { user, isLoading } = useSession();
@@ -113,10 +113,10 @@ export default function R1Layout({ children }: { children: React.ReactNode }) {
             <Link
               href="/home"
               className="inline-flex items-center gap-1.5 rounded-lg bg-muted/60 px-2.5 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-all"
-              title="Open Fun — the learning platform"
+              title="Open the study platform"
             >
               <LayoutGrid className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">Fun</span>
+              <span className="hidden sm:inline">Study platform</span>
             </Link>
             <Link
               href="/home"

@@ -7,6 +7,7 @@ import {
   TrendingUp,
   GraduationCap,
   FlaskConical,
+  Library,
 } from "lucide-react";
 
 const RESOURCE_CARDS = [
@@ -98,7 +99,10 @@ export default function ResourcesPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-8 md:py-14 px-4">
       <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-primary/8 via-background to-background p-8 md:p-10 shadow-lg">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">📚 Resources</h1>
+        <h1 className="flex items-center gap-3 text-3xl md:text-4xl font-bold tracking-tight">
+          <span aria-hidden="true">📚</span>
+          Resources
+        </h1>
         <p className="mt-2 text-muted-foreground">
           Browse all study materials, simulations, and reference content in one place. Vision: a student should never have to choose between understanding and passing — this library exists so they do not have to.
         </p>

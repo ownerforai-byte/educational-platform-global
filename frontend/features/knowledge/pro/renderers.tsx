@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ChevronRight, Sigma, Zap, Rocket, ShieldAlert, BookOpen } from "lucide-react";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import {
   KNOWLEDGE_KINDS,
@@ -8,14 +8,6 @@ import {
   type KnowledgeKindSlug,
   type KnowledgeSection,
 } from "@/features/knowledge/types";
-
-const KIND_ICON: Record<KnowledgeKindSlug, typeof BookOpen> = {
-  theory: BookOpen,
-  formulas: Sigma,
-  "special-cases": Zap,
-  tricks: Rocket,
-  mistakes: ShieldAlert,
-};
 
 const LEVEL_BADGE: Record<string, string> = {
   basic: "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/25",
@@ -208,7 +200,6 @@ export function ChapterContents({
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {KNOWLEDGE_KINDS.map((k) => {
-          const Icon = KIND_ICON[k.slug];
           return (
             <Link
               key={k.slug}
@@ -219,7 +210,7 @@ export function ChapterContents({
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
                 style={{ backgroundColor: `${k.tint}18` }}
               >
-                <Icon className="h-5 w-5" style={{ color: k.tint }} />
+                <span aria-hidden="true" className="text-xl leading-none">{k.icon}</span>
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2">
@@ -305,7 +296,7 @@ export function KindPage({
           <Link
             key={k.slug}
             href={`${base}/${k.slug}`}
-            className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+            className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
               k.slug === kind
                 ? "border-primary/40 bg-primary/10 text-primary"
                 : "border-border/60 text-muted-foreground hover:text-foreground"

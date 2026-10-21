@@ -303,7 +303,10 @@ export default function PdfLibraryPage() {
             <FileText className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">📄 Study Materials</h1>
+            <h1 className="flex items-center gap-2 text-2xl md:text-3xl font-bold tracking-tight">
+              <span aria-hidden="true">📄</span>
+              Study Materials
+            </h1>
             <p className="mt-1 text-sm text-muted-foreground">
               All PDFs and notes, classified by subject — open them right here or download a copy.
             </p>

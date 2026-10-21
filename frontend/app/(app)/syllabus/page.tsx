@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { SYLLABUS } from "@/lib/syllabus";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import {
   FileText,
   Clock,
@@ -17,14 +18,6 @@ export const metadata = {
   description: "Official Curriculum Development Centre (CDC) & NEB syllabus for all Grade 11 and Grade 12 subjects.",
 };
 
-const SUBJECT_THEMES: Record<string, { icon: string; border: string; bg: string; badge: string }> = {
-  mathematics: { icon: "🔢", border: "border-violet-500/30 hover:border-violet-500", bg: "from-violet-500/10 via-card to-card", badge: "bg-violet-500/15 text-violet-600 dark:text-violet-400" },
-  physics:     { icon: "⚡", border: "border-sky-500/30 hover:border-sky-500",       bg: "from-sky-500/10 via-card to-card",    badge: "bg-sky-500/15 text-sky-600 dark:text-sky-400" },
-  chemistry:   { icon: "🧪", border: "border-amber-500/30 hover:border-amber-500",   bg: "from-amber-500/10 via-card to-card",  badge: "bg-amber-500/15 text-amber-600 dark:text-amber-400" },
-  biology:     { icon: "🌿", border: "border-emerald-500/30 hover:border-emerald-500", bg: "from-emerald-500/10 via-card to-card",badge: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" },
-  english:     { icon: "📖", border: "border-blue-500/30 hover:border-blue-500",      bg: "from-blue-500/10 via-card to-card",   badge: "bg-blue-500/15 text-blue-600 dark:text-blue-400" },
-  nepali:      { icon: "🇳🇵", border: "border-rose-500/30 hover:border-rose-500",      bg: "from-rose-500/10 via-card to-card",   badge: "bg-rose-500/15 text-rose-600 dark:text-rose-400" },
-};
 
 export default function SyllabusPage() {
   // Aggregate unique subjects across tracks
@@ -69,7 +62,7 @@ export default function SyllabusPage() {
           </p>
           <div className="flex flex-wrap gap-2 pt-2 text-xs font-semibold">
             <Link href="/practical/physics" className="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-500/25 transition-colors">
-              ⚡ Physics Practical
+              🌌 Physics Practical
             </Link>
             <Link href="/practical/chemistry" className="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 hover:bg-amber-500/25 transition-colors">
               🧪 Chemistry Practical
@@ -109,12 +102,7 @@ export default function SyllabusPage() {
       {/* Subjects Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[...subjectMap.entries()].map(([slug, data]) => {
-          const theme = SUBJECT_THEMES[slug] || {
-            icon: "📚",
-            border: "border-border/70 hover:border-primary",
-            bg: "from-primary/10 via-card to-card",
-            badge: "bg-primary/15 text-primary",
-          };
+          const theme = getSubjectVisual(slug);
 
           const isScience = ["physics", "chemistry", "biology"].includes(slug);
 
@@ -126,7 +114,7 @@ export default function SyllabusPage() {
               <div>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl">{theme.icon}</span>
+                    <span className="text-3xl leading-none">{theme.glyph}</span>
                     <div>
                       <h2 className="font-bold text-foreground text-lg">{data.name}</h2>
                       <p className="text-xs text-muted-foreground">Class 11 &amp; 12 Unified</p>

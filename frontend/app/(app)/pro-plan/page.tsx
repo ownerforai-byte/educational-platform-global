@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
+  BookOpen,
   Check,
   Coins,
   Compass,
@@ -39,14 +40,14 @@ export const metadata: Metadata = {
 const SPARKS = [
   {
     name: "Veer sparks",
-    emoji: "✨",
+    icon: "✨",
     powers: "Veer — the AI tutor",
     covers: "AI chat replies and generated quizzes",
     detail: "The daily AI allowance. Refilled at 12:00 AM.",
   },
   {
     name: "Content sparks",
-    emoji: "📚",
+    icon: "📚",
     powers: "The note & PYQ library",
     covers: "Actual note / content unlocks (20-minute windows)",
     detail: "Spent on real notes and question sets, not on AI.",
@@ -134,7 +135,7 @@ export default function ProPlanPage() {
               className="rounded-2xl border border-border/70 bg-muted/20 p-4"
             >
               <p className="flex items-center gap-2 text-sm font-extrabold text-foreground">
-                <span className="text-base">{s.emoji}</span>
+                <span aria-hidden="true" className="shrink-0">{s.icon}</span>
                 {s.name}
               </p>
               <dl className="mt-2 space-y-1.5 text-xs">

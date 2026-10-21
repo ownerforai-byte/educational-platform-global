@@ -11,6 +11,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 
 interface LessonPayload {
   slug: string;
@@ -20,38 +21,10 @@ interface LessonPayload {
   classSlug: "class-11-notes";
   classTitle: string;
   unitSlug: string;
-  icon: string;
   description: string;
   markdown: string;
   wordCount?: number;
 }
-
-const SUBJECT_THEMES: Record<string, { icon: string; badge: string; text: string; accent: string }> = {
-  mathematics: {
-    icon: "🔢",
-    badge: "bg-violet-500/15 text-violet-600 dark:text-violet-400 border-violet-500/20",
-    text: "text-violet-500",
-    accent: "from-violet-500/15 via-purple-500/5 to-transparent",
-  },
-  physics: {
-    icon: "⚡",
-    badge: "bg-sky-500/15 text-sky-600 dark:text-sky-400 border-sky-500/20",
-    text: "text-sky-500",
-    accent: "from-sky-500/15 via-blue-500/5 to-transparent",
-  },
-  chemistry: {
-    icon: "🧪",
-    badge: "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/20",
-    text: "text-amber-500",
-    accent: "from-amber-500/15 via-orange-500/5 to-transparent",
-  },
-  biology: {
-    icon: "🌿",
-    badge: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-    text: "text-emerald-500",
-    accent: "from-emerald-500/15 via-teal-500/5 to-transparent",
-  },
-};
 
 const KNOWN_SLUGS = new Set([
   "algebra",
@@ -108,8 +81,7 @@ export default function LessonViewerPage() {
     };
   }, [slug]);
 
-  const theme =
-    lesson && SUBJECT_THEMES[lesson.subject] ? SUBJECT_THEMES[lesson.subject] : SUBJECT_THEMES.physics;
+  const theme = getSubjectVisual(lesson?.subject);
 
   return (
     <div className="w-full max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -165,11 +137,11 @@ export default function LessonViewerPage() {
       {!loading && !error && lesson && (
         <article>
           {/* Header card */}
-          <header className={`rounded-3xl border border-border/70 bg-gradient-to-br ${theme.accent} bg-card p-6 sm:p-8 shadow-sm`}>
+          <header className={`rounded-3xl border border-border/70 bg-gradient-to-br ${theme.bg} bg-card p-6 sm:p-8 shadow-sm`}>
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="flex items-start gap-4">
-                <div className="flex items-center justify-center h-14 w-14 rounded-2xl border border-border/60 bg-card shadow-sm text-3xl">
-                  {lesson.icon}
+                <div className="flex items-center justify-center h-14 w-14 rounded-2xl border border-border/60 bg-card shadow-sm">
+                  <span aria-hidden="true" className="text-3xl leading-none">{theme.glyph}</span>
                 </div>
                 <div>
                   <div className="flex flex-wrap items-center gap-2 mb-2">

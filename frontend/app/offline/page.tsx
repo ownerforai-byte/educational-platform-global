@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { WifiOff } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Offline — Ravikisan's Platform",
@@ -21,9 +22,7 @@ export default function OfflinePage() {
         className="flex h-16 w-16 items-center justify-center rounded-2xl bg-muted"
         aria-hidden="true"
       >
-        <span className="text-3xl" role="img" aria-label="Cloud with slash">
-          📴
-        </span>
+        <span aria-hidden="true" className="text-3xl leading-none">📴</span>
       </div>
       <h1 className="text-2xl font-bold tracking-tight">You&apos;re offline</h1>
       <p className="max-w-md text-muted-foreground">

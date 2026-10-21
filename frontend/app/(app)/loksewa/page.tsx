@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Map, Scroll, TreePine } from "lucide-react";
+import { Landmark, Map, Scroll, TreePine } from "lucide-react";
 
 export default function LoksewaPage() {
   const sections = [
@@ -29,7 +29,10 @@ export default function LoksewaPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-8 md:py-14 px-4">
       <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-primary/8 via-background to-background p-8 md:p-10 shadow-lg">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">🏛️ Loksewa Knowledge</h1>
+        <h1 className="flex items-center gap-3 text-3xl md:text-4xl font-bold tracking-tight">
+          <span aria-hidden="true">🏛️</span>
+          Loksewa Knowledge
+        </h1>
         <p className="mt-2 text-muted-foreground">
           Prepare for Loksewa with curated materials and practice sets. Big picture: public service is the point where knowledge meets citizenship.
         </p>

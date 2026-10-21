@@ -10,10 +10,9 @@ import {
   Trophy,
   ArrowRight,
   Lightbulb,
-  Compass,
-  CheckCircle2,
 } from "lucide-react";
 import { SYLLABUS } from "@/lib/syllabus";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 
 export const metadata = {
   title: "NEB Class 11 (Grade XI) Portal — Syllabus, Notes & Interactive Labs",
@@ -25,10 +24,8 @@ const CLASS_11_SUBJECTS = [
   {
     slug: "physics",
     name: "Physics",
-    icon: "⚡",
     description: "Mechanics, Heat & Thermodynamics, Waves & Optics, Electricity and Modern Physics.",
     color: "from-sky-500/10 to-blue-500/5",
-    border: "border-sky-500/30 hover:border-sky-500",
     units: 5,
     theoremsHref: "/theorems/class-11-notes/physics",
     derivationsHref: "/derivations/class-11-notes/physics",
@@ -36,10 +33,8 @@ const CLASS_11_SUBJECTS = [
   {
     slug: "chemistry",
     name: "Chemistry",
-    icon: "🧪",
     description: "General & Physical Chemistry, Inorganic Chemistry, and Foundations of Organic Chemistry.",
     color: "from-amber-500/10 to-orange-500/5",
-    border: "border-amber-500/30 hover:border-amber-500",
     units: 5,
     theoremsHref: "/theorems/class-11-notes/chemistry",
     derivationsHref: "/derivations/class-11-notes/chemistry",
@@ -47,10 +42,8 @@ const CLASS_11_SUBJECTS = [
   {
     slug: "mathematics",
     name: "Mathematics",
-    icon: "🔢",
     description: "Algebra, Trigonometry, Analytic Geometry, Vectors, Statistics and Differential Calculus.",
     color: "from-violet-500/10 to-purple-500/5",
-    border: "border-violet-500/30 hover:border-violet-500",
     units: 7,
     theoremsHref: "/theorems/class-11-notes/mathematics",
     derivationsHref: "/derivations/class-11-notes/mathematics",
@@ -58,10 +51,8 @@ const CLASS_11_SUBJECTS = [
   {
     slug: "biology",
     name: "Biology",
-    icon: "🌿",
     description: "Biomolecules & Cell Biology, Plant Diversity, Animal Diversity and Ecology.",
     color: "from-emerald-500/10 to-teal-500/5",
-    border: "border-emerald-500/30 hover:border-emerald-500",
     units: 4,
     theoremsHref: null,
     derivationsHref: null,
@@ -69,10 +60,8 @@ const CLASS_11_SUBJECTS = [
   {
     slug: "english",
     name: "English",
-    icon: "📖",
     description: "Short Stories, Poems, Essays, One-act Plays, Reading Comprehension & Technical Writing.",
     color: "from-blue-500/10 to-indigo-500/5",
-    border: "border-blue-500/30 hover:border-blue-500",
     units: 2,
     theoremsHref: null,
     derivationsHref: null,
@@ -80,10 +69,8 @@ const CLASS_11_SUBJECTS = [
   {
     slug: "nepali",
     name: "Nepali",
-    icon: "🇳🇵",
     description: "कथा, कविता, निबन्ध, नाटक, व्यावहारिक लेखन तथा अनिवार्य नेपाली व्याकरण।",
     color: "from-rose-500/10 to-red-500/5",
-    border: "border-rose-500/30 hover:border-rose-500",
     units: 2,
     theoremsHref: null,
     derivationsHref: null,
@@ -204,18 +191,19 @@ export default function Class11Page() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CLASS_11_SUBJECTS.map((subject) => {
+            const visual = getSubjectVisual(subject.slug);
             const syllabusSubj = c11Syllabus?.subjects.find((s) => s.slug === subject.slug);
             const totalTopics = syllabusSubj?.units.reduce((acc, u) => acc + u.topics.length, 0) ?? 0;
 
             return (
               <div
                 key={subject.slug}
-                className={`flex flex-col justify-between rounded-2xl border ${subject.border} bg-gradient-to-br ${subject.color} p-5 shadow-sm transition-all hover:shadow-md`}
+                className={`flex flex-col justify-between rounded-2xl border ${visual.border} bg-gradient-to-br ${subject.color} p-5 shadow-sm transition-all hover:shadow-md`}
               >
                 <div>
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <span className="text-3xl">{subject.icon}</span>
+                      <span aria-hidden="true" className={`text-3xl leading-none ${visual.text}`}>{visual.glyph}</span>
                       <div>
                         <h3 className="font-bold text-foreground text-lg">{subject.name}</h3>
                         <p className="text-xs text-muted-foreground">
