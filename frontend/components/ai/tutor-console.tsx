@@ -20,6 +20,7 @@
  */
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Send,
@@ -41,6 +42,7 @@ import {
   Languages,
   BookOpen,
   ArrowDown,
+  ArrowRight,
 } from "lucide-react";
 import {
   streamChat,
@@ -522,9 +524,10 @@ export function TutorConsole({
 }: {
   initialConsole?: "nepali" | "grammar";
 } = {}) {
-  const { user } = useSession();
+  const { user, isLoading } = useSession();
   const router = useRouter();
   const isLoggedIn = !!user;
+  const isProUser = !isLoading && !!user && ((user as { plan?: string }).plan === "plus" || (user as { plan?: string }).plan === "pro" || isOwnerEmail(user.email));
   // Owner coin gate (live): OFF → chat is free, so an empty pool must not lock.
   const coinGateEnabled = useCoinGateEnabled();
   const freeMode = coinGateEnabled === false;
@@ -1032,6 +1035,22 @@ export function TutorConsole({
     }
     return -1;
   })();
+
+  if (isLoading) return null;
+  if (!isProUser) {
+    return (
+      <div className="flex h-full w-full flex-col items-center justify-center bg-card p-6 text-center">
+        <AlertCircle className="mb-3 h-10 w-10 text-amber-500" />
+        <h3 className="mb-1 text-lg font-bold">Pro &amp; Plus only</h3>
+        <p className="mb-4 text-sm text-muted-foreground max-w-xs mx-auto">
+          The AI chat widget is a Pro/Plus feature. Upgrade your plan to keep using Veer.
+        </p>
+        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:bg-primary/90 transition-colors">
+          Upgrade plan <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="flex h-full min-h-screen sm:min-h-[600px] flex-col overflow-hidden bg-card">

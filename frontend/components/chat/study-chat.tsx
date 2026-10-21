@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useRef, useEffect, useCallback } from "react";
 import {
   Bot,
@@ -12,6 +13,7 @@ import {
   ArrowRight,
   History,
   Wand2,
+  AlertCircle,
 } from "lucide-react";
 import {
   chat,
@@ -29,6 +31,7 @@ import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { isOwnerEmail } from "@/lib/owner";
 
 const SUGGESTIONS = [
   { icon: BookOpen, label: "Explain photosynthesis simply", text: "Explain photosynthesis simply, with why plants need it." },
@@ -48,8 +51,9 @@ const STUDY_THINKING_LINES = [
 ];
 
 export function StudyChat({ compact = false }: { compact?: boolean }) {
-  const { user } = useSession();
+  const { user, isLoading } = useSession();
   const isLoggedIn = !!user;
+  const isProUser = !isLoading && !!user && ((user as { plan?: string }).plan === "plus" || (user as { plan?: string }).plan === "pro" || isOwnerEmail(user.email));
   const [messages, setMessages] = useState<AIChatMessage[]>([
     { role: "system", content: PLATFORM_SYSTEM_PROMPT },
   ]);
@@ -215,6 +219,22 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       sendMessage();
     }
   };
+
+  if (isLoading) return null;
+  if (!isProUser) {
+    return (
+      <div className="flex h-full w-full flex-col items-center justify-center bg-card p-6 text-center">
+        <AlertCircle className="mb-3 h-10 w-10 text-amber-500" />
+        <h3 className="mb-1 text-lg font-bold">Pro &amp; Plus only</h3>
+        <p className="mb-4 text-sm text-muted-foreground max-w-xs mx-auto">
+          The AI chat widget is a Pro/Plus feature. Upgrade your plan to keep using Veer.
+        </p>
+        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:bg-primary/90 transition-colors">
+          Upgrade plan <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="flex h-[calc(100vh-9rem)] flex-col rounded-2xl border border-border bg-card overflow-hidden">
