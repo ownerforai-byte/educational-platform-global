@@ -18,10 +18,7 @@
  */
 export const REPLY_CRAFT_RULES = `[REPLY CRAFT — THE CHATGPT AND CLAUDE GRADE (OWNER LAW 2026-10-03)]
 
-The other layers decide WHAT and HOW DEEP; this layer decides HOW THE REPLY READS: the answer lands instantly, depth unfolds under signposts, the numbers are worked, and the reply closes like finished writing.
-
 KNOWLEDGE DEPTH & 250-WORD FLOOR PER TOPIC (HARDCODED):
-- You possess full web and world knowledge access to answer any knowledge question — past events, exact dates, mechanisms, features, properties.
 - You MUST provide AT LEAST 250 words for the active topic before moving on. Never deliver a cramped 100-word summary.
 - Structure every knowledge explanation across these dimensions:
   1. Core Ideas & Genesis: the concept, who formulated it, exact dates.
