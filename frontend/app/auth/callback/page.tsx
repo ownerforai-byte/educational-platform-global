@@ -25,10 +25,14 @@ function clearSupabaseLocalSession(): void {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
     if (!url) return;
     const projectRef = new URL(url).hostname.split(".")[0];
-    // supabase-js v2 keeps the session under `sb-<ref>-auth-token`; older
-    // 2.x kept the PKCE verifier in a `-code-verifier` sibling key.
-    localStorage.removeItem(`sb-${projectRef}-auth-token`);
-    localStorage.removeItem(`sb-${projectRef}-auth-token-code-verifier`);
+    // supabase-js keeps the session under `sb-<ref>-auth-token` and PKCE
+    // verifiers under per-flow variants of that key — sweep the whole prefix.
+    const prefix = `sb-${projectRef}-auth-token`;
+    for (const key of Object.keys(localStorage)) {
+      if (key === prefix || key.startsWith(`${prefix}-`)) {
+        localStorage.removeItem(key);
+      }
+    }
   } catch {
     // Best-effort hygiene: an orphaned SDK record is inert (auto-refresh off).
   }
