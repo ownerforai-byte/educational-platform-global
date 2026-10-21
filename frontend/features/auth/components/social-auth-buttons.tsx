@@ -48,6 +48,16 @@ interface SocialAuthButtonsProps {
   onError?: (error: string) => void;
 }
 
+/**
+ * Facebook sign-in is temporarily HIDDEN from the login/signup pages because
+ * the Supabase ⇄ Meta "exchange external code" step was failing (client
+ * id/secret + redirect-URI mismatch across the two Meta apps). The flow, routes
+ * and this button are all still in place — flip this flag back to `true` to
+ * re-show the Facebook button the moment the Meta app credentials are fixed.
+ * Google is unaffected and stays visible.
+ */
+const SHOW_FACEBOOK = false;
+
 export function SocialAuthButtons({
   mode = "login",
   disabled = false,
@@ -123,22 +133,24 @@ export function SocialAuthButtons({
         </span>
       </Button>
 
-      <Button
-        type="button"
-        variant="outline"
-        className="h-11 w-full rounded-xl text-sm font-semibold transition-all hover:bg-muted/70 active:scale-[0.99]"
-        onClick={() => handleSocialSignIn("facebook")}
-        disabled={disabled || socialLoading !== null}
-      >
-        {socialLoading === "facebook" ? (
-          <Loader2 className="h-4 w-4 animate-spin text-[#1877F2]" />
-        ) : (
-          <FacebookIcon className="h-4 w-4" />
-        )}
-        <span>
-          {socialLoading === "facebook" ? "Connecting to Facebook…" : `${actionText} with Facebook`}
-        </span>
-      </Button>
+      {SHOW_FACEBOOK && (
+        <Button
+          type="button"
+          variant="outline"
+          className="h-11 w-full rounded-xl text-sm font-semibold transition-all hover:bg-muted/70 active:scale-[0.99]"
+          onClick={() => handleSocialSignIn("facebook")}
+          disabled={disabled || socialLoading !== null}
+        >
+          {socialLoading === "facebook" ? (
+            <Loader2 className="h-4 w-4 animate-spin text-[#1877F2]" />
+          ) : (
+            <FacebookIcon className="h-4 w-4" />
+          )}
+          <span>
+            {socialLoading === "facebook" ? "Connecting to Facebook…" : `${actionText} with Facebook`}
+          </span>
+        </Button>
+      )}
     </div>
   );
 }
