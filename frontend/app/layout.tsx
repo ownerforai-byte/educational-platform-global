@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { StarField } from "@/components/theme/star-field";
 import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { CreditProvider } from "@/features/credits";
@@ -10,9 +9,7 @@ import { RouteScrollReset } from "@/components/navigation/route-scroll-reset";
 import { OfflineBanner } from "@/components/pwa/offline-banner";
 import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-guard";
 import { DevContrastAudit } from "@/lib/color-contrast";
-import { AIWidget } from "@/components/layout/ai-widget";
 import { FocusTimer } from "@/components/r1/focus-timer";
-import { SiteWelcome } from "@/components/layout/site-welcome";
 
 const THEME_BOOTSTRAP = `(function(){try{var c=document.documentElement,s=localStorage.getItem("neb-theme"),t=s||"system",m={light:0,sepia:0,system:window.matchMedia("(prefers-color-scheme: dark)").matches?1:0,dark:1,cyberpunk:1,emerald:1,nord:1,amber:1,oled:1,nebula:1};if(!(t in m))t="system";var d=!!m[t],n=navigator.connection,l=localStorage.getItem("neb-lite-mode");if(l===null)l=String(!!(n&&(n.saveData||n.effectiveType==="2g"||n.effectiveType==="slow-2g")));c.classList.add(d?"dark":"light",t);c.dataset.theme=t;c.dataset.lite=l;c.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
 
@@ -57,7 +54,6 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased">
         <QueryProvider>
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
-            <StarField />
             <AuthProvider>
               <CreditProvider>
                 <RawEventRejectionGuard />
@@ -68,16 +64,8 @@ export default function RootLayout({
                 {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
                 {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
                 {children}
-                {/* Floating AI chat — the full chat lives in its own panel (owner rule):
-                    history, colorful typing dots and the green live dot all ride along. */}
-                <AIWidget />
-                {/* R1 focus timer — sits above the AI widget, owner/granted only
-                    (renders null for everyone else). */}
+                {/* R1 focus timer — available only to the owner and R1-granted accounts. */}
                 <FocusTimer />
-                {/* Site-wide greeting — greets every visitor (public or
-                    signed-in) once when they open the site, then removes
-                    itself after 5 seconds. */}
-                <SiteWelcome />
               </CreditProvider>
             </AuthProvider>
           </ThemeProvider>

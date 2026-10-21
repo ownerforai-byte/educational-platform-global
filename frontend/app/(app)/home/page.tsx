@@ -1,20 +1,23 @@
-import { HomeAudience } from "@/components/home/home-audience";
+import type { Metadata } from "next";
 import { HomeIntroduction } from "@/components/home/home-introduction";
+import { HomeSubjectRails } from "@/components/home/home-subject-rails";
 import { HomeFeaturesSparkGate } from "@/components/home/home-features-spark-gate";
 
-export const metadata = {
-  title: "Study workspace | Ravikisan's Platform",
-  description: "Study resources for NEB Class 11 and 12: subject notes, past papers, formula sheets and interactive labs. An approved account is required; access depends on your plan.",
+export const metadata: Metadata = {
+  title: "Study | Ravikisan's Platform",
+  description:
+    "Curriculum-aligned study tools for NEB Class 11 and 12: notes, past papers, formula sheets and interactive science resources.",
 };
 
 export default function HomePage() {
   return (
-    <HomeAudience
-      member={
-        <HomeFeaturesSparkGate>
+    <div className="min-h-screen bg-background text-foreground">
+      <HomeFeaturesSparkGate>
+        <>
           <HomeIntroduction />
-        </HomeFeaturesSparkGate>
-      }
-    />
+          <HomeSubjectRails />
+        </>
+      </HomeFeaturesSparkGate>
+    </div>
   );
 }

@@ -8,7 +8,6 @@ import {
   Brain,
   Target,
   Trophy,
-  Search,
   ArrowRight,
   Sparkles,
   GraduationCap,
@@ -21,72 +20,11 @@ interface HomeCommandCenterProps {
   totalDerivations: number;
 }
 
-const QUICK_SEARCH_ITEMS = [
-  { label: "Modern Periodic Table (118 Elements & CEE MCQs)", href: "/periodic-table", category: "Chemistry Tool" },
-  { label: "Physics 3D Mechanics Suite", href: "/lab/ph-3d-mechanics-i", category: "Physics Lab" },
-  { label: "Chemistry Molecular Builder 3D", href: "/lab/molecular-builder", category: "Chemistry Lab" },
-  { label: "Biology 3D Cell Anatomy", href: "/lab/bio-3d-cell", category: "Biology Lab" },
-  { label: "Math Equation Solver", href: "/lab/equation-solver", category: "Math Lab" },
-  { label: "Veer Quiz Generator", href: "/ai-quiz", category: "Assessment" },
-  { label: "NEB Board Exam Countdown", href: "/exam-countdown", category: "Schedule" },
-  { label: "Mathematical Theorems & Proofs", href: "/theorems", category: "Rigor" },
-  { label: "Physics & Chemistry Derivations", href: "/derivations", category: "Rigor" },
-  { label: "Numerical Physics Mastery", href: "/knowledge/numerical-physics", category: "Knowledge" },
-  { label: "Numerical Chemistry Calculations", href: "/knowledge/numerical-chemistry", category: "Knowledge" },
-  { label: "Classic Lessons Library (Full Chapters)", href: "/lessons", category: "Knowledge" },
-  { label: "Loksewa Aayog Preparation", href: "/loksewa", category: "Competitive" },
-  { label: "World Knowledge & Current Affairs", href: "/world-knowledge", category: "General" },
-  { label: "Class 11 Complete Notes", href: "/class-11-notes", category: "Curriculum" },
-  { label: "Cell Organelles 3D Explorer (All 13 Organelles)", href: "/lab/bio-3d-organelles", category: "Biology 3D" },
-  { label: "Plant & Animal Eukaryotic Cell 3D Ultrastructure", href: "/lab/bio-3d-cell", category: "Biology 3D" },
-  { label: "Interactive Science Graph Bank", href: "/graphs", category: "STEM" },
-  { label: "Visual Mindmaps Library", href: "/mindmap", category: "STEM" },
-  { label: "Curriculum Levels & Class Tracks", href: "/levels", category: "Curriculum" },
-  { label: "Official NEB Subject Syllabus", href: "/syllabus", category: "Curriculum" },
-];
-
 export function HomeCommandCenter({
   totalTheorems,
   totalDerivations,
 }: HomeCommandCenterProps) {
-  const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<"all" | "class11" | "class12" | "entrance" | "stem">("all");
-  const inputRef = React.useRef<HTMLInputElement | null>(null);
-
-  // The shortcut badge should tell the truth on the visitor's own machine:
-  // the handler below fires on Ctrl+K *or* Cmd+K, so a Windows user should
-  // not be told to press a key that is not there. Decided after mount so the
-  // server render and the first client paint still agree (no hydration
-  // mismatch) — it starts at the Windows/Linux label, which is also the
-  // right fallback for anything we cannot identify.
-  const [isMacShortcut, setIsMacShortcut] = useState(false);
-
-  React.useEffect(() => {
-    const probe = `${window.navigator.platform ?? ""} ${window.navigator.userAgent ?? ""}`;
-    setIsMacShortcut(/mac|iphone|ipad|ipod/i.test(probe));
-  }, []);
-
-  const shortcutLabel = isMacShortcut ? "⌘K" : "Ctrl K";
-  const shortcutHint = isMacShortcut ? "⌘ + K" : "Ctrl + K";
-
-  React.useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
-        e.preventDefault();
-        inputRef.current?.focus();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  const filteredItems = searchQuery.trim()
-    ? QUICK_SEARCH_ITEMS.filter(
-        (item) =>
-          item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.category.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : [];
 
   return (
     <div className="relative border-b border-border/60 bg-gradient-to-b from-background via-muted/20 to-background pt-12 pb-12 overflow-hidden">
@@ -114,61 +52,6 @@ export function HomeCommandCenter({
             The complete educational platform: interactive 3D science labs, computational solvers,
             step-by-step theorem proofs, verified derivations, Veer quizzes, and curriculum-aligned notes across all 6 NEB subjects.
           </p>
-
-          {/* Quick Smart Search */}
-          <div className="relative w-full max-w-xl mt-3">
-            <div className="relative flex items-center">
-              <Search className="absolute left-4 h-4 w-4 text-muted-foreground pointer-events-none" />
-              <input
-                ref={inputRef}
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                aria-label="Search labs, subjects, theorems, calculators and notes"
-                placeholder={`Jump to any lab, subject, theorem, calculator, or note... (${shortcutHint})`}
-                className="w-full rounded-2xl border border-border/70 bg-card/90 py-3.5 pl-11 pr-20 text-sm text-foreground placeholder:text-muted-foreground/70 shadow-lg backdrop-blur-md focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-              />
-              <div className="absolute right-3 flex items-center gap-1.5">
-                {searchQuery ? (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="text-xs text-muted-foreground hover:text-foreground px-2 py-0.5 rounded bg-muted"
-                  >
-                    Clear
-                  </button>
-                ) : (
-                  <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 rounded border border-border/80 bg-muted/60 text-[10px] font-mono text-muted-foreground">
-                    {shortcutLabel}
-                  </kbd>
-                )}
-              </div>
-            </div>
-
-            {/* Live Search Results Dropdown */}
-            {filteredItems.length > 0 && (
-              <div className="absolute left-0 right-0 top-full mt-2 max-h-72 overflow-y-auto rounded-2xl border border-border/70 bg-card/95 p-2 shadow-2xl backdrop-blur-xl z-50">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground px-3 py-1.5">
-                  Matching Modules ({filteredItems.length})
-                </div>
-                {filteredItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setSearchQuery("")}
-                    className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs px-2 py-0.5 rounded-md bg-muted text-muted-foreground font-mono">
-                        {item.category}
-                      </span>
-                      <span className="font-medium">{item.label}</span>
-                    </div>
-                    <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" />
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
 
           {/* Academic Stream Switcher Tabs */}
           <div className="pt-2 flex items-center justify-center">

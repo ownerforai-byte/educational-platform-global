@@ -1,6 +1,12 @@
-import { redirect } from "next/navigation";
+import type { Metadata } from "next";
+import { HomePublic } from "@/components/home/home-public";
 
-/** The website home is stable for every role. R1 remains available in navigation. */
-export default function RootEntry() {
-  redirect("/home");
+export const metadata: Metadata = {
+  title: "Ravikisan's Platform | NEB Class 11 & 12",
+  description:
+    "Curriculum-aligned study resources for NEB Class 11 and 12 students in Nepal. Request an account to access the study library.",
+};
+
+export default function RootPage() {
+  return <HomePublic />;
 }

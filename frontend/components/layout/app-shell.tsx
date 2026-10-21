@@ -7,7 +7,7 @@ import { PanelLeftClose, PanelLeftOpen, Atom, Bell, Lock } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
-import { QuickAccessBar } from "./quick-access-bar";
+import { MobileQuickNav } from "./mobile-quick-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { R1Shortcut } from "./r1-shortcut";
@@ -24,14 +24,9 @@ interface AppShellProps {
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const pathname = usePathname();
   const isChatRoom = pathname === "/chat" || pathname.startsWith("/chat/");
-  // Auth state drives the periodic-table header lock (owner request 2026-10-17:
-  // "lock for everything (also the periodic table in header)").
   const { user } = useSession();
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  // Header stays permanently visible (owner request: pin toggle removed).
-  // The auto-hide sensor, reveal tab, hover state, and nav-pinned
-  // preference are gone — no auto-hide state remains.
 
   useEffect(() => {
     try {
@@ -48,13 +43,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
     try { localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed)); } catch { /* Optional preference. */ }
   }, [sidebarCollapsed, preferencesLoaded]);
 
-
-
-  // /chat and /chat/* are the only app routes that bypass this shell entirely
-  // (full-bleed chat room, no sidebar/footer). They therefore skip the floating
-  // <BackButton /> below, so the chat header renders an INLINE one itself —
-  // see TutorConsole's header. Keep these two lists in sync: a route added
-  // here must get its own back affordance, or it becomes a dead end.
+  // Chat uses a full-screen layout; its own header provides the back control.
   if (isChatRoom) {
     return (
       <div className="flex h-screen w-screen flex-col overflow-hidden bg-background">
@@ -79,24 +68,10 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
-      {/* ── Header: left navigation, centered search, right actions ── */}
       <header
-        /* SOLID, not translucent — owner report 2026-10-04: "while scrolling it
-           leaks a little". This is the third round of the same leak: /70 let the
-           footer read straight through the bar, /95 still left a 5% ghost of
-           whatever scrolled beneath it, and a 24px blur only smears that ghost
-           — the eye catches it anyway because it MOVES while you scroll. Only
-           opacity hides what is behind; a blur just defocuses it. So the layer
-           is opaque from the first screen all the way down to the footer, and
-           backdrop-blur goes with it: it can only filter what this opaque
-           background already covers. The price is the nebula hint, and it is
-           worth paying to never show content through the nav. */
         className="pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background translate-y-0"
       >
-        {/* Three anchored columns keep the global search centered while the
-            left navigation and right-side actions remain clearly separated. */}
         <div className="grid min-h-12 md:min-h-14 grid-cols-[auto_minmax(0,1fr)] md:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-2 px-4 md:px-6 py-1.5">
-          {/* Left: mobile hamburger + desktop collapse toggle + logo */}
           <div className="flex items-center gap-2 min-w-0">
             <MobileNav />
 
@@ -122,22 +97,18 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
                 <span className="text-sm font-extrabold text-white">R</span>
               </div>
+              <span className="font-semibold text-sm tracking-tight text-foreground">Ravikisan&apos;s Platform</span>
             </Link>
           </div>
 
-          {/* Center: responsive global search (Ctrl/⌘+K uses this engine) */}
           <div className="col-span-2 row-start-2 flex min-w-0 justify-center px-1 md:col-span-1 md:col-start-2 md:row-start-1 md:px-4">
             <GlobalSearch />
           </div>
 
-          {/* Right: shortcuts, notifications, tools, credits and account */}
           <div className="col-start-2 row-start-1 flex items-center justify-end gap-1.5 shrink-0 md:col-start-3">
 
             <R1Shortcut />
 
-            {/* Notifications — bell opens the live notifications center (/notifications).
-                Kept visible on every breakpoint so mobile users can always
-                reach their notifications. */}
             <Link
               href="/notifications"
               className="relative inline-flex items-center justify-center h-8 w-8 rounded-xl border border-border/80 bg-card hover:bg-muted/60 text-muted-foreground hover:text-foreground transition-all shadow-sm shrink-0"
@@ -173,15 +144,12 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Suspense>
           </div>
         </div>
-        {/* Quick access — tier-gated pills below the search bar (owner 2026-10-17). */}
-        <QuickAccessBar />
-      <MobileQuickNav />
+        <MobileQuickNav />
       </header>
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}
       <div className="flex flex-1 relative">
-        {/* Mobile overlay */}
-        {/* Desktop sidebar */}
+        {/* Desktop navigation */}
         <aside
           className={`
             hidden lg:block
@@ -196,7 +164,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <SidebarNavigation collapsed={sidebarCollapsed} />
         </aside>
 
-        {/* Main content — auto-fits, no max-width constraint */}
         <main id="main-content" tabIndex={-1} className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8 focus:outline-none">
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav aria-label="Breadcrumbs" className="mb-4 flex flex-wrap text-sm text-muted-foreground">
@@ -229,14 +196,12 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
         </main>
       </div>
 
-      {/* ── Site Footer ── */}
+      {/* Site footer */}
       <Footer />
 
-      {/* ── Floating buttons ─────────────────── */}
-      {/* Back Button — bottom-right (hidden on home) */}
+      {/* Back navigation */}
       <BackButton />
     </div>
   );
 }
-
 

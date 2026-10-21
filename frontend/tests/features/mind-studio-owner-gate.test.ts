@@ -77,9 +77,8 @@ describe("Diagram Hub route layout — gate now owns the lock", () => {
   it("keeps the Diagram Hub launcher off the home page (only the rails remain)", () => {
     const home = read("app/(app)/home/page.tsx");
     expect(home).not.toContain("<HomeMindStudio />");
-    // 2026-10-16: the client audience switcher must not carry it either.
-    const audience = read("components/home/home-audience.tsx");
-    expect(audience).not.toContain("<HomeMindStudio />");
+    // Home content remains a focused study workspace; no studio launcher.
+    expect(home).not.toContain("<HomeMindStudio />");
     // The OwnerOnly helper itself still exists for the owner console and rails.
     expect(read("features/auth/owner-only.tsx")).toContain("isOwnerUser(user)");
     // The rails stay behind the Spark gate (owner + Pro see them, others get the lock).

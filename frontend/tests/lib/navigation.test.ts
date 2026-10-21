@@ -93,4 +93,14 @@ describe("navigation menu", () => {
     expect(sidebar).not.toMatch(/const\s+\w*[Ii]tems\s*:\s*NavItem\[\]\s*=/);
     expect(drawer).not.toMatch(/const\s+\w*[Ss]ections\s*:\s*\w*Section\[\]\s*=/);
   });
+
+  it("keeps one quick-items strip and removes the broken tier-aware duplicate", () => {
+    const read = (p: string) => readFileSync(path.resolve(p), "utf8");
+    const shell = read("components/layout/app-shell.tsx");
+    const mobileQuickNav = read("components/layout/mobile-quick-nav.tsx");
+
+    expect(shell.match(/<MobileQuickNav\s*\/>/g)).toHaveLength(1);
+    expect(shell).not.toContain("QuickAccessBar");
+    expect(mobileQuickNav).toContain("QUICK_LINKS");
+  });
 });

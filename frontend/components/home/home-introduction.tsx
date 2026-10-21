@@ -23,8 +23,8 @@ export function HomeIntroduction() {
         <p className="text-xs font-semibold uppercase tracking-widest text-primary">NEB Class 11 &amp; 12</p>
         <h1 id="home-title" className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Your study workspace</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-          Choose your class, review a topic, or prepare for your next exam.
-          Your notes, practice questions and study tools are organized here.
+          Choose a class, review a topic, or prepare for an exam. The study
+          library brings notes, practice questions and learning tools together.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link href="/subjects" className={`inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 ${linkFocus}`}>

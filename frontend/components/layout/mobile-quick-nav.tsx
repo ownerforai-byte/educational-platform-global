@@ -5,13 +5,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 /**
- * Hardcoded mobile quick-nav strip — the phone answer to "hardcode the nav bar".
- *
- * Deliberately static: a fixed list of the highest-traffic destinations,
- * rendered directly under the sticky header on < lg screens. No NAV_SECTIONS
- * import, no owner gating, no localStorage — the hamburger drawer remains the
- * full menu, this strip is the always-visible fast path (home / search /
- * class hubs / subjects / labs / quiz / AI chat).
+ * Mobile quick-nav strip with the highest-traffic destinations.
+ * The hamburger drawer remains the full menu; this is the compact fast path.
  */
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
@@ -32,10 +27,6 @@ export function MobileQuickNav() {
       ? pathname === "/" || pathname === "/home"
       : pathname.startsWith(href);
 
-  /* Solid for the same reason the bar above it is: /90 let 10% of the
-     scrolling page through, which was the worst of the three slabs — this
-     strip sits directly under the header, so its leak reads as the nav bar
-     itself bleeding. */
   return (
     <nav
       aria-label="Quick navigation"

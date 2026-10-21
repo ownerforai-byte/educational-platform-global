@@ -41,7 +41,7 @@ import {
 } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { NOTICE_COPY } from "@/features/credits/constants";
-import { ACCESS_NOTICE } from "@/components/home/home-public";
+import { ACCESS_NOTICE } from "./access-notice";
 
 /**
  * Routes inside the shell that stay reachable WITHOUT an approved account.
