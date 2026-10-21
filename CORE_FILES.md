@@ -39,6 +39,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
 | `frontend/components/layout/app-shell.tsx` | Main UI layout container and responsive navigation shell. |
 | `frontend/lib/note-routes.ts` | Canonical routing logic for notes, mapping topics and legacy paths to current URLs. |
+| `frontend/app/auth/callback/page.tsx` | OAuth callback: exchanges provider code, sets app session cookies, drops supabase-js local records. |
 
 ### B. Platform Foundations & System State
 | File | Role |
