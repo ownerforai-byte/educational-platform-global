@@ -7,7 +7,7 @@ import { describe, expect, test } from "vitest";
  *
  * Owner policy 2026-10-13 supersedes the 2026-10-05 owner-only gate on
  * POST /api/ai: chat is open to every signed-in tier and metered by AI sparks
- * (guest 1 / member 7 / plus 25 / pro 50 per UTC day, owner unlimited). The
+ * (guest 3 / member 7 / plus 25 / pro 50 per UTC day, owner unlimited).
  * remaining chat routes keep the owner-email allowlist, and the quiz
  * generator stays open (students keep /ai-quiz via /api/ai/generate-questions).
  */
@@ -21,11 +21,13 @@ describe("AI owner gate (source pins)", () => {
     expect(src).toContain("consumeUserSlot");
   });
 
-  test("POST /api/ai/guest requires a session AND an owner email", () => {
+  test("POST /api/ai/guest is public but rate-limited and quota-enforced", () => {
     const src = read("../src/api/ai-guest.ts");
-    expect(src).toMatch(
-      /router\.post\("\/", rateLimit, requireAuth, requireOwnerEmail/,
-    );
+    expect(src).toMatch(/router\.post\("\/", rateLimit, async/);
+    expect(src).not.toContain("requireAuth");
+    expect(src).not.toContain("requireOwnerEmail");
+    expect(src).toContain("consumeGuestSlot(ip, deviceId)");
+    expect(src).toContain("GUEST_DAILY_LIMIT");
   });
 
   test("POST /api/ai/enhance requires an owner email", () => {

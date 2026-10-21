@@ -10,7 +10,7 @@ import {
   aiSparkTierFor,
 } from "../utils/aiSpark";
 // (Owner policy 2026-10-13: chat is open to every tier and metered by AI
-// sparks — guest 1 / member 7 / plus 25 / pro 50 per UTC day, owner unlimited.
+// sparks — guest 3 / member 7 / plus 25 / pro 50 per UTC day, owner unlimited.
 // The 2026-10-05 owner-only gate on this route is superseded by that rule.)
 import { logServerError, newErrorId } from "../middleware/errors";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
@@ -41,7 +41,7 @@ router.get("/providers", (_req: Request, res: Response) => {
  * GET /api/ai/spark — today's AI-spark usage for the signed-in member.
  * Powers the chat-top badge and the profile "Plan & AI spark" card.
  * `limit: null` means unlimited (owner); guests draw from the separate guest
- * pool (1/day) and are not signed in, so they have no row here.
+ * pool (3/day) and are not signed in, so they have no row here.
  */
 router.get("/spark", requireAuth, async (req: Request, res: Response) => {
   try {

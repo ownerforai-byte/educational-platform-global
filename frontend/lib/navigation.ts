@@ -132,7 +132,7 @@ const stemAndRigorItems: NavItem[] = [
 
 const toolsItems: NavItem[] = [
   // 2026-10-13: the Veer entries are open to every tier — chat is metered by
-  // AI sparks (guest 1 / member 7 / plus 25 / pro 50 / owner unlimited per
+  // AI sparks (guest 3 / member 7 / plus 25 / pro 50 / owner unlimited per
   // day), not hidden behind the owner allowlist.
   { href: "/ai", label: "AI Console", icon: Bot },
   { href: "/chat", label: "Veer Study Assistant", icon: Sparkles },

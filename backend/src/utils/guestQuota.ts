@@ -7,7 +7,7 @@ import { isProductionEnv } from "../config/env";
  * Server-side daily guest chat quota (owner policy 2026-09-26, hardened
  * 2026-09-26: "a user cannot refresh an exhausted quota"):
  *
- *   2 messages per guest per UTC day, enforced under TWO independent
+ *   3 messages per guest per UTC day, enforced under TWO independent
  *   identities — BOTH must have remaining allowance:
  *
  *     1. DEVICE  — an HttpOnly, JS-invisible cookie minted by the server
@@ -34,14 +34,11 @@ import { isProductionEnv } from "../config/env";
 
 /**
  * Daily guest message allowance (the guest "credit pool").
- * HARDCODED 2026-09-27 (owner): env override removed — no config, restart
- * or refresh can raise it mid-day; the pool refills only at UTC midnight.
- * Owner 2026-10-01: FREE TRIAL — each guest gets 1 free message per day,
- * then sign-in is required. The consume path keeps the full machinery
- * (keys, CAS, rollback) so the limit is a one-constant flip, never a
- * rewrite: 0 here would mean members-only, 2+ restores the old pool.
+ * HARDCODED: no environment override, client refresh, or new tab can raise
+ * the limit during a UTC day. The DB-backed IP + HttpOnly device identities
+ * refill only at UTC midnight.
  */
-export const GUEST_DAILY_LIMIT = 1;
+export const GUEST_DAILY_LIMIT = 3;
 
 /** HttpOnly device-identity cookie (server-minted, never page-readable). */
 export const GUEST_COOKIE_NAME = "neb-gid";
@@ -145,8 +142,8 @@ function memRollback(key: string): void {
 // ── Persistent quota (guest_chat_usage) ─────────────────────────────────────
 
 /**
- * CAS consume on ONE key, parameterised on the limit (so tests can exercise
- * the machinery while the live policy constant stays 0).
+ * CAS consume on ONE key, parameterised on the limit so tests can exercise
+ * the quota machinery with limits other than the production value.
  */
 
 /** Consume ONE message on ONE identity key against an explicit limit. */
@@ -246,10 +243,8 @@ export async function consumeGuestSlot(
   ip: string,
   deviceId?: string | null,
 ): Promise<GuestSlotResult> {
-  // Owner 2026-10-01: guests get ZERO messages — chat requires an account.
-  // Answered before any key is read: no DB round-trips, no cookie writes,
-  // nothing for the daily reset to bring back (the limit is the rule now,
-  // not a countdown).
+  // A non-positive hardcoded limit disables public chat without touching the
+  // quota store; the production policy is three messages per UTC day.
   if (GUEST_DAILY_LIMIT <= 0) {
     return { status: "limited", remaining: 0 };
   }
@@ -258,9 +253,8 @@ export async function consumeGuestSlot(
 
 /**
  * The metered consume path, parameterised on the limit. Exists so tests can
- * drive the full identity + CAS + rollback machinery while the live policy
- * stays `GUEST_DAILY_LIMIT = 0` — flip the constant and every branch below
- * becomes the production behavior again, unchanged.
+ * drive the full identity + CAS + rollback machinery with alternate limits;
+ * production uses the hardcoded `GUEST_DAILY_LIMIT` above.
  */
 export async function consumeGuestSlotWithLimit(
   ip: string,

@@ -40,6 +40,7 @@ vi.mock("../src/api/resources", async () => {
 });
 
 import aiGenerateRoutes from "../src/api/ai-generate";
+import aiGuestRoutes from "../src/api/ai-guest";
 import biologyRoutes from "../src/api/biology";
 import { createApp } from "../src/app";
 import { supabaseAdmin } from "../src/db/supabase";
@@ -119,6 +120,7 @@ async function startServers() {
 
   // Real routers (not stubs): verify the security hardening end to end.
   probeApp.use("/api/ai/generate-questions", aiGenerateRoutes);
+  probeApp.use("/api/ai/guest", aiGuestRoutes);
   probeApp.use("/api/biology", biologyRoutes);
 
   const probe = await listen(probeApp);
@@ -737,10 +739,27 @@ describe("auth flow", () => {
     expect(res.status).toBe(401);
   });
 
+  test("public AI chat accepts anonymous requests but enforces the hardcoded three-message quota", async () => {
+    mocked.from.mockImplementationOnce(() =>
+      makeQueryChain({ data: { count: 3 }, error: null }),
+    );
+    const res = await fetch(`${probeUrl}/api/ai/guest`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: [{ role: "user", content: "hello" }], stream: true }),
+    });
+
+    expect(res.status).toBe(402);
+    const body = await res.json();
+    expect(body.limit).toBe(3);
+    expect(body.remaining).toBe(0);
+    expect(body.error).toBe("Sign in required");
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("neb-gid="))).toBe(true);
+  });
+
   test("AI question generation is guest-quota-gated (was anonymous unlimited)", async () => {
-    // 2026-10-01: guests get a 1/day free trial (GUEST_DAILY_LIMIT = 1) — an
-    // EXHAUSTED trial must answer 402 before any AI call, no matter what any
-    // stored count says. Anonymous unlimited access stays blocked.
+    // Guests get three messages/day. An exhausted pool must answer 402 before
+    // any AI call, regardless of stored count. Anonymous chat is quota-bound.
     mocked.from.mockImplementationOnce(() =>
       makeQueryChain({ data: { count: 999_999 }, error: null }),
     );

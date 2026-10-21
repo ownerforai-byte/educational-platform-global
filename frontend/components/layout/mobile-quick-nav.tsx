@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
  */
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/search", label: "Search" },
   { href: "/class-11-notes", label: "Class 11" },
   { href: "/class-12-notes", label: "Class 12" },
   { href: "/subjects", label: "Subjects" },

@@ -13,7 +13,8 @@ const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
 /**
  * AI access policy (owner 2026-10-13: "restrict the ai spark to 1 for public,
  * 7 for member and unlimited for owner" + "create for plus and pro member
- * also like 25 and 50"). Veer chat is metered per tier by AI sparks. This
+ * also like 25 and 50"). Public guests now get three messages per day. Veer
+ * chat is metered per tier by AI sparks. This
  * REPLACES the 2026-10-05 owner-only gate (and its old source pins in
  * ai-owner-gate.test.ts) — the owner chose the open, tier-metered policy on
  * 2026-10-13.
@@ -25,8 +26,8 @@ const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
  * surface, not an owner allowlist.
  */
 describe("AI spark tier table", () => {
-  it("allowances: guest 1 · member 7 · plus 25 · pro 50 · owner unlimited", () => {
-    expect(AI_SPARK_LIMITS.guest).toBe(1);
+  it("allowances: guest 3 · member 7 · plus 25 · pro 50 · owner unlimited", () => {
+    expect(AI_SPARK_LIMITS.guest).toBe(3);
     expect(AI_SPARK_LIMITS.member).toBe(7);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
@@ -38,7 +39,7 @@ describe("AI spark tier table", () => {
   it("mirrors the backend tier table exactly", () => {
     const backend = readRoot("backend/src/utils/aiSpark.ts");
     for (const [tier, limit] of Object.entries({
-      guest: 1,
+      guest: 3,
       member: 7,
       plus: 25,
       pro: 50,
@@ -122,8 +123,15 @@ describe("Veer chat: routes stay public (metered), launcher sits under the spark
     expect(route).toContain("aiSparkIsMetered(tier)");
   });
 
-  it("the guest pool still caps public visitors at 1/day", () => {
+  it("hardcodes public chat to three messages per UTC day on client and server", () => {
     const guestQuota = readRoot("backend/src/utils/guestQuota.ts");
-    expect(guestQuota).toContain("export const GUEST_DAILY_LIMIT = 1;");
+    expect(guestQuota).toContain("export const GUEST_DAILY_LIMIT = 3;");
+    expect(read("lib/ai/guest-quota.ts")).toContain("export const GUEST_DAILY_LIMIT = 3;");
+  });
+
+  it("removes Search from the mobile quick links", () => {
+    const quickLinks = read("components/layout/mobile-quick-nav.tsx");
+    expect(quickLinks).not.toContain('{ href: "/search", label: "Search" }');
+    expect(quickLinks).toContain('{ href: "/chat", label: "AI" }');
   });
 });

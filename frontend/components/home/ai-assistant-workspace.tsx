@@ -92,7 +92,7 @@ export function AIAssistantWorkspace() {
 
       {!user && (
         <p className="mt-4 text-center text-xs text-muted-foreground">
-          Guests get {GUEST_DAILY_LIMIT} free tutor messages a day —{" "}
+          Guests get {GUEST_DAILY_LIMIT} free AI messages a day —{" "}
           <Link href="/login" className="font-semibold text-primary hover:underline">
             sign in
           </Link>{" "}

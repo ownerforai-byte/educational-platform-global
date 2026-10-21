@@ -9,7 +9,7 @@ import { isOwnerEmail } from "@/lib/owner";
  * member and unlimited for owner" plus "create for plus and pro member also
  * like 25 and 50":
  *
- *   guest (public, signed out) → 1 message / UTC day
+ *   guest (public, signed out) → 3 messages / UTC day
  *   member                     → 7 messages / UTC day
  *   plus                       → 25 messages / UTC day
  *   pro                        → 50 messages / UTC day
@@ -23,7 +23,7 @@ export type AiSparkTier = "guest" | "member" | "plus" | "plus_20" | "pro" | "own
 
 /** Daily Veer message allowance per tier (owner = unlimited). */
 export const AI_SPARK_LIMITS: Record<AiSparkTier, number> = {
-  guest: 1,
+  guest: 3,
   member: 7,
   plus: 25,
   plus_20: 25,

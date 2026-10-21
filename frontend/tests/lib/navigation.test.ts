@@ -94,7 +94,7 @@ describe("navigation menu", () => {
     expect(drawer).not.toMatch(/const\s+\w*[Ss]ections\s*:\s*\w*Section\[\]\s*=/);
   });
 
-  it("keeps one quick-items strip and removes the broken tier-aware duplicate", () => {
+  it("keeps one quick-items strip, removes the broken duplicate, and omits Search", () => {
     const read = (p: string) => readFileSync(path.resolve(p), "utf8");
     const shell = read("components/layout/app-shell.tsx");
     const mobileQuickNav = read("components/layout/mobile-quick-nav.tsx");
@@ -102,5 +102,6 @@ describe("navigation menu", () => {
     expect(shell.match(/<MobileQuickNav\s*\/>/g)).toHaveLength(1);
     expect(shell).not.toContain("QuickAccessBar");
     expect(mobileQuickNav).toContain("QUICK_LINKS");
+    expect(mobileQuickNav).not.toContain('{ href: "/search", label: "Search" }');
   });
 });

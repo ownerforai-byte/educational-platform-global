@@ -10,13 +10,11 @@
  */
 
 /**
- * Mirrors the backend's GUEST_DAILY_LIMIT. 1 since 2026-10-01 (owner): a
- * FREE TRIAL — each guest gets one free message per day, then sign-in is
- * required and every further request is answered 402 by the server. Keep
- * the backend constant and this one equal; 0 here would hard-lock the
- * composer (members-only), 2+ would show a multi-message pool.
+ * Mirrors the backend's hardcoded GUEST_DAILY_LIMIT: three free messages per
+ * guest per UTC day. This localStorage count is only a display cache; the
+ * server enforces the quota using persistent IP + HttpOnly device identities.
  */
-export const GUEST_DAILY_LIMIT = 1;
+export const GUEST_DAILY_LIMIT = 3;
 
 const DAY_KEY = "neb_ai_guest_day";
 const COUNT_KEY = "neb_ai_guest_count";

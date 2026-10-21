@@ -2,7 +2,6 @@ import { Router, Request, Response } from "express";
 import { serverError, ERROR_ID_HEADER, logServerError, newErrorId } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
-import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
@@ -19,11 +18,8 @@ import {
 import { DAILY_CREDIT_POOL } from "../utils/credits";
 import { getClientIp } from "../utils/clientIp";
 
-/**
- * Guest AI chat — DISABLED for non-owners (owner request 2026-10-05: AI under
- * owner emails only). The route now requires a session AND an allowlisted
- * owner email, so signed-out visitors get a 401 and signed-in students a 403
- * before any key is read or any quota slot is consumed.
+/** Public AI chat is available without an account, with a server-enforced
+ * three-message daily quota tied to the visitor's IP and HttpOnly device cookie.
  */
 
 const router = Router();
@@ -37,7 +33,7 @@ function getService() {
   return _service;
 }
 
-router.post("/", rateLimit, requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
+router.post("/", rateLimit, async (req: Request, res: Response) => {
   const ip = getClientIp(req);
   // Dual identity: the HttpOnly device cookie (minted here on first contact)
   // AND the IP must BOTH have quota left — clearing one never refills the
@@ -70,14 +66,14 @@ router.post("/", rateLimit, requireAuth, requireOwnerEmail, async (req: Request,
       }
     }
 
-    // ── Guest daily pool: 2 messages/day, resets at 12:00 AM (UTC) ──
+    // ── Guest daily pool: 3 messages/day, resets at 12:00 AM (UTC) ──
     const slot = await consumeGuestSlot(ip, deviceId);
     if (slot.status === "limited") {
       res.status(402).json({
         error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `You've used your ${GUEST_DAILY_LIMIT} free message for today. Sign in to keep talking to Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
+        message: `You've used all ${GUEST_DAILY_LIMIT} free messages for today. Sign in to keep talking to Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
       });
       return;
     }

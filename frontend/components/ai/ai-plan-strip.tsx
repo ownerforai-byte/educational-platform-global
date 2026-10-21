@@ -11,7 +11,7 @@ import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
 /**
  * Live plan + credit strip for the AI pages.
  *
- * Shows what this account can actually spend today — the 1-message free
+ * Shows what this account can actually spend today — the 3-message free
  * trial for guests, daily credits for signed-in students, or the PRO badge —
  * and links to /credits for the full wallet. Guest usage is mirrored from
  * the shared day-keyed store, so it resets at midnight like the server pool.
@@ -44,8 +44,8 @@ export function AiPlanStrip() {
           <span className="font-semibold text-foreground">Free trial</span>
           <span className="text-muted-foreground">
             {left > 0
-              ? `${left} free message left today · resets at midnight`
-              : "Free trial used · sign in to continue"}
+              ? `${left} free ${left === 1 ? "message" : "messages"} left today · resets at midnight UTC`
+              : "Today's free messages used · sign in to continue"}
           </span>
         </span>
         <Link
@@ -53,7 +53,7 @@ export function AiPlanStrip() {
           className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
         >
           <UserRound className="h-3.5 w-3.5" />
-          Sign in for daily credits
+          Sign in to keep chatting
         </Link>
       </div>
     );

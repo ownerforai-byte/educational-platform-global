@@ -16,10 +16,8 @@ import { setLitePoll } from "@/lib/perf/lite";
  *
  * The AI spark is a SEPARATE pool from the content spark:
  *   · AI spark — this badge, rendered ONLY at the top of the Veer chat. It is
- *     the daily Veer message allowance per tier, ENFORCED since 2026-10-13
- *     ("restrict the ai spark to 1 for public, 7 for member and unlimited
- *     for owner … create for plus and pro member also like 25 and 50"):
- *     guest 1 · member 7 · plus 25 · pro 50 · owner unlimited, per UTC day.
+ *     the daily Veer message allowance per tier: public visitors get 3/day,
+ *     members 7/day, Plus 25/day, Pro 50/day, and owners unlimited, per UTC day.
  *   · content spark — the wallet/header badge, spent only on actual
  *     note/content unlocks (see features/credits/constants.ts).
  *

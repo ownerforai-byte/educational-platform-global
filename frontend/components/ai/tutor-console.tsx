@@ -483,7 +483,7 @@ function buildStarters(mode: TutorMode): Starter[] {
   return shuffled(unique).slice(0, Math.min(count, unique.length));
 }
 
-// Daily pools: guests 5/day (shared with guest chat), signed-in 8/day.
+// Public guests get three daily messages (shared with guest chat and quizzes).
 const DAILY_CREDIT_POOL = 4;
 
 /** Rotating words shown beside the bouncing dots while a reply generates. */
@@ -800,7 +800,7 @@ export function TutorConsole({
 
       if (isGuestLimited) {
         setError(
-          "You've used your free message for today. Sign in to keep asking Veer — members get unlimited free chat and saved chat histories.",
+          "You've used all your free chat messages for today. Sign in to keep asking Veer and save your chat history.",
         );
         return;
       }
@@ -1098,10 +1098,12 @@ export function TutorConsole({
             {!isLoggedIn && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title="1 free message per day · sign in to save your chats"
+                title={`${MAX_GUEST_MESSAGES} free messages per day · sign in to save your chats`}
               >
                 <Coins className="h-3 w-3" />
-                {guestCredits > 0 ? "1 free trial message" : "Free trial used"}
+                {guestCredits > 0
+                  ? `${guestCredits} free ${guestCredits === 1 ? "message" : "messages"} today`
+                  : "Daily free pool used"}
               </span>
             )}
             {isLoggedIn && isOwner && (
@@ -1388,7 +1390,7 @@ export function TutorConsole({
       <div className="shrink-0 border-t border-border/60 bg-muted/20 px-5 sm:px-8 py-4">
         {composerLocked && (
           <p className="mb-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-[11px] font-semibold text-amber-600">
-            Your free message for today is used — sign in to continue. Your
+            Your free messages for today are used — sign in to continue. Your
             saved histories are waiting.
           </p>
         )}
@@ -1463,8 +1465,8 @@ export function TutorConsole({
           {isLoggedIn
             ? "1 credit per message · history saved to your account"
             : guestCredits > 0
-              ? "1 free message left today · try Veer, then sign in for daily credits"
-              : "Free trial used · sign in for daily credits & saved history"}
+              ? `${guestCredits} free ${guestCredits === 1 ? "message" : "messages"} left today · try Veer, then sign in for daily credits`
+              : "Today's free messages are used · sign in for daily credits & saved history"}
         </p>
       </div>
 

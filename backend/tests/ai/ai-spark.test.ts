@@ -12,8 +12,8 @@ import {
  * and pro member also like 25 and 50").
  */
 describe("AI spark tier table", () => {
-  it("daily allowances: guest 1 · member 7 · plus 25 · pro 50 · owner unlimited", () => {
-    expect(AI_SPARK_LIMITS.guest).toBe(1);
+  it("daily allowances: guest 3 · member 7 · plus 25 · pro 50 · owner unlimited", () => {
+    expect(AI_SPARK_LIMITS.guest).toBe(3);
     expect(AI_SPARK_LIMITS.member).toBe(7);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
@@ -23,7 +23,7 @@ describe("AI spark tier table", () => {
   it("reports null limits for unlimited tiers", () => {
     expect(aiSparkLimitFor("owner")).toBeNull();
     expect(aiSparkLimitFor("pro")).toBe(50);
-    expect(aiSparkLimitFor("guest")).toBe(1);
+    expect(aiSparkLimitFor("guest")).toBe(3);
   });
 
   it("resolves tiers: owner allowlist wins, then plan, then membership", () => {

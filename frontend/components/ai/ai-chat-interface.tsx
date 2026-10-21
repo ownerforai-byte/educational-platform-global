@@ -137,10 +137,9 @@ function shuffledSuggestions(): Suggestion[] {
   return bag.slice(0, 6);
 }
 
-// Guest trial: 1 free message/day. Signed-in Veer chat is FREE (owner policy
-// 2026-10-12) — the wallet only charges for note/content unlocks. Guest
-// counts come from the shared day-keyed mirror (lib/ai/guest-quota); the
-// server enforces the real numbers either way.
+// Public visitors receive three free chat messages per UTC day. Signed-in
+// Veer chat is free of content-spark charges; the server enforces the guest
+// allowance against persistent IP + HttpOnly device identities.
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
 // Rotating "work in progress" lines while the professor composes a reply —
@@ -364,8 +363,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
 
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
   // Veer chat is FREE (owner policy 2026-10-12) — the content spark wallet
-  // only charges for note/content unlocks, never for chat. The only limit
-  // left is the guest 1-message trial.
+  // only charges for note/content unlocks, never for chat. Public guests have
+  // a three-message daily quota enforced by the server.
   const isOwner = isOwnerEmail(user?.email);
   const composerLocked = isGuestLimited;
 
@@ -527,7 +526,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     if (historyState === "loading") return;
 
     if (isGuestLimited) {
-      setError("You've used your free message for today. Sign in to keep asking Veer — members get unlimited free chat and saved chat histories.");
+      setError("You've used all your free chat messages for today. Sign in to keep asking Veer and save your chat history.");
       return;
     }
 
@@ -963,8 +962,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <Coins className="h-3.5 w-3.5 text-amber-500" />
                   <span className="font-semibold">
                     {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
-                      ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free message left today`
-                      : "Free trial used · sign in to continue"}
+                      ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free ${MAX_GUEST_MESSAGES - guestCount === 1 ? "message" : "messages"} left today`
+                      : "Today's free messages are used · sign in to continue"}
                   </span>
                 </>
               )}
@@ -1013,7 +1012,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             {!isLoggedIn && (
               <span className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold">
                 <Coins className="h-3 w-3" />
-                {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0 ? "1 free trial message" : "Free trial used"}
+                {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
+                  ? `${MAX_GUEST_MESSAGES - guestCount} free ${MAX_GUEST_MESSAGES - guestCount === 1 ? "message" : "messages"} today`
+                  : "Daily free pool used"}
               </span>
             )}
             {isLoggedIn && isOwner && (
