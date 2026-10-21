@@ -13,6 +13,27 @@ function safeNext(value: string | null): string {
   return value && value.startsWith("/") && !value.startsWith("//") ? value : "/home";
 }
 
+/**
+ * Drop the supabase-js session record WITHOUT hitting its logout endpoint.
+ * `signOut({ scope: "local" })` still POSTs /auth/v1/logout — and Supabase
+ * GoTrue deletes the server-side session on any logout, killing the exact
+ * access + refresh tokens this page just handed to the app backend. The
+ * backend's own /me then 401s and a successful OAuth sign-in ends signed out.
+ */
+function clearSupabaseLocalSession(): void {
+  try {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    if (!url) return;
+    const projectRef = new URL(url).hostname.split(".")[0];
+    // supabase-js v2 keeps the session under `sb-<ref>-auth-token`; older
+    // 2.x kept the PKCE verifier in a `-code-verifier` sibling key.
+    localStorage.removeItem(`sb-${projectRef}-auth-token`);
+    localStorage.removeItem(`sb-${projectRef}-auth-token-code-verifier`);
+  } catch {
+    // Best-effort hygiene: an orphaned SDK record is inert (auto-refresh off).
+  }
+}
+
 function AuthCallbackContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -58,9 +79,10 @@ function AuthCallbackContent() {
         sessionStorage.removeItem("neb_oauth_csrf");
 
         // The app's backend validates the access token and sets its own
-        // HttpOnly session/refresh cookies. Clear local SDK state only after
-        // exchange succeeds; on failure keep OAuth details for safe retry.
-        await client.auth.signOut({ scope: "local" });
+        // HttpOnly session/refresh cookies. Drop the local SDK record only
+        // after the exchange succeeds; on failure keep OAuth details for a
+        // safe retry.
+        clearSupabaseLocalSession();
         if (!response.accessToken) throw new Error("The server did not issue an application session.");
         setStoredToken(response.accessToken);
         writeCachedSession(response.user, response.accessToken);
