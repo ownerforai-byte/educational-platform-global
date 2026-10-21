@@ -1,0 +1,36 @@
+{
+  "title": "Class 11 Chemistry — Oxidation, Reduction and Electrolysis Study Guide",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "redox-electrolysis-study-guide",
+  "topicTitle": "Oxidation and Reduction",
+  "relevance": 100,
+  "notes": [
+    "Oxidation is loss of electrons, increase in oxidation number, or classically addition of oxygen/removal of hydrogen. Reduction is electron gain, decrease in oxidation number, or removal of oxygen/addition of hydrogen. Both occur together. The reducing agent donates electrons and is oxidized; the oxidizing agent accepts electrons and is reduced.",
+    "An element in free form has oxidation number 0; a monatomic ion's number equals its charge. Fluorine is −1 in compounds. Oxygen is usually −2 (−1 in peroxides; positive in OF₂). Hydrogen is usually +1 with nonmetals and −1 in metal hydrides. Group 1 metals are +1 and Group 2 are +2. The sum of oxidation numbers equals total species charge. These are bookkeeping values, not necessarily actual charges in covalent compounds.",
+    "Oxidation-number method: identify atoms whose oxidation numbers change, calculate total increase and decrease, and choose coefficients to equalize electron loss and gain; balance remaining atoms and check charge. Half-reaction method in acid: balance non-H/O atoms, O with H₂O, H with H⁺, and charge with e⁻. In base, add OH⁻ to both sides to neutralize H⁺, form water and cancel excess water.",
+    "Electrolysis uses an external power source for a non-spontaneous redox reaction. Oxidation occurs at the anode and reduction at the cathode in all electrochemical cells. In an electrolytic cell the anode is positive and the cathode negative; cations move toward the cathode, anions toward the anode. Products depend on discharge tendencies, concentration, electrode material and whether the electrolyte is aqueous or molten.",
+    "Faraday calculations: Q = It; one mole of electrons carries F ≈ 96485 C mol⁻¹. If a product requires z electrons per particle, n = Q/(zF), and mass m = MIt/(zF). Determine z from the balanced electrode half-reaction, use current in amperes and time in seconds, and check the answer's units.",
+    "Worked check: 2.00 A for 30.0 min gives Q = 2.00 × 1800 = 3600 C. For Cu²⁺ + 2e⁻ → Cu, n(Cu)=3600/(2×96485)=0.0187 mol, or about 1.19 g with M=63.55 g mol⁻¹."
+  ],
+  "formulas": [
+    "Q = It",
+    "n(e⁻) = Q/F; F ≈ 96485 C mol⁻¹",
+    "n(product) = Q/(zF)",
+    "m = MIt/(zF)",
+    "Σ oxidation numbers = overall charge"
+  ],
+  "keyPoints": [
+    "Oxidation/reduction and the oxidizing/reducing agents are named from their electron changes.",
+    "Oxidation-number sums equal the total charge of the species.",
+    "Oxidation is at the anode and reduction at the cathode in every cell.",
+    "An electrolytic-cell anode is positive and cathode negative.",
+    "Faraday calculations use balanced half-reaction electron number z and charge in coulombs."
+  ],
+  "practiceQuestions": [
+    "Find sulfur's oxidation number in H₂SO₄ and SO₄²⁻.",
+    "Balance MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ in acidic solution by half-reactions.",
+    "Calculate the silver mass deposited from Ag⁺ by 9650 C. Use Ag = 107.9 g mol⁻¹.",
+    "Explain why molten NaCl and aqueous NaCl can produce different electrolysis products."
+  ],
+  "summary": "Track electron transfer with oxidation numbers, balance redox equations with equal electron loss and gain, and use Q = It plus the electrode half-reaction for electrolysis quantities."
+}

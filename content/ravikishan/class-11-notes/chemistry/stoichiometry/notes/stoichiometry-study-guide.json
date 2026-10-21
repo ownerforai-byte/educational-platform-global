@@ -1,0 +1,39 @@
+{
+  "title": "Class 11 Chemistry — Stoichiometry Study Guide",
+  "unitSlug": "stoichiometry",
+  "topicSlug": "stoichiometry-study-guide",
+  "topicTitle": "Stoichiometry",
+  "relevance": 100,
+  "notes": [
+    "Dalton proposed that matter consists of atoms, compounds form from atoms in fixed whole-number ratios, and chemical reactions rearrange atoms. Modern evidence refines that atoms contain subatomic particles and isotopes differ in mass. Conservation of mass requires the same number of every atom on each side of a balanced equation. The laws of definite and multiple proportions describe fixed composition and simple mass ratios in compounds.",
+    "Avogadro's law: equal volumes of gases at the same temperature and pressure contain equal numbers of molecules. Thus V ∝ n at fixed T and P. For ideal gases use PV = nRT; only use a stated molar gas volume when its reference conditions are specified. Vapour density relative to hydrogen is Mᵣ/2 for gases measured comparably.",
+    "One mole contains Nₐ = 6.022 × 10²³ specified entities. Identify whether the entities are atoms, molecules, ions or formula units. Convert mass using n = m/M, particle count using N = nNₐ, and ideal gas quantities using PV = nRT.",
+    "Balance the chemical equation by changing coefficients only, never formula subscripts. Coefficients provide mole ratios. Convert given quantities to moles, apply the equation ratio, then convert to the requested mass, volume or particle count.",
+    "For each reactant compute nᵢ/νᵢ, where nᵢ is its available amount and νᵢ its balanced-equation coefficient. The smallest ratio identifies the limiting reactant and controls the theoretical product amount; other reactants are in excess. Subtract the consumed amount to find excess remaining.",
+    "Theoretical yield is the maximum product predicted from the limiting reactant. Percentage yield = actual yield ÷ theoretical yield × 100%. For empirical formula from mass percentages, assume 100 g, convert to moles, divide by the smallest mole amount and scale to whole numbers. Molecular formula = empirical formula multiplied by n = molar mass ÷ empirical-formula mass.",
+    "Worked limiting-reactant example: 2H₂ + O₂ → 2H₂O. With 4 mol H₂ and 1 mol O₂, the ratios are 4/2 = 2 and 1/1 = 1, so O₂ limits. It forms 2 mol H₂O, consumes 2 mol H₂ and leaves 2 mol H₂.",
+    "Common checks: never choose the limiting reactant by comparing grams alone; convert to moles and divide by coefficients. Use a balanced equation, retain units and sensible significant figures, and check atom conservation. A measured yield above 100% usually signals impure/wet product or error rather than a physically possible pure-product yield."
+  ],
+  "formulas": [
+    "n = m/M",
+    "N = nNₐ; Nₐ = 6.022 × 10²³ mol⁻¹",
+    "PV = nRT",
+    "At fixed T,P: V₁/n₁ = V₂/n₂",
+    "Limiting-reactant test: minimum(nᵢ/νᵢ)",
+    "% yield = (actual yield ÷ theoretical yield) × 100%",
+    "Molecular formula = (empirical formula)ₙ; n = molar mass ÷ empirical-formula mass"
+  ],
+  "keyPoints": [
+    "Balanced-equation coefficients give mole ratios, not mass ratios.",
+    "Use the smallest n/ν value to identify the limiting reactant.",
+    "Avogadro volume ratios require equal temperature and pressure.",
+    "Mass and atoms are conserved in balanced chemical reactions."
+  ],
+  "practiceQuestions": [
+    "How many molecules are present in 9.0 g of water? Use H = 1, O = 16.",
+    "For N₂ + 3H₂ → 2NH₃, identify the limiting reactant and theoretical NH₃ yield from 2.0 mol N₂ and 3.0 mol H₂.",
+    "A reaction has a theoretical yield of 12.0 g and gives 9.0 g pure product. Find percentage yield.",
+    "A compound contains 52.2% C, 13.0% H and 34.8% O. Determine its empirical formula."
+  ],
+  "summary": "Convert measurements to moles, apply balanced-equation ratios, identify the limiting reactant, and convert the predicted amount to the requested quantity."
+}

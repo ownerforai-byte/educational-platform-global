@@ -1,0 +1,35 @@
+{
+  "title": "Class 11 Chemistry — Hydrocarbons Study Guide",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "hydrocarbons-study-guide",
+  "topicTitle": "Hydrocarbons",
+  "relevance": 100,
+  "notes": [
+    "Acyclic alkanes have formula CₙH₂ₙ₊₂ and C–C single bonds; monoalkenes have CₙH₂ₙ; monoalkynes have CₙH₂ₙ₋₂. Rings or additional unsaturation change these formulae. Alkanes are relatively unreactive; π bonds make alkenes and alkynes undergo addition.",
+    "Alkane preparations include haloalkane reduction, Wurtz coupling (two alkyl halides with sodium in dry ether), decarboxylation of sodium carboxylates with soda lime, and catalytic hydrogenation. Alkanes undergo substitution: halogenation under light/heat uses a radical chain; nitration and sulphonation require suitable conditions. Complete combustion gives CO₂ and H₂O; oxygen shortage may produce CO or carbon. Balance equations and state conditions.",
+    "Alkenes can be prepared by alcohol dehydration, haloalkane dehydrohalogenation or catalytic hydrogenation of alkynes. Electrophilic addition breaks the π bond. In usual Markovnikov addition of HX, H attaches to the carbon already bearing more H atoms. The peroxide effect is chiefly observed for HBr and gives anti-Markovnikov orientation by a radical pathway; do not generalize it to HCl or HI. Acid-catalyzed hydration produces alcohols; ozonolysis cleaves the double bond to carbonyl products after work-up.",
+    "Ethynes can be prepared from calcium carbide and water or by double dehydrohalogenation of suitable dihalides. Alkynes add H₂, HX and water, with selectivity depending on conditions. Terminal alkynes are weakly acidic because H is attached to an sp carbon; they form salts with suitable bases and precipitates with ammoniacal AgNO₃ or cuprous chloride. Internal alkynes lack this terminal H and do not give these tests.",
+    "Bromine water and alkaline KMnO₄ (Baeyer's test) are decolorized/reduced by many unsaturated compounds, but these are qualitative indications, not unique structural proof. Similar-size hydrocarbons tend to have higher boiling points as size/surface area rises; branching tends to lower boiling point. Kolbe electrolysis couples carboxylate-derived radicals at the anode; follow the exact conditions and expected product."
+  ],
+  "formulas": [
+    "Acyclic alkane: CₙH₂ₙ₊₂",
+    "Acyclic monoalkene: CₙH₂ₙ",
+    "Acyclic monoalkyne: CₙH₂ₙ₋₂",
+    "RCOONa + NaOH (soda lime, heat) → RH + Na₂CO₃ (balance for the specific R group)"
+  ],
+  "keyPoints": [
+    "Addition occurs at π bonds; substitution replaces an alkane hydrogen.",
+    "The peroxide effect is a special HBr radical case, not a general HX rule.",
+    "Only terminal alkynes give characteristic ammoniacal Ag⁺/Cu⁺ precipitate tests.",
+    "Bromine-water and Baeyer's tests indicate unsaturation but do not identify one specific compound.",
+    "Show reagents and conditions above arrows and balance full reactions."
+  ],
+  "practiceQuestions": [
+    "Write equations for methane chlorination under light and complete ethane combustion.",
+    "Predict the major product of propene + HBr with and without peroxide, explaining the distinction.",
+    "Describe a test to distinguish 1-butyne from 2-butyne and explain why it works.",
+    "Show one syllabus preparation each for an alkane, alkene and alkyne.",
+    "Explain why terminal alkynes are weakly acidic and undergo addition."
+  ],
+  "summary": "Classify the hydrocarbon first, then select reaction patterns appropriate to its bonds. State conditions and remember the limited HBr peroxide effect and terminal-alkyne tests."
+}

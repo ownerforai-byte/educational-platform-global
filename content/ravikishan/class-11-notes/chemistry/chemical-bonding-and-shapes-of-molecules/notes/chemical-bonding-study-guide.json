@@ -1,0 +1,29 @@
+{
+  "title": "Class 11 Chemistry — Chemical Bonding Study Guide",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "topicSlug": "chemical-bonding-study-guide",
+  "topicTitle": "Chemical Bonding and Shapes of Molecules",
+  "relevance": 100,
+  "notes": [
+    "Valence electrons participate in bonding. The octet rule is a useful model for many main-group compounds, not a universal law: hydrogen follows a duet, some species have incomplete octets, and other exceptions occur.",
+    "Ionic bonding is electrostatic attraction between oppositely charged ions, often formed after electron transfer. Ionic solids conduct when molten or dissolved but generally not as rigid solids. Covalent bonding shares electron pairs; molecular covalent substances often have low melting points, while network solids are exceptions. A coordinate covalent bond forms when both shared electrons are donated by one atom; after formation it behaves as a covalent bond.",
+    "Lewis procedure: count total valence electrons; choose a skeleton; draw single bonds; complete terminal octets; place remaining electrons on the central atom; add multiple bonds if needed. Check electron count and total charge. Resonance contributors differ only in electron placement; the real species is a delocalized hybrid, not a molecule switching between drawings.",
+    "VSEPR predicts electron domains arrange to minimize repulsion. Each bond, including double/triple bonds, is one domain; lone pairs also count and usually compress bond angles. Two domains give linear BeF₂/CO₂; three give trigonal planar BF₃; four give tetrahedral electron geometry (CH₄ tetrahedral, NH₃ trigonal pyramidal, H₂O bent); five give trigonal bipyramidal PCl₅; six give octahedral SF₆. Molecular shape names ignore lone-pair positions.",
+    "Elementary valence-bond theory describes covalent bonds as orbital overlap. Hybridization is a useful directional model: sp linear, sp² trigonal planar and sp³ tetrahedral. Bond length generally decreases and bond strength increases with bond order. Greater electronegativity difference often increases bond polarity, but whole-molecule polarity depends on vector addition of bond dipoles; symmetric molecules may be nonpolar despite polar bonds.",
+    "London dispersion forces occur in all particles; dipole–dipole forces act between permanent dipoles; hydrogen bonding is a strong directional attraction when H is bonded to N, O or F and interacts with a lone pair. These intermolecular attractions influence boiling points and molecular solids. Metallic bonding—positive metal centres attracted to delocalized electrons—helps explain conductivity, malleability and ductility."
+  ],
+  "keyPoints": [
+    "Octet rule is a guide with exceptions.",
+    "Use electron counts and total charge to check Lewis structures.",
+    "VSEPR domain count gives electron geometry; lone pairs change molecular shape and angles.",
+    "Bond polarity and molecular polarity are not identical; sum dipoles as vectors.",
+    "Intermolecular forces act between particles, unlike covalent bonds within molecules."
+  ],
+  "practiceQuestions": [
+    "Draw Lewis structures for NH₄⁺, CO₃²⁻ and H₂O; check charge and electron count.",
+    "Predict electron geometry and molecular shape for BeF₂, BF₃, CH₄, NH₃, H₂O, PCl₅ and SF₆.",
+    "Explain why CO₂ has polar bonds but no permanent molecular dipole, while H₂O is polar.",
+    "Compare dominant attractions in HF, HCl and NaCl."
+  ],
+  "summary": "Bond types explain how atoms are held together; Lewis structures track electrons; VSEPR predicts shape; polarity and intermolecular forces help explain physical properties."
+}

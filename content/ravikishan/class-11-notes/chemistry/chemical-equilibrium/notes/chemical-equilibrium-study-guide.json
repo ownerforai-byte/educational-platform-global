@@ -1,0 +1,33 @@
+{
+  "title": "Class 11 Chemistry — Chemical Equilibrium Study Guide",
+  "unitSlug": "chemical-equilibrium",
+  "topicSlug": "chemical-equilibrium-study-guide",
+  "topicTitle": "Chemical Equilibrium",
+  "relevance": 100,
+  "notes": [
+    "Equilibrium occurs when opposing processes have equal rates, so macroscopic properties remain constant. Chemical equilibrium is dynamic: forward and reverse reactions continue at equal rates. A closed system at constant conditions is needed for stable equilibrium composition.",
+    "For aA + bB ⇌ cC + dD, Kc = [C]^c[D]^d/([A]^a[B]^b), using equilibrium concentrations and omitting pure solids and liquids. A large K means products are favored at equilibrium; a small K means reactants are favored. K describes position, not speed. At fixed temperature, changing concentration or pressure may shift composition but does not change K; temperature changes K.",
+    "For gaseous equilibria Kp uses partial pressures. Kp = Kc(RT)^Δn, where Δn is gaseous product coefficients minus gaseous reactant coefficients. Omit solids and liquids from Δn; if Δn = 0, Kp = Kc.",
+    "Le Chatelier's principle: a system shifts to partially oppose a disturbance. Adding reactant or removing product generally favors products; adding product or removing reactant favors reactants. Increasing pressure by decreasing volume favors the side with fewer gas moles; equal gas counts give no pressure shift. Raising temperature favors the endothermic direction and changes K; lowering temperature favors the exothermic direction. A catalyst speeds both directions and reaches equilibrium sooner but changes neither K nor equilibrium composition. Numerical calculations are not required in this unit.",
+    "Example: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat has four gas moles on the left and two on the right. Higher pressure shifts toward NH₃. Higher temperature shifts toward N₂ and H₂ because the forward reaction is exothermic. A catalyst changes rate, not position."
+  ],
+  "formulas": [
+    "Kc = [C]^c[D]^d / ([A]^a[B]^b) for aA + bB ⇌ cC + dD",
+    "Kp = Kc(RT)^Δn",
+    "Δn = gaseous product coefficients − gaseous reactant coefficients"
+  ],
+  "keyPoints": [
+    "Equilibrium is dynamic; forward and reverse rates are equal, not zero.",
+    "Use equilibrium concentrations; omit pure solids and liquids from K expressions.",
+    "K is temperature-dependent; catalysts do not change K.",
+    "Pressure favors fewer gas moles only when the sides have different gas counts.",
+    "Increasing temperature favors the endothermic direction."
+  ],
+  "practiceQuestions": [
+    "Write Kc for 2SO₂(g) + O₂(g) ⇌ 2SO₃(g).",
+    "For N₂O₄(g) ⇌ 2NO₂(g), predict the effect of increased pressure and explain.",
+    "For an exothermic forward reaction, predict effects of higher temperature and a catalyst.",
+    "For H₂(g) + I₂(g) ⇌ 2HI(g), determine Δn and relate Kp to Kc."
+  ],
+  "summary": "Equilibrium constants describe composition at dynamic equilibrium. Use stoichiometric powers, count only gaseous species in Δn and apply Le Chatelier by identifying which disturbance the system partially opposes."
+}

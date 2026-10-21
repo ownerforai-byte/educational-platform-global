@@ -1,0 +1,38 @@
+{
+  "title": "Class 11 Chemistry — States of Matter Study Guide",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "states-of-matter-study-guide",
+  "topicTitle": "States of Matter",
+  "relevance": 100,
+  "notes": [
+    "The ideal-gas kinetic model treats particles as widely separated, moving randomly with negligible intermolecular forces except during elastic collisions. Boyle's law: P ∝ 1/V at fixed T,n. Charles's law: V ∝ T at fixed P,n. Avogadro's law: V ∝ n at fixed T,P. Combine them as PV = nRT. Convert temperature to kelvin and keep units consistent with R.",
+    "Dalton's law states total pressure equals the sum of component partial pressures; for an ideal mixture pᵢ = xᵢP. Graham's law gives r₁/r₂ = √(M₂/M₁) for diffusion/effusion under the same conditions: lighter gases move faster. Do not reverse the molar-mass ratio.",
+    "Real gases have finite molecular volume and attractions. Deviations are strongest at high pressure and low temperature, especially near liquefaction. The van der Waals equation (P + a n²/V²)(V − nb) = nRT corrects for attractions (a) and molecular volume (b); constants are gas-specific. Ideal behavior is approached at low pressure and high temperature.",
+    "Evaporation occurs at a liquid surface below its boiling point; condensation returns vapour to liquid. Vapour pressure is the pressure of vapour in equilibrium with the liquid. Boiling occurs when vapour pressure equals external pressure, so boiling point depends on pressure. Surface tension generally falls as temperature rises. Liquid viscosity generally decreases with temperature; gas viscosity generally increases. Liquid crystals have partial order and properties between ordinary liquids and crystalline solids.",
+    "Crystalline solids have long-range order and a characteristic melting point; amorphous solids lack long-range order and soften over a range. Deliquescent solids absorb moisture until they dissolve; efflorescent hydrates lose water of crystallization; hygroscopic substances absorb moisture without necessarily dissolving. A crystal lattice repeats in three dimensions; a unit cell is its smallest repeating volume. Crystallization and crystal growth depend on controlled supersaturation and conditions.",
+    "Example: a 2.00 L sample at 300 K and 1.00 atm is heated to 450 K at constant pressure. Charles's law gives V₂ = 2.00 × 450/300 = 3.00 L. Use kelvin; Celsius ratios are invalid."
+  ],
+  "formulas": [
+    "PV = nRT",
+    "At fixed T,n: P₁V₁ = P₂V₂",
+    "At fixed P,n: V₁/T₁ = V₂/T₂ (T in K)",
+    "At fixed T,P: V₁/n₁ = V₂/n₂",
+    "pᵢ = xᵢP; P = Σpᵢ",
+    "r₁/r₂ = √(M₂/M₁)",
+    "(P + a n²/V²)(V − nb) = nRT"
+  ],
+  "keyPoints": [
+    "Use kelvin for gas-law calculations.",
+    "Dalton partial pressure equals mole fraction times total pressure for ideal mixtures.",
+    "Graham's rate ratio uses the square root of the inverse molar-mass ratio.",
+    "Real-gas deviations are greatest at high pressure and low temperature.",
+    "At boiling, vapour pressure equals external pressure; distinguish moisture behavior of solids."
+  ],
+  "practiceQuestions": [
+    "A gas occupies 500 mL at 27°C and 1 atm. Find volume at 127°C and 1 atm.",
+    "A mixture has 2 mol N₂ and 1 mol O₂ at 900 kPa total pressure. Find each partial pressure.",
+    "Compare diffusion rates of H₂ and O₂ at the same temperature and pressure.",
+    "Explain why a real gas deviates more from ideality at high pressure and low temperature."
+  ],
+  "summary": "Relate gas variables using absolute temperature and mole amount, apply mixture and diffusion ratios carefully, and explain phase properties through particle motion, cohesion and structural order."
+}

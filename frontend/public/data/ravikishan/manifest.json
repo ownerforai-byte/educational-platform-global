@@ -28210,6 +28210,43 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/aromatic-hydrocarbons/notes/aromatic-hydrocarbons-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Aromatic Hydrocarbons Study Guide",
+      "unitSlug": "aromatic-hydrocarbons",
+      "topicSlug": "aromatic-hydrocarbons-study-guide",
+      "topicTitle": "Aromatic Hydrocarbons",
+      "relevance": 100,
+      "notes": [
+        "Aromatic compounds are cyclic, planar, conjugated systems with delocalized π electrons and unusual stability. Hückel's rule predicts aromaticity for a planar, fully conjugated monocycle with (4n+2) π electrons. Benzene has six π electrons (n=1). Kekulé drawings show alternating bonds, but all C–C bonds are equivalent because π electrons are delocalized; the ring is not a set of localized alternating bonds.",
+        "Syllabus preparations of benzene include decarboxylation of sodium benzoate with soda lime, deoxygenation of phenol using zinc dust, and trimerization of ethyne under suitable conditions. Benzene is volatile, flammable and toxic; avoid inhalation and skin exposure. Its high carbon content gives a luminous smoky flame on combustion.",
+        "Benzene usually undergoes electrophilic aromatic substitution because substitution restores aromaticity. The steps are electrophile generation, attack to form a resonance-stabilized sigma complex, then loss of H⁺ to restore the ring. Nitration uses a nitronium electrophile generated from concentrated acids; halogenation and Friedel–Crafts reactions use Lewis-acid catalysts. Sulphonation is reversible under suitable conditions. Addition such as hydrogenation can occur under forcing conditions but sacrifices aromatic stabilization.",
+        "A substituent affects both rate and position of a second substitution. Electron-donating groups generally activate and direct ortho/para; many electron-withdrawing groups deactivate and direct meta. Halogens are an important exception: they deactivate inductively but direct ortho/para by resonance donation. Steric effects and multiple substituents may complicate predictions.",
+        "Disubstituted benzene has ortho (1,2-), meta (1,3-) and para (1,4-) arrangements. Draw and number the ring clearly. In reaction answers identify the electrophile, catalyst and restoration of aromaticity; distinguish substitution from addition across a localized alkene-like bond."
+      ],
+      "formulas": [
+        "Benzene: C₆H₆",
+        "Hückel criterion: (4n + 2) delocalized π electrons, n = 0,1,2,…",
+        "C₆H₆ + HNO₃ → C₆H₅NO₂ + H₂O (conc. H₂SO₄ catalyst/medium)"
+      ],
+      "keyPoints": [
+        "Benzene has six delocalized π electrons and equivalent C–C bonds.",
+        "Electrophilic substitution preserves aromaticity after H⁺ is lost.",
+        "Electron donors generally direct ortho/para; many withdrawing groups direct meta; halogens deactivate but direct ortho/para.",
+        "Ortho, meta and para denote 1,2-, 1,3- and 1,4-disubstitution.",
+        "Benzene is toxic and flammable; laboratory handling requires proper controls."
+      ],
+      "practiceQuestions": [
+        "Apply Hückel's rule to benzene and explain equivalent C–C bond lengths.",
+        "Describe nitration stages and identify its electrophile.",
+        "Predict directing effects of –CH₃, –NO₂ and –Cl in a second substitution.",
+        "Draw and name the ortho, meta and para isomers of dichlorobenzene.",
+        "List three syllabus preparations of benzene and state one hazard."
+      ],
+      "summary": "Benzene's aromatic stabilization favors substitution over ordinary addition. Apply Hückel's rule and use electrophile, catalyst and substituent directing effects to predict products."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/aromatic-hydrocarbons/plan.json",
     "data": {
       "title": "plan",
@@ -31081,6 +31118,46 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/atomic-structure/notes/atomic-structure-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Atomic Structure Study Guide",
+      "unitSlug": "atomic-structure",
+      "topicSlug": "atomic-structure-study-guide",
+      "topicTitle": "Atomic Structure",
+      "relevance": 100,
+      "notes": [
+        "In Rutherford's gold-foil experiment, most alpha particles passed through, some deflected and very few rebounded. The atom is mostly empty space with a tiny dense positive nucleus and electrons outside it. Classical physics predicts accelerating electrons should radiate energy and spiral inward; the model also fails to explain discrete spectra or electron arrangements.",
+        "Bohr's hydrogen-like model allows stationary orbits with quantized angular momentum mvr = nh/2π. An electron emits or absorbs a photon during a transition: ΔE = hν = hc/λ. It explains the hydrogen line spectrum and one-electron ions such as He⁺, but fails for multi-electron atoms, detailed spectra and bonding. Spectral series converge toward an ionization limit.",
+        "De Broglie's relation λ = h/p associates wavelength with a particle of momentum p. Heisenberg's uncertainty principle ΔxΔp ≥ ħ/2 is a fundamental limit on simultaneous position and momentum precision, not merely an instrument defect. Quantum mechanics describes probability distributions; an orbital is a region of likely electron location, not a fixed path.",
+        "Quantum numbers: principal n = 1,2,… describes shell and approximate size/energy; azimuthal l = 0,…,n−1 identifies subshell (s=0, p=1, d=2, f=3); magnetic mₗ ranges from −l to +l; spin mₛ = ±½. Subshell capacity is 2(2l+1); shell capacity is 2n². s orbitals are spherical; p orbitals have two lobes and a nodal plane through the nucleus.",
+        "Aufbau fills lower-energy orbitals first (commonly 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p through Z=30). Pauli forbids two electrons in an atom having the same four quantum numbers; one orbital holds at most two with opposite spin. Hund's rule fills degenerate orbitals singly with parallel spins before pairing.",
+        "For transition-metal cations, remove electrons from the highest principal shell first: 4s electrons are removed before 3d. Chromium (Z=24) is [Ar] 3d⁵4s¹ and copper (Z=29) is [Ar] 3d¹⁰4s¹, common exceptions. Check that the final electron count equals atomic number adjusted for ionic charge."
+      ],
+      "formulas": [
+        "mvr = nh/(2π)",
+        "ΔE = hν = hc/λ",
+        "λ = h/p",
+        "ΔxΔp ≥ ħ/2",
+        "Maximum electrons in shell n = 2n²",
+        "Maximum electrons in subshell l = 2(2l + 1)"
+      ],
+      "keyPoints": [
+        "Rutherford established the nucleus but not atomic stability or line spectra.",
+        "Bohr's model works best for one-electron species.",
+        "An orbital is a probability distribution, not an electron orbit.",
+        "Apply the allowed ranges for n, l, mₗ and mₛ.",
+        "Remove 4s electrons before 3d electrons when forming transition-metal cations; remember Cr and Cu exceptions."
+      ],
+      "practiceQuestions": [
+        "State two conclusions from Rutherford scattering and one limitation of his model.",
+        "List all possible quantum numbers for an electron in a 3p orbital and state the maximum 3p electron capacity.",
+        "Write ground-state configurations of Fe, Fe²⁺, Cr and Cu; explain Fe²⁺ electron removal.",
+        "Explain how a hydrogen spectral line is produced when an electron changes energy level."
+      ],
+      "summary": "Atomic theory advances from a nuclear model to quantized levels and probability-based orbitals. Apply quantum-number limits and Aufbau, Pauli and Hund rules, with the transition-metal exceptions in mind."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/atomic-structure/notes/introduction.json",
     "data": {
       "title": "Introduction to Chemistry",
@@ -32744,6 +32821,36 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/basic-concept-of-organic-chemistry/notes/organic-chemistry-foundations-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Organic Chemistry Foundations Study Guide",
+      "unitSlug": "basic-concept-of-organic-chemistry",
+      "topicSlug": "organic-chemistry-foundations-study-guide",
+      "topicTitle": "Basic Concept of Organic Chemistry",
+      "relevance": 100,
+      "notes": [
+        "Organic chemistry primarily studies carbon compounds, especially those with C–C or C–H frameworks. Some simple carbon compounds such as carbon oxides, carbonates and carbides are conventionally treated as inorganic. The separate study reflects the diversity of carbon compounds, catenation and tetravalency—not a claim that all organic substances come from living organisms.",
+        "Neutral carbon commonly forms four covalent bonds. Strong C–C bonding permits chains, branches and rings (catenation). Classify skeletons as open-chain or cyclic, saturated or unsaturated, and aliphatic or aromatic. A homologous series has a common functional group and general formula; successive members differ by –CH₂– and show related chemistry with gradual physical-property changes.",
+        "Functional groups give families characteristic chemistry: –OH alcohol, –CHO aldehyde, >C=O ketone, –COOH carboxylic acid, –NH₂ amine and –X halo. Molecular formula counts atoms; expanded structural formula shows bonds; condensed formula compresses groups (CH₃CH₂OH); bond-line formula uses vertices/endpoints for carbon and usually omits carbon-bound hydrogens. Verify each carbon has valence four and heteroatoms have plausible valence.",
+        "Cracking breaks larger hydrocarbons into smaller molecules, often producing useful alkanes and alkenes. Reforming rearranges or cyclizes hydrocarbons to improve gasoline quality. Octane number measures resistance to knocking in spark-ignition engines relative to reference fuels; it is not energy content. Cetane number indicates ignition quality/delay in compression-ignition engines; higher cetane generally means shorter ignition delay. Additives must meet safety and environmental requirements."
+      ],
+      "keyPoints": [
+        "Organic chemistry is not simply chemistry of substances made by organisms.",
+        "Carbon tetravalency and catenation explain extensive structural diversity.",
+        "Successive homologous-series members differ by CH₂ and share a functional group.",
+        "Bond-line notation omits carbon labels and most attached hydrogens; valence still must balance.",
+        "Octane describes knock resistance in spark engines; cetane describes ignition delay in diesel engines."
+      ],
+      "practiceQuestions": [
+        "Explain carbon's structural diversity using tetravalency and catenation.",
+        "Identify functional groups in CH₃CH₂OH, CH₃CHO, CH₃COCH₃ and CH₃COOH.",
+        "Draw expanded, condensed and bond-line representations of butane and propan-2-ol.",
+        "Distinguish cracking from reforming and octane number from cetane number."
+      ],
+      "summary": "Read organic structures by identifying the carbon skeleton and functional group, then translate between formula styles. Industrial fuel processes and ratings describe distinct aspects of hydrocarbon performance."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/basic-concept-organic/concepts/01-organic-chemistry-intro.json",
     "data": {
       "title": "01 ORGANIC CHEMISTRY INTRO",
@@ -33673,6 +33780,36 @@
       "notes": [
         "Study of bio inorganic chemistry concepts."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/bio-inorganic-chemistry/notes/bio-inorganic-chemistry-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Bio-inorganic Chemistry Study Guide",
+      "unitSlug": "bio-inorganic-chemistry",
+      "topicSlug": "bio-inorganic-chemistry-study-guide",
+      "topicTitle": "Bio-inorganic Chemistry",
+      "relevance": 100,
+      "notes": [
+        "Bio-inorganic chemistry studies inorganic elements and metal ions in living systems. Macronutrients are required in relatively large amounts; micronutrients in trace amounts. This classification describes required quantity, not importance. Essential ions support structure, catalysis, signaling, osmotic balance and transport; deficiency and excess can both be harmful.",
+        "Na⁺ and K⁺ establish membrane gradients and support electrical signaling. Mg²⁺ is central to chlorophyll and activates enzymes; Ca²⁺ supports bones, signaling and muscle contraction. Fe occurs in heme proteins for oxygen transport and electron transfer. Cu and Zn are enzyme cofactors; Zn also supports structural protein motifs. Ni, Co and Cr have specialized biological roles depending on organism and chemical form; cobalt is part of vitamin B₁₂.",
+        "Na⁺/K⁺-ATPase uses ATP to export three Na⁺ ions and import two K⁺ ions per cycle, maintaining gradients and contributing to membrane potential. Secondary transport can use a gradient rather than directly hydrolyzing ATP. Sodium-glucose cotransport brings glucose into some epithelial cells together with Na⁺; the Na⁺ gradient is maintained by the ATPase. Distinguish the primary active pump from gradient-coupled transport.",
+        "Toxicity depends on dose, chemical species, route, duration and biological context. Excess iron can promote oxidative damage; arsenic, mercury compounds, lead and cadmium can disrupt enzymes or tissues and may accumulate. Prevention includes safe water and food, occupational controls and responsible e-waste handling. Metal exposure requires public-health and clinical expertise, not home treatment."
+      ],
+      "keyPoints": [
+        "Macro- and micronutrient refer to required amount, not importance.",
+        "Na⁺/K⁺-ATPase exports 3 Na⁺ and imports 2 K⁺ per ATP cycle.",
+        "Sodium-glucose cotransport uses the Na⁺ gradient; it is not itself the ATP-driven pump.",
+        "Biological function and toxicity depend on concentration and chemical form.",
+        "Iron, arsenic, mercury, lead and cadmium are toxicity examples in this unit."
+      ],
+      "practiceQuestions": [
+        "Distinguish macronutrients from micronutrients and give one example of each.",
+        "Describe Na⁺/K⁺ pump stoichiometry and why its Na⁺ gradient supports glucose uptake.",
+        "Give two biological roles each for Mg²⁺, Ca²⁺ and Fe ions.",
+        "Explain why an essential metal is not safe in unlimited amounts."
+      ],
+      "summary": "Metal ions are essential in regulated amounts for transport, catalysis, structure and signaling. Distinguish ion roles, ATP-driven pumping, gradient-coupled transport and dose-dependent toxicity."
     }
   },
   {
@@ -35216,6 +35353,38 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/notes/chemical-bonding-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Chemical Bonding Study Guide",
+      "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+      "topicSlug": "chemical-bonding-study-guide",
+      "topicTitle": "Chemical Bonding and Shapes of Molecules",
+      "relevance": 100,
+      "notes": [
+        "Valence electrons participate in bonding. The octet rule is a useful model for many main-group compounds, not a universal law: hydrogen follows a duet, some species have incomplete octets, and other exceptions occur.",
+        "Ionic bonding is electrostatic attraction between oppositely charged ions, often formed after electron transfer. Ionic solids conduct when molten or dissolved but generally not as rigid solids. Covalent bonding shares electron pairs; molecular covalent substances often have low melting points, while network solids are exceptions. A coordinate covalent bond forms when both shared electrons are donated by one atom; after formation it behaves as a covalent bond.",
+        "Lewis procedure: count total valence electrons; choose a skeleton; draw single bonds; complete terminal octets; place remaining electrons on the central atom; add multiple bonds if needed. Check electron count and total charge. Resonance contributors differ only in electron placement; the real species is a delocalized hybrid, not a molecule switching between drawings.",
+        "VSEPR predicts electron domains arrange to minimize repulsion. Each bond, including double/triple bonds, is one domain; lone pairs also count and usually compress bond angles. Two domains give linear BeF₂/CO₂; three give trigonal planar BF₃; four give tetrahedral electron geometry (CH₄ tetrahedral, NH₃ trigonal pyramidal, H₂O bent); five give trigonal bipyramidal PCl₅; six give octahedral SF₆. Molecular shape names ignore lone-pair positions.",
+        "Elementary valence-bond theory describes covalent bonds as orbital overlap. Hybridization is a useful directional model: sp linear, sp² trigonal planar and sp³ tetrahedral. Bond length generally decreases and bond strength increases with bond order. Greater electronegativity difference often increases bond polarity, but whole-molecule polarity depends on vector addition of bond dipoles; symmetric molecules may be nonpolar despite polar bonds.",
+        "London dispersion forces occur in all particles; dipole–dipole forces act between permanent dipoles; hydrogen bonding is a strong directional attraction when H is bonded to N, O or F and interacts with a lone pair. These intermolecular attractions influence boiling points and molecular solids. Metallic bonding—positive metal centres attracted to delocalized electrons—helps explain conductivity, malleability and ductility."
+      ],
+      "keyPoints": [
+        "Octet rule is a guide with exceptions.",
+        "Use electron counts and total charge to check Lewis structures.",
+        "VSEPR domain count gives electron geometry; lone pairs change molecular shape and angles.",
+        "Bond polarity and molecular polarity are not identical; sum dipoles as vectors.",
+        "Intermolecular forces act between particles, unlike covalent bonds within molecules."
+      ],
+      "practiceQuestions": [
+        "Draw Lewis structures for NH₄⁺, CO₃²⁻ and H₂O; check charge and electron count.",
+        "Predict electron geometry and molecular shape for BeF₂, BF₃, CH₄, NH₃, H₂O, PCl₅ and SF₆.",
+        "Explain why CO₂ has polar bonds but no permanent molecular dipole, while H₂O is polar.",
+        "Compare dominant attractions in HF, HCl and NaCl."
+      ],
+      "summary": "Bond types explain how atoms are held together; Lewis structures track electrons; VSEPR predicts shape; polarity and intermolecular forces help explain physical properties."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/chemical-bonding/concepts/01-ionic-covalent-bond.json",
     "data": {
       "title": "01 IONIC COVALENT BOND",
@@ -36420,6 +36589,42 @@
       "notes": [
         "Study of chemical equilibrium concepts."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/chemical-equilibrium/notes/chemical-equilibrium-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Chemical Equilibrium Study Guide",
+      "unitSlug": "chemical-equilibrium",
+      "topicSlug": "chemical-equilibrium-study-guide",
+      "topicTitle": "Chemical Equilibrium",
+      "relevance": 100,
+      "notes": [
+        "Equilibrium occurs when opposing processes have equal rates, so macroscopic properties remain constant. Chemical equilibrium is dynamic: forward and reverse reactions continue at equal rates. A closed system at constant conditions is needed for stable equilibrium composition.",
+        "For aA + bB ⇌ cC + dD, Kc = [C]^c[D]^d/([A]^a[B]^b), using equilibrium concentrations and omitting pure solids and liquids. A large K means products are favored at equilibrium; a small K means reactants are favored. K describes position, not speed. At fixed temperature, changing concentration or pressure may shift composition but does not change K; temperature changes K.",
+        "For gaseous equilibria Kp uses partial pressures. Kp = Kc(RT)^Δn, where Δn is gaseous product coefficients minus gaseous reactant coefficients. Omit solids and liquids from Δn; if Δn = 0, Kp = Kc.",
+        "Le Chatelier's principle: a system shifts to partially oppose a disturbance. Adding reactant or removing product generally favors products; adding product or removing reactant favors reactants. Increasing pressure by decreasing volume favors the side with fewer gas moles; equal gas counts give no pressure shift. Raising temperature favors the endothermic direction and changes K; lowering temperature favors the exothermic direction. A catalyst speeds both directions and reaches equilibrium sooner but changes neither K nor equilibrium composition. Numerical calculations are not required in this unit.",
+        "Example: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) + heat has four gas moles on the left and two on the right. Higher pressure shifts toward NH₃. Higher temperature shifts toward N₂ and H₂ because the forward reaction is exothermic. A catalyst changes rate, not position."
+      ],
+      "formulas": [
+        "Kc = [C]^c[D]^d / ([A]^a[B]^b) for aA + bB ⇌ cC + dD",
+        "Kp = Kc(RT)^Δn",
+        "Δn = gaseous product coefficients − gaseous reactant coefficients"
+      ],
+      "keyPoints": [
+        "Equilibrium is dynamic; forward and reverse rates are equal, not zero.",
+        "Use equilibrium concentrations; omit pure solids and liquids from K expressions.",
+        "K is temperature-dependent; catalysts do not change K.",
+        "Pressure favors fewer gas moles only when the sides have different gas counts.",
+        "Increasing temperature favors the endothermic direction."
+      ],
+      "practiceQuestions": [
+        "Write Kc for 2SO₂(g) + O₂(g) ⇌ 2SO₃(g).",
+        "For N₂O₄(g) ⇌ 2NO₂(g), predict the effect of increased pressure and explain.",
+        "For an exothermic forward reaction, predict effects of higher temperature and a catalyst.",
+        "For H₂(g) + I₂(g) ⇌ 2HI(g), determine Δn and relate Kp to Kc."
+      ],
+      "summary": "Equilibrium constants describe composition at dynamic equilibrium. Use stoichiometric powers, count only gaseous species in Δn and apply Le Chatelier by identifying which disturbance the system partially opposes."
     }
   },
   {
@@ -38802,6 +39007,39 @@
       "notes": [
         "Study of chemistry of metals concepts."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/chemistry-of-metals/notes/metals-and-metallurgy-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Metals and Metallurgy Study Guide",
+      "unitSlug": "chemistry-of-metals",
+      "topicSlug": "metals-and-metallurgy-study-guide",
+      "topicTitle": "Chemistry of Metals",
+      "relevance": 100,
+      "notes": [
+        "Metallurgy is extracting metals from ores and refining them. Hydrometallurgy uses aqueous solutions, pyrometallurgy uses high temperature, and electrometallurgy uses electrical energy. Gangue or matrix is unwanted ore material; flux reacts with gangue to form slag. An alloy is a metallic mixture; an amalgam contains mercury.",
+        "A typical extraction route includes concentration, conversion to a suitable compound, reduction and refining. Calcination heats an ore with limited/no air, often decomposing carbonates or hydroxides. Roasting usually heats sulfide ores in excess air, often forming oxides and SO₂. Smelting uses heat, reductant and flux to form molten metal and slag. Carbon reduction suits some oxides; thermite uses a more reactive metal such as aluminium; electrochemical reduction is used for highly reactive metals.",
+        "Poling uses reducing gases from green wood to remove oxide impurities from suitable molten metals. Electrorefining uses an impure anode, pure-metal cathode and electrolyte containing metal ions: target metal dissolves at the anode and deposits at the cathode; less reactive impurities may form anode mud.",
+        "Group 1 alkali metals have one valence electron, commonly form +1 ions, and become more reactive down the group. Sodium is extracted by electrolysis of molten NaCl in a Downs cell; CaCl₂ lowers the melting point. Sodium reacts vigorously with water to form NaOH and H₂. NaOH neutralizes acids and precipitates many metal hydroxides. Na₂CO₃ is an alkaline salt that releases CO₂ with acids.",
+        "Group 2 alkaline-earth metals commonly form +2 ions. Hydroxide solubility generally increases down the group, while sulfate solubility generally decreases; qualitative trends reflect lattice and hydration effects. Carbonate and nitrate thermal stability generally increases down the group as larger cations polarize the anion less. Common compounds: quicklime CaO; bleaching powder conventionally CaOCl₂; magnesia MgO; plaster of Paris CaSO₄·½H₂O; Epsom salt MgSO₄·7H₂O."
+      ],
+      "keyPoints": [
+        "Select extraction methods according to ore composition and metal reactivity.",
+        "Calcination uses limited/no air; roasting is usually in excess air, especially for sulfides.",
+        "Flux plus gangue forms slag; roasting sulfides may release SO₂.",
+        "Downs process electrolyzes molten NaCl, not aqueous brine.",
+        "Group 2 hydroxide solubility generally rises down the group while sulfate solubility falls.",
+        "Memorize formulae and waters of crystallization for named industrial compounds."
+      ],
+      "practiceQuestions": [
+        "Distinguish calcination from roasting and state which is used commonly for sulfide ores.",
+        "Explain the roles of flux and slag during smelting.",
+        "Describe Downs-cell products and why molten salt is used instead of aqueous NaCl.",
+        "Write formulae of plaster of Paris and Epsom salt, including waters of crystallization.",
+        "State general Group 2 down-group solubility trends for hydroxides and sulfates."
+      ],
+      "summary": "Extraction choices follow ore type and metal reactivity. Know the metallurgical sequence and vocabulary, then connect periodic trends to sodium chemistry and common industrial salts."
     }
   },
   {
@@ -43401,6 +43639,46 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/chemistry-of-non-metals/notes/non-metals-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Chemistry of Non-metals Study Guide",
+      "unitSlug": "chemistry-of-non-metals",
+      "topicSlug": "non-metals-study-guide",
+      "topicTitle": "Chemistry of Non-metals",
+      "relevance": 100,
+      "notes": [
+        "Hydrogen isotopes are protium (¹H), deuterium (²H) and tritium (³H); heavy water is D₂O. Nascent hydrogen is a traditional term for freshly generated reactive hydrogen, not a distinct stable allotrope. Hydrogen peroxide decomposes as 2H₂O₂ → 2H₂O + O₂ and may act as oxidant or reductant depending on its partner. Oxides may be acidic, basic, amphoteric, neutral, peroxide or mixed; classify by behavior.",
+        "Ozone is bent O₃ formed from oxygen under energetic conditions. It is a strong oxidant and absorbs UV in the stratosphere. Ozone depletion is driven especially by catalytic chlorine/bromine radicals released from long-lived compounds; reducing ozone-depleting emissions supports recovery. Ozone depletion is not the same phenomenon as climate change.",
+        "N₂ is relatively inert because its N≡N bond is strong. Ammonia is trigonal pyramidal and a weak base: NH₃ + H₂O ⇌ NH₄⁺ + OH⁻. It forms ammonium salts with acids and reacts with oxygen under suitable conditions. Concentrated ammonia is hazardous. Nitric acid is a strong acid and oxidizer; products from metals depend on concentration and conditions. Nitrate can be tested by the brown-ring test using Fe²⁺ in acid.",
+        "Cl₂, Br₂ and I₂ are diatomic oxidizing non-metals; oxidizing strength generally decreases down the group. Reactions with water, alkalis and ammonia depend on conditions. Chlorine bleaches moist material through oxidation. Hydrogen-halide acidity in water generally increases down the group (HF is weak because of strong H–F bonding), while reducing strength rises down the group.",
+        "Carbon allotropes include diamond, graphite, fullerenes and amorphous forms. CO is a colourless, highly toxic reducing gas. PH₃ (phosphine) is toxic, weakly basic and reducing. H₂S is a toxic weak acid and reducing analytical reagent. SO₂ is an acidic oxide that can act as oxidant or reductant and as a bleaching agent. H₂SO₄ is acidic and, when concentrated, oxidizing and strongly dehydrating. Sodium thiosulfate is Na₂S₂O₃ and is used in photography and iodometric titration.",
+        "Never prepare or smell toxic gases as a home experiment. For each compound organize answers as preparation, observation, chemical explanation, balanced equation and use; state conditions. Concentrated acids and reagents require trained laboratory controls."
+      ],
+      "formulas": [
+        "2H₂O₂ → 2H₂O + O₂",
+        "NH₃ + H₂O ⇌ NH₄⁺ + OH⁻",
+        "Cl₂ + H₂O ⇌ HCl + HOCl (simplified aqueous equilibrium)",
+        "H₂S ⇌ H⁺ + HS⁻ (first ionization, simplified)",
+        "Na₂S₂O₃ — sodium thiosulfate"
+      ],
+      "keyPoints": [
+        "Reaction products and oxidizing behavior depend on conditions, including concentration and temperature.",
+        "Halogen oxidizing strength generally decreases down the group; hydrogen-halide reducing strength generally increases.",
+        "Ozone depletion involves catalytic radical chemistry in the stratosphere.",
+        "CO, NH₃, PH₃ and H₂S present serious inhalation hazards; H₂SO₄ is corrosive.",
+        "Learn each named substance's preparation, properties, tests and uses within the prescribed syllabus."
+      ],
+      "practiceQuestions": [
+        "Classify acidic, basic, amphoteric and neutral oxides and give one example of each.",
+        "Explain nitrogen's relative inertness and one cause of ozone depletion.",
+        "Compare chlorine, bromine and iodine in oxidizing strength and describe a distinguishing test observation.",
+        "State two contrasting chemical roles of SO₂ and explain why CO is hazardous.",
+        "Describe the brown-ring test for nitrate and name the reagent responsible for the coloured complex."
+      ],
+      "summary": "Organize non-metal chemistry by group and compound: preparation, condition-dependent reactions, characteristic tests and uses, with appropriate safety and environmental context."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/chemistry-of-non-metals/plan.json",
     "data": {
       "title": "plan",
@@ -44194,6 +44472,37 @@
       "notes": [
         "Mindmap placeholder — run content generation to create actual mindmap data."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/classification-of-elements-and-periodic-table/notes/periodic-classification-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Periodic Classification Study Guide",
+      "unitSlug": "classification-of-elements-and-periodic-table",
+      "topicSlug": "periodic-classification-study-guide",
+      "topicTitle": "Classification of Elements and Periodic Table",
+      "relevance": 100,
+      "notes": [
+        "Modern periodic law states that properties of elements are periodic functions of atomic number. The table is arranged by increasing atomic number into periods and groups; blocks s, p, d and f indicate the subshell being filled. IUPAC groups are numbered 1–18.",
+        "Nuclear charge is +Ze. Inner electrons shield outer electrons; effective nuclear charge is often approximated as Z_eff ≈ Z − S, where S represents shielding. Across a period Z increases while shielding changes less, so valence electrons usually feel stronger attraction. Down a group, added shells and shielding change the attraction and increase the size of the valence shell.",
+        "Across a period, atomic radius generally decreases as effective nuclear charge rises; down a group it generally increases because a new shell is added. Cations are smaller than their parent atoms and anions larger. In an isoelectronic series, radius decreases as proton count rises. First ionization energy generally rises across and falls down, with subshell and pairing exceptions. Electronegativity generally rises across and falls down; it is a relative bonding scale. Metallic character generally decreases across and increases down.",
+        "Electron affinity is the energy change when a gaseous atom gains an electron. Trends are irregular and sign conventions vary: some sources use negative values for energy released, others quote energy released as a positive electron-gain enthalpy magnitude. State the convention if using numerical signs. Explain trends using effective nuclear charge, shielding and shell number rather than memorized arrows alone.",
+        "Example: O²⁻, F⁻, Na⁺ and Mg²⁺ each have 10 electrons. Proton count increases from 8 to 12, pulling the shared electron cloud more strongly; radius decreases in the order O²⁻ > F⁻ > Na⁺ > Mg²⁺."
+      ],
+      "keyPoints": [
+        "Modern periodic position follows atomic number, not atomic mass.",
+        "Across a period, increasing effective nuclear charge usually contracts atomic radius.",
+        "Down a group, added shells usually increase size and metallic character.",
+        "For isoelectronic ions, greater proton count means smaller radius.",
+        "Ionization energy and electron affinity have exceptions; explain trends with shielding and shell structure."
+      ],
+      "practiceQuestions": [
+        "Explain why atomic radius generally decreases from Na to Cl but increases down Group 1.",
+        "Arrange N³⁻, O²⁻, F⁻ and Na⁺ in increasing ionic radius and justify the order.",
+        "Distinguish nuclear charge from effective nuclear charge and describe shielding.",
+        "Describe general trends in first ionization energy, electronegativity and metallic character across a period."
+      ],
+      "summary": "Periodic properties recur with atomic number. Trends reflect the balance of nuclear attraction, shielding and shell number; use these to justify comparisons instead of memorizing directions alone."
     }
   },
   {
@@ -45404,6 +45713,43 @@
       "notes": [
         "Mindmap placeholder — run content generation to create actual mindmap data."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/foundation-and-fundamentals/notes/foundation-and-fundamentals-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Foundation and Fundamentals Study Guide",
+      "unitSlug": "foundation-and-fundamentals",
+      "topicSlug": "foundation-and-fundamentals-study-guide",
+      "topicTitle": "Foundation and Fundamentals",
+      "relevance": 100,
+      "notes": [
+        "Chemistry explains the composition, structure, properties and transformations of matter, connecting microscopic atoms, ions and molecules with measurable properties. Physical chemistry studies principles and measurements; inorganic, organic and applied chemistry organize substances and practical uses.",
+        "An atom retains the chemical identity of an element. A molecule is a discrete bonded group; ionic compounds are described by formula units. Relative atomic mass (Aᵣ) and relative molecular/formula mass (Mᵣ) are ratios to one-twelfth of a carbon-12 atom and are dimensionless. Molar mass has units g mol⁻¹ and is numerically equal to the corresponding relative mass.",
+        "One atomic mass unit, u (or amu), is one-twelfth the mass of a carbon-12 atom. In school-level formulae, a radical is an atom or group of atoms that behaves as a unit and carries charge, such as NH₄⁺, SO₄²⁻ or NO₃⁻. Write cations first, balance total charge, and use parentheses when a polyatomic ion occurs more than once.",
+        "A molecular formula gives actual atom counts (C₆H₁₂O₆); an empirical formula gives the simplest whole-number ratio (CH₂O). Reduce subscripts by their greatest common divisor. If molar mass is known, multiply the empirical formula by n = molar mass ÷ empirical-formula mass.",
+        "Mass percent of element X = (mass of X in one formula unit ÷ Mᵣ of compound) × 100%. For C₆H₁₂O₆, Mᵣ = 180 and carbon contributes 72/180 × 100 = 40.0%. Percentages should total approximately 100%; small differences can result from rounding.",
+        "Worked empirical-formula method: assume 100 g when percentages are given, convert each element's mass to moles, divide by the smallest amount, and scale to whole numbers. For 40.0% C, 6.7% H and 53.3% O, the mole ratio is approximately 3.33:6.7:3.33 = 1:2:1, giving CH₂O.",
+        "Exam checks: distinguish dimensionless relative mass from molar mass in g mol⁻¹; verify ionic neutrality and simplest ratios; keep units in calculations and round only at the end."
+      ],
+      "formulas": [
+        "Mᵣ = Σ(subscript × Aᵣ)",
+        "% by mass of X = (mass of X in one formula unit ÷ Mᵣ) × 100%",
+        "Molecular formula = (empirical formula)ₙ, where n = molar mass ÷ empirical-formula mass"
+      ],
+      "keyPoints": [
+        "Relative masses are ratios without units; molar mass is expressed in g mol⁻¹.",
+        "Empirical formula is the simplest ratio; molecular formula gives actual atom counts.",
+        "Use ion charges to form neutral ionic formulae and reduce subscripts to the simplest ratio.",
+        "Check percentage totals and state units in numerical answers."
+      ],
+      "practiceQuestions": [
+        "Explain why relative molecular mass is dimensionless while molar mass has units.",
+        "Calculate the percentage by mass of oxygen in CaCO₃ using Ca = 40, C = 12 and O = 16.",
+        "Write the formulae of aluminium sulfate and ammonium phosphate from their ion charges.",
+        "A compound has empirical formula CH₂ and molar mass 56 g mol⁻¹. Determine its molecular formula."
+      ],
+      "summary": "Read formula subscripts, calculate relative masses, use ion charges to write neutral formulae, and distinguish empirical from molecular formulae."
     }
   },
   {
@@ -47009,6 +47355,39 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/notes/organic-principles-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Fundamental Principles of Organic Chemistry Study Guide",
+      "unitSlug": "fundamental-principles-of-organic-chemistry",
+      "topicSlug": "organic-principles-study-guide",
+      "topicTitle": "Fundamental Principles of Organic Chemistry",
+      "relevance": 100,
+      "notes": [
+        "Choose the longest parent chain containing the principal functional group and maximum multiple bonds. Number to give the senior functional group the lowest locant, then unsaturation and substituents by priority. Name substituents with locants, use di-/tri- for repeats, alphabetize substituent names ignoring multiplicative prefixes, then combine parent, unsaturation and suffix. Check that the name describes one unambiguous structure.",
+        "Lassaigne's sodium fusion converts covalently bonded nitrogen, sulfur and halogens into water-soluble ionic salts. Appropriate tests can detect nitrogen (Prussian blue after iron salts and acid), sulfur and halides (silver halide precipitates after acidification with nitric acid). Incomplete fusion and interfering ions can give false results. Sodium and reagents make this a supervised laboratory procedure, never a home experiment.",
+        "Isomers share a molecular formula but differ in connectivity or spatial arrangement. Structural isomerism includes chain, position, functional-group, metameric and tautomeric forms. Geometrical isomerism requires restricted rotation and, for an alkene, two different substituents on each double-bond carbon. Optical isomers are non-superimposable mirror images of chiral molecules. d/l indicates optical rotation direction, not R/S configuration or D/L biochemical notation.",
+        "Homolytic fission divides a bond pair equally and makes radicals. Heterolytic fission gives both bonding electrons to one atom and makes ions. An electrophile accepts an electron pair; a nucleophile donates an electron pair; a free radical has an unpaired electron. Use full-headed curved arrows for electron pairs and fish-hook arrows for single electrons.",
+        "The inductive effect is sigma-bond polarization transmitted through a chain and weakens with distance. Groups may show +I electron release or −I withdrawal. Resonance describes electron delocalization through conjugation; +R groups donate electron density and −R groups withdraw it. Resonance contributors are bookkeeping structures for a hybrid: do not move atoms, and preserve total charge and electron count."
+      ],
+      "keyPoints": [
+        "Select parent chain and numbering by IUPAC priority, then verify the complete structure.",
+        "Lassaigne's test detects selected elements after conversion into ions; it requires safe lab controls.",
+        "Cis/trans alkene isomerism needs restricted rotation and different groups on both alkene carbons.",
+        "d/l optical rotation is distinct from R/S configuration and D/L notation.",
+        "Homolysis produces radicals; heterolysis produces ions.",
+        "Inductive effects transmit through sigma bonds; resonance requires conjugation and delocalized electrons."
+      ],
+      "practiceQuestions": [
+        "Name CH₃CH(CH₃)CH₂CH₃, CH₃CH=CHCH₃ and CH₃CH₂CHO by IUPAC rules.",
+        "Draw structural isomers of C₄H₁₀ and classify their isomerism.",
+        "Explain why 2-butene can show geometrical isomerism.",
+        "Distinguish heterolytic from homolytic cleavage of a C–Br bond.",
+        "Compare inductive and resonance effects, including how each is transmitted."
+      ],
+      "summary": "Solve organic problems by naming structures correctly, classifying isomerism and tracking electron movement. Keep connectivity, stereochemistry, bond fission and electronic effects distinct."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/fundamental-principles-organic/concepts/01-iupac-nomenclature.json",
     "data": {
       "title": "01 IUPAC NOMENCLATURE",
@@ -48138,6 +48517,38 @@
       "notes": [
         "Mindmap placeholder — run content generation to create actual mindmap data."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/fundamentals-of-applied-chemistry/notes/applied-chemistry-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Fundamentals of Applied Chemistry Study Guide",
+      "unitSlug": "fundamentals-of-applied-chemistry",
+      "topicSlug": "applied-chemistry-study-guide",
+      "topicTitle": "Fundamentals of Applied Chemistry",
+      "relevance": 100,
+      "notes": [
+        "The chemical industry converts raw materials into useful products such as fertilizers, medicines, fuels and polymers. Product development proceeds from need identification and research/formulation through laboratory testing, pilot trials, process and safety design, regulatory/environmental review, scale-up, quality assurance and improvement. Scale-up must consider heat/mass transfer, hazards, supply chains and reproducibility; a laboratory recipe cannot simply be multiplied without engineering review.",
+        "Production economics considers costs, revenue, capacity, quality and risk. Fixed costs include facilities/equipment; variable costs include feedstock, energy and packaging. Cash flow tracks when money enters and leaves; apparent profitability does not guarantee funds are available when operating costs are due. Consider break-even, working capital, yield, waste treatment, maintenance and demand. Distinguish revenue, profit and cash flow.",
+        "Plant design selects process route, equipment, compatible materials, operating conditions, control systems, utilities, waste treatment and emergency protections. A process flow diagram shows major equipment and stream directions; flow sheets support mass/energy accounting. Safe operation requires trained staff, monitoring, quality control, maintenance, hazard analysis and emergency procedures. Pressure, temperature, toxicity, flammability and corrosion inform design; industrial operation requires professional engineering and regulatory oversight.",
+        "Batch processing charges a defined quantity, completes a sequence, then empties and cleans equipment; it is flexible for varied or lower-volume production but can have downtime and batch variation. Continuous processing feeds and withdraws material during steady operation; it can provide high throughput and consistency but requires reliable demand, control and specialized equipment. Hybrid systems are common. Compare throughput, flexibility, capital, cleaning, quality and safety.",
+        "Environmental impacts can include emissions, wastewater, solid waste, greenhouse gases, resource depletion and spills. Prevention prioritizes avoiding/reducing hazardous inputs and waste at source, improving atom/resource efficiency, safe reuse/recycling, treating residual emissions and monitoring compliance. Life-cycle thinking considers raw-material extraction through manufacture, use and end-of-life. Environmental performance is a design requirement, not an afterthought."
+      ],
+      "keyPoints": [
+        "Product development includes research, pilot testing, scale-up, regulatory review and controlled commercialization.",
+        "Revenue, profit and cash flow differ; cash timing can affect viability.",
+        "Plant design integrates process performance, quality, worker safety and environmental controls.",
+        "Batch and continuous processes trade flexibility against throughput and operating stability.",
+        "Pollution prevention and life-cycle assessment should be considered from process design onward."
+      ],
+      "practiceQuestions": [
+        "Outline stages from laboratory formulation to commercial manufacture of a chemical product.",
+        "Distinguish fixed and variable costs and explain why positive profit may coexist with a cash shortage.",
+        "Compare batch and continuous processing for a frequently changing small product range.",
+        "Identify four environmental impacts of chemical manufacture and propose a prevention/control measure for each.",
+        "Explain why process scale-up requires engineering reassessment rather than multiplying laboratory quantities."
+      ],
+      "summary": "Applied chemistry connects chemical principles with products and production systems. Strong answers trace product/process choices while integrating economic viability, safe plant operation and environmental protection."
     }
   },
   {
@@ -50388,6 +50799,44 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/hydrocarbons/notes/hydrocarbons-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Hydrocarbons Study Guide",
+      "unitSlug": "hydrocarbons",
+      "topicSlug": "hydrocarbons-study-guide",
+      "topicTitle": "Hydrocarbons",
+      "relevance": 100,
+      "notes": [
+        "Acyclic alkanes have formula CₙH₂ₙ₊₂ and C–C single bonds; monoalkenes have CₙH₂ₙ; monoalkynes have CₙH₂ₙ₋₂. Rings or additional unsaturation change these formulae. Alkanes are relatively unreactive; π bonds make alkenes and alkynes undergo addition.",
+        "Alkane preparations include haloalkane reduction, Wurtz coupling (two alkyl halides with sodium in dry ether), decarboxylation of sodium carboxylates with soda lime, and catalytic hydrogenation. Alkanes undergo substitution: halogenation under light/heat uses a radical chain; nitration and sulphonation require suitable conditions. Complete combustion gives CO₂ and H₂O; oxygen shortage may produce CO or carbon. Balance equations and state conditions.",
+        "Alkenes can be prepared by alcohol dehydration, haloalkane dehydrohalogenation or catalytic hydrogenation of alkynes. Electrophilic addition breaks the π bond. In usual Markovnikov addition of HX, H attaches to the carbon already bearing more H atoms. The peroxide effect is chiefly observed for HBr and gives anti-Markovnikov orientation by a radical pathway; do not generalize it to HCl or HI. Acid-catalyzed hydration produces alcohols; ozonolysis cleaves the double bond to carbonyl products after work-up.",
+        "Ethynes can be prepared from calcium carbide and water or by double dehydrohalogenation of suitable dihalides. Alkynes add H₂, HX and water, with selectivity depending on conditions. Terminal alkynes are weakly acidic because H is attached to an sp carbon; they form salts with suitable bases and precipitates with ammoniacal AgNO₃ or cuprous chloride. Internal alkynes lack this terminal H and do not give these tests.",
+        "Bromine water and alkaline KMnO₄ (Baeyer's test) are decolorized/reduced by many unsaturated compounds, but these are qualitative indications, not unique structural proof. Similar-size hydrocarbons tend to have higher boiling points as size/surface area rises; branching tends to lower boiling point. Kolbe electrolysis couples carboxylate-derived radicals at the anode; follow the exact conditions and expected product."
+      ],
+      "formulas": [
+        "Acyclic alkane: CₙH₂ₙ₊₂",
+        "Acyclic monoalkene: CₙH₂ₙ",
+        "Acyclic monoalkyne: CₙH₂ₙ₋₂",
+        "RCOONa + NaOH (soda lime, heat) → RH + Na₂CO₃ (balance for the specific R group)"
+      ],
+      "keyPoints": [
+        "Addition occurs at π bonds; substitution replaces an alkane hydrogen.",
+        "The peroxide effect is a special HBr radical case, not a general HX rule.",
+        "Only terminal alkynes give characteristic ammoniacal Ag⁺/Cu⁺ precipitate tests.",
+        "Bromine-water and Baeyer's tests indicate unsaturation but do not identify one specific compound.",
+        "Show reagents and conditions above arrows and balance full reactions."
+      ],
+      "practiceQuestions": [
+        "Write equations for methane chlorination under light and complete ethane combustion.",
+        "Predict the major product of propene + HBr with and without peroxide, explaining the distinction.",
+        "Describe a test to distinguish 1-butyne from 2-butyne and explain why it works.",
+        "Show one syllabus preparation each for an alkane, alkene and alkyne.",
+        "Explain why terminal alkynes are weakly acidic and undergo addition."
+      ],
+      "summary": "Classify the hydrocarbon first, then select reaction patterns appropriate to its bonds. State conditions and remember the limited HBr peroxide effect and terminal-alkyne tests."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/hydrocarbons/plan.json",
     "data": {
       "title": "plan",
@@ -50953,6 +51402,49 @@
       "notes": [
         "Mindmap placeholder — run content generation to create actual mindmap data."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/modern-chemical-manufactures/notes/modern-chemical-manufactures-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Modern Chemical Manufactures Study Guide",
+      "unitSlug": "modern-chemical-manufactures",
+      "topicSlug": "modern-chemical-manufactures-study-guide",
+      "topicTitle": "Modern Chemical Manufactures",
+      "relevance": 100,
+      "notes": [
+        "Haber process: N₂ + 3H₂ ⇌ 2NH₃ is exothermic and reduces gas moles from four to two. Purified gases react under elevated pressure and a moderate temperature with an iron-based catalyst; ammonia is condensed and unreacted gases recycled. Pressure favors ammonia, while a very low temperature slows reaction, so conditions balance yield, rate, cost and safety. A catalyst changes rate, not equilibrium position.",
+        "Ostwald process: ammonia is catalytically oxidized to nitric oxide, NO is oxidized to NO₂, and NO₂ is absorbed in water with oxygen to form nitric acid while NO is recycled. Representative equations: 4NH₃ + 5O₂ → 4NO + 6H₂O; 2NO + O₂ → 2NO₂; 4NO₂ + O₂ + 2H₂O → 4HNO₃. Control catalyst condition, absorption and NOₓ emissions.",
+        "Contact process: sulfur or sulfide ore is burned to SO₂, which is purified and oxidized: 2SO₂ + O₂ ⇌ 2SO₃. Lower temperature and higher pressure favor the exothermic product side, but industry uses a practical compromise and vanadium(V) oxide catalyst. SO₃ is absorbed in concentrated sulfuric acid to form oleum, then carefully diluted; direct hydration can form acid mist. Heat recovery and emissions controls matter.",
+        "Diaphragm-cell brine electrolysis: anode 2Cl⁻ → Cl₂ + 2e⁻; cathode 2H₂O + 2e⁻ → H₂ + 2OH⁻; overall 2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂. A diaphragm limits mixing of chlorine with alkali and hydrogen. Brine purification and safe separation are critical.",
+        "Solvay process: brine saturated with ammonia and CO₂ precipitates NaHCO₃: NaCl + NH₃ + CO₂ + H₂O → NaHCO₃ + NH₄Cl. Heating gives Na₂CO₃ + CO₂ + H₂O from 2NaHCO₃. Limestone decomposition supplies CO₂ (CaCO₃ → CaO + CO₂); lime slaking helps recover ammonia. Identify recycled materials and distinguish the NaHCO₃ intermediate from final sodium carbonate.",
+        "Urea manufacture proceeds via ammonium carbamate: 2NH₃ + CO₂ ⇌ NH₂COONH₄, then NH₂COONH₄ ⇌ NH₂CONH₂ + H₂O. Unconverted reactants are recovered and recycled; product is concentrated and granulated/prilled. Urea supplies nitrogen, but agronomic efficiency depends on soil, water and application conditions."
+      ],
+      "formulas": [
+        "N₂ + 3H₂ ⇌ 2NH₃",
+        "4NH₃ + 5O₂ → 4NO + 6H₂O; 2NO + O₂ → 2NO₂",
+        "2SO₂ + O₂ ⇌ 2SO₃",
+        "2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂",
+        "2NaHCO₃ → Na₂CO₃ + CO₂ + H₂O",
+        "2NH₃ + CO₂ ⇌ NH₂COONH₄ ⇌ NH₂CONH₂ + H₂O"
+      ],
+      "keyPoints": [
+        "Haber and Contact operating conditions balance equilibrium, rate, safety and cost.",
+        "A catalyst speeds equilibrium attainment but does not change equilibrium constant.",
+        "Ostwald proceeds through NO and NO₂ before nitric-acid absorption.",
+        "The diaphragm cell separates chlorine from hydrogen/alkali products.",
+        "Solvay precipitates NaHCO₃ first; heating produces Na₂CO₃ and process materials are recycled.",
+        "Urea synthesis proceeds through ammonium carbamate."
+      ],
+      "practiceQuestions": [
+        "Draw a Haber flow sequence and explain ammonia removal and gas recycle.",
+        "Write the Ostwald stages and balance the oxidation/absorption equations.",
+        "Explain the Contact-process equilibrium compromise and why SO₃ is absorbed in acid rather than directly in water.",
+        "Write diaphragm-cell electrode half-reactions and the overall NaOH manufacture equation.",
+        "Trace recycled materials through the Solvay process and identify its precipitated intermediate.",
+        "Write the two urea synthesis stages and identify ammonium carbamate."
+      ],
+      "summary": "Industrial-process answers follow feed preparation, reaction conditions, intermediate separation, recycle and product finishing. Balance equations and explain how equilibrium, kinetics, safety and environmental controls shape manufacture."
     }
   },
   {
@@ -51998,6 +52490,45 @@
       "notes": [
         "Study of oxidation and reduction concepts."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/oxidation-and-reduction/notes/redox-and-electrolysis-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Oxidation, Reduction and Electrolysis Study Guide",
+      "unitSlug": "oxidation-and-reduction",
+      "topicSlug": "redox-electrolysis-study-guide",
+      "topicTitle": "Oxidation and Reduction",
+      "relevance": 100,
+      "notes": [
+        "Oxidation is loss of electrons, increase in oxidation number, or classically addition of oxygen/removal of hydrogen. Reduction is electron gain, decrease in oxidation number, or removal of oxygen/addition of hydrogen. Both occur together. The reducing agent donates electrons and is oxidized; the oxidizing agent accepts electrons and is reduced.",
+        "An element in free form has oxidation number 0; a monatomic ion's number equals its charge. Fluorine is −1 in compounds. Oxygen is usually −2 (−1 in peroxides; positive in OF₂). Hydrogen is usually +1 with nonmetals and −1 in metal hydrides. Group 1 metals are +1 and Group 2 are +2. The sum of oxidation numbers equals total species charge. These are bookkeeping values, not necessarily actual charges in covalent compounds.",
+        "Oxidation-number method: identify atoms whose oxidation numbers change, calculate total increase and decrease, and choose coefficients to equalize electron loss and gain; balance remaining atoms and check charge. Half-reaction method in acid: balance non-H/O atoms, O with H₂O, H with H⁺, and charge with e⁻. In base, add OH⁻ to both sides to neutralize H⁺, form water and cancel excess water.",
+        "Electrolysis uses an external power source for a non-spontaneous redox reaction. Oxidation occurs at the anode and reduction at the cathode in all electrochemical cells. In an electrolytic cell the anode is positive and the cathode negative; cations move toward the cathode, anions toward the anode. Products depend on discharge tendencies, concentration, electrode material and whether the electrolyte is aqueous or molten.",
+        "Faraday calculations: Q = It; one mole of electrons carries F ≈ 96485 C mol⁻¹. If a product requires z electrons per particle, n = Q/(zF), and mass m = MIt/(zF). Determine z from the balanced electrode half-reaction, use current in amperes and time in seconds, and check the answer's units.",
+        "Worked check: 2.00 A for 30.0 min gives Q = 2.00 × 1800 = 3600 C. For Cu²⁺ + 2e⁻ → Cu, n(Cu)=3600/(2×96485)=0.0187 mol, or about 1.19 g with M=63.55 g mol⁻¹."
+      ],
+      "formulas": [
+        "Q = It",
+        "n(e⁻) = Q/F; F ≈ 96485 C mol⁻¹",
+        "n(product) = Q/(zF)",
+        "m = MIt/(zF)",
+        "Σ oxidation numbers = overall charge"
+      ],
+      "keyPoints": [
+        "Oxidation/reduction and the oxidizing/reducing agents are named from their electron changes.",
+        "Oxidation-number sums equal the total charge of the species.",
+        "Oxidation is at the anode and reduction at the cathode in every cell.",
+        "An electrolytic-cell anode is positive and cathode negative.",
+        "Faraday calculations use balanced half-reaction electron number z and charge in coulombs."
+      ],
+      "practiceQuestions": [
+        "Find sulfur's oxidation number in H₂SO₄ and SO₄²⁻.",
+        "Balance MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ in acidic solution by half-reactions.",
+        "Calculate the silver mass deposited from Ag⁺ by 9650 C. Use Ag = 107.9 g mol⁻¹.",
+        "Explain why molten NaCl and aqueous NaCl can produce different electrolysis products."
+      ],
+      "summary": "Track electron transfer with oxidation numbers, balance redox equations with equal electron loss and gain, and use Q = It plus the electrode half-reaction for electrolysis quantities."
     }
   },
   {
@@ -53819,6 +54350,47 @@
     }
   },
   {
+    "path": "class-11-notes/chemistry/states-of-matter/notes/states-of-matter-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — States of Matter Study Guide",
+      "unitSlug": "states-of-matter",
+      "topicSlug": "states-of-matter-study-guide",
+      "topicTitle": "States of Matter",
+      "relevance": 100,
+      "notes": [
+        "The ideal-gas kinetic model treats particles as widely separated, moving randomly with negligible intermolecular forces except during elastic collisions. Boyle's law: P ∝ 1/V at fixed T,n. Charles's law: V ∝ T at fixed P,n. Avogadro's law: V ∝ n at fixed T,P. Combine them as PV = nRT. Convert temperature to kelvin and keep units consistent with R.",
+        "Dalton's law states total pressure equals the sum of component partial pressures; for an ideal mixture pᵢ = xᵢP. Graham's law gives r₁/r₂ = √(M₂/M₁) for diffusion/effusion under the same conditions: lighter gases move faster. Do not reverse the molar-mass ratio.",
+        "Real gases have finite molecular volume and attractions. Deviations are strongest at high pressure and low temperature, especially near liquefaction. The van der Waals equation (P + a n²/V²)(V − nb) = nRT corrects for attractions (a) and molecular volume (b); constants are gas-specific. Ideal behavior is approached at low pressure and high temperature.",
+        "Evaporation occurs at a liquid surface below its boiling point; condensation returns vapour to liquid. Vapour pressure is the pressure of vapour in equilibrium with the liquid. Boiling occurs when vapour pressure equals external pressure, so boiling point depends on pressure. Surface tension generally falls as temperature rises. Liquid viscosity generally decreases with temperature; gas viscosity generally increases. Liquid crystals have partial order and properties between ordinary liquids and crystalline solids.",
+        "Crystalline solids have long-range order and a characteristic melting point; amorphous solids lack long-range order and soften over a range. Deliquescent solids absorb moisture until they dissolve; efflorescent hydrates lose water of crystallization; hygroscopic substances absorb moisture without necessarily dissolving. A crystal lattice repeats in three dimensions; a unit cell is its smallest repeating volume. Crystallization and crystal growth depend on controlled supersaturation and conditions.",
+        "Example: a 2.00 L sample at 300 K and 1.00 atm is heated to 450 K at constant pressure. Charles's law gives V₂ = 2.00 × 450/300 = 3.00 L. Use kelvin; Celsius ratios are invalid."
+      ],
+      "formulas": [
+        "PV = nRT",
+        "At fixed T,n: P₁V₁ = P₂V₂",
+        "At fixed P,n: V₁/T₁ = V₂/T₂ (T in K)",
+        "At fixed T,P: V₁/n₁ = V₂/n₂",
+        "pᵢ = xᵢP; P = Σpᵢ",
+        "r₁/r₂ = √(M₂/M₁)",
+        "(P + a n²/V²)(V − nb) = nRT"
+      ],
+      "keyPoints": [
+        "Use kelvin for gas-law calculations.",
+        "Dalton partial pressure equals mole fraction times total pressure for ideal mixtures.",
+        "Graham's rate ratio uses the square root of the inverse molar-mass ratio.",
+        "Real-gas deviations are greatest at high pressure and low temperature.",
+        "At boiling, vapour pressure equals external pressure; distinguish moisture behavior of solids."
+      ],
+      "practiceQuestions": [
+        "A gas occupies 500 mL at 27°C and 1 atm. Find volume at 127°C and 1 atm.",
+        "A mixture has 2 mol N₂ and 1 mol O₂ at 900 kPa total pressure. Find each partial pressure.",
+        "Compare diffusion rates of H₂ and O₂ at the same temperature and pressure.",
+        "Explain why a real gas deviates more from ideality at high pressure and low temperature."
+      ],
+      "summary": "Relate gas variables using absolute temperature and mole amount, apply mixture and diffusion ratios carefully, and explain phase properties through particle motion, cohesion and structural order."
+    }
+  },
+  {
     "path": "class-11-notes/chemistry/states-of-matter/plan.json",
     "data": {
       "title": "plan",
@@ -55560,6 +56132,48 @@
       "notes": [
         "Study of stoichiometry concepts."
       ]
+    }
+  },
+  {
+    "path": "class-11-notes/chemistry/stoichiometry/notes/stoichiometry-study-guide.json",
+    "data": {
+      "title": "Class 11 Chemistry — Stoichiometry Study Guide",
+      "unitSlug": "stoichiometry",
+      "topicSlug": "stoichiometry-study-guide",
+      "topicTitle": "Stoichiometry",
+      "relevance": 100,
+      "notes": [
+        "Dalton proposed that matter consists of atoms, compounds form from atoms in fixed whole-number ratios, and chemical reactions rearrange atoms. Modern evidence refines that atoms contain subatomic particles and isotopes differ in mass. Conservation of mass requires the same number of every atom on each side of a balanced equation. The laws of definite and multiple proportions describe fixed composition and simple mass ratios in compounds.",
+        "Avogadro's law: equal volumes of gases at the same temperature and pressure contain equal numbers of molecules. Thus V ∝ n at fixed T and P. For ideal gases use PV = nRT; only use a stated molar gas volume when its reference conditions are specified. Vapour density relative to hydrogen is Mᵣ/2 for gases measured comparably.",
+        "One mole contains Nₐ = 6.022 × 10²³ specified entities. Identify whether the entities are atoms, molecules, ions or formula units. Convert mass using n = m/M, particle count using N = nNₐ, and ideal gas quantities using PV = nRT.",
+        "Balance the chemical equation by changing coefficients only, never formula subscripts. Coefficients provide mole ratios. Convert given quantities to moles, apply the equation ratio, then convert to the requested mass, volume or particle count.",
+        "For each reactant compute nᵢ/νᵢ, where nᵢ is its available amount and νᵢ its balanced-equation coefficient. The smallest ratio identifies the limiting reactant and controls the theoretical product amount; other reactants are in excess. Subtract the consumed amount to find excess remaining.",
+        "Theoretical yield is the maximum product predicted from the limiting reactant. Percentage yield = actual yield ÷ theoretical yield × 100%. For empirical formula from mass percentages, assume 100 g, convert to moles, divide by the smallest mole amount and scale to whole numbers. Molecular formula = empirical formula multiplied by n = molar mass ÷ empirical-formula mass.",
+        "Worked limiting-reactant example: 2H₂ + O₂ → 2H₂O. With 4 mol H₂ and 1 mol O₂, the ratios are 4/2 = 2 and 1/1 = 1, so O₂ limits. It forms 2 mol H₂O, consumes 2 mol H₂ and leaves 2 mol H₂.",
+        "Common checks: never choose the limiting reactant by comparing grams alone; convert to moles and divide by coefficients. Use a balanced equation, retain units and sensible significant figures, and check atom conservation. A measured yield above 100% usually signals impure/wet product or error rather than a physically possible pure-product yield."
+      ],
+      "formulas": [
+        "n = m/M",
+        "N = nNₐ; Nₐ = 6.022 × 10²³ mol⁻¹",
+        "PV = nRT",
+        "At fixed T,P: V₁/n₁ = V₂/n₂",
+        "Limiting-reactant test: minimum(nᵢ/νᵢ)",
+        "% yield = (actual yield ÷ theoretical yield) × 100%",
+        "Molecular formula = (empirical formula)ₙ; n = molar mass ÷ empirical-formula mass"
+      ],
+      "keyPoints": [
+        "Balanced-equation coefficients give mole ratios, not mass ratios.",
+        "Use the smallest n/ν value to identify the limiting reactant.",
+        "Avogadro volume ratios require equal temperature and pressure.",
+        "Mass and atoms are conserved in balanced chemical reactions."
+      ],
+      "practiceQuestions": [
+        "How many molecules are present in 9.0 g of water? Use H = 1, O = 16.",
+        "For N₂ + 3H₂ → 2NH₃, identify the limiting reactant and theoretical NH₃ yield from 2.0 mol N₂ and 3.0 mol H₂.",
+        "A reaction has a theoretical yield of 12.0 g and gives 9.0 g pure product. Find percentage yield.",
+        "A compound contains 52.2% C, 13.0% H and 34.8% O. Determine its empirical formula."
+      ],
+      "summary": "Convert measurements to moles, apply balanced-equation ratios, identify the limiting reactant, and convert the predicted amount to the requested quantity."
     }
   },
   {
@@ -80754,36 +81368,6 @@
     }
   },
   {
-    "path": "class-11-notes/physics/heat-and-temperature/concepts/heat-and-temperature.json",
-    "data": {
-      "title": "Heat and Temperature",
-      "unitSlug": "heat-and-temperature",
-      "topicSlug": "heat-and-temperature",
-      "source": "ravikishan",
-      "notes": [
-        "**Definition:** A temperature scale is created by identifying two easily reproducible fixed points (usually the freezing and boiling points of water at standard atmospheric pressure), then dividing the interval between them into equal divisions.",
-        "**Celsius scale (°C):** Introduced by Anders Celsius in 1742. Freezing point of water = 0°C, boiling point = 100°C at 1 atm. Has 100 equal divisions between the fixed points. The SI unit for temperature intervals is the degree Celsius.",
-        "**Fahrenheit scale (°F):** Introduced by Daniel Gabriel Fahrenheit in 1720. Freezing point = 32°F, boiling point = 212°F at 1 atm. Has 180 equal divisions. Widely used in the United States.",
-        "**Kelvin scale (K):** The SI base unit of thermodynamic temperature, named after Lord Kelvin. It is an absolute scale with zero at absolute zero (0 K = −273.15°C). Freezing point of water = 273.15 K, boiling point = 373.15 K. The Kelvin has the same magnitude as the Celsius degree, so ΔT(K) = ΔT(°C).",
-        "**Conversion formulas:** K = °C + 273.15; °F = (9/5)°C + 32; °C = (°F − 32) × 5/9; K = (°F + 459.67) × 5/9.",
-        "**Absolute zero:** 0 K = −273.15°C = −459.67°F. The theoretical temperature at which all molecular motion ceases (classical picture). It is unreachable in practice due to quantum zero-point energy. Modern definition: 0 K is the temperature at which the triple point of water occurs at exactly 273.16 K.",
-        "**Triple point of water:** The unique temperature and pressure at which solid, liquid, and vapor phases of water coexist in equilibrium: 273.16 K (0.01°C) at 611.657 Pa. This is the defining fixed point of the Kelvin scale.",
-        "**Reaumur scale (°R or °Ré):** Freezing point = 0°Ré, boiling point = 80°Ré. Rarely used today, except historically in some European countries.",
-        "**Rankine scale (°Ra):** The absolute version of Fahrenheit. 0°Ra = 0 K = −459.67°F. Freezing point of water = 491.67°Ra, boiling point = 671.67°Ra.",
-        "**Why use Kelvin?** In gas laws (PV = nRT), temperature must be in Kelvin because the relationship P ∝ T is linear only with absolute temperature. At 0 K, the extrapolated volume of an ideal gas would be zero, making physical sense. In Celsius, this would be −273.15°C - a non-zero volume at \"zero\" temperature.",
-        "**Gas thermometer:** The most accurate temperature measurement uses a constant-volume gas thermometer. It measures pressure of a fixed volume of gas, which is proportional to absolute temperature. The ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy.",
-        "**Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior."
-      ],
-      "confusion": [
-        "Temperature and heat are NOT the same. Temperature is an intensive property (per unit mass); heat is energy transferred (extensive). A bathtub of 30°C water has more heat than a cup of 80°C water, but lower temperature.",
-        "A temperature difference of 1°C is NOT the same as 1°F. ΔT(°C) = (5/9)ΔT(°F). A 10°C change equals an 18°F change, so 5°C ≠ 5°F.",
-        "Kelvin is NOT written as '°K' - it is simply 'K' (e.g., 300 K, not 300°K). There is no 'degree Kelvin.' The word 'kelvin' is not capitalized when spelled out.",
-        "Absolute zero is NOT just 'really cold' - it is the state where classical thermal motion ceases entirely. At 0 K, only quantum zero-point energy remains, and all real substances have condensed to their ground states.",
-        "The triple point of water (273.16 K) and the freezing point of water (273.15 K) differ by exactly 0.01 K. Confusing these is a common source of error in metrology."
-      ]
-    }
-  },
-  {
     "path": "class-11-notes/physics/heat-and-temperature/concepts/04-quantity-of-heat.json",
     "data": {
       "title": "Quantity of Heat",
@@ -80815,6 +81399,36 @@
       ],
       "duplicateType": 1,
       "visualType": "heat-transfer"
+    }
+  },
+  {
+    "path": "class-11-notes/physics/heat-and-temperature/concepts/heat-and-temperature.json",
+    "data": {
+      "title": "Heat and Temperature",
+      "unitSlug": "heat-and-temperature",
+      "topicSlug": "heat-and-temperature",
+      "source": "ravikishan",
+      "notes": [
+        "**Definition:** A temperature scale is created by identifying two easily reproducible fixed points (usually the freezing and boiling points of water at standard atmospheric pressure), then dividing the interval between them into equal divisions.",
+        "**Celsius scale (°C):** Introduced by Anders Celsius in 1742. Freezing point of water = 0°C, boiling point = 100°C at 1 atm. Has 100 equal divisions between the fixed points. The SI unit for temperature intervals is the degree Celsius.",
+        "**Fahrenheit scale (°F):** Introduced by Daniel Gabriel Fahrenheit in 1720. Freezing point = 32°F, boiling point = 212°F at 1 atm. Has 180 equal divisions. Widely used in the United States.",
+        "**Kelvin scale (K):** The SI base unit of thermodynamic temperature, named after Lord Kelvin. It is an absolute scale with zero at absolute zero (0 K = −273.15°C). Freezing point of water = 273.15 K, boiling point = 373.15 K. The Kelvin has the same magnitude as the Celsius degree, so ΔT(K) = ΔT(°C).",
+        "**Conversion formulas:** K = °C + 273.15; °F = (9/5)°C + 32; °C = (°F − 32) × 5/9; K = (°F + 459.67) × 5/9.",
+        "**Absolute zero:** 0 K = −273.15°C = −459.67°F. The theoretical temperature at which all molecular motion ceases (classical picture). It is unreachable in practice due to quantum zero-point energy. Modern definition: 0 K is the temperature at which the triple point of water occurs at exactly 273.16 K.",
+        "**Triple point of water:** The unique temperature and pressure at which solid, liquid, and vapor phases of water coexist in equilibrium: 273.16 K (0.01°C) at 611.657 Pa. This is the defining fixed point of the Kelvin scale.",
+        "**Reaumur scale (°R or °Ré):** Freezing point = 0°Ré, boiling point = 80°Ré. Rarely used today, except historically in some European countries.",
+        "**Rankine scale (°Ra):** The absolute version of Fahrenheit. 0°Ra = 0 K = −459.67°F. Freezing point of water = 491.67°Ra, boiling point = 671.67°Ra.",
+        "**Why use Kelvin?** In gas laws (PV = nRT), temperature must be in Kelvin because the relationship P ∝ T is linear only with absolute temperature. At 0 K, the extrapolated volume of an ideal gas would be zero, making physical sense. In Celsius, this would be −273.15°C - a non-zero volume at \"zero\" temperature.",
+        "**Gas thermometer:** The most accurate temperature measurement uses a constant-volume gas thermometer. It measures pressure of a fixed volume of gas, which is proportional to absolute temperature. The ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy.",
+        "**Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior."
+      ],
+      "confusion": [
+        "Temperature and heat are NOT the same. Temperature is an intensive property (per unit mass); heat is energy transferred (extensive). A bathtub of 30°C water has more heat than a cup of 80°C water, but lower temperature.",
+        "A temperature difference of 1°C is NOT the same as 1°F. ΔT(°C) = (5/9)ΔT(°F). A 10°C change equals an 18°F change, so 5°C ≠ 5°F.",
+        "Kelvin is NOT written as '°K' - it is simply 'K' (e.g., 300 K, not 300°K). There is no 'degree Kelvin.' The word 'kelvin' is not capitalized when spelled out.",
+        "Absolute zero is NOT just 'really cold' - it is the state where classical thermal motion ceases entirely. At 0 K, only quantum zero-point energy remains, and all real substances have condensed to their ground states.",
+        "The triple point of water (273.16 K) and the freezing point of water (273.15 K) differ by exactly 0.01 K. Confusing these is a common source of error in metrology."
+      ]
     }
   },
   {

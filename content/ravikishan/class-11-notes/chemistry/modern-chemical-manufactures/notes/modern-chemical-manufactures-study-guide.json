@@ -1,0 +1,40 @@
+{
+  "title": "Class 11 Chemistry — Modern Chemical Manufactures Study Guide",
+  "unitSlug": "modern-chemical-manufactures",
+  "topicSlug": "modern-chemical-manufactures-study-guide",
+  "topicTitle": "Modern Chemical Manufactures",
+  "relevance": 100,
+  "notes": [
+    "Haber process: N₂ + 3H₂ ⇌ 2NH₃ is exothermic and reduces gas moles from four to two. Purified gases react under elevated pressure and a moderate temperature with an iron-based catalyst; ammonia is condensed and unreacted gases recycled. Pressure favors ammonia, while a very low temperature slows reaction, so conditions balance yield, rate, cost and safety. A catalyst changes rate, not equilibrium position.",
+    "Ostwald process: ammonia is catalytically oxidized to nitric oxide, NO is oxidized to NO₂, and NO₂ is absorbed in water with oxygen to form nitric acid while NO is recycled. Representative equations: 4NH₃ + 5O₂ → 4NO + 6H₂O; 2NO + O₂ → 2NO₂; 4NO₂ + O₂ + 2H₂O → 4HNO₃. Control catalyst condition, absorption and NOₓ emissions.",
+    "Contact process: sulfur or sulfide ore is burned to SO₂, which is purified and oxidized: 2SO₂ + O₂ ⇌ 2SO₃. Lower temperature and higher pressure favor the exothermic product side, but industry uses a practical compromise and vanadium(V) oxide catalyst. SO₃ is absorbed in concentrated sulfuric acid to form oleum, then carefully diluted; direct hydration can form acid mist. Heat recovery and emissions controls matter.",
+    "Diaphragm-cell brine electrolysis: anode 2Cl⁻ → Cl₂ + 2e⁻; cathode 2H₂O + 2e⁻ → H₂ + 2OH⁻; overall 2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂. A diaphragm limits mixing of chlorine with alkali and hydrogen. Brine purification and safe separation are critical.",
+    "Solvay process: brine saturated with ammonia and CO₂ precipitates NaHCO₃: NaCl + NH₃ + CO₂ + H₂O → NaHCO₃ + NH₄Cl. Heating gives Na₂CO₃ + CO₂ + H₂O from 2NaHCO₃. Limestone decomposition supplies CO₂ (CaCO₃ → CaO + CO₂); lime slaking helps recover ammonia. Identify recycled materials and distinguish the NaHCO₃ intermediate from final sodium carbonate.",
+    "Urea manufacture proceeds via ammonium carbamate: 2NH₃ + CO₂ ⇌ NH₂COONH₄, then NH₂COONH₄ ⇌ NH₂CONH₂ + H₂O. Unconverted reactants are recovered and recycled; product is concentrated and granulated/prilled. Urea supplies nitrogen, but agronomic efficiency depends on soil, water and application conditions."
+  ],
+  "formulas": [
+    "N₂ + 3H₂ ⇌ 2NH₃",
+    "4NH₃ + 5O₂ → 4NO + 6H₂O; 2NO + O₂ → 2NO₂",
+    "2SO₂ + O₂ ⇌ 2SO₃",
+    "2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂",
+    "2NaHCO₃ → Na₂CO₃ + CO₂ + H₂O",
+    "2NH₃ + CO₂ ⇌ NH₂COONH₄ ⇌ NH₂CONH₂ + H₂O"
+  ],
+  "keyPoints": [
+    "Haber and Contact operating conditions balance equilibrium, rate, safety and cost.",
+    "A catalyst speeds equilibrium attainment but does not change equilibrium constant.",
+    "Ostwald proceeds through NO and NO₂ before nitric-acid absorption.",
+    "The diaphragm cell separates chlorine from hydrogen/alkali products.",
+    "Solvay precipitates NaHCO₃ first; heating produces Na₂CO₃ and process materials are recycled.",
+    "Urea synthesis proceeds through ammonium carbamate."
+  ],
+  "practiceQuestions": [
+    "Draw a Haber flow sequence and explain ammonia removal and gas recycle.",
+    "Write the Ostwald stages and balance the oxidation/absorption equations.",
+    "Explain the Contact-process equilibrium compromise and why SO₃ is absorbed in acid rather than directly in water.",
+    "Write diaphragm-cell electrode half-reactions and the overall NaOH manufacture equation.",
+    "Trace recycled materials through the Solvay process and identify its precipitated intermediate.",
+    "Write the two urea synthesis stages and identify ammonium carbamate."
+  ],
+  "summary": "Industrial-process answers follow feed preparation, reaction conditions, intermediate separation, recycle and product finishing. Balance equations and explain how equilibrium, kinetics, safety and environmental controls shape manufacture."
+}
