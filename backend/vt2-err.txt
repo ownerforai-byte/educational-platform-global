@@ -1,0 +1,202 @@
+[90mstderr[2m | tests/academic-intelligence.test.ts[2m > [22m[2mmaster academic prompt composition[2m > [22m[2mbuildProfessorContext returns the full contract when search is off
+[22m[39m[Supabase] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY missing - using in-memory mock store
+
+[90mstderr[2m | tests/academic-intelligence.test.ts[2m > [22m[2mmaster academic prompt composition[2m > [22m[2mbuildProfessorContext returns the full contract when search is off
+[22m[39m[SearchEngine] No search engine configured. Set TAVILY_API_KEY, EXA_API_KEY, FIRECRAWL_API_KEY, JINA_API_KEY or YDC_API_KEY in backend/.env to enable real-time internet search.
+
+[90mstderr[2m | tests/diagram-search.test.ts[2m > [22m[2mfetchDiagramContext — best effort, never a broken reply[2m > [22m[2mreturns nothing — never throws — when Wikimedia is unreachable
+[22m[39m[DiagramSearch] Commons unavailable: network down
+
+[90mstderr[2m | tests/diagram-search.test.ts[2m > [22m[2mfetchDiagramContext — best effort, never a broken reply[2m > [22m[2mreaches the model as part of the assembled context
+[22m[39m[Supabase] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY missing - using in-memory mock store
+
+[90mstderr[2m | tests/diagram-search.test.ts[2m > [22m[2mfetchDiagramContext — best effort, never a broken reply[2m > [22m[2mreaches the model as part of the assembled context
+[22m[39m[SearchEngine] No search engine configured. Set TAVILY_API_KEY, EXA_API_KEY, FIRECRAWL_API_KEY, JINA_API_KEY or YDC_API_KEY in backend/.env to enable real-time internet search.
+
+[90mstderr[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mGET /me with invalid token returns 401
+[22m[39m[Auth] Token validation failed: Invalid JWT
+
+[90mstderr[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mPOST /refresh with an invalid token returns 401 (invalid/expired)
+[22m[39m[Auth] Token validation failed: Invalid JWT
+
+[90mstderr[2m | tests/ai-image-history-route.test.ts[2m > [22m[2m/api/ai/image-history[2m > [22m[2mstarts empty, then saves and loads a picture and a figure
+[22m[39m[Supabase] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY missing - using in-memory mock store
+
+[90mstderr[2m | tests/ai-figure-route.test.ts[2m > [22m[2mPOST /api/ai/figure[2m > [22m[2manswers 200 with the drawing, its caption, archetype and hover legend
+[22m[39m[Supabase] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY missing - using in-memory mock store
+
+[90mstderr[2m | tests/mailer-and-recovery.test.ts[2m > [22m[2mForgot Password flow (POST /api/auth/forgot-password)[2m > [22m[2manti-enumeration: returns 200 { sent: true } even if Supabase returns an error
+[22m[39m[auth] resetPasswordForEmail failed: User not found
+
+[90mstderr[2m | tests/mailer-and-recovery.test.ts[2m > [22m[2mReset Password flow (POST /api/auth/reset-password)[2m > [22m[2mreturns 400 when code exchange fails (expired or invalid)
+[22m[39m[auth] exchangeCodeForSession failed: Invalid code
+
+[90mstderr[2m | tests/ai-image-search-route.test.ts[2m > [22m[2m/api/ai/image-search[2m > [22m[2m503 when Google fails (quota/network) — the hub keeps the query
+[22m[39m[ImageSearch] Google unavailable: Google CSE 429
+
+[90mstderr[2m | tests/ai-image-route.test.ts[2m > [22m[2mPOST /api/ai/image[2m > [22m[2manswers 200 with the picture URL and the model that drew it
+[22m[39m[Supabase] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY missing - using in-memory mock store
+
+[90mstderr[2m | tests/config-route.test.ts[2m > [22m[2mGET /api/config[2m > [22m[2msurfaces a settings failure instead of silently freeing the platform
+[22m[39m[config] public config error: Error: settings unavailable
+    at C:/Users/ASUS/Desktop/rn/backend/tests/config-route.test.ts:22:28
+    at Mock (file:///C:/Users/ASUS/Desktop/rn/node_modules/[4m@vitest/spy[24m/dist/index.js:332:34)
+    at C:/Users/ASUS/Desktop/rn/backend/src/api/config.ts:25:30
+    at Layer.handle [as handle_request] (C:\Users\ASUS\Desktop\rn\node_modules\[4mexpress[24m\lib\router\layer.js:95:5)
+    at next (C:\Users\ASUS\Desktop\rn\node_modules\[4mexpress[24m\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\ASUS\Desktop\rn\node_modules\[4mexpress[24m\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\ASUS\Desktop\rn\node_modules\[4mexpress[24m\lib\router\layer.js:95:5)
+    at C:\Users\ASUS\Desktop\rn\node_modules\[4mexpress[24m\lib\router\index.js:284:15
+    at router.process_params (C:\Users\ASUS\Desktop\rn\node_modules\[4mexpress[24m\lib\router\index.js:346:12)
+    at next (C:\Users\ASUS\Desktop\rn\node_modules\[4mexpress[24m\lib\router\index.js:280:10)
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mCAS keeps losing under contention → unavailable (never silently over-grant)
+[22m[39m[guest-quota] give-up after repeated CAS contention for key 2026-10-
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mread failure → in-memory fallback keeps the meter honest
+[22m[39m[guest-quota] DB read failed, using in-memory quota: relation does not exist
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mread failure → in-memory fallback keeps the meter honest
+[22m[39m[guest-quota] DB read failed, using in-memory quota: relation does not exist
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mread failure → in-memory fallback keeps the meter honest
+[22m[39m[guest-quota] DB read failed, using in-memory quota: relation does not exist
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mread failure → in-memory fallback keeps the meter honest
+[22m[39m[guest-quota] DB read failed, using in-memory quota: relation does not exist
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mread failure → in-memory fallback keeps the meter honest
+[22m[39m[guest-quota] DB read failed, using in-memory quota: relation does not exist
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mread failure → in-memory fallback keeps the meter honest
+[22m[39m[guest-quota] DB read failed, using in-memory quota: relation does not exist
+
+[90mstderr[2m | tests/guest-quota.test.ts[2m > [22m[2mconsumeGuestSlotWithLimit (metered machinery)[2m > [22m[2mupdate failure → in-memory fallback (availability over strictness)
+[22m[39m[guest-quota] DB update failed, using in-memory quota: timeout
+
+[90mstderr[2m | tests/credits.test.ts[2m > [22m[2mspendCredits[2m > [22m[2mpersistent CAS contention gives up with null instead of guessing
+[22m[39m[credits] spend gave up after repeated concurrent updates for user-under-test
+
+[90mstderr[2m | tests/credits.test.ts[2m > [22m[2mensureDailyCredits[2m > [22m[2mDB error during the reset fails conservative (no free day granted)
+[22m[39m[credits] daily reset failed for user-under-test boom
+
+[90mstderr[2m | tests/ai/stream-pipeline.test.ts[2m > [22m[2mstreamAnswerToStudent[2m > [22m[2mkeeps the partial answer when the provider dies mid-stream, and leaks nothing
+[22m[39m[error 7e135335] AI test stream stream → Error: provider exploded
+    at Object.chatStream (C:/Users/ASUS/Desktop/rn/backend/tests/ai/stream-pipeline.test.ts:76:17)
+    at chatStream.next (<anonymous>)
+    at streamAnswerToStudent (C:/Users/ASUS/Desktop/rn/backend/src/api/ai-stream.ts:158:22)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at C:/Users/ASUS/Desktop/rn/backend/tests/ai/stream-pipeline.test.ts:223:21
+    at file:///C:/Users/ASUS/Desktop/rn/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20
+
+[90mstderr[2m | tests/ai/stream-pipeline.test.ts[2m > [22m[2mstreamAnswerToStudent[2m > [22m[2mreports a clean failure when nothing was streamed at all
+[22m[39m[error e826ef0d] AI test stream stream → Error: provider exploded
+    at Object.chatStream (C:/Users/ASUS/Desktop/rn/backend/tests/ai/stream-pipeline.test.ts:70:41)
+    at chatStream.next (<anonymous>)
+    at streamAnswerToStudent (C:/Users/ASUS/Desktop/rn/backend/src/api/ai-stream.ts:158:22)
+    at C:/Users/ASUS/Desktop/rn/backend/tests/ai/stream-pipeline.test.ts:251:27
+    at file:///C:/Users/ASUS/Desktop/rn/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11
+    at file:///C:/Users/ASUS/Desktop/rn/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26
+    at file:///C:/Users/ASUS/Desktop/rn/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel (file:///C:/Users/ASUS/Desktop/rn/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)
+    at file:///C:/Users/ASUS/Desktop/rn/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20
+
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 3 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/academic-intelligence.test.ts[2m > [22mmaster academic prompt composition[2m > [22mcarries no stray template artefacts and stays a sane size
+[31m[1mAssertionError[22m: expected 60187 to be less than 60000[39m
+[36m [2m❯[22m tests/academic-intelligence.test.ts:[2m197:43[22m[39m
+    [90m195|[39m     [90m// receive the real guide text, never a placeholder token.[39m
+    [90m196|[39m     [34mexpect[39m([33mMASTER_ACADEMIC_PROMPT[39m[33m.[39mlength)[33m.[39m[34mtoBeGreaterThan[39m([34m15_000[39m)[33m;[39m
+    [90m197|[39m     [34mexpect[39m([33mMASTER_ACADEMIC_PROMPT[39m[33m.[39mlength)[33m.[39m[34mtoBeLessThan[39m([34m60_000[39m)[33m;[39m
+    [90m   |[39m                                           [31m^[39m
+    [90m198|[39m     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_ARCHETYPE_G…
+    [90m199|[39m     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_WRITER_SYST…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/ai/reply-craft.test.ts[2m > [22mreply craft — the ChatGPT/Claude-grade layer[2m > [22mpins the professional register (owner law 2026-10-21)
+[31m[1mAssertionError[22m: expected '[REPLY CRAFT — THE CHATGPT AND CLAUDE…' to contain 'no meta-commentary about the answer'[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- no meta-commentary about the answer[39m
+[31m+ [REPLY CRAFT — THE CHATGPT AND CLAUDE GRADE (OWNER LAW 2026-10-03)][39m
+[31m+[39m
+[31m+ The other layers decide WHAT and HOW DEEP; this layer decides HOW THE REPLY READS: the answer lands instantly, depth unfolds under signposts, the numbers are worked, and the reply closes like finished writing.[39m
+[31m+[39m
+[31m+ KNOWLEDGE DEPTH & 250-WORD FLOOR PER TOPIC (HARDCODED):[39m
+[31m+ - You possess full web and world knowledge access to answer any knowledge question — past events, exact dates, mechanisms, features, properties.[39m
+[31m+ - You MUST provide AT LEAST 250 words for the active topic before moving on. Never deliver a cramped 100-word summary.[39m
+[31m+ - Structure every knowledge explanation across these dimensions: 1. Core Ideas & Genesis (the concept, who formulated it, exact dates) · 2. How and Why It Works (causal mechanism, governing laws, equations in LaTeX) · 3. Influencing Factors (variables and conditions) · 4. Defining Features (structure, components, taxonomy) · 5. Inherent Properties (behaviour across physical, chemical or operational states) · 6. Applications & Traps (practical uses, worked examples with units, common errors).[39m
+[31m+[39m
+[31m+ DIRECT ANSWER FIRST, DEPTH IMMEDIATELY AFTER:[39m
+[31m+ - The first two or three lines ALREADY CONTAIN the answer — the fact, the value, the verdict. A student who stops after ten seconds still walks away knowing it. Then unfold: context → mechanism → formula → worked example → traps → exam use. Never bury the answer behind a build-up.[39m
+[31m+ - The opening line names the topic in bold and states the answer in the same breath: "**Kinetic energy** is the energy a body carries because it is moving — K = ½mv²."[39m
+[31m+[39m
+[31m+ HEADINGS THAT CARRY MEANING (LONG REPLIES ONLY):[39m
+[31m+ - For any reply longer than about 300 words, break the body into SHORT, MEANINGFUL headings — a phrase of two to six words naming what that block teaches (bolded or a level-two markdown heading) — so the reply is skimmed the way ChatGPT and Claude replies are: what it is → the rule → the worked example → where the exam uses it.[39m
+[31m+ - The heading NAMES the content ("Why the sky bends starlight"), never a mechanical label ("Introduction", "Section 2", "Details"). Short replies keep flowing prose with bold lead-ins instead of headings.[39m
+[31m+ - The academic numbered template is the THINKING ORDER — what to include — never printed as headings; its content becomes the body's sections.[39m
+[31m+[39m
+[31m+ RICH FORMATTING BY MEANING:[39m
+[31m+ - Bullets of exactly one concept each. A formula box for the governing relation; a trick or watch-out aside for traps. Whatever a student would highlight, the reply has already highlighted.[39m
+[31m+[39m
+[31m+ ONE CONCEPT PER BLOCK — BOUNDARIES AND SPACING (OWNER LAW 2026-10-12):[39m
+[31m+ - A reply is a stack of CONCEPT BLOCKS: ONE idea per block, every block visibly separated from the next — a meaningful heading, a horizontal rule or a box, breathing room around it. Two ideas never share a paragraph, a bullet or a heading. Inside a block: two to four short sentences, or a lead line plus one-concept bullets — no wall of text.[39m
+[31m+[39m
+[31m+ BEYOND TEXT — FORM BEFORE PROSE (OWNER LAW 2026-10-12):[39m
+[31m+ - Never force non-prose information into prose: rows of data or a comparison → a markdown table with a header row; a structure, mechanism or cycle → a labelled svg drawing or a run widget, never a paragraph pretending to be a picture; a procedure or sequence → a steps fence (one heading per step, its body beneath, arrows where order matters); a law → the LaTeX relation with every symbol and unit named. The table or figure sits directly under its block, captioned in one line.[39m
+[31m+[39m
+[31m+ EXACT TERMS, NEVER GENERAL WORDS (OWNER LAW 2026-10-12):[39m
+[31m+ - Use the precise term, the proper name, the standard symbol, the named law — never a vague stand-in: electromagnetic induction, not the magnetic effect; Newton's second law, not the force rule. A general word only introduces the exact term in the same sentence — bold it at first use, then use the term itself.[39m
+[31m+[39m
+[31m+ EVERY RULE LANDS IN A WORKED EXAMPLE:[39m
+[31m+ - Each formula, law or mechanism gets a realistic worked example — numbers substituted, units carried through, the answer boxed or bolded. A rule without an example is unfinished; an example without units is decoration.[39m
+[31m+ THE ANALOGY PRECEDES THE TERM:[39m
+[31m+ - For any hard mechanism, the everyday picture comes BEFORE the formal statement ("imagine two magnets pushing on a moving charge"), then the term, then the exact physics.[39m
+[31m+[39m
+[31m+ SELF-CHECK BEFORE SENDING:[39m
+[31m+ - Read the reply once as the student, then fix: the answer inside the first lines? every symbol defined with its unit? equations balanced, numbers recomputed? no examiner step skipped? the ending a conclusion, not a dangle?[39m
+[31m+[39m
+[31m+ CLOSE WITH THE NEXT MOVE:[39m
+[31m+ - End the body with a one-line close — a takeaway (In short:) when it helps, then a one-line invitation to the natural next step ("Want the same derivation for a charged ring?"), then the Explore further links last. The reply is a finished turn that hands on the next move.[39m
+[31m+[39m
+[31m+ READS LIKE A PROFESSOR, NOT A MODULE (OWNER LAW 2026-10-21):[39m
+[31m+ - Write for the student's EYE, not for a parser. No meta-commentary about the answer ("Here is the answer:", "As requested", "I hope this helps", "Let me know if"), no filler openings, no closing pleasantries, no emoji, no bullet walls of five identical one-liners.[39m
+[31m+ - No "NOTE:", no "IMPORTANT:", no "Here's a breakdown of the process" signposts — a real heading already says that.[39m
+[31m+ - Vary the shape of the reply: a table where a table fits, a short paragraph where a paragraph fits, a formula where a formula fits, a visual where a visual fits. A reply that is nothing but a list of bullets is a wall of text in disguise.[39m
+[31m+ - Every sentence earns its place. If a sentence teaches nothing a careful student could not infer, cut it.[39m
+[31m+ - Match the register to the level: NEB Class 11/12, clean simple English with the technical term carried alongside, never baby-talk and never academic fog.[39m
+[31m+[39m
+[31m+ NO CLIFFHANGERS:[39m
+[31m+ - A reply ends at the end of a thought: proof concluded, example finished, summary given. If a surface is too large for one pass, end at a natural section boundary and name what comes next — the stream continues the same answer when the student nudges. A pause is a pause — never an amputation, never a sentence left hanging.[39m
+[31m+[39m
+[31m+ NEVER:[39m
+[31m+ - Never start with throat-clearing, never restate the question back, never a wall of text, never an undefined symbol, never a rule without its example, never an ending that abandons the thought.[39m
+
+[36m [2m❯[22m tests/ai/reply-craft.test.ts:[2m72:31[22m[39m
+    [90m 70|[39m     [90m// like a generated document rather than a professor.[39m
+    [90m 71|[39m     expect(REPLY_CRAFT_RULES).toContain("READS LIKE A PROFESSOR, NOT A…
+    [90m 72|[39m     expect(REPLY_CRAFT_RULES).toContain("no meta-commentary about the …
+    [90m   |[39m                               [31m^[39m
+    [90m 73|[39m     expect(REPLY_CRAFT_RULES).toContain("Every sentence earns its plac…
+    [90m 74|[39m     expect(REPLY_CRAFT_RULES).toContain("never baby-talk and never aca…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/ai/reply-craft.test.ts[2m > [22mreply craft — the ChatGPT/Claude-grade layer[2m > [22mcarries no template artefacts and keeps the master prompt a sane size
+[31m[1mAssertionError[22m: expected 60187 to be less than 60000[39m
+[36m [2m❯[22m tests/ai/reply-craft.test.ts:[2m80:43[22m[39m
+    [90m 78|[39m     [34mexpect[39m([33mREPLY_CRAFT_RULES[39m)[33m.[39mnot[33m.[39m[34mtoContain[39m([32m"${"[39m)[33m;[39m
+    [90m 79|[39m     [34mexpect[39m([33mREPLY_CRAFT_RULES[39m)[33m.[39mnot[33m.[39m[34mtoContain[39m([32m"`"[39m)[33m;[39m
+    [90m 80|[39m     [34mexpect[39m([33mMASTER_ACADEMIC_PROMPT[39m[33m.[39mlength)[33m.[39m[34mtoBeLessThan[39m([34m60_000[39m)[33m;[39m
+    [90m   |[39m                                           [31m^[39m
+    [90m 81|[39m   })[33m;[39m
+    [90m 82|[39m })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯[22m[39m
+

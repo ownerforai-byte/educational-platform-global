@@ -1,0 +1,172 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90mC:/Users/ASUS/Desktop/rn/backend[39m
+
+ [31m❯[39m tests/ai/reply-craft.test.ts [2m([22m[2m7 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 21[2mms[22m[39m
+     [32m✓[39m reaches the model as its own layer in the master prompt[32m 2[2mms[22m[39m
+     [32m✓[39m pins the direct-answer-first craft[32m 0[2mms[22m[39m
+     [32m✓[39m allows meaningful headings for long replies while keeping the ban on mechanical ones[32m 0[2mms[22m[39m
+     [32m✓[39m pins rich formatting, worked examples and the analogy-before-term rule[32m 0[2mms[22m[39m
+     [32m✓[39m pins the self-check and the finished close (no cliffhangers)[32m 0[2mms[22m[39m
+[31m     [31m×[31m pins the professional register (owner law 2026-10-21)[39m[32m 13[2mms[22m[39m
+[31m     [31m×[31m carries no template artefacts and keeps the master prompt a sane size[39m[32m 2[2mms[22m[39m
+ [32m✓[39m tests/deep-source-depth.test.ts [2m([22m[2m41 tests[22m[2m)[22m[33m 16312[2mms[22m[39m
+     [33m[2m✓[22m[39m the loaded corpus is validated, and its filler is counted not served [33m 1748[2mms[22m[39m
+     [33m[2m✓[22m[39m a taught physics concept is graded STRONG and reaches the prompt [33m 2298[2mms[22m[39m
+     [33m[2m✓[22m[39m a concept the platform does not teach is never dressed up as covered [33m 508[2mms[22m[39m
+ [32m✓[39m tests/curriculum-retrieval.test.ts [2m([22m[2m22 tests[22m[2m)[22m[33m 11045[2mms[22m[39m
+     [33m[2m✓[22m[39m a real syllabus question retrieves a relevant record [33m 2081[2mms[22m[39m
+ [31m❯[39m tests/academic-intelligence.test.ts [2m([22m[2m23 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 12032[2mms[22m[39m
+     [32m✓[39m stacks professor style rules, then the academic engine, then the grounding layers[32m 5[2mms[22m[39m
+     [32m✓[39m keeps the tutor's identity and house style intact[32m 2[2mms[22m[39m
+     [32m✓[39m answers the owner's exact self-introduction when asked who made it (owner 2026-10-07)[32m 1[2mms[22m[39m
+     [32m✓[39m every academic figure is drawn (two fence langs) and every labelled part is hoverable (owner 2026-10-03)[32m 2[2mms[22m[39m
+     [32m✓[39m tells every answer like a story, complete start to finish, from every attached source[32m 1[2mms[22m[39m
+     [32m✓[39m academic rules define the specialist contract without imposing headings[32m 1[2mms[22m[39m
+[31m     [31m×[31m carries no stray template artefacts and stays a sane size[39m[32m 9[2mms[22m[39m
+     [33m[2m✓[22m[39m buildProfessorContext returns the full contract when search is off [33m 1677[2mms[22m[39m
+     [32m✓[39m withProfessorContext merges into an existing system message or prepends one[32m 2[2mms[22m[39m
+     [32m✓[39m names all six subjects and the NEB Class 11/12 Science frame[32m 0[2mms[22m[39m
+     [32m✓[39m pins the draft-and-verify reasoning instruction and dictionary sources[32m 0[2mms[22m[39m
+     [32m✓[39m keeps each subject's domain rules[32m 0[2mms[22m[39m
+     [32m✓[39m ships the five-section structural response template with exam focus[32m 0[2mms[22m[39m
+     [32m✓[39m tells answers as a dated, ascending story from history to the future[32m 0[2mms[22m[39m
+     [32m✓[39m the search addendum keeps the academic floor[32m 0[2mms[22m[39m
+     [32m✓[39m every reply teaches new words and adapts to the learner[32m 0[2mms[22m[39m
+     [32m✓[39m detects emotion and switches to romantic mode on romantic topics[32m 0[2mms[22m[39m
+     [32m✓[39m aims for many ideas in conceptual order, past to present[32m 0[2mms[22m[39m
+     [32m✓[39m carries the full taxonomic ladder and nomenclature rules[32m 0[2mms[22m[39m
+     [32m✓[39m teaches the kingdoms with their criteria and the domain system[32m 0[2mms[22m[39m
+     [32m✓[39m lists the phyla and divisions with named examples[32m 0[2mms[22m[39m
+     [32m✓[39m keeps the three life-cycle patterns with ploidy and examples[32m 0[2mms[22m[39m
+     [32m✓[39m defines the mind-map and flow output formats[32m 0[2mms[22m[39m
+[90mstdout[2m | tests/diagram-search.test.ts[2m > [22m[2mfetchDiagramContext — best effort, never a broken reply[2m > [22m[2mfalls back to an unfiltered search when no drawing matched
+[22m[39m[DiagramSearch] "explain the nephron in full" → 1 diagram file(s): Nephron.svg
+
+[90mstdout[2m | tests/diagram-search.test.ts[2m > [22m[2mfetchDiagramContext — best effort, never a broken reply[2m > [22m[2mreaches the model as part of the assembled context
+[22m[39m[DiagramSearch] "explain the structure of a nephron" → 1 diagram file(s): Nephron.svg
+
+ [32m✓[39m tests/diagram-search.test.ts [2m([22m[2m21 tests[22m[2m)[22m[33m 10918[2mms[22m[39m
+     [33m[2m✓[22m[39m reaches the model as part of the assembled context [33m 1894[2mms[22m[39m
+ [32m✓[39m tests/security-policy.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 1525[2mms[22m[39m
+     [33m[2m✓[22m[39m login is capped at 5/min per IP while authenticated AI stays unlimited [33m 412[2mms[22m[39m
+     [33m[2m✓[22m[39m a malformed limit variable cannot silently disable the limiter [33m 684[2mms[22m[39m
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/csrf HTTP/1.1" 200 80 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/csrf HTTP/1.1" 403 57 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/csrf HTTP/1.1" 403 57 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/session HTTP/1.1" 403 56 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/session HTTP/1.1" 401 54 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mOAuth session validates the user, enforces owner approval and sets app cookies
+[22m[39m[credits] daily reset oauth-user: 7 -> 7 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/session HTTP/1.1" 200 219 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/session HTTP/1.1" 401 54 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mOAuth session accepts Google identities like Facebook ones
+[22m[39m[credits] daily reset oauth-user: 7 -> 7 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/session HTTP/1.1" 200 215 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mOAuth session accepts Google sign-ins linked to an existing email account
+[22m[39m[credits] daily reset oauth-user: 7 -> 7 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/session HTTP/1.1" 200 219 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/oauth/session HTTP/1.1" 403 303 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mlogin success returns 200 and sets sb-access-token session cookie
+[22m[39m[credits] daily reset user-1: 0 -> 4 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/login HTTP/1.1" 200 200 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "POST /api/auth/login HTTP/1.1" 400 44 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "GET /api/auth/me HTTP/1.1" 401 24 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mGET /me with valid token cookie returns 200 and user object
+[22m[39m[credits] daily reset user-1: 0 -> 4 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "GET /api/auth/me HTTP/1.1" 200 165 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:02 +0000] "GET /api/auth/me HTTP/1.1" 200 165 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "GET /api/auth/me HTTP/1.1" 200 165 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/logout HTTP/1.1" 200 11 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/logout HTTP/1.1" 200 11 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "GET /api/auth/me HTTP/1.1" 401 24 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mPOST /refresh with valid token returns 200, refreshed cookie, and extended user
+[22m[39m[credits] daily reset user-1: 40 -> 40 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/refresh HTTP/1.1" 200 201 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/refresh HTTP/1.1" 401 33 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/refresh HTTP/1.1" 401 38 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mPOST /signup (confirmed) returns 200 with user, accessToken, and cookie
+[22m[39m[credits] daily reset user-9: 0 -> 4 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/signup HTTP/1.1" 200 190 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/signup HTTP/1.1" 202 104 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/signup HTTP/1.1" 400 34 "-" "node"
+[90mstdout[2m | tests/auth-flow.test.ts[2m > [22m[2mauth flow[2m > [22m[2mPOST /refresh with refresh-token cookie rotates to a fresh access token
+[22m[39m[credits] daily reset user-1: 5 -> 5 (2026-10-21)
+
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/refresh HTTP/1.1" 200 192 "-" "node"
+::ffff:127.0.0.1 - - [21/Oct/2026:13:30:03 +0000] "POST /api/auth/refresh HTTP/1.1" 401 38 "-" "node"
+ [32m✓[39m tests/auth-flow.test.ts [2m([22m[2m31 tests[22m[2m)[22m[33m 656[2mms[22m[39m
+ [32m✓[39m tests/hardening.test.ts [2m([22m[2m34 tests[22m[2m)[22m[33m 748[2mms[22m[39m
+ [32m✓[39m tests/ai-image-history-route.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 341[2mms[22m[39m
+ [32m✓[39m tests/r1-access.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 331[2mms[22m[39m
+ [32m✓[39m tests/ai-figure-route.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 320[2mms[22m[39m
+[90mstdout[2m | tests/mailer-and-recovery.test.ts[2m > [22m[2mReset Password flow (POST /api/auth/reset-password)[2m > [22m[2msuccessfully resets password using PKCE code
+[22m[39m[auth] password reset completed for user user-target-1
+
+[90mstdout[2m | tests/mailer-and-recovery.test.ts[2m > [22m[2mReset Password flow (POST /api/auth/reset-password)[2m > [22m[2msuccessfully resets password using recovery access token
+[22m[39m[auth] password reset completed for user user-target-2
+
+ [32m✓[39m tests/mailer-and-recovery.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 170[2mms[22m[39m
+ [32m✓[39m tests/ai-image-search-route.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 330[2mms[22m[39m
+ [32m✓[39m tests/r1-journal.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 384[2mms[22m[39m
+ [32m✓[39m tests/ai-image-facts-route.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 165[2mms[22m[39m
+ [32m✓[39m tests/ai-image-route.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m tests/config-route.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 138[2mms[22m[39m
+ [32m✓[39m tests/google-diagrams.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 48[2mms[22m[39m
+ [32m✓[39m tests/source-formats.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/book-ingest.test.ts [2m([22m[2m28 tests[22m[2m)[22m[32m 36[2mms[22m[39m
+ [32m✓[39m tests/academic-figures.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m tests/ai/image-gen.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/guest-quota.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/image-input.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+[90mstdout[2m | tests/credits.test.ts[2m > [22m[2mrefundCredits[2m > [22m[2mhappy path: CAS increment logged as a GRANT
+[22m[39m[credits] refund user-under-test: +1 (Refund: AI reply failed)
+
+[90mstdout[2m | tests/credits.test.ts[2m > [22m[2mrefundCredits[2m > [22m[2mCAS miss → retries against the fresh balance
+[22m[39m[credits] refund user-under-test: +1 (test)
+
+[90mstdout[2m | tests/credits.test.ts[2m > [22m[2mensureDailyCredits[2m > [22m[2mstale watermark → CAS refill to the pool with one GRANT
+[22m[39m[credits] daily reset user-under-test: 2 -> 4 (2026-10-21)
+
+[90mstdout[2m | tests/credits.test.ts[2m > [22m[2mensureDailyCredits[2m > [22m[2ma spend won the race (watermark still stale) → retries against the new balance
+[22m[39m[credits] daily reset user-under-test: 0 -> 4 (2026-10-21)
+
+[90mstdout[2m | tests/credits.test.ts[2m > [22m[2mensureDailyCredits[2m > [22m[2mnon-owner emails draw the same daily pool (bill-everyone economy)
+[22m[39m[credits] daily reset user-under-test: 0 -> 4 (2026-10-21)
+
+[90mstdout[2m | tests/credits.test.ts[2m > [22m[2mensureDailyCredits[2m > [22m[2mowner email without PRO draws the daily pool (not unlimited)
+[22m[39m[credits] daily reset user-under-test: 0 -> 4 (2026-10-21)
+
+ [32m✓[39m tests/credits.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+[90mstdout[2m | tests/ai/stream-pipeline.test.ts[2m > [22m[2mstreamAnswerToStudent[2m > [22m[2mannounces the writing phase, then forwards every delta as its own event
+[22m[39m[AI test stream] floor expansion pass 1: 4/250 words
+
+[90mstdout[2m | tests/ai/stream-pipeline.test.ts[2m > [22m[2mstreamAnswerToStudent[2m > [22m[2mcontinues a truncated answer on the SAME stream and says so
+[22m[39m[AI test stream] reply repair: truncated(finish-reason: the provider reported it hit its output ceiling (finish_reason=length))
+
+ [32m✓[39m tests/ai/stream-pipeline.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m tests/ai-owner-gate.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/syllabus-anchor.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/figure-rendering.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+ [32m✓[39m tests/figure-draw.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/truncation.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/source-classify.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m tests/history-search.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/owner-source.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/ai/artifact-rules.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/ai/consoles.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/ai/ai-spark.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/ai-spark.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m36 passed[39m[22m[90m (38)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m532 passed[39m[22m[90m (535)[39m
+[2m   Start at [22m 19:14:04
+[2m   Duration [22m 79.23s[2m (transform 2.61s, setup 0ms, import 11.12s, tests 55.99s, environment 6ms)[22m
+
+EXIT=0 
