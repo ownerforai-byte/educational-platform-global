@@ -3,9 +3,9 @@
   "year": 2023,
   "examSource": "NEB",
   "notes": [
-    "Q1. State the first law of thermodynamics and explain its limitations. [2]",
-    "Q2. Derive an expression for the work done during the isothermal expansion of an ideal gas. [3]",
-    "Q3. Define entropy. Show that the entropy of the universe increases in a spontaneous process. [3]",
-    "Q4. A Carnot engine works between 600 K and 300 K. Find its efficiency. [2]"
+    "Q1. **First Law of Thermodynamics:** The change in internal energy of a system ($\\Delta U$) is equal to the heat supplied to the system ($Q$) minus the work done by the system ($W$).$$\\Delta U = Q - W$$\n\n**Limitations:**\n1. It does not specify the **direction** of natural processes (why heat flows hot to cold, not vice versa).\n2. It does not define the concept of **entropy** or the disorder of the system.\n3. It deals only with energy conservation, not the quality of energy.",
+    "Q2. **Derivation: Work Done in Isothermal Expansion**\n\nFor an ideal gas at constant temperature $T$, the equation of state is:\n$$PV = nRT = \\text{constant}$$\n$$\\implies P = \\frac{nRT}{V}$$\n\nThe work done by the gas during expansion from $V_1$ to $V_2$ is:\n$$W = \\int_{V_1}^{V_2} P \\, dV = \\int_{V_1}^{V_2} \\frac{nRT}{V} \\, dV$$\n\nSince $T$ is constant:\n$$W = nRT \\int_{V_1}^{V_2} \\frac{dV}{V} = nRT [\\ln V]_{V_1}^{V_2}$$\n$$W = nRT \\ln\\left(\\frac{V_2}{V_1}\\right)$$\n\nUsing $PV = nRT$, this can also be written as:\n$$W = P_1V_1 \\ln\\left(\\frac{V_2}{V_1}\\right)$$",
+    "Q3. **Entropy Definition:**\nEntropy ($S$) is a state function that measures the disorder or randomness of a system. The change in entropy for a reversible process is defined as:\n$$dS = \\frac{dQ_{rev}}{T}$$\n\n**Universe Entropy in Spontaneous Processes:**\nFor any spontaneous process, the total entropy of the universe (system + surroundings) increases:\n$$\\Delta S_{univ} = \\Delta S_{sys} + \\Delta S_{surr} > 0$$\n\nThis is a direct consequence of the Second Law of Thermodynamics. In a reversible process, $\\Delta S_{univ} = 0$, but real spontaneous processes are irreversible, leading to a net increase in the universe's entropy.",
+    "Q4. **Carnot Engine Efficiency:**\n\nGiven:\n*   Temperature of hot reservoir, $T_H = 600 \\, \\text{K}$\n*   Temperature of cold reservoir, $T_C = 300 \\, \\text{K}$\n\nThe maximum efficiency of a Carnot engine is:\n$$\\eta = 1 - \\frac{T_C}{T_H}$$\n\nSubstituting the values:\n$$\\eta = 1 - \\frac{300}{600} = 1 - 0.5 = 0.5$$\n\n$$\\eta = 50\\%$$"
   ]
 }

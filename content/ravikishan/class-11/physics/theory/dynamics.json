@@ -4,13 +4,22 @@
     "❌ 'The normal force is always mg.' ✅ N = mg only on a horizontal surface with no vertical acceleration.",
     "❌ 'Friction always opposes motion.' ✅ Friction opposes RELATIVE motion between surfaces, not necessarily the body's motion.",
     "❌ 'Action and reaction forces cancel each other.' ✅ They act on DIFFERENT bodies, so they never cancel in a single FBD.",
-    "❌ 'Heavier bodies slide slower down a slope.' ✅ a = g(sin θ − μ cos θ) has no mass term."
+    "❌ 'Heavier bodies slide slower down a slope.' ✅ $a = g(\\sin \\theta - \\mu \\cos \\theta)$ has no mass term."
   ],
   "notes": [
-    "**Newton's first law:** a body at rest stays at rest and a body in motion stays in uniform motion unless acted on by a net external force. Inertia = the tendency to resist change in state of motion; mass is a measure of inertia.",
-    "**Newton's second law:** F = ma — the rate of change of momentum is proportional to the applied force and takes place in the direction of the force.",
-    "**Newton's third law:** for every action there is an equal and opposite reaction. Forces always act in pairs on different bodies.",
-    "**Impulse** = F·Δt = change in momentum. **Momentum** p = mv.",
-    "**Friction:** static, kinetic (sliding) and rolling. F_max = μN where μ is the coefficient of friction, N the normal reaction."
+    "**Newton's first law:** A body at rest stays at rest and a body in motion stays in uniform motion unless acted on by a net external force. **Inertia** is the tendency to resist change in state of motion; mass is a measure of inertia.",
+    "**Newton's second law:** $\\sum \\vec{F} = m\\vec{a}$. The rate of change of momentum is proportional to the applied force and takes place in the direction of the force. $F = ma$ applies when mass is constant.",
+    "**Newton's third law:** For every action, there is an equal and opposite reaction. Forces always act in pairs on **different** bodies, so they never cancel each other out in a single free body diagram (FBD).",
+    "**Impulse:** $\\vec{J} = \\vec{F}\\Delta t = \\Delta \\vec{p}$. It represents the change in momentum. Graphically, it is the area under the force-time curve.",
+    "**Momentum:** $\\vec{p} = m\\vec{v}$. Conserved in an isolated system where $\\sum \\vec{F}_{ext} = 0$.",
+    "**Friction:**",
+    "1. **Static Friction ($f_s$):** Acts when there is no relative motion between surfaces. It adjusts its magnitude up to a maximum value: $0 \\le f_s \\le \\mu_s N$.",
+    "2. **Kinetic Friction ($f_k$):** Acts when there is relative sliding motion. It is generally constant in magnitude: $f_k = \\mu_k N$.",
+    "3. $\\mu_s$ is usually greater than $\\mu_k$.",
+    "**Free Body Diagram (FBD) Method:**",
+    "1. Isolate the object of interest.",
+    "2. Draw all external forces acting on it (Gravity, Normal, Tension, Friction, Applied Forces).",
+    "3. Do NOT include reaction forces acting on OTHER bodies.",
+    "4. Apply $\\sum F_x = ma_x$ and $\\sum F_y = ma_y$."
   ]
 }
