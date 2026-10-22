@@ -167,61 +167,6 @@ function buildQuickTake(item: IndexItem): string {
 
 // ── Shared: Syllabus context helpers (used by all providers) ────────────────
 
-async function buildSyllabusContext(query: string): Promise<string> {
-  const lower = query.toLowerCase();
-  const matches: Array<{ subject: string; unit: string; topics: string[] }> = [];
-
-  const { data: sData } = await supabaseAdmin
-    .from("subjects")
-    .select("id, name")
-    .eq("is_active", true);
-
-  if (!sData || sData.length === 0) return "";
-
-  const { data: cData } = await supabaseAdmin
-    .from("chapters")
-    .select("id, subject_id, title")
-    .eq("is_active", true);
-
-  const { data: tData } = await supabaseAdmin
-    .from("topics")
-    .select("id, chapter_id, title")
-    .eq("is_active", true);
-
-  const subjects = (sData ?? []) as unknown as DbSubject[];
-  const chapters = (cData ?? []) as unknown as DbChapter[];
-  const topics = (tData ?? []) as unknown as DbTopic[];
-
-  const chapterMap = new Map<string, { title: string; subjectName: string }>();
-  for (const chapter of chapters) {
-    const subject = subjects.find((s: DbSubject) => s.id === chapter.subject_id);
-    if (subject) {
-      chapterMap.set(chapter.id, { title: chapter.title, subjectName: subject.name });
-    }
-  }
-
-  for (const topic of topics) {
-    const chapter = chapterMap.get(topic.chapter_id);
-    if (!chapter) continue;
-    const topicLower = topic.title.toLowerCase();
-    if (topicLower.includes(lower) || lower.includes(topicLower)) {
-      matches.push({
-        subject: chapter.subjectName,
-        unit: chapter.title,
-        topics: [topic.title],
-      });
-    }
-  }
-
-  if (!matches.length) return "";
-  const lines = ["Relevant syllabus scope before answering:"];
-  for (const hint of matches.slice(0, 3)) {
-    lines.push(`- ${hint.subject} / ${hint.unit}`);
-    for (const topic of hint.topics) lines.push(`  - ${topic}`);
-  }
-  return lines.join("\n");
-}
-
 async function extractSyllabusHints(
   query: string,
 ): Promise<Array<{ subject: string; unit: string; topics: string[] }>> {
@@ -271,6 +216,17 @@ async function extractSyllabusHints(
   }
 
   return hints.slice(0, 5);
+}
+
+async function buildSyllabusContext(query: string): Promise<string> {
+  const matches = await extractSyllabusHints(query);
+  if (!matches.length) return "";
+  const lines = ["Relevant syllabus scope before answering:"];
+  for (const hint of matches.slice(0, 3)) {
+    lines.push(`- ${hint.subject} / ${hint.unit}`);
+    for (const topic of hint.topics) lines.push(`  - ${topic}`);
+  }
+  return lines.join("\n");
 }
 
 // ── Shared: Search system prompt (used by all providers) ────────────────────
@@ -608,24 +564,21 @@ class AgnesProvider implements AIProvider {
     return text;
   }
 
+  private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const rest = messages.filter((m) => m.role !== "system");
+    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+  }
+
   async chat(messages: AIChatMessage[]): Promise<string> {
     if (!this.apiKey) throw new Error("Missing Agnes API key");
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
-    const enriched: AIChatMessage[] = [
-      { role: "system", content: systemPrompt },
-      ...messages.filter((m) => m.role !== "system"),
-    ];
-    return this.callAgnes(enriched);
+    return this.callAgnes(this.prepareMessages(messages));
   }
 
   async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
     if (!this.apiKey) throw new Error("Missing Agnes API key");
     this.lastFinishReason = "";
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
-    const enriched: AIChatMessage[] = [
-      { role: "system", content: systemPrompt },
-      ...messages.filter((m) => m.role !== "system"),
-    ];
+    const enriched = this.prepareMessages(messages);
     const res = await fetch(this.apiUrl, {
       method: "POST",
       headers: {
@@ -903,7 +856,7 @@ export class AIService {
       // their credit refunded — which is the honest outcome. A slow, complete
       // answer is never silently replaced by a terse one.
       const linkCap = i === 0 ? Math.max(PER_PROVIDER_MS, PRIMARY_MS) : PER_PROVIDER_MS;
-      const cap = i === 0 ? Math.min(Math.max(linkCap, remaining), remaining) : isLast ? remaining : Math.min(linkCap, remaining);
+      const cap = isLast ? remaining : Math.min(linkCap, remaining);
       try {
         const text = await withDeadline(p.chat(messages), cap);
         if (text && text.trim()) {

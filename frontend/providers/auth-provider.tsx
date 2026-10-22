@@ -64,6 +64,21 @@ const RENEW_CHECK_INTERVAL_MS = 10 * 60 * 1000;
  */
 const MIN_RENEW_GAP_MS = 30 * 1000;
 
+function sameSessionUser(a: SessionUser | null, b: SessionUser | null): boolean {
+  if (a === b) return true;
+  if (!a || !b) return false;
+  return (
+    a.id === b.id &&
+    a.email === b.email &&
+    a.fullName === b.fullName &&
+    a.role === b.role &&
+    a.plan === b.plan &&
+    a.premiumStatus === b.premiumStatus &&
+    a.credits === b.credits &&
+    a.creditsLimit === b.creditsLimit
+  );
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Read once, lazily — a synchronous localStorage read on every render would
   // be wasted work (and the value is only the *starting* state).
@@ -75,6 +90,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(cached === null);
   const [tick, setTick] = useState(0);
   const mounted = useRef(true);
+  const userRef = useRef<SessionUser | null>(user);
+  userRef.current = user;
   /** Epoch ms of the last silent renewal attempt (throttle, see MIN_RENEW_GAP_MS). */
   const lastRenewAt = useRef(0);
 
@@ -93,7 +110,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       const next = await ensureSession();
       if (!mounted.current) return;
-      setUser(next ?? null);
+      setUser((prev) => (sameSessionUser(prev, next ?? null) ? prev : (next ?? null)));
       if (!next) clearCachedSession();
     } catch {
       // Backend unreachable / cold start / offline. Trust the cache and let the
@@ -109,13 +126,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     void load();
   }, [load, tick]);
 
+  const isAuthenticated = Boolean(user);
+
   /**
    * Silent renewal loop. Runs when the app opens, when the tab regains focus
    * (the common case: a student returns hours later with an expired access
    * token) and on a slow interval as a safety net.
    */
   useEffect(() => {
-    if (!user) return;
+    if (!isAuthenticated) return;
     let stopped = false;
 
     const renewIfNeeded = async () => {
@@ -135,21 +154,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     void renewIfNeeded();
     const timer = window.setInterval(() => void renewIfNeeded(), RENEW_CHECK_INTERVAL_MS);
     const onFocus = () => void renewIfNeeded();
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") void renewIfNeeded();
+    };
     window.addEventListener("focus", onFocus);
-    document.addEventListener("visibilitychange", onFocus);
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     return () => {
       stopped = true;
       window.clearInterval(timer);
       window.removeEventListener("focus", onFocus);
-      document.removeEventListener("visibilitychange", onFocus);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
-  }, [user, load]);
+  }, [isAuthenticated, load]);
 
   const refresh = useCallback(() => {
-    setIsLoading((current) => (user ? current : true));
+    setIsLoading((current) => (userRef.current ? current : true));
     setTick((t) => t + 1);
-  }, [user]);
+  }, []);
 
   const logoutUser = useCallback(async () => {
     // INSTANT LOGOUT (owner request: "when I clicked logout it must work now,

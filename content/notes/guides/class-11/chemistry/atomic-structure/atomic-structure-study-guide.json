@@ -1,0 +1,37 @@
+{
+  "title": "Class 11 Chemistry — Atomic Structure Study Guide",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "atomic-structure-study-guide",
+  "topicTitle": "Atomic Structure",
+  "relevance": 100,
+  "notes": [
+    "In Rutherford's gold-foil experiment, most alpha particles passed through, some deflected and very few rebounded. The atom is mostly empty space with a tiny dense positive nucleus and electrons outside it. Classical physics predicts accelerating electrons should radiate energy and spiral inward; the model also fails to explain discrete spectra or electron arrangements.",
+    "Bohr's hydrogen-like model allows stationary orbits with quantized angular momentum mvr = nh/2π. An electron emits or absorbs a photon during a transition: ΔE = hν = hc/λ. It explains the hydrogen line spectrum and one-electron ions such as He⁺, but fails for multi-electron atoms, detailed spectra and bonding. Spectral series converge toward an ionization limit.",
+    "De Broglie's relation λ = h/p associates wavelength with a particle of momentum p. Heisenberg's uncertainty principle ΔxΔp ≥ ħ/2 is a fundamental limit on simultaneous position and momentum precision, not merely an instrument defect. Quantum mechanics describes probability distributions; an orbital is a region of likely electron location, not a fixed path.",
+    "Quantum numbers: principal n = 1,2,… describes shell and approximate size/energy; azimuthal l = 0,…,n−1 identifies subshell (s=0, p=1, d=2, f=3); magnetic mₗ ranges from −l to +l; spin mₛ = ±½. Subshell capacity is 2(2l+1); shell capacity is 2n². s orbitals are spherical; p orbitals have two lobes and a nodal plane through the nucleus.",
+    "Aufbau fills lower-energy orbitals first (commonly 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p through Z=30). Pauli forbids two electrons in an atom having the same four quantum numbers; one orbital holds at most two with opposite spin. Hund's rule fills degenerate orbitals singly with parallel spins before pairing.",
+    "For transition-metal cations, remove electrons from the highest principal shell first: 4s electrons are removed before 3d. Chromium (Z=24) is [Ar] 3d⁵4s¹ and copper (Z=29) is [Ar] 3d¹⁰4s¹, common exceptions. Check that the final electron count equals atomic number adjusted for ionic charge."
+  ],
+  "formulas": [
+    "mvr = nh/(2π)",
+    "ΔE = hν = hc/λ",
+    "λ = h/p",
+    "ΔxΔp ≥ ħ/2",
+    "Maximum electrons in shell n = 2n²",
+    "Maximum electrons in subshell l = 2(2l + 1)"
+  ],
+  "keyPoints": [
+    "Rutherford established the nucleus but not atomic stability or line spectra.",
+    "Bohr's model works best for one-electron species.",
+    "An orbital is a probability distribution, not an electron orbit.",
+    "Apply the allowed ranges for n, l, mₗ and mₛ.",
+    "Remove 4s electrons before 3d electrons when forming transition-metal cations; remember Cr and Cu exceptions."
+  ],
+  "practiceQuestions": [
+    "State two conclusions from Rutherford scattering and one limitation of his model.",
+    "List all possible quantum numbers for an electron in a 3p orbital and state the maximum 3p electron capacity.",
+    "Write ground-state configurations of Fe, Fe²⁺, Cr and Cu; explain Fe²⁺ electron removal.",
+    "Explain how a hydrogen spectral line is produced when an electron changes energy level."
+  ],
+  "summary": "Atomic theory advances from a nuclear model to quantized levels and probability-based orbitals. Apply quantum-number limits and Aufbau, Pauli and Hund rules, with the transition-metal exceptions in mind."
+}

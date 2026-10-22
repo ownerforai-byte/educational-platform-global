@@ -10,7 +10,7 @@
     "entries": 765,
     "authored": 759,
     "template": 6,
-    "bytes": 9261016
+    "bytes": 9262272
   },
   "subjects": {
     "biology": {
@@ -18,7 +18,7 @@
         "entries": 129,
         "authored": 129,
         "template": 0,
-        "bytes": 2617359
+        "bytes": 2618369
       },
       "units": {
         "biomolecules-and-cell-biology": {
@@ -283,7 +283,7 @@
             "entries": 8,
             "authored": 8,
             "template": 0,
-            "bytes": 152266
+            "bytes": 153276
           },
           "entries": [
             {
@@ -303,8 +303,8 @@
             {
               "topicSlug": "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit",
               "filename": "02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit.json",
-              "bytes": 2859,
-              "sha256": "4b275df4fbe78efdbd5a4eaeabecf67a3befdf8069133c62bcfa1b0609dab106",
+              "bytes": 4589,
+              "sha256": "2c030f3c20394d6b44d795aa3bdfc3fb2afc0d25ec6bdf75ff6891b2346f564a",
               "status": "authored"
             },
             {
@@ -324,22 +324,22 @@
             {
               "topicSlug": "wildlife-importance-causes-of-extinction-and-conservation-strategies",
               "filename": "03-wildlife-importance-causes-of-extinction-and-conservation-strategies.json",
-              "bytes": 2718,
-              "sha256": "6c1d1a840ad47540d75bbecfeb881a5480b21a8d1a5ac9158397d7a9912bcaba",
+              "bytes": 4102,
+              "sha256": "35ba25d9772db75321744afcc1751340eb124dc6462f0e77e973b16a1d1ebc44",
               "status": "authored"
             },
             {
               "topicSlug": "iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threaten",
               "filename": "04-iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threaten.json",
-              "bytes": 4229,
-              "sha256": "25b85dc48fe8533ca382daf05c4bb95cf216966f4df8af91433440660352bba2",
+              "bytes": 3176,
+              "sha256": "9274fc8bb78f79279bb4b70b15d86bcf419983e4b72d5a18a60a4e4a029f9aa9",
               "status": "authored"
             },
             {
               "topicSlug": "endangered-species-in-nepal",
               "filename": "05-endangered-species-in-nepal.json",
-              "bytes": 4598,
-              "sha256": "0feb9ffdbd81f5077393ea9fbc1cf9e9d436bae63b3362209819dfcc094cfe70",
+              "bytes": 3547,
+              "sha256": "0f3f1fc6369737121bf064729010bae53c15dbe61208ae44b6a7893d0e65426b",
               "status": "authored"
             }
           ]
@@ -3952,7 +3952,7 @@
         "entries": 33,
         "authored": 33,
         "template": 0,
-        "bytes": 100753
+        "bytes": 100999
       },
       "units": {
         "bhasha-ra-vyakarana": {
@@ -4026,14 +4026,14 @@
             "entries": 6,
             "authored": 6,
             "template": 0,
-            "bytes": 14369
+            "bytes": 14615
           },
           "entries": [
             {
               "topicSlug": "शब्द-र-उसको-विभाग",
               "filename": "01-शब्द-र-उसको-विभाग.json",
-              "bytes": 2090,
-              "sha256": "236cc3eaffaa1880fcf6732826133d8e03bf3c5209cdb994b98f0e63a03e4ccf",
+              "bytes": 2336,
+              "sha256": "a9aec290e094e7af9a92f720cf2ac70d8d73487e14191324541803b0ab2fb03c",
               "status": "authored"
             },
             {
@@ -6348,11 +6348,11 @@
   "supplementary": {
     "source": "frontend/public/data/ravikishan/manifest.json",
     "note": "second content family; entries carry their payload inline (readers use data, not the path)",
-    "bytes": 7709808,
-    "sha256": "a83c73703df8b817fbc4fddd1a7df537d546fc6d76c468255b75ac80a50a56ee",
+    "bytes": 7775578,
+    "sha256": "61e21d6d55cd7fdc2b6eef46f6aa17f9f05155277c3f5341cb399fbfd59876f7",
     "totals": {
-      "claims": 2117,
-      "authored": 1455,
+      "claims": 2134,
+      "authored": 1472,
       "template": 662
     },
     "groups": {
@@ -7080,8 +7080,8 @@
       },
       "class-11-notes/chemistry": {
         "totals": {
-          "claims": 442,
-          "authored": 361,
+          "claims": 459,
+          "authored": 378,
           "template": 81
         },
         "entries": [
@@ -7179,6 +7179,10 @@
           },
           {
             "path": "class-11-notes/chemistry/aromatic-hydrocarbons/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/aromatic-hydrocarbons/notes/aromatic-hydrocarbons-study-guide.json",
             "status": "authored"
           },
           {
@@ -7307,6 +7311,10 @@
           },
           {
             "path": "class-11-notes/chemistry/atomic-structure/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/atomic-structure/notes/atomic-structure-study-guide.json",
             "status": "authored"
           },
           {
@@ -7446,6 +7454,10 @@
             "status": "authored"
           },
           {
+            "path": "class-11-notes/chemistry/basic-concept-of-organic-chemistry/notes/organic-chemistry-foundations-study-guide.json",
+            "status": "authored"
+          },
+          {
             "path": "class-11-notes/chemistry/basic-concept-organic/concepts/01-organic-chemistry-intro.json",
             "status": "authored"
           },
@@ -7515,6 +7527,10 @@
           },
           {
             "path": "class-11-notes/chemistry/bio-inorganic-chemistry/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/bio-inorganic-chemistry/notes/bio-inorganic-chemistry-study-guide.json",
             "status": "authored"
           },
           {
@@ -7622,6 +7638,10 @@
             "status": "authored"
           },
           {
+            "path": "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/notes/chemical-bonding-study-guide.json",
+            "status": "authored"
+          },
+          {
             "path": "class-11-notes/chemistry/chemical-bonding/concepts/01-ionic-covalent-bond.json",
             "status": "authored"
           },
@@ -7703,6 +7723,10 @@
           },
           {
             "path": "class-11-notes/chemistry/chemical-equilibrium/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/chemical-equilibrium/notes/chemical-equilibrium-study-guide.json",
             "status": "authored"
           },
           {
@@ -7851,6 +7875,10 @@
           },
           {
             "path": "class-11-notes/chemistry/chemistry-of-metals/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/chemistry-of-metals/notes/metals-and-metallurgy-study-guide.json",
             "status": "authored"
           },
           {
@@ -8086,6 +8114,10 @@
             "status": "authored"
           },
           {
+            "path": "class-11-notes/chemistry/chemistry-of-non-metals/notes/non-metals-study-guide.json",
+            "status": "authored"
+          },
+          {
             "path": "class-11-notes/chemistry/chemistry-of-non-metals/plan.json",
             "status": "template"
           },
@@ -8131,6 +8163,10 @@
           },
           {
             "path": "class-11-notes/chemistry/classification-of-elements-and-periodic-table/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/classification-of-elements-and-periodic-table/notes/periodic-classification-study-guide.json",
             "status": "authored"
           },
           {
@@ -8199,6 +8235,10 @@
           },
           {
             "path": "class-11-notes/chemistry/foundation-and-fundamentals/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/foundation-and-fundamentals/notes/foundation-and-fundamentals-study-guide.json",
             "status": "authored"
           },
           {
@@ -8302,6 +8342,10 @@
             "status": "authored"
           },
           {
+            "path": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/notes/organic-principles-study-guide.json",
+            "status": "authored"
+          },
+          {
             "path": "class-11-notes/chemistry/fundamental-principles-organic/concepts/01-iupac-nomenclature.json",
             "status": "authored"
           },
@@ -8379,6 +8423,10 @@
           },
           {
             "path": "class-11-notes/chemistry/fundamentals-of-applied-chemistry/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/fundamentals-of-applied-chemistry/notes/applied-chemistry-study-guide.json",
             "status": "authored"
           },
           {
@@ -8478,6 +8526,10 @@
             "status": "authored"
           },
           {
+            "path": "class-11-notes/chemistry/hydrocarbons/notes/hydrocarbons-study-guide.json",
+            "status": "authored"
+          },
+          {
             "path": "class-11-notes/chemistry/hydrocarbons/plan.json",
             "status": "template"
           },
@@ -8539,6 +8591,10 @@
           },
           {
             "path": "class-11-notes/chemistry/modern-chemical-manufactures/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/modern-chemical-manufactures/notes/modern-chemical-manufactures-study-guide.json",
             "status": "authored"
           },
           {
@@ -8607,6 +8663,10 @@
           },
           {
             "path": "class-11-notes/chemistry/oxidation-and-reduction/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/oxidation-and-reduction/notes/redox-and-electrolysis-study-guide.json",
             "status": "authored"
           },
           {
@@ -8695,6 +8755,10 @@
           },
           {
             "path": "class-11-notes/chemistry/states-of-matter/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/states-of-matter/notes/states-of-matter-study-guide.json",
             "status": "authored"
           },
           {
@@ -8795,6 +8859,10 @@
           },
           {
             "path": "class-11-notes/chemistry/stoichiometry/mindmap/mindmap.json",
+            "status": "authored"
+          },
+          {
+            "path": "class-11-notes/chemistry/stoichiometry/notes/stoichiometry-study-guide.json",
             "status": "authored"
           },
           {

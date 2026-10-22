@@ -3,6 +3,7 @@ import { EmptyState } from "@/components/content/empty-state";
 import { ImportedNotesSection } from "@/components/content/imported-notes-section";
 import { BackButton } from "@/components/navigation/back-button";
 import type { NotesTrack } from "@/lib/imported-notes";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { getSubjectNav } from "../queries";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
@@ -24,10 +25,6 @@ export async function SubjectHubView({
   classSlug: string;
   subjectSlug: string;
 }) {
-  const SUBJECT_EMOJI: Record<string, string> = {
-    Biology: "🌿", Chemistry: "🧪", English: "📖",
-    Mathematics: "🔢", Nepali: "🇳🇵", Physics: "⚡",
-  };
   const { subject, units } = getSubjectNav(classSlug, subjectSlug);
   const basePath = `/${classSlug}/${subjectSlug}`;
 
@@ -42,7 +39,7 @@ export async function SubjectHubView({
     );
   }
 
-  const emoji = SUBJECT_EMOJI[subject.name] ?? "📘";
+  const emoji = getSubjectVisual(subject.name).glyph;
   const totalHours = units.reduce((acc, u) => acc + (u.hours || 0), 0);
 
   return (

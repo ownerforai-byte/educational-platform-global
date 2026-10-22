@@ -21,15 +21,6 @@ export const isProduction = isProductionEnv();
 export const isDevelopment = !isProduction;
 
 /**
- * Canonical public frontend URL used in AI prompts, search fallbacks, and
- * AI referer headers.
- *
- * 2026-09-25: hardcoded copies pointed at the DEAD deployment URL
- * (ravikisan-7phkshvvk-…vercel.app → 410), so the AI handed students links
- * to a dead site in every answer — same bug class as the stale Vercel env
- * var that broke /api. Single source of truth here; override with FRONTEND_URL.
- */
-/**
  * Startup configuration gate (pre-deploy checklist, 2026-09-25).
  *
  * Previously a missing critical variable did not stop the process: the Supabase
@@ -54,17 +45,6 @@ const OPTIONAL_NUMBER_ENV_VARS = [
   "RATE_LIMIT_WINDOW_MS",
   "AUTH_RATE_LIMIT_MAX_REQUESTS",
 ] as const;
-
-function isSet(name: string): boolean {
-  const value = process.env[name];
-  return typeof value === "string" && value.trim().length > 0;
-}
-
-function isPositiveNumber(name: string): boolean {
-  if (!isSet(name)) return true; // unset is fine — the code default applies
-  const value = Number(process.env[name]);
-  return Number.isFinite(value) && value > 0;
-}
 
 export interface StartupEnvReport {
   /** Critical variables that are absent. Non-empty blocks production boot. */
@@ -128,6 +108,10 @@ export function checkStartupEnv(env: NodeJS.ProcessEnv = process.env): boolean {
   return true;
 }
 
+/**
+ * Canonical public frontend URL used in AI prompts, search fallbacks, and
+ * AI referer headers. Single source of truth; override with FRONTEND_URL.
+ */
 export const PUBLIC_SITE_URL = (
   process.env.FRONTEND_URL ||
   process.env.PUBLIC_SITE_URL ||

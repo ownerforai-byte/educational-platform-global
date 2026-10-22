@@ -12,6 +12,7 @@ import { getSubjectPyqBank, type PyqYear } from "@/lib/pyq-bank";
 import { MISCONCEPTION_QUESTIONS, type MisconceptionQuestion } from "@/lib/misconception-questions";
 import type { MisconceptionQuestion as MCQ } from "@/lib/misconception-questions";
 import { MockExamsSection } from "@/components/content/mock-exams-section";
+import { getSubjectVisual, type SubjectVisual } from "@/lib/ui/subject-visuals";
 
 // ── Types ───────────────────────────────────────────────────────────────────
 
@@ -84,15 +85,6 @@ const SUBJECT_COLORS: Record<string, string> = {
   nepali: "#ef4444",
 };
 
-const SUBJECT_EMOJI: Record<string, string> = {
-  physics: "⚡",
-  chemistry: "🧪",
-  mathematics: "🔢",
-  biology: "🌿",
-  english: "📖",
-  nepali: "🇳🇵",
-};
-
 // ── Selection screen ─────────────────────────────────────────────────────────
 
 function SelectScreen({ onStart }: { onStart: (mode: QuizMode, subject: string, year?: number) => void }) {
@@ -132,7 +124,7 @@ function SelectScreen({ onStart }: { onStart: (mode: QuizMode, subject: string, 
                 : "border-border hover:border-muted-foreground/30"
             }`}
           >
-            <div className="text-2xl mb-2">💡</div>
+            <div className="mb-2"><Lightbulb className="h-6 w-6 text-primary" aria-hidden="true" /></div>
             <div className="font-semibold text-sm">Misconception Check</div>
             <div className="text-xs text-muted-foreground mt-1">
               True/False concept traps with explanations
@@ -146,7 +138,7 @@ function SelectScreen({ onStart }: { onStart: (mode: QuizMode, subject: string, 
                 : "border-border hover:border-muted-foreground/30"
             }`}
           >
-            <div className="text-2xl mb-2">📝</div>
+            <div className="mb-2"><BookOpen className="h-6 w-6 text-primary" aria-hidden="true" /></div>
             <div className="font-semibold text-sm">Past Year Questions</div>
             <div className="text-xs text-muted-foreground mt-1">
               NEB exam questions with model answers
@@ -183,20 +175,23 @@ function SelectScreen({ onStart }: { onStart: (mode: QuizMode, subject: string, 
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 gap-2">
-            {subjects.map((subj) => (
-              <button
-                key={subj.slug}
-                onClick={() => setSubject(subj.slug)}
-                className={`flex items-center gap-2 rounded-xl border-2 p-3 text-left transition-all ${
-                  subject === subj.slug
-                    ? "border-primary bg-primary/5"
-                    : "border-border hover:border-muted-foreground/30"
-                }`}
-              >
-                <span className="text-xl">{SUBJECT_EMOJI[subj.slug] ?? "📘"}</span>
-                <span className="font-semibold text-sm">{subj.name}</span>
-              </button>
-            ))}
+            {subjects.map((subj) => {
+              const visual = getSubjectVisual(subj.slug);
+              return (
+                <button
+                  key={subj.slug}
+                  onClick={() => setSubject(subj.slug)}
+                  className={`flex items-center gap-2 rounded-xl border-2 p-3 text-left transition-all ${
+                    subject === subj.slug
+                      ? "border-primary bg-primary/5"
+                      : "border-border hover:border-muted-foreground/30"
+                  }`}
+                >
+                  <span aria-hidden="true" className="shrink-0 text-xl leading-none">{visual.glyph}</span>
+                  <span className="font-semibold text-sm">{subj.name}</span>
+                </button>
+              );
+            })}
           </div>
         </CardContent>
       </Card>
@@ -248,7 +243,7 @@ function SelectScreen({ onStart }: { onStart: (mode: QuizMode, subject: string, 
 function QuizScreen({
   session,
   color,
-  emoji,
+  visual,
   onBack,
   onNext,
   onPrev,
@@ -256,7 +251,7 @@ function QuizScreen({
 }: {
   session: QuizSession;
   color: string;
-  emoji: string;
+  visual: SubjectVisual;
   onBack: () => void;
   onNext: () => void;
   onPrev: () => void;
@@ -315,7 +310,7 @@ function QuizScreen({
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-xl">{emoji}</span>
+              <span aria-hidden="true" className="shrink-0 text-xl leading-none">{visual.glyph}</span>
               <div>
                 <CardTitle className="text-base">Question {currentIndex + 1}</CardTitle>
                 {session.mode === "pyq" && question.marks && (
@@ -347,7 +342,8 @@ function QuizScreen({
                 disabled={answered}
                 className="flex-1 rounded-xl py-6 text-base"
               >
-                ✅ True
+                <CheckCircle2 className="h-4 w-4 mr-2" aria-hidden="true" />
+                True
               </Button>
               <Button
                 variant={userAnswer === false && answered ? "default" : userAnswer === false ? "outline" : "ghost"}
@@ -355,7 +351,8 @@ function QuizScreen({
                 disabled={answered}
                 className="flex-1 rounded-xl py-6 text-base"
               >
-                ❌ False
+                <XCircle className="h-4 w-4 mr-2" aria-hidden="true" />
+                False
               </Button>
             </div>
           ) : (
@@ -437,13 +434,13 @@ function QuizScreen({
 function ResultsScreen({
   session,
   color,
-  emoji,
+  visual,
   onBack,
   onRetry,
 }: {
   session: QuizSession;
   color: string;
-  emoji: string;
+  visual: SubjectVisual;
   onBack: () => void;
   onRetry: () => void;
 }) {
@@ -456,15 +453,15 @@ function ResultsScreen({
   const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
 
   const message =
-    pct >= 80 ? "Excellent! You've got this! 🎉"
-    : pct >= 60 ? "Good progress! Keep practicing 💪"
-    : pct >= 40 ? "Getting there — review the topics you missed 📖"
-    : "Keep at it! Try the misconception quiz first for concept clarity 🌱";
+    pct >= 80 ? "Strong result — keep revising this topic."
+    : pct >= 60 ? "Good progress — review the questions you missed and try again."
+    : pct >= 40 ? "Getting there — revise the topics you missed before your next attempt."
+    : "Keep at it — the misconception quiz is a good place to build concept clarity.";
 
   return (
     <div className="mx-auto max-w-xl space-y-6 py-10">
       <div className="text-center space-y-3">
-        <div className="text-6xl">{emoji}</div>
+        <div className="flex justify-center"><span aria-hidden="true" className="text-6xl leading-none">{visual.glyph}</span></div>
         <h1 className="text-3xl font-bold">Quiz Complete!</h1>
         <p className="text-muted-foreground">{message}</p>
       </div>
@@ -498,7 +495,13 @@ function ResultsScreen({
                   : "border-red-200 bg-red-50 dark:border-red-900/40 dark:bg-red-950/20"
               }`}
             >
-              <span className="shrink-0 mt-0.5">{isCorrect ? "✅" : "❌"}</span>
+              <span className="shrink-0 mt-0.5 flex">
+                {isCorrect ? (
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                ) : (
+                  <XCircle className="h-4 w-4 text-red-600 dark:text-red-400" aria-hidden="true" />
+                )}
+              </span>
               <div className="min-w-0 flex-1">
                 <p className="font-medium truncate">{q.prompt}</p>
                 {!isCorrect && <p className="text-xs text-muted-foreground mt-0.5">{q.solution}</p>}
@@ -528,7 +531,7 @@ export default function QuizPage() {
   const [loaded, setLoaded] = useState(false);
 
   const color = session ? (SUBJECT_COLORS[session.subject] ?? "#64748b") : "#64748b";
-  const emoji = session ? (SUBJECT_EMOJI[session.subject] ?? "📘") : "📘";
+  const visual = getSubjectVisual(session?.subject);
 
   const startQuiz = async (mode: QuizMode, subject: string, year?: number) => {
     let questions: QuizQuestion[] = [];
@@ -604,7 +607,7 @@ export default function QuizPage() {
         <QuizScreen
           session={session}
           color={color}
-          emoji={emoji}
+          visual={visual}
           onBack={handleBack}
           onNext={handleNext}
           onPrev={handlePrev}
@@ -615,7 +618,7 @@ export default function QuizPage() {
         <ResultsScreen
           session={session}
           color={color}
-          emoji={emoji}
+          visual={visual}
           onBack={handleBack}
           onRetry={handleRetry}
         />

@@ -17,9 +17,9 @@
 export const KNOWLEDGE_KINDS = [
   { slug: "theory", label: "Theory", icon: "📖", tint: "#3b82f6" },
   { slug: "formulas", label: "Formula Vault", icon: "🧮", tint: "#8b5cf6" },
-  { slug: "special-cases", label: "Special Cases", icon: "⚡", tint: "#f59e0b" },
-  { slug: "tricks", label: "Tricks & Shortcuts", icon: "🚀", tint: "#22c55e" },
-  { slug: "mistakes", label: "Common Mistakes", icon: "🛡️", tint: "#ef4444" },
+  { slug: "special-cases", label: "Special Cases", icon: "🪨", tint: "#f59e0b" },
+  { slug: "tricks", label: "Tricks & Shortcuts", icon: "🌱", tint: "#22c55e" },
+  { slug: "mistakes", label: "Common Mistakes", icon: "🔥", tint: "#ef4444" },
 ] as const;
 
 export type KnowledgeKindSlug = (typeof KNOWLEDGE_KINDS)[number]["slug"];

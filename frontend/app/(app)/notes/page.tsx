@@ -4,32 +4,17 @@ import { loadData } from "@/lib/data-loader";
 import { SubjectSearch } from "@/components/layout/subject-search";
 import { getImportedNotesBySubject, type ImportedNote } from "@/lib/imported-notes";
 import { noteRoute } from "@/lib/note-routes";
-import { FlaskConical, ArrowRight, Sparkles, Zap, BookOpen } from "lucide-react";
-
-const SUBJECT_EMOJI: Record<string, string> = {
-  "11/Biology": "🌿",
-  "11/Chemistry": "🧪",
-  "11/English": "📖",
-  "11/Mathematics": "🔢",
-  "11/Nepali": "🇳🇵",
-  "11/Physics": "⚡",
-  "12/Biology": "🌿",
-  "12/Chemistry": "🧪",
-  "12/English": "📖",
-  "12/Mathematics": "🔢",
-  "12/Nepali": "🇳🇵",
-  "12/Physics": "⚡",
-  Biology: "🌿",
-  Chemistry: "🧪",
-  English: "📖",
-  Mathematics: "🔢",
-  Nepali: "🇳🇵",
-  Physics: "⚡",
-  "General Knowledge": "💡",
-  Geography: "🌍",
-  History: "📜",
-  Environment: "🌲",
-};
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
+import {
+  ArrowRight,
+  BookOpen,
+  FlaskConical,
+  Leaf,
+  Library,
+  NotebookPen,
+  Search,
+  Zap,
+} from "lucide-react";
 
 type RExportManifestItem = {
   subject: string;
@@ -110,7 +95,10 @@ export default async function NotesPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-10 py-8 md:py-14 px-4">
       <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-background to-background p-8 shadow-lg">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">📚 Notes</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight flex items-center gap-3">
+          <span aria-hidden="true">📚</span>
+          Notes
+        </h1>
         <p className="mt-2 text-muted-foreground">
           Imported notes from Ravikishan&apos;s export, organized by class, subject, and chapter. Deep Thoughts: a note is not a souvenir of a lesson — it is the lesson still speaking after the lesson is over.
         </p>
@@ -130,14 +118,17 @@ export default async function NotesPage() {
             Looking for Physics, Chemistry, or Biology practical experiments? Access virtual apparatus simulations, observation calculation sheets, and examiner viva Q&amp;As.
           </p>
           <div className="flex flex-wrap gap-2 pt-2 text-xs font-semibold">
-            <Link href="/practical/physics" className="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-500/25 transition-colors">
-              ⚡ Physics Practical
+            <Link href="/practical/physics" className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-500/25 transition-colors">
+              <span aria-hidden="true">🌌</span>
+              Physics Practical
             </Link>
-            <Link href="/practical/chemistry" className="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 hover:bg-amber-500/25 transition-colors">
-              🧪 Chemistry Practical
+            <Link href="/practical/chemistry" className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 hover:bg-amber-500/25 transition-colors">
+              <span aria-hidden="true">🧪</span>
+              Chemistry Practical
             </Link>
-            <Link href="/practical/biology" className="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 transition-colors">
-              🌿 Biology Practical
+            <Link href="/practical/biology" className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 transition-colors">
+              <span aria-hidden="true">🌿</span>
+              Biology Practical
             </Link>
           </div>
         </div>
@@ -154,107 +145,126 @@ export default async function NotesPage() {
       {/* Interactive Search & Subject Filter */}
       <section className="rounded-2xl border border-border/80 bg-card/60 p-6 backdrop-blur-sm shadow-sm space-y-4">
         <h2 className="text-lg font-semibold tracking-tight text-foreground flex items-center gap-2">
-          <span>🔍 Quick Search & Filter Notes</span>
+          <span aria-hidden="true">🔍</span>
+          <span>Quick search &amp; filter notes</span>
         </h2>
         <SubjectSearch subjects={searchSubjects} initialGroups={initialGroups} />
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold tracking-tight">📒 R Export Notes</h2>
+        <h2 className="text-2xl font-semibold tracking-tight flex items-center gap-2">
+          <span aria-hidden="true">📒</span>
+          R Export Notes
+        </h2>
         <div className="grid gap-4 md:grid-cols-2">
-          {Object.entries(rBySubject).map(([subject, chapters]) => (
-            <Card key={subject}>
-              <CardHeader>
-                <CardTitle className="text-base">{SUBJECT_EMOJI[subject] ?? "📘"} {subject}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {chapters.map((chapter) => (
-                    <div key={chapter.id} className="flex items-stretch gap-2">
-                      <Link
-                        // Legacy /r-notes/{subject}/{chapter} was removed; send
-                        // readers to the subject hub that renders these notes.
-                        href={noteRoute({
-                          title: chapter.title,
-                          path: `${subject}/${chapter.chapter}/${chapter.id}`,
-                          subject,
-                          target: "class-11-notes",
-                          source: "r-export",
-                        })}
-                        className="block flex-1 rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
-                      >
-                        <span className="font-medium">{chapter.title}</span>
-                        <span className="ml-2 text-xs text-muted-foreground">({chapter.noteCount} notes)</span>
-                      </Link>
-                      <Link
-                        href={noteViewHref({
-                          title: chapter.title,
-                          path: `${subject}/${chapter.chapter}/${chapter.id}`,
-                          subject,
-                          target: "class-11-notes",
-                          source: "r-export",
-                        })}
-                        className="flex items-center rounded-md border border-border px-3 py-2 text-xs font-semibold text-primary hover:border-primary transition-colors"
-                      >
-                        <ArrowRight className="mr-1 h-3 w-3" />
-                        Read
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold tracking-tight">📚 Ravikishan Notes</h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {Object.entries(rkBySubject).map(([key, items]) => (
-            <Card key={key}>
-              <CardHeader>
-                <CardTitle className="text-base">{SUBJECT_EMOJI[key] ?? "📘"} {key}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {items.map((item) => {
-                    // Legacy /ravikishan-notes/{path} was removed; route to the
-                    // matching curriculum chapter (or subject hub).
-                    const [section, subject] = item.path.split("/");
-                    const note: ImportedNote = {
-                      title: item.title,
-                      path: item.path,
-                      subject,
-                      unit: item.unit,
-                      target: section === "class-12" || section === "class-12-notes" ? "class-12-notes" : "class-11-notes",
-                      source: "ravikishan",
-                    };
-                    const href = noteRoute(note);
-                    const dupLabel = item.dupType > 1 ? ` (Type-${item.dupType})` : "";
-                    return (
-                      <div key={item.path} className="flex items-stretch gap-2">
+          {Object.entries(rBySubject).map(([subject, chapters]) => {
+            const visual = getSubjectVisual(subject);
+            return (
+              <Card key={subject}>
+                <CardHeader>
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <span aria-hidden="true">{visual.glyph}</span>
+                    <span>{subject}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {chapters.map((chapter) => (
+                      <div key={chapter.id} className="flex items-stretch gap-2">
                         <Link
-                          href={href}
+                          // Legacy /r-notes/{subject}/{chapter} was removed; send
+                          // readers to the subject hub that renders these notes.
+                          href={noteRoute({
+                            title: chapter.title,
+                            path: `${subject}/${chapter.chapter}/${chapter.id}`,
+                            subject,
+                            target: "class-11-notes",
+                            source: "r-export",
+                          })}
                           className="block flex-1 rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
                         >
-                          <span className="font-medium">{item.title}</span>
-                          {dupLabel && <span className="ml-2 text-xs text-muted-foreground">{dupLabel}</span>}
+                          <span className="font-medium">{chapter.title}</span>
+                          <span className="ml-2 text-xs text-muted-foreground">({chapter.noteCount} notes)</span>
                         </Link>
                         <Link
-                          href={noteViewHref(note)}
+                          href={noteViewHref({
+                            title: chapter.title,
+                            path: `${subject}/${chapter.chapter}/${chapter.id}`,
+                            subject,
+                            target: "class-11-notes",
+                            source: "r-export",
+                          })}
                           className="flex items-center rounded-md border border-border px-3 py-2 text-xs font-semibold text-primary hover:border-primary transition-colors"
                         >
                           <ArrowRight className="mr-1 h-3 w-3" />
                           Read
                         </Link>
                       </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold tracking-tight flex items-center gap-2">
+          <span aria-hidden="true">📚</span>
+          Ravikishan Notes
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {Object.entries(rkBySubject).map(([key, items]) => {
+            const visual = getSubjectVisual(key);
+            return (
+              <Card key={key}>
+                <CardHeader>
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <span aria-hidden="true">{visual.glyph}</span>
+                    <span>{key}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {items.map((item) => {
+                      // Legacy /ravikishan-notes/{path} was removed; route to the
+                      // matching curriculum chapter (or subject hub).
+                      const [section, subject] = item.path.split("/");
+                      const note: ImportedNote = {
+                        title: item.title,
+                        path: item.path,
+                        subject,
+                        unit: item.unit,
+                        target: section === "class-12" || section === "class-12-notes" ? "class-12-notes" : "class-11-notes",
+                        source: "ravikishan",
+                      };
+                      const href = noteRoute(note);
+                      const dupLabel = item.dupType > 1 ? ` (Type-${item.dupType})` : "";
+                      return (
+                        <div key={item.path} className="flex items-stretch gap-2">
+                          <Link
+                            href={href}
+                            className="block flex-1 rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
+                          >
+                            <span className="font-medium">{item.title}</span>
+                            {dupLabel && <span className="ml-2 text-xs text-muted-foreground">{dupLabel}</span>}
+                          </Link>
+                          <Link
+                            href={noteViewHref(note)}
+                            className="flex items-center rounded-md border border-border px-3 py-2 text-xs font-semibold text-primary hover:border-primary transition-colors"
+                          >
+                            <ArrowRight className="mr-1 h-3 w-3" />
+                            Read
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </section>
     </div>

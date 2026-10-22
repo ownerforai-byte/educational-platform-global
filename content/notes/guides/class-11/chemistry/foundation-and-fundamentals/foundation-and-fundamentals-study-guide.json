@@ -1,0 +1,34 @@
+{
+  "title": "Class 11 Chemistry — Foundation and Fundamentals Study Guide",
+  "unitSlug": "foundation-and-fundamentals",
+  "topicSlug": "foundation-and-fundamentals-study-guide",
+  "topicTitle": "Foundation and Fundamentals",
+  "relevance": 100,
+  "notes": [
+    "Chemistry explains the composition, structure, properties and transformations of matter, connecting microscopic atoms, ions and molecules with measurable properties. Physical chemistry studies principles and measurements; inorganic, organic and applied chemistry organize substances and practical uses.",
+    "An atom retains the chemical identity of an element. A molecule is a discrete bonded group; ionic compounds are described by formula units. Relative atomic mass (Aᵣ) and relative molecular/formula mass (Mᵣ) are ratios to one-twelfth of a carbon-12 atom and are dimensionless. Molar mass has units g mol⁻¹ and is numerically equal to the corresponding relative mass.",
+    "One atomic mass unit, u (or amu), is one-twelfth the mass of a carbon-12 atom. In school-level formulae, a radical is an atom or group of atoms that behaves as a unit and carries charge, such as NH₄⁺, SO₄²⁻ or NO₃⁻. Write cations first, balance total charge, and use parentheses when a polyatomic ion occurs more than once.",
+    "A molecular formula gives actual atom counts (C₆H₁₂O₆); an empirical formula gives the simplest whole-number ratio (CH₂O). Reduce subscripts by their greatest common divisor. If molar mass is known, multiply the empirical formula by n = molar mass ÷ empirical-formula mass.",
+    "Mass percent of element X = (mass of X in one formula unit ÷ Mᵣ of compound) × 100%. For C₆H₁₂O₆, Mᵣ = 180 and carbon contributes 72/180 × 100 = 40.0%. Percentages should total approximately 100%; small differences can result from rounding.",
+    "Worked empirical-formula method: assume 100 g when percentages are given, convert each element's mass to moles, divide by the smallest amount, and scale to whole numbers. For 40.0% C, 6.7% H and 53.3% O, the mole ratio is approximately 3.33:6.7:3.33 = 1:2:1, giving CH₂O.",
+    "Exam checks: distinguish dimensionless relative mass from molar mass in g mol⁻¹; verify ionic neutrality and simplest ratios; keep units in calculations and round only at the end."
+  ],
+  "formulas": [
+    "Mᵣ = Σ(subscript × Aᵣ)",
+    "% by mass of X = (mass of X in one formula unit ÷ Mᵣ) × 100%",
+    "Molecular formula = (empirical formula)ₙ, where n = molar mass ÷ empirical-formula mass"
+  ],
+  "keyPoints": [
+    "Relative masses are ratios without units; molar mass is expressed in g mol⁻¹.",
+    "Empirical formula is the simplest ratio; molecular formula gives actual atom counts.",
+    "Use ion charges to form neutral ionic formulae and reduce subscripts to the simplest ratio.",
+    "Check percentage totals and state units in numerical answers."
+  ],
+  "practiceQuestions": [
+    "Explain why relative molecular mass is dimensionless while molar mass has units.",
+    "Calculate the percentage by mass of oxygen in CaCO₃ using Ca = 40, C = 12 and O = 16.",
+    "Write the formulae of aluminium sulfate and ammonium phosphate from their ion charges.",
+    "A compound has empirical formula CH₂ and molar mass 56 g mol⁻¹. Determine its molecular formula."
+  ],
+  "summary": "Read formula subscripts, calculate relative masses, use ion charges to write neutral formulae, and distinguish empirical from molecular formulae."
+}

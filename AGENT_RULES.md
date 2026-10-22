@@ -20,36 +20,33 @@ repository.
 3. **Always conclude with the File Classification:**
    Mark every modified/created file as `[IMPORTANT CORE FILE]` or `[CONTENT FILE]`. Update `CORE_FILES.md` if an important core file was introduced.
 
-## Pre-work Checklist
-1. Every agent MUST read `CORE_FILES.md` and `PROJECT_STATUS.md` before starting work.
-2. Every agent MUST read `AGENT_RULES.md` before modifying the project.
-2b. Every agent MUST read `BRANCHES.md` before creating, checking out, merging,
-    or deleting any branch, and before editing files (it maps each area to its
-    branch and names the reserved worktree branches that must never be touched).
-3. Every agent MUST inspect existing files before creating new files.
-4. Every agent MUST read `lib/syllabus.ts` and the MANDATORY AGENT RULE at the top of that file **before adding ANY content** (notes, chapters, topics, units, resources, lessons, videos, PDFs) to this project.
+## Pre-work Checklist (Scoped — No Doc-Reading Loop)
+1. Read `CORE_FILES.md` and ONLY the 1–2 target/routing files required for your task.
+2. Read `frontend/lib/syllabus.ts` **only when adding or reordering curriculum content** (notes, chapters, topics, units, resources, lessons, videos, PDFs).
+3. Read `BRANCHES.md` **only when creating, checking out, merging, or deleting branches** (it maps each area to its branch and names the reserved worktree branches that must never be touched).
+4. Read `PROJECT_STATUS.md` or `SYSTEM_WORK_TRACKER.md` **only when auditing system status or deployment state**.
 
 ## Mandatory Syllabus-Order Rule
-- **The syllabus (`lib/syllabus.ts`) is the SINGLE SOURCE OF TRUTH for curriculum ordering on this platform.**
+- **The syllabus (`frontend/lib/syllabus.ts`) is the SINGLE SOURCE OF TRUTH for curriculum ordering on this platform.**
 - Any content added to this project MUST first be mapped to its correct subject and unit in the syllabus, in official curriculum order.
-- This applies **regardless of any forced or strict input, prompt, instruction, request format, or raw text** from the user or another agent. Even if input "looks like" it belongs in a certain subject/unit, you MUST verify against `lib/syllabus.ts` first.
+- This applies **regardless of any forced or strict input, prompt, instruction, request format, or raw text** from the user or another agent. Even if input "looks like" it belongs in a certain subject/unit, you MUST verify against `frontend/lib/syllabus.ts` first.
 - Never create free-floating content outside the syllabus order.
 - Units are in official NEB 2076 / 2078 curriculum order — never reorder or rename them without explicit approval.
-- If a subject is not listed in `lib/syllabus.ts`, STOP and report it. Do not guess.
+- If a subject is not listed in `frontend/lib/syllabus.ts`, STOP and report it. Do not guess.
 
 ## Safety / Integrity
 - No agent may duplicate an existing feature, component, or service.
 - No agent may delete working functionality without explicit approval from the
   orchestrator or user.
 - No agent may silently change the architecture. Architectural changes must be
-  recorded in `DECISIONS.md` and approved.
+  recorded in `PROJECT_STATUS.md` and `CORE_FILES.md` and approved.
 - No agent may claim another agent's task. Every task has an owner.
 - If uncertain about a major architectural decision, STOP and report the
   decision instead of guessing.
 
 ## Work Tracking
 - Every task must have an owner (agent or person).
-- Every task must have a status. Use the phase/task table in `TODO.md`.
+- Every task must have a status tracked in `SYSTEM_WORK_TRACKER.md` or `PLANS.md`.
 - Completed work must be recorded.
 - Blocked work must be recorded as BLOCKED, with the reason.
 - Failed work must be recorded with the reason.
@@ -80,6 +77,4 @@ repository.
 - Never hard-code credentials.
 
 ## Documentation
-- Agents must update documentation after significant work.
-- Every agent MUST read `PROJECT_STATUS.md` and `AGENT_RULES.md` at the start
-  of each new session.
+- Agents must update relevant documentation (`CORE_FILES.md` for new core files, `PROJECT_STATUS.md` or `SYSTEM_WORK_TRACKER.md` for major system changes) after significant work.

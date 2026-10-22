@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import { Calendar, Clock, BookOpen, Target, CheckCircle2, Circle, TrendingUp } from "lucide-react";
+import { Calendar, Clock, BookOpen, Target, CheckCircle2, Circle, TrendingUp, FileText, FlaskConical } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus, type SyllabusUnit } from "@/lib/syllabus";
 import Link from "next/link";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 
 // ── NEB exam dates (academic year 2081/82 — update each year) ──────────────
 const EXAM_DATE: Record<string, string> = {
@@ -17,15 +18,6 @@ const EXAM_DATE: Record<string, string> = {
   biology: "2082-05-07",
   english: "2082-04-28",
   nepali: "2082-04-30",
-};
-
-const SUBJECT_EMOJI: Record<string, string> = {
-  physics: "⚡",
-  chemistry: "🧪",
-  mathematics: "🔢",
-  biology: "🌿",
-  english: "📖",
-  nepali: "🇳🇵",
 };
 
 const SUBJECT_COLOR: Record<string, string> = {
@@ -87,7 +79,7 @@ function CountdownCard({
   );
   const pct = totalTopics > 0 ? Math.round((completedTopics / totalTopics) * 100) : 0;
   const color = SUBJECT_COLOR[subject.slug] ?? "#64748b";
-  const emoji = SUBJECT_EMOJI[subject.slug] ?? "📘";
+  const visual = getSubjectVisual(subject.slug);
 
   return (
     <Card className="relative overflow-hidden">
@@ -95,7 +87,7 @@ function CountdownCard({
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">{emoji}</span>
+            <span aria-hidden="true" className="shrink-0 text-2xl leading-none">{visual.glyph}</span>
             <div>
               <CardTitle className="text-base font-semibold">{subject.name}</CardTitle>
               <CardDescription className="text-xs">
@@ -379,17 +371,17 @@ export default function ExamCountdownPage() {
       <div className="flex flex-wrap gap-2 pt-4">
         <Link href="/quiz">
           <Button variant="outline" className="rounded-xl">
-            📝 Practice PYQs
+            <FileText className="h-4 w-4 mr-2" aria-hidden="true" /> Practice PYQs
           </Button>
         </Link>
         <Link href="/lab">
           <Button variant="outline" className="rounded-xl">
-            🔬 Interactive Labs
+            <FlaskConical className="h-4 w-4 mr-2" aria-hidden="true" /> Interactive Labs
           </Button>
         </Link>
         <Link href="/notes">
           <Button variant="outline" className="rounded-xl">
-            📖 Review Notes
+            <BookOpen className="h-4 w-4 mr-2" aria-hidden="true" /> Review Notes
           </Button>
         </Link>
       </div>

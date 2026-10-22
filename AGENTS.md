@@ -15,22 +15,21 @@
 >    - `[CONTENT FILE]` (notes, problem sets, mindmap JSON, rail slides)
 >    If a new core architecture file was added, register it in `CORE_FILES.md`.
 
-This repository uses an agentic workflow. Every coding agent must read
-`CORE_FILES.md` and `project-conductor.md` before making any edit or commit.
+This repository uses an agentic workflow. `CORE_FILES.md` is the single entrypoint for file isolation and routing.
 
-Rule 0 — **where the workflow lives & core files isolation**:
-This file points at `CORE_FILES.md` and `project-conductor.md`. The canonical spec is there: role
-assignment, task classification, acceptance criteria, file map, and the isolated list of main architecture/routing files. Keep `project-conductor.md` and `CORE_FILES.md` in sync before changing the workflow.
+Rule 0 — **core files isolation & no doc-reading loop**:
+Start with `CORE_FILES.md` and the 1–2 files directly relevant to your task. Do NOT chain-read every markdown guide before making a targeted edit:
+- Read `BRANCHES.md` **only** when creating, switching, merging, deleting, or pushing branches.
+- Read `project-conductor.md` **only** when classifying multi-agent tasks, roles, or PR labels.
+- Read `frontend/lib/syllabus.ts` **only** when adding or organizing curriculum content.
 
 Rule 0b — **branches**:
-Read `BRANCHES.md` before creating, checking out, merging, or deleting any
-branch, and before editing files (it maps every area to its branch: 48 area
-branches like `content/physics`, `feature/ai-chat`, `backend/auth-api`).
+When working with branches, follow `BRANCHES.md` (48 area branches like `content/physics`, `feature/ai-chat`, `backend/auth-api`).
 `main` is the only deployable branch; merge area branches back often; never
 push all branches (each one costs a Vercel preview build).
 
 Rule 1 — **read before edit (TARGETED READING ONLY)**
-Before making any change, read `CORE_FILES.md`, `project-conductor.md`, `BRANCHES.md`, and ONLY the
+Before making any change, read `CORE_FILES.md` and ONLY the
 target file(s) and its direct routing link. DO NOT read unrelated files or scan content folders.
 Reference the task-block type (`feature:`, `bugfix:`, `scrape:`, `transform:`,
 `load:`, `setup:`, `config:`, `docs:`, `test:`) and pick the model accordingly:

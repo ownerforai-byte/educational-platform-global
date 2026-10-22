@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isNavItemActive } from "@/lib/nav-active";
 import { cn } from "@/lib/utils";
 
 /**
@@ -9,7 +10,7 @@ import { cn } from "@/lib/utils";
  * The hamburger drawer remains the full menu; this is the compact fast path.
  */
 const QUICK_LINKS = [
-  { href: "/", label: "Home" },
+  { href: "/home", label: "Home" },
   { href: "/class-11-notes", label: "Class 11" },
   { href: "/class-12-notes", label: "Class 12" },
   { href: "/subjects", label: "Subjects" },
@@ -20,11 +21,6 @@ const QUICK_LINKS = [
 
 export function MobileQuickNav() {
   const pathname = usePathname();
-
-  const isActive = (href: string) =>
-    href === "/"
-      ? pathname === "/" || pathname === "/home"
-      : pathname.startsWith(href);
 
   return (
     <nav
@@ -38,7 +34,7 @@ export function MobileQuickNav() {
             href={link.href}
             className={cn(
               "shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
-              isActive(link.href)
+              isNavItemActive(pathname, link.href)
                 ? "bg-primary text-primary-foreground shadow-sm"
                 : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground",
             )}

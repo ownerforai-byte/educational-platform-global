@@ -11,36 +11,7 @@ import {
   Search,
 } from "lucide-react";
 
-const SUBJECT_THEMES: Record<string, { icon: string; border: string; bg: string; badge: string; text: string }> = {
-  mathematics: {
-    icon: "🔢",
-    border: "hover:border-violet-500/50",
-    bg: "from-violet-500/10 via-purple-500/5 to-transparent",
-    badge: "bg-violet-500/15 text-violet-600 dark:text-violet-400",
-    text: "text-violet-500",
-  },
-  physics: {
-    icon: "⚡",
-    border: "hover:border-sky-500/50",
-    bg: "from-sky-500/10 via-blue-500/5 to-transparent",
-    badge: "bg-sky-500/15 text-sky-600 dark:text-sky-400",
-    text: "text-sky-500",
-  },
-  chemistry: {
-    icon: "🧪",
-    border: "hover:border-amber-500/50",
-    bg: "from-amber-500/10 via-orange-500/5 to-transparent",
-    badge: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
-    text: "text-amber-500",
-  },
-  biology: {
-    icon: "🌿",
-    border: "hover:border-emerald-500/50",
-    bg: "from-emerald-500/10 via-teal-500/5 to-transparent",
-    badge: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
-    text: "text-emerald-500",
-  },
-};
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 
 interface LessonMeta {
   slug: string;
@@ -50,7 +21,6 @@ interface LessonMeta {
   classSlug: "class-11-notes";
   classTitle: string;
   unitSlug: string;
-  icon: string;
   description: string;
   wordCount?: number;
 }
@@ -64,7 +34,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "algebra",
-    icon: "🔢",
     description: "Logic and sets, real numbers, functions, sequence and series, matrices, quadratic equations, and complex numbers.",
   },
   {
@@ -75,7 +44,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "atomic-structure",
-    icon: "⚛️",
     description: "Rutherford and Bohr models, hydrogen spectrum, quantum numbers, orbitals, and electronic configuration.",
   },
   {
@@ -86,7 +54,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "biomolecules-and-cell-biology",
-    icon: "🧬",
     description: "Carbohydrates, proteins, lipids, nucleic acids, enzymes, prokaryotic vs eukaryotic cells, organelles, mitosis and meiosis.",
   },
   {
@@ -97,7 +64,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "calculus",
-    icon: "📐",
     description: "Limits and continuity, derivatives, implicit differentiation, monotonicity, integration by substitution and parts, definite integrals.",
   },
   {
@@ -108,7 +74,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "classification-of-elements-and-periodic-table",
-    icon: "🧪",
     description: "Modern periodic law, groups/periods/blocks, nuclear charge, periodic trends of radii, ionization energy, electron affinity, electronegativity.",
   },
   {
@@ -119,7 +84,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "floral-diversity",
-    icon: "🌸",
     description: "Five-kingdom classification, Monera Protista Fungi Plantae Animalia, algae, bryophytes, pteridophytes, gymnosperms, angiosperms.",
   },
   {
@@ -130,7 +94,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "gravitation",
-    icon: "🌍",
     description: "Newton's law of gravitation, gravitational field and potential, variation of g with altitude and depth, satellite motion, escape velocity.",
   },
   {
@@ -141,7 +104,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "reflection-at-curved-mirror",
-    icon: "🔭",
     description: "Reflection at curved mirrors, refraction at plane surfaces, prisms, lenses, dispersion and aberrations, and spectra.",
   },
   {
@@ -152,7 +114,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "quantity-of-heat",
-    icon: "🔥",
     description: "Newton's law of cooling, specific heat capacity, latent heat of fusion and vaporization, triple point, and calorimetry.",
   },
   {
@@ -163,7 +124,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "stoichiometry",
-    icon: "⚗️",
     description: "Dalton's atomic theory, laws of stoichiometry, Avogadro's law, mole concept, limiting reactant, yield calculations, empirical and molecular formulas.",
   },
   {
@@ -174,7 +134,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "trigonometry",
-    icon: "📏",
     description: "Inverse circular functions, principal values, graphs, and trigonometric equations with general solutions.",
   },
   {
@@ -185,7 +144,6 @@ const FALLBACK_LESSONS: LessonMeta[] = [
     classSlug: "class-11-notes",
     classTitle: "Class 11 (Grade XI)",
     unitSlug: "vectors",
-    icon: "➡️",
     description: "Triangle, parallelogram and polygon laws; resolution of vectors; scalar (dot) and vector (cross) products, with worked examples.",
   },
 ];
@@ -295,7 +253,7 @@ export default function LessonsLibraryPage() {
             const label = s === "all" ? "All Subjects" : (s.charAt(0).toUpperCase() + s.slice(1));
             const count = subjectCounts[s] ?? 0;
             const active = filterSubject === s;
-            const theme = s === "all" ? { text: "text-foreground", badge: "bg-primary/15 text-primary" } : SUBJECT_THEMES[s];
+            const theme = s === "all" ? { text: "text-foreground", badge: "bg-primary/15 text-primary" } : getSubjectVisual(s);
             return (
               <button
                 key={s}
@@ -344,7 +302,7 @@ export default function LessonsLibraryPage() {
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((lesson) => {
-              const theme = SUBJECT_THEMES[lesson.subject] || SUBJECT_THEMES.physics;
+              const theme = getSubjectVisual(lesson.subject);
               return (
                 <Link
                   key={lesson.slug}
@@ -354,7 +312,7 @@ export default function LessonsLibraryPage() {
                   <div>
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-3">
-                        <span className="text-2xl filter drop-shadow-sm">{lesson.icon}</span>
+                        <span aria-hidden="true" className="shrink-0 text-2xl leading-none">{theme.glyph}</span>
                         <div>
                           <h3 className="font-bold text-foreground text-base group-hover:text-primary transition-colors">
                             {lesson.title}

@@ -14,6 +14,8 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
+
 export const metadata: Metadata = {
   title: "Ravikishan Notes — Directory & Curriculum Guide",
   description:
@@ -21,21 +23,21 @@ export const metadata: Metadata = {
 };
 
 const SUBJECTS_11 = [
-  { slug: "physics", name: "Physics", icon: "⚡" },
-  { slug: "chemistry", name: "Chemistry", icon: "🧪" },
-  { slug: "mathematics", name: "Mathematics", icon: "🔢" },
-  { slug: "biology", name: "Biology", icon: "🌿" },
-  { slug: "english", name: "English", icon: "📖" },
-  { slug: "nepali", name: "Nepali", icon: "🇳🇵" },
+  { slug: "physics", name: "Physics" },
+  { slug: "chemistry", name: "Chemistry" },
+  { slug: "mathematics", name: "Mathematics" },
+  { slug: "biology", name: "Biology" },
+  { slug: "english", name: "English" },
+  { slug: "nepali", name: "Nepali" },
 ];
 
 const SUBJECTS_12 = [
-  { slug: "physics", name: "Physics", icon: "⚡" },
-  { slug: "chemistry", name: "Chemistry", icon: "🧪" },
-  { slug: "mathematics", name: "Mathematics", icon: "🔢" },
-  { slug: "biology", name: "Biology", icon: "🌿" },
-  { slug: "english", name: "English", icon: "📖" },
-  { slug: "nepali", name: "Nepali", icon: "🇳🇵" },
+  { slug: "physics", name: "Physics" },
+  { slug: "chemistry", name: "Chemistry" },
+  { slug: "mathematics", name: "Mathematics" },
+  { slug: "biology", name: "Biology" },
+  { slug: "english", name: "English" },
+  { slug: "nepali", name: "Nepali" },
 ];
 
 export default function RavikishanNotesDisabledPage() {
@@ -100,19 +102,22 @@ export default function RavikishanNotesDisabledPage() {
         </div>
 
         <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-          {SUBJECTS_11.map((subj) => (
-            <Link
-              key={subj.slug}
-              href={`/class-11-notes/${subj.slug}`}
-              className="group flex flex-col items-center justify-center p-4 rounded-2xl border border-border/70 bg-card hover:border-primary/40 hover:bg-accent/40 hover:shadow-sm transition-all text-center"
-            >
-              <span className="text-2xl mb-2">{subj.icon}</span>
-              <span className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors">
-                {subj.name}
-              </span>
-              <span className="text-[10px] text-muted-foreground mt-0.5">Notes &amp; Units</span>
-            </Link>
-          ))}
+          {SUBJECTS_11.map((subj) => {
+            const visual = getSubjectVisual(subj.slug);
+            return (
+              <Link
+                key={subj.slug}
+                href={`/class-11-notes/${subj.slug}`}
+                className="group flex flex-col items-center justify-center p-4 rounded-2xl border border-border/70 bg-card hover:border-primary/40 hover:bg-accent/40 hover:shadow-sm transition-all text-center"
+              >
+                <span aria-hidden="true" className="mb-2 text-2xl leading-none">{visual.glyph}</span>
+                <span className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {subj.name}
+                </span>
+                <span className="text-[10px] text-muted-foreground mt-0.5">Notes &amp; Units</span>
+              </Link>
+            );
+          })}
         </div>
       </div>
 
@@ -137,19 +142,22 @@ export default function RavikishanNotesDisabledPage() {
         </div>
 
         <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-          {SUBJECTS_12.map((subj) => (
-            <Link
-              key={subj.slug}
-              href={`/class-12-notes/${subj.slug}`}
-              className="group flex flex-col items-center justify-center p-4 rounded-2xl border border-border/70 bg-card hover:border-primary/40 hover:bg-accent/40 hover:shadow-sm transition-all text-center"
-            >
-              <span className="text-2xl mb-2">{subj.icon}</span>
-              <span className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors">
-                {subj.name}
-              </span>
-              <span className="text-[10px] text-muted-foreground mt-0.5">Notes &amp; Units</span>
-            </Link>
-          ))}
+          {SUBJECTS_12.map((subj) => {
+            const visual = getSubjectVisual(subj.slug);
+            return (
+              <Link
+                key={subj.slug}
+                href={`/class-12-notes/${subj.slug}`}
+                className="group flex flex-col items-center justify-center p-4 rounded-2xl border border-border/70 bg-card hover:border-primary/40 hover:bg-accent/40 hover:shadow-sm transition-all text-center"
+              >
+                <span aria-hidden="true" className="mb-2 text-2xl leading-none">{visual.glyph}</span>
+                <span className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {subj.name}
+                </span>
+                <span className="text-[10px] text-muted-foreground mt-0.5">Notes &amp; Units</span>
+              </Link>
+            );
+          })}
         </div>
       </div>
 

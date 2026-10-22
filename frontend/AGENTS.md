@@ -74,7 +74,7 @@ node node_modules/tsx/dist/cli.mjs frontend/scripts/content/validate.ts --strict
 ```
 
 ### 7. Backend + Frontend Must Run Together
-- Frontend: `npm run dev -w frontend` (port 5173)
+- Frontend: `cd frontend && npm run dev` (port 5173)
 - Backend: `npm run dev:backend` (port 3000)
 - API proxy: frontend proxies `/api/*` → `localhost:3000` (set `NEXT_PUBLIC_API_URL` in `frontend/.env.local`)
 

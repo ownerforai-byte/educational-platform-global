@@ -1,10 +1,10 @@
 # 🧩 Project Conductor — Agentic Workflow Spec
 
-> **Rule 0:** This file lives in the repository root. Any coding agent assigned to this project MUST read it before making an edit. It defines who does what, which model may be used for which task, and how work is scoped.
+> **Rule 0 (Targeted Entrypoint — No Doc-Reading Loop):** `CORE_FILES.md` is the primary architecture and routing entrypoint. Read `CORE_FILES.md` and ONLY the 1–2 isolated target/routing files needed for your task. Reference this file (`project-conductor.md`) when assigning roles or task labels, and `BRANCHES.md` when working with git branches.
 >
-> **Rule 0a (CORE ISOLATION & NO MASS READING):** Read `CORE_FILES.md` to see the isolated list of main architecture and routing files. **DO NOT READ ALL FILES.** Over 8,000 files in the repo are content payloads. Only read the isolated routing files needed to place, create, and link your target file. When finished, mark whether touched files are **[IMPORTANT CORE FILE]** or **[CONTENT FILE]**.
+> **Rule 0a (CORE ISOLATION & NO MASS READING):** Over 8,000 files in the repo are content payloads (`content/ravikishan/**`). **DO NOT READ ALL FILES.** Only read the isolated routing files needed to place, create, and link your target file. When finished, mark whether touched files are **[IMPORTANT CORE FILE]** or **[CONTENT FILE]**.
 >
-> **Rule 0b (branches):** Read `BRANCHES.md` before creating, checking out, merging, or deleting any branch, and before editing files. It maps every area to one of the 48 area branches (`content/physics`, `feature/ai-chat`, `backend/auth-api`, `test/*`, `ci/*`…), names the 4 reserved worktree branches that must never be touched, and defines the scoped-check commands (`npm run check` / `npm run check:all`).
+> **Rule 0b (branches):** Read `BRANCHES.md` before creating, checking out, merging, or deleting any branch. It maps every area to one of the 48 area branches (`content/physics`, `feature/ai-chat`, `backend/auth-api`, `test/*`, `ci/*`…), names the 4 reserved worktree branches that must never be touched, and defines the scoped-check commands (`npm run check` / `npm run check:all`).
 
 > **Rule 2 (reproducibility):** Never commit a generated secret to git. Before committing, run `git log -S "<key-value>" -- <file>` and `git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN=" -- . ':!node_modules' ':!*.md'` to confirm the workspace is clean.
 
@@ -26,11 +26,9 @@
 
 | Agent | Role | Model(s) | Primary Mandate |
 |---|---|---|---|
-| **Agent** | **Role** | **Model** | **Primary mandate** |
-|---|---|---|---|
-| `Cline` | Main orchestrator / repository maintainer | Qwen 3.7 | Owns cross-cutting changes, file structure, DB schema, API endpoints, and the agentic workflow itself. Delegates complexity to Qwen 3.7 for core logic. |
-| `Qwen 3.8` | Core logic & architecture | Qwen 3.8 | Search/filter algorithms, complex DB queries (HyPertable/Supabase RLS + index selection), AI chain routing (agnes → openrouter → internal), authZ/authN middleware. |
-| `Qwen 3.7` | Core logic & architecture | Qwen 3.7 | Search/filter algorithms, complex DB queries (HyPertable/Supabase RLS + index selection), AI chain routing (agnes → openrouter → internal), authZ/authN middleware. |
+| `Cline` | Main orchestrator / repository maintainer | Qwen 3.7 | Owns cross-cutting changes, file structure, DB schema, API endpoints, and the agentic workflow itself. Delegates complexity to Qwen 3.8/3.7 for core logic. |
+| `Qwen 3.8` | Core logic & architecture | Qwen 3.8 | Search/filter algorithms, complex DB queries (Supabase RLS + index selection), AI chain routing (`agnes` → `internal`), authZ/authN middleware. |
+| `Qwen 3.7` | Core logic & architecture (fallback) | Qwen 3.7 | Fallback for `Qwen 3.8` on search/filter algorithms, DB queries, AI chain routing (`agnes` → `internal`), and authZ/authN middleware. |
 | `GLM 5.3` | Feature + routine backend | GLM 5.3 | Standard CRUD endpoints for syllabus content (chapters, topics, notes, pyqs), user profile management, DB migration scripts. |
 | `MiniMax v2.6 Pro` | Frontend UI/UX | MiniMax v2.6 Pro | Responsive Tailwind layouts, interactive quizzes, chapter progression trackers, student dashboards, progress/streak/certificate UI. |
 | `Solar Mini` | Tests & harness | Solar Mini | Extensive unit tests for scraping + backend endpoints, NEB Class 11/12 seed-data validation. |
@@ -47,19 +45,12 @@
 - Runs `/api/*` endpoints, DB schema migrations, and content-tagging flows.
 - **Blocking rule:** never commits secrets; always verify with `git grep`.
 
-### 2.2 Qwen 3.8 (core logic)
+### 2.2 Qwen 3.8 & Qwen 3.7 (core logic & fallback)
 - Design and implement the search & filter algorithm for chapters (exact / fuzzy / tag-based).
-- Write the complex DB queries (HyPertable / Supabase RLS policies + index selection).
-- Implement the AI chain routing middleware (agnes → openrouter → internal).
+- Write complex DB queries (Supabase RLS policies + index selection).
+- Implement the AI chain routing middleware (`agnes` → `internal` fallback).
 - AuthZ/AuthN middleware: per-user `user.id` scoping, owner-guard checks, mass-assignment rejection.
-
-### 2.2 Qwen 3.7 (core logic fallback)
-- Use Qwen 3.7 as the fallback for Qwen 3.8 when Qwen 3.8 returns degraded results.
-- Same core tasks: search/filter, DB queries, AI chain routing, authZ/authN middleware.
-- Design and implement the search & filter algorithm for chapters (exact / fuzzy / tag-based).
-- Write the complex DB queries (HyPertable / Supabase RLS policies + index selection).
-- Implement the AI chain routing middleware (agnes → openrouter → internal fallback).
-- AuthZ/AuthN middleware: per-user `user.id` scoping, owner-guard checks, mass-assignment rejection.
+- Use `Qwen 3.7` as the fallback when `Qwen 3.8` is unavailable or returns degraded results.
 
 ### 2.3 GLM 5.3 (feature + routine backend)
 - Standard CRUD endpoints for syllabus content (chapters, topics, notes, pyqs).
@@ -109,8 +100,8 @@ Use these labels as YAML/JSON block headers inside any task-tracking file or PR 
 
 ## 4. How to Use This Spec
 
-- Before **any** edit: read `CORE_FILES.md`, `project-conductor.md` + ONLY the target file(s). **Never mass-read files or explore content folders unless specifically asked.**
-- Before **any** edit touching branches or multiple areas: read `BRANCHES.md`.
+- Before **any** edit: read `CORE_FILES.md` + ONLY the target file(s). **Never mass-read files or explore content folders unless specifically asked.**
+- When touching branches or multiple areas: read `BRANCHES.md`.
 - Before **any commit**: run `git log -S` + `git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN=" -- . ':!node_modules' ':!*.md'` and confirm zero hits.
 - **Route and link**: Ensure any newly created page or endpoint is routed in `frontend/lib/navigation.ts`, `frontend/lib/site-index.ts`, or `backend/src/app.ts`.
 - **Mark files upon task completion**: Output a File Classification Report marking all modified/created files as `[IMPORTANT CORE FILE]` or `[CONTENT FILE]`. Update `CORE_FILES.md` if an important core architecture file was added.
@@ -139,14 +130,14 @@ Use these labels as YAML/JSON block headers inside any task-tracking file or PR 
 
 | Area | Key Paths |
 |---|---|
-| Backend entrypoint | `backend/src/index.ts` |
-| AI orchestration | `backend/src/ai/service.ts` (agnes → openrouter → internal) |
+| Backend entrypoint | `backend/src/index.ts`, `backend/src/app.ts` |
+| AI orchestration | `backend/src/ai/service.ts` (`agnes` → `internal`) |
 | AI prompt contract | `backend/src/ai/prompts.ts` (composes `MASTER_ACADEMIC_PROMPT`), `backend/src/ai/academic-intelligence.ts` (Master Academic Intelligence System + kingdom/phylum, life-cycle, mind-map, flow engines), frontend mirror `frontend/lib/ai/prompts.ts` |
-| AuthZ/AuthN + middleware | `backend/src/middleware/` (securityHeaders, errors, rateLimit, cors) |
+| AuthZ/AuthN + middleware | `backend/src/middleware/` (`auth.ts`, `creditCheck.ts`, `securityHeaders.ts`, `errors.ts`, `rateLimit.ts`, `cors.ts`) |
 | Config / env gate | `backend/src/config/env.ts` |
-| Testing | `backend/tests/security-policy.test.ts` (14), `auth-flow.test.ts` (21), `hardening.test.ts` (27), `academic-intelligence.test.ts` (AI prompt contract) |
-| Frontend layout | `frontend/components/layout/app-shell.tsx`, `mobile-nav.tsx` |
-| Content model | `backend/src/db/mock-db.ts`, Supabase migrations |
+| Testing | `backend/tests/security-policy.test.ts` (14), `backend/tests/auth-flow.test.ts` (21), `backend/tests/hardening.test.ts` (27), `backend/tests/academic-intelligence.test.ts` (AI prompt contract) |
+| Frontend layout | `frontend/components/layout/app-shell.tsx`, `frontend/components/layout/mobile-nav.tsx`, `frontend/components/layout/sidebar-navigation.tsx` |
+| Content & DB model | `backend/src/db/supabase.ts`, `backend/src/db/mock.ts`, `frontend/lib/syllabus.ts` |
 | Secrets hygiene | `git log -S`, `git grep -n "vcp_|sbp_|AIza|sk-|KEY=|TOKEN="` |
 
 ---
