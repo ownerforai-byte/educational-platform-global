@@ -42,6 +42,7 @@ import AuthCallbackPage from "@/app/auth/callback/page";
 
 beforeEach(() => {
   vi.clearAllMocks();
+  vi.unstubAllEnvs();
   sessionStorage.clear();
   localStorage.clear();
   mocks.useSearchParams.mockReturnValue(new URLSearchParams("next=%2Fprofile"));
@@ -56,34 +57,47 @@ beforeEach(() => {
 });
 
 describe("Social login", () => {
-  it("renders Facebook and Google sign-in alongside the password form", () => {
+  it("renders Google sign-in alongside the password form (Facebook temporarily hidden)", () => {
     render(<LoginForm />);
-    expect(screen.getByRole("button", { name: /continue with facebook/i })).toBeInTheDocument();
+    // Facebook is intentionally hidden behind SHOW_FACEBOOK=false until the
+    // Meta code-exchange credentials are fixed (see social-auth-buttons.tsx);
+    // the button must stay absent rather than render broken.
+    expect(screen.queryByRole("button", { name: /continue with facebook/i })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
     expect(screen.getByLabelText("Email")).toBeInTheDocument();
   });
 
-  it("shows a useful message when the project has Facebook disabled", async () => {
+  it("shows a useful message when the provider is disabled", async () => {
+    // Same handler branch the Facebook button used: while Facebook is hidden
+    // (SHOW_FACEBOOK=false) the disabled-provider message is exercised through
+    // the visible Google button.
     mocks.isOAuthProviderEnabled.mockResolvedValue(false);
     render(<LoginForm />);
-    fireEvent.click(screen.getByRole("button", { name: /continue with facebook/i }));
-    expect(await screen.findByText(/Facebook sign-in is temporarily unavailable/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
+    expect(await screen.findByText(/Google sign-in is temporarily unavailable/i)).toBeInTheDocument();
     expect(mocks.apiFetch).not.toHaveBeenCalled();
     expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 
-  it("requests the CSRF token and starts Facebook OAuth with the local callback and safe next path", async () => {
+  it("drops an unsafe next path when starting OAuth (Facebook stays hidden)", async () => {
+    // The Facebook variant of this flow is dormant behind SHOW_FACEBOOK=false;
+    // the shared handler is asserted through Google: a protocol-relative `next`
+    // must never reach the callback redirect, and no Facebook flow may start.
+    mocks.useSearchParams.mockReturnValue(new URLSearchParams("next=%2F%2Fevil.example"));
     render(<LoginForm />);
-    fireEvent.click(screen.getByRole("button", { name: /continue with facebook/i }));
+    fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
     await waitFor(() => expect(mocks.signInWithOAuth).toHaveBeenCalledOnce());
     expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/csrf", { method: "POST" });
     expect(mocks.signInWithOAuth).toHaveBeenCalledWith({
-      provider: "facebook",
+      provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=%2Fprofile`,
+        redirectTo: `${window.location.origin}/auth/callback`,
       },
     });
+    expect(
+      mocks.signInWithOAuth.mock.calls.every(([args]) => args.provider !== "facebook"),
+    ).toBe(true);
   });
 
   it("starts Google OAuth with the same CSRF and callback flow", async () => {
@@ -103,6 +117,10 @@ describe("Social login", () => {
   it("exchanges the callback code, creates the app session, and returns to a safe next path", async () => {
     const state = "f".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://testproj.supabase.co");
+    localStorage.setItem("sb-testproj-auth-token", "{}");
+    localStorage.setItem("sb-testproj-auth-token-code-verifier", "{}");
+    localStorage.setItem("unrelated-key", "keep");
     mocks.useSearchParams.mockReturnValue(new URLSearchParams("code=oauth-code&next=%2Fprofile"));
     mocks.apiFetch.mockResolvedValueOnce({ user: { id: "user-1", email: "student@example.com" }, accessToken: "app-access" });
 
@@ -115,7 +133,13 @@ describe("Social login", () => {
       headers: { "X-CSRF-Token": state },
       body: JSON.stringify({ accessToken: "supabase-access", refreshToken: "supabase-refresh", state }),
     });
-    expect(mocks.signOut).toHaveBeenCalledWith({ scope: "local" });
+    // The supabase-js local record is swept WITHOUT signOut: signOut still hits
+    // /auth/v1/logout and GoTrue deletes the server session the backend just
+    // minted (see auth/callback/page.tsx clearSupabaseLocalSession).
+    expect(mocks.signOut).not.toHaveBeenCalled();
+    expect(localStorage.getItem("sb-testproj-auth-token")).toBeNull();
+    expect(localStorage.getItem("sb-testproj-auth-token-code-verifier")).toBeNull();
+    expect(localStorage.getItem("unrelated-key")).toBe("keep");
     expect(mocks.setStoredToken).toHaveBeenCalledWith("app-access");
     expect(mocks.writeCachedSession).toHaveBeenCalledWith(
       { id: "user-1", email: "student@example.com" },

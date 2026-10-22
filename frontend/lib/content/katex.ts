@@ -52,15 +52,16 @@ export const KATEX_MACROS: Record<string, string> = {
   "\\ii": "\\mathrm{i}",
   "\\eps": "\\varepsilon",
   // ── Physics specific additions ─────────────────────────────────────────
-  "\\hbar": "\\hbar",
   "\\ddt": "\\frac{\\mathrm{d}}{\\mathrm{d}t}",
   "\\ddx": "\\frac{\\mathrm{d}}{\\mathrm{d}x}",
   "\\partialt": "\\frac{\\partial}{\\partial t}",
   "\\partialx": "\\frac{\\partial}{\\partial x}",
   "\\ket": "\\left|#1\\right\\rangle",
   "\\bra": "\\left\\langle#1\\right|",
-  "\\exp": "\\exp",
-  "\\ln": "\\ln",
+  // NOTE: no self-referential macros (`"\\hbar": "\\hbar"`, `"\\ln": "\\ln"`):
+  // KaTeX expands macros recursively, so a macro that expands to itself hits
+  // "Too many expansions" and the whole expression renders as an error. Those
+  // commands are native to KaTeX and need no macro entry.
 };
 
 export const KATEX_OPTIONS: KatexOptions & { macros: Record<string, string> } = {
@@ -94,9 +95,11 @@ export function normalizeLatexExpression(expression: string): string {
   result = result.replace(/\\\\sum/g, "\\sum");
   result = result.replace(/\\\\int/g, "\\int");
   
-  // 3. Remove stray backslashes that are not followed by a letter or space
-  // This is a heuristic to catch malformed escapes
-  result = result.replace(/\\(?![A-Za-z\s])/g, "");
+  // 3. Remove only truly stray backslashes. `\\` pairs (row breaks) are
+  // consumed atomically so they are never dissected; commands and non-letter
+  // escapes like `\,`, `\{`, `\%`, `\|` survive. Stripping those broke
+  // rendering of well-formed LaTeX (and turned `\\=` into a broken `\=`).
+  result = result.replace(/(\\\\)|\\(?![A-Za-z\s,;:!{}|$%&#_./-])/g, "$1");
   
   return result;
 }
@@ -115,10 +118,10 @@ export function sanitizeMathContent(content: string): string {
   // In LaTeX, ^ is a superscript operator. It usually needs { } or a char after it.
   // If it's at the end, or followed by whitespace/invalid chars, remove it.
   // We look for ^ that is NOT followed by {, alphanum, or common math symbols
-  cleanContent = cleanContent.replace(/\^(?![{a-zA-Z0-9~])/, "");
+  cleanContent = cleanContent.replace(/\^(?![{a-zA-Z0-9~\\])/, "");
   
   // 3. Remove stray subscripts (_) if not followed by valid content
-  cleanContent = cleanContent.replace(/_(?![{a-zA-Z0-9~])/g, "");
+  cleanContent = cleanContent.replace(/_(?![{a-zA-Z0-9~\\])/g, "");
   
   // 4. Handle common "leak" characters that shouldn't be raw in math mode
   // If we see ; @ # & * / > < | that are not part of a command, they might be
