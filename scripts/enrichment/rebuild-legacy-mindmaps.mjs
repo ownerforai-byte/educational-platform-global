@@ -1,6 +1,6 @@
 /**
- * rebuild-legacy-mindmaps — re-create the `content/ravikishan/**\/mindmap/mindmap.json`
- * branch files from their own unit's concept notes.
+ * rebuild-legacy-mindmaps — re-create the legacy `mindmap.json` branch files
+ * under `content/visuals/mindmaps` from their own unit's concept notes.
  *
  * The whole 59-file legacy corpus was scaffolded by an old generator: the
  * branches were generic ("Core Concepts → Fundamentals → Key Definitions,
@@ -9,8 +9,8 @@
  * "Mindmap placeholder — run content generation to create actual mindmap data."
  * None of it named the unit it belonged to, and 27 files had no branches at all.
  *
- * Every unit already carries its own real content next to those files, in
- * `<unit>/concepts/*.json`. This tool rebuilds each mindmap from THAT: the
+ * Every unit already carries its own real content in
+ * `content/notes/concepts/<class>/<subject>/<unit>/*.json`. This tool rebuilds each mindmap from THAT: the
  * branches are the unit's own concept notes, the points are those notes' own
  * key points / formulas / exam pointers, and the summary lines are taken from
  * the notes instead of the placeholder sentence.
@@ -33,7 +33,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(process.cwd());
-const CORPUS = path.join(ROOT, "content", "ravikishan");
+// The classified mindmap section; concepts live in the sibling notes/concepts.
+const CORPUS = path.join(ROOT, "content", "visuals", "mindmaps");
 
 const CHECK = process.argv.includes("--check");
 const DRY = process.argv.includes("--dry");
@@ -83,14 +84,13 @@ function listMindmaps(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, entry.name);
     if (entry.isDirectory()) listMindmaps(p, out);
-    else if (entry.name === "mindmap.json" && path.basename(path.dirname(p)) === "mindmap") out.push(p);
+    else if (entry.name === "mindmap.json") out.push(p);
   }
   return out;
 }
 
 /** The unit's own concept notes, de-duplicated like the app does (lowest duplicateType). */
-function loadUnitConcepts(unitDir) {
-  const dir = path.join(unitDir, "concepts");
+function loadUnitConcepts(dir) {
   if (!fs.existsSync(dir)) return [];
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
   const byGroup = new Map();
@@ -226,15 +226,21 @@ function main() {
 
   for (const file of files) {
     const rel = path.relative(ROOT, file).replaceAll(path.sep, "/");
-    const unitDir = path.dirname(path.dirname(file));
+    // …/visuals/mindmaps/<class>/<subject>/<unit>/mindmap.json — the unit's
+    // concepts sit at the same coords under notes/concepts.
+    const unitDir = path.dirname(file);
     const unitSlug = path.basename(unitDir);
+    const conceptsDir = unitDir.replace(
+      `${path.sep}visuals${path.sep}mindmaps${path.sep}`,
+      `${path.sep}notes${path.sep}concepts${path.sep}`,
+    );
     const existing = readJson(file);
     if (!existing) {
       problems.push(`${rel} — unparseable JSON`);
       continue;
     }
 
-    const concepts = loadUnitConcepts(unitDir);
+    const concepts = loadUnitConcepts(conceptsDir);
     const branches = branchesFromConcepts(concepts, unitSlug);
     const summaries = summariesFromConcepts(concepts);
 
@@ -301,7 +307,7 @@ function main() {
   if (dropped.length) {
     const units = new Set(
       files.filter((f) => {
-        const unit = path.basename(path.dirname(path.dirname(f)));
+        const unit = path.basename(path.dirname(f));
         return dropped.some((d) => d.toLowerCase().includes(unit.slice(0, 6)));
       }),
     ).size;

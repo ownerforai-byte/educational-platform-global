@@ -80,16 +80,16 @@ const fullCap05 = {
 
 writeDual(
   "physics/capacitor/05-effect-of-a-dielectric-polarization-and-displacement.json",
-  "class-11-notes/physics/capacitor/concepts/05-effect-of-a-dielectric-polarization-and-displacement.json",
+  "notes/concepts/class-11/physics/capacitor/05-effect-of-a-dielectric-polarization-and-displacement.json",
   fullCap05
 );
 writeDual(
   "physics/capacitor/04-dielectric-effect.json",
-  "class-11-notes/physics/capacitor/concepts/04-dielectric-effect.json",
+  "notes/concepts/class-11/physics/capacitor/04-dielectric-effect.json",
   { ...fullCap05, title: "Effect of Dielectric", duplicateType: 2, tabGroup: "effect-of-a-dielectric-polarization-and-displacement" }
 );
 writeDual(
   "physics/capacitor/04-dielectric-effect-2.json",
-  "class-11-notes/physics/capacitor/concepts/04-dielectric-effect.json",
+  "notes/concepts/class-11/physics/capacitor/04-dielectric-effect.json",
   { ...fullCap05, title: "Effect of Dielectric", duplicateType: 2, tabGroup: "effect-of-a-dielectric-polarization-and-displacement" }
 );

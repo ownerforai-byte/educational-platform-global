@@ -5,7 +5,7 @@
 // and scripts/audit-empty-scopes.mjs MARKERS).
 export default [
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/01-introduction-three-domains",
+    file: "notes/concepts/class-11/biology/floral-diversity/01-introduction-three-domains",
     notes: [
       "**Binomial nomenclature.** Carolus Linnaeus gave the two-word naming system: the first word is the capitalised genus and the second the lowercase species, italicised or underlined — for example, Homo sapiens.",
       "**Five-kingdom classification.** R.H. Whittaker grouped life into Monera, Protista, Fungi, Plantae and Animalia using cell structure, thallus organisation, nutrition and reproduction as criteria.",
@@ -15,7 +15,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/03-fungi-general",
+    file: "notes/concepts/class-11/biology/floral-diversity/03-fungi-general",
     notes: [
       "**General features.** Fungi are achlorophyllous, heterotrophic, eukaryotic organisms whose body is a thallus made of thread-like hyphae (a mycelium); cell walls contain chitin and food is stored as glycogen.",
       "**Phycomycetes.** These lower fungi have aseptate (coenocytic) hyphae and form thick-walled zygospores sexually; examples are Mucor, Rhizopus and the plant pathogen Albugo.",
@@ -25,7 +25,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/04-structure-and-reproduction-of-mucor-and-yeast",
+    file: "notes/concepts/class-11/biology/floral-diversity/04-structure-and-reproduction-of-mucor-and-yeast",
     notes: [
       "**Mucor thallus.** Mucor is a saprophytic mould with branched, aseptate (coenocytic) hyphae that grow on decaying organic matter such as bread and fruit.",
       "**Mucor reproduction.** Asexually it forms sporangiospores inside a globose sporangium; sexually, compatible hyphae fuse to produce a thick-walled zygospore.",
@@ -35,7 +35,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/05-introduction-of-mushrooms",
+    file: "notes/concepts/class-11/biology/floral-diversity/05-introduction-of-mushrooms",
     notes: [
       "**Basidiocarp.** The mushroom is the fleshy fruiting body of a basidiomycete, with a cap (pileus), stalk (stipe) and gills (lamellae) on which basidiospores are produced.",
       "**Edible mushrooms.** Agaricus bisporus (button mushroom) and Pleurotus (oyster mushroom) are cultivated widely and are rich in protein, vitamins and minerals.",
@@ -45,7 +45,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/06-lichen-general",
+    file: "notes/concepts/class-11/biology/floral-diversity/06-lichen-general",
     notes: [
       "**Symbiotic association.** A lichen is a partnership between a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (phycobiont); the fungus supplies shelter and minerals while the partner supplies food.",
       "**Thallus types.** Lichens are crustose (crust-like, tightly attached), foliose (leafy, loosely attached) and fruticose (shrubby or pendant).",
@@ -55,7 +55,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/07-algae-general",
+    file: "notes/concepts/class-11/biology/floral-diversity/07-algae-general",
     notes: [
       "**General features.** Algae are simple, autotrophic, thalloid plants containing chlorophyll and other pigments; they occur in fresh water, marine water and moist soil and reproduce by spores and gametes.",
       "**Chlorophyceae (green algae).** They contain chlorophyll a and b, store food as starch in pyrenoids and include Chlamydomonas, Spirogyra and Chlorella.",
@@ -65,7 +65,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/08-bryophyta-general",
+    file: "notes/concepts/class-11/biology/floral-diversity/08-bryophyta-general",
     notes: [
       "**Amphibians of the plant kingdom.** Bryophytes live in damp places and need water for fertilisation because the male gametes swim to the egg, yet they lack true vascular tissue.",
       "**Gametophyte dominance.** The leafy or thalloid gametophyte is the persistent phase; the sporophyte is small, short-lived and remains attached to it.",
@@ -75,7 +75,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/09-pteridophyta-general",
+    file: "notes/concepts/class-11/biology/floral-diversity/09-pteridophyta-general",
     notes: [
       "**First vascular plants.** Pteridophytes possess true roots, stems and leaves with xylem and phloem, which allowed plants to grow tall and colonise land fully.",
       "**Sporophyte dominance.** The conspicuous plant is the diploid sporophyte; the tiny gametophyte (prothallus) is short-lived and requires water for fertilisation.",
@@ -85,7 +85,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/10-gymnosperm-general",
+    file: "notes/concepts/class-11/biology/floral-diversity/10-gymnosperm-general",
     notes: [
       "**Naked seeds.** Gymnosperms bear seeds that are not enclosed in a fruit; ovules lie exposed on the surface of megasporophylls, usually in cones.",
       "**Plant body.** They are mostly evergreen, woody trees and shrubs with well-developed roots (often with mycorrhizae) and needle-like or scale-like leaves.",
@@ -95,7 +95,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/11-angiosperm-morphology",
+    file: "notes/concepts/class-11/biology/floral-diversity/11-angiosperm-morphology",
     notes: [
       "**Root systems.** Roots are taproot (mustard), fibrous (grass) or adventitious (banyan prop roots); they anchor the plant, absorb water and minerals and often store food.",
       "**Stem.** The stem bears nodes, internodes, leaves and buds, and may be modified for storage (potato tuber), support (tendrils) or protection (thorns).",
@@ -105,7 +105,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/12-taxonomic-study",
+    file: "notes/concepts/class-11/biology/floral-diversity/12-taxonomic-study",
     notes: [
       "**Taxonomy.** Taxonomy is the branch of biology that identifies, describes, classifies and names organisms; systematics additionally studies their evolutionary relationships.",
       "**Hierarchy of categories.** Classification follows the sequence Kingdom → Phylum → Class → Order → Family → Genus → Species, with species as the fundamental unit.",
@@ -115,7 +115,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/biology/floral-diversity/concepts/13-angiosperm-families",
+    file: "notes/concepts/class-11/biology/floral-diversity/13-angiosperm-families",
     notes: [
       "**Brassicaceae (Cruciferae).** Mustard family: flowers with four petals in a cross, six stamens (four long, two short), and silique fruits; mustard oil gives the pungent taste.",
       "**Fabaceae (Papilionoideae).** Pea family: papilionaceous corolla (standard, wings, keel), ten stamens (nine fused), legume fruits, and root nodules housing nitrogen-fixing Rhizobium.",

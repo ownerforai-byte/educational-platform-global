@@ -69,7 +69,7 @@ function noteViewHref(note: {
 export default async function NotesPage() {
   const [rManifest, rkManifest, importedMap] = await Promise.all([
     loadData<RExportManifestItem[]>("r-export/manifest.json"),
-    loadData<RavikishanManifestItem[]>("ravikishan/manifest.json"),
+    loadData<RavikishanManifestItem[]>("content/manifest.json"),
     getImportedNotesBySubject(),
   ]);
 

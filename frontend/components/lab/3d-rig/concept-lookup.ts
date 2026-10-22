@@ -17,7 +17,7 @@ import type { ConceptData, ConceptFieldKey } from "./types";
  * No knowledge strings are ever hardcoded here; the manifest is the single
  * source of truth (spec §Dependencies).
  */
-export const CONCEPT_MANIFEST_PATH = "ravikishan/manifest.json";
+export const CONCEPT_MANIFEST_PATH = "content/manifest.json";
 
 export type ConceptManifestEntry = {
   path: string;

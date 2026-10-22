@@ -21,7 +21,7 @@ type RNoteEntry = {
 };
 
 async function loadManifest(): Promise<RExportManifestItem[]> {
-  const manifestPath = resolveDataPath("r-export", "manifest.json");
+  const manifestPath = resolveDataPath("resources", "exports", "manifest.json");
   const content = await readFile(manifestPath, "utf-8");
   return JSON.parse(content) as RExportManifestItem[];
 }

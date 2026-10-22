@@ -99,6 +99,6 @@ const fullCap01 = {
 
 writeDual(
   "physics/capacitor/01-capacitance-and-capacitor.json",
-  "class-11-notes/physics/capacitor/concepts/01-capacitance-and-capacitor.json",
+  "notes/concepts/class-11/physics/capacitor/01-capacitance-and-capacitor.json",
   fullCap01
 );

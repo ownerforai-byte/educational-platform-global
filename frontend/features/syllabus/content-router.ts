@@ -13,7 +13,8 @@
  *
  * The syllabus structure is:
  *
- *   Class (class-11-notes / class-12-notes / class-11e / etc.)
+ *   Class (class-11 / class-12 on disk — routes use the class-11-notes /
+ *         class-12-notes track slugs from lib/syllabus.ts)
  *     └── Subject (physics / chemistry / mathematics / biology / english / nepali)
  *           └── Unit (e.g. "Kinematics", "Vectors", "Stoichiometry")
  *                 └── Topics (array of strings, official NEB topic titles)
@@ -45,17 +46,18 @@
  * RULE 3: DIRECTORY STRUCTURE
  * ─────────────────────────────────────────────────────────────────────
  *
- * Content MUST be stored at:
+ * Content MUST be stored in the CLASSIFIED tree (lib/content/paths.ts) —
+ * organized by WHAT the file is first, then class → subject → unit:
  *
- *   content/ravikishan/{classSlug}/{subjectSlug}/{unitSlug}/
- *     ├── concepts/        ← explanatory notes, definitions, derivations
- *     ├── formula/         ← formula sheets
- *     ├── notes/           ← general notes (fallback when topic is broad)
- *     ├── pyqs/            ← previous year questions
- *     ├── sets/            ← problem sets
- *     ├── examples/        ← worked examples
- *     ├── mindmap/         ← concept map JSON files
- *     └── README.md        ← brief description of the unit
+ *   content/notes/concepts/{class}/{subject}/{unit}/NN-slug.json
+ *   content/notes/theory/{class}/{subject}/…json       ← theory blocks
+ *   content/notes/guides/{class}/{subject}/{unit}/…json ← general notes
+ *   content/formulas/{class}/{subject}/{unit}/…json     ← formula sheets
+ *   content/practice/questions/{class}/{subject}/{unit}/…json ← PYQs
+ *   content/practice/problem-sets/{class}/{subject}/{unit}/…json ← problem sets
+ *   content/practice/examples/{class}/{subject}/{unit}/…json ← worked examples
+ *   content/visuals/mindmaps/{class}/{subject}/{unit}/…json ← concept maps
+ *   content/visuals/rails/{class}/{subject}/{unit}/…rail.json ← home rail cards
  *
  * The {unitSlug} MUST match the syllabus unit.id exactly.
  *
@@ -65,7 +67,7 @@
  *
  * Under each unit directory, content is further organized by topic:
  *
- *   content/ravikishan/{classSlug}/{subjectSlug}/{unitSlug}/concepts/
+ *   content/notes/concepts/{class}/{subject}/{unitSlug}/
  *     ├── 01-topic-slug.json    ← notes for topic 1
  *     ├── 02-topic-slug.json    ← notes for topic 2
  *     └── ...
@@ -117,7 +119,7 @@
  * ─────────────────────────────────────────────────────────────────────
  *
  * The following are FORBIDDEN:
- *   ❌ Creating a file outside content/ravikishan/{class}/{subject}/{unit}/
+ *   ❌ Creating a file outside the classified sections of content/
  *   ❌ Creating a unit directory that doesn't exist in the syllabus
  *   ❌ Placing a note in "general" or "misc" folders
  *   ❌ Using arbitrary file names instead of the topic-slug pattern
@@ -133,7 +135,7 @@
  *
  * Mindmaps are auto-generated from the syllabus (queries.ts).
  * To add a custom mindmap:
- *   1. Create content/ravikishan/{class}/{subject}/{unit}/mindmap/{slug}.json
+ *   1. Create content/visuals/mindmaps/{class}/{subject}/{unit}/{slug}.json
  *   2. Include "notes" as an indented outline (top-level = root, each indent = child)
  *   3. The update-mindmaps script will pick it up automatically
  *
@@ -283,13 +285,18 @@ export function getTopicPath(
   unitId: string,
   topicSlug: string,
 ): string {
-  return `content/ravikishan/${classSlug}/${subjectSlug}/${unitId}/concepts/${topicSlug}.json`;
+  return `content/notes/concepts/${classSlug.replace(/-notes$/, "")}/${subjectSlug}/${unitId}/${topicSlug}.json`;
 }
 
+/**
+ * The unit's concept-note home in the classified tree:
+ *   content/notes/concepts/<class>/<subject>/<unit>
+ * (Other kinds live under their own sections — see lib/content/paths.ts.)
+ */
 export function getUnitPath(
   classSlug: string,
   subjectSlug: string,
   unitId: string,
 ): string {
-  return `content/ravikishan/${classSlug}/${subjectSlug}/${unitId}`;
+  return `content/notes/concepts/${classSlug.replace(/-notes$/, "")}/${subjectSlug}/${unitId}`;
 }

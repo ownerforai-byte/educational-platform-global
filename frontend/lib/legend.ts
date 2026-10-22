@@ -3,7 +3,7 @@
  *
  * Builds a complete legend index from:
  *   1. Syllabus structure (authoritative unit/topic ordering)
- *   2. ALL concept JSON files under content/ravikishan/
+ *   2. ALL concept JSON files under content/notes/concepts/
  *   3. Extracted key facts, formulas, and confusions from notes
  *
  * The `universalFacts` field in JSONs is often generic filler.
@@ -306,7 +306,7 @@ async function scanSubject(
   subjectSlug: string,
 ): Promise<LegendTopic[]> {
   const { join, readdir, readFile } = await getFs();
-  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
+  const baseDir = join(PROJECT_ROOT, "content", "notes", "concepts", classSlug.replace(/-notes$/, ""), subjectSlug);
   const topics: LegendTopic[] = [];
 
   try {
@@ -317,12 +317,12 @@ async function scanSubject(
       const unitInfo = getSyllabusUnit(classSlug, subjectSlug, unitId);
       const unitTitle = unitInfo?.title ?? unitId;
 
-      const conceptsDir = join(baseDir, unitId, "concepts");
+      const conceptsDir = join(baseDir, unitId);
       try {
         const files = await readdir(conceptsDir, { withFileTypes: true });
         for (const file of files) {
           if (!file.name.endsWith(".json")) continue;
-          const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", file.name);
+          const filePath = join("content", "notes", "concepts", classSlug.replace(/-notes$/, ""), subjectSlug, unitId, file.name);
           const raw = await readFile(join(PROJECT_ROOT, filePath), "utf-8");
           let parsed: Record<string, unknown>;
           try {
@@ -396,7 +396,7 @@ async function scanSubject(
  */
 async function getSubjectsForClass(classSlug: string): Promise<string[]> {
   const { join, readdir } = await getFs();
-  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug);
+  const baseDir = join(PROJECT_ROOT, "content", "notes", "concepts", classSlug.replace(/-notes$/, ""));
   try {
     const items = await readdir(baseDir, { withFileTypes: true });
     const syllabusSlugs = new Set(

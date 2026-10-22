@@ -19,13 +19,13 @@
  *                  (what the topic pages, pills and tutor believe exists)
  *   orphans        note files under the same tree that NO manifest claims —
  *                  shipped bytes no page loads, registered so they cannot hide
- *   supplementary  `ravikishan/manifest.json`: the second content family, whose
+ *   supplementary  `content/manifest.json`: the second content family, whose
  *                  entries carry their payload INLINE (topic pages, concept
  *                  panels and /notes read `data` directly, never the file path);
  *                  the manifest's own sha256 proves those claims live, and every
  *                  entry gets its own honest authored/template status
  *   sources        every other shipped note payload a page loads by path
- *                  (`ravikishan/_index.json`, `r-export/manifest.json`)
+ *                  (`content/_index.json`, `r-export/manifest.json`)
  *
  * Organisation: class → subject → unit → entries. Every level carries its own
  * totals, so "which unit is still template-only?" is one lookup instead of a
@@ -73,9 +73,9 @@ const REPO = (() => {
 const DATA = path.join(REPO, "frontend", "public", "data");
 const ROOT = path.join(DATA, "syllabus-notes");
 const LEDGER = path.join(DATA, "content-ledger.json");
-const SUPPLEMENTARY = path.join(DATA, "ravikishan", "manifest.json");
+const SUPPLEMENTARY = path.join(DATA, "content", "manifest.json");
 const SOURCES = [
-  path.join(DATA, "ravikishan", "_index.json"),
+  path.join(DATA, "content", "_index.json"),
   path.join(DATA, "r-export", "manifest.json"),
 ];
 
@@ -442,7 +442,7 @@ function orphansScan(): Orphans {
 }
 
 /**
- * The second content family: `ravikishan/manifest.json`. Its entries carry the
+ * The second content family: `content/manifest.json`. Its entries carry the
  * payload INLINE, so the file's own sha256 is what must go live; the ledger also
  * records each claim's status, which is how the class-12 stubs stay visible as
  * stubs instead of blending into a 2,467-row index.
@@ -483,7 +483,7 @@ function supplementaryScan(): Supplementary {
   }
 
   return {
-    source: "frontend/public/data/ravikishan/manifest.json",
+    source: "frontend/public/data/content/manifest.json",
     note: "second content family; entries carry their payload inline (readers use data, not the path)",
     bytes,
     sha256: shaOf(text),
@@ -560,7 +560,7 @@ function scan(): Ledger {
     class: "class-11-notes",
     scope:
       "every note-bearing data source under frontend/public/data that a page can read: " +
-      "syllabus-notes manifests, unclaimed note files, the supplementary ravikishan manifest, " +
+      "syllabus-notes manifests, unclaimed note files, the supplementary content manifest, " +
       "and the remaining note payloads loaded by path",
     source: "frontend/public/data/syllabus-notes",
     legend: {
@@ -677,7 +677,7 @@ if (CHECK) {
     if (!knownOrphans.has(k)) failures.push(`UNREGISTERED unclaimed note (no manifest claims it): ${k}`);
   }
 
-  // Supplementary ravikishan manifest: sha256 over the whole claim set, plus
+  // Supplementary content manifest: sha256 over the whole claim set, plus
   // per-entry status so a stub cannot quietly become (or stop being) a stub.
   if (actual.supplementary.sha256 !== ledger.supplementary?.sha256) {
     failures.push(

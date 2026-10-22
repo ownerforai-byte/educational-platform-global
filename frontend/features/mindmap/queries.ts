@@ -175,7 +175,7 @@ function buildImportedMindmaps(): Promise<ImportedMindmap[]> {
   return (async () => {
     let manifest: ManifestItem[] = [];
     try {
-      manifest = await loadData<ManifestItem[]>("ravikishan/manifest.json");
+      manifest = await loadData<ManifestItem[]>("content/manifest.json");
     } catch {
       // NEXT_PUBLIC_SITE_URL may be missing in production; fall back to no imported maps
     }
@@ -183,7 +183,9 @@ function buildImportedMindmaps(): Promise<ImportedMindmap[]> {
 
     for (const item of manifest) {
       const path = normalizePath(item.path);
-      if (!path.toLowerCase().includes("/mindmap/")) continue;
+      // Classified mindmaps live under `visuals/mindmaps/…`; the old corpus
+      // kept them in a per-unit `mindmap/` folder.
+      if (!path.includes("visuals/mindmaps/") && !path.toLowerCase().includes("/mindmap/")) continue;
       const parts = path.split("/");
       const subject = parts[1] ?? "unknown";
       const unitPath = parts[2];

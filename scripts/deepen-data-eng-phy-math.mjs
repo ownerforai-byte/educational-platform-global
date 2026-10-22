@@ -4,7 +4,7 @@
 export default [
   // ── english/reading-and-comprehension (gate scope) ──
   {
-    file: "class-11-notes/english/reading-and-comprehension/concepts/01-reading-comprehension",
+    file: "notes/concepts/class-11/english/reading-and-comprehension/01-reading-comprehension",
     notes: [
       "**Skimming and scanning.** Skimming reads quickly for the main idea; scanning searches the passage for a specific fact such as a date, name or number.",
       "**Main idea and support.** The main idea is the point of the whole passage; supporting details explain, prove or illustrate it and usually answer factual questions.",
@@ -14,7 +14,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/english/reading-and-comprehension/concepts/02-short-story-and-poetry",
+    file: "notes/concepts/class-11/english/reading-and-comprehension/02-short-story-and-poetry",
     notes: [
       "**Short story elements.** A short story works with plot, character, setting, theme and conflict; the plot moves from exposition through rising action and climax to resolution.",
       "**Narrative voice.** First-person narration uses 'I' and limits knowledge to the narrator; third-person narration can be limited to one character or omniscient.",
@@ -24,7 +24,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/english/reading-and-comprehension/concepts/03-drama-and-novel",
+    file: "notes/concepts/class-11/english/reading-and-comprehension/03-drama-and-novel",
     notes: [
       "**Drama.** Drama is written to be performed: the story is carried by dialogue and stage directions, and its large units are acts and its small ones scenes.",
       "**Dramatic devices.** A soliloquy reveals a character's private thoughts to the audience; an aside is a remark unheard by other characters; dramatic irony exploits the audience's greater knowledge.",
@@ -35,7 +35,7 @@ export default [
   },
   // ── english/writing-and-composition (gate scope + residual thin merges) ──
   {
-    file: "class-11-notes/english/writing-and-composition/concepts/05-email-writing",
+    file: "notes/concepts/class-11/english/writing-and-composition/05-email-writing",
     notes: [
       "**Format.** A formal email has the recipient's address, a clear subject line, a salutation, a concise body and a closing with the sender's name and designation.",
       "**Subject line.** The subject states the purpose in a few precise words so the reader knows the request before opening the message.",
@@ -45,7 +45,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/english/writing-and-composition/concepts/07-article-writing",
+    file: "notes/concepts/class-11/english/writing-and-composition/07-article-writing",
     notes: [
       "**Structure.** An article opens with a catchy heading and byline, develops the topic in paragraphs, and closes with a strong concluding remark.",
       "**Introduction.** The opening paragraph should hook the reader and state the topic's relevance — a striking fact, question or short anecdote works well.",
@@ -55,7 +55,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/english/writing-and-composition/concepts/10-dialogue-writing",
+    file: "notes/concepts/class-11/english/writing-and-composition/10-dialogue-writing",
     notes: [
       "**Purpose.** Dialogue writing presents a conversation between two or more speakers that reveals character, advances the story or conveys information naturally.",
       "**Format.** Each speech starts with the speaker's name or label followed by a colon; speeches alternate, and stage directions appear in brackets if needed.",
@@ -66,7 +66,7 @@ export default [
   },
   // ── physics gate scopes ──
   {
-    file: "class-11-notes/physics/capacitor/concepts/04-energy-of-charged-capacitor",
+    file: "notes/concepts/class-11/physics/capacitor/04-energy-of-charged-capacitor",
     notes: [
       "**Energy stored.** The work done charging a capacitor is stored as electrostatic energy U = ½CV² = Q²/2C = ½QV, where C is capacitance, Q the charge and V the potential difference.",
       "**Energy density.** The energy per unit volume between the plates is u = ½ε₀E²; the same expression gives the energy density of any electric field in vacuum.",
@@ -76,7 +76,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/elasticity/concepts/03-elastic-modulus-young-modulus-bulk-modulus-shear-modulus",
+    file: "notes/concepts/class-11/physics/elasticity/03-elastic-modulus-young-modulus-bulk-modulus-shear-modulus",
     notes: [
       "**Stress and strain.** Stress is the restoring force per unit area (F/A) and strain is the fractional deformation (ΔL/L); within the elastic limit, stress is proportional to strain (Hooke's law).",
       "**Young's modulus.** Y = longitudinal stress ÷ longitudinal strain = FL/AΔL; it measures a material's resistance to stretching or compression along its length.",
@@ -86,7 +86,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/electric-charges/concepts/01-electric-charges",
+    file: "notes/concepts/class-11/physics/electric-charges/01-electric-charges",
     notes: [
       "**Nature of charge.** Charge is the property that produces electric force; like charges repel and unlike attract, and the SI unit is the coulomb (C).",
       "**Quantisation and conservation.** Charge is quantised in units of e = 1.6 × 10⁻¹⁹ C (q = ne) and is conserved — the net charge of an isolated system never changes.",
@@ -96,7 +96,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/electric-charges/concepts/03-coulomb-s-law",
+    file: "notes/concepts/class-11/physics/electric-charges/03-coulomb-s-law",
     notes: [
       "**Coulomb's law.** The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance: F = (1/4πε₀)q₁q₂/r².",
       "**Direction.** The force acts along the line joining the charges — repulsive for like charges, attractive for unlike charges — and obeys Newton's third law.",
@@ -106,7 +106,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/electric-charges/concepts/04-force-between-multiple-electric-charges",
+    file: "notes/concepts/class-11/physics/electric-charges/04-force-between-multiple-electric-charges",
     notes: [
       "**Superposition principle.** The force on any one charge due to several others equals the vector sum of the individual pairwise forces, each calculated as if the rest were absent.",
       "**Method.** Draw each Coulomb force on the chosen charge, resolve into components along convenient axes, sum the components, then combine for the net force.",
@@ -116,7 +116,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/electric-field/concepts/01-electric-field-due-to-point-charges-field-lines",
+    file: "notes/concepts/class-11/physics/electric-field/01-electric-field-due-to-point-charges-field-lines",
     notes: [
       "**Electric field intensity.** The field at a point is the force per unit positive test charge placed there: E = F/q₀ = (1/4πε₀)q/r² for a point charge, directed away from a positive charge.",
       "**Field lines.** These imaginary lines are drawn so that the tangent at any point gives the field direction and their density shows field strength.",
@@ -126,7 +126,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/electric-field/concepts/03-application-of-gauss-law",
+    file: "notes/concepts/class-11/physics/electric-field/03-application-of-gauss-law",
     notes: [
       "**Gauss's law.** The total electric flux through any closed surface equals the enclosed charge divided by ε₀: Φ_E = ∮E·dA = q_in/ε₀; the surface is called a Gaussian surface.",
       "**Charged sphere.** For a uniformly charged spherical shell, E = kQ/r² outside the shell and E = 0 inside; for a solid insulating sphere the inner field grows linearly with r.",
@@ -136,7 +136,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/potential-potential-difference-and-potential-energy/concepts/01-potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt",
+    file: "notes/concepts/class-11/physics/potential-potential-difference-and-potential-energy/01-potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt",
     notes: [
       "**Electric potential.** Potential at a point is work done per unit positive charge in bringing a test charge from infinity: V = W/q = (1/4πε₀)q/r for a point charge, measured in volts.",
       "**Potential difference.** The potential difference V₂ − V₁ equals the work done per unit charge against the field in moving between the two points; 1 V = 1 J C⁻¹.",
@@ -147,7 +147,7 @@ export default [
   },
   // ── residual thin merge survivors (math + physics) ──
   {
-    file: "class-11-notes/mathematics/analytic-geometry/concepts/02-angle-bisector-worked-example",
+    file: "notes/concepts/class-11/mathematics/analytic-geometry/02-angle-bisector-worked-example",
     notes: [
       "**Bisector equations.** The angle bisectors of the lines a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0 are (a₁x + b₁y + c₁)/√(a₁² + b₁²) = ± (a₂x + b₂y + c₂)/√(a₂² + b₂²).",
       "**Equal distance property.** Any point on a bisector is equidistant from the two lines, using the perpendicular distance |ax + by + c|/√(a² + b²).",
@@ -157,7 +157,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/mathematics/vectors/concepts/05-applications-work-torque-angular-momentum",
+    file: "notes/concepts/class-11/mathematics/vectors/05-applications-work-torque-angular-momentum",
     notes: [
       "**Work.** Work done by a constant force is the dot product W = F·s = Fs cosθ; it is maximum when force and displacement are parallel and zero when they are perpendicular.",
       "**Torque.** The moment of a force about a point is τ = r × F, with magnitude rF sinθ and direction given by the right-hand rule; torque measures the turning effect.",
@@ -167,7 +167,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/lenses/concepts/01-lens-maker-formula",
+    file: "notes/concepts/class-11/physics/lenses/01-lens-maker-formula",
     notes: [
       "**Lens maker's formula.** For a thin lens of refractive index μ₂ in a medium μ₁, 1/f = (μ₂/μ₁ − 1)(1/R₁ − 1/R₂); in air this becomes 1/f = (μ − 1)(1/R₁ − 1/R₂).",
       "**Sign convention.** Radii are measured from the optical centre; R is positive when the centre of curvature lies on the far (transmitted) side of the surface.",
@@ -177,7 +177,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/quantity-of-heat/concepts/06-triple-point",
+    file: "notes/concepts/class-11/physics/quantity-of-heat/06-triple-point",
     notes: [
       "**Definition.** The triple point of a substance is the single temperature and pressure at which its solid, liquid and vapour phases coexist in stable equilibrium.",
       "**Water's triple point.** For water it occurs at 273.16 K (0.01 °C) and 611.73 Pa (about 4.58 mmHg) — the fixed reference point of the Kelvin temperature scale.",
@@ -187,7 +187,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/reflection-at-curved-mirror/concepts/01-mirror-formula",
+    file: "notes/concepts/class-11/physics/reflection-at-curved-mirror/01-mirror-formula",
     notes: [
       "**Mirror formula.** For a spherical mirror, object distance u, image distance v and focal length f satisfy 1/v + 1/u = 1/f.",
       "**Focal length.** The focal length is half the radius of curvature, f = R/2; it is negative for a concave mirror and positive for a convex mirror under the Cartesian sign convention.",

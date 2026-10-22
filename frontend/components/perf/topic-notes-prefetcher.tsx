@@ -7,7 +7,7 @@
  * a topic page with a two-stage client waterfall —
  *   1. `loadData("syllabus-notes/<subject>/_manifest.json")`
  *   2. N × `loadData("syllabus-notes/<subject>/<unit>/<file>.json")`
- * plus a 510 KB `ravikishan/manifest.json` — so the first paint after a click
+ * plus a 510 KB `content/manifest.json` — so the first paint after a click
  * waits on a round trip that was *predictable* from the link the user hovered.
  *
  * What: this component renders nothing and attaches three passive, delegated

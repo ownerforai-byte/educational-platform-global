@@ -33,19 +33,19 @@ function slugify(name: string) {
 }
 
 async function scanSubject(classSlug: string, subjectSlug: string): Promise<TheoremInfo[]> {
-  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
+  const baseDir = join(PROJECT_ROOT, "content", "notes", "concepts", classSlug.replace(/-notes$/, ""), subjectSlug);
   const results: TheoremInfo[] = [];
   try {
     const units = await readdir(baseDir, { withFileTypes: true });
     for (const unit of units) {
       if (!unit.isDirectory() || unit.name.startsWith(".")) continue;
       const unitId = unit.name;
-      const conceptsDir = join(baseDir, unitId, "concepts");
+      const conceptsDir = join(baseDir, unitId);
       try {
         const files = await readdir(conceptsDir, { withFileTypes: true });
         for (const file of files) {
           if (!file.name.endsWith(".json")) continue;
-          const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", file.name);
+          const filePath = join("content", "notes", "concepts", classSlug.replace(/-notes$/, ""), subjectSlug, unitId, file.name);
           const raw = await readFile(join(PROJECT_ROOT, filePath), "utf-8");
           const lower = raw.toLowerCase();
           if (!THEOREM_KEYWORDS.some(k => lower.includes(k.toLowerCase()))) continue;
@@ -64,7 +64,7 @@ async function scanSubject(classSlug: string, subjectSlug: string): Promise<Theo
 }
 
 async function getSubjectsForClass(classSlug: string): Promise<string[]> {
-  const baseDir = join(PROJECT_ROOT, "content", "ravikishan", classSlug);
+  const baseDir = join(PROJECT_ROOT, "content", "notes", "concepts", classSlug.replace(/-notes$/, ""));
   try {
     const items = await readdir(baseDir, { withFileTypes: true });
     return items

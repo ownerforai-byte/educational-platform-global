@@ -81,14 +81,14 @@ const fullEc02 = {
 // Write canonical Topic 2
 writeDual(
   "physics/electric-charges/02-coulomb-s-law-and-force-between-multiple-charges.json",
-  "class-11-notes/physics/electric-charges/concepts/02-coulomb-s-law-and-force-between-multiple-charges.json",
+  "notes/concepts/class-11/physics/electric-charges/02-coulomb-s-law-and-force-between-multiple-charges.json",
   fullEc02
 );
 
 // Write variant duplicateType: 2 files
 writeDual(
   "physics/electric-charges/02-coulomb-law.json",
-  "class-11-notes/physics/electric-charges/concepts/02-coulomb-law.json",
+  "notes/concepts/class-11/physics/electric-charges/02-coulomb-law.json",
   {
     ...fullEc02,
     title: "Coulomb's Law",
@@ -100,7 +100,7 @@ writeDual(
 
 writeDual(
   "physics/electric-charges/02-coulomb-law-2.json",
-  "class-11-notes/physics/electric-charges/concepts/02-coulomb-law.json",
+  "notes/concepts/class-11/physics/electric-charges/02-coulomb-law.json",
   {
     ...fullEc02,
     title: "Coulomb's Law",

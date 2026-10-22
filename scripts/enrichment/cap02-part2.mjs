@@ -80,11 +80,11 @@ const fullCap02 = {
 
 writeDual(
   "physics/capacitor/02-parallel-plate-capacitor.json",
-  "class-11-notes/physics/capacitor/concepts/02-parallel-plate-capacitor.json",
+  "notes/concepts/class-11/physics/capacitor/02-parallel-plate-capacitor.json",
   fullCap02
 );
 writeDual(
   "physics/capacitor/01-capacitance-parallel-plate.json",
-  "class-11-notes/physics/capacitor/concepts/01-capacitance-parallel-plate.json",
+  "notes/concepts/class-11/physics/capacitor/01-capacitance-parallel-plate.json",
   { ...fullCap02, title: "Capacitance and Parallel Plate Capacitor", topicSlug: "parallel-plate-capacitor", duplicateType: 2 }
 );

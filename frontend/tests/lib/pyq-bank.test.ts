@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest";
  * PYQ bank integrity gate.
  *
  * Regression guard for a silent, total failure: `getSubjectPyqBank()` read
- * `ravikishan/manifest.json`, whose 2467 entries carry `title`/`unitSlug`/
+ * `content/manifest.json`, whose entries carry `title`/`unitSlug`/
  * `notes` but NOT `questions`. The loader skipped every entry on
  * `questions.length > 0`, so every subject rendered an EMPTY PYQ bank while
  * looking perfectly healthy — no error, no warning, just nothing.
@@ -22,7 +22,7 @@ import { describe, expect, it } from "vitest";
  * below: a year is ONE card spanning every unit that contributed to it.
  */
 
-const ROOT = join(process.cwd(), "public/data/ravikishan");
+const ROOT = join(process.cwd(), "public/data/content");
 const index = JSON.parse(readFileSync(join(ROOT, "_index.json"), "utf8")) as Record<
   string,
   { title?: string; year?: number; examSource?: string; unitSlug?: string; questions?: unknown[] }
@@ -34,11 +34,13 @@ type YearBucket = { questions: unknown[]; units: string[]; titles: string[] };
 
 /** Mirrors getSubjectPyqBank()'s year aggregation for a subject. */
 function aggregate(subjectSlug: string, classSlug = "class-11-notes"): Map<number, YearBucket> {
-  const classFolder = classSlug.replace(/-notes$/, "");
-  const prefixes = [`${classSlug}/${subjectSlug}/`, `${classFolder}/${subjectSlug}/`];
+  // Classified keys carry the normalized class dir: `notes/theory/class-11/…`,
+  // `practice/questions/class-11/…` — match the class/subject coordinates.
+  const classDir = classSlug.replace(/-notes$/, "");
+  const coord = `/${classDir}/${subjectSlug}/`;
   const byYear = new Map<number, YearBucket>();
   for (const [path, file] of Object.entries(index)) {
-    if (!prefixes.some((p) => path.startsWith(p))) continue;
+    if (!path.includes(coord)) continue;
     const questions = Array.isArray(file.questions) ? file.questions : [];
     if (questions.length === 0) continue;
     const year = typeof file.year === "number" ? file.year : Number.NaN;
@@ -97,7 +99,9 @@ describe("PYQ bank — Class 12 banks reach the loader", () => {
     );
     const authored = new Set(
       Object.entries(index)
-        .filter(([p, f]) => p.startsWith(`class-12-notes/${subject}/`) && (f.questions?.length ?? 0) > 0)
+        // Mirror aggregate(): classified keys carry the normalized class dir,
+        // e.g. `practice/questions/class-12/<subject>/…`.
+        .filter(([p, f]) => p.includes(`/class-12/${subject}/`) && (f.questions?.length ?? 0) > 0)
         .map(([, f]) => f.unitSlug ?? "general"),
     );
     expect(authored.size).toBeGreaterThan(0);
@@ -185,22 +189,27 @@ describe("PYQ bank — one card per exam year, spanning units", () => {
 describe("PYQ bank — authored banks are registered", () => {
   it("every unit/year bank on disk has an index entry with questions", () => {
     const fs = require("node:fs") as typeof import("node:fs");
-    const classSlugs = ["class-11-notes", "class-12-notes"] as const;
+    const classSlugs = ["class-11", "class-12"] as const;
     const missing: string[] = [];
     let banks = 0;
     for (const classSlug of classSlugs) {
-      const contentRoot = join(process.cwd(), "..", "content/ravikishan", classSlug);
+      const contentRoot = join(process.cwd(), "..", "content/practice/questions", classSlug);
       if (!fs.existsSync(contentRoot)) continue;
       for (const subject of SUBJECTS) {
         const subjectDir = join(contentRoot, subject);
         if (!fs.existsSync(subjectDir)) continue;
         for (const unit of fs.readdirSync(subjectDir)) {
-          const pyqDir = join(subjectDir, unit, "pyqs");
-          if (!fs.existsSync(pyqDir)) continue;
+          const pyqDir = join(subjectDir, unit);
+          if (!fs.existsSync(pyqDir) || !fs.statSync(pyqDir).isDirectory()) continue;
           for (const f of fs.readdirSync(pyqDir)) {
             if (!/^\d{2}-neb-\d{4}\.json$/.test(f)) continue;
+            // Legacy-schema banks (title/year/examSource/notes, no `questions`
+            // array) are served but intentionally not unit-registered — see the
+            // schema note in scripts/pyq-register.mjs.
+            const body = JSON.parse(fs.readFileSync(join(pyqDir, f), "utf8")) as { questions?: unknown[] };
+            if (!Array.isArray(body.questions)) continue;
             banks += 1;
-            const key = `${classSlug}/${subject}/${unit}/pyqs/${f}`;
+            const key = `practice/questions/${classSlug}/${subject}/${unit}/${f}`;
             const entry = index[key];
             if (!entry || !Array.isArray(entry.questions) || entry.questions.length === 0) {
               missing.push(key);

@@ -79,11 +79,11 @@ const fullCap03 = {
 
 writeDual(
   "physics/capacitor/03-combination-of-capacitors.json",
-  "class-11-notes/physics/capacitor/concepts/03-combination-of-capacitors.json",
+  "notes/concepts/class-11/physics/capacitor/03-combination-of-capacitors.json",
   fullCap03
 );
 writeDual(
   "physics/capacitor/02-combination-capacitors-2.json",
-  "class-11-notes/physics/capacitor/concepts/02-combination-capacitors.json",
+  "notes/concepts/class-11/physics/capacitor/02-combination-capacitors.json",
   { ...fullCap03, duplicateType: 2, tabGroup: "combination-of-capacitors" }
 );

@@ -13,7 +13,7 @@
  *   npx tsx frontend/scripts/content/book-rails.ts --check    # gate: coverage + provenance
  *
  * It emits, per mapped syllabus unit, one extra rail card:
- *   content/ravikishan/class-11-notes/<subject>/<unit>/rails/<unit>--old-is-gold.rail.json
+ *   content/visuals/rails/class-11/<subject>/<unit>/<unit>--old-is-gold.rail.json
  * with `source: "book:old-is-gold-<subject>-class-11"` — the sibling of the
  * `web:<host>` provenance `frontend/AGENTS.md` §9 already defines for rows that
  * did not come from the platform corpus.
@@ -587,11 +587,11 @@ for (const subject of subjects) {
     const railsDir = path.join(
       corpusRoot,
       "content",
-      "ravikishan",
-      HOME_RAIL_CLASS_SLUG,
+      "visuals",
+      "rails",
+      HOME_RAIL_CLASS_SLUG.replace(/-notes$/, ""),
       subject.slug,
       unit.id,
-      "rails",
     );
     const file = path.join(railsDir, `${unit.id}${CARD_SUFFIX}.rail.json`);
 

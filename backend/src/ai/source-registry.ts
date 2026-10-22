@@ -21,7 +21,7 @@
  *      Descriptive keys (class, unit, slug, relevance) index the record; every
  *      other string / string[] key becomes a labelled section injected VERBATIM.
  *
- *   2. content/ravikishan/<class>/<subject>/<unit>/concepts/*.json
+ *   2. content/notes/concepts/<class>/<subject>/<unit>/*.json
  *      the schema-validated authored corpus — the tier-1 source.
  *      `npm run check:schema` then `npm run content:build`.
  *
@@ -77,7 +77,7 @@ export const SOURCE_REGISTRY: SourceDescriptor[] = [
     kind: "corpus",
     tier: 1,
     scope: "NEB +2 Science Class 11 & 12 — the spine of every academic answer.",
-    path: "content/ravikishan/<class>/<subject>/<unit>/concepts/*.json",
+    path: "content/notes/concepts/<class>/<subject>/<unit>/*.json",
     howToSupply: "Author a ConceptNote JSON, then npm run check:schema + npm run content:build.",
     automatic: true,
   },

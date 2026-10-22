@@ -8,7 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const PLANS = path.join(process.cwd(), "PLANS.md");
-const CORPUS = path.join(process.cwd(), "content", "ravikishan", "class-11-notes");
+const CORPUS = path.join(process.cwd(), "content", "notes", "concepts", "class-11");
 
 // Fields PLANS.md §2 lists as the authored note shape.
 const plans = fs.readFileSync(PLANS, "utf8");

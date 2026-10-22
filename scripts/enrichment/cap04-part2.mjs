@@ -79,16 +79,16 @@ const fullCap04 = {
 
 writeDual(
   "physics/capacitor/04-energy-of-a-charged-capacitor.json",
-  "class-11-notes/physics/capacitor/concepts/04-energy-of-a-charged-capacitor.json",
+  "notes/concepts/class-11/physics/capacitor/04-energy-of-a-charged-capacitor.json",
   fullCap04
 );
 writeDual(
   "physics/capacitor/03-energy-charged-capacitor.json",
-  "class-11-notes/physics/capacitor/concepts/03-energy-charged-capacitor.json",
+  "notes/concepts/class-11/physics/capacitor/03-energy-charged-capacitor.json",
   { ...fullCap04, duplicateType: 2, tabGroup: "energy-of-a-charged-capacitor" }
 );
 writeDual(
   "physics/capacitor/03-energy-charged-capacitor-2.json",
-  "class-11-notes/physics/capacitor/concepts/03-energy-charged-capacitor.json",
+  "notes/concepts/class-11/physics/capacitor/03-energy-charged-capacitor.json",
   { ...fullCap04, duplicateType: 2, tabGroup: "energy-of-a-charged-capacitor" }
 );

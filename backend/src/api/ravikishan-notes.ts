@@ -10,9 +10,9 @@ const router = Router();
  * Unit-slug aliases (keep in sync with frontend: lib/syllabus-notes-manifest.ts).
  * Resolves historical orphan / short-named folders to their canonical syllabus slug.
  * Used when a caller asks for a direct file path e.g.
- *   class-11-notes/chemistry/chemical-bonding/concepts/...
+ *   notes/concepts/class-11/chemistry/chemical-bonding/...
  * which is rewritten to:
- *   class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/concepts/...
+ *   notes/concepts/class-11/chemistry/chemical-bonding-and-shapes-of-molecules/...
  */
 const UNIT_SLUG_ALIASES: Record<string, string> = {
   // Chemistry: 6 short-name folders → canonical long syllabus names
@@ -31,24 +31,60 @@ const UNIT_SLUG_ALIASES: Record<string, string> = {
 };
 
 /**
- * Apply unit-slug alias resolution to a ravikishan relative path.
- * The path pattern we target is:
- *   class-xxx-notes/<subject>/<unitSlug>/...
- * We replace only <unitSlug> if it's an alias, leaving everything else intact.
+ * Apply unit-slug alias resolution to a content-relative path. Every DIRECTORY
+ * segment is checked (never the filename), so both the classified shape
+ * (`notes/concepts/<class>/<subject>/<unit>/<file>`) and legacy keys resolve.
  */
 function applyUnitAliasToPath(relPath: string): string {
   if (!relPath) return relPath;
   const parts = relPath.split(/[\\/]+/).filter(Boolean);
-  // Find the subject slug by index 1 (0 = class slug, 1 = subject, 2 = unit)
-  // or index 0 if caller omitted leading class slug (unlikely for direct file lookup)
-  if (parts.length >= 3) {
-    const maybeUnit = parts[2];
-    if (UNIT_SLUG_ALIASES[maybeUnit]) {
-      parts[2] = UNIT_SLUG_ALIASES[maybeUnit];
-      return parts.join("/");
+  let changed = false;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const alias = UNIT_SLUG_ALIASES[parts[i]];
+    if (alias && alias !== parts[i]) {
+      parts[i] = alias;
+      changed = true;
     }
   }
-  return relPath;
+  return changed ? parts.join("/") : relPath;
+}
+
+/** Classified content sections (see frontend/lib/content/paths.ts). */
+const KIND_SECTIONS: Record<string, string> = {
+  concepts: "notes/concepts",
+  theory: "notes/theory",
+  notes: "notes/guides",
+  formula: "formulas",
+  pyqs: "practice/questions",
+  sets: "practice/problem-sets",
+  examples: "practice/examples",
+  mindmap: "visuals/mindmaps",
+  rails: "visuals/rails",
+  graph: "visuals/graphs",
+};
+
+/**
+ * Translate any accepted note key to its content-relative classified path:
+ * new keys (`notes/concepts/class-11/…`) pass through, and legacy keys
+ * (`class-11-notes/physics/kinematics/concepts/01-x.json`) are re-homed the
+ * same way scripts/reclassify-content.mjs moved the corpus.
+ */
+function toContentPath(relPath: string): string {
+  const parts = relPath.split(/[\\/]+/).filter(Boolean);
+  if (parts.length === 0) return relPath;
+  if (/^(notes|formulas|practice|visuals|resources)$/.test(parts[0])) return parts.join("/");
+  const clean = parts[0] === "ravikishan" ? parts.slice(1) : parts;
+  const kindIdx = clean.findIndex((seg, i) => i >= 2 && i < clean.length - 1 && KIND_SECTIONS[seg]);
+  if (/^class-\d+/.test(clean[0] ?? "") && kindIdx >= 2) {
+    const cls = clean[0].replace(/-notes$/, "").replace(/e$/, "");
+    return [
+      KIND_SECTIONS[clean[kindIdx]],
+      cls,
+      ...clean.slice(1, kindIdx),
+      ...clean.slice(kindIdx + 1),
+    ].join("/");
+  }
+  return clean.join("/");
 }
 
 async function loadJsonFile<T>(relPath: string): Promise<T> {
@@ -75,14 +111,15 @@ router.get("/", async (req: Request, res: Response) => {
   try {
     // 1. First attempt to load from _index.json
     try {
-      const index = await loadJsonFile<Record<string, unknown>>("ravikishan/_index.json");
-      if (index[cleanPath]) {
-        res.json(index[cleanPath]);
+      const index = await loadJsonFile<Record<string, unknown>>("_index.json");
+      const key = toContentPath(cleanPath);
+      if (index[key]) {
+        res.json(index[key]);
         return;
       }
       // Also try the alias-resolved path against the index
-      const aliased = applyUnitAliasToPath(cleanPath);
-      if (aliased !== cleanPath && index[aliased]) {
+      const aliased = applyUnitAliasToPath(key);
+      if (aliased !== key && index[aliased]) {
         res.json(index[aliased]);
         return;
       }
@@ -90,18 +127,14 @@ router.get("/", async (req: Request, res: Response) => {
       // If _index.json is missing or corrupted, continue to direct file load
     }
 
-    // 2. Direct file lookup under content/ravikishan or content/
-    //    Try the requested path first, then its alias-resolved variant.
+    // 2. Direct file lookup under content/ — try the requested path first,
+    //    then its alias-resolved variant.
     const candidatePaths: string[] = [];
-    const primary = cleanPath.startsWith("ravikishan") ? cleanPath : path.join("ravikishan", cleanPath);
+    const primary = toContentPath(cleanPath);
     candidatePaths.push(primary);
-    const aliasedClean = applyUnitAliasToPath(cleanPath);
-    if (aliasedClean !== cleanPath) {
-      candidatePaths.push(
-        aliasedClean.startsWith("ravikishan")
-          ? aliasedClean
-          : path.join("ravikishan", aliasedClean)
-      );
+    const aliasedClean = applyUnitAliasToPath(primary);
+    if (aliasedClean !== primary) {
+      candidatePaths.push(aliasedClean);
     }
 
     for (const candidate of candidatePaths) {

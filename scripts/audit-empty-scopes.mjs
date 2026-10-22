@@ -6,7 +6,7 @@
  * content to a student, at any layer that can render:
  *
  *   1. runtime notes   frontend/public/data/syllabus-notes/<subject>/<unit>/
- *   2. source notes    content/ravikishan/<class>/<subject>/<unit>/concepts/
+ *   2. source notes    content/{notes,formulas,practice,visuals}/<section>/<class>/<subject>/<unit>/
  *   3. mindmap trees   UNIT_CONCEPTS (authored) vs HIGH_YIELD_TOPIC_BANK
  *   4. mindmap depth   the exceptional / fact / exam / trap packs
  *
@@ -35,7 +35,19 @@ const WRITE_BASELINE = ARGS.includes("--write-baseline");
 const BASELINE_PATH = path.join(process.cwd(), "scripts", "empty-scopes-baseline.json");
 
 const PUB = path.join(process.cwd(), "frontend", "public", "data", "syllabus-notes");
-const RK = path.join(process.cwd(), "content", "ravikishan");
+const CONTENT_ROOT = path.join(process.cwd(), "content");
+// Classified sections holding unit-scoped study files. visuals/mindmaps and
+// visuals/rails are excluded (own validators / draft-by-design — see header).
+const SOURCE_SECTIONS = [
+  "notes/concepts",
+  "notes/theory",
+  "notes/guides",
+  "formulas",
+  "practice/questions",
+  "practice/problem-sets",
+  "practice/examples",
+  "visuals/graphs",
+];
 const LIB = path.join(process.cwd(), "frontend", "lib");
 
 /** Template markers left behind by the generator. Case-insensitive. */
@@ -76,7 +88,7 @@ function markerHits(text) {
   return n;
 }
 
-function listFiles(dir) {
+function listFiles(dir, recursive = true) {
   if (!fs.existsSync(dir)) return [];
   const out = [];
   (function walk(d) {
@@ -85,7 +97,7 @@ function listFiles(dir) {
       if (e.isDirectory()) {
         // mindmap/ has its own validators; rails/ cards never render until
         // ready (drafts are TODO skeletons by design — see header comment).
-        if (e.name !== "mindmap" && e.name !== "rails") walk(f);
+        if (recursive && e.name !== "mindmap" && e.name !== "rails") walk(f);
       } else if (e.name.endsWith(".json") && e.name !== "plan.json" && !e.name.startsWith("_")) {
         out.push(f);
       }
@@ -94,9 +106,9 @@ function listFiles(dir) {
   return out;
 }
 
-function auditUnitDir(dir) {
+function auditUnitDir(dir, recursive = true) {
   const res = { total: 0, authored: 0, placeholder: 0, broken: 0, thin: 0 };
-  for (const f of listFiles(dir)) {
+  for (const f of listFiles(dir, recursive)) {
     res.total++;
     let raw, d;
     try {
@@ -161,17 +173,49 @@ if (fs.existsSync(PUB)) {
 }
 
 const rkUnits = new Map();
-if (fs.existsSync(RK)) {
-  for (const cls of fs.readdirSync(RK)) {
-    const cdir = path.join(RK, cls);
+for (const section of SOURCE_SECTIONS) {
+  const sroot = path.join(CONTENT_ROOT, ...section.split("/"));
+  if (!fs.existsSync(sroot)) continue;
+  for (const cls of fs.readdirSync(sroot)) {
+    const cdir = path.join(sroot, cls);
     if (!fs.statSync(cdir).isDirectory()) continue;
     for (const subject of fs.readdirSync(cdir)) {
       const sdir = path.join(cdir, subject);
       if (!fs.statSync(sdir).isDirectory()) continue;
+      // Subject-level files (e.g. notes/theory/class-11/chemistry/atomic-
+      // structure.json) carry no unit dir; they roll up under the section's
+      // own scope key (…/chemistry/theory) — the shape the baseline tracks.
+      const subjRes = auditUnitDir(sdir, false);
+      if (subjRes.total) {
+        const key = `${cls}/${subject}/${section.split("/").pop()}`;
+        const prev = rkUnits.get(key);
+        rkUnits.set(key, prev
+          ? {
+              total: prev.total + subjRes.total,
+              authored: prev.authored + subjRes.authored,
+              placeholder: prev.placeholder + subjRes.placeholder,
+              broken: prev.broken + subjRes.broken,
+              thin: prev.thin + subjRes.thin,
+              layer: "source",
+            }
+          : { ...subjRes, layer: "source" });
+      }
       for (const unit of fs.readdirSync(sdir)) {
         const dir = path.join(sdir, unit);
         if (!fs.statSync(dir).isDirectory()) continue;
-        rkUnits.set(`${cls}/${subject}/${unit}`, { ...auditUnitDir(dir), layer: "source" });
+        const key = `${cls}/${subject}/${unit}`;
+        const res = auditUnitDir(dir);
+        const prev = rkUnits.get(key);
+        rkUnits.set(key, prev
+          ? {
+              total: prev.total + res.total,
+              authored: prev.authored + res.authored,
+              placeholder: prev.placeholder + res.placeholder,
+              broken: prev.broken + res.broken,
+              thin: prev.thin + res.thin,
+              layer: "source",
+            }
+          : { ...res, layer: "source" });
       }
     }
   }

@@ -166,13 +166,31 @@ const LESSON_CATALOG: LessonMeta[] = [
 
 const ALLOWED_SLUGS = new Set(LESSON_CATALOG.map((l) => l.slug));
 
+/** Lesson markdown lives at notes/lessons/<subject>/<slug>.md (classified tree). */
+function resolveLessonPath(slug: string, subject?: string): string {
+  const subjects = [
+    subject,
+    "physics",
+    "chemistry",
+    "mathematics",
+    "biology",
+    "english",
+    "nepali",
+  ].filter((s, i, a): s is string => Boolean(s) && a.indexOf(s) === i);
+  for (const s of subjects) {
+    const p = resolveDataPath(`notes/lessons/${s}/${slug}.md`);
+    if (fs.existsSync(p)) return p;
+  }
+  return resolveDataPath(`notes/lessons/${subjects[0]}/${slug}.md`);
+}
+
 router.get("/", async (_req: Request, res: Response) => {
   try {
     const enriched = await Promise.all(
       LESSON_CATALOG.map(async (meta) => {
         let wordCount = 0;
         try {
-          const filePath = resolveDataPath(`lessons/${meta.slug}.md`);
+          const filePath = resolveLessonPath(meta.slug, meta.subject);
           if (fs.existsSync(filePath)) {
             const raw = await readFile(filePath, "utf-8");
             wordCount = raw.trim().split(/\s+/).length;
@@ -204,7 +222,10 @@ router.get("/:slug", async (req: Request, res: Response) => {
   }
 
   try {
-    const lessonPath = resolveDataPath(`lessons/${slug}.md`);
+    const lessonPath = resolveLessonPath(
+      slug,
+      LESSON_CATALOG.find((l) => l.slug === slug)?.subject,
+    );
     if (!fs.existsSync(lessonPath)) {
       res.status(404).json({ error: "Lesson file not found on disk", slug });
       return;

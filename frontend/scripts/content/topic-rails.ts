@@ -5,9 +5,9 @@
  * shortcuts, main idea in short and all ideas possible").
  *
  * Source of truth: the platform's own per-topic concept records at
- *   content/ravikishan/<class>/<subject>/<unit>/concepts/*.json
+ *   content/notes/concepts/<class>/<subject>/<unit>/*.json
  * Emitted per topic:
- *   content/ravikishan/<class>/<subject>/<unit>/rails/<unit>--<nn>-<topic>.rail.json
+ *   content/visuals/rails/<class>/<subject>/<unit>/<unit>--<nn>-<topic>.rail.json
  * (contract: frontend/AGENTS.md §9 — extra card `<unit>--<kebab>.rail.json`).
  *
  * EXACTNESS CONTRACT (same law as book-rails.ts): every row is a verbatim
@@ -50,16 +50,16 @@ import {
   HOME_RAIL_CLASS_SLUGS,
   HOME_RAIL_SCHEMA,
   HOME_RAIL_SUBJECT_ICONS,
-  RAIL_DIR_NAME,
   RAIL_FILE_SUFFIX,
   checkRailShape,
   findCorpusRoot,
   homeRailSubjects,
   railReadiness,
-  resolveUnitContentDir,
+  resolveUnitSectionDir,
   type HomeRailFile,
   type HomeRailFileRow,
 } from "../../lib/home-rails-corpus";
+import { classDirOfTrack } from "../../lib/content/paths";
 import { LEGACY_UNIT_INDEX } from "../../lib/topic-registry";
 import { getUnitTopicEntries } from "../../lib/syllabus";
 
@@ -824,10 +824,17 @@ interface TopicFile {
 
 /** All concept dirs that feed one syllabus unit (exact dir + legacy aliases). */
 function conceptDirsFor(corpusRoot: string, classSlug: string, subjectSlug: string, unitId: string): string[] {
-  const subjectDir = path.join(corpusRoot, "content", "ravikishan", classSlug, subjectSlug);
+  const subjectDir = path.join(
+    corpusRoot,
+    "content",
+    "notes",
+    "concepts",
+    classDirOfTrack(classSlug),
+    subjectSlug,
+  );
   const dirs: string[] = [];
-  const resolved = resolveUnitContentDir(corpusRoot, classSlug, subjectSlug, unitId);
-  if (resolved) dirs.push(resolved);
+  const resolved = resolveUnitSectionDir(corpusRoot, classSlug, subjectSlug, unitId);
+  if (fs.existsSync(resolved)) dirs.push(resolved);
   if (fs.existsSync(subjectDir)) {
     for (const entry of fs.readdirSync(subjectDir, { withFileTypes: true })) {
       if (!entry.isDirectory()) continue;
@@ -836,7 +843,15 @@ function conceptDirsFor(corpusRoot: string, classSlug: string, subjectSlug: stri
       if (entry.name === unitId || LEGACY_UNIT_INDEX[entry.name] === unitId) dirs.push(abs);
     }
   }
-  return dirs.filter((d) => fs.existsSync(path.join(d, "concepts")));
+  return dirs;
+}
+
+/** The unit's mindmap dir in the classified tree, derived from its concept dir. */
+function mindmapDirFor(conceptDir: string): string {
+  return conceptDir.replace(
+    `${path.sep}notes${path.sep}concepts${path.sep}`,
+    `${path.sep}visuals${path.sep}mindmaps${path.sep}`,
+  );
 }
 
 /**
@@ -848,7 +863,7 @@ function conceptDirsFor(corpusRoot: string, classSlug: string, subjectSlug: stri
 function readMindmapIndex(dirs: string[]): Map<string, MindmapNode> {
   const out = new Map<string, MindmapNode>();
   for (const dir of dirs) {
-    const mindmapDir = path.join(dir, "mindmap");
+    const mindmapDir = mindmapDirFor(dir);
     if (!fs.existsSync(mindmapDir)) continue;
     for (const f of fs.readdirSync(mindmapDir)) {
       if (!f.endsWith(".json") || f === "mindmap.json" || f.startsWith("_unit-")) continue;
@@ -870,7 +885,8 @@ function readMindmapIndex(dirs: string[]): Map<string, MindmapNode> {
 }
 
 function readTopics(dir: string): TopicFile[] {
-  const conceptsDir = path.join(dir, "concepts");
+  // `dir` IS the concepts dir in the classified tree.
+  const conceptsDir = dir;
   if (!fs.existsSync(conceptsDir)) return [];
   return fs
     .readdirSync(conceptsDir)
@@ -950,11 +966,16 @@ function main(): void {
       for (const unit of subject.units) {
         if (UNIT_FILTER && unit.id !== UNIT_FILTER) continue;
         const dirs = conceptDirsFor(corpusRoot, classSlug, subject.slug, unit.id);
-        const target = resolveUnitContentDir(corpusRoot, classSlug, subject.slug, unit.id);
-        if (!target || dirs.length === 0) continue;
+        if (dirs.length === 0) continue;
 
         const topics = dedupe(dirs.flatMap((d) => readTopics(d)));
-        const railsDir = path.join(target, RAIL_DIR_NAME);
+        const railsDir = resolveUnitSectionDir(
+          corpusRoot,
+          classSlug,
+          subject.slug,
+          unit.id,
+          "visuals/rails",
+        );
         const mindmaps = readMindmapIndex(dirs);
         const ctx: TopicContext = {
           classSlug,

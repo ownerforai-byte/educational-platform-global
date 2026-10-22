@@ -4,7 +4,7 @@ import path from "node:path";
 export function writeDual(pubRelPath, rkRelPath, data) {
   const json = JSON.stringify(data, null, 2) + "\n";
   const pubPath = path.join(process.cwd(), "frontend", "public", "data", "syllabus-notes", pubRelPath);
-  const rkPath = path.join(process.cwd(), "content", "ravikishan", rkRelPath);
+  const rkPath = path.join(process.cwd(), "content", rkRelPath);
   
   if (fs.existsSync(path.dirname(pubPath))) {
     fs.writeFileSync(pubPath, json, "utf8");

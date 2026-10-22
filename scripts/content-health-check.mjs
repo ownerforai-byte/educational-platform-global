@@ -64,7 +64,7 @@ for (const b of result.broken) {
 console.log(`\nBOM files fixed: ${fixed}`);
 
 // ---------- 3. _index.json completeness analysis ----------
-const index = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "ravikishan", "_index.json"), "utf8"));
+const index = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "_index.json"), "utf8"));
 const keys = Object.keys(index);
 let complete = 0, incomplete = 0;
 const incompleteSamples = [];

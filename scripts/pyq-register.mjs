@@ -8,7 +8,7 @@
  *
  * WHY THIS EXISTS
  * ---------------
- * `frontend/lib/pyq-bank.ts` reads `ravikishan/_index.json` — a map of
+ * `frontend/lib/pyq-bank.ts` reads `content/_index.json` — a map of
  * `path -> the file's FULL content` — and that is the ONLY source in the tree
  * that carries a `questions` array (the sibling `manifest.json` records titles
  * and notes but no questions at all, measured: 0 of its 2467 entries). So a PYQ
@@ -17,8 +17,8 @@
  *
  * Two copies must agree, because they are read by different runtimes:
  *
- *   content/ravikishan/_index.json              the authored corpus (source of truth)
- *   frontend/public/data/ravikishan/_index.json the asset the browser fetches
+ *   content/_index.json                      the authored corpus (source of truth)
+ *   frontend/public/data/content/_index.json the asset the browser fetches
  *
  * `loadData()` prefers a disk read on the server (trying `public/data`,
  * `frontend/public/data` and `../public/data` in turn) and `fetch` in the
@@ -38,13 +38,15 @@ const CHECK = ARGS.includes("--check");
 const DRY = ARGS.includes("--dry-run");
 
 const ROOT = process.cwd();
-const CORPUS = path.join(ROOT, "content", "ravikishan");
+const CONTENT = path.join(ROOT, "content");
+// The classified questions section — this script owns exactly this family.
+const CORPUS = path.join(CONTENT, "practice", "questions");
 const TARGETS = [
-  path.join(ROOT, "content", "ravikishan", "_index.json"),
-  path.join(ROOT, "frontend", "public", "data", "ravikishan", "_index.json"),
+  path.join(CONTENT, "_index.json"),
+  path.join(ROOT, "frontend", "public", "data", "content", "_index.json"),
 ];
 
-/** Every `pyqs/*.json` under the corpus, as corpus-relative POSIX paths. */
+/** Every bank under the questions section, as content-relative POSIX paths (= index keys). */
 function discoverPyqFiles() {
   const out = [];
   if (!fs.existsSync(CORPUS)) {
@@ -59,11 +61,7 @@ function discoverPyqFiles() {
         continue;
       }
       if (!entry.name.endsWith(".json")) continue;
-      const rel = path.relative(CORPUS, full).replaceAll(path.sep, "/");
-      // Only the exam banks. `_index.json` carries concepts and mindmaps too,
-      // but those are registered by their own build steps — this script owns one
-      // family and must not silently change another's contents.
-      if (!rel.includes("/pyqs/")) continue;
+      const rel = `practice/questions/${path.relative(CORPUS, full).replaceAll(path.sep, "/")}`;
       if (entry.name.startsWith("_")) continue;
       out.push(rel);
     }
@@ -93,20 +91,15 @@ function serialise(index) {
 }
 
 /**
- * A bank this script is responsible for: the canonical filename (`01-neb-2024.json`)
- * inside a `-notes` class tree.
- *
- * Both halves of that test are needed. The filename alone also matches
- * `class-11/physics/thermodynamics/pyqs/01-neb-2023.json`, which sits in the
- * older `class-11/` tree and stores its questions under a different schema — so
- * scoping to `-notes` keeps the gate about the family this script actually owns
- * instead of permanently red over a file it must not rewrite.
+ * A bank this script is responsible for: the canonical filename
+ * (`01-neb-2024.json`) in the classified questions section. Older exam-bank
+ * files (`01-neb-style-questions.json`, `c-q-and-mcq.json`, `neb-2021.json`)
+ * store their questions under a different schema and are counted as legacy.
  */
 const CANONICAL_BANK = /^\d{2}-neb-\d{4}\.json$/;
-const OWNED_TREE = /^(?:class-11-notes|class-12-notes)\//;
 
 function isCanonicalBank(rel) {
-  return OWNED_TREE.test(rel) && CANONICAL_BANK.test(path.basename(rel));
+  return CANONICAL_BANK.test(path.basename(rel));
 }
 
 const files = discoverPyqFiles();
@@ -126,7 +119,7 @@ for (const [i, target] of TARGETS.entries()) {
   const legacy = [];
 
   for (const rel of files) {
-    const body = JSON.parse(fs.readFileSync(path.join(CORPUS, rel), "utf8"));
+    const body = JSON.parse(fs.readFileSync(path.join(CONTENT, rel), "utf8"));
     const questions = Array.isArray(body.questions) ? body.questions : [];
     const current = index[rel];
 

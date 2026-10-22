@@ -81,14 +81,14 @@ const fullEc01 = {
 // Write canonical Topic 1
 writeDual(
   "physics/electric-charges/01-electric-charges-and-charging-by-induction.json",
-  "class-11-notes/physics/electric-charges/concepts/01-electric-charges-and-charging-by-induction.json",
+  "notes/concepts/class-11/physics/electric-charges/01-electric-charges-and-charging-by-induction.json",
   fullEc01
 );
 
 // Write variant duplicateType: 2 files
 writeDual(
   "physics/electric-charges/01-electric-charges-induction.json",
-  "class-11-notes/physics/electric-charges/concepts/01-electric-charges-induction.json",
+  "notes/concepts/class-11/physics/electric-charges/01-electric-charges-induction.json",
   {
     ...fullEc01,
     title: "Electric Charges and Induction",
@@ -100,7 +100,7 @@ writeDual(
 
 writeDual(
   "physics/electric-charges/01-electric-charges-induction-2.json",
-  "class-11-notes/physics/electric-charges/concepts/01-electric-charges-induction.json",
+  "notes/concepts/class-11/physics/electric-charges/01-electric-charges-induction.json",
   {
     ...fullEc01,
     title: "Electric Charges and Induction",

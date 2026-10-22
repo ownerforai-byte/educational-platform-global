@@ -3,16 +3,19 @@ import { MdList, MdString, NoteBlockSchema, ShortString, Slug } from "./atoms";
 import { BlockSchema, FormulaSchema } from "./formula";
 
 /**
- * `content/ravikishan/class-11-notes/…` → classSlug `class-11`.
+ * Classified tree class dir (`content/notes/concepts/class-11/…`) → classSlug
+ * `class-11`. Legacy dir spellings resolve too, so old reports still map.
  * Consumed by `scripts/content/build.ts` and the validator's path scope.
  */
 export const CLASS_DIR_TO_SLUG: Record<string, string> = {
+  "class-11": "class-11",
+  "class-12": "class-12",
   "class-11-notes": "class-11",
   "class-12-notes": "class-12",
 };
 
 /**
- * Concept note schema — `content/ravikishan/{classSlug}-notes/{subject}/{unit}/concepts/NN-slug.json`
+ * Concept note schema — `content/notes/concepts/{class}/{subject}/{unit}/NN-slug.json`
  *
  * The field inventory is MEASURED, not remembered. It was taken by walking the
  * corpus and listing every distinct top-level key under `concepts/`

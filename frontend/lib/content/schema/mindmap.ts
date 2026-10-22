@@ -4,7 +4,7 @@ import { ConceptNoteSchema } from "./concept";
 
 /**
  * Standalone mindmap file —
- * `content/ravikishan/{classSlug}-notes/{subject}/{unit}/mindmap/mindmap.json`.
+ * `content/visuals/mindmaps/{class}/{subject}/{unit}/mindmap.json`.
  *
  * These are NOT a reduced shape: measured, they carry the same authored fields
  * as a concept note (`formulas`, `keyPoints`, `mcqs`, `uiConfig`, `visualType`,

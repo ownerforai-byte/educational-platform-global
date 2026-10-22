@@ -25,6 +25,7 @@ import {
   TOPIC_REGISTRY,
   type TopicEntry,
 } from "../../lib/topic-registry";
+import { topicPayloadDir } from "../../lib/topic-registry";
 
 function findRepoRoot(): string {
   const starts = [
@@ -35,11 +36,11 @@ function findRepoRoot(): string {
     if (!start) continue;
     let dir = path.resolve(start);
     for (let i = 0; i < 4 && dir !== path.parse(dir).root; i++) {
-      if (fs.existsSync(path.join(dir, "content", "ravikishan"))) return dir;
+      if (fs.existsSync(path.join(dir, "content", "notes"))) return dir;
       dir = path.dirname(dir);
     }
   }
-  console.error("content/ravikishan corpus not found — run this from inside the repository");
+  console.error("content/notes corpus not found — run this from inside the repository");
   process.exit(2);
 }
 
@@ -135,19 +136,13 @@ for (const e of TOPIC_REGISTRY) {
 // ── 5. payload dir existence (warn only) ───────────────────────────────────
 for (const e of TOPIC_REGISTRY) {
   if ((e.payload ?? "json") !== "json") continue;
-  const dir = path.join(
-    ROOT,
-    "content",
-    "ravikishan",
-    e.classSlug,
-    e.subjectSlug,
-    e.unitSlug,
-  );
+  const payloadDir = topicPayloadDir(e);
+  const dir = path.join(ROOT, ...payloadDir.split("/"));
   if (!fs.existsSync(dir)) {
     issues.push({
       level: "warn",
       entry: e.slug,
-      message: `payload dir content/ravikishan/${e.classSlug}/${e.subjectSlug}/${e.unitSlug}/ does not exist yet (corpus shell)`,
+      message: `payload dir ${payloadDir}/ does not exist yet (corpus shell)`,
     });
   }
 }

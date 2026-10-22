@@ -109,8 +109,8 @@ function backendBranch(p) {
   return "backend/* (decide)";
 }
 
-/** content/ravikishan/<class>/<subject>/<unit>/<layer>/<file> */
-const CONTENT_RE = /^content\/ravikishan\/(class-(?:11|12)-notes)\/([^/]+)\/([^/]+)\//;
+/** content/<section>/[<subsection>/]<class>/<subject>/<unit>/<file> */
+const CONTENT_RE = /^content\/(?:[^/]+\/){1,2}(class-(?:11|12))\/([^/]+)\/([^/]+)\//;
 
 function classify(p) {
   // — secrets (by NAME only; contents are never read or recorded). Source
@@ -273,7 +273,17 @@ function scanContentTree(root, tree) {
     }
   }
 }
-scanContentTree(path.join("content", "ravikishan"), "source");
+for (const section of [
+  "notes/concepts",
+  "notes/guides",
+  "formulas",
+  "practice/questions",
+  "practice/problem-sets",
+  "practice/examples",
+  "visuals/graphs",
+]) {
+  scanContentTree(path.join("content", ...section.split("/")), "source");
+}
 scanContentTree(path.join("frontend", "public", "data", "syllabus-notes"), "runtime");
 
 /* ───────────────────────── 4. secrets scan (AGENTS.md Rule 2) ─────────── */
@@ -337,7 +347,7 @@ for (const [key, s] of [...contentStats.entries()].sort()) {
   const rt = contentStats.get(`runtime:${unitKey}`);
   links.push({
     unit: unitKey,
-    source: `content/ravikishan/**/${unitKey}/`,
+    source: `content/**/${unitKey}/`,
     runtime: `frontend/public/data/syllabus-notes/${unitKey}/`,
     manifest: `frontend/public/data/syllabus-notes/${unitKey.split("/")[0]}/_manifest.json`,
     sourceFiles: s.files,
@@ -461,7 +471,7 @@ md.push("|---|---|---|");
 const CLASS_MEANING = {
   secret: "credential files — names only, contents never recorded",
   "external-project": "self-contained embedded projects (agnes-bridge, cell-architecture-studio, visuals-py)",
-  "content-source": "canonical corpus under content/ravikishan (edit here only)",
+  "content-source": "canonical corpus under content/ (the classified tree — edit here only)",
   "content-runtime": "generated runtime mirror under frontend/public/data (never hand-edit)",
   "content-tooling": "one-off content generator scripts",
   "content-assets": "study materials / pdfs",

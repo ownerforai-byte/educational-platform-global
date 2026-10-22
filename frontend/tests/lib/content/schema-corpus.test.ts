@@ -1,5 +1,5 @@
 /**
- * Corpus gate — the whole `content/ravikishan` concept tree against the strict
+ * Corpus gate — the whole `content/notes/concepts` tree against the strict
  * `ConceptNoteSchema`, with the baseline ratchet from
  * `scripts/content-schema-baseline.json` (files recorded as pre-existing
  * INVALID are allowed; anything NEW fails the suite).
@@ -15,21 +15,21 @@ import { ConceptNoteSchema } from "@/lib/content/schema/concept";
 import { ManifestSchema } from "@/lib/content/schema/manifest";
 
 /**
- * The gated corpus is the repo-root `content/ravikishan` tree — the same one
- * `scripts/content/validate.ts` assesses. Resolved explicitly (frontend/../..)
+ * The gated corpus is the repo-root classified `content/` tree — the same one
+ * `scripts/content/validate.ts` assesses. Resolved explicitly (frontend/..)
  * so the gate finds the canonical tree from the frontend workspace too.
  */
 function findCorpus(): string {
   const candidates = [
-    join(process.cwd(), "..", "content", "ravikishan"),
-    join(process.cwd(), "content", "ravikishan"),
+    join(process.cwd(), "..", "content"),
+    join(process.cwd(), "content"),
   ];
-  for (const c of candidates) if (existsSync(c)) return c;
-  throw new Error("content/ravikishan corpus not found — run vitest from the frontend workspace");
+  for (const c of candidates) if (existsSync(join(c, "notes", "concepts"))) return c;
+  throw new Error("classified content/ corpus not found — run vitest from the frontend workspace");
 }
 
 const CORPUS = findCorpus();
-const REPO = dirname(dirname(CORPUS)); // …/content/ravikishan → repo root
+const REPO = dirname(CORPUS); // …/content → repo root
 
 const PLACEHOLDER_MARKERS = ["class 11 concept", "key point 1", "key formula 1", "[insert", "placeholder — run content generation", "mindmap placeholder"];
 
@@ -45,7 +45,7 @@ function collect(dir: string, out: string[] = []): string[] {
 
 describe("concept corpus vs strict schema", () => {
   const files = collect(CORPUS).filter((f) =>
-    /[/\\]class-\d+-notes[/\\][^/\\]+[/\\][^/\\]+[/\\]concepts[/\\]/.test(f),
+    /[/\\]notes[/\\]concepts[/\\]class-\d+[/\\][^/\\]+[/\\][^/\\]+[/\\]/.test(f),
   );
 
   it("finds the concept corpus", () => {

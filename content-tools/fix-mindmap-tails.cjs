@@ -3,15 +3,15 @@
 const fs = require('fs');
 
 const files = [
-  'content/ravikishan/class-11-notes/mathematics/algebra/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/mathematics/calculus/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/mathematics/statistics-and-probability/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/mathematics/trigonometry/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/mathematics/vectors/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/physics/elasticity/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/physics/gravitation/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/physics/kinematics/mindmap/mindmap.json',
-  'content/ravikishan/class-11-notes/physics/work-energy-and-power/mindmap/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/mathematics/algebra/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/mathematics/calculus/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/mathematics/statistics-and-probability/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/mathematics/trigonometry/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/mathematics/vectors/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/physics/elasticity/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/physics/gravitation/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/physics/kinematics/mindmap.json',
+  'content/ravikishan/visuals/mindmaps/class-11/physics/work-energy-and-power/mindmap.json',
 ];
 
 for (const f of files) {

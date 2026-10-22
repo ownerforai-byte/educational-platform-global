@@ -22,7 +22,7 @@ export function MindmapGalleryView({
             No mind maps available for {title} yet.
           </p>
           <p className="text-xs text-muted-foreground/70">
-            Mind maps are auto-generated from the syllabus. Add content under <code className="bg-muted px-1 rounded">content/ravikishan/</code> and run <code className="bg-muted px-1 rounded">npm run content:build</code>.
+            Mind maps are auto-generated from the syllabus. Add content under <code className="bg-muted px-1 rounded">content/visuals/mindmaps/</code> and run <code className="bg-muted px-1 rounded">npm run content:build</code>.
           </p>
         </CardContent>
       </Card>

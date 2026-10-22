@@ -232,7 +232,7 @@ export function TopicVerticalNotes({
         // Fetch supplementary from ravikishan manifest only if primary syllabus-notes had no matches
         if (relevant.length === 0) {
           try {
-            const rkManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>("ravikishan/manifest.json");
+            const rkManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>("content/manifest.json");
             if (!cancelled) {
               const rkMatch = rkManifest.find((m) => {
                 const parts = m.path.split("/");

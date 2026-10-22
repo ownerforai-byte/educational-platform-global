@@ -7,7 +7,7 @@
  * through `HOME_RAIL_ICONS`, and passes plain slide data to the client rails.
  *
  * Agents author cards at:
- *   content/ravikishan/class-11-notes/<subject>/<unit>/rails/<unit>.rail.json
+ *   content/visuals/rails/<class-11|class-12>/<subject>/<unit>/<unit>.rail.json
  * one canonical card per syllabus unit (extra cards as
  * `<unit>--<kebab>.rail.json`). Full authoring contract: frontend/AGENTS.md §9.
  * `frontend/scripts/content/home-rails.ts` scaffolds missing skeletons and
@@ -16,6 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import { classDirOfTrack } from "./content/paths";
 import { prepareRailFigure } from "./rail-figures";
 import { LEGACY_UNIT_INDEX } from "./topic-registry";
 import { SYLLABUS } from "./syllabus";
@@ -35,8 +36,13 @@ export const HOME_RAIL_SCHEMA = "home-rail/v1";
 /** The home page shows one featured card from a few units per class/subject. */
 export const HOME_RAIL_MAX_HOME_CARDS_PER_SUBJECT = 6;
 export const HOME_RAIL_MAX_HOME_CARDS_PER_UNIT = 1;
-export const RAIL_DIR_NAME = "rails";
 export const RAIL_FILE_SUFFIX = ".rail.json";
+/**
+ * Classified sections one unit's content lives in (see lib/content/paths.ts).
+ * The old single unit dir split into these — a unit's cards, notes and maps
+ * now sit under their own top-level section.
+ */
+export type UnitSection = "notes/concepts" | "visuals/rails" | "visuals/mindmaps";
 /** Row/card text starting with this marker counts as unwritten. */
 export const RAIL_TODO_MARKER = "TODO";
 
@@ -112,11 +118,11 @@ export interface HomeRailEntry {
   reasons: string[];
 }
 
-/** Walk up until `content/ravikishan` is found (dev cwd is `frontend/`). */
+/** Walk up until the classified corpus (`content/notes`) is found (dev cwd is `frontend/`). */
 export function findCorpusRoot(start = process.cwd()): string {
   let dir = path.resolve(start);
   for (let i = 0; i < 5 && dir !== path.parse(dir).root; i++) {
-    if (fs.existsSync(path.join(dir, "content", "ravikishan"))) return dir;
+    if (fs.existsSync(path.join(dir, "content", "notes"))) return dir;
     dir = path.dirname(dir);
   }
   return path.resolve(start);
@@ -145,35 +151,39 @@ export function homeRailSubjects(
 }
 
 /**
- * Resolve a syllabus unit id to its on-disk content directory.
- * Prefers the exact `<id>/` dir, then a legacy/alias dir that
+ * Resolve a syllabus unit id to its on-disk directory inside one classified
+ * section:
+ *   content/<section>/<class-11|class-12>/<subject>/<unitId>
+ * Prefers the exact `<unitId>/` dir, then a legacy/alias dir that
  * LEGACY_UNIT_INDEX maps back to this unit (e.g. `work-energy-power` for
- * `work-energy-and-power`). Returns undefined when the unit has no dir yet —
- * the scaffold script then creates the canonical `<id>/` shell.
+ * `work-energy-and-power`). Always returns the canonical path — callers that
+ * create content mkdir it, readers existence-check it.
  */
-export function resolveUnitContentDir(
+export function resolveUnitSectionDir(
   corpusRoot: string,
   classSlug: string,
   subjectSlug: string,
   unitId: string,
-): string | undefined {
+  section: UnitSection = "notes/concepts",
+): string {
   const subjectDir = path.join(
     corpusRoot,
     "content",
-    "ravikishan",
-    classSlug,
+    ...section.split("/"),
+    classDirOfTrack(classSlug),
     subjectSlug,
   );
   const exact = path.join(subjectDir, unitId);
   if (fs.existsSync(exact) && fs.statSync(exact).isDirectory()) return exact;
-  if (!fs.existsSync(subjectDir)) return undefined;
-  for (const e of fs.readdirSync(subjectDir, { withFileTypes: true })) {
-    if (!e.isDirectory()) continue;
-    if (LEGACY_UNIT_INDEX[e.name] === unitId) {
-      return path.join(subjectDir, e.name);
+  if (fs.existsSync(subjectDir)) {
+    for (const e of fs.readdirSync(subjectDir, { withFileTypes: true })) {
+      if (!e.isDirectory()) continue;
+      if (LEGACY_UNIT_INDEX[e.name] === unitId) {
+        return path.join(subjectDir, e.name);
+      }
     }
   }
-  return undefined;
+  return exact;
 }
 
 function isTodo(text: unknown): boolean {
@@ -306,14 +316,13 @@ export function loadHomeRailCorpus(
         const unitKey = `${subjectKey}/${unit.id}`;
         if ((readyCounts.get(subjectKey) ?? 0) >= maxReadyEntriesPerSubject) break;
         if ((readyCountsByUnit.get(unitKey) ?? 0) >= maxReadyEntriesPerUnit) continue;
-        const unitDir = resolveUnitContentDir(
+        const railsDir = resolveUnitSectionDir(
           corpusRoot,
           classSlug,
           subject.slug,
           unit.id,
+          "visuals/rails",
         );
-        if (!unitDir) continue;
-        const railsDir = path.join(unitDir, RAIL_DIR_NAME);
         if (!fs.existsSync(railsDir)) continue;
         const files = fs
           .readdirSync(railsDir)

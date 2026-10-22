@@ -82,14 +82,14 @@ const fullEf01 = {
 // Write canonical Topic 1
 writeDual(
   "physics/electric-field/01-electric-field-due-to-point-charges-and-field-lines.json",
-  "class-11-notes/physics/electric-field/concepts/01-electric-field-due-to-point-charges-and-field-lines.json",
+  "notes/concepts/class-11/physics/electric-field/01-electric-field-due-to-point-charges-and-field-lines.json",
   fullEf01
 );
 
 // Write variant duplicateType: 2 files
 writeDual(
   "physics/electric-field/01-electric-field-point-charges.json",
-  "class-11-notes/physics/electric-field/concepts/01-electric-field-point-charges.json",
+  "notes/concepts/class-11/physics/electric-field/01-electric-field-point-charges.json",
   {
     ...fullEf01,
     title: "Electric Field due to Point Charges",
@@ -101,7 +101,7 @@ writeDual(
 
 writeDual(
   "physics/electric-field/01-electric-field-point-charges-2.json",
-  "class-11-notes/physics/electric-field/concepts/01-electric-field-point-charges.json",
+  "notes/concepts/class-11/physics/electric-field/01-electric-field-point-charges.json",
   {
     ...fullEf01,
     title: "Electric Field due to Point Charges",

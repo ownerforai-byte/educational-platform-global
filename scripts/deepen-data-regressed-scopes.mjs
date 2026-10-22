@@ -6,7 +6,7 @@
 export default [
   // ── physics/dc-circuits ──
   {
-    file: "class-11-notes/physics/dc-circuits/concepts/01-electric-current-drift-velocity",
+    file: "notes/concepts/class-11/physics/dc-circuits/01-electric-current-drift-velocity",
     notes: [
       "**Electric current.** Current is the rate of flow of charge, I = q/t; its SI unit is the ampere (1 A = 1 C/s) and conventional current is taken from positive to negative.",
       "**Drift velocity.** Free electrons gain a tiny average velocity v_d along the field between collisions: v_d = eEτ/m = eVτ/(ml); it is of the order of mm/s even in strong currents.",
@@ -16,7 +16,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/dc-circuits/concepts/02-ohms-law-resistance",
+    file: "notes/concepts/class-11/physics/dc-circuits/02-ohms-law-resistance",
     notes: [
       "**Ohm's law.** At constant physical conditions (temperature, state) the potential difference across a conductor is directly proportional to the current: V ∝ I, or V = IR.",
       "**Resistance and resistivity.** R = ρL/A: resistance grows with length L and falls with area A; resistivity ρ (unit Ω·m) is a property of the material itself.",
@@ -26,7 +26,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/dc-circuits/concepts/06-work-power-circuits",
+    file: "notes/concepts/class-11/physics/dc-circuits/06-work-power-circuits",
     notes: [
       "**Electrical work.** Moving charge q through potential V costs W = qV = VIt; in a pure resistance this equals I²Rt = V²t/R — the energy converted.",
       "**Electric power.** P = VI = I²R = V²/R, measured in watts; 1 horsepower ≈ 746 W and commercial rating is often in kW.",
@@ -37,7 +37,7 @@ export default [
   },
   // ── physics/rate-of-heat-flow ──
   {
-    file: "class-11-notes/physics/rate-of-heat-flow/concepts/03-radiation-black-body",
+    file: "notes/concepts/class-11/physics/rate-of-heat-flow/03-radiation-black-body",
     notes: [
       "**Thermal radiation.** Hot bodies emit energy as electromagnetic waves mainly in the infrared region; unlike conduction and conduction it needs no material medium.",
       "**Black body.** An ideal black body absorbs all incident radiation and, at the same temperature, emits the maximum possible radiation; a small hole in a hollow enclosure behaves like one.",
@@ -48,7 +48,7 @@ export default [
   },
   // ── physics/recent-trends-in-physics ──
   {
-    file: "class-11-notes/physics/recent-trends-in-physics/concepts/02-universe-big-bang",
+    file: "notes/concepts/class-11/physics/recent-trends-in-physics/02-universe-big-bang",
     notes: [
       "**Big Bang model.** The universe began about 13.8 billion years ago in an extremely hot, dense state and has been expanding and cooling ever since; space itself expands, galaxies recede from each other.",
       "**Hubble's evidence.** Galaxies show redshift proportional to distance (v = H₀d) — the expansion law that founded observational cosmology.",
@@ -58,7 +58,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/recent-trends-in-physics/concepts/03-dark-matter-black-holes",
+    file: "notes/concepts/class-11/physics/recent-trends-in-physics/03-dark-matter-black-holes",
     notes: [
       "**Dark matter.** About 27% of the universe is invisible matter detected only through its gravity; it neither emits nor absorbs light and outweighs visible matter roughly five to one.",
       "**Evidence for dark matter.** Galaxy rotation curves stay flat far from the centre (Kepler's law fails), gravitational lensing is stronger than visible mass allows, and the CMB pattern fixes its share of the energy budget.",
@@ -69,7 +69,7 @@ export default [
   },
   // ── physics/refraction ──
   {
-    file: "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-refraction-refractive-index",
+    file: "notes/concepts/class-11/physics/refraction-at-plane-surfaces/01-laws-refraction-refractive-index",
     notes: [
       "**Refraction.** Light bends while crossing obliquely between media of different optical density because its speed changes; it bends towards the normal entering a denser medium and away from it leaving.",
       "**Snell's law.** For a ray crossing the boundary, n₁ sin i = n₂ sin r, with the incident ray, refracted ray and normal all in one plane and sin i/sin r constant for the pair of media.",
@@ -79,7 +79,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/refraction-through-prisms/concepts/02-prism-deviation-formula",
+    file: "notes/concepts/class-11/physics/refraction-through-prisms/02-prism-deviation-formula",
     notes: [
       "**Geometry of a prism.** The refracting angle of the prism equals the sum of the internal angles, A = r₁ + r₂, whatever the incidence.",
       "**Angle of deviation.** The ray turns through δ = (i₁ + i₂) − A, where i₁ and i₂ are the angles at the two faces.",
@@ -90,7 +90,7 @@ export default [
   },
   // ── physics/thermal-expansion ──
   {
-    file: "class-11-notes/physics/thermal-expansion/concepts/02-cubical-superficial-expansion",
+    file: "notes/concepts/class-11/physics/thermal-expansion/02-cubical-superficial-expansion",
     notes: [
       "**Superficial expansion.** A heated sheet grows in area as ΔA = A₀βt where β is the areal expansion coefficient; for isotropic solids β = 2α, α being the linear coefficient.",
       "**Cubical expansion.** A heated solid grows in volume as ΔV = V₀γt with γ = 3α — the cube relation follows because V = L³, so ΔV/V = 3ΔL/L.",
@@ -100,7 +100,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/physics/thermal-expansion/concepts/04-dulong-petit-method",
+    file: "notes/concepts/class-11/physics/thermal-expansion/04-dulong-petit-method",
     notes: [
       "**Dulong–Petit law.** The molar heat capacity of a solid is about 3R ≈ 25 J mol⁻¹ K⁻¹ near room temperature — each atom behaves as an independent oscillator with 3 kinetic + 3 potential degrees of freedom.",
       "**Finding atomic mass.** Atomic mass ≈ 3R / specific heat; measuring a metal's specific heat therefore gives its equivalent/atomic mass — the classic experiment.",
@@ -111,7 +111,7 @@ export default [
   },
   // ── nepali/sahitya-adhyayan (numeric prefixes — no Devanagari literals) ──
   {
-    file: "class-11-notes/nepali/sahitya-adhyayan/concepts/03-",
+    file: "notes/concepts/class-11/nepali/sahitya-adhyayan/03-",
     notes: [
       "**व्यङ्ग्यको परिभाषा।** व्यङ्ग्य भनेको कुनै विषय, व्यक्ति वा समाजको दोष, कुरीति र विसंगतिलाई हास्य, व्यंग्य र चुटीलो शैलीमार्फत चित्रण गर्ने साहित्यिक विधा हो; यसको मूल उद्देश्य त्रुटि सुधार नै हो।",
       "**उद्देश्य।** व्यङ्ग्यको मकसद हँसाउनु मात्र होइन — समाजमा व्याप्त बुराइको पोषक उद्देश्यपूर्ण आलोचना गरी सुधारको सन्देश दिनु हो।",
@@ -121,7 +121,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/nepali/sahitya-adhyayan/concepts/04-",
+    file: "notes/concepts/class-11/nepali/sahitya-adhyayan/04-",
     notes: [
       "**आधुनिक युगको सुरुवात।** वि.सं. २००७ सालको क्रान्तिपछि प्रजातन्त्र स्थापना भएपछि नेपाली साहित्यमा आधुनिक चेतना, यथार्थवाद र वैज्ञानिक दृष्टिकोणको विकास भयो — यहीँदेखि आधुनिक नेपाली साहित्यको गणना हुन्छ।",
       "**प्रतिकूल युग।** राना शासनकालको विरोधमा लिखित साहित्यलाई प्रतिकूल युग भनिन्छ; देवकोटाको 'प्रतिकूल' र 'आमा' जस्ता रचनाहरू यसै अवधिका उल्लेखनीय उदाहरण हुन्।",
@@ -131,7 +131,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/nepali/sahitya-adhyayan/concepts/05-",
+    file: "notes/concepts/class-11/nepali/sahitya-adhyayan/05-",
     notes: [
       "**निबन्धको परिभाषा।** निबन्ध कुनै एउटा विषयमा लेखकको विचार, भाव र अनुभवलाई योजनाबद्ध रूपमा प्रस्तुत गर्ने गद्य विधा हो; यो शब्द फ्रान्सेली 'essai' (प्रयास) बाट बनेको मानिन्छ।",
       "**निबन्धका प्रकार।** विचारात्मक, वर्णनात्मक, भावात्मक (व्यक्तिगत), औपन्यासिक र विश्लेषणात्मक — यी निबन्धका प्रमुख प्रकारहरू हुन्।",

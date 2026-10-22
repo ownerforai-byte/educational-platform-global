@@ -1,3 +1,4 @@
+import { contentCoords } from "@/lib/content/paths";
 import { loadData } from "@/lib/data-loader";
 
 export type NotesTrack = "class-11-notes" | "class-12-notes";
@@ -28,19 +29,19 @@ function baseName(p: string) {
   return p.split(/[\\/]/).pop()?.replace(/\.json$/, "") ?? p;
 }
 
+// Class/subject/unit come from the classified key shape
+// (`notes/concepts/class-11/physics/kinematics/…`) via lib/content/paths —
+// no more positional split[0..2] on legacy `class/subject/unit/…` keys.
 function ravSubject(item: { path: string }) {
-  const parts = item.path.split(/[\\/]/);
-  return parts[1] || "unknown";
+  return contentCoords(item.path).subjectSlug ?? "unknown";
 }
 
 function ravClass(item: { path: string }) {
-  const parts = item.path.split(/[\\/]/);
-  return parts[0] || "unknown";
+  return contentCoords(item.path).classDir ?? "unknown";
 }
 
 function ravUnit(item: { path: string }) {
-  const parts = item.path.split(/[\\/]/);
-  return parts[2] || undefined;
+  return contentCoords(item.path).unitSlug;
 }
 
 function mapRavUnitToSyllabus(subject: string, unit: string): string | undefined {
@@ -162,7 +163,7 @@ export function getImportedNotesBySubject(): Promise<Record<string, ImportedNote
   if (!importedNotesPromise) {
     importedNotesPromise = (async () => {
       const [rav, rexp] = await Promise.all([
-        loadData<RavikishanManifestItem[]>("ravikishan/manifest.json"),
+        loadData<RavikishanManifestItem[]>("content/manifest.json"),
         loadData<RExportManifestItem[]>("r-export/manifest.json"),
       ]);
       const built = buildImportedNotes(rav, rexp);

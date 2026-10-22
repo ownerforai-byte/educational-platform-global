@@ -400,6 +400,18 @@
   },
   {
     "unitSlug": "basic-concept-of-organic-chemistry",
+    "topicSlug": "classification-organic",
+    "title": "02 CLASSIFICATION ORGANIC",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-classification-organic.json",
+    "tabGroup": "classification-organic",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
     "title": "Idea of structural formula, contracted formula and bond l…",
     "noteCount": 4,
@@ -418,6 +430,18 @@
     "duplicateType": 2,
     "filename": "01-introduction-to-organic-chemistry-and-organic-compounds.json",
     "tabGroup": "01-introduction-to-organic-chemistry-and-organic-compounds",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "basic-concept-of-organic-chemistry",
+    "topicSlug": "organic-chemistry-intro",
+    "title": "01 ORGANIC CHEMISTRY INTRO",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-organic-chemistry-intro.json",
+    "tabGroup": "organic-chemistry-intro",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -475,30 +499,6 @@
     "duplicateType": 2,
     "filename": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds.json",
     "tabGroup": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "basic-concept-organic",
-    "topicSlug": "classification-organic",
-    "title": "02 CLASSIFICATION ORGANIC",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-classification-organic.json",
-    "tabGroup": "classification-organic",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "basic-concept-organic",
-    "topicSlug": "organic-chemistry-intro",
-    "title": "01 ORGANIC CHEMISTRY INTRO",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-organic-chemistry-intro.json",
-    "tabGroup": "organic-chemistry-intro",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -594,7 +594,7 @@
     "universalFactsCount": 1
   },
   {
-    "unitSlug": "chemical-bonding",
+    "unitSlug": "chemical-bonding-and-shapes-of-molecules",
     "topicSlug": "02-vsepr-theory",
     "title": "02 VSEPR THEORY",
     "noteCount": 4,
@@ -606,7 +606,7 @@
     "universalFactsCount": 0
   },
   {
-    "unitSlug": "chemical-bonding",
+    "unitSlug": "chemical-bonding-and-shapes-of-molecules",
     "topicSlug": "03-hybridization",
     "title": "03 HYBRIDIZATION",
     "noteCount": 4,
@@ -614,30 +614,6 @@
     "duplicateType": 2,
     "filename": "03-hybridization.json",
     "tabGroup": "03-hybridization",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemical-bonding",
-    "topicSlug": "ionic-covalent-bond",
-    "title": "01 IONIC COVALENT BOND",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-ionic-covalent-bond.json",
-    "tabGroup": "ionic-covalent-bond",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemical-bonding",
-    "topicSlug": "molecular-orbital-theory",
-    "title": "04 MOLECULAR ORBITAL THEORY",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-molecular-orbital-theory.json",
-    "tabGroup": "molecular-orbital-theory",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -714,6 +690,18 @@
   },
   {
     "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+    "topicSlug": "ionic-covalent-bond",
+    "title": "01 IONIC COVALENT BOND",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-ionic-covalent-bond.json",
+    "tabGroup": "ionic-covalent-bond",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "chemical-bonding-and-shapes-of-molecules",
     "topicSlug": "lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements",
     "title": "Lewis Dot Structures of Common Compounds",
     "noteCount": 5,
@@ -733,6 +721,18 @@
     "duplicateType": 2,
     "filename": "11-metallic-bonding-and-properties-of-metallic-solids.json",
     "tabGroup": "11-metallic-bonding-and-properties-of-metallic-solids",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+    "topicSlug": "molecular-orbital-theory",
+    "title": "04 MOLECULAR ORBITAL THEORY",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "04-molecular-orbital-theory.json",
+    "tabGroup": "molecular-orbital-theory",
     "hasMcqs": true,
     "universalFactsCount": 0
   },

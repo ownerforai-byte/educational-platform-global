@@ -13,7 +13,7 @@
  *      (branches + a hand-drawn schematic + its annotations),
  *   3. frontend/components/lab/schematic-concepts.tsx — 20 keyword-matched
  *      concept schematics,
- *   4. content/ravikishan/**\/mindmap/mindmap.json — 59 legacy mindmap files.
+ *   4. content/visuals/mindmaps/** — legacy mindmap.json files.
  *
  * A unit with no curated entry silently falls back to a shared generic tree,
  * and a topic whose keywords miss every schematic silently falls back to the
@@ -251,7 +251,7 @@ function hasScaffoldSignature(text: string): boolean {
 // ── Sources ─────────────────────────────────────────────────────────────────
 
 const REPO = path.resolve(process.cwd(), "..");
-const NOTES_ROOT = path.join(REPO, "content", "ravikishan");
+const NOTES_ROOT = path.join(REPO, "content", "visuals", "mindmaps");
 
 interface UnitRef {
   classSlug: string;
@@ -602,8 +602,13 @@ const legacy = walk(NOTES_ROOT);
 let legacyOk = 0;
 for (const file of legacy) {
   const rel = path.relative(REPO, file).replaceAll(path.sep, "/");
-  const unitDir = path.dirname(path.dirname(file));
-  const conceptDir = path.join(unitDir, "concepts");
+  // Classified tree: …/visuals/mindmaps/<class>/<subject>/<unit>/mindmap.json —
+  // the unit's concepts live in the sibling notes/concepts section.
+  const unitDir = path.dirname(file);
+  const conceptDir = unitDir.replace(
+    `${path.sep}visuals${path.sep}mindmaps${path.sep}`,
+    `${path.sep}notes${path.sep}concepts${path.sep}`,
+  );
   const unitVocabSet = vocab(path.basename(unitDir).replace(/-/g, " "));
 
   // The unit's own concept notes are the reference for what this unit covers.

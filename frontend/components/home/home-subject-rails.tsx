@@ -126,7 +126,7 @@ export async function HomeSubjectRails() {
 /**
  * Agent-authored corpus cards for the rails, classified by syllabus unit.
  *
- * `content/ravikishan/<class>/<subject>/<unit>/rails/*.rail.json`
+ * `content/visuals/rails/<class>/<subject>/<unit>/*.rail.json`
  * (contract: frontend/AGENTS.md §9) carries one canonical card per syllabus
  * unit. The home page reads a bounded sample of ready cards per subject,
  * grouped under unit dividers in syllabus order, so the loop stays small even

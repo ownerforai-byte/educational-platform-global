@@ -455,8 +455,8 @@ function candidateRoots(): CorpusRoot[] {
 
   for (const base of [cwd, up]) {
     roots.push({
-      dir: path.join(base, "content", "ravikishan"),
-      label: "content/ravikishan",
+      dir: path.join(base, "content", "notes", "concepts"),
+      label: "content/notes/concepts",
       requireSegment: `${path.sep}concepts${path.sep}`,
       dropIn: false,
     });
@@ -611,6 +611,11 @@ function deriveSubjectUnit(
     const idx = parts.indexOf("concepts");
     if (idx >= 2) return { subject: parts[idx - 2], unit: parts[idx - 1] };
     if (idx === 1) return { subject: parts[0], unit: parts[0] };
+  }
+  // Classified tree (root = content/notes/concepts):
+  // `class-11/physics/capacitor/01-x.json` → subject physics, unit capacitor
+  if (parts.length >= 3 && /^class-\d+/.test(parts[0])) {
+    return { subject: parts[1], unit: parts[2] };
   }
   // `<subject>/<NN-unit>.json` → subject + unit from the filename stem
   if (parts.length >= 2) {

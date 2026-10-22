@@ -81,14 +81,14 @@ const fullEf02 = {
 // Write canonical Topic 2
 writeDual(
   "physics/electric-field/02-gauss-law-and-electric-flux.json",
-  "class-11-notes/physics/electric-field/concepts/02-gauss-law-and-electric-flux.json",
+  "notes/concepts/class-11/physics/electric-field/02-gauss-law-and-electric-flux.json",
   fullEf02
 );
 
 // Write variant duplicateType: 2 files
 writeDual(
   "physics/electric-field/02-gauss-law.json",
-  "class-11-notes/physics/electric-field/concepts/02-gauss-law.json",
+  "notes/concepts/class-11/physics/electric-field/02-gauss-law.json",
   {
     ...fullEf02,
     title: "Gauss Law",
@@ -100,7 +100,7 @@ writeDual(
 
 writeDual(
   "physics/electric-field/02-gauss-law-2.json",
-  "class-11-notes/physics/electric-field/concepts/02-gauss-law.json",
+  "notes/concepts/class-11/physics/electric-field/02-gauss-law.json",
   {
     ...fullEf02,
     title: "Gauss Law",

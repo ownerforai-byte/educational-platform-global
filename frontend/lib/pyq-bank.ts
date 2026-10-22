@@ -1,3 +1,4 @@
+import { classDirOfTrack, contentCoords, normalizeClassDir } from "@/lib/content/paths";
 import { loadData } from "@/lib/data-loader";
 
 /** One PYQ card = one exam year for one subject (aggregated across units). */
@@ -42,10 +43,10 @@ type ManifestItem = {
 };
 
 /**
- * `ravikishan/_index.json` — path → FULL file content.
+ * `content/_index.json` — path → FULL file content.
  *
  * This is the only PYQ data source that actually carries `questions`.
- * `ravikishan/manifest.json` is an index of titles/notes (measured: 0 of its
+ * `content/manifest.json` is an index of titles/notes (measured: 0 of its
  * 2467 entries have a `questions` array), so reading PYQs from it silently
  * yields nothing — which is why the bank rendered empty for every subject.
  */
@@ -102,9 +103,9 @@ function commonPrefix(titles: string[]): string {
 /**
  * Loads the theory + PYQ bank for a Class 11 subject.
  *
- * Content lives under:
- *   content/ravikishan/{classSlug}/{subject}/theory/*.json
- *   content/ravikishan/{classSlug}/{subject}/{unit}/pyqs/NN-neb-YYYY.json
+ * Content lives under (classified tree, see lib/content/paths.ts):
+ *   content/notes/theory/{class}/{subject}/*.json
+ *   content/practice/questions/{class}/{subject}/{unit}/NN-neb-YYYY.json
  *
  * Two sources, because neither one covers everything:
  *   - `manifest.json` carries `notes` (theory blocks) but no `questions`.
@@ -122,8 +123,8 @@ export async function getSubjectPyqBank(
   maxYears = 10,
 ): Promise<SubjectPyqBank> {
   const [manifest, index, rexpManifest] = await Promise.all([
-    loadData<ManifestItem[]>("ravikishan/manifest.json"),
-    loadData<ContentIndex>("ravikishan/_index.json").catch(
+    loadData<ManifestItem[]>("content/manifest.json"),
+    loadData<ContentIndex>("content/_index.json").catch(
       () => ({}) as ContentIndex,
     ),
     loadData<RExportItem[]>("r-export/manifest.json").catch(() => [] as RExportItem[]),
@@ -131,13 +132,15 @@ export async function getSubjectPyqBank(
   const theory: TheoryBlock[] = [];
   const seenTheory = new Set<string>();
 
-  // The manifest stores content under the short class folder ("class-11/…",
-  // "class-12/…") while routes use the track slug ("class-11-notes"). Accept
-  // both so theory/PYQ tabs are never empty due to a class-name mismatch.
-  const classFolder = classSlug.replace(/-notes$/, "");
-  const subjectPrefixes = [`${classSlug}/${subjectSlug}/`, `${classFolder}/${subjectSlug}/`];
+  // Classified keys carry the normalized class dir ("class-11/…") while routes
+  // use the track slug ("class-11-notes"). Normalize so theory/PYQ tabs are
+  // never empty due to a class-name mismatch.
+  const classDir = normalizeClassDir(classDirOfTrack(classSlug));
 
-  const belongs = (path: string) => subjectPrefixes.some((p) => path.startsWith(p));
+  const belongs = (path: string) => {
+    const coords = contentCoords(path);
+    return coords.subjectSlug === subjectSlug && coords.classDir === classDir;
+  };
 
   // ── theory blocks (manifest carries `notes`) ──
   for (const item of manifest) {

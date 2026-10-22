@@ -104,19 +104,19 @@ router.get("/filters/:filterId", (req: Request, res: Response) => {
  */
 router.get("/notes", async (_req: Request, res: Response) => {
   try {
-    const lessonPath = resolveDataPath("lessons/classification-of-elements-and-periodic-table.md");
+    const lessonPath = resolveDataPath("notes/lessons/chemistry/classification-of-elements-and-periodic-table.md");
     let markdownContent = "";
     if (fs.existsSync(lessonPath)) {
       markdownContent = await readFile(lessonPath, "utf-8");
     }
 
-    const jsonPath = resolveDataPath("periodic-table-filters.json");
+    const jsonPath = resolveDataPath("resources/periodic-table-filters.json");
     let jsonContent: any = null;
     if (fs.existsSync(jsonPath)) {
       jsonContent = JSON.parse(await readFile(jsonPath, "utf-8"));
     }
 
-    const theoryPath = resolveDataPath("ravikishan/class-11/chemistry/theory/periodic-table.json");
+    const theoryPath = resolveDataPath("notes/theory/class-11/chemistry/periodic-table.json");
     let theoryContent: any = null;
     if (fs.existsSync(theoryPath)) {
       theoryContent = JSON.parse(await readFile(theoryPath, "utf-8"));

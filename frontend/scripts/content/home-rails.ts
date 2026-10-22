@@ -5,7 +5,7 @@
  *   npx tsx frontend/scripts/content/home-rails.ts --check   # gate: every syllabus unit has a rails file; all files parse; readiness report
  *
  * Cards live at:
- *   content/ravikishan/<class-11-notes|class-12-notes>/<subject>/<unit>/rails/<unit>.rail.json
+ *   content/visuals/rails/<class-11|class-12>/<subject>/<unit>/<unit>.rail.json
  * one canonical (draft) skeleton per syllabus unit. Agents fill the rows, flip
  * `draft` to false, and the home rail streams the card on the next build.
  * Full contract: frontend/AGENTS.md §9.
@@ -17,13 +17,12 @@ import path from "node:path";
 // path-alias resolution (same rule as validate.ts / registry.ts).
 import {
   HOME_RAIL_CLASS_SLUGS,
-  RAIL_DIR_NAME,
   RAIL_FILE_SUFFIX,
   buildRailSkeleton,
   findCorpusRoot,
   homeRailSubjects,
   loadHomeRailCorpus,
-  resolveUnitContentDir,
+  resolveUnitSectionDir,
 } from "../../lib/home-rails-corpus";
 
 const CHECK = process.argv.includes("--check");
@@ -45,24 +44,15 @@ if (!CHECK) {
   for (const classSlug of HOME_RAIL_CLASS_SLUGS) {
     for (const subject of homeRailSubjects(classSlug)) {
       for (const unit of subject.units) {
-        let unitDir = resolveUnitContentDir(
+        const railsDir = resolveUnitSectionDir(
           corpusRoot,
           classSlug,
           subject.slug,
           unit.id,
+          "visuals/rails",
         );
-        if (!unitDir) {
-          unitDir = path.join(
-            corpusRoot,
-            "content",
-            "ravikishan",
-            classSlug,
-            subject.slug,
-            unit.id,
-          );
-        }
-        fs.mkdirSync(path.join(unitDir, RAIL_DIR_NAME), { recursive: true });
-        const file = path.join(unitDir, RAIL_DIR_NAME, `${unit.id}${RAIL_FILE_SUFFIX}`);
+        fs.mkdirSync(railsDir, { recursive: true });
+        const file = path.join(railsDir, `${unit.id}${RAIL_FILE_SUFFIX}`);
         if (fs.existsSync(file)) {
           kept++;
           continue;
@@ -97,7 +87,7 @@ for (const classSlug of HOME_RAIL_CLASS_SLUGS) {
   for (const subject of homeRailSubjects(classSlug)) {
     for (const unit of subject.units) {
       totalUnits++;
-      const unitDir = resolveUnitContentDir(
+      const unitDir = resolveUnitSectionDir(
         corpusRoot,
         classSlug,
         subject.slug,
@@ -105,7 +95,7 @@ for (const classSlug of HOME_RAIL_CLASS_SLUGS) {
       );
       const key = `${classSlug}/${subject.slug}/${unit.id}`;
       const files = byUnit.get(key) ?? [];
-      if (!unitDir) {
+      if (!fs.existsSync(unitDir)) {
         failures++;
         console.log(`${key.padEnd(40)} ${"—".padEnd(30)} MISSING unit dir`);
         continue;

@@ -23,7 +23,7 @@ function baseName(p: string) {
 
 async function getRavikishanNote(sourcePath: string) {
   const safe = sourcePath.replace(/\\/g, "/").replace(/^\/+/, "").replace(/^(\.\.\/)+/, "");
-  const index = await loadData<Record<string, RavikishanIndexEntry>>("ravikishan/_index.json");
+  const index = await loadData<Record<string, RavikishanIndexEntry>>("content/_index.json");
   const data = index[safe];
   if (!data) return null;
   const title = data.title ?? baseName(sourcePath);

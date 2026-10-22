@@ -90,7 +90,7 @@ export async function getTopicManifest(
  * this unit/topic AND its JSON file actually exists — mirroring the client
  * workspace, which loads the manifest entry and then the file itself.
  *
- * The supplementary `ravikishan/manifest.json` is deliberately NOT counted.
+ * The supplementary `content/manifest.json` is deliberately NOT counted.
  * Its class-12 entries are generated stubs ("This topic covers the fundamental
  * concepts of …", "Key definitions and theorems related to … should be
  * memorized") whose payload files are not shipped, so treating them as notes

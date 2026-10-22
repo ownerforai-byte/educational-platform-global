@@ -1,4 +1,4 @@
-// Validates every mindmap.json under content/ravikishan/class-11-notes:
+// Validates every mindmap.json under content/visuals/mindmaps/class-11:
 // parses JSON and checks the expected schema fields.
 const fs = require('fs');
 const path = require('path');
@@ -36,6 +36,6 @@ function walk(d) {
     }
   }
 }
-walk('content/ravikishan/class-11-notes');
+walk('content/visuals/mindmaps/class-11');
 console.log('checked:', total, '| fully valid:', ok, '| problems:', problems.length);
 if (problems.length) console.log(problems.join('\n'));

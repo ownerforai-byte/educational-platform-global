@@ -38,16 +38,17 @@ function findRepoRoot(): string {
     if (!start) continue;
     let dir = path.resolve(start);
     for (let i = 0; i < 4 && dir !== path.parse(dir).root; i++) {
-      if (fs.existsSync(path.join(dir, "content", "ravikishan"))) return dir;
+      if (fs.existsSync(path.join(dir, "content", "notes"))) return dir;
       dir = path.dirname(dir);
     }
   }
-  console.error("content/ravikishan corpus not found — run this from inside the repository");
+  console.error("content/notes corpus not found — run this from inside the repository");
   process.exit(2);
 }
 
 const ROOT = findRepoRoot();
-const SRC = path.join(ROOT, "content", "ravikishan");
+// The classified tree: content/notes/concepts/<class>/<subject>/<unit>/*.json
+const SRC = path.join(ROOT, "content", "notes", "concepts");
 const TS_SRC = path.join(ROOT, "frontend", "content-src");
 const DEST = path.join(ROOT, "frontend", "public", "data", "syllabus-notes");
 
@@ -67,21 +68,20 @@ const SUBJECTS = ARGS.filter((a) => !a.startsWith("--"));
  * overwrote the first, leaving that class's notes on disk but unreachable
  * (every one of its topic pages rendered "Coming Soon").
  *
- * `class-11-notes` is the source, matching the legacy script this ports
- * (`content-tools/build-syllabus-notes.js`, whose SRC is exactly
- * `content/ravikishan/class-11-notes`). Class-12 notes stay reachable through
- * the inline `public/data/ravikishan/manifest.json` supplementary path that
+ * `class-11` is the source (the 2026-10 re-classification merged the legacy
+ * `class-11` / `class-11e` / `class-11-notes` roots into one). Class-12 notes
+ * stay reachable through the `content/manifest.json` supplementary path that
  * `topic-vertical-notes.tsx` already consults; unioning both classes into the
  * manifest would also expose class-12 topics with no curated high-yield
  * fact-bank entry, which `tests/lib/high-yield-topic-facts.test.ts` guards.
  */
-const BUILD_CLASS_DIRS = ["class-11-notes"];
+const BUILD_CLASS_DIRS = ["class-11"];
 
 type Note = { file: string; data: Record<string, unknown> };
 
 /** Authored JSON for one unit, schema-validated. Order follows readdir. */
 function readConcepts(classDir: string, subject: string, unit: string): Note[] {
-  const concepts = path.join(SRC, classDir, subject, unit, "concepts");
+  const concepts = path.join(SRC, classDir, subject, unit);
   if (!fs.existsSync(concepts)) return [];
   const out: Note[] = [];
   for (const f of fs.readdirSync(concepts).filter((x) => x.endsWith(".json"))) {
@@ -101,6 +101,24 @@ function readConcepts(classDir: string, subject: string, unit: string): Note[] {
       if (isPlaceholderContent(rawText)) {
         console.warn(`  ! placeholder copied without schema pass: ${subject}/${unit}/${f}`);
         out.push({ file: f, data: raw as Record<string, unknown> });
+        continue;
+      }
+      // The merged classified tree also carries the older "second content
+      // family" — the class-11/class-11e legacy ingest, measured as files with
+      // NO embedded unitSlug/topicSlug/topicTitle and/or the old note format's
+      // extra keys (`type`, `order` → "unrecognized key" issues). They were
+      // never part of this build and stay reachable through
+      // content/manifest.json, so skip them with a warning instead of failing
+      // on pre-existing content. Any other schema violation is still fatal
+      // (that gate is what catches bad new authoring).
+      const rawRec = raw as Record<string, unknown>;
+      const missingSlugs =
+        rawRec.unitSlug === undefined &&
+        rawRec.topicSlug === undefined &&
+        rawRec.topicTitle === undefined;
+      const onlyLegacyKeys = parsed.error.issues.every((i) => i.code === "unrecognized_keys");
+      if (missingSlugs || onlyLegacyKeys) {
+        console.warn(`  ! skipped legacy-family file: ${subject}/${unit}/${f}`);
         continue;
       }
       const issues = parsed.error.issues
@@ -269,7 +287,7 @@ async function buildSubject(subject: string, outRoot: string): Promise<number> {
  * `--check`: every file this build produces must exist byte-identical. Files in
  * `public/data/syllabus-notes/` that this build does NOT produce are reported
  * separately and do not fail the gate by default: the tree may carry files with
- * no source in `content/ravikishan`. The 2026-10-10 consolidation imported the
+ * no source in `content/notes/concepts`. The 2026-10-10 consolidation imported the
  * old hand-managed second family (131 files) into the corpus and pruned the
  * superseded copies, so exactly ONE extra remains today:
  * `physics/heat-and-temperature/heat-and-temperature.json` (159 notes, over

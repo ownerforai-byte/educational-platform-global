@@ -3,7 +3,7 @@
  * the UI can tell apart "missing" from "broken" from "empty".
  *
  *  NOT_ADDED — no content is attached to this syllabus slot at all.
- *              Fix: create the JSON under content/ravikishan/... then run
+ *              Fix: create the JSON under content/notes/concepts/... then run
  *              `npm run content:build`.
  *  EMPTY     — the content entry exists and loads, but has no usable text
  *              (missing/blank `notes`).
@@ -24,7 +24,7 @@ export const NOTE_STATUS = {
 export type NoteStatus = (typeof NOTE_STATUS)[keyof typeof NOTE_STATUS];
 
 export const NOTE_STATUS_HINTS: Record<NoteStatus, string> = {
-  [NOTE_STATUS.NOT_ADDED]: "No note is attached here yet — add one under content/ravikishan/, then run npm run content:build.",
+  [NOTE_STATUS.NOT_ADDED]: "No note is attached here yet — add one under content/notes/concepts/, then run npm run content:build.",
   [NOTE_STATUS.EMPTY]: "Note exists but its notes array is missing or blank.",
   [NOTE_STATUS.BROKEN]: "Note failed to load/render — verify the JSON parses and re-run npm run content:build.",
   [NOTE_STATUS.OK]: "Loaded and rendered successfully.",

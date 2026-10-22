@@ -65,8 +65,8 @@ for (const s of subjects) {
 
 console.log(`\nTOTAL note files: ${grandFiles} | WITH real content: ${filledNotes} | EMPTY: ${emptyNotes} | BROKEN: ${brokenFiles} | broken manifests: ${brokenManifests}`);
 
-const rkm = readJSON(path.join(base, "ravikishan", "manifest.json"));
-console.log("ravikishan/manifest.json:", Array.isArray(rkm) ? `array len ${rkm.length}` : rkm ? `object, keys=${Object.keys(rkm).length}` : "MISSING/INVALID");
+const rkm = readJSON(path.join(base, "content", "manifest.json"));
+console.log("content/manifest.json:", Array.isArray(rkm) ? `array len ${rkm.length}` : rkm ? `object, keys=${Object.keys(rkm).length}` : "MISSING/INVALID");
 
 const exDir = path.join(base, "exams");
 if (fs.existsSync(exDir) && fs.statSync(exDir).isDirectory()) {

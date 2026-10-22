@@ -31,16 +31,17 @@ function findRepoRoot(): string {
     if (!start) continue;
     let dir = path.resolve(start);
     for (let i = 0; i < 4 && dir !== path.parse(dir).root; i++) {
-      if (fs.existsSync(path.join(dir, "content", "ravikishan"))) return dir;
+      if (fs.existsSync(path.join(dir, "content", "notes"))) return dir;
       dir = path.dirname(dir);
     }
   }
-  console.error("content/ravikishan corpus not found — run this from inside the repository");
+  console.error("content/notes corpus not found — run this from inside the repository");
   process.exit(2);
 }
 
 const ROOT = findRepoRoot();
-const SRC = path.join(ROOT, "content", "ravikishan");
+// The classified concept tree: content/notes/concepts/<class>/<subject>/<unit>
+const SRC = path.join(ROOT, "content", "notes", "concepts");
 const FIX = process.argv.includes("--fix");
 
 const REQUIRED = ["title", "unitSlug", "topicSlug", "topicTitle", "notes"];
@@ -73,12 +74,11 @@ for (const classDir of fs.readdirSync(SRC).sort()) {
       if (!fs.statSync(unitPath).isDirectory()) continue;
 
       const unitRef = checkSyllabusUnit(classSlug, subject, unit);
-      const conceptsDir = path.join(unitPath, "concepts");
-      if (!unitRef.ok && fs.existsSync(conceptsDir)) {
+      // The unit dir IS the concepts dir in the classified tree.
+      const conceptsDir = unitPath;
+      if (!unitRef.ok) {
         report.orphanUnits.push(`${subject}/${unit} — ${unitRef.reason}`);
       }
-
-      if (!fs.existsSync(conceptsDir)) continue;
       const files = fs.readdirSync(conceptsDir).filter((f) => f.endsWith(".json"));
       if (files.length === 0) continue;
 

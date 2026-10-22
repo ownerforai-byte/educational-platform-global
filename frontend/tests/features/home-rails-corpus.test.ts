@@ -13,7 +13,7 @@ import {
   groupReadyByUnit,
   loadHomeRailCorpus,
   railReadiness,
-  resolveUnitContentDir,
+  resolveUnitSectionDir,
   syllabusUnitOrder,
   toRailSlideData,
   type HomeRailFile,
@@ -29,10 +29,28 @@ import { HOME_RAIL_ICONS } from "@/lib/home-subject-slides";
 function corpusRoot(): string {
   let dir = path.resolve(process.cwd());
   for (let i = 0; i < 5 && dir !== path.parse(dir).root; i++) {
-    if (existsSync(path.join(dir, "content", "ravikishan"))) return dir;
+    if (existsSync(path.join(dir, "content", "notes"))) return dir;
     dir = path.dirname(dir);
   }
-  throw new Error("content/ravikishan not found walking up from " + process.cwd());
+  throw new Error("classified content/ corpus not found walking up from " + process.cwd());
+}
+
+/**
+ * A unit is covered when any of its content sections exists. Units are not
+ * required to own concept notes — e.g. class-12 `english/language-development`
+ * is rails + question banks only — so the probe accepts any section dir.
+ */
+function unitContentDir(
+  root: string,
+  classSlug: string,
+  subject: string,
+  unit: string,
+): string | undefined {
+  for (const section of ["notes/concepts", "visuals/rails", "visuals/mindmaps"] as const) {
+    const dir = resolveUnitSectionDir(root, classSlug, subject, unit, section);
+    if (existsSync(dir)) return dir;
+  }
+  return undefined;
 }
 
 const class11 = SYLLABUS.find((c) => c.slug === HOME_RAIL_CLASS_SLUG);
@@ -46,7 +64,7 @@ describe("home rail corpus", () => {
     const root = corpusRoot();
     const missing: string[] = [];
     for (const u of units) {
-      const dir = resolveUnitContentDir(root, HOME_RAIL_CLASS_SLUG, u.subject, u.id);
+      const dir = unitContentDir(root, HOME_RAIL_CLASS_SLUG, u.subject, u.id);
       if (!dir) {
         missing.push(`${u.subject}/${u.id} (no content dir)`);
       }
@@ -64,7 +82,7 @@ describe("home rail corpus", () => {
     );
     const missing: string[] = [];
     for (const u of units12) {
-      const dir = resolveUnitContentDir(root, HOME_RAIL_CLASS_12_SLUG, u.subject, u.id);
+      const dir = unitContentDir(root, HOME_RAIL_CLASS_12_SLUG, u.subject, u.id);
       if (!dir) {
         missing.push(`${u.subject}/${u.id} (no content dir)`);
       }
@@ -80,7 +98,9 @@ describe("home rail corpus", () => {
       expect(e.file).toMatch(/\.rail\.json$/);
       expect(Array.isArray(e.reasons)).toBe(true);
     }
-  });
+    // Full-corpus fs read: under parallel-suite load on Windows this pushes
+    // past the 5 s default (same explicit budget as schema-corpus.test.ts).
+  }, 20_000);
 
   it("bounds home-page corpus reads per class, subject, and unit", () => {
     const entries = loadHomeRailCorpus(
@@ -152,7 +172,7 @@ describe("home rail corpus", () => {
       classSlug: HOME_RAIL_CLASS_SLUG,
       subjectSlug: "physics",
       unitId: "vectors",
-      file: "content/ravikishan/class-11-notes/physics/vectors/rails/vectors.rail.json",
+      file: "content/visuals/rails/class-11/physics/vectors/vectors.rail.json",
       record: filled,
       ready: true,
       reasons: [],
@@ -172,7 +192,7 @@ describe("home rail corpus", () => {
         `${e.file}: icon "${slide.iconName}" not in HOME_RAIL_ICONS`,
       ).toBe(true);
     }
-  });
+  }, 20_000); // full-corpus fs read + slide mapping; explicit budget like schema-corpus.test.ts
 
   it("keeps the icon allowlist covering all six rail subjects", () => {
     for (const name of ["Atom", "FlaskConical", "Dna", "Sigma", "BookOpen", "Languages"]) {

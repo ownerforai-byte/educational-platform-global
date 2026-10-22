@@ -53,8 +53,8 @@
  *    1. rewrites the canonical source files (preserving each file's own
  *       line-ending / trailing-newline convention),
  *    2. deletes the absorbed duplicates,
- *    3. syncs both `ravikishan/_index.json` copies and
- *       `frontend/public/data/ravikishan/manifest.json` (byte-stable:
+ *    3. syncs both `content/_index.json` copies and
+ *       `frontend/public/data/content/manifest.json` (byte-stable:
  *       sorted keys, 2-space indent, CRLF, trailing newline),
  *    4. deletes only the runtime-mirror files whose emitted name maps to an
  *       absorbed source (`frontend/public/data/syllabus-notes/...`), leaving
@@ -71,12 +71,13 @@ import { ConceptNoteSchema } from "../frontend/lib/content/schema/concept";
 import { isGeneratorJunkLine } from "../frontend/lib/content/generator-junk";
 
 const ROOT = process.cwd();
-const RK = path.join(ROOT, "content", "ravikishan");
+// The classified content root — `rel` paths are content-relative (= index keys).
+const RK = path.join(ROOT, "content");
 const APPLY = process.argv.includes("--apply");
 const REPORT = path.join(ROOT, "reports", "note-relations.json");
 
 if (!fs.existsSync(RK)) {
-  console.error("merge-related-notes: content/ravikishan not found — run from the repo root");
+  console.error("merge-related-notes: content/ not found — run from the repo root");
   process.exit(2);
 }
 
@@ -165,28 +166,40 @@ type Rec = {
 };
 
 const FAMILIES = new Set(["concepts", "graph", "examples", "formula"]);
+/** Classified section → family name (see frontend/lib/content/paths.ts). */
+const FAMILY_SECTIONS: Array<[string, string]> = [
+  ["notes/concepts", "concepts"],
+  ["visuals/graphs", "graph"],
+  ["practice/examples", "examples"],
+  ["formulas", "formula"],
+];
 const recs: Rec[] = [];
 
-(function walk(dir: string) {
-  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-    const abs = path.join(dir, e.name);
-    if (e.isDirectory()) { walk(abs); continue; }
-    if (!e.name.endsWith(".json") || e.name.startsWith("_") || e.name === "plan.json") continue;
-    const rel = path.relative(RK, abs).split(path.sep).join("/");
-    const parts = rel.split("/");
-    if (parts.length !== 5) continue; // cls/subject/unit/family/file
-    const [cls, subject, unit, family] = parts;
-    if (!FAMILIES.has(family)) continue;
-    let data: Record<string, unknown>;
-    try { data = JSON.parse(fs.readFileSync(abs, "utf8")); } catch { continue; }
-    const raw = fs.readFileSync(abs);
-    recs.push({
-      rel, abs, cls, subject, unit, family, data,
-      hadCrlf: raw.includes(0x0d),
-      hadTrailingNl: raw.length > 1 && (raw[raw.length - 1] === 0x0a),
-    });
-  }
-})(RK);
+for (const [section, family] of FAMILY_SECTIONS) {
+  (function walk(dir: string) {
+    if (!fs.existsSync(dir)) return;
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const abs = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(abs); continue; }
+      if (!e.name.endsWith(".json") || e.name.startsWith("_") || e.name === "plan.json") continue;
+      const rel = path.relative(RK, abs).split(path.sep).join("/");
+      const tail = rel.slice(section.length + 1).split("/");
+      if (tail.length !== 4) continue; // cls/subject/unit/file
+      const [cls, subject, unit] = tail;
+      let data: Record<string, unknown>;
+      try { data = JSON.parse(fs.readFileSync(abs, "utf8")); } catch { continue; }
+      const raw = fs.readFileSync(abs);
+      recs.push({
+        rel, abs, cls, subject, unit, family, data,
+        hadCrlf: raw.includes(0x0d),
+        hadTrailingNl: raw.length > 1 && (raw[raw.length - 1] === 0x0a),
+      });
+    }
+  })(path.join(RK, ...section.split("/")));
+}
+
+/** rel → `cls/subject/unit` scope key (the scopes map key space). */
+const scopeByRel = new Map(recs.map((r) => [r.rel, `${r.cls}/${r.subject}/${r.unit}`]));
 
 /* ───────────────────────── identity keys ───────────────────────── */
 
@@ -541,7 +554,7 @@ function mergeGroup(group: Rec[]): { merged: Record<string, unknown> | null; jun
     return { merged: null, junkDropped, slugsDropped, reason: "nothing real survives the merge" };
   }
   if (!Array.isArray(merged.notes) || !merged.notes.length) merged.notes = []; // required by the schema
-  if (canon.cls.endsWith("-notes") && canon.family === "concepts") {
+  if (canon.family === "concepts") {
     const parsed = ConceptNoteSchema.safeParse(merged);
     if (!parsed.success) {
       return { merged: null, junkDropped, slugsDropped, reason: `schema: ${parsed.error.issues[0]?.path.join(".")} ${parsed.error.issues[0]?.message}` };
@@ -563,7 +576,7 @@ for (const group of mergeGroups) {
     continue;
   }
   // re-derive canonical exactly as mergeGroup scored it
-  const scoreOf = (r: Rec) => [r.cls.endsWith("-notes") ? 1 : 0, r.data.duplicateType ? 0 : 1, realStrings(r.data).length, -r.rel.length];
+  const scoreOf = (r: Rec) => [r.data.duplicateType ? 0 : 1, realStrings(r.data).length, -r.rel.length];
   const canonRec = [...group].sort((a, b) => {
     const sa = scoreOf(a), sb = scoreOf(b);
     for (let i = 0; i < sa.length; i++) if (sa[i] !== sb[i]) return sb[i] - sa[i];
@@ -625,7 +638,7 @@ for (let guard = 0; guard < 200; guard++) {
   if (sim.placeholder <= beforeState.placeholder && !newDirty.length) break;
   // sacrifice the newest group touching a newly-dirty scope, else the largest
   const culprit = order.find((p) => {
-    const scopeOf = (rel: string) => rel.split("/").slice(0, 3).join("/");
+    const scopeOf = (rel: string) => scopeByRel.get(rel) ?? rel;
     const scopes_touched = new Set([p.canonical, ...p.absorbed].map(scopeOf));
     return newDirty.some((s) => scopes_touched.has(s));
   }) ?? order[0];
@@ -660,7 +673,7 @@ if (APPLY) {
   }
 
   // both _index.json copies + the imported-notes manifest
-  const idxPaths = [path.join(RK, "_index.json"), path.join(ROOT, "frontend", "public", "data", "ravikishan", "_index.json")];
+  const idxPaths = [path.join(RK, "_index.json"), path.join(ROOT, "frontend", "public", "data", "content", "_index.json")];
   for (const p of idxPaths) {
     if (!fs.existsSync(p)) continue;
     const index = JSON.parse(fs.readFileSync(p, "utf8")) as Record<string, unknown>;
@@ -671,7 +684,7 @@ if (APPLY) {
     }
     fs.writeFileSync(p, serialiseIndex(index));
   }
-  const manifestPath = path.join(ROOT, "frontend", "public", "data", "ravikishan", "manifest.json");
+  const manifestPath = path.join(ROOT, "frontend", "public", "data", "content", "manifest.json");
   if (fs.existsSync(manifestPath)) {
     const items = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as { path: string; data: Record<string, unknown> }[];
     const next = items
@@ -692,7 +705,7 @@ if (APPLY) {
     const emitted = new Map<string, string>(); // emitted rel → source rel
     for (const [scopeKey, files] of scopes) {
       const [cls, subject, unit] = scopeKey.split("/");
-      if (cls !== "class-11-notes") continue; // BUILD_CLASS_DIRS
+      if (cls !== "class-11") continue; // BUILD_CLASS_DIRS
       const originals = new Map<string, Rec>();
       for (const r of files) if (!r.data.duplicateType) originals.set(String(r.data.topicSlug), r);
       for (const r of files) {

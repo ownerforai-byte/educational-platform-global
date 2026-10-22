@@ -2692,6 +2692,18 @@
   },
   {
     "unitSlug": "work-energy-and-power",
+    "topicSlug": "conservation-energy",
+    "title": "Conservation of Energy",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "04-conservation-energy.json",
+    "tabGroup": "work-energy-theorem",
+    "hasMcqs": true,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "work-energy-and-power",
     "topicSlug": "conservation-of-energy",
     "title": "Conservation of Energy",
     "noteCount": 13,
@@ -2730,9 +2742,55 @@
     "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
+    "filename": "02-power--2.json",
+    "hasMcqs": false,
+    "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "work-energy-and-power",
+    "topicSlug": "power",
+    "title": "Power",
+    "noteCount": 5,
+    "source": "ravikishan",
+    "duplicateType": 1,
     "filename": "02-power.json",
     "hasMcqs": false,
     "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "work-energy-and-power",
+    "topicSlug": "work-constant-variable-force",
+    "title": "Work Done by Constant and Variable Force",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-work-constant-variable-force.json",
+    "hasMcqs": true,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "work-energy-and-power",
+    "topicSlug": "work-constant-variable-force",
+    "title": "Work-Energy Theorem",
+    "noteCount": 11,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-work-energy-theorem-2.json",
+    "tabGroup": "work-constant-variable-force",
+    "hasMcqs": true,
+    "universalFactsCount": 8
+  },
+  {
+    "unitSlug": "work-energy-and-power",
+    "topicSlug": "work-constant-variable-force",
+    "title": "Elastic and Inelastic Collisions",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "05-collisions-2.json",
+    "tabGroup": "work-constant-variable-force",
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "work-energy-and-power",
@@ -2764,64 +2822,6 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-work-energy-theorem-kinetic-and-potential-energy.json",
-    "hasMcqs": true,
-    "universalFactsCount": 5
-  },
-  {
-    "unitSlug": "work-energy-power",
-    "topicSlug": "conservation-energy",
-    "title": "Conservation of Energy",
-    "noteCount": 8,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-conservation-energy.json",
-    "tabGroup": "work-energy-theorem",
-    "hasMcqs": true,
-    "universalFactsCount": 5
-  },
-  {
-    "unitSlug": "work-energy-power",
-    "topicSlug": "power",
-    "title": "Power",
-    "noteCount": 5,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-power.json",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "work-energy-power",
-    "topicSlug": "work-constant-variable-force",
-    "title": "Work Done by Constant and Variable Force",
-    "noteCount": 8,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-work-constant-variable-force.json",
-    "hasMcqs": true,
-    "universalFactsCount": 5
-  },
-  {
-    "unitSlug": "work-energy-power",
-    "topicSlug": "work-constant-variable-force",
-    "title": "Work-Energy Theorem",
-    "noteCount": 11,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-work-energy-theorem-2.json",
-    "tabGroup": "work-constant-variable-force",
-    "hasMcqs": true,
-    "universalFactsCount": 8
-  },
-  {
-    "unitSlug": "work-energy-power",
-    "topicSlug": "work-constant-variable-force",
-    "title": "Elastic and Inelastic Collisions",
-    "noteCount": 8,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "05-collisions-2.json",
-    "tabGroup": "work-constant-variable-force",
     "hasMcqs": true,
     "universalFactsCount": 5
   }

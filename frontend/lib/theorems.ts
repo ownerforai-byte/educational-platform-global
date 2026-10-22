@@ -1,7 +1,7 @@
 /**
  * Theorem & Proof Index Utility
  *
- * Scans `content/ravikishan/{classSlug}/{subjectSlug}/` directories for
+ * Scans `content/notes/concepts/{class}/{subjectSlug}/` directories for
  * concept JSON files that contain theorem statements or proofs,
  * then returns them grouped by unit and topic.
  *
@@ -190,7 +190,7 @@ async function scanSubject(
   subjectSlug: string,
 ): Promise<TheoremEntry[]> {
   const { readdir, readFile } = await import("node:fs/promises");
-  const baseDir = join(/*turbopackIgnore: true*/ PROJECT_ROOT, "content", "ravikishan", classSlug, subjectSlug);
+  const baseDir = join(/*turbopackIgnore: true*/ PROJECT_ROOT, "content", "notes", "concepts", classSlug.replace(/-notes$/, ""), subjectSlug);
   const entries: TheoremEntry[] = [];
 
   try {
@@ -203,13 +203,13 @@ async function scanSubject(
       const unitInfo = findUnit(classSlug, subjectSlug, unitId);
       const unitTitle = unitInfo?.title ?? unitId;
 
-      const conceptsDir = join(baseDir, unitId, "concepts");
+      const conceptsDir = join(baseDir, unitId);
       try {
         const conceptFiles = await readdir(conceptsDir, { withFileTypes: true });
         for (const conceptFile of conceptFiles) {
           if (!conceptFile.name.endsWith(".json")) continue;
           const fullPath = join(conceptsDir, conceptFile.name);
-          const filePath = join("content", "ravikishan", classSlug, subjectSlug, unitId, "concepts", conceptFile.name);
+          const filePath = join("content", "notes", "concepts", classSlug.replace(/-notes$/, ""), subjectSlug, unitId, conceptFile.name);
           const raw = await readFile(fullPath, "utf-8");
           if (!isTheoremNote(raw)) continue;
           if (LEGACY_CLASS_SLUGS.has(classSlug)) continue;
@@ -269,7 +269,7 @@ function findUnit(
  */
 async function getSubjectsForClass(classSlug: string): Promise<string[]> {
   const { readdir } = await import("node:fs/promises");
-  const baseDir = join(/*turbopackIgnore: true*/ PROJECT_ROOT, "content", "ravikishan", classSlug);
+  const baseDir = join(/*turbopackIgnore: true*/ PROJECT_ROOT, "content", "notes", "concepts", classSlug.replace(/-notes$/, ""));
   try {
     const items = await readdir(baseDir, { withFileTypes: true });
     const syllabusSlugs = new Set(

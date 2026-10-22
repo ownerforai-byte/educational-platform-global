@@ -112,7 +112,7 @@ const EVIDENCE = [
   "scripts/content-health-check.mjs",
   "scripts/enrichment/rebuild-legacy-mindmaps.mjs",
   "frontend/public/data/content-ledger.json",
-  "frontend/public/data/ravikishan/_index.json",
+  "frontend/public/data/content/_index.json",
   ".github/workflows/ci.yml",
   ".github/workflows/live-smoke.yml",
 ];

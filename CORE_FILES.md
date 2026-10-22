@@ -51,6 +51,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `PROJECT_STATUS.md` | Real-time truth of deployed architecture, databases, auth, and environments. |
 | `SYSTEM_WORK_TRACKER.md` | Audit of all 31 platform work types and systems. |
 | `BRANCHES.md` | Git branch assignment (48 area branches) and scoped test rules. |
+| `frontend/lib/content/paths.ts` | The ONE place that knows the classified `content/` tree: section map, class/unit normalization, path parsing. If the tree moves again, it moves here first. |
 
 ### C. Backend API & Middlewares (Server Core)
 | File | Role |

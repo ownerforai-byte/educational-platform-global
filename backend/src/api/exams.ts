@@ -6,7 +6,7 @@ import { resolveDataPath } from "../utils/paths";
 const router = Router();
 
 function getExamsDir(): string {
-  return resolveDataPath("exams");
+  return resolveDataPath("practice", "exams");
 }
 
 const SAFE_SLUG = /^[a-z0-9-]+$/;

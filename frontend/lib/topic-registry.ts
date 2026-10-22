@@ -12,7 +12,8 @@
  *   - frontend/scripts/content/registry.ts  (validate + emit public/data JSON)
  *   - frontend routing / deep-linking code  (resolveTopicSlug, topicRoute)
  *
- * Content payload itself stays as JSON under content/ravikishan/...
+ * Content payload itself stays as JSON under content/notes/concepts/... (the
+ * classified tree — see lib/content/paths.ts).
  * This file only says *where a topic lives and how to reach it*.
  */
 
@@ -48,7 +49,7 @@ export type TopicEntry = {
    * `work-energy-and-power`).
    */
   legacyUnits?: string[];
-  /** Where the content payload lives. Default: "json" under content/ravikishan. */
+  /** Where the content payload lives. Default: "json" under content/notes/concepts. */
   payload?: TopicPayloadKind;
   /** Free-form authoring note. */
   notes?: string;
@@ -232,14 +233,16 @@ export function topicRoute(entry: TopicEntry): string {
 }
 
 /**
- * Relative payload directory for a topic's content JSON files,
- * resolved from the repo root.
+ * Relative payload directory for a topic's content JSON files (its concept
+ * notes), resolved from the repo root:
+ *   content/notes/concepts/<class>/<subject>/<unit>
  */
 export function topicPayloadDir(entry: TopicEntry): string {
   return [
     "content",
-    "ravikishan",
-    entry.classSlug,
+    "notes",
+    "concepts",
+    entry.classSlug.replace(/-notes$/, ""),
     entry.subjectSlug,
     entry.unitSlug,
   ].join("/");

@@ -42,16 +42,17 @@ function findRepoRoot(): string {
     if (!start) continue;
     let dir = path.resolve(start);
     for (let i = 0; i < 4 && dir !== path.parse(dir).root; i++) {
-      if (fs.existsSync(path.join(dir, "content", "ravikishan"))) return dir;
+      if (fs.existsSync(path.join(dir, "content", "notes"))) return dir;
       dir = path.dirname(dir);
     }
   }
-  console.error("content/ravikishan corpus not found — run this from inside the repository");
+  console.error("content/notes corpus not found — run this from inside the repository");
   process.exit(2);
 }
 
 const REPO = findRepoRoot();
-const CORPUS = path.join(REPO, "content", "ravikishan");
+// The whole classified tree — scope-by-path decides what is in schema scope.
+const CORPUS = path.join(REPO, "content");
 const BASELINE = path.join(REPO, "scripts", "content-schema-baseline.json");
 
 const ARGS = process.argv.slice(2);
@@ -104,18 +105,18 @@ if (fs.existsSync(CORPUS)) {
   for (const file of collect(CORPUS)) {
     const rel = path.relative(REPO, file).replaceAll(path.sep, "/");
 
-    // `content/ravikishan/` holds MORE THAN ONE tree:
+    // `content/` is the CLASSIFIED tree — each section has its own shape:
     //
-    //   class-11-notes/{subject}/{unit}/concepts/NN-slug.json  <- concept notes
-    //   class-11-notes/{subject}/{unit}/mindmap/mindmap.json    <- mindmaps
-    //   class-11/{subject}/pyqs/, /theory/                      <- DIFFERENT
+    //   notes/concepts/{class}/{subject}/{unit}/NN-slug.json <- concept notes
+    //   visuals/mindmaps/{class}/{subject}/{unit}/*.json     <- mindmaps
+    //   practice/questions/, notes/theory/, formulas/, …     <- DIFFERENT
     //                                                      shapes (exam banks)
     //
-    // Applying ConceptNoteSchema to the third kind manufactures hundreds of
+    // Applying ConceptNoteSchema to the other kinds manufactures hundreds of
     // false positives — a schema error that isn't one. Scope is chosen by
     // path; anything else is counted as OUT-OF-SCOPE, not as a violation.
-    const isConceptPath = /\/(class-\d+-notes)\/[^/]+\/[^/]+\/concepts\//.test(rel);
-    const isMindmapPath = /\/(class-\d+-notes)\/[^/]+\/[^/]+\/mindmap\//.test(rel);
+    const isConceptPath = /^content\/notes\/concepts\/(class-\d+)\//.test(rel);
+    const isMindmapPath = /^content\/visuals\/mindmaps\/(class-\d+)\//.test(rel);
 
     if (!isConceptPath && !isMindmapPath) {
       other.push(rel);
@@ -150,9 +151,10 @@ if (fs.existsSync(CORPUS)) {
     // 226/654 files sit outside the syllabus today (authored sub-topic
     // granularity plus 11 off-syllabus unit directories). `doctor.ts` carries
     // the full per-file report; here it is a visible count plus the unit class.
-    const refMatch = /(class-\d+-notes)\/([^/]+)\/([^/]+)\/(concepts|mindmap)\//.exec(rel);
+    const refMatch = /^content\/(notes\/concepts|visuals\/mindmaps)\/(class-\d+)\/([^/]+)\/([^/]+)\//.exec(rel);
     if (refMatch) {
-      const [, classDir, subjectSlug, unitSlug, kind] = refMatch;
+      const [, section, classDir, subjectSlug, unitSlug] = refMatch;
+      const kind = section === "notes/concepts" ? "concepts" : "mindmap";
       const classSlug = CLASS_DIR_TO_SLUG[classDir] ?? classDir;
       const topicSlug =
         kind === "concepts" && typeof (parsed as { topicSlug?: unknown }).topicSlug === "string"

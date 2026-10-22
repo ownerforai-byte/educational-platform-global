@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { classDirOfTrack, normalizeClassDir, parseContentPath } from "@/lib/content/paths";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { EmptyState } from "./empty-state";
@@ -93,29 +94,25 @@ function useTopicConcept(props: Props): {
     let cancelled = false;
     setState({ data: null, loading: true });
 
-    loadData<ManifestEntry[]>("ravikishan/manifest.json")
+    loadData<ManifestEntry[]>("content/manifest.json")
       .then((manifest) => {
         if (cancelled) return;
-        const match = manifest.find((m) => {
-          const parts = m.path.split("/");
-          if (parts.length < 5) return false;
-          const [cls, subj, unit] = [parts[0], parts[1], parts[2]];
-          if (cls !== props.classSlug || subj !== props.subjectSlug) return false;
-          if (unit !== props.unitId) return false;
-          if (parts[3] !== "concepts") return false;
-          return m.data?.topicSlug === props.topicSlug;
-        });
-        const entry =
-          match ??
-          manifest.find((m) => {
-            const parts = m.path.split("/");
-            return (
-              parts[0] === props.classSlug &&
-              parts[1] === props.subjectSlug &&
-              parts[2] === props.unitId &&
-              parts[3] === "concepts"
-            );
-          });
+        // Classified keys: `notes/concepts/<class>/<subject>/<unit>/<file>` —
+        // parse the shape instead of positional split[0..3].
+        const classDir = normalizeClassDir(classDirOfTrack(props.classSlug));
+        const atPlace = (m: ManifestEntry) => {
+          const parsed = parseContentPath(m.path);
+          return (
+            parsed?.kind === "concepts" &&
+            parsed.classDir === classDir &&
+            parsed.subjectSlug === props.subjectSlug &&
+            parsed.unitSlug === props.unitId
+          );
+        };
+        const match = manifest.find(
+          (m) => atPlace(m) && m.data?.topicSlug === props.topicSlug,
+        );
+        const entry = match ?? manifest.find(atPlace);
         if (cancelled) return;
         setState({ data: entry ? entry.data : null, loading: false });
       })

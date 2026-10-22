@@ -3,7 +3,7 @@
 // Replaces wrong-topic contamination (e.g. calculus facts in the Rutherford file).
 export default [
   {
-    file: "class-11-notes/chemistry/atomic-structure/concepts/01-rutherford-s-atomic-model",
+    file: "notes/concepts/class-11/chemistry/atomic-structure/01-rutherford-s-atomic-model",
     notes: [
       "**Alpha-particle scattering.** Rutherford bombarded a thin gold foil with fast alpha particles and observed their deflection with a fluorescent screen — the experiment that revealed the nucleus.",
       "**Observations.** Most alpha particles passed straight through, a few were deflected at large angles, and about one in 8000 bounced back, showing the positive charge and mass sit in a tiny core.",
@@ -13,7 +13,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/chemistry/basic-concept-of-organic-chemistry/concepts/04-classification-of-organic-compounds",
+    file: "notes/concepts/class-11/chemistry/basic-concept-of-organic-chemistry/04-classification-of-organic-compounds",
     notes: [
       "**Open-chain compounds.** Aliphatic compounds have open carbon chains — straight-chain (n-butane) or branched-chain (isobutane) — and may be saturated or unsaturated.",
       "**Cyclic compounds.** Closed-ring compounds divide into carbocycles (alicyclic like cyclohexane; aromatic like benzene) and heterocycles (furan, pyridine) that contain non-carbon atoms in the ring.",
@@ -23,7 +23,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/chemistry/basic-concept-of-organic-chemistry/concepts/05-alkyl-groups",
+    file: "notes/concepts/class-11/chemistry/basic-concept-of-organic-chemistry/05-alkyl-groups",
     notes: [
       "**Alkyl groups.** An alkyl group is an alkane minus one hydrogen — methyl (CH₃—), ethyl (C₂H₅—), propyl (C₃H₇—) — with the general formula CₙH₂ₙ₊₁.",
       "**Functional group.** An atom or group that determines a compound's characteristic reactions, such as —OH (alcohol), —CHO (aldehyde), —COOH (carboxylic acid) and —NH₂ (amine).",
@@ -33,7 +33,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/chemistry/basic-concept-of-organic-chemistry/concepts/07-preliminary-idea-of-cracking",
+    file: "notes/concepts/class-11/chemistry/basic-concept-of-organic-chemistry/07-preliminary-idea-of-cracking",
     notes: [
       "**Cracking.** Breaking long-chain hydrocarbons into smaller, more useful ones (petrol-range alkanes plus alkenes) thermally or with a zeolite catalyst; it raises petrol yield from crude oil.",
       "**Reforming.** Converting straight-chain alkanes into branched-chain or aromatic hydrocarbons over a platinum catalyst (platforming), which improves fuel quality.",
@@ -43,7 +43,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/chemistry/classification-of-elements-and-periodic-table/concepts/04-nuclear-charge-and-effective-nuclear-charge",
+    file: "notes/concepts/class-11/chemistry/classification-of-elements-and-periodic-table/04-nuclear-charge-and-effective-nuclear-charge",
     notes: [
       "**Nuclear charge.** The total positive charge of the nucleus is Ze, where Z is the atomic number and e the elementary charge; it is the nucleus's pull on the electron cloud.",
       "**Shielding effect.** Inner-shell electrons repel outer electrons and cancel part of the nuclear pull; this screening is greatest in multi-electron atoms.",
@@ -53,7 +53,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/chemistry/stoichiometry/concepts/02-laws-of-stoichiometry",
+    file: "notes/concepts/class-11/chemistry/stoichiometry/02-laws-of-stoichiometry",
     notes: [
       "**Law of conservation of mass.** Lavoisier: matter is neither created nor destroyed in a chemical reaction, so total reactant mass equals total product mass.",
       "**Law of definite proportions.** Proust: a pure compound always contains the same elements in the same fixed proportion by mass, whatever its source — water is always 11.1% hydrogen and 88.9% oxygen by mass.",
@@ -63,7 +63,7 @@ export default [
     ],
   },
   {
-    file: "class-11-notes/chemistry/stoichiometry/concepts/05-calculations-based-on-mole-concept",
+    file: "notes/concepts/class-11/chemistry/stoichiometry/05-calculations-based-on-mole-concept",
     notes: [
       "**The mole.** One mole contains 6.022 × 10²³ entities (Avogadro's number, Nₐ); the molar mass M in g/mol equals the atomic or molecular mass numerically.",
       "**Mass–moles conversion.** n = m/M; for example 36 g of water (M = 18 g/mol) is 2 mol. One mole of any gas at STP occupies 22.4 L.",

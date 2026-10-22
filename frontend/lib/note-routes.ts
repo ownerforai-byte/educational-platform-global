@@ -1,3 +1,4 @@
+import { contentCoords, LEGACY_CLASS_DIRS, normalizeClassDir } from "@/lib/content/paths";
 import type { ImportedNote, NotesTrack } from "@/lib/imported-notes";
 
 /**
@@ -33,8 +34,15 @@ function isSafeSegment(value: string): boolean {
  * target as fallback; defaults to class-11-notes.
  */
 function resolveTrack(note: ImportedNote): NotesTrack {
-  const first = note.path.split(/[\\/]/)[0];
-  if (first === "class-12" || first === "class-12-notes") return "class-12-notes";
+  const { classDir } = contentCoords(note.path);
+  // Historic manifests still carry legacy-rooted paths (`class-12/english/…`)
+  // outside the classified sections; there the path's first segment stays
+  // ground truth (paths.ts LEGACY_CLASS_DIRS).
+  const rootSegment = note.path.split(/[\\/]/)[0] ?? "";
+  const legacyClassDir =
+    rootSegment in LEGACY_CLASS_DIRS ? normalizeClassDir(rootSegment) : undefined;
+  const resolved = classDir ?? legacyClassDir;
+  if (resolved === "class-12" || resolved === "class-12-notes") return "class-12-notes";
   if (TRACKS.has(note.target)) return note.target;
   return "class-11-notes";
 }

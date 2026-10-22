@@ -28,16 +28,16 @@ function findRepoRoot(): string {
     if (!start) continue;
     let dir = path.resolve(start);
     for (let i = 0; i < 4 && dir !== path.parse(dir).root; i++) {
-      if (fs.existsSync(path.join(dir, "content", "ravikishan"))) return dir;
+      if (fs.existsSync(path.join(dir, "content", "notes"))) return dir;
       dir = path.dirname(dir);
     }
   }
-  console.error("repo root containing content/ravikishan not found");
+  console.error("repo root containing content/notes not found");
   process.exit(2);
 }
 
 const REPO = findRepoRoot();
-const CORPUS = path.join(REPO, "content", "ravikishan");
+const CORPUS = path.join(REPO, "content");
 
 const isPlaceholder = isPlaceholderContent;
 
@@ -60,7 +60,7 @@ const problems: string[] = [];
 
 for (const file of collect(CORPUS)) {
   const rel = path.relative(REPO, file).replaceAll(path.sep, "/");
-  if (!/\/(class-\d+-notes)\/[^/]+\/[^/]+\/concepts\//.test(rel)) continue; // concepts only
+  if (!/^content\/notes\/concepts\/(class-\d+)\//.test(rel)) continue; // concepts only
   scanned.files++;
 
   const raw = fs.readFileSync(file, "utf8");
