@@ -152,26 +152,36 @@ if (isCI && !(email && password)) {
   console.log("SKIP  auth round-trip (set SMOKE_OWNER_EMAIL / SMOKE_OWNER_PASSWORD to enable)");
 }
 
-// ── 4. Public guest-chat access remains closed ──
-// The guest route is session- and owner-email-gated (see ai-owner-gate.test.ts).
-// Do not send an unauthenticated prompt through this endpoint or assert the
-// retired free-trial contract; both repeat calls must be rejected before AI.
-const guestUnauthed = await j("/api/ai/guest", {
+// ── 4. Public guest chat: open to visitors, quota-metered ──
+// Owner policy 2026-10-21 ("Open public Veer chat with a refresh-resistant
+// daily quota") supersedes the 2026-10-14 owner-only contract this check used
+// to assert. The route is validation-first (pinned in ai-owner-gate.test.ts):
+// an empty body is rejected BEFORE the quota slot and BEFORE any AI call, so
+// these probes prove the route is public (400, never 401) and that the guest
+// device identity is minted for quota accounting — without spending AI.
+const guestEmpty = await j("/api/ai/guest", {
   method: "POST",
-  body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
+  body: JSON.stringify({}),
 });
-const guestRepeat = await j("/api/ai/guest", {
-  method: "POST",
-  body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
-});
+const gid = cookieValue(getSetCookies(guestEmpty.res), "neb-gid");
 step(
-  "guest chat requires an authenticated owner session",
-  guestUnauthed.status === 401 && guestUnauthed.body?.error === "Unauthorized",
-  `status=${guestUnauthed.status}`
+  "anonymous guest chat is open (validation rejects before quota/AI)",
+  guestEmpty.status === 400 && guestEmpty.body?.error === "messages array is required",
+  `status=${guestEmpty.status}`
 );
 step(
-  "repeated anonymous guest chat remains rejected",
-  guestRepeat.status === 401 && guestRepeat.body?.error === "Unauthorized",
+  "guest chat mints the neb-gid device cookie for quota accounting",
+  typeof gid === "string" && /^[a-f0-9]{16,64}$/.test(gid),
+  gid ? `cookie=neb-gid=${gid.slice(0, 6)}…` : "no cookie minted"
+);
+const guestRepeat = await j("/api/ai/guest", {
+  method: "POST",
+  headers: gid ? { Cookie: `neb-gid=${gid}` } : {},
+  body: JSON.stringify({}),
+});
+step(
+  "repeated anonymous guest chat stays open and consistent",
+  guestRepeat.status === 400 && guestRepeat.body?.error === "messages array is required",
   `status=${guestRepeat.status}`
 );
 
