@@ -32,13 +32,13 @@ import {
 } from "@/lib/api/owner";
 import type { OwnerUser, OwnerUserDetail } from "@/lib/api/owner";
 
-const ROLES = ["STUDENT", "TEACHER", "ADMIN", "OWNER"] as const;
+const ROLES = ["member", "plus", "pro", "owner"] as const;
 
 const roleBadge: Record<string, string> = {
-  OWNER: "bg-amber-500/15 text-amber-600",
-  ADMIN: "bg-rose-500/15 text-rose-600",
-  TEACHER: "bg-blue-500/15 text-blue-600",
-  STUDENT: "bg-muted text-muted-foreground",
+  owner: "bg-amber-500/15 text-amber-600",
+  pro: "bg-rose-500/15 text-rose-600",
+  plus: "bg-blue-500/15 text-blue-600",
+  member: "bg-muted text-muted-foreground",
 };
 
 const accessBadge: Record<string, { label: string; className: string }> = {
@@ -259,7 +259,7 @@ export default function OwnerUsersPage() {
                           )}
                         </p>
                         <div className="flex items-center gap-2 mt-1 flex-wrap">
-                          <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${roleBadge[u.role ?? "STUDENT"] ?? roleBadge.STUDENT}`}>
+                          <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${roleBadge[u.role ?? "member"] ?? roleBadge.member}`}>
                             {u.role ?? "—"}
                           </span>
                           <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-1.5 py-0.5 rounded border ${
@@ -312,7 +312,7 @@ export default function OwnerUsersPage() {
                         </Button>
                       )}
                       <select
-                        value={u.role ?? "STUDENT"}
+                        value={u.role ?? "member"}
                         onChange={(e) => handleRole(u, e.target.value)}
                         disabled={busyId === u.id}
                         className="text-xs border rounded-md px-2 py-1.5 bg-background"

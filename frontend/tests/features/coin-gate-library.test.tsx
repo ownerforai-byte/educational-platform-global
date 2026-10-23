@@ -43,12 +43,12 @@ import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 
 const OWNER_USER = {
   email: "harindarsah98172@gmail.com",
-  role: "OWNER",
+  role: "owner",
   credits: 42,
 };
 const STUDENT_USER = {
   email: "student@example.com",
-  role: "STUDENT",
+  role: "member",
   credits: 4,
 };
 

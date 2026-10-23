@@ -13,7 +13,7 @@ import { aiSparkTierFor, type AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
  * "member" stays its own rung:
  *
  *   visitor  → signed-out guest. Public overview, simple footer (version +
- *              intro + hidden /pro-plan link), live approval-status check.
+ *              intro + hidden /plans link), live approval-status check.
  *   member   → signed-in base. Indexes bar locked to SEARCH ONLY.
  *   plus     → 2–3 indexes (Home + Class 11 + Search).
  *   pro      → ALL indexes (Home, Class 11, Class 12, … AI). No rails, no
@@ -55,7 +55,7 @@ export const ACCESS_LABELS: Record<AccessLevel, string> = {
   owner: "Owner",
 };
 
-/** The same rung in plain words, shown on the public overview + pro plan. */
+/** The same rung in plain words, shown on the public overview + /plans. */
 export const ACCESS_TAGLINES: Record<AccessLevel, string> = {
   visitor: "A simple overview for visitors",
   member: "Search the whole library",

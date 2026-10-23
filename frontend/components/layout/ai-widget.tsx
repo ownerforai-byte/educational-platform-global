@@ -38,7 +38,7 @@ export function AIWidget() {
   if (!unlocked) {
     return (
       <Link
-        href="/pro-plan"
+        href="/plans"
         aria-label="Veer is locked under the Spark gate — see your plan"
         title="Veer is Spark-gated — see your plan to unlock"
         className="fixed left-6 bottom-safe z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center bg-gradient-to-br from-muted to-muted/70 border border-amber-500/40 hover:scale-105 transition-all"

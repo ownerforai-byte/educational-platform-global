@@ -1,5 +1,6 @@
 import { supabaseAdmin } from "../db/supabase";
 import { OWNER_EMAILS } from "../middleware/auth";
+import { normalizeRole } from "../auth/types";
 
 /**
  * OWNER INDEPENDENCE (owner policy 2026-10-12: "make all owner emails
@@ -13,7 +14,8 @@ import { OWNER_EMAILS } from "../middleware/auth";
  *
  * Two independent signals make a target protected:
  *   1. its auth email is on the hardcoded allowlist, or
- *   2. its profile role is "OWNER" (so an owner demoted in the DB before this
+ *   2. its profile role resolves to "owner" (legacy rows included — all
+ *      pre-ladder accounts are operator-tier) (so an owner demoted in the DB before this
  *      guard existed still cannot be finished off by a second owner).
  *
  * Guarded operations: DELETE (remove), role change (reposition), access
@@ -47,7 +49,7 @@ export async function isProtectedOwnerTarget(
       .select("role")
       .eq("id", userId)
       .maybeSingle();
-    if ((profile?.role ?? "").toUpperCase() === "OWNER") {
+    if (normalizeRole(profile?.role) === "owner") {
       return { protectedTarget: true, reason: PROTECTED_REASON };
     }
   } catch (err) {

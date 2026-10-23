@@ -31,7 +31,7 @@ export interface OwnerUser {
   id: string;
   full_name: string | null;
   email: string;
-  role: "STUDENT" | "TEACHER" | "ADMIN" | "OWNER" | null;
+  role: "member" | "plus" | "pro" | "owner" | null;
   credits: number;
   credits_limit?: number | null;
   premium_status: boolean;
@@ -113,7 +113,7 @@ export function adjustOwnerUserCredits(
 
 export function updateOwnerUserRole(
   userId: string,
-  role: "STUDENT" | "TEACHER" | "ADMIN" | "OWNER"
+  role: "member" | "plus" | "pro" | "owner"
 ): Promise<{ success: true; newRole: string }> {
   return apiFetch(`/api/owner/users/${userId}/role`, {
     method: "PATCH",

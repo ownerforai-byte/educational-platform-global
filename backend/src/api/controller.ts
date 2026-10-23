@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 import { extractToken } from "../middleware/auth";
+import { normalizeRole } from "../auth/types";
 import { invalidateCoinGateCache } from "../utils/credits";
 import { asyncHandler } from "../middleware/asyncHandler";
 
@@ -29,7 +30,7 @@ async function requireAdmin(req: Request, res: Response) {
     .eq("id", data.user.id)
     .single();
 
-  if (!profile || !["ADMIN", "OWNER"].includes(profile.role)) {
+  if (!profile || !["pro", "owner"].includes(normalizeRole(profile.role) ?? "")) {
     res.status(403).json({ error: "Forbidden" });
     return null;
   }

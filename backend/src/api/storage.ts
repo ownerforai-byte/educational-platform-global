@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
+import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 
 const router = Router();
@@ -32,7 +33,7 @@ async function requireTeacher(req: Request, res: Response) {
     .eq("id", user.id)
     .single();
 
-  if (!profile || !["TEACHER", "ADMIN", "OWNER"].includes(profile.role)) {
+  if (!profile || !["plus", "pro", "owner"].includes(normalizeRole(profile.role) ?? "")) {
     res.status(403).json({ error: "Forbidden" });
     return null;
   }

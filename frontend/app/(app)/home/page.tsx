@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HomeIntroduction } from "@/components/home/home-introduction";
 import { HomeSubjectRails } from "@/components/home/home-subject-rails";
+import { HomeSections } from "@/components/home/home-sections";
 import { HomeFeaturesSparkGate } from "@/components/home/home-features-spark-gate";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function HomePage() {
         <>
           <HomeIntroduction />
           <HomeSubjectRails />
+          <HomeSections />
         </>
       </HomeFeaturesSparkGate>
     </div>

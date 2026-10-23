@@ -190,8 +190,8 @@ export function CreditProvider({ children }: { children: ReactNode }) {
         const owner =
           !!current &&
           (isOwnerUser(current) ||
-            current.role === "OWNER" ||
-            current.role === "ADMIN");
+            current.role === "owner" ||
+            current.role === "pro");
         if (!owner) {
           setError(
             "The Diagram Hub is reserved for owner accounts — it cannot be unlocked with sparks.",
@@ -209,8 +209,8 @@ export function CreditProvider({ children }: { children: ReactNode }) {
       // 3. Fast client-side pre-check (server re-validates authoritatively).
       const balance = stateRef.current.user.credits ?? 0;
       const isPrivileged =
-        stateRef.current.user.role === "OWNER" ||
-        stateRef.current.user.role === "ADMIN";
+        stateRef.current.user.role === "owner" ||
+        stateRef.current.user.role === "pro";
 
       if (!isPrivileged && rule.cost > 0 && balance < rule.cost) {
         setError(

@@ -28,7 +28,7 @@ const OWNER_USER = {
   id: "u1",
   email: "owner@example.com",
   fullName: "Test Owner",
-  role: "OWNER",
+  role: "owner",
   credits: 9,
   creditsLimit: 10,
 };
@@ -68,7 +68,7 @@ describe("instant logout", () => {
       </AuthProvider>,
     );
     await waitFor(() =>
-      expect(screen.getByTestId("who")).toHaveTextContent("OWNER:owner@example.com"),
+      expect(screen.getByTestId("who")).toHaveTextContent("owner:owner@example.com"),
     );
 
     // No awaits: the click itself must land.
@@ -88,7 +88,7 @@ describe("instant logout", () => {
       </AuthProvider>,
     );
     await waitFor(() =>
-      expect(screen.getByTestId("who")).toHaveTextContent("OWNER:owner@example.com"),
+      expect(screen.getByTestId("who")).toHaveTextContent("owner:owner@example.com"),
     );
 
     // Would hang forever if logoutUser still awaited apiLogout().
@@ -109,7 +109,7 @@ describe("instant logout", () => {
       </AuthProvider>,
     );
     await waitFor(() =>
-      expect(screen.getByTestId("who")).toHaveTextContent("OWNER:owner@example.com"),
+      expect(screen.getByTestId("who")).toHaveTextContent("owner:owner@example.com"),
     );
 
     await act(async () => {

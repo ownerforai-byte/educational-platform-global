@@ -30,7 +30,7 @@ vi.mock("../src/middleware/auth", async (importOriginal) => {
       (req as unknown as { user: { id: string; email: string; role: string } }).user = {
         id: "user-test",
         email: ownerEmail,
-        role: "STUDENT",
+        role: "member",
       };
       next();
     },

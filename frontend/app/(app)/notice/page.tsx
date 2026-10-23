@@ -81,7 +81,7 @@ const NOTICES: Notice[] = [
     title: "PRO removes the daily cap",
     body:
       "PRO is for students who use the platform daily: unlimited Veer replies and note sparks with no daily ceiling, instead of a pool that refills once a day.",
-    href: "/pro-plan",
+    href: "/plans",
     linkLabel: "Read the PRO plan",
   },
   {

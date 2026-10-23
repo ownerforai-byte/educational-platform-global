@@ -178,7 +178,7 @@ export default function CreditsPage() {
                     too. Both open without spending a spark. */}
                 <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-semibold">
                   <a
-                    href="/pro-plan"
+                    href="/plans"
                     className="inline-flex items-center gap-1.5 text-primary hover:underline"
                   >
                     <Gem className="h-3.5 w-3.5" />

@@ -114,7 +114,7 @@ async function startServers() {
   probeApp.get("/api/guard-admin", requireAuth, requireAdmin, (_req, res) => {
     res.status(200).json({ ok: "admin-or-owner" });
   });
-  probeApp.get("/api/guard-owner", requireAuth, requireRole("OWNER"), (_req, res) => {
+  probeApp.get("/api/guard-owner", requireAuth, requireRole("owner"), (_req, res) => {
     res.status(200).json({ ok: "owner" });
   });
 
@@ -220,7 +220,7 @@ describe("auth flow", () => {
       data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" }, app_metadata: { provider: "facebook" } } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
     const state = "c".repeat(64);
 
     const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
@@ -273,7 +273,7 @@ describe("auth flow", () => {
       data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" }, app_metadata: { provider: "google" } } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
     const state = "f".repeat(64);
 
     const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
@@ -308,7 +308,7 @@ describe("auth flow", () => {
       },
       error: null,
     });
-    mockProfiles({ role: "STUDENT", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
     const state = "9".repeat(64);
 
     const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
@@ -371,7 +371,7 @@ describe("auth flow", () => {
       },
       error: null,
     });
-    mockProfiles({ role: "STUDENT" });
+    mockProfiles({ role: "member" });
 
     const res = await fetch(`${baseUrl}/api/auth/login`, {
       method: "POST",
@@ -381,7 +381,7 @@ describe("auth flow", () => {
 
     expect(res.status).toBe(200);
     const body = await res.json();
-    expect(body.user).toMatchObject({ id: "user-1", email: "student@example.com", role: "STUDENT" });
+    expect(body.user).toMatchObject({ id: "user-1", email: "student@example.com", role: "member" });
 
     const cookies = setCookiesOf(res);
     const sessionCookie = cookies.find((c) => c.startsWith("sb-access-token="));
@@ -420,7 +420,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "TEACHER" });
+    mockProfiles({ role: "plus" });
 
     const res = await fetch(`${baseUrl}/api/auth/me`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
@@ -431,7 +431,7 @@ describe("auth flow", () => {
     expect(body.user).toMatchObject({
       id: "user-1",
       email: "student@example.com",
-      role: "TEACHER",
+      role: "plus",
     });
     expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
   });
@@ -447,7 +447,7 @@ describe("auth flow", () => {
       error: null,
     });
     mockProfiles({
-      role: "STUDENT",
+      role: "member",
       credits: 1,
       credits_reset_date: today,
       premium_status: false,
@@ -477,7 +477,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT" });
+    mockProfiles({ role: "member" });
 
     const res = await fetch(`${probeUrl}/api/progress`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
@@ -496,7 +496,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT" });
+    mockProfiles({ role: "member" });
 
     const res = await fetch(`${baseUrl}/api/auth/logout`, {
       method: "POST",
@@ -547,7 +547,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT", credits: 40, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", credits: 40, credits_limit: 100, premium_status: false });
 
     const res = await fetch(`${baseUrl}/api/auth/refresh`, {
       method: "POST",
@@ -560,7 +560,7 @@ describe("auth flow", () => {
     expect(body.user).toMatchObject({
       id: "user-1",
       email: "student@example.com",
-      role: "STUDENT",
+      role: "member",
       credits: 40,
       creditsLimit: 100,
       premiumStatus: false,
@@ -599,7 +599,7 @@ describe("auth flow", () => {
       },
       error: null,
     });
-    mockProfiles({ role: "STUDENT", credits: 0, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", credits: 0, credits_limit: 100, premium_status: false });
 
     const res = await fetch(`${baseUrl}/api/auth/signup`, {
       method: "POST",
@@ -610,7 +610,7 @@ describe("auth flow", () => {
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body.accessToken).toBe("fresh-token");
-    expect(body.user).toMatchObject({ id: "user-9", email: "new@example.com", role: "STUDENT" });
+    expect(body.user).toMatchObject({ id: "user-9", email: "new@example.com", role: "member" });
     expect(setCookiesOf(res).some((c) => c.startsWith("sb-access-token="))).toBe(true);
     expect(setCookiesOf(res).some((c) => c.startsWith("sb-refresh-token="))).toBe(true);
   });
@@ -653,20 +653,20 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "s@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT" });
+    mockProfiles({ role: "member" });
     const denied = await fetch(`${probeUrl}/api/guard-admin`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
     expect(denied.status).toBe(403);
 
-    mockProfiles({ role: "ADMIN" });
+    mockProfiles({ role: "pro" });
     const ok = await fetch(`${probeUrl}/api/guard-admin`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
     expect(ok.status).toBe(200);
     expect(await ok.json()).toEqual({ ok: "admin-or-owner" });
 
-    mockProfiles({ role: "OWNER" });
+    mockProfiles({ role: "owner" });
     const owner = await fetch(`${probeUrl}/api/guard-admin`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
@@ -678,13 +678,13 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "a@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "ADMIN" });
+    mockProfiles({ role: "pro" });
     const denied = await fetch(`${probeUrl}/api/guard-owner`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
     expect(denied.status).toBe(403);
 
-    mockProfiles({ role: "OWNER" });
+    mockProfiles({ role: "owner" });
     const ok = await fetch(`${probeUrl}/api/guard-owner`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
@@ -706,7 +706,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT", credits: 5, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", credits: 5, credits_limit: 100, premium_status: false });
 
     const res = await fetch(`${baseUrl}/api/auth/refresh`, {
       method: "POST",
@@ -787,7 +787,7 @@ describe("auth flow", () => {
       data: { user: { id: "session-user", email: "s@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "STUDENT" });
+    mockProfiles({ role: "member" });
 
     let insertedPayload: unknown = null;
     const profilesImpl = mocked.from.getMockImplementation();

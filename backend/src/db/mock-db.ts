@@ -85,8 +85,8 @@ const tables: Record<string, MockRecord[]> = {
   progress: [],
   user_progress: [],
   profiles: [
-    { id: "user-default", role: "STUDENT", full_name: "NEB Science Student", email: "student@example.com" },
-    { id: "teacher-default", role: "TEACHER", full_name: "Instructor Ravikishan", email: "teacher@example.com" },
+    { id: "user-default", role: "member", full_name: "NEB Science Student", email: "student@example.com" },
+    { id: "teacher-default", role: "plus", full_name: "Instructor Ravikishan", email: "teacher@example.com" },
   ],
 };
 

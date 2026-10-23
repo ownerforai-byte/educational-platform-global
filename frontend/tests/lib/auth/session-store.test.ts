@@ -23,7 +23,7 @@ const USER: SessionUser = {
   id: "user-1",
   email: "student@example.com",
   fullName: "A Student",
-  role: "STUDENT",
+  role: "member",
 };
 
 describe("session-store", () => {

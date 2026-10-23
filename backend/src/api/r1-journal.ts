@@ -3,7 +3,7 @@ import { serverError } from "../middleware/errors";
 import { z } from "zod";
 import { supabaseAdmin } from "../db/supabase";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
-import { requireR1Access } from "../middleware/r1Access";
+import { requireJournalAccess } from "../middleware/r1Access";
 
 const router = Router();
 
@@ -38,7 +38,7 @@ function mapJournalRow(row: any) {
 
 // ── GET /api/r1/journal?from=YYYY-MM-DD&to=YYYY-MM-DD ──────────────────────
 
-router.get("/", requireAuth, requireR1Access, async (req: Request, res: Response) => {
+router.get("/", requireAuth, requireJournalAccess, async (req: Request, res: Response) => {
   try {
     const user = (req as AuthedRequest).user;
 
@@ -92,7 +92,7 @@ const LOCK_ERROR = {
 // checked: once the lock window has passed, the body is rejected before
 // Supabase is touched, so the row is never overwritten.
 
-router.put("/", requireAuth, requireR1Access, async (req: Request, res: Response) => {
+router.put("/", requireAuth, requireJournalAccess, async (req: Request, res: Response) => {
   const parsed = journalSchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid payload" });
@@ -149,7 +149,7 @@ router.put("/", requireAuth, requireR1Access, async (req: Request, res: Response
 
 // ── DELETE /api/r1/journal/:id (own rows only, honour the lock) ───────────
 
-router.delete("/:id", requireAuth, requireR1Access, async (req: Request, res: Response) => {
+router.delete("/:id", requireAuth, requireJournalAccess, async (req: Request, res: Response) => {
   try {
     const user = (req as AuthedRequest).user;
 

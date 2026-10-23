@@ -61,7 +61,7 @@ const OWNER_TOOLS = [
 export default function OwnerPage() {
   const { user, isLoading } = useAuth();
   const router = useRouter();
-  const isOwner = user?.role === "OWNER" || user?.role === "ADMIN";
+  const isOwner = user?.role === "owner" || user?.role === "pro";
 
   useEffect(() => {
     if (!isLoading && !user) router.replace("/login");

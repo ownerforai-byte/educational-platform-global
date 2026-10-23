@@ -2,8 +2,24 @@
  * Shared auth types — single source of truth for the entire backend.
  */
 
-export const USER_ROLES = ["STUDENT", "TEACHER", "ADMIN", "OWNER"] as const;
+export const USER_ROLES = ["member", "plus", "pro", "owner"] as const;
 export type UserRole = (typeof USER_ROLES)[number];
+
+/**
+ * Legacy role values from the retired STUDENT/TEACHER/ADMIN/OWNER vocabulary.
+ * Owner decision 2026-10-23: every pre-ladder account is an operator account —
+ * legacy rows resolve to the owner rung. New rows are written as tiers.
+ */
+const LEGACY_ROLES = new Set(["STUDENT", "TEACHER", "ADMIN", "OWNER"]);
+
+/** Normalize any stored role value to the tier ladder (unknown → null). */
+export function normalizeRole(value: unknown): UserRole | null {
+  if (typeof value !== "string") return null;
+  const v = value.trim();
+  if ((USER_ROLES as readonly string[]).includes(v)) return v as UserRole;
+  if (LEGACY_ROLES.has(v.toUpperCase())) return "owner";
+  return null;
+}
 
 /** A validated session user attached to the request after requireAuth. */
 export interface SessionUser {

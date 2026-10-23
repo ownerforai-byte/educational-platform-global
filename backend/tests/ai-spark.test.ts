@@ -27,7 +27,7 @@ describe("aiSpark — owner is never asked for spark", () => {
       { email: ownerEmail, plan: "plus_20", planExpiresAt: new Date(Date.now() + 10 * 86_400_000) },
       { email: ownerEmail, plan: "pro" },                         // pro
       { email: ownerEmail, plan: "pro", premiumStatus: false },    // pro with legacy flag off
-      { email: ownerEmail, role: "ADMIN" },                        // any role
+      { email: ownerEmail, role: "pro" },                        // any role
     ];
     for (const user of cases) {
       expect(aiSparkTierFor(user), `for ${JSON.stringify(user)}`).toBe("owner");

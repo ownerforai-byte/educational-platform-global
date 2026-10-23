@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
+import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 import { ensureDailyCredits, isCoinGateEnabled, spendCredits } from "../utils/credits";
 
@@ -48,7 +49,7 @@ router.get("/me", requireAuth, async (req: Request, res: Response) => {
       id: user.id,
       email: user.email,
       fullName: profile?.full_name ?? null,
-      role: profile?.role ?? user.role,
+      role: normalizeRole(profile?.role) ?? user.role,
       // Membership tier for the AI-spark allowance (member 7 / plus 25 /
       // pro 50 per day, owner unlimited) — see utils/aiSpark.ts. The session
       // already carries the tolerant plan read (migration 008); the legacy
@@ -208,7 +209,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       return;
     }
 
-    const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
+    const role = normalizeRole(profile?.role);
     const premiumStatus = profile?.premium_status ?? false;
     const owner = isOwnerEmail(user.email);
 

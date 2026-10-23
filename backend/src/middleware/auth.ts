@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
 import {
   USER_ROLES,
+  normalizeRole,
   type UserRole,
   type SessionUser,
 } from "../auth/types";
@@ -47,7 +48,7 @@ export async function loadProfileRole(userId: string): Promise<UserRole | null> 
       console.warn(`[Auth] Unable to load profile for user ${userId}:`, error.message);
       return null;
     }
-    return isUserRole(profile?.role) ? (profile!.role as UserRole) : null;
+    return normalizeRole(profile?.role);
   } catch {
     return null;
   }
@@ -126,7 +127,7 @@ export function buildSessionUser(
   plan: "member" | "plus" | "pro" | null = null,
   premiumStatus: boolean | null = null,
 ): SessionUser {
-  const effectiveRole: UserRole | null = isOwnerEmail(email) ? "OWNER" : role;
+  const effectiveRole: UserRole | null = isOwnerEmail(email) ? "owner" : normalizeRole(role);
   return { id, email, fullName, role: effectiveRole, plan, premiumStatus };
 }
 
@@ -191,7 +192,7 @@ export async function requireAuth(
  * Express middleware factory: require that the authenticated user holds one
  * of the given roles. Always pairs with `requireAuth` so `req.user` exists.
  *
- *   router.post("/x", requireAuth, requireRole("ADMIN", "OWNER"), handler)
+ *   router.post("/x", requireAuth, requireRole("pro", "owner"), handler)
  */
 export function requireRole(...roles: UserRole[]) {
   const allowed = new Set(roles.map((r) => r.toUpperCase()));
@@ -209,11 +210,11 @@ export function requireRole(...roles: UserRole[]) {
   };
 }
 
-/** Convenience: require ADMIN or OWNER (used by admin endpoints). */
-export const requireAdmin = requireRole("ADMIN", "OWNER");
+/** Convenience: require pro or owner (used by admin endpoints). */
+export const requireAdmin = requireRole("pro", "owner");
 
-/** Convenience: require OWNER only. */
-export const requireOwner = requireRole("OWNER");
+/** Convenience: require owner only. */
+export const requireOwner = requireRole("owner");
 
 /**
  * Express middleware: require an allowlisted owner email.
@@ -242,12 +243,12 @@ export function requireOwnerEmail(
 
 /**
  * Whether a role qualifies for unconditional premium access.
- * OWNER/ADMIN are always privileged; a `premiumStatus` flag grants it too.
+ * owner/pro are always privileged; a `premiumStatus` flag grants it too.
  */
 export function hasFullAccess(
   role: string | null | undefined,
   premiumStatus?: boolean | null,
 ): boolean {
-  if (role === "OWNER" || role === "ADMIN") return true;
+  if (role === "owner" || role === "pro") return true;
   return premiumStatus === true;
 }

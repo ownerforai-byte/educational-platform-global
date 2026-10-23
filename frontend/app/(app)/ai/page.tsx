@@ -266,7 +266,7 @@ export default function AIStudioPage() {
             the home page. */}
         <p className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1 text-xs">
           <Link
-            href="/pro-plan"
+            href="/plans"
             className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
           >
             <Gem className="h-3.5 w-3.5" />

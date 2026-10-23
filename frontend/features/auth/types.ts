@@ -1,6 +1,6 @@
-export type UserRole = "STUDENT" | "TEACHER" | "ADMIN" | "OWNER";
+export type UserRole = "member" | "plus" | "pro" | "owner";
 
-export const USER_ROLES = ["STUDENT", "TEACHER", "ADMIN", "OWNER"] as const;
+export const USER_ROLES = ["member", "plus", "pro", "owner"] as const;
 
 /**
  * Extended session user returned by GET /api/auth/me.
@@ -24,8 +24,8 @@ export interface SessionUser {
 }
 
 export const ROLE_RANK: Record<UserRole, number> = {
-  STUDENT: 0,
-  TEACHER: 1,
-  ADMIN: 2,
-  OWNER: 3,
+  member: 0,
+  plus: 1,
+  pro: 2,
+  owner: 3,
 };

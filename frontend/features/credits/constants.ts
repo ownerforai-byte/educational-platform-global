@@ -97,7 +97,7 @@ export const PUBLIC_PATHS = [
   // null and the gate renders them untouched (never blurred, no lock overlay).
   "/notice",
   "/notifications",
-  "/pro-plan",
+  "/plans",
 ] as const;
 
 /**

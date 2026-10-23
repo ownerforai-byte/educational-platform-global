@@ -51,7 +51,7 @@ const ownerUser = {
   id: "u1",
   email: "harindarsah98172@gmail.com",
   fullName: "Harindra Sah",
-  role: "OWNER" as const,
+  role: "owner" as const,
   credits: 42,
   creditsLimit: 100,
   premiumStatus: true,
@@ -61,7 +61,7 @@ const studentUser = {
   id: "u2",
   email: "student@example.com",
   fullName: "Sita Student",
-  role: "STUDENT" as const,
+  role: "member" as const,
   credits: 5,
   creditsLimit: 50,
 };

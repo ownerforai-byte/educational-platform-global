@@ -4,7 +4,7 @@ import { DEPLOY_VERSION } from "@/lib/deploy-version";
 const groups = [
   { title: "Study", links: [["Class 11", "/class-11-notes"], ["Class 12", "/class-12-notes"], ["Syllabus", "/syllabus"], ["Past papers", "/pyqs"]] },
   { title: "Resources", links: [["All resources", "/site-index"], ["Interactive labs", "/lab"], ["Formula sheets", "/formulas"], ["Veer assistant", "/chat"]] },
-  { title: "Support & account", links: [["Notice board", "/notice"], ["My account", "/profile"], ["Credits & plan", "/credits"], ["Pro plan", "/pro-plan"]] },
+  { title: "Support & account", links: [["Notice board", "/notice"], ["My account", "/profile"], ["Credits & plan", "/credits"], ["Plans", "/plans"]] },
 ];
 
 /** A compact directory; pricing and usage allowances belong on their own pages. */

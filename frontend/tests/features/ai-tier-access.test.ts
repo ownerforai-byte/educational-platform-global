@@ -21,7 +21,7 @@ const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
  *
  * 2026-10-17: the floating Veer LAUNCHER is now locked under the spark gate —
  * "lock ai widget under spark gate also". Pro + owner pass and open /chat;
- * visitor / member / plus meet a lock that routes to /pro-plan. The /ai and
+ * visitor / member / plus meet a lock that routes to /plans. The /ai and
  * /chat ROUTES stay public (AI-spark metered), so the gate is on the launcher
  * surface, not an owner allowlist.
  */
@@ -89,7 +89,7 @@ describe("Veer chat: routes stay public (metered), launcher sits under the spark
     expect(src).not.toContain("isOwnerUser");
     expect(src).toContain("hasLevel");
     // Below Pro the launcher locks and routes to the plan page.
-    expect(src).toContain("/pro-plan");
+    expect(src).toContain("/plans");
   });
 
   it("no Veer nav entry carries ownerOnly", () => {

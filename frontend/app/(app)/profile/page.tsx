@@ -56,10 +56,10 @@ const roleBadgeConfig: Record<
   string,
   { label: string; className: string; icon: typeof Crown }
 > = {
-  OWNER: { label: "Owner", className: "bg-amber-500/15 border-amber-500/30 text-amber-500", icon: Crown },
-  ADMIN: { label: "Admin", className: "bg-rose-500/15 border-rose-500/30 text-rose-500", icon: ShieldCheck },
-  TEACHER: { label: "Teacher", className: "bg-blue-500/15 border-blue-500/30 text-blue-500", icon: GraduationCap },
-  STUDENT: { label: "Student", className: "bg-emerald-500/15 border-emerald-500/30 text-emerald-500", icon: User },
+  owner: { label: "Owner", className: "bg-amber-500/15 border-amber-500/30 text-amber-500", icon: Crown },
+  pro: { label: "Pro", className: "bg-rose-500/15 border-rose-500/30 text-rose-500", icon: ShieldCheck },
+  plus: { label: "Plus", className: "bg-blue-500/15 border-blue-500/30 text-blue-500", icon: GraduationCap },
+  member: { label: "Member", className: "bg-emerald-500/15 border-emerald-500/30 text-emerald-500", icon: User },
 };
 
 // ── Profile features (owner request 2026-10-13: "add more features in
@@ -351,8 +351,8 @@ export default function ProfilePage() {
     .slice(0, 2)
     .toUpperCase();
 
-  const role = (user.role || "STUDENT").toUpperCase();
-  const badge = roleBadgeConfig[role] || roleBadgeConfig.STUDENT;
+  const role = (user.role || "member").toLowerCase();
+  const badge = roleBadgeConfig[role] || roleBadgeConfig.member;
   const RoleIcon = badge.icon;
 
   const handleLogout = async () => {
@@ -497,7 +497,7 @@ export default function ProfilePage() {
                 Resets in {resetCountdown}
               </span>
               <Link
-                href="/pro-plan"
+                href="/plans"
                 className="inline-flex items-center gap-0.5 font-semibold text-primary hover:underline"
               >
                 Plus 25 · Pro 50 <ArrowUpRight className="h-3 w-3" />
@@ -544,7 +544,7 @@ export default function ProfilePage() {
                 </Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-xl text-xs flex-1">
-                <Link href="/pro-plan">
+                <Link href="/plans">
                   <Crown className="h-3.5 w-3.5" />
                   Upgrade Plan
                 </Link>

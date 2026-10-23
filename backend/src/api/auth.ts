@@ -21,7 +21,7 @@ import {
   isOwnerEmail,
 } from "../middleware/auth";
 import { isOriginAllowed } from "../middleware/cors";
-import type { SessionUser } from "../auth/types";
+import { normalizeRole, type SessionUser } from "../auth/types";
 import type {
   LoginResponse,
   SignupResponse,
@@ -138,7 +138,7 @@ async function buildExtendedUser(
   role: string | null,
   fullName?: string | null,
 ): Promise<ExtendedSessionUser> {
-  const isOwner = isOwnerEmail(email) || role === "OWNER";
+  const isOwner = isOwnerEmail(email) || normalizeRole(role) === "owner";
 
   // Persist the display name on signup/first login (the profiles trigger only
   // copies it from raw_user_meta_data; refresh flows may not have it).
@@ -168,7 +168,7 @@ async function buildExtendedUser(
     id: userId,
     email,
     fullName: fullName ?? persistedName,
-    role: isOwner ? "OWNER" : ((role as ExtendedSessionUser["role"]) ?? null),
+    role: isOwner ? "owner" : normalizeRole(role),
     credits: isOwner ? 999999 : (profile?.data?.credits ?? 0),
     creditsLimit: isOwner ? 999999 : (profile?.data?.credits_limit ?? 100),
     premiumStatus: isOwner ? true : (profile?.data?.premium_status ?? false),

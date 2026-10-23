@@ -1,12 +1,12 @@
-export const USER_ROLES = ["STUDENT", "TEACHER", "ADMIN", "OWNER"] as const;
+export const USER_ROLES = ["member", "plus", "pro", "owner"] as const;
 
 export type UserRole = (typeof USER_ROLES)[number];
 
 export const ROLE_RANK: Record<UserRole, number> = {
-  STUDENT: 0,
-  TEACHER: 1,
-  ADMIN: 2,
-  OWNER: 3,
+  member: 0,
+  plus: 1,
+  pro: 2,
+  owner: 3,
 };
 
 export function isUserRole(value: unknown): value is UserRole {
@@ -22,17 +22,17 @@ export function atLeast(role: UserRole, minimum: UserRole): boolean {
 
 export function canAccessAdminPanel(role: UserRole | null | undefined): boolean {
   if (!role) return false;
-  return atLeast(role, "ADMIN");
+  return atLeast(role, "pro");
 }
 
 export function canAccessController(role: UserRole | null | undefined): boolean {
   if (!role) return false;
-  return atLeast(role, "ADMIN");
+  return atLeast(role, "pro");
 }
 
 export function canManageContent(role: UserRole | null | undefined): boolean {
   if (!role) return false;
-  return atLeast(role, "TEACHER");
+  return atLeast(role, "plus");
 }
 
 /**
@@ -49,6 +49,6 @@ export function hasFullAccess(
   role: UserRole | null | undefined,
   premiumStatus?: boolean | null,
 ): boolean {
-  if (role === "OWNER" || role === "ADMIN") return true;
+  if (role === "owner" || role === "pro") return true;
   return premiumStatus === true;
 }

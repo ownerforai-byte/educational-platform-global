@@ -35,7 +35,7 @@ vi.mock("../src/middleware/auth", async (importOriginal) => {
       (req as unknown as { user: { id: string; email: string; role: string } }).user = {
         id: "user-test",
         email: ownerEmail,
-        role: "STUDENT",
+        role: "member",
       };
       next();
     },
@@ -97,7 +97,7 @@ describe("POST /api/ai/image", () => {
 
   test("requireOwnerEmail rejects non-owner emails with 403", () => {
     const req = {
-      user: { id: "u", email: "student@example.com", role: "STUDENT" },
+      user: { id: "u", email: "student@example.com", role: "member" },
     } as Request;
     let status = 0;
     let next = false;

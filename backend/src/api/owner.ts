@@ -14,7 +14,7 @@ import { sendApprovalEmail } from "../utils/mailer";
  * Every route requires BOTH:
  *   1. A valid authenticated session (requireAuth).
  *   2. The session email to be on the backend OWNER_EMAILS allowlist.
- * Role alone is NOT enough: a profile with role "OWNER" whose email is not
+ * Role alone is NOT enough: a profile with role "owner" whose email is not
  * allowlisted is rejected here. This is the strictest gate in the platform.
  */
 const router = Router();
@@ -38,7 +38,7 @@ const creditAdjustSchema = z.object({
 });
 
 const roleUpdateSchema = z.object({
-  role: z.enum(["STUDENT", "TEACHER", "ADMIN", "OWNER"]),
+  role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
 const premiumUpdateSchema = z.object({

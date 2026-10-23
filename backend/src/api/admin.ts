@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
+import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 import { authEmailsById } from "../utils/authEmails";
 import { isProtectedOwnerTarget } from "../utils/ownerGuard";
@@ -14,7 +15,7 @@ const creditAdjustSchema = z.object({
 });
 
 const updateUserRoleSchema = z.object({
-  role: z.enum(["STUDENT", "TEACHER", "ADMIN", "OWNER"]),
+  role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
 /**
@@ -24,9 +25,9 @@ const updateUserRoleSchema = z.object({
  */
 router.get("/users", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "ADMIN" && role !== "OWNER") {
+  if (role !== "pro" && role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -95,9 +96,9 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
  */
 router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "ADMIN" && role !== "OWNER") {
+  if (role !== "pro" && role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -150,9 +151,9 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
  */
 router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "ADMIN" && role !== "OWNER") {
+  if (role !== "pro" && role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -227,9 +228,9 @@ router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Respon
  */
 router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "OWNER") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Only owners can change roles" });
     return;
   }
@@ -275,9 +276,9 @@ router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response)
  */
 router.get("/premium-requests", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "ADMIN" && role !== "OWNER") {
+  if (role !== "pro" && role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -322,9 +323,9 @@ router.get("/premium-requests", requireAuth, async (req: Request, res: Response)
  */
 router.post("/premium-requests/:id/approve", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "OWNER") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Only owners can approve premium requests" });
     return;
   }
@@ -419,9 +420,9 @@ router.post("/premium-requests/:id/approve", requireAuth, async (req: Request, r
  */
 router.post("/premium-requests/:id/reject", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "OWNER") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Only owners can reject premium requests" });
     return;
   }
@@ -458,9 +459,9 @@ router.post("/premium-requests/:id/reject", requireAuth, async (req: Request, re
  */
 router.get("/stats", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
-  const role = user.role?.toUpperCase();
+  const role = normalizeRole(user.role);
 
-  if (role !== "ADMIN" && role !== "OWNER") {
+  if (role !== "pro" && role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }

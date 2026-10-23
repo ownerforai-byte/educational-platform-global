@@ -206,24 +206,24 @@ describe("refundCredits", () => {
 describe("ensureDailyCredits", () => {
   test("fresh watermark (same day) → no write, current balance returned", async () => {
     db.queue("profiles:select", {
-      data: { credits: 3, credits_reset_date: TODAY, premium_status: false, role: "STUDENT" },
+      data: { credits: 3, credits_reset_date: TODAY, premium_status: false, role: "member" },
       error: null,
     });
 
-    const result = await ensureDailyCredits(USER, "u@example.com", "STUDENT", false);
+    const result = await ensureDailyCredits(USER, "u@example.com", "member", false);
     expect(result).toEqual({ credits: 3, resetDone: false, unlimited: false });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(0);
   });
 
   test("stale watermark → CAS refill to the pool with one GRANT", async () => {
     db.queue("profiles:select", {
-      data: { credits: 2, credits_reset_date: null, premium_status: false, role: "OWNER" },
+      data: { credits: 2, credits_reset_date: null, premium_status: false, role: "owner" },
       error: null,
     });
     db.queue("profiles:update", { data: [{ id: USER }], error: null });
     db.queue("credit_transactions:insert", { data: [], error: null });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "OWNER", false);
+    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
 
     const update = db.calls.find((c) => c.op === "update");
@@ -244,7 +244,7 @@ describe("ensureDailyCredits", () => {
 
   test("parallel reset already won → returns the winner's balance, no double GRANT", async () => {
     db.queue("profiles:select", {
-      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "OWNER" },
+      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "owner" },
       error: null,
     });
     db.queue("profiles:update", { data: [], error: null }); // 0 rows: somebody won
@@ -253,7 +253,7 @@ describe("ensureDailyCredits", () => {
       error: null,
     });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "OWNER", false);
+    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
     // The classic bug: report the stale 0 → caller 402s despite a full pool.
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: false, unlimited: false });
     // No GRANT for a reset this call did not perform.
@@ -262,7 +262,7 @@ describe("ensureDailyCredits", () => {
 
   test("a spend won the race (watermark still stale) → retries against the new balance", async () => {
     db.queue("profiles:select", {
-      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "OWNER" },
+      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "owner" },
       error: null,
     });
     db.queue("profiles:update", { data: [], error: null }); // lost to a concurrent writer
@@ -273,7 +273,7 @@ describe("ensureDailyCredits", () => {
     db.queue("profiles:update", { data: [{ id: USER }], error: null }); // retry wins
     db.queue("credit_transactions:insert", { data: [], error: null });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "OWNER", false);
+    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
 
     const updates = db.calls.filter((c) => c.op === "update");
@@ -282,13 +282,13 @@ describe("ensureDailyCredits", () => {
 
   test("non-owner emails draw the same daily pool (bill-everyone economy)", async () => {
     db.queue("profiles:select", {
-      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "STUDENT" },
+      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "member" },
       error: null,
     });
     db.queue("profiles:update", { data: [{ id: USER }], error: null });
     db.queue("credit_transactions:insert", { data: [], error: null });
 
-    const result = await ensureDailyCredits(USER, "student@example.com", "STUDENT", false);
+    const result = await ensureDailyCredits(USER, "student@example.com", "member", false);
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
 
     const update = db.calls.find((c) => c.op === "update");
@@ -299,11 +299,11 @@ describe("ensureDailyCredits", () => {
 
   test("a student whose watermark is today keeps the stored balance with zero writes", async () => {
     db.queue("profiles:select", {
-      data: { credits: 7, credits_reset_date: TODAY, premium_status: false, role: "STUDENT" },
+      data: { credits: 7, credits_reset_date: TODAY, premium_status: false, role: "member" },
       error: null,
     });
 
-    const result = await ensureDailyCredits(USER, "student@example.com", "STUDENT", false);
+    const result = await ensureDailyCredits(USER, "student@example.com", "member", false);
     expect(result).toEqual({ credits: 7, resetDone: false, unlimited: false });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(0);
     expect(db.calls.filter((c) => c.op === "insert")).toHaveLength(0);
@@ -311,24 +311,24 @@ describe("ensureDailyCredits", () => {
 
   test("owner email without PRO draws the daily pool (not unlimited)", async () => {
     db.queue("profiles:select", {
-      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "OWNER" },
+      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "owner" },
       error: null,
     });
     db.queue("profiles:update", { data: [{ id: USER }], error: null });
     db.queue("credit_transactions:insert", { data: [], error: null });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "OWNER", false);
+    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(1);
   });
 
   test("owner email with premium_status is unlimited", async () => {
     db.queue("profiles:select", {
-      data: { credits: 0, credits_reset_date: null, premium_status: true, role: "OWNER" },
+      data: { credits: 0, credits_reset_date: null, premium_status: true, role: "owner" },
       error: null,
     });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "OWNER", true);
+    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", true);
     expect(result.unlimited).toBe(true);
     expect(result.credits).toBe(Infinity);
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(0);
@@ -336,12 +336,12 @@ describe("ensureDailyCredits", () => {
 
   test("DB error during the reset fails conservative (no free day granted)", async () => {
     db.queue("profiles:select", {
-      data: { credits: 4, credits_reset_date: null, premium_status: false, role: "STUDENT" },
+      data: { credits: 4, credits_reset_date: null, premium_status: false, role: "member" },
       error: null,
     });
     db.queue("profiles:update", { data: null, error: { message: "boom" } });
 
-    const result = await ensureDailyCredits(USER, "u@example.com", "STUDENT", false);
+    const result = await ensureDailyCredits(USER, "u@example.com", "member", false);
     expect(result).toEqual({ credits: 4, resetDone: false, unlimited: false });
     expect(db.calls.filter((c) => c.table === "credit_transactions")).toHaveLength(0);
   });

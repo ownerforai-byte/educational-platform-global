@@ -65,36 +65,36 @@ export function UserNav() {
     .slice(0, 2)
     .toUpperCase();
 
-  const role = user.role?.toUpperCase() || "STUDENT";
+  const role = (user.role || "member").toLowerCase();
 
   const roleBadgeConfig: Record<string, { label: string; bg: string; text: string; icon: typeof Crown }> = {
-    OWNER: {
+    owner: {
       label: "Owner",
       bg: "bg-amber-500/15 border-amber-500/30",
       text: "text-amber-500",
       icon: Crown,
     },
-    ADMIN: {
-      label: "Admin",
+    pro: {
+      label: "Pro",
       bg: "bg-rose-500/15 border-rose-500/30",
       text: "text-rose-500",
       icon: ShieldCheck,
     },
-    TEACHER: {
-      label: "Teacher",
+    plus: {
+      label: "Plus",
       bg: "bg-blue-500/15 border-blue-500/30",
       text: "text-blue-500",
       icon: GraduationCap,
     },
-    STUDENT: {
-      label: "Student",
+    member: {
+      label: "Member",
       bg: "bg-emerald-500/15 border-emerald-500/30",
       text: "text-emerald-500",
       icon: BookOpen,
     },
   };
 
-  const badge = roleBadgeConfig[role] || roleBadgeConfig.STUDENT;
+  const badge = roleBadgeConfig[role] || roleBadgeConfig.member;
   const RoleIcon = badge.icon;
 
   return (

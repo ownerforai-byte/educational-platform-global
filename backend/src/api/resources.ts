@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { serverError } from "../middleware/errors";
+import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 
 const router = Router();
@@ -32,7 +33,7 @@ async function requireTeacher(req: Request, res: Response) {
     .eq("id", user.id)
     .single();
 
-  if (!profile || !["TEACHER", "ADMIN", "OWNER"].includes(profile.role)) {
+  if (!profile || !["plus", "pro", "owner"].includes(profile.role)) {
     res.status(403).json({ error: "Forbidden" });
     return null;
   }
@@ -50,8 +51,8 @@ function canManageResource(
   profile: { role?: string | null },
   row: { created_by: string | null }
 ): boolean {
-  const role = String(profile?.role ?? "").toUpperCase();
-  if (role === "ADMIN" || role === "OWNER") return true;
+  const role = normalizeRole(profile?.role);
+  if (role === "pro" || role === "owner") return true;
   return row.created_by != null && row.created_by === user.id;
 }
 
@@ -297,8 +298,8 @@ router.patch("/:id", async (req: Request, res: Response) => {
       ? (req.body as Record<string, unknown>)
       : {};
 
-  const role = String(auth.profile.role ?? "").toUpperCase();
-  const isAdmin = role === "ADMIN" || role === "OWNER";
+  const role = normalizeRole(auth.profile.role);
+  const isAdmin = role === "pro" || role === "owner";
 
   const { updates, rejected } = buildResourcePatch(body, isAdmin);
   if (rejected.length > 0) {
@@ -349,8 +350,8 @@ router.delete("/:id", async (req: Request, res: Response) => {
     return;
   }
 
-  const role = String(auth.profile.role ?? "").toUpperCase();
-  const isPrivileged = role === "ADMIN" || role === "OWNER";
+  const role = normalizeRole(auth.profile.role);
+  const isPrivileged = role === "pro" || role === "owner";
   const isOwner = row.created_by === auth.user.id;
 
   if (!isPrivileged && !isOwner) {
