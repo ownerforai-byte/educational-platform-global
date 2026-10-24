@@ -1,0 +1,196 @@
+{
+  "title": "Force between two parallel current-carrying conductors",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "topicSlug": "force-between-two-parallel-current-carrying-conductors",
+  "topicTitle": "Force between two parallel current-carrying conductors",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "A long straight wire produces circles of magnetic field. A second wire, parallel to the first, carries current across that field and feels a force F = I L B sinθ. With the wires parallel, θ is 90°.",
+    "Substituting B = μ0 I1 /(2π r) gives the force per unit length F/L = μ0 I1 I2 /(2π r). The force is mutual: each wire feels the same magnitude.",
+    "If the currents are in the same direction the force is attractive. If they are in opposite directions the force is repulsive. The right-hand rule on one wire's field, then on the force, gives this.",
+    "The ampere was historically defined from this force: two long parallel wires, 1 m apart, carrying 1 A each, attract with 2 × 10^−7 N per metre of length.",
+    "The wires must be long compared with their separation, or the formula is only a middle-region estimate. The field is not uniform, but the result above is already the integrated force on a straight parallel wire.",
+    "Coils and bus bars use the same idea. Parallel turns of a solenoid attract. A short-circuit current in opposite bus bars pushes them apart."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Same direction attracts. It is not the same rule as like charges.",
+    "The formula is force per unit length, not the force on a named length until you multiply.",
+    "The wires are not point charges.",
+    "Opposite currents repel."
+  ],
+  "bounds": [
+    "Covers only: force between two parallel current-carrying conductors (within Magnetism and Magnetic Effect of Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write F/L = μ0 I1 I2 /(2π r) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Force between two parallel current-carrying conductors\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "F/L = μ0 I1 I2 /(2π r)",
+    "Same direction: attraction"
+  ],
+  "examples": [
+    "A long straight wire produces circles of magnetic field. A second wire, parallel to the first, carries current across that field and feels a force F = I L B sinθ. With the wires parallel, θ is 90°.",
+    "Substituting B = μ0 I1 /(2π r) gives the force per unit length F/L = μ0 I1 I2 /(2π r). The force is mutual: each wire feels the same magnitude.",
+    "Two long parallel wires carry 2.0 A and 3.0 A in the same direction. Their separation is 0.10 m. Find the force per unit length and say whether they attract. Use μ0 / 2π = 2.0 × 10^−7."
+  ],
+  "practiceQuestions": [
+    "Write F/L.",
+    "Do parallel currents in the same direction attract or repel?",
+    "What separation and currents define the old standard force?"
+  ],
+  "formulas": [
+    "Governing equation for \"Force between two parallel current-carrying conductors\" — state with units, then use in one numerical.",
+    "F/L = μ0 I1 I2 /(2π r)",
+    "Same direction: attraction"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Force between two parallel current-carrying conductors\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "• Force between two parallel current-carrying conductors",
+    "Each wire sits in the other's field.",
+    "Parallel currents in the same direction attract.",
+    "Opposite currents repel.",
+    "The force per unit length is the definition behind the ampere."
+  ],
+  "summary": "Parallel wires feel F/L = μ0 I1 I2 /(2π r) because each sits in the other's field. Currents in the same direction attract and opposite currents repel. The old definition of the ampere is this force at 1 m separation.",
+  "mcqs": [
+    {
+      "question": "Parallel currents in the same direction",
+      "options": [
+        "Attract",
+        "Repel",
+        "Feel nothing",
+        "Cancel the field everywhere"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Opposite currents",
+      "options": [
+        "Attract",
+        "Repel",
+        "Have F/L independent of r",
+        "Define a scalar current"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "F/L equals",
+      "options": [
+        "μ0 I1 I2 /(2π r)",
+        "q v B",
+        "μ0 n I",
+        "I r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The force on each wire",
+      "options": [
+        "Is larger on the larger current only, with no reaction",
+        "Has the same magnitude on both",
+        "Is zero",
+        "Is radial like a charge"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "A long straight wire produces circles of magnetic field. A second wire, parallel to the first, carries current across that field and feels a force F = I L B sinθ. With the wires parallel, θ is 90°.",
+    "Substituting B = μ0 I1 /(2π r) gives the force per unit length F/L = μ0 I1 I2 /(2π r). The force is mutual: each wire feels the same magnitude.",
+    "If the currents are in the same direction the force is attractive. If they are in opposite directions the force is repulsive. The right-hand rule on one wire's field, then on the force, gives this."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Same way: attract.",
+    "F/L = 2 × 10^−7 I1 I2 / r."
+  ],
+  "specialNotes": [
+    "μ0 / 2π = 2 × 10^−7.",
+    "Multiply by length to get the force on a piece."
+  ],
+  "importantNotes": [
+    "State the current directions before attraction or repulsion.",
+    "Keep F and F/L distinct."
+  ],
+  "importantConcepts": [
+    "Force per unit length",
+    "Attraction",
+    "Repulsion",
+    "Ampere definition"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Parallel currents in the same direction",
+      "options": [
+        "Attract",
+        "Repel",
+        "Feel nothing",
+        "Cancel the field everywhere"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Opposite currents",
+      "options": [
+        "Attract",
+        "Repel",
+        "Have F/L independent of r",
+        "Define a scalar current"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "F/L equals",
+      "options": [
+        "μ0 I1 I2 /(2π r)",
+        "q v B",
+        "μ0 n I",
+        "I r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The force on each wire",
+      "options": [
+        "Is larger on the larger current only, with no reaction",
+        "Has the same magnitude on both",
+        "Is zero",
+        "Is radial like a charge"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two long parallel wires carry 2.0 A and 3.0 A in the same direction. Their separation is 0.10 m. Find the force per unit length and say whether they attract. Use μ0 / 2π = 2.0 × 10^−7.",
+      "steps": [
+        "F/L = (μ0 / 2π) I1 I2 / r.",
+        "I1 I2 / r = 2.0 × 3.0 / 0.10 = 60.",
+        "F/L = 2.0 × 10^−7 × 60 = 1.2 × 10^−5 N/m.",
+        "The currents are in the same direction.",
+        "The wires attract."
+      ],
+      "answer": "1.2 × 10^−5 N/m, attractive."
+    }
+  ]
+}

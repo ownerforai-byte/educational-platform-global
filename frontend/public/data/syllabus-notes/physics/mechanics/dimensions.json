@@ -3,17 +3,22 @@
   "unitSlug": "mechanics",
   "topicSlug": "dimensions",
   "topicTitle": "Dimensions",
-  "relevance": 55,
+  "relevance": 94,
   "notes": [
     "Dimensions express a quantity using base quantities. In mechanics, mass M, length L and time T give velocity [v]=LT⁻¹, acceleration [a]=LT⁻² and force [F]=MLT⁻².",
     "Find dimensions from definitions: work W=Fs gives [W]=ML²T⁻²; power P=W/t gives [P]=ML²T⁻³. Pressure is force per area, [p]=ML⁻¹T⁻².",
     "Dimensional homogeneity requires every term added in an equation to have the same dimensions. In s=ut+(1/2)at², both ut and at² have dimension L.",
     "Worked check: in v²=u²+2as, v² and u² are L²T⁻²; as is (LT⁻²)L=L²T⁻². The equation is dimensionally possible, though this test cannot prove it is correct.",
-    "Dimensional analysis can check units and infer powers in a relation, but cannot determine dimensionless constants such as 1/2 or functions involving dimensionless variables."
+    "Dimensional analysis can check units and infer powers in a relation, but cannot determine dimensionless constants such as 1/2 or functions involving dimensionless variables.",
+    "A dimensional check can reject an impossible equation and can suggest the powers in a relation, but it cannot find a dimensionless number such as 1/2 or 2π. An equation that survives the check may still be wrong."
   ],
   "confusion": [
     "Dimensions differ from units: length has dimension L and SI unit metre.",
-    "A dimensionally correct equation may still be physically wrong."
+    "A dimensionally correct equation may still be physically wrong.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find dimensions of pressure and gravitational constant G.",
@@ -29,7 +34,10 @@
   "motionGraphics": "mechanics",
   "examples": [
     "In s=ut+(1/2)at², every term has dimension L.",
-    "v²=u²+2as is homogeneous with dimension L²T⁻²."
+    "v²=u²+2as is homogeneous with dimension L²T⁻².",
+    "A dimensional check can reject an impossible equation and can suggest the powers in a relation, but it cannot find a dimensionless number such as 1/2 or 2π. An equation that survives the check may still be wrong.",
+    "The working relations are [v] = L T^−1 and [F] = M L T^−2 and Only like dimensions may be added. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Check whether v^2 = u^2 + 2 a s is dimensionally possible."
   ],
   "practiceQuestions": [
     "Find dimensions of pressure and gravitational constant G.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Derive dimensions from defining relations.",
     "Only like dimensions may be added.",
-    "Dimensional correctness is necessary, not sufficient."
+    "Dimensional correctness is necessary, not sufficient.",
+    "[v] = L T^−1 and [F] = M L T^−2",
+    "Only like dimensions may be added",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Dimensional analysis checks the powers of base units in equations and catches inconsistent terms, but cannot supply all constants or prove a physical law.",
   "specialNotes": [
@@ -72,12 +84,113 @@
   "importantConcepts": [
     "Derive dimensions from defining relations.",
     "Only like dimensions may be added.",
-    "Dimensional correctness is necessary, not sufficient."
+    "Dimensional correctness is necessary, not sufficient.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find dimensions of pressure and gravitational constant G.",
     "Check x=vt+(1/2)at² dimensionally.",
     "Can dimensional analysis find the numerical factor 2?"
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "Force has dimensions",
+      "options": [
+        "M L T^−2",
+        "L T^−1",
+        "M L",
+        "T"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Terms that are added must",
+      "options": [
+        "Have the same dimensions",
+        "Be numbers only",
+        "Have different dimensions",
+        "Be vectors of unequal units"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Dimensional analysis cannot find",
+      "options": [
+        "A dimensionless constant",
+        "The power of L",
+        "A mismatch",
+        "The dimensions of speed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "[v] is",
+      "options": [
+        "L T^−1",
+        "L T",
+        "M L",
+        "T^−2"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Force has dimensions",
+      "options": [
+        "M L T^−2",
+        "L T^−1",
+        "M L",
+        "T"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Terms that are added must",
+      "options": [
+        "Have the same dimensions",
+        "Be numbers only",
+        "Have different dimensions",
+        "Be vectors of unequal units"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Dimensional analysis cannot find",
+      "options": [
+        "A dimensionless constant",
+        "The power of L",
+        "A mismatch",
+        "The dimensions of speed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "[v] is",
+      "options": [
+        "L T^−1",
+        "L T",
+        "M L",
+        "T^−2"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Check whether v^2 = u^2 + 2 a s is dimensionally possible.",
+      "steps": [
+        "[v^2] = L^2 T^−2.",
+        "[u^2] has the same dimensions.",
+        "[a s] = (L T^−2)(L) = L^2 T^−2.",
+        "Every term matches, so the equation is dimensionally possible.",
+        "The check does not prove the 2."
+      ],
+      "answer": "Dimensionally possible. The factor 2 is not tested."
+    }
+  ]
 }

@@ -1,0 +1,188 @@
+{
+  "title": "Newton's Law of Cooling — Derivation of Rate of Fall of Temperature",
+  "notes": [
+    "Newton's law of cooling says that, when the excess temperature is not large, the rate of loss of heat is proportional to the excess of the body's temperature over the surroundings.",
+    "If the heat loss is dQ in time dt, then dQ/dt = K (θ − θ0), where K depends on the exposed area and the nature of the surface, and θ0 is the surrounding temperature.",
+    "The heat leaving the body also equals −mc dθ, if the body cools without changing state. Dividing by dt gives −mc dθ/dt = K (θ − θ0).",
+    "Therefore the rate of fall of temperature is dθ/dt = −(K/mc) (θ − θ0). The constant k = K/(mc) is larger when the body has a small heat capacity.",
+    "The minus sign means the temperature falls when θ is above θ0. If the body is cooler than the room, the same equation makes the temperature rise.",
+    "The law is a linear approximation. It is used for excesses of a few tens of degrees, where convection and a linearised radiation loss dominate. A red-hot body needs the Stefan–Boltzmann difference of fourth powers."
+  ],
+  "examples": [
+    "Newton's law of cooling says that, when the excess temperature is not large, the rate of loss of heat is proportional to the excess of the body's temperature over the surroundings.",
+    "If the heat loss is dQ in time dt, then dQ/dt = K (θ − θ0), where K depends on the exposed area and the nature of the surface, and θ0 is the surrounding temperature.",
+    "Two bodies have the same surface constant K and the same excess temperature. Their heat capacities are mc and 2mc. Compare the initial rates of fall of temperature."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
+    "Q3. Problem on Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
+    "What is proportional to the excess temperature?",
+    "How does mc enter the rate?",
+    "When does the linear law fail?"
+  ],
+  "formulas": [
+    "dθ/dt = −k (θ − θ0)",
+    "k = K /(mc)"
+  ],
+  "keyPoints": [
+    "Connection of Newton's Law of Cooling — Derivation of Rate of Fall of Temperature to other topics",
+    "The rate of cooling is proportional to the excess temperature.",
+    "The law is for a small excess.",
+    "k depends on surface and on mc.",
+    "The surrounding temperature θ0 is constant."
+  ],
+  "summary": "Newton's Law of Cooling — Derivation of Rate of Fall of Temperature covers essential principles and applications.",
+  "specialNotes": [
+    "K grows with surface area.",
+    "A fan adds forced convection and takes the situation outside the simple law."
+  ],
+  "importantStatements": [
+    "Newton's law of cooling says that, when the excess temperature is not large, the rate of loss of heat is proportional to the excess of the body's temperature over the surroundings.",
+    "If the heat loss is dQ in time dt, then dQ/dt = K (θ − θ0), where K depends on the exposed area and the nature of the surface, and θ0 is the surrounding temperature.",
+    "The heat leaving the body also equals −mc dθ, if the body cools without changing state. Dividing by dt gives −mc dθ/dt = K (θ − θ0)."
+  ],
+  "importantNotes": [
+    "Newton's Law of Cooling — Derivation of Rate of Fall of Temperature is based on fundamental principles.",
+    "Keep the minus sign until you interpret the rate.",
+    "State that the excess is small before quoting the law."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
+    "Rate of fall is largest at the start, when the excess is largest.",
+    "Same surface and same excess: the smaller mc cools faster."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "Newton's law, in its linear form, says the heat-loss rate is proportional to",
+      "options": [
+        "θ^4",
+        "θ − θ0",
+        "The mass only",
+        "The initial temperature alone"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A smaller mc, with the same surface, makes the temperature",
+      "options": [
+        "Fall faster",
+        "Fall slower",
+        "Stay fixed",
+        "Rise without heat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The law is a poor fit for",
+      "options": [
+        "A warm drink a little above room temperature",
+        "A red-hot iron",
+        "A small excess",
+        "A constant θ0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "dθ/dt is negative when",
+      "options": [
+        "The body is hotter than the room",
+        "The body is at θ0",
+        "Mass is zero",
+        "K is zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
+    "Newton's law of cooling",
+    "Excess temperature",
+    "Rate of fall",
+    "Role of mc"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "The rate of cooling is dθ/dt, not the heat itself.",
+    "k is not the same for two bodies just because they are in the same room.",
+    "The law does not say the temperature falls at a constant rate.",
+    "θ0 is the surroundings, not the initial temperature of the body."
+  ],
+  "practice": [
+    "Write dθ/dt = −k (θ − θ0) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "dθ/dt = −k (θ − θ0)",
+    "k = K /(mc)"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "Newton's law, in its linear form, says the heat-loss rate is proportional to",
+      "options": [
+        "θ^4",
+        "θ − θ0",
+        "The mass only",
+        "The initial temperature alone"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A smaller mc, with the same surface, makes the temperature",
+      "options": [
+        "Fall faster",
+        "Fall slower",
+        "Stay fixed",
+        "Rise without heat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The law is a poor fit for",
+      "options": [
+        "A warm drink a little above room temperature",
+        "A red-hot iron",
+        "A small excess",
+        "A constant θ0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "dθ/dt is negative when",
+      "options": [
+        "The body is hotter than the room",
+        "The body is at θ0",
+        "Mass is zero",
+        "K is zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two bodies have the same surface constant K and the same excess temperature. Their heat capacities are mc and 2mc. Compare the initial rates of fall of temperature.",
+      "steps": [
+        "dθ/dt = −(K/mc) (θ − θ0).",
+        "For the first body the magnitude of the rate is (K/mc) times the excess.",
+        "For the second body the heat capacity is doubled, so the magnitude is half as large.",
+        "The excess and K are the same, so they cancel in the comparison.",
+        "The first body cools twice as fast in temperature."
+      ],
+      "answer": "The body with heat capacity mc has twice the initial rate of fall of the body with 2mc."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "07-newtons-law-rate-of-fall-of-temperature",
+  "topicTitle": "Newton's Law of Cooling — Derivation of Rate of Fall of Temperature"
+}

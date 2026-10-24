@@ -5,14 +5,21 @@
   "topicTitle": "Diffraction and Polarization",
   "relevance": 100,
   "notes": [
-    "**Diffraction and Polarization:** This topic covers the fundamental concepts of diffraction and polarization in the physics curriculum.",
-    "Understanding diffraction and polarization is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to diffraction and polarization should be memorized and practiced regularly."
+    "Diffraction is the spreading of a wave when it passes an edge or a narrow opening. It is noticeable when the opening is comparable with the wavelength.",
+    "A single slit of width a has a bright central band. The first dark band on each side satisfies sinθ = λ / a. A smaller a means a larger angle, so a narrower slit makes a wider pattern.",
+    "The central band is twice as wide as the side bands. Most of the light is in that centre. This is not the equal spacing of Young's two-slit fringes.",
+    "A diffraction grating has many slits. The principal maxima are sharp and satisfy d sinθ = m λ, and they are used to measure wavelength.",
+    "Polarisation is included here as the other wave property. Unpolarised light through one Polaroid emerges plane polarised at about half the intensity. A second Polaroid at angle θ then follows Malus.",
+    "This exercise is the single-slit angle. Brewster's angle was the other page, so the numbers are not repeated."
   ],
   "confusion": [
     "❌ 'Diffraction and interference are the same thing.' ✅ Diffraction is bending of waves around obstacles/slits; interference is superposition of waves from *two or more coherent sources*.",
     "❌ 'Polarization applies to all waves.' ✅ Only *transverse* waves can be polarized; longitudinal waves (e.g., sound) cannot.",
-    "❌ 'A single slit produces no diffraction pattern.' ✅ A single slit produces a *diffraction* pattern with a central bright maximum and weaker side fringes."
+    "❌ 'A single slit produces no diffraction pattern.' ✅ A single slit produces a *diffraction* pattern with a central bright maximum and weaker side fringes.",
+    "Single-slit fringes are not equally spaced like Young's.",
+    "A narrower slit gives a wider diffraction pattern.",
+    "The centre of a single slit is bright.",
+    "Half intensity is the first Polaroid on unpolarised light, before Malus."
   ],
   "practice": [
     "Solve at least 5 problems on diffraction and polarization from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "wave-optics-12",
   "motionGraphics": "wave-optics-12",
   "examples": [
-    "Example 1: Real-world application of Diffraction and Polarization",
     "Example 2: Practical demonstration of Diffraction and Polarization concepts",
     "Example 4: Diagram-based question on Diffraction and Polarization",
     "Example 5: Application in daily life involving Diffraction and Polarization"
@@ -61,11 +67,9 @@
     "Note 5: Diffraction and Polarization frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Diffraction and Polarization",
-    "Statement 2: Theorem related to Diffraction and Polarization",
-    "Statement 3: Condition for Diffraction and Polarization to be valid",
-    "Statement 4: Principle governing Diffraction and Polarization",
-    "Statement 5: Corollary or consequence of Diffraction and Polarization"
+    "Diffraction is the spreading of a wave when it passes an edge or a narrow opening. It is noticeable when the opening is comparable with the wavelength.",
+    "A single slit of width a has a bright central band. The first dark band on each side satisfies sinθ = λ / a. A smaller a means a larger angle, so a narrower slit makes a wider pattern.",
+    "The central band is twice as wide as the side bands. Most of the light is in that centre. This is not the equal spacing of Young's two-slit fringes."
   ],
   "importantNotes": [
     "Note 1: Diffraction and Polarization is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Diffraction and Polarization",
     "Task 4: Practice previous year exam questions on Diffraction and Polarization",
     "Task 5: Explain Diffraction and Polarization to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "The first single-slit minimum has",
+      "options": [
+        "sinθ = λ / a",
+        "sinθ = a / λ",
+        "θ = 0 as the minimum",
+        "No formula"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A narrower slit makes the pattern",
+      "options": [
+        "Narrower",
+        "Wider",
+        "Disappear for every wavelength",
+        "Equal to Young's spacing"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The single-slit centre is",
+      "options": [
+        "Dark",
+        "Bright",
+        "A grating order",
+        "Polarised by the slit width alone"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "One Polaroid on unpolarised light transmits about",
+      "options": [
+        "All of it",
+        "Half",
+        "Nothing",
+        "The Brewster angle"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A slit of width 0.020 mm is lit by light of wavelength 600 nm. Find the angle of the first minimum.",
+      "steps": [
+        "a = 2.0 × 10^−5 m and λ = 6.0 × 10^−7 m.",
+        "sinθ = λ / a = 6.0 × 10^−7 / 2.0 × 10^−5.",
+        "sinθ = 0.030.",
+        "θ is about 1.7°, because sinθ is small and θ in radians is about 0.030.",
+        "A narrower slit would make this angle larger."
+      ],
+      "answer": "sinθ = 0.030, so θ ≈ 1.7°."
+    }
   ]
 }

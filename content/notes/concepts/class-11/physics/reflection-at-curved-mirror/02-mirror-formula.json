@@ -9,11 +9,16 @@
     "The centre of curvature C is distance R from pole P; paraxial focus F is halfway between, so f=R/2. Wide-angle marginal rays do not meet this approximation exactly.",
     "Using Cartesian distances positive to the right, a concave mirror has f=−15 cm. For u=−30 cm, 1/v=1/f−1/u=−1/15+1/30=−1/30, so v=−30 cm and m=−v/u=−1.",
     "Construct an image with a ray parallel to the principal axis (reflected through F for a concave mirror) and a ray through C (retraces itself). Their intersection locates a real image; backward extensions locate a virtual image.",
-    "Spherical aberration occurs when marginal rays focus differently from paraxial rays. A smaller aperture reduces it by excluding marginal rays."
+    "Spherical aberration occurs when marginal rays focus differently from paraxial rays. A smaller aperture reduces it by excluding marginal rays.",
+    "When an object is closer to a concave mirror than the focus, the formula gives a positive v. In the Cartesian convention that positive image distance is behind the mirror, and the image is virtual, upright and enlarged. The same formula covers both the real and the virtual cases. The sign does the work."
   ],
   "confusion": [
     "Do not substitute the thin-lens equation for the mirror equation.",
-    "f=R/2 assumes a spherical reflecting surface and small angles."
+    "f=R/2 assumes a spherical reflecting surface and small angles.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A concave mirror has R=40 cm. Find signed f in the stated convention.",
@@ -29,7 +34,10 @@
   "motionGraphics": "reflection-at-curved-mirror",
   "examples": [
     "f=−15 cm and u=−30 cm give v=−30 cm and m=−1.",
-    "A convex mirror has a virtual focus behind its reflecting surface."
+    "A convex mirror has a virtual focus behind its reflecting surface.",
+    "When an object is closer to a concave mirror than the focus, the formula gives a positive v. In the Cartesian convention that positive image distance is behind the mirror, and the image is virtual, upright and enlarged. The same formula covers both the real and the virtual cases. The sign does the work.",
+    "The working relations are 1/v + 1/u = 1/f and An object inside the focal length of a concave mirror gives a virtual image. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A concave mirror has f = −10 cm. An object is at u = −6.0 cm. Find v and say what kind of image it is."
   ],
   "practiceQuestions": [
     "A concave mirror has R=40 cm. Find signed f in the stated convention.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Keep mirror signs consistent with the stated convention.",
     "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration."
+    "Aperture reduction suppresses marginal-ray aberration.",
+    "1/v + 1/u = 1/f",
+    "An object inside the focal length of a concave mirror gives a virtual image",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Curved-mirror image formation follows reflection geometry. The paraxial focus lies halfway to the centre of curvature, and signed equations agree with ray constructions.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Keep mirror signs consistent with the stated convention.",
     "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration."
+    "Aperture reduction suppresses marginal-ray aberration.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A concave mirror has R=40 cm. Find signed f in the stated convention.",
@@ -80,5 +96,102 @@
     "Why are paraxial rays assumed?"
   ],
   "duplicateType": 1,
-  "visualType": "mirror-equation"
+  "visualType": "mirror-equation",
+  "mcs": [
+    {
+      "question": "Inside the focus, a concave mirror gives",
+      "options": [
+        "A real image",
+        "A virtual enlarged image",
+        "No image",
+        "An image at the centre"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A positive v for a mirror means",
+      "options": [
+        "A real image in front",
+        "A virtual image behind the mirror",
+        "u is wrong",
+        "f is positive"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The formula used is still",
+      "options": [
+        "1/v + 1/u = 1/f",
+        "A different law",
+        "Snell's law",
+        "The lens equation with a minus"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The magnification here is",
+      "options": [
+        "Negative",
+        "Positive, so upright",
+        "Zero",
+        "Equal to f"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Inside the focus, a concave mirror gives",
+      "options": [
+        "A real image",
+        "A virtual enlarged image",
+        "No image",
+        "An image at the centre"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A positive v for a mirror means",
+      "options": [
+        "A real image in front",
+        "A virtual image behind the mirror",
+        "u is wrong",
+        "f is positive"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The formula used is still",
+      "options": [
+        "1/v + 1/u = 1/f",
+        "A different law",
+        "Snell's law",
+        "The lens equation with a minus"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The magnification here is",
+      "options": [
+        "Negative",
+        "Positive, so upright",
+        "Zero",
+        "Equal to f"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A concave mirror has f = −10 cm. An object is at u = −6.0 cm. Find v and say what kind of image it is.",
+      "steps": [
+        "1/v = 1/f − 1/u = −1/10 − 1/(−6).",
+        "1/v = −0.10 + 0.167 = +0.067.",
+        "v = +15 cm.",
+        "Positive v means a virtual image behind the mirror.",
+        "m = −v/u = −(15)/(−6) = +2.5, so the image is upright and enlarged."
+      ],
+      "answer": "v = +15 cm, a virtual upright image, 2.5 times as tall."
+    }
+  ]
 }

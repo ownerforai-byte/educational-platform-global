@@ -7,7 +7,10 @@
   "notes": [
     "**Coulomb's Law:** The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them: F = k(q₁q₂)/r².",
     "Understanding Coulomb's Law is essential for solving electrostatics problems and understanding electric fields.",
-    "Key definitions and principles related to Coulomb's Law should be memorized and practiced regularly."
+    "Key definitions and principles related to Coulomb's Law should be memorized and practiced regularly.",
+    "Coulomb's law gives the force between two point charges at rest: F = (1/(4πε0)) |q1 q2| / r^2. The direction is along the line joining them. Like charges repel and unlike charges attract.",
+    "The constant 1/(4πε0) is 9.0 × 10^9 in SI units. Doubling one charge doubles the force. Doubling the separation divides the force by four.",
+    "The force on q1 due to q2 is equal and opposite to the force on q2 due to q1. They are a Newton's third-law pair, even though the charges may be unequal."
   ],
   "confusion": [
     "❌ 'Coulomb's law force is always attractive.' ✅ Force is *attractive* for opposite charges, but *repulsive* for like charges.",
@@ -29,7 +32,6 @@
   "animation3D": "electrostatics",
   "motionGraphics": "electrostatics",
   "examples": [
-    "Example 1: Real-world application of Coulomb's Law",
     "Example 2: Practical demonstration of Coulomb's Law concepts",
     "Example 4: Diagram-based question on Coulomb's Law",
     "Example 5: Application in daily life involving Coulomb's Law"
@@ -62,11 +64,9 @@
     "Note 5: Coulomb's Law frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Coulomb's Law",
-    "Statement 2: Theorem related to Coulomb's Law",
-    "Statement 3: Condition for Coulomb's Law to be valid",
-    "Statement 4: Principle governing Coulomb's Law",
-    "Statement 5: Corollary or consequence of Coulomb's Law"
+    "Coulomb's law gives the force between two point charges at rest: F = (1/(4πε0)) |q1 q2| / r^2. The direction is along the line joining them. Like charges repel and unlike charges attract.",
+    "The constant 1/(4πε0) is 9.0 × 10^9 in SI units. Doubling one charge doubles the force. Doubling the separation divides the force by four.",
+    "The force on q1 due to q2 is equal and opposite to the force on q2 due to q1. They are a Newton's third-law pair, even though the charges may be unequal."
   ],
   "importantNotes": [
     "Note 1: Coulomb's Law is based on fundamental principles",
@@ -143,5 +143,60 @@
     "Task 3: Create a concept map for Coulomb's Law",
     "Task 4: Practice previous year exam questions on Coulomb's Law",
     "Task 5: Explain Coulomb's Law to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Doubling the separation multiplies the force by",
+      "options": [
+        "2",
+        "1/2",
+        "1/4",
+        "4"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Like charges",
+      "options": [
+        "Attract",
+        "Repel",
+        "Feel no force",
+        "Have zero charge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The forces on the two charges are",
+      "options": [
+        "Unequal if the charges differ",
+        "Equal and opposite",
+        "Both toward the larger charge only",
+        "Zero at all distances"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "k is about",
+      "options": [
+        "9 × 10^9",
+        "9",
+        "1/r^2",
+        "The coulomb"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Charges of 1.0 μC and 2.0 μC are 0.30 m apart in air. Find the magnitude of the force. Use k = 9.0 × 10^9.",
+      "steps": [
+        "q1 = 1.0 × 10^−6 C and q2 = 2.0 × 10^−6 C.",
+        "q1 q2 = 2.0 × 10^−12.",
+        "r^2 = 0.09.",
+        "F = 9.0 × 10^9 × 2.0 × 10^−12 / 0.09.",
+        "9e9 × 2e−12 = 1.8e−2, and 0.018/0.09 = 0.20 N. The charges repel."
+      ],
+      "answer": "0.20 N, repulsive."
+    }
   ]
 }

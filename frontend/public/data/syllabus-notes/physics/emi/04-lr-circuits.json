@@ -1,0 +1,205 @@
+{
+  "title": "LR Circuits",
+  "unitSlug": "emi",
+  "topicSlug": "lr-circuits",
+  "topicTitle": "LR Circuits",
+  "relevance": 100,
+  "notes": [
+    "An LR series circuit on a battery has a current that starts at zero. At that instant the entire battery voltage is across the inductor, because the resistor has no current and therefore no voltage.",
+    "As the current grows, the resistor voltage I R grows and the inductor voltage falls. After a long time the inductor voltage is zero and the resistor has the full battery voltage.",
+    "The current is (V/R) (1 − e^(−t/τ)) with τ = L/R. The voltages always add to V, with signs, which is the loop rule at every instant.",
+    "At t = τ the current is about 63% of the final value and the inductor still holds about 37% of the battery voltage.",
+    "If the battery is replaced by a short circuit, the current decays as I_0 e^(−t/τ). The inductor then drives the resistor, and both voltages fall together.",
+    "This file is the circuit view of the same law as the growth-and-decay file. The numbers here are a voltage split rather than a repeat of the earlier current."
+  ],
+  "confusion": [
+    "❌ 'Inductor instantly passes current.' ✅ Inductors *oppose* changes in current; at the moment of switching (t=0), current through an inductor remains zero.",
+    "❌ 'An inductor behaves like a resistor in DC steady state.' ✅ In DC steady state (t → ∞), an inductor acts as a *short circuit* (ideal wire with zero resistance).",
+    "❌ 'LR circuit decay time is infinite.' ✅ Current in an LR circuit decays exponentially; after $5\\tau$ (where $\\tau = L/R$), it is effectively zero.",
+    "The inductor does not keep the battery voltage forever.",
+    "At the first instant the resistor voltage is zero.",
+    "τ is L/R in seconds.",
+    "Decay is not a second growth formula."
+  ],
+  "practice": [
+    "Solve at least 5 problems on lr circuits from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding lr circuits builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of lr circuits span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "emi",
+  "motionGraphics": "emi",
+  "examples": [
+    "Example 2: Practical demonstration of LR Circuits concepts",
+    "Example 4: Diagram-based question on LR Circuits",
+    "Example 5: Application in daily life involving LR Circuits"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain LR Circuits with suitable example.",
+    "Q2. Solve problems related to LR Circuits.",
+    "Q3. Differentiate between various aspects of LR Circuits.",
+    "Q4. Derive the key formula related to LR Circuits.",
+    "Q5. What are the applications of LR Circuits?"
+  ],
+  "formulas": [
+    "Key Formula 2: Mathematical expression of LR Circuits",
+    "Key Formula 3: Application formula for LR Circuits",
+    "Key Formula 4: Derivation result for LR Circuits",
+    "Key Formula 5: Important relation in LR Circuits"
+  ],
+  "keyPoints": [
+    "Key Point 2: Essential theorem or principle related to LR Circuits",
+    "Key Point 3: Important condition or constraint for LR Circuits",
+    "Key Point 4: Common applications of LR Circuits",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "LR Circuits is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which LR Circuits applies",
+    "Note 2: LR Circuits connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of LR Circuits",
+    "Note 4: Remember the units and dimensions involved in LR Circuits",
+    "Note 5: LR Circuits frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "An LR series circuit on a battery has a current that starts at zero. At that instant the entire battery voltage is across the inductor, because the resistor has no current and therefore no voltage.",
+    "As the current grows, the resistor voltage I R grows and the inductor voltage falls. After a long time the inductor voltage is zero and the resistor has the full battery voltage.",
+    "The current is (V/R) (1 − e^(−t/τ)) with τ = L/R. The voltages always add to V, with signs, which is the loop rule at every instant."
+  ],
+  "importantNotes": [
+    "Note 1: LR Circuits is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in LR Circuits",
+    "Note 3: LR Circuits has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for LR Circuits",
+    "Note 5: Cross-check your answers using alternative methods for LR Circuits"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable LR Circuits formula",
+    "Trick 2: Elimination technique for LR Circuits MCQs",
+    "Trick 3: Dimensional analysis shortcut for LR Circuits",
+    "Trick 4: Memory aid for LR Circuits formulas",
+    "Trick 5: Time-saving approach for LR Circuits problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from LR Circuits",
+    "Exam Tip 2: Practice previous year questions on LR Circuits",
+    "Exam Tip 4: Learn the derivations for LR Circuits thoroughly",
+    "Exam Tip 5: Review common mistakes related to LR Circuits"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of LR Circuits is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For LR Circuits, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in LR Circuits?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about LR Circuits is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of LR Circuits",
+    "Concept 2: Key theorem or principle in LR Circuits",
+    "Concept 3: Important application area of LR Circuits",
+    "Concept 4: Fundamental relationship in LR Circuits",
+    "Concept 5: Connection between LR Circuits and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on LR Circuits",
+    "Task 2: Derive the main formula for LR Circuits",
+    "Task 3: Create a concept map for LR Circuits",
+    "Task 4: Practice previous year exam questions on LR Circuits",
+    "Task 5: Explain LR Circuits to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "At the instant of connection the resistor voltage is",
+      "options": [
+        "V",
+        "Zero",
+        "Infinite",
+        "L/R"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A long time later the inductor voltage is",
+      "options": [
+        "V",
+        "Zero",
+        "I R as a rising value",
+        "Infinite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "τ equals",
+      "options": [
+        "R/L",
+        "L/R",
+        "V/R",
+        "L V"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "During decay the driving voltage is",
+      "options": [
+        "The battery, still connected in this setup",
+        "The collapsing inductor",
+        "Zero from the start",
+        "The coulomb force"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 12 V battery, a 4.0 Ω resistor and a 0.80 H inductor are in series. Find the inductor voltage at the first instant and the current after a long time.",
+      "steps": [
+        "At the first instant I = 0, so the resistor voltage is zero.",
+        "The inductor voltage is the full 12 V.",
+        "After a long time the inductor voltage is zero.",
+        "I = V/R = 12/4.0 = 3.0 A.",
+        "τ = 0.80/4.0 = 0.20 s, which sets the pace but is not asked for the two end values."
+      ],
+      "answer": "12 V at the first instant, and 3.0 A after a long time."
+    }
+  ]
+}

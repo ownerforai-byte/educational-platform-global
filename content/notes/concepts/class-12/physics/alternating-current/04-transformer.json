@@ -7,12 +7,20 @@
   "notes": [
     "**Transformer:** An electrical device based on mutual induction that changes the voltage level of an AC supply.",
     "It works on the principle of electromagnetic induction: a varying current in the primary coil induces an EMF in the secondary coil via a common magnetic core.",
-    "Transformers can be step-up (increase voltage) or step-down (decrease voltage)."
+    "Transformers can be step-up (increase voltage) or step-down (decrease voltage).",
+    "A transformer has two coils on an iron core. An alternating current in the primary changes the flux, and that changing flux induces an emf in the secondary. A steady direct current does not keep inducing a secondary emf.",
+    "If leakage is ignored, the voltage ratio equals the turns ratio: V_s/V_p = N_s/N_p. More turns on the secondary means a step-up of voltage. Fewer turns means a step-down.",
+    "An ideal transformer wastes no power, so V_p I_p = V_s I_s. A step-up of voltage is a step-down of current. Energy is not created.",
+    "The core is laminated so that eddy currents have short paths and less heating. A solid iron core would waste power as heat."
   ],
   "confusion": [
     "❌ Assuming transformer works on DC ✅ Transformer only operates on AC as it requires a *changing* magnetic flux to induce EMF (DC has constant flux).",
     "❌ Thinking voltage ratio is independent of current ratio ✅ According to the law of conservation of energy (P_in = P_out for an ideal transformer), voltage and current are inversely proportional: V_p/V_s = I_s/I_p.",
-    "❌ Forgetting eddy currents exist in the core ✅ Eddy currents are circular induced currents in the core that cause energy loss as heat; they are minimized by using laminated iron cores."
+    "❌ Forgetting eddy currents exist in the core ✅ Eddy currents are circular induced currents in the core that cause energy loss as heat; they are minimized by using laminated iron cores.",
+    "A transformer does not change DC.",
+    "Step-up voltage does not step up current.",
+    "The turns ratio is not the current ratio. The current ratio is inverted.",
+    "Laminations are about eddy currents, not about the turns ratio."
   ],
   "practice": [
     "Solve problems using the transformer ratio formula: V_s / V_p = N_s / N_p = I_p / I_s.",
@@ -61,10 +69,7 @@
     "Step-up vs Step-down transformers",
     "Causes of Energy Loss (Hysteresis, Eddy currents, etc.)",
     "Transformer Ratio (Voltage and Turns)",
-    "Efficiency",
-    "• Transformer — principle",
-    "• Types",
-    "• Losses"
+    "Efficiency"
   ],
   "summary": "A transformer changes AC voltage based on mutual induction. It uses the turns ratio to step voltage up or down, while ideally conserving power. Energy losses are mitigated through core design and winding techniques.",
   "specialNotes": [
@@ -75,11 +80,9 @@
     "Note 5: Efficiency is always less than 100% in practical transformers."
   ],
   "importantStatements": [
-    "Statement 1: Transformers operate on the principle of mutual induction.",
-    "Statement 2: A step-up transformer increases voltage and decreases current.",
-    "Statement 3: Flux leakage is a major cause of energy loss.",
-    "Statement 4: Frequency of AC remains unchanged in a transformer.",
-    "Statement 5: Laminated cores reduce eddy current losses."
+    "A transformer has two coils on an iron core. An alternating current in the primary changes the flux, and that changing flux induces an emf in the secondary. A steady direct current does not keep inducing a secondary emf.",
+    "If leakage is ignored, the voltage ratio equals the turns ratio: V_s/V_p = N_s/N_p. More turns on the secondary means a step-up of voltage. Fewer turns means a step-down.",
+    "An ideal transformer wastes no power, so V_p I_p = V_s I_s. A step-up of voltage is a step-down of current. Energy is not created."
   ],
   "importantNotes": [
     "Note 1: Power output is always less than power input in practical cases.",
@@ -175,24 +178,44 @@
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Transformer — principle, types, and losses\"?",
+      "question": "A transformer needs",
       "options": [
-        "Transformer — principle",
-        "Types",
-        "Unrelated topic",
-        "None of the above"
+        "A steady DC",
+        "A changing current",
+        "No core ever",
+        "Equal turns always"
       ],
-      "answer": "A",
-      "explanation": "Transformer — principle is listed among the official sub-ideas of Transformer — principle, types, and losses; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Transformer — principle, types, and losses\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "V_s/V_p equals",
       "options": [
-        "True",
-        "False"
+        "N_p/N_s",
+        "N_s/N_p",
+        "I_s/I_p",
+        "The efficiency"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "In an ideal step-up transformer the secondary current is",
+      "options": [
+        "Larger than the primary current",
+        "Smaller than the primary current",
+        "Zero",
+        "Equal to the turns"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Laminations reduce",
+      "options": [
+        "The turns ratio",
+        "Eddy-current loss",
+        "The frequency",
+        "The need for AC"
+      ],
+      "answer": "B"
     }
   ],
   "source": "generated",
@@ -201,5 +224,18 @@
     "Covers only: transformer — principle, types, losses (within Alternating Current).",
     "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "exercises": [
+    {
+      "question": "An ideal transformer has 1000 primary turns and 100 secondary turns. The primary is at 220 V and draws 0.50 A. Find the secondary voltage and current.",
+      "steps": [
+        "N_s/N_p = 100/1000 = 1/10.",
+        "V_s = 220 × 1/10 = 22 V.",
+        "Ideal power balance: 220 × 0.50 = 22 × I_s.",
+        "110 = 22 I_s, so I_s = 5.0 A.",
+        "The voltage is stepped down and the current is stepped up."
+      ],
+      "answer": "22 V and 5.0 A."
+    }
   ]
 }

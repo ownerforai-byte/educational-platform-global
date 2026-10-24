@@ -3,14 +3,179 @@
   "unitSlug": "vectors",
   "topicSlug": "scalar-and-vector-products",
   "topicTitle": "Scalar and vector products",
-  "relevance": 78,
+  "relevance": 94,
   "notes": [
     "**Q1(a). State parallelogram law of vector addition.**\n\n**Answer:** The Parallelogram Law of Vector Addition states that if two vectors acting simultaneously at a point are represented in magnitude and direction by the two adjacent sides of a parallelogram drawn from that point, then their resultant is completely represented in magnitude and direction by the diagonal of the parallelogram passing through that same point.",
     "**Q1(b). Find a vector that points in the same direction as the vector $(i + j)$ and whose magnitude is 1.**\n\n**Answer:** To find a vector pointing in the same direction with a magnitude of 1, we calculate its unit vector. Let $V = i + j$. The magnitude $|V| = \\sqrt{1^2 + 1^2} = \\sqrt{2}$. The unit vector is $V / |V| = (i + j) / \\sqrt{2} = (1/\\sqrt{2})i + (1/\\sqrt{2})j$. In decimal notation, this equals approximately $0.707i + 0.707j$.",
     "**Q2(a). What is a null vector?**\n\n**Answer:** A null vector (or zero vector) is defined as a vector that has zero magnitude and an arbitrary, unspecified direction. It is represented as $\\vec{0}$.",
     "**Q2(b). Give the significance of a null vector.**\n\n**Answer:** A null vector is physically significant in maintaining mathematical consistency within vector algebra. For example, if an object is at rest, its velocity vector is a null vector. Similarly, when subtracting a vector from itself ($A - A$), or calculating the acceleration of an object moving at uniform velocity, the result must remain a vector quantity, which is uniquely satisfied by the null vector.",
-    "**Q2(c). A vector A is given as $A = 4i - 3j$. Find its unit vector.**\n\n**Answer:**\n1. Find the magnitude of A: $|A| = \\sqrt{4^2 + (-3)^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$.\n2. Divide the vector components by the magnitude to secure the unit vector: $\\hat{A} = (4i - 3j) / 5$."
+    "**Q2(c). A vector A is given as $A = 4i - 3j$. Find its unit vector.**\n\n**Answer:**\n1. Find the magnitude of A: $|A| = \\sqrt{4^2 + (-3)^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$.\n2. Divide the vector components by the magnitude to secure the unit vector: $\\hat{A} = (4i - 3j) / 5$.",
+    "The parallelogram law says that two vectors drawn as adjacent sides of a parallelogram have their resultant along the diagonal. A unit vector keeps the direction and sets the magnitude to 1. A null vector has magnitude zero and is what you get from A − A, or from the velocity of an object at rest."
   ],
   "type": "set",
-  "order": 1
+  "order": 1,
+  "confusion": [
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "keyPoints": [
+    "A unit vector is the vector divided by its magnitude",
+    "A null vector has magnitude zero",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "The parallelogram law says that two vectors drawn as adjacent sides of a parallelogram have their resultant along the diagonal. A unit vector keeps the direction and sets the magnitude to 1. A null vector has magnitude zero and is what you get from A − A, or from the velocity of an object at rest.",
+    "The working relations are A unit vector is the vector divided by its magnitude and A null vector has magnitude zero. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Find the unit vector in the direction of 4 i − 3 j. The magnitude is √(16 + 9) = 5. Divide each component by 5."
+  ],
+  "examples": [
+    "The parallelogram law says that two vectors drawn as adjacent sides of a parallelogram have their resultant along the diagonal. A unit vector keeps the direction and sets the magnitude to 1. A null vector has magnitude zero and is what you get from A − A, or from the velocity of an object at rest.",
+    "The working relations are A unit vector is the vector divided by its magnitude and A null vector has magnitude zero. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Find the unit vector in the direction of 4 i − 3 j."
+  ],
+  "universalFacts": [
+    "A unit vector is the vector divided by its magnitude",
+    "A null vector has magnitude zero"
+  ],
+  "formulas": [
+    "A unit vector is the vector divided by its magnitude",
+    "A null vector has magnitude zero"
+  ],
+  "practice": [
+    "Write A unit vector is the vector divided by its magnitude and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "Write A unit vector is the vector divided by its magnitude and name the symbols.",
+    "What does A null vector has magnitude zero tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A unit vector has magnitude",
+      "options": [
+        "0",
+        "1",
+        "The original magnitude",
+        "5 always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A null vector has magnitude",
+      "options": [
+        "Zero",
+        "1",
+        "The larger component",
+        "√2"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The magnitude of 4 i − 3 j is",
+      "options": [
+        "1",
+        "5",
+        "7",
+        "12"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The parallelogram diagonal is",
+      "options": [
+        "The resultant",
+        "A component only",
+        "A null vector",
+        "The unit vector by definition"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A unit vector has magnitude",
+      "options": [
+        "0",
+        "1",
+        "The original magnitude",
+        "5 always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A null vector has magnitude",
+      "options": [
+        "Zero",
+        "1",
+        "The larger component",
+        "√2"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The magnitude of 4 i − 3 j is",
+      "options": [
+        "1",
+        "5",
+        "7",
+        "12"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The parallelogram diagonal is",
+      "options": [
+        "The resultant",
+        "A component only",
+        "A null vector",
+        "The unit vector by definition"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the unit vector in the direction of 4 i − 3 j.",
+      "steps": [
+        "The magnitude is √(16 + 9) = 5.",
+        "Divide each component by 5.",
+        "The unit vector is 0.80 i − 0.60 j.",
+        "Its magnitude is 1.",
+        "It points the same way as 4 i − 3 j."
+      ],
+      "answer": "0.80 i − 0.60 j."
+    }
+  ],
+  "summary": "Divide a vector by its magnitude to get the unit vector. For 4 i − 3 j the magnitude is 5 and the unit vector is 0.80 i − 0.60 j. A null vector is the zero-magnitude case, such as the velocity of a body at rest."
 }

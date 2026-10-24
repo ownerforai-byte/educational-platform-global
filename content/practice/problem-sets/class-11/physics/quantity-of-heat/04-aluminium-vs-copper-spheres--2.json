@@ -4,6 +4,176 @@
     "**Setup:** aluminium (c = 900 J/kg·K) and copper (c = 390 J/kg·K) spheres of equal mass are heated to the same temperature and cooled under identical conditions",
     "Identical conditions ⇒ same rate of heat loss (dH/dt) for both spheres at a given instant, by Newton's Law of Cooling",
     "But −dH/dt = mc·(dθ/dt), so dθ/dt = (dH/dt)/(mc) — for the same dH/dt, a smaller c gives a larger dθ/dt",
-    "**Answer: Copper (lower c) cools faster** — its temperature falls more quickly even though it isn't losing heat energy any faster than the aluminium sphere"
-  ]
+    "**Answer: Copper (lower c) cools faster** — its temperature falls more quickly even though it isn't losing heat energy any faster than the aluminium sphere",
+    "Equal masses of aluminium and copper, cooling in the same way, can lose heat at the same rate at the same temperature. The copper has the smaller specific heat, so the same heat loss drops its temperature faster. Losing heat faster is not the same statement as cooling faster.",
+    "The working relations are At the same excess temperature the rate of heat loss can be the same and dθ/dt is larger when c is smaller. Name each symbol, convert the data into SI units, and only then substitute."
+  ],
+  "confusion": [
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "keyPoints": [
+    "At the same excess temperature the rate of heat loss can be the same",
+    "dθ/dt is larger when c is smaller",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "Equal masses of aluminium and copper, cooling in the same way, can lose heat at the same rate at the same temperature. The copper has the smaller specific heat, so the same heat loss drops its temperature faster. Losing heat faster is not the same statement as cooling faster.",
+    "The working relations are At the same excess temperature the rate of heat loss can be the same and dθ/dt is larger when c is smaller. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Both spheres have mass 0.20 kg. c_Al = 900 and c_Cu = 390, in J/kg K. At an instant both lose heat at 20 W. Find each dθ/dt. |dQ/dt| = m c |dθ/dt|. For aluminium, 20 = 0.20 × 900 × rate, so the rate is 20/180 = 0.11 K/s."
+  ],
+  "examples": [
+    "Equal masses of aluminium and copper, cooling in the same way, can lose heat at the same rate at the same temperature. The copper has the smaller specific heat, so the same heat loss drops its temperature faster. Losing heat faster is not the same statement as cooling faster.",
+    "The working relations are At the same excess temperature the rate of heat loss can be the same and dθ/dt is larger when c is smaller. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Both spheres have mass 0.20 kg. c_Al = 900 and c_Cu = 390, in J/kg K. At an instant both lose heat at 20 W. Find each dθ/dt."
+  ],
+  "universalFacts": [
+    "At the same excess temperature the rate of heat loss can be the same",
+    "dθ/dt is larger when c is smaller"
+  ],
+  "formulas": [
+    "At the same excess temperature the rate of heat loss can be the same",
+    "dθ/dt is larger when c is smaller"
+  ],
+  "practice": [
+    "Write At the same excess temperature the rate of heat loss can be the same and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "Write At the same excess temperature the rate of heat loss can be the same and name the symbols.",
+    "What does dθ/dt is larger when c is smaller tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The sphere that cools faster is",
+      "options": [
+        "Aluminium",
+        "Copper",
+        "They always match",
+        "The heavier one, but the masses are equal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The reason is",
+      "options": [
+        "A smaller specific heat",
+        "A larger specific heat",
+        "A different mass",
+        "A different heat-loss rate in this setup"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Newton's law, under identical conditions, matches",
+      "options": [
+        "The rate of heat loss at the same excess temperature",
+        "The rate of temperature fall for every material",
+        "The latent heat",
+        "The colour only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "c of copper here is",
+      "options": [
+        "900",
+        "390",
+        "4200",
+        "Zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The sphere that cools faster is",
+      "options": [
+        "Aluminium",
+        "Copper",
+        "They always match",
+        "The heavier one, but the masses are equal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The reason is",
+      "options": [
+        "A smaller specific heat",
+        "A larger specific heat",
+        "A different mass",
+        "A different heat-loss rate in this setup"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Newton's law, under identical conditions, matches",
+      "options": [
+        "The rate of heat loss at the same excess temperature",
+        "The rate of temperature fall for every material",
+        "The latent heat",
+        "The colour only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "c of copper here is",
+      "options": [
+        "900",
+        "390",
+        "4200",
+        "Zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Both spheres have mass 0.20 kg. c_Al = 900 and c_Cu = 390, in J/kg K. At an instant both lose heat at 20 W. Find each dθ/dt.",
+      "steps": [
+        "|dQ/dt| = m c |dθ/dt|.",
+        "For aluminium, 20 = 0.20 × 900 × rate, so the rate is 20/180 = 0.11 K/s.",
+        "For copper, 20 = 0.20 × 390 × rate, so the rate is 20/78 = 0.26 K/s.",
+        "Copper's temperature falls faster.",
+        "The heat-loss rate was the same by the setup."
+      ],
+      "answer": "Aluminium about 0.11 K/s. Copper about 0.26 K/s. Copper cools faster."
+    }
+  ],
+  "summary": "Equal heat-loss rates do not mean equal cooling rates. With c = 900 and 390, the same 20 W drops the copper's temperature faster, about 0.26 K/s against 0.11 K/s for the aluminium.",
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "04-aluminium-vs-copper-spheres",
+  "topicTitle": "Q: Equal-mass aluminium and copper spheres — which cools faster?"
 }

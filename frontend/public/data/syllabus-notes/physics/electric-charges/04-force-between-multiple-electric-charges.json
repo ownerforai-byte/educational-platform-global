@@ -11,17 +11,28 @@
     "**Method.** Draw each Coulomb force on the chosen charge, resolve into components along convenient axes, sum the components, then combine for the net force.",
     "**Collinear charges.** For three charges on a line the middle charge feels opposing forces; the net force points toward the weaker side and vanishes only in a carefully balanced position.",
     "**Link to electric field.** The net force can be written F = qE, where E is the total field produced at the charge's position by all the other charges.",
-    "**System energy.** The potential energy of a charge system is the sum of the pairwise terms kqᵢqⱼ/rᵢⱼ — counted once per pair, never twice."
+    "**System energy.** The potential energy of a charge system is the sum of the pairwise terms kqᵢqⱼ/rᵢⱼ — counted once per pair, never twice.",
+    "Three charges are handled one pair at a time. The net force on one charge is the vector sum of the forces from the others. Equal perpendicular forces of magnitude F give a resultant F√2 at 45°, not 2F."
   ],
   "confusion": [
-    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.."
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "bounds": [
+    "Covers only: force between multiple electric charges (within Electric Charges).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
   ],
   "practice": [
-    "one worked example for \"Force between multiple electric charges\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Net force is the vector sum of the Coulomb forces and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
@@ -29,12 +40,14 @@
     "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Three charges are handled one pair at a time. The net force on one charge is the vector sum of the forces from the others. Equal perpendicular forces of magnitude F give a resultant F√2 at 45°, not 2F.",
+    "The working relations are Net force is the vector sum of the Coulomb forces and Perpendicular forces add by Pythagoras. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 1.0 μC charge at the origin feels 3.0 × 10^−3 N east from one charge and 4.0 × 10^−3 N north from another. Find the net force."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Force between multiple electric charges\" with one example.",
-    "compare \"Force between multiple electric charges\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Force between multiple electric charges\" and verify the answer is plausible."
+    "Write Net force is the vector sum of the Coulomb forces and name the symbols.",
+    "What does Perpendicular forces add by Pythagoras tell you?",
+    "Which unit must be converted before the substitution?"
   ],
   "formulas": [
     "F = k q₁q₂/r²",
@@ -43,23 +56,141 @@
     "V = kq/r"
   ],
   "numericals": [
-    "Use  F = k q₁q₂/r²  — pick reasonable values, solve, and check the units.",
-    "Use  E = F/q  — pick reasonable values, solve, and check the units.",
-    "Use  ∮E·dA = Q/ε₀  — pick reasonable values, solve, and check the units."
+    "A 1.0 μC charge at the origin feels 3.0 × 10^−3 N east from one charge and 4.0 × 10^−3 N north from another. Find the net force."
   ],
   "keyPoints": [
-    "• Force between multiple electric charges"
+    "Net force is the vector sum of the Coulomb forces",
+    "Perpendicular forces add by Pythagoras",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
-  "summary": "Force between multiple electric charges (Electric Charges, Physics, class-11-notes) covers Force between multiple electric charges. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The net force is the vector sum. Perpendicular pushes of 3.0 mN and 4.0 mN give 5.0 mN at 53° north of east. Adding the magnitudes would be wrong.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Force between multiple electric charges\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Forces in different directions are",
       "options": [
-        "True",
-        "False"
+        "Added as magnitudes",
+        "Added as vectors",
+        "Multiplied",
+        "Ignored"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Two equal perpendicular forces F give",
+      "options": [
+        "2F",
+        "F√2",
+        "Zero",
+        "F/2"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A charge does not exert",
+      "options": [
+        "A force on a neighbour",
+        "A net force on itself",
+        "A force along the line of centres",
+        "An inverse-square force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A negative component means",
+      "options": [
+        "The force is imaginary",
+        "That component is opposite the chosen axis",
+        "The charge is zero",
+        "Pythagoras has failed"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Three charges are handled one pair at a time. The net force on one charge is the vector sum of the forces from the others. Equal perpendicular forces of magnitude F give a resultant F√2 at 45°, not 2F.",
+    "The working relations are Net force is the vector sum of the Coulomb forces and Perpendicular forces add by Pythagoras. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 1.0 μC charge at the origin feels 3.0 × 10^−3 N east from one charge and 4.0 × 10^−3 N north from another. Find the net force. The forces are perpendicular. R = √(3.0^2 + 4.0^2) × 10^−3 = 5.0 × 10^−3 N."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Forces in different directions are",
+      "options": [
+        "Added as magnitudes",
+        "Added as vectors",
+        "Multiplied",
+        "Ignored"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two equal perpendicular forces F give",
+      "options": [
+        "2F",
+        "F√2",
+        "Zero",
+        "F/2"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A charge does not exert",
+      "options": [
+        "A force on a neighbour",
+        "A net force on itself",
+        "A force along the line of centres",
+        "An inverse-square force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A negative component means",
+      "options": [
+        "The force is imaginary",
+        "That component is opposite the chosen axis",
+        "The charge is zero",
+        "Pythagoras has failed"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 1.0 μC charge at the origin feels 3.0 × 10^−3 N east from one charge and 4.0 × 10^−3 N north from another. Find the net force.",
+      "steps": [
+        "The forces are perpendicular.",
+        "R = √(3.0^2 + 4.0^2) × 10^−3 = 5.0 × 10^−3 N.",
+        "tanθ = 4/3, so θ = 53° north of east.",
+        "Do not add 3 and 4 to get 7.",
+        "The third charge, if it sat on the test charge, is not a separate force on itself."
+      ],
+      "answer": "5.0 × 10^−3 N at 53° north of east."
     }
   ]
 }

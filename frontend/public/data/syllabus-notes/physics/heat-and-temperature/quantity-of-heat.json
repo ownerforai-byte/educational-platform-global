@@ -3,17 +3,22 @@
   "unitSlug": "heat-and-temperature",
   "topicSlug": "quantity-of-heat",
   "topicTitle": "Quantity of Heat",
-  "relevance": 45,
+  "relevance": 94,
   "notes": [
     "Heat Q is energy transferred because of a temperature difference. For a temperature change without phase change, Q=mcΔT, where m is mass and c is specific heat capacity. A temperature difference has the same numerical size in kelvins and degrees Celsius.",
     "Heat capacity C=Q/ΔT applies to the whole object; specific heat c=C/m is per unit mass. A 0.50 kg aluminium block with c=900 J kg⁻¹ K⁻¹ heated by 20 K needs Q=0.50×900×20=9000 J.",
     "During melting or boiling, temperature remains constant while latent heat changes phase: Q=mL. Melting 0.10 kg of ice at 0°C requires 0.10×334000=33400 J before the resulting water is warmed.",
     "For an insulated calorimeter, energy conservation gives ΣQ=0: heat lost by hot parts equals heat gained by cold parts. Include the calorimeter and any phase changes when specified.",
-    "Example: 0.20 kg water heated by 15 K with c=4200 J kg⁻¹ K⁻¹ needs Q=0.20×4200×15=12600 J."
+    "Example: 0.20 kg water heated by 15 K with c=4200 J kg⁻¹ K⁻¹ needs Q=0.20×4200×15=12600 J.",
+    "Heat that changes temperature is m c Δθ. Heat that changes state at constant temperature is m L, with no Δθ in the formula. A melting calculation often needs both: warm the ice to 0°C, melt it, then warm the water."
   ],
   "confusion": [
     "Do not use Q=mcΔT across an interval that includes melting or boiling.",
-    "Celsius is not an absolute temperature for gas-law calculations."
+    "Celsius is not an absolute temperature for gas-law calculations.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find the heat to raise 0.20 kg water by 15 K using c=4200 J kg⁻¹ K⁻¹.",
@@ -29,7 +34,10 @@
   "motionGraphics": "heat-and-temperature",
   "examples": [
     "0.50 kg aluminium, c=900 and ΔT=20 K requires 9.0 kJ.",
-    "0.10 kg ice melting at 0°C requires 33.4 kJ using Lf=334 kJ kg⁻¹."
+    "0.10 kg ice melting at 0°C requires 33.4 kJ using Lf=334 kJ kg⁻¹.",
+    "Heat that changes temperature is m c Δθ. Heat that changes state at constant temperature is m L, with no Δθ in the formula. A melting calculation often needs both: warm the ice to 0°C, melt it, then warm the water.",
+    "The working relations are Q = m c Δθ and Q = m L at a change of state. Name each symbol, convert the data into SI units, and only then substitute.",
+    "How much heat melts 0.10 kg of ice at 0°C and then warms the water to 20°C? Use L = 3.3 × 10^5 J/kg and c = 4200."
   ],
   "practiceQuestions": [
     "Find the heat to raise 0.20 kg water by 15 K using c=4200 J kg⁻¹ K⁻¹.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Use mcΔT for sensible heating and mL for phase change.",
     "Temperature differences can use °C or K; absolute temperature must use K.",
-    "Calorimetry assumes negligible exchange with surroundings unless corrected."
+    "Calorimetry assumes negligible exchange with surroundings unless corrected.",
+    "Q = m c Δθ",
+    "Q = m L at a change of state",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Heat calculations separate temperature change from phase change: Q=mcΔT and Q=mL. Insulated calorimetry follows energy conservation.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Use mcΔT for sensible heating and mL for phase change.",
     "Temperature differences can use °C or K; absolute temperature must use K.",
-    "Calorimetry assumes negligible exchange with surroundings unless corrected."
+    "Calorimetry assumes negligible exchange with surroundings unless corrected.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find the heat to raise 0.20 kg water by 15 K using c=4200 J kg⁻¹ K⁻¹.",
@@ -85,5 +101,102 @@
     "**Calorimetry Principle:** In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating $m_1 c_1 (T_f - T_1) = m_2 c_2 (T_2 - T_f)$."
   ],
   "duplicateType": 1,
-  "visualType": "heat-transfer"
+  "visualType": "heat-transfer",
+  "mcs": [
+    {
+      "question": "Heating without a change of state uses",
+      "options": [
+        "m c Δθ",
+        "m L",
+        "c/m",
+        "L/Δθ"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Melting at the melting point uses",
+      "options": [
+        "m c Δθ only",
+        "m L",
+        "P V",
+        "k Δθ"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "During melting the temperature",
+      "options": [
+        "Rises steadily",
+        "Stays at the melting point",
+        "Falls",
+        "Is undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A full ice-to-warm-water sum",
+      "options": [
+        "Adds the melting heat and the warming heat",
+        "Uses only one of them",
+        "Ignores the mass",
+        "Uses escape speed"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Heating without a change of state uses",
+      "options": [
+        "m c Δθ",
+        "m L",
+        "c/m",
+        "L/Δθ"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Melting at the melting point uses",
+      "options": [
+        "m c Δθ only",
+        "m L",
+        "P V",
+        "k Δθ"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "During melting the temperature",
+      "options": [
+        "Rises steadily",
+        "Stays at the melting point",
+        "Falls",
+        "Is undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A full ice-to-warm-water sum",
+      "options": [
+        "Adds the melting heat and the warming heat",
+        "Uses only one of them",
+        "Ignores the mass",
+        "Uses escape speed"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "How much heat melts 0.10 kg of ice at 0°C and then warms the water to 20°C? Use L = 3.3 × 10^5 J/kg and c = 4200.",
+      "steps": [
+        "Melting: Q1 = m L = 0.10 × 3.3 × 10^5 = 3.3 × 10^4 J.",
+        "Warming: Q2 = m c Δθ = 0.10 × 4200 × 20.",
+        "Q2 = 8.4 × 10^3 J.",
+        "Total = 4.1 × 10^4 J, to two significant figures from the 3.3.",
+        "There is no temperature change during the melting step."
+      ],
+      "answer": "4.1 × 10^4 J."
+    }
+  ]
 }

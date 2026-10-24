@@ -1,0 +1,197 @@
+{
+  "title": "Electric field and electric field intensity due to point …",
+  "unitSlug": "electrostatics",
+  "topicSlug": "electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets",
+  "topicTitle": "Electric field and electric field intensity due to point charges, line charges, and charged sheets",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Electric field intensity is the force on a small positive test charge divided by that charge. Its unit is the newton per coulomb. The test charge must be small enough not to disturb the sources.",
+    "A point charge Q produces E = k Q / r^2, outward if Q is positive. Two point charges need a vector sum. On the perpendicular bisector of an equal and opposite pair, the fields point the same way along the bisector.",
+    "A long straight line of charge uses Gauss's law. The field is radial and E = λ / (2 π ε0 r), so it falls as 1/r rather than 1/r^2. λ is the charge per unit length.",
+    "An infinite non-conducting sheet with surface charge density σ produces a field σ / (2 ε0) on each side, pointing away from the sheet if σ is positive. The field does not fall with distance in this ideal infinite case.",
+    "A conducting sheet with the same charge density on one outer surface has E = σ / ε0 just outside, because the conductor forces the field lines to leave from one side in the standard result for a thin charged conductor.",
+    "Field lines start on positive charge and end on negative charge. They do not cross. Closer lines mean a stronger field. The force on any charge q placed in the field is q E."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
+    "The sheet field is not k Q / r^2.",
+    "The line field falls as 1/r, not 1/r^2.",
+    "σ / (2 ε0) is the non-conducting sheet. A conductor surface is σ / ε0.",
+    "E is not the force. The force is q E."
+  ],
+  "bounds": [
+    "Covers only: electric field, electric field intensity due to point charges, line charges, charged sheets (within Electrostatics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
+  ],
+  "practice": [
+    "Write Point charge: E = k Q / r^2 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
+    "Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
+    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+  ],
+  "examples": [
+    "Electric field intensity is the force on a small positive test charge divided by that charge. Its unit is the newton per coulomb. The test charge must be small enough not to disturb the sources.",
+    "A point charge Q produces E = k Q / r^2, outward if Q is positive. Two point charges need a vector sum. On the perpendicular bisector of an equal and opposite pair, the fields point the same way along the bisector.",
+    "An infinite non-conducting sheet has σ = 1.77 × 10^−8 C/m^2. Take 2 ε0 = 1.77 × 10^−11. Find E and its direction if σ is positive."
+  ],
+  "practiceQuestions": [
+    "Write E for a point charge.",
+    "How does the field of a long line depend on r?",
+    "What is E for an infinite non-conducting sheet?"
+  ],
+  "formulas": [
+    "F = k q₁q₂/r²",
+    "E = F/q",
+    "∮E·dA = Q/ε₀",
+    "V = kq/r"
+  ],
+  "numericals": [
+    "An infinite non-conducting sheet has σ = 1.77 × 10^−8 C/m^2. Take 2 ε0 = 1.77 × 10^−11. Find E and its direction if σ is positive."
+  ],
+  "keyPoints": [
+    "• Electric field intensity due to point charges",
+    "Field is force per unit positive charge.",
+    "A point charge falls as 1/r^2.",
+    "A long line falls as 1/r.",
+    "An infinite sheet gives a constant field."
+  ],
+  "summary": "Field intensity is force per unit positive charge. A point charge gives kQ/r^2, a long line gives a field that falls as 1/r, and an infinite insulating sheet gives the constant field σ/(2ε0). Just outside a conductor the field is σ/ε0.",
+  "mcqs": [
+    {
+      "question": "A point-charge field falls as",
+      "options": [
+        "1/r",
+        "1/r^2",
+        "A constant",
+        "r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A long line of charge has a field that falls as",
+      "options": [
+        "1/r^2",
+        "1/r",
+        "r",
+        "Zero at every r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An infinite insulating sheet has",
+      "options": [
+        "E = σ / (2 ε0)",
+        "E = k Q / r^2",
+        "E = 0 on both sides",
+        "A field that falls as 1/r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Just outside a charged conductor the field is",
+      "options": [
+        "σ / ε0",
+        "σ / (2 ε0) for this conducting surface",
+        "Zero",
+        "k Q"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Electric field intensity is the force on a small positive test charge divided by that charge. Its unit is the newton per coulomb. The test charge must be small enough not to disturb the sources.",
+    "A point charge Q produces E = k Q / r^2, outward if Q is positive. Two point charges need a vector sum. On the perpendicular bisector of an equal and opposite pair, the fields point the same way along the bisector.",
+    "A long straight line of charge uses Gauss's law. The field is radial and E = λ / (2 π ε0 r), so it falls as 1/r rather than 1/r^2. λ is the charge per unit length."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Point: 1/r^2. Line: 1/r. Sheet: constant.",
+    "Conductor surface: σ/ε0. Insulating sheet: σ/(2ε0)."
+  ],
+  "specialNotes": [
+    "ε0 = 8.85 × 10^−12.",
+    "k = 1/(4 π ε0) = 9.0 × 10^9."
+  ],
+  "importantNotes": [
+    "Name the shape before the formula.",
+    "Give the direction: away from positive charge."
+  ],
+  "importantConcepts": [
+    "Point-charge field",
+    "Line charge",
+    "Infinite sheet",
+    "Conductor surface"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A point-charge field falls as",
+      "options": [
+        "1/r",
+        "1/r^2",
+        "A constant",
+        "r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A long line of charge has a field that falls as",
+      "options": [
+        "1/r^2",
+        "1/r",
+        "r",
+        "Zero at every r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An infinite insulating sheet has",
+      "options": [
+        "E = σ / (2 ε0)",
+        "E = k Q / r^2",
+        "E = 0 on both sides",
+        "A field that falls as 1/r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Just outside a charged conductor the field is",
+      "options": [
+        "σ / ε0",
+        "σ / (2 ε0) for this conducting surface",
+        "Zero",
+        "k Q"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An infinite non-conducting sheet has σ = 1.77 × 10^−8 C/m^2. Take 2 ε0 = 1.77 × 10^−11. Find E and its direction if σ is positive.",
+      "steps": [
+        "E = σ / (2 ε0).",
+        "E = 1.77 × 10^−8 / 1.77 × 10^−11.",
+        "E = 1.00 × 10^3 N/C.",
+        "The field is the same at every distance in this ideal model.",
+        "It points away from the sheet on both sides."
+      ],
+      "answer": "1.00 × 10^3 N/C, away from the sheet."
+    }
+  ]
+}

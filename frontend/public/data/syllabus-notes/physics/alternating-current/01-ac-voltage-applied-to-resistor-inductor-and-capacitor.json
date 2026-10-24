@@ -1,0 +1,195 @@
+{
+  "title": "AC voltage applied to resistor, inductor, and capacitor",
+  "unitSlug": "alternating-current",
+  "topicSlug": "ac-voltage-applied-to-resistor-inductor-and-capacitor",
+  "topicTitle": "AC voltage applied to resistor, inductor, and capacitor",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "When a sinusoidal voltage is applied to a pure resistor, the current follows the voltage with no delay. The rms current is the rms voltage divided by R, and the average power is the heating I_rms squared times R.",
+    "A pure inductor opposes a changing current. Its reactance is X_L = 2πfL, so a higher frequency or a larger inductance means a smaller current. The voltage leads the current by a quarter of a cycle, and the average power is zero.",
+    "A pure capacitor opposes a change of voltage. Its reactance is X_C = 1/(2πfC), which is large at low frequency and small at high frequency. The current leads the voltage by a quarter cycle, and again the average power is zero.",
+    "The three elements are drawn as phasors. The resistor voltage lies along the current. The inductor voltage is drawn 90° ahead of the current. The capacitor voltage is drawn 90° behind the current.",
+    "Household meters read rms values. A peak of 10√2 volts has an rms value of 10 V. Mixing a peak voltage with an rms current gives a wrong power.",
+    "A real coil is an inductor with resistance in series. The pure cases on this page are the pieces used later to build the impedance of an LCR circuit."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)..",
+    "The resistor does not shift the phase.",
+    "X_L rises with frequency and X_C falls.",
+    "Average power in a pure L or C is zero.",
+    "rms is the peak divided by √2, not by 2."
+  ],
+  "bounds": [
+    "Covers only: ac voltage applied to resistor, inductor, capacitor (within Alternating Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)."
+  ],
+  "practice": [
+    "Write I_rms = V_rms / R and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).",
+    "Energy stored U = ½CV² = Q²/2C.",
+    "Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+  ],
+  "examples": [
+    "When a sinusoidal voltage is applied to a pure resistor, the current follows the voltage with no delay. The rms current is the rms voltage divided by R, and the average power is the heating I_rms squared times R.",
+    "A pure inductor opposes a changing current. Its reactance is X_L = 2πfL, so a higher frequency or a larger inductance means a smaller current. The voltage leads the current by a quarter of a cycle, and the average power is zero.",
+    "A 50 Hz supply of 10 V rms is connected to a 0.20 H pure inductor. Find X_L. Take π = 3.14."
+  ],
+  "practiceQuestions": [
+    "What is the phase in a pure resistor?",
+    "How does capacitive reactance depend on frequency?",
+    "Why is the average power zero in a pure inductor?"
+  ],
+  "formulas": [
+    "C = Q/V",
+    "C = ε₀A/d",
+    "U = ½CV²"
+  ],
+  "numericals": [
+    "A 50 Hz supply of 10 V rms is connected to a 0.20 H pure inductor. Find X_L. Take π = 3.14."
+  ],
+  "keyPoints": [
+    "Resistor: current and voltage in phase.",
+    "Inductor: current lags by 90°.",
+    "Capacitor: current leads by 90°.",
+    "Use rms with rms."
+  ],
+  "summary": "A resistor takes an in-phase current and dissipates I_rms squared R. An inductor has reactance 2πfL and makes the voltage lead. A capacitor has reactance 1/(2πfC) and makes the current lead. Pure L and C exchange energy with the source and take no average power.",
+  "mcqs": [
+    {
+      "question": "In a pure resistor the phase difference is",
+      "options": [
+        "90°",
+        "0°",
+        "180°",
+        "45° always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "X_L increases when",
+      "options": [
+        "Frequency increases",
+        "Frequency decreases",
+        "L is removed",
+        "The capacitor grows"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In a pure capacitor the current",
+      "options": [
+        "Lags the voltage",
+        "Leads the voltage",
+        "Is zero",
+        "Is in phase"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Average power in a pure inductor is",
+      "options": [
+        "I^2 X_L",
+        "V I",
+        "Zero",
+        "Always equal to the resistor power"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantStatements": [
+    "When a sinusoidal voltage is applied to a pure resistor, the current follows the voltage with no delay. The rms current is the rms voltage divided by R, and the average power is the heating I_rms squared times R.",
+    "A pure inductor opposes a changing current. Its reactance is X_L = 2πfL, so a higher frequency or a larger inductance means a smaller current. The voltage leads the current by a quarter of a cycle, and the average power is zero.",
+    "A pure capacitor opposes a change of voltage. Its reactance is X_C = 1/(2πfC), which is large at low frequency and small at high frequency. The current leads the voltage by a quarter cycle, and again the average power is zero."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "ELI: voltage leads current in L. ICE: current leads voltage in C.",
+    "Pure L or C: average power zero."
+  ],
+  "specialNotes": [
+    "Take π = 3.14 when a decimal reactance is required.",
+    "A lamp in series with a coil is dimmer on AC than the resistance alone would suggest."
+  ],
+  "importantNotes": [
+    "Name the element before the phase.",
+    "Keep peak and rms in separate lines of the working."
+  ],
+  "importantConcepts": [
+    "Resistive AC",
+    "Inductive reactance",
+    "Capacitive reactance",
+    "rms values"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "In a pure resistor the phase difference is",
+      "options": [
+        "90°",
+        "0°",
+        "180°",
+        "45° always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "X_L increases when",
+      "options": [
+        "Frequency increases",
+        "Frequency decreases",
+        "L is removed",
+        "The capacitor grows"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In a pure capacitor the current",
+      "options": [
+        "Lags the voltage",
+        "Leads the voltage",
+        "Is zero",
+        "Is in phase"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Average power in a pure inductor is",
+      "options": [
+        "I^2 X_L",
+        "V I",
+        "Zero",
+        "Always equal to the resistor power"
+      ],
+      "answer": "C"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 50 Hz supply of 10 V rms is connected to a 0.20 H pure inductor. Find X_L. Take π = 3.14.",
+      "steps": [
+        "X_L = 2πfL.",
+        "2πf = 2 × 3.14 × 50 = 314.",
+        "X_L = 314 × 0.20 = 62.8 Ω.",
+        "The current lags the voltage by 90°.",
+        "The average power in this pure inductor is zero."
+      ],
+      "answer": "62.8 Ω, with the current lagging by 90°."
+    }
+  ]
+}

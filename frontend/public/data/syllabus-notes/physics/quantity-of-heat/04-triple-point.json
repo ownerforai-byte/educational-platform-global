@@ -9,11 +9,16 @@
     "Water’s triple point is approximately 273.16 K (0.01°C) and 611.7 Pa. At ordinary atmospheric pressure, ice and liquid water coexist near 0°C at a different pressure.",
     "While all three phases coexist, supplied energy can change their relative amounts while pressure and temperature remain fixed. Equal quantities of each phase are not required.",
     "On a pressure–temperature diagram, the solid–liquid, liquid–vapour and solid–vapour boundary curves meet at the triple point. It provides a reproducible reference state for thermometry.",
-    "A phase diagram shows why pressure must accompany temperature when describing a phase equilibrium; changing pressure can shift the phase boundaries."
+    "A phase diagram shows why pressure must accompany temperature when describing a phase equilibrium; changing pressure can shift the phase boundaries.",
+    "The triple point is a single point on the phase diagram, not a line. Solid, liquid and vapour of a pure substance sit together there, and neither pressure nor temperature can be changed without losing one of the phases. Water's triple point is the fixed point of the kelvin scale, at 273.16 K."
   ],
   "confusion": [
     "Do not quote 0°C and 1 atm as the triple-point conditions.",
-    "The definition applies to one pure substance in equilibrium."
+    "The definition applies to one pure substance in equilibrium.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Distinguish water’s triple point from its normal-pressure melting point.",
@@ -29,7 +34,10 @@
   "motionGraphics": "quantity-of-heat",
   "examples": [
     "Water near 0.01°C and 611.7 Pa may have ice, liquid and vapour in equilibrium.",
-    "At 1 atm, water melts near 0°C, not at its triple-point pressure."
+    "At 1 atm, water melts near 0°C, not at its triple-point pressure.",
+    "The triple point is a single point on the phase diagram, not a line. Solid, liquid and vapour of a pure substance sit together there, and neither pressure nor temperature can be changed without losing one of the phases. Water's triple point is the fixed point of the kelvin scale, at 273.16 K.",
+    "The working relations are The triple point is the one pressure and temperature where solid, liquid and vapour coexist and For water it is 273.16 K. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Explain why a kelvin temperature can be defined from the water triple point, and state that temperature."
   ],
   "practiceQuestions": [
     "Distinguish water’s triple point from its normal-pressure melting point.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Three phases coexist at one specific pair of pressure and temperature.",
     "Pressure matters; temperature alone does not define the triple point.",
-    "Phase amounts need not be equal."
+    "Phase amounts need not be equal.",
+    "The triple point is the one pressure and temperature where solid, liquid and vapour coexist",
+    "For water it is 273.16 K",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "The triple point is the unique P–T state where solid, liquid and vapour coexist. Water’s value is about 273.16 K and 611.7 Pa.",
   "specialNotes": [
@@ -72,12 +84,113 @@
   "importantConcepts": [
     "Three phases coexist at one specific pair of pressure and temperature.",
     "Pressure matters; temperature alone does not define the triple point.",
-    "Phase amounts need not be equal."
+    "Phase amounts need not be equal.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Distinguish water’s triple point from its normal-pressure melting point.",
     "What changes when heat is supplied at the triple point while all phases coexist?",
     "Sketch the triple point on a P–T diagram."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "At the triple point",
+      "options": [
+        "Three phases coexist",
+        "Only ice exists",
+        "The temperature can vary freely",
+        "The pressure is zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Water's triple point is",
+      "options": [
+        "273.16 K",
+        "0 K",
+        "100°C exactly as 373.16 only",
+        "373 K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The ice point is",
+      "options": [
+        "The same state as the triple point",
+        "0.01 K lower than the triple point",
+        "100 K",
+        "The boiling point"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A triple point is",
+      "options": [
+        "A line of pressures",
+        "One point on the phase diagram",
+        "Any melting temperature",
+        "The critical point"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "At the triple point",
+      "options": [
+        "Three phases coexist",
+        "Only ice exists",
+        "The temperature can vary freely",
+        "The pressure is zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Water's triple point is",
+      "options": [
+        "273.16 K",
+        "0 K",
+        "100°C exactly as 373.16 only",
+        "373 K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The ice point is",
+      "options": [
+        "The same state as the triple point",
+        "0.01 K lower than the triple point",
+        "100 K",
+        "The boiling point"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A triple point is",
+      "options": [
+        "A line of pressures",
+        "One point on the phase diagram",
+        "Any melting temperature",
+        "The critical point"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Explain why a kelvin temperature can be defined from the water triple point, and state that temperature.",
+      "steps": [
+        "The triple point occurs at one temperature and one pressure.",
+        "It can be reproduced in a sealed cell of pure water.",
+        "That temperature is defined as 273.16 K.",
+        "A degree kelvin is then 1/273.16 of that temperature.",
+        "The ice point, 0°C, is slightly lower, at 273.15 K, because it is not the triple point."
+      ],
+      "answer": "273.16 K."
+    }
+  ]
 }

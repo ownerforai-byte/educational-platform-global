@@ -9,11 +9,17 @@
     "Rutherford inferred a tiny, dense, positively charged nucleus containing nearly all atomic mass, surrounded by electrons; most atomic volume is empty space. Nuclear radius is about 10⁻¹⁵ m versus atomic radius about 10⁻¹⁰ m.",
     "For a head-on alpha particle, its kinetic energy converts to electrostatic potential energy at closest approach: Eα=(1/4πε₀)(2Ze²/rmin). Thus rmin=(1/4πε₀)(2Ze²/Eα), under the Coulomb-scattering model.",
     "Nuclear notation ᴬ_ZX gives proton number Z, nucleon number A and neutron number N=A−Z. Isotopes share Z but have different A; isobars share A but have different Z.",
-    "Example: uranium-235 has Z=92, A=235 and N=143. Its nuclear charge is +92e."
+    "Example: uranium-235 has Z=92, A=235 and N=143. Its nuclear charge is +92e.",
+    "Rutherford's foil experiment showed that the atom is mostly empty. Nearly every alpha particle went straight on, and a small number were turned through large angles. That is possible only if the positive charge and most of the mass sit in a nucleus far smaller than the atom.",
+    "The working relations are Most alpha particles go almost straight through the foil and A few bounce back from a tiny positive nucleus. Name each symbol, convert the data into SI units, and only then substitute."
   ],
   "confusion": [
     "Do not claim the experiment established a modern planetary electron orbit.",
-    "Closest-approach estimates assume Coulomb interaction and head-on motion."
+    "Closest-approach estimates assume Coulomb interaction and head-on motion.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Give two observations and corresponding inferences from Rutherford scattering.",
@@ -29,7 +35,10 @@
   "motionGraphics": "nuclear-physics",
   "examples": [
     "For ²³⁵₉₂U, N=235−92=143.",
-    "The nuclear radius scale is roughly 10⁵ times smaller than atomic radius."
+    "The nuclear radius scale is roughly 10⁵ times smaller than atomic radius.",
+    "Rutherford's foil experiment showed that the atom is mostly empty. Nearly every alpha particle went straight on, and a small number were turned through large angles. That is possible only if the positive charge and most of the mass sit in a nucleus far smaller than the atom.",
+    "The working relations are Most alpha particles go almost straight through the foil and A few bounce back from a tiny positive nucleus. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An atom is about 10^−10 m across and a nucleus is about 10^−15 m across. Find the ratio of the nuclear volume to the atomic volume."
   ],
   "practiceQuestions": [
     "Give two observations and corresponding inferences from Rutherford scattering.",
@@ -43,7 +52,11 @@
   "keyPoints": [
     "Most particles passing through implies mostly empty atomic volume.",
     "Rare large deflections imply concentrated positive charge.",
-    "Isotopes share proton number but differ in neutron number."
+    "Isotopes share proton number but differ in neutron number.",
+    "Most alpha particles go almost straight through the foil",
+    "A few bounce back from a tiny positive nucleus",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Rutherford scattering revealed a compact, positively charged nucleus and mostly empty atomic volume. Nuclear notation records proton, neutron and nucleon counts.",
   "specialNotes": [
@@ -72,7 +85,11 @@
   "importantConcepts": [
     "Most particles passing through implies mostly empty atomic volume.",
     "Rare large deflections imply concentrated positive charge.",
-    "Isotopes share proton number but differ in neutron number."
+    "Isotopes share proton number but differ in neutron number.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Give two observations and corresponding inferences from Rutherford scattering.",
@@ -86,5 +103,102 @@
     "**Rutherford Scattering Experiment:** Alpha particles were fired at a thin gold foil. Most passed through with little deflection, but a few scattered at large angles (>90°). This disproved the Thomson plum-pudding model and established the nuclear model: a tiny, dense, positively charged nucleus containing most of the atom's mass.",
     "**Nuclear Size vs Atom Size:** The nucleus is ~10⁻¹⁵ m (1-10 fm) while the atom is ~10⁻¹⁰ m (1 Å). The nucleus occupies ~10⁻¹⁵ of the atomic volume but contains >99.9% of the mass. The rest is empty space where electrons orbit.",
     "**Nuclear Density:** Nearly constant for all nuclei: ρ = mass/volume ≈ A·1.67×10⁻²⁷ kg / (4/3 π (1.2×10⁻¹⁵ A¹ᐟ³)³) ≈ 2.3×10¹⁷ kg/m³. This constancy supports the liquid-drop model and the idea that nucleons are closely packed."
+  ],
+  "mcs": [
+    {
+      "question": "Most alpha particles in the foil experiment",
+      "options": [
+        "Bounce straight back",
+        "Pass almost straight through",
+        "Stop in the electron cloud as the main result",
+        "Split the atom"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Large-angle deflections imply",
+      "options": [
+        "A spread-out positive charge",
+        "A tiny massive positive nucleus",
+        "No nucleus",
+        "A neutral core"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The nuclear volume is smaller than the atomic volume by about",
+      "options": [
+        "10",
+        "10^−15 for these radii",
+        "1",
+        "10^15"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The experiment used",
+      "options": [
+        "Alpha particles",
+        "Slow neutrons only",
+        "X-rays as the beam",
+        "Electrons from a cathode ray tube as the historical beam"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Most alpha particles in the foil experiment",
+      "options": [
+        "Bounce straight back",
+        "Pass almost straight through",
+        "Stop in the electron cloud as the main result",
+        "Split the atom"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Large-angle deflections imply",
+      "options": [
+        "A spread-out positive charge",
+        "A tiny massive positive nucleus",
+        "No nucleus",
+        "A neutral core"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The nuclear volume is smaller than the atomic volume by about",
+      "options": [
+        "10",
+        "10^−15 for these radii",
+        "1",
+        "10^15"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The experiment used",
+      "options": [
+        "Alpha particles",
+        "Slow neutrons only",
+        "X-rays as the beam",
+        "Electrons from a cathode ray tube as the historical beam"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An atom is about 10^−10 m across and a nucleus is about 10^−15 m across. Find the ratio of the nuclear volume to the atomic volume.",
+      "steps": [
+        "Volume scales as the cube of the radius.",
+        "The radius ratio is 10^−15 / 10^−10 = 10^−5.",
+        "The volume ratio is (10^−5)^3 = 10^−15.",
+        "The nucleus occupies a tiny fraction of the atom.",
+        "The large-angle scatters come from that small charged core."
+      ],
+      "answer": "10^−15."
+    }
   ]
 }

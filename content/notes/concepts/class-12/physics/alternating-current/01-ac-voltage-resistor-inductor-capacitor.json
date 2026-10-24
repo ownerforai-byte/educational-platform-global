@@ -7,12 +7,19 @@
   "notes": [
     "**AC through R, L, C:** This topic covers the behavior of AC circuits containing Resistors (R), Inductors (L), and Capacitors (C).",
     "Understanding the phase relationships between voltage and current in R, L, and C components is essential for analyzing complex AC circuits.",
-    "Key concepts include impedance, reactance, and the conditions for electrical resonance."
+    "Key concepts include impedance, reactance, and the conditions for electrical resonance.",
+    "An alternating voltage can be written v = V_0 sin ωt. In a pure resistor the current is i = (V_0/R) sin ωt, so voltage and current reach their peaks together and the average power is I_rms^2 R.",
+    "In a pure inductor the current lags the voltage by 90°. The opposition is the inductive reactance X_L = ωL = 2πfL, and it grows with frequency. A pure inductor stores energy in its magnetic field and returns it, so the average power over a cycle is zero.",
+    "In a pure capacitor the current leads the voltage by 90°. The capacitive reactance is X_C = 1/(ωC), and it falls as the frequency rises. The average power over a cycle is again zero because energy is stored in the electric field and then returned."
   ],
   "confusion": [
     "❌ 'In an AC circuit, the voltage and current are always in phase' ✅ In a pure resistor, they are in phase. In an inductor, voltage leads current by 90°. In a capacitor, voltage lags current by 90°.",
     "❌ 'Impedance (Z) is the algebraic sum of resistance (R) and reactance (X)' ✅ Impedance is the vector sum: Z = √(R² + (X_L - X_C)²).",
-    "❌ 'Resonance occurs when resistance is maximum' ✅ Resonance occurs when inductive reactance equals capacitive reactance (X_L = X_C), which minimizes impedance in a series circuit."
+    "❌ 'Resonance occurs when resistance is maximum' ✅ Resonance occurs when inductive reactance equals capacitive reactance (X_L = X_C), which minimizes impedance in a series circuit.",
+    "Voltage does not lead the current in a resistor.",
+    "X_L rises with frequency. X_C falls.",
+    "A pure inductor does not consume average power.",
+    "Peak and rms differ by √2. Do not mix them in one formula."
   ],
   "practice": [
     "Solve at least 5 problems on AC circuits (RL, RC, RLC) from your textbook.",
@@ -64,11 +71,9 @@
     "Note 5: Resonance frequency problems are common in examinations."
   ],
   "importantStatements": [
-    "Statement 1: Voltage leads current in an inductor.",
-    "Statement 2: Current leads voltage in a capacitor.",
-    "Statement 3: At resonance, the circuit behaves as a pure resistor.",
-    "Statement 4: Power factor can be at most 1.",
-    "Statement 5: Impedance is frequency-dependent."
+    "An alternating voltage can be written v = V_0 sin ωt. In a pure resistor the current is i = (V_0/R) sin ωt, so voltage and current reach their peaks together and the average power is I_rms^2 R.",
+    "In a pure inductor the current lags the voltage by 90°. The opposition is the inductive reactance X_L = ωL = 2πfL, and it grows with frequency. A pure inductor stores energy in its magnetic field and returns it, so the average power over a cycle is zero.",
+    "In a pure capacitor the current leads the voltage by 90°. The capacitive reactance is X_C = 1/(ωC), and it falls as the frequency rises. The average power over a cycle is again zero because energy is stored in the electric field and then returned."
   ],
   "importantNotes": [
     "Note 1: Always check for series vs parallel combinations.",
@@ -156,5 +161,60 @@
     "Task 3: Practice constructing phasor diagrams.",
     "Task 4: Calculate power factor for various frequencies.",
     "Task 5: Review derivations of impedance and resonance frequency."
+  ],
+  "mcqs": [
+    {
+      "question": "In a pure resistor the current",
+      "options": [
+        "Lags by 90°",
+        "Leads by 90°",
+        "Is in phase with the voltage",
+        "Is zero"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "X_L equals",
+      "options": [
+        "2πfL",
+        "1/(2πfL)",
+        "R",
+        "f/L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "X_C falls when",
+      "options": [
+        "Frequency rises",
+        "Frequency falls",
+        "Capacitance is removed",
+        "The resistor is larger"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Average power in a pure inductor is",
+      "options": [
+        "I^2 X_L",
+        "Zero",
+        "V I",
+        "Always negative and large"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 50 Hz supply is connected to a 0.10 H pure inductor. Find X_L. Take π = 3.14.",
+      "steps": [
+        "X_L = 2πfL.",
+        "2πf = 2 × 3.14 × 50 = 314.",
+        "X_L = 314 × 0.10 = 31.4 Ω.",
+        "The current lags the voltage by 90°.",
+        "The average power in this pure inductor is zero."
+      ],
+      "answer": "31.4 Ω, with current lagging the voltage by 90°."
+    }
   ]
 }

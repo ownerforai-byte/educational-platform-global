@@ -9,15 +9,23 @@
     "**Vector Form of Potential Gradient:** The complete relationship between field and potential is $\\vec{E} = -\\vec{\\nabla}V$, where $\\vec{\\nabla} = \\hat{i}\\frac{\\partial}{\\partial x} + \\hat{j}\\frac{\\partial}{\\partial y} + \\hat{k}\\frac{\\partial}{\\partial z}$ is the gradient (del) operator. The negative sign is physically essential: the electric field always points in the direction of steepest decrease of potential, exactly as a ball rolls downhill. Written in Cartesian components: $E_x = -\\frac{\\partial V}{\\partial x}$, $E_y = -\\frac{\\partial V}{\\partial y}$, $E_z = -\\frac{\\partial V}{\\partial z}$.",
     "**Gradient for Standard Charge Distributions:** (1) **Point charge:** $V = kQ/r \\Rightarrow E = -\\frac{d}{dr}\\left(\\frac{kQ}{r}\\right) = \\frac{kQ}{r^2}$, recovering the inverse-square law exactly; (2) **Infinite line charge:** $V = -\\frac{\\lambda}{2\\pi\\varepsilon_0}\\ln\\frac{r}{r_0} \\Rightarrow E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}$, recovering the 1/r dependence; (3) **Infinite plane sheet:** $V = -\\frac{\\sigma}{2\\varepsilon_0}x \\Rightarrow E = \\frac{\\sigma}{2\\varepsilon_0}$, a constant gradient matching the uniform field; (4) **Charged spherical shell (outside):** $V = \\frac{kQ}{r} \\Rightarrow E = \\frac{kQ}{r^2}$, identical to a point charge at the centre.",
     "**Graphical Interpretation of Potential Gradient:** A graph of potential V against distance r along a field line has slope equal to minus the potential gradient. The graph is a straight line for a uniform field, a hyperbola for a point charge or dipole, and a logarithmic curve for a line charge. Where the graph is steep, the field is strong; where it is flat, the field is weak. At the point of inflection in the potential curve of a point charge's neighbourhood, the gradient and hence the field attain their maximum value.",
-    "**Practical Determination of Potential Gradient:** The potential gradient along a conductor or a wire carrying a steady current is measured by the potential drop per unit length, $K = \\frac{V}{l}$, and equals the electric field E in that conductor. In a uniform current-carrying wire of length l and cross-sectional area A carrying current I and having resistivity ρ, $K = \\frac{IR}{\\text{Area}} = \\frac{I\\rho}{A}$, a result obtained by combining Ohm's law with $E = V/l$. This is the standard method for determining the resistivity of a material, and it is also the basis of the potentiometric and Kelvin bridge methods of measurement."
+    "**Practical Determination of Potential Gradient:** The potential gradient along a conductor or a wire carrying a steady current is measured by the potential drop per unit length, $K = \\frac{V}{l}$, and equals the electric field E in that conductor. In a uniform current-carrying wire of length l and cross-sectional area A carrying current I and having resistivity ρ, $K = \\frac{IR}{\\text{Area}} = \\frac{I\\rho}{A}$, a result obtained by combining Ohm's law with $E = V/l$. This is the standard method for determining the resistivity of a material, and it is also the basis of the potentiometric and Kelvin bridge methods of measurement.",
+    "The electric field is the negative gradient of the potential. If potential falls as you walk in a certain direction, the field points that way. A uniform field between plates is simply the potential difference divided by the separation, from the positive plate toward the negative plate."
   ],
   "confusion": [
     "Omitting the negative sign in E = -dV/dx: The minus sign indicates that the field points toward decreasing potential. Writing E = dV/dx gives the wrong direction whenever V decreases along the chosen axis.",
     "Assuming the potential gradient is a vector while differentiating only with respect to one variable: For a general three-dimensional field the gradient is a vector; the scalar expression dV/dx is valid only along a chosen axis where the field is known to be uniform or one-dimensional.",
-    "Confusing the potential gradient with the gradient of a scalar function in general mathematics: In electrostatics the potential gradient carries a minus sign and is identical in magnitude to the electric field, but a generic mathematical gradient is always positive in magnitude and has no such sign convention."
+    "Confusing the potential gradient with the gradient of a scalar function in general mathematics: In electrostatics the potential gradient carries a minus sign and is identical in magnitude to the electric field, but a generic mathematical gradient is always positive in magnitude and has no such sign convention.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
-    "A conducting wire of length 2.0 m and cross-sectional area 1.0 × 10⁻⁶ m² carries a current of 0.5 A. The measured potential drop across its ends is 1.5 V. (a) Find the potential gradient. (b) Find the resistivity of the material. Solution: (a) $K = \\frac{V}{l} = \\frac{1.5}{2.0} = 0.75\\,\\text{V/m}$, which equals the electric field E. (b) From Ohm's law, $R = \\frac{V}{I} = \\frac{1.5}{0.5} = 3.0\\,\\Omega$. The resistivity is $\\rho = \\frac{RA}{l} = \\frac{(3.0)(1.0 \\times 10^{-6})}{2.0} = 1.5 \\times 10^{-6}\\,\\Omega\\cdot\\text{m}$, a value typical of a good conductor such as graphite or a semiconductor."
+    "A conducting wire of length 2.0 m and cross-sectional area 1.0 × 10⁻⁶ m² carries a current of 0.5 A. The measured potential drop across its ends is 1.5 V. (a) Find the potential gradient. (b) Find the resistivity of the material. Solution: (a) $K = \\frac{V}{l} = \\frac{1.5}{2.0} = 0.75\\,\\text{V/m}$, which equals the electric field E. (b) From Ohm's law, $R = \\frac{V}{I} = \\frac{1.5}{0.5} = 3.0\\,\\Omega$. The resistivity is $\\rho = \\frac{RA}{l} = \\frac{(3.0)(1.0 \\times 10^{-6})}{2.0} = 1.5 \\times 10^{-6}\\,\\Omega\\cdot\\text{m}$, a value typical of a good conductor such as graphite or a semiconductor.",
+    "Write E = − dV/dr and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "The steep potential gradient across a neuron axon membrane, roughly 10⁵ V per metre during an action potential, is what causes Na⁺ and K⁺ ions to rush through their channel proteins at 10⁻⁹ second timescales.",
@@ -31,6 +39,7 @@
     "Electron beam lithography and cathode ray tubes: A large, uniform potential gradient between accelerating electrodes sets the beam energy (in electron volts) and therefore the focal length and resolution of the instrument."
   ],
   "practiceQuestions": [
+    "Q1. Define potential gradient. Show that it is equal in magnitude and opposite in direction to the electric field.",
     "Q2. Starting from V = kQ/r for a point charge, use the relation E = -dV/dr to derive the expression for the electric field, and comment on the sign obtained.",
     "Q3. Derive expressions for the potential and hence the potential gradient for (a) an infinitely long line charge, and (b) an infinite plane sheet of charge.",
     "Q4. A metal wire of length 100 cm and diameter 1 mm carries a current of 1 A with a potential difference of 0.5 V across its ends. Calculate the potential gradient, resistance, and resistivity of the material."
@@ -54,9 +63,15 @@
     "The relation E = -∇V holds only for electrostatic fields. In a time-varying magnetic field, the generalized relation is E = -∇V - dA/dt, so potential alone no longer determines the field (Faraday's law).",
     "Wherever the potential is constant, the potential gradient and hence the electric field are exactly zero. This is why the interior of a conductor in electrostatic equilibrium is field-free even though its potential is finite."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "The electric field is the negative gradient of the potential. If potential falls as you walk in a certain direction, the field points that way. A uniform field between plates is simply the potential difference divided by the separation, from the positive plate toward the negative plate.",
+    "The working relations are E = − dV/dr and The field points toward falling potential. Name each symbol, convert the data into SI units, and only then substitute.",
+    "The potential falls by 20 V over 5.0 cm in the direction of the field. Find E. The fall is along the field, so the magnitude is ΔV/Δx. Δx = 0.050 m."
+  ],
   "importantNotes": [
-    "The gradient operator ∇V always points in the direction of maximum increase of V; the electric field is its negative, so E points toward maximum decrease."
+    "The gradient operator ∇V always points in the direction of maximum increase of V; the electric field is its negative, so E points toward maximum decrease.",
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
   ],
   "examShortTricks": [
     "Field recovery trick: differentiate the known V(r) and put a minus sign to obtain E(r). E.g. V = kQ/r gives E = kQ/r², and V = -(λ/2πε₀)ln r gives E = λ/(2πε₀r).",
@@ -64,41 +79,50 @@
     "Resistivity shortcut: K = V/l = Iρ/A, so ρ = (V/l)(A/I)."
   ],
   "examNotes": [
-    "Deriving the electric field from a given potential function using the gradient, and the numerical determination of resistivity from the potential gradient of a wire, are standard NEB Class 11 examination items."
+    "Deriving the electric field from a given potential function using the gradient, and the numerical determination of resistivity from the potential gradient of a wire, are standard NEB Class 11 examination items.",
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
   ],
   "mcs": [
     {
-      "question": "The SI unit of potential gradient is identical to:",
+      "question": "The field points toward",
       "options": [
-        "J/C",
-        "N/C",
-        "V",
-        "J/C²"
+        "Higher potential",
+        "Lower potential",
+        "Constant potential",
+        "The larger mass"
       ],
-      "answer": "B",
-      "explanation": "Potential gradient has units of V/m = (J/C)/m = J/(C·m). Since 1 J = 1 N·m, this reduces to N/C, which is exactly the unit of electric field intensity."
+      "answer": "B"
     },
     {
-      "question": "If the potential V = kQ/r, then the electric field obtained from the gradient relation is:",
+      "question": "E equals",
       "options": [
-        "−kQ/r²",
-        "kQ/r²",
-        "2kQ/r",
-        "kQ/r"
+        "−dV/dr",
+        "V r",
+        "Q V",
+        "The potential itself"
       ],
-      "answer": "B",
-      "explanation": "E = -dV/dr = -d(kQ/r)/dr = -(-kQ/r²) = kQ/r², recovering the standard inverse-square field, directed radially outward for a positive Q."
+      "answer": "A"
     },
     {
-      "question": "A wire of length 2 m has a potential drop of 4 V between its ends. The potential gradient and the electric field in the wire are:",
+      "question": "20 V over 5.0 cm is",
       "options": [
-        "2 V/m each",
-        "2 V/m and 4 V/m respectively",
-        "4 V/m and 2 V/m respectively",
-        "8 V/m each"
+        "400 V/m",
+        "4 V/m",
+        "100 V/m",
+        "20 V/m"
       ],
-      "answer": "A",
-      "explanation": "K = V/l = 4/2 = 2 V/m. Since the potential gradient equals the electric field in the conductor, E = 2 V/m = 2 N/C."
+      "answer": "A"
+    },
+    {
+      "question": "1 V/m equals",
+      "options": [
+        "1 N/C",
+        "1 coulomb",
+        "1 tesla",
+        "1 farad"
+      ],
+      "answer": "A"
     }
   ],
   "importantConcepts": [
@@ -114,5 +138,60 @@
     "Determine resistivity of a material from measured potential gradient."
   ],
   "duplicateType": 1,
-  "visualType": "potential-gradient"
+  "visualType": "potential-gradient",
+  "mcqs": [
+    {
+      "question": "The field points toward",
+      "options": [
+        "Higher potential",
+        "Lower potential",
+        "Constant potential",
+        "The larger mass"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "E equals",
+      "options": [
+        "−dV/dr",
+        "V r",
+        "Q V",
+        "The potential itself"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "20 V over 5.0 cm is",
+      "options": [
+        "400 V/m",
+        "4 V/m",
+        "100 V/m",
+        "20 V/m"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "1 V/m equals",
+      "options": [
+        "1 N/C",
+        "1 coulomb",
+        "1 tesla",
+        "1 farad"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "The potential falls by 20 V over 5.0 cm in the direction of the field. Find E.",
+      "steps": [
+        "The fall is along the field, so the magnitude is ΔV/Δx.",
+        "Δx = 0.050 m.",
+        "E = 20 / 0.050 = 400 V/m.",
+        "The direction is the direction of the falling potential.",
+        "1 V/m is the same as 1 N/C."
+      ],
+      "answer": "400 V/m, toward lower potential."
+    }
+  ]
 }

@@ -9,12 +9,17 @@
     "**Hubble's evidence.** Galaxies show redshift proportional to distance (v = H₀d) — the expansion law that founded observational cosmology.",
     "**Cosmic microwave background.** The faint 2.7 K microwave glow filling the sky is the cooled remnant of the fireball, released when atoms formed about 380,000 years after the Big Bang.",
     "**Primordial nucleosynthesis.** In the first minutes, nuclear fusion made hydrogen, helium and traces of lithium; all heavier elements were forged later inside stars.",
-    "**Timeline.** Inflation → matter–radiation equality → recombination and CMB → first stars and galaxies → solar system (about 9 Gyr later) → planets and life."
+    "**Timeline.** Inflation → matter–radiation equality → recombination and CMB → first stars and galaxies → solar system (about 9 Gyr later) → planets and life.",
+    "Hubble's observation is that distant galaxies recede, and the recession speed is roughly proportional to the distance. Running that expansion backward leads to a hot, dense early state. The cosmic microwave background is the leftover radiation from that state, now cooled to about 2.7 K."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in universe and big bang.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on universe and big bang from your textbook.",
@@ -30,7 +35,6 @@
   "animation3D": "recent-trends-in-physics",
   "motionGraphics": "recent-trends-in-physics",
   "examples": [
-    "Real-world application of Universe and Big Bang",
     "Practical demonstration of Universe and Big Bang concepts",
     "Diagram-based question on Universe and Big Bang",
     "Application in daily life involving Universe and Big Bang"
@@ -46,7 +50,12 @@
     "Application formula for Universe and Big Bang",
     "Derivation result for Universe and Big Bang"
   ],
-  "keyPoints": [],
+  "keyPoints": [
+    "Galaxy recession speed is about H times distance",
+    "The cosmic microwave background is the cooled glow of the early universe",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Universe and Big Bang is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Universe and Big Bang applies",
@@ -56,11 +65,9 @@
     "Note 5: Universe and Big Bang frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Universe and Big Bang",
-    "Statement 2: Theorem related to Universe and Big Bang",
-    "Statement 3: Condition for Universe and Big Bang to be valid",
-    "Statement 4: Principle governing Universe and Big Bang",
-    "Statement 5: Corollary or consequence of Universe and Big Bang"
+    "Hubble's observation is that distant galaxies recede, and the recession speed is roughly proportional to the distance. Running that expansion backward leads to a hot, dense early state. The cosmic microwave background is the leftover radiation from that state, now cooled to about 2.7 K.",
+    "The working relations are Galaxy recession speed is about H times distance and The cosmic microwave background is the cooled glow of the early universe. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Take H = 70 km/s per megaparsec. Estimate the recession speed of a galaxy 10 megaparsecs away. v ≈ H d. d = 10 Mpc."
   ],
   "importantNotes": [
     "Note 1: Universe and Big Bang is based on fundamental principles",
@@ -137,5 +144,60 @@
     "Task 3: Create a concept map for Universe and Big Bang",
     "Task 4: Practice previous year exam questions on Universe and Big Bang",
     "Task 5: Explain Universe and Big Bang to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Recession speed is roughly",
+      "options": [
+        "H times distance",
+        "Distance over H",
+        "The same for every galaxy",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The microwave background is",
+      "options": [
+        "Starlight from last night",
+        "Cooled radiation from the hot early universe",
+        "A radio station",
+        "The ozone layer"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Its temperature now is about",
+      "options": [
+        "2.7 K",
+        "6000 K",
+        "0 K exactly as a theorem",
+        "10^6 K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A galaxy twice as far recedes",
+      "options": [
+        "At about twice the speed",
+        "At the same speed",
+        "Toward us",
+        "Not at all"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Take H = 70 km/s per megaparsec. Estimate the recession speed of a galaxy 10 megaparsecs away.",
+      "steps": [
+        "v ≈ H d.",
+        "d = 10 Mpc.",
+        "v = 70 × 10 = 700 km/s.",
+        "A more distant galaxy recedes faster.",
+        "This is the expansion of space, not a motion through a fixed background from an explosion in one place."
+      ],
+      "answer": "700 km/s."
+    }
   ]
 }

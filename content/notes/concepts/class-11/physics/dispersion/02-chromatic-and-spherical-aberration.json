@@ -9,11 +9,16 @@
     "Longitudinal chromatic aberration is the axial separation Δf=|fv−fr| of two colour foci. Transverse chromatic aberration is a wavelength-dependent lateral image displacement, often visible at the edge of a wide field.",
     "Spherical aberration has a different cause: marginal and paraxial rays of the same colour focus at different points because the surface is spherical. It can be reduced with an aperture stop or aspheric surfaces.",
     "Worked comparison: if red focuses at 50.0 cm and blue at 49.0 cm, longitudinal chromatic aberration is 1.0 cm. This is axial focus separation, not a 1 cm sideways image shift.",
-    "An achromatic doublet pairs converging crown glass with diverging flint glass so two selected colours focus together. Stopping down reduces marginal-ray error but does not remove material dispersion."
+    "An achromatic doublet pairs converging crown glass with diverging flint glass so two selected colours focus together. Stopping down reduces marginal-ray error but does not remove material dispersion.",
+    "Spherical aberration is a monochromatic fault: rays through the edge of a lens meet the axis closer in than rays through the centre. Chromatic aberration is a colour fault. Stopping down the lens cuts the edge rays and reduces spherical aberration, but the image is dimmer."
   ],
   "confusion": [
     "Stopping down does not make glass non-dispersive.",
-    "Primary achromatism reduces selected colour separation but may leave secondary spectrum."
+    "Primary achromatism reduces selected colour separation but may leave secondary spectrum.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Distinguish chromatic from spherical aberration by cause and remedy.",
@@ -29,7 +34,10 @@
   "motionGraphics": "dispersion",
   "examples": [
     "Red and blue foci at 20.4 cm and 20.0 cm have Δf=0.4 cm.",
-    "An achromatic doublet reduces colour separation; stopping down mainly reduces spherical aberration."
+    "An achromatic doublet reduces colour separation; stopping down mainly reduces spherical aberration.",
+    "Spherical aberration is a monochromatic fault: rays through the edge of a lens meet the axis closer in than rays through the centre. Chromatic aberration is a colour fault. Stopping down the lens cuts the edge rays and reduces spherical aberration, but the image is dimmer.",
+    "The working relations are Spherical aberration comes from the outer rays and A stop reduces spherical aberration and costs light. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A lens brings paraxial rays to a focus 15.0 cm from the lens and marginal rays to 14.2 cm. Find the longitudinal spherical aberration."
   ],
   "practiceQuestions": [
     "Distinguish chromatic from spherical aberration by cause and remedy.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Chromatic error depends on wavelength; spherical error depends on ray height.",
     "Achromats correct two selected colours; aperture stops reject marginal rays.",
-    "Aperture reduction also reduces image brightness."
+    "Aperture reduction also reduces image brightness.",
+    "Spherical aberration comes from the outer rays",
+    "A stop reduces spherical aberration and costs light",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Chromatic aberration comes from wavelength-dependent focal length; spherical aberration comes from paraxial–marginal focus separation. Their corrections differ.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Chromatic error depends on wavelength; spherical error depends on ray height.",
     "Achromats correct two selected colours; aperture stops reject marginal rays.",
-    "Aperture reduction also reduces image brightness."
+    "Aperture reduction also reduces image brightness.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Distinguish chromatic from spherical aberration by cause and remedy.",
@@ -85,5 +101,102 @@
     "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
     "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
   ],
-  "visualType": "chromatic-aberration"
+  "visualType": "chromatic-aberration",
+  "mcs": [
+    {
+      "question": "Spherical aberration remains even for",
+      "options": [
+        "One colour",
+        "No lens",
+        "A plane wave with no aperture",
+        "Zero aperture"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Marginal rays of a convex lens focus",
+      "options": [
+        "Farther out than paraxial rays",
+        "Nearer the lens than paraxial rays",
+        "At the object",
+        "On the principal axis behind the object"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A stop",
+      "options": [
+        "Increases spherical aberration",
+        "Reduces it and dims the image",
+        "Removes chromatic aberration completely",
+        "Changes the index"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Chromatic aberration needs",
+      "options": [
+        "More than one colour",
+        "One wavelength only",
+        "A plane mirror",
+        "No lens"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Spherical aberration remains even for",
+      "options": [
+        "One colour",
+        "No lens",
+        "A plane wave with no aperture",
+        "Zero aperture"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Marginal rays of a convex lens focus",
+      "options": [
+        "Farther out than paraxial rays",
+        "Nearer the lens than paraxial rays",
+        "At the object",
+        "On the principal axis behind the object"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A stop",
+      "options": [
+        "Increases spherical aberration",
+        "Reduces it and dims the image",
+        "Removes chromatic aberration completely",
+        "Changes the index"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Chromatic aberration needs",
+      "options": [
+        "More than one colour",
+        "One wavelength only",
+        "A plane mirror",
+        "No lens"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A lens brings paraxial rays to a focus 15.0 cm from the lens and marginal rays to 14.2 cm. Find the longitudinal spherical aberration.",
+      "steps": [
+        "Longitudinal spherical aberration is the gap between the two foci.",
+        "15.0 − 14.2 = 0.80 cm.",
+        "Marginal rays focus nearer the lens.",
+        "A smaller aperture would reduce this gap.",
+        "This number is not the chromatic gap, which needs two colours."
+      ],
+      "answer": "0.80 cm."
+    }
+  ]
 }

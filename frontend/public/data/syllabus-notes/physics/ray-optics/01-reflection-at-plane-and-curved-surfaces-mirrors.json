@@ -1,0 +1,195 @@
+{
+  "title": "Reflection at plane and curved surfaces — mirrors",
+  "unitSlug": "ray-optics",
+  "topicSlug": "reflection-at-plane-and-curved-surfaces-mirrors",
+  "topicTitle": "Reflection at plane and curved surfaces — mirrors",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "The law of reflection says the incident ray, the reflected ray and the normal lie in one plane, and the angle of incidence equals the angle of reflection. Both angles are measured from the normal.",
+    "A plane mirror forms an image as far behind the mirror as the object is in front. The image is virtual, upright and the same size. Left and right appear swapped because the image faces the object.",
+    "A concave mirror converges parallel rays to a real focus. Its focal length is half the radius. In the Cartesian convention a real object has negative u, and a concave mirror has negative f.",
+    "The mirror formula in that convention is 1/v + 1/u = 1/f. A negative v means a real image in front of the mirror. Magnification is −v/u, and a negative value means the image is inverted.",
+    "A convex mirror has a positive f in this convention and always gives a virtual, diminished, upright image for a real object. It is used as a driving mirror because the field of view is wide.",
+    "An object at the centre of a concave mirror, u = 2f, produces a real inverted image at the centre, the same size. That is a quick check of the formula."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+    "Angles are from the normal, not from the mirror.",
+    "A plane-mirror image is behind the mirror and virtual.",
+    "Concave f is negative in the Cartesian convention.",
+    "Magnification for a mirror is −v/u, not v/u."
+  ],
+  "bounds": [
+    "Covers only: reflection at plane, curved surfaces — mirrors (within Ray Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+  ],
+  "practice": [
+    "Write Plane mirror: image distance = object distance and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+  ],
+  "examples": [
+    "The law of reflection says the incident ray, the reflected ray and the normal lie in one plane, and the angle of incidence equals the angle of reflection. Both angles are measured from the normal.",
+    "A plane mirror forms an image as far behind the mirror as the object is in front. The image is virtual, upright and the same size. Left and right appear swapped because the image faces the object.",
+    "A concave mirror has f = −10 cm. An object is at u = −20 cm. Find v."
+  ],
+  "practiceQuestions": [
+    "State the law of reflection.",
+    "Where is a plane-mirror image?",
+    "What image does an object at the centre of a concave mirror give?"
+  ],
+  "formulas": [
+    "1/f = (μ−1)(1/R₁ − 1/R₂)",
+    "P = 1/f",
+    "n = sin((A+D)/2)/sin(A/2)"
+  ],
+  "numericals": [
+    "A concave mirror has f = −10 cm. An object is at u = −20 cm. Find v."
+  ],
+  "keyPoints": [
+    "Angle of incidence equals angle of reflection.",
+    "A plane-mirror image is virtual.",
+    "A concave mirror can form a real image.",
+    "Cartesian u is negative for a real object."
+  ],
+  "summary": "Reflection equates the angles from the normal. A plane mirror gives a virtual image as far behind as the object is in front. A concave mirror uses 1/v + 1/u = 1/f with negative f, and an object at the centre is imaged at the centre, real and inverted.",
+  "mcqs": [
+    {
+      "question": "Angles of incidence and reflection are measured from",
+      "options": [
+        "The mirror surface",
+        "The normal",
+        "The principal axis only",
+        "The image"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A plane-mirror image is",
+      "options": [
+        "Real and inverted",
+        "Virtual, upright and the same size",
+        "Diminished always",
+        "At the focus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a concave mirror in Cartesian signs, f is",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Equal to the object height"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An object at the centre of a concave mirror gives an image",
+      "options": [
+        "At the focus",
+        "At the centre, real and inverted",
+        "Behind the mirror always",
+        "At infinity"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "The law of reflection says the incident ray, the reflected ray and the normal lie in one plane, and the angle of incidence equals the angle of reflection. Both angles are measured from the normal.",
+    "A plane mirror forms an image as far behind the mirror as the object is in front. The image is virtual, upright and the same size. Left and right appear swapped because the image faces the object.",
+    "A concave mirror converges parallel rays to a real focus. Its focal length is half the radius. In the Cartesian convention a real object has negative u, and a concave mirror has negative f."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Plane: distance behind equals distance in front.",
+    "At the centre: image at the centre, same size, inverted."
+  ],
+  "specialNotes": [
+    "f = R/2.",
+    "A convex mirror's image is always virtual for a real object."
+  ],
+  "importantNotes": [
+    "State the sign convention.",
+    "Negative mirror magnification means inverted."
+  ],
+  "importantConcepts": [
+    "Law of reflection",
+    "Plane mirror",
+    "Concave mirror",
+    "Sign convention"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Angles of incidence and reflection are measured from",
+      "options": [
+        "The mirror surface",
+        "The normal",
+        "The principal axis only",
+        "The image"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A plane-mirror image is",
+      "options": [
+        "Real and inverted",
+        "Virtual, upright and the same size",
+        "Diminished always",
+        "At the focus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a concave mirror in Cartesian signs, f is",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Equal to the object height"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An object at the centre of a concave mirror gives an image",
+      "options": [
+        "At the focus",
+        "At the centre, real and inverted",
+        "Behind the mirror always",
+        "At infinity"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A concave mirror has f = −10 cm. An object is at u = −20 cm. Find v.",
+      "steps": [
+        "Use 1/v + 1/u = 1/f.",
+        "1/v = 1/f − 1/u = −1/10 − 1/(−20).",
+        "1/v = −1/10 + 1/20 = −1/20.",
+        "v = −20 cm.",
+        "The image is real, inverted and the same size, at the centre."
+      ],
+      "answer": "v = −20 cm, a real image at the centre."
+    }
+  ]
+}

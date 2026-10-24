@@ -5,14 +5,21 @@
   "topicTitle": "Mirrors and Lenses",
   "relevance": 100,
   "notes": [
-    "**Mirrors and Lenses:** This topic covers the fundamental concepts of mirrors and lenses in the physics curriculum.",
-    "Understanding mirrors and lenses is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to mirrors and lenses should be memorized and practiced regularly."
+    "In the Cartesian convention the incident-light direction is positive, so a real object has a negative object distance. The mirror formula is then 1/v + 1/u = 1/f. The thin-lens formula is 1/v − 1/u = 1/f. The two formulas are not interchangeable.",
+    "For a concave mirror the focal length is negative in that convention. A real image has a negative v, on the same side as the object. A convex mirror has positive f and always gives a virtual, diminished image for a real object.",
+    "A convex lens has positive f. A real image on the far side of the lens has positive v. Use the lens formula there, not the mirror formula.",
+    "Mirror magnification is −v/u, and lens magnification is v/u. A negative value means the image is inverted. The size is the absolute value times the object size. For the mirror numbers u = −30 cm and v = −15 cm, m = −v/u = −0.50, an inverted image half as tall.",
+    "Power of a lens is 1/f with f in metres, in dioptres. A shorter focal length is a stronger lens. Two thin lenses in contact add their powers.",
+    "Rays are the check. A ray through the centre of a lens goes straight. A ray parallel to the axis passes through the focus. The formula and the ray diagram must agree on real or virtual."
   ],
   "confusion": [
     "❌ 'Convex lenses always produce real images.' ✅ They produce a *virtual* image if the object is placed *between* the lens and its focal point (e.g., in a magnifying glass).",
     "❌ 'Concave mirrors always form smaller images.' ✅ They form *magnified, upright virtual* images if the object is placed *closer* than the focal point.",
-    "❌ 'The magnification formula is m = v/u.' ✅ For lenses, m = v/u; but for mirrors, m = -v/u. Sign conventions are crucial!"
+    "❌ 'The magnification formula is m = v/u.' ✅ For lenses, m = v/u; but for mirrors, m = -v/u. Sign conventions are crucial!",
+    "Object distance for a real object is negative in the Cartesian convention.",
+    "A concave mirror's f is negative there.",
+    "A positive lens is converging.",
+    "Magnification's sign is inversion, and its size uses the modulus."
   ],
   "practice": [
     "Solve at least 5 problems on mirrors and lenses from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "ray-optics-12",
   "motionGraphics": "ray-optics-12",
   "examples": [
-    "Example 1: Real-world application of Mirrors and Lenses",
     "Example 2: Practical demonstration of Mirrors and Lenses concepts",
     "Example 4: Diagram-based question on Mirrors and Lenses",
     "Example 5: Application in daily life involving Mirrors and Lenses"
@@ -61,11 +67,9 @@
     "Note 5: Mirrors and Lenses frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Mirrors and Lenses",
-    "Statement 2: Theorem related to Mirrors and Lenses",
-    "Statement 3: Condition for Mirrors and Lenses to be valid",
-    "Statement 4: Principle governing Mirrors and Lenses",
-    "Statement 5: Corollary or consequence of Mirrors and Lenses"
+    "In the Cartesian convention the incident-light direction is positive, so a real object has a negative object distance. The mirror formula is then 1/v + 1/u = 1/f. The thin-lens formula is 1/v − 1/u = 1/f. The two formulas are not interchangeable.",
+    "For a concave mirror the focal length is negative in that convention. A real image has a negative v, on the same side as the object. A convex mirror has positive f and always gives a virtual, diminished image for a real object.",
+    "A convex lens has positive f. A real image on the far side of the lens has positive v. Use the lens formula there, not the mirror formula."
   ],
   "importantNotes": [
     "Note 1: Mirrors and Lenses is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Mirrors and Lenses",
     "Task 4: Practice previous year exam questions on Mirrors and Lenses",
     "Task 5: Explain Mirrors and Lenses to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "For a real object, Cartesian u is",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Equal to f always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A convex lens has",
+      "options": [
+        "Negative f",
+        "Positive f",
+        "No focus",
+        "f equal to the object height"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Negative magnification means the image is",
+      "options": [
+        "Upright",
+        "Inverted",
+        "Absent",
+        "At the focus only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Lens power uses f in",
+      "options": [
+        "Centimetres, still called dioptres",
+        "Metres",
+        "Millimetres",
+        "Dioptres without a unit of length"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A concave mirror has f = −10 cm. An object is at u = −30 cm. Find v with the mirror formula and say whether the image is real.",
+      "steps": [
+        "Use 1/v + 1/u = 1/f.",
+        "1/v = 1/f − 1/u.",
+        "1/f − 1/u = −1/10 − 1/(−30) = −1/10 + 1/30.",
+        "−3/30 + 1/30 = −2/30 = −1/15.",
+        "v = −15 cm. Negative v means a real image, 15 cm in front of the mirror."
+      ],
+      "answer": "v = −15 cm, a real image."
+    }
   ]
 }

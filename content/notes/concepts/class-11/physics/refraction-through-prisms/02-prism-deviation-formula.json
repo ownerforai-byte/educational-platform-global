@@ -9,12 +9,17 @@
     "**Angle of deviation.** The ray turns through δ = (i₁ + i₂) − A, where i₁ and i₂ are the angles at the two faces.",
     "**Minimum deviation.** Deviation is least when the ray passes symmetrically (i₁ = i₂, r₁ = r₂ = A/2); then δ_m = 2i − A — the setting used in all prism measurements.",
     "**Prism formula.** At minimum deviation the refractive index is n = sin[(A + δ_m)/2] / sin(A/2) — how n of a glass prism is found experimentally.",
-    "**Dispersion and thin prisms.** For a thin prism δ = (n − 1)A; violet deviates most and red least, and the angular dispersion is θ = δ_v − δ_r, giving the dispersive power ω = θ/δ_y."
+    "**Dispersion and thin prisms.** For a thin prism δ = (n − 1)A; violet deviates most and red least, and the angular dispersion is θ = δ_v − δ_r, giving the dispersive power ω = θ/δ_y.",
+    "The deviation produced by a prism is i + e − A. It is smallest when the ray passes symmetrically, and that minimum is the setting used to measure the index. The index is then the sine of half of A plus δ_m, divided by the sine of half of A."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in prism formula.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on prism formula from your textbook.",
@@ -30,7 +35,6 @@
   "animation3D": "refraction-through-prisms",
   "motionGraphics": "refraction-through-prisms",
   "examples": [
-    "Real-world application of Prism Formula",
     "Practical demonstration of Prism Formula concepts",
     "Diagram-based question on Prism Formula",
     "Application in daily life involving Prism Formula"
@@ -46,7 +50,12 @@
     "Application formula for Prism Formula",
     "Derivation result for Prism Formula"
   ],
-  "keyPoints": [],
+  "keyPoints": [
+    "μ = sin((A + δ_m)/2) / sin(A/2)",
+    "δ = i + e − A",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Prism Formula is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Prism Formula applies",
@@ -56,11 +65,9 @@
     "Note 5: Prism Formula frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Prism Formula",
-    "Statement 2: Theorem related to Prism Formula",
-    "Statement 3: Condition for Prism Formula to be valid",
-    "Statement 4: Principle governing Prism Formula",
-    "Statement 5: Corollary or consequence of Prism Formula"
+    "The deviation produced by a prism is i + e − A. It is smallest when the ray passes symmetrically, and that minimum is the setting used to measure the index. The index is then the sine of half of A plus δ_m, divided by the sine of half of A.",
+    "The working relations are μ = sin((A + δ_m)/2) / sin(A/2) and δ = i + e − A. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A prism has A = 60° and minimum deviation 40°. Find μ. Use sin 50° = 0.766 and sin 30° = 0.500. (A + δ_m)/2 = 50°. A/2 = 30°."
   ],
   "importantNotes": [
     "Note 1: Prism Formula is based on fundamental principles",
@@ -137,5 +144,60 @@
     "Task 3: Create a concept map for Prism Formula",
     "Task 4: Practice previous year exam questions on Prism Formula",
     "Task 5: Explain Prism Formula to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Deviation is",
+      "options": [
+        "i + e − A",
+        "A",
+        "μ",
+        "i − e"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The index experiment uses",
+      "options": [
+        "Minimum deviation",
+        "Any angle, with the same simple sine formula",
+        "A plane mirror",
+        "Normal incidence only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "μ equals",
+      "options": [
+        "sin((A+δ_m)/2) / sin(A/2)",
+        "δ_m/A",
+        "A",
+        "sin A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At minimum deviation",
+      "options": [
+        "i = e",
+        "e = 0",
+        "A = 0",
+        "The ray misses the prism"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A prism has A = 60° and minimum deviation 40°. Find μ. Use sin 50° = 0.766 and sin 30° = 0.500.",
+      "steps": [
+        "(A + δ_m)/2 = 50°.",
+        "A/2 = 30°.",
+        "μ = 0.766 / 0.500 = 1.53.",
+        "This value belongs to the colour used in the measurement.",
+        "A thin-prism estimate (μ − 1)A would be a different, cruder number."
+      ],
+      "answer": "1.53."
+    }
   ]
 }

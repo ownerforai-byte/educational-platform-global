@@ -5,14 +5,21 @@
   "topicTitle": "Lenz's Law",
   "relevance": 100,
   "notes": [
-    "**Lenz's Law:** This topic covers the fundamental concepts of lenz's law in the physics curriculum.",
-    "Understanding lenz's law is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to lenz's law should be memorized and practiced regularly."
+    "Lenz's law says that the induced current flows so as to oppose the change in flux that produces it. It is the meaning of the minus sign in Faraday's law.",
+    "If the north pole of a magnet approaches a coil, the flux of that pole through the coil is increasing. The coil's near face becomes a north pole to repel the approaching magnet.",
+    "If the north pole is pulled away, the flux is decreasing, and the near face becomes a south pole to attract the magnet and oppose the removal.",
+    "The opposition is to the change, not to the field itself. A steady magnet in a coil induces nothing, so there is nothing to oppose.",
+    "The law is required by energy conservation. If the induced current helped the change, a tiny push would grow into a larger current and create energy.",
+    "You still need Faraday's law for the size of the emf. Lenz's law is only the direction. The right-hand grip then turns that opposing field into a current direction in the wire."
   ],
   "confusion": [
     "❌ 'Lenz's Law creates energy.' ✅ It is a direct consequence of the *Law of Conservation of Energy*; the work done to move a magnet is converted into electrical energy.",
     "❌ 'Lenz's law always opposes the magnetic field.' ✅ It opposes the *change in magnetic flux* that created the induced current, which may mean opposing the field or aiding it depending on the situation.",
-    "❌ 'Induced current only flows if the magnet moves.' ✅ It flows if the *magnetic flux* through the loop changes, which can happen by changing the magnet position, loop size, or field strength."
+    "❌ 'Induced current only flows if the magnet moves.' ✅ It flows if the *magnetic flux* through the loop changes, which can happen by changing the magnet position, loop size, or field strength.",
+    "Lenz does not oppose the field. It opposes the change.",
+    "It does not give the number of volts.",
+    "A retreating pole is the opposite face from an approaching pole.",
+    "A steady magnet induces no opposing current."
   ],
   "practice": [
     "Solve at least 5 problems on lenz's law from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "emi",
   "motionGraphics": "emi",
   "examples": [
-    "Example 1: Real-world application of Lenz's Law",
     "Example 2: Practical demonstration of Lenz's Law concepts",
     "Example 4: Diagram-based question on Lenz's Law",
     "Example 5: Application in daily life involving Lenz's Law"
@@ -61,11 +67,9 @@
     "Note 5: Lenz's Law frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Lenz's Law",
-    "Statement 2: Theorem related to Lenz's Law",
-    "Statement 3: Condition for Lenz's Law to be valid",
-    "Statement 4: Principle governing Lenz's Law",
-    "Statement 5: Corollary or consequence of Lenz's Law"
+    "Lenz's law says that the induced current flows so as to oppose the change in flux that produces it. It is the meaning of the minus sign in Faraday's law.",
+    "If the north pole of a magnet approaches a coil, the flux of that pole through the coil is increasing. The coil's near face becomes a north pole to repel the approaching magnet.",
+    "If the north pole is pulled away, the flux is decreasing, and the near face becomes a south pole to attract the magnet and oppose the removal."
   ],
   "importantNotes": [
     "Note 1: Lenz's Law is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Lenz's Law",
     "Task 4: Practice previous year exam questions on Lenz's Law",
     "Task 5: Explain Lenz's Law to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Lenz's law gives",
+      "options": [
+        "The magnitude only",
+        "The direction of the induced current",
+        "The resistance",
+        "The value of μ0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An approaching north pole induces",
+      "options": [
+        "A north face",
+        "A south face",
+        "No face",
+        "A steady current with no change"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The law agrees with",
+      "options": [
+        "Creation of energy",
+        "Conservation of energy",
+        "Ohm's law only",
+        "A zero flux always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A magnet at rest in a coil induces",
+      "options": [
+        "A large opposing current",
+        "Nothing",
+        "An infinite emf",
+        "A north pole forever"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "The north pole of a magnet is pulled out of a coil. Name the pole induced on the face the magnet is leaving, and say why.",
+      "steps": [
+        "The north-pole flux through the coil is decreasing.",
+        "Lenz's law opposes that decrease.",
+        "The face must attract the leaving north pole.",
+        "An attracting face is a south pole.",
+        "The induced current is whatever direction makes that south face, and it is zero once the flux stops changing."
+      ],
+      "answer": "A south pole, to oppose the decrease of north-pole flux."
+    }
   ]
 }

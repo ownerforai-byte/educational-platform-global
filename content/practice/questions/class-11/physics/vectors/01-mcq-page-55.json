@@ -2,8 +2,180 @@
   "title": "Vector Physics MCQ — Page 55 (Q1–Q2)",
   "notes": [
     "**Q1. Which of the following is a scalar quantity?**\n\n(a) Force\n(b) Magnetic field\n(c) Electric potential\n(d) Magnetic moment\n\n**Answer:** (c) Electric potential\n\n**Explanation:** Electric potential is defined as work done per unit charge ($W/q$). Since both work and charge are scalar quantities, electric potential has only magnitude and no directional dependencies.",
-    "**Q2. Which of the following is a vector quantity?**\n\n(a) Temperature\n(b) Electric current\n(c) Pressure\n(d) Weight\n\n**Answer:** (d) Weight\n\n**Explanation:** Weight is a gravitational pull acting on a mass. It possesses both magnitude and a distinct, downward spatial vector direction targeting the center of gravity."
+    "**Q2. Which of the following is a vector quantity?**\n\n(a) Temperature\n(b) Electric current\n(c) Pressure\n(d) Weight\n\n**Answer:** (d) Weight\n\n**Explanation:** Weight is a gravitational pull acting on a mass. It possesses both magnitude and a distinct, downward spatial vector direction targeting the center of gravity.",
+    "A scalar has magnitude only. Mass, temperature, energy, work, speed, electric charge and electric potential are scalars. They add by ordinary arithmetic.",
+    "A vector has magnitude and direction and must be added by the triangle or parallelogram rule. Displacement, velocity, acceleration, force, weight and momentum are vectors.",
+    "Electric potential is work per unit charge. Work and charge are both scalars, so potential is a scalar even though it is connected with the electric field, which is a vector.",
+    "Electric current has a direction in a wire, but currents do not follow the vector addition law when wires meet at an angle in the way forces do. In this course current is treated as a scalar."
   ],
   "type": "pyq",
-  "order": 1
+  "order": 1,
+  "confusion": [
+    "A quantity with a direction word is not automatically a vector. It must obey vector addition.",
+    "Speed is scalar. Velocity is vector.",
+    "Potential is scalar. Field is vector.",
+    "Weight is vector. Mass is scalar."
+  ],
+  "keyPoints": [
+    "Work and potential are scalars.",
+    "Force, weight and displacement are vectors.",
+    "Current is treated as a scalar in this course.",
+    "Temperature and pressure are scalars."
+  ],
+  "importantStatements": [
+    "A scalar has magnitude only. Mass, temperature, energy, work, speed, electric charge and electric potential are scalars. They add by ordinary arithmetic.",
+    "A vector has magnitude and direction and must be added by the triangle or parallelogram rule. Displacement, velocity, acceleration, force, weight and momentum are vectors.",
+    "Electric potential is work per unit charge. Work and charge are both scalars, so potential is a scalar even though it is connected with the electric field, which is a vector."
+  ],
+  "examples": [
+    "A scalar has magnitude only. Mass, temperature, energy, work, speed, electric charge and electric potential are scalars. They add by ordinary arithmetic.",
+    "A vector has magnitude and direction and must be added by the triangle or parallelogram rule. Displacement, velocity, acceleration, force, weight and momentum are vectors.",
+    "Classify mass, weight, speed and velocity. Give the reason for weight."
+  ],
+  "universalFacts": [
+    "Scalar: magnitude only.",
+    "Vector: magnitude and direction, added by the vector rule."
+  ],
+  "formulas": [
+    "Scalar: magnitude only.",
+    "Vector: magnitude and direction, added by the vector rule."
+  ],
+  "practice": [
+    "Write Scalar: magnitude only. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "Why is electric potential a scalar?",
+    "Why is current treated as a scalar here?",
+    "Is weight a vector?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Ask: does the parallelogram law apply?",
+    "Potential and pressure stay on the scalar list."
+  ],
+  "specialNotes": [
+    "Magnetic field and magnetic moment are vectors. They were the traps in the first item.",
+    "A negative scalar, such as −5°C, still has no direction in space."
+  ],
+  "importantNotes": [
+    "Name both the magnitude test and the addition test.",
+    "Do not call every downward effect a vector without identifying the force."
+  ],
+  "importantConcepts": [
+    "Scalar",
+    "Vector",
+    "Potential",
+    "Weight"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Electric potential is",
+      "options": [
+        "A vector",
+        "A scalar",
+        "Neither",
+        "A unit vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Weight is",
+      "options": [
+        "A scalar",
+        "A vector",
+        "The same as mass",
+        "Dimensionless"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In this course electric current is treated as",
+      "options": [
+        "A vector because every arrow is a vector",
+        "A scalar",
+        "A unit vector",
+        "A zero vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Speed differs from velocity because speed",
+      "options": [
+        "Has no magnitude",
+        "Is a scalar",
+        "Is always vertical",
+        "Obeys the parallelogram law"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Electric potential is",
+      "options": [
+        "A vector",
+        "A scalar",
+        "Neither",
+        "A unit vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Weight is",
+      "options": [
+        "A scalar",
+        "A vector",
+        "The same as mass",
+        "Dimensionless"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In this course electric current is treated as",
+      "options": [
+        "A vector because every arrow is a vector",
+        "A scalar",
+        "A unit vector",
+        "A zero vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Speed differs from velocity because speed",
+      "options": [
+        "Has no magnitude",
+        "Is a scalar",
+        "Is always vertical",
+        "Obeys the parallelogram law"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Classify mass, weight, speed and velocity. Give the reason for weight.",
+      "steps": [
+        "Mass is an amount of matter and has no direction, so it is a scalar.",
+        "Weight is the force mg and points downward toward the Earth, so it is a vector.",
+        "Speed is the rate of covering distance and has no direction, so it is a scalar.",
+        "Velocity is displacement over time and has a direction, so it is a vector.",
+        "The deciding test is whether direction and the vector addition rule are required."
+      ],
+      "answer": "Mass scalar, weight vector, speed scalar, velocity vector."
+    }
+  ],
+  "summary": "Scalars have magnitude only. Vectors have magnitude and direction and add by the parallelogram rule. Potential, mass, speed, temperature and pressure are scalars. Weight, force, velocity and momentum are vectors. Current is treated as a scalar in this course.",
+  "relevance": 94,
+  "unitSlug": "vectors",
+  "topicSlug": "01-mcq-page-55",
+  "topicTitle": "Vector Physics MCQ — Page 55 (Q1–Q2)"
 }

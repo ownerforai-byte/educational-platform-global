@@ -9,11 +9,16 @@
     "For a gas expanding against constant pressure, W=PΔV. If 500 J of heat enters and the gas does 180 J of work, then ΔU=500−180=320 J.",
     "At constant volume, boundary work is zero, so Q=ΔU if no other work is present. In an adiabatic process Q=0 and ΔU=−W. Over a full cycle ΔU=0, hence net Q=net W.",
     "For a monatomic ideal gas ΔU=(3/2)nRΔT. For 2 mol heated by 10 K, ΔU≈(3/2)(2)(8.314)(10)=249 J, independent of the path between the states.",
-    "A p–V diagram makes work visible: work done by a gas is the area under the process curve, W=∫P dV. Expansion gives positive work under this convention; compression gives negative work."
+    "A p–V diagram makes work visible: work done by a gas is the area under the process curve, W=∫P dV. Expansion gives positive work under this convention; compression gives negative work.",
+    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas."
   ],
   "confusion": [
     "Some books define work on the system as positive and write ΔU=Q+Won; do not mix conventions.",
-    "At constant volume, Q=ΔU only if no other work is present."
+    "At constant volume, Q=ΔU only if no other work is present.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
@@ -29,7 +34,10 @@
   "motionGraphics": "heat-and-temperature",
   "examples": [
     "Q=500 J into a gas and W=180 J by it gives ΔU=320 J.",
-    "At fixed volume, 250 J of heat gives ΔU=250 J when no other work occurs."
+    "At fixed volume, 250 J of heat gives ΔU=250 J when no other work occurs.",
+    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas.",
+    "The working relations are ΔU = Q + W, with W the work done on the gas in this sign and An isobaric expansion does work. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A gas absorbs 200 J of heat and does 50 J of work on the piston. Find the change in internal energy, taking work done on the gas as negative when the gas expands."
   ],
   "practiceQuestions": [
     "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "State the sign convention before substituting values.",
     "Q and W depend on path; ΔU depends only on endpoints.",
-    "For a cycle, ΔU=0."
+    "For a cycle, ΔU=0.",
+    "ΔU = Q + W, with W the work done on the gas in this sign",
+    "An isobaric expansion does work",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "The first law accounts for heat and work as energy transfers: ΔU=Q−W when work by the system is positive. Apply the convention consistently to expansion, compression, adiabatic and cyclic processes.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "State the sign convention before substituting values.",
     "Q and W depend on path; ΔU depends only on endpoints.",
-    "For a cycle, ΔU=0."
+    "For a cycle, ΔU=0.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
@@ -84,5 +100,102 @@
     "**Process Dependence:** $Q$ and $W$ depend on the thermodynamic path (isothermal, adiabatic, isobaric, isochoric), but $\\Delta U$ depends only on initial and final states. For a cyclic process, $\\Delta U = 0$ and $Q = W$ — net heat in equals net work out.",
     "**Work in Thermodynamics:** Only $PV$-work is considered in the basic first law: $W = \\int P_{ext} dV$. Reversible work uses the system pressure $W = \\int P dV$. Other work forms (electrical, surface tension, magnetic) must be added as extra terms if present."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "The first law is",
+      "options": [
+        "Conservation of charge",
+        "Conservation of energy",
+        "Newton's third law",
+        "Snell's law"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the gas expands, work done on the gas is",
+      "options": [
+        "Positive in this sign convention",
+        "Negative in this sign convention",
+        "Zero",
+        "Equal to Q always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An adiabatic process has",
+      "options": [
+        "Q = 0",
+        "ΔU = 0 always",
+        "W = 0 always",
+        "No first law"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Isothermal ideal-gas internal energy",
+      "options": [
+        "Changes with volume",
+        "Stays constant because temperature stays constant",
+        "Equals the pressure",
+        "Is zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The first law is",
+      "options": [
+        "Conservation of charge",
+        "Conservation of energy",
+        "Newton's third law",
+        "Snell's law"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the gas expands, work done on the gas is",
+      "options": [
+        "Positive in this sign convention",
+        "Negative in this sign convention",
+        "Zero",
+        "Equal to Q always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An adiabatic process has",
+      "options": [
+        "Q = 0",
+        "ΔU = 0 always",
+        "W = 0 always",
+        "No first law"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Isothermal ideal-gas internal energy",
+      "options": [
+        "Changes with volume",
+        "Stays constant because temperature stays constant",
+        "Equals the pressure",
+        "Is zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A gas absorbs 200 J of heat and does 50 J of work on the piston. Find the change in internal energy, taking work done on the gas as negative when the gas expands.",
+      "steps": [
+        "Heat added to the gas is Q = +200 J.",
+        "Work done on the gas is W = −50 J.",
+        "ΔU = Q + W = 200 − 50.",
+        "ΔU = 150 J.",
+        "The gas is warmer in the sense of a higher internal energy."
+      ],
+      "answer": "ΔU = 150 J."
+    }
+  ]
 }

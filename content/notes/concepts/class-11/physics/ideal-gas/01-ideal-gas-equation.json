@@ -9,11 +9,16 @@
     "Always convert Celsius using T(K)=t(°C)+273.15 and use consistent units. For 1.00 mol at 300 K in 24.6 L, P≈(8.314×300)/0.0246=1.01×10⁵ Pa.",
     "For fixed amount n, PV/T stays constant between equilibrium states: P1V1/T1=P2V2/T2. In a sealed rigid vessel heated from 300 K to 450 K, pressure rises by the factor 450/300=1.5.",
     "The model assumes molecules have negligible volume and exert no long-range intermolecular forces except during elastic collisions. Real gases approach ideal behaviour at low pressure and high temperature.",
-    "Use absolute rather than gauge pressure in the equation. If a gauge pressure is given, add atmospheric pressure before substituting."
+    "Use absolute rather than gauge pressure in the equation. If a gauge pressure is given, add atmospheric pressure before substituting.",
+    "The ideal-gas equation links pressure, volume, amount and temperature. The temperature must be in kelvin. A celsius value used in P V = n R T is the usual error, and it matters most near the ice point where 0°C is 273 K, not a small correction."
   ],
   "confusion": [
     "Never substitute Celsius into PV=nRT.",
-    "Gauge pressure is not absolute pressure."
+    "Gauge pressure is not absolute pressure.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
@@ -29,7 +34,10 @@
   "motionGraphics": "ideal-gas",
   "examples": [
     "1 mol at 300 K in 24.6 L gives P≈1.01×10⁵ Pa.",
-    "Heating a sealed rigid gas from 300 K to 450 K multiplies pressure by 1.5."
+    "Heating a sealed rigid gas from 300 K to 450 K multiplies pressure by 1.5.",
+    "The ideal-gas equation links pressure, volume, amount and temperature. The temperature must be in kelvin. A celsius value used in P V = n R T is the usual error, and it matters most near the ice point where 0°C is 273 K, not a small correction.",
+    "The working relations are P V = n R T and T must be in kelvin. Name each symbol, convert the data into SI units, and only then substitute.",
+    "0.50 mol of ideal gas is at 300 K in a volume of 0.012 m^3. Take R = 8.3 J/mol K. Find the pressure."
   ],
   "practiceQuestions": [
     "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Use absolute pressure and kelvin temperature.",
     "1 L=10⁻³ m³; maintain consistent units.",
-    "The combined gas law assumes the amount of gas is fixed."
+    "The combined gas law assumes the amount of gas is fixed.",
+    "P V = n R T",
+    "T must be in kelvin",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "PV=nRT relates equilibrium gas variables when temperature and units are handled consistently. For fixed amount, PV/T is constant; real gases deviate near condensation and high pressure.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Use absolute pressure and kelvin temperature.",
     "1 L=10⁻³ m³; maintain consistent units.",
-    "The combined gas law assumes the amount of gas is fixed."
+    "The combined gas law assumes the amount of gas is fixed.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.",
@@ -84,5 +100,102 @@
     "**Universal Gas Constant:** $R = 8.314 \text{ J/mol·K}$ is the same for all ideal gases. It connects macroscopic ($P, V, n, T$) to microscopic ($k_B, N_A$) via $R = N_A k_B$. The value depends on units: $R = 0.0821 \text{ L·atm/mol·K}$ in common chemistry units.",
     "**Temperature Must Be Absolute:** $T$ must be in Kelvin for $PV = nRT$ to hold. Using Celsius gives incorrect results because $T=0^\\circ\text{C} \neq 0$ kinetic energy. The linear proportionality $P \\propto T$ and $V \\propto T$ only works with absolute temperature."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "In P V = n R T, T is",
+      "options": [
+        "In celsius",
+        "In kelvin",
+        "In Fahrenheit",
+        "A difference only, with no zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Boyle's law, at fixed T and n, says",
+      "options": [
+        "P V is constant",
+        "P/V is constant",
+        "V/T is constant",
+        "P is constant"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Charles's law needs",
+      "options": [
+        "Fixed pressure",
+        "Fixed volume",
+        "No temperature scale",
+        "A solid"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "0°C is",
+      "options": [
+        "0 K",
+        "273 K",
+        "−273 K",
+        "100 K"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "In P V = n R T, T is",
+      "options": [
+        "In celsius",
+        "In kelvin",
+        "In Fahrenheit",
+        "A difference only, with no zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Boyle's law, at fixed T and n, says",
+      "options": [
+        "P V is constant",
+        "P/V is constant",
+        "V/T is constant",
+        "P is constant"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Charles's law needs",
+      "options": [
+        "Fixed pressure",
+        "Fixed volume",
+        "No temperature scale",
+        "A solid"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "0°C is",
+      "options": [
+        "0 K",
+        "273 K",
+        "−273 K",
+        "100 K"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "0.50 mol of ideal gas is at 300 K in a volume of 0.012 m^3. Take R = 8.3 J/mol K. Find the pressure.",
+      "steps": [
+        "P = n R T / V.",
+        "n R T = 0.50 × 8.3 × 300 = 1245.",
+        "P = 1245 / 0.012 = 1.04 × 10^5 Pa.",
+        "300 K is 27°C, and the kelvin value is the one in the formula.",
+        "The gas is ideal, so there is no volume correction."
+      ],
+      "answer": "1.04 × 10^5 Pa."
+    }
+  ]
 }

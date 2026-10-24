@@ -13,21 +13,30 @@
   ],
   "practice": [
     "one worked example for \"Triple point\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "recall card: definition → formula → limit → one error to avoid.",
+    "Write Water's triple-point pressure is about 611 Pa and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Triple point\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Triple point\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Water's triple-point pressure is about 611 Pa",
+    "The boiling point depends on pressure. The triple point does not wander"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "The triple-point pressure of water is far below ordinary atmospheric pressure, about 611 Pa. That is why an open beaker of ice and water is not at the triple point: the vapour is not the only gas present, and the pressure is about 10^5 Pa. The sealed triple-point cell is a different apparatus.",
+    "The working relations are Water's triple-point pressure is about 611 Pa and The boiling point depends on pressure. The triple point does not wander. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Atmospheric pressure is 1.01 × 10^5 Pa. How many times larger is it than the water triple-point pressure of 611 Pa?"
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Triple point\" with one example.",
-    "compare \"Triple point\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Triple point\" and verify the answer is plausible."
+    "Write Water's triple-point pressure is about 611 Pa and name the symbols.",
+    "What does The boiling point depends on pressure. The triple point does not wander tell you?",
+    "Which unit must be converted before the substitution?"
   ],
   "formulas": [
-    "Governing equation for \"Triple point\" — state with units, then use in one numerical."
+    "Governing equation for \"Triple point\" — state with units, then use in one numerical.",
+    "Water's triple-point pressure is about 611 Pa",
+    "The boiling point depends on pressure. The triple point does not wander"
   ],
   "numericals": [
     "Set up the defining equation for \"Triple point\", substitute simple values, and compute the result with units.",
@@ -35,48 +44,158 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Triple point",
-    "Connection of Triple Point to other topics"
+    "Connection of Triple Point to other topics",
+    "Water's triple-point pressure is about 611 Pa",
+    "The boiling point depends on pressure. The triple point does not wander",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
-  "summary": "Triple point (Quantity of Heat, Physics, class-11-notes) covers Triple point. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these. Triple Point covers essential principles and applications.",
+  "summary": "Water's triple point sits near 611 Pa, about 165 times below ordinary atmospheric pressure. An open ice bath is not that state. The sealed cell fixes both the pressure and the temperature 273.16 K.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Triple point\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The water triple-point pressure is",
       "options": [
-        "True",
-        "False"
+        "About 611 Pa",
+        "1 atm",
+        "Zero",
+        "100 kPa"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "An open beaker of ice water is",
+      "options": [
+        "A triple-point cell",
+        "Not at the triple point",
+        "At 273.16 K by definition",
+        "In a vacuum"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Atmospheric pressure is larger by about",
+      "options": [
+        "165 times",
+        "2 times",
+        "611 times exactly as the pascal value",
+        "It is smaller"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The triple point is used because it is",
+      "options": [
+        "A single reproducible state",
+        "A range of pressures",
+        "The boiling point",
+        "Room conditions"
+      ],
+      "answer": "A"
     }
   ],
   "importantStatements": [
-    "Statement 1: Definition of Triple Point",
-    "Statement 2: Theorem related to Triple Point",
-    "Statement 3: Condition for Triple Point to be valid",
-    "Statement 4: Principle governing Triple Point",
-    "Statement 5: Corollary or consequence of Triple Point"
+    "The triple-point pressure of water is far below ordinary atmospheric pressure, about 611 Pa. That is why an open beaker of ice and water is not at the triple point: the vapour is not the only gas present, and the pressure is about 10^5 Pa. The sealed triple-point cell is a different apparatus.",
+    "The working relations are Water's triple-point pressure is about 611 Pa and The boiling point depends on pressure. The triple point does not wander. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Atmospheric pressure is 1.01 × 10^5 Pa. How many times larger is it than the water triple-point pressure of 611 Pa? Divide 1.01 × 10^5 by 611. 1.01 × 10^5 / 611 ≈ 165."
   ],
   "importantNotes": [
-    "Triple Point is based on fundamental principles."
+    "Triple Point is based on fundamental principles.",
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
   ],
   "examShortTricks": [
-    "Recall the formula for Triple Point."
+    "Recall the formula for Triple Point.",
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
   ],
   "importantConcepts": [
-    "Definition and significance of Triple Point."
+    "Definition and significance of Triple Point.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "notes": [
     "**Definition.** The triple point of a substance is the single temperature and pressure at which its solid, liquid and vapour phases coexist in stable equilibrium.",
     "**Water's triple point.** For water it occurs at 273.16 K (0.01 °C) and 611.73 Pa (about 4.58 mmHg) — the fixed reference point of the Kelvin temperature scale.",
     "**Phase diagram.** On a pressure–temperature diagram the triple point is where the melting, boiling and sublimation curves meet; below its pressure a solid sublimes instead of melting.",
     "**Per-substance value.** Each pure substance has its own triple point (for CO₂ it is −56.6 °C at 5.1 atm), so the value identifies the substance's phase behaviour.",
-    "**Thermometric use.** Because it is reproducible and substance-specific, the triple point of water is used to calibrate precision thermometers."
+    "**Thermometric use.** Because it is reproducible and substance-specific, the triple point of water is used to calibrate precision thermometers.",
+    "The triple-point pressure of water is far below ordinary atmospheric pressure, about 611 Pa. That is why an open beaker of ice and water is not at the triple point: the vapour is not the only gas present, and the pressure is about 10^5 Pa. The sealed triple-point cell is a different apparatus."
   ],
-  "confusion": [],
+  "confusion": [
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
-  "specialNotes": [],
-  "examNotes": [],
-  "importantTasks": []
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The water triple-point pressure is",
+      "options": [
+        "About 611 Pa",
+        "1 atm",
+        "Zero",
+        "100 kPa"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An open beaker of ice water is",
+      "options": [
+        "A triple-point cell",
+        "Not at the triple point",
+        "At 273.16 K by definition",
+        "In a vacuum"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Atmospheric pressure is larger by about",
+      "options": [
+        "165 times",
+        "2 times",
+        "611 times exactly as the pascal value",
+        "It is smaller"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The triple point is used because it is",
+      "options": [
+        "A single reproducible state",
+        "A range of pressures",
+        "The boiling point",
+        "Room conditions"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Atmospheric pressure is 1.01 × 10^5 Pa. How many times larger is it than the water triple-point pressure of 611 Pa?",
+      "steps": [
+        "Divide 1.01 × 10^5 by 611.",
+        "1.01 × 10^5 / 611 ≈ 165.",
+        "Ordinary air pressure is about 165 times the triple-point pressure.",
+        "An open ice bath is therefore not a triple-point cell.",
+        "The temperature 0°C is the ice point under that higher pressure, not 273.16 K."
+      ],
+      "answer": "About 165 times."
+    }
+  ]
 }

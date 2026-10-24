@@ -12,7 +12,8 @@
     "Solving gives ve=√(2GM/r). At the surface r=R, g=GM/R², so ve=√(2gR). The escaping object’s mass cancels, so the ideal threshold is independent of its mass.",
     "Worked Earth estimate: g=9.81 m s⁻² and R=6.37×10⁶ m give ve=√(2gR)≈1.12×10⁴ m s⁻¹=11.2 km s⁻¹.",
     "At altitude h, use r=R+h: ve(h)/ve(0)=√[R/(R+h)]. At h=R, local escape speed is 1/√2 of its surface value.",
-    "Circular orbital speed at the same radius is vc=√(GM/r), so ve=√2 vc. This is an ideal energy threshold; real launches must account for atmosphere, rotation, gravity losses and propulsion."
+    "Circular orbital speed at the same radius is vc=√(GM/r), so ve=√2 vc. This is an ideal energy threshold; real launches must account for atmosphere, rotation, gravity losses and propulsion.",
+    "Escape velocity is the speed that lets a projectile coast to infinity, where the gravitational potential is taken as zero. It does not depend on the mass of the projectile. From the Earth's surface it is about 11 km/s, which is √2 times the speed of a low circular orbit."
   ],
   "formulas": [
     "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
@@ -20,7 +21,10 @@
   ],
   "examples": [
     "Earth: √(2×9.81×6.37×10⁶)≈11.2 km s⁻¹.",
-    "At h=R, ve(h)/ve(0)=1/√2."
+    "At h=R, ve(h)/ve(0)=1/√2.",
+    "Escape velocity is the speed that lets a projectile coast to infinity, where the gravitational potential is taken as zero. It does not depend on the mass of the projectile. From the Earth's surface it is about 11 km/s, which is √2 times the speed of a low circular orbit.",
+    "The working relations are v_esc = √(2 g R) at the surface and v_esc = √(2 G M / R). Name each symbol, convert the data into SI units, and only then substitute.",
+    "Take g = 10 m/s^2 and R = 6.4 × 10^6 m. Estimate the escape speed from the surface."
   ],
   "practiceQuestions": [
     "Derive escape speed using energy conservation.",
@@ -30,7 +34,11 @@
   "keyPoints": [
     "At escape threshold, total mechanical energy is zero at infinity.",
     "Use r=R+h for altitude, not the surface radius.",
-    "The orbital-speed relation compares both speeds at the same radius."
+    "The orbital-speed relation compares both speeds at the same radius.",
+    "v_esc = √(2 g R) at the surface",
+    "v_esc = √(2 G M / R)",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Energy conservation gives ve=√(2GM/R)=√(2gR) for an ideal surface launch. It is independent of projectile mass and √2 times circular speed at the same radius.",
   "specificConditions": [
@@ -198,7 +206,11 @@
   },
   "confusion": [
     "The formula neglects air resistance, rotation, external bodies and continued thrust.",
-    "Escape speed is not the practical rocket delta-v from the launch pad."
+    "Escape speed is not the practical rocket delta-v from the launch pad.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Derive escape speed using energy conservation.",
@@ -236,11 +248,112 @@
   "importantConcepts": [
     "At escape threshold, total mechanical energy is zero at infinity.",
     "Use r=R+h for altitude, not the surface radius.",
-    "The orbital-speed relation compares both speeds at the same radius."
+    "The orbital-speed relation compares both speeds at the same radius.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Derive escape speed using energy conservation.",
     "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
     "Why is escape speed independent of projectile mass?"
+  ],
+  "mcs": [
+    {
+      "question": "Escape speed depends on the projectile's mass",
+      "options": [
+        "Strongly",
+        "Not at all, in this formula",
+        "Only if the planet is small",
+        "Through the colour of the rocket"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "v_esc equals",
+      "options": [
+        "√(g R)",
+        "√(2 g R)",
+        "g R",
+        "2 g R"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Compared with a low circular orbit, escape speed is",
+      "options": [
+        "The same",
+        "√2 times larger",
+        "Half",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At infinity the potential is taken as",
+      "options": [
+        "Zero",
+        "−G M m / R",
+        "g",
+        "Infinite and negative"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Escape speed depends on the projectile's mass",
+      "options": [
+        "Strongly",
+        "Not at all, in this formula",
+        "Only if the planet is small",
+        "Through the colour of the rocket"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "v_esc equals",
+      "options": [
+        "√(g R)",
+        "√(2 g R)",
+        "g R",
+        "2 g R"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Compared with a low circular orbit, escape speed is",
+      "options": [
+        "The same",
+        "√2 times larger",
+        "Half",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At infinity the potential is taken as",
+      "options": [
+        "Zero",
+        "−G M m / R",
+        "g",
+        "Infinite and negative"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Take g = 10 m/s^2 and R = 6.4 × 10^6 m. Estimate the escape speed from the surface.",
+      "steps": [
+        "v = √(2 g R).",
+        "2 g R = 2 × 10 × 6.4 × 10^6 = 1.28 × 10^8.",
+        "√(1.28 × 10^8) = √1.28 × 10^4 ≈ 1.1 × 10^4 m/s.",
+        "The mass of the rocket does not appear.",
+        "Air resistance would mean a larger launch speed is needed."
+      ],
+      "answer": "About 1.1 × 10^4 m/s."
+    }
   ]
 }

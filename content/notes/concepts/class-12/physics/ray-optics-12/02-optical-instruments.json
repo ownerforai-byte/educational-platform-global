@@ -5,14 +5,21 @@
   "topicTitle": "Optical Instruments",
   "relevance": 100,
   "notes": [
-    "**Optical Instruments:** This topic covers the fundamental concepts of optical instruments in the physics curriculum.",
-    "Understanding optical instruments is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to optical instruments should be memorized and practiced regularly."
+    "A simple microscope is one convex lens, a magnifying glass. The object sits inside the focal length, and the eye sees a virtual, upright, enlarged image.",
+    "If the image is at the near point, the magnification is about 1 + D/f. If the eye is relaxed and the image is at infinity, the object is at the focus and the magnification is D/f.",
+    "D is 25 cm for a normal eye. A shorter focal length is a stronger magnifier, with the limit that the lens must still be well made.",
+    "An astronomical refracting telescope in normal adjustment has the final image at infinity. The objective and eyepiece are separated by f_o + f_e, and the magnifying power is f_o/f_e.",
+    "The image is inverted. A terrestrial telescope adds an erecting lens, which lengthens the tube. That extra lens is not part of the magnifying-power formula.",
+    "This treatment is the single-lens magnifier and the telescope length. The compound microscope's two-lens product was the other instrument page, so the numbers here are different."
   ],
   "confusion": [
     "❌ 'Magnification of a microscope is just product of objective and eyepiece magnifications.' ✅ Magnification depends on the *final* image position (e.g., at near point vs. infinity) and the tube length.",
     "❌ 'Telescopes always make objects look bigger.' ✅ They make objects look *closer* and *larger* in angular size, but their absolute size (linear magnification) is tiny.",
-    "❌ 'A microscope is just a lens that makes things big.' ✅ It is a system to increase the *angular magnification* of tiny objects placed near the focal point of the objective lens."
+    "❌ 'A microscope is just a lens that makes things big.' ✅ It is a system to increase the *angular magnification* of tiny objects placed near the focal point of the objective lens.",
+    "1 + D/f is the near-point magnifier. D/f is the relaxed magnifier.",
+    "The simple microscope is one lens.",
+    "An erecting lens does not appear in f_o/f_e.",
+    "The final image at infinity is virtual, not a real image on a screen."
   ],
   "practice": [
     "Solve at least 5 problems on optical instruments from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "ray-optics-12",
   "motionGraphics": "ray-optics-12",
   "examples": [
-    "Example 1: Real-world application of Optical Instruments",
     "Example 2: Practical demonstration of Optical Instruments concepts",
     "Example 4: Diagram-based question on Optical Instruments",
     "Example 5: Application in daily life involving Optical Instruments"
@@ -61,11 +67,9 @@
     "Note 5: Optical Instruments frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Optical Instruments",
-    "Statement 2: Theorem related to Optical Instruments",
-    "Statement 3: Condition for Optical Instruments to be valid",
-    "Statement 4: Principle governing Optical Instruments",
-    "Statement 5: Corollary or consequence of Optical Instruments"
+    "A simple microscope is one convex lens, a magnifying glass. The object sits inside the focal length, and the eye sees a virtual, upright, enlarged image.",
+    "If the image is at the near point, the magnification is about 1 + D/f. If the eye is relaxed and the image is at infinity, the object is at the focus and the magnification is D/f.",
+    "D is 25 cm for a normal eye. A shorter focal length is a stronger magnifier, with the limit that the lens must still be well made."
   ],
   "importantNotes": [
     "Note 1: Optical Instruments is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Optical Instruments",
     "Task 4: Practice previous year exam questions on Optical Instruments",
     "Task 5: Explain Optical Instruments to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "A simple microscope is",
+      "options": [
+        "Two lenses",
+        "One convex lens",
+        "A plane mirror",
+        "A prism only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a relaxed magnifier, m is about",
+      "options": [
+        "D/f",
+        "f/D",
+        "f_o + f_e",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Normal-adjustment tube length is",
+      "options": [
+        "f_o + f_e",
+        "D",
+        "f only",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The astronomical telescope image is",
+      "options": [
+        "Upright without an extra lens",
+        "Inverted",
+        "Always real on a screen at the eye",
+        "Formed by a concave lens as the usual objective"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A telescope has f_o = 100 cm and f_e = 5.0 cm, set for a relaxed eye. Find the magnifying power and the tube length.",
+      "steps": [
+        "m = f_o / f_e = 100 / 5.0 = 20.",
+        "Tube length = f_o + f_e = 105 cm.",
+        "The final image is at infinity.",
+        "The image is inverted.",
+        "This is not the compound-microscope product of two ratios."
+      ],
+      "answer": "Power 20, tube length 105 cm."
+    }
   ]
 }

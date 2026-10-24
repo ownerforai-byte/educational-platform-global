@@ -7,12 +7,20 @@
   "notes": [
     "**LCR Series Circuit:** An AC circuit containing a resistor (R), inductor (L), and capacitor (C) connected in series.",
     "The behavior is determined by the combination of resistance and reactance (inductive and capacitive).",
-    "It exhibits resonance when the net reactance is zero."
+    "It exhibits resonance when the net reactance is zero.",
+    "A series LCR circuit has one current through R, L and C. The resistor voltage is in phase with the current, the inductor voltage leads by 90°, and the capacitor voltage lags by 90°.",
+    "The two reactance voltages are opposite, so the net reactive voltage has size I|X_L − X_C|. With the resistor voltage IR, Pythagoras gives the supply voltage V = I Z, where Z = √(R^2 + (X_L − X_C)^2).",
+    "The phase angle satisfies tanφ = (X_L − X_C)/R. If X_L is larger, the current lags the supply voltage. If X_C is larger, the current leads.",
+    "At resonance X_L = X_C, Z falls to R, and the current is V/R, the largest series current for that supply. The frequency is f_0 = 1/(2π√(LC)), the same expression as the LC oscillation."
   ],
   "confusion": [
     "❌ Believing resonance occurs at all frequencies ✅ Resonance occurs only at a specific frequency (f_r = 1 / (2π√LC)) where inductive reactance equals capacitive reactance (X_L = X_C).",
     "❌ Misinterpreting phase angle as constant ✅ The phase angle φ (where tan φ = (X_L - X_C) / R) depends on the frequency of the AC source; it is zero at resonance.",
-    "❌ Assuming voltage across L and C is zero at resonance ✅ While the net voltage across the L-C combination is zero (because they are 180° out of phase), individual voltages across L and C can be non-zero and large."
+    "❌ Assuming voltage across L and C is zero at resonance ✅ While the net voltage across the L-C combination is zero (because they are 180° out of phase), individual voltages across L and C can be non-zero and large.",
+    "Z is not R + X_L + X_C.",
+    "Resonance is not maximum resistance.",
+    "A lagging current means the circuit is inductive, not capacitive.",
+    "The large voltages on L and C are not added arithmetically to get the supply."
   ],
   "practice": [
     "Solve problems calculating impedance (Z) for given L, C, R values.",
@@ -64,11 +72,9 @@
     "Note 5: The Q-factor measures the sharpness of the resonance peak."
   ],
   "importantStatements": [
-    "Statement 1: At resonance, impedance Z is minimum.",
-    "Statement 2: The circuit is purely resistive at resonance.",
-    "Statement 3: X_L = 2πfL and X_C = 1/(2πfC).",
-    "Statement 4: Voltage across the combination of L and C is zero at resonance.",
-    "Statement 5: A higher Q-factor implies sharper resonance."
+    "A series LCR circuit has one current through R, L and C. The resistor voltage is in phase with the current, the inductor voltage leads by 90°, and the capacitor voltage lags by 90°.",
+    "The two reactance voltages are opposite, so the net reactive voltage has size I|X_L − X_C|. With the resistor voltage IR, Pythagoras gives the supply voltage V = I Z, where Z = √(R^2 + (X_L − X_C)^2).",
+    "The phase angle satisfies tanφ = (X_L − X_C)/R. If X_L is larger, the current lags the supply voltage. If X_C is larger, the current leads."
   ],
   "importantNotes": [
     "Note 1: Always sketch the phasor diagram.",
@@ -156,5 +162,60 @@
     "Task 3: Plot I vs f (Resonance curve).",
     "Task 4: Calculate Q-factor.",
     "Task 5: Construct phasor diagrams."
+  ],
+  "mcqs": [
+    {
+      "question": "Series impedance is",
+      "options": [
+        "R + X_L + X_C",
+        "√(R^2 + (X_L − X_C)^2)",
+        "X_L X_C",
+        "R − X_L"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At series resonance",
+      "options": [
+        "X_L = X_C",
+        "R = 0 always",
+        "Current is zero",
+        "Z is infinite"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "If X_L > X_C the current",
+      "options": [
+        "Leads the voltage",
+        "Lags the voltage",
+        "Is in phase",
+        "Is undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The resonance frequency is",
+      "options": [
+        "1/(2π√(LC))",
+        "√(LC)",
+        "R/L",
+        "2πRC"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "R = 3.0 Ω, X_L = 8.0 Ω and X_C = 4.0 Ω in series. Find Z and say whether the current lags or leads.",
+      "steps": [
+        "X_L − X_C = 8.0 − 4.0 = 4.0 Ω.",
+        "Z = √(3.0^2 + 4.0^2) = √(9 + 16) = √25 = 5.0 Ω.",
+        "tanφ = 4/3, so φ is about 53°.",
+        "X_L is larger than X_C, so the circuit is inductive.",
+        "The current lags the supply voltage."
+      ],
+      "answer": "Z = 5.0 Ω, and the current lags the voltage."
+    }
   ]
 }

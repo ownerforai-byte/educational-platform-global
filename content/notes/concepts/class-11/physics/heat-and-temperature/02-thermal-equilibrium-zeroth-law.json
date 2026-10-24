@@ -9,11 +9,16 @@
     "The zeroth law states that if A is in thermal equilibrium with C and B is in equilibrium with C, then A and B are in equilibrium with each other. This transitive property allows temperature to be measured consistently.",
     "A thermometer is system C. Allow it to reach a stable reading on body A, then place the same calibrated thermometer on B. Equal stable readings imply A and B have equal temperatures.",
     "Example: a thermometer initially at 20°C placed in warm water gains energy until it and the water reach a common temperature. The final temperature need not equal either initial temperature.",
-    "Temperature predicts the direction of spontaneous heat transfer: energy flows from higher temperature to lower temperature until equilibrium, unless work or another process intervenes."
+    "Temperature predicts the direction of spontaneous heat transfer: energy flows from higher temperature to lower temperature until equilibrium, unless work or another process intervenes.",
+    "The zeroth law says that thermal equilibrium is a transitive relation, which is why a thermometer works. The thermometer reaches equilibrium with the body, and two bodies that each match the thermometer match each other. Heat then has no tendency to flow between them."
   ],
   "confusion": [
     "Heat is energy in transfer, not a stored substance in an equilibrium body.",
-    "Equal temperatures do not imply equal masses or internal energies."
+    "Equal temperatures do not imply equal masses or internal energies.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "State the zeroth law and identify the thermometer’s role.",
@@ -29,7 +34,10 @@
   "motionGraphics": "heat-and-temperature",
   "examples": [
     "Two objects read 25°C on the same equilibrated thermometer; their temperatures match even if their masses differ.",
-    "A stable thermometer reading indicates that thermometer and body have reached equilibrium."
+    "A stable thermometer reading indicates that thermometer and body have reached equilibrium.",
+    "The zeroth law says that thermal equilibrium is a transitive relation, which is why a thermometer works. The thermometer reaches equilibrium with the body, and two bodies that each match the thermometer match each other. Heat then has no tendency to flow between them.",
+    "The working relations are If A is in equilibrium with C and B is in equilibrium with C, then A is in equilibrium with B and Temperature is the label of that equilibrium. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Body A and a thermometer both read a steady 37°C, and body B also steadies the same thermometer at 37°C. What follows for A and B?"
   ],
   "practiceQuestions": [
     "State the zeroth law and identify the thermometer’s role.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Temperature determines the direction of spontaneous heat flow.",
     "Thermometry depends on the transitivity of thermal equilibrium.",
-    "Equal temperature does not imply equal heat capacity or energy."
+    "Equal temperature does not imply equal heat capacity or energy.",
+    "If A is in equilibrium with C and B is in equilibrium with C, then A is in equilibrium with B",
+    "Temperature is the label of that equilibrium",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "The zeroth law makes temperature comparison possible: systems in equilibrium with the same thermometer are in equilibrium with each other.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Temperature determines the direction of spontaneous heat flow.",
     "Thermometry depends on the transitivity of thermal equilibrium.",
-    "Equal temperature does not imply equal heat capacity or energy."
+    "Equal temperature does not imply equal heat capacity or energy.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "State the zeroth law and identify the thermometer’s role.",
@@ -86,5 +102,102 @@
   ],
   "duplicateType": 2,
   "tabGroup": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
-  "visualType": "zeroth-law"
+  "visualType": "zeroth-law",
+  "mcs": [
+    {
+      "question": "The zeroth law justifies",
+      "options": [
+        "The use of a thermometer",
+        "The ideal-gas equation by itself",
+        "Nuclear fusion",
+        "Ohm's law"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Thermal equilibrium means",
+      "options": [
+        "Equal mass",
+        "No net heat flow",
+        "Equal volume",
+        "A rising temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two bodies in equilibrium with a third are",
+      "options": [
+        "In equilibrium with each other",
+        "Always hotter than the third",
+        "Unable to have a temperature",
+        "Doing work"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Temperature is",
+      "options": [
+        "The label of a thermal-equilibrium class",
+        "A vector",
+        "The heat in joules",
+        "The mass"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The zeroth law justifies",
+      "options": [
+        "The use of a thermometer",
+        "The ideal-gas equation by itself",
+        "Nuclear fusion",
+        "Ohm's law"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Thermal equilibrium means",
+      "options": [
+        "Equal mass",
+        "No net heat flow",
+        "Equal volume",
+        "A rising temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two bodies in equilibrium with a third are",
+      "options": [
+        "In equilibrium with each other",
+        "Always hotter than the third",
+        "Unable to have a temperature",
+        "Doing work"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Temperature is",
+      "options": [
+        "The label of a thermal-equilibrium class",
+        "A vector",
+        "The heat in joules",
+        "The mass"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Body A and a thermometer both read a steady 37°C, and body B also steadies the same thermometer at 37°C. What follows for A and B?",
+      "steps": [
+        "A is in thermal equilibrium with the thermometer.",
+        "B is in thermal equilibrium with the thermometer.",
+        "By the zeroth law, A is in equilibrium with B.",
+        "No net heat flows between A and B when they are put in contact.",
+        "37°C is the shared temperature label."
+      ],
+      "answer": "A and B are in mutual thermal equilibrium at 37°C."
+    }
+  ]
 }

@@ -7,14 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** LCR series circuit and power factor — Alternating Current, Physics (class-12-notes).",
-    "**Tested.** define it · list: lcr series circuit, power factor · one worked example · one misconception each.",
-    "**Power factor.** one-line definition + one-line exam use."
+    "The average power in a series LCR circuit is V_rms I_rms cosφ, not the product of the rms voltage and current alone. The extra factor cosφ is the power factor.",
+    "From the impedance triangle, cosφ = R/Z. A circuit that is almost a pure resistor has Z near R and a power factor near 1. A circuit dominated by reactance has a small power factor.",
+    "At resonance X_L = X_C, φ = 0 and the power factor is 1. All of the average power is then the heating I_rms^2 R in the resistor. The inductor and capacitor still exchange energy, but their average contribution is zero.",
+    "A power factor of zero means the current is 90° out of phase with the voltage, as in a pure inductor or a pure capacitor. Energy sloshes back to the source.",
+    "A lagging power factor is the inductive case, common with motors. Capacitors are added in industry to pull the power factor back toward 1 so that the current, for a given useful power, is smaller.",
+    "The instantaneous power oscillates. The average is what the meter records. Quoting V I without cosφ overstates the power whenever the phase is not zero."
   ],
   "confusion": [
-    "❌ treat \"LCR series circuit\" as one blob → ✅ split into: lcr series circuit, power factor.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Power factor is not the phase angle itself. It is the cosine.",
+    "cosφ = R/Z, not Z/R.",
+    "Resonance makes the power factor 1, not 0.",
+    "A high power factor means less reactive current, not a larger resistance by itself."
   ],
   "bounds": [
     "Covers only: lcr series circuit, power factor (within Alternating Current).",
@@ -22,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: lcr series circuit, power factor.",
-    "one worked example for \"LCR series circuit and power factor\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Average power = V_rms I_rms cosφ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"LCR series circuit and power factor\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"LCR series circuit and power factor\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Average power = V_rms I_rms cosφ",
+    "cosφ = R/Z"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "The average power in a series LCR circuit is V_rms I_rms cosφ, not the product of the rms voltage and current alone. The extra factor cosφ is the power factor.",
+    "From the impedance triangle, cosφ = R/Z. A circuit that is almost a pure resistor has Z near R and a power factor near 1. A circuit dominated by reactance has a small power factor.",
+    "In the series circuit with Z = 5.0 Ω and R = 3.0 Ω, the supply is 20 V rms. Find the power factor and the average power."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"LCR series circuit and power factor\" with one example.",
-    "compare \"LCR series circuit\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"LCR series circuit and power factor\" and verify the answer is plausible."
+    "Write the average power.",
+    "What is cosφ in terms of R and Z?",
+    "Why do factories correct a lagging power factor?"
   ],
   "formulas": [
-    "Governing equation for \"LCR series circuit and power factor\" — state with units, then use in one numerical."
+    "Governing equation for \"LCR series circuit and power factor\" — state with units, then use in one numerical.",
+    "Average power = V_rms I_rms cosφ",
+    "cosφ = R/Z"
   ],
   "numericals": [
     "Set up the defining equation for \"LCR series circuit and power factor\", substitute simple values, and compute the result with units.",
@@ -46,19 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• LCR series circuit",
-    "• Power factor"
+    "Power factor is cosφ.",
+    "It equals R/Z.",
+    "It is 1 at resonance.",
+    "It is 0 for a pure L or C."
   ],
-  "summary": "LCR series circuit and power factor (Alternating Current, Physics, class-12-notes) covers LCR series circuit, power factor. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Average power is V_rms I_rms times the power factor cosφ, and cosφ = R/Z. It is 1 at resonance and 0 in a pure reactor. A lagging power factor is inductive and is often corrected with capacitors.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"LCR series circuit and power factor\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Average power is",
       "options": [
-        "True",
-        "False"
+        "V_rms I_rms",
+        "V_rms I_rms cosφ",
+        "I Z",
+        "V/R always"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "cosφ equals",
+      "options": [
+        "Z/R",
+        "R/Z",
+        "X_L/X_C",
+        "f"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At resonance the power factor is",
+      "options": [
+        "0",
+        "1",
+        "0.5",
+        "Infinite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A pure capacitor has power factor",
+      "options": [
+        "1",
+        "0",
+        "R",
+        "Undefined and large"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "The average power in a series LCR circuit is V_rms I_rms cosφ, not the product of the rms voltage and current alone. The extra factor cosφ is the power factor.",
+    "From the impedance triangle, cosφ = R/Z. A circuit that is almost a pure resistor has Z near R and a power factor near 1. A circuit dominated by reactance has a small power factor.",
+    "At resonance X_L = X_C, φ = 0 and the power factor is 1. All of the average power is then the heating I_rms^2 R in the resistor. The inductor and capacitor still exchange energy, but their average contribution is zero."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Power factor 1 means φ = 0.",
+    "Useful power is I^2 R."
+  ],
+  "specialNotes": [
+    "Leading means capacitive. Lagging means inductive.",
+    "Use rms values in the power formula."
+  ],
+  "importantNotes": [
+    "Do not drop cosφ.",
+    "R/Z cannot exceed 1."
+  ],
+  "importantConcepts": [
+    "Power factor",
+    "Average power",
+    "Resonance at cosφ = 1",
+    "Lagging and leading"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Average power is",
+      "options": [
+        "V_rms I_rms",
+        "V_rms I_rms cosφ",
+        "I Z",
+        "V/R always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "cosφ equals",
+      "options": [
+        "Z/R",
+        "R/Z",
+        "X_L/X_C",
+        "f"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At resonance the power factor is",
+      "options": [
+        "0",
+        "1",
+        "0.5",
+        "Infinite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A pure capacitor has power factor",
+      "options": [
+        "1",
+        "0",
+        "R",
+        "Undefined and large"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "In the series circuit with Z = 5.0 Ω and R = 3.0 Ω, the supply is 20 V rms. Find the power factor and the average power.",
+      "steps": [
+        "cosφ = R/Z = 3.0/5.0 = 0.60.",
+        "I_rms = V_rms / Z = 20 / 5.0 = 4.0 A.",
+        "Average power = V_rms I_rms cosφ = 20 × 4.0 × 0.60.",
+        "That product is 48 W.",
+        "The same result is I_rms^2 R = 16 × 3.0 = 48 W."
+      ],
+      "answer": "Power factor 0.60, average power 48 W."
     }
   ]
 }

@@ -3,17 +3,22 @@
   "unitSlug": "optics",
   "topicSlug": "n3",
   "topicTitle": "N3",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "A converging thin lens brings parallel paraxial rays to a real focus; a diverging lens makes them spread as if from a virtual focus. The optical centre and principal foci lie on the principal axis.",
     "With Cartesian convention and light travelling left to right, the thin-lens equation is 1/f=1/v−1/u. A real object has u<0; a real image has v>0.",
     "Worked example: f=+15 cm and u=−30 cm give 1/v=1/15−1/30=1/30, so v=+30 cm. Magnification m=v/u=−1: real, inverted and same size.",
     "A diverging lens has f<0 and forms a virtual, upright, diminished image of a real object. Ray diagrams check signs and whether an image can be caught on a screen.",
-    "Lens power is P=1/f when f is in metres. A short focal length means high magnitude of power, but image size still depends on object placement."
+    "Lens power is P=1/f when f is in metres. A short focal length means high magnitude of power, but image size still depends on object placement.",
+    "A convex lens of positive focal length can form a real image only when the object is outside the focal length. The Cartesian lens equation is 1/v − 1/u = 1/f. The magnification is v/u, and a negative value means the image is inverted."
   ],
   "confusion": [
     "Do not use the mirror equation in a lens problem.",
-    "The simple lens equation assumes a thin lens and paraxial rays."
+    "The simple lens equation assumes a thin lens and paraxial rays.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "An object is 24 cm from a converging lens with f=8 cm. Find v and m.",
@@ -29,7 +34,10 @@
   "motionGraphics": "optics",
   "examples": [
     "f=+15 cm and u=−30 cm give v=+30 cm and m=−1.",
-    "A diverging lens has negative focal length and a virtual image for a real object."
+    "A diverging lens has negative focal length and a virtual image for a real object.",
+    "A convex lens of positive focal length can form a real image only when the object is outside the focal length. The Cartesian lens equation is 1/v − 1/u = 1/f. The magnification is v/u, and a negative value means the image is inverted.",
+    "The working relations are 1/v − 1/u = 1/f for a thin lens and A real object has negative u. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A convex lens has f = +15 cm. An object is at u = −30 cm. Find v."
   ],
   "practiceQuestions": [
     "An object is 24 cm from a converging lens with f=8 cm. Find v and m.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Use one sign convention throughout.",
     "Real rays meet; virtual rays only appear to meet.",
-    "A virtual image cannot be directly projected onto a screen."
+    "A virtual image cannot be directly projected onto a screen.",
+    "1/v − 1/u = 1/f for a thin lens",
+    "A real object has negative u",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Thin-lens equations and ray diagrams connect focal length to image position and magnification. Signed distances encode real/virtual and upright/inverted outcomes.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Use one sign convention throughout.",
     "Real rays meet; virtual rays only appear to meet.",
-    "A virtual image cannot be directly projected onto a screen."
+    "A virtual image cannot be directly projected onto a screen.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "An object is 24 cm from a converging lens with f=8 cm. Find v and m.",
@@ -84,5 +100,102 @@
     "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
     "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "The thin-lens equation is",
+      "options": [
+        "1/v − 1/u = 1/f",
+        "1/v + 1/u = 1/f",
+        "v = f",
+        "u = v"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A real object's u is",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Equal to f always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An object at 2f of a convex lens gives",
+      "options": [
+        "A real image at 2f",
+        "A virtual image",
+        "No image",
+        "An image at f"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Negative magnification means",
+      "options": [
+        "Upright",
+        "Inverted",
+        "No lens",
+        "A positive f"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The thin-lens equation is",
+      "options": [
+        "1/v − 1/u = 1/f",
+        "1/v + 1/u = 1/f",
+        "v = f",
+        "u = v"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A real object's u is",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Equal to f always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An object at 2f of a convex lens gives",
+      "options": [
+        "A real image at 2f",
+        "A virtual image",
+        "No image",
+        "An image at f"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Negative magnification means",
+      "options": [
+        "Upright",
+        "Inverted",
+        "No lens",
+        "A positive f"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A convex lens has f = +15 cm. An object is at u = −30 cm. Find v.",
+      "steps": [
+        "1/v = 1/f + 1/u.",
+        "1/v = 1/15 + 1/(−30) = 2/30 − 1/30 = 1/30.",
+        "v = +30 cm.",
+        "The image is real, on the far side of the lens.",
+        "m = v/u = 30/(−30) = −1, so the image is inverted and the same size."
+      ],
+      "answer": "v = +30 cm, real and inverted."
+    }
+  ]
 }

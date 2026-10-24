@@ -9,11 +9,16 @@
     "For a thin prism of apex angle A and small deviations, a colour with refractive index n has deviation δ=(n−1)A. Therefore the red–violet angular spread is Δδ=(nv−nr)A.",
     "Dispersive power compares colour spread with mean yellow deviation: ω=(δv−δr)/δy=(nv−nr)/(ny−1). It is dimensionless and describes relative dispersion of the material, not the prism angle.",
     "Worked example: nv=1.532, nr=1.514 and ny=1.523 give ω=0.018/0.523≈0.0344. A higher ω means more red–violet separation for the same mean deviation.",
-    "The thin-prism ratio follows by dividing Δδ=(nv−nr)A by δy=(ny−1)A; A cancels. In a different surrounding medium, use refractive indices relative to that medium."
+    "The thin-prism ratio follows by dividing Δδ=(nv−nr)A by δy=(ny−1)A; A cancels. In a different surrounding medium, use refractive indices relative to that medium.",
+    "Dispersive power compares the spread of colours with the mean deviation. A flint glass can have a larger dispersive power than crown glass even when a particular prism of flint deviates the mean ray less, because the ratio, not the deviation alone, is ω."
   ],
   "confusion": [
     "Do not confuse dispersive power with total deviation; total deviation depends on apex angle.",
-    "Use small-angle thin-prism relations only within their approximation."
+    "Use small-angle thin-prism relations only within their approximation.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find ω for nv=1.60, nr=1.58 and ny=1.59.",
@@ -29,7 +34,10 @@
   "motionGraphics": "dispersion",
   "examples": [
     "A=4°, nred=1.50 and nviolet=1.52 give deviations 2.00° and 2.08°; spread=0.08°.",
-    "nv=1.532, nr=1.514, ny=1.523 gives ω≈0.0344."
+    "nv=1.532, nr=1.514, ny=1.523 gives ω≈0.0344.",
+    "Dispersive power compares the spread of colours with the mean deviation. A flint glass can have a larger dispersive power than crown glass even when a particular prism of flint deviates the mean ray less, because the ratio, not the deviation alone, is ω.",
+    "The working relations are ω = (μ_v − μ_r) / (μ − 1) and Deviation of a thin prism ≈ (μ − 1) A. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A thin prism has μ_v = 1.52, μ_r = 1.50 and mean μ = 1.51. Find the dispersive power."
   ],
   "practiceQuestions": [
     "Find ω for nv=1.60, nr=1.58 and ny=1.59.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "For normal dispersion in glass, violet deviates more than red.",
     "Dispersive power is a relative spread; total deviation also depends on A.",
-    "The thin-prism formula assumes small angles."
+    "The thin-prism formula assumes small angles.",
+    "ω = (μ_v − μ_r) / (μ − 1)",
+    "Deviation of a thin prism ≈ (μ − 1) A",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "A prism separates colours because refractive index varies with wavelength. For a thin prism, ω=(nv−nr)/(ny−1) measures relative colour spread.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "For normal dispersion in glass, violet deviates more than red.",
     "Dispersive power is a relative spread; total deviation also depends on A.",
-    "The thin-prism formula assumes small angles."
+    "The thin-prism formula assumes small angles.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find ω for nv=1.60, nr=1.58 and ny=1.59.",
@@ -86,5 +102,102 @@
     "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
   ],
   "tabGroup": "pure-spectrum-and-dispersive-power",
-  "visualType": "dispersion"
+  "visualType": "dispersion",
+  "mcs": [
+    {
+      "question": "Dispersive power is",
+      "options": [
+        "μ_v − μ_r over μ − 1",
+        "The apex angle",
+        "The focal length",
+        "Always 1"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "ω has",
+      "options": [
+        "The unit radian",
+        "No unit",
+        "The unit dioptre",
+        "The unit metre"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Violet is deviated",
+      "options": [
+        "Less than red",
+        "More than red in glass",
+        "Not at all",
+        "The same amount"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A thin-prism deviation is about",
+      "options": [
+        "(μ − 1) A",
+        "μ A",
+        "A/μ",
+        "ω A only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Dispersive power is",
+      "options": [
+        "μ_v − μ_r over μ − 1",
+        "The apex angle",
+        "The focal length",
+        "Always 1"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "ω has",
+      "options": [
+        "The unit radian",
+        "No unit",
+        "The unit dioptre",
+        "The unit metre"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Violet is deviated",
+      "options": [
+        "Less than red",
+        "More than red in glass",
+        "Not at all",
+        "The same amount"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A thin-prism deviation is about",
+      "options": [
+        "(μ − 1) A",
+        "μ A",
+        "A/μ",
+        "ω A only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A thin prism has μ_v = 1.52, μ_r = 1.50 and mean μ = 1.51. Find the dispersive power.",
+      "steps": [
+        "ω = (μ_v − μ_r) / (μ − 1).",
+        "The numerator is 0.020.",
+        "The denominator is 0.51.",
+        "ω = 0.020 / 0.51 = 0.039.",
+        "Dispersive power has no unit."
+      ],
+      "answer": "0.039."
+    }
+  ]
 }

@@ -5,14 +5,21 @@
   "topicTitle": "Young's Double Slit",
   "relevance": 100,
   "notes": [
-    "**Young's Double Slit:** This topic covers the fundamental concepts of young's double slit in the physics curriculum.",
-    "Understanding young's double slit is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to young's double slit should be memorized and practiced regularly."
+    "Young's experiment splits one wavefront with two narrow slits. The two waves overlap on a screen and interfere, because they came from one source and stay in a fixed phase relation.",
+    "A bright fringe is where the path difference is m λ, a whole number of wavelengths. A dark fringe is where the path difference is an odd multiple of λ/2.",
+    "If the slits are a distance d apart and the screen is a distance D away, the bright fringes are equally spaced with β = λ D / d. This needs D much larger than d, so that the angles are small.",
+    "A longer wavelength, a more distant screen, or closer slits all widen the pattern. White light gives a white centre and coloured fringes farther out, because each colour has its own spacing.",
+    "The central fringe is bright, because the two paths are equal there. Covering one slit removes the fringes and leaves a single-slit spread.",
+    "The sources must be coherent. Two separate lamps do not keep a steady phase, so their pattern washes out."
   ],
   "confusion": [
     "❌ 'Bright fringes are always equally spaced.' ✅ Fringes are equally spaced *only for small angles* (near the center). At larger angles, spacing increases.",
     "❌ 'If one slit is covered, intensity doubles at the center.' ✅ With one slit, the central intensity becomes *one-fourth* (since amplitude halves: I ∝ A²).",
-    "❌ 'Path difference of λ/2 gives a bright fringe.' ✅ Path difference of λ/2 gives a *dark* fringe (destructive interference); bright fringes need path difference = nλ."
+    "❌ 'Path difference of λ/2 gives a bright fringe.' ✅ Path difference of λ/2 gives a *dark* fringe (destructive interference); bright fringes need path difference = nλ.",
+    "The central fringe is bright, not dark.",
+    "β = λ D / d, not λ d / D.",
+    "Closer slits make wider fringes.",
+    "Two lamps are not coherent."
   ],
   "practice": [
     "Solve at least 5 problems on young's double slit from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "wave-optics-12",
   "motionGraphics": "wave-optics-12",
   "examples": [
-    "Example 1: Real-world application of Young's Double Slit",
     "Example 2: Practical demonstration of Young's Double Slit concepts",
     "Example 4: Diagram-based question on Young's Double Slit",
     "Example 5: Application in daily life involving Young's Double Slit"
@@ -61,11 +67,9 @@
     "Note 5: Young's Double Slit frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Young's Double Slit",
-    "Statement 2: Theorem related to Young's Double Slit",
-    "Statement 3: Condition for Young's Double Slit to be valid",
-    "Statement 4: Principle governing Young's Double Slit",
-    "Statement 5: Corollary or consequence of Young's Double Slit"
+    "Young's experiment splits one wavefront with two narrow slits. The two waves overlap on a screen and interfere, because they came from one source and stay in a fixed phase relation.",
+    "A bright fringe is where the path difference is m λ, a whole number of wavelengths. A dark fringe is where the path difference is an odd multiple of λ/2.",
+    "If the slits are a distance d apart and the screen is a distance D away, the bright fringes are equally spaced with β = λ D / d. This needs D much larger than d, so that the angles are small."
   ],
   "importantNotes": [
     "Note 1: Young's Double Slit is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Young's Double Slit",
     "Task 4: Practice previous year exam questions on Young's Double Slit",
     "Task 5: Explain Young's Double Slit to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "The central fringe is",
+      "options": [
+        "Dark",
+        "Bright",
+        "Absent",
+        "A single slit"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Fringe width is",
+      "options": [
+        "λ d / D",
+        "λ D / d",
+        "d/λ",
+        "D only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Increasing d makes the fringes",
+      "options": [
+        "Wider",
+        "Closer together",
+        "White",
+        "Incoherent by itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two separate lamps give",
+      "options": [
+        "A steady fringe pattern",
+        "No steady interference",
+        "β = 0 always",
+        "A dark centre by Young's formula"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "d = 0.50 mm, D = 1.0 m and λ = 600 nm. Find the fringe width.",
+      "steps": [
+        "Convert: d = 5.0 × 10^−4 m and λ = 6.0 × 10^−7 m.",
+        "β = λ D / d.",
+        "λ D = 6.0 × 10^−7.",
+        "β = 6.0 × 10^−7 / 5.0 × 10^−4 = 1.2 × 10^−3 m.",
+        "The fringe width is 1.2 mm."
+      ],
+      "answer": "1.2 mm."
+    }
   ]
 }

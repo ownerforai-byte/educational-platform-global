@@ -7,15 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Transformer — principle, types, and losses — Alternating Current, Physics (class-12-notes).",
-    "**Tested.** define it · list: transformer — principle, types, losses · one worked example · one misconception each.",
-    "**Types.** one-line definition + one-line exam use.",
-    "**Losses.** one-line definition + one-line exam use."
+    "A transformer has a primary coil and a secondary coil on an iron core. Alternating current in the primary changes the flux, and that changing flux induces the secondary emf. Direct current does not keep the flux changing, so a transformer does not pass steady DC.",
+    "The voltage ratio equals the turns ratio when leakage is ignored. More secondary turns raise the voltage and, in the ideal case, lower the current so that input power equals output power.",
+    "A step-up transformer raises voltage. A step-down transformer lowers it. The names refer to voltage, not to power and not to current.",
+    "Copper loss is the heating I squared R in both windings. It grows with the load current. Core loss is eddy-current heating plus hysteresis, and it is present whenever the flux is alternating, even if the secondary is open.",
+    "Laminating the core and using soft iron cut those core losses. The efficiency is useful output power divided by input power. It is less than 1 once either loss is present.",
+    "A small transformer on no load still draws a little primary current to supply the core loss and the magnetising flux. That no-load current is not the load current."
   ],
   "confusion": [
-    "❌ treat \"Transformer — principle\" as one blob → ✅ split into: transformer — principle, types, losses.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Efficiency is not the turns ratio.",
+    "Step-up does not increase power.",
+    "Core loss remains on no load. Copper loss does not.",
+    "Laminations reduce eddy currents. They do not change the turns ratio."
   ],
   "bounds": [
     "Covers only: transformer — principle, types, losses (within Alternating Current).",
@@ -23,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: transformer — principle, types, losses.",
-    "one worked example for \"Transformer — principle, types, and losses\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Efficiency = output power / input power and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Transformer — principle, types, and losses\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Transformer — principle, types, and losses\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Efficiency = output power / input power",
+    "V_s/V_p = N_s/N_p"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "A transformer has a primary coil and a secondary coil on an iron core. Alternating current in the primary changes the flux, and that changing flux induces the secondary emf. Direct current does not keep the flux changing, so a transformer does not pass steady DC.",
+    "The voltage ratio equals the turns ratio when leakage is ignored. More secondary turns raise the voltage and, in the ideal case, lower the current so that input power equals output power.",
+    "A transformer takes 200 W from the mains and delivers 180 W to a lamp. Find the efficiency and the wasted power."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Transformer — principle, types, and losses\" with one example.",
-    "compare \"Transformer — principle\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Transformer — principle, types, and losses\" and verify the answer is plausible."
+    "Why must the primary current change?",
+    "Which loss grows with load current?",
+    "Write the efficiency."
   ],
   "formulas": [
-    "Governing equation for \"Transformer — principle, types, and losses\" — state with units, then use in one numerical."
+    "Governing equation for \"Transformer — principle, types, and losses\" — state with units, then use in one numerical.",
+    "Efficiency = output power / input power",
+    "V_s/V_p = N_s/N_p"
   ],
   "numericals": [
     "Set up the defining equation for \"Transformer — principle, types, and losses\", substitute simple values, and compute the result with units.",
@@ -47,31 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Transformer — principle",
-    "• Types",
-    "• Losses"
+    "Changing flux links the two coils.",
+    "Step-up and step-down refer to voltage.",
+    "Copper loss is I squared R in the windings.",
+    "Core loss is eddy current plus hysteresis."
   ],
-  "summary": "Transformer — principle, types, and losses (Alternating Current, Physics, class-12-notes) covers Transformer — principle, types, losses. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "A transformer passes energy by changing flux, with the voltage ratio equal to the turns ratio. Copper loss heats the windings in proportion to the square of the current, and core loss heats the iron whenever the flux alternates. Efficiency is output power divided by input power.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Transformer — principle, types, and losses\"?",
+      "question": "A transformer works on",
       "options": [
-        "Transformer — principle",
-        "Types",
-        "Unrelated topic",
-        "None of the above"
+        "Steady flux",
+        "Changing flux",
+        "A chemical cell only",
+        "A constant primary current"
       ],
-      "answer": "A",
-      "explanation": "Transformer — principle is listed among the official sub-ideas of Transformer — principle, types, and losses; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Transformer — principle, types, and losses\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Copper loss is",
       "options": [
-        "True",
-        "False"
+        "I squared R in the windings",
+        "The turns ratio",
+        "Zero whenever current flows",
+        "Hysteresis only"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Core loss is present",
+      "options": [
+        "Only at full load",
+        "Whenever the flux is alternating",
+        "Only in the secondary wire as I squared R",
+        "Never in a laminated core, even approximately"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Efficiency is",
+      "options": [
+        "Output power over input power",
+        "N_s/N_p",
+        "The eddy current",
+        "Always 1 in a real transformer"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "A transformer has a primary coil and a secondary coil on an iron core. Alternating current in the primary changes the flux, and that changing flux induces the secondary emf. Direct current does not keep the flux changing, so a transformer does not pass steady DC.",
+    "The voltage ratio equals the turns ratio when leakage is ignored. More secondary turns raise the voltage and, in the ideal case, lower the current so that input power equals output power.",
+    "A step-up transformer raises voltage. A step-down transformer lowers it. The names refer to voltage, not to power and not to current."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Copper loss follows the current. Core loss follows the flux.",
+    "Efficiency = P_out / P_in."
+  ],
+  "specialNotes": [
+    "An open secondary still has core loss.",
+    "Oil-filled large transformers carry heat away. The principle is unchanged."
+  ],
+  "importantNotes": [
+    "State ideal before equating the two powers.",
+    "Quote efficiency as a ratio or a percentage, and say which."
+  ],
+  "importantConcepts": [
+    "Turns ratio",
+    "Copper loss",
+    "Core loss",
+    "Efficiency"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A transformer works on",
+      "options": [
+        "Steady flux",
+        "Changing flux",
+        "A chemical cell only",
+        "A constant primary current"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Copper loss is",
+      "options": [
+        "I squared R in the windings",
+        "The turns ratio",
+        "Zero whenever current flows",
+        "Hysteresis only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Core loss is present",
+      "options": [
+        "Only at full load",
+        "Whenever the flux is alternating",
+        "Only in the secondary wire as I squared R",
+        "Never in a laminated core, even approximately"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Efficiency is",
+      "options": [
+        "Output power over input power",
+        "N_s/N_p",
+        "The eddy current",
+        "Always 1 in a real transformer"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A transformer takes 200 W from the mains and delivers 180 W to a lamp. Find the efficiency and the wasted power.",
+      "steps": [
+        "Useful output = 180 W.",
+        "Input = 200 W.",
+        "Wasted power = 200 − 180 = 20 W.",
+        "Efficiency = 180/200 = 0.90.",
+        "As a percentage, the efficiency is 90%."
+      ],
+      "answer": "90%, with 20 W wasted."
     }
   ]
 }

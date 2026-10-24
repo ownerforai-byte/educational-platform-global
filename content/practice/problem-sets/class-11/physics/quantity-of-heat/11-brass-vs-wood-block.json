@@ -3,27 +3,179 @@
   "unitSlug": "quantity-of-heat",
   "topicSlug": "specific-latent-heat-of-fusion-and-vaporization",
   "topicTitle": "Specific latent heat of fusion and vaporization",
-  "relevance": 74,
+  "relevance": 94,
   "notes": [
     "**Setup:** a brass block (100 g) and a wooden block (100 g) are both initially at 100Â°C and left in the same room",
     "Wood has a much lower thermal conductivity and typically a lower specific heat capacity than brass, but under Newton's Law of Cooling the key factor is mÂ·c: a lower mÂ·c means a faster rate of temperature fall for the same rate of heat loss",
-    "This is exactly why 'water equivalent' is useful â€” instead of tracking each material's own c, every object can be converted to 'an equivalent mass of water' (W = mc/c_w), letting heat calculations for mixtures of different materials be done as if everything were water"
+    "This is exactly why 'water equivalent' is useful â€” instead of tracking each material's own c, every object can be converted to 'an equivalent mass of water' (W = mc/c_w), letting heat calculations for mixtures of different materials be done as if everything were water",
+    "A 100 g brass block and a 100 g wooden block, both at 100°C in the same room, do not cool at the same rate. Newton's law makes the rate of fall proportional to K/(mc) times the excess.",
+    "If the surfaces were identical, the block with the smaller specific heat would have the smaller mc and would lose temperature faster. Wood's specific heat and its poor conductivity both matter in a real block, because the inside of the wood does not stay at one temperature as easily as brass.",
+    "For a body that is all at one temperature, the mc factor is the one the law names. A smaller heat capacity means each joule that leaves causes a larger drop in temperature."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "The blocks start at the same temperature. The one that feels as if it 'holds heat' longer has the larger mc or the poorer coupling to the air.",
+    "Conductivity and specific heat are different properties.",
+    "Water equivalent is not the mass of the block.",
+    "Equal masses do not mean equal cooling rates."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write |dθ/dt| = (K /(mc)) (θ − θ0) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "|dθ/dt| = (K /(mc)) (θ − θ0)",
+    "Water equivalent W = mc / c_water"
   ],
   "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  "motionGraphics": "quantity-of-heat",
+  "keyPoints": [
+    "Same mass and same start.",
+    "Smaller mc means a faster temperature fall.",
+    "Wood usually has the smaller mc.",
+    "Water equivalent converts everything to an equivalent mass of water."
+  ],
+  "importantStatements": [
+    "A 100 g brass block and a 100 g wooden block, both at 100°C in the same room, do not cool at the same rate. Newton's law makes the rate of fall proportional to K/(mc) times the excess.",
+    "If the surfaces were identical, the block with the smaller specific heat would have the smaller mc and would lose temperature faster. Wood's specific heat and its poor conductivity both matter in a real block, because the inside of the wood does not stay at one temperature as easily as brass.",
+    "For a body that is all at one temperature, the mc factor is the one the law names. A smaller heat capacity means each joule that leaves causes a larger drop in temperature."
+  ],
+  "examples": [
+    "A 100 g brass block and a 100 g wooden block, both at 100°C in the same room, do not cool at the same rate. Newton's law makes the rate of fall proportional to K/(mc) times the excess.",
+    "If the surfaces were identical, the block with the smaller specific heat would have the smaller mc and would lose temperature faster. Wood's specific heat and its poor conductivity both matter in a real block, because the inside of the wood does not stay at one temperature as easily as brass.",
+    "A metal block has m = 0.10 kg and c = 400 J kg^-1 K^-1. Find its water equivalent. Take c_water = 4200 J kg^-1 K^-1."
+  ],
+  "formulas": [
+    "|dθ/dt| = (K /(mc)) (θ − θ0)",
+    "Water equivalent W = mc / c_water"
+  ],
+  "practiceQuestions": [
+    "Which factor in Newton's law contains c?",
+    "Why is the single-temperature picture better for brass?",
+    "What is a water equivalent?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Smaller mc, faster dθ/dt, if K matches.",
+    "W = mc / c_water."
+  ],
+  "specialNotes": [
+    "100 g is the mass in the usual comparison, not a special physical constant.",
+    "A coat of paint can make the surfaces more alike."
+  ],
+  "importantNotes": [
+    "Separate conductivity from specific heat if the question allows.",
+    "Use water equivalent when several materials share a mixture."
+  ],
+  "importantConcepts": [
+    "Role of mc",
+    "Conductivity of wood",
+    "Water equivalent",
+    "Same excess"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "For the same K and the same excess, the temperature falls faster when",
+      "options": [
+        "mc is smaller",
+        "mc is larger",
+        "c is infinite",
+        "The mass unit changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Water equivalent is",
+      "options": [
+        "mc / c_water",
+        "The volume of the block",
+        "The cooling time",
+        "K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Wood is a poorer conductor than brass, so",
+      "options": [
+        "The interior may stay hotter than the surface",
+        "c must be zero",
+        "Newton's law becomes a fourth-power law automatically",
+        "The mass changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Equal masses of brass and wood",
+      "options": [
+        "Must cool at the same rate",
+        "Need not cool at the same rate",
+        "Have equal water equivalents always",
+        "Have no heat capacity"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "For the same K and the same excess, the temperature falls faster when",
+      "options": [
+        "mc is smaller",
+        "mc is larger",
+        "c is infinite",
+        "The mass unit changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Water equivalent is",
+      "options": [
+        "mc / c_water",
+        "The volume of the block",
+        "The cooling time",
+        "K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Wood is a poorer conductor than brass, so",
+      "options": [
+        "The interior may stay hotter than the surface",
+        "c must be zero",
+        "Newton's law becomes a fourth-power law automatically",
+        "The mass changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Equal masses of brass and wood",
+      "options": [
+        "Must cool at the same rate",
+        "Need not cool at the same rate",
+        "Have equal water equivalents always",
+        "Have no heat capacity"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A metal block has m = 0.10 kg and c = 400 J kg^-1 K^-1. Find its water equivalent. Take c_water = 4200 J kg^-1 K^-1.",
+      "steps": [
+        "W = mc / c_water.",
+        "mc = 0.10 × 400 = 40 J/K.",
+        "W = 40 / 4200 kg.",
+        "W = 0.0095 kg = 9.5 g.",
+        "The block stores heat like 9.5 g of water."
+      ],
+      "answer": "9.5 g of water."
+    }
+  ],
+  "summary": "Under the same surface conditions the block with the smaller heat capacity loses temperature faster. Brass stays closer to one temperature because it conducts well. Water equivalent rewrites a heat capacity as the mass of water with the same mc."
 }

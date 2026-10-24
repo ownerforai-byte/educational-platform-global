@@ -98,7 +98,6 @@
     "Derivation result for Measurement of specific heat capacity of solids and liquids"
   ],
   "examples": [
-    "Real-world application of Measurement of specific heat capacity of solids and liquids",
     "Practical demonstration of Measurement of specific heat capacity of solids and liquids concepts",
     "Diagram-based question on Measurement of specific heat capacity of solids and liquids",
     "Application in daily life involving Measurement of specific heat capacity of solids and liquids"
@@ -191,5 +190,71 @@
       "answer": "C"
     }
   ],
-  "summary": "Measurement of specific heat capacity of solids and liquids is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics."
+  "summary": "Measurement of specific heat capacity of solids and liquids is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "keyPoints": [
+    "Use a known liquid, usually water.",
+    "Same calorimeter and same interval.",
+    "Times are measured, not assumed.",
+    "Solve for the unknown c."
+  ],
+  "importantStatements": [
+    "An unknown specific heat can be found by timing how long the liquid takes to cool through a chosen interval, then repeating the run with water in the same calorimeter.",
+    "Newton's law says the time is proportional to the heat capacity when the surface factor and the temperature limits are unchanged. So (m_u c_u + W) / t_u = (m_w c_w + W) / t_w if the water equivalent W of the cup is included.",
+    "If the question says the calorimeter has negligible heat capacity, this collapses to m_u c_u / t_u = m_w c_w / t_w."
+  ],
+  "mcqs": [
+    {
+      "question": "The usual known specific heat in this experiment is that of",
+      "options": [
+        "Air",
+        "Water",
+        "The unknown metal alone",
+        "The thermometer"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the calorimeter is neglected and masses are equal, c_u / c_w equals",
+      "options": [
+        "t_w / t_u",
+        "t_u / t_w",
+        "t_u + t_w",
+        "The room temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "W is",
+      "options": [
+        "The unknown specific heat",
+        "The water equivalent of the calorimeter",
+        "The time of cooling",
+        "A force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The method fails if",
+      "options": [
+        "The same temperature interval is used",
+        "One cup is covered and the other is open",
+        "Water is the standard",
+        "Times are measured"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Equal masses of water and an unknown liquid cool through the same interval in 6.0 min and 4.0 min. Neglect the cup. Find c_u if c_w = 4200 J kg^-1 K^-1.",
+      "steps": [
+        "Masses are equal and W = 0, so c / t is the same for both.",
+        "c_u / t_u = c_w / t_w.",
+        "The unknown takes 4.0 min and water takes 6.0 min.",
+        "c_u = 4200 × (4.0 / 6.0).",
+        "c_u = 2800 J kg^-1 K^-1."
+      ],
+      "answer": "2800 J kg^-1 K^-1."
+    }
+  ]
 }

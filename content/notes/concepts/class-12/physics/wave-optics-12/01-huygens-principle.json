@@ -5,14 +5,21 @@
   "topicTitle": "Huygens' Principle",
   "relevance": 100,
   "notes": [
-    "**Huygens' Principle:** This topic covers the fundamental concepts of huygens' principle in the physics curriculum.",
-    "Understanding huygens' principle is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to huygens' principle should be memorized and practiced regularly."
+    "Huygens' principle is the instruction to treat each point of a wavefront as a fresh source. It is a geometrical way to move a wave forward by a short time.",
+    "In refraction the wavelets on the far side of the boundary travel at a different speed. In the same time they grow a different radius, so the envelope tilts. The tilt is Snell's law.",
+    "The frequency does not change at the boundary, because the boundary wiggles the medium at the arriving frequency. Since v = f λ, a smaller speed means a shorter wavelength.",
+    "The refractive index is c/v, the vacuum speed over the speed in the medium. A larger index means a slower wave and a shorter wavelength.",
+    "The construction assumes a uniform medium on each side. A gradually changing medium bends the rays in a curve, which is a stack of many small tilts.",
+    "This page's worked case is the wavelength change. The mirror envelope was the other Huygens page, so the two exercises are not the same."
   ],
   "confusion": [
     "❌ 'Every point on a wavefront is a source of new waves.' ✅ Only the *unobstructed* points on the wavefront act as secondary sources; points blocked by an obstacle do not.",
     "❌ 'The new wavefront travels backward.' ✅ Huygens' principle constructs only the *forward* wavefront; backward propagation is not predicted by the principle.",
-    "❌ 'Huygens' principle explains why light travels in straight lines.' ✅ It explains rectilinear propagation qualitatively, but *diffraction* (bending around edges) shows it is not perfectly straight."
+    "❌ 'Huygens' principle explains why light travels in straight lines.' ✅ It explains rectilinear propagation qualitatively, but *diffraction* (bending around edges) shows it is not perfectly straight.",
+    "Frequency does not drop when light enters glass.",
+    "Wavelength does drop if the speed drops.",
+    "The envelope tilts. The wavelets do not all keep the old radius.",
+    "Refractive index is c/v, not v/c."
   ],
   "practice": [
     "Solve at least 5 problems on huygens' principle from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "wave-optics-12",
   "motionGraphics": "wave-optics-12",
   "examples": [
-    "Example 1: Real-world application of Huygens' Principle",
     "Example 2: Practical demonstration of Huygens' Principle concepts",
     "Example 4: Diagram-based question on Huygens' Principle",
     "Example 5: Application in daily life involving Huygens' Principle"
@@ -61,11 +67,9 @@
     "Note 5: Huygens' Principle frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Huygens' Principle",
-    "Statement 2: Theorem related to Huygens' Principle",
-    "Statement 3: Condition for Huygens' Principle to be valid",
-    "Statement 4: Principle governing Huygens' Principle",
-    "Statement 5: Corollary or consequence of Huygens' Principle"
+    "Huygens' principle is the instruction to treat each point of a wavefront as a fresh source. It is a geometrical way to move a wave forward by a short time.",
+    "In refraction the wavelets on the far side of the boundary travel at a different speed. In the same time they grow a different radius, so the envelope tilts. The tilt is Snell's law.",
+    "The frequency does not change at the boundary, because the boundary wiggles the medium at the arriving frequency. Since v = f λ, a smaller speed means a shorter wavelength."
   ],
   "importantNotes": [
     "Note 1: Huygens' Principle is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Huygens' Principle",
     "Task 4: Practice previous year exam questions on Huygens' Principle",
     "Task 5: Explain Huygens' Principle to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "At a boundary the frequency",
+      "options": [
+        "Doubles in glass",
+        "Stays the same",
+        "Becomes the refractive index",
+        "Drops to zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a slower medium the wavelength",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Stays the same if f stays the same, which it cannot",
+        "Becomes the ray"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Refractive index is",
+      "options": [
+        "v/c",
+        "c/v",
+        "f λ",
+        "The envelope angle with no speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Snell's law comes from",
+      "options": [
+        "Equal wavelet radii on both sides",
+        "The tilted envelope because the speeds differ",
+        "A change of frequency",
+        "A mirror only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Light of wavelength 600 nm in air enters glass of refractive index 1.50. Find the wavelength in the glass. The frequency is unchanged.",
+      "steps": [
+        "n = c/v = 1.50, so the speed in glass is c/1.50.",
+        "Wavelength is proportional to speed at fixed frequency.",
+        "λ_glass = λ_air / n.",
+        "λ_glass = 600 / 1.50 = 400 nm.",
+        "The colour's frequency is the same. The wavelength is shorter."
+      ],
+      "answer": "400 nm."
+    }
   ]
 }

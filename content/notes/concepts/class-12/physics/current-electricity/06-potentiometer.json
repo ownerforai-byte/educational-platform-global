@@ -5,14 +5,21 @@
   "topicTitle": "Potentiometer",
   "relevance": 100,
   "notes": [
-    "**Potentiometer:** This topic covers the fundamental concepts of potentiometer in the physics curriculum.",
-    "Understanding potentiometer is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to potentiometer should be memorized and practiced regularly."
+    "A potentiometer is a long uniform wire carrying a steady current from a driving battery. The potential drop along the wire is uniform, so a length l corresponds to a potential difference k l, where k is the drop per unit length.",
+    "The test cell is connected so that it opposes the wire drop. At the balance length the galvanometer reads zero. The cell's emf then equals the wire drop, and no current is being drawn from the test cell.",
+    "Because the test cell is on open circuit at balance, the potentiometer measures emf rather than a terminal voltage under load. A voltmeter that draws current measures a slightly smaller terminal voltage.",
+    "Two cells can be compared: E1/E2 = l1/l2, since k cancels. The longer balance length belongs to the larger emf.",
+    "The driving cell's emf must be larger than the test emf, otherwise no point on the wire can balance. A rheostat in the driving circuit sets k.",
+    "For internal resistance, the balance length is l1 on open circuit and l2 when a known shunt R is across the cell. Then r = R (l1 − l2)/l2."
   ],
   "confusion": [
     "❌ 'A potentiometer measures current directly.' ✅ It measures *potential difference (voltage)* by finding a null point where no current flows through the galvanometer.",
     "❌ 'A potentiometer is the same as a voltmeter.' ✅ A voltmeter draws current and has finite resistance; a potentiometer draws *zero current* at balance, giving a more accurate measurement.",
-    "❌ 'A longer potentiometer wire always gives more accuracy.' ✅ Accuracy improves with a *longer* wire (smaller potential gradient), but only if the wire has uniform cross-section and material."
+    "❌ 'A longer potentiometer wire always gives more accuracy.' ✅ Accuracy improves with a *longer* wire (smaller potential gradient), but only if the wire has uniform cross-section and material.",
+    "The potentiometer is a null method. It is not an ordinary voltmeter.",
+    "k cancels in a comparison.",
+    "No balance point means the driving emf is too small or the cell is connected the wrong way.",
+    "The longer length is the larger emf."
   ],
   "practice": [
     "Solve at least 5 problems on potentiometer from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "current-electricity",
   "motionGraphics": "current-electricity",
   "examples": [
-    "Example 1: Real-world application of Potentiometer",
     "Example 2: Practical demonstration of Potentiometer concepts",
     "Example 4: Diagram-based question on Potentiometer",
     "Example 5: Application in daily life involving Potentiometer"
@@ -61,11 +67,9 @@
     "Note 5: Potentiometer frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Potentiometer",
-    "Statement 2: Theorem related to Potentiometer",
-    "Statement 3: Condition for Potentiometer to be valid",
-    "Statement 4: Principle governing Potentiometer",
-    "Statement 5: Corollary or consequence of Potentiometer"
+    "A potentiometer is a long uniform wire carrying a steady current from a driving battery. The potential drop along the wire is uniform, so a length l corresponds to a potential difference k l, where k is the drop per unit length.",
+    "The test cell is connected so that it opposes the wire drop. At the balance length the galvanometer reads zero. The cell's emf then equals the wire drop, and no current is being drawn from the test cell.",
+    "Because the test cell is on open circuit at balance, the potentiometer measures emf rather than a terminal voltage under load. A voltmeter that draws current measures a slightly smaller terminal voltage."
   ],
   "importantNotes": [
     "Note 1: Potentiometer is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Potentiometer",
     "Task 4: Practice previous year exam questions on Potentiometer",
     "Task 5: Explain Potentiometer to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "At balance the galvanometer current is",
+      "options": [
+        "Large",
+        "Zero",
+        "Equal to the driving current",
+        "Negative resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "E1/E2 equals",
+      "options": [
+        "l2/l1",
+        "l1/l2",
+        "k",
+        "The wire resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The potentiometer measures emf because",
+      "options": [
+        "The test cell supplies no current at balance",
+        "It has no wire",
+        "The driving cell is removed",
+        "k is zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "No balance point can mean",
+      "options": [
+        "The driving emf is too small",
+        "The wire is uniform",
+        "The cells are equal",
+        "k is constant"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Balance lengths for two cells are 60.0 cm and 40.0 cm. Find E1/E2.",
+      "steps": [
+        "E1/E2 = l1/l2.",
+        "l1 = 60.0 cm and l2 = 40.0 cm.",
+        "The ratio is 60/40 = 1.5.",
+        "k is not needed.",
+        "The first cell has the larger emf."
+      ],
+      "answer": "1.5."
+    }
   ]
 }

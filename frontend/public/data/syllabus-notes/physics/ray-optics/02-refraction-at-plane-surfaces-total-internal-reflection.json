@@ -1,0 +1,196 @@
+{
+  "title": "Refraction at plane surfaces — total internal reflection",
+  "unitSlug": "ray-optics",
+  "topicSlug": "refraction-at-plane-surfaces-total-internal-reflection",
+  "topicTitle": "Refraction at plane surfaces — total internal reflection",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Snell's law is n1 sin i = n2 sin r, with both angles measured from the normal. The frequency does not change at a stationary boundary. The speed and the wavelength do.",
+    "If light enters a slower medium, a larger index, the ray bends toward the normal. If it enters a faster medium, it bends away. A larger index means a smaller speed.",
+    "Total internal reflection happens only when light is going from the larger index toward the smaller index, and the angle of incidence is greater than the critical angle. Then there is no refracted ray.",
+    "At the critical angle the refracted ray runs along the boundary, so r = 90° and sin c = n2/n1. For glass to air, n2 = 1 and sin c = 1/n.",
+    "At exactly the critical angle the light grazes the surface. Beyond it, all the light is reflected. The reflection is stronger than an ordinary glass-to-air reflection at a small angle.",
+    "Optical fibres keep light inside by total internal reflection. A prism in binoculars uses the same effect to turn the beam without a silvered mirror."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+    "TIR does not happen when light enters glass from air.",
+    "At the critical angle the ray is along the boundary, not yet fully reflected as the only path in the 'greater than' sense.",
+    "Frequency does not fall in glass.",
+    "sin c = 1/n for glass to air, not n."
+  ],
+  "bounds": [
+    "Covers only: refraction at plane surfaces — total internal reflection (within Ray Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+  ],
+  "practice": [
+    "Write n1 sin i = n2 sin r and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+  ],
+  "examples": [
+    "Snell's law is n1 sin i = n2 sin r, with both angles measured from the normal. The frequency does not change at a stationary boundary. The speed and the wavelength do.",
+    "If light enters a slower medium, a larger index, the ray bends toward the normal. If it enters a faster medium, it bends away. A larger index means a smaller speed.",
+    "Glass has n = 1.50. Find sin c for a ray going from glass toward air, and state the approximate critical angle."
+  ],
+  "practiceQuestions": [
+    "Write Snell's law.",
+    "Write sin c for glass to air.",
+    "Why does a fibre keep the light in?"
+  ],
+  "formulas": [
+    "1/f = (μ−1)(1/R₁ − 1/R₂)",
+    "P = 1/f",
+    "n = sin((A+D)/2)/sin(A/2)"
+  ],
+  "numericals": [
+    "Glass has n = 1.50. Find sin c for a ray going from glass toward air, and state the approximate critical angle."
+  ],
+  "keyPoints": [
+    "• Refraction at plane surfaces — total internal reflection",
+    "Frequency stays the same.",
+    "The ray bends toward the normal when it slows.",
+    "TIR needs the larger index on the incident side.",
+    "The critical angle is the onset."
+  ],
+  "summary": "Snell's law bends a ray toward the normal when it enters a slower medium, and the frequency stays the same. Total internal reflection needs the light to be inside the denser medium and past the critical angle, where sin c = n2/n1. For glass of index 1.50 against air, that angle is about 42°.",
+  "mcqs": [
+    {
+      "question": "When light enters glass from air it bends",
+      "options": [
+        "Away from the normal",
+        "Toward the normal",
+        "Backward always",
+        "Only if i > c"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "TIR can occur when light goes",
+      "options": [
+        "From air into glass",
+        "From glass toward air, beyond the critical angle",
+        "Along the normal",
+        "Through a fibre with no reflection"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For glass to air, sin c equals",
+      "options": [
+        "n",
+        "1/n",
+        "0",
+        "90°"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At the critical angle the refracted ray",
+      "options": [
+        "Disappears inside the glass",
+        "Runs along the boundary",
+        "Reverses",
+        "Is absorbed completely as the definition"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Snell's law is n1 sin i = n2 sin r, with both angles measured from the normal. The frequency does not change at a stationary boundary. The speed and the wavelength do.",
+    "If light enters a slower medium, a larger index, the ray bends toward the normal. If it enters a faster medium, it bends away. A larger index means a smaller speed.",
+    "Total internal reflection happens only when light is going from the larger index toward the smaller index, and the angle of incidence is greater than the critical angle. Then there is no refracted ray."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Into glass: toward the normal.",
+    "Out of glass, past c: TIR."
+  ],
+  "specialNotes": [
+    "For n = 1.50, c is about 42°.",
+    "The incident medium must be the denser one."
+  ],
+  "importantNotes": [
+    "Name which side has the larger index.",
+    "Use angles from the normal."
+  ],
+  "importantConcepts": [
+    "Snell's law",
+    "Critical angle",
+    "Total internal reflection",
+    "Optical fibre"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "When light enters glass from air it bends",
+      "options": [
+        "Away from the normal",
+        "Toward the normal",
+        "Backward always",
+        "Only if i > c"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "TIR can occur when light goes",
+      "options": [
+        "From air into glass",
+        "From glass toward air, beyond the critical angle",
+        "Along the normal",
+        "Through a fibre with no reflection"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For glass to air, sin c equals",
+      "options": [
+        "n",
+        "1/n",
+        "0",
+        "90°"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At the critical angle the refracted ray",
+      "options": [
+        "Disappears inside the glass",
+        "Runs along the boundary",
+        "Reverses",
+        "Is absorbed completely as the definition"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Glass has n = 1.50. Find sin c for a ray going from glass toward air, and state the approximate critical angle.",
+      "steps": [
+        "The ray is leaving the denser medium, so TIR is possible.",
+        "sin c = 1/n = 1/1.50 = 0.667.",
+        "The angle whose sine is 0.667 is about 42°.",
+        "For incidence greater than about 42°, the ray is totally reflected.",
+        "A ray from air into this glass cannot show TIR."
+      ],
+      "answer": "sin c = 0.667, so c is about 42°."
+    }
+  ]
+}

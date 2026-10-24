@@ -7,18 +7,21 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Measurement of specific latent heat of fusion and vaporiz… — Quantity of Heat, Physics (class-11-notes).",
-    "**Tested.** define it · list: measurement of specific latent heat of fusion, vaporization · one worked example · one misconception each.",
-    "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
-    "**Fact.** Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
-    "**Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀).",
-    "**Vaporization.** one-line definition + one-line exam use."
+    "Latent heat of fusion is measured by adding dried ice at 0°C to warm water in a calorimeter and recording the lowest temperature of the mixture, or the mass of ice that melts.",
+    "The ice melts and the resulting water then warms from 0°C to the final temperature θ. That takes m_i L_f + m_i c θ. The warm water and the calorimeter cool from θ1 to θ and supply that heat.",
+    "So m_i L_f + m_i c θ = (m_w c + m_c c_c) (θ1 − θ). Solve for L_f. Wet ice, with water already on it, makes m_i too large and L_f too small.",
+    "Latent heat of vaporization is measured by passing dry steam at 100°C into cold water. The steam condenses and the condensed water then cools from 100°C to the final temperature θ.",
+    "The heat released is m_s L_v + m_s c (100 − θ). It equals the heat gained by the cold water and the calorimeter. Steam that is wet already contains water droplets and spoils m_s.",
+    "A control run, or a cooling correction, accounts for heat exchanged with the room during a slow experiment. Ignoring a gain from the room makes a fusion result for L_f too high, because the water seems to have given the ice more heat than it did."
   ],
   "confusion": [
-    "❌ treat \"Measurement of specific latent heat of fusion\" as one blob → ✅ split into: measurement of specific latent heat of fusion, vaporization.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.."
+    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
+    "Ice at 0°C still needs m c θ after it has become water.",
+    "Steam at 100°C still gives up m c (100 − θ) after it has condensed.",
+    "Wet ice and wet steam are the main practical errors.",
+    "The calorimeter is on the water's side of the equation, not the ice's side, if it started at the water temperature."
   ],
   "bounds": [
     "Covers only: measurement of specific latent heat of fusion, vaporization (within Quantity of Heat).",
@@ -27,9 +30,9 @@
     "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
   ],
   "practice": [
-    "define + example each sub-idea: measurement of specific latent heat of fusion, vaporization.",
-    "one worked example for \"Measurement of specific latent heat of fusion and vaporiz…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write m_ice L_f + m_ice c θ = m_w c (θ1 − θ) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
@@ -37,12 +40,14 @@
     "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Latent heat of fusion is measured by adding dried ice at 0°C to warm water in a calorimeter and recording the lowest temperature of the mixture, or the mass of ice that melts.",
+    "The ice melts and the resulting water then warms from 0°C to the final temperature θ. That takes m_i L_f + m_i c θ. The warm water and the calorimeter cool from θ1 to θ and supply that heat.",
+    "5.0 g of dry ice at 0°C is added to 100 g of water at 25°C in a light cup. The final temperature is 20°C. Take c = 4200 J kg^-1 K^-1. Find L_f."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Measurement of specific latent heat of fusion and vaporiz…\" with one example.",
-    "compare \"Measurement of specific latent heat of fusion\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Measurement of specific latent heat of fusion and vaporiz…\" and verify the answer is plausible."
+    "Which two heat terms does melting ice require?",
+    "Why must steam be dry?",
+    "Where does the calorimeter sit in the equation?"
   ],
   "formulas": [
     "Q = mcΔT",
@@ -50,24 +55,142 @@
     "cp = 1.5×cv + R (Mayer, for ideal gas)"
   ],
   "numericals": [
-    "Use  Q = mcΔT  — pick reasonable values, solve, and check the units.",
-    "Use  Q = mL  — pick reasonable values, solve, and check the units.",
-    "Use  cp = 1.5×cv + R (Mayer, for ideal gas)  — pick reasonable values, solve, and check the units."
+    "5.0 g of dry ice at 0°C is added to 100 g of water at 25°C in a light cup. The final temperature is 20°C. Take c = 4200 J kg^-1 K^-1. Find L_f."
   ],
   "keyPoints": [
     "• Measurement of specific latent heat of fusion",
-    "• Vaporization"
+    "Ice-calorimeter method for L_f.",
+    "Dry the ice.",
+    "Steam method for L_v.",
+    "Subtract the heat that only changes temperature."
   ],
-  "summary": "Measurement of specific latent heat of fusion and vaporiz… (Quantity of Heat, Physics, class-11-notes) covers Measurement of specific latent heat of fusion, vaporization. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Fusion is measured by melting a known mass of dry ice in warm water and balancing m L_f plus the later warming of that water against the heat lost by the calorimeter. Vaporization is measured by condensing dry steam and including both m L_v and the cooling of the condensed water.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Measurement of specific latent heat of fusion and vaporiz…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Melting ice dropped into warm water absorbs",
       "options": [
-        "True",
-        "False"
+        "Only m L_f",
+        "m L_f and then m c θ if the final water is at θ",
+        "Only a temperature change",
+        "Nothing if the ice is at 0°C"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Wet ice makes the calculated L_f",
+      "options": [
+        "Too high",
+        "Too low",
+        "Exact",
+        "Equal to c"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Dry steam is required because",
+      "options": [
+        "Wet steam contains water that did not condense in the calorimeter",
+        "Steam has no latent heat",
+        "Water has no specific heat",
+        "The thermometer cannot read 100°C"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "After steam condenses, the water cools from",
+      "options": [
+        "0°C to θ",
+        "100°C to θ",
+        "θ to 100°C",
+        "A temperature that is not measured"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Latent heat of fusion is measured by adding dried ice at 0°C to warm water in a calorimeter and recording the lowest temperature of the mixture, or the mass of ice that melts.",
+    "The ice melts and the resulting water then warms from 0°C to the final temperature θ. That takes m_i L_f + m_i c θ. The warm water and the calorimeter cool from θ1 to θ and supply that heat.",
+    "So m_i L_f + m_i c θ = (m_w c + m_c c_c) (θ1 − θ). Solve for L_f. Wet ice, with water already on it, makes m_i too large and L_f too small."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Ice: melt, then warm from 0. Steam: condense, then cool from 100.",
+    "Dry the sample."
+  ],
+  "specialNotes": [
+    "A sieve or trap keeps water droplets out of the steam.",
+    "Crush the ice so it finishes melting before the room undoes the experiment."
+  ],
+  "importantNotes": [
+    "Write both the latent term and the later sensible term.",
+    "Weigh the calorimeter before and after to get the mass of ice or condensed steam."
+  ],
+  "importantConcepts": [
+    "Ice method for L_f",
+    "Steam method for L_v",
+    "Sensible heat after the change",
+    "Dry sample"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Melting ice dropped into warm water absorbs",
+      "options": [
+        "Only m L_f",
+        "m L_f and then m c θ if the final water is at θ",
+        "Only a temperature change",
+        "Nothing if the ice is at 0°C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Wet ice makes the calculated L_f",
+      "options": [
+        "Too high",
+        "Too low",
+        "Exact",
+        "Equal to c"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Dry steam is required because",
+      "options": [
+        "Wet steam contains water that did not condense in the calorimeter",
+        "Steam has no latent heat",
+        "Water has no specific heat",
+        "The thermometer cannot read 100°C"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "After steam condenses, the water cools from",
+      "options": [
+        "0°C to θ",
+        "100°C to θ",
+        "θ to 100°C",
+        "A temperature that is not measured"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "5.0 g of dry ice at 0°C is added to 100 g of water at 25°C in a light cup. The final temperature is 20°C. Take c = 4200 J kg^-1 K^-1. Find L_f.",
+      "steps": [
+        "Convert masses: ice 0.0050 kg, water 0.100 kg. Neglect the cup.",
+        "Heat gained by ice = 0.0050 L_f + 0.0050 × 4200 × 20.",
+        "Heat lost by water = 0.100 × 4200 × (25 − 20) = 2100 J.",
+        "0.0050 L_f + 420 = 2100.",
+        "0.0050 L_f = 1680, so L_f = 3.36 × 10^5 J/kg."
+      ],
+      "answer": "3.36 × 10^5 J/kg."
     }
   ]
 }

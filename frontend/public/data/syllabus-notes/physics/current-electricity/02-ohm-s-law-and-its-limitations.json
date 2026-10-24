@@ -1,0 +1,195 @@
+{
+  "title": "Ohm's law and its limitations",
+  "unitSlug": "current-electricity",
+  "topicSlug": "ohm-s-law-and-its-limitations",
+  "topicTitle": "Ohm's law and its limitations",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Ohm's law says that the current in a metallic conductor is proportional to the potential difference across it, if the temperature and the physical state stay constant. The constant ratio V/I is the resistance.",
+    "Plotted with current vertical and voltage horizontal, an ohmic resistor is a straight line through the origin. The slope is 1/R. A steeper line is a smaller resistance.",
+    "The law is a limited description. A filament lamp heats as the current rises, its resistance increases, and the graph bends. You cannot take one R from a cold measurement and use it at white heat.",
+    "A semiconductor diode is non-ohmic in a stronger way. It conducts easily in forward bias and almost not at all in reverse bias. No single R describes it.",
+    "A thermistor and an electrolyte can also leave the straight line. Quoting V = I R for them without a stated temperature and a stated operating point is not justified.",
+    "Inside the range where the metal stays ohmic, the law is still the working tool for series and parallel circuits. The limitation is the range, not a reason to abandon the law for a carbon resistor at a steady temperature."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)..",
+    "Ohm's law is not a law of every component.",
+    "The temperature condition is part of the statement.",
+    "Slope of I against V is 1/R.",
+    "A diode has no single resistance."
+  ],
+  "bounds": [
+    "Covers only: ohm's law, its limitations (within Current Electricity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
+  ],
+  "practice": [
+    "Write V = I R at constant temperature and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
+    "Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
+    "Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
+  ],
+  "examples": [
+    "Ohm's law says that the current in a metallic conductor is proportional to the potential difference across it, if the temperature and the physical state stay constant. The constant ratio V/I is the resistance.",
+    "Plotted with current vertical and voltage horizontal, an ohmic resistor is a straight line through the origin. The slope is 1/R. A steeper line is a smaller resistance.",
+    "A metal resistor is at a steady temperature and has R = 3.0 Ω. The potential difference is 6.0 V. Find the current and the power."
+  ],
+  "practiceQuestions": [
+    "State the condition in Ohm's law.",
+    "Why does a filament graph curve?",
+    "Name a device that is non-ohmic in both directions of the voltage."
+  ],
+  "formulas": [
+    "V = IR",
+    "P = IV = I²R = V²/R",
+    "V_term = E − Ir"
+  ],
+  "numericals": [
+    "A metal resistor is at a steady temperature and has R = 3.0 Ω. The potential difference is 6.0 V. Find the current and the power."
+  ],
+  "keyPoints": [
+    "Proportionality needs constant temperature.",
+    "The I–V graph of an ohmic metal is a straight line.",
+    "A lamp curves as it heats.",
+    "A diode conducts differently each way."
+  ],
+  "summary": "Ohm's law is V = I R for a metal at constant temperature, and the I–V graph is then a straight line. A filament leaves that line as it heats, and a diode does not have one resistance at all. The law is used inside the range where R is constant.",
+  "mcqs": [
+    {
+      "question": "Ohm's law needs",
+      "options": [
+        "A changing temperature",
+        "Constant temperature",
+        "A diode",
+        "Alternating current"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The slope of I against V for an ohmic resistor is",
+      "options": [
+        "R",
+        "1/R",
+        "Zero",
+        "The power"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A filament lamp is",
+      "options": [
+        "Ohmic at every brightness",
+        "Non-ohmic once heating changes R",
+        "A capacitor",
+        "A source of emf"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A diode",
+      "options": [
+        "Has one resistance for both directions",
+        "Does not obey a single V = I R",
+        "Is a straight line through the origin",
+        "Has zero current when forward biased"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Ohm's law says that the current in a metallic conductor is proportional to the potential difference across it, if the temperature and the physical state stay constant. The constant ratio V/I is the resistance.",
+    "Plotted with current vertical and voltage horizontal, an ohmic resistor is a straight line through the origin. The slope is 1/R. A steeper line is a smaller resistance.",
+    "The law is a limited description. A filament lamp heats as the current rises, its resistance increases, and the graph bends. You cannot take one R from a cold measurement and use it at white heat."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Straight line through the origin: ohmic.",
+    "Lamp and diode: do not quote one R."
+  ],
+  "specialNotes": [
+    "The ohm is 1 V per ampere.",
+    "A constantan wire is chosen in the laboratory because its resistance changes little with temperature."
+  ],
+  "importantNotes": [
+    "Write the constant-temperature condition.",
+    "Do not apply one R to a glowing lamp."
+  ],
+  "importantConcepts": [
+    "Ohmic metal",
+    "Constant temperature",
+    "Filament curve",
+    "Diode"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Ohm's law needs",
+      "options": [
+        "A changing temperature",
+        "Constant temperature",
+        "A diode",
+        "Alternating current"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The slope of I against V for an ohmic resistor is",
+      "options": [
+        "R",
+        "1/R",
+        "Zero",
+        "The power"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A filament lamp is",
+      "options": [
+        "Ohmic at every brightness",
+        "Non-ohmic once heating changes R",
+        "A capacitor",
+        "A source of emf"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A diode",
+      "options": [
+        "Has one resistance for both directions",
+        "Does not obey a single V = I R",
+        "Is a straight line through the origin",
+        "Has zero current when forward biased"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A metal resistor is at a steady temperature and has R = 3.0 Ω. The potential difference is 6.0 V. Find the current and the power.",
+      "steps": [
+        "The temperature is steady, so Ohm's law applies.",
+        "I = V/R = 6.0 / 3.0 = 2.0 A.",
+        "Power = I^2 R = 4.0 × 3.0 = 12 W.",
+        "The same power is V I = 6.0 × 2.0 = 12 W.",
+        "A filament at changing temperature would not keep this R."
+      ],
+      "answer": "2.0 A and 12 W."
+    }
+  ]
+}

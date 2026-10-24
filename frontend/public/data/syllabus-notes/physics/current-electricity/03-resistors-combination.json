@@ -1,0 +1,205 @@
+{
+  "title": "Resistors in Combination",
+  "unitSlug": "current-electricity",
+  "topicSlug": "resistors-combination",
+  "topicTitle": "Resistors in Combination",
+  "relevance": 100,
+  "notes": [
+    "Resistors in series carry the same current. The total voltage is the sum of the voltages, so the equivalent resistance is R = R1 + R2 + R3. The equivalent is larger than the largest single resistor.",
+    "Resistors in parallel have the same potential difference. The total current is the sum of the branch currents, so 1/R = 1/R1 + 1/R2 + 1/R3. The equivalent is smaller than the smallest branch.",
+    "Two parallel resistors have the shortcut R = R1 R2 / (R1 + R2). It is the product over the sum, and it is not used for three resistors without grouping.",
+    "A short string of series resistors can sit in parallel with another branch. Reduce the series string first, then combine the parallel pair.",
+    "The voltage divider is the series case: the larger resistor takes the larger share of the voltage, in proportion to its resistance, because the current is common.",
+    "Opening a parallel branch increases the equivalent resistance and decreases the total current from the source. Adding a parallel branch does the opposite."
+  ],
+  "confusion": [
+    "❌ 'Adding resistors in parallel increases the total resistance.' ✅ Parallel connections *decrease* total resistance, as they provide more paths for current to flow (1/Rp = 1/R1 + 1/R2).",
+    "❌ 'In series, current changes across each resistor.' ✅ In a series circuit, the *current* remains the same through all components, while *voltage* splits proportionally.",
+    "❌ 'Total resistance in series is the average of individual resistances.' ✅ In series, the total resistance is the *sum* of individual resistances (Rs = R1 + R2), which is always greater than the largest individual resistor.",
+    "Parallel resistors do not add their ohm values.",
+    "The product-over-sum rule is for two resistors only.",
+    "Series current is the same. Series voltage is not.",
+    "A parallel equivalent is never larger than the smaller branch."
+  ],
+  "practice": [
+    "Solve at least 5 problems on resistors in combination from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding resistors in combination builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of resistors in combination span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "current-electricity",
+  "motionGraphics": "current-electricity",
+  "examples": [
+    "Example 2: Practical demonstration of Resistors in Combination concepts",
+    "Example 4: Diagram-based question on Resistors in Combination",
+    "Example 5: Application in daily life involving Resistors in Combination"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Resistors in Combination with suitable example.",
+    "Q2. Solve problems related to Resistors in Combination.",
+    "Q3. Differentiate between various aspects of Resistors in Combination.",
+    "Q4. Derive the key formula related to Resistors in Combination.",
+    "Q5. What are the applications of Resistors in Combination?"
+  ],
+  "formulas": [
+    "Key Formula 2: Mathematical expression of Resistors in Combination",
+    "Key Formula 3: Application formula for Resistors in Combination",
+    "Key Formula 4: Derivation result for Resistors in Combination",
+    "Key Formula 5: Important relation in Resistors in Combination"
+  ],
+  "keyPoints": [
+    "Key Point 2: Essential theorem or principle related to Resistors in Combination",
+    "Key Point 3: Important condition or constraint for Resistors in Combination",
+    "Key Point 4: Common applications of Resistors in Combination",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Resistors in Combination is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Resistors in Combination applies",
+    "Note 2: Resistors in Combination connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Resistors in Combination",
+    "Note 4: Remember the units and dimensions involved in Resistors in Combination",
+    "Note 5: Resistors in Combination frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Resistors in series carry the same current. The total voltage is the sum of the voltages, so the equivalent resistance is R = R1 + R2 + R3. The equivalent is larger than the largest single resistor.",
+    "Resistors in parallel have the same potential difference. The total current is the sum of the branch currents, so 1/R = 1/R1 + 1/R2 + 1/R3. The equivalent is smaller than the smallest branch.",
+    "Two parallel resistors have the shortcut R = R1 R2 / (R1 + R2). It is the product over the sum, and it is not used for three resistors without grouping."
+  ],
+  "importantNotes": [
+    "Note 1: Resistors in Combination is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Resistors in Combination",
+    "Note 3: Resistors in Combination has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Resistors in Combination",
+    "Note 5: Cross-check your answers using alternative methods for Resistors in Combination"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Resistors in Combination formula",
+    "Trick 2: Elimination technique for Resistors in Combination MCQs",
+    "Trick 3: Dimensional analysis shortcut for Resistors in Combination",
+    "Trick 4: Memory aid for Resistors in Combination formulas",
+    "Trick 5: Time-saving approach for Resistors in Combination problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Resistors in Combination",
+    "Exam Tip 2: Practice previous year questions on Resistors in Combination",
+    "Exam Tip 4: Learn the derivations for Resistors in Combination thoroughly",
+    "Exam Tip 5: Review common mistakes related to Resistors in Combination"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Resistors in Combination is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Resistors in Combination, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Resistors in Combination?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Resistors in Combination is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Resistors in Combination",
+    "Concept 2: Key theorem or principle in Resistors in Combination",
+    "Concept 3: Important application area of Resistors in Combination",
+    "Concept 4: Fundamental relationship in Resistors in Combination",
+    "Concept 5: Connection between Resistors in Combination and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Resistors in Combination",
+    "Task 2: Derive the main formula for Resistors in Combination",
+    "Task 3: Create a concept map for Resistors in Combination",
+    "Task 4: Practice previous year exam questions on Resistors in Combination",
+    "Task 5: Explain Resistors in Combination to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Two 4 Ω resistors in series equal",
+      "options": [
+        "2 Ω",
+        "4 Ω",
+        "8 Ω",
+        "16 Ω"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Two 4 Ω resistors in parallel equal",
+      "options": [
+        "8 Ω",
+        "4 Ω",
+        "2 Ω",
+        "0 Ω"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "In series the current is",
+      "options": [
+        "Different in each resistor",
+        "The same in each resistor",
+        "Zero",
+        "Equal to the voltage"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A parallel equivalent is",
+      "options": [
+        "Larger than each branch",
+        "Smaller than the smallest branch",
+        "The sum",
+        "Always 1 Ω"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 4.0 Ω resistor and a 6.0 Ω resistor are connected in parallel across 12 V. Find the equivalent resistance and the total current.",
+      "steps": [
+        "1/R = 1/4.0 + 1/6.0 = 0.250 + 0.167 = 0.417.",
+        "R = 1/0.417 = 2.4 Ω.",
+        "The product-over-sum check is 24/10 = 2.4 Ω.",
+        "I = V/R = 12 / 2.4 = 5.0 A.",
+        "The equivalent is smaller than either resistor, as a parallel combination must be."
+      ],
+      "answer": "2.4 Ω and 5.0 A."
+    }
+  ]
+}

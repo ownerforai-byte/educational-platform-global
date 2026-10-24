@@ -1,0 +1,195 @@
+{
+  "title": "Elements of a communication system",
+  "unitSlug": "communication-systems",
+  "topicSlug": "elements-of-a-communication-system",
+  "topicTitle": "Elements of a communication system",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "The elements can be named as transducer, modulator and transmitter, medium, and receiver plus output transducer. This is the same chain as source, transmitter, channel and receiver, with the transducers made explicit.",
+    "A microphone is an input transducer: sound pressure becomes a voltage. A loudspeaker is an output transducer: the recovered voltage becomes sound again.",
+    "The message signal is often low frequency. Multiplying it with a carrier, or varying the carrier's amplitude or frequency, produces the modulated wave that the antenna launches.",
+    "The medium decides the loss. A copper pair, a fibre and a radio path have different attenuation and different noise. The link budget is the comparison of transmitted power with the power the receiver needs.",
+    "At the receiver a tuner selects the carrier, a demodulator strips it, and an amplifier raises the message to a useful level. Selecting the wrong carrier selects a different message.",
+    "Two-way radio uses the same elements in both directions. Each station is sometimes the source and sometimes the destination."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "The loudspeaker is not the channel.",
+    "The message signal and the modulated wave are different.",
+    "Amplifying after noise has been added amplifies the noise too.",
+    "A transducer is not the same device as the modulator."
+  ],
+  "bounds": [
+    "Covers only: elements of a communication system (within Communication Systems).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write An input transducer turns the message into an electrical signal. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Elements of a communication system\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "An input transducer turns the message into an electrical signal.",
+    "Bandwidth is the frequency range the channel must pass."
+  ],
+  "examples": [
+    "The elements can be named as transducer, modulator and transmitter, medium, and receiver plus output transducer. This is the same chain as source, transmitter, channel and receiver, with the transducers made explicit.",
+    "A microphone is an input transducer: sound pressure becomes a voltage. A loudspeaker is an output transducer: the recovered voltage becomes sound again.",
+    "Identify the input transducer, the medium and the output transducer for a telephone call on a copper line."
+  ],
+  "practiceQuestions": [
+    "What does an input transducer do?",
+    "What is the medium?",
+    "What does the demodulator remove?"
+  ],
+  "formulas": [
+    "Governing equation for \"Elements of a communication system\" — state with units, then use in one numerical.",
+    "An input transducer turns the message into an electrical signal.",
+    "Bandwidth is the frequency range the channel must pass."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Elements of a communication system\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "A transducer starts the electrical chain.",
+    "The transmitter modulates and amplifies.",
+    "The medium may be cable or space.",
+    "The destination is the user."
+  ],
+  "summary": "The elements are an input transducer, a transmitter that modulates, a medium, and a receiver with an output transducer. The message and the modulated carrier are different signals. The medium is where attenuation and noise appear.",
+  "mcqs": [
+    {
+      "question": "A microphone is",
+      "options": [
+        "A channel",
+        "An input transducer",
+        "A demodulator",
+        "A carrier"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The modulated wave is",
+      "options": [
+        "The original speech voltage alone",
+        "The carrier altered by the message",
+        "Noise only",
+        "The loudspeaker cone"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A loudspeaker",
+      "options": [
+        "Launches the radio wave",
+        "Turns the recovered signal back into sound",
+        "Is the information source of a radio talk",
+        "Removes the carrier"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Selecting the wrong carrier",
+      "options": [
+        "Removes noise perfectly",
+        "Selects a different message",
+        "Increases the turns ratio",
+        "Stops attenuation"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "The elements can be named as transducer, modulator and transmitter, medium, and receiver plus output transducer. This is the same chain as source, transmitter, channel and receiver, with the transducers made explicit.",
+    "A microphone is an input transducer: sound pressure becomes a voltage. A loudspeaker is an output transducer: the recovered voltage becomes sound again.",
+    "The message signal is often low frequency. Multiplying it with a carrier, or varying the carrier's amplitude or frequency, produces the modulated wave that the antenna launches."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Microphone in, loudspeaker out.",
+    "Select the carrier, then demodulate."
+  ],
+  "specialNotes": [
+    "Amplitude modulation and frequency modulation are two ways to load the carrier.",
+    "Fibre uses light as the carrier."
+  ],
+  "importantNotes": [
+    "Name the transducer at each end.",
+    "The medium is physical. The message is not."
+  ],
+  "importantConcepts": [
+    "Transducer",
+    "Modulated wave",
+    "Medium",
+    "Demodulator"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A microphone is",
+      "options": [
+        "A channel",
+        "An input transducer",
+        "A demodulator",
+        "A carrier"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The modulated wave is",
+      "options": [
+        "The original speech voltage alone",
+        "The carrier altered by the message",
+        "Noise only",
+        "The loudspeaker cone"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A loudspeaker",
+      "options": [
+        "Launches the radio wave",
+        "Turns the recovered signal back into sound",
+        "Is the information source of a radio talk",
+        "Removes the carrier"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Selecting the wrong carrier",
+      "options": [
+        "Removes noise perfectly",
+        "Selects a different message",
+        "Increases the turns ratio",
+        "Stops attenuation"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Identify the input transducer, the medium and the output transducer for a telephone call on a copper line.",
+      "steps": [
+        "The microphone in the handset is the input transducer.",
+        "The transmitter circuits send the electrical signal into the copper pair.",
+        "The copper pair is the medium, the channel.",
+        "The earpiece is the output transducer.",
+        "Noise can be induced into the copper pair along the way."
+      ],
+      "answer": "Microphone, copper pair, earpiece."
+    }
+  ]
+}

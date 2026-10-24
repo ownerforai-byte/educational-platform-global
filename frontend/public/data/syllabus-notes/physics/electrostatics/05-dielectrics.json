@@ -1,0 +1,205 @@
+{
+  "title": "Dielectrics",
+  "unitSlug": "electrostatics",
+  "topicSlug": "dielectrics",
+  "topicTitle": "Dielectrics",
+  "relevance": 100,
+  "notes": [
+    "Dielectrics are classified by their molecules. A non-polar molecule has no permanent dipole and acquires one by distortion in the field. A polar molecule already has a dipole and tends to line up with the field, against thermal jostling.",
+    "Either way, the field inside is the applied field minus the field of the bound surface charge. For a linear dielectric that fills the space, E = E_0 / K.",
+    "The bound charge is not free to flow in a wire. It stays on the dielectric surface. Leakage through a poor insulator is a separate, unwanted current.",
+    "The energy stored is Q^2/(2C) or (1/2) C V^2. These agree, but if you insert the dielectric at fixed Q, C rises and the energy falls. The difference is the work associated with pulling the dielectric in.",
+    "If you insert it at fixed V, C rises and the energy (1/2) C V^2 rises. The battery supplies that extra energy. Quoting the wrong case is a common exam error.",
+    "Above the dielectric strength the insulator breaks down and conducts. The working voltage must stay below that field times the thickness."
+  ],
+  "confusion": [
+    "❌ 'Dielectric constant is same as permittivity' ✅ Dielectric constant (relative permittivity) is a ratio (dimensionless), while permittivity has specific units (F/m).",
+    "❌ 'Dielectrics conduct electricity like metals' ✅ Dielectrics are insulators; they polarize in an electric field but do not conduct free charges like conductors.",
+    "❌ 'Polarization reduces the internal electric field' ✅ Polarization *creates* an opposing field, which results in a *net* reduction of the internal electric field compared to the external applied field.",
+    "Polar and non-polar both reduce the net field.",
+    "Bound charge does not flow around the circuit.",
+    "Energy falls at fixed Q and rises at fixed V.",
+    "E = E_0/K, not E_0 times K."
+  ],
+  "practice": [
+    "Solve at least 5 problems on dielectrics from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding dielectrics builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of dielectrics span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "electrostatics",
+  "motionGraphics": "electrostatics",
+  "examples": [
+    "Example 2: Practical demonstration of Dielectrics concepts",
+    "Example 4: Diagram-based question on Dielectrics",
+    "Example 5: Application in daily life involving Dielectrics"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Dielectrics with suitable example.",
+    "Q2. Solve problems related to Dielectrics.",
+    "Q3. Differentiate between various aspects of Dielectrics.",
+    "Q4. Derive the key formula related to Dielectrics.",
+    "Q5. What are the applications of Dielectrics?"
+  ],
+  "formulas": [
+    "Key Formula 2: Mathematical expression of Dielectrics",
+    "Key Formula 3: Application formula for Dielectrics",
+    "Key Formula 4: Derivation result for Dielectrics",
+    "Key Formula 5: Important relation in Dielectrics"
+  ],
+  "keyPoints": [
+    "Key Point 2: Essential theorem or principle related to Dielectrics",
+    "Key Point 3: Important condition or constraint for Dielectrics",
+    "Key Point 4: Common applications of Dielectrics",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Dielectrics is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Dielectrics applies",
+    "Note 2: Dielectrics connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Dielectrics",
+    "Note 4: Remember the units and dimensions involved in Dielectrics",
+    "Note 5: Dielectrics frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Dielectrics are classified by their molecules. A non-polar molecule has no permanent dipole and acquires one by distortion in the field. A polar molecule already has a dipole and tends to line up with the field, against thermal jostling.",
+    "Either way, the field inside is the applied field minus the field of the bound surface charge. For a linear dielectric that fills the space, E = E_0 / K.",
+    "The bound charge is not free to flow in a wire. It stays on the dielectric surface. Leakage through a poor insulator is a separate, unwanted current."
+  ],
+  "importantNotes": [
+    "Note 1: Dielectrics is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Dielectrics",
+    "Note 3: Dielectrics has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Dielectrics",
+    "Note 5: Cross-check your answers using alternative methods for Dielectrics"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Dielectrics formula",
+    "Trick 2: Elimination technique for Dielectrics MCQs",
+    "Trick 3: Dimensional analysis shortcut for Dielectrics",
+    "Trick 4: Memory aid for Dielectrics formulas",
+    "Trick 5: Time-saving approach for Dielectrics problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Dielectrics",
+    "Exam Tip 2: Practice previous year questions on Dielectrics",
+    "Exam Tip 4: Learn the derivations for Dielectrics thoroughly",
+    "Exam Tip 5: Review common mistakes related to Dielectrics"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Dielectrics is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Dielectrics, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Dielectrics?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Dielectrics is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Dielectrics",
+    "Concept 2: Key theorem or principle in Dielectrics",
+    "Concept 3: Important application area of Dielectrics",
+    "Concept 4: Fundamental relationship in Dielectrics",
+    "Concept 5: Connection between Dielectrics and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Dielectrics",
+    "Task 2: Derive the main formula for Dielectrics",
+    "Task 3: Create a concept map for Dielectrics",
+    "Task 4: Practice previous year exam questions on Dielectrics",
+    "Task 5: Explain Dielectrics to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "A polar molecule",
+      "options": [
+        "Has no charge at all",
+        "Has a permanent dipole",
+        "Is a conductor",
+        "Has K = 0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The net field in the dielectric is",
+      "options": [
+        "E_0 K",
+        "E_0 / K",
+        "Zero always",
+        "The bound charge times r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At fixed charge, inserting the dielectric makes the stored energy",
+      "options": [
+        "Fall",
+        "Rise",
+        "Stay exactly the battery energy",
+        "Become infinite"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Dielectric strength is about",
+      "options": [
+        "A breakdown limit",
+        "The value of K",
+        "The plate area",
+        "The bound current in a wire"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A capacitor at fixed charge stores 8.0 μJ in vacuum. A dielectric of K = 4 then fills it, still at fixed charge. Find the new stored energy.",
+      "steps": [
+        "Energy at fixed Q is Q^2/(2C).",
+        "C becomes 4 times larger.",
+        "The energy becomes 1/4 of 8.0 μJ.",
+        "The new energy is 2.0 μJ.",
+        "The fall would not occur if the battery had held the voltage fixed. That case would multiply the energy by K."
+      ],
+      "answer": "2.0 μJ."
+    }
+  ]
+}

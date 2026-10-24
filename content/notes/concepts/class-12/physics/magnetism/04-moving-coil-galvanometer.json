@@ -5,14 +5,21 @@
   "topicTitle": "Moving Coil Galvanometer",
   "relevance": 100,
   "notes": [
-    "**Moving Coil Galvanometer:** This topic covers the fundamental concepts of moving coil galvanometer in the physics curriculum.",
-    "Understanding moving coil galvanometer is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to moving coil galvanometer should be memorized and practiced regularly."
+    "A moving-coil galvanometer has a coil of N turns and area A in the radial magnetic field of a cylindrical pole piece. The field is radial so that the plane of the coil stays parallel to B in the useful sense and the torque is N I A B for any deflection.",
+    "A hairspring provides a restoring torque k θ. At equilibrium N I A B = k θ, so θ is proportional to I. The scale can be linear.",
+    "Current sensitivity is the deflection per unit current, N A B / k. Voltage sensitivity is the deflection per unit voltage. A large N, a large area, a strong field or a weak spring increases sensitivity.",
+    "To make an ammeter, a small shunt resistor is connected in parallel so that most of the current bypasses the coil. The galvanometer then reads a large current with only a small current through the coil.",
+    "To make a voltmeter, a large resistor is connected in series so that the instrument draws little current and can be placed across a component.",
+    "The coil is wound on a conducting frame, or has a separate damper, so that eddy currents stop the oscillation and the needle settles."
   ],
   "confusion": [
     "❌ 'A galvanometer measures current directly like an ammeter.' ✅ A galvanometer detects *small* currents; an ammeter is a galvanometer with a *shunt resistor* added in parallel to measure larger currents.",
     "❌ 'Increasing the number of turns reduces sensitivity.' ✅ Sensitivity is *directly proportional* to the number of turns (N): more turns = greater deflection for the same current.",
-    "❌ 'A galvanometer has zero resistance.' ✅ It has a *finite* resistance; an ideal ammeter has zero resistance, but the galvanometer itself does not."
+    "❌ 'A galvanometer has zero resistance.' ✅ It has a *finite* resistance; an ideal ammeter has zero resistance, but the galvanometer itself does not.",
+    "The shunt is parallel, not series.",
+    "The voltmeter multiplier is series, not parallel.",
+    "Sensitivity is not the same as the range.",
+    "The radial field is what keeps the torque independent of angle."
   ],
   "practice": [
     "Solve at least 5 problems on moving coil galvanometer from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "magnetism",
   "motionGraphics": "magnetism",
   "examples": [
-    "Example 1: Real-world application of Moving Coil Galvanometer",
     "Example 2: Practical demonstration of Moving Coil Galvanometer concepts",
     "Example 4: Diagram-based question on Moving Coil Galvanometer",
     "Example 5: Application in daily life involving Moving Coil Galvanometer"
@@ -61,11 +67,9 @@
     "Note 5: Moving Coil Galvanometer frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Moving Coil Galvanometer",
-    "Statement 2: Theorem related to Moving Coil Galvanometer",
-    "Statement 3: Condition for Moving Coil Galvanometer to be valid",
-    "Statement 4: Principle governing Moving Coil Galvanometer",
-    "Statement 5: Corollary or consequence of Moving Coil Galvanometer"
+    "A moving-coil galvanometer has a coil of N turns and area A in the radial magnetic field of a cylindrical pole piece. The field is radial so that the plane of the coil stays parallel to B in the useful sense and the torque is N I A B for any deflection.",
+    "A hairspring provides a restoring torque k θ. At equilibrium N I A B = k θ, so θ is proportional to I. The scale can be linear.",
+    "Current sensitivity is the deflection per unit current, N A B / k. Voltage sensitivity is the deflection per unit voltage. A large N, a large area, a strong field or a weak spring increases sensitivity."
   ],
   "importantNotes": [
     "Note 1: Moving Coil Galvanometer is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Moving Coil Galvanometer",
     "Task 4: Practice previous year exam questions on Moving Coil Galvanometer",
     "Task 5: Explain Moving Coil Galvanometer to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "At equilibrium",
+      "options": [
+        "N I A B = k θ",
+        "θ is independent of I",
+        "The spring is removed",
+        "B is zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An ammeter uses",
+      "options": [
+        "A parallel shunt",
+        "A huge series coil only",
+        "No magnet",
+        "An open circuit"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A voltmeter uses",
+      "options": [
+        "A large series resistor",
+        "A shunt alone",
+        "A short circuit",
+        "No coil"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The radial field makes the torque",
+      "options": [
+        "Depend strongly on angle",
+        "Independent of the deflection angle",
+        "Zero",
+        "Equal to the voltage"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "N = 50, A = 2.0 × 10^−4 m^2, B = 0.20 T and k = 2.0 × 10^−6 N m per radian. Find the current that deflects the coil by 0.10 rad.",
+      "steps": [
+        "N I A B = k θ.",
+        "k θ = 2.0 × 10^−6 × 0.10 = 2.0 × 10^−7.",
+        "N A B = 50 × 2.0 × 10^−4 × 0.20 = 2.0 × 10^−3.",
+        "I = 2.0 × 10^−7 / 2.0 × 10^−3 = 1.0 × 10^−4 A.",
+        "That is 0.10 mA."
+      ],
+      "answer": "0.10 mA."
+    }
   ]
 }

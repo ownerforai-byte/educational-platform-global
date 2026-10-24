@@ -1,0 +1,189 @@
+{
+  "title": "Errors in Measurement, Scientific Notation & Order of Magnitude",
+  "notes": [
+    "An error is the difference between a measured value and the true value. A systematic error repeats in the same direction, as when a metre scale has a worn zero end. A random error scatters readings both ways and is reduced by averaging.",
+    "The best estimate from n readings is their arithmetic mean. The absolute error of one reading is its difference from the mean. The mean absolute error is the average of those differences, taken as positive.",
+    "The result is written as mean ± mean absolute error. The relative error is that absolute error divided by the mean. The percentage error is the relative error times 100.",
+    "When quantities are multiplied or divided, relative errors add. If z = xy, then Δz/z = Δx/x + Δy/y, using the absolute values of the relative errors. For a power, z = x^n, the relative error is multiplied by n.",
+    "Scientific notation writes a number as a coefficient between 1 and 10 times a power of ten. The order of magnitude is that power of ten after the coefficient is used to decide the nearest power. A coefficient of 3 or more often rounds the order upward in the rough classroom rule of 'greater than about sqrt(10)' .",
+    "A gross error is a mistake, such as misreading a scale. It is not treated by the random-error formula. The reading is rejected and taken again."
+  ],
+  "examples": [
+    "An error is the difference between a measured value and the true value. A systematic error repeats in the same direction, as when a metre scale has a worn zero end. A random error scatters readings both ways and is reduced by averaging.",
+    "The best estimate from n readings is their arithmetic mean. The absolute error of one reading is its difference from the mean. The mean absolute error is the average of those differences, taken as positive.",
+    "The side of a square is 10.0 cm ± 0.1 cm. Find the percentage error in the area."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Errors in Measurement, Scientific Notation & Order of Magnitude.",
+    "Q3. Problem on Errors in Measurement, Scientific Notation & Order of Magnitude.",
+    "How is a result with random error reported?",
+    "How do relative errors combine in a product?",
+    "What is an order of magnitude?"
+  ],
+  "formulas": [
+    "Absolute error Δx",
+    "Relative error = Δx / x",
+    "Percentage error = (Δx / x) × 100%"
+  ],
+  "keyPoints": [
+    "Connection of Errors in Measurement, Scientific Notation & Order of Magnitude to other topics",
+    "Systematic errors shift every reading.",
+    "Random errors scatter the readings.",
+    "Mean plus the mean absolute error is the report.",
+    "Order of magnitude is the nearest power of ten."
+  ],
+  "summary": "Errors in Measurement, Scientific Notation & Order of Magnitude covers essential principles and applications.",
+  "specialNotes": [
+    "Least count is the smallest division and sets a lower bound on the absolute error of one reading.",
+    "A gross mistake is discarded, not averaged in."
+  ],
+  "importantStatements": [
+    "An error is the difference between a measured value and the true value. A systematic error repeats in the same direction, as when a metre scale has a worn zero end. A random error scatters readings both ways and is reduced by averaging.",
+    "The best estimate from n readings is their arithmetic mean. The absolute error of one reading is its difference from the mean. The mean absolute error is the average of those differences, taken as positive.",
+    "The result is written as mean ± mean absolute error. The relative error is that absolute error divided by the mean. The percentage error is the relative error times 100."
+  ],
+  "importantNotes": [
+    "Errors in Measurement, Scientific Notation & Order of Magnitude is based on fundamental principles.",
+    "Quote the error to one significant figure in ordinary lab work, and match the mean to that decimal place.",
+    "Use the same unit in Δx and x."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Errors in Measurement, Scientific Notation & Order of Magnitude.",
+    "For a square, double the relative error.",
+    "Fix a zero error before averaging."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "A worn zero on a scale causes",
+      "options": [
+        "A random error only",
+        "A systematic error",
+        "No error",
+        "An order-of-magnitude change by definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For z = x^2, the relative error in z is",
+      "options": [
+        "The same as in x",
+        "Twice the relative error in x",
+        "Half the relative error in x",
+        "The absolute error in x"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The mean reduces",
+      "options": [
+        "Random scatter",
+        "A constant zero error",
+        "A wrong formula",
+        "Dimensions"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Scientific notation makes clear",
+      "options": [
+        "Only the unit prefix name",
+        "The significant figures and the power of ten",
+        "The systematic error automatically",
+        "The least count of every instrument"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Errors in Measurement, Scientific Notation & Order of Magnitude.",
+    "Systematic error",
+    "Random error",
+    "Relative error",
+    "Order of magnitude"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Averaging does not remove a systematic zero error.",
+    "Relative errors add for a product. Absolute errors do not simply add as the final answer without that rule.",
+    "The order of magnitude is a power of ten, not the significant-figure count.",
+    "A percentage error is not the absolute error. It is the absolute error as a percent of the value."
+  ],
+  "practice": [
+    "Write Absolute error Δx and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Absolute error Δx",
+    "Relative error = Δx / x"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "A worn zero on a scale causes",
+      "options": [
+        "A random error only",
+        "A systematic error",
+        "No error",
+        "An order-of-magnitude change by definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For z = x^2, the relative error in z is",
+      "options": [
+        "The same as in x",
+        "Twice the relative error in x",
+        "Half the relative error in x",
+        "The absolute error in x"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The mean reduces",
+      "options": [
+        "Random scatter",
+        "A constant zero error",
+        "A wrong formula",
+        "Dimensions"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Scientific notation makes clear",
+      "options": [
+        "Only the unit prefix name",
+        "The significant figures and the power of ten",
+        "The systematic error automatically",
+        "The least count of every instrument"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "The side of a square is 10.0 cm ± 0.1 cm. Find the percentage error in the area.",
+      "steps": [
+        "Relative error in the side is 0.1 / 10.0 = 0.01.",
+        "Area depends on the square of the side, so the relative error doubles.",
+        "Relative error in the area is 0.02.",
+        "Percentage error is 0.02 × 100 = 2%.",
+        "The absolute error in the area is not required for this question."
+      ],
+      "answer": "2%."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "physical-quantities",
+  "topicSlug": "05-errors-measurement-scientific-notation-order-of-magnitude",
+  "topicTitle": "Errors in Measurement, Scientific Notation & Order of Magnitude"
+}

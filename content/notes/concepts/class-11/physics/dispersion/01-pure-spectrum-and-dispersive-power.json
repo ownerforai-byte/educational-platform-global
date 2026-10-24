@@ -9,11 +9,16 @@
     "For a thin prism, angular dispersion is Δδ=(nv−nr)A and yellow mean deviation is δy=(ny−1)A. Their ratio is ω=Δδ/δy=(nv−nr)/(ny−1).",
     "Worked example: if δy=3° and ω=0.06, the red–violet spread is Δδ=0.18°. A material with twice the dispersive power gives twice the spread at the same mean deviation.",
     "To obtain a purer spectrum, use a narrow slit, collimate the incident beam and focus the dispersed rays with a lens. A wide slit broadens each colour image and causes neighbouring bands to overlap.",
-    "A spectrometer uses a collimator slit and telescope to form and inspect a sharp spectrum. Resolution improves when the source image is narrow and the optical alignment is correct."
+    "A spectrometer uses a collimator slit and telescope to form and inspect a sharp spectrum. Resolution improves when the source image is narrow and the optical alignment is correct.",
+    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately."
   ],
   "confusion": [
     "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
-    "The thin-prism ratio assumes small deviations."
+    "The thin-prism ratio assumes small deviations.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
@@ -29,7 +34,10 @@
   "motionGraphics": "dispersion",
   "examples": [
     "δy=3° and ω=0.06 give Δδ=0.18°.",
-    "Reducing slit width sharpens spectral lines but also reduces light intensity."
+    "Reducing slit width sharpens spectral lines but also reduces light intensity.",
+    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately.",
+    "The working relations are A pure spectrum separates colours without overlap. and ω = (μ_v − μ_r)/(μ − 1). Name each symbol, convert the data into SI units, and only then substitute.",
+    "Crown glass has μ_v = 1.53, μ_r = 1.51 and mean μ = 1.52. Find ω and say what a pure spectrum requires."
   ],
   "practiceQuestions": [
     "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "A pure spectrum minimises overlap of adjacent colour images.",
     "Dispersive power is relative spread, not absolute deviation.",
-    "Narrow slits improve resolution at the cost of brightness."
+    "Narrow slits improve resolution at the cost of brightness.",
+    "A pure spectrum separates colours without overlap.",
+    "ω = (μ_v − μ_r)/(μ − 1)",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "A pure spectrum requires narrow, collimated light and well-separated colour images. Thin-prism dispersive power is ω=(nv−nr)/(ny−1).",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "A pure spectrum minimises overlap of adjacent colour images.",
     "Dispersive power is relative spread, not absolute deviation.",
-    "Narrow slits improve resolution at the cost of brightness."
+    "Narrow slits improve resolution at the cost of brightness.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
@@ -85,5 +101,102 @@
     "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
     "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
   ],
-  "visualType": "power-concept"
+  "visualType": "power-concept",
+  "mcs": [
+    {
+      "question": "A pure spectrum has",
+      "options": [
+        "Overlapping colours",
+        "Each colour focused separately",
+        "No prism",
+        "One index for every colour"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The collimator makes the light",
+      "options": [
+        "Converge on the prism",
+        "Parallel through the prism",
+        "White again",
+        "Circularly polarised"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ω equals",
+      "options": [
+        "(μ_v − μ_r)/(μ − 1)",
+        "μ_v + μ_r",
+        "A",
+        "The slit width"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An impure spectrum is caused by",
+      "options": [
+        "Overlap of colour images",
+        "A narrow slit used correctly",
+        "Parallel rays",
+        "A single wavelength"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A pure spectrum has",
+      "options": [
+        "Overlapping colours",
+        "Each colour focused separately",
+        "No prism",
+        "One index for every colour"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The collimator makes the light",
+      "options": [
+        "Converge on the prism",
+        "Parallel through the prism",
+        "White again",
+        "Circularly polarised"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ω equals",
+      "options": [
+        "(μ_v − μ_r)/(μ − 1)",
+        "μ_v + μ_r",
+        "A",
+        "The slit width"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An impure spectrum is caused by",
+      "options": [
+        "Overlap of colour images",
+        "A narrow slit used correctly",
+        "Parallel rays",
+        "A single wavelength"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Crown glass has μ_v = 1.53, μ_r = 1.51 and mean μ = 1.52. Find ω and say what a pure spectrum requires.",
+      "steps": [
+        "ω = (1.53 − 1.51) / (1.52 − 1) = 0.020 / 0.52.",
+        "ω = 0.038.",
+        "A pure spectrum needs a narrow slit and parallel light through the prism.",
+        "The focusing lens then puts each colour in its own place.",
+        "Overlap of those images would make an impure spectrum."
+      ],
+      "answer": "0.038. A pure spectrum needs a slit, a collimator and a focusing lens so colours do not overlap."
+    }
+  ]
 }

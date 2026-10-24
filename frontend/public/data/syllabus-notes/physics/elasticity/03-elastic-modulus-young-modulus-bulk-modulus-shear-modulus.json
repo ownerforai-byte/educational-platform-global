@@ -11,7 +11,8 @@
     "**Young's modulus.** Y = longitudinal stress ÷ longitudinal strain = FL/AΔL; it measures a material's resistance to stretching or compression along its length.",
     "**Bulk modulus.** K = −P ÷ (ΔV/V); the negative sign shows volume decreases under pressure, and its reciprocal is the compressibility of the material.",
     "**Shear modulus.** G = shear stress ÷ shear strain = (F/A) ÷ (Δx/L); it measures resistance to change of shape at constant volume.",
-    "**Poisson's ratio.** σ = −(lateral strain ÷ longitudinal strain); for most stable materials it lies between 0 and 0.5, and elastic potential energy per unit volume is ½ stress × strain."
+    "**Poisson's ratio.** σ = −(lateral strain ÷ longitudinal strain); for most stable materials it lies between 0 and 0.5, and elastic potential energy per unit volume is ½ stress × strain.",
+    "Young modulus is tensile stress over tensile strain and describes a wire. Bulk modulus describes a volume squeezed from all sides, and the minus sign makes B positive because the volume falls as the pressure rises. Shear modulus describes a shape change with no volume change."
   ],
   "confusion": [
     "❌ skip the key fact → ✅ stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain..",
@@ -23,6 +24,9 @@
     "❌ 'B increases when you compress a solid.' ✅ B is a constant MATERIAL property within the elastic range; it does not change with the applied pressure."
   ],
   "bounds": [
+    "Covers only: elastic modulus, young modulus, bulk modulus, shear modulus (within Elasticity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain."
   ],
   "practice": [
@@ -47,7 +51,6 @@
     "**Anisotropic Materials:** In crystals and composites, elastic moduli depend on direction. Wood is much stronger along the grain than across it. This is described by the stiffness tensor with up to 21 independent constants for the most general anisotropic material."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
     "Young: A 1 mm² wire, 2 m long, carrying 200 N extends 2 mm → E = (200/10⁻⁶)/(2×10⁻³/2) = 2×10¹¹ N/m².",
     "Bulk: 3×10⁶ Pa pressure shrinks 1 m³ of steel by 1.9×10⁻⁵ m³ → B = 1.6×10¹¹ Pa.",
     "Shear: A 2×10⁴ N force shears a 10⁻³ m² face by 2.5×10⁻³ rad → G = (2×10⁴/10⁻³)/2.5×10⁻³ = 8×10⁹ N/m².",
@@ -55,15 +58,9 @@
     "Compressibility: water k = 1/B = 1/2.2×10⁹ = 4.5×10⁻¹⁰ Pa⁻¹."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Elastic modulus: Young modulus, bulk modulus, shear modulus\" with one example.",
-    "compare \"Elastic modulus\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Elastic modulus: Young modulus, bulk modulus, shear modulus\" and verify the answer is plausible.",
-    "A 2 m copper wire of area 1 mm² extends by 1.2 mm under a 40 N load. Find Young's modulus for copper.",
-    "Calculate the bulk modulus of a liquid if 2×10⁶ Pa pressure reduces 1.5 m³ of it by 0.75×10⁻³ m³.",
-    "A shear force of 5000 N acts on a 4 cm² face producing a shear angle of 0.01 rad. Find the shear modulus.",
-    "Steel has E = 2×10¹¹ N/m² and G = 8×10¹⁰ N/m². Find Poisson's ratio from E = 2G(1+σ).",
-    "A 10 m steel cable (E = 2×10¹¹) of area 2 cm² must not stretch more than 5 mm under load. Find the maximum load.",
-    "Explain why it is easier to compress a gas than a liquid or solid, using B values."
+    "Write Y = stress / longitudinal strain and name the symbols.",
+    "What does Bulk modulus B = −ΔP / (ΔV/V) tell you?",
+    "Which unit must be converted before the substitution?"
   ],
   "formulas": [
     "Y = FL/(A ΔL)",
@@ -76,15 +73,9 @@
     "Combined: E = 9BG/(3B + G); compressibility k = 1/B"
   ],
   "numericals": [
-    "Use  Y = FL/(A ΔL)  — pick reasonable values, solve, and check the units.",
-    "Use  K = −P/(ΔV/V)  — pick reasonable values, solve, and check the units.",
-    "Use  U = ½kx²  — pick reasonable values, solve, and check the units."
+    "A wire of area 1.0 × 10^−6 m^2 and length 2.0 m stretches by 1.0 mm under 200 N. Find Young modulus."
   ],
   "keyPoints": [
-    "• Elastic modulus",
-    "• Young modulus",
-    "• Bulk modulus",
-    "• Shear modulus",
     "E, B, G all have units N/m² (Pa) — they differ by the type of deformation they describe.",
     "E (stretching), B (volume), G (shape) measure the corresponding resistance of a material.",
     "The three moduli are linked: E = 2G(1+σ) and E = 3B(1−2σ).",
@@ -94,24 +85,44 @@
   "summary": "The three elastic moduli — Young's (E), bulk (B), and shear (G) — quantify how materials resist stretching, uniform compression, and shape change respectively. Each is stress/strain with units N/m². They are related by E = 2G(1+σ) = 3B(1−2σ). Solids possess all three; fluids have only bulk modulus.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Elastic modulus: Young modulus, bulk modulus, shear modulus\"?",
+      "question": "Young modulus is",
       "options": [
-        "Elastic modulus",
-        "Young modulus",
-        "Unrelated topic",
-        "None of the above"
+        "Stress over longitudinal strain",
+        "Force times extension",
+        "Bulk pressure",
+        "Shear strain only"
       ],
-      "answer": "A",
-      "explanation": "Elastic modulus is listed among the official sub-ideas of Elastic modulus: Young modulus, bulk modulus, shear modulus; the others are not part of this topic."
+      "answer": "A"
     },
     {
-      "question": "A common examiner point on \"Elastic modulus: Young modulus, bulk modulus, shear modulus\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The minus sign in the bulk modulus",
       "options": [
-        "True",
-        "False"
+        "Makes B negative",
+        "Makes B positive when volume falls",
+        "Removes the pressure",
+        "Is optional decoration"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Shear changes",
+      "options": [
+        "Only the volume",
+        "The shape, at constant volume in the ideal case",
+        "The mass",
+        "The temperature by definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Strain has",
+      "options": [
+        "The unit pascal",
+        "No unit",
+        "The unit newton",
+        "The unit metre"
+      ],
+      "answer": "B"
     }
   ],
   "specialNotes": [
@@ -560,5 +571,18 @@
       "**Isotropic Material Relations:** For isotropic solids, the three moduli are linked via Poisson's ratio $\\sigma$: $E = 2G(1+\\sigma) = 3B(1-2\\sigma)$. These relations *do not hold* for anisotropic materials (crystals, composites) where moduli depend on direction.",
       "**Geometry Separation:** $E$ is an intensive material property (Pa), while spring constant $k = EA/L$ is extensive. Changing a wire's length or cross-section changes $k$ but not $E$ — this distinction is essential for connecting spring problems to material science."
     ]
-  }
+  },
+  "exercises": [
+    {
+      "question": "A wire of area 1.0 × 10^−6 m^2 and length 2.0 m stretches by 1.0 mm under 200 N. Find Young modulus.",
+      "steps": [
+        "Stress = F/A = 200 / 1.0 × 10^−6 = 2.0 × 10^8 Pa.",
+        "Strain = 1.0 × 10^−3 / 2.0 = 5.0 × 10^−4.",
+        "Y = stress/strain = 2.0 × 10^8 / 5.0 × 10^−4.",
+        "Y = 4.0 × 10^11 Pa.",
+        "This is Young modulus, not the bulk modulus, because only the length was loaded."
+      ],
+      "answer": "4.0 × 10^11 Pa."
+    }
+  ]
 }

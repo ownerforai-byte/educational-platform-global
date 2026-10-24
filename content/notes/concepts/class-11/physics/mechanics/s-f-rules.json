@@ -3,17 +3,22 @@
   "unitSlug": "mechanics",
   "topicSlug": "s-f-rules",
   "topicTitle": "Error Propagation & Significant Figures Rules",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "Significant figures show how precise a measurement is. In 0.00450 m the figures that count are 4, 5 and the trailing zero; the zeros before 4 only locate the decimal point.",
     "For multiplication or division, round the final result to the fewest significant figures among the measured inputs. For addition or subtraction, round to the least precise decimal place.",
     "Worked case: 2.34×1.2 equals 2.808 and rounds to 2.8, because 1.2 has two significant figures. The sum 12.11+0.3 equals 12.41 and rounds to 12.4, because 0.3 is known only to tenths.",
     "Keep guard digits through intermediate steps and round once at the end. Exact counts and defined conversion factors, such as 1 m = 100 cm, do not limit the significant figures of a result.",
-    "Relative uncertainty scales with a power. If A=πr² and r is uncertain by 1%, A is uncertain by about 2%, because the power 2 doubles the relative uncertainty before the final rounding."
+    "Relative uncertainty scales with a power. If A=πr² and r is uncertain by 1%, A is uncertain by about 2%, because the power 2 doubles the relative uncertainty before the final rounding.",
+    "Significant figures show the precision you actually have. In 0.00450 the significant figures are 4, 5 and the last 0. When you multiply, the result should carry no more significant figures than the less precise factor. When you add, you line up the decimal places instead."
   ],
   "confusion": [
     "Do not apply the fewest-significant-figures rule to addition.",
-    "Exact counted values do not impose measurement precision."
+    "Exact counted values do not impose measurement precision.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "How many significant figures are in 0.006070?",
@@ -29,7 +34,10 @@
   "motionGraphics": "mechanics",
   "examples": [
     "2.34×1.2=2.8 to two significant figures.",
-    "12.11+0.3=12.4 to one decimal place."
+    "12.11+0.3=12.4 to one decimal place.",
+    "Significant figures show the precision you actually have. In 0.00450 the significant figures are 4, 5 and the last 0. When you multiply, the result should carry no more significant figures than the less precise factor. When you add, you line up the decimal places instead.",
+    "The working relations are In multiplication, the result keeps the smaller number of significant figures and Absolute errors add for a sum. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A rectangle is 2.50 m by 1.2 m. Find the area with the proper significant figures."
   ],
   "practiceQuestions": [
     "How many significant figures are in 0.006070?",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Leading zeros only locate the decimal point; they are not significant.",
     "Round at the end of multistep calculations.",
-    "Use decimal-place rules for sums and significant-figure rules for products."
+    "Use decimal-place rules for sums and significant-figure rules for products.",
+    "In multiplication, the result keeps the smaller number of significant figures",
+    "Absolute errors add for a sum",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Significant figures and uncertainty keep reported precision tied to measurements. Apply the operation-specific rule and avoid premature rounding.",
   "specialNotes": [
@@ -72,12 +84,113 @@
   "importantConcepts": [
     "Leading zeros only locate the decimal point; they are not significant.",
     "Round at the end of multistep calculations.",
-    "Use decimal-place rules for sums and significant-figure rules for products."
+    "Use decimal-place rules for sums and significant-figure rules for products.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "How many significant figures are in 0.006070?",
     "Round 8.764×2.1 correctly.",
     "Why do addition and multiplication use different rounding rules?"
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "0.00450 has",
+      "options": [
+        "Two significant figures",
+        "Three significant figures",
+        "Five",
+        "One"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A product keeps",
+      "options": [
+        "The smaller number of significant figures",
+        "All the calculator digits",
+        "The sum of the counts",
+        "No unit"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "2.50 × 1.2 is reported as",
+      "options": [
+        "3.00 m^2",
+        "3.0 m^2",
+        "3 m^2 with one figure only because of the decimal",
+        "2.50"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a sum you watch",
+      "options": [
+        "Decimal places",
+        "Only the first digit",
+        "The unit of time",
+        "The vector direction"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "0.00450 has",
+      "options": [
+        "Two significant figures",
+        "Three significant figures",
+        "Five",
+        "One"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A product keeps",
+      "options": [
+        "The smaller number of significant figures",
+        "All the calculator digits",
+        "The sum of the counts",
+        "No unit"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "2.50 × 1.2 is reported as",
+      "options": [
+        "3.00 m^2",
+        "3.0 m^2",
+        "3 m^2 with one figure only because of the decimal",
+        "2.50"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a sum you watch",
+      "options": [
+        "Decimal places",
+        "Only the first digit",
+        "The unit of time",
+        "The vector direction"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A rectangle is 2.50 m by 1.2 m. Find the area with the proper significant figures.",
+      "steps": [
+        "The product is 2.50 × 1.2 = 3.00 if you keep every digit.",
+        "1.2 has two significant figures.",
+        "2.50 has three.",
+        "The area is reported as 3.0 m^2.",
+        "Adding lengths would have followed decimal places, not this rule."
+      ],
+      "answer": "3.0 m^2."
+    }
+  ]
 }

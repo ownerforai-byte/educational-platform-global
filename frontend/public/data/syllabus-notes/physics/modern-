@@ -1,0 +1,196 @@
+{
+  "title": "Semiconductors — intrinsic and extrinsic, p-n junction, d…",
+  "unitSlug": "modern-physics",
+  "topicSlug": "semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor",
+  "topicTitle": "Semiconductors — intrinsic and extrinsic, p-n junction, diode, transistor",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "An intrinsic semiconductor is a pure crystal. At room temperature a few bonds break, giving equal numbers of free electrons and holes. Heating frees more pairs, so the conductivity rises.",
+    "An extrinsic semiconductor has been doped. A group-15 atom adds a spare electron and makes n-type material, in which electrons are the majority carriers. A group-13 atom leaves a hole and makes p-type material.",
+    "The doped crystal is still electrically neutral. The extra carriers come with the atom's nuclear charge. n-type does not mean the lump of silicon is negative.",
+    "A p-n junction has a depletion layer. Forward bias, with the p-side positive, lowers the barrier and current flows. Silicon needs about 0.7 V before that current becomes large. Reverse bias widens the barrier and only a leakage current flows.",
+    "A bipolar transistor has emitter, base and collector. A small base current controls a much larger collector current. The current gain β is I_c / I_b.",
+    "An LED is a forward-biased junction that emits light when electrons and holes recombine. A photodiode is used the other way: light creates pairs and a reverse current."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+    "n-type is not a negatively charged object.",
+    "Forward bias is p positive.",
+    "Holes are vacant bonds, not protons.",
+    "β is I_c / I_b, not I_b / I_c."
+  ],
+  "bounds": [
+    "Covers only: semiconductors — intrinsic, extrinsic, p-n junction, diode (within Modern Physics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+  ],
+  "practice": [
+    "Write β = I_c / I_b and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "examples": [
+    "An intrinsic semiconductor is a pure crystal. At room temperature a few bonds break, giving equal numbers of free electrons and holes. Heating frees more pairs, so the conductivity rises.",
+    "An extrinsic semiconductor has been doped. A group-15 atom adds a spare electron and makes n-type material, in which electrons are the majority carriers. A group-13 atom leaves a hole and makes p-type material.",
+    "A transistor has β = 100 and a base current of 20 μA. Find the collector current."
+  ],
+  "practiceQuestions": [
+    "What are the majority carriers in n-type?",
+    "What is forward bias?",
+    "Write the transistor current gain."
+  ],
+  "formulas": [
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
+  ],
+  "numericals": [
+    "A transistor has β = 100 and a base current of 20 μA. Find the collector current."
+  ],
+  "keyPoints": [
+    "Intrinsic means pure.",
+    "n-type electrons, p-type holes.",
+    "Forward bias conducts.",
+    "A small base current controls a larger collector current."
+  ],
+  "summary": "A pure semiconductor has equal electrons and holes. Doping makes n-type material, with electron majority carriers, or p-type material, with hole majority carriers. A junction conducts when the p-side is positive. In a transistor, β = I_c / I_b, so a small base current controls a larger collector current.",
+  "mcqs": [
+    {
+      "question": "Intrinsic means",
+      "options": [
+        "Doped n-type",
+        "Pure",
+        "A transistor",
+        "A metal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "n-type majority carriers are",
+      "options": [
+        "Holes",
+        "Electrons",
+        "Protons",
+        "Photons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Forward bias makes the p-side",
+      "options": [
+        "Positive",
+        "Negative",
+        "Open",
+        "The collector"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "β equals",
+      "options": [
+        "I_b / I_c",
+        "I_c / I_b",
+        "The forward voltage",
+        "0.7 V"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "An intrinsic semiconductor is a pure crystal. At room temperature a few bonds break, giving equal numbers of free electrons and holes. Heating frees more pairs, so the conductivity rises.",
+    "An extrinsic semiconductor has been doped. A group-15 atom adds a spare electron and makes n-type material, in which electrons are the majority carriers. A group-13 atom leaves a hole and makes p-type material.",
+    "The doped crystal is still electrically neutral. The extra carriers come with the atom's nuclear charge. n-type does not mean the lump of silicon is negative."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Group 15: n. Group 13: p.",
+    "β = I_c / I_b."
+  ],
+  "specialNotes": [
+    "Silicon's forward drop is about 0.7 V. Germanium's is about 0.3 V.",
+    "The depletion layer has very few mobile charges."
+  ],
+  "importantNotes": [
+    "Majority carrier follows the doping.",
+    "Quote β with the two currents named."
+  ],
+  "importantConcepts": [
+    "Intrinsic semiconductor",
+    "Doping",
+    "Forward bias",
+    "Current gain"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Intrinsic means",
+      "options": [
+        "Doped n-type",
+        "Pure",
+        "A transistor",
+        "A metal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "n-type majority carriers are",
+      "options": [
+        "Holes",
+        "Electrons",
+        "Protons",
+        "Photons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Forward bias makes the p-side",
+      "options": [
+        "Positive",
+        "Negative",
+        "Open",
+        "The collector"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "β equals",
+      "options": [
+        "I_b / I_c",
+        "I_c / I_b",
+        "The forward voltage",
+        "0.7 V"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A transistor has β = 100 and a base current of 20 μA. Find the collector current.",
+      "steps": [
+        "β = I_c / I_b, so I_c = β I_b.",
+        "I_b = 20 × 10^−6 A = 2.0 × 10^−5 A.",
+        "I_c = 100 × 2.0 × 10^−5 = 2.0 × 10^−3 A.",
+        "The collector current is 2.0 mA.",
+        "The base current is the small controlling current, not the output."
+      ],
+      "answer": "2.0 mA."
+    }
+  ]
+}

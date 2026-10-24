@@ -9,12 +9,17 @@
     "**Electric power.** P = VI = I²R = V²/R, measured in watts; 1 horsepower ≈ 746 W and commercial rating is often in kW.",
     "**Energy unit.** 1 kWh (one 'unit' on a meter bill) = 3.6 × 10⁶ J — the energy a 1000 W appliance uses in an hour.",
     "**Joule's heating.** A current I through resistance R heats it by H = I²Rt (Joule's law); this is the working principle of heaters, bulbs and fuses.",
-    "**Maximum power transfer.** A source of emf E and internal r delivers maximum power to an external R when R = r; the efficiency of energy transfer is then only 50%."
+    "**Maximum power transfer.** A source of emf E and internal r delivers maximum power to an external R when R = r; the efficiency of energy transfer is then only 50%.",
+    "Electrical power in a resistor is the heat produced per second. A device rated 60 W at 220 V is designed for that voltage. At a lower voltage it draws less current and produces less than 60 W."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in work and power in circuits.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on work and power in circuits from your textbook.",
@@ -30,19 +35,27 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "examples": [
-    "Real-world application of Work and Power in Circuits",
     "Practical demonstration of Work and Power in Circuits concepts",
     "Diagram-based question on Work and Power in Circuits",
     "Application in daily life involving Work and Power in Circuits"
   ],
   "practiceQuestions": [
+    "Q1. Define and explain Work and Power in Circuits with suitable example.",
     "Q2. Solve problems related to Work and Power in Circuits.",
     "Q3. Differentiate between various aspects of Work and Power in Circuits.",
     "Q4. Derive the key formula related to Work and Power in Circuits.",
     "Q5. What are the applications of Work and Power in Circuits?"
   ],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "Application formula for Work and Power in Circuits",
+    "Derivation result for Work and Power in Circuits"
+  ],
+  "keyPoints": [
+    "P = I^2 R = V I",
+    "Energy = P t",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Work and Power in Circuits is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Work and Power in Circuits applies",
@@ -51,8 +64,13 @@
     "Note 4: Remember the units and dimensions involved in Work and Power in Circuits",
     "Note 5: Work and Power in Circuits frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Electrical power in a resistor is the heat produced per second. A device rated 60 W at 220 V is designed for that voltage. At a lower voltage it draws less current and produces less than 60 W.",
+    "The working relations are P = I^2 R = V I and Energy = P t. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 60 W, 220 V lamp is run at 220 V for 10 minutes. Find the current and the energy used. At the rated voltage, P = 60 W. I = P/V = 60/220 = 0.27 A."
+  ],
   "importantNotes": [
+    "Note 1: Work and Power in Circuits is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Work and Power in Circuits",
     "Note 3: Work and Power in Circuits has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Work and Power in Circuits",
@@ -126,5 +144,60 @@
     "Task 3: Create a concept map for Work and Power in Circuits",
     "Task 4: Practice previous year exam questions on Work and Power in Circuits",
     "Task 5: Explain Work and Power in Circuits to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Power in a resistor is",
+      "options": [
+        "I^2 R",
+        "I/R",
+        "R/V",
+        "t/P"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Energy is",
+      "options": [
+        "P t",
+        "P/t",
+        "I/t",
+        "V/R"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A lamp run below its rated voltage",
+      "options": [
+        "Produces its rated power",
+        "Produces less than its rated power",
+        "Has zero resistance",
+        "Draws the rated current"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A kilowatt hour is",
+      "options": [
+        "A unit of energy",
+        "A unit of current",
+        "A resistance",
+        "A voltage"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 60 W, 220 V lamp is run at 220 V for 10 minutes. Find the current and the energy used.",
+      "steps": [
+        "At the rated voltage, P = 60 W.",
+        "I = P/V = 60/220 = 0.27 A.",
+        "Time = 10 × 60 = 600 s.",
+        "Energy = P t = 60 × 600 = 36000 J.",
+        "That is 0.010 kWh."
+      ],
+      "answer": "0.27 A and 3.6 × 10^4 J."
+    }
   ]
 }

@@ -5,45 +5,184 @@
     "- Q is heat added to the system. If the system does work, W is positive in this sign convention, and internal energy falls unless heat is supplied.",
     "- Internal energy U is a state function, so ΔU depends only on the initial and final states. Heat and work depend on the path taken between those states.",
     "- In a cyclic process the system returns to its start, so ΔU = 0 and Q = W: the net heat absorbed equals the net work done by the system.",
-    "- An isolated system has Q = 0 and W = 0, so ΔU = 0. A machine that produces work with no energy input contradicts this law."
+    "- An isolated system has Q = 0 and W = 0, so ΔU = 0. A machine that produces work with no energy input contradicts this law.",
+    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas."
   ],
   "examples": [
-    "Application of First Law of Thermodynamics"
+    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas.",
+    "The working relations are ΔU = Q + W, with W the work done on the gas in this sign and An isobaric expansion does work. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A gas absorbs 200 J of heat and does 50 J of work on the piston. Find the change in internal energy, taking work done on the gas as negative when the gas expands."
   ],
   "practiceQuestions": [
     "Q1. Define First Law of Thermodynamics.",
-    "Q3. Problem on First Law of Thermodynamics."
+    "Q3. Problem on First Law of Thermodynamics.",
+    "Write ΔU = Q + W, with W the work done on the gas in this sign and name the symbols.",
+    "What does An isobaric expansion does work tell you?",
+    "Which unit must be converted before the substitution?"
   ],
-  "formulas": [],
+  "formulas": [
+    "ΔU = Q + W, with W the work done on the gas in this sign",
+    "An isobaric expansion does work"
+  ],
   "keyPoints": [
-    "Application of First Law of Thermodynamics",
-    "Connection of First Law of Thermodynamics to other topics"
+    "Connection of First Law of Thermodynamics to other topics",
+    "ΔU = Q + W, with W the work done on the gas in this sign",
+    "An isobaric expansion does work",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "First Law of Thermodynamics covers essential principles and applications.",
-  "specialNotes": [],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of First Law of Thermodynamics",
-    "Statement 2: Theorem related to First Law of Thermodynamics",
-    "Statement 3: Condition for First Law of Thermodynamics to be valid",
-    "Statement 4: Principle governing First Law of Thermodynamics",
-    "Statement 5: Corollary or consequence of First Law of Thermodynamics"
+    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas.",
+    "The working relations are ΔU = Q + W, with W the work done on the gas in this sign and An isobaric expansion does work. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A gas absorbs 200 J of heat and does 50 J of work on the piston. Find the change in internal energy, taking work done on the gas as negative when the gas expands. Heat added to the gas is Q = +200 J. Work done on the gas is W = −50 J."
   ],
   "importantNotes": [
-    "First Law of Thermodynamics is based on fundamental principles."
+    "First Law of Thermodynamics is based on fundamental principles.",
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
   ],
   "examShortTricks": [
-    "Recall the formula for First Law of Thermodynamics."
+    "Recall the formula for First Law of Thermodynamics.",
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "The first law is",
+      "options": [
+        "Conservation of charge",
+        "Conservation of energy",
+        "Newton's third law",
+        "Snell's law"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the gas expands, work done on the gas is",
+      "options": [
+        "Positive in this sign convention",
+        "Negative in this sign convention",
+        "Zero",
+        "Equal to Q always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An adiabatic process has",
+      "options": [
+        "Q = 0",
+        "ΔU = 0 always",
+        "W = 0 always",
+        "No first law"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Isothermal ideal-gas internal energy",
+      "options": [
+        "Changes with volume",
+        "Stays constant because temperature stays constant",
+        "Equals the pressure",
+        "Is zero"
+      ],
+      "answer": "B"
+    }
+  ],
   "importantConcepts": [
-    "Definition and significance of First Law of Thermodynamics."
+    "Definition and significance of First Law of Thermodynamics.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
-  "importantTasks": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "practice": [
+    "Write ΔU = Q + W, with W the work done on the gas in this sign and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "ΔU = Q + W, with W the work done on the gas in this sign",
+    "An isobaric expansion does work"
+  ],
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "The first law is",
+      "options": [
+        "Conservation of charge",
+        "Conservation of energy",
+        "Newton's third law",
+        "Snell's law"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the gas expands, work done on the gas is",
+      "options": [
+        "Positive in this sign convention",
+        "Negative in this sign convention",
+        "Zero",
+        "Equal to Q always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An adiabatic process has",
+      "options": [
+        "Q = 0",
+        "ΔU = 0 always",
+        "W = 0 always",
+        "No first law"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Isothermal ideal-gas internal energy",
+      "options": [
+        "Changes with volume",
+        "Stays constant because temperature stays constant",
+        "Equals the pressure",
+        "Is zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A gas absorbs 200 J of heat and does 50 J of work on the piston. Find the change in internal energy, taking work done on the gas as negative when the gas expands.",
+      "steps": [
+        "Heat added to the gas is Q = +200 J.",
+        "Work done on the gas is W = −50 J.",
+        "ΔU = Q + W = 200 − 50.",
+        "ΔU = 150 J.",
+        "The gas is warmer in the sense of a higher internal energy."
+      ],
+      "answer": "ΔU = 150 J."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "thermodynamics",
+  "topicSlug": "01-first-law",
+  "topicTitle": "First Law of Thermodynamics"
 }

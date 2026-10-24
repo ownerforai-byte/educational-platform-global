@@ -3,17 +3,22 @@
   "unitSlug": "mechanics",
   "topicSlug": "vector",
   "topicTitle": "Vector",
-  "relevance": 55,
+  "relevance": 94,
   "notes": [
     "A vector has magnitude and direction. Displacement, velocity, acceleration and force are vectors; distance, speed, mass and energy are scalars.",
     "Choose axes and resolve A into Ax=A cosθ, Ay=A sinθ when θ is measured from +x. Components are signed according to their direction and are added separately.",
     "Worked example: a 10 N force at 30° above +x has Fx=8.66 N and Fy=5.00 N. Recovering its magnitude gives √(8.66²+5.00²)≈10 N.",
     "Add vectors by components: (3,4)+(−1,2)=(2,6), with magnitude √40≈6.32. The dot product ABcosθ is scalar; the cross product has magnitude ABsinθ and a perpendicular direction.",
-    "Check a result against the diagram: the resultant should lie between the component directions, and its magnitude should not exceed the sum of component magnitudes."
+    "Check a result against the diagram: the resultant should lie between the component directions, and its magnitude should not exceed the sum of component magnitudes.",
+    "Displacement, velocity, acceleration and force are vectors. Distance, speed, mass and energy are scalars. Two vectors of equal magnitude can add to anything between zero and twice one of them, depending on the angle, so the magnitude alone never fixes the resultant."
   ],
   "confusion": [
     "The angle in component formulas must be measured from the stated axis.",
-    "A negative component indicates direction, not negative length."
+    "A negative component indicates direction, not negative length.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Resolve a 20 m vector at 60° above +x.",
@@ -29,7 +34,10 @@
   "motionGraphics": "mechanics",
   "examples": [
     "10 N at 30° gives components (8.66,5.00) N.",
-    "(3,4)+(−1,2)=(2,6), magnitude≈6.32."
+    "(3,4)+(−1,2)=(2,6), magnitude≈6.32.",
+    "Displacement, velocity, acceleration and force are vectors. Distance, speed, mass and energy are scalars. Two vectors of equal magnitude can add to anything between zero and twice one of them, depending on the angle, so the magnitude alone never fixes the resultant.",
+    "The working relations are A vector has magnitude and direction and Components add separately. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Add a 6 N force east and an 8 N force north."
   ],
   "practiceQuestions": [
     "Resolve a 20 m vector at 60° above +x.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Set axes and angle reference before resolving.",
     "Components carry signs; magnitude is nonnegative.",
-    "Check resultant direction and magnitude geometrically."
+    "Check resultant direction and magnitude geometrically.",
+    "A vector has magnitude and direction",
+    "Components add separately",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Vector calculations become systematic through components: resolve, add componentwise, then recover magnitude and direction. Scalars do not use this procedure.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Set axes and angle reference before resolving.",
     "Components carry signs; magnitude is nonnegative.",
-    "Check resultant direction and magnitude geometrically."
+    "Check resultant direction and magnitude geometrically.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Resolve a 20 m vector at 60° above +x.",
@@ -80,5 +96,102 @@
     "Why is path length not added as a vector?"
   ],
   "duplicateType": 1,
-  "visualType": "vector-basics"
+  "visualType": "vector-basics",
+  "mcs": [
+    {
+      "question": "Force is",
+      "options": [
+        "A scalar",
+        "A vector",
+        "Always north",
+        "Dimensionless"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Speed is",
+      "options": [
+        "A vector",
+        "A scalar",
+        "The same as velocity",
+        "A force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Perpendicular components 6 and 8 give",
+      "options": [
+        "14",
+        "10",
+        "2",
+        "48"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Equal opposite vectors add to",
+      "options": [
+        "2 times one of them",
+        "Zero",
+        "One of them",
+        "Their product"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Force is",
+      "options": [
+        "A scalar",
+        "A vector",
+        "Always north",
+        "Dimensionless"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Speed is",
+      "options": [
+        "A vector",
+        "A scalar",
+        "The same as velocity",
+        "A force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Perpendicular components 6 and 8 give",
+      "options": [
+        "14",
+        "10",
+        "2",
+        "48"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Equal opposite vectors add to",
+      "options": [
+        "2 times one of them",
+        "Zero",
+        "One of them",
+        "Their product"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Add a 6 N force east and an 8 N force north.",
+      "steps": [
+        "The forces are perpendicular.",
+        "R = √(6^2 + 8^2) = √(36 + 64) = √100.",
+        "R = 10 N.",
+        "The direction is tan^−1(8/6) = 53° north of east.",
+        "The scalar sum 14 N is not the resultant."
+      ],
+      "answer": "10 N at 53° north of east."
+    }
+  ]
 }

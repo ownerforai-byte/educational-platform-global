@@ -1,0 +1,195 @@
+{
+  "title": "Kirchhoff's laws and their applications",
+  "unitSlug": "current-electricity",
+  "topicSlug": "kirchhoff-s-laws-and-their-applications",
+  "topicTitle": "Kirchhoff's laws and their applications",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "An application starts with a circuit diagram and one arrow on every branch. At each junction write one current as the sum of the others so that the junction law is already built in.",
+    "For two loops, walk each loop and write Σ E = Σ IR, or the equivalent sum of rises and drops equal to zero. The shared resistor carries the difference or the sum of the loop currents, matching the arrows.",
+    "The two equations are linear. Eliminate one current by substitution. A negative result flips that arrow and is then used as a positive magnitude in later arithmetic.",
+    "A Wheatstone bridge is an application. If the bridge is balanced, the galvanometer branch has zero current, and the loop equations collapse to the ratio condition P/Q = R/S.",
+    "A potentiometer is another application: the working battery drives a long wire, and the balance length is the point where the loop containing the test cell has zero current.",
+    "After the numbers, check that every junction still satisfies in equals out, and that the power from the cells equals the sum of I^2 R. A failed check means a sign error."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Do not invent a new current for a branch you already expressed as a sum.",
+    "The shared resistor does not carry each loop current separately at the same time.",
+    "Balance means zero galvanometer current, not zero battery current.",
+    "A negative current is kept, with its direction reversed."
+  ],
+  "bounds": [
+    "Covers only: kirchhoff's laws, their applications (within Current Electricity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write Junction: I1 + I2 = I3 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Kirchhoff's laws and their applications\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Junction: I1 + I2 = I3",
+    "Loop: Σ E = Σ IR"
+  ],
+  "examples": [
+    "An application starts with a circuit diagram and one arrow on every branch. At each junction write one current as the sum of the others so that the junction law is already built in.",
+    "For two loops, walk each loop and write Σ E = Σ IR, or the equivalent sum of rises and drops equal to zero. The shared resistor carries the difference or the sum of the loop currents, matching the arrows.",
+    "Two loops share a 2.0 Ω resistor. Loop currents of 1.0 A and 0.50 A are drawn in opposite directions through it. Find the current in the shared resistor and the voltage across it."
+  ],
+  "practiceQuestions": [
+    "How do you reduce the number of unknowns?",
+    "What is the current in a balanced galvanometer?",
+    "What is the power check?"
+  ],
+  "formulas": [
+    "Governing equation for \"Kirchhoff's laws and their applications\" — state with units, then use in one numerical.",
+    "Junction: I1 + I2 = I3",
+    "Loop: Σ E = Σ IR"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Kirchhoff's laws and their applications\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "Label every branch current.",
+    "Use the shared resistor once, with the net current.",
+    "Solve the linear equations.",
+    "Check the junction after the numbers."
+  ],
+  "summary": "Label branch currents so each junction is already balanced, then write one loop equation per independent loop. The shared resistor carries the net current. A negative answer reverses an arrow, and a final junction check catches sign mistakes.",
+  "mcqs": [
+    {
+      "question": "A balanced galvanometer carries",
+      "options": [
+        "The battery current",
+        "Zero current",
+        "Infinite current",
+        "The largest resistor"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A shared resistor carries",
+      "options": [
+        "Both loop currents as if they were separate currents in two wires",
+        "The net current from the arrows",
+        "No current ever",
+        "The emf"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A negative loop current means",
+      "options": [
+        "Discard the loop",
+        "Reverse that arrow",
+        "The junction law failed",
+        "R is negative"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "After solving, a useful check is",
+      "options": [
+        "In equals out at each junction",
+        "Every current equals the emf",
+        "R = 0",
+        "The wire colour"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "An application starts with a circuit diagram and one arrow on every branch. At each junction write one current as the sum of the others so that the junction law is already built in.",
+    "For two loops, walk each loop and write Σ E = Σ IR, or the equivalent sum of rises and drops equal to zero. The shared resistor carries the difference or the sum of the loop currents, matching the arrows.",
+    "The two equations are linear. Eliminate one current by substitution. A negative result flips that arrow and is then used as a positive magnitude in later arithmetic."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Build the junction law into the labels.",
+    "Check in = out at the end."
+  ],
+  "specialNotes": [
+    "Two cells in one loop oppose or add according to their arrows.",
+    "A zero-current branch can be removed when you only want the remaining currents."
+  ],
+  "importantNotes": [
+    "Write the shared current explicitly.",
+    "State the direction with the answer."
+  ],
+  "importantConcepts": [
+    "Branch labelling",
+    "Shared resistor",
+    "Balanced bridge",
+    "Power check"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A balanced galvanometer carries",
+      "options": [
+        "The battery current",
+        "Zero current",
+        "Infinite current",
+        "The largest resistor"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A shared resistor carries",
+      "options": [
+        "Both loop currents as if they were separate currents in two wires",
+        "The net current from the arrows",
+        "No current ever",
+        "The emf"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A negative loop current means",
+      "options": [
+        "Discard the loop",
+        "Reverse that arrow",
+        "The junction law failed",
+        "R is negative"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "After solving, a useful check is",
+      "options": [
+        "In equals out at each junction",
+        "Every current equals the emf",
+        "R = 0",
+        "The wire colour"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two loops share a 2.0 Ω resistor. Loop currents of 1.0 A and 0.50 A are drawn in opposite directions through it. Find the current in the shared resistor and the voltage across it.",
+      "steps": [
+        "Opposite arrows mean the currents subtract.",
+        "The net current is 1.0 − 0.50 = 0.50 A in the direction of the larger loop current.",
+        "Voltage = I R = 0.50 × 2.0 = 1.0 V.",
+        "The junction law is already satisfied if each loop current is continuous.",
+        "The shared voltage is the same whichever loop you read it from."
+      ],
+      "answer": "0.50 A, and 1.0 V across the shared resistor."
+    }
+  ]
+}

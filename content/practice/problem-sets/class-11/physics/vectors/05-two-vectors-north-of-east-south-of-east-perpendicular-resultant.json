@@ -6,24 +6,177 @@
   "relevance": 88,
   "notes": [
     "**If two vectors of equal magnitude 2 m act perpendicular to each other, find the resultant.** Let $|\\vec{A}|=|\\vec{B}|=2\\,\\text{m}$, $\\theta=90Â°$: $R=\\sqrt{A^2+B^2+2AB\\cos\\theta}=\\sqrt{2^2+2^2+0}=\\sqrt8=2\\sqrt2\\,\\text{m}$.",
-    "Direction: $\\tan\\alpha=B/A=1 \\Rightarrow \\alpha=45Â°$, i.e. the resultant lies exactly midway between the two original vectors (e.g. if one points north-of-east and the other south-of-east, the resultant points due east)."
+    "Direction: $\\tan\\alpha=B/A=1 \\Rightarrow \\alpha=45Â°$, i.e. the resultant lies exactly midway between the two original vectors (e.g. if one points north-of-east and the other south-of-east, the resultant points due east).",
+    "Two vectors of magnitude 2 m at right angles have resultant sqrt(2^2 + 2^2) = sqrt(8) = 2√2 m, about 2.83 m. The cosine term is zero because the angle is 90°.",
+    "The direction from either vector is given by tanα = 2/2 = 1, so α = 45°. The resultant is midway between them.",
+    "Place one vector 45° north of east and the other 45° south of east. They are perpendicular, they have equal magnitude, and east is their bisector.",
+    "The northward component of the first is 2 sin45°, and the southward component of the second is the same size. Those components cancel."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "2√2 is not 4. The vectors are not parallel.",
+    "North of east and south of east are perpendicular only for this 45° choice, not for every pair of those phrases.",
+    "Cancelling the north and south parts does not cancel the eastward parts.",
+    "The resultant is not north-east."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write R = sqrt(A^2 + B^2) at 90° and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "R = sqrt(A^2 + B^2) at 90°",
+    "tanα = B/A"
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "visualType": "vector-basics"
+  "visualType": "vector-basics",
+  "keyPoints": [
+    "Equal 2 m vectors at 90° give 2√2 m.",
+    "The resultant bisects the angle.",
+    "North-of-east and south-of-east can be symmetric about east.",
+    "The resultant is then due east."
+  ],
+  "importantStatements": [
+    "Two vectors of magnitude 2 m at right angles have resultant sqrt(2^2 + 2^2) = sqrt(8) = 2√2 m, about 2.83 m. The cosine term is zero because the angle is 90°.",
+    "The direction from either vector is given by tanα = 2/2 = 1, so α = 45°. The resultant is midway between them.",
+    "Place one vector 45° north of east and the other 45° south of east. They are perpendicular, they have equal magnitude, and east is their bisector."
+  ],
+  "examples": [
+    "Two vectors of magnitude 2 m at right angles have resultant sqrt(2^2 + 2^2) = sqrt(8) = 2√2 m, about 2.83 m. The cosine term is zero because the angle is 90°.",
+    "The direction from either vector is given by tanα = 2/2 = 1, so α = 45°. The resultant is midway between them.",
+    "Two vectors, each of magnitude 2 m, point 45° north of east and 45° south of east. Find the resultant."
+  ],
+  "formulas": [
+    "R = sqrt(A^2 + B^2) at 90°",
+    "tanα = B/A"
+  ],
+  "practiceQuestions": [
+    "What is the magnitude?",
+    "Why is the direction due east?",
+    "Which components cancel?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Equal perpendicular vectors: bisector.",
+    "Symmetric about east means the resultant is east."
+  ],
+  "specialNotes": [
+    "45° north of east and 45° south of east really are 90° apart.",
+    "2 sin45° = √2 m for each sideways component."
+  ],
+  "importantNotes": [
+    "Cancel only the components that are opposite.",
+    "Quote due east, not 45°."
+  ],
+  "importantConcepts": [
+    "Perpendicular equal vectors",
+    "Component cancellation",
+    "Due east",
+    "2√2 m"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Two 2 m vectors at 90° have resultant",
+      "options": [
+        "4 m",
+        "2√2 m",
+        "2 m",
+        "0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "45° north of east and 45° south of east are",
+      "options": [
+        "Parallel",
+        "Perpendicular",
+        "The same vector",
+        "Opposite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Their north and south components",
+      "options": [
+        "Add",
+        "Cancel",
+        "Are zero from the start",
+        "Point east"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The resultant points",
+      "options": [
+        "North",
+        "South",
+        "Due east",
+        "Due west"
+      ],
+      "answer": "C"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Two 2 m vectors at 90° have resultant",
+      "options": [
+        "4 m",
+        "2√2 m",
+        "2 m",
+        "0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "45° north of east and 45° south of east are",
+      "options": [
+        "Parallel",
+        "Perpendicular",
+        "The same vector",
+        "Opposite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Their north and south components",
+      "options": [
+        "Add",
+        "Cancel",
+        "Are zero from the start",
+        "Point east"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The resultant points",
+      "options": [
+        "North",
+        "South",
+        "Due east",
+        "Due west"
+      ],
+      "answer": "C"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two vectors, each of magnitude 2 m, point 45° north of east and 45° south of east. Find the resultant.",
+      "steps": [
+        "The angle between them is 90°, and the magnitudes are equal.",
+        "R = sqrt(2^2 + 2^2) = 2√2 m.",
+        "The northward and southward components are equal and cancel.",
+        "The eastward components add to 2√2 m.",
+        "The resultant is 2√2 m due east."
+      ],
+      "answer": "2√2 m due east."
+    }
+  ],
+  "summary": "Equal vectors at right angles have resultant 2√2 m when each is 2 m, directed along the bisector. For the symmetric north-of-east and south-of-east pair, that bisector is due east because the sideways components cancel."
 }

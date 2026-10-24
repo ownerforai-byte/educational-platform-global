@@ -1,43 +1,188 @@
 {
   "title": "Precision, Accuracy & Significant Figures",
-  "notes": [],
+  "notes": [
+    "Accuracy describes how close a measurement is to the accepted true value. Precision describes how close repeated measurements are to each other. A set of readings can be precise and still inaccurate if the instrument has a systematic offset.",
+    "Significant figures are the digits that carry meaning in a measured number. Leading zeros in a decimal only locate the point and are not significant. Zeros between non-zero digits are significant. Trailing zeros after a decimal point are significant.",
+    "In multiplication and division, the result is quoted with as many significant figures as the least precise factor. In addition and subtraction, the result is limited by the last decimal place that all terms share.",
+    "Exact counted numbers, such as 2 in the formula 2πr, are not measured data. They do not limit the significant figures. A given radius of 1.20 m does.",
+    "Scientific notation makes the significant figures obvious. 1.20 × 10^3 m has three significant figures. Writing 1200 m does not, unless extra information says the zeros are significant.",
+    "Rounding is done at the end of a calculation, not after every intermediate line, so that rounding error does not pile up. The final line should still not pretend to more digits than the data allow."
+  ],
   "examples": [
-    "Application of Precision, Accuracy & Significant Figures"
+    "Accuracy describes how close a measurement is to the accepted true value. Precision describes how close repeated measurements are to each other. A set of readings can be precise and still inaccurate if the instrument has a systematic offset.",
+    "Significant figures are the digits that carry meaning in a measured number. Leading zeros in a decimal only locate the point and are not significant. Zeros between non-zero digits are significant. Trailing zeros after a decimal point are significant.",
+    "A length 2.50 m is multiplied by a measured width 1.2 m. Quote the area with the correct significant figures."
   ],
   "practiceQuestions": [
     "Q1. Define Precision, Accuracy & Significant Figures.",
-    "Q3. Problem on Precision, Accuracy & Significant Figures."
+    "Q3. Problem on Precision, Accuracy & Significant Figures.",
+    "How do accuracy and precision differ?",
+    "How many significant figures are in 0.00250?",
+    "Which rule limits a product?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Relative error is about 1 part in the first uncertain digit.",
+    "Percentage error = relative error × 100%"
+  ],
   "keyPoints": [
-    "Application of Precision, Accuracy & Significant Figures",
-    "Connection of Precision, Accuracy & Significant Figures to other topics"
+    "Connection of Precision, Accuracy & Significant Figures to other topics",
+    "Accuracy is closeness to the true value.",
+    "Precision is closeness of repeated readings.",
+    "Significant figures show the trustworthy digits.",
+    "The answer cannot be more precise than the data."
   ],
   "summary": "Precision, Accuracy & Significant Figures covers essential principles and applications.",
-  "specialNotes": [],
+  "specialNotes": [
+    "0.00250 has three significant figures because the last zero is after the decimal and after a non-zero digit.",
+    "A systematic error shifts all readings the same way and hurts accuracy."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Precision, Accuracy & Significant Figures",
-    "Statement 2: Theorem related to Precision, Accuracy & Significant Figures",
-    "Statement 3: Condition for Precision, Accuracy & Significant Figures to be valid",
-    "Statement 4: Principle governing Precision, Accuracy & Significant Figures",
-    "Statement 5: Corollary or consequence of Precision, Accuracy & Significant Figures"
+    "Accuracy describes how close a measurement is to the accepted true value. Precision describes how close repeated measurements are to each other. A set of readings can be precise and still inaccurate if the instrument has a systematic offset.",
+    "Significant figures are the digits that carry meaning in a measured number. Leading zeros in a decimal only locate the point and are not significant. Zeros between non-zero digits are significant. Trailing zeros after a decimal point are significant.",
+    "In multiplication and division, the result is quoted with as many significant figures as the least precise factor. In addition and subtraction, the result is limited by the last decimal place that all terms share."
   ],
   "importantNotes": [
-    "Precision, Accuracy & Significant Figures is based on fundamental principles."
+    "Precision, Accuracy & Significant Figures is based on fundamental principles.",
+    "Do not write a calculator's ten digits as the answer.",
+    "State the unit with the rounded number."
   ],
   "examShortTricks": [
-    "Recall the formula for Precision, Accuracy & Significant Figures."
+    "Recall the formula for Precision, Accuracy & Significant Figures.",
+    "Use scientific notation when trailing zeros are ambiguous.",
+    "Round once, at the end."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "0.00250 has",
+      "options": [
+        "Two significant figures",
+        "Three significant figures",
+        "Five significant figures",
+        "One significant figure"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A product is limited by",
+      "options": [
+        "The factor with the fewest significant figures",
+        "The largest number",
+        "The number of decimal places only",
+        "The unit prefix"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Readings that cluster tightly but away from the true value are",
+      "options": [
+        "Accurate and imprecise",
+        "Precise but inaccurate",
+        "Both perfect",
+        "Dimensionless"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 2 in 2πr, as a formula factor, is",
+      "options": [
+        "A measured quantity with one significant figure",
+        "An exact number",
+        "Uncertain in the last digit",
+        "A prefix"
+      ],
+      "answer": "B"
+    }
+  ],
   "importantConcepts": [
-    "Definition and significance of Precision, Accuracy & Significant Figures."
+    "Definition and significance of Precision, Accuracy & Significant Figures.",
+    "Accuracy",
+    "Precision",
+    "Significant figures",
+    "Rounding"
   ],
-  "importantTasks": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "A precise instrument can be wrong if it is not calibrated.",
+    "Leading zeros in 0.0025 are not significant. That number has two significant figures.",
+    "Addition follows decimal places. Multiplication follows significant figures. They are different rules.",
+    "An exact 2 in 2as is not a measured 2."
+  ],
+  "practice": [
+    "Write Relative error is about 1 part in the first uncertain digit. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Relative error is about 1 part in the first uncertain digit.",
+    "Percentage error = relative error × 100%"
+  ],
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "0.00250 has",
+      "options": [
+        "Two significant figures",
+        "Three significant figures",
+        "Five significant figures",
+        "One significant figure"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A product is limited by",
+      "options": [
+        "The factor with the fewest significant figures",
+        "The largest number",
+        "The number of decimal places only",
+        "The unit prefix"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Readings that cluster tightly but away from the true value are",
+      "options": [
+        "Accurate and imprecise",
+        "Precise but inaccurate",
+        "Both perfect",
+        "Dimensionless"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 2 in 2πr, as a formula factor, is",
+      "options": [
+        "A measured quantity with one significant figure",
+        "An exact number",
+        "Uncertain in the last digit",
+        "A prefix"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A length 2.50 m is multiplied by a measured width 1.2 m. Quote the area with the correct significant figures.",
+      "steps": [
+        "The product on a calculator is 2.50 × 1.2 = 3.00.",
+        "2.50 has three significant figures.",
+        "1.2 has two significant figures.",
+        "A product keeps the smaller count, which is two.",
+        "The area is 3.0 m^2."
+      ],
+      "answer": "3.0 m^2."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "physical-quantities",
+  "topicSlug": "04-precision-accuracy-significant-figures",
+  "topicTitle": "Precision, Accuracy & Significant Figures"
 }

@@ -3,17 +3,22 @@
   "unitSlug": "optics",
   "topicSlug": "reflection-at-curve-surface",
   "topicTitle": "Reflection at Curved Surface",
-  "relevance": 55,
+  "relevance": 94,
   "notes": [
     "A spherical reflecting surface acts as a spherical mirror. For paraxial rays, a concave mirror converges parallel rays to a real focus; a convex mirror makes them diverge from a virtual focus.",
     "The centre of curvature C is distance R from pole P; paraxial focus F is halfway between, so f=R/2. Wide-angle marginal rays do not meet this approximation exactly.",
     "Using Cartesian distances positive to the right, a concave mirror has f=−15 cm. For u=−30 cm, 1/v=1/f−1/u=−1/15+1/30=−1/30, so v=−30 cm and m=−v/u=−1.",
     "Construct an image with a ray parallel to the principal axis (reflected through F for a concave mirror) and a ray through C (retraces itself). Their intersection locates a real image; backward extensions locate a virtual image.",
-    "Spherical aberration occurs when marginal rays focus differently from paraxial rays. A smaller aperture reduces it by excluding marginal rays."
+    "Spherical aberration occurs when marginal rays focus differently from paraxial rays. A smaller aperture reduces it by excluding marginal rays.",
+    "A spherical mirror's focal length is half its radius of curvature. Parallel rays close to the axis meet at that focus. Rays far from the axis do not, which is spherical aberration. The sign of f is negative for a concave mirror in the Cartesian convention."
   ],
   "confusion": [
     "Do not substitute the thin-lens equation for the mirror equation.",
-    "f=R/2 assumes a spherical reflecting surface and small angles."
+    "f=R/2 assumes a spherical reflecting surface and small angles.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A concave mirror has R=40 cm. Find signed f in the stated convention.",
@@ -29,7 +34,10 @@
   "motionGraphics": "optics",
   "examples": [
     "f=−15 cm and u=−30 cm give v=−30 cm and m=−1.",
-    "A convex mirror has a virtual focus behind its reflecting surface."
+    "A convex mirror has a virtual focus behind its reflecting surface.",
+    "A spherical mirror's focal length is half its radius of curvature. Parallel rays close to the axis meet at that focus. Rays far from the axis do not, which is spherical aberration. The sign of f is negative for a concave mirror in the Cartesian convention.",
+    "The working relations are f = R/2 for a spherical mirror and A concave mirror has a real focus. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A concave mirror has radius 30 cm. Find the focal length and its Cartesian sign."
   ],
   "practiceQuestions": [
     "A concave mirror has R=40 cm. Find signed f in the stated convention.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Keep mirror signs consistent with the stated convention.",
     "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration."
+    "Aperture reduction suppresses marginal-ray aberration.",
+    "f = R/2 for a spherical mirror",
+    "A concave mirror has a real focus",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Curved-mirror image formation follows reflection geometry. The paraxial focus lies halfway to the centre of curvature, and signed equations agree with ray constructions.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Keep mirror signs consistent with the stated convention.",
     "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration."
+    "Aperture reduction suppresses marginal-ray aberration.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A concave mirror has R=40 cm. Find signed f in the stated convention.",
@@ -84,5 +100,102 @@
     "**Sign Convention (Cartesian):** Distances measured from pole: $u$ (object) positive if object is on the incoming light side; $v$ (image) positive if image is on the outgoing light side (real image for mirrors, virtual for lenses); $f$ positive for concave mirrors/convex lenses, negative for convex mirrors/concave lenses.",
     "**Focal Length and Radius:** For spherical mirrors, $f = R/2$. This comes from the geometry of reflection at a spherical surface. For lenses, $1/f = (n-1)(1/R_1 - 1/R_2)$ (lens maker's formula), which reduces to mirror-like behavior for reflective surfaces."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "The focal length of a spherical mirror is",
+      "options": [
+        "R/2",
+        "R",
+        "2R",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A concave mirror's Cartesian f is",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Equal to the object distance always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Spherical aberration means",
+      "options": [
+        "Edge rays miss the paraxial focus",
+        "The radius is zero",
+        "The mirror is plane",
+        "Colour splits"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The centre is",
+      "options": [
+        "At 2f from the mirror",
+        "At f/2",
+        "Behind a concave mirror",
+        "At infinity"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The focal length of a spherical mirror is",
+      "options": [
+        "R/2",
+        "R",
+        "2R",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A concave mirror's Cartesian f is",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Equal to the object distance always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Spherical aberration means",
+      "options": [
+        "Edge rays miss the paraxial focus",
+        "The radius is zero",
+        "The mirror is plane",
+        "Colour splits"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The centre is",
+      "options": [
+        "At 2f from the mirror",
+        "At f/2",
+        "Behind a concave mirror",
+        "At infinity"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A concave mirror has radius 30 cm. Find the focal length and its Cartesian sign.",
+      "steps": [
+        "f = R/2 = 15 cm in magnitude.",
+        "The mirror is concave, so f = −15 cm.",
+        "Parallel rays near the axis meet 15 cm in front of the mirror.",
+        "The centre is 30 cm in front.",
+        "Edge rays do not share that exact focus."
+      ],
+      "answer": "f = −15 cm."
+    }
+  ]
 }

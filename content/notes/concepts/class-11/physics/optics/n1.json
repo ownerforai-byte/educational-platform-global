@@ -3,17 +3,22 @@
   "unitSlug": "optics",
   "topicSlug": "n1",
   "topicTitle": "N1",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "Geometrical optics represents light by rays travelling in straight lines through a uniform medium. At reflection, incident ray, reflected ray and normal lie in one plane, with angle of incidence equal to angle of reflection.",
     "At refraction, Snell’s law n1 sin i=n2 sin r uses angles measured from the normal. Frequency stays constant across a stationary boundary while speed and wavelength change.",
     "Worked example: a ray enters glass with n=1.50 from air at i=30°. sin r=sin30°/1.50=1/3, giving r≈19.5°; the ray bends toward the normal.",
     "When light goes from higher to lower index, it bends away from the normal. If incidence exceeds the critical angle, total internal reflection occurs, with sin c=n2/n1.",
-    "Ray optics works when apertures and obstacles are much larger than wavelength; diffraction and interference require a wave description when dimensions approach wavelength."
+    "Ray optics works when apertures and obstacles are much larger than wavelength; diffraction and interference require a wave description when dimensions approach wavelength.",
+    "Total internal reflection is the extra case beyond Snell's law. It happens only when the ray is trying to leave a slower medium and the angle of incidence exceeds the critical angle. Water against air has a larger critical angle than glass, because its index is smaller."
   ],
   "confusion": [
     "At i=c the refracted ray travels along the boundary; TIR occurs for i>c.",
-    "Frequency does not change at a stationary boundary."
+    "Frequency does not change at a stationary boundary.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A ray enters water (n=1.33) from air at 45°. Find r.",
@@ -29,7 +34,10 @@
   "motionGraphics": "optics",
   "examples": [
     "Air-to-glass n=1.50 at 30° gives r≈19.5°.",
-    "Glass n=1.50 to air has critical angle c≈41.8°."
+    "Glass n=1.50 to air has critical angle c≈41.8°.",
+    "Total internal reflection is the extra case beyond Snell's law. It happens only when the ray is trying to leave a slower medium and the angle of incidence exceeds the critical angle. Water against air has a larger critical angle than glass, because its index is smaller.",
+    "The working relations are n1 sin i = n2 sin r and sin c = 1/n for a ray leaving a denser medium into air. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Water has n = 1.33. Find sin c for a ray in water meeting air."
   ],
   "practiceQuestions": [
     "A ray enters water (n=1.33) from air at 45°. Find r.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Draw the normal before measuring optical angles.",
     "Higher-index entry bends toward the normal.",
-    "TIR requires high-to-low index and i>c."
+    "TIR requires high-to-low index and i>c.",
+    "n1 sin i = n2 sin r",
+    "sin c = 1/n for a ray leaving a denser medium into air",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Reflection, refraction and total internal reflection predict many optical paths. Angles are measured from the normal, and the ray model fails at wavelength-scale apertures.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Draw the normal before measuring optical angles.",
     "Higher-index entry bends toward the normal.",
-    "TIR requires high-to-low index and i>c."
+    "TIR requires high-to-low index and i>c.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A ray enters water (n=1.33) from air at 45°. Find r.",
@@ -84,5 +100,102 @@
     "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
     "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "TIR requires the ray to be",
+      "options": [
+        "Going into the denser medium",
+        "In the denser medium, past the critical angle",
+        "Along the normal",
+        "In vacuum only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A smaller index means",
+      "options": [
+        "A smaller critical angle against air",
+        "A larger critical angle against air",
+        "No refraction",
+        "sin c = n"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "sin c for water to air is",
+      "options": [
+        "n",
+        "1/n",
+        "0",
+        "90"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Frequency at the boundary",
+      "options": [
+        "Changes with the colour's speed",
+        "Stays the same",
+        "Becomes the index",
+        "Drops to zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "TIR requires the ray to be",
+      "options": [
+        "Going into the denser medium",
+        "In the denser medium, past the critical angle",
+        "Along the normal",
+        "In vacuum only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A smaller index means",
+      "options": [
+        "A smaller critical angle against air",
+        "A larger critical angle against air",
+        "No refraction",
+        "sin c = n"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "sin c for water to air is",
+      "options": [
+        "n",
+        "1/n",
+        "0",
+        "90"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Frequency at the boundary",
+      "options": [
+        "Changes with the colour's speed",
+        "Stays the same",
+        "Becomes the index",
+        "Drops to zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Water has n = 1.33. Find sin c for a ray in water meeting air.",
+      "steps": [
+        "The ray is in the denser medium, so a critical angle exists.",
+        "sin c = 1/1.33 = 0.75.",
+        "c is about 49°.",
+        "A steeper angle, closer to the normal, still refracts.",
+        "Glass, with a larger index, has a smaller critical angle."
+      ],
+      "answer": "sin c = 0.75, so c is about 49°."
+    }
+  ]
 }

@@ -7,14 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Self-induction and self-inductance — Electromagnetic Induction, Physics (class-12-notes).",
-    "**Tested.** define it · list: self-induction, self-inductance · one worked example · one misconception each.",
-    "**Self-inductance.** one-line definition + one-line exam use."
+    "Self-induction is the emf induced in a coil by a change of its own current. The changing current changes the coil's own flux, and Faraday's law gives an emf.",
+    "The self-inductance L is defined by NΦ = L I, so L is the flux linkage per unit current. The induced emf is −L dI/dt. The minus sign is Lenz's law: the emf opposes the change in current.",
+    "When the current is increasing, the induced emf opposes the battery. When the current is decreasing, the induced emf tries to keep the current going. A spark at a switch is that attempt.",
+    "L increases with more turns, a larger area, and an iron core. A long solenoid has L = μ0 n^2 A l, with n turns per unit length, if the field is the ideal solenoid field.",
+    "The henry is the inductance that induces 1 V when the current changes at 1 A/s. Energy stored is (1/2) L I^2.",
+    "Two coils on one core have self-inductance each and mutual inductance as well. This page is only the self part."
   ],
   "confusion": [
-    "❌ treat \"Self-induction\" as one blob → ✅ split into: self-induction, self-inductance.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Self-inductance is not mutual inductance.",
+    "The emf is zero when the current is steady, even if it is large.",
+    "The minus sign is opposition, not a negative inductance.",
+    "Energy is (1/2) L I^2, not L I."
   ],
   "bounds": [
     "Covers only: self-induction, self-inductance (within Electromagnetic Induction).",
@@ -22,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: self-induction, self-inductance.",
-    "one worked example for \"Self-induction and self-inductance\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Φ = L I and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Self-induction and self-inductance\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Self-induction and self-inductance\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Φ = L I",
+    "Induced emf = −L dI/dt"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Self-induction is the emf induced in a coil by a change of its own current. The changing current changes the coil's own flux, and Faraday's law gives an emf.",
+    "The self-inductance L is defined by NΦ = L I, so L is the flux linkage per unit current. The induced emf is −L dI/dt. The minus sign is Lenz's law: the emf opposes the change in current.",
+    "A coil of inductance 0.50 H carries a current that falls at 4.0 A/s. Find the magnitude of the induced emf."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Self-induction and self-inductance\" with one example.",
-    "compare \"Self-induction\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Self-induction and self-inductance\" and verify the answer is plausible."
+    "Define L.",
+    "When is the self-induced emf zero?",
+    "What does the minus sign mean?"
   ],
   "formulas": [
-    "Governing equation for \"Self-induction and self-inductance\" — state with units, then use in one numerical."
+    "Governing equation for \"Self-induction and self-inductance\" — state with units, then use in one numerical.",
+    "Φ = L I",
+    "Induced emf = −L dI/dt"
   ],
   "numericals": [
     "Set up the defining equation for \"Self-induction and self-inductance\", substitute simple values, and compute the result with units.",
@@ -46,19 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Self-induction",
-    "• Self-inductance"
+    "A coil's own changing current induces an emf.",
+    "L is the flux linkage per unit current.",
+    "The emf opposes the change.",
+    "L depends on turns, area and the core."
   ],
-  "summary": "Self-induction and self-inductance (Electromagnetic Induction, Physics, class-12-notes) covers Self-induction, self-inductance. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Self-inductance L links a coil's flux to its own current, and the induced emf is −L dI/dt. It is zero for a steady current and it opposes any change. The stored energy is (1/2) L I^2.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Self-induction and self-inductance\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The self-induced emf is",
       "options": [
-        "True",
-        "False"
+        "−L dI/dt",
+        "L I",
+        "I R only",
+        "Zero whenever I changes"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "A steady current in a coil gives a self-induced emf of",
+      "options": [
+        "L I",
+        "Zero",
+        "Infinity",
+        "The resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The minus sign means the emf",
+      "options": [
+        "Adds to every change",
+        "Opposes the change in current",
+        "Removes L",
+        "Is a calculation error"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Energy stored is",
+      "options": [
+        "(1/2) L I^2",
+        "L I",
+        "I/L",
+        "R only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Self-induction is the emf induced in a coil by a change of its own current. The changing current changes the coil's own flux, and Faraday's law gives an emf.",
+    "The self-inductance L is defined by NΦ = L I, so L is the flux linkage per unit current. The induced emf is −L dI/dt. The minus sign is Lenz's law: the emf opposes the change in current.",
+    "When the current is increasing, the induced emf opposes the battery. When the current is decreasing, the induced emf tries to keep the current going. A spark at a switch is that attempt."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Steady current, zero self-emf.",
+    "Emf = L times the rate, opposing the change."
+  ],
+  "specialNotes": [
+    "A lamp in series with a coil lights slowly.",
+    "The unit is the henry."
+  ],
+  "importantNotes": [
+    "Say whether the current is rising or falling before you say the direction.",
+    "Use dI/dt in A/s."
+  ],
+  "importantConcepts": [
+    "Self-inductance",
+    "Lenz opposition",
+    "Henry",
+    "Stored energy"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The self-induced emf is",
+      "options": [
+        "−L dI/dt",
+        "L I",
+        "I R only",
+        "Zero whenever I changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A steady current in a coil gives a self-induced emf of",
+      "options": [
+        "L I",
+        "Zero",
+        "Infinity",
+        "The resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The minus sign means the emf",
+      "options": [
+        "Adds to every change",
+        "Opposes the change in current",
+        "Removes L",
+        "Is a calculation error"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Energy stored is",
+      "options": [
+        "(1/2) L I^2",
+        "L I",
+        "I/L",
+        "R only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A coil of inductance 0.50 H carries a current that falls at 4.0 A/s. Find the magnitude of the induced emf.",
+      "steps": [
+        "Magnitude of emf = L |dI/dt|.",
+        "emf = 0.50 × 4.0 = 2.0 V.",
+        "The current is falling, so the induced emf tries to maintain the current.",
+        "A steady current would have given zero.",
+        "The energy in the field is decreasing and is the source of this emf."
+      ],
+      "answer": "2.0 V, opposing the fall of current."
     }
   ]
 }

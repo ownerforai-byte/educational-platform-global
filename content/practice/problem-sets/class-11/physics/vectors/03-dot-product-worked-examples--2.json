@@ -2,6 +2,178 @@
   "title": "Dot Product — Worked Examples",
   "notes": [
     "**Q1. Find $|\\vec{A}|$, $|\\vec{B}|$, $|\\vec{A}+\\vec{B}|$ and $|\\vec{A}-\\vec{B}|$ for $\\vec{A}=5\\hat{i}+4\\hat{j}$ and $\\vec{B}=4\\hat{i}+6\\hat{j}$.** $|\\vec{A}|=\\sqrt{5^2+4^2}=\\sqrt{41}$. $|\\vec{B}|=\\sqrt{4^2+6^2}=\\sqrt{16+36}=\\sqrt{52}$. $\\vec{A}+\\vec{B}=9\\hat{i}+10\\hat{j} \\Rightarrow |\\vec{A}+\\vec{B}|=\\sqrt{81+100}=\\sqrt{181}$. $\\vec{A}-\\vec{B}=\\hat{i}-2\\hat{j} \\Rightarrow |\\vec{A}-\\vec{B}|=\\sqrt{1+4}=\\sqrt5$.",
-    "**Q2. Find the angle between $\\vec{a}=2\\hat{i}+3\\hat{j}+4\\hat{k}$ and $\\vec{c}=2\\hat{i}+3\\hat{j}-4\\hat{k}$.** $\\vec{a}\\cdot\\vec{c}=2(2)+3(3)+4(-4)=4+9-16=-3$. $|\\vec{a}|=|\\vec{c}|=\\sqrt{4+9+16}=\\sqrt{29}$ (both vectors have the same magnitude here). $\\cos\\theta=\\dfrac{-3}{29}\\approx-0.103 \\Rightarrow \\theta\\approx95.9°$ (obtuse, since the dot product is negative)."
-  ]
+    "**Q2. Find the angle between $\\vec{a}=2\\hat{i}+3\\hat{j}+4\\hat{k}$ and $\\vec{c}=2\\hat{i}+3\\hat{j}-4\\hat{k}$.** $\\vec{a}\\cdot\\vec{c}=2(2)+3(3)+4(-4)=4+9-16=-3$. $|\\vec{a}|=|\\vec{c}|=\\sqrt{4+9+16}=\\sqrt{29}$ (both vectors have the same magnitude here). $\\cos\\theta=\\dfrac{-3}{29}\\approx-0.103 \\Rightarrow \\theta\\approx95.9°$ (obtuse, since the dot product is negative).",
+    "The magnitude of a vector aî + bĵ + ck̂ is sqrt(a^2 + b^2 + c^2). For A = 5î + 4ĵ, |A| = sqrt(25 + 16) = sqrt(41). For B = 4î + 6ĵ, |B| = sqrt(16 + 36) = sqrt(52).",
+    "A + B = 9î + 10ĵ, so |A + B| = sqrt(81 + 100) = sqrt(181). A − B = î − 2ĵ, so |A − B| = sqrt(1 + 4) = sqrt(5).",
+    "The dot product uses components: A·B = 5×4 + 4×6 = 20 + 24 = 44. The angle between A and B then satisfies cosφ = 44 / sqrt(41×52).",
+    "For a = 2î + 3ĵ + 4k̂ and c = 2î + 3ĵ − 4k̂, the dot product is 4 + 9 − 16 = −3. The negative sign means the angle is greater than 90°."
+  ],
+  "confusion": [
+    "A negative component lowers the dot product. It does not get dropped.",
+    "|A + B| is not |A| + |B| unless the vectors are parallel.",
+    "The dot product is not a vector and has no î left in it.",
+    "arccos of a negative number is an obtuse angle, not a negative length."
+  ],
+  "keyPoints": [
+    "Magnitude from the sum of squares.",
+    "Dot product is the sum of products of components.",
+    "A negative dot product means an obtuse angle.",
+    "The angle is arccos of that cosine."
+  ],
+  "importantStatements": [
+    "The magnitude of a vector aî + bĵ + ck̂ is sqrt(a^2 + b^2 + c^2). For A = 5î + 4ĵ, |A| = sqrt(25 + 16) = sqrt(41). For B = 4î + 6ĵ, |B| = sqrt(16 + 36) = sqrt(52).",
+    "A + B = 9î + 10ĵ, so |A + B| = sqrt(81 + 100) = sqrt(181). A − B = î − 2ĵ, so |A − B| = sqrt(1 + 4) = sqrt(5).",
+    "The dot product uses components: A·B = 5×4 + 4×6 = 20 + 24 = 44. The angle between A and B then satisfies cosφ = 44 / sqrt(41×52)."
+  ],
+  "examples": [
+    "The magnitude of a vector aî + bĵ + ck̂ is sqrt(a^2 + b^2 + c^2). For A = 5î + 4ĵ, |A| = sqrt(25 + 16) = sqrt(41). For B = 4î + 6ĵ, |B| = sqrt(16 + 36) = sqrt(52).",
+    "A + B = 9î + 10ĵ, so |A + B| = sqrt(81 + 100) = sqrt(181). A − B = î − 2ĵ, so |A − B| = sqrt(1 + 4) = sqrt(5).",
+    "Find the angle between a = 2î + 3ĵ + 4k̂ and c = 2î + 3ĵ − 4k̂."
+  ],
+  "universalFacts": [
+    "A·B = A_x B_x + A_y B_y + A_z B_z",
+    "cosφ = (A·B) / (|A| |B|)"
+  ],
+  "formulas": [
+    "A·B = A_x B_x + A_y B_y + A_z B_z",
+    "cosφ = (A·B) / (|A| |B|)"
+  ],
+  "practice": [
+    "Write A·B = A_x B_x + A_y B_y + A_z B_z and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "How is a magnitude found from components?",
+    "What does a negative dot product say?",
+    "When is the dot product zero?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Sum of squares under the square root.",
+    "Sum of products for the dot."
+  ],
+  "specialNotes": [
+    "k̂ components matter. Leaving out −4 × 4 would flip the sign.",
+    "Quote the angle in degrees only after arccos."
+  ],
+  "importantNotes": [
+    "Compute the magnitudes before the cosine.",
+    "Keep the minus sign in the dot product."
+  ],
+  "importantConcepts": [
+    "Magnitude",
+    "Dot product",
+    "Obtuse angle",
+    "Perpendicular test"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "|5î + 4ĵ| equals",
+      "options": [
+        "9",
+        "sqrt(41)",
+        "20",
+        "1"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A negative dot product means the angle is",
+      "options": [
+        "Acute",
+        "Right",
+        "Obtuse",
+        "Zero"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Perpendicular vectors have dot product",
+      "options": [
+        "1",
+        "0",
+        "−1",
+        "Their product of magnitudes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "|A + B| equals |A| + |B| when the vectors are",
+      "options": [
+        "Perpendicular",
+        "In the same direction",
+        "Opposite",
+        "Zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "|5î + 4ĵ| equals",
+      "options": [
+        "9",
+        "sqrt(41)",
+        "20",
+        "1"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A negative dot product means the angle is",
+      "options": [
+        "Acute",
+        "Right",
+        "Obtuse",
+        "Zero"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Perpendicular vectors have dot product",
+      "options": [
+        "1",
+        "0",
+        "−1",
+        "Their product of magnitudes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "|A + B| equals |A| + |B| when the vectors are",
+      "options": [
+        "Perpendicular",
+        "In the same direction",
+        "Opposite",
+        "Zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the angle between a = 2î + 3ĵ + 4k̂ and c = 2î + 3ĵ − 4k̂.",
+      "steps": [
+        "a·c = 2×2 + 3×3 + 4×(−4) = 4 + 9 − 16 = −3.",
+        "|a| = sqrt(4 + 9 + 16) = sqrt(29).",
+        "|c| = sqrt(29) as well.",
+        "cosφ = −3/29 ≈ −0.103.",
+        "φ = arccos(−0.103) ≈ 96°."
+      ],
+      "answer": "About 96°, an obtuse angle."
+    }
+  ],
+  "summary": "Magnitudes come from the square root of the sum of squares. The dot product is the sum of the products of matching components, and dividing by the two magnitudes gives the cosine of the angle. A negative dot product means the angle is obtuse.",
+  "relevance": 94,
+  "unitSlug": "vectors",
+  "topicSlug": "03-dot-product-worked-examples",
+  "topicTitle": "Dot Product — Worked Examples"
 }

@@ -7,14 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Potentiometer and its applications — Current Electricity, Physics (class-12-notes).",
-    "**Tested.** define it · list: potentiometer, its applications · one worked example · one misconception each.",
-    "**Its applications.** one-line definition + one-line exam use."
+    "The applications all use the same null. Comparing two cells uses E1/E2 = l1/l2. Measuring a thermocouple's small emf uses a small potential gradient so that the balance length is long enough to read.",
+    "Internal resistance uses two balance lengths. l1 is with the cell alone. l2 is with a known resistance R across the cell, so the cell now sends current and its terminal voltage is smaller. Then r = R (l1/l2 − 1).",
+    "A standard cell of known emf can set k. If that cell balances at l_s, then k = E_s / l_s, and an unknown balanced at l has E = k l. The standard cell must not be left on load.",
+    "Sensitivity improves when k is small, because a small change in emf moves the jockey a long way. That means a long wire or a small driving current, until the galvanometer can no longer see the unbalance.",
+    "The wire must stay uniform and at one temperature. A jockey scraped along a hot wire both damages the wire and shifts k.",
+    "The positive terminal of the test cell goes toward the high-potential end of the wire. Reversed terminals give no balance point."
   ],
   "confusion": [
-    "❌ treat \"Potentiometer\" as one blob → ✅ split into: potentiometer, its applications.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "l1 is the open-circuit length, the longer one.",
+    "The standard cell is not the driving cell.",
+    "A smaller k is more sensitive, not less, until detection fails.",
+    "r = R (l1 − l2)/l2, not the reciprocal."
   ],
   "bounds": [
     "Covers only: potentiometer, its applications (within Current Electricity).",
@@ -22,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: potentiometer, its applications.",
-    "one worked example for \"Potentiometer and its applications\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write r = R (l1 − l2)/l2 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Potentiometer and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Potentiometer and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "r = R (l1 − l2)/l2",
+    "A small series calibration resistor can standardise k"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "The applications all use the same null. Comparing two cells uses E1/E2 = l1/l2. Measuring a thermocouple's small emf uses a small potential gradient so that the balance length is long enough to read.",
+    "Internal resistance uses two balance lengths. l1 is with the cell alone. l2 is with a known resistance R across the cell, so the cell now sends current and its terminal voltage is smaller. Then r = R (l1/l2 − 1).",
+    "A cell balances at 80.0 cm on open circuit and at 60.0 cm when a 4.0 Ω resistor is connected across it. Find the internal resistance."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Potentiometer and its applications\" with one example.",
-    "compare \"Potentiometer\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Potentiometer and its applications\" and verify the answer is plausible."
+    "Write the internal-resistance formula.",
+    "How is k standardised?",
+    "What does a smaller k do to sensitivity?"
   ],
   "formulas": [
-    "Governing equation for \"Potentiometer and its applications\" — state with units, then use in one numerical."
+    "Governing equation for \"Potentiometer and its applications\" — state with units, then use in one numerical.",
+    "r = R (l1 − l2)/l2",
+    "A small series calibration resistor can standardise k"
   ],
   "numericals": [
     "Set up the defining equation for \"Potentiometer and its applications\", substitute simple values, and compute the result with units.",
@@ -46,19 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Potentiometer",
-    "• Its applications"
+    "Compare emfs.",
+    "Measure internal resistance.",
+    "Measure a small voltage with a standard cell.",
+    "Sensitivity is a small k."
   ],
-  "summary": "Potentiometer and its applications (Current Electricity, Physics, class-12-notes) covers Potentiometer, its applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The potentiometer compares emfs, finds internal resistance from two balance lengths, and can be standardised with a standard cell. A smaller potential gradient makes the null more sensitive. Polarity must oppose the wire drop or there is no balance.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Potentiometer and its applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The open-circuit balance length is",
       "options": [
-        "True",
-        "False"
+        "The shorter one",
+        "The longer one",
+        "Zero",
+        "100 m always"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "r equals",
+      "options": [
+        "R (l1 − l2)/l2",
+        "R l2/l1 only",
+        "l1 + l2",
+        "Zero if R is finite"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A standard cell is used to",
+      "options": [
+        "Drive the long wire as the power source",
+        "Find k from a known emf",
+        "Replace the galvanometer",
+        "Heat the wire"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A smaller potential gradient makes the balance",
+      "options": [
+        "Less sensitive",
+        "More sensitive, if the galvanometer can still detect it",
+        "Impossible",
+        "Independent of length"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "The applications all use the same null. Comparing two cells uses E1/E2 = l1/l2. Measuring a thermocouple's small emf uses a small potential gradient so that the balance length is long enough to read.",
+    "Internal resistance uses two balance lengths. l1 is with the cell alone. l2 is with a known resistance R across the cell, so the cell now sends current and its terminal voltage is smaller. Then r = R (l1/l2 − 1).",
+    "A standard cell of known emf can set k. If that cell balances at l_s, then k = E_s / l_s, and an unknown balanced at l has E = k l. The standard cell must not be left on load."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Open-circuit length is the longer one.",
+    "r = R (l1 − l2)/l2."
+  ],
+  "specialNotes": [
+    "A thermocouple needs a small k.",
+    "Do not draw current from a standard cell except at the brief test."
+  ],
+  "importantNotes": [
+    "Identify which length is open circuit.",
+    "Polarity must oppose."
+  ],
+  "importantConcepts": [
+    "Internal resistance",
+    "Standard cell",
+    "Potential gradient",
+    "Sensitivity"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The open-circuit balance length is",
+      "options": [
+        "The shorter one",
+        "The longer one",
+        "Zero",
+        "100 m always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "r equals",
+      "options": [
+        "R (l1 − l2)/l2",
+        "R l2/l1 only",
+        "l1 + l2",
+        "Zero if R is finite"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A standard cell is used to",
+      "options": [
+        "Drive the long wire as the power source",
+        "Find k from a known emf",
+        "Replace the galvanometer",
+        "Heat the wire"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A smaller potential gradient makes the balance",
+      "options": [
+        "Less sensitive",
+        "More sensitive, if the galvanometer can still detect it",
+        "Impossible",
+        "Independent of length"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A cell balances at 80.0 cm on open circuit and at 60.0 cm when a 4.0 Ω resistor is connected across it. Find the internal resistance.",
+      "steps": [
+        "l1 = 80.0 cm and l2 = 60.0 cm. R = 4.0 Ω.",
+        "r = R (l1 − l2)/l2.",
+        "l1 − l2 = 20.0 cm.",
+        "r = 4.0 × 20.0/60.0 = 4.0 × 1/3 = 1.33 Ω.",
+        "The shorter second length matches a cell that is now under load."
+      ],
+      "answer": "1.33 Ω."
     }
   ]
 }

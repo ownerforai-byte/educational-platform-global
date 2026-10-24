@@ -5,12 +5,12 @@
   "topicTitle": "Electric Current and Drift Velocity",
   "relevance": 100,
   "notes": [
-    "**Electric Current and Drift Velocity:** This topic covers the fundamental concepts of electric current and drift velocity in the physics curriculum.",
-    "Understanding electric current and drift velocity is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to electric current and drift velocity should be memorized and practiced regularly.",
-    "**Fact.** Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
-    "**Fact.** Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
-    "**Fact.** Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
+    "Electric current is the rate at which charge passes a point. One ampere is one coulomb per second. In a metal the moving charges are electrons, but the conventional current is drawn in the direction positive charge would move.",
+    "Free electrons move fast in random directions. An electric field adds a small average velocity along the wire, the drift velocity. The random speed is kilometres per second. The drift speed is often a fraction of a millimetre per second.",
+    "If n electrons per unit volume, each of charge e, drift at v_d through area A, the current is I = n e A v_d. A larger density, a wider wire or a faster drift means a larger current.",
+    "The drift speed is e E τ / m, where τ is the average time between collisions. A stronger field or a longer free time means a faster drift. Collisions turn the ordered drift energy into heat.",
+    "The signal travels along the wire at a speed set by the electromagnetic field, close to the speed of light. That is not the drift speed of the electrons. A lamp comes on at once even though each electron drifts slowly.",
+    "Current density J is I/A, and J = n e v_d. Resistivity connects J to the field by E = ρ J in an ohmic metal."
   ],
   "confusion": [
     "❌ 'Electrons move at the speed of light in a wire.' ✅ Electrons move at a very slow *drift velocity* (mm/s); the *electric field* (the signal) travels near the speed of light.",
@@ -37,7 +37,6 @@
   "animation3D": "current-electricity",
   "motionGraphics": "current-electricity",
   "examples": [
-    "Real-world application of Electric Current and Drift Velocity",
     "Practical demonstration of Electric Current and Drift Velocity concepts",
     "Diagram-based question on Electric Current and Drift Velocity",
     "Application in daily life involving Electric Current and Drift Velocity",
@@ -60,9 +59,10 @@
     "V_term = E − Ir"
   ],
   "keyPoints": [
-    "• Electric current",
-    "• Drift velocity",
-    "• Relaxation time"
+    "Current is charge per unit time.",
+    "Drift speed is very small.",
+    "The electric field sets the drift.",
+    "Electrons drift opposite the conventional current."
   ],
   "summary": "Electric Current and Drift Velocity is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -73,11 +73,9 @@
     "Note 5: Electric Current and Drift Velocity frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Electric Current and Drift Velocity",
-    "Statement 2: Theorem related to Electric Current and Drift Velocity",
-    "Statement 3: Condition for Electric Current and Drift Velocity to be valid",
-    "Statement 4: Principle governing Electric Current and Drift Velocity",
-    "Statement 5: Corollary or consequence of Electric Current and Drift Velocity"
+    "Electric current is the rate at which charge passes a point. One ampere is one coulomb per second. In a metal the moving charges are electrons, but the conventional current is drawn in the direction positive charge would move.",
+    "Free electrons move fast in random directions. An electric field adds a small average velocity along the wire, the drift velocity. The random speed is kilometres per second. The drift speed is often a fraction of a millimetre per second.",
+    "If n electrons per unit volume, each of charge e, drift at v_d through area A, the current is I = n e A v_d. A larger density, a wider wire or a faster drift means a larger current."
   ],
   "importantNotes": [
     "Note 1: Electric Current and Drift Velocity is based on fundamental principles",
@@ -156,30 +154,48 @@
     "Task 5: Explain Electric Current and Drift Velocity to a peer or study group"
   ],
   "numericals": [
-    "Use  V = IR  — pick reasonable values, solve, and check the units.",
-    "Use  P = IV = I²R = V²/R  — pick reasonable values, solve, and check the units.",
-    "Use  V_term = E − Ir  — pick reasonable values, solve, and check the units."
+    "A wire has n = 1.0 × 10^29 m^−3, area 1.0 × 10^−6 m^2 and current 1.6 A. Take e = 1.6 × 10^−19 C. Find the drift speed."
   ],
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Electric current, drift velocity, and relaxation time\"?",
+      "question": "Current in a metal is carried by",
       "options": [
-        "Electric current",
-        "Drift velocity",
-        "Unrelated topic",
-        "None of the above"
+        "Protons drifting along the wire",
+        "Electrons",
+        "The lattice ions as the main moving charge",
+        "Neutrons"
       ],
-      "answer": "A",
-      "explanation": "Electric current is listed among the official sub-ideas of Electric current, drift velocity, and relaxation time; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Electric current, drift velocity, and relaxation time\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "I equals",
       "options": [
-        "True",
-        "False"
+        "n e A v_d",
+        "v_d / n",
+        "E τ",
+        "A only"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Drift speed is typically",
+      "options": [
+        "Near the speed of light",
+        "Very small compared with the random speed",
+        "Zero whenever current flows",
+        "Equal to the signal speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Conventional current is",
+      "options": [
+        "Opposite the electron drift",
+        "Along the electron drift",
+        "Perpendicular to the wire",
+        "A magnetic field"
+      ],
+      "answer": "A"
     }
   ],
   "source": "generated",
@@ -189,5 +205,18 @@
     "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
+  ],
+  "exercises": [
+    {
+      "question": "A wire has n = 1.0 × 10^29 m^−3, area 1.0 × 10^−6 m^2 and current 1.6 A. Take e = 1.6 × 10^−19 C. Find the drift speed.",
+      "steps": [
+        "v_d = I / (n e A).",
+        "n e A = 1.0 × 10^29 × 1.6 × 10^−19 × 1.0 × 10^−6.",
+        "n e A = 1.6 × 10^4.",
+        "v_d = 1.6 / 1.6 × 10^4 = 1.0 × 10^−4 m/s.",
+        "The electrons drift at 0.10 mm/s, opposite the conventional current."
+      ],
+      "answer": "1.0 × 10^−4 m/s."
+    }
   ]
 }

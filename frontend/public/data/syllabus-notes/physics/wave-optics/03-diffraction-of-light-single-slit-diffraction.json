@@ -1,0 +1,196 @@
+{
+  "title": "Diffraction of light — single slit diffraction",
+  "unitSlug": "wave-optics",
+  "topicSlug": "diffraction-of-light-single-slit-diffraction",
+  "topicTitle": "Diffraction of light — single slit diffraction",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Diffraction is the spreading of a wave at an edge or through a narrow opening. It is obvious when the opening is comparable with the wavelength, and easy to miss when the opening is huge.",
+    "A single slit of width a has a bright central band. The first dark band on either side is at sinθ = λ / a. A smaller width means a larger angle, so squeezing the slit spreads the light more.",
+    "The central band is about twice as wide as each side band, and it holds most of the light. These bands are not the equal Young's fringes. One slit does not have two coherent sources a distance d apart.",
+    "Covering half the slit changes the pattern because the width a has changed. It does not simply make the old pattern dimmer with the same angles.",
+    "A diffraction grating has many slits. The strong maxima satisfy d sinθ = m λ, where d is the spacing of the slits. The maxima are sharp and are used to measure wavelength.",
+    "The single-slit envelope still sits on top of the grating pattern. Orders that fall at a single-slit minimum are missing. That is why a grating spectrum can have a gap."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ..",
+    "A narrower slit gives a wider pattern.",
+    "The single-slit centre is bright.",
+    "Do not use β = λ D / d for one slit.",
+    "The grating spacing d is not the slit width a."
+  ],
+  "bounds": [
+    "Covers only: diffraction of light — single slit diffraction (within Wave Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ."
+  ],
+  "practice": [
+    "Write First minimum: sinθ = λ / a and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.",
+    "Newton's rings: r_m = √(mRλ) (dark/dark convention); λ = 2(rₙ₊₁² − rₙ²)/N (interferometric use).",
+    "Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle."
+  ],
+  "examples": [
+    "Diffraction is the spreading of a wave at an edge or through a narrow opening. It is obvious when the opening is comparable with the wavelength, and easy to miss when the opening is huge.",
+    "A single slit of width a has a bright central band. The first dark band on either side is at sinθ = λ / a. A smaller width means a larger angle, so squeezing the slit spreads the light more.",
+    "A single slit of width 0.10 mm is lit by wavelength 500 nm. Find sinθ for the first minimum."
+  ],
+  "practiceQuestions": [
+    "Write the first-minimum condition.",
+    "What does a narrower slit do?",
+    "Write the grating condition."
+  ],
+  "formulas": [
+    "β = λD/d",
+    "a sinθ = mλ",
+    "r_m = √(mRλ)"
+  ],
+  "numericals": [
+    "A single slit of width 0.10 mm is lit by wavelength 500 nm. Find sinθ for the first minimum."
+  ],
+  "keyPoints": [
+    "• Diffraction of light — single slit diffraction",
+    "One slit spreads the light.",
+    "The centre is bright and wide.",
+    "A narrower slit makes a wider pattern.",
+    "A grating makes sharp orders."
+  ],
+  "summary": "A single slit spreads light into a wide bright centre, with the first dark fringe at sinθ = λ/a. A narrower slit spreads the light more. A grating produces sharp maxima at d sinθ = m λ, and a single-slit minimum can wipe out a grating order.",
+  "mcqs": [
+    {
+      "question": "The first single-slit minimum has",
+      "options": [
+        "sinθ = λ/a",
+        "sinθ = a/λ",
+        "θ = 0 as a minimum",
+        "β = λ D / d"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Narrowing the slit",
+      "options": [
+        "Narrows the pattern",
+        "Widens the pattern",
+        "Removes diffraction",
+        "Makes the centre dark"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The single-slit centre is",
+      "options": [
+        "Dark",
+        "Bright",
+        "A grating order m = 1",
+        "Absent"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A grating maximum satisfies",
+      "options": [
+        "d sinθ = m λ",
+        "a = 0",
+        "sinθ = 0 only",
+        "λ = 0"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Diffraction is the spreading of a wave at an edge or through a narrow opening. It is obvious when the opening is comparable with the wavelength, and easy to miss when the opening is huge.",
+    "A single slit of width a has a bright central band. The first dark band on either side is at sinθ = λ / a. A smaller width means a larger angle, so squeezing the slit spreads the light more.",
+    "The central band is about twice as wide as each side band, and it holds most of the light. These bands are not the equal Young's fringes. One slit does not have two coherent sources a distance d apart."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Small a, large θ.",
+    "Grating: d sinθ = m λ."
+  ],
+  "specialNotes": [
+    "The central maximum runs from −λ/a to +λ/a in sinθ.",
+    "Missing orders sit where the single-slit factor is zero."
+  ],
+  "importantNotes": [
+    "a is the width of one slit.",
+    "d is the distance between grating lines."
+  ],
+  "importantConcepts": [
+    "Single-slit minimum",
+    "Central maximum",
+    "Narrow-slit spread",
+    "Grating order"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The first single-slit minimum has",
+      "options": [
+        "sinθ = λ/a",
+        "sinθ = a/λ",
+        "θ = 0 as a minimum",
+        "β = λ D / d"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Narrowing the slit",
+      "options": [
+        "Narrows the pattern",
+        "Widens the pattern",
+        "Removes diffraction",
+        "Makes the centre dark"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The single-slit centre is",
+      "options": [
+        "Dark",
+        "Bright",
+        "A grating order m = 1",
+        "Absent"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A grating maximum satisfies",
+      "options": [
+        "d sinθ = m λ",
+        "a = 0",
+        "sinθ = 0 only",
+        "λ = 0"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A single slit of width 0.10 mm is lit by wavelength 500 nm. Find sinθ for the first minimum.",
+      "steps": [
+        "a = 1.0 × 10^−4 m and λ = 5.0 × 10^−7 m.",
+        "sinθ = λ / a = 5.0 × 10^−7 / 1.0 × 10^−4.",
+        "sinθ = 5.0 × 10^−3.",
+        "The angle is about 0.29°, because sinθ is small.",
+        "A narrower slit would make this angle larger."
+      ],
+      "answer": "sinθ = 0.0050, so θ is about 0.29°."
+    }
+  ]
+}

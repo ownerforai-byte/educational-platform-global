@@ -1,0 +1,197 @@
+{
+  "title": "Faraday's laws of electromagnetic induction",
+  "unitSlug": "electromagnetic-induction",
+  "topicSlug": "faraday-s-laws-of-electromagnetic-induction",
+  "topicTitle": "Faraday's laws of electromagnetic induction",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Faraday found that an emf appears in a coil while the magnetic flux through it is changing. A bar magnet at rest in the coil, however strong, induces nothing.",
+    "The flux through one turn is B times the perpendicular area. For N turns the flux linkage is N times that flux. The induced emf equals the negative of the rate of change of flux linkage.",
+    "The flux can be changed by moving the magnet, by switching the field, by changing the area of the loop, or by rotating the coil. A generator uses the rotation.",
+    "A faster change produces a larger emf. Doubling N doubles the emf for the same change of flux per turn. That is why a search coil has many turns.",
+    "If the circuit is closed, the emf drives an induced current. If the circuit is open, the emf is still there and can be read by a voltmeter, but no current flows.",
+    "The direction of the induced current is fixed by Lenz's law so that it opposes the change of flux. Faraday's law supplies the size. Lenz's law supplies the direction."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+    "A steady field does not induce an emf.",
+    "The emf depends on the rate, not on the flux alone.",
+    "N multiplies the emf.",
+    "An open circuit can have an emf and no current."
+  ],
+  "bounds": [
+    "Covers only: faraday's laws of electromagnetic induction (within Electromagnetic Induction).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+  ],
+  "practice": [
+    "Write Induced emf = − N dΦ/dt and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "examples": [
+    "Faraday found that an emf appears in a coil while the magnetic flux through it is changing. A bar magnet at rest in the coil, however strong, induces nothing.",
+    "The flux through one turn is B times the perpendicular area. For N turns the flux linkage is N times that flux. The induced emf equals the negative of the rate of change of flux linkage.",
+    "A coil of 100 turns has its flux increased by 0.020 Wb in 0.50 s. Find the magnitude of the average induced emf."
+  ],
+  "practiceQuestions": [
+    "Write the induced emf for N turns.",
+    "Name two ways to change the flux.",
+    "What does the minus sign mean?"
+  ],
+  "formulas": [
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
+  ],
+  "numericals": [
+    "A coil of 100 turns has its flux increased by 0.020 Wb in 0.50 s. Find the magnitude of the average induced emf."
+  ],
+  "keyPoints": [
+    "• Faraday's laws of electromagnetic induction",
+    "A changing flux induces an emf.",
+    "More turns mean a larger emf.",
+    "A steady flux induces nothing.",
+    "The minus sign is Lenz's law."
+  ],
+  "summary": "An emf is induced only while flux linkage is changing, and its magnitude is N times the rate of change of flux. More turns or a faster change mean a larger emf. A steady flux induces nothing, and Lenz's law fixes the direction.",
+  "mcqs": [
+    {
+      "question": "A magnet at rest in a coil induces",
+      "options": [
+        "A steady emf",
+        "No emf",
+        "An emf proportional to B only",
+        "A current with the circuit open"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The induced emf is larger when",
+      "options": [
+        "The flux changes faster",
+        "The flux is steady and large",
+        "N is zero",
+        "The circuit is described without a rate"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Flux linkage for N turns is",
+      "options": [
+        "Φ/N",
+        "N Φ",
+        "B only",
+        "The resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The minus sign refers to",
+      "options": [
+        "Lenz's law",
+        "A negative resistance",
+        "The absence of an emf",
+        "Ohm's law"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Faraday found that an emf appears in a coil while the magnetic flux through it is changing. A bar magnet at rest in the coil, however strong, induces nothing.",
+    "The flux through one turn is B times the perpendicular area. For N turns the flux linkage is N times that flux. The induced emf equals the negative of the rate of change of flux linkage.",
+    "The flux can be changed by moving the magnet, by switching the field, by changing the area of the loop, or by rotating the coil. A generator uses the rotation."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "No change, no emf.",
+    "emf = N times the rate of change of flux."
+  ],
+  "specialNotes": [
+    "1 V = 1 Wb/s.",
+    "A search coil measures a changing field by the induced emf."
+  ],
+  "importantNotes": [
+    "Include N when the coil has many turns.",
+    "Say what is changing."
+  ],
+  "importantConcepts": [
+    "Flux linkage",
+    "Faraday emf",
+    "Many turns",
+    "Open-circuit emf"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A magnet at rest in a coil induces",
+      "options": [
+        "A steady emf",
+        "No emf",
+        "An emf proportional to B only",
+        "A current with the circuit open"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The induced emf is larger when",
+      "options": [
+        "The flux changes faster",
+        "The flux is steady and large",
+        "N is zero",
+        "The circuit is described without a rate"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Flux linkage for N turns is",
+      "options": [
+        "Φ/N",
+        "N Φ",
+        "B only",
+        "The resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The minus sign refers to",
+      "options": [
+        "Lenz's law",
+        "A negative resistance",
+        "The absence of an emf",
+        "Ohm's law"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A coil of 100 turns has its flux increased by 0.020 Wb in 0.50 s. Find the magnitude of the average induced emf.",
+      "steps": [
+        "Average emf = N ΔΦ / Δt.",
+        "N ΔΦ = 100 × 0.020 = 2.0 Wb-turns.",
+        "Divide by 0.50 s.",
+        "The magnitude is 4.0 V.",
+        "The direction opposes the increase of flux."
+      ],
+      "answer": "4.0 V."
+    }
+  ]
+}

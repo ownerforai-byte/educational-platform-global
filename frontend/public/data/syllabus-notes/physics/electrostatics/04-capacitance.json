@@ -1,0 +1,222 @@
+{
+  "title": "Capacitance",
+  "unitSlug": "electrostatics",
+  "topicSlug": "capacitance",
+  "topicTitle": "Capacitance",
+  "relevance": 100,
+  "notes": [
+    "Capacitance is C = Q/V, the charge stored per unit potential difference. The unit is the farad. A 1 F capacitor would store 1 C at 1 V, which is far larger than a classroom capacitor. Microfarads and picofarads are the usual sizes.",
+    "A parallel-plate capacitor in vacuum has C = ε0 A / d. A bigger plate area stores more charge for the same voltage. A wider gap lowers the capacitance.",
+    "Filling the gap with a dielectric of constant K multiplies the capacitance by K, if the dielectric fills the space. The molecules of the dielectric polarise and reduce the field for a given free charge.",
+    "Connecting a capacitor to a battery fixes V. The charge is then Q = C V. Disconnecting the battery fixes Q, and a later change of C changes V.",
+    "Capacitors in parallel add their capacitances because they share the voltage and the charges add. Capacitors in series add the reciprocals, and the equivalent is smaller than the smallest of them.",
+    "The energy stored is (1/2) C V^2. A capacitor does not conduct steady current once it is charged. It does pass changing current in an AC circuit."
+  ],
+  "confusion": [
+    "❌ 'Capacitors store charge.' ✅ They store *energy* in an electric field; the net charge is zero (q on one plate, -q on other).",
+    "❌ 'Capacitance depends on charge and potential.' ✅ It depends only on *physical geometry* (area, distance, dielectric) of the capacitor, not on the charge currently stored.",
+    "❌ 'Adding a dielectric decreases capacitance.' ✅ A dielectric *increases* capacitance by reducing the internal electric field (C = εᵣC₀).",
+    "❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d).."
+  ],
+  "practice": [
+    "Solve at least 5 problems on capacitance from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Capacitance and capacitors — parallel plate, series and p…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding capacitance builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of capacitance span engineering, physics, economics, and computer science.",
+    "Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).",
+    "Energy stored U = ½CV² = Q²/2C.",
+    "Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+  ],
+  "animation3D": "electrostatics",
+  "motionGraphics": "electrostatics",
+  "examples": [
+    "Practical demonstration of Capacitance concepts",
+    "Diagram-based question on Capacitance",
+    "Application in daily life involving Capacitance",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Capacitance.",
+    "Q3. Differentiate between various aspects of Capacitance.",
+    "Q4. Derive the key formula related to Capacitance.",
+    "Q5. What are the applications of Capacitance?",
+    "state + explain the main idea of \"Capacitance and capacitors — parallel plate, series and p…\" with one example.",
+    "compare \"Capacitance\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Capacitance and capacitors — parallel plate, series and p…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Application formula for Capacitance",
+    "Derivation result for Capacitance",
+    "C = Q/V",
+    "C = ε₀A/d",
+    "U = ½CV²"
+  ],
+  "keyPoints": [
+    "Capacitance is charge per volt.",
+    "A larger area raises C.",
+    "A larger separation lowers C.",
+    "A dielectric multiplies C by K."
+  ],
+  "summary": "Capacitance is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Capacitance applies",
+    "Note 2: Capacitance connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Capacitance",
+    "Note 4: Remember the units and dimensions involved in Capacitance",
+    "Note 5: Capacitance frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Capacitance is C = Q/V, the charge stored per unit potential difference. The unit is the farad. A 1 F capacitor would store 1 C at 1 V, which is far larger than a classroom capacitor. Microfarads and picofarads are the usual sizes.",
+    "A parallel-plate capacitor in vacuum has C = ε0 A / d. A bigger plate area stores more charge for the same voltage. A wider gap lowers the capacitance.",
+    "Filling the gap with a dielectric of constant K multiplies the capacitance by K, if the dielectric fills the space. The molecules of the dielectric polarise and reduce the field for a given free charge."
+  ],
+  "importantNotes": [
+    "Note 1: Capacitance is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Capacitance",
+    "Note 3: Capacitance has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Capacitance",
+    "Note 5: Cross-check your answers using alternative methods for Capacitance"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Capacitance formula",
+    "Trick 2: Elimination technique for Capacitance MCQs",
+    "Trick 3: Dimensional analysis shortcut for Capacitance",
+    "Trick 4: Memory aid for Capacitance formulas",
+    "Trick 5: Time-saving approach for Capacitance problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Capacitance",
+    "Practice previous year questions on Capacitance",
+    "Learn the derivations for Capacitance thoroughly",
+    "Review common mistakes related to Capacitance"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Capacitance is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Capacitance, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Capacitance?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Capacitance is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Capacitance",
+    "Concept 2: Key theorem or principle in Capacitance",
+    "Concept 3: Important application area of Capacitance",
+    "Concept 4: Fundamental relationship in Capacitance",
+    "Concept 5: Connection between Capacitance and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Capacitance",
+    "Task 2: Derive the main formula for Capacitance",
+    "Task 3: Create a concept map for Capacitance",
+    "Task 4: Practice previous year exam questions on Capacitance",
+    "Task 5: Explain Capacitance to a peer or study group"
+  ],
+  "numericals": [
+    "A vacuum parallel-plate capacitor has area 0.020 m^2 and separation 1.0 mm. Take ε0 = 8.85 × 10^−12. Find C."
+  ],
+  "mcqs": [
+    {
+      "question": "C equals",
+      "options": [
+        "Q V",
+        "Q/V",
+        "V/Q",
+        "A d"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Increasing the plate separation",
+      "options": [
+        "Raises C",
+        "Lowers C",
+        "Leaves C unchanged for a vacuum gap",
+        "Removes Q always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A dielectric that fills the gap",
+      "options": [
+        "Multiplies C by K",
+        "Divides C by K",
+        "Sets C to zero",
+        "Removes the plates"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Two capacitors in parallel",
+      "options": [
+        "Add their capacitances",
+        "Add their reciprocals as the only rule",
+        "Have a smaller equivalent than either",
+        "Must have equal charge always"
+      ],
+      "answer": "A"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: capacitance, capacitors — parallel plate, series, parallel combination (within Electrostatics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)."
+  ],
+  "exercises": [
+    {
+      "question": "A vacuum parallel-plate capacitor has area 0.020 m^2 and separation 1.0 mm. Take ε0 = 8.85 × 10^−12. Find C.",
+      "steps": [
+        "d = 1.0 × 10^−3 m.",
+        "A/d = 0.020 / 1.0 × 10^−3 = 20.",
+        "C = ε0 × 20 = 8.85 × 10^−12 × 20.",
+        "C = 1.77 × 10^−10 F.",
+        "That is 177 pF. A dielectric would multiply this value by K."
+      ],
+      "answer": "1.77 × 10^−10 F."
+    }
+  ]
+}

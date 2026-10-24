@@ -10,24 +10,178 @@
     "m_metalÂ·c_metalÂ·(100 âˆ’ 30) = m_waterÂ·c_waterÂ·(30 âˆ’ 25)",
     "0.2 Ã— c Ã— 70 = 0.5 Ã— 4200 Ã— 5",
     "14c = 10500",
-    "**Answer: c = 750 J/kgÂ·K**"
+    "**Answer: c = 750 J/kgÂ·K**",
+    "In a mixture, heat lost by the hot metal equals heat gained by the cooler water if the cup and the room are ignored. Forgetting the cup makes the metal's specific heat come out too small, because some of the metal's heat warmed the cup and was blamed on a smaller c.",
+    "The working relations are Heat lost by the metal = heat gained by the water and c = Q / (m Δθ). Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 0.20 kg metal piece at 100°C is dropped into 0.50 kg of water at 25°C. The final temperature is 30°C. The cup is neglected and c_water = 4200. Find c. Heat lost = 0.20 × c × (100 − 30). Heat gained = 0.50 × 4200 × (30 − 25).",
+    "0.20 × c × 70 = 10500. 14 c = 10500, so c = 750 J/kg K. Including a cold cup would raise this calculated c, because the metal would have supplied extra heat.",
+    "The result is 750 J/kg K.. Check it by substituting back into Heat lost by the metal = heat gained by the water and confirming the units."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write Heat lost by the metal = heat gained by the water and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Heat lost by the metal = heat gained by the water",
+    "c = Q / (m Δθ)"
   ],
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
-  "visualType": "specific-heat"
+  "visualType": "specific-heat",
+  "keyPoints": [
+    "Heat lost by the metal = heat gained by the water",
+    "c = Q / (m Δθ)",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "In a mixture, heat lost by the hot metal equals heat gained by the cooler water if the cup and the room are ignored. Forgetting the cup makes the metal's specific heat come out too small, because some of the metal's heat warmed the cup and was blamed on a smaller c.",
+    "The working relations are Heat lost by the metal = heat gained by the water and c = Q / (m Δθ). Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 0.20 kg metal piece at 100°C is dropped into 0.50 kg of water at 25°C. The final temperature is 30°C. The cup is neglected and c_water = 4200. Find c. Heat lost = 0.20 × c × (100 − 30). Heat gained = 0.50 × 4200 × (30 − 25)."
+  ],
+  "examples": [
+    "In a mixture, heat lost by the hot metal equals heat gained by the cooler water if the cup and the room are ignored. Forgetting the cup makes the metal's specific heat come out too small, because some of the metal's heat warmed the cup and was blamed on a smaller c.",
+    "The working relations are Heat lost by the metal = heat gained by the water and c = Q / (m Δθ). Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 0.20 kg metal piece at 100°C is dropped into 0.50 kg of water at 25°C. The final temperature is 30°C. The cup is neglected and c_water = 4200. Find c."
+  ],
+  "formulas": [
+    "Heat lost by the metal = heat gained by the water",
+    "c = Q / (m Δθ)"
+  ],
+  "practiceQuestions": [
+    "Write Heat lost by the metal = heat gained by the water and name the symbols.",
+    "What does c = Q / (m Δθ) tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The mixture rule used here is",
+      "options": [
+        "Heat lost equals heat gained",
+        "Temperatures add",
+        "Masses are equal",
+        "c is 4200 for the metal"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The metal's temperature fall is",
+      "options": [
+        "5 K",
+        "70 K",
+        "30 K",
+        "100 K"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "c comes out",
+      "options": [
+        "750 J/kg K",
+        "4200",
+        "70",
+        "10500"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Ignoring a cold cup makes the calculated c",
+      "options": [
+        "Too large",
+        "Too small",
+        "Exact",
+        "Negative"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The mixture rule used here is",
+      "options": [
+        "Heat lost equals heat gained",
+        "Temperatures add",
+        "Masses are equal",
+        "c is 4200 for the metal"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The metal's temperature fall is",
+      "options": [
+        "5 K",
+        "70 K",
+        "30 K",
+        "100 K"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "c comes out",
+      "options": [
+        "750 J/kg K",
+        "4200",
+        "70",
+        "10500"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Ignoring a cold cup makes the calculated c",
+      "options": [
+        "Too large",
+        "Too small",
+        "Exact",
+        "Negative"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 0.20 kg metal piece at 100°C is dropped into 0.50 kg of water at 25°C. The final temperature is 30°C. The cup is neglected and c_water = 4200. Find c.",
+      "steps": [
+        "Heat lost = 0.20 × c × (100 − 30).",
+        "Heat gained = 0.50 × 4200 × (30 − 25).",
+        "0.20 × c × 70 = 10500.",
+        "14 c = 10500, so c = 750 J/kg K.",
+        "Including a cold cup would raise this calculated c, because the metal would have supplied extra heat."
+      ],
+      "answer": "750 J/kg K."
+    }
+  ],
+  "summary": "Heat lost by the metal equals heat gained by the water when the cup is ignored. These masses and temperatures give c = 750 J/kg K. A real cold cup would mean the true specific heat is higher than this value."
 }

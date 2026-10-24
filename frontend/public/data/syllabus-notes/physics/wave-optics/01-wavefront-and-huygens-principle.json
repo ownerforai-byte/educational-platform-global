@@ -1,0 +1,195 @@
+{
+  "title": "Wavefront and Huygens' principle",
+  "unitSlug": "wave-optics",
+  "topicSlug": "wavefront-and-huygens-principle",
+  "topicTitle": "Wavefront and Huygens' principle",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "A wavefront is the surface that joins points of the wave which oscillate in step. A ray is the direction of travel, perpendicular to the wavefront.",
+    "A point source in a uniform medium sends out spherical wavefronts. Very far away a small patch of that sphere is nearly a plane, which is why a distant source is drawn as parallel rays.",
+    "Huygens' construction says that every point on a wavefront acts as a source of secondary wavelets. The new wavefront, a little time later, is the surface tangent to those wavelets, the forward envelope.",
+    "The wavelets also have a backward envelope. Huygens' original picture needs an extra inclination factor, taught later, to cancel the backward wave. At this level you draw the forward envelope.",
+    "The construction explains reflection and refraction. The wavelets from the points that have already hit a mirror rebuild a reflected plane wave at the law-of-reflection angle. Entering a slower medium, the wavelets are smaller and the wavefront tilts, which is Snell's law.",
+    "The speed of the wavelet is the speed of the wave in that medium. A smaller speed means a shorter radius in the same time."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "A wavefront is not a ray.",
+    "The envelope is the new wavefront, not one wavelet.",
+    "The backward wave is not drawn at this level.",
+    "Refraction tilts the wavefront because the speed changes."
+  ],
+  "bounds": [
+    "Covers only: wavefront, huygens' principle (within Wave Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write A wavefront is a surface of constant phase. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Wavefront and Huygens' principle\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "A wavefront is a surface of constant phase.",
+    "Each point on a wavefront is a source of secondary wavelets."
+  ],
+  "examples": [
+    "A wavefront is the surface that joins points of the wave which oscillate in step. A ray is the direction of travel, perpendicular to the wavefront.",
+    "A point source in a uniform medium sends out spherical wavefronts. Very far away a small patch of that sphere is nearly a plane, which is why a distant source is drawn as parallel rays.",
+    "A plane wavefront reaches a flat mirror. In a short time t the end that hit first has produced a wavelet of radius v t. Explain how the reflected wavefront is built."
+  ],
+  "practiceQuestions": [
+    "What is a wavefront?",
+    "State Huygens' construction.",
+    "Why does a slower medium bend the wavefront?"
+  ],
+  "formulas": [
+    "Governing equation for \"Wavefront and Huygens' principle\" — state with units, then use in one numerical.",
+    "A wavefront is a surface of constant phase.",
+    "Each point on a wavefront is a source of secondary wavelets."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Wavefront and Huygens' principle\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "Rays are perpendicular to wavefronts.",
+    "A point source gives spheres.",
+    "A distant source gives planes.",
+    "The new wavefront is the envelope of the wavelets."
+  ],
+  "summary": "A wavefront is a surface of equal phase, and rays stand perpendicular to it. Huygens' principle rebuilds the next wavefront as the forward envelope of wavelets from every point. Reflection and refraction are that envelope in a new direction or a new speed.",
+  "mcqs": [
+    {
+      "question": "A wavefront joins points of",
+      "options": [
+        "Equal amplitude only",
+        "Equal phase",
+        "Zero speed",
+        "Different frequencies"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A ray is",
+      "options": [
+        "Parallel to the wavefront",
+        "Perpendicular to the wavefront",
+        "A wavelet backward",
+        "The envelope of nothing"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The new wavefront is",
+      "options": [
+        "One secondary wavelet",
+        "The forward envelope of the wavelets",
+        "Always a circle around the source even after a mirror",
+        "The ray itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a slower medium the wavelets in a given time are",
+      "options": [
+        "Larger",
+        "Smaller",
+        "Unchanged",
+        "Backward only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "A wavefront is the surface that joins points of the wave which oscillate in step. A ray is the direction of travel, perpendicular to the wavefront.",
+    "A point source in a uniform medium sends out spherical wavefronts. Very far away a small patch of that sphere is nearly a plane, which is why a distant source is drawn as parallel rays.",
+    "Huygens' construction says that every point on a wavefront acts as a source of secondary wavelets. The new wavefront, a little time later, is the surface tangent to those wavelets, the forward envelope."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Ray perpendicular to wavefront.",
+    "Forward envelope only, in this course."
+  ],
+  "specialNotes": [
+    "Plane wavefronts mean parallel rays.",
+    "Wavelet radius = speed × time."
+  ],
+  "importantNotes": [
+    "Draw the envelope, not a single wavelet, as the answer.",
+    "The speed belongs to the medium the wavelet is in."
+  ],
+  "importantConcepts": [
+    "Wavefront",
+    "Ray",
+    "Secondary wavelet",
+    "Envelope"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A wavefront joins points of",
+      "options": [
+        "Equal amplitude only",
+        "Equal phase",
+        "Zero speed",
+        "Different frequencies"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A ray is",
+      "options": [
+        "Parallel to the wavefront",
+        "Perpendicular to the wavefront",
+        "A wavelet backward",
+        "The envelope of nothing"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The new wavefront is",
+      "options": [
+        "One secondary wavelet",
+        "The forward envelope of the wavelets",
+        "Always a circle around the source even after a mirror",
+        "The ray itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a slower medium the wavelets in a given time are",
+      "options": [
+        "Larger",
+        "Smaller",
+        "Unchanged",
+        "Backward only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A plane wavefront reaches a flat mirror. In a short time t the end that hit first has produced a wavelet of radius v t. Explain how the reflected wavefront is built.",
+      "steps": [
+        "Each point on the mirror becomes a source when the wavefront reaches it.",
+        "The end struck first has the largest reflected wavelet, radius v t.",
+        "The end just being struck has a wavelet of radius zero.",
+        "The reflected wavefront is the tangent envelope of these wavelets.",
+        "That envelope leaves at the same angle the incident wavefront arrived, which is the law of reflection."
+      ],
+      "answer": "The reflected wavefront is the forward envelope of the wavelets, at the mirror angle."
+    }
+  ]
+}

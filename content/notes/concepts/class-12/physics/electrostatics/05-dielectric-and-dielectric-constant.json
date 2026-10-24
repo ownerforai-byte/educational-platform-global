@@ -7,14 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Dielectric and dielectric constant — Electrostatics, Physics (class-12-notes).",
-    "**Tested.** define it · list: dielectric, dielectric constant · one worked example · one misconception each.",
-    "**Dielectric constant.** one-line definition + one-line exam use."
+    "A dielectric is an insulating material. Its molecules polarise in an electric field, so a thin layer of bound charge appears on the surfaces.",
+    "The dielectric constant K, also called the relative permittivity, is the factor by which the capacitance of a vacuum capacitor increases when the dielectric fills it: C = K C_0. For vacuum, K = 1. For water and many insulators, K is greater than 1.",
+    "With the charge on the plates held fixed, the polarisation opposes the field, so the net field and the potential difference fall. Since C = Q/V, a smaller V means a larger C.",
+    "The force between two charges in a uniform medium is the vacuum force divided by K. The medium does not remove the charges. It reduces the force.",
+    "A dielectric lets the capacitor be used at a higher voltage before sparking, up to the dielectric strength. That is a separate limit from the value of K.",
+    "If the capacitor stays connected to a battery, V is fixed and inserting the dielectric increases Q. If it is disconnected, Q is fixed and V falls. The two experiments are different."
   ],
   "confusion": [
-    "❌ treat \"Dielectric\" as one blob → ✅ split into: dielectric, dielectric constant.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "K is not less than 1 for ordinary materials.",
+    "Battery connected and battery disconnected give different changes.",
+    "Bound charge is not free charge from the battery.",
+    "Dielectric strength is a breakdown field, not the same number as K."
   ],
   "bounds": [
     "Covers only: dielectric, dielectric constant (within Electrostatics).",
@@ -22,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: dielectric, dielectric constant.",
-    "one worked example for \"Dielectric and dielectric constant\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write C = K C_0 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Dielectric and dielectric constant\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Dielectric and dielectric constant\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "C = K C_0",
+    "F_medium = F_vacuum / K"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "A dielectric is an insulating material. Its molecules polarise in an electric field, so a thin layer of bound charge appears on the surfaces.",
+    "The dielectric constant K, also called the relative permittivity, is the factor by which the capacitance of a vacuum capacitor increases when the dielectric fills it: C = K C_0. For vacuum, K = 1. For water and many insulators, K is greater than 1.",
+    "A vacuum capacitor has C_0 = 2.0 μF. A dielectric of K = 4 fills it. The capacitor is isolated with charge fixed. Find the new capacitance and say what happens to the potential difference."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Dielectric and dielectric constant\" with one example.",
-    "compare \"Dielectric\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Dielectric and dielectric constant\" and verify the answer is plausible."
+    "What is K?",
+    "What happens to V if Q is fixed and a dielectric is inserted?",
+    "What happens to the force between charges in a medium?"
   ],
   "formulas": [
-    "Governing equation for \"Dielectric and dielectric constant\" — state with units, then use in one numerical."
+    "Governing equation for \"Dielectric and dielectric constant\" — state with units, then use in one numerical.",
+    "C = K C_0",
+    "F_medium = F_vacuum / K"
   ],
   "numericals": [
     "Set up the defining equation for \"Dielectric and dielectric constant\", substitute simple values, and compute the result with units.",
@@ -46,19 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Dielectric",
-    "• Dielectric constant"
+    "A dielectric is an insulator.",
+    "K is greater than 1.",
+    "It increases capacitance.",
+    "It reduces the field inside, for a given free charge."
   ],
-  "summary": "Dielectric and dielectric constant (Electrostatics, Physics, class-12-notes) covers Dielectric, dielectric constant. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "A dielectric polarises and has K greater than 1. It multiplies the capacitance by K. With free charge fixed, the potential difference falls. With the battery connected, the potential stays and the charge rises. The Coulomb force in the medium is the vacuum force divided by K.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Dielectric and dielectric constant\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Filling a capacitor with dielectric multiplies C by",
       "options": [
-        "True",
-        "False"
+        "1/K",
+        "K",
+        "Zero",
+        "The plate area only"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "For vacuum K is",
+      "options": [
+        "0",
+        "1",
+        "Infinite",
+        "Negative"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "With Q fixed, inserting a dielectric",
+      "options": [
+        "Raises V",
+        "Lowers V",
+        "Removes the plates",
+        "Sets K to 0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The force between charges in a medium is",
+      "options": [
+        "The vacuum force times K",
+        "The vacuum force divided by K",
+        "Zero",
+        "Independent of distance"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "A dielectric is an insulating material. Its molecules polarise in an electric field, so a thin layer of bound charge appears on the surfaces.",
+    "The dielectric constant K, also called the relative permittivity, is the factor by which the capacitance of a vacuum capacitor increases when the dielectric fills it: C = K C_0. For vacuum, K = 1. For water and many insulators, K is greater than 1.",
+    "With the charge on the plates held fixed, the polarisation opposes the field, so the net field and the potential difference fall. Since C = Q/V, a smaller V means a larger C."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "C = K C_0.",
+    "Fixed Q: V falls. Fixed V: Q rises."
+  ],
+  "specialNotes": [
+    "K = 1 for vacuum.",
+    "The dielectric must fill the gap in the simple formula."
+  ],
+  "importantNotes": [
+    "Say whether the battery stays connected.",
+    "K has no unit."
+  ],
+  "importantConcepts": [
+    "Dielectric constant",
+    "Polarisation",
+    "Capacitance increase",
+    "Fixed Q or fixed V"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Filling a capacitor with dielectric multiplies C by",
+      "options": [
+        "1/K",
+        "K",
+        "Zero",
+        "The plate area only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For vacuum K is",
+      "options": [
+        "0",
+        "1",
+        "Infinite",
+        "Negative"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "With Q fixed, inserting a dielectric",
+      "options": [
+        "Raises V",
+        "Lowers V",
+        "Removes the plates",
+        "Sets K to 0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The force between charges in a medium is",
+      "options": [
+        "The vacuum force times K",
+        "The vacuum force divided by K",
+        "Zero",
+        "Independent of distance"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A vacuum capacitor has C_0 = 2.0 μF. A dielectric of K = 4 fills it. The capacitor is isolated with charge fixed. Find the new capacitance and say what happens to the potential difference.",
+      "steps": [
+        "C = K C_0 = 4 × 2.0 = 8.0 μF.",
+        "Q is fixed because the capacitor is isolated.",
+        "V = Q/C, and C has increased, so V falls to one quarter.",
+        "The field inside falls for the same reason.",
+        "If the battery had stayed connected, V would have stayed the same and Q would have risen."
+      ],
+      "answer": "8.0 μF, and the potential difference falls to one quarter."
     }
   ]
 }

@@ -1,0 +1,195 @@
+{
+  "title": "Energy stored in a capacitor",
+  "unitSlug": "electrostatics",
+  "topicSlug": "energy-stored-in-a-capacitor",
+  "topicTitle": "Energy stored in a capacitor",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Charging a capacitor means moving charge from one plate to the other against a rising potential difference. The work done is the energy stored.",
+    "At an intermediate charge q the voltage is q/C, so the next bit of charge dq costs (q/C) dq. Integrating from 0 to Q gives U = Q^2 / (2C). With Q = C V this is also (1/2) C V^2 and (1/2) Q V.",
+    "The factor one half appears because the voltage starts at zero and ends at V. The average voltage during charging is V/2, and charge Q times that average is (1/2) Q V.",
+    "A battery at constant V supplies energy Q V, which is C V^2. The capacitor stores only half of that. The other half is dissipated as heat in the resistance of the connecting wires during the charging current.",
+    "The stored energy can be written as a density in the field, (1/2) ε0 E^2 in vacuum. The energy is between the plates, in the field, not inside the metal of the plates.",
+    "If an isolated capacitor has its plates pulled apart, Q is fixed, C falls and the stored energy rises. The extra energy is the work you do against the attraction of the plates."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)..",
+    "The battery energy is not all stored.",
+    "The one-half is required.",
+    "Energy is in the field, not in the metal.",
+    "Fixed Q and fixed V change the energy in opposite ways when C changes."
+  ],
+  "bounds": [
+    "Covers only: energy stored in a capacitor (within Electrostatics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)."
+  ],
+  "practice": [
+    "Write U = (1/2) C V^2 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).",
+    "Energy stored U = ½CV² = Q²/2C.",
+    "Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+  ],
+  "examples": [
+    "Charging a capacitor means moving charge from one plate to the other against a rising potential difference. The work done is the energy stored.",
+    "At an intermediate charge q the voltage is q/C, so the next bit of charge dq costs (q/C) dq. Integrating from 0 to Q gives U = Q^2 / (2C). With Q = C V this is also (1/2) C V^2 and (1/2) Q V.",
+    "A 5.0 μF capacitor is charged to 200 V by a battery. Find the stored energy and the energy supplied by the battery."
+  ],
+  "practiceQuestions": [
+    "Write the three expressions for U.",
+    "Why is there a factor of one half?",
+    "How much of the battery's energy is stored?"
+  ],
+  "formulas": [
+    "C = Q/V",
+    "C = ε₀A/d",
+    "U = ½CV²"
+  ],
+  "numericals": [
+    "A 5.0 μF capacitor is charged to 200 V by a battery. Find the stored energy and the energy supplied by the battery."
+  ],
+  "keyPoints": [
+    "Energy is the work of charging.",
+    "The factor 1/2 is the average voltage.",
+    "The battery supplies twice the stored energy.",
+    "The energy sits in the field."
+  ],
+  "summary": "The energy in a capacitor is (1/2) C V^2, which is also Q^2/(2C) and (1/2) Q V. The one half is the average of a voltage that grows from zero to V. The battery supplies twice this energy, and the other half becomes heat. The stored energy resides in the electric field.",
+  "mcqs": [
+    {
+      "question": "Stored energy is",
+      "options": [
+        "C V^2",
+        "(1/2) C V^2",
+        "Q V with no half",
+        "ε0 E"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The battery supplies",
+      "options": [
+        "The same energy the capacitor stores",
+        "Twice the stored energy",
+        "No energy",
+        "Half of U"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The factor 1/2 comes from",
+      "options": [
+        "The average voltage being V/2",
+        "A measuring error",
+        "The dielectric always",
+        "Series wiring"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The energy is located",
+      "options": [
+        "In the electric field",
+        "Inside the metal plates as the main store",
+        "In the battery after charging is over",
+        "Only in the wires"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Charging a capacitor means moving charge from one plate to the other against a rising potential difference. The work done is the energy stored.",
+    "At an intermediate charge q the voltage is q/C, so the next bit of charge dq costs (q/C) dq. Integrating from 0 to Q gives U = Q^2 / (2C). With Q = C V this is also (1/2) C V^2 and (1/2) Q V.",
+    "The factor one half appears because the voltage starts at zero and ends at V. The average voltage during charging is V/2, and charge Q times that average is (1/2) Q V."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "U = (1/2) C V^2.",
+    "Battery work is twice U."
+  ],
+  "specialNotes": [
+    "Average voltage during charging is V/2.",
+    "Energy density is (1/2) ε0 E^2."
+  ],
+  "importantNotes": [
+    "Say whether Q or V is held constant.",
+    "The missing half is heat, not a second capacitor."
+  ],
+  "importantConcepts": [
+    "Stored energy",
+    "Average voltage",
+    "Battery work",
+    "Field energy"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Stored energy is",
+      "options": [
+        "C V^2",
+        "(1/2) C V^2",
+        "Q V with no half",
+        "ε0 E"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The battery supplies",
+      "options": [
+        "The same energy the capacitor stores",
+        "Twice the stored energy",
+        "No energy",
+        "Half of U"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The factor 1/2 comes from",
+      "options": [
+        "The average voltage being V/2",
+        "A measuring error",
+        "The dielectric always",
+        "Series wiring"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The energy is located",
+      "options": [
+        "In the electric field",
+        "Inside the metal plates as the main store",
+        "In the battery after charging is over",
+        "Only in the wires"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 5.0 μF capacitor is charged to 200 V by a battery. Find the stored energy and the energy supplied by the battery.",
+      "steps": [
+        "U = (1/2) C V^2.",
+        "C = 5.0 × 10^−6 F and V^2 = 40000.",
+        "U = 0.5 × 5.0 × 10^−6 × 40000 = 0.10 J.",
+        "The battery supplies Q V = C V^2 = 0.20 J.",
+        "The other 0.10 J is dissipated as heat while the capacitor charges."
+      ],
+      "answer": "0.10 J stored, 0.20 J supplied by the battery."
+    }
+  ]
+}

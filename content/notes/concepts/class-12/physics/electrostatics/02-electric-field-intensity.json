@@ -5,14 +5,21 @@
   "topicTitle": "Electric Field Intensity",
   "relevance": 100,
   "notes": [
-    "**Electric Field Intensity:** This topic covers the fundamental concepts of electric field intensity in the physics curriculum.",
-    "Understanding electric field intensity is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to electric field intensity should be memorized and practiced regularly."
+    "The electric field intensity at a point is the force that a small positive test charge would feel there, divided by that test charge: E = F/q. The unit is N/C, or V/m.",
+    "The test charge must be small enough not to disturb the charges that produce the field. The field is a property of the place, not of the test charge.",
+    "A point charge Q produces E = k Q / r^2. The direction is outward if Q is positive and inward if Q is negative.",
+    "Field lines start on positive charge and end on negative charge. They do not cross, because the field at a point has one direction. Closer lines mean a stronger field.",
+    "The net field of several charges is the vector sum of the individual fields. On the perpendicular bisector of a dipole the fields are not along the same line, so components are required.",
+    "A uniform field, as between parallel plates, has the same vector everywhere in the central region. The force on a charge there is qE, constant in magnitude and direction."
   ],
   "confusion": [
     "❌ 'Electric field intensity is the force on a charge.' ✅ It is the *force per unit positive test charge* at a point: E = F/q₀.",
     "❌ 'Electric field lines represent the path of a particle.' ✅ They show the *direction* of the force on a positive charge; they don't necessarily represent the actual trajectory (except for stationary charges).",
-    "❌ 'Electric field is zero inside a conductor.' ✅ It is zero *inside the material of a static conductor*, but not necessarily inside a cavity within it or in non-static conditions."
+    "❌ 'Electric field is zero inside a conductor.' ✅ It is zero *inside the material of a static conductor*, but not necessarily inside a cavity within it or in non-static conditions.",
+    "E is not the force. Force is qE.",
+    "A negative charge feels a force opposite the field.",
+    "Field lines are not trajectories in every case.",
+    "You cannot add field magnitudes that point different ways."
   ],
   "practice": [
     "Solve at least 5 problems on electric field intensity from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "electrostatics",
   "motionGraphics": "electrostatics",
   "examples": [
-    "Example 1: Real-world application of Electric Field Intensity",
     "Example 2: Practical demonstration of Electric Field Intensity concepts",
     "Example 4: Diagram-based question on Electric Field Intensity",
     "Example 5: Application in daily life involving Electric Field Intensity"
@@ -61,11 +67,9 @@
     "Note 5: Electric Field Intensity frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Electric Field Intensity",
-    "Statement 2: Theorem related to Electric Field Intensity",
-    "Statement 3: Condition for Electric Field Intensity to be valid",
-    "Statement 4: Principle governing Electric Field Intensity",
-    "Statement 5: Corollary or consequence of Electric Field Intensity"
+    "The electric field intensity at a point is the force that a small positive test charge would feel there, divided by that test charge: E = F/q. The unit is N/C, or V/m.",
+    "The test charge must be small enough not to disturb the charges that produce the field. The field is a property of the place, not of the test charge.",
+    "A point charge Q produces E = k Q / r^2. The direction is outward if Q is positive and inward if Q is negative."
   ],
   "importantNotes": [
     "Note 1: Electric Field Intensity is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Electric Field Intensity",
     "Task 4: Practice previous year exam questions on Electric Field Intensity",
     "Task 5: Explain Electric Field Intensity to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "E is",
+      "options": [
+        "Force times charge",
+        "Force per unit positive charge",
+        "Always a scalar",
+        "The coulomb"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The field of a negative charge points",
+      "options": [
+        "Outward",
+        "Inward",
+        "In circles always",
+        "Nowhere"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The force on charge q is",
+      "options": [
+        "E/q",
+        "qE",
+        "q/E",
+        "Zero in every field"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Field lines",
+      "options": [
+        "Cross freely",
+        "Do not cross",
+        "Start on negative charge",
+        "Are equipotentials"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the field 0.20 m from a point charge of 2.0 μC. Use k = 9.0 × 10^9. State the direction if the charge is positive.",
+      "steps": [
+        "Q = 2.0 × 10^−6 C and r^2 = 0.040.",
+        "E = k Q / r^2 = 9.0 × 10^9 × 2.0 × 10^−6 / 0.040.",
+        "9e9 × 2e−6 = 1.8e4.",
+        "E = 18000 / 0.040 = 4.5 × 10^5 N/C.",
+        "The direction is away from the positive charge."
+      ],
+      "answer": "4.5 × 10^5 N/C, outward."
+    }
   ]
 }

@@ -9,12 +9,17 @@
     "**Resistance and resistivity.** R = ρL/A: resistance grows with length L and falls with area A; resistivity ρ (unit Ω·m) is a property of the material itself.",
     "**Temperature dependence.** For metals R_t = R_0(1 + αt) with α > 0; semiconductors have negative temperature coefficient as carrier density rises with heat.",
     "**Conductance and conductivity.** Conductance G = 1/R (siemens) and conductivity σ = 1/ρ; better conductors have large σ and small ρ.",
-    "**Limitations.** Ohm's law does not hold for diodes, electrolytes, superconductors or conductors at changing temperature — there V–I is not a straight line through the origin."
+    "**Limitations.** Ohm's law does not hold for diodes, electrolytes, superconductors or conductors at changing temperature — there V–I is not a straight line through the origin.",
+    "Resistance depends on the piece of wire: it is resistivity times length over area. Resistivity depends on the material. Stretching a wire makes it longer and thinner, so its resistance rises even if the resistivity does not."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in ohm's law and resistance.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on ohm's law and resistance from your textbook.",
@@ -30,19 +35,27 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "examples": [
-    "Real-world application of Ohm's Law and Resistance",
     "Practical demonstration of Ohm's Law and Resistance concepts",
     "Diagram-based question on Ohm's Law and Resistance",
     "Application in daily life involving Ohm's Law and Resistance"
   ],
   "practiceQuestions": [
+    "Q1. Define and explain Ohm's Law and Resistance with suitable example.",
     "Q2. Solve problems related to Ohm's Law and Resistance.",
     "Q3. Differentiate between various aspects of Ohm's Law and Resistance.",
     "Q4. Derive the key formula related to Ohm's Law and Resistance.",
     "Q5. What are the applications of Ohm's Law and Resistance?"
   ],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "Application formula for Ohm's Law and Resistance",
+    "Derivation result for Ohm's Law and Resistance"
+  ],
+  "keyPoints": [
+    "V = I R at constant temperature",
+    "R = ρ L / A",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Ohm's Law and Resistance is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Ohm's Law and Resistance applies",
@@ -51,8 +64,13 @@
     "Note 4: Remember the units and dimensions involved in Ohm's Law and Resistance",
     "Note 5: Ohm's Law and Resistance frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "Resistance depends on the piece of wire: it is resistivity times length over area. Resistivity depends on the material. Stretching a wire makes it longer and thinner, so its resistance rises even if the resistivity does not.",
+    "The working relations are V = I R at constant temperature and R = ρ L / A. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A wire has ρ = 1.5 × 10^−6 Ω m, length 2.0 m and area 1.0 × 10^−6 m^2. Find R, then the current at 12 V if the temperature is constant. R = ρ L / A = 1.5 × 10^−6 × 2.0 / 1.0 × 10^−6. R = 3.0 Ω."
+  ],
   "importantNotes": [
+    "Note 1: Ohm's Law and Resistance is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Ohm's Law and Resistance",
     "Note 3: Ohm's Law and Resistance has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Ohm's Law and Resistance",
@@ -126,5 +144,60 @@
     "Task 3: Create a concept map for Ohm's Law and Resistance",
     "Task 4: Practice previous year exam questions on Ohm's Law and Resistance",
     "Task 5: Explain Ohm's Law and Resistance to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "R equals",
+      "options": [
+        "ρ A / L",
+        "ρ L / A",
+        "L/A",
+        "V I"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Ohm's law needs",
+      "options": [
+        "A rising temperature",
+        "Constant temperature",
+        "A diode",
+        "Zero resistivity"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A longer wire of the same material and area has",
+      "options": [
+        "Less resistance",
+        "More resistance",
+        "The same resistance",
+        "No resistivity"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A thicker wire has",
+      "options": [
+        "More resistance",
+        "Less resistance",
+        "A larger resistivity",
+        "A smaller resistivity"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A wire has ρ = 1.5 × 10^−6 Ω m, length 2.0 m and area 1.0 × 10^−6 m^2. Find R, then the current at 12 V if the temperature is constant.",
+      "steps": [
+        "R = ρ L / A = 1.5 × 10^−6 × 2.0 / 1.0 × 10^−6.",
+        "R = 3.0 Ω.",
+        "The temperature is constant, so Ohm's law applies.",
+        "I = V/R = 12 / 3.0 = 4.0 A.",
+        "Power = V I = 48 W."
+      ],
+      "answer": "3.0 Ω and 4.0 A."
+    }
   ]
 }

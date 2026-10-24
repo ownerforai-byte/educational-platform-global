@@ -5,14 +5,21 @@
   "topicTitle": "Ohm's Law",
   "relevance": 100,
   "notes": [
-    "**Ohm's Law:** This topic covers the fundamental concepts of ohm's law in the physics curriculum.",
-    "Understanding ohm's law is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to ohm's law should be memorized and practiced regularly."
+    "Ohm's law says that the current through a metallic conductor is proportional to the potential difference across it, provided the temperature and other physical conditions stay constant. The constant of proportionality is 1/R.",
+    "The working form is V = IR. R is the resistance. A steeper I–V line means a smaller resistance if I is plotted vertically, because the slope is 1/R.",
+    "The law is empirical for ohmic materials. A filament lamp's resistance rises as it heats, so its I–V graph curves. A semiconductor diode conducts very differently in the two directions and is non-ohmic.",
+    "Resistivity ρ is the material property in R = ρL/A. Ohm's law can hold while R still changes if the piece is stretched, because L and A change.",
+    "The ohm is the resistance that passes 1 A when 1 V is applied. Power in a resistor is I^2 R, or V^2/R, or V I, and that power becomes heat.",
+    "A circuit calculation uses Ohm's law on each ohmic element after the currents have been chosen. It is not a law of the battery's internal chemistry."
   ],
   "confusion": [
     "❌ 'Ohm's Law applies to all conductors.' ✅ It is valid only for *ohmic conductors* (where V is proportional to I, like metallic resistors), not for non-ohmic devices like diodes or transistors.",
     "❌ 'Ohm's Law defines Resistance (R=V/I).' ✅ Resistance is a *property* of the conductor (geometry/material); Ohm's law states that *for some materials*, R remains constant regardless of V or I.",
-    "❌ 'V is always proportional to I.' ✅ This holds true only when *temperature and other physical conditions* are kept constant."
+    "❌ 'V is always proportional to I.' ✅ This holds true only when *temperature and other physical conditions* are kept constant.",
+    "Ohm's law is not true for every device.",
+    "The temperature condition is part of the statement.",
+    "Slope of I against V is 1/R, not R, in that plotting choice.",
+    "Resistivity and resistance are different."
   ],
   "practice": [
     "Solve at least 5 problems on ohm's law from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "current-electricity",
   "motionGraphics": "current-electricity",
   "examples": [
-    "Example 1: Real-world application of Ohm's Law",
     "Example 2: Practical demonstration of Ohm's Law concepts",
     "Example 4: Diagram-based question on Ohm's Law",
     "Example 5: Application in daily life involving Ohm's Law"
@@ -61,11 +67,9 @@
     "Note 5: Ohm's Law frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Ohm's Law",
-    "Statement 2: Theorem related to Ohm's Law",
-    "Statement 3: Condition for Ohm's Law to be valid",
-    "Statement 4: Principle governing Ohm's Law",
-    "Statement 5: Corollary or consequence of Ohm's Law"
+    "Ohm's law says that the current through a metallic conductor is proportional to the potential difference across it, provided the temperature and other physical conditions stay constant. The constant of proportionality is 1/R.",
+    "The working form is V = IR. R is the resistance. A steeper I–V line means a smaller resistance if I is plotted vertically, because the slope is 1/R.",
+    "The law is empirical for ohmic materials. A filament lamp's resistance rises as it heats, so its I–V graph curves. A semiconductor diode conducts very differently in the two directions and is non-ohmic."
   ],
   "importantNotes": [
     "Note 1: Ohm's Law is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Ohm's Law",
     "Task 4: Practice previous year exam questions on Ohm's Law",
     "Task 5: Explain Ohm's Law to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Ohm's law requires",
+      "options": [
+        "Changing temperature",
+        "Constant temperature",
+        "A diode",
+        "Alternating current only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "V = IR defines R as",
+      "options": [
+        "V times I",
+        "V/I",
+        "I/V",
+        "A current"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A semiconductor diode is",
+      "options": [
+        "Ohmic",
+        "Non-ohmic",
+        "A resistor of fixed R",
+        "A superconductor always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The SI unit of resistance is",
+      "options": [
+        "The volt",
+        "The ohm",
+        "The ampere",
+        "The watt"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 12 V battery is connected across a 4.0 Ω ohmic resistor at constant temperature. Find the current and the power.",
+      "steps": [
+        "V = IR, so I = V/R.",
+        "I = 12 / 4.0 = 3.0 A.",
+        "Power = I^2 R = 9.0 × 4.0 = 36 W.",
+        "The same power is V I = 12 × 3.0 = 36 W.",
+        "The resistor is ohmic, so the current is proportional to this voltage."
+      ],
+      "answer": "3.0 A and 36 W."
+    }
   ]
 }

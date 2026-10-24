@@ -1,43 +1,189 @@
 {
   "title": "Dimensions & Dimensional Formula",
-  "notes": [],
+  "notes": [
+    "The dimension of a quantity records which base quantities it contains and to what power. In mechanics the symbols are M for mass, L for length and T for time. The dimensional formula of speed is [L T^-1].",
+    "Force is mass times acceleration, and acceleration is length over time squared, so [F] = [M L T^-2]. Work and energy are force times distance, so [W] = [M L^2 T^-2]. Power is energy over time, so [P] = [M L^2 T^-3].",
+    "An equation can be right only if every term has the same dimensions. This is a necessary check, not a proof that the equation is the correct physical law. A missing numerical factor such as 1/2 is invisible to dimensions.",
+    "Angles in radians, strains, and coefficients that are pure ratios have dimension 1. They may be arguments of a sine or an exponential. A dimensioned quantity may not sit alone inside a sine.",
+    "The dimensional formula is written in square brackets. [v] = [M^0 L T^-1] says mass does not appear. Leaving out a zero power is allowed when the quantity is absent.",
+    "Changing the unit, from metres to centimetres, does not change the dimension. Dimensions and units are related, but they are not the same statement."
+  ],
   "examples": [
-    "Application of Dimensions & Dimensional Formula"
+    "The dimension of a quantity records which base quantities it contains and to what power. In mechanics the symbols are M for mass, L for length and T for time. The dimensional formula of speed is [L T^-1].",
+    "Force is mass times acceleration, and acceleration is length over time squared, so [F] = [M L T^-2]. Work and energy are force times distance, so [W] = [M L^2 T^-2]. Power is energy over time, so [P] = [M L^2 T^-3].",
+    "Show that the formula v^2 = u^2 + 2as is dimensionally homogeneous."
   ],
   "practiceQuestions": [
     "Q1. Define Dimensions & Dimensional Formula.",
-    "Q3. Problem on Dimensions & Dimensional Formula."
+    "Q3. Problem on Dimensions & Dimensional Formula.",
+    "Write the dimensions of force.",
+    "Why can dimensions miss a factor of 1/2?",
+    "What may be the argument of a trigonometric function?"
   ],
-  "formulas": [],
+  "formulas": [
+    "[v] = [L T^-1]",
+    "[F] = [M L T^-2]",
+    "[Energy] = [M L^2 T^-2]"
+  ],
   "keyPoints": [
-    "Application of Dimensions & Dimensional Formula",
-    "Connection of Dimensions & Dimensional Formula to other topics"
+    "Connection of Dimensions & Dimensional Formula to other topics",
+    "Dimensions track base quantities, not the size of the unit.",
+    "Use M, L and T for mechanics.",
+    "Both sides of an equation must match.",
+    "A pure number has dimension 1."
   ],
   "summary": "Dimensions & Dimensional Formula covers essential principles and applications.",
-  "specialNotes": [],
+  "specialNotes": [
+    "[g] = [L T^-2], the same as acceleration.",
+    "A spring constant k in F = kx has dimensions of force over length."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Dimensions & Dimensional Formula",
-    "Statement 2: Theorem related to Dimensions & Dimensional Formula",
-    "Statement 3: Condition for Dimensions & Dimensional Formula to be valid",
-    "Statement 4: Principle governing Dimensions & Dimensional Formula",
-    "Statement 5: Corollary or consequence of Dimensions & Dimensional Formula"
+    "The dimension of a quantity records which base quantities it contains and to what power. In mechanics the symbols are M for mass, L for length and T for time. The dimensional formula of speed is [L T^-1].",
+    "Force is mass times acceleration, and acceleration is length over time squared, so [F] = [M L T^-2]. Work and energy are force times distance, so [W] = [M L^2 T^-2]. Power is energy over time, so [P] = [M L^2 T^-3].",
+    "An equation can be right only if every term has the same dimensions. This is a necessary check, not a proof that the equation is the correct physical law. A missing numerical factor such as 1/2 is invisible to dimensions."
   ],
   "importantNotes": [
-    "Dimensions & Dimensional Formula is based on fundamental principles."
+    "Dimensions & Dimensional Formula is based on fundamental principles.",
+    "Write brackets around the dimensional formula.",
+    "Do not put a unit symbol inside the brackets. Put M, L and T."
   ],
   "examShortTricks": [
-    "Recall the formula for Dimensions & Dimensional Formula."
+    "Recall the formula for Dimensions & Dimensional Formula.",
+    "Check term by term, including the constant if it has units.",
+    "Energy and torque look the same in M, L, T."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "The dimensions of force are",
+      "options": [
+        "[M L T^-1]",
+        "[M L T^-2]",
+        "[M L^2 T^-2]",
+        "[L T^-2]"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Energy and torque",
+      "options": [
+        "Have different dimensions",
+        "Share [M L^2 T^-2]",
+        "Are both dimensionless",
+        "Have dimensions of speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A dimensional check can miss",
+      "options": [
+        "A wrong power of length",
+        "A pure number such as 1/2",
+        "A missing mass",
+        "A time in the denominator"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The argument of a sine must be",
+      "options": [
+        "A force",
+        "Dimensionless",
+        "A velocity",
+        "In metres"
+      ],
+      "answer": "B"
+    }
+  ],
   "importantConcepts": [
-    "Definition and significance of Dimensions & Dimensional Formula."
+    "Definition and significance of Dimensions & Dimensional Formula.",
+    "Dimensional formula",
+    "Homogeneity",
+    "Dimensionless argument",
+    "M, L, T"
   ],
-  "importantTasks": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Matching dimensions does not fix a factor of 2.",
+    "A degree Celsius interval is a temperature difference. A formula that needs kelvin must be given kelvin.",
+    "sin(x) is legal only when x is dimensionless.",
+    "Energy and torque share [M L^2 T^-2], so dimensions cannot tell them apart."
+  ],
+  "practice": [
+    "Write [v] = [L T^-1] and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "[v] = [L T^-1]",
+    "[F] = [M L T^-2]"
+  ],
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "The dimensions of force are",
+      "options": [
+        "[M L T^-1]",
+        "[M L T^-2]",
+        "[M L^2 T^-2]",
+        "[L T^-2]"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Energy and torque",
+      "options": [
+        "Have different dimensions",
+        "Share [M L^2 T^-2]",
+        "Are both dimensionless",
+        "Have dimensions of speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A dimensional check can miss",
+      "options": [
+        "A wrong power of length",
+        "A pure number such as 1/2",
+        "A missing mass",
+        "A time in the denominator"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The argument of a sine must be",
+      "options": [
+        "A force",
+        "Dimensionless",
+        "A velocity",
+        "In metres"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Show that the formula v^2 = u^2 + 2as is dimensionally homogeneous.",
+      "steps": [
+        "[v^2] = [L T^-1]^2 = [L^2 T^-2].",
+        "[u^2] has the same dimensions.",
+        "[a] = [L T^-2] and [s] = [L], so [2as] = [L T^-2][L] = [L^2 T^-2].",
+        "The factor 2 is a pure number and adds no dimension.",
+        "Every term is [L^2 T^-2], so the equation is homogeneous."
+      ],
+      "answer": "Each term has dimensions [L^2 T^-2]."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "physical-quantities",
+  "topicSlug": "02-dimensions-and-dimensional-formula",
+  "topicTitle": "Dimensions & Dimensional Formula"
 }

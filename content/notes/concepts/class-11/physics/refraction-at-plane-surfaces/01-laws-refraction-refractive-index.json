@@ -9,12 +9,17 @@
     "**Snell's law.** For a ray crossing the boundary, n₁ sin i = n₂ sin r, with the incident ray, refracted ray and normal all in one plane and sin i/sin r constant for the pair of media.",
     "**Refractive index.** The absolute index of a medium is n = c/v; the relative index of medium 2 w.r.t. 1 is n₂₁ = v₁/v₂ = sin i/sin r = 1/n₁₂.",
     "**Apparent depth.** Viewed normally, a depth t appears as t/n; the normal shift is t(1 − 1/n) — the standard numerical on river depth and pooled objects.",
-    "**Dispersion's origin.** Because v depends on wavelength, n_violet > n_red; white light refracting at a surface separates colour — the seed of the prism spectrum."
+    "**Dispersion's origin.** Because v depends on wavelength, n_violet > n_red; white light refracting at a surface separates colour — the seed of the prism spectrum.",
+    "Refraction bends a ray toward the normal when it enters a slower medium. The index is the vacuum speed divided by the speed in the medium, and Snell's law uses that index. Frequency stays the same, so a higher index means a shorter wavelength."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in laws of refraction.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on laws of refraction from your textbook.",
@@ -30,7 +35,6 @@
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces",
   "examples": [
-    "Real-world application of Laws of Refraction",
     "Practical demonstration of Laws of Refraction concepts",
     "Diagram-based question on Laws of Refraction",
     "Application in daily life involving Laws of Refraction"
@@ -46,7 +50,12 @@
     "Application formula for Laws of Refraction",
     "Derivation result for Laws of Refraction"
   ],
-  "keyPoints": [],
+  "keyPoints": [
+    "n1 sin i = n2 sin r",
+    "n = c / v",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Laws of Refraction is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Laws of Refraction applies",
@@ -56,11 +65,9 @@
     "Note 5: Laws of Refraction frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Laws of Refraction",
-    "Statement 2: Theorem related to Laws of Refraction",
-    "Statement 3: Condition for Laws of Refraction to be valid",
-    "Statement 4: Principle governing Laws of Refraction",
-    "Statement 5: Corollary or consequence of Laws of Refraction"
+    "Refraction bends a ray toward the normal when it enters a slower medium. The index is the vacuum speed divided by the speed in the medium, and Snell's law uses that index. Frequency stays the same, so a higher index means a shorter wavelength.",
+    "The working relations are n1 sin i = n2 sin r and n = c / v. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A ray in air meets glass of index 1.50 at 45° to the normal. Find sin r. n1 sin i = n2 sin r, with n1 = 1. sin 45° = 0.707."
   ],
   "importantNotes": [
     "Note 1: Laws of Refraction is based on fundamental principles",
@@ -137,5 +144,60 @@
     "Task 3: Create a concept map for Laws of Refraction",
     "Task 4: Practice previous year exam questions on Laws of Refraction",
     "Task 5: Explain Laws of Refraction to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Entering glass, a ray bends",
+      "options": [
+        "Toward the normal",
+        "Away from the normal",
+        "Through 90° always",
+        "Not at all"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Refractive index is",
+      "options": [
+        "c/v",
+        "v/c",
+        "sin i",
+        "The frequency"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the boundary the frequency",
+      "options": [
+        "Falls",
+        "Stays the same",
+        "Becomes n",
+        "Doubles"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Snell's law is",
+      "options": [
+        "n1 sin i = n2 sin r",
+        "i = r",
+        "n = sin i",
+        "v = f/n only as a definition of speed"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A ray in air meets glass of index 1.50 at 45° to the normal. Find sin r.",
+      "steps": [
+        "n1 sin i = n2 sin r, with n1 = 1.",
+        "sin 45° = 0.707.",
+        "sin r = 0.707 / 1.50 = 0.471.",
+        "r is about 28°.",
+        "The ray bends toward the normal, and the frequency is unchanged."
+      ],
+      "answer": "sin r = 0.471, so r is about 28°."
+    }
   ]
 }

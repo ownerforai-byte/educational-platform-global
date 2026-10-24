@@ -5,14 +5,21 @@
   "topicTitle": "Magnetic Force on Moving Charges",
   "relevance": 100,
   "notes": [
-    "**Magnetic Force on Moving Charges:** This topic covers the fundamental concepts of magnetic force on moving charges in the physics curriculum.",
-    "Understanding magnetic force on moving charges is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to magnetic force on moving charges should be memorized and practiced regularly."
+    "A charge moving in a magnetic field feels F = q v B sinθ, where θ is the angle between the velocity and the field. The force is zero if the charge is at rest or if it moves parallel to the field.",
+    "The direction is perpendicular to both v and B. For a positive charge the right-hand rule gives it. A negative charge feels the opposite force.",
+    "Because the force is always perpendicular to the velocity, it does no work and does not change the speed. It changes only the direction.",
+    "In a uniform field, motion perpendicular to the field is a circle of radius m v /(q B). Motion with a component along the field is a helix.",
+    "Combined electric and magnetic forces are the Lorentz force, qE + q v B in vector form. A velocity selector sets the two forces opposite and equal so that qE = q v B.",
+    "The tesla is the field that exerts 1 N on a charge of 1 C moving at 1 m/s perpendicular to the field."
   ],
   "confusion": [
     "❌ 'A magnetic force can do work on a charged particle.' ✅ Magnetic force is always *perpendicular* to velocity, so it does *zero work*; it changes direction, not speed.",
     "❌ 'A stationary charge experiences magnetic force.' ✅ The particle *must be moving* (v ≠ 0) and not parallel to B; a stationary charge feels no magnetic force.",
-    "❌ 'The force direction is given by the right-hand rule for negative charges too.' ✅ For *negative* charges (electrons), reverse the right-hand rule direction (or use left hand)."
+    "❌ 'The force direction is given by the right-hand rule for negative charges too.' ✅ For *negative* charges (electrons), reverse the right-hand rule direction (or use left hand).",
+    "A stationary charge feels electric force but not magnetic force.",
+    "The magnetic force does not speed the charge up.",
+    "sinθ is not optional when the velocity is not perpendicular.",
+    "Negative charges reverse the rule."
   ],
   "practice": [
     "Solve at least 5 problems on magnetic force on moving charges from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "magnetism",
   "motionGraphics": "magnetism",
   "examples": [
-    "Example 1: Real-world application of Magnetic Force on Moving Charges",
     "Example 2: Practical demonstration of Magnetic Force on Moving Charges concepts",
     "Example 4: Diagram-based question on Magnetic Force on Moving Charges",
     "Example 5: Application in daily life involving Magnetic Force on Moving Charges"
@@ -61,11 +67,9 @@
     "Note 5: Magnetic Force on Moving Charges frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Magnetic Force on Moving Charges",
-    "Statement 2: Theorem related to Magnetic Force on Moving Charges",
-    "Statement 3: Condition for Magnetic Force on Moving Charges to be valid",
-    "Statement 4: Principle governing Magnetic Force on Moving Charges",
-    "Statement 5: Corollary or consequence of Magnetic Force on Moving Charges"
+    "A charge moving in a magnetic field feels F = q v B sinθ, where θ is the angle between the velocity and the field. The force is zero if the charge is at rest or if it moves parallel to the field.",
+    "The direction is perpendicular to both v and B. For a positive charge the right-hand rule gives it. A negative charge feels the opposite force.",
+    "Because the force is always perpendicular to the velocity, it does no work and does not change the speed. It changes only the direction."
   ],
   "importantNotes": [
     "Note 1: Magnetic Force on Moving Charges is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Magnetic Force on Moving Charges",
     "Task 4: Practice previous year exam questions on Magnetic Force on Moving Charges",
     "Task 5: Explain Magnetic Force on Moving Charges to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "A charge at rest in a magnetic field feels",
+      "options": [
+        "q v B",
+        "No magnetic force",
+        "A force along B",
+        "Infinite force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The magnetic force changes",
+      "options": [
+        "The speed",
+        "The direction",
+        "The charge",
+        "The mass"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The radius is",
+      "options": [
+        "m v /(q B)",
+        "q B / m",
+        "v/B only",
+        "Zero for every speed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Motion parallel to B gives",
+      "options": [
+        "The largest force",
+        "Zero magnetic force",
+        "A circle",
+        "Work done by B"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A charge of 2.0 mC moves at 10 m/s perpendicular to a 0.50 T field. Find the force.",
+      "steps": [
+        "q = 2.0 × 10^−3 C, v = 10, B = 0.50, θ = 90° so sinθ = 1.",
+        "F = q v B = 2.0 × 10^−3 × 10 × 0.50.",
+        "F = 0.020 × 0.50 = 0.010 N.",
+        "The force is perpendicular to the velocity, so the speed does not change.",
+        "A negative charge of the same size would feel 0.010 N the other way."
+      ],
+      "answer": "0.010 N, perpendicular to the velocity."
+    }
   ]
 }

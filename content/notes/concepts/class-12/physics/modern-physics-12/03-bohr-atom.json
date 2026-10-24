@@ -5,14 +5,21 @@
   "topicTitle": "Bohr's Atom",
   "relevance": 100,
   "notes": [
-    "**Bohr's Atom:** This topic covers the fundamental concepts of bohr's atom in the physics curriculum.",
-    "Understanding bohr's atom is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to bohr's atom should be memorized and practiced regularly."
+    "Bohr kept the nuclear atom and added a quantum rule: the electron's angular momentum is n h / (2π), with n = 1, 2, 3, and so on. Only those orbits are allowed.",
+    "In those orbits the electron does not radiate, even though it is accelerating. Radiation happens only when the electron jumps from one allowed orbit to another.",
+    "The energy of hydrogen is E_n = −13.6 / n^2 electronvolts. The negative sign means the electron is bound. n = 1 is the ground state, the most tightly bound.",
+    "A jump from n2 down to n1 emits a photon with energy E_n2 − E_n1. The wavelength follows 1/λ = R (1/n1^2 − 1/n2^2), with R the Rydberg constant.",
+    "The Lyman series ends on n = 1 and is ultraviolet. Balmer ends on n = 2 and is the visible series. Paschen ends on n = 3 and is infrared.",
+    "Bohr's picture fails for atoms with many electrons and it has no wave reason for the quantum rule. It remains the right first model for hydrogen numbers."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in bohr's atom.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "The electron does not radiate in an allowed orbit.",
+    "−13.6 eV is the ground state, not an emitted photon.",
+    "The larger jump gives the larger photon energy.",
+    "Lyman is not the visible series."
   ],
   "practice": [
     "Solve at least 5 problems on bohr's atom from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "modern-physics-12",
   "motionGraphics": "modern-physics-12",
   "examples": [
-    "Example 1: Real-world application of Bohr's Atom",
     "Example 2: Practical demonstration of Bohr's Atom concepts",
     "Example 4: Diagram-based question on Bohr's Atom",
     "Example 5: Application in daily life involving Bohr's Atom"
@@ -61,11 +67,9 @@
     "Note 5: Bohr's Atom frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Bohr's Atom",
-    "Statement 2: Theorem related to Bohr's Atom",
-    "Statement 3: Condition for Bohr's Atom to be valid",
-    "Statement 4: Principle governing Bohr's Atom",
-    "Statement 5: Corollary or consequence of Bohr's Atom"
+    "Bohr kept the nuclear atom and added a quantum rule: the electron's angular momentum is n h / (2π), with n = 1, 2, 3, and so on. Only those orbits are allowed.",
+    "In those orbits the electron does not radiate, even though it is accelerating. Radiation happens only when the electron jumps from one allowed orbit to another.",
+    "The energy of hydrogen is E_n = −13.6 / n^2 electronvolts. The negative sign means the electron is bound. n = 1 is the ground state, the most tightly bound."
   ],
   "importantNotes": [
     "Note 1: Bohr's Atom is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Bohr's Atom",
     "Task 4: Practice previous year exam questions on Bohr's Atom",
     "Task 5: Explain Bohr's Atom to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Bohr's angular momentum is",
+      "options": [
+        "n h / (2π)",
+        "Any value",
+        "m v^2",
+        "13.6 n"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The hydrogen ground state is",
+      "options": [
+        "0 eV",
+        "−13.6 eV",
+        "+13.6 eV",
+        "−13.6 n^2"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Balmer series ends on",
+      "options": [
+        "n = 1",
+        "n = 2",
+        "n = 3",
+        "n = ∞ only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In an allowed orbit the electron",
+      "options": [
+        "Radiates continuously",
+        "Does not radiate",
+        "Has zero energy always",
+        "Leaves the atom"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A hydrogen electron falls from n = 2 to n = 1. Find the photon energy.",
+      "steps": [
+        "E2 = −13.6 / 4 = −3.40 eV.",
+        "E1 = −13.6 eV.",
+        "The photon energy is E2 − E1 = −3.40 − (−13.6) = 10.2 eV.",
+        "This is a Lyman line, because the lower level is n = 1.",
+        "The electron loses 10.2 eV and the photon carries that energy."
+      ],
+      "answer": "10.2 eV."
+    }
   ]
 }

@@ -9,12 +9,17 @@
     "**Cubical expansion.** A heated solid grows in volume as ΔV = V₀γt with γ = 3α — the cube relation follows because V = L³, so ΔV/V = 3ΔL/L.",
     "**Derivation.** From V = L³, differentiating gives dV/V = 3 dL/L; similarly dA/A = 2 dL/L — hence β : γ = 2 : 3 relative to α.",
     "**Holes and gaps.** A hole in a heated plate expands exactly as solid material would — the hole gets bigger, not smaller; railway gaps and bimetal strips exploit this.",
-    "**Numerical habit.** Convert every temperature rise to Δt, pick the right coefficient (α, β or γ), then apply Δ = initial × coefficient × Δt with consistent units."
+    "**Numerical habit.** Convert every temperature rise to Δt, pick the right coefficient (α, β or γ), then apply Δ = initial × coefficient × Δt with consistent units.",
+    "Linear expansion α is the fractional change in length per kelvin. An area, with two lengths, expands with β = 2α. A volume, with three lengths, expands with γ = 3α, if the solid is the same in every direction. A hole in a metal plate expands as if it were filled with the same metal."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in cubical and superficial expansion.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on cubical and superficial expansion from your textbook.",
@@ -30,7 +35,6 @@
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
   "examples": [
-    "Real-world application of Cubical and Superficial Expansion",
     "Practical demonstration of Cubical and Superficial Expansion concepts",
     "Diagram-based question on Cubical and Superficial Expansion",
     "Application in daily life involving Cubical and Superficial Expansion"
@@ -46,7 +50,12 @@
     "Application formula for Cubical and Superficial Expansion",
     "Derivation result for Cubical and Superficial Expansion"
   ],
-  "keyPoints": [],
+  "keyPoints": [
+    "γ = 3α for an isotropic solid",
+    "Superficial expansion β = 2α",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Cubical and Superficial Expansion is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Cubical and Superficial Expansion applies",
@@ -56,11 +65,9 @@
     "Note 5: Cubical and Superficial Expansion frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Cubical and Superficial Expansion",
-    "Statement 2: Theorem related to Cubical and Superficial Expansion",
-    "Statement 3: Condition for Cubical and Superficial Expansion to be valid",
-    "Statement 4: Principle governing Cubical and Superficial Expansion",
-    "Statement 5: Corollary or consequence of Cubical and Superficial Expansion"
+    "Linear expansion α is the fractional change in length per kelvin. An area, with two lengths, expands with β = 2α. A volume, with three lengths, expands with γ = 3α, if the solid is the same in every direction. A hole in a metal plate expands as if it were filled with the same metal.",
+    "The working relations are γ = 3α for an isotropic solid and Superficial expansion β = 2α. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A metal has α = 1.2 × 10^−5 per kelvin. Find β and γ. β = 2α = 2.4 × 10^−5 per kelvin. γ = 3α = 3.6 × 10^−5 per kelvin."
   ],
   "importantNotes": [
     "Note 1: Cubical and Superficial Expansion is based on fundamental principles",
@@ -137,5 +144,60 @@
     "Task 3: Create a concept map for Cubical and Superficial Expansion",
     "Task 4: Practice previous year exam questions on Cubical and Superficial Expansion",
     "Task 5: Explain Cubical and Superficial Expansion to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "For an isotropic solid, γ equals",
+      "options": [
+        "α",
+        "2α",
+        "3α",
+        "α/3"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Superficial expansion is",
+      "options": [
+        "2α",
+        "3α",
+        "α",
+        "α^2"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A hole in a heated plate",
+      "options": [
+        "Shrinks",
+        "Expands as the metal does",
+        "Stays exactly the same size",
+        "Depends on the colour"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "α is",
+      "options": [
+        "Fractional length change per kelvin",
+        "A volume",
+        "A force",
+        "The index"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A metal has α = 1.2 × 10^−5 per kelvin. Find β and γ.",
+      "steps": [
+        "β = 2α = 2.4 × 10^−5 per kelvin.",
+        "γ = 3α = 3.6 × 10^−5 per kelvin.",
+        "These hold for an isotropic solid.",
+        "A 1.00 m edge becomes longer by α ΔT, not by γ ΔT.",
+        "The volume fraction is γ ΔT."
+      ],
+      "answer": "β = 2.4 × 10^−5 /K and γ = 3.6 × 10^−5 /K."
+    }
   ]
 }

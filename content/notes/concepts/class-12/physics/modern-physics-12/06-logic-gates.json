@@ -5,14 +5,21 @@
   "topicTitle": "Logic Gates",
   "relevance": 100,
   "notes": [
-    "**Logic Gates:** This topic covers the fundamental concepts of logic gates in the physics curriculum.",
-    "Understanding logic gates is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to logic gates should be memorized and practiced regularly."
+    "A logic gate takes binary inputs, called 1 and 0, and gives a binary output. In a circuit, 1 is a higher voltage and 0 is a lower voltage. The exact voltages depend on the family of chips.",
+    "The AND gate outputs 1 only when every input is 1. The OR gate outputs 1 when at least one input is 1. The NOT gate has one input and outputs the opposite.",
+    "NAND is AND followed by NOT. It outputs 0 only when every input is 1. NOR is OR followed by NOT. It outputs 1 only when every input is 0.",
+    "NAND alone can build AND, OR and NOT. NOR alone can do the same. They are called universal gates.",
+    "A truth table lists every input combination. Two inputs give four rows: 00, 01, 10 and 11. Writing the output for each row is the whole definition of the gate.",
+    "Combinations make decisions: a NAND arrangement can add bits or store a bit in a latch. The exam usually stops at the truth table and a simple combination."
   ],
   "confusion": [
     "❌ Confusing NAND/NOR as universal gates ✅ NAND and NOR are universal gates because any logic gate (AND, OR, NOT) can be constructed solely using them.",
     "❌ Thinking logic levels are continuous ✅ Logic gates operate on discrete digital voltage levels (typically 0 or 1), not continuous analog signals.",
-    "❌ Misinterpreting Truth Tables for complex gates ✅ Truth tables must be evaluated step-by-step for complex gate combinations, not by guessing the output based on a single input."
+    "❌ Misinterpreting Truth Tables for complex gates ✅ Truth tables must be evaluated step-by-step for complex gate combinations, not by guessing the output based on a single input.",
+    "OR is not exclusive. It is also 1 when both inputs are 1.",
+    "NAND is not 'both zero'. It is the opposite of AND.",
+    "NOT has one input.",
+    "1 is a voltage band, not necessarily 1 volt."
   ],
   "practice": [
     "Solve at least 5 problems on logic gates from your textbook.",
@@ -31,7 +38,6 @@
   "animation3D": "modern-physics-12",
   "motionGraphics": "modern-physics-12",
   "examples": [
-    "Real-world application of Logic Gates",
     "Practical demonstration of Logic Gates concepts",
     "Diagram-based question on Logic Gates",
     "Application in daily life involving Logic Gates",
@@ -52,8 +58,10 @@
     "Governing equation for \"Logic gates — AND, OR, NOT, NAND, NOR\" — state with units, then use in one numerical."
   ],
   "keyPoints": [
-    "• Logic gates —",
-    "• NAND"
+    "A gate is a circuit with a truth table.",
+    "AND, OR and NOT are the basic three.",
+    "NAND and NOR are universal.",
+    "1 and 0 are voltage levels, not the numbers of the arithmetic lesson."
   ],
   "summary": "Logic Gates is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -64,11 +72,9 @@
     "Note 5: Logic Gates frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Logic Gates",
-    "Statement 2: Theorem related to Logic Gates",
-    "Statement 3: Condition for Logic Gates to be valid",
-    "Statement 4: Principle governing Logic Gates",
-    "Statement 5: Corollary or consequence of Logic Gates"
+    "A logic gate takes binary inputs, called 1 and 0, and gives a binary output. In a circuit, 1 is a higher voltage and 0 is a lower voltage. The exact voltages depend on the family of chips.",
+    "The AND gate outputs 1 only when every input is 1. The OR gate outputs 1 when at least one input is 1. The NOT gate has one input and outputs the opposite.",
+    "NAND is AND followed by NOT. It outputs 0 only when every input is 1. NOR is OR followed by NOT. It outputs 1 only when every input is 0."
   ],
   "importantNotes": [
     "Note 1: Logic Gates is based on fundamental principles",
@@ -153,13 +159,44 @@
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"Logic gates — AND, OR, NOT, NAND, NOR\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "AND outputs 1 when",
       "options": [
-        "True",
-        "False"
+        "Either input is 1",
+        "Both inputs are 1",
+        "Both are 0",
+        "The inputs differ"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "OR with inputs 1 and 1 outputs",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Undefined"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "NOT changes 0 to",
+      "options": [
+        "0",
+        "1",
+        "10",
+        "AND"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A universal gate is",
+      "options": [
+        "AND only",
+        "NAND",
+        "A resistor",
+        "NOT only, with no way to build the others by itself in this syllabus's claim for NAND"
+      ],
+      "answer": "B"
     }
   ],
   "source": "generated",
@@ -168,5 +205,18 @@
     "Covers only: logic gates —, nand (within Modern Physics).",
     "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "exercises": [
+    {
+      "question": "Write the four outputs of a NAND gate for inputs 00, 01, 10 and 11.",
+      "steps": [
+        "NAND is the opposite of AND.",
+        "00: AND would be 0, so NAND is 1.",
+        "01: AND is 0, so NAND is 1.",
+        "10: AND is 0, so NAND is 1.",
+        "11: AND is 1, so NAND is 0."
+      ],
+      "answer": "1, 1, 1, 0."
+    }
   ]
 }

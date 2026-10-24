@@ -1,0 +1,188 @@
+{
+  "title": "Newton's Law of Cooling — Identical Cooling Conditions",
+  "notes": [
+    "Two liquids can be used to compare specific heats by cooling them in the same way. Identical conditions mean the same container shape, the same surface, the same room temperature, and the same temperature interval.",
+    "Under those conditions the surface factor K is the same for both, and the excess temperature follows the same history. The time spent in that interval then depends on the heat capacity.",
+    "From dθ/dt = −(K/mc) (θ − θ0), the time to pass between two temperatures is proportional to mc when K and the temperature limits are the same.",
+    "Therefore m1 c1 / t1 = m2 c2 / t2. The liquid that takes longer to cool through the same interval has the larger heat capacity.",
+    "If the containers differ, K differs and the times cannot be compared by this relation. If the intervals differ, the excess temperatures differ and the relation again fails.",
+    "The calorimeter itself has a heat capacity. A careful comparison uses the same calorimeter and includes its water equivalent on both sides, or uses masses large enough that the question says to neglect it."
+  ],
+  "examples": [
+    "Two liquids can be used to compare specific heats by cooling them in the same way. Identical conditions mean the same container shape, the same surface, the same room temperature, and the same temperature interval.",
+    "Under those conditions the surface factor K is the same for both, and the excess temperature follows the same history. The time spent in that interval then depends on the heat capacity.",
+    "Liquid A, mass 0.20 kg, cools from 70°C to 60°C in 4.0 min. Liquid B, mass 0.10 kg, takes 3.0 min for the same interval in the same cup. Find c_B / c_A."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Newton's Law of Cooling — Identical Cooling Conditions.",
+    "Q3. Problem on Newton's Law of Cooling — Identical Cooling Conditions.",
+    "What must be the same before m1 c1 / t1 = m2 c2 / t2?",
+    "Which liquid takes longer?",
+    "Why include the calorimeter?"
+  ],
+  "formulas": [
+    "(mc / t) proportional to the mean excess, under the same K",
+    "Same K and same interval: m1 c1 / t1 = m2 c2 / t2"
+  ],
+  "keyPoints": [
+    "Connection of Newton's Law of Cooling — Identical Cooling Conditions to other topics",
+    "Same surface area and same surface nature.",
+    "Same surrounding temperature.",
+    "Compare over the same temperature interval.",
+    "Then m1 c1 / t1 = m2 c2 / t2."
+  ],
+  "summary": "Newton's Law of Cooling — Identical Cooling Conditions covers essential principles and applications.",
+  "specialNotes": [
+    "Water equivalent W lets you write the calorimeter as an extra mass of water.",
+    "Do not compare a covered cup with an open one."
+  ],
+  "importantStatements": [
+    "Two liquids can be used to compare specific heats by cooling them in the same way. Identical conditions mean the same container shape, the same surface, the same room temperature, and the same temperature interval.",
+    "Under those conditions the surface factor K is the same for both, and the excess temperature follows the same history. The time spent in that interval then depends on the heat capacity.",
+    "From dθ/dt = −(K/mc) (θ − θ0), the time to pass between two temperatures is proportional to mc when K and the temperature limits are the same."
+  ],
+  "importantNotes": [
+    "Newton's Law of Cooling — Identical Cooling Conditions is based on fundamental principles.",
+    "Write the temperature interval in the answer's conditions.",
+    "K cancels only when it is actually the same."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Newton's Law of Cooling — Identical Cooling Conditions.",
+    "Same cup, same interval, same room.",
+    "Larger mc means a longer time."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "m1 c1 / t1 = m2 c2 / t2 requires",
+      "options": [
+        "Different rooms",
+        "The same K and the same temperature interval",
+        "Equal masses always",
+        "Boiling both liquids"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If c is larger and m and the interval are unchanged, the cooling time",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Is zero",
+        "Becomes independent of K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Different container surfaces mainly change",
+      "options": [
+        "The value of K",
+        "The definition of temperature",
+        "The mole",
+        "The sign of g"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "After a very long time both liquids reach",
+      "options": [
+        "Their initial temperatures",
+        "The surrounding temperature",
+        "Zero kelvin in this law",
+        "A temperature that depends on colour only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Newton's Law of Cooling — Identical Cooling Conditions.",
+    "Identical cooling",
+    "Comparison of specific heats",
+    "Same temperature interval",
+    "Water equivalent"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Same room is not enough if the cups have different surfaces.",
+    "Equal times do not mean equal specific heats unless the masses and the intervals match.",
+    "The law compares rates, not the final temperatures after an unlimited wait. Both end at room temperature.",
+    "A lid or a fan changes K."
+  ],
+  "practice": [
+    "Write (mc / t) proportional to the mean excess, under the same K and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "(mc / t) proportional to the mean excess, under the same K",
+    "Same K and same interval: m1 c1 / t1 = m2 c2 / t2"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "m1 c1 / t1 = m2 c2 / t2 requires",
+      "options": [
+        "Different rooms",
+        "The same K and the same temperature interval",
+        "Equal masses always",
+        "Boiling both liquids"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If c is larger and m and the interval are unchanged, the cooling time",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Is zero",
+        "Becomes independent of K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Different container surfaces mainly change",
+      "options": [
+        "The value of K",
+        "The definition of temperature",
+        "The mole",
+        "The sign of g"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "After a very long time both liquids reach",
+      "options": [
+        "Their initial temperatures",
+        "The surrounding temperature",
+        "Zero kelvin in this law",
+        "A temperature that depends on colour only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Liquid A, mass 0.20 kg, cools from 70°C to 60°C in 4.0 min. Liquid B, mass 0.10 kg, takes 3.0 min for the same interval in the same cup. Find c_B / c_A.",
+      "steps": [
+        "The cup, the room and the interval match, so m c / t is the same for both.",
+        "m_A c_A / t_A = m_B c_B / t_B.",
+        "0.20 c_A / 4.0 = 0.10 c_B / 3.0.",
+        "0.050 c_A = 0.0333 c_B.",
+        "c_B / c_A = 0.050 / (0.10/3.0) = 0.050 × 30 = 1.5."
+      ],
+      "answer": "c_B / c_A = 1.5."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "08-newtons-law-identical-cooling-conditions",
+  "topicTitle": "Newton's Law of Cooling — Identical Cooling Conditions"
+}

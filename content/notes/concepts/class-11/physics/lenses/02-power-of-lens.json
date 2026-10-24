@@ -9,11 +9,16 @@
     "Worked example: f=+25 cm=+0.25 m gives P=+4 D. A diverging lens with f=−50 cm=−0.50 m has P=−2 D.",
     "Thin lenses in contact have additive powers. A +4 D lens and −1.5 D lens make Peq=+2.5 D, so feq=1/2.5=0.40 m.",
     "Power is not magnification: focal length determines power, while image size and orientation also depend on object distance through the lens equation.",
-    "For separated lenses the equivalent power includes separation; the simple algebraic sum applies only when thin lenses are in contact or separation is negligible."
+    "For separated lenses the equivalent power includes separation; the simple algebraic sum applies only when thin lenses are in contact or separation is negligible.",
+    "The power of a lens is the reciprocal of its focal length in metres. Opticians add powers because two thin lenses in contact really do add. A +2.0 D lens and a −0.50 D lens in contact give +1.5 D, a weaker converging pair."
   ],
   "confusion": [
     "Using centimetres directly produces a power 100 times too large.",
-    "Separated or thick lens systems require an additional relation."
+    "Separated or thick lens systems require an additional relation.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find power for f=−40 cm.",
@@ -29,7 +34,10 @@
   "motionGraphics": "lenses",
   "examples": [
     "f=+0.25 m gives +4 D; f=−0.50 m gives −2 D.",
-    "+4 D and −1.5 D in contact give +2.5 D, feq=0.40 m."
+    "+4 D and −1.5 D in contact give +2.5 D, feq=0.40 m.",
+    "The power of a lens is the reciprocal of its focal length in metres. Opticians add powers because two thin lenses in contact really do add. A +2.0 D lens and a −0.50 D lens in contact give +1.5 D, a weaker converging pair.",
+    "The working relations are P = 1/f with f in metres and Powers in contact add. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Find the focal length of a +1.5 D combination, and the focal length of the +2.0 D lens alone."
   ],
   "practiceQuestions": [
     "Find power for f=−40 cm.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Convert focal length to metres before calculating dioptres.",
     "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence."
+    "The sign distinguishes convergence from divergence.",
+    "P = 1/f with f in metres",
+    "Powers in contact add",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Lens power is signed reciprocal focal length in metres. Contact lens powers add, but magnification still depends on object position.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Convert focal length to metres before calculating dioptres.",
     "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence."
+    "The sign distinguishes convergence from divergence.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find power for f=−40 cm.",
@@ -86,5 +102,102 @@
   ],
   "duplicateType": 2,
   "tabGroup": "power-of-a-lens",
-  "visualType": "lens-power"
+  "visualType": "lens-power",
+  "mcs": [
+    {
+      "question": "One dioptre is",
+      "options": [
+        "1 m^−1",
+        "1 cm^−1",
+        "1 m",
+        "A prism angle"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Thin lenses in contact",
+      "options": [
+        "Add powers",
+        "Add focal lengths",
+        "Multiply powers",
+        "Cancel always"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A diverging lens has",
+      "options": [
+        "Positive power",
+        "Negative power",
+        "Zero power",
+        "Power equal to its diameter"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "f = 0.25 m means",
+      "options": [
+        "4 D",
+        "0.25 D",
+        "25 D",
+        "Zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "One dioptre is",
+      "options": [
+        "1 m^−1",
+        "1 cm^−1",
+        "1 m",
+        "A prism angle"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Thin lenses in contact",
+      "options": [
+        "Add powers",
+        "Add focal lengths",
+        "Multiply powers",
+        "Cancel always"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A diverging lens has",
+      "options": [
+        "Positive power",
+        "Negative power",
+        "Zero power",
+        "Power equal to its diameter"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "f = 0.25 m means",
+      "options": [
+        "4 D",
+        "0.25 D",
+        "25 D",
+        "Zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the focal length of a +1.5 D combination, and the focal length of the +2.0 D lens alone.",
+      "steps": [
+        "f = 1/P.",
+        "The combination has f = 1/1.5 = 0.67 m.",
+        "The +2.0 D lens alone has f = 0.50 m.",
+        "The negative lens lengthens the focal length of the pair.",
+        "Both lengths are in metres because the powers were in dioptres."
+      ],
+      "answer": "0.67 m for the pair, and 0.50 m for the +2.0 D lens."
+    }
+  ]
 }

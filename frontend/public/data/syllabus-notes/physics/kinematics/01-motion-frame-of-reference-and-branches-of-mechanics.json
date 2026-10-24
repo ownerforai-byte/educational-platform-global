@@ -1,0 +1,188 @@
+{
+  "title": "Motion, Frames of Reference & Branches of Mechanics",
+  "notes": [
+    "A frame of reference is the body, or the set of axes, from which positions and times are measured. The same motion can look different in two frames. A passenger at rest in a train is moving in the platform frame.",
+    "An inertial frame is one in which Newton's first law holds. A frame fixed to the Earth is close enough for the problems in this course. A frame that accelerates, such as a braking bus, is non-inertial, and a pseudo-force is then added if you still want to use F = ma inside it.",
+    "Mechanics divides into kinematics, dynamics and statics. Kinematics describes motion with displacement, velocity and acceleration, without asking for the force. Dynamics relates the motion to forces. Statics is dynamics with zero acceleration.",
+    "Relative velocity of A with respect to B is v_A − v_B. The subtraction is a vector subtraction. If the bodies move on one line, opposite directions get opposite signs.",
+    "Displacement is the change of position and is a vector. Distance is the length of the path and is a scalar. Speed is distance over time. Velocity is displacement over time.",
+    "A rest statement is incomplete until the frame is named. Rest in one frame can be motion in another. The laws used to predict the motion are written in an inertial frame."
+  ],
+  "examples": [
+    "A frame of reference is the body, or the set of axes, from which positions and times are measured. The same motion can look different in two frames. A passenger at rest in a train is moving in the platform frame.",
+    "An inertial frame is one in which Newton's first law holds. A frame fixed to the Earth is close enough for the problems in this course. A frame that accelerates, such as a braking bus, is non-inertial, and a pseudo-force is then added if you still want to use F = ma inside it.",
+    "Car A moves east at 20 m/s and car B moves east at 12 m/s. Find the velocity of A relative to B."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Motion, Frames of Reference & Branches of Mechanics.",
+    "Q3. Problem on Motion, Frames of Reference & Branches of Mechanics.",
+    "What is an inertial frame?",
+    "How do kinematics and dynamics differ?",
+    "How is relative velocity formed?"
+  ],
+  "formulas": [
+    "v_AB = v_A − v_B",
+    "A frame fixed to the ground is treated as inertial in this course."
+  ],
+  "keyPoints": [
+    "Connection of Motion, Frames of Reference & Branches of Mechanics to other topics",
+    "A frame is the place from which motion is measured.",
+    "Kinematics describes motion. Dynamics explains it with forces.",
+    "Statics is the case of equilibrium.",
+    "Relative velocity uses a vector difference."
+  ],
+  "summary": "Motion, Frames of Reference & Branches of Mechanics covers essential principles and applications.",
+  "specialNotes": [
+    "A pseudo-force is used only in a non-inertial frame.",
+    "Earth is taken as inertial unless the question says the frame accelerates."
+  ],
+  "importantStatements": [
+    "A frame of reference is the body, or the set of axes, from which positions and times are measured. The same motion can look different in two frames. A passenger at rest in a train is moving in the platform frame.",
+    "An inertial frame is one in which Newton's first law holds. A frame fixed to the Earth is close enough for the problems in this course. A frame that accelerates, such as a braking bus, is non-inertial, and a pseudo-force is then added if you still want to use F = ma inside it.",
+    "Mechanics divides into kinematics, dynamics and statics. Kinematics describes motion with displacement, velocity and acceleration, without asking for the force. Dynamics relates the motion to forces. Statics is dynamics with zero acceleration."
+  ],
+  "importantNotes": [
+    "Motion, Frames of Reference & Branches of Mechanics is based on fundamental principles.",
+    "Distance cannot be negative. Displacement can.",
+    "A body can have zero velocity and non-zero acceleration at one instant, as at the top of a throw."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Motion, Frames of Reference & Branches of Mechanics.",
+    "Name the frame in the first line.",
+    "Relative velocity is a vector difference."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "Kinematics deals with",
+      "options": [
+        "Motion without using force as the cause",
+        "Only equilibrium",
+        "Only friction",
+        "Nuclear decay"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "v of A relative to B is",
+      "options": [
+        "v_A + v_B always",
+        "v_A − v_B",
+        "v_A × v_B",
+        "The larger speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A frame fixed to a braking bus is",
+      "options": [
+        "Inertial",
+        "Non-inertial",
+        "The only allowed frame",
+        "A statics frame by definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Distance differs from displacement because distance",
+      "options": [
+        "Is a vector",
+        "Is the path length, a scalar",
+        "Can be negative",
+        "Needs a force"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Motion, Frames of Reference & Branches of Mechanics.",
+    "Frame of reference",
+    "Inertial frame",
+    "Kinematics",
+    "Relative velocity"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Rest and motion are not properties of a body alone. They depend on the frame.",
+    "Speed and velocity are not interchangeable when the path bends or reverses.",
+    "Statics is not a different kind of force. It is the zero-acceleration case.",
+    "Subtracting speeds that point in different directions as if they were scalars gives the wrong relative velocity."
+  ],
+  "practice": [
+    "Write v_AB = v_A − v_B and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "v_AB = v_A − v_B",
+    "A frame fixed to the ground is treated as inertial in this course."
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "Kinematics deals with",
+      "options": [
+        "Motion without using force as the cause",
+        "Only equilibrium",
+        "Only friction",
+        "Nuclear decay"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "v of A relative to B is",
+      "options": [
+        "v_A + v_B always",
+        "v_A − v_B",
+        "v_A × v_B",
+        "The larger speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A frame fixed to a braking bus is",
+      "options": [
+        "Inertial",
+        "Non-inertial",
+        "The only allowed frame",
+        "A statics frame by definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Distance differs from displacement because distance",
+      "options": [
+        "Is a vector",
+        "Is the path length, a scalar",
+        "Can be negative",
+        "Needs a force"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Car A moves east at 20 m/s and car B moves east at 12 m/s. Find the velocity of A relative to B.",
+      "steps": [
+        "Take east as positive.",
+        "v_A = +20 m/s and v_B = +12 m/s.",
+        "v of A relative to B is v_A − v_B.",
+        "That is 20 − 12 = +8 m/s.",
+        "The positive sign means 8 m/s eastward, as seen from car B."
+      ],
+      "answer": "8 m/s east."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "kinematics",
+  "topicSlug": "01-motion-frame-of-reference-and-branches-of-mechanics",
+  "topicTitle": "Motion, Frames of Reference & Branches of Mechanics"
+}

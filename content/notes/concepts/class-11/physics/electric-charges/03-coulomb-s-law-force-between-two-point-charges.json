@@ -11,13 +11,17 @@
     "**Direction.** The force acts along the line joining the charges — repulsive for like charges, attractive for unlike charges — and obeys Newton's third law.",
     "**Permittivity.** In a medium of dielectric constant K the force falls to F = q₁q₂/4πε₀Kr²; for vacuum K = 1 and ε₀ = 8.85 × 10⁻¹² C² N⁻¹ m⁻².",
     "**Vector form.** F₁₂ = (q₁q₂/4πε₀) × (r₂ − r₁)/|r₂ − r₁|³ gives both magnitude and direction automatically, with the sign of the charges deciding attraction or repulsion.",
-    "**Limitations.** The law holds for point charges at rest and for spherically symmetric charge distributions; it is an inverse-square law like gravitation but far stronger."
+    "**Limitations.** The law holds for point charges at rest and for spherically symmetric charge distributions; it is an inverse-square law like gravitation but far stronger.",
+    "Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K."
   ],
   "confusion": [
-    "❌ treat \"Coulomb's law: force between two point charges\" as one blob → ✅ split into: coulomb's law: force between two point charges.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.."
+    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "bounds": [
     "Covers only: coulomb's law: force between two point charges (within Electric Charges).",
@@ -26,9 +30,9 @@
     "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
   ],
   "practice": [
-    "define + example each sub-idea: coulomb's law: force between two point charges.",
-    "one worked example for \"Coulomb's law: force between two point charges\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write F = k |q1 q2| / r^2 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
@@ -36,12 +40,14 @@
     "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.",
+    "The working relations are F = k |q1 q2| / r^2 and k = 9.0 × 10^9. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Coulomb's law: force between two point charges\" with one example.",
-    "compare \"Coulomb's law: force between two point charges\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Coulomb's law: force between two point charges\" and verify the answer is plausible."
+    "Write F = k |q1 q2| / r^2 and name the symbols.",
+    "What does k = 9.0 × 10^9 tell you?",
+    "Which unit must be converted before the substitution?"
   ],
   "formulas": [
     "F = k q₁q₂/r²",
@@ -50,23 +56,142 @@
     "V = kq/r"
   ],
   "numericals": [
-    "Use  F = k q₁q₂/r²  — pick reasonable values, solve, and check the units.",
-    "Use  E = F/q  — pick reasonable values, solve, and check the units.",
-    "Use  ∮E·dA = Q/ε₀  — pick reasonable values, solve, and check the units."
+    "Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9."
   ],
   "keyPoints": [
-    "• Coulomb's law: force between two point charges"
+    "• Coulomb's law: force between two point charges",
+    "F = k |q1 q2| / r^2",
+    "k = 9.0 × 10^9",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
-  "summary": "Coulomb's law: force between two point charges (Electric Charges, Physics, class-11-notes) covers Coulomb's law: force between two point charges. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Two point charges repel or attract with k |q1 q2| / r^2. These 2.0 μC and 4.0 μC charges, 0.20 m apart, repel with 1.8 N, and each feels that same magnitude.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Coulomb's law: force between two point charges\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Doubling r multiplies F by",
       "options": [
-        "True",
-        "False"
+        "2",
+        "1/4",
+        "4",
+        "1/2"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Like charges",
+      "options": [
+        "Repel",
+        "Attract",
+        "Feel unequal forces",
+        "Have F proportional to r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A dielectric K",
+      "options": [
+        "Multiplies the force by K",
+        "Divides the force by K",
+        "Removes r",
+        "Sets F to k"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The forces on the two charges are",
+      "options": [
+        "Equal and opposite",
+        "Larger on the larger charge",
+        "Zero",
+        "Perpendicular"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.",
+    "The working relations are F = k |q1 q2| / r^2 and k = 9.0 × 10^9. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9. q1 q2 = 8.0 × 10^−12. r^2 = 0.040."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Doubling r multiplies F by",
+      "options": [
+        "2",
+        "1/4",
+        "4",
+        "1/2"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Like charges",
+      "options": [
+        "Repel",
+        "Attract",
+        "Feel unequal forces",
+        "Have F proportional to r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A dielectric K",
+      "options": [
+        "Multiplies the force by K",
+        "Divides the force by K",
+        "Removes r",
+        "Sets F to k"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The forces on the two charges are",
+      "options": [
+        "Equal and opposite",
+        "Larger on the larger charge",
+        "Zero",
+        "Perpendicular"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9.",
+      "steps": [
+        "q1 q2 = 8.0 × 10^−12.",
+        "r^2 = 0.040.",
+        "F = 9.0 × 10^9 × 8.0 × 10^−12 / 0.040.",
+        "9e9 × 8e−12 = 0.072, and 0.072/0.040 = 1.8 N.",
+        "The charges repel."
+      ],
+      "answer": "1.8 N, repulsive."
     }
   ]
 }

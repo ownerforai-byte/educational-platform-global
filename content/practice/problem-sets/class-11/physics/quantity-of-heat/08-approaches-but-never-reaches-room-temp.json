@@ -3,26 +3,179 @@
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
-  "relevance": 70,
+  "relevance": 94,
   "notes": [
     "The solution Î¸ âˆ’ Î¸â‚€ = (Î¸â‚ âˆ’ Î¸â‚€)Â·e^(âˆ’Kt/mc) is an exponential decay â€” it approaches zero asymptotically as t â†’ âˆž, but never equals exactly zero for any finite time",
-    "Physically, as Î¸ gets very close to Î¸â‚€, the driving temperature difference (Î¸ âˆ’ Î¸â‚€) shrinks toward zero, so the rate of heat loss also shrinks toward zero â€” cooling effectively stalls near room temperature well before the math says it's 'finished'"
+    "Physically, as Î¸ gets very close to Î¸â‚€, the driving temperature difference (Î¸ âˆ’ Î¸â‚€) shrinks toward zero, so the rate of heat loss also shrinks toward zero â€” cooling effectively stalls near room temperature well before the math says it's 'finished'",
+    "The solution θ − θ0 = (θ1 − θ0) e^(−t/τ) is positive for every finite t if the body starts above room temperature. An exponential e^(−t/τ) reaches zero only in the limit t → infinity.",
+    "So the mathematical temperature never becomes exactly θ0 at a time you can write down. It gets as close as you like if you wait long enough.",
+    "The physical reason is in the rate equation itself. The rate of fall is proportional to the remaining excess. As the excess shrinks, the rate shrinks, so the last part of the fall takes longer and longer.",
+    "After a few time constants the excess is a few percent of the start. A thermometer may not resolve it, and the body is then called 'at room temperature' for practical purposes."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "'Never' means never at a finite time, not that the body stays hot.",
+    "The asymptote is θ0, not zero Celsius.",
+    "A small unmeasured difference is not a contradiction of the formula.",
+    "The rate does not stay at its initial value."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write θ − θ0 = (θ1 − θ0) e^(−t/τ) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "θ − θ0 = (θ1 − θ0) e^(−t/τ)",
+    "τ = mc/K"
   ],
   "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  "motionGraphics": "quantity-of-heat",
+  "keyPoints": [
+    "The exponential is zero only at infinite time.",
+    "The driving excess shrinks as the body cools.",
+    "The rate therefore shrinks too.",
+    "In practice the difference becomes too small to measure."
+  ],
+  "importantStatements": [
+    "The solution θ − θ0 = (θ1 − θ0) e^(−t/τ) is positive for every finite t if the body starts above room temperature. An exponential e^(−t/τ) reaches zero only in the limit t → infinity.",
+    "So the mathematical temperature never becomes exactly θ0 at a time you can write down. It gets as close as you like if you wait long enough.",
+    "The physical reason is in the rate equation itself. The rate of fall is proportional to the remaining excess. As the excess shrinks, the rate shrinks, so the last part of the fall takes longer and longer."
+  ],
+  "examples": [
+    "The solution θ − θ0 = (θ1 − θ0) e^(−t/τ) is positive for every finite t if the body starts above room temperature. An exponential e^(−t/τ) reaches zero only in the limit t → infinity.",
+    "So the mathematical temperature never becomes exactly θ0 at a time you can write down. It gets as close as you like if you wait long enough.",
+    "τ = 10 min and the initial excess is 40°C. Find the excess at t = 10 min and say whether the body is at room temperature."
+  ],
+  "formulas": [
+    "θ − θ0 = (θ1 − θ0) e^(−t/τ)",
+    "τ = mc/K"
+  ],
+  "practiceQuestions": [
+    "At what time is the excess exactly zero?",
+    "Why does the cooling get slower?",
+    "What does the graph do near θ0?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Asymptote, not a meeting point.",
+    "Rate proportional to the remaining excess."
+  ],
+  "specialNotes": [
+    "Five time constants leave less than one percent of the excess.",
+    "A draught changes τ."
+  ],
+  "importantNotes": [
+    "Say 'approaches' rather than 'reaches in τ'.",
+    "τ is mc/K, a time."
+  ],
+  "importantConcepts": [
+    "Asymptote",
+    "Slowing rate",
+    "Time constant",
+    "Practical equilibrium"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The excess is exactly zero",
+      "options": [
+        "At t = τ",
+        "At no finite time",
+        "At t = 0",
+        "When K is larger"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "As the body nears the room, the cooling rate",
+      "options": [
+        "Stays constant",
+        "Becomes smaller",
+        "Becomes infinite",
+        "Reverses by the formula while still hotter"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "τ equals",
+      "options": [
+        "mc/K",
+        "K/mc",
+        "θ0",
+        "The mass alone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The θ–t graph near the room is",
+      "options": [
+        "A vertical drop",
+        "A curve flattening toward θ0",
+        "A circle",
+        "A rise above θ1"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The excess is exactly zero",
+      "options": [
+        "At t = τ",
+        "At no finite time",
+        "At t = 0",
+        "When K is larger"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "As the body nears the room, the cooling rate",
+      "options": [
+        "Stays constant",
+        "Becomes smaller",
+        "Becomes infinite",
+        "Reverses by the formula while still hotter"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "τ equals",
+      "options": [
+        "mc/K",
+        "K/mc",
+        "θ0",
+        "The mass alone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The θ–t graph near the room is",
+      "options": [
+        "A vertical drop",
+        "A curve flattening toward θ0",
+        "A circle",
+        "A rise above θ1"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "τ = 10 min and the initial excess is 40°C. Find the excess at t = 10 min and say whether the body is at room temperature.",
+      "steps": [
+        "Excess = 40 e^(−t/τ).",
+        "At t = τ the factor is e^(−1) ≈ 0.37.",
+        "Excess ≈ 40 × 0.37 = 15°C.",
+        "The body is still 15°C above the room.",
+        "It is not at room temperature. That would require the exponential to be zero."
+      ],
+      "answer": "About 15°C of excess remains. The body has not reached the room."
+    }
+  ],
+  "summary": "Under Newton's law the excess temperature decays exponentially and is zero only after an infinite time. The rate slows as the excess shrinks, so the temperature approaches the room and a thermometer eventually cannot tell the difference."
 }

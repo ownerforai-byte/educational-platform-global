@@ -7,14 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Mutual induction and mutual inductance — Electromagnetic Induction, Physics (class-12-notes).",
-    "**Tested.** define it · list: mutual induction, mutual inductance · one worked example · one misconception each.",
-    "**Mutual inductance.** one-line definition + one-line exam use."
+    "Mutual induction is the emf in one circuit caused by a changing current in a nearby circuit. The changing current changes the flux that links the second coil.",
+    "The mutual inductance M is defined so that the flux linkage in the secondary is M times the primary current. The induced emf is −M dI/dt.",
+    "M is the same either way: a current changing in coil 2 induces in coil 1 with the same M. That symmetry is M_12 = M_21.",
+    "M is large when the coils share flux, as on a common iron core, and small when they are far apart or at right angles so that little flux links across.",
+    "A transformer is mutual induction used continuously with alternating current. The secondary emf exists only while the primary current is changing.",
+    "The henry is again the unit. M = 1 H if 1 A/s in the primary induces 1 V in the secondary."
   ],
   "confusion": [
-    "❌ treat \"Mutual induction\" as one blob → ✅ split into: mutual induction, mutual inductance.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Mutual inductance needs two circuits.",
+    "A steady primary current gives no secondary emf.",
+    "M is not always equal to √(L1 L2). That is the maximum, when all flux links.",
+    "The two directions share one M."
   ],
   "bounds": [
     "Covers only: mutual induction, mutual inductance (within Electromagnetic Induction).",
@@ -22,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: mutual induction, mutual inductance.",
-    "one worked example for \"Mutual induction and mutual inductance\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Emf in the secondary = −M dI_p/dt and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Mutual induction and mutual inductance\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Mutual induction and mutual inductance\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Emf in the secondary = −M dI_p/dt",
+    "M = M_21 = M_12"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Mutual induction is the emf in one circuit caused by a changing current in a nearby circuit. The changing current changes the flux that links the second coil.",
+    "The mutual inductance M is defined so that the flux linkage in the secondary is M times the primary current. The induced emf is −M dI/dt.",
+    "Two coils have M = 0.20 H. The primary current rises at 10 A/s. Find the magnitude of the secondary emf."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Mutual induction and mutual inductance\" with one example.",
-    "compare \"Mutual induction\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Mutual induction and mutual inductance\" and verify the answer is plausible."
+    "Define mutual inductance.",
+    "When is the secondary emf zero?",
+    "What arrangement makes M large?"
   ],
   "formulas": [
-    "Governing equation for \"Mutual induction and mutual inductance\" — state with units, then use in one numerical."
+    "Governing equation for \"Mutual induction and mutual inductance\" — state with units, then use in one numerical.",
+    "Emf in the secondary = −M dI_p/dt",
+    "M = M_21 = M_12"
   ],
   "numericals": [
     "Set up the defining equation for \"Mutual induction and mutual inductance\", substitute simple values, and compute the result with units.",
@@ -46,19 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Mutual induction",
-    "• Mutual inductance"
+    "One coil's changing current induces emf in a second coil.",
+    "M is mutual inductance.",
+    "It is symmetric.",
+    "A transformer uses it."
   ],
-  "summary": "Mutual induction and mutual inductance (Electromagnetic Induction, Physics, class-12-notes) covers Mutual induction, mutual inductance. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "A changing current in one coil induces an emf −M dI/dt in the other. M is the same in both directions and is large when the coils share flux. A steady primary current induces nothing, which is why a transformer needs alternating current.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Mutual induction and mutual inductance\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Secondary emf equals",
       "options": [
-        "True",
-        "False"
+        "−M dI_p/dt",
+        "M I_p with no rate",
+        "R only",
+        "Zero while the primary changes"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "A steady primary current gives",
+      "options": [
+        "A steady secondary emf",
+        "No secondary emf",
+        "Infinite M",
+        "A spark by itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "M_12 and M_21 are",
+      "options": [
+        "Unrelated",
+        "Equal",
+        "Always zero",
+        "The self-inductances"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "M is largest when",
+      "options": [
+        "The coils share flux on one core",
+        "The coils are far apart",
+        "The current is steady",
+        "There is only one coil"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Mutual induction is the emf in one circuit caused by a changing current in a nearby circuit. The changing current changes the flux that links the second coil.",
+    "The mutual inductance M is defined so that the flux linkage in the secondary is M times the primary current. The induced emf is −M dI/dt.",
+    "M is the same either way: a current changing in coil 2 induces in coil 1 with the same M. That symmetry is M_12 = M_21."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "No change in primary current, no secondary emf.",
+    "Shared core, large M."
+  ],
+  "specialNotes": [
+    "k = M / √(L1 L2) is the coupling coefficient, at most 1.",
+    "Right-angled coils couple weakly."
+  ],
+  "importantNotes": [
+    "Name which current is changing.",
+    "Use the same M both ways."
+  ],
+  "importantConcepts": [
+    "Mutual inductance",
+    "Flux linkage",
+    "Coupling",
+    "Transformer link"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Secondary emf equals",
+      "options": [
+        "−M dI_p/dt",
+        "M I_p with no rate",
+        "R only",
+        "Zero while the primary changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A steady primary current gives",
+      "options": [
+        "A steady secondary emf",
+        "No secondary emf",
+        "Infinite M",
+        "A spark by itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "M_12 and M_21 are",
+      "options": [
+        "Unrelated",
+        "Equal",
+        "Always zero",
+        "The self-inductances"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "M is largest when",
+      "options": [
+        "The coils share flux on one core",
+        "The coils are far apart",
+        "The current is steady",
+        "There is only one coil"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two coils have M = 0.20 H. The primary current rises at 10 A/s. Find the magnitude of the secondary emf.",
+      "steps": [
+        "Magnitude = M |dI/dt|.",
+        "emf = 0.20 × 10 = 2.0 V.",
+        "The emf lasts only while the primary current is changing.",
+        "If the rate became zero, the secondary emf would become zero.",
+        "Reversing which coil is primary would use the same M."
+      ],
+      "answer": "2.0 V."
     }
   ]
 }

@@ -1,0 +1,222 @@
+{
+  "title": "Photoelectric Effect",
+  "unitSlug": "modern-physics-12",
+  "topicSlug": "photoelectric-effect",
+  "topicTitle": "Photoelectric Effect",
+  "relevance": 100,
+  "notes": [
+    "In the photoelectric effect, light falling on a metal can eject electrons. The effect starts at once, and it happens only if the frequency is above a threshold for that metal.",
+    "Einstein's explanation is that light arrives as photons of energy h f. A photon gives its energy to one electron. Part of that energy, the work function φ, is spent escaping the metal. The rest is kinetic energy.",
+    "K_max = h f − φ. Below the threshold, h f is less than φ and no electron escapes, however bright the light. Brightness is the number of photons, not the energy of each one.",
+    "A brighter beam above threshold ejects more electrons, so the current rises. It does not raise the maximum kinetic energy. That energy depends on frequency.",
+    "A stopping potential V_s is the retarding voltage that just cuts the current to zero. Then e V_s = K_max. Measuring V_s measures the fastest electrons.",
+    "A useful number is h c = 1240 eV nm, so a photon's energy in electronvolts is 1240 divided by the wavelength in nanometres."
+  ],
+  "confusion": [
+    "❌ 'Higher intensity light always causes photoelectric emission' ✅ Emission only occurs if the light frequency is *above* the threshold frequency, regardless of intensity.",
+    "❌ 'Photoelectric current increases with frequency' ✅ Current (number of electrons) increases with *intensity* (number of photons), not frequency.",
+    "❌ 'Stopping potential depends on light intensity' ✅ Stopping potential depends only on the *maximum kinetic energy* of emitted electrons, which is determined by the light *frequency*.",
+    "❌ skip the key fact → ✅ photoelectric effect: hν = φ + k_max; k_max = ev_s; stopping voltage v_s = (h/e)(ν − ν₀).."
+  ],
+  "practice": [
+    "Solve at least 5 problems on photoelectric effect from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Photoelectric effect and Einstein's photoelectric equation\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding photoelectric effect builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of photoelectric effect span engineering, physics, economics, and computer science.",
+    "Photoelectric effect: hν = φ + K_max; K_max = eV_s; stopping voltage V_s = (h/e)(ν − ν₀).",
+    "Threshold frequency ν₀ = φ/h; no emission below ν₀ regardless of intensity (evidence of photons).",
+    "Momentum of light p = h/λ; De Broglie: λ = h/p = h/√(2mK)."
+  ],
+  "animation3D": "modern-physics-12",
+  "motionGraphics": "modern-physics-12",
+  "examples": [
+    "Practical demonstration of Photoelectric Effect concepts",
+    "Diagram-based question on Photoelectric Effect",
+    "Application in daily life involving Photoelectric Effect",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Photoelectric Effect.",
+    "Q3. Differentiate between various aspects of Photoelectric Effect.",
+    "Q4. Derive the key formula related to Photoelectric Effect.",
+    "Q5. What are the applications of Photoelectric Effect?",
+    "state + explain the main idea of \"Photoelectric effect and Einstein's photoelectric equation\" with one example.",
+    "compare \"Photoelectric effect\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Photoelectric effect and Einstein's photoelectric equation\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Application formula for Photoelectric Effect",
+    "Derivation result for Photoelectric Effect",
+    "K_max = hν − φ",
+    "V_s = (h/e)(ν − ν₀)",
+    "p = h/λ"
+  ],
+  "keyPoints": [
+    "Light arrives in photons.",
+    "Below the threshold frequency there is no emission.",
+    "A brighter beam means more electrons, not faster ones.",
+    "The stopping potential measures the maximum kinetic energy."
+  ],
+  "summary": "Photoelectric Effect is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Photoelectric Effect applies",
+    "Note 2: Photoelectric Effect connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Photoelectric Effect",
+    "Note 4: Remember the units and dimensions involved in Photoelectric Effect",
+    "Note 5: Photoelectric Effect frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "In the photoelectric effect, light falling on a metal can eject electrons. The effect starts at once, and it happens only if the frequency is above a threshold for that metal.",
+    "Einstein's explanation is that light arrives as photons of energy h f. A photon gives its energy to one electron. Part of that energy, the work function φ, is spent escaping the metal. The rest is kinetic energy.",
+    "K_max = h f − φ. Below the threshold, h f is less than φ and no electron escapes, however bright the light. Brightness is the number of photons, not the energy of each one."
+  ],
+  "importantNotes": [
+    "Note 1: Photoelectric Effect is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Photoelectric Effect",
+    "Note 3: Photoelectric Effect has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Photoelectric Effect",
+    "Note 5: Cross-check your answers using alternative methods for Photoelectric Effect"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Photoelectric Effect formula",
+    "Trick 2: Elimination technique for Photoelectric Effect MCQs",
+    "Trick 3: Dimensional analysis shortcut for Photoelectric Effect",
+    "Trick 4: Memory aid for Photoelectric Effect formulas",
+    "Trick 5: Time-saving approach for Photoelectric Effect problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Photoelectric Effect",
+    "Practice previous year questions on Photoelectric Effect",
+    "Learn the derivations for Photoelectric Effect thoroughly",
+    "Review common mistakes related to Photoelectric Effect"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Photoelectric Effect is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Photoelectric Effect, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Photoelectric Effect?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Photoelectric Effect is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Photoelectric Effect",
+    "Concept 2: Key theorem or principle in Photoelectric Effect",
+    "Concept 3: Important application area of Photoelectric Effect",
+    "Concept 4: Fundamental relationship in Photoelectric Effect",
+    "Concept 5: Connection between Photoelectric Effect and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Photoelectric Effect",
+    "Task 2: Derive the main formula for Photoelectric Effect",
+    "Task 3: Create a concept map for Photoelectric Effect",
+    "Task 4: Practice previous year exam questions on Photoelectric Effect",
+    "Task 5: Explain Photoelectric Effect to a peer or study group"
+  ],
+  "numericals": [
+    "A metal has work function 2.0 eV. Light of wavelength 400 nm falls on it. Use E = 1240/λ with λ in nm. Find the maximum kinetic energy."
+  ],
+  "mcqs": [
+    {
+      "question": "Below the threshold frequency",
+      "options": [
+        "A bright beam still ejects electrons",
+        "No electrons are ejected",
+        "K_max is large",
+        "φ is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A brighter beam above threshold",
+      "options": [
+        "Raises K_max",
+        "Ejects more electrons",
+        "Lowers the frequency",
+        "Removes the work function"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "K_max equals",
+      "options": [
+        "h f − φ",
+        "h f + φ",
+        "φ − h f as a positive stored energy",
+        "h λ"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The stopping potential measures",
+      "options": [
+        "The work function directly as a current",
+        "K_max / e",
+        "The brightness",
+        "The threshold wavelength as a voltage of the lamp"
+      ],
+      "answer": "B"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: photoelectric effect, einstein's photoelectric equation (within Modern Physics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: photoelectric effect: hν = φ + k_max; k_max = ev_s; stopping voltage v_s = (h/e)(ν − ν₀)."
+  ],
+  "exercises": [
+    {
+      "question": "A metal has work function 2.0 eV. Light of wavelength 400 nm falls on it. Use E = 1240/λ with λ in nm. Find the maximum kinetic energy.",
+      "steps": [
+        "Photon energy = 1240 / 400 = 3.10 eV.",
+        "K_max = 3.10 − 2.0 = 1.10 eV.",
+        "The frequency is above threshold because the photon energy exceeds the work function.",
+        "A brighter beam of the same wavelength would eject more electrons with the same maximum energy.",
+        "The stopping potential would be 1.10 V."
+      ],
+      "answer": "1.10 eV."
+    }
+  ]
+}

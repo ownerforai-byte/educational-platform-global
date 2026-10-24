@@ -68,15 +68,30 @@
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "examples": [],
+  "examples": [
+    "Example 2: Practical demonstration of Resolution of vectors; unit vectors concepts",
+    "Example 4: Diagram-based question on Resolution of vectors; unit vectors",
+    "Example 5: Application in daily life involving Resolution of vectors; unit vectors"
+  ],
   "practiceQuestions": [
+    "Q1. Define and explain Resolution of vectors; unit vectors with suitable example.",
     "Q2. Solve problems related to Resolution of vectors; unit vectors.",
     "Q3. Differentiate between various aspects of Resolution of vectors; unit vectors.",
     "Q4. Derive the key formula related to Resolution of vectors; unit vectors.",
     "Q5. What are the applications of Resolution of vectors; unit vectors?"
   ],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "Key Formula 2: Mathematical expression of Resolution of vectors; unit vectors",
+    "Key Formula 3: Application formula for Resolution of vectors; unit vectors",
+    "Key Formula 4: Derivation result for Resolution of vectors; unit vectors",
+    "Key Formula 5: Important relation in Resolution of vectors; unit vectors"
+  ],
+  "keyPoints": [
+    "Key Point 2: Essential theorem or principle related to Resolution of vectors; unit vectors",
+    "Key Point 3: Important condition or constraint for Resolution of vectors; unit vectors",
+    "Key Point 4: Common applications of Resolution of vectors; unit vectors",
+    "Key Point 5: Connection to other topics in Science"
+  ],
   "summary": "Resolution of vectors; unit vectors is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Resolution of vectors; unit vectors applies",
@@ -85,8 +100,13 @@
     "Note 4: Remember the units and dimensions involved in Resolution of vectors; unit vectors",
     "Note 5: Resolution of vectors; unit vectors frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "When several vectors lie in one plane, resolve each one into x and y components, then add the components separately. Components along the same line add as ordinary signed numbers.",
+    "R_x is the sum of every F cosθ, with a minus sign if that component points along the negative axis. R_y is the sum of every F sinθ, with the same care about signs.",
+    "The resultant magnitude is sqrt(R_x^2 + R_y^2). The angle with the +x-axis satisfies tanα = |R_y / R_x|, and the quadrant follows the signs of R_x and R_y."
+  ],
   "importantNotes": [
+    "Note 1: Resolution of vectors; unit vectors is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Resolution of vectors; unit vectors",
     "Note 3: Resolution of vectors; unit vectors has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Resolution of vectors; unit vectors",
@@ -160,5 +180,60 @@
     "Task 3: Create a concept map for Resolution of vectors; unit vectors",
     "Task 4: Practice previous year exam questions on Resolution of vectors; unit vectors",
     "Task 5: Explain Resolution of vectors; unit vectors to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "R_x is",
+      "options": [
+        "The sum of the magnitudes",
+        "The signed sum of the x-components",
+        "Always the largest force",
+        "F sinθ for every vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The quadrant of the resultant comes from",
+      "options": [
+        "The larger magnitude alone",
+        "The signs of R_x and R_y",
+        "The first vector only",
+        "A rule that α is always acute"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A downward vector contributes",
+      "options": [
+        "A negative y-component",
+        "A negative x-component always",
+        "Nothing",
+        "A positive y-component"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Adding magnitudes of differently directed vectors",
+      "options": [
+        "Is the component method",
+        "Is not allowed",
+        "Gives R_x",
+        "Fixes the quadrant"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two forces act at a point: 8.0 N along +x, and 6.0 N along +y. Find the resultant.",
+      "steps": [
+        "R_x = 8.0 N and R_y = 6.0 N.",
+        "R = sqrt(8.0^2 + 6.0^2) = sqrt(64 + 36) = sqrt(100) = 10 N.",
+        "tanα = R_y / R_x = 6/8 = 0.75.",
+        "α = arctan(0.75) ≈ 37°.",
+        "Both components are positive, so the resultant is 10 N at about 37° above the +x-axis."
+      ],
+      "answer": "10 N at about 37° above the +x-axis."
+    }
   ]
 }

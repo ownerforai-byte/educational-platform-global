@@ -3,9 +3,14 @@
   "unitSlug": "kinematics",
   "topicSlug": "projectile-motion-and-its-applications",
   "topicTitle": "Projectile motion and its applications",
-  "relevance": 76,
+  "relevance": 94,
   "notes": [
-    "The path of a projectile is a **parabola**: $y = x\\tan\\theta - \\dfrac{gx^2}{2u^2\\cos^2\\theta}$. The graph below shows a $45°$ launch (maximum range): the body rises to the peak $H$, then falls symmetrically."
+    "The path of a projectile is a **parabola**: $y = x\\tan\\theta - \\dfrac{gx^2}{2u^2\\cos^2\\theta}$. The graph below shows a $45°$ launch (maximum range): the body rises to the peak $H$, then falls symmetrically.",
+    "A projectile is given an initial speed u at an angle θ above the horizontal and then moves under gravity alone. Air resistance is ignored in this treatment, so the horizontal acceleration is zero and the vertical acceleration is −g.",
+    "The horizontal and vertical motions are solved separately and then recombined. x = (u cosθ) t and y = (u sinθ) t − (1/2) g t^2. Eliminating t produces the trajectory y = x tanθ − g x^2 / (2 u^2 cos^2 θ), which is a parabola.",
+    "The time to return to the same horizontal level is T = 2 u sinθ / g. The horizontal range on level ground is R = u^2 sin 2θ / g. Because sin 2θ is greatest at 2θ = 90°, the greatest range is at θ = 45°.",
+    "The greatest height is H = u^2 sin^2 θ / (2g), reached when the vertical velocity has fallen to zero. At that point the horizontal velocity is still u cosθ.",
+    "The sketch of a 45° launch is symmetric: the body rises to H and comes down on a mirror path. The labelled peak on a teaching graph is a scale drawing of that shape, not a measured height for every choice of u."
   ],
   "type": "graph",
   "order": 1,
@@ -34,5 +39,170 @@
       "label": "θ = 45°"
     },
     "dashedCurve": true
-  }
+  },
+  "confusion": [
+    "The acceleration is not zero at the top. Only the vertical velocity is zero.",
+    "Range and height use different expressions. R is not 2H.",
+    "45° is the angle for maximum range only on level ground with no air resistance.",
+    "Horizontal velocity does not decrease in this model."
+  ],
+  "keyPoints": [
+    "The path is a parabola.",
+    "Horizontal velocity stays constant if air resistance is ignored.",
+    "Vertical motion has acceleration −g.",
+    "Range is greatest at 45° on level ground."
+  ],
+  "importantStatements": [
+    "A projectile is given an initial speed u at an angle θ above the horizontal and then moves under gravity alone. Air resistance is ignored in this treatment, so the horizontal acceleration is zero and the vertical acceleration is −g.",
+    "The horizontal and vertical motions are solved separately and then recombined. x = (u cosθ) t and y = (u sinθ) t − (1/2) g t^2. Eliminating t produces the trajectory y = x tanθ − g x^2 / (2 u^2 cos^2 θ), which is a parabola.",
+    "The time to return to the same horizontal level is T = 2 u sinθ / g. The horizontal range on level ground is R = u^2 sin 2θ / g. Because sin 2θ is greatest at 2θ = 90°, the greatest range is at θ = 45°."
+  ],
+  "examples": [
+    "A projectile is given an initial speed u at an angle θ above the horizontal and then moves under gravity alone. Air resistance is ignored in this treatment, so the horizontal acceleration is zero and the vertical acceleration is −g.",
+    "The horizontal and vertical motions are solved separately and then recombined. x = (u cosθ) t and y = (u sinθ) t − (1/2) g t^2. Eliminating t produces the trajectory y = x tanθ − g x^2 / (2 u^2 cos^2 θ), which is a parabola.",
+    "A body is launched at 20 m/s at 45° above the horizontal. Take g = 10 m/s^2. Find the range and the greatest height."
+  ],
+  "universalFacts": [
+    "y = x tanθ − g x^2 / (2 u^2 cos^2 θ)",
+    "R = u^2 sin 2θ / g"
+  ],
+  "formulas": [
+    "y = x tanθ − g x^2 / (2 u^2 cos^2 θ)",
+    "R = u^2 sin 2θ / g",
+    "H = u^2 sin^2 θ / (2g)"
+  ],
+  "practice": [
+    "Write y = x tanθ − g x^2 / (2 u^2 cos^2 θ) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "Which angle maximises the range on level ground?",
+    "What is the vertical velocity at the top?",
+    "Why do complementary angles share a range?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "No time given for the top: use H = u^2 sin^2 θ / (2g).",
+    "sin 2θ = 1 at 45°."
+  ],
+  "specialNotes": [
+    "Take g = 10 m/s^2 when a tidy number is wanted.",
+    "Upward positive makes a = −g."
+  ],
+  "importantNotes": [
+    "Keep horizontal and vertical equations apart until you need the path.",
+    "A landing below the launch point needs a different time from T = 2 u sinθ / g."
+  ],
+  "importantConcepts": [
+    "Parabolic path",
+    "Independent components",
+    "Range",
+    "Greatest height"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "On level ground the range is greatest at",
+      "options": [
+        "30°",
+        "45°",
+        "60°",
+        "90°"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At the highest point",
+      "options": [
+        "Velocity and acceleration are both zero",
+        "Vertical velocity is zero and acceleration is g downward",
+        "Horizontal velocity is zero",
+        "Acceleration is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The trajectory equation is",
+      "options": [
+        "A straight line",
+        "A parabola",
+        "A circle",
+        "An exponential"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Complementary angles give",
+      "options": [
+        "The same greatest height",
+        "The same range on level ground",
+        "The same time of flight",
+        "No motion"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "On level ground the range is greatest at",
+      "options": [
+        "30°",
+        "45°",
+        "60°",
+        "90°"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At the highest point",
+      "options": [
+        "Velocity and acceleration are both zero",
+        "Vertical velocity is zero and acceleration is g downward",
+        "Horizontal velocity is zero",
+        "Acceleration is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The trajectory equation is",
+      "options": [
+        "A straight line",
+        "A parabola",
+        "A circle",
+        "An exponential"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Complementary angles give",
+      "options": [
+        "The same greatest height",
+        "The same range on level ground",
+        "The same time of flight",
+        "No motion"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A body is launched at 20 m/s at 45° above the horizontal. Take g = 10 m/s^2. Find the range and the greatest height.",
+      "steps": [
+        "sin 2θ = sin 90° = 1, and sin 45° = 1/sqrt(2), so sin^2 45° = 1/2.",
+        "R = u^2 sin 2θ / g = 400 × 1 / 10 = 40 m.",
+        "H = u^2 sin^2 θ / (2g) = 400 × (1/2) / 20.",
+        "400 × 0.5 = 200, and 200 / 20 = 10.",
+        "Range 40 m, greatest height 10 m. This numerical height is not the scale label on a sketch that uses a different launch speed."
+      ],
+      "answer": "Range 40 m, greatest height 10 m."
+    }
+  ],
+  "summary": "With no air resistance a projectile follows a parabola because the horizontal velocity is constant and the vertical motion is uniformly accelerated. On level ground the range is u^2 sin 2θ / g, greatest at 45°, and the greatest height is u^2 sin^2 θ / (2g)."
 }

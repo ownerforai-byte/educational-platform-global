@@ -3,6 +3,178 @@
   "notes": [
     "Starting from −mc·(dθ/dt) = K(θ − θ₀), separate variables: dθ/(θ − θ₀) = −(K/mc) dt",
     "Integrating from θ₁ at t = 0 to θ at time t: ln[(θ − θ₀)/(θ₁ − θ₀)] = −(K/mc)t",
-    "**Result:** θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc) — temperature approaches the surrounding temperature exponentially, never crossing it"
-  ]
+    "**Result:** θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc) — temperature approaches the surrounding temperature exponentially, never crossing it",
+    "The derivation starts from the rate statement −mc dθ/dt = K (θ − θ0). The left side is the heat lost by a body whose temperature is falling, written per unit time.",
+    "Divide both sides by (θ − θ0) and by −mc: dθ / (θ − θ0) = −(K/mc) dt. The variables are now separated.",
+    "Integrate the left side from the initial temperature θ1 to the later temperature θ, and the right side from t = 0 to t. The integral of dθ/(θ − θ0) is a natural logarithm of the excess.",
+    "That gives ln[(θ − θ0)/(θ1 − θ0)] = −(K/mc) t. The constant of integration is fixed by θ = θ1 at t = 0, which makes the logarithm zero."
+  ],
+  "confusion": [
+    "Do not integrate θ itself if the denominator is the excess.",
+    "The constant K/mc is positive. The minus sign makes the excess shrink.",
+    "θ0 is not the integration limit. θ1 is.",
+    "An exponential decay does not become a straight line on a θ–t graph."
+  ],
+  "keyPoints": [
+    "Separate dθ and dt.",
+    "Integrate the excess.",
+    "Exponentiate the logarithm.",
+    "The excess never reaches zero in finite time."
+  ],
+  "importantStatements": [
+    "The derivation starts from the rate statement −mc dθ/dt = K (θ − θ0). The left side is the heat lost by a body whose temperature is falling, written per unit time.",
+    "Divide both sides by (θ − θ0) and by −mc: dθ / (θ − θ0) = −(K/mc) dt. The variables are now separated.",
+    "Integrate the left side from the initial temperature θ1 to the later temperature θ, and the right side from t = 0 to t. The integral of dθ/(θ − θ0) is a natural logarithm of the excess."
+  ],
+  "examples": [
+    "The derivation starts from the rate statement −mc dθ/dt = K (θ − θ0). The left side is the heat lost by a body whose temperature is falling, written per unit time.",
+    "Divide both sides by (θ − θ0) and by −mc: dθ / (θ − θ0) = −(K/mc) dt. The variables are now separated.",
+    "Show the step from the separated equation to the exponential form."
+  ],
+  "universalFacts": [
+    "−mc dθ/dt = K (θ − θ0)",
+    "θ − θ0 = (θ1 − θ0) e^(−Kt/mc)"
+  ],
+  "formulas": [
+    "−mc dθ/dt = K (θ − θ0)",
+    "θ − θ0 = (θ1 − θ0) e^(−Kt/mc)"
+  ],
+  "practice": [
+    "Write −mc dθ/dt = K (θ − θ0) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "What is separated before integrating?",
+    "What fixes the constant?",
+    "What graph is straight?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "The log of the excess is linear in t.",
+    "At t = mc/K the excess is 1/e of its start."
+  ],
+  "specialNotes": [
+    "c and K must be constant to come out of the integral.",
+    "A change of state would add a latent-heat term."
+  ],
+  "importantNotes": [
+    "Write the limits on the integral.",
+    "The final formula is for the excess, not for θ alone."
+  ],
+  "importantConcepts": [
+    "Separated variables",
+    "Logarithm of the excess",
+    "Exponential solution",
+    "Time constant mc/K"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The quantity that decays exponentially is",
+      "options": [
+        "The mass",
+        "The excess temperature",
+        "K",
+        "The room temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At t = 0 the formula gives",
+      "options": [
+        "θ = θ0",
+        "θ = θ1",
+        "θ = 0",
+        "An infinite temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ln(excess) against t has slope",
+      "options": [
+        "−K/mc",
+        "+K",
+        "mc",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The integration constant is fixed by",
+      "options": [
+        "θ = θ1 at t = 0",
+        "A random choice",
+        "The colour of the body",
+        "Setting K = 0"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The quantity that decays exponentially is",
+      "options": [
+        "The mass",
+        "The excess temperature",
+        "K",
+        "The room temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At t = 0 the formula gives",
+      "options": [
+        "θ = θ0",
+        "θ = θ1",
+        "θ = 0",
+        "An infinite temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ln(excess) against t has slope",
+      "options": [
+        "−K/mc",
+        "+K",
+        "mc",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The integration constant is fixed by",
+      "options": [
+        "θ = θ1 at t = 0",
+        "A random choice",
+        "The colour of the body",
+        "Setting K = 0"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Show the step from the separated equation to the exponential form.",
+      "steps": [
+        "Start from dθ / (θ − θ0) = −(K/mc) dt.",
+        "Integrate both sides between θ1 at t = 0 and θ at time t.",
+        "The left side is ln(θ − θ0) − ln(θ1 − θ0).",
+        "So ln[(θ − θ0)/(θ1 − θ0)] = −(K/mc) t.",
+        "Exponentiate: θ − θ0 = (θ1 − θ0) e^(−Kt/mc)."
+      ],
+      "answer": "θ − θ0 = (θ1 − θ0) e^(−Kt/mc)."
+    }
+  ],
+  "summary": "Separating variables in Newton's law and integrating from the initial excess produces a logarithm. Exponentiating that logarithm gives an exponential decay of the excess temperature toward the room.",
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "02-derive-exponential-form",
+  "topicTitle": "Q: Derive the exponential form of temperature fall from Newton's Law of Cooling"
 }

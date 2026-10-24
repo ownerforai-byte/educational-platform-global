@@ -1,0 +1,196 @@
+{
+  "title": "Bandwidth and propagation of electromagnetic waves",
+  "unitSlug": "communication-systems",
+  "topicSlug": "bandwidth-and-propagation-of-electromagnetic-waves",
+  "topicTitle": "Bandwidth and propagation of electromagnetic waves",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Bandwidth is the range of frequencies a signal or a channel occupies. A wider message, such as television, needs a wider channel than speech. Two stations must be separated by at least their bandwidths or they overlap.",
+    "A ground wave travels along the surface of the Earth. The ground absorbs more energy at higher frequency, so ground-wave broadcast is used for the lower radio frequencies and does not reach around the world.",
+    "A sky wave is sent upward and can be returned by the ionosphere. That is how short-wave radio crosses long distances. The ionosphere is not a metal mirror at every frequency: above a critical frequency the wave passes through.",
+    "A space wave travels in a straight line from a high transmitting antenna to the receiver. Television and FM use it. The Earth's curve limits the range to a little beyond the geometric horizon.",
+    "For an antenna at height h above a spherical Earth of radius R, the horizon distance is about √(2 R h) when h is much smaller than R. A higher mast sees farther.",
+    "The same information can be sent in a narrow band by slowing it down, or in a wide band by sending it quickly. The channel must be at least as wide as the signal."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+    "Bandwidth is not the carrier frequency.",
+    "A sky wave is not guaranteed at every frequency.",
+    "A space wave does not follow the ground.",
+    "The horizon formula uses the radius of the Earth, not the height alone."
+  ],
+  "bounds": [
+    "Covers only: bandwidth, propagation of electromagnetic waves (within Communication Systems).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+  ],
+  "practice": [
+    "Write Ground-wave range is limited by the surface and by frequency. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "examples": [
+    "Bandwidth is the range of frequencies a signal or a channel occupies. A wider message, such as television, needs a wider channel than speech. Two stations must be separated by at least their bandwidths or they overlap.",
+    "A ground wave travels along the surface of the Earth. The ground absorbs more energy at higher frequency, so ground-wave broadcast is used for the lower radio frequencies and does not reach around the world.",
+    "A transmitting antenna is 100 m above the Earth. Take R = 6.40 × 10^6 m. Estimate the radio-horizon distance with √(2 R h)."
+  ],
+  "practiceQuestions": [
+    "Name the three propagation paths.",
+    "Which path do television signals use?",
+    "What does a higher mast do to the radio horizon?"
+  ],
+  "formulas": [
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
+  ],
+  "numericals": [
+    "A transmitting antenna is 100 m above the Earth. Take R = 6.40 × 10^6 m. Estimate the radio-horizon distance with √(2 R h)."
+  ],
+  "keyPoints": [
+    "Bandwidth is the spread of frequencies used.",
+    "Ground waves follow the Earth.",
+    "Sky waves reflect from the ionosphere.",
+    "Space waves travel in line of sight."
+  ],
+  "summary": "Bandwidth is the frequency width a signal needs. Ground waves follow the Earth at lower frequencies, sky waves can bounce from the ionosphere, and space waves travel in line of sight. The radio horizon of a mast of height h is about the square root of 2 R h.",
+  "mcqs": [
+    {
+      "question": "Television typically uses",
+      "options": [
+        "A ground wave around the Earth",
+        "A space wave",
+        "A wave through the centre of the Earth",
+        "Sound in air only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A sky wave can be returned by",
+      "options": [
+        "The ionosphere",
+        "A copper wire only",
+        "The loudspeaker",
+        "A permanent magnet"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Bandwidth is",
+      "options": [
+        "The carrier frequency",
+        "The range of frequencies occupied",
+        "The height of the mast",
+        "Always 1 Hz"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Raising the transmitting antenna",
+      "options": [
+        "Shortens the radio horizon",
+        "Lengthens the radio horizon",
+        "Removes the ionosphere",
+        "Sets the bandwidth to zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Bandwidth is the range of frequencies a signal or a channel occupies. A wider message, such as television, needs a wider channel than speech. Two stations must be separated by at least their bandwidths or they overlap.",
+    "A ground wave travels along the surface of the Earth. The ground absorbs more energy at higher frequency, so ground-wave broadcast is used for the lower radio frequencies and does not reach around the world.",
+    "A sky wave is sent upward and can be returned by the ionosphere. That is how short-wave radio crosses long distances. The ionosphere is not a metal mirror at every frequency: above a critical frequency the wave passes through."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Ground, sky, space.",
+    "Higher antenna, farther horizon."
+  ],
+  "specialNotes": [
+    "Take R = 6400 km unless the question gives another radius.",
+    "Night-time ionosphere conditions change the sky-wave range."
+  ],
+  "importantNotes": [
+    "Match the service to the path.",
+    "Keep bandwidth and carrier frequency as different numbers."
+  ],
+  "importantConcepts": [
+    "Bandwidth",
+    "Ground wave",
+    "Sky wave",
+    "Space wave"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Television typically uses",
+      "options": [
+        "A ground wave around the Earth",
+        "A space wave",
+        "A wave through the centre of the Earth",
+        "Sound in air only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A sky wave can be returned by",
+      "options": [
+        "The ionosphere",
+        "A copper wire only",
+        "The loudspeaker",
+        "A permanent magnet"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Bandwidth is",
+      "options": [
+        "The carrier frequency",
+        "The range of frequencies occupied",
+        "The height of the mast",
+        "Always 1 Hz"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Raising the transmitting antenna",
+      "options": [
+        "Shortens the radio horizon",
+        "Lengthens the radio horizon",
+        "Removes the ionosphere",
+        "Sets the bandwidth to zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A transmitting antenna is 100 m above the Earth. Take R = 6.40 × 10^6 m. Estimate the radio-horizon distance with √(2 R h).",
+      "steps": [
+        "2 R h = 2 × 6.40 × 10^6 × 100.",
+        "That product is 1.28 × 10^9.",
+        "√(1.28 × 10^9) = √1.28 × 10^4.5, and √1.28 × 10^4 is about 3.6 × 10^4.",
+        "The distance is about 36 km.",
+        "A taller mast would increase this distance."
+      ],
+      "answer": "About 36 km."
+    }
+  ]
+}

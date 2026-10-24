@@ -24,8 +24,7 @@
     "**Resultant of three vectors in a line**: for vectors along the same line, assign positive/negative signs based on direction, then add algebraically: $R = \\pm P \\pm Q \\pm S$. The sign convention is arbitrary but must be consistent.",
     "**Geometric interpretation of triangle inequality**: for any two vectors, the straight-line distance between two points is the shortest path. Thus the magnitude of the resultant (straight line) is always less than or equal to the sum of magnitudes (two sides of triangle): $|\\vec{A}+\\vec{B}| \\leq |\\vec{A}|+|\\vec{B}|$.",
     "**Adding vectors with unknown angle**: if the resultant of two vectors of magnitudes $P$ and $Q$ is $R$, the angle between them is $\\theta = \\cos^{-1}\\!\\left(\\frac{R^2-P^2-Q^2}{2PQ}\\right)$. This inverse form is frequently tested.",
-    "**Resultant when one vector is doubled**: if $\\vec{Q}$ is doubled to $2\\vec{Q}$, the new resultant is $\\vec{R}' = \\vec{P}+2\\vec{Q}$ with magnitude $R' = \\sqrt{P^2+4Q^2+4PQ\\cos\\theta}$. This changes both magnitude and direction of the resultant.",
-    "**Relative velocity** is an application of vector subtraction: $\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B$. If two cars move in the same direction at 60 km/h and 80 km/h, the relative speed is 20 km/h; if opposite directions, it is 140 km/h."
+    "**Resultant when one vector is doubled**: if $\\vec{Q}$ is doubled to $2\\vec{Q}$, the new resultant is $\\vec{R}' = \\vec{P}+2\\vec{Q}$ with magnitude $R' = \\sqrt{P^2+4Q^2+4PQ\\cos\\theta}$. This changes both magnitude and direction of the resultant."
   ],
   "confusion": [
     "Adding vectors is the same as adding numbers — Vectors have direction, so you cannot simply add magnitudes unless they point in the same direction. Two 5 N forces at 120° give a resultant of only 5 N, not 10 N.",
@@ -60,13 +59,11 @@
     "Force polygons are used in engineering to check equilibrium. If the force vectors drawn head-to-tail form a closed polygon, the resultant is zero and the system is in equilibrium.",
     "When resolving vectors for addition, always draw a clear diagram first. Label all angles, choose convenient axes (often along and perpendicular to an incline), and be consistent with sign conventions.",
     "For NEB: the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ applies to ANY two vectors at angle $\\theta$. Remember that $\\cos 0°=1$ gives maximum, $\\cos 90°=0$ gives Pythagorean, and $\\cos 180°=-1$ gives minimum.",
-    "The **equilibrant** is the vector that balances a system — it equals $-\\vec{R}$ (same magnitude as resultant, opposite direction). For equilibrium, the equilibrant must be applied.",
-    "In **relative motion**, vector subtraction is ubiquitous: $\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B$ gives the velocity of A as seen from B. This is a direct application of vector subtraction in the same direction (1D) or at angles (2D)."
+    "The **equilibrant** is the vector that balances a system — it equals $-\\vec{R}$ (same magnitude as resultant, opposite direction). For equilibrium, the equilibrant must be applied."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
   "examples": [
-    "Example 1: Real-world application of Resolution of vectors; unit vectors",
     "Example 2: Practical demonstration of Resolution of vectors; unit vectors concepts",
     "Example 4: Diagram-based question on Resolution of vectors; unit vectors",
     "Example 5: Application in daily life involving Resolution of vectors; unit vectors"
@@ -99,11 +96,9 @@
     "Note 5: Resolution of vectors; unit vectors frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Resolution of vectors; unit vectors",
-    "Statement 2: Theorem related to Resolution of vectors; unit vectors",
-    "Statement 3: Condition for Resolution of vectors; unit vectors to be valid",
-    "Statement 4: Principle governing Resolution of vectors; unit vectors",
-    "Statement 5: Corollary or consequence of Resolution of vectors; unit vectors"
+    "Vectors are added by the head-to-tail rule. Place the tail of the second vector on the head of the first. The resultant runs from the tail of the first to the head of the second.",
+    "When two vectors point the same way along one line, the triangle collapses into a longer line. The magnitude of the resultant is R = P + Q, and the direction is that common direction.",
+    "When they point in opposite directions, the head-to-tail path folds back. The magnitude is R = |P − Q|, and the resultant points in the direction of the vector with the larger magnitude."
   ],
   "importantNotes": [
     "Note 1: Resolution of vectors; unit vectors is based on fundamental principles",
@@ -180,5 +175,60 @@
     "Task 3: Create a concept map for Resolution of vectors; unit vectors",
     "Task 4: Practice previous year exam questions on Resolution of vectors; unit vectors",
     "Task 5: Explain Resolution of vectors; unit vectors to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Two forces of 6 N and 4 N in the same direction have resultant",
+      "options": [
+        "2 N",
+        "10 N",
+        "24 N",
+        "0 N"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The same two forces in opposite directions have resultant",
+      "options": [
+        "10 N",
+        "2 N along the 6 N force",
+        "24 N",
+        "5 N"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "θ = 180° in the parallelogram law gives",
+      "options": [
+        "R = P + Q",
+        "R = |P − Q|",
+        "R = PQ",
+        "R = 0 always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two equal opposite vectors have resultant",
+      "options": [
+        "2P",
+        "P",
+        "Zero",
+        "P/2"
+      ],
+      "answer": "C"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Forces of 12 N east and 5 N west act at a point. Find the resultant.",
+      "steps": [
+        "Take east as positive.",
+        "The vectors are opposite, so R = 12 − 5 = 7 N.",
+        "The larger force is eastward.",
+        "The resultant is therefore 7 N east.",
+        "Check: 12 + (−5) = +7, the same result."
+      ],
+      "answer": "7 N east."
+    }
   ]
 }

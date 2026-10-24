@@ -9,11 +9,16 @@
     "For two thin lenses in contact with signed focal lengths f1,f2 and dispersive powers ω1,ω2, primary achromatism requires ω1/f1+ω2/f2=0. A crown converging lens is commonly paired with a more dispersive flint diverging lens.",
     "Worked design: f1=+20 cm, ω1=0.02 and ω2=0.04 require 0.02/20+0.04/f2=0, giving f2=−40 cm. The negative sign identifies a diverging flint element.",
     "The net power is 1/F=1/f1+1/f2, so the doublet can remain converging while cancelling colour spread. Camera, telescope and microscope objectives use achromatic groups to reduce coloured fringes.",
-    "Primary achromatism corrects two selected wavelengths; other colours may still form a secondary spectrum. More elaborate apochromatic systems correct additional wavelengths."
+    "Primary achromatism corrects two selected wavelengths; other colours may still form a secondary spectrum. More elaborate apochromatic systems correct additional wavelengths.",
+    "Two thin lenses in contact are achromatic for the mean colours when ω1/f1 + ω2/f2 = 0. The flint lens has the higher dispersive power, so it can cancel the colour of a stronger crown lens even though its own power is smaller. The combination still converges."
   ],
   "confusion": [
     "Do not omit the negative focal length of the diverging lens.",
-    "The simple condition assumes thin lenses in contact."
+    "The simple condition assumes thin lenses in contact.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
@@ -29,7 +34,10 @@
   "motionGraphics": "dispersion",
   "examples": [
     "f1=+20 cm, ω1=0.02 and ω2=0.04 require f2=−40 cm.",
-    "A pair with powers +5 D and −2 D has net +3 D and F≈+0.333 m."
+    "A pair with powers +5 D and −2 D has net +3 D and F≈+0.333 m.",
+    "Two thin lenses in contact are achromatic for the mean colours when ω1/f1 + ω2/f2 = 0. The flint lens has the higher dispersive power, so it can cancel the colour of a stronger crown lens even though its own power is smaller. The combination still converges.",
+    "The working relations are For two thin lenses in contact, ω1/f1 + ω2/f2 = 0 and A crown convex lens is paired with a flint concave lens. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A crown lens has ω1 = 0.020 and f1 = +10 cm. Flint has ω2 = 0.040. Find f2 for an achromatic pair in contact."
   ],
   "practiceQuestions": [
     "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
     "Keep focal-length signs in the achromatism equation.",
-    "Two-colour correction can leave secondary spectrum."
+    "Two-colour correction can leave secondary spectrum.",
+    "For two thin lenses in contact, ω1/f1 + ω2/f2 = 0",
+    "A crown convex lens is paired with a flint concave lens",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "An achromatic doublet balances wavelength dispersion with signed lens powers: ω1/f1+ω2/f2=0. It reduces but does not eliminate every colour error.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Opposite-signed powers let dispersion cancel while net power remains nonzero.",
     "Keep focal-length signs in the achromatism equation.",
-    "Two-colour correction can leave secondary spectrum."
+    "Two-colour correction can leave secondary spectrum.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.",
@@ -85,5 +101,102 @@
     "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
     "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
   ],
-  "visualType": "achromatism"
+  "visualType": "achromatism",
+  "mcs": [
+    {
+      "question": "Achromatic contact lenses satisfy",
+      "options": [
+        "ω1/f1 + ω2/f2 = 0",
+        "f1 = f2",
+        "ω1 = ω2 and f1 = f2",
+        "Both powers positive and equal"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Flint is used as",
+      "options": [
+        "The converging lens",
+        "The diverging lens with larger ω",
+        "A mirror",
+        "A slit"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The combination of a stronger crown convex lens and a weaker flint concave lens",
+      "options": [
+        "Must diverge",
+        "Can still converge",
+        "Has zero power always",
+        "Has no focal length"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ω of flint is",
+      "options": [
+        "Lower than crown",
+        "Higher than crown",
+        "Zero",
+        "Negative"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Achromatic contact lenses satisfy",
+      "options": [
+        "ω1/f1 + ω2/f2 = 0",
+        "f1 = f2",
+        "ω1 = ω2 and f1 = f2",
+        "Both powers positive and equal"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Flint is used as",
+      "options": [
+        "The converging lens",
+        "The diverging lens with larger ω",
+        "A mirror",
+        "A slit"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The combination of a stronger crown convex lens and a weaker flint concave lens",
+      "options": [
+        "Must diverge",
+        "Can still converge",
+        "Has zero power always",
+        "Has no focal length"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ω of flint is",
+      "options": [
+        "Lower than crown",
+        "Higher than crown",
+        "Zero",
+        "Negative"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A crown lens has ω1 = 0.020 and f1 = +10 cm. Flint has ω2 = 0.040. Find f2 for an achromatic pair in contact.",
+      "steps": [
+        "ω1/f1 + ω2/f2 = 0.",
+        "0.020/10 + 0.040/f2 = 0.",
+        "0.0020 + 0.040/f2 = 0.",
+        "f2 = −0.040/0.0020 = −20 cm.",
+        "The flint lens is diverging, with half the power of the crown lens, and the pair still converges."
+      ],
+      "answer": "f2 = −20 cm."
+    }
+  ]
 }

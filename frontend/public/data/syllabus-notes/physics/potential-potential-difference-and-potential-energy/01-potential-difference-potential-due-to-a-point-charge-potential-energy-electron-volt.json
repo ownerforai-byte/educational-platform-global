@@ -11,27 +11,46 @@
     "**Potential difference.** The potential difference V₂ − V₁ equals the work done per unit charge against the field in moving between the two points; 1 V = 1 J C⁻¹.",
     "**Potential energy.** A charge q at potential V has energy U = qV; for two point charges U = q₁q₂/4πε₀r, and for a system the pairwise energies add.",
     "**Electron volt.** 1 eV is the energy gained by an electron moving through a potential difference of 1 volt: 1 eV = 1.6 × 10⁻¹⁹ J.",
-    "**Equipotential surfaces.** These surfaces are everywhere perpendicular to field lines; no work is done moving a charge along one, and the surface of a charged conductor is equipotential."
+    "**Equipotential surfaces.** These surfaces are everywhere perpendicular to field lines; no work is done moving a charge along one, and the surface of a charged conductor is equipotential.",
+    "Electric potential is work per unit positive charge, a scalar. Potential energy is that potential times the charge you place there, so a negative charge has negative potential energy in a positive potential and is bound. The electronvolt is a unit of energy, not of potential: 1 eV is the energy an electron gains across 1 V."
   ],
-  "confusion": [],
-  "bounds": [],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "bounds": [
+    "Covers only: potential difference, potential due to a point charge, potential energy, electron volt (within Potential, Potential Difference and Potential Energy).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
   "practice": [
-    "one worked example for \"Potential difference, potential due to a point charge, po…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write V = k Q / r and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Potential difference, potential due to a point charge, po…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Potential difference, potential due to a point charge, po…\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "V = k Q / r",
+    "Potential energy of a charge q is q V"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Electric potential is work per unit positive charge, a scalar. Potential energy is that potential times the charge you place there, so a negative charge has negative potential energy in a positive potential and is bound. The electronvolt is a unit of energy, not of potential: 1 eV is the energy an electron gains across 1 V.",
+    "The working relations are V = k Q / r and Potential energy of a charge q is q V. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Find the potential 0.30 m from a point charge of 2.0 μC. Use k = 9.0 × 10^9. Then find the potential energy of an electron there. Use e = 1.6 × 10^−19 C."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Potential difference, potential due to a point charge, po…\" with one example.",
-    "compare \"Potential difference\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Potential difference, potential due to a point charge, po…\" and verify the answer is plausible."
+    "Write V = k Q / r and name the symbols.",
+    "What does Potential energy of a charge q is q V tell you?",
+    "Which unit must be converted before the substitution?"
   ],
   "formulas": [
-    "Governing equation for \"Potential difference, potential due to a point charge, po…\" — state with units, then use in one numerical."
+    "Governing equation for \"Potential difference, potential due to a point charge, po…\" — state with units, then use in one numerical.",
+    "V = k Q / r",
+    "Potential energy of a charge q is q V"
   ],
   "numericals": [
     "Set up the defining equation for \"Potential difference, potential due to a point charge, po…\", substitute simple values, and compute the result with units.",
@@ -39,32 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Potential difference",
-    "• Potential due to a point charge",
-    "• Potential energy",
-    "• Electron volt"
+    "V = k Q / r",
+    "Potential energy of a charge q is q V",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
-  "summary": "Potential difference, potential due to a point charge, po… (Potential, Potential Difference and Potential Energy, Physics, class-11-notes) covers Potential difference, potential due to a point charge, potential energy. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Potential around a point charge is kQ/r, a scalar. At 0.30 m from 2.0 μC it is 6.0 × 10^4 V. An electron there has potential energy qV, which is negative, so the electron is attracted.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Potential difference, potential due to a point charge, po…\"?",
+      "question": "Potential is",
       "options": [
-        "Potential difference",
-        "Potential due to a point charge",
-        "Unrelated topic",
-        "None of the above"
+        "A vector",
+        "A scalar",
+        "A force",
+        "Always zero"
       ],
-      "answer": "A",
-      "explanation": "Potential difference is listed among the official sub-ideas of Potential difference, potential due to a point charge, po…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Potential difference, potential due to a point charge, po…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Potential energy of charge q is",
       "options": [
-        "True",
-        "False"
+        "q V",
+        "V/q",
+        "k Q",
+        "The field"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "1 eV is",
+      "options": [
+        "A potential of 1 V",
+        "The energy an electron gains across 1 V",
+        "A coulomb",
+        "A field"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "V for a point charge falls as",
+      "options": [
+        "1/r^2",
+        "1/r",
+        "r",
+        "A constant"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Electric potential is work per unit positive charge, a scalar. Potential energy is that potential times the charge you place there, so a negative charge has negative potential energy in a positive potential and is bound. The electronvolt is a unit of energy, not of potential: 1 eV is the energy an electron gains across 1 V.",
+    "The working relations are V = k Q / r and Potential energy of a charge q is q V. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Find the potential 0.30 m from a point charge of 2.0 μC. Use k = 9.0 × 10^9. Then find the potential energy of an electron there. Use e = 1.6 × 10^−19 C. V = k Q / r = 9.0 × 10^9 × 2.0 × 10^−6 / 0.30. k Q = 1.8 × 10^4, so V = 6.0 × 10^4 V."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Potential is",
+      "options": [
+        "A vector",
+        "A scalar",
+        "A force",
+        "Always zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Potential energy of charge q is",
+      "options": [
+        "q V",
+        "V/q",
+        "k Q",
+        "The field"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "1 eV is",
+      "options": [
+        "A potential of 1 V",
+        "The energy an electron gains across 1 V",
+        "A coulomb",
+        "A field"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "V for a point charge falls as",
+      "options": [
+        "1/r^2",
+        "1/r",
+        "r",
+        "A constant"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the potential 0.30 m from a point charge of 2.0 μC. Use k = 9.0 × 10^9. Then find the potential energy of an electron there. Use e = 1.6 × 10^−19 C.",
+      "steps": [
+        "V = k Q / r = 9.0 × 10^9 × 2.0 × 10^−6 / 0.30.",
+        "k Q = 1.8 × 10^4, so V = 6.0 × 10^4 V.",
+        "The electron charge is negative.",
+        "U = (−1.6 × 10^−19)(6.0 × 10^4) = −9.6 × 10^−15 J.",
+        "Potential has no direction. The force on the electron points toward the positive charge."
+      ],
+      "answer": "V = 6.0 × 10^4 V. The electron's potential energy is −9.6 × 10^−15 J."
     }
   ]
 }

@@ -7,17 +7,21 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Interference of light — Young's double slit experiment — Wave Optics, Physics (class-12-notes).",
-    "**Tested.** define it · list: interference of light — young's double slit experiment · one worked example · one misconception each.",
-    "**Fact.** Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.",
-    "**Fact.** Newton's rings: r_m = √(mRλ) (dark/dark convention); λ = 2(rₙ₊₁² − rₙ²)/N (interferometric use).",
-    "**Fact.** Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle."
+    "Young's experiment lets one wavefront illuminate two narrow slits. The two waves that leave the slits stay in step, so they interfere on a distant screen. Two separate lamps do not keep that fixed phase.",
+    "Where the path difference is a whole number of wavelengths, the waves arrive in phase and the fringe is bright. Where the path difference is an odd number of half wavelengths, the fringe is dark.",
+    "The central fringe is bright because the two paths are equal. The bright fringes are equally spaced. The spacing is β = λ D / d, with D the screen distance and d the slit separation, when D is much larger than d.",
+    "A longer wavelength, a more distant screen, or closer slits all widen the pattern. Closing one slit removes the two-source fringes and leaves the single-slit spread.",
+    "White light gives a white central fringe and coloured fringes farther out, because each colour has its own spacing. The red fringes sit farther apart than the blue ones.",
+    "The path difference at a small angle is d sinθ, or d x / D on the screen. Setting that equal to m λ locates the bright fringe of order m."
   ],
   "confusion": [
-    "❌ treat \"Interference of light — Young's double slit experiment\" as one blob → ✅ split into: interference of light — young's double slit experiment.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ.."
+    "❌ skip the key fact → ✅ young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ..",
+    "The centre is bright.",
+    "β = λ D / d, not λ d / D.",
+    "Closer slits make wider fringes.",
+    "Two lamps are not coherent."
   ],
   "bounds": [
     "Covers only: interference of light — young's double slit experiment (within Wave Optics).",
@@ -26,9 +30,9 @@
     "Limit to remember: young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ."
   ],
   "practice": [
-    "define + example each sub-idea: interference of light — young's double slit experiment.",
-    "one worked example for \"Interference of light — Young's double slit experiment\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write β = λ D / d and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.",
@@ -36,12 +40,14 @@
     "Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Young's experiment lets one wavefront illuminate two narrow slits. The two waves that leave the slits stay in step, so they interfere on a distant screen. Two separate lamps do not keep that fixed phase.",
+    "Where the path difference is a whole number of wavelengths, the waves arrive in phase and the fringe is bright. Where the path difference is an odd number of half wavelengths, the fringe is dark.",
+    "Two slits are 1.0 mm apart and the screen is 2.0 m away. The wavelength is 500 nm. Find the fringe width."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Interference of light — Young's double slit experiment\" with one example.",
-    "compare \"Interference of light — Young's double slit experiment\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Interference of light — Young's double slit experiment\" and verify the answer is plausible."
+    "Write the fringe width.",
+    "Why is the centre bright?",
+    "What does increasing d do?"
   ],
   "formulas": [
     "β = λD/d",
@@ -49,23 +55,142 @@
     "r_m = √(mRλ)"
   ],
   "numericals": [
-    "Use  β = λD/d  — pick reasonable values, solve, and check the units.",
-    "Use  a sinθ = mλ  — pick reasonable values, solve, and check the units.",
-    "Use  r_m = √(mRλ)  — pick reasonable values, solve, and check the units."
+    "Two slits are 1.0 mm apart and the screen is 2.0 m away. The wavelength is 500 nm. Find the fringe width."
   ],
   "keyPoints": [
-    "• Interference of light — Young's double slit experiment"
+    "• Interference of light — Young's double slit experiment",
+    "One source feeds both slits.",
+    "The centre is bright.",
+    "Fringes are equally spaced.",
+    "A larger slit separation packs them closer."
   ],
-  "summary": "Interference of light — Young's double slit experiment (Wave Optics, Physics, class-12-notes) covers Interference of light — Young's double slit experiment. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Two slits fed by one source interfere. Bright fringes sit at whole-number wavelengths of path difference, and the equal spacing is λ D / d. The centre is bright. A wider slit gap packs the fringes closer, and separate lamps do not keep the phase steady.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Interference of light — Young's double slit experiment\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The central fringe is",
       "options": [
-        "True",
-        "False"
+        "Dark",
+        "Bright",
+        "Absent",
+        "A single-slit minimum"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Fringe width is",
+      "options": [
+        "λ D / d",
+        "λ d / D",
+        "d/λ",
+        "D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Increasing the slit separation",
+      "options": [
+        "Widens the fringes",
+        "Packs the fringes closer",
+        "Removes coherence by itself",
+        "Changes λ"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two independent lamps",
+      "options": [
+        "Give steady Young's fringes",
+        "Do not stay coherent",
+        "Make β infinite always",
+        "Make the centre dark by this formula"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Young's experiment lets one wavefront illuminate two narrow slits. The two waves that leave the slits stay in step, so they interfere on a distant screen. Two separate lamps do not keep that fixed phase.",
+    "Where the path difference is a whole number of wavelengths, the waves arrive in phase and the fringe is bright. Where the path difference is an odd number of half wavelengths, the fringe is dark.",
+    "The central fringe is bright because the two paths are equal. The bright fringes are equally spaced. The spacing is β = λ D / d, with D the screen distance and d the slit separation, when D is much larger than d."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Centre bright.",
+    "Bigger d, smaller β."
+  ],
+  "specialNotes": [
+    "The small-angle form needs D much greater than d.",
+    "Order m = 0 is the centre."
+  ],
+  "importantNotes": [
+    "D is the screen distance and d is the slit gap.",
+    "Coherence comes from splitting one wave."
+  ],
+  "importantConcepts": [
+    "Coherence",
+    "Path difference",
+    "Fringe width",
+    "White-light centre"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The central fringe is",
+      "options": [
+        "Dark",
+        "Bright",
+        "Absent",
+        "A single-slit minimum"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Fringe width is",
+      "options": [
+        "λ D / d",
+        "λ d / D",
+        "d/λ",
+        "D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Increasing the slit separation",
+      "options": [
+        "Widens the fringes",
+        "Packs the fringes closer",
+        "Removes coherence by itself",
+        "Changes λ"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two independent lamps",
+      "options": [
+        "Give steady Young's fringes",
+        "Do not stay coherent",
+        "Make β infinite always",
+        "Make the centre dark by this formula"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two slits are 1.0 mm apart and the screen is 2.0 m away. The wavelength is 500 nm. Find the fringe width.",
+      "steps": [
+        "d = 1.0 × 10^−3 m and λ = 5.00 × 10^−7 m.",
+        "β = λ D / d.",
+        "λ D = 5.00 × 10^−7 × 2.0 = 1.00 × 10^−6.",
+        "β = 1.00 × 10^−6 / 1.00 × 10^−3 = 1.00 × 10^−3 m.",
+        "The fringe width is 1.0 mm."
+      ],
+      "answer": "1.0 mm."
     }
   ]
 }

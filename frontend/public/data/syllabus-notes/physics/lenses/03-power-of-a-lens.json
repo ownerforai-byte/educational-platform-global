@@ -9,11 +9,16 @@
     "Worked example: f=+25 cm=+0.25 m gives P=+4 D. A diverging lens with f=−50 cm=−0.50 m has P=−2 D.",
     "Thin lenses in contact have additive powers. A +4 D lens and −1.5 D lens make Peq=+2.5 D, so feq=1/2.5=0.40 m.",
     "Power is not magnification: focal length determines power, while image size and orientation also depend on object distance through the lens equation.",
-    "For separated lenses the equivalent power includes separation; the simple algebraic sum applies only when thin lenses are in contact or separation is negligible."
+    "For separated lenses the equivalent power includes separation; the simple algebraic sum applies only when thin lenses are in contact or separation is negligible.",
+    "The lens-maker formula uses the relative index. In water the factor (μ_glass/μ_water − 1) is smaller than (μ_glass − 1) in air, so the same glass lens has a longer focal length and a smaller power. A glass lens does not keep its air power when it is submerged."
   ],
   "confusion": [
     "Using centimetres directly produces a power 100 times too large.",
-    "Separated or thick lens systems require an additional relation."
+    "Separated or thick lens systems require an additional relation.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find power for f=−40 cm.",
@@ -29,7 +34,10 @@
   "motionGraphics": "lenses",
   "examples": [
     "f=+0.25 m gives +4 D; f=−0.50 m gives −2 D.",
-    "+4 D and −1.5 D in contact give +2.5 D, feq=0.40 m."
+    "+4 D and −1.5 D in contact give +2.5 D, feq=0.40 m.",
+    "The lens-maker formula uses the relative index. In water the factor (μ_glass/μ_water − 1) is smaller than (μ_glass − 1) in air, so the same glass lens has a longer focal length and a smaller power. A glass lens does not keep its air power when it is submerged.",
+    "The working relations are P = 1/f and A lens in water is weaker if the glass index is closer to the water index. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A glass lens has P = 5.0 D in air, from (μ − 1) = 0.50. In water the relative factor becomes 0.17 instead of 0.50. Estimate the power in water."
   ],
   "practiceQuestions": [
     "Find power for f=−40 cm.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Convert focal length to metres before calculating dioptres.",
     "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence."
+    "The sign distinguishes convergence from divergence.",
+    "P = 1/f",
+    "A lens in water is weaker if the glass index is closer to the water index",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Lens power is signed reciprocal focal length in metres. Contact lens powers add, but magnification still depends on object position.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Convert focal length to metres before calculating dioptres.",
     "Add powers algebraically only for thin lenses in contact.",
-    "The sign distinguishes convergence from divergence."
+    "The sign distinguishes convergence from divergence.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find power for f=−40 cm.",
@@ -85,5 +101,102 @@
     "**Power vs Magnification:** Lens power $P = 1/f$ relates to focal length, not directly to magnification. Magnification $m = v/u = f/(f-u)$ depends on object distance. A high-power lens (short $f$) gives larger magnification for a given object distance, but $m$ is not simply proportional to $P$."
   ],
   "duplicateType": 1,
-  "visualType": "power-concept"
+  "visualType": "power-concept",
+  "mcs": [
+    {
+      "question": "Submerging a glass lens in water",
+      "options": [
+        "Increases its power",
+        "Decreases its power",
+        "Does not change f",
+        "Makes it a mirror"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The reason is",
+      "options": [
+        "A smaller relative index",
+        "A change of mass",
+        "Spherical aberration only",
+        "The colour"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Power is",
+      "options": [
+        "1/f in metres",
+        "f in centimetres",
+        "The radius",
+        "μ only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The shape in this comparison",
+      "options": [
+        "Is unchanged",
+        "Must be re-ground",
+        "Loses both radii",
+        "Becomes flat"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Submerging a glass lens in water",
+      "options": [
+        "Increases its power",
+        "Decreases its power",
+        "Does not change f",
+        "Makes it a mirror"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The reason is",
+      "options": [
+        "A smaller relative index",
+        "A change of mass",
+        "Spherical aberration only",
+        "The colour"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Power is",
+      "options": [
+        "1/f in metres",
+        "f in centimetres",
+        "The radius",
+        "μ only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The shape in this comparison",
+      "options": [
+        "Is unchanged",
+        "Must be re-ground",
+        "Loses both radii",
+        "Becomes flat"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A glass lens has P = 5.0 D in air, from (μ − 1) = 0.50. In water the relative factor becomes 0.17 instead of 0.50. Estimate the power in water.",
+      "steps": [
+        "Power is proportional to (μ_relative − 1) for the same shape.",
+        "The factor falls from 0.50 to 0.17.",
+        "The ratio is 0.17/0.50 = 0.34.",
+        "P_water ≈ 5.0 × 0.34 = 1.7 D.",
+        "The focal length becomes longer."
+      ],
+      "answer": "About 1.7 D in water."
+    }
+  ]
 }

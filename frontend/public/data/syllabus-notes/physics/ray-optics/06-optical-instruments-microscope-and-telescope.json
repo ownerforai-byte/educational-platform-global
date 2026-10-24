@@ -1,0 +1,195 @@
+{
+  "title": "Optical instruments — microscope and telescope",
+  "unitSlug": "ray-optics",
+  "topicSlug": "optical-instruments-microscope-and-telescope",
+  "topicTitle": "Optical instruments — microscope and telescope",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "A compound microscope has two convex lenses. The objective has a short focal length and makes a real, enlarged image of a nearby object. The eyepiece is used as a magnifier on that image.",
+    "When the final image is at the near point D, about 25 cm, the magnification is approximately (L/f_o)(D/f_e), where L is the tube length between the two lenses. A shorter objective focal length gives a larger magnification.",
+    "An astronomical telescope looks at a distant object, so the rays arrive nearly parallel. The objective makes a real image in its focal plane. A long objective focal length gathers a large image.",
+    "For the relaxed eye the final image is at infinity, and the magnifying power is f_o / f_e. A long objective and a short eyepiece give a large power. The tube length is then about f_o + f_e.",
+    "The microscope wants a short, strong objective. The telescope wants a long objective. Swapping those choices is the usual mix-up.",
+    "A larger objective also collects more light. Magnification without light still gives a dim image, which is why telescope objectives are wide as well as long in focal length."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "The microscope objective is short, not long.",
+    "Telescope power is f_o/f_e, not f_e/f_o.",
+    "The relaxed-eye tube length is f_o + f_e, not the microscope's L.",
+    "D is 25 cm, the near point, not the focal length."
+  ],
+  "bounds": [
+    "Covers only: optical instruments — microscope, telescope (within Ray Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write Microscope m ≈ (L/f_o)(D/f_e) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Optical instruments — microscope and telescope\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Microscope m ≈ (L/f_o)(D/f_e)",
+    "Telescope m = f_o / f_e for the relaxed eye"
+  ],
+  "examples": [
+    "A compound microscope has two convex lenses. The objective has a short focal length and makes a real, enlarged image of a nearby object. The eyepiece is used as a magnifier on that image.",
+    "When the final image is at the near point D, about 25 cm, the magnification is approximately (L/f_o)(D/f_e), where L is the tube length between the two lenses. A shorter objective focal length gives a larger magnification.",
+    "A microscope has f_o = 1.0 cm, f_e = 5.0 cm and L = 20 cm. Take D = 25 cm. Estimate the magnification with m = (L/f_o)(D/f_e)."
+  ],
+  "practiceQuestions": [
+    "Which focal length is short in a microscope?",
+    "Write the relaxed-eye telescope power.",
+    "What is the telescope tube length in that setting?"
+  ],
+  "formulas": [
+    "Governing equation for \"Optical instruments — microscope and telescope\" — state with units, then use in one numerical.",
+    "Microscope m ≈ (L/f_o)(D/f_e)",
+    "Telescope m = f_o / f_e for the relaxed eye"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Optical instruments — microscope and telescope\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "A microscope magnifies a near, tiny object.",
+    "A telescope magnifies a distant, large object.",
+    "Both use an objective and an eyepiece.",
+    "The final image is at infinity for the relaxed eye."
+  ],
+  "summary": "A microscope uses a short-focus objective on a near object, and its magnification is about (L/f_o)(D/f_e). A telescope uses a long-focus objective on a distant object, and for a relaxed eye its power is f_o/f_e with tube length f_o + f_e.",
+  "mcqs": [
+    {
+      "question": "A microscope objective has",
+      "options": [
+        "A long focal length",
+        "A short focal length",
+        "No focal length",
+        "A plane mirror only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Relaxed-eye telescope power is",
+      "options": [
+        "f_e/f_o",
+        "f_o/f_e",
+        "L/D",
+        "f_o f_e"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The telescope tube length for a relaxed eye is about",
+      "options": [
+        "f_o + f_e",
+        "f_o − f_e always negative",
+        "D only",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The near point D is about",
+      "options": [
+        "25 cm",
+        "25 m",
+        "The focal length of the objective",
+        "Infinity"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "A compound microscope has two convex lenses. The objective has a short focal length and makes a real, enlarged image of a nearby object. The eyepiece is used as a magnifier on that image.",
+    "When the final image is at the near point D, about 25 cm, the magnification is approximately (L/f_o)(D/f_e), where L is the tube length between the two lenses. A shorter objective focal length gives a larger magnification.",
+    "An astronomical telescope looks at a distant object, so the rays arrive nearly parallel. The objective makes a real image in its focal plane. A long objective focal length gathers a large image."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Microscope: short objective. Telescope: long objective.",
+    "Telescope m = f_o/f_e."
+  ],
+  "specialNotes": [
+    "D = 25 cm unless the question says otherwise.",
+    "The final image at infinity means the eye is relaxed."
+  ],
+  "importantNotes": [
+    "Name the instrument before the formula.",
+    "f_o and f_e must be in the same unit."
+  ],
+  "importantConcepts": [
+    "Compound microscope",
+    "Astronomical telescope",
+    "Magnifying power",
+    "Relaxed eye"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A microscope objective has",
+      "options": [
+        "A long focal length",
+        "A short focal length",
+        "No focal length",
+        "A plane mirror only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Relaxed-eye telescope power is",
+      "options": [
+        "f_e/f_o",
+        "f_o/f_e",
+        "L/D",
+        "f_o f_e"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The telescope tube length for a relaxed eye is about",
+      "options": [
+        "f_o + f_e",
+        "f_o − f_e always negative",
+        "D only",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The near point D is about",
+      "options": [
+        "25 cm",
+        "25 m",
+        "The focal length of the objective",
+        "Infinity"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A microscope has f_o = 1.0 cm, f_e = 5.0 cm and L = 20 cm. Take D = 25 cm. Estimate the magnification with m = (L/f_o)(D/f_e).",
+      "steps": [
+        "L/f_o = 20/1.0 = 20.",
+        "D/f_e = 25/5.0 = 5.0.",
+        "m = 20 × 5.0 = 100.",
+        "The image is enlarged about 100 times.",
+        "This uses the near-point formula, not the telescope formula."
+      ],
+      "answer": "100."
+    }
+  ]
+}

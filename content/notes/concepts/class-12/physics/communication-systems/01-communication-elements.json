@@ -5,14 +5,21 @@
   "topicTitle": "Elements of Communication",
   "relevance": 100,
   "notes": [
-    "**Elements of Communication:** This topic covers the fundamental concepts of elements of communication in the physics curriculum.",
-    "Understanding elements of communication is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to elements of communication should be memorized and practiced regularly."
+    "A communication system moves a message from one place to another. The information source produces the message, which may be speech, music or data.",
+    "The transmitter converts that message into a signal that can travel. For radio this includes modulation, placing the message onto a high-frequency carrier so that the antenna can be a practical size.",
+    "The channel is the path: a wire, an optical fibre, or free space. Noise, which is unwanted electrical energy, is added along the channel and is not part of the message.",
+    "The receiver undoes the transmitter's work. It amplifies the weak signal and demodulates it, recovering a copy of the original message for the listener or the display.",
+    "Attenuation is the weakening of the signal with distance. Amplifiers along a long channel restore the level, but they cannot perfectly remove noise that was added earlier.",
+    "Bandwidth is the range of frequencies the message or the channel occupies. A wider message, such as video, needs a wider channel than speech."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in elements of communication.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "The channel is not the message.",
+    "Modulation is not the same as amplification.",
+    "Noise is not a second message from the source.",
+    "The receiver does not create the information. It recovers it."
   ],
   "practice": [
     "Solve at least 5 problems on elements of communication from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "communication-systems",
   "motionGraphics": "communication-systems",
   "examples": [
-    "Example 1: Real-world application of Elements of Communication",
     "Example 2: Practical demonstration of Elements of Communication concepts",
     "Example 4: Diagram-based question on Elements of Communication",
     "Example 5: Application in daily life involving Elements of Communication"
@@ -61,11 +67,9 @@
     "Note 5: Elements of Communication frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Elements of Communication",
-    "Statement 2: Theorem related to Elements of Communication",
-    "Statement 3: Condition for Elements of Communication to be valid",
-    "Statement 4: Principle governing Elements of Communication",
-    "Statement 5: Corollary or consequence of Elements of Communication"
+    "A communication system moves a message from one place to another. The information source produces the message, which may be speech, music or data.",
+    "The transmitter converts that message into a signal that can travel. For radio this includes modulation, placing the message onto a high-frequency carrier so that the antenna can be a practical size.",
+    "The channel is the path: a wire, an optical fibre, or free space. Noise, which is unwanted electrical energy, is added along the channel and is not part of the message."
   ],
   "importantNotes": [
     "Note 1: Elements of Communication is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Elements of Communication",
     "Task 4: Practice previous year exam questions on Elements of Communication",
     "Task 5: Explain Elements of Communication to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "The path between transmitter and receiver is",
+      "options": [
+        "The source",
+        "The channel",
+        "The microphone only",
+        "The carrier by itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Modulation is used to",
+      "options": [
+        "Place the message on a carrier",
+        "Remove the antenna",
+        "Stop all noise perfectly",
+        "Turn AC into DC"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Noise is added mainly in",
+      "options": [
+        "The channel",
+        "The listener's ear as the only place",
+        "The battery",
+        "The turns of a transformer"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The receiver",
+      "options": [
+        "Creates a new message",
+        "Recovers the message",
+        "Is the channel",
+        "Replaces the source"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A speech signal is to be sent by radio. Put the blocks in order and say where noise is added.",
+      "steps": [
+        "The information source is the speaker, turned into an electrical message by a microphone.",
+        "The transmitter modulates that message onto a radio-frequency carrier and feeds an antenna.",
+        "The channel is free space, and noise is added there.",
+        "The receiver antenna, amplifier and demodulator recover the speech.",
+        "The order is source, transmitter, channel, receiver."
+      ],
+      "answer": "Source, transmitter, channel, receiver. Noise is added in the channel."
+    }
   ]
 }

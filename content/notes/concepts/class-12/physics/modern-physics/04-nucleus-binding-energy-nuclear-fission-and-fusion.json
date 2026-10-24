@@ -7,19 +7,21 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Nucleus — binding energy, nuclear fission and fusion — Modern Physics, Physics (class-12-notes).",
-    "**Tested.** define it · list: nucleus — binding energy, nuclear fission, fusion · one worked example · one misconception each.",
-    "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "**Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars).",
-    "**Nuclear fission.** one-line definition + one-line exam use.",
-    "**Fusion.** one-line definition + one-line exam use."
+    "The mass of a nucleus is less than the mass of its separated protons and neutrons. The difference is the mass defect. It is not a mistake in the weighing. It is the mass equivalent of the binding energy.",
+    "Binding energy = Δm c^2. In nuclear units, 1 u corresponds to 931 MeV. The binding energy is the energy you would have to supply to pull the nucleus apart into free nucleons.",
+    "The useful comparison between nuclei is the binding energy per nucleon, the total divided by the mass number A. It is low for the very light nuclei, highest near iron, and a little lower again for the heavy nuclei.",
+    "Fission splits a very heavy nucleus into two medium ones. Those pieces sit higher on the curve, so energy is released. A chain reaction needs neutrons from one fission to cause the next.",
+    "Fusion joins very light nuclei into a heavier one that is higher on the curve. That also releases energy. It is the energy source of the Sun. The nuclei must be brought close enough for the strong force to act, which means a very high temperature.",
+    "Both processes release energy for the same reason: the products have a larger binding energy per nucleon, so the products are lighter, and the missing mass has left as energy."
   ],
   "confusion": [
-    "❌ treat \"Nucleus — binding energy\" as one blob → ✅ split into: nucleus — binding energy, nuclear fission, fusion.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).."
+    "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)..",
+    "A larger mass defect means more tightly bound, not heavier.",
+    "Per nucleon is the stability comparison.",
+    "Fusion is for light nuclei and fission is for heavy nuclei.",
+    "1 u is 931 MeV, not 931 J."
   ],
   "bounds": [
     "Covers only: nucleus — binding energy, nuclear fission, fusion (within Modern Physics).",
@@ -28,9 +30,9 @@
     "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
   ],
   "practice": [
-    "define + example each sub-idea: nucleus — binding energy, nuclear fission, fusion.",
-    "one worked example for \"Nucleus — binding energy, nuclear fission and fusion\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Binding energy = Δm × 931 MeV when Δm is in u and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
@@ -38,12 +40,14 @@
     "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "The mass of a nucleus is less than the mass of its separated protons and neutrons. The difference is the mass defect. It is not a mistake in the weighing. It is the mass equivalent of the binding energy.",
+    "Binding energy = Δm c^2. In nuclear units, 1 u corresponds to 931 MeV. The binding energy is the energy you would have to supply to pull the nucleus apart into free nucleons.",
+    "A nucleus of mass number 56 has a mass defect of 0.500 u. Find the binding energy and the binding energy per nucleon. Use 931 MeV per u."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Nucleus — binding energy, nuclear fission and fusion\" with one example.",
-    "compare \"Nucleus — binding energy\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Nucleus — binding energy, nuclear fission and fusion\" and verify the answer is plausible."
+    "Define the mass defect.",
+    "Where does the binding-energy curve peak?",
+    "Why do both fission and fusion release energy?"
   ],
   "formulas": [
     "BE = Δm c²",
@@ -51,36 +55,141 @@
     "t_½ = ln2 / λ"
   ],
   "numericals": [
-    "Use  BE = Δm c²  — pick reasonable values, solve, and check the units.",
-    "Use  N = N₀ e^(−λt)  — pick reasonable values, solve, and check the units.",
-    "Use  t_½ = ln2 / λ  — pick reasonable values, solve, and check the units."
+    "A nucleus of mass number 56 has a mass defect of 0.500 u. Find the binding energy and the binding energy per nucleon. Use 931 MeV per u."
   ],
   "keyPoints": [
-    "• Nucleus — binding energy",
-    "• Nuclear fission",
-    "• Fusion"
+    "The nucleus is lighter than its free nucleons.",
+    "The missing mass is the binding energy.",
+    "Per nucleon, the curve peaks near iron.",
+    "Fission and fusion both move toward that peak."
   ],
-  "summary": "Nucleus — binding energy, nuclear fission and fusion (Modern Physics, Physics, class-12-notes) covers Nucleus — binding energy, nuclear fission, fusion. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "A nucleus is lighter than its free nucleons by the mass defect, and that mass is the binding energy, with 1 u equal to 931 MeV. Stability follows the binding energy per nucleon, which peaks near iron. Fission of heavy nuclei and fusion of light nuclei both move toward that peak and release energy.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Nucleus — binding energy, nuclear fission and fusion\"?",
+      "question": "The mass defect is",
       "options": [
-        "Nucleus — binding energy",
-        "Nuclear fission",
-        "Unrelated topic",
-        "None of the above"
+        "Extra mass in the nucleus",
+        "Missing mass compared with free nucleons",
+        "The atomic number",
+        "Always zero"
       ],
-      "answer": "A",
-      "explanation": "Nucleus — binding energy is listed among the official sub-ideas of Nucleus — binding energy, nuclear fission and fusion; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Nucleus — binding energy, nuclear fission and fusion\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "1 u corresponds to",
       "options": [
-        "True",
-        "False"
+        "931 MeV",
+        "931 J",
+        "1 eV",
+        "A"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "The curve of binding energy per nucleon peaks near",
+      "options": [
+        "Hydrogen",
+        "Iron",
+        "The electron",
+        "A free neutron"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Fusion releases energy for nuclei that are",
+      "options": [
+        "Very heavy",
+        "Very light, moving up the curve",
+        "Already iron",
+        "Unbound electrons"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "The mass of a nucleus is less than the mass of its separated protons and neutrons. The difference is the mass defect. It is not a mistake in the weighing. It is the mass equivalent of the binding energy.",
+    "Binding energy = Δm c^2. In nuclear units, 1 u corresponds to 931 MeV. The binding energy is the energy you would have to supply to pull the nucleus apart into free nucleons.",
+    "The useful comparison between nuclei is the binding energy per nucleon, the total divided by the mass number A. It is low for the very light nuclei, highest near iron, and a little lower again for the heavy nuclei."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "MeV = 931 × defect in u.",
+    "Divide by A for the value per nucleon."
+  ],
+  "specialNotes": [
+    "Iron is near the top of the curve.",
+    "Use measured masses, not the integer A, as the nuclear mass."
+  ],
+  "importantNotes": [
+    "Say per nucleon when you mean the curve.",
+    "Name fission or fusion before the mass numbers."
+  ],
+  "importantConcepts": [
+    "Mass defect",
+    "Binding energy per nucleon",
+    "Fission",
+    "Fusion"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The mass defect is",
+      "options": [
+        "Extra mass in the nucleus",
+        "Missing mass compared with free nucleons",
+        "The atomic number",
+        "Always zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "1 u corresponds to",
+      "options": [
+        "931 MeV",
+        "931 J",
+        "1 eV",
+        "A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The curve of binding energy per nucleon peaks near",
+      "options": [
+        "Hydrogen",
+        "Iron",
+        "The electron",
+        "A free neutron"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Fusion releases energy for nuclei that are",
+      "options": [
+        "Very heavy",
+        "Very light, moving up the curve",
+        "Already iron",
+        "Unbound electrons"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A nucleus of mass number 56 has a mass defect of 0.500 u. Find the binding energy and the binding energy per nucleon. Use 931 MeV per u.",
+      "steps": [
+        "Total binding energy = 931 × 0.500 = 465.5 MeV.",
+        "A = 56.",
+        "Binding energy per nucleon = 465.5 / 56.",
+        "That quotient is 8.31 MeV.",
+        "This is the energy per nucleon, not the energy of one fission."
+      ],
+      "answer": "465.5 MeV total, 8.31 MeV per nucleon."
     }
   ]
 }

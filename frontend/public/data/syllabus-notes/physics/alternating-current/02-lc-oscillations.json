@@ -1,0 +1,240 @@
+{
+  "title": "LC Oscillations",
+  "unitSlug": "alternating-current",
+  "topicSlug": "lc-oscillations",
+  "topicTitle": "LC Oscillations",
+  "relevance": 100,
+  "notes": [
+    "**LC Oscillations:** This topic covers the oscillatory exchange of energy between a capacitor (storing electric field energy) and an inductor (storing magnetic field energy).",
+    "In an ideal LC circuit, electrical oscillations occur at a natural frequency determined by the values of L and C.",
+    "This is an analogy to a mechanical simple harmonic oscillator (mass-spring system).",
+    "If a charged capacitor is connected to a pure inductor, the capacitor discharges through the coil, the current builds a magnetic field, and that field then pushes charge back onto the capacitor with the opposite sign.",
+    "The charge on the capacitor is of the form Q = Q_0 cos ωt when it starts from rest at maximum charge. The current is the derivative and is maximum when the charge is zero.",
+    "The angular frequency of this exchange is ω = 1/√(LC). The frequency in hertz is f = 1/(2π√(LC)). It does not depend on the starting charge."
+  ],
+  "confusion": [
+    "❌ Thinking LC circuits lose energy immediately without resistance ✅ An ideal LC circuit (zero resistance) oscillates indefinitely; only practical circuits lose energy due to resistance (damped oscillations).",
+    "❌ Current is maximum when charge on capacitor is maximum ✅ When charge on the capacitor is maximum, the potential energy is maximum and the current is zero. When the current is maximum, the magnetic energy is maximum and charge is zero (energy transfer).",
+    "❌ Misinterpreting the oscillation frequency ✅ The angular frequency is ω = 1/√(LC), and the frequency is f = 1 / (2π√(LC)).",
+    "The frequency does not depend on the initial charge.",
+    "Maximum current and maximum charge do not happen together.",
+    "Energy is not lost in the ideal LC circuit.",
+    "ω here is 1/√(LC), not √(LC)."
+  ],
+  "practice": [
+    "Solve problems calculating the frequency of LC oscillations.",
+    "Derive the differential equation for LC oscillations: d²q/dt² + (1/LC)q = 0.",
+    "Draw the energy vs. time graphs for the capacitor and inductor in an LC circuit.",
+    "Compare the LC circuit with the mechanical simple harmonic oscillator.",
+    "one worked example for \"LC oscillations and resonance\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "LC circuits are fundamental for radio tuning and filter circuits.",
+    "The energy transfer mechanism (electrical to magnetic and vice versa) is central to LC oscillation understanding.",
+    "Oscillations are damped in real circuits because of resistance in the inductor windings.",
+    "answer pattern for \"LC oscillations and resonance\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "animation3D": "alternating-current",
+  "motionGraphics": "alternating-current",
+  "examples": [
+    "Calculating the frequency of an LC circuit",
+    "Analyzing energy transfer stages",
+    "Damping effects in a practical LC circuit",
+    "Comparison of LC circuit with Mass-Spring system",
+    "Application in radio frequency selection",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "Q1. Derive the formula for the natural frequency of an LC circuit.",
+    "Q2. Explain the energy conversion process during LC oscillations.",
+    "Q3. How do you distinguish between electrical and mechanical oscillators?",
+    "Q4. What is the effect of adding resistance to an LC circuit?",
+    "Q5. Calculate the frequency if L=10mH and C=1µF.",
+    "state + explain the main idea of \"LC oscillations and resonance\" with one example.",
+    "compare \"LC oscillations\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"LC oscillations and resonance\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Angular Frequency ω = 1/√(LC)",
+    "Frequency f = 1 / (2π√(LC))",
+    "Energy in Capacitor U_E = q²/2C",
+    "Energy in Inductor U_B = ½Li²",
+    "Total Energy U = U_E + U_B = constant",
+    "Governing equation for \"LC oscillations and resonance\" — state with units, then use in one numerical."
+  ],
+  "keyPoints": [
+    "Conservation of Energy in ideal LC circuits",
+    "Energy oscillation between Electric and Magnetic fields",
+    "Analogy to mechanical simple harmonic motion",
+    "Natural frequency formula",
+    "Damping in practical circuits"
+  ],
+  "summary": "LC oscillations involve the continuous exchange of energy between a capacitor's electric field and an inductor's magnetic field. This process is analogous to mechanical harmonic motion and produces oscillations at a natural frequency determined by L and C.",
+  "specialNotes": [
+    "Note 1: Always check if the circuit is considered 'ideal' (no resistance).",
+    "Note 2: Remember the relationship between q, I, and energy at different stages.",
+    "Note 3: The total energy is constant in the ideal case.",
+    "Note 4: Frequency (f) is in Hz, angular frequency (ω) is in rad/s.",
+    "Note 5: Understand why real circuits have damped oscillations."
+  ],
+  "importantStatements": [
+    "If a charged capacitor is connected to a pure inductor, the capacitor discharges through the coil, the current builds a magnetic field, and that field then pushes charge back onto the capacitor with the opposite sign.",
+    "The charge on the capacitor is of the form Q = Q_0 cos ωt when it starts from rest at maximum charge. The current is the derivative and is maximum when the charge is zero.",
+    "The angular frequency of this exchange is ω = 1/√(LC). The frequency in hertz is f = 1/(2π√(LC)). It does not depend on the starting charge."
+  ],
+  "importantNotes": [
+    "Note 1: Practice numerical calculations for frequency.",
+    "Note 2: Review the energy conservation graph carefully.",
+    "Note 3: Understand the impact of resistance (damping).",
+    "Note 4: The differential equation is crucial for formal derivation.",
+    "Note 5: Be comfortable with the conversion between C and I."
+  ],
+  "examShortTricks": [
+    "Trick 1: Frequency f = 1/(2π√LC).",
+    "Trick 2: Angular frequency ω = 1/√LC.",
+    "Trick 3: Maximum Energy U = q_max²/2C = ½L I_max².",
+    "Trick 4: Current is zero when charge is maximum.",
+    "Trick 5: Charge is zero when current is maximum."
+  ],
+  "examNotes": [
+    "Learn the energy conservation derivation.",
+    "Practice frequency calculations.",
+    "Understand the graphical representation of energy.",
+    "LC circuit problems are frequent, practice thoroughly.",
+    "Damping is a common theoretical question."
+  ],
+  "mcs": [
+    {
+      "question": "In an LC circuit, the oscillation frequency is:",
+      "options": [
+        "1/√(LC)",
+        "2π/√(LC)",
+        "1 / (2π√(LC))",
+        "√(LC)"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "When the energy in the capacitor is maximum, the energy in the inductor is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Half of total",
+        "Varies"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An ideal LC circuit oscillates indefinitely because:",
+      "options": [
+        "It has a battery",
+        "It has no resistance",
+        "It has a large capacitor",
+        "It has a large inductor"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The total energy in an ideal LC circuit is:",
+      "options": [
+        "Constant",
+        "Increasing",
+        "Decreasing",
+        "Oscillating"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which of the following is analogous to LC oscillations?",
+      "options": [
+        "Projectile motion",
+        "Simple harmonic motion",
+        "Uniform circular motion",
+        "Free fall"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Energy Exchange",
+    "Concept 2: Natural Frequency",
+    "Concept 3: Mechanical Analogy",
+    "Concept 4: Damping",
+    "Concept 5: Differential Equation"
+  ],
+  "importantTasks": [
+    "Task 1: Calculate frequency for various L, C pairs.",
+    "Task 2: Sketch energy vs time plots.",
+    "Task 3: Derive natural frequency formula.",
+    "Task 4: Discuss damping mechanisms.",
+    "Task 5: Solve LC-oscillation exam problems."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"LC oscillations and resonance\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "The natural frequency of an LC circuit is",
+      "options": [
+        "1/(2π√(LC))",
+        "2π√(LC)",
+        "LC",
+        "R/L"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "When the capacitor charge is maximum, the current is",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Equal to Q",
+        "Infinite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In an ideal LC circuit the total energy",
+      "options": [
+        "Falls to zero at once",
+        "Stays constant",
+        "Is always in the resistor",
+        "Depends on the colour of the wire"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Resistance in a real LC circuit",
+      "options": [
+        "Raises the oscillation forever",
+        "Damps the oscillation",
+        "Removes L",
+        "Sets the frequency to zero always"
+      ],
+      "answer": "B"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: lc oscillations, resonance (within Alternating Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "exercises": [
+    {
+      "question": "L = 2.0 mH and C = 8.0 μF. Find the oscillation frequency. Take π = 3.14.",
+      "steps": [
+        "Convert: L = 2.0 × 10^−3 H and C = 8.0 × 10^−6 F.",
+        "LC = 1.6 × 10^−8, so √(LC) = 1.26 × 10^−4.",
+        "2π√(LC) = 6.28 × 1.26 × 10^−4 = 7.94 × 10^−4.",
+        "f = 1 / 7.94 × 10^−4 = 1.26 × 10^3 Hz.",
+        "The frequency is 1.26 kHz."
+      ],
+      "answer": "1.26 kHz."
+    }
+  ]
+}

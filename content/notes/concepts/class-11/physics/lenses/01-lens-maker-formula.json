@@ -9,11 +9,16 @@
     "For light travelling left to right, a biconvex lens commonly has R1>0 and R2<0, so the curvature contributions add to positive converging power. Do not substitute unsigned radii into a signed formula.",
     "Worked example: n=1.50, R1=+20 cm and R2=−20 cm give 1/f=0.50(1/20+1/20)=0.05 cm⁻¹, hence f=+20 cm.",
     "In a surrounding medium use relative index nrel=nlens/nmedium. As nrel approaches 1, the lens bends light less and |f| increases; a lens can change sign if the surrounding medium has a larger index.",
-    "The formula assumes a thin lens and paraxial rays. Thick lenses require principal-plane treatment, and very wide ray bundles show aberrations."
+    "The formula assumes a thin lens and paraxial rays. Thick lenses require principal-plane treatment, and very wide ray bundles show aberrations.",
+    "The lens-maker formula builds the focal length from the glass index and the two radii. For a double-convex lens used with light travelling left to right, the first centre is to the right of its surface and the second centre is to the left, so the two contributions add."
   ],
   "confusion": [
     "The formula assumes a thin lens and paraxial rays.",
-    "Do not replace signed radii by their magnitudes."
+    "Do not replace signed radii by their magnitudes.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
@@ -29,7 +34,10 @@
   "motionGraphics": "lenses",
   "examples": [
     "n=1.50, R1=+20 cm and R2=−20 cm give f=+20 cm.",
-    "If relative index tends to 1, lens power tends to zero and focal length magnitude grows."
+    "If relative index tends to 1, lens power tends to zero and focal length magnitude grows.",
+    "The lens-maker formula builds the focal length from the glass index and the two radii. For a double-convex lens used with light travelling left to right, the first centre is to the right of its surface and the second centre is to the left, so the two contributions add.",
+    "The working relations are 1/f = (μ − 1)(1/R1 − 1/R2) and A symmetric convex lens has R2 = −R1. Name each symbol, convert the data into SI units, and only then substitute.",
+    "μ = 1.50, R1 = +10 cm and R2 = −10 cm. Find f."
   ],
   "practiceQuestions": [
     "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Focal length depends on curvature and relative refractive index.",
     "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness."
+    "The thin-lens formula neglects centre thickness.",
+    "1/f = (μ − 1)(1/R1 − 1/R2)",
+    "A symmetric convex lens has R2 = −R1",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "The lens-maker formula links curvature and relative refractive index to focal length. Signed radii and the surrounding medium determine the correct optical power.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Focal length depends on curvature and relative refractive index.",
     "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness."
+    "The thin-lens formula neglects centre thickness.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
@@ -86,5 +102,102 @@
   ],
   "duplicateType": 2,
   "tabGroup": "lens-maker-s-formula",
-  "visualType": "lens-maker"
+  "visualType": "lens-maker",
+  "mcs": [
+    {
+      "question": "The lens-maker formula is",
+      "options": [
+        "1/f = (μ−1)(1/R1−1/R2)",
+        "f = μ R",
+        "1/v + 1/u = 1/f",
+        "P = R"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For a symmetric convex lens the radii",
+      "options": [
+        "Add inside the bracket",
+        "Cancel",
+        "Are both negative",
+        "Do not affect f"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A higher index, with the same shape,",
+      "options": [
+        "Lengthens f",
+        "Shortens f",
+        "Removes the focus",
+        "Makes the lens diverge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "This f is for the lens",
+      "options": [
+        "In the medium used to define μ",
+        "In any liquid with no change",
+        "As a mirror",
+        "At zero radius"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The lens-maker formula is",
+      "options": [
+        "1/f = (μ−1)(1/R1−1/R2)",
+        "f = μ R",
+        "1/v + 1/u = 1/f",
+        "P = R"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For a symmetric convex lens the radii",
+      "options": [
+        "Add inside the bracket",
+        "Cancel",
+        "Are both negative",
+        "Do not affect f"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A higher index, with the same shape,",
+      "options": [
+        "Lengthens f",
+        "Shortens f",
+        "Removes the focus",
+        "Makes the lens diverge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "This f is for the lens",
+      "options": [
+        "In the medium used to define μ",
+        "In any liquid with no change",
+        "As a mirror",
+        "At zero radius"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "μ = 1.50, R1 = +10 cm and R2 = −10 cm. Find f.",
+      "steps": [
+        "1/R1 − 1/R2 = 1/10 − 1/(−10) = 1/5 cm^−1.",
+        "μ − 1 = 0.50.",
+        "1/f = 0.50 × 0.20 = 0.10 cm^−1.",
+        "f = 10 cm.",
+        "The lens is converging."
+      ],
+      "answer": "10 cm, converging."
+    }
+  ]
 }

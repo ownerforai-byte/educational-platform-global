@@ -1,0 +1,195 @@
+{
+  "title": "Electromotive force (emf), internal resistance, and cells…",
+  "unitSlug": "current-electricity",
+  "topicSlug": "electromotive-force-emf-internal-resistance-and-cells-in-combination",
+  "topicTitle": "Electromotive force (emf), internal resistance, and cells in combination",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "The emf of a cell is the work done per unit charge as charge is moved through the source. It is measured in volts. It is the open-circuit potential difference, when no current is drawn.",
+    "A real cell has internal resistance r. When current I flows, the terminal voltage is E − I r. The 'lost volts' I r heat the inside of the cell.",
+    "The current in a single loop is I = E / (R + r). A smaller external resistance draws a larger current and drops the terminal voltage further. Shorting a cell makes I = E/r, which can be large and damaging.",
+    "Two identical cells in series give emf 2E and internal resistance 2r, if they point the same way. The current in an external R is 2E / (R + 2r).",
+    "Two identical cells in parallel give emf E and internal resistance r/2. The parallel pair can supply a larger current before the terminal voltage sags, but the emf is still the emf of one cell.",
+    "Cells in opposition subtract their emfs. A 1.5 V cell set against a 1.5 V cell gives no net emf if they are identical, and a small difference of emf drives a current limited by both internal resistances."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)..",
+    "Emf is not the terminal voltage under load.",
+    "Lost volts are I r, not I R.",
+    "Parallel identical cells do not double the emf.",
+    "A short circuit is I = E/r, not zero."
+  ],
+  "bounds": [
+    "Covers only: electromotive force, internal resistance, cells in combination (within Current Electricity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
+  ],
+  "practice": [
+    "Write I = E / (R + r) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
+    "Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
+    "Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
+  ],
+  "examples": [
+    "The emf of a cell is the work done per unit charge as charge is moved through the source. It is measured in volts. It is the open-circuit potential difference, when no current is drawn.",
+    "A real cell has internal resistance r. When current I flows, the terminal voltage is E − I r. The 'lost volts' I r heat the inside of the cell.",
+    "A cell of emf 1.5 V and internal resistance 0.50 Ω is connected to a 2.5 Ω resistor. Find the current and the terminal voltage."
+  ],
+  "practiceQuestions": [
+    "Write the terminal voltage.",
+    "What is the current in a series pair?",
+    "What is the emf of two identical cells in parallel?"
+  ],
+  "formulas": [
+    "V = IR",
+    "P = IV = I²R = V²/R",
+    "V_term = E − Ir"
+  ],
+  "numericals": [
+    "A cell of emf 1.5 V and internal resistance 0.50 Ω is connected to a 2.5 Ω resistor. Find the current and the terminal voltage."
+  ],
+  "keyPoints": [
+    "Emf is the energy per unit charge from the source.",
+    "Internal resistance is inside the cell.",
+    "Terminal voltage is less than emf when the cell supplies current.",
+    "Series cells add emfs. Parallel equal cells share current."
+  ],
+  "summary": "Emf is the open-circuit voltage of a source. Internal resistance drops the terminal voltage to E − I r while the cell supplies current, and the loop current is E/(R+r). Identical cells in series add their emfs. Identical cells in parallel keep one emf and share the internal resistance.",
+  "mcqs": [
+    {
+      "question": "On open circuit the terminal voltage equals",
+      "options": [
+        "Zero",
+        "The emf",
+        "I r",
+        "E/r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "While supplying current, V equals",
+      "options": [
+        "E − I r",
+        "E + I r",
+        "I R only with r ignored always",
+        "r/E"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Two identical cells in parallel have emf",
+      "options": [
+        "2E",
+        "E",
+        "E/2",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A short-circuited cell carries",
+      "options": [
+        "E/r",
+        "Zero",
+        "Infinite resistance",
+        "R only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "The emf of a cell is the work done per unit charge as charge is moved through the source. It is measured in volts. It is the open-circuit potential difference, when no current is drawn.",
+    "A real cell has internal resistance r. When current I flows, the terminal voltage is E − I r. The 'lost volts' I r heat the inside of the cell.",
+    "The current in a single loop is I = E / (R + r). A smaller external resistance draws a larger current and drops the terminal voltage further. Shorting a cell makes I = E/r, which can be large and damaging."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "V = E − I r while the cell supplies current.",
+    "Series: add E and add r. Parallel identical: E stays, r halves."
+  ],
+  "specialNotes": [
+    "On open circuit, I = 0 and V = E.",
+    "Charging a cell reverses the current, and the terminal voltage becomes E + I r."
+  ],
+  "importantNotes": [
+    "Say whether the cell is supplying or being charged before using the sign of I r.",
+    "Do not add emfs of a parallel pair."
+  ],
+  "importantConcepts": [
+    "Emf",
+    "Internal resistance",
+    "Terminal voltage",
+    "Series and parallel cells"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "On open circuit the terminal voltage equals",
+      "options": [
+        "Zero",
+        "The emf",
+        "I r",
+        "E/r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "While supplying current, V equals",
+      "options": [
+        "E − I r",
+        "E + I r",
+        "I R only with r ignored always",
+        "r/E"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Two identical cells in parallel have emf",
+      "options": [
+        "2E",
+        "E",
+        "E/2",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A short-circuited cell carries",
+      "options": [
+        "E/r",
+        "Zero",
+        "Infinite resistance",
+        "R only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A cell of emf 1.5 V and internal resistance 0.50 Ω is connected to a 2.5 Ω resistor. Find the current and the terminal voltage.",
+      "steps": [
+        "I = E / (R + r) = 1.5 / (2.5 + 0.50).",
+        "The denominator is 3.0 Ω.",
+        "I = 1.5 / 3.0 = 0.50 A.",
+        "Terminal voltage = E − I r = 1.5 − 0.50 × 0.50.",
+        "V = 1.5 − 0.25 = 1.25 V, which is also I R = 0.50 × 2.5."
+      ],
+      "answer": "0.50 A and 1.25 V."
+    }
+  ]
+}

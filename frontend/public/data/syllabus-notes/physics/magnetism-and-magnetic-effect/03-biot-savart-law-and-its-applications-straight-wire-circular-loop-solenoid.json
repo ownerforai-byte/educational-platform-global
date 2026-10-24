@@ -1,0 +1,195 @@
+{
+  "title": "Biot-Savart law and its applications (straight wire, circ…",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "topicSlug": "biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid",
+  "topicTitle": "Biot-Savart law and its applications (straight wire, circular loop, solenoid)",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "The Biot–Savart law gives the small field of a current element: it is proportional to I dl sinθ / r^2, and the direction is perpendicular to the element and to the line drawn to the point.",
+    "Integrating around a long straight wire gives B = μ0 I /(2π r). The field lines are circles around the wire, given by the right-hand grip. The field falls as 1/r.",
+    "At the centre of a circular loop of one turn, B = μ0 I /(2 R), along the axis. N turns wound together multiply the field by N.",
+    "A long solenoid is many circular turns in a row. Inside, the field is μ0 n I, nearly uniform, with n turns per metre. Outside an ideal long solenoid the field is negligible.",
+    "μ0 is 4π × 10^−7. The combination μ0 / 2π, used for the straight wire, is 2 × 10^−7. Using μ0 where the formula already contains 2π, or the other way round, is the usual slip.",
+    "Ampere's law reaches the wire and the solenoid faster when the symmetry is obvious. Biot–Savart is the law you start from when you have to build the field from elements."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "The wire formula is not the loop formula.",
+    "n is turns per metre in the solenoid.",
+    "The wire field circles the wire. It is not along it.",
+    "Outside an ideal solenoid the field is not μ0 n I."
+  ],
+  "bounds": [
+    "Covers only: biot-savart law, its applications, straight wire, circular loop (within Magnetism and Magnetic Effect of Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write Long wire: B = μ0 I /(2π r) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Biot-Savart law and its applications (straight wire, circ…\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Long wire: B = μ0 I /(2π r)",
+    "Loop centre: B = μ0 N I /(2 R)"
+  ],
+  "examples": [
+    "The Biot–Savart law gives the small field of a current element: it is proportional to I dl sinθ / r^2, and the direction is perpendicular to the element and to the line drawn to the point.",
+    "Integrating around a long straight wire gives B = μ0 I /(2π r). The field lines are circles around the wire, given by the right-hand grip. The field falls as 1/r.",
+    "A coil of 50 turns and radius 5.0 cm carries 2.0 A. Find B at the centre. Use μ0 = 4π × 10^−7."
+  ],
+  "practiceQuestions": [
+    "Write B beside a long wire.",
+    "Write B at the centre of a coil of N turns.",
+    "What is B inside a long solenoid?"
+  ],
+  "formulas": [
+    "Governing equation for \"Biot-Savart law and its applications (straight wire, circ…\" — state with units, then use in one numerical.",
+    "Long wire: B = μ0 I /(2π r)",
+    "Loop centre: B = μ0 N I /(2 R)"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Biot-Savart law and its applications (straight wire, circ…\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "Each current element contributes.",
+    "A long wire gives circles of field.",
+    "A loop's centre field is along the axis.",
+    "A solenoid is the stack of loops."
+  ],
+  "summary": "Biot–Savart builds magnetic field from current elements. A long wire gives μ0 I /(2π r) in circles, a coil gives μ0 N I /(2R) at its centre, and a long solenoid gives μ0 n I inside. The right-hand grip fixes the direction.",
+  "mcqs": [
+    {
+      "question": "Beside a long wire, B is",
+      "options": [
+        "μ0 I /(2π r)",
+        "μ0 I /(2 R)",
+        "μ0 n I",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the centre of N tight turns, B is",
+      "options": [
+        "μ0 N I /(2 R)",
+        "μ0 I /(2π r)",
+        "I R",
+        "n/I"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Inside a long solenoid, B is",
+      "options": [
+        "μ0 n I",
+        "Zero",
+        "μ0 I / r",
+        "The wire field of one turn as the main result"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The field of a straight wire",
+      "options": [
+        "Circles the wire",
+        "Points along the current as the field direction",
+        "Is radial like a positive charge",
+        "Is a scalar"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "The Biot–Savart law gives the small field of a current element: it is proportional to I dl sinθ / r^2, and the direction is perpendicular to the element and to the line drawn to the point.",
+    "Integrating around a long straight wire gives B = μ0 I /(2π r). The field lines are circles around the wire, given by the right-hand grip. The field falls as 1/r.",
+    "At the centre of a circular loop of one turn, B = μ0 I /(2 R), along the axis. N turns wound together multiply the field by N."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Wire: μ0 I over 2π r. Loop: μ0 N I over 2 R.",
+    "Grip the wire: fingers curl with B."
+  ],
+  "specialNotes": [
+    "μ0 / 2π = 2 × 10^−7.",
+    "On the axis of a loop, off centre, the field is weaker and still along the axis."
+  ],
+  "importantNotes": [
+    "Match the formula to the shape.",
+    "State circles or along the axis."
+  ],
+  "importantConcepts": [
+    "Biot–Savart",
+    "Straight wire",
+    "Coil centre",
+    "Solenoid"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Beside a long wire, B is",
+      "options": [
+        "μ0 I /(2π r)",
+        "μ0 I /(2 R)",
+        "μ0 n I",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the centre of N tight turns, B is",
+      "options": [
+        "μ0 N I /(2 R)",
+        "μ0 I /(2π r)",
+        "I R",
+        "n/I"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Inside a long solenoid, B is",
+      "options": [
+        "μ0 n I",
+        "Zero",
+        "μ0 I / r",
+        "The wire field of one turn as the main result"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The field of a straight wire",
+      "options": [
+        "Circles the wire",
+        "Points along the current as the field direction",
+        "Is radial like a positive charge",
+        "Is a scalar"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A coil of 50 turns and radius 5.0 cm carries 2.0 A. Find B at the centre. Use μ0 = 4π × 10^−7.",
+      "steps": [
+        "R = 0.050 m, so 2 R = 0.10 m.",
+        "B = μ0 N I / (2 R).",
+        "N I = 50 × 2.0 = 100.",
+        "μ0 × 100 = 1.26 × 10^−4.",
+        "B = 1.26 × 10^−4 / 0.10 = 1.26 × 10^−3 T, along the axis."
+      ],
+      "answer": "1.26 × 10^−3 T, along the axis."
+    }
+  ]
+}

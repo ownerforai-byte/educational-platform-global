@@ -144,7 +144,7 @@ each subject** and record the real number.
 | 1 | Biology | all units | 81 | 43 / 81 | 4 + class 11 checklist | 2026-10-24 |
 | 2 | Chemistry | all units | (count from audit) | 0 / N | | |
 | 3 | Mathematics | all units | (count from audit) | 0 / N | | |
-| 4 | Physics | all units | (count from audit) | 0 / N | | |
+| 4 | Physics | all units | audit thin scopes | filled; 0 physics scopes left in the THIN list | full empty-scope pass | 2026-10-24 |
 | 5 | English | all units | (count from audit) | 0 / N | | |
 
 ### PHASE 2 — upgrade generic/shallow CLEAN notes (Nepali excluded)
@@ -153,11 +153,11 @@ each subject** and record the real number.
 | 1 | Biology | class 11 concept + theory | 132 / 132 class 11; class 12 still open | 2026-10-24 |
 | 2 | Chemistry | | 0 / N | |
 | 3 | Mathematics | | 0 / N | |
-| 4 | Physics | | 0 / N | |
+| 4 | Physics | already-CLEAN notes were not reopened | empty/thin scopes only | 2026-10-24 |
 | 5 | English | | 0 / N | |
 
 ### Standing invariants (check after every batch)
-- [x] `broken = 0` (2026-10-24, after class 11 biology checklist: broken=0)
+- [x] `broken = 0` (2026-10-24, after physics empty-scope pass: broken=0)
 - [x] `placeholder` did not rise (stayed 0)
 - [x] no `/nepali/` path touched
 - [x] math notes use `steps[]` (no math in this batch; biology exercises use steps[])
@@ -183,3 +183,4 @@ each subject** and record the real number.
 - 2026-10-24 — Batch 3 (Biology): filled 10 more (30/81) in ecology (greenhouse, ozone, acid rain, invasion), environmental-issues (solid waste, ozone, rainwater and wasteland), environmental-issues-12 (air and water, solid-waste methods, climate), evolutionary-biology (monkeys, apes, humans), faunal-diversity (protozoan classes, Paramecium and Plasmodium). Diagrams: new `greenhouse-ozone`, `protozoa-classes`, `paramecium-plasmodium`. Audit: files=2627 authored=2067 placeholder=0 thin=560 broken=0. Biology thin 61 → 51.
 - 2026-10-24 — Batch 4 (Biology): filled 10 more (40/81). Faunal diversity: animal body plans, nine phyla to class, earthworm external features and digestion, nephridia and nerve cord, reproduction and cocoon, frog habit and digestion, frog heart and respiration. Food production: plant breeding, single cell protein, animal husbandry. Diagrams: new `animal-body-plans`, `animal-phyla`, `earthworm-body`, `frog-organs`, `plant-breeding-steps`, `scp-sources`, `animal-husbandry`. Audit: files=2630 authored=2080 placeholder=0 thin=550 broken=0. Biology thin 51 → 41.
 - 2026-10-24 — Class 11 biology checklist (class 12 left untouched). All 132 class 11 biology concept and theory notes now meet the §1 rich checklist (0 shallow). Real notes were kept; boilerplate Monera, Nepal vegetation belts, and in-situ/ex-situ were replaced; short stubs were replaced; five-paragraph floral notes were extended. Concept files mirrored to runtime. Theory files have no runtime copy. Audit: files=2630 authored=2083 placeholder=0 thin=547 broken=0. Biology thin 41 → 38, and the remaining 38 are class 12. Phase 1 is 43/81.
+- 2026-10-24 — Physics empty/thin pass (class 11 and class 12). Empty stubs and **Scope.** boilerplate were replaced. Notes that already had real paragraphs were kept and extended. Each filled note has a worked exercise whose solution is separate steps. Concept files were mirrored to runtime. The four heat runtime notes that had carried chemistry (moles, limiting reactant) now carry the heat notes, and their manifest counts were updated. No new manifest cards were added for the short stubs. Audit: files=2724 authored=2276 placeholder=0 thin=448 broken=0. No physics scope remains in the THIN list. Class 12 biology, chemistry, mathematics, English, and Nepali are still thin. Phase 2 physics (notes that were already CLEAN) was not reopened.

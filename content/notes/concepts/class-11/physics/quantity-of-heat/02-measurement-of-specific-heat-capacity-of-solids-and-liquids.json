@@ -7,18 +7,21 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Measurement of specific heat capacity of solids and liquids — Quantity of Heat, Physics (class-11-notes).",
-    "**Tested.** define it · list: measurement of specific heat capacity of solids, liquids · one worked example · one misconception each.",
-    "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
-    "**Fact.** Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
-    "**Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀).",
-    "**Liquids.** one-line definition + one-line exam use."
+    "Specific heat capacity is measured by supplying a known quantity of heat and measuring the temperature rise, or by the method of mixtures, where heat lost by the hot body equals heat gained by the cold body.",
+    "For a solid, heat the sample to a known temperature θ1, then drop it into a calorimeter of cold water at θ2. The mixture settles at θ. The solid loses m_s c_s (θ1 − θ). The water and the calorimeter gain that heat.",
+    "If the calorimeter has mass m_c and specific heat c_c, and the water has mass m_w and specific heat c_w, then m_s c_s (θ1 − θ) = m_w c_w (θ − θ2) + m_c c_c (θ − θ2).",
+    "Solve for c_s. Every temperature in a difference can stay in °C. The masses must be in the unit that matches c, normally kilograms if c is in J kg^-1 K^-1.",
+    "A liquid's specific heat can be found the same way, by heating a hot solid of known c and dropping it into the cold liquid, or by an electric heater. The electrical heat is I V t, or I^2 R t, if the heater is in the liquid and losses are small.",
+    "Stir so the thermometer reads the mixture, and keep a lid on to reduce loss to the room. A loss that is ignored makes the calculated specific heat too small for the solid, because the solid appears to have given less heat to the water than it really lost."
   ],
   "confusion": [
-    "❌ treat \"Measurement of specific heat capacity of solids\" as one blob → ✅ split into: measurement of specific heat capacity of solids, liquids.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.."
+    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
+    "The solid's temperature fall is θ1 − θ, not θ1 − θ2.",
+    "The water's temperature rise is θ − θ2.",
+    "Leaving out the calorimeter is allowed only when the question says so.",
+    "Electrical energy in joules is already the heat, if it all stays in the liquid."
   ],
   "bounds": [
     "Covers only: measurement of specific heat capacity of solids, liquids (within Quantity of Heat).",
@@ -27,9 +30,9 @@
     "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
   ],
   "practice": [
-    "define + example each sub-idea: measurement of specific heat capacity of solids, liquids.",
-    "one worked example for \"Measurement of specific heat capacity of solids and liquids\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Heat lost = heat gained and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
@@ -37,12 +40,14 @@
     "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Specific heat capacity is measured by supplying a known quantity of heat and measuring the temperature rise, or by the method of mixtures, where heat lost by the hot body equals heat gained by the cold body.",
+    "For a solid, heat the sample to a known temperature θ1, then drop it into a calorimeter of cold water at θ2. The mixture settles at θ. The solid loses m_s c_s (θ1 − θ). The water and the calorimeter gain that heat.",
+    "A 0.10 kg metal piece at 100°C is dropped into 0.20 kg of water at 20°C. The mixture reaches 25°C. Neglect the calorimeter. Take c_w = 4200 J kg^-1 K^-1. Find c of the metal."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Measurement of specific heat capacity of solids and liquids\" with one example.",
-    "compare \"Measurement of specific heat capacity of solids\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Measurement of specific heat capacity of solids and liquids\" and verify the answer is plausible."
+    "What equality is the method of mixtures?",
+    "Which temperature difference belongs to the hot solid?",
+    "What does an ignored heat loss do to the result?"
   ],
   "formulas": [
     "Q = mcΔT",
@@ -50,24 +55,142 @@
     "cp = 1.5×cv + R (Mayer, for ideal gas)"
   ],
   "numericals": [
-    "Use  Q = mcΔT  — pick reasonable values, solve, and check the units.",
-    "Use  Q = mL  — pick reasonable values, solve, and check the units.",
-    "Use  cp = 1.5×cv + R (Mayer, for ideal gas)  — pick reasonable values, solve, and check the units."
+    "A 0.10 kg metal piece at 100°C is dropped into 0.20 kg of water at 20°C. The mixture reaches 25°C. Neglect the calorimeter. Take c_w = 4200 J kg^-1 K^-1. Find c of the metal."
   ],
   "keyPoints": [
     "• Measurement of specific heat capacity of solids",
-    "• Liquids"
+    "Method of mixtures.",
+    "A solid is heated and dropped into cold water.",
+    "Include the calorimeter if required.",
+    "Electrical heating can supply a measured Q."
   ],
-  "summary": "Measurement of specific heat capacity of solids and liquids (Quantity of Heat, Physics, class-11-notes) covers Measurement of specific heat capacity of solids, liquids. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Specific heat is found from a known heat and a measured temperature change. In the method of mixtures the hot body's heat loss equals the cold body's heat gain, including the calorimeter when it is not negligible. An electrical heater supplies Q = I V t.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Measurement of specific heat capacity of solids and liquids\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "In the method of mixtures",
       "options": [
-        "True",
-        "False"
+        "Heat lost equals heat gained",
+        "Temperatures add",
+        "Masses must be equal",
+        "c is always 1"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "The hot solid cools from",
+      "options": [
+        "θ2 to θ",
+        "θ1 to θ",
+        "θ to θ1",
+        "0°C to θ"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Electrical heat from a heater is",
+      "options": [
+        "I V t, if losses are ignored",
+        "I + V + t",
+        "The mass of the heater",
+        "Always latent heat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Ignoring heat lost to the room tends to make the solid's calculated c",
+      "options": [
+        "Too large",
+        "Too small",
+        "Exact",
+        "Negative and meaningless always"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Specific heat capacity is measured by supplying a known quantity of heat and measuring the temperature rise, or by the method of mixtures, where heat lost by the hot body equals heat gained by the cold body.",
+    "For a solid, heat the sample to a known temperature θ1, then drop it into a calorimeter of cold water at θ2. The mixture settles at θ. The solid loses m_s c_s (θ1 − θ). The water and the calorimeter gain that heat.",
+    "If the calorimeter has mass m_c and specific heat c_c, and the water has mass m_w and specific heat c_w, then m_s c_s (θ1 − θ) = m_w c_w (θ − θ2) + m_c c_c (θ − θ2)."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Hot body: fall from θ1 to θ. Cold body: rise from θ2 to θ.",
+    "I V t is the electrical heat input."
+  ],
+  "specialNotes": [
+    "Dry the solid before weighing if it was in a boiling bath.",
+    "A thermometer's heat capacity is usually neglected."
+  ],
+  "importantNotes": [
+    "Write the heat-balance equation before substituting.",
+    "Convert grams to kilograms if c is per kilogram."
+  ],
+  "importantConcepts": [
+    "Method of mixtures",
+    "Calorimeter",
+    "Electrical heating",
+    "Heat balance"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "In the method of mixtures",
+      "options": [
+        "Heat lost equals heat gained",
+        "Temperatures add",
+        "Masses must be equal",
+        "c is always 1"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The hot solid cools from",
+      "options": [
+        "θ2 to θ",
+        "θ1 to θ",
+        "θ to θ1",
+        "0°C to θ"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Electrical heat from a heater is",
+      "options": [
+        "I V t, if losses are ignored",
+        "I + V + t",
+        "The mass of the heater",
+        "Always latent heat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Ignoring heat lost to the room tends to make the solid's calculated c",
+      "options": [
+        "Too large",
+        "Too small",
+        "Exact",
+        "Negative and meaningless always"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 0.10 kg metal piece at 100°C is dropped into 0.20 kg of water at 20°C. The mixture reaches 25°C. Neglect the calorimeter. Take c_w = 4200 J kg^-1 K^-1. Find c of the metal.",
+      "steps": [
+        "Heat lost by the metal equals heat gained by the water.",
+        "0.10 × c × (100 − 25) = 0.20 × 4200 × (25 − 20).",
+        "0.10 × c × 75 = 0.20 × 4200 × 5.",
+        "7.5 c = 4200.",
+        "c = 560 J kg^-1 K^-1."
+      ],
+      "answer": "560 J kg^-1 K^-1."
     }
   ]
 }

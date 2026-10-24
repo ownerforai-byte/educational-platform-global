@@ -7,12 +7,19 @@
   "notes": [
     "**LC Oscillations:** This topic covers the oscillatory exchange of energy between a capacitor (storing electric field energy) and an inductor (storing magnetic field energy).",
     "In an ideal LC circuit, electrical oscillations occur at a natural frequency determined by the values of L and C.",
-    "This is an analogy to a mechanical simple harmonic oscillator (mass-spring system)."
+    "This is an analogy to a mechanical simple harmonic oscillator (mass-spring system).",
+    "If a charged capacitor is connected to a pure inductor, the capacitor discharges through the coil, the current builds a magnetic field, and that field then pushes charge back onto the capacitor with the opposite sign.",
+    "The charge on the capacitor is of the form Q = Q_0 cos ωt when it starts from rest at maximum charge. The current is the derivative and is maximum when the charge is zero.",
+    "The angular frequency of this exchange is ω = 1/√(LC). The frequency in hertz is f = 1/(2π√(LC)). It does not depend on the starting charge."
   ],
   "confusion": [
     "❌ Thinking LC circuits lose energy immediately without resistance ✅ An ideal LC circuit (zero resistance) oscillates indefinitely; only practical circuits lose energy due to resistance (damped oscillations).",
     "❌ Current is maximum when charge on capacitor is maximum ✅ When charge on the capacitor is maximum, the potential energy is maximum and the current is zero. When the current is maximum, the magnetic energy is maximum and charge is zero (energy transfer).",
-    "❌ Misinterpreting the oscillation frequency ✅ The angular frequency is ω = 1/√(LC), and the frequency is f = 1 / (2π√(LC))."
+    "❌ Misinterpreting the oscillation frequency ✅ The angular frequency is ω = 1/√(LC), and the frequency is f = 1 / (2π√(LC)).",
+    "The frequency does not depend on the initial charge.",
+    "Maximum current and maximum charge do not happen together.",
+    "Energy is not lost in the ideal LC circuit.",
+    "ω here is 1/√(LC), not √(LC)."
   ],
   "practice": [
     "Solve problems calculating the frequency of LC oscillations.",
@@ -61,9 +68,7 @@
     "Energy oscillation between Electric and Magnetic fields",
     "Analogy to mechanical simple harmonic motion",
     "Natural frequency formula",
-    "Damping in practical circuits",
-    "• LC oscillations",
-    "• Resonance"
+    "Damping in practical circuits"
   ],
   "summary": "LC oscillations involve the continuous exchange of energy between a capacitor's electric field and an inductor's magnetic field. This process is analogous to mechanical harmonic motion and produces oscillations at a natural frequency determined by L and C.",
   "specialNotes": [
@@ -74,11 +79,9 @@
     "Note 5: Understand why real circuits have damped oscillations."
   ],
   "importantStatements": [
-    "Statement 1: Energy is conserved in an ideal LC circuit.",
-    "Statement 2: Maximum current occurs when capacitor charge is zero.",
-    "Statement 3: Maximum charge occurs when current is zero.",
-    "Statement 4: Oscillation frequency depends only on L and C.",
-    "Statement 5: Electrical oscillations are analogous to mechanical oscillations."
+    "If a charged capacitor is connected to a pure inductor, the capacitor discharges through the coil, the current builds a magnetic field, and that field then pushes charge back onto the capacitor with the opposite sign.",
+    "The charge on the capacitor is of the form Q = Q_0 cos ωt when it starts from rest at maximum charge. The current is the derivative and is maximum when the charge is zero.",
+    "The angular frequency of this exchange is ω = 1/√(LC). The frequency in hertz is f = 1/(2π√(LC)). It does not depend on the starting charge."
   ],
   "importantNotes": [
     "Note 1: Practice numerical calculations for frequency.",
@@ -174,13 +177,44 @@
   ],
   "mcqs": [
     {
-      "question": "A common examiner point on \"LC oscillations and resonance\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The natural frequency of an LC circuit is",
       "options": [
-        "True",
-        "False"
+        "1/(2π√(LC))",
+        "2π√(LC)",
+        "LC",
+        "R/L"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "When the capacitor charge is maximum, the current is",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Equal to Q",
+        "Infinite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In an ideal LC circuit the total energy",
+      "options": [
+        "Falls to zero at once",
+        "Stays constant",
+        "Is always in the resistor",
+        "Depends on the colour of the wire"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Resistance in a real LC circuit",
+      "options": [
+        "Raises the oscillation forever",
+        "Damps the oscillation",
+        "Removes L",
+        "Sets the frequency to zero always"
+      ],
+      "answer": "B"
     }
   ],
   "source": "generated",
@@ -189,5 +223,18 @@
     "Covers only: lc oscillations, resonance (within Alternating Current).",
     "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "exercises": [
+    {
+      "question": "L = 2.0 mH and C = 8.0 μF. Find the oscillation frequency. Take π = 3.14.",
+      "steps": [
+        "Convert: L = 2.0 × 10^−3 H and C = 8.0 × 10^−6 F.",
+        "LC = 1.6 × 10^−8, so √(LC) = 1.26 × 10^−4.",
+        "2π√(LC) = 6.28 × 1.26 × 10^−4 = 7.94 × 10^−4.",
+        "f = 1 / 7.94 × 10^−4 = 1.26 × 10^3 Hz.",
+        "The frequency is 1.26 kHz."
+      ],
+      "answer": "1.26 kHz."
+    }
   ]
 }

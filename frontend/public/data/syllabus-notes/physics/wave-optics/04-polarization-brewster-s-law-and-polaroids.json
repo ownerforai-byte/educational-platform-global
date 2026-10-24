@@ -1,0 +1,195 @@
+{
+  "title": "Polarization — Brewster's law and polaroids",
+  "unitSlug": "wave-optics",
+  "topicSlug": "polarization-brewster-s-law-and-polaroids",
+  "topicTitle": "Polarization — Brewster's law and polaroids",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Light is a transverse electromagnetic wave. Its electric field can point in any direction in the plane perpendicular to the ray. Polarised light has that field along one line.",
+    "At Brewster's angle of incidence, the reflected light is completely plane polarised. The refractive index and that angle are related by n = tan i_p.",
+    "At the same angle the reflected ray and the refracted ray are at 90° to each other. That geometry is why the reflected electric field has only one direction left.",
+    "A Polaroid has long molecules that absorb one component and pass the perpendicular component. Two Polaroids with their axes at angle θ pass intensity I_0 cos^2 θ if the incident light is already polarised. That is Malus' law.",
+    "Crossed Polaroids, θ = 90°, pass no light. Parallel Polaroids pass the full polarised intensity. Unpolarised light through one Polaroid loses half its intensity, because half the components are absorbed.",
+    "Polarisation does not happen for a longitudinal wave. The effect is evidence that light is transverse."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Brewster's law is n = tan i_p, not sin i_p.",
+    "Malus uses the square of the cosine.",
+    "Crossed Polaroids transmit nothing.",
+    "One Polaroid on unpolarised light transmits about half, not all."
+  ],
+  "bounds": [
+    "Covers only: polarization — brewster's law, polaroids (within Wave Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write n = tan i_p and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Polarization — Brewster's law and polaroids\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "n = tan i_p",
+    "Malus: I = I_0 cos^2 θ"
+  ],
+  "examples": [
+    "Light is a transverse electromagnetic wave. Its electric field can point in any direction in the plane perpendicular to the ray. Polarised light has that field along one line.",
+    "At Brewster's angle of incidence, the reflected light is completely plane polarised. The refractive index and that angle are related by n = tan i_p.",
+    "Glass has n = 1.50. Find Brewster's angle, then the intensity fraction through a second Polaroid at 60° to the first if the light reaching it is polarised. Use tan 56° ≈ 1.48."
+  ],
+  "practiceQuestions": [
+    "Write Brewster's law.",
+    "What is the angle between the reflected and refracted rays at i_p?",
+    "What does Malus' law say at 90°?"
+  ],
+  "formulas": [
+    "Governing equation for \"Polarization — Brewster's law and polaroids\" — state with units, then use in one numerical.",
+    "n = tan i_p",
+    "Malus: I = I_0 cos^2 θ"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Polarization — Brewster's law and polaroids\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "Polarisation is a transverse-wave fact.",
+    "Brewster's angle gives full polarisation of the reflected ray.",
+    "At that angle the reflected and refracted rays are perpendicular.",
+    "A Polaroid passes one direction."
+  ],
+  "summary": "Brewster's angle, where n = tan i_p, fully polarises the reflected light, and the reflected and refracted rays are perpendicular. A Polaroid selects one transverse direction, and Malus' law gives I_0 cos^2 θ for a second Polaroid. Crossed axes pass nothing.",
+  "mcqs": [
+    {
+      "question": "Brewster's law is",
+      "options": [
+        "n = sin i_p",
+        "n = tan i_p",
+        "n = cos i_p",
+        "i_p = 0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At Brewster's angle the reflected and refracted rays are",
+      "options": [
+        "Parallel",
+        "At 90°",
+        "Along the normal together",
+        "Absent"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Crossed Polaroids transmit",
+      "options": [
+        "All the light",
+        "No light",
+        "Half",
+        "The reflected ray"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Malus' law uses",
+      "options": [
+        "cos θ",
+        "cos^2 θ",
+        "tan θ",
+        "sin i_p"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Light is a transverse electromagnetic wave. Its electric field can point in any direction in the plane perpendicular to the ray. Polarised light has that field along one line.",
+    "At Brewster's angle of incidence, the reflected light is completely plane polarised. The refractive index and that angle are related by n = tan i_p.",
+    "At the same angle the reflected ray and the refracted ray are at 90° to each other. That geometry is why the reflected electric field has only one direction left."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "n = tan i_p.",
+    "Crossed means dark."
+  ],
+  "specialNotes": [
+    "Unpolarised through one Polaroid: intensity about half.",
+    "i_p is often near 57° for glass."
+  ],
+  "importantNotes": [
+    "Use tan, not sin.",
+    "Square the cosine in Malus."
+  ],
+  "importantConcepts": [
+    "Plane polarisation",
+    "Brewster angle",
+    "Malus",
+    "Polaroid"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Brewster's law is",
+      "options": [
+        "n = sin i_p",
+        "n = tan i_p",
+        "n = cos i_p",
+        "i_p = 0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At Brewster's angle the reflected and refracted rays are",
+      "options": [
+        "Parallel",
+        "At 90°",
+        "Along the normal together",
+        "Absent"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Crossed Polaroids transmit",
+      "options": [
+        "All the light",
+        "No light",
+        "Half",
+        "The reflected ray"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Malus' law uses",
+      "options": [
+        "cos θ",
+        "cos^2 θ",
+        "tan θ",
+        "sin i_p"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Glass has n = 1.50. Find Brewster's angle, then the intensity fraction through a second Polaroid at 60° to the first if the light reaching it is polarised. Use tan 56° ≈ 1.48.",
+      "steps": [
+        "i_p = arctan(1.50), which is about 56° because tan 56° ≈ 1.48.",
+        "Malus: I/I_0 = cos^2 60°.",
+        "cos 60° = 0.50.",
+        "The fraction is 0.25.",
+        "The reflected ray at 56° would be fully polarised, which is a separate fact from the Polaroid fraction."
+      ],
+      "answer": "About 56°, and the second Polaroid passes one quarter."
+    }
+  ]
+}

@@ -9,12 +9,17 @@
     "**Finding atomic mass.** Atomic mass ≈ 3R / specific heat; measuring a metal's specific heat therefore gives its equivalent/atomic mass — the classic experiment.",
     "**Compounds (Kopp's rule).** For a compound the molecular heat capacity is the sum of the atomic contributions, letting unknown element masses be estimated from measured C.",
     "**Limitations.** The law fails at low temperatures — C falls toward zero as T³ (Debye) for metals and much faster for diamond/beryllium; quantum statistics, not classical, explains the falloff.",
-    "**Exam angle.** Typical questions: state the law with its value, deduce atomic mass from specific heat, or name the solids that obey it least at low temperature."
+    "**Exam angle.** Typical questions: state the law with its value, deduce atomic mass from specific heat, or name the solids that obey it least at low temperature.",
+    "The Dulong and Petit method measures the linear expansion of a rod between two known temperatures, often steam and ice, and finds α from ΔL / (L ΔT). The length that enters is the original length. Using the expanded length instead is a second-order mistake at these small expansions."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in dulong and petit method.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on dulong and petit method from your textbook.",
@@ -30,19 +35,27 @@
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
   "examples": [
-    "Real-world application of Dulong and Petit Method",
     "Practical demonstration of Dulong and Petit Method concepts",
     "Diagram-based question on Dulong and Petit Method",
     "Application in daily life involving Dulong and Petit Method"
   ],
   "practiceQuestions": [
+    "Q1. Define and explain Dulong and Petit Method with suitable example.",
     "Q2. Solve problems related to Dulong and Petit Method.",
     "Q3. Differentiate between various aspects of Dulong and Petit Method.",
     "Q4. Derive the key formula related to Dulong and Petit Method.",
     "Q5. What are the applications of Dulong and Petit Method?"
   ],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "Application formula for Dulong and Petit Method",
+    "Derivation result for Dulong and Petit Method"
+  ],
+  "keyPoints": [
+    "ΔL = α L ΔT",
+    "The Dulong–Petit method reads expansion between fixed temperatures",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Dulong and Petit Method is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Dulong and Petit Method applies",
@@ -51,8 +64,13 @@
     "Note 4: Remember the units and dimensions involved in Dulong and Petit Method",
     "Note 5: Dulong and Petit Method frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "The Dulong and Petit method measures the linear expansion of a rod between two known temperatures, often steam and ice, and finds α from ΔL / (L ΔT). The length that enters is the original length. Using the expanded length instead is a second-order mistake at these small expansions.",
+    "The working relations are ΔL = α L ΔT and The Dulong–Petit method reads expansion between fixed temperatures. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A rod is 1.00 m at 0°C and extends by 1.7 mm at 100°C. Find α. ΔL = 1.7 × 10^−3 m and L = 1.00 m. ΔT = 100 K."
+  ],
   "importantNotes": [
+    "Note 1: Dulong and Petit Method is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Dulong and Petit Method",
     "Note 3: Dulong and Petit Method has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Dulong and Petit Method",
@@ -126,5 +144,60 @@
     "Task 3: Create a concept map for Dulong and Petit Method",
     "Task 4: Practice previous year exam questions on Dulong and Petit Method",
     "Task 5: Explain Dulong and Petit Method to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "α equals",
+      "options": [
+        "ΔL / (L ΔT)",
+        "ΔL × L",
+        "ΔT / ΔL",
+        "The final length"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The length in the denominator is",
+      "options": [
+        "The original length",
+        "The extension",
+        "The radius",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "This rod's α is",
+      "options": [
+        "1.7 × 10^−5 /K",
+        "1.7 /K",
+        "100",
+        "1.7 mm"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Ice and steam are used to",
+      "options": [
+        "Fix the two temperatures",
+        "Change the metal",
+        "Measure mass",
+        "Remove α"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A rod is 1.00 m at 0°C and extends by 1.7 mm at 100°C. Find α.",
+      "steps": [
+        "ΔL = 1.7 × 10^−3 m and L = 1.00 m.",
+        "ΔT = 100 K.",
+        "α = ΔL / (L ΔT) = 1.7 × 10^−3 / 100.",
+        "α = 1.7 × 10^−5 per kelvin.",
+        "The same number per degree celsius is used because the interval is the same size."
+      ],
+      "answer": "1.7 × 10^−5 per kelvin."
+    }
   ]
 }

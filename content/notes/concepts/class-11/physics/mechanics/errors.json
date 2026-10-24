@@ -3,17 +3,22 @@
   "unitSlug": "mechanics",
   "topicSlug": "errors",
   "topicTitle": "Errors",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "Random errors vary unpredictably between readings; repeated measurements and averaging reduce their influence. Systematic errors shift results consistently because of calibration, zero offset or method and are not removed by simple repetition.",
     "Accuracy is closeness to an accepted value; precision is agreement among repeated readings. A set can be precise but inaccurate if a systematic offset is present.",
     "If a true value is known, absolute error is |xmeasured−xtrue|; relative error is absolute error divided by the reference value; percentage error is 100 times relative error.",
     "Example: readings 10.2, 10.3 and 10.1 cm average to 10.2 cm. Compared with accepted 10.0 cm, absolute error is 0.2 cm and percentage error is 2%.",
-    "Check an instrument’s zero before use, repeat readings where possible, report units and uncertainty, and avoid unsupported digits beyond the instrument resolution."
+    "Check an instrument’s zero before use, repeat readings where possible, report units and uncertainty, and avoid unsupported digits beyond the instrument resolution.",
+    "A random error scatters readings both ways and shrinks when you average more of them. A systematic error, such as a zero offset, shifts every reading the same way and survives the average. You remove it by calibrating or by changing the method, not by repeating the same faulty procedure."
   ],
   "confusion": [
     "A small spread does not prove accuracy.",
-    "Do not report more digits than the instrument supports."
+    "Do not report more digits than the instrument supports.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Distinguish accuracy from precision.",
@@ -29,7 +34,10 @@
   "motionGraphics": "mechanics",
   "examples": [
     "10.2, 10.3, 10.1 cm average to 10.2 cm; against 10.0 cm error is 2%.",
-    "A scale that reads 0.5 g high on every object has a systematic zero error."
+    "A scale that reads 0.5 g high on every object has a systematic zero error.",
+    "A random error scatters readings both ways and shrinks when you average more of them. A systematic error, such as a zero offset, shifts every reading the same way and survives the average. You remove it by calibrating or by changing the method, not by repeating the same faulty procedure.",
+    "The working relations are Random errors are reduced by averaging and Systematic errors are not. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Five length readings are 2.01, 1.98, 2.02, 1.99 and 2.00 cm. The instrument zero sits 0.05 cm high. Find the mean of the readings and the corrected mean."
   ],
   "practiceQuestions": [
     "Distinguish accuracy from precision.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Repeats estimate scatter and reduce random uncertainty.",
     "Calibration and zero checks address systematic error.",
-    "Report uncertainty with units and sensible significant figures."
+    "Report uncertainty with units and sensible significant figures.",
+    "Random errors are reduced by averaging",
+    "Systematic errors are not",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Measurement uncertainty has random and systematic causes. Repetition improves random estimates; calibration and method checks are needed for systematic offsets.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Repeats estimate scatter and reduce random uncertainty.",
     "Calibration and zero checks address systematic error.",
-    "Report uncertainty with units and sensible significant figures."
+    "Report uncertainty with units and sensible significant figures.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Distinguish accuracy from precision.",
@@ -80,5 +96,102 @@
     "A length is 4.00±0.04 cm. Find percentage uncertainty."
   ],
   "duplicateType": 1,
-  "visualType": "error-analysis"
+  "visualType": "error-analysis",
+  "mcs": [
+    {
+      "question": "Random error is reduced by",
+      "options": [
+        "Averaging repeated readings",
+        "Ignoring the instrument",
+        "One careful reading only",
+        "A zero offset"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A zero error is",
+      "options": [
+        "Random",
+        "Systematic",
+        "Removed by averaging",
+        "A mistake in arithmetic only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The corrected mean here is",
+      "options": [
+        "2.00 cm",
+        "1.95 cm",
+        "0.05 cm",
+        "10 cm"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "More readings of a biased instrument",
+      "options": [
+        "Remove the bias",
+        "Leave the bias in the mean",
+        "Change the true length",
+        "Set the error to zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Random error is reduced by",
+      "options": [
+        "Averaging repeated readings",
+        "Ignoring the instrument",
+        "One careful reading only",
+        "A zero offset"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A zero error is",
+      "options": [
+        "Random",
+        "Systematic",
+        "Removed by averaging",
+        "A mistake in arithmetic only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The corrected mean here is",
+      "options": [
+        "2.00 cm",
+        "1.95 cm",
+        "0.05 cm",
+        "10 cm"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "More readings of a biased instrument",
+      "options": [
+        "Remove the bias",
+        "Leave the bias in the mean",
+        "Change the true length",
+        "Set the error to zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Five length readings are 2.01, 1.98, 2.02, 1.99 and 2.00 cm. The instrument zero sits 0.05 cm high. Find the mean of the readings and the corrected mean.",
+      "steps": [
+        "The sum is 10.00 cm.",
+        "The mean of the readings is 2.00 cm.",
+        "The zero error adds 0.05 cm to every reading.",
+        "The corrected mean is 2.00 − 0.05 = 1.95 cm.",
+        "Averaging did not remove the zero error."
+      ],
+      "answer": "Mean reading 2.00 cm. Corrected mean 1.95 cm."
+    }
+  ]
 }

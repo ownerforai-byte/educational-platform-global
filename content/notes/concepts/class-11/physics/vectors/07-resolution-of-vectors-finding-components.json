@@ -69,7 +69,6 @@
   "animation3D": "vectors",
   "motionGraphics": "vectors",
   "examples": [
-    "Example 1: Real-world application of Resolution of vectors; unit vectors",
     "Example 2: Practical demonstration of Resolution of vectors; unit vectors concepts",
     "Example 4: Diagram-based question on Resolution of vectors; unit vectors",
     "Example 5: Application in daily life involving Resolution of vectors; unit vectors"
@@ -102,11 +101,9 @@
     "Note 5: Resolution of vectors; unit vectors frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Resolution of vectors; unit vectors",
-    "Statement 2: Theorem related to Resolution of vectors; unit vectors",
-    "Statement 3: Condition for Resolution of vectors; unit vectors to be valid",
-    "Statement 4: Principle governing Resolution of vectors; unit vectors",
-    "Statement 5: Corollary or consequence of Resolution of vectors; unit vectors"
+    "When several vectors lie in one plane, resolve each one into x and y components, then add the components separately. Components along the same line add as ordinary signed numbers.",
+    "R_x is the sum of every F cosθ, with a minus sign if that component points along the negative axis. R_y is the sum of every F sinθ, with the same care about signs.",
+    "The resultant magnitude is sqrt(R_x^2 + R_y^2). The angle with the +x-axis satisfies tanα = |R_y / R_x|, and the quadrant follows the signs of R_x and R_y."
   ],
   "importantNotes": [
     "Note 1: Resolution of vectors; unit vectors is based on fundamental principles",
@@ -183,5 +180,60 @@
     "Task 3: Create a concept map for Resolution of vectors; unit vectors",
     "Task 4: Practice previous year exam questions on Resolution of vectors; unit vectors",
     "Task 5: Explain Resolution of vectors; unit vectors to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "R_x is",
+      "options": [
+        "The sum of the magnitudes",
+        "The signed sum of the x-components",
+        "Always the largest force",
+        "F sinθ for every vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The quadrant of the resultant comes from",
+      "options": [
+        "The larger magnitude alone",
+        "The signs of R_x and R_y",
+        "The first vector only",
+        "A rule that α is always acute"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A downward vector contributes",
+      "options": [
+        "A negative y-component",
+        "A negative x-component always",
+        "Nothing",
+        "A positive y-component"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Adding magnitudes of differently directed vectors",
+      "options": [
+        "Is the component method",
+        "Is not allowed",
+        "Gives R_x",
+        "Fixes the quadrant"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two forces act at a point: 8.0 N along +x, and 6.0 N along +y. Find the resultant.",
+      "steps": [
+        "R_x = 8.0 N and R_y = 6.0 N.",
+        "R = sqrt(8.0^2 + 6.0^2) = sqrt(64 + 36) = sqrt(100) = 10 N.",
+        "tanα = R_y / R_x = 6/8 = 0.75.",
+        "α = arctan(0.75) ≈ 37°.",
+        "Both components are positive, so the resultant is 10 N at about 37° above the +x-axis."
+      ],
+      "answer": "10 N at about 37° above the +x-axis."
+    }
   ]
 }

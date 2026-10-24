@@ -5,14 +5,21 @@
   "topicTitle": "Dielectrics",
   "relevance": 100,
   "notes": [
-    "**Dielectrics:** This topic covers the fundamental concepts of dielectrics in the physics curriculum.",
-    "Understanding dielectrics is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to dielectrics should be memorized and practiced regularly."
+    "Dielectrics are classified by their molecules. A non-polar molecule has no permanent dipole and acquires one by distortion in the field. A polar molecule already has a dipole and tends to line up with the field, against thermal jostling.",
+    "Either way, the field inside is the applied field minus the field of the bound surface charge. For a linear dielectric that fills the space, E = E_0 / K.",
+    "The bound charge is not free to flow in a wire. It stays on the dielectric surface. Leakage through a poor insulator is a separate, unwanted current.",
+    "The energy stored is Q^2/(2C) or (1/2) C V^2. These agree, but if you insert the dielectric at fixed Q, C rises and the energy falls. The difference is the work associated with pulling the dielectric in.",
+    "If you insert it at fixed V, C rises and the energy (1/2) C V^2 rises. The battery supplies that extra energy. Quoting the wrong case is a common exam error.",
+    "Above the dielectric strength the insulator breaks down and conducts. The working voltage must stay below that field times the thickness."
   ],
   "confusion": [
     "❌ 'Dielectric constant is same as permittivity' ✅ Dielectric constant (relative permittivity) is a ratio (dimensionless), while permittivity has specific units (F/m).",
     "❌ 'Dielectrics conduct electricity like metals' ✅ Dielectrics are insulators; they polarize in an electric field but do not conduct free charges like conductors.",
-    "❌ 'Polarization reduces the internal electric field' ✅ Polarization *creates* an opposing field, which results in a *net* reduction of the internal electric field compared to the external applied field."
+    "❌ 'Polarization reduces the internal electric field' ✅ Polarization *creates* an opposing field, which results in a *net* reduction of the internal electric field compared to the external applied field.",
+    "Polar and non-polar both reduce the net field.",
+    "Bound charge does not flow around the circuit.",
+    "Energy falls at fixed Q and rises at fixed V.",
+    "E = E_0/K, not E_0 times K."
   ],
   "practice": [
     "Solve at least 5 problems on dielectrics from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "electrostatics",
   "motionGraphics": "electrostatics",
   "examples": [
-    "Example 1: Real-world application of Dielectrics",
     "Example 2: Practical demonstration of Dielectrics concepts",
     "Example 4: Diagram-based question on Dielectrics",
     "Example 5: Application in daily life involving Dielectrics"
@@ -61,11 +67,9 @@
     "Note 5: Dielectrics frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Dielectrics",
-    "Statement 2: Theorem related to Dielectrics",
-    "Statement 3: Condition for Dielectrics to be valid",
-    "Statement 4: Principle governing Dielectrics",
-    "Statement 5: Corollary or consequence of Dielectrics"
+    "Dielectrics are classified by their molecules. A non-polar molecule has no permanent dipole and acquires one by distortion in the field. A polar molecule already has a dipole and tends to line up with the field, against thermal jostling.",
+    "Either way, the field inside is the applied field minus the field of the bound surface charge. For a linear dielectric that fills the space, E = E_0 / K.",
+    "The bound charge is not free to flow in a wire. It stays on the dielectric surface. Leakage through a poor insulator is a separate, unwanted current."
   ],
   "importantNotes": [
     "Note 1: Dielectrics is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Dielectrics",
     "Task 4: Practice previous year exam questions on Dielectrics",
     "Task 5: Explain Dielectrics to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "A polar molecule",
+      "options": [
+        "Has no charge at all",
+        "Has a permanent dipole",
+        "Is a conductor",
+        "Has K = 0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The net field in the dielectric is",
+      "options": [
+        "E_0 K",
+        "E_0 / K",
+        "Zero always",
+        "The bound charge times r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At fixed charge, inserting the dielectric makes the stored energy",
+      "options": [
+        "Fall",
+        "Rise",
+        "Stay exactly the battery energy",
+        "Become infinite"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Dielectric strength is about",
+      "options": [
+        "A breakdown limit",
+        "The value of K",
+        "The plate area",
+        "The bound current in a wire"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A capacitor at fixed charge stores 8.0 μJ in vacuum. A dielectric of K = 4 then fills it, still at fixed charge. Find the new stored energy.",
+      "steps": [
+        "Energy at fixed Q is Q^2/(2C).",
+        "C becomes 4 times larger.",
+        "The energy becomes 1/4 of 8.0 μJ.",
+        "The new energy is 2.0 μJ.",
+        "The fall would not occur if the battery had held the voltage fixed. That case would multiply the energy by K."
+      ],
+      "answer": "2.0 μJ."
+    }
   ]
 }

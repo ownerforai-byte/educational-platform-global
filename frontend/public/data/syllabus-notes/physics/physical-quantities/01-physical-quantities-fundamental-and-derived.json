@@ -1,0 +1,188 @@
+{
+  "title": "Physical Quantities — Fundamental & Derived",
+  "notes": [
+    "A physical quantity is a property that can be measured. The report of a measurement has a numerical value and a unit. A number without a unit is not a finished physics answer, except for a pure ratio.",
+    "The SI base quantities used here are length, mass, time, electric current, temperature, amount of substance and luminous intensity. Their base units are the metre, kilogram, second, ampere, kelvin, mole and candela.",
+    "A derived quantity is built from base quantities by multiplication or division. Speed is length over time, so its unit is m/s. Force is mass times acceleration, so the newton is kg m/s^2.",
+    "A plane angle in radians is a ratio of two lengths, so it is dimensionless. That does not make the angle unimportant. It means no extra base unit is required for it in the SI list used in class.",
+    "Prefixes scale a unit by a power of ten. The kilometre is 10^3 m, the millimetre is 10^-3 m, and the micrometre is 10^-6 m. Convert to base units before you multiply.",
+    "Two quantities may be added only when they have the same dimension and are expressed in the same unit. Adding 2 m to 30 cm requires converting 30 cm to 0.30 m first."
+  ],
+  "examples": [
+    "A physical quantity is a property that can be measured. The report of a measurement has a numerical value and a unit. A number without a unit is not a finished physics answer, except for a pure ratio.",
+    "The SI base quantities used here are length, mass, time, electric current, temperature, amount of substance and luminous intensity. Their base units are the metre, kilogram, second, ampere, kelvin, mole and candela.",
+    "Express a force of 5.0 N in base SI units and state the base quantities involved."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Physical Quantities — Fundamental & Derived.",
+    "Q3. Problem on Physical Quantities — Fundamental & Derived.",
+    "Name four base SI units.",
+    "Why is the newton a derived unit?",
+    "When may two quantities be added?"
+  ],
+  "formulas": [
+    "Derived unit = combination of base units",
+    "Speed unit = m/s"
+  ],
+  "keyPoints": [
+    "Connection of Physical Quantities — Fundamental & Derived to other topics",
+    "A physical quantity has a number and a unit.",
+    "Seven SI base quantities.",
+    "Derived quantities are products or quotients of base ones.",
+    "A unit must travel with the number."
+  ],
+  "summary": "Physical Quantities — Fundamental & Derived covers essential principles and applications.",
+  "specialNotes": [
+    "Amount of substance is the mole, not the mass.",
+    "Current is a base quantity even though it is measured with derived effects."
+  ],
+  "importantStatements": [
+    "A physical quantity is a property that can be measured. The report of a measurement has a numerical value and a unit. A number without a unit is not a finished physics answer, except for a pure ratio.",
+    "The SI base quantities used here are length, mass, time, electric current, temperature, amount of substance and luminous intensity. Their base units are the metre, kilogram, second, ampere, kelvin, mole and candela.",
+    "A derived quantity is built from base quantities by multiplication or division. Speed is length over time, so its unit is m/s. Force is mass times acceleration, so the newton is kg m/s^2."
+  ],
+  "importantNotes": [
+    "Physical Quantities — Fundamental & Derived is based on fundamental principles.",
+    "Write the unit in the final line.",
+    "A prefix sits on the unit, not on the dimension."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Physical Quantities — Fundamental & Derived.",
+    "Convert every term to SI before substituting.",
+    "A ratio of like quantities has no unit."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "The SI unit of mass is",
+      "options": [
+        "The gram",
+        "The kilogram",
+        "The newton",
+        "The mole"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Speed is",
+      "options": [
+        "A base quantity",
+        "A derived quantity",
+        "Dimensionless",
+        "A prefix"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A radian is",
+      "options": [
+        "A base unit of the seven",
+        "A ratio of two lengths",
+        "A unit of force",
+        "The same as a kilogram"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "2 m + 30 cm equals",
+      "options": [
+        "32 m",
+        "2.30 m",
+        "32 cm",
+        "An illegal sum that cannot be converted"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Physical Quantities — Fundamental & Derived.",
+    "Base quantity",
+    "Derived quantity",
+    "SI unit",
+    "Prefix"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Mass and weight are different quantities. The kilogram is the unit of mass.",
+    "A dimensionless quantity can still be physical, as a radian angle is.",
+    "The newton is derived, not a base unit.",
+    "Temperature in a formula is the kelvin scale when the formula was built that way."
+  ],
+  "practice": [
+    "Write Derived unit = combination of base units and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Derived unit = combination of base units",
+    "Speed unit = m/s"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "The SI unit of mass is",
+      "options": [
+        "The gram",
+        "The kilogram",
+        "The newton",
+        "The mole"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Speed is",
+      "options": [
+        "A base quantity",
+        "A derived quantity",
+        "Dimensionless",
+        "A prefix"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A radian is",
+      "options": [
+        "A base unit of the seven",
+        "A ratio of two lengths",
+        "A unit of force",
+        "The same as a kilogram"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "2 m + 30 cm equals",
+      "options": [
+        "32 m",
+        "2.30 m",
+        "32 cm",
+        "An illegal sum that cannot be converted"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Express a force of 5.0 N in base SI units and state the base quantities involved.",
+      "steps": [
+        "One newton is the force that gives 1 kg an acceleration of 1 m/s^2.",
+        "So 1 N = 1 kg m/s^2.",
+        "5.0 N = 5.0 kg m/s^2.",
+        "The base quantities in that unit are mass, length and time.",
+        "No extra prefix remains."
+      ],
+      "answer": "5.0 kg m/s^2, from mass, length and time."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "physical-quantities",
+  "topicSlug": "01-physical-quantities-fundamental-and-derived",
+  "topicTitle": "Physical Quantities — Fundamental & Derived"
+}

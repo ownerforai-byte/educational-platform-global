@@ -3,17 +3,22 @@
   "unitSlug": "mechanics",
   "topicSlug": "l-s-a-q-and-n",
   "topicTitle": "L,S,A,Q and N",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "This legacy heading groups basic measurement practice. Record a measured quantity as a numerical value and unit; choose direct measurement when possible and a geometric or displacement method when it is not.",
     "Measure length with a suitable scale or vernier instrument, area from dimensions for regular shapes, and volume from geometry or liquid displacement for irregular solid objects that do not absorb or dissolve in water.",
     "For a rectangular plate A=lb; for a cylinder V=πr²h. A graduated cylinder gives an irregular object’s volume from the rise in water level, provided the object is fully submerged without trapped air.",
     "Worked example: a 2.0 cm by 3.0 cm by 4.0 cm block has V=24 cm³. If its mass is 60 g, density ρ=m/V=2.5 g cm⁻³=2500 kg m⁻³.",
-    "Record instrument resolution, repeat readings when useful, keep units consistent and round the final derived quantity to a justified precision. The title acronym is retained from the source rather than expanded speculatively."
+    "Record instrument resolution, repeat readings when useful, keep units consistent and round the final derived quantity to a justified precision. The title acronym is retained from the source rather than expanded speculatively.",
+    "A measured length is incomplete without its unit and its uncertainty. The least count of a metre scale is often 1 mm, so a length quoted as 12.34 cm pretends to a precision the scale does not have. Match the recorded digits to the instrument."
   ],
   "confusion": [
     "The source acronym is ambiguous; do not infer an unsupported expansion.",
-    "Do not mix cm³ with m³ or grams with kilograms in one calculation."
+    "Do not mix cm³ with m³ or grams with kilograms in one calculation.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Describe a safe displacement method to find an irregular stone’s volume.",
@@ -29,7 +34,10 @@
   "motionGraphics": "mechanics",
   "examples": [
     "A 2×3×4 cm block has V=24 cm³; with mass 60 g, ρ=2.5 g cm⁻³.",
-    "If a stone raises water from 40 mL to 55 mL, its volume is 15 cm³."
+    "If a stone raises water from 40 mL to 55 mL, its volume is 15 cm³.",
+    "A measured length is incomplete without its unit and its uncertainty. The least count of a metre scale is often 1 mm, so a length quoted as 12.34 cm pretends to a precision the scale does not have. Match the recorded digits to the instrument.",
+    "The working relations are Record a measurement as a number and a unit and Least count is the smallest division the instrument reads. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A scale has a least count of 0.1 cm. A student writes 12.34 cm. What should be recorded, and why?"
   ],
   "practiceQuestions": [
     "Describe a safe displacement method to find an irregular stone’s volume.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "A measurement requires magnitude and unit.",
     "Select a method matched to shape and material.",
-    "Track units through each calculation."
+    "Track units through each calculation.",
+    "Record a measurement as a number and a unit",
+    "Least count is the smallest division the instrument reads",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Reliable measurement requires an appropriate method, unit and justified precision. Derived area, volume and density values inherit uncertainty from measured dimensions and mass.",
   "specialNotes": [
@@ -72,12 +84,113 @@
   "importantConcepts": [
     "A measurement requires magnitude and unit.",
     "Select a method matched to shape and material.",
-    "Track units through each calculation."
+    "Track units through each calculation.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Describe a safe displacement method to find an irregular stone’s volume.",
     "Convert 2.7 g cm⁻³ to kg m⁻³.",
     "Why should repeated readings be averaged before reporting?"
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "A measurement needs",
+      "options": [
+        "A number and a unit",
+        "A number alone",
+        "A unit alone",
+        "No uncertainty ever"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Least count is",
+      "options": [
+        "The smallest division you can read",
+        "The length of the object",
+        "The systematic error",
+        "The mean"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Extra digits beyond the least count",
+      "options": [
+        "Improve the result",
+        "Are not justified by that instrument",
+        "Are required",
+        "Remove random error"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A vernier is used to",
+      "options": [
+        "Read a fraction of the main-scale division",
+        "Remove the need for a unit",
+        "Measure mass",
+        "Set the zero error to a length"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A measurement needs",
+      "options": [
+        "A number and a unit",
+        "A number alone",
+        "A unit alone",
+        "No uncertainty ever"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Least count is",
+      "options": [
+        "The smallest division you can read",
+        "The length of the object",
+        "The systematic error",
+        "The mean"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Extra digits beyond the least count",
+      "options": [
+        "Improve the result",
+        "Are not justified by that instrument",
+        "Are required",
+        "Remove random error"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A vernier is used to",
+      "options": [
+        "Read a fraction of the main-scale division",
+        "Remove the need for a unit",
+        "Measure mass",
+        "Set the zero error to a length"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A scale has a least count of 0.1 cm. A student writes 12.34 cm. What should be recorded, and why?",
+      "steps": [
+        "The least count is 0.1 cm, so the last trustworthy digit is the tenth of a centimetre.",
+        "12.34 cm claims a hundredth, which the scale does not show.",
+        "Record 12.3 cm, or 12.3 ± 0.1 cm.",
+        "The unit stays the centimetre.",
+        "A vernier with a smaller least count could justify another digit."
+      ],
+      "answer": "12.3 cm, because the least count is 0.1 cm."
+    }
+  ]
 }

@@ -5,14 +5,21 @@
   "topicTitle": "de Broglie Waves",
   "relevance": 100,
   "notes": [
-    "**de Broglie Waves:** This topic covers the fundamental concepts of de broglie waves in the physics curriculum.",
-    "Understanding de broglie waves is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to de broglie waves should be memorized and practiced regularly."
+    "Reading λ = h/p the other way, a measured wavelength gives the momentum p = h/λ. Electron diffraction fringes are therefore a momentum measurement.",
+    "An electron microscope forms an image with electrons rather than light. The shorter wavelength, at tens of kilovolts, gives a finer limit of resolution than a light microscope.",
+    "The wave packet that represents a localised particle is a spread of wavelengths. A narrow packet, a well known position, needs a wide spread of momenta. That is the idea behind the uncertainty principle.",
+    "A photon already had E = h f and p = E/c, which is the same λ = h/p. De Broglie's step was to give massive particles the relation that light already satisfied.",
+    "At higher voltage the electron is faster, the wavelength is shorter, and the non-relativistic √V formula starts to fail. Exam calculations at 100 to 200 V are still in the safe range.",
+    "The particle is not smeared into a wave in the detector. Many electrons build the diffraction pattern one impact at a time. Each impact is local. The pattern is the wave."
   ],
   "confusion": [
     "❌ Wavelength is proportional to energy ✅ Wavelength is inversely proportional to momentum (λ = h/p), not energy directly.",
     "❌ de Broglie waves apply only to charged particles ✅ Applicable to all matter, including neutral particles like neutrons, if they have momentum.",
-    "❌ Wave nature is observed in macroscopic objects ✅ Due to the extremely small value of Planck's constant (h), the wavelength of macroscopic objects is negligible and undetectable."
+    "❌ Wave nature is observed in macroscopic objects ✅ Due to the extremely small value of Planck's constant (h), the wavelength of macroscopic objects is negligible and undetectable.",
+    "The microscope's advantage is the short wavelength, not a brighter lamp.",
+    "Uncertainty is a wave-packet fact, not a clumsy instrument.",
+    "Do not use the electron √V formula for a photon.",
+    "A single electron does not draw the whole fringe pattern."
   ],
   "practice": [
     "Solve at least 5 problems on de broglie waves from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "modern-physics-12",
   "motionGraphics": "modern-physics-12",
   "examples": [
-    "Example 1: Real-world application of de Broglie Waves",
     "Example 2: Practical demonstration of de Broglie Waves concepts",
     "Example 4: Diagram-based question on de Broglie Waves",
     "Example 5: Application in daily life involving de Broglie Waves"
@@ -61,11 +67,9 @@
     "Note 5: de Broglie Waves frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of de Broglie Waves",
-    "Statement 2: Theorem related to de Broglie Waves",
-    "Statement 3: Condition for de Broglie Waves to be valid",
-    "Statement 4: Principle governing de Broglie Waves",
-    "Statement 5: Corollary or consequence of de Broglie Waves"
+    "Reading λ = h/p the other way, a measured wavelength gives the momentum p = h/λ. Electron diffraction fringes are therefore a momentum measurement.",
+    "An electron microscope forms an image with electrons rather than light. The shorter wavelength, at tens of kilovolts, gives a finer limit of resolution than a light microscope.",
+    "The wave packet that represents a localised particle is a spread of wavelengths. A narrow packet, a well known position, needs a wide spread of momenta. That is the idea behind the uncertainty principle."
   ],
   "importantNotes": [
     "Note 1: de Broglie Waves is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for de Broglie Waves",
     "Task 4: Practice previous year exam questions on de Broglie Waves",
     "Task 5: Explain de Broglie Waves to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "p equals",
+      "options": [
+        "h λ",
+        "h / λ",
+        "λ / h",
+        "m c always for an electron at 100 V"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An electron microscope resolves well because",
+      "options": [
+        "Its wavelength is short",
+        "It uses red light",
+        "Electrons are larger than cells",
+        "It has no lenses"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A narrow position packet needs",
+      "options": [
+        "One exact momentum",
+        "A spread of momenta",
+        "A zero wavelength",
+        "No Planck constant"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A photon uses",
+      "options": [
+        "The electron 12.27 formula",
+        "p = E/c",
+        "A rest mass equal to the electron",
+        "Ohm's law"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An electron is accelerated through 150 V. Find its wavelength in angstroms with λ ≈ 12.25 / √V, and explain the slight change of the constant from 12.27.",
+      "steps": [
+        "√150 = 12.25.",
+        "λ = 12.25 / 12.25 = 1.00 Å.",
+        "The constant 12.25 or 12.27 depends on the rounding of h, m and e.",
+        "Either constant is acceptable if you say which one you used.",
+        "150 V still gives a wavelength of atomic size, and the electron is not near the speed of light."
+      ],
+      "answer": "1.00 Å with the 12.25 constant."
+    }
   ]
 }

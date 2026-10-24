@@ -3,27 +3,179 @@
   "unitSlug": "quantity-of-heat",
   "topicSlug": "newton-s-law-of-cooling",
   "topicTitle": "Newton's law of cooling",
-  "relevance": 76,
+  "relevance": 94,
   "notes": [
     "K depends on the nature of the body's surface (material, texture) and its exposed surface area â€” mismatched containers or surfaces would give each liquid a different K",
     "The cooling rate dÎ¸/dt also depends on (Î¸ âˆ’ Î¸â‚€), so an unequal temperature range would make the two rates incomparable even if K matched",
-    "If either condition isn't met, the K and (Î¸ âˆ’ Î¸â‚€) terms don't cancel out correctly, and mâ‚câ‚/tâ‚ = mâ‚‚câ‚‚/tâ‚‚ would give a wrong value for the unknown specific heat"
+    "If either condition isn't met, the K and (Î¸ âˆ’ Î¸â‚€) terms don't cancel out correctly, and mâ‚câ‚/tâ‚ = mâ‚‚câ‚‚/tâ‚‚ would give a wrong value for the unknown specific heat",
+    "The cooling constant K depends on the exposed area and on the nature of the surface. Two cups of different size, paint or polish do not share K, even in the same room.",
+    "The rate dθ/dt also depends on the excess θ − θ0. If one liquid is timed from 90°C to 70°C and the other from 50°C to 40°C, the excesses are different and the times do not measure heat capacity alone.",
+    "Only when the containers match and the upper and lower temperatures match does K, and the excess history, cancel in the ratio. Then m1 c1 / t1 = m2 c2 / t2."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "Same room does not mean same K.",
+    "Same duration is not the condition. Same temperature limits are.",
+    "A black cup and a shiny cup should not be compared.",
+    "The formula does not survive a lid on only one cup."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write t ∝ mc / K for a fixed temperature interval and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "t ∝ mc / K for a fixed temperature interval",
+    "Same surface and same range: t1/t2 = (m1 c1)/(m2 c2)"
   ],
   "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  "motionGraphics": "quantity-of-heat",
+  "keyPoints": [
+    "K depends on area and surface.",
+    "The interval fixes the excess history.",
+    "Both must match before times are compared.",
+    "Otherwise the unknown c is wrong."
+  ],
+  "importantStatements": [
+    "The cooling constant K depends on the exposed area and on the nature of the surface. Two cups of different size, paint or polish do not share K, even in the same room.",
+    "The rate dθ/dt also depends on the excess θ − θ0. If one liquid is timed from 90°C to 70°C and the other from 50°C to 40°C, the excesses are different and the times do not measure heat capacity alone.",
+    "Only when the containers match and the upper and lower temperatures match does K, and the excess history, cancel in the ratio. Then m1 c1 / t1 = m2 c2 / t2."
+  ],
+  "examples": [
+    "The cooling constant K depends on the exposed area and on the nature of the surface. Two cups of different size, paint or polish do not share K, even in the same room.",
+    "The rate dθ/dt also depends on the excess θ − θ0. If one liquid is timed from 90°C to 70°C and the other from 50°C to 40°C, the excesses are different and the times do not measure heat capacity alone.",
+    "Liquid A is cooled from 80°C to 60°C and liquid B from 50°C to 40°C in cups of different area. Can m c / t be set equal? Explain in steps."
+  ],
+  "formulas": [
+    "t ∝ mc / K for a fixed temperature interval",
+    "Same surface and same range: t1/t2 = (m1 c1)/(m2 c2)"
+  ],
+  "practiceQuestions": [
+    "What two things must match?",
+    "How can a different surface fake a specific heat?",
+    "Why must the temperature limits be the same pair?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "One cup, one interval.",
+    "K and the excess must cancel."
+  ],
+  "specialNotes": [
+    "Wash and dry the cup so the outer surface is unchanged.",
+    "Do not add a stirrer of a new material on the second run."
+  ],
+  "importantNotes": [
+    "Write the temperature limits next to the times.",
+    "Reject the ratio if either condition failed."
+  ],
+  "importantConcepts": [
+    "Same K",
+    "Same interval",
+    "False specific heat",
+    "One calorimeter"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "K depends on",
+      "options": [
+        "The surface and the area",
+        "Only the mass of liquid",
+        "Only the clock",
+        "The name of the liquid alone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Different temperature limits make the times",
+      "options": [
+        "Directly comparable",
+        "Not comparable by m c / t",
+        "Equal",
+        "Independent of excess"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A shinier cup usually",
+      "options": [
+        "Changes K",
+        "Changes g",
+        "Removes the need for a thermometer",
+        "Makes c zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The valid comparison uses",
+      "options": [
+        "Two different lids",
+        "The same container and the same temperature limits",
+        "Unequal rooms",
+        "Boiling one liquid only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "K depends on",
+      "options": [
+        "The surface and the area",
+        "Only the mass of liquid",
+        "Only the clock",
+        "The name of the liquid alone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Different temperature limits make the times",
+      "options": [
+        "Directly comparable",
+        "Not comparable by m c / t",
+        "Equal",
+        "Independent of excess"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A shinier cup usually",
+      "options": [
+        "Changes K",
+        "Changes g",
+        "Removes the need for a thermometer",
+        "Makes c zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The valid comparison uses",
+      "options": [
+        "Two different lids",
+        "The same container and the same temperature limits",
+        "Unequal rooms",
+        "Boiling one liquid only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Liquid A is cooled from 80°C to 60°C and liquid B from 50°C to 40°C in cups of different area. Can m c / t be set equal? Explain in steps.",
+      "steps": [
+        "The areas differ, so K is not the same.",
+        "The temperature intervals differ, so the excesses are not the same function of time.",
+        "Both reasons stop K and (θ − θ0) from cancelling.",
+        "Therefore m_A c_A / t_A = m_B c_B / t_B is not justified.",
+        "The experiment has to be repeated in one cup over one shared interval."
+      ],
+      "answer": "No. The surface factor and the temperature limits both differ."
+    }
+  ],
+  "summary": "A cooling comparison of specific heats needs the same surface factor and the same temperature interval. Otherwise the times mix the effect of the cup and the effect of the excess temperature into the value of c."
 }

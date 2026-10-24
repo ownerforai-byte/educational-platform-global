@@ -6,24 +6,177 @@
   "relevance": 94,
   "notes": [
     "**Q1. Two forces, 10 N acting at 30Â° above the +x-axis and 5 N acting at 45Â° below the +x-axis, act at a point. Find the resultant.** $F_x = 10\\cos30Â° + 5\\cos45Â° = 8.66+3.54=12.20\\,\\text{N}$. $F_y = 10\\sin30Â° - 5\\sin45Â° = 5-3.54=1.46\\,\\text{N}$ (the second force's y-component is negative since it is below the axis). $F=\\sqrt{F_x^2+F_y^2}=\\sqrt{12.20^2+1.46^2}\\approx12.28\\,\\text{N}$, at $\\theta=\\tan^{-1}(1.46/12.20)\\approx6.8Â°$ above the x-axis.",
-    "**Q2. Two forces, 10 N and 5 N, each act at 30Â° from a common reference line, one above it and one below it. Find the resultant.** $F_x = 10\\cos30Â°+5\\cos30Â° = (10+5)\\times(\\sqrt3/2)=7.5\\sqrt3\\approx12.99\\,\\text{N}$. $F_y = 10\\sin30Â° - 5\\sin30Â° = 5-2.5=2.5\\,\\text{N}$. $F=\\sqrt{F_x^2+F_y^2}=\\sqrt{12.99^2+2.5^2}\\approx13.23\\,\\text{N}$, at $\\theta=\\tan^{-1}(2.5/12.99)\\approx10.9Â°$ from the reference line, on the side of the larger (10 N) force."
+    "**Q2. Two forces, 10 N and 5 N, each act at 30Â° from a common reference line, one above it and one below it. Find the resultant.** $F_x = 10\\cos30Â°+5\\cos30Â° = (10+5)\\times(\\sqrt3/2)=7.5\\sqrt3\\approx12.99\\,\\text{N}$. $F_y = 10\\sin30Â° - 5\\sin30Â° = 5-2.5=2.5\\,\\text{N}$. $F=\\sqrt{F_x^2+F_y^2}=\\sqrt{12.99^2+2.5^2}\\approx13.23\\,\\text{N}$, at $\\theta=\\tan^{-1}(2.5/12.99)\\approx10.9Â°$ from the reference line, on the side of the larger (10 N) force.",
+    "Each force is replaced by F cosθ along x and F sinθ along y, with θ measured from the positive x-axis. A force below the axis has a negative sine.",
+    "For 10 N at 30° above the axis and 5 N at 45° below it, F_x = 10 cos30° + 5 cos45° and F_y = 10 sin30° − 5 sin45°.",
+    "Using cos30° = 0.866, sin30° = 0.500, cos45° = sin45° = 0.707, the sums are F_x = 8.66 + 3.54 = 12.2 N and F_y = 5.00 − 3.54 = 1.46 N.",
+    "The resultant is sqrt(12.2^2 + 1.46^2) = 12.3 N, a little above the +x-axis because F_y is positive and small."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A force below the axis still has a positive x-component if it points to the right.",
+    "Do not add 10 N and 5 N directly.",
+    "sin and cos are fixed once θ is measured from the x-axis.",
+    "The resultant is not the larger component."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write F_x = Σ F cosθ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "F_x = Σ F cosθ",
+    "F_y = Σ F sinθ"
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "visualType": "vector-basics"
+  "visualType": "vector-basics",
+  "keyPoints": [
+    "Measure every angle from the +x-axis.",
+    "Below the axis means a negative y-component.",
+    "Add components, then use Pythagoras.",
+    "The angle is arctan(F_y / F_x)."
+  ],
+  "importantStatements": [
+    "Each force is replaced by F cosθ along x and F sinθ along y, with θ measured from the positive x-axis. A force below the axis has a negative sine.",
+    "For 10 N at 30° above the axis and 5 N at 45° below it, F_x = 10 cos30° + 5 cos45° and F_y = 10 sin30° − 5 sin45°.",
+    "Using cos30° = 0.866, sin30° = 0.500, cos45° = sin45° = 0.707, the sums are F_x = 8.66 + 3.54 = 12.2 N and F_y = 5.00 − 3.54 = 1.46 N."
+  ],
+  "examples": [
+    "Each force is replaced by F cosθ along x and F sinθ along y, with θ measured from the positive x-axis. A force below the axis has a negative sine.",
+    "For 10 N at 30° above the axis and 5 N at 45° below it, F_x = 10 cos30° + 5 cos45° and F_y = 10 sin30° − 5 sin45°.",
+    "Find the resultant of 10 N at 30° above the +x-axis and 5 N at 45° below the +x-axis."
+  ],
+  "formulas": [
+    "F_x = Σ F cosθ",
+    "F_y = Σ F sinθ"
+  ],
+  "practiceQuestions": [
+    "Which component is negative for a force below the +x-axis?",
+    "When do you take the square root?",
+    "Why not add the magnitudes?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Table: force, F_x, F_y.",
+    "Sign of F_y decides above or below."
+  ],
+  "specialNotes": [
+    "cos45° = sin45° = 0.707 to three figures.",
+    "Keep one more figure in the components than you quote in R."
+  ],
+  "importantNotes": [
+    "State the axis for θ.",
+    "Combine components before Pythagoras."
+  ],
+  "importantConcepts": [
+    "Signed components",
+    "Resultant of two forces",
+    "Angle from +x",
+    "Pythagoras"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A force below the +x-axis has",
+      "options": [
+        "Negative F_y if the axis is standard",
+        "Negative F_x always",
+        "No components",
+        "F_y = F"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The resultant magnitude uses",
+      "options": [
+        "The sum of the forces",
+        "sqrt(F_x^2 + F_y^2) after the sums",
+        "The larger force",
+        "F_x − F_y only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "10 cos30° is about",
+      "options": [
+        "5 N",
+        "8.66 N",
+        "10 N",
+        "0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Components are added",
+      "options": [
+        "Before squaring",
+        "After the final square root",
+        "Never",
+        "Only if the forces are opposite"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A force below the +x-axis has",
+      "options": [
+        "Negative F_y if the axis is standard",
+        "Negative F_x always",
+        "No components",
+        "F_y = F"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The resultant magnitude uses",
+      "options": [
+        "The sum of the forces",
+        "sqrt(F_x^2 + F_y^2) after the sums",
+        "The larger force",
+        "F_x − F_y only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "10 cos30° is about",
+      "options": [
+        "5 N",
+        "8.66 N",
+        "10 N",
+        "0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Components are added",
+      "options": [
+        "Before squaring",
+        "After the final square root",
+        "Never",
+        "Only if the forces are opposite"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the resultant of 10 N at 30° above the +x-axis and 5 N at 45° below the +x-axis.",
+      "steps": [
+        "F_x = 10 cos30° + 5 cos45° = 8.66 + 3.54 = 12.2 N.",
+        "F_y = 10 sin30° − 5 sin45° = 5.00 − 3.54 = 1.46 N.",
+        "R = sqrt(12.2^2 + 1.46^2) = sqrt(148.8 + 2.13) = sqrt(150.9) = 12.3 N.",
+        "tanα = 1.46 / 12.2 = 0.120, so α ≈ 6.8°.",
+        "The resultant is 12.3 N, about 6.8° above the +x-axis."
+      ],
+      "answer": "12.3 N at about 6.8° above the +x-axis."
+    }
+  ],
+  "summary": "Resolve every force from the same axis, keep the sign of a component that points downward, add the columns, and only then take Pythagoras. The small positive F_y in the 10 N and 5 N example puts the resultant just above the x-axis."
 }

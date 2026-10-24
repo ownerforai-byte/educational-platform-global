@@ -1,0 +1,196 @@
+{
+  "title": "Growing and decaying current in LR circuits",
+  "unitSlug": "electromagnetic-induction",
+  "topicSlug": "growing-and-decaying-current-in-lr-circuits",
+  "topicTitle": "Growing and decaying current in LR circuits",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "When a battery is connected to a resistor and an inductor in series, the current starts at zero and rises toward I_0 = V/R. The self-induced emf opposes the rise, so the rise is gradual.",
+    "The growth equation is I = I_0 (1 − e^(−Rt/L)). At t = 0, I = 0. After a long time the exponential vanishes and I = I_0.",
+    "If the battery is then removed and the coil is left connected across the resistor, the current decays as I = I_0 e^(−Rt/L). It starts at I_0 and falls toward zero.",
+    "The time constant τ = L/R is the time for the growth to reach about 63% of I_0, because 1 − e^(−1) is about 0.63. In decay, one time constant leaves about 37% of the current.",
+    "A large L or a small R makes the change slow. The inductor behaves as an open circuit at the first instant and as a wire after a long time, for a steady battery.",
+    "Energy (1/2) L I^2 builds during growth and returns as heat in the resistor during decay. The spark when a large inductor is switched is that energy."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "The current does not jump to V/R.",
+    "Growth and decay use different formulas.",
+    "τ = L/R, not R/L.",
+    "After a long time a pure inductor on DC has no voltage."
+  ],
+  "bounds": [
+    "Covers only: growing, decaying current in lr circuits (within Electromagnetic Induction).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write Growth: I = I_0 (1 − e^(−Rt/L)) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Growing and decaying current in LR circuits\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Growth: I = I_0 (1 − e^(−Rt/L))",
+    "Decay: I = I_0 e^(−Rt/L)"
+  ],
+  "examples": [
+    "When a battery is connected to a resistor and an inductor in series, the current starts at zero and rises toward I_0 = V/R. The self-induced emf opposes the rise, so the rise is gradual.",
+    "The growth equation is I = I_0 (1 − e^(−Rt/L)). At t = 0, I = 0. After a long time the exponential vanishes and I = I_0.",
+    "V = 10 V, R = 5.0 Ω and L = 1.0 H. Find I_0, the time constant, and the current at t = τ during growth. Use e^(−1) = 0.37."
+  ],
+  "practiceQuestions": [
+    "Write the growth and decay formulas.",
+    "What fraction remains after one time constant of decay?",
+    "Why is there a spark?"
+  ],
+  "formulas": [
+    "Governing equation for \"Growing and decaying current in LR circuits\" — state with units, then use in one numerical.",
+    "Growth: I = I_0 (1 − e^(−Rt/L))",
+    "Decay: I = I_0 e^(−Rt/L)",
+    "τ = L/R"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Growing and decaying current in LR circuits\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "Current cannot jump in an inductor.",
+    "Growth is toward V/R.",
+    "Decay is toward zero after the battery is removed.",
+    "The time constant is L/R."
+  ],
+  "summary": "An LR current grows as I_0 (1 − e^(−Rt/L)) toward V/R and decays as I_0 e^(−Rt/L) toward zero. The time constant is L/R. The inductor stops the current from jumping, and the stored energy returns as heat during decay.",
+  "mcqs": [
+    {
+      "question": "Just after a DC battery is connected, the inductor current is",
+      "options": [
+        "V/R",
+        "Zero",
+        "Infinite",
+        "L/R"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The time constant is",
+      "options": [
+        "L/R",
+        "R/L",
+        "L R",
+        "V/R"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "After one time constant of decay the current is about",
+      "options": [
+        "Zero",
+        "37% of the starting current",
+        "The full V/R",
+        "Double"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A long time after connection the current is",
+      "options": [
+        "Zero",
+        "V/R",
+        "Infinite",
+        "L only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "When a battery is connected to a resistor and an inductor in series, the current starts at zero and rises toward I_0 = V/R. The self-induced emf opposes the rise, so the rise is gradual.",
+    "The growth equation is I = I_0 (1 − e^(−Rt/L)). At t = 0, I = 0. After a long time the exponential vanishes and I = I_0.",
+    "If the battery is then removed and the coil is left connected across the resistor, the current decays as I = I_0 e^(−Rt/L). It starts at I_0 and falls toward zero."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "τ = L/R.",
+    "At the first instant an inductor is an open circuit for DC."
+  ],
+  "specialNotes": [
+    "63% on the way up, 37% left on the way down, after one τ.",
+    "e^(−1) ≈ 0.37."
+  ],
+  "importantNotes": [
+    "Say growth or decay before writing the formula.",
+    "I_0 is V/R, not V/L."
+  ],
+  "importantConcepts": [
+    "LR growth",
+    "LR decay",
+    "Time constant",
+    "Stored energy"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Just after a DC battery is connected, the inductor current is",
+      "options": [
+        "V/R",
+        "Zero",
+        "Infinite",
+        "L/R"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The time constant is",
+      "options": [
+        "L/R",
+        "R/L",
+        "L R",
+        "V/R"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "After one time constant of decay the current is about",
+      "options": [
+        "Zero",
+        "37% of the starting current",
+        "The full V/R",
+        "Double"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A long time after connection the current is",
+      "options": [
+        "Zero",
+        "V/R",
+        "Infinite",
+        "L only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "V = 10 V, R = 5.0 Ω and L = 1.0 H. Find I_0, the time constant, and the current at t = τ during growth. Use e^(−1) = 0.37.",
+      "steps": [
+        "I_0 = V/R = 10/5.0 = 2.0 A.",
+        "τ = L/R = 1.0/5.0 = 0.20 s.",
+        "I(τ) = I_0 (1 − e^(−1)) = 2.0 × (1 − 0.37).",
+        "I(τ) = 2.0 × 0.63 = 1.26 A.",
+        "The current is still short of 2.0 A after one time constant."
+      ],
+      "answer": "I_0 = 2.0 A, τ = 0.20 s, I(τ) = 1.26 A."
+    }
+  ]
+}

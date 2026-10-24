@@ -84,16 +84,8 @@ export function normalizeLatexExpression(expression: string): string {
   // 1. Fix triple+ backslashes -> single
   let result = expression.replace(/\\{3,}(?=[A-Za-z])/g, "\\");
   
-  // 2. Handle common escaped characters that might have been double-escaped
-  // e.g. \\times -> \times
-  result = result.replace(/\\\\times/g, "\\times");
-  result = result.replace(/\\\\cdot/g, "\\cdot");
-  result = result.replace(/\\\\left/g, "\\left");
-  result = result.replace(/\\\\right/g, "\\right");
-  result = result.replace(/\\\\frac/g, "\\frac");
-  result = result.replace(/\\\\sqrt/g, "\\sqrt");
-  result = result.replace(/\\\\sum/g, "\\sum");
-  result = result.replace(/\\\\int/g, "\\int");
+  // 2. Collapse double-escaped command names from JSON/export (\\theta → \theta).
+  result = result.replace(/\\\\([A-Za-z][A-Za-z0-9]*)/g, "\\$1");
   
   // 3. Remove only truly stray backslashes. `\\` pairs (row breaks) are
   // consumed atomically so they are never dissected; commands and non-letter

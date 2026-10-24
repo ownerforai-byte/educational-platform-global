@@ -5,14 +5,21 @@
   "topicTitle": "Ampere's Circuital Law",
   "relevance": 100,
   "notes": [
-    "**Ampere's Circuital Law:** This topic covers the fundamental concepts of ampere's circuital law in the physics curriculum.",
-    "Understanding ampere's circuital law is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to ampere's circuital law should be memorized and practiced regularly."
+    "Ampere's circuital law says that the line integral of B around a closed path equals μ0 times the current enclosed by that path. It is useful when symmetry makes B constant on the path and parallel to it.",
+    "For a long straight wire, a circular path of radius r gives B times 2π r = μ0 I, so B = μ0 I /(2π r), the same answer as Biot–Savart.",
+    "For a long solenoid, a rectangular path with one side inside gives B = μ0 n I, where n is the number of turns per unit length. The field outside the ideal solenoid is zero, so that side of the rectangle contributes nothing.",
+    "A toroid, a solenoid bent into a ring, has B = μ0 N I /(2π r) inside the core and a very small field outside.",
+    "Currents outside the path are not enclosed, so they do not appear on the right-hand side. They may still shape the field if the symmetry is poor, which is why the law is then hard to use.",
+    "The law as stated here is for steady currents in vacuum. A displacement current is the later correction for changing electric fields."
   ],
   "confusion": [
     "❌ 'Ampere's law works for any current distribution.' ✅ It is most useful for *highly symmetric* situations (infinite wire, solenoid, toroid); for arbitrary shapes, Biot-Savart is needed.",
     "❌ 'The enclosed current must be at the center of the Amperian loop.' ✅ The current only needs to pass *through* the loop; its position inside the loop does not matter for the line integral.",
-    "❌ 'Magnetic field outside a solenoid is always zero.' ✅ For an *ideal infinite* solenoid it is zero, but a real finite solenoid has a weak external field."
+    "❌ 'Magnetic field outside a solenoid is always zero.' ✅ For an *ideal infinite* solenoid it is zero, but a real finite solenoid has a weak external field.",
+    "n is turns per metre, not the total turns, in the solenoid formula.",
+    "Current outside the Amperian loop is not enclosed.",
+    "The outside of an ideal long solenoid is not a place of strong field.",
+    "The law does not replace Biot–Savart when there is no symmetry."
   ],
   "practice": [
     "Solve at least 5 problems on ampere's circuital law from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "magnetism",
   "motionGraphics": "magnetism",
   "examples": [
-    "Example 1: Real-world application of Ampere's Circuital Law",
     "Example 2: Practical demonstration of Ampere's Circuital Law concepts",
     "Example 4: Diagram-based question on Ampere's Circuital Law",
     "Example 5: Application in daily life involving Ampere's Circuital Law"
@@ -61,11 +67,9 @@
     "Note 5: Ampere's Circuital Law frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Ampere's Circuital Law",
-    "Statement 2: Theorem related to Ampere's Circuital Law",
-    "Statement 3: Condition for Ampere's Circuital Law to be valid",
-    "Statement 4: Principle governing Ampere's Circuital Law",
-    "Statement 5: Corollary or consequence of Ampere's Circuital Law"
+    "Ampere's circuital law says that the line integral of B around a closed path equals μ0 times the current enclosed by that path. It is useful when symmetry makes B constant on the path and parallel to it.",
+    "For a long straight wire, a circular path of radius r gives B times 2π r = μ0 I, so B = μ0 I /(2π r), the same answer as Biot–Savart.",
+    "For a long solenoid, a rectangular path with one side inside gives B = μ0 n I, where n is the number of turns per unit length. The field outside the ideal solenoid is zero, so that side of the rectangle contributes nothing."
   ],
   "importantNotes": [
     "Note 1: Ampere's Circuital Law is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Ampere's Circuital Law",
     "Task 4: Practice previous year exam questions on Ampere's Circuital Law",
     "Task 5: Explain Ampere's Circuital Law to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Ampere's law equates the loop of B to",
+      "options": [
+        "μ0 times enclosed current",
+        "Every current in the room",
+        "The voltage",
+        "Zero always"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Inside a long solenoid B is",
+      "options": [
+        "μ0 n I",
+        "Zero",
+        "μ0 I / r",
+        "n/I"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Outside an ideal long solenoid B is",
+      "options": [
+        "μ0 n I",
+        "Zero",
+        "Infinite",
+        "The wire field of one turn only as the main result"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "n means",
+      "options": [
+        "Total turns",
+        "Turns per unit length",
+        "The current",
+        "The radius"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A long solenoid has 1000 turns per metre and carries 2.0 A. Find B inside. Use μ0 = 4π × 10^−7 and π = 3.14.",
+      "steps": [
+        "B = μ0 n I.",
+        "μ0 = 1.256 × 10^−6.",
+        "n I = 1000 × 2.0 = 2000.",
+        "B = 1.256 × 10^−6 × 2000 = 2.51 × 10^−3 T.",
+        "The field outside the ideal solenoid is zero."
+      ],
+      "answer": "2.51 × 10^−3 T."
+    }
   ]
 }

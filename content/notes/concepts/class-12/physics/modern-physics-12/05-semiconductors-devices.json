@@ -5,14 +5,21 @@
   "topicTitle": "Semiconductors and Devices",
   "relevance": 100,
   "notes": [
-    "**Semiconductors and Devices:** This topic covers the fundamental concepts of semiconductors and devices in the physics curriculum.",
-    "Understanding semiconductors and devices is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to semiconductors and devices should be memorized and practiced regularly."
+    "Silicon and germanium are semiconductors. At room temperature a few bonds break, giving a free electron and a hole. The conductivity lies between a metal and an insulator and rises with temperature.",
+    "Doping with a group-15 atom adds an extra electron. That is n-type, and electrons are the majority carriers. Doping with a group-13 atom leaves a hole. That is p-type, and holes are the majority carriers.",
+    "A p-n junction has a depletion layer. In forward bias the p-side is made positive, the barrier falls, and a large current flows. In reverse bias the barrier rises and only a tiny leakage current flows.",
+    "The diode is a one-way device. A rectifier uses that one-way behaviour to turn alternating voltage into a unidirectional voltage.",
+    "A bipolar transistor has two junctions, emitter, base and collector. A small base current controls a larger collector current. That is the current gain.",
+    "An LED is a diode that emits light when forward biased, as electrons and holes recombine. A solar cell is a junction that produces an emf when light creates pairs."
   ],
   "confusion": [
     "❌ Assuming intrinsic semiconductors conduct well at room temperature ✅ Intrinsic semiconductors have very few free charge carriers; doping is required to significantly increase conductivity.",
     "❌ Confusing P-type with positive charge ✅ P-type semiconductors are electrically neutral; they have \"holes\" as majority carriers, not a net positive charge.",
-    "❌ Misinterpreting the depletion layer as an insulator ✅ The depletion layer is a region depleted of free charge carriers, acting as a barrier, not an absolute insulator."
+    "❌ Misinterpreting the depletion layer as an insulator ✅ The depletion layer is a region depleted of free charge carriers, acting as a barrier, not an absolute insulator.",
+    "n-type is not negatively charged overall. It is still neutral.",
+    "Forward bias is p positive, not p negative.",
+    "Holes are missing electrons, not positive protons moving.",
+    "Temperature helps a semiconductor conduct. It usually hurts a metal."
   ],
   "practice": [
     "Solve at least 5 problems on semiconductors and devices from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "modern-physics-12",
   "motionGraphics": "modern-physics-12",
   "examples": [
-    "Example 1: Real-world application of Semiconductors and Devices",
     "Example 2: Practical demonstration of Semiconductors and Devices concepts",
     "Example 4: Diagram-based question on Semiconductors and Devices",
     "Example 5: Application in daily life involving Semiconductors and Devices"
@@ -61,11 +67,9 @@
     "Note 5: Semiconductors and Devices frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Semiconductors and Devices",
-    "Statement 2: Theorem related to Semiconductors and Devices",
-    "Statement 3: Condition for Semiconductors and Devices to be valid",
-    "Statement 4: Principle governing Semiconductors and Devices",
-    "Statement 5: Corollary or consequence of Semiconductors and Devices"
+    "Silicon and germanium are semiconductors. At room temperature a few bonds break, giving a free electron and a hole. The conductivity lies between a metal and an insulator and rises with temperature.",
+    "Doping with a group-15 atom adds an extra electron. That is n-type, and electrons are the majority carriers. Doping with a group-13 atom leaves a hole. That is p-type, and holes are the majority carriers.",
+    "A p-n junction has a depletion layer. In forward bias the p-side is made positive, the barrier falls, and a large current flows. In reverse bias the barrier rises and only a tiny leakage current flows."
   ],
   "importantNotes": [
     "Note 1: Semiconductors and Devices is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Semiconductors and Devices",
     "Task 4: Practice previous year exam questions on Semiconductors and Devices",
     "Task 5: Explain Semiconductors and Devices to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "n-type majority carriers are",
+      "options": [
+        "Holes",
+        "Electrons",
+        "Protons",
+        "Neutrons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Forward bias means",
+      "options": [
+        "The p-side is positive",
+        "The p-side is negative",
+        "No battery",
+        "A reverse current that is large"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A pure semiconductor's conductivity",
+      "options": [
+        "Falls as it is heated",
+        "Rises as it is heated",
+        "Is zero at room temperature always",
+        "Equals a metal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A transistor uses a small base current to control",
+      "options": [
+        "A larger collector current",
+        "The speed of light",
+        "The doping group",
+        "Nothing"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A silicon diode is connected with the p-side to the positive terminal of a battery and the n-side to the negative terminal. Say which bias this is, and whether a large current flows.",
+      "steps": [
+        "The p-side is positive.",
+        "That is forward bias.",
+        "The depletion barrier decreases.",
+        "A large current flows once the forward voltage is enough for silicon, about 0.7 V.",
+        "Swapping the battery would be reverse bias, with only leakage current."
+      ],
+      "answer": "Forward bias, and a large current flows."
+    }
   ]
 }

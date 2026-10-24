@@ -69,7 +69,6 @@
   "animation3D": "vectors",
   "motionGraphics": "vectors",
   "examples": [
-    "Example 1: Real-world application of Resolution of vectors; unit vectors",
     "Example 2: Practical demonstration of Resolution of vectors; unit vectors concepts",
     "Example 4: Diagram-based question on Resolution of vectors; unit vectors",
     "Example 5: Application in daily life involving Resolution of vectors; unit vectors"
@@ -102,11 +101,9 @@
     "Note 5: Resolution of vectors; unit vectors frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Resolution of vectors; unit vectors",
-    "Statement 2: Theorem related to Resolution of vectors; unit vectors",
-    "Statement 3: Condition for Resolution of vectors; unit vectors to be valid",
-    "Statement 4: Principle governing Resolution of vectors; unit vectors",
-    "Statement 5: Corollary or consequence of Resolution of vectors; unit vectors"
+    "Resolution replaces one vector by two perpendicular vectors that add up to it. Along axes at right angles, F_x = F cosθ and F_y = F sinθ, where θ is measured from the x-axis.",
+    "The original vector and its two components are not three forces acting at once. The components are a replacement. Using both the original vector and its components double-counts the force.",
+    "A component is zero when the vector is perpendicular to that axis, because cos 90° = 0 or sin 0° = 0. A component is negative when it points along the negative axis."
   ],
   "importantNotes": [
     "Note 1: Resolution of vectors; unit vectors is based on fundamental principles",
@@ -183,5 +180,60 @@
     "Task 3: Create a concept map for Resolution of vectors; unit vectors",
     "Task 4: Practice previous year exam questions on Resolution of vectors; unit vectors",
     "Task 5: Explain Resolution of vectors; unit vectors to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "A vector at angle θ to the x-axis has x-component",
+      "options": [
+        "F sinθ",
+        "F cosθ",
+        "F tanθ",
+        "F"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Components are used",
+      "options": [
+        "Together with the original vector",
+        "In place of the original vector",
+        "Only when F is zero",
+        "Only for scalars"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The magnitude is",
+      "options": [
+        "F_x + F_y",
+        "sqrt(F_x^2 + F_y^2)",
+        "F_x F_y",
+        "F_x − F_y always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A component perpendicular to its axis is",
+      "options": [
+        "The full vector",
+        "Zero",
+        "Negative always",
+        "Equal to F tanθ"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A force of 10 N acts at 30° above the +x-axis. Find its components. Take cos 30° = 0.866 and sin 30° = 0.500.",
+      "steps": [
+        "θ is from the +x-axis, so F_x = F cosθ and F_y = F sinθ.",
+        "F_x = 10 × 0.866 = 8.66 N.",
+        "F_y = 10 × 0.500 = 5.00 N.",
+        "Both components are positive, so they point along +x and +y.",
+        "Check: sqrt(8.66^2 + 5^2) = sqrt(75 + 25) = sqrt(100) = 10 N."
+      ],
+      "answer": "8.66 N along +x and 5.00 N along +y."
+    }
   ]
 }

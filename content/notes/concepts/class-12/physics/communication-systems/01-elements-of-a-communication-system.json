@@ -7,13 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Elements of a communication system — Communication Systems, Physics (class-12-notes).",
-    "**Tested.** define it · list: elements of a communication system · one worked example · one misconception each."
+    "The elements can be named as transducer, modulator and transmitter, medium, and receiver plus output transducer. This is the same chain as source, transmitter, channel and receiver, with the transducers made explicit.",
+    "A microphone is an input transducer: sound pressure becomes a voltage. A loudspeaker is an output transducer: the recovered voltage becomes sound again.",
+    "The message signal is often low frequency. Multiplying it with a carrier, or varying the carrier's amplitude or frequency, produces the modulated wave that the antenna launches.",
+    "The medium decides the loss. A copper pair, a fibre and a radio path have different attenuation and different noise. The link budget is the comparison of transmitted power with the power the receiver needs.",
+    "At the receiver a tuner selects the carrier, a demodulator strips it, and an amplifier raises the message to a useful level. Selecting the wrong carrier selects a different message.",
+    "Two-way radio uses the same elements in both directions. Each station is sometimes the source and sometimes the destination."
   ],
   "confusion": [
-    "❌ treat \"Elements of a communication system\" as one blob → ✅ split into: elements of a communication system.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "The loudspeaker is not the channel.",
+    "The message signal and the modulated wave are different.",
+    "Amplifying after noise has been added amplifies the noise too.",
+    "A transducer is not the same device as the modulator."
   ],
   "bounds": [
     "Covers only: elements of a communication system (within Communication Systems).",
@@ -21,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: elements of a communication system.",
-    "one worked example for \"Elements of a communication system\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write An input transducer turns the message into an electrical signal. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Elements of a communication system\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Elements of a communication system\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "An input transducer turns the message into an electrical signal.",
+    "Bandwidth is the frequency range the channel must pass."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "The elements can be named as transducer, modulator and transmitter, medium, and receiver plus output transducer. This is the same chain as source, transmitter, channel and receiver, with the transducers made explicit.",
+    "A microphone is an input transducer: sound pressure becomes a voltage. A loudspeaker is an output transducer: the recovered voltage becomes sound again.",
+    "Identify the input transducer, the medium and the output transducer for a telephone call on a copper line."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Elements of a communication system\" with one example.",
-    "compare \"Elements of a communication system\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Elements of a communication system\" and verify the answer is plausible."
+    "What does an input transducer do?",
+    "What is the medium?",
+    "What does the demodulator remove?"
   ],
   "formulas": [
-    "Governing equation for \"Elements of a communication system\" — state with units, then use in one numerical."
+    "Governing equation for \"Elements of a communication system\" — state with units, then use in one numerical.",
+    "An input transducer turns the message into an electrical signal.",
+    "Bandwidth is the frequency range the channel must pass."
   ],
   "numericals": [
     "Set up the defining equation for \"Elements of a communication system\", substitute simple values, and compute the result with units.",
@@ -45,18 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Elements of a communication system"
+    "A transducer starts the electrical chain.",
+    "The transmitter modulates and amplifies.",
+    "The medium may be cable or space.",
+    "The destination is the user."
   ],
-  "summary": "Elements of a communication system (Communication Systems, Physics, class-12-notes) covers Elements of a communication system. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "The elements are an input transducer, a transmitter that modulates, a medium, and a receiver with an output transducer. The message and the modulated carrier are different signals. The medium is where attenuation and noise appear.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Elements of a communication system\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A microphone is",
       "options": [
-        "True",
-        "False"
+        "A channel",
+        "An input transducer",
+        "A demodulator",
+        "A carrier"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "The modulated wave is",
+      "options": [
+        "The original speech voltage alone",
+        "The carrier altered by the message",
+        "Noise only",
+        "The loudspeaker cone"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A loudspeaker",
+      "options": [
+        "Launches the radio wave",
+        "Turns the recovered signal back into sound",
+        "Is the information source of a radio talk",
+        "Removes the carrier"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Selecting the wrong carrier",
+      "options": [
+        "Removes noise perfectly",
+        "Selects a different message",
+        "Increases the turns ratio",
+        "Stops attenuation"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "The elements can be named as transducer, modulator and transmitter, medium, and receiver plus output transducer. This is the same chain as source, transmitter, channel and receiver, with the transducers made explicit.",
+    "A microphone is an input transducer: sound pressure becomes a voltage. A loudspeaker is an output transducer: the recovered voltage becomes sound again.",
+    "The message signal is often low frequency. Multiplying it with a carrier, or varying the carrier's amplitude or frequency, produces the modulated wave that the antenna launches."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Microphone in, loudspeaker out.",
+    "Select the carrier, then demodulate."
+  ],
+  "specialNotes": [
+    "Amplitude modulation and frequency modulation are two ways to load the carrier.",
+    "Fibre uses light as the carrier."
+  ],
+  "importantNotes": [
+    "Name the transducer at each end.",
+    "The medium is physical. The message is not."
+  ],
+  "importantConcepts": [
+    "Transducer",
+    "Modulated wave",
+    "Medium",
+    "Demodulator"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A microphone is",
+      "options": [
+        "A channel",
+        "An input transducer",
+        "A demodulator",
+        "A carrier"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The modulated wave is",
+      "options": [
+        "The original speech voltage alone",
+        "The carrier altered by the message",
+        "Noise only",
+        "The loudspeaker cone"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A loudspeaker",
+      "options": [
+        "Launches the radio wave",
+        "Turns the recovered signal back into sound",
+        "Is the information source of a radio talk",
+        "Removes the carrier"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Selecting the wrong carrier",
+      "options": [
+        "Removes noise perfectly",
+        "Selects a different message",
+        "Increases the turns ratio",
+        "Stops attenuation"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Identify the input transducer, the medium and the output transducer for a telephone call on a copper line.",
+      "steps": [
+        "The microphone in the handset is the input transducer.",
+        "The transmitter circuits send the electrical signal into the copper pair.",
+        "The copper pair is the medium, the channel.",
+        "The earpiece is the output transducer.",
+        "Noise can be induced into the copper pair along the way."
+      ],
+      "answer": "Microphone, copper pair, earpiece."
     }
   ]
 }

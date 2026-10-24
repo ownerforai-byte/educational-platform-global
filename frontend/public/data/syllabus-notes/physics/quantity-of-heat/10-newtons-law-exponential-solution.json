@@ -1,0 +1,188 @@
+{
+  "title": "Newton's Law of Cooling — Exponential Solution & Graph",
+  "notes": [
+    "Start from −mc dθ/dt = K (θ − θ0), with K and θ0 constant. This is the rate form of Newton's law of cooling.",
+    "Separate the variables: dθ / (θ − θ0) = −(K/mc) dt. Every temperature term is on the left and time is on the right.",
+    "Integrate from the initial temperature θ1 at t = 0 to the temperature θ at time t. The left side becomes the natural log of the ratio of the excesses.",
+    "The result is ln[(θ − θ0)/(θ1 − θ0)] = −(K/mc) t. Exponentiating both sides gives θ − θ0 = (θ1 − θ0) e^(−Kt/mc).",
+    "The excess temperature therefore falls exponentially. It becomes half in a fixed time that depends on mc/K, and it is never exactly zero at a finite time.",
+    "A graph of excess against time is a falling curve that flattens toward the axis. A graph of ln(excess) against time is a straight line whose slope is −K/mc."
+  ],
+  "examples": [
+    "Start from −mc dθ/dt = K (θ − θ0), with K and θ0 constant. This is the rate form of Newton's law of cooling.",
+    "Separate the variables: dθ / (θ − θ0) = −(K/mc) dt. Every temperature term is on the left and time is on the right.",
+    "The excess temperature falls to 1/e of its initial value in 5.0 min. How long does it take to fall to half the initial excess?"
+  ],
+  "practiceQuestions": [
+    "Q1. Define Newton's Law of Cooling — Exponential Solution & Graph.",
+    "Q3. Problem on Newton's Law of Cooling — Exponential Solution & Graph.",
+    "What function describes the excess temperature?",
+    "What plot is a straight line?",
+    "Does the body reach θ0 in a finite time?"
+  ],
+  "formulas": [
+    "θ − θ0 = (θ1 − θ0) e^(−Kt/mc)",
+    "Half-excess time = (mc/K) ln 2"
+  ],
+  "keyPoints": [
+    "Connection of Newton's Law of Cooling — Exponential Solution & Graph to other topics",
+    "Separate variables.",
+    "Integrate from the initial excess.",
+    "The excess decays exponentially.",
+    "The body approaches θ0 but does not cross it."
+  ],
+  "summary": "Newton's Law of Cooling — Exponential Solution & Graph covers essential principles and applications.",
+  "specialNotes": [
+    "The derivation assumes K and c stay constant.",
+    "A change of state would add a latent-heat term the separation did not include."
+  ],
+  "importantStatements": [
+    "Start from −mc dθ/dt = K (θ − θ0), with K and θ0 constant. This is the rate form of Newton's law of cooling.",
+    "Separate the variables: dθ / (θ − θ0) = −(K/mc) dt. Every temperature term is on the left and time is on the right.",
+    "Integrate from the initial temperature θ1 at t = 0 to the temperature θ at time t. The left side becomes the natural log of the ratio of the excesses."
+  ],
+  "importantNotes": [
+    "Newton's Law of Cooling — Exponential Solution & Graph is based on fundamental principles.",
+    "Keep the excess, not the Celsius temperature, inside the exponential.",
+    "The slope of the log graph is negative."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Newton's Law of Cooling — Exponential Solution & Graph.",
+    "ln(excess) versus t is linear.",
+    "Half-excess time is (mc/K) ln 2."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "The excess temperature falls",
+      "options": [
+        "Linearly to zero in a finite time",
+        "Exponentially toward zero",
+        "As a sine wave",
+        "Only when K is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A straight-line cooling plot is",
+      "options": [
+        "θ against t in every case",
+        "ln(θ − θ0) against t",
+        "θ^4 against t",
+        "Mass against time"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "θ1 in the solution is",
+      "options": [
+        "The room temperature",
+        "The initial temperature of the body",
+        "Absolute zero",
+        "The boiling point always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The body reaches the room temperature",
+      "options": [
+        "After one time constant exactly, and stops",
+        "Only as t becomes very large",
+        "Halfway through the experiment by rule",
+        "Never starts cooling"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Newton's Law of Cooling — Exponential Solution & Graph.",
+    "Separation of variables",
+    "Exponential excess",
+    "Half-cooling time",
+    "Log graph"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "The temperature does not fall linearly with time.",
+    "The body does not overshoot θ0 in this solution.",
+    "θ1 is the initial temperature, not the surroundings.",
+    "The exponent is negative for a hot body, so the excess shrinks."
+  ],
+  "practice": [
+    "Write θ − θ0 = (θ1 − θ0) e^(−Kt/mc) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "θ − θ0 = (θ1 − θ0) e^(−Kt/mc)",
+    "Half-excess time = (mc/K) ln 2"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "The excess temperature falls",
+      "options": [
+        "Linearly to zero in a finite time",
+        "Exponentially toward zero",
+        "As a sine wave",
+        "Only when K is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A straight-line cooling plot is",
+      "options": [
+        "θ against t in every case",
+        "ln(θ − θ0) against t",
+        "θ^4 against t",
+        "Mass against time"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "θ1 in the solution is",
+      "options": [
+        "The room temperature",
+        "The initial temperature of the body",
+        "Absolute zero",
+        "The boiling point always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The body reaches the room temperature",
+      "options": [
+        "After one time constant exactly, and stops",
+        "Only as t becomes very large",
+        "Halfway through the experiment by rule",
+        "Never starts cooling"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "The excess temperature falls to 1/e of its initial value in 5.0 min. How long does it take to fall to half the initial excess?",
+      "steps": [
+        "θ − θ0 = (θ1 − θ0) e^(−t/τ), where τ = mc/K = 5.0 min, because at t = τ the factor is 1/e.",
+        "Half the excess means e^(−t/τ) = 1/2.",
+        "−t/τ = ln(1/2) = −ln 2.",
+        "t = τ ln 2.",
+        "ln 2 is about 0.693, so t = 5.0 × 0.693 = 3.5 min."
+      ],
+      "answer": "About 3.5 min."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "10-newtons-law-exponential-solution",
+  "topicTitle": "Newton's Law of Cooling — Exponential Solution & Graph"
+}

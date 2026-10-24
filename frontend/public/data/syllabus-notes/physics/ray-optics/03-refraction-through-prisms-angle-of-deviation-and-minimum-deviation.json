@@ -1,0 +1,196 @@
+{
+  "title": "Refraction through prisms — angle of deviation and minimu…",
+  "unitSlug": "ray-optics",
+  "topicSlug": "refraction-through-prisms-angle-of-deviation-and-minimum-deviation",
+  "topicTitle": "Refraction through prisms — angle of deviation and minimum deviation",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "A triangular prism has apex angle A. A ray that enters one face and leaves the other is bent toward the base if the prism's index is higher than the surrounding air.",
+    "Inside the prism the two refraction angles at the faces add to the apex angle: A = r1 + r2. The total deviation δ is i + e − A, where i is the angle of incidence and e is the angle of emergence.",
+    "As the prism is rotated, the deviation falls to a minimum and then rises. At minimum deviation the ray inside the prism is parallel to the base for an isosceles prism, and i = e.",
+    "Then r1 = r2 = A/2, and the index is μ = sin((A + δ_m)/2) / sin(A/2). Measuring A and the angle of minimum deviation is a standard way to find μ.",
+    "A larger index means a larger minimum deviation for the same prism. Violet is deviated more than red because its index is higher. That spread is dispersion.",
+    "A thin prism has a small A, and the deviation is approximately (μ − 1) A when the angles are in the same unit. That approximation is not the minimum-deviation formula."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+    "Deviation is not the apex angle.",
+    "Minimum deviation is the symmetric passage.",
+    "The thin-prism formula is not the general one.",
+    "Violet deviates more than red."
+  ],
+  "bounds": [
+    "Covers only: refraction through prisms — angle of deviation, minimum deviation (within Ray Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+  ],
+  "practice": [
+    "Write A = r1 + r2 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+  ],
+  "examples": [
+    "A triangular prism has apex angle A. A ray that enters one face and leaves the other is bent toward the base if the prism's index is higher than the surrounding air.",
+    "Inside the prism the two refraction angles at the faces add to the apex angle: A = r1 + r2. The total deviation δ is i + e − A, where i is the angle of incidence and e is the angle of emergence.",
+    "A prism has A = 60° and μ = √2. Show that the angle of minimum deviation is 30°."
+  ],
+  "practiceQuestions": [
+    "Write μ in terms of A and δ_m.",
+    "What is special about the ray at minimum deviation?",
+    "Which colour is deviated more?"
+  ],
+  "formulas": [
+    "1/f = (μ−1)(1/R₁ − 1/R₂)",
+    "P = 1/f",
+    "n = sin((A+D)/2)/sin(A/2)"
+  ],
+  "numericals": [
+    "A prism has A = 60° and μ = √2. Show that the angle of minimum deviation is 30°."
+  ],
+  "keyPoints": [
+    "• Refraction through prisms — angle of deviation",
+    "A prism deviates light toward the base.",
+    "Deviation depends on the angle and the index.",
+    "Minimum deviation is the symmetric case.",
+    "The index is found from A and δ_m."
+  ],
+  "summary": "A prism deviates a ray toward its base. The deviation is least when the passage is symmetric, and the index is then sin((A+δ_m)/2) divided by sin(A/2). A 60° prism of index √2 has a minimum deviation of 30°. Violet, with the higher index, is deviated more than red.",
+  "mcqs": [
+    {
+      "question": "Inside the prism",
+      "options": [
+        "A = r1 + r2",
+        "A = i + e",
+        "δ = A",
+        "μ = A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At minimum deviation",
+      "options": [
+        "i = e",
+        "The ray misses the second face",
+        "δ is largest",
+        "μ = 1"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "μ equals",
+      "options": [
+        "sin((A+δ_m)/2) / sin(A/2)",
+        "A/δ_m",
+        "sin A",
+        "δ_m"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In a glass prism, violet is deviated",
+      "options": [
+        "Less than red",
+        "More than red",
+        "Not at all",
+        "The same, because μ is identical"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "A triangular prism has apex angle A. A ray that enters one face and leaves the other is bent toward the base if the prism's index is higher than the surrounding air.",
+    "Inside the prism the two refraction angles at the faces add to the apex angle: A = r1 + r2. The total deviation δ is i + e − A, where i is the angle of incidence and e is the angle of emergence.",
+    "As the prism is rotated, the deviation falls to a minimum and then rises. At minimum deviation the ray inside the prism is parallel to the base for an isosceles prism, and i = e."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "At minimum deviation, i = e.",
+    "μ from the sine formula, not from A alone."
+  ],
+  "specialNotes": [
+    "For A = 60° and μ = √2, δ_m = 30°.",
+    "Angles in the sine formula are in degrees only after you take the sine of those degrees."
+  ],
+  "importantNotes": [
+    "Use the minimum-deviation position for the index experiment.",
+    "Do not add δ to A and call it the index."
+  ],
+  "importantConcepts": [
+    "Prism deviation",
+    "Minimum deviation",
+    "Index formula",
+    "Dispersion"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Inside the prism",
+      "options": [
+        "A = r1 + r2",
+        "A = i + e",
+        "δ = A",
+        "μ = A"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At minimum deviation",
+      "options": [
+        "i = e",
+        "The ray misses the second face",
+        "δ is largest",
+        "μ = 1"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "μ equals",
+      "options": [
+        "sin((A+δ_m)/2) / sin(A/2)",
+        "A/δ_m",
+        "sin A",
+        "δ_m"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In a glass prism, violet is deviated",
+      "options": [
+        "Less than red",
+        "More than red",
+        "Not at all",
+        "The same, because μ is identical"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A prism has A = 60° and μ = √2. Show that the angle of minimum deviation is 30°.",
+      "steps": [
+        "At minimum deviation, r = A/2 = 30°.",
+        "sin i = μ sin r = √2 × sin 30° = √2 × 0.50 = 0.707.",
+        "i = 45°.",
+        "δ_m = 2 i − A = 90° − 60° = 30°.",
+        "The symmetric ray gives this single minimum."
+      ],
+      "answer": "30°."
+    }
+  ]
+}

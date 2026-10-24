@@ -1,43 +1,188 @@
 {
   "title": "Addition of Vectors — Same and Opposite Directions",
-  "notes": [],
+  "notes": [
+    "Vectors are added by the head-to-tail rule. Place the tail of the second vector on the head of the first. The resultant runs from the tail of the first to the head of the second.",
+    "When two vectors point the same way along one line, the triangle collapses into a longer line. The magnitude of the resultant is R = P + Q, and the direction is that common direction.",
+    "When they point in opposite directions, the head-to-tail path folds back. The magnitude is R = |P − Q|, and the resultant points in the direction of the vector with the larger magnitude.",
+    "The general parallelogram result R = sqrt(P^2 + Q^2 + 2PQ cosθ) contains both cases. θ = 0° gives cosθ = 1 and R = P + Q. θ = 180° gives cosθ = −1 and R = |P − Q|.",
+    "A negative sign on a one-dimensional vector means the opposite direction. Subtracting is the same operation as adding the opposite vector.",
+    "The resultant of two equal opposite vectors is zero. The body they act on is then in translational equilibrium if no other force is present."
+  ],
   "examples": [
-    "Application of Addition of Vectors — Same and Opposite Directions"
+    "Vectors are added by the head-to-tail rule. Place the tail of the second vector on the head of the first. The resultant runs from the tail of the first to the head of the second.",
+    "When two vectors point the same way along one line, the triangle collapses into a longer line. The magnitude of the resultant is R = P + Q, and the direction is that common direction.",
+    "Forces of 12 N east and 5 N west act at a point. Find the resultant."
   ],
   "practiceQuestions": [
     "Q1. Define Addition of Vectors — Same and Opposite Directions.",
-    "Q3. Problem on Addition of Vectors — Same and Opposite Directions."
+    "Q3. Problem on Addition of Vectors — Same and Opposite Directions.",
+    "What is R when θ = 0°?",
+    "What is R when θ = 180°?",
+    "Which way does |P − Q| point?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Same direction: R = P + Q",
+    "Opposite direction: R = |P − Q|"
+  ],
   "keyPoints": [
-    "Application of Addition of Vectors — Same and Opposite Directions",
-    "Connection of Addition of Vectors — Same and Opposite Directions to other topics"
+    "Connection of Addition of Vectors — Same and Opposite Directions to other topics",
+    "Vectors add head to tail.",
+    "Parallel and same sense: magnitudes add.",
+    "Parallel and opposite: magnitudes subtract.",
+    "The resultant points with the larger vector."
   ],
   "summary": "Addition of Vectors — Same and Opposite Directions covers essential principles and applications.",
-  "specialNotes": [],
+  "specialNotes": [
+    "Draw the positive direction before attaching a sign.",
+    "The parallelogram law reduces to these two lines when the vectors are collinear."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Addition of Vectors — Same and Opposite Directions",
-    "Statement 2: Theorem related to Addition of Vectors — Same and Opposite Directions",
-    "Statement 3: Condition for Addition of Vectors — Same and Opposite Directions to be valid",
-    "Statement 4: Principle governing Addition of Vectors — Same and Opposite Directions",
-    "Statement 5: Corollary or consequence of Addition of Vectors — Same and Opposite Directions"
+    "Vectors are added by the head-to-tail rule. Place the tail of the second vector on the head of the first. The resultant runs from the tail of the first to the head of the second.",
+    "When two vectors point the same way along one line, the triangle collapses into a longer line. The magnitude of the resultant is R = P + Q, and the direction is that common direction.",
+    "When they point in opposite directions, the head-to-tail path folds back. The magnitude is R = |P − Q|, and the resultant points in the direction of the vector with the larger magnitude."
   ],
   "importantNotes": [
-    "Addition of Vectors — Same and Opposite Directions is based on fundamental principles."
+    "Addition of Vectors — Same and Opposite Directions is based on fundamental principles.",
+    "Quote both magnitude and direction.",
+    "Do not add opposite forces as if they were parallel and alike."
   ],
   "examShortTricks": [
-    "Recall the formula for Addition of Vectors — Same and Opposite Directions."
+    "Recall the formula for Addition of Vectors — Same and Opposite Directions.",
+    "θ = 0: add. θ = 180: subtract.",
+    "Equal and opposite: resultant zero."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "Two forces of 6 N and 4 N in the same direction have resultant",
+      "options": [
+        "2 N",
+        "10 N",
+        "24 N",
+        "0 N"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The same two forces in opposite directions have resultant",
+      "options": [
+        "10 N",
+        "2 N along the 6 N force",
+        "24 N",
+        "5 N"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "θ = 180° in the parallelogram law gives",
+      "options": [
+        "R = P + Q",
+        "R = |P − Q|",
+        "R = PQ",
+        "R = 0 always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two equal opposite vectors have resultant",
+      "options": [
+        "2P",
+        "P",
+        "Zero",
+        "P/2"
+      ],
+      "answer": "C"
+    }
+  ],
   "importantConcepts": [
-    "Definition and significance of Addition of Vectors — Same and Opposite Directions."
+    "Definition and significance of Addition of Vectors — Same and Opposite Directions.",
+    "Head-to-tail",
+    "Same direction",
+    "Opposite direction",
+    "Zero resultant"
   ],
-  "importantTasks": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Opposite vectors do not give R = P + Q.",
+    "The direction after a subtraction belongs to the larger magnitude.",
+    "A zero resultant does not mean the vectors were never there.",
+    "Scalars add without a direction check. Vectors do not."
+  ],
+  "practice": [
+    "Write Same direction: R = P + Q and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Same direction: R = P + Q",
+    "Opposite direction: R = |P − Q|"
+  ],
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "Two forces of 6 N and 4 N in the same direction have resultant",
+      "options": [
+        "2 N",
+        "10 N",
+        "24 N",
+        "0 N"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The same two forces in opposite directions have resultant",
+      "options": [
+        "10 N",
+        "2 N along the 6 N force",
+        "24 N",
+        "5 N"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "θ = 180° in the parallelogram law gives",
+      "options": [
+        "R = P + Q",
+        "R = |P − Q|",
+        "R = PQ",
+        "R = 0 always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two equal opposite vectors have resultant",
+      "options": [
+        "2P",
+        "P",
+        "Zero",
+        "P/2"
+      ],
+      "answer": "C"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Forces of 12 N east and 5 N west act at a point. Find the resultant.",
+      "steps": [
+        "Take east as positive.",
+        "The vectors are opposite, so R = 12 − 5 = 7 N.",
+        "The larger force is eastward.",
+        "The resultant is therefore 7 N east.",
+        "Check: 12 + (−5) = +7, the same result."
+      ],
+      "answer": "7 N east."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "vectors",
+  "topicSlug": "02-addition-of-vectors-same-and-opposite-directions",
+  "topicTitle": "Addition of Vectors — Same and Opposite Directions"
 }

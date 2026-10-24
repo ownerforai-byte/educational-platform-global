@@ -7,18 +7,21 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Coulomb's law and its applications — Electrostatics, Physics (class-12-notes).",
-    "**Tested.** define it · list: coulomb's law, its applications · one worked example · one misconception each.",
-    "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "**Fact.** Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines.",
-    "**Its applications.** one-line definition + one-line exam use."
+    "Coulomb's law gives the force between two point charges: F = k |q1 q2| / r^2, with k = 9.0 × 10^9 in SI units. The force is along the line joining the charges. Like charges repel and unlike charges attract.",
+    "Doubling either charge doubles the force. Doubling the distance divides the force by four. The force on each charge has the same magnitude even when the charges are unequal.",
+    "A third charge feels the vector sum of the forces from the other two. If the charges are not on one line, resolve each force into components before adding.",
+    "In a uniform insulating medium the force is the vacuum force divided by the dielectric constant. The medium does not cancel the law. It reduces the force.",
+    "Spherical charge distributions, outside the sphere, act as if their charge were at the centre. Inside a uniform spherical shell the field is zero, so a charge there feels no net force from the shell.",
+    "The applications are the same law used twice: find one pair force, then add a second pair as a vector. A negative answer for a component means that component points opposite the axis you chose."
   ],
   "confusion": [
-    "❌ treat \"Coulomb's law\" as one blob → ✅ split into: coulomb's law, its applications.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.."
+    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
+    "The force is not proportional to distance.",
+    "Unequal charges still share equal forces.",
+    "Superposition is a vector sum.",
+    "Inside a charged shell the net force from the shell is zero."
   ],
   "bounds": [
     "Covers only: coulomb's law, its applications (within Electrostatics).",
@@ -27,9 +30,9 @@
     "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
   ],
   "practice": [
-    "define + example each sub-idea: coulomb's law, its applications.",
-    "one worked example for \"Coulomb's law and its applications\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write F = k |q1 q2| / r^2 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
@@ -37,12 +40,14 @@
     "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Coulomb's law gives the force between two point charges: F = k |q1 q2| / r^2, with k = 9.0 × 10^9 in SI units. The force is along the line joining the charges. Like charges repel and unlike charges attract.",
+    "Doubling either charge doubles the force. Doubling the distance divides the force by four. The force on each charge has the same magnitude even when the charges are unequal.",
+    "Two charges of 3.0 μC are 0.10 m apart in air. Find the force. Use k = 9.0 × 10^9."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Coulomb's law and its applications\" with one example.",
-    "compare \"Coulomb's law\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Coulomb's law and its applications\" and verify the answer is plausible."
+    "Write Coulomb's law.",
+    "What happens to F if r is doubled?",
+    "How do you combine two forces that are not along the same line?"
   ],
   "formulas": [
     "F = k q₁q₂/r²",
@@ -51,24 +56,141 @@
     "V = kq/r"
   ],
   "numericals": [
-    "Use  F = k q₁q₂/r²  — pick reasonable values, solve, and check the units.",
-    "Use  E = F/q  — pick reasonable values, solve, and check the units.",
-    "Use  ∮E·dA = Q/ε₀  — pick reasonable values, solve, and check the units."
+    "Two charges of 3.0 μC are 0.10 m apart in air. Find the force. Use k = 9.0 × 10^9."
   ],
   "keyPoints": [
-    "• Coulomb's law",
-    "• Its applications"
+    "Inverse square.",
+    "Like charges repel.",
+    "The two forces are equal and opposite.",
+    "Superposition uses components."
   ],
-  "summary": "Coulomb's law and its applications (Electrostatics, Physics, class-12-notes) covers Coulomb's law, its applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Point charges repel or attract with k |q1 q2| / r^2 along the line joining them. The two forces are equal and opposite. Several charges are handled by adding force vectors, and a charge inside a uniform spherical shell feels no net force from that shell.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Coulomb's law and its applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Doubling the separation multiplies F by",
       "options": [
-        "True",
-        "False"
+        "2",
+        "1/2",
+        "1/4",
+        "4"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C"
+    },
+    {
+      "question": "Like charges",
+      "options": [
+        "Attract",
+        "Repel",
+        "Feel unequal forces with no pair",
+        "Have F independent of r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two forces at an angle are combined by",
+      "options": [
+        "Adding the magnitudes",
+        "Adding components",
+        "Multiplying the charges again",
+        "Ignoring one"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A charge inside a uniform spherical shell feels",
+      "options": [
+        "The full surface force one way",
+        "No net force from the shell",
+        "A force proportional to r squared outward always",
+        "k q only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Coulomb's law gives the force between two point charges: F = k |q1 q2| / r^2, with k = 9.0 × 10^9 in SI units. The force is along the line joining the charges. Like charges repel and unlike charges attract.",
+    "Doubling either charge doubles the force. Doubling the distance divides the force by four. The force on each charge has the same magnitude even when the charges are unequal.",
+    "A third charge feels the vector sum of the forces from the other two. If the charges are not on one line, resolve each force into components before adding."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Double r, quarter F.",
+    "Add components, not slanted magnitudes."
+  ],
+  "specialNotes": [
+    "k = 9.0 × 10^9.",
+    "1 μC = 10^−6 C."
+  ],
+  "importantNotes": [
+    "Convert microcoulombs first.",
+    "Draw the directions before the arithmetic."
+  ],
+  "importantConcepts": [
+    "Coulomb force",
+    "Inverse square",
+    "Superposition",
+    "Spherical shell"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Doubling the separation multiplies F by",
+      "options": [
+        "2",
+        "1/2",
+        "1/4",
+        "4"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Like charges",
+      "options": [
+        "Attract",
+        "Repel",
+        "Feel unequal forces with no pair",
+        "Have F independent of r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Two forces at an angle are combined by",
+      "options": [
+        "Adding the magnitudes",
+        "Adding components",
+        "Multiplying the charges again",
+        "Ignoring one"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A charge inside a uniform spherical shell feels",
+      "options": [
+        "The full surface force one way",
+        "No net force from the shell",
+        "A force proportional to r squared outward always",
+        "k q only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two charges of 3.0 μC are 0.10 m apart in air. Find the force. Use k = 9.0 × 10^9.",
+      "steps": [
+        "Each charge is 3.0 × 10^−6 C.",
+        "The product of the charges is 9.0 × 10^−12.",
+        "r squared is 0.010.",
+        "F = 9.0 × 10^9 × 9.0 × 10^−12 / 0.010.",
+        "9e9 × 9e−12 = 8.1e−2, and 0.081 / 0.010 = 8.1 N. The charges repel."
+      ],
+      "answer": "8.1 N, repulsive."
     }
   ]
 }

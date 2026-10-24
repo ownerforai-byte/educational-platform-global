@@ -3,17 +3,22 @@
   "unitSlug": "optics",
   "topicSlug": "n2",
   "topicTitle": "N2",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "A plane mirror forms an image where backward extensions of reflected rays meet. The image is virtual, upright, equal in size and as far behind the mirror as the object is in front.",
     "For a spherical mirror, pole P and centre of curvature C define the axis; for paraxial rays the principal focus F is halfway to C, so f=R/2.",
     "A concave mirror can form real or virtual images according to object position. A convex mirror gives an upright, diminished virtual image for a real object, providing a wide field of view.",
     "Worked example: a concave mirror has f=10 cm and object distance u=30 cm in a real-positive convention. 1/v=1/10−1/30=1/15, so v=15 cm; m=−v/u=−0.5.",
-    "Principal ray construction uses a ray parallel to the axis reflected through F and a ray through C reflected back along itself. Their intersection gives image position."
+    "Principal ray construction uses a ray parallel to the axis reflected through F and a ray through C reflected back along itself. Their intersection gives image position.",
+    "A plane mirror does not bring rays to a real focus. The reflected rays diverge, and the eye traces them back to a virtual image behind the mirror. Walking toward the mirror makes the image walk toward the mirror at the same rate, so the gap closes at twice your speed relative to the image."
   ],
   "confusion": [
     "The displayed mirror equation uses a real-positive convention.",
-    "f=R/2 assumes a spherical mirror and paraxial rays."
+    "f=R/2 assumes a spherical mirror and paraxial rays.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A concave mirror has f=12 cm and u=36 cm. Find v and m.",
@@ -29,7 +34,10 @@
   "motionGraphics": "optics",
   "examples": [
     "u=30 cm, f=10 cm concave gives v=15 cm and m=−0.5.",
-    "A plane mirror gives equal object and image distances and unit magnification."
+    "A plane mirror gives equal object and image distances and unit magnification.",
+    "A plane mirror does not bring rays to a real focus. The reflected rays diverge, and the eye traces them back to a virtual image behind the mirror. Walking toward the mirror makes the image walk toward the mirror at the same rate, so the gap closes at twice your speed relative to the image.",
+    "The working relations are A plane-mirror image is as far behind the mirror as the object is in front and The image is virtual and the same size. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An object is 30 cm in front of a plane mirror. Where is the image, and how far is it from the object?"
   ],
   "practiceQuestions": [
     "A concave mirror has f=12 cm and u=36 cm. Find v and m.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Object position determines concave-mirror image type.",
     "A convex mirror trades image size for field of view.",
-    "The spherical-mirror focus is halfway to C for paraxial rays."
+    "The spherical-mirror focus is halfway to C for paraxial rays.",
+    "A plane-mirror image is as far behind the mirror as the object is in front",
+    "The image is virtual and the same size",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Spherical mirrors form images by reflection. Use the paraxial relation f=R/2 and a consistent mirror equation to determine image position and type.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Object position determines concave-mirror image type.",
     "A convex mirror trades image size for field of view.",
-    "The spherical-mirror focus is halfway to C for paraxial rays."
+    "The spherical-mirror focus is halfway to C for paraxial rays.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A concave mirror has f=12 cm and u=36 cm. Find v and m.",
@@ -84,5 +100,102 @@
     "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
     "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "A plane-mirror image is",
+      "options": [
+        "Real",
+        "Virtual",
+        "Inverted for an ordinary upright object",
+        "At the focus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Image distance equals",
+      "options": [
+        "Half the object distance",
+        "The object distance",
+        "The focal length",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Object and image are separated by",
+      "options": [
+        "The object distance",
+        "Twice the object distance",
+        "The thickness of the glass only",
+        "f"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The image size is",
+      "options": [
+        "Equal to the object",
+        "Always smaller",
+        "Always larger",
+        "Zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A plane-mirror image is",
+      "options": [
+        "Real",
+        "Virtual",
+        "Inverted for an ordinary upright object",
+        "At the focus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Image distance equals",
+      "options": [
+        "Half the object distance",
+        "The object distance",
+        "The focal length",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Object and image are separated by",
+      "options": [
+        "The object distance",
+        "Twice the object distance",
+        "The thickness of the glass only",
+        "f"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The image size is",
+      "options": [
+        "Equal to the object",
+        "Always smaller",
+        "Always larger",
+        "Zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An object is 30 cm in front of a plane mirror. Where is the image, and how far is it from the object?",
+      "steps": [
+        "The image is 30 cm behind the mirror.",
+        "It is virtual and upright.",
+        "The distance from object to image is 60 cm.",
+        "The size equals the object size.",
+        "Moving the object 10 cm toward the mirror moves the image 10 cm toward the mirror."
+      ],
+      "answer": "30 cm behind the mirror, 60 cm from the object."
+    }
+  ]
 }

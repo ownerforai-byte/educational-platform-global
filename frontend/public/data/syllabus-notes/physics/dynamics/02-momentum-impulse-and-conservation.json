@@ -1,0 +1,189 @@
+{
+  "title": "Linear Momentum, Impulse & Conservation of Linear Momentum",
+  "notes": [
+    "Linear momentum is p = mv. It is a vector, so a sign convention is part of the answer. The usual choice is to take one direction as positive and the opposite direction as negative.",
+    "Impulse is the product of a force and the time it acts, when the force is constant. The impulse–momentum relation says F Δt = Δp = mv − mu. A large force for a short time can change the momentum as much as a small force acting longer.",
+    "If the net external force on a system is zero, the total momentum of the system stays constant. Internal forces come in third-law pairs and do not change the total momentum.",
+    "For two bodies along one line, m1 u1 + m2 u2 = m1 v1 + m2 v2. This is conservation of momentum. It is true for collisions even when kinetic energy is not conserved.",
+    "An explosion or a gun firing is the same law. Before the event the total momentum can be zero. After it, the pieces have equal and opposite momenta so the vector sum is still zero.",
+    "Kinetic energy is conserved only in an elastic collision. Momentum conservation does not need that extra condition. In a perfectly inelastic collision the bodies stick, and you still use momentum conservation, with a shared final velocity."
+  ],
+  "examples": [
+    "Linear momentum is p = mv. It is a vector, so a sign convention is part of the answer. The usual choice is to take one direction as positive and the opposite direction as negative.",
+    "Impulse is the product of a force and the time it acts, when the force is constant. The impulse–momentum relation says F Δt = Δp = mv − mu. A large force for a short time can change the momentum as much as a small force acting longer.",
+    "A 2.0 kg body moving at 4.0 m/s collides with and sticks to a 2.0 kg body at rest. Find the common speed."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Linear Momentum, Impulse & Conservation of Linear Momentum.",
+    "Q3. Problem on Linear Momentum, Impulse & Conservation of Linear Momentum.",
+    "When is total momentum conserved?",
+    "What does impulse equal?",
+    "How does an inelastic collision differ from momentum conservation?"
+  ],
+  "formulas": [
+    "p = mv",
+    "Impulse = F Δt = Δp",
+    "m1 u1 + m2 u2 = m1 v1 + m2 v2"
+  ],
+  "keyPoints": [
+    "Connection of Linear Momentum, Impulse & Conservation of Linear Momentum to other topics",
+    "Momentum is mass times velocity.",
+    "Impulse equals the change of momentum.",
+    "Total momentum is conserved when the net external force is zero.",
+    "Direction decides the sign."
+  ],
+  "summary": "Linear Momentum, Impulse & Conservation of Linear Momentum covers essential principles and applications.",
+  "specialNotes": [
+    "External friction or an external push breaks the conservation step.",
+    "A recoil velocity is opposite to the projectile."
+  ],
+  "importantStatements": [
+    "Linear momentum is p = mv. It is a vector, so a sign convention is part of the answer. The usual choice is to take one direction as positive and the opposite direction as negative.",
+    "Impulse is the product of a force and the time it acts, when the force is constant. The impulse–momentum relation says F Δt = Δp = mv − mu. A large force for a short time can change the momentum as much as a small force acting longer.",
+    "If the net external force on a system is zero, the total momentum of the system stays constant. Internal forces come in third-law pairs and do not change the total momentum."
+  ],
+  "importantNotes": [
+    "Linear Momentum, Impulse & Conservation of Linear Momentum is based on fundamental principles.",
+    "Write units: momentum is kg m/s, which is the same as N s.",
+    "Check that the total momentum before and after have the same sign convention."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Linear Momentum, Impulse & Conservation of Linear Momentum.",
+    "Pick a positive direction before substituting.",
+    "Stuck together means one final velocity."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "Impulse equals",
+      "options": [
+        "The change of momentum",
+        "mv only",
+        "The kinetic energy",
+        "The net mass"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Total momentum stays constant when",
+      "options": [
+        "Kinetic energy is conserved",
+        "The net external force is zero",
+        "The bodies are equal",
+        "The collision is head-on only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A gun recoils because",
+      "options": [
+        "Energy cannot be conserved",
+        "The bullet and gun have opposite momenta",
+        "The bullet has no momentum",
+        "Mass is created"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If two bodies stick together, the collision is",
+      "options": [
+        "Elastic",
+        "Perfectly inelastic",
+        "Impossible",
+        "A third-law failure"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Linear Momentum, Impulse & Conservation of Linear Momentum.",
+    "Momentum",
+    "Impulse",
+    "Isolated system",
+    "Inelastic collision"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Momentum conservation does not require an elastic collision.",
+    "A wall can change a ball's momentum because the wall is an external body.",
+    "Impulse is not the same as momentum. Impulse is the change of momentum.",
+    "Speed is not momentum. Direction and mass both matter."
+  ],
+  "practice": [
+    "Write p = mv and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "p = mv",
+    "Impulse = F Δt = Δp"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "Impulse equals",
+      "options": [
+        "The change of momentum",
+        "mv only",
+        "The kinetic energy",
+        "The net mass"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Total momentum stays constant when",
+      "options": [
+        "Kinetic energy is conserved",
+        "The net external force is zero",
+        "The bodies are equal",
+        "The collision is head-on only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A gun recoils because",
+      "options": [
+        "Energy cannot be conserved",
+        "The bullet and gun have opposite momenta",
+        "The bullet has no momentum",
+        "Mass is created"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If two bodies stick together, the collision is",
+      "options": [
+        "Elastic",
+        "Perfectly inelastic",
+        "Impossible",
+        "A third-law failure"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 2.0 kg body moving at 4.0 m/s collides with and sticks to a 2.0 kg body at rest. Find the common speed.",
+      "steps": [
+        "Take the initial direction of the moving body as positive.",
+        "Initial momentum is 2.0 × 4.0 + 2.0 × 0 = 8.0 kg m/s.",
+        "The bodies stick, so there is one final velocity v.",
+        "Final momentum is (2.0 + 2.0) v = 4.0 v.",
+        "Conservation gives 4.0 v = 8.0, so v = 2.0 m/s."
+      ],
+      "answer": "2.0 m/s in the original direction."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "dynamics",
+  "topicSlug": "02-momentum-impulse-and-conservation",
+  "topicTitle": "Linear Momentum, Impulse & Conservation of Linear Momentum"
+}

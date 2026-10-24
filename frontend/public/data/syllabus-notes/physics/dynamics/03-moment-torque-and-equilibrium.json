@@ -1,0 +1,188 @@
+{
+  "title": "Moment, Torque & Conditions of Equilibrium",
+  "notes": [
+    "The moment, or torque, of a force about a point is τ = r F sinθ. Here r is the distance from the point to the line of action, and θ is the angle between the position vector and the force. The perpendicular distance from the point to the line of the force is the moment arm.",
+    "A force through the pivot has zero moment arm, so it produces no torque about that pivot. That is why a hinge force can be removed from a torque equation by taking torques about the hinge.",
+    "Translational equilibrium means the body does not start to accelerate linearly. The vector sum of the forces is zero. In a plane this is two equations, one horizontal and one vertical.",
+    "Rotational equilibrium means the body does not start to rotate. The sum of the clockwise moments equals the sum of the anticlockwise moments about any point. Together with the force equations, this is the condition for complete equilibrium.",
+    "The sign of a torque is a choice. Clockwise negative and anticlockwise positive is a clear convention, as long as it is used for every force.",
+    "A light rod or beam is often taken to have no weight. If the beam is uniform, its weight acts at the midpoint. Leaving that weight out is a different problem from the one that was asked."
+  ],
+  "examples": [
+    "The moment, or torque, of a force about a point is τ = r F sinθ. Here r is the distance from the point to the line of action, and θ is the angle between the position vector and the force. The perpendicular distance from the point to the line of the force is the moment arm.",
+    "A force through the pivot has zero moment arm, so it produces no torque about that pivot. That is why a hinge force can be removed from a torque equation by taking torques about the hinge.",
+    "A light rod 2.0 m long is supported at its ends. A 40 N weight hangs 0.50 m from the left end. Find the two support forces."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Moment, Torque & Conditions of Equilibrium.",
+    "Q3. Problem on Moment, Torque & Conditions of Equilibrium.",
+    "What two conditions make a rigid body fully in equilibrium?",
+    "Why take torques about a hinge?",
+    "Where does the weight of a uniform beam act?"
+  ],
+  "formulas": [
+    "τ = r F sinθ",
+    "For equilibrium: ΣF = 0 and Στ = 0"
+  ],
+  "keyPoints": [
+    "Connection of Moment, Torque & Conditions of Equilibrium to other topics",
+    "Torque is force times the perpendicular lever arm.",
+    "Translational equilibrium: net force zero.",
+    "Rotational equilibrium: net torque zero.",
+    "The choice of pivot does not change a true equilibrium."
+  ],
+  "summary": "Moment, Torque & Conditions of Equilibrium covers essential principles and applications.",
+  "specialNotes": [
+    "A light beam means its weight is neglected.",
+    "Couple: two equal opposite forces with different lines of action, net force zero, net torque not zero."
+  ],
+  "importantStatements": [
+    "The moment, or torque, of a force about a point is τ = r F sinθ. Here r is the distance from the point to the line of action, and θ is the angle between the position vector and the force. The perpendicular distance from the point to the line of the force is the moment arm.",
+    "A force through the pivot has zero moment arm, so it produces no torque about that pivot. That is why a hinge force can be removed from a torque equation by taking torques about the hinge.",
+    "Translational equilibrium means the body does not start to accelerate linearly. The vector sum of the forces is zero. In a plane this is two equations, one horizontal and one vertical."
+  ],
+  "importantNotes": [
+    "Moment, Torque & Conditions of Equilibrium is based on fundamental principles.",
+    "State the pivot before writing moments.",
+    "Distances must be in the same unit on both sides."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Moment, Torque & Conditions of Equilibrium.",
+    "Choose the pivot at an unknown force to remove it.",
+    "sinθ = 1 when the force is perpendicular to the arm."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "Torque has the form",
+      "options": [
+        "r F sinθ",
+        "F/r",
+        "mv",
+        "mgh"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A force through the chosen pivot",
+      "options": [
+        "Gives the largest torque",
+        "Gives zero torque about that pivot",
+        "Must be vertical",
+        "Breaks equilibrium"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Complete equilibrium of a rigid body needs",
+      "options": [
+        "Net force zero only",
+        "Net torque zero only",
+        "Net force zero and net torque zero",
+        "Equal masses"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The weight of a uniform beam acts at",
+      "options": [
+        "Either end",
+        "The midpoint",
+        "The pivot only",
+        "Nowhere"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Moment, Torque & Conditions of Equilibrium.",
+    "Moment arm",
+    "Torque",
+    "Force equilibrium",
+    "Torque equilibrium"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "A balanced see-saw can have large forces. The net force and the net torque are what must vanish.",
+    "Torque is not force. A force at the pivot gives no torque.",
+    "Equilibrium does not mean every force is zero.",
+    "The moment arm is the perpendicular distance, not always the length of the rod."
+  ],
+  "practice": [
+    "Write τ = r F sinθ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "τ = r F sinθ",
+    "For equilibrium: ΣF = 0 and Στ = 0"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "Torque has the form",
+      "options": [
+        "r F sinθ",
+        "F/r",
+        "mv",
+        "mgh"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A force through the chosen pivot",
+      "options": [
+        "Gives the largest torque",
+        "Gives zero torque about that pivot",
+        "Must be vertical",
+        "Breaks equilibrium"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Complete equilibrium of a rigid body needs",
+      "options": [
+        "Net force zero only",
+        "Net torque zero only",
+        "Net force zero and net torque zero",
+        "Equal masses"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The weight of a uniform beam acts at",
+      "options": [
+        "Either end",
+        "The midpoint",
+        "The pivot only",
+        "Nowhere"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A light rod 2.0 m long is supported at its ends. A 40 N weight hangs 0.50 m from the left end. Find the two support forces.",
+      "steps": [
+        "The rod is light, so it has no weight of its own.",
+        "Vertical equilibrium: N_left + N_right = 40 N.",
+        "Take torques about the left end. The left support has zero moment arm.",
+        "Clockwise moment of the weight is 40 × 0.50. Anticlockwise moment of the right support is N_right × 2.0.",
+        "N_right × 2.0 = 20, so N_right = 10 N. Then N_left = 30 N."
+      ],
+      "answer": "Left support 30 N upward, right support 10 N upward."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "dynamics",
+  "topicSlug": "03-moment-torque-and-equilibrium",
+  "topicTitle": "Moment, Torque & Conditions of Equilibrium"
+}

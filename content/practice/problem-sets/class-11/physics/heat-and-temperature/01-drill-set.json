@@ -3,30 +3,182 @@
   "unitSlug": "heat-and-temperature",
   "topicSlug": "molecular-concept-of-thermal-energy-heat-and-temperature-cause-and-direction-of-heat-flow",
   "topicTitle": "Molecular concept of thermal energy, heat and temperature; cause and direction of heat flow",
-  "relevance": 70,
+  "relevance": 94,
   "notes": [
     "Q1. Which process takes place at constant temperature?\nAnswer: Isothermal",
     "Q2. In an adiabatic process, which quantity remains constant?\nAnswer: Heat exchanged (Q = 0)",
     "Q3. The SI unit of entropy is:\nAnswer: J/K",
     "Q4. A Carnot engine operating between two fixed temperatures has maximum efficiency when the process is:\nAnswer: Reversible",
-    "Q5. The first law of thermodynamics is a statement of:\nAnswer: Conservation of energy"
+    "Q5. The first law of thermodynamics is a statement of:\nAnswer: Conservation of energy",
+    "Isothermal means constant temperature, so an ideal gas has no change of internal energy and the heat in equals the work out. Adiabatic means no heat crosses the boundary, so the work comes out of the internal energy. Entropy is joules per kelvin. A Carnot engine between two temperatures is the most efficient reversible engine between those temperatures.",
+    "The working relations are ΔU = Q + W with W on the system and An adiabatic process has Q = 0. An isothermal ideal-gas process has ΔU = 0. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An ideal gas absorbs 100 J during an isothermal expansion and does 100 J of work. Find ΔU. Then find ΔU if the same work is done with Q = 0. Isothermal ideal gas: ΔU = 0, which matches Q = +100 J and W on the gas = −100 J. Adiabatic: Q = 0 and W on the gas = −100 J."
   ],
   "order": 1,
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write ΔU = Q + W with W on the system and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "ΔU = Q + W with W on the system",
+    "An adiabatic process has Q = 0. An isothermal ideal-gas process has ΔU = 0"
   ],
   "animation3D": "heat-and-temperature",
-  "motionGraphics": "heat-and-temperature"
+  "motionGraphics": "heat-and-temperature",
+  "keyPoints": [
+    "ΔU = Q + W with W on the system",
+    "An adiabatic process has Q = 0. An isothermal ideal-gas process has ΔU = 0",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "Isothermal means constant temperature, so an ideal gas has no change of internal energy and the heat in equals the work out. Adiabatic means no heat crosses the boundary, so the work comes out of the internal energy. Entropy is joules per kelvin. A Carnot engine between two temperatures is the most efficient reversible engine between those temperatures.",
+    "The working relations are ΔU = Q + W with W on the system and An adiabatic process has Q = 0. An isothermal ideal-gas process has ΔU = 0. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An ideal gas absorbs 100 J during an isothermal expansion and does 100 J of work. Find ΔU. Then find ΔU if the same work is done with Q = 0. Isothermal ideal gas: ΔU = 0, which matches Q = +100 J and W on the gas = −100 J. Adiabatic: Q = 0 and W on the gas = −100 J."
+  ],
+  "examples": [
+    "Isothermal means constant temperature, so an ideal gas has no change of internal energy and the heat in equals the work out. Adiabatic means no heat crosses the boundary, so the work comes out of the internal energy. Entropy is joules per kelvin. A Carnot engine between two temperatures is the most efficient reversible engine between those temperatures.",
+    "The working relations are ΔU = Q + W with W on the system and An adiabatic process has Q = 0. An isothermal ideal-gas process has ΔU = 0. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An ideal gas absorbs 100 J during an isothermal expansion and does 100 J of work. Find ΔU. Then find ΔU if the same work is done with Q = 0."
+  ],
+  "formulas": [
+    "ΔU = Q + W with W on the system",
+    "An adiabatic process has Q = 0. An isothermal ideal-gas process has ΔU = 0"
+  ],
+  "practiceQuestions": [
+    "Write ΔU = Q + W with W on the system and name the symbols.",
+    "What does An adiabatic process has Q = 0. An isothermal ideal-gas process has ΔU = 0 tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "An isothermal process has constant",
+      "options": [
+        "Temperature",
+        "Pressure always",
+        "Volume always",
+        "Entropy as the definition"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An adiabatic process has",
+      "options": [
+        "Q = 0",
+        "ΔU = 0 always",
+        "T constant",
+        "W = 0"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The unit of entropy is",
+      "options": [
+        "J/K",
+        "J",
+        "W",
+        "K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The first law expresses",
+      "options": [
+        "Conservation of energy",
+        "Conservation of charge",
+        "Snell's law",
+        "The zeroth law only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "An isothermal process has constant",
+      "options": [
+        "Temperature",
+        "Pressure always",
+        "Volume always",
+        "Entropy as the definition"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An adiabatic process has",
+      "options": [
+        "Q = 0",
+        "ΔU = 0 always",
+        "T constant",
+        "W = 0"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The unit of entropy is",
+      "options": [
+        "J/K",
+        "J",
+        "W",
+        "K"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The first law expresses",
+      "options": [
+        "Conservation of energy",
+        "Conservation of charge",
+        "Snell's law",
+        "The zeroth law only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An ideal gas absorbs 100 J during an isothermal expansion and does 100 J of work. Find ΔU. Then find ΔU if the same work is done with Q = 0.",
+      "steps": [
+        "Isothermal ideal gas: ΔU = 0, which matches Q = +100 J and W on the gas = −100 J.",
+        "Adiabatic: Q = 0 and W on the gas = −100 J.",
+        "ΔU = 0 + (−100) = −100 J.",
+        "The gas cools in the adiabatic expansion.",
+        "Entropy's unit is J/K, which is not needed for these two energy changes."
+      ],
+      "answer": "Isothermal: ΔU = 0. Adiabatic: ΔU = −100 J."
+    }
+  ],
+  "summary": "For an ideal gas, an isothermal change has ΔU = 0 and an adiabatic change has Q = 0. Doing 100 J of work with no heat in lowers the internal energy by 100 J. Entropy is measured in J/K."
 }

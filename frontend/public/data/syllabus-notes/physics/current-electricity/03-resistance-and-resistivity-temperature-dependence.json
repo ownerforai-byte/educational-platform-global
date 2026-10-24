@@ -1,0 +1,195 @@
+{
+  "title": "Resistance and resistivity — temperature dependence",
+  "unitSlug": "current-electricity",
+  "topicSlug": "resistance-and-resistivity-temperature-dependence",
+  "topicTitle": "Resistance and resistivity — temperature dependence",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Resistance is R = ρ L / A. A longer wire has more resistance. A thicker wire has less. Resistivity ρ is the material property, independent of the particular length and area.",
+    "The unit of resistivity is the ohm metre. A good conductor has a small resistivity. Glass and rubber have very large resistivities and are used as insulators.",
+    "For a metal over a moderate range, ρ = ρ_0 (1 + α ΔT), where α is the temperature coefficient. α is positive for metals, so heating raises the resistivity. More violent lattice vibrations scatter the electrons more often.",
+    "The same linear form is used for resistance if the size does not change: R = R_0 (1 + α ΔT). A copper winding in a hot motor has a higher resistance than the cold value on the label.",
+    "A semiconductor has a negative temperature coefficient. Heating frees more carriers, and the resistivity falls. That is why a thermistor can be used as a thermometer and why a semiconductor is not described by the metal formula with a positive α.",
+    "Alloys such as manganin are made so that α is nearly zero. They are used for standard resistors. Superconductors drop to zero resistance below a critical temperature, which is outside this linear formula."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)..",
+    "Resistivity is not resistance.",
+    "α for a metal is positive.",
+    "A semiconductor does not follow a positive α.",
+    "L and A must be in metres and square metres if ρ is in ohm metres."
+  ],
+  "bounds": [
+    "Covers only: resistance, resistivity — temperature dependence (within Current Electricity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
+  ],
+  "practice": [
+    "Write R = ρ L / A and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
+    "Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
+    "Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
+  ],
+  "examples": [
+    "Resistance is R = ρ L / A. A longer wire has more resistance. A thicker wire has less. Resistivity ρ is the material property, independent of the particular length and area.",
+    "The unit of resistivity is the ohm metre. A good conductor has a small resistivity. Glass and rubber have very large resistivities and are used as insulators.",
+    "A metal has ρ_0 = 1.70 × 10^−8 Ω m and α = 0.0040 per kelvin. Find ρ after a rise of 50 K."
+  ],
+  "practiceQuestions": [
+    "Write R in terms of ρ.",
+    "What does a positive α mean?",
+    "Why does a metal's resistivity rise with temperature?"
+  ],
+  "formulas": [
+    "V = IR",
+    "P = IV = I²R = V²/R",
+    "V_term = E − Ir"
+  ],
+  "numericals": [
+    "A metal has ρ_0 = 1.70 × 10^−8 Ω m and α = 0.0040 per kelvin. Find ρ after a rise of 50 K."
+  ],
+  "keyPoints": [
+    "Resistance depends on shape.",
+    "Resistivity depends on the material.",
+    "Metals increase in resistivity when heated.",
+    "Semiconductors usually decrease."
+  ],
+  "summary": "Resistance is resistivity times length over area. Metals have a positive temperature coefficient, so ρ and R rise when they are heated. Semiconductors usually do the opposite because more carriers are freed. The linear formula is only for a limited temperature range.",
+  "mcqs": [
+    {
+      "question": "R equals",
+      "options": [
+        "ρ A / L",
+        "ρ L / A",
+        "L / A",
+        "α ΔT"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a metal, α is",
+      "options": [
+        "Negative",
+        "Positive",
+        "Zero for every metal",
+        "The resistivity itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Heating a typical semiconductor",
+      "options": [
+        "Raises its resistivity",
+        "Lowers its resistivity",
+        "Sets α positive and large",
+        "Removes all carriers"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The unit of resistivity is",
+      "options": [
+        "The ohm",
+        "The ohm metre",
+        "The siemens",
+        "The kelvin"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Resistance is R = ρ L / A. A longer wire has more resistance. A thicker wire has less. Resistivity ρ is the material property, independent of the particular length and area.",
+    "The unit of resistivity is the ohm metre. A good conductor has a small resistivity. Glass and rubber have very large resistivities and are used as insulators.",
+    "For a metal over a moderate range, ρ = ρ_0 (1 + α ΔT), where α is the temperature coefficient. α is positive for metals, so heating raises the resistivity. More violent lattice vibrations scatter the electrons more often."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Long and thin: large R.",
+    "Metal: heat raises R. Semiconductor: heat lowers R."
+  ],
+  "specialNotes": [
+    "α for many metals is about 0.004 per kelvin.",
+    "The linear formula is a limited temperature range."
+  ],
+  "importantNotes": [
+    "Convert the area before using R = ρ L / A.",
+    "Say whether α is the metal value or a semiconductor."
+  ],
+  "importantConcepts": [
+    "Resistivity",
+    "Temperature coefficient",
+    "Metal scattering",
+    "Semiconductor contrast"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "R equals",
+      "options": [
+        "ρ A / L",
+        "ρ L / A",
+        "L / A",
+        "α ΔT"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a metal, α is",
+      "options": [
+        "Negative",
+        "Positive",
+        "Zero for every metal",
+        "The resistivity itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Heating a typical semiconductor",
+      "options": [
+        "Raises its resistivity",
+        "Lowers its resistivity",
+        "Sets α positive and large",
+        "Removes all carriers"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The unit of resistivity is",
+      "options": [
+        "The ohm",
+        "The ohm metre",
+        "The siemens",
+        "The kelvin"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A metal has ρ_0 = 1.70 × 10^−8 Ω m and α = 0.0040 per kelvin. Find ρ after a rise of 50 K.",
+      "steps": [
+        "ρ = ρ_0 (1 + α ΔT).",
+        "α ΔT = 0.0040 × 50 = 0.20.",
+        "1 + α ΔT = 1.20.",
+        "ρ = 1.70 × 10^−8 × 1.20 = 2.04 × 10^−8 Ω m.",
+        "The resistivity rose because the metal has a positive temperature coefficient."
+      ],
+      "answer": "2.04 × 10^−8 Ω m."
+    }
+  ]
+}

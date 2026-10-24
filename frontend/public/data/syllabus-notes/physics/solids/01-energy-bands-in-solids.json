@@ -9,11 +9,16 @@
     "The valence band contains bonding electrons; the conduction band contains mobile carriers. The gap Eg=Ec−Ev and the band filling help explain conductivity.",
     "Metals have partially filled bands or overlapping bands. Insulators have a large gap and very few room-temperature carriers. Semiconductors have a smaller gap, so thermal or optical excitation can promote electrons into the conduction band.",
     "In an intrinsic semiconductor, promoting an electron leaves a hole in the valence band. Both the electron and the hole can carry current; heating can therefore increase carrier concentration.",
-    "A photon can excite an electron across the gap if hν≥Eg. This underlies photoconductivity and semiconductor photodetectors."
+    "A photon can excite an electron across the gap if hν≥Eg. This underlies photoconductivity and semiconductor photodetectors.",
+    "In a solid the atomic levels spread into bands. A conductor has a partly filled band, or overlapping bands, so electrons can take a little extra energy and move. An insulator has a full valence band and a large gap. A semiconductor has a smaller gap, so heat or light can lift a few electrons across it."
   ],
   "confusion": [
     "A band gap is a forbidden energy range, not a physical gap in the material.",
-    "Band gap alone does not determine conductivity without carrier concentration and mobility."
+    "Band gap alone does not determine conductivity without carrier concentration and mobility.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Compare band diagrams for metal, semiconductor and insulator.",
@@ -27,7 +32,10 @@
   ],
   "examples": [
     "For Eg=2.0 eV, λthreshold≈1240/2.0=620 nm.",
-    "Thermal promotion across the gap creates one conduction electron and one valence-band hole."
+    "Thermal promotion across the gap creates one conduction electron and one valence-band hole.",
+    "In a solid the atomic levels spread into bands. A conductor has a partly filled band, or overlapping bands, so electrons can take a little extra energy and move. An insulator has a full valence band and a large gap. A semiconductor has a smaller gap, so heat or light can lift a few electrons across it.",
+    "The working relations are A conductor has overlapping or partly filled bands and An insulator has a large gap. A semiconductor has a smaller gap. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Silicon's gap is about 1.1 eV. A photon of wavelength 800 nm has energy 1240/800 = 1.55 eV. Can it lift an electron across the gap?"
   ],
   "practiceQuestions": [
     "Compare band diagrams for metal, semiconductor and insulator.",
@@ -41,7 +49,11 @@
   "keyPoints": [
     "Allowed bands and forbidden gaps arise in the periodic solid.",
     "Carrier concentration and mobility jointly determine conductivity.",
-    "An electron promoted to conduction leaves a hole."
+    "An electron promoted to conduction leaves a hole.",
+    "A conductor has overlapping or partly filled bands",
+    "An insulator has a large gap. A semiconductor has a smaller gap",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Band theory explains conductivity through allowed energy bands, gaps and carrier availability. Thermal and optical excitation can create mobile electron–hole pairs.",
   "specialNotes": [
@@ -70,7 +82,11 @@
   "importantConcepts": [
     "Allowed bands and forbidden gaps arise in the periodic solid.",
     "Carrier concentration and mobility jointly determine conductivity.",
-    "An electron promoted to conduction leaves a hole."
+    "An electron promoted to conduction leaves a hole.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Compare band diagrams for metal, semiconductor and insulator.",
@@ -80,5 +96,102 @@
   "animation3D": "physics",
   "motionGraphics": "physics",
   "duplicateType": 1,
-  "visualType": "energy-bands-semiconductor"
+  "visualType": "energy-bands-semiconductor",
+  "mcs": [
+    {
+      "question": "A conductor has",
+      "options": [
+        "A large empty gap and a full band only",
+        "A partly filled band or overlapping bands",
+        "No electrons",
+        "A gap of 10 eV as its definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An insulator has",
+      "options": [
+        "A large gap",
+        "No gap and a partly filled band",
+        "Overlapping bands",
+        "Free electrons in huge numbers"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A semiconductor gap is",
+      "options": [
+        "Smaller than a typical insulator gap",
+        "Zero",
+        "The same as a metal",
+        "Negative"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A 1.55 eV photon against a 1.1 eV gap",
+      "options": [
+        "Cannot be absorbed",
+        "Can lift an electron across the gap",
+        "Is a sound wave",
+        "Removes the lattice"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A conductor has",
+      "options": [
+        "A large empty gap and a full band only",
+        "A partly filled band or overlapping bands",
+        "No electrons",
+        "A gap of 10 eV as its definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An insulator has",
+      "options": [
+        "A large gap",
+        "No gap and a partly filled band",
+        "Overlapping bands",
+        "Free electrons in huge numbers"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A semiconductor gap is",
+      "options": [
+        "Smaller than a typical insulator gap",
+        "Zero",
+        "The same as a metal",
+        "Negative"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A 1.55 eV photon against a 1.1 eV gap",
+      "options": [
+        "Cannot be absorbed",
+        "Can lift an electron across the gap",
+        "Is a sound wave",
+        "Removes the lattice"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Silicon's gap is about 1.1 eV. A photon of wavelength 800 nm has energy 1240/800 = 1.55 eV. Can it lift an electron across the gap?",
+      "steps": [
+        "The gap is 1.1 eV.",
+        "The photon energy is 1.55 eV.",
+        "1.55 is greater than 1.1, so the photon can be absorbed and create a pair.",
+        "A photon of energy 0.9 eV could not.",
+        "Temperature can also free a few electrons without a photon."
+      ],
+      "answer": "Yes. 1.55 eV is above the 1.1 eV gap."
+    }
+  ]
 }

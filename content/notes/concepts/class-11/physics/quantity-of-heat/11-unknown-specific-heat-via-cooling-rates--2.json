@@ -1,43 +1,188 @@
 {
   "title": "Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates",
-  "notes": [],
+  "notes": [
+    "An unknown specific heat can be found by timing how long the liquid takes to cool through a chosen interval, then repeating the run with water in the same calorimeter.",
+    "Newton's law says the time is proportional to the heat capacity when the surface factor and the temperature limits are unchanged. So (m_u c_u + W) / t_u = (m_w c_w + W) / t_w if the water equivalent W of the cup is included.",
+    "If the question says the calorimeter has negligible heat capacity, this collapses to m_u c_u / t_u = m_w c_w / t_w.",
+    "Water is the known standard, with c_w about 4200 J kg^-1 K^-1. The unknown c is then c_u = c_w (m_w / m_u) (t_u / t_w).",
+    "The interval must be the same pair of temperatures, for example 80°C down to 70°C, and the room must not have changed between the runs.",
+    "Stir gently so the temperature is uniform, but do not add a fan. Forced air would change K between the two runs or during a run."
+  ],
   "examples": [
-    "Application of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates"
+    "An unknown specific heat can be found by timing how long the liquid takes to cool through a chosen interval, then repeating the run with water in the same calorimeter.",
+    "Newton's law says the time is proportional to the heat capacity when the surface factor and the temperature limits are unchanged. So (m_u c_u + W) / t_u = (m_w c_w + W) / t_w if the water equivalent W of the cup is included.",
+    "Equal masses of water and an unknown liquid cool through the same interval in 6.0 min and 4.0 min. Neglect the cup. Find c_u if c_w = 4200 J kg^-1 K^-1."
   ],
   "practiceQuestions": [
     "Q1. Define Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates.",
-    "Q3. Problem on Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates."
+    "Q3. Problem on Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates.",
+    "Which liquid is the usual known standard?",
+    "When can W be dropped?",
+    "What does a longer cooling time indicate?"
   ],
-  "formulas": [],
+  "formulas": [
+    "m1 c1 / t1 = m2 c2 / t2 when K and the interval match",
+    "c2 = m1 c1 t2 / (m2 t1)"
+  ],
   "keyPoints": [
-    "Application of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates",
-    "Connection of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates to other topics"
+    "Connection of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates to other topics",
+    "Use a known liquid, usually water.",
+    "Same calorimeter and same interval.",
+    "Times are measured, not assumed.",
+    "Solve for the unknown c."
   ],
   "summary": "Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates covers essential principles and applications.",
-  "specialNotes": [],
+  "specialNotes": [
+    "Record the room temperature so you can show the excess was modest.",
+    "A dirty or wet outer surface changes K."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates",
-    "Statement 2: Theorem related to Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates",
-    "Statement 3: Condition for Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates to be valid",
-    "Statement 4: Principle governing Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates",
-    "Statement 5: Corollary or consequence of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates"
+    "An unknown specific heat can be found by timing how long the liquid takes to cool through a chosen interval, then repeating the run with water in the same calorimeter.",
+    "Newton's law says the time is proportional to the heat capacity when the surface factor and the temperature limits are unchanged. So (m_u c_u + W) / t_u = (m_w c_w + W) / t_w if the water equivalent W of the cup is included.",
+    "If the question says the calorimeter has negligible heat capacity, this collapses to m_u c_u / t_u = m_w c_w / t_w."
   ],
   "importantNotes": [
-    "Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates is based on fundamental principles."
+    "Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates is based on fundamental principles.",
+    "Write whether W was included.",
+    "Convert minutes to seconds only if you also want a value of K. The ratio of times does not need that."
   ],
   "examShortTricks": [
-    "Recall the formula for Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates."
+    "Recall the formula for Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates.",
+    "Same cup, same limits, ratio of times.",
+    "c_u = c_w (m_w t_u) / (m_u t_w) if W = 0."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "The usual known specific heat in this experiment is that of",
+      "options": [
+        "Air",
+        "Water",
+        "The unknown metal alone",
+        "The thermometer"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the calorimeter is neglected and masses are equal, c_u / c_w equals",
+      "options": [
+        "t_w / t_u",
+        "t_u / t_w",
+        "t_u + t_w",
+        "The room temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "W is",
+      "options": [
+        "The unknown specific heat",
+        "The water equivalent of the calorimeter",
+        "The time of cooling",
+        "A force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The method fails if",
+      "options": [
+        "The same temperature interval is used",
+        "One cup is covered and the other is open",
+        "Water is the standard",
+        "Times are measured"
+      ],
+      "answer": "B"
+    }
+  ],
   "importantConcepts": [
-    "Definition and significance of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates."
+    "Definition and significance of Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates.",
+    "Cooling comparison",
+    "Known specific heat of water",
+    "Water equivalent",
+    "Same interval"
   ],
-  "importantTasks": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "A longer time means a larger heat capacity, not automatically a larger specific heat, because mass also matters.",
+    "Neglect W only when the question allows it.",
+    "The two runs must share the upper and lower temperatures.",
+    "Cooling gives c. It is not a latent-heat measurement."
+  ],
+  "practice": [
+    "Write m1 c1 / t1 = m2 c2 / t2 when K and the interval match and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "m1 c1 / t1 = m2 c2 / t2 when K and the interval match",
+    "c2 = m1 c1 t2 / (m2 t1)"
+  ],
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "The usual known specific heat in this experiment is that of",
+      "options": [
+        "Air",
+        "Water",
+        "The unknown metal alone",
+        "The thermometer"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the calorimeter is neglected and masses are equal, c_u / c_w equals",
+      "options": [
+        "t_w / t_u",
+        "t_u / t_w",
+        "t_u + t_w",
+        "The room temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "W is",
+      "options": [
+        "The unknown specific heat",
+        "The water equivalent of the calorimeter",
+        "The time of cooling",
+        "A force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The method fails if",
+      "options": [
+        "The same temperature interval is used",
+        "One cup is covered and the other is open",
+        "Water is the standard",
+        "Times are measured"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Equal masses of water and an unknown liquid cool through the same interval in 6.0 min and 4.0 min. Neglect the cup. Find c_u if c_w = 4200 J kg^-1 K^-1.",
+      "steps": [
+        "Masses are equal and W = 0, so c / t is the same for both.",
+        "c_u / t_u = c_w / t_w.",
+        "The unknown takes 4.0 min and water takes 6.0 min.",
+        "c_u = 4200 × (4.0 / 6.0).",
+        "c_u = 2800 J kg^-1 K^-1."
+      ],
+      "answer": "2800 J kg^-1 K^-1."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "11-unknown-specific-heat-via-cooling-rates",
+  "topicTitle": "Finding an Unknown Specific Heat Capacity by Comparing Cooling Rates"
 }

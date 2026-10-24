@@ -1,0 +1,197 @@
+{
+  "title": "Lorentz force and motion of charged particles in magnetic…",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "topicSlug": "lorentz-force-and-motion-of-charged-particles-in-magnetic-fields",
+  "topicTitle": "Lorentz force and motion of charged particles in magnetic fields",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "The Lorentz force is the total electromagnetic force on a charge, q E plus the magnetic force q v B. The electric part can speed the charge up. The magnetic part only turns it.",
+    "If E and B are perpendicular to each other and to the velocity, the two forces can point in opposite directions. They cancel when q E = q v B, so v = E/B.",
+    "A velocity selector is a pair of crossed fields. Charges of the chosen speed go straight through. Faster charges are bent one way and slower charges the other way. The charge and the mass cancel, so the selected speed does not depend on them.",
+    "After the selector, a magnetic field alone bends the beam into a circle whose radius is m v / (q B). Measuring that radius at the known speed gives the mass-to-charge ratio.",
+    "A cyclotron uses the magnetic circle and an electric kick twice per revolution to increase the speed. The frequency of the orbit for a non-relativistic particle is q B / (2 π m), independent of the speed.",
+    "At speeds near the speed of light the mass effectively increases and the cyclotron frequency falls. The simple selector and the simple radius formula are for speeds well below that."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+    "The selector condition is v = E/B, not E B.",
+    "The magnetic force still does no work.",
+    "The selected speed does not depend on q or m.",
+    "The cyclotron frequency does depend on q, m and B."
+  ],
+  "bounds": [
+    "Covers only: lorentz force, motion of charged particles in magnetic fields (within Magnetism and Magnetic Effect of Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+  ],
+  "practice": [
+    "Write F = q E + q v B and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "examples": [
+    "The Lorentz force is the total electromagnetic force on a charge, q E plus the magnetic force q v B. The electric part can speed the charge up. The magnetic part only turns it.",
+    "If E and B are perpendicular to each other and to the velocity, the two forces can point in opposite directions. They cancel when q E = q v B, so v = E/B.",
+    "A velocity selector has E = 2.0 × 10^4 V/m and B = 0.20 T, crossed so the forces oppose. Find the speed that goes straight through."
+  ],
+  "practiceQuestions": [
+    "Write the balance for a velocity selector.",
+    "What does the radius tell you after the speed is known?",
+    "What is the cyclotron frequency?"
+  ],
+  "formulas": [
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
+  ],
+  "numericals": [
+    "A velocity selector has E = 2.0 × 10^4 V/m and B = 0.20 T, crossed so the forces oppose. Find the speed that goes straight through."
+  ],
+  "keyPoints": [
+    "• Motion of charged particles in magnetic fields",
+    "Electric force is q E.",
+    "Magnetic force is q v B.",
+    "They can be set opposite.",
+    "The selected speed is E/B."
+  ],
+  "summary": "The Lorentz force is the electric force plus the magnetic force. In crossed fields the forces cancel at v = E/B, which is the speed a velocity selector passes. A later magnetic field bends that beam into a circle whose radius gives m/q.",
+  "mcqs": [
+    {
+      "question": "The Lorentz force includes",
+      "options": [
+        "Only q E",
+        "q E and the magnetic force",
+        "Only a gravitational term",
+        "μ0 I"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a velocity selector, v equals",
+      "options": [
+        "E B",
+        "E/B",
+        "B/E",
+        "q/m"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Charges faster than E/B",
+      "options": [
+        "Go straight",
+        "Are deflected",
+        "Lose their charge",
+        "Stop"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The cyclotron frequency depends on",
+      "options": [
+        "q, B and m",
+        "The speed, in the non-relativistic formula",
+        "The radius only",
+        "E alone"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "The Lorentz force is the total electromagnetic force on a charge, q E plus the magnetic force q v B. The electric part can speed the charge up. The magnetic part only turns it.",
+    "If E and B are perpendicular to each other and to the velocity, the two forces can point in opposite directions. They cancel when q E = q v B, so v = E/B.",
+    "A velocity selector is a pair of crossed fields. Charges of the chosen speed go straight through. Faster charges are bent one way and slower charges the other way. The charge and the mass cancel, so the selected speed does not depend on them."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "v = E/B.",
+    "Straight through means the two forces match."
+  ],
+  "specialNotes": [
+    "Crossed fields mean E, B and v are mutually perpendicular.",
+    "The cyclotron frequency is q B /(2 π m)."
+  ],
+  "importantNotes": [
+    "Set the forces opposite before equating them.",
+    "Do not use the selector formula when E and B are parallel."
+  ],
+  "importantConcepts": [
+    "Lorentz force",
+    "Velocity selector",
+    "Mass spectrometer",
+    "Cyclotron frequency"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The Lorentz force includes",
+      "options": [
+        "Only q E",
+        "q E and the magnetic force",
+        "Only a gravitational term",
+        "μ0 I"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a velocity selector, v equals",
+      "options": [
+        "E B",
+        "E/B",
+        "B/E",
+        "q/m"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Charges faster than E/B",
+      "options": [
+        "Go straight",
+        "Are deflected",
+        "Lose their charge",
+        "Stop"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The cyclotron frequency depends on",
+      "options": [
+        "q, B and m",
+        "The speed, in the non-relativistic formula",
+        "The radius only",
+        "E alone"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A velocity selector has E = 2.0 × 10^4 V/m and B = 0.20 T, crossed so the forces oppose. Find the speed that goes straight through.",
+      "steps": [
+        "The forces balance when q E = q v B.",
+        "v = E/B.",
+        "v = 2.0 × 10^4 / 0.20.",
+        "v = 1.0 × 10^5 m/s.",
+        "This speed does not depend on the charge or the mass."
+      ],
+      "answer": "1.0 × 10^5 m/s."
+    }
+  ]
+}

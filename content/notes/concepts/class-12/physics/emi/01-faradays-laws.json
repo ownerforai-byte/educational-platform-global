@@ -5,14 +5,21 @@
   "topicTitle": "Faraday's Laws",
   "relevance": 100,
   "notes": [
-    "**Faraday's Laws:** This topic covers the fundamental concepts of faraday's laws in the physics curriculum.",
-    "Understanding faraday's laws is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to faraday's laws should be memorized and practiced regularly."
+    "Faraday's first observation is that an emf appears in a circuit when the magnetic flux through it is changing. A steady flux, however large, induces nothing.",
+    "The flux through one turn is Φ = B A when the field is uniform and perpendicular to the area. At an angle, the perpendicular component B cosθ is used. Flux linkage for N turns is NΦ.",
+    "Faraday's law says the induced emf equals the negative of the rate of change of flux linkage. A faster change means a larger emf.",
+    "The flux can be changed by changing the field, by changing the area of the loop, or by rotating the loop. A generator rotates a coil so that the angle changes continuously.",
+    "The minus sign is Lenz's law. The induced current makes a field that opposes the change in flux that caused it.",
+    "If the circuit is open there is still an induced emf, but no induced current. Current needs a closed path."
   ],
   "confusion": [
     "❌ 'Induced EMF depends only on magnetic field strength.' ✅ It depends on the *rate of change* of magnetic flux (dΦ/dt). A strong field that doesn't change induces no EMF.",
     "❌ 'Faraday's law applies only to closed circuits.' ✅ The *law* defines the EMF induced in a loop; a physical current flows only if the circuit is *closed*.",
-    "❌ 'More turns always mean more flux.' ✅ More turns increase the *total flux linkage* (NΦ), which proportionally increases the induced EMF."
+    "❌ 'More turns always mean more flux.' ✅ More turns increase the *total flux linkage* (NΦ), which proportionally increases the induced EMF.",
+    "A steady field does not induce an emf.",
+    "Emf depends on the rate, not on the flux alone.",
+    "An open circuit can have an emf and no current.",
+    "Area, field and angle are three different ways to change the flux."
   ],
   "practice": [
     "Solve at least 5 problems on faraday's laws from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "emi",
   "motionGraphics": "emi",
   "examples": [
-    "Example 1: Real-world application of Faraday's Laws",
     "Example 2: Practical demonstration of Faraday's Laws concepts",
     "Example 4: Diagram-based question on Faraday's Laws",
     "Example 5: Application in daily life involving Faraday's Laws"
@@ -61,11 +67,9 @@
     "Note 5: Faraday's Laws frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Faraday's Laws",
-    "Statement 2: Theorem related to Faraday's Laws",
-    "Statement 3: Condition for Faraday's Laws to be valid",
-    "Statement 4: Principle governing Faraday's Laws",
-    "Statement 5: Corollary or consequence of Faraday's Laws"
+    "Faraday's first observation is that an emf appears in a circuit when the magnetic flux through it is changing. A steady flux, however large, induces nothing.",
+    "The flux through one turn is Φ = B A when the field is uniform and perpendicular to the area. At an angle, the perpendicular component B cosθ is used. Flux linkage for N turns is NΦ.",
+    "Faraday's law says the induced emf equals the negative of the rate of change of flux linkage. A faster change means a larger emf."
   ],
   "importantNotes": [
     "Note 1: Faraday's Laws is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Faraday's Laws",
     "Task 4: Practice previous year exam questions on Faraday's Laws",
     "Task 5: Explain Faraday's Laws to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "A steady flux induces",
+      "options": [
+        "A large emf",
+        "No emf",
+        "A current with no circuit",
+        "An infinite force"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The induced emf equals",
+      "options": [
+        "The flux",
+        "The rate of change of flux linkage, with a minus sign",
+        "B A only",
+        "The resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Flux can be changed by changing",
+      "options": [
+        "B, A or the angle",
+        "Only the colour of the wire",
+        "Only the resistance",
+        "Nothing"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An open loop can have",
+      "options": [
+        "An induced emf but no current",
+        "A current but no emf",
+        "Neither ever",
+        "A flux of resistance"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A single loop of area 0.040 m^2 is perpendicular to a field that rises by 0.50 T in 0.20 s. Find the magnitude of the induced emf.",
+      "steps": [
+        "The area vector stays perpendicular, so ΔΦ = A ΔB.",
+        "ΔΦ = 0.040 × 0.50 = 0.020 Wb.",
+        "emf = ΔΦ/Δt = 0.020 / 0.20 = 0.10 V.",
+        "One turn, so the linkage rate is the same number.",
+        "The direction of the induced current would oppose the rise in field."
+      ],
+      "answer": "0.10 V."
+    }
   ]
 }

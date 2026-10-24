@@ -1,43 +1,189 @@
 {
   "title": "Resolution of a Vector",
-  "notes": [],
+  "notes": [
+    "Resolution replaces one vector by two perpendicular vectors that add up to it. Along axes at right angles, F_x = F cosθ and F_y = F sinθ, where θ is measured from the x-axis.",
+    "The original vector and its two components are not three forces acting at once. The components are a replacement. Using both the original vector and its components double-counts the force.",
+    "A component is zero when the vector is perpendicular to that axis, because cos 90° = 0 or sin 0° = 0. A component is negative when it points along the negative axis.",
+    "The magnitude can be rebuilt as F = sqrt(F_x^2 + F_y^2). The direction satisfies tanθ = F_y / F_x, with the quadrant taken from the signs of the components.",
+    "Perpendicular components are independent. A force along x does not change the y-equation. That is why a projectile's horizontal and vertical motions are solved separately.",
+    "Any pair of perpendicular directions may be chosen. Axes along a slope and perpendicular to it are often easier than horizontal and vertical axes."
+  ],
   "examples": [
-    "Application of Resolution of a Vector"
+    "Resolution replaces one vector by two perpendicular vectors that add up to it. Along axes at right angles, F_x = F cosθ and F_y = F sinθ, where θ is measured from the x-axis.",
+    "The original vector and its two components are not three forces acting at once. The components are a replacement. Using both the original vector and its components double-counts the force.",
+    "A force of 10 N acts at 30° above the +x-axis. Find its components. Take cos 30° = 0.866 and sin 30° = 0.500."
   ],
   "practiceQuestions": [
     "Q1. Define Resolution of a Vector.",
-    "Q3. Problem on Resolution of a Vector."
+    "Q3. Problem on Resolution of a Vector.",
+    "Write the two components of F at angle θ to the x-axis.",
+    "How is the magnitude recovered?",
+    "Why are projectile axes separated?"
   ],
-  "formulas": [],
+  "formulas": [
+    "F_x = F cosθ",
+    "F_y = F sinθ",
+    "F = sqrt(F_x^2 + F_y^2)"
+  ],
   "keyPoints": [
-    "Application of Resolution of a Vector",
-    "Connection of Resolution of a Vector to other topics"
+    "Connection of Resolution of a Vector to other topics",
+    "Resolve into perpendicular components.",
+    "cos for the adjacent axis.",
+    "sin for the other axis.",
+    "The two components replace the original vector."
   ],
   "summary": "Resolution of a Vector covers essential principles and applications.",
-  "specialNotes": [],
+  "specialNotes": [
+    "θ from the +x axis is the usual choice.",
+    "On a slope, resolve weight into mg sinα down the slope and mg cosα into the slope."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Resolution of a Vector",
-    "Statement 2: Theorem related to Resolution of a Vector",
-    "Statement 3: Condition for Resolution of a Vector to be valid",
-    "Statement 4: Principle governing Resolution of a Vector",
-    "Statement 5: Corollary or consequence of Resolution of a Vector"
+    "Resolution replaces one vector by two perpendicular vectors that add up to it. Along axes at right angles, F_x = F cosθ and F_y = F sinθ, where θ is measured from the x-axis.",
+    "The original vector and its two components are not three forces acting at once. The components are a replacement. Using both the original vector and its components double-counts the force.",
+    "A component is zero when the vector is perpendicular to that axis, because cos 90° = 0 or sin 0° = 0. A component is negative when it points along the negative axis."
   ],
   "importantNotes": [
-    "Resolution of a Vector is based on fundamental principles."
+    "Resolution of a Vector is based on fundamental principles.",
+    "Say which axis θ is measured from.",
+    "Replace the vector. Do not keep it as well."
   ],
   "examShortTricks": [
-    "Recall the formula for Resolution of a Vector."
+    "Recall the formula for Resolution of a Vector.",
+    "Adjacent: cos. Opposite: sin.",
+    "Signs come from the quadrant."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "A vector at angle θ to the x-axis has x-component",
+      "options": [
+        "F sinθ",
+        "F cosθ",
+        "F tanθ",
+        "F"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Components are used",
+      "options": [
+        "Together with the original vector",
+        "In place of the original vector",
+        "Only when F is zero",
+        "Only for scalars"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The magnitude is",
+      "options": [
+        "F_x + F_y",
+        "sqrt(F_x^2 + F_y^2)",
+        "F_x F_y",
+        "F_x − F_y always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A component perpendicular to its axis is",
+      "options": [
+        "The full vector",
+        "Zero",
+        "Negative always",
+        "Equal to F tanθ"
+      ],
+      "answer": "B"
+    }
+  ],
   "importantConcepts": [
-    "Definition and significance of Resolution of a Vector."
+    "Definition and significance of Resolution of a Vector.",
+    "Component",
+    "Perpendicular axes",
+    "Quadrant",
+    "Replacement, not an extra force"
   ],
-  "importantTasks": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Do not add F and F cosθ as if they were separate extra forces.",
+    "sin and cos swap if θ is measured from the y-axis. State the axis.",
+    "A negative component is real. It is not dropped.",
+    "tanθ alone does not choose the quadrant."
+  ],
+  "practice": [
+    "Write F_x = F cosθ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "F_x = F cosθ",
+    "F_y = F sinθ"
+  ],
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "A vector at angle θ to the x-axis has x-component",
+      "options": [
+        "F sinθ",
+        "F cosθ",
+        "F tanθ",
+        "F"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Components are used",
+      "options": [
+        "Together with the original vector",
+        "In place of the original vector",
+        "Only when F is zero",
+        "Only for scalars"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The magnitude is",
+      "options": [
+        "F_x + F_y",
+        "sqrt(F_x^2 + F_y^2)",
+        "F_x F_y",
+        "F_x − F_y always"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A component perpendicular to its axis is",
+      "options": [
+        "The full vector",
+        "Zero",
+        "Negative always",
+        "Equal to F tanθ"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A force of 10 N acts at 30° above the +x-axis. Find its components. Take cos 30° = 0.866 and sin 30° = 0.500.",
+      "steps": [
+        "θ is from the +x-axis, so F_x = F cosθ and F_y = F sinθ.",
+        "F_x = 10 × 0.866 = 8.66 N.",
+        "F_y = 10 × 0.500 = 5.00 N.",
+        "Both components are positive, so they point along +x and +y.",
+        "Check: sqrt(8.66^2 + 5^2) = sqrt(75 + 25) = sqrt(100) = 10 N."
+      ],
+      "answer": "8.66 N along +x and 5.00 N along +y."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "vectors",
+  "topicSlug": "06-resolution-of-a-vector",
+  "topicTitle": "Resolution of a Vector"
 }

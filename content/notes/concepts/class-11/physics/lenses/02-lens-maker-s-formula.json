@@ -9,11 +9,16 @@
     "For light travelling left to right, a biconvex lens commonly has R1>0 and R2<0, so the curvature contributions add to positive converging power. Do not substitute unsigned radii into a signed formula.",
     "Worked example: n=1.50, R1=+20 cm and R2=−20 cm give 1/f=0.50(1/20+1/20)=0.05 cm⁻¹, hence f=+20 cm.",
     "In a surrounding medium use relative index nrel=nlens/nmedium. As nrel approaches 1, the lens bends light less and |f| increases; a lens can change sign if the surrounding medium has a larger index.",
-    "The formula assumes a thin lens and paraxial rays. Thick lenses require principal-plane treatment, and very wide ray bundles show aberrations."
+    "The formula assumes a thin lens and paraxial rays. Thick lenses require principal-plane treatment, and very wide ray bundles show aberrations.",
+    "A plano-convex lens has one flat face, so one radius is infinite and that term vanishes. The whole converging power then comes from the curved face. Power is still 1/f once f has been converted to metres."
   ],
   "confusion": [
     "The formula assumes a thin lens and paraxial rays.",
-    "Do not replace signed radii by their magnitudes."
+    "Do not replace signed radii by their magnitudes.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
@@ -29,7 +34,10 @@
   "motionGraphics": "lenses",
   "examples": [
     "n=1.50, R1=+20 cm and R2=−20 cm give f=+20 cm.",
-    "If relative index tends to 1, lens power tends to zero and focal length magnitude grows."
+    "If relative index tends to 1, lens power tends to zero and focal length magnitude grows.",
+    "A plano-convex lens has one flat face, so one radius is infinite and that term vanishes. The whole converging power then comes from the curved face. Power is still 1/f once f has been converted to metres.",
+    "The working relations are 1/f = (μ − 1)(1/R1 − 1/R2) and Power P = 1/f in metres. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A plano-convex lens has μ = 1.60 and curved radius 20 cm, with the flat face of infinite radius. Find f and the power."
   ],
   "practiceQuestions": [
     "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Focal length depends on curvature and relative refractive index.",
     "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness."
+    "The thin-lens formula neglects centre thickness.",
+    "1/f = (μ − 1)(1/R1 − 1/R2)",
+    "Power P = 1/f in metres",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "The lens-maker formula links curvature and relative refractive index to focal length. Signed radii and the surrounding medium determine the correct optical power.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Focal length depends on curvature and relative refractive index.",
     "A consistent sign convention is essential.",
-    "The thin-lens formula neglects centre thickness."
+    "The thin-lens formula neglects centre thickness.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find f for n=1.60, R1=+30 cm, R2=−30 cm.",
@@ -84,5 +100,102 @@
     "**Sign Convention for Radii:** Using the Cartesian sign convention (light travels left to right): $R$ is positive if the center of curvature is to the *right* of the surface (convex toward incident light), negative if to the *left* (concave). This is opposite to some older conventions.",
     "**Material and Medium Dependence:** The formula uses relative refractive index $n = n_{lens}/n_{medium}$. For a lens in air, $n_{medium} \\approx 1$. If immersed in water ($n \\approx 1.33$), the focal length increases by factor $n_{lens}/n_{water}$ relative to air."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "A flat face contributes",
+      "options": [
+        "1/R = 0",
+        "The whole power",
+        "A negative index",
+        "A prism"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Power uses f in",
+      "options": [
+        "Centimetres",
+        "Metres",
+        "Dioptres with no conversion",
+        "Millimetres"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "μ = 1.60 means",
+      "options": [
+        "The lens is weaker than μ = 1.50 for the same shape",
+        "The lens is stronger than μ = 1.50 for the same shape",
+        "f is infinite",
+        "The lens is a mirror"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "P and f are",
+      "options": [
+        "Reciprocals when f is in metres",
+        "Equal",
+        "Both in centimetres",
+        "Unrelated"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A flat face contributes",
+      "options": [
+        "1/R = 0",
+        "The whole power",
+        "A negative index",
+        "A prism"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Power uses f in",
+      "options": [
+        "Centimetres",
+        "Metres",
+        "Dioptres with no conversion",
+        "Millimetres"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "μ = 1.60 means",
+      "options": [
+        "The lens is weaker than μ = 1.50 for the same shape",
+        "The lens is stronger than μ = 1.50 for the same shape",
+        "f is infinite",
+        "The lens is a mirror"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "P and f are",
+      "options": [
+        "Reciprocals when f is in metres",
+        "Equal",
+        "Both in centimetres",
+        "Unrelated"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A plano-convex lens has μ = 1.60 and curved radius 20 cm, with the flat face of infinite radius. Find f and the power.",
+      "steps": [
+        "1/R_flat = 0.",
+        "1/f = (0.60)(1/20) = 0.030 cm^−1.",
+        "f = 33 cm = 0.33 m.",
+        "P = 1/0.33 = 3.0 D.",
+        "The curved face alone sets the power."
+      ],
+      "answer": "f = 33 cm, power 3.0 D."
+    }
+  ]
 }

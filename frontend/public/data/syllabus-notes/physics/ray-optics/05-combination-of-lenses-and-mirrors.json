@@ -1,0 +1,195 @@
+{
+  "title": "Combination of lenses and mirrors",
+  "unitSlug": "ray-optics",
+  "topicSlug": "combination-of-lenses-and-mirrors",
+  "topicTitle": "Combination of lenses and mirrors",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Two thin lenses in contact behave as one lens whose power is the sum of the powers. A 4 D convex lens and a 2 D convex lens in contact make 6 D. The equivalent focal length is 1/P with P in dioptres and the length in metres.",
+    "A convex lens and a concave lens in contact subtract. If the convex power is larger, the combination still converges, but more weakly. Spectacle corrections are built this way.",
+    "If the lenses are separated, you do not add the powers. Find the image in the first lens, then use that image as the object for the second, measuring the object distance from the second lens.",
+    "A lens in front of a mirror is the same idea. Light passes the lens, reflects from the mirror, and passes the lens again. Each pass is a separate calculation, and the sign convention stays the same.",
+    "A real image from the first element can fall to the right of the second element. For the second element that object is virtual, and its object distance is positive in the Cartesian convention. The sign is the part that needs a sketch.",
+    "The equivalent of two separated lenses depends on the gap. Pulling them apart changes the combination even though each lens is unchanged."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+    "Separated lenses do not add powers.",
+    "A concave power is negative.",
+    "A virtual object for the second element has positive u.",
+    "The mirror formula uses a plus sign. The lens formula uses a minus sign."
+  ],
+  "bounds": [
+    "Covers only: combination of lenses, mirrors (within Ray Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+  ],
+  "practice": [
+    "Write P = P1 + P2 for thin lenses in contact and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+  ],
+  "examples": [
+    "Two thin lenses in contact behave as one lens whose power is the sum of the powers. A 4 D convex lens and a 2 D convex lens in contact make 6 D. The equivalent focal length is 1/P with P in dioptres and the length in metres.",
+    "A convex lens and a concave lens in contact subtract. If the convex power is larger, the combination still converges, but more weakly. Spectacle corrections are built this way.",
+    "A 4.0 D lens and a 2.0 D lens are in contact. Find the equivalent power and focal length."
+  ],
+  "practiceQuestions": [
+    "How do powers combine for thin lenses in contact?",
+    "What do you do if the lenses are separated?",
+    "When is the object for the second lens virtual?"
+  ],
+  "formulas": [
+    "1/f = (μ−1)(1/R₁ − 1/R₂)",
+    "P = 1/f",
+    "n = sin((A+D)/2)/sin(A/2)"
+  ],
+  "numericals": [
+    "A 4.0 D lens and a 2.0 D lens are in contact. Find the equivalent power and focal length."
+  ],
+  "keyPoints": [
+    "Powers of thin lenses in contact add.",
+    "A positive and a negative power can cancel.",
+    "A mirror and a lens are handled one surface at a time.",
+    "The first image is the object for the next element."
+  ],
+  "summary": "Thin lenses in contact add their powers, so a 4 D lens and a 2 D lens make 6 D. Separated lenses are treated one at a time, and the image from the first is the object for the second. A concave lens contributes a negative power.",
+  "mcqs": [
+    {
+      "question": "Two thin lenses in contact have power",
+      "options": [
+        "P1 + P2",
+        "P1 P2",
+        "P1 − P2 always",
+        "The gap times P"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Separated lenses are handled by",
+      "options": [
+        "Adding powers anyway",
+        "Using the first image as the object for the second",
+        "Ignoring the first lens",
+        "The mirror formula on both"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A concave lens has",
+      "options": [
+        "Positive power",
+        "Negative power",
+        "Zero power",
+        "Power equal to its radius in centimetres"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A virtual object in the Cartesian convention has",
+      "options": [
+        "Positive u",
+        "Negative u like every real object",
+        "u = 0",
+        "No image"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "Two thin lenses in contact behave as one lens whose power is the sum of the powers. A 4 D convex lens and a 2 D convex lens in contact make 6 D. The equivalent focal length is 1/P with P in dioptres and the length in metres.",
+    "A convex lens and a concave lens in contact subtract. If the convex power is larger, the combination still converges, but more weakly. Spectacle corrections are built this way.",
+    "If the lenses are separated, you do not add the powers. Find the image in the first lens, then use that image as the object for the second, measuring the object distance from the second lens."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "In contact: add powers.",
+    "Separated: image of the first is object of the second."
+  ],
+  "specialNotes": [
+    "F in metres is 1/P.",
+    "A 4 D and a −1 D lens in contact give 3 D."
+  ],
+  "importantNotes": [
+    "Check whether the lenses touch before adding powers.",
+    "Sketch the intermediate image."
+  ],
+  "importantConcepts": [
+    "Powers in contact",
+    "Separated lenses",
+    "Virtual object",
+    "Lens and mirror"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Two thin lenses in contact have power",
+      "options": [
+        "P1 + P2",
+        "P1 P2",
+        "P1 − P2 always",
+        "The gap times P"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Separated lenses are handled by",
+      "options": [
+        "Adding powers anyway",
+        "Using the first image as the object for the second",
+        "Ignoring the first lens",
+        "The mirror formula on both"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A concave lens has",
+      "options": [
+        "Positive power",
+        "Negative power",
+        "Zero power",
+        "Power equal to its radius in centimetres"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A virtual object in the Cartesian convention has",
+      "options": [
+        "Positive u",
+        "Negative u like every real object",
+        "u = 0",
+        "No image"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 4.0 D lens and a 2.0 D lens are in contact. Find the equivalent power and focal length.",
+      "steps": [
+        "The lenses touch, so the powers add.",
+        "P = 4.0 + 2.0 = 6.0 D.",
+        "f = 1/P = 1/6.0 m.",
+        "f = 0.167 m = 16.7 cm.",
+        "The combination converges, more strongly than either lens alone."
+      ],
+      "answer": "6.0 D, and f = 16.7 cm."
+    }
+  ]
+}

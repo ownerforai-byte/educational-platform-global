@@ -5,14 +5,21 @@
   "topicTitle": "Wheatstone and Meter Bridge",
   "relevance": 100,
   "notes": [
-    "**Wheatstone and Meter Bridge:** This topic covers the fundamental concepts of wheatstone and meter bridge in the physics curriculum.",
-    "Understanding wheatstone and meter bridge is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to wheatstone and meter bridge should be memorized and practiced regularly."
+    "A Wheatstone bridge has four resistances P, Q, R and S, with a galvanometer across one diagonal and the battery across the other. At balance the galvanometer current is zero and P/Q = R/S.",
+    "The metre bridge is that bridge with a uniform 100 cm wire as two of the arms. If the jockey balances at length l1 from the left, the left wire resistance is proportional to l1 and the right to l2 = 100 − l1.",
+    "If the known resistance R is in the left gap and the unknown X is in the right gap, the balance condition is X/R = l2/l1, or the swapped form if the gaps are swapped. The diagram decides which length is which.",
+    "A uniform wire is essential, because the ratio of resistances is the ratio of lengths only when the resistance per centimetre is constant.",
+    "End corrections add a few millimetres for the copper strips. A precise unknown repeats the measurement with the gaps swapped and averages the two values of X.",
+    "Heating the wire changes its resistance per centimetre, so the current is kept small and the balance is found with a light touch of the jockey."
   ],
   "confusion": [
     "❌ 'A meter bridge can measure any resistance accurately.' ✅ It is accurate only for *moderate* resistances (≈1 Ω to 1 kΩ); very high or very low resistances give poor null points.",
     "❌ 'The null point is always at the center (50 cm) of the meter bridge.' ✅ The null point shifts depending on the ratio of resistances; it is at 50 cm *only* when the two known resistances are equal.",
-    "❌ 'Wheatstone bridge and meter bridge are completely different instruments.' ✅ A meter bridge is essentially a *Wheatstone bridge* with a uniform 1-meter wire replacing two arms."
+    "❌ 'Wheatstone bridge and meter bridge are completely different instruments.' ✅ A meter bridge is essentially a *Wheatstone bridge* with a uniform 1-meter wire replacing two arms.",
+    "Balance is zero galvanometer current, not zero battery current.",
+    "l1 and l2 must match the gaps in the formula.",
+    "The wire ratio is not the resistance ratio if the wire is not uniform.",
+    "100 cm is the wire, not the length of the unknown resistor."
   ],
   "practice": [
     "Solve at least 5 problems on wheatstone and meter bridge from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "current-electricity",
   "motionGraphics": "current-electricity",
   "examples": [
-    "Example 1: Real-world application of Wheatstone and Meter Bridge",
     "Example 2: Practical demonstration of Wheatstone and Meter Bridge concepts",
     "Example 4: Diagram-based question on Wheatstone and Meter Bridge",
     "Example 5: Application in daily life involving Wheatstone and Meter Bridge"
@@ -61,11 +67,9 @@
     "Note 5: Wheatstone and Meter Bridge frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Wheatstone and Meter Bridge",
-    "Statement 2: Theorem related to Wheatstone and Meter Bridge",
-    "Statement 3: Condition for Wheatstone and Meter Bridge to be valid",
-    "Statement 4: Principle governing Wheatstone and Meter Bridge",
-    "Statement 5: Corollary or consequence of Wheatstone and Meter Bridge"
+    "A Wheatstone bridge has four resistances P, Q, R and S, with a galvanometer across one diagonal and the battery across the other. At balance the galvanometer current is zero and P/Q = R/S.",
+    "The metre bridge is that bridge with a uniform 100 cm wire as two of the arms. If the jockey balances at length l1 from the left, the left wire resistance is proportional to l1 and the right to l2 = 100 − l1.",
+    "If the known resistance R is in the left gap and the unknown X is in the right gap, the balance condition is X/R = l2/l1, or the swapped form if the gaps are swapped. The diagram decides which length is which."
   ],
   "importantNotes": [
     "Note 1: Wheatstone and Meter Bridge is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Wheatstone and Meter Bridge",
     "Task 4: Practice previous year exam questions on Wheatstone and Meter Bridge",
     "Task 5: Explain Wheatstone and Meter Bridge to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "At balance the galvanometer current is",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Equal to the battery current",
+        "Infinite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "On a uniform metre wire the resistance ratio equals",
+      "options": [
+        "The length ratio",
+        "The square of the current",
+        "The battery voltage",
+        "100 always"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "l1 + l2 on a metre bridge is",
+      "options": [
+        "50 cm",
+        "100 cm",
+        "1 m of the unknown",
+        "The galvanometer resistance"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Swapping the gaps is done to",
+      "options": [
+        "Average out errors",
+        "Remove the battery",
+        "Make X zero",
+        "Change the metre to a foot"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A metre bridge balances at 40.0 cm from the left. The known resistance in the left gap is 2.0 Ω and the unknown is in the right gap. Find X.",
+      "steps": [
+        "l1 = 40.0 cm and l2 = 60.0 cm.",
+        "With R on the left and X on the right, X/R = l2/l1.",
+        "X = 2.0 × 60.0/40.0.",
+        "X = 2.0 × 1.5 = 3.0 Ω.",
+        "A balance at 40 cm, not 50 cm, means the right-hand resistance is larger, which matches 3.0 > 2.0."
+      ],
+      "answer": "3.0 Ω."
+    }
   ]
 }

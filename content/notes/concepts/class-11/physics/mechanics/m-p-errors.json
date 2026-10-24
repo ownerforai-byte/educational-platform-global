@@ -3,17 +3,22 @@
   "unitSlug": "mechanics",
   "topicSlug": "m-p-errors",
   "topicTitle": "M,P Errors",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "Repeated readings have a mean value and a spread. A common school estimate of mean absolute error is the average of |xi−x̄|; probable error is sometimes defined as 0.6745 times the mean absolute error for normally distributed random errors.",
     "For sums and differences, a conservative maximum-error estimate adds absolute uncertainties: z=x±y gives Δz≈Δx+Δy. For products or quotients, relative uncertainties add: Δz/|z|≈Δx/|x|+Δy/|y|.",
     "For a power law z=xⁿ, relative uncertainty is approximately |n|Δx/|x|. Thus a 1% radius error gives about 2% area error for A=πr².",
     "Worked example: L=10.0±0.1 cm and W=5.0±0.1 cm. For A=LW, fractional uncertainty≈0.1/10+0.1/5=0.03, or 3%; A=50 cm² with estimated uncertainty 1.5 cm².",
-    "These are first-order rules for small uncertainties. State the method and avoid suggesting an exact result when measurements are approximate."
+    "These are first-order rules for small uncertainties. State the method and avoid suggesting an exact result when measurements are approximate.",
+    "The mean absolute error tells how far the readings typically sit from the mean. It is not the same as the range, and it is not removed by writing more decimal places. A quoted probable error, 0.6745 times the mean absolute error, is a statistical description of a normal scatter, not a second kind of mistake."
   ],
   "confusion": [
     "Probable-error terminology varies by textbook; state its statistical convention.",
-    "First-order rules assume small uncertainties and do not replace a full statistical model."
+    "First-order rules assume small uncertainties and do not replace a full statistical model.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Find relative uncertainty in V=πr²h if r has 2% and h 1% uncertainty.",
@@ -29,7 +34,10 @@
   "motionGraphics": "mechanics",
   "examples": [
     "A=πr² with a 1% radius uncertainty has about 2% area uncertainty.",
-    "10.0±0.1 cm by 5.0±0.1 cm gives 50 cm² with about 3% uncertainty."
+    "10.0±0.1 cm by 5.0±0.1 cm gives 50 cm² with about 3% uncertainty.",
+    "The mean absolute error tells how far the readings typically sit from the mean. It is not the same as the range, and it is not removed by writing more decimal places. A quoted probable error, 0.6745 times the mean absolute error, is a statistical description of a normal scatter, not a second kind of mistake.",
+    "The working relations are Mean absolute error is the average of |x_i − mean| and A probable error used in some school notes is 0.6745 times that mean absolute error. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Readings 10.2, 10.4, 9.8 and 10.0 have mean 10.1. Find the mean absolute error."
   ],
   "practiceQuestions": [
     "Find relative uncertainty in V=πr²h if r has 2% and h 1% uncertainty.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Keep absolute and relative errors distinct.",
     "A squared quantity doubles percentage uncertainty to first order.",
-    "Round the value consistently with its uncertainty."
+    "Round the value consistently with its uncertainty.",
+    "Mean absolute error is the average of |x_i − mean|",
+    "A probable error used in some school notes is 0.6745 times that mean absolute error",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Error propagation depends on how measured quantities combine: add absolute errors for sums and relative errors for products and powers.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Keep absolute and relative errors distinct.",
     "A squared quantity doubles percentage uncertainty to first order.",
-    "Round the value consistently with its uncertainty."
+    "Round the value consistently with its uncertainty.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Find relative uncertainty in V=πr²h if r has 2% and h 1% uncertainty.",
@@ -80,5 +96,102 @@
     "Why do relative uncertainties add for a product?"
   ],
   "duplicateType": 1,
-  "visualType": "error-analysis"
+  "visualType": "error-analysis",
+  "mcs": [
+    {
+      "question": "Mean absolute error uses",
+      "options": [
+        "The average of the absolute deviations",
+        "The largest reading only",
+        "The zero error",
+        "The unitless product"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "It is reduced in meaning by",
+      "options": [
+        "Writing more decimal places",
+        "Nothing: extra digits do not shrink it",
+        "Changing the unit name only",
+        "Ignoring outliers that are real"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A probable error of this kind is",
+      "options": [
+        "0.6745 times the mean absolute error",
+        "The range",
+        "The true value",
+        "Always zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The result of this set is about",
+      "options": [
+        "10.1 ± 0.2",
+        "10.1 exactly with no spread",
+        "0.2 only",
+        "40"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Mean absolute error uses",
+      "options": [
+        "The average of the absolute deviations",
+        "The largest reading only",
+        "The zero error",
+        "The unitless product"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "It is reduced in meaning by",
+      "options": [
+        "Writing more decimal places",
+        "Nothing: extra digits do not shrink it",
+        "Changing the unit name only",
+        "Ignoring outliers that are real"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A probable error of this kind is",
+      "options": [
+        "0.6745 times the mean absolute error",
+        "The range",
+        "The true value",
+        "Always zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The result of this set is about",
+      "options": [
+        "10.1 ± 0.2",
+        "10.1 exactly with no spread",
+        "0.2 only",
+        "40"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Readings 10.2, 10.4, 9.8 and 10.0 have mean 10.1. Find the mean absolute error.",
+      "steps": [
+        "Deviations: 0.1, 0.3, 0.3 and 0.1.",
+        "The absolute values add to 0.8.",
+        "The mean absolute error is 0.8/4 = 0.2.",
+        "The result may be written 10.1 ± 0.2.",
+        "The probable-error figure 0.6745 × 0.2 is a different, smaller description of the same scatter."
+      ],
+      "answer": "0.2."
+    }
+  ]
 }

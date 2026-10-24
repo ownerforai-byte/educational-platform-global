@@ -1,43 +1,188 @@
 {
   "title": "Specific Heat Capacity — Units & Dimensional Formula",
-  "notes": [],
+  "notes": [
+    "Specific heat capacity c is the heat needed to raise the temperature of 1 kg of a substance by 1 K. The defining relation is Q = mc Δθ, so c = Q / (m Δθ).",
+    "The SI unit is joule per kilogram per kelvin, J kg^-1 K^-1. A degree Celsius interval equals a kelvin interval, so J kg^-1 °C^-1 is the same size of unit.",
+    "Heat Q has the dimensions of energy, [M L^2 T^-2]. Mass is [M] and a temperature interval brings in [K]. Therefore [c] = [L^2 T^-2 K^-1].",
+    "Water's specific heat is about 4200 J kg^-1 K^-1, which is large. That is why a large mass of water changes temperature slowly for a given heat input.",
+    "The heat capacity of a whole body is C = mc, in J/K. Specific heat is a material property. Heat capacity belongs to one particular object.",
+    "Mixing problems use heat lost equals heat gained when the container is closed to outside heat. Each term is of the form mc Δθ, with the temperature change written as a positive quantity in that bookkeeping."
+  ],
   "examples": [
-    "Application of Specific Heat Capacity — Units & Dimensional Formula"
+    "Specific heat capacity c is the heat needed to raise the temperature of 1 kg of a substance by 1 K. The defining relation is Q = mc Δθ, so c = Q / (m Δθ).",
+    "The SI unit is joule per kilogram per kelvin, J kg^-1 K^-1. A degree Celsius interval equals a kelvin interval, so J kg^-1 °C^-1 is the same size of unit.",
+    "How much heat raises 0.50 kg of water from 20°C to 40°C? Take c = 4200 J kg^-1 K^-1."
   ],
   "practiceQuestions": [
     "Q1. Define Specific Heat Capacity — Units & Dimensional Formula.",
-    "Q3. Problem on Specific Heat Capacity — Units & Dimensional Formula."
+    "Q3. Problem on Specific Heat Capacity — Units & Dimensional Formula.",
+    "Define specific heat capacity.",
+    "What are its dimensions?",
+    "How does heat capacity differ from specific heat?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Q = mc Δθ",
+    "[c] = [L^2 T^-2 K^-1]"
+  ],
   "keyPoints": [
-    "Application of Specific Heat Capacity — Units & Dimensional Formula",
-    "Connection of Specific Heat Capacity — Units & Dimensional Formula to other topics"
+    "Connection of Specific Heat Capacity — Units & Dimensional Formula to other topics",
+    "c is heat per unit mass per unit temperature rise.",
+    "SI unit J kg^-1 K^-1.",
+    "Water has a large specific heat.",
+    "Dimensions follow from Q = mc Δθ."
   ],
   "summary": "Specific Heat Capacity — Units & Dimensional Formula covers essential principles and applications.",
-  "specialNotes": [],
+  "specialNotes": [
+    "The container's mc must be included if the question gives it.",
+    "A negative Q means heat left the body."
+  ],
   "importantStatements": [
-    "Statement 1: Definition of Specific Heat Capacity — Units & Dimensional Formula",
-    "Statement 2: Theorem related to Specific Heat Capacity — Units & Dimensional Formula",
-    "Statement 3: Condition for Specific Heat Capacity — Units & Dimensional Formula to be valid",
-    "Statement 4: Principle governing Specific Heat Capacity — Units & Dimensional Formula",
-    "Statement 5: Corollary or consequence of Specific Heat Capacity — Units & Dimensional Formula"
+    "Specific heat capacity c is the heat needed to raise the temperature of 1 kg of a substance by 1 K. The defining relation is Q = mc Δθ, so c = Q / (m Δθ).",
+    "The SI unit is joule per kilogram per kelvin, J kg^-1 K^-1. A degree Celsius interval equals a kelvin interval, so J kg^-1 °C^-1 is the same size of unit.",
+    "Heat Q has the dimensions of energy, [M L^2 T^-2]. Mass is [M] and a temperature interval brings in [K]. Therefore [c] = [L^2 T^-2 K^-1]."
   ],
   "importantNotes": [
-    "Specific Heat Capacity — Units & Dimensional Formula is based on fundamental principles."
+    "Specific Heat Capacity — Units & Dimensional Formula is based on fundamental principles.",
+    "Name the substance, because c depends on it.",
+    "Do not use a latent-heat term when the temperature is changing inside one state."
   ],
   "examShortTricks": [
-    "Recall the formula for Specific Heat Capacity — Units & Dimensional Formula."
+    "Recall the formula for Specific Heat Capacity — Units & Dimensional Formula.",
+    "Δθ is an interval, so °C and K give the same number.",
+    "Water near 4200 J kg^-1 K^-1 is the comparison value."
   ],
-  "examNotes": [],
-  "mcs": [],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "The SI unit of specific heat capacity is",
+      "options": [
+        "J/kg",
+        "J kg^-1 K^-1",
+        "J/K only",
+        "W/m K"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Heat capacity of a body is",
+      "options": [
+        "c",
+        "mc",
+        "m/c",
+        "Q only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A large specific heat means, for the same heat and mass,",
+      "options": [
+        "A larger temperature rise",
+        "A smaller temperature rise",
+        "No mass change is possible",
+        "The body must melt"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "[c] equals",
+      "options": [
+        "[M L^2 T^-2]",
+        "[L^2 T^-2 K^-1]",
+        "[L T^-1]",
+        "[M K]"
+      ],
+      "answer": "B"
+    }
+  ],
   "importantConcepts": [
-    "Definition and significance of Specific Heat Capacity — Units & Dimensional Formula."
+    "Definition and significance of Specific Heat Capacity — Units & Dimensional Formula.",
+    "Specific heat",
+    "Q = mc Δθ",
+    "Dimensions of c",
+    "Heat capacity"
   ],
-  "importantTasks": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "Specific heat is not latent heat. Latent heat changes the state at constant temperature.",
+    "c and C are different. C = mc.",
+    "A temperature in °C may be used for a difference. A formula that needs the thermodynamic temperature needs kelvin.",
+    "The calorie is an older heat unit. The SI answer is in joules."
+  ],
+  "practice": [
+    "Write Q = mc Δθ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Q = mc Δθ",
+    "[c] = [L^2 T^-2 K^-1]"
+  ],
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "The SI unit of specific heat capacity is",
+      "options": [
+        "J/kg",
+        "J kg^-1 K^-1",
+        "J/K only",
+        "W/m K"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Heat capacity of a body is",
+      "options": [
+        "c",
+        "mc",
+        "m/c",
+        "Q only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A large specific heat means, for the same heat and mass,",
+      "options": [
+        "A larger temperature rise",
+        "A smaller temperature rise",
+        "No mass change is possible",
+        "The body must melt"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "[c] equals",
+      "options": [
+        "[M L^2 T^-2]",
+        "[L^2 T^-2 K^-1]",
+        "[L T^-1]",
+        "[M K]"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "How much heat raises 0.50 kg of water from 20°C to 40°C? Take c = 4200 J kg^-1 K^-1.",
+      "steps": [
+        "Δθ = 40 − 20 = 20 K.",
+        "Q = mc Δθ.",
+        "Q = 0.50 × 4200 × 20.",
+        "0.50 × 4200 = 2100.",
+        "2100 × 20 = 42000 J = 4.2 × 10^4 J."
+      ],
+      "answer": "4.2 × 10^4 J."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "03-specific-heat-units-and-dimensions",
+  "topicTitle": "Specific Heat Capacity — Units & Dimensional Formula"
 }

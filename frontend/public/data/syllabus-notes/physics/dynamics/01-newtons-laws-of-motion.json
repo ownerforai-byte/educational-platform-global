@@ -1,0 +1,189 @@
+{
+  "title": "Newton's Laws of Motion (Foundations of Dynamics)",
+  "notes": [
+    "Newton's first law says a body stays at rest, or keeps moving in a straight line at constant speed, unless a net external force acts on it. A frame in which this is true is an inertial frame.",
+    "The second law gives the size and direction of the effect. The net force equals the rate of change of momentum. When the mass is constant this is F_net = ma, and the acceleration points the same way as the net force.",
+    "The third law says forces come in pairs. If body A pushes body B, body B pushes body A with the same magnitude and the opposite direction. The two forces act on different bodies, so they do not cancel on one free-body diagram.",
+    "Mass measures inertia. For the same net force, a larger mass has a smaller acceleration. Weight is the gravitational force W = mg and is not the same quantity as mass.",
+    "A free-body diagram shows only the forces acting on the body you chose. Contact forces such as the normal force and friction are drawn at the surface. The weight is drawn at the centre of gravity, downward.",
+    "The normal force from a table and the weight of a book are not a third-law pair. The third-law partner of the book's weight is the gravitational pull of the book on the Earth."
+  ],
+  "examples": [
+    "Newton's first law says a body stays at rest, or keeps moving in a straight line at constant speed, unless a net external force acts on it. A frame in which this is true is an inertial frame.",
+    "The second law gives the size and direction of the effect. The net force equals the rate of change of momentum. When the mass is constant this is F_net = ma, and the acceleration points the same way as the net force.",
+    "A 2.0 kg block on a smooth horizontal table is pulled horizontally by 10 N. Find the acceleration."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Newton's Laws of Motion (Foundations of Dynamics).",
+    "Q3. Problem on Newton's Laws of Motion (Foundations of Dynamics).",
+    "Which law fixes the direction of the acceleration?",
+    "Why do the two forces of a third-law pair not cancel?",
+    "What is drawn on a free-body diagram?"
+  ],
+  "formulas": [
+    "F = ma",
+    "W = mg",
+    "a = F_net / m"
+  ],
+  "keyPoints": [
+    "Connection of Newton's Laws of Motion (Foundations of Dynamics) to other topics",
+    "First law: zero net force means constant velocity.",
+    "Second law: F_net = ma.",
+    "Third law: equal and opposite forces on two bodies.",
+    "Draw forces on one body only."
+  ],
+  "summary": "Newton's Laws of Motion (Foundations of Dynamics) covers essential principles and applications.",
+  "specialNotes": [
+    "Smooth means friction is taken as zero.",
+    "g is about 9.8 m/s^2, and 10 m/s^2 is the usual classroom estimate."
+  ],
+  "importantStatements": [
+    "Newton's first law says a body stays at rest, or keeps moving in a straight line at constant speed, unless a net external force acts on it. A frame in which this is true is an inertial frame.",
+    "The second law gives the size and direction of the effect. The net force equals the rate of change of momentum. When the mass is constant this is F_net = ma, and the acceleration points the same way as the net force.",
+    "The third law says forces come in pairs. If body A pushes body B, body B pushes body A with the same magnitude and the opposite direction. The two forces act on different bodies, so they do not cancel on one free-body diagram."
+  ],
+  "importantNotes": [
+    "Newton's Laws of Motion (Foundations of Dynamics) is based on fundamental principles.",
+    "If the body does not accelerate vertically, the vertical forces balance.",
+    "A net force of zero means the velocity is constant, which includes staying at rest."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Newton's Laws of Motion (Foundations of Dynamics).",
+    "F_net, not one force, equals ma.",
+    "Third-law pairs are on two bodies."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "When the mass is constant, the second law is",
+      "options": [
+        "F_net = ma",
+        "F = mv",
+        "a = m/F",
+        "W = m/g"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A third-law pair acts on",
+      "options": [
+        "The same free-body diagram",
+        "Two different bodies",
+        "Only bodies at rest",
+        "Only the heavier body"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "On a smooth horizontal table the vertical acceleration is",
+      "options": [
+        "g",
+        "Zero, if normal balances weight",
+        "Always upward",
+        "Equal to the pull"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Inertia is measured by",
+      "options": [
+        "Mass",
+        "Weight",
+        "Speed",
+        "Friction"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Newton's Laws of Motion (Foundations of Dynamics).",
+    "Inertial frame",
+    "F = ma",
+    "Third-law pairs",
+    "Free-body diagram"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "The first law is not a special case you may skip. It tells you which frames the second law may use.",
+    "Action and reaction never cancel each other, because they are drawn on two different bodies.",
+    "A constant velocity does not need a forward force once friction is zero.",
+    "Mass stays the same when you go to the Moon. Weight does not."
+  ],
+  "practice": [
+    "Write F = ma and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "F = ma",
+    "W = mg"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "When the mass is constant, the second law is",
+      "options": [
+        "F_net = ma",
+        "F = mv",
+        "a = m/F",
+        "W = m/g"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A third-law pair acts on",
+      "options": [
+        "The same free-body diagram",
+        "Two different bodies",
+        "Only bodies at rest",
+        "Only the heavier body"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "On a smooth horizontal table the vertical acceleration is",
+      "options": [
+        "g",
+        "Zero, if normal balances weight",
+        "Always upward",
+        "Equal to the pull"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Inertia is measured by",
+      "options": [
+        "Mass",
+        "Weight",
+        "Speed",
+        "Friction"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 2.0 kg block on a smooth horizontal table is pulled horizontally by 10 N. Find the acceleration.",
+      "steps": [
+        "The table is smooth, so the friction force is zero.",
+        "Vertically, the normal force balances the weight, so the vertical acceleration is zero.",
+        "The horizontal net force is 10 N.",
+        "a = F/m = 10 N / 2.0 kg = 5.0 m/s^2.",
+        "The acceleration is horizontal, in the direction of the pull."
+      ],
+      "answer": "5.0 m/s^2 in the direction of the 10 N pull."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "dynamics",
+  "topicSlug": "01-newtons-laws-of-motion",
+  "topicTitle": "Newton's Laws of Motion (Foundations of Dynamics)"
+}

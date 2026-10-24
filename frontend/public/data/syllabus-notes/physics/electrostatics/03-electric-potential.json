@@ -1,0 +1,222 @@
+{
+  "title": "Electric Potential",
+  "unitSlug": "electrostatics",
+  "topicSlug": "electric-potential",
+  "topicTitle": "Electric Potential",
+  "relevance": 100,
+  "notes": [
+    "Electric potential at a point is the work done by an external agent, without changing kinetic energy, in bringing a unit positive charge from infinity to that point. It is a scalar. The unit is the volt.",
+    "A point charge Q gives V = k Q / r. A positive charge makes a positive potential. There is no direction to add, so potentials from several charges add as ordinary numbers.",
+    "The potential difference between two points is the work per unit charge to move a test charge between them. A charge q changes its potential energy by q ΔV.",
+    "Equipotential surfaces join points of equal potential. The field is perpendicular to an equipotential. No work is done moving a charge on an equipotential.",
+    "In a uniform field the potential falls along the field direction. Between plates, E = V/d if V is the potential difference and d is the separation, in the uniform region.",
+    "Potential can be zero where the field is not, as at the midpoint between equal and opposite charges. The two scalars cancel, but the two field vectors point the same way."
+  ],
+  "confusion": [
+    "❌ 'Electric potential is the same as electric potential energy.' ✅ Potential is *energy per unit charge* (J/C); potential energy is the *total energy* (J) required to assemble charges.",
+    "❌ 'Electric potential is zero where the electric field is zero.' ✅ Not always true (e.g., at the center of a charged ring, E=0 but V≠0).",
+    "❌ 'Electric potential is a vector quantity.' ✅ It is a *scalar* quantity; it has magnitude but no direction, though it can be positive or negative.",
+    "Potential is not a vector.",
+    "Zero potential does not mean zero field.",
+    "A negative charge is attracted toward higher potential.",
+    "Work on an equipotential is zero."
+  ],
+  "practice": [
+    "Solve at least 5 problems on electric potential from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Electric potential and potential difference\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding electric potential builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of electric potential span engineering, physics, economics, and computer science.",
+    "answer pattern for \"Electric potential and potential difference\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "animation3D": "electrostatics",
+  "motionGraphics": "electrostatics",
+  "examples": [
+    "Practical demonstration of Electric Potential concepts",
+    "Diagram-based question on Electric Potential",
+    "Application in daily life involving Electric Potential",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Electric Potential.",
+    "Q3. Differentiate between various aspects of Electric Potential.",
+    "Q4. Derive the key formula related to Electric Potential.",
+    "Q5. What are the applications of Electric Potential?",
+    "state + explain the main idea of \"Electric potential and potential difference\" with one example.",
+    "compare \"Electric potential\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Electric potential and potential difference\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Application formula for Electric Potential",
+    "Derivation result for Electric Potential",
+    "Governing equation for \"Electric potential and potential difference\" — state with units, then use in one numerical."
+  ],
+  "keyPoints": [
+    "Potential is potential energy per unit charge.",
+    "It is a scalar.",
+    "Positive charge makes positive potential.",
+    "The zero is usually at infinity."
+  ],
+  "summary": "Electric Potential is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Electric Potential applies",
+    "Note 2: Electric Potential connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Electric Potential",
+    "Note 4: Remember the units and dimensions involved in Electric Potential",
+    "Note 5: Electric Potential frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Electric potential at a point is the work done by an external agent, without changing kinetic energy, in bringing a unit positive charge from infinity to that point. It is a scalar. The unit is the volt.",
+    "A point charge Q gives V = k Q / r. A positive charge makes a positive potential. There is no direction to add, so potentials from several charges add as ordinary numbers.",
+    "The potential difference between two points is the work per unit charge to move a test charge between them. A charge q changes its potential energy by q ΔV."
+  ],
+  "importantNotes": [
+    "Note 1: Electric Potential is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Electric Potential",
+    "Note 3: Electric Potential has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Electric Potential",
+    "Note 5: Cross-check your answers using alternative methods for Electric Potential"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Electric Potential formula",
+    "Trick 2: Elimination technique for Electric Potential MCQs",
+    "Trick 3: Dimensional analysis shortcut for Electric Potential",
+    "Trick 4: Memory aid for Electric Potential formulas",
+    "Trick 5: Time-saving approach for Electric Potential problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Electric Potential",
+    "Practice previous year questions on Electric Potential",
+    "Learn the derivations for Electric Potential thoroughly",
+    "Review common mistakes related to Electric Potential"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Electric Potential is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Electric Potential, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Electric Potential?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Electric Potential is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Electric Potential",
+    "Concept 2: Key theorem or principle in Electric Potential",
+    "Concept 3: Important application area of Electric Potential",
+    "Concept 4: Fundamental relationship in Electric Potential",
+    "Concept 5: Connection between Electric Potential and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Electric Potential",
+    "Task 2: Derive the main formula for Electric Potential",
+    "Task 3: Create a concept map for Electric Potential",
+    "Task 4: Practice previous year exam questions on Electric Potential",
+    "Task 5: Explain Electric Potential to a peer or study group"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Electric potential and potential difference\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "Electric potential is",
+      "options": [
+        "A vector",
+        "A scalar",
+        "Always zero",
+        "The field"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "V for a point charge is",
+      "options": [
+        "k Q / r^2",
+        "k Q / r",
+        "q E r as a vector",
+        "Zero at the charge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "On an equipotential the work to move a charge is",
+      "options": [
+        "q V always large",
+        "Zero",
+        "Infinite",
+        "The field strength"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The field points toward",
+      "options": [
+        "Higher potential",
+        "Lower potential",
+        "Constant potential along itself",
+        "The largest charge's colour"
+      ],
+      "answer": "B"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: electric potential, potential difference (within Electrostatics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "exercises": [
+    {
+      "question": "Find the potential 0.10 m from a charge of 1.0 μC. Use k = 9.0 × 10^9.",
+      "steps": [
+        "Q = 1.0 × 10^−6 C and r = 0.10 m.",
+        "V = k Q / r.",
+        "k Q = 9.0 × 10^9 × 1.0 × 10^−6 = 9.0 × 10^3.",
+        "V = 9000 / 0.10 = 9.0 × 10^4 V.",
+        "The potential is positive because the charge is positive. It has no direction."
+      ],
+      "answer": "9.0 × 10^4 V."
+    }
+  ]
+}

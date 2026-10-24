@@ -1,0 +1,220 @@
+{
+  "title": "Modulation",
+  "unitSlug": "communication-systems",
+  "topicSlug": "modulation",
+  "topicTitle": "Modulation",
+  "relevance": 100,
+  "notes": [
+    "A speech or music signal changes too slowly to be radiated from a practical antenna. Modulation copies that message onto a high-frequency carrier so the antenna can be a reasonable length.",
+    "In amplitude modulation the carrier frequency stays constant and the amplitude rises and falls with the message. A louder message makes a deeper variation, up to the point where the envelope would cross zero.",
+    "The modulated wave contains the carrier and two sidebands, one at f_c + f_m and one at f_c − f_m. If the highest message frequency is f_m, the bandwidth occupied is 2 f_m.",
+    "Frequency modulation keeps the amplitude constant and shifts the carrier frequency with the message. It uses a wider band than AM and is less bothered by amplitude noise.",
+    "The modulation index in AM is the fractional change in amplitude. An index above 1 means overmodulation: the envelope no longer matches the message and the receiver distorts it.",
+    "Demodulation at the receiver strips the carrier and returns the message. A diode detector followed by a filter is the simple AM method taught with this page."
+  ],
+  "confusion": [
+    "Carefully distinguish between similar-looking concepts in modulation.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding.",
+    "❌ skip the key fact → ✅ diode: p–n junction; forward biased ≈ 0.7 v (si), reverse conducts only near breakdown. rectification converts ac to dc.."
+  ],
+  "practice": [
+    "Solve at least 5 problems on modulation from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Modulation — amplitude modulation and frequency modulation\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding modulation builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of modulation span engineering, physics, economics, and computer science.",
+    "Diode: p–n junction; forward biased ≈ 0.7 V (Si), reverse conducts only near breakdown. Rectification converts AC to DC.",
+    "Band theory: metals (bands overlap), semiconductors (small Eg, ~1.1 eV Si), insulators (large Eg).",
+    "Bandwidth and modulation: AM (information in amplitude), FM (in frequency) — FM more noise-resistant for audio."
+  ],
+  "animation3D": "communication-systems",
+  "motionGraphics": "communication-systems",
+  "examples": [
+    "Practical demonstration of Modulation concepts",
+    "Diagram-based question on Modulation",
+    "Application in daily life involving Modulation",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Modulation.",
+    "Q3. Differentiate between various aspects of Modulation.",
+    "Q4. Derive the key formula related to Modulation.",
+    "Q5. What are the applications of Modulation?",
+    "state + explain the main idea of \"Modulation — amplitude modulation and frequency modulation\" with one example.",
+    "compare \"Modulation — amplitude modulation\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Modulation — amplitude modulation and frequency modulation\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Application formula for Modulation",
+    "Derivation result for Modulation",
+    "η (rectifier) ≤ 40.6% (half-wave) / 81% (full-wave) max AC utilisation"
+  ],
+  "keyPoints": [
+    "The message is low frequency.",
+    "The carrier can be radiated.",
+    "AM varies the carrier amplitude.",
+    "Sidebands sit f_m above and below the carrier."
+  ],
+  "summary": "Modulation is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Modulation applies",
+    "Note 2: Modulation connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Modulation",
+    "Note 4: Remember the units and dimensions involved in Modulation",
+    "Note 5: Modulation frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "A speech or music signal changes too slowly to be radiated from a practical antenna. Modulation copies that message onto a high-frequency carrier so the antenna can be a reasonable length.",
+    "In amplitude modulation the carrier frequency stays constant and the amplitude rises and falls with the message. A louder message makes a deeper variation, up to the point where the envelope would cross zero.",
+    "The modulated wave contains the carrier and two sidebands, one at f_c + f_m and one at f_c − f_m. If the highest message frequency is f_m, the bandwidth occupied is 2 f_m."
+  ],
+  "importantNotes": [
+    "Note 1: Modulation is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Modulation",
+    "Note 3: Modulation has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Modulation",
+    "Note 5: Cross-check your answers using alternative methods for Modulation"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Modulation formula",
+    "Trick 2: Elimination technique for Modulation MCQs",
+    "Trick 3: Dimensional analysis shortcut for Modulation",
+    "Trick 4: Memory aid for Modulation formulas",
+    "Trick 5: Time-saving approach for Modulation problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Modulation",
+    "Practice previous year questions on Modulation",
+    "Learn the derivations for Modulation thoroughly",
+    "Review common mistakes related to Modulation"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Modulation is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Modulation, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Modulation?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Modulation is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Modulation",
+    "Concept 2: Key theorem or principle in Modulation",
+    "Concept 3: Important application area of Modulation",
+    "Concept 4: Fundamental relationship in Modulation",
+    "Concept 5: Connection between Modulation and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Modulation",
+    "Task 2: Derive the main formula for Modulation",
+    "Task 3: Create a concept map for Modulation",
+    "Task 4: Practice previous year exam questions on Modulation",
+    "Task 5: Explain Modulation to a peer or study group"
+  ],
+  "numericals": [
+    "A 800 kHz carrier is amplitude-modulated by a 5.0 kHz tone. Find the sideband frequencies and the bandwidth."
+  ],
+  "mcqs": [
+    {
+      "question": "AM varies the carrier's",
+      "options": [
+        "Amplitude",
+        "Speed of light",
+        "Mass",
+        "Resistance only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "AM bandwidth for a message frequency f_m is",
+      "options": [
+        "f_m",
+        "2 f_m",
+        "The carrier frequency",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Overmodulation means the index is",
+      "options": [
+        "0",
+        "Below 1",
+        "Above 1",
+        "Equal to the carrier frequency"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The sidebands of a single tone lie",
+      "options": [
+        "At f_c only",
+        "At f_c + f_m and f_c − f_m",
+        "At audio frequency only",
+        "Inside the microphone"
+      ],
+      "answer": "B"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: modulation — amplitude modulation, frequency modulation (within Communication Systems).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: diode: p–n junction; forward biased ≈ 0.7 v (si), reverse conducts only near breakdown. rectification converts ac to dc."
+  ],
+  "exercises": [
+    {
+      "question": "A 800 kHz carrier is amplitude-modulated by a 5.0 kHz tone. Find the sideband frequencies and the bandwidth.",
+      "steps": [
+        "Upper sideband = 800 + 5.0 = 805 kHz.",
+        "Lower sideband = 800 − 5.0 = 795 kHz.",
+        "Bandwidth = 2 × 5.0 kHz = 10 kHz.",
+        "The carrier remains at 800 kHz.",
+        "The transmission occupies 795 kHz to 805 kHz."
+      ],
+      "answer": "795 kHz and 805 kHz, bandwidth 10 kHz."
+    }
+  ]
+}

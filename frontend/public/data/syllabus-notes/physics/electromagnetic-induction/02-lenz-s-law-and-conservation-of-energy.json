@@ -1,0 +1,196 @@
+{
+  "title": "Lenz's law and conservation of energy",
+  "unitSlug": "electromagnetic-induction",
+  "topicSlug": "lenz-s-law-and-conservation-of-energy",
+  "topicTitle": "Lenz's law and conservation of energy",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Lenz's law says the induced current takes the direction that opposes the change in flux which caused it. It is the reason for the minus sign in Faraday's law.",
+    "If the south pole of a magnet approaches a coil, the flux of that pole is increasing. The near face of the coil becomes a south pole so that it repels the approaching south pole.",
+    "If that south pole is pulled away, the flux decreases and the near face becomes a north pole, attracting the magnet and opposing the removal.",
+    "The opposition is to the change. A stationary magnet produces no change and no induced current, so there is no force from an induced current.",
+    "Pushing the magnet in against the repulsion takes mechanical work. That work is the energy which appears as the induced current's heating in the coil. If the induced current had attracted the magnet, the motion would accelerate and energy would appear from nowhere.",
+    "Eddy currents in a copper plate near a moving magnet oppose the motion and dissipate energy as heat. That is Lenz's law used as a brake."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ work w = f·s·cosθ (j); power p = w/t = f·v..",
+    "Lenz opposes the change, not the field itself.",
+    "An approaching south pole induces a south face, not a north face.",
+    "The law does not give the number of volts.",
+    "A stationary magnet induces no opposing force."
+  ],
+  "bounds": [
+    "Covers only: lenz's law, conservation of energy (within Electromagnetic Induction).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: work w = f·s·cosθ (j); power p = w/t = f·v."
+  ],
+  "practice": [
+    "Write The induced current opposes the change in flux. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Work W = F·s·cosθ (J); power P = W/t = F·v.",
+    "Work-energy theorem: net work = ΔKE = ½m(v₂² − v₁²).",
+    "Mechanical energy conserved when only conservative forces act: KE + PE = const; PE(mg) = mgh."
+  ],
+  "examples": [
+    "Lenz's law says the induced current takes the direction that opposes the change in flux which caused it. It is the reason for the minus sign in Faraday's law.",
+    "If the south pole of a magnet approaches a coil, the flux of that pole is increasing. The near face of the coil becomes a south pole so that it repels the approaching south pole.",
+    "The south pole of a magnet is pushed toward a coil. Name the pole on the near face and say where the energy of the induced current comes from."
+  ],
+  "practiceQuestions": [
+    "State Lenz's law.",
+    "What face meets an approaching south pole?",
+    "Where does the electrical energy come from?"
+  ],
+  "formulas": [
+    "W = F s cosθ",
+    "KE = ½mv²",
+    "PE = mgh",
+    "P = Fv"
+  ],
+  "numericals": [
+    "The south pole of a magnet is pushed toward a coil. Name the pole on the near face and say where the energy of the induced current comes from."
+  ],
+  "keyPoints": [
+    "Direction, not magnitude.",
+    "Oppose the change, not the field.",
+    "The agent must do work.",
+    "That work becomes electrical energy."
+  ],
+  "summary": "Lenz's law chooses the induced current so that it opposes the change in flux. An approaching south pole is met by a south face. The agent must do work against that opposition, and that work is the energy of the induced current. A stationary magnet induces nothing.",
+  "mcqs": [
+    {
+      "question": "Lenz's law fixes",
+      "options": [
+        "The magnitude in volts",
+        "The direction of the induced current",
+        "The resistance",
+        "The value of μ0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An approaching south pole induces a near face that is",
+      "options": [
+        "South",
+        "North",
+        "Unmagnetised",
+        "A north pole that attracts it"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The energy of the induced current comes from",
+      "options": [
+        "Nowhere",
+        "The work done by the agent moving the magnet",
+        "A decrease of the electron charge",
+        "The steady field"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A magnet at rest induces",
+      "options": [
+        "A strong brake",
+        "No induced current",
+        "A south face forever",
+        "An increasing flux"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Lenz's law says the induced current takes the direction that opposes the change in flux which caused it. It is the reason for the minus sign in Faraday's law.",
+    "If the south pole of a magnet approaches a coil, the flux of that pole is increasing. The near face of the coil becomes a south pole so that it repels the approaching south pole.",
+    "If that south pole is pulled away, the flux decreases and the near face becomes a north pole, attracting the magnet and opposing the removal."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Approach south, face becomes south.",
+    "The push does the work."
+  ],
+  "specialNotes": [
+    "Eddy-current brakes use this opposition.",
+    "The right-hand grip turns the opposing pole into a current direction."
+  ],
+  "importantNotes": [
+    "Say whether the flux is increasing or decreasing before naming the face.",
+    "Connect the force to the energy, not only to the pole."
+  ],
+  "importantConcepts": [
+    "Oppose the change",
+    "South-pole approach",
+    "Work done by the agent",
+    "Eddy-current brake"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Lenz's law fixes",
+      "options": [
+        "The magnitude in volts",
+        "The direction of the induced current",
+        "The resistance",
+        "The value of μ0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An approaching south pole induces a near face that is",
+      "options": [
+        "South",
+        "North",
+        "Unmagnetised",
+        "A north pole that attracts it"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The energy of the induced current comes from",
+      "options": [
+        "Nowhere",
+        "The work done by the agent moving the magnet",
+        "A decrease of the electron charge",
+        "The steady field"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A magnet at rest induces",
+      "options": [
+        "A strong brake",
+        "No induced current",
+        "A south face forever",
+        "An increasing flux"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "The south pole of a magnet is pushed toward a coil. Name the pole on the near face and say where the energy of the induced current comes from.",
+      "steps": [
+        "South-pole flux through the coil is increasing.",
+        "Lenz's law opposes that increase.",
+        "The near face becomes a south pole and repels the magnet.",
+        "The hand pushing the magnet does extra work against that repulsion.",
+        "That work is the energy dissipated by the induced current."
+      ],
+      "answer": "A south face. The energy comes from the work done pushing the magnet."
+    }
+  ]
+}

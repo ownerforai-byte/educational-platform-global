@@ -1,0 +1,205 @@
+{
+  "title": "Biot-Savart Law",
+  "unitSlug": "magnetism",
+  "topicSlug": "biot-savart-law",
+  "topicTitle": "Biot-Savart Law",
+  "relevance": 100,
+  "notes": [
+    "The Biot–Savart law gives the magnetic field due to a tiny current element: dB = (μ0 / 4π) I dl sinθ / r^2. The direction is perpendicular to the element and to the line from the element to the point.",
+    "A long straight wire is the integral of that law, and the result is B = μ0 I /(2π r). The field circles the wire, given by the right-hand grip.",
+    "At the centre of a single circular loop the result is B = μ0 I /(2 R), along the axis. A coil of N turns multiplies this by N if the turns are together.",
+    "On the axis of a loop, off centre, the field is along the axis and weaker. The perpendicular components from opposite elements cancel.",
+    "μ0 / 4π is 10^−7, and μ0 is 4π × 10^−7. Using the wrong one is the usual numerical slip.",
+    "The law is the magnetic analogue of Coulomb's law for a current element. It is the starting point. Ampere's law is the shortcut when symmetry is high."
+  ],
+  "confusion": [
+    "❌ 'Biot-Savart law gives the total magnetic field directly.' ✅ It gives the *contribution* dB from a tiny element dl; the total field requires integration over the entire conductor.",
+    "❌ 'The magnetic field is parallel to the current element.' ✅ dB is *perpendicular* to both dl and r̂ (given by the cross product dl × r̂).",
+    "❌ 'Biot-Savart law applies to moving charges but not currents.' ✅ A current is just moving charges; the law applies to *both* — for a charge: dB = (μ₀/4π)·(qv×r̂)/r².",
+    "The straight-wire field is not μ0 I /(2R). That is the loop centre.",
+    "The field circles a straight wire. It is not radial.",
+    "sinθ is zero for a point on the line of the element.",
+    "μ0 and μ0/4π are different."
+  ],
+  "practice": [
+    "Solve at least 5 problems on biot-savart law from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding biot-savart law builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of biot-savart law span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "magnetism",
+  "motionGraphics": "magnetism",
+  "examples": [
+    "Example 2: Practical demonstration of Biot-Savart Law concepts",
+    "Example 4: Diagram-based question on Biot-Savart Law",
+    "Example 5: Application in daily life involving Biot-Savart Law"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Biot-Savart Law with suitable example.",
+    "Q2. Solve problems related to Biot-Savart Law.",
+    "Q3. Differentiate between various aspects of Biot-Savart Law.",
+    "Q4. Derive the key formula related to Biot-Savart Law.",
+    "Q5. What are the applications of Biot-Savart Law?"
+  ],
+  "formulas": [
+    "Key Formula 2: Mathematical expression of Biot-Savart Law",
+    "Key Formula 3: Application formula for Biot-Savart Law",
+    "Key Formula 4: Derivation result for Biot-Savart Law",
+    "Key Formula 5: Important relation in Biot-Savart Law"
+  ],
+  "keyPoints": [
+    "Key Point 2: Essential theorem or principle related to Biot-Savart Law",
+    "Key Point 3: Important condition or constraint for Biot-Savart Law",
+    "Key Point 4: Common applications of Biot-Savart Law",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Biot-Savart Law is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Biot-Savart Law applies",
+    "Note 2: Biot-Savart Law connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Biot-Savart Law",
+    "Note 4: Remember the units and dimensions involved in Biot-Savart Law",
+    "Note 5: Biot-Savart Law frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "The Biot–Savart law gives the magnetic field due to a tiny current element: dB = (μ0 / 4π) I dl sinθ / r^2. The direction is perpendicular to the element and to the line from the element to the point.",
+    "A long straight wire is the integral of that law, and the result is B = μ0 I /(2π r). The field circles the wire, given by the right-hand grip.",
+    "At the centre of a single circular loop the result is B = μ0 I /(2 R), along the axis. A coil of N turns multiplies this by N if the turns are together."
+  ],
+  "importantNotes": [
+    "Note 1: Biot-Savart Law is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Biot-Savart Law",
+    "Note 3: Biot-Savart Law has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Biot-Savart Law",
+    "Note 5: Cross-check your answers using alternative methods for Biot-Savart Law"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Biot-Savart Law formula",
+    "Trick 2: Elimination technique for Biot-Savart Law MCQs",
+    "Trick 3: Dimensional analysis shortcut for Biot-Savart Law",
+    "Trick 4: Memory aid for Biot-Savart Law formulas",
+    "Trick 5: Time-saving approach for Biot-Savart Law problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Biot-Savart Law",
+    "Exam Tip 2: Practice previous year questions on Biot-Savart Law",
+    "Exam Tip 4: Learn the derivations for Biot-Savart Law thoroughly",
+    "Exam Tip 5: Review common mistakes related to Biot-Savart Law"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Biot-Savart Law is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Biot-Savart Law, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Biot-Savart Law?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Biot-Savart Law is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Biot-Savart Law",
+    "Concept 2: Key theorem or principle in Biot-Savart Law",
+    "Concept 3: Important application area of Biot-Savart Law",
+    "Concept 4: Fundamental relationship in Biot-Savart Law",
+    "Concept 5: Connection between Biot-Savart Law and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Biot-Savart Law",
+    "Task 2: Derive the main formula for Biot-Savart Law",
+    "Task 3: Create a concept map for Biot-Savart Law",
+    "Task 4: Practice previous year exam questions on Biot-Savart Law",
+    "Task 5: Explain Biot-Savart Law to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Beside a long straight wire, B is",
+      "options": [
+        "μ0 I /(2π r)",
+        "μ0 I /(2R)",
+        "Zero",
+        "I r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the centre of one loop, B is",
+      "options": [
+        "μ0 I /(2R)",
+        "μ0 I /(2π r) with r the distance from a wire",
+        "I R",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The field of a straight wire",
+      "options": [
+        "Radiates outward like a charge",
+        "Forms circles around the wire",
+        "Is along the wire",
+        "Is a scalar"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "μ0/4π equals",
+      "options": [
+        "10^−7",
+        "10^7",
+        "1",
+        "The ampere"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find B at 0.10 m from a long straight wire carrying 5.0 A. Use μ0 / 2π = 2.0 × 10^−7.",
+      "steps": [
+        "B = (μ0 / 2π) I / r.",
+        "I / r = 5.0 / 0.10 = 50.",
+        "B = 2.0 × 10^−7 × 50 = 1.0 × 10^−5 T.",
+        "The direction is a circle around the wire.",
+        "This is not the loop-centre formula."
+      ],
+      "answer": "1.0 × 10^−5 T, circling the wire."
+    }
+  ]
+}

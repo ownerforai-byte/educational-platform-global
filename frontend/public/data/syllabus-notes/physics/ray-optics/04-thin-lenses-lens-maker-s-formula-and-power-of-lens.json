@@ -1,0 +1,195 @@
+{
+  "title": "Thin lenses — lens maker's formula and power of lens",
+  "unitSlug": "ray-optics",
+  "topicSlug": "thin-lenses-lens-maker-s-formula-and-power-of-lens",
+  "topicTitle": "Thin lenses — lens maker's formula and power of lens",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "A thin convex lens is thicker in the middle and converges parallel rays to a real focus. A concave lens is thinner in the middle and diverges them. In the Cartesian convention a convex lens in air has positive f.",
+    "The lens-maker formula is 1/f = (μ − 1) (1/R1 − 1/R2). The signs of the radii follow the same convention: a surface whose centre is to the right of the surface has a positive radius when light travels to the right.",
+    "For a symmetric double-convex lens, R1 is positive and R2 is negative, so the two terms add. A higher index or a tighter curve means a shorter focal length.",
+    "The power is P = 1/f with f in metres. The unit is the dioptre. A lens of f = 0.25 m has power 4 D. Two thin lenses in contact have powers that add.",
+    "The thin-lens equation is 1/v − 1/u = 1/f. A real object has negative u. A real image on the far side has positive v.",
+    "The formula assumes a thin lens and paraxial rays. A thick lens or a ray far from the axis needs a more careful treatment, and the simple power is then only a start."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+    "Power uses metres, not centimetres.",
+    "R2 for the second convex surface is negative in this convention.",
+    "A concave lens has negative power.",
+    "The lens formula is 1/v − 1/u, not the mirror's plus sign."
+  ],
+  "bounds": [
+    "Covers only: thin lenses — lens maker's formula, power of lens (within Ray Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+  ],
+  "practice": [
+    "Write 1/f = (μ − 1) (1/R1 − 1/R2) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.",
+    "Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).",
+    "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+  ],
+  "examples": [
+    "A thin convex lens is thicker in the middle and converges parallel rays to a real focus. A concave lens is thinner in the middle and diverges them. In the Cartesian convention a convex lens in air has positive f.",
+    "The lens-maker formula is 1/f = (μ − 1) (1/R1 − 1/R2). The signs of the radii follow the same convention: a surface whose centre is to the right of the surface has a positive radius when light travels to the right.",
+    "A symmetric double-convex lens has μ = 1.50 and both radii of magnitude 20 cm. Find f and the power."
+  ],
+  "practiceQuestions": [
+    "Write the lens-maker formula.",
+    "What is the unit of power?",
+    "What is the sign of f for a convex lens in air?"
+  ],
+  "formulas": [
+    "1/f = (μ−1)(1/R₁ − 1/R₂)",
+    "P = 1/f",
+    "n = sin((A+D)/2)/sin(A/2)"
+  ],
+  "numericals": [
+    "A symmetric double-convex lens has μ = 1.50 and both radii of magnitude 20 cm. Find f and the power."
+  ],
+  "keyPoints": [
+    "A convex lens has positive power.",
+    "The lens-maker formula uses both radii.",
+    "Power in dioptres needs f in metres.",
+    "A shorter focal length is a stronger lens."
+  ],
+  "summary": "The lens-maker formula builds 1/f from the index and the two radii. A symmetric convex lens of index 1.50 and radii 20 cm has f = 20 cm. Power is 1/f in metres, so that lens is 5.0 D. The imaging equation is 1/v − 1/u = 1/f.",
+  "mcqs": [
+    {
+      "question": "The lens-maker formula is",
+      "options": [
+        "1/f = (μ−1)(1/R1−1/R2)",
+        "f = μ R",
+        "P = f",
+        "1/v + 1/u = 1/f"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Power in dioptres uses f in",
+      "options": [
+        "Centimetres",
+        "Metres",
+        "Millimetres",
+        "Dioptres already"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A convex lens in air has",
+      "options": [
+        "Positive f",
+        "Negative f",
+        "Zero power",
+        "No radii"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The thin-lens equation is",
+      "options": [
+        "1/v − 1/u = 1/f",
+        "1/v + 1/u = 1/f",
+        "v = u",
+        "P = R"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "A thin convex lens is thicker in the middle and converges parallel rays to a real focus. A concave lens is thinner in the middle and diverges them. In the Cartesian convention a convex lens in air has positive f.",
+    "The lens-maker formula is 1/f = (μ − 1) (1/R1 − 1/R2). The signs of the radii follow the same convention: a surface whose centre is to the right of the surface has a positive radius when light travels to the right.",
+    "For a symmetric double-convex lens, R1 is positive and R2 is negative, so the two terms add. A higher index or a tighter curve means a shorter focal length."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "P = 1/f in metres.",
+    "Symmetric convex: the two radii add in the bracket."
+  ],
+  "specialNotes": [
+    "A 2 D lens has f = 0.50 m.",
+    "μ is the index of the glass relative to the surrounding medium."
+  ],
+  "importantNotes": [
+    "Convert f to metres before calling the result dioptres.",
+    "Draw the sign of each radius."
+  ],
+  "importantConcepts": [
+    "Lens maker",
+    "Dioptre",
+    "Convex and concave",
+    "Thin-lens equation"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The lens-maker formula is",
+      "options": [
+        "1/f = (μ−1)(1/R1−1/R2)",
+        "f = μ R",
+        "P = f",
+        "1/v + 1/u = 1/f"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Power in dioptres uses f in",
+      "options": [
+        "Centimetres",
+        "Metres",
+        "Millimetres",
+        "Dioptres already"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A convex lens in air has",
+      "options": [
+        "Positive f",
+        "Negative f",
+        "Zero power",
+        "No radii"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The thin-lens equation is",
+      "options": [
+        "1/v − 1/u = 1/f",
+        "1/v + 1/u = 1/f",
+        "v = u",
+        "P = R"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A symmetric double-convex lens has μ = 1.50 and both radii of magnitude 20 cm. Find f and the power.",
+      "steps": [
+        "R1 = +20 cm and R2 = −20 cm.",
+        "1/R1 − 1/R2 = 1/20 − 1/(−20) = 1/10 cm^−1.",
+        "1/f = (1.50 − 1) × 1/10 = 0.050 cm^−1.",
+        "f = 20 cm = 0.20 m.",
+        "P = 1/0.20 = 5.0 D."
+      ],
+      "answer": "f = 20 cm, power 5.0 D."
+    }
+  ]
+}

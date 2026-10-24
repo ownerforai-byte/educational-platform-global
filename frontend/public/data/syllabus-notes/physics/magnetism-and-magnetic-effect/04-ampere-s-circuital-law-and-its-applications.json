@@ -1,0 +1,195 @@
+{
+  "title": "Ampere's circuital law and its applications",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "topicSlug": "ampere-s-circuital-law-and-its-applications",
+  "topicTitle": "Ampere's circuital law and its applications",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "The applications are the reason the law is taught. You invent an Amperian path that follows the suspected field, write B times the length if B is constant, and set that equal to μ0 I_enclosed.",
+    "Outside a long straight wire the path is a circle and the whole current is enclosed. Inside a uniform cylindrical wire, at radius r smaller than the wire, only the current in the inner cross-section is enclosed, so I_enc = I (r^2/R^2).",
+    "That inner result makes B proportional to r inside the wire and proportional to 1/r outside. The two formulas meet at the surface.",
+    "A toroid uses a circular path inside the doughnut. The enclosed current is N I if the path threads all N turns. The circumference 2π r then gives B = μ0 N I /(2π r).",
+    "A path that threads no current, such as a circle outside a toroid, gives zero line integral. With the symmetry, B itself is zero there in the ideal case.",
+    "This is a different use from the solenoid card: here the worked case is the inside of a thick wire, not the solenoid interior."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Inside a thick wire the enclosed current is not the total current.",
+    "The toroid uses total turns N, and the solenoid card used n per metre.",
+    "A path with zero enclosed current is not automatically a zero field unless symmetry helps.",
+    "r inside the wire is not the same formula as r outside."
+  ],
+  "bounds": [
+    "Covers only: ampere's circuital law, its applications (within Magnetism and Magnetic Effect of Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Write Wire: B × 2πr = μ0 I and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Ampere's circuital law and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Wire: B × 2πr = μ0 I",
+    "Toroid: B = μ0 N I /(2π r)"
+  ],
+  "examples": [
+    "The applications are the reason the law is taught. You invent an Amperian path that follows the suspected field, write B times the length if B is constant, and set that equal to μ0 I_enclosed.",
+    "Outside a long straight wire the path is a circle and the whole current is enclosed. Inside a uniform cylindrical wire, at radius r smaller than the wire, only the current in the inner cross-section is enclosed, so I_enc = I (r^2/R^2).",
+    "A uniform long wire of radius 2.0 mm carries 8.0 A. Find B at 1.0 mm from the axis. Use μ0 / 2π = 2.0 × 10^−7."
+  ],
+  "practiceQuestions": [
+    "What current is enclosed inside a uniform wire?",
+    "Write the toroid field.",
+    "Where do the inside and outside wire formulas agree?"
+  ],
+  "formulas": [
+    "Governing equation for \"Ampere's circuital law and its applications\" — state with units, then use in one numerical.",
+    "Wire: B × 2πr = μ0 I",
+    "Toroid: B = μ0 N I /(2π r)"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Ampere's circuital law and its applications\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "Same law, applied.",
+    "The path is chosen, not measured.",
+    "A thick wire needs the current inside radius r only.",
+    "The toroid is the curved solenoid."
+  ],
+  "summary": "Ampere's law is applied by a path that matches the symmetry. Inside a uniform wire only the inner share of the current counts and B grows with r. A toroid's field is μ0 N I over the circular circumference, and an ideal toroid has no field on a path that encloses nothing.",
+  "mcqs": [
+    {
+      "question": "Inside a uniform long wire, B is proportional to",
+      "options": [
+        "1/r",
+        "r",
+        "r^2 only as B itself",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A toroid's inner field is",
+      "options": [
+        "μ0 N I /(2π r)",
+        "μ0 n I with n per metre of a straight solenoid",
+        "Zero",
+        "I r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the surface of the wire the two expressions",
+      "options": [
+        "Disagree",
+        "Agree",
+        "Become infinite",
+        "Lose μ0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An Amperian circle outside a toroid encloses",
+      "options": [
+        "N I",
+        "No net current",
+        "One turn",
+        "The radius"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "The applications are the reason the law is taught. You invent an Amperian path that follows the suspected field, write B times the length if B is constant, and set that equal to μ0 I_enclosed.",
+    "Outside a long straight wire the path is a circle and the whole current is enclosed. Inside a uniform cylindrical wire, at radius r smaller than the wire, only the current in the inner cross-section is enclosed, so I_enc = I (r^2/R^2).",
+    "That inner result makes B proportional to r inside the wire and proportional to 1/r outside. The two formulas meet at the surface."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Inside a uniform wire, B ∝ r.",
+    "Toroid: μ0 N I over the circumference."
+  ],
+  "specialNotes": [
+    "At the surface both wire formulas give μ0 I /(2π R).",
+    "A tightly wound toroid has little field outside."
+  ],
+  "importantNotes": [
+    "State inside or outside before choosing I_enc.",
+    "Use N for the toroid and n for the solenoid."
+  ],
+  "importantConcepts": [
+    "Field inside a wire",
+    "Toroid",
+    "Amperian path",
+    "Matching at the surface"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Inside a uniform long wire, B is proportional to",
+      "options": [
+        "1/r",
+        "r",
+        "r^2 only as B itself",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A toroid's inner field is",
+      "options": [
+        "μ0 N I /(2π r)",
+        "μ0 n I with n per metre of a straight solenoid",
+        "Zero",
+        "I r"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the surface of the wire the two expressions",
+      "options": [
+        "Disagree",
+        "Agree",
+        "Become infinite",
+        "Lose μ0"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An Amperian circle outside a toroid encloses",
+      "options": [
+        "N I",
+        "No net current",
+        "One turn",
+        "The radius"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A uniform long wire of radius 2.0 mm carries 8.0 A. Find B at 1.0 mm from the axis. Use μ0 / 2π = 2.0 × 10^−7.",
+      "steps": [
+        "The point is inside, so I_enc = I (r^2/R^2).",
+        "r/R = 1/2, so (r/R)^2 = 1/4 and I_enc = 2.0 A.",
+        "B = (μ0 / 2π) I_enc / r.",
+        "r = 1.0 × 10^−3 m.",
+        "B = 2.0 × 10^−7 × 2.0 / 1.0 × 10^−3 = 4.0 × 10^−4 T."
+      ],
+      "answer": "4.0 × 10^−4 T."
+    }
+  ]
+}

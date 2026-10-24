@@ -6,23 +6,176 @@
   "relevance": 100,
   "notes": [
     "The law assumes (Î¸ âˆ’ Î¸â‚€) is small â€” typically within about 30Â°C of the surroundings â€” and that cooling happens mainly by natural convection and radiation, not forced convection",
-    "For large differences, radiative loss actually follows the Stefanâ€“Boltzmann law, where the rate depends on (Î¸â´ âˆ’ Î¸â‚€â´), not simply (Î¸ âˆ’ Î¸â‚€), so the linear approximation breaks down"
+    "For large differences, radiative loss actually follows the Stefanâ€“Boltzmann law, where the rate depends on (Î¸â´ âˆ’ Î¸â‚€â´), not simply (Î¸ âˆ’ Î¸â‚€), so the linear approximation breaks down",
+    "Newton's law replaces the heat-loss rate by K times the excess temperature. That linear replacement is fitted to natural convection and to radiation only when the excess is small, typically within about 30°C of the room.",
+    "The Stefan–Boltzmann law says a surface radiates power proportional to the fourth power of its absolute temperature. The net radiative loss between a body and the room is proportional to θ^4 − θ0^4, with temperatures in kelvin.",
+    "θ^4 − θ0^4 factors as (θ − θ0) times a polynomial in the temperatures. When θ is close to θ0 that polynomial is nearly constant, and the loss looks linear. When θ is far above θ0 the polynomial changes and the linear law fails.",
+    "A red-hot body also drives strong convection currents, so the surface factor K is no longer the constant assumed in the derivation. The rate is then not proportional to the excess alone."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A large excess does not make the linear law more accurate.",
+    "The fourth-power law uses kelvin, not a Celsius number inside the power.",
+    "K is not a universal constant of nature.",
+    "The failure is about the rate, not about the direction of heat flow."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write Newton: rate ∝ (θ − θ0) and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "Newton: rate ∝ (θ − θ0)",
+    "Stefan–Boltzmann net power ∝ (θ^4 − θ0^4)"
   ],
   "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  "motionGraphics": "quantity-of-heat",
+  "keyPoints": [
+    "The linear law needs a small excess.",
+    "About 30°C is the usual classroom limit.",
+    "Radiation goes as the fourth power.",
+    "Forced convection is outside the law."
+  ],
+  "importantStatements": [
+    "Newton's law replaces the heat-loss rate by K times the excess temperature. That linear replacement is fitted to natural convection and to radiation only when the excess is small, typically within about 30°C of the room.",
+    "The Stefan–Boltzmann law says a surface radiates power proportional to the fourth power of its absolute temperature. The net radiative loss between a body and the room is proportional to θ^4 − θ0^4, with temperatures in kelvin.",
+    "θ^4 − θ0^4 factors as (θ − θ0) times a polynomial in the temperatures. When θ is close to θ0 that polynomial is nearly constant, and the loss looks linear. When θ is far above θ0 the polynomial changes and the linear law fails."
+  ],
+  "examples": [
+    "Newton's law replaces the heat-loss rate by K times the excess temperature. That linear replacement is fitted to natural convection and to radiation only when the excess is small, typically within about 30°C of the room.",
+    "The Stefan–Boltzmann law says a surface radiates power proportional to the fourth power of its absolute temperature. The net radiative loss between a body and the room is proportional to θ^4 − θ0^4, with temperatures in kelvin.",
+    "The room is at 300 K. Compare the factor (θ^4 − θ0^4)/(θ − θ0) at θ = 310 K and at θ = 600 K, and say which case can look linear."
+  ],
+  "formulas": [
+    "Newton: rate ∝ (θ − θ0)",
+    "Stefan–Boltzmann net power ∝ (θ^4 − θ0^4)"
+  ],
+  "practiceQuestions": [
+    "When is the linear cooling law acceptable?",
+    "What replaces it for radiation at a large excess?",
+    "Why does a red-hot body also break the constant-K assumption?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Small excess: linear. Large excess: fourth power.",
+    "Convert to kelvin before raising to the fourth power."
+  ],
+  "specialNotes": [
+    "30°C is a guide, not a sharp physical wall.",
+    "A fan is forced convection and is excluded."
+  ],
+  "importantNotes": [
+    "Say 'excess temperature' rather than the Celsius reading alone.",
+    "Quote the Stefan–Boltzmann difference when you reject the linear law."
+  ],
+  "importantConcepts": [
+    "Small-excess limit",
+    "Fourth-power radiation",
+    "Constant K",
+    "Natural convection"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The linear cooling law fails when",
+      "options": [
+        "The excess is very small",
+        "The excess is large",
+        "The room temperature is constant",
+        "The body is a liquid"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Net radiation follows",
+      "options": [
+        "θ − θ0 for every temperature",
+        "θ^4 − θ0^4",
+        "The mass only",
+        "A sine of the excess"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "K stays constant only if",
+      "options": [
+        "The surface and the kind of convection stay the same",
+        "The body is red-hot",
+        "The mass changes",
+        "The unit changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A classroom limit often quoted for the excess is about",
+      "options": [
+        "1 K",
+        "30°C",
+        "1000°C",
+        "Absolute zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The linear cooling law fails when",
+      "options": [
+        "The excess is very small",
+        "The excess is large",
+        "The room temperature is constant",
+        "The body is a liquid"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Net radiation follows",
+      "options": [
+        "θ − θ0 for every temperature",
+        "θ^4 − θ0^4",
+        "The mass only",
+        "A sine of the excess"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "K stays constant only if",
+      "options": [
+        "The surface and the kind of convection stay the same",
+        "The body is red-hot",
+        "The mass changes",
+        "The unit changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A classroom limit often quoted for the excess is about",
+      "options": [
+        "1 K",
+        "30°C",
+        "1000°C",
+        "Absolute zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "The room is at 300 K. Compare the factor (θ^4 − θ0^4)/(θ − θ0) at θ = 310 K and at θ = 600 K, and say which case can look linear.",
+      "steps": [
+        "At 310 K the excess is 10 K. The fourth-power difference is 310^4 − 300^4.",
+        "310^2 = 96100 and 300^2 = 90000. A short calculation gives 310^4 − 300^4 ≈ 1.10 × 10^9.",
+        "Divide by the excess 10: the factor is about 1.10 × 10^8.",
+        "At 600 K the excess is 300 K and 600^4 − 300^4 = (1.296 − 0.0081) × 10^11 = 1.288 × 10^11. Divided by 300 this factor is about 4.3 × 10^8.",
+        "The factor has changed by several times, so only the 10 K excess behaves like a constant times (θ − θ0)."
+      ],
+      "answer": "Only the small excess, 310 K against 300 K, keeps an almost constant factor and can use the linear law."
+    }
+  ],
+  "summary": "Newton's law is a linear stand-in for heat loss when the body is only a little hotter than the room. At a large excess the radiative loss follows θ^4 − θ0^4 and the convection itself changes, so the linear law is not used."
 }

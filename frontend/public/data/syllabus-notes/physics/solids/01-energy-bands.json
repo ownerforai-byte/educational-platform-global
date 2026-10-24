@@ -9,11 +9,16 @@
     "The valence band contains bonding electrons; the conduction band contains mobile carriers. The gap Eg=Ec−Ev and the band filling help explain conductivity.",
     "Metals have partially filled bands or overlapping bands. Insulators have a large gap and very few room-temperature carriers. Semiconductors have a smaller gap, so thermal or optical excitation can promote electrons into the conduction band.",
     "In an intrinsic semiconductor, promoting an electron leaves a hole in the valence band. Both the electron and the hole can carry current; heating can therefore increase carrier concentration.",
-    "A photon can excite an electron across the gap if hν≥Eg. This underlies photoconductivity and semiconductor photodetectors."
+    "A photon can excite an electron across the gap if hν≥Eg. This underlies photoconductivity and semiconductor photodetectors.",
+    "The valence band is built from the outer occupied levels. In an insulator at low temperature it is full, and a full band carries no current because every electron that could move is matched by one moving the other way. The conduction band is the next higher band. The gap between them is the energy an electron must gain before it can drift."
   ],
   "confusion": [
     "A band gap is a forbidden energy range, not a physical gap in the material.",
-    "Band gap alone does not determine conductivity without carrier concentration and mobility."
+    "Band gap alone does not determine conductivity without carrier concentration and mobility.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Compare band diagrams for metal, semiconductor and insulator.",
@@ -27,7 +32,10 @@
   ],
   "examples": [
     "For Eg=2.0 eV, λthreshold≈1240/2.0=620 nm.",
-    "Thermal promotion across the gap creates one conduction electron and one valence-band hole."
+    "Thermal promotion across the gap creates one conduction electron and one valence-band hole.",
+    "The valence band is built from the outer occupied levels. In an insulator at low temperature it is full, and a full band carries no current because every electron that could move is matched by one moving the other way. The conduction band is the next higher band. The gap between them is the energy an electron must gain before it can drift.",
+    "The working relations are The valence band is full in an insulator at zero temperature and The conduction band is the next band, where electrons can drift. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An insulator gap is 6 eV and a semiconductor gap is 1 eV. Which needs less energy to free a carrier, and by what factor?"
   ],
   "practiceQuestions": [
     "Compare band diagrams for metal, semiconductor and insulator.",
@@ -41,7 +49,11 @@
   "keyPoints": [
     "Allowed bands and forbidden gaps arise in the periodic solid.",
     "Carrier concentration and mobility jointly determine conductivity.",
-    "An electron promoted to conduction leaves a hole."
+    "An electron promoted to conduction leaves a hole.",
+    "The valence band is full in an insulator at zero temperature",
+    "The conduction band is the next band, where electrons can drift",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Band theory explains conductivity through allowed energy bands, gaps and carrier availability. Thermal and optical excitation can create mobile electron–hole pairs.",
   "specialNotes": [
@@ -70,7 +82,11 @@
   "importantConcepts": [
     "Allowed bands and forbidden gaps arise in the periodic solid.",
     "Carrier concentration and mobility jointly determine conductivity.",
-    "An electron promoted to conduction leaves a hole."
+    "An electron promoted to conduction leaves a hole.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Compare band diagrams for metal, semiconductor and insulator.",
@@ -81,5 +97,102 @@
   "tabGroup": "energy-bands-in-solids",
   "animation3D": "physics",
   "motionGraphics": "physics",
-  "visualType": "energy-bands-semiconductor"
+  "visualType": "energy-bands-semiconductor",
+  "mcs": [
+    {
+      "question": "A full band carries",
+      "options": [
+        "A large current",
+        "No current",
+        "The gap",
+        "Protons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The conduction band is",
+      "options": [
+        "The next band, where freed electrons can drift",
+        "Always full",
+        "The nucleus",
+        "A hole by itself"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Compared with a 6 eV gap, a 1 eV gap needs",
+      "options": [
+        "More energy",
+        "Less energy, by about six times",
+        "The same energy",
+        "No energy difference"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A metal differs because",
+      "options": [
+        "Its highest band is partly filled or the bands overlap",
+        "Its gap is 6 eV",
+        "It has no electrons",
+        "It is an insulator at every temperature"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A full band carries",
+      "options": [
+        "A large current",
+        "No current",
+        "The gap",
+        "Protons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The conduction band is",
+      "options": [
+        "The next band, where freed electrons can drift",
+        "Always full",
+        "The nucleus",
+        "A hole by itself"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Compared with a 6 eV gap, a 1 eV gap needs",
+      "options": [
+        "More energy",
+        "Less energy, by about six times",
+        "The same energy",
+        "No energy difference"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A metal differs because",
+      "options": [
+        "Its highest band is partly filled or the bands overlap",
+        "Its gap is 6 eV",
+        "It has no electrons",
+        "It is an insulator at every temperature"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An insulator gap is 6 eV and a semiconductor gap is 1 eV. Which needs less energy to free a carrier, and by what factor?",
+      "steps": [
+        "The semiconductor gap is smaller.",
+        "6 / 1 = 6.",
+        "The insulator needs about six times as much energy to lift an electron.",
+        "At room temperature the semiconductor therefore has far more thermally freed carriers.",
+        "Both still have a gap, unlike a metal."
+      ],
+      "answer": "The semiconductor, by a factor of about 6."
+    }
+  ]
 }

@@ -9,11 +9,16 @@
     "Linear magnification m=hi/ho=v/u in the Cartesian lens convention compares image and object heights. Its magnitude gives size ratio; its sign indicates orientation.",
     "Angular magnification M=β/α compares the angle subtended at the eye with the instrument to that without it. For a simple magnifier with near point D, M≈1+D/f; for relaxed viewing at infinity, M≈D/f.",
     "Worked example: a magnifier with f=5.0 cm used at the conventional near point D=25 cm gives M≈1+25/5=6. A shorter focal length gives greater angular magnification.",
-    "The near point is a convention (often 25 cm for a normal eye). Real comfortable viewing distance varies; a magnifier also has a limited field of view and depth of focus."
+    "The near point is a convention (often 25 cm for a normal eye). Real comfortable viewing distance varies; a magnifier also has a limited field of view and depth of focus.",
+    "Angular magnification compares the angle subtended by the image with the angle subtended by the object at the near point. For a relaxed eye the object sits at the focus of the magnifier and the magnification is about D/f. A shorter focal length is a stronger magnifier."
   ],
   "confusion": [
     "Near-point formulas assume an ideal thin magnifier and paraxial rays.",
-    "Do not use centimetres for one distance and metres for the other."
+    "Do not use centimetres for one distance and metres for the other.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Estimate relaxed-eye magnification for f=4 cm and D=25 cm.",
@@ -29,7 +34,10 @@
   "motionGraphics": "lenses",
   "examples": [
     "f=5 cm, D=25 cm gives near-point M≈6.",
-    "Image height 8 mm from an object 2 mm high gives |m|=4."
+    "Image height 8 mm from an object 2 mm high gives |m|=4.",
+    "Angular magnification compares the angle subtended by the image with the angle subtended by the object at the near point. For a relaxed eye the object sits at the focus of the magnifier and the magnification is about D/f. A shorter focal length is a stronger magnifier.",
+    "The working relations are Angular magnification of a simple magnifier ≈ D/f for a relaxed eye and D ≈ 25 cm. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A magnifier has f = 5.0 cm and D = 25 cm. Find the relaxed-eye magnification."
   ],
   "practiceQuestions": [
     "Estimate relaxed-eye magnification for f=4 cm and D=25 cm.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Linear magnification compares sizes; angular magnification compares visual angles.",
     "Use consistent units for D and f.",
-    "The stated near point is conventional, not universal."
+    "The stated near point is conventional, not universal.",
+    "Angular magnification of a simple magnifier ≈ D/f for a relaxed eye",
+    "D ≈ 25 cm",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "A lens magnifier increases the visual angle of a nearby object. Distinguish angular magnification from image-size magnification, and state the viewing convention used.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Linear magnification compares sizes; angular magnification compares visual angles.",
     "Use consistent units for D and f.",
-    "The stated near point is conventional, not universal."
+    "The stated near point is conventional, not universal.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Estimate relaxed-eye magnification for f=4 cm and D=25 cm.",
@@ -84,5 +100,102 @@
     "**Sign Convention for Radii:** Using the Cartesian sign convention (light travels left to right): $R$ is positive if the center of curvature is to the *right* of the surface (convex toward incident light), negative if to the *left* (concave). This is opposite to some older conventions.",
     "**Material and Medium Dependence:** The formula uses relative refractive index $n = n_{lens}/n_{medium}$. For a lens in air, $n_{medium} \\approx 1$. If immersed in water ($n \\approx 1.33$), the focal length increases by factor $n_{lens}/n_{water}$ relative to air."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "A relaxed magnifier has m about",
+      "options": [
+        "D/f",
+        "f/D",
+        "f_o + f_e",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "D is about",
+      "options": [
+        "25 cm",
+        "25 m",
+        "The focal length",
+        "Infinity"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A shorter f gives",
+      "options": [
+        "A weaker magnifier",
+        "A stronger magnifier",
+        "No image",
+        "A telescope"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The near-point formula is about",
+      "options": [
+        "1 + D/f",
+        "D/f only, with no other form",
+        "f/D",
+        "Zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A relaxed magnifier has m about",
+      "options": [
+        "D/f",
+        "f/D",
+        "f_o + f_e",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "D is about",
+      "options": [
+        "25 cm",
+        "25 m",
+        "The focal length",
+        "Infinity"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A shorter f gives",
+      "options": [
+        "A weaker magnifier",
+        "A stronger magnifier",
+        "No image",
+        "A telescope"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The near-point formula is about",
+      "options": [
+        "1 + D/f",
+        "D/f only, with no other form",
+        "f/D",
+        "Zero"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A magnifier has f = 5.0 cm and D = 25 cm. Find the relaxed-eye magnification.",
+      "steps": [
+        "m ≈ D/f.",
+        "m = 25 / 5.0 = 5.0.",
+        "The image is at infinity and the eye is relaxed.",
+        "If the image were at the near point, m would be about 1 + D/f = 6.",
+        "Do not use the telescope formula f_o/f_e here."
+      ],
+      "answer": "5.0."
+    }
+  ]
 }

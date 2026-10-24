@@ -5,14 +5,21 @@
   "topicTitle": "Kirchhoff's Laws",
   "relevance": 100,
   "notes": [
-    "**Kirchhoff's Laws:** This topic covers the fundamental concepts of kirchhoff's laws in the physics curriculum.",
-    "Understanding kirchhoff's laws is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to kirchhoff's laws should be memorized and practiced regularly."
+    "Kirchhoff's first law, the junction rule, says that the sum of currents entering a junction equals the sum leaving it. Charge does not pile up at a steady junction, so Σ I = 0 if currents in are positive and currents out are negative.",
+    "Kirchhoff's second law, the loop rule, says that the algebraic sum of potential changes around a closed loop is zero. A walk that returns to the start cannot have gained energy.",
+    "A resistor drop is −IR when you walk with the current and +IR when you walk against it. A battery rise is +E when you walk from the negative plate to the positive plate inside the cell.",
+    "Unknown currents are given arrows before the equations. A negative answer means the real current is opposite to the arrow. You do not redraw and start again.",
+    "The number of independent equations matches the number of unknown currents. A junction equation and one or two loop equations are the usual set.",
+    "Internal resistance r is written as an extra resistor in series with the emf. The terminal voltage is then E − I r when the cell is supplying current."
   ],
   "confusion": [
     "❌ 'KCL applies to open circuits.' ✅ KCL (junction rule) applies only at *nodes/junctions* where currents meet; it states ΣI_in = ΣI_out.",
     "❌ 'KVL is valid for any loop including those with capacitors.' ✅ KVL applies to *closed loops*; for capacitors, you must include the potential difference V = q/C across the capacitor.",
-    "❌ 'Sign conventions for KVL don't matter as long as you're consistent.' ✅ While consistency is key, wrong sign conventions will flip *all* your results; the standard rule is: voltage rise = +, voltage drop = − when traversing the loop."
+    "❌ 'Sign conventions for KVL don't matter as long as you're consistent.' ✅ While consistency is key, wrong sign conventions will flip *all* your results; the standard rule is: voltage rise = +, voltage drop = − when traversing the loop.",
+    "The junction law is not about voltages.",
+    "The loop law is not about currents adding to zero.",
+    "A negative current is a direction, not a mistake.",
+    "Walking against the current flips the IR sign."
   ],
   "practice": [
     "Solve at least 5 problems on kirchhoff's laws from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "current-electricity",
   "motionGraphics": "current-electricity",
   "examples": [
-    "Example 1: Real-world application of Kirchhoff's Laws",
     "Example 2: Practical demonstration of Kirchhoff's Laws concepts",
     "Example 4: Diagram-based question on Kirchhoff's Laws",
     "Example 5: Application in daily life involving Kirchhoff's Laws"
@@ -61,11 +67,9 @@
     "Note 5: Kirchhoff's Laws frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Kirchhoff's Laws",
-    "Statement 2: Theorem related to Kirchhoff's Laws",
-    "Statement 3: Condition for Kirchhoff's Laws to be valid",
-    "Statement 4: Principle governing Kirchhoff's Laws",
-    "Statement 5: Corollary or consequence of Kirchhoff's Laws"
+    "Kirchhoff's first law, the junction rule, says that the sum of currents entering a junction equals the sum leaving it. Charge does not pile up at a steady junction, so Σ I = 0 if currents in are positive and currents out are negative.",
+    "Kirchhoff's second law, the loop rule, says that the algebraic sum of potential changes around a closed loop is zero. A walk that returns to the start cannot have gained energy.",
+    "A resistor drop is −IR when you walk with the current and +IR when you walk against it. A battery rise is +E when you walk from the negative plate to the positive plate inside the cell."
   ],
   "importantNotes": [
     "Note 1: Kirchhoff's Laws is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Kirchhoff's Laws",
     "Task 4: Practice previous year exam questions on Kirchhoff's Laws",
     "Task 5: Explain Kirchhoff's Laws to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "The junction rule is",
+      "options": [
+        "Σ I = 0",
+        "Σ V = E R",
+        "R = 0",
+        "P = I^2"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The loop rule is",
+      "options": [
+        "Σ I = 0",
+        "Σ V = 0 around the loop",
+        "V = I only",
+        "Currents never split"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A negative solved current means",
+      "options": [
+        "The resistor broke",
+        "The current is opposite the assumed arrow",
+        "The law failed",
+        "The emf is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Internal resistance is treated as",
+      "options": [
+        "A parallel capacitor",
+        "A series resistor with the cell",
+        "A junction",
+        "Zero always"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A cell of emf 6.0 V and internal resistance 1.0 Ω is connected to a 2.0 Ω resistor. Use the loop rule to find the current.",
+      "steps": [
+        "One loop: +6.0 − I(1.0) − I(2.0) = 0 if you start at the negative plate and walk through the cell first.",
+        "6.0 = I × 3.0.",
+        "I = 2.0 A.",
+        "The terminal voltage is 6.0 − 2.0 × 1.0 = 4.0 V.",
+        "That 4.0 V is also I times the external 2.0 Ω."
+      ],
+      "answer": "2.0 A."
+    }
   ]
 }

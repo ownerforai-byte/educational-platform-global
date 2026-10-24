@@ -42,15 +42,26 @@ describe("normalizeMathDelimiters", () => {
 
   it("repairs repeated command escaping inside math", () => {
     expect(normalizeMathDelimiters("$0^\\\\\\\\circ + \\\\theta$")).toBe(
-      "$0^\\circ + \\\\theta$",
+      "$0^\\circ + \\theta$",
     );
   });
 });
 
 describe("normalizeLatexExpression", () => {
   it("preserves aligned row breaks", () => {
-    const input = "\\begin{aligned}a&=b\\\\c&=d\\end{aligned}";
+    const input = "\\begin{aligned}a&=b\\\\\nc&=d\\end{aligned}";
     expect(normalizeLatexExpression(input)).toBe(input);
+  });
+
+  it("collapses double-escaped commands generically", () => {
+    expect(normalizeLatexExpression("\\\\theta + \\\\sin x = \\\\pm 1")).toBe(
+      "\\theta + \\sin x = \\pm 1",
+    );
+    expect(normalizeLatexExpression("\\\\vec{v} = \\\\hat{x} + \\\\hat{y}")).toBe(
+      "\\vec{v} = \\hat{x} + \\hat{y}",
+    );
+    expect(normalizeLatexExpression("\\\\sum_{i=1}^{n} i^2")).toBe("\\sum_{i=1}^{n} i^2");
+    expect(normalizeLatexExpression("\\\\approx \\\\pi")).toBe("\\approx \\pi");
   });
 });
 

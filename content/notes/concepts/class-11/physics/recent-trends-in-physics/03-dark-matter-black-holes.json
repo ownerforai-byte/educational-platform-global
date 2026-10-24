@@ -9,12 +9,17 @@
     "**Evidence for dark matter.** Galaxy rotation curves stay flat far from the centre (Kepler's law fails), gravitational lensing is stronger than visible mass allows, and the CMB pattern fixes its share of the energy budget.",
     "**Black holes.** Where gravity is so strong that the escape velocity reaches c, nothing — not even light — can leave; the horizon radius is the Schwarzschild radius r_s = 2GM/c².",
     "**Signatures.** A black hole is revealed by its effects: stars orbiting an invisible companion, X-rays from a glowing accretion disc, and gravitational waves from merging black holes (LIGO).",
-    "**Modern imaging.** The Event Horizon Telescope photographed the shadow of M87's central black hole, testing general relativity in the strong-field regime."
+    "**Modern imaging.** The Event Horizon Telescope photographed the shadow of M87's central black hole, testing general relativity in the strong-field regime.",
+    "Dark matter is unseen mass inferred because galaxies rotate too fast in their outer parts for the bright stars to be all the mass. A black hole is a mass so compact that the escape speed at its horizon is the speed of light. Gravitational waves are ripples of spacetime, detected as a tiny stretching and squeezing of a distance."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in dark matter, black holes and gravitational waves.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on dark matter, black holes and gravitational waves from your textbook.",
@@ -30,7 +35,6 @@
   "animation3D": "recent-trends-in-physics",
   "motionGraphics": "recent-trends-in-physics",
   "examples": [
-    "Real-world application of Dark Matter, Black Holes and Gravitational Waves",
     "Practical demonstration of Dark Matter, Black Holes and Gravitational Waves concepts",
     "Diagram-based question on Dark Matter, Black Holes and Gravitational Waves",
     "Application in daily life involving Dark Matter, Black Holes and Gravitational Waves"
@@ -46,7 +50,12 @@
     "Application formula for Dark Matter, Black Holes and Gravitational Waves",
     "Derivation result for Dark Matter, Black Holes and Gravitational Waves"
   ],
-  "keyPoints": [],
+  "keyPoints": [
+    "Galaxy rotation stays fast far from the bright centre",
+    "A black hole's escape speed at the event horizon equals the speed of light",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Dark Matter, Black Holes and Gravitational Waves is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Dark Matter, Black Holes and Gravitational Waves applies",
@@ -56,11 +65,9 @@
     "Note 5: Dark Matter, Black Holes and Gravitational Waves frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Dark Matter, Black Holes and Gravitational Waves",
-    "Statement 2: Theorem related to Dark Matter, Black Holes and Gravitational Waves",
-    "Statement 3: Condition for Dark Matter, Black Holes and Gravitational Waves to be valid",
-    "Statement 4: Principle governing Dark Matter, Black Holes and Gravitational Waves",
-    "Statement 5: Corollary or consequence of Dark Matter, Black Holes and Gravitational Waves"
+    "Dark matter is unseen mass inferred because galaxies rotate too fast in their outer parts for the bright stars to be all the mass. A black hole is a mass so compact that the escape speed at its horizon is the speed of light. Gravitational waves are ripples of spacetime, detected as a tiny stretching and squeezing of a distance.",
+    "The working relations are Galaxy rotation stays fast far from the bright centre and A black hole's escape speed at the event horizon equals the speed of light. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An outer star orbits as if the galaxy's mass inside its orbit is five times the mass of the visible stars inside that orbit. What does that imply? Visible mass alone would give a slower orbit. The observed speed needs about five times that mass."
   ],
   "importantNotes": [
     "Note 1: Dark Matter, Black Holes and Gravitational Waves is based on fundamental principles",
@@ -137,5 +144,60 @@
     "Task 3: Create a concept map for Dark Matter, Black Holes and Gravitational Waves",
     "Task 4: Practice previous year exam questions on Dark Matter, Black Holes and Gravitational Waves",
     "Task 5: Explain Dark Matter, Black Holes and Gravitational Waves to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Flat outer rotation curves suggest",
+      "options": [
+        "Less mass than the starlight",
+        "Extra unseen mass",
+        "No gravity",
+        "A smaller galaxy"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At a black-hole horizon the escape speed is",
+      "options": [
+        "The speed of light",
+        "11 km/s",
+        "Zero",
+        "The orbital speed of the Earth"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Gravitational waves",
+      "options": [
+        "Are sound in air",
+        "Stretch and squeeze distances as they pass",
+        "Are dark matter",
+        "Are the microwave background"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Dark matter is inferred from",
+      "options": [
+        "Its bright colour",
+        "Its gravitational effect",
+        "A thermometer",
+        "The triple point"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An outer star orbits as if the galaxy's mass inside its orbit is five times the mass of the visible stars inside that orbit. What does that imply?",
+      "steps": [
+        "Visible mass alone would give a slower orbit.",
+        "The observed speed needs about five times that mass.",
+        "Most of the mass inside the orbit does not shine.",
+        "That unseen mass is what is meant by dark matter in this argument.",
+        "The argument is dynamical. It does not photograph the dark matter."
+      ],
+      "answer": "About four fifths of the interior mass is unseen."
+    }
   ]
 }

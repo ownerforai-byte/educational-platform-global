@@ -3,8 +3,180 @@
   "notes": [
     "**Q1(b). A vector in x-y plane has a length of 4.5 m and y-component of -2.7 m. What angle does this vector make with the X-axis? Why does this problem have two answers?**\n\n**Answer:** $-37°$ or $-143°$\n\n**Explanation:** Given magnitude $R = 4.5$ and $R_y = -2.7$. Since $\\sin(\\theta) = R_y / R = -2.7 / 4.5 = -0.6$, $\\theta = \\sin^{-1}(-0.6)$. This yields $-37°$ (in the 4th quadrant) or $-143°$ (in the 3rd quadrant). Two angles exist because the x-component could be either positive or negative while maintaining the exact same negative y-component and length layout.",
     "**Q1(c). Under what conditions the resultant of two vectors is zero?**\n\n**Answer:** Equal magnitude and opposite direction (180°)\n\n**Explanation:** The net resultant of two vectors becomes zero if and only if they possess exactly equal scalar magnitudes but point in completely opposite anti-parallel directions (separated by 180°), leading to absolute algebraic cancellation.",
-    "**Q2. Let $A = 5i + 2j$, $B = -3i - 5j$ and $E = 2A + 3B$.**\n\n(a) Express vector E in component form.\n(b) Show that the vectors A, B and E in the coordinate system.\n(c) What are the magnitude and direction of vector E?\n\n**Answer:**\n(a) $E = i - 11j$\n(b) Graph representation mapping vectors starting from origin\n(c) 11.05, 5.19° right of negative y-axis\n\n**Explanation:**\nFor (a): $E = 2(5i + 2j) + 3(-3i - 5j) = (10i + 4j) + (-9i - 15j) = i - 11j$.\nFor (c): Magnitude $= \\sqrt{1^2 + (-11)^2} = \\sqrt{122} \\approx 11.05$. Direction angle relative to negative y-axis: $\\tan(\\alpha) = E_x / |E_y| = 1 / 11 \\Rightarrow \\alpha = \\tan^{-1}(1/11) \\approx 5.19°$ to the right of the negative y-axis line."
+    "**Q2. Let $A = 5i + 2j$, $B = -3i - 5j$ and $E = 2A + 3B$.**\n\n(a) Express vector E in component form.\n(b) Show that the vectors A, B and E in the coordinate system.\n(c) What are the magnitude and direction of vector E?\n\n**Answer:**\n(a) $E = i - 11j$\n(b) Graph representation mapping vectors starting from origin\n(c) 11.05, 5.19° right of negative y-axis\n\n**Explanation:**\nFor (a): $E = 2(5i + 2j) + 3(-3i - 5j) = (10i + 4j) + (-9i - 15j) = i - 11j$.\nFor (c): Magnitude $= \\sqrt{1^2 + (-11)^2} = \\sqrt{122} \\approx 11.05$. Direction angle relative to negative y-axis: $\\tan(\\alpha) = E_x / |E_y| = 1 / 11 \\Rightarrow \\alpha = \\tan^{-1}(1/11) \\approx 5.19°$ to the right of the negative y-axis line.",
+    "A vector of length 4.5 m with y-component −2.7 m can have x-component +3.6 m or −3.6 m, because x = ±sqrt(4.5^2 − 2.7^2) = ±3.6 m. Both satisfy the given length.",
+    "The angle with the +x-axis is atan2(−2.7, 3.6) = −37°, or atan2(−2.7, −3.6) = −143°. Both point downward. The problem has two answers because the x-component was not given a sign.",
+    "The resultant of two vectors is zero only when they have equal magnitude and opposite direction. In components, each component of one is the negative of the matching component of the other."
   ],
   "type": "set",
-  "order": 4
+  "order": 4,
+  "confusion": [
+    "One y-component and a length do not fix a unique vector.",
+    "−143° is not the same direction as −37°.",
+    "Equal magnitudes alone do not cancel.",
+    "2A + 3B is not 2×3 in front of a single vector."
+  ],
+  "keyPoints": [
+    "Two x-components fit one length and one y-component.",
+    "The angles are −37° and −143°.",
+    "A zero resultant needs equal opposite vectors.",
+    "Substitute into E before finding its magnitude."
+  ],
+  "importantStatements": [
+    "A vector of length 4.5 m with y-component −2.7 m can have x-component +3.6 m or −3.6 m, because x = ±sqrt(4.5^2 − 2.7^2) = ±3.6 m. Both satisfy the given length.",
+    "The angle with the +x-axis is atan2(−2.7, 3.6) = −37°, or atan2(−2.7, −3.6) = −143°. Both point downward. The problem has two answers because the x-component was not given a sign.",
+    "The resultant of two vectors is zero only when they have equal magnitude and opposite direction. In components, each component of one is the negative of the matching component of the other."
+  ],
+  "examples": [
+    "A vector of length 4.5 m with y-component −2.7 m can have x-component +3.6 m or −3.6 m, because x = ±sqrt(4.5^2 − 2.7^2) = ±3.6 m. Both satisfy the given length.",
+    "The angle with the +x-axis is atan2(−2.7, 3.6) = −37°, or atan2(−2.7, −3.6) = −143°. Both point downward. The problem has two answers because the x-component was not given a sign.",
+    "A = 5î + 2ĵ and B = −3î − 5ĵ. Find E = 2A + 3B, its magnitude, and its direction."
+  ],
+  "universalFacts": [
+    "sinθ = y / r",
+    "R = 0 when the vectors are equal and opposite"
+  ],
+  "formulas": [
+    "sinθ = y / r",
+    "R = 0 when the vectors are equal and opposite",
+    "E = 2A + 3B"
+  ],
+  "practice": [
+    "Write sinθ = y / r and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "Why are there two angles?",
+    "When is a two-vector resultant zero?",
+    "What is E in components?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "x = ±sqrt(r^2 − y^2).",
+    "Cancel means equal and opposite."
+  ],
+  "specialNotes": [
+    "atan2 uses both signs. A plain arctan of y/x loses the quadrant.",
+    "sqrt(122) need not be simplified further."
+  ],
+  "importantNotes": [
+    "Draw both possible vectors before choosing.",
+    "Multiply A and B by their factors before adding."
+  ],
+  "importantConcepts": [
+    "Two possible x-components",
+    "Opposite vectors",
+    "Linear combination",
+    "Quadrant"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A length and one y-component allow",
+      "options": [
+        "One vector",
+        "Two vectors",
+        "No vector",
+        "Only a scalar"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The resultant of two vectors is zero when they are",
+      "options": [
+        "Equal and parallel",
+        "Equal and opposite",
+        "Perpendicular",
+        "Unit vectors"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "2A + 3B means",
+      "options": [
+        "Multiply the sum A + B by 6",
+        "Add twice A to three times B",
+        "A dot B",
+        "The cross product"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "−37° and −143°",
+      "options": [
+        "Are the same direction",
+        "Are the two directions consistent with y = −2.7 m",
+        "Are both upward",
+        "Have different lengths"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A length and one y-component allow",
+      "options": [
+        "One vector",
+        "Two vectors",
+        "No vector",
+        "Only a scalar"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The resultant of two vectors is zero when they are",
+      "options": [
+        "Equal and parallel",
+        "Equal and opposite",
+        "Perpendicular",
+        "Unit vectors"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "2A + 3B means",
+      "options": [
+        "Multiply the sum A + B by 6",
+        "Add twice A to three times B",
+        "A dot B",
+        "The cross product"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "−37° and −143°",
+      "options": [
+        "Are the same direction",
+        "Are the two directions consistent with y = −2.7 m",
+        "Are both upward",
+        "Have different lengths"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A = 5î + 2ĵ and B = −3î − 5ĵ. Find E = 2A + 3B, its magnitude, and its direction.",
+      "steps": [
+        "2A = 10î + 4ĵ.",
+        "3B = −9î − 15ĵ.",
+        "E = (10 − 9)î + (4 − 15)ĵ = î − 11ĵ.",
+        "|E| = sqrt(1^2 + (−11)^2) = sqrt(122) ≈ 11.0.",
+        "The vector is in the fourth quadrant, at about arctan(−11) = −85° to the +x-axis."
+      ],
+      "answer": "E = î − 11ĵ, magnitude sqrt(122), about 85° below the +x-axis."
+    }
+  ],
+  "summary": "A single component and a length leave two possible vectors, at −37° and −143° in the usual numbers. A resultant vanishes only for equal opposite vectors. A combination such as 2A + 3B is computed component by component before the magnitude and the angle.",
+  "relevance": 94,
+  "unitSlug": "vectors",
+  "topicSlug": "04-page-59-theoretical",
+  "topicTitle": "Vector Physics Theoretical Questions — Page 59 (Q1–Q2)"
 }

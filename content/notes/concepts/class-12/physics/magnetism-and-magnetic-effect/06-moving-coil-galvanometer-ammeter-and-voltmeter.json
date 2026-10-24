@@ -7,15 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Moving coil galvanometer, ammeter, and voltmeter — Magnetism and Magnetic Effect of Current, Physics (class-12-notes).",
-    "**Tested.** define it · list: moving coil galvanometer, ammeter, voltmeter · one worked example · one misconception each.",
-    "**Ammeter.** one-line definition + one-line exam use.",
-    "**Voltmeter.** one-line definition + one-line exam use."
+    "A moving-coil galvanometer carries a coil in a radial magnetic field. The torque is N I A B and does not change with angle, because the field is radial. A hairspring supplies a restoring torque k θ.",
+    "At rest, N I A B = k θ, so the deflection is proportional to the current. The scale can be marked in equal current steps.",
+    "The coil current must stay small. To measure a large current, a low-resistance shunt is connected in parallel with the galvanometer. Most of the current bypasses the coil.",
+    "If the galvanometer has resistance G and full-scale current I_g, and the ammeter is to read I, the shunt is S = I_g G / (I − I_g). A larger range needs a smaller shunt.",
+    "To make a voltmeter, a large resistor is connected in series. The instrument then draws little current and can be placed across a component. The series resistor is (V / I_g) − G for a full-scale voltage V.",
+    "The coil is damped, often by eddy currents in a metal frame, so the needle settles instead of swinging. Swapping the shunt and the series resistor builds the wrong instrument."
   ],
   "confusion": [
-    "❌ treat \"Moving coil galvanometer\" as one blob → ✅ split into: moving coil galvanometer, ammeter, voltmeter.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "The shunt is parallel.",
+    "The voltmeter resistor is series.",
+    "A smaller shunt gives a larger current range.",
+    "The radial field is what keeps the scale linear."
   ],
   "bounds": [
     "Covers only: moving coil galvanometer, ammeter, voltmeter (within Magnetism and Magnetic Effect of Current).",
@@ -23,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: moving coil galvanometer, ammeter, voltmeter.",
-    "one worked example for \"Moving coil galvanometer, ammeter, and voltmeter\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write N I A B = k θ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"Moving coil galvanometer, ammeter, and voltmeter\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Moving coil galvanometer, ammeter, and voltmeter\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "N I A B = k θ",
+    "Shunt S = I_g G / (I − I_g)"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "A moving-coil galvanometer carries a coil in a radial magnetic field. The torque is N I A B and does not change with angle, because the field is radial. A hairspring supplies a restoring torque k θ.",
+    "At rest, N I A B = k θ, so the deflection is proportional to the current. The scale can be marked in equal current steps.",
+    "A galvanometer of resistance 100 Ω gives full scale at 1.0 mA. Find the shunt that lets it read 1.0 A at full scale."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Moving coil galvanometer, ammeter, and voltmeter\" with one example.",
-    "compare \"Moving coil galvanometer\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Moving coil galvanometer, ammeter, and voltmeter\" and verify the answer is plausible."
+    "Write the equilibrium of the coil.",
+    "Where does the ammeter shunt go?",
+    "Where does the voltmeter resistor go?"
   ],
   "formulas": [
-    "Governing equation for \"Moving coil galvanometer, ammeter, and voltmeter\" — state with units, then use in one numerical."
+    "Governing equation for \"Moving coil galvanometer, ammeter, and voltmeter\" — state with units, then use in one numerical.",
+    "N I A B = k θ",
+    "Shunt S = I_g G / (I − I_g)"
   ],
   "numericals": [
     "Set up the defining equation for \"Moving coil galvanometer, ammeter, and voltmeter\", substitute simple values, and compute the result with units.",
@@ -47,31 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• Moving coil galvanometer",
-    "• Ammeter",
-    "• Voltmeter"
+    "Torque balances a spring.",
+    "The scale is linear in a radial field.",
+    "A shunt makes an ammeter.",
+    "A series resistor makes a voltmeter."
   ],
-  "summary": "Moving coil galvanometer, ammeter, and voltmeter (Magnetism and Magnetic Effect of Current, Physics, class-12-notes) covers Moving coil galvanometer, ammeter, voltmeter. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "A coil in a radial field deflects in proportion to current because N I A B balances the spring. A parallel shunt turns the movement into an ammeter, and a series resistor turns it into a voltmeter. The coil current at full scale stays the small movement current.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Moving coil galvanometer, ammeter, and voltmeter\"?",
+      "question": "At equilibrium",
       "options": [
-        "Moving coil galvanometer",
-        "Ammeter",
-        "Unrelated topic",
-        "None of the above"
+        "N I A B = k θ",
+        "θ is independent of I",
+        "The spring is removed",
+        "B is zero"
       ],
-      "answer": "A",
-      "explanation": "Moving coil galvanometer is listed among the official sub-ideas of Moving coil galvanometer, ammeter, and voltmeter; the others are not part of this topic."
+      "answer": "A"
     },
     {
-      "question": "A common examiner point on \"Moving coil galvanometer, ammeter, and voltmeter\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "An ammeter shunt is connected",
       "options": [
-        "True",
-        "False"
+        "In parallel",
+        "In series as the only extra part",
+        "Across the battery as a voltmeter",
+        "Nowhere"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "A voltmeter multiplier is connected",
+      "options": [
+        "In series",
+        "In parallel as a shunt",
+        "As a short circuit",
+        "In place of the magnet"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A smaller shunt gives",
+      "options": [
+        "A smaller current range",
+        "A larger current range",
+        "A voltmeter",
+        "No deflection at any current"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "A moving-coil galvanometer carries a coil in a radial magnetic field. The torque is N I A B and does not change with angle, because the field is radial. A hairspring supplies a restoring torque k θ.",
+    "At rest, N I A B = k θ, so the deflection is proportional to the current. The scale can be marked in equal current steps.",
+    "The coil current must stay small. To measure a large current, a low-resistance shunt is connected in parallel with the galvanometer. Most of the current bypasses the coil."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Shunt: parallel. Voltmeter: series.",
+    "S = I_g G / (I − I_g)."
+  ],
+  "specialNotes": [
+    "A 1 mA movement is typical in these problems.",
+    "Critical damping settles the needle in the shortest time without overshoot."
+  ],
+  "importantNotes": [
+    "Do not swap shunt and multiplier.",
+    "The coil still carries only I_g at full scale."
+  ],
+  "importantConcepts": [
+    "Radial field",
+    "Spring balance",
+    "Ammeter shunt",
+    "Voltmeter multiplier"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "At equilibrium",
+      "options": [
+        "N I A B = k θ",
+        "θ is independent of I",
+        "The spring is removed",
+        "B is zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An ammeter shunt is connected",
+      "options": [
+        "In parallel",
+        "In series as the only extra part",
+        "Across the battery as a voltmeter",
+        "Nowhere"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A voltmeter multiplier is connected",
+      "options": [
+        "In series",
+        "In parallel as a shunt",
+        "As a short circuit",
+        "In place of the magnet"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A smaller shunt gives",
+      "options": [
+        "A smaller current range",
+        "A larger current range",
+        "A voltmeter",
+        "No deflection at any current"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A galvanometer of resistance 100 Ω gives full scale at 1.0 mA. Find the shunt that lets it read 1.0 A at full scale.",
+      "steps": [
+        "I_g = 1.0 × 10^−3 A and I = 1.0 A.",
+        "I − I_g = 0.999 A.",
+        "S = I_g G / (I − I_g) = 0.001 × 100 / 0.999.",
+        "S = 0.100 / 0.999 = 0.100 Ω.",
+        "Almost all of the 1.0 A goes through the shunt. The coil still carries 1.0 mA."
+      ],
+      "answer": "0.100 Ω."
     }
   ]
 }

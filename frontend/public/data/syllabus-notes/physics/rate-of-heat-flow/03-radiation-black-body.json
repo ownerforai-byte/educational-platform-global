@@ -9,12 +9,17 @@
     "**Black body.** An ideal black body absorbs all incident radiation and, at the same temperature, emits the maximum possible radiation; a small hole in a hollow enclosure behaves like one.",
     "**Stefan's law.** The energy radiated per unit area per second is E = σT⁴; for a body at T losing heat to surroundings at T₀, P = σeA(T⁴ − T₀⁴), with σ = 5.67 × 10⁻⁸ W m⁻² K⁻⁴.",
     "**Wien's displacement law.** The wavelength of peak emission obeys λ_max T = b with b = 2.898 × 10⁻³ m·K — hotter bodies peak at shorter wavelengths (blue-shifted glow).",
-    "**Kirchhoff's law and use.** At thermal equilibrium emissivity equals absorptivity; the balance of absorbed and re-radiated infrared explains the greenhouse effect and satellite thermal design."
+    "**Kirchhoff's law and use.** At thermal equilibrium emissivity equals absorptivity; the balance of absorbed and re-radiated infrared explains the greenhouse effect and satellite thermal design.",
+    "A black body absorbs every wavelength that falls on it and, when warm, emits a spectrum that depends only on its temperature. The power radiated per unit area is σ T^4, with T in kelvin. Doubling the absolute temperature multiplies the radiated power by 16."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in radiation and black-body radiation.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Solve at least 5 problems on radiation and black-body radiation from your textbook.",
@@ -30,19 +35,27 @@
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow",
   "examples": [
-    "Real-world application of Radiation and Black-body Radiation",
     "Practical demonstration of Radiation and Black-body Radiation concepts",
     "Diagram-based question on Radiation and Black-body Radiation",
     "Application in daily life involving Radiation and Black-body Radiation"
   ],
   "practiceQuestions": [
+    "Q1. Define and explain Radiation and Black-body Radiation with suitable example.",
     "Q2. Solve problems related to Radiation and Black-body Radiation.",
     "Q3. Differentiate between various aspects of Radiation and Black-body Radiation.",
     "Q4. Derive the key formula related to Radiation and Black-body Radiation.",
     "Q5. What are the applications of Radiation and Black-body Radiation?"
   ],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "Application formula for Radiation and Black-body Radiation",
+    "Derivation result for Radiation and Black-body Radiation"
+  ],
+  "keyPoints": [
+    "A black body radiates power proportional to T^4",
+    "A good absorber is a good emitter",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
   "summary": "Radiation and Black-body Radiation is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Radiation and Black-body Radiation applies",
@@ -51,8 +64,13 @@
     "Note 4: Remember the units and dimensions involved in Radiation and Black-body Radiation",
     "Note 5: Radiation and Black-body Radiation frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "A black body absorbs every wavelength that falls on it and, when warm, emits a spectrum that depends only on its temperature. The power radiated per unit area is σ T^4, with T in kelvin. Doubling the absolute temperature multiplies the radiated power by 16.",
+    "The working relations are A black body radiates power proportional to T^4 and A good absorber is a good emitter. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Compare the power radiated by a black surface at 600 K with the same surface at 300 K. Power is proportional to T^4. 600/300 = 2."
+  ],
   "importantNotes": [
+    "Note 1: Radiation and Black-body Radiation is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Radiation and Black-body Radiation",
     "Note 3: Radiation and Black-body Radiation has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Radiation and Black-body Radiation",
@@ -126,5 +144,60 @@
     "Task 3: Create a concept map for Radiation and Black-body Radiation",
     "Task 4: Practice previous year exam questions on Radiation and Black-body Radiation",
     "Task 5: Explain Radiation and Black-body Radiation to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Radiated power per unit area goes as",
+      "options": [
+        "T",
+        "T^4",
+        "1/T",
+        "The colour name"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Doubling the kelvin temperature multiplies the power by",
+      "options": [
+        "2",
+        "4",
+        "16",
+        "8"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A black body",
+      "options": [
+        "Reflects every wavelength",
+        "Absorbs every wavelength",
+        "Does not emit",
+        "Has zero temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "T in the radiation law is",
+      "options": [
+        "Celsius",
+        "Kelvin",
+        "Fahrenheit",
+        "A difference with no zero"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Compare the power radiated by a black surface at 600 K with the same surface at 300 K.",
+      "steps": [
+        "Power is proportional to T^4.",
+        "600/300 = 2.",
+        "2^4 = 16.",
+        "The hot surface radiates 16 times as much per unit area.",
+        "The temperatures must be kelvin. Doubling a celsius reading is not the same step."
+      ],
+      "answer": "16 times."
+    }
   ]
 }

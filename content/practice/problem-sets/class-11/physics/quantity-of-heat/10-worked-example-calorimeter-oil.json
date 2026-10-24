@@ -10,24 +10,177 @@
     "Using mâ‚câ‚/tâ‚ = mâ‚‚câ‚‚/tâ‚‚: (100 Ã— 1.0)/200 = (80 Ã— câ‚‚)/140",
     "Simplify the water side: 0.5 = (80 Ã— câ‚‚)/140",
     "Isolate câ‚‚: câ‚‚ = (0.5 Ã— 140)/80 = 70/80",
-    "**Answer: câ‚‚ = 0.875 cal/gÂ°C**"
+    "**Answer: câ‚‚ = 0.875 cal/gÂ°C**",
+    "The method of cooling compares a known liquid with an unknown liquid in the same calorimeter, cooling through the same temperatures. Water cooling from 60°C to 50°C in 200 s, and oil cooling through that same interval in 140 s, is enough to find the oil if the masses are known. The calorimeter's own heat capacity is assumed the same in both runs and, in the simple form, left out.",
+    "The working relations are m1 c1 / t1 = m2 c2 / t2 and The same calorimeter and the same temperature interval are required. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Water: 100 g, c = 1.0 cal/g°C, time 200 s. Oil: 80 g, time 140 s, same temperature fall. Find the specific heat of the oil. m1 c1 / t1 = m2 c2 / t2. 100 × 1.0 / 200 = 80 × c2 / 140.",
+    "0.50 = 80 c2 / 140. c2 = 0.50 × 140 / 80 = 0.875. c2 = 0.875 cal/g°C. State the unit and the condition that makes this line valid."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write m1 c1 / t1 = m2 c2 / t2 and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "m1 c1 / t1 = m2 c2 / t2",
+    "The same calorimeter and the same temperature interval are required"
   ],
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
-  "visualType": "specific-heat"
+  "visualType": "specific-heat",
+  "keyPoints": [
+    "m1 c1 / t1 = m2 c2 / t2",
+    "The same calorimeter and the same temperature interval are required",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "The method of cooling compares a known liquid with an unknown liquid in the same calorimeter, cooling through the same temperatures. Water cooling from 60°C to 50°C in 200 s, and oil cooling through that same interval in 140 s, is enough to find the oil if the masses are known. The calorimeter's own heat capacity is assumed the same in both runs and, in the simple form, left out.",
+    "The working relations are m1 c1 / t1 = m2 c2 / t2 and The same calorimeter and the same temperature interval are required. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Water: 100 g, c = 1.0 cal/g°C, time 200 s. Oil: 80 g, time 140 s, same temperature fall. Find the specific heat of the oil. m1 c1 / t1 = m2 c2 / t2. 100 × 1.0 / 200 = 80 × c2 / 140."
+  ],
+  "examples": [
+    "The method of cooling compares a known liquid with an unknown liquid in the same calorimeter, cooling through the same temperatures. Water cooling from 60°C to 50°C in 200 s, and oil cooling through that same interval in 140 s, is enough to find the oil if the masses are known. The calorimeter's own heat capacity is assumed the same in both runs and, in the simple form, left out.",
+    "The working relations are m1 c1 / t1 = m2 c2 / t2 and The same calorimeter and the same temperature interval are required. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Water: 100 g, c = 1.0 cal/g°C, time 200 s. Oil: 80 g, time 140 s, same temperature fall. Find the specific heat of the oil."
+  ],
+  "formulas": [
+    "m1 c1 / t1 = m2 c2 / t2",
+    "The same calorimeter and the same temperature interval are required"
+  ],
+  "practiceQuestions": [
+    "Write m1 c1 / t1 = m2 c2 / t2 and name the symbols.",
+    "What does The same calorimeter and the same temperature interval are required tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The shorter time belongs to",
+      "options": [
+        "The larger heat capacity",
+        "The smaller heat capacity",
+        "The water in this data",
+        "A different temperature interval"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The temperature interval",
+      "options": [
+        "Must be the same",
+        "Cancels even if it differs",
+        "Is 200 s",
+        "Is the specific heat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "c2 equals",
+      "options": [
+        "0.875 cal/g°C",
+        "1.0",
+        "200",
+        "80"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Leaving out the calorimeter assumes",
+      "options": [
+        "Its contribution is negligible or the same and omitted on purpose",
+        "The oil has c = 1",
+        "The times are equal",
+        "The masses are equal"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The shorter time belongs to",
+      "options": [
+        "The larger heat capacity",
+        "The smaller heat capacity",
+        "The water in this data",
+        "A different temperature interval"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The temperature interval",
+      "options": [
+        "Must be the same",
+        "Cancels even if it differs",
+        "Is 200 s",
+        "Is the specific heat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "c2 equals",
+      "options": [
+        "0.875 cal/g°C",
+        "1.0",
+        "200",
+        "80"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Leaving out the calorimeter assumes",
+      "options": [
+        "Its contribution is negligible or the same and omitted on purpose",
+        "The oil has c = 1",
+        "The times are equal",
+        "The masses are equal"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Water: 100 g, c = 1.0 cal/g°C, time 200 s. Oil: 80 g, time 140 s, same temperature fall. Find the specific heat of the oil.",
+      "steps": [
+        "m1 c1 / t1 = m2 c2 / t2.",
+        "100 × 1.0 / 200 = 80 × c2 / 140.",
+        "0.50 = 80 c2 / 140.",
+        "c2 = 0.50 × 140 / 80 = 0.875.",
+        "c2 = 0.875 cal/g°C."
+      ],
+      "answer": "0.875 cal/g°C."
+    }
+  ],
+  "summary": "The same temperature fall gives m c / t the same for both fillings. Water of 100 g taking 200 s and oil of 80 g taking 140 s give the oil a specific heat of 0.875 cal/g°C."
 }

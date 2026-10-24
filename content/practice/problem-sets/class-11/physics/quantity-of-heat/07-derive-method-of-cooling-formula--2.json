@@ -4,6 +4,178 @@
     "Start from the identical-conditions result: m₁c₁(dθ/dt)₁ = m₂c₂(dθ/dt)₂",
     "Replace each cooling rate with its time-based form: (dθ/dt)₁ = Δθ/t₁ and (dθ/dt)₂ = Δθ/t₂, where Δθ is the same fixed temperature range for both liquids",
     "Substituting and cancelling Δθ from both sides: m₁c₁/t₁ = m₂c₂/t₂",
-    "**Solving for the unknown:** c₂ = (m₁c₁·t₂)/(m₂·t₁) — only masses, water's known c₁, and the two cooling times are needed"
-  ]
+    "**Solving for the unknown:** c₂ = (m₁c₁·t₂)/(m₂·t₁) — only masses, water's known c₁, and the two cooling times are needed",
+    "Under identical cooling conditions, two liquids that fall through the same temperature interval lose heat in proportion to their heat capacities. The one with the larger heat capacity takes longer. The times therefore replace the rates, and the unknown specific heat is read from the two masses, the known specific heat and the two times.",
+    "The working relations are m1 c1 / t1 = m2 c2 / t2 for the same temperature range and c2 = m1 c1 t2 / (m2 t1). Name each symbol, convert the data into SI units, and only then substitute.",
+    "Derive c2 = m1 c1 t2 / (m2 t1) from equal rates of heat loss over the same temperature interval. Identical conditions give m1 c1 (Δθ/t1) = m2 c2 (Δθ/t2). Δθ is the same and cancels.",
+    "m1 c1 / t1 = m2 c2 / t2. c2 = m1 c1 t2 / (m2 t1). The surface, the room and the temperature interval must match, or the cancellation is not valid."
+  ],
+  "confusion": [
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "keyPoints": [
+    "m1 c1 / t1 = m2 c2 / t2 for the same temperature range",
+    "c2 = m1 c1 t2 / (m2 t1)",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "Under identical cooling conditions, two liquids that fall through the same temperature interval lose heat in proportion to their heat capacities. The one with the larger heat capacity takes longer. The times therefore replace the rates, and the unknown specific heat is read from the two masses, the known specific heat and the two times.",
+    "The working relations are m1 c1 / t1 = m2 c2 / t2 for the same temperature range and c2 = m1 c1 t2 / (m2 t1). Name each symbol, convert the data into SI units, and only then substitute.",
+    "Derive c2 = m1 c1 t2 / (m2 t1) from equal rates of heat loss over the same temperature interval. Identical conditions give m1 c1 (Δθ/t1) = m2 c2 (Δθ/t2). Δθ is the same and cancels."
+  ],
+  "examples": [
+    "Under identical cooling conditions, two liquids that fall through the same temperature interval lose heat in proportion to their heat capacities. The one with the larger heat capacity takes longer. The times therefore replace the rates, and the unknown specific heat is read from the two masses, the known specific heat and the two times.",
+    "The working relations are m1 c1 / t1 = m2 c2 / t2 for the same temperature range and c2 = m1 c1 t2 / (m2 t1). Name each symbol, convert the data into SI units, and only then substitute.",
+    "Derive c2 = m1 c1 t2 / (m2 t1) from equal rates of heat loss over the same temperature interval."
+  ],
+  "universalFacts": [
+    "m1 c1 / t1 = m2 c2 / t2 for the same temperature range",
+    "c2 = m1 c1 t2 / (m2 t1)"
+  ],
+  "formulas": [
+    "m1 c1 / t1 = m2 c2 / t2 for the same temperature range",
+    "c2 = m1 c1 t2 / (m2 t1)"
+  ],
+  "practice": [
+    "Write m1 c1 / t1 = m2 c2 / t2 for the same temperature range and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "Write m1 c1 / t1 = m2 c2 / t2 for the same temperature range and name the symbols.",
+    "What does c2 = m1 c1 t2 / (m2 t1) tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The times enter because",
+      "options": [
+        "Rate is the same temperature interval over time",
+        "Mass equals time",
+        "c is the time",
+        "The room changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Δθ cancels when",
+      "options": [
+        "Both liquids cover the same interval",
+        "The masses are equal",
+        "c1 = c2",
+        "t1 = t2 only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A larger heat capacity means",
+      "options": [
+        "A shorter time",
+        "A longer time for the same interval",
+        "A zero time",
+        "No cooling"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The unknown specific heat is",
+      "options": [
+        "m1 c1 t2 / (m2 t1)",
+        "t1/t2 only",
+        "m1/m2",
+        "c1 t1"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The times enter because",
+      "options": [
+        "Rate is the same temperature interval over time",
+        "Mass equals time",
+        "c is the time",
+        "The room changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Δθ cancels when",
+      "options": [
+        "Both liquids cover the same interval",
+        "The masses are equal",
+        "c1 = c2",
+        "t1 = t2 only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A larger heat capacity means",
+      "options": [
+        "A shorter time",
+        "A longer time for the same interval",
+        "A zero time",
+        "No cooling"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The unknown specific heat is",
+      "options": [
+        "m1 c1 t2 / (m2 t1)",
+        "t1/t2 only",
+        "m1/m2",
+        "c1 t1"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Derive c2 = m1 c1 t2 / (m2 t1) from equal rates of heat loss over the same temperature interval.",
+      "steps": [
+        "Identical conditions give m1 c1 (Δθ/t1) = m2 c2 (Δθ/t2).",
+        "Δθ is the same and cancels.",
+        "m1 c1 / t1 = m2 c2 / t2.",
+        "c2 = m1 c1 t2 / (m2 t1).",
+        "The surface, the room and the temperature interval must match, or the cancellation is not valid."
+      ],
+      "answer": "c2 = m1 c1 t2 / (m2 t1)."
+    }
+  ],
+  "summary": "Equal heat-loss rates over the same temperature interval give m1 c1 / t1 = m2 c2 / t2. The unknown specific heat is m1 c1 t2 / (m2 t1). The interval, the surface and the room have to match.",
+  "relevance": 94,
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "07-derive-method-of-cooling-formula",
+  "topicTitle": "Q: Derive the working formula used in the 'method of cooling' experiment"
 }

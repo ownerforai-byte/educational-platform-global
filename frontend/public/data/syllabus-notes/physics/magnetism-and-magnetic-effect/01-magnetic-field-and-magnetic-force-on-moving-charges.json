@@ -1,0 +1,196 @@
+{
+  "title": "Magnetic field and magnetic force on moving charges",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "topicSlug": "magnetic-field-and-magnetic-force-on-moving-charges",
+  "topicTitle": "Magnetic field and magnetic force on moving charges",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "A charge moving in a magnetic field feels a force q v B sinθ. θ is the angle between the velocity and the field. The force is zero if the charge is at rest or if it moves parallel to the field.",
+    "The force is perpendicular to both the velocity and the field. A positive charge follows the right-hand rule. A negative charge is pushed the opposite way.",
+    "Because the force is always perpendicular to the velocity, it does no work. The speed stays constant. Only the direction changes.",
+    "If the velocity is perpendicular to a uniform field, the path is a circle. The radius is m v / (q B). A faster charge, or a heavier one, makes a larger circle. A stronger field makes a tighter circle.",
+    "If the velocity has a component along the field, that component is not changed and the path is a helix. The pitch is set by the parallel speed and the time to go once around.",
+    "The tesla is the field in which a charge of 1 C moving at 1 m/s perpendicular to the field feels a force of 1 N. Laboratory fields of a fraction of a tesla already bend electron beams."
+  ],
+  "confusion": [
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+    "A stationary charge feels no magnetic force.",
+    "The magnetic force does not increase the speed.",
+    "sinθ is 1 only for perpendicular motion.",
+    "Negative charges curve the other way."
+  ],
+  "bounds": [
+    "Covers only: magnetic field, magnetic force on moving charges (within Magnetism and Magnetic Effect of Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+  ],
+  "practice": [
+    "Write F = q v B sinθ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+  ],
+  "examples": [
+    "A charge moving in a magnetic field feels a force q v B sinθ. θ is the angle between the velocity and the field. The force is zero if the charge is at rest or if it moves parallel to the field.",
+    "The force is perpendicular to both the velocity and the field. A positive charge follows the right-hand rule. A negative charge is pushed the opposite way.",
+    "A proton moves at 2.0 × 10^6 m/s perpendicular to a 0.10 T field. Take q = 1.6 × 10^−19 C and m = 1.67 × 10^−27 kg. Find the force and the radius."
+  ],
+  "practiceQuestions": [
+    "When is the magnetic force zero?",
+    "Write the radius of the circle.",
+    "Why is the kinetic energy constant?"
+  ],
+  "formulas": [
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
+  ],
+  "numericals": [
+    "A proton moves at 2.0 × 10^6 m/s perpendicular to a 0.10 T field. Take q = 1.6 × 10^−19 C and m = 1.67 × 10^−27 kg. Find the force and the radius."
+  ],
+  "keyPoints": [
+    "No force if the charge is at rest.",
+    "The force is perpendicular to v.",
+    "Speed does not change.",
+    "Perpendicular motion is a circle."
+  ],
+  "summary": "A moving charge feels q v B sinθ, perpendicular to its velocity, so the speed stays constant. Perpendicular motion is a circle of radius m v /(q B). Motion along the field feels no magnetic force, and a general velocity makes a helix.",
+  "mcqs": [
+    {
+      "question": "A charge at rest in a magnetic field feels",
+      "options": [
+        "q v B",
+        "No magnetic force",
+        "A force along B",
+        "m v / r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The magnetic force changes",
+      "options": [
+        "The speed",
+        "The direction",
+        "The mass",
+        "The charge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The radius of the perpendicular path is",
+      "options": [
+        "m v / (q B)",
+        "q B / v",
+        "v B",
+        "Zero for every speed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Motion parallel to B",
+      "options": [
+        "Gives the largest force",
+        "Gives zero magnetic force",
+        "Is a circle",
+        "Does work"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "A charge moving in a magnetic field feels a force q v B sinθ. θ is the angle between the velocity and the field. The force is zero if the charge is at rest or if it moves parallel to the field.",
+    "The force is perpendicular to both the velocity and the field. A positive charge follows the right-hand rule. A negative charge is pushed the opposite way.",
+    "Because the force is always perpendicular to the velocity, it does no work. The speed stays constant. Only the direction changes."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Parallel to B: no force.",
+    "Radius = m v / (q B)."
+  ],
+  "specialNotes": [
+    "The proton mass is 1.67 × 10^−27 kg.",
+    "e = 1.6 × 10^−19 C."
+  ],
+  "importantNotes": [
+    "Use the perpendicular component of velocity.",
+    "State the sign of the charge before the direction of the curve."
+  ],
+  "importantConcepts": [
+    "Magnetic force",
+    "No work",
+    "Cyclotron radius",
+    "Helix"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "A charge at rest in a magnetic field feels",
+      "options": [
+        "q v B",
+        "No magnetic force",
+        "A force along B",
+        "m v / r"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The magnetic force changes",
+      "options": [
+        "The speed",
+        "The direction",
+        "The mass",
+        "The charge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The radius of the perpendicular path is",
+      "options": [
+        "m v / (q B)",
+        "q B / v",
+        "v B",
+        "Zero for every speed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Motion parallel to B",
+      "options": [
+        "Gives the largest force",
+        "Gives zero magnetic force",
+        "Is a circle",
+        "Does work"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A proton moves at 2.0 × 10^6 m/s perpendicular to a 0.10 T field. Take q = 1.6 × 10^−19 C and m = 1.67 × 10^−27 kg. Find the force and the radius.",
+      "steps": [
+        "F = q v B = 1.6 × 10^−19 × 2.0 × 10^6 × 0.10.",
+        "F = 3.2 × 10^−14 N.",
+        "r = m v / (q B).",
+        "m v = 1.67 × 10^−27 × 2.0 × 10^6 = 3.34 × 10^−21.",
+        "q B = 1.6 × 10^−20, so r = 3.34 × 10^−21 / 1.6 × 10^−20 = 0.21 m."
+      ],
+      "answer": "3.2 × 10^−14 N, and the radius is 0.21 m."
+    }
+  ]
+}

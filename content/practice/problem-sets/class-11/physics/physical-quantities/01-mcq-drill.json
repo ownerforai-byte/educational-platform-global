@@ -11,5 +11,173 @@
     "Q8. Which quantity is dimensionless: refractive index, force, mass, pressure?\nAnswer: Refractive index",
     "Q9. When two quantities have identical dimensions but different meaning, dimensional analysis:\nAnswer: cannot distinguish them (e.g. work and torque)",
     "Q10. Order of magnitude of the Sun–Earth distance (1.5 × 10¹¹ m) is:\nAnswer: 10¹¹ m"
-  ]
+  ],
+  "confusion": [
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "keyPoints": [
+    "Impulse = F Δt = change of momentum",
+    "tan of the angle of repose = μ",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "Impulse is the area under a force-time graph and equals the change of momentum. A steady  force for a short time can change the momentum as much as a smaller force acting longer, if the products F Δt match. Action and reaction never cancel on one body, because they act on two bodies.",
+    "The working relations are Impulse = F Δt = change of momentum and tan of the angle of repose = μ. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 2.0 N force acts for 0.40 s on a 0.50 kg body that starts from rest. Find the impulse and the final speed. Impulse = F Δt = 2.0 × 0.40 = 0.80 N s. That equals the change in momentum."
+  ],
+  "examples": [
+    "Impulse is the area under a force-time graph and equals the change of momentum. A steady  force for a short time can change the momentum as much as a smaller force acting longer, if the products F Δt match. Action and reaction never cancel on one body, because they act on two bodies.",
+    "The working relations are Impulse = F Δt = change of momentum and tan of the angle of repose = μ. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A 2.0 N force acts for 0.40 s on a 0.50 kg body that starts from rest. Find the impulse and the final speed."
+  ],
+  "universalFacts": [
+    "Impulse = F Δt = change of momentum",
+    "tan of the angle of repose = μ"
+  ],
+  "formulas": [
+    "Impulse = F Δt = change of momentum",
+    "tan of the angle of repose = μ"
+  ],
+  "practice": [
+    "Write Impulse = F Δt = change of momentum and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "practiceQuestions": [
+    "Write Impulse = F Δt = change of momentum and name the symbols.",
+    "What does tan of the angle of repose = μ tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Impulse equals",
+      "options": [
+        "The change in momentum",
+        "The mass",
+        "The angle of repose",
+        "μ"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Action and reaction act on",
+      "options": [
+        "The same body and cancel",
+        "Two different bodies",
+        "The pivot only",
+        "No body"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The angle of repose satisfies",
+      "options": [
+        "tan θ = μ",
+        "sin θ = μ",
+        "θ = μ",
+        "cos θ = 0"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Kinetic friction is generally",
+      "options": [
+        "Larger than static friction",
+        "Smaller than static friction",
+        "Equal to the weight",
+        "Zero on a rough surface"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Impulse equals",
+      "options": [
+        "The change in momentum",
+        "The mass",
+        "The angle of repose",
+        "μ"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Action and reaction act on",
+      "options": [
+        "The same body and cancel",
+        "Two different bodies",
+        "The pivot only",
+        "No body"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The angle of repose satisfies",
+      "options": [
+        "tan θ = μ",
+        "sin θ = μ",
+        "θ = μ",
+        "cos θ = 0"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Kinetic friction is generally",
+      "options": [
+        "Larger than static friction",
+        "Smaller than static friction",
+        "Equal to the weight",
+        "Zero on a rough surface"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 2.0 N force acts for 0.40 s on a 0.50 kg body that starts from rest. Find the impulse and the final speed.",
+      "steps": [
+        "Impulse = F Δt = 2.0 × 0.40 = 0.80 N s.",
+        "That equals the change in momentum.",
+        "0.80 = m v = 0.50 v.",
+        "v = 1.6 m/s.",
+        "The reaction to this force acts on whatever applied the 2.0 N, not on the 0.50 kg body."
+      ],
+      "answer": "Impulse 0.80 N s, speed 1.6 m/s."
+    }
+  ],
+  "summary": "Impulse equals change of momentum. A 2.0 N force for 0.40 s delivers 0.80 N s and takes a 0.50 kg body from rest to 1.6 m/s. The reaction is on the other body.",
+  "relevance": 94,
+  "unitSlug": "physical-quantities",
+  "topicSlug": "01-mcq-drill",
+  "topicTitle": "Practice Set — Physical Quantities & Dimensions"
 }

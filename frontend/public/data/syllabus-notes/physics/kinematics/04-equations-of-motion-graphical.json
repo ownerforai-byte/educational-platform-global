@@ -1,0 +1,189 @@
+{
+  "title": "Equations of Motion (Graphical Derivation)",
+  "notes": [
+    "The three equations of motion apply only when the acceleration is constant. They are v = u + at, s = ut + (1/2)at^2, and v^2 = u^2 + 2as. Each symbol must be given a sign before it is used.",
+    "On a velocity–time graph, constant acceleration is a straight line. The slope of that line is the acceleration, (v − u)/t, which rearranges to v = u + at.",
+    "The area under the velocity–time line is the displacement. For a straight line from u to v, the area is a rectangle ut plus a triangle (1/2)t(v − u). Using v − u = at turns that area into s = ut + (1/2)at^2.",
+    "Eliminating t between v = u + at and the displacement equation gives v^2 = u^2 + 2as. This form is the one to choose when the time is not given and not asked for.",
+    "For a body thrown upward, take upward as positive. Then u is positive, a is −g, and the velocity at the top is zero. The same equations describe free fall with u = 0 and a = +g if downward is positive.",
+    "A curved path with changing acceleration, such as a spring-mass oscillation, is not a place to drop these three equations in. Constant a is the condition."
+  ],
+  "examples": [
+    "The three equations of motion apply only when the acceleration is constant. They are v = u + at, s = ut + (1/2)at^2, and v^2 = u^2 + 2as. Each symbol must be given a sign before it is used.",
+    "On a velocity–time graph, constant acceleration is a straight line. The slope of that line is the acceleration, (v − u)/t, which rearranges to v = u + at.",
+    "A body starts from rest and moves with a constant acceleration of 2.0 m/s^2 for 4.0 s. Find the final velocity and the displacement."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Equations of Motion (Graphical Derivation).",
+    "Q3. Problem on Equations of Motion (Graphical Derivation).",
+    "Which equation avoids the time variable?",
+    "What does the slope of a v–t graph mean?",
+    "What is the acceleration at the highest point of a vertical throw?"
+  ],
+  "formulas": [
+    "v = u + at",
+    "s = ut + (1/2)at^2",
+    "v^2 = u^2 + 2as"
+  ],
+  "keyPoints": [
+    "Connection of Equations of Motion (Graphical Derivation) to other topics",
+    "These three equations need constant acceleration.",
+    "The v–t graph's slope is acceleration.",
+    "The area under a v–t graph is displacement.",
+    "Free fall uses a = g downward."
+  ],
+  "summary": "Equations of Motion (Graphical Derivation) covers essential principles and applications.",
+  "specialNotes": [
+    "g is taken as 10 m/s^2 when the question asks for a simple number.",
+    "A negative displacement means the body finished on the negative side of the origin."
+  ],
+  "importantStatements": [
+    "The three equations of motion apply only when the acceleration is constant. They are v = u + at, s = ut + (1/2)at^2, and v^2 = u^2 + 2as. Each symbol must be given a sign before it is used.",
+    "On a velocity–time graph, constant acceleration is a straight line. The slope of that line is the acceleration, (v − u)/t, which rearranges to v = u + at.",
+    "The area under the velocity–time line is the displacement. For a straight line from u to v, the area is a rectangle ut plus a triangle (1/2)t(v − u). Using v − u = at turns that area into s = ut + (1/2)at^2."
+  ],
+  "importantNotes": [
+    "Equations of Motion (Graphical Derivation) is based on fundamental principles.",
+    "Write the sign of a on the first line.",
+    "If the body returns, the total distance is larger than the net displacement."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Equations of Motion (Graphical Derivation).",
+    "No time in the data: use v^2 = u^2 + 2as.",
+    "Decide the positive direction before giving g a sign."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "The slope of a velocity–time graph is",
+      "options": [
+        "Displacement",
+        "Acceleration",
+        "Force",
+        "Mass"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The area under a velocity–time graph is",
+      "options": [
+        "Acceleration",
+        "Displacement",
+        "Mass",
+        "Power"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "v^2 = u^2 + 2as is used when",
+      "options": [
+        "Time is absent",
+        "Acceleration changes",
+        "The path is a circle at constant speed",
+        "Mass is unknown and needed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the top of a vertical throw",
+      "options": [
+        "Acceleration is zero",
+        "Velocity is zero and acceleration is g downward",
+        "Both are zero",
+        "Velocity is g"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Equations of Motion (Graphical Derivation).",
+    "Constant acceleration",
+    "v–t slope",
+    "v–t area",
+    "Free fall"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "The equations fail when acceleration changes with time.",
+    "Area under a v–t graph is displacement, not acceleration.",
+    "At the top of a vertical throw the velocity is zero, but the acceleration is still g downward.",
+    "s in these equations is displacement along the line of motion, not necessarily the path length if the body turns back."
+  ],
+  "practice": [
+    "Write v = u + at and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "v = u + at",
+    "s = ut + (1/2)at^2"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "The slope of a velocity–time graph is",
+      "options": [
+        "Displacement",
+        "Acceleration",
+        "Force",
+        "Mass"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The area under a velocity–time graph is",
+      "options": [
+        "Acceleration",
+        "Displacement",
+        "Mass",
+        "Power"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "v^2 = u^2 + 2as is used when",
+      "options": [
+        "Time is absent",
+        "Acceleration changes",
+        "The path is a circle at constant speed",
+        "Mass is unknown and needed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the top of a vertical throw",
+      "options": [
+        "Acceleration is zero",
+        "Velocity is zero and acceleration is g downward",
+        "Both are zero",
+        "Velocity is g"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A body starts from rest and moves with a constant acceleration of 2.0 m/s^2 for 4.0 s. Find the final velocity and the displacement.",
+      "steps": [
+        "u = 0, a = 2.0 m/s^2, t = 4.0 s.",
+        "v = u + at = 0 + 2.0 × 4.0 = 8.0 m/s.",
+        "s = ut + (1/2)at^2 = 0 + (1/2)(2.0)(16) = 16 m.",
+        "The same displacement is the area of the v–t triangle: (1/2) × 4.0 × 8.0 = 16 m.",
+        "Both results use the constant-acceleration condition."
+      ],
+      "answer": "Final velocity 8.0 m/s, displacement 16 m, both in the direction of the acceleration."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "kinematics",
+  "topicSlug": "04-equations-of-motion-graphical",
+  "topicTitle": "Equations of Motion (Graphical Derivation)"
+}

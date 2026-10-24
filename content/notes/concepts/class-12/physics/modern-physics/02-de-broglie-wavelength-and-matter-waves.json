@@ -7,14 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** De Broglie wavelength and matter waves — Modern Physics, Physics (class-12-notes).",
-    "**Tested.** define it · list: de broglie wavelength, matter waves · one worked example · one misconception each.",
-    "**Matter waves.** one-line definition + one-line exam use."
+    "De Broglie proposed that matter has a wavelength λ = h / p, where p is the momentum and h is Planck's constant. A faster or heavier particle has a shorter wavelength.",
+    "For an electron accelerated from rest through a potential difference V, (1/2) m v^2 = e V, so p = √(2 m e V) and λ = h / √(2 m e V).",
+    "In angstroms a useful electron form is λ ≈ 12.27 / √V when V is in volts. At 100 V the wavelength is about 1.23 Å, the size of atomic spacings, which is why electron diffraction is visible.",
+    "A cricket ball has a tiny wavelength because its momentum is huge. Its wave nature is real and undetectable. The effect shows up for electrons, neutrons and atoms.",
+    "Davisson and Germer diffracted electrons from a nickel crystal and found the wavelength that de Broglie predicted. That is the experimental anchor.",
+    "The wave is not the electron wiggling through a medium. It is the wave associated with the probability of finding the electron. The electron is still detected as a particle."
   ],
   "confusion": [
-    "❌ treat \"De Broglie wavelength\" as one blob → ✅ split into: de broglie wavelength, matter waves.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "A larger speed means a shorter wavelength, not a longer one.",
+    "The angstrom formula is for electrons, not for protons.",
+    "The wave is not a mechanical ripple.",
+    "h/p uses momentum, not kinetic energy, unless you have converted."
   ],
   "bounds": [
     "Covers only: de broglie wavelength, matter waves (within Modern Physics).",
@@ -22,23 +28,29 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: de broglie wavelength, matter waves.",
-    "one worked example for \"De Broglie wavelength and matter waves\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write λ = h / p and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "answer pattern for \"De Broglie wavelength and matter waves\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"De Broglie wavelength and matter waves\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "λ = h / p",
+    "λ = h / √(2 m e V) for an electron accelerated through V"
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "De Broglie proposed that matter has a wavelength λ = h / p, where p is the momentum and h is Planck's constant. A faster or heavier particle has a shorter wavelength.",
+    "For an electron accelerated from rest through a potential difference V, (1/2) m v^2 = e V, so p = √(2 m e V) and λ = h / √(2 m e V).",
+    "Find the de Broglie wavelength of an electron accelerated through 100 V. Use λ in angstroms ≈ 12.27 / √V."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"De Broglie wavelength and matter waves\" with one example.",
-    "compare \"De Broglie wavelength\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"De Broglie wavelength and matter waves\" and verify the answer is plausible."
+    "Write the de Broglie relation.",
+    "Why is 100 V enough to show electron diffraction?",
+    "What did Davisson and Germer observe?"
   ],
   "formulas": [
-    "Governing equation for \"De Broglie wavelength and matter waves\" — state with units, then use in one numerical."
+    "Governing equation for \"De Broglie wavelength and matter waves\" — state with units, then use in one numerical.",
+    "λ = h / p",
+    "λ = h / √(2 m e V) for an electron accelerated through V"
   ],
   "numericals": [
     "Set up the defining equation for \"De Broglie wavelength and matter waves\", substitute simple values, and compute the result with units.",
@@ -46,19 +58,138 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "• De Broglie wavelength",
-    "• Matter waves"
+    "Every particle has a wavelength.",
+    "A larger momentum means a shorter wavelength.",
+    "The electron is the usual classroom particle.",
+    "The wave is a probability wave, not a sound wave."
   ],
-  "summary": "De Broglie wavelength and matter waves (Modern Physics, Physics, class-12-notes) covers De Broglie wavelength, matter waves. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Matter has wavelength h/p. Electrons accelerated through V volts have λ about 12.27/√V angstroms, short enough at 100 V to diffract from a crystal. Heavier everyday objects have wavelengths too small to notice. The wave describes probability, and the particle is still detected whole.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"De Broglie wavelength and matter waves\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "De Broglie wavelength is",
       "options": [
-        "True",
-        "False"
+        "h p",
+        "h / p",
+        "p / h",
+        "m v^2"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Raising the speed",
+      "options": [
+        "Lengthens the wavelength",
+        "Shortens the wavelength",
+        "Removes h",
+        "Stops diffraction"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 12.27 formula is for",
+      "options": [
+        "Any cricket ball",
+        "Electrons, with V in volts and λ in angstroms",
+        "Protons in angstroms",
+        "Photons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Davisson and Germer showed",
+      "options": [
+        "Electron diffraction",
+        "That electrons have no wavelength",
+        "Nuclear fission",
+        "Ohm's law"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantStatements": [
+    "De Broglie proposed that matter has a wavelength λ = h / p, where p is the momentum and h is Planck's constant. A faster or heavier particle has a shorter wavelength.",
+    "For an electron accelerated from rest through a potential difference V, (1/2) m v^2 = e V, so p = √(2 m e V) and λ = h / √(2 m e V).",
+    "In angstroms a useful electron form is λ ≈ 12.27 / √V when V is in volts. At 100 V the wavelength is about 1.23 Å, the size of atomic spacings, which is why electron diffraction is visible."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "λ(Å) ≈ 12.27 / √V for electrons.",
+    "Big momentum, short wavelength."
+  ],
+  "specialNotes": [
+    "h = 6.63 × 10^−34 J s.",
+    "1 Å = 10^−10 m."
+  ],
+  "importantNotes": [
+    "Use p = mv only when the speed is well below light.",
+    "Name the particle before using the 12.27 formula."
+  ],
+  "importantConcepts": [
+    "Matter wave",
+    "Momentum",
+    "Electron wavelength",
+    "Davisson–Germer"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "De Broglie wavelength is",
+      "options": [
+        "h p",
+        "h / p",
+        "p / h",
+        "m v^2"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Raising the speed",
+      "options": [
+        "Lengthens the wavelength",
+        "Shortens the wavelength",
+        "Removes h",
+        "Stops diffraction"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 12.27 formula is for",
+      "options": [
+        "Any cricket ball",
+        "Electrons, with V in volts and λ in angstroms",
+        "Protons in angstroms",
+        "Photons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Davisson and Germer showed",
+      "options": [
+        "Electron diffraction",
+        "That electrons have no wavelength",
+        "Nuclear fission",
+        "Ohm's law"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the de Broglie wavelength of an electron accelerated through 100 V. Use λ in angstroms ≈ 12.27 / √V.",
+      "steps": [
+        "V = 100, so √V = 10.",
+        "λ = 12.27 / 10 = 1.227 Å.",
+        "That is 1.227 × 10^−10 m.",
+        "The wavelength is comparable with atomic spacings.",
+        "A proton through the same voltage would have a much shorter wavelength because its mass is larger."
+      ],
+      "answer": "1.227 Å."
     }
   ]
 }

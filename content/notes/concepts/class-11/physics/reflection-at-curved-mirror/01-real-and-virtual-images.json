@@ -9,11 +9,16 @@
     "A virtual image forms where reflected rays only appear to originate when extended backward. It cannot be projected on a screen; a plane mirror forms an upright virtual image behind the mirror.",
     "For a concave mirror, an object beyond F generally gives a real image; an object between pole and F gives a virtual, upright, magnified image. A convex mirror gives a virtual, upright, diminished image for a real object.",
     "Ray test: follow reflected rays forward. If they meet, the image is real; if only backward extensions meet, it is virtual. This geometric test is more reliable than judging whether the image seems behind the mirror.",
-    "Example: a shaving mirror used close to the face has the face inside the concave mirror’s focal length, producing an upright virtual magnified image."
+    "Example: a shaving mirror used close to the face has the face inside the concave mirror’s focal length, producing an upright virtual magnified image.",
+    "A real image is a place where the rays themselves meet, so a screen put there shows the picture. A virtual image is a place where only the backward extensions of diverging rays meet. The eye can see it, but a screen at that place stays dark. A plane mirror's image is virtual."
   ],
   "confusion": [
     "Virtual describes ray geometry, not image brightness.",
-    "State the equation’s sign convention when giving image distances."
+    "State the equation’s sign convention when giving image distances.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Compare real and virtual images by ray convergence and screen projection.",
@@ -29,7 +34,10 @@
   "motionGraphics": "reflection-at-curved-mirror",
   "examples": [
     "A plane mirror produces a virtual image at equal distance behind the mirror.",
-    "A concave mirror with an object inside F forms an upright virtual image."
+    "A concave mirror with an object inside F forms an upright virtual image.",
+    "A real image is a place where the rays themselves meet, so a screen put there shows the picture. A virtual image is a place where only the backward extensions of diverging rays meet. The eye can see it, but a screen at that place stays dark. A plane mirror's image is virtual.",
+    "The working relations are A real image can be caught on a screen and A virtual image is where backward ray extensions meet. Name each symbol, convert the data into SI units, and only then substitute.",
+    "An object is 20 cm in front of a plane mirror. Classify the image and give its position."
   ],
   "practiceQuestions": [
     "Compare real and virtual images by ray convergence and screen projection.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Real rays meet; virtual rays do not.",
     "Object position controls mirror image type.",
-    "A screen test distinguishes a real image."
+    "A screen test distinguishes a real image.",
+    "A real image can be caught on a screen",
+    "A virtual image is where backward ray extensions meet",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Ray geometry defines image type: physical convergence forms a real image, while backward extensions form a virtual image. This predicts screen projection and orientation.",
   "specialNotes": [
@@ -72,12 +84,113 @@
   "importantConcepts": [
     "Real rays meet; virtual rays do not.",
     "Object position controls mirror image type.",
-    "A screen test distinguishes a real image."
+    "A screen test distinguishes a real image.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Compare real and virtual images by ray convergence and screen projection.",
     "Where is the image for an object between P and F of a concave mirror?",
     "Can a convex mirror form a real image of a real object?"
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "A real image",
+      "options": [
+        "Can be formed on a screen",
+        "Is always behind a plane mirror",
+        "Is made of ray extensions only",
+        "Cannot be photographed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A virtual image is where",
+      "options": [
+        "Rays meet",
+        "Backward extensions meet",
+        "The focus of a concave mirror always is, for a distant object",
+        "The screen is brightest"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A plane-mirror image is",
+      "options": [
+        "Real",
+        "Virtual",
+        "Inverted top to bottom",
+        "At the focus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A screen at a virtual image",
+      "options": [
+        "Shows a bright picture from those rays",
+        "Does not catch the rays",
+        "Becomes the object",
+        "Measures f"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A real image",
+      "options": [
+        "Can be formed on a screen",
+        "Is always behind a plane mirror",
+        "Is made of ray extensions only",
+        "Cannot be photographed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A virtual image is where",
+      "options": [
+        "Rays meet",
+        "Backward extensions meet",
+        "The focus of a concave mirror always is, for a distant object",
+        "The screen is brightest"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A plane-mirror image is",
+      "options": [
+        "Real",
+        "Virtual",
+        "Inverted top to bottom",
+        "At the focus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A screen at a virtual image",
+      "options": [
+        "Shows a bright picture from those rays",
+        "Does not catch the rays",
+        "Becomes the object",
+        "Measures f"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "An object is 20 cm in front of a plane mirror. Classify the image and give its position.",
+      "steps": [
+        "Reflected rays diverge.",
+        "Their extensions meet 20 cm behind the mirror.",
+        "The image is virtual.",
+        "A screen behind the mirror receives no rays from this reflection.",
+        "The image is upright and the same size."
+      ],
+      "answer": "A virtual image, 20 cm behind the mirror."
+    }
+  ]
 }

@@ -1,0 +1,188 @@
+{
+  "title": "Uses of Dimensional Analysis & Its Limitations",
+  "notes": [
+    "Dimensional analysis is used in three ways. It checks whether an equation could be right. It converts a numerical value from one unit system to another. It suggests the form of a relation when the relevant quantities are known.",
+    "To find a form, write the unknown as a product of powers of the chosen quantities, then equate the powers of M, L and T on both sides. The solution of those three equations gives the powers.",
+    "The time period of a simple pendulum is assumed to depend on its length and on g, and not on the mass, when the amplitude is small. Matching dimensions then gives T proportional to the square root of l/g.",
+    "The method cannot produce the 2π in that pendulum formula. Any dimensionless constant is invisible. An experiment, or a full derivation, has to supply it.",
+    "The method also fails if a needed quantity is left out of the assumption, or if too many quantities are included. With more than three unknown powers and only M, L and T, the powers are not fixed uniquely.",
+    "Trigonometric, exponential and logarithmic functions accept only dimensionless inputs. Dimensional analysis will reject a formula that puts a length alone inside a sine."
+  ],
+  "examples": [
+    "Dimensional analysis is used in three ways. It checks whether an equation could be right. It converts a numerical value from one unit system to another. It suggests the form of a relation when the relevant quantities are known.",
+    "To find a form, write the unknown as a product of powers of the chosen quantities, then equate the powers of M, L and T on both sides. The solution of those three equations gives the powers.",
+    "Assume the period of a simple pendulum depends on length l and g as T = k l^a g^b. Find a and b."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Uses of Dimensional Analysis & Its Limitations.",
+    "Q3. Problem on Uses of Dimensional Analysis & Its Limitations.",
+    "What three jobs does dimensional analysis do?",
+    "Why is 2π missing from a dimensional pendulum formula?",
+    "When do the powers fail to be unique?"
+  ],
+  "formulas": [
+    "Assume the dependence, then match powers of M, L and T.",
+    "T = k sqrt(l/g), and k is not fixed by dimensions"
+  ],
+  "keyPoints": [
+    "Connection of Uses of Dimensional Analysis & Its Limitations to other topics",
+    "Find how a quantity depends on others.",
+    "Convert a unit by dimensions.",
+    "Check an equation.",
+    "Cannot find a dimensionless factor."
+  ],
+  "summary": "Uses of Dimensional Analysis & Its Limitations covers essential principles and applications.",
+  "specialNotes": [
+    "The pendulum result assumes small swings and no dependence on mass.",
+    "A formula with both g and a spring constant may need an extra argument."
+  ],
+  "importantStatements": [
+    "Dimensional analysis is used in three ways. It checks whether an equation could be right. It converts a numerical value from one unit system to another. It suggests the form of a relation when the relevant quantities are known.",
+    "To find a form, write the unknown as a product of powers of the chosen quantities, then equate the powers of M, L and T on both sides. The solution of those three equations gives the powers.",
+    "The time period of a simple pendulum is assumed to depend on its length and on g, and not on the mass, when the amplitude is small. Matching dimensions then gives T proportional to the square root of l/g."
+  ],
+  "importantNotes": [
+    "Uses of Dimensional Analysis & Its Limitations is based on fundamental principles.",
+    "State the quantities you assumed before solving for powers.",
+    "Reject a sine of a dimensioned quantity."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Uses of Dimensional Analysis & Its Limitations.",
+    "Three base dimensions can fix three powers.",
+    "Look for a forgotten dimensionless constant."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "Dimensional analysis cannot find",
+      "options": [
+        "A power of length",
+        "A pure number such as 2π",
+        "Whether mass appears",
+        "The dimension of g"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a simple pendulum, T depends on",
+      "options": [
+        "l and g in the usual assumption",
+        "Mass only",
+        "Colour of the bob",
+        "The unit system alone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A sine may contain",
+      "options": [
+        "A length by itself",
+        "Only a dimensionless number",
+        "A force",
+        "A time by itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If four quantities are assumed and only M, L, T are available, the powers are",
+      "options": [
+        "Always unique",
+        "Not fixed by dimensions alone",
+        "Always zero",
+        "Forbidden to discuss"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Uses of Dimensional Analysis & Its Limitations.",
+    "Checking equations",
+    "Finding a dependence",
+    "Dimensionless constant",
+    "Too many variables"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "A formula that passes the check can still have the wrong numerical factor.",
+    "You cannot derive a law from dimensions if you omit a quantity that matters.",
+    "Unit conversion is not the same task as finding a new law.",
+    "Adding quantities of different dimensions is rejected, even if the numbers look similar."
+  ],
+  "practice": [
+    "Write Assume the dependence, then match powers of M, L and T. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Assume the dependence, then match powers of M, L and T.",
+    "T = k sqrt(l/g), and k is not fixed by dimensions"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "Dimensional analysis cannot find",
+      "options": [
+        "A power of length",
+        "A pure number such as 2π",
+        "Whether mass appears",
+        "The dimension of g"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a simple pendulum, T depends on",
+      "options": [
+        "l and g in the usual assumption",
+        "Mass only",
+        "Colour of the bob",
+        "The unit system alone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A sine may contain",
+      "options": [
+        "A length by itself",
+        "Only a dimensionless number",
+        "A force",
+        "A time by itself"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If four quantities are assumed and only M, L, T are available, the powers are",
+      "options": [
+        "Always unique",
+        "Not fixed by dimensions alone",
+        "Always zero",
+        "Forbidden to discuss"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Assume the period of a simple pendulum depends on length l and g as T = k l^a g^b. Find a and b.",
+      "steps": [
+        "[T] = [T^1]. [l^a] = [L^a]. [g^b] = [L T^-2]^b = [L^b T^-2b].",
+        "Mass does not appear, which matches the assumption.",
+        "For time: 1 = -2b, so b = -1/2.",
+        "For length: 0 = a + b, so a = 1/2.",
+        "Therefore T = k sqrt(l/g). Dimensions do not give the value of k."
+      ],
+      "answer": "a = 1/2, b = -1/2, so T is proportional to sqrt(l/g)."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "physical-quantities",
+  "topicSlug": "03-uses-and-limitations-of-dimensional-analysis",
+  "topicTitle": "Uses of Dimensional Analysis & Its Limitations"
+}

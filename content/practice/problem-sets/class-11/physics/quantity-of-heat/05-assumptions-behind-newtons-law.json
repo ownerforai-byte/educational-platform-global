@@ -8,23 +8,178 @@
     "The temperature difference between the body and surroundings is small",
     "Heat is lost mainly by convection and radiation, not conduction",
     "The surrounding temperature remains constant throughout cooling",
-    "No phase change occurs in the body during cooling"
+    "No phase change occurs in the body during cooling",
+    "Newton's law of cooling, that the rate of fall of temperature is proportional to the excess over the surroundings, is an approximation. It needs a small excess, a steady room, no change of state, and heat loss dominated by convection and radiation rather than by a changing conduction path.",
+    "The working relations are The excess temperature must be small and The surroundings stay at one temperature. Name each symbol, convert the data into SI units, and only then substitute.",
+    "List the four assumptions and say which one fails if the body is 300 K above the room. The excess temperature is supposed to be small. The surroundings stay at one temperature.",
+    "There is no change of state. Heat leaves mainly by convection and radiation. A 300 K excess is not small, so the linear law fails and the full radiation difference, proportional to T^4, is needed.",
+    "The result is The small-excess assumption fails for a 300 K difference.. Check it by substituting back into The excess temperature must be small and confirming the units.",
+    "Write the condition that makes the formula valid, then the number and the unit. If the quantity has a direction, state the direction in the same sentence as the number."
   ],
   "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
+    "Write The excess temperature must be small and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
+    "The excess temperature must be small",
+    "The surroundings stay at one temperature"
   ],
   "animation3D": "quantity-of-heat",
-  "motionGraphics": "quantity-of-heat"
+  "motionGraphics": "quantity-of-heat",
+  "keyPoints": [
+    "The excess temperature must be small",
+    "The surroundings stay at one temperature",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "importantStatements": [
+    "Newton's law of cooling, that the rate of fall of temperature is proportional to the excess over the surroundings, is an approximation. It needs a small excess, a steady room, no change of state, and heat loss dominated by convection and radiation rather than by a changing conduction path.",
+    "The working relations are The excess temperature must be small and The surroundings stay at one temperature. Name each symbol, convert the data into SI units, and only then substitute.",
+    "List the four assumptions and say which one fails if the body is 300 K above the room. The excess temperature is supposed to be small. The surroundings stay at one temperature."
+  ],
+  "examples": [
+    "Newton's law of cooling, that the rate of fall of temperature is proportional to the excess over the surroundings, is an approximation. It needs a small excess, a steady room, no change of state, and heat loss dominated by convection and radiation rather than by a changing conduction path.",
+    "The working relations are The excess temperature must be small and The surroundings stay at one temperature. Name each symbol, convert the data into SI units, and only then substitute.",
+    "List the four assumptions and say which one fails if the body is 300 K above the room."
+  ],
+  "formulas": [
+    "The excess temperature must be small",
+    "The surroundings stay at one temperature"
+  ],
+  "practiceQuestions": [
+    "Write The excess temperature must be small and name the symbols.",
+    "What does The surroundings stay at one temperature tell you?",
+    "Which unit must be converted before the substitution?"
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "SI units first, then the formula.",
+    "The last line is the number, the unit, and the direction if there is one."
+  ],
+  "specialNotes": [
+    "A sketched sign convention is part of the data.",
+    "A dimensionless ratio still needs the two quantities named."
+  ],
+  "importantNotes": [
+    "Do not skip the unit conversion.",
+    "Match the formula to the situation drawn, not to a neighbouring topic."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Newton's law needs the excess temperature to be",
+      "options": [
+        "Small",
+        "Hundreds of kelvin",
+        "Zero",
+        "The melting point"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The surroundings should",
+      "options": [
+        "Stay at one temperature",
+        "Warm at the same rate",
+        "Boil",
+        "Change state"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A change of state",
+      "options": [
+        "Is allowed in the basic law",
+        "Takes the body outside the basic law",
+        "Sets c to 1",
+        "Removes the room temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A very large excess follows",
+      "options": [
+        "The linear excess",
+        "A stronger temperature dependence, from T^4 radiation",
+        "No heat loss",
+        "Ohm's law"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Newton's law needs the excess temperature to be",
+      "options": [
+        "Small",
+        "Hundreds of kelvin",
+        "Zero",
+        "The melting point"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The surroundings should",
+      "options": [
+        "Stay at one temperature",
+        "Warm at the same rate",
+        "Boil",
+        "Change state"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A change of state",
+      "options": [
+        "Is allowed in the basic law",
+        "Takes the body outside the basic law",
+        "Sets c to 1",
+        "Removes the room temperature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A very large excess follows",
+      "options": [
+        "The linear excess",
+        "A stronger temperature dependence, from T^4 radiation",
+        "No heat loss",
+        "Ohm's law"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "List the four assumptions and say which one fails if the body is 300 K above the room.",
+      "steps": [
+        "The excess temperature is supposed to be small.",
+        "The surroundings stay at one temperature.",
+        "There is no change of state.",
+        "Heat leaves mainly by convection and radiation.",
+        "A 300 K excess is not small, so the linear law fails and the full radiation difference, proportional to T^4, is needed."
+      ],
+      "answer": "The small-excess assumption fails for a 300 K difference."
+    }
+  ],
+  "summary": "Newton's law of cooling assumes a small excess temperature, steady surroundings, no change of state, and loss mainly by convection and radiation. A body 300 K above the room breaks the small-excess assumption."
 }

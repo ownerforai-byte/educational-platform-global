@@ -7,19 +7,21 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Atom — Bohr's model and hydrogen spectrum — Modern Physics, Physics (class-12-notes).",
-    "**Tested.** define it · list: atom — bohr's model, hydrogen spectrum · one worked example · one misconception each.",
-    "**Fact.** Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
-    "**Fact.** Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
-    "**Fact.** Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
-    "**Fact.** Filling order (Aufbau, n+l rule): 1s 2s 2p 3s 3p 4s 3d…; Hund's rule: maximise unpaired spin before pairing; Pauli: no two electrons share all four quantum numbers.",
-    "**Hydrogen spectrum.** one-line definition + one-line exam use."
+    "Bohr's hydrogen atom keeps a positive nucleus and an electron in orbit, and adds the rule that the angular momentum is n h / (2π). Only integer n is allowed.",
+    "In an allowed orbit the electron does not radiate, even though it is accelerating. Radiation happens only when the electron jumps from one allowed energy to a lower one.",
+    "The energies are E_n = −13.6 / n^2 electronvolts. The ground state is n = 1, at −13.6 eV. The zero of energy is the electron removed to infinity.",
+    "The photon energy is the difference of the two levels. A jump from n = 3 to n = 2 is a Balmer line. Jumps that end on n = 1 are the Lyman series, in the ultraviolet.",
+    "The wave formula is 1/λ = R (1/n1^2 − 1/n2^2). R is the Rydberg constant. A larger jump gives a larger photon energy and a shorter wavelength.",
+    "The model gives the hydrogen numbers and fails for atoms with several electrons. It also does not explain why the angular momentum should be quantised. Later wave mechanics supplies that reason."
   ],
   "confusion": [
-    "❌ treat \"Atom — Bohr's model\" as one blob → ✅ split into: atom — bohr's model, hydrogen spectrum.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1).."
+    "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)..",
+    "The electron does not radiate in an orbit.",
+    "−13.6 eV is not the energy of a Balmer photon.",
+    "Balmer ends on n = 2, not n = 1.",
+    "The photon energy is a difference."
   ],
   "bounds": [
     "Covers only: atom — bohr's model, hydrogen spectrum (within Modern Physics).",
@@ -28,9 +30,9 @@
     "Limit to remember: bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)."
   ],
   "practice": [
-    "define + example each sub-idea: atom — bohr's model, hydrogen spectrum.",
-    "one worked example for \"Atom — Bohr's model and hydrogen spectrum\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write E_n = −13.6 / n^2 eV and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
     "Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
@@ -38,12 +40,14 @@
     "Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell)."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Bohr's hydrogen atom keeps a positive nucleus and an electron in orbit, and adds the rule that the angular momentum is n h / (2π). Only integer n is allowed.",
+    "In an allowed orbit the electron does not radiate, even though it is accelerating. Radiation happens only when the electron jumps from one allowed energy to a lower one.",
+    "A hydrogen electron falls from n = 3 to n = 2. Find the photon energy. Use E_3 = −1.51 eV and E_2 = −3.40 eV."
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Atom — Bohr's model and hydrogen spectrum\" with one example.",
-    "compare \"Atom — Bohr's model\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Atom — Bohr's model and hydrogen spectrum\" and verify the answer is plausible."
+    "Write E_n.",
+    "Which series ends on n = 2?",
+    "What is the photon energy of a jump?"
   ],
   "formulas": [
     "En(H) = −13.6 Z²/n² eV",
@@ -51,24 +55,141 @@
     "λ = h/(mv) (de Broglie)"
   ],
   "numericals": [
-    "Use  En(H) = −13.6 Z²/n² eV  — pick reasonable values, solve, and check the units.",
-    "Use  hν = ΔE  — pick reasonable values, solve, and check the units.",
-    "Use  λ = h/(mv) (de Broglie)  — pick reasonable values, solve, and check the units."
+    "A hydrogen electron falls from n = 3 to n = 2. Find the photon energy. Use E_3 = −1.51 eV and E_2 = −3.40 eV."
   ],
   "keyPoints": [
-    "• Atom — Bohr's model",
-    "• Hydrogen spectrum"
+    "Angular momentum is n h / 2π.",
+    "The electron does not radiate in an allowed orbit.",
+    "A jump emits one photon.",
+    "Balmer jumps end on n = 2."
   ],
-  "summary": "Atom — Bohr's model and hydrogen spectrum (Modern Physics, Physics, class-12-notes) covers Atom — Bohr's model, hydrogen spectrum. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Bohr's orbits have angular momentum n h/(2π) and hydrogen energies −13.6/n^2 eV. The electron radiates only in a jump, and the photon energy is the difference of the levels. The Balmer series is the set of jumps that end on n = 2.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Atom — Bohr's model and hydrogen spectrum\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The ground-state energy of hydrogen is",
       "options": [
-        "True",
-        "False"
+        "0",
+        "−13.6 eV",
+        "+13.6 eV",
+        "−1.51 eV"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "The Balmer series ends on",
+      "options": [
+        "n = 1",
+        "n = 2",
+        "n = 3",
+        "n = ∞"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In an allowed orbit the electron",
+      "options": [
+        "Radiates all the time",
+        "Does not radiate",
+        "Has zero angular momentum",
+        "Leaves the atom"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The photon energy is",
+      "options": [
+        "E_n itself",
+        "The difference of the two levels",
+        "13.6 n",
+        "Always 10.2 eV"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Bohr's hydrogen atom keeps a positive nucleus and an electron in orbit, and adds the rule that the angular momentum is n h / (2π). Only integer n is allowed.",
+    "In an allowed orbit the electron does not radiate, even though it is accelerating. Radiation happens only when the electron jumps from one allowed energy to a lower one.",
+    "The energies are E_n = −13.6 / n^2 electronvolts. The ground state is n = 1, at −13.6 eV. The zero of energy is the electron removed to infinity."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Difference of levels.",
+    "Balmer: down to 2. Lyman: down to 1."
+  ],
+  "specialNotes": [
+    "E_2 = −3.40 eV and E_3 = −1.51 eV.",
+    "R is about 1.097 × 10^7 per metre."
+  ],
+  "importantNotes": [
+    "Name the two values of n.",
+    "A negative level energy is not the photon energy."
+  ],
+  "importantConcepts": [
+    "Bohr orbits",
+    "Energy levels",
+    "Balmer series",
+    "Photon difference"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "The ground-state energy of hydrogen is",
+      "options": [
+        "0",
+        "−13.6 eV",
+        "+13.6 eV",
+        "−1.51 eV"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Balmer series ends on",
+      "options": [
+        "n = 1",
+        "n = 2",
+        "n = 3",
+        "n = ∞"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In an allowed orbit the electron",
+      "options": [
+        "Radiates all the time",
+        "Does not radiate",
+        "Has zero angular momentum",
+        "Leaves the atom"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The photon energy is",
+      "options": [
+        "E_n itself",
+        "The difference of the two levels",
+        "13.6 n",
+        "Always 10.2 eV"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A hydrogen electron falls from n = 3 to n = 2. Find the photon energy. Use E_3 = −1.51 eV and E_2 = −3.40 eV.",
+      "steps": [
+        "The higher level is n = 3.",
+        "Photon energy = E_3 − E_2.",
+        "−1.51 − (−3.40) = 1.89 eV.",
+        "This is a Balmer photon because the lower level is n = 2.",
+        "The electron loses 1.89 eV and the photon carries it away."
+      ],
+      "answer": "1.89 eV."
     }
   ]
 }

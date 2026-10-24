@@ -3,17 +3,22 @@
   "unitSlug": "mechanics",
   "topicSlug": "physical-quantity",
   "topicTitle": "Physics and Measurement",
-  "relevance": 40,
+  "relevance": 94,
   "notes": [
     "A physical quantity is a measurable property expressed as magnitude and unit, such as 2.5 m or 4.0 s. A number without a unit is incomplete unless the quantity is dimensionless.",
     "SI base quantities include length (m), mass (kg), time (s), current (A), temperature (K), amount (mol) and luminous intensity (cd). Derived units combine these; 1 N=1 kg m s⁻².",
     "Scalars have magnitude only (mass, time, energy); vectors have magnitude and direction (displacement, velocity, force). Their addition rules differ.",
     "Example: 3 m east followed by 4 m north gives path length 7 m but displacement magnitude √(3²+4²)=5 m. Distance and displacement are different quantities.",
-    "Weight is gravitational force measured in newtons; mass is measured in kilograms. Near Earth W=mg, but mass does not change when the gravitational field changes."
+    "Weight is gravitational force measured in newtons; mass is measured in kilograms. Near Earth W=mg, but mass does not change when the gravitational field changes.",
+    "A physical quantity needs a magnitude and a unit, unless it is a pure ratio. Saying the length is 2 is incomplete. Base quantities are measured directly. Derived quantities such as speed and force are defined from them."
   ],
   "confusion": [
     "A negative vector component indicates direction, not negative magnitude.",
-    "Do not report weight in kilograms or mass in newtons."
+    "Do not report weight in kilograms or mass in newtons.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Classify force, mass, time and energy as scalar or vector.",
@@ -29,7 +34,10 @@
   "motionGraphics": "mechanics",
   "examples": [
     "3 m east then 4 m north gives 5 m displacement but 7 m path length.",
-    "A 2 kg mass weighs about 19.6 N near Earth for g=9.8 m s⁻²."
+    "A 2 kg mass weighs about 19.6 N near Earth for g=9.8 m s⁻².",
+    "A physical quantity needs a magnitude and a unit, unless it is a pure ratio. Saying the length is 2 is incomplete. Base quantities are measured directly. Derived quantities such as speed and force are defined from them.",
+    "The working relations are A physical quantity is a number times a unit and Base quantities in mechanics are mass, length and time. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Express 72 km/h as metres per second, and name the base quantities inside the unit."
   ],
   "practiceQuestions": [
     "Classify force, mass, time and energy as scalar or vector.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "A measurement needs a unit.",
     "Scalars and vectors obey different addition rules.",
-    "Mass is not weight; distance is not displacement."
+    "Mass is not weight; distance is not displacement.",
+    "A physical quantity is a number times a unit",
+    "Base quantities in mechanics are mass, length and time",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Physics uses quantities, units and correct mathematical structure. Distinguishing scalar from vector quantities prevents errors in displacement, velocity and force calculations.",
   "specialNotes": [
@@ -72,12 +84,113 @@
   "importantConcepts": [
     "A measurement needs a unit.",
     "Scalars and vectors obey different addition rules.",
-    "Mass is not weight; distance is not displacement."
+    "Mass is not weight; distance is not displacement.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Classify force, mass, time and energy as scalar or vector.",
     "Find resultant displacement for 6 m east and 8 m north.",
     "Why are 5 kg and 5 N not interchangeable?"
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "A physical quantity generally has",
+      "options": [
+        "A number and a unit",
+        "A number only",
+        "A unit only",
+        "No symbol"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Speed is",
+      "options": [
+        "A base quantity",
+        "A derived quantity",
+        "Dimensionless",
+        "A vector with no unit"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "72 km/h equals",
+      "options": [
+        "20 m/s",
+        "72 m/s",
+        "260 m/s",
+        "5 m/s"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Mass, length and time are",
+      "options": [
+        "Base quantities in mechanics",
+        "All derived",
+        "Dimensionless",
+        "Units, not quantities"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A physical quantity generally has",
+      "options": [
+        "A number and a unit",
+        "A number only",
+        "A unit only",
+        "No symbol"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Speed is",
+      "options": [
+        "A base quantity",
+        "A derived quantity",
+        "Dimensionless",
+        "A vector with no unit"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "72 km/h equals",
+      "options": [
+        "20 m/s",
+        "72 m/s",
+        "260 m/s",
+        "5 m/s"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Mass, length and time are",
+      "options": [
+        "Base quantities in mechanics",
+        "All derived",
+        "Dimensionless",
+        "Units, not quantities"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Express 72 km/h as metres per second, and name the base quantities inside the unit.",
+      "steps": [
+        "72 km/h = 72 × 1000 m / 3600 s.",
+        "72 × 5/18 = 20.",
+        "The speed is 20 m/s.",
+        "The unit uses length and time, which are base quantities.",
+        "Mass is not in this unit."
+      ],
+      "answer": "20 m/s, built from length and time."
+    }
+  ]
 }

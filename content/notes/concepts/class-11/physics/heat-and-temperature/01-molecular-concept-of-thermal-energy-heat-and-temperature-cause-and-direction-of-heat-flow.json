@@ -7,21 +7,20 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Molecular concept of thermal energy, heat and temperature… — Heat and Temperature, Physics (class-11-notes).",
-    "**Tested.** define it · list: molecular concept of thermal energy, heat, temperature, cause · one worked example · one misconception each.",
-    "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100.",
-    "**Heat.** one-line definition + one-line exam use.",
-    "**Temperature.** one-line definition + one-line exam use.",
-    "**Cause.** one-line definition + one-line exam use.",
-    "**Direction of heat flow.** one-line definition + one-line exam use."
+    "Matter is made of molecules in motion. In a solid they vibrate about fixed positions. In a liquid they move through the liquid. In a gas they move almost freely and collide. The energy of this motion, and of the molecular forces, is the internal energy of the body.",
+    "Temperature is the quantity that indicates how hot a body is. For an ideal gas it is proportional to the average translational kinetic energy of the molecules. A higher temperature means faster molecular motion, not a larger object.",
+    "Heat is energy that flows from one body to another because their temperatures differ. It is not a substance stored in a tank. Once the energy has entered a body it is part of that body's internal energy, and it is no longer called heat.",
+    "The direction of the flow is from the higher temperature to the lower temperature. The flow stops, in the sense that net transfer ends, when the two bodies reach the same temperature. That shared state is thermal equilibrium.",
+    "A large mass at a moderate temperature can hold more internal energy than a small mass at a higher temperature. Heat flow does not follow the amount of energy stored. It follows the temperature difference.",
+    "Putting a warm hand on a metal rail feels colder than putting it on wood at the same temperature because the metal conducts heat away faster. The temperatures were equal. The rates of flow were not."
   ],
   "confusion": [
-    "❌ treat \"Molecular concept of thermal energy\" as one blob → ✅ split into: molecular concept of thermal energy, heat, temperature.",
     "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
+    "Heat and temperature are not the same quantity.",
+    "Heat does not flow from the body with more total energy. It flows from the hotter body.",
+    "A body does not contain heat. It contains internal energy.",
+    "Thermal equilibrium means equal temperatures, not necessarily equal energies."
   ],
   "bounds": [
     "Covers only: molecular concept of thermal energy, heat, temperature, cause (within Heat and Temperature).",
@@ -30,61 +29,164 @@
     "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
   ],
   "practice": [
-    "define + example each sub-idea: molecular concept of thermal energy, heat, temperature, cause.",
-    "one worked example for \"Molecular concept of thermal energy, heat and temperature…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "Write Heat flows from higher temperature to lower temperature. and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
   ],
   "universalFacts": [
-    "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+    "Heat flows from higher temperature to lower temperature.",
+    "ΔU is the change in internal energy."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Matter is made of molecules in motion. In a solid they vibrate about fixed positions. In a liquid they move through the liquid. In a gas they move almost freely and collide. The energy of this motion, and of the molecular forces, is the internal energy of the body.",
+    "Temperature is the quantity that indicates how hot a body is. For an ideal gas it is proportional to the average translational kinetic energy of the molecules. A higher temperature means faster molecular motion, not a larger object.",
+    "A 1 kg block of iron at 80°C is placed against a 5 kg block of iron at 30°C, with no heat lost to the room. Which way does heat flow, and when does the net flow stop?"
   ],
   "practiceQuestions": [
-    "state + explain the main idea of \"Molecular concept of thermal energy, heat and temperature…\" with one example.",
-    "compare \"Molecular concept of thermal energy\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Molecular concept of thermal energy, heat and temperature…\" and verify the answer is plausible."
+    "What does temperature measure for an ideal gas?",
+    "In which direction does heat flow?",
+    "Why can metal feel colder than wood at the same temperature?"
   ],
   "formulas": [
-    "n = m / M",
-    "n = V / 22.4 (g at STP)",
-    "% yield = (actual / theoretical) × 100"
+    "Heat flows from higher temperature to lower temperature.",
+    "ΔU is the change in internal energy."
   ],
   "numericals": [
-    "Use  n = m / M  — pick reasonable values, solve, and check the units.",
-    "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
-    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
+    "A 1 kg block of iron at 80°C is placed against a 5 kg block of iron at 30°C, with no heat lost to the room. Which way does heat flow, and when does the net flow stop?"
   ],
   "keyPoints": [
-    "• Molecular concept of thermal energy",
-    "• Heat",
-    "• Temperature",
-    "• Cause",
-    "• Direction of heat flow"
+    "Temperature marks the average kinetic energy of molecules.",
+    "Heat is energy in transit.",
+    "Internal energy is stored in the body.",
+    "Flow continues until the temperatures match."
   ],
-  "summary": "Molecular concept of thermal energy, heat and temperature… (Heat and Temperature, Physics, class-11-notes) covers Molecular concept of thermal energy, heat, temperature. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Molecules in motion store internal energy. Temperature indicates how hot a body is and, for an ideal gas, tracks the average kinetic energy. Heat is energy flowing from the hotter body to the cooler one until the temperatures are equal.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Molecular concept of thermal energy, heat and temperature…\"?",
+      "question": "Heat flows",
       "options": [
-        "Molecular concept of thermal energy",
-        "Heat",
-        "Unrelated topic",
-        "None of the above"
+        "From lower temperature to higher temperature by itself",
+        "From higher temperature to lower temperature",
+        "From larger mass to smaller mass always",
+        "Only in gases"
       ],
-      "answer": "A",
-      "explanation": "Molecular concept of thermal energy is listed among the official sub-ideas of Molecular concept of thermal energy, heat and temperature…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Molecular concept of thermal energy, heat and temperature…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Temperature of an ideal gas tracks",
       "options": [
-        "True",
-        "False"
+        "The total mass",
+        "The average translational kinetic energy of the molecules",
+        "The volume alone",
+        "The colour"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "At thermal equilibrium",
+      "options": [
+        "Heat is still flowing one way",
+        "The temperatures are equal",
+        "The masses must be equal",
+        "Internal energy is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A metal feels colder than wood at the same temperature because",
+      "options": [
+        "The metal is actually colder",
+        "The metal conducts heat from the hand faster",
+        "Wood has no molecules",
+        "Temperature does not apply to solids"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Matter is made of molecules in motion. In a solid they vibrate about fixed positions. In a liquid they move through the liquid. In a gas they move almost freely and collide. The energy of this motion, and of the molecular forces, is the internal energy of the body.",
+    "Temperature is the quantity that indicates how hot a body is. For an ideal gas it is proportional to the average translational kinetic energy of the molecules. A higher temperature means faster molecular motion, not a larger object.",
+    "Heat is energy that flows from one body to another because their temperatures differ. It is not a substance stored in a tank. Once the energy has entered a body it is part of that body's internal energy, and it is no longer called heat."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Temperature decides the direction. Mass does not.",
+    "Heat is transit. Internal energy is storage."
+  ],
+  "specialNotes": [
+    "The zeroth law says that if each of two bodies is in equilibrium with a third, they are in equilibrium with each other. That is what makes a thermometer possible.",
+    "Absolute zero is 0 K, about −273°C, where the classical molecular picture reaches its lowest energy."
+  ],
+  "importantNotes": [
+    "Name the two temperatures before stating the direction of flow.",
+    "A thermometer must be much smaller in heat capacity than the body it measures, or it will change that body."
+  ],
+  "importantConcepts": [
+    "Molecular motion",
+    "Temperature",
+    "Heat as transit",
+    "Thermal equilibrium"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "Heat flows",
+      "options": [
+        "From lower temperature to higher temperature by itself",
+        "From higher temperature to lower temperature",
+        "From larger mass to smaller mass always",
+        "Only in gases"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Temperature of an ideal gas tracks",
+      "options": [
+        "The total mass",
+        "The average translational kinetic energy of the molecules",
+        "The volume alone",
+        "The colour"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "At thermal equilibrium",
+      "options": [
+        "Heat is still flowing one way",
+        "The temperatures are equal",
+        "The masses must be equal",
+        "Internal energy is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A metal feels colder than wood at the same temperature because",
+      "options": [
+        "The metal is actually colder",
+        "The metal conducts heat from the hand faster",
+        "Wood has no molecules",
+        "Temperature does not apply to solids"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A 1 kg block of iron at 80°C is placed against a 5 kg block of iron at 30°C, with no heat lost to the room. Which way does heat flow, and when does the net flow stop?",
+      "steps": [
+        "Compare the temperatures, not the masses or the stored energies.",
+        "80°C is higher than 30°C, so heat flows from the 1 kg block to the 5 kg block.",
+        "The small block cools and the large block warms.",
+        "Net flow stops when both reach the same final temperature.",
+        "That final temperature is closer to 30°C because the receiving block has the larger heat capacity, but the direction of flow does not depend on that."
+      ],
+      "answer": "Heat flows from the 80°C block to the 30°C block until the temperatures are equal."
     }
   ]
 }

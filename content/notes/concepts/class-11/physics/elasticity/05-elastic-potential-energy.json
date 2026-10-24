@@ -190,7 +190,8 @@
     "**Energy Density (u):** The elastic potential energy stored per unit volume. For a wire under tension, $u = \\frac{1}{2} \\times \\text{stress} \\times \\text{strain} = \\frac{1}{2} \\sigma \\epsilon = \\frac{1}{2} \\frac{\\sigma^2}{E} = \\frac{1}{2} E \\epsilon^2$.",
     "**Work Done:** The work done to stretch a spring by $x$ is the area under the $F-x$ graph: $W = \\int_0^x F dx = \\int_0^x kx dx = \\frac{1}{2}kx^2$.",
     "**Hysteresis:** In some materials, the loading and unloading stress-strain curves do not coincide. The area enclosed by the loop represents energy dissipated as heat per unit volume per cycle. This is crucial for shock absorbers and rubber components.",
-    "**NEB exam focus:** Derive $U = \\frac{1}{2}kx^2$; calculate energy stored in springs and wires; understand energy density; explain hysteresis loops."
+    "**NEB exam focus:** Derive $U = \\frac{1}{2}kx^2$; calculate energy stored in springs and wires; understand energy density; explain hysteresis loops.",
+    "The energy stored in a stretched wire is the area under the force-extension graph. In the elastic region that graph is a triangle, so the energy is one half times force times extension. Per unit volume it is one half times stress times strain."
   ],
   "confusion": [
     "❌ 'Energy stored is $kx^2$.' ✅ It is $\\frac{1}{2}kx^2$ — the factor of 1/2 comes from the average force $\\bar{F} = (0+kx)/2 = kx/2$.",
@@ -261,10 +262,113 @@
     "Understand the difference between energy stored (elastic) and energy dissipated (hysteresis)."
   ],
   "importantConcepts": [
-    "Added new rich content for important Concepts."
+    "Added new rich content for important Concepts.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
-    "Added new rich content for important Tasks."
+    "Added new rich content for important Tasks.",
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
   ],
-  "summary": "Elastic potential energy is stored in deformed bodies. For a spring, $U = \\frac{1}{2}kx^2$. For a material under stress, energy density $u = \\frac{1}{2} \\sigma \\epsilon$. Hysteresis loops represent energy dissipation, while the area under the stress-strain curve represents toughness."
+  "summary": "Elastic potential energy is stored in deformed bodies. For a spring, $U = \\frac{1}{2}kx^2$. For a material under stress, energy density $u = \\frac{1}{2} \\sigma \\epsilon$. Hysteresis loops represent energy dissipation, while the area under the stress-strain curve represents toughness.",
+  "mcs": [
+    {
+      "question": "Elastic energy is",
+      "options": [
+        "F x",
+        "(1/2) F x in the Hooke region",
+        "Stress only",
+        "Y times volume"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The one half comes from",
+      "options": [
+        "The triangular area",
+        "A measuring error",
+        "The bulk modulus",
+        "Plastic flow"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Per unit volume the energy is",
+      "options": [
+        "(1/2) stress × strain",
+        "Stress/strain",
+        "Y",
+        "Force"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Past the elastic limit",
+      "options": [
+        "The triangle formula still holds",
+        "The simple (1/2) F x formula is no longer valid",
+        "Energy is zero",
+        "Y is infinite"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Elastic energy is",
+      "options": [
+        "F x",
+        "(1/2) F x in the Hooke region",
+        "Stress only",
+        "Y times volume"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The one half comes from",
+      "options": [
+        "The triangular area",
+        "A measuring error",
+        "The bulk modulus",
+        "Plastic flow"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Per unit volume the energy is",
+      "options": [
+        "(1/2) stress × strain",
+        "Stress/strain",
+        "Y",
+        "Force"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Past the elastic limit",
+      "options": [
+        "The triangle formula still holds",
+        "The simple (1/2) F x formula is no longer valid",
+        "Energy is zero",
+        "Y is infinite"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A wire is stretched 2.0 mm by a force that grows from 0 to 100 N. Find the elastic energy.",
+      "steps": [
+        "The loading is elastic, so the graph is a triangle.",
+        "Energy = (1/2) F x.",
+        "x = 2.0 × 10^−3 m.",
+        "Energy = 0.5 × 100 × 2.0 × 10^−3 = 0.10 J.",
+        "Beyond the elastic limit the triangle formula no longer holds."
+      ],
+      "answer": "0.10 J."
+    }
+  ]
 }

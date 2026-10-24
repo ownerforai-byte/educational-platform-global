@@ -5,14 +5,21 @@
   "topicTitle": "Self and Mutual Induction",
   "relevance": 100,
   "notes": [
-    "**Self and Mutual Induction:** This topic covers the fundamental concepts of self and mutual induction in the physics curriculum.",
-    "Understanding self and mutual induction is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to self and mutual induction should be memorized and practiced regularly."
+    "Self-induction and mutual induction are the same Faraday effect with different flux. In self-induction the coil links its own changing flux. In mutual induction a second coil links flux from the first.",
+    "The self emf is −L dI/dt and it opposes the change of that coil's current. The mutual emf is −M dI_1/dt in the second coil.",
+    "A coil can have both at once. Its total induced emf is −L dI/dt from itself plus −M dI_other/dt from its neighbour.",
+    "L and M are both in henries. M cannot exceed √(L1 L2), and it reaches that limit only when every flux line of one coil links the other.",
+    "Opening a switch in a self-inductive circuit produces a large dI/dt and a spark. A mutual pair does the same in the second coil if the first current is interrupted.",
+    "The transformer, the induction coil and the coupled windings of a radio are mutual induction. The choke that opposes a change in a single circuit is self-induction."
   ],
   "confusion": [
     "❌ 'Self-induction only happens in a coil.' ✅ It happens whenever the current *within* a conductor changes, creating a changing magnetic flux through itself.",
     "❌ 'Mutual induction is the same as self-induction.' ✅ Self-induction is EMF induced by a coil's *own* current change; mutual induction is EMF induced in a *secondary* coil due to current changes in a *primary* coil.",
-    "❌ 'Inductance depends on the current flowing.' ✅ Like capacitance, inductance is a *geometric property* of the coil (turns, core material, shape), not dependent on the magnitude of the current."
+    "❌ 'Inductance depends on the current flowing.' ✅ Like capacitance, inductance is a *geometric property* of the coil (turns, core material, shape), not dependent on the magnitude of the current.",
+    "Do not use M for a single isolated coil.",
+    "Do not use L for the emf in the neighbouring coil.",
+    "A steady current gives neither emf.",
+    "M is not added to L as if they were resistors."
   ],
   "practice": [
     "Solve at least 5 problems on self and mutual induction from your textbook.",
@@ -28,7 +35,6 @@
   "animation3D": "emi",
   "motionGraphics": "emi",
   "examples": [
-    "Example 1: Real-world application of Self and Mutual Induction",
     "Example 2: Practical demonstration of Self and Mutual Induction concepts",
     "Example 4: Diagram-based question on Self and Mutual Induction",
     "Example 5: Application in daily life involving Self and Mutual Induction"
@@ -61,11 +67,9 @@
     "Note 5: Self and Mutual Induction frequently appears in examination questions"
   ],
   "importantStatements": [
-    "Statement 1: Definition of Self and Mutual Induction",
-    "Statement 2: Theorem related to Self and Mutual Induction",
-    "Statement 3: Condition for Self and Mutual Induction to be valid",
-    "Statement 4: Principle governing Self and Mutual Induction",
-    "Statement 5: Corollary or consequence of Self and Mutual Induction"
+    "Self-induction and mutual induction are the same Faraday effect with different flux. In self-induction the coil links its own changing flux. In mutual induction a second coil links flux from the first.",
+    "The self emf is −L dI/dt and it opposes the change of that coil's current. The mutual emf is −M dI_1/dt in the second coil.",
+    "A coil can have both at once. Its total induced emf is −L dI/dt from itself plus −M dI_other/dt from its neighbour."
   ],
   "importantNotes": [
     "Note 1: Self and Mutual Induction is based on fundamental principles",
@@ -142,5 +146,60 @@
     "Task 3: Create a concept map for Self and Mutual Induction",
     "Task 4: Practice previous year exam questions on Self and Mutual Induction",
     "Task 5: Explain Self and Mutual Induction to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "An isolated coil uses",
+      "options": [
+        "M only",
+        "L",
+        "Neither",
+        "The speed of light"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "M cannot exceed",
+      "options": [
+        "√(L1 L2)",
+        "L1 + L2 always as a current",
+        "Zero",
+        "The resistance"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A transformer uses",
+      "options": [
+        "Mutual induction",
+        "A steady DC flux only",
+        "No coils",
+        "Self-induction of one wire and nothing else"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A steady current produces",
+      "options": [
+        "A constant self emf",
+        "No induced emf",
+        "Infinite M",
+        "A spark by definition"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A coil with L = 0.40 H has a neighbour with M = 0.10 H. Its own current rises at 2.0 A/s and the neighbour's current is steady. Find the magnitude of the emf in the first coil.",
+      "steps": [
+        "The neighbour's current is steady, so the mutual contribution is zero.",
+        "The self emf has magnitude L dI/dt.",
+        "emf = 0.40 × 2.0 = 0.80 V.",
+        "It opposes the rise of the first coil's current.",
+        "If the neighbour's current also changed, a second term M dI_2/dt would be added."
+      ],
+      "answer": "0.80 V, from self-induction only."
+    }
   ]
 }
