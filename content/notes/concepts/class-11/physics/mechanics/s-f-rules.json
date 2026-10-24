@@ -5,11 +5,11 @@
   "topicTitle": "Error Propagation & Significant Figures Rules",
   "relevance": 40,
   "notes": [
-    "Significant figures communicate measurement precision. In 0.00450 m there are three significant figures: leading zeros locate the decimal; the final zero after the decimal is significant.",
-    "For multiplication or division, round the final result to the fewest significant figures among measured inputs. For addition or subtraction, round to the least precise decimal place.",
-    "Example: 2.34×1.2=2.808 rounds to 2.8 (two significant figures). But 12.11+0.3=12.41 rounds to 12.4 (one decimal place).",
-    "Keep guard digits in intermediate steps and round once at the end. Exact counts and defined conversion factors do not limit significant figures.",
-    "For powers, propagate measurement uncertainty before rounding: if A=πr², a 1% uncertainty in r gives approximately 2% uncertainty in A."
+    "Significant figures show how precise a measurement is. In 0.00450 m the figures that count are 4, 5 and the trailing zero; the zeros before 4 only locate the decimal point.",
+    "For multiplication or division, round the final result to the fewest significant figures among the measured inputs. For addition or subtraction, round to the least precise decimal place.",
+    "Worked case: 2.34×1.2 equals 2.808 and rounds to 2.8, because 1.2 has two significant figures. The sum 12.11+0.3 equals 12.41 and rounds to 12.4, because 0.3 is known only to tenths.",
+    "Keep guard digits through intermediate steps and round once at the end. Exact counts and defined conversion factors, such as 1 m = 100 cm, do not limit the significant figures of a result.",
+    "Relative uncertainty scales with a power. If A=πr² and r is uncertain by 1%, A is uncertain by about 2%, because the power 2 doubles the relative uncertainty before the final rounding."
   ],
   "confusion": [
     "Do not apply the fewest-significant-figures rule to addition.",
@@ -21,7 +21,7 @@
     "Why do addition and multiplication use different rounding rules?"
   ],
   "universalFacts": [
-    "Leading zeros are placeholders, not significant.",
+    "Leading zeros only locate the decimal point; they are not significant.",
     "Round at the end of multistep calculations.",
     "Use decimal-place rules for sums and significant-figure rules for products."
   ],
@@ -41,7 +41,7 @@
     "Addition/subtraction: least precise decimal place; percentage uncertainty≈100Δx/x."
   ],
   "keyPoints": [
-    "Leading zeros are placeholders, not significant.",
+    "Leading zeros only locate the decimal point; they are not significant.",
     "Round at the end of multistep calculations.",
     "Use decimal-place rules for sums and significant-figure rules for products."
   ],
@@ -51,12 +51,12 @@
     "Exact counted values do not impose measurement precision."
   ],
   "importantStatements": [
-    "Leading zeros are placeholders, not significant.",
+    "Leading zeros only locate the decimal point; they are not significant.",
     "Round at the end of multistep calculations.",
     "Use decimal-place rules for sums and significant-figure rules for products."
   ],
   "importantNotes": [
-    "Leading zeros are placeholders, not significant.",
+    "Leading zeros only locate the decimal point; they are not significant.",
     "Round at the end of multistep calculations.",
     "Use decimal-place rules for sums and significant-figure rules for products."
   ],
@@ -70,7 +70,7 @@
     "Why do addition and multiplication use different rounding rules?"
   ],
   "importantConcepts": [
-    "Leading zeros are placeholders, not significant.",
+    "Leading zeros only locate the decimal point; they are not significant.",
     "Round at the end of multistep calculations.",
     "Use decimal-place rules for sums and significant-figure rules for products."
   ],

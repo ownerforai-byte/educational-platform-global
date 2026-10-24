@@ -1,5 +1,11 @@
 # SYSTEM WORK TRACKER
 
+PYQ decision (2026-10-24): option B — retire `content/pyq/`.
+The shipped reader (`frontend/lib/pyq-bank.ts`) loads questions only from `content/_index.json` under `practice/questions` (365 banks, 869 solved questions), not from `content/pyq/`.
+`content/pyq/` is not in the tree (0 git files). Its 24-bank successor `content/resources/question-bank/` stays unwired; do not add a second reader path.
+
+
+
 The platform seen as **work types** (systems), not as content: what each one is,
 what proves it exists, how far it is done, and where it stands right now.
 

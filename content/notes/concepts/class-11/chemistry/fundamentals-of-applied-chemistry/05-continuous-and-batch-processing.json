@@ -7,9 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Continuous and batch processing — Fundamentals of Applied Chemistry, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: continuous, batch processing · one worked example · one misconception each.",
-    "**Batch processing.** one-line definition + one-line exam use."
+    "Batch processing makes a set amount of product in a vessel, then empties, cleans, and recharges it. Each batch has a start and an end.",
+    "Continuous processing feeds raw material in and takes product out without stopping. Conditions inside the reactor are held as steady as the control system allows.",
+    "A batch plant suits many products, small volumes, and recipes that change, such as dyes and many pharmaceuticals. Time spent cleaning is part of the cycle and cuts the time the vessel is reacting.",
+    "A continuous plant suits one product in large volume, such as ammonia or sulphuric acid. It wastes less time on startup, but switching to a different product is costly.",
+    "The choice is economic as well as chemical. If demand is seasonal, or each lot must be traced, batch operation is the usual choice."
   ],
   "confusion": [],
   "bounds": [

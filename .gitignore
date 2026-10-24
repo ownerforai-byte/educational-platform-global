@@ -67,6 +67,7 @@ service-account*.json
 
 # ── logs and local run output ───────────────────────────────────────────────
 *.log
+frontend/trace.txt
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

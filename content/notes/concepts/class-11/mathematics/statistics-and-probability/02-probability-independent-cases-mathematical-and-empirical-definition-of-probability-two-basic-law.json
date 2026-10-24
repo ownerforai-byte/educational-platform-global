@@ -7,9 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
-    "**Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
-    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+    "**Fact.** Mathematical probability of an event E is P(E) = n(E)/n(S), where n(E) is the number of favourable outcomes and n(S) is the number of equally likely outcomes in the sample space.",
+    "**Fact.** Empirical probability uses observed frequency: P(E) is approximately the number of times E occurred divided by the number of trials. It approaches the mathematical value only as the number of trials grows.",
+    "**Fact.** Addition law: P(A∪B) = P(A) + P(B) − P(A∩B). When A and B are mutually exclusive, P(A∩B) = 0, so P(A∪B) = P(A) + P(B).",
+    "**Fact.** Multiplication law: P(A∩B) = P(A) P(B|A). If A and B are independent, P(B|A) = P(B), so P(A∩B) = P(A) P(B). Independence is not the same as being mutually exclusive.",
+    "**Fact.** The complement satisfies P(A') = 1 − P(A). For a discrete experiment the probabilities of all outcomes add to 1."
   ],
   "confusion": [
     "❌ answer with no steps → ✅ show each step and box the result.",

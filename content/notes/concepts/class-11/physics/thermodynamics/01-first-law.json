@@ -1,6 +1,12 @@
 {
   "title": "First Law of Thermodynamics",
-  "notes": [],
+  "notes": [
+    "- The first law is conservation of energy for a thermodynamic system: ΔU = Q − W when W is the work done by the system.",
+    "- Q is heat added to the system. If the system does work, W is positive in this sign convention, and internal energy falls unless heat is supplied.",
+    "- Internal energy U is a state function, so ΔU depends only on the initial and final states. Heat and work depend on the path taken between those states.",
+    "- In a cyclic process the system returns to its start, so ΔU = 0 and Q = W: the net heat absorbed equals the net work done by the system.",
+    "- An isolated system has Q = 0 and W = 0, so ΔU = 0. A machine that produces work with no energy input contradicts this law."
+  ],
   "examples": [
     "Application of First Law of Thermodynamics"
   ],
