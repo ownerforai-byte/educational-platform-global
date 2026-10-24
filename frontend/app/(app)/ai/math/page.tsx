@@ -69,16 +69,16 @@ const PRESETS = [
 ];
 
 const SYMBOLS = [
-  { label: "\\frac{a}{b}", insert: "\\frac{numerator}{denominator}" },
-  { label: "\\sqrt{x}", insert: "\\sqrt{x}" },
-  { label: "\\int", insert: "\\int_{a}^{b} f(x) \\, dx" },
-  { label: "\\lim", insert: "\\lim_{x \\to 0} " },
-  { label: "\\sum", insert: "\\sum_{i=1}^{n} " },
-  { label: "\\theta", insert: "\\theta" },
-  { label: "\\pi", insert: "\\pi" },
-  { label: "\\vec{v}", insert: "\\vec{v}" },
-  { label: "\\Delta", insert: "\\Delta " },
-  { label: "\\infty", insert: "\\infty" },
+  { label: "a/b", insert: "\\frac{numerator}{denominator}" },
+  { label: "√x", insert: "\\sqrt{x}" },
+  { label: "∫ dx", insert: "\\int_{a}^{b} f(x) \\, dx" },
+  { label: "lim", insert: "\\lim_{x \\to 0} " },
+  { label: "∑", insert: "\\sum_{i=1}^{n} " },
+  { label: "θ", insert: "\\theta" },
+  { label: "π", insert: "\\pi" },
+  { label: "v⃗", insert: "\\vec{v}" },
+  { label: "Δ", insert: "\\Delta " },
+  { label: "∞", insert: "\\infty" },
 ];
 
 export default function MathStudioPage() {

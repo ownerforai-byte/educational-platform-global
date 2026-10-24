@@ -173,6 +173,13 @@ Please unpack this concept thoroughly using the standard Deep Concept Studio str
       });
     } catch (err: any) {
       console.error("[ai-deep-dive] error:", err);
+      const message = String(err?.message ?? "");
+      if (/timeout|timed out|deadline/i.test(message)) {
+        res.status(504).json({
+          error: "Deep Concept Studio took too long to answer. Please try again in a moment.",
+        });
+        return;
+      }
       serverError(res, err);
     }
   }

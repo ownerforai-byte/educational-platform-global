@@ -20,9 +20,9 @@ import {
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
 export const metadata: Metadata = {
-  title: "Veer Studio Hub — Tutor, Quiz Generator & Curriculum Search",
+  title: "Veer AI Studio Hub — Tutor, Math Solver, Deep Concept & Quiz",
   description:
-    "Owner-only Veer tool hub: study assistant, tutor console with saved conversations, adaptive quiz generator and curriculum search.",
+    "Veer AI tool hub: everyday study assistant, math & derivation solver, deep concept studio, adaptive quiz generator and curriculum search.",
 };
 
 /**

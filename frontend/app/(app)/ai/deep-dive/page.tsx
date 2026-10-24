@@ -287,6 +287,7 @@ export default function DeepDiveStudioPage() {
         {/* Optional Diagram / Image Attachment Preview */}
         {imagePreview && (
           <div className="relative inline-block rounded-2xl border border-border/70 bg-muted/30 p-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imagePreview}
               alt="Attached diagram"

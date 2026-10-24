@@ -167,6 +167,13 @@ Format with clean KaTeX LaTeX syntax for all equations and expressions.`;
       });
     } catch (err: any) {
       console.error("[ai-math] error:", err);
+      const message = String(err?.message ?? "");
+      if (/timeout|timed out|deadline/i.test(message)) {
+        res.status(504).json({
+          error: "The Math Solver took too long to answer. Please try again in a moment.",
+        });
+        return;
+      }
       serverError(res, err);
     }
   }

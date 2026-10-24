@@ -571,9 +571,13 @@ class AgnesProvider implements AIProvider {
   }
 
   private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const systemPrompts = messages
+      .filter((m) => m.role === "system")
+      .map((m) => m.content.trim())
+      .filter(Boolean);
+    const combinedSystem = systemPrompts.join("\n\n");
     const rest = messages.filter((m) => m.role !== "system");
-    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+    return combinedSystem ? [{ role: "system", content: combinedSystem }, ...rest] : rest;
   }
 
   async chat(messages: AIChatMessage[]): Promise<string> {
@@ -690,9 +694,13 @@ class GroqProvider implements AIProvider {
   }
 
   private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const systemPrompts = messages
+      .filter((m) => m.role === "system")
+      .map((m) => m.content.trim())
+      .filter(Boolean);
+    const combinedSystem = systemPrompts.join("\n\n");
     const rest = messages.filter((m) => m.role !== "system");
-    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+    return combinedSystem ? [{ role: "system", content: combinedSystem }, ...rest] : rest;
   }
 
   private async callGroq(messages: AIChatMessage[]): Promise<string> {
@@ -813,9 +821,13 @@ class CloudflareProvider implements AIProvider {
   }
 
   private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const systemPrompts = messages
+      .filter((m) => m.role === "system")
+      .map((m) => m.content.trim())
+      .filter(Boolean);
+    const combinedSystem = systemPrompts.join("\n\n");
     const rest = messages.filter((m) => m.role !== "system");
-    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+    return combinedSystem ? [{ role: "system", content: combinedSystem }, ...rest] : rest;
   }
 
   private requestPayload(messages: AIChatMessage[], stream: boolean) {
@@ -917,9 +929,13 @@ class CerebrasProvider implements AIProvider {
   }
 
   private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const systemPrompts = messages
+      .filter((m) => m.role === "system")
+      .map((m) => m.content.trim())
+      .filter(Boolean);
+    const combinedSystem = systemPrompts.join("\n\n");
     const rest = messages.filter((m) => m.role !== "system");
-    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+    return combinedSystem ? [{ role: "system", content: combinedSystem }, ...rest] : rest;
   }
 
   private async callCerebras(messages: AIChatMessage[]): Promise<string> {
@@ -1023,13 +1039,17 @@ class GeminiProvider implements AIProvider {
   }
 
   private buildGeminiPayload(messages: AIChatMessage[]) {
-    const systemMsg = messages.find((m) => m.role === "system");
-    const contents = [];
+    const systemPrompts = messages
+      .filter((m) => m.role === "system")
+      .map((m) => m.content.trim())
+      .filter(Boolean);
+    const combinedSystem = systemPrompts.join("\n\n");
+    const rawContents: Array<{ role: string; parts: any[] }> = [];
 
     for (const m of messages) {
       if (m.role === "system") continue;
       const role = m.role === "assistant" ? "model" : "user";
-      const parts = [];
+      const parts: any[] = [];
 
       if (m.content) {
         parts.push({ text: m.content });
@@ -1050,8 +1070,26 @@ class GeminiProvider implements AIProvider {
       }
 
       if (parts.length > 0) {
-        contents.push({ role, parts });
+        rawContents.push({ role, parts });
       }
+    }
+
+    // Merge consecutive messages with the same role (Gemini requires alternating user/model turns)
+    const contents: Array<{ role: string; parts: any[] }> = [];
+    for (const entry of rawContents) {
+      const prev = contents[contents.length - 1];
+      if (prev && prev.role === entry.role) {
+        prev.parts.push(...entry.parts);
+      } else {
+        contents.push({ role: entry.role, parts: [...entry.parts] });
+      }
+    }
+
+    // First turn in Gemini multi-turn must be from the user
+    if (contents.length > 0 && contents[0].role === "model") {
+      contents.unshift({ role: "user", parts: [{ text: "Hello" }] });
+    } else if (contents.length === 0) {
+      contents.push({ role: "user", parts: [{ text: "Hello" }] });
     }
 
     const payload: {
@@ -1066,9 +1104,9 @@ class GeminiProvider implements AIProvider {
       },
     };
 
-    if (systemMsg && systemMsg.content) {
+    if (combinedSystem) {
       payload.systemInstruction = {
-        parts: [{ text: systemMsg.content }],
+        parts: [{ text: combinedSystem }],
       };
     }
 
@@ -1093,6 +1131,9 @@ class GeminiProvider implements AIProvider {
     }
 
     const data = await res.json();
+    if (data && data.error) {
+      throw new Error(`Gemini error: ${data.error.message || JSON.stringify(data.error)}`);
+    }
     const candidate = data && data.candidates && data.candidates[0];
     const finish = candidate && candidate.finishReason;
     this.lastFinishReason = finish === "MAX_TOKENS" ? "length" : String(finish || "");
@@ -1216,7 +1257,7 @@ export class AIService {
       .map((s) => s.trim().toLowerCase())
       .filter(Boolean);
     const ordered = configured.filter((n) => this.providers.has(n));
-    if (ordered.length === 0 && this.defaultProvider && this.providers.has(this.defaultProvider)) {
+    if (ordered.length === 0 && this.defaultProvider && this.defaultProvider !== "internal" && this.providers.has(this.defaultProvider)) {
       ordered.push(this.defaultProvider);
     } else if (ordered.length === 0 && this.providers.has("agnes")) {
       ordered.push("agnes");
