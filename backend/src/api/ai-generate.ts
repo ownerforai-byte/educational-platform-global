@@ -381,7 +381,7 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
       ];
 
       const rawResponse = await aiService.chat(
-        "", // run the ordered chain: agnes → internal
+        "cerebras", // priority: Cerebras fast inference (fallback: ordered chain)
         messages
       );
 

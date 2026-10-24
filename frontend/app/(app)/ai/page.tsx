@@ -14,6 +14,8 @@ import {
   ArrowRight,
   Gem,
   BellRing,
+  Calculator,
+  Lightbulb,
 } from "lucide-react";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
@@ -113,6 +115,36 @@ const TOOLS: {
     ],
   },
   {
+    href: "/ai/math",
+    title: "Veer AI Math & Derivation Studio",
+    badge: "Cerebras Inference",
+    description:
+      "Step-by-step calculus, trigonometry, mechanics & algebra solver with rigorous KaTeX proofs, derivations, and step verifications.",
+    icon: Calculator,
+    iconClass: "bg-emerald-500/10 text-emerald-500 border-emerald-500/25",
+    borderClass: "hover:border-emerald-500/50",
+    features: [
+      "Cerebras ultra-fast 2,000+ tok/s inference",
+      "KaTeX formula formatting and verified intermediate steps",
+      "Physics numericals, calculus limits & chemical kinetics",
+    ],
+  },
+  {
+    href: "/ai/deep-dive",
+    title: "Veer Deep Concept & Syllabus Studio",
+    badge: "Gemini Vision & Synthesis",
+    description:
+      "Exhaustive first-principles breakdown, intuitive real-world analogies, multimodal textbook diagram parsing, and board exam trap alerts.",
+    icon: Lightbulb,
+    iconClass: "bg-sky-500/10 text-sky-500 border-sky-500/25",
+    borderClass: "hover:border-sky-500/50",
+    features: [
+      "Google Gemini multimodal vision & deep synthesis",
+      "First-principles explanations, analogies & mental models",
+      "CDC/NEB syllabus linkage & board exam trap alerts",
+    ],
+  },
+  {
     href: "/search",
     title: "Veer Curriculum Search",
     badge: "Find anything",
@@ -159,7 +191,7 @@ export default function AIStudioPage() {
               <Sparkles className="h-5 w-5 text-white" />
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/25 bg-violet-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">
-              AI Studio · Four Dedicated Tools
+              AI Studio · Six Dedicated Specialized Tools
             </span>
           </div>
 

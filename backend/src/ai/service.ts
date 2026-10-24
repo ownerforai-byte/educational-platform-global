@@ -2,7 +2,7 @@ import { supabaseAdmin } from "../db/supabase";
 import { PUBLIC_SITE_URL } from "../config/env";
 import { getSearchService } from "./search-engine";
 import { ACADEMIC_SEARCH_ADDENDUM } from "./academic-intelligence";
-import { toOpenAIContent } from "./image-input";
+import { toOpenAIContent, parseDataUrl } from "./image-input";
 
 /**
  * Public origin of the frontend, used for links embedded in AI replies and
@@ -35,7 +35,13 @@ export const MAX_OUTPUT_TOKENS = Number(process.env.AI_MAX_OUTPUT_TOKENS) || 163
  */
 export const REPLY_TEMPERATURE = Number(process.env.AI_TEMPERATURE) || 0.7;
 
-export type SupportedProvider = "internal" | "agnes" | "groq" | "cloudflare";
+export type SupportedProvider =
+  | "internal"
+  | "agnes"
+  | "groq"
+  | "cloudflare"
+  | "cerebras"
+  | "gemini";
  
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -885,6 +891,260 @@ class CloudflareProvider implements AIProvider {
   }
 }
 
+
+/**
+ * Cerebras — Ultra-fast inference engine (2,000+ tokens/sec) via OpenAI-compatible
+ * completions. Optimal for structured JSON generation (quizzes) and high-speed
+ * step-by-step mathematical reasoning.
+ */
+class CerebrasProvider implements AIProvider {
+  name = "cerebras";
+  private apiUrl = "https://api.cerebras.ai/v1/chat/completions";
+  private model: string;
+  private apiKey: string;
+  private timeoutMs: number;
+  private lastFinishReason = "";
+
+  getLastFinishReason(): string {
+    return this.lastFinishReason;
+  }
+
+  constructor(apiKey: string) {
+    this.apiKey = apiKey;
+    this.model = process.env.CEREBRAS_MODEL || "qwen-3.8-27b";
+    this.apiUrl = process.env.CEREBRAS_API_URL || this.apiUrl;
+    this.timeoutMs = Number(process.env.CEREBRAS_TIMEOUT_MS || 60000);
+  }
+
+  private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const rest = messages.filter((m) => m.role !== "system");
+    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+  }
+
+  private async callCerebras(messages: AIChatMessage[]): Promise<string> {
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+      },
+      body: JSON.stringify({
+        model: this.model,
+        messages: messages.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
+        max_tokens: MAX_OUTPUT_TOKENS,
+        temperature: REPLY_TEMPERATURE,
+      }),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Cerebras error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    const data = await res.json();
+    this.lastFinishReason = String(data?.choices?.[0]?.finish_reason ?? "");
+    const text = data?.choices?.[0]?.message?.content;
+    if (!text || !text.trim()) throw new Error("Empty Cerebras response");
+    return text;
+  }
+
+  async chat(messages: AIChatMessage[]): Promise<string> {
+    if (!this.apiKey) throw new Error("Missing Cerebras API key");
+    return this.callCerebras(this.prepareMessages(messages));
+  }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing Cerebras API key");
+    this.lastFinishReason = "";
+    const enriched = this.prepareMessages(messages);
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+      },
+      body: JSON.stringify({
+        model: this.model,
+        messages: enriched.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
+        max_tokens: MAX_OUTPUT_TOKENS,
+        temperature: REPLY_TEMPERATURE,
+        stream: true,
+      }),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Cerebras stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    for await (const event of sseEvents(res)) {
+      const finish = event?.choices?.[0]?.finish_reason;
+      if (finish) this.lastFinishReason = String(finish);
+      const chunk = event?.choices?.[0]?.delta?.content;
+      if (typeof chunk === "string" && chunk) yield chunk;
+    }
+  }
+
+  async search(query: string): Promise<AISearchResponse> {
+    if (!this.apiKey) throw new Error("Missing Cerebras API key");
+    const internal = new InternalProvider();
+    return internal.search(query);
+  }
+}
+
+/**
+ * Google Gemini — Native REST API with multimodal vision support, massive context,
+ * and deep curriculum synthesis capabilities.
+ */
+class GeminiProvider implements AIProvider {
+  name = "gemini";
+  private model: string;
+  private apiKey: string;
+  private timeoutMs: number;
+  private lastFinishReason = "";
+
+  getLastFinishReason(): string {
+    return this.lastFinishReason;
+  }
+
+  constructor(apiKey: string) {
+    this.apiKey = apiKey;
+    this.model = process.env.GEMINI_MODEL || "gemini-3.5-flash";
+    this.timeoutMs = Number(process.env.GEMINI_TIMEOUT_MS || 60000);
+  }
+
+  private buildGeminiPayload(messages: AIChatMessage[]) {
+    const systemMsg = messages.find((m) => m.role === "system");
+    const contents = [];
+
+    for (const m of messages) {
+      if (m.role === "system") continue;
+      const role = m.role === "assistant" ? "model" : "user";
+      const parts = [];
+
+      if (m.content) {
+        parts.push({ text: m.content });
+      }
+
+      if (m.images && Array.isArray(m.images)) {
+        for (const img of m.images) {
+          const parsed = parseDataUrl(img);
+          if (parsed) {
+            parts.push({
+              inlineData: {
+                mimeType: parsed.mimeType,
+                data: parsed.data,
+              },
+            });
+          }
+        }
+      }
+
+      if (parts.length > 0) {
+        contents.push({ role, parts });
+      }
+    }
+
+    const payload: {
+      contents: any[];
+      generationConfig: { maxOutputTokens: number; temperature: number };
+      systemInstruction?: { parts: Array<{ text: string }> };
+    } = {
+      contents,
+      generationConfig: {
+        maxOutputTokens: MAX_OUTPUT_TOKENS,
+        temperature: REPLY_TEMPERATURE,
+      },
+    };
+
+    if (systemMsg && systemMsg.content) {
+      payload.systemInstruction = {
+        parts: [{ text: systemMsg.content }],
+      };
+    }
+
+    return payload;
+  }
+
+  async chat(messages: AIChatMessage[]): Promise<string> {
+    if (!this.apiKey) throw new Error("Missing Gemini API key");
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent?key=${this.apiKey}`;
+    const payload = this.buildGeminiPayload(messages);
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Gemini error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    const data = await res.json();
+    const candidate = data && data.candidates && data.candidates[0];
+    const finish = candidate && candidate.finishReason;
+    this.lastFinishReason = finish === "MAX_TOKENS" ? "length" : String(finish || "");
+    const text = candidate && candidate.content && candidate.content.parts
+      ? (candidate.content.parts as Array<{ text?: string }>).map((p) => p.text || "").join("")
+      : "";
+    if (!text || !text.trim()) throw new Error("Empty Gemini response");
+    return text;
+  }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing Gemini API key");
+    this.lastFinishReason = "";
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:streamGenerateContent?alt=sse&key=${this.apiKey}`;
+    const payload = this.buildGeminiPayload(messages);
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Gemini stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    for await (const event of sseEvents(res)) {
+      const candidate = event && event.candidates && event.candidates[0];
+      const finish = candidate && candidate.finishReason;
+      if (finish) {
+        this.lastFinishReason = finish === "MAX_TOKENS" ? "length" : String(finish);
+      }
+      const parts = candidate && candidate.content && candidate.content.parts;
+      if (Array.isArray(parts)) {
+        for (const p of parts) {
+          if (typeof p.text === "string" && p.text) {
+            yield p.text;
+          }
+        }
+      }
+    }
+  }
+
+  async search(query: string): Promise<AISearchResponse> {
+    if (!this.apiKey) throw new Error("Missing Gemini API key");
+    const internal = new InternalProvider();
+    return internal.search(query);
+  }
+}
+
 function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
   return Promise.race([
     promise,
@@ -950,14 +1210,15 @@ export class AIService {
    * the order with AI_CHAIN_ORDER (comma-separated provider names).
    */
   private chainProviders(): AIProvider[] {
-    const configured = (process.env.AI_CHAIN_ORDER || "agnes")
+    const defaultOrder = "groq,gemini,cerebras,agnes,cloudflare";
+    const configured = (process.env.AI_CHAIN_ORDER || defaultOrder)
       .split(",")
       .map((s) => s.trim().toLowerCase())
       .filter(Boolean);
     const ordered = configured.filter((n) => this.providers.has(n));
-    // A deployment with only AGNES_API_KEY set must still reach an LLM:
-    // Agnes joins as the LAST link, never ahead of the owner's order.
-    if (ordered.length === 0 && this.providers.has("agnes")) {
+    if (ordered.length === 0 && this.defaultProvider && this.providers.has(this.defaultProvider)) {
+      ordered.push(this.defaultProvider);
+    } else if (ordered.length === 0 && this.providers.has("agnes")) {
       ordered.push("agnes");
     }
     return ordered.map((n) => this.providers.get(n)!);
@@ -968,22 +1229,30 @@ export class AIService {
 
     const agnesKey = process.env.AGNES_API_KEY;
     const groqKey = process.env.GROQ_API_KEY;
+    const cerebrasKey = process.env.CEREBRAS_API_KEY;
+    const geminiKey = process.env.GEMINI_API_KEY;
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
     if (groqKey) this.providers.set("groq", new GroqProvider(groqKey));
+    if (cerebrasKey) this.providers.set("cerebras", new CerebrasProvider(cerebrasKey));
+    if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
     const cfKey = process.env.CF_AI_KEY || process.env.CLOUDFLARE_API_KEY;
     if (cfKey && this.hasCfAccount())
       this.providers.set("cloudflare", new CloudflareProvider(cfKey));
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
-    } else if (agnesKey) {
-      this.defaultProvider = "agnes";
     } else if (groqKey) {
       this.defaultProvider = "groq";
+    } else if (geminiKey) {
+      this.defaultProvider = "gemini";
+    } else if (cerebrasKey) {
+      this.defaultProvider = "cerebras";
+    } else if (agnesKey) {
+      this.defaultProvider = "agnes";
     } else if (cfKey && this.hasCfAccount()) {
       this.defaultProvider = "cloudflare";
     }
@@ -1022,6 +1291,10 @@ export class AIService {
    * it, in which case detectTruncation() falls back to reading the text.
    */
   getLastFinishReason(): string {
+    const lastP = this.providers.get(this.lastAnsweredBy);
+    if (lastP && "getLastFinishReason" in lastP && typeof lastP.getLastFinishReason === "function") {
+      return (lastP as any).getLastFinishReason();
+    }
     const agnes = this.providers.get("agnes");
     return agnes instanceof AgnesProvider ? agnes.getLastFinishReason() : "";
   }
