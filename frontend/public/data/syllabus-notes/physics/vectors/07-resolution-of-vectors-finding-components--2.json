@@ -1,0 +1,189 @@
+{
+  "title": "Resolution of Vectors — Finding Components",
+  "notes": [
+    "When several vectors lie in one plane, resolve each one into x and y components, then add the components separately. Components along the same line add as ordinary signed numbers.",
+    "R_x is the sum of every F cosθ, with a minus sign if that component points along the negative axis. R_y is the sum of every F sinθ, with the same care about signs.",
+    "The resultant magnitude is sqrt(R_x^2 + R_y^2). The angle with the +x-axis satisfies tanα = |R_y / R_x|, and the quadrant follows the signs of R_x and R_y.",
+    "This component method is the working form of the polygon law. Drawing the polygon is the picture. Adding components is the calculation.",
+    "A vector along the negative x-axis has F_x = −F and F_y = 0. A vector straight down has F_x = 0 and F_y = −F. Leaving these signs out is the usual arithmetic error.",
+    "If the axes are rotated, the components change but the resultant vector does not. Choose axes that set as many angles as possible to 0° or 90°."
+  ],
+  "examples": [
+    "When several vectors lie in one plane, resolve each one into x and y components, then add the components separately. Components along the same line add as ordinary signed numbers.",
+    "R_x is the sum of every F cosθ, with a minus sign if that component points along the negative axis. R_y is the sum of every F sinθ, with the same care about signs.",
+    "Two forces act at a point: 8.0 N along +x, and 6.0 N along +y. Find the resultant."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Resolution of Vectors — Finding Components.",
+    "Q3. Problem on Resolution of Vectors — Finding Components.",
+    "What is added to get R_x?",
+    "How is the quadrant chosen?",
+    "When is the component method the same as the polygon law?"
+  ],
+  "formulas": [
+    "R_x = Σ F cosθ",
+    "R_y = Σ F sinθ",
+    "R = sqrt(R_x^2 + R_y^2)"
+  ],
+  "keyPoints": [
+    "Connection of Resolution of Vectors — Finding Components to other topics",
+    "Resolve every vector.",
+    "Add the x-components.",
+    "Add the y-components.",
+    "Then find R and the angle."
+  ],
+  "summary": "Resolution of Vectors — Finding Components covers essential principles and applications.",
+  "specialNotes": [
+    "Three forces in equilibrium have R_x = 0 and R_y = 0.",
+    "Keep one pair of axes for the whole sum."
+  ],
+  "importantStatements": [
+    "When several vectors lie in one plane, resolve each one into x and y components, then add the components separately. Components along the same line add as ordinary signed numbers.",
+    "R_x is the sum of every F cosθ, with a minus sign if that component points along the negative axis. R_y is the sum of every F sinθ, with the same care about signs.",
+    "The resultant magnitude is sqrt(R_x^2 + R_y^2). The angle with the +x-axis satisfies tanα = |R_y / R_x|, and the quadrant follows the signs of R_x and R_y."
+  ],
+  "importantNotes": [
+    "Resolution of Vectors — Finding Components is based on fundamental principles.",
+    "Write a small table: vector, F_x, F_y.",
+    "Quote the direction as an angle from a named axis."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Resolution of Vectors — Finding Components.",
+    "Signs first, then Pythagoras.",
+    "A vector on an axis has only one non-zero component."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "R_x is",
+      "options": [
+        "The sum of the magnitudes",
+        "The signed sum of the x-components",
+        "Always the largest force",
+        "F sinθ for every vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The quadrant of the resultant comes from",
+      "options": [
+        "The larger magnitude alone",
+        "The signs of R_x and R_y",
+        "The first vector only",
+        "A rule that α is always acute"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A downward vector contributes",
+      "options": [
+        "A negative y-component",
+        "A negative x-component always",
+        "Nothing",
+        "A positive y-component"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Adding magnitudes of differently directed vectors",
+      "options": [
+        "Is the component method",
+        "Is not allowed",
+        "Gives R_x",
+        "Fixes the quadrant"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Resolution of Vectors — Finding Components.",
+    "Component sum",
+    "Resultant magnitude",
+    "Quadrant from signs",
+    "Polygon law in numbers"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "You cannot add the magnitudes of vectors that point in different directions.",
+    "tanα needs the quadrant. A calculator's arctan may sit in the wrong one.",
+    "Summing F cosθ and then also adding the original F double-counts.",
+    "Opposite components cancel before the square root is taken."
+  ],
+  "practice": [
+    "Write R_x = Σ F cosθ and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "R_x = Σ F cosθ",
+    "R_y = Σ F sinθ"
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "R_x is",
+      "options": [
+        "The sum of the magnitudes",
+        "The signed sum of the x-components",
+        "Always the largest force",
+        "F sinθ for every vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The quadrant of the resultant comes from",
+      "options": [
+        "The larger magnitude alone",
+        "The signs of R_x and R_y",
+        "The first vector only",
+        "A rule that α is always acute"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A downward vector contributes",
+      "options": [
+        "A negative y-component",
+        "A negative x-component always",
+        "Nothing",
+        "A positive y-component"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Adding magnitudes of differently directed vectors",
+      "options": [
+        "Is the component method",
+        "Is not allowed",
+        "Gives R_x",
+        "Fixes the quadrant"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two forces act at a point: 8.0 N along +x, and 6.0 N along +y. Find the resultant.",
+      "steps": [
+        "R_x = 8.0 N and R_y = 6.0 N.",
+        "R = sqrt(8.0^2 + 6.0^2) = sqrt(64 + 36) = sqrt(100) = 10 N.",
+        "tanα = R_y / R_x = 6/8 = 0.75.",
+        "α = arctan(0.75) ≈ 37°.",
+        "Both components are positive, so the resultant is 10 N at about 37° above the +x-axis."
+      ],
+      "answer": "10 N at about 37° above the +x-axis."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "vectors",
+  "topicSlug": "07-resolution-of-vectors-finding-components",
+  "topicTitle": "Resolution of Vectors — Finding Components"
+}

@@ -13,7 +13,8 @@
     "For translation, dW=F⃗·dr⃗ gives P=F⃗·v⃗=Fv cosθ. Only the force component parallel to velocity transfers energy; a perpendicular centripetal force does no work in uniform circular motion.",
     "Worked example: a 200 kg load rises steadily at 0.50 m s⁻¹. The lifting force is mg=1960 N for g=9.8 m s⁻², so useful power is Fv=980 W. In 10 s the load rises 5 m and gains 9800 J, confirming P=W/t=980 W.",
     "At constant speed, net power is zero because engine power balances resistive forces. For rotation, P=τ⃗·ω⃗; efficiency η=Pout/Pin distinguishes useful output from input.",
-    "A 50 N force at 60° to a crate moving at 3.0 m s⁻¹ transfers energy at P=50×3×cos60°=75 W, not 150 W."
+    "A 50 N force at 60° to a crate moving at 3.0 m s⁻¹ transfers energy at P=50×3×cos60°=75 W, not 150 W.",
+    "Power is the rate of doing work. When a force stays along the velocity, power is the force times the speed. A larger engine can do the same work in less time, which is a larger power, not a larger store of energy."
   ],
   "formulas": [
     "Average P=ΔW/Δt; instantaneous P=dW/dt.",
@@ -21,7 +22,10 @@
   ],
   "examples": [
     "Raising 200 kg at 0.50 m s⁻¹ requires 980 W of useful power.",
-    "A 50 N force at 60° while moving at 3 m s⁻¹ gives 75 W."
+    "A 50 N force at 60° while moving at 3 m s⁻¹ gives 75 W.",
+    "Power is the rate of doing work. When a force stays along the velocity, power is the force times the speed. A larger engine can do the same work in less time, which is a larger power, not a larger store of energy.",
+    "The working relations are P = W/t and P = F v when force and velocity are parallel. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A force of 200 N pushes a crate at a steady 3.0 m/s along the force. Find the power."
   ],
   "practiceQuestions": [
     "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
@@ -31,7 +35,11 @@
   "keyPoints": [
     "Use the force component parallel to velocity.",
     "At constant speed net power is zero though a motor may deliver positive power.",
-    "State whether input or output power is requested."
+    "State whether input or output power is requested.",
+    "P = W/t",
+    "P = F v when force and velocity are parallel",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Power measures energy-transfer rate. For translation it is the force–velocity dot product; practical machines distinguish useful output from losses.",
   "specificConditions": [
@@ -194,7 +202,11 @@
   },
   "confusion": [
     "Do not use P=Fv unless force and velocity are parallel or include cosθ.",
-    "Motor output is not the net power on a constant-speed vehicle."
+    "Motor output is not the net power on a constant-speed vehicle.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
@@ -232,11 +244,112 @@
   "importantConcepts": [
     "Use the force component parallel to velocity.",
     "At constant speed net power is zero though a motor may deliver positive power.",
-    "State whether input or output power is requested."
+    "State whether input or output power is requested.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "A 1200 kg car moves at 20 m s⁻¹ against 600 N drag. Find power to maintain speed.",
     "Why does centripetal force do zero work in uniform circular motion?",
     "An 80% efficient motor takes 2 kW. Find useful output."
+  ],
+  "mcs": [
+    {
+      "question": "Power is",
+      "options": [
+        "Work over time",
+        "Force over time",
+        "Mass times velocity",
+        "Energy with no rate"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For a force along the velocity, P is",
+      "options": [
+        "F v",
+        "F/v",
+        "v/F",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "200 N at 3.0 m/s is",
+      "options": [
+        "600 W",
+        "67 W",
+        "203 W",
+        "0 W"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A perpendicular force does",
+      "options": [
+        "Maximum power",
+        "No work and has zero power",
+        "Negative mass",
+        "The weight"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Power is",
+      "options": [
+        "Work over time",
+        "Force over time",
+        "Mass times velocity",
+        "Energy with no rate"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For a force along the velocity, P is",
+      "options": [
+        "F v",
+        "F/v",
+        "v/F",
+        "Zero"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "200 N at 3.0 m/s is",
+      "options": [
+        "600 W",
+        "67 W",
+        "203 W",
+        "0 W"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A perpendicular force does",
+      "options": [
+        "Maximum power",
+        "No work and has zero power",
+        "Negative mass",
+        "The weight"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A force of 200 N pushes a crate at a steady 3.0 m/s along the force. Find the power.",
+      "steps": [
+        "The force and the velocity are parallel.",
+        "P = F v = 200 × 3.0.",
+        "P = 600 W.",
+        "In one second the work is 600 J.",
+        "If the force were perpendicular to the velocity, the power would be zero."
+      ],
+      "answer": "600 W."
+    }
   ]
 }

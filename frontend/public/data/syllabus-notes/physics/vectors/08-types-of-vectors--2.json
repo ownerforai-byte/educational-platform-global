@@ -1,0 +1,188 @@
+{
+  "title": "Types of Vectors",
+  "notes": [
+    "A zero vector has magnitude zero and no direction. It is the resultant of two equal and opposite vectors. Adding it to a vector leaves that vector unchanged.",
+    "A unit vector has magnitude 1 and points in a chosen direction. If A is a non-zero vector, the unit vector along it is Â = A / |A|. The symbols î, ĵ and k̂ are unit vectors along the coordinate axes.",
+    "Equal vectors have the same magnitude and the same direction. They need not act at the same point. A negative of a vector has the same magnitude and the opposite direction. Multiplying by −1 produces it.",
+    "Collinear vectors lie along the same line or along parallel lines. Like collinear vectors point the same way. Unlike collinear vectors point opposite ways.",
+    "A position vector of a point is drawn from the chosen origin to that point. It locates the point. A displacement vector joins two positions and does not have to start at the origin.",
+    "A free vector may be drawn anywhere provided its magnitude and direction stay the same. A force on a rigid body is not completely free, because its line of action decides the torque. The class keeps that distinction when moments are being calculated."
+  ],
+  "examples": [
+    "A zero vector has magnitude zero and no direction. It is the resultant of two equal and opposite vectors. Adding it to a vector leaves that vector unchanged.",
+    "A unit vector has magnitude 1 and points in a chosen direction. If A is a non-zero vector, the unit vector along it is Â = A / |A|. The symbols î, ĵ and k̂ are unit vectors along the coordinate axes.",
+    "A = 3î + 4ĵ. Find the unit vector along A."
+  ],
+  "practiceQuestions": [
+    "Q1. Define Types of Vectors.",
+    "Q3. Problem on Types of Vectors.",
+    "How is a unit vector formed?",
+    "What makes two vectors equal?",
+    "How does a position vector differ from a displacement?"
+  ],
+  "formulas": [
+    "Unit vector â = A / |A|",
+    "Equal vectors: same magnitude and direction."
+  ],
+  "keyPoints": [
+    "Connection of Types of Vectors to other topics",
+    "Zero, unit, equal, negative, collinear.",
+    "A unit vector has magnitude 1.",
+    "Position vector runs from the origin.",
+    "Free vectors may be slid if direction is kept."
+  ],
+  "summary": "Types of Vectors covers essential principles and applications.",
+  "specialNotes": [
+    "î, ĵ, k̂ are mutually perpendicular.",
+    "A zero vector cannot define a direction for a unit vector."
+  ],
+  "importantStatements": [
+    "A zero vector has magnitude zero and no direction. It is the resultant of two equal and opposite vectors. Adding it to a vector leaves that vector unchanged.",
+    "A unit vector has magnitude 1 and points in a chosen direction. If A is a non-zero vector, the unit vector along it is Â = A / |A|. The symbols î, ĵ and k̂ are unit vectors along the coordinate axes.",
+    "Equal vectors have the same magnitude and the same direction. They need not act at the same point. A negative of a vector has the same magnitude and the opposite direction. Multiplying by −1 produces it."
+  ],
+  "importantNotes": [
+    "Types of Vectors is based on fundamental principles.",
+    "State magnitude and direction when you name a type.",
+    "Do not call a scalar component a vector unless a unit vector is attached."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Types of Vectors.",
+    "Divide by the magnitude to get the unit vector.",
+    "Negative vector: reverse the arrow."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "mcs": [
+    {
+      "question": "A unit vector along A is",
+      "options": [
+        "|A| A",
+        "A / |A|",
+        "A + 1",
+        "The zero vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Equal vectors must have",
+      "options": [
+        "The same point of application only",
+        "The same magnitude and direction",
+        "Opposite directions",
+        "Zero magnitude"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "î is",
+      "options": [
+        "A force of 1 N",
+        "A unit vector along x",
+        "A scalar",
+        "A zero vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The negative of a vector",
+      "options": [
+        "Has zero magnitude",
+        "Has the same magnitude and the opposite direction",
+        "Is always a unit vector",
+        "Has a larger magnitude"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Definition and significance of Types of Vectors.",
+    "Zero vector",
+    "Unit vector",
+    "Equal and negative vectors",
+    "Position vector"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "confusion": [
+    "A unit vector is not the number 1. It has a direction.",
+    "Equal vectors need not share a point of application.",
+    "The zero vector is not a unit vector.",
+    "î has magnitude 1. A component such as 3î has magnitude 3."
+  ],
+  "practice": [
+    "Write Unit vector â = A / |A| and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Unit vector â = A / |A|",
+    "Equal vectors: same magnitude and direction."
+  ],
+  "animation3D": "physics",
+  "motionGraphics": "physics",
+  "duplicateType": 1,
+  "mcqs": [
+    {
+      "question": "A unit vector along A is",
+      "options": [
+        "|A| A",
+        "A / |A|",
+        "A + 1",
+        "The zero vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Equal vectors must have",
+      "options": [
+        "The same point of application only",
+        "The same magnitude and direction",
+        "Opposite directions",
+        "Zero magnitude"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "î is",
+      "options": [
+        "A force of 1 N",
+        "A unit vector along x",
+        "A scalar",
+        "A zero vector"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The negative of a vector",
+      "options": [
+        "Has zero magnitude",
+        "Has the same magnitude and the opposite direction",
+        "Is always a unit vector",
+        "Has a larger magnitude"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A = 3î + 4ĵ. Find the unit vector along A.",
+      "steps": [
+        "The magnitude is |A| = sqrt(3^2 + 4^2) = sqrt(9 + 16) = 5.",
+        "The unit vector is A divided by this magnitude.",
+        "Â = (3î + 4ĵ) / 5 = 0.6 î + 0.8 ĵ.",
+        "Check: sqrt(0.6^2 + 0.8^2) = sqrt(0.36 + 0.64) = 1.",
+        "The direction is the same as A, at arctan(4/3) above the x-axis."
+      ],
+      "answer": "0.6 î + 0.8 ĵ."
+    }
+  ],
+  "relevance": 94,
+  "unitSlug": "vectors",
+  "topicSlug": "08-types-of-vectors",
+  "topicTitle": "Types of Vectors"
+}
