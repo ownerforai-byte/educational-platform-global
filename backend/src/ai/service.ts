@@ -35,7 +35,7 @@ export const MAX_OUTPUT_TOKENS = Number(process.env.AI_MAX_OUTPUT_TOKENS) || 163
  */
 export const REPLY_TEMPERATURE = Number(process.env.AI_TEMPERATURE) || 0.7;
 
-export type SupportedProvider = "internal" | "agnes";
+export type SupportedProvider = "internal" | "agnes" | "groq";
  
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -657,6 +657,119 @@ NEVER hallucinate features. Only reference real platform sections.`;
 }
 
 /**
+ * Groq — OpenAI-compatible gateway. Adds an independent LLM link to the
+ * chain so an Agnes outage (rate-limit, quota, DNS) can be bypassed before
+ * falling through to the internal engine.
+ *
+ * Verified 2026-10-24: key authenticated, /v1/models catalogue OK,
+ * real completion on "openai/gpt-oss-20b".
+ */
+class GroqProvider implements AIProvider {
+  name = "groq";
+  private apiUrl = "https://api.groq.com/openai/v1/chat/completions";
+  private model: string;
+  private apiKey: string;
+  private timeoutMs: number;
+  private lastFinishReason = "";
+
+  getLastFinishReason(): string {
+    return this.lastFinishReason;
+  }
+
+  constructor(apiKey: string) {
+    this.apiKey = apiKey;
+    this.model = process.env.GROQ_MODEL || "openai/gpt-oss-20b";
+    this.apiUrl = process.env.GROQ_API_URL || this.apiUrl;
+    this.timeoutMs = Number(process.env.GROQ_TIMEOUT_MS || 240000);
+  }
+
+  private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const rest = messages.filter((m) => m.role !== "system");
+    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+  }
+
+  private async callGroq(messages: AIChatMessage[]): Promise<string> {
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+      },
+      body: JSON.stringify({
+        model: this.model,
+        messages: messages.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
+        max_tokens: MAX_OUTPUT_TOKENS,
+        temperature: REPLY_TEMPERATURE,
+      }),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Groq error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    const data = await res.json();
+    this.lastFinishReason = String(data?.choices?.[0]?.finish_reason ?? "");
+    const text = data?.choices?.[0]?.message?.content;
+    if (!text || !text.trim()) throw new Error("Empty Groq response");
+    return text;
+  }
+
+  async chat(messages: AIChatMessage[]): Promise<string> {
+    if (!this.apiKey) throw new Error("Missing Groq API key");
+    return this.callGroq(this.prepareMessages(messages));
+  }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing Groq API key");
+    this.lastFinishReason = "";
+    const enriched = this.prepareMessages(messages);
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+      },
+      body: JSON.stringify({
+        model: this.model,
+        messages: enriched.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
+        max_tokens: MAX_OUTPUT_TOKENS,
+        temperature: REPLY_TEMPERATURE,
+        stream: true,
+      }),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Groq stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    for await (const event of sseEvents(res)) {
+      const finish = event?.choices?.[0]?.finish_reason;
+      if (finish) this.lastFinishReason = String(finish);
+      const chunk = event?.choices?.[0]?.delta?.content;
+      if (typeof chunk === "string" && chunk) yield chunk;
+    }
+  }
+
+  async search(query: string): Promise<AISearchResponse> {
+    if (!this.apiKey) throw new Error("Missing Groq API key");
+    // Groq has no web search of its own — delegate to the internal engine.
+    const internal = new InternalProvider();
+    return internal.search(query);
+  }
+}
+
+/**
  * Reject when `promise` does not settle within `ms` — one link of the
  * sequential provider chain must not eat the whole chain budget.
  */
@@ -742,16 +855,20 @@ export class AIService {
     this.providers.set("internal", new InternalProvider());
 
     const agnesKey = process.env.AGNES_API_KEY;
+    const groqKey = process.env.GROQ_API_KEY;
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
+    if (groqKey) this.providers.set("groq", new GroqProvider(groqKey));
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
     } else if (agnesKey) {
       this.defaultProvider = "agnes";
+    } else if (groqKey) {
+      this.defaultProvider = "groq";
     }
   }
 
