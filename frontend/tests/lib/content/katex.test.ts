@@ -3,7 +3,9 @@ import {
   KATEX_MACROS,
   normalizeLatexExpression,
   normalizeMathDelimiters,
+  renderKatexHtml,
 } from "@/lib/content/katex";
+import { renderNoteHtml } from "@/lib/content/pipeline";
 
 describe("normalizeMathDelimiters", () => {
   it("converts bracket display math to $$", () => {
@@ -53,6 +55,12 @@ describe("normalizeLatexExpression", () => {
     expect(normalizeLatexExpression(input)).toBe(input);
   });
 
+  it("repairs double-escaped inline math via renderKatexHtml", () => {
+    const html = renderKatexHtml("\\\\theta + \\\\sin x");
+    expect(html).toContain('class="katex"');
+    expect(html).not.toContain("\\\\theta");
+  });
+
   it("collapses double-escaped commands generically", () => {
     expect(normalizeLatexExpression("\\\\theta + \\\\sin x = \\\\pm 1")).toBe(
       "\\theta + \\sin x = \\pm 1",
@@ -62,6 +70,14 @@ describe("normalizeLatexExpression", () => {
     );
     expect(normalizeLatexExpression("\\\\sum_{i=1}^{n} i^2")).toBe("\\sum_{i=1}^{n} i^2");
     expect(normalizeLatexExpression("\\\\approx \\\\pi")).toBe("\\approx \\pi");
+  });
+});
+
+describe("renderNoteHtml — double-escaped math from JSON", () => {
+  it("renders generic commands inside $ delimiters", () => {
+    const html = renderNoteHtml("$\\\\vec{v} = \\\\hat{x} + \\\\hat{y}$");
+    expect(html).toContain('class="katex"');
+    expect(html).not.toMatch(/\\\\vec/);
   });
 });
 

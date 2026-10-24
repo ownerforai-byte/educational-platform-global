@@ -10,7 +10,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Recombinant DNA is two DNA molecules joined into one helix, then copied inside a host."
-    }
+    },
+    "notes": [
+      "Recombinant DNA is a DNA molecule made by joining DNA from two different sources. A useful gene is cut out of one molecule and sealed into a vector that can replicate in a host cell.",
+      "Restriction endonucleases cut DNA at short palindromic sites. EcoRI recognises 5'-GAATTC-3' and cuts between G and A, leaving 5'-AATT overhangs. Those overhangs are sticky ends. The same enzyme is used on the vector and on the foreign DNA so the ends match.",
+      "The host's own DNA is protected because those same sites are methylated. The enzyme's natural job is to cut unprotected DNA, such as a phage genome. In the lab that specificity is what makes the cut reproducible.",
+      "DNA ligase seals the nicks by forming phosphodiester bonds. Sticky-end joining is efficient. Blunt ends can be joined too, but much less readily. Ligase is the seal, and the restriction enzyme is the cut. They are not interchangeable.",
+      "The vector is usually a plasmid: circular, extra-chromosomal bacterial DNA with its own origin of replication. A cloning vector also needs a selectable marker, such as antibiotic resistance, and a site where the foreign DNA can be inserted. pBR322 carries ampicillin and tetracycline resistance genes and is the classic teaching plasmid.",
+      "The recombinant plasmid is taken up by a competent cell. Competence is arranged with cold calcium chloride or by electroporation. Cells that took up the plasmid are selected on the antibiotic. Cells without the plasmid die. That living colony is the clone that multiplies the insert."
+    ]
   },
   "notes": [
     "Recombinant DNA is a DNA molecule made by joining DNA from two different sources. A useful gene is cut out of one molecule and sealed into a vector that can replicate in a host cell.",

@@ -1,10 +1,9 @@
 "use client";
 
-import katex from "katex";
 import { useEffect, useMemo, useState } from "react";
 
 import type { ComputeBlock, Formula } from "@/lib/content/schema";
-import { KATEX_OPTIONS } from "@/lib/content/katex";
+import { renderKatexHtml } from "@/lib/content/katex";
 import { deriveExpr, evaluate } from "@/lib/content/safe-eval";
 import { formatWithUnit } from "@/lib/content/dimensions";
 
@@ -14,8 +13,7 @@ import { formatWithUnit } from "@/lib/content/dimensions";
  * with its unit. Nothing here executes content text — `safe-eval` builds the
  * expression from whitelisted symbols and a locked AST walk.
  */
-const tex = (latex: string, display = false) =>
-  katex.renderToString(latex, { ...KATEX_OPTIONS, displayMode: display, throwOnError: false });
+const tex = (latex: string, display = false) => renderKatexHtml(latex, display);
 
 const formatNumber = (n: number) =>
   Math.abs(n) >= 1e4 || (Math.abs(n) < 1e-3 && n !== 0) ? n.toExponential(2) : String(Number(n.toPrecision(4)));

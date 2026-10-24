@@ -10,7 +10,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "A transgenic animal carries a foreign gene inside the same double helix as its own DNA."
-    }
+    },
+    "notes": [
+      "A transgenic animal carries a gene that came from another organism, and that gene is present in the animal's cells and is expressed. The gene is extra DNA, not a temporary injection of protein.",
+      "The usual route in mice starts with a fertilised egg. Copies of the foreign DNA are microinjected into one pronucleus. The egg is placed in a surrogate mother. Offspring are then tested to see which ones actually incorporated the gene.",
+      "Only some injected eggs take up the DNA, and only some of those pass the gene on. Screening, often with a marker or by looking for the DNA itself, is part of the method. An animal that merely received a protein is not transgenic.",
+      "The inserted gene must be expressed, not just sit in the genome. A promoter that works in the host decides where and when the new protein is made. A gene without a working promoter does not change the animal's phenotype.",
+      "Mice are the common first host because they breed quickly and their embryos are well studied. The same idea has been used in fish, pigs, sheep and cattle when a product or a disease model is wanted in that species.",
+      "Making the animal is only the first half of the topic. The reason for doing it — disease models, proteins in milk, and safety tests — belongs with the uses. The method here is the transfer of a chosen gene into the germline so every cell of the offspring can carry it."
+    ]
   },
   "notes": [
     "A transgenic animal carries a gene that came from another organism, and that gene is present in the animal's cells and is expressed. The gene is extra DNA, not a temporary injection of protein.",

@@ -104,7 +104,6 @@
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1,
   "visualType": "limit",
   "numericals": [
     "**1. [Idea: the denominator's limit does not exist, so the limit cannot either]** Determine $\\lim_{x \\to 0}\\dfrac{x^2}{2x^2 + \\sin^2(1/x)}$.\\newline\\newline**Solution:** Substitute: the numerator tends to $0$ and the denominator oscillates, so the form is not even $\\frac00$ and L'Hôpital is unavailable. Divide by $x^2$:$\\newline\\dfrac{1}{2 + \\left(\\frac{\\sin(1/x)}{x}\\right)^2}$. Put $u = 1/x$, so $u \\to \\infty$ and the squared term becomes $u^2\\sin^2 u$.\\newline\\newline**Examine two sequences:**$^{\\bullet}$ $x_n = \\frac{1}{n\\pi}$ gives $\\sin u = 0$, so the fraction is exactly $\\frac12$.$^{\\bullet}$ $y_n = \\frac{1}{\\frac\\pi2 + 2n\\pi}$ gives $|\\sin u| = 1$, so the fraction is $\\dfrac{1}{2+y_n^2} \\to 0$.\\newline\\newlineSince the two sequences give different values, **the limit does not exist**.\\newline\\newline**Answer:** DNE. **This is the concept the question tests** — students who see $\\frac00$ and reach for L'Hôpital get a wrong answer.",

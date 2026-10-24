@@ -40,7 +40,6 @@
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
-  "duplicateType": 2,
   "tabGroup": "ohms-law-resistance",
   "specificConditions": [
     "**Series Connection Constraints:** In a series circuit, the *same current* flows through all resistors. The equivalent resistance is the sum: $R_{eq} = R_1 + R_2 + \\dots$. The voltage divides proportionally to resistance: $V_i = I R_i$.",

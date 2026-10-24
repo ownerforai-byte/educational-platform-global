@@ -156,7 +156,7 @@ router.delete("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Requ
   let query = supabaseAdmin.from("image_history").delete().eq("user_id", user.id);
   if (id) query = query.eq("id", id);
 
-  const { error } = await query;
+  const { data, error } = await query.select("id");
 
   if (error) {
     if (isMissingTable(error)) {
@@ -165,6 +165,11 @@ router.delete("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Requ
     }
     console.warn("[image-history] clear failed:", error.message);
     res.status(500).json({ error: "Failed to clear image history" });
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    res.status(404).json({ error: "Not found" });
     return;
   }
 

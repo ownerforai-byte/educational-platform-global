@@ -1,11 +1,11 @@
-# ── dependencies ────────────────────────────────────────────────────────────
+﻿# â”€â”€ dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 /node_modules
 frontend/node_modules/
 backend/node_modules/
 /.pnp
 .pnp.js
 
-# ── build output ────────────────────────────────────────────────────────────
+# â”€â”€ build output â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 /.next/
 /out/
 frontend/.next/
@@ -29,7 +29,7 @@ next-env.d.ts
 .route-audit/
 */.route-audit/
 
-# ── secrets and credentials — never commit ──────────────────────────────────
+# â”€â”€ secrets and credentials â€” never commit â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # local env files (keep only the .example templates)
 .env
 .env.*
@@ -37,7 +37,7 @@ next-env.d.ts
 !.env.example
 .env*.local
 # env dumps that do NOT match the .env patterns above but hold the same
-# live secrets (Supabase service-role key, AI provider keys) — never commit
+# live secrets (Supabase service-role key, AI provider keys) â€” never commit
 /env2
 /env2.*
 /env[0-9]
@@ -65,7 +65,7 @@ service-account*.json
 **/build/
 **/.gradle/
 
-# ── logs and local run output ───────────────────────────────────────────────
+# â”€â”€ logs and local run output â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 *.log
 frontend/trace.txt
 npm-debug.log*
@@ -78,7 +78,7 @@ logs/
 /sdkout.txt
 /sdkerr.txt
 
-# ── agent / editor tooling state (local only, never shared) ─────────────────
+# â”€â”€ agent / editor tooling state (local only, never shared) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 .agnes/
 .agnes-lost-files.txt
 .agnes-work-tsc.txt
@@ -105,7 +105,7 @@ logs/
 .vscode/
 .idea/
 
-# ── misc ────────────────────────────────────────────────────────────────────
+# â”€â”€ misc â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -115,7 +115,7 @@ desktop.ini
 *.rej
 *.swp
 
-# ── Python ──────────────────────────────────────────────────────────────────
+# â”€â”€ Python â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 __pycache__/
 *.pyc
 *.pyo
@@ -129,17 +129,17 @@ venv/
 .ruff_cache/
 .ipynb_checkpoints/
 
-# ── Manim media/output ──────────────────────────────────────────────────────
+# â”€â”€ Manim media/output â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 media/
 
-# ── local scratch scripts ───────────────────────────────────────────────────
+# â”€â”€ local scratch scripts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 test_*.py
 *_test.py
 
 # Legacy/quarantined code backed up during the restructure (not part of the app)
 /scripts/_stale/
 
-# cell-architecture-studio/ — standalone local project (was a git submodule; its
+# cell-architecture-studio/ â€” standalone local project (was a git submodule; its
 # remote ownerforai-byte/gitn1 was deleted, so it lives local-only now).
 # Do not track it.
 cell-architecture-studio/
@@ -148,7 +148,7 @@ cell-architecture-studio/
 cloudflare-token.txt
 
 
-# ── Android TWA wrapper (local build only; signing keys and build trees stay out) ──
+# â”€â”€ Android TWA wrapper (local build only; signing keys and build trees stay out) â”€â”€
 android-twa/node_modules/
 android-twa/android/
 android-twa/android/local.properties
@@ -164,5 +164,9 @@ android-twa/release/
 android-twa/
 tools/
 
-# ── worktree-flow sandboxes (cline/* branches; see scripts/worktree-flow.mjs) ──
+# â”€â”€ worktree-flow sandboxes (cline/* branches; see scripts/worktree-flow.mjs) â”€â”€
 .worktrees/
+
+# vitest ad-hoc dump files (never commit runner stderr captures)
+
+vitest-entryfeed*.txt

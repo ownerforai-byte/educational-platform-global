@@ -187,7 +187,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Homeostasis keeps internal conditions steady by negative feedback."
-    }
+    },
+    "notes": [
+      "Homeostasis is the keeping of a steady internal state while the outside changes: temperature, blood glucose, pH, water and salts.",
+      "Negative feedback detects a change and starts a response that pushes the value back toward the set point. The response switches off as the set point is approached.",
+      "If body temperature rises, skin vessels widen and sweat increases heat loss. If it falls, vessels narrow and shivering produces heat.",
+      "If blood glucose rises after a meal, insulin promotes uptake and storage. If glucose falls, glucagon promotes release from liver glycogen. The two hormones pull in opposite directions.",
+      "The kidneys keep water and salts by varying how much is reabsorbed. Antidiuretic hormone saves water when the body is short of it.",
+      "Positive feedback, as in the intensification of labour contractions, drives a change further. It is the exception. Homeostasis of temperature and glucose is negative feedback."
+    ]
   },
   "bounds": [
     "Stay inside this class 11 topic.",

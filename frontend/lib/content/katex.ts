@@ -1,4 +1,6 @@
 import type { KatexOptions } from "katex";
+import katex from "katex";
+import "katex/contrib/mhchem";
 
 /**
  * Shared KaTeX macros available to every math expression on the platform.
@@ -78,6 +80,14 @@ export const KATEX_OPTIONS: KatexOptions & { macros: Record<string, string> } = 
  * backslashes (for example `\\circ` instead of `\circ`).
  * Also sanitizes stray backslashes that are not part of valid commands.
  */
+/**
+ * Every direct `katex.render` / `renderToString` call must run through this
+ * (or `renderKatexHtml`) so JSON double-escaping is repaired consistently.
+ */
+export function prepareKatexExpression(expression: string): string {
+  return normalizeLatexExpression(expression);
+}
+
 export function normalizeLatexExpression(expression: string): string {
   if (!expression) return expression;
   
@@ -149,31 +159,29 @@ export function normalizeMathDelimiters(text: string): string {
       
       let normalized = segment;
       
-      // Replace \[ ... \] with $$ ... $$
-      normalized = normalized.replace(/\\\[((?:.|\n)*?)\\\]/g, (_m, body) => `$$${String(body).trim()}$$`);
-      
-      // Replace \( ... \) with $ ... $
-      normalized = normalized.replace(/\\\(((?:.|\n)*?)\\\)/g, (_m, body) => `$${String(body).trim()}$`);
-      
-      // Replace existing $$ ... $$ with normalized content
-      // This also catches $$ ... $$ that might have had \\ inside
-      normalized = normalized.replace(/\\\$([\s\S]*?)\\\$/g, (_m, body) => `$$${String(body).trim()}$$`);
-      
-      // 4. Process all math blocks (both inline and block) to sanitize their content
-      // Match inline $...$ and block $$$$
-      // We use a function to replace each match with its sanitized version
+      // Replace \[ ... \] / \( ... \) / \$ ... \$ — sanitize bodies so export
+      // double-escaping is fixed before remark-math sees the delimiters.
+      normalized = normalized.replace(/\\\[((?:.|\n)*?)\\\]/g, (_m, body) =>
+        `$$${sanitizeMathContent(String(body).trim())}$$`,
+      );
+
+      normalized = normalized.replace(/\\\(((?:.|\n)*?)\\\)/g, (_m, body) =>
+        `$${sanitizeMathContent(String(body).trim())}$`,
+      );
+
+      normalized = normalized.replace(/\\\$([\s\S]*?)\\\$/g, (_m, body) =>
+        `$$${sanitizeMathContent(String(body).trim())}$$`,
+      );
+
+      // Block math, then inline (blocks first so $$ pairs are not split).
       normalized = normalized.replace(
-        /(\$\$[\s\S]*?\$\$|\$(?:\\.|[^$\\])+\$)/g,
-        (math) => {
-          const isBlock = math.startsWith("$$");
-          const offset = isBlock ? 2 : 1;
-          const content = math.slice(offset, -offset);
-          
-          // Sanitize the content
-          const sanitized = sanitizeMathContent(content);
-          
-          return `${isBlock ? "$$" : "$"}${sanitized}${isBlock ? "$$" : "$"}`;
-        },
+        /\$\$([\s\S]*?)\$\$/g,
+        (_m, body) => `$$${sanitizeMathContent(String(body).trim())}$$`,
+      );
+
+      normalized = normalized.replace(
+        /(?<!\$)\$(?!\$)((?:\\.|[^$\\])+)\$/g,
+        (_m, body) => `$${sanitizeMathContent(String(body).trim())}$`,
       );
       
       // 5. Handle stray single $ that are not part of a valid math block
@@ -197,4 +205,13 @@ export function normalizeMathDelimiters(text: string): string {
       return normalized;
     })
     .join("");
+}
+
+/** Normalized raw LaTeX → static HTML (client or SSR). */
+export function renderKatexHtml(expression: string, displayMode = false): string {
+  return katex.renderToString(prepareKatexExpression(expression), {
+    ...KATEX_OPTIONS,
+    displayMode,
+    throwOnError: false,
+  });
 }

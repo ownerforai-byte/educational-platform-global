@@ -280,7 +280,6 @@
       }
     ]
   },
-  "duplicateType": 2,
   "tabGroup": "angular-displacement-velocity",
   "specificConditions": [
     "**Axis of Rotation Constraint:** Angular quantities ($\theta$, $\\omega$, $\\alpha$) are defined with respect to a specific fixed axis. If the axis of rotation changes orientation, the angular velocity becomes a time-dependent vector, and simple scalar kinematics no longer apply.",

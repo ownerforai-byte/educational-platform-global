@@ -55,7 +55,6 @@
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
-  "duplicateType": 2,
   "tabGroup": "emf-internal-resistance-and-cells-in-combination",
   "specificConditions": [
     "**EMF vs Terminal Voltage:** EMF ($\\mathcal{E}$) is the open-circuit voltage (no current). Terminal voltage $V = \\mathcal{E} - Ir$ under discharge; $V = \\mathcal{E} + Ir$ during charging. The sign of the $Ir$ term depends on current direction.",

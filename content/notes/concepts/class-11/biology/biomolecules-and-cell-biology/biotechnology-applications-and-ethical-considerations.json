@@ -188,7 +188,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Uses in crops and medicine, and the ethical limits on release and ownership."
-    }
+    },
+    "notes": [
+      "Biotechnology applies a living system to a product: a crop, a drug, a microbe or a test.",
+      "In agriculture the example is a crop given a gene that reduces insect damage, such as Bt cotton, and microbes that improve a fermentation.",
+      "In medicine the examples are recombinant insulin, safer vaccines and antibiotics originally found in microbes.",
+      "A genetic test can tell a family about a disease allele. The ethical requirement is consent, and the result must not become a reason to deny a person unfairly.",
+      "Releasing an engineered organism raises a safety question: will it cross with wild relatives, and who is watching.",
+      "Taking a gene or a crop variety from a community without consent or share of benefit is the ownership problem. Use and fairness are both part of the topic."
+    ]
   },
   "bounds": [
     "Stay inside this class 11 topic.",

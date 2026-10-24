@@ -12,7 +12,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Bt cotton and nematode-resistant tobacco both depend on a gene added to the plant's DNA."
-    }
+    },
+    "notes": [
+      "Bt cotton carries cry genes from the bacterium Bacillus thuringiensis. The plant makes the Cry protein in its own tissues. Bollworm larvae that eat the leaf or the boll take the protein in with the meal.",
+      "Inside the bacterium the Cry protein is an inactive crystal. In the alkaline gut of a susceptible larva it dissolves and is cut into an active toxin. The toxin forms pores in the midgut lining and the larva dies. cryIAc and cryIIAb are the genes used against cotton bollworms.",
+      "The toxin is not a general insect killer. It needs that alkaline gut. Pollinators that do not eat the tissue, and insects whose guts do not activate the crystal, are not the target. The human stomach is acidic, and people do not have the insect midgut receptor the toxin uses.",
+      "A field of only Bt plants selects for larvae that survive the toxin. A refuge of non-Bt cotton, about a fifth of the area, lets susceptible insects survive and mate with resistant survivors. That mating dilutes resistance.",
+      "Nematode-resistant tobacco uses RNA interference against the root-knot nematode Meloidogyne incognita. Agrobacterium is used to put into the plant a DNA sequence that produces double-stranded RNA matching a gene the nematode needs.",
+      "When the nematode feeds on the root it takes up that RNA. The matching mRNA in the worm is silenced, so the nematode cannot develop properly in the root. The protection is gene silencing, not a protein crystal. Bt and this RNAi crop solve pest problems by different molecules."
+    ]
   },
   "notes": [
     "Bt cotton carries cry genes from the bacterium Bacillus thuringiensis. The plant makes the Cry protein in its own tissues. Bollworm larvae that eat the leaf or the boll take the protein in with the meal.",

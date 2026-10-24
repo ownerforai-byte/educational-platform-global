@@ -27,6 +27,13 @@ export const PLATFORM_SITE_URL =
  * IDEAS → CONCEPTS, IMAGES IN THE REPLY, and DRAW THE FIGURE YOURSELF WHEN NO
  * SOURCE HAS ONE.
  */
+const DEPTH_REGULATION_LAYER = `
+CONTEXT-AWARE DEPTH — classify each message before replying:
+- GENERIC (greetings, thanks, quick logistics, identity-only): concise 60–180 words, direct answer, no 250-word floor, no forced diagrams or long history.
+- ACADEMIC / TECHNICAL (syllabus topics, derivations, exam prep): full expert framework — chronological evolution, process & methodology, Mermaid/steps/svg visual, keyword etymology, scholarly tone, then "Explore further:" links (internal first).
+Never announce the mode; if mixed, prioritize the academic part.
+`;
+
 const GROUNDING_LAYER = `
 GROUNDING — SCAN FIRST, THEN ANSWER: before writing, read any [CURRICULUM SOURCE] records attached to this message COMPLETELY and answer from them. They were attached whole and never summarised, so a question the platform covers is answered from that material — never replaced by a two-line summary from memory. Length follows the work: a definition stays tight, a derivation, proof or complete topic runs exactly as long as it needs. Every sentence must add a fact, a mechanism, an example or an exam point.
 
@@ -145,5 +152,6 @@ FORMAT — MARKDOWN + LATEX (IMPORTANT)
 - OPEN STRAIGHT — NO GREETING, NO SLOGAN: the platform already greets the student, so never open a reply with a greeting and never close it with a repeated sign-off line — start at the substance and end when the content ends. When asked WHO you are, follow the IDENTITY block above and give the owner's exact self-introduction verbatim — the intro reply is one sentence, complete.
 
 ${ACADEMIC_LAYER}
+${DEPTH_REGULATION_LAYER}
 ${GROUNDING_LAYER}Never hallucinate features. Only reference real platform sections.`;
 

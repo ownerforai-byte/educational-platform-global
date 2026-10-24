@@ -8,6 +8,11 @@ import { DEEP_ANSWER_RULES } from "./deep-answer";
 import { ARTIFACT_RULES } from "./artifact-rules";
 import { REPLY_CRAFT_RULES } from "./reply-craft";
 import { SOURCE_REGISTRY_RULES } from "./source-registry";
+import {
+  classifyInquiryMode,
+  depthDirectiveForMode,
+  DEPTH_REGULATION_RULES,
+} from "./depth-regulation";
 
 /**
  * PROFESSOR_STYLE_RULES — enforced server-side on every chat reply (auth + guest).
@@ -95,6 +100,7 @@ const SITE_TIMEOUT_MS = Number(process.env.AI_SEARCH_TIMEOUT_MS) || 9000;
  */
 export const MASTER_ACADEMIC_PROMPT = [
   PROFESSOR_STYLE_RULES,
+  DEPTH_REGULATION_RULES,
   MASTER_ACADEMIC_RULES,
   DEEP_ANSWER_RULES,
   ARTIFACT_RULES,
@@ -122,6 +128,8 @@ export async function buildProfessorContext(
 ): Promise<string> {
   const parts: string[] = [MASTER_ACADEMIC_PROMPT];
   const question = lastUserMessage.trim();
+  const inquiryMode = classifyInquiryMode(question);
+  parts.push(depthDirectiveForMode(inquiryMode));
 
   // ── 1. CURRICULUM SOURCE — SCAN BEFORE ANSWERING (owner 2026-09-30) ──
   // Retrieve the platform's own Class 11/12 material for this question and
@@ -162,7 +170,7 @@ export async function buildProfessorContext(
   // Best-effort: a DB problem degrades to the origin-rule-only block, never
   // to a failed chat request.
   try {
-    if (lastUserMessage.trim()) {
+    if (lastUserMessage.trim() && inquiryMode === "academic") {
       const anchor = await buildSyllabusAnchorBlock(lastUserMessage);
       const floor = floorWordsForQuestion(lastUserMessage);
       parts.push(
@@ -171,6 +179,10 @@ export async function buildProfessorContext(
           `It is a HARD MINIMUM, never a ceiling: exhaust the current topic thoroughly with at least 250 words of rich substance — ` +
           `core ideas, historical origin with exact dates/timeline, how and why this works (detailed causal mechanism and LaTeX formulas), ` +
           `influencing factors, defining features, and properties — before moving to any subsequent topic. Deep work runs as long as the work requires.`,
+      );
+    } else if (lastUserMessage.trim() && inquiryMode === "generic") {
+      parts.push(
+        "[REPLY FLOOR — GENERIC MODE] Keep this reply concise (see INQUIRY MODE — GENERIC). The 250-word academic floor does not apply to this turn.",
       );
     }
   } catch {

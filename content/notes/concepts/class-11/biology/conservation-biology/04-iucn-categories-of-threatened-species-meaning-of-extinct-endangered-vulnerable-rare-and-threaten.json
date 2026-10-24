@@ -195,7 +195,19 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Extinct, endangered, vulnerable, rare and threatened are not synonyms."
-    }
+    },
+    "notes": [
+      "The IUCN Red List is the world's most comprehensive inventory of the global conservation status of biological species, maintained by the International Union for Conservation of Nature.",
+      "Extinct (EX): no reasonable doubt that the last individual has died; no surveys can find it.",
+      "Extinct in the Wild (EW): survives only in captivity or cultivation, with no natural population.",
+      "Critically Endangered (CR): extremely high risk of extinction in the wild; e.g., population < 50 mature individuals or rapid decline.",
+      "Endangered (EN): very high risk of extinction in the wild; smaller populations or steeper declines than CR threshold.",
+      "Vulnerable (VU): high risk of extinction in the wild; larger populations than EN but still threatened.",
+      "Near Threatened (NT): close to qualifying for a threatened category.",
+      "Least Concern (LC): widespread and abundant; lowest risk of extinction.",
+      "Data Deficient (DD): insufficient information to assess extinction risk.",
+      "Not Evaluated (NE): not yet assessed against the criteria."
+    ]
   },
   "bounds": [
     "Stay inside this topic's contrast.",

@@ -104,14 +104,20 @@ router.delete("/:id", requireAuth, async (req: Request, res: Response) => {
     const user = (req as AuthedRequest).user;
     const { id } = req.params;
 
-    const { error } = await supabaseAdmin
+    const { data, error } = await supabaseAdmin
       .from("bookmarks")
       .delete()
       .eq("id", id)
-      .eq("user_id", user.id);
+      .eq("user_id", user.id)
+      .select("id");
 
     if (error) {
       serverError(res, error);
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      res.status(404).json({ error: "Not found" });
       return;
     }
 

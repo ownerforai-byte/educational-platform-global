@@ -189,7 +189,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Organism, population, community, ecosystem. Energy thins by about nine tenths at each step."
-    }
+    },
+    "notes": [
+      "A population is the members of one species in a place. A community is the populations living together. An ecosystem adds the physical surroundings.",
+      "A niche is the role: what the organism eats, when it is active, and which conditions it tolerates. Two species do not keep identical niches for long.",
+      "Biotic factors are the living influences. Abiotic factors are light, temperature, water, soil and salinity.",
+      "A food chain moves energy from a producer to consumers. A food web is many chains joined. Decomposers return matter to the soil.",
+      "Only about ten percent of the energy at one level is available at the next. The rest is lost as heat and as work of staying alive. Chains therefore stay short.",
+      "A pond and a forest are both ecosystems. The pond's producers are algae and water plants. The forest's are trees. The structure differs. The energy rule does not."
+    ]
   },
   "bounds": [
     "Stay inside this class 11 topic.",

@@ -12,7 +12,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Genetic engineering rewrites DNA. The helix is the molecule those principles act on."
-    }
+    },
+    "notes": [
+      "Biotechnology in this chapter rests on two ideas used together. Genetic engineering changes the genetic material so a cell can make something it did not make before. Bioprocess engineering grows that cell in large, clean cultures and recovers the product.",
+      "A changed gene in a test tube is not yet a medicine. The host has to be multiplied without contamination, and the protein has to be separated from thousands of other molecules. Sterile culture is part of the principle, not a side comment. One unwanted microbe can outgrow the production strain.",
+      "The genetic-engineering sequence is: isolate the DNA, cut out the wanted piece with a restriction enzyme, join it to a vector with ligase, put the recombinant vector into a host, and select the cells that received it. Each step fails for a different reason, so each has its own check.",
+      "The host must be competent, able to take DNA in. For a product that needs human-like sugar chains, a bacterial host may be the wrong choice even if it grows fast. Insulin can be made in E. coli. Some other human proteins need mammalian cells. The host is chosen for the product, not from habit.",
+      "Downstream processing is the recovery half of bioprocess engineering. Cells are separated from the broth, the product is extracted, and it is purified until it is safe to use. A culture that made the protein but was never purified has not finished the process.",
+      "The same recombinant molecule can be copied only because the vector has an origin of replication and the culture is kept free of competitors. Genetic engineering supplies the instruction. Bioprocess engineering supplies the mass of cells and the clean product. Neither idea alone is the technology."
+    ]
   },
   "notes": [
     "Biotechnology in this chapter rests on two ideas used together. Genetic engineering changes the genetic material so a cell can make something it did not make before. Bioprocess engineering grows that cell in large, clean cultures and recovers the product.",

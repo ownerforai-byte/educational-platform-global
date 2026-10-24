@@ -10,7 +10,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "PCR copies a chosen stretch of the double helix. Gel electrophoresis then sorts the copies by size."
-    }
+    },
+    "notes": [
+      "PCR makes many copies of one chosen stretch of DNA. It does not copy the whole genome unless the primers are aimed at the whole genome. Two primers mark the ends of the target.",
+      "Each cycle has three temperature steps. Near 94 °C the two strands separate. The heat replaces a helicase. Near 50 to 65 °C, depending on the primer, the primers bind. At 72 °C a thermostable polymerase extends the primers. Taq polymerase, from Thermus aquaticus, survives the hot step that would destroy an ordinary polymerase.",
+      "The tube must contain template DNA, two primers, dNTPs, Taq polymerase and magnesium ions. Miss any one and the reaction stops. Magnesium is a cofactor for the polymerase.",
+      "If every molecule is copied, the count follows N = N0 × 2^n. Ten cycles give 2^10 = 1024 copies from one molecule. Twenty cycles give about a million. Thirty cycles give about a billion. Real reactions slow down once primers or dNTPs run low.",
+      "Gel electrophoresis sorts the products by size. DNA is negatively charged, so it moves toward the anode in an agarose gel. Smaller fragments slip through the gel faster and travel farther. A lane of known sizes, the ladder, turns distance into a length.",
+      "A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light."
+    ]
   },
   "notes": [
     "PCR makes many copies of one chosen stretch of DNA. It does not copy the whole genome unless the primers are aimed at the whole genome. Two primers mark the ends of the target.",

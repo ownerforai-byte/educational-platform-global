@@ -381,7 +381,6 @@
       }
     ]
   },
-  "duplicateType": 2,
   "tabGroup": "angular-displacement-velocity",
   "specificConditions": [
     "**Rigid Body Constraint:** Relations like $v = r\\omega$ and $a_t = r\\alpha$ assume the particles are at a fixed distance $r$ from the axis of rotation (e.g., points on a rotating rigid body).",

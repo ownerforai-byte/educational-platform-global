@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
-import { KATEX_OPTIONS, normalizeLatexExpression } from "@/lib/content/katex";
+import { KATEX_OPTIONS, prepareKatexExpression } from "@/lib/content/katex";
 
 interface MathRendererProps {
   expression: string;
@@ -23,7 +23,7 @@ export function MathRenderer({
 
   useEffect(() => {
     try {
-      const rendered = katex.renderToString(normalizeLatexExpression(expression), {
+      const rendered = katex.renderToString(prepareKatexExpression(expression), {
         ...KATEX_OPTIONS,
         displayMode,
         throwOnError,

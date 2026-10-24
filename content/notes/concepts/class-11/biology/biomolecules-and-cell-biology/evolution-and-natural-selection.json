@@ -186,7 +186,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Variation, heredity and unequal success. Selection is not a wish."
-    }
+    },
+    "notes": [
+      "Individuals in a population differ from one another, and some of those differences are hereditary and can be passed to offspring.",
+      "More offspring are born than the resources can support, so not all of them survive and breed.",
+      "Individuals whose hereditary traits fit the conditions leave more offspring. That is natural selection.",
+      "Over generations the successful variants become more common. The population changes. That change is evolution by selection.",
+      "Darwin could not name the source of new variation. Mutation and the shuffling of genes, understood later, supply it. Selection only sorts what is already heritable.",
+      "Selection is not an animal trying to improve. A giraffe does not stretch into a new gene. Lamarck's acquired characters are the contrast, and they are not what selection uses."
+    ]
   },
   "bounds": [
     "Stay inside this class 11 topic.",

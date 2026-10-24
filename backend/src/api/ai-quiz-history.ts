@@ -234,11 +234,12 @@ router.delete(
     const user = (req as Request & { user: { id: string } }).user;
     const id = req.params.id;
 
-    const { error } = await supabaseAdmin
+    const { data, error } = await supabaseAdmin
       .from("quiz_history")
       .delete()
       .eq("user_id", user.id)
-      .eq("id", id);
+      .eq("id", id)
+      .select("id");
 
     if (error) {
       if (isMissingTable(error)) {
@@ -246,6 +247,11 @@ router.delete(
         return;
       }
       res.status(500).json({ error: "Failed to delete quiz history" });
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      res.status(404).json({ error: "Not found" });
       return;
     }
 
@@ -260,10 +266,11 @@ router.delete(
   asyncHandler(async (req: Request, res: Response) => {
     const user = (req as Request & { user: { id: string } }).user;
 
-    const { error } = await supabaseAdmin
+    const { data, error } = await supabaseAdmin
       .from("quiz_history")
       .delete()
-      .eq("user_id", user.id);
+      .eq("user_id", user.id)
+      .select("id");
 
     if (error) {
       if (isMissingTable(error)) {
@@ -271,6 +278,11 @@ router.delete(
         return;
       }
       res.status(500).json({ error: "Failed to clear quiz history" });
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      res.status(404).json({ error: "Not found" });
       return;
     }
 
