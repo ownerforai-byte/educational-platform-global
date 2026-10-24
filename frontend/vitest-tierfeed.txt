@@ -1,0 +1,584 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90mC:/Users/ASUS/Desktop/rn/frontend[39m
+
+ [32m✓[39m tests/features/home-rails-corpus.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 13107[2mms[22m[39m
+     [33m[2m✓[22m[39m loads every rails file without throwing; broken ones are reported, not fatal [33m 7926[2mms[22m[39m
+     [33m[2m✓[22m[39m resolves every ready card's icon through the allowlist [33m 4825[2mms[22m[39m
+ [32m✓[39m tests/lib/content/schema-corpus.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 7133[2mms[22m[39m
+     [33m[2m✓[22m[39m every concept note parses clean against ConceptNoteSchema (beyond the baseline) [33m 7058[2mms[22m[39m
+[90mstderr[2m | tests/components/profile/nav-links.test.tsx[2m > [22m[2mSidebarNavigation[2m > [22m[2mlinks My Profile to /profile for signed-in users
+[22m[39mAn update to SidebarNavigation inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | tests/components/profile/nav-links.test.tsx[2m > [22m[2mSidebarNavigation[2m > [22m[2mowner section points at real owner console routes, not stale /admin
+[22m[39mAn update to SidebarNavigation inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | tests/components/profile/nav-links.test.tsx[2m > [22m[2mSidebarNavigation[2m > [22m[2mhides the owner section from non-owner users
+[22m[39mAn update to SidebarNavigation inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32m✓[39m tests/components/profile/nav-links.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 6846[2mms[22m[39m
+     [33m[2m✓[22m[39m links My Profile to /profile for signed-in users [33m 1764[2mms[22m[39m
+     [33m[2m✓[22m[39m owner section points at real owner console routes, not stale /admin [33m 1420[2mms[22m[39m
+     [33m[2m✓[22m[39m hides the owner section from non-owner users [33m 550[2mms[22m[39m
+     [33m[2m✓[22m[39m logs out through the instant logoutUser path, never logoutAction [33m 343[2mms[22m[39m
+     [33m[2m✓[22m[39m every My Profile entry (section + footer) opens /profile [33m 2553[2mms[22m[39m
+ [32m✓[39m tests/components/content/physics-xi-academic-grid.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 7474[2mms[22m[39m
+     [33m[2m✓[22m[39m renders a card for every unit brief [33m 1657[2mms[22m[39m
+     [33m[2m✓[22m[39m links every card to its brief page and its documents [33m 669[2mms[22m[39m
+     [33m[2m✓[22m[39m filters by content area [33m 1244[2mms[22m[39m
+     [33m[2m✓[22m[39m searches across the briefs [33m 595[2mms[22m[39m
+     [33m[2m✓[22m[39m opens a quick look with the facts of that unit [33m 1527[2mms[22m[39m
+     [33m[2m✓[22m[39m shows the exam coverage of every card [33m 470[2mms[22m[39m
+     [33m[2m✓[22m[39m opens a quick look with the exam-anchored layer [33m 739[2mms[22m[39m
+     [33m[2m✓[22m[39m searches the exam-anchored layer [33m 558[2mms[22m[39m
+ [32m✓[39m tests/components/progress/progress-panel.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 3044[2mms[22m[39m
+     [33m[2m✓[22m[39m loads the journey once and shows the full summary [33m 779[2mms[22m[39m
+     [33m[2m✓[22m[39m opens on started topics and can reveal the untouched ones [33m 1275[2mms[22m[39m
+     [33m[2m✓[22m[39m marks a topic complete through the API and updates its badge [33m 467[2mms[22m[39m
+     [33m[2m✓[22m[39m filters by subject when a subject card is picked [33m 409[2mms[22m[39m
+ [32m✓[39m tests/lib/physics-xi-academic.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1704[2mms[22m[39m
+     [33m[2m✓[22m[39m ships an HTML and a Word copy of every unit [33m 356[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps the documents in step with the dataset [33m 864[2mms[22m[39m
+ [32m✓[39m tests/components/navigation-accessibility.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 2257[2mms[22m[39m
+     [33m[2m✓[22m[39m traps focus, closes with Escape, and restores focus/body scrolling [33m 1041[2mms[22m[39m
+     [33m[2m✓[22m[39m announces empty results and hides signed-in destinations for guests [33m 888[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps a section label available after collapsing it [33m 316[2mms[22m[39m
+ [32m✓[39m tests/features/home-public.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1351[2mms[22m[39m
+     [33m[2m✓[22m[39m explains the approval requirement without exposing gated study routes [33m 1072[2mms[22m[39m
+ [32m✓[39m tests/lib/topic-visuals.test.ts [2m([22m[2m25 tests[22m[2m)[22m[33m 4845[2mms[22m[39m
+     [33m[2m✓[22m[39m gives every syllabus topic a drawing with at least two labelled parts [33m 4046[2mms[22m[39m
+ [32m✓[39m tests/lib/content/safe-eval.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 5912[2mms[22m[39m
+ [32m✓[39m tests/components/content/physics-unit-resource-doc.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 862[2mms[22m[39m
+     [33m[2m✓[22m[39m renders Unit 3 Kinematics title block and download button [33m 854[2mms[22m[39m
+ [32m✓[39m tests/features/require-approval.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 625[2mms[22m[39m
+     [33m[2m✓[22m[39m offers sign-in, create-account and the approval-status screen [33m 351[2mms[22m[39m
+ [32m✓[39m tests/providers/auth-provider-logout.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 493[2mms[22m[39m
+     [33m[2m✓[22m[39m flips to the signed-out customer in the click, while the revoke hangs [33m 448[2mms[22m[39m
+ [32m✓[39m tests/components/lab/biology-cell-dom.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[33m 1305[2mms[22m[39m
+     [33m[2m✓[22m[39m renders one clickable button per hotspot, with the total count badge [33m 566[2mms[22m[39m
+ [32m✓[39m tests/features/image-hub-ui.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 3245[2mms[22m[39m
+     [33m[2m✓[22m[39m renders the composer, the two modes and the empty gallery [33m 592[2mms[22m[39m
+     [33m[2m✓[22m[39m loads the account history on mount and shows both kinds [33m 314[2mms[22m[39m
+     [33m[2m✓[22m[39m opens the details interface with Google metadata and Veer facts [33m 378[2mms[22m[39m
+     [33m[2m✓[22m[39m saves a Google result into the account history from the details interface [33m 509[2mms[22m[39m
+[90mstderr[2m | tests/lib/site-index-coverage.test.ts
+[22m[39mTHREE.WARNING: Multiple instances of Three.js being imported.
+
+ [32m✓[39m tests/lib/site-index-coverage.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 2422[2mms[22m[39m
+     [33m[2m✓[22m[39m indexes every topic-derived concept map at its syllabus topic page [33m 2345[2mms[22m[39m
+ [32m✓[39m tests/components/content/formula-card.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 1109[2mms[22m[39m
+     [33m[2m✓[22m[39m renders the name, position badge, meaning and unit/dimension chips [33m 374[2mms[22m[39m
+     [33m[2m✓[22m[39m copies the raw LaTeX when asked [33m 389[2mms[22m[39m
+ [32m✓[39m tests/components/layout/header-theme-search.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 915[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps the theme selector in an expandable section, not the header [33m 691[2mms[22m[39m
+[90mstderr[2m | tests/components/profile/profile-page.test.tsx[2m > [22m[2mProfilePage[2m > [22m[2mrenders the identity header from the session user
+[22m[39mAn update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | tests/components/profile/profile-page.test.tsx[2m > [22m[2mProfilePage[2m > [22m[2mdisplays scholar level details and XP for logged-in user
+[22m[39mAn update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | tests/components/profile/profile-page.test.tsx[2m > [22m[2mProfilePage[2m > [22m[2mswitches to Level Details tab to see academic level & NEB curriculum
+[22m[39mAn update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | tests/components/profile/profile-page.test.tsx[2m > [22m[2mProfilePage[2m > [22m[2mdoes not render Spark Gate controller for non-owner student
+[22m[39mAn update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProgressPanel inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProfilePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32m✓[39m tests/components/profile/profile-page.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 3272[2mms[22m[39m
+     [33m[2m✓[22m[39m opens directly on the Progress tab (profile → progress) [33m 963[2mms[22m[39m
+     [33m[2m✓[22m[39m renders the identity header from the session user [33m 431[2mms[22m[39m
+     [33m[2m✓[22m[39m switches to the Account tab with account details [33m 528[2mms[22m[39m
+     [33m[2m✓[22m[39m switches to Level Details tab to see academic level & NEB curriculum [33m 466[2mms[22m[39m
+     [33m[2m✓[22m[39m renders Spark Gate on/off switch and button for owner user and allows toggling [33m 486[2mms[22m[39m
+ [32m✓[39m tests/components/visual-interface.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 5636[2mms[22m[39m
+     [33m[2m✓[22m[39m zooms about the sheet centre and resets [33m 1600[2mms[22m[39m
+     [33m[2m✓[22m[39m leaves ordinary wheel scrolling to the page [33m 977[2mms[22m[39m
+     [33m[2m✓[22m[39m activates a keyboard hotspot exactly once [33m 317[2mms[22m[39m
+     [33m[2m✓[22m[39m clears selected facts when navigating to another topic [33m 360[2mms[22m[39m
+     [33m[2m✓[22m[39m exposes readable index controls and deliberate pan mode [33m 951[2mms[22m[39m
+     [33m[2m✓[22m[39m exports a complete standalone SVG rather than the zoomed crop [33m 671[2mms[22m[39m
+ [32m✓[39m tests/components/home/home-journey-strip.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1051[2mms[22m[39m
+     [33m[2m✓[22m[39m shows the skeleton first, then the summary [33m 482[2mms[22m[39m
+     [33m[2m✓[22m[39m summarises the counts and links the three most recent topics [33m 353[2mms[22m[39m
+ [32m✓[39m tests/components/home/subject-rail-swipe.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 2824[2mms[22m[39m
+     [33m[2m✓[22m[39m freezes the rail where a swipe left it and keeps it there [33m 1066[2mms[22m[39m
+     [33m[2m✓[22m[39m counts the three seconds from the LAST interaction, not the swipe [33m 330[2mms[22m[39m
+     [33m[2m✓[22m[39m continues its cycle after 3 s untouched AND a click outside the rail [33m 315[2mms[22m[39m
+ [32m✓[39m tests/components/ui/theme-provider.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 817[2mms[22m[39m
+     [33m[2m✓[22m[39m applies light mode immediately and persists without a route reload [33m 498[2mms[22m[39m
+ [32m✓[39m tests/lib/pyq-bank.test.ts [2m([22m[2m29 tests[22m[2m)[22m[33m 1311[2mms[22m[39m
+     [33m[2m✓[22m[39m every unit/year bank on disk has an index entry with questions [33m 1015[2mms[22m[39m
+ [32m✓[39m tests/components/lab/lab-tools-panel.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 2518[2mms[22m[39m
+     [33m[2m✓[22m[39m hosts all five tools as tab panels [33m 1168[2mms[22m[39m
+     [33m[2m✓[22m[39m opens on the formula cheat sheet and switches panels [33m 729[2mms[22m[39m
+ [32m✓[39m tests/lib/formula-sheet.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 1889[2mms[22m[39m
+     [33m[2m✓[22m[39m lists Physics units in the official syllabus order [33m 823[2mms[22m[39m
+     [33m[2m✓[22m[39m covers every Class 11 Chemistry unit with formulas [33m 695[2mms[22m[39m
+ [32m✓[39m tests/features/auth/facebook-login.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1296[2mms[22m[39m
+     [33m[2m✓[22m[39m renders Google sign-in alongside the password form (Facebook temporarily hidden) [33m 628[2mms[22m[39m
+ [32m✓[39m tests/lib/content/grade11-12-math.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 719[2mms[22m[39m
+ [32m✓[39m tests/features/coin-gate-library.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 730[2mms[22m[39m
+     [33m[2m✓[22m[39m student + gate OFF → still locks (the toggle never frees students) [33m 374[2mms[22m[39m
+ [32m✓[39m tests/features/copy-blocks.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 709[2mms[22m[39m
+     [33m[2m✓[22m[39m copies the block's markdown source in one click [33m 474[2mms[22m[39m
+ [32m✓[39m tests/features/tier-home-gate.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 167[2mms[22m[39m
+ [32m✓[39m tests/components/perf/error-boundary.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 556[2mms[22m[39m
+     [33m[2m✓[22m[39m catches a render error and shows the shared fallback card [33m 351[2mms[22m[39m
+ [32m✓[39m tests/components/ai/floating-idea-chips.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 472[2mms[22m[39m
+     [33m[2m✓[22m[39m stays hidden and untabbable while typing is off [33m 369[2mms[22m[39m
+ [32m✓[39m tests/lib/content/math-coverage.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 789[2mms[22m[39m
+ [32m✓[39m tests/components/home/subject-rail-dividers.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 848[2mms[22m[39m
+     [33m[2m✓[22m[39m renders the divider ahead of its unit's cards, duplicated for the loop [33m 415[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps the per-rail pause switch alongside dividers [33m 425[2mms[22m[39m
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — default output is unchanged (Phase 1 constraint 5)[2m > [22m[2mrenders the original sphere marker, never the rounded box
+[22m[39m<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+The tag <sphereGeometry> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+The tag <meshStandardMaterial> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+React does not recognize the `emissiveIntensity` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `emissiveintensity` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+Received `true` for a non-boolean attribute `transparent`.
+
+If you want to write it to the DOM, pass a string instead: transparent="true" or transparent={value.toString()}.
+The tag <mesh> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+The tag <group> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — default output is unchanged (Phase 1 constraint 5)[2m > [22m[2mkeeps the original marker colour, opacity and emissive intensities
+[22m[39m<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — default output is unchanged (Phase 1 constraint 5)[2m > [22m[2mfalls back to the default blue when the definition has no iconColor
+[22m[39m<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — default output is unchanged (Phase 1 constraint 5)[2m > [22m[2mstill opens the hotspot by click and by keyboard
+[22m[39m<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mmounts the rounded box only when style="enhanced" is passed
+[22m[39m<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mpasses the rounded geometry the design specified
+[22m[39m<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mdrops bevel detail on the low tier, keeps it on medium/high
+[22m[39m<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mpicks the emissive preset from the hotspot state
+[22m[39m<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mderives the state from isActive when no state prop is given
+[22m[39m<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mpins emissive intensity under reduced-motion instead of pulsing
+[22m[39m<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mignores state/tier noise on the classic path (still default output)
+[22m[39m<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mKnowledgeHotspot — the upgrade is strictly opt-in (Phase 1 constraint 2)[2m > [22m[2mkeeps the label button clickable and keyboard-operable in both styles
+[22m[39m<sphereGeometry /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mRoundedHotspot[2m > [22m[2mis exactly the enhanced style, and nothing more
+[22m[39m<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+[90mstderr[2m | tests/components/lab/hotspot-phase1.test.tsx[2m > [22m[2mRoundedHotspot[2m > [22m[2mforwards the full hotspot contract (click opens) unchanged
+[22m[39m<meshStandardMaterial /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+ [32m✓[39m tests/components/lab/hotspot-phase1.test.tsx [2m([22m[2m25 tests[22m[2m)[22m[33m 543[2mms[22m[39m
+ [32m✓[39m tests/lib/content/pipeline.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 303[2mms[22m[39m
+ [32m✓[39m tests/components/ui/progress.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 360[2mms[22m[39m
+     [33m[2m✓[22m[39m renders with correct width [33m 316[2mms[22m[39m
+ [32m✓[39m tests/lib/perf/idle-measure.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 144[2mms[22m[39m
+ [32m✓[39m tests/components/home/home-features-spark-gate.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 134[2mms[22m[39m
+ [32m✓[39m tests/features/deep-page-links.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 50[2mms[22m[39m
+ [32m✓[39m tests/lib/physics-xi-resources.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 183[2mms[22m[39m
+ [32m✓[39m tests/features/topic-scaffold-pages.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 342[2mms[22m[39m
+     [33m[2m✓[22m[39m every topic of all six subjects has its page targets (legend + exercises) [33m 304[2mms[22m[39m
+ [32m✓[39m tests/features/ai-tier-access.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m tests/lib/content/visuals.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 246[2mms[22m[39m
+ [32m✓[39m tests/lib/content/callouts.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 232[2mms[22m[39m
+ [32m✓[39m tests/features/home-subject-rails-owner-gate.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m tests/lib/navigation.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m tests/lib/graphs-bank.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 74[2mms[22m[39m
+ [32m✓[39m tests/lib/ai/stream-chat.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 56[2mms[22m[39m
+ [32m✓[39m tests/lib/content/artifacts.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 165[2mms[22m[39m
+ [32m✓[39m tests/components/content/veer-artifact.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 234[2mms[22m[39m
+ [31m❯[39m tests/features/mind-studio-owner-gate.test.ts [2m([22m[2m11 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 85[2mms[22m[39m
+     [32m✓[39m resolves /mind-studio to the imagehub category at the free tier[32m 5[2mms[22m[39m
+     [32m✓[39m is neither public nor exempt — the coin gate must render the lock[32m 3[2mms[22m[39m
+     [32m✓[39m the provider refuses non-owner unlocks before any coin moves[32m 7[2mms[22m[39m
+     [32m✓[39m the server unlock route treats imagehub as owner-only and owner-free[32m 9[2mms[22m[39m
+     [32m✓[39m layout redirects signed-out visitors and no longer bounces non-owners[32m 5[2mms[22m[39m
+     [32m✓[39m renders the hub as an owner page with account-saved history[32m 5[2mms[22m[39m
+[31m     [31m×[31m keeps the Diagram Hub launcher off the home page (only the rails remain)[39m[32m 24[2mms[22m[39m
+     [32m✓[39m prices the category under the Diagram Hub label, with no vendor name or "AI"[32m 1[2mms[22m[39m
+     [32m✓[39m names the hub Diagram Hub in the home launcher and the studio, never the vendor[32m 11[2mms[22m[39m
+     [32m✓[39m keeps the vendor out of the copy the owner reads mid-draw and on failure[32m 7[2mms[22m[39m
+     [32m✓[39m folds a saved row's raw model id into the hub's own badge wording[32m 3[2mms[22m[39m
+ [32m✓[39m tests/lib/unit-mindmap-branches.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 102[2mms[22m[39m
+ [32m✓[39m tests/lib/validation/guards.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32m✓[39m tests/lib/high-yield-topic-facts.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 72[2mms[22m[39m
+ [32m✓[39m tests/lib/progress/catalog.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 67[2mms[22m[39m
+ [32m✓[39m tests/lib/periodic-table-content.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 53[2mms[22m[39m
+ [32m✓[39m tests/lib/perf/resource-cache.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 87[2mms[22m[39m
+ [32m✓[39m tests/lib/api/progress-api.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 58[2mms[22m[39m
+ [32m✓[39m tests/lib/route-links.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/components/lab/animated-arrow-helper.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 56[2mms[22m[39m
+ [32m✓[39m tests/lib/perf/lite-poll.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m tests/lib/errors/app-error.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m tests/lib/theorem-featured-pages.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 57[2mms[22m[39m
+ [32m✓[39m tests/lib/content-coverage.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m tests/lib/derivations-special-cases.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m tests/features/image-hub.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/lib/content/repair.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m tests/lib/syllabus.test.ts [2m([22m[2m36 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/components/lab/biology-cell-hotspots.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m tests/components/lab/three-scene.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 48[2mms[22m[39m
+ [32m✓[39m tests/features/periodic-table-cee-gate.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 36[2mms[22m[39m
+ [32m✓[39m tests/lib/perf/memo.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m tests/lib/auth/session-store.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+ [32m✓[39m tests/lib/content/schema.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 56[2mms[22m[39m
+ [32m✓[39m tests/lib/visual-topic-resolution.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/lib/rail-figures.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/lib/security-headers.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32m✓[39m tests/lib/pdf-src.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m tests/lib/mindmap-depth-coverage.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 67[2mms[22m[39m
+ [32m✓[39m tests/lib/hooks/use-voice-output.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/components/content/edu-visual.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/lib/nav-active.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/lib/deploy-version.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/lib/ai/chat-actions.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/components/perf/topic-notes-prefetcher.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 27[2mms[22m[39m
+ [32m✓[39m tests/lib/content/steps-blocks.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/lib/ai/prompts.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/lib/note-routes.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/lib/content/katex.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/lib/legacy-redirects.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/lib/api/config.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/lib/rail-motion.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/lib/auth/roles.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/lib/ai/step-cards-prompt.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/lib/content/note-status.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/features/mind-studio-owner-gate.test.ts[2m > [22mDiagram Hub route layout — gate now owns the lock[2m > [22mkeeps the Diagram Hub launcher off the home page (only the rails remain)
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2m❯[22m tests/features/mind-studio-owner-gate.test.ts:[2m87:67[22m[39m
+    [90m 85|[39m     [35mconst[39m gates [33m=[39m
+    [90m 86|[39m       home.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkG…
+    [90m 87|[39m     expect(gates.some((g) => g.includes("<HomeSubjectRails />"))).toBe…
+    [90m   |[39m                                                                   [31m^[39m
+    [90m 88|[39m   })[33m;[39m
+    [90m 89|[39m })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m96 passed[39m[22m[90m (97)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m858 passed[39m[22m[90m (859)[39m
+[2m   Start at [22m 13:47:13
+[2m   Duration [22m 590.28s[2m (transform 21.48s, setup 53.31s, import 72.49s, tests 95.08s, environment 311.63s)[22m
+
+VT_EXIT:1
