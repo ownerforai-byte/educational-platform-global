@@ -120,14 +120,6 @@ router.post("/", async (req: Request, res: Response) => {
   res.status(201).json(data);
 });
 
-router.get("/resource", async (_req: Request, res: Response) => {
-  res.json({
-    message: "Resource API test response",
-    status: "ok",
-    timestamp: new Date().toISOString(),
-  });
-});
-
 router.get("/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
 
@@ -359,6 +351,28 @@ router.delete("/:id", async (req: Request, res: Response) => {
     return;
   }
 
+  const { error: refsByResourceError } = await supabaseAdmin
+    .from("resource_references")
+    .delete()
+    .eq("resource_id", id);
+
+  if (refsByResourceError) {
+    console.error("resource_references cleanup (resource_id) failed:", refsByResourceError.message);
+    res.status(500).json({ error: "Delete failed" });
+    return;
+  }
+
+  const { error: refsByReferencedError } = await supabaseAdmin
+    .from("resource_references")
+    .delete()
+    .eq("referenced_id", id);
+
+  if (refsByReferencedError) {
+    console.error("resource_references cleanup (referenced_id) failed:", refsByReferencedError.message);
+    res.status(500).json({ error: "Delete failed" });
+    return;
+  }
+
   const { error } = await supabaseAdmin
     .from("resources")
     .delete()
@@ -377,17 +391,51 @@ router.post("/:id/link", async (req: Request, res: Response) => {
   const auth = await requireTeacher(req, res);
   if (!auth) return;
 
-  const { resource_id, referenced_id, reference_type, attribution } = req.body;
+  const { id } = req.params;
+  const body =
+    req.body && typeof req.body === "object" && !Array.isArray(req.body)
+      ? (req.body as Record<string, unknown>)
+      : {};
+  const resource_id = body.resource_id;
+  const referenced_id = body.referenced_id;
+  const reference_type = body.reference_type;
+  const attribution = body.attribution;
 
-  if (!resource_id || !referenced_id || !reference_type) {
+  if (resource_id !== undefined && resource_id !== id) {
+    res.status(400).json({ error: "resource_id must match the URL id" });
+    return;
+  }
+
+  if (!referenced_id || !reference_type) {
     res.status(400).json({ error: "Missing required fields" });
+    return;
+  }
+
+  const { data: resourceRow, error: resourceLookupError } = await supabaseAdmin
+    .from("resources")
+    .select("id, created_by")
+    .eq("id", id)
+    .maybeSingle();
+
+  if (resourceLookupError) {
+    serverError(res, resourceLookupError);
+    return;
+  }
+
+  if (!resourceRow) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  if (!canManageResource(auth.user, auth.profile, resourceRow)) {
+    res.status(403).json({ error: "Forbidden" });
     return;
   }
 
   const { data, error } = await supabaseAdmin
     .from("resource_references")
     .insert({
-      resource_id,
+      resource_id: id,
       referenced_id,
       reference_type,
       attribution: attribution ?? null,
