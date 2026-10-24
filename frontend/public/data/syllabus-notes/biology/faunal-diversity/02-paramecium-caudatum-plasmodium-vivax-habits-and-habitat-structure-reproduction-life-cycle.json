@@ -6,53 +6,186 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Paramecium caudatum, Plasmodium vivax: habits and habitat…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "visualType": "paramecium-plasmodium",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Paramecium with two nuclei and two contractile vacuoles, beside the two hosts of Plasmodium vivax."
+    }
+  },
+  "notes": [
+    "Paramecium caudatum lives in fresh water that contains decaying plant matter and plenty of bacteria. It is a slipper-shaped ciliate a few tenths of a millimetre long. A firm pellicle holds the shape, and cilia in rows both swim and sweep food. The oral groove leads to a cell mouth and a gullet. Bacteria are enclosed in food vacuoles that circulate through the cytoplasm. This nutrition is holozoic.",
+    "There are two contractile vacuoles, one toward each end, with radiating canals. They expel the water that keeps entering the cell by osmosis, so they are osmoregulators, not food vacuoles. The nuclear set is a large macronucleus, which runs ordinary cell activity, and a small micronucleus, which handles heredity. Trichocysts under the pellicle discharge threads when the animal is disturbed.",
+    "Numbers increase by transverse binary fission: the micronucleus divides by mitosis, the macronucleus divides, and a furrow cuts the cell across the middle into two daughters. Conjugation is the sexual process and it does not, by itself, raise the count of animals. Two cells join, their micronuclei undergo meiosis, and they exchange a haploid migratory nucleus. Each cell's fusion nucleus then divides to rebuild a new micronucleus and a new macronucleus. The partners separate. Fission afterwards multiplies the rejuvenated lines.",
+    "Plasmodium vivax causes benign tertian malaria. The fever returns about every 48 hours. The female Anopheles mosquito is the vector and also the definitive host, because sexual reproduction happens in the mosquito. The human is the intermediate host, where asexual multiplication occurs. That host split is the fact most often reversed.",
+    "A bite injects sporozoites with the saliva. They enter liver cells and multiply by schizogony. In P. vivax some liver stages become hypnozoites, which can sit quiet and cause a relapse months later. Merozoites then invade red blood cells. Inside a red cell the parasite is first a signet-ring trophozoite, then an amoeboid form, then a schizont that bursts to release more merozoites plus the pigment haemozoin. The burst, about every 48 hours, is the chill and the fever. Some merozoites become male and female gametocytes instead of another asexual generation.",
+    "A female mosquito taking a blood meal picks up those gametocytes. In the gut they become gametes, fertilisation produces a zygote, and the zygote becomes a moving ookinete that settles on the stomach wall as an oocyst. The oocyst makes sporozoites, which travel to the salivary glands and wait for the next bite. Control follows the cycle: mosquito nets and fewer breeding sites interrupt the vector, and drugs attack the blood stages or, for vivax, the liver stages that cause relapse."
   ],
-  "universalFacts": [
-    "answer pattern for \"Paramecium caudatum, Plasmodium vivax: habits and habitat…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Paramecium caudatum, Plasmodium vivax: habits and habitat…\" with one example.",
-    "compare \"Paramecium caudatum\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Paramecium caudatum, Plasmodium vivax: habits and habitat…\" and verify the answer is plausible."
+  "confusion": [
+    "Conjugation in Paramecium does not double the population. Transverse binary fission does.",
+    "Contractile vacuoles are for water balance. Food vacuoles are for digestion.",
+    "The definitive host of Plasmodium is the mosquito, not the person, because sex happens in the mosquito.",
+    "P. vivax can relapse from hypnozoites in the liver. Treating only the blood stages misses that."
   ],
   "keyPoints": [
-    "• Paramecium caudatum",
-    "• Plasmodium vivax: habits",
-    "• Habitat",
-    "• Structure",
-    "• Reproduction",
-    "• Life-cycle"
+    "Paramecium: fresh water, cilia, oral groove, two contractile vacuoles, macro- and micronucleus.",
+    "Fission is transverse and increases numbers. Conjugation exchanges micronuclei and does not.",
+    "P. vivax: benign tertian malaria, fever about every 48 hours.",
+    "Human = intermediate host. Female Anopheles = definitive host and vector.",
+    "Cycle: sporozoite → liver (hypnozoite possible) → red-cell schizogony → gametocytes → ookinete → oocyst → salivary sporozoites."
   ],
-  "summary": "Paramecium caudatum, Plasmodium vivax: habits and habitat… (Faunal Diversity, Biology, class-11-notes) covers Paramecium caudatum, Plasmodium vivax: habits, habitat. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Haemozoin released when red cells rupture is tied to the fever.",
+    "The signet ring is the young trophozoite inside the red cell.",
+    "Osmoregulation in Paramecium is the job of the contractile vacuoles."
+  ],
+  "examples": [
+    "A Paramecium in a hay infusion feeds on bacteria swept into the oral groove.",
+    "A vivax fever that returns on day 1, day 3 and day 5 is the 48-hour blood cycle.",
+    "A relapse months after the blood was cleared fits surviving hypnozoites."
+  ],
+  "universalFacts": [
+    "Only the female mosquito takes a blood meal, so only she transmits Plasmodium.",
+    "Binary fission of Paramecium cuts the cell across its width, which is why it is called transverse."
+  ],
+  "formulas": [
+    "Paramecium: transverse binary fission increases numbers. Conjugation exchanges micronuclei and does not.",
+    "Vivax: sporozoite → liver → merozoite in red cells → 48-hour rupture → gametocytes → mosquito zygote → oocyst → sporozoites."
+  ],
+  "practice": [
+    "Label the two vacuoles of Paramecium by function.",
+    "Put the malaria stages in order from a bite back to the next bite.",
+    "Say which host is definitive and why."
+  ],
+  "practiceQuestions": [
+    "Why is conjugation not counted as the method that multiplies Paramecium?",
+    "What is a hypnozoite, and which species in this note has it?",
+    "Where is haemozoin released, and what does the patient feel?"
+  ],
+  "examNotes": [
+    "Draw or list both organisms. A full answer that describes only Paramecium drops half the question.",
+    "Write 'female Anopheles' and 'definitive host' in the same sentence."
+  ],
+  "examShortTricks": [
+    "Two nuclei and two contractile vacuoles = Paramecium. Two hosts = Plasmodium.",
+    "Sex in the mosquito. Multiplication in the human liver and blood."
+  ],
+  "specialNotes": [
+    "Benign tertian is the old name for vivax malaria. Malignant disease is a different species. Do not swap them.",
+    "Say 'about every 48 hours', which is the tertian rhythm."
+  ],
+  "importantNotes": [
+    "The macronucleus is not the hereditary nucleus that is exchanged. The micronucleus is.",
+    "Oocyst on the mosquito stomach wall is the stage that produces the next sporozoites."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Paramecium caudatum, Plasmodium vivax: habits and habitat…\"?",
+      "question": "Contractile vacuoles of Paramecium",
       "options": [
-        "Paramecium caudatum",
-        "Plasmodium vivax: habits",
-        "Unrelated topic",
-        "None of the above"
+        "Digest bacteria",
+        "Expel excess water",
+        "Exchange micronuclei",
+        "Inject sporozoites"
       ],
-      "answer": "A",
-      "explanation": "Paramecium caudatum is listed among the official sub-ideas of Paramecium caudatum, Plasmodium vivax: habits and habitat…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Paramecium caudatum, Plasmodium vivax: habits and habitat…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The process that increases the number of Paramecium is",
       "options": [
-        "True",
-        "False"
+        "Conjugation",
+        "Transverse binary fission",
+        "Formation of an oocyst",
+        "A mosquito bite"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "The definitive host of Plasmodium vivax is",
+      "options": [
+        "The human",
+        "The female Anopheles",
+        "A Paramecium",
+        "The liver cell only, with no mosquito"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hypnozoites of P. vivax sit in the",
+      "options": [
+        "Salivary gland of the mosquito",
+        "Human liver and can cause relapse",
+        "Macronucleus",
+        "Contractile vacuole"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Paramecium feeding and osmoregulation",
+    "Macro- and micronucleus",
+    "Fission versus conjugation",
+    "Two-host malaria cycle",
+    "Hypnozoites and the 48-hour fever"
+  ],
+  "importantTasks": [
+    "Order the vivax stages from sporozoite to the next sporozoite.",
+    "State one structural feature that separates the two nuclei and the two kinds of vacuole."
+  ],
+  "exercises": [
+    {
+      "question": "Start from a mosquito bite and end at sporozoites in the next mosquito. List the stages.",
+      "steps": [
+        "Sporozoites enter the blood and infect liver cells.",
+        "Liver schizogony releases merozoites. Some vivax parasites remain as hypnozoites.",
+        "Merozoites enter red cells, become trophozoites and schizonts, and rupture the cells about every 48 hours.",
+        "Some of those parasites become gametocytes, which a female mosquito takes up.",
+        "In the mosquito gut a zygote forms, then an ookinete, then an oocyst, and sporozoites reach the salivary glands."
+      ],
+      "answer": "Sporozoite → liver → red-cell cycle → gametocytes → zygote and oocyst in the mosquito → salivary sporozoites."
+    }
+  ],
+  "summary": "Paramecium caudatum is a freshwater ciliate with an oral groove, food vacuoles, two contractile vacuoles and two nuclei. Transverse binary fission multiplies it. Conjugation only exchanges micronuclei. Plasmodium vivax causes benign tertian malaria on a roughly 48-hour cycle. People are the intermediate host, from liver stages, including hypnozoites, to red-cell rupture and gametocytes. The female Anopheles is the definitive host, where the zygote, oocyst and new sporozoites are formed.",
+  "mcqs": [
+    {
+      "question": "Contractile vacuoles of Paramecium",
+      "options": [
+        "Digest bacteria",
+        "Expel excess water",
+        "Exchange micronuclei",
+        "Inject sporozoites"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The process that increases the number of Paramecium is",
+      "options": [
+        "Conjugation",
+        "Transverse binary fission",
+        "Formation of an oocyst",
+        "A mosquito bite"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The definitive host of Plasmodium vivax is",
+      "options": [
+        "The human",
+        "The female Anopheles",
+        "A Paramecium",
+        "The liver cell only, with no mosquito"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hypnozoites of P. vivax sit in the",
+      "options": [
+        "Salivary gland of the mosquito",
+        "Human liver and can cause relapse",
+        "Macronucleus",
+        "Contractile vacuole"
+      ],
+      "answer": "B"
     }
   ]
 }

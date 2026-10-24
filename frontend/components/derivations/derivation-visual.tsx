@@ -1547,6 +1547,65 @@ export function DerivationVisual({
           </svg>
         );
 
+      case "greenhouse-ozone":
+        return (
+          <svg viewBox="0 0 700 200" className="w-full h-auto select-none">
+            <rect x="20" y="18" width="320" height="164" rx="8" fill="#1e3a5f" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
+            <text x="180" y="46" fill="#e0f2fe" fontSize="14" fontWeight="bold" textAnchor="middle">Greenhouse effect</text>
+            <text x="180" y="74" fill="#bae6fd" fontSize="12" textAnchor="middle">Sunlight in, infrared held back</text>
+            <text x="180" y="98" fill="#7dd3fc" fontSize="12" textAnchor="middle">CO2, methane, nitrous oxide</text>
+            <text x="180" y="122" fill="#7dd3fc" fontSize="12" textAnchor="middle">Warms the lower atmosphere</text>
+            <text x="180" y="154" fill="#cbd5e1" fontSize="11" textAnchor="middle">Natural first, then enhanced</text>
+            <rect x="360" y="18" width="320" height="164" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="520" y="46" fill="#dcfce7" fontSize="14" fontWeight="bold" textAnchor="middle">Stratospheric ozone</text>
+            <text x="520" y="74" fill="#86efac" fontSize="12" textAnchor="middle">About 15–35 km, ~300 DU</text>
+            <text x="520" y="98" fill="#86efac" fontSize="12" textAnchor="middle">Blocks ultraviolet-B</text>
+            <text x="520" y="122" fill="#86efac" fontSize="12" textAnchor="middle">Chlorine from CFCs destroys it</text>
+            <text x="520" y="154" fill="#cbd5e1" fontSize="11" textAnchor="middle">A different problem from warming</text>
+          </svg>
+        );
+
+      case "protozoa-classes":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <rect x="16" y="20" width="160" height="140" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="96" y="52" fill="#e0f2fe" fontSize="13" fontWeight="bold" textAnchor="middle">Rhizopoda</text>
+            <text x="96" y="80" fill="#7dd3fc" fontSize="12" textAnchor="middle">Pseudopodia</text>
+            <text x="96" y="108" fill="#cbd5e1" fontSize="12" textAnchor="middle">Amoeba</text>
+            <rect x="186" y="20" width="160" height="140" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="266" y="52" fill="#dcfce7" fontSize="13" fontWeight="bold" textAnchor="middle">Flagellata</text>
+            <text x="266" y="80" fill="#86efac" fontSize="12" textAnchor="middle">Flagella</text>
+            <text x="266" y="108" fill="#cbd5e1" fontSize="12" textAnchor="middle">Euglena</text>
+            <rect x="356" y="20" width="160" height="140" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="436" y="52" fill="#fef3c7" fontSize="13" fontWeight="bold" textAnchor="middle">Ciliata</text>
+            <text x="436" y="80" fill="#fcd34d" fontSize="12" textAnchor="middle">Cilia</text>
+            <text x="436" y="108" fill="#cbd5e1" fontSize="12" textAnchor="middle">Paramecium</text>
+            <rect x="526" y="20" width="158" height="140" rx="8" fill="#7f1d1d" fillOpacity="0.5" stroke="#f87171" strokeWidth="2" />
+            <text x="605" y="52" fill="#fee2e2" fontSize="13" fontWeight="bold" textAnchor="middle">Sporozoa</text>
+            <text x="605" y="80" fill="#fca5a5" fontSize="12" textAnchor="middle">No locomotor organ</text>
+            <text x="605" y="108" fill="#cbd5e1" fontSize="12" textAnchor="middle">Plasmodium</text>
+          </svg>
+        );
+
+      case "paramecium-plasmodium":
+        return (
+          <svg viewBox="0 0 700 220" className="w-full h-auto select-none">
+            <ellipse cx="150" cy="108" rx="112" ry="54" fill="#0e7490" fillOpacity="0.35" stroke="#67e8f9" strokeWidth="2" />
+            <ellipse cx="170" cy="108" rx="30" ry="16" fill="#155e75" fillOpacity="0.85" stroke="#cffafe" strokeWidth="1.5" />
+            <circle cx="152" cy="116" r="5" fill="#ecfeff" />
+            <circle cx="68" cy="86" r="8" fill="#0891b2" fillOpacity="0.55" stroke="#a5f3fc" strokeWidth="1.5" />
+            <circle cx="232" cy="130" r="8" fill="#0891b2" fillOpacity="0.55" stroke="#a5f3fc" strokeWidth="1.5" />
+            <text x="150" y="32" fill="#a5f3fc" fontSize="14" fontWeight="bold" textAnchor="middle">Paramecium</text>
+            <text x="150" y="186" fill="#cbd5e1" fontSize="12" textAnchor="middle">Two nuclei, two contractile vacuoles</text>
+            <rect x="340" y="24" width="336" height="78" rx="8" fill="#7f1d1d" fillOpacity="0.4" stroke="#fca5a5" strokeWidth="2" />
+            <text x="508" y="50" fill="#fecaca" fontSize="13" fontWeight="bold" textAnchor="middle">Human — intermediate host</text>
+            <text x="508" y="76" fill="#fee2e2" fontSize="12" textAnchor="middle">Liver, then red cells, then gametocytes</text>
+            <rect x="340" y="116" width="336" height="78" rx="8" fill="#14532d" fillOpacity="0.45" stroke="#86efac" strokeWidth="2" />
+            <text x="508" y="146" fill="#bbf7d0" fontSize="13" fontWeight="bold" textAnchor="middle">Female Anopheles — definitive host</text>
+            <text x="508" y="172" fill="#dcfce7" fontSize="12" textAnchor="middle">Zygote, oocyst, sporozoites in saliva</text>
+          </svg>
+        );
+
       case "food-chain-energy":
         return (
           <svg viewBox="0 0 700 360" className="w-full h-auto select-none">

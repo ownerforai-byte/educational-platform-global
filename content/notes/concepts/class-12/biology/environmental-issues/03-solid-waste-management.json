@@ -7,48 +7,176 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Solid waste management — Environmental Issues, Biology (class-12-notes).",
-    "**Tested.** define it · list: solid waste management · one worked example · one misconception each."
+    "Solid waste is the solid material a household, shop, farm, hospital or factory throws away. Managing it means collecting it, keeping the dangerous fractions apart, and only then burying, burning or recycling what is left. A roadside heap is not management.",
+    "The useful split is by what the waste is. Wet organic waste, such as food scraps, can rot. Dry recyclable waste includes paper, glass, metal and many plastics. Biomedical waste from clinics carries infection. Electronic waste carries lead, mercury and cadmium. Industrial hazardous waste may be corrosive or toxic. Mixing these in one bag makes every later step worse.",
+    "An open dump breeds flies and rats, blows plastic into drains, and leaks a dirty liquid called leachate into soil and groundwater. Buried organic waste without air control also makes methane, which is flammable and a strong greenhouse gas. The smell is the least of the damage.",
+    "A sanitary landfill is a different structure. The base is lined so leachate can be collected rather than soaked away. Waste is compacted and covered. Gas is vented or burned. It still uses land, and it still needs watching, but it is not a hole in the ground.",
+    "The order that cuts the problem is reduce, then reuse, then recycle, and only then recover energy or dispose. Segregation at the house is what makes composting, recycling and safe medical disposal possible. A mixed truckload cannot be unsorted cheaply at the dump.",
+    "Hospitals must not send dressings, needles and cultures out with kitchen waste. Those items are incinerated at high temperature or sterilised. Electronic goods should go to a recovery workshop that captures the metals. Burning phones and cables in the open releases the metals and the plastic fumes together."
   ],
   "confusion": [
-    "❌ treat \"Solid waste management\" as one blob → ✅ split into: solid waste management.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: solid waste management (within Environmental Issues).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: solid waste management.",
-    "one worked example for \"Solid waste management\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Solid waste management\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Solid waste management\" with one example.",
-    "compare \"Solid waste management\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Solid waste management\" and verify the answer is plausible."
+    "A sanitary landfill is not any place people dump waste. It is lined, covered and drained.",
+    "All plastic is not compost. Compost is for wet organic waste. Plastic is a recycling or disposal problem.",
+    "Incineration is not a backyard fire. A proper incinerator holds a high temperature and treats the smoke.",
+    "Methane from a dump is a real product of rotting waste, not only a carbon-dioxide story."
   ],
   "keyPoints": [
-    "• Solid waste management"
+    "Segregate at source: wet organic, recyclable, biomedical, electronic, hazardous.",
+    "Open dumping produces leachate, methane, flies and blocked drains.",
+    "A sanitary landfill is lined and covered, and its leachate is collected.",
+    "Order of preference: reduce, reuse, recycle, then recover or dispose.",
+    "E-waste and hospital waste do not belong in the household pile."
   ],
-  "summary": "Solid waste management (Environmental Issues, Biology, class-12-notes) covers Solid waste management. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "importantStatements": [
+    "Mixed waste defeats every treatment that follows.",
+    "Leachate is the liquid that carries pollutants out of a dump into water.",
+    "Methane from anaerobic rotting is both a fire risk and a greenhouse gas."
+  ],
+  "examples": [
+    "Food scraps kept separate can be composted. The same scraps in a plastic bag at a dump become leachate and methane.",
+    "A clinic that bags needles with ordinary rubbish puts waste workers at risk of infection.",
+    "A lined city landfill with gas collection is a sanitary landfill. A riverbank heap is not."
+  ],
+  "universalFacts": [
+    "Organic waste under air-free conditions generates methane.",
+    "Lead, mercury and cadmium are typical hazardous metals in electronic waste."
+  ],
+  "formulas": [
+    "Preference: reduce → reuse → recycle → energy recovery → disposal.",
+    "Open dump: organic waste + no control → leachate + methane + vectors."
+  ],
+  "practice": [
+    "List five categories of solid waste and one safe route for each.",
+    "Contrast an open dump with a sanitary landfill in three points.",
+    "Explain why segregation has to happen in the home."
+  ],
+  "practiceQuestions": [
+    "What is leachate, and where does it go from an unlined dump?",
+    "Why is a phone not suitable for a compost pit?",
+    "Why does a landfill produce methane?"
+  ],
+  "examNotes": [
+    "Define solid waste, then give categories, then harms, then the sanitary landfill and the 3Rs. That order matches the usual long question.",
+    "Say 'sanitary landfill' only when you have mentioned the liner and the cover."
+  ],
+  "examShortTricks": [
+    "3Rs first. Dump last.",
+    "Hospital waste and e-waste are separate streams."
+  ],
+  "specialNotes": [
+    "Do not claim every city already runs a perfect landfill. Describe the standard the method requires.",
+    "Biomedical waste is infectious. Hazardous industrial waste is chemical. They are not the same bin."
+  ],
+  "importantNotes": [
+    "Covering waste daily is part of what makes a landfill sanitary. It limits flies and wind-blown litter.",
+    "Recycling works only on waste that was never soaked in food."
+  ],
+  "mcs": [
+    {
+      "question": "Leachate is",
+      "options": [
+        "Methane gas",
+        "Polluted liquid draining from waste",
+        "A recycled plastic",
+        "A compost microbe"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A sanitary landfill differs from an open dump because it is",
+      "options": [
+        "Always on a riverbank",
+        "Lined, covered, and its leachate is collected",
+        "Used only for needles",
+        "Free of all methane by definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The first preference in waste handling is to",
+      "options": [
+        "Burn mixed waste in the street",
+        "Reduce how much is produced",
+        "Dump it in a forest",
+        "Mix hospital waste with food"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Electronic waste needs special handling because it",
+      "options": [
+        "Is pure wet organic matter",
+        "Contains metals such as lead, mercury and cadmium",
+        "Turns into ozone",
+        "Is safe to compost"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Waste categories",
+    "Leachate and methane",
+    "Sanitary landfill",
+    "The reduce-reuse-recycle order",
+    "Biomedical and electronic streams"
+  ],
+  "importantTasks": [
+    "Draw the preference order and give one example under each arrow.",
+    "Write three differences between an open dump and a sanitary landfill."
+  ],
+  "exercises": [
+    {
+      "question": "A neighbourhood burns mixed waste, including wires and food, every evening. What goes wrong, in steps?",
+      "steps": [
+        "Food waste should have been composted, not burned.",
+        "Wires and circuit boards release heavy metals and plastic fumes in an open fire.",
+        "The ash and the smoke still leave the site. Burning did not make the hazard disappear.",
+        "Segregation would have sent food to compost and electronics to a recovery workshop."
+      ],
+      "answer": "Open burning of mixed waste spreads metals and fumes and wastes the organic fraction that could have been composted."
+    }
+  ],
+  "summary": "Solid waste management starts by keeping organic, recyclable, biomedical and electronic wastes apart. Open dumps leak leachate, make methane and feed disease vectors. A sanitary landfill is lined and covered. The better order is to reduce, reuse and recycle before anything is burned or buried, and hospital waste and e-waste stay on their own routes.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Solid waste management\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Leachate is",
       "options": [
-        "True",
-        "False"
+        "Methane gas",
+        "Polluted liquid draining from waste",
+        "A recycled plastic",
+        "A compost microbe"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "A sanitary landfill differs from an open dump because it is",
+      "options": [
+        "Always on a riverbank",
+        "Lined, covered, and its leachate is collected",
+        "Used only for needles",
+        "Free of all methane by definition"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The first preference in waste handling is to",
+      "options": [
+        "Burn mixed waste in the street",
+        "Reduce how much is produced",
+        "Dump it in a forest",
+        "Mix hospital waste with food"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Electronic waste needs special handling because it",
+      "options": [
+        "Is pure wet organic matter",
+        "Contains metals such as lead, mercury and cadmium",
+        "Turns into ozone",
+        "Is safe to compost"
+      ],
+      "answer": "B"
     }
   ]
 }

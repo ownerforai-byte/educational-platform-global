@@ -6,53 +6,186 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Ecological imbalances: Greenhouse effects and climate cha…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "visualType": "greenhouse-ozone",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Two separate problems: greenhouse gases warm the lower air, and chlorine thins stratospheric ozone."
+    }
+  },
+  "notes": [
+    "An ecological imbalance is a human-driven push that a natural system cannot absorb. This topic is four different pushes: an enhanced greenhouse effect, loss of stratospheric ozone, acid rain, and biological invasion. They share a cause in industrial society. They do not share a chemistry.",
+    "The greenhouse effect is natural and necessary. Gases such as carbon dioxide, methane, nitrous oxide, water vapour and CFCs let sunlight in and absorb outgoing infrared, so the Earth is warmer than a bare rock. Without that blanket the mean temperature would be about −18 °C instead of about +15 °C, a difference of about 33 °C. The harm is the extra blanket. Burning fossil fuels and cutting forests have lifted carbon dioxide from about 280 ppm before industry to a little above 420 ppm.",
+    "The extra heat melts mountain ice, raises sea level, shifts rainfall and pushes crops and disease vectors into new places. In Nepal the practical face of it is shrinking glaciers and a higher risk of glacial-lake floods. Methane from cattle, rice fields and landfills, and nitrous oxide from fertilised soil, add to the same warming. CFCs are greenhouse gases too, but their famous damage is to ozone, which is a second problem.",
+    "The ozone that protects life sits in the stratosphere, about 15 to 35 km up. A normal column is about 300 Dobson units. Below about 220 DU the column is called an ozone hole, seen over Antarctica in spring. Chlorine freed from CFCs by ultraviolet light destroys ozone and is regenerated, so one chlorine atom destroys many ozone molecules. The Montreal Protocol of 1987 began the phase-out. Ground-level ozone is not this shield. It is a pollutant in smog.",
+    "Acid rain is rain, snow or mist whose pH is below about 5.6. Sulphur dioxide and nitrogen oxides from coal, oil and vehicles become sulphuric and nitric acids in cloud water. The acid burns leaf surfaces, washes calcium and magnesium out of soil, kills fish as lakes acidify, and eats marble and metal. It is not global warming, and it is not the ozone hole.",
+    "Biological invasion is the spread of a species people moved into a place where it did not evolve, until it displaces local species. Water hyacinth (Eichhornia crassipes) blankets ponds. Lantana camara and Parthenium hysterophorus take over open ground. In Nepal, mile-a-minute (Mikania micrantha) smothers vegetation, including forest edges in the Terai. An invader is not merely 'a new animal'. It is a species whose numbers the local community cannot hold down."
   ],
-  "universalFacts": [
-    "answer pattern for \"Ecological imbalances: Greenhouse effects and climate cha…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Ecological imbalances: Greenhouse effects and climate cha…\" with one example.",
-    "compare \"Ecological imbalances\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Ecological imbalances: Greenhouse effects and climate cha…\" and verify the answer is plausible."
+  "confusion": [
+    "The greenhouse effect is not man-made from the start. The enhancement of it is.",
+    "Ozone depletion and global warming are not one problem. Chlorine and bromine compounds thin ozone. Carbon dioxide and methane warm the climate.",
+    "Stratospheric ozone protects us. Ozone near the ground harms lungs and crops.",
+    "Acid rain is named by pH, not by the fact that rain is wet. Ordinary rain is already slightly acid. Acid rain is below about 5.6."
   ],
   "keyPoints": [
-    "• Ecological imbalances",
-    "• Greenhouse effects",
-    "• Climate change",
-    "• Depletion of ozone layer",
-    "• Acid rain",
-    "• Biological invasion"
+    "Natural greenhouse: about −18 °C would become about +15 °C, a rise of about 33 °C.",
+    "CO2: about 280 ppm before industry, a little above 420 ppm now.",
+    "Ozone shield: 15–35 km, about 300 DU. A hole is below about 220 DU.",
+    "Montreal Protocol: 1987. Acid rain: pH below about 5.6.",
+    "Invaders to name: Eichhornia, Lantana, Parthenium, Mikania micrantha."
   ],
-  "summary": "Ecological imbalances: Greenhouse effects and climate cha… (Ecology, Biology, class-11-notes) covers Ecological imbalances, Greenhouse effects, climate change. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Warming, ozone loss, acid rain and invasion need four different answers.",
+    "A chlorine atom is catalytic: it leaves the reaction ready to destroy another ozone molecule.",
+    "An invasive species succeeds because local predators and competitors do not control it."
+  ],
+  "examples": [
+    "Glacial lakes in the Himalaya grow as ice retreats, which is the local form of an enhanced greenhouse effect.",
+    "A spring ozone hole over Antarctica follows cold polar clouds and the return of sunlight.",
+    "Water hyacinth on a pond blocks light, and the plants underneath die."
+  ],
+  "universalFacts": [
+    "One Dobson unit is a layer of ozone 0.01 mm thick at standard temperature and pressure.",
+    "Halons, carbon tetrachloride, methyl bromide and nitrogen oxides also destroy ozone. CFCs are the main teaching example, not the only chemicals."
+  ],
+  "formulas": [
+    "Greenhouse warming ≈ +15 °C − (−18 °C) = about 33 °C.",
+    "Acid rain: SO2 and NOx → sulphuric and nitric acids, pH below about 5.6.",
+    "Ozone hole: column below about 220 DU, against a normal column of about 300 DU."
+  ],
+  "practice": [
+    "Separate the four imbalances in one sentence each.",
+    "Calculate the temperature difference the natural greenhouse effect provides.",
+    "Name one invasive plant of Nepal and the harm it does."
+  ],
+  "practiceQuestions": [
+    "Why is ground-level ozone not a substitute for the ozone layer?",
+    "Which gases enhance the greenhouse effect, and which chemicals are the main ozone destroyers?",
+    "Why can Mikania or water hyacinth spread faster than a native plant?"
+  ],
+  "examNotes": [
+    "Open by saying the four problems are distinct. Then give one cause and one effect for each.",
+    "Quote −18 °C, +15 °C, 300 DU, 220 DU, pH 5.6 and 1987 if the question is on facts."
+  ],
+  "examShortTricks": [
+    "Warming = CO2 and methane. Ozone hole = chlorine. Acid rain = SO2 and NOx.",
+    "Good ozone is high up. Bad ozone is down here."
+  ],
+  "specialNotes": [
+    "Do not blame the ozone hole for glacier melt. That is the greenhouse side.",
+    "Spell Mikania micrantha and Eichhornia crassipes once. After that the common name is enough."
+  ],
+  "importantNotes": [
+    "Water vapour is a greenhouse gas, but the gases people have increased are CO2, methane, nitrous oxide and CFCs.",
+    "Ordinary rain is near pH 5.6 because of dissolved carbon dioxide. Acid rain is more acid than that."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Ecological imbalances: Greenhouse effects and climate cha…\"?",
+      "question": "Without any greenhouse effect the Earth's mean temperature would be about",
       "options": [
-        "Ecological imbalances",
-        "Greenhouse effects",
-        "Unrelated topic",
-        "None of the above"
+        "+15 °C",
+        "−18 °C",
+        "100 °C",
+        "300 °C"
       ],
-      "answer": "A",
-      "explanation": "Ecological imbalances is listed among the official sub-ideas of Ecological imbalances: Greenhouse effects and climate cha…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Ecological imbalances: Greenhouse effects and climate cha…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A stratospheric ozone hole is a column",
       "options": [
-        "True",
-        "False"
+        "Above 300 DU",
+        "Below about 220 DU",
+        "At ground level",
+        "Made of methane"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Acid rain has a pH",
+      "options": [
+        "Above 8",
+        "Below about 5.6",
+        "Exactly 7",
+        "That does not change"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Mile-a-minute in the Nepal Terai is",
+      "options": [
+        "A CFC",
+        "The invasive plant Mikania micrantha",
+        "A Dobson unit",
+        "Stratospheric ozone"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Enhanced greenhouse effect",
+    "Stratospheric versus ground-level ozone",
+    "Acid rain",
+    "Biological invasion",
+    "Why the four problems are separate"
+  ],
+  "importantTasks": [
+    "Write four labelled paragraphs, one imbalance each.",
+    "Compute the 33 °C greenhouse difference from −18 °C and +15 °C."
+  ],
+  "exercises": [
+    {
+      "question": "By how many degrees does the natural greenhouse effect warm the Earth, using −18 °C and +15 °C?",
+      "steps": [
+        "A planet with no greenhouse gases would average about −18 °C.",
+        "The observed mean is about +15 °C.",
+        "The difference is 15 − (−18) = 33.",
+        "So the natural blanket is worth about 33 °C."
+      ],
+      "answer": "About 33 °C."
+    }
+  ],
+  "summary": "Greenhouse warming, ozone loss, acid rain and biological invasion are four different imbalances. The natural greenhouse effect is worth about 33 °C, and extra CO2, methane and nitrous oxide are enhancing it. Stratospheric ozone, about 300 DU at 15–35 km, is thinned by chlorine from CFCs, which the Montreal Protocol of 1987 set out to stop. Acid rain is precipitation below about pH 5.6. Invaders such as water hyacinth, Lantana, Parthenium and Mikania micrantha displace local communities.",
+  "mcqs": [
+    {
+      "question": "Without any greenhouse effect the Earth's mean temperature would be about",
+      "options": [
+        "+15 °C",
+        "−18 °C",
+        "100 °C",
+        "300 °C"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A stratospheric ozone hole is a column",
+      "options": [
+        "Above 300 DU",
+        "Below about 220 DU",
+        "At ground level",
+        "Made of methane"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Acid rain has a pH",
+      "options": [
+        "Above 8",
+        "Below about 5.6",
+        "Exactly 7",
+        "That does not change"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Mile-a-minute in the Nepal Terai is",
+      "options": [
+        "A CFC",
+        "The invasive plant Mikania micrantha",
+        "A Dobson unit",
+        "Stratospheric ozone"
+      ],
+      "answer": "B"
     }
   ]
 }

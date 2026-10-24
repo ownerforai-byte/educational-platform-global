@@ -7,63 +7,177 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Differences between new world monkeys and old-world monke… — Evolutionary Biology, Biology (class-11-notes).",
-    "**Tested.** define it · list: differences between new world monkeys, old-world monkeys, apes · one worked example · one misconception each.",
-    "**Old-world monkeys.** one-line definition + one-line exam use.",
-    "**Apes.** one-line definition + one-line exam use."
+    "New World monkeys, Old World monkeys, apes and humans are all primates. The comparison the course wants is nostrils, tail, teeth, seat pads and posture. Apes and humans are closer to Old World monkeys than to New World monkeys. They are not a third nose type.",
+    "New World monkeys live in the tropical Americas. The nose is broad and the nostrils open to the side, well apart. That is the platyrrhine condition. Many, such as spider monkeys and howler monkeys, have a prehensile tail that can grip a branch. The dental formula is typically 2.1.3.3, with three premolars on each side of each jaw. They do not have cheek pouches or hard sitting pads. Marmosets and capuchins belong here. Marmosets are the exception that barely uses the tail as a hand, so 'often prehensile' is more accurate than 'always'.",
+    "Old World monkeys live in Africa and Asia. The nose is narrow and the nostrils open downward and close together, the catarrhine condition. The tail, when it is present, is not prehensile. The dental formula is 2.1.2.3, with two premolars. Many have hard ischial callosities on the rump. Macaques and baboons also have cheek pouches. Langurs are Old World monkeys without those pouches. Rhesus macaques and Hanuman langurs are the examples to use in Nepal.",
+    "Apes — gibbons, orangutans, gorillas and chimpanzees — share the downward nostrils and the 2.1.2.3 teeth with Old World monkeys and with humans. They have no external tail. The chest is broad, the brain is larger than a monkey's of similar body size, and the arms are longer than the legs, which suits swinging under branches. They do not have cheek pouches, and they lack the sitting pads of the Old World monkeys.",
+    "Humans keep the catarrhine nose and the 2.1.2.3 dental count, and they have no external tail. The differences are posture and the skull. People are bipedal. The foramen magnum sits underneath the skull, the spine has a lumbar curve, the pelvis is short and broad, the big toe is not opposable, and the foot is arched. The canine teeth are small, the tooth row is a parabola rather than a long rectangle, and there is a chin. Body hair is reduced. The thumb is opposable in a precision grip, which apes also approach, but human hands are freed because the feet do the walking.",
+    "A clean way to sort a specimen is the tail first, then the nose, then the premolars. A prehensile tail and sideways nostrils means New World. A non-prehensile tail, downward nostrils and often sitting pads means Old World monkey. No tail, long arms and no sitting pads means ape. No tail, and a skeleton built for two feet, means human. Calling a chimpanzee a monkey drops the missing tail, which is the easiest mark."
   ],
   "confusion": [
-    "❌ treat \"Differences between new world monkeys\" as one blob → ✅ split into: differences between new world monkeys, old-world monkeys, apes.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: differences between new world monkeys, old-world monkeys, apes (within Evolutionary Biology).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: differences between new world monkeys, old-world monkeys, apes.",
-    "one worked example for \"Differences between new world monkeys and old-world monke…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Differences between new world monkeys and old-world monke…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Differences between new world monkeys and old-world monke…\" with one example.",
-    "compare \"Differences between new world monkeys\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Differences between new world monkeys and old-world monke…\" and verify the answer is plausible."
+    "Apes are not New World monkeys. Their nostrils open downward, like Old World monkeys and humans.",
+    "A chimpanzee is an ape. It has no external tail. A monkey has a tail.",
+    "Not every Old World monkey has cheek pouches. Langurs do not. Macaques and baboons do.",
+    "Not every New World monkey has a fully prehensile tail. The nose and the three premolars are the steadier characters."
   ],
   "keyPoints": [
-    "• Differences between new world monkeys",
-    "• Old-world monkeys",
-    "• Apes"
+    "New World: sideways nostrils, often a prehensile tail, dental 2.1.3.3, no cheek pouches.",
+    "Old World: downward nostrils, tail not prehensile, dental 2.1.2.3, ischial callosities, cheek pouches in macaques and baboons.",
+    "Apes: no external tail, long arms, broad chest, downward nostrils, no cheek pouches.",
+    "Humans: bipedal, foramen magnum underneath, arched foot, chin, reduced canines, 2.1.2.3.",
+    "Apes and humans are catarrhines, with the Old World monkeys."
   ],
-  "summary": "Differences between new world monkeys and old-world monke… (Evolutionary Biology, Biology, class-11-notes) covers Differences between new world monkeys, old-world monkeys, apes. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "The tail is the quickest split between monkeys and apes.",
+    "Three premolars mark a New World monkey. Two premolars mark Old World monkeys, apes and humans.",
+    "Bipedal anatomy, not 'intelligence' as a vague word, is the anatomical mark of humans in this comparison."
+  ],
+  "examples": [
+    "A spider monkey, with a grasping tail and sideways nostrils, is a New World monkey.",
+    "A rhesus macaque, with downward nostrils, cheek pouches and sitting pads, is an Old World monkey.",
+    "A chimpanzee has no tail and long arms. A human skeleton carries the skull on top of an upright spine."
+  ],
+  "universalFacts": [
+    "Catarrhine means the nostrils open downward. Platyrrhine means they are wide apart and open sideways.",
+    "Humans, apes and Old World monkeys share two premolars. New World monkeys have three."
+  ],
+  "formulas": [
+    "New World: sideways nostrils + 2.1.3.3 + tail often prehensile.",
+    "Old World monkey: downward nostrils + 2.1.2.3 + tail not prehensile + ischial callosities.",
+    "Ape: no tail + long arms. Human: no tail + bipedal skeleton."
+  ],
+  "practice": [
+    "Place spider monkey, langur, gibbon and human, with one character each.",
+    "State the dental formula that separates New World monkeys from the other three.",
+    "List three skeletal features of bipedalism."
+  ],
+  "practiceQuestions": [
+    "Why is a chimpanzee not classified as a monkey?",
+    "Which group has ischial callosities, and which has a prehensile tail?",
+    "Do humans have the New World nose or the Old World nose?"
+  ],
+  "examNotes": [
+    "A table with four columns beats four loose paragraphs. Rows: nose, tail, premolars, special feature.",
+    "Use one named animal in each column so the table is not only adjectives."
+  ],
+  "examShortTricks": [
+    "Sideways nose and three premolars = New World. No tail = ape or human. Two feet = human.",
+    "Langur: Old World, but no cheek pouch."
+  ],
+  "specialNotes": [
+    "Dental formulas are written incisors.canines.premolars.molars for one side of one jaw.",
+    "Ischial callosities are sitting pads on the rump, not cheek pouches. Do not swap those two."
+  ],
+  "importantNotes": [
+    "Gibbons are apes, even though they are smaller than a chimpanzee. The missing tail is the point.",
+    "The foramen magnum under the skull is the single skull feature that best shows upright posture."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Differences between new world monkeys and old-world monke…\"?",
+      "question": "New World monkeys are recognised by",
       "options": [
-        "Differences between new world monkeys",
-        "Old-world monkeys",
-        "Unrelated topic",
-        "None of the above"
+        "Downward nostrils and no tail",
+        "Sideways nostrils and typically three premolars",
+        "Bipedal walking",
+        "A chin and an arched foot"
       ],
-      "answer": "A",
-      "explanation": "Differences between new world monkeys is listed among the official sub-ideas of Differences between new world monkeys and old-world monke…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Differences between new world monkeys and old-world monke…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Cheek pouches are typical of",
       "options": [
-        "True",
-        "False"
+        "Spider monkeys",
+        "Macaques and baboons",
+        "Gibbons",
+        "Humans"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Apes differ from monkeys because apes",
+      "options": [
+        "Have a prehensile tail",
+        "Have no external tail",
+        "Have three premolars",
+        "Live only in the Americas"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The human foramen magnum lies",
+      "options": [
+        "At the back of the skull, as in a quadruped",
+        "Under the skull, in line with an upright spine",
+        "Inside the cheek pouch",
+        "On the tail"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Platyrrhine and catarrhine nostrils",
+    "Prehensile versus non-prehensile tail",
+    "Dental formulas 2.1.3.3 and 2.1.2.3",
+    "Ischial callosities and cheek pouches",
+    "Bipedal skeleton of humans"
+  ],
+  "importantTasks": [
+    "Build the four-column comparison table.",
+    "Sort four named animals using tail, then nose, then teeth."
+  ],
+  "exercises": [
+    {
+      "question": "Identify a spider monkey, a rhesus macaque, a chimpanzee and a human from one character each.",
+      "steps": [
+        "The spider monkey has sideways nostrils and a grasping tail, so it is a New World monkey.",
+        "The rhesus macaque has downward nostrils, cheek pouches and sitting pads, so it is an Old World monkey.",
+        "The chimpanzee has no external tail and arms longer than its legs, so it is an ape.",
+        "The human has no tail and a bipedal skeleton, with the foramen magnum under the skull."
+      ],
+      "answer": "Spider monkey New World, rhesus Old World, chimpanzee ape, human bipedal."
+    }
+  ],
+  "summary": "New World monkeys have sideways nostrils, usually a prehensile tail and three premolars (2.1.3.3). Old World monkeys have downward nostrils, a non-prehensile tail, two premolars (2.1.2.3) and sitting pads, with cheek pouches in macaques and baboons. Apes share that nose and those teeth but have no tail and have long arms. Humans add a bipedal skeleton: the skull sits on the spine, the pelvis is short and broad, and the foot is arched. Apes and humans are catarrhines, not New World monkeys.",
+  "mcqs": [
+    {
+      "question": "New World monkeys are recognised by",
+      "options": [
+        "Downward nostrils and no tail",
+        "Sideways nostrils and typically three premolars",
+        "Bipedal walking",
+        "A chin and an arched foot"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cheek pouches are typical of",
+      "options": [
+        "Spider monkeys",
+        "Macaques and baboons",
+        "Gibbons",
+        "Humans"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Apes differ from monkeys because apes",
+      "options": [
+        "Have a prehensile tail",
+        "Have no external tail",
+        "Have three premolars",
+        "Live only in the Americas"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The human foramen magnum lies",
+      "options": [
+        "At the back of the skull, as in a quadruped",
+        "Under the skull, in line with an upright spine",
+        "Inside the cheek pouch",
+        "On the tail"
+      ],
+      "answer": "B"
     }
   ]
 }

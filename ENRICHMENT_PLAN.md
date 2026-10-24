@@ -141,7 +141,7 @@ each subject** and record the real number.
 ### PHASE 1 — fill empty/thin (Nepali excluded)
 | # | Subject | Unit | Files to fill | Done | Batch # | Date |
 |---|---|---|---|---|---|---|
-| 1 | Biology | all units | 81 | 20 / 81 | 2 | 2026-10-24 |
+| 1 | Biology | all units | 81 | 30 / 81 | 3 | 2026-10-24 |
 | 2 | Chemistry | all units | (count from audit) | 0 / N | | |
 | 3 | Mathematics | all units | (count from audit) | 0 / N | | |
 | 4 | Physics | all units | (count from audit) | 0 / N | | |
@@ -180,3 +180,4 @@ each subject** and record the real number.
   biomolecules-and-cell-biology; added static diagram X; broken=0; commit abc1234`*
 - 2026-10-24 — Batch 1 (Biology): filled 10/81 in biodiversity-and-conservation (patterns, in-situ/ex-situ, IUCN), biodiversity-conservation-12 (levels, loss, strategies), biota-and-environment (animal behavior, pollution), biotech-applications (agriculture, medicine). Static diagram visualType `biodiversity-levels`; agriculture and medicine reuse `dna-double-helix`. Audit: files=2613 authored=2033 placeholder=0 thin=580 broken=0. Biology thin 81 → 71.
 - 2026-10-24 — Batch 2 (Biology): filled 10 more (20/81) in biotech-applications (transgenic animals), biotech-principles (recombinant DNA, PCR and gels), biotechnology-applications (Bt cotton and RNAi tobacco, transgenic uses, biopiracy), biotechnology-principles (principles, applications), ecology (interactions, pond and forest). Diagrams: `dna-double-helix`, new `species-interactions`, existing `food-chain-energy`. Audit: files=2621 authored=2051 placeholder=0 thin=570 broken=0. Biology thin 71 → 61.
+- 2026-10-24 — Batch 3 (Biology): filled 10 more (30/81) in ecology (greenhouse, ozone, acid rain, invasion), environmental-issues (solid waste, ozone, rainwater and wasteland), environmental-issues-12 (air and water, solid-waste methods, climate), evolutionary-biology (monkeys, apes, humans), faunal-diversity (protozoan classes, Paramecium and Plasmodium). Diagrams: new `greenhouse-ozone`, `protozoa-classes`, `paramecium-plasmodium`. Audit: files=2627 authored=2067 placeholder=0 thin=560 broken=0. Biology thin 61 → 51.

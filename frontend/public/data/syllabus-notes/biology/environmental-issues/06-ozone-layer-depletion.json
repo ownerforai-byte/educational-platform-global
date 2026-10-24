@@ -1,0 +1,190 @@
+{
+  "title": "Ozone layer depletion",
+  "unitSlug": "environmental-issues",
+  "topicSlug": "ozone-layer-depletion",
+  "topicTitle": "Ozone layer depletion",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "greenhouse-ozone",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "The right-hand panel is this topic: stratospheric ozone, Dobson units, and chlorine from CFCs. Warming is the other panel."
+    }
+  },
+  "notes": [
+    "Ozone in the stratosphere, about 15 to 35 km above the surface, absorbs ultraviolet-B that would otherwise reach living tissue. The amount in a vertical column is measured in Dobson units. One DU is a layer 0.01 mm thick at standard temperature and pressure. A normal column is about 300 DU.",
+    "Ozone is made and destroyed all the time. Ultraviolet light splits O2 into oxygen atoms, and an atom joining another O2 makes O3. Left alone, formation and breakdown stay in balance. The layer is not a fixed shell of gas that never changes. It is a balance.",
+    "CFCs upset that balance. They are stable near the ground and drift upward for years. High in the stratosphere, ultraviolet light breaks a chlorine atom off. Chlorine reacts with ozone to make chlorine monoxide and oxygen, then chlorine monoxide reacts with a free oxygen atom and releases the chlorine again. The chlorine is a catalyst. One atom can destroy thousands of ozone molecules. Halons, carbon tetrachloride, methyl bromide and nitrogen oxides do related damage. Halons are harsher per molecule than CFCs.",
+    "The Antarctic hole appears in spring. Winter cold forms polar stratospheric clouds. On those icy surfaces, chlorine compounds are converted into forms that sunlight can activate. When the sun returns, ozone falls quickly. A column below about 220 DU is called a hole. The Arctic can thin too, but the classic hole is Antarctic.",
+    "More ultraviolet-B means more skin cancer and cataracts, a weaker immune response, and damage to phytoplankton, which are the producers of the sea. Crops can be injured as well. None of this is the same process as the greenhouse effect. Carbon dioxide warms the lower air. Chlorine thins the high ozone. A CFC happens to do both jobs, which is why the two stories get mixed.",
+    "The Montreal Protocol, agreed in 1987, cut and then phased out the main ozone-depleting chemicals. Substitutes have their own problems, including a greenhouse effect for some of them, but the protocol is the reason stratospheric chlorine has started to decline. Ground-level ozone, made in smog, is still a pollutant. It does not replace the shield 15 km up."
+  ],
+  "confusion": [
+    "Tropospheric ozone does not protect us from ultraviolet light. The shield is stratospheric.",
+    "Ozone loss is not global warming. The gases and the layers are different.",
+    "CFCs are the main example, not the only ozone-depleting group. Halons also matter.",
+    "The hole is not a literal empty circle with zero air. It is a column thinner than about 220 DU."
+  ],
+  "keyPoints": [
+    "Stratosphere, about 15–35 km.",
+    "About 300 DU is normal. Below about 220 DU is a hole.",
+    "Chlorine from CFCs is regenerated, so the destruction is catalytic.",
+    "The Antarctic hole is a spring event after polar stratospheric clouds.",
+    "Montreal Protocol: 1987."
+  ],
+  "importantStatements": [
+    "One chlorine atom destroys many ozone molecules because it is released again.",
+    "Polar stratospheric clouds plus spring sunlight explain why the hole is seasonal and polar.",
+    "Skin, eyes, immunity and phytoplankton are the biological costs of extra UV-B."
+  ],
+  "examples": [
+    "A CFC molecule that left a refrigerator years ago can still release chlorine in the stratosphere.",
+    "Each Antarctic spring the column over the pole drops below the 220 DU line.",
+    "Phytoplankton under stronger UV-B photosynthesise less, which cuts the base of ocean food chains."
+  ],
+  "universalFacts": [
+    "One Dobson unit equals 0.01 mm of pure ozone at standard temperature and pressure.",
+    "The Montreal Protocol is the international agreement that phased out CFCs."
+  ],
+  "formulas": [
+    "Cl· + O3 → ClO· + O2, then ClO· + O → Cl· + O2. Chlorine is freed again.",
+    "Hole: ozone column below about 220 DU. Normal column: about 300 DU."
+  ],
+  "practice": [
+    "Write the two-step chlorine cycle and point at the atom that comes back.",
+    "Define a Dobson unit and the 220 DU line.",
+    "Give two human effects and one ocean effect of extra UV-B."
+  ],
+  "practiceQuestions": [
+    "Why do CFCs reach the stratosphere instead of being destroyed near the ground?",
+    "Why is the Antarctic loss worst in spring?",
+    "How is this topic different from the greenhouse effect?"
+  ],
+  "examNotes": [
+    "Write the catalytic pair of reactions, not only the words 'CFCs destroy ozone'.",
+    "Include Montreal 1987 and the idea that the hole is a Dobson-unit threshold."
+  ],
+  "examShortTricks": [
+    "300 normal, 220 hole, 1987 protocol, 15–35 km.",
+    "Catalyst means the chlorine comes out of the reaction again."
+  ],
+  "specialNotes": [
+    "Say ultraviolet-B, not 'all sunlight'. Ozone does not block visible light.",
+    "Do not draw the hole as a gap in the entire atmosphere. It is a thin ozone column."
+  ],
+  "importantNotes": [
+    "Polar stratospheric clouds are the surface on which chlorine is prepared for the spring destruction.",
+    "Some CFC replacements are kinder to ozone and still act as greenhouse gases. That does not make the two problems identical."
+  ],
+  "mcs": [
+    {
+      "question": "The protective ozone layer is",
+      "options": [
+        "At street level",
+        "In the stratosphere, about 15–35 km up",
+        "Inside rain clouds only",
+        "Made of methane"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An ozone hole means the column is",
+      "options": [
+        "About 300 DU, the normal value",
+        "Below about 220 DU",
+        "Thicker than ever",
+        "Full of oxygen only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Chlorine destroys so much ozone because it",
+      "options": [
+        "Is used up in the first collision",
+        "Is regenerated and can react again",
+        "Becomes carbon dioxide",
+        "Only acts at ground level"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Montreal Protocol was agreed in",
+      "options": [
+        "1972",
+        "1987",
+        "2015",
+        "1942"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Dobson units",
+    "Catalytic chlorine cycle",
+    "Polar stratospheric clouds",
+    "UV-B effects",
+    "Montreal Protocol"
+  ],
+  "importantTasks": [
+    "Write the two chlorine reactions and circle the regenerated atom in words.",
+    "Explain the Antarctic spring in four sentences."
+  ],
+  "exercises": [
+    {
+      "question": "A column measures 200 DU. A normal column is about 300 DU. Is this a hole, and by how many DU is it short of normal?",
+      "steps": [
+        "A hole is a column below about 220 DU.",
+        "200 is below 220, so this column is a hole.",
+        "The shortfall from the normal 300 is 300 − 200 = 100.",
+        "It is 100 DU thinner than the usual column."
+      ],
+      "answer": "Yes. 200 DU is a hole, 100 DU below the normal 300."
+    }
+  ],
+  "summary": "Stratospheric ozone, about 15–35 km up and normally about 300 Dobson units, absorbs ultraviolet-B. CFCs release chlorine that destroys ozone catalytically, and the Antarctic column falls below about 220 DU in spring after reactions on polar stratospheric clouds. The results are skin cancer, cataracts and harm to phytoplankton. The Montreal Protocol of 1987 phased out the main ozone-depleting chemicals. This is not the greenhouse effect.",
+  "mcqs": [
+    {
+      "question": "The protective ozone layer is",
+      "options": [
+        "At street level",
+        "In the stratosphere, about 15–35 km up",
+        "Inside rain clouds only",
+        "Made of methane"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An ozone hole means the column is",
+      "options": [
+        "About 300 DU, the normal value",
+        "Below about 220 DU",
+        "Thicker than ever",
+        "Full of oxygen only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Chlorine destroys so much ozone because it",
+      "options": [
+        "Is used up in the first collision",
+        "Is regenerated and can react again",
+        "Becomes carbon dioxide",
+        "Only acts at ground level"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Montreal Protocol was agreed in",
+      "options": [
+        "1972",
+        "1987",
+        "2015",
+        "1942"
+      ],
+      "answer": "B"
+    }
+  ]
+}

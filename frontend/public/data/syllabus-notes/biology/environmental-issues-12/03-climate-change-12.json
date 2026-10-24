@@ -1,0 +1,188 @@
+{
+  "title": "Climate Change and Greenhouse Effect",
+  "unitSlug": "environmental-issues-12",
+  "topicSlug": "climate-change-12",
+  "topicTitle": "Climate Change and Greenhouse Effect",
+  "relevance": 100,
+  "visualType": "greenhouse-ozone",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "This topic is the left panel: greenhouse gases and warming. The ozone panel is a different chapter."
+    }
+  },
+  "notes": [
+    "Climate change in this chapter means the warming and the shifted rainfall that follow an enhanced greenhouse effect. The effect itself is natural. Carbon dioxide, methane, nitrous oxide, water vapour and CFCs absorb infrared radiation leaving the Earth, so the surface is warmer than it would be. Without them the mean temperature would be about −18 °C rather than about +15 °C.",
+    "People have thickened that blanket. Carbon dioxide has risen from about 280 ppm before industry to a little above 420 ppm, which is about 0.04 percent of air. The added carbon dioxide comes from coal, oil, gas and from forests that were cut and burned. Methane comes from livestock, flooded rice fields and rotting waste. Nitrous oxide comes from fertilised soils. These are the gases to write down. Water vapour amplifies warming, but it is not the gas the policies are aimed at.",
+    "The results are not only a higher thermometer reading. Ice melts and sea level rises. Heatwaves and heavy rain become more likely. Crop zones move. Disease vectors move with the temperature. In the Himalaya, glaciers retreat and glacial lakes can burst. That is the Nepali form of the same global change, and it is about water and slopes, not about a hole in the ozone layer.",
+    "Mitigation means cutting the cause. Burn less fossil fuel, waste less energy, stop clearing forests, and store carbon in vegetation and soil. A landfill that captures methane, or a herd and a rice system that emit less of it, is mitigation of a greenhouse gas. Adaptation means living with the change that is already arriving: crop varieties that tolerate heat or a late monsoon, flood protection, and settlements that are not sitting under an unstable glacial lake.",
+    "International targets are part of the answer. The Paris Agreement asks countries to hold warming well below 2 °C and to pursue 1.5 °C above the pre-industrial temperature. A target is not a fall in carbon dioxide by itself. The fall comes from the fuels and the forests.",
+    "Ozone depletion is the trap answer. It is caused mainly by chlorine and bromine compounds, it is measured in Dobson units, and it increases ultraviolet-B. Some CFCs do warm the climate and also destroy ozone, but carbon dioxide does not punch the ozone hole, and chlorine is not the reason glaciers retreat. Write them as neighbours, not as synonyms."
+  ],
+  "confusion": [
+    "The greenhouse effect is not entirely artificial. The extra warming is.",
+    "Climate change and the ozone hole are not the same measurement and not the same gases.",
+    "Mitigation is not adaptation. One cuts emissions. The other copes with impacts.",
+    "Water vapour is a greenhouse gas, but listing only water vapour misses the gases people have increased."
+  ],
+  "keyPoints": [
+    "Natural warming is about 33 °C, from about −18 °C to about +15 °C.",
+    "CO2: about 280 ppm pre-industrial, a little above 420 ppm now.",
+    "Main added gases: CO2, methane, nitrous oxide.",
+    "Mitigation cuts emissions. Adaptation reduces harm.",
+    "Paris range: pursue 1.5 °C and hold warming well below 2 °C."
+  ],
+  "importantStatements": [
+    "Infrared is what the greenhouse gases trap. Sunlight mostly gets in.",
+    "Himalayan glacier loss and glacial-lake floods are the regional impact to mention.",
+    "A CFC can affect both climate and ozone, which does not make CO2 an ozone-depleting gas."
+  ],
+  "examples": [
+    "Coal-fired electricity raises CO2. Methane from a landfill raises a more potent greenhouse gas in smaller amounts.",
+    "A village that moves its houses off a glacial-lake flood path is adapting. A village that replaces diesel with a cleaner supply is mitigating.",
+    "A late monsoon and a hotter wheat season are agricultural faces of the same warming."
+  ],
+  "universalFacts": [
+    "Pre-industrial carbon dioxide was about 280 ppm.",
+    "The Paris temperature figures are measured against the pre-industrial baseline, not against last year."
+  ],
+  "formulas": [
+    "Enhanced greenhouse: extra CO2, CH4 and N2O → more infrared trapped → higher mean temperature.",
+    "About 420 ppm CO2 ≈ 0.04 percent of air."
+  ],
+  "practice": [
+    "Separate mitigation from adaptation with one Nepal example of each.",
+    "State the two carbon-dioxide concentrations and what raised the number.",
+    "Explain why an ozone answer does not score on a climate question."
+  ],
+  "practiceQuestions": [
+    "Which human activities raise methane?",
+    "What is the Paris temperature range?",
+    "Why are Himalayan glaciers part of a climate answer?"
+  ],
+  "examNotes": [
+    "Give the −18 °C and +15 °C pair, then the gases, then one impact, then mitigation versus adaptation.",
+    "If you mention CFCs, immediately say that CO2 is still the main warming gas and chlorine is the ozone story."
+  ],
+  "examShortTricks": [
+    "280 then about 420. 1.5 and 2. −18 and +15.",
+    "Mitigate = less gas. Adapt = live with the impact."
+  ],
+  "specialNotes": [
+    "Do not quote a single 'exact' current ppm as if it never moves. 'A little above 420 ppm' matches the course figure.",
+    "Glacial-lake outburst floods are a consequence to name. They are not a greenhouse gas."
+  ],
+  "importantNotes": [
+    "Deforestation raises atmospheric CO2 both by burning and by losing a sink.",
+    "Methane is stronger per molecule than CO2, but CO2 is the larger share of the extra warming because so much of it is emitted."
+  ],
+  "mcs": [
+    {
+      "question": "The natural greenhouse effect keeps Earth about",
+      "options": [
+        "33 °C warmer than a planet without those gases",
+        "33 °C colder",
+        "Unchanged",
+        "At −18 °C today"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Pre-industrial carbon dioxide was about",
+      "options": [
+        "420 ppm",
+        "280 ppm",
+        "15 ppm",
+        "220 DU"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Replacing a diesel pump with a cleaner energy source is",
+      "options": [
+        "Adaptation only",
+        "Mitigation, because it cuts emissions",
+        "Ozone-hole repair by chlorine",
+        "Acid-rain production"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Glacier retreat in the Himalaya is filed under",
+      "options": [
+        "Stratospheric ozone recovery",
+        "Climate change from an enhanced greenhouse effect",
+        "Biomedical waste",
+        "A catalytic converter"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Natural versus enhanced greenhouse effect",
+    "The three main added gases",
+    "Mitigation and adaptation",
+    "Paris temperature targets",
+    "Why ozone depletion is a different topic"
+  ],
+  "importantTasks": [
+    "Calculate the 33 °C difference.",
+    "Write two mitigations and two adaptations, one of each set in Nepal."
+  ],
+  "exercises": [
+    {
+      "question": "Show that the natural greenhouse effect is worth about 33 °C.",
+      "steps": [
+        "Without greenhouse gases the mean temperature would be about −18 °C.",
+        "The actual mean is about +15 °C.",
+        "Subtract: 15 − (−18) = 33.",
+        "The blanket, not the ozone layer, accounts for that 33 °C."
+      ],
+      "answer": "About 33 °C."
+    }
+  ],
+  "summary": "Climate change here is the enhanced greenhouse effect. A natural blanket of about 33 °C has been thickened by carbon dioxide, from about 280 ppm to a little above 420 ppm, plus methane and nitrous oxide. Impacts include sea-level rise, extreme weather and Himalayan glacier loss. Mitigation cuts the gases. Adaptation lives with the impacts. The Paris aim is 1.5 °C and well below 2 °C. The ozone hole is a separate problem.",
+  "mcqs": [
+    {
+      "question": "The natural greenhouse effect keeps Earth about",
+      "options": [
+        "33 °C warmer than a planet without those gases",
+        "33 °C colder",
+        "Unchanged",
+        "At −18 °C today"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Pre-industrial carbon dioxide was about",
+      "options": [
+        "420 ppm",
+        "280 ppm",
+        "15 ppm",
+        "220 DU"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Replacing a diesel pump with a cleaner energy source is",
+      "options": [
+        "Adaptation only",
+        "Mitigation, because it cuts emissions",
+        "Ozone-hole repair by chlorine",
+        "Acid-rain production"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Glacier retreat in the Himalaya is filed under",
+      "options": [
+        "Stratospheric ozone recovery",
+        "Climate change from an enhanced greenhouse effect",
+        "Biomedical waste",
+        "A catalytic converter"
+      ],
+      "answer": "B"
+    }
+  ]
+}
