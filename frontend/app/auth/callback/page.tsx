@@ -7,10 +7,11 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
+import { tierWelcomePathFor } from "@/lib/access-level";
 import type { OAuthSessionResponse } from "@/types/api";
 
-function safeNext(value: string | null): string {
-  return value && value.startsWith("/") && !value.startsWith("//") ? value : "/home";
+function safeNext(value: string | null, fallback: string): string {
+  return value && value.startsWith("/") && !value.startsWith("//") ? value : fallback;
 }
 
 /**
@@ -91,7 +92,10 @@ function AuthCallbackContent() {
         setStoredToken(response.accessToken);
         writeCachedSession(response.user, response.accessToken);
         refresh();
-        router.replace(safeNext(searchParams.get("next")));
+        // No ?next= → the viewer's own tier WELCOME page first (2026-10-23:
+        // "opening direct welcome page after getting/knowing the tier access
+        // then after clicking go - home page appears").
+        router.replace(safeNext(searchParams.get("next"), tierWelcomePathFor(response.user)));
       } catch (callbackError) {
         const authError = callbackError as Error & { code?: string; statusToken?: string };
         if (authError.code === "PENDING_APPROVAL" && authError.statusToken) {

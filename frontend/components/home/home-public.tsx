@@ -64,6 +64,12 @@ export function HomePublic() {
             >
               How access works
             </Link>
+            <Link
+              href="/plans"
+              className="inline-flex min-h-11 items-center rounded-lg border border-border px-5 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              See all plans
+            </Link>
           </div>
         </section>
 

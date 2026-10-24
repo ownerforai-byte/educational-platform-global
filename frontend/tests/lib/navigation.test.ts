@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { NAV_SECTIONS } from "@/lib/navigation";
+import { NAV_SECTIONS, QUICK_LINKS, quickLinkMinTier } from "@/lib/navigation";
 import { collectRoutes, routeExists } from "../helpers/route-tree";
 
 /**
@@ -92,6 +92,27 @@ describe("navigation menu", () => {
     // A fork would be a hardcoded menu array inside a component again.
     expect(sidebar).not.toMatch(/const\s+\w*[Ii]tems\s*:\s*NavItem\[\]\s*=/);
     expect(drawer).not.toMatch(/const\s+\w*[Ss]ections\s*:\s*\w*Section\[\]\s*=/);
+  });
+
+  it("puts every navigation link under the plan.md §3 access ladder", () => {
+    // plan.md §3 is the rung of record (owner: "navigation links … with global
+    // search input — put under plan with access tier"). quickLinkMinTier is
+    // derived from this same registry, so the sidebar, drawer, quick strip and
+    // tier-home rails can never disagree on who reaches a link.
+    expect(quickLinkMinTier("/home")).toBe("member"); // tier home per signed-in rung
+    expect(quickLinkMinTier("/class-11-notes")).toBe("member"); // §3 row 3
+    expect(quickLinkMinTier("/class-12-notes")).toBe("plus"); // §3 row 4
+    expect(quickLinkMinTier("/lab")).toBe("visitor"); // §3 row 15 — free always
+    expect(quickLinkMinTier("/quiz")).toBe("member"); // §2.1 — practice basics
+    expect(quickLinkMinTier("/chat")).toBe("visitor"); // §3 row 20 — spark-metered
+    expect(quickLinkMinTier("/pdfs")).toBe("pro"); // §3 row 18
+    // Every quick link resolves through the real registry (no silent fallback).
+    for (const link of QUICK_LINKS) {
+      expect(
+        entries.some(({ item }) => item.href === link.href),
+        `quick link ${link.href} is missing from NAV_SECTIONS`,
+      ).toBe(true);
+    }
   });
 
   it("keeps one quick-items strip, removes the broken duplicate, and omits Search", () => {

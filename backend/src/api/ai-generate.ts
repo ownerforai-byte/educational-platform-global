@@ -124,6 +124,8 @@ interface GeneratedQuestion {
   subject: string;
   topic: string;
   explanation: string;
+  /** Per-option rationale. Keys `A`..`D`, same order as `options`. Absent fall back to the shared `explanation`. */
+  optionAnalysis?: Record<string, string>;
 }
 
 /**
@@ -320,7 +322,12 @@ OUTPUT FORMAT — Return ONLY valid JSON, no markdown:
       "difficulty": "intermediate",
       "subject": "Physics",
       "topic": "Topic Name",
-      "explanation": "Short, accurate answer — 1-2 sentences max"
+      "explanation": "Short, accurate answer — 1-2 sentences max",          "optionAnalysis": {
+        "A": "Correct — the reduced model keeps only the regressor that is statistically significant.",
+        "B": "Wrong — this is the full model, which keeps every regressor regardless of significance.",
+        "C": "Wrong — forward or backward stepwise fitting is a selection strategy, not a formal model comparison test.",
+        "D": "Wrong — a partial F-test or t-test compares nested models, not the full model against an arbitrary subset."
+      }
     }
   ]
 }
@@ -328,7 +335,7 @@ OUTPUT FORMAT — Return ONLY valid JSON, no markdown:
 RULES:
 - 4 options per question, correctIndex is 0-based
 - Each question MUST have one, and only one, definitively correct answer (no ambiguity).
-- Explanation: SHORT + ACCURATE — state why the correct answer is 100% right, briefly explain why others are wrong.
+- Output a per-option analysis: an \`optionAnalysis\` object keyed by the letter of each option (\`A\`..\`D\`, same order as \`options\`). For the correct option, give a one-clause reason it is 100% right. For every wrong option, give a one-clause reason it is wrong (what misconception or fact it gets wrong). If a separate overall \`explanation\` is also provided, the per-option lines must still each carry a real reason — do not just repeat the explanation.
 - **DENSE, SHORT STEMS (core style rule)**: pack 2–3 DISTINCT details of the topic into every question — e.g. a condition + a data point + the relationship being tested, or a term + a context + its consequence. One question = several linked ideas about the concept, never a bare single fact.
 - **SHORT GRAMMAR**: exam-terse phrasing. Max 2 sentences in the stem. Cut all filler — no "Which of the following…", no restating the topic name, no preamble. Options stay 2–8 words with parallel grammar.
 - A student who merely READS the question (before answering) should walk away with extra ideas about the concept — the stem and options together teach related facts.
@@ -418,6 +425,7 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
           subject: (q.subject as string) ?? subjectSlug,
           topic: (q.topic as string) ?? topic ?? "General",
           explanation: (q.explanation as string) ?? "",
+          optionAnalysis: (q.optionAnalysis as Record<string, string> | undefined) ?? undefined,
         }));
 
       const guestSlot = (req as GuestGateRequest).guestSlot;

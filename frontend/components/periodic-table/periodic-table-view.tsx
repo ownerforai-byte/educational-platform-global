@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useEffect, useState, useMemo, useRef } from "react";
+import Link from "next/link";
 import {
   PERIODIC_FILTERS,
   BLOCK_TONES,
   blockFilterIdFor,
+  filterMinTier,
   type PeriodicElement,
   type PeriodicFilterCategory,
 } from "@/lib/periodic-table";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { hasLevel, ACCESS_LABELS } from "@/lib/access-level";
 import { BlockExplorer } from "@/components/periodic-table/block-explorer";
 import { CeeSparkGate } from "@/components/periodic-table/cee-spark-gate";
 import {
@@ -40,6 +44,7 @@ import {
   Sparkle,
   Filter,
   TrendingUp,
+  Lock,
 } from "lucide-react";
 
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; text: string; badge: string }> = {
@@ -82,6 +87,12 @@ const GROUP_ROMAN_LABELS = [
 ];
 
 export function PeriodicTableView() {
+  const { user } = useSession();
+  // Filter tiers (owner direction 2026-10-23): each classification family opens
+  // at its rung — nature + block at Member, families at Plus, special groups &
+  // properties at Pro. Locked chips stay visible with a lock → /plans (plan.md §4).
+  const filterUnlocked = (cat: PeriodicFilterCategory): boolean =>
+    hasLevel(user, filterMinTier(cat));
   const [elements, setElements] = useState<PeriodicElement[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeFilterId, setActiveFilterId] = useState<string>("all");
@@ -491,6 +502,20 @@ export function PeriodicTableView() {
 
           {Object.values(PERIODIC_FILTERS).map((cat) => {
             const isSelected = activeFilterId === cat.id;
+            const unlocked = filterUnlocked(cat);
+            if (!unlocked) {
+              return (
+                <Link
+                  key={cat.id}
+                  href="/plans"
+                  title={`${cat.name} opens at ${ACCESS_LABELS[filterMinTier(cat)]} — see plans`}
+                  className="flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-bold transition-all border border-dashed border-border/70 text-muted-foreground/60"
+                >
+                  <Lock className="h-2.5 w-2.5" />
+                  {cat.name}
+                </Link>
+              );
+            }
             return (
               <button
                 key={cat.id}

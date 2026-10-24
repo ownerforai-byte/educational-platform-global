@@ -130,7 +130,9 @@ describe("Veer chat: routes stay public (metered), launcher sits under the spark
   });
 
   it("removes Search from the mobile quick links", () => {
-    const quickLinks = read("components/layout/mobile-quick-nav.tsx");
+    // QUICK_LINKS is the shared registry (lib/navigation.ts) consumed by the
+    // mobile strip AND the tier home pages' quick-links rail.
+    const quickLinks = read("lib/navigation.ts");
     expect(quickLinks).not.toContain('{ href: "/search", label: "Search" }');
     expect(quickLinks).toContain('{ href: "/chat", label: "AI" }');
   });

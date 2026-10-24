@@ -481,12 +481,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Concept Legends & Facts",
-        opening: "Legend entries, high-yield facts and misconception fixes, per class and subject.",
+        opening: "Legend entries, high-yield facts and misconception fixes, per class and subject — plus a per-topic sheet for every unit and topic of all six subjects, where exam shortcuts, time-saving notes and PYQ solutions land as they are added.",
         href: "/legend",
         meta: "Facts",
         links: [
           { label: "Class 11", href: "/legend/class-11-notes" },
           { label: "Class 12", href: "/legend/class-12-notes" },
+          { label: "Per-topic sheets", href: "/legend/class-11-notes/physics/mechanics/kinematics" },
         ],
       },
       {

@@ -9,22 +9,24 @@ import { aiSparkTierFor, type AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
  * tiers into the platform's ACCESS LADDER and gives every surface one helper to
  * ask "may this viewer reach this?".
  *
- * Ladder (low → high), matching the owner's wording and the clarification that
- * "member" stays its own rung:
+ * Ladder (low → high) — plan.md §2/§3 is the rung definition of record (it
+ * supersedes the earlier "search-only member" wording):
  *
- *   visitor  → signed-out guest. Public overview, simple footer (version +
- *              intro + hidden /plans link), live approval-status check.
- *   member   → signed-in base. Indexes bar locked to SEARCH ONLY.
- *   plus     → 2–3 indexes (Home + Class 11 + Search).
- *   pro      → ALL indexes (Home, Class 11, Class 12, … AI). No rails, no
- *              owner features. Unlocks the home features + CEE spark gates.
+ *   visitor  → signed-out guest. Public overview, the Plans page, free-always
+ *              labs & visuals, AI quiz pool, spark-metered chat trial.
+ *   member   → signed-in base. Search, Class 11 core notes, formula sheets,
+ *              resources & reference, practice basics + Student Desk.
+ *   plus     → + Class 12, journal, worked numericals, PYQ banks, CEE track
+ *              and the board-exam suite.
+ *   pro      → + all indexes: derivations & theorems, PDF library, graph
+ *              banks, knowledge hubs, Loksewa & entrance tracks.
  *   owner    → everything: all indexes, owner rails, owner console, unlimited
  *              Veer sparks.
  *
- * "for plus no indexes (only search) … for pro all indexes" is expressed as a
- * per-index `minLevel` in lib/navigation.ts, filtered by the sidebar + drawer.
- * This module only resolves a viewer's rung and compares it — it renders
- * nothing, so tests can import it without a DOM.
+ * Which LINK opens at which rung lives in lib/navigation.ts (per-index
+ * `minLevel`, plan.md §3), filtered by the sidebar + drawer. This module only
+ * resolves a viewer's rung and compares it — it renders nothing, so tests can
+ * import it without a DOM.
  */
 
 export type AccessLevel = "visitor" | "member" | "plus" | "pro" | "owner";
@@ -73,7 +75,65 @@ export function accessLevelFor(
   user: AiSparkUserLike | null | undefined,
 ): AccessLevel {
   const tier = aiSparkTierFor(user);
-  return tier === "guest" ? "visitor" : (tier as AccessLevel);
+  if (tier === "guest") return "visitor";
+  // The temporary plus_20 pass IS the Plus rung with an expiry — same
+  // interface, same access — so it resolves to "plus", never a phantom rung.
+  return tier === "plus_20" ? "plus" : (tier as AccessLevel);
+}
+
+/**
+ * The hardcoded per-tier home pages (owner direction 2026-10-23: "create
+ * those pages for all tiers and hardcode them"). Every signed-in rung has
+ * its own interface route; the login flows land the viewer directly on
+ * theirs so "once logged in then no visitor page".
+ */
+export const TIER_HOME_PATHS: Record<Exclude<AccessLevel, "visitor">, string> = {
+  member: "/home/member",
+  plus: "/home/plus",
+  pro: "/home/pro",
+  owner: "/home/owner",
+};
+
+/**
+ * The exact home interface path for this viewer — their tier page when
+ * signed in, "/" (the tier router / public overview) for a visitor.
+ */
+export function tierHomePathFor(
+  user: AiSparkUserLike | null | undefined,
+): string {
+  const level = accessLevelFor(user);
+  return level === "visitor" ? "/" : TIER_HOME_PATHS[level];
+}
+
+/** Veer AI sparks per UTC day, hardcoded by rung (client-safe display map). */
+export const TIER_SPARKS: Record<AccessLevel, string> = {
+  visitor: "3 / day",
+  member: "7 / day",
+  plus: "25 / day",
+  pro: "50 / day",
+  owner: "Unlimited",
+};
+
+/**
+ * The hardcoded per-tier WELCOME screens (owner direction 2026-10-23: "create
+ * one welcome pages for each tier then after that home page … opening direct
+ * welcome page after getting/knowing the tier access then after clicking go -
+ * home page appears then all study materials"). The post-auth flow lands on
+ * the viewer's welcome FIRST — its Go button opens TIER_HOME_PATHS.
+ */
+export const TIER_WELCOME_PATHS: Record<AccessLevel, string> = {
+  visitor: "/welcome/guest",
+  member: "/welcome/member",
+  plus: "/welcome/plus",
+  pro: "/welcome/pro",
+  owner: "/welcome/owner",
+};
+
+/** The welcome screen for this viewer — the first page once the tier is known. */
+export function tierWelcomePathFor(
+  user: AiSparkUserLike | null | undefined,
+): string {
+  return TIER_WELCOME_PATHS[accessLevelFor(user)];
 }
 
 /** Whether this viewer reaches at least `min` (visitor = 0, owner = 4). */

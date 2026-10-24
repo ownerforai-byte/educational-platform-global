@@ -14,20 +14,24 @@ import path from "node:path";
 const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 
 describe("Home subject rails owner gate", () => {
-  it("wraps the rails in the Spark gate (owner + Pro) on the home page", () => {
+  it("wraps the rails in the Spark gate (owner + Pro) on the home surface", () => {
+    // /home now feeds the viewer's exact tier interface (one tier page per
+    // viewer), so the rails' composition lives in the hardcoded tier shell.
     const home = read("app/(app)/home/page.tsx");
-    expect(home).toContain(
+    expect(home).toContain("TierHomeRouter");
+    const tierShell = read("components/home/tier-interfaces.tsx");
+    expect(tierShell).toContain(
       'import { HomeFeaturesSparkGate } from "@/components/home/home-features-spark-gate"',
     );
     const gate =
-      home.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkGate>/)?.[0] ??
+      tierShell.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkGate>/)?.[0] ??
       "";
     expect(gate).toContain("<HomeSubjectRails />");
     // The rails are a SERVER component (node:fs data modules), rendered by the
     // protected route directly; client session switching belongs to its layout.
     expect(home).not.toContain("HomeAudience");
     expect(read("app/(app)/layout.tsx")).toContain("<RequireApproval>");
-    expect(home).toContain("<HomeSubjectRails />");
+    expect(tierShell).toContain("<HomeSubjectRails />");
   });
 
   it("hides the section instead of redirecting anyone", () => {

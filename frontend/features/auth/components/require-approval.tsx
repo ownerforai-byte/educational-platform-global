@@ -22,7 +22,8 @@
  *   signed out           → the lock screen (sign in / create account / check
  *                          approval status) carrying the mandated notice.
  *
- * Public read-through routes (the notice board) stay open to every visitor, and
+ * Public read-through routes (the notice board and the plans page) stay open
+ * to every visitor, and
  * the auth pages themselves (login / signup / welcome / reset — all outside the
  * (app) shell) are never wrapped by this gate. Everything else in the shell is
  * locked — including the periodic table reached from the header.
@@ -48,8 +49,10 @@ import { ACCESS_NOTICE } from "./access-notice";
  * Owner decision (2026-10-17): "only auth + notice pages public" — so the
  * notice board is the single open page; home, the periodic table, labs, chat,
  * profile and the rest all require an approved login.
+ * Owner request (2026-10-23): "/plans is visible for all users" — the tier
+ * ladder joins the open list (plan.md §5: the plans page is a guest page).
  */
-const PUBLIC_PATHS = ["/notice"] as const;
+const PUBLIC_PATHS = ["/notice", "/plans"] as const;
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
@@ -119,6 +122,12 @@ function ApprovalLock() {
       </div>
 
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <Link
+          href="/plans"
+          className="inline-flex h-11 items-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-5 text-sm font-bold text-primary transition-all hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
+        >
+          See plans
+        </Link>
         <Link
           href="/login"
           className="inline-flex h-11 items-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"

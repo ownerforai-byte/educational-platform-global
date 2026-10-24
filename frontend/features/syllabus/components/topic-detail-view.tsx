@@ -10,7 +10,7 @@ import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
 import { TopicVerticalNotes } from "@/components/content/topic-vertical-notes";
 import { TopicProgressControls } from "@/components/progress/topic-progress-controls";
-import { ChevronRight, ArrowLeft } from "lucide-react";
+import { ChevronRight, ArrowLeft, Lightbulb, NotebookPen } from "lucide-react";
 
 export async function TopicDetailView({
   classSlug,
@@ -134,6 +134,26 @@ export async function TopicDetailView({
         topicSlug={topic.slug}
         unit={unit}
       />
+
+      {/* Companion pages for this topic: its exercise set (अभ्यास) and its
+          Concepts, Legends & Facts sheet (exam shortcuts, time-saving notes and
+          PYQ solutions live there). */}
+      <div className="flex flex-wrap items-center gap-3">
+        <Link
+          href={`${basePath}/chapters/${unit.id}/topics/${topic.slug}/exercises`}
+          className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+        >
+          <NotebookPen className="h-4 w-4" />
+          <span>Exercises{subjectSlug === "nepali" ? " · अभ्यास" : ""}</span>
+        </Link>
+        <Link
+          href={`/legend/${classSlug}/${subjectSlug}/${unit.id}/${topic.slug}`}
+          className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+        >
+          <Lightbulb className="h-4 w-4" />
+          <span>Concepts, Legends &amp; Facts</span>
+        </Link>
+      </div>
 
       <div className="pt-4 border-t border-border/60">
         <Link

@@ -1,8 +1,24 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import type { ReactNode } from "react";
 
 import { HomePublic } from "@/components/home/home-public";
+
+const session = vi.hoisted(() => ({ user: null as unknown, isLoading: false }));
+const replace = vi.hoisted(() => vi.fn());
+
+vi.mock("@/features/auth/hooks/use-session", () => ({
+  useSession: () => session,
+}));
+
+vi.mock("next/navigation", async () => {
+  const actual =
+    await vi.importActual<typeof import("next/navigation")>("next/navigation");
+  return {
+    ...actual,
+    useRouter: () => ({ replace }),
+  };
+});
 
 vi.mock("@/components/home/home-features-spark-gate", () => ({
   HomeFeaturesSparkGate: ({ children }: { children: ReactNode }) => <>{children}</>,
@@ -46,9 +62,18 @@ describe("public home", () => {
 });
 
 describe("member home route", () => {
-  it("renders the study workspace for the enclosing approval-gated route", () => {
+  beforeEach(() => {
+    session.user = null;
+    session.isLoading = false;
+    replace.mockReset();
+  });
+
+  it("feeds the viewer's rung to the tier interface, never the public overview", () => {
+    // /home resolves the session's rung and lands on the exact tier interface
+    // (the interface itself is pinned in tests/features/tier-home-gate.test.tsx).
+    session.user = { email: "student@example.com" }; // no plan → member
     render(<HomePage />);
-    expect(screen.getByTestId("member-home")).toBeInTheDocument();
+    expect(replace).toHaveBeenCalledWith("/home/member");
     expect(screen.queryByTestId("public-home")).toBeNull();
   });
 });

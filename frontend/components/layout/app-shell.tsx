@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen, Atom, Bell, Lock } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { hasLevel } from "@/lib/access-level";
+import { sectionById } from "@/lib/sections";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { MobileQuickNav } from "./mobile-quick-nav";
@@ -25,6 +27,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const pathname = usePathname();
   const isChatRoom = pathname === "/chat" || pathname.startsWith("/chat/");
   const { user } = useSession();
+  // PUBLIC CHROME (owner request 2026-10-23): for public/visitor pages the
+  // shell is header + body + footer ONLY — the search bar and the quick-links
+  // strip (Class 11 / Labs / Quiz …) start at the Member rung.
+  const memberUp = hasLevel(user, "member");
+  // THE PLAN (plan.md §3 row "Search"): the global search input opens at the
+  // Search section's rung — the same tier the public /plans matrix shows.
+  const searchUnlocked = hasLevel(user, sectionById("search")?.minTier ?? "member");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
@@ -101,9 +110,11 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
           </div>
 
-          <div className="col-span-2 row-start-2 flex min-w-0 justify-center px-1 md:col-span-1 md:col-start-2 md:row-start-1 md:px-4">
-            <GlobalSearch />
-          </div>
+          {searchUnlocked && (
+            <div className="col-span-2 row-start-2 flex min-w-0 justify-center px-1 md:col-span-1 md:col-start-2 md:row-start-1 md:px-4">
+              <GlobalSearch />
+            </div>
+          )}
 
           <div className="col-start-2 row-start-1 flex items-center justify-end gap-1.5 shrink-0 md:col-start-3">
 
@@ -144,7 +155,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Suspense>
           </div>
         </div>
-        <MobileQuickNav />
+        {memberUp && <MobileQuickNav />}
       </header>
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}
@@ -196,8 +207,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
         </main>
       </div>
 
-      {/* Site footer */}
-      <Footer />
+      {/* Site footer (tier-aware directory) */}
+      <Footer user={user} />
 
       {/* Back navigation */}
       <BackButton />

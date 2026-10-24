@@ -2,6 +2,12 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
+import {
+  isR2StorageActive,
+  r2Upload,
+  looksLikeSupabaseStorageLimit,
+  supabaseStorageHealth,
+} from "../storage/r2";
 
 const router = Router();
 
@@ -40,6 +46,23 @@ async function requireTeacher(req: Request, res: Response) {
 
   return { user, profile };
 }
+
+/**
+ * Storage health: report Supabase usage so we can see "about to run out"
+ * BEFORE an upload fails. Read-only, returns sizes only. R2 overflow state
+ * is included so the dashboard can say "ready to catch overflow" or
+ * "not configured yet".
+ */
+router.get("/health", async (req: Request, res: Response) => {
+  const auth = await requireUser(req, res);
+  if (!auth) return;
+
+  const supabase = await supabaseStorageHealth();
+  res.json({
+    primary: { provider: "supabase", ...supabase },
+    overflow: { provider: "r2", configured: isR2StorageActive() },
+  });
+});
 
 // No multer/busboy available (no new deps), so uploads arrive as base64 JSON.
 const MAX_BYTES = 10 * 1024 * 1024; // 10 MB decoded cap (mirrors original multipart limit)
@@ -116,6 +139,31 @@ router.post("/upload", async (req: Request, res: Response) => {
 
     if (error || !data) {
       console.error("storage upload failed:", error?.message);
+
+      // Overflow (owner 2026-10-24): Supabase is primary; only when its
+      // upload fails on a storage-limit/quota error does the same file go to
+      // Cloudflare R2. R2 is never used before Supabase has actually run out
+      // of room, and nothing is seeded there ahead of time.
+      if (isR2StorageActive() && looksLikeSupabaseStorageLimit(error)) {
+        try {
+          const { url } = await r2Upload(path, buffer, contentType);
+          console.info(
+            `[storage] Supabase at quota - overflowed to R2 "${path}"`,
+          );
+          res.status(201).json({
+            path,
+            publicUrl: url,
+            storedIn: "r2",
+          });
+          return;
+        } catch (r2Err) {
+          console.error(
+            "[storage] R2 overflow failed:",
+            r2Err instanceof Error ? r2Err.message : r2Err,
+          );
+        }
+      }
+
       res.status(500).json({ error: "Upload failed" });
       return;
     }

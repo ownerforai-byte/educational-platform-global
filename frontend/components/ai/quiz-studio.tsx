@@ -13,13 +13,18 @@ import {
   Zap,
   Target,
   Trophy,
+  Lightbulb,
+  Minus,
+  Save,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { toast } from "sonner";
 import { SYLLABUS } from "@/lib/syllabus";
 import { generateQuestions } from "@/lib/api/ai";
+import { saveQuizHistory } from "@/lib/api/ai-quiz-history";
 import {
   GUEST_DAILY_LIMIT,
   writeGuestCount,
@@ -320,11 +325,13 @@ function QuizScreen({
   difficulty,
   onBack,
   onRegenerate,
+  onFinishQuiz,
 }: {
   questions: GeneratedQuestion[];
   difficulty: "easy" | "intermediate" | "hard";
   onBack: () => void;
   onRegenerate: () => void;
+  onFinishQuiz: (selectedIndices: Record<number, number>) => void;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndices, setSelectedIndices] = useState<Record<number, number>>({});
@@ -347,6 +354,13 @@ function QuizScreen({
   };
 
   const goTo = (i: number) => setCurrentIndex(Math.max(0, Math.min(total - 1, i)));
+
+  const optionKey = (optIdx: number) => String.fromCharCode(65 + optIdx);
+  const optionAnalysis = (optIdx: number): string => {
+    if (!q.optionAnalysis) return q.explanation;
+    const key = optionKey(optIdx);
+    return q.optionAnalysis[key] ?? q.explanation;
+  };
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 py-6">
@@ -455,6 +469,45 @@ function QuizScreen({
               {q.explanation}
             </div>
           )}
+
+          {/* Per-option analysis (with proper why-right/why-wrong treatment) */}
+          {(showResults || selectedIndices[currentIndex] !== undefined) && q.optionAnalysis && (
+            <div className="mt-4 grid gap-2 rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-950/10 px-4 py-3">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-400">
+                <Lightbulb className="h-3.5 w-3.5 shrink-0" />
+                Each option analysed — why it is right or wrong
+              </div>
+              <div className="flex flex-col gap-2">
+                {q.options.map((opt, optIdx) => {
+                  const key = String.fromCharCode(65 + optIdx);
+                  const analysis = q.optionAnalysis?.[key] ?? null;
+                  if (!analysis) return null;
+
+                  const isCorrect = optIdx === q.correctIndex;
+                  return (
+                    <div key={optIdx} className="flex items-start gap-2 rounded-lg bg-background/60 px-3 py-2 text-xs">
+                      <span
+                        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold ${
+                          isCorrect
+                            ? "bg-emerald-500 text-white"
+                            : "bg-muted text-muted-foreground"
+                        }`}
+                      >
+                        {key}
+                      </span>
+                      <div className="flex min-w-0 flex-col gap-0.5">
+                        <span className="font-medium text-muted-foreground">{opt}</span>
+                        <span className="leading-snug text-muted-foreground">
+                          {isCorrect ? "✓ Right — " : "✗ Wrong — "}
+                          {analysis}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -495,10 +548,13 @@ function QuizScreen({
           >
             Next
           </Button>
-        ) : (
-          <Button
+        ) : (            <Button
             size="sm"
-            onClick={() => setShowResults(true)}
+            onClick={() => {
+              if (answered < total) return;
+              onFinishQuiz(selectedIndices);
+              setShowResults(true);
+            }}
             disabled={answered < total}
             className="rounded-xl bg-emerald-600 hover:bg-emerald-700"
           >
@@ -507,8 +563,7 @@ function QuizScreen({
         )}
       </div>
 
-      {/* Results */}
-      {showResults && (
+      {/* Results */}        {showResults && (
         <Card className="overflow-hidden border-emerald-200 dark:border-emerald-800">
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-500" />
           <CardContent className="pt-8 pb-6 text-center space-y-4">
@@ -533,10 +588,10 @@ function QuizScreen({
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
                 {pct >= 80
-                  ? "Excellent! You've got this subject down."
+                  ? "Excellent! You have this subject down."
                   : pct >= 50
                   ? "Good effort — review the ones you missed."
-                  : "Keep practising. You'll improve with every attempt."}
+                  : "Keep practising. You will improve with every attempt."}
               </p>
             </div>
             <Progress value={pct} className="h-3 accent-emerald-500" />
@@ -569,6 +624,9 @@ export function QuizStudio() {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [subjectSlug, setSubjectSlug] = useState<string>("");
+  const [classSlug, setClassSlug] = useState<string>("class-11-notes");
+
   const handleGenerate = async (params: {
     classSlug: string;
     subjectSlug: string;
@@ -593,6 +651,8 @@ export function QuizStudio() {
         writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
       }
       setDifficulty(params.difficulty);
+      setSubjectSlug(params.subjectSlug);
+      setClassSlug(params.classSlug);
       setPhase("quiz");
     } catch (err: unknown) {
       // api-client throws Error(message) — message carries the server's
@@ -621,6 +681,43 @@ export function QuizStudio() {
     setError(null);
   };
 
+  const handleFinishQuiz = async (
+    finalSelectedIndices: Record<number, number>
+  ) => {
+    if (questions.length === 0) return;
+    const answered = Object.keys(finalSelectedIndices).length;
+    const correct = questions.reduce(
+      (sum, q, i) =>
+        sum + (finalSelectedIndices[i] === q.correctIndex ? 1 : 0),
+      0
+    );
+    const scorePct =
+      answered > 0 ? Math.round((correct / answered) * 100) : undefined;
+    const subjectName =
+      SYLLABUS.flatMap((c) => c.subjects).find((s) => s.slug === subjectSlug)?.name ??
+      "Quiz";
+    const ok = await saveQuizHistory({
+      title: `${subjectName} — ${questions.length} questions`,
+      classSlug,
+      subjectSlug,
+      topic: questions[0]?.topic ?? undefined,
+      difficulty,
+      questions,
+      answered,
+      correct,
+      scorePct,
+    });
+    if (ok.migrated === false) {
+      toast(
+        "Your quiz result was shown, but it was not saved to your account.",
+        {
+          description: "Quiz history storage is not available in this deployment yet.",
+          icon: <Save className="h-4 w-4" />,
+        },
+      );
+    }
+  };
+
   return (
     <>
       {error && (
@@ -638,6 +735,7 @@ export function QuizStudio() {
           difficulty={difficulty}
           onBack={() => setPhase("config")}
           onRegenerate={handleRegenerate}
+          onFinishQuiz={handleFinishQuiz}
         />
       )}
     </>

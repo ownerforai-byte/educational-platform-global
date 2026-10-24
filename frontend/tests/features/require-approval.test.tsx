@@ -96,6 +96,13 @@ describe("RequireApproval — login + owner-approval wall", () => {
     expect(screen.queryByTestId("approval-lock")).toBeNull();
   });
 
+  it("lets the plans page through without an account (visible to all users)", () => {
+    pathname.value = "/plans";
+    render(<RequireApproval>{CONTENT}</RequireApproval>);
+    expect(screen.getByTestId("route-content")).toBeInTheDocument();
+    expect(screen.queryByTestId("approval-lock")).toBeNull();
+  });
+
   it("renders neither side while the session resolves — no lock flash", () => {
     session.isLoading = true;
     render(<RequireApproval>{CONTENT}</RequireApproval>);
@@ -123,9 +130,9 @@ describe("auth wall wiring", () => {
     expect(coinGate).toBeGreaterThan(authWall);
   });
 
-  it("keeps only the notice board public inside the shell", () => {
+  it("keeps only the notice board and the plans page public inside the shell", () => {
     const gate = read("features/auth/components/require-approval.tsx");
-    expect(gate).toContain('const PUBLIC_PATHS = ["/notice"] as const;');
+    expect(gate).toContain('const PUBLIC_PATHS = ["/notice", "/plans"] as const;');
     // The periodic table must NOT be on the open list.
     expect(gate).not.toContain('"/periodic-table"');
   });

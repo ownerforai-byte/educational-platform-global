@@ -1,3 +1,5 @@
+import type { AccessLevel } from "@/lib/access-level";
+
 export interface FilterCharacteristic {
   title: string;
   detail: string;
@@ -56,6 +58,30 @@ export interface PeriodicElement {
 }
 
 /* ── Block (s / p / d / f) helpers ────────────────────────────────────────── */
+
+/**
+ * Filter tiers (owner direction 2026-10-23: "filters in cee periodic table
+ * … according to tier access"). The classification families open in ladder
+ * order (plan.md §2): the core nature + block study at Member, groups &
+ * families (incl. the CEE-named ones — the CEE track is Plus) at Plus, and the
+ * high-yield special groups & property filters at Pro. Owner reaches all.
+ * Locked chips stay visible — dimmed with a lock, one tap to /plans (§4).
+ */
+export const FILTER_MIN_TIERS: Record<
+  PeriodicFilterCategory["classificationType"],
+  AccessLevel
+> = {
+  nature: "member",
+  block: "member",
+  family: "plus",
+  special_group: "pro",
+  property: "pro",
+};
+
+/** The rung that first opens a classification filter. */
+export function filterMinTier(cat: PeriodicFilterCategory): AccessLevel {
+  return FILTER_MIN_TIERS[cat.classificationType];
+}
 
 /** The four block classifications, in filling order: s → p → d → f. */
 export const BLOCK_FILTER_IDS = ["s_block", "p_block", "d_block", "f_block"] as const;

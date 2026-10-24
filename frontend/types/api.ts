@@ -424,6 +424,8 @@ export interface GeneratedQuestion {
   subject: string;
   topic: string;
   explanation: string;
+  /** Per-option rationale. `A`..`D`, same order as `options`. Absent fields fall back to the shared `explanation`. */
+  optionAnalysis?: Record<string, string>;
 }
 
 export interface GenerateQuestionsRequest {

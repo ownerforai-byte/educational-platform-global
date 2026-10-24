@@ -444,6 +444,71 @@ export function ConceptKnowledgeGrid({ data }: { data: ConceptData }) {
   );
 }
 
+/** Field keys that can render as their own per-topic tab panel. */
+export type RavikishanConceptField = keyof RavikishanConceptData;
+
+export type ConceptFieldPanelProps = {
+  field: RavikishanConceptField;
+  classSlug: string;
+  subjectSlug: string;
+  unitId: string;
+  topicSlug: string;
+  topicTitle?: string;
+};
+
+/**
+ * One concept "part" as its own panel — the per-topic content tabs
+ * (components/content/content-tabs.tsx) render one tab per knowledge field
+ * (owner request 2026-10-23: "create all possible tabs which can be classified
+ * in the parts and the parts will be tabs").
+ */
+export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
+  const { data, loading } = useTopicConcept(props);
+
+  if (loading)
+    return <p className="text-sm text-muted-foreground">Loading…</p>;
+  if (!data)
+    return (
+      <EmptyState
+        title="No concept data yet"
+        description={`The ${field} panel for ${
+          props.topicTitle ?? props.topicSlug
+        } will appear here once the concept JSON is seeded.`}
+      />
+    );
+
+  // `summary` is one rich string, not one of the ordered list fields.
+  if (field === "summary") {
+    const summary = data.summary?.trim();
+    return (
+      <Card className="border-primary/20 bg-gradient-to-br from-primary/5 via-background to-background">
+        <div className="px-3 py-2 flex items-center gap-2 border-b border-border/50">
+          <BookMarked className="h-3.5 w-3.5 text-primary" />
+          <span className="text-xs font-bold text-primary">Topic Summary</span>
+        </div>
+        <div className="p-3 text-sm leading-relaxed">
+          {summary ? (
+            <MathMarkdown content={summary} />
+          ) : (
+            <p className="text-xs text-muted-foreground/70 italic border border-dashed border-muted-foreground/20 rounded-md p-2.5 bg-background/30">
+              Empty — populate <code className="font-mono text-[10px] bg-muted px-1 rounded">summary</code> when adding content
+            </p>
+          )}
+        </div>
+      </Card>
+    );
+  }
+
+  const def = KNOWLEDGE_FIELDS.find((f) => f.key === field);
+  if (!def) return null;
+  return (
+    <FieldCard
+      def={def}
+      items={data[field] as string[] | McqItem[] | string | undefined}
+    />
+  );
+}
+
 export function FormulaPanel(props: Props) {
   const { data, loading } = useTopicConcept(props);
   const formulas = useMemo(() => data?.formulas ?? [], [data]);

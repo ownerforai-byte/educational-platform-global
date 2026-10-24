@@ -39,6 +39,18 @@ export const CRITICAL_ENV_VARS = [
 /** Any one of these is enough to answer AI requests. */
 export const AI_PROVIDER_KEY_VARS = ["AGNES_API_KEY"] as const;
 
+/**
+ * The Cloudflare R2 overflow layer (src/storage/r2.ts) — OPTIONAL, but all
+ * four must be present together: a partial set silently keeps the overflow
+ * disabled, so the startup report calls that out.
+ */
+export const R2_OVERFLOW_ENV_VARS = [
+  "R2_ACCOUNT_ID",
+  "R2_BUCKET",
+  "R2_ACCESS_KEY_ID",
+  "R2_SECRET_ACCESS_KEY",
+] as const;
+
 /** Numeric tuning knobs that silently disable a control when malformed. */
 const OPTIONAL_NUMBER_ENV_VARS = [
   "RATE_LIMIT_MAX_REQUESTS",
@@ -53,6 +65,10 @@ export interface StartupEnvReport {
   noAIProvider: boolean;
   /** Tuning variables present but not usable (would weaken a control). */
   malformedNumbers: string[];
+  /** All four R2 vars set — the Supabase → R2 quota-overflow backup is live. */
+  r2OverflowReady: boolean;
+  /** R2 vars set while others are missing — overflow stays off until fixed. */
+  r2Partial: string[];
 }
 
 /** Inspect the environment without side effects (safe to call from tests). */
@@ -71,6 +87,10 @@ export function inspectStartupEnv(env: NodeJS.ProcessEnv = process.env): Startup
       const value = Number(scope[name]);
       return !Number.isFinite(value) || value <= 0;
     }),
+    r2OverflowReady: R2_OVERFLOW_ENV_VARS.every((name) => has(name)),
+    r2Partial: R2_OVERFLOW_ENV_VARS.every((name) => has(name))
+      ? []
+      : R2_OVERFLOW_ENV_VARS.filter((name) => has(name)),
   };
 }
 
@@ -91,6 +111,20 @@ export function checkStartupEnv(env: NodeJS.ProcessEnv = process.env): boolean {
   if (report.noAIProvider) {
     console.warn(
       `[Config] No AI provider key set (${AI_PROVIDER_KEY_VARS.join(", ")}) — AI endpoints will fail.`,
+    );
+  }
+
+  if (report.r2OverflowReady) {
+    console.info(
+      "[Config] R2 overflow backup: ready (Supabase → Cloudflare R2 on quota).",
+    );
+  } else if (report.r2Partial.length > 0) {
+    console.warn(
+      `[Config] R2 overflow partially configured — set ALL of ${R2_OVERFLOW_ENV_VARS.join(", ")} (found only: ${report.r2Partial.join(", ")}). Overflow stays disabled.`,
+    );
+  } else {
+    console.info(
+      "[Config] R2 overflow backup: not configured — Supabase-only storage.",
     );
   }
 

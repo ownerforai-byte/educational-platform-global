@@ -1,6 +1,8 @@
 export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { getSubjectLegend } from "@/lib/legend";
+import { getUnitTopic } from "@/lib/queries";
+import { slugifySyllabusTopic } from "@/lib/syllabus";
 import { ChevronRight, Lightbulb, BookOpen, FileText, Zap, AlertCircle, BookMarked, Target, Calculator, Construction } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
@@ -168,11 +170,30 @@ export default async function LegendSubjectPage({
               {/* Syllabus Topics */}
               {unit.syllabusTopics.length > 0 && (
                 <div className="flex flex-wrap gap-2 text-xs">
-                  {unit.syllabusTopics.slice(0, 8).map((st, i) => (
-                    <span key={i} className="px-2.5 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50">
-                      {st}
-                    </span>
-                  ))}
+                  {unit.syllabusTopics.slice(0, 8).map((st, i) => {
+                    // Link each syllabus chip to its per-topic Concepts · Legends &
+                    // Facts page when the slug resolves (same gate the page uses),
+                    // otherwise keep it as a plain label.
+                    const entry = getUnitTopic(
+                      classSlug,
+                      subjectSlug,
+                      unit.unitId,
+                      slugifySyllabusTopic(st),
+                    );
+                    return entry ? (
+                      <Link
+                        key={i}
+                        href={`/legend/${classSlug}/${subjectSlug}/${unit.unitId}/${entry.topic.slug}`}
+                        className="px-2.5 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50 hover:border-primary hover:text-primary"
+                      >
+                        {st}
+                      </Link>
+                    ) : (
+                      <span key={i} className="px-2.5 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50">
+                        {st}
+                      </span>
+                    );
+                  })}
                   {unit.syllabusTopics.length > 8 && (
                     <span className="px-2.5 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50">
                       +{unit.syllabusTopics.length - 8} more

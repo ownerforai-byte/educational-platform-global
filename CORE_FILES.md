@@ -39,6 +39,9 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
 | `frontend/components/layout/app-shell.tsx` | Main UI layout container and responsive navigation shell. |
 | `frontend/lib/note-routes.ts` | Canonical routing logic for notes, mapping topics and legacy paths to current URLs. |
+| `frontend/lib/access-level.ts` | **Access ladder** (`visitor → member → plus → pro → owner`): rung resolution, rank comparisons, and the hardcoded `TIER_HOME_PATHS` map (`tierHomePathFor`) that every login flow uses to land the viewer on their own tier interface. |
+| `frontend/components/home/tier-home-router.tsx` | **Instant tier router** (root `/`): resolves the session's rung on first paint and replaces the view with the viewer's exact tier page — visitors, and only visitors, see `HomePublic`. |
+| `frontend/components/home/tier-interfaces.tsx` | **Hardcoded tier interfaces** (`MemberHome`, `PlusHome`, `ProHome`, `OwnerHome`) — one shell + per-rung spotlights, gated rails and section rails; rendered by `/home/member|plus|pro|owner`. |
 | `frontend/app/auth/callback/page.tsx` | OAuth callback: exchanges provider code, sets app session cookies, drops supabase-js local records. |
 | `frontend/providers/auth-provider.tsx` | Client session state, silent token renewal, and instant logout provider. |
 | `frontend/features/auth/components/require-approval.tsx` | Global login and owner-approval route wall for `(app)` routes. |

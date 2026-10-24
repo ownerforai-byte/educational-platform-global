@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
+import { tierWelcomePathFor } from "@/lib/access-level";
 
 export function LoginForm() {
   const router = useRouter();
@@ -30,9 +31,13 @@ export function LoginForm() {
 
     if (result.ok) {
       refresh();
-      // Honor ?next= (e.g. /login?next=/owner) but never allow off-site redirects.
+      // Honor ?next= (e.g. /login?next=/owner) but never allow off-site
+      // redirects. Without ?next= the viewer lands on their own tier WELCOME
+      // page first (2026-10-23: "opening direct welcome page after
+      // getting/knowing the tier access then after clicking go - home page
+      // appears").
       const next = searchParams.get("next");
-      const target = next && next.startsWith("/") && !next.startsWith("//") ? next : "/home";
+      const target = next && next.startsWith("/") && !next.startsWith("//") ? next : tierWelcomePathFor(result.user);
       router.push(target);
     } else if (result.code === "PENDING_APPROVAL" && result.statusToken) {
       // Waiting for approval → MUST land on the pending-status screen, not

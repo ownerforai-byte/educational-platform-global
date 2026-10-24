@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
+import { tierWelcomePathFor } from "@/lib/access-level";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
 
@@ -55,7 +56,9 @@ export function SignupForm() {
       setMessage(result.message);
     } else if (result.ok) {
       refresh();
-      router.push("/home");
+      // Fresh accounts land on their own tier WELCOME page first (2026-10-23) —
+      // its Go button opens the tier home with all study materials.
+      router.push(tierWelcomePathFor(result.user));
     } else {
       setError(result.error);
     }
