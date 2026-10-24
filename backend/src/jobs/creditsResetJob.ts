@@ -17,6 +17,7 @@ import cron from "node-cron";
  */
 
 let started = false;
+let scheduledTask: any = null;
 
 /** Reset every regular profile whose watermark is older than today. */
 export async function runDailyCreditsReset(now: Date = new Date()): Promise<number> {
@@ -103,7 +104,7 @@ export function startCreditsResetJob(): void {
 
   // 12:00 AM every day — "0 0 * * *". Render runs UTC; midnight UTC is the
   // documented reset time (todayUtc() matches it exactly).
-  cron.schedule("0 0 * * *", async () => {
+  scheduledTask = cron.schedule("0 0 * * *", async () => {
     try {
       await runDailyCreditsReset();
     } catch (err) {
@@ -112,4 +113,12 @@ export function startCreditsResetJob(): void {
   });
 
   console.info("[credits-cron] scheduled daily reset at 12:00 AM (server time)");
+}
+
+export function stopCreditsResetJob(): void {
+  if (scheduledTask) {
+    scheduledTask.stop();
+    scheduledTask = null;
+    started = false;
+  }
 }

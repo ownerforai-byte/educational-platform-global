@@ -150,7 +150,12 @@ export function requireCredit(
       res.on("finish", () => {
         if (res.statusCode >= 500) {
           refundCredits(userId, actualCost, `Refund: ${feature} failed (HTTP ${res.statusCode})`).catch(
-            () => {},
+            (refundErr) => {
+              console.error(
+                `[CreditRefund] CRITICAL: Failed to refund ${actualCost} credits to user ${userId} after ${feature} failed (HTTP ${res.statusCode}):`,
+                refundErr,
+              );
+            },
           );
         }
       });

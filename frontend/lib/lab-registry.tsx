@@ -1,3 +1,4 @@
+export { LAB_METADATA_LIST, type LabMetadata } from "./lab-metadata";
 /**
  * Lab Registry — Central mapping of lab IDs to component implementations
  * This is the single source of truth for wiring labs between pages and components

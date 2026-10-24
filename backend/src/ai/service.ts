@@ -35,7 +35,7 @@ export const MAX_OUTPUT_TOKENS = Number(process.env.AI_MAX_OUTPUT_TOKENS) || 163
  */
 export const REPLY_TEMPERATURE = Number(process.env.AI_TEMPERATURE) || 0.7;
 
-export type SupportedProvider = "internal" | "agnes" | "groq";
+export type SupportedProvider = "internal" | "agnes" | "groq" | "cloudflare";
  
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -773,6 +773,118 @@ class GroqProvider implements AIProvider {
  * Reject when `promise` does not settle within `ms` — one link of the
  * sequential provider chain must not eat the whole chain budget.
  */
+/**
+ * Cloudflare Workers AI provider (OpenAI-compatible REST at
+ * /client/v4/accounts/{account}/ai/v1/chat/completions). Reuses the
+ * Cloudflare account the R2 overflow layer already uses, so the key is
+ * the account-scoped cfut_ token and the account id rides R2_ACCOUNT_ID
+ * (or CF_ACCOUNT_ID to override). Streams OpenAI-style SSE chunks,
+ * reusing the shared sseEvents reader; web search delegates to the
+ * internal engine, mirroring the GroqProvider contract.
+ */
+class CloudflareProvider implements AIProvider {
+  name = "cloudflare";
+  private apiUrl: string;
+  private model: string;
+  private apiKey: string;
+  private timeoutMs: number;
+  private lastFinishReason = "";
+
+  getLastFinishReason(): string {
+    return this.lastFinishReason;
+  }
+
+  constructor(apiKey: string) {
+    this.apiKey = apiKey;
+    this.model = process.env.CF_MODEL || "@cf/openai/gpt-oss-20b";
+    const account = (
+      process.env.CF_ACCOUNT_ID || process.env.R2_ACCOUNT_ID || ""
+    ).trim();
+    this.apiUrl =
+      process.env.CF_AI_URL ||
+      `https://api.cloudflare.com/client/v4/accounts/${account}/ai/v1/chat/completions`;
+    this.timeoutMs = Number(process.env.CF_TIMEOUT_MS || 240000);
+  }
+
+  private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const rest = messages.filter((m) => m.role !== "system");
+    return systemPrompt ? [{ role: "system", content: systemPrompt }, ...rest] : rest;
+  }
+
+  private requestPayload(messages: AIChatMessage[], stream: boolean) {
+    return JSON.stringify({
+      model: this.model,
+      messages: messages.map((m) => ({
+        role: m.role,
+        content: toOpenAIContent(m.content, m.images),
+      })),
+      max_tokens: MAX_OUTPUT_TOKENS,
+      temperature: REPLY_TEMPERATURE,
+      stream,
+    });
+  }
+
+  private headers() {
+    return {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${this.apiKey}`,
+    };
+  }
+
+  async chat(messages: AIChatMessage[]): Promise<string> {
+    if (!this.apiKey) throw new Error("Missing Cloudflare API key");
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: this.headers(),
+      body: this.requestPayload(this.prepareMessages(messages), false),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Cloudflare error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    const data = await res.json();
+    this.lastFinishReason = String(data?.choices?.[0]?.finish_reason ?? "");
+    const text = data?.choices?.[0]?.message?.content;
+    if (!text || !text.trim()) throw new Error("Empty Cloudflare response");
+    return text;
+  }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing Cloudflare API key");
+    this.lastFinishReason = "";
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: this.headers(),
+      body: this.requestPayload(this.prepareMessages(messages), true),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Cloudflare stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    for await (const event of sseEvents(res)) {
+      const finish = event?.choices?.[0]?.finish_reason;
+      if (finish) this.lastFinishReason = String(finish);
+      const chunk = event?.choices?.[0]?.delta?.content;
+      if (typeof chunk === "string" && chunk) yield chunk;
+    }
+  }
+
+  async search(query: string): Promise<AISearchResponse> {
+    if (!this.apiKey) throw new Error("Missing Cloudflare API key");
+    // Workers AI has no web search of its own — delegate to the internal
+    // engine, mirroring the GroqProvider contract.
+    const internal = new InternalProvider();
+    return internal.search(query);
+  }
+}
+
 function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
   return Promise.race([
     promise,
@@ -862,6 +974,9 @@ export class AIService {
 
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
     if (groqKey) this.providers.set("groq", new GroqProvider(groqKey));
+    const cfKey = process.env.CF_AI_KEY || process.env.CLOUDFLARE_API_KEY;
+    if (cfKey && this.hasCfAccount())
+      this.providers.set("cloudflare", new CloudflareProvider(cfKey));
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
@@ -869,7 +984,20 @@ export class AIService {
       this.defaultProvider = "agnes";
     } else if (groqKey) {
       this.defaultProvider = "groq";
+    } else if (cfKey && this.hasCfAccount()) {
+      this.defaultProvider = "cloudflare";
     }
+  }
+
+  /**
+   * Cloudflare's REST path needs an account id; it defaults to the R2
+   * account so one account drives both layers. Without either, the
+   * provider is skipped instead of building a bare URL.
+   */
+  private hasCfAccount(): boolean {
+    return Boolean(
+      (process.env.CF_ACCOUNT_ID || process.env.R2_ACCOUNT_ID || "").trim()
+    );
   }
 
   getProviders(): string[] {

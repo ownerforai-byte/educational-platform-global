@@ -138,6 +138,8 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
   entry.count += 1;
 
   if (entry.count > limit.max) {
+    const retryAfterSec = Math.max(1, Math.ceil((entry.reset - now) / 1000));
+    res.setHeader("Retry-After", String(retryAfterSec));
     res.status(429).json({ error: "Too many requests" });
     return;
   }

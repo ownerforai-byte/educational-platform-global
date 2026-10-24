@@ -106,12 +106,21 @@ export async function loadProfilePlan(
   }
 }
 
-export const OWNER_EMAILS = new Set([
+const DEFAULT_OWNER_EMAILS = [
   "harindarsah98172@gmail.com",
   "yashsah231@gmail.com",
   "sahrocky81@gmail.com",
   "ravikisan1814@gmail.com",
   "planephoto88@gmail.com",
+];
+
+const envOwnerEmails = process.env.OWNER_EMAILS
+  ? process.env.OWNER_EMAILS.split(",").map((e) => e.trim().toLowerCase()).filter(Boolean)
+  : [];
+
+export const OWNER_EMAILS = new Set<string>([
+  ...DEFAULT_OWNER_EMAILS,
+  ...envOwnerEmails,
 ]);
 
 export function isOwnerEmail(email?: string | null): boolean {

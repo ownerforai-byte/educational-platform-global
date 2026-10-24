@@ -16,7 +16,7 @@
  * imports just the types from ./site-index-types.
  */
 
-import { LAB_REGISTRY } from "./lab-registry";
+import { LAB_METADATA_LIST } from "./lab-metadata";
 import { ALL_GRAPHS, GRAPH_SUBJECTS, type GraphSubject } from "./graphs";
 import { PRO_SECTIONS } from "@/features/knowledge/pro";
 import { KNOWLEDGE_KINDS } from "@/features/knowledge/types";
@@ -91,7 +91,7 @@ const LAB_GROUP_META: Record<string, { id: string; name: string; opening: string
   },
 };
 
-function labEntry(lab: (typeof LAB_REGISTRY)[number]): SiteIndexEntry {
+function labEntry(lab: (typeof LAB_METADATA_LIST)[number]): SiteIndexEntry {
   return {
     name: lab.title,
     opening: oneLine(lab.description),
@@ -274,7 +274,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
   /* 3. Labs — split by what the page actually is. */
   for (const kind of ["3d", "theory", "calculator"] as const) {
     const meta = LAB_GROUP_META[kind];
-    const labs = LAB_REGISTRY.filter((l) => l.type === kind);
+    const labs = LAB_METADATA_LIST.filter((l) => l.type === kind);
     if (labs.length === 0) continue;
     groups.push({
       id: meta.id,

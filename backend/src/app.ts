@@ -119,10 +119,10 @@ export function createApp(): express.Express {
   // The vector academic-figure writer (every labelled part hoverable) shares
   // the same every-user boundary.
   app.use("/api/ai/figure", aiFigureRoutes);
-  app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
   app.use("/api/ai/generate-questions", aiGenerateRoutes);
   app.use("/api/ai/enhance", aiEnhanceRoutes);
+  app.use("/api/ai", aiRoutes);
   app.use("/api/ai-quiz-history", aiQuizHistoryRoutes);
   app.use("/api/chat-history", chatHistoryRoutes);
   // Public runtime flags (coin gate on/off) — no auth: every AI surface needs

@@ -27,18 +27,30 @@ const API_BASE =
 
 export function getStoredToken(): string | null {
   if (typeof window === "undefined") return null;
-  return localStorage.getItem("sb-access-token") || getBearerCookie();
+  try {
+    return localStorage.getItem("sb-access-token") || getBearerCookie();
+  } catch {
+    return getBearerCookie();
+  }
 }
 
 export function setStoredToken(token: string): void {
   if (typeof window !== "undefined") {
-    localStorage.setItem("sb-access-token", token);
+    try {
+      localStorage.setItem("sb-access-token", token);
+    } catch {
+      // Ignore storage restrictions (e.g. private browsing mode)
+    }
   }
 }
 
 export function clearStoredToken(): void {
   if (typeof window !== "undefined") {
-    localStorage.removeItem("sb-access-token");
+    try {
+      localStorage.removeItem("sb-access-token");
+    } catch {
+      // Ignore storage restrictions
+    }
   }
 }
 

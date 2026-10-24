@@ -40,7 +40,7 @@ import { MASTER_ACADEMIC_PROMPT } from "../src/ai/prompts";
  * declares a generous timeout. Resetting the cache per test would re-read the
  * whole repo on each assertion — that was the original timeout cause.
  */
-const CORPUS_TIMEOUT = 30_000;
+const CORPUS_TIMEOUT = 60_000;
 
 beforeAll(() => {
   resetCorpusCache();

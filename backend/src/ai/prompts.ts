@@ -100,7 +100,6 @@ const SITE_TIMEOUT_MS = Number(process.env.AI_SEARCH_TIMEOUT_MS) || 9000;
  */
 export const MASTER_ACADEMIC_PROMPT = [
   PROFESSOR_STYLE_RULES,
-  DEPTH_REGULATION_RULES,
   MASTER_ACADEMIC_RULES,
   DEEP_ANSWER_RULES,
   ARTIFACT_RULES,
@@ -126,7 +125,7 @@ export async function buildProfessorContext(
   lastUserMessage: string,
   conversationTail = "",
 ): Promise<string> {
-  const parts: string[] = [MASTER_ACADEMIC_PROMPT];
+  const parts: string[] = [MASTER_ACADEMIC_PROMPT, DEPTH_REGULATION_RULES];
   const question = lastUserMessage.trim();
   const inquiryMode = classifyInquiryMode(question);
   parts.push(depthDirectiveForMode(inquiryMode));
