@@ -4,143 +4,185 @@
   "topicSlug": "biodiversity-levels",
   "topicTitle": "Levels of Biodiversity",
   "relevance": 100,
+  "visualType": "biodiversity-levels",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Three nested circles: genetic diversity inside species diversity inside ecosystem diversity."
+    }
+  },
   "notes": [
-    "**Levels of Biodiversity:** This topic covers the fundamental concepts of levels of biodiversity in the biology curriculum.",
-    "Understanding levels of biodiversity is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to levels of biodiversity should be memorized and practiced regularly."
+    "Biodiversity is variety of life at three nested levels. Genetic diversity is the variety of alleles inside a species. Species diversity is the variety of species in a place. Ecosystem diversity is the variety of habitats, communities and ecological processes.",
+    "Genetic diversity is the raw material of adaptation. A crop variety or a wild population with many alleles is more likely to survive a new disease or a hotter year. A population bred from a few founders is fragile.",
+    "Species diversity has two parts. Richness is how many species are present. Evenness is whether individuals are spread across those species or piled into one or two. A forest of 20 tree species can still be dominated by a single species.",
+    "Ecosystem diversity in Nepal runs from Terai sal forest and wetlands, through mid-hill broadleaf forest, to alpine meadows and nival rock. Each habitat holds a different set of species and a different set of services such as water storage and soil holding.",
+    "The levels are nested, not alternatives. Losing a habitat (ecosystem level) removes the species that lived there, and losing those populations removes the alleles they carried.",
+    "Conserving only one famous species misses the other two levels. A park that keeps rhinoceros habitat also keeps the grasses, the soil microbes and the genetic variety inside the rhino population."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in levels of biodiversity.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
-  ],
-  "practice": [
-    "Solve at least 5 problems on levels of biodiversity from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
-  ],
-  "universalFacts": [
-    "This topic is a cornerstone of the biology curriculum and appears consistently in examinations.",
-    "Understanding levels of biodiversity builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of levels of biodiversity span engineering, physics, economics, and computer science."
-  ],
-  "animation3D": "biodiversity-conservation-12",
-  "motionGraphics": "biodiversity-conservation-12",
-  "examples": [
-    "Example 1: Real-world application of Levels of Biodiversity",
-    "Example 2: Practical demonstration of Levels of Biodiversity concepts",
-    "Example 4: Diagram-based question on Levels of Biodiversity",
-    "Example 5: Application in daily life involving Levels of Biodiversity"
-  ],
-  "practiceQuestions": [
-    "Q1. Define and explain Levels of Biodiversity with suitable example.",
-    "Q2. Solve problems related to Levels of Biodiversity.",
-    "Q3. Differentiate between various aspects of Levels of Biodiversity.",
-    "Q4. Derive the key formula related to Levels of Biodiversity.",
-    "Q5. What are the applications of Levels of Biodiversity?"
-  ],
-  "formulas": [
-    "Key Formula 2: Mathematical expression of Levels of Biodiversity",
-    "Key Formula 3: Application formula for Levels of Biodiversity",
-    "Key Formula 4: Derivation result for Levels of Biodiversity",
-    "Key Formula 5: Important relation in Levels of Biodiversity"
+    "Species richness is not the whole of species diversity. Evenness matters. A count of species names ignores whether one species makes up almost every individual.",
+    "Genetic diversity is not the number of species. It is variation inside one species.",
+    "A monoculture field can have high yield and very low genetic diversity. Productivity and diversity are not the same measurement.",
+    "Ecosystem diversity is not a list of animals. It is the variety of whole habitats and the processes that run in them."
   ],
   "keyPoints": [
-    "Key Point 2: Essential theorem or principle related to Levels of Biodiversity",
-    "Key Point 3: Important condition or constraint for Levels of Biodiversity",
-    "Key Point 4: Common applications of Levels of Biodiversity",
-    "Key Point 5: Connection to other topics in Science"
-  ],
-  "summary": "Levels of Biodiversity is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Levels of Biodiversity applies",
-    "Note 2: Levels of Biodiversity connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Levels of Biodiversity",
-    "Note 4: Remember the units and dimensions involved in Levels of Biodiversity",
-    "Note 5: Levels of Biodiversity frequently appears in examination questions"
+    "Three levels: genetic, species, ecosystem.",
+    "Genetic diversity is allele variation within a species.",
+    "Species diversity combines richness and evenness.",
+    "Ecosystem diversity is the variety of habitats and processes.",
+    "The levels are nested: habitats hold species, species hold alleles."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Levels of Biodiversity",
-    "Statement 2: Theorem related to Levels of Biodiversity",
-    "Statement 3: Condition for Levels of Biodiversity to be valid",
-    "Statement 4: Principle governing Levels of Biodiversity",
-    "Statement 5: Corollary or consequence of Levels of Biodiversity"
+    "Genetic diversity lets populations adapt. Species diversity and ecosystem diversity keep functions such as pollination, decomposition and water regulation.",
+    "Evenness and richness together describe species diversity.",
+    "Loss at the ecosystem level pulls down the two levels inside it."
   ],
-  "importantNotes": [
-    "Note 1: Levels of Biodiversity is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Levels of Biodiversity",
-    "Note 3: Levels of Biodiversity has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Levels of Biodiversity",
-    "Note 5: Cross-check your answers using alternative methods for Levels of Biodiversity"
+  "examples": [
+    "Rice landraces in Nepal carry different alleles for flood tolerance and taste. That is genetic diversity inside one species.",
+    "A mid-hill forest with many tree species in similar numbers is richer and more even than a plantation of one species.",
+    "Terai grassland, a phewa-type lake, and an alpine meadow are three ecosystems, not three species."
   ],
-  "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Levels of Biodiversity formula",
-    "Trick 2: Elimination technique for Levels of Biodiversity MCQs",
-    "Trick 3: Dimensional analysis shortcut for Levels of Biodiversity",
-    "Trick 4: Memory aid for Levels of Biodiversity formulas",
-    "Trick 5: Time-saving approach for Levels of Biodiversity problems"
+  "universalFacts": [
+    "A species can be widespread and still genetically narrow if it passed through a population bottleneck.",
+    "Ecosystem services used by people, including fodder, fish and drinking water, depend on diversity at more than one level."
+  ],
+  "formulas": [
+    "Species diversity is described by richness (number of species) and evenness (how equal their abundances are).",
+    "Nested order: alleles ⊂ populations ⊂ species ⊂ ecosystems."
+  ],
+  "practice": [
+    "Give one Nepal example of each level.",
+    "Explain why a single-species plantation is low diversity even if it is tall and green.",
+    "Say what happens to genetic diversity when a habitat is cleared."
+  ],
+  "practiceQuestions": [
+    "How do richness and evenness differ?",
+    "Why is genetic diversity a conservation target inside a national park, not only the species list?",
+    "A lake, the forest around it, and the rice fields below are lost together when a dam floods the valley. Which level is lost first, and what does that remove?"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Levels of Biodiversity",
-    "Exam Tip 2: Practice previous year questions on Levels of Biodiversity",
-    "Exam Tip 4: Learn the derivations for Levels of Biodiversity thoroughly",
-    "Exam Tip 5: Review common mistakes related to Levels of Biodiversity"
+    "Define all three levels and give one example of each. Definitions without examples lose credit.",
+    "Mention richness and evenness when the question says species diversity."
+  ],
+  "examShortTricks": [
+    "G-S-E: genes, species, ecosystems. Inside, inside, landscape.",
+    "Richness = how many. Evenness = how balanced."
+  ],
+  "specialNotes": [
+    "Do not use 'biodiversity' as a synonym of 'number of animals'. Plants, fungi and microbes belong in the same three levels.",
+    "A labelled sketch of three nested circles matches the static figure for this topic."
+  ],
+  "importantNotes": [
+    "Pair each level with what is actually counted: alleles, species abundances, or habitat types.",
+    "State the nesting so a loss question can be answered in one direction: ecosystem loss removes species and genes."
   ],
   "mcs": [
     {
-      "question": "The primary application of Levels of Biodiversity is in:",
+      "question": "Variation in alleles within a single species is",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "Ecosystem diversity",
+        "Genetic diversity",
+        "Evenness only",
+        "A hotspot"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "For Levels of Biodiversity, which condition is necessary?",
+      "question": "Species richness means",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "How equal the abundances are",
+        "How many species are present",
+        "How many national parks exist",
+        "How large one population is"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "What is the unit/dimension used in Levels of Biodiversity?",
+      "question": "A plantation of one tree species is low in",
       "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
+        "Sunlight",
+        "Species diversity",
+        "Soil minerals only",
+        "Latitude"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "Which statement about Levels of Biodiversity is FALSE?",
+      "question": "The three levels of biodiversity are",
       "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "Genus, family, order",
+        "Genetic, species and ecosystem",
+        "Producer, consumer, decomposer",
+        "CR, EN and VU"
       ],
-      "answer": "C"
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Levels of Biodiversity",
-    "Concept 2: Key theorem or principle in Levels of Biodiversity",
-    "Concept 3: Important application area of Levels of Biodiversity",
-    "Concept 4: Fundamental relationship in Levels of Biodiversity",
-    "Concept 5: Connection between Levels of Biodiversity and other topics"
+    "Genetic diversity",
+    "Species richness",
+    "Species evenness",
+    "Ecosystem diversity",
+    "Nested levels"
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Levels of Biodiversity",
-    "Task 2: Derive the main formula for Levels of Biodiversity",
-    "Task 3: Create a concept map for Levels of Biodiversity",
-    "Task 4: Practice previous year exam questions on Levels of Biodiversity",
-    "Task 5: Explain Levels of Biodiversity to a peer or study group"
+    "Sketch three nested circles and label genetic, species and ecosystem.",
+    "Give a Nepal example of each level in one table."
+  ],
+  "exercises": [
+    {
+      "question": "A forest fragment keeps 15 tree species, but 90 percent of the stems belong to one of them. A second fragment keeps 8 tree species in nearly equal numbers. Which is richer, and which is more even?",
+      "steps": [
+        "Richness is the count of species.",
+        "The first fragment has 15 species, the second has 8, so the first is richer.",
+        "Evenness is high when abundances are similar.",
+        "The second fragment, with nearly equal numbers, is more even."
+      ],
+      "answer": "The first fragment is richer. The second fragment is more even."
+    }
+  ],
+  "summary": "Biodiversity is measured at three nested levels: genetic diversity inside species, species diversity (richness plus evenness) in a community, and ecosystem diversity across habitats. Losing a habitat removes the species and the alleles inside it. Nepal's range from Terai wetlands to alpine meadows is ecosystem diversity that holds the other two levels.",
+  "mcqs": [
+    {
+      "question": "Variation in alleles within a single species is",
+      "options": [
+        "Ecosystem diversity",
+        "Genetic diversity",
+        "Evenness only",
+        "A hotspot"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Species richness means",
+      "options": [
+        "How equal the abundances are",
+        "How many species are present",
+        "How many national parks exist",
+        "How large one population is"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A plantation of one tree species is low in",
+      "options": [
+        "Sunlight",
+        "Species diversity",
+        "Soil minerals only",
+        "Latitude"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The three levels of biodiversity are",
+      "options": [
+        "Genus, family, order",
+        "Genetic, species and ecosystem",
+        "Producer, consumer, decomposer",
+        "CR, EN and VU"
+      ],
+      "answer": "B"
+    }
   ]
 }

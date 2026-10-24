@@ -7,50 +7,176 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Red Data Book and IUCN categories — Biodiversity and Conservation, Biology (class-12-notes).",
-    "**Tested.** define it · list: red data book, iucn categories · one worked example · one misconception each.",
-    "**IUCN categories.** one-line definition + one-line exam use."
+    "The Red Data Book is the IUCN record of species at risk. For each species it states the category of extinction risk, the threats, and the evidence those judgements rest on. National red lists apply the same idea inside one country.",
+    "The main IUCN categories, from highest risk to lowest, are Extinct (EX), Extinct in the Wild (EW), Critically Endangered (CR), Endangered (EN), Vulnerable (VU), Near Threatened (NT) and Least Concern (LC). Data Deficient means the evidence is too poor to judge.",
+    "A species is placed by quantitative tests: how fast the population is falling, how many mature individuals remain, and how small or fragmented its range is. The labels are reassessed, so a species can move between categories.",
+    "Critically Endangered is the last step before extinction in the wild. Endangered is the next lower risk, then Vulnerable. Treating VU and CR as the same label hides a large difference in urgency.",
+    "Nepal's flagship threatened animals include the greater one-horned rhinoceros, the Bengal tiger, the snow leopard and the red panda. Their categories depend on the latest assessment. Habitat loss and poaching are the usual threats named in the accounts.",
+    "A red-list category is a scientific judgement. Legal protection (a hunting ban, a park, CITES) is a separate decision that often uses that judgement. Listing alone does not guard a nest or a forest."
   ],
   "confusion": [
-    "❌ treat \"Red Data Book\" as one blob → ✅ split into: red data book, iucn categories.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: red data book, iucn categories (within Biodiversity and Conservation).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: red data book, iucn categories.",
-    "one worked example for \"Red Data Book and IUCN categories\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Red Data Book and IUCN categories\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Red Data Book and IUCN categories\" with one example.",
-    "compare \"Red Data Book\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Red Data Book and IUCN categories\" and verify the answer is plausible."
+    "Extinct in the Wild is not the same as Extinct. EW means individuals survive only in captivity or cultivation. EX means none survive anywhere.",
+    "Vulnerable is not a mild word for Critically Endangered. CR is the higher risk.",
+    "Data Deficient does not mean safe. It means we cannot tell. A poorly studied species may be in serious trouble.",
+    "Being in a national park does not automatically put a species in Least Concern. The list follows population evidence, not the name of a park."
   ],
   "keyPoints": [
-    "• Red Data Book",
-    "• IUCN categories"
+    "Red Data Book: IUCN's account of extinction risk and threats.",
+    "Order of risk: EX, EW, CR, EN, VU, NT, LC.",
+    "Judgements use decline, number of mature individuals, and size of the range.",
+    "CR is more urgent than EN, which is more urgent than VU.",
+    "A listing informs the law. It does not by itself protect habitat."
   ],
-  "summary": "Red Data Book and IUCN categories (Biodiversity and Conservation, Biology, class-12-notes) covers Red Data Book, IUCN categories. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "importantStatements": [
+    "The IUCN Red List is the global standard for extinction risk.",
+    "Categories are comparative: each step from CR to LC is a lower risk of extinction in the wild.",
+    "Threat accounts in the Red Data Book name the causes, so conservation effort can be aimed at those causes."
+  ],
+  "examples": [
+    "A bird that survives only in one breeding centre is a candidate for Extinct in the Wild, not for Extinct, while those birds live.",
+    "A wide-ranging species with a stable population is typically Least Concern even if people rarely see it.",
+    "Snow leopard conservation in Nepal is driven by a high-risk listing plus named threats: retaliation killing, prey loss and fragmented high-altitude habitat."
+  ],
+  "universalFacts": [
+    "The IUCN categories used in school answers are EX, EW, CR, EN, VU, NT and LC, with Data Deficient kept separate.",
+    "Red lists are revised. A species' category in an old textbook can be out of date."
+  ],
+  "formulas": [
+    "Risk order: EX > EW > CR > EN > VU > NT > LC.",
+    "Tests used: rate of decline, number of mature individuals, extent of occurrence and area of occupancy."
+  ],
+  "practice": [
+    "Write the seven categories in order from highest risk to lowest.",
+    "Explain the difference between EX and EW with one sentence each.",
+    "Give two measurements the IUCN uses besides a verbal description."
+  ],
+  "practiceQuestions": [
+    "Why is Data Deficient not a reason to treat a species as safe?",
+    "A population has fallen very fast and only a few mature adults remain. Which end of the list does that point to?",
+    "How does a Red Data Book entry differ from a law that bans hunting?"
+  ],
+  "examNotes": [
+    "Write the category initials in order and expand CR, EN and VU in words.",
+    "Use one Nepal animal and name the threat, not only the category."
+  ],
+  "examShortTricks": [
+    "EX gone, EW gone from the wild, then CR-EN-VU are the threatened trio, then NT, then LC.",
+    "Higher in the list means closer to extinction. CR is above EN."
+  ],
+  "specialNotes": [
+    "Threatened, in the strict IUCN sense, means CR, EN or VU together. NT is not inside that trio.",
+    "Do not invent a current category from memory if the question does not give it. Describe the criteria instead."
+  ],
+  "importantNotes": [
+    "Memorise the order as a single chain so the letters cannot be swapped.",
+    "Link each category answer to evidence: decline, head-count, or range."
+  ],
+  "mcs": [
+    {
+      "question": "Which category means the species survives only in captivity?",
+      "options": [
+        "EX",
+        "EW",
+        "CR",
+        "LC"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The correct order from higher risk to lower risk is",
+      "options": [
+        "LC, NT, VU, EN, CR",
+        "CR, EN, VU, NT, LC",
+        "EN, CR, VU, LC, NT",
+        "VU, CR, EN, NT, LC"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Critically Endangered, Endangered and Vulnerable together are called",
+      "options": [
+        "Extinct species",
+        "Threatened species",
+        "Data Deficient species",
+        "Invasive species"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Red Data Book is maintained by",
+      "options": [
+        "UNESCO alone",
+        "The IUCN",
+        "A single national park",
+        "The WTO"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Red Data Book",
+    "IUCN category order",
+    "Threatened trio CR EN VU",
+    "Extinct versus Extinct in the Wild",
+    "Quantitative listing criteria"
+  ],
+  "importantTasks": [
+    "Write the category chain from EX to LC and mark the threatened trio.",
+    "Distinguish a red-list assessment from a hunting ban."
+  ],
+  "exercises": [
+    {
+      "question": "Species P is gone from every wild site but 12 adults live in a breeding centre. Species Q has had no confirmed individual for 50 years. Assign EX or EW to each.",
+      "steps": [
+        "EX means no individual is known to survive anywhere.",
+        "Species Q matches EX.",
+        "EW means the species is gone from the wild but survives in captivity or cultivation.",
+        "Species P matches EW, because the breeding-centre adults are still alive."
+      ],
+      "answer": "P is Extinct in the Wild. Q is Extinct."
+    }
+  ],
+  "summary": "The IUCN Red Data Book ranks extinction risk. From Extinct and Extinct in the Wild, risk falls through Critically Endangered, Endangered and Vulnerable to Near Threatened and Least Concern. The rank uses population decline, numbers and range, and it guides protection. It does not itself save the habitat.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Red Data Book and IUCN categories\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Which category means the species survives only in captivity?",
       "options": [
-        "True",
-        "False"
+        "EX",
+        "EW",
+        "CR",
+        "LC"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "The correct order from higher risk to lower risk is",
+      "options": [
+        "LC, NT, VU, EN, CR",
+        "CR, EN, VU, NT, LC",
+        "EN, CR, VU, LC, NT",
+        "VU, CR, EN, NT, LC"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Critically Endangered, Endangered and Vulnerable together are called",
+      "options": [
+        "Extinct species",
+        "Threatened species",
+        "Data Deficient species",
+        "Invasive species"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Red Data Book is maintained by",
+      "options": [
+        "UNESCO alone",
+        "The IUCN",
+        "A single national park",
+        "The WTO"
+      ],
+      "answer": "B"
     }
   ]
 }

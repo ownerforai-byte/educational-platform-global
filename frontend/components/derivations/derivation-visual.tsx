@@ -1100,6 +1100,19 @@ export function DerivationVisual({
           </svg>
         );
 
+      case "biodiversity-levels":
+        return (
+          <svg viewBox="0 0 700 220" className="w-full h-auto select-none">
+            <circle cx="350" cy="110" r="96" fill="#14532d" fillOpacity="0.35" stroke="#4ade80" strokeWidth="2" />
+            <circle cx="350" cy="110" r="64" fill="#166534" fillOpacity="0.55" stroke="#86efac" strokeWidth="2" />
+            <circle cx="350" cy="110" r="32" fill="#22c55e" fillOpacity="0.8" stroke="#dcfce7" strokeWidth="2" />
+            <text x="350" y="114" fill="#052e16" fontSize="11" fontWeight="bold" textAnchor="middle">Genetic</text>
+            <text x="350" y="68" fill="#dcfce7" fontSize="12" fontWeight="bold" textAnchor="middle">Species</text>
+            <text x="350" y="36" fill="#86efac" fontSize="13" fontWeight="bold" textAnchor="middle">Ecosystem</text>
+            <text x="40" y="200" fill="#cbd5e1" fontSize="11">Nested levels: alleles inside a species, species inside a habitat</text>
+          </svg>
+        );
+
       case "mitosis-meiosis-stages":
         return (
           <svg viewBox="0 0 700 360" className="w-full h-auto select-none">

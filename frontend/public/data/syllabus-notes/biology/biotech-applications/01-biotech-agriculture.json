@@ -1,0 +1,188 @@
+{
+  "title": "Applications in Agriculture",
+  "unitSlug": "biotech-applications",
+  "topicSlug": "biotech-agriculture",
+  "topicTitle": "Applications in Agriculture",
+  "relevance": 100,
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "The cry gene inserted into a crop is DNA. The double helix is the static figure for that gene."
+    }
+  },
+  "notes": [
+    "Biotechnology in agriculture changes a crop or a microbe so that the farm needs fewer external chemicals or produces a more useful food. The tools are tissue culture, genetic engineering and the use of living organisms as biofertilisers and biopesticides.",
+    "Bt crops carry a gene from the bacterium Bacillus thuringiensis. The gene encodes a Cry protein. In the alkaline gut of certain insect larvae the protein becomes a toxin and makes holes in the gut wall. The same protein does not activate in the acidic human stomach in that way, which is why the crop is aimed at the insect.",
+    "RNA interference is used against nematodes in tobacco. The plant is given DNA that produces an RNA matching a vital nematode gene. When the nematode feeds, that RNA silences the nematode gene and the worm fails to develop. The crop itself is the pesticide.",
+    "Tissue culture grows whole plants from a small piece of tissue on a sterile nutrient medium. It produces many identical, disease-free plants of banana, orchid or potato in a short time. A meristem tip is often used because it is free of virus.",
+    "Biofertilisers such as Rhizobium in legume root nodules, and free-living cyanobacteria, add nitrogen without a bag of chemical fertiliser. They do not replace every mineral a crop needs, but they cut the nitrogen dose.",
+    "The risks are real and belong in the answer: a Cry toxin can select resistant insects, pollen may spread the new gene to wild relatives, and farmers can become dependent on bought seed. A refuge of non-Bt plants slows resistance."
+  ],
+  "confusion": [
+    "Bt cotton is not sprayed with the bacterium as its only protection. The plant itself makes the Cry protein because it carries the gene.",
+    "A Cry protein is not a general poison to every animal. It must be activated in a susceptible insect gut.",
+    "Tissue culture clones the parent. It does not, by itself, create a new gene.",
+    "RNA interference here is aimed at the pest's gene, not at making the plant glow or grow taller."
+  ],
+  "keyPoints": [
+    "Bt crops: cry gene from Bacillus thuringiensis, Cry protein kills susceptible insect larvae.",
+    "RNAi in tobacco: silence a nematode gene when the worm feeds.",
+    "Tissue culture: many disease-free plants from a meristem on sterile medium.",
+    "Rhizobium and cyanobacteria are biofertilisers that fix nitrogen.",
+    "Refuge crops slow the evolution of Bt-resistant insects."
+  ],
+  "importantStatements": [
+    "Genetic engineering adds a chosen gene. Tissue culture multiplies a chosen plant. They solve different problems.",
+    "The Cry toxin acts in the insect gut. It is not a fertiliser.",
+    "Resistance management is part of using a Bt crop, not an optional extra."
+  ],
+  "examples": [
+    "Bt cotton reduces bollworm damage because the larvae ingest Cry protein in the leaves and bolls.",
+    "Meristem culture of potato produces plantlets that do not carry the viruses of the old tuber.",
+    "Soybean or other legumes nodulated by Rhizobium leave nitrogen in the soil for the next crop."
+  ],
+  "universalFacts": [
+    "Bacillus thuringiensis has been known as an insect pathogen long before its gene was moved into crops.",
+    "A refuge of non-Bt plants lets susceptible insects survive and mate with resistant ones, which slows the spread of resistance."
+  ],
+  "formulas": [
+    "Bt path: cry gene in the plant → Cry protein in the tissue → activated in the alkaline insect gut → gut damage.",
+    "RNAi path: plant double-stranded RNA matching a nematode gene → gene silenced in the feeding worm."
+  ],
+  "practice": [
+    "Trace the Cry protein from the bacterial gene to the dead larva.",
+    "Explain why a meristem is chosen for virus-free potato.",
+    "Give one benefit and one risk of a Bt crop."
+  ],
+  "practiceQuestions": [
+    "How does RNA interference protect tobacco from a nematode?",
+    "Why is tissue culture not the same thing as genetic engineering?",
+    "What is a refuge crop for, in a Bt field?"
+  ],
+  "examNotes": [
+    "Write the Bt story as gene, protein, insect gut. Three links.",
+    "Mention one non-GM tool, tissue culture or Rhizobium, so the answer is not only Bt."
+  ],
+  "examShortTricks": [
+    "Bt: bacterium's gene, plant's leaf, caterpillar's gut.",
+    "Meristem tip is the virus-free bit used to clone a clean plant."
+  ],
+  "specialNotes": [
+    "Say Cry protein, not 'the plant bites the insect'. The insect eats the plant.",
+    "State the resistance risk in the same answer as the benefit."
+  ],
+  "importantNotes": [
+    "Keep Bacillus thuringiensis spelled once, then Bt is enough.",
+    "RNAi and Bt are both in the agriculture chapter and are easy to swap. Bt is a protein toxin. RNAi is gene silencing."
+  ],
+  "mcs": [
+    {
+      "question": "The cry gene used in Bt cotton comes from",
+      "options": [
+        "A nematode",
+        "Bacillus thuringiensis",
+        "Rhizobium",
+        "A virus-free meristem"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cry protein harms susceptible larvae when it",
+      "options": [
+        "Fixes nitrogen in the leaf",
+        "Is activated in the insect gut",
+        "Silences a human gene",
+        "Replaces sunlight"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Meristem culture is used mainly to",
+      "options": [
+        "Insert a cry gene",
+        "Produce many virus-free plants",
+        "Cause biomagnification",
+        "Rank IUCN categories"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A refuge of non-Bt plants is grown to",
+      "options": [
+        "Feed rhinoceros",
+        "Slow the spread of Bt-resistant insects",
+        "Replace Rhizobium",
+        "Store seeds at low temperature"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Bt and the Cry protein",
+    "RNA interference against nematodes",
+    "Meristem tissue culture",
+    "Biofertilisers",
+    "Insect resistance and refuges"
+  ],
+  "importantTasks": [
+    "Write the three-step Bt path from gene to dead larva.",
+    "Contrast Bt with RNAi in one sentence each."
+  ],
+  "exercises": [
+    {
+      "question": "A farmer says Bt cotton works because the plant sprays bacteria onto the bollworm. Correct the mechanism in steps.",
+      "steps": [
+        "The cry gene from Bacillus thuringiensis has been inserted into the cotton genome.",
+        "The plant's own cells make Cry protein in the tissues the larva eats.",
+        "In the alkaline gut of a susceptible larva the protein becomes a toxin and damages the gut.",
+        "No spraying of the live bacterium is required for that protection."
+      ],
+      "answer": "The plant produces Cry protein from an inserted bacterial gene. The larva is harmed by eating that protein, not by a spray of bacteria."
+    }
+  ],
+  "summary": "Agricultural biotechnology uses Bt genes so crops make an insect-specific Cry protein, RNA interference so a crop can silence a nematode gene, and tissue culture so clean plants can be multiplied. Rhizobium and similar microbes cut the need for nitrogen fertiliser. The benefit comes with a duty to slow pest resistance and to watch gene flow.",
+  "mcqs": [
+    {
+      "question": "The cry gene used in Bt cotton comes from",
+      "options": [
+        "A nematode",
+        "Bacillus thuringiensis",
+        "Rhizobium",
+        "A virus-free meristem"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cry protein harms susceptible larvae when it",
+      "options": [
+        "Fixes nitrogen in the leaf",
+        "Is activated in the insect gut",
+        "Silences a human gene",
+        "Replaces sunlight"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Meristem culture is used mainly to",
+      "options": [
+        "Insert a cry gene",
+        "Produce many virus-free plants",
+        "Cause biomagnification",
+        "Rank IUCN categories"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A refuge of non-Bt plants is grown to",
+      "options": [
+        "Feed rhinoceros",
+        "Slow the spread of Bt-resistant insects",
+        "Replace Rhizobium",
+        "Store seeds at low temperature"
+      ],
+      "answer": "B"
+    }
+  ]
+}

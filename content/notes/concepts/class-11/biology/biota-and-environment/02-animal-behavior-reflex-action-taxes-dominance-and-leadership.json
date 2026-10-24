@@ -7,67 +7,176 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Animal behavior: Reflex action, taxes, dominance and lead… — Biota and Environment, Biology (class-11-notes).",
-    "**Tested.** define it · list: animal behavior, reflex action, taxes, dominance · one worked example · one misconception each.",
-    "**Reflex action.** one-line definition + one-line exam use.",
-    "**Taxes.** one-line definition + one-line exam use.",
-    "**Dominance.** one-line definition + one-line exam use.",
-    "**Leadership.** one-line definition + one-line exam use."
+    "A reflex is a rapid, automatic response to a stimulus. The path is a reflex arc: receptor, sensory neuron, a coordinator in the spinal cord or brain, motor neuron, and effector. The knee-jerk arc is handled in the spinal cord, so the leg extends before the brain has finished registering the tap.",
+    "Taxes are directed movements toward or away from a stimulus. Positive phototaxis is movement toward light. Negative phototaxis is movement away from it. Chemotaxis follows a chemical, geotaxis follows gravity, and thigmotaxis follows touch.",
+    "Kinesis is a change in speed or turning rate when a stimulus changes, without a fixed direction. An animal that simply moves faster in a dry patch, and slows down in a moist patch, shows kinesis. It is not a taxis, because it is not aimed.",
+    "Innate behavior is present without being taught, as in a reflex or a taxis. Learned behavior changes with experience. Most real behavior mixes the two: the ability to learn is innate, the particular lesson is not.",
+    "Dominance is a social ranking in which some individuals get priority to food, mates or resting sites. A pecking order in birds is a linear dominance hierarchy. Leadership is the tendency of a group to follow one individual when moving or fleeing. The leader is not always the most dominant animal.",
+    "These patterns matter in the wild because they decide who feeds, who breeds and how a herd escapes a predator. A reflex protects the body immediately. A taxis places the animal in a better spot. A hierarchy reduces constant fighting inside the group."
   ],
   "confusion": [
-    "❌ treat \"Animal behavior\" as one blob → ✅ split into: animal behavior, reflex action, taxes.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: animal behavior, reflex action, taxes, dominance (within Biota and Environment).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: animal behavior, reflex action, taxes, dominance.",
-    "one worked example for \"Animal behavior: Reflex action, taxes, dominance and lead…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Animal behavior: Reflex action, taxes, dominance and lead…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Animal behavior: Reflex action, taxes, dominance and lead…\" with one example.",
-    "compare \"Animal behavior\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Animal behavior: Reflex action, taxes, dominance and lead…\" and verify the answer is plausible."
+    "A taxis is directed. A kinesis is not. Calling every movement a taxis loses the distinction.",
+    "A reflex does not require a conscious decision. The brain may be informed afterwards, but the knee-jerk does not wait for that.",
+    "The dominant animal is not automatically the leader of every movement. Dominance is about priority. Leadership is about being followed.",
+    "Negative phototaxis is not a failure to respond to light. It is an active movement away from light."
   ],
   "keyPoints": [
-    "• Animal behavior",
-    "• Reflex action",
-    "• Taxes",
-    "• Dominance",
-    "• Leadership"
+    "Reflex arc: receptor, sensory neuron, coordinator, motor neuron, effector.",
+    "Taxis: directed movement, named by the stimulus and by the sign (positive or negative).",
+    "Kinesis: non-directional change in activity.",
+    "Dominance is a ranking for priority. Leadership is being followed during movement.",
+    "The knee-jerk coordinator is the spinal cord."
   ],
-  "summary": "Animal behavior: Reflex action, taxes, dominance and lead… (Biota and Environment, Biology, class-11-notes) covers Animal behavior, Reflex action, taxes. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "A reflex is fast because the arc is short and does not depend on conscious thought.",
+    "Taxes orient an animal in a gradient. Kinesis only changes how much the animal moves.",
+    "Social rank reduces repeated fights by making the outcome of a contest predictable."
+  ],
+  "examples": [
+    "The knee-jerk: a tap on the tendon stretches a receptor, and the leg extends.",
+    "Maggots often move away from light, a negative phototaxis.",
+    "Woodlice move more in dry air and slow down in moist air, a kinesis that leaves them in the moist place."
+  ],
+  "universalFacts": [
+    "The same reflex arc parts appear in vertebrates: a sensor, an incoming nerve, a central connection, an outgoing nerve and a muscle or gland.",
+    "Pecking order is the classic name for a linear dominance hierarchy, first described in flocks of hens."
+  ],
+  "formulas": [
+    "Reflex arc order: receptor → sensory neuron → coordinator → motor neuron → effector.",
+    "Sign of a taxis: positive = toward the stimulus, negative = away from it."
+  ],
+  "practice": [
+    "List the five parts of a reflex arc in order.",
+    "Classify knee-jerk, movement toward food odour, and speeding up in bright light as reflex, taxis or kinesis.",
+    "Distinguish dominance from leadership with one example."
+  ],
+  "practiceQuestions": [
+    "Why can a knee-jerk happen before you feel the tap?",
+    "How would you tell a taxis from a kinesis in a simple experiment?",
+    "What advantage does a stable hierarchy give a group?"
+  ],
+  "examNotes": [
+    "Draw the reflex arc and label all five parts. An unlabelled list is weaker.",
+    "Give the stimulus name and the sign for any taxis you mention, for example negative phototaxis."
+  ],
+  "examShortTricks": [
+    "Taxis has a direction. Kinesis has only a speed.",
+    "Knee-jerk lives in the spinal cord, not the knee and not the thinking part of the brain."
+  ],
+  "specialNotes": [
+    "Name the stimulus in the taxis: photo, chemo, geo or thigmo.",
+    "Do not call a reflex a taxis. One is a body response through a nerve arc. The other is locomotion aimed at a stimulus."
+  ],
+  "importantNotes": [
+    "The order of the arc is the usual lost-credit point. Write it in one direction only.",
+    "Add a social example, pecking order or a moving herd, if the question mentions dominance or leadership."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Animal behavior: Reflex action, taxes, dominance and lead…\"?",
+      "question": "The knee-jerk reflex is coordinated by the",
       "options": [
-        "Animal behavior",
-        "Reflex action",
-        "Unrelated topic",
-        "None of the above"
+        "Heart",
+        "Spinal cord",
+        "Stomach",
+        "Liver"
       ],
-      "answer": "A",
-      "explanation": "Animal behavior is listed among the official sub-ideas of Animal behavior: Reflex action, taxes, dominance and lead…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Animal behavior: Reflex action, taxes, dominance and lead…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Movement directly away from light is",
       "options": [
-        "True",
-        "False"
+        "Positive phototaxis",
+        "Negative phototaxis",
+        "Kinesis",
+        "A pecking order"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Kinesis differs from taxis because kinesis",
+      "options": [
+        "Always uses the brain",
+        "Has no fixed direction",
+        "Is always learned",
+        "Requires a leader"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A pecking order is a",
+      "options": [
+        "Reflex arc",
+        "Dominance hierarchy",
+        "Type of geotaxis",
+        "Seed bank"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Reflex arc",
+    "Positive and negative taxis",
+    "Kinesis",
+    "Dominance hierarchy",
+    "Leadership in a group"
+  ],
+  "importantTasks": [
+    "Label a five-part reflex arc.",
+    "Sort four behaviours into reflex, taxis and kinesis."
+  ],
+  "exercises": [
+    {
+      "question": "Woodlice walk quickly in dry bright air and almost stop under a damp stone. Is this best called a taxis or a kinesis, and why?",
+      "steps": [
+        "A taxis would be movement aimed toward or away from a stimulus, such as walking straight to the dark.",
+        "Here the animal changes its rate of movement as conditions change.",
+        "It slows where it is damp, so it spends more time there without steering along a compass direction.",
+        "A change in speed or turning, without a set direction, is kinesis."
+      ],
+      "answer": "It is a kinesis: activity falls in the damp place, so the animal accumulates there without a directed path."
+    }
+  ],
+  "summary": "Animal behaviour at this level covers the reflex arc, directed taxes, undirected kinesis, and social dominance and leadership. Reflexes protect the body through a short nerve path. Taxes and kineses place the animal in a better environment. Rank and leadership organise the group.",
+  "mcqs": [
+    {
+      "question": "The knee-jerk reflex is coordinated by the",
+      "options": [
+        "Heart",
+        "Spinal cord",
+        "Stomach",
+        "Liver"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Movement directly away from light is",
+      "options": [
+        "Positive phototaxis",
+        "Negative phototaxis",
+        "Kinesis",
+        "A pecking order"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Kinesis differs from taxis because kinesis",
+      "options": [
+        "Always uses the brain",
+        "Has no fixed direction",
+        "Is always learned",
+        "Requires a leader"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A pecking order is a",
+      "options": [
+        "Reflex arc",
+        "Dominance hierarchy",
+        "Type of geotaxis",
+        "Seed bank"
+      ],
+      "answer": "B"
     }
   ]
 }

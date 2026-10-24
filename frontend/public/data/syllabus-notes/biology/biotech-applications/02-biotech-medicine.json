@@ -1,0 +1,188 @@
+{
+  "title": "Applications in Medicine",
+  "unitSlug": "biotech-applications",
+  "topicSlug": "biotech-medicine",
+  "topicTitle": "Applications in Medicine",
+  "relevance": 100,
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Recombinant insulin is made from a human gene carried as DNA. The double helix is the static figure for that molecule."
+    }
+  },
+  "notes": [
+    "Medicine uses biotechnology to make a human protein in a microbe, to detect a pathogen's genes, and to repair a faulty gene. The products are more specific than a traditional extract from animal organs.",
+    "Recombinant insulin is made by putting the human insulin gene into a bacterium or yeast. The microbe secretes insulin that matches human insulin. Earlier treatment used insulin extracted from cattle or pigs, which some patients did not tolerate as well.",
+    "Gene therapy gives a functional gene to a person whose own copy of that gene does not work. The early example is adenosine deaminase (ADA) deficiency, a cause of severe immunodeficiency. Lymphocytes can be given a working ADA gene and returned to the patient. The correction of those cells is not automatically passed to the next generation.",
+    "Molecular diagnosis detects DNA or RNA of a pathogen or a mutant allele. PCR copies a tiny amount of the target sequence until it can be seen. ELISA detects a protein, an antigen or an antibody, using an enzyme-linked reaction that produces a colour.",
+    "A transgenic animal carries a foreign gene. Mice with a chosen human disease gene are models for testing a treatment. Animals have also been used to produce a human protein in milk. Welfare and escape of the animal are the ethical limits on that use.",
+    "A recombinant vaccine can use a harmless microbe, or only a protein subunit, to train the immune system. The point is to show the immune system a piece of the pathogen without causing the disease."
+  ],
+  "confusion": [
+    "Recombinant insulin is human insulin made by a microbe. It is not insulin from a genetically taller cow.",
+    "PCR copies DNA. ELISA detects a protein. They are not two names for the same test.",
+    "Gene therapy of body cells (somatic therapy) does not rewrite the patient's children. Germline change would, and it is a different ethical category.",
+    "A transgenic mouse used as a disease model is not itself the medicine. It is the test system for a medicine."
+  ],
+  "keyPoints": [
+    "Recombinant insulin: human gene expressed in a microbe.",
+    "ADA gene therapy: a working gene is given to the patient's own cells.",
+    "PCR amplifies nucleic acid. ELISA detects antigen or antibody.",
+    "Transgenic animals can model a disease or produce a protein.",
+    "Somatic gene therapy is not inherited by the next generation."
+  ],
+  "importantStatements": [
+    "Recombinant DNA made it possible to manufacture human proteins instead of extracting them from animals.",
+    "Molecular tests find an infection or a mutation before, or without, growing the whole organism.",
+    "The ethics of a transgenic animal include the animal's welfare and the chance that it escapes."
+  ],
+  "examples": [
+    "Humulin was an early recombinant human insulin produced in microbes for people with diabetes.",
+    "PCR is used to detect viral genetic material from a small swab.",
+    "A mouse carrying a human disease mutation is used to test whether a new drug changes that disease."
+  ],
+  "universalFacts": [
+    "Insulin was among the first human proteins manufactured by recombinant DNA for routine treatment.",
+    "ELISA links the biological recognition (antigen with antibody) to an enzyme that makes a visible colour, so the result can be read without a sequencer."
+  ],
+  "formulas": [
+    "Recombinant insulin: human insulin gene → plasmid in a microbe → microbe makes human insulin → purify and inject.",
+    "PCR idea: repeated cycles of separate, bind primers, and copy, so the target sequence doubles each cycle."
+  ],
+  "practice": [
+    "List the steps from a human insulin gene to a dose of insulin.",
+    "Say what PCR multiplies and what ELISA detects.",
+    "Explain why somatic ADA therapy is not passed to a child."
+  ],
+  "practiceQuestions": [
+    "Why was recombinant insulin an improvement on insulin extracted from pigs?",
+    "A sample contains only a few viral genomes. Which method, PCR or ELISA, copies nucleic acid?",
+    "Give one medical use and one ethical limit of a transgenic animal."
+  ],
+  "examNotes": [
+    "Insulin production is the standard process question. Keep the gene, the host microbe and the product in that order.",
+    "Do not swap PCR and ELISA. One sentence that assigns DNA to PCR and protein to ELISA is enough."
+  ],
+  "examShortTricks": [
+    "PCR copies letters (nucleic acid). ELISA colours a protein test.",
+    "ADA: missing enzyme, add the gene to the patient's cells, immunity improves."
+  ],
+  "specialNotes": [
+    "Say somatic therapy when you mean the patient's body cells. Say germline only if the question is about inheritance.",
+    "Name the host as bacterium or yeast, not as 'an animal', for insulin made in a fermenter."
+  ],
+  "importantNotes": [
+    "The double helix figure on this note is the DNA that carries the insulin gene or the gene being tested.",
+    "Mention one diagnostic method and one therapeutic product so the answer covers both uses."
+  ],
+  "mcs": [
+    {
+      "question": "Recombinant human insulin is produced by",
+      "options": [
+        "Extracting it only from pig pancreas",
+        "A microbe that carries the human insulin gene",
+        "A knee-jerk reflex",
+        "Cryopreservation of a seed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "PCR is used to",
+      "options": [
+        "Copy a chosen nucleic-acid sequence",
+        "Colour an antibody test",
+        "Fix nitrogen",
+        "Rank IUCN categories"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "ELISA detects",
+      "options": [
+        "Only the double helix shape",
+        "An antigen or an antibody",
+        "The area of a national park",
+        "Dissolved oxygen directly"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Somatic gene therapy for ADA deficiency",
+      "options": [
+        "Is automatically inherited by the patient's children",
+        "Alters body cells and is not passed to children",
+        "Replaces every vaccine",
+        "Uses Cry protein"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Recombinant insulin",
+    "ADA gene therapy",
+    "PCR",
+    "ELISA",
+    "Transgenic disease models"
+  ],
+  "importantTasks": [
+    "Write the insulin production chain in four steps.",
+    "Contrast PCR and ELISA in one line each."
+  ],
+  "exercises": [
+    {
+      "question": "A lab has a swab with too little viral RNA to see on a gel, and a blood sample in which it wants to know whether antibodies are present. Which method fits each sample?",
+      "steps": [
+        "The swab problem is too little nucleic acid.",
+        "PCR copies a chosen nucleic-acid sequence through repeated cycles, so the rare viral sequence becomes detectable.",
+        "Antibodies are proteins, not a sequence to be copied by PCR.",
+        "ELISA uses an antibody-antigen recognition linked to an enzyme colour, so it fits the blood sample."
+      ],
+      "answer": "Use PCR on the swab to amplify viral nucleic acid. Use ELISA on the blood to detect antibodies."
+    }
+  ],
+  "summary": "Medical biotechnology makes human insulin in microbes, supplies a working ADA gene to a patient's own cells, and detects infection or mutation with PCR and ELISA. Transgenic animals model disease and can produce proteins, within ethical limits. Somatic gene therapy treats the person who receives it. It does not rewrite the next generation.",
+  "mcqs": [
+    {
+      "question": "Recombinant human insulin is produced by",
+      "options": [
+        "Extracting it only from pig pancreas",
+        "A microbe that carries the human insulin gene",
+        "A knee-jerk reflex",
+        "Cryopreservation of a seed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "PCR is used to",
+      "options": [
+        "Copy a chosen nucleic-acid sequence",
+        "Colour an antibody test",
+        "Fix nitrogen",
+        "Rank IUCN categories"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "ELISA detects",
+      "options": [
+        "Only the double helix shape",
+        "An antigen or an antibody",
+        "The area of a national park",
+        "Dissolved oxygen directly"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Somatic gene therapy for ADA deficiency",
+      "options": [
+        "Is automatically inherited by the patient's children",
+        "Alters body cells and is not passed to children",
+        "Replaces every vaccine",
+        "Uses Cry protein"
+      ],
+      "answer": "B"
+    }
+  ]
+}

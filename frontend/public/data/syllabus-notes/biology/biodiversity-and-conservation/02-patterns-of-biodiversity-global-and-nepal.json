@@ -1,0 +1,183 @@
+{
+  "title": "Patterns of biodiversity — global and Nepal",
+  "unitSlug": "biodiversity-and-conservation",
+  "topicSlug": "patterns-of-biodiversity-global-and-nepal",
+  "topicTitle": "Patterns of biodiversity — global and Nepal",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Species richness is not spread evenly. The strongest global pattern is the latitudinal gradient: the number of species of most groups rises from the poles toward the equator, so tropical forests and coral reefs hold far more species than tundra or boreal forest.",
+    "Two ideas explain that gradient. The tropics have had a longer uninterrupted time for speciation, and a more stable climate, so extinction rates stay lower. Higher solar energy also supports higher productivity and, through that, more niches.",
+    "The species-area relationship says that larger areas hold more species. Plotted as species against area it is a rectangular hyperbola, S = c A^z. On a log-log graph it becomes a straight line, log S = log c + z log A.",
+    "The slope z is about 0.1 to 0.2 when the areas are samples inside one continent. It rises to about 0.6 to 1.2 for whole continents or islands, because isolation adds species that occur nowhere else.",
+    "Nepal is small in area but sits where two global biodiversity hotspots meet: the Himalaya and the Indo-Burma region. A hotspot must have at least 1,500 endemic vascular plant species and must have lost more than 70 percent of its original habitat.",
+    "Inside Nepal, richness is highest in the mid-hills and the tropical lowland forests, while many endemics are concentrated in the high mountains. Altitude, rainfall and the east-west moisture gradient all change which species can live there."
+  ],
+  "confusion": [
+    "A hotspot is not simply a place with many species. It also requires many endemics and severe habitat loss. A well-preserved forest with few unique species is not a hotspot.",
+    "The species-area curve does not say that every extra hectare adds the same number of species. The rise flattens: the first hectares add many species, later hectares add fewer.",
+    "Equatorial richness is not caused only by heat. Time, climatic stability and productivity act together. A hot desert can be species-poor.",
+    "Endemic means the species is found nowhere else, not merely that it is rare inside Nepal. A widespread species that is uncommon in one valley is not an endemic."
+  ],
+  "keyPoints": [
+    "Latitudinal gradient: species richness generally increases toward the equator.",
+    "Species-area law: S = c A^z, and log S = log c + z log A.",
+    "z is shallow (about 0.1-0.2) for local samples and steeper for continents and islands.",
+    "Nepal lies in two hotspots, the Himalaya and Indo-Burma.",
+    "Hotspot rule: at least 1,500 endemic vascular plants and over 70 percent habitat loss."
+  ],
+  "importantStatements": [
+    "Alexander von Humboldt described the species-area relationship: within a region, species richness increases with the area explored, but with a decreasing slope.",
+    "Tropics hold more species because of greater evolutionary time, climatic stability and higher productivity.",
+    "Nepal's biodiversity is high for its area because of the sharp altitude range from the Terai to the high Himalaya."
+  ],
+  "examples": [
+    "Amazon rainforest and Indo-Pacific coral reefs illustrate high equatorial richness.",
+    "Chitwan's lowland forest and the Annapurna mid-hills hold different communities along Nepal's altitude gradient.",
+    "A 10-fold increase in area does not give a 10-fold increase in species, because z is well below 1."
+  ],
+  "universalFacts": [
+    "There are 36 recognised global biodiversity hotspots. Two of them, Himalaya and Indo-Burma, include parts of Nepal.",
+    "More than half of the world's species live in tropical regions, which cover a much smaller share of the land surface."
+  ],
+  "formulas": [
+    "S = c A^z, where S is species number, A is area, c is a constant and z is the slope.",
+    "log S = log c + z log A.",
+    "Hotspot thresholds: endemic vascular plants >= 1500, and original habitat lost > 70 percent."
+  ],
+  "practice": [
+    "State the latitudinal gradient and give one reason it exists.",
+    "Write the species-area equation and say what z means.",
+    "Name the two hotspots that include Nepal and the two numerical tests for a hotspot."
+  ],
+  "practiceQuestions": [
+    "Why does a log-log plot of species against area become a straight line?",
+    "Explain why z is larger for islands and continents than for small sample plots.",
+    "A region has 2,000 endemic plants but has lost only 20 percent of its forest. Is it a hotspot? Say why."
+  ],
+  "examNotes": [
+    "Draw or describe the species-area curve and write both the power form and the log form.",
+    "Name Nepal's two hotspots and the two criteria, with the numbers 1,500 and 70 percent."
+  ],
+  "examShortTricks": [
+    "Equator = more species. Poles = fewer. Remember time + stability + energy.",
+    "Hotspot = many unique plants AND most of the habitat already gone. Both tests are required."
+  ],
+  "specialNotes": [
+    "Quote z as a range, not a single number: about 0.1-0.2 locally, about 0.6-1.2 for very large areas.",
+    "Do not call every protected forest a hotspot. Protected status and hotspot status are different ideas."
+  ],
+  "importantNotes": [
+    "Pair each pattern with a Nepal example: latitude (Terai versus alpine), area (larger continuous forest versus a fragment), hotspot (Himalaya, Indo-Burma).",
+    "The log form is the one used to read z as the slope of a straight line."
+  ],
+  "mcs": [
+    {
+      "question": "Species richness of most groups generally increases toward the",
+      "options": [
+        "Poles",
+        "Equator",
+        "Deserts only",
+        "Deep ocean floor only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The species-area relationship is written as",
+      "options": [
+        "S = c + A",
+        "S = c A^z",
+        "S = z / A",
+        "S = c - z A"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a region to be a biodiversity hotspot it must have",
+      "options": [
+        "Any national park",
+        "At least 1,500 endemic vascular plants and over 70 percent habitat loss",
+        "More than 36 mammal species",
+        "No human population"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Nepal lies within which hotspots?",
+      "options": [
+        "Cape Floristic and Himalaya",
+        "Himalaya and Indo-Burma",
+        "Sundaland and Himalaya",
+        "Madagascar and Indo-Burma"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Latitudinal diversity gradient",
+    "Species-area relationship",
+    "Slope z",
+    "Biodiversity hotspot criteria",
+    "Nepal's altitude gradient"
+  ],
+  "importantTasks": [
+    "Plot the idea of log S against log A and mark z as the slope.",
+    "List the two hotspot tests and apply them to a made-up region."
+  ],
+  "exercises": [
+    {
+      "question": "On a log-log species-area graph the line rises by 0.15 for each 1-unit rise in log A. What is z, and is this a local or a continental slope?",
+      "steps": [
+        "The equation of the straight form is log S = log c + z log A.",
+        "The coefficient of log A is the slope, so z = 0.15.",
+        "Local samples inside a continent usually have z about 0.1 to 0.2.",
+        "Continental and island slopes are much steeper, about 0.6 to 1.2."
+      ],
+      "answer": "z = 0.15, a local (within-continent) slope."
+    }
+  ],
+  "summary": "Biodiversity is richest toward the equator because of time, stability and energy. The number of species grows with area as S = c A^z, more slowly than area itself. Nepal's richness comes from a huge altitude range and from lying in the Himalaya and Indo-Burma hotspots, each of which must combine high endemism with heavy habitat loss.",
+  "mcqs": [
+    {
+      "question": "Species richness of most groups generally increases toward the",
+      "options": [
+        "Poles",
+        "Equator",
+        "Deserts only",
+        "Deep ocean floor only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The species-area relationship is written as",
+      "options": [
+        "S = c + A",
+        "S = c A^z",
+        "S = z / A",
+        "S = c - z A"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a region to be a biodiversity hotspot it must have",
+      "options": [
+        "Any national park",
+        "At least 1,500 endemic vascular plants and over 70 percent habitat loss",
+        "More than 36 mammal species",
+        "No human population"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Nepal lies within which hotspots?",
+      "options": [
+        "Cape Floristic and Himalaya",
+        "Himalaya and Indo-Burma",
+        "Sundaland and Himalaya",
+        "Madagascar and Indo-Burma"
+      ],
+      "answer": "B"
+    }
+  ]
+}

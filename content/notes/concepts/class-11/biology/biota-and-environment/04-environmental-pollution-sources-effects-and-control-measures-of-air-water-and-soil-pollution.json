@@ -7,69 +7,176 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Environmental pollution: Sources, effects and control mea… — Biota and Environment, Biology (class-11-notes).",
-    "**Tested.** define it · list: environmental pollution, sources, effects, control measures of air · one worked example · one misconception each.",
-    "**Sources.** one-line definition + one-line exam use.",
-    "**Effects.** one-line definition + one-line exam use.",
-    "**Control measures of air.** one-line definition + one-line exam use.",
-    "**Water.** one-line definition + one-line exam use.",
-    "**Soil pollution.** one-line definition + one-line exam use."
+    "Pollution is the addition of substances or energy to air, water or soil at a rate the environment cannot make harmless. A pollutant is harmful because of its amount, its toxicity, or both.",
+    "Air pollutants include sulphur dioxide and nitrogen oxides from burning fuel, carbon monoxide from incomplete burning, smoke and dust, and ground-level ozone formed in sunlight from vehicle exhaust. They irritate lungs, damage leaves, and form acid rain when sulphur and nitrogen oxides dissolve in cloud water.",
+    "Water is polluted by untreated sewage, factory effluent, fertiliser washed off fields, and oil. Sewage and fertiliser add nutrients. Algae then bloom, die and are decomposed, and the decomposers use up dissolved oxygen. Fish die in that oxygen-poor water. This is eutrophication.",
+    "Soil is polluted by persistent pesticides, plastics and heavy metals from industry and dumps. DDT and similar fat-soluble poisons increase in concentration along a food chain, so top predators carry the highest dose. That increase is biomagnification.",
+    "Control follows the source. Use cleaner fuel and maintain engines for air. Treat sewage before it enters a river. Match fertiliser to the crop so the surplus does not run off. Prefer pesticides that break down, and do not burn plastic on fields.",
+    "Laws and local habits both matter. A treatment plant that is bypassed, or a pesticide that is sprayed on the day of harvest, undoes the technical control. Monitoring of river oxygen and of air smoke tells whether the control is working."
   ],
   "confusion": [
-    "❌ treat \"Environmental pollution\" as one blob → ✅ split into: environmental pollution, sources, effects.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: environmental pollution, sources, effects, control measures of air (within Biota and Environment).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: environmental pollution, sources, effects, control measures of air.",
-    "one worked example for \"Environmental pollution: Sources, effects and control mea…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Environmental pollution: Sources, effects and control mea…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Environmental pollution: Sources, effects and control mea…\" with one example.",
-    "compare \"Environmental pollution\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Environmental pollution: Sources, effects and control mea…\" and verify the answer is plausible."
+    "Eutrophication is caused by too many nutrients, not by a poison in the ordinary sense. The fish die from lack of oxygen after the algal bloom collapses.",
+    "Biomagnification is not the same as bioaccumulation. Accumulation is the build-up inside one organism. Magnification is the rise in concentration from prey to predator along the chain.",
+    "Carbon dioxide from ordinary breathing is not listed with the classical air pollutants such as sulphur dioxide, nitrogen oxides, carbon monoxide and particulates.",
+    "Biodegradable sewage is still a pollutant when there is more of it than the river can decompose without losing its oxygen."
   ],
   "keyPoints": [
-    "• Environmental pollution",
-    "• Sources",
-    "• Effects",
-    "• Control measures of air",
-    "• Water",
-    "• Soil pollution"
+    "Air: SO2, NOx, CO, particulates; acid rain and lung damage.",
+    "Water: sewage and fertiliser cause eutrophication and oxygen loss.",
+    "Soil: pesticides, plastics, heavy metals.",
+    "Biomagnification: fat-soluble poisons such as DDT rise along the food chain.",
+    "Control means treating the source: fuel, sewage, fertiliser dose and pesticide choice."
   ],
-  "summary": "Environmental pollution: Sources, effects and control mea… (Biota and Environment, Biology, class-11-notes) covers Environmental pollution, Sources, effects. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "A pollutant is defined by harm at the concentration present, not only by being unnatural.",
+    "Eutrophication kills fish by oxygen depletion after an algal bloom, not by the fertiliser burning them.",
+    "Biomagnification makes a dilute pesticide dangerous to top predators."
+  ],
+  "examples": [
+    "Sulphur dioxide from coal and diesel contributes to acid rain that damages leaves and acidifies lakes.",
+    "Fertiliser runoff into a lake produces green algal scum, then a fish kill.",
+    "DDT residues have been highest in fish-eating birds, a textbook case of biomagnification."
+  ],
+  "universalFacts": [
+    "Dissolved oxygen falls when bacteria decompose a large mass of dead algae.",
+    "Fat-soluble pesticides persist in body fat and are passed on when one animal eats another."
+  ],
+  "formulas": [
+    "Eutrophication sequence: nutrients → algal bloom → death and decay → oxygen used up → fish death.",
+    "Biomagnification: concentration rises at each step of the food chain for persistent fat-soluble substances."
+  ],
+  "practice": [
+    "Trace eutrophication from a sack of fertiliser to a dead fish in five steps.",
+    "Explain why a heron can carry more DDT than the water it fishes in.",
+    "Give one control for air pollution and one for sewage."
+  ],
+  "practiceQuestions": [
+    "How does acid rain form from sulphur dioxide?",
+    "Why is biodegradable waste still able to pollute a small river?",
+    "Distinguish bioaccumulation from biomagnification."
+  ],
+  "examNotes": [
+    "Separate the answer into air, water and soil, with source, effect and control for each.",
+    "Write the eutrophication chain in order. Skipping the oxygen step loses the point."
+  ],
+  "examShortTricks": [
+    "Fertiliser does not suffocate fish directly. Rotting algae do, by using the oxygen.",
+    "DDT climbs the menu. The top eater holds the most."
+  ],
+  "specialNotes": [
+    "Name the gases. 'Smoke' alone is too vague for sulphur dioxide and nitrogen oxides.",
+    "Mention plastics under soil pollution. They are now a standard example beside pesticides."
+  ],
+  "importantNotes": [
+    "Use the sequence for eutrophication every time the question mentions a green lake and dead fish.",
+    "Pair each pollutant with a control, not only with the harm."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Environmental pollution: Sources, effects and control mea…\"?",
+      "question": "Fish die in a eutrophic lake mainly because",
       "options": [
-        "Environmental pollution",
-        "Sources",
-        "Unrelated topic",
-        "None of the above"
+        "The fertiliser is a nerve poison",
+        "Decay of the algal bloom uses up dissolved oxygen",
+        "The water becomes pure distilled water",
+        "Acid rain removes all ions"
       ],
-      "answer": "A",
-      "explanation": "Environmental pollution is listed among the official sub-ideas of Environmental pollution: Sources, effects and control mea…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Environmental pollution: Sources, effects and control mea…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Biomagnification is best shown by",
       "options": [
-        "True",
-        "False"
+        "A higher DDT level in a heron than in the fish it eats",
+        "A factory chimney",
+        "A single tree absorbing CO2",
+        "A reflex arc"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Acid rain is linked especially to",
+      "options": [
+        "Oxygen and nitrogen gas as such",
+        "Sulphur dioxide and nitrogen oxides",
+        "Seed banks",
+        "Table salt"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The most direct control of sewage pollution is",
+      "options": [
+        "Spraying more DDT",
+        "Treating sewage before release",
+        "Draining every wetland",
+        "Banning all trees"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Air pollutants and acid rain",
+    "Eutrophication",
+    "Biomagnification",
+    "Soil pesticides and plastics",
+    "Source control"
+  ],
+  "importantTasks": [
+    "Write the eutrophication chain in order.",
+    "Make a three-row table: air, water, soil, with one source and one control each."
+  ],
+  "exercises": [
+    {
+      "question": "A lake receives fertiliser from fields. Algae cover the surface, then die. Fish are found dead although the fertiliser itself is not a nerve poison. Explain the chain.",
+      "steps": [
+        "Extra nutrients enter the lake with the runoff.",
+        "Algae multiply into a bloom because nutrients were the limit on their growth.",
+        "The bloom dies and bacteria decompose that mass of organic matter.",
+        "Decomposition consumes dissolved oxygen, and fish die of oxygen shortage."
+      ],
+      "answer": "The fish die from oxygen loss after the nutrient-driven algal bloom collapses and decays. This is eutrophication."
+    }
+  ],
+  "summary": "Air, water and soil are polluted when harmful substances arrive faster than they can be made safe. Sulphur and nitrogen oxides acidify rain. Sewage and fertiliser drive eutrophication and oxygen loss. Persistent pesticides such as DDT biomagnify up food chains. Control works at the source: cleaner burning, sewage treatment, careful fertiliser use and pesticides that do not persist.",
+  "mcqs": [
+    {
+      "question": "Fish die in a eutrophic lake mainly because",
+      "options": [
+        "The fertiliser is a nerve poison",
+        "Decay of the algal bloom uses up dissolved oxygen",
+        "The water becomes pure distilled water",
+        "Acid rain removes all ions"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Biomagnification is best shown by",
+      "options": [
+        "A higher DDT level in a heron than in the fish it eats",
+        "A factory chimney",
+        "A single tree absorbing CO2",
+        "A reflex arc"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Acid rain is linked especially to",
+      "options": [
+        "Oxygen and nitrogen gas as such",
+        "Sulphur dioxide and nitrogen oxides",
+        "Seed banks",
+        "Table salt"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The most direct control of sewage pollution is",
+      "options": [
+        "Spraying more DDT",
+        "Treating sewage before release",
+        "Draining every wetland",
+        "Banning all trees"
+      ],
+      "answer": "B"
     }
   ]
 }
