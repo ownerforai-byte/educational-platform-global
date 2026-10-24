@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { observeLiteResourcePolicy } from "@/lib/perf/low-data-policy";
 
 const GOOGLE_FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap";
@@ -232,6 +233,11 @@ export function ThemeProvider({
     document.documentElement.dataset.lite = String(enabled);
     document.documentElement.classList.toggle("lite", enabled);
   }, [liteStorageKey]);
+
+  // Apply one low-data policy to every route, including content mounted later
+  // by client navigation: defer nonessential media requests and low-priority
+  // images while preserving explicit eager/high-priority resources.
+  useEffect(() => observeLiteResourcePolicy(document.documentElement), []);
 
   // Keep the page's chosen fonts, but fetch Google Fonts only after first
   // paint and never fetch them while Lite mode is active.

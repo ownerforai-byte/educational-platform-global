@@ -16,7 +16,7 @@ const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer q
 export function SignupForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { refresh } = useAuth();
+  const { user, isLoading, refresh } = useAuth();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -63,6 +63,14 @@ export function SignupForm() {
       setError(result.error);
     }
   };
+
+  if (isLoading || user) {
+    return (
+      <p role="status" className="py-6 text-center text-sm text-muted-foreground">
+        {user ? "Opening your plan welcome…" : "Checking your session…"}
+      </p>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">

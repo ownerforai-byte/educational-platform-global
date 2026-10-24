@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff, ArrowRight, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,8 +13,7 @@ import { tierWelcomePathFor } from "@/lib/access-level";
 
 export function LoginForm() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const { refresh } = useAuth();
+  const { user, isLoading, refresh } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -31,14 +30,10 @@ export function LoginForm() {
 
     if (result.ok) {
       refresh();
-      // Honor ?next= (e.g. /login?next=/owner) but never allow off-site
-      // redirects. Without ?next= the viewer lands on their own tier WELCOME
-      // page first (2026-10-23: "opening direct welcome page after
-      // getting/knowing the tier access then after clicking go - home page
-      // appears").
-      const next = searchParams.get("next");
-      const target = next && next.startsWith("/") && !next.startsWith("//") ? next : tierWelcomePathFor(result.user);
-      router.push(target);
+      // Go on the visitor welcome is the one step that opens login. Once
+      // authenticated, always show the user's own tier welcome before home;
+      // do not let a stale or supplied ?next= skip that screen.
+      router.push(tierWelcomePathFor(result.user));
     } else if (result.code === "PENDING_APPROVAL" && result.statusToken) {
       // Waiting for approval → MUST land on the pending-status screen, not
       // stranded on this form with an error the student cannot act on.
@@ -52,6 +47,14 @@ export function LoginForm() {
       setError(result.error);
     }
   };
+
+  if (isLoading || user) {
+    return (
+      <p role="status" className="py-6 text-center text-sm text-muted-foreground">
+        {user ? "Opening your plan welcome…" : "Checking your session…"}
+      </p>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">

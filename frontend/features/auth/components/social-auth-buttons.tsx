@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -63,7 +62,6 @@ export function SocialAuthButtons({
   disabled = false,
   onError,
 }: SocialAuthButtonsProps) {
-  const searchParams = useSearchParams();
   const [socialLoading, setSocialLoading] = useState<OAuthProvider | null>(null);
 
   const handleSocialSignIn = async (provider: OAuthProvider) => {
@@ -85,11 +83,9 @@ export function SocialAuthButtons({
       });
       sessionStorage.setItem("neb_oauth_csrf", csrf.csrfToken);
 
+      // OAuth should obey the same staged flow as password sign-in: the
+      // callback resolves the account's tier and lands on its welcome page.
       const callbackUrl = new URL("/auth/callback", window.location.origin);
-      const next = searchParams.get("next");
-      if (next && next.startsWith("/") && !next.startsWith("//")) {
-        callbackUrl.searchParams.set("next", next);
-      }
 
       const { error: oauthError } = await getSupabaseBrowserClient().auth.signInWithOAuth({
         provider,

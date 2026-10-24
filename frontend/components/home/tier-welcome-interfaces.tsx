@@ -8,7 +8,6 @@ import {
   type AccessLevel,
 } from "@/lib/access-level";
 import { SECTIONS } from "@/lib/sections";
-import { HomePublic } from "@/components/home/home-public";
 
 // NOTE: never import components/home/tier-interfaces here — it composes the
 // server-only node:fs rails corpus, and this module is reachable from the
@@ -135,8 +134,19 @@ function TierWelcome({ tier }: { tier: UserTier }) {
  */
 export function UniversalWelcome() {
   return (
-    <div>
-      <div className="flex min-h-[70vh] items-center justify-center px-4 pb-6 pt-12">
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="border-b border-border">
+        <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+          <Link href="/" aria-label="Ravikisan's Platform home" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
+            <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">R</span>
+            <span>Ravikisan&apos;s Platform</span>
+          </Link>
+          <Link href="/plans" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+            Plans
+          </Link>
+        </div>
+      </header>
+      <main className="flex min-h-[calc(100vh-9rem)] items-center justify-center px-4 py-12">
         <div className="w-full max-w-2xl space-y-6 text-center">
           <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
             Welcome
@@ -165,14 +175,16 @@ export function UniversalWelcome() {
               Create an account
             </Link>
           </div>
-          <p className="text-xs text-muted-foreground">
-            Everything below is open to browse — no account needed.
-          </p>
         </div>
-      </div>
-      {/* The public overview is this welcome's body (visitors keep header +
-          body + footer — the quick links and search stay hidden). */}
-      <HomePublic />
+      </main>
+      <footer className="border-t border-border">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <span>© {new Date().getFullYear()} Ravikisan&apos;s Platform · NEB Class 11 &amp; 12</span>
+          <Link href="/notice" className="hover:text-primary hover:underline">
+            Access notice
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }

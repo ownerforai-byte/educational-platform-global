@@ -7,7 +7,7 @@ import { tierWelcomePathFor } from "@/lib/access-level";
 
 /**
  * Renders nothing; when the session resolves and a user is present, bounce
- * them out of the auth page to the app home.
+ * them out of auth/status pages to their own tier welcome.
  */
 export function LoggedInRedirect() {
   const { user, isLoading } = useAuth();
@@ -15,12 +15,9 @@ export function LoggedInRedirect() {
 
   useEffect(() => {
     if (!isLoading && user) {
-      const params = new URLSearchParams(window.location.search);
-      const next = params.get("next");
-      // No ?next= → the viewer's own tier welcome page (never the login form,
-      // never a foreign tier page).
-      const target = next && next.startsWith("/") && !next.startsWith("//") ? next : tierWelcomePathFor(user);
-      router.replace(target);
+      // Auth screens never render to a signed-in viewer. Route only to that
+      // viewer's resolved tier welcome; a ?next= path cannot bypass the flow.
+      router.replace(tierWelcomePathFor(user));
     }
   }, [isLoading, user, router]);
 

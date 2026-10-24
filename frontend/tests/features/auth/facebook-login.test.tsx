@@ -5,7 +5,6 @@ const mocks = vi.hoisted(() => ({
   push: vi.fn(),
   replace: vi.fn(),
   refresh: vi.fn(),
-  useSearchParams: vi.fn(),
   signInWithOAuth: vi.fn(),
   exchangeCodeForSession: vi.fn(),
   signOut: vi.fn(),
@@ -18,7 +17,7 @@ const mocks = vi.hoisted(() => ({
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: mocks.push, replace: mocks.replace }),
-  useSearchParams: mocks.useSearchParams,
+  useSearchParams: () => new URLSearchParams("code=oauth-code&next=%2Fprofile"),
 }));
 vi.mock("next/link", () => ({
   default: ({ href, children, ...rest }: { href: string; children: React.ReactNode }) =>
@@ -45,7 +44,6 @@ beforeEach(() => {
   vi.unstubAllEnvs();
   sessionStorage.clear();
   localStorage.clear();
-  mocks.useSearchParams.mockReturnValue(new URLSearchParams("next=%2Fprofile"));
   mocks.isOAuthProviderEnabled.mockResolvedValue(true);
   mocks.apiFetch.mockResolvedValue({ csrfToken: "a".repeat(64) });
   mocks.signInWithOAuth.mockResolvedValue({ data: {}, error: null });
@@ -57,6 +55,24 @@ beforeEach(() => {
 });
 
 describe("Social login", () => {
+  it("successful password login always opens the user's tier welcome before any next path", async () => {
+    mocks.loginAction.mockResolvedValue({
+      ok: true,
+      user: { id: "user-1", email: "student@example.com" },
+    });
+    render(<LoginForm />);
+    fireEvent.change(screen.getByLabelText("Email"), {
+      target: { value: "student@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText("Password"), {
+      target: { value: "correct horse battery staple" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /sign in/i }));
+
+    await waitFor(() => expect(mocks.push).toHaveBeenCalledWith("/welcome/member"));
+    expect(mocks.refresh).toHaveBeenCalledOnce();
+  });
+
   it("renders Google sign-in alongside the password form (Facebook temporarily hidden)", () => {
     render(<LoginForm />);
     // Facebook is intentionally hidden behind SHOW_FACEBOOK=false until the
@@ -79,11 +95,8 @@ describe("Social login", () => {
     expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 
-  it("drops an unsafe next path when starting OAuth (Facebook stays hidden)", async () => {
-    // The Facebook variant of this flow is dormant behind SHOW_FACEBOOK=false;
-    // the shared handler is asserted through Google: a protocol-relative `next`
-    // must never reach the callback redirect, and no Facebook flow may start.
-    mocks.useSearchParams.mockReturnValue(new URLSearchParams("next=%2F%2Fevil.example"));
+  it("does not forward a requested destination that could skip the tier welcome", async () => {
+    // A supplied next path must not bypass the required tier welcome screen.
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
@@ -109,24 +122,24 @@ describe("Social login", () => {
     expect(mocks.signInWithOAuth).toHaveBeenCalledWith({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=%2Fprofile`,
+        redirectTo: `${window.location.origin}/auth/callback`,
       },
     });
   });
 
-  it("exchanges the callback code, creates the app session, and returns to a safe next path", async () => {
+  it("exchanges the callback code and always shows the resolved tier welcome before home", async () => {
     const state = "f".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
     vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://testproj.supabase.co");
     localStorage.setItem("sb-testproj-auth-token", "{}");
     localStorage.setItem("sb-testproj-auth-token-code-verifier", "{}");
     localStorage.setItem("unrelated-key", "keep");
-    mocks.useSearchParams.mockReturnValue(new URLSearchParams("code=oauth-code&next=%2Fprofile"));
+    // The callback ignores the legacy next path and chooses by the returned user tier.
     mocks.apiFetch.mockResolvedValueOnce({ user: { id: "user-1", email: "student@example.com" }, accessToken: "app-access" });
 
     render(<AuthCallbackPage />);
 
-    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/profile"));
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/member"));
     expect(mocks.exchangeCodeForSession).toHaveBeenCalledWith("oauth-code");
     expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/session", {
       method: "POST",
@@ -152,7 +165,6 @@ describe("Social login", () => {
   it("sends pending social accounts to the owner-approval status screen", async () => {
     const state = "c".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
-    mocks.useSearchParams.mockReturnValue(new URLSearchParams("code=oauth-code"));
     const pendingError = Object.assign(new Error("Account pending approval"), {
       code: "PENDING_APPROVAL",
       statusToken: "signed-status-token",

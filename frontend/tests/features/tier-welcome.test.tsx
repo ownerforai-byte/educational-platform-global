@@ -48,7 +48,7 @@ beforeEach(() => {
 });
 
 describe("TierWelcomeGate — one welcome page per viewer", () => {
-  it("renders the UNIVERSAL welcome for a signed-out visitor, Go → login", () => {
+  it("renders only the header, welcome body and footer for a signed-out visitor", () => {
     render(
       <TierWelcomeGate tier="visitor">
         <UniversalWelcome />
@@ -60,6 +60,11 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
     expect(
       screen.getByRole("link", { name: /go — continue to sign in/i }),
     ).toHaveAttribute("href", "/login");
+    expect(screen.getByRole("banner")).toBeInTheDocument();
+    expect(screen.getByRole("main")).toBeInTheDocument();
+    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
+    expect(screen.queryByRole("searchbox")).toBeNull();
+    expect(screen.queryByRole("navigation", { name: /quick navigation/i })).toBeNull();
     expect(replace).not.toHaveBeenCalled();
   });
 
@@ -117,7 +122,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
 });
 
 describe("Go button → the tier home, then all study materials", () => {
-  it("each welcome opens its own rung's home", () => {
+  it("each welcome Go opens only its own tier home; visitor Go opens only login", () => {
     session.user = { email: "student@example.com" };
     const { unmount: u1 } = render(<MemberWelcome />);
     expect(screen.getByRole("link", { name: /go to my study desk/i })).toHaveAttribute(
@@ -139,6 +144,7 @@ describe("Go button → the tier home, then all study materials", () => {
       "href",
       "/login",
     );
+    expect(screen.queryByRole("link", { name: /go to my study desk/i })).toBeNull();
   });
 });
 

@@ -10,10 +10,6 @@ import { useAuth } from "@/providers/auth-provider";
 import { tierWelcomePathFor } from "@/lib/access-level";
 import type { OAuthSessionResponse } from "@/types/api";
 
-function safeNext(value: string | null, fallback: string): string {
-  return value && value.startsWith("/") && !value.startsWith("//") ? value : fallback;
-}
-
 /**
  * Drop the supabase-js session record WITHOUT hitting its logout endpoint.
  * `signOut({ scope: "local" })` still POSTs /auth/v1/logout — and Supabase
@@ -92,10 +88,10 @@ function AuthCallbackContent() {
         setStoredToken(response.accessToken);
         writeCachedSession(response.user, response.accessToken);
         refresh();
-        // No ?next= → the viewer's own tier WELCOME page first (2026-10-23:
-        // "opening direct welcome page after getting/knowing the tier access
-        // then after clicking go - home page appears").
-        router.replace(safeNext(searchParams.get("next"), tierWelcomePathFor(response.user)));
+        // Authentication is one stage in the welcome flow: always show the
+        // resolved tier's welcome before allowing the next Go to enter home.
+        // A query-string deep link must not skip that screen.
+        router.replace(tierWelcomePathFor(response.user));
       } catch (callbackError) {
         const authError = callbackError as Error & { code?: string; statusToken?: string };
         if (authError.code === "PENDING_APPROVAL" && authError.statusToken) {
