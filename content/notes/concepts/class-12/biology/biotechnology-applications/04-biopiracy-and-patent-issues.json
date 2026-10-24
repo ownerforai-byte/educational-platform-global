@@ -7,50 +7,176 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Biopiracy and patent issues — Biotechnology and Its Applications, Biology (class-12-notes).",
-    "**Tested.** define it · list: biopiracy, patent issues · one worked example · one misconception each.",
-    "**Patent issues.** one-line definition + one-line exam use."
+    "A biopatent is a legal right granted over an invention: a new process, a modified organism, or a product. It lasts for a set time and stops others from using that invention commercially without permission. The right is given by a patent office after a claim is examined.",
+    "Biopiracy is the use of a community's biological resource or traditional knowledge for profit without permission, without naming the source, and without sharing the benefit. It is a taking. A patent is a grant. The two words are not synonyms.",
+    "Turmeric has been used in India for wound healing for a very long time. A US patent was nonetheless issued on that use. India's Council of Scientific and Industrial Research showed the use was already documented traditional knowledge, and the patent was revoked.",
+    "Neem was the subject of patents on fungicidal and other uses that farmers already practised. Campaigns against those patents argued that the knowledge was not new. A patent requires novelty. Traditional use is evidence that the claim was not new.",
+    "Basmati is a traditional aromatic rice of the Indian subcontinent. RiceTec obtained a US patent on rice lines and grains it marketed in connection with basmati. India challenged the patent because the name and the traits were tied to farmers' varieties, not to a new invention from outside that tradition.",
+    "Defences now include writing traditional knowledge down in a form patent examiners will search, such as India's Traditional Knowledge Digital Library, and requiring permission plus a share of profits before a foreign company uses a local resource. Benefit-sharing is the opposite of biopiracy."
   ],
   "confusion": [
-    "❌ treat \"Biopiracy\" as one blob → ✅ split into: biopiracy, patent issues.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: biopiracy, patent issues (within Biotechnology and Its Applications).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: biopiracy, patent issues.",
-    "one worked example for \"Biopiracy and patent issues\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Biopiracy and patent issues\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Biopiracy and patent issues\" with one example.",
-    "compare \"Biopiracy\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Biopiracy and patent issues\" and verify the answer is plausible."
+    "Holding a patent is not itself biopiracy. Biopiracy is taking knowledge or a resource without consent or payment.",
+    "Turmeric's wound-healing patent was revoked. It is not an example of a patent India accepted.",
+    "Basmati was not invented in a US laboratory. It is a traditional variety. That is the point of the dispute.",
+    "Documenting traditional knowledge is not the same as patenting it. The library is there so examiners can see that a claim is old."
   ],
   "keyPoints": [
-    "• Biopiracy",
-    "• Patent issues"
+    "Biopatent: a legal right over an invention.",
+    "Biopiracy: commercial use without permission or benefit-sharing.",
+    "Turmeric wound-healing patent: revoked after prior traditional use was shown.",
+    "Neem patents were attacked because the uses were already traditional.",
+    "Basmati: RiceTec's patent was challenged by India."
   ],
-  "summary": "Biopiracy and patent issues (Biotechnology and Its Applications, Biology, class-12-notes) covers Biopiracy, patent issues. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "importantStatements": [
+    "Novelty fails when the knowledge was already public in a traditional form.",
+    "The country and the community that kept the resource are entitled to consent and a share.",
+    "A searchable record of traditional knowledge is a defence against bad patents."
+  ],
+  "examples": [
+    "The turmeric wound patent fell because Ayurvedic and other written use already existed.",
+    "Neem extracts used as traditional fungicides were claimed in patents that opponents said lacked novelty.",
+    "India objected to a US patent that tied the basmati name and its grain traits to a company's lines."
+  ],
+  "universalFacts": [
+    "A patent is refused or revoked when the claimed invention was already known.",
+    "Biological resources are not ownerless just because they grow wild or were bred by farmers."
+  ],
+  "formulas": [
+    "Biopiracy = resource or traditional knowledge + commercial use + no consent + no share of the benefit.",
+    "Prior art (old public knowledge) → novelty fails → patent revoked or refused."
+  ],
+  "practice": [
+    "Define biopatent and biopiracy in one sentence each.",
+    "Tell the turmeric story in three steps: grant, challenge, result.",
+    "Say what the Traditional Knowledge Digital Library is for."
+  ],
+  "practiceQuestions": [
+    "Why was the turmeric wound-healing patent revoked?",
+    "How is a basmati patent dispute different from inventing a new drug molecule?",
+    "What must a company do if it wants to use a community's medicinal plant fairly?"
+  ],
+  "examNotes": [
+    "Always separate the two terms before the examples. Examiners set the trap that they mean the same thing.",
+    "Use turmeric as the revoked-patent example and basmati as the traditional-variety example. They are not the same case."
+  ],
+  "examShortTricks": [
+    "Patent = grant. Piracy = taking.",
+    "Turmeric revoked. Basmati contested. Neem: traditional use, novelty attacked."
+  ],
+  "specialNotes": [
+    "Do not invent a patent number in the answer unless you are sure of it. The story and the outcome are what is marked.",
+    "Name the community or the country as the party that was left out. Biopiracy is about people, not only about plants."
+  ],
+  "importantNotes": [
+    "CSIR India led the turmeric challenge.",
+    "Benefit-sharing means money or other gains return to the source community, and use starts with permission."
+  ],
+  "mcs": [
+    {
+      "question": "Biopiracy means",
+      "options": [
+        "A legal right granted by a patent office",
+        "Using traditional knowledge or a resource without permission or a share of the benefit",
+        "Revoking every patent",
+        "Inserting a cry gene"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The US patent on turmeric for wound healing was",
+      "options": [
+        "Left in force as a model patent",
+        "Revoked after traditional use was shown",
+        "A plasmid patent",
+        "Granted to a Nepali farmers' group"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Basmati entered this topic because",
+      "options": [
+        "It is a restriction enzyme",
+        "A company patent linked to this traditional rice was challenged",
+        "It is a transgenic cow",
+        "It is an agarose gel"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Traditional Knowledge Digital Library helps patent offices",
+      "options": [
+        "Invent new cry genes",
+        "Find older public knowledge so a claim is not treated as new",
+        "Replace ligase",
+        "Grow Bt cotton"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Biopatent versus biopiracy",
+    "Novelty and prior traditional use",
+    "Turmeric revocation",
+    "Neem and basmati disputes",
+    "Benefit-sharing and the knowledge library"
+  ],
+  "importantTasks": [
+    "Write a paragraph that defines both terms and then gives the turmeric case.",
+    "Explain why writing traditional knowledge into a library protects it."
+  ],
+  "exercises": [
+    {
+      "question": "A company patents a village remedy and sells it, paying nobody in the village. Classify the patent and the conduct, in steps.",
+      "steps": [
+        "The patent, if the remedy were truly new, would be a biopatent: a legal right over an invention.",
+        "A village remedy that was already in use is not new, so the novelty claim is weak.",
+        "Selling it with no permission and no payment is biopiracy.",
+        "The fair route is consent plus a share of the benefit, or a refusal of the patent because the knowledge is old."
+      ],
+      "answer": "The grant would be a biopatent only if the claim were new. Using the known remedy without consent or payment is biopiracy."
+    }
+  ],
+  "summary": "A biopatent is a time-limited right over a genuine invention. Biopiracy is commercial use of a biological resource or of traditional knowledge without permission or benefit-sharing. Turmeric's wound-healing patent was revoked because the use was already known. Neem and basmati raised the same kind of objection, and recorded traditional knowledge is now used to stop repeat claims.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Biopiracy and patent issues\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Biopiracy means",
       "options": [
-        "True",
-        "False"
+        "A legal right granted by a patent office",
+        "Using traditional knowledge or a resource without permission or a share of the benefit",
+        "Revoking every patent",
+        "Inserting a cry gene"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "The US patent on turmeric for wound healing was",
+      "options": [
+        "Left in force as a model patent",
+        "Revoked after traditional use was shown",
+        "A plasmid patent",
+        "Granted to a Nepali farmers' group"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Basmati entered this topic because",
+      "options": [
+        "It is a restriction enzyme",
+        "A company patent linked to this traditional rice was challenged",
+        "It is a transgenic cow",
+        "It is an agarose gel"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Traditional Knowledge Digital Library helps patent offices",
+      "options": [
+        "Invent new cry genes",
+        "Find older public knowledge so a claim is not treated as new",
+        "Replace ligase",
+        "Grow Bt cotton"
+      ],
+      "answer": "B"
     }
   ]
 }

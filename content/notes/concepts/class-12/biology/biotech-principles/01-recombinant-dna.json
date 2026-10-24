@@ -4,143 +4,186 @@
   "topicSlug": "recombinant-dna",
   "topicTitle": "Recombinant DNA Technology",
   "relevance": 100,
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Recombinant DNA is two DNA molecules joined into one helix, then copied inside a host."
+    }
+  },
   "notes": [
-    "**Recombinant DNA Technology:** This topic covers the fundamental concepts of recombinant dna technology in the biology curriculum.",
-    "Understanding recombinant dna technology is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to recombinant dna technology should be memorized and practiced regularly."
+    "Recombinant DNA is a DNA molecule made by joining DNA from two different sources. A useful gene is cut out of one molecule and sealed into a vector that can replicate in a host cell.",
+    "Restriction endonucleases cut DNA at short palindromic sites. EcoRI recognises 5'-GAATTC-3' and cuts between G and A, leaving 5'-AATT overhangs. Those overhangs are sticky ends. The same enzyme is used on the vector and on the foreign DNA so the ends match.",
+    "The host's own DNA is protected because those same sites are methylated. The enzyme's natural job is to cut unprotected DNA, such as a phage genome. In the lab that specificity is what makes the cut reproducible.",
+    "DNA ligase seals the nicks by forming phosphodiester bonds. Sticky-end joining is efficient. Blunt ends can be joined too, but much less readily. Ligase is the seal, and the restriction enzyme is the cut. They are not interchangeable.",
+    "The vector is usually a plasmid: circular, extra-chromosomal bacterial DNA with its own origin of replication. A cloning vector also needs a selectable marker, such as antibiotic resistance, and a site where the foreign DNA can be inserted. pBR322 carries ampicillin and tetracycline resistance genes and is the classic teaching plasmid.",
+    "The recombinant plasmid is taken up by a competent cell. Competence is arranged with cold calcium chloride or by electroporation. Cells that took up the plasmid are selected on the antibiotic. Cells without the plasmid die. That living colony is the clone that multiplies the insert."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in recombinant dna technology.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
-  ],
-  "practice": [
-    "Solve at least 5 problems on recombinant dna technology from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
-  ],
-  "universalFacts": [
-    "This topic is a cornerstone of the biology curriculum and appears consistently in examinations.",
-    "Understanding recombinant dna technology builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of recombinant dna technology span engineering, physics, economics, and computer science."
-  ],
-  "animation3D": "biotech-principles",
-  "motionGraphics": "biotech-principles",
-  "examples": [
-    "Example 1: Real-world application of Recombinant DNA Technology",
-    "Example 2: Practical demonstration of Recombinant DNA Technology concepts",
-    "Example 4: Diagram-based question on Recombinant DNA Technology",
-    "Example 5: Application in daily life involving Recombinant DNA Technology"
-  ],
-  "practiceQuestions": [
-    "Q1. Define and explain Recombinant DNA Technology with suitable example.",
-    "Q2. Solve problems related to Recombinant DNA Technology.",
-    "Q3. Differentiate between various aspects of Recombinant DNA Technology.",
-    "Q4. Derive the key formula related to Recombinant DNA Technology.",
-    "Q5. What are the applications of Recombinant DNA Technology?"
-  ],
-  "formulas": [
-    "Key Formula 2: Mathematical expression of Recombinant DNA Technology",
-    "Key Formula 3: Application formula for Recombinant DNA Technology",
-    "Key Formula 4: Derivation result for Recombinant DNA Technology",
-    "Key Formula 5: Important relation in Recombinant DNA Technology"
+    "Restriction enzymes do not cut at random. Each one has its own site, which is why a plasmid gives the same fragments every time.",
+    "Ligase does not cut, and a restriction enzyme does not join. Scissors and glue are different tools.",
+    "A plasmid is circular, not a linear piece of a chromosome. It replicates on its own origin.",
+    "Cutting the vector and the insert with different enzymes usually leaves ends that will not base-pair. Use the same enzyme, or ends that are compatible."
   ],
   "keyPoints": [
-    "Key Point 2: Essential theorem or principle related to Recombinant DNA Technology",
-    "Key Point 3: Important condition or constraint for Recombinant DNA Technology",
-    "Key Point 4: Common applications of Recombinant DNA Technology",
-    "Key Point 5: Connection to other topics in Science"
-  ],
-  "summary": "Recombinant DNA Technology is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Recombinant DNA Technology applies",
-    "Note 2: Recombinant DNA Technology connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Recombinant DNA Technology",
-    "Note 4: Remember the units and dimensions involved in Recombinant DNA Technology",
-    "Note 5: Recombinant DNA Technology frequently appears in examination questions"
+    "Recombinant DNA joins DNA from two sources.",
+    "EcoRI: 5'-GAATTC-3', sticky 5'-AATT ends.",
+    "Ligase seals the backbone after the sticky ends pair.",
+    "A vector needs an origin, a selectable marker and a cloning site.",
+    "Transformation puts the plasmid into a competent bacterium."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Recombinant DNA Technology",
-    "Statement 2: Theorem related to Recombinant DNA Technology",
-    "Statement 3: Condition for Recombinant DNA Technology to be valid",
-    "Statement 4: Principle governing Recombinant DNA Technology",
-    "Statement 5: Corollary or consequence of Recombinant DNA Technology"
+    "The same restriction enzyme on vector and insert is what makes the ends complementary.",
+    "Without an origin of replication the foreign fragment is not copied in the host.",
+    "Selection on the marker is how the rare transformed cell is found."
   ],
-  "importantNotes": [
-    "Note 1: Recombinant DNA Technology is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Recombinant DNA Technology",
-    "Note 3: Recombinant DNA Technology has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Recombinant DNA Technology",
-    "Note 5: Cross-check your answers using alternative methods for Recombinant DNA Technology"
+  "examples": [
+    "EcoRI cuts both a human gene fragment and pBR322, the AATT overhangs pair, and ligase seals a recombinant plasmid.",
+    "A colony growing on ampicillin came from a cell that took up a plasmid carrying the resistance gene.",
+    "A bacterium's own GAATTC sites stay uncut because they are methylated, while an unmethylated phage genome is cut."
   ],
-  "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Recombinant DNA Technology formula",
-    "Trick 2: Elimination technique for Recombinant DNA Technology MCQs",
-    "Trick 3: Dimensional analysis shortcut for Recombinant DNA Technology",
-    "Trick 4: Memory aid for Recombinant DNA Technology formulas",
-    "Trick 5: Time-saving approach for Recombinant DNA Technology problems"
+  "universalFacts": [
+    "Sticky ends from one enzyme's cut base-pair with sticky ends from the same cut on another molecule.",
+    "A circular plasmid with n restriction sites for one enzyme opens into n fragments. A linear DNA with n sites gives n + 1 fragments."
+  ],
+  "formulas": [
+    "EcoRI: 5'-G|AATTC-3' → 5'-AATT overhang.",
+    "Join: matching sticky ends → base pairing → DNA ligase → phosphodiester bond.",
+    "Fragment count: linear DNA, n sites → n + 1 pieces. Circular plasmid, n sites → n pieces."
+  ],
+  "practice": [
+    "Name the three features a plasmid vector must have, and say why each is needed.",
+    "Explain why EcoRI is used on both the vector and the insert.",
+    "State what calcium chloride treatment is for."
+  ],
+  "practiceQuestions": [
+    "Why does a restriction enzyme spare the host chromosome?",
+    "A linear DNA has 3 EcoRI sites. How many fragments form?",
+    "What fails if the recombinant molecule has no origin of replication?"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Recombinant DNA Technology",
-    "Exam Tip 2: Practice previous year questions on Recombinant DNA Technology",
-    "Exam Tip 4: Learn the derivations for Recombinant DNA Technology thoroughly",
-    "Exam Tip 5: Review common mistakes related to Recombinant DNA Technology"
+    "Give the EcoRI sequence if the question asks for an example of a sticky end. G|AATTC is the cut to write.",
+    "Separate the tools: restriction enzyme, ligase, vector, competent host. A list with one job each scores."
+  ],
+  "examShortTricks": [
+    "Enzyme cuts. Ligase seals. Do not swap them.",
+    "Circular n sites → n fragments. Linear n sites → n + 1."
+  ],
+  "specialNotes": [
+    "Write the palindrome in the 5' to 3' direction: GAATTC.",
+    "Selection and screening are later than ligation. Do not skip the host."
+  ],
+  "importantNotes": [
+    "Methylation is why the enzyme can live in a bacterial cell without destroying that cell.",
+    "pBR322's two antibiotic genes are the standard example of selectable markers."
   ],
   "mcs": [
     {
-      "question": "The primary application of Recombinant DNA Technology is in:",
+      "question": "EcoRI recognises",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "5'-GAATTC-3'",
+        "A run of any six bases",
+        "RNA primers",
+        "The antibiotic ampicillin"
       ],
       "answer": "A"
     },
     {
-      "question": "For Recombinant DNA Technology, which condition is necessary?",
+      "question": "DNA ligase in cloning",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "Cuts at palindromes",
+        "Seals the DNA backbone",
+        "Makes a cell competent",
+        "Denatures the helix by heat"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "What is the unit/dimension used in Recombinant DNA Technology?",
+      "question": "A plasmid vector must have",
       "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
+        "Only a cell wall",
+        "An origin of replication and a selectable marker",
+        "No foreign DNA site",
+        "A nucleus"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "Which statement about Recombinant DNA Technology is FALSE?",
+      "question": "A linear DNA with 3 sites for one restriction enzyme yields",
       "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "3 fragments",
+        "4 fragments",
+        "6 fragments",
+        "1 fragment"
       ],
-      "answer": "C"
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Recombinant DNA Technology",
-    "Concept 2: Key theorem or principle in Recombinant DNA Technology",
-    "Concept 3: Important application area of Recombinant DNA Technology",
-    "Concept 4: Fundamental relationship in Recombinant DNA Technology",
-    "Concept 5: Connection between Recombinant DNA Technology and other topics"
+    "Sticky ends and EcoRI",
+    "Role of DNA ligase",
+    "Plasmid as a vector",
+    "Selectable marker",
+    "Competent host and transformation"
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Recombinant DNA Technology",
-    "Task 2: Derive the main formula for Recombinant DNA Technology",
-    "Task 3: Create a concept map for Recombinant DNA Technology",
-    "Task 4: Practice previous year exam questions on Recombinant DNA Technology",
-    "Task 5: Explain Recombinant DNA Technology to a peer or study group"
+    "Draw the word-path from cut to colony in five steps.",
+    "Calculate fragments for a linear DNA and for a circular plasmid with the same number of sites."
+  ],
+  "exercises": [
+    {
+      "question": "A circular plasmid has 2 sites for EcoRI. A linear chromosome fragment has 2 sites for the same enzyme. How many pieces does each molecule give?",
+      "steps": [
+        "A circular DNA is already a closed loop, so n cuts open it into n pieces.",
+        "Here n = 2, so the plasmid gives 2 fragments.",
+        "A linear DNA with n sites is cut into n + 1 pieces.",
+        "Here n = 2, so the linear fragment gives 3 pieces."
+      ],
+      "answer": "The plasmid gives 2 fragments. The linear DNA gives 3 fragments."
+    }
+  ],
+  "summary": "Recombinant DNA is built by cutting a gene and a vector with the same restriction enzyme, pairing the sticky ends, and sealing them with ligase. The vector's origin copies the insert, its marker lets you find the host that took it up, and competence treatments get the plasmid into the cell. EcoRI at GAATTC is the standard sticky-end example.",
+  "mcqs": [
+    {
+      "question": "EcoRI recognises",
+      "options": [
+        "5'-GAATTC-3'",
+        "A run of any six bases",
+        "RNA primers",
+        "The antibiotic ampicillin"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "DNA ligase in cloning",
+      "options": [
+        "Cuts at palindromes",
+        "Seals the DNA backbone",
+        "Makes a cell competent",
+        "Denatures the helix by heat"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A plasmid vector must have",
+      "options": [
+        "Only a cell wall",
+        "An origin of replication and a selectable marker",
+        "No foreign DNA site",
+        "A nucleus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A linear DNA with 3 sites for one restriction enzyme yields",
+      "options": [
+        "3 fragments",
+        "4 fragments",
+        "6 fragments",
+        "1 fragment"
+      ],
+      "answer": "B"
+    }
   ]
 }

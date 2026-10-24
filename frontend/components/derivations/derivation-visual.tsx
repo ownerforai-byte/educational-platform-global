@@ -1526,6 +1526,27 @@ export function DerivationVisual({
           </svg>
         );
 
+      case "species-interactions":
+        return (
+          <svg viewBox="0 0 700 200" className="w-full h-auto select-none">
+            <rect x="24" y="20" width="156" height="78" rx="8" fill="#14532d" fillOpacity="0.55" stroke="#4ade80" strokeWidth="2" />
+            <text x="102" y="48" fill="#dcfce7" fontSize="13" fontWeight="bold" textAnchor="middle">Mutualism</text>
+            <text x="102" y="72" fill="#86efac" fontSize="14" textAnchor="middle">+/+</text>
+            <rect x="192" y="20" width="156" height="78" rx="8" fill="#1e3a5f" fillOpacity="0.7" stroke="#38bdf8" strokeWidth="2" />
+            <text x="270" y="48" fill="#e0f2fe" fontSize="13" fontWeight="bold" textAnchor="middle">Commensalism</text>
+            <text x="270" y="72" fill="#7dd3fc" fontSize="14" textAnchor="middle">+/0</text>
+            <rect x="360" y="20" width="156" height="78" rx="8" fill="#7f1d1d" fillOpacity="0.55" stroke="#f87171" strokeWidth="2" />
+            <text x="438" y="48" fill="#fee2e2" fontSize="13" fontWeight="bold" textAnchor="middle">Predation</text>
+            <text x="438" y="72" fill="#fca5a5" fontSize="14" textAnchor="middle">+/−</text>
+            <rect x="528" y="20" width="148" height="78" rx="8" fill="#78350f" fillOpacity="0.6" stroke="#fbbf24" strokeWidth="2" />
+            <text x="602" y="48" fill="#fef3c7" fontSize="13" fontWeight="bold" textAnchor="middle">Competition</text>
+            <text x="602" y="72" fill="#fcd34d" fontSize="14" textAnchor="middle">−/−</text>
+            <text x="24" y="132" fill="#cbd5e1" fontSize="12">Each pair of signs is the effect on the two partners.</text>
+            <text x="24" y="156" fill="#cbd5e1" fontSize="12">Parasitism is also +/−, but the parasite lives on or in the host.</text>
+            <text x="24" y="180" fill="#cbd5e1" fontSize="12">Amensalism is −/0: one partner is harmed and the other is unchanged.</text>
+          </svg>
+        );
+
       case "food-chain-energy":
         return (
           <svg viewBox="0 0 700 360" className="w-full h-auto select-none">

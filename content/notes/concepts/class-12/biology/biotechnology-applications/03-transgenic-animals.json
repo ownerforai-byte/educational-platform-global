@@ -6,49 +6,185 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "The foreign gene in a transgenic animal is a stretch of the same DNA double helix the host transcribes."
+    }
+  },
   "notes": [
-    "**Scope.** Transgenic animals — Biotechnology and Its Applications, Biology (class-12-notes).",
-    "**Tested.** define it · list: transgenic animals · one worked example · one misconception each."
+    "Transgenic animals are used because a chosen gene can be added and then watched in a living body. The course expects five uses: normal development, models of disease, biological products, vaccine safety, and chemical safety.",
+    "To study normal physiology, an extra copy or an altered copy of a gene such as a growth-factor gene is introduced. The change in growth or development shows what that gene was doing.",
+    "Disease models carry a gene that contributes to a human illness, for example genes studied in cancer or in Alzheimer's disease. The mouse then shows features of the illness, and treatments can be tried before they are tried in people.",
+    "Biological products can be made in the animal's milk. Rosie, the first transgenic cow, reported in 1997, produced milk with human alpha-lactalbumin at about 2.4 grams per litre. The milk was more like human milk in that protein. Other projects put human proteins such as alpha-1-antitrypsin into the milk of livestock.",
+    "Vaccine safety can be checked in transgenic animals before a batch is widely used, by asking whether the vaccine causes the harm it is supposed to avoid. Chemical safety testing uses the animals to see how toxic a substance is, more quickly than some older assays.",
+    "The ethical objections are part of the answer. The animal may suffer. Patenting a sentient animal raises the question of who owns a line. The decision to create the animal has to be justified by the medical or scientific gain, and welfare rules apply."
   ],
   "confusion": [
-    "❌ treat \"Transgenic animals\" as one blob → ✅ split into: transgenic animals.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: transgenic animals (within Biotechnology and Its Applications).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: transgenic animals.",
-    "one worked example for \"Transgenic animals\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Transgenic animals\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Transgenic animals\" with one example.",
-    "compare \"Transgenic animals\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Transgenic animals\" and verify the answer is plausible."
+    "Rosie is a transgenic cow, not a transgenic mouse, and the product was in the milk.",
+    "A disease-model mouse is not itself a treatment. It is the animal in which the disease is studied.",
+    "Vaccine safety testing is not the same as making the vaccine. The animal is the test system.",
+    "Ethical concern is not an optional extra. Long answers on transgenic animals are expected to include it."
   ],
   "keyPoints": [
-    "• Transgenic animals"
+    "Five uses: development, disease, products, vaccine safety, chemical safety.",
+    "Rosie (1997): human alpha-lactalbumin in milk, about 2.4 g/L.",
+    "Disease models include cancer and Alzheimer's mice.",
+    "Products are often collected from milk, under a mammary promoter.",
+    "Welfare and patent objections belong in the answer."
   ],
-  "summary": "Transgenic animals (Biotechnology and Its Applications, Biology, class-12-notes) covers Transgenic animals. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "importantStatements": [
+    "The gene is introduced so that a human question can be asked in an animal.",
+    "Milk is a practical place to collect a foreign protein because the animal keeps producing it.",
+    "Creating the animal is allowed in teaching answers only together with the harm it may cause."
+  ],
+  "examples": [
+    "A mouse carrying an oncogene is used to follow tumour growth and to test a drug.",
+    "Rosie's milk contained human alpha-lactalbumin.",
+    "A candidate vaccine is given to transgenic animals to look for unwanted effects before larger use."
+  ],
+  "universalFacts": [
+    "Alpha-lactalbumin is a normal protein of milk. The human form was the protein Rosie was built to make.",
+    "A mammary-gland promoter keeps the foreign protein mostly in the milk rather than in every tissue."
+  ],
+  "formulas": [
+    "Uses: physiology → disease model → product in milk → vaccine safety → chemical safety.",
+    "Rosie: human alpha-lactalbumin gene → expression in the mammary gland → about 2.4 g/L in milk."
+  ],
+  "practice": [
+    "List the five uses and attach one example to three of them.",
+    "State what Rosie produced and why that was useful.",
+    "Give two ethical objections."
+  ],
+  "practiceQuestions": [
+    "How is a transgenic mouse used to study a human disease?",
+    "Why is the foreign protein often collected from milk rather than from blood?",
+    "What welfare issue has to be mentioned with the benefits?"
+  ],
+  "examNotes": [
+    "Memorise Rosie's protein and the 2.4 g/L figure. They are the standard product example.",
+    "A 'uses' question wants the five headings, not the microinjection method alone."
+  ],
+  "examShortTricks": [
+    "Rosie = cow = alpha-lactalbumin = 2.4 g/L.",
+    "Five uses, and ethics is the sixth thing they still expect."
+  ],
+  "specialNotes": [
+    "Do not move the insulin story into this answer. Insulin is made in microbes. This note is about animals.",
+    "Alpha-lactalbumin and alpha-1-antitrypsin are different proteins. Rosie is the lactalbumin example."
+  ],
+  "importantNotes": [
+    "1997 is the year attached to Rosie in the course.",
+    "Chemical-safety testing and vaccine-safety testing are two separate uses. Do not merge them."
+  ],
+  "mcs": [
+    {
+      "question": "Rosie is remembered as",
+      "options": [
+        "The first transgenic cow, producing human alpha-lactalbumin in milk",
+        "A Bt cotton variety",
+        "A plasmid vector",
+        "A restriction enzyme"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Human alpha-lactalbumin in Rosie's milk was about",
+      "options": [
+        "2.4 g/L",
+        "2.4 mg per year",
+        "94 °C",
+        "20 percent of the field"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Transgenic mice are used in disease research to",
+      "options": [
+        "Replace restriction enzymes",
+        "Model a human illness and try treatments",
+        "Fix nitrogen",
+        "Run a gel"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An ethical issue with transgenic animals is",
+      "options": [
+        "They cannot carry DNA",
+        "Suffering, and the patenting of animals",
+        "They are always bacteria",
+        "They lack promoters"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Five standard uses",
+    "Rosie and alpha-lactalbumin",
+    "Disease-model mice",
+    "Proteins harvested from milk",
+    "Welfare and patents"
+  ],
+  "importantTasks": [
+    "Write a short note that lists the five uses with one line each.",
+    "Explain Rosie's milk in two sentences, including the protein and the amount."
+  ],
+  "exercises": [
+    {
+      "question": "Name the protein Rosie produced, where it was collected, and the approximate concentration.",
+      "steps": [
+        "Rosie was a transgenic cow.",
+        "The introduced gene was for human alpha-lactalbumin.",
+        "The protein was collected in the milk, not purified from muscle.",
+        "The reported concentration was about 2.4 grams per litre."
+      ],
+      "answer": "Human alpha-lactalbumin, in the milk, at about 2.4 g/L."
+    }
+  ],
+  "summary": "Transgenic animals let a foreign gene be studied or harvested in a living mammal. The course uses are development, disease models, proteins such as Rosie's human alpha-lactalbumin at about 2.4 g/L of milk, vaccine safety and chemical safety. Welfare and the patenting of animals are part of a complete answer.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Transgenic animals\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Rosie is remembered as",
       "options": [
-        "True",
-        "False"
+        "The first transgenic cow, producing human alpha-lactalbumin in milk",
+        "A Bt cotton variety",
+        "A plasmid vector",
+        "A restriction enzyme"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Human alpha-lactalbumin in Rosie's milk was about",
+      "options": [
+        "2.4 g/L",
+        "2.4 mg per year",
+        "94 °C",
+        "20 percent of the field"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Transgenic mice are used in disease research to",
+      "options": [
+        "Replace restriction enzymes",
+        "Model a human illness and try treatments",
+        "Fix nitrogen",
+        "Run a gel"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An ethical issue with transgenic animals is",
+      "options": [
+        "They cannot carry DNA",
+        "Suffering, and the patenting of animals",
+        "They are always bacteria",
+        "They lack promoters"
+      ],
+      "answer": "B"
     }
   ]
 }

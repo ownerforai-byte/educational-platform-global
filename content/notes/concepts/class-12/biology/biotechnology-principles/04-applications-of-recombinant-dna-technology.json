@@ -6,49 +6,185 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Applications of recombinant DNA all start from a gene carried on a double helix the host can copy."
+    }
+  },
   "notes": [
-    "**Scope.** Applications of recombinant DNA technology — Biotechnology — Principles and Processes, Biology (class-12-notes).",
-    "**Tested.** define it · list: applications of recombinant dna technology · one worked example · one misconception each."
+    "Recombinant DNA is used wherever a cell can be instructed to make a molecule that is hard to collect from its natural source. The applications sit in medicine, farming, industry and the cleanup of pollutants.",
+    "In medicine the landmark product is human insulin made in E. coli, approved as Humulin in 1982. The amino-acid sequence is the human one, so the immune reactions that came with some animal insulins became less of a problem. The same logic produces other proteins: human growth hormone, and vaccines such as the hepatitis B surface antigen made in yeast.",
+    "Diagnosis uses the same toolkit. PCR amplifies a pathogen's DNA until a test can see it. ELISA detects an antigen or an antibody with an enzyme-linked reaction. One finds nucleic acid. The other finds protein. They answer different clinical questions.",
+    "Gene therapy delivers a working copy of a defective gene into a patient's somatic cells. The correction is for that person. It is not passed to children, because the germline is not the target of the permitted treatments. The first approved attempt, in 1990, was for ADA deficiency.",
+    "In agriculture the same technology produces Bt crops and other modified plants. In the environment, microbes have been designed or selected to break down oil and other pollutants, which is bioremediation. The microbe eats the waste. It does not make the waste vanish by a physical filter alone.",
+    "Every application still depends on the pipeline: a correct gene, a host that can express it, and a product that has been checked. A recombinant protein is not automatically safe or correctly folded. Purification and testing are part of the application, not paperwork after the science."
   ],
   "confusion": [
-    "❌ treat \"Applications of recombinant DNA technology\" as one blob → ✅ split into: applications of recombinant dna technology.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: applications of recombinant dna technology (within Biotechnology — Principles and Processes).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: applications of recombinant dna technology.",
-    "one worked example for \"Applications of recombinant DNA technology\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Applications of recombinant DNA technology\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Applications of recombinant DNA technology\" with one example.",
-    "compare \"Applications of recombinant DNA technology\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Applications of recombinant DNA technology\" and verify the answer is plausible."
+    "Humulin is human-sequence insulin from a microbe. It is not insulin extracted from cattle.",
+    "ELISA and PCR are not two names for one test. PCR copies DNA. ELISA detects antigen or antibody.",
+    "Somatic gene therapy is not inherited. Germline alteration is a different, and clinically disallowed, act.",
+    "Bioremediation uses living metabolism. It is not the same thing as Bt cotton."
   ],
   "keyPoints": [
-    "• Applications of recombinant DNA technology"
+    "Humulin, 1982: recombinant human insulin from E. coli.",
+    "Hepatitis B vaccine antigen can be made in yeast.",
+    "PCR detects nucleic acid. ELISA detects antigen or antibody.",
+    "ADA gene therapy in 1990 was somatic.",
+    "Bt crops and bioremediation are non-medical applications."
   ],
-  "summary": "Applications of recombinant DNA technology (Biotechnology — Principles and Processes, Biology, class-12-notes) covers Applications of recombinant DNA technology. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "importantStatements": [
+    "The product matches the human gene because the human gene was the one cloned.",
+    "A diagnostic method has to match the molecule you are looking for.",
+    "Somatic correction ends with the patient."
+  ],
+  "examples": [
+    "A diabetic patient receives insulin whose sequence came from the human gene expressed in bacteria.",
+    "Hepatitis B surface protein made by yeast becomes the antigen in a vaccine, with no need to grow the virus.",
+    "An oil spill is treated with microbes able to degrade hydrocarbons."
+  ],
+  "universalFacts": [
+    "Yeast and bacteria are used as hosts because they grow fast and accept recombinant plasmids.",
+    "An enzyme-linked antibody test reports a protein. A polymerase reaction reports a nucleic acid."
+  ],
+  "formulas": [
+    "Medicine path: human gene → host (E. coli or yeast) → fermentation → purified protein or vaccine antigen.",
+    "Diagnosis: PCR for DNA or RNA. ELISA for antigen or antibody."
+  ],
+  "practice": [
+    "Give three applications in three different fields.",
+    "Contrast PCR and ELISA in one line each.",
+    "Explain why recombinant insulin reduced the problem of animal insulin."
+  ],
+  "practiceQuestions": [
+    "What was Humulin, and in which year was it approved?",
+    "Why is ADA gene therapy described as somatic?",
+    "How can a recombinant microbe help after an oil spill?"
+  ],
+  "examNotes": [
+    "Spread the examples across medicine, diagnosis, agriculture and environment. Four fields score better than insulin repeated four times.",
+    "If insulin is your medical example, say the sequence is human and the host is bacterial."
+  ],
+  "examShortTricks": [
+    "1982 Humulin. 1990 ADA.",
+    "PCR = nucleic acid. ELISA = protein."
+  ],
+  "specialNotes": [
+    "Leave the Cry-protein mechanism to the Bt note. Here Bt is only one application on a longer list.",
+    "Do not describe germline editing as current therapy."
+  ],
+  "importantNotes": [
+    "Yeast, not E. coli, is the usual teaching host for the hepatitis B surface antigen.",
+    "Bioremediation is an application of microbes, and recombinant strains are one version of it."
+  ],
+  "mcs": [
+    {
+      "question": "Humulin is",
+      "options": [
+        "Animal insulin from cattle pancreas",
+        "Recombinant human insulin, approved in 1982",
+        "A restriction enzyme",
+        "A basmati patent"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ELISA is used to detect",
+      "options": [
+        "A DNA sequence by doubling it",
+        "Antigen or antibody",
+        "Sticky ends",
+        "Soil pH"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 1990 ADA therapy altered",
+      "options": [
+        "Germ cells, so children inherited the fix",
+        "Somatic cells of the patient",
+        "Only the bacterial chromosome of E. coli in the gut",
+        "Cry genes in cotton"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hepatitis B vaccine antigen in this topic is produced in",
+      "options": [
+        "Thermus aquaticus as the only host",
+        "Yeast",
+        "Agarose",
+        "A non-Bt refuge"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Recombinant insulin",
+    "Recombinant vaccines",
+    "PCR versus ELISA",
+    "Somatic gene therapy",
+    "Bioremediation"
+  ],
+  "importantTasks": [
+    "Make a four-row table: field, example, host or tool, what is collected.",
+    "Write the difference between PCR and ELISA without using the pipeline steps."
+  ],
+  "exercises": [
+    {
+      "question": "A question asks for four applications of recombinant DNA technology. Give one from each of four fields, in steps.",
+      "steps": [
+        "Medicine: human insulin made in E. coli.",
+        "Diagnosis: PCR to amplify a pathogen's nucleic acid, or ELISA to detect antigen or antibody.",
+        "Agriculture: a Bt crop that expresses a cry gene.",
+        "Environment: microbes that degrade oil or another pollutant."
+      ],
+      "answer": "Insulin, a DNA or antibody test, a Bt crop, and bioremediation cover four fields."
+    }
+  ],
+  "summary": "Recombinant DNA supplies human proteins such as insulin, vaccine antigens such as hepatitis B surface protein from yeast, and tests that either copy nucleic acid or detect antigen and antibody. Somatic gene therapy, Bt crops and bioremediation are the same idea outside the fermenter. The product still has to be the right molecule, made in a suitable host, and purified.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Applications of recombinant DNA technology\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Humulin is",
       "options": [
-        "True",
-        "False"
+        "Animal insulin from cattle pancreas",
+        "Recombinant human insulin, approved in 1982",
+        "A restriction enzyme",
+        "A basmati patent"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "ELISA is used to detect",
+      "options": [
+        "A DNA sequence by doubling it",
+        "Antigen or antibody",
+        "Sticky ends",
+        "Soil pH"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The 1990 ADA therapy altered",
+      "options": [
+        "Germ cells, so children inherited the fix",
+        "Somatic cells of the patient",
+        "Only the bacterial chromosome of E. coli in the gut",
+        "Cry genes in cotton"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hepatitis B vaccine antigen in this topic is produced in",
+      "options": [
+        "Thermus aquaticus as the only host",
+        "Yeast",
+        "Agarose",
+        "A non-Bt refuge"
+      ],
+      "answer": "B"
     }
   ]
 }

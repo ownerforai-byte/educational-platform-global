@@ -1,0 +1,190 @@
+{
+  "title": "Principles of biotechnology — recombinant DNA technology",
+  "unitSlug": "biotechnology-principles",
+  "topicSlug": "principles-of-biotechnology-recombinant-dna-technology",
+  "topicTitle": "Principles of biotechnology — recombinant DNA technology",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Genetic engineering rewrites DNA. The helix is the molecule those principles act on."
+    }
+  },
+  "notes": [
+    "Biotechnology in this chapter rests on two ideas used together. Genetic engineering changes the genetic material so a cell can make something it did not make before. Bioprocess engineering grows that cell in large, clean cultures and recovers the product.",
+    "A changed gene in a test tube is not yet a medicine. The host has to be multiplied without contamination, and the protein has to be separated from thousands of other molecules. Sterile culture is part of the principle, not a side comment. One unwanted microbe can outgrow the production strain.",
+    "The genetic-engineering sequence is: isolate the DNA, cut out the wanted piece with a restriction enzyme, join it to a vector with ligase, put the recombinant vector into a host, and select the cells that received it. Each step fails for a different reason, so each has its own check.",
+    "The host must be competent, able to take DNA in. For a product that needs human-like sugar chains, a bacterial host may be the wrong choice even if it grows fast. Insulin can be made in E. coli. Some other human proteins need mammalian cells. The host is chosen for the product, not from habit.",
+    "Downstream processing is the recovery half of bioprocess engineering. Cells are separated from the broth, the product is extracted, and it is purified until it is safe to use. A culture that made the protein but was never purified has not finished the process.",
+    "The same recombinant molecule can be copied only because the vector has an origin of replication and the culture is kept free of competitors. Genetic engineering supplies the instruction. Bioprocess engineering supplies the mass of cells and the clean product. Neither idea alone is the technology."
+  ],
+  "confusion": [
+    "Genetic engineering is not the whole of biotechnology in this chapter. Growing and purifying are the second idea.",
+    "Sterile does not mean 'no living cells'. It means no cells other than the production strain.",
+    "E. coli is not the right host for every human protein. Glycoproteins often need animal cells.",
+    "Downstream processing is not the same step as ligation. Ligation builds the DNA. Downstream processing collects the product."
+  ],
+  "keyPoints": [
+    "Two ideas: change the DNA, then culture and recover the product.",
+    "Sterile culture keeps competitors out of the fermenter.",
+    "Sequence: isolate, cut, ligate, transfer, select.",
+    "Host choice depends on the product. Bacteria suit some proteins, mammalian cells suit others.",
+    "Downstream processing separates and purifies the product."
+  ],
+  "importantStatements": [
+    "A gene is useful at industrial scale only when the host can be grown and the product cleaned.",
+    "Contamination is a failed batch, because the wrong microbe spends the nutrients.",
+    "Selection after gene transfer is what identifies the cells worth scaling up."
+  ],
+  "examples": [
+    "Human insulin genes in E. coli, followed by fermentation and purification, give a therapeutic protein.",
+    "A glycoprotein that bacteria cannot decorate correctly is moved into cultured mammalian cells instead.",
+    "A fermenter of the production strain is ruined if a faster contaminant takes over the sugars."
+  ],
+  "universalFacts": [
+    "An origin of replication on the vector is what lets the foreign DNA be copied as the host divides.",
+    "Purification is required because the broth contains many proteins besides the one that was wanted."
+  ],
+  "formulas": [
+    "Two ideas: genetic engineering (change the DNA) + bioprocess engineering (grow the cells and recover the product).",
+    "Pipeline: isolate DNA → cut → ligate into a vector → transfer into a competent host → select → scale up → downstream processing."
+  ],
+  "practice": [
+    "State the two ideas and give one sentence on why both are required for insulin.",
+    "List the genetic-engineering steps in order.",
+    "Explain what downstream processing adds after fermentation."
+  ],
+  "practiceQuestions": [
+    "Why is a sterile fermenter part of the principle and not only a factory detail?",
+    "When would you refuse E. coli as the host?",
+    "What is the difference between ligation and purification?"
+  ],
+  "examNotes": [
+    "Open a 'principles' answer with the two ideas, then the pipeline. Do not start with EcoRI unless the question asks for tools.",
+    "Mention downstream processing. Answers that stop at 'the bacteria make it' are incomplete."
+  ],
+  "examShortTricks": [
+    "Engineer the gene. Then engineer the process.",
+    "Sterile means only the wanted microbe, not an empty tank."
+  ],
+  "specialNotes": [
+    "Keep EcoRI details for the tools note. This note is the reason the tools are used.",
+    "Say 'competent host' when you reach the transfer step."
+  ],
+  "importantNotes": [
+    "Insulin shows a product that bacteria can make. Do not generalise that every human protein is made the same way.",
+    "Selection happens before scale-up. You do not fill a fermenter with untested cells."
+  ],
+  "mcs": [
+    {
+      "question": "The two ideas of this chapter are",
+      "options": [
+        "Cutting and staining",
+        "Genetic engineering and bioprocess engineering",
+        "Predation and mutualism",
+        "Turmeric and basmati"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Downstream processing means",
+      "options": [
+        "Cutting DNA with EcoRI",
+        "Recovering and purifying the product from the culture",
+        "Denaturing DNA at 94 °C",
+        "Planting a non-Bt refuge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A sterile fermenter is used so that",
+      "options": [
+        "No DNA remains",
+        "Only the production microbe grows",
+        "The gene stays in the test tube",
+        "Ligase is unnecessary"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "E. coli is a poor host when the human protein must be",
+      "options": [
+        "Any short peptide",
+        "Glycosylated the way human cells do it",
+        "Made of amino acids",
+        "Secreted at all"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Genetic engineering",
+    "Bioprocess engineering",
+    "Sterile culture",
+    "Host choice",
+    "Downstream processing"
+  ],
+  "importantTasks": [
+    "Write the pipeline from isolated DNA to a purified product.",
+    "Explain in four lines why insulin production needs both principles."
+  ],
+  "exercises": [
+    {
+      "question": "A team ligates a human gene into a plasmid and stops. Explain why they do not yet have a vial of medicine.",
+      "steps": [
+        "Ligation only builds the recombinant DNA.",
+        "That DNA must enter a competent host and the right cells must be selected.",
+        "The selected cells must be grown in a clean culture large enough to matter.",
+        "The protein must be separated from the other contents of the broth and purified."
+      ],
+      "answer": "The medicine exists only after the host has made the protein at scale and downstream processing has purified it. Ligation is the start."
+    }
+  ],
+  "summary": "The principles are genetic engineering and bioprocess engineering used together. DNA is isolated, cut, ligated into a vector, moved into a competent host and selected. The cells are then grown without contamination and the product is purified. The host is chosen to match the protein, which is why some products suit E. coli and others need mammalian cells.",
+  "mcqs": [
+    {
+      "question": "The two ideas of this chapter are",
+      "options": [
+        "Cutting and staining",
+        "Genetic engineering and bioprocess engineering",
+        "Predation and mutualism",
+        "Turmeric and basmati"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Downstream processing means",
+      "options": [
+        "Cutting DNA with EcoRI",
+        "Recovering and purifying the product from the culture",
+        "Denaturing DNA at 94 °C",
+        "Planting a non-Bt refuge"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A sterile fermenter is used so that",
+      "options": [
+        "No DNA remains",
+        "Only the production microbe grows",
+        "The gene stays in the test tube",
+        "Ligase is unnecessary"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "E. coli is a poor host when the human protein must be",
+      "options": [
+        "Any short peptide",
+        "Glycosylated the way human cells do it",
+        "Made of amino acids",
+        "Secreted at all"
+      ],
+      "answer": "B"
+    }
+  ]
+}

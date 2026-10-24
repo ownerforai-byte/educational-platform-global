@@ -4,143 +4,185 @@
   "topicSlug": "biotech-processes",
   "topicTitle": "Processes: PCR, Gel Electrophoresis",
   "relevance": 100,
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "PCR copies a chosen stretch of the double helix. Gel electrophoresis then sorts the copies by size."
+    }
+  },
   "notes": [
-    "**Processes: PCR, Gel Electrophoresis:** This topic covers the fundamental concepts of processes: pcr, gel electrophoresis in the biology curriculum.",
-    "Understanding processes: pcr, gel electrophoresis is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to processes: pcr, gel electrophoresis should be memorized and practiced regularly."
+    "PCR makes many copies of one chosen stretch of DNA. It does not copy the whole genome unless the primers are aimed at the whole genome. Two primers mark the ends of the target.",
+    "Each cycle has three temperature steps. Near 94 °C the two strands separate. The heat replaces a helicase. Near 50 to 65 °C, depending on the primer, the primers bind. At 72 °C a thermostable polymerase extends the primers. Taq polymerase, from Thermus aquaticus, survives the hot step that would destroy an ordinary polymerase.",
+    "The tube must contain template DNA, two primers, dNTPs, Taq polymerase and magnesium ions. Miss any one and the reaction stops. Magnesium is a cofactor for the polymerase.",
+    "If every molecule is copied, the count follows N = N0 × 2^n. Ten cycles give 2^10 = 1024 copies from one molecule. Twenty cycles give about a million. Thirty cycles give about a billion. Real reactions slow down once primers or dNTPs run low.",
+    "Gel electrophoresis sorts the products by size. DNA is negatively charged, so it moves toward the anode in an agarose gel. Smaller fragments slip through the gel faster and travel farther. A lane of known sizes, the ladder, turns distance into a length.",
+    "A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in processes: pcr, gel electrophoresis.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
-  ],
-  "practice": [
-    "Solve at least 5 problems on processes: pcr, gel electrophoresis from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
-  ],
-  "universalFacts": [
-    "This topic is a cornerstone of the biology curriculum and appears consistently in examinations.",
-    "Understanding processes: pcr, gel electrophoresis builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of processes: pcr, gel electrophoresis span engineering, physics, economics, and computer science."
-  ],
-  "animation3D": "biotech-principles",
-  "motionGraphics": "biotech-principles",
-  "examples": [
-    "Example 1: Real-world application of Processes: PCR, Gel Electrophoresis",
-    "Example 2: Practical demonstration of Processes: PCR, Gel Electrophoresis concepts",
-    "Example 4: Diagram-based question on Processes: PCR, Gel Electrophoresis",
-    "Example 5: Application in daily life involving Processes: PCR, Gel Electrophoresis"
-  ],
-  "practiceQuestions": [
-    "Q1. Define and explain Processes: PCR, Gel Electrophoresis with suitable example.",
-    "Q2. Solve problems related to Processes: PCR, Gel Electrophoresis.",
-    "Q3. Differentiate between various aspects of Processes: PCR, Gel Electrophoresis.",
-    "Q4. Derive the key formula related to Processes: PCR, Gel Electrophoresis.",
-    "Q5. What are the applications of Processes: PCR, Gel Electrophoresis?"
-  ],
-  "formulas": [
-    "Key Formula 2: Mathematical expression of Processes: PCR, Gel Electrophoresis",
-    "Key Formula 3: Application formula for Processes: PCR, Gel Electrophoresis",
-    "Key Formula 4: Derivation result for Processes: PCR, Gel Electrophoresis",
-    "Key Formula 5: Important relation in Processes: PCR, Gel Electrophoresis"
+    "PCR does not use a helicase. Strand separation is done by heat, which is why the polymerase must be thermostable.",
+    "Both primers are required. One primer does not define a segment that doubles each cycle.",
+    "DNA moves to the positive electrode, the anode, because the backbone is negative. It does not move to the cathode.",
+    "A brighter band is not automatically a longer fragment. Brightness follows how many molecules are there. Distance follows size."
   ],
   "keyPoints": [
-    "Key Point 2: Essential theorem or principle related to Processes: PCR, Gel Electrophoresis",
-    "Key Point 3: Important condition or constraint for Processes: PCR, Gel Electrophoresis",
-    "Key Point 4: Common applications of Processes: PCR, Gel Electrophoresis",
-    "Key Point 5: Connection to other topics in Science"
-  ],
-  "summary": "Processes: PCR, Gel Electrophoresis is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
-  "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Processes: PCR, Gel Electrophoresis applies",
-    "Note 2: Processes: PCR, Gel Electrophoresis connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Processes: PCR, Gel Electrophoresis",
-    "Note 4: Remember the units and dimensions involved in Processes: PCR, Gel Electrophoresis",
-    "Note 5: Processes: PCR, Gel Electrophoresis frequently appears in examination questions"
+    "PCR cycle: about 94 °C separate, about 50–65 °C anneal, 72 °C extend.",
+    "Taq polymerase comes from Thermus aquaticus.",
+    "N = N0 × 2^n when efficiency is complete.",
+    "DNA migrates to the anode. Smaller fragments go farther.",
+    "Linear DNA: n sites → n + 1 fragments. Circular: n sites → n fragments."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Processes: PCR, Gel Electrophoresis",
-    "Statement 2: Theorem related to Processes: PCR, Gel Electrophoresis",
-    "Statement 3: Condition for Processes: PCR, Gel Electrophoresis to be valid",
-    "Statement 4: Principle governing Processes: PCR, Gel Electrophoresis",
-    "Statement 5: Corollary or consequence of Processes: PCR, Gel Electrophoresis"
+    "Heat, not an enzyme, separates the strands in PCR.",
+    "The primers decide which stretch is amplified.",
+    "Gel position reports size. Band intensity reports amount."
   ],
-  "importantNotes": [
-    "Note 1: Processes: PCR, Gel Electrophoresis is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Processes: PCR, Gel Electrophoresis",
-    "Note 3: Processes: PCR, Gel Electrophoresis has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Processes: PCR, Gel Electrophoresis",
-    "Note 5: Cross-check your answers using alternative methods for Processes: PCR, Gel Electrophoresis"
+  "examples": [
+    "One virus genome amplified for 20 cycles yields about 10^6 copies of the target, enough to detect.",
+    "A small restriction fragment runs ahead of a large one in the same agarose lane.",
+    "A plasmid cut at one site opens into a single linear band, not two."
   ],
-  "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Processes: PCR, Gel Electrophoresis formula",
-    "Trick 2: Elimination technique for Processes: PCR, Gel Electrophoresis MCQs",
-    "Trick 3: Dimensional analysis shortcut for Processes: PCR, Gel Electrophoresis",
-    "Trick 4: Memory aid for Processes: PCR, Gel Electrophoresis formulas",
-    "Trick 5: Time-saving approach for Processes: PCR, Gel Electrophoresis problems"
+  "universalFacts": [
+    "Taq remains active after the 94 °C step because its source organism lives in hot springs.",
+    "At a complete efficiency, each cycle doubles the number of target molecules."
+  ],
+  "formulas": [
+    "N = N0 × 2^n",
+    "2^10 = 1024, so 10 cycles multiply one molecule about a thousand-fold.",
+    "Distance travelled in the gel decreases as fragment size increases."
+  ],
+  "practice": [
+    "Name the three temperatures and what happens at each.",
+    "Calculate the copies after 10 cycles from a single template.",
+    "Explain which electrode DNA moves toward, and why a short fragment wins the race."
+  ],
+  "practiceQuestions": [
+    "Why is an ordinary DNA polymerase a poor choice for PCR?",
+    "A reaction includes template, Taq and dNTPs, but no primers. What is produced?",
+    "Two bands appear after a circular plasmid is cut. How many sites were cut?"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Processes: PCR, Gel Electrophoresis",
-    "Exam Tip 2: Practice previous year questions on Processes: PCR, Gel Electrophoresis",
-    "Exam Tip 4: Learn the derivations for Processes: PCR, Gel Electrophoresis thoroughly",
-    "Exam Tip 5: Review common mistakes related to Processes: PCR, Gel Electrophoresis"
+    "Write the three temperatures in order and attach one event to each. A bare list of numbers is weaker.",
+    "If a count is asked, start from N = N0 × 2^n and show the power of two. Do not jump to the final figure."
+  ],
+  "examShortTricks": [
+    "Hot spring bacterium → Taq survives 94 °C.",
+    "Anode attracts DNA. Small goes far."
+  ],
+  "specialNotes": [
+    "Say 'about 94 °C' and '72 °C'. Annealing is a range because it depends on the primer.",
+    "Do not call the gel a sequencer. It sorts by size. It does not read the bases."
+  ],
+  "importantNotes": [
+    "Magnesium ions belong in the ingredients list.",
+    "The doubling formula assumes every molecule is copied. Late cycles are less perfect."
   ],
   "mcs": [
     {
-      "question": "The primary application of Processes: PCR, Gel Electrophoresis is in:",
+      "question": "Strands are separated in PCR by",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "Helicase",
+        "Heat near 94 °C",
+        "Ligase",
+        "A restriction enzyme"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "For Processes: PCR, Gel Electrophoresis, which condition is necessary?",
+      "question": "Taq polymerase is used because it",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "Cuts palindromes",
+        "Survives the denaturation step",
+        "Is an RNA primer",
+        "Stains the gel"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "What is the unit/dimension used in Processes: PCR, Gel Electrophoresis?",
+      "question": "From one molecule, 10 perfect PCR cycles produce",
       "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Processes: PCR, Gel Electrophoresis is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "10 copies",
+        "20 copies",
+        "1024 copies",
+        "2 copies"
       ],
       "answer": "C"
+    },
+    {
+      "question": "In agarose gel electrophoresis, DNA moves toward",
+      "options": [
+        "The cathode, because it is positive",
+        "The anode, because it is negative",
+        "Neither electrode",
+        "The loading well only"
+      ],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Processes: PCR, Gel Electrophoresis",
-    "Concept 2: Key theorem or principle in Processes: PCR, Gel Electrophoresis",
-    "Concept 3: Important application area of Processes: PCR, Gel Electrophoresis",
-    "Concept 4: Fundamental relationship in Processes: PCR, Gel Electrophoresis",
-    "Concept 5: Connection between Processes: PCR, Gel Electrophoresis and other topics"
+    "Three-step PCR cycle",
+    "Taq and Thermus aquaticus",
+    "Exponential copy number",
+    "Agarose separation by size",
+    "Reading a restriction pattern"
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Processes: PCR, Gel Electrophoresis",
-    "Task 2: Derive the main formula for Processes: PCR, Gel Electrophoresis",
-    "Task 3: Create a concept map for Processes: PCR, Gel Electrophoresis",
-    "Task 4: Practice previous year exam questions on Processes: PCR, Gel Electrophoresis",
-    "Task 5: Explain Processes: PCR, Gel Electrophoresis to a peer or study group"
+    "Compute 2^10 and 2^20 from one starting molecule.",
+    "Predict band count for a circular plasmid cut at 1 site and at 3 sites."
+  ],
+  "exercises": [
+    {
+      "question": "One DNA molecule is amplified by PCR for 10 cycles at full efficiency. How many target copies are present at the end?",
+      "steps": [
+        "Use N = N0 × 2^n.",
+        "N0 = 1 and n = 10, so N = 2^10.",
+        "2^10 = 1024."
+      ],
+      "answer": "1024 copies."
+    }
+  ],
+  "summary": "PCR doubles a primer-defined target each cycle: strands separate near 94 °C, primers bind, and Taq polymerase extends them at 72 °C. The yield is N0 × 2^n while the reaction is efficient. The copies are then separated on an agarose gel, where negatively charged DNA runs to the anode and smaller pieces travel farther.",
+  "mcqs": [
+    {
+      "question": "Strands are separated in PCR by",
+      "options": [
+        "Helicase",
+        "Heat near 94 °C",
+        "Ligase",
+        "A restriction enzyme"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Taq polymerase is used because it",
+      "options": [
+        "Cuts palindromes",
+        "Survives the denaturation step",
+        "Is an RNA primer",
+        "Stains the gel"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "From one molecule, 10 perfect PCR cycles produce",
+      "options": [
+        "10 copies",
+        "20 copies",
+        "1024 copies",
+        "2 copies"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "In agarose gel electrophoresis, DNA moves toward",
+      "options": [
+        "The cathode, because it is positive",
+        "The anode, because it is negative",
+        "Neither electrode",
+        "The loading well only"
+      ],
+      "answer": "B"
+    }
   ]
 }

@@ -6,66 +6,184 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "food-chain-energy",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Energy pyramid for a pond or a forest: producers at the base, about 10 percent passed up each level, the rest lost as heat."
+    }
+  },
   "notes": [
-    "**Scope.** Concept of ecosystem, structural and functional aspects o… — Ecology, Biology (class-11-notes).",
-    "**Tested.** define it · list: ecosystem, structural, functional aspects of pond, forest ecosystem · one worked example · one misconception each.",
-    "**Structural.** one-line definition + one-line exam use.",
-    "**Functional aspects of pond.** one-line definition + one-line exam use.",
-    "**Forest ecosystem.** one-line definition + one-line exam use."
+    "An ecosystem is a community of organisms and the abiotic setting they live in, working as one unit. The word was used in this sense by A. G. Tansley. Structure is what is there. Function is what happens: production, decomposition, energy flow and nutrient cycling.",
+    "A pond's abiotic part is the water itself, the light that reaches each depth, temperature, dissolved oxygen and dissolved minerals. Producers are phytoplankton plus floating and submerged plants. Consumers are zooplankton, aquatic insects, fish and birds. Decomposers are bacteria and fungi, especially on the mud where dead matter settles.",
+    "A pond is also layered in space. The littoral zone is the shallow edge with rooted plants. The limnetic zone is the open water where phytoplankton live in the light. The profundal zone is the deep water with too little light for photosynthesis, so it depends on food falling from above. Those zones are structure. The feeding links among them are function.",
+    "A forest is layered in height. The canopy takes most of the light. Under it are smaller trees, then shrubs, herbs, and the litter of the forest floor. Producers are the woody plants and the ground herbs. Consumers are insects, birds, deer and the predators that eat them. Fungi and bacteria in the litter are the decomposers. In Nepal a Terai sal forest and a mid-hill oak-rhododendron forest are two such structures with different species and the same four jobs.",
+    "Function is shared by pond and forest even when the species lists differ. Producers fix light into chemical energy. Each consumer level receives only about a tenth of the energy of the level below, Lindeman's ten percent law, and the rest leaves as heat. Energy therefore moves one way and must be replaced by sunlight. Nutrients, unlike energy, cycle: decomposers return carbon, nitrogen and minerals to a form producers can use again.",
+    "Productivity is the rate of that production. Gross primary productivity is the total energy fixed. Net primary productivity is what remains after the producers have respired. A pond's net production is often limited by how far light and nutrients reach. A forest locks a great deal of its production into wood, so its standing biomass is large even when the yearly growth of new leaves is modest. Both are complete ecosystems if producers, consumers, decomposers and the abiotic medium are all present."
   ],
   "confusion": [
-    "❌ treat \"ecosystem\" as one blob → ✅ split into: ecosystem, structural, functional aspects of pond.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: ecosystem, structural, functional aspects of pond, forest ecosystem (within Ecology).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: ecosystem, structural, functional aspects of pond, forest ecosystem.",
-    "one worked example for \"Concept of ecosystem, structural and functional aspects o…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Concept of ecosystem, structural and functional aspects o…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Concept of ecosystem, structural and functional aspects o…\" with one example.",
-    "compare \"ecosystem\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Concept of ecosystem, structural and functional aspects o…\" and verify the answer is plausible."
+    "Structure is not function. A list of fish is structure. The path of energy through those fish is function.",
+    "Energy is not recycled the way nitrogen is. Energy arrives from the sun and leaves as heat.",
+    "The profundal zone is not full of photosynthetic producers. Light is too weak there.",
+    "Net primary productivity is not gross. Respiration has already been subtracted."
   ],
   "keyPoints": [
-    "• Ecosystem",
-    "• Structural",
-    "• Functional aspects of pond",
-    "• Forest ecosystem"
+    "Ecosystem = community + abiotic environment, as one unit.",
+    "Four functions: productivity, decomposition, energy flow, nutrient cycling.",
+    "Pond zones: littoral, limnetic, profundal.",
+    "Forest strata: canopy, understorey, shrub, herb, litter.",
+    "About 10 percent of energy passes to the next trophic level."
   ],
-  "summary": "Concept of ecosystem, structural and functional aspects o… (Ecology, Biology, class-11-notes) covers ecosystem, structural, functional aspects of pond. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Pond and forest differ in species and in layering, and they share the same four functions.",
+    "Decomposers are required in both, or nutrients stay locked in dead bodies.",
+    "A standing crop of wood is biomass. Productivity is a rate."
+  ],
+  "examples": [
+    "Phytoplankton in the limnetic zone are the main producers of an open pond.",
+    "Leaf litter on a forest floor is the decomposers' workplace.",
+    "If producers capture 10,000 kJ, about 10 kJ remains at the tertiary-consumer level under the ten percent law."
+  ],
+  "universalFacts": [
+    "Lindeman's ten percent law: roughly a tenth of the energy at one trophic level is available to the next. Real efficiencies fall between about 5 and 20 percent.",
+    "Nutrient cycles are closed enough to reuse atoms. Energy flow is not closed."
+  ],
+  "formulas": [
+    "E(n+1) ≈ 0.1 × E(n)",
+    "Net primary productivity = gross primary productivity − respiration of the producers."
+  ],
+  "practice": [
+    "Sketch a pond in three zones and name one organism-type in each.",
+    "List the four functions and mark which of them also describes a forest.",
+    "Carry 10,000 kJ from producers to the tertiary consumer in three multiplications."
+  ],
+  "practiceQuestions": [
+    "Why can a deep pond zone not support submerged plants?",
+    "How is a forest floor like the mud of a pond?",
+    "Why does a food chain in either ecosystem stay short?"
+  ],
+  "examNotes": [
+    "A 'describe pond and forest' answer needs both structure and function. Species lists alone miss half the question.",
+    "Show the ten percent calculation in separate steps when a number is given."
+  ],
+  "examShortTricks": [
+    "Energy one way. Nutrients cycle.",
+    "NPP = GPP − R. Do not report GPP as the energy left for herbivores."
+  ],
+  "specialNotes": [
+    "Name a Nepali forest type if you can, then still give the universal strata. The strata are what the mark scheme wants.",
+    "Trophic level and zone are different. Limnetic is a place. Producer is a feeding role."
+  ],
+  "importantNotes": [
+    "Tansley is the name to attach to the ecosystem as a unit.",
+    "Standing biomass can be high in a forest while energy flow through the canopy is still only the yearly production."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Concept of ecosystem, structural and functional aspects o…\"?",
+      "question": "The profundal zone of a pond is",
       "options": [
-        "Ecosystem",
-        "Structural",
-        "Unrelated topic",
-        "None of the above"
+        "The sunlit open water full of phytoplankton",
+        "Deep water with too little light for photosynthesis",
+        "The canopy",
+        "The litter layer of a forest"
       ],
-      "answer": "Ecosystem",
-      "explanation": "Ecosystem is listed among the official sub-ideas of Concept of ecosystem, structural and functional aspects o…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Concept of ecosystem, structural and functional aspects o…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Under the ten percent law, 10,000 kJ in producers leaves about how much at the tertiary consumer?",
       "options": [
-        "True",
-        "False"
+        "10,000 kJ",
+        "1,000 kJ",
+        "100 kJ",
+        "10 kJ"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "D"
+    },
+    {
+      "question": "Net primary productivity equals",
+      "options": [
+        "Gross primary productivity plus respiration",
+        "Gross primary productivity minus producer respiration",
+        "Only the energy in decomposers",
+        "The biomass of wood"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Energy flow differs from nutrient cycling because energy",
+      "options": [
+        "Returns to producers in a closed loop",
+        "Moves one way and is lost as heat",
+        "Is never used in respiration",
+        "Is an abiotic zone"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Structure versus function",
+    "Pond zones",
+    "Forest stratification",
+    "Ten percent law",
+    "Gross and net productivity"
+  ],
+  "importantTasks": [
+    "Compare pond and forest in two columns: producers, consumers, decomposers, main abiotic medium.",
+    "Calculate the energy at each trophic level from a given producer input."
+  ],
+  "exercises": [
+    {
+      "question": "Producers in a forest capture 10,000 kJ. Using the ten percent law, how much energy reaches the tertiary consumers?",
+      "steps": [
+        "Primary consumers receive about 0.1 × 10,000 = 1,000 kJ.",
+        "Secondary consumers receive about 0.1 × 1,000 = 100 kJ.",
+        "Tertiary consumers receive about 0.1 × 100 = 10 kJ."
+      ],
+      "answer": "About 10 kJ."
+    }
+  ],
+  "summary": "A pond and a forest are ecosystems: a community plus its abiotic setting. The pond is zoned into littoral, limnetic and profundal water. The forest is stacked from canopy to litter. Both produce, decompose, pass about a tenth of their energy upward, and recycle nutrients. Energy must keep arriving as light. Atoms of carbon and nitrogen can be used again.",
+  "mcqs": [
+    {
+      "question": "The profundal zone of a pond is",
+      "options": [
+        "The sunlit open water full of phytoplankton",
+        "Deep water with too little light for photosynthesis",
+        "The canopy",
+        "The litter layer of a forest"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Under the ten percent law, 10,000 kJ in producers leaves about how much at the tertiary consumer?",
+      "options": [
+        "10,000 kJ",
+        "1,000 kJ",
+        "100 kJ",
+        "10 kJ"
+      ],
+      "answer": "D"
+    },
+    {
+      "question": "Net primary productivity equals",
+      "options": [
+        "Gross primary productivity plus respiration",
+        "Gross primary productivity minus producer respiration",
+        "Only the energy in decomposers",
+        "The biomass of wood"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Energy flow differs from nutrient cycling because energy",
+      "options": [
+        "Returns to producers in a closed loop",
+        "Moves one way and is lost as heat",
+        "Is never used in respiration",
+        "Is an abiotic zone"
+      ],
+      "answer": "B"
     }
   ]
 }

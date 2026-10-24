@@ -1,0 +1,188 @@
+{
+  "title": "Processes: PCR, Gel Electrophoresis",
+  "unitSlug": "biotech-principles",
+  "topicSlug": "biotech-processes",
+  "topicTitle": "Processes: PCR, Gel Electrophoresis",
+  "relevance": 100,
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "PCR copies a chosen stretch of the double helix. Gel electrophoresis then sorts the copies by size."
+    }
+  },
+  "notes": [
+    "PCR makes many copies of one chosen stretch of DNA. It does not copy the whole genome unless the primers are aimed at the whole genome. Two primers mark the ends of the target.",
+    "Each cycle has three temperature steps. Near 94 °C the two strands separate. The heat replaces a helicase. Near 50 to 65 °C, depending on the primer, the primers bind. At 72 °C a thermostable polymerase extends the primers. Taq polymerase, from Thermus aquaticus, survives the hot step that would destroy an ordinary polymerase.",
+    "The tube must contain template DNA, two primers, dNTPs, Taq polymerase and magnesium ions. Miss any one and the reaction stops. Magnesium is a cofactor for the polymerase.",
+    "If every molecule is copied, the count follows N = N0 × 2^n. Ten cycles give 2^10 = 1024 copies from one molecule. Twenty cycles give about a million. Thirty cycles give about a billion. Real reactions slow down once primers or dNTPs run low.",
+    "Gel electrophoresis sorts the products by size. DNA is negatively charged, so it moves toward the anode in an agarose gel. Smaller fragments slip through the gel faster and travel farther. A lane of known sizes, the ladder, turns distance into a length.",
+    "A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light."
+  ],
+  "confusion": [
+    "PCR does not use a helicase. Strand separation is done by heat, which is why the polymerase must be thermostable.",
+    "Both primers are required. One primer does not define a segment that doubles each cycle.",
+    "DNA moves to the positive electrode, the anode, because the backbone is negative. It does not move to the cathode.",
+    "A brighter band is not automatically a longer fragment. Brightness follows how many molecules are there. Distance follows size."
+  ],
+  "keyPoints": [
+    "PCR cycle: about 94 °C separate, about 50–65 °C anneal, 72 °C extend.",
+    "Taq polymerase comes from Thermus aquaticus.",
+    "N = N0 × 2^n when efficiency is complete.",
+    "DNA migrates to the anode. Smaller fragments go farther.",
+    "Linear DNA: n sites → n + 1 fragments. Circular: n sites → n fragments."
+  ],
+  "importantStatements": [
+    "Heat, not an enzyme, separates the strands in PCR.",
+    "The primers decide which stretch is amplified.",
+    "Gel position reports size. Band intensity reports amount."
+  ],
+  "examples": [
+    "One virus genome amplified for 20 cycles yields about 10^6 copies of the target, enough to detect.",
+    "A small restriction fragment runs ahead of a large one in the same agarose lane.",
+    "A plasmid cut at one site opens into a single linear band, not two."
+  ],
+  "universalFacts": [
+    "Taq remains active after the 94 °C step because its source organism lives in hot springs.",
+    "At a complete efficiency, each cycle doubles the number of target molecules."
+  ],
+  "formulas": [
+    "N = N0 × 2^n",
+    "2^10 = 1024, so 10 cycles multiply one molecule about a thousand-fold.",
+    "Distance travelled in the gel decreases as fragment size increases."
+  ],
+  "practice": [
+    "Name the three temperatures and what happens at each.",
+    "Calculate the copies after 10 cycles from a single template.",
+    "Explain which electrode DNA moves toward, and why a short fragment wins the race."
+  ],
+  "practiceQuestions": [
+    "Why is an ordinary DNA polymerase a poor choice for PCR?",
+    "A reaction includes template, Taq and dNTPs, but no primers. What is produced?",
+    "Two bands appear after a circular plasmid is cut. How many sites were cut?"
+  ],
+  "examNotes": [
+    "Write the three temperatures in order and attach one event to each. A bare list of numbers is weaker.",
+    "If a count is asked, start from N = N0 × 2^n and show the power of two. Do not jump to the final figure."
+  ],
+  "examShortTricks": [
+    "Hot spring bacterium → Taq survives 94 °C.",
+    "Anode attracts DNA. Small goes far."
+  ],
+  "specialNotes": [
+    "Say 'about 94 °C' and '72 °C'. Annealing is a range because it depends on the primer.",
+    "Do not call the gel a sequencer. It sorts by size. It does not read the bases."
+  ],
+  "importantNotes": [
+    "Magnesium ions belong in the ingredients list.",
+    "The doubling formula assumes every molecule is copied. Late cycles are less perfect."
+  ],
+  "mcs": [
+    {
+      "question": "Strands are separated in PCR by",
+      "options": [
+        "Helicase",
+        "Heat near 94 °C",
+        "Ligase",
+        "A restriction enzyme"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Taq polymerase is used because it",
+      "options": [
+        "Cuts palindromes",
+        "Survives the denaturation step",
+        "Is an RNA primer",
+        "Stains the gel"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "From one molecule, 10 perfect PCR cycles produce",
+      "options": [
+        "10 copies",
+        "20 copies",
+        "1024 copies",
+        "2 copies"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "In agarose gel electrophoresis, DNA moves toward",
+      "options": [
+        "The cathode, because it is positive",
+        "The anode, because it is negative",
+        "Neither electrode",
+        "The loading well only"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Three-step PCR cycle",
+    "Taq and Thermus aquaticus",
+    "Exponential copy number",
+    "Agarose separation by size",
+    "Reading a restriction pattern"
+  ],
+  "importantTasks": [
+    "Compute 2^10 and 2^20 from one starting molecule.",
+    "Predict band count for a circular plasmid cut at 1 site and at 3 sites."
+  ],
+  "exercises": [
+    {
+      "question": "One DNA molecule is amplified by PCR for 10 cycles at full efficiency. How many target copies are present at the end?",
+      "steps": [
+        "Use N = N0 × 2^n.",
+        "N0 = 1 and n = 10, so N = 2^10.",
+        "2^10 = 1024."
+      ],
+      "answer": "1024 copies."
+    }
+  ],
+  "summary": "PCR doubles a primer-defined target each cycle: strands separate near 94 °C, primers bind, and Taq polymerase extends them at 72 °C. The yield is N0 × 2^n while the reaction is efficient. The copies are then separated on an agarose gel, where negatively charged DNA runs to the anode and smaller pieces travel farther.",
+  "mcqs": [
+    {
+      "question": "Strands are separated in PCR by",
+      "options": [
+        "Helicase",
+        "Heat near 94 °C",
+        "Ligase",
+        "A restriction enzyme"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Taq polymerase is used because it",
+      "options": [
+        "Cuts palindromes",
+        "Survives the denaturation step",
+        "Is an RNA primer",
+        "Stains the gel"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "From one molecule, 10 perfect PCR cycles produce",
+      "options": [
+        "10 copies",
+        "20 copies",
+        "1024 copies",
+        "2 copies"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "In agarose gel electrophoresis, DNA moves toward",
+      "options": [
+        "The cathode, because it is positive",
+        "The anode, because it is negative",
+        "Neither electrode",
+        "The loading well only"
+      ],
+      "answer": "B"
+    }
+  ]
+}

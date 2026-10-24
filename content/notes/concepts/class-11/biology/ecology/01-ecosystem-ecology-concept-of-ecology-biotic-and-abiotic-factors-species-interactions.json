@@ -6,68 +6,185 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "species-interactions",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Four interaction types with the effect on each partner: mutualism +/+, commensalism +/0, predation +/−, competition −/−."
+    }
+  },
   "notes": [
-    "**Scope.** Ecosystem ecology: Concept of ecology, biotic and abiotic… — Ecology, Biology (class-11-notes).",
-    "**Tested.** define it · list: ecosystem ecology, ecology, biotic, abiotic factors · one worked example · one misconception each.",
-    "**Ecology.** one-line definition + one-line exam use.",
-    "**Biotic.** one-line definition + one-line exam use.",
-    "**Abiotic factors.** one-line definition + one-line exam use.",
-    "**Species interactions.** one-line definition + one-line exam use."
+    "Ecology is the study of how organisms interact with one another and with their surroundings. Ernst Haeckel gave the subject its name in 1866, from the Greek word for house. The house is the environment the organism actually lives in.",
+    "The units get larger in a fixed order. An individual belongs to a population of one species. Several populations form a community. A community plus the non-living setting is an ecosystem. All ecosystems together are the biosphere. A question about 'ecology of a pond' is usually about the ecosystem level.",
+    "Abiotic factors are the non-living conditions. Temperature, water, light, soil texture, soil pH, mineral salts, humidity and wind each have a range an organism can tolerate. Outside that range the organism migrates, becomes dormant, or dies. Light decides photosynthesis. Water decides where most life can occur at all.",
+    "Biotic factors are the living ones: producers, consumers and decomposers, and the ways they affect each other. A goat is a biotic factor for the grass it eats and for the leopard that eats the goat. Decomposers are biotic factors for everyone, because they return minerals to the soil.",
+    "Interactions are named by the effect on each partner. Mutualism is +/+: both gain, as in a lichen (fungus and alga), Rhizobium in a legume nodule, and the fig wasp that pollinates the fig and breeds inside it. Commensalism is +/0: the cattle egret feeds on insects stirred up by grazing cattle, and the cattle are neither helped nor harmed. An orchid perched on a branch gets support and, if it is not a heavy burden, leaves the tree unchanged.",
+    "Predation and parasitism are both +/−, but the predator kills and eats, while the parasite lives on or in the host and usually does not kill it at once. Cuscuta on a host plant, Plasmodium in a person, and a cuckoo laying in another bird's nest are parasitic. Competition is −/−: both do worse when they need the same scarce resource. Amensalism is −/0: one is harmed and the other is unaffected, as when Penicillium secretes a substance that kills nearby bacteria."
   ],
   "confusion": [
-    "❌ treat \"Ecosystem ecology\" as one blob → ✅ split into: ecosystem ecology, ecology, biotic.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: ecosystem ecology, ecology, biotic, abiotic factors (within Ecology).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: ecosystem ecology, ecology, biotic, abiotic factors.",
-    "one worked example for \"Ecosystem ecology: Concept of ecology, biotic and abiotic…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Ecosystem ecology: Concept of ecology, biotic and abiotic…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Ecosystem ecology: Concept of ecology, biotic and abiotic…\" with one example.",
-    "compare \"Ecosystem ecology\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Ecosystem ecology: Concept of ecology, biotic and abiotic…\" and verify the answer is plausible."
+    "Commensalism is not mutualism. One partner's score is zero.",
+    "A parasite is not a predator. The host is kept alive while it is used.",
+    "Abiotic factors are not 'unimportant because they are dead'. Light, water and temperature set the limits inside which biotic interactions happen.",
+    "Competition includes members of the same species fighting over the same resource, not only two different species."
   ],
   "keyPoints": [
-    "• Ecosystem ecology",
-    "• Ecology",
-    "• Biotic",
-    "• Abiotic factors",
-    "• Species interactions"
+    "Ecology: organisms, each other, and their surroundings.",
+    "Levels: individual, population, community, ecosystem, biosphere.",
+    "Abiotic: temperature, water, light, soil, humidity, wind.",
+    "Mutualism +/+, commensalism +/0, predation and parasitism +/−, competition −/−, amensalism −/0.",
+    "Lichen, Rhizobium, cattle egret, Cuscuta and Penicillium are the standard examples."
   ],
-  "summary": "Ecosystem ecology: Concept of ecology, biotic and abiotic… (Ecology, Biology, class-11-notes) covers Ecosystem ecology, ecology, biotic. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Every abiotic factor acts through a tolerance range, not as a simple on/off switch.",
+    "The sign pair is the definition of the interaction. Learn the signs before the stories.",
+    "Decomposers are a biotic component even though their work looks chemical."
+  ],
+  "examples": [
+    "A lichen: the alga photosynthesises and the fungus holds water and minerals. Both gain.",
+    "A cattle egret follows cows and eats flushed insects. The cows do not gain or lose from the bird.",
+    "Penicillium nearby kills bacteria that would otherwise grow. The fungus is not depending on those particular dead cells in the definition of amensalism."
+  ],
+  "universalFacts": [
+    "No organism lives without abiotic limits. Temperature and water are the two broadest.",
+    "A mutualism can be so tight that neither partner completes its life cycle alone, as in many figs and their wasps."
+  ],
+  "formulas": [
+    "Mutualism +/+. Commensalism +/0. Predation +/−. Parasitism +/−. Competition −/−. Amensalism −/0.",
+    "Organisation: individual → population → community → ecosystem → biosphere."
+  ],
+  "practice": [
+    "Assign a sign pair to lichen, cattle egret, Cuscuta and two goats at one patch of grass.",
+    "List four abiotic factors and one organism each can exclude.",
+    "Separate predation from parasitism with one sentence on the fate of the victim."
+  ],
+  "practiceQuestions": [
+    "Why is an orchid on a tree usually called commensalism rather than mutualism?",
+    "How does competition differ from amensalism?",
+    "At which ecological level do biotic and abiotic factors sit together by definition?"
+  ],
+  "examNotes": [
+    "Write the sign next to the name. A definition without +/+ or −/− is easy to muddle.",
+    "Use one example per interaction. Repeating the lichen for every type loses the marks."
+  ],
+  "examShortTricks": [
+    "Egret = +/0. Lichen = +/+. Cuscuta = parasite. Penicillium = amensalism.",
+    "Predator kills. Parasite stays."
+  ],
+  "specialNotes": [
+    "Intraspecific competition is inside one species. Interspecific competition is between species. Say which you mean.",
+    "A heavy load of epiphytes can harm the tree. The clean commensal example assumes the tree is not injured."
+  ],
+  "importantNotes": [
+    "Haeckel, 1866, is the name and year attached to the word ecology.",
+    "The ecosystem, not the population, is the level that includes abiotic factors by definition."
+  ],
+  "mcs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Ecosystem ecology: Concept of ecology, biotic and abiotic…\"?",
+      "question": "Mutualism is",
       "options": [
-        "Ecosystem ecology",
-        "Ecology",
-        "Unrelated topic",
-        "None of the above"
+        "+/+",
+        "+/0",
+        "−/−",
+        "−/0"
       ],
-      "answer": "A",
-      "explanation": "Ecosystem ecology is listed among the official sub-ideas of Ecosystem ecology: Concept of ecology, biotic and abiotic…; the others are not part of this topic."
+      "answer": "A"
     },
     {
-      "question": "A common examiner point on \"Ecosystem ecology: Concept of ecology, biotic and abiotic…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A cattle egret with grazing cattle is",
       "options": [
-        "True",
-        "False"
+        "Mutualism",
+        "Commensalism",
+        "Parasitism",
+        "Amensalism"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Penicillium killing nearby bacteria, with no benefit required from those bacteria, is",
+      "options": [
+        "Mutualism",
+        "Predation",
+        "Amensalism",
+        "Commensalism"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Biotic and abiotic factors together, as a functioning unit, are studied at the level of",
+      "options": [
+        "A single population only",
+        "The ecosystem",
+        "A gene",
+        "A tissue"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Scope of ecology",
+    "Abiotic tolerance",
+    "Biotic components",
+    "Sign pairs of interactions",
+    "Predation versus parasitism"
+  ],
+  "importantTasks": [
+    "Make a six-row table of interactions with signs and one example each.",
+    "Place a pond organism into producer, consumer or decomposer and name one abiotic limit on it."
+  ],
+  "exercises": [
+    {
+      "question": "Classify lichen, cattle egret with cattle, a cuckoo in another bird's nest, and two herbivores sharing a scarce grass, giving the sign pair each time.",
+      "steps": [
+        "Lichen: fungus and alga each gain, so mutualism, +/+.",
+        "The egret gains insects and the cattle are unaffected, so commensalism, +/0.",
+        "The cuckoo gains a foster parent and the host loses its own chicks' care, so parasitism, +/−.",
+        "The two herbivores each get less grass, so competition, −/−."
+      ],
+      "answer": "Lichen +/+. Egret +/0. Cuckoo +/−. The two herbivores −/−."
+    }
+  ],
+  "summary": "Ecology studies organisms with each other and with temperature, water, light, soil and the other abiotic limits. Living partners interact as mutualism (+/+), commensalism (+/0), predation or parasitism (+/−), competition (−/−) or amensalism (−/0). The ecosystem is the level where the community and those abiotic factors function together.",
+  "mcqs": [
+    {
+      "question": "Mutualism is",
+      "options": [
+        "+/+",
+        "+/0",
+        "−/−",
+        "−/0"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A cattle egret with grazing cattle is",
+      "options": [
+        "Mutualism",
+        "Commensalism",
+        "Parasitism",
+        "Amensalism"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Penicillium killing nearby bacteria, with no benefit required from those bacteria, is",
+      "options": [
+        "Mutualism",
+        "Predation",
+        "Amensalism",
+        "Commensalism"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Biotic and abiotic factors together, as a functioning unit, are studied at the level of",
+      "options": [
+        "A single population only",
+        "The ecosystem",
+        "A gene",
+        "A tissue"
+      ],
+      "answer": "B"
     }
   ]
 }

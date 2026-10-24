@@ -1,0 +1,188 @@
+{
+  "title": "Transgenic Animals",
+  "unitSlug": "biotech-applications",
+  "topicSlug": "transgenic-animals",
+  "topicTitle": "Transgenic Animals",
+  "relevance": 100,
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "A transgenic animal carries a foreign gene inside the same double helix as its own DNA."
+    }
+  },
+  "notes": [
+    "A transgenic animal carries a gene that came from another organism, and that gene is present in the animal's cells and is expressed. The gene is extra DNA, not a temporary injection of protein.",
+    "The usual route in mice starts with a fertilised egg. Copies of the foreign DNA are microinjected into one pronucleus. The egg is placed in a surrogate mother. Offspring are then tested to see which ones actually incorporated the gene.",
+    "Only some injected eggs take up the DNA, and only some of those pass the gene on. Screening, often with a marker or by looking for the DNA itself, is part of the method. An animal that merely received a protein is not transgenic.",
+    "The inserted gene must be expressed, not just sit in the genome. A promoter that works in the host decides where and when the new protein is made. A gene without a working promoter does not change the animal's phenotype.",
+    "Mice are the common first host because they breed quickly and their embryos are well studied. The same idea has been used in fish, pigs, sheep and cattle when a product or a disease model is wanted in that species.",
+    "Making the animal is only the first half of the topic. The reason for doing it — disease models, proteins in milk, and safety tests — belongs with the uses. The method here is the transfer of a chosen gene into the germline so every cell of the offspring can carry it."
+  ],
+  "confusion": [
+    "A transgenic animal is not any animal that has been cloned. Cloning copies a genome. Transgenesis adds a foreign gene.",
+    "Injecting a hormone into an adult does not make that adult transgenic. The gene has to be in the DNA.",
+    "Not every offspring of an injected egg carries the new gene. The litter has to be screened.",
+    "The foreign gene is not automatically expressed in every tissue. Expression follows the promoter attached to it."
+  ],
+  "keyPoints": [
+    "Transgenic means a foreign gene is in the genome and is expressed.",
+    "Microinjection into a fertilised-egg pronucleus is the standard mouse method.",
+    "The embryo is carried by a surrogate, then the young are screened.",
+    "A promoter controls whether the new gene is actually used.",
+    "Cloning and transgenesis are different operations."
+  ],
+  "importantStatements": [
+    "The defining feature is an inherited, expressed foreign gene, not a one-off treatment.",
+    "Most injected embryos do not become transgenic founders. Screening is required.",
+    "The gene is introduced at the start of development so it can be in the germline."
+  ],
+  "examples": [
+    "A mouse embryo is injected with a human disease gene so the adult mouse develops a version of that disease for study.",
+    "A growth-hormone gene placed in a fish embryo can produce a line that grows faster than its unmodified relatives.",
+    "A gene for a human milk protein, joined to a mammary promoter, is aimed at expression in the milk of a transgenic cow rather than in every organ."
+  ],
+  "universalFacts": [
+    "The foreign DNA is inserted into a very early embryo so that, if it integrates, daughter cells inherit it.",
+    "Expression depends on a promoter the host cell recognises. The coding sequence alone is not enough."
+  ],
+  "formulas": [
+    "Path: foreign gene + promoter → microinjection into pronucleus → surrogate → screen offspring → transgenic line.",
+    "Transgenic means integrated foreign DNA that is expressed. A protein injection does not qualify."
+  ],
+  "practice": [
+    "List the steps from a DNA sample to a screened transgenic mouse.",
+    "Explain why a mammary promoter is chosen when the product is wanted in milk.",
+    "Say how a clone and a transgenic animal differ."
+  ],
+  "practiceQuestions": [
+    "Why are not all pups from an injected egg transgenic?",
+    "What does the promoter contribute that the coding sequence does not?",
+    "At what stage of the life cycle is the foreign DNA usually introduced, and why?"
+  ],
+  "examNotes": [
+    "Define transgenic before you describe the injection. The definition is the foreign gene plus its expression.",
+    "Name the pronucleus injection and the need to screen. Both are expected in a method answer."
+  ],
+  "examShortTricks": [
+    "Clone = copy. Transgenic = added gene.",
+    "If the question says 'expressed', mention the promoter, not only the injection."
+  ],
+  "specialNotes": [
+    "Write 'fertilised egg' or 'early embryo', not 'the adult is injected with DNA'.",
+    "Keep the method in this note and the five uses in the applications note so the two answers do not collapse into one."
+  ],
+  "importantNotes": [
+    "Integration is not guaranteed. Say that screening follows birth.",
+    "Germline presence is what lets the gene pass to the next generation."
+  ],
+  "mcs": [
+    {
+      "question": "A transgenic animal is one that",
+      "options": [
+        "Has been given a protein injection",
+        "Carries and expresses a foreign gene",
+        "Is a clone of its parent",
+        "Has no nucleus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In mice the foreign DNA is commonly injected into",
+      "options": [
+        "The adult liver",
+        "A pronucleus of the fertilised egg",
+        "The milk",
+        "The bacterial plasmid only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A promoter is added to the foreign gene so that",
+      "options": [
+        "The gene is cut into fragments",
+        "The host can transcribe it in the chosen tissue",
+        "The animal becomes a clone",
+        "Restriction enzymes are unnecessary"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Offspring of an injected egg",
+      "options": [
+        "Always carry the new gene",
+        "Must be screened, because many do not",
+        "Are bacteria",
+        "Lose the gene before birth in every case"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "Foreign gene plus expression",
+    "Pronuclear microinjection",
+    "Screening of offspring",
+    "Promoter and tissue of expression",
+    "Clone versus transgenic"
+  ],
+  "importantTasks": [
+    "Write the five-step path from DNA to a transgenic line.",
+    "Explain why the gene is put into the embryo rather than the adult."
+  ],
+  "exercises": [
+    {
+      "question": "A student says a mouse is transgenic because it was injected with human insulin. Correct that claim in steps.",
+      "steps": [
+        "A protein injection does not change the mouse genome.",
+        "A transgenic mouse must carry the foreign DNA in its cells.",
+        "That DNA is introduced into a fertilised egg, not given as a drug to the adult.",
+        "The gene must also be expressed, which needs a working promoter."
+      ],
+      "answer": "The mouse is transgenic only if the foreign gene is in its DNA and is expressed. An insulin injection is a treatment, not transgenesis."
+    }
+  ],
+  "summary": "A transgenic animal is produced by putting a foreign gene into an early embryo, usually by microinjection into a fertilised-egg pronucleus, then screening the offspring for integration and expression. A promoter decides where the gene is used. Cloning copies a genome and is a different procedure.",
+  "mcqs": [
+    {
+      "question": "A transgenic animal is one that",
+      "options": [
+        "Has been given a protein injection",
+        "Carries and expresses a foreign gene",
+        "Is a clone of its parent",
+        "Has no nucleus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In mice the foreign DNA is commonly injected into",
+      "options": [
+        "The adult liver",
+        "A pronucleus of the fertilised egg",
+        "The milk",
+        "The bacterial plasmid only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A promoter is added to the foreign gene so that",
+      "options": [
+        "The gene is cut into fragments",
+        "The host can transcribe it in the chosen tissue",
+        "The animal becomes a clone",
+        "Restriction enzymes are unnecessary"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Offspring of an injected egg",
+      "options": [
+        "Always carry the new gene",
+        "Must be screened, because many do not",
+        "Are bacteria",
+        "Lose the gene before birth in every case"
+      ],
+      "answer": "B"
+    }
+  ]
+}

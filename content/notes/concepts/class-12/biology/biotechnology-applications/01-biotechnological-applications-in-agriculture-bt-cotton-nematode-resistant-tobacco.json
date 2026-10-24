@@ -6,51 +6,185 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "dna-double-helix",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Bt cotton and nematode-resistant tobacco both depend on a gene added to the plant's DNA."
+    }
+  },
   "notes": [
-    "**Scope.** Biotechnological applications in agriculture: Bt cotton, … — Biotechnology and Its Applications, Biology (class-12-notes).",
-    "**Tested.** define it · list: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco · one worked example · one misconception each.",
-    "**Nematode-resistant tobacco.** one-line definition + one-line exam use."
+    "Bt cotton carries cry genes from the bacterium Bacillus thuringiensis. The plant makes the Cry protein in its own tissues. Bollworm larvae that eat the leaf or the boll take the protein in with the meal.",
+    "Inside the bacterium the Cry protein is an inactive crystal. In the alkaline gut of a susceptible larva it dissolves and is cut into an active toxin. The toxin forms pores in the midgut lining and the larva dies. cryIAc and cryIIAb are the genes used against cotton bollworms.",
+    "The toxin is not a general insect killer. It needs that alkaline gut. Pollinators that do not eat the tissue, and insects whose guts do not activate the crystal, are not the target. The human stomach is acidic, and people do not have the insect midgut receptor the toxin uses.",
+    "A field of only Bt plants selects for larvae that survive the toxin. A refuge of non-Bt cotton, about a fifth of the area, lets susceptible insects survive and mate with resistant survivors. That mating dilutes resistance.",
+    "Nematode-resistant tobacco uses RNA interference against the root-knot nematode Meloidogyne incognita. Agrobacterium is used to put into the plant a DNA sequence that produces double-stranded RNA matching a gene the nematode needs.",
+    "When the nematode feeds on the root it takes up that RNA. The matching mRNA in the worm is silenced, so the nematode cannot develop properly in the root. The protection is gene silencing, not a protein crystal. Bt and this RNAi crop solve pest problems by different molecules."
   ],
   "confusion": [
-    "❌ treat \"Biotechnological applications in agriculture: Bt cotton\" as one blob → ✅ split into: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco (within Biotechnology and Its Applications).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco.",
-    "one worked example for \"Biotechnological applications in agriculture: Bt cotton, …\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Biotechnological applications in agriculture: Bt cotton, …\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Biotechnological applications in agriculture: Bt cotton, …\" with one example.",
-    "compare \"Biotechnological applications in agriculture: Bt cotton\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Biotechnological applications in agriculture: Bt cotton, …\" and verify the answer is plausible."
+    "Bt cotton is not protected only by spraying the live bacterium on the leaves. The cry gene is inside the plant.",
+    "Cry protein does not kill every insect that visits the field. Activation needs a susceptible gut.",
+    "The tobacco method does not put a Cry toxin into the nematode. It silences a nematode gene with RNA.",
+    "A refuge is not wasted land. It is the part of the plan that slows resistance."
   ],
   "keyPoints": [
-    "• Biotechnological applications in agriculture: Bt cotton",
-    "• Nematode-resistant tobacco"
+    "Source of cry: Bacillus thuringiensis.",
+    "Activation: alkaline insect gut → pores in the midgut.",
+    "Cotton genes named in the course: cryIAc and cryIIAb.",
+    "Refuge of non-Bt plants slows resistance.",
+    "Tobacco RNAi targets Meloidogyne incognita, a root-knot nematode."
   ],
-  "summary": "Biotechnological applications in agriculture: Bt cotton, … (Biotechnology and Its Applications, Biology, class-12-notes) covers Biotechnological applications in agriculture: Bt cotton, nematode-resistant tobacco. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "importantStatements": [
+    "The crystal protein is inactive until the insect gut processes it.",
+    "Bt is a protein toxin. The nematode defence is RNA silencing.",
+    "Continuous exposure without a refuge favours resistant insects."
+  ],
+  "examples": [
+    "A bollworm larva eating Bt cotton ingests Cry protein and dies after its midgut is damaged.",
+    "A honeybee collecting nectar, and not chewing the bollworm's leaf tissue, is not the organism the cry gene was built to kill.",
+    "A root-knot nematode on the modified tobacco fails to establish because a gene it needs has been silenced."
+  ],
+  "universalFacts": [
+    "Bacillus thuringiensis produces insecticidal crystal proteins during sporulation.",
+    "RNA interference destroys or blocks an mRNA that matches the introduced double-stranded RNA."
+  ],
+  "formulas": [
+    "Bt path: cry gene in the plant → Cry crystal protein → alkaline gut → active toxin → midgut pores.",
+    "RNAi path: plant dsRNA matching a nematode gene → nematode eats it → nematode mRNA silenced."
+  ],
+  "practice": [
+    "Write the Bt path from gene to dead larva in four steps.",
+    "Explain what a non-Bt refuge is for.",
+    "Contrast the molecule that protects Bt cotton with the molecule that protects the tobacco."
+  ],
+  "practiceQuestions": [
+    "Why is the Cry protein harmless as a crystal inside the bacterium?",
+    "Which nematode is the tobacco example aimed at, and how does the plant stop it?",
+    "Why would planting only Bt cotton for many years weaken the method?"
+  ],
+  "examNotes": [
+    "Name Bacillus thuringiensis and the alkaline gut. Both are required for a full Bt answer.",
+    "For the tobacco question, write Meloidogyne incognita and RNA interference. Do not answer it with Cry protein."
+  ],
+  "examShortTricks": [
+    "Bt = protein. Tobacco nematode = RNAi.",
+    "Inactive crystal in the bacterium. Active toxin only in the larva."
+  ],
+  "specialNotes": [
+    "Spell Bacillus thuringiensis once, then Bt is enough.",
+    "cryIAc and cryIIAb are the cotton pair. Do not replace them with a random cry name."
+  ],
+  "importantNotes": [
+    "The refuge figure used in teaching is at least about 20 percent non-Bt plants.",
+    "Agrobacterium is the delivery tool for the RNAi construct, not the pest."
+  ],
+  "mcs": [
+    {
+      "question": "The cry genes in Bt cotton come from",
+      "options": [
+        "Meloidogyne incognita",
+        "Bacillus thuringiensis",
+        "Agrobacterium as the pest",
+        "A virus in the bollworm"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cry protein becomes an active toxin in",
+      "options": [
+        "The dry seed coat",
+        "The alkaline gut of a susceptible larva",
+        "The human stomach as its main target",
+        "The nectar"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A non-Bt refuge is planted to",
+      "options": [
+        "Silence a nematode gene",
+        "Slow the evolution of Bt-resistant insects",
+        "Replace the need for sunlight",
+        "Methylate the cotton DNA"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Nematode-resistant tobacco works by",
+      "options": [
+        "Making a Cry crystal in the worm",
+        "RNA interference against a nematode gene",
+        "Spraying EcoRI on the roots",
+        "Raising soil pH to 14"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantConcepts": [
+    "cryIAc and cryIIAb",
+    "Alkaline-gut activation",
+    "Refuge strategy",
+    "Meloidogyne incognita",
+    "RNA interference versus Cry protein"
+  ],
+  "importantTasks": [
+    "Compare Bt cotton and RNAi tobacco in a two-column answer.",
+    "Explain resistance and the refuge in three sentences."
+  ],
+  "exercises": [
+    {
+      "question": "A farmer believes Bt cotton works because bacteria are sprayed onto the bolls every week. Rewrite the mechanism in steps.",
+      "steps": [
+        "The cry gene from Bacillus thuringiensis has been inserted into the cotton.",
+        "Cotton cells make the Cry protein themselves.",
+        "A bollworm that eats the tissue takes in that protein.",
+        "The alkaline gut activates it, pores form in the midgut, and the larva dies."
+      ],
+      "answer": "The plant produces the protein from an inserted gene. Weekly spraying of the bacterium is not the mechanism."
+    }
+  ],
+  "summary": "Bt cotton makes Cry protein from bacterial cry genes, especially cryIAc and cryIIAb. The protein kills susceptible bollworms only after their alkaline gut activates it, and a non-Bt refuge slows resistance. Nematode-resistant tobacco instead uses RNA interference so Meloidogyne incognita silences one of its own essential genes when it feeds.",
   "mcqs": [
     {
-      "question": "A common examiner point on \"Biotechnological applications in agriculture: Bt cotton, …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The cry genes in Bt cotton come from",
       "options": [
-        "True",
-        "False"
+        "Meloidogyne incognita",
+        "Bacillus thuringiensis",
+        "Agrobacterium as the pest",
+        "A virus in the bollworm"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "B"
+    },
+    {
+      "question": "Cry protein becomes an active toxin in",
+      "options": [
+        "The dry seed coat",
+        "The alkaline gut of a susceptible larva",
+        "The human stomach as its main target",
+        "The nectar"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A non-Bt refuge is planted to",
+      "options": [
+        "Silence a nematode gene",
+        "Slow the evolution of Bt-resistant insects",
+        "Replace the need for sunlight",
+        "Methylate the cotton DNA"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Nematode-resistant tobacco works by",
+      "options": [
+        "Making a Cry crystal in the worm",
+        "RNA interference against a nematode gene",
+        "Spraying EcoRI on the roots",
+        "Raising soil pH to 14"
+      ],
+      "answer": "B"
     }
   ]
 }
