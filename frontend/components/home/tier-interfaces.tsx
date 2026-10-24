@@ -203,7 +203,7 @@ function OpenSectionsRail({ tier }: { tier: AccessLevel }) {
             <Link
               key={s.id}
               href={s.href}
-              className="flex w-[190px] shrink-0 flex-col rounded-2xl border border-border/70 bg-card p-3.5 transition hover:border-primary/50 hover:shadow-sm"
+              className="flex w-[190px] shrink-0 flex-col rounded-2xl border border-border/70 bg-card p-3.5 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div className="flex items-center justify-between">
                 <div className="rounded-xl bg-primary/10 p-1.5">
@@ -229,8 +229,8 @@ function NextRungTeaser({ tier }: { tier: AccessLevel }) {
       <p className="text-xs text-muted-foreground">
         Want more? The{" "}
         <span className="font-bold text-primary">{ACCESS_LABELS[next]}</span> rung opens{" "}
-        {SECTIONS.filter((s) => s.minTier === next).length} more sections.{" "}
-        <Link href="/plans" className="font-semibold text-primary hover:underline">
+        {(() => { const count = SECTIONS.filter((s) => s.minTier === next).length; return `${count} more section${count === 1 ? "" : "s"}.`; })()}{" "}
+        <Link href="/plans" className="font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
           See all plans →
         </Link>
       </p>

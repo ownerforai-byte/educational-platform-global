@@ -19,6 +19,7 @@ import {
   Search,
   Settings,
   Sigma,
+  Sparkles,
   Stethoscope,
   Target,
   TrendingUp,
@@ -99,6 +100,22 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "visitor",
     icon: MessageCircle,
     href: "/ai",
+  },
+  {
+    id: "veer-math",
+    title: "Veer Math Solver",
+    description: "Step-by-step calculus, algebra and formula derivations solver.",
+    minTier: "visitor",
+    icon: Sigma,
+    href: "/ai/math",
+  },
+  {
+    id: "veer-deep-dive",
+    title: "Deep Concept Studio",
+    description: "Syllabus breakdowns, conceptual visualizers and exam deep-dives.",
+    minTier: "visitor",
+    icon: Sparkles,
+    href: "/ai/deep-dive",
   },
 
   // ── Member rung ──

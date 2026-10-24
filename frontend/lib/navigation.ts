@@ -146,6 +146,8 @@ const toolsItems: NavItem[] = [
   { href: "/chat", label: "Veer Study Assistant", icon: Sparkles, minLevel: "visitor" },
   { href: "/chat/nepali", label: "Nepali Assistant", icon: Languages, minLevel: "visitor" },
   { href: "/chat/grammar", label: "Grammar Console", icon: BookOpen, minLevel: "visitor" },
+  { href: "/ai/math", label: "Veer Math Solver", icon: Sigma, minLevel: "visitor" },
+  { href: "/ai/deep-dive", label: "Deep Concept Studio", icon: Lightbulb, minLevel: "visitor" },
   { href: "/ai/tutor", label: "Veer Tutor Console", icon: Bot, minLevel: "visitor" },
   { href: "/ai/search", label: "Veer Curriculum Search", icon: Search, minLevel: "visitor" },
   { href: "/ai-quiz", label: "Adaptive Veer Quiz", icon: HelpCircle, minLevel: "visitor" },
@@ -230,6 +232,7 @@ export const QUICK_LINKS = [
   { href: "/lab", label: "Labs" },
   { href: "/quiz", label: "Quiz" },
   { href: "/chat", label: "AI" },
+  { href: "/ai/math", label: "Math" },
 ] as const;
 
 /**

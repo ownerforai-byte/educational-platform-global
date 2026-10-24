@@ -105,7 +105,7 @@ export function HomePublic() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <span>© {new Date().getFullYear()} Ravikisan&apos;s Platform · NEB Class 11 &amp; 12</span>
+          <span suppressHydrationWarning>© {new Date().getFullYear()} Ravikisan&apos;s Platform · NEB Class 11 &amp; 12</span>
           <Link href="/notice" className="min-h-10 inline-flex items-center hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
             Access notice
           </Link>
