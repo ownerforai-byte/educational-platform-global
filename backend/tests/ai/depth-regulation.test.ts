@@ -16,6 +16,11 @@ describe("classifyInquiryMode", () => {
     expect(classifyInquiryMode("What is mitosis?")).toBe("academic");
     expect(classifyInquiryMode("Explain thermodynamics for NEB class 11")).toBe("academic");
   });
+
+  test("casual non-study questions stay generic (no loose catch-all)", () => {
+    expect(classifyInquiryMode("do I have time for lunch?")).toBe("generic");
+    expect(classifyInquiryMode("is it raining?")).toBe("generic");
+  });
 });
 
 describe("depthDirectiveForMode", () => {

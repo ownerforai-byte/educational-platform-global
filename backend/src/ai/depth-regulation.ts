@@ -32,7 +32,9 @@ export function classifyInquiryMode(message: string): InquiryMode {
   if (ACADEMIC_RE.test(q) || SUBJECT_RE.test(q) || DEPTH_QUESTION_RE.test(q)) {
     return "academic";
   }
-  if (q.includes("?") && q.length > 12) return "academic";
+  // No loose "any question" catch-all: casual questions ("do I have time for
+  // lunch?") that match no depth/subject/academic signal stay generic. The
+  // DEPTH_QUESTION_RE test above already handled genuine study questions.
   return "generic";
 }
 
