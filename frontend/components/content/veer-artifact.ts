@@ -225,7 +225,9 @@ function defineArtifactElement(): CustomElementConstructor {
         this.detachHeight();
         this.frame?.removeAttribute("srcdoc");
         this.mounted = false;
-        if (this.panes?.code?.hidden !== false) this.switchFace("code");
+        // Keep preview visible while code is being typed; do not auto-switch to code view.
+        // Optionally ensure code pane remains hidden.
+        if (this.panes?.code) this.panes.code.hidden = true;
         return;
       }
 

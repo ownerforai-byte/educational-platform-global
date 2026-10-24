@@ -17,6 +17,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 
+// Prevent npm 10+ warning: "Unknown env config cache-dir"
+delete process.env.npm_config_cache_dir;
+delete process.env.NPM_CONFIG_CACHE_DIR;
+
 const here = path.dirname(fileURLToPath(import.meta.url));
 const backendDir = path.join(here, "..");
 const rootDir = path.join(backendDir, "..");

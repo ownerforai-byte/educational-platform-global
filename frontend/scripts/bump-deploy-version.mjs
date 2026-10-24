@@ -26,12 +26,17 @@
  *   2. shallow clone (count < anchor) → `git fetch --unshallow` once, on
  *      Vercel only (CI artifacts never ship, so CI keeps the fast path).
  *   3. git entirely absent → GitHub API total-commit count (public repo).
- *   4. API rate-limited/unreachable → 0.0001 floor, loudly logged.
+ *   4. API rate-limited/unreachable → preserve previous version, loudly logged.
  */
 import { execSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
+// Prevent npm 10+ warning: "Unknown env config cache-dir"
+// Hosting platforms (Vercel/Render) set this; npm only recognises "cache".
+delete process.env.npm_config_cache_dir;
+delete process.env.NPM_CONFIG_CACHE_DIR;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const TARGET = path.resolve(__dirname, "../lib/deploy-version.ts");
@@ -69,6 +74,8 @@ function gitSteps() {
   // to get the real history; elsewhere fall through to the API.
   if (process.env.VERCEL) {
     try {
+      // Guard: ensure 'origin' remote exists before attempting unshallow
+      execSync("git remote get-url origin", { stdio: "ignore" });
       run("git fetch --unshallow origin", 180_000);
       const again = Number.parseInt(run('git -c safe.directory="*" rev-list --count HEAD'), 10);
       if (Number.isFinite(again) && again >= ANCHOR_COMMIT_COUNT) {
@@ -86,7 +93,13 @@ async function apiSteps() {
   try {
     const res = await fetch(
       `https://api.github.com/repos/${REPO}/commits?per_page=1`,
-      { headers: { Accept: "application/vnd.github+json" } },
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "User-Agent": "educational-platform-build",
+        },
+        signal: AbortSignal.timeout(8000),
+      },
     );
     if (!res.ok) return { steps: null, why: `HTTP ${res.status}` };
     const link = res.headers.get("link") || "";
@@ -112,6 +125,13 @@ function readTarget() {
   ].join("\n");
 }
 
+/** Parse the current version from the committed deploy-version.ts file. */
+function previousVersion() {
+  const src = readTarget();
+  const m = src.match(/DEPLOY_VERSION\s*=\s*"([^"]+)"/);
+  return m ? parseFloat(m[1]) : 0;
+}
+
 async function main() {
   const git = gitSteps();
   let steps = git.steps;
@@ -121,6 +141,27 @@ async function main() {
     const api = await apiSteps();
     steps = api.steps;
     source = `api (${api.why}; git: ${git.why})`;
+  }
+
+  // If both git and API failed, preserve the previous version instead of
+  // resetting to 0.0001 — the committed value is always >= the real counter.
+  if (steps == null) {
+    const prev = previousVersion();
+    if (prev > 0.0001) {
+      // Increment by one deployment step so the version never stalls.
+      const version = (prev + 0.0001).toFixed(4);
+      const src = readTarget();
+      const exportLine = `export const DEPLOY_VERSION = "${version}";`;
+      const next = /export const DEPLOY_VERSION[^;]*;/.test(src)
+        ? src.replace(/export const DEPLOY_VERSION[^;]*;/, exportLine)
+        : `${src}\n${exportLine}\n`;
+      const wrote = next !== src;
+      if (wrote) writeFileSync(TARGET, next);
+      console.log(
+        `[deploy-version] ${source} -> v${version} (incremented from previous)${wrote ? "" : " (unchanged)"}`,
+      );
+      return;
+    }
   }
 
   // Floor of 0.0001: the version always exists and never goes backwards.
