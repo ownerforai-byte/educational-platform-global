@@ -55,37 +55,141 @@
   "summary": "P. falciparum: malignant malaria parasite, two-host cycle, ring and crescent marks, cerebral symptoms, vivax contrast table, Terai control measures.",
   "mcqs": [
     {
-      "question": "Crescent (banana-shaped) gametocytes in a blood smear indicate:",
+      "question": "The vector of falciparum malaria is",
       "options": [
-        "Plasmodium falciparum",
-        "Plasmodium vivax",
-        "Entamoeba histolytica",
-        "Trypanosoma gambiense"
+        "Male Anopheles",
+        "Female Anopheles",
+        "A housefly",
+        "A leech"
       ],
-      "answer": "A",
-      "explanation": "Crescent gametocytes are the fastest falciparum mark; vivax shows round gametocytes with Schüffner's dots."
+      "answer": "B"
     },
     {
-      "question": "P. falciparum is called malignant because it causes:",
+      "question": "A crescent gametocyte on a smear points to",
       "options": [
-        "Cerebral malaria",
-        "Relapse from liver",
-        "Kala-azar",
-        "Sleeping sickness"
+        "P. falciparum",
+        "A fungus",
+        "A fern spore",
+        "Rhizobium"
       ],
-      "answer": "A",
-      "explanation": "Heavy parasitaemia blocks brain capillaries; falciparum shows no hypnozoite relapse."
+      "answer": "A"
     },
     {
-      "question": "Malaria transmission in Nepal's Terai is controlled by:",
+      "question": "Cerebral malaria is linked to",
       "options": [
-        "Bed nets plus larvicides and drainage",
-        "Antibiotics in drinking water",
-        "Soil ploughing",
-        "Tree planting alone"
+        "Infected red cells blocking small vessels",
+        "A vitamin surplus",
+        "A seed bank",
+        "Photosynthesis"
       ],
-      "answer": "A",
-      "explanation": "Vector control plus surveillance is the standard Terai trio."
+      "answer": "A"
+    },
+    {
+      "question": "Nepal's main endemic zone for this parasite is",
+      "options": [
+        "The high nival zone",
+        "The Terai",
+        "A glacial lake only",
+        "The open sea"
+      ],
+      "answer": "B"
     }
-  ]
+  ],
+  "importantStatements": [
+    "Plasmodium falciparum causes malignant malaria and is the species most likely to kill.",
+    "The vector is the female Anopheles mosquito. The Terai is Nepal's endemic zone.",
+    "In humans the parasite multiplies in the liver and then in red blood cells. Sexual stages finish in the mosquito."
+  ],
+  "formulas": [
+    "Plasmodium falciparum causes malignant malaria and is the species most likely to kill.",
+    "The vector is the female Anopheles mosquito. The Terai is Nepal's endemic zone."
+  ],
+  "examNotes": [
+    "Definition, then contrast, then example.",
+    "Add the limit in the last line."
+  ],
+  "examShortTricks": [
+    "Plasmodium falciparum causes malignant malaria and is the species most likely to kill.",
+    "The vector is the female Anopheles mosquito. The Terai is Nepal's endemic zone."
+  ],
+  "specialNotes": [
+    "Match the example to the category.",
+    "Do not swap the two arms of the contrast."
+  ],
+  "importantNotes": [
+    "The category name has a definition, not only a mood.",
+    "A country-level loss is not automatically a global extinction."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Contrast",
+    "Example",
+    "Limit"
+  ],
+  "importantTasks": [
+    "Write the contrast in two columns.",
+    "Attach one named example."
+  ],
+  "mcs": [
+    {
+      "question": "The vector of falciparum malaria is",
+      "options": [
+        "Male Anopheles",
+        "Female Anopheles",
+        "A housefly",
+        "A leech"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A crescent gametocyte on a smear points to",
+      "options": [
+        "P. falciparum",
+        "A fungus",
+        "A fern spore",
+        "Rhizobium"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Cerebral malaria is linked to",
+      "options": [
+        "Infected red cells blocking small vessels",
+        "A vitamin surplus",
+        "A seed bank",
+        "Photosynthesis"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Nepal's main endemic zone for this parasite is",
+      "options": [
+        "The high nival zone",
+        "The Terai",
+        "A glacial lake only",
+        "The open sea"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Say why falciparum kills more readily than a mild relapsing malaria, and name the vector.",
+      "steps": [
+        "Falciparum reaches high numbers in the blood.",
+        "Infected red cells stick and can block brain capillaries.",
+        "The vector is the female Anopheles.",
+        "Drug resistance removes the old single-drug safety net."
+      ],
+      "answer": "Sequestration and heavy infection, carried by female Anopheles."
+    }
+  ],
+  "visualType": "paramecium-plasmodium",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Falciparum is the malignant malaria of the Terai. The vector is a female Anopheles."
+    }
+  }
 }

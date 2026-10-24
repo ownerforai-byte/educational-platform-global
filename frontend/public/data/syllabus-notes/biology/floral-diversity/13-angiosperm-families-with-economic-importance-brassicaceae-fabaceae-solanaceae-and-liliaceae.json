@@ -11,19 +11,38 @@
     "**Fabaceae (Papilionoideae).** Pea family: papilionaceous corolla (standard, wings, keel), ten stamens (nine fused), legume fruits, and root nodules housing nitrogen-fixing Rhizobium.",
     "**Solanaceae.** Potato family: five epipetalous stamens with swollen anthers, bicarpellary superior ovary, and berry or capsule fruits; tomato, brinjal and chilli belong here.",
     "**Liliaceae.** Lily family: monocots with parallel-veined leaves, trimerous flowers with six tepals, and superior trilocular ovary; onion, garlic and tulip are examples.",
-    "**Economic importance.** These four families supply food crops, spices, medicines (alkaloids), oils and ornamentals — they are among the most useful angiosperm families."
+    "**Economic importance.** These four families supply food crops, spices, medicines (alkaloids), oils and ornamentals — they are among the most useful angiosperm families.",
+    "Brassicaceae has a cruciform corolla and tetradynamous stamens, four long and two short, and a siliqua. Fabaceae has a papilionaceous flower, diadelphous stamens in a 9+1 bundle, a legume, and Rhizobium nodules."
   ],
-  "confusion": [],
-  "bounds": [],
+  "confusion": [
+    "❌ treat \"Angiosperm families with economic importance: Brassicaceae\" as one blob → ✅ split into: angiosperm families with economic importance: brassicaceae, fabaceae, solanaceae.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "Tomato is Solanaceae, not Fabaceae.",
+    "Onion is Liliaceae in this syllabus, a monocot.",
+    "Tetradynamous means four long and two short, not ten stamens.",
+    "A legume is the pea fruit. A siliqua is the mustard fruit."
+  ],
+  "bounds": [
+    "Covers only: angiosperm families with economic importance: brassicaceae, fabaceae, solanaceae, liliaceae (within Floral Diversity).",
+    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
   "practice": [
+    "define + example each sub-idea: angiosperm families with economic importance: brassicaceae, fabaceae, solanaceae, liliaceae.",
     "one worked example for \"Angiosperm families with economic importance: Brassicacea…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
-    "answer pattern for \"Angiosperm families with economic importance: Brassicacea…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Angiosperm families with economic importance: Brassicacea…\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Brassicaceae has a cruciform corolla and tetradynamous stamens, four long and two short, and a siliqua. Fabaceae has a papilionaceous flower, diadelphous stamens in a 9+1 bundle, a legume, and Rhizobium nodules.",
+    "Solanaceae has five stamens joined to the petals and a berry or a capsule, as in tomato and Datura. Liliaceae is the monocot of the four: six tepals, six stamens, and a superior ovary, as in onion. Parallel veins support that monocot placement."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "Brassicaceae has a cruciform corolla and tetradynamous stamens, four long and two short, and a siliqua. Fabaceae has a papilionaceous flower, diadelphous stamens in a 9+1 bundle, a legume, and Rhizobium nodules.",
+    "Solanaceae has five stamens joined to the petals and a berry or a capsule, as in tomato and Datura. Liliaceae is the monocot of the four: six tepals, six stamens, and a superior ovary, as in onion. Parallel veins support that monocot placement.",
+    "Brassicaceae: cross, 4+2 stamens, siliqua."
   ],
   "practiceQuestions": [
     "state + explain the main idea of \"Angiosperm families with economic importance: Brassicacea…\" with one example.",
@@ -39,24 +58,141 @@
   "summary": "Angiosperm families with economic importance: Brassicacea… (Floral Diversity, Biology, class-11-notes) covers Angiosperm families with economic importance: Brassicaceae, Fabaceae, Solanaceae. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Angiosperm families with economic importance: Brassicacea…\"?",
+      "question": "Tetradynamous stamens belong to",
       "options": [
-        "Angiosperm families with economic importance: Brassicaceae",
-        "Fabaceae",
-        "Unrelated topic",
-        "None of the above"
+        "Brassicaceae",
+        "Liliaceae",
+        "A fern",
+        "A virus"
       ],
-      "answer": "A",
-      "explanation": "Angiosperm families with economic importance: Brassicaceae is listed among the official sub-ideas of Angiosperm families with economic importance: Brassicacea…; the others are not part of this topic."
+      "answer": "A"
     },
     {
-      "question": "A common examiner point on \"Angiosperm families with economic importance: Brassicacea…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Rhizobium nodules are expected in",
       "options": [
-        "True",
-        "False"
+        "Fabaceae",
+        "A pine cone",
+        "A moss",
+        "Solanaceae as the defining trait"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Tomato sits in",
+      "options": [
+        "Solanaceae",
+        "Brassicaceae",
+        "Porifera",
+        "Gymnosperms"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Onion, in this syllabus, is",
+      "options": [
+        "Liliaceae",
+        "A fungus",
+        "A brown alga",
+        "A lichen"
+      ],
+      "answer": "A"
     }
-  ]
+  ],
+  "importantStatements": [
+    "Brassicaceae has a cruciform corolla and tetradynamous stamens, four long and two short, and a siliqua. Fabaceae has a papilionaceous flower, diadelphous stamens in a 9+1 bundle, a legume, and Rhizobium nodules.",
+    "Solanaceae has five stamens joined to the petals and a berry or a capsule, as in tomato and Datura. Liliaceae is the monocot of the four: six tepals, six stamens, and a superior ovary, as in onion. Parallel veins support that monocot placement.",
+    "Brassicaceae: cross, 4+2 stamens, siliqua."
+  ],
+  "formulas": [
+    "Brassicaceae has a cruciform corolla and tetradynamous stamens, four long and two short, and a siliqua. Fabaceae has a papilionaceous flower, diadelphous stamens in a 9+1 bundle, a legume, and Rhizobium nodules.",
+    "Solanaceae has five stamens joined to the petals and a berry or a capsule, as in tomato and Datura. Liliaceae is the monocot of the four: six tepals, six stamens, and a superior ovary, as in onion. Parallel veins support that monocot placement."
+  ],
+  "examNotes": [
+    "Character, example, then the trap.",
+    "A table beats a vague paragraph."
+  ],
+  "examShortTricks": [
+    "Brassicaceae has a cruciform corolla and tetradynamous stamens, four long and two short, and a siliqua. Fabace",
+    "Solanaceae has five stamens joined to the petals and a berry or a capsule, as in tomato and Datura. Liliaceae "
+  ],
+  "specialNotes": [
+    "Match the organism to the character.",
+    "A product does not move an organism into another kingdom."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantConcepts": [
+    "Character",
+    "Example",
+    "Contrast",
+    "Use"
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcs": [
+    {
+      "question": "Tetradynamous stamens belong to",
+      "options": [
+        "Brassicaceae",
+        "Liliaceae",
+        "A fern",
+        "A virus"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Rhizobium nodules are expected in",
+      "options": [
+        "Fabaceae",
+        "A pine cone",
+        "A moss",
+        "Solanaceae as the defining trait"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Tomato sits in",
+      "options": [
+        "Solanaceae",
+        "Brassicaceae",
+        "Porifera",
+        "Gymnosperms"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Onion, in this syllabus, is",
+      "options": [
+        "Liliaceae",
+        "A fungus",
+        "A brown alga",
+        "A lichen"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Match siliqua, legume and berry to mustard, pea and tomato.",
+      "steps": [
+        "Mustard is Brassicaceae and the fruit is a siliqua.",
+        "Pea is Fabaceae and the fruit is a legume.",
+        "Tomato is Solanaceae and the fruit is a berry.",
+        "Onion would have been the Liliaceae case, with no legume."
+      ],
+      "answer": "Siliqua mustard, legume pea, berry tomato."
+    }
+  ],
+  "visualType": "plant-groups",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Mustard, pea, potato and lily families by flower and fruit."
+    }
+  }
 }

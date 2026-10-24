@@ -3,74 +3,194 @@
   "unitSlug": "faunal-diversity",
   "topicSlug": "frog-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respirato",
   "topicTitle": "Frog: Blood vascular system (structure and working mechanism of heart); respiratory system (respiratory organs and physiology of respiration)",
-  "relevance": 100,
-  "source": "generated",
+  "relevance": 96,
+  "source": "enriched",
   "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "frog-organs",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Three-chambered heart, with two atria and one ventricle leading into the truncus arteriosus, beside skin and lungs as the respiratory surfaces."
+    }
+  },
   "notes": [
-    "**Fact.** Aerobic respiration: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ~30–32 ATP (net) per glucose.",
-    "**Fact.** Stages: glycolysis (cytoplasm, 2 ATP + 2 NADH), pyruvate oxidation → acetyl-CoA, Krebs cycle (matrix, 2 GTP + 6 NADH + 2 FADH₂ per glucose), oxidative phosphorylation (inner membrane, electron transport + chemiosmosis).",
-    "**Fact.** Anaerobic respiration/fermentation regenerates NAD⁺ with only 2 ATP net (lactic acid or ethanol + CO₂)."
+    "The frog's blood system is a closed system of vessels served by a three-chambered heart, and the circulation is an incomplete double circulation. Blood can be sent to the lungs and skin and returned, and it can be sent to the body and returned, but a single ventricle is the pump for both streams. The respiratory surfaces that refresh that blood are the skin, the lining of the mouth, and the lungs. Gills are the tadpole's organs. An adult frog in air does not use them.",
+    "On the dorsal side of the heart is the sinus venosus, a thin sac that receives the two anterior venae cavae and the posterior vena cava, so it holds blood returning from the body. It opens into the right atrium. The right atrium is larger than the left. The left atrium receives the pulmonary vein, which brings blood back from the lungs. Both atria open into one ventricle. The ventricle has thick walls and a spongy interior of muscular strands, the trabeculae, which keep the two incoming streams from mixing freely. From the ventricle a truncus arteriosus runs forward and divides into a left and a right branch. A spiral valve inside it helps aim the blood. Each branch supplies a carotid arch to the head, a systemic arch to the body, and a pulmocutaneous arch to the lung and the skin.",
+    "The working cycle follows those chambers. Deoxygenated blood from the body fills the sinus venosus and passes into the right atrium. Blood that has crossed the lungs fills the left atrium. The atria contract together and empty into the ventricle, venous blood lying more on the right side of the cavity and pulmonary blood more on the left, with the trabeculae limiting the blend. The ventricle then contracts. Blood leaves through the truncus. The stream that is poorer in oxygen is directed into the pulmocutaneous arches and therefore back to the lungs and the skin, where it can be refreshed. The stream that is richer in oxygen is directed into the systemic arches and the carotids. Mixing is reduced. It is not prevented. That is the reason the double circulation is called incomplete.",
+    "Three surfaces exchange gases in the adult, and which one dominates depends on where the frog is. The skin is thin, glandular and full of capillaries. It works in water, on land, and it is the surface that matters during hibernation, when the animal is still and the lungs are barely ventilated. The lining of the buccopharyngeal cavity exchanges a smaller amount while the floor of the mouth is moving. The lungs are a pair of elastic sacs, only lightly folded, opened from the buccopharyngeal cavity through the glottis. They are the main surface when the frog is active on land.",
+    "Lung ventilation has no diaphragm and no expanding ribcage. The floor of the mouth is the pump. For inspiration the glottis is shut, the nostrils are open, and the buccal floor drops, so air is drawn into the mouth. The nostrils then close, the glottis opens, and the buccal floor rises, pressing that air into the lungs. For expiration the lungs recoil, air returns to the mouth, the nostrils open, and the air leaves. Cutaneous exchange needs none of this pumping. Oxygen simply diffuses into the skin capillaries, and carbon dioxide diffuses out, as long as the skin is moist. A dry skin stops that path, which is why a frog in a dry box dies of respiratory failure before it dies of thirst alone.",
+    "The two systems meet at different doors of the heart. Blood refreshed in the lungs returns by the pulmonary vein to the left atrium. Blood refreshed in the skin returns with the ordinary body blood, by the venae cavae, to the sinus venosus and the right atrium. Skin respiration therefore does not fill the left atrium. A question that says 'all oxygenated blood enters the left atrium' is wrong for a frog, because cutaneous blood does not."
   ],
   "confusion": [
-    "❌ skip the key fact → ✅ aerobic respiration: c₆h₁₂o₆ + 6o₂ → 6co₂ + 6h₂o + ~30–32 atp (net) per glucose.."
-  ],
-  "bounds": [
-    "Limit to remember: aerobic respiration: c₆h₁₂o₆ + 6o₂ → 6co₂ + 6h₂o + ~30–32 atp (net) per glucose."
-  ],
-  "practice": [
-    "one worked example for \"Frog: Blood vascular system (structure and working mechan…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "Aerobic respiration: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ~30–32 ATP (net) per glucose.",
-    "Stages: glycolysis (cytoplasm, 2 ATP + 2 NADH), pyruvate oxidation → acetyl-CoA, Krebs cycle (matrix, 2 GTP + 6 NADH + 2 FADH₂ per glucose), oxidative phosphorylation (inner membrane, electron transport + chemiosmosis).",
-    "Anaerobic respiration/fermentation regenerates NAD⁺ with only 2 ATP net (lactic acid or ethanol + CO₂)."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Frog: Blood vascular system (structure and working mechan…\" with one example.",
-    "compare \"Frog\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Frog: Blood vascular system (structure and working mechan…\" and verify the answer is plausible."
-  ],
-  "formulas": [
-    "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy (ATP)",
-    "Glucose → 2 ethanol + 2 CO₂ (yeast fermentation)"
-  ],
-  "numericals": [
-    "Use  C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy (ATP)  — pick reasonable values, solve, and check the units.",
-    "Use  Glucose → 2 ethanol + 2 CO₂ (yeast fermentation)  — pick reasonable values, solve, and check the units."
+    "The ventricle is single. Two atria do not make a four-chambered heart. The chambers that count are two atria plus one ventricle.",
+    "Oxygenated blood from the skin enters the right atrium, via the sinus venosus. Only pulmonary blood enters the left atrium.",
+    "The truncus arteriosus is part of the arterial exit. It is not a vein, and it is not a fourth chamber.",
+    "Adult frogs do not breathe with gills. Gills are larval. Hibernating adults rely on skin."
   ],
   "keyPoints": [
-    "• Frog",
-    "• Blood vascular system",
-    "• Structure",
-    "• Working mechanism of heart",
-    "• Respiratory system",
-    "• Respiratory organs"
+    "Sinus venosus, right atrium, left atrium, one ventricle, truncus arteriosus.",
+    "Incomplete double circulation: one ventricle, mixing reduced by trabeculae and the spiral valve.",
+    "Pulmocutaneous arch to lung and skin. Systemic arches to the body. Carotids to the head.",
+    "Respiratory surfaces: skin, buccal lining, lungs. No diaphragm.",
+    "Buccal floor pumps lung air. Skin respiration needs only moisture and blood flow."
   ],
-  "summary": "Frog: Blood vascular system (structure and working mechan… (Faunal Diversity, Biology, class-11-notes) covers Frog, Blood vascular system, structure. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "The right atrium receives body blood and cutaneous return. The left atrium receives pulmonary return.",
+    "Incomplete double circulation means two circuits and one ventricle, not a single circuit like a fish.",
+    "The buccal floor, not a diaphragm, ventilates the lungs."
+  ],
+  "examples": [
+    "A frog under water closes its glottis and depends on skin capillaries.",
+    "A frog leaping on the bank fills its lungs by raising the floor of the mouth with the nostrils shut.",
+    "Blood leaving toward the head has been steered into the carotid arch by the spiral valve."
+  ],
+  "universalFacts": [
+    "The sinus venosus is dorsal. It is easy to miss on a ventral dissection.",
+    "Pulmonary veins are the exception among veins: they carry oxygenated blood, and they enter the left atrium."
+  ],
+  "formulas": [
+    "Body to sinus venosus to right atrium. Lungs to pulmonary vein to left atrium. Both to the ventricle. Ventricle to truncus.",
+    "Three arches on each side: carotid, systemic, pulmocutaneous.",
+    "Inspiration: nostrils open, floor down, then nostrils shut, floor up, air into lungs."
+  ],
+  "practice": [
+    "Name the chamber that receives the pulmonary vein and the chamber that receives the venae cavae.",
+    "Describe one inspiration and one expiration without using the word diaphragm.",
+    "Explain why cutaneous blood and pulmonary blood do not enter the same atrium."
+  ],
+  "practiceQuestions": [
+    "What makes the frog's double circulation incomplete?",
+    "Which arch carries blood to the lung and the skin?",
+    "Why does a dry skin stop cutaneous respiration?"
+  ],
+  "examNotes": [
+    "The heart answer is a route: venae cavae, sinus venosus, right atrium, pulmonary vein, left atrium, ventricle, truncus, three arches.",
+    "The respiration answer must include the buccal pump and a separate sentence on skin. Lungs alone are incomplete."
+  ],
+  "examShortTricks": [
+    "Right atrium body, left atrium lungs, one ventricle, truncus out.",
+    "Floor down to fill the mouth. Floor up to fill the lungs."
+  ],
+  "specialNotes": [
+    "Do not draw four chambers. The spiral valve is inside the truncus, not a wall that divides the ventricle into two.",
+    "Hibernation uses skin. Do not write that a hibernating frog breathes with lungs at the summer rate."
+  ],
+  "importantNotes": [
+    "Trabeculae reduce mixing. They do not create a left and right ventricle.",
+    "The pulmocutaneous artery splits the job: one branch to the lung, one to the skin. Both leave from the same arch."
+  ],
+  "importantConcepts": [
+    "Chambers of the frog heart",
+    "Path of blood through one beat",
+    "Incomplete double circulation",
+    "Skin, buccal lining and lungs",
+    "Buccal force-pump"
+  ],
+  "importantTasks": [
+    "Write the heart route as eight arrows on one line.",
+    "Write inspiration as four actions: glottis, nostrils, floor, then the switch."
+  ],
+  "exercises": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Frog: Blood vascular system (structure and working mechan…\"?",
-      "options": [
-        "Frog",
-        "Blood vascular system",
-        "Unrelated topic",
-        "None of the above"
+      "question": "Trace a volume of blood from the posterior vena cava until part of it reaches the lungs, and say what is oxygenated on the way back.",
+      "steps": [
+        "The posterior vena cava enters the sinus venosus.",
+        "The sinus venosus empties into the right atrium.",
+        "The right atrium contracts into the single ventricle.",
+        "Ventricular contraction sends the less oxygenated blood into the pulmocutaneous arch.",
+        "That arch supplies the lung. Blood refreshed in the lung returns by the pulmonary vein to the left atrium, not to the sinus venosus."
       ],
-      "answer": "Frog",
-      "explanation": "Frog is listed among the official sub-ideas of Frog: Blood vascular system (structure and working mechan…; the others are not part of this topic."
+      "answer": "Posterior vena cava to sinus venosus to right atrium to ventricle to pulmocutaneous arch to the lung, and back by the pulmonary vein to the left atrium."
+    }
+  ],
+  "bounds": [
+    "Digestive organs are the previous note. The reproductive system of the frog is not this topic.",
+    "Arch names are limited to carotid, systemic and pulmocutaneous."
+  ],
+  "summary": "The frog heart has a sinus venosus, a right atrium for body and skin blood, a left atrium for pulmonary blood, one spongy ventricle, and a truncus arteriosus with a spiral valve. The circulation is an incomplete double circulation because the streams meet in that single ventricle and mixing is only reduced. Gas exchange is by moist skin, the mouth lining, and lungs ventilated by the buccal floor, with no diaphragm. Skin blood returns to the right atrium. Lung blood returns to the left atrium.",
+  "mcs": [
+    {
+      "question": "The pulmonary vein enters the",
+      "options": [
+        "Sinus venosus",
+        "Left atrium",
+        "Right atrium",
+        "Cloaca"
+      ],
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Frog: Blood vascular system (structure and working mechan…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "The frog's double circulation is incomplete because",
       "options": [
-        "True",
-        "False"
+        "It has no heart",
+        "Blood passes through gills in the adult",
+        "There is a single ventricle where the streams can mix",
+        "Skin does not have capillaries"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C"
+    },
+    {
+      "question": "Blood refreshed in the skin returns to the",
+      "options": [
+        "Left atrium, with the pulmonary vein",
+        "Right atrium, by way of the sinus venosus",
+        "Truncus arteriosus directly",
+        "Gall bladder"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Lung ventilation in the frog is pumped by the",
+      "options": [
+        "Diaphragm",
+        "Ribcage, as in a mammal",
+        "Spiral valve",
+        "Floor of the buccal cavity"
+      ],
+      "answer": "D"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The pulmonary vein enters the",
+      "options": [
+        "Sinus venosus",
+        "Left atrium",
+        "Right atrium",
+        "Cloaca"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The frog's double circulation is incomplete because",
+      "options": [
+        "It has no heart",
+        "Blood passes through gills in the adult",
+        "There is a single ventricle where the streams can mix",
+        "Skin does not have capillaries"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Blood refreshed in the skin returns to the",
+      "options": [
+        "Left atrium, with the pulmonary vein",
+        "Right atrium, by way of the sinus venosus",
+        "Truncus arteriosus directly",
+        "Gall bladder"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Lung ventilation in the frog is pumped by the",
+      "options": [
+        "Diaphragm",
+        "Ribcage, as in a mammal",
+        "Spiral valve",
+        "Floor of the buccal cavity"
+      ],
+      "answer": "D"
     }
   ]
 }

@@ -21,7 +21,11 @@
     "The tree line ends tall trees, not all plant life; alpine meadows and lichens grow above it.",
     "Community forestry protects through local management; it is not a ban on all forest use."
   ],
-  "bounds": [],
+  "bounds": [
+    "Covers only: natural environment-vegetation, human activities (within Vegetation).",
+    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
   "practice": [
     "List the altitudinal zones uphill with one dominant species each.",
     "Mark Terai, Chure, mid-hills and alpine on a Nepal profile with one pressure each.",
@@ -51,37 +55,141 @@
   "summary": "Natural vegetation and human activities: altitudinal zones with dominants, Terai–Chure pressures, erosion and biodiversity consequences, community-forestry protection.",
   "mcqs": [
     {
-      "question": "The dominant tree of the tropical Terai forest is:",
+      "question": "Community forestry in Nepal is credited with",
       "options": [
-        "Sal (Shorea robusta)",
-        "Rhododendron",
-        "Fir",
-        "Birch"
+        "Removing every national park",
+        "Restoring mid-hill forest under local user groups",
+        "Replacing sal with alpine herbs",
+        "Banning all fodder"
       ],
-      "answer": "A",
-      "explanation": "Sal dominates below 1000 m; rhododendron–oak takes the temperate hills."
+      "answer": "B"
     },
     {
-      "question": "Chure degradation mainly causes:",
+      "question": "Chure degradation shows up downhill as",
       "options": [
-        "Spring drying and downstream floods",
-        "Glacier growth",
-        "Coral bleaching",
-        "Volcanic eruption"
+        "Heavier floods and erosion",
+        "A new timberline at 100 m",
+        "More glaciers",
+        "A seed-bank harvest"
       ],
-      "answer": "A",
-      "explanation": "Siwalik/Chure mining destabilises slopes, dries springs and worsens Terai floods."
+      "answer": "A"
     },
     {
-      "question": "Nepal's world-cited forest protection model is:",
+      "question": "Fuelwood cutting is",
       "options": [
-        "Community forestry",
-        "Zero forest use",
-        "Monoculture plantation",
-        "Open grazing"
+        "A pressure on vegetation",
+        "A vegetation belt",
+        "An ex-situ method",
+        "A rank on the Red List"
       ],
-      "answer": "A",
-      "explanation": "Local user-group management restored degraded mid-hill slopes within a decade."
+      "answer": "A"
+    },
+    {
+      "question": "Oak–rhododendron forest is",
+      "options": [
+        "Temperate",
+        "The nival lichen zone",
+        "Mangrove",
+        "Open ocean"
+      ],
+      "answer": "A"
     }
-  ]
+  ],
+  "importantStatements": [
+    "Vegetation is the plant cover set by climate, height, soil and water.",
+    "Terai sal sits below about 1000 m. Temperate oak and rhododendron sit around 2000 to 3000 m.",
+    "Fuelwood, shifting cultivation, overgrazing, fire and roads remove that cover."
+  ],
+  "formulas": [
+    "Vegetation is the plant cover set by climate, height, soil and water.",
+    "Terai sal sits below about 1000 m. Temperate oak and rhododendron sit around 2000 to 3000 m."
+  ],
+  "examNotes": [
+    "Definition, then contrast, then example.",
+    "Add the limit in the last line."
+  ],
+  "examShortTricks": [
+    "Vegetation is the plant cover set by climate, height, soil and water.",
+    "Terai sal sits below about 1000 m. Temperate oak and rhododendron sit around 2000 to 3000 m."
+  ],
+  "specialNotes": [
+    "Match the example to the category.",
+    "Do not swap the two arms of the contrast."
+  ],
+  "importantNotes": [
+    "The category name has a definition, not only a mood.",
+    "A country-level loss is not automatically a global extinction."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Contrast",
+    "Example",
+    "Limit"
+  ],
+  "importantTasks": [
+    "Write the contrast in two columns.",
+    "Attach one named example."
+  ],
+  "mcs": [
+    {
+      "question": "Community forestry in Nepal is credited with",
+      "options": [
+        "Removing every national park",
+        "Restoring mid-hill forest under local user groups",
+        "Replacing sal with alpine herbs",
+        "Banning all fodder"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Chure degradation shows up downhill as",
+      "options": [
+        "Heavier floods and erosion",
+        "A new timberline at 100 m",
+        "More glaciers",
+        "A seed-bank harvest"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Fuelwood cutting is",
+      "options": [
+        "A pressure on vegetation",
+        "A vegetation belt",
+        "An ex-situ method",
+        "A rank on the Red List"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Oak–rhododendron forest is",
+      "options": [
+        "Temperate",
+        "The nival lichen zone",
+        "Mangrove",
+        "Open ocean"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Name one pressure, one consequence, and the management that restored hill forest.",
+      "steps": [
+        "Fuelwood cutting or overgrazing is a pressure.",
+        "Erosion, landslides or dried springs are consequences.",
+        "Community forestry, through user groups, is the recovery used in the middle hills.",
+        "A seed bank would not by itself reclothe a Chure slope."
+      ],
+      "answer": "Cutting or grazing, then erosion or floods, then community forestry."
+    }
+  ],
+  "visualType": "nepal-vegetation",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "People cut, graze and burn vegetation. Community forestry is the hill recovery."
+    }
+  }
 }

@@ -52,6 +52,153 @@
     "Why is 'Data Deficient' not the same as 'Least Concern'?",
     "Name three threatened species of Nepal and their IUCN status."
   ],
-  "practice": [],
-  "summary": "The IUCN Red List uses standardized categories (EX, EW, CR, EN, VU, NT, LC, DD, NE) to assess extinction risk. Understanding these categories is essential for prioritizing conservation action and policy."
+  "practice": [
+    "State the definition in one sentence, then give the example from the note.",
+    "Build the contrast the note uses.",
+    "Name one limit or cost."
+  ],
+  "summary": "The IUCN Red List uses standardized categories (EX, EW, CR, EN, VU, NT, LC, DD, NE) to assess extinction risk. Understanding these categories is essential for prioritizing conservation action and policy.",
+  "importantStatements": [
+    "Extinct means no reasonable doubt that the last individual has died.",
+    "Endangered means a very high risk of extinction in the wild in the near future.",
+    "Vulnerable means a high risk, but not as immediate as endangered."
+  ],
+  "formulas": [
+    "Extinct means no reasonable doubt that the last individual has died.",
+    "Endangered means a very high risk of extinction in the wild in the near future."
+  ],
+  "examNotes": [
+    "Lead with the definition, then the classification or the table.",
+    "Close with one cost, one control, or one exception."
+  ],
+  "examShortTricks": [
+    "Extinct means no reasonable doubt that the last individual has died.",
+    "Endangered means a very high risk of extinction in the wild in the near future."
+  ],
+  "specialNotes": [
+    "Keep the course example attached to the right class.",
+    "A direction word (to sea, to fresh water, in-situ, ex-situ) is part of the mark."
+  ],
+  "importantNotes": [
+    "Do not swap the two sides of the contrast.",
+    "The example organism has to be able to do the job you assign it."
+  ],
+  "importantConcepts": [
+    "Extinct, endangered, vulnerable, rare an",
+    "Contrast",
+    "Example",
+    "Limit"
+  ],
+  "importantTasks": [
+    "Write the contrast as two columns.",
+    "Add one Nepal or type-study example."
+  ],
+  "mcs": [
+    {
+      "question": "A species with no living individual left is",
+      "options": [
+        "Vulnerable",
+        "Rare",
+        "Extinct",
+        "Threatened but common"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Endangered means",
+      "options": [
+        "A small stable population with no high risk",
+        "A very high risk of extinction in the wild",
+        "Already gone",
+        "Protected in a zoo only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Threatened is best used as",
+      "options": [
+        "A synonym of extinct",
+        "The group that includes endangered and vulnerable",
+        "A rank safer than least concern",
+        "A habitat type"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Vulnerable compared with endangered is",
+      "options": [
+        "A lower but still serious risk",
+        "The same word",
+        "Already extinct",
+        "Outside any risk"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A species with no living individual left is",
+      "options": [
+        "Vulnerable",
+        "Rare",
+        "Extinct",
+        "Threatened but common"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Endangered means",
+      "options": [
+        "A small stable population with no high risk",
+        "A very high risk of extinction in the wild",
+        "Already gone",
+        "Protected in a zoo only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Threatened is best used as",
+      "options": [
+        "A synonym of extinct",
+        "The group that includes endangered and vulnerable",
+        "A rank safer than least concern",
+        "A habitat type"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Vulnerable compared with endangered is",
+      "options": [
+        "A lower but still serious risk",
+        "The same word",
+        "Already extinct",
+        "Outside any risk"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Place extinct, endangered, vulnerable and rare from the syllabus words, and say what threatened covers.",
+      "steps": [
+        "Extinct: none left.",
+        "Endangered: very high risk in the wild.",
+        "Vulnerable: high risk, less immediate than endangered.",
+        "Rare: small population, not always in fast decline. Threatened covers the risk categories, including endangered and vulnerable."
+      ],
+      "answer": "Extinct, then endangered, then vulnerable. Rare is a small population. Threatened is the risk group."
+    }
+  ],
+  "visualType": "iucn-ranks",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Extinct, endangered, vulnerable, rare and threatened are not synonyms."
+    }
+  },
+  "bounds": [
+    "Stay inside this topic's contrast.",
+    "Do not add a class 12 mechanism that the note does not use."
+  ]
 }

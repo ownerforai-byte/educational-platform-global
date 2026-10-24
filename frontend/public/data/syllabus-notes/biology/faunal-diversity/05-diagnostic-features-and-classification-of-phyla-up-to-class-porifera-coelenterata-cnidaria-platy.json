@@ -3,56 +3,194 @@
   "unitSlug": "faunal-diversity",
   "topicSlug": "diagnostic-features-and-classification-of-phyla-up-to-class-porifera-coelenterata-cnidaria-platy",
   "topicTitle": "Diagnostic features and classification of phyla (up to class): Porifera, Coelenterata (Cnidaria), Platyhelminthes, Aschelminthes (Nemathelminthes), Annelida, Arthropoda, Mollusca, Echinodermata and Chordata",
-  "relevance": 100,
-  "source": "generated",
+  "relevance": 96,
+  "source": "enriched",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Diagnostic features and classification of phyla (up to cl…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "visualType": "animal-phyla",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Nine phyla, each reduced to the one character that identifies it: pores, cnidocytes, no coelom, pseudocoelom, segments, jointed legs, mantle, water vascular system, notochord."
+    }
+  },
+  "notes": [
+    "Each phylum below is identified by one diagnostic character, then taken only as far as class, with one example. The body-cavity words from the previous note are the sorting key: no cavity, a false cavity, or a true cavity.",
+    "Porifera are pore-bearing, cellular, and mostly marine, with a canal system, choanocytes, and a skeleton of spicules or spongin. Water enters by ostia and leaves by the osculum. Classes: Calcarea (Sycon, calcareous spicules), Hexactinellida (Euplectella, six-rayed silica spicules), Demospongiae (Spongilla, Euspongia). Spongilla is the freshwater example, so 'all sponges are marine' is false. Cnidaria have cnidocytes, radial symmetry, a diploblastic body and a gastrovascular cavity, and they alternate polyp and medusa or emphasise one of them. Classes: Hydrozoa (Hydra, Obelia), Scyphozoa (Aurelia), Anthozoa (sea anemone, coral, polyp only).",
+    "Platyhelminthes are dorsoventrally flat, bilateral, triploblastic and acoelomate, with flame cells and a blind gut, except the tapeworms, which have lost the gut. Classes: Turbellaria (Planaria, free living), Trematoda (Fasciola, the liver fluke), Cestoda (Taenia). Aschelminthes are cylindrical, pseudocoelomate, unsegmented, with a complete gut and separate sexes. In this course the class is Nematoda. Ascaris lives in the intestine. Wuchereria lives in lymph vessels and is carried by mosquitoes.",
+    "Annelida have metameric segments, a true coelom, a closed blood system, nephridia and setae or parapodia. Classes: Polychaeta (Nereis, many setae on parapodia), Oligochaeta (Pheretima, a few setae per segment in a ring), Hirudinea (Hirudinaria, the leech, no setae, anterior and posterior suckers). Arthropoda have jointed appendages, a chitinous exoskeleton, and an open blood system in a haemocoel. Classes used here: Crustacea (Palaemon, prawn), Insecta (Periplaneta, Apis, three pairs of legs), Arachnida (spider and scorpion, four pairs of legs), Chilopoda (Scolopendra, one pair of legs per segment), Diplopoda (Julus, two pairs per segment).",
+    "Mollusca have a soft unsegmented body, a mantle that may secrete a shell, a muscular foot, and, except in bivalves, a radula. Classes: Gastropoda (Pila, a coiled shell and a creeping foot), Pelecypoda or Bivalvia (Unio, two valves, no radula), Cephalopoda (Octopus, Sepia, the foot drawn out as arms, a reduced or lost shell). Echinodermata are marine, spiny-skinned, with a water vascular system and tube feet, and a calcite endoskeleton. The adult is radial and the larva is bilateral. Classes: Asteroidea (starfish), Ophiuroidea (brittle star), Echinoidea (sea urchin), Holothuroidea (sea cucumber), Crinoidea (feather star).",
+    "Chordata, at some stage of life, have a notochord, a dorsal hollow nerve cord, pharyngeal gill slits and a post-anal tail. The subphyla are Urochordata (Herdmania, notochord in the tail of the larva), Cephalochordata (Branchiostoma, notochord to the front of the head) and Vertebrata (notochord replaced by a vertebral column). Vertebrate classes: Cyclostomata (Petromyzon, jawless), Chondrichthyes (Scoliodon, cartilaginous), Osteichthyes (Labeo, bony), Amphibia (Rana), Reptilia (Calotes), Aves (Columba) and Mammalia. Hair and mammary glands mark the last class."
   ],
-  "universalFacts": [
-    "answer pattern for \"Diagnostic features and classification of phyla (up to cl…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Diagnostic features and classification of phyla (up to cl…\" with one example.",
-    "compare \"Diagnostic features\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Diagnostic features and classification of phyla (up to cl…\" and verify the answer is plausible."
+  "confusion": [
+    "Spongilla is a sponge that lives in fresh water. Marine life is not the diagnostic character of Porifera. Pores and choanocytes are.",
+    "Hydra is a cnidarian even though it lives in fresh water and has no medusa. Anthozoa also have no medusa. The class still stands.",
+    "A leech is an annelid without setae. Losing setae does not move it into the flatworms. It still has segments, a coelom and suckers.",
+    "Octopus is a mollusc. The shell is reduced. The mantle, the arms made from the foot, and the radula keep it in Cephalopoda."
   ],
   "keyPoints": [
-    "• Diagnostic features",
-    "• Classification of phyla",
-    "• Up to class",
-    "• : Porifera",
-    "• Coelenterata",
-    "• Cnidaria"
+    "Porifera: ostia, osculum, choanocytes. Classes Calcarea, Hexactinellida, Demospongiae.",
+    "Cnidaria: cnidocytes. Hydrozoa, Scyphozoa, Anthozoa.",
+    "Flatworms acoelomate with flame cells. Roundworms pseudocoelomate, class Nematoda.",
+    "Annelida segmented and coelomate. Arthropoda jointed, chitin, open circulation.",
+    "Mollusca mantle and foot. Echinodermata water vascular system. Chordata notochord."
   ],
-  "summary": "Diagnostic features and classification of phyla (up to cl… (Faunal Diversity, Biology, class-11-notes) covers Diagnostic features, classification of phyla, up to class. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Cnidocytes define Cnidaria. A polyp or a medusa is the body form, not the phylum character.",
+    "The notochord has to be present at some stage. In an adult frog it has already been replaced by vertebrae.",
+    "Bivalves have no radula. Every other molluscan class in this note has one."
+  ],
+  "examples": [
+    "Euplectella is a glass sponge, Hexactinellida, with six-rayed silica spicules.",
+    "Fasciola is a trematode. Taenia is a cestode and has no gut.",
+    "Nereis has parapodia. Pheretima has a clitellum and setae in rings. Hirudinaria has suckers."
+  ],
+  "universalFacts": [
+    "No echinoderm lives in fresh water. The phylum is entirely marine.",
+    "Insects have three pairs of walking legs. Spiders and scorpions have four pairs. That pair-count is the class split inside Arthropoda."
+  ],
+  "formulas": [
+    "Pores, stings, flat, round, rings, joints, shell, tube feet, notochord.",
+    "Annelid classes: many bristles, few bristles, leech.",
+    "Chordate quartet: notochord, dorsal hollow nerve cord, gill slits, post-anal tail."
+  ],
+  "practice": [
+    "Give the phylum and class of Sycon, Aurelia, Taenia, Nereis, Pila and Asterias.",
+    "State one character that separates Oligochaeta from Hirudinea.",
+    "List the four chordate characters and say which subphylum keeps the notochord into adult life along the whole body."
+  ],
+  "practiceQuestions": [
+    "Why is a leech not classified as a flatworm?",
+    "Which molluscan class lacks a radula, and why is Octopus still a mollusc?",
+    "Name the vertebrate classes that have a bony endoskeleton and jaws, starting from bony fish."
+  ],
+  "examNotes": [
+    "Write phylum, one diagnostic line, classes, one example. Do not write a life cycle unless the question asks.",
+    "For Chordata, give the four characters first, then the three subphyla, then the vertebrate classes if the question says 'up to class'."
+  ],
+  "examShortTricks": [
+    "Choanocyte means sponge. Cnidocyte means Cnidaria. Flame cell means flatworm.",
+    "Tube feet mean echinoderm. A notochord means chordate, even if the adult no longer shows it."
+  ],
+  "specialNotes": [
+    "Aschelminthes is the syllabus name. Nematoda is the class name used for Ascaris and Wuchereria.",
+    "Pelecypoda and Bivalvia are the same class. Either label is acceptable with Unio as the example."
+  ],
+  "importantNotes": [
+    "Taenia has no alimentary canal. Do not draw a blind gut for it. Absorption is through the body surface.",
+    "Branchiostoma keeps a notochord as an adult. Herdmania has it in the larva. A frog replaces it with a vertebral column."
+  ],
+  "importantConcepts": [
+    "Diagnostic character of each phylum",
+    "Classes of Porifera, Cnidaria, Platyhelminthes and Annelida",
+    "Arthropod classes by legs and body regions",
+    "Molluscan mantle and radula",
+    "Chordate characters and vertebrate classes"
+  ],
+  "importantTasks": [
+    "Make a nine-row table: phylum, diagnostic character, one class, one example.",
+    "Add a second line under Annelida and Arthropoda for the class characters only."
+  ],
+  "exercises": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Diagnostic features and classification of phyla (up to cl…\"?",
-      "options": [
-        "Diagnostic features",
-        "Classification of phyla",
-        "Unrelated topic",
-        "None of the above"
+      "question": "Assign Sycon, Hydra, Taenia, Ascaris, Pheretima, Apis, Unio, Asterias and Rana to phylum and class.",
+      "steps": [
+        "Sycon is Porifera, class Calcarea, because the spicules are calcareous.",
+        "Hydra is Cnidaria, class Hydrozoa. Taenia is Platyhelminthes, class Cestoda.",
+        "Ascaris is Aschelminthes, class Nematoda. Pheretima is Annelida, class Oligochaeta.",
+        "Apis is Arthropoda, class Insecta. Unio is Mollusca, class Bivalvia.",
+        "Asterias is Echinodermata, class Asteroidea. Rana is Chordata, subphylum Vertebrata, class Amphibia."
       ],
-      "answer": "A",
-      "explanation": "Diagnostic features is listed among the official sub-ideas of Diagnostic features and classification of phyla (up to cl…; the others are not part of this topic."
+      "answer": "Calcarea, Hydrozoa, Cestoda, Nematoda, Oligochaeta, Insecta, Bivalvia, Asteroidea, Amphibia, in that organism order."
+    }
+  ],
+  "bounds": [
+    "Life cycles of Plasmodium, earthworm and frog are separate notes. This note is the classification grid only.",
+    "Orders and families are out of scope. Stop at class."
+  ],
+  "summary": "Nine phyla are recognised by pores, cnidocytes, a flat acoelomate body, a pseudocoelom, metameric segments, jointed chitinous appendages, a mantle, a water vascular system, and a notochord. Each is classified only to class: three sponge classes, three cnidarian classes, three flatworm classes, three annelid classes, five arthropod classes, three molluscan classes, five echinoderm classes, and the vertebrate classes under Chordata. Spongilla, Hydra and the leech are the usual traps, because habitat or a missing seta does not move them out of the phylum.",
+  "mcs": [
+    {
+      "question": "Choanocytes identify",
+      "options": [
+        "Porifera",
+        "Cnidaria",
+        "Mollusca",
+        "Chordata"
+      ],
+      "answer": "A"
     },
     {
-      "question": "A common examiner point on \"Diagnostic features and classification of phyla (up to cl…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Taenia is placed in",
       "options": [
-        "True",
-        "False"
+        "Trematoda",
+        "Nematoda",
+        "Cestoda",
+        "Hirudinea"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C"
+    },
+    {
+      "question": "A leech stays in Annelida because it",
+      "options": [
+        "Has a radula and a mantle",
+        "Is segmented and coelomate, even without setae",
+        "Has cnidocytes",
+        "Has tube feet"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which is a chordate character at some stage of life?",
+      "options": [
+        "A water vascular system",
+        "Choanocytes",
+        "A chitinous exoskeleton",
+        "A notochord"
+      ],
+      "answer": "D"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Choanocytes identify",
+      "options": [
+        "Porifera",
+        "Cnidaria",
+        "Mollusca",
+        "Chordata"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Taenia is placed in",
+      "options": [
+        "Trematoda",
+        "Nematoda",
+        "Cestoda",
+        "Hirudinea"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A leech stays in Annelida because it",
+      "options": [
+        "Has a radula and a mantle",
+        "Is segmented and coelomate, even without setae",
+        "Has cnidocytes",
+        "Has tube feet"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which is a chordate character at some stage of life?",
+      "options": [
+        "A water vascular system",
+        "Choanocytes",
+        "A chitinous exoskeleton",
+        "A notochord"
+      ],
+      "answer": "D"
     }
   ]
 }

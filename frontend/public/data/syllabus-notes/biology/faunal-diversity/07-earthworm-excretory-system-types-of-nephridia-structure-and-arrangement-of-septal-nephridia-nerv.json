@@ -3,56 +3,194 @@
   "unitSlug": "faunal-diversity",
   "topicSlug": "earthworm-excretory-system-types-of-nephridia-structure-and-arrangement-of-septal-nephridia-nerv",
   "topicTitle": "Earthworm: Excretory system (types of nephridia, structure and arrangement of septal nephridia); nervous system (central and peripheral, working mechanism)",
-  "relevance": 100,
-  "source": "generated",
+  "relevance": 96,
+  "source": "enriched",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Earthworm: Excretory system (types of nephridia, structur…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "visualType": "earthworm-body",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "The same body, read for excretion and nerves: septal nephridia from segment 15 discharge into the gut, and the ventral nerve cord runs along the floor."
+    }
+  },
+  "notes": [
+    "Nitrogenous waste in Pheretima is removed by nephridia, which are coiled tubes derived from mesoderm. The animal is terrestrial, so most of that waste is urea, and the design of the ducts also decides how much water is lost with it. There are three kinds, named by where they sit: septal, integumentary and pharyngeal.",
+    "Septal nephridia are fixed on both faces of the septa from segment 15 to the posterior end. Each has a ciliated nephrostome opening into the coelom of the segment in front, a short neck through the septum, and a nephridial body made of a straight lobe and a looped lobe. The terminal ducts of the nephridia on one septum join a septal excretory canal. Those canals feed a pair of supra-intestinal excretory ducts, which open into the intestine. The waste therefore leaves with the gut contents. This is enteronephric excretion, and it saves water that a soil animal cannot afford to pour away.",
+    "Integumentary nephridia are attached to the inner surface of the body wall in every segment except the first two. They have no nephrostome. Their ducts open on the skin, so they are exonephric. They excrete, and the fluid they release also helps keep the respiratory surface moist. Pharyngeal nephridia form three paired tufts in segments 4, 5 and 6. They are also closed, without a funnel, and they open into the pharynx, so they are enteronephric like the septal set. The septal nephridia are the main excretory organs. The other two sets are smaller and have extra jobs.",
+    "The nervous system is a ventral chain, the opposite of the frog's dorsal hollow cord. The central part is a nerve ring plus a cord. A pair of cerebral ganglia, the brain, lies on the pharynx in segment 3. Circum-pharyngeal connectives run around the pharynx to a pair of sub-pharyngeal ganglia in segment 4. From there a double ventral nerve cord runs to the last segment, with a fused ganglion in each segment. The cord looks single and is anatomically double.",
+    "Peripheral nerves leave those ganglia. The cerebral ganglia send nerves into the prostomium. Each segmental ganglion sends paired nerves into the body wall and the organs of its segment. There is no single spinal cord doing the whole body's work. Each segment can answer a stimulus, and the cord links the segments so the answer travels as a wave.",
+    "The working mechanism is a reflex. A touch or a strong light stimulates receptor cells in the skin. A sensory fibre carries that signal into the segmental ganglion. An association neuron hands it to a motor neuron, and the motor fibre brings about a contraction of muscle or a change in the setae. The brain does not have to approve every segment. It does bias the animal: Pheretima moves away from strong light and coordinates the swell-and-thin wave of peristalsis so the burrow is dug backward from the front, rather than as a spasm of every segment at once."
   ],
-  "universalFacts": [
-    "answer pattern for \"Earthworm: Excretory system (types of nephridia, structur…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Earthworm: Excretory system (types of nephridia, structur…\" with one example.",
-    "compare \"Earthworm\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Earthworm: Excretory system (types of nephridia, structur…\" and verify the answer is plausible."
+  "confusion": [
+    "Enteronephric ducts open into the gut. Exonephric ducts open on the skin. Septal nephridia are enteronephric. Integumentary nephridia are exonephric.",
+    "Integumentary and pharyngeal nephridia have no nephrostome. Only septal nephridia collect coelomic fluid through a ciliated funnel.",
+    "The earthworm's nerve cord is ventral and solid. The frog's is dorsal and hollow. 'Nerve cord' alone is not a shared structure.",
+    "The brain is the supra-pharyngeal ganglia in segment 3, not a swelling of the ventral cord in the clitellum."
   ],
   "keyPoints": [
-    "• Earthworm",
-    "• Excretory system",
-    "• Types of nephridia",
-    "• Structure",
-    "• Arrangement of septal nephridia",
-    "• Nervous system"
+    "Three nephridia: septal, integumentary, pharyngeal.",
+    "Septal nephridia from segment 15, with a nephrostome, enteronephric into the intestine.",
+    "Integumentary nephridia open on the skin. Pharyngeal tufts in segments 4, 5 and 6 open into the pharynx.",
+    "Brain in segment 3, sub-pharyngeal ganglia in segment 4, double ventral cord with segmental ganglia.",
+    "A reflex is receptor, sensory fibre, ganglion, motor fibre, muscle."
   ],
-  "summary": "Earthworm: Excretory system (types of nephridia, structur… (Faunal Diversity, Biology, class-11-notes) covers Earthworm, Excretory system, types of nephridia. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Enteronephric excretion discharges into the gut and conserves water.",
+    "A nephrostome is the ciliated funnel of a septal nephridium only.",
+    "The ventral nerve cord is double in origin and ganglionated in every segment."
+  ],
+  "examples": [
+    "Coelomic fluid is drawn into a septal nephridium through the nephrostome and eventually reaches the intestine.",
+    "Fluid from integumentary nephridia spreads on the skin and supports cutaneous respiration.",
+    "A sharp touch on one segment shortens the muscles of that segment before the whole animal changes direction."
+  ],
+  "universalFacts": [
+    "Pheretima is mainly ureotelic, which fits a terrestrial life better than dumping ammonia into the soil water.",
+    "Strong light drives the worm back into the burrow. The receptors are in the skin. There are no eyes."
+  ],
+  "formulas": [
+    "Septal: segment 15 onward, nephrostome, enteronephric.",
+    "Integumentary: all but the first two segments, no funnel, exonephric.",
+    "Pharyngeal: segments 4, 5, 6, no funnel, enteronephric.",
+    "Ganglia: cerebral in 3, sub-pharyngeal in 4, then one ganglion per segment."
+  ],
+  "practice": [
+    "Compare septal and integumentary nephridia on funnel, opening and segment range.",
+    "Trace a nerve impulse from a touch on the skin to a muscle in the same segment.",
+    "State where the brain sits relative to the pharynx."
+  ],
+  "practiceQuestions": [
+    "Why is enteronephric excretion an advantage in soil?",
+    "Which nephridia lack a nephrostome?",
+    "How does the earthworm's nerve cord differ from the frog's in position and in structure?"
+  ],
+  "examNotes": [
+    "Draw one septal nephridium with nephrostome, neck, straight lobe, loop and terminal duct, then say where the duct ends.",
+    "The reflex answer is five words in order: receptor, sensory neuron, ganglion, motor neuron, effector."
+  ],
+  "examShortTricks": [
+    "15 onward and a funnel means septal. Skin opening means integumentary. Segments 4 to 6 means pharyngeal.",
+    "Brain on top of the pharynx, cord underneath, all the way back."
+  ],
+  "specialNotes": [
+    "Do not give every nephridium a nephrostome. That mistake collapses the three types into one.",
+    "Supra-intestinal ducts are part of the septal system. They are not a fourth kind of nephridium."
+  ],
+  "importantNotes": [
+    "Waste that enters the intestine leaves with the castings. Castings are still mostly soil. The nephridial share is the dissolved waste added to them.",
+    "Peripheral nerves are segmental. Cutting the cord isolates the segments behind the cut from the brain, but a local reflex can remain."
+  ],
+  "importantConcepts": [
+    "Three types of nephridia",
+    "Structure of a septal nephridium",
+    "Enteronephric and exonephric openings",
+    "Central nerve ring and ventral cord",
+    "Reflex arc"
+  ],
+  "importantTasks": [
+    "Make a three-row table: type, segments, funnel or not, where the duct opens.",
+    "Write the reflex as five numbered steps."
+  ],
+  "exercises": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Earthworm: Excretory system (types of nephridia, structur…\"?",
-      "options": [
-        "Earthworm",
-        "Excretory system",
-        "Unrelated topic",
-        "None of the above"
+      "question": "Sort these into septal, integumentary or pharyngeal: a ciliated funnel on the septum of segment 20; a duct opening on the skin of segment 30; a tuft in segment 5 opening into the pharynx.",
+      "steps": [
+        "A funnel on a septum behind segment 15 is a septal nephridium. Its duct system ends in the intestine, so it is enteronephric.",
+        "A duct that opens on the skin, with no funnel, is an integumentary nephridium. It is exonephric.",
+        "A tuft in segment 5 that opens into the pharynx is a pharyngeal nephridium. Segments 4, 5 and 6 are its only range.",
+        "Only the first of the three has a nephrostome."
       ],
-      "answer": "Earthworm",
-      "explanation": "Earthworm is listed among the official sub-ideas of Earthworm: Excretory system (types of nephridia, structur…; the others are not part of this topic."
+      "answer": "Septal, integumentary, pharyngeal, in that order. Only the septal nephridium has a nephrostome."
+    }
+  ],
+  "bounds": [
+    "Reproductive organs, copulation and the cocoon are the next note.",
+    "The segment numbers are those of Pheretima posthuma."
+  ],
+  "summary": "Pheretima excretes mainly urea through three kinds of nephridia. Septal nephridia, from segment 15, have a nephrostome and discharge into the intestine, which saves water. Integumentary nephridia open on the skin. Pharyngeal nephridia in segments 4 to 6 open into the pharynx. The nervous system is a brain on the pharynx in segment 3, a sub-pharyngeal ganglion in segment 4, and a double ventral cord with a ganglion in every segment. A skin stimulus can be answered by a reflex inside one ganglion.",
+  "mcs": [
+    {
+      "question": "Septal nephridia of Pheretima",
+      "options": [
+        "Open on the skin and have no funnel",
+        "Have a nephrostome and discharge into the intestine",
+        "Occur only in segments 4, 5 and 6",
+        "Are the brain of the worm"
+      ],
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Earthworm: Excretory system (types of nephridia, structur…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Pharyngeal nephridia lie in segments",
       "options": [
-        "True",
-        "False"
+        "4, 5 and 6",
+        "14, 15 and 16",
+        "10 and 11 only",
+        "The last three segments only"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "The cerebral ganglia sit",
+      "options": [
+        "In the clitellum",
+        "Inside the gizzard",
+        "On the pharynx in segment 3",
+        "In the ventral cord of segment 18"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Integumentary nephridia are",
+      "options": [
+        "Enteronephric and funnelled",
+        "Present only in segment 15",
+        "The same organ as the typhlosole",
+        "Exonephric and without a nephrostome"
+      ],
+      "answer": "D"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Septal nephridia of Pheretima",
+      "options": [
+        "Open on the skin and have no funnel",
+        "Have a nephrostome and discharge into the intestine",
+        "Occur only in segments 4, 5 and 6",
+        "Are the brain of the worm"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Pharyngeal nephridia lie in segments",
+      "options": [
+        "4, 5 and 6",
+        "14, 15 and 16",
+        "10 and 11 only",
+        "The last three segments only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The cerebral ganglia sit",
+      "options": [
+        "In the clitellum",
+        "Inside the gizzard",
+        "On the pharynx in segment 3",
+        "In the ventral cord of segment 18"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Integumentary nephridia are",
+      "options": [
+        "Enteronephric and funnelled",
+        "Present only in segment 15",
+        "The same organ as the typhlosole",
+        "Exonephric and without a nephrostome"
+      ],
+      "answer": "D"
     }
   ]
 }

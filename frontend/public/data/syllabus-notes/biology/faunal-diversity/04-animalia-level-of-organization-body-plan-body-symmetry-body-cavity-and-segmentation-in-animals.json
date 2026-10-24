@@ -3,56 +3,194 @@
   "unitSlug": "faunal-diversity",
   "topicSlug": "animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals",
   "topicTitle": "Animalia: Level of organization, body plan, body symmetry, body cavity and segmentation in animals",
-  "relevance": 100,
-  "source": "generated",
+  "relevance": 96,
+  "source": "enriched",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Animalia: Level of organization, body plan, body symmetry…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "visualType": "animal-body-plans",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Organisation from cellular to organ-system, then the three kinds of body cavity, with symmetry and metamerism underneath."
+    }
+  },
+  "notes": [
+    "Animalia is sorted, before any phylum name is used, by a short list of body characters: how the cells are organised, the body plan, the symmetry, the number of germ layers, the body cavity, and whether the body is segmented. Two animals that look nothing alike can still sit near each other if those characters match. Two animals that both live in water can sit far apart if they do not.",
+    "Level of organisation runs cellular, tissue, organ, then organ system. Porifera stop at the cellular level: the cells divide labour, but they do not form true tissues. Cnidaria reach the tissue level. Platyhelminthes reach organs, such as a pharynx and flame cells, without packing those organs into systems the way a worm with a closed blood system does. From Aschelminthes onward the body is built as organ systems: a complete gut, a body cavity, and a more concentrated nervous system.",
+    "Symmetry is the way a body can be cut into matching halves. Most sponges are asymmetrical. Cnidaria are radial: several planes through the oral-aboral axis give similar halves, which suits a life of waiting for food to arrive from any side. From flatworms onward the body is bilateral. One plane only divides it into left and right, and the front end gathers sense organs. That gathering is cephalisation. Adult echinoderms are the exception that returns to radial symmetry; their larvae are still bilateral.",
+    "Body plan names the layout of the gut. Sponges are a cell aggregate with canals, not a gut. Cnidaria and flatworms have a blind sac: one opening both takes food in and puts waste out. From roundworms onward the plan is a tube within a tube. The mouth and the anus are separate, so food can move one way while the animal keeps feeding.",
+    "Germ layers and the coelom decide how much space the organs have. Diploblastic animals, the cnidarians, have ectoderm and endoderm with jelly between them. Triploblastic animals add mesoderm. Flatworms are acoelomate: mesoderm fills the space as a solid parenchyma, and there is no body cavity. Roundworms are pseudocoelomate: a cavity is present, but mesoderm lines only the body wall, not the gut. Annelids and the phyla after them are eucoelomate. Mesoderm lines both the body wall and the gut. That true coelom lets organs move, grow, and be supported by fluid, which is why an earthworm can push through soil by changing the shape of its segments.",
+    "Segmentation, or metamerism, is the repetition of body units that each carry a share of the same organs. It is the annelid character, and it continues in arthropods and chordates. A tapeworm's proglottides are not this kind of segment: they are reproductive packets budded from a neck, and the animal is still an unsegmented flatworm. Bilateral symmetry, a true coelom, and metamerism together are the body of an earthworm, which is why that animal is the type used for the next notes."
   ],
-  "universalFacts": [
-    "answer pattern for \"Animalia: Level of organization, body plan, body symmetry…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Animalia: Level of organization, body plan, body symmetry…\" with one example.",
-    "compare \"Animalia\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Animalia: Level of organization, body plan, body symmetry…\" and verify the answer is plausible."
+  "confusion": [
+    "A blind sac and a tube-within-a-tube are different plans. Hydra and a liver fluke have one opening. Ascaris and an earthworm have a mouth and an anus.",
+    "A pseudocoelom is not a true coelom. In Ascaris the cavity is not lined by mesoderm on the gut side.",
+    "Adult starfish look radial, but they are eucoelomate and their larvae are bilateral. Radial symmetry does not put them with Hydra.",
+    "Proglottides of a tapeworm are not metameric segments. Metamerism, as used here, starts in Annelida."
   ],
   "keyPoints": [
-    "• Animalia",
-    "• Level of organization",
-    "• Body plan",
-    "• Body symmetry",
-    "• Body cavity",
-    "• Segmentation in animals"
+    "Cellular (Porifera), tissue (Cnidaria), organ (flatworms), organ system (roundworms onward).",
+    "Asymmetry, radial symmetry, bilateral symmetry with cephalisation.",
+    "Blind sac versus tube-within-a-tube.",
+    "Acoelomate, pseudocoelomate, eucoelomate.",
+    "Metamerism is serial segmentation, clearest in the earthworm."
   ],
-  "summary": "Animalia: Level of organization, body plan, body symmetry… (Faunal Diversity, Biology, class-11-notes) covers Animalia, Level of organization, body plan. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "A true coelom is lined with mesoderm on both the body wall and the gut.",
+    "Bilateral animals have one plane of symmetry and a front end where sense organs collect.",
+    "Level of organisation, symmetry, coelom and segmentation are decided before the phylum is named."
+  ],
+  "examples": [
+    "Sycon is cellular and irregular in shape, with a canal system rather than a gut.",
+    "Hydra is radial, diploblastic, and a blind sac.",
+    "Pheretima is bilateral, triploblastic, eucoelomate and metameric, with a mouth and an anus."
+  ],
+  "universalFacts": [
+    "Echinoderm larvae are bilateral even though the adult is radial.",
+    "The coelomic fluid of an earthworm is a hydrostatic skeleton: muscles squeeze it, and the segment changes shape."
+  ],
+  "formulas": [
+    "Cellular, tissue, organ, organ system.",
+    "Acoelomate flatworms, pseudocoelomate roundworms, eucoelomate annelids onward.",
+    "Blind sac: one opening. Tube within a tube: mouth and anus."
+  ],
+  "practice": [
+    "For Hydra, Ascaris and Pheretima, state symmetry, germ layers, coelom and body plan.",
+    "Say what 'lined on both sides by mesoderm' rules out.",
+    "Explain why a tapeworm's pieces are not counted as metamerism."
+  ],
+  "practiceQuestions": [
+    "What is the difference between a pseudocoelom and a true coelom?",
+    "Why is cephalisation linked to bilateral symmetry and not to radial symmetry?",
+    "Name the level of organisation of a sponge, a Hydra, a liver fluke and an earthworm."
+  ],
+  "examNotes": [
+    "A five-mark answer is a table: animal, level, symmetry, coelom, segmentation. One row each is enough.",
+    "Define the coelom before you use the word eucoelomate. The lining is the whole definition."
+  ],
+  "examShortTricks": [
+    "Flat none, round false, ringed true: acoelom, pseudocoelom, eucoelom.",
+    "One hole is a blind sac. Two holes is a tube."
+  ],
+  "specialNotes": [
+    "Diploblastic stops at Cnidaria in this course. Every phylum from flatworms on is triploblastic.",
+    "Sponges are left asymmetrical. Do not force a symmetry on Sycon."
+  ],
+  "importantNotes": [
+    "Organ level and organ-system level are not the same grade. Flatworms have organs. A complete gut plus a body cavity is the organ-system grade.",
+    "Radial symmetry in Cnidaria is a primary condition. Radial symmetry in an adult starfish is secondary."
+  ],
+  "importantConcepts": [
+    "Levels of organisation",
+    "Symmetry and cephalisation",
+    "Blind sac and tube-within-a-tube",
+    "Three grades of body cavity",
+    "Metamerism"
+  ],
+  "importantTasks": [
+    "Build a four-column table for sponge, Hydra, liver fluke, Ascaris and earthworm.",
+    "Write one sentence that defines a true coelom without using the word coelomate."
+  ],
+  "exercises": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Animalia: Level of organization, body plan, body symmetry…\"?",
-      "options": [
-        "Animalia",
-        "Level of organization",
-        "Unrelated topic",
-        "None of the above"
+      "question": "Place Sycon, Hydra, Fasciola, Ascaris and Pheretima by organisation, symmetry and coelom.",
+      "steps": [
+        "Sycon is cellular, asymmetrical, and has no coelom. Its body is a canal system.",
+        "Hydra is tissue grade, radial and diploblastic, with a blind-sac gut and no coelom.",
+        "Fasciola is organ grade, bilateral and triploblastic, and acoelomate.",
+        "Ascaris is organ-system grade, bilateral, and pseudocoelomate, with a mouth and an anus.",
+        "Pheretima is organ-system grade, bilateral, eucoelomate and metameric."
       ],
-      "answer": "Animalia",
-      "explanation": "Animalia is listed among the official sub-ideas of Animalia: Level of organization, body plan, body symmetry…; the others are not part of this topic."
+      "answer": "Sycon cellular and asymmetrical; Hydra radial with no coelom; Fasciola acoelomate; Ascaris pseudocoelomate; Pheretima eucoelomate and segmented."
+    }
+  ],
+  "bounds": [
+    "This note stops at the body characters. The classes inside each phylum are the next note.",
+    "Germ-layer words here are ectoderm, endoderm and mesoderm only."
+  ],
+  "summary": "Animals are compared by organisation, symmetry, body plan, germ layers, coelom and segmentation. Sponges are cellular and asymmetrical. Cnidaria are radial, diploblastic and blind-sac. Flatworms are bilateral and acoelomate. Roundworms add a pseudocoelom and a complete gut. Annelids add a true coelom, lined by mesoderm on both sides, and metameric segments. Those characters identify an earthworm before its genus is named.",
+  "mcs": [
+    {
+      "question": "A true coelom is a cavity",
+      "options": [
+        "Filled by solid parenchyma and lacking a lining",
+        "Lined by mesoderm on both the body wall and the gut",
+        "Present only in Cnidaria",
+        "The same thing as a blind-sac gut"
+      ],
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Animalia: Level of organization, body plan, body symmetry…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Hydra's gut is a blind sac because",
       "options": [
-        "True",
-        "False"
+        "It has one opening for food and waste",
+        "It has a mouth and a separate anus",
+        "It is metameric",
+        "It is lined by a true coelom"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Ascaris is",
+      "options": [
+        "Acoelomate",
+        "Eucoelomate and segmented",
+        "Pseudocoelomate",
+        "Diploblastic"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Metamerism, as used for the earthworm, first appears in",
+      "options": [
+        "Porifera",
+        "Annelida",
+        "Cestoda, as proglottides",
+        "Adult starfish"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A true coelom is a cavity",
+      "options": [
+        "Filled by solid parenchyma and lacking a lining",
+        "Lined by mesoderm on both the body wall and the gut",
+        "Present only in Cnidaria",
+        "The same thing as a blind-sac gut"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hydra's gut is a blind sac because",
+      "options": [
+        "It has one opening for food and waste",
+        "It has a mouth and a separate anus",
+        "It is metameric",
+        "It is lined by a true coelom"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Ascaris is",
+      "options": [
+        "Acoelomate",
+        "Eucoelomate and segmented",
+        "Pseudocoelomate",
+        "Diploblastic"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Metamerism, as used for the earthworm, first appears in",
+      "options": [
+        "Porifera",
+        "Annelida",
+        "Cestoda, as proglottides",
+        "Adult starfish"
+      ],
+      "answer": "B"
     }
   ]
 }

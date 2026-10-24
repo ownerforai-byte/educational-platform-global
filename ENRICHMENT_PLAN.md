@@ -141,7 +141,7 @@ each subject** and record the real number.
 ### PHASE 1 — fill empty/thin (Nepali excluded)
 | # | Subject | Unit | Files to fill | Done | Batch # | Date |
 |---|---|---|---|---|---|---|
-| 1 | Biology | all units | 81 | 30 / 81 | 3 | 2026-10-24 |
+| 1 | Biology | all units | 81 | 43 / 81 | 4 + class 11 checklist | 2026-10-24 |
 | 2 | Chemistry | all units | (count from audit) | 0 / N | | |
 | 3 | Mathematics | all units | (count from audit) | 0 / N | | |
 | 4 | Physics | all units | (count from audit) | 0 / N | | |
@@ -150,14 +150,14 @@ each subject** and record the real number.
 ### PHASE 2 — upgrade generic/shallow CLEAN notes (Nepali excluded)
 | # | Subject | Notes upgraded | Done | Date |
 |---|---|---|---|---|
-| 1 | Biology | (list) | 0 / N | |
+| 1 | Biology | class 11 concept + theory | 132 / 132 class 11; class 12 still open | 2026-10-24 |
 | 2 | Chemistry | | 0 / N | |
 | 3 | Mathematics | | 0 / N | |
 | 4 | Physics | | 0 / N | |
 | 5 | English | | 0 / N | |
 
 ### Standing invariants (check after every batch)
-- [x] `broken = 0` (2026-10-24, after Biology batch 1: broken=0)
+- [x] `broken = 0` (2026-10-24, after class 11 biology checklist: broken=0)
 - [x] `placeholder` did not rise (stayed 0)
 - [x] no `/nepali/` path touched
 - [x] math notes use `steps[]` (no math in this batch; biology exercises use steps[])
@@ -181,3 +181,5 @@ each subject** and record the real number.
 - 2026-10-24 — Batch 1 (Biology): filled 10/81 in biodiversity-and-conservation (patterns, in-situ/ex-situ, IUCN), biodiversity-conservation-12 (levels, loss, strategies), biota-and-environment (animal behavior, pollution), biotech-applications (agriculture, medicine). Static diagram visualType `biodiversity-levels`; agriculture and medicine reuse `dna-double-helix`. Audit: files=2613 authored=2033 placeholder=0 thin=580 broken=0. Biology thin 81 → 71.
 - 2026-10-24 — Batch 2 (Biology): filled 10 more (20/81) in biotech-applications (transgenic animals), biotech-principles (recombinant DNA, PCR and gels), biotechnology-applications (Bt cotton and RNAi tobacco, transgenic uses, biopiracy), biotechnology-principles (principles, applications), ecology (interactions, pond and forest). Diagrams: `dna-double-helix`, new `species-interactions`, existing `food-chain-energy`. Audit: files=2621 authored=2051 placeholder=0 thin=570 broken=0. Biology thin 71 → 61.
 - 2026-10-24 — Batch 3 (Biology): filled 10 more (30/81) in ecology (greenhouse, ozone, acid rain, invasion), environmental-issues (solid waste, ozone, rainwater and wasteland), environmental-issues-12 (air and water, solid-waste methods, climate), evolutionary-biology (monkeys, apes, humans), faunal-diversity (protozoan classes, Paramecium and Plasmodium). Diagrams: new `greenhouse-ozone`, `protozoa-classes`, `paramecium-plasmodium`. Audit: files=2627 authored=2067 placeholder=0 thin=560 broken=0. Biology thin 61 → 51.
+- 2026-10-24 — Batch 4 (Biology): filled 10 more (40/81). Faunal diversity: animal body plans, nine phyla to class, earthworm external features and digestion, nephridia and nerve cord, reproduction and cocoon, frog habit and digestion, frog heart and respiration. Food production: plant breeding, single cell protein, animal husbandry. Diagrams: new `animal-body-plans`, `animal-phyla`, `earthworm-body`, `frog-organs`, `plant-breeding-steps`, `scp-sources`, `animal-husbandry`. Audit: files=2630 authored=2080 placeholder=0 thin=550 broken=0. Biology thin 51 → 41.
+- 2026-10-24 — Class 11 biology checklist (class 12 left untouched). All 132 class 11 biology concept and theory notes now meet the §1 rich checklist (0 shallow). Real notes were kept; boilerplate Monera, Nepal vegetation belts, and in-situ/ex-situ were replaced; short stubs were replaced; five-paragraph floral notes were extended. Concept files mirrored to runtime. Theory files have no runtime copy. Audit: files=2630 authored=2083 placeholder=0 thin=547 broken=0. Biology thin 41 → 38, and the remaining 38 are class 12. Phase 1 is 43/81.

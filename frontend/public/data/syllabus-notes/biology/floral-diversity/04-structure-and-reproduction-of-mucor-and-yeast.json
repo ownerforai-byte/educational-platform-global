@@ -11,19 +11,38 @@
     "**Mucor reproduction.** Asexually it forms sporangiospores inside a globose sporangium; sexually, compatible hyphae fuse to produce a thick-walled zygospore.",
     "**Yeast structure.** Saccharomyces cerevisiae is a unicellular, oval eukaryote with a chitinous wall, a large vacuole and a single nucleus — it has no mycelium.",
     "**Yeast reproduction.** Yeast multiplies by budding and fission; under sexual conditions it forms ascospores inside an ascus, so it is classified with the ascomycetes.",
-    "**Economic importance.** Yeast ferments sugars to ethyl alcohol and carbon dioxide (baking, brewing) and is a source of vitamin B and single-cell protein."
+    "**Economic importance.** Yeast ferments sugars to ethyl alcohol and carbon dioxide (baking, brewing) and is a source of vitamin B and single-cell protein.",
+    "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minus strains are both required for the zygospore in the usual heterothallic account."
   ],
-  "confusion": [],
-  "bounds": [],
+  "confusion": [
+    "❌ treat \"Structure\" as one blob → ✅ split into: structure, reproduction of mucor, yeast.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "A zygospore is sexual. A sporangiospore is asexual.",
+    "The columella is not a spore.",
+    "Budding is asexual. Fusion starts the sexual path in yeast.",
+    "Do not draw rhizoids on Mucor unless the question says Rhizopus."
+  ],
+  "bounds": [
+    "Covers only: structure, reproduction of mucor, yeast (within Floral Diversity).",
+    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
   "practice": [
+    "define + example each sub-idea: structure, reproduction of mucor, yeast.",
     "one worked example for \"Structure and reproduction of Mucor and Yeast\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
-    "answer pattern for \"Structure and reproduction of Mucor and Yeast\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"Structure and reproduction of Mucor and Yeast\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minus strains are both required for the zygospore in the usual heterothallic account.",
+    "Yeast in the absence of oxygen turns glucose into ethanol and carbon dioxide. That is fermentation. The sexual spores, usually four, sit in an ascus, which is the cell itself after fusion and meiosis."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minus strains are both required for the zygospore in the usual heterothallic account.",
+    "Yeast in the absence of oxygen turns glucose into ethanol and carbon dioxide. That is fermentation. The sexual spores, usually four, sit in an ascus, which is the cell itself after fusion and meiosis.",
+    "Sporangiophore, sporangium, columella."
   ],
   "practiceQuestions": [
     "state + explain the main idea of \"Structure and reproduction of Mucor and Yeast\" with one example.",
@@ -33,29 +52,150 @@
   "keyPoints": [
     "• Structure",
     "• Reproduction of Mucor",
-    "• Yeast"
+    "• Yeast",
+    "Sporangiophore, sporangium, columella.",
+    "Plus and minus strains, zygospore.",
+    "Yeast buds.",
+    "Fermentation yields ethanol and carbon dioxide."
   ],
   "summary": "Structure and reproduction of Mucor and Yeast (Floral Diversity, Biology, class-11-notes) covers Structure, reproduction of Mucor, Yeast. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Structure and reproduction of Mucor and Yeast\"?",
+      "question": "The columella is",
       "options": [
-        "Structure",
-        "Reproduction of Mucor",
-        "Unrelated topic",
-        "None of the above"
+        "Sterile",
+        "A seed",
+        "An ascus of a fern",
+        "A heterocyst"
       ],
-      "answer": "Structure",
-      "explanation": "Structure is listed among the official sub-ideas of Structure and reproduction of Mucor and Yeast; the others are not part of this topic."
+      "answer": "A"
     },
     {
-      "question": "A common examiner point on \"Structure and reproduction of Mucor and Yeast\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "A Mucor zygospore needs",
       "options": [
-        "True",
-        "False"
+        "Two mating strains",
+        "Only light",
+        "A flower",
+        "A vaccine"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Yeast produces ethanol when",
+      "options": [
+        "Oxygen is lacking",
+        "It forms needles like a pine",
+        "It is a virus",
+        "It builds xylem"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Yeast ascospores are usually",
+      "options": [
+        "Four",
+        "A thousand seeds",
+        "Absent because yeast is a plant",
+        "Basidiospores on gills"
+      ],
+      "answer": "A"
     }
-  ]
+  ],
+  "importantStatements": [
+    "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minus strains are both required for the zygospore in the usual heterothallic account.",
+    "Yeast in the absence of oxygen turns glucose into ethanol and carbon dioxide. That is fermentation. The sexual spores, usually four, sit in an ascus, which is the cell itself after fusion and meiosis.",
+    "Sporangiophore, sporangium, columella."
+  ],
+  "formulas": [
+    "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minus strains are both required for the zygospore in the usual heterothallic account.",
+    "Yeast in the absence of oxygen turns glucose into ethanol and carbon dioxide. That is fermentation. The sexual spores, usually four, sit in an ascus, which is the cell itself after fusion and meiosis."
+  ],
+  "examNotes": [
+    "Character, example, then the trap.",
+    "A table beats a vague paragraph."
+  ],
+  "examShortTricks": [
+    "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minu",
+    "Yeast in the absence of oxygen turns glucose into ethanol and carbon dioxide. That is fermentation. The sexual"
+  ],
+  "specialNotes": [
+    "Match the organism to the character.",
+    "A product does not move an organism into another kingdom."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantConcepts": [
+    "Character",
+    "Example",
+    "Contrast",
+    "Use"
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcs": [
+    {
+      "question": "The columella is",
+      "options": [
+        "Sterile",
+        "A seed",
+        "An ascus of a fern",
+        "A heterocyst"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A Mucor zygospore needs",
+      "options": [
+        "Two mating strains",
+        "Only light",
+        "A flower",
+        "A vaccine"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Yeast produces ethanol when",
+      "options": [
+        "Oxygen is lacking",
+        "It forms needles like a pine",
+        "It is a virus",
+        "It builds xylem"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Yeast ascospores are usually",
+      "options": [
+        "Four",
+        "A thousand seeds",
+        "Absent because yeast is a plant",
+        "Basidiospores on gills"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Name the asexual container of Mucor and the sexual container of yeast.",
+      "steps": [
+        "Mucor lifts a sporangium on a sporangiophore.",
+        "Spores surround a sterile columella.",
+        "Yeast's sexual spores form inside an ascus.",
+        "The zygospore is Mucor's sexual resting spore, not yeast's."
+      ],
+      "answer": "Sporangium for Mucor. Ascus for yeast."
+    }
+  ],
+  "visualType": "fungal-classes",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Mucor: sporangium and zygospore. Yeast: bud and ascus."
+    }
+  }
 }

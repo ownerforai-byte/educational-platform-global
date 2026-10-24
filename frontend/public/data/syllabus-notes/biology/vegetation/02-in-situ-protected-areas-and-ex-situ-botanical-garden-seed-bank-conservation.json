@@ -6,18 +6,43 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
+  "notes": [
+    "In-situ conservation protects a species in the place where it already lives, so its partners and its climate stay with it.",
+    "National parks, wildlife reserves, conservation areas and buffer zones are the in-situ tools. Chitwan is the first national park. Annapurna is a conservation area where villages remain.",
+    "A Ramsar site is a wetland on an international list. Koshi Tappu, Beeshazar, Ghodaghodi, Jagadishpur and Rara are the names to be ready to give.",
+    "Ex-situ conservation removes the organism, or its seed, to a managed place. A botanical garden and a seed bank are the plant examples. A gene bank of stored seed is the same idea.",
+    "The Godavari botanical garden is the local garden example. A seed bank keeps viability by cold, dry storage and by growing the seed out before it dies.",
+    "In-situ is preferred because evolution and ecological relationships continue. Ex-situ is the backup when the habitat is already failing, and it does not replace a forest."
+  ],
+  "confusion": [
+    "❌ treat \"In-situ\" as one blob → ✅ split into: in-situ, protected areas, ex-situ.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "A seed bank is ex-situ. A national park is in-situ.",
+    "A conservation area still contains people. That does not make it a zoo.",
+    "Ramsar is about wetlands, not about every forest.",
+    "A garden does not preserve the pollinator community of a wild slope."
+  ],
+  "bounds": [
+    "Covers only: in-situ, protected areas, ex-situ, botanical garden (within Vegetation).",
+    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
   "practice": [
+    "define + example each sub-idea: in-situ, protected areas, ex-situ, botanical garden.",
     "one worked example for \"In-situ (protected areas) and Ex-situ (botanical garden, …\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
-    "answer pattern for \"In-situ (protected areas) and Ex-situ (botanical garden, …\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    "answer pattern for \"In-situ (protected areas) and Ex-situ (botanical garden, …\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "In-situ conservation protects a species in the place where it already lives, so its partners and its climate stay with it.",
+    "National parks, wildlife reserves, conservation areas and buffer zones are the in-situ tools. Chitwan is the first national park. Annapurna is a conservation area where villages remain."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "In-situ conservation protects a species in the place where it already lives, so its partners and its climate stay with it.",
+    "National parks, wildlife reserves, conservation areas and buffer zones are the in-situ tools. Chitwan is the first national park. Annapurna is a conservation area where villages remain.",
+    "A Ramsar site is a wetland on an international list. Koshi Tappu, Beeshazar, Ghodaghodi, Jagadishpur and Rara are the names to be ready to give."
   ],
   "practiceQuestions": [
     "state + explain the main idea of \"In-situ (protected areas) and Ex-situ (botanical garden, …\" with one example.",
@@ -35,24 +60,141 @@
   "summary": "In-situ (protected areas) and Ex-situ (botanical garden, … (Vegetation, Biology, class-11-notes) covers In-situ, protected areas, Ex-situ. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"In-situ (protected areas) and Ex-situ (botanical garden, …\"?",
+      "question": "A seed bank is",
       "options": [
+        "Ex-situ",
         "In-situ",
-        "Protected areas",
-        "Unrelated topic",
-        "None of the above"
+        "A national park",
+        "A Ramsar river by itself"
       ],
-      "answer": "In-situ",
-      "explanation": "In-situ is listed among the official sub-ideas of In-situ (protected areas) and Ex-situ (botanical garden, …; the others are not part of this topic."
+      "answer": "A"
     },
     {
-      "question": "A common examiner point on \"In-situ (protected areas) and Ex-situ (botanical garden, …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Chitwan is",
       "options": [
-        "True",
-        "False"
+        "A national park",
+        "A seed bank",
+        "A fungus",
+        "Ex-situ by definition"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "Ramsar sites are",
+      "options": [
+        "Wetlands",
+        "Seed stores only",
+        "Alpine snowlines",
+        "Antibiotics"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In-situ conservation keeps the species",
+      "options": [
+        "In its habitat",
+        "Only in a bottle",
+        "As a binomial with no place",
+        "In a freezer as the only method"
+      ],
+      "answer": "A"
     }
-  ]
+  ],
+  "importantStatements": [
+    "In-situ conservation protects a species in the place where it already lives, so its partners and its climate stay with it.",
+    "National parks, wildlife reserves, conservation areas and buffer zones are the in-situ tools. Chitwan is the first national park. Annapurna is a conservation area where villages remain.",
+    "A Ramsar site is a wetland on an international list. Koshi Tappu, Beeshazar, Ghodaghodi, Jagadishpur and Rara are the names to be ready to give."
+  ],
+  "formulas": [
+    "In-situ conservation protects a species in the place where it already lives, so its partners and its climate stay with it.",
+    "National parks, wildlife reserves, conservation areas and buffer zones are the in-situ tools. Chitwan is the first national park. Annapurna is a conservation area where villages remain."
+  ],
+  "examNotes": [
+    "Character, example, then the trap.",
+    "A table beats a vague paragraph."
+  ],
+  "examShortTricks": [
+    "In-situ conservation protects a species in the place where it already lives, so its partners and its climate s",
+    "National parks, wildlife reserves, conservation areas and buffer zones are the in-situ tools. Chitwan is the f"
+  ],
+  "specialNotes": [
+    "Match the organism to the character.",
+    "A product does not move an organism into another kingdom."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantConcepts": [
+    "Character",
+    "Example",
+    "Contrast",
+    "Use"
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcs": [
+    {
+      "question": "A seed bank is",
+      "options": [
+        "Ex-situ",
+        "In-situ",
+        "A national park",
+        "A Ramsar river by itself"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Chitwan is",
+      "options": [
+        "A national park",
+        "A seed bank",
+        "A fungus",
+        "Ex-situ by definition"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Ramsar sites are",
+      "options": [
+        "Wetlands",
+        "Seed stores only",
+        "Alpine snowlines",
+        "Antibiotics"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In-situ conservation keeps the species",
+      "options": [
+        "In its habitat",
+        "Only in a bottle",
+        "As a binomial with no place",
+        "In a freezer as the only method"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Classify a national park, a seed bank and Annapurna.",
+      "steps": [
+        "A national park is in-situ.",
+        "A seed bank is ex-situ.",
+        "Annapurna is a conservation area, which is still in-situ, with people living inside the rules.",
+        "Ex-situ does not replace the habitat."
+      ],
+      "answer": "In-situ, ex-situ, in-situ."
+    }
+  ],
+  "visualType": "in-situ-ex-situ",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "In-situ keeps the plant in its habitat. Ex-situ keeps it in a garden or a seed bank."
+    }
+  }
 }

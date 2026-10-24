@@ -43,12 +43,21 @@
     "- Mediated by IgE, mast cells release histamine",
     "- Examples: Hay fever, asthma, food allergies, anaphylaxis",
     "### 9. Entrance Exam Focus",
-    "Distinguish innate vs adaptive; Identify antibody types; Explain vaccination principle."
+    "Distinguish innate vs adaptive; Identify antibody types; Explain vaccination principle.",
+    "Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.",
+    "Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.",
+    "B cells make antibodies, and each antibody fits one antigen, so the response is specific rather than a general barrier.",
+    "T cells kill infected body cells and help other cells of the immune system respond to the same antigen.",
+    "A vaccine shows the immune system an antigen, or a harmless form of it, so memory cells form before the real infection arrives."
   ],
   "confusion": [
     "x Innate immunity has memory. x Only adaptive immunity has immunological memory.",
     "x Antibodies kill pathogens directly. x Antibodies mark pathogens for destruction.",
-    "x Vaccines cause the disease. x Vaccines use weakened/killed pathogens to build immunity."
+    "x Vaccines cause the disease. x Vaccines use weakened/killed pathogens to build immunity.",
+    "An antibody is not an antibiotic. One is made by the body. The other is a drug.",
+    "Innate defence does not remember a particular measles virus.",
+    "A vaccine is prevention by memory. It is not a treatment given after the organs have already failed.",
+    "Fever can be a defence. It is not itself a pathogen."
   ],
   "practice": [
     "Compare innate and adaptive immunity in a table.",
@@ -56,7 +65,10 @@
     "What is the difference between active and passive immunity?",
     "Describe the mechanism of vaccination."
   ],
-  "formulas": [],
+  "formulas": [
+    "Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.",
+    "Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting."
+  ],
   "summary": "The immune system protects the body in two ways: innate (non-specific) immunity, which is present from birth and acts immediately, and adaptive (specific) immunity, which is acquired during life and carries immunological memory. Innate defences include physical and chemical barriers, phagocytes, inflammation, fever and natural killer cells, while adaptive immunity has a humoral branch in which B cells produce antibodies and a cell-mediated branch in which T cells destroy infected cells. Active immunity is the body's own antibody response to infection or vaccination, while passive immunity is the receipt of ready-made antibodies from a mother or from an antivenom. Failure of self-tolerance produces autoimmune disease and hypersensitivity to harmless antigens produces allergy.",
   "importantConcepts": [
     "Innate immunity is the first, non-specific line of defence: physical barriers (skin, mucous membranes), chemical barriers (stomach acid, lysozyme in tears), phagocytes, inflammation, fever and natural killer cells.",
@@ -174,5 +186,88 @@
       "answer": "B",
       "explanation": "An antivenom supplies pre-formed antibodies, giving instant protection that is broken down over a few weeks. Immunity from a vaccine is slower to develop but produces memory cells."
     }
+  ],
+  "examples": [
+    "Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.",
+    "Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.",
+    "B cells make antibodies, and each antibody fits one antigen, so the response is specific rather than a general barrier."
+  ],
+  "universalFacts": [
+    "Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.",
+    "Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.",
+    "B cells make antibodies, and each antibody fits one antigen, so the response is specific rather than a general barrier.",
+    "T cells kill infected body cells and help other cells of the immune system respond to the same antigen.",
+    "A vaccine shows the immune system an antigen, or a harmless form of it, so memory cells form before the real infection arrives.",
+    "Specificity and memory are the two words that separate adaptive immunity from a wall of skin or a phagocyte that eats anything foreign."
+  ],
+  "importantNotes": [
+    "Do not swap the two sides of a contrast.",
+    "A formula or a sequence is worthless if the example contradicts it."
+  ],
+  "mcqs": [
+    {
+      "question": "Antibodies are produced by",
+      "options": [
+        "B cells",
+        "Red cells as their only job",
+        "Viruses",
+        "The skin alone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Innate immunity",
+      "options": [
+        "Remembers one virus for life as its defining trait",
+        "Is a general defence present from the start",
+        "Is the same thing as a vaccine brand",
+        "Occurs only in plants"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A vaccine works mainly by",
+      "options": [
+        "Building memory against an antigen",
+        "Replacing the stomach",
+        "Killing every bacterium in the soil",
+        "Being an antibiotic"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Specificity means",
+      "options": [
+        "One response fits a particular antigen",
+        "Every antibody fits every virus",
+        "Skin blocks sunlight only",
+        "There is no memory"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A child is vaccinated against a virus and later meets that virus. Which arm of immunity stops the second meeting quickly, and why?",
+      "steps": [
+        "The vaccine presented the antigen without the full disease.",
+        "B cells and T cells responded and left memory cells.",
+        "On the later meeting those memory cells respond faster and more strongly.",
+        "That is adaptive immunity. Skin alone would not know this virus from any other."
+      ],
+      "answer": "Adaptive immunity, because of memory and specificity."
+    }
+  ],
+  "visualType": "bacterial-cell",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Innate defence is general. Adaptive defence learns a particular antigen and remembers it."
+    }
+  },
+  "bounds": [
+    "Class 11 boundary: stop at the characters in this note.",
+    "Do not invent a rank or a count."
   ]
 }

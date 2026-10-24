@@ -1,0 +1,194 @@
+{
+  "title": "Single Cell Protein",
+  "unitSlug": "food-production",
+  "topicSlug": "single-cell-protein",
+  "topicTitle": "Single Cell Protein",
+  "relevance": 96,
+  "source": "enriched",
+  "visualType": "scp-sources",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Three single-cell protein sources side by side: Spirulina, Methylophilus methylotrophus, and mushrooms."
+    }
+  },
+  "notes": [
+    "Single cell protein is microbial biomass grown to be eaten, by people or by livestock, because the cells are rich in protein. The product is the cell mass itself, dried or processed. It is not a purified enzyme and not a single amino acid. The point of the method is that microbes multiply in hours in a tank, so protein can be produced without waiting for a crop season or dedicating a large field.",
+    "The organisms in the course are a cyanobacterium, a bacterium, and fungi that people already accept as food. Spirulina grows by photosynthesis and is produced as a supplement. It can be cultured on starch, molasses, and waste water from processing plants, so the same tank that grows food also uses a waste. Methylophilus methylotrophus grows on methanol. The comparison used in class is that a culture of about 250 grams of this bacterium can be expected to produce about 25 tonnes of protein, because the cells grow so fast and so much of their dry mass is protein. Mushrooms are fungi. They are SCP in the technical sense, and they are the form that has already become an ordinary food.",
+    "Yeasts, including Saccharomyces, are used in the same way, often for animal feed. Other bacterial and algal biomasses have been tried on whey, molasses, and sewage. The shared advantage is the feedstock. Materials that would otherwise be dumped become the carbon source. A fermenter on a small plot can outproduce a field of pulses in kilograms of protein per day, which is the calculation that made SCP attractive as a food strategy.",
+    "The biomass supplies protein as the main nutrient, with some fat, minerals and B vitamins depending on the species. It can be mixed into food or fed to animals whose meat, milk or eggs then carry the protein onward. In either use it is a supplement to crops, not a replacement for plant breeding. Breeding changes a plant. SCP adds a different organism.",
+    "The limits are practical and chemical. Bacterial cells contain a large amount of nucleic acid. In a human diet that load has to be reduced by processing, because purines from nucleic acids are not wanted in high amounts. The product also has to be free of toxins and of contaminating microbes, and it has to be something people will actually swallow. Mushrooms passed that test. A pale bacterial powder often did not, which is why much of the industrial output is discussed as feed. Cost matters as well: the protein is only useful if it is cheaper than the pulse or the fish meal it is meant to spare.",
+    "Set beside plant breeding, SCP skips land, season and rainfall, and it can run on waste. It fails when the biomass is unsafe, too high in nucleic acid, or rejected as food. Breeding fails when the new variety does not suit the district. A food system can use both: a better rice in the field, and a fermenter turning a waste stream into protein beside it."
+  ],
+  "confusion": [
+    "SCP is the cells, not a protein extracted and bottled as a pure chemical. The cell mass is what is dried.",
+    "Mushrooms count. 'Single cell' in the name is historical. The course includes fungal biomass.",
+    "The 25-tonne figure belongs to Methylophilus methylotrophus, not to Spirulina and not to a hectare of wheat.",
+    "Sewage and waste water are feedstocks only after the process is controlled. The note does not say raw sewage is a food."
+  ],
+  "keyPoints": [
+    "SCP is protein-rich microbial biomass used as food or feed.",
+    "Spirulina on starch, molasses or processing waste. Methylophilus on methanol.",
+    "About 250 g of Methylophilus is the course comparison for about 25 tonnes of protein.",
+    "Mushrooms are the SCP already eaten as a normal food. Yeasts go largely to feed.",
+    "Nucleic acids, taste, safety and cost are the limits."
+  ],
+  "importantStatements": [
+    "The advantage is speed and a feedstock that can be a waste, not a magical amino-acid profile.",
+    "Nucleic acid content is the chemical reason bacterial SCP is processed before it becomes a large part of a human diet.",
+    "SCP does not replace a breeding programme. It adds a protein source that does not need a field."
+  ],
+  "examples": [
+    "Spirulina grown on potato-processing water turns an effluent into a protein supplement.",
+    "A methanol-grown culture of Methylophilus is the standard high-yield bacterial example.",
+    "Oyster mushrooms on straw are SCP that a household already knows how to cook."
+  ],
+  "universalFacts": [
+    "Microbial biomass can double in hours. A cereal cannot.",
+    "Photosynthetic SCP such as Spirulina needs light. Methylophilus does not. It oxidises methanol."
+  ],
+  "formulas": [
+    "Spirulina: light and waste water. Methylophilus: methanol. Mushroom: straw or compost.",
+    "About 250 g Methylophilus, about 25 tonnes of protein, as the course comparison."
+  ],
+  "practice": [
+    "Name three organisms used as SCP and the feedstock of each.",
+    "Give two advantages and two limits.",
+    "Explain the 250 gram comparison without claiming it for Spirulina."
+  ],
+  "practiceQuestions": [
+    "Why is mushroom cultivation included in a chapter about single cell protein?",
+    "What chemical constituent limits how much bacterial SCP a person should eat?",
+    "How can SCP production reduce a pollution problem at the same time?"
+  ],
+  "examNotes": [
+    "Definition, three organisms, one advantage, one limit. That is the short answer.",
+    "Quote the Methylophilus comparison with both numbers, 250 grams and 25 tonnes, or leave it out. Half of it is wrong."
+  ],
+  "examShortTricks": [
+    "Spirulina light, Methylophilus methanol, mushroom on straw.",
+    "Fast growth and waste feedstock help. Nucleic acid and taste limit."
+  ],
+  "specialNotes": [
+    "Do not describe SCP as a fertiliser. Biofertilisers are a different topic. This biomass is a food.",
+    "The 25-tonne line is a textbook comparison of productive capacity, not a kitchen recipe."
+  ],
+  "importantNotes": [
+    "Feed use and food use are both valid. Say which one when you give an example.",
+    "A contaminating microbe in the fermenter is a failure, not a second product."
+  ],
+  "importantConcepts": [
+    "Definition of single cell protein",
+    "Spirulina, Methylophilus and mushrooms",
+    "Waste as feedstock",
+    "The yield comparison",
+    "Nucleic acid and acceptability as limits"
+  ],
+  "importantTasks": [
+    "Write a four-line answer: what it is, two organisms, one advantage, one limit.",
+    "Put the 250 g and 25 tonne figures in one sentence with the species name."
+  ],
+  "exercises": [
+    {
+      "question": "A factory has a methanol supply and a pile of straw. Which SCP organisms fit, and what limit still applies if the product is meant for people?",
+      "steps": [
+        "Methylophilus methylotrophus can be grown on methanol. That is the bacterial match.",
+        "Straw suits mushroom cultivation. The fungus, not Methylophilus, uses that pile.",
+        "Spirulina is not the match for either feedstock. It wants light and a watery medium such as processing effluent.",
+        "If people are going to eat the bacterial biomass, nucleic acids have to be reduced and the product has to be shown to be free of toxins.",
+        "Mushrooms avoid most of the acceptability problem because they are already a food. They do not remove the need to keep the culture free of contaminants."
+      ],
+      "answer": "Methanol for Methylophilus, straw for mushrooms. Bacterial SCP for people must be processed to lower nucleic acids and kept free of toxins."
+    }
+  ],
+  "bounds": [
+    "Biofertilisers and biogas belong to other topics. Here the microbe is the food.",
+    "The yield figure is the course comparison for Methylophilus only."
+  ],
+  "summary": "Single cell protein is microbial biomass eaten for its protein. Spirulina is grown in the light on wastes such as processing water, Methylophilus methylotrophus is grown on methanol and is the organism in the 250 gram to 25 tonne comparison, and mushrooms are the fungal form people already eat. The method is fast and can use waste, and it does not need a field. Bacterial products are limited by nucleic acids, safety and whether anyone will eat them.",
+  "mcs": [
+    {
+      "question": "The course comparison of about 250 g producing about 25 tonnes of protein refers to",
+      "options": [
+        "Spirulina",
+        "A hectare of wheat",
+        "Methylophilus methylotrophus",
+        "A mushroom bed"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Single cell protein is",
+      "options": [
+        "Dried microbial biomass rich in protein",
+        "A purified enzyme",
+        "A nitrogen fertiliser",
+        "A biofortified wheat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A chemical limit on eating large amounts of bacterial SCP is",
+      "options": [
+        "Absence of any protein",
+        "High nucleic acid content",
+        "Lack of a cell wall in mushrooms",
+        "The presence of chlorophyll in Methylophilus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of these is treated as single cell protein in this topic?",
+      "options": [
+        "Sonalika wheat",
+        "Murrah buffalo",
+        "IR-8 rice",
+        "Mushrooms"
+      ],
+      "answer": "D"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The course comparison of about 250 g producing about 25 tonnes of protein refers to",
+      "options": [
+        "Spirulina",
+        "A hectare of wheat",
+        "Methylophilus methylotrophus",
+        "A mushroom bed"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Single cell protein is",
+      "options": [
+        "Dried microbial biomass rich in protein",
+        "A purified enzyme",
+        "A nitrogen fertiliser",
+        "A biofortified wheat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A chemical limit on eating large amounts of bacterial SCP is",
+      "options": [
+        "Absence of any protein",
+        "High nucleic acid content",
+        "Lack of a cell wall in mushrooms",
+        "The presence of chlorophyll in Methylophilus"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which of these is treated as single cell protein in this topic?",
+      "options": [
+        "Sonalika wheat",
+        "Murrah buffalo",
+        "IR-8 rice",
+        "Mushrooms"
+      ],
+      "answer": "D"
+    }
+  ]
+}

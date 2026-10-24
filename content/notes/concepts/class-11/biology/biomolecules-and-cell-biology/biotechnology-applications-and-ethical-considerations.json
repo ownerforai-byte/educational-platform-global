@@ -5,11 +5,12 @@
   "topicTitle": "Biotechnology Applications and Ethical Considerations",
   "relevance": 92,
   "notes": [
-    "### 1. Types of Biotechnology",
-    "- Genetic engineering: modifying organisms' DNA",
-    "- Synthetic biology: designing new biological systems",
-    "- Agricultural biotech: GM crops, livestock improvement",
-    "- Medical biotech: gene therapy, vaccines, regenerative medicine"
+    "Biotechnology applies a living system to a product: a crop, a drug, a microbe or a test.",
+    "In agriculture the example is a crop given a gene that reduces insect damage, such as Bt cotton, and microbes that improve a fermentation.",
+    "In medicine the examples are recombinant insulin, safer vaccines and antibiotics originally found in microbes.",
+    "A genetic test can tell a family about a disease allele. The ethical requirement is consent, and the result must not become a reason to deny a person unfairly.",
+    "Releasing an engineered organism raises a safety question: will it cross with wild relatives, and who is watching.",
+    "Taking a gene or a crop variety from a community without consent or share of benefit is the ownership problem. Use and fairness are both part of the topic."
   ],
   "importantConcepts": [
     "CRISPR-Cas9: genome editing tool that allows precise DNA modifications",
@@ -25,7 +26,11 @@
   "keyPoints": [
     "Biotechnology combines biology, chemistry, and engineering to develop new products and processes.",
     "Applications range from medicine (insulin production) to agriculture (pest-resistant crops).",
-    "Ethical considerations require balancing innovation with societal values and regulations."
+    "Ethical considerations require balancing innovation with societal values and regulations.",
+    "Crops and microbes.",
+    "Insulin, vaccines, antibiotics.",
+    "Consent for a genetic test.",
+    "Safety of a release and fair ownership."
   ],
   "specialNotes": [
     "The first FDA-approved gene therapy (for Leber congenital amaurosis) was developed using viral vectors.",
@@ -50,37 +55,143 @@
   ],
   "mcs": [
     {
-      "question": "What is CRISPR-Cas9?",
+      "question": "Recombinant insulin is a",
       "options": [
-        "A type of antibiotic",
-        "A genome editing tool",
-        "A vaccine platform",
-        "A diagnostic test for cancer"
+        "Medicine",
+        "Timber species",
+        "Pesticide of the DDT class",
+        "National park"
       ],
-      "answer": "B",
-      "explanation": "CRISPR-Cas9 is a revolutionary gene-editing technology derived from bacterial immune systems that allows precise modification of DNA sequences."
+      "answer": "A"
     },
     {
-      "question": "Give an example of a medical biotechnology application.",
+      "question": "Consent matters when",
       "options": [
-        "Vaccines produced in yeast",
-        "Insulin produced by recombinant bacteria",
-        "CRISPR gene therapy",
-        "Synthetic DNA storage"
+        "A genetic test identifies a person",
+        "A pine cone falls",
+        "A river floods with no data",
+        "A lichen grows"
       ],
-      "answer": "B",
-      "explanation": "Recombinant DNA technology was first used commercially to produce human insulin in E. coli, revolutionizing diabetes treatment."
+      "answer": "A"
     },
     {
-      "question": "What are the main ethical concerns regarding gene editing?",
+      "question": "Bt cotton is an agricultural",
       "options": [
-        "High cost of treatments",
-        "Lack of scientific evidence",
-        "Safety risks and unintended mutations",
-        "Religious opposition to science"
+        "Insect-protection example",
+        "Blood group",
+        "Fossil",
+        "Snowline"
       ],
-      "answer": "C",
-      "explanation": "Off-target effects in CRISPR editing and unpredictable long-term consequences are major safety concerns."
+      "answer": "A"
+    },
+    {
+      "question": "Unfair removal of a community's variety is",
+      "options": [
+        "An ownership problem",
+        "A timberline",
+        "Fermentation",
+        "A key in taxonomy only"
+      ],
+      "answer": "A"
     }
+  ],
+  "confusion": [
+    "Insulin made by a microbe is a medicine, not a crop.",
+    "Consent is not optional once a test names a person.",
+    "Bt is not a fertiliser.",
+    "An antibiotic treats bacteria. It is not a vaccine."
+  ],
+  "examples": [
+    "Biotechnology applies a living system to a product: a crop, a drug, a microbe or a test.",
+    "In agriculture the example is a crop given a gene that reduces insect damage, such as Bt cotton, and microbes that improve a fermentation.",
+    "In medicine the examples are recombinant insulin, safer vaccines and antibiotics originally found in microbes."
+  ],
+  "universalFacts": [
+    "Biotechnology applies a living system to a product: a crop, a drug, a microbe or a test.",
+    "In agriculture the example is a crop given a gene that reduces insect damage, such as Bt cotton, and microbes that improve a fermentation."
+  ],
+  "formulas": [
+    "Biotechnology applies a living system to a product: a crop, a drug, a microbe or a test.",
+    "In agriculture the example is a crop given a gene that reduces insect damage, such as Bt cotton, and microbes that improve a fermentation."
+  ],
+  "practice": [
+    "Give the character and one example.",
+    "State the contrast.",
+    "Name a use or a limit."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcqs": [
+    {
+      "question": "Recombinant insulin is a",
+      "options": [
+        "Medicine",
+        "Timber species",
+        "Pesticide of the DDT class",
+        "National park"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Consent matters when",
+      "options": [
+        "A genetic test identifies a person",
+        "A pine cone falls",
+        "A river floods with no data",
+        "A lichen grows"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Bt cotton is an agricultural",
+      "options": [
+        "Insect-protection example",
+        "Blood group",
+        "Fossil",
+        "Snowline"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Unfair removal of a community's variety is",
+      "options": [
+        "An ownership problem",
+        "A timberline",
+        "Fermentation",
+        "A key in taxonomy only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Give one farm use and one clinic use, then one ethical limit.",
+      "steps": [
+        "Bt cotton is the farm use against certain caterpillars.",
+        "Recombinant insulin is the clinic use.",
+        "Consent, or a fair share for the community that kept a variety, is the ethical limit.",
+        "The limit is not solved by the technique working."
+      ],
+      "answer": "Bt cotton, recombinant insulin, and consent or fair ownership."
+    }
+  ],
+  "summary": "Biotechnology shows up as protected crops and as medicines such as recombinant insulin, vaccines and antibiotics. Ethical limits are consent for genetic information, safety of anything released, and a fair share when a community's variety is used.",
+  "visualType": "plant-breeding-steps",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Uses in crops and medicine, and the ethical limits on release and ownership."
+    }
+  },
+  "bounds": [
+    "Stay inside this class 11 topic.",
+    "Do not add an unsupported count."
   ]
 }

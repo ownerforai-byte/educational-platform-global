@@ -21,8 +21,13 @@
     "Altitudinal migration (hills ↔ Terai) is still migration even though the distance is short.",
     "Homing instinct and banding studies prove return journeys; do not claim birds 'get lost and stay'."
   ],
-  "bounds": [],
+  "bounds": [
+    "Covers only: fish, bird migration (within Biota and Environment).",
+    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
   "practice": [
+    "Define migration; list two fish and two bird examples with direction of movement.",
     "Draw the anadromous vs catadromous arrow table from memory in under 3 minutes.",
     "Recall card: triggers → navigation cues → one Nepali site → one cost."
   ],
@@ -37,6 +42,7 @@
     "Pheasants descending from high hills to lower valleys in winter (altitudinal migration)."
   ],
   "practiceQuestions": [
+    "Define migration and distinguish it from dispersal and emigration. (2)",
     "Differentiate anadromous and catadromous fish migration with one example of each. (3)",
     "Describe bird migration with its causes, navigation and two Nepali examples. (5)"
   ],
@@ -49,37 +55,141 @@
   "summary": "Fish and bird migration: periodic two-way movement; anadromous vs catadromous fishes, latitudinal and altitudinal birds, causes, navigation, Koshi Tappu and Terai-river examples, advantage–cost balance.",
   "mcqs": [
     {
-      "question": "Hilsa ascending Terai rivers in monsoon to breed is an example of:",
+      "question": "Hilsa moving from the sea into a river to breed is",
       "options": [
-        "Anadromous migration",
-        "Catadromous migration",
-        "Altitudinal migration",
-        "Dispersal"
+        "Catadromous",
+        "Anadromous",
+        "Altitudinal",
+        "A one-way dispersal"
       ],
-      "answer": "A",
-      "explanation": "Anadromous fishes move from sea to fresh water to breed; Hilsa ascending rivers in monsoon is the NEB classic."
+      "answer": "B"
     },
     {
-      "question": "Siberian ducks wintering at Koshi Tappu demonstrate:",
+      "question": "Anguilla breeds in",
       "options": [
-        "Latitudinal migration",
-        "Catadromous migration",
-        "Emigration",
-        "Hibernation"
+        "A high lake",
+        "The sea",
+        "A paddy terrace",
+        "A nest on land"
       ],
-      "answer": "A",
-      "explanation": "North–south seasonal movement between breeding and wintering grounds is latitudinal migration."
+      "answer": "B"
     },
     {
-      "question": "Which navigation cue is used by migratory birds?",
+      "question": "Siberian ducks at Koshi Tappu in winter are",
       "options": [
-        "Earth's magnetic field",
-        "Soil pH",
-        "Water BOD",
-        "Leaf shape"
+        "Latitudinal migrants",
+        "Catadromous fish",
+        "Residents of the alpine zone",
+        "Altitudinal fish"
       ],
-      "answer": "A",
-      "explanation": "Birds navigate by sun compass, star patterns, magnetic field and landmarks."
+      "answer": "A"
+    },
+    {
+      "question": "Migration differs from dispersal because migration is",
+      "options": [
+        "Always one way",
+        "Seasonal and two-way",
+        "Only by fish",
+        "A permanent emigration"
+      ],
+      "answer": "B"
     }
-  ]
+  ],
+  "importantStatements": [
+    "Anadromous fish leave the sea to breed in fresh water. Hilsa does this in Terai rivers.",
+    "Catadromous fish leave fresh water to breed in the sea. The eel Anguilla is the example.",
+    "Latitudinal bird migration brings Siberian ducks to Koshi Tappu and Chitwan in winter."
+  ],
+  "formulas": [
+    "Anadromous fish leave the sea to breed in fresh water. Hilsa does this in Terai rivers.",
+    "Catadromous fish leave fresh water to breed in the sea. The eel Anguilla is the example."
+  ],
+  "examNotes": [
+    "Lead with the definition, then the classification or the table.",
+    "Close with one cost, one control, or one exception."
+  ],
+  "examShortTricks": [
+    "Anadromous fish leave the sea to breed in fresh water. Hilsa does this in Terai rivers.",
+    "Catadromous fish leave fresh water to breed in the sea. The eel Anguilla is the example."
+  ],
+  "specialNotes": [
+    "Keep the course example attached to the right class.",
+    "A direction word (to sea, to fresh water, in-situ, ex-situ) is part of the mark."
+  ],
+  "importantNotes": [
+    "Do not swap the two sides of the contrast.",
+    "The example organism has to be able to do the job you assign it."
+  ],
+  "importantConcepts": [
+    "Fish move sea-to-river or river-to-sea. ",
+    "Contrast",
+    "Example",
+    "Limit"
+  ],
+  "importantTasks": [
+    "Write the contrast as two columns.",
+    "Add one Nepal or type-study example."
+  ],
+  "mcs": [
+    {
+      "question": "Hilsa moving from the sea into a river to breed is",
+      "options": [
+        "Catadromous",
+        "Anadromous",
+        "Altitudinal",
+        "A one-way dispersal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Anguilla breeds in",
+      "options": [
+        "A high lake",
+        "The sea",
+        "A paddy terrace",
+        "A nest on land"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Siberian ducks at Koshi Tappu in winter are",
+      "options": [
+        "Latitudinal migrants",
+        "Catadromous fish",
+        "Residents of the alpine zone",
+        "Altitudinal fish"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Migration differs from dispersal because migration is",
+      "options": [
+        "Always one way",
+        "Seasonal and two-way",
+        "Only by fish",
+        "A permanent emigration"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Classify Hilsa and a winter duck at Koshi Tappu.",
+      "steps": [
+        "Hilsa leaves the sea and enters a river to breed, so it is anadromous.",
+        "A duck that bred in the north and winters at Koshi Tappu is a latitudinal migrant.",
+        "Neither movement is one-way dispersal.",
+        "The eel would be the catadromous contrast if the question asked for the opposite fish."
+      ],
+      "answer": "Hilsa is anadromous. The duck is a latitudinal migrant."
+    }
+  ],
+  "visualType": "migration-paths",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Fish move sea-to-river or river-to-sea. Birds move by latitude or by altitude."
+    }
+  }
 }

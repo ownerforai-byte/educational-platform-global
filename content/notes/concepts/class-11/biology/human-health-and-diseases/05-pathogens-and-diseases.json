@@ -35,12 +35,20 @@
     "- **Ringworm**: Trichophyton, Microsporum, skin infections",
     "- **Athlete's foot**: Dermatophytes, foot fungus",
     "### 7. Entrance Exam Focus",
-    "Match pathogen to disease; Identify vector; Distinguish bacterial vs viral treatments."
+    "Match pathogen to disease; Identify vector; Distinguish bacterial vs viral treatments.",
+    "A pathogen is a virus, a bacterium, a protozoan or a fungus that lives at the expense of a host and causes a disease.",
+    "Plasmodium is the protozoan that causes malaria, and the female Anopheles mosquito is the vector that carries it from person to person.",
+    "Salmonella typhi causes typhoid and spreads by contaminated food and water. Mycobacterium causes tuberculosis and spreads by droplets.",
+    "Vibrio cholerae causes cholera when drinking water is unsafe, and the illness is severe watery diarrhoea and dehydration."
   ],
   "confusion": [
     "x Antibiotics treat viral infections. x Antibiotics only work on bacteria.",
     "x Malaria is caused by a worm. x Malaria is caused by Plasmodium (protozoan).",
-    "x All mosquitoes carry disease. x Only specific species of specific genera."
+    "x All mosquitoes carry disease. x Only specific species of specific genera.",
+    "Ringworm is fungal. The name is the trap.",
+    "Malaria's vector is a mosquito. The pathogen is the protozoan.",
+    "Cholera is bacterial, not a vitamin deficiency.",
+    "AIDS is the syndrome. HIV is the virus."
   ],
   "practice": [
     "Match the following: Malaria-Cholera-TB-HIV with their pathogens.",
@@ -48,7 +56,10 @@
     "Why are antibiotics ineffective against viral diseases?",
     "Describe the life cycle of Plasmodium."
   ],
-  "formulas": [],
+  "formulas": [
+    "A pathogen is a virus, a bacterium, a protozoan or a fungus that lives at the expense of a host and causes a disease.",
+    "Plasmodium is the protozoan that causes malaria, and the female Anopheles mosquito is the vector that carries it from person to person."
+  ],
   "summary": "Pathogens are disease-causing organisms — bacteria, viruses, fungi, protozoa and helminths — and each group produces a characteristic pattern of illness. Bacterial diseases include tuberculosis, cholera, typhoid, diphtheria and pertussis; viral diseases include influenza, dengue, hepatitis B, HIV/AIDS and rabies; protozoan diseases such as malaria and amoebiasis are usually food-borne or vector-borne, and helminthic diseases such as ascariasis and filariasis involve parasitic worms. Antibiotics act only on bacteria because viruses have none of the bacterial structures that these drugs target. Prevention relies on sanitation, safe drinking water, vector control, personal hygiene and vaccination.",
   "importantConcepts": [
     "Pathogens are the disease-causing microorganisms: bacteria, viruses, fungi, protozoa and helminths (worms).",
@@ -166,5 +177,88 @@
       "answer": "B",
       "explanation": "HIV infects CD4+ helper T cells, depleting them and gradually destroying cell-mediated immunity, which allows opportunistic infections to develop."
     }
+  ],
+  "examples": [
+    "A pathogen is a virus, a bacterium, a protozoan or a fungus that lives at the expense of a host and causes a disease.",
+    "Plasmodium is the protozoan that causes malaria, and the female Anopheles mosquito is the vector that carries it from person to person.",
+    "Salmonella typhi causes typhoid and spreads by contaminated food and water. Mycobacterium causes tuberculosis and spreads by droplets."
+  ],
+  "universalFacts": [
+    "A pathogen is a virus, a bacterium, a protozoan or a fungus that lives at the expense of a host and causes a disease.",
+    "Plasmodium is the protozoan that causes malaria, and the female Anopheles mosquito is the vector that carries it from person to person.",
+    "Salmonella typhi causes typhoid and spreads by contaminated food and water. Mycobacterium causes tuberculosis and spreads by droplets.",
+    "Vibrio cholerae causes cholera when drinking water is unsafe, and the illness is severe watery diarrhoea and dehydration.",
+    "HIV is the virus that attacks immune cells. AIDS is the syndrome that can follow when those cells have been lost.",
+    "Ringworm is a fungus of the skin, not a worm, and it spreads by contact with skin or with contaminated surfaces."
+  ],
+  "importantNotes": [
+    "Do not swap the two sides of a contrast.",
+    "A formula or a sequence is worthless if the example contradicts it."
+  ],
+  "mcqs": [
+    {
+      "question": "Ringworm is caused by",
+      "options": [
+        "A fungus",
+        "A nematode only",
+        "A vitamin",
+        "A fern"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Typhoid is caused by",
+      "options": [
+        "Salmonella typhi",
+        "HIV",
+        "A mushroom",
+        "Rhizobium"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The pathogen of malaria is",
+      "options": [
+        "Female Anopheles itself as the disease organism",
+        "Plasmodium",
+        "Vibrio",
+        "A lichen"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Cholera spreads mainly by",
+      "options": [
+        "Contaminated water",
+        "A bite of a snow leopard",
+        "Pollen",
+        "A seed bank"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Separate the pathogen from the vector or the route for malaria, cholera and ringworm.",
+      "steps": [
+        "Malaria: pathogen Plasmodium, vector female Anopheles.",
+        "Cholera: pathogen Vibrio cholerae, route unsafe water.",
+        "Ringworm: pathogen a skin fungus, route contact.",
+        "None of these three is caused by a worm."
+      ],
+      "answer": "Plasmodium by mosquito, Vibrio by water, a fungus by contact."
+    }
+  ],
+  "visualType": "bacterial-cell",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "A pathogen is a disease organism. The examples are malaria, typhoid, tuberculosis, cholera, AIDS and ringworm."
+    }
+  },
+  "bounds": [
+    "Class 11 boundary: stop at the characters in this note.",
+    "Do not invent a rank or a count."
   ]
 }

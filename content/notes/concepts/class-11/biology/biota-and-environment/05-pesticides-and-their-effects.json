@@ -55,37 +55,141 @@
   "summary": "Pesticides and their effects: classes with examples, target and non-target effects, biomagnification and resistance, safe-use rules and IPM with Terai paddy examples.",
   "mcqs": [
     {
-      "question": "2,4-D is classified as a:",
+      "question": "DDT became a problem in birds mainly because it",
       "options": [
-        "Herbicide",
-        "Insecticide",
-        "Fungicide",
-        "Rodenticide"
+        "Broke down in a day",
+        "Was biomagnified in fat along the food chain",
+        "Is a fertiliser",
+        "Kills only fungi"
       ],
-      "answer": "A",
-      "explanation": "Herbicides kill weeds; 2,4-D is the textbook herbicide example."
+      "answer": "B"
     },
     {
-      "question": "Rising DDT concentration from water to fish to birds is called:",
+      "question": "2,4-D is used as",
       "options": [
-        "Biomagnification",
-        "Eutrophication",
-        "Nitrification",
-        "Succession"
+        "A herbicide",
+        "A nitrogen fertiliser",
+        "An antibiotic",
+        "A seed coat"
       ],
-      "answer": "A",
-      "explanation": "Biomagnification is concentration rising up the food chain; DDT in birds is the classic case."
+      "answer": "A"
     },
     {
-      "question": "The NEB-expected conclusion of a pesticide long answer is:",
+      "question": "Pest resistance appears when",
       "options": [
-        "IPM",
-        "Blanket spraying",
-        "Zero fertiliser",
-        "Monoculture"
+        "A predator is added once",
+        "The same chemical is used repeatedly",
+        "The waiting period is observed",
+        "Bees are protected"
       ],
-      "answer": "A",
-      "explanation": "Integrated Pest Management — resistant varieties plus predators with need-based minimal spray."
+      "answer": "B"
+    },
+    {
+      "question": "IPM means",
+      "options": [
+        "Spray on a calendar with no count of pests",
+        "Resistant varieties, predators, and a spray only when needed",
+        "DDT on every crop",
+        "Washing sprayers in the pond"
+      ],
+      "answer": "B"
     }
-  ]
+  ],
+  "importantStatements": [
+    "Insecticides, herbicides, fungicides and rodenticides are the classes. DDT, BHC, malathion and 2,4-D are the names to place.",
+    "Non-target death includes bees and the predators that had been eating the pest.",
+    "Repeated spraying selects resistant pests, so the next generation is harder to kill."
+  ],
+  "formulas": [
+    "Insecticides, herbicides, fungicides and rodenticides are the classes. DDT, BHC, malathion and 2,4-D are the names to place.",
+    "Non-target death includes bees and the predators that had been eating the pest."
+  ],
+  "examNotes": [
+    "Lead with the definition, then the classification or the table.",
+    "Close with one cost, one control, or one exception."
+  ],
+  "examShortTricks": [
+    "Insecticides, herbicides, fungicides and rodenticides are the classes. DDT, BHC, malathion",
+    "Non-target death includes bees and the predators that had been eating the pest."
+  ],
+  "specialNotes": [
+    "Keep the course example attached to the right class.",
+    "A direction word (to sea, to fresh water, in-situ, ex-situ) is part of the mark."
+  ],
+  "importantNotes": [
+    "Do not swap the two sides of the contrast.",
+    "The example organism has to be able to do the job you assign it."
+  ],
+  "importantConcepts": [
+    "Pesticides kill a target, then climb a f",
+    "Contrast",
+    "Example",
+    "Limit"
+  ],
+  "importantTasks": [
+    "Write the contrast as two columns.",
+    "Add one Nepal or type-study example."
+  ],
+  "mcs": [
+    {
+      "question": "DDT became a problem in birds mainly because it",
+      "options": [
+        "Broke down in a day",
+        "Was biomagnified in fat along the food chain",
+        "Is a fertiliser",
+        "Kills only fungi"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "2,4-D is used as",
+      "options": [
+        "A herbicide",
+        "A nitrogen fertiliser",
+        "An antibiotic",
+        "A seed coat"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Pest resistance appears when",
+      "options": [
+        "A predator is added once",
+        "The same chemical is used repeatedly",
+        "The waiting period is observed",
+        "Bees are protected"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "IPM means",
+      "options": [
+        "Spray on a calendar with no count of pests",
+        "Resistant varieties, predators, and a spray only when needed",
+        "DDT on every crop",
+        "Washing sprayers in the pond"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A paddy farmer sprays DDT every week and washes the tank in the canal. State two effects and one safer practice.",
+      "steps": [
+        "DDT persists and increases in animals higher in the food chain, including fish and birds.",
+        "Weekly spraying also selects resistant insects and kills bees.",
+        "Washing the sprayer in the canal puts the chemical straight into water.",
+        "A safer practice is need-based spraying, protection for the worker, and a waiting period before harvest."
+      ],
+      "answer": "Biomagnification and resistance. Do not wash sprayers into water. Spray only when the pest count requires it."
+    }
+  ],
+  "visualType": "food-chain-energy",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Pesticides kill a target, then climb a food chain. DDT is the biomagnification case."
+    }
+  }
 }

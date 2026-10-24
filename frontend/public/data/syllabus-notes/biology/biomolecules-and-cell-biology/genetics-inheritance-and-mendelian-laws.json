@@ -5,10 +5,12 @@
   "topicTitle": "Genetics and Inheritance",
   "relevance": 90,
   "notes": [
-    "### 1. Mendel's Experiments",
-    "- Gregor Mendel studied pea plants (Pisum sativum) in the 1860s",
-    "- He identified seven traits he could study",
-    "- His experiments established the foundation of modern genetics"
+    "A gene can exist as alleles. A diploid individual carries two alleles of each gene.",
+    "Dominance means that in a heterozygote, one allele's phenotype hides the other allele's phenotype.",
+    "Segregation: those two alleles separate when gametes form, so each gamete gets one.",
+    "A cross of two heterozygotes therefore gives a genotype ratio of 1:2:1 and, if dominance is complete, a phenotype ratio of 3:1.",
+    "Independent assortment: alleles of different, unlinked genes are sorted independently. Two such genes in a double heterozygote cross give 9:3:3:1.",
+    "A test cross with the homozygous recessive reveals whether a dominant phenotype hides a recessive allele. Linked genes are the exception this note only flags: they do not assort independently."
   ],
   "importantConcepts": [
     "Mendelian inheritance: traits follow predictable patterns",
@@ -51,36 +53,143 @@
   ],
   "mcs": [
     {
-      "question": "In a monohybrid cross (Aa × Aa), what is the phenotypic ratio?",
+      "question": "Segregation refers to",
       "options": [
-        "1:1",
+        "The two alleles of one gene",
+        "Two different genes by definition",
+        "A whole chromosome set refusing to split",
+        "Proteins only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Phenotype ratio of a monohybrid heterozygote cross is",
+      "options": [
         "3:1",
-        "1:2:1",
-        "9:3:3:1"
+        "9:3:3:1",
+        "1:1 always",
+        "All recessive"
       ],
-      "answer": "B",
-      "explanation": "The phenotypic ratio is 3 dominant : 1 recessive (e.g., tall:short in peas)."
+      "answer": "A"
     },
     {
-      "question": "What is a Punnett square?",
+      "question": "A test cross uses",
       "options": [
-        "A grid showing all possible gamete combinations",
-        "A diagram of cell organelles",
-        "A flowchart of metabolic pathways"
+        "A homozygous recessive",
+        "Two dominant unknowns only",
+        "No gametes",
+        "A fungus"
       ],
-      "answer": "A",
-      "explanation": "A Punnett square is a visual tool for predicting offspring genotypes from parental cross."
+      "answer": "A"
     },
     {
-      "question": "Why does a heterozygous individual (Aa) show the dominant phenotype?",
+      "question": "9:3:3:1 requires",
       "options": [
-        "Because dominant alleles always dominate",
-        "Because the dominant allele is expressed in heterozygotes",
-        "Because recessive alleles are silenced",
-        "Both A and C"
+        "Independent assortment",
+        "Complete linkage of both genes",
+        "No dominance of any kind",
+        "A haploid adult"
       ],
-      "answer": "D",
-      "explanation": "In heterozygotes (Aa), the dominant allele (A) is expressed in the phenotype because it is dominant over the recessive allele (a)."
+      "answer": "A"
     }
+  ],
+  "confusion": [
+    "3:1 is phenotype. 1:2:1 is genotype under complete dominance.",
+    "Assortment is for different genes. Segregation is for the two alleles of one gene.",
+    "A test cross is not a cross of two unknowns.",
+    "Linked genes break the 9:3:3:1 expectation."
+  ],
+  "examples": [
+    "A gene can exist as alleles. A diploid individual carries two alleles of each gene.",
+    "Dominance means that in a heterozygote, one allele's phenotype hides the other allele's phenotype.",
+    "Segregation: those two alleles separate when gametes form, so each gamete gets one."
+  ],
+  "universalFacts": [
+    "A gene can exist as alleles. A diploid individual carries two alleles of each gene.",
+    "Dominance means that in a heterozygote, one allele's phenotype hides the other allele's phenotype."
+  ],
+  "formulas": [
+    "A gene can exist as alleles. A diploid individual carries two alleles of each gene.",
+    "Dominance means that in a heterozygote, one allele's phenotype hides the other allele's phenotype."
+  ],
+  "practice": [
+    "Give the character and one example.",
+    "State the contrast.",
+    "Name a use or a limit."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcqs": [
+    {
+      "question": "Segregation refers to",
+      "options": [
+        "The two alleles of one gene",
+        "Two different genes by definition",
+        "A whole chromosome set refusing to split",
+        "Proteins only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Phenotype ratio of a monohybrid heterozygote cross is",
+      "options": [
+        "3:1",
+        "9:3:3:1",
+        "1:1 always",
+        "All recessive"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A test cross uses",
+      "options": [
+        "A homozygous recessive",
+        "Two dominant unknowns only",
+        "No gametes",
+        "A fungus"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "9:3:3:1 requires",
+      "options": [
+        "Independent assortment",
+        "Complete linkage of both genes",
+        "No dominance of any kind",
+        "A haploid adult"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Give both the genotype and the phenotype ratio when two heterozygotes are crossed and dominance is complete.",
+      "steps": [
+        "Parents are Aa and Aa.",
+        "Gametes are A and a.",
+        "Offspring genotypes are AA, Aa, Aa, aa, so 1:2:1.",
+        "AA and Aa share the dominant phenotype, so the phenotype ratio is 3:1."
+      ],
+      "answer": "Genotype 1:2:1. Phenotype 3:1."
+    }
+  ],
+  "summary": "Mendelian inheritance tracks alleles. They segregate, one to each gamete, giving 1:2:1 genotypes and 3:1 phenotypes under complete dominance. Unlinked genes assort independently and give 9:3:3:1. A test cross uncovers a hidden recessive allele.",
+  "visualType": "three-domains",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Alleles segregate. Unlinked genes assort independently. Ratios 3:1 and 9:3:3:1."
+    }
+  },
+  "bounds": [
+    "Stay inside this class 11 topic.",
+    "Do not add an unsupported count."
   ]
 }

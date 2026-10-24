@@ -1,0 +1,195 @@
+{
+  "title": "Plant Breeding",
+  "unitSlug": "food-production",
+  "topicSlug": "plant-breeding",
+  "topicTitle": "Plant Breeding",
+  "relevance": 96,
+  "source": "enriched",
+  "visualType": "plant-breeding-steps",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Five steps in order: collect germplasm, choose parents, cross them, keep the best progeny, then test and release the variety."
+    }
+  },
+  "notes": [
+    "Plant breeding is the deliberate production of a crop that is more useful than its parents. The usefulness is a stated target: more grain, a shorter plant that does not lodge, resistance to a named disease, a duration that fits the monsoon, or a seed with more protein. Simply keeping the heaviest heads from a field is selection. Breeding adds a controlled cross so that characters from two parents finish in one line.",
+    "The work has five steps, and the order is the answer. First the variability is collected. That collection is the germplasm: local varieties, old farmer seed, and wild relatives that still carry disease resistance the crop has lost. Second, the collection is evaluated and the parents are chosen, one of them usually the adapted crop, the other the donor of the missing character. Third, those parents are cross-pollinated. The flower that will be the female is emasculated before its own pollen is shed, dusted with the chosen pollen, and bagged so stray pollen cannot land. Fourth, the progeny are grown on and only the plants that actually combined the characters are kept. That selection is repeated down the generations until the line is stable. Fifth, the line is tested in more than one place and more than one season, released under a name, and the seed is multiplied for farmers.",
+    "The green-revolution cereals are the examples to attach to those steps. Semi-dwarf wheat, from programmes associated with Norman Borlaug, yielded heavily and stayed short enough not to fall over. Sonalika and Kalyan Sona are the wheat names used in this course. Semi-dwarf rice did the same for paddy: IR-8, Jaya and Ratna. Sugarcane shows a cross made for a region rather than for a single gene. Saccharum officinarum has thick stems and high sugar. Saccharum barberi grows in the north of the subcontinent. The hybrid was bred to keep the sugar and the thick stem and still grow in the north.",
+    "Disease resistance uses the same five steps with a resistant parent, often a wild relative. Himgiri wheat was produced against leaf rust, stripe rust and hill bunt. If no parent has the character, mutation breeding is the other door. Seeds or buds are treated with a chemical mutagen or with radiation, and a large number of plants are screened. Most are useless. A few carry a new resistant allele. Mung bean varieties resistant to yellow mosaic virus and powdery mildew were recovered that way. The mutagen does not aim the mutation. The screen does the choosing.",
+    "Biofortification aims the same method at nutritional quality instead of tonnes alone: more protein, a better amino-acid balance, more oil, more vitamins, or more iron and zinc. Atlas 66 is the high-protein wheat quoted for this. The plant is still bred by collection, choice of parents, crossing, selection and release. A transgenic line such as vitamin-A rice is a biotechnology product. It is worth knowing as a contrast, and it is not required to explain conventional breeding.",
+    "The steps fail in known ways. If the female flower is not emasculated in time, the seed is a self-pollination and the donor character never enters. If the two parents flower weeks apart, the cross cannot be made unless pollen is stored or the sowing dates are staggered. A line that tops the trial in one district can collapse in another because the rust race or the day length is different. The multi-location trial exists to catch that before the variety is named and sold."
+  ],
+  "confusion": [
+    "Emasculation removes the anthers of the female parent. It is not the removal of petals, and it is not done to the male parent.",
+    "A mutagen does not 'create the variety the breeder wants'. It creates random changes. Selection keeps the rare useful one.",
+    "Sonalika is a wheat. IR-8, Jaya and Ratna are rices. Mixing the crop is a common error.",
+    "Bile is not involved here. Biofortification is a breeding target, not a fertiliser treatment."
+  ],
+  "keyPoints": [
+    "Five steps: germplasm, choose parents, cross, select recombinants, test and release.",
+    "Emasculate, pollinate, bag.",
+    "Wheat: Sonalika, Kalyan Sona. Rice: IR-8, Jaya, Ratna.",
+    "Sugarcane: Saccharum officinarum crossed with Saccharum barberi.",
+    "Himgiri for rusts and hill bunt. Mutation breeding for mung bean virus and mildew. Atlas 66 for protein."
+  ],
+  "importantStatements": [
+    "Germplasm is the collected variability. It includes wild relatives, not only the current crop.",
+    "The cross is made on an emasculated flower that is then bagged.",
+    "Release follows multi-location testing. A single good plot is not a variety."
+  ],
+  "examples": [
+    "A tall local wheat is crossed with a short heavy-yielding parent, and only short, heavy progeny are kept.",
+    "Himgiri carries resistance to leaf rust, stripe rust and hill bunt into a wheat that farmers can grow.",
+    "North Indian sugarcane cultivation uses hybrids that inherited thick, high-sugar stems from S. officinarum and regional growth from S. barberi."
+  ],
+  "universalFacts": [
+    "Semi-dwarf cereals yield more partly because the stem stays upright and the plant puts photosynthate into grain.",
+    "Wild relatives are kept in germplasm collections because cultivated varieties have lost alleles the wild plants still have."
+  ],
+  "formulas": [
+    "Collect, choose, cross, select, release.",
+    "Female parent: emasculate, then pollinate, then bag.",
+    "S. officinarum (thick, sweet) with S. barberi (grows in the north)."
+  ],
+  "practice": [
+    "Write the five steps in order without skipping emasculation.",
+    "Match Sonalika, IR-8, Himgiri and Atlas 66 to the trait each is famous for.",
+    "Explain why a variety is tested in more than one district."
+  ],
+  "practiceQuestions": [
+    "What is emasculation, and when must it be done?",
+    "Why is a wild relative included in a germplasm collection?",
+    "How does mutation breeding differ from a planned cross?"
+  ],
+  "examNotes": [
+    "The five steps in the right order, with one clause on emasculation inside the cross step, answer the method question.",
+    "Attach one named variety to wheat, one to rice, and the two Saccharum species to sugarcane."
+  ],
+  "examShortTricks": [
+    "Collect, choose, cross, select, release.",
+    "Wheat Sonalika. Rice IR-8. Protein Atlas 66. Rust Himgiri."
+  ],
+  "specialNotes": [
+    "Bagging is part of the cross. An unbagged flower can be pollinated by an unknown plant, and the pedigree is then false.",
+    "Mutation breeding is still selection. The only change is that the new allele was induced rather than brought in by a parent."
+  ],
+  "importantNotes": [
+    "Biofortification changes the quality of the harvested part. It is not the same target as yield, even though the steps look the same.",
+    "A transgenic vitamin-A rice is not the example to use when the question says conventional breeding."
+  ],
+  "importantConcepts": [
+    "Five steps of breeding",
+    "Emasculation and bagging",
+    "Semi-dwarf wheat and rice",
+    "Sugarcane species cross",
+    "Disease resistance, mutation breeding and biofortification"
+  ],
+  "importantTasks": [
+    "Memorise the five steps as a numbered list.",
+    "Make a four-row table of named varieties and the trait each carries."
+  ],
+  "exercises": [
+    {
+      "question": "A breeder wants a rice that keeps a local variety's taste and gains a short stem from a donor. List the steps and the one action that stops self-pollination.",
+      "steps": [
+        "Collect germplasm that includes the local variety and the short-stem donor.",
+        "Evaluate both and choose them as parents.",
+        "Emasculate the flower of the female parent before its own pollen is released. Dust it with donor pollen and bag the flower. Bagging and emasculation are what stop a self-pollination.",
+        "Grow the progeny and keep only plants that combine the desired taste with the short stem. Repeat until the line no longer splits.",
+        "Test that line in more than one place and season, then release it and multiply seed."
+      ],
+      "answer": "The five steps in order, with emasculation of the female flower before pollen shed, followed by bagging."
+    }
+  ],
+  "bounds": [
+    "Tissue-culture micropropagation and recombinant DNA methods are biotechnology topics. This note is conventional breeding plus induced mutation.",
+    "Named varieties are the course examples. Local seed catalogues change and are not required here."
+  ],
+  "summary": "Plant breeding collects germplasm, chooses parents, crosses them on an emasculated and bagged flower, selects the progeny that combined the characters, and releases the line only after tests in more than one place. Sonalika and Kalyan Sona are the wheat examples, IR-8, Jaya and Ratna the rice examples, and the sugarcane example is Saccharum officinarum crossed with Saccharum barberi. Himgiri adds rust resistance, mutation breeding produced resistant mung beans, and Atlas 66 is the high-protein wheat used for biofortification.",
+  "mcs": [
+    {
+      "question": "Emasculation in a cross is",
+      "options": [
+        "Removal of petals from the male parent",
+        "Removal of anthers from the female parent before self-pollen is shed",
+        "Bagging without removing anything",
+        "A mutagen treatment"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Sonalika is a variety of",
+      "options": [
+        "Wheat",
+        "Rice",
+        "Sugarcane",
+        "Mung bean"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The breeding sequence is",
+      "options": [
+        "Release, then collect germplasm, then cross",
+        "Mutagen first, in every programme",
+        "Collect, choose parents, cross, select, test and release",
+        "Bag the flower before choosing parents"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Himgiri wheat is the example for resistance to",
+      "options": [
+        "Drought only",
+        "Leaf rust, stripe rust and hill bunt",
+        "Yellow mosaic virus of mung bean",
+        "Low protein"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Emasculation in a cross is",
+      "options": [
+        "Removal of petals from the male parent",
+        "Removal of anthers from the female parent before self-pollen is shed",
+        "Bagging without removing anything",
+        "A mutagen treatment"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Sonalika is a variety of",
+      "options": [
+        "Wheat",
+        "Rice",
+        "Sugarcane",
+        "Mung bean"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The breeding sequence is",
+      "options": [
+        "Release, then collect germplasm, then cross",
+        "Mutagen first, in every programme",
+        "Collect, choose parents, cross, select, test and release",
+        "Bag the flower before choosing parents"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Himgiri wheat is the example for resistance to",
+      "options": [
+        "Drought only",
+        "Leaf rust, stripe rust and hill bunt",
+        "Yellow mosaic virus of mung bean",
+        "Low protein"
+      ],
+      "answer": "B"
+    }
+  ]
+}

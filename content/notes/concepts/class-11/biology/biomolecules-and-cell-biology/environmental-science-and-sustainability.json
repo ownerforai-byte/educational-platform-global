@@ -5,11 +5,12 @@
   "topicTitle": "Environmental Science and Sustainability",
   "relevance": 87,
   "notes": [
-    "### 1. Environmental Challenges",
-    "- Climate change: rising temperatures, extreme weather events",
-    "- Pollution: air, water, soil contamination",
-    "- Biodiversity loss: habitat destruction, invasive species",
-    "- Resource depletion: freshwater, fossil fuels, minerals"
+    "A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.",
+    "Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note.",
+    "Renewable resources renew if the harvest stays below the renewal. A forest cut faster than it grows is being used as if it were a mine.",
+    "Non-renewable resources, such as coal and oil, are not replaced on a human timescale. Sustainability then means using less and wasting less.",
+    "Reduce, reuse and recycle cut the demand and the rubbish. Community forestry in Nepal is a worked case of a renewable resource brought back under local rules.",
+    "A practice fails the test if it solves today's need by destroying the stock the next harvest depends on. That is the whole standard."
   ],
   "importantConcepts": [
     "Carbon cycle: exchange of carbon between atmosphere, oceans, and living organisms",
@@ -25,7 +26,11 @@
   "keyPoints": [
     "Greenhouse gases trap heat in the atmosphere, causing global warming.",
     "Deforestation reduces carbon sequestration capacity and disrupts water cycles.",
-    "Circular economy principles aim to minimize waste and maximize resource reuse."
+    "Circular economy principles aim to minimize waste and maximize resource reuse.",
+    "Use no faster than renewal.",
+    "Forest, water, soil, fuel.",
+    "Reduce, reuse, recycle.",
+    "Community forestry as a case."
   ],
   "specialNotes": [
     "The Paris Agreement (2015) sets targets to limit global warming to well below 2°C.",
@@ -50,37 +55,143 @@
   ],
   "mcs": [
     {
-      "question": "What is the primary driver of climate change?",
+      "question": "A forest cut faster than it grows is",
       "options": [
-        "Deforestation",
-        "Volcanic eruptions",
-        "Greenhouse gas emissions",
-        "Solar flares"
+        "Unsustainable",
+        "Automatically renewable whatever the rate",
+        "A vaccine",
+        "In-situ by definition"
       ],
-      "answer": "C",
-      "explanation": "Burning fossil fuels releases CO2 and other greenhouse gases that trap heat in the atmosphere."
+      "answer": "A"
     },
     {
-      "question": "Define sustainable development.",
+      "question": "Coal is treated here as",
       "options": [
-        "Unlimited economic growth",
-        "Balancing economic, social, and environmental needs",
-        "Protecting wildlife only",
-        "Using renewable energy only"
+        "Non-renewable on a human timescale",
+        "A crop",
+        "A living community",
+        "A wetland list"
       ],
-      "answer": "B",
-      "explanation": "Sustainable development meets the needs of the present without compromising future generations."
+      "answer": "A"
     },
     {
-      "question": "How does deforestation affect the carbon cycle?",
+      "question": "Reduce, reuse, recycle mainly cuts",
       "options": [
-        "Increases carbon storage",
-        "Reduces carbon sequestration",
-        "Has no effect",
-        "Decreases oxygen production"
+        "Demand and waste",
+        "The number of kingdoms",
+        "Brain size",
+        "Spore types"
       ],
-      "answer": "B",
-      "explanation": "Forests absorb CO2; cutting them down releases stored carbon and removes the sink."
+      "answer": "A"
+    },
+    {
+      "question": "Community forestry aims at",
+      "options": [
+        "A renewable forest under local rules",
+        "Mining coal faster",
+        "Removing all vegetation",
+        "A single pesticide"
+      ],
+      "answer": "A"
     }
+  ],
+  "confusion": [
+    "Renewable does not mean infinite. A forest can be overcut.",
+    "Recycling is not a licence to waste more.",
+    "Community forestry is management, not a new species.",
+    "Pollution is a waste problem, not a separate planet from resource use."
+  ],
+  "examples": [
+    "A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.",
+    "Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note.",
+    "Renewable resources renew if the harvest stays below the renewal. A forest cut faster than it grows is being used as if it were a mine."
+  ],
+  "universalFacts": [
+    "A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.",
+    "Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note."
+  ],
+  "formulas": [
+    "A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.",
+    "Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note."
+  ],
+  "practice": [
+    "Give the character and one example.",
+    "State the contrast.",
+    "Name a use or a limit."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcqs": [
+    {
+      "question": "A forest cut faster than it grows is",
+      "options": [
+        "Unsustainable",
+        "Automatically renewable whatever the rate",
+        "A vaccine",
+        "In-situ by definition"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Coal is treated here as",
+      "options": [
+        "Non-renewable on a human timescale",
+        "A crop",
+        "A living community",
+        "A wetland list"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Reduce, reuse, recycle mainly cuts",
+      "options": [
+        "Demand and waste",
+        "The number of kingdoms",
+        "Brain size",
+        "Spore types"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Community forestry aims at",
+      "options": [
+        "A renewable forest under local rules",
+        "Mining coal faster",
+        "Removing all vegetation",
+        "A single pesticide"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Why can a renewable forest still be used unsustainably?",
+      "steps": [
+        "Renewal has a rate.",
+        "If the cut exceeds the growth, the stock falls.",
+        "The resource is renewable only when the harvest respects that rate.",
+        "Community forestry is one way of keeping the cut inside the growth."
+      ],
+      "answer": "Because harvest can exceed regrowth."
+    }
+  ],
+  "summary": "Sustainability keeps harvest and waste inside what the system can renew and absorb. Forests, water and soil are renewable only within a rate. Coal and oil are not renewed on a human timescale. Using less, reusing and recycling, as in a well-run community forest, is the practical test.",
+  "visualType": "nepal-vegetation",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Sustainability means using a resource no faster than it is renewed."
+    }
+  },
+  "bounds": [
+    "Stay inside this class 11 topic.",
+    "Do not add an unsupported count."
   ]
 }

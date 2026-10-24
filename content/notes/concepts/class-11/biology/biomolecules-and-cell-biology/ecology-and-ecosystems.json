@@ -5,11 +5,12 @@
   "topicTitle": "Ecology and Ecosystems",
   "relevance": 84,
   "notes": [
-    "### 1. Basic Ecological Concepts",
-    "- Ecosystem: a community of living organisms interacting with their physical environment",
-    "- Niche: the role and position of a species within its environment",
-    "- Population: all individuals of a species in a given area",
-    "- Community: group of interacting populations"
+    "A population is the members of one species in a place. A community is the populations living together. An ecosystem adds the physical surroundings.",
+    "A niche is the role: what the organism eats, when it is active, and which conditions it tolerates. Two species do not keep identical niches for long.",
+    "Biotic factors are the living influences. Abiotic factors are light, temperature, water, soil and salinity.",
+    "A food chain moves energy from a producer to consumers. A food web is many chains joined. Decomposers return matter to the soil.",
+    "Only about ten percent of the energy at one level is available at the next. The rest is lost as heat and as work of staying alive. Chains therefore stay short.",
+    "A pond and a forest are both ecosystems. The pond's producers are algae and water plants. The forest's are trees. The structure differs. The energy rule does not."
   ],
   "importantConcepts": [
     "Food webs: interconnected feeding relationships between producers, consumers, and decomposers",
@@ -26,7 +27,11 @@
   "keyPoints": [
     "Food chains and food webs illustrate energy transfer and nutrient cycling.",
     "Competition, predation, and mutualism shape species interactions.",
-    "Ecosystems can be classified by location (terrestrial, aquatic, marine) or by productivity level."
+    "Ecosystems can be classified by location (terrestrial, aquatic, marine) or by productivity level.",
+    "Population, community, ecosystem.",
+    "Niche versus habitat.",
+    "Food chain and web.",
+    "About 10 percent energy transfer."
   ],
   "specialNotes": [
     "A keystone predator (e.g., sea otters) maintains balanced predator-prey dynamics.",
@@ -51,37 +56,143 @@
   ],
   "mcs": [
     {
-      "question": "What is a food web?",
+      "question": "An ecosystem includes",
       "options": [
-        "A linear chain of one prey and one predator",
-        "A network of interconnected feeding relationships",
-        "A diagram of plant and animal habitats",
-        "A measure of ecosystem productivity"
+        "Community plus physical environment",
+        "Only one animal",
+        "Only the name of a species",
+        "A vaccine"
       ],
-      "answer": "B",
-      "explanation": "A food web shows how multiple species are connected through who eats whom, unlike a simple food chain."
+      "answer": "A"
     },
     {
-      "question": "Define carrying capacity and give an example.",
+      "question": "Energy reaching the next trophic level is about",
       "options": [
-        "Maximum temperature an area can support",
-        "Maximum population size an environment can sustain",
-        "Total biomass of all species in an area",
-        "Minimum water needed for a species"
+        "10 percent",
+        "100 percent",
+        "Zero in every chain",
+        "More than the producers captured"
       ],
-      "answer": "B",
-      "explanation": "Carrying capacity (K) is the equilibrium population size that an environment can support indefinitely."
+      "answer": "A"
     },
     {
-      "question": "How do keystone species influence ecosystem structure?",
+      "question": "A niche is",
       "options": [
-        "They compete with dominant species",
-        "They have low abundance but high impact",
-        "They are always top predators",
-        "They only affect one species"
+        "The role of a species",
+        "Only a map square",
+        "A seed bank",
+        "A kingdom"
       ],
-      "answer": "B",
-      "explanation": "Keystone species (e.g., wolves, sea otters) maintain balance by controlling prey populations or preventing dominance by a single species."
+      "answer": "A"
+    },
+    {
+      "question": "Producers in a pond are",
+      "options": [
+        "Algae and water plants",
+        "Hawks",
+        "Fungi only",
+        "Viruses"
+      ],
+      "answer": "A"
     }
+  ],
+  "confusion": [
+    "A community does not include the climate. An ecosystem does.",
+    "Ten percent transfer is a loss, not a gain, at each step.",
+    "A niche is not a habitat. The habitat is the address. The niche is the job.",
+    "Decomposers are not producers."
+  ],
+  "examples": [
+    "A population is the members of one species in a place. A community is the populations living together. An ecosystem adds the physical surroundings.",
+    "A niche is the role: what the organism eats, when it is active, and which conditions it tolerates. Two species do not keep identical niches for long.",
+    "Biotic factors are the living influences. Abiotic factors are light, temperature, water, soil and salinity."
+  ],
+  "universalFacts": [
+    "A population is the members of one species in a place. A community is the populations living together. An ecosystem adds the physical surroundings.",
+    "A niche is the role: what the organism eats, when it is active, and which conditions it tolerates. Two species do not keep identical niches for long."
+  ],
+  "formulas": [
+    "A population is the members of one species in a place. A community is the populations living together. An ecosystem adds the physical surroundings.",
+    "A niche is the role: what the organism eats, when it is active, and which conditions it tolerates. Two species do not keep identical niches for long."
+  ],
+  "practice": [
+    "Give the character and one example.",
+    "State the contrast.",
+    "Name a use or a limit."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcqs": [
+    {
+      "question": "An ecosystem includes",
+      "options": [
+        "Community plus physical environment",
+        "Only one animal",
+        "Only the name of a species",
+        "A vaccine"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Energy reaching the next trophic level is about",
+      "options": [
+        "10 percent",
+        "100 percent",
+        "Zero in every chain",
+        "More than the producers captured"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A niche is",
+      "options": [
+        "The role of a species",
+        "Only a map square",
+        "A seed bank",
+        "A kingdom"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Producers in a pond are",
+      "options": [
+        "Algae and water plants",
+        "Hawks",
+        "Fungi only",
+        "Viruses"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Why are food chains short?",
+      "steps": [
+        "Each transfer passes on about a tenth of the energy.",
+        "The rest is lost as heat and maintenance.",
+        "After a few steps too little energy remains for another level.",
+        "A web does not cancel that loss. It only joins chains."
+      ],
+      "answer": "Because about nine tenths of the energy is lost at each step."
+    }
+  ],
+  "summary": "Ecology scales from organism to population, community and ecosystem. A niche is a role, a habitat an address. Food chains pass on about ten percent of the energy at each step, which is why they stay short. Ponds and forests differ in their producers and share that energy rule.",
+  "visualType": "food-chain-energy",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Organism, population, community, ecosystem. Energy thins by about nine tenths at each step."
+    }
+  },
+  "bounds": [
+    "Stay inside this class 11 topic.",
+    "Do not add an unsupported count."
   ]
 }

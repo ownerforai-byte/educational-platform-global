@@ -36,27 +36,6 @@ export function DerivationVisual({
       renderTheoremFillVisualD(visualType, showAnnotations) ??
       renderTheoremFillVisualE(visualType, showAnnotations);
     if (chainedFill) return chainedFill;
-<defs>
-        <linearGradient id="grad-primary" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0ea5e9"/>
-          <stop offset="100%" stopColor="#6366f1"/>
-        </linearGradient>
-        <linearGradient id="grad-success" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#10b981"/>
-          <stop offset="100%" stopColor="#14b8a6"/>
-        </linearGradient>
-        <linearGradient id="grad-warn" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#f59e0b"/>
-          <stop offset="100%" stopColor="#ef4444"/>
-        </linearGradient>
-        <marker id="arrow-end" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 Z" fill="#38bdf8"/>
-        </marker>
-        <marker id="arrow-end-gold" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-          <path d="M 0 0 L 10 5 L 0 10 Z" fill="#f59e0b"/>
-        </marker>
-        <filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      </defs>
 
     switch (visualType) {
       // ─────────────────────────────────────────────────────────────
@@ -1603,6 +1582,310 @@ export function DerivationVisual({
             <rect x="340" y="116" width="336" height="78" rx="8" fill="#14532d" fillOpacity="0.45" stroke="#86efac" strokeWidth="2" />
             <text x="508" y="146" fill="#bbf7d0" fontSize="13" fontWeight="bold" textAnchor="middle">Female Anopheles — definitive host</text>
             <text x="508" y="172" fill="#dcfce7" fontSize="12" textAnchor="middle">Zygote, oocyst, sporozoites in saliva</text>
+          </svg>
+        );
+
+      case "animal-body-plans":
+        return (
+          <svg viewBox="0 0 700 220" className="w-full h-auto select-none">
+            <rect x="16" y="16" width="160" height="58" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="96" y="40" fill="#e0f2fe" fontSize="12" fontWeight="bold" textAnchor="middle">Cellular</text>
+            <text x="96" y="58" fill="#7dd3fc" fontSize="11" textAnchor="middle">Porifera</text>
+            <rect x="186" y="16" width="160" height="58" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="266" y="40" fill="#dcfce7" fontSize="12" fontWeight="bold" textAnchor="middle">Tissue</text>
+            <text x="266" y="58" fill="#86efac" fontSize="11" textAnchor="middle">Cnidaria</text>
+            <rect x="356" y="16" width="160" height="58" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="436" y="40" fill="#fef3c7" fontSize="12" fontWeight="bold" textAnchor="middle">Organ</text>
+            <text x="436" y="58" fill="#fcd34d" fontSize="11" textAnchor="middle">Flatworms</text>
+            <rect x="526" y="16" width="158" height="58" rx="8" fill="#7f1d1d" fillOpacity="0.45" stroke="#f87171" strokeWidth="2" />
+            <text x="605" y="40" fill="#fee2e2" fontSize="12" fontWeight="bold" textAnchor="middle">Organ system</text>
+            <text x="605" y="58" fill="#fca5a5" fontSize="11" textAnchor="middle">Roundworms on</text>
+            <rect x="16" y="88" width="216" height="52" rx="8" fill="#334155" fillOpacity="0.55" stroke="#94a3b8" strokeWidth="2" />
+            <text x="124" y="120" fill="#e2e8f0" fontSize="12" textAnchor="middle">Acoelom — flatworms</text>
+            <rect x="242" y="88" width="216" height="52" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="120" fill="#e0f2fe" fontSize="12" textAnchor="middle">Pseudocoelom — Ascaris</text>
+            <rect x="468" y="88" width="216" height="52" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="576" y="120" fill="#dcfce7" fontSize="12" textAnchor="middle">True coelom — earthworm</text>
+            <text x="16" y="168" fill="#cbd5e1" fontSize="12">Symmetry: sponges irregular, Cnidaria radial, flatworms onward bilateral.</text>
+            <text x="16" y="192" fill="#cbd5e1" fontSize="12">Metamerism, repeated segments, begins clearly in Annelida.</text>
+          </svg>
+        );
+
+      case "animal-phyla":
+        return (
+          <svg viewBox="0 0 700 250" className="w-full h-auto select-none">
+            <rect x="16" y="16" width="216" height="64" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="124" y="42" fill="#e0f2fe" fontSize="13" fontWeight="bold" textAnchor="middle">Porifera</text>
+            <text x="124" y="62" fill="#7dd3fc" fontSize="11" textAnchor="middle">Pores, canal system</text>
+            <rect x="242" y="16" width="216" height="64" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="350" y="42" fill="#dcfce7" fontSize="13" fontWeight="bold" textAnchor="middle">Cnidaria</text>
+            <text x="350" y="62" fill="#86efac" fontSize="11" textAnchor="middle">Cnidocytes, radial</text>
+            <rect x="468" y="16" width="216" height="64" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="576" y="42" fill="#fef3c7" fontSize="13" fontWeight="bold" textAnchor="middle">Platyhelminthes</text>
+            <text x="576" y="62" fill="#fcd34d" fontSize="11" textAnchor="middle">Flat, no coelom</text>
+            <rect x="16" y="92" width="216" height="64" rx="8" fill="#1e3a5f" fillOpacity="0.45" stroke="#38bdf8" strokeWidth="2" />
+            <text x="124" y="118" fill="#e0f2fe" fontSize="13" fontWeight="bold" textAnchor="middle">Aschelminthes</text>
+            <text x="124" y="138" fill="#7dd3fc" fontSize="11" textAnchor="middle">Pseudocoelom</text>
+            <rect x="242" y="92" width="216" height="64" rx="8" fill="#14532d" fillOpacity="0.45" stroke="#4ade80" strokeWidth="2" />
+            <text x="350" y="118" fill="#dcfce7" fontSize="13" fontWeight="bold" textAnchor="middle">Annelida</text>
+            <text x="350" y="138" fill="#86efac" fontSize="11" textAnchor="middle">Segments, nephridia</text>
+            <rect x="468" y="92" width="216" height="64" rx="8" fill="#7f1d1d" fillOpacity="0.45" stroke="#f87171" strokeWidth="2" />
+            <text x="576" y="118" fill="#fee2e2" fontSize="13" fontWeight="bold" textAnchor="middle">Arthropoda</text>
+            <text x="576" y="138" fill="#fca5a5" fontSize="11" textAnchor="middle">Jointed legs, chitin</text>
+            <rect x="16" y="168" width="216" height="64" rx="8" fill="#334155" fillOpacity="0.55" stroke="#94a3b8" strokeWidth="2" />
+            <text x="124" y="194" fill="#e2e8f0" fontSize="13" fontWeight="bold" textAnchor="middle">Mollusca</text>
+            <text x="124" y="214" fill="#cbd5e1" fontSize="11" textAnchor="middle">Mantle, muscular foot</text>
+            <rect x="242" y="168" width="216" height="64" rx="8" fill="#78350f" fillOpacity="0.45" stroke="#fbbf24" strokeWidth="2" />
+            <text x="350" y="194" fill="#fef3c7" fontSize="13" fontWeight="bold" textAnchor="middle">Echinodermata</text>
+            <text x="350" y="214" fill="#fcd34d" fontSize="11" textAnchor="middle">Water vascular system</text>
+            <rect x="468" y="168" width="216" height="64" rx="8" fill="#14532d" fillOpacity="0.55" stroke="#4ade80" strokeWidth="2" />
+            <text x="576" y="194" fill="#dcfce7" fontSize="13" fontWeight="bold" textAnchor="middle">Chordata</text>
+            <text x="576" y="214" fill="#86efac" fontSize="11" textAnchor="middle">Notochord</text>
+          </svg>
+        );
+
+      case "earthworm-body":
+        return (
+          <svg viewBox="0 0 700 200" className="w-full h-auto select-none">
+            <ellipse cx="340" cy="78" rx="280" ry="42" fill="#78350f" fillOpacity="0.45" stroke="#fbbf24" strokeWidth="2" />
+            <polygon points="58,78 92,58 92,98" fill="#fcd34d" fillOpacity="0.8" />
+            <text x="70" y="140" fill="#fef3c7" fontSize="11" textAnchor="middle">Prostomium</text>
+            <rect x="168" y="40" width="70" height="76" rx="6" fill="#7f1d1d" fillOpacity="0.55" stroke="#fecaca" strokeWidth="2" />
+            <text x="203" y="150" fill="#fecaca" fontSize="11" textAnchor="middle">Clitellum 14–16</text>
+            <circle cx="300" cy="78" r="14" fill="#1e3a5f" fillOpacity="0.8" stroke="#7dd3fc" strokeWidth="2" />
+            <text x="300" y="170" fill="#7dd3fc" fontSize="11" textAnchor="middle">Gizzard</text>
+            <path d="M 360 62 Q 400 78 440 62 Q 480 78 520 66" fill="none" stroke="#86efac" strokeWidth="3" />
+            <text x="440" y="36" fill="#86efac" fontSize="11" textAnchor="middle">Typhlosole</text>
+            <text x="250" y="188" fill="#cbd5e1" fontSize="12">Septal nephridia from segment 15, ventral nerve cord along the floor</text>
+          </svg>
+        );
+
+      case "frog-organs":
+        return (
+          <svg viewBox="0 0 700 210" className="w-full h-auto select-none">
+            <rect x="16" y="16" width="216" height="150" rx="8" fill="#7f1d1d" fillOpacity="0.4" stroke="#f87171" strokeWidth="2" />
+            <text x="124" y="42" fill="#fee2e2" fontSize="13" fontWeight="bold" textAnchor="middle">Heart</text>
+            <text x="124" y="70" fill="#fecaca" fontSize="12" textAnchor="middle">Right atrium</text>
+            <text x="124" y="92" fill="#fecaca" fontSize="12" textAnchor="middle">Left atrium</text>
+            <text x="124" y="114" fill="#fecaca" fontSize="12" textAnchor="middle">One ventricle</text>
+            <text x="124" y="142" fill="#cbd5e1" fontSize="11" textAnchor="middle">Truncus arteriosus</text>
+            <rect x="242" y="16" width="216" height="150" rx="8" fill="#14532d" fillOpacity="0.45" stroke="#4ade80" strokeWidth="2" />
+            <text x="350" y="42" fill="#dcfce7" fontSize="13" fontWeight="bold" textAnchor="middle">Respiration</text>
+            <text x="350" y="74" fill="#86efac" fontSize="12" textAnchor="middle">Skin, always</text>
+            <text x="350" y="98" fill="#86efac" fontSize="12" textAnchor="middle">Lungs on land</text>
+            <text x="350" y="122" fill="#86efac" fontSize="12" textAnchor="middle">Buccal floor pumps air</text>
+            <text x="350" y="146" fill="#cbd5e1" fontSize="11" textAnchor="middle">No diaphragm</text>
+            <rect x="468" y="16" width="216" height="150" rx="8" fill="#1e3a5f" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
+            <text x="576" y="42" fill="#e0f2fe" fontSize="13" fontWeight="bold" textAnchor="middle">Gut</text>
+            <text x="576" y="74" fill="#7dd3fc" fontSize="12" textAnchor="middle">Stomach</text>
+            <text x="576" y="98" fill="#7dd3fc" fontSize="12" textAnchor="middle">Duodenum and ileum</text>
+            <text x="576" y="122" fill="#7dd3fc" fontSize="12" textAnchor="middle">Liver and pancreas</text>
+            <text x="576" y="146" fill="#cbd5e1" fontSize="11" textAnchor="middle">Cloaca, not a separate anus</text>
+          </svg>
+        );
+
+      case "plant-breeding-steps":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <rect x="16" y="36" width="120" height="72" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="76" y="66" fill="#dcfce7" fontSize="12" fontWeight="bold" textAnchor="middle">1 Germplasm</text>
+            <text x="76" y="86" fill="#86efac" fontSize="11" textAnchor="middle">Collect variety</text>
+            <rect x="152" y="36" width="120" height="72" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="212" y="66" fill="#e0f2fe" fontSize="12" fontWeight="bold" textAnchor="middle">2 Parents</text>
+            <text x="212" y="86" fill="#7dd3fc" fontSize="11" textAnchor="middle">Evaluate, choose</text>
+            <rect x="288" y="36" width="120" height="72" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="348" y="66" fill="#fef3c7" fontSize="12" fontWeight="bold" textAnchor="middle">3 Cross</text>
+            <text x="348" y="86" fill="#fcd34d" fontSize="11" textAnchor="middle">Hybridise</text>
+            <rect x="424" y="36" width="120" height="72" rx="8" fill="#7f1d1d" fillOpacity="0.45" stroke="#f87171" strokeWidth="2" />
+            <text x="484" y="66" fill="#fee2e2" fontSize="12" fontWeight="bold" textAnchor="middle">4 Select</text>
+            <text x="484" y="86" fill="#fca5a5" fontSize="11" textAnchor="middle">Best progeny</text>
+            <rect x="560" y="36" width="124" height="72" rx="8" fill="#14532d" fillOpacity="0.55" stroke="#4ade80" strokeWidth="2" />
+            <text x="622" y="66" fill="#dcfce7" fontSize="12" fontWeight="bold" textAnchor="middle">5 Release</text>
+            <text x="622" y="86" fill="#86efac" fontSize="11" textAnchor="middle">Test, then farm</text>
+            <text x="16" y="146" fill="#cbd5e1" fontSize="12">Each step keeps only the plants that carry the chosen trait.</text>
+          </svg>
+        );
+
+      case "scp-sources":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <rect x="16" y="24" width="210" height="110" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="121" y="64" fill="#dcfce7" fontSize="14" fontWeight="bold" textAnchor="middle">Spirulina</text>
+            <text x="121" y="90" fill="#86efac" fontSize="12" textAnchor="middle">Cyanobacterium</text>
+            <text x="121" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Grown on waste water</text>
+            <rect x="244" y="24" width="212" height="110" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="350" y="64" fill="#e0f2fe" fontSize="14" fontWeight="bold" textAnchor="middle">Methylophilus</text>
+            <text x="350" y="90" fill="#7dd3fc" fontSize="12" textAnchor="middle">Bacterium</text>
+            <text x="350" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Very high protein yield</text>
+            <rect x="474" y="24" width="210" height="110" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="579" y="64" fill="#fef3c7" fontSize="14" fontWeight="bold" textAnchor="middle">Mushroom</text>
+            <text x="579" y="90" fill="#fcd34d" fontSize="12" textAnchor="middle">Fungus</text>
+            <text x="579" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Already eaten as food</text>
+          </svg>
+        );
+
+      case "animal-husbandry":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <rect x="16" y="24" width="160" height="110" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="96" y="70" fill="#e0f2fe" fontSize="14" fontWeight="bold" textAnchor="middle">Dairy</text>
+            <text x="96" y="96" fill="#7dd3fc" fontSize="12" textAnchor="middle">Milk</text>
+            <rect x="186" y="24" width="160" height="110" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="266" y="70" fill="#dcfce7" fontSize="14" fontWeight="bold" textAnchor="middle">Poultry</text>
+            <text x="266" y="96" fill="#86efac" fontSize="12" textAnchor="middle">Eggs and meat</text>
+            <rect x="356" y="24" width="160" height="110" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="436" y="70" fill="#fef3c7" fontSize="14" fontWeight="bold" textAnchor="middle">Fishery</text>
+            <text x="436" y="96" fill="#fcd34d" fontSize="12" textAnchor="middle">Capture or culture</text>
+            <rect x="526" y="24" width="158" height="110" rx="8" fill="#7f1d1d" fillOpacity="0.45" stroke="#f87171" strokeWidth="2" />
+            <text x="605" y="70" fill="#fee2e2" fontSize="14" fontWeight="bold" textAnchor="middle">Apiculture</text>
+            <text x="605" y="96" fill="#fca5a5" fontSize="12" textAnchor="middle">Honey and wax</text>
+          </svg>
+        );
+
+      case "three-domains":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <rect x="16" y="20" width="210" height="100" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="121" y="58" fill="#e0f2fe" fontSize="14" fontWeight="bold" textAnchor="middle">Bacteria</text>
+            <text x="121" y="84" fill="#7dd3fc" fontSize="12" textAnchor="middle">Prokaryotic, peptidoglycan</text>
+            <rect x="244" y="20" width="210" height="100" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="349" y="58" fill="#fef3c7" fontSize="14" fontWeight="bold" textAnchor="middle">Archaea</text>
+            <text x="349" y="84" fill="#fcd34d" fontSize="12" textAnchor="middle">Prokaryotic, no peptidoglycan</text>
+            <rect x="472" y="20" width="210" height="100" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="577" y="58" fill="#dcfce7" fontSize="14" fontWeight="bold" textAnchor="middle">Eukarya</text>
+            <text x="577" y="84" fill="#86efac" fontSize="12" textAnchor="middle">True nucleus</text>
+            <text x="16" y="156" fill="#cbd5e1" fontSize="12">Five kingdoms sit inside these domains. Monera is split between Bacteria and Archaea.</text>
+          </svg>
+        );
+
+      case "nepal-vegetation":
+        return (
+          <svg viewBox="0 0 700 200" className="w-full h-auto select-none">
+            <rect x="16" y="24" width="128" height="120" rx="8" fill="#14532d" fillOpacity="0.55" stroke="#4ade80" strokeWidth="2" />
+            <text x="80" y="70" fill="#dcfce7" fontSize="12" fontWeight="bold" textAnchor="middle">Tropical</text>
+            <text x="80" y="92" fill="#86efac" fontSize="11" textAnchor="middle">below 1000 m</text>
+            <text x="80" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Sal</text>
+            <rect x="154" y="24" width="128" height="120" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="218" y="70" fill="#e0f2fe" fontSize="12" fontWeight="bold" textAnchor="middle">Subtropical</text>
+            <text x="218" y="92" fill="#7dd3fc" fontSize="11" textAnchor="middle">1000–2000 m</text>
+            <text x="218" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Chir pine</text>
+            <rect x="292" y="24" width="128" height="120" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="356" y="70" fill="#fef3c7" fontSize="12" fontWeight="bold" textAnchor="middle">Temperate</text>
+            <text x="356" y="92" fill="#fcd34d" fontSize="11" textAnchor="middle">2000–3000 m</text>
+            <text x="356" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Oak, gurans</text>
+            <rect x="430" y="24" width="128" height="120" rx="8" fill="#334155" fillOpacity="0.6" stroke="#94a3b8" strokeWidth="2" />
+            <text x="494" y="70" fill="#e2e8f0" fontSize="12" fontWeight="bold" textAnchor="middle">Subalpine</text>
+            <text x="494" y="92" fill="#cbd5e1" fontSize="11" textAnchor="middle">to timberline</text>
+            <text x="494" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Fir, birch</text>
+            <rect x="568" y="24" width="116" height="120" rx="8" fill="#0f172a" fillOpacity="0.8" stroke="#e2e8f0" strokeWidth="2" />
+            <text x="626" y="70" fill="#f8fafc" fontSize="12" fontWeight="bold" textAnchor="middle">Alpine</text>
+            <text x="626" y="92" fill="#cbd5e1" fontSize="11" textAnchor="middle">above 4000 m</text>
+            <text x="626" y="112" fill="#cbd5e1" fontSize="11" textAnchor="middle">Meadow</text>
+            <text x="16" y="174" fill="#cbd5e1" fontSize="12">Timberline is the last trees, near 4000 m. Snowline is higher. They are not the same line.</text>
+          </svg>
+        );
+
+      case "bacterial-cell":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <ellipse cx="250" cy="90" rx="180" ry="70" fill="#14532d" fillOpacity="0.35" stroke="#4ade80" strokeWidth="2" />
+            <ellipse cx="250" cy="90" rx="150" ry="52" fill="#1e3a5f" fillOpacity="0.45" stroke="#7dd3fc" strokeWidth="2" />
+            <ellipse cx="230" cy="92" rx="36" ry="18" fill="#fef3c7" fillOpacity="0.85" stroke="#fbbf24" strokeWidth="1.5" />
+            <circle cx="300" cy="78" r="6" fill="#86efac" />
+            <circle cx="160" cy="108" r="5" fill="#86efac" />
+            <text x="500" y="48" fill="#dcfce7" fontSize="13" fontWeight="bold">Capsule and wall outside</text>
+            <text x="500" y="78" fill="#fef3c7" fontSize="13" fontWeight="bold">Nucleoid, no membrane</text>
+            <text x="500" y="108" fill="#86efac" fontSize="13" fontWeight="bold">70S ribosomes, plasmid</text>
+            <text x="500" y="138" fill="#7dd3fc" fontSize="13" fontWeight="bold">No mitochondria, no nucleus</text>
+          </svg>
+        );
+
+      case "plant-groups":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <rect x="16" y="28" width="160" height="110" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="96" y="62" fill="#dcfce7" fontSize="13" fontWeight="bold" textAnchor="middle">Algae</text>
+            <text x="96" y="88" fill="#86efac" fontSize="11" textAnchor="middle">Thallus, in water</text>
+            <text x="96" y="110" fill="#cbd5e1" fontSize="11" textAnchor="middle">Spirogyra</text>
+            <rect x="186" y="28" width="160" height="110" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="266" y="62" fill="#e0f2fe" fontSize="13" fontWeight="bold" textAnchor="middle">Bryophyta</text>
+            <text x="266" y="88" fill="#7dd3fc" fontSize="11" textAnchor="middle">No xylem</text>
+            <text x="266" y="110" fill="#cbd5e1" fontSize="11" textAnchor="middle">Marchantia</text>
+            <rect x="356" y="28" width="160" height="110" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="436" y="62" fill="#fef3c7" fontSize="13" fontWeight="bold" textAnchor="middle">Pteridophyta</text>
+            <text x="436" y="88" fill="#fcd34d" fontSize="11" textAnchor="middle">First vessels</text>
+            <text x="436" y="110" fill="#cbd5e1" fontSize="11" textAnchor="middle">Dryopteris</text>
+            <rect x="526" y="28" width="158" height="110" rx="8" fill="#7f1d1d" fillOpacity="0.45" stroke="#f87171" strokeWidth="2" />
+            <text x="605" y="62" fill="#fee2e2" fontSize="13" fontWeight="bold" textAnchor="middle">Gymnosperm</text>
+            <text x="605" y="88" fill="#fca5a5" fontSize="11" textAnchor="middle">Naked seed</text>
+            <text x="605" y="110" fill="#cbd5e1" fontSize="11" textAnchor="middle">Pinus</text>
+          </svg>
+        );
+
+      case "fungal-classes":
+        return (
+          <svg viewBox="0 0 700 160" className="w-full h-auto select-none">
+            <rect x="16" y="24" width="160" height="100" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="96" y="62" fill="#e0f2fe" fontSize="12" fontWeight="bold" textAnchor="middle">Phycomycetes</text>
+            <text x="96" y="88" fill="#7dd3fc" fontSize="11" textAnchor="middle">Mucor, zygospore</text>
+            <rect x="186" y="24" width="160" height="100" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="266" y="62" fill="#dcfce7" fontSize="12" fontWeight="bold" textAnchor="middle">Ascomycetes</text>
+            <text x="266" y="88" fill="#86efac" fontSize="11" textAnchor="middle">Yeast, ascus</text>
+            <rect x="356" y="24" width="160" height="100" rx="8" fill="#78350f" fillOpacity="0.5" stroke="#fbbf24" strokeWidth="2" />
+            <text x="436" y="62" fill="#fef3c7" fontSize="12" fontWeight="bold" textAnchor="middle">Basidiomycetes</text>
+            <text x="436" y="88" fill="#fcd34d" fontSize="11" textAnchor="middle">Mushroom</text>
+            <rect x="526" y="24" width="158" height="100" rx="8" fill="#334155" fillOpacity="0.6" stroke="#94a3b8" strokeWidth="2" />
+            <text x="605" y="62" fill="#e2e8f0" fontSize="12" fontWeight="bold" textAnchor="middle">Deuteromycetes</text>
+            <text x="605" y="88" fill="#cbd5e1" fontSize="11" textAnchor="middle">No sexual stage</text>
+          </svg>
+        );
+
+      case "in-situ-ex-situ":
+        return (
+          <svg viewBox="0 0 700 180" className="w-full h-auto select-none">
+            <rect x="16" y="20" width="320" height="130" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="176" y="52" fill="#dcfce7" fontSize="14" fontWeight="bold" textAnchor="middle">In-situ</text>
+            <text x="176" y="80" fill="#86efac" fontSize="12" textAnchor="middle">National park, reserve</text>
+            <text x="176" y="104" fill="#86efac" fontSize="12" textAnchor="middle">Conservation area</text>
+            <text x="176" y="128" fill="#cbd5e1" fontSize="11" textAnchor="middle">Species stays in its habitat</text>
+            <rect x="364" y="20" width="320" height="130" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="524" y="52" fill="#e0f2fe" fontSize="14" fontWeight="bold" textAnchor="middle">Ex-situ</text>
+            <text x="524" y="80" fill="#7dd3fc" fontSize="12" textAnchor="middle">Botanical garden</text>
+            <text x="524" y="104" fill="#7dd3fc" fontSize="12" textAnchor="middle">Seed bank, gene bank</text>
+            <text x="524" y="128" fill="#cbd5e1" fontSize="11" textAnchor="middle">Backup, away from the wild</text>
+          </svg>
+        );
+
+      case "iucn-ranks":
+        return (
+          <svg viewBox="0 0 700 150" className="w-full h-auto select-none">
+            <rect x="16" y="36" width="100" height="70" rx="8" fill="#0f172a" stroke="#e2e8f0" strokeWidth="2" />
+            <text x="66" y="76" fill="#f8fafc" fontSize="12" fontWeight="bold" textAnchor="middle">Extinct</text>
+            <rect x="128" y="36" width="120" height="70" rx="8" fill="#7f1d1d" fillOpacity="0.7" stroke="#f87171" strokeWidth="2" />
+            <text x="188" y="76" fill="#fee2e2" fontSize="12" fontWeight="bold" textAnchor="middle">Endangered</text>
+            <rect x="260" y="36" width="120" height="70" rx="8" fill="#78350f" fillOpacity="0.65" stroke="#fbbf24" strokeWidth="2" />
+            <text x="320" y="76" fill="#fef3c7" fontSize="12" fontWeight="bold" textAnchor="middle">Vulnerable</text>
+            <rect x="392" y="36" width="100" height="70" rx="8" fill="#1e3a5f" fillOpacity="0.55" stroke="#38bdf8" strokeWidth="2" />
+            <text x="442" y="76" fill="#e0f2fe" fontSize="12" fontWeight="bold" textAnchor="middle">Rare</text>
+            <rect x="504" y="36" width="180" height="70" rx="8" fill="#14532d" fillOpacity="0.5" stroke="#4ade80" strokeWidth="2" />
+            <text x="594" y="68" fill="#dcfce7" fontSize="12" fontWeight="bold" textAnchor="middle">Threatened</text>
+            <text x="594" y="88" fill="#86efac" fontSize="11" textAnchor="middle">the risk group</text>
+          </svg>
+        );
+
+      case "migration-paths":
+        return (
+          <svg viewBox="0 0 700 170" className="w-full h-auto select-none">
+            <rect x="16" y="20" width="320" height="120" rx="8" fill="#1e3a5f" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="2" />
+            <text x="176" y="50" fill="#e0f2fe" fontSize="14" fontWeight="bold" textAnchor="middle">Fish</text>
+            <text x="176" y="78" fill="#7dd3fc" fontSize="12" textAnchor="middle">Anadromous: sea to river</text>
+            <text x="176" y="102" fill="#7dd3fc" fontSize="12" textAnchor="middle">Catadromous: river to sea</text>
+            <text x="176" y="124" fill="#cbd5e1" fontSize="11" textAnchor="middle">Mahseer moves upstream to spawn</text>
+            <rect x="364" y="20" width="320" height="120" rx="8" fill="#14532d" fillOpacity="0.45" stroke="#4ade80" strokeWidth="2" />
+            <text x="524" y="50" fill="#dcfce7" fontSize="14" fontWeight="bold" textAnchor="middle">Birds</text>
+            <text x="524" y="78" fill="#86efac" fontSize="12" textAnchor="middle">Latitudinal: winter wetlands</text>
+            <text x="524" y="102" fill="#86efac" fontSize="12" textAnchor="middle">Altitudinal: hills in winter</text>
+            <text x="524" y="124" fill="#cbd5e1" fontSize="11" textAnchor="middle">Food and temperature set the move</text>
           </svg>
         );
 

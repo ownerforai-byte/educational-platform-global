@@ -55,37 +55,141 @@
   "summary": "Evolution of modern man: anthropoid ancestry, Lucy-to-sapiens stages with brain sizes, bipedalism and brain-expansion trends, fossil and tool evidence, labelled timeline.",
   "mcqs": [
     {
-      "question": "'Lucy' (Australopithecus afarensis) is famous for:",
+      "question": "Which trend came first in the hominin line?",
       "options": [
-        "Bipedalism with ~400 cc brain",
-        "Fire use with ~900 cc brain",
-        "Agriculture with ~1350 cc brain",
-        "Flight with hollow bones"
+        "A 1400 cm³ brain",
+        "Habitual bipedalism",
+        "Farming",
+        "Writing"
       ],
-      "answer": "A",
-      "explanation": "Lucy walked upright before major brain expansion — bipedalism first."
+      "answer": "B"
     },
     {
-      "question": "Homo erectus is distinguished by:",
+      "question": "Lucy is an example of",
       "options": [
-        "Fire use and Acheulean tools",
-        "No tools at all",
-        "Agriculture and writing",
-        "Aquatic lifestyle"
+        "Homo sapiens",
+        "Australopithecus",
+        "A living ape",
+        "A monkey of the New World"
       ],
-      "answer": "A",
-      "explanation": "Homo erectus (~900 cc) controlled fire and spread out of Africa."
+      "answer": "B"
     },
     {
-      "question": "Modern man (Homo sapiens sapiens) has a brain of about:",
+      "question": "Homo erectus is associated with",
       "options": [
-        "1350 cc",
-        "400 cc",
-        "650 cc",
-        "2000 cc"
+        "Fire and a spread out of Africa",
+        "No tools and a life only in trees",
+        "Being a dinosaur",
+        "A brain smaller than Lucy's"
       ],
-      "answer": "A",
-      "explanation": "Brain size roughly tripled from Australopithecus to modern man."
+      "answer": "B"
+    },
+    {
+      "question": "Living apes are",
+      "options": [
+        "The direct parents of modern villages",
+        "Relatives who share an older ancestor with us",
+        "Members of Monera",
+        "The same species as Neanderthals"
+      ],
+      "answer": "B"
     }
-  ]
+  ],
+  "importantStatements": [
+    "Humans are primates in the family Hominidae. They share an ancestor with living apes. They did not descend from a living chimpanzee.",
+    "Australopithecus afarensis, including the fossil called Lucy, was bipedal with a brain near 400 cubic centimetres.",
+    "Homo habilis made stone tools and had a larger brain, near 650 cubic centimetres."
+  ],
+  "formulas": [
+    "Humans are primates in the family Hominidae. They share an ancestor with living apes. They did not descend from a living chimpanzee.",
+    "Australopithecus afarensis, including the fossil called Lucy, was bipedal with a brain near 400 cubic centimetres."
+  ],
+  "examNotes": [
+    "Definition, then contrast, then example.",
+    "Add the limit in the last line."
+  ],
+  "examShortTricks": [
+    "Humans are primates in the family Hominidae. They share an ancestor with living apes. They did not d",
+    "Australopithecus afarensis, including the fossil called Lucy, was bipedal with a brain near 400 cubi"
+  ],
+  "specialNotes": [
+    "Match the example to the category.",
+    "Do not swap the two arms of the contrast."
+  ],
+  "importantNotes": [
+    "The category name has a definition, not only a mood.",
+    "A country-level loss is not automatically a global extinction."
+  ],
+  "importantConcepts": [
+    "Definition",
+    "Contrast",
+    "Example",
+    "Limit"
+  ],
+  "importantTasks": [
+    "Write the contrast in two columns.",
+    "Attach one named example."
+  ],
+  "mcs": [
+    {
+      "question": "Which trend came first in the hominin line?",
+      "options": [
+        "A 1400 cm³ brain",
+        "Habitual bipedalism",
+        "Farming",
+        "Writing"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Lucy is an example of",
+      "options": [
+        "Homo sapiens",
+        "Australopithecus",
+        "A living ape",
+        "A monkey of the New World"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Homo erectus is associated with",
+      "options": [
+        "Fire and a spread out of Africa",
+        "No tools and a life only in trees",
+        "Being a dinosaur",
+        "A brain smaller than Lucy's"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Living apes are",
+      "options": [
+        "The direct parents of modern villages",
+        "Relatives who share an older ancestor with us",
+        "Members of Monera",
+        "The same species as Neanderthals"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Order Australopithecus, Homo habilis and Homo erectus by brain size and name one cultural gain.",
+      "steps": [
+        "Australopithecus had the smallest brain of the three, about 400 cm³, and was already bipedal.",
+        "Homo habilis comes next, with tools and a brain near 650 cm³.",
+        "Homo erectus had a brain near 900 cm³ and used fire.",
+        "The cultural gain can be tools or fire. Farming is far later."
+      ],
+      "answer": "Australopithecus, then habilis, then erectus. Tools, then fire."
+    }
+  ],
+  "visualType": "three-domains",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Bipedalism came before the large brain. Living apes are cousins, not ancestors."
+    }
+  }
 }

@@ -3,56 +3,194 @@
   "unitSlug": "faunal-diversity",
   "topicSlug": "earthworm-pheretima-posthuma-habit-and-habitat-external-features-digestive-system-alimentary-can",
   "topicTitle": "Earthworm (Pheretima posthuma): Habit and habitat, external features; digestive system (alimentary canal and physiology of digestion)",
-  "relevance": 100,
-  "source": "generated",
+  "relevance": 96,
+  "source": "enriched",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
-  "bounds": [],
-  "practice": [
-    "one worked example for \"Earthworm (Pheretima posthuma): Habit and habitat, extern…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+  "visualType": "earthworm-body",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Pheretima in side view: prostomium at the front, clitellum on segments 14 to 16, gizzard in the gut, typhlosole as a fold in the intestine."
+    }
+  },
+  "notes": [
+    "Pheretima posthuma is a terrestrial oligochaete of moist soil. It is nocturnal, because a dry skin blocks the gas exchange that its body wall has to do, and it comes up to feed and to mate when the surface is damp. It burrows by pushing coelomic fluid forward and anchoring the swollen segments with setae. The food is decaying organic matter in the soil it swallows. The castings it leaves are the soil after that meal has passed through.",
+    "The body has about 100 to 120 segments. The first segment is the peristomium, and a small prostomium overhangs the mouth. A glandular clitellum covers segments 14, 15 and 16 and looks like a saddle. Setae are arranged in a ring on each segment, the perichaetine pattern, and they are missing on the first segment, the clitellum and the last segment. The arrangement is the external sign of Oligochaeta.",
+    "The ventral surface carries the openings used in reproduction, and they are asked as a labelled list. Spermathecal pores open in the grooves between segments 5/6, 6/7, 7/8 and 8/9. The female genital pore is a single mid-ventral opening on segment 14. A pair of male genital pores opens on segment 18. Genital papillae sit on segments 17 and 19. The anus is the last segment. Dorsal pores, from which coelomic fluid leaks out to keep the skin moist, begin behind the clitellum.",
+    "The gut is a straight tube with a job for each region. The buccal cavity occupies segments 1 to 3 and is only a passage. The pharynx in segment 4 is muscular and pumps the soil in. The oesophagus runs through segments 5 to 7. The gizzard, in segments 8 and 9, is thick-walled and grinds the soil. The stomach, about segments 9 to 14, has calciferous glands whose secretion neutralises the humic acids of decaying leaves, so the gut contents are not left strongly acid.",
+    "The intestine begins at segment 15 and runs almost to the anus. In segment 26 a pair of intestinal caeca projects forward and adds amylase, so starch digestion is centred there. From about segment 27 a dorsal fold, the typhlosole, hangs into the intestine and increases the surface that absorbs digested food. It stops short of the rectum. The last stretch is the rectum, and undigested soil leaves as castings. Chloragogen cells on the intestine store glycogen and are involved in excretion and in building haemoglobin.",
+    "Digestion itself is simple because the meal is dead organic matter, not prey. There is no mastication in a mouth. Mechanical breakdown is the gizzard's work. Chemical digestion of protein, carbohydrate and fat is completed in the intestine, with the caeca supplying the starch-splitting enzyme. Absorption is across the typhlosole and the intestinal wall into blood that already contains haemoglobin dissolved in the plasma. Egestion is continuous. An earthworm that is feeding is also depositing castings."
   ],
-  "universalFacts": [
-    "answer pattern for \"Earthworm (Pheretima posthuma): Habit and habitat, extern…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Earthworm (Pheretima posthuma): Habit and habitat, extern…\" with one example.",
-    "compare \"Earthworm\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Earthworm (Pheretima posthuma): Habit and habitat, extern…\" and verify the answer is plausible."
+  "confusion": [
+    "The clitellum is segments 14 to 16, not a random swelling in the middle of the body. The female pore is on segment 14, inside that region.",
+    "Earthworm blood is red. Haemoglobin is dissolved in the plasma. It is not carried in red cells, and it is not absent.",
+    "The typhlosole is a fold of the intestine, not a separate gland. The caeca at segment 26 are the glandular outgrowths.",
+    "Setae are not parapodia. Parapodia belong to Nereis. Pheretima has a ring of small setae."
   ],
   "keyPoints": [
-    "• Earthworm",
-    "• Pheretima posthuma",
-    "• : Habit",
-    "• Habitat",
-    "• External features",
-    "• Digestive system"
+    "Moist soil, nocturnal, burrowing, feeds on organic matter in swallowed soil.",
+    "About 100 to 120 segments. Clitellum on 14, 15 and 16. Perichaetine setae.",
+    "Spermathecal pores in grooves 5/6 to 8/9. Female pore on 14. Male pores on 18.",
+    "Gizzard grinds in segments 8 to 9. Calciferous glands neutralise acid in the stomach.",
+    "Intestinal caeca at segment 26. Typhlosole increases the absorptive surface."
   ],
-  "summary": "Earthworm (Pheretima posthuma): Habit and habitat, extern… (Faunal Diversity, Biology, class-11-notes) covers Earthworm, Pheretima posthuma, : Habit. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "The gizzard is the grinding organ. The mouth does not chew.",
+    "Calciferous glands neutralise humic acids. They are not digestive enzymes.",
+    "Haemoglobin of Pheretima is in the plasma, which is why the blood is red without red cells."
+  ],
+  "examples": [
+    "A worm in a dry courtyard stays deep in the burrow because gas exchange through the skin fails when the cuticle dries.",
+    "Soil with leaf litter enters the mouth, is ground in the gizzard, and leaves as a casting richer in mineral nutrients.",
+    "Starch from plant debris is attacked by amylase from the intestinal caeca of segment 26."
+  ],
+  "universalFacts": [
+    "Pheretima is perichaetine: the setae form a closed ring on a typical segment.",
+    "Dorsal pores release coelomic fluid onto the skin and help keep respiration possible."
+  ],
+  "formulas": [
+    "Clitellum 14–16. Female pore 14. Male pores 18. Spermathecae open at 5/6, 6/7, 7/8, 8/9.",
+    "Buccal cavity 1–3, pharynx 4, oesophagus 5–7, gizzard 8–9, stomach 9–14, intestine from 15.",
+    "Caeca at 26. Typhlosole from about 27, absent near the rectum."
+  ],
+  "practice": [
+    "Label segments 14, 18 and the four spermathecal grooves on a ventral sketch.",
+    "Trace a grain of starch from the mouth to absorption, naming the enzyme source.",
+    "Give two reasons the skin must stay moist, one of them not about reproduction."
+  ],
+  "practiceQuestions": [
+    "What do the calciferous glands do, and where is the stomach?",
+    "Why is the typhlosole an absorptive device rather than a grinding device?",
+    "Where are the male pores relative to the clitellum?"
+  ],
+  "examNotes": [
+    "External features are a labelled diagram plus the segment numbers. Memorise 14, 18 and the four grooves.",
+    "Physiology of digestion is four verbs: swallow, grind, digest in the intestine, absorb across the typhlosole."
+  ],
+  "examShortTricks": [
+    "14 female and clitellum, 18 male, 26 caeca.",
+    "Gizzard grinds, typhlosole absorbs, calciferous glands neutralise."
+  ],
+  "specialNotes": [
+    "Segment numbers are for Pheretima posthuma. Do not copy the numbers from a diagram of Lumbricus without checking.",
+    "The anus is terminal. There is no cloaca in the earthworm."
+  ],
+  "importantNotes": [
+    "Castings are egested soil, not excretory urine. Nitrogenous waste leaves by nephridia, which are the next note.",
+    "The clitellum is not always equally obvious. It is still segments 14 to 16, and it becomes glandular at breeding."
+  ],
+  "importantConcepts": [
+    "Habit of a moist-soil oligochaete",
+    "External segment map",
+    "Regions of the alimentary canal",
+    "Role of gizzard, calciferous glands, caeca and typhlosole",
+    "Plasma haemoglobin"
+  ],
+  "importantTasks": [
+    "Draw the ventral pores with segment numbers only, no internal organs.",
+    "Write the gut as a single chain of regions with segment numbers."
+  ],
+  "exercises": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Earthworm (Pheretima posthuma): Habit and habitat, extern…\"?",
-      "options": [
-        "Earthworm",
-        "Pheretima posthuma",
-        "Unrelated topic",
-        "None of the above"
+      "question": "A student says the earthworm chews leaves in its mouth and that its blood is colourless. Correct both claims with the organs involved.",
+      "steps": [
+        "The mouth and buccal cavity only take soil in. They do not chew.",
+        "Grinding is the work of the gizzard in segments 8 and 9.",
+        "Chemical digestion of the organic matter happens in the intestine, with amylase from the caeca at segment 26.",
+        "Absorption uses the typhlosole. The blood that receives the products contains haemoglobin dissolved in the plasma, so it is red.",
+        "There are no red blood cells. Colourless blood would mean no respiratory pigment, which is the wrong description of Pheretima."
       ],
-      "answer": "Earthworm",
-      "explanation": "Earthworm is listed among the official sub-ideas of Earthworm (Pheretima posthuma): Habit and habitat, extern…; the others are not part of this topic."
+      "answer": "Grinding is gizzard, not mouth. Blood is red because haemoglobin is dissolved in the plasma."
+    }
+  ],
+  "bounds": [
+    "Nephridia, the nerve cord and the reproductive organs are the following two notes.",
+    "Segment numbers apply to Pheretima posthuma as set in the class 11 type study."
+  ],
+  "summary": "Pheretima posthuma burrows in moist soil, swallows organic debris, and breathes through a damp skin. About 100 to 120 segments carry a clitellum on 14 to 16, a female pore on 14, male pores on 18, and four pairs of spermathecal openings. The gut grinds in the gizzard, neutralises humic acid in the stomach, digests in the intestine with caeca at segment 26, and absorbs across a typhlosole. Haemoglobin sits in the plasma, so the blood is red without red cells.",
+  "mcs": [
+    {
+      "question": "The clitellum of Pheretima covers segments",
+      "options": [
+        "8 to 10",
+        "14 to 16",
+        "18 to 20",
+        "26 to 28"
+      ],
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Earthworm (Pheretima posthuma): Habit and habitat, extern…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Male genital pores open on segment",
       "options": [
-        "True",
-        "False"
+        "14",
+        "15",
+        "18",
+        "26"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C"
+    },
+    {
+      "question": "Soil swallowed by the earthworm is ground in the",
+      "options": [
+        "Typhlosole",
+        "Calciferous glands",
+        "Gizzard",
+        "Spermathecae"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Haemoglobin in Pheretima is",
+      "options": [
+        "Inside red blood cells",
+        "Dissolved in the plasma",
+        "Absent, so the blood is colourless",
+        "Stored in the clitellum"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The clitellum of Pheretima covers segments",
+      "options": [
+        "8 to 10",
+        "14 to 16",
+        "18 to 20",
+        "26 to 28"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Male genital pores open on segment",
+      "options": [
+        "14",
+        "15",
+        "18",
+        "26"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Soil swallowed by the earthworm is ground in the",
+      "options": [
+        "Typhlosole",
+        "Calciferous glands",
+        "Gizzard",
+        "Spermathecae"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Haemoglobin in Pheretima is",
+      "options": [
+        "Inside red blood cells",
+        "Dissolved in the plasma",
+        "Absent, so the blood is colourless",
+        "Stored in the clitellum"
+      ],
+      "answer": "B"
     }
   ]
 }

@@ -28,12 +28,22 @@
     "- ii = Group O (recessive)",
     "- Anti-A antibodies in type B and O; Anti-B antibodies in type A and O",
     "### 6. Entrance Exam Focus",
-    "Distinguish incomplete dominance vs codominance; Solve blood group crosses."
+    "Distinguish incomplete dominance vs codominance; Solve blood group crosses.",
+    "Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.",
+    "Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.",
+    "Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.",
+    "ABO blood uses the alleles IA, IB and i. IA and IB are codominant with each other, and i is recessive to both of them.",
+    "A roan coat, with red hairs and white hairs on the same animal, is the coat example of codominance rather than a blended colour.",
+    "Neither incomplete dominance nor codominance overturns segregation. The alleles still separate. Only the look of the heterozygote changes."
   ],
   "confusion": [
     "x Incomplete dominance = blending. x It's not permanent blending - alleles remain distinct.",
     "x Codominance = incomplete dominance. x In codominance both show fully, not intermediate.",
-    "x Type AB can donate to anyone. x Type AB can ONLY receive, not donate."
+    "x Type AB can donate to anyone. x Type AB can ONLY receive, not donate.",
+    "Pink flowers are not a blend of the alleles themselves. Each allele stays whole and segregates.",
+    "AB blood is codominance, not incomplete dominance. Both antigens are present, not a halfway antigen.",
+    "1:2:1 here is both genotype and phenotype under incomplete dominance.",
+    "A recessive allele is not 'weak DNA'. It is an allele whose product does not show when the other is present."
   ],
   "practice": [
     "Cross red snapdragon (RR) with white (WW). What are F1 and F2 ratios?",
@@ -41,7 +51,10 @@
     "Can a type AB parent and type O parent have a type O child? Why/why not?",
     "Explain why codominance differs from incomplete dominance."
   ],
-  "formulas": [],
+  "formulas": [
+    "Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.",
+    "Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent."
+  ],
   "summary": "Not every trait follows a simple dominant-recessive pattern, and these exceptions are grouped as non-Mendelian inheritance. In incomplete dominance neither allele is completely dominant, so the heterozygote shows an intermediate phenotype — red RR x white WW snapdragon gives pink RW — and the phenotypic ratio equals the genotypic ratio of 1:2:1. In codominance both alleles are fully and simultaneously expressed in the heterozygote, as with IA and IB in the ABO blood group system and in roan cattle. The ABO system also illustrates multiple allelism, in which three alleles (IA, IB and i) exist in the population although every individual carries only two.",
   "importantConcepts": [
     "Incomplete dominance: neither allele is completely dominant, so the heterozygote shows an intermediate phenotype (Red RR x White WW gives Pink RW in snapdragon).",
@@ -159,5 +172,88 @@
       "answer": "C",
       "explanation": "AB results from the codominant alleles IA and IB, and because the plasma holds neither anti-A nor anti-B, AB red cells can be donated to all four groups. Plasma, however, can be received only from AB."
     }
+  ],
+  "examples": [
+    "Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.",
+    "Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.",
+    "Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell."
+  ],
+  "universalFacts": [
+    "Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.",
+    "Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.",
+    "Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.",
+    "ABO blood uses the alleles IA, IB and i. IA and IB are codominant with each other, and i is recessive to both of them.",
+    "A roan coat, with red hairs and white hairs on the same animal, is the coat example of codominance rather than a blended colour.",
+    "Neither incomplete dominance nor codominance overturns segregation. The alleles still separate. Only the look of the heterozygote changes."
+  ],
+  "importantNotes": [
+    "Do not swap the two sides of a contrast.",
+    "A formula or a sequence is worthless if the example contradicts it."
+  ],
+  "mcqs": [
+    {
+      "question": "Pink flowers from red and white parents are",
+      "options": [
+        "Incomplete dominance",
+        "Codominance of blood",
+        "A 9:3:3:1 dihybrid",
+        "Extinction"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Blood group AB is",
+      "options": [
+        "Codominance of IA and IB",
+        "Incomplete dominance to a pink cell",
+        "A recessive genotype ii",
+        "A fungal mating type"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Under incomplete dominance the heterozygote phenotype ratio is",
+      "options": [
+        "3:1",
+        "1:2:1",
+        "9:3:3:1",
+        "All one class"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Segregation in these cases",
+      "options": [
+        "Stops working",
+        "Still separates the two alleles",
+        "Creates a third allele",
+        "Removes the gametes"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A pink flower, from incomplete dominance, is self-pollinated. Give the offspring colours.",
+      "steps": [
+        "Pink is the heterozygote, call it RW.",
+        "Gametes are R and W.",
+        "Offspring are RR, RW, RW, WW.",
+        "That is one red, two pink, one white."
+      ],
+      "answer": "1 red : 2 pink : 1 white."
+    }
+  ],
+  "visualType": "three-domains",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Incomplete dominance blends the heterozygote. Codominance shows both alleles at once."
+    }
+  },
+  "bounds": [
+    "Class 11 boundary: stop at the characters in this note.",
+    "Do not invent a rank or a count."
   ]
 }

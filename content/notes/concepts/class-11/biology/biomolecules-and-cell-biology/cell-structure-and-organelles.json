@@ -5,11 +5,12 @@
   "topicTitle": "Cell Structure and Organelles",
   "relevance": 95,
   "notes": [
-    "### 1. Cell Theory Recap",
-    "- All living organisms are composed of one or more cells",
-    "- The cell is the basic unit of structure and function",
-    "- All cells arise from pre-existing cells (Virchow: omnis cellula e cellula)",
-    "- Cells can be prokaryotic (no nucleus) or eukaryotic (nucleus present)"
+    "Cell theory: living things are made of cells, the cell is the unit of structure and function, and cells arise from cells.",
+    "A prokaryotic cell has a nucleoid, 70S ribosomes and no mitochondria. A eukaryotic cell has a nucleus and membrane-bound organelles.",
+    "The plasma membrane is a selective boundary. The cell wall, in plants, is outside it and is cellulose. Animal cells have no cellulose wall.",
+    "Mitochondria release energy by aerobic respiration and carry a little of their own DNA. Chloroplasts, in green cells, do the same kind of semi-independent life for photosynthesis.",
+    "Rough endoplasmic reticulum carries ribosomes and helps make proteins. The Golgi body packages secretions. Lysosomes hold digestive enzymes. Ribosomes, 80S in the eukaryotic cytosol, build proteins.",
+    "The nucleus holds the chromosomes. Cilia and flagella move a cell or the fluid past it. Vacuoles and stored granules are inclusions, not the same thing as an organelle with a job in metabolism."
   ],
   "importantConcepts": [
     "Cell membrane: selectively permeable phospholipid bilayer",
@@ -31,7 +32,11 @@
   "keyPoints": [
     "Organelles have specific functions: nucleus (control), mitochondria (energy), ER (synthesis), Golgi (packaging), lysosomes (digestion).",
     "Prokaryotic cells lack membrane-bound organelles but have a nucleoid region with DNA.",
-    "Eukaryotic cells have a true nucleus surrounded by a nuclear envelope."
+    "Eukaryotic cells have a true nucleus surrounded by a nuclear envelope.",
+    "Cells come from cells.",
+    "Nucleoid versus nucleus.",
+    "Mitochondria and chloroplasts.",
+    "ER, Golgi, lysosome, ribosome."
   ],
   "specialNotes": [
     "The cell membrane is fluid mosaic model – a dynamic arrangement of lipids and proteins.",
@@ -100,5 +105,104 @@
       "answer": "B",
       "explanation": "Eukaryotic cells have a true nucleus enclosed by a nuclear membrane, while prokaryotic cells lack this compartment."
     }
+  ],
+  "confusion": [
+    "Animal cells have no cellulose wall.",
+    "80S ribosomes are eukaryotic. 70S are prokaryotic, and also inside mitochondria.",
+    "A lysosome is not the nucleus.",
+    "Inclusions are storage. Organelles do the metabolic work."
+  ],
+  "examples": [
+    "Cell theory: living things are made of cells, the cell is the unit of structure and function, and cells arise from cells.",
+    "A prokaryotic cell has a nucleoid, 70S ribosomes and no mitochondria. A eukaryotic cell has a nucleus and membrane-bound organelles.",
+    "The plasma membrane is a selective boundary. The cell wall, in plants, is outside it and is cellulose. Animal cells have no cellulose wall."
+  ],
+  "universalFacts": [
+    "Cell theory: living things are made of cells, the cell is the unit of structure and function, and cells arise from cells.",
+    "A prokaryotic cell has a nucleoid, 70S ribosomes and no mitochondria. A eukaryotic cell has a nucleus and membrane-bound organelles."
+  ],
+  "formulas": [
+    "Cell theory: living things are made of cells, the cell is the unit of structure and function, and cells arise from cells.",
+    "A prokaryotic cell has a nucleoid, 70S ribosomes and no mitochondria. A eukaryotic cell has a nucleus and membrane-bound organelles."
+  ],
+  "practice": [
+    "Give the character and one example.",
+    "State the contrast.",
+    "Name a use or a limit."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcqs": [
+    {
+      "question": "Cellulose walls are typical of",
+      "options": [
+        "Plant cells",
+        "All animal cells",
+        "Viruses",
+        "Every bacterium as cellulose"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Aerobic respiration in a eukaryote is centred on",
+      "options": [
+        "Mitochondria",
+        "The Golgi as the only site",
+        "A cell wall",
+        "A vacuole only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "80S ribosomes are",
+      "options": [
+        "Eukaryotic cytosolic ribosomes",
+        "Only viral",
+        "Absent from humans",
+        "The same size class as a typical bacterial ribosome"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Lysosomes",
+      "options": [
+        "Digest",
+        "Store chlorophyll as their main job",
+        "Are nuclei",
+        "Are cell walls"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Name two organelles that contain their own DNA, and one structure animal cells lack.",
+      "steps": [
+        "Mitochondria contain their own DNA.",
+        "Chloroplasts contain their own DNA.",
+        "Animal cells lack a cellulose cell wall.",
+        "Both organelles are eukaryotic, not bacterial."
+      ],
+      "answer": "Mitochondria and chloroplasts. Animals lack a cellulose wall."
+    }
+  ],
+  "summary": "Cells come from cells. Prokaryotes keep a nucleoid and 70S ribosomes. Eukaryotes add a nucleus, mitochondria, and, in green cells, chloroplasts, plus ER, Golgi, lysosomes and 80S ribosomes. Plants add a cellulose wall that animals do not have.",
+  "visualType": "bacterial-cell",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Cell theory, then the organelles a eukaryotic cell adds to a prokaryotic plan."
+    }
+  },
+  "bounds": [
+    "Stay inside this class 11 topic.",
+    "Do not add an unsupported count."
   ]
 }

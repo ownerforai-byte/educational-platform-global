@@ -39,12 +39,19 @@
     "- Smaller fragments move faster through agarose gel",
     "- Visualized with ethidium bromide under UV light",
     "### 7. Entrance Exam Focus",
-    "Identify restriction enzymes; Describe PCR steps; Explain vector requirements."
+    "Identify restriction enzymes; Describe PCR steps; Explain vector requirements.",
+    "Biotechnology here means using a living system, or an enzyme taken from one, to make or change a product that people use.",
+    "A restriction enzyme cuts DNA at a short recognition site and can open a plasmid at that same site.",
+    "A vector, often a plasmid, carries the foreign DNA into a host cell so the host can copy it."
   ],
   "confusion": [
     "x Any enzyme can cut DNA. x Only specific restriction enzymes recognize specific sequences.",
     "x PCR makes infinite copies. x Each cycle doubles DNA - limited by reagents.",
-    "x DNA moves to positive electrode because it's positive. x DNA is NEGATIVE, moves to POSITIVE."
+    "x DNA moves to positive electrode because it's positive. x DNA is NEGATIVE, moves to POSITIVE.",
+    "A restriction enzyme cuts. It does not copy. Polymerase copies.",
+    "A plasmid is a vector in this story, not the disease.",
+    "The host does not have to be the organism the gene came from.",
+    "PCR multiplies DNA. It does not by itself make a field of cotton."
   ],
   "practice": [
     "What is the function of restriction enzymes? Give an example.",
@@ -52,7 +59,10 @@
     "Why is Taq polymerase used in PCR?",
     "Explain how gel electrophoresis separates DNA fragments."
   ],
-  "formulas": [],
+  "formulas": [
+    "Biotechnology here means using a living system, or an enzyme taken from one, to make or change a product that people use.",
+    "A restriction enzyme cuts DNA at a short recognition site and can open a plasmid at that same site."
+  ],
   "summary": "Biotechnology is the use of living organisms or their products to make or modify products for practical use, and modern biotechnology is built on recombinant DNA (rDNA) technology. The essential tools are restriction enzymes, which cut DNA at specific palindromic recognition sequences such as EcoRI at GAATTC to give sticky or blunt ends, and vectors such as plasmids, bacteriophages and cosmids, which carry foreign DNA into a competent host. rDNA technology proceeds through six steps from isolation of DNA to expression of the gene, while PCR amplifies a chosen DNA segment using thermostable Taq polymerase and gel electrophoresis separates fragments according to size. These techniques together underpin every product of modern biotechnology.",
   "importantConcepts": [
     "Recombinant DNA technology isolates DNA from two sources, cuts both with the same restriction enzyme and joins the fragments with DNA ligase to form recombinant DNA.",
@@ -170,5 +180,88 @@
       "answer": "B",
       "explanation": "DNA ligase forms phosphodiester bonds to seal the nicks left after complementary sticky ends pair, producing recombinant DNA; a restriction endonuclease makes the cut in the first place."
     }
+  ],
+  "examples": [
+    "Biotechnology here means using a living system, or an enzyme taken from one, to make or change a product that people use.",
+    "A restriction enzyme cuts DNA at a short recognition site and can open a plasmid at that same site.",
+    "A vector, often a plasmid, carries the foreign DNA into a host cell so the host can copy it."
+  ],
+  "universalFacts": [
+    "Biotechnology here means using a living system, or an enzyme taken from one, to make or change a product that people use.",
+    "A restriction enzyme cuts DNA at a short recognition site and can open a plasmid at that same site.",
+    "A vector, often a plasmid, carries the foreign DNA into a host cell so the host can copy it.",
+    "The host, often a bacterium, copies the recombinant DNA as the cell grows and divides.",
+    "The same DNA can be amplified by PCR when only a little template is available and a clone has not yet been grown.",
+    "The principle is cut, join, carry and copy. The useful product appears only after that copy is expressed as a protein or used as a crop trait."
+  ],
+  "importantNotes": [
+    "Do not swap classes.",
+    "A sequence has an order. Do not rotate it."
+  ],
+  "mcqs": [
+    {
+      "question": "A restriction enzyme",
+      "options": [
+        "Cuts DNA at a recognition site",
+        "Is a fertiliser",
+        "Builds a cell wall",
+        "Is a vaccine"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A plasmid used to carry a gene is a",
+      "options": [
+        "Vector",
+        "Pathogen by definition",
+        "Seed",
+        "Hormone"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "PCR is used to",
+      "options": [
+        "Make many copies of a DNA piece",
+        "Replace a national park",
+        "Fix nitrogen",
+        "Kill every insect"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The usual host that copies a recombinant plasmid is",
+      "options": [
+        "A bacterium",
+        "A granite rock",
+        "A virus with no host of its own in this step",
+        "A fossil"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Order restriction enzyme, plasmid vector, host bacterium and PCR for a gene you barely have.",
+      "steps": [
+        "The restriction enzyme cuts the gene and opens the plasmid.",
+        "The gene is joined into the plasmid, which is the vector.",
+        "The bacterium takes up the plasmid and copies it as it divides.",
+        "If you started with a trace of DNA, PCR could amplify it before or beside that cloning."
+      ],
+      "answer": "Cut, carry on a plasmid, copy in a bacterium. PCR amplifies a small amount of DNA."
+    }
+  ],
+  "visualType": "bacterial-cell",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Recombinant DNA: cut with a restriction enzyme, carry on a vector, grow in a host."
+    }
+  },
+  "bounds": [
+    "Stay on this class 11 topic.",
+    "Counts you cannot defend stay out."
   ]
 }

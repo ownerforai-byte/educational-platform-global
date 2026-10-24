@@ -35,19 +35,32 @@
     "- Oil-spill cleanup: Pseudomonas putida degrades hydrocarbons",
     "- Heavy metal removal: Bioaccumulation by certain microbes",
     "### 6. Entrance Exam Focus",
-    "Applications of Bt crops; Insulin production; Biopiracy examples."
+    "Applications of Bt crops; Insulin production; Biopiracy examples.",
+    "Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.",
+    "Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.",
+    "Medicine uses recombinant cells that carry the human gene to make human insulin for people who need it.",
+    "A vaccine can be a harmless antigen produced in a cultured cell, given so the body learns the antigen before infection.",
+    "Antibiotics first found in fungi and bacteria remain a medical use of microbes, and they treat a bacterial infection that is already underway."
   ],
   "confusion": [
     "x GM means genetically modified. x GWO (genetically wrought organism) is NOT the same term.",
     "x All transgenic animals are harmful. x Many provide medical benefits.",
-    "x Biopiracy is legal. x It's the unauthorized exploitation of indigenous knowledge."
+    "x Biopiracy is legal. x It's the unauthorized exploitation of indigenous knowledge.",
+    "Bt toxin is a protein aimed at certain insects. It is not a fertiliser.",
+    "Recombinant insulin is human insulin made by a microbe. It is not pig insulin by default.",
+    "An antibiotic does not vaccinate you. It treats a current bacterial infection.",
+    "A gene from a crop is not automatically unsafe, and it is not automatically owned by nobody."
   ],
   "practice": [
     "How is human insulin produced using recombinant DNA technology?",
     "What is Bt cotton and how does it work?",
+    "Define biopiracy with examples from India/Nepal.",
     "What are the applications of transgenic animals?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.",
+    "Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop."
+  ],
   "summary": "Biotechnology applies the use of living organisms and their products to make or modify useful products, and in modern practice this means recombinant DNA technology. In agriculture, Bt crops carrying Bacillus thuringiensis genes give insect resistance, Golden Rice supplies provitamin A, and herbicide-resistant, delayed-ripening and drought-tolerant varieties raise yields and food quality. In medicine, recombinant DNA gives human insulin, growth hormone and hepatitis B vaccine, while gene therapy, monoclonal antibodies and CRISPR-Cas9 treat and diagnose disease at the genetic level. Transgenic animals serve as disease models and as factories producing therapeutic proteins, and the same tools clean up pollution through bioremediation, although the unauthorised use of indigenous knowledge raises the ethical problem of biopiracy.",
   "importantConcepts": [
     "A transgenic organism carries an artificially inserted gene from another organism, introduced through a suitable vector; Bt cotton, for example, expresses the cry gene of Bacillus thuringiensis.",
@@ -68,6 +81,7 @@
   "importantTasks": [
     "Explain, step by step, how human insulin is produced using recombinant DNA technology, naming the restriction enzyme, vector, host organism and the joining of the A and B chains.",
     "Describe how Bt cotton resists insect attack and explain why the toxin does not harm humans.",
+    "Define biopiracy and discuss the neem, basmati rice and wheat patent cases as disputes over the misappropriation of biological resources.",
     "List the three main uses of transgenic animals and give one example of each use.",
     "Describe how bioremediation can be used to clear an oil spill and how microbes remove heavy metals from contaminated sites."
   ],
@@ -103,6 +117,7 @@
   "practiceQuestions": [
     "How is human insulin produced using recombinant DNA technology?",
     "What is Bt cotton and how does it protect the plant from insect pests?",
+    "Define biopiracy and give two examples of biopiracy cases from South Asia.",
     "What are the applications of transgenic animals? Give one example of each.",
     "How can bioremediation be used to control an oil spill?",
     "Compare Bt crops with chemical pesticides for pest control, listing two advantages and one limitation."
@@ -163,5 +178,88 @@
       "answer": "C",
       "explanation": "Pharming, or biopharming, uses transgenic animals as living factories that secrete human therapeutic proteins in milk; bioremediation instead uses organisms to clean up pollutants."
     }
+  ],
+  "examples": [
+    "Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.",
+    "Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.",
+    "Medicine uses recombinant cells that carry the human gene to make human insulin for people who need it."
+  ],
+  "universalFacts": [
+    "Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.",
+    "Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.",
+    "Medicine uses recombinant cells that carry the human gene to make human insulin for people who need it.",
+    "A vaccine can be a harmless antigen produced in a cultured cell, given so the body learns the antigen before infection.",
+    "Antibiotics first found in fungi and bacteria remain a medical use of microbes, and they treat a bacterial infection that is already underway.",
+    "The ethical line is consent, the safety of a released organism, and who owns a gene or a variety taken from a community."
+  ],
+  "importantNotes": [
+    "Do not swap classes.",
+    "A sequence has an order. Do not rotate it."
+  ],
+  "mcqs": [
+    {
+      "question": "Bt cotton is protected against",
+      "options": [
+        "Certain caterpillars",
+        "Drought by magic",
+        "All fungi by a wall of glass",
+        "Lack of DNA"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Recombinant human insulin is made",
+      "options": [
+        "In a microbe given the human gene",
+        "Only by grinding a pancreas as the modern method",
+        "By a fern",
+        "By DDT"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An antibiotic typically",
+      "options": [
+        "Kills or stops bacteria",
+        "Is a vaccine memory cell",
+        "Fixes nitrogen in every plant",
+        "Is a seed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A released engineered crop raises",
+      "options": [
+        "A safety and ownership question",
+        "No question of any kind",
+        "Only a spelling question",
+        "The timberline"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Separate what Bt cotton does from what recombinant insulin does.",
+      "steps": [
+        "Bt cotton makes a protein that kills certain caterpillars in the field.",
+        "Recombinant insulin is a medicine made by cells that carry the human gene.",
+        "One is a crop protection. The other is a drug.",
+        "Neither is an antibiotic, and neither is a vaccine."
+      ],
+      "answer": "Bt protects the crop from caterpillars. Recombinant insulin is a medicine."
+    }
+  ],
+  "visualType": "plant-breeding-steps",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Agriculture uses better crops and microbes. Medicine uses insulin, vaccines and antibiotics made with living cells."
+    }
+  },
+  "bounds": [
+    "Stay on this class 11 topic.",
+    "Counts you cannot defend stay out."
   ]
 }

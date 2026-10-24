@@ -47,7 +47,11 @@
   "confusion": [
     "x Ozone is always bad. x Stratospheric ozone protects us; ground-level ozone is a pollutant.",
     "x Global warming = ozone depletion. x Different problems with different causes.",
-    "x CO2 is the only greenhouse gas. x CH4, N2O, CFCs are also significant."
+    "x CO2 is the only greenhouse gas. x CH4, N2O, CFCs are also significant.",
+    "Sewage in a river is water pollution, not a method of treatment.",
+    "Composting is for organic waste. It does not make plastic disappear.",
+    "Smoke and sewage are different pollutants. One control does not fix both.",
+    "A landfill beside a well can become a water problem."
   ],
   "practice": [
     "Explain the cause and effects of acid rain.",
@@ -55,7 +59,10 @@
     "Describe the mechanism of ozone layer depletion.",
     "How does eutrophication affect aquatic ecosystems?"
   ],
-  "formulas": [],
+  "formulas": [
+    "Air pollution comes from burning fuel, industry and dust. It harms lungs and can acidify rain.",
+    "Water pollution comes from sewage, factory effluent and farm runoff. It spreads cholera and kills fish."
+  ],
   "summary": "Pollution of air, water and land has distinct sources, effects and control measures. Air pollutants are classified as primary, such as SO2, NOx, CO and particulates emitted directly, and secondary, such as ground-level ozone and acid rain, which form in the atmosphere. Water pollution from point and non-point sources causes organic pollution with a raised BOD, eutrophication and heavy-metal toxicity, while solid waste is managed by the 3Rs, landfilling, incineration and composting. At global scale, greenhouse gases drive the enhanced greenhouse effect, and ozone-depleting CFCs cause ozone-layer depletion, addressed by the Kyoto Protocol, the Paris Agreement and the Montreal Protocol respectively.",
   "importantConcepts": [
     "Primary air pollutants (SO2, NOx, CO, smoke and dust particulates) are emitted directly, while secondary pollutants such as ground-level ozone and acid rain form in the atmosphere by chemical reaction.",
@@ -75,6 +82,7 @@
   ],
   "importantTasks": [
     "Explain the cause and the effects of acid rain, including the chemical reactions involved and one control measure.",
+    "Define the greenhouse effect, list the major greenhouse gases and describe the consequences of the enhanced greenhouse effect.",
     "Describe the mechanism of ozone-layer depletion by CFCs and state the consequences of extra UV-B radiation reaching the surface.",
     "Explain step by step how eutrophication develops in a lake and what happens to the aquatic ecosystem as a result.",
     "Classify a list of solid wastes as biodegradable, non-biodegradable or hazardous and recommend a suitable disposal method for each."
@@ -172,5 +180,88 @@
       "answer": "B",
       "explanation": "Excess nitrates and phosphates trigger an algal bloom; when the algae die, aerobic decomposition raises the BOD and depletes dissolved oxygen, and the fish then die."
     }
+  ],
+  "examples": [
+    "Air pollution comes from burning fuel, industry and dust. It harms lungs and can acidify rain.",
+    "Water pollution comes from sewage, factory effluent and farm runoff. It spreads cholera and kills fish.",
+    "Solid waste is household and industrial rubbish. Dumped waste breeds flies and leaks into groundwater."
+  ],
+  "universalFacts": [
+    "Air pollution comes from burning fuel, industry and dust. It harms lungs and can acidify rain.",
+    "Water pollution comes from sewage, factory effluent and farm runoff. It spreads cholera and kills fish.",
+    "Solid waste is household and industrial rubbish. Dumped waste breeds flies and leaks into groundwater.",
+    "Control of air starts with cleaner burning and less dust.",
+    "Control of water is treatment before discharge, and toilets that do not open into a river.",
+    "Control of solid waste is reduce, separate, compost the organic fraction, and landfill the rest away from water."
+  ],
+  "importantNotes": [
+    "Do not swap classes.",
+    "A sequence has an order. Do not rotate it."
+  ],
+  "mcqs": [
+    {
+      "question": "Cholera is most directly tied to",
+      "options": [
+        "Polluted water",
+        "Noise",
+        "A seed bank",
+        "Alpine snow"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Organic solid waste is best",
+      "options": [
+        "Composted",
+        "Burned in a closed room",
+        "Thrown in a drinking source",
+        "Stored in a well"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Farm runoff is mainly a",
+      "options": [
+        "Water pollutant",
+        "Form of binomial nomenclature",
+        "Vaccine",
+        "Gymnosperm"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Dust and smoke are",
+      "options": [
+        "Air pollutants",
+        "The same thing as sewage",
+        "Ramsar sites",
+        "Heterocysts"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Match sewage, smoke and plastic waste to the right medium and one control.",
+      "steps": [
+        "Sewage is water pollution. Treat it before it reaches a river.",
+        "Smoke is air pollution. Burn cleaner fuel and reduce dust.",
+        "Plastic is solid waste. It should not be composted as if it were food scraps. Reduce it and keep it out of water.",
+        "Each control fails if it is applied to the wrong medium."
+      ],
+      "answer": "Treat sewage, clean the burning, and keep plastic out of soil and water."
+    }
+  ],
+  "visualType": "greenhouse-ozone",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Air, water and solid waste each have a source, an effect and a control that is not the same sentence."
+    }
+  },
+  "bounds": [
+    "Stay on this class 11 topic.",
+    "Counts you cannot defend stay out."
   ]
 }

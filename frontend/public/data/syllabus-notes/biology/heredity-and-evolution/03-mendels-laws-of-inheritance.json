@@ -27,12 +27,19 @@
     "### 5. Test Cross",
     "Cross between dominant phenotype and homozygous recessive to determine genotype.",
     "### 6. Entrance Exam Focus",
-    "Solve Punnett squares; Calculate ratios; Distinguish between laws."
+    "Solve Punnett squares; Calculate ratios; Distinguish between laws.",
+    "Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.",
+    "The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.",
+    "The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene."
   ],
   "confusion": [
     "x Dominant traits are more common. x Dominant just means expressed when present.",
     "x Independent assortment applies to all genes. x Only applies to genes on different chromosomes.",
-    "x 3:1 ratio always means homozygous dominant. x Could be heterozygous."
+    "x 3:1 ratio always means homozygous dominant. x Could be heterozygous.",
+    "Segregation is about one gene's two alleles. Independent assortment is about two genes.",
+    "3:1 is a phenotype ratio. The genotype ratio of that monohybrid is 1:2:1.",
+    "A test cross is with the recessive parent, not with another heterozygote.",
+    "Peas were chosen because traits were discrete. Not every character behaves this cleanly."
   ],
   "practice": [
     "Cross TT x tt - find F1 and F2 genotypic and phenotypic ratios.",
@@ -162,5 +169,88 @@
       "answer": "C",
       "explanation": "1:4:6:4:1 is the genotypic (and phenotypic) ratio of the F2 dihybrid, while 9:3:3:1 is the phenotypic ratio produced when dominance is complete."
     }
+  ],
+  "examples": [
+    "Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.",
+    "The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.",
+    "The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene."
+  ],
+  "universalFacts": [
+    "Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.",
+    "The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.",
+    "The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene.",
+    "Independent assortment says alleles of different genes separate independently when those genes are unlinked and sit far apart.",
+    "A monohybrid cross of two heterozygotes gives a phenotypic ratio of three dominant to one recessive when dominance is complete.",
+    "A dihybrid cross of two double heterozygotes gives nine to three to three to one when the two genes assort independently."
+  ],
+  "importantNotes": [
+    "Do not swap the two sides of a contrast.",
+    "A formula or a sequence is worthless if the example contradicts it."
+  ],
+  "mcqs": [
+    {
+      "question": "A monohybrid heterozygote cross gives the phenotype ratio",
+      "options": [
+        "9:3:3:1",
+        "3:1",
+        "1:1",
+        "1:2:1 only, with no 3:1 phenotype"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Segregation says that",
+      "options": [
+        "Alleles of one gene separate into different gametes",
+        "All gametes get both alleles",
+        "Genes never mutate",
+        "Only dominant alleles enter pollen"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Independent assortment applies cleanly when genes are",
+      "options": [
+        "On different chromosomes or far apart",
+        "The same allele",
+        "Always lethal",
+        "Inside a bacterium's capsule"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A test cross uses",
+      "options": [
+        "The homozygous recessive",
+        "Two dominant phenotypes only",
+        "A fungus",
+        "No gametes"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Two heterozygous tall plants are crossed. What phenotype ratio is expected if tall is dominant?",
+      "steps": [
+        "Each parent is Tt.",
+        "Gametes are T and t, in equal share, by segregation.",
+        "Offspring are TT, Tt, Tt, tt.",
+        "Three show the dominant phenotype and one the recessive, so 3:1."
+      ],
+      "answer": "3 tall : 1 dwarf."
+    }
+  ],
+  "visualType": "three-domains",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Dominance, segregation, independent assortment. Pea ratios 3:1 and 9:3:3:1."
+    }
+  },
+  "bounds": [
+    "Class 11 boundary: stop at the characters in this note.",
+    "Do not invent a rank or a count."
   ]
 }

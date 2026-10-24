@@ -5,11 +5,12 @@
   "topicTitle": "Evolution and Natural Selection",
   "relevance": 85,
   "notes": [
-    "### 1. Darwin's Theory",
-    "- Charles Darwin proposed natural selection in 1859 (On the Origin of Species)",
-    "- Variation exists within populations",
-    "- Individuals with advantageous traits are more likely to survive and reproduce",
-    "- Over time, beneficial traits become more common in the population"
+    "Individuals in a population differ from one another, and some of those differences are hereditary and can be passed to offspring.",
+    "More offspring are born than the resources can support, so not all of them survive and breed.",
+    "Individuals whose hereditary traits fit the conditions leave more offspring. That is natural selection.",
+    "Over generations the successful variants become more common. The population changes. That change is evolution by selection.",
+    "Darwin could not name the source of new variation. Mutation and the shuffling of genes, understood later, supply it. Selection only sorts what is already heritable.",
+    "Selection is not an animal trying to improve. A giraffe does not stretch into a new gene. Lamarck's acquired characters are the contrast, and they are not what selection uses."
   ],
   "importantConcepts": [
     "Variation: genetic diversity within populations",
@@ -52,37 +53,143 @@
   ],
   "mcs": [
     {
-      "question": "What is the definition of natural selection?",
+      "question": "Natural selection acts on",
       "options": [
-        "Random mutation accumulation",
-        "Differential survival and reproduction based on traits",
-        "Gene flow between populations",
-        "Artificial breeding techniques"
+        "Hereditary variation",
+        "A suntan",
+        "A wish to improve",
+        "Acquired muscles only"
       ],
-      "answer": "B",
-      "explanation": "Natural selection is the process where individuals with advantageous traits are more likely to survive and pass on their genes."
+      "answer": "A"
     },
     {
-      "question": "Give an example of natural selection.",
+      "question": "Fitness here means",
       "options": [
-        "Humans domesticating dogs",
-        "Antibiotic resistance in bacteria",
-        "Pepppered moth dark morph prevalence",
-        "Plant pollination by bees"
+        "Leaving more offspring in that environment",
+        "The largest animal always",
+        "Living forever",
+        "Learning a skill"
       ],
-      "answer": "B",
-      "explanation": "Bacteria exposed to antibiotics survive and multiply, passing on resistant genes – a clear example of natural selection."
+      "answer": "A"
     },
     {
-      "question": "What is the relationship between variation and evolution?",
+      "question": "New alleles come from",
       "options": [
-        "Variation is the product of evolution",
-        "Evolution is the product of variation",
-        "Variation is the raw material for evolution",
-        "Evolution stops when variation is high enough"
+        "Mutation",
+        "Selection creating them on purpose",
+        "A seed bank",
+        "Use and disuse"
       ],
-      "answer": "C",
-      "explanation": "Without genetic variation, there would be nothing for natural selection to act upon."
+      "answer": "A"
+    },
+    {
+      "question": "Lamarck's acquired characters are",
+      "options": [
+        "Not the raw material selection uses",
+        "The modern definition of a gene",
+        "Proved by a suntan being inherited",
+        "The same as a mutation"
+      ],
+      "answer": "A"
     }
+  ],
+  "confusion": [
+    "Selection needs hereditary variation. A suntan is not passed on.",
+    "The fittest means leaving more offspring in that environment, not the strongest body in a gym.",
+    "Darwin did not explain the origin of new alleles.",
+    "Evolution of a population is not a change inside one adult."
+  ],
+  "examples": [
+    "Individuals in a population differ from one another, and some of those differences are hereditary and can be passed to offspring.",
+    "More offspring are born than the resources can support, so not all of them survive and breed.",
+    "Individuals whose hereditary traits fit the conditions leave more offspring. That is natural selection."
+  ],
+  "universalFacts": [
+    "Individuals in a population differ from one another, and some of those differences are hereditary and can be passed to offspring.",
+    "More offspring are born than the resources can support, so not all of them survive and breed."
+  ],
+  "formulas": [
+    "Individuals in a population differ from one another, and some of those differences are hereditary and can be passed to offspring.",
+    "More offspring are born than the resources can support, so not all of them survive and breed."
+  ],
+  "practice": [
+    "Give the character and one example.",
+    "State the contrast.",
+    "Name a use or a limit."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcqs": [
+    {
+      "question": "Natural selection acts on",
+      "options": [
+        "Hereditary variation",
+        "A suntan",
+        "A wish to improve",
+        "Acquired muscles only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Fitness here means",
+      "options": [
+        "Leaving more offspring in that environment",
+        "The largest animal always",
+        "Living forever",
+        "Learning a skill"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "New alleles come from",
+      "options": [
+        "Mutation",
+        "Selection creating them on purpose",
+        "A seed bank",
+        "Use and disuse"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Lamarck's acquired characters are",
+      "options": [
+        "Not the raw material selection uses",
+        "The modern definition of a gene",
+        "Proved by a suntan being inherited",
+        "The same as a mutation"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A population of insects includes a hereditary resistance allele. A spray kills the others. What happens to the allele's frequency?",
+      "steps": [
+        "The allele is already present and hereditary.",
+        "Insects without it die more often and leave fewer offspring.",
+        "A larger share of the next generation carries the allele.",
+        "The spray did not create the allele. It changed its frequency."
+      ],
+      "answer": "The resistance allele becomes more common. Selection sorted it. It did not invent it."
+    }
+  ],
+  "summary": "Natural selection is hereditary variation plus more offspring than can survive plus unequal success. Successful variants spread. Mutation supplies new alleles. Selection does not grant an animal's wish, and acquired characters are not the variation it uses.",
+  "visualType": "three-domains",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Variation, heredity and unequal success. Selection is not a wish."
+    }
+  },
+  "bounds": [
+    "Stay inside this class 11 topic.",
+    "Do not add an unsupported count."
   ]
 }

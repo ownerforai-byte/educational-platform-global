@@ -1,0 +1,195 @@
+{
+  "title": "Animal Husbandry",
+  "unitSlug": "food-production",
+  "topicSlug": "animal-husbandry",
+  "topicTitle": "Animal Husbandry",
+  "relevance": 96,
+  "source": "enriched",
+  "visualType": "animal-husbandry",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Four managed products: dairy for milk, poultry for eggs and meat, fishery for capture or culture, and apiculture for honey."
+    }
+  },
+  "notes": [
+    "Animal husbandry is the managed breeding, feeding and health care of animals so that they yield milk, meat, eggs, fibre, honey or work. The population is a herd, a flock, a stocked pond or a hive. It is not a wild population that happens to be hunted. Management matters as much as the breed. A good genotype with dirty water and no vaccination does not give the yield the breed was chosen for.",
+    "Dairying keeps cattle and buffaloes for milk. Milch breeds are selected for milk, draught breeds for pulling, and dual-purpose breeds for both. Sahiwal and Red Sindhi are the milch cattle named in the course. Murrah is the buffalo example with a high milk yield. In Nepal most milk comes from buffaloes. Lime and Parkote are the indigenous buffalo breeds, and in the high mountains the chauri, a yak-cattle hybrid, supplies milk and also carries loads. Housing has to be clean and ventilated, water has to be clean, and the ration needs both roughage and a concentrate. Vaccination and quick treatment of mastitis and foot problems protect the yield. Breed choice without that care does not.",
+    "Poultry splits by product. Layers are kept for eggs. Broilers are kept for meat and are marketed young. White Leghorn is the layer example to remember. Chicks need heat, dry litter and a feed that changes with age. Respiratory disease moves quickly through a crowded house, so the management points are space, dry flooring, and removal of sick birds, not only the name of the strain. The same farm can keep both types. It should not feed them as if they were the same animal.",
+    "Fishery is either capture, taking fish from rivers and lakes, or culture, growing them in a managed pond. Composite carp culture stocks species that feed at different levels so the same pond yields more than one species without them all competing for one food. Catla feeds near the surface, Rohu in the water column, and Mrigal on the bottom. That vertical split is the reason the combination works. Cold, oxygen-rich hill water is a different culture, used for trout, and it should not be described as a carp pond. Apiculture keeps Apis cerana, the local honey bee, or Apis mellifera, the introduced one. Honey and wax are the products, and the flowers within flight range, the pasturage, decide how much honey arrives. The bees also pollinate nearby crops, which is an agricultural benefit even in a week when little honey is taken.",
+    "Breeding methods change the herd on purpose. Inbreeding, the mating of close relatives, makes the offspring more homozygous and can fix a desired character. It also produces inbreeding depression: fertility and general vigour fall. The remedy is an outcross, a mating with an unrelated superior animal of the same breed. Outbreeding covers that outcross, cross-breeding between two breeds, and crosses between species. Hisardale sheep were produced by crossing Merino rams with Bikaneri ewes. A mule, from a male donkey and a female horse, is the interspecific example, and it is sterile because the chromosomes do not pair at meiosis. Artificial insemination lets semen from one selected male serve many females, so the male does not have to be moved and the gain from his genotype spreads in one season.",
+    "MOET, multiple ovulation embryo transfer, speeds the female side in the same spirit. A chosen cow is treated with hormones that act like FSH, so she sheds several eggs instead of one. Those eggs are fertilised, commonly with semen from a proven bull. The young embryos are flushed out and transferred into surrogate cows of ordinary merit. The genetic mother does not have to carry each calf, and she can be superovulated again. One elite female thus contributes many more offspring than a single calf a year. Selection then keeps working on a larger set of progeny."
+  ],
+  "confusion": [
+    "Inbreeding depression is the loss of vigour from inbreeding. It is not a disease brought in by a vaccine.",
+    "A mule is male donkey by female horse. Reversing the parents is a different cross. The mule is sterile.",
+    "Catla, Rohu and Mrigal are stocked together because they feed at different depths, not because they are three names for one carp.",
+    "Hisardale is a sheep from a Merino and Bikaneri cross. It is not a cattle breed."
+  ],
+  "keyPoints": [
+    "Husbandry is breeding plus feeding plus health care for a useful product.",
+    "Milch examples: Sahiwal, Red Sindhi, Murrah. Nepal: Lime and Parkote buffalo, chauri in the high mountains.",
+    "Layers for eggs, broilers for meat. White Leghorn is a layer.",
+    "Composite carp culture: Catla surface, Rohu column, Mrigal bottom. Bees: Apis cerana and Apis mellifera.",
+    "Inbreeding fixes genes and can depress vigour. Hisardale is Merino by Bikaneri. MOET multiplies embryos from one cow."
+  ],
+  "importantStatements": [
+    "Outcrossing to an unrelated animal of the same breed is the remedy for inbreeding depression.",
+    "Composite fish culture works because the species do not eat the same layer of the pond.",
+    "MOET uses superovulation and surrogate mothers so one genetic mother yields many calves."
+  ],
+  "examples": [
+    "A Murrah buffalo still needs clean water and a proper ration. The breed name does not replace either.",
+    "A pond stocked with Catla, Rohu and Mrigal uses surface, middle and bottom foods.",
+    "Semen from one proven bull is used by artificial insemination across many farms in a district."
+  ],
+  "universalFacts": [
+    "Pasturage, the flowers the bees can reach, sets the honey harvest more strictly than the colour of the hive.",
+    "A mule's sterility is a chromosome-pairing failure. It is not cured by better feeding."
+  ],
+  "formulas": [
+    "Inbreeding raises homozygosity. Outcrossing restores vigour.",
+    "Catla top, Rohu middle, Mrigal bottom.",
+    "MOET: superovulate, fertilise, recover embryos, transfer to surrogates."
+  ],
+  "practice": [
+    "Distinguish milch, draught and dual-purpose with one use each.",
+    "Explain composite culture in three lines, one per fish.",
+    "Give the parents of a Hisardale sheep and of a mule."
+  ],
+  "practiceQuestions": [
+    "What is inbreeding depression, and how is it corrected?",
+    "Why are Catla, Rohu and Mrigal compatible in one pond?",
+    "What does the surrogate cow contribute in MOET, and what does she not contribute?"
+  ],
+  "examNotes": [
+    "A dairy answer needs breed examples plus three management conditions: housing, ration, disease control.",
+    "MOET is four verbs: superovulate, fertilise, recover, transfer. The surrogate is not the genetic mother."
+  ],
+  "examShortTricks": [
+    "Top Catla, middle Rohu, bottom Mrigal.",
+    "Merino with Bikaneri gives Hisardale. Donkey with mare gives a sterile mule."
+  ],
+  "specialNotes": [
+    "Lime and Parkote are buffaloes. Do not list them as cattle. Chauri is the yak hybrid of the high mountains.",
+    "Apis dorsata is the rock bee and is not the usual hive species. Cerana and mellifera are the managed ones."
+  ],
+  "importantNotes": [
+    "Artificial insemination spreads a male genotype. MOET spreads a female genotype. They are not two names for one technique.",
+    "Capture fishery does not restock a pond. Culture fishery does. Say which one you are describing."
+  ],
+  "importantConcepts": [
+    "Dairy breeds and management",
+    "Layers and broilers",
+    "Composite carp culture",
+    "Inbreeding, cross-breeding and the mule",
+    "Artificial insemination and MOET"
+  ],
+  "importantTasks": [
+    "Tabulate four enterprises: animal, product, one breed or species, one management condition.",
+    "Write MOET as four numbered steps and mark which animal is the genetic mother."
+  ],
+  "exercises": [
+    {
+      "question": "A herd has become weak after several generations of mating close relatives. State the name of the problem and one breeding action that corrects it. Then say how MOET would be used if one cow in the herd is still outstanding.",
+      "steps": [
+        "The weakness and loss of fertility after repeated mating of relatives is inbreeding depression.",
+        "The correction is an outcross: mate the animals to an unrelated, superior member of the same breed.",
+        "The outstanding cow is the genetic mother for MOET. She is treated so that she superovulates.",
+        "Her eggs are fertilised with semen from a selected bull, and the embryos are recovered.",
+        "Those embryos are transferred into surrogate cows. The surrogates carry the calves. They do not supply the elite genotype."
+      ],
+      "answer": "Inbreeding depression, corrected by outcrossing. MOET then superovulates the outstanding cow and transfers her embryos to surrogates."
+    }
+  ],
+  "bounds": [
+    "Plant breeding and single cell protein are the neighbouring notes. This note is animals, fish and bees.",
+    "Breed lists are the course examples plus the Nepali buffalo and chauri cases. It is not a national herd book."
+  ],
+  "summary": "Animal husbandry manages breeding, feed and health for milk, meat, eggs, fish or honey. Sahiwal, Red Sindhi and Murrah are the dairy examples, with Lime and Parkote buffaloes and the high-mountain chauri in Nepal. Layers such as White Leghorn give eggs, broilers give meat, and a carp pond splits the feeding zones among Catla, Rohu and Mrigal. Inbreeding can fix a trait and can also depress vigour, which outcrossing repairs. Hisardale sheep and the sterile mule are the cross-breeding examples. Artificial insemination multiplies a bull's progeny, and MOET multiplies a cow's, by transferring her embryos into surrogates.",
+  "mcs": [
+    {
+      "question": "Inbreeding depression is corrected by",
+      "options": [
+        "Further mating of the same close relatives",
+        "An outcross to an unrelated superior animal of the same breed",
+        "Keeping the animals only on roughage",
+        "Stocking Catla with Mrigal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a composite carp pond, Mrigal feeds",
+      "options": [
+        "At the surface",
+        "In the water column",
+        "On the bottom",
+        "Only on honey"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A mule is",
+      "options": [
+        "A fertile cattle breed",
+        "The sterile offspring of a male donkey and a female horse",
+        "A sheep from Merino and Bikaneri parents",
+        "A layer breed of poultry"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In MOET the surrogate cow",
+      "options": [
+        "Supplies the elite genotype",
+        "Is the bull's genetic mother",
+        "Is superovulated instead of the elite cow",
+        "Carries an embryo she did not conceive as the genetic mother"
+      ],
+      "answer": "D"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Inbreeding depression is corrected by",
+      "options": [
+        "Further mating of the same close relatives",
+        "An outcross to an unrelated superior animal of the same breed",
+        "Keeping the animals only on roughage",
+        "Stocking Catla with Mrigal"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a composite carp pond, Mrigal feeds",
+      "options": [
+        "At the surface",
+        "In the water column",
+        "On the bottom",
+        "Only on honey"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A mule is",
+      "options": [
+        "A fertile cattle breed",
+        "The sterile offspring of a male donkey and a female horse",
+        "A sheep from Merino and Bikaneri parents",
+        "A layer breed of poultry"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In MOET the surrogate cow",
+      "options": [
+        "Supplies the elite genotype",
+        "Is the bull's genetic mother",
+        "Is superovulated instead of the elite cow",
+        "Carries an embryo she did not conceive as the genetic mother"
+      ],
+      "answer": "D"
+    }
+  ]
+}

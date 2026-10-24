@@ -5,10 +5,12 @@
   "topicTitle": "Human Physiology and Homeostasis",
   "relevance": 88,
   "notes": [
-    "### 1. Homeostasis Overview",
-    "- Homeostasis is the maintenance of stable internal conditions",
-    "- It involves negative feedback loops to counteract deviations from set points",
-    "- Examples: temperature regulation, pH balance, glucose levels, fluid volume"
+    "Homeostasis is the keeping of a steady internal state while the outside changes: temperature, blood glucose, pH, water and salts.",
+    "Negative feedback detects a change and starts a response that pushes the value back toward the set point. The response switches off as the set point is approached.",
+    "If body temperature rises, skin vessels widen and sweat increases heat loss. If it falls, vessels narrow and shivering produces heat.",
+    "If blood glucose rises after a meal, insulin promotes uptake and storage. If glucose falls, glucagon promotes release from liver glycogen. The two hormones pull in opposite directions.",
+    "The kidneys keep water and salts by varying how much is reabsorbed. Antidiuretic hormone saves water when the body is short of it.",
+    "Positive feedback, as in the intensification of labour contractions, drives a change further. It is the exception. Homeostasis of temperature and glucose is negative feedback."
   ],
   "importantConcepts": [
     "Negative feedback: deviation triggers response that reverses the change",
@@ -24,7 +26,11 @@
   "keyPoints": [
     "Homeostasis relies on sensor organs detecting changes and control centers responding.",
     "Feedback loops are essential for maintaining stable internal environments.",
-    "Multiple systems work together (e.g., nervous, endocrine, muscular) to achieve homeostasis."
+    "Multiple systems work together (e.g., nervous, endocrine, muscular) to achieve homeostasis.",
+    "Steady internal state.",
+    "Negative feedback.",
+    "Insulin and glucagon.",
+    "ADH and the kidney save water."
   ],
   "specialNotes": [
     "Body temperature is maintained by shivering (heat production) and sweating (cooling).",
@@ -48,37 +54,143 @@
   ],
   "mcs": [
     {
-      "question": "What is homeostasis?",
+      "question": "Insulin",
       "options": [
-        "Maintenance of unstable internal conditions",
-        "Rapid response to external stimuli",
-        "Long-term evolutionary adaptation",
-        "Creation of new species"
+        "Lowers blood glucose",
+        "Raises it as its main effect",
+        "Is a digestive enzyme in the mouth",
+        "Widens only the pupil"
       ],
-      "answer": "A",
-      "explanation": "Homeostasis is the process by which living organisms maintain a relatively constant internal environment despite external changes."
+      "answer": "A"
     },
     {
-      "question": "What is negative feedback?",
+      "question": "Sweating is a response to",
       "options": [
-        "Response amplifies the initial stimulus",
-        "Deviation triggers a response that reverses the change",
-        "No feedback loop involved",
-        "Feedback always strengthens the signal"
+        "A rise in temperature",
+        "Low glucose only",
+        "A lack of DNA",
+        "A vaccine"
       ],
-      "answer": "B",
-      "explanation": "Negative feedback works by detecting a deviation from a set point and initiating a response to bring the variable back toward the set point."
+      "answer": "A"
     },
     {
-      "question": "What hormone lowers blood glucose?",
+      "question": "Negative feedback",
       "options": [
-        "Glucagon",
-        "Insulin",
-        "Adrenaline",
-        "Cortisol"
+        "Opposes a departure from the set point",
+        "Always increases the departure",
+        "Occurs only in plants",
+        "Is the same as a fever pathogen"
       ],
-      "answer": "B",
-      "explanation": "Insulin is secreted by pancreatic beta cells and promotes glucose uptake by cells and glycogen synthesis."
+      "answer": "A"
+    },
+    {
+      "question": "ADH mainly",
+      "options": [
+        "Saves water",
+        "Digests starch",
+        "Cuts DNA",
+        "Makes bile"
+      ],
+      "answer": "A"
     }
+  ],
+  "confusion": [
+    "Negative feedback opposes the change. It is not a bad outcome.",
+    "Insulin lowers blood glucose. Glucagon raises it.",
+    "Sweating cools. Shivering warms.",
+    "The set point is a range, not a single frozen number."
+  ],
+  "examples": [
+    "Homeostasis is the keeping of a steady internal state while the outside changes: temperature, blood glucose, pH, water and salts.",
+    "Negative feedback detects a change and starts a response that pushes the value back toward the set point. The response switches off as the set point is approached.",
+    "If body temperature rises, skin vessels widen and sweat increases heat loss. If it falls, vessels narrow and shivering produces heat."
+  ],
+  "universalFacts": [
+    "Homeostasis is the keeping of a steady internal state while the outside changes: temperature, blood glucose, pH, water and salts.",
+    "Negative feedback detects a change and starts a response that pushes the value back toward the set point. The response switches off as the set point is approached."
+  ],
+  "formulas": [
+    "Homeostasis is the keeping of a steady internal state while the outside changes: temperature, blood glucose, pH, water and salts.",
+    "Negative feedback detects a change and starts a response that pushes the value back toward the set point. The response switches off as the set point is approached."
+  ],
+  "practice": [
+    "Give the character and one example.",
+    "State the contrast.",
+    "Name a use or a limit."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcqs": [
+    {
+      "question": "Insulin",
+      "options": [
+        "Lowers blood glucose",
+        "Raises it as its main effect",
+        "Is a digestive enzyme in the mouth",
+        "Widens only the pupil"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Sweating is a response to",
+      "options": [
+        "A rise in temperature",
+        "Low glucose only",
+        "A lack of DNA",
+        "A vaccine"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Negative feedback",
+      "options": [
+        "Opposes a departure from the set point",
+        "Always increases the departure",
+        "Occurs only in plants",
+        "Is the same as a fever pathogen"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "ADH mainly",
+      "options": [
+        "Saves water",
+        "Digests starch",
+        "Cuts DNA",
+        "Makes bile"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Blood glucose has just risen. Name the hormone and the direction of the correction.",
+      "steps": [
+        "The rise is detected.",
+        "Insulin is released.",
+        "Cells take glucose up and the liver stores more of it.",
+        "The level falls back. That is negative feedback."
+      ],
+      "answer": "Insulin brings a high glucose level down."
+    }
+  ],
+  "summary": "Homeostasis holds temperature, glucose, pH and body water near a set point by negative feedback. Sweating and shivering manage heat. Insulin and glucagon manage glucose. The kidney and antidiuretic hormone manage water. Positive feedback is the exception, not the rule.",
+  "visualType": "frog-organs",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Homeostasis keeps internal conditions steady by negative feedback."
+    }
+  },
+  "bounds": [
+    "Stay inside this class 11 topic.",
+    "Do not add an unsupported count."
   ]
 }

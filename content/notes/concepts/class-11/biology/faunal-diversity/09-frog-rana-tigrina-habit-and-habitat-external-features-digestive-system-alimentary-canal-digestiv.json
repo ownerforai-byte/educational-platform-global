@@ -3,76 +3,194 @@
   "unitSlug": "faunal-diversity",
   "topicSlug": "frog-rana-tigrina-habit-and-habitat-external-features-digestive-system-alimentary-canal-digestiv",
   "topicTitle": "Frog (Rana tigrina): Habit and habitat, external features; digestive system (alimentary canal, digestive glands and physiology of digestion)",
-  "relevance": 100,
-  "source": "generated",
+  "relevance": 96,
+  "source": "enriched",
   "generatedAt": "2026-09-10T13:48:26.104Z",
+  "visualType": "frog-organs",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "The gut column: stomach, duodenum and ileum, liver and pancreas, and a cloaca rather than a separate anus. Heart and lungs are the next note."
+    }
+  },
   "notes": [
-    "**Scope.** Frog (Rana tigrina): Habit and habitat, external features… — Faunal Diversity, Biology (class-11-notes).",
-    "**Tested.** define it · list: frog, rana tigrina, : habit, habitat · one worked example · one misconception each.",
-    "**Rana tigrina.** one-line definition + one-line exam use.",
-    "**: Habit.** one-line definition + one-line exam use.",
-    "**Habitat.** one-line definition + one-line exam use.",
-    "**External features.** one-line definition + one-line exam use.",
-    "**Digestive system.** one-line definition + one-line exam use.",
-    "**Alimentary canal.** one-line definition + one-line exam use.",
-    "**Digestive glands.** one-line definition + one-line exam use.",
-    "**Physiology of digestion.** one-line definition + one-line exam use."
+    "Rana tigrina is the frog named in the course. It lives where land and standing water meet: pond edges, ditches and flooded fields. The adult can spend long periods on land if the skin stays moist, and it must return to water to breed. The tadpole is aquatic. The adult is a carnivore, taking insects, earthworms and other small animals with a flick of the tongue. In winter it hibernates, and in extreme dry heat it aestivates, buried, with metabolism slowed and gas exchange left largely to the skin.",
+    "The body has a head and a trunk and no neck. The adult has no tail. The head is triangular. The eyes are large and placed so that a frog sitting in water can see above the surface. A nictitating membrane crosses the eye under water. Behind each eye is a round tympanum, the eardrum, with no external ear flap. Nostrils are small and dorsal. The mouth is a wide terminal slit. The cloaca opens at the end of the trunk.",
+    "The forelimb is short, with four fingers and no web, and it props the body up. The hind limb is long, muscular, and five-toed, with a web between the toes. It is the leaping and swimming limb. Males in the breeding season are told apart by a vocal sac on each side of the throat and by a dark nuptial pad on the inner finger of the forelimb, used to grip the female. Females lack both. Size alone is not the character to use.",
+    "The alimentary canal is mouth, buccopharyngeal cavity, short oesophagus, stomach, duodenum, ileum, rectum and cloaca. Teeth are present only on the upper jaw: a maxillary row along the margin and vomerine patches on the roof. They are homodont and acrodont, all alike and fused to the jaw surface, and they hold prey. They do not chew it. The tongue is attached at the front of the mouth and free and forked at the back, so it can be thrown out and retrieved with the prey stuck to it.",
+    "Digestive glands empty at two stations. The stomach wall has gastric glands. The liver, large and lobed, stores glycogen and produces bile, which is held in a gall bladder. The pancreas lies in the curve between the stomach and the duodenum. The bile duct and the pancreatic duct meet and enter the duodenum together. Mucus from the mouth lubricates the prey. There is no salivary digestion of starch of the kind a mammal does.",
+    "Physiology follows the organs. In the mouth the prey is positioned and swallowed. No chemical digestion happens there. In the stomach, hydrochloric acid and pepsin begin the proteins, and the acid kills many of the organisms swallowed with the prey. In the duodenum, bile emulsifies fat and neutralises the acid chyme, and pancreatic juice supplies protease, amylase and lipase. Intestinal juice finishes the breakdown to amino acids, simple sugars, and fatty acids with glycerol. The ileum, with villi, absorbs those products. What remains enters the rectum and leaves by the cloaca, the same chamber that receives urine and gametes. Calling that opening an anus is the wrong word for a frog."
   ],
   "confusion": [
-    "❌ treat \"Frog\" as one blob → ✅ split into: frog, rana tigrina, : habit.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
-  "bounds": [
-    "Covers only: frog, rana tigrina, : habit, habitat (within Faunal Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
-  "practice": [
-    "define + example each sub-idea: frog, rana tigrina, : habit, habitat.",
-    "one worked example for \"Frog (Rana tigrina): Habit and habitat, external features…\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"Frog (Rana tigrina): Habit and habitat, external features…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"Frog (Rana tigrina): Habit and habitat, external features…\" with one example.",
-    "compare \"Frog\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Frog (Rana tigrina): Habit and habitat, external features…\" and verify the answer is plausible."
+    "The frog chews with nothing. Maxillary and vomerine teeth only grip. The lower jaw has no teeth.",
+    "The tongue is hinged at the front, not at the back. A diagram with the root at the throat is a mammal's tongue.",
+    "The cloaca is not an anus. Faeces, urine and gametes share it.",
+    "Hibernation and aestivation are both dormancy. One answers cold, the other answers heat and drought."
   ],
   "keyPoints": [
-    "• Frog",
-    "• Rana tigrina",
-    "• : Habit",
-    "• Habitat",
-    "• External features",
-    "• Digestive system"
+    "Pond-edge amphibian, carnivorous adult, hibernates and aestivates.",
+    "Head and trunk, no neck, no adult tail. Tympanum and nictitating membrane.",
+    "Webbed hind foot with five toes. Breeding male: vocal sacs and nuptial pad.",
+    "Upper teeth only, maxillary and vomerine. Tongue fixed in front.",
+    "Stomach starts protein digestion. Bile and pancreatic juice work in the duodenum. Absorption is in the ileum. Exit is the cloaca."
   ],
-  "summary": "Frog (Rana tigrina): Habit and habitat, external features… (Faunal Diversity, Biology, class-11-notes) covers Frog, Rana tigrina, : Habit. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
-  "mcqs": [
+  "importantStatements": [
+    "Teeth hold prey. They do not grind it.",
+    "Bile emulsifies fat and neutralises acid. It is not an enzyme.",
+    "The cloaca is the common exit. The frog has no separate anal opening."
+  ],
+  "examples": [
+    "A breeding male is recognised by vocal sacs and the nuptial pad, while it is calling at the pond edge.",
+    "An insect is stuck to the tongue, gripped by the upper teeth, and swallowed whole into the stomach.",
+    "Fat in that meal is broken into droplets by bile, then split by lipase from the pancreas."
+  ],
+  "universalFacts": [
+    "Vomerine teeth sit on the roof of the mouth, not on the jaw margin. Maxillary teeth sit on the upper jaw margin.",
+    "The nictitating membrane is drawn across the eye in water. It is not an eyelid that closes in sleep the way a mammal's does."
+  ],
+  "formulas": [
+    "Mouth, pharynx, oesophagus, stomach, duodenum, ileum, rectum, cloaca.",
+    "Male external signs in season: vocal sac and nuptial pad.",
+    "Bile emulsifies. Pepsin and pancreatic protease digest protein. Amylase digests starch. Lipase digests fat."
+  ],
+  "practice": [
+    "List the openings on the head and say what each is for.",
+    "Track a protein from the stomach to an amino acid in the ileum, naming the secretions.",
+    "Give two external differences between a breeding male and a female."
+  ],
+  "practiceQuestions": [
+    "Why is the lower jaw toothless, and what job do the upper teeth actually do?",
+    "Where does bile enter, and what two things does it do?",
+    "Why is the terminal opening called a cloaca?"
+  ],
+  "examNotes": [
+    "External features want a labelled outline: tympanum, nostril, eye, nictitating membrane, web, cloaca, and the male characters.",
+    "Physiology is a table of region against secretion against food substance. Include the line 'no digestion in the mouth'."
+  ],
+  "examShortTricks": [
+    "Front-hinged tongue, upper teeth only, cloaca at the end.",
+    "Acid and pepsin in the stomach. Bile plus three pancreatic enzymes in the duodenum."
+  ],
+  "specialNotes": [
+    "The course name is Rana tigrina. Newer genus names are not required in an answer that asks for the type animal.",
+    "Tadpole feeding and gills belong to metamorphosis, not to this adult digestive account."
+  ],
+  "importantNotes": [
+    "Aestivation is not hibernation in another season's clothing. State the trigger: cold, or heat and drought.",
+    "The gall bladder stores bile. It does not make it. The liver makes it."
+  ],
+  "importantConcepts": [
+    "Amphibian habit and dormancy",
+    "External features and sexual dimorphism",
+    "Buccopharyngeal cavity and teeth",
+    "Alimentary canal and digestive glands",
+    "Physiology of digestion ending at the cloaca"
+  ],
+  "importantTasks": [
+    "Sketch the head and mark tympanum, nostril, eye and the male characters.",
+    "Make a four-row digestion table: mouth, stomach, duodenum, ileum."
+  ],
+  "exercises": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Frog (Rana tigrina): Habit and habitat, external features…\"?",
-      "options": [
-        "Frog",
-        "Rana tigrina",
-        "Unrelated topic",
-        "None of the above"
+      "question": "A frog swallows an insect. State what happens to the insect's proteins and fats, in order of organs, and name the exit.",
+      "steps": [
+        "The mouth grips the insect with maxillary and vomerine teeth and swallows it. No enzyme acts there.",
+        "In the stomach, hydrochloric acid and pepsin begin protein digestion.",
+        "In the duodenum, bile from the liver emulsifies the fat and neutralises the acid. Pancreatic lipase then splits the fat. Pancreatic protease continues the proteins.",
+        "Intestinal enzymes finish both to absorbable products. Amino acids and the fat products are absorbed in the ileum.",
+        "Undigested remains pass through the rectum and leave by the cloaca."
       ],
-      "answer": "Frog",
-      "explanation": "Frog is listed among the official sub-ideas of Frog (Rana tigrina): Habit and habitat, external features…; the others are not part of this topic."
+      "answer": "Proteins start in the stomach and finish in the intestine. Fats are emulsified by bile and split by lipase in the duodenum. The exit is the cloaca."
+    }
+  ],
+  "bounds": [
+    "Heart and respiration are the next note. Reproductive organs of the frog are a later topic and are not written here.",
+    "Enzyme names are limited to pepsin, pancreatic protease, amylase and lipase, plus bile as a non-enzyme."
+  ],
+  "summary": "Rana tigrina is a pond-edge carnivore that hibernates and aestivates. The adult has no tail and no neck, a tympanum, a nictitating membrane, four fingers and a webbed five-toed hind foot. Breeding males add vocal sacs and a nuptial pad. Prey is gripped by upper teeth and a front-hinged tongue, swallowed without chewing, protein-digested in the stomach, and finished in the duodenum with bile and pancreatic juice. Absorption is in the ileum. Faeces leave through the cloaca.",
+  "mcs": [
+    {
+      "question": "The tongue of the frog is",
+      "options": [
+        "Rooted at the back of the throat, as in a mammal",
+        "Attached at the front and free behind",
+        "Absent in the adult",
+        "Used to chew with the lower teeth"
+      ],
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Frog (Rana tigrina): Habit and habitat, external features…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Faeces leave the frog through the",
       "options": [
-        "True",
-        "False"
+        "Anus, separate from urine",
+        "Gills",
+        "Cloaca",
+        "Tympanum"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "C"
+    },
+    {
+      "question": "Bile in the frog",
+      "options": [
+        "Is an enzyme that digests protein",
+        "Emulsifies fat and neutralises acid chyme",
+        "Is made in the gall bladder",
+        "Acts in the mouth on starch"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A breeding male Rana is recognised by",
+      "options": [
+        "A clitellum",
+        "Webbed forelimbs",
+        "A tympanum only the male has",
+        "Vocal sacs and a nuptial pad"
+      ],
+      "answer": "D"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "The tongue of the frog is",
+      "options": [
+        "Rooted at the back of the throat, as in a mammal",
+        "Attached at the front and free behind",
+        "Absent in the adult",
+        "Used to chew with the lower teeth"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Faeces leave the frog through the",
+      "options": [
+        "Anus, separate from urine",
+        "Gills",
+        "Cloaca",
+        "Tympanum"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Bile in the frog",
+      "options": [
+        "Is an enzyme that digests protein",
+        "Emulsifies fat and neutralises acid chyme",
+        "Is made in the gall bladder",
+        "Acts in the mouth on starch"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A breeding male Rana is recognised by",
+      "options": [
+        "A clitellum",
+        "Webbed forelimbs",
+        "A tympanum only the male has",
+        "Vocal sacs and a nuptial pad"
+      ],
+      "answer": "D"
     }
   ]
 }

@@ -11,7 +11,8 @@
     "**Five-kingdom classification.** R.H. Whittaker grouped life into Monera, Protista, Fungi, Plantae and Animalia using cell structure, thallus organisation, nutrition and reproduction as criteria.",
     "**Three domains.** Carl Woese's rRNA studies split living organisms into Archaea, Bacteria and Eukarya; Monera falls in the prokaryotic domains while the other kingdoms lie in Eukarya.",
     "**Kingdom criteria.** Prokaryotic cell structure places an organism in Monera, eukaryotic unicellular forms in Protista, absorptive heterotrophs in Fungi, and photosynthetic or ingestive eukaryotes in Plantae and Animalia.",
-    "**Taxonomic hierarchy.** Every organism is placed in a sequence of categories — Kingdom, Phylum, Class, Order, Family, Genus, Species — with species as the basic unit of classification."
+    "**Taxonomic hierarchy.** Every organism is placed in a sequence of categories — Kingdom, Phylum, Class, Order, Family, Genus, Species — with species as the basic unit of classification.",
+    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into Monera has mixed a particle with an organism."
   ],
   "confusion": [
     "❌ treat \"Introduction\" as one blob → ✅ split into: introduction, three domains of life, binomial nomenclature.",
@@ -36,7 +37,10 @@
     "Functional group priority (high → low) governs the suffix; others become prefixes with locants."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into Monera has mixed a particle with an organism.",
+    "After the genus has been written in full once, it may be abbreviated, as M. indica. The specific epithet is never written alone, and a handwritten name is underlined rather than left plain.",
+    "Bacteria, Archaea, Eukarya."
   ],
   "practiceQuestions": [
     "state + explain the main idea of \"Introduction: Three domains of life, binomial nomenclatur…\" with one example.",
@@ -60,24 +64,137 @@
   "summary": "Introduction: Three domains of life, binomial nomenclatur… (Floral Diversity, Biology, class-11-notes) covers Introduction, Three domains of life, binomial nomenclature. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
   "mcqs": [
     {
-      "question": "Which of the following is a distinct sub-topic under \"Introduction: Three domains of life, binomial nomenclatur…\"?",
+      "question": "The epithet of Mangifera indica is",
       "options": [
-        "Introduction",
-        "Three domains of life",
-        "Unrelated topic",
-        "None of the above"
+        "Mangifera",
+        "indica",
+        "Plantae",
+        "Eukarya"
       ],
-      "answer": "A",
-      "explanation": "Introduction is listed among the official sub-ideas of Introduction: Three domains of life, binomial nomenclatur…; the others are not part of this topic."
+      "answer": "B"
     },
     {
-      "question": "A common examiner point on \"Introduction: Three domains of life, binomial nomenclatur…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "question": "Archaea are",
       "options": [
-        "True",
-        "False"
+        "Prokaryotic",
+        "Always multicellular animals",
+        "Viruses",
+        "Ferns"
       ],
-      "answer": "True",
-      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+      "answer": "A"
+    },
+    {
+      "question": "HIV belongs",
+      "options": [
+        "Outside the five kingdoms",
+        "In Plantae",
+        "In Bryophyta",
+        "In a seed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A handwritten binomial is",
+      "options": [
+        "Underlined",
+        "Written as one capital word",
+        "A kingdom only",
+        "Left as the epithet"
+      ],
+      "answer": "A"
     }
-  ]
+  ],
+  "importantStatements": [
+    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into Monera has mixed a particle with an organism.",
+    "After the genus has been written in full once, it may be abbreviated, as M. indica. The specific epithet is never written alone, and a handwritten name is underlined rather than left plain.",
+    "Bacteria, Archaea, Eukarya."
+  ],
+  "examNotes": [
+    "Character, example, then the trap.",
+    "A table beats a vague paragraph."
+  ],
+  "examShortTricks": [
+    "Viruses sit outside Whittaker's five kingdoms because they have no cell. A domain answer that forces HIV into ",
+    "After the genus has been written in full once, it may be abbreviated, as M. indica. The specific epithet is ne"
+  ],
+  "specialNotes": [
+    "Match the organism to the character.",
+    "A product does not move an organism into another kingdom."
+  ],
+  "importantNotes": [
+    "Order in a sequence is part of the answer.",
+    "Do not call a timberline a snowline."
+  ],
+  "importantConcepts": [
+    "Character",
+    "Example",
+    "Contrast",
+    "Use"
+  ],
+  "importantTasks": [
+    "Write the table.",
+    "Add one trap."
+  ],
+  "mcs": [
+    {
+      "question": "The epithet of Mangifera indica is",
+      "options": [
+        "Mangifera",
+        "indica",
+        "Plantae",
+        "Eukarya"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Archaea are",
+      "options": [
+        "Prokaryotic",
+        "Always multicellular animals",
+        "Viruses",
+        "Ferns"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "HIV belongs",
+      "options": [
+        "Outside the five kingdoms",
+        "In Plantae",
+        "In Bryophyta",
+        "In a seed"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A handwritten binomial is",
+      "options": [
+        "Underlined",
+        "Written as one capital word",
+        "A kingdom only",
+        "Left as the epithet"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Correct the label 'sapiens' for a human and name the domain.",
+      "steps": [
+        "The epithet cannot stand alone.",
+        "The binomial is Homo sapiens.",
+        "Humans are eukaryotes.",
+        "The domain is Eukarya."
+      ],
+      "answer": "Homo sapiens, domain Eukarya."
+    }
+  ],
+  "visualType": "three-domains",
+  "enrichedContent": {
+    "visualization": {
+      "type": "static",
+      "component": "DerivationVisual",
+      "desc": "Domains sit above kingdoms. A binomial is two words, not one."
+    }
+  }
 }
