@@ -30,7 +30,7 @@ export function TopicComingSoonBanner({
       {backHref && (
         <Link
           href={backHref}
-          className="shrink-0 self-start rounded-lg border border-border/80 bg-card px-3 py-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
+          className="inline-flex min-h-11 shrink-0 items-center self-start rounded-lg border border-border/80 bg-card px-4 py-2 text-xs font-semibold text-muted-foreground transition-colors hover:bg-muted/40 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           {backLabel ?? "Back"}
         </Link>

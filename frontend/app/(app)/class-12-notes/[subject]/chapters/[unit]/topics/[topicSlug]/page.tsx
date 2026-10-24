@@ -18,7 +18,7 @@ export default async function TopicPage({
   if (!getUnitTopic(CLASS_SLUG, subject, unit, topicSlug)) notFound();
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6 py-10">
+    <div className="mx-auto w-full max-w-5xl space-y-6 px-1 py-6 sm:py-8 md:py-10">
       <TopicDetailView
         classSlug={CLASS_SLUG}
         subjectSlug={subject}

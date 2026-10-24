@@ -49,7 +49,7 @@ describe("public home", () => {
   it("keeps the public overview clear and factual", () => {
     render(<HomePublic />);
 
-    expect(screen.getByRole("heading", { name: "A clearer path through your studies." })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Your NEB syllabus, organized for daily study." })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Syllabus-led study" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Exam preparation" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Interactive science" })).toBeInTheDocument();

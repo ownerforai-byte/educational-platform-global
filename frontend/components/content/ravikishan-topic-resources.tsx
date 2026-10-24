@@ -78,7 +78,7 @@ function renderContent(entry: ManifestEntry, data: SourceEntry) {
       </CardHeader>
       <CardContent className="space-y-4">
         {data.notes.map((note, idx) => (
-          <NoteCard key={idx} content={note} />
+          <NoteCard key={`note-${idx}-${note.slice(0, 48)}`} content={note} />
         ))}
         {data.confusion && data.confusion.length > 0 && (
           <div className="rounded-xl border border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 p-4">
@@ -87,7 +87,7 @@ function renderContent(entry: ManifestEntry, data: SourceEntry) {
             </p>
             <ul className="space-y-1 text-sm text-muted-foreground">
               {data.confusion.map((c, i) => (
-                <li key={i} className="flex gap-2">
+                <li key={`confusion-${i}-${c.slice(0, 32)}`} className="flex gap-2">
                   <span className="text-amber-500 shrink-0">⚠</span>
                   <span>{c}</span>
                 </li>
@@ -102,7 +102,7 @@ function renderContent(entry: ManifestEntry, data: SourceEntry) {
             </p>
             <ul className="space-y-1 text-sm text-muted-foreground">
               {data.practice.map((p, i) => (
-                <li key={i} className="flex gap-2">
+                <li key={`practice-${i}-${p.slice(0, 32)}`} className="flex gap-2">
                   <span className="text-blue-500 shrink-0">→</span>
                   <span>{p}</span>
                 </li>
@@ -117,7 +117,7 @@ function renderContent(entry: ManifestEntry, data: SourceEntry) {
             </p>
             <ul className="space-y-1 text-sm text-muted-foreground">
               {data.universalFacts.map((f, i) => (
-                <li key={i} className="flex gap-2">
+                <li key={`fact-${i}-${f.slice(0, 32)}`} className="flex gap-2">
                   <span className="text-emerald-500 shrink-0">★</span>
                   <span>{f}</span>
                 </li>
@@ -193,16 +193,31 @@ export function RavikishanTopicResources({
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center py-12">
-        <p className="text-sm text-muted-foreground">Loading notes…</p>
+      <div
+        className="flex flex-col items-center justify-center gap-3 py-12"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" aria-hidden="true" />
+        <p className="text-sm text-muted-foreground">Loading notes for this topic…</p>
       </div>
     );
   }
 
-  if (error || entries.length === 0) {
+  if (error) {
     return (
       <EmptyState
-        title="No Notes Available"
+        title="Could not load notes"
+        description="Something went wrong while fetching notes. Refresh the page or try again in a moment."
+      />
+    );
+  }
+
+  if (entries.length === 0) {
+    return (
+      <EmptyState
+        title="No notes available"
         description="There are no ravikishan-sourced notes for this topic yet."
       />
     );

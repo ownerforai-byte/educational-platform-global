@@ -64,10 +64,11 @@ export function MobileNav() {
     document.body.style.overflow = "hidden";
     // Focus lands inside the drawer so keyboard/screen-reader users start there.
     panelRef.current?.focus();
+    const trigger = triggerRef.current;
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
-      triggerRef.current?.focus();
+      trigger?.focus();
     };
   }, [open]);
 

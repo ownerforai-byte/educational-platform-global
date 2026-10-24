@@ -132,8 +132,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
             <Link
               href="/periodic-table"
-              className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl border border-teal-500/30 bg-teal-500/10 text-xs font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 transition-all shadow-sm whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-2.5 min-h-10 md:min-h-8 rounded-xl border border-teal-500/30 bg-teal-500/10 text-xs font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 transition-all shadow-sm whitespace-nowrap"
               title="118-Element CEE Periodic Table & Chemistry Question Bank"
+              aria-label="Periodic table and CEE chemistry question bank"
             >
               <Atom className="h-3.5 w-3.5 text-teal-500" />
               <span className="hidden sm:inline">Periodic Table</span>
@@ -175,11 +176,11 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <SidebarNavigation collapsed={sidebarCollapsed} />
         </aside>
 
-        <main id="main-content" tabIndex={-1} className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8 focus:outline-none">
+        <main id="main-content" tabIndex={-1} className="flex-1 min-w-0 px-4 py-5 sm:py-6 md:px-6 lg:px-8 focus:outline-none">
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav aria-label="Breadcrumbs" className="mb-4 flex flex-wrap text-sm text-muted-foreground">
               {breadcrumbs.map((crumb, i) => (
-                <span key={i}>
+                <span key={crumb.href ?? `${crumb.label}-${i}`}>
                   {i > 0 && <span className="mx-2">/</span>}
                   {crumb.href && crumb.href !== "#" ? (
                     <Link href={crumb.href} className="hover:text-foreground">

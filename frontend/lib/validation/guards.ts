@@ -76,7 +76,6 @@ export function isIsoDateString(value: unknown): value is string {
  */
 export function isSafeRelativePath(value: unknown): value is string {
   if (typeof value !== "string" || value.length === 0 || value.length > 2048) return false;
-  // eslint-disable-next-line no-control-regex
   if (/[\u0000-\u001f\u007f]/.test(value)) return false;
   if (value.includes("\\")) return false;
   if (value.includes("://")) return false;
@@ -173,7 +172,6 @@ export function pickDefined<T extends object, K extends keyof T>(
 export function sanitizeSearchTerm(term: unknown, maxLength = 200): string {
   if (typeof term !== "string") return "";
   const cleaned = term
-    // eslint-disable-next-line no-control-regex
     .replace(/[\u0000-\u001f\u007f]/g, " ")
     .replace(/\s+/g, " ")
     .trim();

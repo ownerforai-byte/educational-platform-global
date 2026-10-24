@@ -62,7 +62,7 @@ export async function TopicDetailView({
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <SubjectSectionNav basePath={basePath} active="chapters" />
 
       {/* Complete Chapter/Unit Syllabus Above */}
@@ -86,7 +86,7 @@ export async function TopicDetailView({
           <ChevronRight className="h-3 w-3" />
           <span className="font-semibold text-foreground truncate">{topic.title}</span>
         </div>
-        <h1 className="text-3xl font-extrabold tracking-tight text-foreground">{topic.title}</h1>
+        <h1 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">{topic.title}</h1>
       </div>
 
       {/* Active journey tracking: opening this topic records a "started" row
@@ -117,8 +117,11 @@ export async function TopicDetailView({
       />
 
       {/* Topic Mindmap Block */}
-      <section className="rounded-3xl border border-border/70 bg-card p-6 shadow-sm space-y-4">
-        <h3 className="text-base font-bold text-foreground">Interactive Topic Mindmap</h3>
+      <section aria-labelledby="topic-mindmap-heading" className="rounded-2xl border border-border/70 bg-card p-4 shadow-sm space-y-4 sm:rounded-3xl sm:p-6">
+        <div>
+          <h2 id="topic-mindmap-heading" className="text-base font-bold text-foreground sm:text-lg">Topic mindmap</h2>
+          <p className="mt-1 text-xs text-muted-foreground sm:text-sm">Explore sub-concepts and links at a glance.</p>
+        </div>
         <MindmapInterface
           title={topic.title}
           root={mindmap.root}
@@ -138,17 +141,17 @@ export async function TopicDetailView({
       {/* Companion pages for this topic: its exercise set (अभ्यास) and its
           Concepts, Legends & Facts sheet (exam shortcuts, time-saving notes and
           PYQ solutions live there). */}
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 sm:gap-3">
         <Link
           href={`${basePath}/chapters/${unit.id}/topics/${topic.slug}/exercises`}
-          className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border/60 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <NotebookPen className="h-4 w-4" />
           <span>Exercises{subjectSlug === "nepali" ? " · अभ्यास" : ""}</span>
         </Link>
         <Link
           href={`/legend/${classSlug}/${subjectSlug}/${unit.id}/${topic.slug}`}
-          className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border/60 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <Lightbulb className="h-4 w-4" />
           <span>Concepts, Legends &amp; Facts</span>
@@ -158,7 +161,7 @@ export async function TopicDetailView({
       <div className="pt-4 border-t border-border/60">
         <Link
           href={`${basePath}/chapters/${unit.id}`}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+          className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg px-1 -mx-1"
         >
           <ArrowLeft className="h-4 w-4" />
           <span>Back to Unit Syllabus &amp; Topics</span>

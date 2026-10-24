@@ -7,17 +7,17 @@ export { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
 const resources = [
   {
     title: "Syllabus-led study",
-    description: "Browse Class 11 and 12 subjects in NEB / CDC curriculum order.",
+    description: "Follow Class 11 and 12 in official NEB order — units, topics, and notes in one place.",
     icon: BookOpen,
   },
   {
     title: "Exam preparation",
-    description: "Use past questions and practice materials to prepare with focus.",
+    description: "Past questions, drills, and formula sheets aligned to how NEB papers are set.",
     icon: History,
   },
   {
     title: "Interactive science",
-    description: "Explore scientific ideas through simulations and visual resources.",
+    description: "Labs, diagrams, and 3D models that make abstract ideas easier to remember.",
     icon: FlaskConical,
   },
 ];
@@ -45,11 +45,11 @@ export function HomePublic() {
       <main className="mx-auto w-full max-w-6xl space-y-14 px-4 py-12 sm:px-6 sm:py-16">
         <section aria-labelledby="landing-title" className="max-w-3xl">
           <p className="text-sm font-semibold tracking-wide text-primary">NEB Class 11 &amp; 12</p>
-          <h1 id="landing-title" className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            A clearer path through your studies.
+          <h1 id="landing-title" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+            Your NEB syllabus, organized for daily study.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Curriculum-aligned notes, exam practice and interactive science resources for Nepali +2 students, organized in one study platform.
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
+            Notes, past papers, labs, and progress tools for Class 11 and 12 — built around the official curriculum, not scattered PDFs.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
@@ -77,12 +77,12 @@ export function HomePublic() {
           <div className="max-w-2xl">
             <h2 id="resources-title" className="text-xl font-semibold tracking-tight">Study resources</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              A focused set of tools built around the curriculum and the work students do every day.
+              Everything routes through the same syllabus map — so you always know what to read next.
             </p>
           </div>
-          <div className="mt-5 grid gap-4 sm:grid-cols-3">
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {resources.map(({ title, description, icon: Icon }) => (
-              <article key={title} className="rounded-xl border border-border bg-card p-5">
+              <article key={title} className="rounded-xl border border-border bg-card p-5 sm:p-6">
                 <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-base font-semibold">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>

@@ -346,9 +346,14 @@ export function TopicVerticalNotes({
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center py-16 space-y-3">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-        <p className="text-sm text-muted-foreground">Loading complete topic study materials...</p>
+      <div
+        className="flex flex-col items-center justify-center gap-3 py-12 sm:py-16"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" aria-hidden="true" />
+        <p className="text-sm text-muted-foreground">Loading notes and study materials…</p>
       </div>
     );
   }
