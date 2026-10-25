@@ -67,6 +67,9 @@ describe("reply craft — the ChatGPT/Claude-grade layer", () => {
   test("carries no template artefacts and keeps the master prompt a sane size", () => {
     expect(REPLY_CRAFT_RULES).not.toContain("${");
     expect(REPLY_CRAFT_RULES).not.toContain("`");
-    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(60_000);
+    // Static rule layers; the 2026-10-25 3-mode depth control (generic /
+    // academic / advisory) + no-repeat law added ~1k chars — guard bloat, not a
+    // hard quota.
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(65_000);
   });
 });
