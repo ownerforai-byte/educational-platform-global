@@ -4,8 +4,8 @@ import express from "express";
 import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 /**
- * CLOUDFLARE R2 STORAGE WIRING (owner 2026-10-24: "firebase, its place is
- * replaced by cloudflare r2 … check it and wire if something is left").
+ * CLOUDFLARE R2 STORAGE WIRING (owner 2026-10-24: the earlier storage idea is
+ * replaced by cloudflare r2 … check it and wire if something is left).
  *
  * Supabase Storage is the PRIMARY store; Cloudflare R2 is the OVERFLOW backup
  * that activates only when a Supabase upload fails with a quota/storage-limit
