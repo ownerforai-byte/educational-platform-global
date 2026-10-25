@@ -36,7 +36,6 @@ import {
   ArrowRight,
   Clock3,
   GraduationCap,
-  Lock,
   LogIn,
   ShieldCheck,
 } from "lucide-react";
@@ -85,7 +84,7 @@ function ApprovalPending() {
     >
       <div className="flex flex-col items-center gap-3">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-        <p className="text-sm font-medium text-muted-foreground animate-pulse">
+        <p className="text-sm font-medium text-muted-foreground animate-blink">
           Verifying your access…
         </p>
       </div>
@@ -100,8 +99,13 @@ function ApprovalLock() {
       data-testid="approval-lock"
       className="mx-auto flex w-full max-w-xl flex-col items-center px-4 py-10 text-center"
     >
-      <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 shadow-inner">
-        <Lock className="h-8 w-8 text-primary" />
+      <div
+        className="mx-auto inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+        aria-disabled="true"
+      >
+        <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+          Members only
+        </span>
       </div>
 
       <h1 className="mt-5 text-xl font-extrabold tracking-tight sm:text-2xl">

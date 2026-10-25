@@ -163,10 +163,15 @@ const config: Config = {
           "0%": { backgroundPosition: "0 0" },
           "100%": { backgroundPosition: "120px 120px" },
         },
+        "blink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.3" },
+        },
       },
       animation: {
         "ornate-in": "ornate-in 380ms cubic-bezier(0.16, 1, 0.3, 1) both",
         "grid-pan": "grid-pan 60s linear infinite",
+        "blink": "blink 1.4s ease-in-out infinite",
       },
     },
   },
