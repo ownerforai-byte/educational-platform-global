@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Lock, Eye, EyeOff, ArrowRight, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Eye, EyeOff, ArrowRight, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { resetPassword } from "@/lib/api/auth";
@@ -124,14 +124,13 @@ export function ResetPasswordForm() {
           New password
         </label>
         <div className="relative">
-          <Lock className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             id="new-password"
             type={showPassword ? "text" : "password"}
             placeholder="At least 8 characters"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="h-11 rounded-xl pl-10 pr-10"
+            className="h-11 rounded-xl pl-3.5 pr-10"
             autoComplete="new-password"
             minLength={8}
             maxLength={72}
@@ -153,14 +152,13 @@ export function ResetPasswordForm() {
           Confirm new password
         </label>
         <div className="relative">
-          <Lock className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             id="confirm-password"
             type={showPassword ? "text" : "password"}
             placeholder="Repeat the new password"
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}
-            className="h-11 rounded-xl pl-10"
+            className="h-11 rounded-xl pl-3.5"
             autoComplete="new-password"
             minLength={8}
             maxLength={72}

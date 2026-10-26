@@ -8,7 +8,6 @@ import {
   Clock3,
   Home,
   Loader2,
-  Lock,
   Mail,
   RefreshCw,
   ShieldAlert,
@@ -269,7 +268,12 @@ export function WelcomeStatus() {
           icon={
             <span className="relative flex h-10 w-10 items-center justify-center">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/40" />
-              <Lock className="relative h-5 w-5 text-amber-500" />
+              <span
+                className="relative text-[9px] font-extrabold uppercase tracking-wider text-amber-500"
+                aria-hidden="true"
+              >
+                Pending
+              </span>
             </span>
           }
           title="Awaiting approval"

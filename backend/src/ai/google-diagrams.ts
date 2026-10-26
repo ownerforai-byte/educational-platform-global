@@ -59,10 +59,11 @@ export const GOOGLE_TIMEOUT_MS = Number(process.env.GOOGLE_DIAGRAM_TIMEOUT_MS) |
  * True only when the owner has supplied both credentials AND has not switched
  * the source off. GOOGLE_DIAGRAMS=off forces it off even with keys present.
  */
+import { getGoogleCseCx, getGoogleCseKey, isGoogleCseConfigured } from "./config";
 export function googleDiagramsEnabled(): boolean {
   const flag = (process.env.GOOGLE_DIAGRAMS ?? "").trim().toLowerCase();
   if (flag === "off" || flag === "false" || flag === "0") return false;
-  return !!process.env.GOOGLE_CSE_API_KEY?.trim() && !!process.env.GOOGLE_CSE_CX?.trim();
+  return isGoogleCseConfigured();
 }
 
 /** The search string — the diagram query plus Google's image-biased helper. */
@@ -150,8 +151,8 @@ export async function fetchGoogleDiagrams(
   limit = GOOGLE_DIAGRAM_LIMIT,
   options: ParseGoogleImagesOptions = {},
 ): Promise<GoogleDiagram[]> {
-  const key = process.env.GOOGLE_CSE_API_KEY?.trim();
-  const cx = process.env.GOOGLE_CSE_CX?.trim();
+  const key = getGoogleCseKey();
+  const cx = getGoogleCseCx();
   const query = buildGoogleImageQuery(diagramQuery);
   if (!key || !cx || !query) return [];
 

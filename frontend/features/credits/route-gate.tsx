@@ -24,7 +24,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { Lock, Coins, Loader2, Timer, ShieldCheck } from "lucide-react";
+import { Coins, Loader2, Timer, ShieldCheck } from "lucide-react";
 import {
   TOKEN_MATRIX,
   categoryForPath,
@@ -116,8 +116,13 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
       <div className="absolute inset-0 z-30 bg-background/70 backdrop-blur-[3px]">
         <div className="sticky top-20 flex justify-center px-4 py-8">
           <div className="flex w-full max-w-md flex-col items-center gap-4 rounded-3xl border border-border/70 bg-card p-6 text-center shadow-2xl">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
-              <Lock className="h-7 w-7 text-primary" />
+            <div
+              className="inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+              aria-disabled="true"
+            >
+              <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+                Spark library
+              </span>
             </div>
 
             <div>

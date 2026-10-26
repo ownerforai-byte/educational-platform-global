@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Mail, Lock, Eye, EyeOff, User, ArrowRight, Check } from "lucide-react";
+import { Mail, Eye, EyeOff, User, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { signupAction } from "../actions";
@@ -110,14 +110,13 @@ export function SignupForm() {
       <div className="space-y-2">
         <label className="text-sm font-medium" htmlFor="password">Password</label>
         <div className="relative">
-          <Lock className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             id="password"
             type={showPassword ? "text" : "password"}
             placeholder="At least 8 characters"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="h-11 rounded-xl pl-10 pr-10"
+            className="h-11 rounded-xl pl-3.5 pr-10"
             autoComplete="new-password"
             minLength={8}
             required

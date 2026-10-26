@@ -76,6 +76,7 @@ describe("QuizStudio configuration diversity", () => {
       topic: "Motion",
       difficulty: "easy",
       count: 5,
+      format: "mcq",
     }));
     expect(await screen.findByText(generatedQuestion.prompt)).toBeInTheDocument();
   });
@@ -97,6 +98,7 @@ describe("QuizStudio configuration diversity", () => {
       topic: "Cell transport",
       difficulty: "hard",
       count: 20,
+      format: "mcq",
     }));
     expect(await screen.findByText(generatedQuestion.prompt)).toBeInTheDocument();
   });

@@ -50,9 +50,9 @@ const TIER_CTA: Record<UserTier, string> = {
   owner: "Go to the Owner console",
 };
 
-/** The Go button target — the viewer's own tier home. */
+/** The Go button target — the viewer's own home (guests land on the guest home). */
 function homeHrefFor(tier: AccessLevel): string {
-  return tier === "visitor" ? "/" : TIER_HOME_PATHS[tier];
+  return tier === "visitor" ? "/home" : TIER_HOME_PATHS[tier];
 }
 
 function TierWelcome({ tier }: { tier: UserTier }) {
@@ -123,14 +123,15 @@ function TierWelcome({ tier }: { tier: UserTier }) {
 
 /**
  * THE UNIVERSAL VISITOR WELCOME (owner 2026-10-23: "a universal welcome page
- * for visitors not users … in the welcome add an option 'go' after clicking
- * that show the login page … no universal welcome for accessed users as that
- * is for visitors only").
+ * for visitors not users … no universal welcome for accessed users as that is
+ * for visitors only"; 2026-10-25 the flow became "welcome → guest home →
+ * login page → study home", so Go opens the guest home, and the guest home
+ * carries the sign-in button).
  *
  * One page for every visitor regardless of anything else: the welcome hero
- * with the Go option (→ the login page), the account-creation path, and the
- * public overview as its body. Signed-in viewers never see this page — the
- * run gate replaces them onto their own tier welcome.
+ * with the Go option (→ the guest home at /home), the account-creation path,
+ * and the public overview as its body. Signed-in viewers never see this page —
+ * the run gate replaces them onto their own tier welcome.
  */
 export function UniversalWelcome() {
   return (
@@ -162,8 +163,8 @@ export function UniversalWelcome() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/login"
-              aria-label="Go — continue to sign in"
+              href="/home"
+              aria-label="Go — continue to the guest home"
               className="inline-flex items-center gap-2 rounded-2xl bg-primary px-8 py-3 text-sm font-bold text-primary-foreground shadow-sm transition hover:opacity-90"
             >
               Go

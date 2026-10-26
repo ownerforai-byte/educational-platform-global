@@ -1222,6 +1222,22 @@ code, kbd, samp, pre {
   .animate-welcome-in { animation: none; opacity: 1; transform: none; }
 }
 
+/* ─── REDUCED-MOTION CATCH-ALL (plan.md §13) ────────────────────────────────
+ * The low-data `lite` mode already zeroes animations; this does the same for
+ * OS-level reduced-motion so every surface — including the AI states trio
+ * (spinner, ping) — renders static but fully visible. Spinners keep their
+ * icon; nothing is hidden, only stilled. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ─── SUBJECT RAILS (2026-10-05) — six continuous knowledge streams ────────── */
 /* Each rail's <ul> renders its slide set TWICE and travels from 0 to -50%: one
    whole set leaves through the left edge while the identical copy follows it

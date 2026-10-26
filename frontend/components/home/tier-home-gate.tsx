@@ -21,7 +21,9 @@ import {
  */
 
 const HOME_TARGETS: Record<AccessLevel, string> = {
-  visitor: "/",
+  // The visitor's own home is the guest home (2026-10-25 flow: "welcome →
+  // guest home → login page → study home"), never a tier interface.
+  visitor: "/home",
   ...TIER_HOME_PATHS,
 };
 
@@ -54,8 +56,8 @@ function TierRunGate({
 }
 
 /**
- * The hardcoded tier HOME interfaces: exact rung only, visitors to the public
- * overview, wrong rungs to their own tier home.
+ * The hardcoded tier HOME interfaces: exact rung only, visitors to the guest
+ * home at /home, wrong rungs to their own tier home.
  */
 export function TierHomeGate({
   tier,

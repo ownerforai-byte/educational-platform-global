@@ -23,9 +23,5 @@ export interface SessionUser {
   premiumApprovedAt?: string | null;
 }
 
-export const ROLE_RANK: Record<UserRole, number> = {
-  member: 0,
-  plus: 1,
-  pro: 2,
-  owner: 3,
-};
+// The ladder is ranked exactly once — lib/access-level.ts (ACCESS_RANK),
+// surfaced for user rungs by lib/auth/roles.ts. No second rank map here.

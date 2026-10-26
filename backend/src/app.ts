@@ -11,6 +11,7 @@ import aiImageSearchRoutes from "./api/ai-image-search";
 import aiImageFactsRoutes from "./api/ai-image-facts";
 import aiFigureRoutes from "./api/ai-figure";
 import aiGenerateRoutes from "./api/ai-generate";
+import aiEvaluateRoutes from "./api/ai-evaluate";
 import aiEnhanceRoutes from "./api/ai-enhance";
 import aiHistoryRoutes from "./api/ai-history";
 import aiQuizHistoryRoutes from "./api/ai-quiz-history";
@@ -121,6 +122,9 @@ export function createApp(): express.Express {
   app.use("/api/ai/figure", aiFigureRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
   app.use("/api/ai/generate-questions", aiGenerateRoutes);
+  // AI grading of learner answers (writing formats) — same gates as the
+  // generator, registered before the /api/ai catch-all so the path wins.
+  app.use("/api/ai/evaluate-answers", aiEvaluateRoutes);
   app.use("/api/ai/enhance", aiEnhanceRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai-quiz-history", aiQuizHistoryRoutes);

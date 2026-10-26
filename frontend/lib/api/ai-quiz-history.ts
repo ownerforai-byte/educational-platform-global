@@ -7,6 +7,8 @@ export interface QuizHistoryRow {
   subjectSlug: string | null;
   topic: string | null;
   difficulty: "easy" | "intermediate" | "hard" | null;
+  /** Quiz format the set was generated in (absent → `mcq`). */
+  format?: import("../../types/api").QuizFormat | null;
   answered: number;
   correct: number;
   scorePct: number | null;
@@ -63,16 +65,9 @@ export interface SaveQuizHistoryInput {
   subjectSlug?: string;
   topic?: string;
   difficulty?: "easy" | "intermediate" | "hard";
-  questions: Array<{
-    prompt: string;
-    options: string[];
-    correctIndex: number;
-    difficulty: "easy" | "intermediate" | "hard";
-    subject: string;
-    topic: string;
-    explanation: string;
-    optionAnalysis?: Record<string, string>;
-  }>;
+  /** Quiz format the set was generated in (absent → `mcq`). */
+  format?: import("../../types/api").QuizFormat;
+  questions: import("../../types/api").GeneratedQuestion[];
   answered: number;
   correct: number;
   scorePct?: number;

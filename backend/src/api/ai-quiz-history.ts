@@ -21,12 +21,18 @@ const insertSchema = z.object({
   subjectSlug: z.string().trim().max(64).optional(),
   topic: z.string().trim().max(200).optional(),
   difficulty: z.enum(["easy", "intermediate", "hard"]).optional(),
+  // Quiz format of the set (plan.md §11) — absent → `mcq` for old clients.
+  format: z
+    .enum(["mcq", "true-false", "fill-blank", "short-answer", "long-answer"])
+    .optional(),
   questions: z
     .array(
       z.object({
         prompt: z.string().max(4000),
-        options: z.array(z.string().max(1000)).min(2).max(6),
-        correctIndex: z.number().int().min(0),
+        // Writing formats legitimately carry zero options; MCQ sets keep 2-6.
+        options: z.array(z.string().max(1000)).max(6).default([]),
+        // -1 marks free-text items graded by the AI evaluator.
+        correctIndex: z.number().int().min(-1).default(0),
         difficulty: z.enum(["easy", "intermediate", "hard"]),
         subject: z.string().max(200),
         topic: z.string().max(400),
@@ -39,6 +45,15 @@ const insertSchema = z.object({
             D: z.string().max(600),
           })
           .optional(),
+        // Per-item format (the set-level `format` is the fallback).
+        format: z
+          .enum(["mcq", "true-false", "fill-blank", "short-answer", "long-answer"])
+          .optional(),
+        // Writing-format fields (fill-blank / short-answer / long-answer).
+        acceptedAnswers: z.array(z.string().max(500)).max(6).optional(),
+        modelAnswer: z.string().max(20000).optional(),
+        rubric: z.array(z.string().max(600)).max(10).optional(),
+        maxScore: z.number().int().min(1).max(10).optional(),
       })
     )
     .min(1)
@@ -205,6 +220,13 @@ router.post(
           q.optionAnalysis && Object.keys(q.optionAnalysis).length > 0
             ? q.optionAnalysis
             : null,
+        // Writing-format fields survive round-trips so the history detail
+        // view can re-render the model answer and rubric.
+        format: q.format ?? parsed.data.format ?? "mcq",
+        ...(q.acceptedAnswers ? { acceptedAnswers: q.acceptedAnswers } : {}),
+        ...(q.modelAnswer ? { modelAnswer: q.modelAnswer } : {}),
+        ...(q.rubric ? { rubric: q.rubric } : {}),
+        ...(q.maxScore ? { maxScore: q.maxScore } : {}),
       })),
       answered: parsed.data.answered,
       correct: parsed.data.correct,

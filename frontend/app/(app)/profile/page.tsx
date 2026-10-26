@@ -18,7 +18,6 @@ import {
   GraduationCap,
   History,
   Layers,
-  Lock,
   LogOut,
   Mail,
   Power,
@@ -823,7 +822,7 @@ export default function ProfilePage() {
                           {isUnlocked ? (
                             <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
                           ) : (
-                            <Lock className="h-3.5 w-3.5 text-muted-foreground" />
+                            <span className="text-muted-foreground/50 text-[11px] font-semibold" aria-label="Not included in your plan">—</span>
                           )}
                         </div>
                       </div>

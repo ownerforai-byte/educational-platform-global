@@ -44,7 +44,6 @@ import {
   Sparkle,
   Filter,
   TrendingUp,
-  Lock,
 } from "lucide-react";
 
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; text: string; badge: string }> = {
@@ -509,9 +508,8 @@ export function PeriodicTableView() {
                   key={cat.id}
                   href="/plans"
                   title={`${cat.name} opens at ${ACCESS_LABELS[filterMinTier(cat)]} — see plans`}
-                  className="flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-bold transition-all border border-dashed border-border/70 text-muted-foreground/60"
+                  className="flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-bold transition-all border border-dashed border-border/70 text-muted-foreground/60 opacity-75"
                 >
-                  <Lock className="h-2.5 w-2.5" />
                   {cat.name}
                 </Link>
               );

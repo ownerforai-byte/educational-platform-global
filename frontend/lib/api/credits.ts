@@ -75,7 +75,7 @@ export interface UnlockResponse {
   credits: number;
   /** Unix epoch seconds — expiration = now + 1200. */
   expiresAt: number;
-  /** Coins actually charged (0 for OWNER/ADMIN). */
+  /** Coins actually charged (0 for the owner rung). */
   cost: number;
 }
 

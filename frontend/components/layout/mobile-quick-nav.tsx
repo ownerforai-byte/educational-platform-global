@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Lock } from "lucide-react";
 import {
   QUICK_LINKS,
   quickLinkMinTier,
@@ -40,9 +39,8 @@ export function MobileQuickNav() {
                 key={link.href}
                 href="/plans"
                 title={`${link.label} opens at ${ACCESS_LABELS[quickLinkMinTier(link.href)]} — see plans`}
-                className="flex shrink-0 items-center gap-1 rounded-full border border-dashed border-border px-3 py-1.5 text-xs font-semibold text-muted-foreground/60"
+                className="flex shrink-0 items-center gap-1 rounded-full border border-dashed border-border px-3 py-1.5 text-xs font-semibold text-muted-foreground/60 opacity-75"
               >
-                <Lock className="h-3 w-3" />
                 {link.label}
               </Link>
             );

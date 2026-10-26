@@ -13,6 +13,7 @@ import type { Server } from "node:http";
  */
 
 const gate = { enabled: true, fail: false };
+const minTiers: Record<string, string> = {};
 
 vi.mock("../src/utils/credits", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../src/utils/credits")>();
@@ -24,6 +25,10 @@ vi.mock("../src/utils/credits", async (importOriginal) => {
     }),
   };
 });
+
+vi.mock("../src/utils/sectionTiers", () => ({
+  readSectionMinTiers: vi.fn(async () => ({ ...minTiers })),
+}));
 
 import configRoutes from "../src/api/config";
 
@@ -57,7 +62,18 @@ describe("GET /api/config", () => {
       coinGateEnabled: true,
       dailyCreditPool: 4,
       aiMessageCost: 1,
+      sectionMinTiers: {},
     });
+  });
+
+  test("publishes owner-set section minimums alongside the flags", async () => {
+    minTiers.pdfs = "owner";
+
+    const res = await fetch(`${baseUrl}/api/config`);
+    const body = (await res.json()) as { sectionMinTiers: Record<string, string> };
+    expect(res.status).toBe(200);
+    expect(body.sectionMinTiers).toEqual({ pdfs: "owner" });
+    delete minTiers.pdfs;
   });
 
   test("reports free mode once the owner turns the gate OFF", async () => {

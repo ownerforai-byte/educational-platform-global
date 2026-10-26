@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Loader2, Lock, NotebookPen, Plus, Trash2 } from "lucide-react";
+import { Loader2, NotebookPen, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -68,8 +68,10 @@ export default function JournalPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16 text-center">
         <Card className="border-primary/20 p-8">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-            <Lock className="h-5 w-5 text-primary" />
+          <div className="mx-auto inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5" aria-disabled="true">
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+              Plus &amp; Pro
+            </span>
           </div>
           <CardTitle className="mt-4 text-xl">The Journal opens at Plus</CardTitle>
           <CardDescription className="mx-auto mt-2 max-w-md text-sm">

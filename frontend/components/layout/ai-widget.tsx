@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Lock, Coins } from "lucide-react";
+import { Coins } from "lucide-react";
 import { CaptainMark } from "@/components/ai/captain-logo";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/access-level";
@@ -44,7 +44,12 @@ export function AIWidget() {
         className="fixed left-6 bottom-safe z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center bg-gradient-to-br from-muted to-muted/70 border border-amber-500/40 hover:scale-105 transition-all"
       >
         <span className="relative flex items-center justify-center">
-          <Lock className="h-6 w-6 text-amber-500" />
+          <span
+            className="text-[10px] font-extrabold uppercase tracking-wider text-amber-500"
+            aria-hidden="true"
+          >
+            Spark
+          </span>
           <Coins className="absolute -right-1.5 -top-1.5 h-3 w-3 text-amber-500/80" />
         </span>
       </Link>

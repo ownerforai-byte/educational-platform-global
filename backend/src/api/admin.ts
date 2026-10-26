@@ -20,8 +20,8 @@ const updateUserRoleSchema = z.object({
 
 /**
  * GET /api/admin/users
- * List all users with their credits, roles, and premium status.
- * OWNER/ADMIN only.
+ * List all users with their credits, rungs, and premium status.
+ * Pro/owner rungs only.
  */
 router.get("/users", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
@@ -147,7 +147,7 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
 
 /**
  * PATCH /api/admin/users/:id/credits
- * Adjust user credits (grant/spend). OWNER/ADMIN only.
+ * Adjust user credits (grant/spend). Pro/owner rungs only.
  */
 router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
@@ -224,7 +224,7 @@ router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Respon
 
 /**
  * PATCH /api/admin/users/:id/role
- * Update user role. OWNER only.
+ * Update user tier (the grant/adjust control on the owner console). Owner rung only.
  */
 router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;

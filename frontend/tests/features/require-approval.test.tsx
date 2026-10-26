@@ -23,7 +23,7 @@ const session = vi.hoisted(() => ({
   isLoading: false,
 }));
 
-const pathname = vi.hoisted(() => ({ value: "/home" }));
+const pathname = vi.hoisted(() => ({ value: "/class-11-notes" }));
 
 vi.mock("@/features/auth/hooks/use-session", () => ({
   useSession: () => session,
@@ -45,7 +45,7 @@ const CONTENT = <div data-testid="route-content">the library</div>;
 beforeEach(() => {
   session.user = null;
   session.isLoading = false;
-  pathname.value = "/home";
+  pathname.value = "/class-11-notes";
 });
 
 describe("RequireApproval — login + owner-approval wall", () => {
@@ -103,6 +103,13 @@ describe("RequireApproval — login + owner-approval wall", () => {
     expect(screen.queryByTestId("approval-lock")).toBeNull();
   });
 
+  it("lets the guest home through without an account (welcome → guest home → login)", () => {
+    pathname.value = "/home";
+    render(<RequireApproval>{CONTENT}</RequireApproval>);
+    expect(screen.getByTestId("route-content")).toBeInTheDocument();
+    expect(screen.queryByTestId("approval-lock")).toBeNull();
+  });
+
   it("renders neither side while the session resolves — no lock flash", () => {
     session.isLoading = true;
     render(<RequireApproval>{CONTENT}</RequireApproval>);
@@ -130,9 +137,9 @@ describe("auth wall wiring", () => {
     expect(coinGate).toBeGreaterThan(authWall);
   });
 
-  it("keeps only the notice board and the plans page public inside the shell", () => {
+  it("keeps the guest home, the notice board and the plans page public inside the shell", () => {
     const gate = read("features/auth/components/require-approval.tsx");
-    expect(gate).toContain('const PUBLIC_PATHS = ["/notice", "/plans"] as const;');
+    expect(gate).toContain('const PUBLIC_PATHS = ["/home", "/notice", "/plans"] as const;');
     // The periodic table must NOT be on the open list.
     expect(gate).not.toContain('"/periodic-table"');
   });

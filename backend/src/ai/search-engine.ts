@@ -39,6 +39,8 @@ export interface WebSearchResponse {
 
 export type EngineName = "tavily" | "exa" | "firecrawl" | "jina" | "youcom";
 
+import { getSearchEngineKeys } from "./config";
+
 const ENGINE_TIMEOUT_MS = Number(process.env.SEARCH_ENGINE_TIMEOUT_MS) || 12_000;
 
 /** How much of a source page is kept — depth without blowing the prompt. */
@@ -278,8 +280,10 @@ export class WebSearchService {
       { name: "jina", env: "JINA_API_KEY", run: searchJina },
       { name: "youcom", env: "YDC_API_KEY", run: searchYoucom },
     ];
+    // Engine keys come from the central resolver (plan.md §12).
+    const resolved = getSearchEngineKeys();
     for (const d of defs) {
-      const key = process.env[d.env] ?? "";
+      const key = resolved[d.name];
       if (key) this.engineKeys.push({ name: d.name, key, run: d.run });
     }
 

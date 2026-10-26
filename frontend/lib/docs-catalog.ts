@@ -15,7 +15,8 @@ export type Subject =
   | "Physics"
   | "Chemistry"
   | "Mathematics"
-  | "English";
+  | "English"
+  | "Nepali";
 
 export type Doc = {
   key: string;
@@ -34,6 +35,16 @@ export const MAT_DIR = "/materials";
 
 export const DOCS: Doc[] = [
   // ── Biology ───────────────────────────────────────────────────────────
+  {
+    key: "study-hub",
+    title: "Study Hub — Biology · Chemistry · Physics",
+    subject: "Biology",
+    topic: "Cross-subject · Illustrated",
+    description:
+      "Full-syllabus illustrated study hub across Biology, Chemistry and Physics with searchable chapters and inline diagrams (self-contained).",
+    href: `${MAT_DIR}/STUDY_HUB.html`,
+    kind: "html",
+  },
   {
     key: "pioneer-grade11-biology-examcram",
     title: "Pioneer Grade 11 Biology — Exam Cram (Enhanced)",
@@ -187,6 +198,16 @@ export const DOCS: Doc[] = [
     href: `${MAT_DIR}/chemistry-mcq-test.md`,
     kind: "md",
   },
+  {
+    key: "chemistry-hub",
+    title: "Chemistry Hub — Grade 6 to 11 (Chronological)",
+    subject: "Chemistry",
+    topic: "Full syllabus · Study guide",
+    description:
+      "Chronological chemistry reference from Grade 6 through Grade 11 — unit-by-unit notes and key reactions in one navigable hub.",
+    href: `${MAT_DIR}/CHEMISTRY_HUB.html`,
+    kind: "html",
+  },
 
   // ── Mathematics ───────────────────────────────────────────────────────
   {
@@ -210,6 +231,28 @@ export const DOCS: Doc[] = [
     href: `${PDFS_DIR}/neb-essays-grade11-12.pdf`,
     kind: "pdf",
   },
+  {
+    key: "writing-hub",
+    title: "Writing & Vocabulary Hub — Generic to Pro",
+    subject: "English",
+    topic: "Writing · Vocabulary",
+    description:
+      "Guided writing and vocabulary progression from generic to professional level — essay forms, word banks and style upgrades.",
+    href: `${MAT_DIR}/WRITING_HUB.html`,
+    kind: "html",
+  },
+
+  // ── Nepali ────────────────────────────────────────────────────────────
+  {
+    key: "nepali-hub",
+    title: "नेपाली हब — भाषा, व्याकरण र साहित्य",
+    subject: "Nepali",
+    topic: "Full syllabus · Study guide",
+    description:
+      "सम्पूर्ण परीक्षा-प्रासङ्गिक नेपाली भाषा, व्याकरण र साहित्य सामग्री — एउटै नेभिगेटेबल हबमा संकलित।",
+    href: `${MAT_DIR}/NEPALI_HUB.html`,
+    kind: "html",
+  },
 ];
 
 export const SUBJECT_ORDER: Subject[] = [
@@ -218,4 +261,5 @@ export const SUBJECT_ORDER: Subject[] = [
   "Chemistry",
   "Mathematics",
   "English",
+  "Nepali",
 ];

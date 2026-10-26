@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Lock, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { sectionsFor } from "@/lib/sections";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 import { ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
 
 /**
@@ -25,7 +26,8 @@ const TIER_CHIP: Record<AccessLevel, string> = {
 
 export function HomeSections() {
   const { user } = useSession();
-  const entries = sectionsFor(user);
+  const overrides = useSectionTierOverrides();
+  const entries = sectionsFor(user, overrides);
 
   return (
     <section className="border-b border-border/60 py-10" aria-labelledby="sections-heading">
@@ -67,8 +69,8 @@ export function HomeSections() {
                         {ACCESS_LABELS[section.minTier]}
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-muted px-1.5 py-0.5 text-[9px] font-bold text-muted-foreground">
-                        <Lock className="h-2.5 w-2.5" /> {ACCESS_LABELS[section.minTier]}
+                      <span className="inline-flex items-center rounded-full bg-muted px-1.5 py-0.5 text-[9px] font-bold text-muted-foreground/70" aria-disabled="true">
+                        {ACCESS_LABELS[section.minTier]}
                       </span>
                     )}
                   </div>

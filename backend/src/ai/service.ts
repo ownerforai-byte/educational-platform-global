@@ -9,6 +9,13 @@ import { toOpenAIContent } from "./image-input";
  * provider attribution headers. Set FRONTEND_URL in backend/.env (no trailing
  * slash). Falls back to the deployed frontend URL when unset.
  */
+import {
+  getAgnesKey,
+  getGroqKey,
+  getCloudflareAiKey,
+  getCloudflareAccountId,
+} from "./config";
+
 const SITE = (process.env.FRONTEND_URL || PUBLIC_SITE_URL).replace(/\/$/, "");
 
 /**
@@ -966,15 +973,17 @@ export class AIService {
   constructor() {
     this.providers.set("internal", new InternalProvider());
 
-    const agnesKey = process.env.AGNES_API_KEY;
-    const groqKey = process.env.GROQ_API_KEY;
+    // Keys come from the central resolver (plan.md §12) — one place reads
+    // the git-ignored env files, values are never logged.
+    const agnesKey = getAgnesKey();
+    const groqKey = getGroqKey();
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
     if (groqKey) this.providers.set("groq", new GroqProvider(groqKey));
-    const cfKey = process.env.CF_AI_KEY || process.env.CLOUDFLARE_API_KEY;
+    const cfKey = getCloudflareAiKey();
     if (cfKey && this.hasCfAccount())
       this.providers.set("cloudflare", new CloudflareProvider(cfKey));
 
@@ -995,9 +1004,7 @@ export class AIService {
    * provider is skipped instead of building a bare URL.
    */
   private hasCfAccount(): boolean {
-    return Boolean(
-      (process.env.CF_ACCOUNT_ID || process.env.R2_ACCOUNT_ID || "").trim()
-    );
+    return Boolean(getCloudflareAccountId());
   }
 
   getProviders(): string[] {

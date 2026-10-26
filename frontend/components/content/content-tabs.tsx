@@ -22,7 +22,6 @@ import {
   Link2,
   ListChecks,
   Loader2,
-  Lock,
   NotebookPen,
   PanelTop,
   Pencil,
@@ -313,8 +312,10 @@ function buildTabs(notesTier: AccessLevel): ContentTab[] {
 function LockedTabCard({ tab }: { tab: ContentTab }) {
   return (
     <Card className="mx-auto max-w-xl border-primary/20 p-8 text-center">
-      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-        <Lock className="h-5 w-5 text-primary" />
+      <div className="mx-auto inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5" aria-disabled="true">
+        <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+          {ACCESS_LABELS[tab.minTier]}
+        </span>
       </div>
       <CardTitle className="mt-4 text-xl">
         {tab.label} opens at {ACCESS_LABELS[tab.minTier]}
@@ -640,7 +641,11 @@ export function ContentTabs({
             >
               <TabIcon className="h-3.5 w-3.5" />
               {tab.label}
-              {locked && <Lock className="h-3 w-3" />}
+              {locked && (
+                <span className="text-[9px] font-bold uppercase text-muted-foreground/60" aria-hidden="true">
+                  {ACCESS_LABELS[tab.minTier]}
+                </span>
+              )}
             </button>
           );
         })}

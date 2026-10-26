@@ -11,7 +11,6 @@ import {
   GraduationCap,
   Library,
   LineChart,
-  Lock,
   MessageCircle,
   NotebookPen,
   Rocket,
@@ -160,9 +159,8 @@ function QuickLinksRail({ tier }: { tier: AccessLevel }) {
                 key={link.href}
                 href="/plans"
                 title={`${link.label} opens at ${ACCESS_LABELS[quickLinkMinTier(link.href)]} — see plans`}
-                className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-dashed border-border px-3.5 py-2 text-xs font-semibold text-muted-foreground/60"
+                className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-dashed border-border px-3.5 py-2 text-xs font-semibold text-muted-foreground/60 opacity-75"
               >
-                <Lock className="h-3 w-3" />
                 {link.label}
               </Link>
             );

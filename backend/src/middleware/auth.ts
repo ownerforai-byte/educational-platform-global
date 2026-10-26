@@ -211,12 +211,29 @@ export function requireRole(...roles: UserRole[]) {
       res.status(401).json({ error: "Unauthorized" });
       return;
     }
-    if (!user.role || !allowed.has(user.role.toUpperCase())) {
+    // normalizeRole first: legacy role values grade as their mapped rung
+    // (the single legacy map in auth/types.ts), never as a hard reject.
+    const role = normalizeRole(user.role);
+    if (!role || !allowed.has(role.toUpperCase())) {
       res.status(403).json({ error: "Forbidden", requiredRoles: roles });
       return;
     }
     next();
   };
+}
+
+/**
+ * Express middleware factory: require a minimum rung of the tier ladder —
+ * the API side of the section registry's `minTier` (plan.md §8 P4,
+ * "tier-scoped APIs"). Pairs with `requireAuth`; roles arrive normalized
+ * (loadProfileRole), so legacy rows are graded on their normalized rung.
+ *
+ *   router.get("/x", requireAuth, requireTier("plus"), handler)
+ */
+const TIER_ORDER: UserRole[] = ["member", "plus", "pro", "owner"];
+
+export function requireTier(minTier: UserRole) {
+  return requireRole(...TIER_ORDER.slice(TIER_ORDER.indexOf(minTier)));
 }
 
 /** Convenience: require pro or owner (used by admin endpoints). */

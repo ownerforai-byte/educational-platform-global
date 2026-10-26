@@ -34,7 +34,12 @@ vi.mock("@/components/home/home-subject-rails", () => ({
 
 import HomePage from "@/app/(app)/home/page";
 
-describe("public home", () => {
+/**
+ * THE GUEST HOME (owner 2026-10-25: the flow is "welcome → guest home → login
+ * page → study home", and the guest home is designed "with only one or two
+ * buttons with sign in, hide others").
+ */
+describe("guest home — sign in is the only action", () => {
   it("explains the approval requirement without exposing gated study routes", () => {
     render(<HomePublic />);
 
@@ -42,8 +47,21 @@ describe("public home", () => {
       screen.getByText(/Login works after administrative approval and system verification only\./),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /sign in/i })).toHaveAttribute("href", "/login");
-    expect(screen.getByRole("link", { name: "Request an account" })).toHaveAttribute("href", "/signup");
     expect(screen.getAllByRole("link", { name: /access (notice|works)/i }).some((link) => link.getAttribute("href") === "/notice")).toBe(true);
+  });
+
+  it("hides every other action — one or two sign-in buttons, nothing else", () => {
+    render(<HomePublic />);
+
+    // Account-request and plan CTAs are hidden on the guest home ("hide
+    // others"): sign-up stays on the login page, plans stay on /plans.
+    expect(screen.queryByRole("link", { name: /request an account/i })).toBeNull();
+    expect(screen.queryByRole("link", { name: /see all plans/i })).toBeNull();
+
+    const signInLinks = screen
+      .getAllByRole("link")
+      .filter((link) => link.getAttribute("href") === "/login");
+    expect(signInLinks).toHaveLength(1); // the shell account button is the second
   });
 
   it("keeps the public overview clear and factual", () => {

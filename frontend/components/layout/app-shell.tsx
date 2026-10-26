@@ -3,7 +3,7 @@
 import { useEffect, useState, Suspense } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen, Atom, Bell, Lock } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Atom } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/access-level";
 import { sectionById } from "@/lib/sections";
@@ -15,6 +15,7 @@ import { BackButton } from "@/components/navigation/back-button";
 import { R1Shortcut } from "./r1-shortcut";
 import { GlobalSearch } from "./global-search";
 import { CreditBadge } from "./credit-badge";
+import { NotificationBell } from "./notification-bell";
 import { UserNav } from "./user-nav";
 import { Footer } from "./footer";
 
@@ -120,15 +121,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
             <R1Shortcut />
 
-            <Link
-              href="/notifications"
-              className="relative inline-flex items-center justify-center h-8 w-8 rounded-xl border border-border/80 bg-card hover:bg-muted/60 text-muted-foreground hover:text-foreground transition-all shadow-sm shrink-0"
-              title="Notifications"
-              aria-label="Notifications"
-            >
-              <Bell className="h-4 w-4" />
-              <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary ring-2 ring-background animate-pulse" />
-            </Link>
+            {/* State-driven badge (plan.md §14 5.2) — hides at zero, syncs
+                across tabs; the old static pulsing dot ignored real state. */}
+            <NotificationBell />
 
             <Link
               href="/periodic-table"
@@ -141,8 +136,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               {user ? (
                 <span className="text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
               ) : (
-                <span className="inline-flex items-center gap-0.5 text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">
-                  <Lock className="h-2.5 w-2.5" />
+                <span className="inline-flex items-center gap-0.5 text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/10 text-teal-700/70 dark:text-teal-300/70 opacity-80" aria-disabled="true">
                   Sign in
                 </span>
               )}

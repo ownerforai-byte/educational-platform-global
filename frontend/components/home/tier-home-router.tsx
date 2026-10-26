@@ -17,12 +17,16 @@ import {
  * feed login and if already logged (means user) then its welcome directly … no
  * universal welcome for accessed users as that is for visitors only").
  *
+ * The flow (owner 2026-10-25): "welcome → guest home → login page → study
+ * home".
+ *
  * landOn="welcome" (the root entry): visitors get the UNIVERSAL WELCOME (its
- * Go option opens the login page); signed-in viewers are replaced onto their
+ * Go option opens the guest home); signed-in viewers are replaced onto their
  * own tier WELCOME — one hop, their rung decided before the first paint.
  *
- * landOn="home" (/home, the nav Home link): signed-in viewers go straight to
- * their tier home — the destination the welcome's Go button opens.
+ * landOn="home" (/home, the nav Home link): visitors get the GUEST HOME — the
+ * minimal sign-in page the welcome's Go button opens; signed-in viewers go
+ * straight to their tier home.
  *
  * The session is known synchronously (readCachedSession feeds useSession's
  * first render), so the correct page appears on the first paint — no generic
@@ -55,9 +59,9 @@ export function TierHomeRouter({
     );
   }, [isLoading, router, tier, landOn]);
 
-  // Signed-out visitors: the universal welcome at the entry, the plain public
-  // overview on /home (behind the approval wall either way). Signed-in: the
-  // splash while their own page is being opened.
+  // Signed-out visitors: the universal welcome at the entry, the guest home
+  // on /home (both public routes). Signed-in: the splash while their own page
+  // is being opened.
   if (isLoading || tier !== "visitor") return <TierSplash />;
   return landOn === "welcome" ? <UniversalWelcome /> : <HomePublic />;
 }

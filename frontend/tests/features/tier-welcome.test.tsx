@@ -58,8 +58,8 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
       screen.getByRole("heading", { name: /welcome to ravikisan/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /go — continue to sign in/i }),
-    ).toHaveAttribute("href", "/login");
+      screen.getByRole("link", { name: /go — continue to the guest home/i }),
+    ).toHaveAttribute("href", "/home");
     expect(screen.getByRole("banner")).toBeInTheDocument();
     expect(screen.getByRole("main")).toBeInTheDocument();
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
@@ -122,7 +122,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
 });
 
 describe("Go button → the tier home, then all study materials", () => {
-  it("each welcome Go opens only its own tier home; visitor Go opens only login", () => {
+  it("each welcome Go opens only its own tier home; visitor Go opens the guest home", () => {
     session.user = { email: "student@example.com" };
     const { unmount: u1 } = render(<MemberWelcome />);
     expect(screen.getByRole("link", { name: /go to my study desk/i })).toHaveAttribute(
@@ -140,9 +140,9 @@ describe("Go button → the tier home, then all study materials", () => {
     u2();
 
     render(<UniversalWelcome />);
-    expect(screen.getByRole("link", { name: /go — continue to sign in/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /go — continue to the guest home/i })).toHaveAttribute(
       "href",
-      "/login",
+      "/home",
     );
     expect(screen.queryByRole("link", { name: /go to my study desk/i })).toBeNull();
   });
@@ -185,7 +185,7 @@ describe("welcome pages and post-auth landings are wired", () => {
         `<TierWelcomeGate tier="${tier}">`,
       );
     }
-    // The visitor route carries the universal welcome (Go → login).
+    // The visitor route carries the universal welcome (Go → the guest home).
     expect(read("app/welcome/guest/page.tsx")).toContain("UniversalWelcome");
   });
 

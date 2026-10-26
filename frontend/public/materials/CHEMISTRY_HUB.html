@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chemistry Hub — Grade 6 to Grade 11 (Chronological)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+main a{color:#7ea6ff}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0e17;color:#cdd6e8;line-height:1.7}
+#app{display:flex;min-height:100vh}
+nav{width:280px;background:#0f1420;border-right:1px solid #232c44;padding:18px 12px;position:sticky;top:0;height:100vh;overflow-y:auto}
+nav h1{font-size:16px;color:#ffd166;margin:4px 0 2px}
+nav .sub{font-size:11px;color:#8ea0c0;margin-bottom:14px}
+nav .grp{font-size:10.5px;color:#7ea6ff;text-transform:uppercase;letter-spacing:.5px;margin:16px 0 4px;padding:0 4px;border-left:2px solid #2547a8}
+.nav-item{display:block;padding:8px 12px;margin:2px 0;border-radius:8px;color:#cdd6e8;text-decoration:none;font-size:13px;cursor:pointer;border:1px solid transparent}
+.nav-item:hover{background:#1d2740}
+.nav-item.active{background:#2547a8;border-color:#7ea6ff;color:#fff}
+main{flex:1;padding:26px 34px;max-width:1150px}
+.page{display:block;padding:26px 0 40px;border-bottom:2px solid #232c44;scroll-margin-top:16px}
+h2.pt{font-size:25px;color:#7ea6ff;margin-bottom:4px}
+h2.pt .grade{font-size:12px;color:#ffd166;background:#12201a;border:1px solid #2c3752;border-radius:10px;padding:2px 10px;vertical-align:middle;font-weight:600}
+.lead{color:#8ea0c0;font-size:13.5px;margin-bottom:22px}
+h3{color:#ffd166;font-size:17px;margin:26px 0 10px}
+h4{color:#9db9ff;font-size:14.5px;margin:16px 0 8px}
+card{display:block;background:#1d2740;border:1px solid #2c3752;border-radius:12px;padding:18px 20px;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+th{background:#2547a8;color:#fff;text-align:left;padding:9px 10px;font-size:12.5px}
+td{padding:8px 10px;border-bottom:1px solid #232c44;vertical-align:top}
+tr:hover td{background:#16203a}
+.note{background:#12201a;border-left:3px solid #4cc38a;padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;margin:10px 0}
+.warn{background:#1a1212;border-left:3px solid #ff6b6b}
+.formula{font-family:'Cambria Math',Georgia,serif;color:#ffd166;font-size:15px}
+.sub{font-size:12px;color:#6f7f9a;margin-bottom:20px;border-bottom:1px solid #232c44;padding-bottom:10px}
+ul,ol{padding-left:22px;font-size:13.5px}
+details{background:#1d2740;border:1px solid #2c3752;border-radius:10px;padding:12px 16px;margin:8px 0}
+summary{cursor:pointer;color:#ffd166;font-size:14px;font-weight:600}
+details[open]{border-color:#7ea6ff}
+.path{background:#12201a;border:1px solid #2c3752;border-radius:12px;padding:16px;margin:10px 0}
+.path .step{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px dashed #232c44;font-size:13.5px}
+.path .step:last-child{border-bottom:none}
+.arr{color:#7ea6ff;flex-shrink:0}
+#navToggle{display:none}
+@media(max-width:860px){#app{flex-direction:column}nav{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid #232c44}main{padding:18px}#navToggle{display:block;width:100%;padding:10px 12px;margin:6px 0 10px;border-radius:8px;border:1px solid #2c3752;background:#1d2740;color:#ffd166;font-size:14px;font-weight:600;cursor:pointer}nav.mobile-collapsed .grp,nav.mobile-collapsed .nav-item{display:none}nav.mobile-collapsed .nav-item[href="#pg-home"]{display:block}}
+@media(max-width:600px){table{font-size:12px}th,td{padding:6px 5px}main{padding:12px}h2.pt{font-size:21px}}
+@media print{nav{display:none}main{max-width:100%;padding:0}.page{page-break-after:always;border-bottom:none}}
+.idea{background:#131a2e;border-left:3px solid #7ea6ff;padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;margin:10px 0 14px}
+.idea b{color:#9db9ff}
+.hook{background:#1a1712;border-left:3px solid #ffd166;padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;margin:10px 0}
+.review details{background:#16203a;border-color:#2c3752}
+.review details ol{margin-top:6px}
+</style>
+</head>
+<body>
+<div id="app">
+<nav>
+  <h1>&#128300; Chemistry Hub</h1>
+  <div class="sub">Grade 6 &rarr; Grade 11 · One continuous path</div>
+  <button id="navToggle" type="button">&#9776; Browse all topics</button>
+  <a class="nav-item active" href="#pg-home">&#127968; Home :: Start Here</a>
+  <div class="grp">Grade 6 · First Look</div>
+  <a class="nav-item" href="#pg-g6-matter">&#128161; Matter, Changes &amp; Mixtures</a>
+  <a class="nav-item" href="#pg-g6-materials">&#129514; Materials, Measurement &amp; Safety</a>
+  <div class="grp">Grade 7 · Particle Level</div>
+  <a class="nav-item" href="#pg-g7-particles">&#9883; Particles, States &amp; Solutions</a>
+  <a class="nav-item" href="#pg-g7-symbols">&#128221; Symbols, Formulae &amp; Separation</a>
+  <a class="nav-item" href="#pg-g7-acids">&#127777; Acids, Bases, Air &amp; Water</a>
+  <div class="grp">Grade 8 · Atomic Level</div>
+  <a class="nav-item" href="#pg-g8-atom">&#9883; Atoms, Ions &amp; Bonding</a>
+  <a class="nav-item" href="#pg-g8-reactions">&#128221; Equations &amp; Reaction Types</a>
+  <a class="nav-item" href="#pg-g8-acids">&#9878; Acids, Bases &amp; Salts</a>
+  <a class="nav-item" href="#pg-g8-metals">&#128295; Metals, Carbon, Water &amp; Materials</a>
+  <div class="grp">Grade 9 · Foundation</div>
+  <a class="nav-item" href="#pg-g9-matter">&#127777; Matter &amp; States</a>
+  <a class="nav-item" href="#pg-g9-atom">&#9883; Atoms &amp; Elements</a>
+  <a class="nav-item" href="#pg-g9-chem">&#128221; Symbols, Formulas &amp; Reactions</a>
+  <a class="nav-item" href="#pg-g9-gases">&#127780; Gases &amp; Their Tests</a>
+  <div class="grp">Grade 10 · Building Blocks</div>
+  <a class="nav-item" href="#pg-g10-pt">&#128202; Periodic Table &amp; Trends</a>
+  <a class="nav-item" href="#pg-g10-bond">&#128279; Chemical Bonding</a>
+  <a class="nav-item" href="#pg-g10-acid">&#127777; Acids, Bases &amp; Salts</a>
+  <a class="nav-item" href="#pg-g10-metal">&#128269; Metals &amp; Reactivity</a>
+  <a class="nav-item" href="#pg-g10-organic">&#127807; Hydrocarbons &amp; Everyday Chemistry</a>
+  <div class="grp">Grade 11 · Advanced</div>
+  <a class="nav-item" href="#pg-g11-fund">&#128213; Mole &amp; Stoichiometry</a>
+  <a class="nav-item" href="#pg-g11-state">&#127780; States of Matter &amp; Gases</a>
+  <a class="nav-item" href="#pg-g11-atomic">&#128208; Atomic Structure &amp; Quantum</a>
+  <a class="nav-item" href="#pg-g11-bond2">&#127776; Bonding, Hybridisation &amp; VSEPR</a>
+  <a class="nav-item" href="#pg-g11-thermo">&#127777; Thermodynamics</a>
+  <a class="nav-item" href="#pg-g11-equil">&#9878; Chemical Equilibrium</a>
+  <a class="nav-item" href="#pg-g11-redox">&#9889; Redox &amp; Electrochemistry</a>
+  <a class="nav-item" href="#pg-g11-organic">&#127807; Organic Chemistry &amp; Hydrocarbons</a>
+  <a class="nav-item" href="#pg-g11-sblock">&#128202; s-Block &amp; p-Block Elements</a>
+  <a class="nav-item" href="#pg-g11-hydro">&#128167; Hydrogen &amp; Its Compounds</a>
+  <div class="grp">Review</div>
+  <a class="nav-item" href="#pg-practice">&#127919; Practice &amp; Problem Path</a>
+</nav>
+<main>
+
+<!-- ==================== HOME ==================== -->
+<div class="page" id="pg-home">
+<h2 class="pt">Chemistry — Grade 6 to Grade 11</h2>
+<p class="lead">A <b>chronological</b> learning path from the first observations to Grade 11. Every concept builds on the previous one. If Grade 11 feels hard, start at the page where the chain broke — usually in Grades 6–8.</p>
+<div class="idea"><b>Core idea:</b> Chemistry is one continuous story: matter → particles → atoms → bonds → reactions → energy. Every grade adds one layer.</div>
+<card>
+<h3>&#128202; How the path works</h3>
+<p style="font-size:13.5px">Chemistry is taught in a sequence. This hub mirrors that sequence — each page assumes you know the page before it. Use the sidebar top-to-bottom.</p>
+<div class="path">
+<div class="step"><span class="arr">&#9312;</span> Grade 6 · <b>Matter, changes, materials</b> — careful looking</div>
+<div class="step"><span class="arr">&#9313;</span> Grade 7 · <b>Particles, symbols, acids</b> — explaining what you see</div>
+<div class="step"><span class="arr">&#9314;</span> Grade 8 · <b>Atoms, ions, equations</b> — connecting the dots</div>
+<div class="step"><span class="arr">&#9315;</span> Grade 9 · <b>Matter, atoms, reactions, gases</b> — the formal grammar</div>
+<div class="step"><span class="arr">&#9316;</span> Grade 10 · <b>Periodic table, bonding, acids, metals, hydrocarbons</b> — the logic</div>
+<div class="step"><span class="arr">&#9317;</span> Grade 11 · <b>Mole, gases, quantum, thermodynamics, organic</b> — the full law</div>
+<div class="step"><span class="arr">&#9318;</span> <b>Practice</b> — a diagnostic that finds the broken link in the chain</div>
+</div>
+<div class="note"><b>Built-in review:</b> every grade ends with an “idea first” review — an analogy, a memory hook, and five self-check questions with hidden answers. Try them before moving to the next grade.</div>
+</card>
+<card>
+<h3>&#128279; The six big ideas that never change</h3>
+<p style="font-size:13.5px">Every grade adds detail, but the same six ideas keep returning. If you hold on to these, chemistry becomes one story instead of dozens of chapters.</p>
+<table>
+<tr><th>Big idea</th><th>First met</th><th>Grows into</th></tr>
+<tr><td><b>1. Matter is made of tiny particles.</b></td><td>Grade 6–7</td><td>Atoms, molecules, ions, gas laws</td></tr>
+<tr><td><b>2. Particles are always moving; temperature measures their average motion.</b></td><td>Grade 7</td><td>Kinetic theory, reaction rates, thermodynamics</td></tr>
+<tr><td><b>3. Atoms have a structure: nucleus + electrons.</b></td><td>Grade 8–9</td><td>Shells, orbitals, quantum numbers, periodicity</td></tr>
+<tr><td><b>4. Atoms combine in fixed ratios because of valence electrons.</b></td><td>Grade 7–8</td><td>Formulas, bonding, VSEPR, organic structures</td></tr>
+<tr><td><b>5. In a reaction, atoms are rearranged — never created or destroyed.</b></td><td>Grade 6–8</td><td>Balanced equations, stoichiometry, mole calculations</td></tr>
+<tr><td><b>6. Energy and equilibrium decide whether and how far a reaction goes.</b></td><td>Grade 6–8</td><td>Thermochemistry, entropy, equilibrium, electrochemistry</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128269; If Grade 11 feels hard, the gap is usually here</h3>
+<p style="font-size:13.5px">Grade 11 is not a separate subject. It is the same story with mathematics added. Find the symptom, then repair the foundation — not just the Grade 11 chapter.</p>
+<table>
+<tr><th>Symptom in Grade 11</th><th>Missing foundation</th><th>Go back to</th></tr>
+<tr><td>“I can’t balance equations.”</td><td>Formulas, subscripts, conservation of mass</td><td><a href="#pg-g7-symbols">Grade 7 symbols</a> · <a href="#pg-g8-reactions">Grade 8 equations</a></td></tr>
+<tr><td>“The mole makes no sense.”</td><td>Reading formulas and counting atoms</td><td><a href="#pg-g7-symbols">Grade 7 formulas</a> · <a href="#pg-g9-chem">Grade 9 mole intro</a></td></tr>
+<tr><td>“Bonding and VSEPR are random shapes.”</td><td>Ions, valency, valence electrons</td><td><a href="#pg-g8-atom">Grade 8 atoms</a> · <a href="#pg-g10-bond">Grade 10 bonding</a></td></tr>
+<tr><td>“Periodic trends are just memorisation.”</td><td>Electron shells and nuclear charge</td><td><a href="#pg-g9-atom">Grade 9 shells</a> · <a href="#pg-g10-pt">Grade 10 trends</a></td></tr>
+<tr><td>“Organic naming is a list of rules.”</td><td>Carbon’s four bonds and chain formation</td><td><a href="#pg-g8-metals">Grade 8 carbon</a></td></tr>
+<tr><td>“Thermodynamics and equilibrium are abstract.”</td><td>Energy changes and reversible reactions</td><td><a href="#pg-g6-matter">Grade 6 changes</a> · <a href="#pg-g8-reactions">Grade 8 energy</a></td></tr>
+</table>
+<div class="note"><b>Use the hub honestly:</b> If a Grade 6 question feels embarrassing to revisit, that is exactly where the chain broke. Repairing it is faster than memorising Grade 11 answers you cannot explain.</div>
+</card>
+<card>
+<h3>&#128161; The three great questions</h3>
+<table>
+<tr><th>Question</th><th>Answered by</th><th>Grades</th></tr>
+<tr><td><b>What is matter made of?</b></td><td>Particles → atoms → electrons → orbitals</td><td>6 → 11</td></tr>
+<tr><td><b>Why do substances react?</b></td><td>Valence electrons, bonding, periodic trends, equilibrium</td><td>7 → 11</td></tr>
+<tr><td><b>How much? / How fast? / How far?</b></td><td>Mole, stoichiometry, kinetics, thermodynamics, equilibrium</td><td>8 → 11</td></tr>
+</table>
+<div class="note"><b>Tip:</b> Always try the <b>"why"</b> behind every equation. Memorising without understanding is how chemistry gets hard. This hub is written to make the <i>why</i> obvious.</div>
+</card>
+<card>
+<h3>&#128218; Symbols you will meet</h3>
+<p style="font-size:13.5px">
+<span class="formula">H</span> hydrogen · <span class="formula">He</span> helium · <span class="formula">C</span> carbon · <span class="formula">N</span> nitrogen · <span class="formula">O</span> oxygen · <span class="formula">Na</span> sodium · <span class="formula">Mg</span> magnesium · <span class="formula">Al</span> aluminium · <span class="formula">Si</span> silicon · <span class="formula">P</span> phosphorus · <span class="formula">S</span> sulfur · <span class="formula">Cl</span> chlorine · <span class="formula">K</span> potassium · <span class="formula">Ca</span> calcium · <span class="formula">Fe</span> iron · <span class="formula">Cu</span> copper · <span class="formula">Zn</span> zinc · <span class="formula">Ag</span> silver · <span class="formula">Au</span> gold · <span class="formula">Hg</span> mercury
+</p>
+<p style="font-size:12.5px;color:#6f7f9a">(You will meet these repeatedly — don't memorise all at once, they appear naturally.)</p>
+</card>
+</div>
+
+
+<!-- ==================== G6 MATTER ==================== -->
+<div class="page" id="pg-g6-matter">
+<h2 class="pt">Matter, Changes &amp; Mixtures <span class="grade">Grade 6</span></h2>
+<p class="lead">Chemistry begins with careful looking. Before formulas, you learn what matter is, how it behaves, and how to tell one kind of change from another.</p>
+<div class="idea"><b>Core idea:</b> Matter is anything with mass and volume; a physical change keeps the substance, a chemical change makes a new one.</div>
+<card>
+<h3>&#128161; What is chemistry?</h3>
+<p style="font-size:13.5px"><b>Chemistry</b> is the science of <b>matter</b> — what things are made of, what properties they have, and how they change into new substances.</p>
+<table>
+<tr><th>Question chemistry asks</th><th>Everyday example</th></tr>
+<tr><td>What is it made of?</td><td>Water, salt, air, gold, milk</td></tr>
+<tr><td>What are its properties?</td><td>Iron is hard; ice melts; sugar dissolves</td></tr>
+<tr><td>How does it change?</td><td>Paper burns; milk sours; rice cooks</td></tr>
+<tr><td>How can we use it safely?</td><td>Soap, medicine, fertiliser, batteries</td></tr>
+</table>
+<div class="note"><b>You already do chemistry:</b> dissolving sugar in tea, baking a cake, cleaning with soap, and seeing iron rust are all chemistry. A laboratory simply lets us observe these changes more carefully.</div>
+</card>
+<card>
+<h3>&#128269; Matter and its properties</h3>
+<p style="font-size:13.5px"><b>Matter</b> is anything that has <b>mass</b> and occupies <b>space</b> (volume). A book, water, air, and your body are matter. Light, heat, and sound are forms of energy — they are not matter.</p>
+<table>
+<tr><th>Property</th><th>What it means</th><th>Example</th></tr>
+<tr><td><b>Mass</b></td><td>Amount of matter in an object</td><td>A stone has more mass than a leaf</td></tr>
+<tr><td><b>Volume</b></td><td>Space the object takes up</td><td>Water fills a bottle</td></tr>
+<tr><td><b>Shape</b></td><td>Outline of the object</td><td>A cube has a fixed shape</td></tr>
+<tr><td><b>Hardness</b></td><td>How easily it is scratched</td><td>Diamond is harder than chalk</td></tr>
+<tr><td><b>Solubility</b></td><td>Ability to dissolve in a liquid</td><td>Salt dissolves in water; sand does not</td></tr>
+<tr><td><b>Density</b></td><td>Mass per unit volume</td><td>Oil floats on water because it is less dense</td></tr>
+</table>
+<div class="note"><b>Property = something you can observe or measure.</b> Colour, smell, melting point, and conductivity are also properties. Scientists use properties to identify substances.</div>
+</card>
+<card>
+<h3>&#127777; The three common states of matter</h3>
+<table>
+<tr><th>State</th><th>Particles</th><th>Shape</th><th>Volume</th><th>Compressible?</th><th>Example</th></tr>
+<tr><td><b>Solid</b></td><td>Packed tightly; vibrate in place</td><td>Fixed</td><td>Fixed</td><td>No</td><td>Ice, iron, rock</td></tr>
+<tr><td><b>Liquid</b></td><td>Close together; slide past each other</td><td>Takes container's shape</td><td>Fixed</td><td>Very little</td><td>Water, oil, milk</td></tr>
+<tr><td><b>Gas</b></td><td>Far apart; move quickly in all directions</td><td>Fills the container</td><td>Not fixed</td><td>Yes</td><td>Air, oxygen, steam</td></tr>
+</table>
+<div class="note"><b>Key idea:</b> The <b>same substance</b> can exist in all three states. Ice, liquid water, and steam are all H₂O — only the energy and spacing of the particles are different.</div>
+</card>
+<card>
+<h3>&#128260; Physical and chemical changes</h3>
+<table>
+<tr><th>Type</th><th>What happens</th><th>New substance?</th><th>Examples</th></tr>
+<tr><td><b>Physical change</b></td><td>Size, shape, or state changes; the substance is still the same</td><td>No</td><td>Ice melting, paper tearing, salt dissolving</td></tr>
+<tr><td><b>Chemical change</b></td><td>Atoms rearrange and a new substance forms</td><td>Yes</td><td>Paper burning, iron rusting, milk souring, cooking an egg</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Signs of a chemical change:</b> gas bubbles, a new solid (precipitate), a colour change that makes a new substance, heat or light released, or a new smell.</p>
+<div class="warn"><b>Careful:</b> A colour change alone is not proof. Mixing blue and yellow paint makes green, but no new substance forms. Ask: <i>has a new substance been made?</i></div>
+<div class="note"><b>Law of conservation of mass:</b> In a chemical change, atoms are only rearranged — they are not created or destroyed. So the total mass before and after a reaction is the same (in a closed container).</div>
+</card>
+<card>
+<h3>&#129514; Pure substances, mixtures, and solutions</h3>
+<table>
+<tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><b>Pure substance</b></td><td>Only one kind of substance throughout</td><td>Pure water, pure gold, oxygen</td></tr>
+<tr><td><b>Mixture</b></td><td>Two or more substances physically mixed; each keeps its own properties</td><td>Air, salt water, muddy water, salad</td></tr>
+<tr><td><b>Homogeneous mixture</b></td><td>Components evenly mixed; you cannot see separate parts</td><td>Salt water, sugar water, air</td></tr>
+<tr><td><b>Heterogeneous mixture</b></td><td>Components not evenly mixed; parts can be seen</td><td>Sand and water, oil and water, salad</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px">In a <b>solution</b>, the substance that dissolves is the <b>solute</b>, and the liquid that does the dissolving is the <b>solvent</b>. In salt water, salt is the solute and water is the solvent.</p>
+<div class="note"><b>Remember:</b> A mixture can usually be separated by <b>physical</b> methods. A compound can only be broken into its elements by a <b>chemical</b> change.</div>
+</card>
+<card>
+<h3>&#9878; Separating mixtures — the first laboratory skill</h3>
+<p style="font-size:13.5px">Choose a method based on a <b>difference in properties</b> — particle size, solubility, boiling point, magnetism, or density.</p>
+<table>
+<tr><th>Method</th><th>Difference used</th><th>Example</th></tr>
+<tr><td><b>Handpicking</b></td><td>Size, colour, shape</td><td>Stones from rice</td></tr>
+<tr><td><b>Sieving</b></td><td>Particle size</td><td>Flour from bran</td></tr>
+<tr><td><b>Filtration</b></td><td>Insoluble solid vs liquid</td><td>Sand from water</td></tr>
+<tr><td><b>Sedimentation + decantation</b></td><td>Heavy solid settles; pour off liquid</td><td>Mud from water</td></tr>
+<tr><td><b>Evaporation</b></td><td>Dissolved solid vs liquid</td><td>Salt from salt water</td></tr>
+<tr><td><b>Magnetism</b></td><td>Magnetic vs non-magnetic</td><td>Iron filings from sulfur</td></tr>
+<tr><td><b>Distillation</b></td><td>Different boiling points</td><td>Pure water from salt water</td></tr>
+<tr><td><b>Separating funnel</b></td><td>Immiscible liquids</td><td>Oil from water</td></tr>
+</table>
+<div class="note"><b>Sand + salt:</b> Add water and stir. Salt dissolves; sand does not. Filter to remove the sand, then evaporate the water to recover the salt. Two different properties, two different steps.</div>
+</card>
+<card>
+<h3>&#10145; Bridge to Grade 7</h3>
+<p style="font-size:13.5px"><b>Before moving on, can you:</b> define matter, name the three states, explain one physical and one chemical change, and design a way to separate sand from salt?</p>
+<p style="font-size:13.5px;margin-top:6px">In Grade 7 you will explain <i>why</i> these things happen by imagining the tiny particles inside matter. <a href="#pg-g7-particles">Next: particles, states &amp; solutions →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G6 MATERIALS ==================== -->
+<div class="page" id="pg-g6-materials">
+<h2 class="pt">Materials, Measurement &amp; Safety <span class="grade">Grade 6</span></h2>
+<p class="lead">Chemistry is also a practical subject. You need to recognise materials, measure them correctly, and handle them safely.</p>
+<div class="idea"><b>Core idea:</b> Properties decide how a material is used; measurement and safety make observations trustworthy.</div>
+<card>
+<h3>&#128295; Metals, nonmetals, and metalloids</h3>
+<table>
+<tr><th>Category</th><th>Properties</th><th>Examples</th></tr>
+<tr><td><b>Metals</b></td><td>Shiny, good conductors of heat and electricity, malleable (can be hammered into sheets), ductile (can be drawn into wires), usually solid</td><td>Iron, copper, aluminium, gold, sodium</td></tr>
+<tr><td><b>Nonmetals</b></td><td>Usually dull, poor conductors, brittle when solid; many are gases</td><td>Oxygen, carbon, sulfur, nitrogen, chlorine</td></tr>
+<tr><td><b>Metalloids</b></td><td>Properties between metals and nonmetals; useful in electronics</td><td>Silicon, boron, germanium</td></tr>
+</table>
+<div class="note"><b>Exception:</b> Mercury is a metal, but it is liquid at room temperature. Properties are general patterns, not rules that every element follows.</div>
+</card>
+<card>
+<h3>&#127968; Useful chemicals in daily life</h3>
+<table>
+<tr><th>Substance</th><th>Formula</th><th>Where you meet it</th></tr>
+<tr><td>Common salt</td><td class="formula">NaCl</td><td>Cooking and food preservation</td></tr>
+<tr><td>Baking soda</td><td class="formula">NaHCO₃</td><td>Baking, cleaning, antacid</td></tr>
+<tr><td>Washing soda</td><td class="formula">Na₂CO₃</td><td>Washing clothes, softening water</td></tr>
+<tr><td>Lemon juice</td><td>citric acid</td><td>Sour taste; cleaning</td></tr>
+<tr><td>Vinegar</td><td>acetic acid (CH₃COOH)</td><td>Cooking; removing mineral deposits</td></tr>
+<tr><td>LPG</td><td>propane/butane</td><td>Cooking fuel</td></tr>
+<tr><td>Urea</td><td class="formula">CO(NH₂)₂</td><td>Nitrogen fertiliser</td></tr>
+</table>
+<div class="warn"><b>“Chemical” does not mean “poison”.</b> Water and salt are chemicals too. Risk depends on the substance, the amount, and how it is used. Always follow the label.</div>
+</card>
+<card>
+<h3>&#128207; Measuring in chemistry</h3>
+<table>
+<tr><th>Quantity</th><th>Common unit</th><th>Instrument</th></tr>
+<tr><td>Mass</td><td>kilogram (kg), gram (g)</td><td>Balance</td></tr>
+<tr><td>Volume</td><td>litre (L), millilitre (mL)</td><td>Measuring cylinder, pipette, burette</td></tr>
+<tr><td>Length</td><td>metre (m), centimetre (cm)</td><td>Ruler</td></tr>
+<tr><td>Temperature</td><td>degree Celsius (°C)</td><td>Thermometer</td></tr>
+<tr><td>Time</td><td>second (s), minute (min)</td><td>Stopwatch</td></tr>
+</table>
+<div class="note"><b>Reading a measuring cylinder:</b> Place it on a flat surface and read the <b>bottom of the meniscus</b> at eye level. Looking from above or below gives the wrong volume.</div>
+</card>
+<card>
+<h3>&#9888; Laboratory safety rules</h3>
+<ul>
+<li>Wear <b>goggles</b> when heating or using chemicals; tie back long hair.</li>
+<li><b>Never taste</b> a chemical. Smell only by <b>wafting</b> vapour toward your nose.</li>
+<li>Do not point the mouth of a heated test tube at yourself or anyone else.</li>
+<li>Heat test tubes gently and keep moving them; never heat a closed container.</li>
+<li>When diluting a strong acid, <b>add acid to water</b>, slowly — never add water to concentrated acid.</li>
+<li>Report spills immediately; wash your hands after practical work.</li>
+<li>Use the smallest amount needed, and dispose of waste as instructed.</li>
+</ul>
+<div class="warn"><b>Acid in the eye:</b> rinse with plenty of clean water for at least 15 minutes and get adult/medical help. Do not rub the eye.</div>
+</card>
+<card>
+<h3>&#127760; Chemistry at home, in farms, and in the clinic</h3>
+<table>
+<tr><th>Area</th><th>Chemistry at work</th></tr>
+<tr><td>Cooking</td><td>Heating changes food; baking soda releases CO₂ and makes dough rise</td></tr>
+<tr><td>Cleaning</td><td>Soap dissolves grease; acids remove hard-water deposits</td></tr>
+<tr><td>Farming</td><td>Fertilisers supply N, P, K; lime neutralises acidic soil</td></tr>
+<tr><td>Medicine</td><td>Antacids neutralise stomach acid; antiseptics kill microbes</td></tr>
+<tr><td>Construction</td><td>Cement sets by chemical reaction; iron is strengthened in steel</td></tr>
+<tr><td>Environment</td><td>Burning fuels produces CO₂; fertiliser runoff can pollute water</td></tr>
+</table>
+</card>
+<card class="review">
+<h3>&#127919; Grade 6 review — idea first, then practice</h3>
+<p style="font-size:13.5px"><b>The big picture:</b> Chemistry begins with observation: classify matter, decide whether a change is physical or chemical, and separate mixtures using differences in properties.</p>
+<div class="note"><b>Analogy that sticks:</b> Think of a mixture as a bowl of different coloured beads. You can sort them by hand, size, or magnetism — the beads themselves never change. A compound is more like a single painted bead: you cannot separate the colours without breaking the bead.</div>
+<div class="hook"><b>Memory hook:</b> Physical change = same substance, new look. Chemical change = new substance, new properties.</div>
+<p style="font-size:13.5px;margin-top:12px"><b>Check yourself — answers are hidden:</b></p>
+<ol>
+<li>Is dissolving salt in water a physical or a chemical change? Explain.</li>
+<li>How would you separate a mixture of sand and salt?</li>
+<li>State one difference between a compound and a mixture.</li>
+<li>Why does oil float on water?</li>
+<li>Give two signs that a chemical change has happened.</li>
+</ol>
+<details><summary>Show answers</summary>
+<ol>
+<li>Physical. Salt is still salt and water is still water; evaporation can recover the salt.</li>
+<li>Add water and stir (salt dissolves), filter to remove the sand, then evaporate the filtrate to recover the salt.</li>
+<li>A compound has elements chemically combined in a fixed ratio and new properties; a mixture is physically mixed, has a variable ratio, and each substance keeps its properties.</li>
+<li>Oil is less dense than water.</li>
+<li>Any two: gas bubbles, a precipitate, a colour change that makes a new substance, heat or light released, a new smell.</li>
+</ol>
+</details>
+</card>
+
+<card>
+<h3>&#10145; Bridge to Grade 7</h3>
+<p style="font-size:13.5px">You can now name materials, measure them, and use them safely. In Grade 7 you will look inside matter and explain its behaviour with the <b>particle model</b>, then learn the <b>symbols and formulas</b> chemists use to write it down. <a href="#pg-g7-particles">Next: particles, states &amp; solutions →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G7 PARTICLES ==================== -->
+<div class="page" id="pg-g7-particles">
+<h2 class="pt">Particles, States &amp; Solutions <span class="grade">Grade 7</span></h2>
+<p class="lead">In Grade 7 you stop only describing matter and start explaining it: everything is made of tiny particles that are always moving.</p>
+<div class="idea"><b>Core idea:</b> Matter is made of moving particles — temperature is a measure of their average motion.</div>
+<card>
+<h3>&#9883; The particle model of matter</h3>
+<ul>
+<li>All matter is made of extremely small <b>particles</b> (atoms, molecules, or ions).</li>
+<li>The particles are always <b>moving</b>; higher temperature means faster average motion.</li>
+<li>There are <b>spaces</b> between particles. Gases have the largest spaces.</li>
+<li>Particles attract each other, but the attraction is strongest when they are close together.</li>
+</ul>
+<div class="note"><b>Evidence you can see:</b> A drop of ink spreads through water without stirring. Perfume reaches you across a room. A gas can be squeezed into a smaller volume. These make sense only if matter is made of moving particles with spaces between them.</div>
+</card>
+<card>
+<h3>&#127777; Explaining the states with particles</h3>
+<table>
+<tr><th>State</th><th>Particle arrangement and motion</th><th>Forces between particles</th><th>Result</th></tr>
+<tr><td><b>Solid</b></td><td>Closely packed in fixed positions; vibrate</td><td>Very strong</td><td>Fixed shape and volume; cannot be compressed easily</td></tr>
+<tr><td><b>Liquid</b></td><td>Close together but can slide past each other</td><td>Strong, but weaker than in a solid</td><td>Fixed volume; takes the shape of the container</td></tr>
+<tr><td><b>Gas</b></td><td>Far apart; move rapidly in all directions</td><td>Very weak</td><td>Fills the container; easily compressed</td></tr>
+</table>
+<div class="note"><b>Why gases compress:</b> Most of a gas is empty space between particles. Squeezing pushes the particles closer together. In a solid, the particles are already touching, so it barely compresses.</div>
+</card>
+<card>
+<h3>&#128260; Changes of state and energy</h3>
+<table>
+<tr><th>Change</th><th>Direction</th><th>Heat</th><th>Example</th></tr>
+<tr><td><b>Melting</b></td><td>Solid → liquid</td><td>Absorbed</td><td>Ice → water</td></tr>
+<tr><td><b>Freezing</b></td><td>Liquid → solid</td><td>Released</td><td>Water → ice</td></tr>
+<tr><td><b>Evaporation</b></td><td>Liquid → gas (at the surface, below boiling point)</td><td>Absorbed</td><td>Wet clothes drying</td></tr>
+<tr><td><b>Boiling</b></td><td>Liquid → gas (throughout the liquid)</td><td>Absorbed</td><td>Water boiling at 100 °C</td></tr>
+<tr><td><b>Condensation</b></td><td>Gas → liquid</td><td>Released</td><td>Water droplets on a cold glass</td></tr>
+<tr><td><b>Sublimation</b></td><td>Solid → gas directly</td><td>Absorbed</td><td>Dry ice, camphor, iodine</td></tr>
+<tr><td><b>Deposition</b></td><td>Gas → solid directly</td><td>Released</td><td>Frost forming</td></tr>
+</table>
+<div class="note"><b>Why sweating cools you:</b> Evaporation absorbs heat from your skin. The fastest particles escape, leaving slower (cooler) particles behind. Moving air speeds evaporation, so you feel cooler on a windy day.</div>
+</card>
+<card>
+<h3>&#128168; Diffusion — particles spreading out</h3>
+<p style="font-size:13.5px"><b>Diffusion</b> is the spreading of particles from a region of higher concentration to a region of lower concentration because of their random motion.</p>
+<table>
+<tr><th>Example</th><th>What diffuses</th></tr>
+<tr><td>Smell of perfume crossing a room</td><td>Perfume vapour through air</td></tr>
+<tr><td>Ink colouring a whole glass of water</td><td>Ink particles through water</td></tr>
+<tr><td>Tea colour spreading in hot water</td><td>Tea particles through water</td></tr>
+</table>
+<div class="note"><b>Temperature effect:</b> Diffusion is faster in hot water than cold water because particles move faster and collide more often.</div>
+</card>
+<card>
+<h3>&#129514; Solutions and concentration</h3>
+<table>
+<tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><b>Solute</b></td><td>The substance that dissolves</td><td>Salt</td></tr>
+<tr><td><b>Solvent</b></td><td>The substance that does the dissolving</td><td>Water</td></tr>
+<tr><td><b>Solution</b></td><td>A homogeneous mixture of solute and solvent</td><td>Salt water</td></tr>
+<tr><td><b>Dilute</b></td><td>Little solute in a given amount of solution</td><td>A weak sugar solution</td></tr>
+<tr><td><b>Concentrated</b></td><td>A lot of solute in a given amount of solution</td><td>Strong sugar syrup</td></tr>
+<tr><td><b>Saturated</b></td><td>No more solute can dissolve at that temperature</td><td>Salt water with undissolved salt at the bottom</td></tr>
+<tr><td><b>Unsaturated</b></td><td>More solute could still dissolve</td><td>Most drinking water with a little sugar</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Factors affecting dissolving:</b> higher temperature, stirring, and smaller particle size make dissolving faster. Solubility itself usually increases with temperature for solids in water.</p>
+<div class="note"><b>Concentration in words:</b> 5 g of salt in 100 mL of water is more concentrated than 1 g in 100 mL. The amount of solute compared with the amount of solution is what matters.</div>
+</card>
+<card>
+<h3>&#10145; Bridge to Grade 8</h3>
+<p style="font-size:13.5px">You can now explain states, dissolving, and diffusion with particles. Next you will give those particles names and symbols, learn the formulas of compounds, and separate mixtures using differences in boiling point and solubility. <a href="#pg-g7-symbols">Next: symbols, formulae &amp; separation →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G7 SYMBOLS ==================== -->
+<div class="page" id="pg-g7-symbols">
+<h2 class="pt">Elements, Symbols, Formulae &amp; Separation <span class="grade">Grade 7</span></h2>
+<p class="lead">Chemists need a short, exact language. Symbols name elements; formulas name compounds; separation methods let us obtain pure substances.</p>
+<div class="idea"><b>Core idea:</b> A chemical formula is a ratio, not a recipe: subscripts count atoms, coefficients count whole particles.</div>
+<card>
+<h3>&#128300; Elements, compounds, and mixtures</h3>
+<table>
+<tr><th>Type</th><th>Definition</th><th>Example</th></tr>
+<tr><td><b>Element</b></td><td>A pure substance made of only one kind of atom</td><td>Oxygen (O), iron (Fe), gold (Au)</td></tr>
+<tr><td><b>Compound</b></td><td>A pure substance made of two or more elements chemically combined in a fixed ratio</td><td>Water (H₂O), salt (NaCl), carbon dioxide (CO₂)</td></tr>
+<tr><td><b>Mixture</b></td><td>Two or more substances physically mixed; ratio can vary</td><td>Air, salt water, soil</td></tr>
+</table>
+<div class="note"><b>Atom vs molecule:</b> An <b>atom</b> is the smallest particle of an element that can take part in a chemical reaction. A <b>molecule</b> is a group of atoms bonded together. O₂ is a molecule made of two oxygen atoms; H₂O is a molecule made of two hydrogen atoms and one oxygen atom.</div>
+</card>
+<card>
+<h3>&#128221; Chemical symbols — the alphabet of chemistry</h3>
+<p style="font-size:13.5px">Each element has a one- or two-letter symbol. The first letter is capital; the second is small. Many symbols come from old Latin names.</p>
+<table>
+<tr><th>Element</th><th>Symbol</th><th>Element</th><th>Symbol</th></tr>
+<tr><td>Hydrogen</td><td class="formula">H</td><td>Sodium (natrium)</td><td class="formula">Na</td></tr>
+<tr><td>Helium</td><td class="formula">He</td><td>Potassium (kalium)</td><td class="formula">K</td></tr>
+<tr><td>Carbon</td><td class="formula">C</td><td>Iron (ferrum)</td><td class="formula">Fe</td></tr>
+<tr><td>Nitrogen</td><td class="formula">N</td><td>Copper (cuprum)</td><td class="formula">Cu</td></tr>
+<tr><td>Oxygen</td><td class="formula">O</td><td>Silver (argentum)</td><td class="formula">Ag</td></tr>
+<tr><td>Fluorine</td><td class="formula">F</td><td>Gold (aurum)</td><td class="formula">Au</td></tr>
+<tr><td>Magnesium</td><td class="formula">Mg</td><td>Lead (plumbum)</td><td class="formula">Pb</td></tr>
+<tr><td>Aluminium</td><td class="formula">Al</td><td>Mercury (hydrargyrum)</td><td class="formula">Hg</td></tr>
+<tr><td>Silicon</td><td class="formula">Si</td><td>Chlorine</td><td class="formula">Cl</td></tr>
+<tr><td>Sulfur</td><td class="formula">S</td><td>Calcium</td><td class="formula">Ca</td></tr>
+</table>
+<div class="note"><b>Why Na, not S?</b> Sodium's Latin name is <i>natrium</i>. Learning these old names explains symbols that otherwise look mysterious.</div>
+</card>
+<card>
+<h3>&#128279; Reading and writing formulae</h3>
+<table>
+<tr><th>Formula</th><th>Name</th><th>Atoms in one molecule</th></tr>
+<tr><td class="formula">H₂O</td><td>Water</td><td>2 H + 1 O</td></tr>
+<tr><td class="formula">CO₂</td><td>Carbon dioxide</td><td>1 C + 2 O</td></tr>
+<tr><td class="formula">NaCl</td><td>Sodium chloride</td><td>1 Na + 1 Cl</td></tr>
+<tr><td class="formula">CaCO₃</td><td>Calcium carbonate</td><td>1 Ca + 1 C + 3 O</td></tr>
+<tr><td class="formula">C₆H₁₂O₆</td><td>Glucose</td><td>6 C + 12 H + 6 O</td></tr>
+</table>
+<div class="note"><b>Subscript vs coefficient:</b> In <span class="formula">H₂O</span>, the small 2 is a <b>subscript</b> and belongs only to hydrogen. In <span class="formula">2H₂O</span>, the large 2 is a <b>coefficient</b>: it means two whole water molecules = 4 H and 2 O.</div>
+</card>
+<card>
+<h3>&#9878; Valency and the criss-cross rule</h3>
+<p style="font-size:13.5px"><b>Valency</b> is the combining capacity of an atom or ion — how many bonds it can form or how many electrons it gains, loses, or shares.</p>
+<table>
+<tr><th>Element / ion</th><th>Valency</th><th>Element / ion</th><th>Valency</th></tr>
+<tr><td>H⁺, Na⁺, K⁺, Ag⁺</td><td>1</td><td>Mg²⁺, Ca²⁺, Zn²⁺, Cu²⁺</td><td>2</td></tr>
+<tr><td>Al³⁺</td><td>3</td><td>O²⁻, S²⁻</td><td>2</td></tr>
+<tr><td>Cl⁻, OH⁻, NO₃⁻</td><td>1</td><td>CO₃²⁻, SO₄²⁻</td><td>2</td></tr>
+<tr><td>PO₄³⁻</td><td>3</td><td>NH₄⁺</td><td>1</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Criss-cross:</b> swap the numerical valencies, then simplify. Example: Al³⁺ and O²⁻ → Al₂O₃. Mg²⁺ and Cl⁻ → MgCl₂. Ca²⁺ and OH⁻ → Ca(OH)₂.</p>
+<div class="warn"><b>Use brackets</b> when a polyatomic ion is needed more than once: Ca(OH)₂ means one Ca and two OH groups, not one O and two H.</div>
+</card>
+<card>
+<h3>&#9878; Separating mixtures — choosing the right tool</h3>
+<table>
+<tr><th>Method</th><th>Property used</th><th>Best for</th></tr>
+<tr><td><b>Filtration</b></td><td>Insoluble solid vs liquid</td><td>Sand from water; precipitate from solution</td></tr>
+<tr><td><b>Evaporation</b></td><td>Liquid evaporates, solid remains</td><td>Salt from salt water</td></tr>
+<tr><td><b>Crystallisation</b></td><td>Solubility changes with temperature</td><td>Pure crystals of copper sulfate or sugar</td></tr>
+<tr><td><b>Simple distillation</b></td><td>Different boiling points</td><td>Pure water from salt water</td></tr>
+<tr><td><b>Fractional distillation</b></td><td>Close boiling points</td><td>Petrol, kerosene, diesel from crude oil</td></tr>
+<tr><td><b>Chromatography</b></td><td>Different speeds of movement through paper</td><td>Ink pigments, food dyes</td></tr>
+<tr><td><b>Separating funnel</b></td><td>Immiscible liquids</td><td>Oil and water</td></tr>
+<tr><td><b>Sublimation</b></td><td>One solid sublimes, the other does not</td><td>Camphor from sand</td></tr>
+</table>
+<div class="note"><b>Distillation in one line:</b> Boil the mixture, condense the vapour, and collect the liquid. The substance with the lower boiling point comes over first.</div>
+</card>
+<card>
+<h3>&#10145; Bridge to Grade 8</h3>
+<p style="font-size:13.5px">You can now name elements, read formulas, and separate mixtures. In Grade 8 you will go inside the atom to see <b>why</b> atoms combine, why formulas have the ratios they do, and how to write balanced equations. <a href="#pg-g8-atom">Next: atoms, ions &amp; bonding →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G7 ACIDS ==================== -->
+<div class="page" id="pg-g7-acids">
+<h2 class="pt">Acids, Bases, Air &amp; Water <span class="grade">Grade 7</span></h2>
+<p class="lead">Some of the most familiar chemicals are acids and bases. The air and water around you are mixtures and solutions that keep life and industry running.</p>
+<div class="idea"><b>Core idea:</b> Acids and bases are opposites that neutralise each other; pH measures which side wins.</div>
+<card>
+<h3>&#127777; Acids and bases</h3>
+<table>
+<tr><th>Property</th><th>Acid</th><th>Base</th></tr>
+<tr><td>Taste</td><td>Sour (lemon, vinegar)</td><td>Bitter (soap, baking soda)</td></tr>
+<tr><td>Feel</td><td>Not slippery</td><td>Slippery (soap)</td></tr>
+<tr><td>Litmus paper</td><td>Turns blue litmus <b>red</b></td><td>Turns red litmus <b>blue</b></td></tr>
+<tr><td>pH</td><td>Below 7</td><td>Above 7</td></tr>
+<tr><td>Example</td><td>HCl, citric acid, acetic acid</td><td>NaOH, ammonia, Ca(OH)₂</td></tr>
+</table>
+<div class="note"><b>Indicator:</b> A substance that changes colour to show whether a solution is acidic or basic. Litmus is the classic indicator. Red cabbage juice and turmeric can also act as natural indicators.</div>
+</card>
+<card>
+<h3>&#9878; The pH scale and neutralisation</h3>
+<p style="font-size:13.5px">The <b>pH scale</b> runs from 0 to 14. pH 7 is neutral. Lower pH = more acidic; higher pH = more basic (alkaline).</p>
+<table>
+<tr><th>pH</th><th>Solution</th><th>Example</th></tr>
+<tr><td>1–3</td><td>Strongly acidic</td><td>Stomach acid, lemon juice, vinegar</td></tr>
+<tr><td>4–6</td><td>Weakly acidic</td><td>Milk, rain water, tea</td></tr>
+<tr><td>7</td><td>Neutral</td><td>Pure water</td></tr>
+<tr><td>8–10</td><td>Weakly basic</td><td>Baking soda, soap</td></tr>
+<tr><td>11–14</td><td>Strongly basic</td><td>Ammonia, bleach, drain cleaner</td></tr>
+</table>
+<div class="note"><b>Neutralisation:</b> Acid + base → salt + water. Example: HCl + NaOH → NaCl + H₂O. This is why an antacid (a base) relieves excess stomach acid, and why lime is added to acidic soil.</div>
+</card>
+<card>
+<h3>&#127760; Air is a mixture</h3>
+<table>
+<tr><th>Gas</th><th>Approximate amount in dry air</th><th>Role</th></tr>
+<tr><td>Nitrogen (N₂)</td><td>78%</td><td>Main component; relatively unreactive</td></tr>
+<tr><td>Oxygen (O₂)</td><td>21%</td><td>Needed for respiration and combustion</td></tr>
+<tr><td>Argon (Ar)</td><td>0.9%</td><td>Noble gas; unreactive</td></tr>
+<tr><td>Carbon dioxide (CO₂)</td><td>about 0.04%</td><td>Photosynthesis; greenhouse gas</td></tr>
+<tr><td>Others</td><td>small amounts</td><td>Neon, helium, methane, water vapour</td></tr>
+</table>
+<div class="note"><b>Tests:</b> A glowing splint relights in oxygen. Limewater turns milky with carbon dioxide. These are simple chemical tests, not just observations.</div>
+</card>
+<card>
+<h3>&#128167; Water — the universal solvent</h3>
+<table>
+<tr><th>Idea</th><th>Explanation</th></tr>
+<tr><td><b>Water as a solvent</b></td><td>Many salts, sugars, and gases dissolve in water, so water carries nutrients in plants, animals, and soil.</td></tr>
+<tr><td><b>Water cycle</b></td><td>Evaporation → condensation → precipitation → collection. The Sun supplies the energy.</td></tr>
+<tr><td><b>Hard water</b></td><td>Contains dissolved Ca²⁺ and Mg²⁺ ions. It forms scum with soap and leaves scale in kettles.</td></tr>
+<tr><td><b>Soft water</b></td><td>Contains few Ca²⁺/Mg²⁺ ions; lathers easily with soap.</td></tr>
+<tr><td><b>Purification</b></td><td>Boiling kills microbes; filtration removes suspended solids; chlorination disinfects; distillation removes dissolved salts.</td></tr>
+</table>
+<div class="note"><b>Why water is extraordinary:</b> Its molecules are polar and form hydrogen bonds. This gives water a high boiling point, a high specific heat capacity, and the ability to dissolve many substances.</div>
+</card>
+<card>
+<h3>&#9851; Keeping air and water clean</h3>
+<table>
+<tr><th>Pollutant</th><th>Where it comes from</th><th>Effect</th></tr>
+<tr><td>Carbon monoxide (CO)</td><td>Incomplete burning of fuels</td><td>Binds to haemoglobin; very toxic</td></tr>
+<tr><td>Sulfur dioxide (SO₂)</td><td>Burning coal and oil</td><td>Acid rain; breathing problems</td></tr>
+<tr><td>Nitrogen oxides (NOₓ)</td><td>Vehicle engines, lightning</td><td>Acid rain; smog</td></tr>
+<tr><td>Plastic waste</td><td>Packaging, bottles</td><td>Persists for centuries; harms wildlife</td></tr>
+<tr><td>Fertiliser runoff</td><td>Farms</td><td>Too many nutrients → algal blooms → fish die</td></tr>
+</table>
+<div class="note"><b>Simple actions:</b> reduce, reuse, recycle; use public transport; do not dump waste into rivers; plant trees; save water.</div>
+</card>
+<card class="review">
+<h3>&#127919; Grade 7 review — idea first, then practice</h3>
+<p style="font-size:13.5px"><b>The big picture:</b> The particle model explains states, diffusion, dissolving, and separation; symbols and formulas describe what the particles are.</p>
+<div class="note"><b>Analogy that sticks:</b> Picture a classroom. In a solid, students sit in fixed seats and only vibrate. In a liquid, they can walk around but stay in the room. In a gas, they run through the whole building.</div>
+<div class="hook"><b>Memory hook:</b> Heat them up → faster particles → more space → gas. Cool them down → slower particles → less space → solid.</div>
+<p style="font-size:13.5px;margin-top:12px"><b>Check yourself — answers are hidden:</b></p>
+<ol>
+<li>Why does the smell of perfume spread across a room?</li>
+<li>Why can a gas be compressed easily while a solid cannot?</li>
+<li>What does the formula CaCO₃ tell you?</li>
+<li>Which method gives pure water from seawater: filtration or distillation? Why?</li>
+<li>Why can a saturated solution at 20 °C dissolve more solute at 40 °C?</li>
+</ol>
+<details><summary>Show answers</summary>
+<ol>
+<li>Diffusion: perfume particles move randomly and spread from high to low concentration.</li>
+<li>Gas particles are far apart with large empty spaces; solid particles are already closely packed.</li>
+<li>One calcium, one carbon, and three oxygen atoms per formula unit.</li>
+<li>Distillation. Filtration removes suspended solids but dissolved salts pass through; distillation leaves the salts behind.</li>
+<li>Solubility of most solids increases with temperature, so the hotter water can hold more solute.</li>
+</ol>
+</details>
+</card>
+
+<card>
+<h3>&#10145; Bridge to Grade 8</h3>
+<p style="font-size:13.5px">You now know acids, bases, air, and water at the everyday level. Grade 8 explains them with <b>ions</b> — charged atoms — and gives you the tools to write balanced chemical equations and name salts correctly. <a href="#pg-g8-acids">Next: acids, bases &amp; salts →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G8 ATOM ==================== -->
+<div class="page" id="pg-g8-atom">
+<h2 class="pt">Atoms, Ions &amp; Bonding <span class="grade">Grade 8</span></h2>
+<p class="lead">Grade 8 opens the atom. Once you know how electrons are arranged, you can explain ions, valency, formulas, and why substances have the properties they do.</p>
+<div class="idea"><b>Core idea:</b> Atoms are neutral when protons equal electrons; losing or gaining electrons turns them into ions.</div>
+<card>
+<h3>&#9883; Inside the atom</h3>
+<table>
+<tr><th>Particle</th><th>Location</th><th>Charge</th><th>Relative mass</th></tr>
+<tr><td><b>Proton</b></td><td>Nucleus</td><td>+1</td><td>1</td></tr>
+<tr><td><b>Neutron</b></td><td>Nucleus</td><td>0</td><td>1</td></tr>
+<tr><td><b>Electron</b></td><td>Shells around the nucleus</td><td>−1</td><td>about 1/1836 (negligible)</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px">The nucleus is tiny but contains almost all the mass. In a neutral atom, <b>number of protons = number of electrons</b>.</p>
+<div class="note"><b>Models in one line:</b> Dalton imagined solid spheres → Thomson proposed electrons embedded in positive material → Rutherford discovered the nucleus → Bohr placed electrons in fixed shells. Each model improved on the last.</div>
+</card>
+<card>
+<h3>&#128208; Atomic number, mass number, isotopes, and ions</h3>
+<table>
+<tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><b>Atomic number (Z)</b></td><td>Number of protons; identifies the element</td><td>Carbon: Z = 6</td></tr>
+<tr><td><b>Mass number (A)</b></td><td>Protons + neutrons</td><td>Carbon-12: A = 12 (6p + 6n)</td></tr>
+<tr><td><b>Isotopes</b></td><td>Same element, different numbers of neutrons</td><td>¹²C, ¹³C, ¹⁴C</td></tr>
+<tr><td><b>Ion</b></td><td>Atom that has gained or lost electrons</td><td>Na⁺ (lost 1e⁻), Cl⁻ (gained 1e⁻)</td></tr>
+<tr><td><b>Cation</b></td><td>Positive ion (lost electrons)</td><td>Na⁺, Mg²⁺, Al³⁺</td></tr>
+<tr><td><b>Anion</b></td><td>Negative ion (gained electrons)</td><td>Cl⁻, O²⁻, OH⁻</td></tr>
+</table>
+<div class="note"><b>Ion charge:</b> For a neutral atom, protons = electrons. Lose 1 electron → +1 charge. Gain 2 electrons → −2 charge. The nucleus does not change in ordinary chemical reactions.</div>
+</card>
+<card>
+<h3>&#128202; Electron shells and Bohr diagrams</h3>
+<p style="font-size:13.5px">Electrons occupy shells from the inside out. For the first 20 elements, the pattern is <b>2, 8, 8</b> (the first shell holds 2, the next two hold 8 each).</p>
+<table>
+<tr><th>Element</th><th>Z</th><th>Shell arrangement</th><th>Valence electrons</th></tr>
+<tr><td>Hydrogen</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Helium</td><td>2</td><td>2</td><td>2 (full first shell)</td></tr>
+<tr><td>Carbon</td><td>6</td><td>2, 4</td><td>4</td></tr>
+<tr><td>Oxygen</td><td>8</td><td>2, 6</td><td>6</td></tr>
+<tr><td>Sodium</td><td>11</td><td>2, 8, 1</td><td>1</td></tr>
+<tr><td>Magnesium</td><td>12</td><td>2, 8, 2</td><td>2</td></tr>
+<tr><td>Chlorine</td><td>17</td><td>2, 8, 7</td><td>7</td></tr>
+<tr><td>Calcium</td><td>20</td><td>2, 8, 8, 2</td><td>2</td></tr>
+</table>
+<div class="note"><b>Why shells matter:</b> The outer-shell electrons (valence electrons) are the ones involved in bonding. Atoms react to reach a stable outer shell — usually 8 electrons (the <b>octet rule</b>), or 2 for hydrogen and helium.</div>
+</card>
+<card>
+<h3>&#128279; Ions, valency, and formulas</h3>
+<table>
+<tr><th>Atom</th><th>Shells</th><th>Change to reach a full outer shell</th><th>Ion formed</th></tr>
+<tr><td>Na (2,8,1)</td><td>1 valence e⁻</td><td>Lose 1</td><td>Na⁺ (2,8)</td></tr>
+<tr><td>Mg (2,8,2)</td><td>2 valence e⁻</td><td>Lose 2</td><td>Mg²⁺ (2,8)</td></tr>
+<tr><td>Al (2,8,3)</td><td>3 valence e⁻</td><td>Lose 3</td><td>Al³⁺ (2,8)</td></tr>
+<tr><td>Cl (2,8,7)</td><td>7 valence e⁻</td><td>Gain 1</td><td>Cl⁻ (2,8,8)</td></tr>
+<tr><td>O (2,6)</td><td>6 valence e⁻</td><td>Gain 2</td><td>O²⁻ (2,8)</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Criss-cross:</b> Al³⁺ + O²⁻ → Al₂O₃; Ca²⁺ + Cl⁻ → CaCl₂; Mg²⁺ + OH⁻ → Mg(OH)₂. Always simplify the ratio (Ca²⁺ + O²⁻ → CaO, not Ca₂O₂).</p>
+<div class="note"><b>Valency is the “combining power”.</b> Na = 1, Mg = 2, Al = 3, O = 2, Cl = 1. The formula is the simplest whole-number ratio that makes the total positive and negative charge balance to zero.</div>
+</card>
+<card>
+<h3>&#128279; Ionic, covalent, and metallic bonding</h3>
+<table>
+<tr><th>Bond type</th><th>Between</th><th>How electrons behave</th><th>Properties</th><th>Example</th></tr>
+<tr><td><b>Ionic</b></td><td>Metal + nonmetal</td><td>Metal loses electrons; nonmetal gains them; ions attract</td><td>High melting point, hard, brittle, conducts when molten or dissolved</td><td>NaCl, MgO</td></tr>
+<tr><td><b>Covalent</b><br><span style="font-size:12px">(simple molecular)</span></td><td>Nonmetal + nonmetal</td><td>Atoms share pairs of electrons</td><td>Usually lower melting points, often gases/liquids, poor conductors</td><td>H₂O, CO₂, CH₄</td></tr>
+<tr><td><b>Metallic</b></td><td>Metal atoms</td><td>Valence electrons form a “sea” around positive ions</td><td>Conducts, malleable, ductile, shiny</td><td>Fe, Cu, Al</td></tr>
+</table>
+<div class="note"><b>Why salt conducts only when dissolved or molten:</b> In solid NaCl, ions are locked in a lattice and cannot move. When melted or dissolved, the ions become free to carry charge. Covalent molecular substances have no free ions, so they usually do not conduct.<br><br><b>Exception — network covalent solids:</b> Diamond and SiO₂ form giant 3D covalent networks, so they are extremely hard and have very high melting points. “Covalent” does not always mean soft.</div>
+</card>
+<card>
+<h3>&#10145; Bridge to Grade 9</h3>
+<p style="font-size:13.5px">You now know what is inside an atom and why atoms combine. In Grade 9 you will formalise this with atomic number, electron shells, the periodic table, and the first quantitative idea — the <b>mole</b>. <a href="#pg-g8-reactions">Next: equations &amp; reaction types →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G8 REACTIONS ==================== -->
+<div class="page" id="pg-g8-reactions">
+<h2 class="pt">Equations &amp; Reaction Types <span class="grade">Grade 8</span></h2>
+<p class="lead">A chemical equation is a sentence written in symbols. It must obey one great law: atoms are conserved.</p>
+<div class="idea"><b>Core idea:</b> Atoms are never created or destroyed in a reaction — only rearranged, so equations must balance.</div>
+<card>
+<h3>&#128221; From words to symbols</h3>
+<table>
+<tr><th>Word equation</th><th>Symbol equation</th></tr>
+<tr><td>Magnesium + oxygen → magnesium oxide</td><td class="formula">2Mg + O₂ → 2MgO</td></tr>
+<tr><td>Hydrogen + oxygen → water</td><td class="formula">2H₂ + O₂ → 2H₂O</td></tr>
+<tr><td>Zinc + hydrochloric acid → zinc chloride + hydrogen</td><td class="formula">Zn + 2HCl → ZnCl₂ + H₂</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>State symbols:</b> (s) solid, (l) liquid, (g) gas, (aq) dissolved in water. Example: <span class="formula">2H₂(g) + O₂(g) → 2H₂O(l)</span>.</p>
+<div class="note"><b>Reactants</b> are written on the left of the arrow; <b>products</b> on the right. The arrow means “changes into” or “reacts to form”.</div>
+</card>
+<card>
+<h3>&#9878; Balancing equations</h3>
+<p style="font-size:13.5px"><b>Law of conservation of mass:</b> atoms are not created or destroyed in a chemical reaction. So the number of each type of atom must be the same on both sides.</p>
+<table>
+<tr><th>Step</th><th>What to do</th><th>Example: Mg + O₂ → MgO</th></tr>
+<tr><td>1</td><td>Write the unbalanced equation</td><td class="formula">Mg + O₂ → MgO</td></tr>
+<tr><td>2</td><td>Count atoms on each side</td><td>Left: 1 Mg, 2 O. Right: 1 Mg, 1 O</td></tr>
+<tr><td>3</td><td>Put coefficients in front of formulas</td><td class="formula">2Mg + O₂ → 2MgO</td></tr>
+<tr><td>4</td><td>Recount and check every element</td><td>Left: 2 Mg, 2 O. Right: 2 Mg, 2 O ✓</td></tr>
+</table>
+<div class="warn"><b>Never change subscripts to balance.</b> H₂O is water; changing it to H₂O₂ gives hydrogen peroxide — a different substance. You may only change the <b>coefficients</b> in front.</div>
+</card>
+<card>
+<h3>&#128260; Types of chemical reactions</h3>
+<table>
+<tr><th>Type</th><th>Pattern</th><th>Example</th></tr>
+<tr><td><b>Combination</b></td><td>A + B → AB</td><td class="formula">2Mg + O₂ → 2MgO</td></tr>
+<tr><td><b>Decomposition</b></td><td>AB → A + B</td><td class="formula">CaCO₃ → CaO + CO₂</td></tr>
+<tr><td><b>Single displacement</b></td><td>A + BC → AC + B</td><td class="formula">Zn + CuSO₄ → ZnSO₄ + Cu</td></tr>
+<tr><td><b>Double displacement</b></td><td>AB + CD → AD + CB</td><td class="formula">AgNO₃ + NaCl → AgCl↓ + NaNO₃</td></tr>
+<tr><td><b>Neutralisation</b></td><td>Acid + base → salt + water</td><td class="formula">HCl + NaOH → NaCl + H₂O</td></tr>
+<tr><td><b>Combustion</b></td><td>Fuel + O₂ → CO₂ + H₂O (+ heat)</td><td class="formula">CH₄ + 2O₂ → CO₂ + 2H₂O</td></tr>
+</table>
+<div class="note"><b>Precipitate:</b> An insoluble solid formed when two solutions mix. The ↓ arrow means it settles out of solution. AgCl is a white precipitate; BaSO₄ is another.</div>
+</card>
+<card>
+<h3>&#128293; Energy in reactions</h3>
+<table>
+<tr><th>Type</th><th>Energy change</th><th>Feels</th><th>Examples</th></tr>
+<tr><td><b>Exothermic</b></td><td>Releases heat to the surroundings</td><td>Warm</td><td>Burning fuel, neutralisation, respiration</td></tr>
+<tr><td><b>Endothermic</b></td><td>Absorbs heat from the surroundings</td><td>Cold</td><td>Melting ice, photosynthesis, dissolving ammonium nitrate</td></tr>
+</table>
+<div class="note"><b>Bond breaking and making:</b> Breaking bonds needs energy; making bonds releases energy. If more energy is released than absorbed, the reaction is exothermic. This idea returns in Grade 11 thermochemistry.</div>
+</card>
+<card>
+<h3>&#9203; Rate of reaction — a first look</h3>
+<table>
+<tr><th>Factor</th><th>Effect</th><th>Why</th></tr>
+<tr><td>Higher temperature</td><td>Faster</td><td>Particles move faster and collide more often with more energy</td></tr>
+<tr><td>Higher concentration</td><td>Faster</td><td>More particles in the same volume → more collisions</td></tr>
+<tr><td>Smaller particle size (larger surface area)</td><td>Faster</td><td>More surface is exposed to collisions</td></tr>
+<tr><td>Catalyst</td><td>Faster</td><td>Provides an easier pathway; it is not used up</td></tr>
+</table>
+<div class="note"><b>Everyday example:</b> Powdered sugar dissolves faster than a sugar cube; food cooks faster in a pressure cooker; a catalyst in a car's exhaust helps harmful gases react.</div>
+</card>
+<card>
+<h3>&#10145; Bridge to Grade 9</h3>
+<p style="font-size:13.5px">You can now write and balance equations and recognise reaction types. Grade 9 adds the periodic table, electron shells, and the mole, so you can predict reactions and calculate amounts. <a href="#pg-g8-acids">Next: acids, bases &amp; salts →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G8 ACIDS ==================== -->
+<div class="page" id="pg-g8-acids">
+<h2 class="pt">Acids, Bases &amp; Salts <span class="grade">Grade 8</span></h2>
+<p class="lead">Acids and bases are defined by the ions they produce in water. Their reaction — neutralisation — is one of the most useful reactions in daily life.</p>
+<div class="idea"><b>Core idea:</b> Acid + base → salt + water; the names of the acid and base tell you the salt.</div>
+<card>
+<h3>&#127777; Defining acids and bases</h3>
+<table>
+<tr><th>Substance</th><th>Arrhenius definition</th><th>Properties</th><th>Examples</th></tr>
+<tr><td><b>Acid</b></td><td>Produces H⁺ ions in water</td><td>Sour, turns blue litmus red, pH &lt; 7, reacts with metals to give H₂</td><td>HCl, H₂SO₄, HNO₃, CH₃COOH</td></tr>
+<tr><td><b>Base</b></td><td>Produces OH⁻ ions in water</td><td>Bitter, slippery, turns red litmus blue, pH &gt; 7</td><td>NaOH, KOH, Ca(OH)₂, NH₃</td></tr>
+<tr><td><b>Salt</b></td><td>Formed when an acid reacts with a base</td><td>Usually crystalline; pH depends on the salt</td><td>NaCl, Na₂SO₄, CaCO₃</td></tr>
+</table>
+<div class="note"><b>Strong vs weak:</b> A <b>strong</b> acid or base ionises almost completely in water (HCl, NaOH). A <b>weak</b> one ionises only partly (CH₃COOH, NH₃). “Strong” is not the same as “concentrated”.<br><br><b>Ammonia is a base without OH⁻:</b> NH₃ accepts H⁺ from water, leaving OH⁻ behind, so the solution is basic. This is the Brønsted–Lowry view you meet again in Grades 10–11.</div>
+</card>
+<card>
+<h3>&#128269; Indicators and pH</h3>
+<table>
+<tr><th>Indicator</th><th>In acid</th><th>In neutral</th><th>In base</th></tr>
+<tr><td>Blue litmus</td><td>Red</td><td>Blue (unchanged)</td><td>Blue</td></tr>
+<tr><td>Red litmus</td><td>Red (unchanged)</td><td>Red</td><td>Blue</td></tr>
+<tr><td>Phenolphthalein</td><td>Colourless</td><td>Colourless</td><td>Pink</td></tr>
+<tr><td>Methyl orange</td><td>Red</td><td>Orange</td><td>Yellow</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>pH = −log[H⁺]</b> in Grade 11, but for now use the scale: pH &lt; 7 acidic, pH = 7 neutral, pH &gt; 7 basic. Each whole pH step is a 10× change in H⁺ concentration.</p>
+<div class="note"><b>Universal indicator</b> gives a range of colours: red/orange (acid) → green (neutral) → blue/purple (base). pH paper is a practical version.</div>
+</card>
+<card>
+<h3>&#9878; Neutralisation and salt formation</h3>
+<table>
+<tr><th>Acid + base</th><th>Salt formed</th><th>Water</th></tr>
+<tr><td class="formula">HCl + NaOH →</td><td>NaCl (sodium chloride)</td><td>H₂O</td></tr>
+<tr><td class="formula">H₂SO₄ + 2NaOH →</td><td>Na₂SO₄ (sodium sulfate)</td><td>2H₂O</td></tr>
+<tr><td class="formula">HNO₃ + KOH →</td><td>KNO₃ (potassium nitrate)</td><td>H₂O</td></tr>
+<tr><td class="formula">2HCl + Ca(OH)₂ →</td><td>CaCl₂ (calcium chloride)</td><td>2H₂O</td></tr>
+</table>
+<div class="note"><b>General rule:</b> Acid + base → salt + water. The H⁺ from the acid and OH⁻ from the base combine to form water; the remaining ions form the salt.</div>
+</card>
+<card>
+<h3>&#128300; Common salts and their uses</h3>
+<table>
+<tr><th>Salt</th><th>Formula</th><th>Use</th></tr>
+<tr><td>Common salt</td><td class="formula">NaCl</td><td>Cooking, food preservation, raw material for chlorine and NaOH</td></tr>
+<tr><td>Baking soda</td><td class="formula">NaHCO₃</td><td>Baking, antacid, fire extinguisher</td></tr>
+<tr><td>Washing soda</td><td class="formula">Na₂CO₃·10H₂O</td><td>Washing, water softening, glass making</td></tr>
+<tr><td>Bleaching powder</td><td class="formula">CaOCl₂</td><td>Bleaching cloth, disinfecting water</td></tr>
+<tr><td>Plaster of Paris</td><td class="formula">CaSO₄·½H₂O</td><td>Casts and moulds; sets when mixed with water</td></tr>
+<tr><td>Blue vitriol</td><td class="formula">CuSO₄·5H₂O</td><td>Fungicide, electroplating, laboratory reagent</td></tr>
+</table>
+</card>
+<card>
+<h3>&#9888; Acid rain and safety</h3>
+<p style="font-size:13.5px">Burning fossil fuels releases SO₂ and NOₓ. These gases dissolve in rain water to form sulfuric acid and nitric acid, lowering the pH of rain below about 5.6.</p>
+<table>
+<tr><th>Effect of acid rain</th><th>Why it matters</th></tr>
+<tr><td>Lakes become acidic</td><td>Fish and aquatic life die</td></tr>
+<tr><td>Soil loses nutrients</td><td>Crops grow poorly</td></tr>
+<tr><td>Stone and metal corrode</td><td>Buildings and bridges damage faster</td></tr>
+</table>
+<div class="warn"><b>Safety:</b> Never taste acids or bases. If acid touches skin, rinse with plenty of water. When diluting concentrated acid, add the acid slowly to water — never water to acid.</div>
+</card>
+<card>
+<h3>&#10145; Bridge to Grade 9</h3>
+<p style="font-size:13.5px">You can now classify acids and bases, use indicators, and write neutralisation equations. Grade 9 places these ideas on the periodic table and introduces the mole, which lets you calculate exactly how much acid neutralises a base. <a href="#pg-g8-metals">Next: metals, carbon, water &amp; materials →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G8 METALS ==================== -->
+<div class="page" id="pg-g8-metals">
+<h2 class="pt">Metals, Carbon, Water &amp; Materials <span class="grade">Grade 8</span></h2>
+<p class="lead">This page connects the atom to the real world: why metals corrode, why carbon is the element of life, and how chemistry builds the materials around us.</p>
+<div class="idea"><b>Core idea:</b> Reactivity is a ranking: a more reactive metal displaces a less reactive one from its compound.</div>
+<card>
+<h3>&#128295; Metals and the reactivity series</h3>
+<table>
+<tr><th>Metal</th><th>Reactivity</th><th>Reaction with water</th><th>Reaction with dilute acid</th></tr>
+<tr><td>Potassium (K)</td><td>Most reactive</td><td>Violent with cold water</td><td>Violent</td></tr>
+<tr><td>Sodium (Na)</td><td>Very reactive</td><td>Vigorous with cold water</td><td>Vigorous</td></tr>
+<tr><td>Calcium (Ca)</td><td>Reactive</td><td>Reacts with cold water</td><td>Vigorous</td></tr>
+<tr><td>Magnesium (Mg)</td><td>Moderate</td><td>Reacts with hot water/steam</td><td>Fast</td></tr>
+<tr><td>Zinc (Zn)</td><td>Moderate</td><td>No reaction with cold water</td><td>Reacts</td></tr>
+<tr><td>Iron (Fe)</td><td>Low–moderate</td><td>Reacts with steam</td><td>Slow</td></tr>
+<tr><td>Copper (Cu)</td><td>Low</td><td>No reaction</td><td>No reaction with dilute acid</td></tr>
+<tr><td>Gold (Au)</td><td>Least reactive</td><td>No reaction</td><td>No reaction</td></tr>
+</table>
+<div class="note"><b>Displacement:</b> A more reactive metal pushes a less reactive metal out of its salt solution. Zn + CuSO₄ → ZnSO₄ + Cu. The blue colour of copper sulfate fades as copper is deposited.</div>
+</card>
+<card>
+<h3>&#128273; Corrosion and alloys</h3>
+<table>
+<tr><th>Process</th><th>What happens</th><th>Prevention</th></tr>
+<tr><td><b>Rusting</b> (iron)</td><td>Iron + oxygen + water → hydrated iron oxide</td><td>Paint, oil, galvanise with zinc, alloy into stainless steel</td></tr>
+<tr><td><b>Tarnishing</b> (silver)</td><td>Silver reacts with sulfur compounds → black Ag₂S</td><td>Keep dry and airtight; polish</td></tr>
+<tr><td><b>Green patina</b> (copper)</td><td>Copper reacts with air and moisture → green basic copper carbonate</td><td>Lacquer or keep dry</td></tr>
+</table>
+<table>
+<tr><th>Alloy</th><th>Made from</th><th>Use</th></tr>
+<tr><td>Steel</td><td>Iron + carbon</td><td>Construction, tools</td></tr>
+<tr><td>Stainless steel</td><td>Iron + chromium + nickel</td><td>Cutlery, kitchen equipment</td></tr>
+<tr><td>Brass</td><td>Copper + zinc</td><td>Fittings, instruments</td></tr>
+<tr><td>Bronze</td><td>Copper + tin</td><td>Statues, bearings</td></tr>
+</table>
+<div class="note"><b>Galvanising:</b> Coating iron with zinc. Zinc is more reactive, so it corrodes first and protects the iron — <b>sacrificial protection</b>.</div>
+</card>
+<card>
+<h3>&#9878; Extracting metals</h3>
+<table>
+<tr><th>Position in reactivity series</th><th>Method</th><th>Example</th></tr>
+<tr><td>Very reactive (K–Al)</td><td>Electrolysis of molten ore</td><td>Aluminium from bauxite; sodium from molten NaCl</td></tr>
+<tr><td>Moderately reactive (Zn–Fe)</td><td>Reduce the oxide with carbon or carbon monoxide</td><td>Iron from Fe₂O₃ in a blast furnace</td></tr>
+<tr><td>Unreactive (Cu, Ag, Au)</td><td>Often found native (uncombined)</td><td>Gold, silver, sometimes copper</td></tr>
+</table>
+<div class="note"><b>Blast furnace:</b> Iron oxide is reduced by carbon monoxide: Fe₂O₃ + 3CO → 2Fe + 3CO₂. The iron produced is impure and is later refined and alloyed.</div>
+</card>
+<card>
+<h3>&#128300; Carbon — the element of life</h3>
+<ul>
+<li>Carbon has <b>4 valence electrons</b>, so it forms 4 covalent bonds.</li>
+<li>It bonds strongly to itself, forming chains and rings — this is called <b>catenation</b>.</li>
+<li><b>Allotropes</b> are different forms of the same element: diamond (hard, 3D network), graphite (soft layers, conducts), fullerene (cage-like).</li>
+<li><b>Hydrocarbons</b> contain only carbon and hydrogen: methane (CH₄), ethane (C₂H₆), ethene (C₂H₄), ethyne (C₂H₂).</li>
+<li>Burning hydrocarbons releases CO₂ and H₂O; incomplete burning produces CO, a poisonous gas.</li>
+</ul>
+<div class="note"><b>Why carbon is special:</b> Four bonds + strong C–C chains = millions of possible compounds. This is the foundation of organic chemistry in Grade 11.</div>
+</card>
+<card>
+<h3>&#128167; Hard water and water treatment</h3>
+<table>
+<tr><th>Type</th><th>Contains</th><th>Behaviour</th><th>Removal</th></tr>
+<tr><td><b>Temporary hard water</b></td><td>Calcium/magnesium bicarbonates</td><td>Forms scum; scale on boiling</td><td>Boiling; adding lime</td></tr>
+<tr><td><b>Permanent hard water</b></td><td>Calcium/magnesium sulfates or chlorides</td><td>Scum; not removed by boiling</td><td>Washing soda, ion exchange</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Water treatment:</b> sedimentation → filtration → chlorination. Chlorine kills microbes; filtration removes suspended particles; boiling is the simplest household method.</p>
+</card>
+<card>
+<h3>&#127981; Materials used in daily life</h3>
+<table>
+<tr><th>Material</th><th>Main raw materials</th><th>Use</th><th>Environmental note</th></tr>
+<tr><td><b>Cement</b></td><td>Limestone + clay, heated in a kiln</td><td>Concrete, mortar</td><td>CO₂ released during manufacture</td></tr>
+<tr><td><b>Glass</b></td><td>Sand + soda + limestone</td><td>Windows, bottles</td><td>Recyclable</td></tr>
+<tr><td><b>Soap</b></td><td>Fat/oil + NaOH</td><td>Cleaning</td><td>Biodegradable; scum in hard water</td></tr>
+<tr><td><b>Detergent</b></td><td>Petroleum-based chemicals</td><td>Cleaning in hard water</td><td>Some cause foaming in rivers</td></tr>
+<tr><td><b>Plastics</b></td><td>Petroleum-derived monomers</td><td>Bottles, bags, pipes</td><td>Persist for centuries; recycle</td></tr>
+<tr><td><b>Fertilisers</b></td><td>N, P, K compounds</td><td>Increase crop yield</td><td>Runoff can pollute water</td></tr>
+</table>
+<div class="note"><b>Chemistry and the environment:</b> Every material has a life cycle. Choosing reusable, recyclable, and less toxic materials is part of applied chemistry.</div>
+</card>
+<card class="review">
+<h3>&#127919; Grade 8 review — idea first, then practice</h3>
+<p style="font-size:13.5px"><b>The big picture:</b> Atoms lose, gain, or share electrons to reach a full outer shell; this explains ions, formulas, bonding, and the properties of materials.</p>
+<div class="note"><b>Analogy that sticks:</b> Electron shells are floors in a building. A full outer floor is stable. Sodium gives away its one extra electron; chlorine accepts one to complete its floor; sharing is like two atoms holding the same pair of keys.</div>
+<div class="hook"><b>Memory hook:</b> Lose electrons → positive ion. Gain electrons → negative ion. (The charge is the opposite of what you might expect.)</div>
+<p style="font-size:13.5px;margin-top:12px"><b>Check yourself — answers are hidden:</b></p>
+<ol>
+<li>How many protons, neutrons, and electrons are in a neutral sodium-23 atom?</li>
+<li>Why does solid NaCl not conduct electricity, while molten NaCl does?</li>
+<li>Balance: __Al + __O₂ → __Al₂O₃.</li>
+<li>What is the difference between an exothermic and an endothermic reaction?</li>
+<li>Why is Zn + CuSO₄ → ZnSO₄ + Cu a displacement reaction?</li>
+</ol>
+<details><summary>Show answers</summary>
+<ol>
+<li>11 protons, 12 neutrons (23 − 11), and 11 electrons.</li>
+<li>In the solid, ions are fixed in the lattice. When molten, the ions are free to move and carry charge.</li>
+<li>4Al + 3O₂ → 2Al₂O₃.</li>
+<li>Exothermic releases heat to the surroundings; endothermic absorbs heat from them.</li>
+<li>Zinc is more reactive than copper, so it displaces copper from the copper sulfate solution.</li>
+</ol>
+</details>
+</card>
+
+<card>
+<h3>&#10145; Bridge to Grade 9</h3>
+<p style="font-size:13.5px"><b>You now have the complete basic picture:</b> matter → particles → atoms → ions → bonds → reactions → acids/bases → metals → materials. Grade 9 turns this into a formal system with the periodic table and the mole. <a href="#pg-g9-matter">Next: Grade 9 — matter &amp; states →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G9 MATTER ==================== -->
+<div class="page" id="pg-g9-matter">
+<h2 class="pt">Matter &amp; Its States <span class="grade">Grade 9</span></h2>
+<p class="lead">Chemistry starts here. Everything around you is <b>matter</b> — anything that has mass and occupies space.</p>
+<div class="idea"><b>Core idea:</b> Changing state changes particle energy and spacing, not the identity of the substance.</div>
+<card>
+<h3>&#128216; What is matter?</h3>
+<p style="font-size:13.5px">Matter is anything that has <b>mass</b> and takes up <b>space</b> (volume). Air, water, a rock, your body — all matter. Matter is made of tiny particles called <b>atoms</b> (next page).</p>
+<table>
+<tr><th>Property</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><b>Mass</b></td><td>Amount of matter in an object</td><td>A stone has more mass than a leaf</td></tr>
+<tr><td><b>Volume</b></td><td>Space an object occupies</td><td>Water fills a bottle's volume</td></tr>
+<tr><td><b>Density</b></td><td>Mass ÷ volume</td><td>Oil floats on water (lower density)</td></tr>
+<tr><td><b>State</b></td><td>Solid, liquid, or gas</td><td>Ice, water, steam</td></tr>
+</table>
+</card>
+<card>
+<h3>&#127777; The three states of matter</h3>
+<table>
+<tr><th>State</th><th>Particle arrangement</th><th>Shape</th><th>Volume</th><th>Compressible?</th></tr>
+<tr><td><b>Solid</b></td><td>Packed, fixed positions</td><td>Fixed</td><td>Fixed</td><td>No</td></tr>
+<tr><td><b>Liquid</b></td><td>Close but can slide</td><td>Takes container's shape</td><td>Fixed</td><td>Almost no</td></tr>
+<tr><td><b>Gas</b></td><td>Far apart, free motion</td><td>Fills whole container</td><td>Not fixed</td><td>Yes</td></tr>
+</table>
+<div class="note"><b>Key idea:</b> The difference between states is the <b>energy</b> and <b>spacing</b> of particles. More energy → particles move more → state changes.</div>
+</card>
+<card>
+<h3>&#128260; Changes of state (with energy)</h3>
+<table>
+<tr><th>Change</th><th>Direction</th><th>Energy</th><th>Example</th></tr>
+<tr><td><b>Melting</b></td><td>Solid → Liquid</td><td>Absorbs heat (endothermic)</td><td>Ice → water</td></tr>
+<tr><td><b>Freezing</b></td><td>Liquid → Solid</td><td>Releases heat (exothermic)</td><td>Water → ice</td></tr>
+<tr><td><b>Evaporation / Boiling</b></td><td>Liquid → Gas</td><td>Absorbs heat</td><td>Water → steam</td></tr>
+<tr><td><b>Condensation</b></td><td>Gas → Liquid</td><td>Releases heat</td><td>Steam → water droplets</td></tr>
+<tr><td><b>Sublimation</b></td><td>Solid → Gas (direct)</td><td>Absorbs heat</td><td>Dry ice → CO₂ gas</td></tr>
+<tr><td><b>Deposition</b></td><td>Gas → Solid (direct)</td><td>Releases heat</td><td>Frost forms</td></tr>
+</table>
+<div class="warn"><b>Common exam point:</b> <span class="formula">Sublimation</span> — solid straight to gas, skipping the liquid. Camphor, naphthalene, and dry ice (solid CO₂) do this.</div>
+</card>
+<card>
+<h3>&#128161; Pure substances vs mixtures</h3>
+<table>
+<tr><th>Type</th><th>Definition</th><th>Example</th></tr>
+<tr><td><b>Element</b></td><td>One kind of atom</td><td>Oxygen (O), Gold (Au)</td></tr>
+<tr><td><b>Compound</b></td><td>Two+ elements chemically combined</td><td>Water (H₂O), Salt (NaCl)</td></tr>
+<tr><td><b>Mixture</b></td><td>Two+ substances physically mixed</td><td>Air, sea water, salad</td></tr>
+</table>
+<p style="font-size:13px;margin-top:8px"><b>Difference:</b> A compound has a <b>fixed ratio</b> and a <b>new substance</b>; a mixture keeps each substance's identity and can vary in ratio.</p>
+</card>
+<card>
+<h3>&#128269; Separating mixtures</h3>
+<table>
+<tr><th>Method</th><th>Separates</th><th>Used for</th></tr>
+<tr><td><b>Filtration</b></td><td>Solid from liquid</td><td>Sand from water</td></tr>
+<tr><td><b>Evaporation</b></td><td>Dissolved solid from liquid</td><td>Salt from sea water</td></tr>
+<tr><td><b>Distillation</b></td><td>Liquids with different boiling points</td><td>Water from salt solution / alcohol from water</td></tr>
+<tr><td><b>Separating funnel</b></td><td>Immiscible liquids</td><td>Oil from water</td></tr>
+<tr><td><b>Sublimation</b></td><td>Sublimable solid from non-sublimable</td><td>Camphor from sand</td></tr>
+<tr><td><b>Chromatography</b></td><td>Dissolved substances</td><td>Ink pigments</td></tr>
+</table>
+</card>
+</div>
+
+
+<!-- ==================== G9 ATOM ==================== -->
+<div class="page" id="pg-g9-atom">
+<h2 class="pt">Atoms &amp; Elements <span class="grade">Grade 9</span></h2>
+<p class="lead">The atom is the smallest unit of an element. Elements are the "letters" of the periodic table's alphabet.</p>
+<div class="idea"><b>Core idea:</b> The number of protons defines the element; neutrons change the mass, electrons change the charge.</div>
+<card>
+<h3>&#9883; Anatomy of an atom</h3>
+<table>
+<tr><th>Subatomic particle</th><th>Location</th><th>Charge</th><th>Mass (approx)</th></tr>
+<tr><td><b>Proton</b></td><td>Nucleus (centre)</td><td>Positive (+1)</td><td>1 unit</td></tr>
+<tr><td><b>Neutron</b></td><td>Nucleus</td><td>Neutral (0)</td><td>1 unit</td></tr>
+<tr><td><b>Electron</b></td><td>Shells around nucleus</td><td>Negative (−1)</td><td>~0 (very light)</td></tr>
+</table>
+<div class="note"><b>Rule:</b> In a neutral atom, <b>protons = electrons</b>. The number of protons is the <b>atomic number (Z)</b> — it defines the element.</div>
+</card>
+<card>
+<h3>&#128208; Atomic number, mass number &amp; isotopes</h3>
+<table>
+<tr><th>Term</th><th>Definition</th><th>Example</th></tr>
+<tr><td><b>Atomic number (Z)</b></td><td>Number of protons</td><td>Carbon has Z = 6</td></tr>
+<tr><td><b>Mass number (A)</b></td><td>Protons + neutrons</td><td>Carbon-12 has A = 12 (6p + 6n)</td></tr>
+<tr><td><b>Isotopes</b></td><td>Same protons, different neutrons</td><td>Carbon-12, Carbon-13, Carbon-14</td></tr>
+<tr><td><b>Ion</b></td><td>Atom that gained/lost electrons</td><td>Na⁺ (lost 1 e⁻), Cl⁻ (gained 1 e⁻)</td></tr>
+</table>
+<div class="warn"><b>Classic confusion:</b> Isotopes have the <b>same atomic number</b> but <b>different mass numbers</b>. Carbon-12 and Carbon-14 are both carbon (6 protons).</div>
+</card>
+<card>
+<h3>&#128270; Electron shells (energy levels)</h3>
+<p style="font-size:13.5px">Electrons sit in <b>shells</b> (energy levels) around the nucleus. Shells fill from the inside out: K, L, M, N.</p>
+<table>
+<tr><th>Shell</th><th>Maximum electrons (2n²)</th></tr>
+<tr><td>K (n=1)</td><td>2</td></tr>
+<tr><td>L (n=2)</td><td>8</td></tr>
+<tr><td>M (n=3)</td><td>18</td></tr>
+<tr><td>N (n=4)</td><td>32</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Bohr model example — Sodium (Na, Z=11):</b> 2, 8, 1 (fills K, L, M). The outer 1 electron is easy to lose → Na becomes Na⁺.</p>
+<div class="note"><b>Important for the first 20 elements:</b> the outer shell never holds more than <b>8</b> electrons. So calcium (Z=20) is <b>2, 8, 8, 2</b>, not 2, 8, 10. The M shell can hold 18 in total, but only 8 go in before the N shell starts for these elements.</div>
+</card>
+<card>
+<h3>&#128300; Elements — the first 20 (with symbols)</h3>
+<table>
+<tr><th>#</th><th>Element</th><th>Symbol</th><th>#</th><th>Element</th><th>Symbol</th></tr>
+<tr><td>1</td><td>Hydrogen</td><td class="formula">H</td><td>11</td><td>Sodium</td><td class="formula">Na</td></tr>
+<tr><td>2</td><td>Helium</td><td class="formula">He</td><td>12</td><td>Magnesium</td><td class="formula">Mg</td></tr>
+<tr><td>3</td><td>Lithium</td><td class="formula">Li</td><td>13</td><td>Aluminium</td><td class="formula">Al</td></tr>
+<tr><td>4</td><td>Beryllium</td><td class="formula">Be</td><td>14</td><td>Silicon</td><td class="formula">Si</td></tr>
+<tr><td>5</td><td>Boron</td><td class="formula">B</td><td>15</td><td>Phosphorus</td><td class="formula">P</td></tr>
+<tr><td>6</td><td>Carbon</td><td class="formula">C</td><td>16</td><td>Sulfur</td><td class="formula">S</td></tr>
+<tr><td>7</td><td>Nitrogen</td><td class="formula">N</td><td>17</td><td>Chlorine</td><td class="formula">Cl</td></tr>
+<tr><td>8</td><td>Oxygen</td><td class="formula">O</td><td>18</td><td>Argon</td><td class="formula">Ar</td></tr>
+<tr><td>9</td><td>Fluorine</td><td class="formula">F</td><td>19</td><td>Potassium</td><td class="formula">K</td></tr>
+<tr><td>10</td><td>Neon</td><td class="formula">Ne</td><td>20</td><td>Calcium</td><td class="formula">Ca</td></tr>
+</table>
+<div class="note"><b>Memorise tip:</b> Learn the first 20 solidly. Almost every later concept (bonding, reactions, periodicity) references them.</div>
+</card>
+<card>
+<h3>&#128161; Metals, nonmetals &amp; metalloids</h3>
+<table>
+<tr><th>Category</th><th>Properties</th><th>Examples</th></tr>
+<tr><td><b>Metals</b></td><td>Shiny, good conductors, malleable, ductile, usually solid</td><td>Fe, Cu, Al, Au, Na</td></tr>
+<tr><td><b>Nonmetals</b></td><td>Dull, poor conductors, brittle (as solid)</td><td>O, C, S, N, Cl</td></tr>
+<tr><td><b>Metalloids</b></td><td>Between metals and nonmetals</td><td>Si, B, Ge, As</td></tr>
+</table>
+</card>
+</div>
+
+
+<!-- ==================== G9 CHEM ==================== -->
+<div class="page" id="pg-g9-chem">
+<h2 class="pt">Symbols, Formulas &amp; Reactions <span class="grade">Grade 9</span></h2>
+<p class="lead">Chemical <b>symbols</b> name elements; <b>formulas</b> name compounds; <b>equations</b> describe reactions. This is the "grammar" of chemistry.</p>
+<div class="idea"><b>Core idea:</b> Formulas describe what is present; balanced equations describe what changes into what.</div>
+<card>
+<h3>&#128221; Chemical formulas — how to read them</h3>
+<table>
+<tr><th>Formula</th><th>Meaning</th><th>Element count</th></tr>
+<tr><td class="formula">H₂O</td><td>Water</td><td>2 hydrogen + 1 oxygen</td></tr>
+<tr><td class="formula">CO₂</td><td>Carbon dioxide</td><td>1 carbon + 2 oxygen</td></tr>
+<tr><td class="formula">NaCl</td><td>Sodium chloride (salt)</td><td>1 sodium + 1 chlorine</td></tr>
+<tr><td class="formula">CaCO₃</td><td>Calcium carbonate</td><td>1 calcium + 1 carbon + 3 oxygen</td></tr>
+<tr><td class="formula">H₂SO₄</td><td>Sulfuric acid</td><td>2 hydrogen + 1 sulfur + 4 oxygen</td></tr>
+<tr><td class="formula">C₆H₁₂O₆</td><td>Glucose</td><td>6 carbon + 12 hydrogen + 6 oxygen</td></tr>
+</table>
+<div class="note"><b>Subscript rule:</b> The small number after an element tells how many of that atom are present. No number = 1. <b>Example:</b> <span class="formula">H₂O</span> has 2 H and 1 O.</div>
+</card>
+<card>
+<h3>&#128279; Common ions you must know</h3>
+<table>
+<tr><th>Cations (positive)</th><th>Anions (negative)</th></tr>
+<tr><td><span class="formula">H⁺</span>, <span class="formula">Na⁺</span>, <span class="formula">K⁺</span>, <span class="formula">Mg²⁺</span>, <span class="formula">Ca²⁺</span>, <span class="formula">Al³⁺</span>, <span class="formula">Zn²⁺</span>, <span class="formula">Fe²⁺</span>/<span class="formula">Fe³⁺</span>, <span class="formula">Cu²⁺</span>, <span class="formula">Ag⁺</span></td><td><span class="formula">Cl⁻</span>, <span class="formula">O²⁻</span>, <span class="formula">OH⁻</span>, <span class="formula">SO₄²⁻</span>, <span class="formula">CO₃²⁻</span>, <span class="formula">NO₃⁻</span>, <span class="formula">PO₄³⁻</span>, <span class="formula">S²⁻</span>, <span class="formula">HCO₃⁻</span></td></tr>
+</table>
+<div class="note"><b>Criss-cross rule:</b> To write a formula, swap the charges (ignoring sign). Example: <span class="formula">Al³⁺ + O²⁻</span> → <span class="formula">Al₂O₃</span> (3 O's charge 2, 2 Al's charge 3).</div>
+</card>
+<card>
+<h3>&#128269; Balancing chemical equations</h3>
+<p style="font-size:13.5px">A reaction equation must be <b>balanced</b> — same number of each atom on both sides (law of conservation of mass).</p>
+<p style="font-size:13.5px;margin-top:6px"><b>Unbalanced:</b> <span class="formula">H₂ + O₂ → H₂O</span> (left: 2H, 2O; right: 2H, 1O — oxygen not balanced)</p>
+<p style="font-size:13.5px;margin-top:6px"><b>Balanced:</b> <span class="formula">2H₂ + O₂ → 2H₂O</span> (4H, 2O on both sides ✓)</p>
+<table>
+<tr><th>Example reaction (balanced)</th><th>Type</th></tr>
+<tr><td class="formula">2Mg + O₂ → 2MgO</td><td>Combination</td></tr>
+<tr><td class="formula">2H₂O₂ → 2H₂O + O₂</td><td>Decomposition</td></tr>
+<tr><td class="formula">Zn + CuSO₄ → ZnSO₄ + Cu</td><td>Single displacement</td></tr>
+<tr><td class="formula">AgNO₃ + NaCl → AgCl↓ + NaNO₃</td><td>Double displacement</td></tr>
+<tr><td class="formula">CH₄ + 2O₂ → CO₂ + 2H₂O</td><td>Combustion</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128161; Four signs a reaction happened</h3>
+<ul>
+<li><b>Gas evolved</b> — bubbles (e.g., <span class="formula">CO₂</span>)</li>
+<li><b>Precipitate formed</b> — a solid appears (e.g., <span class="formula">AgCl↓</span>)</li>
+<li><b>Colour change</b> — e.g., blue copper sulfate turning colourless with Zn</li>
+<li><b>Heat / light</b> — energy released (exothermic) or absorbed</li>
+</ul>
+</card>
+<card>
+<h3>&#128213; Mole intro (the bridge to Grade 11)</h3>
+<p style="font-size:13.5px">Counting atoms by hand is impossible, so chemists count by the <b>mole</b>. 1 mole = <b>6.022 × 10²³ particles</b> (Avogadro's number).</p>
+<table>
+<tr><th>Quantity</th><th>Formula</th></tr>
+<tr><td>Moles (n)</td><td><span class="formula">n = mass ÷ molar mass</span></td></tr>
+<tr><td>Moles → particles</td><td><span class="formula">n × 6.022 × 10²³</span></td></tr>
+<tr><td>Molar mass</td><td>Mass of 1 mole of a substance (g/mol), = sum of atomic masses</td></tr>
+</table>
+<div class="note"><b>Example:</b> Water <span class="formula">H₂O</span> molar mass = 2(1) + 16 = <b>18 g/mol</b>. So 18 g of water = 1 mole = 6.022 × 10²³ molecules.</div>
+</card>
+</div>
+
+
+<!-- ==================== G9 GASES ==================== -->
+<div class="page" id="pg-g9-gases">
+<h2 class="pt">Gases &amp; Their Tests <span class="grade">Grade 9</span></h2>
+<p class="lead">Gases are invisible, but their behaviour is predictable. Learn how to prepare, collect, test, and use the gases that appear again and again in the laboratory.</p>
+<div class="idea"><b>Core idea:</b> Identify a gas by its test; choose the collection method from its density and solubility.</div>
+<card>
+<h3>&#127780; Properties of gases</h3>
+<ul>
+<li>Gases have <b>no fixed shape or volume</b>; they fill their container.</li>
+<li>They are <b>highly compressible</b> because there is a lot of empty space between particles.</li>
+<li>They <b>diffuse</b> quickly and mix completely with other gases.</li>
+<li>They have <b>low density</b> compared with solids and liquids.</li>
+<li>Gas pressure comes from particles colliding with the walls of the container.</li>
+</ul>
+<div class="note"><b>Link to Grade 7:</b> The particle model already explains these properties. Grade 11 turns them into the gas laws: <span class="formula">PV = nRT</span>.</div>
+</card>
+<card>
+<h3>&#129514; Collecting a gas — choose the right method</h3>
+<table>
+<tr><th>Method</th><th>Gas jar position</th><th>Used when</th><th>Examples</th></tr>
+<tr><td><b>Upward delivery</b></td><td>Mouth <b>down</b> (inverted)</td><td>Gas is <b>less dense</b> than air, so it rises</td><td>H₂, NH₃</td></tr>
+<tr><td><b>Downward delivery</b></td><td>Mouth <b>up</b> (upright)</td><td>Gas is <b>denser</b> than air, so it sinks</td><td>CO₂, O₂, Cl₂</td></tr>
+<tr><td><b>Water displacement</b></td><td>Jar inverted in a trough of water</td><td>Gas is <b>insoluble or only slightly soluble</b> in water</td><td>H₂, O₂, N₂</td></tr>
+<tr><td><b>Gas syringe</b></td><td>Sealed syringe</td><td>You need to measure the volume</td><td>Any gas, especially in quantitative work</td></tr>
+</table>
+<div class="note"><b>Naming trap:</b> Some textbooks say “upward/downward <i>displacement of air</i>” using the opposite words. In this hub, trust the <b>jar position</b>: light gas → jar mouth <b>down</b>; heavy gas → jar mouth <b>up</b>.</div>
+<div class="warn"><b>Never collect hydrogen near a flame.</b> Hydrogen is highly flammable and forms an explosive mixture with air. Test its purity first.</div>
+</card>
+<card>
+<h3>&#128168; Hydrogen (H₂)</h3>
+<table>
+<tr><th>Preparation</th><td class="formula">Zn + 2HCl → ZnCl₂ + H₂↑</td></tr>
+<tr><th>Collection</th><td>Upward delivery (less dense than air) or water displacement (insoluble)</td></tr>
+<tr><th>Test</th><td>A burning splint gives a <b>“pop”</b> sound</td></tr>
+<tr><th>Properties</th><td>Lightest gas; colourless, odourless; flammable; reducing agent</td></tr>
+<tr><th>Uses</th><td>Ammonia (Haber process), hydrogenation of oils, fuel cells, rocket fuel</td></tr>
+</table>
+<div class="note"><b>Why it pops:</b> Hydrogen burns rapidly with oxygen in the air, producing water vapour and a small explosion. A squeaky pop means hydrogen is present.</div>
+</card>
+<card>
+<h3>&#128167; Oxygen (O₂)</h3>
+<table>
+<tr><th>Preparation</th><td class="formula">2H₂O₂ → 2H₂O + O₂↑ <span style="font-size:12px;color:#8ea0c0">(MnO₂ catalyst)</span><br>or <span class="formula">2KClO₃ → 2KCl + 3O₂↑</span> (heat, MnO₂)</td></tr>
+<tr><th>Collection</th><td>Water displacement (slightly soluble) or downward delivery (slightly denser than air)</td></tr>
+<tr><th>Test</th><td>A <b>glowing splint relights</b></td></tr>
+<tr><th>Properties</th><td>Colourless, odourless; supports combustion; slightly soluble in water</td></tr>
+<tr><th>Uses</th><td>Respiration in hospitals, welding, steel making, diving, space suits</td></tr>
+</table>
+<div class="note"><b>Test tip:</b> Oxygen does not burn itself — it <i>supports</i> burning. That is why a glowing splint bursts into flame in oxygen.</div>
+</card>
+<card>
+<h3>&#129514; Carbon dioxide (CO₂)</h3>
+<table>
+<tr><th>Preparation</th><td class="formula">CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑</td></tr>
+<tr><th>Collection</th><td>Downward delivery (denser than air); not over water (it dissolves)</td></tr>
+<tr><th>Test</th><td><b>Limewater turns milky</b>; a burning splint is extinguished</td></tr>
+<tr><th>Properties</th><td>Colourless, odourless; denser than air; acidic oxide; dissolves in water to form carbonic acid</td></tr>
+<tr><th>Uses</th><td>Fizzy drinks, dry ice, fire extinguishers, photosynthesis, food preservation</td></tr>
+</table>
+<div class="note"><b>Limewater test:</b> CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O. The white precipitate of calcium carbonate makes the limewater look milky.</div>
+</card>
+<card>
+<h3>&#127777; Ammonia (NH₃)</h3>
+<table>
+<tr><th>Preparation</th><td class="formula">2NH₄Cl + Ca(OH)₂ → CaCl₂ + 2NH₃↑ + 2H₂O</td></tr>
+<tr><th>Collection</th><td>Upward delivery (less dense than air); <b>not</b> over water (extremely soluble)</td></tr>
+<tr><th>Test</th><td>Damp <b>red litmus turns blue</b>; white fumes with HCl (NH₄Cl)</td></tr>
+<tr><th>Properties</th><td>Pungent, colourless gas; alkaline; very soluble (fountain experiment); less dense than air</td></tr>
+<tr><th>Uses</th><td>Fertilisers, cleaning agents, refrigeration, nitric acid production</td></tr>
+</table>
+<div class="warn"><b>Drying ammonia:</b> Use <b>calcium oxide (CaO)</b>. Do not use concentrated H₂SO₄ (it reacts) or anhydrous CaCl₂ (it forms a complex).</div>
+</card>
+<card>
+<h3>&#127760; Nitrogen and the noble gases</h3>
+<table>
+<tr><th>Gas</th><th>How we get it</th><th>Key properties</th><th>Uses</th></tr>
+<tr><td><b>Nitrogen (N₂)</b></td><td>Fractional distillation of liquid air</td><td>Inert, colourless, slightly lighter than air</td><td>Ammonia, fertilisers, food packaging, inert atmosphere</td></tr>
+<tr><td><b>Helium (He)</b></td><td>From natural gas</td><td>Very light, inert</td><td>Balloons, MRI cooling, leak detection</td></tr>
+<tr><td><b>Neon (Ne)</b></td><td>Fractional distillation of liquid air</td><td>Inert; glows orange-red in discharge tubes</td><td>Neon signs</td></tr>
+<tr><td><b>Argon (Ar)</b></td><td>Fractional distillation of liquid air</td><td>Inert, dense</td><td>Welding shield, light bulbs</td></tr>
+</table>
+<div class="note"><b>Why noble gases are inert:</b> They have a full outer shell, so they do not need to gain, lose, or share electrons. This is the same octet idea that drives bonding.</div>
+</card>
+<card class="review">
+<h3>&#127919; Grade 9 review — idea first, then practice</h3>
+<p style="font-size:13.5px"><b>The big picture:</b> Atomic number defines the element, electron arrangement explains ions, and formulas, equations, and the mole let you describe and measure reactions.</p>
+<div class="note"><b>Analogy that sticks:</b> The periodic table is a seating chart ordered by proton count. Elements in the same column are in the same family because they have the same number of outer electrons.</div>
+<div class="hook"><b>Memory hook:</b> Protons decide who you are; electrons decide how you react.</div>
+<p style="font-size:13.5px;margin-top:12px"><b>Check yourself — answers are hidden:</b></p>
+<ol>
+<li>Write the electron arrangement of Mg (Z = 12) and the ion it forms.</li>
+<li>Why are isotopes of carbon chemically similar?</li>
+<li>Balance: __H₂ + __O₂ → __H₂O.</li>
+<li>How many moles are in 36 g of water? (M = 18 g/mol)</li>
+<li>How do you test for carbon dioxide?</li>
+</ol>
+<details><summary>Show answers</summary>
+<ol>
+<li>2, 8, 2; it loses two outer electrons to form Mg²⁺ (2, 8).</li>
+<li>They have the same number of protons and electrons, so the same electron arrangement; only the number of neutrons differs.</li>
+<li>2H₂ + O₂ → 2H₂O.</li>
+<li>n = 36 ÷ 18 = 2 mol.</li>
+<li>Bubble the gas through limewater; it turns milky because CaCO₃ precipitates.</li>
+</ol>
+</details>
+</card>
+
+<card>
+<h3>&#10145; Bridge to Grade 10 and Grade 11</h3>
+<p style="font-size:13.5px">You can now prepare and identify the common gases. In Grade 10 you will use these gases in reactions and in the chemistry of everyday materials. In Grade 11, gas laws make the behaviour of gases <b>quantitative</b> — pressure, volume, temperature, and moles become one equation. <a href="#pg-g10-pt">Next: Grade 10 — periodic table &amp; trends →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G10 PT ==================== -->
+<div class="page" id="pg-g10-pt">
+<h2 class="pt">Periodic Table &amp; Trends <span class="grade">Grade 10</span></h2>
+<p class="lead">The periodic table is the <b>map</b> of chemistry. Groups (columns) and periods (rows) organise elements by repeating properties.</p>
+<div class="idea"><b>Core idea:</b> Position on the periodic table predicts electron arrangement — and therefore chemical behaviour.</div>
+<card>
+<h3>&#128202; How the table is arranged</h3>
+<table>
+<tr><th>Feature</th><th>What it means</th><th>Example</th></tr>
+<tr><td><b>Periods</b> (rows)</td><td>Same number of occupied electron shells</td><td>Na (period 3): 3 shells</td></tr>
+<tr><td><b>Groups</b> (columns)</td><td>Same number of valence (outer) electrons → similar properties</td><td>Group 1 = alkali metals</td></tr>
+<tr><td><b>Group number</b></td><td>For main groups (1-2, 13-18)</td><td>Group 1 → 1 valence e⁻; Group 17 → 7 valence e⁻</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128161; Main groups you must know</h3>
+<table>
+<tr><th>Group</th><th>Name</th><th>Valence e⁻</th><th>Properties / examples</th></tr>
+<tr><td>1</td><td>Alkali metals</td><td>1</td><td>Highly reactive metals; Na, K, Li</td></tr>
+<tr><td>2</td><td>Alkaline earth metals</td><td>2</td><td>Mg, Ca (less reactive than Group 1)</td></tr>
+<tr><td>13</td><td>Boron group</td><td>3</td><td>Al (very useful metal)</td></tr>
+<tr><td>14</td><td>Carbon group</td><td>4</td><td>C, Si</td></tr>
+<tr><td>15</td><td>Nitrogen group</td><td>5</td><td>N, P</td></tr>
+<tr><td>16</td><td>Chalcogens</td><td>6</td><td>O, S</td></tr>
+<tr><td>17</td><td>Halogens</td><td>7</td><td>Very reactive nonmetals; F, Cl, Br, I</td></tr>
+<tr><td>18</td><td>Noble gases</td><td>8 (2 for He)</td><td>Very stable; He, Ne, Ar</td></tr>
+</table>
+<div class="note"><b>Noble gas rule:</b> Atoms "want" a full outer shell (8 electrons, like the noble gases). This drives all of bonding (next page).</div>
+</card>
+<card>
+<h3>&#128200; Periodic trends</h3>
+<table>
+<tr><th>Trend</th><th>Across a period (left → right)</th><th>Down a group (top → bottom)</th></tr>
+<tr><td><b>Atomic size</b></td><td>Decreases (more protons pull electrons in)</td><td>Increases (new shells added)</td></tr>
+<tr><td><b>Metallic character</b></td><td>Decreases</td><td>Increases</td></tr>
+<tr><td><b>Ionisation energy</b></td><td>Increases (harder to remove electron)</td><td>Decreases</td></tr>
+<tr><td><b>Electronegativity</b></td><td>Increases (attracts electrons more)</td><td>Decreases</td></tr>
+</table>
+<div class="warn"><b>Handy rule:</b> The element with the <b>highest electronegativity</b> is fluorine (F, top right). Trend arrows: electronegativity points up-right; atomic size points down-left.</div>
+</card>
+<card>
+<h3>&#128300; Why metals are on the left</h3>
+<p style="font-size:13.5px">Metals (left and centre) have <b>few valence electrons</b>, so they easily <b>lose</b> them → form positive ions. Nonmetals (right) have <b>many</b> valence electrons, so they tend to <b>gain</b> → form negative ions.</p>
+<table>
+<tr><th>Element</th><th>Valence e⁻</th><th>Ion it forms</th></tr>
+<tr><td>Na (Group 1)</td><td>1</td><td>Na⁺ (loses 1)</td></tr>
+<tr><td>Mg (Group 2)</td><td>2</td><td>Mg²⁺ (loses 2)</td></tr>
+<tr><td>Cl (Group 17)</td><td>7</td><td>Cl⁻ (gains 1)</td></tr>
+<tr><td>O (Group 16)</td><td>6</td><td>O²⁻ (gains 2)</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128214; The modern periodic law</h3>
+<p style="font-size:13.5px"><b>"Properties of elements are a periodic function of their atomic number."</b> That means if you arrange elements by increasing atomic number, properties repeat at regular intervals — which is exactly what the table's periods/groups capture.</p>
+<div class="note"><b>History in one line:</b> Mendeleev arranged by atomic <i>mass</i> and left gaps for undiscovered elements (he predicted gallium, germanium). Moseley later linked the order to atomic <i>number</i>.</div>
+</card>
+</div>
+
+
+<!-- ==================== G10 BOND ==================== -->
+<div class="page" id="pg-g10-bond">
+<h2 class="pt">Chemical Bonding <span class="grade">Grade 10</span></h2>
+<p class="lead">Atoms bond to become <b>stable</b> — that is, to get a full outer shell (octet rule). There are two main ways: <b>ionic</b> (transferring electrons) and <b>covalent</b> (sharing electrons).</p>
+<div class="idea"><b>Core idea:</b> Atoms bond to complete their outer shell: ionic bonds transfer electrons, covalent bonds share them.</div>
+<card>
+<h3>&#128279; Ionic bonding — electron transfer</h3>
+<table>
+<tr><th>Who</th><th>Happens between</th><th>Mechanism</th><th>Example</th></tr>
+<tr><td><b>Ionic</b></td><td>Metal + Nonmetal</td><td>Metal loses e⁻ → cation; nonmetal gains e⁻ → anion; opposite charges attract</td><td><span class="formula">Na + Cl → Na⁺Cl⁻</span> (NaCl)</td></tr>
+</table>
+<div class="note"><b>Example step-by-step:</b> Sodium (2,8,1) loses 1 electron → Na⁺ (2,8). Chlorine (2,8,7) gains it → Cl⁻ (2,8,8). Both now have full shells. The Na⁺ and Cl⁻ attract → crystal lattice.</div>
+<p style="font-size:13.5px;margin-top:8px"><b>Properties of ionic compounds:</b> High melting/boiling points, conduct electricity when molten/dissolved (ions free to move), hard but brittle, often soluble in water.</p>
+</card>
+<card>
+<h3>&#128279; Covalent bonding — electron sharing</h3>
+<table>
+<tr><th>Who</th><th>Happens between</th><th>Mechanism</th><th>Example</th></tr>
+<tr><td><b>Covalent</b></td><td>Nonmetal + Nonmetal</td><td>Atoms share pairs of electrons to both get full shells</td><td><span class="formula">H + H → H₂</span> (shared pair)</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Single / double / triple bonds:</b> 1 shared pair = single (H₂, Cl₂); 2 pairs = double (O₂, CO₂); 3 pairs = triple (N₂).</p>
+<table>
+<tr><th>Molecule</th><th>Bonds</th></tr>
+<tr><td class="formula">H₂</td><td>H–H (single)</td></tr>
+<tr><td class="formula">O₂</td><td>O=O (double)</td></tr>
+<tr><td class="formula">N₂</td><td>N≡N (triple)</td></tr>
+<tr><td class="formula">CO₂</td><td>O=C=O (two doubles)</td></tr>
+<tr><td class="formula">H₂O</td><td>H–O–H (two singles)</td></tr>
+<tr><td class="formula">CH₄</td><td>Methane (four C–H singles)</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Properties of covalent compounds:</b> Lower melting/boiling points, poor conductors, often gases/liquids at room temp, generally not soluble in water (except polar ones).</p>
+</card>
+<card>
+<h3>&#128161; Polar vs nonpolar covalent bonds</h3>
+<table>
+<tr><th>Type</th><th>Electron sharing</th><th>Example</th></tr>
+<tr><td><b>Nonpolar</b></td><td>Equal sharing (same/different-similar atoms)</td><td>H₂, Cl₂, CH₄, CO₂</td></tr>
+<tr><td><b>Polar</b></td><td>Unequal sharing (one atom pulls more, e.g., more electronegative)</td><td>H₂O, HCl, NH₃</td></tr>
+</table>
+<div class="note"><b>Key idea:</b> In a polar bond the more electronegative atom gets a partial negative charge (δ⁻), the other a partial positive (δ⁺). This creates a <b>dipole</b>.</div>
+</card>
+<card>
+<h3>&#128270; Metallic bonding (brief)</h3>
+<p style="font-size:13.5px">In metals, atoms release their valence electrons into a <b>"sea of electrons"</b> that flows freely around fixed positive ions. This explains why metals conduct electricity and are malleable.</p>
+</card>
+<card>
+<h3>&#128214; Using the octet rule to predict formulas</h3>
+<p style="font-size:13.5px">Combine elements so each atom reaches 8 (or 2 for H).</p>
+<table>
+<tr><th>Pair</th><th>Predicted formula</th><th>Why</th></tr>
+<tr><td>Na (1 e⁻) + Cl (7 e⁻)</td><td class="formula">NaCl</td><td>Na gives 1, Cl takes 1</td></tr>
+<tr><td>Mg (2 e⁻) + Cl (7 e⁻)</td><td class="formula">MgCl₂</td><td>Mg gives 2, needs two Cl</td></tr>
+<tr><td>H (1) + O (6)</td><td class="formula">H₂O</td><td>O needs 2, two H supply them</td></tr>
+<tr><td>Al (3) + O (6)</td><td class="formula">Al₂O₃</td><td>Criss-cross: Al³⁺ + O²⁻</td></tr>
+</table>
+</card>
+</div>
+
+
+<!-- ==================== G10 ACID ==================== -->
+<div class="page" id="pg-g10-acid">
+<h2 class="pt">Acids, Bases &amp; Salts <span class="grade">Grade 10</span></h2>
+<p class="lead">Acids and bases are everywhere — lemon juice, soap, stomach acid, bleach. The <b>pH scale</b> measures how acidic or basic something is.</p>
+<div class="idea"><b>Core idea:</b> pH is logarithmic: one step down means ten times more H⁺.</div>
+<card>
+<h3>&#127777; What makes an acid / a base?</h3>
+<table>
+<tr><th>Substance</th><th>Definition (Arrhenius)</th><th>Properties</th></tr>
+<tr><td><b>Acid</b></td><td>Produces H⁺ ions in water</td><td>Sour taste, turns blue litmus red, pH &lt; 7</td></tr>
+<tr><td><b>Base</b></td><td>Produces OH⁻ ions in water</td><td>Bitter taste, slippery, turns red litmus blue, pH &gt; 7</td></tr>
+<tr><td><b>Salt</b></td><td>Acid + base product</td><td>pH depends on the salt; a salt of a strong acid and strong base is ≈ 7</td></tr>
+</table>
+<div class="note"><b>Newer definition (Brønsted–Lowry):</b> An acid is a <b>proton (H⁺) donor</b>; a base is a <b>proton acceptor</b>. This explains more reactions (like NH₃ acting as a base).</div>
+</card>
+<card>
+<h3>&#128269; The pH scale</h3>
+<table>
+<tr><th>pH</th><th>Category</th><th>Examples</th></tr>
+<tr><td>0–3</td><td>Strong acid</td><td>Battery acid (0), stomach acid (1), lemon (2)</td></tr>
+<tr><td>4–6</td><td>Weak acid</td><td>Tomato (4), milk (6)</td></tr>
+<tr><td>7</td><td>Neutral</td><td>Pure water</td></tr>
+<tr><td>8–10</td><td>Weak base</td><td>Baking soda (9), soap (10)</td></tr>
+<tr><td>11–14</td><td>Strong base</td><td>Ammonia (11), bleach (13), lye (14)</td></tr>
+</table>
+<div class="note"><b>Formula:</b> <span class="formula">pH = −log[H⁺]</span>. Lower pH → higher [H⁺] → more acidic. Each 1 pH step = 10× change in [H⁺].</div>
+</card>
+<card>
+<h3>&#128279; Neutralisation (acid + base → salt + water)</h3>
+<table>
+<tr><th>Reaction</th><th>Salt formed</th></tr>
+<tr><td class="formula">HCl + NaOH → NaCl + H₂O</td><td>Sodium chloride</td></tr>
+<tr><td class="formula">H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O</td><td>Sodium sulfate</td></tr>
+<tr><td class="formula">HCl + KOH → KCl + H₂O</td><td>Potassium chloride</td></tr>
+<tr><td class="formula">HNO₃ + NaOH → NaNO₃ + H₂O</td><td>Sodium nitrate</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Word equation:</b> Acid + Base → Salt + Water. The H⁺ from the acid and OH⁻ from the base combine to make water.</p>
+</card>
+<card>
+<h3>&#128214; Strong vs weak acids/bases</h3>
+<table>
+<tr><th>Type</th><th>Means</th><th>Examples</th></tr>
+<tr><td><b>Strong acid</b></td><td>Fully ionises in water (100% → H⁺)</td><td>HCl, H₂SO₄, HNO₃</td></tr>
+<tr><td><b>Weak acid</b></td><td>Partially ionises</td><td>Acetic acid (CH₃COOH), citric acid</td></tr>
+<tr><td><b>Strong base</b></td><td>Fully ionises → OH⁻</td><td>NaOH, KOH, Ca(OH)₂</td></tr>
+<tr><td><b>Weak base</b></td><td>Partially ionises</td><td>NH₃ (ammonia)</td></tr>
+</table>
+<div class="warn"><b>Careful:</b> "Strong" ≠ "concentrated". Strength is about <i>ionisation</i>; concentration is about <i>amount in water</i>.</div>
+</card>
+<card>
+<h3>&#128161; Everyday applications</h3>
+<ul>
+<li><b>Antacids</b> (Mg(OH)₂, Al(OH)₃) neutralise excess stomach acid.</li>
+<li><b>Soil pH</b> — farmers add lime (CaO) to acidic soil.</li>
+<li><b>Bee sting</b> is acidic → treat with a mild base (baking soda).</li>
+<li><b>Wasps sting</b> is basic → treat with mild acid (vinegar).</li>
+<li><b>Indicators:</b> litmus, methyl orange, phenolphthalein change colour with pH.</li>
+</ul>
+</card>
+<card>
+<h3>&#128208; Important salts &amp; their uses</h3>
+<table>
+<tr><th>Salt</th><th>Formula</th><th>Use</th></tr>
+<tr><td>Common salt</td><td class="formula">NaCl</td><td>Cooking, preserving food</td></tr>
+<tr><td>Baking soda</td><td class="formula">NaHCO₃</td><td>Rising agent, antacid</td></tr>
+<tr><td>Washing soda</td><td class="formula">Na₂CO₃·10H₂O</td><td>Cleaning, softening water</td></tr>
+<tr><td>Bleaching powder</td><td class="formula">CaOCl₂</td><td>Bleaching, disinfecting</td></tr>
+<tr><td>Plaster of Paris</td><td class="formula">CaSO₄·½H₂O</td><td>Casts, moulds (sets when water added)</td></tr>
+<tr><td>Blue vitriol</td><td class="formula">CuSO₄·5H₂O</td><td>Fungicide</td></tr>
+</table>
+</card>
+</div>
+
+
+<!-- ==================== G10 METAL ==================== -->
+<div class="page" id="pg-g10-metal">
+<h2 class="pt">Metals &amp; Reactivity <span class="grade">Grade 10</span></h2>
+<p class="lead">Metals are the workhorses of chemistry. The <b>reactivity series</b> tells you which metal will displace another — the key to many reactions.</p>
+<div class="idea"><b>Core idea:</b> The reactivity series predicts displacement, corrosion, and how a metal is extracted.</div>
+<card>
+<h3>&#128269; The reactivity series</h3>
+<table>
+<tr><th>Metal</th><th>Reactivity</th><th>Notes</th></tr>
+<tr><td><b>Potassium (K)</b></td><td>Most reactive</td><td>Reacts violently with cold water</td></tr>
+<tr><td><b>Sodium (Na)</b></td><td>Very high</td><td>Reacts vigorously with cold water</td></tr>
+<tr><td><b>Calcium (Ca)</b></td><td>High</td><td>Reacts with cold water (slower)</td></tr>
+<tr><td><b>Magnesium (Mg)</b></td><td>High</td><td>Reacts with hot water/steam</td></tr>
+<tr><td><b>Aluminium (Al)</b></td><td>Moderate–high</td><td>Amphoteric, forms oxide layer</td></tr>
+<tr><td><b>Zinc (Zn)</b></td><td>Moderate</td><td>Reacts with acids</td></tr>
+<tr><td><b>Iron (Fe)</b></td><td>Moderate–low</td><td>Reacts slowly with acids</td></tr>
+<tr><td><b>Lead (Pb)</b></td><td>Low</td><td>Fairly unreactive</td></tr>
+<tr><td><b>Copper (Cu)</b></td><td>Low</td><td>Does not react with dilute acids</td></tr>
+<tr><td><b>Silver (Ag)</b></td><td>Very low</td><td>Unreactive</td></tr>
+<tr><td><b>Gold (Au)</b></td><td>Least reactive</td><td>Does not react — "noble"</td></tr>
+</table>
+<div class="note"><b>Memory aid:</b> <i>"Potassium Sodium Calcium Magnesium Aluminium Zinc Iron Lead Copper Silver Gold"</i> — the order of the series. (Often remembered as a mnemonic sentence.)</div>
+</card>
+<card>
+<h3>&#128279; Reaction with water and acids</h3>
+<table>
+<tr><th>Metal</th><th>Reaction with water</th><th>Reaction with dilute acid</th></tr>
+<tr><td>K, Na</td><td>2Na + 2H₂O → 2NaOH + H₂↑ (vigorous); K reacts similarly but more violently</td><td>Vigorous</td></tr>
+<tr><td>Ca</td><td>Ca + 2H₂O → Ca(OH)₂ + H₂↑</td><td>Vigorous</td></tr>
+<tr><td>Mg</td><td>Mg + H₂O (steam) → MgO + H₂↑</td><td>Mg + 2HCl → MgCl₂ + H₂↑</td></tr>
+<tr><td>Zn, Fe</td><td>No reaction with cold water</td><td>Zn + H₂SO₄ → ZnSO₄ + H₂↑</td></tr>
+<tr><td>Cu, Ag, Au</td><td>No reaction</td><td>No reaction with dilute acids</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128200; Displacement reactions — the test of reactivity</h3>
+<p style="font-size:13.5px">A more reactive metal displaces a less reactive one from its salt solution.</p>
+<table>
+<tr><th>Reaction</th><th>Result</th></tr>
+<tr><td class="formula">Zn + CuSO₄ → ZnSO₄ + Cu</td><td>Zinc (more reactive) displaces copper. Blue solution fades.</td></tr>
+<tr><td class="formula">Cu + ZnSO₄ → No reaction</td><td>Copper is less reactive — nothing happens.</td></tr>
+<tr><td class="formula">Fe + CuSO₄ → FeSO₄ + Cu</td><td>Iron displaces copper.</td></tr>
+<tr><td class="formula">Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag</td><td>Copper displaces silver.</td></tr>
+</table>
+<div class="warn"><b>Golden rule:</b> The more reactive metal is the one doing the displacing. If the added metal is less reactive, no reaction occurs.</div>
+</card>
+<card>
+<h3>&#128273; Corrosion — the enemy of metals</h3>
+<table>
+<tr><th>Type</th><th>What happens</th><th>Prevention</th></tr>
+<tr><td><b>Rusting</b> (iron)</td><td>Fe + O₂ + H₂O → hydrated iron oxide (rust)</td><td>Paint, galvanising (Zn), oiling, alloying</td></tr>
+<tr><td><b>Tarnishing</b> (Ag)</td><td>React with H₂S in air → black Ag₂S</td><td>Polish, keep in airtight containers</td></tr>
+<tr><td><b>Green layer</b> (Cu)</td><td>Cu + CO₂ + H₂O + O₂ → basic copper carbonate (green)</td><td>Lacquering</td></tr>
+</table>
+<div class="note"><b>Galvanising:</b> Coating iron with zinc. Zinc is more reactive, so it corrodes first, protecting the iron (sacrificial protection).</div>
+</card>
+<card>
+<h3>&#128214; Alloys — mixing metals for better properties</h3>
+<table>
+<tr><th>Alloy</th><th>Made from</th><th>Use</th></tr>
+<tr><td>Steel</td><td>Iron + carbon</td><td>Construction, tools</td></tr>
+<tr><td>Brass</td><td>Copper + zinc</td><td>Musical instruments, fittings</td></tr>
+<tr><td>Bronze</td><td>Copper + tin</td><td>Statues, bearings</td></tr>
+<tr><td>Stainless steel</td><td>Iron + chromium + nickel</td><td>Cutlery, kitchenware</td></tr>
+<tr><td>Solder</td><td>Lead + tin</td><td>Joining wires</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128161; Extraction of metals</h3>
+<table>
+<tr><th>Position in series</th><th>Extraction method</th><th>Example</th></tr>
+<tr><td>Top (K–Al)</td><td>Electrolysis of molten ore</td><td>Al from bauxite, Na from NaCl</td></tr>
+<tr><td>Middle (Zn–Cu)</td><td>Roasting + reduction with carbon</td><td>Zn from ZnO, Fe from Fe₂O₃</td></tr>
+<tr><td>Bottom (Ag, Au)</td><td>Found free in nature</td><td>Au, Ag</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Smelting (for iron):</b> Fe₂O₃ + 3CO → 2Fe + 3CO₂. Carbon/CO removes oxygen from the ore.</p>
+</card>
+</div>
+
+
+<!-- ==================== G10 ORGANIC ==================== -->
+<div class="page" id="pg-g10-organic">
+<h2 class="pt">Hydrocarbons &amp; Everyday Chemistry <span class="grade">Grade 10</span></h2>
+<p class="lead">Carbon compounds are fuels, plastics, medicines, and the molecules of life. Grade 10 gives you the first map of organic chemistry before Grade 11 adds functional groups and mechanisms.</p>
+<div class="idea"><b>Core idea:</b> Carbon forms four bonds, so it can build chains, rings, and families with predictable reactions.</div>
+<card>
+<h3>&#128161; Why carbon is special</h3>
+<ul>
+<li>Carbon has <b>4 valence electrons</b>, so it forms <b>four covalent bonds</b>.</li>
+<li>It forms strong bonds with itself, creating chains and rings — <b>catenation</b>.</li>
+<li>It bonds strongly to H, O, N, S, and halogens, giving millions of compounds.</li>
+<li>Its allotropes include <b>diamond</b> (3D network, very hard), <b>graphite</b> (layers, soft, conducts), and <b>fullerene</b> (cage-like).</li>
+</ul>
+<div class="note"><b>Organic vs inorganic:</b> Organic chemistry is the study of carbon compounds (except simple oxides, carbonates, and bicarbonates, which are usually treated as inorganic). Organic compounds are held together mainly by covalent bonds.</div>
+</card>
+<card>
+<h3>&#128296; Hydrocarbons and homologous series</h3>
+<table>
+<tr><th>Series</th><th>General formula</th><th>Bond type</th><th>Examples</th></tr>
+<tr><td><b>Alkanes</b></td><td class="formula">CₙH₂ₙ₊₂</td><td>Only single bonds (saturated)</td><td>CH₄ methane, C₂H₆ ethane, C₃H₈ propane</td></tr>
+<tr><td><b>Alkenes</b></td><td class="formula">CₙH₂ₙ</td><td>One C=C double bond (unsaturated)</td><td>C₂H₄ ethene, C₃H₆ propene</td></tr>
+<tr><td><b>Alkynes</b></td><td class="formula">CₙH₂ₙ₋₂</td><td>One C≡C triple bond (unsaturated)</td><td>C₂H₂ ethyne, C₃H₄ propyne</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Test for unsaturation:</b> Bromine water is orange-brown. Alkenes and alkynes decolourise it; alkanes do not react in the dark.</p>
+<div class="note"><b>Homologous series:</b> A family of compounds with the same general formula and similar properties, where each member differs from the next by one –CH₂– unit.</div>
+</card>
+<card>
+<h3>&#128221; Naming organic compounds — the first rules</h3>
+<table>
+<tr><th>Carbon atoms</th><th>Root</th><th>Alkane</th><th>Alkene</th><th>Alkyne</th></tr>
+<tr><td>1</td><td>meth-</td><td>CH₄</td><td>—</td><td>—</td></tr>
+<tr><td>2</td><td>eth-</td><td>C₂H₆</td><td>C₂H₄</td><td>C₂H₂</td></tr>
+<tr><td>3</td><td>prop-</td><td>C₃H₈</td><td>C₃H₆</td><td>C₃H₄</td></tr>
+<tr><td>4</td><td>but-</td><td>C₄H₁₀</td><td>C₄H₈</td><td>C₄H₆</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Steps:</b> 1) find the longest carbon chain; 2) number it so substituents get the lowest numbers; 3) name the substituent (methyl, ethyl...); 4) add the suffix (-ane, -ene, -yne). Example: CH₃–CH₂–CH₃ is <b>propane</b>.</p>
+<div class="note"><b>Structural formula:</b> Shows how atoms are joined, e.g. propane is CH₃–CH₂–CH₃. The molecular formula C₃H₈ does not show the arrangement.</div>
+</card>
+<card>
+<h3>&#128260; Key reactions of hydrocarbons</h3>
+<table>
+<tr><th>Reaction</th><th>What happens</th><th>Example</th></tr>
+<tr><td><b>Combustion</b></td><td>Burns in oxygen → CO₂ + H₂O + heat</td><td class="formula">CH₄ + 2O₂ → CO₂ + 2H₂O</td></tr>
+<tr><td><b>Substitution</b> (alkanes)</td><td>H replaced by a halogen in UV light</td><td class="formula">CH₄ + Cl₂ → CH₃Cl + HCl</td></tr>
+<tr><td><b>Addition</b> (alkenes/alkynes)</td><td>Atoms add across the double/triple bond</td><td class="formula">C₂H₄ + Br₂ → C₂H₄Br₂</td></tr>
+<tr><td><b>Hydrogenation</b></td><td>H₂ adds to an unsaturated oil → solid fat</td><td>Vegetable oil + H₂ → margarine</td></tr>
+<tr><td><b>Polymerisation</b></td><td>Many small monomers join into a long chain</td><td>Ethene → polyethene</td></tr>
+<tr><td><b>Cracking</b></td><td>Large hydrocarbons split into smaller, more useful ones</td><td>Decane → octane + ethene</td></tr>
+</table>
+<div class="note"><b>Why alkenes are more reactive:</b> The C=C double bond contains a weaker π bond that is easily broken in addition reactions. Alkanes have only strong single bonds, so they react mainly by substitution.</div>
+</card>
+<card>
+<h3>&#9981; Fuels from petroleum</h3>
+<p style="font-size:13.5px"><b>Fractional distillation</b> separates crude oil into fractions with different boiling ranges. Smaller molecules have lower boiling points and rise higher in the fractionating column.</p>
+<table>
+<tr><th>Fraction</th><th>Approximate chain length</th><th>Use</th></tr>
+<tr><td>LPG</td><td>C₃–C₄</td><td>Cooking gas</td></tr>
+<tr><td>Petrol / gasoline</td><td>C₅–C₁₀</td><td>Car engines</td></tr>
+<tr><td>Kerosene</td><td>C₁₀–C₁₆</td><td>Stoves, jet fuel</td></tr>
+<tr><td>Diesel</td><td>C₁₄–C₂₀</td><td>Trucks, buses, generators</td></tr>
+<tr><td>Lubricating oil</td><td>C₂₀–C₅₀</td><td>Engine oil</td></tr>
+<tr><td>Bitumen</td><td>Very large</td><td>Road surfacing</td></tr>
+</table>
+<div class="note"><b>Biogas:</b> Mainly methane, produced when bacteria break down organic waste without oxygen. It is a renewable fuel used for cooking in many rural homes.</div>
+</card>
+<card>
+<h3>&#127981; Carbon compounds in daily life</h3>
+<table>
+<tr><th>Product</th><th>Carbon compound</th><th>Use</th></tr>
+<tr><td>Plastics</td><td>Polyethene, PVC, polystyrene</td><td>Bags, pipes, packaging, bottles</td></tr>
+<tr><td>Soap</td><td>Salt of a fatty acid</td><td>Cleaning; made from oil/fat + NaOH</td></tr>
+<tr><td>Detergent</td><td>Petroleum-based surfactant</td><td>Cleaning in hard water</td></tr>
+<tr><td>Ethanol</td><td>C₂H₅OH</td><td>Disinfectant, fuel, alcoholic drinks</td></tr>
+<tr><td>Vinegar</td><td>CH₃COOH (acetic acid)</td><td>Food flavouring, preservative</td></tr>
+<tr><td>Sugar</td><td>C₆H₁₂O₆ (glucose), C₁₂H₂₂O₁₁ (sucrose)</td><td>Food and energy</td></tr>
+<tr><td>Medicines</td><td>Aspirin, paracetamol, antibiotics</td><td>Treating illness</td></tr>
+</table>
+<div class="note"><b>Soap vs detergent:</b> Soap is biodegradable but forms scum in hard water. Detergents work in hard water but some are slow to break down and can cause foaming in rivers.</div>
+</card>
+<card>
+<h3>&#9851; Environmental chemistry of carbon</h3>
+<table>
+<tr><th>Issue</th><th>Cause</th><th>Effect / action</th></tr>
+<tr><td><b>Greenhouse effect</b></td><td>CO₂ and CH₄ from burning fuels and farming</td><td>Global warming; use renewable energy, plant trees</td></tr>
+<tr><td><b>Carbon monoxide</b></td><td>Incomplete combustion in engines and stoves</td><td>Toxic; ensure ventilation, service engines</td></tr>
+<tr><td><b>Acid rain</b></td><td>SO₂ and NOₓ from fossil fuels</td><td>Harms lakes, soil, buildings; use cleaner fuels</td></tr>
+<tr><td><b>Plastic pollution</b></td><td>Non-biodegradable packaging</td><td>Reduce, reuse, recycle; avoid single-use plastic</td></tr>
+</table>
+<div class="note"><b>Carbon footprint:</b> The total CO₂ (and other greenhouse gases) released by a person, product, or activity. Walking, public transport, and renewable electricity reduce it.</div>
+</card>
+<card class="review">
+<h3>&#127919; Grade 10 review — idea first, then practice</h3>
+<p style="font-size:13.5px"><b>The big picture:</b> Periodic position predicts properties, bonding explains behaviour, pH quantifies acidity, reactivity predicts metal reactions, and carbon's four bonds create organic families.</p>
+<div class="note"><b>Analogy that sticks:</b> The periodic table is a map. Groups are neighbourhoods with similar personalities; bonding is how atoms swap or share electrons to complete their outer shell.</div>
+<div class="hook"><b>Memory hook:</b> Across a period: smaller, more electronegative, less metallic. Down a group: bigger, less electronegative, more metallic.</div>
+<p style="font-size:13.5px;margin-top:12px"><b>Check yourself — answers are hidden:</b></p>
+<ol>
+<li>Why does atomic radius decrease across a period?</li>
+<li>What type of bond forms between Na and Cl? Between H and O?</li>
+<li>How many times more acidic is pH 2 than pH 4?</li>
+<li>Why can copper not displace zinc from ZnSO₄?</li>
+<li>Give the general formula and one example of an alkene.</li>
+</ol>
+<details><summary>Show answers</summary>
+<ol>
+<li>Nuclear charge increases while electrons enter the same shell, so the nucleus pulls the outer electrons closer.</li>
+<li>Na–Cl is ionic (electron transfer); H–O is covalent (electron sharing).</li>
+<li>100 times (two pH steps, each 10×).</li>
+<li>Copper is less reactive than zinc, so it cannot push zinc out of its compound.</li>
+<li>CₙH₂ₙ; ethene C₂H₄ (or propene C₃H₆).</li>
+</ol>
+</details>
+</card>
+
+<card>
+<h3>&#10145; Bridge to Grade 11</h3>
+<p style="font-size:13.5px">You now know the main hydrocarbon families and their reactions. Grade 11 adds <b>functional groups</b> (–OH, –CHO, –COOH, –NH₂), <b>isomerism</b>, IUPAC naming in more detail, and reaction mechanisms. <a href="#pg-g11-organic">Next: Grade 11 — organic chemistry →</a></p>
+</card>
+</div>
+
+
+<!-- ==================== G11 FUND ==================== -->
+<div class="page" id="pg-g11-fund">
+<h2 class="pt">Mole &amp; Stoichiometry <span class="grade">Grade 11</span></h2>
+<p class="lead">Grade 11 starts by making chemistry <b>quantitative</b>. The mole lets us count atoms by weighing them — and stoichiometry lets us predict amounts in reactions.</p>
+<div class="idea"><b>Core idea:</b> The mole connects mass, particles, and gas volume; coefficients give the mole ratio.</div>
+<card>
+<h3>&#128213; The mole — chemistry's counting unit</h3>
+<table>
+<tr><th>Quantity</th><th>Definition</th><th>Value</th></tr>
+<tr><td><b>1 mole</b></td><td>Number of atoms in exactly 12 g of carbon-12</td><td>6.022 × 10²³ (Avogadro's number)</td></tr>
+<tr><td><b>Molar mass (M)</b></td><td>Mass of 1 mole (g/mol)</td><td>Equals atomic/molecular mass in grams</td></tr>
+<tr><td><b>Molar volume (gas)</b></td><td>Volume of 1 mole of any gas at STP</td><td>22.4 L at STP</td></tr>
+</table>
+<div class="note"><b>Core conversions (memorise these three):</b><br>
+• <span class="formula">moles = mass ÷ molar mass</span><br>
+• <span class="formula">particles = moles × 6.022 × 10²³</span><br>
+• <span class="formula">gas volume = moles × 22.4 L</span> (at STP)</div>
+</card>
+<card>
+<h3>&#128202; Empirical vs molecular formulas</h3>
+<table>
+<tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><b>Empirical formula</b></td><td>Simplest whole-number ratio of atoms</td><td>Glucose C₆H₁₂O₆ → empirical CH₂O</td></tr>
+<tr><td><b>Molecular formula</b></td><td>Actual number of each atom in a molecule</td><td>C₆H₁₂O₆</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>Relationship:</b> Molecular = empirical × n, where n = molecular mass ÷ empirical mass. Glucose: empirical mass CH₂O = 30; n = 180 ÷ 30 = 6 → C₆H₁₂O₆.</p>
+</card>
+<card>
+<h3>&#128279; Percentage composition</h3>
+<p style="font-size:13.5px"><b>Formula:</b> % of element = (mass of element in one mole ÷ molar mass) × 100</p>
+<table>
+<tr><th>Compound</th><th>Calculation</th><th>Result</th></tr>
+<tr><td class="formula">H₂O</td><td>H: (2/18)×100; O: (16/18)×100</td><td>11.1% H, 88.9% O</td></tr>
+<tr><td class="formula">CO₂</td><td>C: (12/44)×100; O: (32/44)×100</td><td>27.3% C, 72.7% O</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128270; Stoichiometry — using balanced equations</h3>
+<p style="font-size:13.5px">The <b>coefficients</b> in a balanced equation give the mole ratio of reactants and products.</p>
+<table>
+<tr><th>Reaction</th><th>Mole ratio</th></tr>
+<tr><td class="formula">2H₂ + O₂ → 2H₂O</td><td>2 : 1 : 2 (H₂ : O₂ : H₂O)</td></tr>
+<tr><td class="formula">N₂ + 3H₂ → 2NH₃</td><td>1 : 3 : 2</td></tr>
+<tr><td class="formula">CH₄ + 2O₂ → CO₂ + 2H₂O</td><td>1 : 2 : 1 : 2</td></tr>
+</table>
+<div class="note"><b>Worked example:</b> How many moles of H₂O form from 4 mol H₂? From 2H₂ + O₂ → 2H₂O, ratio H₂:H₂O = 2:2 = 1:1 → 4 mol H₂ gives <b>4 mol H₂O</b>. If instead you had 3 mol O₂, O₂:H₂O = 1:2 → 6 mol H₂O (but H₂ limits it — next card).</div>
+</card>
+<card>
+<h3>&#128273; Limiting reactant — the one that runs out</h3>
+<table>
+<tr><th>Concept</th><th>Explanation</th></tr>
+<tr><td><b>Limiting reactant</b></td><td>The reactant that is used up first — it determines how much product forms.</td></tr>
+<tr><td><b>Excess reactant</b></td><td>Left over after the reaction stops.</td></tr>
+</table>
+<p style="font-size:13.5px;margin-top:8px"><b>How to find it:</b> Convert each reactant to moles, then divide by its coefficient in the equation. The smallest result is the limiting reactant.</p>
+<div class="note"><b>Example:</b> <span class="formula">2H₂ + O₂ → 2H₂O</span>. If you have 4 mol H₂ and 3 mol O₂: H₂ → 4÷2 = 2; O₂ → 3÷1 = 3. H₂ gives the smaller number, so <b>H₂ is limiting</b>. Product = 4 mol H₂O, and 1 mol O₂ remains.</div>
+</card>
+<card>
+<h3>&#128200; Concentration — molarity</h3>
+<table>
+<tr><th>Term</th><th>Formula</th><th>Units</th></tr>
+<tr><td><b>Molarity (M)</b></td><td>moles of solute ÷ litres of solution</td><td>mol/L</td></tr>
+<tr><td><b>Dilution</b></td><td>M₁V₁ = M₂V₂</td><td>—</td></tr>
+<tr><td><b>Mass percent</b></td><td>(mass solute ÷ mass solution) × 100</td><td>%</td></tr>
+</table>
+<div class="note"><b>Example:</b> To make 0.5 M NaCl solution: 0.5 mol (≈29.2 g of NaCl, molar mass 58.4) dissolved in water and made up to 1 L.</div>
+</card>
+<card>
+<h3>&#128214; Laws that support stoichiometry</h3>
+<ul>
+<li><b>Law of conservation of mass:</b> mass of reactants = mass of products (why equations balance).</li>
+<li><b>Law of definite proportions:</b> a compound always has the same elements in the same ratio by mass (water is always 11.1% H).</li>
+<li><b>Law of multiple proportions:</b> when two elements form several compounds, the masses of one combining with a fixed mass of the other are in simple whole-number ratios (CO vs CO₂).</li>
+</ul>
+</card>
+</div>
+
+
+<!-- ==================== G11 STATE ==================== -->
+<div class="page" id="pg-g11-state">
+<h2 class="pt">States of Matter &amp; Gas Laws <span class="grade">Grade 11</span></h2>
+<p class="lead">Grade 11 deepens the states you met in Grade 9, with a strong focus on <b>gases</b> — the most mathematically tractable state.</p>
+<div class="idea"><b>Core idea:</b> Gas laws link pressure, volume, temperature, and moles; kinetic theory explains why.</div>
+<card>
+<h3>&#127780; Kinetic molecular theory (KMT)</h3>
+<ul>
+<li>Gas particles are <b>tiny</b>, widely separated spheres with negligible volume.</li>
+<li>They are in <b>constant, random motion</b> in straight lines until they collide.</li>
+<li>Collisions are <b>elastic</b> (no kinetic energy lost).</li>
+<li>No <b>attractive/repulsive forces</b> between particles.</li>
+<li>Average kinetic energy ∝ <b>absolute temperature</b> (Kelvin).</li>
+</ul>
+<div class="note"><b>Real gases</b> deviate from ideal behaviour at high pressure (particles close together → forces matter) and low temperature (slow particles → forces dominate). Ideal gas assumption is best at low P, high T.</div>
+</card>
+<card>
+<h3>&#128200; The gas laws</h3>
+<table>
+<tr><th>Law</th><th>Statement</th><th>Formula</th></tr>
+<tr><td><b>Boyle's law</b></td><td>P ∝ 1/V (at constant T, n)</td><td>P₁V₁ = P₂V₂</td></tr>
+<tr><td><b>Charles's law</b></td><td>V ∝ T (at constant P, n)</td><td>V₁/T₁ = V₂/T₂</td></tr>
+<tr><td><b>Avogadro's law</b></td><td>V ∝ n (at constant P, T)</td><td>Equal volumes of gases = equal moles</td></tr>
+<tr><td><b>Gay-Lussac</b></td><td>P ∝ T (at constant V, n)</td><td>P₁/T₁ = P₂/T₂</td></tr>
+<tr><td><b>Ideal gas law</b></td><td>Combines all above</td><td>PV = nRT</td></tr>
+</table>
+<div class="note"><b>Ideal gas constant:</b> R = 0.0821 L·atm/(mol·K) or 8.314 J/(mol·K). Always use temperature in <b>Kelvin</b> (K = °C + 273).</div>
+</card>
+<card>
+<h3>&#128270; Partial pressure — Dalton's law</h3>
+<p style="font-size:13.5px"><b>Dalton's law:</b> Total pressure of a gas mixture = sum of the partial pressures of the individual gases.</p>
+<table>
+<tr><th>Formula</th><th>Meaning</th></tr>
+<tr><td class="formula">P_total = P₁ + P₂ + P₃ + ...</td><td>Each gas exerts its own pressure as if alone.</td></tr>
+<tr><td class="formula">P₁ = X₁ × P_total</td><td>Mole fraction X₁ = n₁ / n_total.</td></tr>
+</table>
+<div class="note"><b>Example:</b> Air at 1 atm: P(N₂) ≈ 0.78 atm, P(O₂) ≈ 0.21 atm, P(Ar) ≈ 0.01 atm. Sum = 1 atm.</div>
+</card>
+<card>
+<h3>&#127777; Liquids — vapour pressure &amp; boiling</h3>
+<table>
+<tr><th>Idea</th><th>Explanation</th></tr>
+<tr><td><b>Vapour pressure</b></td><td>Pressure exerted by vapour above a liquid. Increases with temperature.</td></tr>
+<tr><td><b>Boiling point</b></td><td>Temperature at which vapour pressure equals external pressure.</td></tr>
+<tr><td><b>Effect of pressure on boiling</b></td><td>At higher altitude (lower pressure), water boils at lower temperature; a pressure cooker raises pressure and boiling point.</td></tr>
+<tr><td><b>Hydrogen bonding effect</b></td><td>Water has a high boiling point because of strong H-bonds between molecules.</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128296; Solids — types of crystals</h3>
+<table>
+<tr><th>Crystal type</th><th>Particles &amp; bonding</th><th>Properties</th><th>Example</th></tr>
+<tr><td>Ionic</td><td>Ions, strong electrostatic</td><td>High mp, hard, brittle</td><td>NaCl</td></tr>
+<tr><td>Covalent network</td><td>Atoms, strong covalent</td><td>Very hard, very high mp</td><td>Diamond, SiO₂</td></tr>
+<tr><td>Metallic</td><td>Positive ions + sea of electrons</td><td>Conducts, malleable</td><td>Fe, Cu</td></tr>
+<tr><td>Molecular</td><td>Molecules, weak forces</td><td>Low mp, soft</td><td>Ice, CO₂ (dry ice)</td></tr>
+</table>
+<div class="note"><b>Why diamond is hard:</b> each carbon bonds to 4 others in a huge covalent network — no weak points. Graphite (another carbon form) is soft because it has layers held by weak forces.</div>
+</card>
+<card>
+<h3>&#128161; Phase diagram (summary)</h3>
+<p style="font-size:13.5px">A phase diagram maps which state exists at each P–T. Key points:</p>
+<ul>
+<li><b>Triple point:</b> where all three states coexist.</li>
+<li><b>Critical point:</b> above this, gas cannot be liquefied by pressure alone.</li>
+<li><b>Sublimation curve:</b> separates solid and gas (e.g., CO₂).</li>
+</ul>
+</card>
+</div>
+
+
+<!-- ==================== G11 ATOMIC ==================== -->
+<div class="page" id="pg-g11-atomic">
+<h2 class="pt">Atomic Structure &amp; Quantum Numbers <span class="grade">Grade 11</span></h2>
+<p class="lead">Grade 9's simple "shell" picture is upgraded here to quantum mechanics — where electrons live in <b>orbitals</b> described by four quantum numbers.</p>
+<div class="idea"><b>Core idea:</b> Quantum numbers describe the region where an electron is likely to be — not a fixed orbit.</div>
+<card>
+<h3>&#128208; The four quantum numbers</h3>
+<table>
+<tr><th>Symbol</th><th>Name</th><th>What it describes</th><th>Allowed values</th></tr>
+<tr><td><b>n</b></td><td>Principal</td><td>Energy level / size (shell)</td><td>1, 2, 3, ...</td></tr>
+<tr><td><b>l</b></td><td>Azimuthal</td><td>Shape (subshell)</td><td>0 to n−1</td></tr>
+<tr><td><b>m_l</b></td><td>Magnetic</td><td>Orientation</td><td>−l to +l</td></tr>
+<tr><td><b>m_s</b></td><td>Spin</td><td>Spin direction</td><td>+½ or −½</td></tr>
+</table>
+<table>
+<tr><th>l value</th><th>Subshell</th><th>Shape</th><th>Orbitals</th></tr>
+<tr><td>0</td><td>s</td><td>Spherical</td><td>1</td></tr>
+<tr><td>1</td><td>p</td><td>Dumbbell</td><td>3</td></tr>
+<tr><td>2</td><td>d</td><td>Complex</td><td>5</td></tr>
+<tr><td>3</td><td>f</td><td>Very complex</td><td>7</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128200; Filling order — Aufbau principle</h3>
+<p style="font-size:13.5px">Electrons fill orbitals from <b>lowest energy</b> upward: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d ...</p>
+<ul>
+<li><b>Aufbau:</b> fill lowest energy first.</li>
+<li><b>Pauli exclusion:</b> each orbital holds max 2 electrons with opposite spins.</li>
+<li><b>Hund's rule:</b> fill orbitals singly before pairing (max unpaired spins).</li>
+</ul>
+<div class="note"><b>Order example — Iron (Fe, Z=26):</b> 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶. Note 4s fills before 3d.</div>
+</card>
+<card>
+<h3>&#128214; Electron configurations of key elements</h3>
+<table>
+<tr><th>Element</th><th>Configuration</th></tr>
+<tr><td>H (1)</td><td class="formula">1s¹</td></tr>
+<tr><td>He (2)</td><td class="formula">1s²</td></tr>
+<tr><td>C (6)</td><td class="formula">[He] 2s² 2p²</td></tr>
+<tr><td>Na (11)</td><td class="formula">[Ne] 3s¹</td></tr>
+<tr><td>Cl (17)</td><td class="formula">[Ne] 3s² 3p⁵</td></tr>
+<tr><td>K (19)</td><td class="formula">[Ar] 4s¹</td></tr>
+<tr><td>Cr (24)</td><td class="formula">[Ar] 4s¹ 3d⁵<br><span style="font-size:12px;color:#8ea0c0">exception — half-filled d is stable</span></td></tr>
+<tr><td>Cu (29)</td><td class="formula">[Ar] 4s¹ 3d¹⁰<br><span style="font-size:12px;color:#8ea0c0">exception — full d is stable</span></td></tr>
+</table>
+<div class="warn"><b>Common exceptions (exams love these):</b> Cr and Cu "steal" one 4s electron to make a stable d subshell. Also note Ag, Au follow similar logic.</div>
+</card>
+<card>
+<h3>&#128161; Orbitals and radioactivity (brief)</h3>
+<table>
+<tr><th>Topic</th><th>Key idea</th></tr>
+<tr><td><b>Orbital</b></td><td>Region where electron is ~90% likely to be found (not a fixed path).</td></tr>
+<tr><td><b>Isoelectronic</b></td><td>Species with the same electron configuration (e.g., N³⁻, O²⁻, F⁻, Ne all 10 e⁻).</td></tr>
+<tr><td><b>Radioactive decay</b></td><td>Unstable nuclei emit α (He nucleus), β (electron), or γ (energy).</td></tr>
+<tr><td><b>Half-life</b></td><td>Time for half the nuclei to decay (constant for a given isotope).</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128270; Photons &amp; spectra (the quantum jump)</h3>
+<table>
+<tr><th>Idea</th><th>Meaning</th></tr>
+<tr><td><b>Electromagnetic spectrum</b></td><td>Radio → microwave → IR → visible → UV → X-ray → gamma (increasing energy).</td></tr>
+<tr><td><b>Photon energy</b></td><td>E = hν = hc/λ (h = Planck's constant).</td></tr>
+<tr><td><b>Line spectrum</b></td><td>Electrons jump between energy levels, absorbing/emitting specific wavelengths — giving an element's unique "fingerprint".</td></tr>
+<tr><td><b>Ground vs excited state</b></td><td>Ground = lowest energy; excited = electron promoted to higher level.</td></tr>
+</table>
+<div class="note"><b>Why it matters:</b> Emission spectra identify elements (fireworks colours, neon signs, stars' composition).</div>
+</card>
+<card>
+<h3>&#128300; Models of the atom — history in one table</h3>
+<table>
+<tr><th>Model</th><th>Key feature</th></tr>
+<tr><td>Dalton</td><td>Atoms = solid indestructible spheres.</td></tr>
+<tr><td>Thomson</td><td>"Plum pudding" — electrons embedded in positive mass.</td></tr>
+<tr><td>Rutherford</td><td>Nucleus (tiny, positive, dense) + orbiting electrons (gold foil experiment).</td></tr>
+<tr><td>Bohr</td><td>Electrons in fixed circular orbits with quantised energy.</td></tr>
+<tr><td>Quantum mechanical</td><td>Electrons in orbitals described by wave functions / quantum numbers.</td></tr>
+</table>
+</card>
+</div>
+
+
+<!-- ==================== G11 BOND2 ==================== -->
+<div class="page" id="pg-g11-bond2">
+<h2 class="pt">Bonding, Hybridisation &amp; VSEPR <span class="grade">Grade 11</span></h2>
+<p class="lead">Grade 10 gave you ionic vs covalent. Grade 11 adds <b>shape</b> (VSEPR), <b>hybridisation</b>, and the finer points of covalent bonds.</p>
+<div class="idea"><b>Core idea:</b> Hybridisation and VSEPR explain molecular shape, and shape controls properties.</div>
+<card>
+<h3>&#128279; Sigma (σ) vs pi (π) bonds</h3>
+<table>
+<tr><th>Bond</th><th>Formation</th><th>Strength / property</th></tr>
+<tr><td><b>σ bond</b></td><td>End-to-end overlap of orbitals</td><td>Stronger; forms single bonds; free rotation possible.</td></tr>
+<tr><td><b>π bond</b></td><td>Sideways overlap of p orbitals</td><td>Weaker; present in double/triple bonds; restricts rotation.</td></tr>
+</table>
+<div class="note"><b>Example:</b> In C=C (ethene), one bond is σ, the second is π. In a triple bond C≡C, one σ + two π. This is why alkenes are more reactive (π bond breaks easily).</div>
+</card>
+<card>
+<h3>&#128203; Hybridisation — mixing atomic orbitals</h3>
+<table>
+<tr><th>Hybrid</th><th>Orbitals mixed</th><th>Geometry</th><th>Example</th></tr>
+<tr><td>sp</td><td>1 s + 1 p</td><td>Linear (180°)</td><td>BeCl₂, CO₂ (C), acetylene</td></tr>
+<tr><td>sp²</td><td>1 s + 2 p</td><td>Trigonal planar (120°)</td><td>BF₃, ethene (C)</td></tr>
+<tr><td>sp³</td><td>1 s + 3 p</td><td>Tetrahedral (109.5°)</td><td>CH₄, NH₃, H₂O</td></tr>
+<tr><td>dsp²</td><td>1 d + 1 s + 2 p</td><td>Square planar</td><td>PtCl₄²⁻</td></tr>
+<tr><td>sp³d</td><td>1 s + 3 p + 1 d</td><td>Trigonal bipyramidal</td><td>PCl₅</td></tr>
+<tr><td>sp³d²</td><td>1 s + 3 p + 2 d</td><td>Octahedral</td><td>SF₆</td></tr>
+</table>
+<div class="warn"><b>Know these five well:</b> sp (linear), sp² (trigonal planar), sp³ (tetrahedral), sp³d (bipyramidal), sp³d² (octahedral). Count the number of electron regions to pick the hybrid.</div>
+</card>
+<card>
+<h3>&#128299; VSEPR — predicting molecular shape</h3>
+<p style="font-size:13.5px"><b>VSEPR (Valence Shell Electron Pair Repulsion):</b> electron pairs around a central atom repel and spread out as far as possible. Shape depends on the number of <b>bonding pairs</b> and <b>lone pairs</b>.</p>
+<table>
+<tr><th>Bonding pairs</th><th>Lone pairs</th><th>Shape</th><th>Example</th></tr>
+<tr><td>2</td><td>0</td><td>Linear</td><td>CO₂, BeCl₂</td></tr>
+<tr><td>3</td><td>0</td><td>Trigonal planar</td><td>BF₃</td></tr>
+<tr><td>4</td><td>0</td><td>Tetrahedral</td><td>CH₄</td></tr>
+<tr><td>3</td><td>1</td><td>Trigonal pyramidal</td><td>NH₃</td></tr>
+<tr><td>2</td><td>2</td><td>Bent / V-shape</td><td>H₂O</td></tr>
+<tr><td>5</td><td>0</td><td>Trigonal bipyramidal</td><td>PCl₅</td></tr>
+<tr><td>6</td><td>0</td><td>Octahedral</td><td>SF₆</td></tr>
+</table>
+<div class="note"><b>Lone pairs squeeze:</b> Lone pairs repel more than bonding pairs, so NH₃ (107°) and H₂O (104.5°) have angles less than the ideal 109.5° of CH₄.</div>
+</card>
+<card>
+<h3>&#128214; Polarity of molecules</h3>
+<table>
+<tr><th>Molecule</th><th>Bonds</th><th>Shape</th><th>Polar?</th></tr>
+<tr><td>CO₂</td><td>Polar (C–O)</td><td>Linear</td><td>Nonpolar (dipoles cancel)</td></tr>
+<tr><td>H₂O</td><td>Polar</td><td>Bent</td><td><b>Polar</b> (dipoles do not cancel)</td></tr>
+<tr><td>NH₃</td><td>Polar</td><td>Pyramidal</td><td><b>Polar</b></td></tr>
+<tr><td>CCl₄</td><td>Polar</td><td>Tetrahedral</td><td>Nonpolar (cancels)</td></tr>
+<tr><td>CH₄</td><td>Nearly nonpolar</td><td>Tetrahedral</td><td>Nonpolar</td></tr>
+</table>
+<div class="note"><b>Rule:</b> A molecule is polar if it has polar bonds <i>and</i> an asymmetric shape (dipoles don't cancel). Symmetry can make a polar-bonded molecule nonpolar.</div>
+</card>
+<card>
+<h3>&#128270; Resonance &amp; bond length</h3>
+<ul>
+<li><b>Resonance:</b> when a molecule can be drawn in multiple valid Lewis structures (e.g., O₃, CO₃²⁻, benzene). The real structure is a hybrid, not either one.</li>
+<li><b>Bond order:</b> number of bonds between two atoms. Higher order → shorter, stronger bond.</li>
+<li><b>Bond energy:</b> energy to break 1 mole of a bond. Single &lt; double &lt; triple.</li>
+</ul>
+</card>
+<card>
+<h3>&#128161; Physical consequences of bonding</h3>
+<table>
+<tr><th>Force</th><th>Between</th><th>Strength</th><th>Effect</th></tr>
+<tr><td>Hydrogen bond</td><td>H attached to N/O/F + lone pair of N/O/F</td><td>Medium</td><td>High bp of water; DNA base pairing</td></tr>
+<tr><td>Dipole–dipole</td><td>Polar molecules</td><td>Weak–medium</td><td>Higher bp for polar substances</td></tr>
+<tr><td>London dispersion</td><td>All molecules (esp. nonpolar)</td><td>Weakest</td><td>Increases with molecular size</td></tr>
+</table>
+<div class="note"><b>Why water boils high:</b> strong hydrogen bonds. Why Br₂ is liquid but Cl₂ is gas: Br₂ has more electrons → stronger London forces.</div>
+</card>
+</div>
+
+
+<!-- ==================== G11 THERMO ==================== -->
+<div class="page" id="pg-g11-thermo">
+<h2 class="pt">Thermochemistry &amp; Thermodynamics <span class="grade">Grade 11</span></h2>
+<p class="lead">Every reaction either releases or absorbs energy. Thermochemistry is the quantitative study of that heat — with <b>enthalpy</b> at its core.</p>
+<div class="idea"><b>Core idea:</b> Enthalpy, entropy, and Gibbs energy together decide whether a reaction can happen.</div>
+<card>
+<h3>&#128273; Exothermic vs endothermic</h3>
+<table>
+<tr><th>Type</th><th>Heat</th><th>ΔH sign</th><th>Example</th></tr>
+<tr><td><b>Exothermic</b></td><td>Released to surroundings (feels hot)</td><td>ΔH &lt; 0 (negative)</td><td>Combustion, neutralisation, respiration</td></tr>
+<tr><td><b>Endothermic</b></td><td>Absorbed from surroundings (feels cold)</td><td>ΔH &gt; 0 (positive)</td><td>Melting ice, photosynthesis, dissolving NH₄NO₃</td></tr>
+</table>
+<div class="note"><b>Terminology:</b> ΔH = enthalpy change. Exothermic products have lower energy than reactants; endothermic products have higher energy.</div>
+</card>
+<card>
+<h3>&#128161; Enthalpy changes you need</h3>
+<table>
+<tr><th>Type</th><th>Symbol</th><th>Definition</th></tr>
+<tr><td>Standard enthalpy of formation</td><td>ΔH°f</td><td>Heat to form 1 mole of compound from elements in standard states.</td></tr>
+<tr><td>Standard enthalpy of combustion</td><td>ΔH°c</td><td>Heat released when 1 mole burns in excess O₂.</td></tr>
+<tr><td>Standard enthalpy of neutralisation</td><td>ΔH°neut</td><td>Heat released when acid neutralises base (≈ −57 kJ/mol for strong acid + strong base).</td></tr>
+<tr><td>Enthalpy of atomisation</td><td>ΔH°a</td><td>Energy to produce 1 mole of gaseous atoms.</td></tr>
+<tr><td>Bond dissociation energy</td><td>ΔH bond</td><td>Energy to break 1 mole of a specific bond.</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128200; Hess's law — add up the steps</h3>
+<p style="font-size:13.5px"><b>Hess's law:</b> The total enthalpy change of a reaction is the same regardless of the route taken (since H is a state function).</p>
+<table>
+<tr><th>Reaction</th><th>ΔH</th></tr>
+<tr><td class="formula">C(s) + O₂(g) → CO₂(g)</td><td>−393.5 kJ</td></tr>
+<tr><td class="formula">C(s) + ½O₂(g) → CO(g)</td><td>−110.5 kJ</td></tr>
+<tr><td class="formula">CO(g) + ½O₂(g) → CO₂(g)</td><td>−283 kJ (calc: −393.5 − (−110.5))</td></tr>
+</table>
+<div class="note"><b>Key formula:</b> ΔH_reaction = Σ ΔH°f(products) − Σ ΔH°f(reactants). Or using bond energies: ΔH = Σ(bonds broken) − Σ(bonds formed).</div>
+</card>
+<card>
+<h3>&#128270; Bomb calorimetry — measuring heat</h3>
+<table>
+<tr><th>Idea</th><th>Explanation</th></tr>
+<tr><td><b>Calorimeter</b></td><td>Insulated container that measures temperature change.</td></tr>
+<tr><td><b>q = mcΔT</b></td><td>q = heat (J), m = mass (g), c = specific heat capacity (J/g°C), ΔT = temp change.</td></tr>
+<tr><td><b>Specific heat of water</b></td><td>4.18 J/g°C (the standard reference).</td></tr>
+<tr><td><b>Bomb calorimeter</b></td><td>Used for combustion; measures heat at constant volume.</td></tr>
+</table>
+<div class="note"><b>Worked example:</b> Heating 100 g water from 20°C to 30°C needs q = 100 × 4.18 × 10 = <b>4180 J</b> = 4.18 kJ.</div>
+</card>
+<card>
+<h3>&#128214; Entropy (S) &amp; free energy (G)</h3>
+<table>
+<tr><th>Quantity</th><th>Meaning</th><th>Trend</th></tr>
+<tr><td><b>Entropy (S)</b></td><td>Disorder / randomness</td><td>Increases with temperature, phase change solid→gas, more gas moles.</td></tr>
+<tr><td><b>Gibbs free energy (G)</b></td><td>Energy available to do work</td><td>ΔG = ΔH − TΔS</td></tr>
+</table>
+<div class="note"><b>Spontaneity rule:</b><br>
+• ΔG &lt; 0 → spontaneous<br>
+• ΔG &gt; 0 → non-spontaneous<br>
+• ΔG = 0 → equilibrium.<br>
+A reaction can be endothermic yet spontaneous if entropy gain is large (e.g., NH₄NO₃ dissolving in water).</div>
+</card>
+<card>
+<h3>&#128296; The three laws (in 30 seconds)</h3>
+<ul>
+<li><b>1st law:</b> Energy is conserved — ΔU = q + w.</li>
+<li><b>2nd law:</b> Total entropy of the universe increases in spontaneous processes.</li>
+<li><b>3rd law:</b> At absolute zero, a perfect crystal has S = 0.</li>
+</ul>
+</card>
+</div>
+
+
+<!-- ==================== G11 EQUIL ==================== -->
+<div class="page" id="pg-g11-equil">
+<h2 class="pt">Chemical Equilibrium <span class="grade">Grade 11</span></h2>
+<p class="lead">Many reactions do <b>not</b> go to completion — they settle into a dynamic balance between forward and reverse reactions called equilibrium.</p>
+<div class="idea"><b>Core idea:</b> Equilibrium is dynamic: forward and reverse reactions continue at equal rates.</div>
+<card>
+<h3>&#128268; Dynamic equilibrium</h3>
+<ul>
+<li><b>Forward</b> and <b>reverse</b> reactions occur at equal rates.</li>
+<li>Concentrations of reactants and products stay <b>constant</b> (not equal).</li>
+<li>It is <b>dynamic</b> — molecules keep reacting, just at cancelling rates.</li>
+<li>Only in <b>closed systems</b> (no material escapes).</li>
+</ul>
+<div class="note"><b>Example:</b> <span class="formula">N₂ + 3H₂ ⇌ 2NH₃</span>. At equilibrium, all three gases are present in fixed amounts. The double arrow ⇌ means "in equilibrium".</div>
+</card>
+<card>
+<h3>&#128200; The equilibrium constant Kc</h3>
+<p style="font-size:13.5px">For <b>aA + bB ⇌ cC + dD</b>:</p>
+<p style="font-size:13.5px"><b>Kc = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ</b> (square brackets = molar concentrations).</p>
+<table>
+<tr><th>If Kc is...</th><th>Meaning</th></tr>
+<tr><td>Very large (&gt; 10³)</td><td>Mostly products — reaction goes almost to completion.</td></tr>
+<tr><td>~1</td><td>Significant amounts of both reactant and product.</td></tr>
+<tr><td>Very small (&lt; 10⁻³)</td><td>Mostly reactants — hardly any product.</td></tr>
+</table>
+<div class="warn"><b>Rules:</b> Kc depends only on temperature (not on starting amounts or pressure). Solids and pure liquids don't appear in K expressions.</div>
+</card>
+<card>
+<h3>&#128161; Le Chatelier's principle — the Goldilocks rule</h3>
+<p style="font-size:13.5px"><b>"If a system at equilibrium is disturbed, it shifts to counteract the disturbance."</b></p>
+<table>
+<tr><th>Disturbance</th><th>Shift</th></tr>
+<tr><td>Add reactant</td><td>Shifts right (consumes added reactant; makes more product).</td></tr>
+<tr><td>Remove product</td><td>Shifts right (tries to replace product).</td></tr>
+<tr><td>Increase pressure</td><td>Shifts toward fewer gas moles.</td></tr>
+<tr><td>Increase temperature</td><td>Shifts in the endothermic direction.</td></tr>
+<tr><td>Add a catalyst</td><td>No shift — just reaches equilibrium faster.</td></tr>
+</table>
+<div class="note"><b>Worked example:</b> In <span class="formula">N₂ + 3H₂ ⇌ 2NH₃</span> (4 gas moles left, 2 right): raising pressure shifts <b>right</b> (towards fewer moles) → more ammonia. This is the basis of the Haber process.</div>
+</card>
+<card>
+<h3>&#128279; Equilibrium + solubility — Ksp (brief)</h3>
+<table>
+<tr><th>Type</th><th>Expression</th><th>Meaning</th></tr>
+<tr><td>Solubility product Ksp</td><td class="formula">AgCl ⇌ Ag⁺ + Cl⁻; Ksp = [Ag⁺][Cl⁻]</td><td>For saturated solutions of sparingly soluble salts.</td></tr>
+<tr><td>Common ion effect</td><td>Adding a common ion reduces solubility.</td><td>e.g., NaCl added to saturated AgCl solution → AgCl precipitates.</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128270; Acid-base equilibrium (pH meets K)</h3>
+<table>
+<tr><th>Quantity</th><th>Meaning</th></tr>
+<tr><td><b>Ka</b></td><td>Acid dissociation constant. Larger Ka → stronger acid.</td></tr>
+<tr><td><b>Kb</b></td><td>Base dissociation constant. Larger Kb → stronger base.</td></tr>
+<tr><td><b>Kw</b></td><td>Ion product of water = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25°C.</td></tr>
+<tr><td><b>Buffer</b></td><td>A weak acid + its salt (or weak base + its salt) resists pH change. e.g., CH₃COOH/CH₃COONa.</td></tr>
+</table>
+<div class="note"><b>Buffer in the body:</b> Blood uses H₂CO₃/HCO₃⁻ to keep pH near 7.4. This is why carbonic acid matters biologically.</div>
+</card>
+<card>
+<h3>&#128214; Reaction quotient Q vs K</h3>
+<p style="font-size:13.5px">Q has the same form as K but uses <b>current</b> concentrations.</p>
+<table>
+<tr><th>Compare</th><th>What happens</th></tr>
+<tr><td>Q &lt; K</td><td>Too much reactant → shifts right.</td></tr>
+<tr><td>Q &gt; K</td><td>Too much product → shifts left.</td></tr>
+<tr><td>Q = K</td><td>At equilibrium.</td></tr>
+</table>
+</card>
+</div>
+
+
+<!-- ==================== G11 REDOX ==================== -->
+<div class="page" id="pg-g11-redox">
+<h2 class="pt">Redox &amp; Electrochemistry <span class="grade">Grade 11</span></h2>
+<p class="lead">Oxidation–reduction ("redox") reactions are the most common reactions in chemistry — from rusting to batteries to metabolism.</p>
+<div class="idea"><b>Core idea:</b> Redox is electron transfer; oxidation numbers are the bookkeeping.</div>
+<card>
+<h3>&#128270; Oxidation &amp; reduction</h3>
+<table>
+<tr><th>Term</th><th>Classic definition (O₂)</th><th>Modern (electron)</th><th>Oxidation number change</th></tr>
+<tr><td><b>Oxidation</b></td><td>Gain of oxygen</td><td>Loss of electrons</td><td>Increases</td></tr>
+<tr><td><b>Reduction</b></td><td>Loss of oxygen</td><td>Gain of electrons</td><td>Decreases</td></tr>
+</table>
+<div class="note"><b>Memory aid:</b> <b>"OIL RIG"</b> — Oxidation Is Loss, Reduction Is Gain (of electrons). Also "LEO says GER": Lose Electrons Oxidation; Gain Electrons Reduction.</div>
+</card>
+<card>
+<h3>&#128279; Oxidation numbers — the bookkeeping</h3>
+<p style="font-size:13.5px">Oxidation number = the charge an atom would have if electrons were assigned to the more electronegative atom.</p>
+<ul>
+<li>Elements (free state): 0 (e.g., O₂, Fe, N₂).</li>
+<li>Monatomic ions: = charge (Na⁺ = +1, Cl⁻ = −1).</li>
+<li>O: −2 in compounds (except peroxides −1, OF₂ +2).</li>
+<li>H: +1 with nonmetals, −1 with metals (NaH).</li>
+<li>Sum of oxidation numbers in a neutral compound = 0; in a polyatomic ion = charge.</li>
+<li>Group 1 = +1, Group 2 = +2, halogen = −1 (mostly).</li>
+</ul>
+<div class="note"><b>Example:</b> In <span class="formula">H₂SO₄</span>: 2(+1) + S + 4(−2) = 0 → S = +6.</div>
+</card>
+<card>
+<h3>&#128200; Balancing redox (half-reaction method)</h3>
+<p style="font-size:13.5px">For <span class="formula">Fe²⁺ + Cr₂O₇²⁻ → Fe³⁺ + Cr³⁺</span> (acidic):</p>
+<ol>
+<li><b>Split</b> into two half-reactions (oxidation &amp; reduction).</li>
+<li><b>Balance</b> atoms other than O and H.</li>
+<li><b>Balance O</b> by adding H₂O; <b>balance H</b> by adding H⁺ (acidic) or OH⁻ (basic).</li>
+<li><b>Balance charge</b> by adding electrons.</li>
+<li><b>Equalise</b> electron counts and add the halves.</li>
+</ol>
+<div class="note"><b>Fast tip:</b> Fe²⁺ → Fe³⁺ + e⁻. Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O. Multiply the iron half by 6, then add.</div>
+</card>
+<card>
+<h3>&#128161; Electrochemical cells</h3>
+<table>
+<tr><th>Cell type</th><th>Converts</th><th>Spontaneous?</th><th>Example</th></tr>
+<tr><td><b>Voltaic/galvanic</b></td><td>Chemical → electrical</td><td>Yes (ΔG &lt; 0)</td><td>Batteries (Zn/Cu cell)</td></tr>
+<tr><td><b>Electrolytic</b></td><td>Electrical → chemical</td><td>No (needs external power)</td><td>Electrolysis of water/NaCl</td></tr>
+</table>
+<table>
+<tr><th>Part</th><th>Role</th></tr>
+<tr><td>Anode</td><td>Oxidation happens here (± depending on cell type).</td></tr>
+<tr><td>Cathode</td><td>Reduction happens here.</td></tr>
+<tr><td>Salt bridge</td><td>Allows ion flow, keeps charge balance.</td></tr>
+</table>
+<div class="note"><b>Standard cell potential:</b> E°cell = E°cathode − E°anode. Positive E°cell → spontaneous. E°cell is related to ΔG° = −nFE°cell.</div>
+</card>
+<card>
+<h3>&#128214; The electrochemical series &amp; applications</h3>
+<table>
+<tr><th>Metal</th><th>E° (V)</th><th>Use/behaviour</th></tr>
+<tr><td>Li</td><td>−3.04</td><td>Most easily oxidised</td></tr>
+<tr><td>Zn</td><td>−0.76</td><td>Sacrificial anode; batteries</td></tr>
+<tr><td>Fe</td><td>−0.44</td><td>Rusts</td></tr>
+<tr><td>Cu</td><td>+0.34</td><td>Less reactive; wires</td></tr>
+<tr><td>Ag</td><td>+0.80</td><td>Noble</td></tr>
+<tr><td>Au</td><td>+1.50</td><td>Very unreactive</td></tr>
+</table>
+<div class="warn"><b>Key uses:</b> Electrolysis extracts Al and Na; electroplating coats objects (e.g., silver-plating cutlery); sacrificial protection (Zn) guards iron ships and pipelines.</div>
+</card>
+<card>
+<h3>&#128273; Electrolysis — the practical side</h3>
+<table>
+<tr><th>Electrolysis of</th><th>At anode</th><th>At cathode</th></tr>
+<tr><td>Molten NaCl</td><td>Cl₂ gas</td><td>Na metal</td></tr>
+<tr><td>Water (with H₂SO₄)</td><td>O₂ gas</td><td>H₂ gas</td></tr>
+<tr><td>CuSO₄ (aq) with Cu electrodes</td><td>Cu dissolves (anode loses mass)</td><td>Cu deposits (cathode gains mass)</td></tr>
+</table>
+<div class="note"><b>Why it matters:</b> Purification of copper, extraction of metals, and rechargeable batteries all rely on electrolysis.</div>
+</card>
+</div>
+
+
+<!-- ==================== G11 ORGANIC ==================== -->
+<div class="page" id="pg-g11-organic">
+<h2 class="pt">Organic Chemistry <span class="grade">Grade 11</span></h2>
+<p class="lead">Organic chemistry is the chemistry of <b>carbon</b>. Carbon forms chains, rings, and millions of compounds — the basis of life, fuels, plastics, and drugs.</p>
+<div class="idea"><b>Core idea:</b> Functional groups decide reactivity; isomers share a formula but differ in structure.</div>
+<card>
+<h3>&#128161; Why carbon is special</h3>
+<ul>
+<li>Carbon has <b>4 valence electrons</b> → always makes 4 bonds (tetravalence).</li>
+<li>It forms <b>strong C–C bonds</b>, so chains/rings are stable.</li>
+<li>It can bond to itself and to H, O, N, halogens, etc.</li>
+<li>Result: <b>catenation</b> (chain formation) → enormous variety.</li>
+</ul>
+<div class="note"><b>Hydrocarbons:</b> compounds of only C and H. Everything else in organic builds on them.</div>
+</card>
+<card>
+<h3>&#128296; Homologous series &amp; alkanes</h3>
+<table>
+<tr><th>Series</th><th>General formula</th><th>Example</th><th>Bond type</th></tr>
+<tr><td>Alkanes</td><td class="formula">CₙH₂ₙ₊₂</td><td>CH₄ (methane)</td><td>Only single bonds (saturated)</td></tr>
+<tr><td>Alkenes</td><td class="formula">CₙH₂ₙ</td><td>C₂H₄ (ethene)</td><td>One C=C double bond (unsaturated)</td></tr>
+<tr><td>Alkynes</td><td class="formula">CₙH₂ₙ₋₂</td><td>C₂H₂ (ethyne)</td><td>One C≡C triple bond</td></tr>
+</table>
+<table>
+<tr><th>Alkane</th><th>Formula</th><th>Alkane</th><th>Formula</th></tr>
+<tr><td>Methane</td><td class="formula">CH₄</td><td>Hexane</td><td class="formula">C₆H₁₄</td></tr>
+<tr><td>Ethane</td><td class="formula">C₂H₆</td><td>Heptane</td><td class="formula">C₇H₁₆</td></tr>
+<tr><td>Propane</td><td class="formula">C₃H₈</td><td>Octane</td><td class="formula">C₈H₁₈</td></tr>
+<tr><td>Butane</td><td class="formula">C₄H₁₀</td><td>Nonane</td><td class="formula">C₉H₂₀</td></tr>
+<tr><td>Pentane</td><td class="formula">C₅H₁₂</td><td>Decane</td><td class="formula">C₁₀H₂₂</td></tr>
+</table>
+<div class="note"><b>IUPAC naming (4 steps):</b> 1) find longest chain (root: meth-, eth-, prop-...), 2) number so substituents get lowest numbers, 3) name substituents (e.g., methyl, ethyl), 4) assemble alphabetically. Example: 2-methylpropane.</div>
+</card>
+<card>
+<h3>&#128300; Functional groups — the "business end"</h3>
+<table>
+<tr><th>Group</th><th>Structure</th><th>Name</th><th>Example</th></tr>
+<tr><td>Alcohol</td><td>–OH</td><td>-ol</td><td>Ethanol (C₂H₅OH)</td></tr>
+<tr><td>Aldehyde</td><td>–CHO</td><td>-al</td><td>Ethanal (CH₃CHO)</td></tr>
+<tr><td>Ketone</td><td>–CO–</td><td>-one</td><td>Propanone (acetone)</td></tr>
+<tr><td>Carboxylic acid</td><td>–COOH</td><td>-oic acid</td><td>Ethanoic acid (CH₃COOH)</td></tr>
+<tr><td>Ester</td><td>–COO–</td><td>-oate</td><td>Ethyl ethanoate</td></tr>
+<tr><td>Ether</td><td>–O–</td><td>alkoxyalkane</td><td>Methoxyethane</td></tr>
+<tr><td>Amine</td><td>–NH₂</td><td>amino-</td><td>Methylamine</td></tr>
+<tr><td>Halide</td><td>–X (F, Cl, Br, I)</td><td>halo-</td><td>Chloroethane</td></tr>
+</table>
+<div class="warn"><b>Know the priority order for naming:</b> carboxylic acid &gt; ester &gt; aldehyde &gt; ketone &gt; alcohol &gt; amine &gt; ether &gt; halide &gt; alkane.</div>
+</card>
+<card>
+<h3>&#128279; Isomerism — same formula, different structure</h3>
+<table>
+<tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><b>Structural</b></td><td>Different connectivity of atoms.</td><td>Butane vs 2-methylpropane (both C₄H₁₀).</td></tr>
+<tr><td><b>Position</b></td><td>Functional group at different position.</td><td>Propan-1-ol vs propan-2-ol.</td></tr>
+<tr><td><b>Geometric (cis/trans)</b></td><td>Different arrangement around a C=C (restricted rotation).</td><td>Cis-2-butene vs trans-2-butene.</td></tr>
+<tr><td><b>Optical</b></td><td>Mirror images, non-superimposable (chiral).</td><td>Lactic acid (mirror forms).</td></tr>
+</table>
+<div class="note"><b>Why optical isomerism matters:</b> Many drugs act on only one enantiomer (e.g., ibuprofen's active form). Enzymes are chiral, so they "see" left vs right differently.</div>
+</card>
+<card>
+<h3>&#128270; Key reactions of alkanes/alkenes</h3>
+<table>
+<tr><th>Reaction</th><th>What happens</th><th>Example</th></tr>
+<tr><td><b>Combustion</b></td><td>Alkane + O₂ → CO₂ + H₂O + heat.</td><td class="formula">CH₄ + 2O₂ → CO₂ + 2H₂O</td></tr>
+<tr><td><b>Substitution</b> (alkanes)</td><td>H replaced by halogen (UV light).</td><td class="formula">CH₄ + Cl₂ → CH₃Cl + HCl</td></tr>
+<tr><td><b>Addition</b> (alkenes)</td><td>π bond breaks; atoms add across C=C.</td><td class="formula">C₂H₄ + Br₂ → C₂H₄Br₂</td></tr>
+<tr><td><b>Hydration</b> (alkenes)</td><td>Add water → alcohol.</td><td class="formula">C₂H₄ + H₂O → C₂H₅OH</td></tr>
+<tr><td><b>Polymerisation</b></td><td>Many monomers join → polymer.</td><td>Ethene → polyethene</td></tr>
+</table>
+<div class="note"><b>Alkenes are more reactive</b> than alkanes because the π bond is weak and easily attacked (addition). Alkanes are relatively inert (only substitution with UV).</div>
+</card>
+<card>
+<h3>&#128214; Petrochemicals &amp; everyday organic</h3>
+<table>
+<tr><th>Product</th><th>Source</th></tr>
+<tr><td>LPG (propane/butane)</td><td>Refining crude oil</td></tr>
+<tr><td>Petrol (octane-rich)</td><td>Distillation of crude oil</td></tr>
+<tr><td>Plastics (polyethylene, PVC)</td><td>Polymerisation of alkenes</td></tr>
+<tr><td>Ethanol</td><td>Fermentation of sugars (C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂)</td></tr>
+<tr><td>Soaps</td><td>Hydrolysis of fats (esters) with NaOH</td></tr>
+</table>
+</card>
+</div>
+
+
+<!-- ==================== G11 SBLOCK ==================== -->
+<div class="page" id="pg-g11-sblock">
+<h2 class="pt">s-Block &amp; p-Block Elements <span class="grade">Grade 11</span></h2>
+<p class="lead">The s-block (Groups 1–2) holds the reactive metals. The p-block (Groups 13–18) holds nonmetals and the many compounds we use daily.</p>
+<div class="idea"><b>Core idea:</b> s- and p-block trends follow nuclear charge, shielding, and electron configuration.</div>
+<card>
+<h3>&#128161; The s-block — alkali &amp; alkaline earth metals</h3>
+<table>
+<tr><th>Group</th><th>Elements (valence e⁻)</th><th>Character</th><th>Reactions</th></tr>
+<tr><td>1 (Alkali)</td><td>Li, Na, K, Rb, Cs (1 e⁻)</td><td>Soft, low density, silvery, most reactive metals.</td><td>2Na + 2H₂O → 2NaOH + H₂↑</td></tr>
+<tr><td>2 (Alkaline earth)</td><td>Be, Mg, Ca, Sr, Ba (2 e⁻)</td><td>Harder, higher melting point, less reactive than Group 1.</td><td>Ca + 2H₂O → Ca(OH)₂ + H₂↑</td></tr>
+</table>
+<div class="note"><b>Trends:</b> Going down a group, reactivity <b>increases</b> (electrons easier to lose), melting point <b>decreases</b> for alkali metals, and size increases.</div>
+</card>
+<card>
+<h3>&#128279; Important s-block compounds</h3>
+<table>
+<tr><th>Compound</th><th>Formula</th><th>Use</th></tr>
+<tr><td>Caustic soda</td><td class="formula">NaOH</td><td>Soap, paper, drain cleaner</td></tr>
+<tr><td>Baking soda</td><td class="formula">NaHCO₃</td><td>Cooking, antacid</td></tr>
+<tr><td>Washing soda</td><td class="formula">Na₂CO₃·10H₂O</td><td>Cleaning, softening</td></tr>
+<tr><td>Lime / quicklime</td><td class="formula">CaO</td><td>Mortar, neutralising acid soil</td></tr>
+<tr><td>Slaked lime</td><td class="formula">Ca(OH)₂</td><td>Plaster, whitewash</td></tr>
+<tr><td>Gypsum / Plaster of Paris</td><td class="formula">CaSO₄·2H₂O</td><td>Casts, cement</td></tr>
+</table>
+<div class="warn"><b>NaCl production:</b> By electrolysis of brine (NaCl solution): 2NaCl + 2H₂O → 2NaOH + H₂ + Cl₂. This is the chlor-alkali process.</div>
+</card>
+<card>
+<h3>&#128202; The p-block — the nonmetal home</h3>
+<table>
+<tr><th>Group</th><th>Key elements</th><th>Highlights</th></tr>
+<tr><td>13</td><td>B, Al</td><td>Al is the most abundant metal in Earth's crust; amphoteric oxide Al₂O₃.</td></tr>
+<tr><td>14</td><td>C, Si</td><td>C = organic chemistry; Si = semiconductors (silicon).</td></tr>
+<tr><td>15</td><td>N, P</td><td>N₂ is inert; P exists as P₄; both essential for life.</td></tr>
+<tr><td>16</td><td>O, S</td><td>O₂ essential; S forms H₂SO₄, the "king of chemicals".</td></tr>
+<tr><td>17</td><td>F, Cl, Br, I</td><td>Halogens — very reactive, form salts.</td></tr>
+<tr><td>18</td><td>He, Ne, Ar</td><td>Noble gases — inert, full outer shell.</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128300; Halogens — the most reactive nonmetals</h3>
+<table>
+<tr><th>Element</th><th>State (room temp)</th><th>Colour</th><th>Reactivity</th></tr>
+<tr><td>Fluorine (F₂)</td><td>Gas</td><td>Pale yellow</td><td>Most reactive</td></tr>
+<tr><td>Chlorine (Cl₂)</td><td>Gas</td><td>Greenish-yellow</td><td>Very reactive</td></tr>
+<tr><td>Bromine (Br₂)</td><td>Liquid</td><td>Red-brown</td><td>Reactive</td></tr>
+<tr><td>Iodine (I₂)</td><td>Solid</td><td>Dark grey/purple</td><td>Least reactive</td></tr>
+</table>
+<div class="note"><b>Displacement trend:</b> A more reactive halogen displaces a less reactive one from its salt. Cl₂ + 2NaBr → 2NaCl + Br₂ (chlorine displaces bromine).</div>
+</card>
+<card>
+<h3>&#128214; Sulfur &amp; sulfuric acid — the industrial giant</h3>
+<table>
+<tr><th>Step (Contact process)</th><th>Reaction</th></tr>
+<tr><td>1. Burn sulfur</td><td class="formula">S + O₂ → SO₂</td></tr>
+<tr><td>2. Oxidise</td><td class="formula">2SO₂ + O₂ ⇌ 2SO₃<br><span style="font-size:12px;color:#8ea0c0">V₂O₅ catalyst, 450°C</span></td></tr>
+<tr><td>3. Dissolve in H₂SO₄</td><td class="formula">SO₃ + H₂SO₄ → H₂S₂O₇</td></tr>
+<tr><td>4. Dilute</td><td class="formula">H₂S₂O₇ + H₂O → 2H₂SO₄</td></tr>
+</table>
+<div class="note"><b>Uses of H₂SO₄:</b> fertilisers (superphosphate), batteries, detergents, dyes, metal pickling, dehydration of sugars (charring test).</div>
+</card>
+<card>
+<h3>&#128270; Noble gases — why they're inert</h3>
+<ul>
+<li>Full outer shell (8 e⁻, or 2 for He) → low tendency to react.</li>
+<li>Used in lighting (Ne signs), welding shields (Ar), balloons (He), and MRI cools (He).</li>
+<li>Some heavier noble gases (Xe, Kr) do form compounds (XeF₂, XeF₄), but under extreme conditions.</li>
+</ul>
+</card>
+</div>
+
+
+<!-- ==================== G11 HYDROGEN ==================== -->
+<div class="page" id="pg-g11-hydro">
+<h2 class="pt">Hydrogen &amp; Its Compounds <span class="grade">Grade 11</span></h2>
+<p class="lead">Hydrogen is the lightest and most abundant element in the universe. It sits in Group 1 but is really in a class of its own.</p>
+<div class="idea"><b>Core idea:</b> Hydrogen is the simplest element, but its bonding, isotopes, and energy chemistry are unique.</div>
+<card>
+<h3>&#128161; Unique position of hydrogen</h3>
+<table>
+<tr><th>Property</th><th>Value / note</th></tr>
+<tr><td>Position</td><td>Top of Group 1, but behaves like both Group 1 (H⁺) and Group 17 (H⁻ hydrides).</td></tr>
+<tr><td>Atomic number</td><td>1 (one proton, one electron).</td></tr>
+<tr><td>Isotopes</td><td>Protium (¹H), Deuterium (²H/D), Tritium (³H/T, radioactive).</td></tr>
+<tr><td>State</td><td>Diatomic gas, H₂, at room temperature.</td></tr>
+<tr><td>Abundance</td><td>~75% by mass of the observable universe.</td></tr>
+</table>
+<div class="note"><b>Hydrogen is placed in Group 1</b> because it has 1 valence electron and can lose it to form H⁺ — but its chemistry is unique: it also forms covalent bonds and hydride ions (H⁻).</div>
+</card>
+<card>
+<h3>&#128279; Preparation of hydrogen</h3>
+<table>
+<tr><th>Method</th><th>Reaction</th></tr>
+<tr><td>Metal + acid</td><td class="formula">Zn + 2HCl → ZnCl₂ + H₂↑</td></tr>
+<tr><td>Metal + water</td><td class="formula">2Na + 2H₂O → 2NaOH + H₂↑</td></tr>
+<tr><td>Electrolysis of water</td><td class="formula">2H₂O → 2H₂ + O₂ <span style="font-size:12px;color:#8ea0c0">(electrolysis)</span></td></tr>
+<tr><td>Steam over hot iron</td><td class="formula">3Fe + 4H₂O → Fe₃O₄ + 4H₂</td></tr>
+</table>
+<div class="warn"><b>Test for hydrogen:</b> A burning splint makes a <b>"pop"</b> sound in H₂ (positive "pop test").</div>
+</card>
+<card>
+<h3>&#128270; Water — hydrogen's most important compound</h3>
+<table>
+<tr><th>Property</th><th>Detail</th></tr>
+<tr><td>Formula / structure</td><td>H₂O, bent, 104.5°, polar, H-bonded.</td></tr>
+<tr><td>Hard water vs soft</td><td>Hard water has Ca²⁺/Mg²⁺; makes soap scum. Softened by boiling or Na₂CO₃.</td></tr>
+<tr><td>Boiling point anomaly</td><td>High (100°C) because of hydrogen bonding.</td></tr>
+<tr><td>Amphoteric</td><td>Can act as both acid and base (autoionisation: H₂O ⇌ H⁺ + OH⁻).</td></tr>
+<tr><td>Unique properties</td><td>High specific heat, high surface tension, expands on freezing (ice floats).</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128200; Hydrides &amp; hydrogen peroxide (brief)</h3>
+<table>
+<tr><th>Compound</th><th>Formula</th><th>Notes</th></tr>
+<tr><td>Ionic hydrides</td><td class="formula">NaH, CaH₂</td><td>Contain H⁻; react with water to give H₂.</td></tr>
+<tr><td>Covalent hydrides</td><td class="formula">CH₄, NH₃, H₂S</td><td>Molecular compounds with H bonded covalently.</td></tr>
+<tr><td>Hydrogen peroxide</td><td class="formula">H₂O₂</td><td>Bleaching agent, antiseptic, oxidises; decomposes to H₂O + O₂.</td></tr>
+</table>
+<div class="note"><b>H₂O₂ as oxidant:</b> 2H₂O₂ → 2H₂O + O₂. It bleaches hair and clothes and disinfects wounds (fizzing = O₂ release).</div>
+</card>
+<card>
+<h3>&#128214; Hydrogen economy / applications</h3>
+<table>
+<tr><th>Application</th><th>Detail</th></tr>
+<tr><td>Fuel cells</td><td>H₂ + ½O₂ → H₂O, producing electricity (clean, only water exhaust).</td></tr>
+<tr><td>Rocket fuel</td><td>Liquid H₂ + O₂ powers space shuttles.</td></tr>
+<tr><td>Ammonia (Haber)</td><td>N₂ + 3H₂ ⇌ 2NH₃ — feeds the world's fertilisers.</td></tr>
+<tr><td>Hydrogenation</td><td>Adding H₂ to unsaturated fats → margarine.</td></tr>
+<tr><td>Metallurgy</td><td>Reducing agent for metal oxides.</td></tr>
+</table>
+<div class="warn"><b>Safety:</b> H₂ is highly flammable and forms explosive mixtures with air (4–75%). Handle with care and always test purity before igniting.</div>
+</card>
+<card class="review">
+<h3>&#127919; Grade 11 review — idea first, then practice</h3>
+<p style="font-size:13.5px"><b>The big picture:</b> Grade 11 turns chemistry into mathematics and mechanism: moles count, gas laws relate, quantum numbers locate electrons, bonding explains shape, and thermodynamics and equilibrium decide whether and how far reactions go.</p>
+<div class="note"><b>Analogy that sticks:</b> Equilibrium is a busy doorway: people enter and leave at the same rate, so the number inside stays steady even though movement never stops.</div>
+<div class="hook"><b>Memory hook:</b> Moles count it, thermodynamics says if, equilibrium says how far.</div>
+<p style="font-size:13.5px;margin-top:12px"><b>Check yourself — answers are hidden:</b></p>
+<ol>
+<li>How many moles are in 11.2 L of a gas at STP?</li>
+<li>State Le Chatelier's principle in one sentence.</li>
+<li>Find the oxidation number of Mn in KMnO₄.</li>
+<li>Why is CH₄ nonpolar overall even though its C–H bonds are slightly polar?</li>
+<li>Distinguish a structural isomer from a geometric isomer.</li>
+</ol>
+<details><summary>Show answers</summary>
+<ol>
+<li>n = 11.2 ÷ 22.4 = 0.5 mol.</li>
+<li>If a system at equilibrium is disturbed, it shifts in the direction that opposes the disturbance.</li>
+<li>K = +1 and each O = −2, so +1 + Mn + 4(−2) = 0 → Mn = +7.</li>
+<li>The four bonds point tetrahedrally and their dipoles cancel by symmetry.</li>
+<li>Structural isomers differ in connectivity; geometric isomers have the same connectivity but a different arrangement around a C=C (cis/trans).</li>
+</ol>
+</details>
+</card>
+
+</div>
+
+
+<!-- ==================== PRACTICE ==================== -->
+<div class="page" id="pg-practice">
+<h2 class="pt">Practice &amp; Problem Path <span class="grade">Check yourself</span></h2>
+<p class="lead">Use this page as a diagnostic, not an exam. Answer first, then open the answers. Every wrong answer tells you exactly which page to revisit.</p>
+<div class="idea"><b>Core idea:</b> Diagnose the broken link, repair that page, then practise retrieving the idea without notes.</div>
+<card>
+<h3>&#127919; How to use the diagnostic</h3>
+<ul>
+<li>Close the hub and try the questions without looking at the notes.</li>
+<li>Give yourself about 1 minute per question. Write equations and units neatly.</li>
+<li>Check your answers only after finishing a section.</li>
+<li>For every wrong answer, note the topic — not just the question number.</li>
+<li>For a shorter check, use the 5-question review at the end of each grade.</li>
+</ul>
+<table>
+<tr><th>Section</th><th>Questions</th><th>If you score below half</th></tr>
+<tr><td>Foundation (Grades 6–8)</td><td>1–8</td><td>Start at <a href="#pg-g6-matter">Grade 6</a> or <a href="#pg-g7-particles">Grade 7</a>.</td></tr>
+<tr><td>Bridge (Grades 9–10)</td><td>9–14</td><td>Revise <a href="#pg-g9-matter">Grade 9</a> and <a href="#pg-g10-pt">Grade 10</a>.</td></tr>
+<tr><td>Grade 11 readiness</td><td>15–20</td><td>Focus on mole, gas laws, equilibrium, and organic basics.</td></tr>
+</table>
+<div class="note"><b>Important:</b> A low score is useful information, not a judgement. It shows where the chain broke — and this hub is designed to repair the chain from the beginning.</div>
+</card>
+<card>
+<h3>&#128221; Section A — Foundation (Grades 6–8)</h3>
+<ol>
+<li>Define <b>matter</b>. Give one example of matter and one example of something that is not matter.</li>
+<li>Name the three common states of matter. Give one property that clearly distinguishes them.</li>
+<li>Classify each change as <b>physical</b> or <b>chemical</b>: (a) ice melting, (b) paper burning, (c) salt dissolving in water, (d) iron rusting.</li>
+<li>Define <b>element</b>, <b>compound</b>, and <b>mixture</b>. Give one example of each.</li>
+<li>Write the chemical formula for: (a) sodium chloride, (b) carbon dioxide, (c) water, (d) calcium carbonate.</li>
+<li>Balance these equations: (a) <span class="formula">Mg + O₂ → MgO</span>; (b) <span class="formula">H₂ + O₂ → H₂O</span>.</li>
+<li>A solution has pH 2. Is it acidic, neutral, or basic? What happens to blue litmus paper in it? What is the pH of a neutral solution?</li>
+<li>Sodium has atomic number 11 and mass number 23. Find its number of protons, neutrons, and electrons. Write its shell arrangement and the ion it forms.</li>
+</ol>
+<details>
+<summary>Show answers — Section A</summary>
+<ol>
+<li>Matter is anything with mass and volume. Examples: a book, water, air. Not matter: light, heat, sound.</li>
+<li>Solid, liquid, gas. Shape and volume: a solid has fixed shape and volume; a liquid has fixed volume but takes the container's shape; a gas fills the container and is compressible.</li>
+<li>(a) physical, (b) chemical, (c) physical, (d) chemical.</li>
+<li>Element: one kind of atom (O₂, Fe). Compound: two or more elements chemically combined in a fixed ratio (H₂O, NaCl). Mixture: substances physically mixed, variable ratio (air, salt water).</li>
+<li>(a) NaCl, (b) CO₂, (c) H₂O, (d) CaCO₃.</li>
+<li>(a) 2Mg + O₂ → 2MgO; (b) 2H₂ + O₂ → 2H₂O.</li>
+<li>Acidic. Blue litmus turns red. Neutral pH = 7.</li>
+<li>Protons = 11; electrons = 11 (neutral atom); neutrons = 23 − 11 = 12. Shells: 2, 8, 1. It loses the outer electron to form Na⁺ (2, 8).</li>
+</ol>
+</details>
+</card>
+<card>
+<h3>&#128279; Section B — Bridge (Grades 9–10)</h3>
+<ol start="9">
+<li>Explain the difference between an <b>atom</b>, an <b>ion</b>, and an <b>isotope</b>.</li>
+<li>Compare <b>ionic</b> and <b>covalent</b> bonding. Give one example of each and one property difference.</li>
+<li>State the trend in <b>atomic size</b> and <b>electronegativity</b> (a) across a period from left to right and (b) down a group.</li>
+<li>For water, H₂O: what is the mass of 1 mole? How many molecules are in 1 mole? What volume does 1 mole of water vapour occupy at STP?</li>
+<li>Identify the reaction type: (a) <span class="formula">Zn + CuSO₄ → ZnSO₄ + Cu</span>; (b) <span class="formula">CaCO₃ → CaO + CO₂</span>; (c) <span class="formula">HCl + NaOH → NaCl + H₂O</span>.</li>
+<li>Which is more acidic: pH 3 or pH 5? By what factor is its H⁺ concentration larger?</li>
+</ol>
+<details>
+<summary>Show answers — Section B</summary>
+<ol start="9">
+<li>An atom is neutral (protons = electrons). An ion is charged because it has gained or lost electrons. An isotope has the same number of protons but a different number of neutrons.</li>
+<li>Ionic: metal + nonmetal; electrons transferred; high melting point; conducts when molten or dissolved (NaCl). Covalent: nonmetal + nonmetal; electrons shared; lower melting point; usually poor conductor (H₂O, CO₂).</li>
+<li>(a) Across a period: atomic size decreases; electronegativity increases. (b) Down a group: atomic size increases; electronegativity decreases.</li>
+<li>Molar mass = 2(1) + 16 = 18 g/mol. One mole contains 6.022 × 10²³ molecules. At STP, one mole of gas occupies 22.4 L.</li>
+<li>(a) single displacement; (b) decomposition; (c) neutralisation (acid + base → salt + water).</li>
+<li>pH 3 is more acidic. It has 10² = <b>100 times</b> the H⁺ concentration of pH 5.</li>
+</ol>
+</details>
+</card>
+<card>
+<h3>&#128640; Section C — Grade 11 readiness</h3>
+<ol start="15">
+<li>4.0 g of NaOH (molar mass 40 g/mol) is dissolved to make 500 mL of solution. Calculate the number of moles and the molarity.</li>
+<li>For <span class="formula">2H₂ + O₂ → 2H₂O</span>, you start with 4 mol H₂ and 3 mol O₂. Which is the limiting reactant? How many moles of water form? How much O₂ is left?</li>
+<li>A gas occupies 2.0 L at 1.0 atm. What is its volume at 2.0 atm, at constant temperature? If 2.0 L at 300 K is heated to 600 K at constant pressure, what is the new volume?</li>
+<li>Name <span class="formula">CH₃CH₂OH</span>. Which functional group does it contain? Write its complete combustion equation.</li>
+<li>For <span class="formula">N₂ + 3H₂ ⇌ 2NH₃</span> (exothermic forward), predict the shift when (a) pressure is increased, (b) temperature is increased.</li>
+<li>Find the oxidation number of sulfur in <span class="formula">H₂SO₄</span>. In the reaction <span class="formula">Fe²⁺ + Cr₂O₇²⁻ → Fe³⁺ + Cr³⁺</span>, which species is oxidised and which is reduced?</li>
+</ol>
+<details>
+<summary>Show answers — Section C</summary>
+<ol start="15">
+<li>n = 4.0 ÷ 40 = <b>0.10 mol</b>. Molarity = 0.10 mol ÷ 0.500 L = <b>0.20 M</b>.</li>
+<li>H₂: 4 ÷ 2 = 2; O₂: 3 ÷ 1 = 3. H₂ gives the smaller value, so <b>H₂ is limiting</b>. 4 mol H₂ forms <b>4 mol H₂O</b>. O₂ used = 2 mol, so <b>1 mol O₂ remains</b>.</li>
+<li>Boyle: P₁V₁ = P₂V₂ → 1.0 × 2.0 = 2.0 × V₂ → <b>V₂ = 1.0 L</b>. Charles: V₁/T₁ = V₂/T₂ → 2.0/300 = V₂/600 → <b>V₂ = 4.0 L</b>.</li>
+<li><b>Ethanol</b>; it contains the <b>alcohol (–OH)</b> functional group. <span class="formula">C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O</span>.</li>
+<li>(a) Increasing pressure shifts toward the side with fewer gas moles: <b>right</b>, toward NH₃ (4 mol → 2 mol). (b) Increasing temperature shifts in the endothermic direction: <b>left</b>, because the forward reaction is exothermic.</li>
+<li>H₂SO₄: 2(+1) + S + 4(−2) = 0 → <b>S = +6</b>. Fe²⁺ → Fe³⁺ is oxidation (loses electrons); Cr₂O₇²⁻ → Cr³⁺ is reduction (gains electrons).</li>
+</ol>
+</details>
+</card>
+<card>
+<h3>&#128197; A 10-day reset plan (60–90 minutes a day)</h3>
+<table>
+<tr><th>Day</th><th>Read / draw</th><th>Do</th></tr>
+<tr><td>1</td><td><a href="#pg-g6-matter">Grade 6 — matter, changes, mixtures</a></td><td>Draw the three states; separate sand + salt on paper.</td></tr>
+<tr><td>2</td><td><a href="#pg-g6-materials">Grade 6 — materials &amp; safety</a>; <a href="#pg-g7-particles">Grade 7 — particles</a></td><td>Explain diffusion and compression in your own words.</td></tr>
+<tr><td>3</td><td><a href="#pg-g7-symbols">Grade 7 — symbols, formulae, separation</a></td><td>Write 10 formulas from names; balance 3 equations.</td></tr>
+<tr><td>4</td><td><a href="#pg-g7-acids">Grade 7 — acids, air, water</a></td><td>Make a pH colour chart; list air pollutants.</td></tr>
+<tr><td>5</td><td><a href="#pg-g8-atom">Grade 8 — atoms, ions, bonding</a></td><td>Draw Bohr diagrams for Na, Mg, Cl, O.</td></tr>
+<tr><td>6</td><td><a href="#pg-g8-reactions">Grade 8 — equations &amp; reactions</a></td><td>Balance 5 equations; classify 5 reactions.</td></tr>
+<tr><td>7</td><td><a href="#pg-g8-acids">Grade 8 — acids, bases, salts</a>; <a href="#pg-g8-metals">metals &amp; materials</a></td><td>Write 4 neutralisation equations; recall the reactivity series.</td></tr>
+<tr><td>8</td><td><a href="#pg-g9-matter">Grade 9 — all four pages</a></td><td>Answer Section A without notes.</td></tr>
+<tr><td>9</td><td><a href="#pg-g10-pt">Grade 10 — all five pages</a></td><td>Answer Section B without notes.</td></tr>
+<tr><td>10</td><td><a href="#pg-g11-fund">Grade 11 — mole, gases, atomic, bonding</a></td><td>Answer Section C; revisit every wrong answer.</td></tr>
+</table>
+<div class="note"><b>If you only have one day:</b> read the <a href="#pg-g6-matter">Grade 6</a> and <a href="#pg-g7-symbols">Grade 7 symbols</a> pages, then the <a href="#pg-g8-atom">Grade 8 atom</a> and <a href="#pg-g8-reactions">equations</a> pages. Those four pages carry most of the language used in Grade 11.</div>
+</card>
+<card>
+<h3>&#128161; Grade 11 topic → the foundation it stands on</h3>
+<table>
+<tr><th>Grade 11 topic</th><th>Go back to</th><th>Why</th></tr>
+<tr><td>Mole &amp; stoichiometry</td><td><a href="#pg-g7-symbols">G7 formulae</a>, <a href="#pg-g9-chem">G9 mole intro</a></td><td>You cannot calculate amounts if you cannot read a formula.</td></tr>
+<tr><td>States of matter &amp; gases</td><td><a href="#pg-g6-matter">G6 states</a>, <a href="#pg-g7-particles">G7 particles</a>, <a href="#pg-g9-gases">G9 gases</a></td><td>Gas laws are the particle model written as mathematics.</td></tr>
+<tr><td>Atomic structure &amp; quantum</td><td><a href="#pg-g8-atom">G8 atom</a>, <a href="#pg-g9-atom">G9 shells</a></td><td>Orbitals are a more exact version of shells.</td></tr>
+<tr><td>Bonding, VSEPR &amp; hybridisation</td><td><a href="#pg-g8-atom">G8 ions/valency</a>, <a href="#pg-g10-bond">G10 bonding</a></td><td>VSEPR explains the shapes of the bonds you already know.</td></tr>
+<tr><td>Thermodynamics</td><td><a href="#pg-g6-matter">G6 changes</a>, <a href="#pg-g8-reactions">G8 energy</a></td><td>Enthalpy is bookkeeping for heat released or absorbed.</td></tr>
+<tr><td>Equilibrium</td><td><a href="#pg-g8-reactions">G8 reversible change</a>, <a href="#pg-g10-acid">G10 acids</a></td><td>Equilibrium is about reactions that go both ways.</td></tr>
+<tr><td>Redox &amp; electrochemistry</td><td><a href="#pg-g8-reactions">G8 reactions</a>, <a href="#pg-g10-metal">G10 metals</a></td><td>Electron transfer is the same idea as displacement.</td></tr>
+<tr><td>Organic chemistry</td><td><a href="#pg-g8-metals">G8 carbon</a>, <a href="#pg-g10-organic">G10 hydrocarbons</a></td><td>Carbon's four bonds are the reason organic chemistry exists.</td></tr>
+<tr><td>s-Block, p-Block, hydrogen</td><td><a href="#pg-g9-atom">G9 elements</a>, <a href="#pg-g10-pt">G10 periodic table</a></td><td>Group behaviour follows from valence electrons.</td></tr>
+</table>
+</card>
+<card>
+<h3>&#128218; Five study habits that make chemistry stick</h3>
+<ol>
+<li><b>Explain out loud.</b> If you cannot explain a card to a friend in simple words, you do not know it yet.</li>
+<li><b>Draw the invisible.</b> Sketch particles, atoms, ions, and electron shells. A drawing exposes gaps that reading hides.</li>
+<li><b>Balance three equations every day.</b> It is a skill, like multiplication — short daily practice beats one long session.</li>
+<li><b>Track units.</b> Write g, mol, L, M every time. Many Grade 11 mistakes are unit mistakes, not chemistry mistakes.</li>
+<li><b>Connect backwards.</b> For every new Grade 11 topic, ask: <i>which Grade 6–10 idea is this built on?</i> Use the table above.</li>
+</ol>
+<div class="note"><b>Final reminder:</b> Chemistry is cumulative. You do not need to memorise every page — you need the <b>chain of ideas</b> to stay unbroken. Start where the chain broke, repair it, and Grade 11 will stop feeling like a different language.</div>
+</card>
+</div>
+
+</main>
+</div>
+<script>
+(function(){
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
+  if(!pages.length || !links.length) return;
+  var nav = document.querySelector('nav');
+  var toggle = document.getElementById('navToggle');
+  var mobile = window.matchMedia('(max-width: 860px)');
+  if(mobile.matches && nav) nav.classList.add('mobile-collapsed');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      nav.classList.toggle('mobile-collapsed');
+    });
+  }
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      if(mobile.matches && nav) nav.classList.add('mobile-collapsed');
+    });
+  });
+  if(mobile.addEventListener){
+    mobile.addEventListener('change', function(e){
+      if(!e.matches && nav) nav.classList.remove('mobile-collapsed');
+    });
+  }
+  function update(){
+    var y = window.scrollY + 150;
+    var current = pages[0];
+    for(var i = 0; i < pages.length; i++){
+      if(pages[i].offsetTop <= y) current = pages[i];
+    }
+    links.forEach(function(a){
+      var on = a.getAttribute('href') === '#' + current.id;
+      a.classList.toggle('active', on);
+    });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('hashchange', update);
+  update();
+})();
+</script>
+</body>
+</html>

@@ -50,8 +50,12 @@ import { ACCESS_NOTICE } from "./access-notice";
  * profile and the rest all require an approved login.
  * Owner request (2026-10-23): "/plans is visible for all users" — the tier
  * ladder joins the open list (plan.md §5: the plans page is a guest page).
+ * Owner request (2026-10-25): the flow is "welcome → guest home → login page
+ * → study home" — /home is the GUEST HOME and joins the open list too. The
+ * tier homes under it stay safe: TierHomeGate replaces any wrong-rung viewer
+ * onto their own home before any interface renders.
  */
-const PUBLIC_PATHS = ["/notice", "/plans"] as const;
+const PUBLIC_PATHS = ["/home", "/notice", "/plans"] as const;
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));

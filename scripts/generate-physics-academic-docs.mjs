@@ -162,6 +162,11 @@ const checkOnly = process.argv.includes("--check");
 const written = [];
 const stale = [];
 
+// Line endings are not content: a CRLF checkout (Windows autocrlf) must not
+// read as "out of date" against the LF this generator renders. Normalize
+// both sides for the comparison; writes still use the canonical LF.
+const normalizeEol = (s) => s.replace(/\r\n/g, "\n");
+
 for (const unit of dataset.units) {
   const files = [
     { name: `${unit.slug}.html`, content: renderHtml(unit, dataset) },
@@ -173,7 +178,8 @@ for (const unit of dataset.units) {
       if (checkOnly) {
         if (
           !fs.existsSync(target) ||
-          fs.readFileSync(target, "utf8") !== file.content
+          normalizeEol(fs.readFileSync(target, "utf8")) !==
+            normalizeEol(file.content)
         ) {
           stale.push(path.relative(ROOT, target));
         }

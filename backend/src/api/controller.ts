@@ -128,7 +128,7 @@ router.get("/settings", asyncHandler(async (req: Request, res: Response) => {
   }
 }));
 
-// Settings PATCH (ADMIN/OWNER only).
+// Settings PATCH (pro/owner rungs only).
 // Body: {key, value} or {settings: [{key, value}]}.
 // Upserts into the settings table with updated_by set to the caller's user id
 // (service-role key makes RLS inert; this route gate is the only guard).

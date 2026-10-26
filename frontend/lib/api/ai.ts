@@ -7,6 +7,8 @@ import type {
   SearchResponse,
   GenerateQuestionsRequest,
   GenerateQuestionsResponse,
+  EvaluateAnswersRequest,
+  EvaluateAnswersResponse,
 } from "../../types/api";
 
 /**
@@ -180,7 +182,14 @@ export async function* streamChat(
               try {
                 const parsed = JSON.parse(data);
                 if (typeof parsed.content === "string") yield parsed.content;
-              } catch {}
+              } catch {
+                // 5.3: surface the malformed tail instead of silently
+                // dropping it — a truncated final event is a real error.
+                console.warn(
+                  "[AI stream] ignored malformed final SSE event:",
+                  data.slice(0, 120),
+                );
+              }
             }
           }
         }
@@ -321,13 +330,28 @@ export async function search(
 }
 
 /**
- * Generate MCQs via AI from syllabus content and internet context.
- * Supports easy / intermediate / hard difficulty levels.
+ * Generate quiz questions via AI from syllabus content and internet context.
+ * Supports easy / intermediate / hard difficulty levels and the five quiz
+ * formats (mcq, true-false, fill-blank, short-answer, long-answer).
  */
 export async function generateQuestions(
   payload: GenerateQuestionsRequest
 ): Promise<GenerateQuestionsResponse> {
   return apiFetch<GenerateQuestionsResponse>("/api/ai/generate-questions", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}
+
+/**
+ * AI evaluation of learner answers (plan.md §11) — used by every writing
+ * format after submission. Returns per-item score/verdict/feedback/model
+ * answer/improvements plus an overall summary.
+ */
+export async function evaluateAnswers(
+  payload: EvaluateAnswersRequest
+): Promise<EvaluateAnswersResponse> {
+  return apiFetch<EvaluateAnswersResponse>("/api/ai/evaluate-answers", {
     method: "POST",
     body: JSON.stringify(payload),
   });
