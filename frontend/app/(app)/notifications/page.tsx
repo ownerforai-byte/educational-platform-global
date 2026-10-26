@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import {
   Bell,
@@ -20,90 +20,16 @@ import {
   ArrowLeft
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  INITIAL_NOTIFICATIONS,
+  markAllNotificationsRead,
+  markNotificationRead,
+  type NotificationItem,
+} from "@/lib/notifications";
+import { useNotificationState } from "@/lib/hooks/use-notifications";
 
-interface NotificationItem {
-  id: string;
-  category: "curriculum" | "ai" | "account" | "system";
-  title: string;
-  body: string;
-  timestamp: string;
-  href?: string;
-  actionLabel?: string;
-  isInitialUnread?: boolean;
-}
-
-const INITIAL_NOTIFICATIONS: NotificationItem[] = [
-  {
-    id: "notif-phys-xi-docs",
-    category: "curriculum",
-    title: "NEB Physics XI Resource Documents Published",
-    body: "All 26 NEB Physics XI unit study documents (Mechanics, Heat & Thermodynamics, Optics, Electricity, Modern Physics) are now active in their unit Resources sections with worked questions, compare/contrast tables, and .docx downloads.",
-    timestamp: "10 mins ago",
-    href: "/class-11-notes/physics/chapters/kinematics",
-    actionLabel: "View Unit Resources",
-    isInitialUnread: true,
-  },
-  {
-    id: "notif-sparks-refill",
-    category: "account",
-    title: "Daily AI Spark Pool Refilled",
-    body: "Your daily spark allowance has been refreshed to full capacity. Ask Veer questions, test your knowledge in the AI quiz, or unlock deep concept notes freely.",
-    timestamp: "2 hours ago",
-    href: "/credits",
-    actionLabel: "Check Spark Balance",
-    isInitialUnread: true,
-  },
-  {
-    id: "notif-exam-countdown",
-    category: "curriculum",
-    title: "Official NEB Exam Countdown Synchronized",
-    body: "NEB Class 11 and 12 board examination timeline and subject milestone trackers are live. Review high-yield weightage topics and test your readiness.",
-    timestamp: "5 hours ago",
-    href: "/exam-countdown",
-    actionLabel: "Open Exam Countdown",
-    isInitialUnread: true,
-  },
-  {
-    id: "notif-veer-tutor-update",
-    category: "ai",
-    title: "Veer Study Assistant Enhanced",
-    body: "Veer is now grounded in official CDC curriculum definitions and real drawn vector schematics. Open your console to start a lesson or clear concepts.",
-    timestamp: "Yesterday",
-    href: "/chat",
-    actionLabel: "Chat with Veer",
-    isInitialUnread: false,
-  },
-  {
-    id: "notif-3d-lab-update",
-    category: "system",
-    title: "Virtual 3D Laboratory Upgraded",
-    body: "Over 96+ interactive 3D simulations are active across Physics, Chemistry, and Biology. Explore optics, projectile motion, and cell biology in 3D.",
-    timestamp: "2 days ago",
-    href: "/lab/3d",
-    actionLabel: "Explore 3D Labs",
-    isInitialUnread: false,
-  },
-  {
-    id: "notif-pyq-bank",
-    category: "curriculum",
-    title: "Previous Year Question Bank Expanded",
-    body: "Past 10 years of solved NEB questions for Physics, Chemistry, Biology, and Mathematics with step-by-step model solutions have been updated.",
-    timestamp: "3 days ago",
-    href: "/pyqs",
-    actionLabel: "Practice PYQs",
-    isInitialUnread: false,
-  },
-  {
-    id: "notif-account-security",
-    category: "account",
-    title: "Account Security & Owner Verification Active",
-    body: "Administrative approval protection is active. Your notes, saved chat history, and personal bookmarked materials remain private and securely scoped.",
-    timestamp: "4 days ago",
-    href: "/profile",
-    actionLabel: "Account Profile",
-    isInitialUnread: false,
-  },
-];
+// The notification queue + read store live in `lib/notifications.ts` (shared
+// with the header bell so "mark all read" zeroes every badge — plan.md §14).
 
 const CATEGORY_CONFIG = {
   curriculum: {
@@ -128,57 +54,25 @@ const CATEGORY_CONFIG = {
   },
 };
 
-const STORAGE_KEY = "ravikisan_read_notification_ids";
-
 export default function NotificationsPage() {
   // Read = approved = REMOVED from the list (owner direction 2026-10-24:
   // "make the notification removed once approved (read by user)"). The set
   // holds the ids the user has approved; those cards no longer render.
-  const [readIds, setReadIds] = useState<Set<string>>(new Set());
+  //
+  // State comes from the SHARED store (plan.md §14 5.1) — the header bell
+  // derives its badge from the same snapshot, so "mark all read" here zeroes
+  // every badge instantly, in this tab and in all open tabs.
+  const { hydrated, readIds, unreadCount } = useNotificationState();
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [isClient, setIsClient] = useState(false);
-
-  // Initialize approved status from localStorage
-  useEffect(() => {
-    setIsClient(true);
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed)) {
-          setReadIds(new Set(parsed));
-        }
-      }
-    } catch {
-      // Ignore localStorage errors
-    }
-  }, []);
-
-  // Save to localStorage
-  const saveReadIds = (newSet: Set<string>) => {
-    setReadIds(newSet);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(newSet)));
-    } catch {
-      // Ignore localStorage errors
-    }
-  };
 
   /** Approve (read) one notification — it is removed from the list. */
   const markRead = (id: string) => {
-    const next = new Set(readIds);
-    next.add(id);
-    saveReadIds(next);
+    markNotificationRead(id);
   };
 
   const markAllAsRead = () => {
-    const next = new Set(INITIAL_NOTIFICATIONS.map((n) => n.id));
-    saveReadIds(next);
+    markAllNotificationsRead();
   };
-
-  const unreadCount = useMemo(() => {
-    return INITIAL_NOTIFICATIONS.filter((n) => !readIds.has(n.id)).length;
-  }, [readIds]);
 
   const filteredNotifications = useMemo(() => {
     return INITIAL_NOTIFICATIONS.filter((n) => {
@@ -214,7 +108,7 @@ export default function NotificationsPage() {
           <div className="flex items-start sm:items-center gap-3.5">
             <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 shadow-inner">
               <Bell className="h-6 w-6 text-primary" />
-              {isClient && unreadCount > 0 && (
+              {hydrated && unreadCount > 0 && (
                 <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-extrabold text-primary-foreground shadow-sm">
                   {unreadCount}
                 </span>
@@ -225,7 +119,7 @@ export default function NotificationsPage() {
                 <h1 className="text-xl md:text-2xl font-bold tracking-tight text-foreground">
                   Notifications Center
                 </h1>
-                {isClient && unreadCount > 0 && (
+                {hydrated && unreadCount > 0 && (
                   <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/20">
                     {unreadCount} New
                   </span>

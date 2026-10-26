@@ -1,6 +1,7 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
+import { getWorkLaneProvider } from "../ai/config";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
 import { requireCredit } from "../middleware/creditCheck";
@@ -152,7 +153,8 @@ Format with clean KaTeX LaTeX syntax for all equations and expressions.`;
 
       // Primary provider: Cerebras (qwen-3.8-27b) — industry-leading open-source math reasoning,
       // with automatic fallback to Groq -> Gemini -> Agnes in the configured chain.
-      const solution = await aiService.chat("cerebras", messages);
+      // The math solver owns the Cerebras lane (owner 2026-10-25).
+      const solution = await aiService.chat(getWorkLaneProvider("math"), messages);
 
       const guestSlot = (req as GuestGateRequest).guestSlot;
 

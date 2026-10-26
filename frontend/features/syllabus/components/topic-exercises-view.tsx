@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ChevronRight, Construction, NotebookPen } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { getUnitTopic } from "@/lib/queries";
+import { getExerciseTypes } from "@/features/syllabus/exercise-types";
 
 /**
  * Exercise scaffold for a single syllabus topic — e.g. the अभ्यास set at the
@@ -34,6 +35,8 @@ export function TopicExercisesView({
 
   const { unit, topic } = data;
   const topicHref = `${basePath}/chapters/${unit.id}/topics/${topic.slug}`;
+  const exercisesHref = `${topicHref}/exercises`;
+  const exerciseTypes = getExerciseTypes(subjectSlug);
 
   return (
     <div className="space-y-8">
@@ -65,11 +68,51 @@ export function TopicExercisesView({
         )}
       </div>
 
+      {/* All exercise types of this topic — each type has its own page. */}
+      {exerciseTypes.length > 0 && (
+        <section className="space-y-4">
+          <div>
+            <h2 className="text-xl font-extrabold tracking-tight text-foreground">
+              अभ्यासका भागहरू — Exercise Types
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Every exercise type of this topic has its own page — choose one
+              below. The practice sets and worked solutions are added there.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {exerciseTypes.map((type) => (
+              <Link
+                key={type.id}
+                href={`${exercisesHref}/${type.id}`}
+                className="group rounded-2xl border border-border/60 bg-card/40 p-4 transition-colors hover:border-primary/50 hover:bg-primary/5"
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <h3 className="font-bold text-foreground group-hover:text-primary">
+                    {type.title}
+                  </h3>
+                  <span className="text-sm font-semibold text-primary">
+                    {type.devanagari}
+                  </span>
+                </div>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                  {type.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Empty for now — the exercise sets land here later. */}
       <EmptyState
         icon={<NotebookPen className="h-6 w-6" />}
         title="Exercises will be added in a future update"
-        description="The practice sets and worked solutions for this topic are being prepared. The page is ready — the notes will be added here later."
+        description={
+          exerciseTypes.length > 0
+            ? "The practice sets and worked solutions are being prepared. Each exercise type above has its own page ready — the exercises will be added there later."
+            : "The practice sets and worked solutions for this topic are being prepared. The page is ready — the notes will be added here later."
+        }
         action={{
           label: "Back to Topic Notes",
           href: topicHref,

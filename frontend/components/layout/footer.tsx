@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Lock } from "lucide-react";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
 import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
@@ -68,7 +67,6 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
                           title={`${label} opens at ${ACCESS_LABELS[minTier]} — see plans`}
                           className="inline-flex min-h-9 items-center gap-1 rounded text-sm text-muted-foreground/60 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                         >
-                          <Lock className="h-3 w-3" />
                           {label}
                         </Link>
                       </li>

@@ -50,6 +50,11 @@ describe("legacy note URL redirects", () => {
     expect(matchRedirect("/ravikishan-notes-disabled", rules)).toBeUndefined();
   });
 
+  it("sends the retired /pro-plan page to the tier ladder table", async () => {
+    const rules = await redirects();
+    expect(matchRedirect("/pro-plan", rules)?.destination).toBe("/plans");
+  });
+
   it("keeps the class-11e / class-12e deep alias redirects intact", async () => {
     const rules = await redirects();
     expect(matchRedirect("/class-11e/chemistry/atomic-structure", rules)?.destination).toBe(

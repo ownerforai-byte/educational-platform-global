@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Bot, History, Plus, Search, Sparkles } from "lucide-react";
+import { ArrowRight, Bot, History, Plus, Search, Sparkles } from "lucide-react";
 import { AIChatInterface } from "@/components/ai/ai-chat-interface";
+import { AiSurfaceHeader } from "@/components/ai/ai-surface-header";
 import { StudySuggestionsPanel } from "@/components/content/study-suggestions-panel";
 
 export const metadata: Metadata = {
@@ -39,46 +40,16 @@ const FEATURES = [
 export default function AITutorPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-2 sm:px-4 py-4 sm:py-6">
-      {/* Breadcrumb */}
-      <div className="mb-3 flex items-center gap-3">
-        <Link
-          href="/ai"
-          className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="h-3.5 w-3.5" />
-          AI Studio
-        </Link>
-        <span className="text-muted-foreground/40">/</span>
-        <span className="text-xs font-semibold text-foreground">Veer Tutor Console</span>
-      </div>
-
-      {/* Header + its own feature list */}
-      <div className="mb-4 rounded-2xl border border-border/70 bg-gradient-to-br from-fuchsia-500/[0.07] via-card to-card p-4 sm:p-5">
-        <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-fuchsia-500/25 bg-fuchsia-500/10">
-            <Bot className="h-5 w-5 text-fuchsia-500" />
-          </span>
-          <div>
-            <h1 className="text-lg sm:text-xl font-bold tracking-tight">Veer Tutor Console</h1>
-            <p className="text-xs text-muted-foreground">
-              Saved conversations, prompt enhancer and full answer history for signed-in students.
-            </p>
-          </div>
-        </div>
-
-        <ul className="mt-4 grid gap-3 sm:grid-cols-3">
-          {FEATURES.map((f) => {
-            const Icon = f.icon;
-            return (
-              <li key={f.title} className="rounded-xl border border-border/60 bg-card/80 p-3">
-                <Icon className="h-3.5 w-3.5 text-fuchsia-500" />
-                <p className="mt-1.5 text-xs font-bold text-foreground">{f.title}</p>
-                <p className="mt-0.5 text-[11px] leading-relaxed text-muted-foreground">{f.text}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {/* Shared AI surface header (plan.md §13) */}
+      <AiSurfaceHeader
+        icon={Bot}
+        title="Veer Tutor Console"
+        subtitle="Saved conversations, prompt enhancer and full answer history for signed-in students."
+        accent="border-fuchsia-500/25 bg-fuchsia-500/10 text-fuchsia-500"
+        gradientFrom="from-fuchsia-500/[0.07]"
+        crumb="Veer Tutor Console"
+        features={FEATURES.map((f) => ({ icon: f.icon, title: f.title, text: f.text }))}
+      />
 
       <AIChatInterface />
 

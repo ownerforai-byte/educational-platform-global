@@ -152,6 +152,10 @@ cloudflare-token.txt
 *.api-keys
 backend/.api-keys
 
+# AI API keys collection (local only, never commit) — the 8 AI provider keys, kept separate
+"ai api keys"
+backend/ai api keys
+
 
 # â”€â”€ Android TWA wrapper (local build only; signing keys and build trees stay out) â”€â”€
 android-twa/node_modules/

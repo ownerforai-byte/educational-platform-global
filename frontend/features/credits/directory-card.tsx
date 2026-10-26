@@ -31,7 +31,6 @@ import {
   BookOpen,
   Brain,
   ArrowUpRight,
-  Lock,
   Coins,
   Loader2,
   Timer,
@@ -368,8 +367,13 @@ export function DirectoryCard() {
         {/* ── LOCKED SHELL for guests ───────────────────────────────────── */}
         {!loading && !authenticated && (
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 rounded-3xl bg-background/60 p-6 text-center backdrop-blur-[3px]">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
-              <Lock className="h-7 w-7 text-primary" />
+            <div
+              className="inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+              aria-disabled="true"
+            >
+              <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+                Sign in required
+              </span>
             </div>
             <div className="max-w-md">
               <p className="text-base font-extrabold tracking-tight text-foreground">
@@ -388,7 +392,6 @@ export function DirectoryCard() {
               data-gate-title="Sign in to open the directory"
               className="inline-flex h-11 items-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-card"
             >
-              <Lock className="h-4 w-4" />
               Unlock Directory
             </button>
             {error && (

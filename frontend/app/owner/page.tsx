@@ -34,13 +34,23 @@ const OWNER_EMAILS = [
   "planephoto88@gmail.com",
 ];
 
+// Every tool points at a REAL console route (plan.md §8 P4 — tier grants and
+// section minimums live here). The old "/admin" entry was a loop: /admin
+// itself redirects back to /owner.
 const OWNER_TOOLS = [
   {
-    href: "/admin",
-    icon: LayoutDashboard,
-    title: "Admin Panel",
-    desc: "Manage users, roles, credits and premium requests.",
+    href: "/owner/users",
+    icon: ShieldCheck,
+    title: "Users & Tiers",
+    desc: "Grant or adjust tiers, credits, premium and access.",
     accent: "text-amber-400 bg-amber-500/10 border-amber-500/25",
+  },
+  {
+    href: "/owner/sections",
+    icon: LayoutDashboard,
+    title: "Section Minimums",
+    desc: "Set the rung each study section opens at.",
+    accent: "text-emerald-400 bg-emerald-500/10 border-emerald-500/25",
   },
   {
     href: "/controller",

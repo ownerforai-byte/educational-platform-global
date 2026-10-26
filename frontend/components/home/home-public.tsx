@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, FlaskConical, History, ShieldCheck } from "lucide-react";
+import { BookOpen, FlaskConical, History, ShieldCheck } from "lucide-react";
 import { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
 
 export { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
@@ -22,27 +22,21 @@ const resources = [
   },
 ];
 
+/**
+ * THE GUEST HOME (owner direction 2026-10-25: the flow is "welcome → guest
+ * home → login page → study home", and the guest home is designed "with only
+ * one or two buttons with sign in, hide others").
+ *
+ * It is the visitor's home body: the shell's public chrome (header + footer,
+ * no search bar, no quick links) wraps it, the sign-in button is the only
+ * action on the page (the shell's account button is the second one), and the
+ * rest is informational copy. Account request and plan CTAs stay hidden here;
+ * sign-up remains on the login page and plans stay on /plans.
+ */
 export function HomePublic() {
   return (
-    <div data-testid="public-home" className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-border">
-        <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-          <Link href="/" aria-label="Ravikisan's Platform home" className="flex min-w-0 items-center gap-2.5 text-sm font-semibold tracking-tight hover:text-primary">
-            <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">R</span>
-            <span className="whitespace-nowrap">Ravikisan&apos;s Platform</span>
-          </Link>
-          <nav aria-label="Account" className="flex shrink-0 items-center gap-2">
-            <Link
-              href="/login"
-              className="inline-flex min-h-10 items-center rounded-lg px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              Sign in
-            </Link>
-          </nav>
-        </div>
-      </header>
-
-      <main className="mx-auto w-full max-w-6xl space-y-14 px-4 py-12 sm:px-6 sm:py-16">
+    <div data-testid="public-home" className="bg-background text-foreground">
+      <div className="mx-auto w-full max-w-6xl space-y-14 px-4 py-12 sm:px-6 sm:py-16">
         <section aria-labelledby="landing-title" className="max-w-3xl">
           <p className="text-sm font-semibold tracking-wide text-primary">NEB Class 11 &amp; 12</p>
           <h1 id="landing-title" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
@@ -53,22 +47,10 @@ export function HomePublic() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
-              href="/signup"
+              href="/login"
               className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              Request an account <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/notice"
-              className="inline-flex min-h-11 items-center rounded-lg border border-border px-5 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              How access works
-            </Link>
-            <Link
-              href="/plans"
-              className="inline-flex min-h-11 items-center rounded-lg border border-border px-5 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              See all plans
+              Sign in
             </Link>
           </div>
         </section>
@@ -98,19 +80,16 @@ export function HomePublic() {
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-foreground">{ACCESS_NOTICE}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Sign in after your account has been approved. Available materials and usage limits depend on your plan.
+            Sign in after your account has been approved. Available materials and usage limits depend on your plan.{" "}
+            <Link
+              href="/notice"
+              className="font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              How access works
+            </Link>
           </p>
         </section>
-      </main>
-
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <span suppressHydrationWarning>© {new Date().getFullYear()} Ravikisan&apos;s Platform · NEB Class 11 &amp; 12</span>
-          <Link href="/notice" className="min-h-10 inline-flex items-center hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            Access notice
-          </Link>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 }

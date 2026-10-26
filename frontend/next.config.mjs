@@ -173,6 +173,14 @@ const nextConfig = {
         destination: "/class-12-notes/:path*",
         permanent: false,
       },
+      // The single plans page replaced the old pro-tier page (plan.md §8 P2:
+      // "/pro-plan is gone; every former link points at /plans") — old
+      // bookmarks and shared links land on the tier ladder table.
+      {
+        source: "/pro-plan",
+        destination: "/plans",
+        permanent: false,
+      },
       {
         source: "/class-11e",
         destination: "/class-11-notes",

@@ -38,10 +38,12 @@ import {
 
 // ── config ────────────────────────────────────────────────────────────────────
 
+import { getAgnesKey, isImageGenConfigured } from "./config";
+
 /** Verify the gateway with AI_IMAGE_GEN=on|off (default: on when a key exists). */
 export function imageGenEnabled(): boolean {
   if (process.env.AI_IMAGE_GEN?.trim().toLowerCase() === "off") return false;
-  return !!process.env.AGNES_API_KEY;
+  return isImageGenConfigured();
 }
 
 /** Ordered image-model chain. Override with AI_IMAGE_MODELS (comma list). */
@@ -153,7 +155,7 @@ export async function generateVeerImage(
     return { reason: "image generation is disabled or no instruction was given" };
   }
 
-  const key = process.env.AGNES_API_KEY;
+  const key = getAgnesKey();
   const baseUrl = (process.env.AGNES_API_URL || "https://apihub.agnes-ai.com").replace(/\/v1\/?$/, "");
 
   // Enrich the brief with the subject + archetype accuracy laws (see above):

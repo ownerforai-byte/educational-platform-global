@@ -11,7 +11,7 @@
  */
 
 import { useState, type ReactNode } from "react";
-import { Lock, Coins, Loader2, Timer } from "lucide-react";
+import { Coins, Loader2, Timer } from "lucide-react";
 import { TOKEN_MATRIX, type ContentCategory } from "./constants";
 import { useCredit } from "./credit-provider";
 
@@ -92,15 +92,25 @@ export function CreditGate({
           compact ? "min-h-[8rem]" : "min-h-[16rem]"
         } flex items-center justify-center bg-muted/40`}
       >
-        <Lock className="h-8 w-8 text-muted-foreground" />
+        <span
+          className="text-[10px] font-extrabold uppercase tracking-widest text-muted-foreground/60"
+          aria-hidden="true"
+        >
+          Restricted
+        </span>
       </div>
 
       {/* Unlock overlay — sticky so the button stays reachable on tall content */}
       <div className="absolute inset-0 z-10 bg-background/70 backdrop-blur-[2px]">
         <div className="sticky top-20 flex justify-center px-4 py-6">
           <div className="flex w-full max-w-sm flex-col items-center gap-3 rounded-3xl border border-border/70 bg-card p-5 text-center shadow-2xl">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
-              <Lock className="h-5 w-5 text-primary" />
+            <div
+              className="inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+              aria-disabled="true"
+            >
+              <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+                {rule.label}
+              </span>
             </div>
 
             <p className="text-sm font-bold leading-snug text-foreground">

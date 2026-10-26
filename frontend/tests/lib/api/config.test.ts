@@ -25,6 +25,7 @@ describe("getPublicConfig", () => {
       coinGateEnabled: false,
       dailyCreditPool: 4,
       aiMessageCost: 1,
+      sectionMinTiers: {},
     });
     expect(mockedFetch).toHaveBeenCalledWith("/api/config");
   });
@@ -33,6 +34,22 @@ describe("getPublicConfig", () => {
     mockedFetch.mockResolvedValueOnce({});
 
     await expect(getPublicConfig()).resolves.toEqual(DEFAULT_PUBLIC_CONFIG);
+  });
+
+  it("passes owner-set section minimums through", async () => {
+    mockedFetch.mockResolvedValueOnce({
+      coinGateEnabled: true,
+      dailyCreditPool: 4,
+      aiMessageCost: 1,
+      sectionMinTiers: { pdfs: "owner" },
+    });
+
+    await expect(getPublicConfig()).resolves.toEqual({
+      coinGateEnabled: true,
+      dailyCreditPool: 4,
+      aiMessageCost: 1,
+      sectionMinTiers: { pdfs: "owner" },
+    });
   });
 
   it("falls back to the platform default when the config read fails", async () => {

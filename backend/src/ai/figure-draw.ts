@@ -31,6 +31,7 @@ import {
   type FigurePart,
 } from "./academic-figures";
 import { createAIService, type AIChatMessage } from "./service";
+import { getWorkLaneProvider } from "./config";
 
 /** Longest request accepted, in characters. */
 export const MAX_FIGURE_REQUEST_CHARS = 400;
@@ -102,7 +103,8 @@ export async function drawAcademicFigure(
   const chat: FigureChat =
     // "" selects the service's own provider race + fallback, the same call
     // shape the other API routes use (see api/ai-enhance.ts).
-    options.chat ?? ((messages) => createAIService().chat("", messages));
+    options.chat ??
+    ((messages) => createAIService().chat(getWorkLaneProvider("figure"), messages));
   const brief = buildFigureBrief({ request: clean, kind, classLevel: options.classLevel });
   const base: AIChatMessage[] = [
     { role: "system", content: FIGURE_WRITER_SYSTEM },

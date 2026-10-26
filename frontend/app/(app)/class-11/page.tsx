@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { SYLLABUS } from "@/lib/syllabus";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
+import { HomeSections } from "@/components/home/home-sections";
 
 export const metadata = {
   title: "NEB Class 11 (Grade XI) Portal — Syllabus, Notes & Interactive Labs",
@@ -132,7 +133,8 @@ export default function Class11Page() {
   const c11Syllabus = SYLLABUS.find((c) => c.slug === "class-11-notes");
 
   return (
-    <div className="mx-auto max-w-6xl space-y-12 py-8 md:py-14 px-4">
+    <>
+      <div className="mx-auto max-w-6xl space-y-12 py-8 md:py-14 px-4">
       {/* Hero */}
       <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-primary/10 via-card to-card p-8 md:p-12 shadow-sm">
         <div className="relative z-10 flex flex-col gap-4">
@@ -284,6 +286,11 @@ export default function Class11Page() {
           })}
         </div>
       </div>
-    </div>
+      </div>
+
+      {/* The study-diversities rail closes the page — every section at its
+          own rung, horizontal, tier-aware (plan.md §8 P3). */}
+      <HomeSections />
+    </>
   );
 }

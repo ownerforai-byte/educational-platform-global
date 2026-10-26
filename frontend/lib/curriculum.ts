@@ -497,9 +497,9 @@ export async function getResourceById(resourceId: string) {
 
 /**
  * Authenticated lookup for the edit page. Returns both published and
- * unpublished (draft) records when the requester has TEACHER/ADMIN/OWNER
- * permissions, so the edit page can reach resources that are still in draft
- * state (default for newly created resources).
+ * unpublished (draft) records when the requester has elevated permissions
+ * (the plus rung and up), so the edit page can reach resources that are still
+ * in draft state (default for newly created resources).
  */
 export async function getResourceForEdit(resourceId: string) {
   try {

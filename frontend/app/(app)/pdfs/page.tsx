@@ -11,6 +11,7 @@ import {
   FileText,
   FlaskConical,
   Globe,
+  Languages,
   Sigma,
   X,
 } from "lucide-react";
@@ -47,6 +48,11 @@ const SUBJECT_META: Record<
     blurb: "Essays, writing and language practice",
     icon: BookOpen,
     chip: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
+  },
+  Nepali: {
+    blurb: "भाषा, व्याकरण र साहित्य — full-syllabus Nepali study material",
+    icon: Languages,
+    chip: "bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/20",
   },
 };
 

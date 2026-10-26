@@ -2,6 +2,11 @@ import { describe, it, expect } from "vitest";
 import { collectRoutes, routeExists } from "../helpers/route-tree";
 import { SYLLABUS, getUnitTopicEntries } from "@/lib/syllabus";
 import { getUnitTopic } from "@/lib/queries";
+import {
+  NEPALI_EXERCISE_TYPES,
+  getExerciseType,
+  getExerciseTypes,
+} from "@/features/syllabus/exercise-types";
 
 /**
  * The Nepali tree and the per-topic "Concepts, Legends & Facts" pages are
@@ -51,6 +56,38 @@ describe("topic scaffold pages (Nepali + Concepts/Legends & Facts)", () => {
       }
     }
     expect(checked).toBeGreaterThan(0);
+  });
+
+  it("every Nepali topic has an exercise page for every exercise type", () => {
+    const types = getExerciseTypes("nepali");
+    expect(types).toEqual([...NEPALI_EXERCISE_TYPES]);
+    expect(types.length).toBeGreaterThanOrEqual(6);
+    // The taxonomy is Nepali-only for now; other subjects keep the single
+    // exercises scaffold and their /exercises/<type> targets stay notFound.
+    expect(getExerciseTypes("physics")).toEqual([]);
+    expect(getExerciseType("nepali", "vyakaran")?.devanagari).toBe("व्याकरण");
+    expect(getExerciseType("nepali", "not-a-type")).toBeNull();
+
+    let checked = 0;
+    for (const cls of SYLLABUS) {
+      const nepali = cls.subjects.find((s) => s.slug === "nepali");
+      if (!nepali) continue;
+      for (const unit of nepali.units) {
+        for (const entry of getUnitTopicEntries(unit)) {
+          for (const type of types) {
+            expect(
+              routeExists(
+                `/${cls.slug}/nepali/chapters/${unit.id}/topics/${entry.slug}/exercises/${type.id}`,
+                routes,
+              ),
+              `${cls.slug}/${unit.id}/${entry.slug}/exercises/${type.id} route missing`,
+            ).toBe(true);
+            checked += 1;
+          }
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(300);
   });
 
   it("every topic of all six subjects has its page targets (legend + exercises)", () => {

@@ -23,7 +23,10 @@ async function requireUser(req: Request, res: Response) {
   return data.user;
 }
 
-async function requireTeacher(req: Request, res: Response) {
+// Content-editing gate: the plus rung and up. Legacy role values normalize
+// through the single legacy map (auth/types.ts) before the rung check, so an
+// unmigrated row is graded on its normalized rung, never rejected outright.
+async function requireContentEditor(req: Request, res: Response) {
   const user = await requireUser(req, res);
   if (!user) return null;
 
@@ -33,7 +36,8 @@ async function requireTeacher(req: Request, res: Response) {
     .eq("id", user.id)
     .single();
 
-  if (!profile || !["plus", "pro", "owner"].includes(profile.role)) {
+  const role = normalizeRole(profile?.role);
+  if (!profile || !role || !["plus", "pro", "owner"].includes(role)) {
     res.status(403).json({ error: "Forbidden" });
     return null;
   }
@@ -42,9 +46,9 @@ async function requireTeacher(req: Request, res: Response) {
 }
 
 // Ownership guard: with the service-role key RLS is inert, so the routes that
-// return or modify rows must enforce ownership explicitly. Privileged roles
-// (ADMIN/OWNER) manage everything; TEACHER may only manage resources they
-// created. Prevents one teacher from reading or overwriting another teacher's
+// return or modify rows must enforce ownership explicitly. Privileged rungs
+// (pro/owner) manage everything; a plus editor may only manage resources they
+// created. Prevents one editor from reading or overwriting another editor's
 // unpublished drafts via the /edit and PATCH endpoints.
 function canManageResource(
   user: { id: string },
@@ -87,7 +91,7 @@ router.get("/", async (_req: Request, res: Response) => {
 });
 
 router.post("/", async (req: Request, res: Response) => {
-  const auth = await requireTeacher(req, res);
+  const auth = await requireContentEditor(req, res);
   if (!auth) return;
 
   const { topic_id, type, title, content, media_url, metadata } = req.body;
@@ -139,7 +143,7 @@ router.get("/:id", async (req: Request, res: Response) => {
 });
 
 router.get("/:id/edit", async (req: Request, res: Response) => {
-  const auth = await requireTeacher(req, res);
+  const auth = await requireContentEditor(req, res);
   if (!auth) return;
 
   const { id } = req.params;
@@ -198,7 +202,7 @@ const BASE_PATCH_FIELDS = [
   "topic_id",
   "metadata",
 ] as const;
-const ADMIN_ONLY_PATCH_FIELDS = ["is_published"] as const;
+const PRIVILEGED_PATCH_FIELDS = ["is_published"] as const;
 const FORBIDDEN_PATCH_FIELDS = [
   "id",
   "created_by",
@@ -233,7 +237,7 @@ function buildResourcePatch(
 ): { updates: Record<string, unknown>; rejected: string[] } {
   const allowed = new Set<string>(BASE_PATCH_FIELDS);
   if (isAdmin) {
-    for (const f of ADMIN_ONLY_PATCH_FIELDS) allowed.add(f);
+    for (const f of PRIVILEGED_PATCH_FIELDS) allowed.add(f);
   }
 
   const rejected: string[] = [];
@@ -264,12 +268,12 @@ function buildResourcePatch(
 router.patch("/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
 
-  const auth = await requireTeacher(req, res);
+  const auth = await requireContentEditor(req, res);
   if (!auth) return;
 
-  // Ownership check: only the creator (or an ADMIN/OWNER) may patch this
-  // resource. Mirrors the DELETE guard; stops cross-teacher overwrites of
-  // other teachers' drafts.
+  // Ownership check: only the creator (or a pro/owner rung) may patch this
+  // resource. Mirrors the DELETE guard; stops cross-editor overwrites of
+  // other editors' drafts.
   const { data: existing } = await supabaseAdmin
     .from("resources")
     .select("id, created_by")
@@ -326,7 +330,7 @@ router.patch("/:id", async (req: Request, res: Response) => {
 router.delete("/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
 
-  const auth = await requireTeacher(req, res);
+  const auth = await requireContentEditor(req, res);
   if (!auth) return;
 
   // Fetch row first: with the service-role key RLS is inert, so ownership
@@ -388,7 +392,7 @@ router.delete("/:id", async (req: Request, res: Response) => {
 });
 
 router.post("/:id/link", async (req: Request, res: Response) => {
-  const auth = await requireTeacher(req, res);
+  const auth = await requireContentEditor(req, res);
   if (!auth) return;
 
   const { id } = req.params;

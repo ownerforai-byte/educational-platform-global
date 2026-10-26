@@ -41,7 +41,7 @@ import {
  * 2026-10-07: the owner asked that no vendor name and no "AI" wording appear
  * anywhere in it, so the engine is named for what it does, not who makes it.
  *
- * OPEN TO EVERY SIGNED-IN STUDENT (owner request 2026-10-04: "enable saving
+ * OPEN TO EVERY SIGNED-IN USER (owner request 2026-10-04: "enable saving
  * of image for every user") — the former owner-only gate is gone, and the
  * gallery is now the ACCOUNT's saved history, not a device session:
  *

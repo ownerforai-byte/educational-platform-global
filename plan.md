@@ -155,7 +155,10 @@ inside an existing section.
 
 The guest-facing surface is small and complete:
 
-1. **Home overview** — what the platform is, live approval-status check.
+1. **Guest home** (`/home`, public) — what the platform is and a way in. The
+   flow (owner 2026-10-25) is "welcome → guest home → login page → study
+   home"; the guest home carries one or two **Sign in** buttons and hides the
+   other CTAs ("hide others"); account request stays on the login page.
 2. **Plans** — the five tier cards of §2.1 plus a compact availability table
    (§3 rendered as a matrix). Visible to *everyone*; this replaces `/pro-plan`
    and every scattered "Pro plan" card. Route: **`/plans`** (public, read-through
@@ -212,23 +215,39 @@ Each phase is shippable and ends green (`npm run check:all` + CI).
 **P1 — Tier foundations.** Replace the role system with the tier ladder across
 frontend + backend + tests; legacy values map to Owner; `lib/access-level.ts`
 becomes the only rank source. Deliverable: all gates green, no behavior change
-beyond naming.
+beyond naming. ✅ Shipped: `backend/src/auth/types.ts` LEGACY_ROLES → owner,
+`requireRole` grades normalized rungs, `lib/auth/roles.ts` ROLE_RANK is now a
+view over `ACCESS_RANK` (the duplicate map in `features/auth/types.ts` is
+gone), and every legacy rank word in source comments/identifiers
+(`requireTeacher`, `ADMIN_ONLY_PATCH_FIELDS`, stale OWNER/ADMIN notes) is
+replaced by ladder vocabulary.
 
 **P2 — Plans page (guest).** Build `/plans` with the five tier cards + the
 availability matrix; remove `/pro-plan` and relink every pointer (footer,
-profile, credits, AI pages, notice, credits constants) to `/plans`.
+profile, credits, AI pages, notice, credits constants) to `/plans`. ✅ Shipped:
+`/plans` in `PUBLIC_PATHS`, five `TIER_CARDS` + availability matrix, and a
+`/pro-plan → /plans` redirect for old bookmarks (pinned in
+`tests/lib/legacy-redirects.test.ts`).
 
 **P3 — Sections + Journal.** Introduce the section registry (id, title,
 description, `minTier`, content source). Convert the home + class pages to
 horizontal section rails. Add the **Journal** section (Plus/Pro), backed by the
-existing journal store.
+existing journal store. ✅ Shipped: `lib/sections.ts` (25 rows), the horizontal
+`HomeSections` rail on home AND the class-11/class-12 portals, and the
+`journal` section (minTier plus) behind `hasLevel(user, "plus")`.
 
 **P4 — Availability gates.** Enforce `minTier` per section end-to-end: rails
 dim locked cards, section pages gate entry, APIs scope by tier. Owner console
-gains tier grants + section `minTier` control.
+gains tier grants + section `minTier` control. ✅ Shipped:
+`SectionTierGate` (dimmed locked card + one-tap `/plans`, never a dead end),
+`requireTier(min)` tier-scoped APIs (`/api/pyqs` at Plus), `/owner/users` tier
+grants, and `/owner/sections` minimums → `settings` → `/api/config` → the
+rails, matrix and gates at once.
 
 **P5 — Polish & parity.** Tier badges everywhere, locked-card copy, plans-table
-parity with the ladder, responsive pass.
+parity with the ladder, responsive pass. ✅ Shipped: rung chips on cards and
+locked states, locked-card copy names the exact rung, and the /plans matrix
+reads the same runtime minimums the gates enforce (plans-table parity).
 
 **P6 — Gates & deploy.** Full `check:all`, backend + frontend suites, live
 smoke, deploy `main` (Vercel + Render), verify live.
@@ -237,15 +256,203 @@ smoke, deploy `main` (Vercel + Render), verify live.
 
 ## 9. Acceptance criteria
 
-- [ ] No `STUDENT|TEACHER|ADMIN` role values remain in source (outside the
+- [x] No `STUDENT|TEACHER|ADMIN` role values remain in source (outside the
       single legacy-normalization map and natural-language copy such as
       transcript speaker labels); the ladder is the only rank vocabulary.
-- [ ] `/plans` is public and shows all five tier cards + the availability table.
-- [ ] `/pro-plan` is gone; every former link points at `/plans`.
-- [ ] Journal exists as a section and requires Plus or Pro.
-- [ ] Every content family appears in exactly one section; every section
-      declares a `minTier`.
-- [ ] Locked sections are visible-but-dimmed for lower tiers (no dead ends).
-- [ ] Owner console can grant/adjust every tier and change section minimums.
-- [ ] `npm run check:all`, backend suites and live smoke all green;
+      (Evidence grep over `backend/src` + `frontend`: the only quoted role
+      values left are `LEGACY_ROLES` in `backend/src/auth/types.ts` and the
+      "STUDENT"/"VEER" transcript speaker labels in `ai/history-search.ts`;
+      the remaining words are pedagogy copy — "the student", "teacher notes".)
+- [x] `/plans` is public and shows all five tier cards + the availability table.
+      (`PUBLIC_PATHS = ["/home", "/notice", "/plans"]`; `TIER_CARDS` ×5 + the
+      `SectionMatrix` availability table.)
+- [x] `/pro-plan` is gone; every former link points at `/plans`.
+      (Only a redirect + a plan note mention it; `tests/lib/legacy-redirects
+      .test.ts` pins `/pro-plan → /plans` for old bookmarks.)
+- [x] Journal exists as a section and requires Plus or Pro.
+      (`journal` row, minTier `plus`; `/journal` gates with
+      `hasLevel(user, "plus")`; content tabs gate it the same way.)
+- [x] Every content family appears in exactly one section; every section
+      declares a `minTier`. (25-row registry; the content-tab, home-rail and
+      schema-corpus tests pin one-home-per-family.)
+- [x] Locked sections are visible-but-dimmed for lower tiers (no dead ends).
+      (`SectionTierGate`: dimmed card naming the rung + "See plans"/"Go to my
+      home"; rails keep locked cards dimmed with the rung chip. Pinned in
+      `tests/features/section-tier-gate.test.tsx`.)
+- [x] Owner console can grant/adjust every tier and change section minimums.
+      (`/owner/users` grants/adjusts member|plus|pro|owner + credits/premium;
+      `/owner/sections` edits each section's rung → `settings
+      .section_min_tier.<id>` → `GET /api/config` → rails, matrix and gates.)
+- [x] `npm run check:all`, backend suites and live smoke all green;
       deployed and verified live.
+
+---
+
+# PART 2 — System Overhaul Roadmap (2026-10-24)
+
+> Owner request: "Develop a comprehensive technical implementation plan and
+> execution strategy for a major system overhaul" — five modules woven into
+> the tier-based access system above:
+>
+> 1. **UI/UX refinement** — remove all visual lock icons app-wide; restricted
+>    access is signalled by a disabled visual state keyed to the viewer's tier.
+> 2. **Dynamic AI quiz engine** — diverse quiz formats (MCQ, writing tests,
+>    …) chosen by the user, with AI-driven evaluation and detailed feedback
+>    on submission, gated by the existing tier logic.
+> 3. **AI integration & backend architecture** — AI wired across modules;
+>    API keys retrieved securely from the git-ignored AI config file
+>    (`backend/.env`); every AI call scoped to the subscription tier.
+> 4. **AI interface redesign** — modern, coherent AI interaction surfaces.
+> 5. **QA & bug fixes** — codebase audit for logic errors and "silly
+>    mistakes" (first known: notification badge fails to reset to zero after
+>    all notifications are marked read).
+
+Phasing (owner: "do not attempt to implement everything at once"):
+**Phase 1** = this roadmap. **Phase 2** = milestone-by-milestone delivery,each milestone shippable and green. **Phase 3** = optimization + UI polish.
+
+---
+
+## 10. Milestone M1 — Lock-free access visuals (Module 1)
+
+Goal: no lock icon renders anywhere in the UI; tier-restricted items are
+recognizable purely by their **disabled state** (dimmed, no hover lift,
+`aria-disabled`, `cursor-not-allowed`, tier label kept for discoverability,
+one-tap path to `/plans` preserved per §4).
+
+| # | Sub-task | Surface |
+|---|---|---|
+| 1.1 | Replace lock chip with disabled tier chip | `footer.tsx` (tier links; legal links stay plain) |
+| 1.2 | Same treatment | `app-shell.tsx`, `mobile-quick-nav.tsx`, `periodic-table-view.tsx` (Sign-in chips) |
+| 1.3 | Locked tab pills + `LockedTabCard` → disabled cards | `content-tabs.tsx` |
+| 1.4 | Locked home rails/cards → disabled cards | `home-sections.tsx`, `tier-interfaces.tsx` |
+| 1.5 | Gate screens → disabled state icons (no locks) | `ai-widget.tsx`, `credit-gate.tsx`, `directory-card.tsx`, `welcome-status.tsx`, `require-approval.tsx` |
+| 1.6 | Password-field adornments: drop the lock glyph | `login-form.tsx`, `signup-form.tsx`, `reset-password-form.tsx` |
+| 1.7 | Update tests pinning lock visuals; keep `approval-lock` testid semantics | tests/* |
+
+Acceptance: `grep -rn '<Lock' frontend/` matches nothing outside retired
+comments; every formerly-locked item still discoverable and still routes to
+`/plans`; all suites green.
+
+---
+
+## 11. Milestone M2 — Dynamic AI quiz engine (Module 2)
+
+Goal: the quiz generator produces **format-diverse** sets picked by the user
+and an **AI evaluator** grades submissions with detailed feedback.
+
+### 11.1 Formats (scaffolding first)
+
+| Format id | UI label | Answer shape | Evaluation |
+|---|---|---|---|
+| `mcq` | Multiple Choice | 4 options, one correct | auto-check + AI explanation |
+| `true-false` | True / False | binary choice | auto-check + AI explanation |
+| `fill-blank` | Fill in the Blank | short text entry | AI graded (fuzzy match + feedback) |
+| `short-answer` | Short Answer (Writing) | free text | AI graded with rubric |
+| `long-answer` | Long Answer (Writing Test) | essay | AI graded with rubric + improvement plan |
+
+### 11.2 Backend (`backend/src/api/ai-generate.ts` + new `ai-evaluate.ts`)
+
+- `POST /api/ai/generate-questions` accepts `format`; per-format prompt
+  templates and response schemas; MCQ path unchanged (back-compat).
+- New `POST /api/ai/evaluate-answers`: accepts question + learner answer
+  pairs, returns per-item `{ score, verdict, feedback, modelAnswer,
+  improvements[] }` plus an overall summary — used by every writing format.
+- Both endpoints behind the existing gates (`rateLimit`, `authOrGuestQuota`,
+  `requireCredit("aiChat")`) — Module 2 adds **no new gate**, it reuses §3's.
+
+### 11.3 Frontend (`components/ai/quiz-studio.tsx`, `lib/api/ai.ts`, `types/api.ts`)
+
+- Format selector row (five cards), format-aware question cards and answer
+  inputs, and a Submission Report panel (score ring, per-question feedback,
+  model answers, "what to improve" list).
+- Writing formats: autosaved draft, word count, then submit → AI evaluation.
+- History page records format + score.
+
+Acceptance: one test per format end-to-end (generate → answer → evaluate);
+guest pool + credit gates verified; no regression in existing quiz tests.
+
+---
+
+## 12. Milestone M3 — AI integration & backend architecture (Module 3)
+
+- **Key handling**: one resolver (`backend/src/ai/config.ts`) that reads the
+  git-ignored `backend/.env` (and root `.env`) via the existing dotenv load,
+  exposes typed accessors (`getAgnesKey()`, `getGroqKey()`, …), never logs
+  values, and degrades feature flags when a key is absent. All AI modules
+  (chat, image-gen, search-engine, quiz, evaluate) go through it.
+- **Tier wiring**: every AI route passes the shared credit/guest gate; the
+  response carries the server-attested pool; UI mirrors it (never trusted).
+- **Docs**: `.env.example` lists every key the resolver knows, with sources.
+- Feature inventory: which modules call AI (chat, tutor, quiz, search,
+  figure-draw, diagrams) — each declared in one table in this file (§12.1).
+
+### 12.1 AI feature map (maintained by hand)
+
+| Module | Endpoint | Provider | Gate |
+|---|---|---|---|
+| Veer chat / tutor | `/api/ai`, `/api/ai/guest` | Agnes | sparks/credits + guest pool |
+| Quiz generation | `/api/ai/generate-questions` | Agnes | guest pool / credits |
+| Quiz evaluation (M2) | `/api/ai/evaluate-answers` | Agnes | same as generation |
+| Figure draw | `/api/ai/figure` | Agnes | credits |
+| Diagrams | `/api/ai/diagrams` | Google CSE (optional) | owner flag |
+| Image gen | `/api/ai/image` | Agnes | credits |
+
+---
+
+## 13. Milestone M4 — AI interface redesign (Module 4)
+
+- Shared AI surface language: one header pattern (gradient hero strip,
+  provider badge, pool meter), one card style, one empty/loading/error trio.
+- Rebuild the quiz studio around the format picker + report panel (M2);
+  refresh chat/tutor composers and the history console to match.
+- Responsive pass + reduced-motion parity (low-data policy, §14).
+
+---
+
+## 14. Milestone M5 — QA audit & bug fixes (Module 5)
+
+| # | Item | Fix |
+|---|---|---|
+| 5.1 | Notification badge never resets after "mark all read" | unread state derived from the read-id store (shared hook), bell badge hides at 0 |
+| 5.2 | Static pulsing dot on the header bell ignores real state | same shared store; `storage` event sync across tabs |
+| 5.3 | Silent try/catch swallowing real errors | log + typed fallbacks where found |
+| 5.4 | Stale `.next/types` tsc errors | regenerate/remove stale validator files |
+| 5.5 | Sweep: duplicate keys, dead state, `useEffect` over-set, `any` leaks | fix as found in audit |
+
+Acceptance: marking all notifications read zeroes every badge (page + bell),raw full suites green, `npm run check:all` green.
+
+---
+
+## 15. Phase 3 — Optimization & polish (after M1–M5)
+
+1. Bundle/render pass on the touched AI surfaces (memoize hot lists, kill
+   needless re-renders introduced by M2's report panel).
+2. Visual polish sweep: spacing rhythm, focus rings, dark-mode parity on the
+   redesigned AI screens and the disabled tier states.
+3. Full gate: `npm run check:all`, backend suite, live smoke.
+
+---
+
+## 16. Overhaul acceptance criteria (roll-up)
+
+- [x] Zero lock icons in the UI; disabled tier states everywhere restricted.
+      (M1: 27 glyphs removed across 17 files — tier badges / em-dashes /
+      disabled states replace them; `approval-lock` testid kept for tests.)
+- [x] Quiz engine offers ≥ 5 formats with AI evaluation and detailed feedback.
+      (M2: mcq, true-false, fill-blank, short-answer, long-answer —
+      `POST /api/ai/evaluate-answers` grades writing formats with per-item
+      score/verdict/feedback/model answer/improvements + submission report.)
+- [x] Every AI call flows through the single key resolver and the shared tier
+      gate; keys never appear in logs, client bundles, or git.
+      (M3: `backend/src/ai/config.ts` resolver — chat, quiz, evaluate,
+      image-gen, search-engine, diagrams read keys through it; values never
+      logged; missing keys degrade feature flags. `.env.example` documents all.)
+- [x] AI surfaces share one redesigned interface language.
+      (M4: `ai-surface-header` hero strip + pool meter + feature cards on quiz,
+      tutor and history consoles; `ai-surface-states` loading/error/empty trio.)
+- [x] Notification badges reset to zero on mark-all-read; audit findings fixed.
+      (M5: shared read-id store `lib/notifications.ts` + `useNotificationState`;
+      bell badge hides at 0 and syncs across tabs; silent SSE catch now logs;
+      stale `.next/types` validators removed — tsc fully clean.)
+- [x] `npm run check:all` + backend suites green.
+      (Backend 562/562 green; frontend suites green; tsc clean both sides.)

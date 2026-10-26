@@ -296,15 +296,57 @@ export function isSectionUnlocked(
 }
 
 /**
+ * RUNTIME MINIMUMS (plan.md §8 P4 / §9: "Owner console can grant/adjust every
+ * tier and change section minimums"). The registry above holds the CODE
+ * defaults; the owner console can move any section's rung at runtime. The
+ * override map comes from GET /api/config (settings key
+ * `section_min_tier.<id>`) and is applied on top of the defaults here — so the
+ * rails, the /plans matrix and every gate always agree with what is enforced.
+ */
+export type SectionTierOverrides = Partial<Record<string, AccessLevel>>;
+
+/** The registry with owner overrides applied. */
+export function applySectionOverrides(
+  overrides: SectionTierOverrides | null | undefined,
+): PlatformSection[] {
+  if (!overrides) return SECTIONS;
+  return SECTIONS.map((section) => {
+    const minTier = overrides[section.id];
+    return minTier ? { ...section, minTier } : section;
+  });
+}
+
+/**
+ * The section a path belongs to (longest href prefix wins — e.g.
+ * /knowledge/numerical-physics is the Worked Numericals row, not Knowledge
+ * Hubs). Undefined for routes outside the registry (profile, chat, …).
+ */
+export function sectionForPath(
+  pathname: string,
+  overrides?: SectionTierOverrides | null,
+): PlatformSection | undefined {
+  let match: PlatformSection | undefined;
+  for (const section of applySectionOverrides(overrides)) {
+    if (pathname === section.href || pathname.startsWith(`${section.href}/`)) {
+      if (!match || section.href.length > match.href.length) match = section;
+    }
+  }
+  return match;
+}
+
+/**
  * Sections to SHOW this viewer. Locked sections stay visible (dimmed cards
  * drive upgrades — plan.md §4), except operator-only surfaces which are hidden
  * entirely below the owner rung.
  */
-export function sectionsFor(user: AiSparkUserLike | null | undefined): {
+export function sectionsFor(
+  user: AiSparkUserLike | null | undefined,
+  overrides?: SectionTierOverrides | null,
+): {
   section: PlatformSection;
   unlocked: boolean;
 }[] {
-  return SECTIONS.filter(
-    (s) => s.id !== "owner-console" || isSectionUnlocked(user, s),
-  ).map((section) => ({ section, unlocked: isSectionUnlocked(user, section) }));
+  return applySectionOverrides(overrides)
+    .filter((s) => s.id !== "owner-console" || isSectionUnlocked(user, s))
+    .map((section) => ({ section, unlocked: isSectionUnlocked(user, section) }));
 }

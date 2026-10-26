@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { PUBLIC_SITE_URL } from "../config/env";
 import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { createAIService } from "../ai/service";
+import { getWorkLaneProvider } from "../ai/config";
 import { getSearchService } from "../ai/search-engine";
 
 /**
@@ -97,7 +98,8 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
   }
 
   try {
-    const enhanced = await service.chat("", [
+    // Enhancement owns the Groq lane (light rewrites — owner 2026-10-25).
+    const enhanced = await service.chat(getWorkLaneProvider("enhance"), [
       { role: "system", content: ENHANCER_SYSTEM + (context ? `\n\n${context}` : "") },
       { role: "user", content: raw },
     ]);

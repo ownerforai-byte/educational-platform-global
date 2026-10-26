@@ -416,6 +416,22 @@ export interface ApiError {
   error: string;
 }
 
+/** Quiz formats supported by the dynamic quiz engine (plan.md §11). */
+export type QuizFormat =
+  | "mcq"
+  | "true-false"
+  | "fill-blank"
+  | "short-answer"
+  | "long-answer";
+
+export const QUIZ_FORMATS: QuizFormat[] = [
+  "mcq",
+  "true-false",
+  "fill-blank",
+  "short-answer",
+  "long-answer",
+];
+
 export interface GeneratedQuestion {
   prompt: string;
   options: string[];
@@ -426,6 +442,16 @@ export interface GeneratedQuestion {
   explanation: string;
   /** Per-option rationale. `A`..`D`, same order as `options`. Absent fields fall back to the shared `explanation`. */
   optionAnalysis?: Record<string, string>;
+  /** Which format this item belongs to (absent → `mcq`). */
+  format?: QuizFormat;
+  /** `fill-blank`: acceptable answer strings (case-insensitive match). */
+  acceptedAnswers?: string[];
+  /** Writing formats: the ideal answer the AI grades against. */
+  modelAnswer?: string;
+  /** Writing formats: marking points the AI grades against. */
+  rubric?: string[];
+  /** Writing formats: maximum marks for the item. */
+  maxScore?: number;
 }
 
 export interface GenerateQuestionsRequest {
@@ -434,6 +460,46 @@ export interface GenerateQuestionsRequest {
   topic?: string;
   difficulty?: "easy" | "intermediate" | "hard";
   count?: number;
+  /** Question format to generate (absent → `mcq`, back-compat). */
+  format?: QuizFormat;
+}
+
+/** One learner answer sent to the AI evaluator. */
+export interface EvaluateAnswersItem {
+  prompt: string;
+  userAnswer: string;
+  /** Model answer from generation — anchors the grading when present. */
+  modelAnswer?: string;
+  /** Marking points from generation. */
+  rubric?: string[];
+  /** `fill-blank` acceptable answers. */
+  acceptedAnswers?: string[];
+  maxScore?: number;
+}
+
+export interface EvaluateAnswersRequest {
+  classSlug: string;
+  subjectSlug: string;
+  topic?: string;
+  format: QuizFormat;
+  items: EvaluateAnswersItem[];
+}
+
+/** Per-item AI evaluation result. */
+export interface EvaluatedAnswer {
+  /** 0–100. */
+  score: number;
+  verdict: "correct" | "partial" | "incorrect";
+  feedback: string;
+  modelAnswer: string;
+  improvements: string[];
+}
+
+export interface EvaluateAnswersResponse {
+  results: EvaluatedAnswer[];
+  /** Overall submission summary from the AI. */
+  summary: string;
+  provider: string;
 }
 
 export interface GenerateQuestionsResponse {

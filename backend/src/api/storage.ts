@@ -29,7 +29,8 @@ async function requireUser(req: Request, res: Response) {
   return data.user;
 }
 
-async function requireTeacher(req: Request, res: Response) {
+// Upload gate: the plus rung and up (legacy values normalize to owner first).
+async function requireContentEditor(req: Request, res: Response) {
   const user = await requireUser(req, res);
   if (!user) return null;
 
@@ -85,7 +86,7 @@ const uploadSchema = z
   .strict();
 
 router.post("/upload", async (req: Request, res: Response) => {
-  const auth = await requireTeacher(req, res);
+  const auth = await requireContentEditor(req, res);
   if (!auth) return;
 
   const parsed = uploadSchema.safeParse(req.body);

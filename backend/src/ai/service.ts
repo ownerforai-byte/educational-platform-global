@@ -9,6 +9,15 @@ import { toOpenAIContent, parseDataUrl } from "./image-input";
  * provider attribution headers. Set FRONTEND_URL in backend/.env (no trailing
  * slash). Falls back to the deployed frontend URL when unset.
  */
+import {
+  getAgnesKey,
+  getGroqKey,
+  getCerebrasKey,
+  getGeminiKey,
+  getCloudflareAiKey,
+  getCloudflareAccountId,
+} from "./config";
+
 const SITE = (process.env.FRONTEND_URL || PUBLIC_SITE_URL).replace(/\/$/, "");
 
 /**
@@ -1268,10 +1277,14 @@ export class AIService {
   constructor() {
     this.providers.set("internal", new InternalProvider());
 
-    const agnesKey = process.env.AGNES_API_KEY;
-    const groqKey = process.env.GROQ_API_KEY;
-    const cerebrasKey = process.env.CEREBRAS_API_KEY;
-    const geminiKey = process.env.GEMINI_API_KEY;
+    // Keys come from the central resolver (plan.md §12) — one place reads
+    // the git-ignored env files, values are never logged. Every provider keeps
+    // its own key so each AI work type runs in its own lane (owner 2026-10-25:
+    // "one api key for one type … so no delays in work").
+    const agnesKey = getAgnesKey();
+    const groqKey = getGroqKey();
+    const cerebrasKey = getCerebrasKey();
+    const geminiKey = getGeminiKey();
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
@@ -1280,7 +1293,7 @@ export class AIService {
     if (groqKey) this.providers.set("groq", new GroqProvider(groqKey));
     if (cerebrasKey) this.providers.set("cerebras", new CerebrasProvider(cerebrasKey));
     if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
-    const cfKey = process.env.CF_AI_KEY || process.env.CLOUDFLARE_API_KEY;
+    const cfKey = getCloudflareAiKey();
     if (cfKey && this.hasCfAccount())
       this.providers.set("cloudflare", new CloudflareProvider(cfKey));
 
@@ -1305,9 +1318,7 @@ export class AIService {
    * provider is skipped instead of building a bare URL.
    */
   private hasCfAccount(): boolean {
-    return Boolean(
-      (process.env.CF_ACCOUNT_ID || process.env.R2_ACCOUNT_ID || "").trim()
-    );
+    return Boolean(getCloudflareAccountId());
   }
 
   getProviders(): string[] {

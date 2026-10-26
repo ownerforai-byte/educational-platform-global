@@ -27,7 +27,7 @@ export function isOwnerEmail(email?: string | null): boolean {
 
 /**
  * Whether this session may open the owner console. Only true for allowlisted
- * owner emails — regular ADMIN role is NOT enough for /owner.
+ * owner emails — the owner rung alone is NOT enough for /owner.
  */
 export function isOwnerUser(
   user: { email?: string | null; role?: string | null } | null | undefined

@@ -14,6 +14,11 @@ export interface PublicConfig {
   dailyCreditPool: number;
   /** Cost of one AI message, in credits. */
   aiMessageCost: number;
+  /**
+   * Owner-set section minimums (sectionId → rung), from /owner/sections.
+   * Empty when the code defaults rule (plan.md §8 P4).
+   */
+  sectionMinTiers: Record<string, string>;
 }
 
 /** Server default when the config read fails: the gate stays ON (billing). */
@@ -21,6 +26,7 @@ export const DEFAULT_PUBLIC_CONFIG: PublicConfig = {
   coinGateEnabled: true,
   dailyCreditPool: 4,
   aiMessageCost: 1,
+  sectionMinTiers: {},
 };
 
 /**
@@ -40,6 +46,10 @@ export async function getPublicConfig(): Promise<PublicConfig> {
         typeof cfg?.aiMessageCost === "number"
           ? cfg.aiMessageCost
           : DEFAULT_PUBLIC_CONFIG.aiMessageCost,
+      sectionMinTiers:
+        cfg?.sectionMinTiers && typeof cfg.sectionMinTiers === "object"
+          ? cfg.sectionMinTiers
+          : {},
     };
   } catch {
     return DEFAULT_PUBLIC_CONFIG;

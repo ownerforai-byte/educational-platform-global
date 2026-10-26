@@ -1,6 +1,7 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
+import { getWorkLaneProvider } from "../ai/config";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
 import { requireCredit } from "../middleware/creditCheck";
@@ -156,7 +157,11 @@ Please unpack this concept thoroughly using the standard Deep Concept Studio str
 
       // Primary provider: Gemini (gemini-3.5-flash) — best-in-class deep synthesis & multimodal vision,
       // with automatic fallback to Groq -> Cerebras -> Agnes in the configured chain.
-      const explanation = await aiService.chat("gemini", messages);
+      // Deep Concept Studio owns the Gemini lane (owner 2026-10-25).
+      const explanation = await aiService.chat(
+        getWorkLaneProvider("deep-dive"),
+        messages
+      );
 
       const guestSlot = (req as GuestGateRequest).guestSlot;
 

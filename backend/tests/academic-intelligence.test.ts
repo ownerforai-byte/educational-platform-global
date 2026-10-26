@@ -194,7 +194,11 @@ describe("master academic prompt composition", () => {
     // The `${…}` wiring resolves while the contract is composed: the model must
     // receive the real guide text, never a placeholder token.
     expect(MASTER_ACADEMIC_PROMPT.length).toBeGreaterThan(15_000);
-    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(60_000);
+    // 65k bound: the 3-mode depth-control rules (commit beaf3fe4 — generic/
+    // academic/advisory, no-repeat law, unit discipline) intentionally grew the
+    // contract to ~60.7k. The bound is a runaway-bloat guard, not a freeze; it
+    // still catches unresolved template tokens and duplicated blocks.
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(65_000);
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_ARCHETYPE_GUIDE}");
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_WRITER_SYSTEM}");
     expect(MASTER_ACADEMIC_PROMPT).toContain("FIGURE ARCHETYPE GUIDE");

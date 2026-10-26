@@ -6,12 +6,11 @@ import {
   Rocket,
   Sparkles,
   Check,
-  Lock,
   type LucideIcon,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ACCESS_TAGLINES, type AccessLevel } from "@/lib/access-level";
-import { SECTIONS } from "@/lib/sections";
+import { SectionMatrix } from "@/components/plans/section-matrix";
 
 /**
  * /plans — the public tier ladder (plan.md §2.1 + §3).
@@ -121,24 +120,8 @@ const TIER_CARDS: TierCard[] = [
   },
 ];
 
-/** plan.md §3 — the content universe, derived from the section registry. */
-const SECTION_MATRIX: { section: string; min: AccessLevel }[] = SECTIONS.map((s) => ({
-  section: s.title,
-  min: s.minTier,
-}));
-
-const RUNG_ORDER: AccessLevel[] = ["visitor", "member", "plus", "pro", "owner"];
-const RUNG_LABEL: Record<AccessLevel, string> = {
-  visitor: "Guest",
-  member: "Member",
-  plus: "Plus",
-  pro: "Pro",
-  owner: "Owner",
-};
-
-function reaches(min: AccessLevel, rung: AccessLevel): boolean {
-  return RUNG_ORDER.indexOf(rung) >= RUNG_ORDER.indexOf(min);
-}
+// The availability matrix lives in components/plans/section-matrix.tsx — a
+// client table so it reflects the owner's runtime section minimums.
 
 export default function PlansPage() {
   return (
@@ -217,36 +200,7 @@ export default function PlansPage() {
             The full section map (plan.md §3). A ✓ means the section opens at that rung.
           </p>
         </div>
-        <div className="overflow-x-auto rounded-2xl border border-border/70">
-          <table className="w-full min-w-[640px] text-left text-xs">
-            <thead>
-              <tr className="border-b border-border/70 bg-muted/30 text-[11px] uppercase tracking-wide text-muted-foreground">
-                <th className="px-4 py-2.5 font-semibold">Section</th>
-                {RUNG_ORDER.map((rung) => (
-                  <th key={rung} className="px-3 py-2.5 text-center font-semibold">
-                    {RUNG_LABEL[rung]}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {SECTION_MATRIX.map((row) => (
-                <tr key={row.section} className="border-b border-border/40 last:border-0">
-                  <td className="px-4 py-2 font-medium text-foreground">{row.section}</td>
-                  {RUNG_ORDER.map((rung) => (
-                    <td key={rung} className="px-3 py-2 text-center">
-                      {reaches(row.min, rung) ? (
-                        <Check className="mx-auto h-3.5 w-3.5 text-primary" />
-                      ) : (
-                        <Lock className="mx-auto h-3.5 w-3.5 text-muted-foreground/40" />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <SectionMatrix />
       </div>
 
       {/* ── Footer note ── */}

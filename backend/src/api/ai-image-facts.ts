@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { PUBLIC_SITE_URL } from "../config/env";
 import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { createAIService } from "../ai/service";
+import { getWorkLaneProvider } from "../ai/config";
 
 /**
  * POST /api/ai/image-facts { q } — the facts half of the Image Hub's details
@@ -81,7 +82,8 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
 
   try {
     const service = getService();
-    const reply = await service.chat("", [
+    // Image facts cards ride the diagram lane (Gemini — owner 2026-10-25).
+    const reply = await service.chat(getWorkLaneProvider("diagram"), [
       { role: "system", content: FACTS_SYSTEM },
       { role: "user", content: subject },
     ]);

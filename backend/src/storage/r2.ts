@@ -11,7 +11,7 @@
  *      goes there, exactly as before. No data is seeded into R2 ahead of
  *      time (owner requirement: "don't put any data in it yet").
  *
- * Why R2 (vs the earlier Firebase/Azure attempts): R2's 10 GiB free tier
+ * Why R2: R2's 10 GiB free tier
  * carries NO egress fees, so overflow files are free to *serve* too —
  * important for a public study platform. No credit expiry, no billing
  * account. When the account outgrows 10 GiB the overage bills per Cloud

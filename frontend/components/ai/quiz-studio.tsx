@@ -16,6 +16,11 @@ import {
   Lightbulb,
   Minus,
   Save,
+  ListChecks,
+  ToggleLeft,
+  Pencil,
+  ScrollText,
+  FileText,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,13 +28,18 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
 import { SYLLABUS } from "@/lib/syllabus";
-import { generateQuestions } from "@/lib/api/ai";
+import { generateQuestions, evaluateAnswers } from "@/lib/api/ai";
 import { saveQuizHistory } from "@/lib/api/ai-quiz-history";
 import {
   GUEST_DAILY_LIMIT,
   writeGuestCount,
 } from "@/lib/ai/guest-quota";
-import type { GeneratedQuestion } from "@/types/api";
+import type {
+  EvaluatedAnswer,
+  EvaluateAnswersResponse,
+  GeneratedQuestion,
+  QuizFormat,
+} from "@/types/api";
 
 // ── Colour palette per difficulty ────────────────────────────────────────────
 const DIFF_META: Record<
@@ -67,6 +77,54 @@ const DIFFICULTIES: Array<"easy" | "intermediate" | "hard"> = [
 
 const QUESTION_COUNTS = [5, 10, 15, 20];
 
+// ── Quiz formats (plan.md §11.1) ────────────────────────────────────────
+const FORMAT_META: Array<{
+  id: QuizFormat;
+  label: string;
+  description: string;
+  icon: React.ReactNode;
+}> = [
+  {
+    id: "mcq",
+    label: "Multiple Choice",
+    description: "4 options, one correct",
+    icon: <ListChecks className="h-4 w-4" />,
+  },
+  {
+    id: "true-false",
+    label: "True / False",
+    description: "Judge the statement",
+    icon: <ToggleLeft className="h-4 w-4" />,
+  },
+  {
+    id: "fill-blank",
+    label: "Fill in the Blank",
+    description: "Type the missing word",
+    icon: <Pencil className="h-4 w-4" />,
+  },
+  {
+    id: "short-answer",
+    label: "Short Answer",
+    description: "2–6 sentence writing",
+    icon: <ScrollText className="h-4 w-4" />,
+  },
+  {
+    id: "long-answer",
+    label: "Writing Test",
+    description: "Essay + AI grading",
+    icon: <FileText className="h-4 w-4" />,
+  },
+];
+
+function formatMeta(id: QuizFormat) {
+  return FORMAT_META.find((f) => f.id === id) ?? FORMAT_META[0];
+}
+
+/** Choice formats answer with an option index; text formats with free text. */
+function isChoiceFormat(id: QuizFormat): boolean {
+  return id === "mcq" || id === "true-false";
+}
+
 // ── Phase 1: Configuration screen ────────────────────────────────────────────
 
 function ConfigScreen({
@@ -79,6 +137,7 @@ function ConfigScreen({
     topic: string;
     difficulty: "easy" | "intermediate" | "hard";
     count: number;
+    format: QuizFormat;
   }) => void;
   generating: boolean;
 }) {
@@ -90,6 +149,7 @@ function ConfigScreen({
     "intermediate"
   );
   const [count, setCount] = useState(10);
+  const [format, setFormat] = useState<QuizFormat>("mcq");
 
   // Chat → quiz handoff: the tutor's "Practice quiz" button seeds the
   // subject/topic here (one-shot, consumed on mount).
@@ -236,6 +296,39 @@ function ConfigScreen({
               )}
             </div>
 
+            {/* Quiz format — the engine diversities (plan.md §11.1) */}
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-muted-foreground">
+                Quiz format
+              </label>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {FORMAT_META.map((f) => {
+                  const selected = format === f.id;
+                  return (
+                    <button
+                      key={f.id}
+                      type="button"
+                      onClick={() => setFormat(f.id)}
+                      aria-pressed={selected}
+                      className={`flex flex-col items-start gap-1 rounded-xl border px-3 py-2.5 text-left transition-all ${
+                        selected
+                          ? "border-primary bg-primary/5 ring-2 ring-primary/30"
+                          : "border-border bg-background text-muted-foreground hover:border-muted-foreground/40"
+                      }`}
+                    >
+                      <span className="flex items-center gap-1.5 text-sm font-semibold">
+                        {f.icon}
+                        {f.label}
+                      </span>
+                      <span className="text-[11px] leading-tight text-muted-foreground">
+                        {f.description}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Difficulty */}
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-muted-foreground">
@@ -294,6 +387,7 @@ function ConfigScreen({
                   topic: customTopic.trim() || topic,
                   difficulty,
                   count,
+                  format,
                 })
               }
               disabled={!canGenerate || generating}
@@ -323,34 +417,148 @@ function ConfigScreen({
 function QuizScreen({
   questions,
   difficulty,
+  format,
+  classSlug,
+  subjectSlug,
   onBack,
   onRegenerate,
   onFinishQuiz,
 }: {
   questions: GeneratedQuestion[];
   difficulty: "easy" | "intermediate" | "hard";
+  format: QuizFormat;
+  classSlug: string;
+  subjectSlug: string;
   onBack: () => void;
   onRegenerate: () => void;
-  onFinishQuiz: (selectedIndices: Record<number, number>) => void;
+  onFinishQuiz: (
+    summary: {
+      format: QuizFormat;
+      answered: number;
+      correct: number;
+      scorePct?: number;
+      evaluation?: EvaluateAnswersResponse;
+    }
+  ) => void;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndices, setSelectedIndices] = useState<Record<number, number>>({});
+  const [textAnswers, setTextAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults] = useState(false);
+  const [evaluation, setEvaluation] = useState<EvaluateAnswersResponse | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const isChoice = isChoiceFormat(format);
 
   const q = questions[currentIndex];
   const meta = DIFF_META[difficulty];
   const total = questions.length;
-  const answered = Object.keys(selectedIndices).length;
+  const answered = isChoice
+    ? Object.keys(selectedIndices).length
+    : Object.values(textAnswers).filter((v) => v.trim().length > 0).length;
   const score = questions.reduce(
     (sum, question, i) =>
       sum + (selectedIndices[i] === question.correctIndex ? 1 : 0),
     0
   );
-  const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+  // Writing formats are graded by the AI — the score comes from its report.
+  const evaluatedScore = evaluation
+    ? Math.round(
+        evaluation.results.reduce((s, r) => s + r.score, 0) /
+          Math.max(1, evaluation.results.length)
+      )
+    : 0;
+  const pct = isChoice
+    ? total > 0
+      ? Math.round((score / total) * 100)
+      : 0
+    : evaluatedScore;
+
+  // Writing formats: autosave the draft so a refresh never loses an essay.
+  useEffect(() => {
+    if (isChoice) return;
+    try {
+      const raw = sessionStorage.getItem("neb_quiz_draft");
+      if (raw) {
+        const draft = JSON.parse(raw) as Record<number, string>;
+        setTextAnswers((prev) => ({ ...draft, ...prev }));
+      }
+    } catch {
+      /* malformed draft — start clean */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (isChoice) return;
+    try {
+      sessionStorage.setItem("neb_quiz_draft", JSON.stringify(textAnswers));
+    } catch {
+      /* storage full/unavailable — the in-memory draft still works */
+    }
+  }, [textAnswers, isChoice]);
+
+  const clearDraft = () => {
+    try {
+      sessionStorage.removeItem("neb_quiz_draft");
+    } catch {
+      /* ignore */
+    }
+  };
 
   const selectAnswer = (qIdx: number, optIdx: number) => {
     if (showResults) return;
     setSelectedIndices((prev) => ({ ...prev, [qIdx]: optIdx }));
+  };
+
+  const setAnswerText = (qIdx: number, value: string) => {
+    if (showResults) return;
+    setTextAnswers((prev) => ({ ...prev, [qIdx]: value }));
+  };
+
+  const wordCount = (value: string) =>
+    value.trim() ? value.trim().split(/\s+/).length : 0;
+
+  /** Submit writing-format answers to the AI evaluator (plan.md §11.2). */
+  const submitWriting = async () => {
+    if (answered < total || submitting) return;
+    setSubmitting(true);
+    try {
+      const res = await evaluateAnswers({
+        classSlug,
+        subjectSlug,
+        topic: questions[0]?.topic,
+        format,
+        items: questions.map((question, i) => ({
+          prompt: question.prompt,
+          userAnswer: textAnswers[i] ?? "",
+          modelAnswer: question.modelAnswer,
+          rubric: question.rubric,
+          acceptedAnswers: question.acceptedAnswers,
+          maxScore: question.maxScore,
+        })),
+      });
+      setEvaluation(res);
+      clearDraft();
+      onFinishQuiz({
+        format,
+        answered,
+        correct: res.results.filter((r) => r.verdict === "correct").length,
+        scorePct: Math.round(
+          res.results.reduce((s, r) => s + r.score, 0) /
+            Math.max(1, res.results.length)
+        ),
+        evaluation: res,
+      });
+      setShowResults(true);
+    } catch (err) {
+      const msg =
+        err instanceof Error && err.message.trim()
+          ? err.message.trim()
+          : "Could not evaluate your answers. Please try again.";
+      toast(msg);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const goTo = (i: number) => setCurrentIndex(Math.max(0, Math.min(total - 1, i)));
@@ -407,7 +615,43 @@ function QuizScreen({
           </div>
         </CardHeader>
         <CardContent className="space-y-2">
-          {q.options.map((opt, optIdx) => {
+          {/* Writing formats: free-text answer with word count */}
+          {!isChoice && (
+            <div className="space-y-2">
+              <label
+                htmlFor="quiz-writing-answer"
+                className="text-xs font-medium text-muted-foreground"
+              >
+                Your answer
+              </label>
+              <textarea
+                id="quiz-writing-answer"
+                value={textAnswers[currentIndex] ?? ""}
+                onChange={(e) => setAnswerText(currentIndex, e.target.value)}
+                disabled={showResults}
+                rows={format === "long-answer" ? 10 : 5}
+                placeholder={
+                  format === "fill-blank"
+                    ? "Type the missing word or phrase…"
+                    : format === "short-answer"
+                    ? "Write 2–6 sentences…"
+                    : "Write your full answer — show the working for numericals…"
+                }
+                className="w-full rounded-xl border border-input bg-background px-3.5 py-3 text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-70"
+              />
+              <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                <span>
+                  {wordCount(textAnswers[currentIndex] ?? "")} words
+                  {!showResults && " — draft autosaves"}
+                </span>
+                {questions[currentIndex].maxScore != null && (
+                  <span>Marked out of {questions[currentIndex].maxScore}</span>
+                )}
+              </div>
+            </div>
+          )}
+
+          {isChoice && q.options.map((opt, optIdx) => {
             const isSelected = selectedIndices[currentIndex] === optIdx;
             const isCorrect = optIdx === q.correctIndex;
             const showFeedback = showResults;
@@ -457,13 +701,15 @@ function QuizScreen({
                   {showFeedback && isSelected && !isCorrect && (
                     <XCircle className="ml-auto h-4 w-4 text-rose-500 shrink-0" />
                   )}
-                </div>
-              </button>
+                </div>                </button>
             );
           })}
 
           {/* Explanation (shown after answer or at end) */}
-          {(showResults || selectedIndices[currentIndex] !== undefined) && (
+          {(showResults ||
+            (isChoice
+              ? selectedIndices[currentIndex] !== undefined
+              : (textAnswers[currentIndex] ?? "").trim().length > 0)) && (
             <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-xs text-muted-foreground">
               <span className="font-semibold text-primary">Explanation: </span>
               {q.explanation}
@@ -471,7 +717,9 @@ function QuizScreen({
           )}
 
           {/* Per-option analysis (with proper why-right/why-wrong treatment) */}
-          {(showResults || selectedIndices[currentIndex] !== undefined) && q.optionAnalysis && (
+          {(showResults ||
+            (isChoice ? selectedIndices[currentIndex] !== undefined : false)) &&
+            q.optionAnalysis && (
             <div className="mt-4 grid gap-2 rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-950/10 px-4 py-3">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-400">
                 <Lightbulb className="h-3.5 w-3.5 shrink-0" />
@@ -532,7 +780,9 @@ function QuizScreen({
               className={`h-2 w-2 rounded-full transition-all ${
                 i === currentIndex
                   ? "bg-primary scale-125"
-                  : selectedIndices[i] !== undefined
+                  : (isChoice
+                      ? selectedIndices[i] !== undefined
+                      : (textAnswers[i] ?? "").trim().length > 0)
                   ? "bg-primary/50"
                   : "bg-muted"
               }`}
@@ -548,22 +798,138 @@ function QuizScreen({
           >
             Next
           </Button>
-        ) : (            <Button
+        ) : (
+            <Button
             size="sm"
             onClick={() => {
               if (answered < total) return;
-              onFinishQuiz(selectedIndices);
-              setShowResults(true);
+              if (isChoice) {
+                onFinishQuiz({
+                  format,
+                  answered,
+                  correct: score,
+                  scorePct: pct,
+                });
+                setShowResults(true);
+              } else {
+                void submitWriting();
+              }
             }}
-            disabled={answered < total}
+            disabled={answered < total || submitting}
             className="rounded-xl bg-emerald-600 hover:bg-emerald-700"
           >
-            Finish Quiz
+            {submitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Evaluating…
+              </>
+            ) : isChoice ? (
+              "Finish Quiz"
+            ) : (
+              "Submit for AI Evaluation"
+            )}
           </Button>
         )}
       </div>
 
-      {/* Results */}        {showResults && (
+      {/* AI Submission Report (writing formats — plan.md §11.3) */}
+      {showResults && evaluation && (
+        <Card className="overflow-hidden border-primary/20">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-purple-500" />
+          <CardContent className="pt-8 pb-6 space-y-5">
+            <div className="text-center space-y-3">
+              <div className="flex justify-center">
+                <div
+                  className="flex h-20 w-20 items-center justify-center rounded-full text-3xl font-bold text-white"
+                  style={{
+                    background:
+                      pct >= 80
+                        ? "linear-gradient(135deg, #10b981, #059669)"
+                        : pct >= 50
+                        ? "linear-gradient(135deg, #3b82f6, #2563eb)"
+                        : "linear-gradient(135deg, #f59e0b, #d97706)",
+                  }}
+                >
+                  {pct}%
+                </div>
+              </div>
+              <p className="text-lg font-bold">AI Submission Report</p>
+              <p className="mx-auto max-w-lg text-sm text-muted-foreground">
+                {evaluation.summary}
+              </p>
+            </div>
+
+            {evaluation.results.map((result, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-border bg-muted/30 p-4 space-y-2"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <p className="text-sm font-semibold leading-snug">
+                    Q{i + 1}. {questions[i]?.prompt}
+                  </p>
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                      result.verdict === "correct"
+                        ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
+                        : result.verdict === "partial"
+                        ? "bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                        : "bg-rose-500/15 text-rose-600 dark:text-rose-400"
+                    }`}
+                  >
+                    {result.score}/100 · {result.verdict}
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  <span className="font-semibold text-foreground">Your answer: </span>
+                  {textAnswers[i]?.trim() || "(left blank)"}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  <span className="font-semibold text-primary">Feedback: </span>
+                  {result.feedback}
+                </p>
+                {result.modelAnswer && (
+                  <div className="rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/10 px-3 py-2">
+                    <p className="text-[10px] font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                      Model answer
+                    </p>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {result.modelAnswer}
+                    </p>
+                  </div>
+                )}
+                {result.improvements.length > 0 && (
+                  <ul className="space-y-1 pt-1">
+                    {result.improvements.map((imp, j) => (
+                      <li
+                        key={j}
+                        className="flex items-start gap-1.5 text-xs text-muted-foreground"
+                      >
+                        <Lightbulb className="mt-0.5 h-3 w-3 shrink-0 text-amber-500" />
+                        {imp}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+
+            <div className="flex gap-3 justify-center pt-2">
+              <Button variant="outline" onClick={onBack} className="rounded-xl">
+                ← Back to Config
+              </Button>
+              <Button
+                onClick={onRegenerate}
+                className="rounded-xl bg-primary hover:bg-primary/90"
+              >
+                <Sparkles className="mr-2 h-4 w-4" /> Generate Another Set
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Results (choice formats) */}
+      {showResults && isChoice && (
         <Card className="overflow-hidden border-emerald-200 dark:border-emerald-800">
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-500" />
           <CardContent className="pt-8 pb-6 text-center space-y-4">
@@ -623,6 +989,7 @@ export function QuizStudio() {
   );
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [format, setFormat] = useState<QuizFormat>("mcq");
 
   const [subjectSlug, setSubjectSlug] = useState<string>("");
   const [classSlug, setClassSlug] = useState<string>("class-11-notes");
@@ -633,6 +1000,7 @@ export function QuizStudio() {
     topic: string;
     difficulty: "easy" | "intermediate" | "hard";
     count: number;
+    format: QuizFormat;
   }) => {
     setGenerating(true);
     setError(null);
@@ -643,6 +1011,7 @@ export function QuizStudio() {
         topic: params.topic || undefined,
         difficulty: params.difficulty,
         count: params.count,
+        format: params.format,
       });
       setQuestions(res.questions);
       // Server-attested guest pool: mirror the REAL remainder so a cleared
@@ -653,6 +1022,7 @@ export function QuizStudio() {
       setDifficulty(params.difficulty);
       setSubjectSlug(params.subjectSlug);
       setClassSlug(params.classSlug);
+      setFormat(params.format);
       setPhase("quiz");
     } catch (err: unknown) {
       // api-client throws Error(message) — message carries the server's
@@ -681,18 +1051,15 @@ export function QuizStudio() {
     setError(null);
   };
 
-  const handleFinishQuiz = async (
-    finalSelectedIndices: Record<number, number>
-  ) => {
+  const handleFinishQuiz = async (summary: {
+    format: QuizFormat;
+    answered: number;
+    correct: number;
+    scorePct?: number;
+    evaluation?: EvaluateAnswersResponse;
+  }) => {
     if (questions.length === 0) return;
-    const answered = Object.keys(finalSelectedIndices).length;
-    const correct = questions.reduce(
-      (sum, q, i) =>
-        sum + (finalSelectedIndices[i] === q.correctIndex ? 1 : 0),
-      0
-    );
-    const scorePct =
-      answered > 0 ? Math.round((correct / answered) * 100) : undefined;
+    const { answered, correct, scorePct } = summary;
     const subjectName =
       SYLLABUS.flatMap((c) => c.subjects).find((s) => s.slug === subjectSlug)?.name ??
       "Quiz";
@@ -702,6 +1069,7 @@ export function QuizStudio() {
       subjectSlug,
       topic: questions[0]?.topic ?? undefined,
       difficulty,
+      format: summary.format,
       questions,
       answered,
       correct,
@@ -733,6 +1101,9 @@ export function QuizStudio() {
         <QuizScreen
           questions={questions}
           difficulty={difficulty}
+          format={format}
+          classSlug={classSlug}
+          subjectSlug={subjectSlug}
           onBack={() => setPhase("config")}
           onRegenerate={handleRegenerate}
           onFinishQuiz={handleFinishQuiz}

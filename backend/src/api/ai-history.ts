@@ -4,6 +4,7 @@ import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
+import { getWorkLaneProvider } from "../ai/config";
 import {
   HISTORY_SEARCH_RULES,
   formatHistoryContext,
@@ -126,7 +127,11 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
       { role: "user", content: question },
     ];
 
-    const response = await getService().chat("", turn);
+    // History search owns the Groq lane (owner 2026-10-25).
+    const response = await getService().chat(
+      getWorkLaneProvider("history-search"),
+      turn
+    );
 
     res.json({
       response,
