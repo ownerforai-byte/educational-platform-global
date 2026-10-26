@@ -21,13 +21,13 @@ describe("AI owner gate (source pins)", () => {
     expect(src).toContain("consumeUserSlot");
   });
 
-  test("POST /api/ai/guest is public but rate-limited and quota-enforced", () => {
+  test("POST /api/ai/guest is public, rate-limited, and closed", () => {
     const src = read("../src/api/ai-guest.ts");
-    expect(src).toMatch(/router\.post\("\/", rateLimit, async/);
+    expect(src).toMatch(/router\.post\("\/", rateLimit,/);
     expect(src).not.toContain("requireAuth");
     expect(src).not.toContain("requireOwnerEmail");
-    expect(src).toContain("consumeGuestSlot(ip, deviceId)");
-    expect(src).toContain("GUEST_DAILY_LIMIT");
+    expect(src).toContain('res.status(403).json({');
+    expect(src).toContain('error: "Veer chat is for members"');
   });
 
   test("POST /api/ai/enhance requires an owner email", () => {

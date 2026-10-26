@@ -16,8 +16,9 @@ import { aiSparkTierFor, type AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
  *   member   → 3 Veer sparks a day on the Study, Nepali, and Grammar chats.
  *   plus     → search, Student Desk, Class 11 notes, formula sheets, practice
  *              sets, the notice board, labs, simulations, and Veer studio.
- *   pro      → + all indexes: derivations & theorems, PDF library, graph
- *              banks, knowledge hubs, Loksewa & entrance tracks.
+ *   pro      → journal, worked numericals, the CEE and board-exam suite,
+ *              plus all indexes: derivations, theorems, the PDF library, graph
+ *              banks, knowledge hubs, and Loksewa.
  *   owner    → everything: all indexes, owner rails, owner console, unlimited
  *              Veer sparks.
  *

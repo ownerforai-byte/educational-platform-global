@@ -37,9 +37,9 @@ const TIER_BLURB: Record<UserTier, string> = {
   member:
     "You have 3 Veer sparks a day, on the Study, Nepali, and Grammar chats. Search, notes, formula sheets, practice sets, and the notice board open at Plus.",
   plus:
-    "Search, the Student Desk, Class 11 notes, formula sheets, practice sets, the notice board, labs, and Veer studio are open, along with Class 12, the journal, and past papers.",
+    "Search, the Student Desk, Class 11 notes, formula sheets, practice sets, the notice board, labs, and Veer studio are open, along with Class 12 and past papers.",
   pro:
-    "The full platform is open: every index, derivations & theorems, the PDF library, graph banks, knowledge hubs and the entrance tracks.",
+    "The journal, worked numericals, the CEE track and the board exam suite are open, with every index: derivations, the PDF library, graph banks and the knowledge hubs.",
   owner:
     "Operator access: everything Pro has, unlimited Veer sparks, plus the owner console — user tiers, grants, content control and live audit.",
 };

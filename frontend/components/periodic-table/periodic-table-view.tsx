@@ -822,6 +822,7 @@ export function PeriodicTableView() {
                             <div
                               key="lanth-placeholder"
                               onClick={() => {
+                                if (!plusTools) return;
                                 setSelectedElement(lanthanides[0]);
                                 setIsDossierOpen(true);
                               }}
@@ -840,6 +841,7 @@ export function PeriodicTableView() {
                             <div
                               key="act-placeholder"
                               onClick={() => {
+                                if (!plusTools) return;
                                 setSelectedElement(actinides[0]);
                                 setIsDossierOpen(true);
                               }}
@@ -906,7 +908,8 @@ export function PeriodicTableView() {
                 })}
               </div>
 
-              {/* Separated Lanthanides & Actinides (4f & 5f Series) */}
+              {/* Separated f-block table (type 2). Plus and above only. */}
+              {plusTools && (
               <div className="mt-4 pt-2.5 border-t border-border/60 space-y-1">
                 <div className="text-[9px] font-bold uppercase tracking-wider text-purple-400 px-1 flex items-center gap-1.5">
                   <Sparkles className="h-3 w-3" />
@@ -1007,6 +1010,7 @@ export function PeriodicTableView() {
                   })}
                 </div>
               </div>
+              )}
             </div>
           </div>
         </div>

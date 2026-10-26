@@ -6,11 +6,8 @@ import {
   Check,
   Crown,
   FileQuestion,
-  FileText,
   FlaskConical,
   GraduationCap,
-  Library,
-  LineChart,
   MessageCircle,
   NotebookPen,
   Rocket,
@@ -18,7 +15,7 @@ import {
   Settings,
   Sigma,
   Sparkles,
-  Stethoscope,
+  Target,
   TrendingUp,
   User,
 } from "lucide-react";
@@ -284,12 +281,12 @@ export function PlusHome() {
     <TierPage
       tier="plus"
       headline="Exam-ready — Class 11 + Class 12."
-      blurb="Everything a Member has, plus the exam engine: the Journal, worked numericals, past-paper banks, the CEE track and the board exam suite."
+      blurb="Everything a Member has, plus Class 12, past papers, labs, and Veer studio."
       spotlights={[
-        { title: "Journal", desc: "Your private study journal — one entry per day.", href: "/journal", icon: NotebookPen },
+        { title: "Class 12 Notes", desc: "Advanced theory notes and board-exam depth.", href: "/class-12-notes", icon: GraduationCap },
         { title: "Practice & PYQ", desc: "Past-year question banks — learn from the past.", href: "/pyqs", icon: FileQuestion },
-        { title: "Worked Numericals", desc: "Physics & Chemistry problem hubs, solved.", href: "/knowledge/numerical-physics", icon: Calculator },
-        { title: "CEE Medical Entrance", desc: "CEE-pattern MCQs, traps and high-yield facts.", href: "/ai-quiz", icon: Stethoscope },
+        { title: "Labs", desc: "Interactive labs and simulations.", href: "/lab", icon: FlaskConical },
+        { title: "Veer Studio", desc: "Math, diagrams, deep-dive, and quiz.", href: "/ai", icon: Sparkles },
       ]}
     />
   );
@@ -300,12 +297,12 @@ export function ProHome() {
     <TierPage
       tier="pro"
       headline="Everything, no caps."
-      blurb="All indexes and every content section: full derivations and theorems, the PDF library, graph banks and the knowledge hubs — and the highest Veer priority."
+      blurb="Journal, worked numericals, the CEE track and the board exam suite, plus every index: derivations, the PDF library, graph banks and the knowledge hubs."
       spotlights={[
+        { title: "Journal", desc: "Your private study journal — one entry per day.", href: "/journal", icon: NotebookPen },
+        { title: "Worked Numericals", desc: "Physics & Chemistry problem hubs, solved.", href: "/knowledge/numerical-physics", icon: Calculator },
+        { title: "CEE & Board exams", desc: "CEE track and the board exam suite.", href: "/exam-countdown", icon: Target },
         { title: "Derivations & Theorems", desc: "Full step-by-step proofs with diagrams.", href: "/derivations", icon: Sigma },
-        { title: "Knowledge Hubs", desc: "World Knowledge, GK, writing & vocabulary.", href: "/knowledge", icon: Library },
-        { title: "PDF Library", desc: "Reference documents in the built-in viewer.", href: "/pdfs", icon: FileText },
-        { title: "Graph Bank", desc: "Science graph bank and plotted explorables.", href: "/science-graph-bank", icon: LineChart },
       ]}
     />
   );

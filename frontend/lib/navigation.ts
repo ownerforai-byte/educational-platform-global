@@ -154,7 +154,7 @@ const toolsItems: NavItem[] = [
   // Practice sets open at Plus. Members keep the three chat consoles only.
   { href: "/quiz", label: "Practice Quiz Bank", icon: Target, minLevel: "plus" },
   // plan.md §3 row 12: the board-exam suite (countdown, grand tests) is Plus.
-  { href: "/exam-countdown", label: "Exam Countdown", icon: Target, minLevel: "plus" },
+  { href: "/exam-countdown", label: "Exam Countdown", icon: Target, minLevel: "pro" },
 ];
 
 const extendedItems: NavItem[] = [

@@ -16,8 +16,7 @@ import {
 /**
  * /journal — the study journal (plan.md §3, section "Journal").
  *
- * Owner policy 2026-10-23: the journal is open to the Plus and Pro rungs
- * (and owner). Below that rung the page renders a locked card that routes to
+ * Owner policy: the journal opens at Pro (and owner). Below that rung the page renders a locked card that routes to
  * /plans instead of hiding itself. Entries are one per user per day, private,
  * and backed by the shared journal API.
  */
@@ -31,7 +30,7 @@ function todayIso(): string {
 
 export default function JournalPage() {
   const { user, isLoading } = useSession();
-  const allowed = hasLevel(user, "plus");
+  const allowed = hasLevel(user, "pro");
 
   const { data: entries, isLoading: entriesLoading } = useR1Journal(undefined, allowed);
   const saveEntry = useSaveR1Journal();
@@ -70,12 +69,12 @@ export default function JournalPage() {
         <Card aria-disabled="true" className="cursor-not-allowed border-border/60 bg-muted/30 p-8 opacity-65 grayscale">
           <div className="mx-auto inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70" aria-disabled="true">
             <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground/70">
-              Plus &amp; Pro
+              Pro
             </span>
           </div>
           <CardTitle className="mt-4 text-xl text-muted-foreground">Journal is unavailable on this plan</CardTitle>
           <CardDescription className="mx-auto mt-2 max-w-md text-sm">
-            Study Journal is available to Plus and Pro accounts — private daily
+            Study Journal is available on the Pro plan — private daily
             entries for your preparation.
           </CardDescription>
           {/* Restricted journal access is shown as a muted disabled state. */}
