@@ -5,14 +5,8 @@ import { readSectionMinTiers } from "../utils/sectionTiers";
 /**
  * Public runtime config — the platform flags the UI must mirror, with no auth.
  *
- * Why this exists (owner report 2026-10-03: "coin gate on/off not working"):
- * the coin gate is an owner-only setting (`settings.coin_gate_enabled`).
- * Turning it OFF makes AI chat free for owner emails (students still pay),
- * and the server honors it — but the chat surfaces only ever looked at the
- * user's credit balance, so owners at 0 credits stayed locked out no matter
- * what the toggle said. This endpoint publishes the flag (plus the pool
- * constants the copy already quotes) so owner clients lock only when the
- * gate is actually ON.
+ * Publishes the owner content-spark toggle (`settings.coin_gate_enabled`) plus
+ * pool constants. AI chat is metered by AI sparks separately (see aiSpark.ts).
  *
  * Exposes nothing user-specific and nothing the billing behaviour does not
  * already reveal.

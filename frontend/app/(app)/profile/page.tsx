@@ -511,7 +511,7 @@ export default function ProfilePage() {
               Content Spark Wallet
             </CardTitle>
             <CardDescription className="text-xs">
-              Spent only on actual note/content unlocks — labs, visuals and Veer chat never draw from it.
+              Spent only on note/PYQ unlocks — Veer uses AI sparks, not this wallet (3D labs are tier-gated at Pro).
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">

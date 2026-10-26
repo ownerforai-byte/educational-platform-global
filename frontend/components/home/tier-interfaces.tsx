@@ -99,7 +99,9 @@ function TierHero({ tier, headline, blurb }: { tier: AccessLevel; headline: stri
         <div className="rounded-2xl border border-border/60 bg-background/70 px-4 py-3 text-center">
           <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Veer sparks</p>
           <p className="mt-1 text-lg font-extrabold text-primary">{TIER_SPARKS[tier]}</p>
-          <p className="mt-0.5 text-[10px] text-muted-foreground">notes 1 spark · labs free</p>
+          <p className="mt-0.5 text-[10px] text-muted-foreground">
+            notes 1 spark · labs {ACCESS_LABELS[quickLinkMinTier("/lab")]}
+          </p>
         </div>
       </div>
     </section>

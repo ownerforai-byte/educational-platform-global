@@ -55,7 +55,7 @@ export default function CreditsPage() {
             My Sparks
           </h1>
           <p className="text-sm text-muted-foreground">
-            Guest Student Plan &bull; 50 free content sparks allocated daily.
+            Sign in to track content sparks (notes) and AI sparks (Veer) on separate meters.
           </p>
         </div>
 
@@ -146,8 +146,8 @@ export default function CreditsPage() {
                   <p className="font-semibold text-foreground">Veer Instant Explanations</p>
                   <p className="text-xs text-muted-foreground">Step-by-step problem solver &amp; doubt clearing</p>
                 </div>
-                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
-                  FREE — no AI spark spent
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-violet-500/10 text-violet-600 dark:text-violet-400">
+                  AI spark metered
                 </span>
               </div>
 
@@ -219,7 +219,7 @@ export default function CreditsPage() {
           My Sparks
         </h1>
         <p className="text-sm text-muted-foreground">
-          Track your content sparks and PRO plan status. Sparks are spent only on actual note/content unlocks — labs, visuals and Veer chat are free.
+          Content sparks unlock notes and PYQs for 20 minutes. Veer chat uses AI sparks instead (see your profile). Interactive labs require Pro; visuals stay free.
         </p>
       </div>
 

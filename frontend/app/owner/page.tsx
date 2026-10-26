@@ -1,255 +1,213 @@
 "use client";
 
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {
   Crown,
   ShieldCheck,
   Coins,
   Sparkles,
-  BadgeCheck,
   ArrowRight,
   LayoutDashboard,
   Activity,
-  Home,
-  LogIn,
+  Users,
+  Database,
+  Settings,
+  MessageSquareText,
+  Timer,
+  Stethoscope,
   Loader2,
-  Mail,
+  UserPlus,
+  CreditCard,
 } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/providers/auth-provider";
+import { Skeleton } from "@/components/ui/skeleton";
+import { getOwnerOverview, type OwnerOverview } from "@/lib/api/owner";
+import { useSession } from "@/features/auth/hooks/use-session";
 
-/**
- * The canonical owner allowlist — kept in sync with
- * `backend/src/middleware/auth.ts` OWNER_EMAILS. Any account signing up or
- * logging in with one of these emails is auto-granted the OWNER role by the
- * backend (unlimited credits, premium, admin access).
- */
-const OWNER_EMAILS = [
-  "harindarsah98172@gmail.com",
-  "yashsah231@gmail.com",
-  "sahrocky81@gmail.com",
-  "ravikisan1814@gmail.com",
-  "planephoto88@gmail.com",
+const QUICK_LINKS = [
+  { href: "/owner/users", icon: ShieldCheck, title: "User Management", desc: "Approvals, tiers, bulk actions" },
+  { href: "/owner/premium", icon: Crown, title: "Premium Queue", desc: "Review premium requests" },
+  { href: "/owner/credits", icon: Coins, title: "Spark Grants", desc: "Bulk and everyone credits" },
+  { href: "/owner/sections", icon: LayoutDashboard, title: "Section Minimums", desc: "Per-section tier gates" },
+  { href: "/owner/tracking", icon: MessageSquareText, title: "Chat Tracking", desc: "Veer session audit" },
+  { href: "/owner/r1-access", icon: Sparkles, title: "R1 Access", desc: "Daily-life layer grants" },
+  { href: "/r1/activities", icon: Timer, title: "Time Tracker", desc: "R1 activity log" },
+  { href: "/owner/content", icon: Database, title: "Content", desc: "Corpus and resources" },
+  { href: "/owner/activity", icon: Activity, title: "Credit Activity", desc: "Grant and spend audit" },
+  { href: "/owner/settings", icon: Settings, title: "Settings", desc: "Platform toggles" },
+  { href: "/controller", icon: Stethoscope, title: "Diagnostics", desc: "Health and AI sources" },
 ];
 
-// Every tool points at a REAL console route (plan.md §8 P4 — tier grants and
-// section minimums live here). The old "/admin" entry was a loop: /admin
-// itself redirects back to /owner.
-const OWNER_TOOLS = [
-  {
-    href: "/owner/users",
-    icon: ShieldCheck,
-    title: "Users & Tiers",
-    desc: "Grant or adjust tiers, credits, premium and access.",
-    accent: "text-amber-400 bg-amber-500/10 border-amber-500/25",
-  },
-  {
-    href: "/owner/sections",
-    icon: LayoutDashboard,
-    title: "Section Minimums",
-    desc: "Set the rung each study section opens at.",
-    accent: "text-emerald-400 bg-emerald-500/10 border-emerald-500/25",
-  },
-  {
-    href: "/controller",
-    icon: Activity,
-    title: "Platform Controller",
-    desc: "System health, database and content diagnostics.",
-    accent: "text-sky-400 bg-sky-500/10 border-sky-500/25",
-  },
-  {
-    href: "/credits",
-    icon: Coins,
-    title: "Credits & Plan",
-    desc: "Your owner credits and premium status.",
-    accent: "text-violet-400 bg-violet-500/10 border-violet-500/25",
-  },
-];
+export default function OwnerOverviewPage() {
+  const { user } = useSession();
+  const [overview, setOverview] = useState<OwnerOverview | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-export default function OwnerPage() {
-  const { user, isLoading } = useAuth();
-  const router = useRouter();
-  const isOwner = user?.role === "owner" || user?.role === "pro";
+  const load = useCallback(async () => {
+    try {
+      setError(null);
+      setIsLoading(true);
+      setOverview(await getOwnerOverview());
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load overview");
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    if (!isLoading && !user) router.replace("/login");
-  }, [isLoading, user, router]);
+    load();
+  }, [load]);
+
+  const stats = overview?.stats;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute left-1/4 top-0 h-72 w-72 rounded-full bg-amber-500/10 blur-[110px]" />
-
-      <main className="relative mx-auto w-full max-w-5xl px-4 py-12 sm:px-6">
-        {/* Header */}
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1.5 text-xs font-bold text-amber-500">
-              <Crown className="h-3.5 w-3.5" />
-              Owner Access
-            </div>
-            <h1 className="mt-3 text-3xl font-extrabold tracking-tight">Owner Console</h1>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Private control center — only visible to the five platform owners.
-            </p>
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="space-y-1">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-600">
+            <Crown className="h-3.5 w-3.5" />
+            Owner Console
           </div>
-          <Link
-            href="/home"
-            className="inline-flex items-center gap-1.5 rounded-xl border border-border/70 bg-card px-3.5 py-2 text-xs font-semibold text-foreground/80 transition-colors hover:text-primary"
-          >
-            <Home className="h-3.5 w-3.5" />
-            Back to home
-          </Link>
+          <h1 className="text-2xl font-bold tracking-tight mt-2">Platform overview</h1>
+          <p className="text-sm text-muted-foreground">
+            Live stats and shortcuts — signed in as{" "}
+            <span className="font-medium text-foreground">{user?.email ?? "…"}</span>
+          </p>
         </div>
+        <Button variant="outline" size="sm" onClick={load} disabled={isLoading}>
+          {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Refresh stats"}
+        </Button>
+      </div>
 
-        {/* Loading */}
-        {isLoading && (
-          <div className="mt-16 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <Loader2 className="h-4 w-4 animate-spin" />
-            Checking your session…
-          </div>
+      {error && (
+        <div className="rounded-md border border-destructive/50 bg-destructive/10 px-4 py-2 text-sm text-destructive">
+          {error}
+        </div>
+      )}
+
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {isLoading && !stats ? (
+          [1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-24 rounded-xl" />)
+        ) : (
+          <>
+            <Card>
+              <CardHeader className="pb-1">
+                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
+                  <Users className="h-3.5 w-3.5" />
+                  Total users
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-2xl font-bold tabular-nums">{stats?.totalUsers ?? 0}</p>
+                <Link href="/owner/users" className="text-xs text-primary hover:underline mt-1 inline-block">
+                  Open user management →
+                </Link>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-1">
+                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
+                  <Crown className="h-3.5 w-3.5" />
+                  Premium
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-2xl font-bold tabular-nums">{stats?.premiumUsers ?? 0}</p>
+                <Link href="/owner/premium" className="text-xs text-primary hover:underline mt-1 inline-block">
+                  Review requests ({stats?.pendingPremiumRequests ?? 0} pending) →
+                </Link>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-1">
+                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
+                  <CreditCard className="h-3.5 w-3.5" />
+                  Credit events
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm">
+                  <span className="font-bold text-emerald-600">{stats?.totalCreditsGranted ?? 0}</span> grants ·{" "}
+                  <span className="font-bold text-red-500">{stats?.totalCreditsSpent ?? 0}</span> spends
+                </p>
+                <Link href="/owner/activity" className="text-xs text-primary hover:underline mt-1 inline-block">
+                  Full activity log →
+                </Link>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-1">
+                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
+                  <Database className="h-3.5 w-3.5" />
+                  Content index
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  {stats?.content.topics ?? 0} topics · {stats?.content.resources ?? 0} resources
+                </p>
+                <Link href="/owner/content" className="text-xs text-primary hover:underline mt-1 inline-block">
+                  Content console →
+                </Link>
+              </CardContent>
+            </Card>
+          </>
         )}
+      </div>
 
-        {/* Signed in but not owner */}
-        {!isLoading && user && !isOwner && (
-          <div className="mt-10 rounded-3xl border border-destructive/30 bg-destructive/5 p-8 text-center">
-            <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-destructive/10 text-destructive">
-              <ShieldCheck className="h-6 w-6" />
-            </span>
-            <h2 className="mt-4 text-lg font-bold">Owner access only</h2>
-            <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-              You are signed in as{" "}
-              <span className="font-semibold text-foreground">{user.email}</span>. This console
-              requires the OWNER role, which is reserved for the platform owner emails.
-            </p>
-            <div className="mt-5 flex items-center justify-center gap-3">
-              <Button variant="outline" onClick={() => router.push("/home")} className="rounded-xl">
-                Go to Home
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* Owner view */}
-        {!isLoading && isOwner && user && (
-          <div className="mt-8 space-y-6">
-            {/* Session card */}
-            <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-amber-500/10 via-card to-card p-6 shadow-sm">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/15 text-amber-500">
-                    <Crown className="h-6 w-6" />
-                  </span>
-                  <div>
-                    <h2 className="text-base font-bold">{user.email}</h2>
-                    <p className="text-xs text-muted-foreground">Signed in with full platform privileges</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-500">
-                    <BadgeCheck className="h-3.5 w-3.5" />
-                    OWNER
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-xs font-bold text-violet-400">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Premium
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-500">
-                    <Coins className="h-3.5 w-3.5" />
-                    ∞ Credits
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Owner tools */}
-            <div className="grid gap-4 sm:grid-cols-3">
-              {OWNER_TOOLS.map((tool) => {
-                const Icon = tool.icon;
-                return (
-                  <Link
-                    key={tool.href}
-                    href={tool.href}
-                    className="group flex flex-col rounded-3xl border border-border/70 bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg"
-                  >
-                    <div className="flex items-start justify-between">
-                      <span className={`flex h-10 w-10 items-center justify-center rounded-2xl border ${tool.accent}`}>
-                        <Icon className="h-5 w-5" />
-                      </span>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
-                    </div>
-                    <h3 className="mt-4 text-sm font-bold group-hover:text-primary">{tool.title}</h3>
-                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{tool.desc}</p>
-                  </Link>
-                );
-              })}
-            </div>
-
-            {/* Verified owner roster */}
-            <div className="rounded-3xl border border-border/70 bg-card p-6 shadow-sm">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wider">Verified Owner Emails</h3>
-                  <p className="mt-0.5 text-xs text-muted-foreground">
-                    Auto-granted OWNER on login — matches the backend allowlist.
-                  </p>
-                </div>
-                <span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-bold text-emerald-500">
-                  {OWNER_EMAILS.length} allowlisted
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {QUICK_LINKS.map((tool) => {
+          const Icon = tool.icon;
+          return (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              className="group flex flex-col rounded-2xl border border-border/70 bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40"
+            >
+              <div className="flex items-start justify-between">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-4 w-4" />
                 </span>
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
               </div>
-              <div className="mt-4 space-y-2">
-                {OWNER_EMAILS.map((email, i) => {
-                  const isYou = email.toLowerCase() === user.email?.toLowerCase();
-                  return (
-                    <div
-                      key={email}
-                      className="flex items-center justify-between rounded-2xl border border-border/50 bg-muted/30 px-4 py-2.5"
-                    >
-                      <div className="flex min-w-0 items-center gap-3">
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-amber-500/15 text-[10px] font-extrabold text-amber-500">
-                          {i + 1}
-                        </span>
-                        <Mail className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-                        <span className="truncate text-xs font-semibold text-foreground">{email}</span>
-                      </div>
-                      <div className="flex shrink-0 items-center gap-2">
-                        {isYou && (
-                          <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
-                            You
-                          </span>
-                        )}
-                        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-500">
-                          <BadgeCheck className="h-3 w-3" />
-                          Allowlisted
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        )}
+              <h3 className="mt-3 text-sm font-bold">{tool.title}</h3>
+              <p className="mt-0.5 text-xs text-muted-foreground">{tool.desc}</p>
+            </Link>
+          );
+        })}
+      </div>
 
-        {/* Not signed in (pre-redirect fallback) */}
-        {!isLoading && !user && (
-          <div className="mt-10 rounded-3xl border border-border/70 bg-card p-8 text-center shadow-sm">
-            <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <LogIn className="h-6 w-6" />
-            </span>
-            <h2 className="mt-4 text-lg font-bold">Sign in required</h2>
-            <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-              This console is restricted. Sign in with an owner account to continue.
-            </p>
-            <Button onClick={() => router.push("/login")} className="mt-5 rounded-xl">
-              Go to Sign In
-            </Button>
-          </div>
-        )}
-      </main>
+      {overview && overview.recentUsers.length > 0 && (
+        <Card>
+          <CardHeader className="pb-2 flex flex-row items-center justify-between">
+            <CardTitle className="text-sm font-medium flex items-center gap-2">
+              <UserPlus className="h-4 w-4" />
+              Recent signups
+            </CardTitle>
+            <Link href="/owner/users" className="text-xs text-primary hover:underline">
+              View all
+            </Link>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            {overview.recentUsers.map((u) => (
+              <div
+                key={u.id}
+                className="flex items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm"
+              >
+                <div className="min-w-0">
+                  <p className="font-medium truncate">{u.full_name || u.email}</p>
+                  <p className="text-xs text-muted-foreground truncate">{u.email}</p>
+                </div>
+                <span className="text-[10px] font-bold uppercase shrink-0">{u.role ?? "member"}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

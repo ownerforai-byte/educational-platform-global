@@ -34,7 +34,7 @@ export const INITIAL_NOTIFICATIONS: NotificationItem[] = [
     id: "notif-sparks-refill",
     category: "account",
     title: "Daily AI Spark Pool Refilled",
-    body: "Your daily spark allowance has been refreshed to full capacity. Ask Veer questions, test your knowledge in the AI quiz, or unlock deep concept notes freely.",
+    body: "Your daily AI spark and content spark pools have refilled at midnight UTC. Veer chat uses AI sparks; note unlocks use content sparks.",
     timestamp: "2 hours ago",
     href: "/credits",
     actionLabel: "Check Spark Balance",

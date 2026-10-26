@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { MessageSquareText, RefreshCw, Search, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,10 @@ import {
 } from "@/lib/api/owner";
 
 export default function OwnerTrackingPage() {
+  const searchParams = useSearchParams();
+  const deepLinkUserId = searchParams.get("user");
+  const deepLinked = useRef(false);
+
   const [users, setUsers] = useState<OwnerUser[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,8 +47,8 @@ export default function OwnerTrackingPage() {
     load();
   }, [load]);
 
-  const toggleUser = async (u: OwnerUser) => {
-    if (expandedId === u.id) {
+  const toggleUser = useCallback(async (u: OwnerUser, forceOpen?: boolean) => {
+    if (!forceOpen && expandedId === u.id) {
       setExpandedId(null);
       setSessions([]);
       setMessages([]);
@@ -63,7 +68,16 @@ export default function OwnerTrackingPage() {
     } finally {
       setLoadingChats(false);
     }
-  };
+  }, [expandedId]);
+
+  useEffect(() => {
+    if (!deepLinkUserId || deepLinked.current || isLoading || users.length === 0) return;
+    const match = users.find((u) => u.id === deepLinkUserId);
+    if (match) {
+      deepLinked.current = true;
+      void toggleUser(match, true);
+    }
+  }, [deepLinkUserId, isLoading, users, toggleUser]);
 
   const openSession = async (userId: string, session: string) => {
     if (activeSession === session) {

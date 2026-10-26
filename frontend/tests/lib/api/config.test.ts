@@ -18,13 +18,13 @@ describe("getPublicConfig", () => {
     mockedFetch.mockResolvedValueOnce({
       coinGateEnabled: false,
       dailyCreditPool: 4,
-      aiMessageCost: 1,
+      aiMessageCost: 0,
     });
 
     await expect(getPublicConfig()).resolves.toEqual({
       coinGateEnabled: false,
       dailyCreditPool: 4,
-      aiMessageCost: 1,
+      aiMessageCost: 0,
       sectionMinTiers: {},
     });
     expect(mockedFetch).toHaveBeenCalledWith("/api/config");
@@ -40,14 +40,14 @@ describe("getPublicConfig", () => {
     mockedFetch.mockResolvedValueOnce({
       coinGateEnabled: true,
       dailyCreditPool: 4,
-      aiMessageCost: 1,
+      aiMessageCost: 0,
       sectionMinTiers: { pdfs: "owner" },
     });
 
     await expect(getPublicConfig()).resolves.toEqual({
       coinGateEnabled: true,
       dailyCreditPool: 4,
-      aiMessageCost: 1,
+      aiMessageCost: 0,
       sectionMinTiers: { pdfs: "owner" },
     });
   });

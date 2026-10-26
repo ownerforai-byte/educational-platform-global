@@ -68,7 +68,7 @@ export const SECTIONS: PlatformSection[] = [
     id: "labs-3d",
     title: "3D Labs & Simulations",
     description: "Interactive labs across physics, chemistry, biology and math.",
-    minTier: "visitor",
+    minTier: "pro",
     icon: FlaskConical,
     href: "/lab",
   },

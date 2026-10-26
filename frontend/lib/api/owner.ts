@@ -146,6 +146,22 @@ export function setOwnerUserAccessStatus(
   });
 }
 
+export function bulkOwnerUserAccessStatus(
+  userIds: string[],
+  status: "ACTIVE" | "REJECTED",
+): Promise<{
+  success: true;
+  status: string;
+  applied: string[];
+  skipped: Array<{ userId: string; reason: string }>;
+  requested: number;
+}> {
+  return apiFetch("/api/owner/users/bulk-status", {
+    method: "POST",
+    body: JSON.stringify({ userIds, status }),
+  });
+}
+
 export function getOwnerPremiumRequests(): Promise<OwnerPremiumRequest[]> {
   return apiFetch<OwnerPremiumRequest[]>("/api/owner/premium-requests");
 }

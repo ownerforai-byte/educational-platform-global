@@ -15,7 +15,7 @@ import {
   rollbackGuestSlot,
   startGuestQuotaCleanup,
 } from "../utils/guestQuota";
-import { DAILY_CREDIT_POOL } from "../utils/credits";
+import { signInForMoreAiSparkMessage } from "../utils/aiSparkCopy";
 import { getClientIp } from "../utils/clientIp";
 
 /** Public AI chat is available without an account, with a server-enforced
@@ -73,7 +73,9 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
         error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `You've used all ${GUEST_DAILY_LIMIT} free messages for today. Sign in to keep talking to Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
+        message: signInForMoreAiSparkMessage(
+          `You've used all ${GUEST_DAILY_LIMIT} free AI sparks for today.`,
+        ),
       });
       return;
     }

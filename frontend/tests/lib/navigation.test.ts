@@ -102,7 +102,7 @@ describe("navigation menu", () => {
     expect(quickLinkMinTier("/home")).toBe("member"); // tier home per signed-in rung
     expect(quickLinkMinTier("/class-11-notes")).toBe("member"); // §3 row 3
     expect(quickLinkMinTier("/class-12-notes")).toBe("plus"); // §3 row 4
-    expect(quickLinkMinTier("/lab")).toBe("visitor"); // §3 row 15 — free always
+    expect(quickLinkMinTier("/lab")).toBe("pro");
     expect(quickLinkMinTier("/quiz")).toBe("member"); // §2.1 — practice basics
     expect(quickLinkMinTier("/chat")).toBe("visitor"); // §3 row 20 — spark-metered
     expect(quickLinkMinTier("/pdfs")).toBe("pro"); // §3 row 18

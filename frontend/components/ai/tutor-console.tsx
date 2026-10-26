@@ -528,7 +528,7 @@ export function TutorConsole({
   const router = useRouter();
   const isLoggedIn = !!user;
   const isProUser = !isLoading && !!user && ((user as { plan?: string }).plan === "plus" || (user as { plan?: string }).plan === "pro" || isOwnerEmail(user.email));
-  // Owner coin gate (live): OFF → chat is free, so an empty pool must not disable it.
+  // Owner coin gate: content-spark unlocks only (not AI sparks).
   const coinGateEnabled = useCoinGateEnabled();
   const freeMode = coinGateEnabled === false;
 
@@ -591,9 +591,7 @@ export function TutorConsole({
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
-  // VEER CHAT IS FREE (owner policy 2026-10-12): "Veer chat and everything
-  // else are free — no AI spark is ever spent." No pool check or disabled state —
-  // the only limit left is the guest anti-abuse quota.
+  // AI sparks meter chat (server); content sparks never apply here. Guests hit the guest quota.
   const isOwner = isOwnerEmail(user?.email);
   const privilegedUser =
     !!user?.premiumStatus || (isOwner && freeMode);
@@ -808,7 +806,7 @@ export function TutorConsole({
         return;
       }
 
-      recordAiSparkUse(); // AI spark: informational daily counter (chat is free)
+      recordAiSparkUse();
       const userMsg: AIChatMessage = images.length
         ? { role: "user", content, images }
         : { role: "user", content };
@@ -1115,19 +1113,17 @@ export function TutorConsole({
                 <span className="hidden sm:inline">{sessions.length}</span>
               </button>
             )}
-            {/* AI SPARK (owner 2026-10-12): "ai spark shows while chatting
-                only on top" — the ONLY spark display in the chat, and it is
-                informational: chat is free, nothing is ever spent. */}
+            {/* AI spark badge — daily Veer allowance (separate from content sparks). */}
             <AiSparkBadge className="hidden sm:inline-flex" />
             {!isLoggedIn && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title={`${MAX_GUEST_MESSAGES} free messages per day · sign in to save your chats`}
+                title={`${MAX_GUEST_MESSAGES} AI sparks per day · sign in for a higher allowance`}
               >
                 <Coins className="h-3 w-3" />
                 {guestCredits > 0
-                  ? `${guestCredits} free ${guestCredits === 1 ? "message" : "messages"} today`
-                  : "Daily free pool used"}
+                  ? `${guestCredits} AI spark${guestCredits === 1 ? "" : "s"} today`
+                  : "Daily AI sparks used"}
               </span>
             )}
             {isLoggedIn && isOwner && (
@@ -1489,8 +1485,8 @@ export function TutorConsole({
           {isLoggedIn
             ? "1 credit per message · history saved to your account"
             : guestCredits > 0
-              ? `${guestCredits} free ${guestCredits === 1 ? "message" : "messages"} left today · try Veer, then sign in for daily credits`
-              : "Today's free messages are used · sign in for daily credits & saved history"}
+              ? `${guestCredits} AI spark${guestCredits === 1 ? "" : "s"} left today · sign in for more`
+              : "Today's AI sparks used · sign in for your tier allowance & saved history"}
         </p>
       </div>
 

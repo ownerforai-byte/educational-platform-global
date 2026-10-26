@@ -125,6 +125,15 @@ describe("Veer chat: routes stay public (metered), launcher sits under the spark
     expect(route).toContain("aiSparkIsMetered(tier)");
   });
 
+  it("AI Studio routes meter AI sparks, not content sparks", () => {
+    for (const file of ["backend/src/api/ai-math.ts", "backend/src/api/ai-deep-dive.ts", "backend/src/api/ai-generate.ts"]) {
+      const src = readRoot(file);
+      expect(src).toContain("aiSparkGateIfAuthed");
+      expect(src).not.toContain('requireCredit("aiChat")');
+    }
+    expect(readRoot("backend/src/middleware/creditCheck.ts")).toContain('aiChat: { cost: 0');
+  });
+
   it("hardcodes public chat to three messages per UTC day on client and server", () => {
     const guestQuota = readRoot("backend/src/utils/guestQuota.ts");
     expect(guestQuota).toContain("export const GUEST_DAILY_LIMIT = 3;");

@@ -305,7 +305,7 @@ export function WelcomeStatus() {
           icon={<BadgeCheck className="h-5 w-5 text-emerald-500" />}
           title="Access granted!"
           badge={<StatusPill status="ACTIVE" />}
-          body="Your account has been approved. Sign in to jump into your classes, saved chats and daily credits."
+          body="Your account has been approved. Sign in for saved chats, AI sparks for Veer, and content sparks for notes."
           actions={<AuthButton href="/login" label="Sign in now" primary big />}
         />
       )}

@@ -1,24 +1,17 @@
 import { supabaseAdmin } from "../db/supabase";
 
 /**
- * Daily credit pool (owner policy 2026-09-26, corrected 2026-10-04).
+ * CONTENT SPARK pool (profiles.credits) — owner policy 2026-09-26+.
  *
- *  - Every AI chat message costs 1 credit — for EVERY signed-in user.
- *  - Every signed-in user gets a DAILY_POOL of 4 platform credits.
- *  - Students/customers are ALWAYS billed (they must purchase/earn coins).
- *  - Owner-allowlist emails follow the profile toggle:
- *      gate ON  → owners are billed like everyone else;
- *      gate OFF → owners chat free (no deduction, no lock).
- *  - Credits reset to DAILY_POOL at 12:00 AM (UTC day rollover) — enforced
- *    lazily here (first AI call after midnight resets) and eagerly by the
- *    midnight cron job in jobs/creditsResetJob.ts.
- *  - PRO accounts (premium_status) stay unlimited and are never billed.
- *  - A credit is REFUNDED whenever the answer the student paid for never
- *    arrives (provider failure / timeout — see api/ai.ts + creditCheck).
- *  - HARDENED 2026-09-27 (owner): the pool is HARDCODED — no env var,
- *    config or refresh endpoint can refill it mid-day. A spent pool
- *    refills ONLY at the next UTC midnight; the only in-day escape is a
- *    PRO plan (premium_status → unlimited).
+ *  - Spent ONLY on actual note/content unlocks (api/user.ts POST /credits/unlock).
+ *  - Veer chat and AI Studio tools use AI sparks instead (utils/aiSpark.ts).
+ *  - Every signed-in user gets DAILY_CREDIT_POOL content sparks at UTC midnight.
+ *  - Owner-allowlist emails follow coin_gate_enabled:
+ *      gate ON  → owners spend content sparks on unlocks like students;
+ *      gate OFF → owners unlock notes without spending content sparks.
+ *  - PRO (premium_status) has unlimited content sparks for unlocks.
+ *  - Refunds on failed unlocks are handled at the unlock route.
+ *  - HARDENED 2026-09-27: no mid-day refill except owner grants / midnight cron.
  *
  * Concurrency: every balance write is a compare-and-swap (CAS) — the UPDATE
  * carries `.eq("credits", <value just read>)`, so two parallel requests can
@@ -39,15 +32,14 @@ import { supabaseAdmin } from "../db/supabase";
  */
 export const DAILY_CREDIT_POOL = 4;
 
-/** Cost of one AI chat message, in credits. */
-export const AI_MESSAGE_COST = 1;
+/** @deprecated AI chat uses AI sparks — kept at 0 for legacy /api/config clients. */
+export const AI_MESSAGE_COST = 0;
 
-// ── Coin gate (owner toggle 2026-10-02, corrected 2026-10-04) ───────────────
-// The profile button controls OWNER-allowlist emails ONLY:
-//   gate ON  → owners are billed 1 credit per AI message (like all students);
-//   gate OFF → owners chat free (no deduction, no lock).
-// Students/customers are ALWAYS billed regardless of the toggle — they must
-// purchase/earn coins (PRO/premium stays unlimited).
+// ── Coin gate (owner toggle 2026-10-02, content sparks 2026-10-26) ──────────
+// The profile button controls OWNER-allowlist emails ONLY for CONTENT unlocks:
+//   gate ON  → owners spend content sparks on note unlocks;
+//   gate OFF → owners unlock notes without spending content sparks.
+// Students/customers always spend content sparks on unlocks (PRO unlimited).
 //
 // The flag is GLOBAL: one row controls ALL owner-allowlist emails at once.
 // Profile toggle ON  → coin billing enabled for every owner gmail.
@@ -83,7 +75,7 @@ export function invalidateCoinGateCache(): void {
   coinGateCache = null;
 }
 
-/** True when the owner wants AI chat to cost credits (the default). */
+/** True when owner emails spend content sparks on note unlocks (the default). */
 export async function isCoinGateEnabled(): Promise<boolean> {
   const now = Date.now();
   if (coinGateCache && now - coinGateCache.at < COIN_GATE_TTL_MS) {

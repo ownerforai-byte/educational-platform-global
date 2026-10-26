@@ -138,9 +138,8 @@ function shuffledSuggestions(): Suggestion[] {
   return bag.slice(0, 6);
 }
 
-// Public visitors receive three free chat messages per UTC day. Signed-in
-// Veer chat is free of content-spark charges; the server enforces the guest
-// allowance against persistent IP + HttpOnly device identities.
+// Public visitors receive three AI sparks per UTC day (guest pool). Signed-in
+// users draw from the member AI spark pool — never from content sparks.
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
 // Rotating "work in progress" lines while the professor composes a reply —
@@ -280,8 +279,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const router = useRouter();
   const isLoggedIn = !!user;
   const isProUser = !isLoading && !!user && ((user as { plan?: string }).plan === "plus" || (user as { plan?: string }).plan === "pro" || isOwnerEmail(user.email));
-  // Veer chat is FREE (owner policy 2026-10-12): no wallet gating at all —
-  // the content spark wallet only charges for note/content unlocks.
+  // Content sparks never gate chat — AI sparks are enforced server-side per message.
   /** Photos queued for the next message (camera / gallery). */
   const [pendingImages, setPendingImages] = useState<string[]>([]);
 
@@ -364,9 +362,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   }, [embedded, sidebarOpen]);
 
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
-  // Veer chat is FREE (owner policy 2026-10-12) — the content spark wallet
-  // only charges for note/content unlocks, never for chat. Public guests have
-  // a three-message daily quota enforced by the server.
+  // Guests: three AI sparks/day. Signed-in: tier AI spark pool (see AiSparkBadge).
   const isOwner = isOwnerEmail(user?.email);
   const composerLocked = isGuestLimited;
 
@@ -532,7 +528,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       return;
     }
 
-    recordAiSparkUse(); // AI spark: informational daily counter (chat is free)
+    recordAiSparkUse(); // sync badge with server after a sent message
 
     const userMsg: AIChatMessage = images.length
       ? { role: "user", content: textToSend, images }

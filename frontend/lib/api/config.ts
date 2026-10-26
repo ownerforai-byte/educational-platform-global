@@ -3,16 +3,15 @@ import { apiFetch } from "../api-client";
 /**
  * Public runtime flags from GET /api/config (no auth, no user data).
  *
- * The coin gate is an owner-only toggle: when it is OFF, AI chat is free for
- * owner emails (students still pay). Chat surfaces read it so owner accounts
- * disable the composer on a zero balance only while the gate is actually ON.
+ * coin_gate_enabled: owner emails spend content sparks on note unlocks when ON.
+ * AI chat is metered separately via AI sparks (not this flag).
  */
 export interface PublicConfig {
-  /** True when AI chat bills credits (platform default). */
+  /** True when owner emails spend content sparks on unlocks (default). */
   coinGateEnabled: boolean;
-  /** Daily signed-in credit pool, mirrored by the UI copy. */
+  /** Daily content spark pool for signed-in users. */
   dailyCreditPool: number;
-  /** Cost of one AI message, in credits. */
+  /** Legacy — always 0; AI uses AI sparks. */
   aiMessageCost: number;
   /**
    * Owner-set section minimums (sectionId → rung), from /owner/sections.
@@ -25,7 +24,7 @@ export interface PublicConfig {
 export const DEFAULT_PUBLIC_CONFIG: PublicConfig = {
   coinGateEnabled: true,
   dailyCreditPool: 4,
-  aiMessageCost: 1,
+  aiMessageCost: 0,
   sectionMinTiers: {},
 };
 

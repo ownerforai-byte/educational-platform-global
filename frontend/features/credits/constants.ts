@@ -6,10 +6,11 @@
  *   - actual note/content unlocks (theory notes, question/PYQ sets) → 1 spark
  *   - 3D/AR labs, HD visuals, Diagram Hub → FREE (no spark charge)
  *
- * Two separate spark pools exist:
- *   - CONTENT SPARK — spent only on note/content unlocks (this file's matrix).
- *   - AI SPARK — informational daily counter shown ONLY at the top of the
- *     Veer chat; chat is free and no AI spark is ever spent.
+ * Two separate spark pools (never mixed):
+ *   - CONTENT SPARK — profiles.credits; spent only on note/content unlocks
+ *     (this file's TOKEN_MATRIX + POST /api/user/credits/unlock).
+ *   - AI SPARK — guest + member daily pools; one spark per Veer / AI Studio
+ *     message (GET /api/ai/spark, middleware/aiSparkGate.ts, api/ai.ts).
  *
  * A successful unlock stays open for UNLOCK_WINDOW_SECONDS (20 minutes) and then
  * the module re-locks automatically (no page reload required).

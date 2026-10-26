@@ -14,7 +14,23 @@ import { supabaseAdmin } from "../db/supabase";
 /** Max users we page through (protects against runaway loops). */
 const MAX_PAGES = 50; // 50 × 200 = 10 000 accounts
 
+/** Short TTL — owner/admin lists hit this on every load; stale by 60s is fine. */
+const CACHE_TTL_MS = 60_000;
+let cachedEmails: Map<string, string> | null = null;
+let cachedAt = 0;
+
+/** Drop cached auth emails (after user delete or when tests need a fresh map). */
+export function invalidateAuthEmailsCache(): void {
+  cachedEmails = null;
+  cachedAt = 0;
+}
+
 export async function authEmailsById(): Promise<Map<string, string>> {
+  const now = Date.now();
+  if (cachedEmails && now - cachedAt < CACHE_TTL_MS) {
+    return cachedEmails;
+  }
+
   const emails = new Map<string, string>();
 
   try {
@@ -40,5 +56,7 @@ export async function authEmailsById(): Promise<Map<string, string>> {
     );
   }
 
+  cachedEmails = emails;
+  cachedAt = now;
   return emails;
 }

@@ -96,7 +96,7 @@ export function AIAssistantWorkspace() {
           <Link href="/login" className="font-semibold text-primary hover:underline">
             sign in
           </Link>{" "}
-          for saved histories &amp; daily credits.
+          for saved histories &amp; your daily AI spark allowance.
         </p>
       )}
     </section>

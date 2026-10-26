@@ -1,11 +1,12 @@
 /**
  * Coin gate shared helpers — the owner toggle in /profile controls OWNERS ONLY.
  *
- * One `settings.coin_gate_enabled` row controls ALL owner-allowlist emails:
- *   button ON  → owners are billed 1 coin per AI message (like all students).
- *   button OFF → owners chat free (no deduction or disabled state).
- * Students/customers are ALWAYS billed regardless of the toggle — they must
- * purchase/earn coins (PRO/premium stays unlimited).
+ * One `settings.coin_gate_enabled` row controls ALL owner-allowlist emails
+ * for CONTENT spark unlocks only (notes/PYQs):
+ *   button ON  → owners spend content sparks on unlocks (like students).
+ *   button OFF → owners unlock notes without spending content sparks.
+ * Veer chat is metered by AI sparks separately — this toggle never affects chat.
+ * Students/customers always spend content sparks on unlocks (PRO unlimited).
  *
  * The settings.value column is untyped, so every reader must accept boolean,
  * numeric, and string encodings of OFF.

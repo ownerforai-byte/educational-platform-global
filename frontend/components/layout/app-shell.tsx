@@ -18,6 +18,7 @@ import { CreditBadge } from "./credit-badge";
 import { NotificationBell } from "./notification-bell";
 import { UserNav } from "./user-nav";
 import { Footer } from "./footer";
+import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -207,6 +208,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
       {/* Back navigation */}
       <BackButton />
+
+      <PlatformGuideWidget />
     </div>
   );
 }

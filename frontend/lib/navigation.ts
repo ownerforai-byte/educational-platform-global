@@ -126,11 +126,11 @@ const curriculumItems: NavItem[] = [
 ];
 
 const stemAndRigorItems: NavItem[] = [
-  // plan.md §3 rows 13–17: labs, visuals and mindmaps are free for everyone;
-  // formula sheets open at Member; proofs and the graph banks are Pro.
-  { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, minLevel: "visitor" },
-  { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, minLevel: "visitor" },
-  { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, minLevel: "visitor" },
+  // Interactive labs are Pro+; visuals/mindmaps stay open to everyone; proofs
+  // and graph banks are Pro as well.
+  { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, minLevel: "pro" },
+  { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, minLevel: "pro" },
+  { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, minLevel: "pro" },
   { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, minLevel: "member" },
   { href: "/theorems", label: "Theorems & Proofs", icon: Binary, minLevel: "pro" },
   { href: "/derivations", label: "Formula Derivations", icon: Layers, minLevel: "pro" },

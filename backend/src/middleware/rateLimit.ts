@@ -70,6 +70,7 @@ function tierFor(originalUrl: string | undefined): Tier {
   // provider gateway. Use originalUrl (not req.path) so the check works both
   // at the app level and when this middleware is reused inside a router.
   if (url.startsWith("/api/ai/guest")) return "guest-ai";
+  if (url.startsWith("/api/ai/platform-guide")) return "guest-ai";
   // Matched on the exact path so the cheap image-history CRUD below it is
   // not charged against the drawing budget. The Google image search joins
   // this tier: it burns the free CSE quota (100/day) instead of a generation.

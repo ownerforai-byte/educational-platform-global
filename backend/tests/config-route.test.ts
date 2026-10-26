@@ -61,7 +61,7 @@ describe("GET /api/config", () => {
     expect(await res.json()).toEqual({
       coinGateEnabled: true,
       dailyCreditPool: 4,
-      aiMessageCost: 1,
+      aiMessageCost: 0,
       sectionMinTiers: {},
     });
   });

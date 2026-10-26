@@ -25,7 +25,7 @@ const groups: { title: string; links: FooterLink[] }[] = [
     title: "Resources",
     links: [
       ["All resources", "/site-index", "pro"],
-      ["Interactive labs", "/lab", "visitor"],
+      ["Interactive labs", "/lab", "pro"],
       ["Formula sheets", "/formulas", "member"],
       ["Veer assistant", "/chat", "visitor"],
     ],

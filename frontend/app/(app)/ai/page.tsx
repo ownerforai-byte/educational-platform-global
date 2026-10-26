@@ -200,8 +200,8 @@ const PROMISES = [
   },
   {
     icon: ListChecks,
-    title: "Free — no AI spark spent",
-    text: "Veer chat is free for every student. The AI spark counter at the top of the chat is informational only.",
+    title: "AI sparks — separate meter",
+    text: "Every Veer message spends one AI spark from your daily tier allowance. Content sparks are only for unlocking notes.",
   },
   {
     icon: History,
@@ -307,18 +307,19 @@ export default function AIStudioPage() {
         })}
       </section>
 
-      {/* ── Where credits come from ─────────────────────────────────────── */}
+      {/* ── Dual spark meters ───────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/70 bg-muted/20 p-5 space-y-2">
         <h2 className="flex items-center gap-2 text-sm font-bold text-foreground">
           <Wand2 className="h-4 w-4 text-violet-500" />
-          How the daily pool works
+          Two spark meters
         </h2>
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Guests get 2 free messages a day. Signed-in students get 4 credits a day, and one
-          credit pays for one AI reply. The pool refills at 12:00 AM and PRO students are never
-          capped.{" "}
+          <strong className="text-foreground">AI sparks</strong> meter Veer chat and every AI
+          Studio tool (guests 3/day, members 7, Plus 25, Pro 50, owner unlimited).{" "}
+          <strong className="text-foreground">Content sparks</strong> unlock notes and PYQ sets
+          for 20 minutes — they never pay for chat. Both pools reset at 12:00 AM UTC.{" "}
           <Link href="/credits" className="font-semibold text-primary hover:underline">
-            See your plan and top-up options
+            Open your spark wallet
           </Link>
           .
         </p>

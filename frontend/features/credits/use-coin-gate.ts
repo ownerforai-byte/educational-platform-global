@@ -8,10 +8,9 @@ import { setLitePoll } from "@/lib/perf/lite";
 /**
  * Live coin-gate flag, mirrored from GET /api/config.
  *
- * `true`  — AI chat bills one credit per message (platform default).
- * `false` — the owner turned the gate OFF: chat is free for owner emails
- *           (students still pay), so owner surfaces must NOT lock the
- *           composer on a zero balance.
+ * `true`  — owner emails spend content sparks on note unlocks (default).
+ * `false` — owner emails unlock notes without spending content sparks.
+ *           AI sparks for Veer are unrelated — see GET /api/ai/spark.
  * `null`  — still loading; callers keep the existing behaviour (fail closed).
  *
  * The flag controls OWNER emails only (single profile toggle).

@@ -5,11 +5,11 @@ import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
 import {
   authOrGuestQuota,
-  creditGate,
   extractJsonObject,
   QUIZ_FORMATS,
   type QuizFormat,
 } from "./ai-generate";
+import { aiSparkGateIfAuthed } from "../middleware/aiSparkGate";
 
 /**
  * POST /api/ai/evaluate-answers (plan.md §11.2).
@@ -20,8 +20,8 @@ import {
  * plus an overall submission summary.
  *
  * Access: the exact same gates as generate-questions — `rateLimit`,
- * `authOrGuestQuota` (signed-in → credit pool, guest → metered daily pool),
- * `creditGate`. Module 2 adds NO new gate (plan.md §11.2).
+ * `authOrGuestQuota` (guest → shared AI spark trial pool), `aiSparkGateIfAuthed`
+ * for signed-in tiers. Module 2 adds NO new gate (plan.md §11.2).
  */
 
 const router = Router();
@@ -56,7 +56,7 @@ router.post(
   "/",
   rateLimit,
   authOrGuestQuota,
-  creditGate,
+  aiSparkGateIfAuthed,
   async (req: Request, res: Response) => {
     try {
       const {

@@ -147,7 +147,7 @@ function approvalHtml(displayName: string | null): string {
             The platform owner has approved your account. You can now sign in
             and use everything the platform offers: syllabus notes, 3D labs,
             derivations, PYQs, quizzes and your Veer tutor — with your own
-            saved chat histories and daily credits.
+            saved chat histories, AI sparks for Veer, and content sparks for notes.
           </p>
           <table role="presentation" cellpadding="0" cellspacing="0" style="margin:22px 0;">
             <tr>

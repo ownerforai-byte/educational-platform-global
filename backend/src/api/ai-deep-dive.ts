@@ -4,7 +4,7 @@ import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
-import { requireCredit } from "../middleware/creditCheck";
+import { aiSparkGateIfAuthed } from "../middleware/aiSparkGate";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -12,7 +12,7 @@ import {
   issueGuestDeviceCookie,
   rollbackGuestSlot,
 } from "../utils/guestQuota";
-import { DAILY_CREDIT_POOL } from "../utils/credits";
+import { signInForMoreAiSparkMessage } from "../utils/aiSparkCopy";
 import { getClientIp } from "../utils/clientIp";
 import { sanitizeChatImages } from "../ai/image-input";
 
@@ -45,7 +45,7 @@ async function authOrGuestQuota(req: Request, res: Response, next: NextFunction)
         error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `You've used your free trial for today. Sign in to keep going — members get ${DAILY_CREDIT_POOL} daily credits and saved history.`,
+        message: signInForMoreAiSparkMessage("You've used your free trial for today."),
       });
       return;
     }
@@ -69,15 +69,6 @@ async function authOrGuestQuota(req: Request, res: Response, next: NextFunction)
   }
 }
 
-const creditIfAuthed = requireCredit("aiChat");
-
-function creditGate(req: Request, res: Response, next: NextFunction): void {
-  if ((req as AuthedRequest).user) {
-    void creditIfAuthed(req, res, next);
-    return;
-  }
-  next();
-}
 
 const DEEP_DIVE_SYSTEM_PROMPT = `You are Veer Deep Concept & Syllabus Studio — an elite academic synthesizer and visual concept mentor powered by Google Gemini multimodal intelligence.
 
@@ -104,7 +95,7 @@ router.post(
   "/",
   rateLimit,
   authOrGuestQuota,
-  creditGate,
+  aiSparkGateIfAuthed,
   async (req: Request, res: Response) => {
     try {
       const {

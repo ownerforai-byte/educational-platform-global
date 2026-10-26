@@ -134,7 +134,7 @@ router.post("/credits/request", requireAuth, async (req: Request, res: Response)
 // Spark billing (owner decision 2026-10-12: "charge for actual note or content
 // -- remove for others"): ONLY actual note/content unlocks (theory + reference
 // study material) cost content sparks. Labs, visuals and the Diagram Hub are
-// free — no charge, ever. Veer chat is free too (no AI spark is ever spent).
+// free — no charge, ever. Veer chat uses AI sparks only (see utils/aiSpark.ts).
 const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference" | "imagehub", number> = {
   lab3d: 0,
   visuals: 0,

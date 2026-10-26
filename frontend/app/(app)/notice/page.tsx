@@ -72,7 +72,7 @@ const NOTICES: Notice[] = [
     icon: Coins,
     title: "The daily spark pool, and what a spark covers",
     body:
-      "Veer chat is free — no AI spark is ever spent. Content sparks are spent only on actual note/content access (1 spark per 20-minute window); labs, visuals and everything else are free. Spark-gated sections stay open for 20 minutes, then access expires.",
+      "Two separate meters: AI sparks for Veer chat and AI Studio (daily tier allowance); content sparks for actual note/PYQ unlocks (1 spark per 20-minute window). They never mix. Interactive 3D labs open at Pro; visuals and mindmaps stay free. Content unlock windows expire after 20 minutes.",
     href: "/credits",
     linkLabel: "See your plan and top-up options",
   },

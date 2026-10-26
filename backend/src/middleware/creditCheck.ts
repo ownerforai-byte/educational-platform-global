@@ -3,15 +3,13 @@ import { supabaseAdmin } from "../db/supabase";
 import { extractToken, hasFullAccess, isOwnerEmail, type AuthedRequest } from "./auth";
 import { ensureDailyCredits, spendCredits, refundCredits, isCoinGateEnabled } from "../utils/credits";
 
-// ── Feature cost table ─────────────────────────────────────────────────────
-// BILL-EVERYONE (corrected 2026-10-04): every AI chat message costs 1 credit
-// from the user's daily pool (hardcoded 4 at 12:00 AM — see utils/credits.ts;
-// no env/refresh override, PRO/premium runs unlimited). Owner emails follow
-// the profile toggle (ON → billed, OFF → free); students always pay.
-// Everything else stays public (cost 0, no premium gate).
+// ── Feature cost table (CONTENT sparks only) ────────────────────────────────
+// Veer / AI Studio routes meter AI sparks separately (middleware/aiSparkGate.ts
+// + api/ai.ts). This table is for legacy requireCredit() hooks on non-AI
+// features — aiChat stays at 0 so nothing here ever bills chat.
 const PREMIUM_FEATURES = {
   lab: { cost: 0, requiresPremium: false },
-  aiChat: { cost: 1, requiresPremium: false },
+  aiChat: { cost: 0, requiresPremium: false },
   bookmarks: { cost: 0, requiresPremium: false },
   progress: { cost: 0, requiresPremium: false },
   premiumLab: { cost: 0, requiresPremium: false },

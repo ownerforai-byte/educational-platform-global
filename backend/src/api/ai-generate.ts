@@ -5,7 +5,7 @@ import { getWorkLaneProvider } from "../ai/config";
 import { supabaseAdmin } from "../db/supabase";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
-import { requireCredit } from "../middleware/creditCheck";
+import { aiSparkGateIfAuthed } from "../middleware/aiSparkGate";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -13,7 +13,7 @@ import {
   issueGuestDeviceCookie,
   rollbackGuestSlot,
 } from "../utils/guestQuota";
-import { DAILY_CREDIT_POOL } from "../utils/credits";
+import { signInForMoreAiSparkMessage } from "../utils/aiSparkCopy";
 import { getClientIp } from "../utils/clientIp";
 
 const router = Router();
@@ -33,8 +33,7 @@ type GuestGateRequest = Request & {
  * Access gate (2026-09-27, owner decision): the quiz must work for
  * signed-OUT visitors too, but never anonymously unlimited.
  *
- *   - signed-in → attach the session user; the credit guard below bills
- *     their daily pool exactly as before,
+ *   - signed-in → attach the session user; AI spark gate bills per message,
  *   - guest     → consume ONE slot from the SAME DB-backed daily pool as
  *     guest chat (GUEST_DAILY_LIMIT/day under cookie + IP dual identity),
  *   - exhausted → 402 with a human message, storage down → 503 retryable.
@@ -59,7 +58,9 @@ export async function authOrGuestQuota(req: Request, res: Response, next: NextFu
         error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `You've used your free trial for today (guest chat and quizzes share it). Sign in to keep going — members get ${DAILY_CREDIT_POOL} daily credits and saved history.`,
+        message: signInForMoreAiSparkMessage(
+          "You've used your free trial for today (guest chat and quizzes share the same AI spark pool).",
+        ),
       });
       return;
     }
@@ -85,16 +86,6 @@ export async function authOrGuestQuota(req: Request, res: Response, next: NextFu
   }
 }
 
-const creditIfAuthed = requireCredit("aiChat");
-
-/** Signed-in → daily credit pool; guest → already quota-charged above. */
-export function creditGate(req: Request, res: Response, next: NextFunction): void {
-  if ((req as AuthedRequest).user) {
-    void creditIfAuthed(req, res, next);
-    return;
-  }
-  next();
-}
 
 interface DbSubject {
   id: string;
@@ -343,7 +334,7 @@ router.post(
   // free unlimited AI; signed-in users still pass the credit guard.
   rateLimit,
   authOrGuestQuota,
-  creditGate,
+  aiSparkGateIfAuthed,
   async (req: Request, res: Response) => {
     try {
       const {

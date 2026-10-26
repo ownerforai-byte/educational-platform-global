@@ -8,14 +8,14 @@ import { describe, expect, test } from "vitest";
  * POST /api/ai/evaluate-answers grades writing-format submissions and must
  * sit behind the SAME access gates as the quiz generator — `rateLimit`,
  * `authOrGuestQuota` (signed-in credit pool / guest metered pool),
- * `creditGate` — with NO new gate and NO owner allowlist.
+ * `aiSparkGateIfAuthed` — with NO new gate and NO owner allowlist.
  */
 const read = (p: string) => readFileSync(path.resolve(__dirname, p), "utf8");
 
 describe("AI evaluate-answers route (source pins)", () => {
   test("is gated exactly like generate-questions — no new gate, no owner lock", () => {
     const src = read("../src/api/ai-evaluate.ts");
-    expect(src).toMatch(/router\.post\(\s*"\/",\s*rateLimit,\s*authOrGuestQuota,\s*creditGate/);
+    expect(src).toMatch(/router\.post\(\s*"\/",\s*rateLimit,\s*authOrGuestQuota,\s*aiSparkGateIfAuthed/);
     expect(src).not.toContain("requireOwnerEmail");
     // Reuses the generator's gates rather than re-implementing them.
     expect(src).toContain('from "./ai-generate"');

@@ -4,7 +4,7 @@ import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/aut
 import { supabaseAdmin } from "../db/supabase";
 import { invalidateCoinGateCache } from "../utils/credits";
 import { invalidateSectionTierCache } from "../utils/sectionTiers";
-import { authEmailsById } from "../utils/authEmails";
+import { authEmailsById, invalidateAuthEmailsCache } from "../utils/authEmails";
 import { isProtectedOwnerTarget } from "../utils/ownerGuard";
 import { invalidateR1GrantCache } from "../utils/r1Grants";
 import { sendApprovalEmail } from "../utils/mailer";
@@ -48,6 +48,11 @@ const premiumUpdateSchema = z.object({
 
 const accessStatusUpdateSchema = z.object({
   status: z.enum(["PENDING", "ACTIVE", "REJECTED"]),
+});
+
+const bulkAccessStatusSchema = z.object({
+  userIds: z.array(z.string().uuid()).min(1).max(100),
+  status: z.enum(["ACTIVE", "REJECTED"]),
 });
 
 const bulkCreditsSchema = z.object({
@@ -218,6 +223,83 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
     res.json(rows);
   } catch (err: any) {
     console.error("[owner] users error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * POST /api/owner/users/bulk-status
+ * Approve or revoke access for up to 100 accounts in one call.
+ */
+router.post("/users/bulk-status", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = bulkAccessStatusSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload", details: parsed.error.flatten() });
+    return;
+  }
+
+  const { userIds, status } = parsed.data;
+  const applied: string[] = [];
+  const skipped: Array<{ userId: string; reason: string }> = [];
+
+  try {
+    for (const userId of userIds) {
+      const guard = await isProtectedOwnerTarget(userId);
+      if (guard.protectedTarget) {
+        skipped.push({ userId, reason: guard.reason ?? "Protected account" });
+        continue;
+      }
+
+      const { data: target } = await supabaseAdmin
+        .from("profiles")
+        .select("id, access_status")
+        .eq("id", userId)
+        .maybeSingle();
+
+      if (!target) {
+        skipped.push({ userId, reason: "User not found" });
+        continue;
+      }
+
+      const { error } = await supabaseAdmin
+        .from("profiles")
+        .update({ access_status: status })
+        .eq("id", userId);
+
+      if (error) {
+        skipped.push({ userId, reason: "Update failed" });
+        continue;
+      }
+
+      applied.push(userId);
+
+      if (status === "ACTIVE" && target.access_status !== "ACTIVE") {
+        void (async () => {
+          try {
+            const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(userId);
+            const email = authUser?.user?.email;
+            if (!email) return;
+            const meta = authUser?.user?.user_metadata as { full_name?: string } | undefined;
+            await sendApprovalEmail(email, meta?.full_name ?? null);
+          } catch {
+            /* fire-and-forget */
+          }
+        })();
+      }
+    }
+
+    res.json({
+      success: true,
+      status,
+      applied,
+      skipped,
+      requested: userIds.length,
+    });
+  } catch (err: any) {
+    console.error("[owner] bulk access error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
@@ -712,6 +794,7 @@ router.delete("/users/:id", requireAuth, async (req: Request, res: Response) => 
       console.error("[owner] profile delete failed:", profileError.message);
     }
 
+    invalidateAuthEmailsCache();
     res.json({ success: true, userId: req.params.id });
   } catch (err: any) {
     console.error("[owner] delete error:", err?.message ?? err);
