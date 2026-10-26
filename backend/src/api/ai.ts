@@ -9,9 +9,10 @@ import {
   aiSparkLimitFor,
   aiSparkTierFor,
 } from "../utils/aiSpark";
-// (Owner policy 2026-10-13: chat is open to every tier and metered by AI
-// sparks — guest 3 / member 7 / plus 25 / pro 50 per UTC day, owner unlimited.
-// The 2026-10-05 owner-only gate on this route is superseded by that rule.)
+// (Owner policy 2026-10-13, tightened 2026-10-26: this route is signed-in
+// only and metered by AI sparks — member 3 / plus 25 / pro 50 per UTC day,
+// owner unlimited. Guests have no Veer access at all: the /api/ai/guest
+// route is closed and answers 403, so only approved members can chat.)
 import { logServerError, newErrorId } from "../middleware/errors";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";

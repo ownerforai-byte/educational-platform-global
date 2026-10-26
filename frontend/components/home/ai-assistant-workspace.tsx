@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { Brain, Sparkles, Bot, Search, ChevronRight } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { GUEST_DAILY_LIMIT } from "@/lib/ai/guest-quota";
 
 /**
  * Compact AI Studio banner for the home page. Each tool now has its own page
@@ -92,11 +91,11 @@ export function AIAssistantWorkspace() {
 
       {!user && (
         <p className="mt-4 text-center text-xs text-muted-foreground">
-          Guests get {GUEST_DAILY_LIMIT} free AI messages a day —{" "}
+          Veer chat is for approved members — they get 3 Veer chats a day.{" "}
           <Link href="/login" className="font-semibold text-primary hover:underline">
-            sign in
+            Sign in
           </Link>{" "}
-          for saved histories &amp; your daily AI spark allowance.
+          to start chatting.
         </p>
       )}
     </section>

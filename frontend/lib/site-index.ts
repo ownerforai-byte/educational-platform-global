@@ -498,6 +498,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "118 elements",
       },
       {
+        name: "Ad P Table",
+        opening:
+          "The Ad P periodic table: 118 elements, live hover preview and the CEE entrance hub — opens at Plus.",
+        href: "/ad-p-table",
+        meta: "Plus",
+      },
+      {
         name: "Concept Legends & Facts",
         opening: "Legend entries, high-yield facts and misconception fixes, per class and subject — plus a per-topic sheet for every unit and topic of all six subjects, where exam shortcuts, time-saving notes and PYQ solutions land as they are added.",
         href: "/legend",
