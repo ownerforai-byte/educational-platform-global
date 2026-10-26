@@ -225,9 +225,9 @@ function defineArtifactElement(): CustomElementConstructor {
         this.detachHeight();
         this.frame?.removeAttribute("srcdoc");
         this.mounted = false;
-        // Keep preview visible while code is being typed; do not auto-switch to code view.
-        // Optionally ensure code pane remains hidden.
-        if (this.panes?.code) this.panes.code.hidden = true;
+        // Keep incomplete markup readable as text while Veer is still streaming;
+        // only mount it in the sandbox after the reply is complete.
+        this.switchFace("code");
         return;
       }
 
