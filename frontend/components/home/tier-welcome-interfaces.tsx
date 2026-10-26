@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { VisitorHomeChat } from "@/components/home/visitor-home-chat";
 import {
   ACCESS_LABELS,
   ACCESS_RANK,
@@ -26,7 +27,7 @@ import { SECTIONS } from "@/lib/sections";
 type UserTier = Exclude<AccessLevel, "visitor">;
 
 const TIER_HEADLINE: Record<UserTier, string> = {
-  member: "Your study desk is open.",
+  member: "Your three Veer chats are open.",
   plus: "Class 11 + Class 12, exam-ready.",
   pro: "Everything, no caps.",
   owner: "Everything, plus the controls.",
@@ -34,9 +35,9 @@ const TIER_HEADLINE: Record<UserTier, string> = {
 
 const TIER_BLURB: Record<UserTier, string> = {
   member:
-    "Welcome to the study desk. Search the whole library, keep your Class 11 core notes and formula sheets close, and track your progress — everything a Member needs.",
+    "You have 3 Veer sparks a day, on the Study, Nepali, and Grammar chats. Search, notes, formula sheets, practice sets, and the notice board open at Plus.",
   plus:
-    "You're exam-ready: Class 12 portal, the study journal, worked numericals, PYQ banks and the CEE Medical track are all yours now.",
+    "Search, the Student Desk, Class 11 notes, formula sheets, practice sets, the notice board, labs, and Veer studio are open, along with Class 12, the journal, and past papers.",
   pro:
     "The full platform is open: every index, derivations & theorems, the PDF library, graph banks, knowledge hubs and the entrance tracks.",
   owner:
@@ -150,11 +151,11 @@ export function UniversalWelcome() {
             Welcome to Ravikisan&apos;s Platform
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            NEB Class 11 &amp; 12 study resources — notes, formula sheets, labs,
-            quizzes and the Veer AI tutor — organized around the CDC
-            curriculum. Sign in to pick up your plan: every account gets its
-            own study interface.
+            The visitor home has one chat: a text box and a send button about
+            this platform. Notes, labs, and Veer open after you sign in, on the
+            plan that includes them.
           </p>
+          <VisitorHomeChat />
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/home"
@@ -175,8 +176,8 @@ export function UniversalWelcome() {
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <span suppressHydrationWarning>© {new Date().getFullYear()} Ravikisan&apos;s Platform · NEB Class 11 &amp; 12</span>
-          <Link href="/notice" className="hover:text-primary hover:underline">
-            Access notice
+          <Link href="/plans" className="hover:text-primary hover:underline">
+            Plans
           </Link>
         </div>
       </footer>

@@ -9,8 +9,8 @@ import { isOwnerEmail } from "../middleware/auth";
  * a temporary pass with the same daily spark as plus, auto-expiring 20 days
  * after activation. The tier table:
  *
- *   guest (public, signed out) → 3 messages / UTC day (guest pool, guestQuota)
- *   member                     → 7 messages / UTC day
+ *   guest (public, signed out) → no Veer access
+ *   member                     → 3 messages / UTC day (the three chat consoles only)
  *   plus                       → 25 messages / UTC day
  *   plus_20 ($30 / 20 days)    → 25 messages / UTC day, expires after 20 days
  *   pro                        → 50 messages / UTC day
@@ -31,8 +31,8 @@ export type AiSparkTier = "guest" | "member" | "plus" | "plus_20" | "pro" | "own
 
 /** Daily Veer message allowance per tier (owner = unlimited). */
 export const AI_SPARK_LIMITS: Record<AiSparkTier, number> = {
-  guest: 3,
-  member: 7,
+  guest: 0,
+  member: 3,
   plus: 25,
   plus_20: 25,
   pro: 50,

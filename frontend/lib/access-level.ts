@@ -12,12 +12,10 @@ import { aiSparkTierFor, type AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
  * Ladder (low → high) — plan.md §2/§3 is the rung definition of record (it
  * supersedes the earlier "search-only member" wording):
  *
- *   visitor  → signed-out guest. Public overview, the Plans page, free-always
- *              labs & visuals, AI quiz pool, spark-metered chat trial.
- *   member   → signed-in base. Search, Class 11 core notes, formula sheets,
- *              resources & reference, practice basics + Student Desk.
- *   plus     → + Class 12, journal, worked numericals, PYQ banks, CEE track
- *              and the board-exam suite.
+ *   visitor  → the chat widget on the visitor home only. No notes, labs, or Veer.
+ *   member   → 3 Veer sparks a day on the Study, Nepali, and Grammar chats.
+ *   plus     → search, Student Desk, Class 11 notes, formula sheets, practice
+ *              sets, the notice board, labs, simulations, and Veer studio.
  *   pro      → + all indexes: derivations & theorems, PDF library, graph
  *              banks, knowledge hubs, Loksewa & entrance tracks.
  *   owner    → everything: all indexes, owner rails, owner console, unlimited
@@ -59,10 +57,10 @@ export const ACCESS_LABELS: Record<AccessLevel, string> = {
 
 /** The same rung in plain words, shown on the public overview + /plans. */
 export const ACCESS_TAGLINES: Record<AccessLevel, string> = {
-  visitor: "A simple overview for visitors",
-  member: "Search the whole library",
-  plus: "Home, Class 11 and Search",
-  pro: "Every index, no daily cap",
+  visitor: "Home chat widget only",
+  member: "3 Veer chats a day",
+  plus: "Search, notes, labs, and Veer studio",
+  pro: "Every index, 50 Veer sparks a day",
   owner: "Everything, plus the rails and console",
 };
 
@@ -107,8 +105,8 @@ export function tierHomePathFor(
 
 /** Veer AI sparks per UTC day, hardcoded by rung (client-safe display map). */
 export const TIER_SPARKS: Record<AccessLevel, string> = {
-  visitor: "3 / day",
-  member: "7 / day",
+  visitor: "Home guide",
+  member: "3 / day",
   plus: "25 / day",
   pro: "50 / day",
   owner: "Unlimited",

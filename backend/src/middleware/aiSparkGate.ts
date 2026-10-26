@@ -4,8 +4,9 @@ import {
   AI_SPARK_LIMITS,
   aiSparkIsMetered,
   aiSparkTierFor,
+  type AiSparkTier,
 } from "../utils/aiSpark";
-import type { AuthedRequest } from "./auth";
+import { getUserFromRequest, type AuthedRequest } from "./auth";
 
 /**
  * Veer AI spark gate — one AI spark per successful request for signed-in
@@ -56,6 +57,32 @@ export function requireAiSpark(): (
       }
     });
 
+    next();
+  };
+}
+
+const STUDIO_TIERS = new Set<AiSparkTier>(["plus", "plus_20", "pro", "owner"]);
+
+/**
+ * Math, diagrams, deep-dive, search, and quiz are Plus and above.
+ * Members keep the three chat consoles only (3 messages / day).
+ */
+export function requirePlusAiStudio(): (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => Promise<void> {
+  return async (req, res, next) => {
+    const user = await getUserFromRequest(req);
+    if (!user || !STUDIO_TIERS.has(aiSparkTierFor(user))) {
+      res.status(403).json({
+        error: "Veer studio opens at Plus",
+        message:
+          "Members get 3 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
+      });
+      return;
+    }
+    (req as AuthedRequest).user = user;
     next();
   };
 }

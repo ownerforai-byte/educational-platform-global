@@ -84,8 +84,9 @@ export function HomeOwnerNotice() {
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Ravikisan is the owner of this platform. He built and maintains it
             so NEB Class 11 &amp; 12 students in Nepal get one reliable place
-            for notes, 3D labs, derivations, PYQs and Veer — free to
-            read, and open to everyone.
+            for notes, labs, derivations, PYQs and Veer. Visitors get a
+            text-only home guide. Members get 3 Veer sparks a day. Labs and
+            the rest open at Plus.
           </p>
 
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

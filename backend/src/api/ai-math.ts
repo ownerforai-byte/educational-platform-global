@@ -4,7 +4,7 @@ import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
-import { aiSparkGateIfAuthed } from "../middleware/aiSparkGate";
+import { aiSparkGateIfAuthed, requirePlusAiStudio } from "../middleware/aiSparkGate";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -98,6 +98,7 @@ CORE PRINCIPLES:
 router.post(
   "/",
   rateLimit,
+  requirePlusAiStudio(),
   authOrGuestQuota,
   aiSparkGateIfAuthed,
   async (req: Request, res: Response) => {

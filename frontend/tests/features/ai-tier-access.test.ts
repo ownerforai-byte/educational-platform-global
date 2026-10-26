@@ -26,21 +26,21 @@ const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
  * surface, not an owner allowlist.
  */
 describe("AI spark tier table", () => {
-  it("allowances: guest 3 · member 7 · plus 25 · pro 50 · owner unlimited", () => {
-    expect(AI_SPARK_LIMITS.guest).toBe(3);
-    expect(AI_SPARK_LIMITS.member).toBe(7);
+  it("allowances: guest 0 · member 3 · plus 25 · pro 50 · owner unlimited", () => {
+    expect(AI_SPARK_LIMITS.guest).toBe(0);
+    expect(AI_SPARK_LIMITS.member).toBe(3);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
     expect(Number.isFinite(AI_SPARK_LIMITS.owner)).toBe(false);
-    expect(aiSparkLimitLabel("member")).toBe("7");
+    expect(aiSparkLimitLabel("member")).toBe("3");
     expect(aiSparkLimitLabel("owner")).toBe("Unlimited");
   });
 
   it("mirrors the backend tier table exactly", () => {
     const backend = readRoot("backend/src/utils/aiSpark.ts");
     for (const [tier, limit] of Object.entries({
-      guest: 3,
-      member: 7,
+      guest: 0,
+      member: 3,
       plus: 25,
       pro: 50,
     })) {

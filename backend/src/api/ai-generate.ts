@@ -5,7 +5,7 @@ import { getWorkLaneProvider } from "../ai/config";
 import { supabaseAdmin } from "../db/supabase";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
-import { aiSparkGateIfAuthed } from "../middleware/aiSparkGate";
+import { aiSparkGateIfAuthed, requirePlusAiStudio } from "../middleware/aiSparkGate";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -328,11 +328,8 @@ interface GenerateQuestionsResponse {
 
 router.post(
   "/",
-  // Hardening 2026-09-25: anonymous UNLIMITED access was blocked.
-  // 2026-09-27: guests re-admitted through the metered daily pool
-  // (authOrGuestQuota) so the quiz works signed-out without reopening
-  // free unlimited AI; signed-in users still pass the credit guard.
   rateLimit,
+  requirePlusAiStudio(),
   authOrGuestQuota,
   aiSparkGateIfAuthed,
   async (req: Request, res: Response) => {

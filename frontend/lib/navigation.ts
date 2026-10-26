@@ -112,49 +112,47 @@ const primaryItems: NavItem[] = [
 ];
 
 const curriculumItems: NavItem[] = [
-  // plan.md §3 rows 3–5 + §2.1: Class 11 core notes, formula sheets and
-  // reference open at Member; Class 12 and the exam suites open at Plus.
-  { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, minLevel: "member" },
+  // Class 11, subjects, and notes open at Plus. Members keep the three Veer chats.
+  { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, minLevel: "plus" },
   { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, minLevel: "plus" },
-  { href: "/subjects", label: "Subjects", icon: Layers, minLevel: "member" },
+  { href: "/subjects", label: "Subjects", icon: Layers, minLevel: "plus" },
   { href: "/pyqs", label: "Previous Year Questions", icon: History, minLevel: "plus" },
   { href: "/syllabus", label: "Official CDC Syllabus", icon: GraduationCap, minLevel: "plus" },
   { href: "/syllabus/additions", label: "Syllabus by Year", icon: Calendar, minLevel: "plus" },
-  { href: "/practical", label: "Practical Lab Manuals", icon: FlaskConical, minLevel: "member" },
-  { href: "/legend", label: "Concept Legends & Facts", icon: Lightbulb, minLevel: "member" },
-  { href: "/notes", label: "Notes Archive", icon: FileText, minLevel: "member" },
+  { href: "/practical", label: "Practical Lab Manuals", icon: FlaskConical, minLevel: "plus" },
+  { href: "/legend", label: "Concept Legends & Facts", icon: Lightbulb, minLevel: "plus" },
+  { href: "/notes", label: "Notes Archive", icon: FileText, minLevel: "plus" },
 ];
 
 const stemAndRigorItems: NavItem[] = [
   // Interactive labs are Pro+; visuals/mindmaps stay open to everyone; proofs
   // and graph banks are Pro as well.
-  { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, minLevel: "pro" },
-  { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, minLevel: "pro" },
-  { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, minLevel: "pro" },
-  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, minLevel: "member" },
+  { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, minLevel: "plus" },
+  { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, minLevel: "plus" },
+  { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, minLevel: "plus" },
+  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, minLevel: "plus" },
   { href: "/theorems", label: "Theorems & Proofs", icon: Binary, minLevel: "pro" },
   { href: "/derivations", label: "Formula Derivations", icon: Layers, minLevel: "pro" },
-  { href: "/formulas", label: "Formula Sheets", icon: Sigma, minLevel: "member" },
+  { href: "/formulas", label: "Formula Sheets", icon: Sigma, minLevel: "plus" },
   { href: "/graphs", label: "Science Graph Bank", icon: LineChart, minLevel: "pro" },
-  { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow, minLevel: "visitor" },
+  { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow, minLevel: "plus" },
 ];
 
 const toolsItems: NavItem[] = [
-  // 2026-10-13: the Veer entries are open to every tier — chat is metered by
-  // AI sparks (guest 3 / member 7 / plus 25 / pro 50 / owner unlimited per
-  // day), not hidden behind the owner allowlist.
-  { href: "/ai", label: "AI Console", icon: Bot, minLevel: "visitor" },
-  { href: "/chat", label: "Veer Study Assistant", icon: Sparkles, minLevel: "visitor" },
-  { href: "/chat/nepali", label: "Nepali Assistant", icon: Languages, minLevel: "visitor" },
-  { href: "/chat/grammar", label: "Grammar Console", icon: BookOpen, minLevel: "visitor" },
-  { href: "/ai/math", label: "Veer Math Solver", icon: Sigma, minLevel: "visitor" },
-  { href: "/ai/deep-dive", label: "Deep Concept Studio", icon: Lightbulb, minLevel: "visitor" },
-  { href: "/ai/diagrams", label: "Diagram Hub", icon: Shapes, minLevel: "visitor" },
-  { href: "/ai/tutor", label: "Veer Tutor Console", icon: Bot, minLevel: "visitor" },
-  { href: "/ai/search", label: "Veer Curriculum Search", icon: Search, minLevel: "visitor" },
-  { href: "/ai-quiz", label: "Adaptive Veer Quiz", icon: HelpCircle, minLevel: "visitor" },
-  // plan.md §2.1: "Practice basics (topic practice sets)" land at Member.
-  { href: "/quiz", label: "Practice Quiz Bank", icon: Target, minLevel: "member" },
+  // Members get the three chat consoles only (3 messages / day). Every other
+  // Veer tool opens at Plus.
+  { href: "/ai", label: "AI Console", icon: Bot, minLevel: "plus" },
+  { href: "/chat", label: "Veer Study Assistant", icon: Sparkles, minLevel: "member" },
+  { href: "/chat/nepali", label: "Nepali Assistant", icon: Languages, minLevel: "member" },
+  { href: "/chat/grammar", label: "Grammar Console", icon: BookOpen, minLevel: "member" },
+  { href: "/ai/math", label: "Veer Math Solver", icon: Sigma, minLevel: "plus" },
+  { href: "/ai/deep-dive", label: "Deep Concept Studio", icon: Lightbulb, minLevel: "plus" },
+  { href: "/ai/diagrams", label: "Diagram Hub", icon: Shapes, minLevel: "plus" },
+  { href: "/ai/tutor", label: "Veer Tutor Console", icon: Bot, minLevel: "plus" },
+  { href: "/ai/search", label: "Veer Curriculum Search", icon: Search, minLevel: "plus" },
+  { href: "/ai-quiz", label: "Adaptive Veer Quiz", icon: HelpCircle, minLevel: "plus" },
+  // Practice sets open at Plus. Members keep the three chat consoles only.
+  { href: "/quiz", label: "Practice Quiz Bank", icon: Target, minLevel: "plus" },
   // plan.md §3 row 12: the board-exam suite (countdown, grand tests) is Plus.
   { href: "/exam-countdown", label: "Exam Countdown", icon: Target, minLevel: "plus" },
 ];
@@ -166,7 +164,7 @@ const extendedItems: NavItem[] = [
   { href: "/lessons", label: "Lessons Library", icon: GraduationCap, minLevel: "pro" },
   { href: "/loksewa", label: "Loksewa GK", icon: Users, minLevel: "pro" },
   { href: "/world-knowledge", label: "World Knowledge", icon: Globe, minLevel: "pro" },
-  { href: "/resources", label: "Resource Vault", icon: Bookmark, minLevel: "member" },
+  { href: "/resources", label: "Resource Vault", icon: Bookmark, minLevel: "plus" },
   { href: "/pdfs", label: "PDF Library", icon: FileText, minLevel: "pro" },
 ];
 
@@ -204,7 +202,7 @@ export const NAV_SECTIONS: NavSection[] = [
   { id: "stem", label: "Labs & Reference", icon: FlaskConical, minLevel: "visitor", items: stemAndRigorItems },
   { id: "tools", label: "AI & Practice", icon: Sparkles, minLevel: "visitor", items: toolsItems },
   { id: "extended", label: "More Resources", icon: Globe, minLevel: "member", items: extendedItems },
-  { id: "account", label: "Student Desk", icon: UserCheck, minLevel: "member", items: accountItems },
+  { id: "account", label: "Student Desk", icon: UserCheck, minLevel: "plus", items: accountItems },
   { id: "r1", label: "R1 · Daily Life", icon: Sparkles, r1Only: true, items: r1Items },
   { id: "owner", label: "Owner", icon: Crown, ownerOnly: true, items: ownerItems },
 ];

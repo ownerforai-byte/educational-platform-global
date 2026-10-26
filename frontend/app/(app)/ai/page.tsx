@@ -315,7 +315,7 @@ export default function AIStudioPage() {
         </h2>
         <p className="text-xs text-muted-foreground leading-relaxed">
           <strong className="text-foreground">AI sparks</strong> meter Veer chat and every AI
-          Studio tool (guests 3/day, members 7, Plus 25, Pro 50, owner unlimited).{" "}
+          Studio tool (members 3 chats/day on the three consoles; Plus 25, Pro 50, owner unlimited).{" "}
           <strong className="text-foreground">Content sparks</strong> unlock notes and PYQ sets
           for 20 minutes — they never pay for chat. Both pools reset at 12:00 AM UTC.{" "}
           <Link href="/credits" className="font-semibold text-primary hover:underline">

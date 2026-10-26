@@ -34,6 +34,14 @@ function getService() {
 }
 
 router.post("/", rateLimit, async (req: Request, res: Response) => {
+  // Public visitors do not get Veer. Members get the three chat consoles
+  // (3 messages / day) through the signed-in route.
+  res.status(403).json({
+    error: "Veer chat is for members",
+    message: "Sign in with an approved account. Members get 3 Veer chats per day.",
+  });
+  return;
+
   const ip = getClientIp(req);
   // Dual identity: the HttpOnly device cookie (minted here on first contact)
   // AND the IP must BOTH have quota left — clearing one never refills the

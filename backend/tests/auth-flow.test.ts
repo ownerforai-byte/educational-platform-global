@@ -739,22 +739,16 @@ describe("auth flow", () => {
     expect(res.status).toBe(401);
   });
 
-  test("public AI chat accepts anonymous requests but enforces the hardcoded three-message quota", async () => {
-    mocked.from.mockImplementationOnce(() =>
-      makeQueryChain({ data: { count: 3 }, error: null }),
-    );
+  test("public AI chat is closed; members use the signed-in route", async () => {
     const res = await fetch(`${probeUrl}/api/ai/guest`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: [{ role: "user", content: "hello" }], stream: true }),
     });
 
-    expect(res.status).toBe(402);
+    expect(res.status).toBe(403);
     const body = await res.json();
-    expect(body.limit).toBe(3);
-    expect(body.remaining).toBe(0);
-    expect(body.error).toBe("Sign in required");
-    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("neb-gid="))).toBe(true);
+    expect(body.error).toBe("Veer chat is for members");
   });
 
   test("AI question generation is guest-quota-gated (was anonymous unlimited)", async () => {
@@ -768,9 +762,9 @@ describe("auth flow", () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ classSlug: "class-11", subjectSlug: "physics" }),
     });
-    expect(res.status).toBe(402);
+    expect(res.status).toBe(403);
     const body = await res.json();
-    expect(body.error).toBe("Sign in required");
+    expect(body.error).toBe("Veer studio opens at Plus");
   });
 
   test("biology progress POST requires auth and stores the session user id", async () => {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BookOpen, FlaskConical, History, ShieldCheck } from "lucide-react";
 import { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
+import { VisitorHomeChat } from "@/components/home/visitor-home-chat";
 
 export { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
 
@@ -17,7 +18,7 @@ const resources = [
   },
   {
     title: "Interactive science",
-    description: "Labs, diagrams, and 3D models that make abstract ideas easier to remember.",
+    description: "Labs and simulations are not free. They open on the Plus plan.",
     icon: FlaskConical,
   },
 ];
@@ -43,7 +44,7 @@ export function HomePublic() {
             Your NEB syllabus, organized for daily study.
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
-            Notes, past papers, labs, and progress tools for Class 11 and 12 — built around the official curriculum, not scattered PDFs.
+            A short look at how Class 11 and 12 study is organized. Labs, simulations, and Veer open after you sign in, on the plan that includes them.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
@@ -52,6 +53,9 @@ export function HomePublic() {
             >
               Sign in
             </Link>
+          </div>
+          <div className="mt-8">
+            <VisitorHomeChat />
           </div>
         </section>
 
@@ -82,7 +86,7 @@ export function HomePublic() {
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             Sign in after your account has been approved. Available materials and usage limits depend on your plan.{" "}
             <Link
-              href="/notice"
+              href="/plans"
               className="font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               How access works

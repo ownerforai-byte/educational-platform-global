@@ -4,7 +4,7 @@
  *
  * SPARK BILLING — "charge for actual note or content -- remove for others":
  *   - actual note/content unlocks (theory notes, question/PYQ sets) → 1 spark
- *   - 3D/AR labs, HD visuals, Diagram Hub → FREE (no spark charge)
+ *   - 3D/AR labs, HD visuals, Diagram Hub → no content-spark charge; they open at Plus
  *
  * Two separate spark pools (never mixed):
  *   - CONTENT SPARK — profiles.credits; spent only on note/content unlocks

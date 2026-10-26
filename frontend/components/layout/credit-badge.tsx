@@ -4,20 +4,23 @@ import { useCallback, useEffect, useState, useRef } from "react";
 import { Coins, ArrowUpRight, Sparkles } from "lucide-react";
 import { getUserCredits } from "@/lib/api/credits";
 import { setLitePoll } from "@/lib/perf/lite";
+import { accessLevelFor } from "@/lib/access-level";
+import { useSession } from "@/features/auth/hooks/use-session";
 import Link from "next/link";
 
 const POLL_INTERVAL = 30_000; // Refresh every 30s for active users
 
 export function CreditBadge({ className = "" }: { className?: string }) {
+  const { user, isLoading: sessionLoading } = useSession();
   const [credits, setCredits] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [lastCredits, setLastCredits] = useState<number | null>(null);
   const [justChanged, setJustChanged] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const prevCreditsRef = useRef<number | null>(null);
+  // Visitors have no content-spark wallet. Owners are not on the guest coin.
+  const hidden = !sessionLoading && (!user || accessLevelFor(user) === "owner");
 
-  // Stable fetch — NO dependency on `credits` (that caused an infinite loop:
-  // setCredits → new fetchCredits identity → useEffect restart → fetch → setCredits → ♻️).
   const fetchCredits = useCallback(async () => {
     try {
       const data = await getUserCredits();
@@ -41,14 +44,18 @@ export function CreditBadge({ className = "" }: { className?: string }) {
     } finally {
       setIsLoading(false);
     }
-  }, []); // ← stable identity: never re-created
+  }, []);
 
   useEffect(() => {
+    if (sessionLoading || hidden) {
+      setIsLoading(false);
+      return;
+    }
     fetchCredits();
-    // Lite (low data) mode stretches POLL_INTERVAL on every tick — the
-    // balance still refreshes, just far less often on constrained networks.
     return setLitePoll(fetchCredits, POLL_INTERVAL);
-  }, [fetchCredits]);
+  }, [fetchCredits, hidden, sessionLoading]);
+
+  if (hidden || sessionLoading) return null;
 
   if (isLoading) {
     return (
@@ -56,19 +63,7 @@ export function CreditBadge({ className = "" }: { className?: string }) {
     );
   }
 
-  if (!isAuthenticated || credits === null) {
-    return (
-      <Link
-        href="/credits"
-        className={`group flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 transition-all ${className}`}
-        title="50 Free Guest Sparks • Click to view spark balance & perks"
-      >
-        <Coins className="h-3.5 w-3.5 text-amber-500" />
-        <span className="text-xs font-bold text-amber-600 dark:text-amber-400">50</span>
-        <span className="text-[9px] font-semibold text-amber-600/80 dark:text-amber-400/80 uppercase px-1 rounded bg-amber-500/10">Guest</span>
-      </Link>
-    );
-  }
+  if (!isAuthenticated || credits === null) return null;
 
   const hasChanged = lastCredits !== null && credits !== lastCredits;
   const isIncreased = credits !== null && lastCredits !== null && credits > lastCredits;

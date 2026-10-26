@@ -9,8 +9,9 @@ const TIER_HOME_PATHS = new Set([
 ]);
 
 /**
- * Platform guide widget: visitor guest home + signed-in member/plus/pro/owner homes.
- * Hidden for academic routes and outside home surfaces. Does not use AI spark pools.
+ * Platform guide widget for signed-in tier homes only.
+ * Visitors get VisitorHomeChat on the universal welcome and guest home instead.
+ * Does not use AI spark pools.
  */
 export function shouldShowPlatformGuideWidget(
   pathname: string,
@@ -21,9 +22,7 @@ export function shouldShowPlatformGuideWidget(
 
   const level: AccessLevel = accessLevelFor(user);
 
-  if (level === "visitor") {
-    return path === "/home" || path === "/";
-  }
+  if (level === "visitor") return false;
 
   return TIER_HOME_PATHS.has(path);
 }

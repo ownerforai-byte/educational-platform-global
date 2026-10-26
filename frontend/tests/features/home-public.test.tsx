@@ -47,7 +47,8 @@ describe("guest home — sign in is the only action", () => {
       screen.getByText(/Login works after administrative approval and system verification only\./),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /sign in/i })).toHaveAttribute("href", "/login");
-    expect(screen.getAllByRole("link", { name: /access (notice|works)/i }).some((link) => link.getAttribute("href") === "/notice")).toBe(true);
+    expect(screen.getAllByRole("link", { name: /access (notice|works)/i }).some((link) => link.getAttribute("href") === "/plans")).toBe(true);
+    expect(screen.getAllByRole("link").map((link) => link.getAttribute("href"))).not.toContain("/notice");
   });
 
   it("hides every other action — one or two sign-in buttons, nothing else", () => {

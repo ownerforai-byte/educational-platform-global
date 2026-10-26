@@ -72,24 +72,24 @@ const NOTICES: Notice[] = [
     icon: Coins,
     title: "The daily spark pool, and what a spark covers",
     body:
-      "Two separate meters: AI sparks for Veer chat and AI Studio (daily tier allowance); content sparks for actual note/PYQ unlocks (1 spark per 20-minute window). They never mix. Interactive 3D labs open at Pro; visuals and mindmaps stay free. Content unlock windows expire after 20 minutes.",
+      "Two separate meters: AI sparks for Veer chat and AI Studio (daily tier allowance); content sparks for actual note/PYQ unlocks (1 spark per 20-minute window). They never mix. Members get 3 Veer sparks a day. Labs, simulations, visuals, and the rest of Veer studio open at Plus. Content unlock windows expire after 20 minutes.",
     href: "/credits",
     linkLabel: "See your plan and top-up options",
   },
   {
     icon: Gem,
-    title: "PRO removes the daily cap",
+    title: "Pro raises the daily Veer allowance",
     body:
-      "PRO is for students who use the platform daily: unlimited Veer replies and note sparks with no daily ceiling, instead of a pool that refills once a day.",
+      "Members get 3 Veer sparks a day. Plus gets 25, Pro gets 50, and only the owner plan is unlimited. Labs and simulations open at Plus.",
     // Plans live in the footer only (owner 2026-10-25) — no plans links here.
   },
   {
     icon: History,
     title: "Your conversations are kept for you",
     body:
-      "Signed-in threads are saved to your own account, scoped to you alone — one conversation per thread, re-openable later, and clearable. Signed-out threads stay on your device.",
-    href: "/ai/tutor",
-    linkLabel: "Open your console and history",
+      "Signed-in threads are saved to your own account, scoped to you alone — one conversation per thread, re-openable later, and clearable.",
+    href: "/chat",
+    linkLabel: "Open Veer chat",
   },
   {
     icon: Sparkles,

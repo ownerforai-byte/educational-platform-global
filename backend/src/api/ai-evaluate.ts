@@ -9,7 +9,7 @@ import {
   QUIZ_FORMATS,
   type QuizFormat,
 } from "./ai-generate";
-import { aiSparkGateIfAuthed } from "../middleware/aiSparkGate";
+import { aiSparkGateIfAuthed, requirePlusAiStudio } from "../middleware/aiSparkGate";
 
 /**
  * POST /api/ai/evaluate-answers (plan.md §11.2).
@@ -55,6 +55,7 @@ const MAX_ITEMS = 20;
 router.post(
   "/",
   rateLimit,
+  requirePlusAiStudio(),
   authOrGuestQuota,
   aiSparkGateIfAuthed,
   async (req: Request, res: Response) => {

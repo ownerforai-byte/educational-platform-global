@@ -219,7 +219,7 @@ export default function CreditsPage() {
           My Sparks
         </h1>
         <p className="text-sm text-muted-foreground">
-          Content sparks unlock notes and PYQs for 20 minutes. Veer chat uses AI sparks instead (see your profile). Interactive labs require Pro; visuals stay free.
+          Content sparks unlock notes and PYQs for 20 minutes. Members get 3 Veer sparks a day. Labs, simulations, and visuals open at Plus.
         </p>
       </div>
 

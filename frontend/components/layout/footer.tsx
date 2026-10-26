@@ -15,7 +15,7 @@ const groups: { title: string; links: FooterLink[] }[] = [
   {
     title: "Study",
     links: [
-      ["Class 11", "/class-11-notes", "member"],
+      ["Class 11", "/class-11-notes", "plus"],
       ["Class 12", "/class-12-notes", "plus"],
       ["Syllabus", "/syllabus", "plus"],
       ["Past papers", "/pyqs", "plus"],
@@ -25,17 +25,17 @@ const groups: { title: string; links: FooterLink[] }[] = [
     title: "Resources",
     links: [
       ["All resources", "/site-index", "pro"],
-      ["Interactive labs", "/lab", "pro"],
-      ["Formula sheets", "/formulas", "member"],
-      ["Veer assistant", "/chat", "visitor"],
+      ["Interactive labs", "/lab", "plus"],
+      ["Formula sheets", "/formulas", "plus"],
+      ["Veer assistant", "/chat", "member"],
     ],
   },
   {
     title: "Support & account",
     links: [
-      ["Notice board", "/notice", "visitor"],
-      ["My account", "/profile", "member"],
-      ["Credits & plan", "/credits", "member"],
+      ["Notice board", "/notice", "plus"],
+      ["My account", "/profile", "plus"],
+      ["Credits & plan", "/credits", "plus"],
       ["Plans", "/plans", "visitor"],
     ],
   },

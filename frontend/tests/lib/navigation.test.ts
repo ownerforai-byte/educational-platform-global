@@ -100,11 +100,12 @@ describe("navigation menu", () => {
     // derived from this same registry, so the sidebar, drawer, quick strip and
     // tier-home rails can never disagree on who reaches a link.
     expect(quickLinkMinTier("/home")).toBe("member"); // tier home per signed-in rung
-    expect(quickLinkMinTier("/class-11-notes")).toBe("member"); // §3 row 3
-    expect(quickLinkMinTier("/class-12-notes")).toBe("plus"); // §3 row 4
-    expect(quickLinkMinTier("/lab")).toBe("pro");
-    expect(quickLinkMinTier("/quiz")).toBe("member"); // §2.1 — practice basics
-    expect(quickLinkMinTier("/chat")).toBe("visitor"); // §3 row 20 — spark-metered
+    expect(quickLinkMinTier("/class-11-notes")).toBe("plus");
+    expect(quickLinkMinTier("/class-12-notes")).toBe("plus");
+    expect(quickLinkMinTier("/lab")).toBe("plus");
+    expect(quickLinkMinTier("/quiz")).toBe("plus");
+    expect(quickLinkMinTier("/chat")).toBe("member"); // three chat consoles
+    expect(quickLinkMinTier("/ai/math")).toBe("plus"); // studio tools open at Plus
     expect(quickLinkMinTier("/pdfs")).toBe("pro"); // §3 row 18
     // Every quick link resolves through the real registry (no silent fallback).
     for (const link of QUICK_LINKS) {

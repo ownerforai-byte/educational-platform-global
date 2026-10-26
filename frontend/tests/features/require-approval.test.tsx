@@ -15,7 +15,7 @@ import path from "node:path";
  * stays open; an approved session renders the route. The session resolves in
  * the browser, so — same style as tests/features/home-public.test.tsx — we mock
  * useSession + usePathname and render the three states, then pin the layout
- * wiring at source level.
+ * wiring at source level. The notice board opens at Member, not for visitors.
  */
 
 const session = vi.hoisted(() => ({
@@ -89,11 +89,11 @@ describe("RequireApproval — login + owner-approval wall", () => {
     expect(screen.queryByTestId("approval-lock")).toBeNull();
   });
 
-  it("lets the notice board through without an account", () => {
+  it("locks the notice board for a signed-out visitor", () => {
     pathname.value = "/notice";
     render(<RequireApproval>{CONTENT}</RequireApproval>);
-    expect(screen.getByTestId("route-content")).toBeInTheDocument();
-    expect(screen.queryByTestId("approval-lock")).toBeNull();
+    expect(screen.queryByTestId("route-content")).toBeNull();
+    expect(screen.getByTestId("approval-lock")).toBeInTheDocument();
   });
 
   it("lets the plans page through without an account (visible to all users)", () => {
@@ -137,9 +137,10 @@ describe("auth wall wiring", () => {
     expect(coinGate).toBeGreaterThan(authWall);
   });
 
-  it("keeps the guest home, the notice board and the plans page public inside the shell", () => {
+  it("keeps the guest home and the plans page public, and the notice board member-only", () => {
     const gate = read("features/auth/components/require-approval.tsx");
-    expect(gate).toContain('const PUBLIC_PATHS = ["/home", "/notice", "/plans"] as const;');
+    expect(gate).toContain('const PUBLIC_PATHS = ["/home", "/plans"] as const;');
+    expect(gate).not.toContain('"/notice"');
     // The periodic table must NOT be on the open list.
     expect(gate).not.toContain('"/periodic-table"');
   });

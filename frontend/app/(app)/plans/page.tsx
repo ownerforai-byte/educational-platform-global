@@ -40,12 +40,9 @@ const TIER_CARDS: TierCard[] = [
     chip: "bg-slate-500/15 text-slate-500",
     who: "Signed-out visitors",
     features: [
-      "Public overview & live approval-status check",
-      "This Plans page — the whole ladder in card form",
-      "Search preview · free AI quiz pool",
-      "Veer AI chat trial — 3 sparks / day",
-      "Free always: 3D labs & simulations · HD visuals · Diagram Hub",
-      "Muted previews of Member+ sections (see what's inside)",
+      "Only the chat widget on the visitor home — a text box and a send button",
+      "It explains the platform. It does not teach the syllabus",
+      "No notes, labs, simulations, or Veer",
     ],
     cta: { label: "Start exploring", href: "/home" },
   },
@@ -57,12 +54,8 @@ const TIER_CARDS: TierCard[] = [
     chip: "bg-emerald-500/15 text-emerald-500",
     who: "Approved accounts",
     features: [
-      "Everything in Guest, plus:",
-      "Search the whole library",
-      "Student Desk: profile, progress, credits wallet",
-      "Class 11 core notes + formula sheets",
-      "Practice basics (topic practice sets)",
-      "Veer AI chat — 7 sparks / day",
+      "The visitor home chat widget",
+      "3 Veer sparks per day — Study, Nepali, and Grammar chats only",
     ],
     cta: { label: "Request an account", href: "/signup" },
   },
@@ -75,12 +68,18 @@ const TIER_CARDS: TierCard[] = [
     who: "Owner-granted plan",
     features: [
       "Everything in Member, plus:",
+      "Search the whole library",
+      "Student Desk: profile, progress, credits wallet",
+      "Class 11 core notes + formula sheets",
+      "Practice basics (topic practice sets)",
+      "Notice board",
       "Class 12 portal + all subject notes",
       "Study Journal — private entries, yours",
       "Worked Numericals hubs (Physics, Chemistry)",
       "PYQ banks & past-paper practice",
       "CEE Medical Entrance track · Board exam suite",
-      "Veer AI chat — 25 sparks / day",
+      "Labs, simulations, visuals, and the Diagram Hub",
+      "Veer studio (math, diagrams, deep-dive, quiz) — 25 sparks / day",
     ],
     cta: null,
   },
@@ -207,11 +206,7 @@ export default function PlansPage() {
       <div className="rounded-2xl border border-border/70 bg-muted/20 p-5 text-center">
         <p className="text-xs text-muted-foreground">
           Accounts are created through a manual approval loop — login is mentored at
-          8:00 PM. Read the{" "}
-          <Link href="/notice" className="font-semibold text-primary hover:underline">
-            access notice
-          </Link>{" "}
-          for the current rules.
+          8:00 PM. The notice board opens on the Plus plan.
         </p>
       </div>
     </div>

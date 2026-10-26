@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { shouldShowPlatformGuideWidget } from "@/lib/platform-guide-widget";
 
 describe("platform guide widget visibility", () => {
-  it("shows on visitor home paths only when signed out", () => {
-    expect(shouldShowPlatformGuideWidget("/home", null)).toBe(true);
-    expect(shouldShowPlatformGuideWidget("/", null)).toBe(true);
+  it("does not float a second launcher for visitors; their chat is on the home", () => {
+    expect(shouldShowPlatformGuideWidget("/home", null)).toBe(false);
+    expect(shouldShowPlatformGuideWidget("/", null)).toBe(false);
     expect(shouldShowPlatformGuideWidget("/class-11-notes", null)).toBe(false);
   });
 

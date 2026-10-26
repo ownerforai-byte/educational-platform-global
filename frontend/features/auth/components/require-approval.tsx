@@ -55,7 +55,7 @@ import { ACCESS_NOTICE } from "./access-notice";
  * tier homes under it stay safe: TierHomeGate replaces any wrong-rung viewer
  * onto their own home before any interface renders.
  */
-const PUBLIC_PATHS = ["/home", "/notice", "/plans"] as const;
+const PUBLIC_PATHS = ["/home", "/plans"] as const;
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
