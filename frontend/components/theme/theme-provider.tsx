@@ -188,12 +188,7 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme);
   const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">("light");
-  const [liteMode, setLiteModeState] = useState<boolean>(() => {
-    if (typeof document !== "undefined") {
-      return document.documentElement.dataset.lite === "true";
-    }
-    return false;
-  });
+  const [liteMode, setLiteModeState] = useState(false);
 
   useEffect(() => {
     let initialTheme = theme;

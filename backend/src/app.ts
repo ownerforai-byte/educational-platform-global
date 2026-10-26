@@ -16,6 +16,7 @@ import aiEnhanceRoutes from "./api/ai-enhance";
 import aiMathRoutes from "./api/ai-math";
 import aiDeepDiveRoutes from "./api/ai-deep-dive";
 import aiPlatformGuideRoutes from "./api/ai-platform-guide";
+import periodicUnlockRoutes from "./api/periodic-unlock";
 import aiHistoryRoutes from "./api/ai-history";
 import aiQuizHistoryRoutes from "./api/ai-quiz-history";
 import chatHistoryRoutes from "./api/chat-history";
@@ -132,6 +133,7 @@ export function createApp(): express.Express {
   app.use("/api/ai/solve-math", aiMathRoutes);
   app.use("/api/ai/deep-dive", aiDeepDiveRoutes);
   app.use("/api/ai/platform-guide", aiPlatformGuideRoutes);
+  app.use("/api/periodic-table/unlock", periodicUnlockRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai-quiz-history", aiQuizHistoryRoutes);
   app.use("/api/chat-history", chatHistoryRoutes);

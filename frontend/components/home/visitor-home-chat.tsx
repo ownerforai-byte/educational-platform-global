@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Bot, Send, UserRound } from "lucide-react";
 import { postPlatformGuideMessage } from "@/lib/api/platform-guide";
 
 type ChatLine = { role: "user" | "assistant"; content: string };
@@ -47,20 +47,52 @@ export function VisitorHomeChat() {
         <h2 className="text-sm font-semibold text-foreground">Chat with AI</h2>
         <p className="text-xs text-muted-foreground">Free on this page · text only</p>
       </div>
-      <div className="max-h-64 space-y-2 overflow-y-auto px-4 py-3 text-sm leading-relaxed">
-        {lines.map((line, i) => (
-          <p
-            key={`${line.role}-${i}`}
-            className={
-              line.role === "user"
-                ? "ml-8 rounded-xl bg-primary/10 px-3 py-2 text-foreground"
-                : "mr-8 rounded-xl bg-muted px-3 py-2 text-muted-foreground"
-            }
-          >
-            {line.content}
-          </p>
-        ))}
-        {sending && <p className="text-xs text-muted-foreground">Thinking…</p>}
+      <div className="max-h-80 space-y-3 overflow-y-auto bg-muted/20 px-4 py-3 text-sm leading-relaxed">
+        {lines.map((line, i) => {
+          const mine = line.role === "user";
+          return (
+            <article
+              key={`${line.role}-${i}`}
+              className={`flex items-end gap-2 ${mine ? "flex-row-reverse" : "flex-row"}`}
+            >
+              <span
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
+                  mine ? "bg-primary text-primary-foreground" : "bg-foreground text-background"
+                }`}
+                aria-hidden="true"
+              >
+                {mine ? <UserRound className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
+              </span>
+              <div className={`max-w-[85%] ${mine ? "items-end" : "items-start"} flex flex-col gap-1`}>
+                <span className={`px-1 text-[10px] font-bold uppercase tracking-wide ${mine ? "text-primary" : "text-foreground"}`}>
+                  {mine ? "You" : "Guide"}
+                </span>
+                <p
+                  className={
+                    mine
+                      ? "rounded-2xl rounded-br-md bg-primary px-3 py-2 text-primary-foreground"
+                      : "rounded-2xl rounded-bl-md border border-border bg-card px-3 py-2 text-foreground"
+                  }
+                >
+                  {line.content}
+                </p>
+              </div>
+            </article>
+          );
+        })}
+        {sending && (
+          <article className="flex items-end gap-2">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-foreground text-background" aria-hidden="true">
+              <Bot className="h-3.5 w-3.5" />
+            </span>
+            <div className="flex flex-col gap-1">
+              <span className="px-1 text-[10px] font-bold uppercase tracking-wide text-foreground">Guide</span>
+              <p className="rounded-2xl rounded-bl-md border border-border bg-card px-3 py-2 text-muted-foreground">
+                Writing a reply…
+              </p>
+            </div>
+          </article>
+        )}
         {error && <p className="text-xs text-destructive">{error}</p>}
       </div>
       <form

@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Atom,
   BookOpen,
   Calculator,
   CalendarCheck,
@@ -69,6 +70,14 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "plus",
     icon: ImageIcon,
     href: "/mindmap",
+  },
+  {
+    id: "ad-p-table",
+    title: "Ad P Table",
+    description: "The 118-element Ad P table and CEE entrance hub. Opens at Plus.",
+    minTier: "plus",
+    icon: Atom,
+    href: "/ad-p-table",
   },
   {
     id: "labs-3d",

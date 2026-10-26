@@ -12,6 +12,7 @@ import {
 } from "@/lib/periodic-table";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel, ACCESS_LABELS } from "@/lib/access-level";
+import { apiFetch } from "@/lib/api-client";
 import { BlockExplorer } from "@/components/periodic-table/block-explorer";
 import { CeeSparkGate } from "@/components/periodic-table/cee-spark-gate";
 import {
@@ -87,9 +88,44 @@ const GROUP_ROMAN_LABELS = [
 
 export function PeriodicTableView() {
   const { user } = useSession();
-  // The 118-element grid is open to members. Filters, block colouring,
-  // characteristics, and CEE open at Plus.
-  const plusTools = hasLevel(user, "plus");
+  // The element grid is for members. Filters, blocks, and CEE are Pro,
+  // unless a Plus account has unlocked them with the password.
+  const isPro = hasLevel(user, "pro");
+  const canAskUnlock = hasLevel(user, "plus") && !isPro;
+  const [unlocked, setUnlocked] = useState(false);
+  const [unlockPassword, setUnlockPassword] = useState("");
+  const [unlockError, setUnlockError] = useState<string | null>(null);
+  const [unlocking, setUnlocking] = useState(false);
+  const plusTools = isPro || unlocked;
+
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem("neb-pt-pro-unlock") === "1") setUnlocked(true);
+    } catch {
+      /* storage blocked */
+    }
+  }, []);
+
+  async function submitUnlock() {
+    setUnlocking(true);
+    setUnlockError(null);
+    try {
+      await apiFetch("/api/periodic-table/unlock", {
+        method: "POST",
+        body: JSON.stringify({ password: unlockPassword }),
+      });
+      try {
+        sessionStorage.setItem("neb-pt-pro-unlock", "1");
+      } catch {
+        /* the unlock still applies for this view */
+      }
+      setUnlocked(true);
+    } catch (err) {
+      setUnlockError(err instanceof Error ? err.message : "Incorrect password");
+    } finally {
+      setUnlocking(false);
+    }
+  }
   const filterUnlocked = (cat: PeriodicFilterCategory): boolean =>
     plusTools && hasLevel(user, filterMinTier(cat));
   const [elements, setElements] = useState<PeriodicElement[]>([]);
@@ -325,6 +361,36 @@ export function PeriodicTableView() {
 
   return (
     <div className="space-y-2 sm:space-y-2.5">
+      {canAskUnlock && !unlocked && (
+        <form
+          className="flex flex-wrap items-center gap-2 rounded-xl border border-border bg-muted/30 px-3 py-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            void submitUnlock();
+          }}
+        >
+          <p className="text-xs text-muted-foreground">
+            Filters, blocks, and CEE open at Pro. Plus can unlock them with the password.
+          </p>
+          <input
+            type="password"
+            value={unlockPassword}
+            onChange={(e) => setUnlockPassword(e.target.value)}
+            placeholder="Pro table password"
+            autoComplete="off"
+            className="h-8 rounded-lg border border-border bg-background px-2 text-xs"
+            aria-label="Pro periodic table password"
+          />
+          <button
+            type="submit"
+            disabled={unlocking || !unlockPassword}
+            className="h-8 rounded-lg bg-primary px-3 text-xs font-semibold text-primary-foreground disabled:opacity-50"
+          >
+            {unlocking ? "Checking…" : "Unlock"}
+          </button>
+          {unlockError && <span className="text-xs text-destructive">{unlockError}</span>}
+        </form>
+      )}
       {/* ── 1. TOP HEADER & TOOLBAR ──────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-1.5 border-b border-border/50">
         <div>
