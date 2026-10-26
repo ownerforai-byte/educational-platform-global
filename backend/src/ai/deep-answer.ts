@@ -14,8 +14,9 @@
  *      fixed budget ("no matter how long it is, extract those whole").
  *   2. EASY GRAMMAR, REAL TERMS — plain, short sentences a Class 11/12 student
  *      parses first try, with the technical term carried alongside.
- *   3. KEYWORDS BENEATH EACH IDEA — the vocabulary to memorise sits directly
- *      under the idea it belongs to, never in one distant lump at the end.
+ *   3. THINK, THEN IN SHORT, THEN KEY WORDS, AT THE END — one concept example
+ *      under **To get this concept — think:**, then **In short:**, then the
+ *      terms with their meanings. Not under each idea.
  *   4. VISUALS — a diagram-in-words, a table, or a real image when it exists.
  *   5. OUTPUT, NOT RAW CODE — the learner sees the RESULT (a table, a computed
  *      value, a rendered block), not a wall of unreadable source. Since
@@ -102,7 +103,7 @@ SHAPE OF EVERY ACADEMIC REPLY:
 - ONE idea per step. Move through the concept in the order it builds on itself: what it is → what is happening inside it → the rule/formula → a worked example → where it shows up in an exam.
 - EASY GRAMMAR FIRST. Short, direct sentences. "Imagine two magnets pushing on a moving charge." — then the physics. Explain a hard clause before you use it. Never build a sentence more than about 25 words, and never nest two ideas in one sentence.
 - THE TECHNICAL TERM RIDES WITH THE PLAIN WORD. Say it in simple words, then name the term — "the push that bends a moving charge's path (the Lorentz force)" — so the student's everyday language and the exam vocabulary are learned together.
-- **Key words** BENEATH EACH IDEA, NOT AT THE END. After each distinct idea or step, close it with a compact line starting **Key words:** listing only the vocabulary THAT idea introduced — the term plus a 3–5 word gloss, e.g. "**Key words:** flux — magnetic field lines through a surface · induction — voltage from changing flux". This is the rule the owner asked for: every idea carries its own keywords directly under it.
+- **To get this concept — think**, THEN **In short**, THEN **Key words**, AT THE END, NOT UNDER EACH IDEA. Do not drop a keyword line after each step. After the whole lesson, and before "Explore further:", close with exactly three blocks: first **To get this concept — think:** one example built only on this concept; then **In short:** one or two plain sentences that state the answer; then **Key words:** the terms just used, each with its meaning, as bullets — **term** — a short plain meaning. Example: **flux** — magnetic field lines through a surface. Key words are the last part of the answer. Always all three. Never skip them.
 - Never summarise away the source. If a record has notes, confusions, exam traps, practice items — carry them through: the confusions become "Watch out:" lines, the exam traps become "Exam trap:" lines, the practice items become "Try this:" lines.
 
 OUTPUT THE LEARNER SEES, NOT RAW CODE:

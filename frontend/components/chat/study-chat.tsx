@@ -308,9 +308,11 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
           {visibleMessages.map((m, i) => (
             <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div
-                className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs leading-relaxed ${
-                  m.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
-                }`}
+                className={
+                  m.role === "user"
+                    ? "max-w-[85%] rounded-2xl bg-primary px-4 py-2.5 text-sm leading-relaxed text-primary-foreground"
+                    : "w-full rounded-2xl border border-border/70 bg-card px-5 py-5 text-foreground shadow-sm sm:px-6 sm:py-6"
+                }
               >
                 {m.role === "user" ? (
                   <p className="whitespace-pre-wrap">{m.content}</p>
@@ -319,7 +321,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
                     segment.kind === "steps" ? (
                       <StepCards key={j} steps={segment.steps} />
                     ) : (
-                      <MathMarkdown key={j} content={segment.text} className="chat-prose" />
+                      <MathMarkdown key={j} content={segment.text} className="chat-reading" />
                     ),
                   )
                 )}

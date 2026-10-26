@@ -223,15 +223,15 @@ export function DiagramStudio() {
             className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
           >
             <div
-              className={`max-w-[92%] rounded-2xl px-4 py-3 text-sm ${
+              className={
                 message.role === "user"
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border/70 bg-card"
-              }`}
+                  ? "max-w-[85%] rounded-2xl bg-primary px-4 py-3 text-sm text-primary-foreground"
+                  : "w-full rounded-2xl border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-6 sm:py-6"
+              }
             >
               {message.role === "assistant" ? (
                 <div className="space-y-2">
-                  <MathMarkdown content={message.content} />
+                  <MathMarkdown content={message.content} className="chat-reading" />
                   {!sending && (
                     <button
                       type="button"

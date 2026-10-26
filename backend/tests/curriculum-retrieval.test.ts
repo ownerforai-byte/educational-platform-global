@@ -249,7 +249,8 @@ describe("deep-answer contract + source hierarchy reach every chat request", () 
     expect(DEEP_ANSWER_RULES).toContain("NO SHALLOW, HOLLOW REPLIES");
     expect(DEEP_ANSWER_RULES).toContain("BEFORE WRITING: scan the concept");
     expect(DEEP_ANSWER_RULES).toContain("Key words");
-    expect(DEEP_ANSWER_RULES).toContain("BENEATH EACH IDEA, NOT AT THE END");
+    expect(DEEP_ANSWER_RULES).toContain("In short");
+    expect(DEEP_ANSWER_RULES).toContain("AT THE END, NOT UNDER EACH IDEA");
     expect(DEEP_ANSWER_RULES).toContain("OUTPUT THE LEARNER SEES, NOT RAW CODE");
     expect(DEEP_ANSWER_RULES).toContain("EASY GRAMMAR FIRST");
   });

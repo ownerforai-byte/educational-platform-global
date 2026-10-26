@@ -1300,17 +1300,8 @@ export function TutorConsole({
                     <span className="text-[10px] text-muted-foreground">· AI Tutor</span>
                   </div>
 
-                  {/* Reply below: spans full width for maximum readable area and dense knowledge */}
                   <div className="min-w-0 w-full">
-                    <div className="rounded-2xl rounded-tl-sm border border-border/60 bg-muted/25 px-4 py-3 sm:px-5 sm:py-3.5 shadow-sm">
-                      {/* Dense study answers: tables, code-drawn diagrams, KaTeX
-                          and multi-section write-ups all render here, so the
-                          wrapper carries the base size — the hand-rolled .prose
-                          scale is em-based and follows whatever text-* lands on
-                          the call site (globals.css "NOTE TYPOGRAPHY").
-                          12px base keeps long answers, wide GFM tables and
-                          fenced-svg figures on screen without scrolling past
-                          the concept (owner request 2026-10-08). */}
+                    <div className="rounded-2xl rounded-tl-sm border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-7 sm:py-6">
                       {splitStepBlocks(msg.content).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
                           <StepCards key={segIndex} steps={segment.steps} />
@@ -1318,7 +1309,7 @@ export function TutorConsole({
                           <InteractiveMarkdown
                             key={segIndex}
                             content={segment.text}
-                            className="tutor-dense chat-prose text-[12px] leading-[1.55]"
+                            className="chat-reading"
                           />
                         ),
                       )}

@@ -223,7 +223,7 @@ export function HistoryConsole() {
           )}
 
           <div className="mt-3">
-            <MathMarkdown content={answer.response} />
+            <MathMarkdown content={answer.response} className="chat-reading" />
           </div>
 
           <p className="mt-4 flex items-center gap-1.5 border-t border-border/50 pt-3 text-[11px] text-muted-foreground">

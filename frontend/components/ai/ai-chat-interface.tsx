@@ -1130,8 +1130,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
-                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3">
-                    <div className="text-xs leading-relaxed">
+                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-6 sm:py-6">
+                    <div>
                       {splitStepBlocks(msg.content).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
                           <StepCards key={segIndex} steps={segment.steps} />
@@ -1139,7 +1139,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                           <InteractiveMarkdown
                             key={segIndex}
                             content={segment.text}
-                            className="chat-prose"
+                            className="chat-reading"
                           />
                         ),
                       )}

@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bot, Send, UserRound, X } from "lucide-react";
-import { CaptainMark } from "@/components/ai/captain-logo";
+import { Send, UserRound, X } from "lucide-react";
+import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
+import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { chat } from "@/lib/api/ai";
 import type { AIChatMessage } from "@/types/api";
@@ -28,8 +29,14 @@ export function AIWidget() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lines, setLines] = useState<Line[]>([{ role: "assistant", content: OPENING }]);
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.scrollTop = el.scrollHeight;
+  }, [lines, sending, open]);
 
   if (!mounted || isLoading || !user) return null;
   if (pathname === "/chat" || pathname.startsWith("/chat/")) return null;
@@ -61,7 +68,7 @@ export function AIWidget() {
       {open && (
         <section
           aria-label="Veer chat"
-          className="flex w-[min(100vw-2rem,380px)] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
+          className="flex h-[min(78vh,720px)] w-[min(100vw-2rem,42rem)] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
         >
           <header className="flex items-center justify-between gap-2 border-b border-border bg-foreground px-3 py-2.5 text-background">
             <div className="min-w-0">
@@ -78,38 +85,40 @@ export function AIWidget() {
             </button>
           </header>
 
-          <div className="max-h-80 space-y-3 overflow-y-auto bg-muted/30 px-3 py-3 text-sm">
+          <div ref={scrollerRef} className="min-h-0 flex-1 space-y-4 overflow-y-auto bg-muted/20 px-4 py-4">
             {lines.map((line, i) => {
               const mine = line.role === "user";
-              return (
-                <article key={`${line.role}-${i}`} className={`flex items-end gap-2 ${mine ? "flex-row-reverse" : ""}`}>
-                  <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
-                      mine ? "bg-primary text-primary-foreground" : "bg-foreground text-background"
-                    }`}
-                    aria-hidden="true"
-                  >
-                    {mine ? <UserRound className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
-                  </span>
-                  <div className={`flex max-w-[85%] flex-col gap-1 ${mine ? "items-end" : "items-start"}`}>
-                    <span className={`px-1 text-[10px] font-bold uppercase tracking-wide ${mine ? "text-primary" : "text-foreground"}`}>
-                      {mine ? "You" : "Veer"}
+              if (mine) {
+                return (
+                  <article key={`${line.role}-${i}`} className="flex items-end justify-end gap-2">
+                    <div className="flex max-w-[85%] flex-col items-end gap-1">
+                      <span className="px-1 text-[10px] font-bold uppercase tracking-wide text-primary">You</span>
+                      <p className="rounded-2xl rounded-br-md bg-primary px-3 py-2 text-sm text-primary-foreground">
+                        {line.content}
+                      </p>
+                    </div>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden="true">
+                      <UserRound className="h-3.5 w-3.5" />
                     </span>
-                    <p
-                      className={
-                        mine
-                          ? "rounded-2xl rounded-br-md bg-primary px-3 py-2 text-primary-foreground"
-                          : "rounded-2xl rounded-bl-md border border-border bg-card px-3 py-2 text-foreground"
-                      }
-                    >
-                      {line.content}
-                    </p>
+                  </article>
+                );
+              }
+              return (
+                <article key={`${line.role}-${i}`} className="flex flex-col gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-background" aria-hidden="true">
+                      <CaptainAvatar className="h-4 w-4" />
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-wide text-foreground">Veer</span>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-card px-4 py-4 sm:px-5 sm:py-5">
+                    <InteractiveMarkdown content={line.content} className="chat-reading" />
                   </div>
                 </article>
               );
             })}
             {sending && (
-              <p className="text-xs font-semibold text-foreground">Veer is writing…</p>
+              <p className="text-sm font-semibold text-foreground">Veer is writing…</p>
             )}
             {error && <p className="text-xs text-destructive">{error}</p>}
           </div>
