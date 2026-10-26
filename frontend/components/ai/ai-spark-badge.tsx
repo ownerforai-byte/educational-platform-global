@@ -59,11 +59,17 @@ function writeState(state: AiSparkState) {
   }
 }
 
+/** Ask every mounted spark meter to re-read the server count. */
+export function refreshAiSparkMeters(): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent("veer-ai-spark"));
+}
+
 /** Record one sent Veer message against today's local AI-spark mirror. */
 export function recordAiSparkUse(): void {
   const state = readState();
   writeState({ day: state.day, used: state.used + 1 });
-  window.dispatchEvent(new CustomEvent("veer-ai-spark"));
+  refreshAiSparkMeters();
 }
 
 export function AiSparkBadge({ className = "" }: { className?: string }) {

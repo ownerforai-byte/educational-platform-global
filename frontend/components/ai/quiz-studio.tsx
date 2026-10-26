@@ -29,6 +29,7 @@ import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
 import { SYLLABUS } from "@/lib/syllabus";
 import { generateQuestions, evaluateAnswers } from "@/lib/api/ai";
+import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { saveQuizHistory } from "@/lib/api/ai-quiz-history";
 import {
   GUEST_DAILY_LIMIT,
@@ -538,6 +539,7 @@ function QuizScreen({
         })),
       });
       setEvaluation(res);
+      recordAiSparkUse();
       clearDraft();
       onFinishQuiz({
         format,
@@ -1019,6 +1021,7 @@ export function QuizStudio() {
       if (typeof res.remaining === "number") {
         writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
       }
+      recordAiSparkUse();
       setDifficulty(params.difficulty);
       setSubjectSlug(params.subjectSlug);
       setClassSlug(params.classSlug);

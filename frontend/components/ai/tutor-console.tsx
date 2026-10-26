@@ -77,7 +77,7 @@ import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
 import { CoinGateDot } from "@/features/credits/coin-gate-dot";
-import { AiSparkBadge, recordAiSparkUse } from "@/components/ai/ai-spark-badge";
+import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { IDENTITY_REPLY } from "@/components/ai/ai-chat-interface";
@@ -925,6 +925,7 @@ export function TutorConsole({
           writeGuestCount(used);
           setGuestCount(used);
         }
+        refreshAiSparkMeters();
       } catch (err: unknown) {
         console.error("Tutor console error:", err);
         const msg =
@@ -1483,7 +1484,7 @@ export function TutorConsole({
         </div>
         <p className="mt-1.5 text-[10px] text-muted-foreground">
           {isLoggedIn
-            ? "1 credit per message · history saved to your account"
+            ? "1 AI spark per message · history saved to your account"
             : guestCredits > 0
               ? `${guestCredits} AI spark${guestCredits === 1 ? "" : "s"} left today · sign in for more`
               : "Today's AI sparks used · sign in for your tier allowance & saved history"}

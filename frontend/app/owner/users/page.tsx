@@ -249,15 +249,29 @@ export default function OwnerUsersPage() {
     }
   };
 
+  const visiblePendingIds = visibleUsers
+    .filter((u) => (u.access_status ?? "ACTIVE") === "PENDING")
+    .map((u) => u.id);
+
   const approveAllPending = async () => {
-    const pendingIds = visibleUsers
-      .filter((u) => (u.access_status ?? "ACTIVE") === "PENDING")
-      .map((u) => u.id);
-    if (pendingIds.length === 0) return;
-    if (!window.confirm(`Approve all ${pendingIds.length} pending accounts in the current view?`)) return;
+    if (visiblePendingIds.length === 0) {
+      toast.message(
+        stats.pending > 0
+          ? "No pending accounts in this view. Switch the access filter to Pending."
+          : "No pending accounts to approve.",
+      );
+      return;
+    }
+    if (
+      !window.confirm(
+        `Approve all ${visiblePendingIds.length} pending accounts in the current view?`,
+      )
+    ) {
+      return;
+    }
     setBulkBusy(true);
     try {
-      const res = await bulkOwnerUserAccessStatus(pendingIds, "ACTIVE");
+      const res = await bulkOwnerUserAccessStatus(visiblePendingIds, "ACTIVE");
       toast.success(`Approved ${res.applied.length} pending account(s)`);
       reload();
     } catch (err) {
@@ -385,10 +399,10 @@ export default function OwnerUsersPage() {
 
         <div className="flex flex-wrap items-center gap-2">
           <Filter className="h-4 w-4 text-muted-foreground shrink-0" />
-          {stats.pending > 0 && (
+          {visiblePendingIds.length > 0 && (
             <Button size="sm" variant="outline" disabled={bulkBusy} onClick={approveAllPending}>
               <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
-              Approve all pending ({stats.pending})
+              Approve all pending ({visiblePendingIds.length})
             </Button>
           )}
           {selected.size > 0 && (

@@ -21,7 +21,9 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { apiFetch } from "@/lib/api-client";
+import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
+import { GUEST_DAILY_LIMIT, writeGuestCount } from "@/lib/ai/guest-quota";
 
 interface MathSolveResponse {
   solution: string;
@@ -111,6 +113,10 @@ export default function MathStudioPage() {
       });
 
       setResponse(res);
+      if (typeof res.remaining === "number") {
+        writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
+      }
+      recordAiSparkUse();
       toast.success("Solution generated successfully!");
     } catch (err: any) {
       console.error(err);

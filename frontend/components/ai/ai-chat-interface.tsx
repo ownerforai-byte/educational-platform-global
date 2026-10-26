@@ -54,7 +54,7 @@ import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { isOwnerEmail } from "@/lib/owner";
-import { AiSparkBadge, recordAiSparkUse } from "@/components/ai/ai-spark-badge";
+import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { cn } from "@/lib/utils";
@@ -671,6 +671,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           { role: "assistant", content: finalReply },
         ]);
       }
+      refreshAiSparkMeters();
     } catch (err: any) {
       console.error("AI chat error:", err);
       setStreamingText(null);

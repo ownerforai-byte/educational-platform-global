@@ -11,6 +11,7 @@ import {
   aiSparkTierFor,
 } from "@/lib/ai/ai-spark-tiers";
 import { getAiSparkUsage } from "@/lib/api/ai";
+import { setLitePoll } from "@/lib/perf/lite";
 import { DUAL_SPARK_SUMMARY } from "@/lib/spark-metering";
 
 /**
@@ -20,12 +21,35 @@ import { DUAL_SPARK_SUMMARY } from "@/lib/spark-metering";
 export function AiPlanStrip() {
   const { user, isLoading } = useSession();
   const [aiUsed, setAiUsed] = useState<number | null>(null);
+  const [, setGuestRevision] = useState(0);
+
+  useEffect(() => {
+    if (user) return;
+    const bump = () => setGuestRevision((n) => n + 1);
+    window.addEventListener("veer-ai-spark", bump);
+    return () => window.removeEventListener("veer-ai-spark", bump);
+  }, [user?.email]);
 
   useEffect(() => {
     if (!user) return;
-    getAiSparkUsage()
-      .then((s) => setAiUsed(s.used))
-      .catch(() => setAiUsed(null));
+    let cancelled = false;
+    const sync = () => {
+      getAiSparkUsage()
+        .then((s) => {
+          if (!cancelled) setAiUsed(s.used);
+        })
+        .catch(() => {
+          if (!cancelled) setAiUsed(null);
+        });
+    };
+    sync();
+    window.addEventListener("veer-ai-spark", sync);
+    const stopPoll = setLitePoll(sync, 30_000);
+    return () => {
+      cancelled = true;
+      window.removeEventListener("veer-ai-spark", sync);
+      stopPoll();
+    };
   }, [user?.email]);
 
   if (isLoading) {

@@ -21,7 +21,9 @@ import {
 import { toast } from "sonner";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { apiFetch } from "@/lib/api-client";
+import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
+import { GUEST_DAILY_LIMIT, writeGuestCount } from "@/lib/ai/guest-quota";
 
 interface DeepDiveResponse {
   explanation: string;
@@ -119,6 +121,10 @@ export default function DeepDiveStudioPage() {
       });
 
       setResponse(res);
+      if (typeof res.remaining === "number") {
+        writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
+      }
+      recordAiSparkUse();
       toast.success("Deep synthesis complete!");
     } catch (err: any) {
       console.error(err);

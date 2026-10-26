@@ -6,6 +6,7 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { enhancePrompt, streamChat } from "@/lib/api/ai";
 import type { AIChatMessage } from "@/types/api";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 
 /**
  * THE DIAGRAM HUB (owner 2026-10-25: "one diagram hub (svg+ detailed or from
@@ -114,6 +115,7 @@ export function DiagramStudio() {
       }
       if (!liveAcc.trim()) throw new Error("No diagram received. Please try again.");
       paintLive(true);
+      recordAiSparkUse();
     } catch (err: unknown) {
       const msg =
         err instanceof Error && err.message

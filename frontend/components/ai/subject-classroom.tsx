@@ -43,6 +43,7 @@ import {
   type SubjectClassroom,
 } from "@/lib/ai/subject-classrooms";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 
 /**
  * THE SUBJECT CLASSROOM (owner 2026-10-25: "one interface per subject with
@@ -314,6 +315,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
         writeGuestCount(used);
         setGuestCount(used);
       }
+      recordAiSparkUse();
     } catch (err: unknown) {
       const msg =
         err instanceof Error && err.message
