@@ -5,7 +5,7 @@ import { apiFetch } from "../api-client";
  *
  * The coin gate is an owner-only toggle: when it is OFF, AI chat is free for
  * owner emails (students still pay). Chat surfaces read it so owner accounts
- * lock the composer on a zero balance only while the gate is actually ON.
+ * disable the composer on a zero balance only while the gate is actually ON.
  */
 export interface PublicConfig {
   /** True when AI chat bills credits (platform default). */

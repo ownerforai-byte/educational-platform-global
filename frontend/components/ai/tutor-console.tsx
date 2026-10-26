@@ -528,7 +528,7 @@ export function TutorConsole({
   const router = useRouter();
   const isLoggedIn = !!user;
   const isProUser = !isLoading && !!user && ((user as { plan?: string }).plan === "plus" || (user as { plan?: string }).plan === "pro" || isOwnerEmail(user.email));
-  // Owner coin gate (live): OFF → chat is free, so an empty pool must not lock.
+  // Owner coin gate (live): OFF → chat is free, so an empty pool must not disable it.
   const coinGateEnabled = useCoinGateEnabled();
   const freeMode = coinGateEnabled === false;
 
@@ -592,8 +592,8 @@ export function TutorConsole({
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
   // VEER CHAT IS FREE (owner policy 2026-10-12): "Veer chat and everything
-  // else are free — no AI spark is ever spent." No pool check, no lock — the
-  // only limit left is the guest anti-abuse quota.
+  // else are free — no AI spark is ever spent." No pool check or disabled state —
+  // the only limit left is the guest anti-abuse quota.
   const isOwner = isOwnerEmail(user?.email);
   const privilegedUser =
     !!user?.premiumStatus || (isOwner && freeMode);
@@ -829,16 +829,21 @@ export function TutorConsole({
         setStreamPhase(null);
         const figs = new Map<
           number,
-          { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
+          { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string; svg?: string }
         >();
+        // Gemini vector figures render as an interactive ```svg block (the
+        // pipeline turns it into a labelled figure); raster falls back to an
+        // image. No raw code ever reaches the student (owner 2026-10-25).
         const figureBlocks = (): string =>
           [...figs.values()]
             .map((f) =>
-              f.status === "done" && f.url
-                ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
-                : f.status === "pending"
-                  ? "\n\n*🎨 Veer is drawing a figure…*"
-                  : "",
+              f.status === "done" && f.svg
+                ? `\n\n\`\`\`svg ${f.caption || "Veer-drawn figure"}\n${f.svg}\n\`\`\`\n\n`
+                : f.status === "done" && f.url
+                  ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
+                  : f.status === "pending"
+                    ? "\n\n*🎨 Veer is drawing a figure…*"
+                    : "",
             )
             .join("");
         let lastPaint = 0;
@@ -878,7 +883,7 @@ export function TutorConsole({
               paintLive(true);
             } else if ("imageSuccess" in chunk) {
               const f = figs.get(chunk.imageSuccess);
-              if (f) { f.status = "done"; f.url = chunk.url; }
+              if (f) { f.status = "done"; f.url = chunk.url; f.svg = chunk.svg; f.caption = f.caption ?? chunk.caption; }
               paintLive(true);
             } else if ("imageFailed" in chunk) {
               const f = figs.get(chunk.imageFailed);

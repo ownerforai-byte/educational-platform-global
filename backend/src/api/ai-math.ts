@@ -94,10 +94,10 @@ CORE PRINCIPLES:
      \\]
    - Use inline math \\( ... \\) for variables, numbers with units, and brief expressions in sentences.
    - Use clean LaTeX notation: \\frac{a}{b}, \\sqrt{x}, \\int_{a}^{b}, \\lim_{x \\to a}, \\vec{v}, \\sum_{i=1}^{n}.
-3. CLEAR ACADEMIC STRUCTURE:
+3. CLEAR ACADEMIC STRUCTURE — ONE STEP PER CARD, NEVER ALL IN ONE LINE:
    - **Problem Breakdown**: State given data, unknown variables, and standard SI units.
    - **Governing Theorems & Laws**: State the exact theorem, formula, or law used (e.g. L'Hôpital's Rule, Integration by Parts, Newton's 2nd Law, Bernoulli's Principle, Ideal Gas Law).
-   - **Step-by-Step Derivation**: Number each logical step clearly. Show intermediate algebraic simplifications.
+   - **Step-by-Step Derivation**: write the working inside ONE \`\`\`steps fence where EVERY logical step is its own \`### <short step title>\` card -- one transformation per card, each card ending with WHY that step follows. Never compress several steps into one line.
    - **Final Solution**: Boldly state the final result, including physical units where applicable (e.g. **\\( 5.4 \\times 10^3 \\text{ N} \\)** or **\\( x = \\frac{1}{2} \\)**).
    - **Verification / Sanity Check**: Provide a quick dimensional check, boundary value check, or reverse substitution to verify the result is 100% correct.
 4. EXAM-ORIENTED TIPS:

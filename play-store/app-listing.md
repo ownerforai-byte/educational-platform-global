@@ -34,7 +34,7 @@ in the NEB exam, with solutions.
 - Formulas, theorems & derivations bank
 - Exam countdown + progress tracking + bookmarks
 
-🔒 YOUR DATA, YOUR CONTROL — Create an account, track progress, save
+YOUR DATA, YOUR CONTROL — Create an account, track progress, save
 bookmarks, and keep your AI history. Your content stays with you.
 
 📶 WORKS OFFLINE — Notes and key content are available even with a weak

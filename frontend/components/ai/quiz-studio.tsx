@@ -1033,7 +1033,7 @@ export function QuizStudio() {
           ? err.message.trim()
           : "Failed to generate questions. Please try again.";
       setError(msg);
-      // Guest pool exhausted (server 402) → lock the client mirror too.
+      // Guest pool exhausted (server 402) → disable the client mirror too.
       const status =
         err && typeof err === "object" && "status" in err
           ? (err as { status?: number }).status

@@ -76,7 +76,7 @@ export default function OwnerSectionsPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16 text-center">
         <Card className="border-primary/20 p-8">
-          <div className="mx-auto inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5" aria-disabled="true">
+          <div className="mx-auto inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70" aria-disabled="true">
             <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
               Owner only
             </span>

@@ -39,6 +39,7 @@ import {
 // ── config ────────────────────────────────────────────────────────────────────
 
 import { getAgnesKey, isImageGenConfigured } from "./config";
+import { drawAcademicFigure } from "./figure-draw";
 
 /** Verify the gateway with AI_IMAGE_GEN=on|off (default: on when a key exists). */
 export function imageGenEnabled(): boolean {
@@ -72,7 +73,44 @@ export interface FigureSpec {
 
 export interface GeneratedFigure extends FigureSpec {
   url?: string;
+  /** A Gemini-drawn vector figure (rendered as an interactive ```svg block). */
+  svg?: string;
   reason?: string;
+}
+
+/** What one reply figure resolved to: a Gemini SVG, a raster URL, or a miss. */
+export interface ReplyFigureResult {
+  url?: string;
+  svg?: string;
+  caption?: string;
+  reason?: string;
+}
+
+/**
+ * REPLY DIAGRAMS ARE GEMINI'S RESPONSIBILITY (owner 2026-10-25: "the reply of
+ * veer in chat … diagram goes in the responsibility of gemini no matter which
+ * type is it").
+ *
+ * Every figure a reply asks for — whatever its type — is first drawn as a
+ * detailed labelled vector figure by the Gemini figure lane
+ * (drawAcademicFigure → getWorkLaneProvider("figure")). Only when that lane
+ * declines or fails does the Agnes raster chain take over, so replies keep
+ * their picture instead of losing it. The ai chain and its per-work-type key
+ * lanes are untouched — this routes THROUGH them.
+ */
+export async function drawReplyFigure(
+  prompt: string,
+): Promise<ReplyFigureResult> {
+  try {
+    const drawn = await drawAcademicFigure(prompt, { anyKind: true });
+    if (drawn.svg) {
+      return { svg: drawn.svg, caption: drawn.caption || undefined };
+    }
+  } catch (err) {
+    console.warn("[image-gen] Gemini figure lane failed:", err);
+  }
+  const raster = await generateVeerImage(prompt);
+  return { url: raster.url, reason: raster.reason };
 }
 
 // ── Agnes generator ───────────────────────────────────────────────────────────
@@ -337,14 +375,18 @@ export class FigureStreamFilter {
 
 /**
  * Post-process a finished answer: replace every ```veer-image fence with a
- * markdown image (or an inline note when drawing failed). Used by the
- * non-stream and guest routes.
+ * drawn figure (or an inline note when drawing failed). Used by the non-stream
+ * and guest routes.
+ *
+ * The generator is Gemini-first (owner 2026-10-25: reply diagrams "go in the
+ * responsibility of gemini no matter which type is it") — a drawn vector
+ * figure is embedded as an interactive ```svg block, never raw code.
  */
 export async function resolveFiguresInText(
   text: string,
-  generate?: (prompt: string) => Promise<{ url?: string; reason?: string }>,
+  generate?: (prompt: string) => Promise<ReplyFigureResult>,
 ): Promise<{ text: string; figures: GeneratedFigure[] }> {
-  const generator = generate ?? generateVeerImage;
+  const generator = generate ?? drawReplyFigure;
   const filter = new FigureStreamFilter();
   // Push the whole text at once, then flush — collects every figure spec.
   filter.push(text);
@@ -355,11 +397,19 @@ export async function resolveFiguresInText(
   let out = text;
   for (const spec of specs) {
     const result = await generator(spec.prompt);
-    const figure: GeneratedFigure = { ...spec, url: result.url, reason: result.reason };
+    const figure: GeneratedFigure = {
+      ...spec,
+      url: result.url,
+      svg: result.svg,
+      reason: result.reason,
+    };
     figures.push(figure);
-    const markdown = result.url
-      ? `![${spec.caption || "figure"}](${result.url})`
-      : `*(Figure not drawn${spec.caption ? `: ${spec.caption}` : ""} — ${result.reason ?? "unknown"})*`;
+    const caption = spec.caption || result.caption || "figure";
+    const markdown = result.svg
+      ? `\n\`\`\`svg ${caption}\n${result.svg}\n\`\`\`\n`
+      : result.url
+        ? `![${caption}](${result.url})`
+        : `*(Figure not drawn${spec.caption ? `: ${spec.caption}` : ""} — ${result.reason ?? "unknown"})*`;
     // Replace the first fence occurrence that produced THIS spec, in order.
     out = out.replace(regexForFence(spec.prompt), markdown);
   }

@@ -7,7 +7,7 @@
  * COIN-GATE SCOPE (owner request 2026-10-04: make the owner's coin-gate
  * toggle "applicable for whole coin gate library", not only AI chat): when
  * the global `coin_gate_enabled` setting is OFF, every OWNER email passes
- * this gate for free — no lock, no coin ask, no countdown. Students and
+ * this gate for free — no disabled screen, coin ask, or countdown. Students and
  * guests always unlock for coins (the toggle has never freed them), and an
  * owner with the toggle ON is billed like any student.
  *
@@ -16,7 +16,7 @@
  *   - guests   → blurred layer, any click raises the AdminApprovalModal notice,
  *   - members  → unlock overlay showing the category's coin cost,
  *   - unlocked → children render normally with a live 20-minute countdown badge,
- *   - expiry   → children unmount, blur returns, overlay reappears — no reload.
+ *   - expiry   → children unmount, blur returns, unavailable overlay reappears — no reload.
  *
  * Public routes (home baseline, AI chat, auth, credits wallet) and privileged
  * control surfaces resolve to null and pass straight through untouched.
@@ -56,7 +56,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
   // PDF document tabs (/pdfs/read) share the PDF Library's unlock window.
   const moduleKey = creditModuleKey(pathname ?? "/");
 
-  // Owner + gate OFF → pass straight through: no lock, no countdown badge.
+  // Owner + gate OFF → pass straight through: no disabled state or countdown badge.
   const libraryFree =
     coinGateEnabled === false && !!user && isOwnerEmail(user.email);
 
@@ -67,7 +67,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
   const rule = TOKEN_MATRIX[category];
   const open = isUnlocked(moduleKey);
 
-  // FREE categories (cost 0) render straight through — no lock, no ask.
+  // FREE categories (cost 0) render straight through — no disabled state or ask.
   if (rule.cost === 0 && category !== "imagehub") return <>{children}</>;
 
   // Unlocked window → render content + live countdown badge.
@@ -117,7 +117,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
         <div className="sticky top-20 flex justify-center px-4 py-8">
           <div className="flex w-full max-w-md flex-col items-center gap-4 rounded-3xl border border-border/70 bg-card p-6 text-center shadow-2xl">
             <div
-              className="inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+              className="inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70"
               aria-disabled="true"
             >
               <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
@@ -190,7 +190,7 @@ export function RouteCreditGateBoundary({
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  // First paint: render children (public routes must not flash a lock).
+  // First paint: render children (public routes must not flash an access state).
   // The gate takes over immediately after hydration.
   if (!mounted) return <>{children}</>;
   return <RouteCreditGate>{children}</RouteCreditGate>;

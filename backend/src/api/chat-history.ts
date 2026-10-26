@@ -59,16 +59,28 @@ async function insertWithRetry(
  * GET /api/chat-history/sessions — the user's conversation list.
  * One row per session: name, message count, last activity, and a preview
  * snippet (first user message) so the sidebar can label each history.
+ *
+ * Scope isolation (owner 2026-10-25: "one interface per subject with their own
+ * history — no mix up"): pass `?prefix=subj:physics:` to list ONLY the
+ * conversations belonging to that interface. Wildcards are stripped from the
+ * prefix so it can only ever narrow to a literal namespace.
  */
 router.get("/sessions", requireAuth, asyncHandler(async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;
+  const prefix =
+    typeof req.query.prefix === "string"
+      ? req.query.prefix.replace(/[%_\\]/g, "").slice(0, 64)
+      : "";
 
-  const { data, error } = await supabaseAdmin
+  let query = supabaseAdmin
     .from("chat_messages")
     .select("session, role, content, created_at")
     .eq("user_id", user.id)
     .order("created_at", { ascending: false })
     .limit(500);
+  if (prefix) query = query.like("session", `${prefix}%`);
+
+  const { data, error } = await query;
 
   if (error) {
     if (isMissingTable(error)) {

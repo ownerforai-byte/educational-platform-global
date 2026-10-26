@@ -105,7 +105,7 @@ export function CreditGate({
         <div className="sticky top-20 flex justify-center px-4 py-6">
           <div className="flex w-full max-w-sm flex-col items-center gap-3 rounded-3xl border border-border/70 bg-card p-5 text-center shadow-2xl">
             <div
-              className="inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+              className="inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70"
               aria-disabled="true"
             >
               <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">

@@ -557,16 +557,21 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       setStreamPhase(null);
       const figs = new Map<
         number,
-        { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
+        { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string; svg?: string }
       >();
+      // Gemini vector figures render as an interactive ```svg block (the
+      // pipeline turns it into a labelled figure); raster falls back to an
+      // image. No raw code ever reaches the student (owner 2026-10-25).
       const figureBlocks = (): string =>
         [...figs.values()]
           .map((f) =>
-            f.status === "done" && f.url
-              ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
-              : f.status === "pending"
-                ? "\n\n*🎨 Veer is drawing a figure…*"
-                : "",
+            f.status === "done" && f.svg
+              ? `\n\n\`\`\`svg ${f.caption || "Veer-drawn figure"}\n${f.svg}\n\`\`\`\n\n`
+              : f.status === "done" && f.url
+                ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
+                : f.status === "pending"
+                  ? "\n\n*🎨 Veer is drawing a figure…*"
+                  : "",
           )
           .join("");
       const paintLive = (force: boolean) => {
@@ -604,7 +609,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             paintLive(true);
           } else if ("imageSuccess" in chunk) {
             const f = figs.get(chunk.imageSuccess);
-            if (f) { f.status = "done"; f.url = chunk.url; }
+            if (f) { f.status = "done"; f.url = chunk.url; f.svg = chunk.svg; f.caption = f.caption ?? chunk.caption; }
             paintLive(true);
           } else if ("imageFailed" in chunk) {
             const f = figs.get(chunk.imageFailed);

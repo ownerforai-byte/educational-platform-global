@@ -12,17 +12,18 @@ import {
   Target,
   BookOpenCheck,
   ArrowRight,
-  Gem,
   BellRing,
   Calculator,
   Lightbulb,
+  School,
+  Shapes,
 } from "lucide-react";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
 export const metadata: Metadata = {
-  title: "Veer AI Studio Hub — Tutor, Math Solver, Deep Concept & Quiz",
+  title: "Veer AI Studio Hub — Tutor, Math Solver, Diagrams, Deep Concept & Quiz",
   description:
-    "Veer AI tool hub: everyday study assistant, math & derivation solver, deep concept studio, adaptive quiz generator and curriculum search.",
+    "Veer AI tool hub: everyday study assistant, math & derivation solver, diagram hub, deep concept studio, adaptive quiz generator and curriculum search.",
 };
 
 /**
@@ -159,6 +160,36 @@ const TOOLS: {
       "Straight links to every match on the platform",
     ],
   },
+  {
+    href: "/ai/subjects",
+    title: "Subject Classrooms",
+    badge: "One per subject",
+    description:
+      "Six dedicated teaching classrooms — Physics, Chemistry, Biology, Mathematics, Nepali and English — each with its own private chat history that never mixes.",
+    icon: School,
+    iconClass: "bg-amber-500/10 text-amber-500 border-amber-500/25",
+    borderClass: "hover:border-amber-500/50",
+    features: [
+      "One interface per subject — no mix-up between histories",
+      "Subject-master teaching style, step-by-step working",
+      "Labelled SVG diagrams drawn inside every explanation",
+    ],
+  },
+  {
+    href: "/ai/diagrams",
+    title: "Diagram Hub",
+    badge: "Draw anything",
+    description:
+      "The drawing room: name a topic and get one detailed, exam-grade diagram — researched from real references and labelled entirely in English.",
+    icon: Shapes,
+    iconClass: "bg-rose-500/10 text-rose-500 border-rose-500/25",
+    borderClass: "hover:border-rose-500/50",
+    features: [
+      "Sharp vector figures with hover labels on every part",
+      "Google-grounded structure, translated to English always",
+      "Subject chips for Physics, Chemistry, Biology, Maths, Nepali, English",
+    ],
+  },
 ];
 
 const PROMISES = [
@@ -191,7 +222,7 @@ export default function AIStudioPage() {
               <Sparkles className="h-5 w-5 text-white" />
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/25 bg-violet-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">
-              AI Studio · Six Dedicated Specialized Tools
+              AI Studio · Nine Dedicated Specialized Tools
             </span>
           </div>
 
@@ -292,18 +323,10 @@ export default function AIStudioPage() {
           .
         </p>
 
-        {/* Owner request (2026-09-30): the PRO plan link belongs under the
-            plan/top-up line, and the notice board is reachable from here too.
-            Both pages are public — never coin-gated — and neither is shown on
-            the home page. */}
+        {/* Owner direction (2026-10-25): the plans page is reachable from the
+            FOOTER ONLY — "plan is available one time for all, only in footer".
+            No plans links anywhere else; the notice board stays here. */}
         <p className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1 text-xs">
-          <Link
-            href="/plans"
-            className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
-          >
-            <Gem className="h-3.5 w-3.5" />
-            PRO plan — Veer &amp; note credits with no daily cap
-          </Link>
           <Link
             href="/notice"
             className="inline-flex items-center gap-1.5 font-medium text-muted-foreground hover:text-primary transition-colors"

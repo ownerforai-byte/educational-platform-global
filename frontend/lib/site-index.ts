@@ -230,6 +230,24 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         href: "/pdfs",
         meta: "PDFs",
       },
+      {
+        name: "Veer Math Solver",
+        opening: "Work through maths problems with clear, step-by-step explanations.",
+        href: "/ai/math",
+        meta: "AI study tool",
+      },
+      {
+        name: "Deep Concept Studio",
+        opening: "Explore difficult ideas through structured, syllabus-aware explanations.",
+        href: "/ai/deep-dive",
+        meta: "AI study tool",
+      },
+      {
+        name: "Diagram Hub",
+        opening: "Create detailed, labelled study diagrams for curriculum topics.",
+        href: "/ai/diagrams",
+        meta: "AI visual tool",
+      },
     ],
   });
 

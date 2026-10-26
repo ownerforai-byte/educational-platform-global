@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
  *
  * Tier-aware (plan.md §4): the strip starts at the Member rung (the shell hides
  * it from visitors entirely), each link opens at its registry rung, and links
- * above the viewer's rung stay visible — dimmed with a lock, one tap to /plans.
+ * above the viewer's rung stay visible in a muted disabled state, without an icon or action.
  */
 export function MobileQuickNav() {
   const pathname = usePathname();
@@ -34,15 +34,16 @@ export function MobileQuickNav() {
         {QUICK_LINKS.map((link) => {
           const unlocked = quickLinkUnlocked(level, link.href);
           if (!unlocked) {
+            // Plans live in the footer only; render a muted disabled chip.
             return (
-              <Link
+              <span
                 key={link.href}
-                href="/plans"
-                title={`${link.label} opens at ${ACCESS_LABELS[quickLinkMinTier(link.href)]} — see plans`}
-                className="flex shrink-0 items-center gap-1 rounded-full border border-dashed border-border px-3 py-1.5 text-xs font-semibold text-muted-foreground/60 opacity-75"
+                aria-disabled="true"
+                title={`${link.label} opens at ${ACCESS_LABELS[quickLinkMinTier(link.href)]}`}
+                className="flex shrink-0 cursor-not-allowed items-center gap-1 rounded-full border border-border/60 bg-muted/40 px-3 py-1.5 text-xs font-semibold text-muted-foreground/50 opacity-60 grayscale"
               >
                 {link.label}
-              </Link>
+              </span>
             );
           }
           return (

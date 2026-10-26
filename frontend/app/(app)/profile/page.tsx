@@ -495,12 +495,10 @@ export default function ProfilePage() {
                 <Clock className="h-3 w-3" />
                 Resets in {resetCountdown}
               </span>
-              <Link
-                href="/plans"
-                className="inline-flex items-center gap-0.5 font-semibold text-primary hover:underline"
-              >
-                Plus 25 · Pro 50 <ArrowUpRight className="h-3 w-3" />
-              </Link>
+              {/* Plans live in the footer only (owner 2026-10-25). */}
+              <span className="inline-flex items-center gap-0.5 font-semibold text-muted-foreground">
+                Plus 25 · Pro 50
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -542,12 +540,15 @@ export default function ProfilePage() {
                   Spark Wallet
                 </Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-xl text-xs flex-1">
-                <Link href="/plans">
-                  <Crown className="h-3.5 w-3.5" />
-                  Upgrade Plan
-                </Link>
-              </Button>
+              {/* Plans live in the footer only (owner 2026-10-25) — the
+                  upgrade entry point is the footer's Plans link. */}
+              <span
+                aria-disabled="true"
+                className="inline-flex h-8 flex-1 items-center justify-center gap-2 rounded-xl border border-dashed border-border px-3 text-xs font-medium text-muted-foreground/60"
+              >
+                <Crown className="h-3.5 w-3.5" />
+                Plan set at sign-in
+              </span>
             </div>
           </CardContent>
         </Card>

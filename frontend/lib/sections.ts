@@ -53,14 +53,9 @@ export interface PlatformSection {
 
 export const SECTIONS: PlatformSection[] = [
   // ── Guest rung ──
-  {
-    id: "overview-plans",
-    title: "Overview & Plans",
-    description: "What the platform is, and the whole tier ladder in card form.",
-    minTier: "visitor",
-    icon: Globe,
-    href: "/plans",
-  },
+  // (Owner 2026-10-25: "plan is available one time for all, only in footer" —
+  // the old Overview & Plans section linked to /plans from the rails, so it is
+  // gone; the footer's single Plans entry is the only way in.)
   {
     id: "visuals-mindmaps",
     title: "Visuals & Mindmaps",

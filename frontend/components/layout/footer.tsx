@@ -7,8 +7,7 @@ import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
  * TIER-AWARE DIRECTORY (owner direction 2026-10-23: "footer according to tier
  * access with a plan"). Every link carries the rung that first opens it
  * (plan.md §3); links at or below the viewer's rung render normally, and the
- * rest stay visible — dimmed with a lock, one tap to /plans (plan.md §4:
- * discovery drives upgrades, nothing is hidden away entirely).
+ * rest stay visible in a muted disabled state, with no lock icon or action.
  */
 type FooterLink = [label: string, href: string, minTier: AccessLevel];
 
@@ -60,15 +59,19 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
                 {group.links.map(([label, href, minTier]) => {
                   const unlocked = hasLevel(user, minTier);
                   if (!unlocked) {
+                    // Owner direction 2026-10-25: "plan is available one time
+                    // for all, only in footer" — the single Plans entry below
+                    // is the only plans link on the platform; locked entries
+                    // render as disabled text instead of piling up plans links.
                     return (
                       <li key={href}>
-                        <Link
-                          href="/plans"
-                          title={`${label} opens at ${ACCESS_LABELS[minTier]} — see plans`}
-                          className="inline-flex min-h-9 items-center gap-1 rounded text-sm text-muted-foreground/60 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        <span
+                          aria-disabled="true"
+                          title={`${label} opens at ${ACCESS_LABELS[minTier]}`}
+                          className="inline-flex min-h-9 cursor-not-allowed items-center gap-1 rounded text-sm text-muted-foreground/50 opacity-60 grayscale"
                         >
                           {label}
-                        </Link>
+                        </span>
                       </li>
                     );
                   }

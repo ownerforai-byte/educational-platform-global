@@ -2,10 +2,10 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 
 /**
- * SECTION GATE (plan.md §8 P4 + §9: "locked sections are visible-but-dimmed
- * for lower tiers (no dead ends)"). A member opening a Pro section sees the
- * dimmed card with a one-tap path to /plans — never a blank page or a dead
- * redirect — while open routes render untouched. Owner runtime minimums
+ * SECTION GATE (plan.md §8 P4 + §9: lower tiers see a muted disabled state,
+ * without lock icons or plan links). A member opening a Pro section sees that
+ * state rather than a blank page or dead redirect; open routes render untouched.
+ * Owner runtime minimums
  * (settings `section_min_tier.*`, published on /api/config) move the line.
  */
 
@@ -49,14 +49,18 @@ describe("SectionTierGate — visible-but-dimmed, no dead ends", () => {
     expect(screen.getByTestId("section-content")).toBeInTheDocument();
   });
 
-  it("shows the dimmed locked card to a lower rung, with the way to /plans", () => {
+  it("shows a muted disabled card to a lower rung, without a lock icon or plans link", () => {
     session.user = { email: "student@example.com" }; // member; PDF Library opens at Pro
     render(<SectionTierGate>{CONTENT}</SectionTierGate>);
 
     expect(screen.queryByTestId("section-content")).toBeNull();
-    expect(screen.getByRole("heading", { name: /opens at the pro rung/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /see plans/i })).toHaveAttribute("href", "/plans");
+    expect(screen.getByRole("heading", { name: /pdf library is unavailable on this plan/i })).toBeInTheDocument();
+    // Owner 2026-10-25: "plan is available one time for all, only in footer" —
+    // the locked card carries no /plans link at all.
+    const hrefs = screen.getAllByRole("link").map((el) => el.getAttribute("href"));
+    expect(hrefs).not.toContain("/plans");
     expect(screen.getByRole("link", { name: /go to my home/i })).toHaveAttribute("href", "/home");
+    expect(screen.getByRole("heading", { name: /pdf library is unavailable on this plan/i }).closest("div")).toHaveClass("grayscale");
   });
 
   it("matches deep routes to their section (the unit page gates like its root)", () => {
@@ -87,6 +91,6 @@ describe("SectionTierGate — visible-but-dimmed, no dead ends", () => {
     pathname.value = "/class-11-notes/physics";
     render(<SectionTierGate>{CONTENT}</SectionTierGate>);
     expect(screen.queryByTestId("section-content")).toBeNull();
-    expect(screen.getByRole("heading", { name: /opens at the owner rung/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /class 11 notes is unavailable on this plan/i })).toBeInTheDocument();
   });
 });

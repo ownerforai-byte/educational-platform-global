@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { sectionsFor } from "@/lib/sections";
 import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
@@ -11,8 +10,8 @@ import { ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
  * The home sections rail (plan.md §3 + §4).
  *
  * Every content section appears as a compact card in ONE horizontal rail:
- * no vertical walls. Locked sections stay visible but dimmed with a lock chip
- * and route to /plans — discovery drives upgrades. Operator-only surfaces
+ * no vertical walls. Restricted sections stay visible in a muted disabled
+ * state, without a lock icon or an actionable route. Operator-only surfaces
  * (owner console) are hidden entirely below the owner rung.
  */
 
@@ -41,12 +40,8 @@ export function HomeSections() {
               Everything the platform holds, in sections — each opens at its own rung.
             </p>
           </div>
-          <Link
-            href="/plans"
-            className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
-          >
-            See all plans <ArrowRight className="h-3 w-3" />
-          </Link>
+          {/* Plans live in the footer only (owner 2026-10-25) — no plans link
+              here; the rung chip on each card is the tier indicator. */}
         </div>
 
         {/* One horizontal rail — swipe/scroll sideways, never a vertical wall. */}
@@ -56,20 +51,22 @@ export function HomeSections() {
             const card = (
               <div
                 className={`flex h-full w-[210px] shrink-0 flex-col justify-between rounded-2xl border border-border/70 bg-card p-4 transition ${
-                  unlocked ? "hover:border-primary/50 hover:shadow-sm" : "opacity-70"
+                  unlocked
+                    ? "hover:border-primary/50 hover:shadow-sm"
+                    : "cursor-not-allowed opacity-50 grayscale"
                 }`}
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <div className="rounded-xl bg-primary/10 p-2">
-                      <Icon className="h-4 w-4 text-primary" />
+                    <div className={`rounded-xl p-2 ${unlocked ? "bg-primary/10" : "bg-muted"}`}>
+                      <Icon className={`h-4 w-4 ${unlocked ? "text-primary" : "text-muted-foreground/60"}`} />
                     </div>
                     {unlocked ? (
                       <span className={`rounded-full px-1.5 py-0.5 text-[9px] font-bold ${TIER_CHIP[section.minTier]}`}>
                         {ACCESS_LABELS[section.minTier]}
                       </span>
                     ) : (
-                      <span className="inline-flex items-center rounded-full bg-muted px-1.5 py-0.5 text-[9px] font-bold text-muted-foreground/70" aria-disabled="true">
+                      <span className="inline-flex items-center rounded-full bg-muted/70 px-1.5 py-0.5 text-[9px] font-bold text-muted-foreground/50 grayscale" aria-disabled="true">
                         {ACCESS_LABELS[section.minTier]}
                       </span>
                     )}
@@ -81,14 +78,22 @@ export function HomeSections() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-3 text-[10px] font-semibold text-primary">
-                  {unlocked ? "Open →" : "See plans →"}
+                <p className={`mt-3 text-[10px] font-semibold ${unlocked ? "text-primary" : "text-muted-foreground/60"}`} aria-disabled={unlocked ? undefined : true}>
+                  {unlocked ? "Open →" : "Unavailable on this plan"}
                 </p>
               </div>
             );
 
+            // Plans live in the footer only; restricted sections stay inert.
+            if (!unlocked) {
+              return (
+                <div key={section.id} aria-disabled="true" className="block">
+                  {card}
+                </div>
+              );
+            }
             return (
-              <Link key={section.id} href={unlocked ? section.href : "/plans"} className="block">
+              <Link key={section.id} href={section.href} className="block">
                 {card}
               </Link>
             );

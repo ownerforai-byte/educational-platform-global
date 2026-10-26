@@ -4,15 +4,15 @@ import { RouteCreditGate } from "@/features/credits/route-gate";
 // AUTH SYSTEM (owner request 2026-10-17): the login + owner-approval wall.
 // Everything in the shell requires a signed-in, APPROVED account; only the
 // notice board stays open. Sits in front of the coin gate so a signed-out
-// visitor meets the approval lock, never a coin ask.
+// visitor meets the access screen, never a coin ask.
 import { RequireApproval } from "@/features/auth/components/require-approval";
 // ADDITIVE (perf/resilience pass): inner error layer and passive intent prefetcher.
 // The existing shell/gate structure below is untouched.
 import { RouteErrorBoundary } from "@/components/perf/route-error-boundary";
 import { TopicNotesPrefetcher } from "@/components/perf/topic-notes-prefetcher";
 // SECTION GATE (plan.md §8 P4): every shell route is matched to its section
-// and checked against that section's minimum rung — locked sections render
-// the dimmed card with a one-tap path to /plans, never a dead end.
+// and checked against that section's minimum rung — restricted sections render
+// a muted disabled card, never a dead end.
 import { SectionTierGate } from "@/components/content/section-tier-gate";
 
 export default function AppLayout({

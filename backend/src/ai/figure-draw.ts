@@ -78,7 +78,17 @@ const REPAIR_INSTRUCTION = [
  */
 export async function drawAcademicFigure(
   request: string,
-  options: { kind?: FigureKind; classLevel?: string; chat?: FigureChat } = {},
+  options: {
+    kind?: FigureKind;
+    classLevel?: string;
+    chat?: FigureChat;
+    /**
+     * Draw WHATEVER the request is, never refuse (owner 2026-10-25: diagram
+     * generation in chat replies "goes in the responsibility of gemini no
+     * matter which type is it") — used by the reply figure pipeline.
+     */
+    anyKind?: boolean;
+  } = {},
 ): Promise<DrawnFigure> {
   const clean = (request ?? "").trim().replace(/\s+/g, " ").slice(0, MAX_FIGURE_REQUEST_CHARS);
   const kind = options.kind ?? classifyFigureKind(clean);
@@ -87,7 +97,7 @@ export async function drawAcademicFigure(
   if (!clean) {
     return { caption, kind, parts: [], attempts: 0, reason: "no figure request was given" };
   }
-  if (!isVectorFigureKind(kind)) {
+  if (!isVectorFigureKind(kind) && !options.anyKind) {
     return {
       caption,
       kind,

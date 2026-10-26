@@ -259,8 +259,8 @@ function renderUnitResources(
 // tabs … they will be accessed with tier plan." So every part of a topic's
 // content (the concept-JSON fields, plus Notes / Journal / Resources) is its
 // own tab — never an endless column inside one tab — and each tab declares the
-// tier-plan rung that opens it (plan.md §2–§3). Locked tabs stay visible with
-// a lock badge and a one-tap path to /plans (plan.md §4).
+// tier-plan rung that opens it (plan.md §2–§3). Restricted tabs stay visible
+// with muted tier labels; protected content remains inaccessible below its rung.
 
 type TabKind = "notes" | "field" | "journal" | "resources";
 
@@ -308,22 +308,26 @@ function buildTabs(notesTier: AccessLevel): ContentTab[] {
   ];
 }
 
-/** Locked tabs stay visible (plan.md §4) — dimmed, with a one-tap path to /plans. */
+/** Restricted tabs stay visible in a muted, non-interactive state. */
 function LockedTabCard({ tab }: { tab: ContentTab }) {
   return (
-    <Card className="mx-auto max-w-xl border-primary/20 p-8 text-center">
-      <div className="mx-auto inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5" aria-disabled="true">
-        <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+    <Card aria-disabled="true" className="mx-auto max-w-xl cursor-not-allowed border-border/60 bg-muted/30 p-8 text-center opacity-65 grayscale">
+      <div className="mx-auto inline-flex items-center rounded-2xl border border-border/60 bg-muted px-3 py-1.5" aria-disabled="true">
+        <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground/70">
           {ACCESS_LABELS[tab.minTier]}
         </span>
       </div>
-      <CardTitle className="mt-4 text-xl">
-        {tab.label} opens at {ACCESS_LABELS[tab.minTier]}
+      <CardTitle className="mt-4 text-xl text-muted-foreground">
+        {tab.label} is unavailable on this plan
       </CardTitle>
       <p className="mt-2 text-sm text-muted-foreground">{tab.description}</p>
-      <Button asChild className="mt-6 h-10 rounded-xl px-5 text-sm font-semibold">
-        <Link href="/plans">See the plans</Link>
-      </Button>
+      {/* Restricted content stays visible but inert; no lock icon or plans link. */}
+      <p
+        aria-disabled="true"
+        className="mt-6 inline-flex h-10 cursor-not-allowed items-center rounded-xl border border-border/60 bg-muted/40 px-5 text-sm font-semibold text-muted-foreground/50 grayscale"
+      >
+        Unavailable on this plan
+      </p>
     </Card>
   );
 }
@@ -635,14 +639,14 @@ export function ContentTabs({
                 activeTab === tab.id
                   ? "border-b-2 border-primary text-primary"
                   : locked
-                    ? "text-muted-foreground/60 hover:text-foreground"
+                    ? "text-muted-foreground/45 cursor-not-allowed"
                     : "text-muted-foreground hover:text-foreground"
               }`}
             >
               <TabIcon className="h-3.5 w-3.5" />
               {tab.label}
               {locked && (
-                <span className="text-[9px] font-bold uppercase text-muted-foreground/60" aria-hidden="true">
+                <span className="text-[9px] font-bold uppercase text-muted-foreground/50" aria-hidden="true">
                   {ACCESS_LABELS[tab.minTier]}
                 </span>
               )}

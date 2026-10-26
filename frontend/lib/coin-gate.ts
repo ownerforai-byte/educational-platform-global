@@ -3,7 +3,7 @@
  *
  * One `settings.coin_gate_enabled` row controls ALL owner-allowlist emails:
  *   button ON  → owners are billed 1 coin per AI message (like all students).
- *   button OFF → owners chat free (no deduction, no lock).
+ *   button OFF → owners chat free (no deduction or disabled state).
  * Students/customers are ALWAYS billed regardless of the toggle — they must
  * purchase/earn coins (PRO/premium stays unlimited).
  *

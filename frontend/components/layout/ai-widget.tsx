@@ -11,13 +11,12 @@ import { hasLevel } from "@/lib/access-level";
 /**
  * Floating AI launcher (bottom-left corner).
  *
- * OWNER RULE CHANGE 2026-10-17: "lock ai widget under spark gate also". The
+ * OWNER RULE CHANGE 2026-10-17: put the AI widget under the Spark gate. The
  * launcher used to be OPEN to every tier (2026-10-13) and just navigate to
  * /chat. It now sits under the SAME spark gate the home features and the CEE
  * bank use: Pro members and the owner pass the gate and open Veer directly;
- * every lower rung (visitor / member / plus) sees a LOCKED launcher that points
- * at the plan page instead — matching the indexes bar, where the AI index is a
- * Pro-level unlock.
+ * every lower rung (visitor / member / plus) sees a muted disabled launcher —
+ * no lock icon and no plan link.
  *
  * It still hides on the chat routes (owner request 2026-10-11: "disable ai
  * widget in chat") — on /chat and /chat/* you are already standing in the thing
@@ -32,27 +31,27 @@ export function AIWidget() {
   if (!mounted || isLoading) return null;
   if (pathname === "/chat" || pathname.startsWith("/chat/")) return null;
 
-  // Spark gate: Pro + owner unlock Veer; the lower rungs meet the lock.
+  // Spark gate: Pro + owner open Veer; the lower rungs see a disabled launcher.
   const unlocked = hasLevel(user ?? null, "pro");
 
   if (!unlocked) {
+    // Plans live in the footer only (owner 2026-10-25); the launcher stays inert.
     return (
-      <Link
-        href="/plans"
-        aria-label="Veer is locked under the Spark gate — see your plan"
-        title="Veer is Spark-gated — see your plan to unlock"
-        className="fixed left-6 bottom-safe z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center bg-gradient-to-br from-muted to-muted/70 border border-amber-500/40 hover:scale-105 transition-all"
+      <div
+        aria-disabled="true"
+        title="Veer is Spark-gated — opens at the Pro rung"
+        className="fixed left-6 bottom-safe z-50 h-14 w-14 cursor-not-allowed rounded-full border border-border/60 bg-muted/50 shadow-lg grayscale opacity-50 flex items-center justify-center"
       >
         <span className="relative flex items-center justify-center">
           <span
-            className="text-[10px] font-extrabold uppercase tracking-wider text-amber-500"
+            className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground/60"
             aria-hidden="true"
           >
             Spark
           </span>
-          <Coins className="absolute -right-1.5 -top-1.5 h-3 w-3 text-amber-500/80" />
+          <Coins className="absolute -right-1.5 -top-1.5 h-3 w-3 text-muted-foreground/50" />
         </span>
-      </Link>
+      </div>
     );
   }
 

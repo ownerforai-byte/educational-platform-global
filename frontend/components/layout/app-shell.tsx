@@ -136,7 +136,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               {user ? (
                 <span className="text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
               ) : (
-                <span className="inline-flex items-center gap-0.5 text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/10 text-teal-700/70 dark:text-teal-300/70 opacity-80" aria-disabled="true">
+                <span className="inline-flex cursor-not-allowed items-center gap-0.5 rounded bg-muted/60 px-1 py-0.5 text-[9px] font-extrabold uppercase text-muted-foreground/50 grayscale opacity-60" aria-disabled="true">
                   Sign in
                 </span>
               )}

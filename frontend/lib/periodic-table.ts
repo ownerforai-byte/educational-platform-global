@@ -65,7 +65,7 @@ export interface PeriodicElement {
  * order (plan.md §2): the core nature + block study at Member, groups &
  * families (incl. the CEE-named ones — the CEE track is Plus) at Plus, and the
  * high-yield special groups & property filters at Pro. Owner reaches all.
- * Locked chips stay visible — dimmed with a lock, one tap to /plans (§4).
+ * Restricted chips stay visible in a muted disabled state; plans are in the footer only (§4).
  */
 export const FILTER_MIN_TIERS: Record<
   PeriodicFilterCategory["classificationType"],

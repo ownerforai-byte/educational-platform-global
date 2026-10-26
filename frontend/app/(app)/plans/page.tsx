@@ -45,7 +45,7 @@ const TIER_CARDS: TierCard[] = [
       "Search preview · free AI quiz pool",
       "Veer AI chat trial — 3 sparks / day",
       "Free always: 3D labs & simulations · HD visuals · Diagram Hub",
-      "Locked previews of Member+ sections (see what's inside)",
+      "Muted previews of Member+ sections (see what's inside)",
     ],
     cta: { label: "Start exploring", href: "/home" },
   },

@@ -21,7 +21,11 @@
  */
 import type { Response } from "express";
 import type { AIService, AIChatMessage } from "../ai/service";
-import { FigureStreamFilter, generateVeerImage, type FigureSpec } from "../ai/image-gen";
+import {
+  FigureStreamFilter,
+  drawReplyFigure,
+  type FigureSpec,
+} from "../ai/image-gen";
 import {
   MAX_CONTINUATIONS,
   continuationRequest,
@@ -241,12 +245,15 @@ Continue with the remaining required substance to reach at least ${floor} words 
       }
     }
 
-    // Draw the figure(s) the model requested (Agnes image models first; the
-    // client falls back to browser-side puter.js on an imageFailed event).
+    // Draw the figure(s) the model requested. Gemini-first (owner 2026-10-25:
+    // reply diagrams "go in the responsibility of gemini no matter which type
+    // is it") — the vector figure rides the event as `svg` and the client
+    // renders it as an interactive ```svg block; the Agnes raster chain is the
+    // fallback, and puter.js remains the client's last resort on imageFailed.
     for (const fig of pendingFigures) {
       const t0 = Date.now();
-      const result = await generateVeerImage(fig.prompt);
-      const ok = !!result.url;
+      const result = await drawReplyFigure(fig.prompt);
+      const ok = !!(result.url || result.svg);
       console.info(
         ok
           ? `[image-gen] stream fig ${fig.id} ready in ${Date.now() - t0}ms`
@@ -254,7 +261,9 @@ Continue with the remaining required substance to reach at least ${floor} words 
       );
       channel.send({
         [ok ? "imageSuccess" : "imageFailed"]: fig.id,
-        url: ok ? result.url : undefined,
+        url: result.url,
+        svg: result.svg,
+        caption: result.caption,
         reason: ok ? undefined : result.reason,
       });
     }

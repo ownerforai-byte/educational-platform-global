@@ -364,11 +364,11 @@ export function DirectoryCard() {
           </div>
         </div>
 
-        {/* ── LOCKED SHELL for guests ───────────────────────────────────── */}
+        {/* ── MUTED ACCESS SHELL for guests ────────────────────────────── */}
         {!loading && !authenticated && (
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 rounded-3xl bg-background/60 p-6 text-center backdrop-blur-[3px]">
             <div
-              className="inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+              className="inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70"
               aria-disabled="true"
             >
               <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
@@ -377,7 +377,7 @@ export function DirectoryCard() {
             </div>
             <div className="max-w-md">
               <p className="text-base font-extrabold tracking-tight text-foreground">
-                Academic Directory is locked
+                Academic Directory is unavailable
               </p>
               <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                 Sign in with your Google account to open the full directory of
@@ -402,7 +402,7 @@ export function DirectoryCard() {
           </div>
         )}
 
-        {/* Loading skeleton to avoid a lock-flash on first paint */}
+        {/* Loading skeleton avoids an access-state flash on first paint */}
         {loading && (
           <div className="absolute inset-0 z-10 flex items-center justify-center rounded-3xl bg-background/60 backdrop-blur-[3px]">
             <Loader2 className="h-6 w-6 animate-spin text-primary" />

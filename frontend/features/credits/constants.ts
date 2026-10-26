@@ -4,7 +4,7 @@
  *
  * SPARK BILLING — "charge for actual note or content -- remove for others":
  *   - actual note/content unlocks (theory notes, question/PYQ sets) → 1 spark
- *   - 3D/AR labs, HD visuals, Diagram Hub → FREE (no spark, no lock)
+ *   - 3D/AR labs, HD visuals, Diagram Hub → FREE (no spark charge)
  *
  * Two separate spark pools exist:
  *   - CONTENT SPARK — spent only on note/content unlocks (this file's matrix).
@@ -20,7 +20,7 @@ import { PDF_VIEWER_PATH } from "@/lib/pdf-src";
 export type ContentCategory = "lab3d" | "visuals" | "theory" | "reference" | "imagehub";
 
 export interface CategoryRule {
-  /** Content-spark cost for one 20-minute unlock window (0 = free, no lock). */
+  /** Content-spark cost for one 20-minute access window (0 = free). */
   cost: number;
   /** Display label used on unlock overlays. */
   label: string;

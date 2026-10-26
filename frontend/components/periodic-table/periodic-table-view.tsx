@@ -89,7 +89,7 @@ export function PeriodicTableView() {
   const { user } = useSession();
   // Filter tiers (owner direction 2026-10-23): each classification family opens
   // at its rung — nature + block at Member, families at Plus, special groups &
-  // properties at Pro. Locked chips stay visible with a lock → /plans (plan.md §4).
+  // properties at Pro. Restricted chips stay visible in a muted disabled state.
   const filterUnlocked = (cat: PeriodicFilterCategory): boolean =>
     hasLevel(user, filterMinTier(cat));
   const [elements, setElements] = useState<PeriodicElement[]>([]);
@@ -503,15 +503,16 @@ export function PeriodicTableView() {
             const isSelected = activeFilterId === cat.id;
             const unlocked = filterUnlocked(cat);
             if (!unlocked) {
+              // Plans live in the footer only; restricted filters stay disabled.
               return (
-                <Link
+                <span
                   key={cat.id}
-                  href="/plans"
-                  title={`${cat.name} opens at ${ACCESS_LABELS[filterMinTier(cat)]} — see plans`}
-                  className="flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-bold transition-all border border-dashed border-border/70 text-muted-foreground/60 opacity-75"
+                  aria-disabled="true"
+                  title={`${cat.name} opens at ${ACCESS_LABELS[filterMinTier(cat)]}`}
+                  className="flex cursor-not-allowed items-center gap-1 rounded-lg border border-border/60 bg-muted/40 px-2 py-0.5 text-[11px] font-bold text-muted-foreground/50 opacity-60 grayscale"
                 >
                   {cat.name}
-                </Link>
+                </span>
               );
             }
             return (

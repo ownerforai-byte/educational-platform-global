@@ -10,7 +10,7 @@ import { useSession } from "@/features/auth/hooks/use-session";
  * coins, opens free for owner emails, and is reserved to owner emails —
  * non-owners are refused the unlock itself (credit provider + the server
  * unlock route), so this layout no longer bounces signed-in non-owners.
- * They reach the route and the RouteCreditGate renders the lock.
+ * They reach the route and the RouteCreditGate renders its unavailable state.
  *
  * Signed-out visitors still go to login and come back here.
  */

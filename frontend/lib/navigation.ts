@@ -50,6 +50,7 @@ import {
   CalendarCheck,
   NotebookPen,
   Repeat,
+  Shapes,
 } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
@@ -148,6 +149,7 @@ const toolsItems: NavItem[] = [
   { href: "/chat/grammar", label: "Grammar Console", icon: BookOpen, minLevel: "visitor" },
   { href: "/ai/math", label: "Veer Math Solver", icon: Sigma, minLevel: "visitor" },
   { href: "/ai/deep-dive", label: "Deep Concept Studio", icon: Lightbulb, minLevel: "visitor" },
+  { href: "/ai/diagrams", label: "Diagram Hub", icon: Shapes, minLevel: "visitor" },
   { href: "/ai/tutor", label: "Veer Tutor Console", icon: Bot, minLevel: "visitor" },
   { href: "/ai/search", label: "Veer Curriculum Search", icon: Search, minLevel: "visitor" },
   { href: "/ai-quiz", label: "Adaptive Veer Quiz", icon: HelpCircle, minLevel: "visitor" },
@@ -222,7 +224,7 @@ export const NAV_HREFS: string[] = NAV_SECTIONS.flatMap((section) =>
  * Tier rule (owner direction 2026-10-23 + plan.md §4 "locked cards stay
  * visible"): quick links start at the Member rung — visitors get header + body
  * + footer only — and each rung sees what it can reach while the rest stay
- * dimmed with a lock, one tap to /plans.
+ * visible in a muted disabled state. Plans are available from the footer only.
  */
 export const QUICK_LINKS = [
   { href: "/home", label: "Home" },
@@ -239,7 +241,7 @@ export const QUICK_LINKS = [
  * The rung a quick link first opens at — DERIVED from the NAV registry above
  * (the plan.md §3 ladder, one tier per destination), so the quick strip, the
  * tier-home rails and the sidebar/drawer can never disagree on who reaches a
- * link. Used for lock badges and "Opens at …" copy.
+ * link. Used for tier badges and "Unavailable on this plan" copy.
  */
 export function quickLinkMinTier(href: string): AccessLevel {
   for (const section of NAV_SECTIONS) {

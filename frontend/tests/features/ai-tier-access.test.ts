@@ -88,8 +88,10 @@ describe("Veer chat: routes stay public (metered), launcher sits under the spark
     // Gate is the ACCESS LADDER (Pro + owner pass), never the owner allowlist.
     expect(src).not.toContain("isOwnerUser");
     expect(src).toContain("hasLevel");
-    // Below Pro the launcher locks and routes to the plan page.
-    expect(src).toContain("/plans");
+    // Owner 2026-10-25: plans live in the footer ONLY — the locked launcher
+    // shows a disabled state and never links to /plans.
+    expect(src).not.toContain("/plans");
+    expect(src).toContain("aria-disabled");
   });
 
   it("no Veer nav entry carries ownerOnly", () => {

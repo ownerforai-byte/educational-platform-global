@@ -62,10 +62,15 @@ export interface StreamImageStart {
   caption?: string;
 }
 
-/** The drawn picture (same id as imageStart). */
+/**
+ * The drawn figure (same id as imageStart): a Gemini vector figure (`svg`,
+ * rendered as an interactive ```svg block — never raw code) or a raster `url`.
+ */
 export interface StreamImageSuccess {
   imageSuccess: number;
-  url: string;
+  url?: string;
+  svg?: string;
+  caption?: string;
 }
 
 /** The server could not draw — the client falls back to puter.js for the same prompt. */
@@ -220,6 +225,7 @@ export async function* streamChat(
           prompt?: string;
           caption?: string;
           url?: string;
+          svg?: string;
           reason?: string;
           phase?: string;
           continuing?: number;
@@ -247,8 +253,13 @@ export async function* streamChat(
           yield { imageStart: parsed.imageStart, prompt: parsed.prompt ?? "", caption: parsed.caption };
           continue;
         }
-        if (typeof parsed.imageSuccess === "number" && parsed.url) {
-          yield { imageSuccess: parsed.imageSuccess, url: parsed.url };
+        if (typeof parsed.imageSuccess === "number" && (parsed.url || parsed.svg)) {
+          yield {
+            imageSuccess: parsed.imageSuccess,
+            url: parsed.url,
+            svg: parsed.svg,
+            caption: parsed.caption,
+          };
           continue;
         }
         if (typeof parsed.imageFailed === "number") {
@@ -412,9 +423,20 @@ export interface ChatSession {
   preview: string;
 }
 
-/** List the signed-in user's conversations (individual chat histories). */
-export async function getChatSessions(): Promise<{ sessions: ChatSession[]; migrated: boolean }> {
-  return apiFetch<{ sessions: ChatSession[]; migrated: boolean }>("/api/chat-history/sessions");
+/**
+ * List the signed-in user's conversations (individual chat histories).
+ *
+ * Scope isolation (owner 2026-10-25: "one interface per subject with their own
+ * history — no mix up"): pass `prefix` (e.g. "subj:physics:") to list only
+ * that interface's conversations.
+ */
+export async function getChatSessions(
+  prefix?: string,
+): Promise<{ sessions: ChatSession[]; migrated: boolean }> {
+  const qs = prefix ? `?prefix=${encodeURIComponent(prefix)}` : "";
+  return apiFetch<{ sessions: ChatSession[]; migrated: boolean }>(
+    `/api/chat-history/sessions${qs}`,
+  );
 }
 
 /** Clear the user's chat history for a session (or every session when omitted). */

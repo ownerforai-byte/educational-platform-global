@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { StepCards } from "@/components/chat/step-cards";
+import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { apiFetch } from "@/lib/api-client";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
@@ -335,9 +337,22 @@ export default function MathStudioPage() {
             </button>
           </div>
 
-          {/* Formatted Markdown Solution with KaTeX equations */}
-          <div className="rounded-2xl bg-muted/20 p-4 border border-border/30 overflow-x-auto">
-            <MathMarkdown content={response.solution} />
+          {/* Step-by-step solution: each step is its own card on its own line
+              (owner 2026-10-25: "step by step not all ending in same line") —
+              ```steps fences become numbered StepCards, the rest stays prose. */}
+          <div className="space-y-3">
+            {splitStepBlocks(response.solution).map((segment, index) =>
+              segment.kind === "steps" ? (
+                <StepCards key={index} steps={segment.steps} />
+              ) : (
+                <div
+                  key={index}
+                  className="rounded-2xl bg-muted/20 p-4 border border-border/30 overflow-x-auto"
+                >
+                  <MathMarkdown content={segment.text} />
+                </div>
+              ),
+            )}
           </div>
         </div>
       )}

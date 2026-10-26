@@ -3,10 +3,10 @@
 /**
  * RequireApproval — the global login + owner-approval wall ("the auth system").
  *
- * Owner request (2026-10-17): "apply the auth system lost in last few commits
- * like waiting for approval after creating account, lock for everything (also
- * the periodic table in header)". The recent public-home pass opened the whole
- * library to signed-out visitors; this gate restores the rule that EVERY route
+ * Owner request (2026-10-17): restore the auth system and approval flow for
+ * every route in the (app) shell, including the periodic table in the header.
+ * The recent public-home pass opened the whole library to signed-out visitors;
+ * this gate restores the rule that EVERY route
  * in the (app) shell — home, notes, labs, the periodic table, chat, profile,
  * everything — requires a signed-in, APPROVED account.
  *
@@ -19,14 +19,14 @@
  *
  * So the wall needs only two visible states:
  *   approved + signed in → render the route.
- *   signed out           → the lock screen (sign in / create account / check
+ *   signed out           → the access screen (sign in / create account / check
  *                          approval status) carrying the mandated notice.
  *
  * Public read-through routes (the notice board and the plans page) stay open
  * to every visitor, and
  * the auth pages themselves (login / signup / welcome / reset — all outside the
  * (app) shell) are never wrapped by this gate. Everything else in the shell is
- * locked — including the periodic table reached from the header.
+ * gated — including the periodic table reached from the header.
  */
 
 import type { ReactNode } from "react";
@@ -68,8 +68,8 @@ export function RequireApproval({ children }: { children: ReactNode }) {
   // The notice board is a read-through page — open to every visitor.
   if (isPublicPath(pathname)) return <>{children}</>;
 
-  // Session still resolving: render neither the lock nor the content, so a
-  // signed-in member never sees the lock flash on first paint.
+  // Session still resolving: render neither the gate nor the content, so a
+  // signed-in member never sees an access-screen flash on first paint.
   if (isLoading) return <ApprovalPending />;
 
   // Signed in — and because the backend only grants sessions to APPROVED
@@ -79,7 +79,7 @@ export function RequireApproval({ children }: { children: ReactNode }) {
   return <ApprovalLock />;
 }
 
-/** First-paint state while the session resolves (no flash of lock or content). */
+/** First-paint state while the session resolves (no flash of gate or content). */
 function ApprovalPending() {
   return (
     <div
@@ -96,7 +96,7 @@ function ApprovalPending() {
   );
 }
 
-/** The lock shown to every visitor without an approved account. */
+/** The muted access screen shown to visitors without an approved account. */
 function ApprovalLock() {
   return (
     <div
@@ -104,7 +104,7 @@ function ApprovalLock() {
       className="mx-auto flex w-full max-w-xl flex-col items-center px-4 py-10 text-center"
     >
       <div
-        className="mx-auto inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5"
+        className="mx-auto inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70"
         aria-disabled="true"
       >
         <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
@@ -129,13 +129,9 @@ function ApprovalLock() {
         </p>
       </div>
 
+      {/* Plans live in the footer only (owner 2026-10-25) — no plans button
+          here; sign-in is the single action. */}
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <Link
-          href="/plans"
-          className="inline-flex h-11 items-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-5 text-sm font-bold text-primary transition-all hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
-        >
-          See plans
-        </Link>
         <Link
           href="/login"
           className="inline-flex h-11 items-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"

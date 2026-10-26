@@ -106,7 +106,7 @@ export function unlockModuleAt(moduleKey: string, expiresAt: number): number {
   return safeExpiry;
 }
 
-/** Immediately re-lock a module (used on expiry and manual lock). */
+/** Immediately close a module access window (used on expiry and manual revoke). */
 export function lockModule(moduleKey: string) {
   hydrate();
   if (!(moduleKey in cache)) return;

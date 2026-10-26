@@ -29,7 +29,7 @@ export function readGuestCount(): number {
   try {
     const day = localStorage.getItem(DAY_KEY);
     const count = parseInt(localStorage.getItem(COUNT_KEY) || "0", 10) || 0;
-    // Past 12:00 AM → yesterday's count must not lock today's composer.
+    // Past 12:00 AM → yesterday's count must not disable today's composer.
     if (day !== dayKey()) return 0;
     return Math.min(Math.max(count, 0), GUEST_DAILY_LIMIT);
   } catch {

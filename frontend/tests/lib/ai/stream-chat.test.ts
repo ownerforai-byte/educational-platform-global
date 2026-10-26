@@ -86,7 +86,17 @@ describe("streamChat", () => {
       'data: {"done":true}\n\n',
     ]);
     expect(chunks[0]).toEqual({ imageStart: 1, prompt: "draw a cell", caption: "cell" });
-    expect(chunks[1]).toEqual({ imageSuccess: 1, url: "https://example.test/cell.png" });
+    expect(chunks[1]).toEqual({ imageSuccess: 1, url: "https://example.test/cell.png", svg: undefined, caption: undefined });
+  });
+
+  it("surfaces Gemini SVG figures without requiring a raster URL", async () => {
+    const svg = '<svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4"/></svg>';
+    const encoded = JSON.stringify(svg).slice(1, -1);
+    const chunks = await collect([
+      `data: {"imageSuccess":2,"svg":"${encoded}","caption":"Cell"}\n\n`,
+      'data: {"done":true}\n\n',
+    ]);
+    expect(chunks[0]).toEqual({ imageSuccess: 2, url: undefined, svg, caption: "Cell" });
   });
 
   it("throws with the HTTP status so 402/504 get their real message", async () => {

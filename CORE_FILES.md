@@ -48,6 +48,10 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/features/credits/route-gate.tsx` | Spark/coin route unlock gate for paid content categories. |
 | `frontend/components/navigation/back-button.tsx` | In-app history tracker and fallback back-to-home navigation control. |
 | `frontend/lib/ui/subject-visuals.ts` | Canonical per-subject visual identity (natural glyphs and color tokens). |
+| `frontend/lib/access-level.ts` | Canonical tier ladder, rank comparisons, and tier-home routing. |
+| `frontend/lib/sections.ts` | Study-section registry including each section's access tier. |
+| `frontend/components/content/section-tier-gate.tsx` | Section-tier enforcement and restricted-section presentation. |
+| `frontend/components/home/home-sections.tsx` | Horizontal section-rail renderer using the section registry and tier policy. |
 
 ### B. Platform Foundations & System State
 | File | Role |
@@ -77,6 +81,13 @@ Whenever you need to know how the platform works and where things route, refer O
 | `backend/src/ai/prompts.ts` | Master academic prompt definitions. |
 | `frontend/lib/ai/prompts.ts` | Frontend prompt configuration and system prompt mirrors. |
 | `frontend/features/credits/constants.ts` | Tier quotas, credit pricing, coin gate constants. |
+| `backend/src/ai/figure-draw.ts` | Server-side figure-generation orchestration and diagram artifact contracts. |
+| `backend/src/ai/image-gen.ts` | Server-side image/diagram generation and research provider integration. |
+| `frontend/lib/ai/subject-classrooms.ts` | Registry of subject-specific AI classroom identities, prompts, and independent history namespaces. |
+| `frontend/components/ai/diagram-studio.tsx` | Diagram Hub teaching interface: researched/generative figure flow with rendered visual outputs. |
+| `frontend/components/ai/subject-classroom.tsx` | Subject classroom UI that keeps conversation history isolated by subject. |
+| `frontend/components/content/section-tier-gate.tsx` | Section-tier enforcement and restricted-section presentation. |
+| `frontend/components/home/home-sections.tsx` | Horizontal section-rail renderer using the section registry and tier policy. |
 
 ### E. Specialized Section Registries (Feature Routing)
 | File | Role |
@@ -114,7 +125,7 @@ Before ending any task, an agent MUST state in its output and record whether the
 ```markdown
 ### 🏷️ File Classification Report
 - `frontend/lib/navigation.ts` → **[IMPORTANT CORE FILE]**: (Reason, e.g. Added new route to navigation registry)
-- `content/ravikishan/class-11-notes/physics/gravitation/concepts/01-newton-law-gravitation.json` → **[CONTENT FILE]**: (Reason, e.g. Authored concept note for Unit 3 Physics)
+- `content/` → **[CONTENT FILE]**: (Reason, e.g. Added learner-facing syllabus or topic data)
 ```
 
 If a new architecture or routing file was created, add it to Section 2 of `CORE_FILES.md`.

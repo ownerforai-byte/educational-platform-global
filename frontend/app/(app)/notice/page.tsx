@@ -72,7 +72,7 @@ const NOTICES: Notice[] = [
     icon: Coins,
     title: "The daily spark pool, and what a spark covers",
     body:
-      "Veer chat is free — no AI spark is ever spent. Content sparks are spent only on actual note/content unlocks (1 spark per 20-minute window); labs, visuals and everything else are free. Spark-gated sections unlock for 20 minutes, then re-lock themselves.",
+      "Veer chat is free — no AI spark is ever spent. Content sparks are spent only on actual note/content access (1 spark per 20-minute window); labs, visuals and everything else are free. Spark-gated sections stay open for 20 minutes, then access expires.",
     href: "/credits",
     linkLabel: "See your plan and top-up options",
   },
@@ -81,8 +81,7 @@ const NOTICES: Notice[] = [
     title: "PRO removes the daily cap",
     body:
       "PRO is for students who use the platform daily: unlimited Veer replies and note sparks with no daily ceiling, instead of a pool that refills once a day.",
-    href: "/plans",
-    linkLabel: "Read the PRO plan",
+    // Plans live in the footer only (owner 2026-10-25) — no plans links here.
   },
   {
     icon: History,

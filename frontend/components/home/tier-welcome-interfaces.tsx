@@ -99,19 +99,14 @@ function TierWelcome({ tier }: { tier: UserTier }) {
           </div>
         </div>
 
-        {/* Go → home */}
+        {/* Go → home. Plans live in the footer only (owner 2026-10-25) —
+            welcome screens carry zero plans traces. */}
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href={homeHrefFor(tier)}
             className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-sm transition hover:opacity-90"
           >
             {TIER_CTA[tier]} →
-          </Link>
-          <Link
-            href="/plans"
-            className="text-xs font-semibold text-muted-foreground hover:text-foreground hover:underline"
-          >
-            See all plans
           </Link>
         </div>
       </div>
@@ -142,9 +137,8 @@ export function UniversalWelcome() {
             <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">R</span>
             <span>Ravikisan&apos;s Platform</span>
           </Link>
-          <Link href="/plans" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-            Plans
-          </Link>
+          {/* Plans live in the footer only (owner 2026-10-25) — the universal
+              welcome carries zero plans traces. */}
         </div>
       </header>
       <main className="flex min-h-[calc(100vh-9rem)] items-center justify-center px-4 py-12">

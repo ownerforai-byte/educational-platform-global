@@ -67,20 +67,24 @@ export default function JournalPage() {
   if (!allowed) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16 text-center">
-        <Card className="border-primary/20 p-8">
-          <div className="mx-auto inline-flex items-center rounded-2xl border border-primary/30 bg-primary/10 px-3 py-1.5" aria-disabled="true">
-            <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
+        <Card aria-disabled="true" className="cursor-not-allowed border-border/60 bg-muted/30 p-8 opacity-65 grayscale">
+          <div className="mx-auto inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70" aria-disabled="true">
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground/70">
               Plus &amp; Pro
             </span>
           </div>
-          <CardTitle className="mt-4 text-xl">The Journal opens at Plus</CardTitle>
+          <CardTitle className="mt-4 text-xl text-muted-foreground">Journal is unavailable on this plan</CardTitle>
           <CardDescription className="mx-auto mt-2 max-w-md text-sm">
-            Study Journal is a Plus and Pro section — private daily entries for your
-            preparation. Upgrade your plan to start writing.
+            Study Journal is available to Plus and Pro accounts — private daily
+            entries for your preparation.
           </CardDescription>
-          <Button asChild className="mt-6 h-10 rounded-xl px-5 text-sm font-semibold">
-            <Link href="/plans">See the plans</Link>
-          </Button>
+          {/* Restricted journal access is shown as a muted disabled state. */}
+          <p
+            aria-disabled="true"
+            className="mt-6 inline-flex h-10 cursor-not-allowed items-center rounded-xl border border-border/60 bg-muted/40 px-5 text-sm font-semibold text-muted-foreground/50 grayscale"
+          >
+            Unavailable on this plan
+          </p>
         </Card>
       </div>
     );

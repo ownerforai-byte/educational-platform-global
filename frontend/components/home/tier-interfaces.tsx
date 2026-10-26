@@ -137,7 +137,7 @@ function SpotlightRow({ items }: { items: Spotlight[] }) {
 /**
  * Quick links for this interface (owner direction 2026-10-23: each tier home
  * gets "access to quick links"). Links at or below the rung open instantly;
- * the rest stay visible — dimmed with a lock, one tap to /plans (plan.md §4).
+ * the rest stay visible in a muted disabled state without an icon or action.
  */
 function QuickLinksRail({ tier }: { tier: AccessLevel }) {
   return (
@@ -147,22 +147,23 @@ function QuickLinksRail({ tier }: { tier: AccessLevel }) {
           Quick links
         </h2>
         <p className="text-[11px] text-muted-foreground">
-          The fast path at your rung — locked ones open one plan up.
+          The fast path at your rung; unavailable destinations are muted.
         </p>
       </div>
       <div className="mt-3 flex flex-wrap gap-2">
         {QUICK_LINKS.map((link) => {
           const unlocked = quickLinkUnlocked(tier, link.href);
           if (!unlocked) {
+            // Plans live in the footer only; render a muted, disabled chip.
             return (
-              <Link
+              <span
                 key={link.href}
-                href="/plans"
-                title={`${link.label} opens at ${ACCESS_LABELS[quickLinkMinTier(link.href)]} — see plans`}
-                className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-dashed border-border px-3.5 py-2 text-xs font-semibold text-muted-foreground/60 opacity-75"
+                aria-disabled="true"
+                title={`${link.label} opens at ${ACCESS_LABELS[quickLinkMinTier(link.href)]}`}
+                className="inline-flex min-h-10 cursor-not-allowed items-center gap-1.5 rounded-full border border-border/60 bg-muted/40 px-3.5 py-2 text-xs font-semibold text-muted-foreground/50 opacity-60 grayscale"
               >
                 {link.label}
-              </Link>
+              </span>
             );
           }
           return (
@@ -227,10 +228,7 @@ function NextRungTeaser({ tier }: { tier: AccessLevel }) {
       <p className="text-xs text-muted-foreground">
         Want more? The{" "}
         <span className="font-bold text-primary">{ACCESS_LABELS[next]}</span> rung opens{" "}
-        {(() => { const count = SECTIONS.filter((s) => s.minTier === next).length; return `${count} more section${count === 1 ? "" : "s"}.`; })()}{" "}
-        <Link href="/plans" className="font-semibold text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
-          See all plans →
-        </Link>
+        {(() => { const count = SECTIONS.filter((s) => s.minTier === next).length; return `${count} more section${count === 1 ? "" : "s"}.`; })()}
       </p>
     </section>
   );

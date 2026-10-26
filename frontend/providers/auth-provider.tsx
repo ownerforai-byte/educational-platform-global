@@ -179,7 +179,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     //
     // Flip the UI to signed-out BEFORE any network I/O: in this same click
     // the owner console, premium surfaces, spark gates and unlock windows all
-    // re-lock. The backend revoke then runs in the background — `logout()`
+    // disable access. The backend revoke then runs in the background — `logout()`
     // re-clears the local credentials itself, so even a failed attempt never
     // leaves this client signed in.
     clearStoredToken();
