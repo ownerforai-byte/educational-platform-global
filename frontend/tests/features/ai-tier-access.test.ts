@@ -74,7 +74,7 @@ describe("AI spark tier table", () => {
   });
 });
 
-describe("Veer chat: routes stay public (metered), launcher sits under the spark gate", () => {
+describe("Veer chat: routes stay metered, launcher is the approved-user panel", () => {
   it("the /ai and /chat layouts no longer gate on owner emails", () => {
     for (const p of ["app/(app)/ai/layout.tsx", "app/(app)/chat/layout.tsx"]) {
       const src = read(p);
@@ -83,15 +83,13 @@ describe("Veer chat: routes stay public (metered), launcher sits under the spark
     }
   });
 
-  it("the floating Veer launcher is locked under the spark gate (Pro + owner)", () => {
+  it("the Veer launcher is a left-side chat for approved accounts only", () => {
     const src = read("components/layout/ai-widget.tsx");
-    // Gate is the ACCESS LADDER (Pro + owner pass), never the owner allowlist.
-    expect(src).not.toContain("isOwnerUser");
-    expect(src).toContain("hasLevel");
-    // Owner 2026-10-25: plans live in the footer ONLY — the locked launcher
-    // shows a disabled state and never links to /plans.
+    expect(src).toContain("fixed left-4");
+    expect(src).toContain("if (!mounted || isLoading || !user) return null");
+    expect(src).not.toContain("aria-disabled");
     expect(src).not.toContain("/plans");
-    expect(src).toContain("aria-disabled");
+    expect(src).toContain('from "@/lib/api/ai"');
   });
 
   it("no Veer nav entry carries ownerOnly", () => {

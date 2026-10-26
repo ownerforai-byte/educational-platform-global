@@ -19,6 +19,7 @@ import { NotificationBell } from "./notification-bell";
 import { UserNav } from "./user-nav";
 import { Footer } from "./footer";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
+import { AIWidget } from "./ai-widget";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -206,6 +207,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       <BackButton />
 
       <PlatformGuideWidget />
+      <AIWidget />
     </div>
   );
 }
