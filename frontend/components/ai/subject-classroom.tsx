@@ -2,11 +2,17 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  Atom,
+  BookOpen,
   Check,
   Copy,
+  Dna,
+  FlaskConical,
   History,
+  Languages,
   Plus,
   Send,
+  Sigma,
   Sparkles,
   Wand2,
 } from "lucide-react";
@@ -28,6 +34,7 @@ import {
   GUEST_DAILY_LIMIT,
 } from "@/lib/ai/guest-quota";
 import { useSession } from "@/features/auth/hooks/use-session";
+import type { SubjectIconName } from "@/lib/ai/subject-classrooms";
 import {
   newSubjectSession,
   subjectSessionKey,
@@ -53,6 +60,15 @@ import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
  * figures — so no raw code ever reaches the student.
  */
 
+const SUBJECT_ICONS = {
+  atom: Atom,
+  book: BookOpen,
+  dna: Dna,
+  flask: FlaskConical,
+  languages: Languages,
+  sigma: Sigma,
+} satisfies Record<SubjectIconName, typeof Atom>;
+
 function parseStoredThread(raw: string | null): AIChatMessage[] {
   if (!raw) return [];
   try {
@@ -76,7 +92,7 @@ function parseStoredThread(raw: string | null): AIChatMessage[] {
 export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom }) {
   const { user, isLoading } = useSession();
   const isLoggedIn = !!user;
-  const Icon = classroom.icon;
+  const Icon = SUBJECT_ICONS[classroom.icon];
 
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [input, setInput] = useState("");

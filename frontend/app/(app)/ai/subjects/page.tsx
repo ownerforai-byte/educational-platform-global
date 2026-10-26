@@ -1,11 +1,21 @@
 import Link from "next/link";
-import { SUBJECT_CLASSROOMS } from "@/lib/ai/subject-classrooms";
+import { Atom, BookOpen, Dna, FlaskConical, Languages, Sigma } from "lucide-react";
+import { SUBJECT_CLASSROOMS, type SubjectIconName } from "@/lib/ai/subject-classrooms";
 
 /**
  * /ai/subjects — the six dedicated subject classrooms in one place (owner
  * 2026-10-25: "one interface per subject with their own history — no mix up,
  * for clarity"). Each classroom owns a private conversation history.
  */
+
+const SUBJECT_ICONS = {
+  atom: Atom,
+  book: BookOpen,
+  dna: Dna,
+  flask: FlaskConical,
+  languages: Languages,
+  sigma: Sigma,
+} satisfies Record<SubjectIconName, typeof Atom>;
 
 export const metadata = {
   title: "Subject Classrooms — one AI classroom per subject",
@@ -30,7 +40,7 @@ export default function SubjectClassroomsPage() {
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SUBJECT_CLASSROOMS.map((classroom) => {
-          const Icon = classroom.icon;
+          const Icon = SUBJECT_ICONS[classroom.icon];
           return (
             <Link
               key={classroom.slug}

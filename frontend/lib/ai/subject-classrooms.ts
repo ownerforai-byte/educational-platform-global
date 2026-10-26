@@ -1,5 +1,4 @@
-import type { LucideIcon } from "lucide-react";
-import { Atom, BookOpen, Dna, FlaskConical, Languages, Sigma } from "lucide-react";
+export type SubjectIconName = "atom" | "book" | "dna" | "flask" | "languages" | "sigma";
 
 /**
  * PER-SUBJECT AI CLASSROOMS (owner 2026-10-25: "one interface per subject with
@@ -40,7 +39,7 @@ export interface SubjectClassroom {
   /** Interface title — "Physics Classroom". */
   title: string;
   tagline: string;
-  icon: LucideIcon;
+  icon: SubjectIconName;
   /** Tailwind text colour for the subject accent. */
   accent: string;
   /** Tailwind background tint for the subject accent. */
@@ -61,7 +60,7 @@ export const SUBJECT_CLASSROOMS: SubjectClassroom[] = [
     subject: "Physics",
     title: "Physics Classroom",
     tagline: "Derivations, numericals and labelled diagrams — NEB Physics XI & XII.",
-    icon: Atom,
+    icon: "atom",
     accent: "text-sky-500",
     accentBg: "bg-sky-500/10",
     accentBorder: "border-sky-500/30",
@@ -79,7 +78,7 @@ export const SUBJECT_CLASSROOMS: SubjectClassroom[] = [
     subject: "Chemistry",
     title: "Chemistry Classroom",
     tagline: "Mechanisms, reactions and apparatus — physical, organic and inorganic.",
-    icon: FlaskConical,
+    icon: "flask",
     accent: "text-emerald-500",
     accentBg: "bg-emerald-500/10",
     accentBorder: "border-emerald-500/30",
@@ -97,7 +96,7 @@ export const SUBJECT_CLASSROOMS: SubjectClassroom[] = [
     subject: "Biology",
     title: "Biology Classroom",
     tagline: "Life cycles, pathways and labelled structures — botany and zoology.",
-    icon: Dna,
+    icon: "dna",
     accent: "text-pink-500",
     accentBg: "bg-pink-500/10",
     accentBorder: "border-pink-500/30",
@@ -115,7 +114,7 @@ export const SUBJECT_CLASSROOMS: SubjectClassroom[] = [
     subject: "Mathematics",
     title: "Mathematics Classroom",
     tagline: "Proofs, derivations and problem solving — every step on its own line.",
-    icon: Sigma,
+    icon: "sigma",
     accent: "text-violet-500",
     accentBg: "bg-violet-500/10",
     accentBorder: "border-violet-500/30",
@@ -133,7 +132,7 @@ export const SUBJECT_CLASSROOMS: SubjectClassroom[] = [
     subject: "नेपाली",
     title: "नेपाली कक्षा — Nepali Classroom",
     tagline: "व्याकरण, रचना र साहित्य — नेपाली भाषामा नै शिक्षण।",
-    icon: Languages,
+    icon: "languages",
     accent: "text-amber-500",
     accentBg: "bg-amber-500/10",
     accentBorder: "border-amber-500/30",
@@ -151,7 +150,7 @@ export const SUBJECT_CLASSROOMS: SubjectClassroom[] = [
     subject: "English",
     title: "English Classroom",
     tagline: "Grammar, writing and language development — origin-first, with citations.",
-    icon: BookOpen,
+    icon: "book",
     accent: "text-indigo-500",
     accentBg: "bg-indigo-500/10",
     accentBorder: "border-indigo-500/30",
