@@ -1,8 +1,6 @@
 import { Brain, ListChecks, Sparkles, Target } from "lucide-react";
 import { QuizStudio } from "@/components/ai/quiz-studio";
 import { AiSurfaceHeader } from "@/components/ai/ai-surface-header";
-import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
-
 export const metadata = {
   title: "Veer Quiz Generator — NEB Practice",
   description:
@@ -39,7 +37,7 @@ export default function AiQuizPage() {
         gradientFrom="from-blue-500/[0.07]"
         crumb="Quiz Generator"
         features={FEATURES}
-        meter={<AiPlanStrip />}
+        showPlanStrip
       />
       <QuizStudio />
     </div>

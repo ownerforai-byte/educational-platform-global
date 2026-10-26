@@ -1,7 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowLeft, type LucideIcon } from "lucide-react";
+import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
 /**
  * Shared AI surface header (plan.md §13 — M4).
@@ -24,7 +23,9 @@ export interface AiSurfaceHeaderProps {
   badge?: string;
   /** Optional feature cards rendered in the hero strip. */
   features?: Array<{ icon: LucideIcon; title: string; text: string }>;
-  /** Pool meter slot (AiPlanStrip / AiSparkBadge) — right-aligned in the hero. */
+  /** Renders the shared plan / coin strip in the meter slot (client hooks stay inside this module). */
+  showPlanStrip?: boolean;
+  /** Pool meter slot (AiSparkBadge, etc.) — right-aligned in the hero. */
   meter?: React.ReactNode;
   /** Breadcrumb label; the "AI Studio" crumb links back to /ai. */
   crumb?: string;
@@ -38,9 +39,11 @@ export function AiSurfaceHeader({
   gradientFrom,
   badge,
   features,
+  showPlanStrip,
   meter,
   crumb,
 }: AiSurfaceHeaderProps) {
+  const meterNode = showPlanStrip ? <AiPlanStrip /> : meter;
   return (
     <div>
       {/* Breadcrumb */}
@@ -81,7 +84,7 @@ export function AiSurfaceHeader({
               <p className="text-xs text-muted-foreground">{subtitle}</p>
             </div>
           </div>
-          {meter && <div className="min-w-0 flex-1 sm:max-w-xs">{meter}</div>}
+          {meterNode && <div className="min-w-0 flex-1 sm:max-w-xs">{meterNode}</div>}
         </div>
 
         {features && features.length > 0 && (
