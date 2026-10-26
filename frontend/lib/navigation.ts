@@ -130,7 +130,7 @@ const stemAndRigorItems: NavItem[] = [
   { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, minLevel: "plus" },
   { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, minLevel: "plus" },
   { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, minLevel: "plus" },
-  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, minLevel: "plus" },
+  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, minLevel: "member" },
   { href: "/theorems", label: "Theorems & Proofs", icon: Binary, minLevel: "pro" },
   { href: "/derivations", label: "Formula Derivations", icon: Layers, minLevel: "pro" },
   { href: "/formulas", label: "Formula Sheets", icon: Sigma, minLevel: "plus" },

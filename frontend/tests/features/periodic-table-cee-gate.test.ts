@@ -6,12 +6,9 @@ import path from "node:path";
  * PERIODIC TABLE CEE UNDER THE SPARK GATE
  * (owner request 2026-10-16: "lock the periodic table cee under the gate also").
  *
- * The 118-element table itself stays free (route policy in
- * features/credits/constants.ts), but every CEE question-bank surface inside
- * it — the dossier's CEE Past MCQs tab, the CEE high-yield summary, and both
- * CEE high-frequency fact panels — renders behind CeeSparkGate: owner and Pro
- * members read directly, everyone else meets the Spark lock (members unlock
- * for coins, guests get the sign-in notice).
+ * The 118-element table itself stays open to members. Filters, block
+ * characteristics, and every CEE surface open at Plus — not by spending
+ * content sparks.
  *
  * The gate is client-side (the session resolves in the browser), so — same
  * style as tests/features/home-subject-rails-owner-gate.test.ts — we pin the
@@ -108,20 +105,11 @@ describe("Periodic table CEE Spark gate", () => {
 describe("CeeSparkGate component", () => {
   const gate = read("components/periodic-table/cee-spark-gate.tsx");
 
-  it("is a client component with the owner + Pro passthrough rule", () => {
+  it("opens at Plus — members see the table, not a coin unlock", () => {
     expect(gate).toContain('"use client"');
-    expect(gate).toContain('tier === "owner" || tier === "pro"');
-    // No lock flash while the session resolves.
+    expect(gate).toContain('hasLevel(user, "plus")');
     expect(gate).toContain("if (isLoading) return null;");
-  });
-
-  it("locks everyone else behind the reference Spark cost", () => {
-    expect(gate).toContain('moduleKey="/periodic-table"');
-    expect(gate).toContain('category="reference"');
-  });
-
-  it("reads the shared tier helper and allowlist — no emails in the gate", () => {
-    expect(gate).toContain('from "@/lib/ai/ai-spark-tiers"');
+    expect(gate).not.toContain("CreditGate");
     expect(gate).not.toContain("@gmail.com");
   });
 });

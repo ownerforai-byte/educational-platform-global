@@ -87,11 +87,11 @@ const GROUP_ROMAN_LABELS = [
 
 export function PeriodicTableView() {
   const { user } = useSession();
-  // Filter tiers (owner direction 2026-10-23): each classification family opens
-  // at its rung — nature + block at Member, families at Plus, special groups &
-  // properties at Pro. Restricted chips stay visible in a muted disabled state.
+  // The 118-element grid is open to members. Filters, block colouring,
+  // characteristics, and CEE open at Plus.
+  const plusTools = hasLevel(user, "plus");
   const filterUnlocked = (cat: PeriodicFilterCategory): boolean =>
-    hasLevel(user, filterMinTier(cat));
+    plusTools && hasLevel(user, filterMinTier(cat));
   const [elements, setElements] = useState<PeriodicElement[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeFilterId, setActiveFilterId] = useState<string>("all");
@@ -345,6 +345,7 @@ export function PeriodicTableView() {
         {/* Quick Search & Zoom Toolbar */}
         <div className="flex items-center gap-1.5 flex-wrap">
           {/* Search */}
+          {plusTools && (
           <div className="relative w-40 sm:w-48">
             <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <input
@@ -363,8 +364,9 @@ export function PeriodicTableView() {
               </button>
             )}
           </div>
+          )}
 
-          {/* Tile colouring: chemical nature vs s/p/d/f block */}
+          {plusTools && (
           <div
             className="flex items-center gap-1 bg-card border border-border/80 rounded-xl p-0.5 shadow-sm"
             title="Recolour the tiles by chemical nature (metal / metalloid / non-metal) or by orbital block (s / p / d / f)"
@@ -396,6 +398,7 @@ export function PeriodicTableView() {
               <span>Block</span>
             </button>
           </div>
+          )}
 
           {/* Screen Fit & Zoom Controls */}
           <div className="flex items-center gap-1 bg-card border border-border/80 rounded-xl p-0.5 shadow-sm text-xs">
@@ -704,6 +707,7 @@ export function PeriodicTableView() {
               </div>
 
               {/* Counts Pills */}
+              {plusTools && (
               <div className="flex items-center gap-1.5 pt-0.5 flex-wrap text-[9.5px]">
                 <span className="px-1.5 py-0.2 rounded bg-sky-500/10 text-sky-500 font-semibold flex items-center gap-1">
                   <GraduationCap className="h-3 w-3" />
@@ -718,10 +722,12 @@ export function PeriodicTableView() {
                   {inspectionElement.keyOresAndCompounds?.length || 0} Ores
                 </span>
               </div>
+              )}
             </div>
           </div>
 
           {/* Action button */}
+          {plusTools && (
           <button
             onClick={() => {
               setSelectedElement(inspectionElement);
@@ -732,6 +738,7 @@ export function PeriodicTableView() {
             <span>Open CEE Dossier</span>
             <ChevronRight className="h-3.5 w-3.5" />
           </button>
+          )}
         </div>
       )}
 
@@ -864,7 +871,7 @@ export function PeriodicTableView() {
                             key={el.atomicNumber}
                             onClick={() => {
                               setSelectedElement(el);
-                              setIsDossierOpen(true);
+                              if (plusTools) setIsDossierOpen(true);
                             }}
                             onMouseEnter={() => setHoveredElement(el)}
                             onMouseLeave={() => setHoveredElement(null)}
@@ -873,7 +880,11 @@ export function PeriodicTableView() {
                                 ? "ring-2 ring-primary scale-110 z-30 shadow-lg bg-primary/20"
                                 : ""
                             } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
-                            title={`${el.name} (${el.symbol}) · #${el.atomicNumber} · Click for CEE Questions`}
+                            title={
+                              plusTools
+                                ? `${el.name} (${el.symbol}) · #${el.atomicNumber} · Click for CEE Questions`
+                                : `${el.name} (${el.symbol}) · #${el.atomicNumber}`
+                            }
                           >
                             <div className="flex items-center justify-between text-[7px] leading-none text-muted-foreground font-mono">
                               <span className="font-bold">{el.atomicNumber}</span>
@@ -1018,6 +1029,7 @@ export function PeriodicTableView() {
         </div>
       )}
 
+      {plusTools && (
       <BlockExplorer
         elements={elements}
         activeFilterId={activeFilterId}
@@ -1027,6 +1039,7 @@ export function PeriodicTableView() {
           setIsDossierOpen(true);
         }}
       />
+      )}
 
       {/* ── 6. DEEP-DIVE CEE ELEMENT DOSSIER MODAL / OVERLAY ─────────────── */}
       {isDossierOpen && selectedElement && (

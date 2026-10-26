@@ -71,11 +71,11 @@ export const FILTER_MIN_TIERS: Record<
   PeriodicFilterCategory["classificationType"],
   AccessLevel
 > = {
-  nature: "member",
-  block: "member",
+  nature: "plus",
+  block: "plus",
   family: "plus",
-  special_group: "pro",
-  property: "pro",
+  special_group: "plus",
+  property: "plus",
 };
 
 /** The rung that first opens a classification filter. */

@@ -2,46 +2,33 @@
 
 import type { ReactNode } from "react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { CreditGate } from "@/features/credits";
-import { aiSparkTierFor } from "@/lib/ai/ai-spark-tiers";
+import { hasLevel } from "@/lib/access-level";
 
 /**
- * Periodic table CEE content under the Spark gate (owner request 2026-10-16:
- * "put the periodic table CEE content under the access gate too").
- *
- * The CEE question bank — past MCQs & traps, CEE speed formulas, high-yield
- * summaries and the CEE high-frequency facts — follows the same tier rule the
- * home features use: owner and Pro members read it directly, every other
- * visitor meets the Spark access gate (members unlock it for coins, guests get the
- * sign-in notice). One unlock window keyed by the route (`/periodic-table`)
- * opens ALL CEE surfaces of the table at once — the same key the Spark
- * library directory unlocks, so one payment never double-bills.
- *
- * While the session is still loading we render nothing, so an owner or Pro
- * member never sees an access-state flash on first paint.
+ * CEE bank, block characteristics, and the other study layers on the periodic
+ * table. The 118-element grid itself stays open to members. These layers
+ * open at Plus.
  */
 export function CeeSparkGate({
   children,
   compact = false,
 }: {
   children: ReactNode;
-  /** Compact variant for the inline CEE fact cards inside hover/ block panels. */
+  /** Compact variant for the inline CEE fact cards inside hover/block panels. */
   compact?: boolean;
 }) {
   const { user, isLoading } = useSession();
   if (isLoading) return null;
-
-  const tier = aiSparkTierFor(user ?? null);
-  if (tier === "owner" || tier === "pro") return <>{children}</>;
+  if (hasLevel(user, "plus")) return <>{children}</>;
 
   return (
-    <CreditGate
-      moduleKey="/periodic-table"
-      category="reference"
-      label="Periodic Table CEE Question Bank — Owner & Pro members"
-      compact={compact}
+    <div
+      aria-disabled="true"
+      className={`cursor-not-allowed rounded-xl border border-border/60 bg-muted/40 text-muted-foreground/70 opacity-70 ${
+        compact ? "px-2 py-1 text-[10px]" : "px-4 py-3 text-xs"
+      }`}
     >
-      {children}
-    </CreditGate>
+      CEE questions, block characteristics, and the other study layers open at Plus.
+    </div>
   );
 }
