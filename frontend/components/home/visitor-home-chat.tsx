@@ -7,7 +7,7 @@ import { postPlatformGuideMessage } from "@/lib/api/platform-guide";
 type ChatLine = { role: "user" | "assistant"; content: string };
 
 const OPENING =
-  "Hi — ask me about this platform, plans, and sign-in. I only answer in text, and I don't teach syllabus topics.";
+  "Hi — I'm Veer AI. Ask me about this platform, plans, and sign-in. I only answer in text, and I don't teach syllabus topics.";
 
 /**
  * The free visitor chat: a text box and a send button. It does not spend
@@ -65,7 +65,7 @@ export function VisitorHomeChat() {
               </span>
               <div className={`max-w-[85%] ${mine ? "items-end" : "items-start"} flex flex-col gap-1`}>
                 <span className={`px-1 text-[10px] font-bold uppercase tracking-wide ${mine ? "text-primary" : "text-foreground"}`}>
-                  {mine ? "You" : "Guide"}
+                  {mine ? "You" : "Veer AI"}
                 </span>
                 <p
                   className={
@@ -86,7 +86,7 @@ export function VisitorHomeChat() {
               <Bot className="h-3.5 w-3.5" />
             </span>
             <div className="flex flex-col gap-1">
-              <span className="px-1 text-[10px] font-bold uppercase tracking-wide text-foreground">Guide</span>
+              <span className="px-1 text-[10px] font-bold uppercase tracking-wide text-foreground">Veer AI</span>
               <p className="rounded-2xl rounded-bl-md border border-border bg-card px-3 py-2 text-muted-foreground">
                 Writing a reply…
               </p>

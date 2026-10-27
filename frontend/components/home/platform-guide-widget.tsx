@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 type ChatLine = { role: "user" | "assistant"; content: string };
 
 const OPENING =
-  "Hi — I can explain Ravikisan's NEB platform, plans, and sign-in. I don't teach syllabus topics here.";
+  "Hi — I'm Veer AI. I can explain Ravikisan's NEB platform, plans, and sign-in. I don't teach syllabus topics here.";
 
 export function PlatformGuideWidget() {
   const pathname = usePathname() ?? "/";
@@ -70,7 +70,7 @@ export function PlatformGuideWidget() {
         >
           <header className="flex items-center justify-between gap-2 border-b border-border/60 bg-gradient-to-r from-primary/10 via-card to-card px-3 py-2.5">
             <div className="min-w-0">
-              <p className="text-xs font-bold text-foreground truncate">Platform guide</p>
+              <p className="text-xs font-bold text-foreground truncate">Veer AI</p>
               <p className="text-[10px] text-muted-foreground truncate">About Ravikisan · not tutoring</p>
             </div>
             <button
