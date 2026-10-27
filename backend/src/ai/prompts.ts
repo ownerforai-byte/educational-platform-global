@@ -175,6 +175,45 @@ export async function buildProfessorContext(
     // Scope classification is best-effort: never block the chat on it.
   }
 
+  // Every remaining pre-reply fetch starts together (owner 2026-10-27: "make
+  // their reply a bit fast"): the syllabus anchor's DB round-trip, the web
+  // search and the diagram fetch overlap each other instead of running one
+  // after another. Each settles to "" on its own, so a slow or dead source
+  // can never cost the student the reply.
+  const safe = async (promise: Promise<string>): Promise<string> => {
+    try {
+      return await promise;
+    } catch {
+      return "";
+    }
+  };
+  const emptyOnTimeout = (ms: number) =>
+    new Promise<string>((resolve) => setTimeout(() => resolve(""), ms));
+  const anchorPromise: Promise<string> =
+    lastUserMessage.trim() && inquiryMode === "academic" && scopeZone !== "non-academic"
+      ? buildSyllabusAnchorBlock(lastUserMessage).catch(() => "")
+      : Promise.resolve("");
+  let webPromise: Promise<string> = Promise.resolve("");
+  let diagramPromise: Promise<string> = Promise.resolve("");
+  try {
+    const svc = getSearchService();
+    // A concept the platform does NOT teach needs the wider net most: ask for
+    // more results, and let the engines return real page text and images.
+    const wanted = coverage === "covered" ? 5 : 6;
+    webPromise =
+      svc.isEnabled() && lastUserMessage.trim()
+        ? Promise.race([
+            svc.searchAsContext(lastUserMessage, wanted),
+            emptyOnTimeout(SITE_TIMEOUT_MS),
+          ])
+        : Promise.resolve("");
+    diagramPromise = question
+      ? Promise.race([fetchDiagramContext(question), emptyOnTimeout(DIAGRAM_TIMEOUT_MS)])
+      : Promise.resolve("");
+  } catch {
+    // Search is best-effort: never block the chat on it.
+  }
+
   // Syllabus anchor + reply floor (owner requirement 2026-09-29): every chat
   // reply is anchored in the NEB syllabus — or traces its origin there when
   // the topic sits outside it — and never ships below the 250-word floor
@@ -183,7 +222,7 @@ export async function buildProfessorContext(
   // to a failed chat request.
   try {
     if (lastUserMessage.trim() && inquiryMode === "academic" && scopeZone !== "non-academic") {
-      const anchor = await buildSyllabusAnchorBlock(lastUserMessage);
+      const anchor = await anchorPromise;
       const floor = floorWordsForQuestion(lastUserMessage);
       parts.push(
         `${anchor}\n\n[REPLY FLOOR — ACADEMIC CONCEPT TREATMENT (HARDCODED, ACADEMIC MODE ONLY)] This reply must reach at least ${floor} words ` +
@@ -209,39 +248,13 @@ export async function buildProfessorContext(
     // Anchor is best-effort: never block the chat on it.
   }
 
-  // ── 3. LIVE MATERIAL — page sources AND diagram files, in parallel ──
-  // Two independent fetches, collected together so neither adds its latency to
-  // the other's: the web search supplies current prose, and DiagramSearch
-  // supplies real labelled figures whose file names match the concept (owner
-  // request 2026-09-30: fetch images/diagrams related to the context). Each one
-  // settles to "" on its own, so a slow or dead source can never cost the
-  // student the other, and neither can cost them the reply.
-  const safe = async (promise: Promise<string>): Promise<string> => {
-    try {
-      return await promise;
-    } catch {
-      return "";
-    }
-  };
-  const emptyOnTimeout = (ms: number) =>
-    new Promise<string>((resolve) => setTimeout(() => resolve(""), ms));
-
+  // ── 3. LIVE MATERIAL — the two live fetches started above, collected now ──
+  // The web search supplies current prose, and DiagramSearch supplies real
+  // labelled figures whose file names match the concept (owner request
+  // 2026-09-30: fetch images/diagrams related to the context). Both were
+  // racing a timeout from the moment the reply work began, so neither can
+  // cost the student the reply.
   try {
-    const svc = getSearchService();
-    // A concept the platform does NOT teach needs the wider net most: ask for
-    // more results, and let the engines return real page text and images.
-    const wanted = coverage === "covered" ? 5 : 6;
-    const webPromise =
-      svc.isEnabled() && lastUserMessage.trim()
-        ? Promise.race([
-            svc.searchAsContext(lastUserMessage, wanted),
-            emptyOnTimeout(SITE_TIMEOUT_MS),
-          ])
-        : Promise.resolve("");
-    const diagramPromise = question
-      ? Promise.race([fetchDiagramContext(question), emptyOnTimeout(DIAGRAM_TIMEOUT_MS)])
-      : Promise.resolve("");
-
     const [web, diagrams] = await Promise.all([safe(webPromise), safe(diagramPromise)]);
     if (web) parts.push(web);
     if (diagrams) parts.push(diagrams);

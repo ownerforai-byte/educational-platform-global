@@ -25,6 +25,7 @@ import {
   FigureStreamFilter,
   drawReplyFigure,
   type FigureSpec,
+  type ReplyFigureResult,
 } from "../ai/image-gen";
 import {
   MAX_CONTINUATIONS,
@@ -117,7 +118,11 @@ export async function streamAnswerToStudent(
   channel.send({ phase: "writing", label: "Writing the answer…" });
 
   const figFilter = new FigureStreamFilter();
-  const pendingFigures: Array<{ id: number; prompt: string }> = [];
+  const pendingFigures: Array<{
+    id: number;
+    prompt: string;
+    drawn: Promise<ReplyFigureResult>;
+  }> = [];
   let figureSeq = 0;
   let acc = "";
   let continued = 0;
@@ -125,7 +130,15 @@ export async function streamAnswerToStudent(
   const emitFigures = (specs: FigureSpec[]) => {
     for (const spec of specs) {
       figureSeq += 1;
-      pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+      // Start the Gemini round-trip the MOMENT the fence closes, so the draw
+      // overlaps the rest of the answer instead of waiting for it to end
+      // (owner 2026-10-27: "make their reply a bit fast").
+      const drawn = drawReplyFigure(spec.prompt).catch(
+        (err): ReplyFigureResult => ({
+          reason: err instanceof Error ? err.message : "figure draw failed",
+        }),
+      );
+      pendingFigures.push({ id: figureSeq, prompt: spec.prompt, drawn });
       channel.send({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
     }
   };
@@ -250,13 +263,14 @@ Continue with the remaining required substance to reach at least ${floor} words 
     // is it") — the vector figure rides the event as `svg` and the client
     // renders it as an interactive ```svg block; the Agnes raster chain is the
     // fallback, and puter.js remains the client's last resort on imageFailed.
-    // Draw the figures at once — each is its own Gemini round-trip — and
-    // emit each event the moment its figure lands. The client swaps its
-    // placeholder per id, so arrival order between figures is free.
+    // Each figure's draw already started when its fence closed, so the
+    // Gemini round-trips overlap the answer itself; here we only collect the
+    // results and emit each event the moment its figure lands. The client
+    // swaps its placeholder per id, so arrival order between figures is free.
     await Promise.all(
       pendingFigures.map(async (fig) => {
         const t0 = Date.now();
-        const result = await drawReplyFigure(fig.prompt);
+        const result = await fig.drawn;
         const ok = !!(result.url || result.svg);
         console.info(
           ok
