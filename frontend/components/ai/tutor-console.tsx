@@ -521,8 +521,15 @@ function systemMessageFor(mode: TutorMode): AIChatMessage {
  */
 export function TutorConsole({
   initialConsole,
+  initialQuestion,
 }: {
   initialConsole?: "nepali" | "grammar";
+  /**
+   * Pre-filled composer text (owner 2026-10-27): the quick Veer panel routes
+   * deep questions here with ?q= — the question is ready to send, focused,
+   * and is NEVER auto-sent (the student presses Enter and spends the spark).
+   */
+  initialQuestion?: string;
 } = {}) {
   const { user, isLoading } = useSession();
   const router = useRouter();
@@ -533,7 +540,7 @@ export function TutorConsole({
   const freeMode = coinGateEnabled === false;
 
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(initialQuestion ?? "");
   const [sending, setSending] = useState(false);
   // True from the first streamed token until the answer completes — retires
   // the "thinking" dots while the bubble is visibly writing itself.
@@ -610,6 +617,18 @@ export function TutorConsole({
   // Restore mode + quota/history after mount (localStorage/sessionStorage
   // never exist on the server — first client paint must match it).
   useEffect(() => {
+    // Deep-question handoff (owner 2026-10-27): when the quick Veer panel
+    // routed a deep question here with ?q=, the composer already carries it —
+    // put the cursor in it so one Enter sends. Never auto-send: the student
+    // sees the full console before the spark is spent.
+    if (initialQuestion) {
+      inputRef.current?.focus();
+      inputRef.current?.setSelectionRange(
+        initialQuestion.length,
+        initialQuestion.length,
+      );
+    }
+
     const deepLinkMode = initialConsole
       ? MODES.find((m) => m.console === initialConsole)?.id
       : undefined;

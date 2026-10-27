@@ -18,11 +18,23 @@ export const metadata: Metadata = {
  *
  * Owner emails only (owner request 2026-10-05): chat/layout.tsx bounces
  * everyone else, and POST /api/ai enforces the same boundary.
+ *
+ * ?q= (owner 2026-10-27): the left-side Veer panel routes DEEP questions
+ * here automatically ("deep questions auto-lead to the main interface") —
+ * the question arrives pre-filled in the composer, ready to send.
  */
-export default function ChatPage() {
+export default async function ChatPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ q?: string }>;
+}) {
+  const params = (await searchParams) ?? {};
+  const initialQuestion =
+    typeof params.q === "string" && params.q.trim() ? params.q.trim().slice(0, 2000) : undefined;
+
   return (
     <div className="h-full w-full">
-      <TutorConsole />
+      <TutorConsole initialQuestion={initialQuestion} />
     </div>
   );
 }

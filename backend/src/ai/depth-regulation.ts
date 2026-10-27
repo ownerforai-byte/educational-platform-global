@@ -5,7 +5,7 @@
  * pedagogical deep-dives, and option-trade-off recommendations.
  */
 
-export type InquiryMode = "generic" | "academic" | "advisory";
+export type InquiryMode = "generic" | "quick" | "academic" | "advisory";
 
 const IDENTITY_RE =
   /\b(who (are|made|built|created|trained) you|what are you|where (do|did) you come from|who is ravikisan|who owns this platform)\b/i;
@@ -28,6 +28,28 @@ const DEPTH_QUESTION_RE =
 const ADVISORY_RE =
   /\b(should i|should we|should you|should (i|we|you) (focus|pick|choose|start|continue|skip|take)|which (is|are) (best|better|good|right|easy|simple)|which should i|which one should|which option|which to (pick|choose|prefer)|recommend|advice|suggestion|what do you (think|suggest|advise)|your (opinion|honest (thought|advice|take))|is it worth|is it (a) (good|bad|worth) idea|how should i|what would you (do|suggest|pick|do)|first (step|thing) to|where should i start|better (option|choice|path|topic|subject)|prioriti[sz]e|prioriti[sz]ation|career (choice|decision|path|advice)|study (plan|order)|exam (plan|strategy))\b/i;
 
+/**
+ * QUICK (owner 2026-10-27: "for quick questions, reply fast with ideas in less
+ * words — pure idea"): a short factual ask — one fact, one formula, one unit,
+ * one meaning, one name — gets the pure-idea reply instead of the concept
+ * treatment. Two gates, both required:
+ *   1. QUICK_RE     — the question asks for a single look-up-able thing;
+ *   2. not DEEP_WORK_RE and length <= QUICK_MAX_CHARS — nothing that demands
+ *      real work (derivation, explanation, comparison, mechanism, solving),
+ *      and nothing long enough to be multi-part.
+ */
+const QUICK_MAX_CHARS = 100;
+
+const QUICK_RE =
+  /\b(what is|what are|what's|whats|define|definition of|formula for|formula of|unit of|units of|symbol of|value of|meaning of|plural of|synonym of|synonym for|antonym of|translate|how many|how much|who is|who was|who discovered|who invented|who found|when is|when was|when did|which class|which unit|short form|full form|spell|spelling of|tense of)\b/i;
+
+const DEEP_WORK_RE =
+  /\b(derive|derivation|prove|proof|show that|explain|describe|discuss|compare|difference|differences|versus|vs\.?|step by step|in detail|solve|calculate|numerical|numericals|deep dive|everything about|teach me|walk me|why|how does|how do|how to|how can|how would|mechanism|elaborate|complete notes|full notes|essay|long answer)\b/i;
+
+function isQuickAsk(q: string): boolean {
+  return q.length <= QUICK_MAX_CHARS && QUICK_RE.test(q) && !DEEP_WORK_RE.test(q);
+}
+
 /** Heuristic mode for server-side directives (floor, retrieval weight). */
 export function classifyInquiryMode(message: string): InquiryMode {
   const q = message.trim();
@@ -36,6 +58,10 @@ export function classifyInquiryMode(message: string): InquiryMode {
   if (GENERIC_RE.test(q) && q.length < 80 && !STRONG_ACADEMIC_RE.test(q) && !SUBJECT_RE.test(q)) {
     return "generic";
   }
+  // QUICK (owner 2026-10-27): a short single-fact ask outranks the academic
+  // machinery — "what is mitosis" / "formula for kinetic energy" get the fast,
+  // pure-idea reply, while "derive…" / "explain…" / "compare…" stay deep.
+  if (isQuickAsk(q)) return "quick";
   // Strong academic verbs OR genuine study questions ("what is / explain /
   // derive / compare …") make the turn academic first, even when it also
   // sounds advisory ("which model is better for the derivation?").
@@ -60,6 +86,16 @@ export function classifyInquiryMode(message: string): InquiryMode {
 }
 
 export function depthDirectiveForMode(mode: InquiryMode): string {
+  if (mode === "quick") {
+    return `[INQUIRY MODE — QUICK (ACTIVE)
+This turn is a QUICK question — one fact, one idea, one formula, one unit, one meaning, one name. OVERRIDE every length rule for THIS reply only: the 250-word floor, the concept biography, the required close (Think / In short / Key words) and the links-last rule.
+- PURE IDEA, MINIMUM WORDS: answer in 1–3 tight sentences (roughly 15–60 words). The first words ARE the answer — no build-up, no restating the question.
+- Every word must carry meaning: if a word can be cut without losing the idea, cut it. No headings, no tables, no worked example, no steps or svg fences, no syllabus-anchor narration, no Key words block, no In short close, no Explore further links.
+- One tiny example, unit or symbol only when the idea is unusable without it (K = ½mv², energy in joules).
+- Fast AND complete: short never means vague — the single idea is exact, correct and self-sufficient.
+- If the student asks for more in the NEXT message ("explain it", "go deeper"), that turn is a normal deep answer — never stay clipped against their will.]`;
+  }
+
   if (mode === "generic") {
     return `[INQUIRY MODE — GENERIC (ACTIVE)
 This turn is classified GENERIC, not a syllabus deep-dive. OVERRIDE the 250-word floor and the long concept-walk for THIS reply only.
@@ -95,7 +131,8 @@ export const DEPTH_REGULATION_RULES = `[CONTEXT-AWARE DEPTH — EXPERT SYSTEM (N
 
 Before writing, classify the latest student message into exactly one mode:
 
-GENERIC — greetings, thanks, logistics, quick factual lookups, mood check-ins, identity-only questions, or any request that does not need a syllabus-grade treatment.
+GENERIC — greetings, thanks, logistics, mood check-ins, identity-only questions, or any request that does not need a syllabus-grade treatment.
+QUICK — a short single-fact ask (about a dozen words): one fact, formula, unit, meaning, name, date or spelling, with no derivation, explanation, comparison or solving demanded.
 ACADEMIC / TECHNICAL — NEB Class 11/12 subjects, derivations, proofs, numerics, definitions, comparisons, exam prep, lab concepts, or any specialized topic that benefits from teaching.
 ADVISORY — the student asks for a choice, plan, opinion or advice ("should I…", "which is better…", "give me advice…", "which should I pick first…").
 
@@ -103,6 +140,11 @@ GENERIC MODE (when active):
 - Concise, high-level, efficient: direct answer first, minimal scaffolding.
 - No mandatory historical survey, no multi-section textbook layout, no forced diagrams.
 - Exempt from the 250-word floor and from "one surface at a time" expansion unless the student asks to go deeper in the same message.
+
+QUICK MODE (when active) — pure idea, fastest honest answer:
+- 1–3 tight sentences (roughly 15–60 words); the first words ARE the answer.
+- No scaffolding at all — no headings, no worked example, no diagrams, no Key words close, no Explore further. Cut every word that does not carry the idea.
+- Never vague: the one idea is exact and self-sufficient; a follow-up "explain more" gets the normal deep treatment.
 
 ACADEMIC MODE (when active) — multidimensional framework ( weave naturally; never print these as numbered section titles ):
 1) Concept biography — what it is in one crisp line, then its whole journey told ONCE as a continuous narrative: who framed it, when and from which earlier ideas, how it evolved into its present form (names, dates).
@@ -120,4 +162,4 @@ ADVISORY MODE (when active):
 
 NO-REPEAT LAW (every mode): a fact, definition, analogy or example stated earlier in the SAME reply must never be restated, paraphrased or re-anchored later in it. An introduction is stated ONCE; every later passage adds new content. Repetition is the fastest way to read "stupid".
 
-Mode choice is silent — never tell the student which mode you picked. If the message mixes modes, treat academic as primary over advisory over generic.]`;
+Mode choice is silent — never tell the student which mode you picked. If the message mixes modes, treat academic as primary over advisory over quick over generic.]`;

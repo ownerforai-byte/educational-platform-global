@@ -13,8 +13,26 @@ describe("classifyInquiryMode", () => {
 
   test("academic signals select deep mode", () => {
     expect(classifyInquiryMode("Derive the lens maker formula")).toBe("academic");
-    expect(classifyInquiryMode("What is mitosis?")).toBe("academic");
+    // 2026-10-27: a bare short "what is X" is now a QUICK ask (pure-idea
+    // reply); the deep treatment needs a deep verb — "explain", "describe".
     expect(classifyInquiryMode("Explain thermodynamics for NEB class 11")).toBe("academic");
+    expect(classifyInquiryMode("Describe the process of photosynthesis in detail")).toBe("academic");
+  });
+
+  test("short single-fact asks select quick mode (owner 2026-10-27: pure idea, less words)", () => {
+    expect(classifyInquiryMode("What is mitosis?")).toBe("quick");
+    expect(classifyInquiryMode("formula for kinetic energy")).toBe("quick");
+    expect(classifyInquiryMode("unit of force?")).toBe("quick");
+    expect(classifyInquiryMode("who discovered the electron")).toBe("quick");
+    expect(classifyInquiryMode("when is the NEB exam")).toBe("quick");
+    expect(classifyInquiryMode("plural of focus")).toBe("quick");
+  });
+
+  test("quick never swallows deep work — deep verbs stay academic", () => {
+    expect(classifyInquiryMode("what is the difference between mitosis and meiosis")).toBe("academic");
+    expect(classifyInquiryMode("what is thermodynamics? explain it in detail")).toBe("academic");
+    expect(classifyInquiryMode("why does the sky look blue")).toBe("academic");
+    expect(classifyInquiryMode("derive the formula for kinetic energy step by step")).toBe("academic");
   });
 
   test("casual non-study questions stay generic (no loose catch-all)", () => {
@@ -41,6 +59,16 @@ describe("depthDirectiveForMode", () => {
     expect(depthDirectiveForMode("generic")).toMatch(/60–180 words/i);
   });
 
+  test("quick directive mandates the pure-idea reply (owner 2026-10-27)", () => {
+    const d = depthDirectiveForMode("quick");
+    expect(d).toMatch(/QUICK/i);
+    expect(d).toMatch(/PURE IDEA/i);
+    expect(d).toMatch(/1–3 tight sentences/i);
+    expect(d).toMatch(/15–60 words/i);
+    expect(d).toMatch(/250-word floor/i);
+    expect(d).toMatch(/Key words block/i);
+  });
+
   test("academic directive includes the expert framework + biography + no-repeat", () => {
     const d = depthDirectiveForMode("academic");
     expect(d).toMatch(/biography/i);
@@ -59,8 +87,9 @@ describe("depthDirectiveForMode", () => {
 });
 
 describe("DEPTH_REGULATION_RULES", () => {
-  test("documents all three modes for the model", () => {
+  test("documents all four modes for the model", () => {
     expect(DEPTH_REGULATION_RULES).toMatch(/GENERIC MODE/i);
+    expect(DEPTH_REGULATION_RULES).toMatch(/QUICK MODE/i);
     expect(DEPTH_REGULATION_RULES).toMatch(/ACADEMIC MODE/i);
     expect(DEPTH_REGULATION_RULES).toMatch(/ADVISORY MODE/i);
   });

@@ -2,19 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Send, UserRound, X } from "lucide-react";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { chat } from "@/lib/api/ai";
+import { isDeepQuestion, isFollowUpAsk } from "@/lib/ai/question-depth";
 import type { AIChatMessage } from "@/types/api";
 
 type Line = { role: "user" | "assistant"; content: string };
 
 const OPENING =
-  "I'm Veer. Ask a syllabus question and I'll answer here. Open the full chat when you want history, photos, or a longer thread.";
+  "I'm Veer — the quick panel. Ask a quick question (a fact, formula, unit, meaning) and I'll answer right here in a few words. A deep question (derivation, explanation, comparison) auto-opens the main Veer chat with your question ready.";
 
 /**
  * Left-side Veer panel for approved accounts only. Visitors keep the plain
@@ -23,6 +24,7 @@ const OPENING =
 export function AIWidget() {
   const { user, isLoading } = useSession();
   const pathname = usePathname();
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -44,6 +46,26 @@ export function AIWidget() {
   async function send() {
     const text = input.trim();
     if (!text || sending) return;
+    // Owner 2026-10-27: deep questions auto-lead to the main interface — the
+    // quick panel answers quick questions only. The question rides along,
+    // pre-filled in the full console's composer (no spark is spent here).
+    // Bare follow-ups ("explain more") stay here: their context is this
+    // panel's own thread, so the main console would answer them contextless.
+    if (isDeepQuestion(text) && !isFollowUpAsk(text)) {
+      setInput("");
+      setError(null);
+      setLines((prev) => [
+        ...prev,
+        { role: "user", content: text },
+        {
+          role: "assistant",
+          content:
+            "That one deserves the full console — opening the main Veer chat with your question, ready to send.",
+        },
+      ]);
+      router.push(`/chat?q=${encodeURIComponent(text)}`);
+      return;
+    }
     const history: AIChatMessage[] = [
       ...lines.map((line) => ({ role: line.role, content: line.content })),
       { role: "user", content: text },
