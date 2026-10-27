@@ -152,26 +152,25 @@ if (isCI && !(email && password)) {
   console.log("SKIP  auth round-trip (set SMOKE_OWNER_EMAIL / SMOKE_OWNER_PASSWORD to enable)");
 }
 
-// ── 4. Public guest chat: open to visitors, quota-metered ──
-// Owner policy 2026-10-21 ("Open public Veer chat with a refresh-resistant
-// daily quota") supersedes the 2026-10-14 owner-only contract this check used
-// to assert. The route is validation-first (pinned in ai-owner-gate.test.ts):
-// an empty body is rejected BEFORE the quota slot and BEFORE any AI call, so
-// these probes prove the route is public (400, never 401) and that the guest
-// device identity is minted for quota accounting — without spending AI.
+// ── 4. Guest chat: closed to anonymous visitors (members-only) ──
+// Owner policy 2026-10-26/27 ("Veer chat is approved-members-only at 3/day —
+// close stale guest remnants", commit 83901e54) supersedes the 2026-10-21
+// open-guest contract. The route stays public-but-closed (pinned in
+// ai-owner-gate.test.ts): no requireAuth, but it answers 403 "Veer chat is
+// for members" before any AI call and mints no device cookie.
 const guestEmpty = await j("/api/ai/guest", {
   method: "POST",
   body: JSON.stringify({}),
 });
-const gid = cookieValue(getSetCookies(guestEmpty.res), "neb-gid");
 step(
-  "anonymous guest chat is open (validation rejects before quota/AI)",
-  guestEmpty.status === 400 && guestEmpty.body?.error === "messages array is required",
+  "anonymous guest chat is closed to members-only",
+  guestEmpty.status === 403 && guestEmpty.body?.error === "Veer chat is for members",
   `status=${guestEmpty.status}`
 );
+const gid = cookieValue(getSetCookies(guestEmpty.res), "neb-gid");
 step(
-  "guest chat mints the neb-gid device cookie for quota accounting",
-  typeof gid === "string" && /^[a-f0-9]{16,64}$/.test(gid),
+  "closed guest chat mints no neb-gid device cookie",
+  typeof gid !== "string",
   gid ? `cookie=neb-gid=${gid.slice(0, 6)}…` : "no cookie minted"
 );
 const guestRepeat = await j("/api/ai/guest", {
@@ -180,8 +179,8 @@ const guestRepeat = await j("/api/ai/guest", {
   body: JSON.stringify({}),
 });
 step(
-  "repeated anonymous guest chat stays open and consistent",
-  guestRepeat.status === 400 && guestRepeat.body?.error === "messages array is required",
+  "repeated anonymous guest chat stays closed and consistent",
+  guestRepeat.status === 403 && guestRepeat.body?.error === "Veer chat is for members",
   `status=${guestRepeat.status}`
 );
 
