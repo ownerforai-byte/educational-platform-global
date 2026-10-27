@@ -3,7 +3,7 @@ import { DIAGRAM_TIMEOUT_MS, fetchDiagramContext } from "./diagram-search";
 import { MASTER_ACADEMIC_RULES } from "./academic-intelligence";
 import { buildSyllabusAnchorBlock, floorWordsForQuestion } from "./syllabus-anchor";
 import { buildCurriculumContext, DEFAULT_RECORD_LIMIT } from "./curriculum-retrieval";
-import { CLASS_SCOPE_RULES, classifyScope } from "./class-scope";
+import { CLASS_SCOPE_RULES, classifyScope, type ScopeZone } from "./class-scope";
 import { DEEP_ANSWER_RULES } from "./deep-answer";
 import { ARTIFACT_RULES } from "./artifact-rules";
 import { REPLY_CRAFT_RULES } from "./reply-craft";
@@ -161,9 +161,15 @@ export async function buildProfessorContext(
   // ── 2. CLASS SCOPE — strictly Class 11/12, plus the rule for "the rest" ──
   // The zone directive follows the retrieval so it can use the coverage answer:
   // a graduate-level signal with no platform material is genuinely beyond-12.
+  // The zone is remembered: a NON-ACADEMIC turn must never also receive the
+  // academic reply floor below — "I'm anxious about my physics exam" is a human
+  // moment first, so it gets the instant, short, polite mentor reply.
+  let scopeZone: ScopeZone | null = null;
   try {
     if (question) {
-      parts.push(classifyScope(question, coverage).directive);
+      const scope = classifyScope(question, coverage);
+      scopeZone = scope.zone;
+      parts.push(scope.directive);
     }
   } catch {
     // Scope classification is best-effort: never block the chat on it.
@@ -176,7 +182,7 @@ export async function buildProfessorContext(
   // Best-effort: a DB problem degrades to the origin-rule-only block, never
   // to a failed chat request.
   try {
-    if (lastUserMessage.trim() && inquiryMode === "academic") {
+    if (lastUserMessage.trim() && inquiryMode === "academic" && scopeZone !== "non-academic") {
       const anchor = await buildSyllabusAnchorBlock(lastUserMessage);
       const floor = floorWordsForQuestion(lastUserMessage);
       parts.push(

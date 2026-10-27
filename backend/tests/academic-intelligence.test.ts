@@ -313,8 +313,13 @@ describe("academic specialist contract coverage", () => {
 
 describe("adaptive teaching contract (2026-09-28)", () => {
   test("every reply teaches new words and adapts to the learner", () => {
-    expect(PROMPT).toContain("teach a new word in every reply");
-    expect(PROMPT).toContain("never repeat a word already taught earlier in this conversation");
+    // 2026-10-26 (c194de91): the standalone "teach a new word in every reply"
+    // movement was folded into the REQUIRED close — the Key words block teaches
+    // the terms with their meanings on every reply — so the contract now pins
+    // the close (plus the adaptive-teaching rule that still stands alone).
+    expect(PROMPT).toContain("close every reply");
+    expect(PROMPT).toContain("in short");
+    expect(PROMPT).toContain("key words");
     expect(PROMPT).toContain("understand the student, then teach in their way");
   });
 
