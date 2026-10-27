@@ -21,11 +21,7 @@
     "'Economic importance' here is mostly harmful (disease burden) plus diagnostic and control value — state both sides.",
     "Mosquito is the vector and second host, not a passive carrier; sporogony happens inside it."
   ],
-  "bounds": [
-    "Covers only: economic importance of p. falciparum (within Faunal Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
     "Draw the two-host life cycle wheel with schizogony and sporogony labelled.",
     "Label ring stage and crescent gametocyte on a smear sketch.",
@@ -190,6 +186,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Falciparum is the malignant malaria of the Terai. The vector is a female Anopheles."
-    }
+    },
+    "notes": [
+      "[Remember] Plasmodium falciparum is the protozoan causing malignant (cerebral) malaria — the deadliest human malaria, transmitted by female Anopheles mosquitoes; Nepal's Terai is the endemic zone.",
+      "[Remember] Life cycle in two hosts: asexual schizogony in humans (liver then red blood cells) and sexual sporogony in mosquitoes; P. falciparum shows accole/several ring forms and crescent (banana-shaped) gametocytes.",
+      "[Understand] Harmful importance: high fever with chills, haemolysis and anaemia, cerebral malaria, blackwater fever; resistant strains and drug resistance make it medically the most significant species.",
+      "[Understand] Diagnosis and control value: blood-smear study of P. falciparum teaches parasite structure; control — DDT/oil larvicides, bed nets, drainage, chloroquine/artemisinin therapy and surveillance in Terai districts.",
+      "[Apply] Table — P. vivax vs P. falciparum (relapse, severity, gametocyte shape, Schüffner's dots absent in falciparum); label the ring stage and gametocyte in a smear sketch.",
+      "[Analyze] Why falciparum kills more: heavy parasitaemia, infected-RBC stickiness blocking brain capillaries, rapid drug-resistance development.",
+      "[Evaluate/Create] NEB answer frame: define with vector → two-host cycle → symptoms and why malignant → vivax contrast table → Terai control measures."
+    ]
   }
 }

@@ -247,7 +247,35 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Dominance, segregation, independent assortment. Pea ratios 3:1 and 9:3:3:1."
-    }
+    },
+    "notes": [
+      "### 1. Gregor Mendel - Father of Genetics",
+      "Mendel conducted experiments on pea plants (Pisum sativum) from 1856-1863. He studied 7 pairs of contrasting characters.",
+      "### 2. Key Terms",
+      "- **Gene**: Unit of heredity, determines a trait",
+      "- **Allele**: Alternative form of a gene",
+      "- **Dominant**: Expressed when present (capital letter)",
+      "- **Recessive**: Expressed only when homozygous (lowercase)",
+      "- **Genotype**: Genetic makeup (e.g., TT, Tt, tt)",
+      "- **Phenotype**: Physical appearance",
+      "- **Homozygous**: Same alleles (TT or tt)",
+      "- **Heterozygous**: Different alleles (Tt)",
+      "- **Monohybrid cross**: Cross involving one trait",
+      "- **Dihybrid cross**: Cross involving two traits",
+      "### 3. Mendel's First Law - Law of Segregation",
+      "During gamete formation, the two alleles for each gene separate (segregate) so that each gamete receives only one allele.",
+      "Monohybrid cross ratio: Genotypic 1:2:1, Phenotypic 3:1",
+      "### 4. Mendel's Second Law - Law of Independent Assortment",
+      "Genes for different traits assort independently during gamete formation (applies to genes on different chromosomes).",
+      "Dihybrid cross ratio: Phenotypic 9:3:3:1",
+      "### 5. Test Cross",
+      "Cross between dominant phenotype and homozygous recessive to determine genotype.",
+      "### 6. Entrance Exam Focus",
+      "Solve Punnett squares; Calculate ratios; Distinguish between laws.",
+      "Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.",
+      "The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.",
+      "The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene."
+    ]
   },
   "bounds": [
     "Class 11 boundary: stop at the characters in this note.",

@@ -186,7 +186,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Alleles segregate. Unlinked genes assort independently. Ratios 3:1 and 9:3:3:1."
-    }
+    },
+    "notes": [
+      "A gene can exist as alleles. A diploid individual carries two alleles of each gene.",
+      "Dominance means that in a heterozygote, one allele's phenotype hides the other allele's phenotype.",
+      "Segregation: those two alleles separate when gametes form, so each gamete gets one.",
+      "A cross of two heterozygotes therefore gives a genotype ratio of 1:2:1 and, if dominance is complete, a phenotype ratio of 3:1.",
+      "Independent assortment: alleles of different, unlinked genes are sorted independently. Two such genes in a double heterozygote cross give 9:3:3:1.",
+      "A test cross with the homozygous recessive reveals whether a dominant phenotype hides a recessive allele. Linked genes are the exception this note only flags: they do not assort independently."
+    ]
   },
   "bounds": [
     "Stay inside this class 11 topic.",

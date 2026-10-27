@@ -15,21 +15,13 @@
     "A potato is a stem tuber because it has buds. A sweet potato is a storage root. A thorn of a citrus-type stem is a modified stem, while a prickle may be superficial. The presence of nodes or buds decides a stem."
   ],
   "confusion": [
-    "❌ treat \"Angiosperm\" as one blob → ✅ split into: angiosperm, morphology of root, stem.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "A potato tuber is a stem, not a root.",
     "Parallel venation is the monocot pattern. Reticulate is the dicot pattern.",
     "A fruit comes from the ovary. A naked gymnosperm seed is not a fruit.",
     "Phyllotaxy is the arrangement of leaves, not of petals."
   ],
-  "bounds": [
-    "Covers only: angiosperm, morphology of root, stem, leaves (within Floral Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "define + example each sub-idea: angiosperm, morphology of root, stem, leaves.",
     "one worked example for \"Angiosperm: Morphology of root, stem, leaves, inflorescen…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -114,8 +106,8 @@
     "A table beats a vague paragraph."
   ],
   "examShortTricks": [
-    "A potato is a stem tuber because it has buds. A sweet potato is a storage root. A thorn of a citrus-type stem ",
-    "Racemose inflorescences open from below upward. Cymose ones open the top flower first. A flower is hypogynous "
+    "A potato is a stem tuber because it has buds. A sweet potato is a storage root. A thorn of a citrus-type stem",
+    "Racemose inflorescences open from below upward. Cymose ones open the top flower first. A flower is hypogynous"
   ],
   "specialNotes": [
     "Match the organism to the character.",
@@ -195,6 +187,14 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Root, stem, leaf, inflorescence, flower and fruit, with the modifications named."
-    }
+    },
+    "notes": [
+      "**Root systems.** Roots are taproot (mustard), fibrous (grass) or adventitious (banyan prop roots); they anchor the plant, absorb water and minerals and often store food.",
+      "**Stem.** The stem bears nodes, internodes, leaves and buds, and may be modified for storage (potato tuber), support (tendrils) or protection (thorns).",
+      "**Leaves.** Leaves show simple or compound lamina, reticulate (dicot) or parallel (monocot) venation, and arrangements called phyllotaxy (alternate, opposite, whorled).",
+      "**Inflorescence.** Flowers are arranged as racemose (acropetal succession) or cymose (basipetal succession) inflorescences on the floral axis.",
+      "**Flower and fruit.** A complete flower has calyx, corolla, androecium and gynoecium; after fertilisation the ovary becomes a fruit whose pericarp encloses the seeds.",
+      "A potato is a stem tuber because it has buds. A sweet potato is a storage root. A thorn of a citrus-type stem is a modified stem, while a prickle may be superficial. The presence of nodes or buds decides a stem."
+    ]
   }
 }

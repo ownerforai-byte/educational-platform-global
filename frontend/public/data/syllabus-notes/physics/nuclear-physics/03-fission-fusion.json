@@ -9,11 +9,16 @@
     "Reaction energy follows mass-energy conservation: Q=(mi−mf)c². Positive Q means the final rest mass is lower and the difference appears as kinetic energy, radiation or excitation.",
     "Uranium-235 fission can release several neutrons. A sustained chain reaction requires, on average, enough neutrons to induce further fissions; a reactor controls this multiplication with neutron absorbers and moderators.",
     "Deuterium–tritium fusion can form helium-4 and a neutron, releasing about 17.6 MeV. The positively charged nuclei must approach closely despite Coulomb repulsion, requiring high temperature and adequate confinement.",
-    "Fission is used in nuclear power stations; fusion powers stars. Practical fusion requires maintaining a hot dense plasma long enough for reaction energy to exceed losses."
+    "Fission is used in nuclear power stations; fusion powers stars. Practical fusion requires maintaining a hot dense plasma long enough for reaction energy to exceed losses.",
+    "Fission and fusion release energy for the same structural reason: the products sit higher on the curve of binding energy per nucleon. Fission starts from a very heavy nucleus. Fusion starts from very light ones. A typical fission releases about 200 MeV, carried by the fragments, neutrons and radiation."
   ],
   "confusion": [
     "Mass is converted to other forms of energy; total energy is conserved.",
-    "High temperature alone does not guarantee useful fusion; confinement matters."
+    "High temperature alone does not guarantee useful fusion; confinement matters.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
   ],
   "practice": [
     "Contrast fission and fusion by reactant mass and mechanism.",
@@ -29,7 +34,10 @@
   "motionGraphics": "nuclear-physics",
   "examples": [
     "D+T→⁴He+n releases approximately 17.6 MeV.",
-    "A fission chain is sustained only when enough emitted neutrons cause later fissions."
+    "A fission chain is sustained only when enough emitted neutrons cause later fissions.",
+    "Fission and fusion release energy for the same structural reason: the products sit higher on the curve of binding energy per nucleon. Fission starts from a very heavy nucleus. Fusion starts from very light ones. A typical fission releases about 200 MeV, carried by the fragments, neutrons and radiation.",
+    "The working relations are Fission splits a heavy nucleus and Fusion joins light nuclei. Both can release energy. Name each symbol, convert the data into SI units, and only then substitute.",
+    "One fission releases 200 MeV. Express that energy in joules. Use 1 eV = 1.6 × 10^−19 J."
   ],
   "practiceQuestions": [
     "Contrast fission and fusion by reactant mass and mechanism.",
@@ -43,7 +51,11 @@
   "keyPoints": [
     "Energy comes from reduced total rest mass.",
     "Fission splits heavy nuclei; fusion combines light nuclei.",
-    "Fusion must overcome or tunnel through Coulomb repulsion."
+    "Fusion must overcome or tunnel through Coulomb repulsion.",
+    "Fission splits a heavy nucleus",
+    "Fusion joins light nuclei. Both can release energy",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
   ],
   "summary": "Fission and fusion release energy when products are more tightly bound, with Q=(mi−mf)c². Fission can multiply neutrons; fusion needs extreme conditions.",
   "specialNotes": [
@@ -72,7 +84,11 @@
   "importantConcepts": [
     "Energy comes from reduced total rest mass.",
     "Fission splits heavy nuclei; fusion combines light nuclei.",
-    "Fusion must overcome or tunnel through Coulomb repulsion."
+    "Fusion must overcome or tunnel through Coulomb repulsion.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
   ],
   "importantTasks": [
     "Contrast fission and fusion by reactant mass and mechanism.",
@@ -86,5 +102,102 @@
     "**Fission vs Fusion Energy Release:** Both release energy by moving toward higher $BE/A$ (iron peak). Fission splits heavy nuclei ($A > 56$) into medium fragments. Fusion combines light nuclei ($A < 56$) into heavier ones. Both increase the average $BE/A$ of the system.",
     "**Chain Reaction Requirement:** Fission of $^{235}$U by thermal neutrons produces ~2.4 fast neutrons/fission. A sustained chain reaction requires at least 1 neutron to cause another fission ($k \\ge 1$). Critical mass is the minimum mass where neutron losses are balanced by productions. Moderators (graphite, water) slow neutrons to thermal energies to increase capture probability.",
     "**Fusion Conditions:** Requires extreme temperature ($T \\sim 10^7-10^8$ K) for nuclei to overcome Coulomb barrier ($kT \\sim 1$ keV vs barrier $\\sim 1$ MeV). Quantum tunneling allows fusion at lower energies. Plasma confinement (magnetic/inertial) is needed to maintain density and temperature long enough for significant fusion (Lawson criterion: $n\\tau > 10^{20}$ m⁻³·s)."
+  ],
+  "mcs": [
+    {
+      "question": "Fission is the splitting of",
+      "options": [
+        "A very light nucleus as the usual fuel",
+        "A very heavy nucleus",
+        "An electron",
+        "A molecule only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Fusion joins",
+      "options": [
+        "Light nuclei",
+        "Only nuclei heavier than iron",
+        "Electrons into a nucleus",
+        "Nothing, and absorbs energy always"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "200 MeV is",
+      "options": [
+        "3.2 × 10^−11 J",
+        "200 J",
+        "1.6 × 10^−19 J",
+        "931 J"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Both processes can release energy because the products have",
+      "options": [
+        "Lower binding energy per nucleon",
+        "Higher binding energy per nucleon",
+        "Zero mass",
+        "No neutrons"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Fission is the splitting of",
+      "options": [
+        "A very light nucleus as the usual fuel",
+        "A very heavy nucleus",
+        "An electron",
+        "A molecule only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Fusion joins",
+      "options": [
+        "Light nuclei",
+        "Only nuclei heavier than iron",
+        "Electrons into a nucleus",
+        "Nothing, and absorbs energy always"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "200 MeV is",
+      "options": [
+        "3.2 × 10^−11 J",
+        "200 J",
+        "1.6 × 10^−19 J",
+        "931 J"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Both processes can release energy because the products have",
+      "options": [
+        "Lower binding energy per nucleon",
+        "Higher binding energy per nucleon",
+        "Zero mass",
+        "No neutrons"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "One fission releases 200 MeV. Express that energy in joules. Use 1 eV = 1.6 × 10^−19 J.",
+      "steps": [
+        "200 MeV = 2.00 × 10^8 eV.",
+        "Energy = 2.00 × 10^8 × 1.6 × 10^−19.",
+        "That product is 3.2 × 10^−11 J.",
+        "This is one nucleus, not one gram.",
+        "Fusion of light nuclei releases energy per nucleon for a different mass number, but the joule conversion is the same."
+      ],
+      "answer": "3.2 × 10^−11 J."
+    }
   ]
 }

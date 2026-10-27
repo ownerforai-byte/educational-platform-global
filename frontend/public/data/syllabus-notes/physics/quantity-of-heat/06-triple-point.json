@@ -6,11 +6,7 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "bounds": [
-    "Covers only: triple point (within Quantity of Heat).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
     "one worked example for \"Triple point\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid.",
@@ -44,7 +40,6 @@
     "Apply it to one boundary case (where the limit applies) and state the answer."
   ],
   "keyPoints": [
-    "Connection of Triple Point to other topics",
     "Water's triple-point pressure is about 611 Pa",
     "The boiling point depends on pressure. The triple point does not wander",
     "Convert units before substituting.",
@@ -99,17 +94,14 @@
     "Atmospheric pressure is 1.01 × 10^5 Pa. How many times larger is it than the water triple-point pressure of 611 Pa? Divide 1.01 × 10^5 by 611. 1.01 × 10^5 / 611 ≈ 165."
   ],
   "importantNotes": [
-    "Triple Point is based on fundamental principles.",
     "Do not skip the unit conversion.",
     "Match the formula to the situation drawn, not to a neighbouring topic."
   ],
   "examShortTricks": [
-    "Recall the formula for Triple Point.",
     "SI units first, then the formula.",
     "The last line is the number, the unit, and the direction if there is one."
   ],
   "importantConcepts": [
-    "Definition and significance of Triple Point.",
     "Definition",
     "Formula",
     "Unit",

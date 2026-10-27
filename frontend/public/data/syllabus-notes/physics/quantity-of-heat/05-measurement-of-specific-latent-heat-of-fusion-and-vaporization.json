@@ -15,8 +15,6 @@
     "A control run, or a cooling correction, accounts for heat exchanged with the room during a slow experiment. Ignoring a gain from the room makes a fusion result for L_f too high, because the water seems to have given the ice more heat than it did."
   ],
   "confusion": [
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
     "Ice at 0°C still needs m c θ after it has become water.",
     "Steam at 100°C still gives up m c (100 − θ) after it has condensed.",
@@ -24,9 +22,6 @@
     "The calorimeter is on the water's side of the equation, not the ice's side, if it started at the water temperature."
   ],
   "bounds": [
-    "Covers only: measurement of specific latent heat of fusion, vaporization (within Quantity of Heat).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
   ],
   "practice": [

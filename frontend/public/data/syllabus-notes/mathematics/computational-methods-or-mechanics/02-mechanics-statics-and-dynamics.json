@@ -4,7 +4,13 @@
   "topicSlug": "mechanics-statics-and-dynamics",
   "topicTitle": "Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane",
   "relevance": 100,
-  "notes": [],
+  "notes": [
+    "Statics studies forces on a body at rest or in uniform motion, so the resultant force is zero. Dynamics studies the motion produced when the resultant force is not zero.",
+    "Parallelogram law: if two forces at a point are drawn as adjacent sides of a parallelogram, their resultant is the diagonal from that point. For forces P and Q with included angle θ, the resultant has magnitude √(P² + Q² + 2PQ cos θ).",
+    "A force F at an angle θ to the x-axis has components F cos θ and F sin θ. For several coplanar forces at one point, the resultant has components ΣFx and ΣFy and magnitude √((ΣFx)² + (ΣFy)²).",
+    "Along a straight line with constant acceleration a, the equations are v = u + at, s = ut + ½at², and v² = u² + 2as.",
+    "Under gravity, take the acceleration as g downward. On a smooth incline of angle α the acceleration down the plane is g sin α, because the component of the weight along the plane is mg sin α and friction is absent."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],

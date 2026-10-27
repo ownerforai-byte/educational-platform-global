@@ -15,21 +15,13 @@
     "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minus strains are both required for the zygospore in the usual heterothallic account."
   ],
   "confusion": [
-    "❌ treat \"Structure\" as one blob → ✅ split into: structure, reproduction of mucor, yeast.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "A zygospore is sexual. A sporangiospore is asexual.",
     "The columella is not a spore.",
     "Budding is asexual. Fusion starts the sexual path in yeast.",
     "Do not draw rhizoids on Mucor unless the question says Rhizopus."
   ],
-  "bounds": [
-    "Covers only: structure, reproduction of mucor, yeast (within Floral Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "define + example each sub-idea: structure, reproduction of mucor, yeast.",
     "one worked example for \"Structure and reproduction of Mucor and Yeast\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -196,6 +188,14 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Mucor: sporangium and zygospore. Yeast: bud and ascus."
-    }
+    },
+    "notes": [
+      "**Mucor thallus.** Mucor is a saprophytic mould with branched, aseptate (coenocytic) hyphae that grow on decaying organic matter such as bread and fruit.",
+      "**Mucor reproduction.** Asexually it forms sporangiospores inside a globose sporangium; sexually, compatible hyphae fuse to produce a thick-walled zygospore.",
+      "**Yeast structure.** Saccharomyces cerevisiae is a unicellular, oval eukaryote with a chitinous wall, a large vacuole and a single nucleus — it has no mycelium.",
+      "**Yeast reproduction.** Yeast multiplies by budding and fission; under sexual conditions it forms ascospores inside an ascus, so it is classified with the ascomycetes.",
+      "**Economic importance.** Yeast ferments sugars to ethyl alcohol and carbon dioxide (baking, brewing) and is a source of vitamin B and single-cell protein.",
+      "The columella inside a Mucor sporangium is sterile. Spores are cut from the cytoplasm around it. Plus and minus strains are both required for the zygospore in the usual heterothallic account."
+    ]
   }
 }

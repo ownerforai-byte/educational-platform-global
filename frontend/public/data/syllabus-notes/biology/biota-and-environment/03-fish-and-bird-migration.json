@@ -21,13 +21,8 @@
     "Altitudinal migration (hills ↔ Terai) is still migration even though the distance is short.",
     "Homing instinct and banding studies prove return journeys; do not claim birds 'get lost and stay'."
   ],
-  "bounds": [
-    "Covers only: fish, bird migration (within Biota and Environment).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "Define migration; list two fish and two bird examples with direction of movement.",
     "Draw the anadromous vs catadromous arrow table from memory in under 3 minutes.",
     "Recall card: triggers → navigation cues → one Nepali site → one cost."
   ],
@@ -42,7 +37,6 @@
     "Pheasants descending from high hills to lower valleys in winter (altitudinal migration)."
   ],
   "practiceQuestions": [
-    "Define migration and distinguish it from dispersal and emigration. (2)",
     "Differentiate anadromous and catadromous fish migration with one example of each. (3)",
     "Describe bird migration with its causes, navigation and two Nepali examples. (5)"
   ],
@@ -121,7 +115,7 @@
     "The example organism has to be able to do the job you assign it."
   ],
   "importantConcepts": [
-    "Fish move sea-to-river or river-to-sea. ",
+    "Fish move sea-to-river or river-to-sea.",
     "Contrast",
     "Example",
     "Limit"
@@ -190,6 +184,15 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Fish move sea-to-river or river-to-sea. Birds move by latitude or by altitude."
-    }
+    },
+    "notes": [
+      "[Remember] Migration is the periodic, seasonal, two-way movement of animals between breeding and non-breeding habitats — distinct from one-way dispersal or permanent emigration.",
+      "[Remember] Fish migration: anadromous fishes move from sea to fresh water to breed (e.g. Hilsa ilisha ascending Terai rivers in monsoon); catadromous fishes move from fresh water to sea to breed (e.g. eels, Anguilla).",
+      "[Understand] Bird migration types: latitudinal or north–south (Siberian ducks wintering at Koshi Tappu and Chitwan), longitudinal, and altitudinal (pheasants and thrushes descending from hills to Terai in winter).",
+      "[Understand] Causes and triggers: breeding urge, food scarcity, shortening photoperiod, falling temperature and hormonal change; navigation uses the sun compass, star patterns, Earth's magnetic field and geographical landmarks.",
+      "[Apply] Contrast table — anadromous vs catadromous (direction, breeding ground, one example each); resident vs migratory vs partial-migrant birds with one Nepali example of each.",
+      "[Analyze] Advantages (safe breeding grounds, abundant seasonal food) versus costs (enormous energy demand, predation, barriers such as dams and habitat loss); homing instinct and ringing/banding studies as evidence.",
+      "[Evaluate/Create] NEB answer frame: define migration → classify fish and bird types → causes and navigation → Koshi Tappu/Chitwan and Terai-river examples → one advantage–cost line → labelled route sketch."
+    ]
   }
 }

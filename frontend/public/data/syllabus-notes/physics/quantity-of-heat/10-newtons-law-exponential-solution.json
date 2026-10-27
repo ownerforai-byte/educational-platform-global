@@ -14,8 +14,6 @@
     "The excess temperature falls to 1/e of its initial value in 5.0 min. How long does it take to fall to half the initial excess?"
   ],
   "practiceQuestions": [
-    "Q1. Define Newton's Law of Cooling — Exponential Solution & Graph.",
-    "Q3. Problem on Newton's Law of Cooling — Exponential Solution & Graph.",
     "What function describes the excess temperature?",
     "What plot is a straight line?",
     "Does the body reach θ0 in a finite time?"
@@ -25,7 +23,6 @@
     "Half-excess time = (mc/K) ln 2"
   ],
   "keyPoints": [
-    "Connection of Newton's Law of Cooling — Exponential Solution & Graph to other topics",
     "Separate variables.",
     "Integrate from the initial excess.",
     "The excess decays exponentially.",
@@ -42,12 +39,10 @@
     "Integrate from the initial temperature θ1 at t = 0 to the temperature θ at time t. The left side becomes the natural log of the ratio of the excesses."
   ],
   "importantNotes": [
-    "Newton's Law of Cooling — Exponential Solution & Graph is based on fundamental principles.",
     "Keep the excess, not the Celsius temperature, inside the exponential.",
     "The slope of the log graph is negative."
   ],
   "examShortTricks": [
-    "Recall the formula for Newton's Law of Cooling — Exponential Solution & Graph.",
     "ln(excess) versus t is linear.",
     "Half-excess time is (mc/K) ln 2."
   ],
@@ -98,7 +93,6 @@
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Newton's Law of Cooling — Exponential Solution & Graph.",
     "Separation of variables",
     "Exponential excess",
     "Half-cooling time",

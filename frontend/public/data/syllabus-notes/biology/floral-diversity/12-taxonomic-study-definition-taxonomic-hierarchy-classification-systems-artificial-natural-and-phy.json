@@ -15,21 +15,13 @@
     "Linnaeus's sexual system was artificial: a few floral characters carried the whole classification. Bentham and Hooker built a natural system from many characters at once. A phylogenetic system tries to follow ancestry."
   ],
   "confusion": [
-    "❌ treat \"Taxonomic study\" as one blob → ✅ split into: taxonomic study, definition, taxonomic hierarchy.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "Artificial does not mean useless. It means few characters.",
     "Systematics adds evolutionary relationship. Naming alone is nomenclature.",
     "A key is not a kingdom.",
     "Genus is not the basic unit. Species is."
   ],
-  "bounds": [
-    "Covers only: taxonomic study, definition, taxonomic hierarchy, classification systems (within Floral Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "define + example each sub-idea: taxonomic study, definition, taxonomic hierarchy, classification systems.",
     "one worked example for \"Taxonomic study: Definition, taxonomic hierarchy, classif…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -195,6 +187,14 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Hierarchy from kingdom to species. Artificial, natural and phylogenetic systems."
-    }
+    },
+    "notes": [
+      "**Taxonomy.** Taxonomy is the branch of biology that identifies, describes, classifies and names organisms; systematics additionally studies their evolutionary relationships.",
+      "**Hierarchy of categories.** Classification follows the sequence Kingdom → Phylum → Class → Order → Family → Genus → Species, with species as the fundamental unit.",
+      "**Binomial nomenclature.** Each species gets a two-word Latin name (genus + species) in italics or underlined, with the genus capitalised, as in Panthera tigris.",
+      "**Systems of classification.** Artificial systems (Linnaeus) use a few visible characters, natural systems (Bentham and Hooker) use many characters, and phylogenetic systems use evolutionary relationships.",
+      "**Taxonomic aids.** Herbaria, botanical gardens, museums, keys and manuals help identify and study organisms; a key narrows identity through paired contrasting characters.",
+      "Linnaeus's sexual system was artificial: a few floral characters carried the whole classification. Bentham and Hooker built a natural system from many characters at once. A phylogenetic system tries to follow ancestry."
+    ]
   }
 }

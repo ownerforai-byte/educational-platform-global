@@ -15,21 +15,13 @@
     "Crustose lichens lie flat on rock, foliose ones are leafy, and fruticose ones hang or stand, as Usnea does on temperate branches in Nepal."
   ],
   "confusion": [
-    "❌ treat \"Lichen\" as one blob → ✅ split into: lichen, characteristic features, economic importance of lichen.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "A lichen is not a single organism and not a moss.",
     "The alga feeds both by photosynthesis. The fungus absorbs and protects.",
     "Usnea is a lichen, not a pine.",
     "Pollution sensitivity is a use in surveys, not a reason they like dirty air."
   ],
-  "bounds": [
-    "Covers only: lichen, characteristic features, economic importance of lichen (within Floral Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "define + example each sub-idea: lichen, characteristic features, economic importance of lichen.",
     "one worked example for \"Lichen: General introduction, characteristic features and…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -115,7 +107,7 @@
     "A table beats a vague paragraph."
   ],
   "examShortTricks": [
-    "Crustose lichens lie flat on rock, foliose ones are leafy, and fruticose ones hang or stand, as Usnea does on ",
+    "Crustose lichens lie flat on rock, foliose ones are leafy, and fruticose ones hang or stand, as Usnea does on",
     "Lichens colonise bare rock, indicate polluted air because many of them disappear when the air is foul, and som"
   ],
   "specialNotes": [
@@ -196,6 +188,14 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "A lichen is a fungus plus a photosynthetic partner. Growth form is crust, leaf or shrub."
-    }
+    },
+    "notes": [
+      "**Symbiotic association.** A lichen is a partnership between a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (phycobiont); the fungus supplies shelter and minerals while the partner supplies food.",
+      "**Thallus types.** Lichens are crustose (crust-like, tightly attached), foliose (leafy, loosely attached) and fruticose (shrubby or pendant).",
+      "**Pioneer vegetation.** Lichens colonise bare rock and gradually build soil, so they are pioneer species in primary succession.",
+      "**Pollution indicator.** Lichens are extremely sensitive to sulphur dioxide and other air pollutants; their abundance signals clean air and their disappearance signals polluted air.",
+      "**Economic importance.** Lichens yield litmus and dyes, provide fodder (reindeer moss), and produce antibiotic compounds such as usnic acid.",
+      "Crustose lichens lie flat on rock, foliose ones are leafy, and fruticose ones hang or stand, as Usnea does on temperate branches in Nepal."
+    ]
   }
 }

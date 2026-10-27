@@ -15,21 +15,13 @@
     "In-situ is preferred because evolution and ecological relationships continue. Ex-situ is the backup when the habitat is already failing, and it does not replace a forest."
   ],
   "confusion": [
-    "❌ treat \"In-situ\" as one blob → ✅ split into: in-situ, protected areas, ex-situ.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "A seed bank is ex-situ. A national park is in-situ.",
     "A conservation area still contains people. That does not make it a zoo.",
     "Ramsar is about wetlands, not about every forest.",
     "A garden does not preserve the pollinator community of a wild slope."
   ],
-  "bounds": [
-    "Covers only: in-situ, protected areas, ex-situ, botanical garden (within Vegetation).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "define + example each sub-idea: in-situ, protected areas, ex-situ, botanical garden.",
     "one worked example for \"In-situ (protected areas) and Ex-situ (botanical garden, …\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -195,6 +187,14 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "In-situ keeps the plant in its habitat. Ex-situ keeps it in a garden or a seed bank."
-    }
+    },
+    "notes": [
+      "In-situ conservation protects a species in the place where it already lives, so its partners and its climate stay with it.",
+      "National parks, wildlife reserves, conservation areas and buffer zones are the in-situ tools. Chitwan is the first national park. Annapurna is a conservation area where villages remain.",
+      "A Ramsar site is a wetland on an international list. Koshi Tappu, Beeshazar, Ghodaghodi, Jagadishpur and Rara are the names to be ready to give.",
+      "Ex-situ conservation removes the organism, or its seed, to a managed place. A botanical garden and a seed bank are the plant examples. A gene bank of stored seed is the same idea.",
+      "The Godavari botanical garden is the local garden example. A seed bank keeps viability by cold, dry storage and by growing the seed out before it dies.",
+      "In-situ is preferred because evolution and ecological relationships continue. Ex-situ is the backup when the habitat is already failing, and it does not replace a forest."
+    ]
   }
 }

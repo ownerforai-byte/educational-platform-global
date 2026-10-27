@@ -15,21 +15,13 @@
     "Fungal walls are chitin and the reserve is glycogen, which is why a mushroom is not given a place in Plantae even when it grows in soil like a plant."
   ],
   "confusion": [
-    "❌ treat \"Fungi\" as one blob → ✅ split into: fungi, characteristic features of phycomycetes, ascomycetes.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "Yeast is an ascomycete despite being unicellular.",
     "Deuteromycetes are imperfect because sex is unseen, not because they lack nuclei.",
     "A rust is a basidiomycete.",
     "Rhizopus has rhizoids. Do not force them onto every Mucor drawing."
   ],
-  "bounds": [
-    "Covers only: fungi, characteristic features of phycomycetes, ascomycetes, basidiomycetes (within Floral Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "define + example each sub-idea: fungi, characteristic features of phycomycetes, ascomycetes, basidiomycetes.",
     "one worked example for \"Fungi: General introduction and characteristic features o…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -114,7 +106,7 @@
   ],
   "examShortTricks": [
     "Fungal walls are chitin and the reserve is glycogen, which is why a mushroom is not given a place in Plantae e",
-    "Penicillium is an ascomycete used for penicillin. Puccinia, the wheat rust, is a basidiomycete even though it "
+    "Penicillium is an ascomycete used for penicillin. Puccinia, the wheat rust, is a basidiomycete even though it"
   ],
   "specialNotes": [
     "Match the organism to the character.",
@@ -194,6 +186,14 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Zygospore, ascus, basidium, or conidia with no known sex."
-    }
+    },
+    "notes": [
+      "**General features.** Fungi are achlorophyllous, heterotrophic, eukaryotic organisms whose body is a thallus made of thread-like hyphae (a mycelium); cell walls contain chitin and food is stored as glycogen.",
+      "**Phycomycetes.** These lower fungi have aseptate (coenocytic) hyphae and form thick-walled zygospores sexually; examples are Mucor, Rhizopus and the plant pathogen Albugo.",
+      "**Ascomycetes.** Sac fungi have septate hyphae and produce ascospores inside sac-like asci; Saccharomyces, Aspergillus, Penicillium and morels belong to this group.",
+      "**Basidiomycetes.** Club fungi bear basidiospores on club-shaped basidia; Agaricus (button mushroom), Puccinia (wheat rust) and Ustilago (smut) are common examples.",
+      "**Deuteromycetes.** The imperfect fungi show no known sexual stage and are classified by their conidia; Alternaria, Trichoderma and Colletotrichum are important members.",
+      "Fungal walls are chitin and the reserve is glycogen, which is why a mushroom is not given a place in Plantae even when it grows in soil like a plant."
+    ]
   }
 }

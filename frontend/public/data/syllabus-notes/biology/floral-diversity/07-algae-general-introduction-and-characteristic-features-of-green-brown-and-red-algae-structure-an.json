@@ -15,21 +15,13 @@
     "Spirogyra has a spiral chloroplast with pyrenoids. Sexual reproduction is conjugation: a tube joins two filaments and a zygospore results. That is not a seed."
   ],
   "confusion": [
-    "❌ treat \"Algae\" as one blob → ✅ split into: algae, characteristic features of green, brown.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "Spirogyra is not a fungus. It has chlorophyll.",
     "Brown colour is fucoxanthin, not a disease.",
     "Agar is a product, not a pigment.",
     "Conjugation is sex between cells of a filament, not pollination by an insect."
   ],
-  "bounds": [
-    "Covers only: algae, characteristic features of green, brown, red algae (within Floral Diversity).",
-    "Out of scope here: topics of neighbouring units in Biology — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it."
-  ],
+  "bounds": [],
   "practice": [
-    "define + example each sub-idea: algae, characteristic features of green, brown, red algae.",
     "one worked example for \"Algae: General introduction and characteristic features o…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -195,6 +187,14 @@
       "type": "static",
       "component": "DerivationVisual",
       "desc": "Green, brown and red algae, plus Spirogyra's spiral chloroplast and conjugation."
-    }
+    },
+    "notes": [
+      "**General features.** Algae are simple, autotrophic, thalloid plants containing chlorophyll and other pigments; they occur in fresh water, marine water and moist soil and reproduce by spores and gametes.",
+      "**Chlorophyceae (green algae).** They contain chlorophyll a and b, store food as starch in pyrenoids and include Chlamydomonas, Spirogyra and Chlorella.",
+      "**Phaeophyceae (brown algae).** Fucoxanthin gives the brown colour; food is stored as mannitol and laminarin, and Fucus and Laminaria are marine examples.",
+      "**Rhodophyceae (red algae).** Phycoerythrin masks the chlorophyll, food is stored as floridean starch, and Polysiphonia and Porphyra are common members.",
+      "**Economic importance.** Algae produce much of the world's oxygen, yield agar, carrageenan and iodine, serve directly as food (Porphyra), and provide single-cell protein (Chlorella, Spirulina).",
+      "Spirogyra has a spiral chloroplast with pyrenoids. Sexual reproduction is conjugation: a tube joins two filaments and a zygospore results. That is not a seed."
+    ]
   }
 }

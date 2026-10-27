@@ -14,8 +14,6 @@
     "Two bodies have the same surface constant K and the same excess temperature. Their heat capacities are mc and 2mc. Compare the initial rates of fall of temperature."
   ],
   "practiceQuestions": [
-    "Q1. Define Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
-    "Q3. Problem on Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
     "What is proportional to the excess temperature?",
     "How does mc enter the rate?",
     "When does the linear law fail?"
@@ -25,7 +23,6 @@
     "k = K /(mc)"
   ],
   "keyPoints": [
-    "Connection of Newton's Law of Cooling — Derivation of Rate of Fall of Temperature to other topics",
     "The rate of cooling is proportional to the excess temperature.",
     "The law is for a small excess.",
     "k depends on surface and on mc.",
@@ -42,12 +39,10 @@
     "The heat leaving the body also equals −mc dθ, if the body cools without changing state. Dividing by dt gives −mc dθ/dt = K (θ − θ0)."
   ],
   "importantNotes": [
-    "Newton's Law of Cooling — Derivation of Rate of Fall of Temperature is based on fundamental principles.",
     "Keep the minus sign until you interpret the rate.",
     "State that the excess is small before quoting the law."
   ],
   "examShortTricks": [
-    "Recall the formula for Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
     "Rate of fall is largest at the start, when the excess is largest.",
     "Same surface and same excess: the smaller mc cools faster."
   ],
@@ -98,7 +93,6 @@
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.",
     "Newton's law of cooling",
     "Excess temperature",
     "Rate of fall",

@@ -14,8 +14,6 @@
     "Assume the period of a simple pendulum depends on length l and g as T = k l^a g^b. Find a and b."
   ],
   "practiceQuestions": [
-    "Q1. Define Uses of Dimensional Analysis & Its Limitations.",
-    "Q3. Problem on Uses of Dimensional Analysis & Its Limitations.",
     "What three jobs does dimensional analysis do?",
     "Why is 2π missing from a dimensional pendulum formula?",
     "When do the powers fail to be unique?"
@@ -25,7 +23,6 @@
     "T = k sqrt(l/g), and k is not fixed by dimensions"
   ],
   "keyPoints": [
-    "Connection of Uses of Dimensional Analysis & Its Limitations to other topics",
     "Find how a quantity depends on others.",
     "Convert a unit by dimensions.",
     "Check an equation.",
@@ -42,12 +39,10 @@
     "The time period of a simple pendulum is assumed to depend on its length and on g, and not on the mass, when the amplitude is small. Matching dimensions then gives T proportional to the square root of l/g."
   ],
   "importantNotes": [
-    "Uses of Dimensional Analysis & Its Limitations is based on fundamental principles.",
     "State the quantities you assumed before solving for powers.",
     "Reject a sine of a dimensioned quantity."
   ],
   "examShortTricks": [
-    "Recall the formula for Uses of Dimensional Analysis & Its Limitations.",
     "Three base dimensions can fix three powers.",
     "Look for a forgotten dimensionless constant."
   ],
@@ -98,7 +93,6 @@
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Uses of Dimensional Analysis & Its Limitations.",
     "Checking equations",
     "Finding a dependence",
     "Dimensionless constant",
