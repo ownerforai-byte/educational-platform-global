@@ -179,3 +179,8 @@ tools/
 # vitest ad-hoc dump files (never commit runner stderr captures)
 
 vitest-entryfeed*.txt
+vt-*.txt
+vt2-*.txt
+vitest-*.txt
+tsc-err.txt
+tsc-out.txt
