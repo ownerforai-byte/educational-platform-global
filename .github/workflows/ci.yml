@@ -57,11 +57,14 @@ jobs:
   # SENTRY_AUTH_TOKEN/SENTRY_ORG/SENTRY_PROJECT from the Vercel env and pushes
   # sourcemaps for the release. GitHub CI cannot upload for Vercel builds, so
   # this job verifies the wiring instead: the gated init files, the env
-  # plumbing, and a working sentry-cli. It skips entirely (silently) when the
-  # token secret is not configured — a missing secret must never fail CI.
+  # plumbing, and a working sentry-cli. The wiring check always runs; only the
+  # token-dependent sentry-cli step is gated — a missing secret must never
+  # fail CI. (The `secrets` context is not allowed in job-level `if`, which
+  # is why the gate lives on the step.)
   sentry-sourcemaps:
-    if: ${{ secrets.SENTRY_AUTH_TOKEN != '' }}
     runs-on: ubuntu-latest
+    env:
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
     defaults:
       run:
         working-directory: frontend
@@ -80,9 +83,8 @@ jobs:
           grep -q "SENTRY_DSN" .env.example
           echo "Sentry wiring OK"
       - name: Verify sentry-cli against the org
+        if: env.SENTRY_AUTH_TOKEN != ''
         run: npx @sentry/cli@latest --version
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
   # Baseline-ratchet gate: fails on NEW schema violations + manifest drift.
   # Uses root tsx (backend lockfile has no zod/tsx to hoist into backend/);
