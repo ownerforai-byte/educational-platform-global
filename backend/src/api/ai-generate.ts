@@ -2,6 +2,7 @@ import { Router, Request, Response, NextFunction } from "express";
 import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
+import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
 import { supabaseAdmin } from "../db/supabase";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
@@ -460,7 +461,7 @@ router.post(
         hard: `Focus on: synthesis, analysis, evaluation, and complex problem-solving. Include numerical problems, case-based questions, and questions that require connecting multiple concepts. Use precise scientific language. Aim for 3+ step reasoning.`,
       };
 
-      const systemPrompt =
+      const systemPromptBody =
         format === "mcq"
           ? `You are an expert NEB (+2) exam question setter for Nepalese science students. You generate high-quality multiple-choice questions from MULTIPLE SOURCES — not just textbooks.
 
@@ -511,6 +512,10 @@ RULES:
 - **NO CONFLICTING CONCEPTS**: Ensure no ambiguity in options or explanations
 - **COMPLETE COVERAGE**: Each question reinforces ALL relevant concepts for that sub-topic`
           : buildFormatSystemPrompt(format);
+
+      // Owner 2026-10-27: every AI surface — including question generation —
+      // follows the ANSWER GUIDE (valid by a human, natural, full of idea).
+      const systemPrompt = `${systemPromptBody}\n\n${ANSWER_GUIDE_RULES}`;
 
       const userPrompt =
         format === "mcq"

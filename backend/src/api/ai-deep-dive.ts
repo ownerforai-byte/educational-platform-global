@@ -2,6 +2,7 @@ import { Router, Request, Response, NextFunction } from "express";
 import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
+import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
 import { aiSparkGateIfAuthed, requirePlusAiStudio } from "../middleware/aiSparkGate";
@@ -139,7 +140,7 @@ ${images.length > 0 ? "Note: I have attached a photo/diagram of the question/app
 Please unpack this concept thoroughly using the standard Deep Concept Studio structure.`;
 
       const messages: AIChatMessage[] = [
-        { role: "system", content: DEEP_DIVE_SYSTEM_PROMPT },
+        { role: "system", content: `${DEEP_DIVE_SYSTEM_PROMPT}\n\n${ANSWER_GUIDE_RULES}` },
         {
           role: "user",
           content: userPrompt,

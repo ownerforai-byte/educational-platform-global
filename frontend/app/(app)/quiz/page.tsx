@@ -298,16 +298,26 @@ function QuizScreen({
 
   const handleNext = () => {
     if (!answered) { handleSubmit(); return; }
-    if (isLast) onFinish();
-    else onNext();
+    if (isLast) { onFinish(); return; }
+    // Advance INSIDE this screen (owner report 2026-10-27: "the next button
+    // is not switching the question"). The parent's onNext only re-renders —
+    // it never changes the index — so the question must switch here.
+    onNext();
+    const nextQ = session.questions[currentIndex + 1];
+    setCurrentIndex((i) => Math.min(total - 1, i + 1));
+    setUserAnswer(session.answers[nextQ?.id] ?? "");
+    setAnswered(!!session.answers[nextQ?.id]);
+    setShowHint(false);
   };
 
   const handlePrev = () => {
-    if (!answered) return;
+    if (!answered || currentIndex === 0) return;
     onPrev();
     const prevQ = session.questions[currentIndex - 1];
+    setCurrentIndex((i) => Math.max(0, i - 1));
     setUserAnswer(session.answers[prevQ?.id] ?? "");
     setAnswered(!!session.answers[prevQ?.id]);
+    setShowHint(false);
   };
 
   if (!question) return null;

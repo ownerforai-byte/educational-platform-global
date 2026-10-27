@@ -1,4 +1,5 @@
 import { getSearchService } from "./search-engine";
+import { ANSWER_GUIDE_RULES } from "./answer-guide";
 import { DIAGRAM_TIMEOUT_MS, fetchDiagramContext } from "./diagram-search";
 import { MASTER_ACADEMIC_RULES } from "./academic-intelligence";
 import { buildSyllabusAnchorBlock, floorWordsForQuestion } from "./syllabus-anchor";
@@ -100,12 +101,18 @@ const SITE_TIMEOUT_MS = Number(process.env.AI_SEARCH_TIMEOUT_MS) || 9000;
  *                                    prerequisite / beyond-12 / other-board /
  *                                    non-academic questions.
  *   8. SOURCE_REGISTRY_RULES        — source trust order and citation discipline.
+ *   9. ANSWER_GUIDE_RULES            — the owner law every solution follows
+ *                                    (owner 2026-10-27): valid by a human,
+ *                                    natural, full of idea — attached to every
+ *                                    AI surface (chat, math, deep-dive, quiz
+ *                                    generation and grading), not just chat.
  *
  * Everything below rides on this constant, so a new academic rule is added once,
  * in ./academic-intelligence.ts (or its sibling module when it is a new layer).
  */
 export const MASTER_ACADEMIC_PROMPT = [
   PROFESSOR_STYLE_RULES,
+  ANSWER_GUIDE_RULES,
   MASTER_ACADEMIC_RULES,
   DEEP_ANSWER_RULES,
   ARTIFACT_RULES,

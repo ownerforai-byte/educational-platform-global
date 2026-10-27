@@ -40,6 +40,14 @@ const SUGGESTIONS = [
   { icon: MessageSquareText, label: "Newton's laws with examples", text: "Explain Newton's three laws using everyday examples." },
 ];
 
+/**
+ * This console's OWN history session (owner 2026-10-27: "all chat interfaces
+ * save their chat history to their own history"). It must never write to the
+ * shared "default" session — that one belongs to the general AI studio chat,
+ * and sharing it mixed this console's thread with the studio's history.
+ */
+const HISTORY_SESSION = "lab-study-chat";
+
 const STUDY_THINKING_LINES = [
   "Thinking…",
   "Extracting…",
@@ -84,7 +92,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   useEffect(() => {
     if (!isLoggedIn || historyLoadedRef.current) return;
     historyLoadedRef.current = true;
-    getChatHistory("default", 200)
+    getChatHistory(HISTORY_SESSION, 200)
       .then(({ messages }) => {
         if (!messages.length) return;
         setMessages((prev) => [
@@ -167,7 +175,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       }
       paint();
       if (isLoggedIn) {
-        saveChatHistory("default", [
+        saveChatHistory(HISTORY_SESSION, [
           { role: "user", content: text },
           { role: "assistant", content: accumulated + figureBlocks() },
         ]).catch(() => {});
@@ -210,7 +218,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
     setRestoredCount(null);
-    if (isLoggedIn) clearChatHistory("default").catch(() => {});
+    if (isLoggedIn) clearChatHistory(HISTORY_SESSION).catch(() => {});
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

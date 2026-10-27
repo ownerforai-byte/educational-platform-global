@@ -2,6 +2,7 @@ import { Router, Request, Response, NextFunction } from "express";
 import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
+import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
 import { aiSparkGateIfAuthed, requirePlusAiStudio } from "../middleware/aiSparkGate";
@@ -139,7 +140,7 @@ Preferences:
 Format with clean KaTeX LaTeX syntax for all equations and expressions.`;
 
       const messages: AIChatMessage[] = [
-        { role: "system", content: MATH_SOLVER_SYSTEM_PROMPT },
+        { role: "system", content: `${MATH_SOLVER_SYSTEM_PROMPT}\n\n${ANSWER_GUIDE_RULES}` },
         { role: "user", content: userPrompt },
       ];
 

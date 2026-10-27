@@ -3,6 +3,7 @@ import { serverError } from "../middleware/errors";
 import { rateLimit } from "../middleware/rateLimit";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
+import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
 import {
   authOrGuestQuota,
   extractJsonObject,
@@ -146,7 +147,9 @@ RULES:
 - "feedback" must reference the SPECIFIC content of the answer — never generic praise.
 - "improvements" lists 1-3 actionable steps; empty array only when the answer is perfect.
 - For fill-blank items, accept any string in "acceptedAnswers" as correct (case-insensitive, ignore punctuation and extra spaces).
-- "summary" comments on the submission as a whole — strengths plus the top thing to fix next.`;
+- "summary" comments on the submission as a whole — strengths plus the top thing to fix next.
+
+${ANSWER_GUIDE_RULES}`;
 
       const payload = cleanItems.map((it, i) => ({
         index: i + 1,
