@@ -72,7 +72,10 @@ describe("SectionTierGate — visible-but-dimmed, no dead ends", () => {
 
   it("lets routes outside the registry through for every rung", () => {
     session.user = { email: "student@example.com" };
-    pathname.value = "/profile";
+    // /credits is a personal account page — deliberately unregistered, must
+    // render for every tier (previously used /profile, which gained a
+    // "Progress, Profile & Credits" section and started gating).
+    pathname.value = "/credits";
     render(<SectionTierGate>{CONTENT}</SectionTierGate>);
     expect(screen.getByTestId("section-content")).toBeInTheDocument();
   });

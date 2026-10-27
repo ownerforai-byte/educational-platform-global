@@ -14,6 +14,9 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./tests/setup.ts"],
     include: ["tests/**/*.{test,spec}.{ts,tsx}"],
+    // Playwright owns tests/e2e — vitest must not load those specs
+    // (test.describe from @playwright/test crashes the vitest runner).
+    exclude: ["tests/e2e/**", "node_modules/**"],
     // The forks pool times out waiting for workers on this machine;
     // threads + single-file execution is the stable configuration.
     pool: "threads",

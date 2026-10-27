@@ -361,7 +361,7 @@ export function applySectionOverrides(
 /**
  * The section a path belongs to (longest href prefix wins — e.g.
  * /knowledge/numerical-physics is the Worked Numericals row, not Knowledge
- * Hubs). Undefined for routes outside the registry (profile, chat, …).
+ * Hubs). Undefined for routes outside the registry (credits, bookmarks, …).
  */
 export function sectionForPath(
   pathname: string,
