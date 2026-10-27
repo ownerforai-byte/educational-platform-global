@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import compression from "compression";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import authRoutes from "./api/auth";
@@ -75,6 +76,11 @@ export function createApp(): express.Express {
     }),
   );
   app.use(morgan("combined"));
+  // gzip/deflate JSON responses (perf pass 2026-10-27): the curriculum
+  // endpoints return large JSON bodies; compression shrinks them several-fold
+  // on the wire for students on slow Nepali mobile networks. The middleware
+  // skips responses that are already compressed or have no Accept-Encoding.
+  app.use(compression());
   app.use(rateLimit);
   // Body limit rationale lives in config/server.ts (JSON_BODY_LIMIT).
   app.use(express.json({ limit: JSON_BODY_LIMIT }));

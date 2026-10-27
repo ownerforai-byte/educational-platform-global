@@ -9,8 +9,13 @@ const nextConfig = {
   // notes manifest the app fetches at runtime: that turned a cached edge
   // payload into a full re-download on every visit. So the rules are split by
   // what the browser asked for (`Accept: text/html` means a page navigation):
-  //   1. HTML documents → no-store, a new deploy is served immediately
+  //   1. HTML documents → revalidate, a new deploy is served immediately
   //   2. everything else → revalidate, the behaviour these had before
+  // `no-store` was downgraded to `max-age=0, must-revalidate` (perf pass
+  // 2026-10-27): the browser may now KEEP the document (back/forward is
+  // instant instead of a full re-fetch), while the mandatory revalidation
+  // still guarantees the freshest deploy on every navigation. Signed-in
+  // pages stay safe because the CDN must revalidate before serving.
   // Hashed bundles under /_next/static are deliberately NOT listed: Vercel
   // already serves them as immutable, and a custom header there only makes
   // Next warn that it can break its own cache behaviour.
@@ -18,10 +23,23 @@ const nextConfig = {
     const HTML_NAVIGATION = ".*text/html.*";
     return [
       {
+        // HSTS on the Vercel-served origin (security pass 2026-10-27): the
+        // backend sets the same policy for the Render API; the frontend had
+        // none. Sent on every response; browsers ignore it over local http://,
+        // so dev is unaffected.
+        source: "/:path*",
+        headers: [
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+      {
         source: "/:path*",
         has: [{ type: "header", key: "accept", value: HTML_NAVIGATION }],
         headers: [
-          { key: "Cache-Control", value: "no-store, must-revalidate" },
+          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
         ],
       },
       {
