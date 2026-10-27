@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 12 Physics — Electrostatics — 2021",
+  "year": 2021,
+  "examSource": "[NEB-pattern 2021]",
+  "unitSlug": "electrostatics",
+  "origin": "curated NEB-pattern set for class-12 electrostatics",
+  "questions": [
+    {
+      "id": "phy-elec-2021-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State Coulomb's law in vector form. Two point charges $+4\\,\\mu\\mathrm{C}$ and $-2\\,\\mu\\mathrm{C}$ are $30\\,\\mathrm{cm}$ apart in air. Find the magnitude and nature of the force between them.",
+      "solution": "Coulomb's law: $\\vec{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1 q_2}{r^2}\\,\\hat{r}_{12}$ — the force acts along the line joining the charges, repulsive for like signs and attractive for unlike signs.\nMagnitude: $F = 9\\times10^9 \\times \\frac{(4\\times10^{-6})(2\\times10^{-6})}{(0.3)^2} = 9\\times10^9 \\times \\frac{8\\times10^{-12}}{0.09} = \\frac{72\\times10^{-3}}{0.09} = 0.8\\,\\mathrm{N}$. The charges have opposite signs, so the force is attractive — each charge is pulled toward the other."
+    },
+    {
+      "id": "phy-elec-2021-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Define electric field intensity and electric potential. Derive the relation $E = -dV/dr$ for a radial field and explain what the negative sign means.",
+      "solution": "Field intensity $\\vec{E} = \\vec{F}/q_0$ is the force per unit positive test charge; potential $V = W/q_0$ is the work per unit charge to bring a test charge from infinity.\nMoving a charge $q_0$ outward by $dr$ against the field needs work $dW = -q_0 E\\,dr$ (field does $-E\\,dr$ per unit charge), so $dV = -E\\,dr$, i.e. $E = -dV/dr$.\nThe negative sign means the field points down the potential slope: from high potential toward low potential, exactly as a ball rolls downhill."
+    },
+    {
+      "id": "phy-elec-2021-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "A parallel-plate capacitor has capacitance $C_0$ with air between its plates. A dielectric slab of constant $K = 3$ is fully inserted. What is the new capacitance, and what happens to the stored energy if the capacitor is isolated (charge fixed)?",
+      "solution": "Capacitance scales with the dielectric constant: $C = K C_0 = 3C_0$.\nIsolated means charge $Q$ is fixed. Stored energy $U = Q^2/2C$ falls to one-third ($U = U_0/3$) because $C$ tripled. The 'missing' energy does work pulling the slab in — the field does work on the dielectric."
+    }
+  ]
+}

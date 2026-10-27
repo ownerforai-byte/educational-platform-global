@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Biology — Genetics And Evolution — 2023",
+  "year": 2023,
+  "examSource": "[NEB-pattern 2023]",
+  "unitSlug": "genetics-and-evolution",
+  "origin": "curated NEB-pattern set for class-12 biology genetics and evolution",
+  "questions": [
+    {
+      "id": "bio-gen-2023-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Law of independent assortment: when two pairs of contrasting characters are combined, the segregation of one pair is independent of the other at gamete formation.\nF1 is all RrYy (round-yellow). Each F1 plant makes four gamete types — RY, Ry, rY, ry — in equal proportion. The 4×4 Punnett square gives 16 combinations: 9 R_Y_ (round-yellow), 3 R_yy (round-green), 3 rrY_ (wrinkled-yellow), 1 rryy (wrinkled-green) — the classic 9:3:3:1 ratio. It arises precisely because R/r and Y/y assort independently into gametes.",
+      "question": "State Mendel's law of independent assortment. In a dihybrid cross between round-yellow (RRYY) and wrinkled-green (rryy) peas, give the phenotypic ratio of the F2 generation and explain how it arises."
+    },
+    {
+      "id": "bio-gen-2023-2",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "Let $X^C$ = normal, $X^c$ = colour-blind. The man is $X^cY$. The woman has normal vision but her father gave her his only X ($X^c$), so she is a carrier $X^CX^c$.\nSons receive Y from the father and X from the mother: 50% get $X^C$ (normal), 50% get $X^c$ (colour-blind). So half the sons are colour-blind.",
+      "question": "A colour-blind man (X-linked recessive) marries a woman with normal vision whose father was colour-blind. What proportion of their sons will be colour-blind?"
+    },
+    {
+      "id": "bio-gen-2023-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Watson–Crick model: DNA is a right-handed double helix of two antiparallel polynucleotide strands (one 5′→3′, the other 3′→5′). Sugar–phosphate backbones sit outside; nitrogenous bases point inward, joined by hydrogen bonds (A=T with two bonds, G≡C with three), one helix turn ≈ 3.4 nm with ~10 base pairs.\nChargaff's rules: in any DNA, $[A] = [T]$ and $[G] = [C]$ (so purines = pyrimidines). This follows directly from the pairing — every A on one strand forces a T on the other, every G forces a C — so the equalities are a structural necessity, which is exactly the clue that led to the double helix.",
+      "question": "Describe the structure of DNA as proposed by Watson and Crick. State Chargaff's rules and explain how they are reflected in base pairing."
+    },
+    {
+      "id": "bio-gen-2023-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "Natural selection: individuals with heritable traits best suited to the environment survive and reproduce more, so favourable alleles spread through the population.\nDarwin's theory rests on overproduction, variation, competition, survival of the fittest and inheritance of useful variations, leading to descent with modification.\nPeppered moths: before industrialisation, light moths were camouflaged on lichen-covered trees and dark (melanic) mutants were eaten by birds. Soot blackened trees in industrial areas, reversing the advantage — dark moths were hidden, light ones exposed. The melanic allele rose sharply in polluted regions and fell again after clean-air laws: a directly observed case of selection changing allele frequencies.",
+      "question": "What is natural selection? Explain Darwin's theory and show how industrial melanism in the peppered moth supports it."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Differentiation (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "differentiation",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-dif-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Derivative as rate, not just slope",
+      "question": "A student can differentiate any polynomial but says 'dy/dx is just the slope of the tangent.' What important MEANING of the derivative is missing, and when does it matter?",
+      "solution": "The missing meaning is INSTANTANEOUS RATE OF CHANGE. Slope answers 'how steep is the graph here?'; rate answers 'how fast is the quantity changing per unit x?' — velocity from displacement, marginal cost from total cost, current from charge. It matters the moment x is not position: $dV/dt$ of a draining tank is litres per second, not a geometric slope. The tangent-slope picture is one special case (y vs x on paper); the rate picture is the one physics, chemistry and economics actually use."
+    },
+    {
+      "id": "drill-dif-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Chain rule intuition",
+      "question": "For $y = \\sin(x^2)$, a student writes $dy/dx = \\cos(x^2)$ — differentiating 'the outside' and stopping. Explain the missing factor using a rate-of-rates story.",
+      "solution": "y depends on x THROUGH an intermediate $u = x^2$: x drives u, u drives y. The chain rule multiplies the two rates: $dy/dx = (dy/du)(du/dx) = \\cos(u)\\cdot 2x = 2x\\cos(x^2)$. Story: if u runs twice as fast when x ticks (du/dx = 2x) and y responds to u at rate cos(u), then y responds to x at the PRODUCT. The student computed only how y responds to u and forgot how fast u itself is moving. Rule of thumb: count the layers — every 'inside' you peel off contributes one factor."
+    },
+    {
+      "id": "drill-dif-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Stationary ≠ always max/min",
+      "question": "$f'(0) = 0$ for $f(x) = x^3$. A student marks $(0,0)$ as a minimum. What is it really, and what test exposes the error?",
+      "solution": "It is a stationary point of INFLECTION (a saddle): the curve flattens at the origin but keeps rising on both sides. The second-derivative test gives $f''(0) = 0$ — inconclusive — which is precisely the warning to look closer. The first-derivative test settles it: $f' = 3x^2 \\geq 0$ on BOTH sides, so the function never decreases through $x = 0$; no max, no min. Lesson: $f' = 0$ is a candidate list, not a verdict — always test the sign change."
+    },
+    {
+      "id": "drill-dif-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Differentiability vs continuity",
+      "question": "$f(x) = |x|$ is continuous at $x = 0$ but not differentiable there. Explain geometrically AND analytically why continuity does not guarantee differentiability.",
+      "solution": "Geometrically, the graph has a sharp CORNER at the origin: the left tangent has slope $-1$, the right has slope $+1$ — no single tangent line exists, so no derivative. Analytically, the difference quotient gives $\\frac{|h|}{h}$, which is $-1$ from the left and $+1$ from the right: the two-sided limit fails. Continuity only demands the graph be unbroken (limits agree); differentiability demands it be SMOOTH (one-sided slopes agree). Differentiable implies continuous, but never the reverse — the corner is the standard counterexample."
+    }
+  ]
+}

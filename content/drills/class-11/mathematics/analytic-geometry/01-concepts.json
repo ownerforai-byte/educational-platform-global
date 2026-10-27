@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Analytic Geometry (Class 11 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "analytic-geometry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-geo-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Slope is a ratio, not an angle",
+      "question": "A line has slope 2 and another has slope 3. A student says the second is '1 unit steeper in angle.' Why is comparing slopes by subtraction wrong, and what is the real angle gap?",
+      "solution": "Slope = tan θ, and tangent is NONLINEAR — equal slope steps are not equal angle steps. Slope 2 → θ ≈ 63.4°; slope 3 → θ ≈ 71.6°: a gap of only ~8°, not anything like '1 unit'. Near vertical, tiny angle changes explode the slope (tan 89° ≈ 57). Subtract slopes and you compare rise-per-run, never angles. Convert with arctan first, then subtract — that is the only honest angle arithmetic."
+    },
+    {
+      "id": "drill-geo-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why m₁·m₂ = −1",
+      "question": "Students memorise 'perpendicular slopes multiply to −1' but apply it to vertical/horizontal lines and crash. Prove the rule and state exactly where it breaks.",
+      "solution": "If two lines make angles θ₁, θ₂ with the x-axis and are perpendicular, θ₂ = θ₁ + 90°. Then m₂ = tan(θ₁+90°) = −cot θ₁ = −1/tan θ₁ = −1/m₁, so m₁·m₂ = −1. It BREAKS when either line is vertical (slope undefined — division by zero) or horizontal paired with vertical (0 × undefined). The product rule needs both slopes finite and nonzero; the vertical/horizontal case must be handled by inspection (x = a ⊥ y = b), not by formula."
+    },
+    {
+      "id": "drill-geo-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Locus thinking",
+      "question": "What does 'the locus of points equidistant from (0,0)' mean — and why does translating that sentence directly into algebra give the circle equation with zero memorisation?",
+      "solution": "Locus = the set of ALL points satisfying one geometric condition. 'Equidistant (distance r) from origin' translates word-for-word: distance of (x,y) from (0,0) equals r → √(x²+y²) = r → x²+y² = r². No memorisation needed — the equation IS the sentence in symbols. This is the whole method of coordinate geometry: every locus problem is translation, not recall. Condition → distance formula → simplify. Practise reading equations as sentences ('this says every point is 5 from centre') and geometry becomes English."
+    },
+    {
+      "id": "drill-geo-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Section formula direction",
+      "question": "Points A(1,1), B(5,9). A student finds the midpoint ((3,5)) even when asked for the point dividing AB in ratio 1:3. What does the ratio actually control, and what is the correct point?",
+      "solution": "The ratio controls HOW FAR along the segment you stop: 1:3 means 1 part of the way from A (¼ of the journey), not halfway. Internal division formula: ((m·x₂+n·x₁)/(m+n), …) with m:n = 1:3 → ((1·5+3·1)/4, (1·9+3·1)/4) = (8/4, 12/4) = (2,3). The midpoint formula is just the special case m = n. Mixing them up means ignoring the weights: m pulls toward B, n pulls toward A. Check by distance: AP:PB must equal 1:3 — (2,3) satisfies it, (3,5) gives 1:1."
+    }
+  ]
+}

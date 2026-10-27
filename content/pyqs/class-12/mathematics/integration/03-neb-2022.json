@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Mathematics — Integration — 2022",
+  "year": 2022,
+  "examSource": "[NEB-pattern 2022]",
+  "unitSlug": "integration",
+  "origin": "curated NEB-pattern set for class-12 mathematics integration",
+  "questions": [
+    {
+      "id": "mat-int-2022-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Take $u = x$, $dv = e^{2x}dx$, so $du = dx$, $v = e^{2x}/2$.\n$\\int x e^{2x}dx = u v - \\int v\\,du = x\\cdot e^{2x}/2 - \\int (e^{2x}/2)dx = \\frac{xe^{2x}}{2} - \\frac{e^{2x}}{4} + C = \\frac{e^{2x}(2x - 1)}{4} + C$.",
+      "question": "Evaluate $\\int x e^{2x}\\,dx$ using integration by parts."
+    },
+    {
+      "id": "mat-int-2022-2",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "$\\int \\sin x\\,dx = -\\cos x$, so $\\int_0^{\\pi}\\sin x\\,dx = [-\\cos x]_0^{\\pi} = (-\\cos\\pi) - (-\\cos 0) = 1 + 1 = 2$.",
+      "question": "What is $\\int_0^{\\pi} \\sin x\\,dx$?"
+    },
+    {
+      "id": "mat-int-2022-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Complete the square: $x^2 - 2x + 5 = (x-1)^2 + 4$. Substitute $u = x - 1$ ($du = dx$); limits become $u = 0$ to $2$.\n$\\int_0^2 \\frac{du}{u^2 + 4} = \\frac{1}{2}\\left[\\tan^{-1}\\frac{u}{2}\\right]_0^2 = \\frac{1}{2}(\\tan^{-1}1 - 0) = \\frac{1}{2}\\cdot\\frac{\\pi}{4} = \\frac{\\pi}{8}$.",
+      "question": "Evaluate the definite integral $\\int_1^3 \\frac{dx}{x^2 - 2x + 5}$ by completing the square."
+    },
+    {
+      "id": "mat-int-2022-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "They meet where $x^2 = 4$, i.e. $x = \\pm 2$. Between $x = -2$ and $2$ the line $y = 4$ lies above the parabola.\nArea $= \\int_{-2}^{2} (4 - x^2)\\,dx = \\left[4x - x^3/3\\right]_{-2}^{2} = (8 - 8/3) - (-8 + 8/3) = 16/3 + 16/3 = 32/3$ square units.",
+      "question": "Find the area enclosed between the parabola $y = x^2$ and the line $y = 4$."
+    }
+  ]
+}

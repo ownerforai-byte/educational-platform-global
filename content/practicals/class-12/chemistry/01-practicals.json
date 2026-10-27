@@ -1,0 +1,118 @@
+{
+  "title": "Mind-Opening Practicals — Class 12 Chemistry",
+  "subject": "chemistry",
+  "unitSlug": "all-units",
+  "examSource": "Practical questions",
+  "questions": [
+    {
+      "id": "prac-che12-alc",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "alcohols-phenols-ethers",
+      "concept": "Why ethanol mixes but oil doesn't",
+      "question": "Ethanol mixes with water in ALL proportions, but hexanol barely dissolves. Both are 'alcohols'. What molecular tug-of-war decides solubility, and where is the tipping point?",
+      "solution": "Two opposing parts: the –OH head hydrogen-bonds with water (dissolves), the carbon tail disrupts water's network (refuses). Short chains (ethanol): the head wins. Each added –CH₂– tips the balance until ~C5–C6, where the tail dominates and solubility collapses. Rule: solubility is a battle between the hydrophilic head and hydrophobic tail — the longer the tail, the more the molecule behaves like oil wearing an –OH hat."
+    },
+    {
+      "id": "prac-che12-ald",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "aldehydes-ketones-carboxylic-acids",
+      "concept": "Silver mirror test logic",
+      "question": "Tollens' reagent gives a silver mirror with aldehydes but NOT ketones. Both contain C=O. What structural difference makes one oxidisable and the other stubborn?",
+      "solution": "The aldehyde carbon carries a HYDROGEN (R–CHO) that can be stripped away during oxidation to a carboxylic acid; the ketone carbon (R–CO–R′) is flanked by two carbons with no such handle — oxidising it would require breaking a C–C bond, far costlier. Tollens' test is really a hydrogen-availability test: mild oxidant + removable H = silver mirror. That is also why formalin preserves specimens (easily oxidised, reactive) while acetone just evaporates."
+    },
+    {
+      "id": "prac-che12-ami",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "amines",
+      "concept": "Fishy smell basicity",
+      "question": "Dead fish smell of amines, and amines turn red litmus blue. Connect the smell to the basicity: what single feature of nitrogen causes both?",
+      "solution": "The LONE PAIR on nitrogen. It accepts H⁺ from water (R–NH₂ + H₂O ⇌ R–NH₃⁺ + OH⁻) — that is the basicity. And low-molar-mass amines are volatile, so the same lone-pair molecules reach your nose — the 'fishy' smell IS airborne base hitting your receptors. Aniline smells less and is less basic: its lone pair delocalises into the benzene ring, unavailable for protons AND less volatile. One pair of electrons explains both the chemistry and the stink."
+    },
+    {
+      "id": "prac-che12-biomol",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "biomolecules",
+      "concept": "Why we can't digest grass",
+      "question": "Cows live on cellulose; humans starve on it — yet both are glucose polymers like the starch we digest easily. What single bonding difference defeats our enzymes?",
+      "solution": "Starch links glucose with α-1,4 bonds (all 'down', forming coils our amylase grips); cellulose uses β-1,4 bonds (alternating 'up-down', forming straight ribbons locked by hydrogen bonds into tough fibres). Human enzymes fit only the α shape — the β ribbon cannot enter the active site. Cows cheat by outsourcing: gut bacteria make cellulase for them. Same atoms, different handshake — digestion is shape recognition, not just chemistry."
+    },
+    {
+      "id": "prac-che12-kin",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "chemical-kinetics",
+      "concept": "Food spoils slower in fridge",
+      "question": "Milk lasts a day at room temperature but a week refrigerated — a mere ~20°C difference. Why is the slowdown so dramatic instead of proportional?",
+      "solution": "Reaction rate follows the Arrhenius EXPONENTIAL (k ∝ e^(−Ea/RT)), not a straight line. Cooling shrinks the fraction of molecules with energy above Ea multiplicatively — roughly halving bacterial growth rate every 7–10°C (Q₁₀ ≈ 2–3). A 20° drop compounds to ~4–8× slower spoilage. Linear intuition ('20° cooler = 20% slower') fails because temperature lives in an exponent: small cooling, multiplied effect. That is why the fridge, not just a cool room, matters."
+    },
+    {
+      "id": "prac-che12-daily",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "chemistry-in-everyday-life",
+      "concept": "Soap vs detergent in hard water",
+      "question": "Soap forms scum in hard water while detergents keep working. Both clean the same way. What does Ca²⁺ do to soap molecules that it cannot do to detergents?",
+      "solution": "Soap (sodium stearate) swaps its Na⁺ for Ca²⁺/Mg²⁺, forming calcium stearate — an INSOLUBLE curd (scum) that cannot form micelles, so cleaning stops and grime redeposits. Detergents use sulfonate heads whose calcium salts stay SOLUBLE, so micelles keep forming and lifting grease regardless of hardness. Same cleaning mechanism (micelles), different head-group fate: scum is just soap molecules kidnapped by calcium before they can work."
+    },
+    {
+      "id": "prac-che12-elem",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "chemistry-of-element",
+      "concept": "Noble gas reactivity",
+      "question": "Xenon forms XeF₂ and XeF₄, yet helium forms nothing. Both are 'inert' noble gases with full shells. What quantitative factor opens xenon's shell but keeps helium sealed?",
+      "solution": "IONISATION ENERGY vs oxidiser strength. Xenon's outer electrons sit far from the nucleus (n=5, heavily shielded), so its ionisation energy (~1170 kJ/mol) is low enough that fluorine — the most electronegative element — can rip electrons away. Helium's electrons hug a bare 2-proton nucleus (1310 kJ/mol for the first, 5250 for the second) — no chemical oxidiser is strong enough. 'Inert' was never absolute; it was a price tag, and only xenon went on sale to fluorine."
+    },
+    {
+      "id": "prac-che12-electro",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "electro-chemistry",
+      "concept": "Phone battery percentages",
+      "question": "Your phone shows 50% then dies within minutes in winter, but lasts hours in summer. The stored charge didn't change with the season. What electrochemical quantity did?",
+      "solution": "The reaction RATE (kinetics), not the capacity. Cold slows ion diffusion through the electrolyte and charge-transfer at electrodes — internal resistance soars, voltage sags under load, and the phone's fuel gauge (which reads VOLTAGE, not coulombs) panics and shuts down early. Warm the phone and the 'lost' charge reappears. Batteries are chemical engines: winter doesn't empty the tank, it clogs the fuel line."
+    },
+    {
+      "id": "prac-che12-org",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "general-and-organic-fundamentals",
+      "concept": "Carbon's catenation monopoly",
+      "question": "Silicon sits right below carbon, also tetravalent — yet there is no silicon-based life and no silicone plastics industry to rival carbon's millions of compounds. What TWO bond properties give carbon the monopoly?",
+      "solution": "(1) C–C bonds are short and STRONG (~347 kJ/mol) while Si–Si are long and weak (~226 kJ/mol) — silicon chains fall apart; (2) carbon forms strong MULTIPLE bonds (C=C, C≡C) enabling rings, aromatics and functional diversity, while Si=Si is fragile and rare. Carbon's small size lets p-orbitals overlap sideways efficiently; silicon's larger orbitals cannot. Life bets on the element whose chains survive water, heat and time — silicon's dissolve."
+    },
+    {
+      "id": "prac-che12-hyd",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "hydrocarbons",
+      "concept": "Octane rating meaning",
+      "question": "Premium petrol is '95 octane' and costs more. What does the number physically measure, and why do high-compression engines knock on regular fuel?",
+      "solution": "Octane number measures KNOCK RESISTANCE — the fuel's patience under compression. In high-compression engines, regular fuel auto-ignites from heat/pressure BEFORE the spark (knocking: colliding flame fronts that hammer pistons). The number = % iso-octane in a reference blend matching that resistance (95 = behaves like 95% iso-octane). Branched/ring molecules (iso-octane) resist auto-ignition; straight chains (heptane, 0) detonate early. Premium buys molecular patience, not energy — burning it in a low-compression engine wastes money, not gains power."
+    },
+    {
+      "id": "prac-che12-sol",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "solutions",
+      "concept": "Salting icy roads",
+      "question": "Salt melts ice at −5°C but the same salt can't melt ice at −25°C. It is the same salt on the same ice. What temperature-dependent limit defeats it?",
+      "solution": "Freezing-point depression ΔTf = i·Kf·m needs LIQUID water to dissolve the salt first — melting starts from a thin quasi-liquid layer, and the process itself consumes heat. At −25°C the equilibrium freezing point of even saturated brine (~−21°C for NaCl) is ABOVE ambient: no liquid layer can persist, so dissolution stalls and melting stops. Salt doesn't 'generate' melting; it shifts equilibrium — and past the eutectic point there is no equilibrium left to shift. That is why airports switch to urea/acetates or just grit in deep cold."
+    }
+  ]
+}

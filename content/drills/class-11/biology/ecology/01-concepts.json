@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Ecology (Class 11 Biology)",
+  "subject": "biology",
+  "unitSlug": "ecology",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-eco-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why only 10% transfers",
+      "question": "Plants capture only ~1% of sunlight, and herbivores pass on only ~10% of that. A student calls this 'nature being wasteful.' Where does the other 90% actually go, and is it waste?",
+      "solution": "The 90% is not wasted — it is SPENT living: cellular respiration (ATP for movement, growth, repair), undigested food (egested as faeces), and heat loss (second law — every energy conversion dumps heat). A deer burns most of its grass running, staying warm and building muscle; only its body tissue carries energy upward. Far from wasteful, this spending IS the animal's life. The 10% law is just thermodynamics with fur on: no transfer is free, so food chains stay short."
+    },
+    {
+      "id": "drill-eco-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Carrying capacity is dynamic",
+      "question": "A graph shows deer overshooting carrying capacity, crashing, then stabilising. A student says 'carrying capacity is a fixed number nature sets.' What moves K up and down?",
+      "solution": "K is set by the scarcest RESOURCE (food, water, nesting sites, predators), so anything changing resources moves K: a wet year grows more grass (K up); a new predator or disease lowers effective K; evolution of better digestion raises it. Overshoot happens because reproduction lags behind depletion — deer keep breeding on yesterday's abundance, then starve on today's shortage. K is a moving ceiling, not a number stamped on the forest; logistic growth wobbles around it."
+    },
+    {
+      "id": "drill-eco-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Decomposers close the loop",
+      "question": "Herbivores eat plants and carnivores eat herbivores — so why do textbooks call DECOMPOSERS (bacteria, fungi) the most important trophic level? What breaks without them?",
+      "solution": "Without decomposers the loop never closes: dead bodies and fallen leaves would pile up with their nutrients LOCKED inside, and producers would starve for recycled N, P and minerals within years. Decomposers mineralise organic matter back into soil/water, making the same atoms reusable forever. Every pyramid of energy flows one-way and needs constant solar input — but the MATERIAL cycle depends entirely on rot. Remove lions and the savanna changes; remove fungi and it stops."
+    },
+    {
+      "id": "drill-eco-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Niche vs habitat",
+      "question": "Two bird species live in the same forest (same habitat) yet coexist for years. Doesn't 'same address' mean competition to extinction? Distinguish habitat from niche.",
+      "solution": "Habitat is the ADDRESS (the forest); niche is the PROFESSION — what it eats, when it feeds, where it nests, its temperature range. Coexistence means niches differ: one warbler gleans insects from outer twigs, another from inner bark (MacArthur's classic warbler study); one hunts by day, another by night. Competitive exclusion only removes species whose niches fully OVERLAP. Same address is fine — five restaurants share one street because menus differ. Habitat answers 'where'; niche answers 'how it makes a living'."
+    }
+  ]
+}

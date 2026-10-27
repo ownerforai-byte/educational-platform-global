@@ -393,10 +393,15 @@ export async function resolveFiguresInText(
   const flushed = filter.flush();
   const specs = [...filter.figures, ...flushed.figureStarts];
 
+  // Draw every figure at once — each is its own Gemini round-trip, the
+  // slowest stage of shipping a reply (owner 2026-10-27: "make their reply a
+  // bit fast") — then splice results back in spec order so the fence
+  // replacement stays deterministic.
+  const results = await Promise.all(specs.map((spec) => generator(spec.prompt)));
   const figures: GeneratedFigure[] = [];
   let out = text;
-  for (const spec of specs) {
-    const result = await generator(spec.prompt);
+  specs.forEach((spec, i) => {
+    const result = results[i];
     const figure: GeneratedFigure = {
       ...spec,
       url: result.url,
@@ -412,7 +417,7 @@ export async function resolveFiguresInText(
         : `*(Figure not drawn${spec.caption ? `: ${spec.caption}` : ""} — ${result.reason ?? "unknown"})*`;
     // Replace the first fence occurrence that produced THIS spec, in order.
     out = out.replace(regexForFence(spec.prompt), markdown);
-  }
+  });
   // A fence whose lines never reached us (pathological split) is stripped
   // anyway so raw fence markup can never reach the student.
   out = out.replace(new RegExp("```" + FIGURE_FENCE + "[\\s\\S]*?```", "gi"), "");

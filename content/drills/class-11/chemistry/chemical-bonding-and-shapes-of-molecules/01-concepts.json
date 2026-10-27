@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Chemical Bonding (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-bond-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ionic vs covalent is a spectrum",
+      "question": "A student sorts every bond as either 100% ionic or 100% covalent. Using NaCl (gas vs dissolved) and HCl, explain why this binary fails.",
+      "solution": "Bonding is a SPECTRUM set by electronegativity difference (ΔEN): ΔEN > 1.7 mostly ionic, < 0.4 mostly covalent, between = polar covalent. Gaseous NaCl molecules are measurably polar-covalent (dipole less than full charges predict); only the crystal lattice is well described as ionic. HCl (ΔEN ≈ 0.9) is polar covalent — it conducts when dissolved precisely because the ALREADY-polar bond ionises in water. Fajan's rules add the cation side: small, highly charged cations (Al³⁺) polarise anions, dragging 'ionic' compounds toward covalency. Ask 'how polar?' not 'which type?'"
+    },
+    {
+      "id": "drill-bond-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Lone pairs repel more",
+      "question": "Why does a lone pair squeeze bond angles MORE than a bonding pair does? What is physically different about it?",
+      "solution": "A bonding pair is stretched between TWO nuclei, pulled taut and held away from the central atom. A lone pair is held by only ONE nucleus, so its electron cloud spreads wide and close around the central atom, occupying more angular space and pushing bond pairs together harder. Repulsion order: lone–lone > lone–bond > bond–bond. That is the whole content of the VSEPR angle trend: CH₄ (0 lone pairs, 109.5°) → NH₃ (1 lone pair, 107°) → H₂O (2 lone pairs, 104.5°). Count lone pairs first; the angle follows."
+    },
+    {
+      "id": "drill-bond-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Coordinate bond identity",
+      "question": "In NH₄⁺, one N–H bond came from H⁺ accepting a lone pair (coordinate) while three are 'normal' covalent. Can an experiment tell which is which?",
+      "solution": "No — once formed, all four N–H bonds are IDENTICAL (same length, same strength). The coordinate bond differs only in its HISTORY (both electrons came from nitrogen), not in its final electron distribution, which is symmetric across all four bonds. This indistinguishability is experimental fact (spectroscopy shows one bond type). Remember: 'coordinate' describes how a bond FORMED, never what it IS afterward."
+    },
+    {
+      "id": "drill-bond-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Hybridisation is a model",
+      "question": "Does carbon 'actually' promote a 2s electron and hybridise before bonding in methane? What is hybridisation, really?",
+      "solution": "Promotion-plus-hybridisation is a MODEL, not a filmed event — no one observes carbon preparing orbitals before bonding. What is real: methane has four EQUIVALENT tetrahedral bonds (109.5°), which pure s + p orbitals cannot produce (p orbitals are 90° apart). Hybridisation (mixing one s + three p into four sp³ functions) is the mathematical construction that reproduces the observed shape and energies. It is justified backward from experiment: the geometry demands it. Treat sp³/sp²/sp as labels for observed geometry (4/3/2 electron domains), not as a physical warm-up routine carbon performs."
+    }
+  ]
+}

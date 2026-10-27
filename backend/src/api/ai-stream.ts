@@ -250,23 +250,28 @@ Continue with the remaining required substance to reach at least ${floor} words 
     // is it") — the vector figure rides the event as `svg` and the client
     // renders it as an interactive ```svg block; the Agnes raster chain is the
     // fallback, and puter.js remains the client's last resort on imageFailed.
-    for (const fig of pendingFigures) {
-      const t0 = Date.now();
-      const result = await drawReplyFigure(fig.prompt);
-      const ok = !!(result.url || result.svg);
-      console.info(
-        ok
-          ? `[image-gen] stream fig ${fig.id} ready in ${Date.now() - t0}ms`
-          : `[image-gen] stream fig ${fig.id} failed: ${result.reason}`,
-      );
-      channel.send({
-        [ok ? "imageSuccess" : "imageFailed"]: fig.id,
-        url: result.url,
-        svg: result.svg,
-        caption: result.caption,
-        reason: ok ? undefined : result.reason,
-      });
-    }
+    // Draw the figures at once — each is its own Gemini round-trip — and
+    // emit each event the moment its figure lands. The client swaps its
+    // placeholder per id, so arrival order between figures is free.
+    await Promise.all(
+      pendingFigures.map(async (fig) => {
+        const t0 = Date.now();
+        const result = await drawReplyFigure(fig.prompt);
+        const ok = !!(result.url || result.svg);
+        console.info(
+          ok
+            ? `[image-gen] stream fig ${fig.id} ready in ${Date.now() - t0}ms`
+            : `[image-gen] stream fig ${fig.id} failed: ${result.reason}`,
+        );
+        channel.send({
+          [ok ? "imageSuccess" : "imageFailed"]: fig.id,
+          url: result.url,
+          svg: result.svg,
+          caption: result.caption,
+          reason: ok ? undefined : result.reason,
+        });
+      }),
+    );
 
     channel.send({
       done: true,

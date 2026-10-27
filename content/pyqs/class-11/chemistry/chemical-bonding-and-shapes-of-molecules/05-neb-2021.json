@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemical Bonding And Shapes Of Molecules — 2021",
+  "year": 2021,
+  "examSource": "[NEB-pattern 2021]",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "origin": "curated NEB-pattern set filling the 2021 gap for class-11 chemical bonding",
+  "questions": [
+    {
+      "id": "che-bond-2021-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State the octet rule and give two limitations with examples. Why does $\\mathrm{BF_3}$ violate it?",
+      "solution": "Octet rule: atoms bond so as to have eight electrons in the valence shell (the noble-gas configuration).\nLimitations: (1) Incomplete octet — $\\mathrm{BF_3}$ has only 6 electrons around B, $\\mathrm{BeCl_2}$ only 4; (2) Expanded octet — $\\mathrm{PCl_5}$ (10), $\\mathrm{SF_6}$ (12) using vacant d-orbitals; (3) odd-electron molecules like NO are stable with 7/11 electrons.\n$\\mathrm{BF_3}$: boron has 3 valence electrons and forms 3 single bonds (6 shared electrons). Adding a fourth bond is impossible without exceeding its available orbitals, so it stays electron-deficient — a strong Lewis acid."
+    },
+    {
+      "id": "che-bond-2021-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Using VSEPR theory, predict the shapes of $\\mathrm{CH_4}$, $\\mathrm{NH_3}$ and $\\mathrm{H_2O}$, and arrange their bond angles in decreasing order with justification.",
+      "solution": "VSEPR: electron pairs repel; order lone-pair–lone-pair > lone-pair–bond-pair > bond-pair–bond-pair.\n$\\mathrm{CH_4}$: 4 bond pairs, no lone pair → tetrahedral, $109.5^\\circ$.\n$\\mathrm{NH_3}$: 3 bond pairs + 1 lone pair → trigonal pyramidal; the lone pair squeezes the angle to $107^\\circ$.\n$\\mathrm{H_2O}$: 2 bond pairs + 2 lone pairs → bent (V-shape); two lone pairs squeeze hardest, angle $104.5^\\circ$.\nOrder: $\\mathrm{CH_4}$ ($109.5^\\circ$) > $\\mathrm{NH_3}$ ($107^\\circ$) > $\\mathrm{H_2O}$ ($104.5^\\circ$) — more lone pairs, smaller angle."
+    },
+    {
+      "id": "che-bond-2021-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Which has the strongest hydrogen bonding, and why? (a) $\\mathrm{H_2O}$ (b) $\\mathrm{NH_3}$ (c) $\\mathrm{HF}$",
+      "solution": "(c) $\\mathrm{HF}$. Hydrogen-bond strength follows the electronegativity of the atom holding H: F (4.0) > O (3.5) > N (3.0). The most polar H–X bond gives the most positive H, hence the strongest attraction to a neighbouring lone pair. (Water still boils higher than HF overall because each water molecule forms more H-bonds — a network effect.)"
+    }
+  ]
+}

@@ -7,7 +7,6 @@ import {
   BadgeCheck,
   Clock3,
   Home,
-  Loader2,
   Mail,
   RefreshCw,
   ShieldAlert,
@@ -18,6 +17,7 @@ import {
 } from "lucide-react";
 import { apiFetch } from "@/lib/api-client";
 import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
+import { VerifyingStatus } from "./verifying-status";
 
 /**
  * Post-signup status screen (owner-approval flow, 2026-09-26).
@@ -213,10 +213,7 @@ export function WelcomeStatus() {
 
       {/* ── The one state that matters right now ── */}
       {state === "loading" && (
-        <div className="flex flex-col items-center gap-3 py-6 text-muted-foreground">
-          <Loader2 className="h-6 w-6 animate-spin text-primary" />
-          <p className="text-xs">Checking your account status…</p>
-        </div>
+        <VerifyingStatus compact label="Checking your account status" />
       )}
 
       {state === "missing" && (

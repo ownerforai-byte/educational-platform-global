@@ -188,22 +188,15 @@ async function extractSyllabusHints(
   const lower = query.toLowerCase();
   const hints: Array<{ subject: string; unit: string; topics: string[] }> = [];
 
-  const { data: sData } = await supabaseAdmin
-    .from("subjects")
-    .select("id, name")
-    .eq("is_active", true);
+  // The three tables are independent — fetch them together so one search
+  // costs one round-trip batch instead of three sequential ones.
+  const [{ data: sData }, { data: cData }, { data: tData }] = await Promise.all([
+    supabaseAdmin.from("subjects").select("id, name").eq("is_active", true),
+    supabaseAdmin.from("chapters").select("id, subject_id, title").eq("is_active", true),
+    supabaseAdmin.from("topics").select("id, chapter_id, title").eq("is_active", true),
+  ]);
 
   if (!sData || sData.length === 0) return hints;
-
-  const { data: cData } = await supabaseAdmin
-    .from("chapters")
-    .select("id, subject_id, title")
-    .eq("is_active", true);
-
-  const { data: tData } = await supabaseAdmin
-    .from("topics")
-    .select("id, chapter_id, title")
-    .eq("is_active", true);
 
   const subjects = (sData ?? []) as unknown as DbSubject[];
   const chapters = (cData ?? []) as unknown as DbChapter[];
@@ -233,8 +226,9 @@ async function extractSyllabusHints(
   return hints.slice(0, 5);
 }
 
-async function buildSyllabusContext(query: string): Promise<string> {
-  const matches = await extractSyllabusHints(query);
+function formatSyllabusContext(
+  matches: Array<{ subject: string; unit: string; topics: string[] }>,
+): string {
   if (!matches.length) return "";
   const lines = ["Relevant syllabus scope before answering:"];
   for (const hint of matches.slice(0, 3)) {
@@ -631,11 +625,16 @@ class AgnesProvider implements AIProvider {
 
   async search(query: string): Promise<AISearchResponse> {
     if (!this.apiKey) throw new Error("Missing Agnes API key");
-    const syllabusContext = await buildSyllabusContext(query);
 
-    // Fetch real-time internet search context
     const searchService = getSearchService();
-    const searchContext = await searchService.searchAsContext(query);
+    // Syllabus grounding and the live web fetch are independent — run them
+    // together so neither adds its latency to the other's, and reuse the one
+    // extraction for both the context block and the response hints.
+    const [hints, searchContext] = await Promise.all([
+      extractSyllabusHints(query),
+      searchService.searchAsContext(query),
+    ]);
+    const syllabusContext = formatSyllabusContext(hints);
 
     const systemContent = `${SEARCH_SYSTEM_PROMPT}
 
@@ -670,7 +669,7 @@ NEVER hallucinate features. Only reference real platform sections.`;
     return {
       results: [],
       fallbackMessage: reply,
-      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : [],
+      syllabusHints: hints,
     };
   }
 }

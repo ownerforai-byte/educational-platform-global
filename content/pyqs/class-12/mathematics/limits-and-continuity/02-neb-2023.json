@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Mathematics — Limits And Continuity — 2023",
+  "year": 2023,
+  "examSource": "[NEB-pattern 2023]",
+  "unitSlug": "limits-and-continuity",
+  "origin": "curated NEB-pattern set for class-12 mathematics limits and continuity",
+  "questions": [
+    {
+      "id": "mat-lim-2023-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "(a) Standard limit $\\lim_{t\\to 0}\\sin t/t = 1$. Write $\\sin 5x/x = 5\\cdot\\sin 5x/(5x) \\to 5 \\times 1 = 5$.\n(b) Standard limit $\\lim_{t\\to 0}(e^t - 1)/t = 1$. Write $(e^{3x}-1)/x = 3\\cdot(e^{3x}-1)/(3x) \\to 3 \\times 1 = 3$.\n(c) Factor: $(x^2-4)/(x-2) = (x-2)(x+2)/(x-2) = x + 2$ for $x \\ne 2$, so the limit is $2 + 2 = 4$.",
+      "question": "Evaluate: (a) $\\lim_{x \\to 0} \\frac{\\sin 5x}{x}$, (b) $\\lim_{x \\to 0} \\frac{e^{3x} - 1}{x}$, (c) $\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}$."
+    },
+    {
+      "id": "mat-lim-2023-2",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "For $x > 0$, $|x| = x$ so $f(x) = 1$ and the right-hand limit is 1. For $x < 0$, $|x| = -x$ so $f(x) = -1$ and the left-hand limit is $-1$. Since the one-sided limits differ, the two-sided limit at $x = 0$ does not exist.",
+      "question": "If $f(x) = \\frac{|x|}{x}$ for $x \\ne 0$, what are the left-hand and right-hand limits at $x = 0$? Does $\\lim_{x\\to 0}f(x)$ exist?"
+    },
+    {
+      "id": "mat-lim-2023-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Left-hand limit: $\\lim_{x\\to 1^-} f(x) = 2(1) + 1 = 3$. Right-hand value/limit: $f(1) = 1^2 + 1 = 2$, and $\\lim_{x\\to 1^+} f(x) = 2$. Since LHL $= 3 \\ne 2 =$ RHL $= f(1)$, the limit does not exist and $f$ has a jump discontinuity at $x = 1$ — it is not continuous there.",
+      "question": "Discuss the continuity of $f(x) = \\begin{cases} 2x + 1, & x < 1 \\\\ x^2 + 1, & x \\ge 1 \\end{cases}$ at $x = 1$."
+    },
+    {
+      "id": "mat-lim-2023-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "L'Hôpital's rule applies to $0/0$ or $\\infty/\\infty$ forms (with differentiable numerator/denominator near the point, denominator derivative non-zero).\n(a) $0/0$ form. Differentiate top and bottom: $\\lim_{x\\to 0} \\frac{1/(1+x)}{1} = 1$.\n(b) $\\infty/\\infty$ form. First application: $\\lim 2x/e^x$ (still $\\infty/\\infty$). Second application: $\\lim 2/e^x = 0$. Exponentials dominate polynomials, so the limit is 0.",
+      "question": "Using L'Hôpital's rule where valid, evaluate (a) $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x}$, (b) $\\lim_{x \\to \\infty} \\frac{x^2}{e^x}$. State the condition that allows L'Hôpital's rule in each case."
+    }
+  ]
+}

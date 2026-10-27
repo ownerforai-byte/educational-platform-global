@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Biology — Biomolecules And Cell Biology — 2020",
+  "year": 2020,
+  "examSource": "[NEB-pattern 2020]",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "origin": "curated NEB-pattern set filling the 2020 gap for class-11 biomolecules",
+  "questions": [
+    {
+      "id": "bio-mol-2020-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Singer and Nicolson's fluid mosaic model: the membrane is a flexible bilayer of phospholipids in which proteins float like icebergs — 'fluid' because lipids and proteins move laterally, 'mosaic' because of the scattered protein pattern.\nComponents: phospholipid bilayer (hydrophilic heads out, hydrophobic tails in), cholesterol (stability), intrinsic and extrinsic proteins, and surface carbohydrates (glycolipids/glycoproteins).\nMembrane proteins act as channels and carriers for selective transport, enzymes, and receptors that receive chemical signals.",
+      "question": "Describe the fluid mosaic model of the plasma membrane. Name the molecules that make it up and state one function of membrane proteins."
+    },
+    {
+      "id": "bio-mol-2020-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Enzymes are biological catalysts — usually proteins — that speed up reactions without being consumed, by lowering activation energy.\nLock-and-key (Fischer): the substrate fits exactly into the enzyme's rigid active site like a key in a lock, forming an enzyme–substrate complex that yields products.\nActivity is affected by temperature (rises to an optimum, then denaturation destroys the active site) and pH (each enzyme has an optimum pH; extremes denature it). Substrate concentration and inhibitors also matter.",
+      "question": "What are enzymes? Explain the lock-and-key hypothesis of enzyme action and list two factors that affect enzyme activity."
+    },
+    {
+      "id": "bio-mol-2020-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "The mitochondrion is the powerhouse of the cell — aerobic respiration there releases energy from glucose. The energy is stored as ATP (adenosine triphosphate), the cell's energy currency, made by oxidative phosphorylation on the inner mitochondrial membrane.",
+      "question": "Which organelle is called the powerhouse of the cell, and which molecule is its energy currency?"
+    }
+  ]
+}

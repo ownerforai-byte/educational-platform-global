@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Gravitation (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "gravitation",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-grav-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Weightlessness in orbit",
+      "question": "Astronauts float in the space station, so a student concludes 'there is no gravity up there.' The station orbits at ~400 km where g ≈ 8.7 m/s². Resolve the paradox: strong gravity, yet weightlessness?",
+      "solution": "Weightlessness is not zero gravity — it is zero SUPPORT force. Both the station and the astronaut fall around Earth together at the same rate (free fall in orbit), so the floor never pushes on the astronaut's feet: no normal reaction, no sensation of weight. Your scale reads the normal force, not gravity itself. The same happens momentarily in a broken elevator cable or a stomach-drop on a swing — gravity still acts fully; what vanishes is the floor pushing back."
+    },
+    {
+      "id": "drill-grav-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "g inside Earth",
+      "question": "Going down a deep mine, does gravity increase (more Earth above pulling down?) or decrease? Derive the trend for uniform density.",
+      "solution": "It DECREASES, linearly to zero at the centre. At depth d (radius r = R−d), only the inner sphere of radius r pulls you (the outer shell's pull cancels by symmetry — Newton's shell theorem). That inner mass is M(r) = M(r/R)³, so g(r) = GM(r)/r² = (GM/R³)r = g·r/R — proportional to r. The 'extra Earth above' contributes nothing net: for every lump pulling you up there is a matching lump the other side. At the centre r = 0, pulls balance perfectly: g = 0."
+    },
+    {
+      "id": "drill-grav-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Mass vs weight",
+      "question": "A 60 kg astronaut travels to the Moon (g = 1.6 m/s²). What is conserved — mass or weight? Give both values on each body.",
+      "solution": "MASS is conserved (60 kg everywhere) — it counts the astronaut's matter and sets inertia. WEIGHT changes: W = mg. Earth: 60 × 10 = 600 N. Moon: 60 × 1.6 = 96 N. In deep space (g ≈ 0): ~0 N, yet pushing the astronaut still needs the same force to accelerate (inertia!). Mass resists acceleration; weight is gravity's pull on that mass. Confusing them is why 'weight in kg' on bathroom scales is technically sloppy — scales show mass by assuming Earth's g."
+    },
+    {
+      "id": "drill-grav-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Geostationary vs polar orbits",
+      "question": "Why must a geostationary satellite sit over the equator at ~36,000 km — why can't it hover over Nepal at a lower height?",
+      "solution": "Two constraints. (1) Period: geostationary means period = 24 h (matching Earth's spin). From T² ∝ r³, only ONE radius gives 24 h: r ≈ 42,000 km from centre (~36,000 km altitude). Lower height = shorter period (LEO satellites lap Earth in ~90 min) — it cannot hover. (2) Plane: uniform circular motion needs the centre of the circle at Earth's centre; a circle 'over Nepal' at constant latitude is not centred on Earth, so gravity (always toward Earth's centre) cannot supply its centripetal force. Only the equatorial plane works."
+    }
+  ]
+}

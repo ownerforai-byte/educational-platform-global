@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
+import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
@@ -66,9 +67,10 @@ export function SignupForm() {
 
   if (isLoading || user) {
     return (
-      <p role="status" className="py-6 text-center text-sm text-muted-foreground">
-        {user ? "Opening your plan welcome…" : "Checking your session…"}
-      </p>
+      <VerifyingStatus
+        compact
+        label={user ? "Opening your plan welcome" : "Checking your session"}
+      />
     );
   }
 

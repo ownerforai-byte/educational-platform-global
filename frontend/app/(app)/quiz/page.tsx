@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, XCircle, ChevronRight, ChevronLeft, Clock, Lightbulb, BookOpen, RotateCcw } from "lucide-react";
+import { ArrowLeft, CheckCircle2, XCircle, ChevronRight, ChevronLeft, Clock, Lightbulb, BookOpen, RotateCcw, Sparkles } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Select } from "@/components/ui/select";
 import { SYLLABUS } from "@/lib/syllabus";
-import { getSubjectPyqBank, type PyqYear } from "@/lib/pyq-bank";
+import { getSubjectPyqBank, type ConceptDrill, type PyqYear } from "@/lib/pyq-bank";
 import { MISCONCEPTION_QUESTIONS, type MisconceptionQuestion } from "@/lib/misconception-questions";
 import type { MisconceptionQuestion as MCQ } from "@/lib/misconception-questions";
 import { MockExamsSection } from "@/components/content/mock-exams-section";
@@ -16,7 +16,7 @@ import { getSubjectVisual, type SubjectVisual } from "@/lib/ui/subject-visuals";
 
 // ── Types ───────────────────────────────────────────────────────────────────
 
-type QuizMode = "pyq" | "misconception";
+type QuizMode = "pyq" | "misconception" | "concepts";
 type QuizPhase = "select" | "quiz" | "review" | "results";
 
 interface QuizQuestion {
@@ -55,6 +55,15 @@ function buildPyqQuestions(pyqs: PyqYear[], yearFilter?: number): QuizQuestion[]
     }
   }
   return questions;
+}
+
+function buildConceptQuestions(drills: ConceptDrill[]): QuizQuestion[] {
+  return drills.map((d, i) => ({
+    id: `drill-${d.id}-${i}`,
+    prompt: d.concept ? `[${d.concept}] ${d.question}` : d.question,
+    marks: d.marks,
+    solution: d.solution ?? "Refer to the concept drill source.",
+  }));
 }
 
 function buildMisconceptionQuestions(subject: string): QuizQuestion[] {
@@ -115,7 +124,21 @@ function SelectScreen({ onStart }: { onStart: (mode: QuizMode, subject: string, 
           <CardTitle className="text-base">Quiz Mode</CardTitle>
           <CardDescription>Choose how you want to practice</CardDescription>
         </CardHeader>
-        <CardContent className="grid grid-cols-2 gap-3">
+        <CardContent className="grid grid-cols-3 gap-3">
+          <button
+            onClick={() => setMode("concepts")}
+            className={`rounded-xl border-2 p-4 text-left transition-all ${
+              mode === "concepts"
+                ? "border-primary bg-primary/5"
+                : "border-border hover:border-muted-foreground/30"
+            }`}
+          >
+            <div className="mb-2"><Sparkles className="h-6 w-6 text-primary" aria-hidden="true" /></div>
+            <div className="font-semibold text-sm">Concepts & Practicals</div>
+            <div className="text-xs text-muted-foreground mt-1">
+              Misconception-busting Q&A + mind-opening practicals
+            </div>
+          </button>
           <button
             onClick={() => setMode("misconception")}
             className={`rounded-xl border-2 p-4 text-left transition-all ${
@@ -537,12 +560,28 @@ export default function QuizPage() {
     let questions: QuizQuestion[] = [];
     if (mode === "misconception") {
       questions = buildMisconceptionQuestions(subject);
+    } else if (mode === "concepts") {
+      const bank = await getSubjectPyqBank(
+        "class-11-notes",
+        subject,
+        5
+      ).catch(() => ({ theory: [], pyqs: [], drills: [] }));
+      questions = buildConceptQuestions(bank.drills);
+      // Fallback to class-12 if empty
+      if (questions.length === 0) {
+        const bank12 = await getSubjectPyqBank(
+          "class-12-notes",
+          subject,
+          5
+        ).catch(() => ({ theory: [], pyqs: [], drills: [] }));
+        questions = buildConceptQuestions(bank12.drills);
+      }
     } else {
       const bank = await getSubjectPyqBank(
         "class-11-notes",
         subject,
         5
-      ).catch(() => ({ theory: [], pyqs: [] }));
+      ).catch(() => ({ theory: [], pyqs: [], drills: [] }));
       questions = buildPyqQuestions(bank.pyqs, year);
       // Fallback to class-12 if empty
       if (questions.length === 0) {
@@ -550,7 +589,7 @@ export default function QuizPage() {
           "class-12-notes",
           subject,
           5
-        ).catch(() => ({ theory: [], pyqs: [] }));
+        ).catch(() => ({ theory: [], pyqs: [], drills: [] }));
         questions = buildPyqQuestions(bank12.pyqs, year);
       }
     }

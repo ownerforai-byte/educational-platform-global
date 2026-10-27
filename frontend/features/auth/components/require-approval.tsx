@@ -42,6 +42,7 @@ import {
 import { useSession } from "@/features/auth/hooks/use-session";
 import { NOTICE_COPY } from "@/features/credits/constants";
 import { ACCESS_NOTICE } from "./access-notice";
+import { VerifyingStatus } from "./verifying-status";
 
 /**
  * Routes inside the shell that stay reachable WITHOUT an approved account.
@@ -86,12 +87,7 @@ function ApprovalPending() {
       data-testid="approval-pending"
       className="flex min-h-[50vh] items-center justify-center"
     >
-      <div className="flex flex-col items-center gap-3">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-        <p className="text-sm font-medium text-muted-foreground animate-blink">
-          Verifying your access…
-        </p>
-      </div>
+      <VerifyingStatus label="Verifying your access" />
     </div>
   );
 }

@@ -1840,3 +1840,26 @@ body {
   0%   { transform: scale(0.7); opacity: 0.9; }
   70%, 100% { transform: scale(1.9); opacity: 0; }
 }
+
+/* Live access check: the label blinks and the dots step, so the wait reads as work in progress. */
+@keyframes verify-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+@keyframes verify-ring {
+  0% { transform: scale(0.82); opacity: 0.45; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+.verify-blink { animation: verify-blink 1.05s ease-in-out infinite; }
+.verify-ring { animation: verify-ring 1.4s ease-out infinite; }
+.verify-dots span {
+  display: inline-block;
+  animation: verify-blink 1.05s ease-in-out infinite;
+}
+.verify-dots span:nth-child(2) { animation-delay: 0.18s; }
+.verify-dots span:nth-child(3) { animation-delay: 0.36s; }
+@media (prefers-reduced-motion: reduce) {
+  .verify-blink,
+  .verify-ring,
+  .verify-dots span { animation: none; }
+}

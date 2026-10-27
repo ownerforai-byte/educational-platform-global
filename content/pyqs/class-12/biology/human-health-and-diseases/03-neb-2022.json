@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Biology — Human Health And Diseases — 2022",
+  "year": 2022,
+  "examSource": "[NEB-pattern 2022]",
+  "unitSlug": "human-health-and-diseases",
+  "origin": "curated NEB-pattern set for class-12 biology health and diseases",
+  "questions": [
+    {
+      "id": "bio-health-2022-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Malaria: pathogen Plasmodium (P. vivax / P. falciparum), transmitted by the bite of an infected female Anopheles mosquito. Prevention — sleep under insecticide-treated bed nets; drain stagnant water / spray larvicides to destroy breeding sites.\nDengue: pathogen dengue virus (flavivirus, four serotypes), transmitted by the bite of infected Aedes aegypti mosquitoes, which bite in daytime. Prevention — eliminate freshwater containers (tyres, pots) where Aedes breeds; wear long sleeves and use repellents during the day.",
+      "question": "Name the pathogen, vector and two preventive measures for EACH of malaria and dengue."
+    },
+    {
+      "id": "bio-health-2022-2",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "Antibodies are produced by plasma cells, the differentiated form of B-lymphocytes. Vaccination exposes the body to harmless antigen so memory B and T cells form — this is artificial active immunity: the person's own immune system makes the antibodies and remembers the pathogen.",
+      "question": "Which cells produce antibodies, and which type of immunity does vaccination provide?"
+    },
+    {
+      "id": "bio-health-2022-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Innate immunity is present from birth, non-specific and immediate: e.g. skin/mucous barriers, phagocytosis by macrophages and neutrophils. Acquired immunity develops after exposure, is pathogen-specific and has memory: e.g. antibody production after infection (natural active), protection from vaccination (artificial active).\nInterferons are signalling proteins released by virus-infected cells. They bind neighbouring cells and switch on antiviral defences (degrading viral RNA, blocking protein synthesis), slowing the infection while the specific response builds up — a key innate antiviral mechanism.",
+      "question": "Distinguish between innate and acquired immunity, giving two examples of each. What is the role of interferons?"
+    },
+    {
+      "id": "bio-health-2022-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "HIV (a retrovirus) binds CD4 receptors on helper T cells. Its RNA genome enters, and reverse transcriptase builds a DNA copy, which integrates into the host chromosome as a provirus. The cell then transcribes viral RNA, translates viral proteins, and new virions bud out, killing the CD4 cell. Falling helper-T counts collapse cell-mediated immunity.\nCure is hard because: (1) the provirus hides silently in long-lived memory T cells (latent reservoirs) untouched by drugs or immunity; (2) reverse transcriptase is error-prone, so HIV mutates extremely fast and escapes drugs and antibodies; (3) the virus directly destroys the immune cells needed to fight it. Antiretrovirals suppress replication but cannot remove integrated proviral DNA.",
+      "question": "Explain the life cycle of HIV inside a human host cell. Why is AIDS hard to cure even with antiretroviral drugs?"
+    }
+  ]
+}

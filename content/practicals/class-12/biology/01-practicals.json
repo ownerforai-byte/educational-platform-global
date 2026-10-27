@@ -1,0 +1,98 @@
+{
+  "title": "Mind-Opening Practicals — Class 12 Biology",
+  "subject": "biology",
+  "unitSlug": "all-units",
+  "examSource": "Practical questions",
+  "questions": [
+    {
+      "id": "prac-bio12-div",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "biodiversity-and-conservation",
+      "concept": "Why tropics hold most species",
+      "question": "A hectare of Amazon holds more tree species than all of Europe. Area alone can't explain it. What THREE interacting factors make the tropics the engine of speciation?",
+      "solution": "Time (tropics escaped the ice ages — uninterrupted millions of years for lineages to accumulate), Energy (relentless solar input supports more niches, narrower specialisation, and faster metabolisms/mutation turnover), and Stability (low seasonality lets fragile specialists survive that temperate winters would kill). Europe was scraped clean by glaciers 10,000 years ago and is still recolonising. Diversity is time × energy × stability — the tropics maximise all three."
+    },
+    {
+      "id": "prac-bio12-biotech-app",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "biotechnology-applications",
+      "concept": "Insulin from bacteria",
+      "question": "Before 1982 diabetics used pig insulin, which sometimes caused allergies. How does inserting ONE human gene into E. coli produce safer insulin — and why must the bacterial product still be processed?",
+      "solution": "The human insulin gene makes bacteria translate the EXACT human amino-acid sequence — no pig-specific differences for the immune system to attack. But bacteria can't fold/split proinsulin like human cells, so manufacturers produce A and B chains separately (or as proinsulin cleaved later) and join them with the correct disulfide bonds. The gene gives the recipe; downstream processing provides the origami. Result: unlimited identical human insulin, zero slaughterhouse supply chain."
+    },
+    {
+      "id": "prac-bio12-biotech-prin",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "biotechnology-principles",
+      "concept": "Why restriction enzymes don't chop host DNA",
+      "question": "Bacteria make restriction enzymes that shred viral DNA at GAATTC — but the bacterium's own genome contains GAATTC sequences too. Why doesn't it commit suicide?",
+      "solution": "Methylation camouflage: the bacterium's own methylase tags its GAATTC sites with methyl groups, and the restriction enzyme only cuts UNMETHYLATED sites. Invading phage DNA arrives unmethylated — chopped. Self DNA wears the chemical uniform — spared. It is a molecular ID-badge system: modification marks 'self', restriction destroys 'non-self'. Genetic engineers exploit the same scissors, then protect their plasmids the same way."
+    },
+    {
+      "id": "prac-bio12-env",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "environmental-issues",
+      "concept": "Ozone hole healing proof",
+      "question": "The ozone hole is shrinking after the CFC ban — the only global environmental treaty that clearly worked. Why did THIS pollutant get fixed while CO₂ keeps rising? Give two structural reasons.",
+      "solution": "(1) Few producers, easy substitutes: a handful of companies made CFCs and alternatives (HFCs) existed — banning cost little. Fossil fuels underpin ALL energy, transport and industry, so CO₂ cuts threaten every economy. (2) Visible, attributable harm: the ozone hole appeared over Antarctica with a single chemical fingerprint (chlorine catalysis), while climate damage is diffuse and delayed. CFCs were a narrow, replaceable product with a smoking gun; CO₂ is civilisation's exhaust with no substitute at scale — yet."
+    },
+    {
+      "id": "prac-bio12-her",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "heredity-and-evolution",
+      "concept": "Why siblings differ",
+      "question": "Full siblings share the same parents, yet (except identical twins) no two are genetically alike. Name the TWO shuffling events that guarantee this, and estimate the combinations from one of them.",
+      "solution": "Independent assortment (2²³ ≈ 8.4 million gamete types per parent from chromosome shuffling alone) and crossing over (each chromosome pair swaps segments, making every chromatid unique). Fertilisation then multiplies: 8.4M × 8.4M ≈ 70 trillion combinations before crossing over is even counted. Cloning needs none of this — which is exactly why clones (and identical twins, one zygote split) match. Family resemblance is shared halves; uniqueness is shuffled halves."
+    },
+    {
+      "id": "prac-bio12-health",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "human-health-and-diseases",
+      "concept": "Vaccines vs antibiotics",
+      "question": "People demand antibiotics for the flu (a virus) and skip vaccines for measles. Explain BOTH errors using what each tool actually targets.",
+      "solution": "Antibiotics target BACTERIAL machinery (cell walls, bacterial ribosomes) — viruses have none, so antibiotics can't touch flu and only breed resistant bacteria in your gut. Vaccines TRAIN your immune memory in advance, so it wins the race against fast viruses like measles. Error one confuses the enemy (virus ≠ bacteria); error two discards the only head start available. Antibiotics cure bacterial present; vaccines prevent viral future — they operate on different axes entirely."
+    },
+    {
+      "id": "prac-bio12-mic",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "microbes-in-human-welfare",
+      "concept": "Idli/dosa fermentation logic",
+      "question": "Idli batter rises overnight with no yeast added and turns slightly sour. Which microbes do the work, where did they come from, and what does EACH product (gas + acid) contribute?",
+      "solution": "Wild Leuconostoc bacteria and Saccharomyces yeast, already living on the rice/lentils and in the air, multiply in the warm batter. Bacteria make lactic acid (sour tang + lowers pH, which keeps pathogens out and improves nutrition); yeast makes CO₂ (gas bubbles trapped in the sticky batter → spongy rise when steamed). No packet needed — traditional fermentation farms the microbes already on the grain. Sourness is preservation; gas is texture; both are microbial metabolism you eat."
+    },
+    {
+      "id": "prac-bio12-org",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "organisms-and-environment",
+      "concept": "Desert plants vs desert animals",
+      "question": "Cacti open stomata at NIGHT; desert rats never drink water. Both solve the same problem — desiccation. Explain how each strategy attacks a different half of the water equation.",
+      "solution": "Water balance = gain minus loss. Cacti attack LOSS: CAM photosynthesis opens stomata at cool night (minimal evaporation) and stores CO₂ as acid for daytime use; succulent stems bank water. Kangaroo rats attack GAIN: ultra-concentrated urine and dry faeces minimise loss while metabolic water (from oxidising dry seeds) plus moisture in food covers intake — no drinking needed. Same desert, opposite engineering: plants reschedule breathing, animals recycle exhaustively."
+    },
+    {
+      "id": "prac-bio12-food",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "strategies-for-food-production",
+      "concept": "Hybrid vigour cost",
+      "question": "Hybrid seeds yield 20–30% more, yet poor farmers often replant cheaper traditional seeds. If hybrids are better, why can't farmers simply save hybrid grain as next year's seed?",
+      "solution": "Because hybrid vigour (heterosis) exists only in the F1 generation — maximum heterozygosity. Replanted F2 grain segregates: traits split, yield crashes toward (or below) parental levels, unevenly. Farmers must buy fresh F1 seed yearly, converting a one-time biology win into a recurring cost. Traditional varieties breed true (homozygous) so saved seed performs identically. The yield gap is real; the seed-sovereignty gap is why adoption is an economic, not agronomic, decision."
+    }
+  ]
+}

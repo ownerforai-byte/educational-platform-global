@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Heredity And Evolution (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "heredity-and-evolution",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-her-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Dominant vs common",
+      "question": "A student hears 'the allele for six fingers (polydactyly) is dominant' and concludes most humans must have six fingers. What is the flaw?",
+      "solution": "Dominant describes what happens IN a heterozygote (the allele expresses itself), not how COMMON the allele is in the population. Allele frequency is set by mutation, selection and drift — most dominant disease alleles are rare because selection removes them. Polydactyly is dominant yet rare (~1 in 500); the recessive five-finger allele is near-universal. 'Dominant' wins the genotype battle; it says nothing about winning the population."
+    },
+    {
+      "id": "drill-her-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why 9:3:3:1 needs independence",
+      "question": "Two genes on the SAME chromosome, very close together, are crossed in a dihybrid. A student still predicts 9:3:3:1. Why will the actual ratio deviate, and toward what?",
+      "solution": "9:3:3:1 assumes independent assortment — alleles of the two genes shuffle freely into gametes. Linked genes on one chromosome travel TOGETHER, so parental gamete combinations are over-produced and recombinant ones are rare (only via crossing over). The F2 ratio collapses toward 3:1-like parental classes with few recombinants. Mendel was lucky: his seven pea genes sit on different chromosomes (or far apart). Linkage is exactly why Morgan's fruit-fly crosses 'broke' Mendel's ratio."
+    },
+    {
+      "id": "drill-her-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "DNA strand direction",
+      "question": "DNA polymerase 'reads 3′→5′ and builds 5′→3′.' A student asks why the lagging strand can't just be built 3′→5′ continuously like the leading strand. What forbids it?",
+      "solution": "Chemistry forbids it: DNA polymerase can only ADD a nucleotide's 5′-phosphate to a free 3′-OH end — the enzyme's active site works in one direction only. On the lagging strand the template runs 5′→3′ toward the fork, so continuous 5′→3′ synthesis would have to move AWAY from the fork (backwards). The cell's workaround is Okazaki fragments: short 5′→3′ stretches built away-from-fork, later stitched by ligase. One enzyme direction → two strand strategies."
+    },
+    {
+      "id": "drill-her-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Selection acts on phenotypes",
+      "question": "A harmful recessive allele (e.g. cystic fibrosis) persists for generations despite killing homozygotes young. Why can't selection eliminate it, and what hides it?",
+      "solution": "Selection sees PHENOTYPES, not genotypes — and the allele hides in healthy heterozygote carriers (Aa), who survive and reproduce normally. Only the rare aa homozygotes ($q^2$ of the population) are removed each generation, while the vast reservoir $2pq$ of carrier copies passes on untouched. The rarer the allele, the larger the hidden fraction: at $q = 0.02$, carriers outnumber sufferers ~100 to 1. Recessive lethals are nearly invisible to selection — that is why they linger. (Heterozygote advantage, as in sickle-cell vs malaria, can actively preserve them.)"
+    }
+  ]
+}

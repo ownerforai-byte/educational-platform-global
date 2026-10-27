@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Chemistry — Electro Chemistry — 2022",
+  "year": 2022,
+  "examSource": "[NEB-pattern 2022]",
+  "unitSlug": "electro-chemistry",
+  "origin": "curated NEB-pattern set for class-12 chemistry electrochemistry",
+  "questions": [
+    {
+      "id": "che-electro-2022-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "First law: mass deposited is proportional to charge passed, $w = ZQ$. Second law: masses deposited by the same charge are proportional to chemical equivalents $E = A/valency$.\nCharge $Q = It = 2 \\times 1800 = 3600\\,\\mathrm{C}$. Moles of electrons $= Q/F = 3600/96500 = 0.0373\\,\\mathrm{mol}$.\n$M^{2+} + 2e^- \\rightarrow M$, so moles of metal $= 0.0373/2 = 0.01865\\,\\mathrm{mol}$.\nAtomic mass $= 2.22/0.01865 \\approx 119\\,\\mathrm{g/mol}$ (tin).",
+      "question": "State Faraday's first and second laws of electrolysis. A current of $2\\,\\mathrm{A}$ passed for $30$ minutes deposits $2.22\\,\\mathrm{g}$ of a metal (valency 2). Calculate the metal's atomic mass. ($F = 96500\\,\\mathrm{C/mol}$)"
+    },
+    {
+      "id": "che-electro-2022-2",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "The more negative electrode oxidises: Zn is the anode, Cu the cathode.\n$E^\\circ_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} = 0.34 - (-0.76) = 1.10\\,\\mathrm{V}$. A positive emf means the cell reaction $\\mathrm{Zn + Cu^{2+} \\rightarrow Zn^{2+} + Cu}$ is spontaneous.",
+      "question": "The standard reduction potentials are $E^\\circ(\\mathrm{Cu^{2+}/Cu}) = +0.34\\,\\mathrm{V}$ and $E^\\circ(\\mathrm{Zn^{2+}/Zn}) = -0.76\\,\\mathrm{V}$. What is the standard emf of the Daniell cell $\\mathrm{Zn|Zn^{2+}||Cu^{2+}|Cu}$, and which electrode is the anode?"
+    },
+    {
+      "id": "che-electro-2022-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Nernst equation: $E = E^\\circ - \\frac{RT}{nF}\\ln Q = E^\\circ - \\frac{0.0591}{n}\\log_{10}\\frac{[\\text{reduced}]}{[\\text{oxidised}]}$ at $25^\\circ\\mathrm{C}$.\nFor $\\mathrm{Zn^{2+} + 2e^- \\rightarrow Zn(s)}$: $E = E^\\circ - \\frac{0.0591}{2}\\log\\frac{1}{[\\mathrm{Zn^{2+}}]}$.\nWith $[\\mathrm{Zn^{2+}}] = 0.01$: $E = -0.76 - 0.0295 \\times \\log(100) = -0.76 - 0.0295 \\times 2 = -0.76 - 0.059 = -0.819\\,\\mathrm{V}$. Dilution makes the reduction potential more negative, as expected.",
+      "question": "Write the Nernst equation for a general reduction $M^{n+} + ne^- \\rightarrow M$. Use it to calculate the electrode potential of a $\\mathrm{Zn^{2+}/Zn}$ electrode dipped in $0.01\\,\\mathrm{M}$ $\\mathrm{ZnSO_4}$ at $25^\\circ\\mathrm{C}$. ($E^\\circ = -0.76\\,\\mathrm{V}$)"
+    },
+    {
+      "id": "che-electro-2022-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "Rusting is an electrochemical cell on the iron surface. At anodic spots iron oxidises: $\\mathrm{Fe \\rightarrow Fe^{2+} + 2e^-}$. Electrons flow through the metal to cathodic spots where oxygen is reduced: $\\mathrm{O_2 + 2H_2O + 4e^- \\rightarrow 4OH^-}$. $\\mathrm{Fe^{2+}}$ and $\\mathrm{OH^-}$ diffuse together and precipitate as $\\mathrm{Fe(OH)_2}$, which oxidises further to hydrated ferric oxide $\\mathrm{Fe_2O_3\\cdot xH_2O}$ (rust). Water with dissolved $\\mathrm{CO_2}$/salts acts as the electrolyte.\nPrevention: (1) Barrier methods — painting, oiling or galvanising (zinc coating) keep water and oxygen away from iron. (2) Sacrificial protection — connecting iron to a more reactive metal (Mg/Zn) makes iron the cathode of the cell so it cannot oxidise; the sacrificial metal corrodes instead.",
+      "question": "Explain rusting of iron in terms of electrochemistry (anodic and cathodic regions). Give two methods of preventing corrosion with the principle behind each."
+    }
+  ]
+}

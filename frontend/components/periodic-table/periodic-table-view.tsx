@@ -88,7 +88,10 @@ const GROUP_ROMAN_LABELS = [
 
 export function PeriodicTableView() {
   const { user } = useSession();
-  // The element grid is for members. Filters, blocks, and CEE are Pro,
+  // The element grid is for members. The nature filters (metal / non-metal /
+  // metalloid) open at Member; the s/p/d/f block characteristics open at Plus
+  // (owner 2026-10-27: "for members — metal, non-metal and metalloid filters
+  // only"). Search, counts, the f-block rows and the full dossier stay Pro,
   // unless a Plus account has unlocked them with the password.
   const isPro = hasLevel(user, "pro");
   const canAskUnlock = hasLevel(user, "plus") && !isPro;
@@ -126,8 +129,10 @@ export function PeriodicTableView() {
       setUnlocking(false);
     }
   }
+  // s/p/d/f block characteristics are a Plus feature (owner 2026-10-27).
+  const blockTools = hasLevel(user, "plus") || unlocked;
   const filterUnlocked = (cat: PeriodicFilterCategory): boolean =>
-    plusTools && hasLevel(user, filterMinTier(cat));
+    hasLevel(user, filterMinTier(cat)) || unlocked;
   const [elements, setElements] = useState<PeriodicElement[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeFilterId, setActiveFilterId] = useState<string>("all");
@@ -370,7 +375,7 @@ export function PeriodicTableView() {
           }}
         >
           <p className="text-xs text-muted-foreground">
-            Filters, blocks, and CEE open at Pro. Plus can unlock them with the password.
+            The Pro extras — search, f-block rows and the full element dossier — unlock with the password.
           </p>
           <input
             type="password"
@@ -432,7 +437,7 @@ export function PeriodicTableView() {
           </div>
           )}
 
-          {plusTools && (
+          {blockTools && (
           <div
             className="flex items-center gap-1 bg-card border border-border/80 rounded-xl p-0.5 shadow-sm"
             title="Recolour the tiles by chemical nature (metal / metalloid / non-metal) or by orbital block (s / p / d / f)"
@@ -1099,14 +1104,14 @@ export function PeriodicTableView() {
         </div>
       )}
 
-      {plusTools && (
+      {blockTools && (
       <BlockExplorer
         elements={elements}
         activeFilterId={activeFilterId}
         onSelectBlock={setActiveFilterId}
         onSelectElement={(el) => {
           setSelectedElement(el);
-          setIsDossierOpen(true);
+          if (plusTools) setIsDossierOpen(true);
         }}
       />
       )}

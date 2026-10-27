@@ -39,34 +39,51 @@ const DRY = ARGS.includes("--dry-run");
 
 const ROOT = process.cwd();
 const CONTENT = path.join(ROOT, "content");
-// The classified questions section — this script owns exactly this family.
-const CORPUS = path.join(CONTENT, "practice", "questions");
+// The bank families this script owns: the classified questions section plus
+// the dedicated subject-wise bank (`content/pyqs/` — one folder per subject,
+// used by the quiz engine and the AI corpus). Both use canonical filenames
+// (`NN-neb-YYYY.json`) and identical file contracts, so they register side
+// by side: `practice/questions/…` keys and `pyqs/…` keys.
+const CORPUSES = [
+  { dir: path.join(CONTENT, "practice", "questions"), prefix: "practice/questions" },
+  { dir: path.join(CONTENT, "pyqs"), prefix: "pyqs" },
+  // Authored concept-clearing drills (`content/drills/`): same file contract
+  // (questions with Q&A), so they register like banks and reach the quiz
+  // loader + AI corpus. Non-canonical names only affect the legacy log line.
+  { dir: path.join(CONTENT, "drills"), prefix: "drills" },
+  // Mind-opening practicals (`content/practicals/`): one file per subject per
+  // class, one question per syllabus unit (per-question unitSlug). Same
+  // contract, same consumers.
+  { dir: path.join(CONTENT, "practicals"), prefix: "practicals" },
+];
 const TARGETS = [
   path.join(CONTENT, "_index.json"),
   path.join(ROOT, "frontend", "public", "data", "content", "_index.json"),
 ];
 
-/** Every bank under the questions section, as content-relative POSIX paths (= index keys). */
+/** Every bank under the owned families, as content-relative POSIX paths (= index keys). */
 function discoverPyqFiles() {
   const out = [];
-  if (!fs.existsSync(CORPUS)) {
-    console.error(`pyq-register: corpus not found at ${CORPUS} — run from the repo root`);
+  for (const { dir, prefix } of CORPUSES) {
+    if (!fs.existsSync(dir)) continue;
+    const walk = (d) => {
+      for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
+        const full = path.join(d, entry.name);
+        if (entry.isDirectory()) {
+          walk(full);
+          continue;
+        }
+        if (!entry.name.endsWith(".json")) continue;
+        if (entry.name.startsWith("_")) continue;
+        out.push(`${prefix}/${path.relative(dir, full).replaceAll(path.sep, "/")}`);
+      }
+    };
+    walk(dir);
+  }
+  if (out.length === 0) {
+    console.error("pyq-register: no bank family found — run from the repo root");
     process.exit(2);
   }
-  const walk = (dir) => {
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        walk(full);
-        continue;
-      }
-      if (!entry.name.endsWith(".json")) continue;
-      const rel = `practice/questions/${path.relative(CORPUS, full).replaceAll(path.sep, "/")}`;
-      if (entry.name.startsWith("_")) continue;
-      out.push(rel);
-    }
-  };
-  walk(CORPUS);
   return out.sort();
 }
 
@@ -92,7 +109,8 @@ function serialise(index) {
 
 /**
  * A bank this script is responsible for: the canonical filename
- * (`01-neb-2024.json`) in the classified questions section. Older exam-bank
+ * (`01-neb-2024.json`) in either owned family (`practice/questions/`, `pyqs/`).
+ * Older exam-bank
  * files (`01-neb-style-questions.json`, `c-q-and-mcq.json`, `neb-2021.json`)
  * store their questions under a different schema and are counted as legacy.
  */

@@ -56,6 +56,7 @@ export const KIND_SECTIONS = {
   sets: "practice/problem-sets",
   examples: "practice/examples",
   exams: "practice/exams",
+  drills: "drills",
   mindmap: "visuals/mindmaps",
   rails: "visuals/rails",
   graph: "visuals/graphs",

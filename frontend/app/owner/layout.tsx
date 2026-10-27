@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Crown, Users, Crown as CrownIcon, Database, Settings, Activity, Home, Stethoscope, Coins, MessageSquareText, Timer, Sparkles } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { VerifyingStatus } from "@/features/auth/components/verifying-status";
 import { isOwnerUser } from "@/lib/owner";
 import { cn } from "@/lib/utils";
 
@@ -43,10 +44,7 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
-        <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-          <p className="text-sm font-medium text-muted-foreground">Verifying owner session…</p>
-        </div>
+        <VerifyingStatus label="Verifying owner session" />
       </div>
     );
   }

@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Physics — Current Electricity — 2022",
+  "year": 2022,
+  "examSource": "[NEB-pattern 2022]",
+  "unitSlug": "current-electricity",
+  "origin": "curated NEB-pattern set for class-12 physics current electricity",
+  "questions": [
+    {
+      "id": "phy-cur-2022-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Kirchhoff's current law: the algebraic sum of currents at a junction is zero ($\\sum I = 0$, charge conservation). Kirchhoff's voltage law: the algebraic sum of voltages round any closed loop is zero ($\\sum V = 0$, energy conservation).\nLabel the bridge ABCD with battery across A–C and galvanometer across B–D. At balance $I_g = 0$, so the current $I_1$ through P also flows through Q, and $I_2$ through R also flows through S.\nLoop ABD: $-I_1 P + I_2 R = 0$, so $I_1 P = I_2 R$. Loop BCD: $-I_1 Q + I_2 S = 0$, so $I_1 Q = I_2 S$. Dividing gives $P/Q = R/S$ — the balance condition. Equivalently $P/Q = R/S$ lets the unknown resistance be found from three known ones.",
+      "question": "State Kirchhoff's laws. Use Kirchhoff's voltage law to derive the balance condition of a Wheatstone bridge with resistances $P, Q, R, S$ (galvanometer between the junctions carries no current at balance)."
+    },
+    {
+      "id": "phy-cur-2022-2",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "Bending into a circle splits the wire into two semicircular halves, each of resistance $12/2 = 6\\,\\Omega$. The ends of a diameter connect these two halves in parallel, so $1/R_{\\text{eq}} = 1/6 + 1/6 = 1/3$, giving $R_{\\text{eq}} = 3\\,\\Omega$.",
+      "question": "A wire of resistance $12\\,\\Omega$ is bent into a circle. What is the effective resistance between the ends of any diameter?"
+    },
+    {
+      "id": "phy-cur-2022-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Drift velocity $v_d$ is the slow average velocity superimposed on electrons' random thermal motion by an applied electric field.\nIn time $t$, electrons within length $v_d t$ of a cross-section $A$ pass through it: volume $Av_d t$, number $nAv_d t$ (with $n$ = free electrons per unit volume), charge $neAv_d t$. Hence $I = Q/t = neAv_d$.\n$v_d$ is of order $10^{-4}\\,\\mathrm{m/s}$ because electrons collide constantly with lattice ions. Signals travel near light speed because the electric field propagates through the wire almost instantly and pushes every free electron simultaneously — individual electrons still drift slowly.",
+      "question": "Define drift velocity. Derive the relation $I = neAv_d$ between current and drift velocity, and explain why the drift speed is small even though electric signals travel fast."
+    },
+    {
+      "id": "phy-cur-2022-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "(a) Current $I = E/(R + r)$. Power in $R$: $P = I^2 R = E^2 R/(R+r)^2$. Maximising over $R$: $dP/dR = E^2[(R+r)^2 - 2R(R+r)]/(R+r)^4 = 0$ gives $R + r - 2R = 0$, i.e. $R = r = 1\\,\\Omega$ (maximum power transfer theorem).\n$P_{\\max} = E^2 r/(2r)^2 = E^2/4r = 36/4 = 9\\,\\mathrm{W}$.\n(b) Power supplied by the cell: $P_{\\text{total}} = EI = E^2/(R+r) = 36/2 = 18\\,\\mathrm{W}$. Efficiency $\\eta = P/P_{\\text{total}} = 9/18 = 0.5$, i.e. 50% — half the power is wasted heating the internal resistance.",
+      "question": "A cell of emf $E = 6\\,\\mathrm{V}$ and internal resistance $r = 1\\,\\Omega$ drives current through an external resistor $R$. (a) Find $R$ for maximum power delivered to it and the value of that power. (b) Show the efficiency at maximum power transfer is 50%."
+    }
+  ]
+}

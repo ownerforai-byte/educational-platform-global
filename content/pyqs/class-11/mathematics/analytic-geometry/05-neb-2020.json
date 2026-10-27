@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Mathematics — Analytic Geometry — 2020",
+  "year": 2020,
+  "examSource": "[NEB-pattern 2020]",
+  "unitSlug": "analytic-geometry",
+  "origin": "curated NEB-pattern set filling the 2020 gap for class-11 analytic geometry",
+  "questions": [
+    {
+      "id": "mat-geo-2020-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Find the equation of the straight line passing through $(2, 3)$ with slope $m = -1$. Also write it in intercept form and state the intercepts.",
+      "solution": "Point–slope form: $y - y_1 = m(x - x_1)$ gives $y - 3 = -1(x - 2)$, i.e. $y = -x + 5$, or $x + y = 5$.\nIntercept form $x/a + y/b = 1$: divide by 5 → $x/5 + y/5 = 1$. x-intercept $a = 5$ (point $(5,0)$), y-intercept $b = 5$ (point $(0,5)$) — the line cuts equal intercepts, sloping down at $135^\\circ$."
+    },
+    {
+      "id": "mat-geo-2020-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Derive the distance formula between $P(x_1, y_1)$ and $Q(x_2, y_2)$. Use it to show that $A(1, 2)$, $B(4, 6)$ and $C(7, 2)$ form an isosceles triangle.",
+      "solution": "By Pythagoras on the right triangle with legs $|x_2-x_1|$, $|y_2-y_1|$: $PQ = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$.\n$AB = \\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9+16} = 5$.\n$BC = \\sqrt{(7-4)^2 + (2-6)^2} = \\sqrt{9+16} = 5$.\n$AC = \\sqrt{(7-1)^2 + (2-2)^2} = 6$. Since $AB = BC = 5$, the triangle is isosceles with vertex at $B$."
+    },
+    {
+      "id": "mat-geo-2020-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "What is the slope of the line $3x + 4y = 12$, and what is the slope of any line perpendicular to it?",
+      "solution": "Rewrite as $y = -\\frac{3}{4}x + 3$, so slope $m = -3/4$. A perpendicular line has the negative-reciprocal slope $m_\\perp = 4/3$ (since $m_1 m_2 = -1$)."
+    }
+  ]
+}

@@ -60,18 +60,18 @@ export interface PeriodicElement {
 /* ── Block (s / p / d / f) helpers ────────────────────────────────────────── */
 
 /**
- * Filter tiers (owner direction 2026-10-23: "filters in cee periodic table
- * … according to tier access"). The classification families open in ladder
- * order (plan.md §2): the core nature + block study at Member, groups &
- * families (incl. the CEE-named ones — the CEE track is Plus) at Plus, and the
- * high-yield special groups & property filters at Pro. Owner reaches all.
+ * Filter tiers (owner 2026-10-27: "block all s,p,d,f block characteristics
+ * from member — it is a plus feature; for members — metal, non-metal and
+ * metalloid filters only"). The nature family (metal / non-metal / metalloid)
+ * opens at Member; the s/p/d/f block characteristics and every other
+ * classification family open at Plus. Owner reaches all.
  * Restricted chips stay visible in a muted disabled state; plans are in the footer only (§4).
  */
 export const FILTER_MIN_TIERS: Record<
   PeriodicFilterCategory["classificationType"],
   AccessLevel
 > = {
-  nature: "plus",
+  nature: "member",
   block: "plus",
   family: "plus",
   special_group: "plus",

@@ -146,6 +146,20 @@ export const CHAT_SUGGESTION_CATEGORIES: SuggestionCategory[] = [
   "Earth & Space",
 ];
 
+/**
+ * Every pool question per category — the ChatHome chip deck. Returns copies,
+ * so callers can shuffle/slice freely without touching the pool.
+ */
+export function suggestionGroups(categories: SuggestionCategory[]): {
+  category: SuggestionCategory;
+  questions: string[];
+}[] {
+  return categories.map((category) => ({
+    category,
+    questions: [...SUGGESTIONS[category]],
+  }));
+}
+
 export function createSuggestionDeck(
   categories: SuggestionCategory[],
   count: number,

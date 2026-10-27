@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Chemistry — Stoichiometry — 2021",
+  "year": 2021,
+  "examSource": "[NEB-pattern 2021]",
+  "unitSlug": "stoichiometry",
+  "origin": "curated NEB-pattern set filling the 2021 gap for class-11 stoichiometry",
+  "questions": [
+    {
+      "id": "che-stoich-2021-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Avogadro's law: equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules.\nAt STP one mole occupies $22.4\\,\\mathrm{L}$, so $11.2\\,\\mathrm{L} = 0.5\\,\\mathrm{mol}$. Molecules $= 0.5 \\times 6.022\\times10^{23} = 3.011\\times10^{23}$.\nMolar mass of $\\mathrm{CO_2} = 44\\,\\mathrm{g/mol}$, so mass $= 0.5 \\times 44 = 22\\,\\mathrm{g}$.",
+      "question": "State Avogadro's law. How many molecules are present in $11.2\\,\\mathrm{L}$ of $\\mathrm{CO_2}$ at STP, and what is its mass?"
+    },
+    {
+      "id": "che-stoich-2021-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Reduction half: $\\mathrm{MnO_4^- \\rightarrow Mn^{2+}}$. Balance O with water: $\\mathrm{MnO_4^- \\rightarrow Mn^{2+} + 4H_2O}$; balance H with $H^+$: $\\mathrm{MnO_4^- + 8H^+ \\rightarrow Mn^{2+} + 4H_2O}$; balance charge with electrons: $\\mathrm{MnO_4^- + 8H^+ + 5e^- \\rightarrow Mn^{2+} + 4H_2O}$.\nOxidation half: $\\mathrm{Fe^{2+} \\rightarrow Fe^{3+} + e^-}$ — multiply by 5.\nAdding: $\\mathrm{MnO_4^- + 5Fe^{2+} + 8H^+ \\rightarrow Mn^{2+} + 5Fe^{3+} + 4H_2O}$. Atoms and charges ($+17$ each side) both balance.",
+      "question": "Balance the redox reaction by the ion-electron method: $\\mathrm{MnO_4^- + Fe^{2+} \\rightarrow Mn^{2+} + Fe^{3+}}$ (acidic medium)."
+    },
+    {
+      "id": "che-stoich-2021-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "Moles per 100 g: C $= 40/12 = 3.33$, H $= 6.7/1 = 6.7$, O $= 53.3/16 = 3.33$. Divide by the smallest (3.33): C:H:O $= 1:2:1$. Empirical formula $\\mathrm{CH_2O}$.",
+      "question": "What is the empirical formula of a compound with 40% C, 6.7% H and 53.3% O by mass? (C=12, H=1, O=16)"
+    }
+  ]
+}

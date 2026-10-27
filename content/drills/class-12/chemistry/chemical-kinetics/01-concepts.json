@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Chemical Kinetics (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "chemical-kinetics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-kin-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Order vs molecularity",
+      "question": "For $\\mathrm{H_2 + I_2 \\rightarrow 2HI}$ the experimental rate is $k[\\mathrm{H_2}][\\mathrm{I_2}]$. A student writes 'order = 2, molecularity = 2, so they are the same thing.' What is wrong here?",
+      "solution": "The numbers coinciding does not make them the same concept. Order is EXPERIMENTAL — the exponents in the measured rate law (can be fractional, zero, even negative). Molecularity is MECHANISTIC — the number of reactant species colliding in one proposed elementary step (always a whole number 1–3). For complex reactions they differ: $\\mathrm{CH_3COOC_2H_5 + H_2O \\xrightarrow{H^+}}$ products is experimentally first order (water in huge excess) but bimolecular mechanistically (pseudo-first-order). Order describes what you measure; molecularity describes the story you propose."
+    },
+    {
+      "id": "drill-kin-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Temperature and rate",
+      "question": "Why does a $10^\\circ\\mathrm{C}$ rise roughly double most reaction rates, while raising reactant concentration 10% barely matters? Explain with the Maxwell–Boltzmann curve.",
+      "solution": "Rate depends on the FRACTION of molecules above $E_a$, not the average energy. On the Maxwell–Boltzmann curve, $E_a$ sits far in the right tail; warming shifts the whole curve only slightly right, but the tail area past fixed $E_a$ grows exponentially ($e^{-E_a/RT}$) — roughly doubling per 10 K. A 10% concentration rise adds only 10% more collisions with the same tiny success fraction. Temperature attacks the exponential; concentration only the pre-factor. That is why heating dominates and why the rule of thumb (≈2× per 10°) holds across reactions."
+    },
+    {
+      "id": "drill-kin-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Catalyst and equilibrium",
+      "question": "A catalyst speeds up the forward reaction. A student concludes the equilibrium shifts toward products. Refute this with an energy-profile argument.",
+      "solution": "A catalyst lowers the barrier for the forward AND the reverse path by the identical amount — it provides one new transition state both directions must cross. Both rate constants grow by the same factor, so their ratio $K = k_f/k_b$ is unchanged, and $\\Delta G^\\circ$ (set by reactant/product energies, which the catalyst never touches) is unchanged. The system reaches the SAME equilibrium composition, just faster. Catalysts change kinetics, never thermodynamics."
+    },
+    {
+      "id": "drill-kin-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Zero order",
+      "question": "How can a reaction rate be INDEPENDENT of reactant concentration (zero order)? Isn't more reactant always faster? Give a physical picture.",
+      "solution": "Zero order happens when something OTHER than bulk concentration limits the rate — typically a saturated surface. Picture ammonia decomposing on a hot platinum wire: every active site is already occupied, so adding more $\\mathrm{NH_3}$ gas cannot speed anything up; the rate equals the (constant) turnover of full sites. Rate $= k[\\mathrm{NH_3}]^0 = k$, and the concentration–time plot is a straight line. More reactant only helps when reactant supply is the bottleneck — here the bottleneck is the fixed number of parking spots."
+    }
+  ]
+}

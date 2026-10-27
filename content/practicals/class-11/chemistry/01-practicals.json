@@ -1,0 +1,188 @@
+{
+  "title": "Mind-Opening Practicals — Class 11 Chemistry",
+  "subject": "chemistry",
+  "unitSlug": "all-units",
+  "examSource": "Practical questions",
+  "questions": [
+    {
+      "id": "prac-che11-app",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "applied-chemistry",
+      "concept": "Why iodised salt",
+      "question": "Salt is NaCl — why do governments force iodide into it? What single thyroid molecule makes this trace additive a public-health triumph?",
+      "solution": "Thyroxine (T4), the metabolism-setting hormone, needs FOUR iodine atoms per molecule — no iodine, no thyroxine, causing goitre and cretinism (irreversible mental impairment in children). Humans can't make iodine; mountain soils lack it. Adding micrograms of iodide to universal salt delivers the missing atom to everyone silently. Two-cent chemistry preventing brain damage at population scale: the cheapest molecule in medicine."
+    },
+    {
+      "id": "prac-che11-aro",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "aromatic-hydrocarbons",
+      "concept": "Benzene's refusal",
+      "question": "Benzene has THREE double bonds yet refuses addition reactions (unlike alkenes) and does substitution instead. What is it 'protecting' — and what energy price would addition charge?",
+      "solution": "It protects AROMATICITY: the 6 π-electrons delocalised in a ring (Hückel 4n+2), worth ~150 kJ/mol of resonance stabilisation. Addition would saturate one double bond and destroy the ring current — paying the full aromaticity price. Substitution (replace H, keep all three double bonds) preserves the sextet. Benzene's chemistry is conservation of delocalisation: every reaction is audited against the ring's special stability."
+    },
+    {
+      "id": "prac-che11-atom",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "atomic-structure",
+      "concept": "Why electrons don't crash",
+      "question": "Opposite charges attract — so why doesn't the electron spiral into the proton in a trillionth of a second? What quantum rule forbids the crash?",
+      "solution": "The Heisenberg/de Broglie confinement: squeezing an electron near the nucleus spikes its kinetic energy (Δx·Δp ≥ ħ/2) — localisation costs energy that outweighs Coulomb gain below ~the Bohr radius. Plus only standing-wave orbits fit (integer wavelengths around the nucleus); the 'crash trajectory' is not a valid wave. The atom is an equilibrium between attraction pulling in and quantum confinement pushing out. Classical orbits decay; quantum waves persist."
+    },
+    {
+      "id": "prac-che11-basic-org",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "basic-concept-of-organic-chemistry",
+      "concept": "Same formula, different person",
+      "question": "Ethanol (drinking alcohol) and dimethyl ether (toxic gas) share C₂H₆O. How can identical atoms be a beverage and a poison — and what does this prove about formulas?",
+      "solution": "Connectivity is identity: ethanol (C–C–O–H) offers an –OH for hydrogen bonding (liquid, drinkable in dilution); ether (C–O–C) hides oxygen centrally (gas, anaesthetic, toxic). Same atoms, different HANDSHAKES — properties emerge from structure, not composition. This is why molecular formulas alone are chemically illiterate: C₂H₆O names two strangers. Structure determines function — the founding lesson of all organic chemistry."
+    },
+    {
+      "id": "prac-che11-bioinorg",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "bio-inorganic-chemistry",
+      "concept": "Haemoglobin's iron trap",
+      "question": "Carbon monoxide kills at tiny concentrations though oxygen is 200,000× more abundant in air. How does CO win a competition it should lose 200,000-to-1?",
+      "solution": "Affinity, not abundance: haemoglobin binds CO ~250× more strongly than O₂ (better orbital overlap with iron). Each captured CO also locks neighbouring subunits in high-affinity mode (cooperative binding backfires), so a little CO disables whole haemoglobin molecules. At 0.1% CO in air, half your haemoglobin is captured — oxygen present but undeliverable. Poisoning is competitive binding where the trace gas holds the tighter grip."
+    },
+    {
+      "id": "prac-che11-bond",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+      "concept": "Water's bent empire",
+      "question": "If H₂O were LINEAR like CO₂, Earth's oceans, weather and life would be unrecognisable. Trace THREE planetary consequences of one bent molecule.",
+      "solution": "(1) Polarity → hydrogen bonding → liquid water at Earth's temperatures (linear H₂O would boil near −100°C like H₂S); (2) high heat capacity → oceans buffer climate; (3) ice floats (H-bond lattice holds molecules apart) → lakes freeze top-down, insulating life below instead of freezing solid. One 104.5° angle underwrites oceans, climate stability and winter survival. Molecular geometry scales to planetary destiny."
+    },
+    {
+      "id": "prac-che11-eq",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "chemical-equilibrium",
+      "concept": "Haber pressure gamble",
+      "question": "Haber plants run at 200 atmospheres — enormously expensive steel and energy. Using Le Chatelier, justify why the industry pays this price, and why it stops at 200 instead of 2000.",
+      "solution": "N₂ + 3H₂ ⇌ 2NH₃ shrinks 4 gas moles to 2: pressure squeezes equilibrium toward ammonia (fewer moles favoured). At 1 atm conversion is ~10%; at 200 atm it multiplies several-fold — billions in extra fertiliser. But costs scale too: thicker vessels, bigger compressors, safety margins. 200 atm is the economic optimum where marginal ammonia revenue equals marginal compression cost. Le Chatelier points the direction; accounting picks the pressure."
+    },
+    {
+      "id": "prac-che11-metals",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "chemistry-of-metals",
+      "concept": "Aluminium paradox",
+      "question": "Aluminium is the most abundant metal in Earth's crust, yet it was once costlier than gold (Napoleon's aluminium cutlery). What single chemical property delayed its age by a century?",
+      "solution": "Its extreme reactivity: Al³⁺ clings to oxygen (ΔG of Al₂O₃ hugely negative), so carbon reduction — which freed iron and copper for millennia — cannot touch it. Only ELECTROLYSIS (Hall-Héroult, 1886), ripping oxygen off with electricity instead of carbon, unlocked it. Abundance never mattered; extractability did. The metal's age waited on cheap electricity, turning a precious curiosity into window frames within decades."
+    },
+    {
+      "id": "prac-che11-nonmetals",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "chemistry-of-non-metals",
+      "concept": "Chlorine cleans and kills",
+      "question": "The same chlorine disinfects drinking water and killed soldiers as poison gas. What decides whether Cl₂ is a guardian or a weapon — dose, form, or target?",
+      "solution": "All three, but FORM dominates: dissolved HOCl/OCl⁻ at ppm levels oxidises microbial enzymes selectively (guardian); inhaled Cl₂ gas floods lungs, forming HCl on wet tissue (weapon). Dose scales the damage; target vulnerability shapes it. Paracelsus' rule rules chemistry: no substance is purely safe or purely poisonous — chlorine's split personality is concentration plus delivery route, not a changed molecule."
+    },
+    {
+      "id": "prac-che11-class",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "classification-of-elements",
+      "concept": "Mendeleev's gamble",
+      "question": "Mendeleev left GAPS in his table and predicted elements nobody had seen — risking ridicule. Why was a table with HOLES stronger than a complete list of known elements?",
+      "solution": "Because holes are PREDICTIONS: a gap at mass ~72 with specified density, melting point and oxide formula (eka-silicon → germanium, found matching almost exactly) proves the pattern governs nature, not just catalogues it. A complete list describes; a gappy table dares. Mendeleev bet that periodicity was LAW — every confirmed prediction converted sceptics. Science rewards the framework that tells you what you're missing."
+    },
+    {
+      "id": "prac-che11-periodic",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "classification-of-elements-and-periodic-table",
+      "concept": "Atomic size zigzag",
+      "question": "Atomic radius SHRINKS across a period but GROWS down a group — opposite trends from the same table. Explain both with the two competing forces.",
+      "solution": "Across a period: protons added to the SAME shell pull harder (rising effective nuclear charge) while shielding barely changes → contraction. Down a group: each row adds a whole NEW shell, and distance beats charge — outer electrons sit farther despite more protons → expansion. One table, two tug-of-wars: across, charge wins; down, distance wins. Every periodic trend is this kind of contest between nuclear pull and shell real estate."
+    },
+    {
+      "id": "prac-che11-found",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "foundation-and-fundamentals",
+      "concept": "Mole as dozen",
+      "question": "Chemists count atoms in 'moles' (6.022×10²³) instead of billions. A dozen eggs works the same way. What practical weighing problem does the mole solve that direct counting never could?",
+      "solution": "Atoms are uncountable individually but weighable collectively: the mole converts particle counts into GRAMS via atomic mass (12 g carbon = 1 mol = 6.022×10²³ atoms). Reactions need atom RATIOS (2H₂ + O₂ → 2H₂O), and the mole lets you measure those ratios on a balance instead of counting particles for eternity. It is a dozen scaled to the atomic world — the bridge between the invisible equation and the visible weighing scale."
+    },
+    {
+      "id": "prac-che11-fund-org",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "fundamental-principles-of-organic-chemistry",
+      "concept": "Carbocation stability order",
+      "question": "Tertiary carbocations form easily; methyl almost never. The positive charge is identical (+1). What do the neighbouring alkyl groups DO to the empty p-orbital?",
+      "solution": "They DONATE electron density through hyperconjugation (adjacent C–H σ bonds overlapping the empty p) and inductive release — spreading the deficiency over more atoms. Tertiary has 9 hyperconjugative C–H bonds feeding the centre; methyl has 3. More neighbours = more sharing = lower energy. Stability order 3° > 2° > 1° > methyl is really a census of helpers: the charge never sits alone if alkyl groups can dilute it."
+    },
+    {
+      "id": "prac-che11-hydro",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "hydrocarbons",
+      "concept": "Methane vs petrol flames",
+      "question": "Natural gas (methane) burns with a clean blue flame; a petrol spill burns orange and sooty. Both are hydrocarbons meeting oxygen. What molecular difference smokes one and not the other?",
+      "solution": "The carbon-to-hydrogen RATIO and chain length. Methane (CH₄, C:H = 1:4) mixes with air instantly as a gas and oxidises completely to CO₂ + H₂O. Petrol's long chains (∼C₈, more carbon per molecule) vaporise unevenly; in oxygen-starved zones carbon atoms find each other instead of oxygen — clustering into glowing soot (incandescence = orange). Soot is unburned carbon's confession: too much fuel skeleton, too little oxygen access."
+    },
+    {
+      "id": "prac-che11-modern",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "modern-chemical-manufactures",
+      "concept": "Why fertilisers rule",
+      "question": "Half the nitrogen atoms in your body passed through a Haber-Bosch factory. What natural bottleneck does industrial fixation bypass — and why can't legumes alone feed 8 billion?",
+      "solution": "Usable nitrogen: N₂ gas is inert (triple bond ~945 kJ/mol), and only lightning plus nitrogen-fixing microbes trickle it into soil — far below crop demand at scale. Haber-Bosch brute-forces the triple bond with heat, pressure and catalysts, flooding fields with ammonia. Legumes fix nitrogen free but slowly and only on their own acres; factories concentrate centuries of bacterial work into hours. The green revolution is applied equilibrium chemistry feeding half of humanity."
+    },
+    {
+      "id": "prac-che11-redox",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "oxidation-and-reduction",
+      "concept": "Rusting needs both",
+      "question": "Iron kept in dry air doesn't rust; in oxygen-free water it doesn't rust either. Rust demands BOTH. What electrochemical partnership makes each partner useless alone?",
+      "solution": "Rusting is a mini-battery: iron oxidises at anodic spots (Fe → Fe²⁺ + 2e⁻) while OXYGEN + WATER accept those electrons at cathodic spots (O₂ + 2H₂O + 4e⁻ → 4OH⁻). No water = no electrolyte, circuit open. No oxygen = no electron acceptor, reaction stalls. Dry air lacks the ion highway; deaerated water lacks the electron sink. Rust proves corrosion is electrochemistry: two half-reactions holding hands across a water film."
+    },
+    {
+      "id": "prac-che11-states",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "states-of-matter",
+      "concept": "Pressure cookers",
+      "question": "Rice cooks faster in a pressure cooker at the same flame. The heat source is identical — so what does raised pressure change about WATER itself?",
+      "solution": "It raises water's BOILING POINT (~121°C at 2 atm): liquid water can get hotter before escaping as steam, and hotter water cooks faster (reaction rates roughly double per 10°C). The flame's power is unchanged; the pressure edits water's phase boundary, letting liquid exist where it normally couldn't. At altitude the reverse bites: low pressure drops boiling below 100°C and rice refuses to cook. Same flame, different ceiling."
+    },
+    {
+      "id": "prac-che11-stoich",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "stoichiometry",
+      "concept": "Limiting reagent in kitchen",
+      "question": "You have 10 eggs and 3 cups of flour; one cake needs 2 eggs + 1 cup flour. How many cakes — and why does chemistry's limiting reagent decide everything from factories to airbags?",
+      "solution": "3 cakes (flour runs out; 4 eggs strand unused) — product is set by the scarcest input RATIO, not the biggest pile. Industry lives by this: excess cheap reactant (air's O₂) drives costly ones to full conversion; airbags meter NaN₃ against fixed gas volume. The limiting reagent is the bottleneck principle in chemical dress: output = min over inputs of (available ÷ required). Find the flour, find the future."
+    }
+  ]
+}

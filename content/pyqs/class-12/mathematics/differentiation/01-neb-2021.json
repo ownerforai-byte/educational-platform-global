@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 12 Mathematics — Differentiation — 2021",
+  "year": 2021,
+  "examSource": "[NEB-pattern 2021]",
+  "unitSlug": "differentiation",
+  "origin": "curated NEB-pattern set for class-12 differentiation",
+  "questions": [
+    {
+      "id": "mat-dif-2021-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Differentiate with respect to $x$: (a) $y = x^3 \\sin x$, (b) $y = \\frac{e^x}{x^2 + 1}$.",
+      "solution": "(a) Product rule $(uv)' = u'v + uv'$ with $u = x^3$, $v = \\sin x$: $dy/dx = 3x^2\\sin x + x^3\\cos x = x^2(3\\sin x + x\\cos x)$.\n(b) Quotient rule $(u/v)' = (u'v - uv')/v^2$ with $u = e^x$, $v = x^2+1$: $dy/dx = \\frac{e^x(x^2+1) - e^x(2x)}{(x^2+1)^2} = \\frac{e^x(x^2 - 2x + 1)}{(x^2+1)^2} = \\frac{e^x(x-1)^2}{(x^2+1)^2}$."
+    },
+    {
+      "id": "mat-dif-2021-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "If $x = at^2$ and $y = 2at$, find $dy/dx$. Then find the second derivative $d^2y/dx^2$.",
+      "solution": "Parametric differentiation: $dy/dx = (dy/dt)/(dx/dt)$. $dy/dt = 2a$, $dx/dt = 2at$, so $dy/dx = 2a/(2at) = 1/t$.\nFor the second derivative, differentiate with respect to $x$: $d^2y/dx^2 = \\frac{d}{dx}(1/t) = \\frac{d}{dt}(1/t)\\cdot\\frac{dt}{dx} = (-1/t^2)\\cdot\\frac{1}{2at} = -\\frac{1}{2at^3}$. (This is the tangent slope behaviour of the parabola $y^2 = 4ax$.)"
+    },
+    {
+      "id": "mat-dif-2021-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "For $f(x) = x^3 - 3x$, find the stationary points and classify each as maximum or minimum.",
+      "solution": "$f'(x) = 3x^2 - 3 = 3(x^2-1)$, zero at $x = \\pm 1$. $f''(x) = 6x$: at $x = 1$, $f'' = 6 > 0$ → local minimum, $f(1) = -2$. At $x = -1$, $f'' = -6 < 0$ → local maximum, $f(-1) = 2$."
+    }
+  ]
+}

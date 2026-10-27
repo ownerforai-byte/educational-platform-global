@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Biology — Ecology — 2021",
+  "year": 2021,
+  "examSource": "[NEB-pattern 2021]",
+  "unitSlug": "ecology",
+  "origin": "curated NEB-pattern set filling the 2021 gap for class-11 ecology",
+  "questions": [
+    {
+      "id": "bio-eco-2021-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Define ecological succession. Distinguish primary from secondary succession with one example each, and name the stable final community.",
+      "solution": "Succession is the gradual, directional replacement of one community by another in an area over time, driven by the organisms themselves modifying the environment.\nPrimary succession starts on a bare, lifeless surface with no soil — e.g. lichens and mosses colonising bare volcanic rock, slowly building soil for larger plants.\nSecondary succession restarts where a community was disturbed but soil remains — e.g. a forest regrowing after a fire or abandoned farmland returning to woodland; it is much faster.\nThe stable end-stage community in equilibrium with the climate is the climax community."
+    },
+    {
+      "id": "bio-eco-2021-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What is the 10% law of energy flow? A food chain is: grass → grasshopper → frog → snake. If grass traps $20{,}000\\,\\mathrm{kJ}$, how much energy reaches the snake?",
+      "solution": "Lindeman's 10% law: only about 10% of the energy at one trophic level transfers to the next; ~90% is lost as heat through respiration, movement and waste.\nGrass (producer): $20{,}000\\,\\mathrm{kJ}$ → grasshopper: 10% = $2{,}000\\,\\mathrm{kJ}$ → frog: $200\\,\\mathrm{kJ}$ → snake: $20\\,\\mathrm{kJ}$. This repeated 90% loss is why food chains rarely exceed 4–5 levels and why top carnivores are few."
+    },
+    {
+      "id": "bio-eco-2021-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "In a pyramid of biomass in a pond ecosystem, which level forms the base and why is the pyramid inverted there?",
+      "solution": "Producers (phytoplankton) form the base. The pyramid is inverted because the standing crop of tiny, short-lived phytoplankton at any moment weighs less than the zooplankton and fish it supports — the producers reproduce so fast that a small biomass sustains a larger consumer biomass. (Pyramids of energy are never inverted; only biomass and number can be.)"
+    }
+  ]
+}

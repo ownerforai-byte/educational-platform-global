@@ -1,0 +1,298 @@
+{
+  "title": "Mind-Opening Practicals — Class 11 Physics",
+  "subject": "physics",
+  "unitSlug": "all-units",
+  "examSource": "Practical questions",
+  "questions": [
+    {
+      "id": "prac-phy11-cap",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "capacitor",
+      "concept": "Camera flash power",
+      "question": "A camera flash fires brighter in 1 millisecond than a battery could sustain — yet it runs on a tiny AA cell. How does the capacitor perform this energy trick, and what is the tradeoff?",
+      "solution": "The capacitor is an energy BUCKET: the weak battery fills it slowly (seconds), then it dumps everything at once (milliseconds) — power = energy/time, so short time means enormous power from modest energy. Tradeoff: total energy stays small (a flash can't light a room for long). Batteries are rivers (steady flow); capacitors are buckets thrown all at once. That is why defibrillators also charge-then-shock."
+    },
+    {
+      "id": "prac-phy11-circ",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "circular-motion",
+      "concept": "Mud flung from tyres",
+      "question": "Mud flies off a spinning bicycle tyre tangentially, not outward radially. If 'centrifugal force' throws things outward, why does the mud ignore it and leave sideways?",
+      "solution": "Because centrifugal force is the passenger's illusion — in the ground frame there is no outward force at all. The mud needs a centripetal grip (adhesion) to keep turning; when grip fails, Newton's first law takes over: it continues in a straight line along its instantaneous velocity, which is TANGENTIAL. 'Flying outward' is what the curve looks like from outside. The tangent is the truth; the radial story is the artefact of rotating viewpoints."
+    },
+    {
+      "id": "prac-phy11-dc",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "dc-circuits",
+      "concept": "House wiring parallel",
+      "question": "When your room's bulb fuses, the fridge keeps running. What single wiring choice guarantees this — and what would happen if homes were wired the other way?",
+      "solution": "Parallel wiring: every appliance gets the FULL 220 V independently, with its own current path. One branch failing changes nothing for others. In series, the same current would crawl through bulb→fridge→TV: one failure kills everything, voltage divides unpredictably, and unplugging the phone charger would darken the house. Parallel costs more copper but buys independence — the whole design philosophy of domestic supply."
+    },
+    {
+      "id": "prac-phy11-disp",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "dispersion",
+      "concept": "Rainbow order",
+      "question": "Rainbows always show red on TOP and violet at the bottom — never reversed. What fixes this order, and why can't you ever walk to a rainbow's end?",
+      "solution": "Order is fixed by refractive index: violet bends MORE than red inside each droplet, so violet reaches your eye from lower droplets, red from higher ones. It is geometry, not paint. You can't reach the end because a rainbow is not AT a place — it is a 42° cone of bent light centred on YOUR shadow (the antisolar point). Walk toward it and the cone walks with you; every observer owns a private rainbow no one else can stand inside."
+    },
+    {
+      "id": "prac-phy11-dyn",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "dynamics",
+      "concept": "Tablecloth trick",
+      "question": "A magician yanks the tablecloth and dishes stay. Pull slowly and everything crashes. What property of the dishes decides the outcome — and why does SPEED matter more than force?",
+      "solution": "Inertia (mass): dishes resist changes in motion, and friction needs TIME to transfer momentum (impulse = F×t). A lightning yank gives friction milliseconds to act — transferred momentum is tiny, dishes stay. A slow pull gives friction seconds to drag everything along. The trick is a race between inertia and impulse: minimise contact time and inertia wins. Same physics as why boxers 'roll with' punches."
+    },
+    {
+      "id": "prac-phy11-elas",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "elasticity",
+      "concept": "Why bridges expand",
+      "question": "Bridges have toothed expansion joints that click under your feet. Why can't engineers just build the bridge slightly longer in winter and let summer take up the slack?",
+      "solution": "Because the slack has nowhere to GO: a bridge is pinned at both ends, so summer expansion (α·L·ΔT — metres over a long span) would convert into crushing compressive stress, buckling or shattering the deck and piers. The joint converts forbidden stress into allowed motion — teeth slide past each other, length changes freely, forces stay near zero. Engineering often doesn't fight physics; it gives physics somewhere harmless to happen."
+    },
+    {
+      "id": "prac-phy11-ech",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "electric-charges",
+      "concept": "Clothes cling in winter",
+      "question": "Laundry fresh from the dryer clings and crackles in winter but not in monsoon. Same clothes, same dryer. What does humid air do to static charge?",
+      "solution": "Humid air is slightly CONDUCTIVE: water molecules coat surfaces and fibres, giving stranded electrons an escape path — charge leaks away as fast as friction deposits it. Dry winter air is an excellent insulator, so charge accumulates until crackling discharge. Antistatic sprays work by the same trick: hygroscopic chemicals that attract a microscopic water film. Static needs isolation; humidity is nature's earthing wire."
+    },
+    {
+      "id": "prac-phy11-ef",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "electric-field",
+      "concept": "Lightning safety in cars",
+      "question": "Lightning strikes a car and passengers walk away; the same strike on a convertible (open top) can kill. The difference is one thin metal roof. What does it do to the lightning's energy?",
+      "solution": "The metal body is a Faraday cage: charge resides on the OUTER surface and currents flow around the shell, leaving the interior field-free. Lightning's million volts race over the skin into the tyres and ground, never entering the cabin. A convertible has no continuous conductive shell — current finds paths through seats, steering column and occupants. Safety is topology: a closed conducting surface reroutes catastrophe around you."
+    },
+    {
+      "id": "prac-phy11-grav",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "gravitation",
+      "concept": "Tides twice daily",
+      "question": "The Moon pulls hardest on the noon side of Earth — so why is there a HIGH tide on the midnight side too, where the Moon's pull is weakest?",
+      "solution": "Tides come from DIFFERENCE, not strength. On the near side, the Moon pulls ocean harder than it pulls Earth's centre → water bulges toward the Moon. On the far side, the Moon pulls Earth's centre harder than the distant ocean → Earth is yanked AWAY from its far water, leaving a second bulge behind. Two bulges, opposite sides; Earth rotates through both daily — hence two high tides. The midnight bulge is Earth abandoning its ocean, not the Moon lifting it."
+    },
+    {
+      "id": "prac-phy11-heat-temp",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "heat-and-temperature",
+      "concept": "Metal feels colder",
+      "question": "A metal bench and a wooden bench sit overnight at identical 10°C. The metal feels FAR colder. If temperature is equal, what is your skin actually sensing?",
+      "solution": "Your skin senses HEAT FLOW RATE, not temperature. Metal's high thermal conductivity drains heat from your warm hand rapidly; wood's low conductivity lets the contact layer warm up and match your skin, slowing further loss. Thermoreceptors report the drain speed, and the brain mislabels it 'colder'. A thermometer (equilibrium device) tells the truth: both 10°C. Touch is a flux meter wearing a thermometer's costume."
+    },
+    {
+      "id": "prac-phy11-ideal",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "ideal-gas",
+      "concept": "Tyre pressure mornings",
+      "question": "Your bike tyre reads low on a cold morning but 'recovers' by afternoon with no air added. Did air leak in? Use the gas laws to explain the free refill.",
+      "solution": "No air moved: P ∝ T at fixed V and n (Gay-Lussac). Cold morning air inside the tyre exerts less pressure on the gauge; afternoon heat raises molecular speeds, raising pressure against the same walls. The gauge reads FORCE, which tracks temperature directly. Check pressure only when tyres are 'cold' (undriven) — driving heats air and fakes a higher reading. Same molecules, faster dance, harder push."
+    },
+    {
+      "id": "prac-phy11-kin",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "kinematics",
+      "concept": "Running vs walking rain",
+      "question": "Running through rain, your front gets soaked but your back stays drier; walking soaks everything evenly. Model yourself as a moving bucket: why does speed redistribute the rain?",
+      "solution": "Rain has downward velocity; you add horizontal velocity. Walking slowly, drops land mostly on head/shoulders (projected top area). Running fast tilts the RELATIVE rain direction toward horizontal — drops now strike your chest (frontal area) while your back hides in your own 'rain shadow'. Total drops intercepted actually INCREASE slightly with speed (you sweep more volume), but distribution shifts front-to-back. Umbrellas tilt for the same vector triangle."
+    },
+    {
+      "id": "prac-phy11-lens",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "lenses",
+      "concept": "Short-sighted glasses",
+      "question": "Myopia glasses use CONCAVE lenses that make things look SMALLER. Why would anyone pay to shrink their vision — what defect does the minification actually fix?",
+      "solution": "The eyeball is too LONG: distant parallel rays focus IN FRONT of the retina. A concave lens pre-diverges the rays, pushing the focus point BACKWARD onto the retina — minification is just the side effect of divergence. You trade slight size for sharpness the retina can actually use. Convex lenses do the reverse for hypermetropia (short eyeball). Lenses don't fix eyes; they pre-distort the world so broken eyes focus it correctly."
+    },
+    {
+      "id": "prac-phy11-mech",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "mechanics",
+      "concept": "Crumple zones",
+      "question": "Modern cars deliberately CRUMPLE in crashes while old rigid cars stayed intact — yet modern drivers survive and old ones died. How does destroying the car save the human?",
+      "solution": "Impulse: F×t = Δp is fixed by the speed change, so stretching the collision TIME (crumpling, ~0.2 s vs ~0.02 s) cuts peak FORCE tenfold. The car sacrifices itself as a time-stretcher; the cabin cage stays rigid while everything ahead folds progressively. Old rigid cars stopped the driver in centimetres — forces that rupture organs. Survival engineering maximises stopping DISTANCE, never vehicle intactness: destroy metal, spare flesh."
+    },
+    {
+      "id": "prac-phy11-nuc",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "hard",
+      "unitSlug": "nuclear-physics",
+      "concept": "E=mc² in daily life",
+      "question": "A charged phone battery is (very slightly) HEAVIER than a dead one. Estimate nothing — just explain which mass-energy bookkeeping makes this true, and why nobody notices.",
+      "solution": "Stored chemical energy has mass: Δm = ΔE/c². A phone battery holds ~50 kJ → Δm ≈ 50,000/(9×10¹⁶) ≈ 10⁻¹² kg — a trillionth of a gram, a billion times below scale sensitivity. c² is so enormous that everyday energies correspond to imperceptible masses. Noticeable only in nuclei, where MeV-per-particle energies make mass defects measurable (helium weighs less than its parts). Your phone obeys E=mc² at every charge; the universe just rounds it off."
+    },
+    {
+      "id": "prac-phy11-opt",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "optics",
+      "concept": "Blue sky mechanism",
+      "question": "Sunlight is white and space is black — so who paints the sky blue, and why does the SAME physics paint sunsets red?",
+      "solution": "Air molecules scatter short wavelengths preferentially (Rayleigh ~1/λ⁴): blue is scattered ~5× more than red, arriving at your eyes from all directions — the sky glows blue. At sunset, sunlight crosses far more air; blue is scattered AWAY en route, leaving surviving reds to reach you directly. Blue sky = scattered light ARRIVING; red sunset = unscattered light REMAINING. One scattering law, two opposite-looking skies."
+    },
+    {
+      "id": "prac-phy11-phys-q",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "physical-quantities",
+      "concept": "Checking formulas by units",
+      "question": "A student derives pendulum period T = 2π√(l/g) but can't verify it experimentally. How can DIMENSIONS alone confirm the formula's shape — and what can they never reveal?",
+      "solution": "Dimensions must balance: [√(l/g)] = √(m/(m/s²)) = √(s²) = s — matches period's seconds, so the l/g combination is forced (any other mix fails dimensionally). Checking units catches upside-down formulas instantly. But dimensions are BLIND to pure numbers (2π invisible), to dimensionless functions (can't distinguish sin from cos), and to additive terms (s + at vs s + vt look identical dimensionally). Dimensional analysis polices the shape, never the details."
+    },
+    {
+      "id": "prac-phy11-pot",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "potential-potential-difference-and-potential-energy",
+      "concept": "Voltage of a bird",
+      "question": "A bird on an 11 kV line is at 11,000 volts — a 'high voltage' situation. Yet voltmeters measure only DIFFERENCES. Restate the bird's safety purely in the language of potential difference.",
+      "solution": "The bird's both feet sit at 11,000 V, so the potential DIFFERENCE across its body is ~0 V — and only differences drive current (I = ΔV/R). 'High voltage' alone is meaningless; danger = ΔV across YOU. This is why high-voltage workers use equipotential suits (whole body at line voltage, ΔV ≈ 0 inside) and why the voltmeter's two probes exist: one probe measures nothing — voltage is always a comparison between two points."
+    },
+    {
+      "id": "prac-phy11-qheat",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "quantity-of-heat",
+      "concept": "Sea breeze timing",
+      "question": "The sea breeze starts AFTER noon and reverses at night. If the Sun heats land and sea equally all morning, what thermal property delays the wind — and why does it flip?",
+      "solution": "Specific heat capacity: water's (~4200 J/kgK) is ~5× sand's, so land heats and cools far faster. By afternoon, hot land warms air above it, which rises and sucks in cool sea air (sea breeze). At night land radiates heat quickly, becomes cooler than the sea, and the circulation reverses (land breeze). The delay is thermal inertia — water's sluggishness phase-shifts its temperature behind the Sun. Wind is the atmosphere arbitraging unequal heatings."
+    },
+    {
+      "id": "prac-phy11-rate",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "rate-of-heat-flow",
+      "concept": "Wool warms?",
+      "question": "Wool sweaters don't generate heat — so how does wrapping a COLD person in wool warm them, while wrapping ice cream in wool keeps it COLD? Same blanket, opposite jobs.",
+      "solution": "Wool doesn't warm or cool — it RESISTS heat flow (trapped air pockets conduct terribly). On a person it blocks body heat escaping outward; on ice cream it blocks room heat leaking inward. Insulation is direction-blind: it only slows traffic across a temperature gap, whichever way the gap points. The blanket never knows its cargo — it just makes heat queue up at the border."
+    },
+    {
+      "id": "prac-phy11-recent",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "recent-trends-in-physics",
+      "concept": "Why quantum matters to phones",
+      "question": "Your phone's processor, camera and screen all depend on quantum physics discovered a century ago. Name ONE quantum effect inside your phone and what classical physics wrongly predicted instead.",
+      "solution": "The transistor: classical physics says electrons in silicon should ignore tiny voltages, making switches impossible — quantum band theory shows doping creates controllable conduction, so billion-transistor chips work. Or the camera: the photoelectric effect (photons kicking electrons) is literally quantum — classical waves predicted delayed, frequency-independent response, but pixels respond instantly to colour. Your phone is applied 1920s physics: semiconductors, lasers (barcode scanners), LED screens — all quantum."
+    },
+    {
+      "id": "prac-phy11-refl-curve",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "reflection-at-curved-mirror",
+      "concept": "Dentist mirror size",
+      "question": "A dentist's mirror shows ONE tooth hugely magnified; a car's side mirror shows MANY cars miniaturised. Both are curved mirrors. Which curvature does each use, and why can't one mirror do both jobs?",
+      "solution": "Dentist: CONCAVE (converging) — object inside focal length gives erect, magnified virtual image, perfect for one tooth. Car: CONVEX (diverging) — always gives erect but DIMINISHED images over a WIDE field, perfect for traffic. One mirror can't do both because curvature sign fixes the bargain: concave trades field-of-view for magnification; convex trades magnification for field-of-view. 'Objects are closer than they appear' is the mandatory price of seeing more."
+    },
+    {
+      "id": "prac-phy11-refr-plane",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "refraction-at-plane-surfaces",
+      "concept": "Pool looks shallow",
+      "question": "A 2 m pool looks ~1.5 m deep and swimmers misjudge dives. Derive the apparent-depth rule and explain why the pool floor also looks TILTED near your feet.",
+      "solution": "Rays from the floor bend AWAY from normal exiting water (n≈4/3→1), so back-projected rays meet higher: apparent depth = real depth/n ≈ 2/(4/3) = 1.5 m. Near your feet you look down steeply (little bending, nearly true depth); farther out the viewing angle grows, bending grows, apparent depth shrinks — the flat floor renders as a slope rising toward you. Divers learn: trust the ladder markings, never your eyes."
+    },
+    {
+      "id": "prac-phy11-prism",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "refraction-through-prisms",
+      "concept": "Prism vs slab",
+      "question": "A glass SLAB shifts light sideways but keeps it white; a PRISM splits it into colours. Same glass, same refraction law — what geometric difference creates the spectrum?",
+      "solution": "The slab's faces are PARALLEL: each colour bends at entry and unbends equally at exit — deviations cancel, colours recombine, beam exits white (just displaced). The prism's faces meet at an ANGLE: deviations add instead of cancelling, and since deviation depends on wavelength (violet bends most), colours fan out permanently. Parallelism erases dispersion; angled faces accumulate it. Spectrometers are just precision prisms exploiting non-cancellation."
+    },
+    {
+      "id": "prac-phy11-solids",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "solids",
+      "concept": "Why glass shatters, steel dents",
+      "question": "Hit glass and steel with identical hammers: glass explodes into shards, steel takes a dent. Both are 'hard'. What atomic-scale difference decides shatter vs dent?",
+      "solution": "Bonding and slip: metals have non-directional metallic bonds plus orderly slip planes — atoms slide past each other (dislocations move), absorbing energy as permanent dent. Glass is a frozen covalent network with NO slip planes; stress concentrates at microscopic flaws and bonds snap catastrophically — cracks propagate at sound speed. Hardness resists scratching; TOUGHNESS absorbs impact. Glass is hard but brittle; steel is less hard but tough. Different failure, different physics."
+    },
+    {
+      "id": "prac-phy11-thermal-exp",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "thermal-expansion",
+      "concept": "Power lines sag",
+      "question": "Power lines are strung TIGHT in winter and sag deeply in summer. Engineers could just string them tight year-round with stronger cables. Why is sag MANDATORY, not sloppy workmanship?",
+      "solution": "Thermal expansion is unstoppable (ΔL = αLΔT — metres per kilometre span), and a taut cable has no slack to GIVE: summer lengthening would either snap the wire or rip poles from the ground (stress = Y·α·ΔT, enormous). Sag is engineered slack — a catenary buffer that lengthens/shortens freely with temperature. Stringing 'tight' fights physics with economics and loses; sag surrenders gracefully and wins. Every drooping line is a solved statics problem."
+    },
+    {
+      "id": "prac-phy11-thermo",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "thermodynamics",
+      "concept": "Fridge heats the kitchen",
+      "question": "Leave the fridge door open to 'cool the kitchen' on a hot day. Does the kitchen cool down? Track ALL energy flows and give the verdict.",
+      "solution": "The kitchen WARMS UP. The fridge pumps heat from inside to the back coils, but the compressor's electrical work becomes heat too — total heat dumped exceeds heat removed (second law: W + Qc = Qh). Open door just short-circuits the flow; net effect is a ~100 W heater running. Cooling one corner while heating the room more is the thermodynamic bargain. Air conditioners work only because their hot coils sit OUTSIDE the room."
+    },
+    {
+      "id": "prac-phy11-vec",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "vectors",
+      "concept": "Walking the hypotenuse",
+      "question": "Crossing a 3-4-5 field diagonally (5 units) beats walking the edges (3+4 = 7). Everyone knows the shortcut — but what does the triangle law say about WHY no path can beat the straight line?",
+      "solution": "Vector addition's triangle law: the resultant's magnitude can NEVER exceed the sum of the parts (|a+b| ≤ |a|+|b|, equality only when parallel). The diagonal IS the resultant displacement; edge-walking is the component journey. Any detour adds vectors at angles, and angled addition always falls short of the sum — the straight line is the upper bound of efficiency. GPS routing, light's least-time path, and shortcuts all obey: the resultant is the shortest story between two points."
+    },
+    {
+      "id": "prac-phy11-work",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "work-energy-and-power",
+      "concept": "Holding weight vs lifting",
+      "question": "Holding a 20 kg bag overhead for an hour exhausts you, yet physics says you did ZERO work (no displacement). Where did your energy actually go?",
+      "solution": "Physics work (F·s) is zero, but your MUSCLES are not static hooks: fibres continuously contract-release to maintain tension, burning ATP with every cycle — like revving an engine in neutral. Energy went to microscopic internal motion and heat (why you sweat). Physics defines work as energy transferred TO the load; biology burns energy to maintain the force itself. The ache is real; only the textbook definition excludes it."
+    }
+  ]
+}

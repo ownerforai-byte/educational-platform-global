@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Physics — Mechanics — 2023",
+  "year": 2023,
+  "examSource": "[NEB-pattern 2023]",
+  "unitSlug": "mechanics",
+  "origin": "curated NEB-pattern set for class-12 physics mechanics",
+  "questions": [
+    {
+      "id": "phy-mech-2023-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Take $x$ horizontal and $y$ vertical, $a_x = 0$, $a_y = -g$. Initial components: $u_x = u\\cos\\theta$, $u_y = u\\sin\\theta$.\n(a) Time of flight: vertical displacement is zero at landing, $y = u_y t - \\tfrac{1}{2}gt^2 = 0$, so $t(T) = 2u\\sin\\theta/g$.\n(b) Range: $R = u_x T = u\\cos\\theta \\cdot 2u\\sin\\theta/g = u^2\\sin 2\\theta/g$.\n(c) For fixed $u$, $R$ is maximum when $\\sin 2\\theta = 1$, i.e. $2\\theta = 90^\\circ$, so $\\theta = 45^\\circ$, giving $R_{\\max} = u^2/g$.",
+      "question": "A projectile is launched from the ground with velocity $u$ at an angle $\\theta$ above the horizontal. Derive expressions for (a) the time of flight, (b) the horizontal range, and (c) the angle that gives maximum range for a fixed $u$."
+    },
+    {
+      "id": "phy-mech-2023-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Forces along the plane: component of weight $mg\\sin30^\\circ$ downwards, friction $f = \\mu_k N = \\mu_k mg\\cos30^\\circ$ opposing motion.\nWork–energy theorem: $W_{\\text{net}} = \\Delta K$. $W_{\\text{net}} = (mg\\sin30^\\circ - \\mu_k mg\\cos30^\\circ)\\, s$.\nSubstituting: $mg s(\\sin30^\\circ - 0.2\\cos30^\\circ) = 5 \\times 10 \\times 4 \\times (0.5 - 0.2 \\times 0.866) = 200 \\times (0.5 - 0.173) = 200 \\times 0.327 = 65.4\\,\\mathrm{J}$.\nHence $\\tfrac{1}{2}mv^2 = 65.4$, so $v = \\sqrt{2 \\times 65.4/5} = \\sqrt{26.2} \\approx 5.1\\,\\mathrm{m/s}$.",
+      "question": "A block of mass $m = 5\\,\\mathrm{kg}$ slides down a rough plane inclined at $30^\\circ$ to the horizontal with coefficient of kinetic friction $\\mu_k = 0.2$. Using the work–energy theorem, find its speed after sliding $s = 4\\,\\mathrm{m}$ from rest. (Take $g = 10\\,\\mathrm{m/s^2}$.)"
+    },
+    {
+      "id": "phy-mech-2023-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "On a flat curve friction alone supplies the centripetal force: $f_s = mv^2/r \\le \\mu_s N = \\mu_s mg$. The limiting speed is $v_{\\max} = \\sqrt{\\mu_s g r} = \\sqrt{0.4 \\times 10 \\times 50} = \\sqrt{200} \\approx 14.1\\,\\mathrm{m/s}$ (about $51\\,\\mathrm{km/h}$). Any faster and the required centripetal force exceeds maximum static friction, so the car skids.",
+      "question": "A car of mass $1000\\,\\mathrm{kg}$ rounds a flat (unbanked) curve of radius $50\\,\\mathrm{m}$. If the coefficient of static friction between tyres and road is $0.4$, what is the maximum safe speed? ($g = 10\\,\\mathrm{m/s^2}$)"
+    },
+    {
+      "id": "phy-mech-2023-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "Newton's law: every mass attracts every other with $F = GMm/r^2$ along the line joining them.\nAt height $h$, distance from Earth's centre is $r = R + h$, so $mg_h = GMm/(R+h)^2$, giving $g_h = GM/(R+h)^2$.\nAt the surface $g = GM/R^2$, hence $g_h/g = R^2/(R+h)^2 = 1/(1 + h/R)^2$, which falls as $h$ grows — gravity weakens with altitude.\nAt $h = R$: $g_h/g = 1/(1+1)^2 = 1/4$, so gravity is one-quarter of its surface value.",
+      "question": "State Newton's law of gravitation. Derive the expression for acceleration due to gravity $g$ at a height $h$ above Earth's surface (radius $R$, mass $M$), and show that $g$ decreases with altitude. Evaluate the ratio $g_h/g$ at $h = R$."
+    }
+  ]
+}

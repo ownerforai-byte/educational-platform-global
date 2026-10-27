@@ -1,0 +1,41 @@
+{
+  "title": "NEB Class 12 Chemistry — Chemical Thermodynamics — 2023",
+  "year": 2023,
+  "examSource": "[NEB-pattern 2023]",
+  "unitSlug": "chemical-thermodynamics",
+  "origin": "curated NEB-pattern set for class-12 chemistry thermodynamics",
+  "questions": [
+    {
+      "id": "che-thermo-2023-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "First law: energy is conserved — $\\Delta U = q + w$ (heat added to the system plus work done on it equals the change in internal energy).\nFor a reversible change $w = -\\int_{V_1}^{V_2} P_{\\text{ext}}\\,dV = -\\int P\\,dV$. For an ideal gas $P = nRT/V$, so $w_{\\text{rev}} = -nRT\\int_{V_1}^{V_2} dV/V = -nRT\\ln(V_2/V_1)$.\nIsothermal means $T$ constant, and for an ideal gas $U$ depends only on $T$, so $\\Delta U = 0$. Then $q = -w = nRT\\ln(V_2/V_1)$ — all the heat absorbed is converted into expansion work.",
+      "question": "State the first law of thermodynamics. Derive the expression for pressure–volume work in a reversible isothermal expansion of $n$ moles of an ideal gas from $V_1$ to $V_2$, and give the heat absorbed."
+    },
+    {
+      "id": "che-thermo-2023-2",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "Moles of gas fall from 4 to 2, so disorder decreases: $\\Delta S < 0$. $\\Delta G = \\Delta H - T\\Delta S$; at low $T$ the negative $\\Delta H$ dominates, so $\\Delta G < 0$ and the reaction is spontaneous. (At high temperature the $-T\\Delta S > 0$ term wins and it becomes non-spontaneous — why ammonia is made at moderate temperatures.)",
+      "question": "For the reaction $\\mathrm{N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)}$, with $\\Delta H = -92.4\\,\\mathrm{kJ/mol}$, what are the signs of $\\Delta S$ and $\\Delta G$ at low temperature, and is the reaction spontaneous?"
+    },
+    {
+      "id": "che-thermo-2023-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Entropy $S$ measures the number of microscopic arrangements of a system — the degree of disorder; $\\Delta S = q_{\\text{rev}}/T$.\nSecond law: the entropy of an isolated system (the universe) never decreases; every spontaneous process increases total entropy.\nIf heat $q$ flows from hot ($T_h$) to cold ($T_c$), $\\Delta S = -q/T_h + q/T_c = q(1/T_c - 1/T_h) > 0$ since $T_c < T_h$ — allowed. Reverse flow would give $\\Delta S < 0$, forbidden in an isolated system. Refrigerators achieve it only by doing external work, increasing entropy elsewhere.",
+      "question": "Define entropy. State the second law of thermodynamics and use it to explain why heat flows spontaneously from a hot body to a cold body but never the reverse."
+    },
+    {
+      "id": "che-thermo-2023-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "solution": "Combustion: $\\mathrm{C_2H_5OH(l) + 3O_2(g) \\rightarrow 2CO_2(g) + 3H_2O(l)}$.\n$\\Delta H_c^\\circ = \\sum \\Delta H_f^\\circ(\\text{products}) - \\sum \\Delta H_f^\\circ(\\text{reactants}) = [2(-393.5) + 3(-285.8)] - [(-277.7) + 0]$.\n$= (-787.0 - 857.4) + 277.7 = -1644.4 + 277.7 = -1366.7\\,\\mathrm{kJ/mol}$.\nMolar mass of ethanol $= 46\\,\\mathrm{g/mol}$, so $9.2\\,\\mathrm{g} = 0.2\\,\\mathrm{mol}$. Heat released $= 0.2 \\times 1366.7 = 273.3\\,\\mathrm{kJ}$.",
+      "question": "Standard enthalpies of formation: $\\Delta H_f^\\circ[\\mathrm{CO_2(g)}] = -393.5$, $\\Delta H_f^\\circ[\\mathrm{H_2O(l)}] = -285.8$, $\\Delta H_f^\\circ[\\mathrm{C_2H_5OH(l)}] = -277.7\\,\\mathrm{kJ/mol}$ (all in kJ/mol). Calculate the standard enthalpy of combustion of ethanol, and the heat released by burning $9.2\\,\\mathrm{g}$ of ethanol."
+    }
+  ]
+}

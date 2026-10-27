@@ -100,8 +100,15 @@ describe("PYQ bank — Class 12 banks reach the loader", () => {
     const authored = new Set(
       Object.entries(index)
         // Mirror aggregate(): classified keys carry the normalized class dir,
-        // e.g. `practice/questions/class-12/<subject>/…`.
-        .filter(([p, f]) => p.includes(`/class-12/${subject}/`) && (f.questions?.length ?? 0) > 0)
+        // e.g. `practice/questions/class-12/<subject>/…`. Drills/practicals
+        // are year-less by design (own per-unit coverage test below).
+        .filter(
+          ([p, f]) =>
+            p.includes(`/class-12/${subject}/`) &&
+            !p.includes("drills/") &&
+            !p.includes("practicals/") &&
+            (f.questions?.length ?? 0) > 0,
+        )
         .map(([, f]) => f.unitSlug ?? "general"),
     );
     expect(authored.size).toBeGreaterThan(0);
@@ -186,39 +193,138 @@ describe("PYQ bank — one card per exam year, spanning units", () => {
   });
 });
 
+describe("Concept drills — loader coordinates", () => {
+  it("drills keys parse to class/subject/unit coordinates", async () => {
+    const { parseContentPath } = await import("@/lib/content/paths");
+    const parsed = parseContentPath("drills/class-12/physics/electrostatics/01-concepts.json");
+    expect(parsed?.classDir).toBe("class-12");
+    expect(parsed?.subjectSlug).toBe("physics");
+    expect(parsed?.unitSlug).toBe("electrostatics");
+  });
+});
+
+describe("Concept drills — every subject has misconception-busting Q&A", () => {
+  it.each(SUBJECTS)("%s drills carry a question and a clearing explanation", (subject) => {
+    const buckets = new Map<string, { questions: unknown[] }>();
+    for (const [path, file] of Object.entries(index)) {
+      if (!path.includes("drills/") || !path.includes(`/${subject}/`)) continue;
+      const questions = Array.isArray(file.questions) ? file.questions : [];
+      if (questions.length === 0) continue;
+      buckets.set(path, { questions });
+    }
+    expect(buckets.size, `${subject} has no drill files`).toBeGreaterThan(0);
+    for (const [path, bucket] of buckets) {
+      for (const q of bucket.questions as Array<{ question?: unknown; solution?: unknown }>) {
+        expect(Boolean(typeof q.question === "string" && q.question.trim()), `${path} drill without a question`).toBe(true);
+        expect(Boolean(typeof q.solution === "string" && q.solution.trim()), `${path} drill without a clearing explanation`).toBe(true);
+      }
+    }
+  });
+
+  it("drills span both classes", () => {
+    const classes = new Set<string>();
+    for (const path of Object.keys(index)) {
+      if (!path.includes("drills/")) continue;
+      if (path.includes("/class-11/")) classes.add("class-11");
+      if (path.includes("/class-12/")) classes.add("class-12");
+    }
+    expect(classes.has("class-11")).toBe(true);
+    expect(classes.has("class-12")).toBe(true);
+  });
+});
+
 describe("PYQ bank — authored banks are registered", () => {
   it("every unit/year bank on disk has an index entry with questions", () => {
     const fs = require("node:fs") as typeof import("node:fs");
     const classSlugs = ["class-11", "class-12"] as const;
+    // Every question family must stay registered: the classified section, the
+    // subject-wise PYQ bank (`content/pyqs/`), concept drills (`content/drills/`)
+    // and mind-opening practicals (`content/practicals/`, one file per subject).
+    const families = [
+      { dir: "practice/questions", prefix: "practice/questions" },
+      { dir: "pyqs", prefix: "pyqs" },
+      { dir: "drills", prefix: "drills" },
+      { dir: "practicals", prefix: "practicals" },
+    ] as const;
     const missing: string[] = [];
     let banks = 0;
+    // Year banks (`01-neb-2024.json`), drills (`01-concepts.json`), practicals (`01-practicals.json`).
+    const BANK_FILE = /^(\d{2}-neb-\d{4}|\d{2}-concepts|\d{2}-practicals)\.json$/;
+    const checkFile = (f: string, full: string, key: string) => {
+      if (!BANK_FILE.test(f)) return;
+      // Legacy-schema banks (title/year/examSource/notes, no `questions`
+      // array) are served but intentionally not unit-registered — see the
+      // schema note in scripts/pyq-register.mjs.
+      const body = JSON.parse(fs.readFileSync(full, "utf8")) as { questions?: unknown[] };
+      if (!Array.isArray(body.questions)) return;
+      banks += 1;
+      const entry = index[key];
+      if (!entry || !Array.isArray(entry.questions) || entry.questions.length === 0) {
+        missing.push(key);
+      }
+    };
     for (const classSlug of classSlugs) {
-      const contentRoot = join(process.cwd(), "..", "content/practice/questions", classSlug);
+      for (const family of families) {
+      const contentRoot = join(process.cwd(), "..", "content", family.dir, classSlug);
       if (!fs.existsSync(contentRoot)) continue;
       for (const subject of SUBJECTS) {
         const subjectDir = join(contentRoot, subject);
         if (!fs.existsSync(subjectDir)) continue;
+        // Subject-level files (practicals: one file per subject).
+        for (const f of fs.readdirSync(subjectDir)) {
+          const full = join(subjectDir, f);
+          if (fs.statSync(full).isDirectory()) continue;
+          checkFile(f, full, `${family.prefix}/${classSlug}/${subject}/${f}`);
+        }
         for (const unit of fs.readdirSync(subjectDir)) {
           const pyqDir = join(subjectDir, unit);
           if (!fs.existsSync(pyqDir) || !fs.statSync(pyqDir).isDirectory()) continue;
           for (const f of fs.readdirSync(pyqDir)) {
-            if (!/^\d{2}-neb-\d{4}\.json$/.test(f)) continue;
-            // Legacy-schema banks (title/year/examSource/notes, no `questions`
-            // array) are served but intentionally not unit-registered — see the
-            // schema note in scripts/pyq-register.mjs.
-            const body = JSON.parse(fs.readFileSync(join(pyqDir, f), "utf8")) as { questions?: unknown[] };
-            if (!Array.isArray(body.questions)) continue;
-            banks += 1;
-            const key = `practice/questions/${classSlug}/${subject}/${unit}/${f}`;
-            const entry = index[key];
-            if (!entry || !Array.isArray(entry.questions) || entry.questions.length === 0) {
-              missing.push(key);
-            }
+            checkFile(f, join(pyqDir, f), `${family.prefix}/${classSlug}/${subject}/${unit}/${f}`);
           }
+        }
         }
       }
     }
     expect(banks).toBeGreaterThan(0);
     expect(missing, `unregistered exam banks: ${missing.slice(0, 5).join(", ")}`).toEqual([]);
+  });
+});
+
+describe("Practicals — every syllabus unit has a mind-opening question", () => {
+  it.each([
+    ["class-11", "physics"],
+    ["class-11", "chemistry"],
+    ["class-11", "biology"],
+    ["class-11", "mathematics"],
+    ["class-11", "english"],
+    ["class-11", "nepali"],
+    ["class-12", "physics"],
+    ["class-12", "chemistry"],
+    ["class-12", "biology"],
+    ["class-12", "mathematics"],
+    ["class-12", "english"],
+    ["class-12", "nepali"],
+  ])("%s %s covers every unit", (classSlug, subject) => {
+    const fs = require("node:fs") as typeof import("node:fs");
+    // Authoritative unit list: the classified unit dirs.
+    const unitsDir = join(process.cwd(), "..", "content", "practice", "questions", classSlug, subject);
+    const units = (fs.existsSync(unitsDir) ? fs.readdirSync(unitsDir) : []).filter((u) =>
+      fs.statSync(join(unitsDir, u)).isDirectory(),
+    );
+    expect(units.length, `${classSlug}/${subject} has no units`).toBeGreaterThan(0);
+    // Units the practicals file actually answers.
+    const practicals = Object.entries(index).filter(([p]) =>
+      p.startsWith(`practicals/${classSlug}/${subject}/`),
+    );
+    expect(practicals.length, `${classSlug}/${subject} has no practicals file`).toBeGreaterThan(0);
+    const answered = new Set<string>();
+    for (const [, file] of practicals) {
+      for (const q of (file.questions ?? []) as Array<{ unitSlug?: unknown }>) {
+        if (typeof q.unitSlug === "string" && q.unitSlug) answered.add(q.unitSlug);
+      }
+    }
+    const uncovered = units.filter((u) => !answered.has(u));
+    expect(uncovered, `${classSlug}/${subject} units without practicals: ${uncovered.slice(0, 5).join(", ")}`).toEqual([]);
   });
 });

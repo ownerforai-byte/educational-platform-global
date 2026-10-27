@@ -1,0 +1,88 @@
+{
+  "title": "Mind-Opening Practicals — Class 12 Mathematics",
+  "subject": "mathematics",
+  "unitSlug": "all-units",
+  "examSource": "Practical questions",
+  "questions": [
+    {
+      "id": "prac-mat12-de",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "differential-equations",
+      "concept": "Modelling cooling tea",
+      "question": "Your tea cools fast at first, then barely cools at all. Write the differential equation behind Newton's law of cooling and explain WHY the rate must slow down — what is the physical feedback?",
+      "solution": "dT/dt = −k(T − T_room): cooling rate is proportional to the CURRENT temperature gap. The feedback: heat flow is driven by the gap itself, so as tea approaches room temperature the driver vanishes and cooling stalls — exponential decay, never quite reaching ambient. Same equation governs capacitor discharge, radioactive decay and perfume diffusion: whenever the outflow is proportional to what remains, the decline is self-slowing. Fast start, endless tail."
+    },
+    {
+      "id": "prac-mat12-diff",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "differentiation",
+      "concept": "Optimising the delivery box",
+      "question": "A courier box must hold 1 m³ but wrapping costs per m². Should it be a cube? Prove the cheapest shape (ignoring flaps) and explain why real parcels aren't cubes anyway.",
+      "solution": "Minimise surface S = 2(lb+bh+hl) with lbh = 1. By symmetry (or Lagrange multipliers) the minimum is the cube: l=b=h=1 m, S = 6 m² — any stretch raises surface (e.g. 2×1×0.5 gives S = 7). Real parcels aren't cubes because constraints differ: stacking, pallet sizes, human grip, and dimensional-weight pricing (couriers charge by max(volume, k×volume)) punish cubes. Mathematics finds the optimum of the MODEL; logistics adds the constraints the model ignored."
+    },
+    {
+      "id": "prac-mat12-int",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "integration",
+      "concept": "Rainfall from a graph",
+      "question": "A weather app shows rainfall rate (mm/hour) through a storm but never the total. How do you recover total rainfall from the rate curve — and what does the area under a NEGATIVE rate mean?",
+      "solution": "Integrate: total = ∫ rate dt = area under the curve between start and end times. Each thin slice (rate × tiny dt) is the rain in that instant; summation accumulates it — integration is continuous adding-up. Rainfall rate can't be negative, but signed area matters elsewhere: velocity–time area below the axis is distance travelled BACKWARD, and net area is displacement. Area = accumulation is the single idea behind totals, volumes, work and charge alike."
+    },
+    {
+      "id": "prac-mat12-lim",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "limits-and-continuity",
+      "concept": "Zeno in the speedometer",
+      "question": "A speedometer shows 60 km/h AT an instant — but speed is distance over time, and in zero time nothing moves. How does the limit resolve Zeno's paradox hiding in your dashboard?",
+      "solution": "Instantaneous speed is the LIMIT of average speeds over shrinking intervals: v = lim(Δt→0) Δs/Δt. Zeno's trick divides by smaller and smaller times; the limit shows the RATIO stabilises even as numerator and denominator both vanish — 60 km/h means 'covering distance at the pace that WOULD make 60 km in an hour'. The speedometer measures driveshaft rotation rate (a proxy for ds/dt), displaying a limit your eye reads as 'now'. Calculus is the mathematics of freezing motion without killing it."
+    },
+    {
+      "id": "prac-mat12-lp",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "linear-programming",
+      "concept": "Why corners win",
+      "question": "A factory makes chairs (profit Rs 200) and tables (Rs 500) under wood/hours limits. Why must the optimal product mix ALWAYS sit at a corner of the feasible region — never in the middle?",
+      "solution": "Profit is a flat plane (P = 200x + 500y) tilted over the feasible polygon; sliding the profit line upward, last contact with the polygon is always at an extreme point — a corner (or a full edge, whose endpoints are corners). Interior points are always improvable by walking uphill. That is why the simplex method hops corner to corner: the optimum of anything linear over straight-line constraints lives at the boundary's sharpest point. Middle ground is never maximal."
+    },
+    {
+      "id": "prac-mat12-prob",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "probability",
+      "concept": "Hospital paradox",
+      "question": "A test is 99% accurate and you test positive for a disease affecting 1 in 10,000. Most people panic at '99%'. What is your REAL chance of being sick, and which missing number causes the panic?",
+      "solution": "About 1%. Bayes: P(sick|+) = P(+|sick)·P(sick)/P(+). Out of 10,000 people: 1 sick person tests positive, but ~100 healthy people ALSO test positive (1% false-positive rate) — so only 1 in ~101 positives is truly sick. The panic ignores the BASE RATE: when the disease is rare, false positives swamp true ones. '99% accurate' describes the test; your fate needs the population too. Doctors call this the base-rate fallacy — it is why screening positives always need confirmatory tests."
+    },
+    {
+      "id": "prac-mat12-3d",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "three-dimensional-geometry",
+      "concept": "GPS needs four satellites",
+      "question": "Your position in 3D space has only 3 coordinates (x, y, z). Why does GPS need signals from FOUR satellites, not three?",
+      "solution": "Each satellite gives one equation: distance² = (x−xi)² + (y−yi)² + (z−zi)² — three satellites pin three coordinates IF distances were exact. But distance = speed × time needs the receiver's clock error Δt, an extra UNKNOWN (phone clocks are microseconds off; light travels 300 m per microsecond!). Four satellites give four equations for four unknowns (x, y, z, Δt). The fourth satellite doesn't locate you — it synchronises you. GPS solves space AND time together."
+    },
+    {
+      "id": "prac-mat12-vec",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "vector-algebra",
+      "concept": "Cross product direction",
+      "question": "Torque τ = r × F points ALONG the axle, but the force pushes tangentially and the wrench lies radially — nothing moves along the axle! What does this 'phantom direction' actually encode?",
+      "solution": "The axial direction encodes the PLANE of rotation plus its sense (right-hand rule): perpendicular-to-plane is the one direction that uniquely names a plane. Magnitude |r×F| = rF·sinθ gives the twisting strength (zero when you push along the wrench — sin 0° = 0, which is why pushing straight into a bolt never turns it). The cross product is bookkeeping: direction files the plane, magnitude files the strength. Nothing travels along the axle — the vector points where the motion ISN'T, to describe completely the motion that IS."
+    }
+  ]
+}

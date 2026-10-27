@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Physics — Dynamics — 2022",
+  "year": 2022,
+  "examSource": "[NEB-pattern 2022]",
+  "unitSlug": "dynamics",
+  "origin": "curated NEB-pattern set filling the 2022 gap for class-11 dynamics",
+  "questions": [
+    {
+      "id": "phy-dyn-2022-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "First law: a body keeps its state of rest or uniform motion unless a net external force acts (law of inertia). Second law: $F = ma$ — net force equals rate of change of momentum. Third law: every action has an equal and opposite reaction.\nAcceleration $a = F/m = 10/2 = 5\\,\\mathrm{m/s^2}$. Final velocity $v = u + at = 0 + 5\\times3 = 15\\,\\mathrm{m/s}$, so momentum $p = mv = 2\\times15 = 30\\,\\mathrm{kg\\,m/s}$. Distance $s = ut + \\tfrac{1}{2}at^2 = 0 + 0.5\\times5\\times9 = 22.5\\,\\mathrm{m}$.",
+      "question": "State Newton's three laws of motion. A $2\\,\\mathrm{kg}$ mass experiences a net force of $10\\,\\mathrm{N}$ for $3\\,\\mathrm{s}$ starting from rest. Find the final momentum and the distance travelled."
+    },
+    {
+      "id": "phy-dyn-2022-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Linear momentum $p = mv$. Principle: if no external force acts on a system, its total momentum stays constant.\nInitially both at rest, so total momentum is 0. After the jump: $m_{\\text{boy}}v_{\\text{boy}} + m_{\\text{boat}}v_{\\text{boat}} = 0$.\n$60\\times3 + 120\\times v_{\\text{boat}} = 0$, so $v_{\\text{boat}} = -180/120 = -1.5\\,\\mathrm{m/s}$ — the boat recoils at $1.5\\,\\mathrm{m/s}$ opposite to the jump.",
+      "question": "Define linear momentum and state the principle of conservation of linear momentum. A $60\\,\\mathrm{kg}$ boy jumps off a $120\\,\\mathrm{kg}$ stationary boat with velocity $3\\,\\mathrm{m/s}$. What is the boat's recoil velocity?"
+    },
+    {
+      "id": "phy-dyn-2022-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "Impulse equals change in momentum: $F\\Delta t = \\Delta p = m(v - u) = 0.5\\times(0 - 4) = -2\\,\\mathrm{N\\,s}$. Hence $F = -2/0.1 = -20\\,\\mathrm{N}$ — the wall pushed back with $20\\,\\mathrm{N}$ on average.",
+      "question": "A $0.5\\,\\mathrm{kg}$ ball moving at $4\\,\\mathrm{m/s}$ is stopped by a wall in $0.1\\,\\mathrm{s}$. What average force did the wall exert?"
+    }
+  ]
+}

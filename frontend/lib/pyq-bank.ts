@@ -26,6 +26,25 @@ export type SubjectPyqBank = {
   theory: TheoryBlock[];
   /** Sorted newest first. */
   pyqs: PyqYear[];
+  /**
+   * Authored concept-clearing drills (`content/drills/<class>/<subject>/…`).
+   * Unlike PYQs these are not year-bound — each one targets a classic
+   * misconception and resolves it — so they ride outside the year buckets.
+   */
+  drills: ConceptDrill[];
+};
+
+/** One concept drill: a misconception-busting Q&A that clears the concept. */
+export type ConceptDrill = {
+  id: string;
+  question: string;
+  solution?: string;
+  /** The concept this drill clears, e.g. "Field inside a conductor". */
+  concept?: string;
+  unit: string;
+  marks?: string | number;
+  /** "concept" (misconception-buster) or "practical" (mind-opening application). */
+  kind: "concept" | "practical";
 };
 
 type ManifestItem = {
@@ -201,6 +220,45 @@ export async function getSubjectPyqBank(
     absorb(path, undefined, item.data);
   }
 
+  // ── Concept drills + mind-opening practicals: year-less Q&A under the
+  // `drills/` and `practicals/` sections. Practical files hold one question
+  // per syllabus unit, so the unit comes from each question first. ──
+  const drills: ConceptDrill[] = [];
+  for (const [path, file] of Object.entries(index)) {
+    const norm = normPath(path);
+    const isDrill = norm.includes("/drills/");
+    const isPractical = norm.includes("/practicals/");
+    if (!belongs(norm) || (!isDrill && !isPractical)) continue;
+    const questions = Array.isArray(file?.questions) ? file.questions : [];
+    for (const [i, q] of questions.entries()) {
+      const raw = q as {
+        question?: unknown;
+        solution?: unknown;
+        concept?: unknown;
+        id?: unknown;
+        marks?: unknown;
+        unit?: unknown;
+        unitSlug?: unknown;
+        kind?: unknown;
+      };
+      if (typeof raw.question !== "string" || !raw.question.trim()) continue;
+      const unit =
+        (typeof raw.unitSlug === "string" && raw.unitSlug) ||
+        (typeof raw.unit === "string" && raw.unit) ||
+        file?.unitSlug ||
+        "general";
+      drills.push({
+        id: typeof raw.id === "string" && raw.id ? raw.id : `${norm}#${i}`,
+        question: raw.question,
+        solution: typeof raw.solution === "string" ? raw.solution : undefined,
+        concept: typeof raw.concept === "string" ? raw.concept : undefined,
+        unit,
+        marks: typeof raw.marks === "string" || typeof raw.marks === "number" ? raw.marks : undefined,
+        kind: isPractical ? "practical" : raw.kind === "practical" ? "practical" : "concept",
+      });
+    }
+  }
+
   const pyqs: PyqYear[] = [...byYear.entries()]
     .sort((a, b) => b[0] - a[0])
     .map(([year, bucket]) => ({
@@ -236,6 +294,7 @@ export async function getSubjectPyqBank(
   return {
     theory,
     pyqs: pyqs.slice(0, Math.max(1, maxYears)),
+    drills,
   };
 }
 

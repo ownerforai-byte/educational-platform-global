@@ -54,8 +54,13 @@ export function AiPlanStrip() {
 
   if (isLoading) {
     return (
-      <div className="rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-xs text-muted-foreground">
-        Checking your plan…
+      <div className="rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-xs font-medium text-foreground" role="status">
+        <span className="verify-blink">Checking your plan</span>
+        <span className="verify-dots" aria-hidden="true">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </span>
       </div>
     );
   }

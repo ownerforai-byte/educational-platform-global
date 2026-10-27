@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Atom,
@@ -12,13 +12,16 @@ import {
   FlaskConical,
   Globe,
   Languages,
+  Network,
   Sigma,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MathMarkdown } from "@/components/content/math-markdown";
 
-import { DOCS, SUBJECT_ORDER, type Doc, type Kind, type Subject } from "@/lib/docs-catalog";
+import { DOCS, MAT_DIR, SUBJECT_ORDER, type Doc, type Kind, type Subject } from "@/lib/docs-catalog";
+import { isOwnerUser } from "@/lib/owner";
+import { useSession } from "@/features/auth/hooks/use-session";
 
 const SUBJECT_META: Record<
   Subject,
@@ -91,6 +94,13 @@ export default function PdfLibraryPage() {
   const [mdLoading, setMdLoading] = useState(false);
   const [filter, setFilter] = useState<Filter>("All");
 
+  // Owner Console card: the interactive topics-mindmap site is owner-only.
+  // The check is mounted-gated so SSR and first paint match exactly.
+  const { user } = useSession();
+  const [ownerReady, setOwnerReady] = useState(false);
+  useEffect(() => setOwnerReady(true), []);
+  const isOwner = ownerReady && isOwnerUser(user);
+
   const groups = useMemo(
     () => (filter === "All" ? SUBJECT_GROUPS : SUBJECT_GROUPS.filter((g) => g.subject === filter)),
     [filter],
@@ -138,6 +148,59 @@ export default function PdfLibraryPage() {
           </div>
         </div>
       </div>
+
+      {/* Owner console — the interactive topics-mindmap site. Owner-only:
+          everyone else gets a plain disabled card (no lock icons, just not
+          highlighted — the platform-wide restricted-access treatment). */}
+      <section className="space-y-3" aria-label="Owner console">
+        <div className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-500/20 bg-violet-500/10 text-violet-600 dark:text-violet-400">
+            <Network className="h-5 w-5" />
+          </div>
+          <div>
+            <h2 className="text-base font-bold tracking-tight">Owner Console</h2>
+            <p className="text-[11px] text-muted-foreground">
+              {isOwner
+                ? "Owner-only materials — enabled for your account."
+                : "Owner-only materials — shown here, access stays with the owner."}
+            </p>
+          </div>
+        </div>
+        <div
+          aria-disabled={!isOwner}
+          className={`flex flex-wrap items-center gap-3 rounded-2xl border p-4 ${
+            isOwner
+              ? "border-border/60 bg-card transition-colors hover:border-primary/40"
+              : "border-border/40 bg-muted/20 opacity-60"
+          }`}
+        >
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-sky-500/20 bg-sky-500/10 text-sky-500">
+            <Globe className="h-5 w-5" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold">Topics Mindmap — interactive HTML</p>
+            <p className="text-xs text-muted-foreground">
+              Every unit as an interactive SVG mindmap — 6 subjects, with topics, terms
+              and sub-topics. Opens as a full interactive site.
+            </p>
+          </div>
+          {isOwner ? (
+            <a
+              href={`${MAT_DIR}/topics-mindmap/index.html`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              <Network className="h-3.5 w-3.5" />
+              Open
+            </a>
+          ) : (
+            <Button disabled className="rounded-xl px-4 py-2 text-xs">
+              Owner console only
+            </Button>
+          )}
+        </div>
+      </section>
 
       {/* Subject filter */}
       <div className="flex flex-wrap items-center gap-2" aria-label="Filter by subject">

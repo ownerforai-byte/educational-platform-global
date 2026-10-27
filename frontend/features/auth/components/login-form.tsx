@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
+import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
 
 export function LoginForm() {
@@ -50,9 +51,10 @@ export function LoginForm() {
 
   if (isLoading || user) {
     return (
-      <p role="status" className="py-6 text-center text-sm text-muted-foreground">
-        {user ? "Opening your plan welcome…" : "Checking your session…"}
-      </p>
+      <VerifyingStatus
+        compact
+        label={user ? "Opening your plan welcome" : "Checking your session"}
+      />
     );
   }
 

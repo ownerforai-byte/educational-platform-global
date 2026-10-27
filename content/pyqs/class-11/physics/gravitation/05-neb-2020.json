@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Physics — Gravitation — 2020",
+  "year": 2020,
+  "examSource": "[NEB-pattern 2020]",
+  "unitSlug": "gravitation",
+  "origin": "curated NEB-pattern set filling the 2020 gap for class-11 gravitation",
+  "questions": [
+    {
+      "id": "phy-grav-2020-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Define gravitational field intensity and gravitational potential. Derive the potential $V = -GM/r$ due to a point mass $M$ at distance $r$.",
+      "solution": "Field intensity is the force per unit mass ($I = F/m$); potential is the work per unit mass to bring a test mass from infinity ($V = W/m$, zero at infinity).\nForce on $m$ at distance $x$: $F = GMm/x^2$ toward $M$. Work bringing $m$ from infinity to $r$: $W = \\int_{\\infty}^{r} (-GMm/x^2)\\,dx$ (negative because displacement opposes the field direction taken positive outward) $= GMm/r \\cdot (-1)$… evaluating: $[-GMm/x]_{\\infty}^{r} = -GMm/r$. Hence $V = W/m = -GM/r$. The negative sign means the field is attractive — work must be done by an external agent to pull a mass out."
+    },
+    {
+      "id": "phy-grav-2020-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What is orbital velocity? Derive $v_o = \\sqrt{GM/r}$ for a satellite at height $h$ above Earth (radius $R$), and find its value for a low orbit ($h \\approx 0$). ($GM = gR^2$, $g = 10\\,\\mathrm{m/s^2}$, $R = 6400\\,\\mathrm{km}$)",
+      "solution": "Orbital velocity is the speed needed for a satellite's gravity to supply exactly the centripetal force: $mv_o^2/r = GMm/r^2$, giving $v_o = \\sqrt{GM/r}$ with $r = R + h$.\nFor a low orbit $r \\approx R$: $v_o = \\sqrt{gR} = \\sqrt{10 \\times 6.4\\times10^6} = \\sqrt{64\\times10^6} = 8000\\,\\mathrm{m/s} = 8\\,\\mathrm{km/s}$ — the first cosmic velocity."
+    },
+    {
+      "id": "phy-grav-2020-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "If Earth suddenly shrank to half its radius with the same mass, what would happen to $g$ on the surface?",
+      "solution": "$g = GM/R^2$. Halving $R$ divides by $(1/2)^2 = 1/4$, so $g$ becomes four times: about $40\\,\\mathrm{m/s^2}$. (Weight would quadruple — shrinking concentrates the same mass closer to you.)"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "title": "Mind-Opening Practicals — Class 11 Mathematics",
+  "subject": "mathematics",
+  "unitSlug": "all-units",
+  "examSource": "Practical questions",
+  "questions": [
+    {
+      "id": "prac-mat11-alg",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "algebra",
+      "concept": "Compound interest explosion",
+      "question": "Rs 1000 at 10% yearly becomes ~Rs 2600 in 10 years but ~Rs 17,400 in 30 years. The rate never changed — why does the growth ACCELERATE? What everyday trap does this reveal?",
+      "solution": "Interest earns interest: each year's growth joins the principal and earns its own returns — exponential, not linear. Early years look sleepy (10% of little is little); later years explode (10% of huge is huge). The trap: human brains think linearly, so loans feel cheap and savings feel pointless early. Time is the exponent — starting 10 years earlier beats saving double later. Compounding is the eighth wonder precisely because intuition can't feel exponents."
+    },
+    {
+      "id": "prac-mat11-geo",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "analytic-geometry",
+      "concept": "GPS circles intersecting",
+      "question": "Two distance measurements from known towers put you at TWO possible points (circles intersect twice). How does a THIRD tower resolve the ambiguity — and what does this say about equations vs unknowns?",
+      "solution": "Two circles intersect at up to 2 points — one equation short of uniqueness. The third tower's circle passes through only the TRUE location (the phantom intersection fails its distance check). General rule: n unknowns need n independent equations for a unique fix — each measurement eliminates possibilities until one remains. GPS, surveying and phone tracking all triangulate this way: ambiguity is just an unsatisfied equation."
+    },
+    {
+      "id": "prac-mat11-calc",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "calculus",
+      "concept": "Speed limits and derivatives",
+      "question": "Average speed over a trip is 60 km/h, yet you were flashed at 90. How can the average be legal while an instant is not — and what does this prove about averages?",
+      "solution": "Averages ERASE variation: the mean value theorem guarantees some instant equals the average, but says nothing about the maximum. Speeding then crawling can average perfectly legal. Legally and physically, limits constrain INSTANTS (derivatives), not trips — the speedometer needle, not the odometer ratio. Moral: an average is a summary that can hide any crime; enforcement must sample the function, not its mean."
+    },
+    {
+      "id": "prac-mat11-comp",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "computational-methods-or-mechanics",
+      "concept": "Why computers iterate",
+      "question": "Your calculator finds √2 by guessing and improving, not by a direct formula. Why do machines prefer dumb repetition over clever algebra for most real equations?",
+      "solution": "Because most equations (x⁵ − x − 1 = 0, planetary orbits) have NO closed-form solution — cleverness is mathematically impossible, not just hard. Iteration (Newton/bisection) converges from any decent guess using only arithmetic, which silicon does billions of times per second. The lesson: repetition × speed beats brilliance. Numerical methods turn 'unsolvable' into 'approximable to 15 decimals before lunch'."
+    },
+    {
+      "id": "prac-mat11-lim",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "limits-and-continuity",
+      "concept": "0/0 isn't zero",
+      "question": "A student simplifies x/x = 1, then plugs x = 0 to claim 0/0 = 1. Another claims 0/0 = 0 (zero divided by anything). Using (x²−1)/(x−1) at x = 1, show why 0/0 is a QUESTION, not an answer.",
+      "solution": "(x²−1)/(x−1) = x+1 for x≠1, so approaching 1 gives 2 — yet direct substitution gives 0/0. Same 0/0 form, answer 2; other 0/0 forms give 0, 5, ∞ or nothing. 0/0 only reports that numerator and denominator vanish TOGETHER — the ratio's fate depends on HOW FAST each vanishes (their relative rates). It is indeterminate: a prompt to investigate (factor, cancel, L'Hôpital), never a value. Form is not fate."
+    },
+    {
+      "id": "prac-mat11-stat",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "statistics-and-probability",
+      "concept": "Average salary lies",
+      "question": "A startup advertises 'average salary Rs 80,000' — nine employees earn Rs 30,000, the founder takes Rs 530,000. Which single number exposes the trick, and why do advertisers pick the mean?",
+      "solution": "The MEDIAN (Rs 30,000): half earn less, half more — immune to the founder's outlier. The mean dutifully adds the outlier and divides, inflating everyone's impression. Advertisers pick the mean precisely because skew rewards them: one giant value drags the average up while describing nobody typical. Rule: ask for median with income, house prices, wait times — anywhere outliers lurk. The 'average' is honest arithmetic telling a dishonest story."
+    },
+    {
+      "id": "prac-mat11-trig",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "trigonometry",
+      "concept": "Measuring the unmeasurable",
+      "question": "Surveyors find a river's width without crossing it, using only angles from one bank. Sketch the idea — and explain why the SAME trick measures distances to stars.",
+      "solution": "Baseline + two angles: pace 100 m along your bank, measure angles to a tree directly across from each end — the river is one side of a solved triangle (tan = opposite/adjacent). Astronomers do exactly this with Earth's orbit as the baseline (2 AU) and a star's parallax shift as the angle — parsecs are river-widths at cosmic scale. Trigonometry converts unreachable distances into protractor readings. Same triangle, bigger river."
+    },
+    {
+      "id": "prac-mat11-vec",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "vectors",
+      "concept": "Rowing across current",
+      "question": "You row straight at the far bank at 2 m/s; the river flows at 1.5 m/s. You land downstream — but which direction should you AIM to land straight across, and why isn't it 'slightly upstream' by guesswork?",
+      "solution": "Aim so your velocity VECTOR plus the river's equals straight across: point upstream at angle θ where 2·sinθ = 1.5 (sinθ = 0.75, θ ≈ 48.6° from straight-across). Guesswork fails because velocities add as VECTORS, not scalars — only the exact upstream component cancels the drift, and the crossing slows (effective speed 2·cosθ ≈ 1.32 m/s). Pilots call this wind correction; the math is identical. Aim is vector subtraction done by eye."
+    }
+  ]
+}

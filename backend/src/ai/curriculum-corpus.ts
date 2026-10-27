@@ -341,6 +341,7 @@ function toEntry(
     dropIn: boolean;
     /** Fallback "which class teaches this unit" map (see loadClassIndex). */
     classIndex?: Map<string, ClassLevel>;
+    bankQA?: boolean;
   },
   lineCounts?: Map<string, number>,
 ): CorpusEntry | null {
@@ -349,7 +350,14 @@ function toEntry(
 
   const sections: CorpusSection[] = [];
   for (const [key, lines] of extractSections(obj)) {
-    const kept = lineCounts ? lines.filter((line) => !isBoilerplateLine(line, lineCounts)) : lines;
+    // Bank Q&A skips the generator frame/placeholder patterns (its prompts
+    // legitimately open with "Define …" / "State …"); only a line repeated
+    // across many records is still treated as boilerplate.
+    const kept = lineCounts
+      ? lines.filter((line) =>
+          meta.bankQA ? (lineCounts.get(normalizeLine(line)) ?? 0) < BOILERPLATE_MIN_RECORDS : !isBoilerplateLine(line, lineCounts),
+        )
+      : lines;
     if (kept.length) sections.push({ label: humanizeKey(key), lines: kept });
   }
 
@@ -441,6 +449,13 @@ interface CorpusRoot {
   /** Only read files whose path contains this segment (undefined = all .json). */
   requireSegment?: string;
   dropIn: boolean;
+  /**
+   * Question-bank root (`content/pyqs`): each file holds a `questions` array
+   * of `{ prompt, solution }` objects. Neither the bank object nor the array
+   * looks like a record to the generic shape checks, so each question is
+   * expanded into its own Q&A record. Only this root gets the treatment.
+   */
+  questionBank?: boolean;
 }
 
 /**
@@ -459,6 +474,24 @@ function candidateRoots(): CorpusRoot[] {
       label: "content/notes/concepts",
       requireSegment: `${path.sep}concepts${path.sep}`,
       dropIn: false,
+    });
+    roots.push({
+      dir: path.join(base, "content", "pyqs"),
+      label: "content/pyqs",
+      dropIn: false,
+      questionBank: true,
+    });
+    roots.push({
+      dir: path.join(base, "content", "drills"),
+      label: "content/drills",
+      dropIn: false,
+      questionBank: true,
+    });
+    roots.push({
+      dir: path.join(base, "content", "practicals"),
+      label: "content/practicals",
+      dropIn: false,
+      questionBank: true,
     });
     roots.push({
       dir: path.join(base, "backend", "kb"),
@@ -688,6 +721,13 @@ interface RawRecord {
     dropIn: boolean;
     /** Fallback "which class teaches this unit" map (see loadClassIndex). */
     classIndex?: Map<string, ClassLevel>;
+    /**
+     * Authored exam Q&A (the `content/pyqs` bank): skip the generator
+     * frame/placeholder filter, which would strip legitimate prompts that
+     * open with "Define …" / "State …". The cross-record frequency rule
+     * still applies.
+     */
+    bankQA?: boolean;
   };
 }
 
@@ -734,8 +774,53 @@ export function loadCorpus(): CorpusSnapshot {
       // A file may hold ONE record or a keyed/mapped COLLECTION of records
       // (`{ "slug": {…}, "slug2": {…} }`) — both shapes are common in this
       // repo, so unwrap a collection before normalising.
-      const records: Array<{ id: string; raw: unknown }> = [];
+      // `unit` may be overridden per question (practical files hold one
+      // question per syllabus unit at subject level).
+      const records: Array<{ id: string; raw: unknown; unit?: string }> = [];
+      if (
+        root.questionBank &&
+        parsed !== null &&
+        typeof parsed === "object" &&
+        !Array.isArray(parsed) &&
+        Array.isArray((parsed as Record<string, unknown>).questions)
+      ) {
+        const bank = parsed as Record<string, unknown>;
+        for (const [i, q] of (bank.questions as unknown[]).entries()) {
+          if (!q || typeof q !== "object" || Array.isArray(q)) continue;
+          const item = q as Record<string, unknown>;
+          // Banks use `question` (repo schema); accept the `prompt` alias too.
+          const prompt =
+            typeof item.question === "string" && item.question.trim()
+              ? item.question.trim()
+              : typeof item.prompt === "string"
+                ? item.prompt.trim()
+                : "";
+          const answer =
+            typeof item.solution === "string" && item.solution.trim()
+              ? item.solution.trim()
+              : typeof item.explanation === "string"
+                ? item.explanation.trim()
+                : "";
+          if (!prompt && !answer) continue;
+          // Practical files carry one question per syllabus unit — the record
+          // takes the question's own unit, not the file's (subject-level).
+          const questionUnit =
+            (typeof item.unitSlug === "string" && item.unitSlug) ||
+            (typeof item.unit === "string" && item.unit) ||
+            unit;
+          records.push({
+            id: `${display}#${typeof item.id === "string" && item.id ? item.id : i}`,
+            // The prompt is stored quoted: "Define …" / "State …" are
+            // legitimate exam openers, and a quoted line can never be
+            // mistaken for a generator frame stub — so every served line
+            // passes the deep-source corpus invariant verbatim.
+            raw: { question: `"${prompt}"`, answer },
+            unit: questionUnit,
+          });
+        }
+      }
       const isCollection =
+        records.length === 0 &&
         parsed !== null &&
         typeof parsed === "object" &&
         !Array.isArray(parsed) &&
@@ -754,11 +839,13 @@ export function loadCorpus(): CorpusSnapshot {
             }
           }
         }
-      } else {
+      } else if (records.length === 0) {
+        // A question-bank expansion already filled `records` — never also
+        // index the raw bank envelope (its only string is `examSource`).
         records.push({ id: display, raw: parsed });
       }
 
-      for (const { id, raw } of records) {
+      for (const { id, raw, unit: recordUnit } of records) {
         if (!raw || typeof raw !== "object" || Array.isArray(raw)) continue;
         raws.push({
           id,
@@ -767,10 +854,14 @@ export function loadCorpus(): CorpusSnapshot {
             id,
             file: display,
             subject,
-            unit,
+            unit: recordUnit ?? unit,
             classLevel,
             dropIn: root.dropIn,
             classIndex,
+            // Bank Q&A is authored exam content, not generator output — its
+            // prompts legitimately open with "Define …" / "State …", which
+            // the concept-note frame filter would otherwise strip.
+            bankQA: root.questionBank == true,
           },
         });
       }

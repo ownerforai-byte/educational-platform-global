@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 12 Chemistry — Chemical Kinetics — 2021",
+  "year": 2021,
+  "examSource": "[NEB-pattern 2021]",
+  "unitSlug": "chemical-kinetics",
+  "origin": "curated NEB-pattern set for class-12 chemical kinetics",
+  "questions": [
+    {
+      "id": "che-kin-2021-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Define rate of reaction, rate law, order and molecularity. For the reaction $2\\mathrm{N_2O_5 \\rightarrow 4NO_2 + O_2}$ with rate $= k[\\mathrm{N_2O_5}]$, state the order and molecularity.",
+      "solution": "Rate is the change in concentration per unit time. The rate law is the experimentally found expression rate $= k[A]^m[B]^n$. Order ($m+n$) is found by experiment; molecularity is the number of species colliding in one elementary step (a theoretical whole number).\nHere the rate depends on $[\\mathrm{N_2O_5}]$ to the first power, so the order is 1 (first order). The balanced equation consumes 2 molecules, but the slow (rate-determining) step is $\\mathrm{N_2O_5 \\rightarrow}$ products — unimolecular, so molecularity is 1. Order is experimental, molecularity is mechanistic: they need not match."
+    },
+    {
+      "id": "che-kin-2021-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Derive the integrated rate equation for a first-order reaction and show that its half-life is independent of initial concentration. A first-order reaction is 75% complete in $60$ minutes — find its half-life.",
+      "solution": "First order: $-d[A]/dt = k[A]$. Separating and integrating from $[A]_0$ to $[A]$: $\\ln([A]_0/[A]) = kt$, or $[A] = [A]_0 e^{-kt}$.\nHalf-life: $[A] = [A]_0/2$ gives $t_{1/2} = \\ln 2/k$ — no $[A]_0$ appears, so half-life is concentration-independent.\n75% complete means $[A] = 0.25[A]_0$: $k = \\ln(1/0.25)/60 = \\ln 4/60 = 2\\ln 2/60$. Then $t_{1/2} = \\ln 2/k = 60/2 = 30$ minutes."
+    },
+    {
+      "id": "che-kin-2021-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "The activation energy of a reaction is $E_a$. A catalyst provides an alternative path with lower $E_a$. What happens to the rate constant $k$, and does the catalyst change the equilibrium constant?",
+      "solution": "By Arrhenius $k = Ae^{-E_a/RT}$, lowering $E_a$ increases the fraction of successful collisions, so $k$ increases (reaction speeds up). The catalyst lowers the barrier for forward AND reverse reactions equally, so it reaches equilibrium faster but the equilibrium constant $K$ — fixed by thermodynamics ($\\Delta G^\\circ$) — is unchanged."
+    }
+  ]
+}

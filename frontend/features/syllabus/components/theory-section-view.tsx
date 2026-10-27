@@ -32,7 +32,7 @@ export async function TheorySectionView({
   try {
     bank = await getSubjectPyqBank(classSlug, subjectSlug);
   } catch {
-    bank = { theory: [], pyqs: [] };
+    bank = { theory: [], pyqs: [], drills: [] };
   }
 
   return (

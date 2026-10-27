@@ -1,0 +1,44 @@
+{
+  "title": "Concept Drills — Electrostatics (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "electrostatics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-elec-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Field inside a conductor",
+      "question": "A student says: 'A hollow metal sphere carrying charge Q has field E ≠ 0 inside because the charge is right there on the surface.' Is this correct? What is the field inside, and why?",
+      "solution": "Incorrect. Inside a conductor in electrostatic equilibrium the field is exactly zero everywhere. Mobile electrons redistribute within a microsecond until no net force remains on any charge — if E ≠ 0 inside, charges would still move, contradicting equilibrium. The entire charge Q sits on the OUTER surface, and by Gauss's law any Gaussian surface drawn inside encloses zero charge, so flux (and hence field) is zero. The student confuses proximity of charge with field: field comes from NET enclosed charge, not nearby charge."
+    },
+    {
+      "id": "drill-elec-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Potential vs field",
+      "question": "If the electric field is zero at a point, must the electric potential be zero there too? Give a concrete counterexample.",
+      "solution": "No. Field is the SLOPE of potential ($E = -dV/dx$), not its value — zero slope does not mean zero height. Counterexample: midway between two equal positive charges, the fields cancel ($E = 0$) but each charge contributes positive potential, so $V = 2kq/r \\neq 0$. Conversely, $V = 0$ does not imply $E = 0$ either (any point on the equatorial plane of a dipole has $V = 0$ but nonzero field). Remember: only potential DIFFERENCES and field (slope) drive charges."
+    },
+    {
+      "id": "drill-elec-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why flux ignores outside charge",
+      "question": "A charge outside a closed Gaussian surface: does it contribute to the net flux through the surface? Does it affect the field at points on the surface?",
+      "solution": "It contributes ZERO net flux but DOES affect the local field. Every field line from an outside charge that enters the surface must also exit it (lines are continuous — they start/end only on charges), so inward and outward contributions cancel: $\\oint E\\cdot dA = Q_{enclosed}/\\varepsilon_0$ counts only inside charge. However, the field $\\vec{E}$ at any surface point is the vector sum from ALL charges, inside and outside. Gauss's law constrains the total flux, not the field at each point — a common mix-up."
+    },
+    {
+      "id": "drill-elec-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Dielectric and energy",
+      "question": "An isolated charged capacitor's energy DROPS when a dielectric is inserted ($U = Q^2/2C$, $C$ rises). Where does the lost energy go? Doesn't this violate conservation?",
+      "solution": "No violation — the field does positive work pulling the dielectric slab in (polarised molecules are attracted into the stronger-field region). That work comes from the stored electrostatic energy, so $U$ falls. If you hold the slab and insert it slowly, the work goes into your muscles (or the restraint); if released, it becomes kinetic energy of the slab. Energy bookkeeping: $U_{lost} = W_{field\\ on\\ slab}$. Contrast with a battery-connected capacitor (V fixed): inserting the dielectric INCREASES stored energy ($U = \\tfrac{1}{2}CV^2$) because the battery supplies extra charge — different constraint, opposite result."
+    }
+  ]
+}

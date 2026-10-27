@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
-  Send,
   User,
   Brain,
   Globe,
@@ -27,6 +26,7 @@ import {
   UserRound,
   ArrowDown,
   ArrowRight,
+  ArrowUp,
 } from "lucide-react";
 import {
   chat,
@@ -57,8 +57,12 @@ import { isOwnerEmail } from "@/lib/owner";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { buildChatHomeGroups, ChatHome, type ChatHomeGroup } from "@/components/ai/chat-home";
+import { useVoiceInput } from "@/lib/hooks/use-voice-input";
+import { VoiceMicButton } from "@/components/ai/voice-mic-button";
+import { useLowData } from "@/lib/hooks/use-low-data";
 import { cn } from "@/lib/utils";
-import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
+import { CaptainAvatar } from "@/components/ai/captain-logo";
 import { ChatMessageActions } from "@/components/ai/chat-message-actions";
 import {
   ChatAttachButton,
@@ -128,14 +132,15 @@ const SUGGESTION_POOL: Suggestion[] = [
   sug("Earth & Space", Rocket, "Plate tectonics: gather every idea that proved the ground moves, oldest to newest."),
 ];
 
-/** A random set of six from the pool (fresh deck for a fresh conversation). */
-function shuffledSuggestions(): Suggestion[] {
-  const bag = [...SUGGESTION_POOL];
-  for (let i = bag.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [bag[i], bag[j]] = [bag[j], bag[i]];
+/** The deep-question pool grouped by category — the ChatHome chip deck. */
+function poolGroups(): { category: string; questions: string[] }[] {
+  const byCategory = new Map<string, string[]>();
+  for (const s of SUGGESTION_POOL) {
+    const list = byCategory.get(s.category);
+    if (list) list.push(s.text);
+    else byCategory.set(s.category, [s.text]);
   }
-  return bag.slice(0, 6);
+  return [...byCategory.entries()].map(([category, questions]) => ({ category, questions }));
 }
 
 // Public visitors receive three AI sparks per UTC day (guest pool). Signed-in
@@ -311,9 +316,13 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const [session, setSession] = useState<string>("default");
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [sidebarOpen, setSidebarOpen] = useState(!embedded);
-  const [suggestions, setSuggestions] = useState<Suggestion[]>(() =>
-    SUGGESTION_POOL.slice(0, 6)
+  // ChatHome starter deck: the deep pool grouped under category chips
+  // (deterministic first paint; the rows reshuffle per conversation below).
+  const homeGroups = useMemo<ChatHomeGroup[]>(
+    () => buildChatHomeGroups(poolGroups()),
+    [],
   );
+  const [homeSeed, setHomeSeed] = useState(0);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
 
   const [thinkIdx, setThinkIdx] = useState(0);
@@ -340,10 +349,30 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const guestThreadsRef = useRef<GuestThread[]>([]);
   const asideRef = useRef<HTMLElement>(null);
 
-  // Fresh deep-question set per mount (deterministic first paint → no
-  // hydration mismatch; the shuffle lands right after hydration).
+  // Composer dictation: the mic folds spoken words into the draft exactly as
+  // typing would. Unsupported browsers simply get no mic (VoiceMicButton).
+  const {
+    supported: voiceSupported,
+    listening: voiceListening,
+    interim: voiceInterim,
+    transcript: voiceTranscript,
+    start: voiceStart,
+    stop: voiceStop,
+    clear: voiceClear,
+  } = useVoiceInput({ onError: (message) => setError(message) });
   useEffect(() => {
-    setSuggestions(shuffledSuggestions());
+    if (!voiceTranscript) return;
+    voiceClear();
+    setInput((prev) => (prev.trim() ? `${prev.trim()} ${voiceTranscript}` : voiceTranscript));
+  }, [voiceTranscript, voiceClear]);
+
+  // Low data (saver connections): smaller history restores, no drifting
+  // chips, one static thinking line — the frame stays cheap everywhere.
+  const { active: lowData } = useLowData();
+
+  // Reshuffle the starter rows once after hydration (never during SSR).
+  useEffect(() => {
+    setHomeSeed((s) => s + 1);
   }, []);
 
   // Embedded widget: clicking outside the histories drawer closes it
@@ -374,7 +403,11 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     }
     try {
       const { sessions: list } = await getChatSessions();
-      setSessions(list);
+      // Subject classrooms keep their own history (`subj:<slug>:`) — the
+      // general console must never mix them into its sidebar (owner
+      // 2026-10-25: "one interface per subject with their own history —
+      // no mix up").
+      setSessions(list.filter((s) => !s.session.startsWith("subj:")));
     } catch {
       // history unavailable — sidebar just stays empty
     }
@@ -400,7 +433,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         return;
       }
       try {
-        const { messages: restored } = await getChatHistory(sessionName, 200);
+        const { messages: restored } = await getChatHistory(sessionName, lowData ? 50 : 200);
         const system: AIChatMessage = { role: "system", content: PLATFORM_SYSTEM_PROMPT };
         if (restored.length) {
           setMessages([
@@ -418,7 +451,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         setHistoryState("ready");
       }
     },
-    [isLoggedIn]
+    [isLoggedIn, lowData]
   );
 
   useEffect(() => {
@@ -476,9 +509,11 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       setThinkIdx(0);
       return;
     }
+    // Low data: hold one static line instead of rotating (fewer repaints).
+    if (lowData) return;
     const id = setInterval(() => setThinkIdx((i) => (i + 1) % THINKING_LINES.length), 2600);
     return () => clearInterval(id);
-  }, [sending]);
+  }, [sending, lowData]);
 
   // Focus the composer when the widget panel opens (embedded mount).
   useEffect(() => {
@@ -778,7 +813,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
     setRestoredCount(null);
-    setSuggestions(shuffledSuggestions());
+    setHomeSeed((s) => s + 1);
     if (window.innerWidth < 1024) setSidebarOpen(false);
     inputRef.current?.focus();
   };
@@ -835,7 +870,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       writeGuestHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
     }
     setSessions((prev) => prev.filter((s) => s.session !== sessionRef.current));
-    setSuggestions(shuffledSuggestions());
+    setHomeSeed((s) => s + 1);
   };
 
   /** Rewrite the drafted prompt into a sharper study question before sending. */
@@ -1071,41 +1106,16 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <p className="text-xs">Loading conversation…</p>
             </div>
           ) : displayMessages.length === 0 ? (
-            /* Empty state */
-            <div className="min-h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
-              <div className="text-center space-y-2">
-                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-violet-500 shadow-lg shadow-primary/25 text-white mx-auto flex items-center justify-center">
-                  <CaptainMark className="h-9 w-9 text-white animate-pulse" />
-                </div>
-                <h3 className="text-xl font-extrabold bg-gradient-to-r from-foreground via-primary to-violet-500 bg-clip-text text-transparent animate-gradient-text">
-                  What are we learning today?
-                </h3>
-                <p className="text-xs text-muted-foreground max-w-md mx-auto leading-relaxed">
-                  Fire away — derivations, mechanisms, wild &quot;why&quot; questions, misconceptions, or past
-                  NEB questions. Physics, Chemistry, Biology, Math: broken down step by step.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {suggestions.map((prompt, i) => {
-                  const Icon = prompt.icon;
-                  return (
-                    <button
-                      key={i}
-                      onClick={() => handleSend(prompt.text)}
-                      className="p-3 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-1.5"
-                    >
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md border w-fit flex items-center gap-1 ${prompt.color}`}>
-                        <Icon className="h-2.5 w-2.5" />
-                        <span>{prompt.category}</span>
-                      </span>
-                      <p className="text-xs text-foreground/90 font-medium group-hover:text-primary transition-colors leading-relaxed">
-                        {prompt.text}
-                      </p>
-                    </button>
-                  );
-                })}
-              </div>
+            /* Chat home — greeting card, recent chats, chip-filtered starters */
+            <div className="mx-auto max-w-2xl py-6">
+              <ChatHome
+                recent={sessions}
+                onOpenRecent={openChat}
+                seeAllHref="/ai/history"
+                groups={homeGroups}
+                seed={homeSeed}
+                onSend={(text) => handleSend(text)}
+              />
             </div>
           ) : (
             /* Active thread — assistant answers are full-width, user asks are right-aligned */
@@ -1238,13 +1248,19 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               starts, fade out the moment the draft empties. Picking one extends
               the draft rather than replacing it. */}
           <FloatingIdeaChips
-            visible={input.trim().length > 0 && !sending && !composerLocked}
+            visible={input.trim().length > 0 && !sending && !composerLocked && !lowData}
             onPick={(idea) =>
               setInput((prev) => (prev.trim() ? `${prev.trim()} — ${idea}` : idea))
             }
             className="max-w-4xl mx-auto"
           />
           <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
+            <ChatAttachButton
+              onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
+              onError={setError}
+              disabled={sending || composerLocked}
+              attached={pendingImages.length}
+            />
             <textarea
               ref={inputRef}
               rows={1}
@@ -1260,11 +1276,13 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
             />
 
-            <ChatAttachButton
-              onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
-              onError={setError}
+            <VoiceMicButton
+              supported={voiceSupported}
+              listening={voiceListening}
+              interim={voiceInterim}
+              onStart={voiceStart}
+              onStop={voiceStop}
               disabled={sending || composerLocked}
-              attached={pendingImages.length}
             />
             <button
               onClick={handleEnhance}
@@ -1278,11 +1296,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <button
               onClick={() => handleSend()}
               disabled={(!input.trim() && pendingImages.length === 0) || sending || composerLocked}
-              className="h-11 px-4 rounded-2xl bg-gradient-to-r from-primary to-violet-500 text-primary-foreground font-semibold text-xs flex items-center gap-1.5 shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              className="h-11 w-11 rounded-full bg-gradient-to-r from-primary to-violet-500 text-primary-foreground flex items-center justify-center shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               aria-label="Send message"
             >
-              <span>Send</span>
-              <Send className="h-3.5 w-3.5" />
+              <ArrowUp className="h-4 w-4" />
             </button>
           </div>
 

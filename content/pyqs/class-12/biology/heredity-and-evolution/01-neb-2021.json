@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 12 Biology — Heredity And Evolution — 2021",
+  "year": 2021,
+  "examSource": "[NEB-pattern 2021]",
+  "unitSlug": "heredity-and-evolution",
+  "origin": "curated NEB-pattern set for class-12 heredity and evolution",
+  "questions": [
+    {
+      "id": "bio-her-2021-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "In garden pea, tall (T) is dominant over dwarf (t). A tall plant crossed with a dwarf plant gives 50% tall and 50% dwarf offspring. What is the genotype of the tall parent? Explain with a cross.",
+      "solution": "A 1:1 ratio from a tall × dwarf cross is a test cross result — the tall parent must be heterozygous Tt.\nCross: Tt × tt. Gametes: T, t from the tall parent; t, t from the dwarf. Offspring: Tt (tall) and tt (dwarf) in equal proportion — 50% tall, 50% dwarf. Had the parent been TT, all offspring would be Tt (100% tall). The 1:1 ratio therefore proves heterozygosity."
+    },
+    {
+      "id": "bio-her-2021-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the semi-conservative mode of DNA replication (Meselson–Stahl experiment) and state why it is called semi-conservative.",
+      "solution": "Meselson and Stahl grew E. coli in heavy $^{15}$N medium (DNA dense), then shifted to light $^{14}$N and centrifuged samples each generation. After one generation all DNA was of intermediate density; after two, half intermediate and half light — exactly what semi-conservative replication predicts.\nIt is called semi-conservative because each daughter double helix conserves (keeps) ONE parental strand and builds one new strand alongside it. Conservative (both old together) and dispersive (mixed fragments) models were ruled out by the density pattern."
+    },
+    {
+      "id": "bio-her-2021-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Which of these is a homologous structure, and what does it indicate? (a) Bird wing and insect wing (b) Human forelimb and whale flipper",
+      "solution": "(b) is homologous: the human arm and whale flipper share the same bone plan (humerus, radius-ulna, digits) inherited from a common mammalian ancestor, though adapted for grasping versus swimming. Homology indicates divergent evolution from common ancestry. (a) is analogous — similar function (flight) but different structural origin, indicating convergent evolution, not shared ancestry."
+    }
+  ]
+}

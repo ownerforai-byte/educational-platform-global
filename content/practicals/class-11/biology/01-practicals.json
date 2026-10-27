@@ -1,0 +1,108 @@
+{
+  "title": "Mind-Opening Practicals — Class 11 Biology",
+  "subject": "biology",
+  "unitSlug": "all-units",
+  "examSource": "Practical questions",
+  "questions": [
+    {
+      "id": "prac-bio11-biomol",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "biomolecules-and-cell-biology",
+      "concept": "Fever denatures, not kills directly",
+      "question": "A 104°F fever endangers you, yet the pathogens die too. If heat harms both sides equally, why does raising body temperature ever HELP fight infection?",
+      "solution": "Asymmetric vulnerability: many pathogens (and their enzymes) are tuned to exactly 37°C with narrow tolerance, while your cells tolerate a few degrees more — fever pushes invaders off their optimum while your immune cells (which work FASTER warm: higher kinetic rates) accelerate. It is thermal warfare exploiting different denaturation curves. But past ~105°F your own proteins start failing — the weapon turns on its wielder, which is why extreme fever is an emergency."
+    },
+    {
+      "id": "prac-bio11-biota",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "biota-and-environment",
+      "concept": "Why no mammals in deep sea vents",
+      "question": "Tube worms thrive at scalding, crushing deep-sea vents with no sunlight. Why can't a mammal simply evolve the same trick and colonise the vents?",
+      "solution": "Energy economics: mammals burn enormous energy staying warm and active (endothermy), demanding rich, constant food — vent oases are tiny and patchy. Tube worms cheat by outsourcing: symbiotic bacteria chemosynthesise vent chemicals, feeding the worm passively at near-zero metabolic cost. A mammal's furnace can't run on a vent's trickle. Body plan sets the energy bill; only low-budget lifestyles fit extreme, food-poor addresses."
+    },
+    {
+      "id": "prac-bio11-cons",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "conservation-biology",
+      "concept": "Zoos vs habitat math",
+      "question": "Keeping 100 tigers in zoos costs crores yearly; protecting one reserve shelters 100 wild tigers plus thousands of other species. Why is in-situ conservation overwhelmingly cheaper PER SPECIES saved?",
+      "solution": "Shared infrastructure: a reserve's forests, guards and water serve EVERY resident species simultaneously — the cost per species divides by thousands. A zoo replicates habitat per species at full price (custom diets, vets, enclosures) and preserves no ecological interactions (pollinators, prey webs). Ex-situ is an intensive-care unit: vital for the nearly extinct, absurd as a general strategy. Habitat protects relationships; cages protect individuals."
+    },
+    {
+      "id": "prac-bio11-eco",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "ecology",
+      "concept": "Why big animals are rare",
+      "question": "An acre supports millions of grass blades, thousands of rabbits, but at most one fox. Why does body size so strictly cap population — and what breaks if you add ten foxes?",
+      "solution": "The 10% law compounds: each level keeps ~10% of the level below, so energy reaching foxes is ~0.1% of grass energy — enough for few large bodies. Bigger bodies also burn more per individual. Add ten foxes: rabbits crash, grass explodes then overgrazes, and foxes starve — the classic overshoot. Pyramid shape is thermodynamics, not preference: size concentrates energy demand while supply thins upward. Top predators are rare by arithmetic."
+    },
+    {
+      "id": "prac-bio11-evo",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "evolutionary-biology",
+      "concept": "Antibiotic resistance speed",
+      "question": "Penicillin worked universally in 1945; resistant strains appeared within years. Human evolution takes millennia. What TWO bacterial traits compress evolution into months?",
+      "solution": "(1) Generation time ~20 minutes: a year holds 26,000 bacterial generations vs less than one human generation — selection iterates furiously. (2) Horizontal gene transfer: bacteria swap resistance plasmids directly, spreading a winning mutation through a population sideways in days, not waiting for inheritance. Antibiotics then provide brutal selection, killing 99.9% and crowning the survivors. Fast generations plus shared genes turn hospitals into evolution accelerators — finish every prescription course."
+    },
+    {
+      "id": "prac-bio11-fauna",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "faunal-diversity",
+      "concept": "Why insects rule",
+      "question": "Insects outnumber all other animal species combined by millions. What THREE design features make the insect body plan evolution's most successful experiment?",
+      "solution": "Flight (first animals airborne — escape predators, colonise everywhere, find mates/morales efficiently), exoskeleton (armour + waterproofing + muscle-attachment in one cuticle, enabling tiny sizes), and metamorphosis (larva and adult occupy DIFFERENT niches — caterpillar eats leaves, butterfly sips nectar — so young never compete with parents). Small size + flight + life-stage division = multiply niches per species. Diversity follows design that avoids competing with itself."
+    },
+    {
+      "id": "prac-bio11-flora",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "floral-diversity",
+      "concept": "Why flowers bribe",
+      "question": "Nectar costs the plant precious sugar — given away free to insects. Why is this apparent waste actually cheaper than the wind-pollination alternative?",
+      "solution": "Precision beats volume: wind pollination wastes 99.99% of pollen (broadcast billions, hit one stigma by luck — hence hay fever). A nectar bribe hires a guided courier that flies flower-to-flower of the SAME species, delivering most pollen on target. The sugar salary is tiny beside the saved pollen mountain. Flowers outsourced delivery; grasses pay the broadcast tax. Coevolution turned waste into wages."
+    },
+    {
+      "id": "prac-bio11-intro",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "easy",
+      "unitSlug": "introduction-to-biology",
+      "concept": "Is a virus alive",
+      "question": "Viruses reproduce and evolve but don't eat, breathe or maintain themselves. If you must vote ALIVE or NOT — what single criterion decides your vote, and why do textbooks quarrel?",
+      "solution": "Vote hinges on METABOLISM vs REPLICATION: the alive-camp demands independent metabolism (viruses: none — inert crystals outside hosts); the other camp accepts replication-with-evolution (viruses: yes). Textbooks quarrel because 'life' is a human category, not a natural joint — viruses sit exactly on the definitional seam. The productive answer: viruses are obligate molecular parasites, evolving replicators without cells. The label matters less than the mechanism."
+    },
+    {
+      "id": "prac-bio11-micro",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "introductory-microbiology",
+      "concept": "Handwash vs sanitiser",
+      "question": "Soap-and-water beats alcohol sanitiser against stomach bugs (norovirus) though sanitiser kills more germs on contact. What does soap REMOVE that sanitiser leaves behind?",
+      "solution": "The MICROBES THEMSELVES: soap molecules pry grease and debris off skin and water RINSES everything down the drain — physical removal, including non-enveloped viruses alcohol can't dissolve (norovirus lacks the lipid coat alcohol attacks). Sanitiser kills in place but leaves corpses, spores and chemicals on your hands — and fails on dirty/greasy hands where germs hide under grime. Removal beats murder when the enemy has armour."
+    },
+    {
+      "id": "prac-bio11-veg",
+      "type": "practical",
+      "marks": 3,
+      "difficulty": "medium",
+      "unitSlug": "vegetation",
+      "concept": "Treeline mystery",
+      "question": "Mountains have a sharp TREELINE: lush forest below, zero trees above — though alpine flowers thrive higher. Same cold, same wind. What resource runs out for trees but not herbs?",
+      "solution": "A warm-enough GROWING SEASON for wood: trees must build perennial woody tissue and mature new shoots yearly, needing several warm weeks; above the treeline summers are too short/cold to ripen wood, so shoots freeze back annually. Herbs dodge this by living fast (complete life in weeks) or hibernating underground (perennial roots, disposable tops). The treeline is a time limit, not a cold limit — wood is slow capital that short summers can't fund."
+    }
+  ]
+}

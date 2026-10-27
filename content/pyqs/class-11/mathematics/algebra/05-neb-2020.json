@@ -1,0 +1,33 @@
+{
+  "title": "NEB Class 11 Mathematics — Algebra — 2020",
+  "year": 2020,
+  "examSource": "[NEB-pattern 2020]",
+  "unitSlug": "algebra",
+  "origin": "curated NEB-pattern set filling the 2020 gap for class-11 algebra",
+  "questions": [
+    {
+      "id": "mat-alg-2020-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "In GP the middle term squared equals the product of neighbours: $x^2 = 2\\times8 = 16$, so $x = \\pm 4$.\nThe GP $2, 2\\sqrt{2}, 4, \\dots$ has $a = 2$, $r = \\sqrt{2}$. Sum of $n$ terms: $S_n = a(r^n - 1)/(r - 1)$.\n$S_6 = 2((\\sqrt{2})^6 - 1)/(\\sqrt{2}-1) = 2(8-1)/(\\sqrt{2}-1) = 14/(\\sqrt{2}-1)$. Rationalise: $14(\\sqrt{2}+1)/((2-1)) = 14(\\sqrt{2}+1)$.",
+      "question": "If $2, x, 8$ are in geometric progression, find $x$. Then find the sum of the first 6 terms of the GP $2, 2\\sqrt{2}, 4, \\dots$"
+    },
+    {
+      "id": "mat-alg-2020-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "solution": "Factorise: $2x^2 - 7x + 3 = 2x^2 - 6x - x + 3 = 2x(x-3) - 1(x-3) = (2x-1)(x-3)$. Roots: $x = 1/2$ and $x = 3$.\nCheck: sum $= 1/2 + 3 = 7/2 = -b/a = 7/2$ ✓. Product $= (1/2)\\times3 = 3/2 = c/a = 3/2$ ✓. Both relations hold, confirming the roots.",
+      "question": "Solve the quadratic equation $2x^2 - 7x + 3 = 0$ by factorisation, and verify the roots using the sum and product of roots."
+    },
+    {
+      "id": "mat-alg-2020-3",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "solution": "For a $2\\times2$ matrix $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, $|A| = ad - bc$. Here $|A| = 2\\times3 - 1\\times0 = 6$.",
+      "question": "If $A = \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}$, what is $|A|$ (the determinant)?"
+    }
+  ]
+}
