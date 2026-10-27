@@ -52,6 +52,38 @@ jobs:
       - run: npm ci
       - run: npm run test:run
 
+  # Sentry sourcemaps (PHASE 1.2, 2026-10-27): the actual upload happens
+  # automatically inside the Vercel production build — @sentry/nextjs reads
+  # SENTRY_AUTH_TOKEN/SENTRY_ORG/SENTRY_PROJECT from the Vercel env and pushes
+  # sourcemaps for the release. GitHub CI cannot upload for Vercel builds, so
+  # this job verifies the wiring instead: the gated init files, the env
+  # plumbing, and a working sentry-cli. It skips entirely (silently) when the
+  # token secret is not configured — a missing secret must never fail CI.
+  sentry-sourcemaps:
+    if: ${{ secrets.SENTRY_AUTH_TOKEN != '' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: |
+          grep -q "Sentry.init" instrumentation.ts
+          grep -q "Sentry.init" instrumentation-client.ts
+          grep -q "NEXT_PUBLIC_SENTRY_DSN" .env.example
+          grep -q "SENTRY_DSN" .env.example
+          echo "Sentry wiring OK"
+      - name: Verify sentry-cli against the org
+        run: npx @sentry/cli@latest --version
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+
   # Baseline-ratchet gate: fails on NEW schema violations + manifest drift.
   # Uses root tsx (backend lockfile has no zod/tsx to hoist into backend/);
   # schema files are imported relatively so this works from the repo root.
