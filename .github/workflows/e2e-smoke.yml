@@ -1,0 +1,55 @@
+name: E2E Smoke
+
+on:
+  # Push to main only (owner request 2026-10-27) — CI is already heavy, so
+  # pull requests do not run the browser suite.
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  e2e-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/pb
+
+      # The app needs its public env at BUILD time (Next inlines
+      # NEXT_PUBLIC_* into the bundle) and at RUN time (same values, or
+      # hydration mismatches). Required repo secrets, see AGENT_RULES.md
+      # "E2E smoke (Playwright)": NEXT_PUBLIC_SUPABASE_URL,
+      # NEXT_PUBLIC_SUPABASE_ANON_KEY, NEXT_PUBLIC_API_URL,
+      # NEXT_PUBLIC_SITE_URL, plus the SMOKE_* credentials.
+      - name: Build the production server
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+
+      - name: Run the smoke spec
+        run: npx playwright test
+        env:
+          CI: 'true'
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/pb
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          SMOKE_OWNER_EMAIL: ${{ secrets.SMOKE_OWNER_EMAIL }}
+          SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}
+          SMOKE_MEMBER_EMAIL: ${{ secrets.SMOKE_MEMBER_EMAIL }}
+          SMOKE_MEMBER_PASSWORD: ${{ secrets.SMOKE_MEMBER_PASSWORD }}

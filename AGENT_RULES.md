@@ -104,11 +104,17 @@ repository.
   env settings (Vercel / Render dashboards), and redeploy.
 
 ## E2E smoke (Playwright)
-- `frontend/tests/e2e/smoke.spec.ts` runs on push to `main` only (see the
-  "E2E Smoke" job in `.github/workflows/ci.yml`) — not on every PR, because CI
-  is already heavy.
-- Required repo secrets: `SMOKE_OWNER_EMAIL` + `SMOKE_OWNER_PASSWORD` (already
-  used by live-smoke) and `SMOKE_MEMBER_EMAIL` + `SMOKE_MEMBER_PASSWORD` (a
-  Member-tier test account for the Plus-gate check).
+- `frontend/tests/e2e/smoke.spec.ts` runs on push to `main` only
+  (`.github/workflows/e2e-smoke.yml`, the "E2E Smoke" workflow) — not on
+  every PR, because CI is already heavy.
+- Required repo secrets for the browser suite:
+  - `SMOKE_OWNER_EMAIL` + `SMOKE_OWNER_PASSWORD` (already used by live-smoke)
+  - `SMOKE_MEMBER_EMAIL` + `SMOKE_MEMBER_PASSWORD` (a Member-tier test account
+    for the Plus-gate check)
+  - the public app env the CI server must boot with:
+    `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+    `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_SITE_URL`
+  (missing SMOKE_* credentials only skip those tests; missing public env
+  fails the job because the app cannot boot — add the secrets and re-run).
 - Run locally: `cd frontend && npx playwright test` with the `SMOKE_*` vars
-  exported.
+  exported (a running `npm run dev` on :5173 is reused automatically).

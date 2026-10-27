@@ -184,3 +184,6 @@ vt2-*.txt
 vitest-*.txt
 tsc-err.txt
 tsc-out.txt
+# Playwright E2E artifacts (reports + traces stay local)
+test-results/
+playwright-report/
