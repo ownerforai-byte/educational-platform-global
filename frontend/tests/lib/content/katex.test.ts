@@ -42,6 +42,33 @@ describe("normalizeMathDelimiters", () => {
     expect(normalizeMathDelimiters(input)).toBe(input);
   });
 
+  it("keeps multi-line display bodies on their own $$ lines (aligned environments must parse)", () => {
+    // Owner report 2026-10-27 ("step by step derivations… katex and latex
+    // should work properly"): gluing "$$\begin{aligned}" onto one line breaks
+    // remark-math's flow parser — the aligned environment is never opened and
+    // every & and \\ inside renders as a KaTeX error. Multi-line bodies must
+    // keep the $$ fences on their own lines.
+    const input = "$$\\begin{aligned}\na &= 1 \\\\\nb &= 2\n\\end{aligned}$$";
+    expect(normalizeMathDelimiters(input)).toBe(
+      "$$\n\\begin{aligned}\na &= 1 \\\\\nb &= 2\n\\end{aligned}\n$$",
+    );
+
+    // The already-line-padded form survives unchanged.
+    const padded = "$$\n\\begin{aligned}\na &= 1 \\\\\nb &= 2\n\\end{aligned}\n$$";
+    expect(normalizeMathDelimiters(padded)).toBe(padded);
+
+    // Single-line bodies stay compact.
+    expect(normalizeMathDelimiters("$$x = 1$$")).toBe("$$x = 1$$");
+  });
+
+  it("renders multi-line aligned derivations without KaTeX errors", () => {
+    const html = renderNoteHtml(
+      "$$\n\\begin{aligned}\nv^2 &= u^2 + 2as \\\\\n\\Rightarrow s &= \\frac{v^2 - u^2}{2a}\n\\end{aligned}\n$$",
+    );
+    expect(html).toContain('class="katex"');
+    expect(html).not.toContain("katex-error");
+  });
+
   it("repairs repeated command escaping inside math", () => {
     expect(normalizeMathDelimiters("$0^\\\\\\\\circ + \\\\theta$")).toBe(
       "$0^\\circ + \\theta$",

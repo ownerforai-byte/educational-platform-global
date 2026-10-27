@@ -158,11 +158,23 @@ export function normalizeMathDelimiters(text: string): string {
       if (segment.startsWith("`")) return segment;
       
       let normalized = segment;
-      
+
+      // Multi-line display bodies ($$ ... $$, converted \[ ... \] / \$ ... \$)
+      // MUST keep the $$ fences on their own lines: remark-math's flow parser
+      // only closes a $$ block at a line start, so gluing "$$\begin{aligned}"
+      // onto one line breaks parsing — the aligned/matrix/cases environment is
+      // then never opened and every & and \\ inside renders as a KaTeX error
+      // (owner report 2026-10-27: "step by step derivations… katex and latex
+      // should work properly"). Single-line bodies stay compact as before.
+      const displayMath = (body: string): string => {
+        const clean = sanitizeMathContent(String(body).trim());
+        return clean.includes("\n") ? `$$\n${clean}\n$$` : `$$${clean}$$`;
+      };
+
       // Replace \[ ... \] / \( ... \) / \$ ... \$ — sanitize bodies so export
       // double-escaping is fixed before remark-math sees the delimiters.
       normalized = normalized.replace(/\\\[((?:.|\n)*?)\\\]/g, (_m, body) =>
-        `$$${sanitizeMathContent(String(body).trim())}$$`,
+        displayMath(body),
       );
 
       normalized = normalized.replace(/\\\(((?:.|\n)*?)\\\)/g, (_m, body) =>
@@ -170,13 +182,13 @@ export function normalizeMathDelimiters(text: string): string {
       );
 
       normalized = normalized.replace(/\\\$([\s\S]*?)\\\$/g, (_m, body) =>
-        `$$${sanitizeMathContent(String(body).trim())}$$`,
+        displayMath(body),
       );
 
       // Block math, then inline (blocks first so $$ pairs are not split).
       normalized = normalized.replace(
         /\$\$([\s\S]*?)\$\$/g,
-        (_m, body) => `$$${sanitizeMathContent(String(body).trim())}$$`,
+        (_m, body) => displayMath(body),
       );
 
       normalized = normalized.replace(

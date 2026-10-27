@@ -241,7 +241,6 @@ ${JSON.stringify(payload, null, 2)}
           typeof parsed.summary === "string" && parsed.summary.trim()
             ? parsed.summary.trim()
             : "Submission graded.",
-        provider: getService().getLastAnsweredBy(),
       });
     } catch (err: unknown) {
       console.error("AI evaluate-answers error:", err);

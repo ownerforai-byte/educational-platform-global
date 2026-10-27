@@ -30,6 +30,7 @@ import { toast } from "sonner";
 import { SYLLABUS } from "@/lib/syllabus";
 import { generateQuestions, evaluateAnswers } from "@/lib/api/ai";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
+import { MathMarkdown } from "@/components/content/math-markdown";
 import { saveQuizHistory } from "@/lib/api/ai-quiz-history";
 import {
   GUEST_DAILY_LIMIT,
@@ -609,7 +610,9 @@ function QuizScreen({
           <div className="flex items-start gap-2">
             <BookOpen className="h-5 w-5 text-primary mt-0.5 shrink-0" />
             <div>
-              <CardTitle className="text-base leading-relaxed">{q.prompt}</CardTitle>
+              <div className="text-base font-semibold leading-relaxed tracking-tight">
+                <MathMarkdown content={q.prompt} className="[&_p]:my-0 [&_p]:text-base [&_p]:font-semibold" />
+              </div>
               <CardDescription className="mt-1 text-xs">
                 Topic: {q.topic}
               </CardDescription>
@@ -714,7 +717,7 @@ function QuizScreen({
               : (textAnswers[currentIndex] ?? "").trim().length > 0)) && (
             <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-xs text-muted-foreground">
               <span className="font-semibold text-primary">Explanation: </span>
-              {q.explanation}
+              <MathMarkdown content={q.explanation} className="[&_p]:my-1 [&_p]:text-xs [&_p]:text-muted-foreground" />
             </div>
           )}
 
@@ -747,10 +750,10 @@ function QuizScreen({
                       </span>
                       <div className="flex min-w-0 flex-col gap-0.5">
                         <span className="font-medium text-muted-foreground">{opt}</span>
-                        <span className="leading-snug text-muted-foreground">
-                          {isCorrect ? "✓ Right — " : "✗ Wrong — "}
-                          {analysis}
-                        </span>
+                        <MathMarkdown
+                          content={`${isCorrect ? "✓ Right — " : "✗ Wrong — "}${analysis}`}
+                          className="leading-snug [&_p]:my-0 [&_p]:text-xs [&_p]:text-muted-foreground"
+                        />
                       </div>
                     </div>
                   );
@@ -866,9 +869,10 @@ function QuizScreen({
                 className="rounded-xl border border-border bg-muted/30 p-4 space-y-2"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <p className="text-sm font-semibold leading-snug">
-                    Q{i + 1}. {questions[i]?.prompt}
-                  </p>
+                  <MathMarkdown
+                    content={`**Q${i + 1}.** ${questions[i]?.prompt ?? ""}`}
+                    className="min-w-0 flex-1 text-sm font-semibold leading-snug [&_p]:my-0 [&_p]:text-sm [&_p]:font-semibold"
+                  />
                   <span
                     className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
                       result.verdict === "correct"
@@ -885,18 +889,19 @@ function QuizScreen({
                   <span className="font-semibold text-foreground">Your answer: </span>
                   {textAnswers[i]?.trim() || "(left blank)"}
                 </p>
-                <p className="text-xs text-muted-foreground">
-                  <span className="font-semibold text-primary">Feedback: </span>
-                  {result.feedback}
-                </p>
+                <MathMarkdown
+                  content={`**Feedback:** ${result.feedback}`}
+                  className="[&_p]:my-0 [&_p]:text-xs [&_p]:text-muted-foreground"
+                />
                 {result.modelAnswer && (
                   <div className="rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/10 px-3 py-2">
                     <p className="text-[10px] font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
                       Model answer
                     </p>
-                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                      {result.modelAnswer}
-                    </p>
+                    <MathMarkdown
+                      content={result.modelAnswer}
+                      className="mt-1 [&_p]:my-1 [&_p]:text-xs [&_p]:leading-relaxed [&_p]:text-muted-foreground"
+                    />
                   </div>
                 )}
                 {result.improvements.length > 0 && (
@@ -907,7 +912,7 @@ function QuizScreen({
                         className="flex items-start gap-1.5 text-xs text-muted-foreground"
                       >
                         <Lightbulb className="mt-0.5 h-3 w-3 shrink-0 text-amber-500" />
-                        {imp}
+                        <MathMarkdown content={imp} className="[&_p]:my-0 [&_p]:text-xs [&_p]:text-muted-foreground" />
                       </li>
                     ))}
                   </ul>

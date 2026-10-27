@@ -30,13 +30,10 @@ function getService() {
   return _service;
 }
 
-// List available providers (no auth required)
-router.get("/providers", (_req: Request, res: Response) => {
-  const aiService = getService();
-  const providers = aiService.getProviders();
-  const defaultProvider = aiService.getDefaultProvider();
-  res.json({ providers, defaultProvider });
-});
+// Provider details are never exposed through the chat interfaces (owner
+// request 2026-10-27: "remove the provider details from this project
+// entirely" — the student-facing surfaces identify as Veer only; which lane
+// answered is internal plumbing, resolved server-side via getWorkLaneProvider).
 
 /**
  * GET /api/ai/spark — today's AI-spark usage for the signed-in member.
@@ -203,7 +200,6 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     res.json({
       response,
       generatedFigures: figures.map((f) => ({ prompt: f.prompt, url: f.url, reason: f.reason })),
-      provider: provider || aiService.getLastAnsweredBy(),
       credits: creditsLeft ?? undefined,
       aiSpark: { tier, limit: aiSparkLimitFor(tier), remaining: sparkRemaining },
       replyFloor: {

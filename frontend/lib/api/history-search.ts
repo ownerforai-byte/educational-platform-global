@@ -18,7 +18,6 @@ export interface HistorySearchSession {
 
 export interface HistorySearchResponse {
   response: string;
-  provider?: string;
   searched: {
     messages: number;
     sessions: number;

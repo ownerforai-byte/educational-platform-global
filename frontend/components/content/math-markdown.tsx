@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
+import { splitStepBlocks } from "@/lib/content/steps-blocks";
+import { StepCards } from "@/components/chat/step-cards";
 import { registerVeerArtifact } from "@/components/content/veer-artifact";
 import { registerEduVisualInteractive } from "@/components/content/edu-visual";
 import { createLru } from "@/lib/perf/memo";
@@ -37,19 +39,45 @@ type MathMarkdownProps = {
 /**
  * Single source of truth for rendering educational content. Accepts markdown,
  * GFM tables/lists, `$...$` / `$$...$$` / `\(...\)` / `\[...\]` math
- * (including mhchem `\ce{}`), and fenced code — all compiled to
- * sanitized static HTML server-side. No client JS, no React hooks (safe in
- * server components).
+ * (including mhchem `\ce{}`), fenced code — and Veer `steps` fences, which
+ * become numbered step cards — all compiled to sanitized static HTML
+ * server-side. No client JS, no React hooks (safe in server components).
+ *
+ * Steps fences are rendered HERE (owner report 2026-10-27: "the step by step
+ * derivations [must be] clean") so EVERY surface that shows a model reply —
+ * the chat consoles (which pre-split themselves), deep-dive, the history
+ * console, the quick panel — shows real step cards with working KaTeX,
+ * never a raw ```steps code block.
  *
  * Renders inside the platform `.prose` typography system (see app/globals.css)
  * so every consumer — note cards, step-by-step solutions, numerical viewers —
  * gets identical styling without wiring it up per call site.
  */
 export function MathMarkdown({ content, className }: MathMarkdownProps) {
+  const segments = splitStepBlocks(content);
+
+  // The common case: pure prose/math — one cached HTML blob, unchanged shape.
+  if (segments.length === 1 && segments[0].kind === "text") {
+    return (
+      <div
+        className={cn("prose dark:prose-invert max-w-none", className)}
+        dangerouslySetInnerHTML={{ __html: renderCachedNoteHtml(segments[0].text) }}
+      />
+    );
+  }
+
   return (
-    <div
-      className={cn("prose dark:prose-invert max-w-none", className)}
-      dangerouslySetInnerHTML={{ __html: renderCachedNoteHtml(content) }}
-    />
+    <div className={cn("prose dark:prose-invert max-w-none", className)}>
+      {segments.map((segment, index) =>
+        segment.kind === "text" ? (
+          <div
+            key={`text-${index}`}
+            dangerouslySetInnerHTML={{ __html: renderCachedNoteHtml(segment.text) }}
+          />
+        ) : (
+          <StepCards key={`steps-${index}`} steps={segment.steps} />
+        ),
+      )}
+    </div>
   );
 }

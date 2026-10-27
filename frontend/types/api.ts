@@ -396,7 +396,6 @@ export interface AIChatRequest {
 
 export interface AIChatResponse {
   response: string;
-  provider: string;
   /** How many attached photos were accepted / dropped (size or count caps). */
   images?: { accepted: number; rejected: number };
   /** Credits left after this message's 1-credit spend (logged users). */
@@ -499,12 +498,10 @@ export interface EvaluateAnswersResponse {
   results: EvaluatedAnswer[];
   /** Overall submission summary from the AI. */
   summary: string;
-  provider: string;
 }
 
 export interface GenerateQuestionsResponse {
   questions: GeneratedQuestion[];
-  provider: string;
   topic?: string;
   /** Guest pool only: messages left AFTER this generation (server-attested). */
   remaining?: number;

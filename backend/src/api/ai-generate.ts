@@ -318,7 +318,6 @@ export function extractJsonObject(text: string): string | null {
 
 interface GenerateQuestionsResponse {
   questions: GeneratedQuestion[];
-  provider: string;
   topic?: string;
   /** Guest pool only: left AFTER this generation (server-attested). */
   remaining?: number;
@@ -682,7 +681,6 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
 
       res.json({
         questions,
-        provider: aiService.getLastAnsweredBy(),
         topic: topic ?? undefined,
         // Guests get the server-attested pool so the UI mirror can never
         // show MORE than what is actually left (refresh cannot fake it).

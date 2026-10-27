@@ -202,7 +202,6 @@ export function HistoryConsole() {
               {typeof answer.searched.attached === "number" && (
                 <> · presented {answer.searched.attached}</>
               )}
-              {answer.provider ? <> · {answer.provider}</> : null}
             </span>
           </div>
 

@@ -135,7 +135,6 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
 
     res.json({
       response,
-      provider: getService().getLastAnsweredBy(),
       searched: {
         messages: selection.considered.messages,
         sessions: selection.considered.sessions,

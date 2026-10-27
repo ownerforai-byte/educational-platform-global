@@ -301,16 +301,7 @@ export async function guestChat(
 }
 
 /**
- * Get available AI providers.
- */
-export async function getProviders(): Promise<{
-  providers: string[];
-  defaultProvider: string;
-}> {
-  return apiFetch<{ providers: string[]; defaultProvider: string }>("/api/ai/providers");
-}
-
-/** Today's AI-spark usage for the signed-in member (chat badge + profile). */
+ * Today's AI-spark usage for the signed-in member (chat badge + profile). */
 export interface AiSparkUsage {
   tier: "guest" | "member" | "plus" | "pro" | "owner";
   /** Daily allowance; null = unlimited (owner). */
