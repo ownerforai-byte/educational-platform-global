@@ -198,7 +198,7 @@ export function AIWidget() {
       {open && (
         <section
           aria-label="Veer chat"
-          className="flex h-[min(78vh,720px)] w-[min(100vw-2rem,42rem)] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
+          className="flex h-[min(88vh,860px)] w-[min(100vw-2rem,42rem)] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
         >
           <header className="flex items-center justify-between gap-2 border-b border-border bg-foreground px-3 py-2.5 text-background">
             <div className="flex min-w-0 items-center gap-2">
