@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { PeriodicTableView } from "@/components/periodic-table/periodic-table-view";
+import { PeriodicTableLazy } from "@/components/periodic-table/periodic-table-lazy";
 
 export const metadata: Metadata = {
   title: "Modern Periodic Table & CEE Question Bank — NEB & CEE Chemistry",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PeriodicTablePage() {
   return (
     <div className="w-full max-w-[1780px] mx-auto pb-4 px-1 sm:px-2 lg:px-4">
-      <PeriodicTableView />
+      <PeriodicTableLazy />
     </div>
   );
 }

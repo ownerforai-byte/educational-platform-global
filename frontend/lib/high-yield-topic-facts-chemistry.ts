@@ -1,4 +1,4 @@
-import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts";
+import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
 
 /**
  * Chemistry high-yield bank — physical and inorganic units.

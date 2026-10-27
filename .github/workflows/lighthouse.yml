@@ -1,0 +1,53 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+
+      # PHASE 4.3 (2026-10-27): Lighthouse CI gate on the main routes against
+      # the local production build. Budgets in frontend/lighthouserc.json are
+      # deliberately generous for mobile emulation (4x CPU throttle) — the
+      # gate fails only on a HARD regression (broken page, layout explosion,
+      # bundle catastrophe), never on normal metric noise. Lab runs cannot
+      # measure INP (a field metric), so total-blocking-time is asserted as
+      # its lab proxy.
+      - name: Build the production server
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+
+      - name: Start the production server
+        run: |
+          npx next start -p 3000 > /tmp/next-server.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl -sf -o /dev/null http://localhost:3000/home; then
+              echo "server ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          cat /tmp/next-server.log
+          exit 1
+
+      - name: Run Lighthouse CI budgets
+        run: npx lhci autorun --config=./lighthouserc.json

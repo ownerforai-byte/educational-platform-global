@@ -87,6 +87,26 @@ repository.
   always-green (even a timeout wakes the dyno). Alternative if the ping load is
   ever unwanted: disable the workflow and switch the Render service to an
   always-on plan in the Render dashboard (paid) — no code change needed.
+- **Vercel only (2026-10-27):** the Cloudflare/open-next deployment path is gone —
+  `frontend/open-next.config.ts`, `frontend/wrangler.jsonc` and the
+  `@opennextjs/cloudflare` devDependency were removed. Frontend deploys to Vercel
+  (`ravikisan.vercel.app`), backend to Render; there is no third target.
+- **ISR corpus pages (2026-10-27):** the 20 class-11/class-12-notes corpus pages
+  (subject, chapters, unit, topic, exercises, exercise-type, mindmap, syllabus,
+  theory) are prerendered at build via `generateStaticParams` +
+  `dynamicParams = false` and tagged `export const revalidate = 86_400`.
+  `frontend/next.config.mjs` exempts the two class trees from the global
+  `Cache-Control: public, max-age=0, must-revalidate` rule so the route-level
+  `s-maxage=86400, stale-while-revalidate` reaches the CDN. Vercel invalidates
+  the ISR cache on every deploy. **PHASE 4.2 skipped:** no tag-based on-demand
+  revalidation exists — the corpus has no external mutation source, so
+  deploy-time invalidation is the only trigger needed.
+- **Lighthouse CI (2026-10-27):** `.github/workflows/lighthouse.yml` +
+  `frontend/lighthouserc.json` run `@lhci/cli autorun` on `/home`, a class-11
+  topic page, `/lab` and `/pyqs` on push to `main` (mobile emulation, 3 runs,
+  optimistic aggregation). Budgets: performance score ≥ 0.4, FCP ≤ 4500 ms,
+  LCP ≤ 8500 ms, TBT ≤ 1500 ms (lab proxy for INP), CLS ≤ 0.3. Needs no secrets
+  beyond the public app env the build already uses — no LHCI server/token.
 - **Error monitoring (2026-10-27):** see the "Error monitoring" section below.
 - **E2E smoke secrets (2026-10-27):** see the "E2E smoke (Playwright)" section below.
 

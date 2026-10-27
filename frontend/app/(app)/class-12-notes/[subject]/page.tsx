@@ -1,7 +1,10 @@
 import { SubjectHubView } from "@/features/syllabus/components/subject-hub-view";
 import { listSubjects } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+// ISR (PHASE 4.1): static-by-nature corpus page — renders purely from the
+// local syllabus/content modules, no per-request cookies, headers or API
+// data — so the shell is cached 24 h and revalidated in the background.
+export const revalidate = 86_400;
 
 const CLASS_SLUG = "class-12-notes";
 

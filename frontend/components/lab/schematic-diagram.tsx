@@ -36,6 +36,7 @@ import {
   isInclinedPlaneTopic,
   type ConceptNoteLike,
 } from "@/lib/topic-visuals";
+import { ensureHighYieldForSubject } from "@/lib/high-yield-topic-facts-lazy";
 
 // Shared viewBox for every schematic — used to map pointer coords <-> viewBox space.
 const VIEW_W = 900;
@@ -265,6 +266,20 @@ export function SchematicDiagram({
     if (s.includes("bio")) return "biology";
     if (s.includes("math")) return "mathematics";
     return "general";
+  }, [subjectSlug]);
+
+  // ── Lazy fact-bank warm-up: the topic-derived drawing below reads the
+  // subject's high-yield bank through the lazy loader, so re-run the memo
+  // once the chunk arrives (first render uses the tiny core bank). ──────────
+  const [bankVersion, setBankVersion] = useState(0);
+  useEffect(() => {
+    let cancelled = false;
+    ensureHighYieldForSubject(subjectSlug).then(() => {
+      if (!cancelled) setBankVersion((v) => v + 1);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [subjectSlug]);
 
   // The current annotation list, kept in a ref so Reveal-all can act on it
@@ -906,6 +921,7 @@ export function SchematicDiagram({
     topicTitle,
     unitId,
     concepts,
+    bankVersion,
   ]);
 
   // Knowledge target: hover previews a chip, click pins it (the pinned chip is

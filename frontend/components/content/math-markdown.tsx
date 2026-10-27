@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
@@ -52,8 +53,15 @@ type MathMarkdownProps = {
  * Renders inside the platform `.prose` typography system (see app/globals.css)
  * so every consumer — note cards, step-by-step solutions, numerical viewers —
  * gets identical styling without wiring it up per call site.
+ *
+ * Memoized: chat surfaces render one instance per reply segment, so a
+ * keystroke re-render of the thread would otherwise re-split and reconcile
+ * every historical message. Same props ⇒ same output, no hooks needed.
  */
-export function MathMarkdown({ content, className }: MathMarkdownProps) {
+export const MathMarkdown = memo(function MathMarkdown({
+  content,
+  className,
+}: MathMarkdownProps) {
   const segments = splitStepBlocks(content);
 
   // The common case: pure prose/math — one cached HTML blob, unchanged shape.
@@ -80,4 +88,4 @@ export function MathMarkdown({ content, className }: MathMarkdownProps) {
       )}
     </div>
   );
-}
+});

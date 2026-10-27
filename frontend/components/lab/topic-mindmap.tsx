@@ -36,6 +36,7 @@ import {
 } from "@/components/lab/knowledge-block";
 import { getUnitConcept, getExactUnitConcept } from "@/lib/visual-concept-map";
 import { buildUnitMindmapBranches } from "@/lib/unit-mindmap-branches";
+import { ensureHighYieldForSubject } from "@/lib/high-yield-topic-facts-lazy";
 import { applyFallbackDepth } from "@/lib/mindmap-depth";
 // side-effect import: registers every authored depth pack
 import "@/lib/mindmap-depth-index";
@@ -140,6 +141,21 @@ export function TopicMindMap({
   const [collapsedSubBranches, setCollapsedSubBranches] = useState<Record<string, boolean>>({});
   const [isMindmapFullscreen, setIsMindmapFullscreen] = useState(false);
   const mindmapRootRef = useRef<HTMLDivElement>(null);
+
+  // ── Lazy fact-bank warm-up ────────────────────────────────────────────────
+  // The unit branches below read the subject's high-yield bank through the
+  // lazy loader; when the chunk lands we bump `bankVersion` so the memo
+  // re-runs with the full bank (first render uses the tiny core bank).
+  const [bankVersion, setBankVersion] = useState(0);
+  useEffect(() => {
+    let cancelled = false;
+    ensureHighYieldForSubject(subjectSlug).then(() => {
+      if (!cancelled) setBankVersion((v) => v + 1);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [subjectSlug]);
 
   // ── Hold-to-expand hierarchy state ──
   // Press-and-hold a branch capsule (or its tree row) to fan out its full
@@ -1950,7 +1966,7 @@ export function TopicMindMap({
         nodes: [],
       },
     ];
-  }, [subjectSlug, classSlug, unitId, topicSlug, topicTitle, concepts]);
+  }, [subjectSlug, classSlug, unitId, topicSlug, topicTitle, concepts, bankVersion]);
 
   // Flatten nodes for canvas and compute filtered branches
   const branches: MindMapBranch[] = useMemo(() => {

@@ -11,13 +11,16 @@
  *   3. a generated tree containing content with no source in its own unit.
  */
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, beforeAll } from "vitest";
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
 
 import { SYLLABUS } from "@/lib/syllabus";
 import {
   ALL_HIGH_YIELD_TOPICS,
   getHighYieldEntriesForUnit,
 } from "@/lib/high-yield-topic-facts";
+import { ensureAllHighYieldBanksLoaded } from "@/lib/high-yield-topic-facts-lazy";
 import { buildUnitMindmapBranches } from "@/lib/unit-mindmap-branches";
 import {
   buildTopicBranches,
@@ -32,6 +35,32 @@ import {
 } from "@/lib/topic-visuals";
 
 const NORMALIZE = (s: string) => (s || "").replace(/\s+/g, " ").trim().toLowerCase();
+
+// The visual builders below read the high-yield banks through the lazy loader
+// (per-subject dynamic imports); warm the module cache once so the sync
+// assertions see the same data the eager barrel holds.
+beforeAll(async () => {
+  await ensureAllHighYieldBanksLoaded();
+});
+
+/** Unit ids carried by the shipped topic manifests (authored enrichment units
+ * like "thermodynamics" that live outside the syllabus list but still open a
+ * real topic page). */
+function readManifestUnitIds(): Set<string> {
+  const root = join(process.cwd(), "public", "data", "syllabus-notes");
+  const ids = new Set<string>();
+  for (const subject of readdirSync(root)) {
+    try {
+      const rows = JSON.parse(
+        readFileSync(join(root, subject, "_manifest.json"), "utf8"),
+      ) as Array<{ unitSlug?: string }>;
+      for (const row of rows) if (row.unitSlug) ids.add(row.unitSlug);
+    } catch {
+      // subject without a manifest
+    }
+  }
+  return ids;
+}
 
 function allUnits() {
   const out: {
@@ -126,8 +155,11 @@ describe("fact-bank unit lookup (the wrong-unit regression)", () => {
     const exact = getHighYieldEntriesForUnit("fundamentals-of-applied-chemistry", "chemistry");
     expect(exact.length).toBeGreaterThan(0);
     expect(exact[0].title.toLowerCase()).toContain("applied chemistry");
-    // Every entry that exists must claim at least one real syllabus unit id.
+    // Every entry must claim at least one unit id the shipped app can actually
+    // open: a syllabus unit id, or a unit id carried by a shipped topic
+    // manifest (authored enrichment content outside the syllabus list).
     const realIds = new Set(UNITS.map((u) => u.unitId));
+    for (const id of readManifestUnitIds()) realIds.add(id);
     for (const e of ALL_HIGH_YIELD_TOPICS) {
       expect(e.unitSlugs?.length ?? 0).toBeGreaterThan(0);
       expect(e.unitSlugs!.some((s) => realIds.has(s))).toBe(true);

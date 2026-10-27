@@ -16,11 +16,18 @@ const nextConfig = {
   // instant instead of a full re-fetch), while the mandatory revalidation
   // still guarantees the freshest deploy on every navigation. Signed-in
   // pages stay safe because the CDN must revalidate before serving.
+  // ISR (PHASE 4.1): the class-11/class-12 notes corpus is prerendered at
+  // build and tagged `revalidate = 86_400` per route — those pages render
+  // purely from local syllabus modules (no per-request cookies/API data), so
+  // they are exempt from the mandatory revalidation below. The route-level
+  // `s-maxage=86400, stale-while-revalidate` must survive to the CDN, and a
+  // new deploy still wins: Vercel invalidates the ISR cache on every deploy.
   // Hashed bundles under /_next/static are deliberately NOT listed: Vercel
   // already serves them as immutable, and a custom header there only makes
   // Next warn that it can break its own cache behaviour.
   async headers() {
     const HTML_NAVIGATION = ".*text/html.*";
+    const NON_CORPUS = "/((?!class-11-notes|class-12-notes).*)";
     return [
       {
         // HSTS on the Vercel-served origin (security pass 2026-10-27): the
@@ -36,14 +43,14 @@ const nextConfig = {
         ],
       },
       {
-        source: "/:path*",
+        source: NON_CORPUS,
         has: [{ type: "header", key: "accept", value: HTML_NAVIGATION }],
         headers: [
           { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
         ],
       },
       {
-        source: "/:path*",
+        source: NON_CORPUS,
         missing: [{ type: "header", key: "accept", value: HTML_NAVIGATION }],
         headers: [
           { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },

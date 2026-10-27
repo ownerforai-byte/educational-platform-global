@@ -4,9 +4,18 @@ import { buildMindmapItems } from "@/features/mindmap/queries";
 import type { MindmapItem } from "@/features/mindmap/queries";
 import { OfficialSyllabusPanel } from "@/features/syllabus/components/official-syllabus-panel";
 import { SubjectSectionNav } from "@/features/syllabus/components/subject-section-nav";
-import { getSubjectNav } from "@/lib/queries";
+import { getSubjectNav, listSubjects } from "@/lib/queries";
 
-export const dynamic = "force-dynamic";
+// ISR (PHASE 4.1): static-by-nature corpus page — renders purely from the
+// local syllabus/content modules, no per-request cookies, headers or API
+// data — so the shell is cached 24 h and revalidated in the background.
+// Prerendered for every syllabus subject; unknown slugs are a plain 404.
+export const revalidate = 86_400;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return listSubjects(CLASS_SLUG).map((s) => ({ subject: s.slug }));
+}
 
 const CLASS_SLUG = "class-11-notes";
 

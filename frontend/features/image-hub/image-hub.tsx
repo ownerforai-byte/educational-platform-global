@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   AlertTriangle,
   Download,
@@ -515,12 +515,20 @@ export function ImageHub() {
             ? "Server engine unavailable — drawing in your browser with puter.js…"
             : null;
 
-  const figureCount = items.filter((item) => item.kind === "figure").length;
+  // Gallery filtering is a long task when the hub holds hundreds of entries;
+  // memoize so keystrokes in the prompt field never re-filter the whole list.
+  const figureCount = useMemo(
+    () => items.filter((item) => item.kind === "figure").length,
+    [items],
+  );
   const pictureCount = items.length - figureCount;
-  const shown =
-    filter === "all"
-      ? items
-      : items.filter((item) => item.kind === filter);
+  const shown = useMemo(
+    () =>
+      filter === "all"
+        ? items
+        : items.filter((item) => item.kind === filter),
+    [items, filter],
+  );
 
   const modeButton = (value: Mode, label: string, hint: string) => (
     <button

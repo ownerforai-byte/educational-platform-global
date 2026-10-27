@@ -85,6 +85,14 @@ Whenever you need to know how the platform works and where things route, refer O
 | `backend/src/ai/image-gen.ts` | Server-side image/diagram generation and research provider integration. |
 | `frontend/lib/ai/subject-classrooms.ts` | Registry of subject-specific AI classroom identities, prompts, and independent history namespaces. |
 | `frontend/components/ai/diagram-studio.tsx` | Diagram Hub teaching interface: researched/generative figure flow with rendered visual outputs. |
+| `frontend/components/ai/diagram-studio-lazy.tsx` | Client `next/dynamic` wrapper for the Diagram Studio (ssr:false must live in a Client Component on Next 16). |
+| `frontend/components/periodic-table/periodic-table-lazy.tsx` | Client `next/dynamic` wrapper for the periodic-table island. |
+| `frontend/features/image-hub/image-hub-lazy.tsx` | Client `next/dynamic` wrapper for the Image Hub island. |
+| `frontend/lib/high-yield-topic-facts.ts` | Eager barrel for all high-yield fact banks; also registers every subject bank into the lazy cache. |
+| `frontend/lib/high-yield-topic-facts-lazy.ts` | Per-subject lazy fact-bank loader + `registerHighYieldSubjectBank` escape hatch. |
+| `frontend/lib/high-yield-topic-facts-core.ts` | Shared fact-bank types/helpers used by the split subject banks. |
+| `frontend/lib/high-yield-topic-facts-match.ts` | Pure topic-fact matching module (no bank imports, safe in any layer). |
+| `frontend/lighthouserc.json` | Lighthouse CI collect/assert config (mobile budgets for /home, a class-11 topic, /lab, /pyqs). |
 | `frontend/components/ai/subject-classroom.tsx` | Subject classroom UI that keeps conversation history isolated by subject. |
 | `frontend/components/content/section-tier-gate.tsx` | Section-tier enforcement and restricted-section presentation. |
 | `frontend/components/home/home-sections.tsx` | Horizontal section-rail renderer using the section registry and tier policy. |

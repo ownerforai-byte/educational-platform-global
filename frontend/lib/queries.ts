@@ -30,4 +30,7 @@ export {
   getUnit,
   getUnitTopic,
   resolveUnitIdFromChapterSlug,
+  listUnitParams,
+  listTopicParams,
+  listExerciseTypeParams,
 } from "@/features/syllabus/queries";

@@ -159,7 +159,9 @@ agent file edits) to honor the multi-agent coordination rule.
 - Image optimization: Next.js image config with remote patterns.
 - Caching: static asset cache headers configured in Next.js config.
 - CI/CD: `.github/workflows/ci.yml` with lint, typecheck, test, build on PR/push to main.
-- Deployment: ready for Vercel/Cloudflare Pages with production Supabase env vars.
+- Deployment: Vercel only with production Supabase env vars (the Cloudflare Pages
+  path was removed 2026-10-27 — `open-next.config.ts`, `wrangler.jsonc` and
+  `@opennextjs/cloudflare` deleted).
 
 ## VERIFICATION (Phase 14 Cloudflare Deployment Fix)
 - Fixed corrupted `wrangler.jsonc` (duplicate JSON content) — single valid config.
@@ -384,4 +386,35 @@ admin O(N) fixed) · Track 4 tests ✅ (frontend + backend suites in CI) · Trac
 (ongoing) · Track 6 perf (open: bundle audit, Render cold-start keep-alive) · Track 7 deploy ✅
 (frontend Vercel + backend Render, verified live) · Track 8 system tracking ✅
 (`SYSTEM_WORK_TRACKER.md` + `scripts/system-work-audit.mjs`).
+
+---
+
+## PERF / ROBUSTNESS PHASES (2026-10-27 — supersedes the deploy/CI claims above)
+
+- **PHASE 0–2 (landed earlier):** log txts untracked; Sentry frontend init (DSN-gated,
+  no DSN no telemetry) + sourcemap CI + HSTS on both surfaces; nested route error
+  boundaries + `loading.tsx` skeletons.
+- **PHASE 3 — code splitting:** heavy client islands load via `next/dynamic` (3D labs,
+  periodic table, image hub, diagram studio) with `"use client"` wrappers where the
+  route is a Server Component (Next 16 forbids `ssr:false` in Server Components);
+  high-yield fact banks split per subject with a lazy loader + barrel auto-registration;
+  chat/step-block splitting and gallery filtering memoized (`useMemo`), `MathMarkdown`
+  wrapped in `React.memo`.
+- **PHASE 4 — ISR + Lighthouse CI:** the 20 class-11/class-12-notes corpus pages are
+  prerendered with `generateStaticParams` + `dynamicParams = false` and tagged
+  `revalidate = 86_400` (route table: `● … 1d`). Verified on `next start`: tagged topic
+  pages return `Cache-Control: s-maxage=86400, stale-while-revalidate` +
+  `x-nextjs-cache: HIT`; `/home` and other dynamic routes keep
+  `public, max-age=0, must-revalidate`. `next.config.mjs` exempts the two class trees
+  from the global must-revalidate header rule (it was silently overriding ISR's
+  s-maxage). PHASE 4.2 (tag-based revalidation) skipped: no external mutation source —
+  deploy-time invalidation is sufficient. New `.github/workflows/lighthouse.yml` +
+  `frontend/lighthouserc.json`: @lhci/cli on `/home`, a class-11 topic page, `/lab`,
+  `/pyqs` (mobile, 3 runs, budgets in the config).
+- **PHASE 5 — Vercel-only cleanup:** removed `frontend/open-next.config.ts`,
+  `frontend/wrangler.jsonc`, `frontend/.wrangler/`, the `@opennextjs/cloudflare`
+  devDependency and the Cloudflare entries in `.gitignore`. The historical Phase 14
+  Cloudflare log above is kept as history only — there is no Cloudflare deploy target.
+- **Current suites on this tree:** backend 605/605 across 48 files; frontend 946/946
+  across 110 files (`npm run test:affected`).
 

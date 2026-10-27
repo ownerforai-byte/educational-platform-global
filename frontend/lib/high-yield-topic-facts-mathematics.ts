@@ -1,4 +1,4 @@
-import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts";
+import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
 
 /**
  * Mathematics high-yield bank.

@@ -20,10 +20,10 @@
  */
 
 import {
-  ALL_HIGH_YIELD_TOPICS,
-  getHighYieldEntriesForUnit,
-  type HighYieldTopicData,
-} from "@/lib/high-yield-topic-facts";
+  getLoadedHighYieldBank,
+  getLoadedHighYieldEntriesForUnit,
+} from "@/lib/high-yield-topic-facts-lazy";
+import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
 import type {
   MindMapBranch,
   MindMapSubBranch,
@@ -92,10 +92,14 @@ function latexToPlain(tex: string): string {
  * 57 units had no tree of their own at all. A unit id is the only signal that
  * cannot be wrong; when nothing claims the unit we return [] and the caller
  * builds a tree from the unit's OWN syllabus topics instead of guessing.
+ *
+ * Searches the lazily loaded subject bank (core + whatever `subjectSlug`
+ * has cached so far); callers preload via `preloadHighYieldForSubject` and
+ * re-run once it resolves.
  */
-function entriesForUnit(unitId: string): HighYieldTopicData[] {
+function entriesForUnit(unitId: string, subjectSlug?: string): HighYieldTopicData[] {
   if (!unitId) return [];
-  const exact = getHighYieldEntriesForUnit(unitId);
+  const exact = getLoadedHighYieldEntriesForUnit(unitId, subjectSlug);
   if (exact.length > 0) return exact;
   // Alias bridge: a unit whose id was renamed still has an entry under the old
   // id. Only accepted when the alias is a real bank slug that shares the unit's
@@ -104,7 +108,7 @@ function entriesForUnit(unitId: string): HighYieldTopicData[] {
     unitId.split("-").filter((w) => w.length >= 5),
   );
   if (!words.size) return [];
-  return ALL_HIGH_YIELD_TOPICS.filter((e) =>
+  return getLoadedHighYieldBank(subjectSlug).filter((e) =>
     (e.unitSlugs ?? []).some((slug) => {
       const parts = slug.split("-").filter((w) => w.length >= 5);
       return parts.length > 0 && parts.every((p) => words.has(p));
@@ -151,11 +155,11 @@ function branch(
  */
 export function buildUnitMindmapBranches(
   unitId: string,
-  _subjectSlug?: string,
+  subjectSlug?: string,
   _topicSlug?: string,
   _topicTitle?: string,
 ): MindMapBranch[] | undefined {
-  const entries = entriesForUnit(unitId);
+  const entries = entriesForUnit(unitId, subjectSlug);
   if (entries.length === 0) return undefined;
 
   const uid = (unitId || "unit").replace(/[^a-z0-9-]+/gi, "-");

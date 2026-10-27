@@ -60,6 +60,8 @@ import {
   type BranchSource,
   type DiagramKind,
 } from "@/lib/topic-visuals";
+// The barrel registers the banks it merges into the lazy cache at import time,
+// so no explicit warm-up is needed before the sync builders below run.
 import { getHighYieldEntriesForUnit } from "@/lib/high-yield-topic-facts";
 
 type Severity = "high" | "medium" | "low";

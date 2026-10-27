@@ -203,7 +203,7 @@ export const NAV_SECTIONS: NavSection[] = [
   { id: "stem", label: "Labs & Reference", icon: FlaskConical, minLevel: "visitor", items: stemAndRigorItems },
   { id: "tools", label: "AI & Practice", icon: Sparkles, minLevel: "visitor", items: toolsItems },
   { id: "extended", label: "More Resources", icon: Globe, minLevel: "member", items: extendedItems },
-  { id: "account", label: "Student Desk", icon: UserCheck, minLevel: "plus", items: accountItems },
+  { id: "account", label: "Student Desk", icon: UserCheck, minLevel: "member", items: accountItems },
   { id: "r1", label: "R1 · Daily Life", icon: Sparkles, r1Only: true, items: r1Items },
   { id: "owner", label: "Owner", icon: Crown, ownerOnly: true, items: ownerItems },
 ];

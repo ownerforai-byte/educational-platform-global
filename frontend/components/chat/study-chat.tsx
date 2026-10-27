@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import {
   Bot,
   Send,
@@ -107,6 +107,17 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   }, [isLoggedIn]);
 
   const visibleMessages = messages.filter((m) => m.role !== "system");
+  // Splitting every assistant reply on each render (composer keystrokes
+  // re-render the whole thread) is a long task on long threads; memoize so
+  // segments are recomputed only when the message list actually changes.
+  // Filtered exactly like visibleMessages so indices stay aligned.
+  const visibleSegments = useMemo(
+    () =>
+      messages
+        .filter((m) => m.role !== "system")
+        .map((m) => (m.role === "assistant" ? splitStepBlocks(m.content) : null)),
+    [messages],
+  );
   // The empty-state hero + suggestions show until the student sends a message.
   const hasStarted = visibleMessages.length > 0;
 
@@ -325,7 +336,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
                 {m.role === "user" ? (
                   <p className="whitespace-pre-wrap">{m.content}</p>
                 ) : (
-                  splitStepBlocks(m.content).map((segment, j) =>
+                  (visibleSegments[i] ?? []).map((segment, j) =>
                     segment.kind === "steps" ? (
                       <StepCards key={j} steps={segment.steps} />
                     ) : (

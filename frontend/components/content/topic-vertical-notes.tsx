@@ -2,20 +2,39 @@
 
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
 import { EntranceQuiz } from "@/components/content/entrance-quiz";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
 import { FormulaCard } from "@/components/content/formula-card";
-import { get3DComponentForTopic } from "@/lib/topic-3d-map";
-import { SchematicDiagram } from "@/components/lab/schematic-diagram";
-import { TopicMindMap } from "@/components/lab/topic-mindmap";
+import { emptyHighYieldTopicData, hasHighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
 import {
-  emptyHighYieldTopicData,
-  getHighYieldTopicData,
-  hasHighYieldTopicData,
-} from "@/lib/high-yield-topic-facts";
+  ensureHighYieldForSubject,
+  getLoadedHighYieldTopicData,
+} from "@/lib/high-yield-topic-facts-lazy";
+
+// Heavy visual panels load client-side on demand — the note text renders
+// first and each panel hydrates behind its own skeleton.
+const SchematicDiagramLazy = dynamic(
+  () => import("@/components/lab/schematic-diagram").then((m) => m.SchematicDiagram),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="min-h-[380px] animate-pulse rounded-2xl border border-border/60 bg-background/50" />
+    ),
+  }
+);
+const TopicMindMapLazy = dynamic(
+  () => import("@/components/lab/topic-mindmap").then((m) => m.TopicMindMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="min-h-[380px] animate-pulse rounded-2xl border border-border/60 bg-background/50" />
+    ),
+  }
+);
 import {
   BookOpen,
   FlaskConical,
@@ -158,9 +177,18 @@ export function TopicVerticalNotes({
     return () => document.removeEventListener("fullscreenchange", sync);
   }, []);
 
-  // 1. Resolve 3D component if available
-  const TopicVisual3D = useMemo(() => {
-    return get3DComponentForTopic(topicSlug);
+  // 1. Resolve 3D component if available — lazy, so the topic-3d-map registry
+  // (which imports every 3D visual) stays out of this page's first chunk.
+  const [TopicVisual3D, setTopicVisual3D] = useState<React.ComponentType | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setTopicVisual3D(null);
+    import("@/lib/topic-3d-map").then((m) => {
+      if (!cancelled) setTopicVisual3D(() => m.get3DComponentForTopic(topicSlug));
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [topicSlug]);
 
   // Visual mode tabs with roving focus (arrow keys move between tabs).
@@ -185,10 +213,22 @@ export function TopicVerticalNotes({
     document.getElementById(`visual-tab-${next}`)?.focus();
   };
 
-  // 2. Resolve High-Yield Topic Engine Data (null when this topic has none yet)
+  // 2. Resolve High-Yield Topic Engine Data (null when this topic has none yet).
+  // The subject bank loads lazily; `bankVersion` re-runs these memos once the
+  // chunk arrives, so the first paint uses the tiny core bank.
+  const [bankVersion, setBankVersion] = useState(0);
+  useEffect(() => {
+    let cancelled = false;
+    ensureHighYieldForSubject(subjectSlug).then(() => {
+      if (!cancelled) setBankVersion((v) => v + 1);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [subjectSlug]);
   const highYield = useMemo(() => {
-    return getHighYieldTopicData(subjectSlug, topicSlug, topicTitle, unitId);
-  }, [subjectSlug, topicSlug, topicTitle, unitId]);
+    return getLoadedHighYieldTopicData(subjectSlug, topicSlug, topicTitle, unitId);
+  }, [subjectSlug, topicSlug, topicTitle, unitId, bankVersion]);
   const hasHighYield = useMemo(() => hasHighYieldTopicData(highYield), [highYield]);
   const factBank = useMemo(
     () => highYield ?? emptyHighYieldTopicData(topicTitle, subjectSlug),
@@ -519,7 +559,7 @@ export function TopicVerticalNotes({
           {fullscreenError && <p role="status" className="text-sm text-muted-foreground">{fullscreenError}</p>}
 
           {visualTab === "schematic" && (
-            <SchematicDiagram
+            <SchematicDiagramLazy
               key={`schem-${visualKey}`}
               subjectSlug={subjectSlug}
               topicSlug={topicSlug}
@@ -531,7 +571,7 @@ export function TopicVerticalNotes({
           )}
 
           {visualTab === "mindmap" && (
-            <TopicMindMap
+            <TopicMindMapLazy
               key={`mm-${visualKey}`}
               subjectSlug={subjectSlug}
               topicSlug={topicSlug}

@@ -20,12 +20,9 @@ coverage/
 *.tsbuildinfo
 next-env.d.ts
 
-# vercel / cloudflare build output
+# vercel build output
 /.vercel/
 /.vercel-token.txt
-.wrangler/
-.open-next/
-*/.open-next/
 .route-audit/
 */.route-audit/
 

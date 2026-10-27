@@ -5,6 +5,7 @@ import {
   getTopicEntryBySlug,
   type SyllabusTopicEntry,
 } from "@/lib/syllabus";
+import { getExerciseTypes } from "./exercise-types";
 import type { UnitVM } from "./types";
 import {
   parseSubjectParams,
@@ -97,4 +98,44 @@ export function resolveUnitIdFromChapterSlug(
     return subject.units[index]?.id ?? null;
   }
   return null;
+}
+
+// PHASE 4.1: full param enumeration for generateStaticParams — the corpus is
+// finite and comes entirely from the local syllabus modules, so every valid
+// slug can be prerendered at build (with dynamicParams=false those routes
+// have no on-demand fallback path).
+
+export function listUnitParams(
+  classSlug: string,
+): { subject: string; unit: string }[] {
+  return listSubjects(classSlug).flatMap((s) =>
+    getSubjectNav(classSlug, s.slug).units.map((u) => ({
+      subject: s.slug,
+      unit: u.id,
+    })),
+  );
+}
+
+export function listTopicParams(
+  classSlug: string,
+): { subject: string; unit: string; topicSlug: string }[] {
+  return listUnitParams(classSlug).flatMap(({ subject, unit }) => {
+    const data = getUnit(classSlug, subject, unit);
+    return data
+      ? data.topicEntries.map((t) => ({ subject, unit, topicSlug: t.slug }))
+      : [];
+  });
+}
+
+export function listExerciseTypeParams(
+  classSlug: string,
+): { subject: string; unit: string; topicSlug: string; exerciseType: string }[] {
+  return listTopicParams(classSlug).flatMap(({ subject, unit, topicSlug }) =>
+    getExerciseTypes(subject).map((et) => ({
+      subject,
+      unit,
+      topicSlug,
+      exerciseType: et.id,
+    })),
+  );
 }

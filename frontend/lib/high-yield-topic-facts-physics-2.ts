@@ -1,4 +1,4 @@
-import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts";
+import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
 
 /**
  * Physics high-yield bank, part 2 — heat, optics, electricity, semiconductors
@@ -399,6 +399,125 @@ export const HIGH_YIELD_TOPIC_BANK_PHYSICS_2: HighYieldTopicData[] = [
           "The ratio of the radiant energy emitted by a surface to that emitted by a perfect black body at the same temperature.",
         significance:
           "Equal to the absorptivity by Kirchhoff's law, and always between 0 and 1.",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // PHYSICS — First Law of Thermodynamics
+  // ─────────────────────────────────────────────────────────────
+  {
+    topicKeywords: [
+      "first-law",
+      "thermodynamics",
+      "internal-energy",
+      "adiabatic",
+      "isothermal",
+      "isobaric",
+      "isochoric",
+      "cyclic",
+      "heat-engine",
+    ],
+    subject: "physics",
+    title: "First Law of Thermodynamics & Thermodynamic Processes",
+    // "thermodynamics" is the unit id carried by the authored
+    // content/ notes for this topic (not a syllabus unit id, which is
+    // "heat-and-temperature" / "quantity-of-heat"); claimed here so the
+    // topic page keeps its Fact Bank section.
+    unitSlugs: ["thermodynamics"],
+    category: "Heat & Thermodynamics",
+    governingLaws: [
+      {
+        name: "First Law of Thermodynamics",
+        statement:
+          "The change in internal energy of a system equals the heat added to the system minus the work done BY the system on the surroundings. Energy can neither be created nor destroyed — heat and work are both forms of energy in transit.",
+        formula: "\\Delta U = Q - W",
+        conditions:
+          "Sign convention: Q > 0 heat absorbed, W > 0 work done by the gas. The law is a statement of conservation of energy and holds for every process, reversible or irreversible.",
+      },
+    ],
+    speedFormulas: [
+      {
+        name: "Work in an Isobaric Process",
+        formula: "W = P\\Delta V = P(V_2 - V_1) = nR\\Delta T",
+        description:
+          "At constant pressure the work is simply pressure times volume change; for an ideal gas this equals nRΔT.",
+        unit: "J",
+      },
+      {
+        name: "Work in an Isothermal Process (Ideal Gas)",
+        formula: "W = nRT\\ln\\left(\\frac{V_2}{V_1}\\right) = 2.303\\, nRT\\log_{10}\\left(\\frac{V_2}{V_1}\\right)",
+        description:
+          "T is constant, so ΔU = 0 and Q = W: every joule absorbed appears as work done.",
+        unit: "J",
+      },
+      {
+        name: "Adiabatic Process Relations",
+        formula: "PV^{\\gamma} = \\text{const}, \\quad TV^{\\gamma-1} = \\text{const}, \\quad T^{\\gamma}P^{1-\\gamma} = \\text{const}",
+        description:
+          "Q = 0, so W = −ΔU: the gas cools while expanding and heats while being compressed. γ = Cp/Cv.",
+        unit: "—",
+      },
+      {
+        name: "Heat Engine Efficiency",
+        formula: "\\eta = \\frac{W}{Q_1} = 1 - \\frac{Q_2}{Q_1}",
+        description:
+          "For a Carnot engine the efficiency is 1 − T2/T1; in a full cycle ΔU = 0, so W = Q1 − Q2.",
+        unit: "fraction or %",
+      },
+    ],
+    constantsAndValues: [
+      { symbol: "\\gamma_{\\text{mono}}", name: "Adiabatic index of a monoatomic gas", value: "5/3 ≈ 1.67", unit: "dimensionless" },
+      { symbol: "\\gamma_{\\text{di}}", name: "Adiabatic index of a diatomic gas", value: "7/5 = 1.4", unit: "dimensionless" },
+      { symbol: "R", name: "Universal gas constant", value: "8.314", unit: "J mol^-1 K^-1" },
+      { symbol: "1 \\text{ cal}", name: "Mechanical equivalent of heat (Joule)", value: "4.186", unit: "J" },
+    ],
+    entranceTraps: [
+      {
+        trap: "In an isothermal process Q = 0 because the temperature does not change.",
+        truth:
+          "Temperature constant means ΔU = 0, so Q = W — the gas absorbs exactly the heat it converts into work. It is the ADIABATIC process that has Q = 0.",
+        examRef: "NEB / CEE — process identification",
+      },
+      {
+        trap: "In an adiabatic process the temperature stays constant.",
+        truth:
+          "Adiabatic means NO HEAT EXCHANGE, not no temperature change: an expanding gas does work at the expense of its internal energy, so its temperature falls.",
+        examRef: "IOE — adiabatic expansion",
+      },
+      {
+        trap: "Internal energy depends on the path taken between two states.",
+        truth:
+          "U is a state function: ΔU is the same for every path joining the same two states, while Q and W individually depend on the path.",
+        examRef: "CEE — state functions",
+      },
+    ],
+    workedNumericals: [
+      {
+        problem:
+          "A gas absorbs 200 J of heat and does 120 J of work on its surroundings. Find the change in internal energy.",
+        given: "Q = +200\\text{ J}, \\; W = +120\\text{ J}",
+        steps: [
+          "Apply the first law with the physics convention: ΔU = Q − W",
+          "Substitute: ΔU = 200 − 120 = 80 J",
+        ],
+        answer: "\\Delta U = +80\\text{ J}",
+      },
+    ],
+    keyTermsAndDefinitions: [
+      {
+        term: "Internal Energy (U)",
+        definition:
+          "The total kinetic and potential energy of all molecules of a system; for an ideal gas it depends only on temperature.",
+        significance:
+          "A state function — its change is path-independent, which is what makes the first law useful.",
+      },
+      {
+        term: "Cyclic Process",
+        definition:
+          "A process in which the system returns to its initial state, so the net change in every state function is zero.",
+        significance:
+          "ΔU = 0 gives W_net = Q_net — the working principle of every heat engine.",
       },
     ],
   },

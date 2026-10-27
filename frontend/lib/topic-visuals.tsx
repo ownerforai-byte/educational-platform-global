@@ -32,7 +32,7 @@
 import type React from "react";
 
 import { SYLLABUS } from "@/lib/syllabus";
-import { getHighYieldEntriesForUnit } from "@/lib/high-yield-topic-facts";
+import { getLoadedHighYieldEntriesForUnit } from "@/lib/high-yield-topic-facts-lazy";
 import type { ConceptAnnotation } from "@/components/lab/schematic-concepts";
 import type {
   MindMapBranch,
@@ -367,7 +367,9 @@ export function buildTopicKnowledge(input: TopicKnowledgeInput): TopicKnowledge 
     items.push({ ...item, focus: item.focus ?? 0 });
 
   // ── (a) the curated bank entry that claims this unit by exact id ──
-  const bank = input.unitId ? getHighYieldEntriesForUnit(input.unitId, subject) : [];
+  // Loaded lazily per subject; callers preload via
+  // `preloadHighYieldForSubject(subject)` and re-run once it resolves.
+  const bank = input.unitId ? getLoadedHighYieldEntriesForUnit(input.unitId, subject) : [];
   for (const entry of bank) {
     for (const law of entry.governingLaws ?? []) {
       push({

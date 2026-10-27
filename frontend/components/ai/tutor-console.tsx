@@ -19,7 +19,7 @@
  * ("no removal in that light").
  */
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -1052,6 +1052,16 @@ export function TutorConsole({
   };
 
   const hasConversation = messages.length > 0;
+  // Splitting every assistant reply on each render (composer keystrokes
+  // re-render the whole thread) is a long task on long threads; memoize so
+  // segments are recomputed only when the message list actually changes.
+  const assistantSegments = useMemo(
+    () =>
+      messages.map((msg) =>
+        msg.role === "assistant" ? splitStepBlocks(msg.content) : null,
+      ),
+    [messages],
+  );
   const lastAssistantIndex = (() => {
     for (let i = messages.length - 1; i >= 0; i--) {
       if (messages[i].role === "assistant") return i;
@@ -1321,7 +1331,7 @@ export function TutorConsole({
 
                   <div className="min-w-0 w-full">
                     <div className="rounded-2xl rounded-tl-sm border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-7 sm:py-6">
-                      {splitStepBlocks(msg.content).map((segment, segIndex) =>
+                      {(assistantSegments[index] ?? []).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
                           <StepCards key={segIndex} steps={segment.steps} />
                         ) : (

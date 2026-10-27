@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DiagramStudio } from "@/components/ai/diagram-studio";
+import { DiagramStudioLazy } from "@/components/ai/diagram-studio-lazy";
 
 export const metadata: Metadata = {
   title: "Diagram Hub — detailed labelled diagrams",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function DiagramsPage() {
-  return <DiagramStudio />;
+  return <DiagramStudioLazy />;
 }

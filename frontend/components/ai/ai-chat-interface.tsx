@@ -891,6 +891,17 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   };
 
   const displayMessages = messages.filter((m) => m.role !== "system");
+  // Segmenting every assistant reply on each render (composer keystrokes
+  // re-render the whole thread) is a long task on long threads; memoize so
+  // segments are recomputed only when the message list actually changes.
+  // Filtered exactly like displayMessages so indices stay aligned.
+  const displaySegments = useMemo(
+    () =>
+      messages
+        .filter((m) => m.role !== "system")
+        .map((m) => (m.role === "assistant" ? splitStepBlocks(m.content) : null)),
+    [messages],
+  );
   // The in-progress bubble is the last assistant message while a stream runs.
   const isStreaming =
     sending && streamingText !== null &&
@@ -1142,7 +1153,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   </div>
                   <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-6 sm:py-6">
                     <div>
-                      {splitStepBlocks(msg.content).map((segment, segIndex) =>
+                      {(displaySegments[index] ?? []).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
                           <StepCards key={segIndex} steps={segment.steps} />
                         ) : (

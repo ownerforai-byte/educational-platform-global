@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ImageHub } from "@/features/image-hub";
+import { ImageHubLazy } from "@/features/image-hub/image-hub-lazy";
 
 export const metadata: Metadata = {
   title: "Diagram Hub · Ravikisan's Platform",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function ImageHubPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-2 sm:px-4 py-4 sm:py-6">
-      <ImageHub />
+      <ImageHubLazy />
     </div>
   );
 }

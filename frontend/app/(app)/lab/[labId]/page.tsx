@@ -9,22 +9,41 @@
  *    canonical registry entry.
  *  - Unknown ids redirect to /lab/3d — the single ordered hub for all 3D
  *    content — instead of showing a dead end.
+ *
+ * PHASE 3 (2026-10-27): the lab registry and the 3D viewers (LabStudio,
+ * AdvancedViewer) are loaded on demand — the route shell paints before any
+ * Three.js byte downloads.
  */
 "use client";
 
 import { useState, useEffect, useMemo, createElement } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Cuboid, Loader2 } from "lucide-react";
-import { LAB_REGISTRY, getLabById } from "@/lib/lab-registry";
 import type { LabMeta } from "@/lib/types/lab";
 import { LabLearningSection } from "@/components/lab/learning-section";
 import { AnimationFrame, ArrowLabel } from "@/components/lab/annotation/arrow-label";
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
-import { LabStudio } from "@/components/lab/lab-studio";
 import { getLabStudio } from "@/lib/lab-studios";
-import { AdvancedViewer } from "@/components/lab/advanced-viewer";
 import { LabToolsPanel } from "@/components/lab/lab-tools-panel";
+import { Skeleton } from "@/components/ui/skeleton";
+
+/** Loaded on mount — the registry eagerly bundles every 3D suite. */
+type LabRegistryModule = typeof import("@/lib/lab-registry");
+
+const LabStudioLazy = dynamic(
+  () => import("@/components/lab/lab-studio").then((m) => m.LabStudio),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="h-64 w-full rounded-xl" />,
+  }
+);
+
+const AdvancedViewerLazy = dynamic(
+  () => import("@/components/lab/advanced-viewer").then((m) => m.AdvancedViewer),
+  { ssr: false }
+);
 
 /** Legacy route-tree slugs → canonical registry ids. */
 const LEGACY_ALIASES: Record<string, string> = {
@@ -76,22 +95,31 @@ export default function LabPage() {
   const router = useRouter();
   const labId = params?.labId as string;
   const [lab, setLab] = useState<LabMeta | null>(null);
+  const [registryList, setRegistryList] = useState<LabMeta[]>([]);
   const [missing, setMissing] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
     const alias = LEGACY_ALIASES[labId];
     if (alias) {
       router.replace(`/lab/${alias}`);
       return;
     }
-    const found = getLabById(labId);
-    if (found) {
-      setLab(found);
-    } else {
-      // Unknown id → the single ordered 3D hub.
-      router.replace("/lab/3d");
-      setMissing(true);
-    }
+    import("@/lib/lab-registry").then(({ getLabById, LAB_REGISTRY }: LabRegistryModule) => {
+      if (cancelled) return;
+      const found = getLabById(labId);
+      if (found) {
+        setLab(found);
+        setRegistryList(LAB_REGISTRY);
+      } else {
+        // Unknown id → the single ordered 3D hub.
+        router.replace("/lab/3d");
+        setMissing(true);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [labId, router]);
 
   const categoryConfig = useMemo(() => {
@@ -200,13 +228,13 @@ export default function LabPage() {
               * additive: the original lab above is untouched, and a lab with
               * no authored spec renders nothing here.
               */}
-            {studio && <LabStudio spec={studio} />}
+            {studio && <LabStudioLazy spec={studio} />}
           </div>
         </div>
 
         {/* Advanced viewer — annotation + AR modes beside the lab rig */}
         <div className="mt-5">
-          <AdvancedViewer />
+          <AdvancedViewerLazy />
         </div>
 
         {/* Lab tools — formulas / practice / progress / discussion / annotations */}
@@ -221,7 +249,7 @@ export default function LabPage() {
         <div className="mt-5">
           <h3 className="font-semibold text-sm text-muted-foreground mb-3">Related Labs</h3>
           <div className="flex flex-wrap gap-2">
-            {LAB_REGISTRY.filter((l) => l.category === lab.category && l.id !== lab.id)
+            {registryList.filter((l) => l.category === lab.category && l.id !== lab.id)
               .slice(0, 6)
               .map((relatedLab) => (
                 <Link

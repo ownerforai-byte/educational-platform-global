@@ -1,7 +1,15 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll } from "vitest";
 import { buildUnitMindmapBranches } from "@/lib/unit-mindmap-branches";
+import { ensureAllHighYieldBanksLoaded } from "@/lib/high-yield-topic-facts-lazy";
 import { getExactUnitConcept } from "@/lib/visual-concept-map";
 import type { MindMapBranch } from "@/components/lab/topic-mindmap";
+
+// The branch builder reads the high-yield banks through the lazy loader
+// (per-subject dynamic imports); warm the module cache once so the sync
+// assertions see the same data the eager barrel holds.
+beforeAll(async () => {
+  await ensureAllHighYieldBanksLoaded();
+});
 
 /**
  * Regression guard for "every unit showed the same branches".

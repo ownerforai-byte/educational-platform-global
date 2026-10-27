@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Calculator,
@@ -92,6 +92,13 @@ export default function MathStudioPage() {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState<MathSolveResponse | null>(null);
   const [copied, setCopied] = useState(false);
+
+  // Splitting the solution on every render (prompt keystrokes re-render the
+  // page) re-scans the whole reply; recompute only when a new one arrives.
+  const solutionSegments = useMemo(
+    () => (response ? splitStepBlocks(response.solution) : []),
+    [response],
+  );
 
   async function handleSolve() {
     if (!problem.trim()) {
@@ -347,7 +354,7 @@ export default function MathStudioPage() {
               (owner 2026-10-25: "step by step not all ending in same line") —
               ```steps fences become numbered StepCards, the rest stays prose. */}
           <div className="space-y-3">
-            {splitStepBlocks(response.solution).map((segment, index) =>
+            {solutionSegments.map((segment, index) =>
               segment.kind === "steps" ? (
                 <StepCards key={index} steps={segment.steps} />
               ) : (

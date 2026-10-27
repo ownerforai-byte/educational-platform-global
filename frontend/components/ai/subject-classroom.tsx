@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Atom,
   BookOpen,
@@ -115,6 +115,17 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
   sessionRef.current = sessionName;
   const streamRef = useRef<HTMLDivElement>(null);
   const historyLoadedRef = useRef(false);
+
+  // Splitting every assistant reply on each render (composer keystrokes
+  // re-render the whole thread) is a long task on long threads; memoize so
+  // segments are recomputed only when the message list actually changes.
+  const messageSegments = useMemo(
+    () =>
+      messages.map((m) =>
+        m.role === "assistant" ? splitStepBlocks(m.content) : null,
+      ),
+    [messages],
+  );
 
   const refreshSessions = useCallback(async () => {
     if (!isLoggedIn) return;
@@ -468,7 +479,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
             >
               {message.role === "assistant" ? (
                 <div className="space-y-2">
-                  {splitStepBlocks(message.content).map((segment, segIndex) =>
+                  {(messageSegments[index] ?? []).map((segment, segIndex) =>
                     segment.kind === "steps" ? (
                       <StepCards key={segIndex} steps={segment.steps} />
                     ) : (

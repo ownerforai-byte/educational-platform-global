@@ -23,14 +23,14 @@ _Recomputed by `node scripts/system-work-audit.mjs --write`; `--check` fails whe
 
 | surface | count |
 | --- | ---: |
-| frontend pages (app router) | 148 |
-| backend API modules / mounted /api groups | 34 / 33 |
-| CI workflows | 4 |
-| test files (frontend / backend) | 62 / 30 |
-| content entries (authored / template) | 867 (763 / 104) |
-| unclaimed note files | 147 |
-| supplementary claims (template) | 2467 (884) |
-| script files under scripts/ (mjs/cjs/js/py/ts) | 119 |
+| frontend pages (app router) | 197 |
+| backend API modules / mounted /api groups | 47 / 46 |
+| CI workflows | 7 |
+| test files (frontend / backend) | 110 / 48 |
+| content entries (authored / template) | 784 (778 / 6) |
+| unclaimed note files | 19 |
+| supplementary claims (template) | 2134 (662) |
+| script files under scripts/ (mjs/cjs/js/py/ts) | 166 |
 | evidence paths named below that exist | 33 / 33 |
 <!-- system-audit:end -->
 
