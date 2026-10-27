@@ -1,0 +1,22 @@
+name: Keep-Alive
+
+on:
+  schedule:
+    # Every 10 minutes: keep the Render free instance warm so students never
+    # hit the ~30-60s cold start between requests. GitHub cron can drift a
+    # few minutes at busy times, which is fine for this purpose.
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Ping the backend health endpoint (wake + warm the Render instance)
+        run: |
+          # max-time 240 covers a full cold start if one slipped through.
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 240 https://rn01.onrender.com/health)
+          echo "health status: $code"
+          # Even a timeout woke the instance — this job never fails the run.
+          exit 0

@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
+import * as Sentry from "@sentry/node";
 import { checkStartupEnv } from "./config/env";
 import { HOST, PORT } from "./config/server";
 
@@ -9,6 +10,20 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.join(__dirname, "..", ".env") });
 dotenv.config({ path: path.join(__dirname, "..", "..", ".env") });
+
+// Error monitoring (owner request 2026-10-27): Sentry initializes BEFORE
+// Express listens, and ONLY when SENTRY_DSN is present — no DSN, no
+// telemetry, so local dev and CI stay untouched. DSN values are never
+// committed (see backend/.env.example for the placeholder).
+if (process.env.SENTRY_DSN) {
+  Sentry.init({
+    dsn: process.env.SENTRY_DSN,
+    environment: process.env.NODE_ENV ?? "development",
+    // Lean free-tier setup: errors + request context only, no tracing.
+    tracesSampleRate: 0,
+  });
+  console.log("[Sentry] error monitoring enabled");
+}
 
 // Fail fast: a production deploy missing its critical configuration must not
 // boot and serve empty data from a mock store (see config/env.ts).

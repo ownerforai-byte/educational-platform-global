@@ -78,3 +78,37 @@ repository.
 
 ## Documentation
 - Agents must update relevant documentation (`CORE_FILES.md` for new core files, `PROJECT_STATUS.md` or `SYSTEM_WORK_TRACKER.md` for major system changes) after significant work.
+
+## Platform ops
+- **Render cold-start keep-alive (2026-10-27):** the backend runs on the Render free
+  tier at `https://rn01.onrender.com`, which sleeps between requests (~30-60s cold
+  start). `.github/workflows/keep-alive.yml` pings `/health` every 10 minutes on a
+  GitHub Actions schedule so the instance stays warm; the job is intentionally
+  always-green (even a timeout wakes the dyno). Alternative if the ping load is
+  ever unwanted: disable the workflow and switch the Render service to an
+  always-on plan in the Render dashboard (paid) — no code change needed.
+- **Error monitoring (2026-10-27):** see the "Error monitoring" section below.
+- **E2E smoke secrets (2026-10-27):** see the "E2E smoke (Playwright)" section below.
+
+## Error monitoring
+- Both surfaces are wired to Sentry and initialize ONLY when a DSN env var is
+  present (no DSN, no telemetry — nothing breaks locally or in CI):
+  - **Frontend (Next.js):** `frontend/instrument.ts` (+ client hook). Set
+    `NEXT_PUBLIC_SENTRY_DSN` (client/browser, public by design) and/or
+    `SENTRY_DSN` (server) in the Vercel project env or `frontend/.env.local`.
+  - **Backend (Express):** `backend/src/index.ts` initializes Sentry before the
+    Express listen. Set `SENTRY_DSN` in the Render service env or `backend/.env`.
+- DSN values are NEVER committed — `frontend/.env.example` and
+  `backend/.env.example` carry placeholders only.
+- To activate: create a free Sentry project, copy its DSN into the platform's
+  env settings (Vercel / Render dashboards), and redeploy.
+
+## E2E smoke (Playwright)
+- `frontend/tests/e2e/smoke.spec.ts` runs on push to `main` only (see the
+  "E2E Smoke" job in `.github/workflows/ci.yml`) — not on every PR, because CI
+  is already heavy.
+- Required repo secrets: `SMOKE_OWNER_EMAIL` + `SMOKE_OWNER_PASSWORD` (already
+  used by live-smoke) and `SMOKE_MEMBER_EMAIL` + `SMOKE_MEMBER_PASSWORD` (a
+  Member-tier test account for the Plus-gate check).
+- Run locally: `cd frontend && npx playwright test` with the `SMOKE_*` vars
+  exported.
