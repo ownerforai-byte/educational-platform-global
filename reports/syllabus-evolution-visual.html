@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Syllabus Evolution Tracker — Curriculum Strata (Design Mockup)</title>
+<style>
+  :root{
+    --bg:#eef1f6; --panel:#ffffff; --ink:#1c2536; --ink-soft:#5a6880;
+    --ink-2:#5b6880; --ink-3:#8794a8; --line:#dfe4ec; --line-soft:#eaeef4;
+    --accent:#4c5fd7; --accent-soft:#eef0fd;
+    --born:#2e9e63; --mod:#d99a1f; --kill:#d4553f;
+    --shadow:0 1px 2px rgba(23,32,51,.06),0 4px 14px rgba(23,32,51,.06);
+    --radius:10px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:13px/1.45 ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .frame{display:flex;flex-direction:column;height:100vh;min-width:1180px;overflow-x:auto}
+
+  /* ── A. Command bar ─────────────────────────────────────────── */
+  .cmd{
+    display:flex;align-items:center;gap:14px;padding:10px 16px;
+    background:var(--panel);border-bottom:1px solid var(--line);flex:0 0 auto;
+  }
+  .brand{display:flex;align-items:baseline;gap:10px;margin-right:4px}
+  .brand h1{font-size:15px;margin:0;letter-spacing:.1px}
+  .badge{
+    font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    color:#8a6d1f;background:#fdf3d7;border:1px solid #f0dfa8;border-radius:99px;padding:2px 8px;
+  }
+  .sel{
+    display:flex;align-items:center;gap:6px;border:1px solid var(--line);
+    background:#f8fafc;border-radius:8px;padding:5px 9px;font-size:12px;color:var(--ink-2);
+  }
+  .sel b{color:var(--ink);font-weight:600}
+  .range{
+    flex:1;display:flex;align-items:center;gap:10px;min-width:220px;
+  }
+  .range input[type=range]{flex:1;accent-color:var(--accent);height:22px}
+  .year-pill{
+    font-variant-numeric:tabular-nums;font-weight:700;font-size:12px;color:var(--accent);
+    background:var(--accent-soft);border:1px solid #d9defb;border-radius:7px;padding:3px 9px;white-space:nowrap;
+  }
+  .btn{
+    border:1px solid var(--line);background:#f8fafc;color:var(--ink-2);border-radius:8px;
+    padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;
+  }
+  .btn:hover{background:#f0f3f9;color:var(--ink)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.primary:hover{background:#3f51c4}
+  .btn.on{background:var(--accent-soft);border-color:#c9d1f8;color:var(--accent)}
+  .lenses{display:flex;gap:4px;background:#f1f4f9;border:1px solid var(--line);border-radius:9px;padding:3px}
+  .lenses .btn{border:none;background:transparent;padding:4px 10px;border-radius:6px}
+  .lenses .btn.on{background:#fff;box-shadow:var(--shadow);color:var(--accent)}
+  .search{
+    display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;
+    border-radius:8px;padding:5px 9px;min-width:170px;
+  }
+  .search input{border:none;outline:none;font-size:12px;width:100%;background:transparent;color:var(--ink)}
+  .legend{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--ink-2);white-space:nowrap}
+  .legend i{font-style:normal;font-weight:700;margin-right:3px}
+  .lg-born i{color:var(--born)} .lg-mod i{color:var(--mod)} .lg-kill i{color:var(--kill)}
+  .lg-ghost{display:flex;align-items:center;gap:4px}
+  .lg-ghost .sw{
+    width:20px;height:8px;border-radius:3px;
+    background:repeating-linear-gradient(45deg,#c8d0dd 0 3px,#e4e9f1 3px 6px);
+  }
+
+  /* ── Main body ──────────────────────────────────────────────── */
+  .body{flex:1;display:flex;min-height:0}
+  .matrix-wrap{
+    flex:1;display:flex;flex-direction:column;min-width:0;
+    background:var(--panel);border-right:1px solid var(--line);
+  }
+  .hint{
+    padding:6px 16px;font-size:11px;color:var(--ink-3);border-bottom:1px solid var(--line-soft);
+    display:flex;gap:16px;align-items:center;
+  }
+  .hint kbd{
+    font:10px/1 ui-monospace,Consolas,monospace;background:#f1f4f9;border:1px solid var(--line);
+    border-bottom-width:2px;border-radius:4px;padding:2px 5px;color:var(--ink-2);
+  }
+  .grid{flex:1;overflow-y:auto;overflow-x:hidden;position:relative}
+
+  .row{display:grid;grid-template-columns:250px 1fr;align-items:center;position:relative}
+  .row:hover{background:rgba(76,95,215,.05)}
+  .row.selected{background:rgba(76,95,215,.09)}
+  .row.tracing{background:rgba(46,158,99,.10)}
+  .row.hidden{display:none}
+
+  /* year header */
+  .years-row{
+    position:sticky;top:0;z-index:6;background:var(--panel);
+    border-bottom:1px solid var(--line);
+  }
+  .spine-head{
+    padding:8px 14px;font-size:10px;font-weight:700;letter-spacing:.7px;
+    text-transform:uppercase;color:var(--ink-3);text-align:left;
+  }
+  .years{display:grid;grid-template-columns:repeat(10,1fr);height:100%}
+  .y{
+    text-align:center;font-size:11px;font-weight:600;color:var(--ink-2);
+    padding:7px 0 8px;position:relative;font-variant-numeric:tabular-nums;
+  }
+  .y .era{
+    display:block;font-size:8.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    color:#8a6d1f;background:#fdf3d7;border:1px solid #f0dfa8;border-radius:99px;
+    padding:1px 5px;margin:2px auto 0;width:max-content;
+  }
+  .y .era.rev{color:#7a4a2e;background:#fbe9dd;border-color:#f0cdb6}
+
+  /* spine cells */
+  .rlabel{
+    display:flex;align-items:center;gap:8px;padding:0 14px;height:30px;
+    border-right:1px solid var(--line-soft);min-width:0;
+  }
+  .rlabel .dot{width:7px;height:7px;border-radius:2px;flex:0 0 auto}
+  .rlabel .rtitle{
+    font-size:12px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .rlabel .origin-chip{
+    margin-left:auto;font-size:8.5px;font-weight:700;color:var(--ink-3);
+    border:1px solid var(--line);border-radius:99px;padding:1px 6px;flex:0 0 auto;
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* unit group rows */
+  .unit-row{position:sticky;top:47px;z-index:5;background:#f6f8fb;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .unit-row .rlabel{height:34px;border-right:1px solid var(--line-soft)}
+  .unit-row .rtitle{font-weight:700;font-size:12px}
+  .age-strip{
+    height:7px;border-radius:99px;background:#dfe5f0;position:relative;width:110px;flex:0 0 auto;overflow:hidden;
+  }
+  .age-strip span{position:absolute;top:0;bottom:0;border-radius:99px;opacity:.85}
+  .unit-meta{font-size:9.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;flex:0 0 auto}
+  .churn{display:grid;grid-template-columns:repeat(10,1fr);height:100%;align-items:center}
+  .churn .cell{height:16px;margin:0 3px;border-radius:4px}
+
+  /* track / bars */
+  .track{position:relative;height:30px}
+  .bar{position:absolute;top:10px;height:10px;border-radius:4px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.12)}
+  .bar.future{display:none}
+  .ghost{
+    position:absolute;top:11px;height:8px;border-radius:3px;opacity:.5;
+    background:repeating-linear-gradient(45deg,#c3ccda 0 3px,transparent 3px 6px);
+    border:1px dashed #b9c3d2;
+  }
+  .glyph{
+    position:absolute;top:9px;font-size:9px;line-height:12px;height:12px;width:12px;
+    text-align:center;transform:translateX(-50%);z-index:2;cursor:default;
+  }
+  .glyph.birth{color:var(--born);font-size:8px}
+  .glyph.mod{color:var(--mod);font-size:10px}
+  .glyph.kill{color:var(--kill);font-weight:700;background:#fff;border-radius:99px}
+  .future-glyph{display:none}
+
+  /* backdrop layer: gridlines + strata + era divider + playhead */
+  .backdrop{position:absolute;left:250px;right:0;top:0;bottom:0;z-index:0;pointer-events:none}
+  .backdrop svg{width:100%;height:100%;display:block}
+  .playhead{
+    position:absolute;top:0;bottom:0;width:0;border-left:2px solid var(--accent);z-index:4;pointer-events:none;
+  }
+  .playhead::after{
+    content:attr(data-year);position:absolute;top:6px;left:6px;font-size:9px;font-weight:700;
+    color:#fff;background:var(--accent);border-radius:5px;padding:2px 6px;font-variant-numeric:tabular-nums;
+  }
+
+  /* ── D. Inspector ───────────────────────────────────────────── */
+  .inspector{
+    flex:0 0 320px;background:var(--panel);display:flex;flex-direction:column;overflow-y:auto;
+  }
+  .insp-head{
+    padding:12px 16px 10px;border-bottom:1px solid var(--line-soft);
+  }
+  .insp-head .kicker{font-size:9.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--ink-3)}
+  .insp-head h2{margin:3px 0 0;font-size:15px;line-height:1.3}
+  .origin-card{
+    margin:12px 16px;border:1px solid var(--line);border-radius:var(--radius);
+    background:linear-gradient(180deg,#f7f9ff,#fff);box-shadow:var(--shadow);overflow:hidden;
+  }
+  .origin-card .oc-top{
+    display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px dashed var(--line);
+  }
+  .oc-year{
+    font-size:22px;font-weight:800;letter-spacing:.5px;color:var(--accent);
+    font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .oc-year small{display:block;font-size:9px;font-weight:700;color:var(--ink-3);letter-spacing:.8px;margin-top:3px}
+  .oc-where{font-size:11px;color:var(--ink-2)}
+  .oc-where b{color:var(--ink);display:block;font-size:12px}
+  .oc-note{padding:10px 14px;font-size:11.5px;color:var(--ink-2);font-style:italic}
+  .oc-note q{quotes:"“" "”"}
+  .status-line{display:flex;align-items:center;gap:6px;padding:8px 14px;border-top:1px solid var(--line-soft);font-size:11px;color:var(--ink-2)}
+  .status-dot{width:8px;height:8px;border-radius:99px;background:var(--born)}
+  .status-dot.dead{background:var(--kill)}
+
+  .changelog{padding:4px 16px 12px}
+  .changelog h3{
+    font-size:9.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--ink-3);
+    margin:14px 0 8px;
+  }
+  .ev{
+    display:flex;gap:9px;padding:7px 9px;border:1px solid var(--line-soft);border-radius:8px;
+    margin-bottom:6px;background:#fff;
+  }
+  .ev .ev-y{
+    font-size:11px;font-weight:800;color:var(--ink-2);font-variant-numeric:tabular-nums;
+    flex:0 0 42px;padding-top:1px;
+  }
+  .ev .ev-body{min-width:0}
+  .chip{
+    display:inline-block;font-size:8.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+    border-radius:99px;padding:1px 7px;margin-bottom:2px;
+  }
+  .chip.introduced{color:#1e7a4a;background:#e2f4ea}
+  .chip.modified{color:#8a6d1f;background:#fdf3d7}
+  .chip.removed{color:#a63a28;background:#fbe4df}
+  .ev .ev-note{font-size:11px;color:var(--ink-2);line-height:1.4}
+  .insp-actions{display:flex;gap:8px;padding:4px 16px 18px}
+  .insp-foot{
+    margin-top:auto;padding:10px 16px;border-top:1px solid var(--line-soft);
+    font-size:10px;color:var(--ink-3);line-height:1.5;
+  }
+
+  /* ── E. Era ribbon + velocity ───────────────────────────────── */
+  .ribbon{
+    flex:0 0 auto;background:var(--panel);border-top:1px solid var(--line);
+    display:grid;grid-template-columns:250px 1fr;
+  }
+  .ribbon-label{
+    padding:10px 14px;border-right:1px solid var(--line-soft);
+  }
+  .ribbon-label .kicker{font-size:9.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--ink-3)}
+  .ribbon-label .sub{font-size:10px;color:var(--ink-3);margin-top:2px}
+  .ribbon-track{position:relative;padding:8px 0 4px}
+  .vel{display:grid;grid-template-columns:repeat(10,1fr);align-items:end;height:46px}
+  .vel .col{display:flex;flex-direction:column-reverse;justify-content:flex-start;align-items:center;height:100%;gap:1px;cursor:pointer}
+  .vel .seg{width:12px;border-radius:2px}
+  .seg.added{background:var(--born)} .seg.modified{background:var(--mod)} .seg.removed{background:var(--kill)}
+  .vel .col:hover .seg{filter:brightness(1.12)}
+  .eras{display:flex;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-3);padding:2px 0 0}
+  .eras span{padding:3px 8px;border-top:2px solid var(--line);white-space:nowrap;overflow:hidden}
+  .eras .e1{width:40%;border-top-color:#b9c3d2}
+  .eras .e2{width:50%;border-top-color:var(--mod);color:#8a6d1f}
+  .eras .e3{width:10%;border-top-color:#c98a5b;color:#7a4a2e}
+
+  /* tooltip */
+  .tip{
+    position:fixed;z-index:50;pointer-events:none;max-width:280px;
+    background:#20293a;color:#eef1f6;border-radius:8px;padding:8px 10px;
+    font-size:11px;line-height:1.45;box-shadow:0 8px 24px rgba(16,24,40,.35);display:none;
+  }
+  .tip b{display:block;font-size:11.5px;margin-bottom:2px}
+  .tip .t-y{color:#9fb3e8;font-variant-numeric:tabular-nums}
+
+  .caption{
+    padding:8px 16px;font-size:10.5px;color:var(--ink-3);background:#f6f8fb;
+    border-top:1px solid var(--line-soft);
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- A · Command bar -->
+  <header class="cmd">
+    <div class="brand">
+      <h1>Syllabus Evolution Tracker</h1>
+      <span class="badge">Design mockup · sample data from SYLLABUS_HISTORY</span>
+    </div>
+    <div class="sel">Class <b>11</b> ▾</div>
+    <div class="sel">Subject <b>Physics</b> ▾</div>
+    <div class="range">
+      <span class="year-pill">2073 — 2082 BS</span>
+      <input id="scrub" type="range" min="2073" max="2082" step="1" value="2082"
+             aria-label="Replay year" />
+      <span class="year-pill" id="scrubLabel">2082 BS</span>
+      <button class="btn" id="playBtn">▶ Replay growth</button>
+    </div>
+    <div class="lenses" role="tablist" aria-label="View lens">
+      <button class="btn on" data-lens="evolution">Evolution</button>
+      <button class="btn" data-lens="replay">Replay</button>
+      <button class="btn" data-lens="mass">Mass</button>
+    </div>
+    <label class="search">🔍 <input id="search" type="search" placeholder="Find a topic…" /></label>
+    <div class="legend">
+      <span class="lg-born"><i>▲</i>introduced</span>
+      <span class="lg-mod"><i>◆</i>modified</span>
+      <span class="lg-kill"><i>✕</i>removed</span>
+      <span class="lg-ghost"><span class="sw"></span>retired (ghost)</span>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <div class="body">
+
+    <!-- C · Evolution matrix (spine + track share one grid) -->
+    <section class="matrix-wrap" aria-label="Evolution matrix">
+      <div class="hint">
+        <span><kbd>hover</kbd> a row for its span · <kbd>click</kbd> for the Origin Card</span>
+        <span><kbd>▶ Trace origin</kbd> animates the playhead back to the topic's birth year</span>
+        <span id="lensNote">Lens: <b>Evolution</b> — lifespan bars over a cumulative strata backdrop</span>
+      </div>
+      <div class="grid" id="grid">
+        <div class="backdrop" id="backdrop"></div>
+
+        <div class="row years-row">
+          <div class="spine-head">Curriculum structure</div>
+          <div class="years" id="yearsHead"></div>
+        </div>
+
+        <div id="rows"></div>
+      </div>
+    </section>
+
+    <!-- D · Inspector -->
+    <aside class="inspector" aria-label="Origin inspector">
+      <div class="insp-head">
+        <div class="kicker">Origin Card</div>
+        <h2 id="inspTitle">Basic semiconductor physics</h2>
+      </div>
+
+      <div class="origin-card">
+        <div class="oc-top">
+          <div class="oc-year" id="ocYear">2078<small>BS · ORIGIN</small></div>
+          <div class="oc-where">first appeared in<b id="ocUnit">Modern Physics</b></div>
+        </div>
+        <div class="oc-note" id="ocNote"><q>Initial introduction to Nuclear Physics concepts and basic semiconductor physics — first year of new curriculum implementation.</q></div>
+        <div class="status-line">
+          <span class="status-dot" id="ocStatusDot"></span>
+          <span id="ocStatus">Alive in the 2082 BS curriculum · 1 recorded modification</span>
+        </div>
+      </div>
+
+      <div class="changelog">
+        <h3>Change log · chronological</h3>
+        <div id="evList"></div>
+
+        <h3>Lineage</h3>
+        <div class="ev" id="lineageBox">
+          <div class="ev-y">MAP</div>
+          <div class="ev-body">
+            <div class="ev-note" id="lineageText">Unit: Modern Physics → unchanged since origin. No migration between units recorded.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="insp-actions">
+        <button class="btn primary" id="traceBtn">▶ Trace origin</button>
+        <button class="btn" id="copyBtn">Copy deep link</button>
+      </div>
+
+      <div class="insp-foot">
+        Deep links carry state: <b>?subject=physics&amp;topic=…&amp;from=2073&amp;to=2082</b>.
+        “View as table” provides the accessible fallback (not shown in mockup).
+      </div>
+    </aside>
+  </div>
+
+  <!-- E · Era ribbon + velocity -->
+  <footer class="ribbon">
+    <div class="ribbon-label">
+      <div class="kicker">Era ribbon · change velocity</div>
+      <div class="sub">added / modified / removed per year — click a column to jump the playhead</div>
+    </div>
+    <div class="ribbon-track">
+      <div class="vel" id="vel"></div>
+      <div class="eras">
+        <span class="e1">Pre-2076 curriculum · 2073–2076</span>
+        <span class="e2">NCF 2076 rollout · 2077–2081</span>
+        <span class="e3">2082 revision</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="caption">
+    Design mockup of the “Curriculum Strata” concept — single-frame, additive evolution view.
+    Sample rows are derived from the Physics entries of <b>frontend/lib/syllabus-history.ts</b>
+    (free-text change log, 2073–2082 BS); unit names are illustrative. Ghost bars mark retired
+    topics; the faint stacked layer behind the rows is the cumulative strata (live topics per unit per year).
+  </div>
+</div>
+
+<div class="tip" id="tip"></div>
+
+<script>
+/* ── Data: Physics sample derived from SYLLABUS_HISTORY ───────── */
+const Y0 = 2073, Y1 = 2082, N = Y1 - Y0 + 1;
+const YEARS = Array.from({length:N},(_,i)=>Y0+i);
+
+const UNITS = [
+  {id:"mechanics", title:"Mechanics",            color:"#5b6fd6", hours:32},
+  {id:"heat",      title:"Heat & Thermodynamics",color:"#c98a5b", hours:18},
+  {id:"waves",     title:"Waves & Oscillations", color:"#3f9d9d", hours:14},
+  {id:"em",        title:"Electricity & Magnetism", color:"#8b6fc0", hours:28},
+  {id:"optics",    title:"Optics",               color:"#c2648c", hours:16},
+  {id:"modern",    title:"Modern Physics",       color:"#5f9e4f", hours:22},
+];
+
+const ROWS = [
+  {t:"Mechanics (core)", u:"mechanics", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2080,type:"modified",note:"Revised Mechanics chapter structure (post-pandemic curriculum review)."}]},
+  {t:"Vectors & vector resolution", u:"mechanics", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2078,type:"modified",note:"Restructured Vector chapter."},
+       {y:2082,type:"modified",note:"Removed redundant vector resolution exercises."}]},
+  {t:"Gravitation", u:"mechanics", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2079,type:"modified",note:"Updated examples in Gravitation."}]},
+  {t:"Space science basics", u:"mechanics", s:2080,
+   origin:"Added in the 2080 BS post-pandemic curriculum review.", ev:[]},
+
+  {t:"Heat & Thermodynamics", u:"heat", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2077,type:"modified",note:"Revised Heat and Thermodynamics question patterns."},
+       {y:2079,type:"modified",note:"Added more practical problems in Heat."}]},
+  {t:"Thermodynamic cycles (Carnot derivations)", u:"heat", s:2073, e:2082,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   removeNote:"Old thermodynamic cycle problems (Carnot engine derivations) retired in the 2082 revision.", ev:[]},
+
+  {t:"Waves", u:"waves", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2081,type:"modified",note:"Added new numerical problems in Waves."}]},
+  {t:"Nanotechnology", u:"waves", s:2081,
+   origin:"Introduced in the 2081 BS minor curriculum adjustment.", ev:[]},
+  {t:"Lasers — basic principles", u:"waves", s:2081,
+   origin:"Introduced in the 2081 BS minor curriculum adjustment.", ev:[]},
+
+  {t:"Electrostatics", u:"em", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2076,type:"modified",note:"Standardized Electrostatics problem sets."}]},
+  {t:"Electromagnetic Induction", u:"em", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2077,type:"modified",note:"Revised Electromagnetic Induction problems."}]},
+  {t:"Electromagnetism (numerical problems)", u:"em", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2082,type:"modified",note:"Updated numerical problems in Electromagnetism."}]},
+  {t:"Basic electronics (in Current Electricity)", u:"em", s:2079,
+   origin:"Introduced 2079 BS: basic electronics added to Current Electricity.", ev:[]},
+  {t:"Communication systems", u:"em", s:2076,
+   origin:"Introduced 2076 BS: communication systems basics.",
+   ev:[{y:2079,type:"modified",note:"Modern communication systems overview added."}]},
+  {t:"Measurement techniques section", u:"em", s:2073, e:2077,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   removeNote:"Outdated measurement techniques section removed in 2077 BS.", ev:[]},
+
+  {t:"Optics", u:"optics", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2082,type:"modified",note:"Revised Optics chapter with modern applications."}]},
+  {t:"Fiber optics applications", u:"optics", s:2082,
+   origin:"Introduced in the 2082 BS major curriculum revision.", ev:[]},
+
+  {t:"Modern Physics", u:"modern", s:2073,
+   origin:"Foundational unit carried over from the pre-2076 curriculum.",
+   ev:[{y:2077,type:"modified",note:"Photoelectric effect applications added."}]},
+  {t:"Nuclear Physics concepts", u:"modern", s:2078,
+   origin:"Initial introduction to Nuclear Physics concepts — first year of the new curriculum implementation.", ev:[]},
+  {t:"Basic semiconductor physics", u:"modern", s:2078,
+   origin:"Initial introduction of basic semiconductor physics — first year of the new curriculum implementation.",
+   ev:[{y:2082,type:"modified",note:"Added practical experiments for Semiconductors."}]},
+  {t:"Quantum computing basics", u:"modern", s:2082,
+   origin:"Introduced in the 2082 BS major revision, inside Modern Physics.", ev:[]},
+  {t:"Gravitational waves detection principles", u:"modern", s:2082,
+   origin:"Introduced in the 2082 BS major revision, inside Modern Physics.", ev:[]},
+  {t:"Solar cell efficiency calculations", u:"modern", s:2082,
+   origin:"Introduced in the 2082 BS major revision, inside Modern Physics.", ev:[]},
+  {t:"Environmental physics topics", u:"modern", s:2080,
+   origin:"Added in the 2080 BS post-pandemic curriculum review.", ev:[]},
+];
+
+const unitOf = id => UNITS.find(u => u.id === id);
+const pctOf  = y => ((y - Y0) / N) * 100;        // left edge of year y, in %
+const END    = r => (r.e ?? Y1);                  // last alive year
+
+/* full event list per row (for Origin Card) */
+const eventsOf = r => {
+  const list = [{y:r.s, type:"introduced", note:r.origin}];
+  (r.ev || []).forEach(e => list.push(e));
+  if (r.e) list.push({y:r.e, type:"removed", note:r.removeNote || "Removed from the syllabus."});
+  return list;
+};
+
+/* ── Year header ─────────────────────────────────────────────── */
+const yearsHead = document.getElementById("yearsHead");
+yearsHead.innerHTML = YEARS.map(y => {
+  let era = "";
+  if (y === 2077) era = '<span class="era">NCF 2076 rollout</span>';
+  if (y === 2082) era = '<span class="era rev">Major revision</span>';
+  return `<div class="y">${y}${era}</div>`;
+}).join("");
+
+/* ── Rows: units first, then their topics ────────────────────── */
+const rowsEl = document.getElementById("rows");
+let html = "";
+for (const u of UNITS) {
+  const members = ROWS.filter(r => r.u === u.id);
+  const s = Math.min(...members.map(r => r.s));
+  const e = Math.max(...members.map(END));
+  const delta = members.filter(r => r.s > Y0).length;
+  const churn = YEARS.map(y =>
+    members.reduce((n,r) =>
+      n + (r.s === y ? 1 : 0) + (r.e === y ? 1 : 0) +
+          (r.ev || []).filter(ev => ev.y === y).length, 0));
+  const maxChurn = Math.max(1, ...churn);
+
+  html += `
+  <div class="row unit-row" data-unit="${u.id}">
+    <div class="rlabel">
+      <span class="dot" style="background:${u.color}"></span>
+      <span class="rtitle">${u.title}</span>
+      <span class="age-strip" title="unit lifespan ${s}–${e}">
+        <span style="left:${pctOf(s)}%;width:${pctOf(e+1)-pctOf(s)}%;background:${u.color}"></span>
+      </span>
+      <span class="unit-meta">+${delta} since 2073 · ${u.hours}h</span>
+    </div>
+    <div class="track">
+      <div class="churn">${churn.map(c =>
+        `<div class="cell" style="background:${u.color};opacity:${c ? 0.12 + 0.55*c/maxChurn : 0.05}"></div>`
+      ).join("")}</div>
+    </div>
+  </div>`;
+
+  members.forEach((r, i) => {
+    const idx = ROWS.indexOf(r);
+    const barW = pctOf(END(r) + 1) - pctOf(r.s);
+    const glyphs = [];
+    glyphs.push(`<div class="glyph birth" data-gy="${r.s}" style="left:${pctOf(r.s + .5)}%">▲</div>`);
+    (r.ev || []).forEach(ev =>
+      glyphs.push(`<div class="glyph mod" data-gy="${ev.y}" style="left:${pctOf(ev.y + .5)}%" title="${ev.note}">◆</div>`));
+    if (r.e)
+      glyphs.push(`<div class="glyph kill" data-gy="${r.e}" style="left:${pctOf(r.e + 1) - 1}%">✕</div>`);
+
+    const ghost = r.e
+      ? `<div class="ghost" data-ghost style="left:${pctOf(r.e + 1)}%;width:${pctOf(Y1 + 1) - pctOf(r.e + 1)}%"></div>`
+      : "";
+
+    html += `
+    <div class="row topic-row" data-i="${idx}" data-start="${r.s}" data-end="${END(r)}"
+         tabindex="0" role="button" aria-label="${r.t}, alive ${r.s} to ${r.e ? r.e : "present"}">
+      <div class="rlabel">
+        <span class="dot" style="background:${u.color}"></span>
+        <span class="rtitle">${r.t}</span>
+        <span class="origin-chip">est. ${r.s}</span>
+      </div>
+      <div class="track">
+        ${ghost}
+        <div class="bar" data-bar style="left:${pctOf(r.s)}%;width:${barW}%;background:${u.color}"></div>
+        ${glyphs.join("")}
+      </div>
+    </div>`;
+  });
+}
+rowsEl.innerHTML = html;
+
+/* ── Backdrop: gridlines + era divider + cumulative strata ───── */
+function drawBackdrop() {
+  const totalByYear = YEARS.map(y =>
+    ROWS.filter(r => r.s <= y && END(r) >= y).length);
+  const maxTotal = Math.max(...totalByYear) || 1;
+
+  const grid = document.getElementById("grid");
+  const H = Math.max(400, rowsEl.scrollHeight);
+  const rowsSvgH = 1000; // viewBox height; scaled to fit
+
+  const line = x =>
+    `<line x1="${x}" y1="0" x2="${x}" y2="${rowsSvgH}" stroke="#e7ebf2" stroke-width="2"/>`;
+  let svg = `<svg viewBox="0 0 100 ${rowsSvgH}" preserveAspectRatio="none">`;
+
+  for (let i = 0; i <= N; i++) svg += line((i / N) * 100);
+
+  /* stacked strata per unit (faint, behind rows) */
+  let cum = YEARS.map(() => 0);
+  for (const u of UNITS) {
+    const counts = YEARS.map(y =>
+      ROWS.filter(r => r.u === u.id && r.s <= y && END(r) >= y).length);
+    const top = YEARS.map((y,i) => {
+      const prev = cum[i]; cum[i] += counts[i];
+      return rowsSvgH * (1 - cum[i] / maxTotal);
+    });
+    const bottom = YEARS.map((y,i) => rowsSvgH * (1 - (cum[i] - counts[i]) / maxTotal));
+    const pts = YEARS.map((y,i) => `${pctOf(y)},${top[i]}`)
+      .concat(YEARS.map((y,i) => `${pctOf(y)},${bottom[YEARS.length-1-i]}`));
+    svg += `<polygon points="${pts.join(" ")}" fill="${u.color}" opacity="0.10"/>`;
+  }
+
+  /* era divider at 2077 */
+  svg += `<line x1="${pctOf(2077)}" y1="0" x2="${pctOf(2077)}" y2="${rowsSvgH}"
+           stroke="#d99a1f" stroke-width="3" stroke-dasharray="6 5" opacity="0.5"/>`;
+  svg += `</svg>`;
+
+  const bd = document.getElementById("backdrop");
+  bd.innerHTML = svg + `<div class="playhead" id="playhead" data-year="2082 BS"></div>`;
+  bd.style.top = rowsEl.offsetTop + "px";
+  bd.style.height = H + "px";
+}
+
+/* ── Era ribbon: velocity columns ────────────────────────────── */
+const vel = document.getElementById("vel");
+vel.innerHTML = YEARS.map(y => {
+  const added    = ROWS.filter(r => r.s === y && y > Y0).length;
+  const removed  = ROWS.filter(r => r.e === y).length;
+  const modified = ROWS.reduce((n,r) => n + (r.ev || []).filter(ev => ev.y === y && ev.type === "modified").length, 0);
+  const seg = (cls,n) => n ? `<div class="seg ${cls}" style="height:${6 + n*6}px" title="${n} ${cls}"></div>` : "";
+  return `<div class="col" data-year="${y}" title="${y} BS — ${added} added, ${modified} modified, ${removed} removed">
+    ${seg("added",added)}${seg("modified",modified)}${seg("removed",removed)}
+  </div>`;
+}).join("");
+vel.querySelectorAll(".col").forEach(col =>
+  col.addEventListener("click", () => setYear(+col.dataset.year)));
+
+/* ── Year scrubber / replay ──────────────────────────────────── */
+const scrub = document.getElementById("scrub");
+const scrubLabel = document.getElementById("scrubLabel");
+
+function setYear(y) {
+  scrub.value = y;
+  scrubLabel.textContent = `${y} BS`;
+
+  document.querySelectorAll(".topic-row").forEach(row => {
+    const s = +row.dataset.start, e = +row.dataset.end;
+    const future = s > y;
+    row.classList.toggle("future", future);
+    row.style.opacity = future ? ".28" : "1";
+
+    const bar = row.querySelector("[data-bar]");
+    const wEnd = Math.min(e, y);
+    bar.style.display = future ? "none" : "block";
+    bar.style.width = (pctOf(wEnd + 1) - pctOf(s)) + "%";
+
+    const ghost = row.querySelector("[data-ghost]");
+    if (ghost) {
+      const gStart = e + 1;
+      ghost.style.display = (y >= gStart && y > e) ? "block" : "none";
+      ghost.style.width = (pctOf(Math.min(y, Y1) + 1) - pctOf(gStart)) + "%";
+    }
+    row.querySelectorAll(".glyph").forEach(g => {
+      g.classList.toggle("future-glyph", +g.dataset.gy > y);
+      g.style.display = +g.dataset.gy > y ? "none" : "block";
+    });
+  });
+
+  const ph = document.getElementById("playhead");
+  if (ph) {
+    ph.style.left = pctOf(y + 1) + "%";
+    ph.dataset.year = `${y} BS`;
+  }
+}
+scrub.addEventListener("input", () => setYear(+scrub.value));
+
+let playTimer = null;
+function play(from = Y0) {
+  clearInterval(playTimer);
+  let y = from;
+  setYear(y);
+  playTimer = setInterval(() => {
+    y++;
+    setYear(y);
+    if (y >= Y1) clearInterval(playTimer);
+  }, 520);
+}
+document.getElementById("playBtn").addEventListener("click", () => play(Y0));
+
+/* ── Lens toggle ─────────────────────────────────────────────── */
+const lensNote = document.getElementById("lensNote");
+const lensCopy = {
+  evolution: "Lens: <b>Evolution</b> — lifespan bars over a cumulative strata backdrop",
+  replay:    "Lens: <b>Replay</b> — drag the scrubber or press ▶ to grow the syllabus year by year",
+  mass:      "Lens: <b>Mass</b> — treemap of teaching-hours × lifespan per era (lens shown in spec, not this mockup)",
+};
+document.querySelectorAll(".lenses .btn").forEach(btn =>
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".lenses .btn").forEach(b => b.classList.remove("on"));
+    btn.classList.add("on");
+    lensNote.innerHTML = lensCopy[btn.dataset.lens];
+    if (btn.dataset.lens === "replay") play(Y0);
+  }));
+
+/* ── Inspector: Origin Card ──────────────────────────────────── */
+const tip = document.getElementById("tip");
+let selected = ROWS.find(r => r.t.startsWith("Basic semiconductor"));
+
+function renderInspector(r) {
+  const u = unitOf(r.u);
+  document.getElementById("inspTitle").textContent = r.t;
+  document.getElementById("ocYear").innerHTML = `${r.s}<small>BS · ORIGIN</small>`;
+  document.getElementById("ocUnit").textContent = u.title;
+  document.getElementById("ocNote").innerHTML = `<q>${r.origin}</q>`;
+
+  const alive = r.e == null;
+  document.getElementById("ocStatusDot").className = "status-dot" + (alive ? "" : " dead");
+  document.getElementById("ocStatus").textContent = alive
+    ? `Alive in the 2082 BS curriculum · ${r.ev.length} recorded modification${r.ev.length === 1 ? "" : "s"}`
+    : `Retired in ${r.e} BS · kept as a ghost span on the timeline`;
+
+  document.getElementById("evList").innerHTML = eventsOf(r).map(ev => `
+    <div class="ev">
+      <div class="ev-y">${ev.y}</div>
+      <div class="ev-body">
+        <span class="chip ${ev.type}">${ev.type}</span>
+        <div class="ev-note">${ev.note}</div>
+      </div>
+    </div>`).join("");
+
+  const moved = eventsOf(r).some(ev => ev.type === "moved");
+  document.getElementById("lineageText").textContent =
+    `Unit: ${u.title} → ${moved ? "unit migration recorded" : "unchanged since origin"}. ` +
+    `Lifespan ${r.s}–${r.e ?? "present"} (${(r.e ?? Y1) - r.s + 1} curriculum years).` +
+    (r.e ? ` Ghost span continues to 2082 to mark the absence.` : "");
+}
+
+function select(row) {
+  document.querySelectorAll(".topic-row").forEach(x => x.classList.remove("selected"));
+  row.classList.add("selected");
+  selected = ROWS[+row.dataset.i];
+  renderInspector(selected);
+}
+
+rowsEl.querySelectorAll(".topic-row").forEach(row => {
+  row.addEventListener("click", () => select(row));
+  row.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(row); }
+  });
+  row.addEventListener("mouseenter", e => {
+    const r = ROWS[+row.dataset.i];
+    tip.innerHTML = `<b>${r.t}</b>
+      <span class="t-y">${r.s} – ${r.e ? r.e + " BS (retired)" : "present"}</span><br>
+      ${r.origin}`;
+    tip.style.display = "block";
+  });
+  row.addEventListener("mousemove", e => {
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - 300) + "px";
+    tip.style.top  = (e.clientY + 16) + "px";
+  });
+  row.addEventListener("mouseleave", () => tip.style.display = "none");
+});
+
+/* ── Trace origin: animate the playhead back to the birth year ─ */
+function traceOrigin() {
+  if (!selected) return;
+  const row = document.querySelector(`.topic-row[data-i="${ROWS.indexOf(selected)}"]`);
+  document.querySelectorAll(".topic-row").forEach(x => x.classList.remove("tracing"));
+  row.classList.add("tracing");
+  let y = +scrub.value;
+  const step = () => {
+    if (y <= selected.s) {
+      row.classList.remove("tracing");
+      row.scrollIntoView({block:"center", behavior:"smooth"});
+      return;
+    }
+    y--; setYear(y); setTimeout(step, 110);
+  };
+  step();
+}
+document.getElementById("traceBtn").addEventListener("click", traceOrigin);
+document.getElementById("copyBtn").addEventListener("click", () => {
+  const url = `${location.pathname}?subject=physics&topic=${encodeURIComponent(selected.t)}&from=2073&to=2082`;
+  navigator.clipboard?.writeText(location.origin + url);
+  document.getElementById("copyBtn").textContent = "✓ Link copied";
+  setTimeout(() => document.getElementById("copyBtn").textContent = "Copy deep link", 1400);
+});
+
+/* ── Search filter ───────────────────────────────────────────── */
+document.getElementById("search").addEventListener("input", e => {
+  const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll(".topic-row").forEach(row => {
+    const r = ROWS[+row.dataset.i];
+    const hay = (r.t + " " + r.origin + " " + r.ev.map(ev => ev.note).join(" ")).toLowerCase();
+    row.classList.toggle("hidden", q !== "" && !hay.includes(q));
+  });
+});
+
+/* ── Boot ────────────────────────────────────────────────────── */
+drawBackdrop();
+setYear(Y1);
+renderInspector(selected);
+select(document.querySelector('.topic-row[data-i="' + ROWS.indexOf(selected) + '"]'));
+</script>
+</body>
+</html>
