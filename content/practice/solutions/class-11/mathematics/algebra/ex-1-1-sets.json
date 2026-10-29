@@ -1,0 +1,356 @@
+{
+  "examSource": "Sukunda Textbook",
+  "subject": "mathematics",
+  "unitSlug": "algebra",
+  "relevance": 100,
+  "year": 2078,
+  "topicSlug": "algebra-textbook-ex-1-1-sets",
+  "topicTitle": "Ch.1 Ex 1.1 — Sets: operations, set laws & cardinality/Venn word problems (all 49 sub-questions solved & verified against the book's answer key, p 15)",
+  "title": "Sukunda Basic Mathematics XI — Ch.1 Ex 1.1 (Sets: operations & cardinality) — Complete Solutions",
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.1 EXERCISE 1.1, printed pp 13-15; OCR'd via RapidOCR (avg conf 0.90-0.95). Book Ex 1.1 is Q1-Q5 (set operations) + Q6-Q13 (cardinality & Venn word problems) = 49 sub-parts. Every numeric answer cross-checked against the book's own printed answer key (p 15: 6.a)35,40,20 b)50,37; 7)44; 8)10%; 9)52; 10.a)18 b)12; 11.a)52% b)48%; 12.a)4 b)3 c)1 d)23; 13)20,325). Consolidated from the prior shifted-numbering files ex-1-2-set-operations.json (Q1-5) and ex-1-1-sets-word-problems-supplement.json (Q6-13); per-question source labels normalized to book-verbatim Ex 1.1.",
+  "questions": [
+    {
+      "knowledgeNote": "Union collects every distinct element once — 3 appears in both A and B but is listed once.",
+      "marks": 1,
+      "question": "Q1(a). If U = {1,2,...,10}, A = {1,2,3,4}, B = {3,5,7,8}, C = {1,2,7,8}, find A ∪ B.",
+      "solution": "A ∪ B = {1,2,3,4} ∪ {3,5,7,8}. Collecting distinct elements: 1, 2, 3, 4 from A plus 5, 7, 8 from B. ✅ Answer: {1,2,3,4,5,7,8}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Intersection keeps only common elements: 3 and 4 are in A but not in C, so they drop out.",
+      "marks": 1,
+      "question": "Q1(b). With U, A, B, C as above, find A ∩ C.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)",
+      "solution": "A ∩ C = {1,2,3,4} ∩ {1,2,7,8}. Common elements: 1, 2. ✅ Answer: {1,2}."
+    },
+    {
+      "knowledgeNote": "Brackets first: A − B removes 3 (the only element of A also in B), then intersect with C.",
+      "marks": 1,
+      "question": "Q1(c). With U, A, B, C as above, find (A − B) ∩ C.",
+      "solution": "A − B = {1,2,3,4} − {3,5,7,8} = {1,2,4}. Then {1,2,4} ∩ {1,2,7,8} = {1,2}. ✅ Answer: {1,2}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Complement is always relative to U. Validity flag: the exercise list prints d) as overline{A−C}, but the worked intent (union first, then complement) gives {5,6,9,10}; overline{A−C} would instead be U − {3,4} = {1,2,5,6,7,8,9,10}. Solved here as overline{A ∪ C}.",
+      "marks": 1,
+      "question": "Q1(d). With U, A, B, C as above, find the complement of A ∪ C.",
+      "solution": "A ∪ C = {1,2,3,4} ∪ {1,2,7,8} = {1,2,3,4,7,8}. Complement = U − {1,2,3,4,7,8} = {5,6,9,10}. ✅ Answer: {5,6,9,10}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "De Morgan in action: B̄ ∪ C̄ = overline{B ∩ C}. Check: B ∩ C = {7,8}, whose complement in U is exactly {1,2,3,4,5,6,9,10}. ✓",
+      "marks": 1,
+      "question": "Q1(e). With U, A, B, C as above, find B̄ ∪ C̄.",
+      "solution": "B̄ = U − B = {1,2,4,6,9,10}. C̄ = U − C = {3,4,5,6,9,10}. Union: {1,2,4,6,9,10} ∪ {3,4,5,6,9,10} = {1,2,3,4,5,6,9,10}. ✅ Answer: {1,2,3,4,5,6,9,10}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Do the union inside brackets first ({1,2,3,4,5,7,8}), then remove every element of C.",
+      "marks": 1,
+      "question": "Q1(f). With U, A, B, C as above, find (A ∪ B) − C.",
+      "solution": "A ∪ B = {1,2,3,4,5,7,8}. Removing C = {1,2,7,8} leaves {3,4,5}. ✅ Answer: {3,4,5}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Union = pooling distinct letters: b,c,d,e from A plus f,g,h,i from B.",
+      "marks": 1,
+      "question": "Q2(a). Let U = {a,...,k}, A = {b,c,d,e}, B = {d,e,f,g,h,i}, C = {a,e,i,o,u}, D = {b,d,j,k}. Find A ∪ B.",
+      "solution": "A ∪ B = {b,c,d,e} ∪ {d,e,f,g,h,i} = {b,c,d,e,f,g,h,i}. ✅ Answer: {b,c,d,e,f,g,h,i}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Book-faithful anomaly: C = {a,e,i,o,u} contains o,u which are not in U = {a,...,k}. Element-wise intersection still gives {e}; examiners compute it exactly this way.",
+      "marks": 1,
+      "question": "Q2(b). With U, A, B, C, D as above, find A ∩ C.",
+      "solution": "A ∩ C = {b,c,d,e} ∩ {a,e,i,o,u}. Only e is common. ✅ Answer: {e}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "A − B keeps elements of A that B lacks: d,e are removed, b,c stay.",
+      "marks": 1,
+      "question": "Q2(c). With U, A, B, C, D as above, find A − B.",
+      "solution": "A − B = {b,c,d,e} − {d,e,f,g,h,i} = {b,c}. ✅ Answer: {b,c}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Only e of A lies in C, so only e is removed — b,c,d remain.",
+      "marks": 1,
+      "question": "Q2(d). With U, A, B, C, D as above, find A − C.",
+      "solution": "A − C = {b,c,d,e} − {a,e,i,o,u} = {b,c,d}. ✅ Answer: {b,c,d}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "From (d), A − C = {b,c,d}; none of b,c,d lies in C, so the intersection is empty — a clean example of (A−C) ∩ C = ∅ always.",
+      "marks": 1,
+      "question": "Q2(e). With U, A, B, C, D as above, find (A − C) ∩ C.",
+      "solution": "(A − C) ∩ C = {b,c,d} ∩ {a,e,i,o,u} = ∅. ✅ Answer: ∅ (empty set).",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Symmetric difference = elements in exactly one set: A−D = {c,e}, D−A = {j,k}.",
+      "marks": 1,
+      "question": "Q2(f). With U, A, B, C, D as above, find A △ D.",
+      "solution": "A △ D = (A − D) ∪ (D − A) = ({b,c,d,e} − {b,d,j,k}) ∪ ({b,d,j,k} − {b,c,d,e}) = {c,e} ∪ {j,k} = {c,e,j,k}. ✅ Answer: {c,e,j,k}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Union first ({b,c,d,e,f,g,h,i}), then delete a,e,i,o,u — only e and i are actually removed.",
+      "marks": 1,
+      "question": "Q2(g). With U, A, B, C, D as above, find (A ∪ B) − C.",
+      "solution": "(A ∪ B) − C = {b,c,d,e,f,g,h,i} − {a,e,i,o,u} = {b,c,d,f,g,h}. ✅ Answer: {b,c,d,f,g,h}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "B̄ = U − B = {a,b,c,j,k}; intersecting with A = {b,c,d,e} keeps b,c.",
+      "marks": 1,
+      "question": "Q2(h). With U, A, B, C, D as above, find A ∩ B̄.",
+      "solution": "B̄ = {a,b,c,d,e,f,g,h,i,j,k} − {d,e,f,g,h,i} = {a,b,c,j,k}. A ∩ B̄ = {b,c,d,e} ∩ {a,b,c,j,k} = {b,c}. ✅ Answer: {b,c}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Complement of a difference: overline{A−B} = Ā ∪ B (De Morgan). Check: Ā ∪ B = {a,f,g,h,i,j,k} ∪ B = {a,d,e,f,g,h,i,j,k}. ✓",
+      "marks": 1,
+      "question": "Q2(i). With U, A, B, C, D as above, find overline{A − B}.",
+      "solution": "A − B = {b,c} (from (c)). overline{A−B} = U − {b,c} = {a,d,e,f,g,h,i,j,k}. ✅ Answer: {a,d,e,f,g,h,i,j,k}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Set-builder first: 'positive integer less than 12' = {1,...,11}. A∪B = {1,2,3,5,7,8,9}; its complement keeps 4,6,10,11.",
+      "marks": 1,
+      "question": "Q3(a)(i). U = {x : x is a positive integer less than 12}, A = {3,5,7,9}, B = {1,2,3,8,9}, C = {1,4,7,10}. Find overline{A ∪ B}.",
+      "solution": "U = {1,2,...,11}. A ∪ B = {3,5,7,9} ∪ {1,2,3,8,9} = {1,2,3,5,7,8,9}. Complement = U − that = {4,6,10,11}. ✅ Answer: {4,6,10,11}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "A − B = {5,7} (3 and 9 are removed); union with C adds 1,4,10 — 7 already present.",
+      "marks": 1,
+      "question": "Q3(a)(ii). With U, A, B, C as in Q3(a), find (A − B) ∪ C.",
+      "solution": "(A − B) ∪ C = ({3,5,7,9} − {1,2,3,8,9}) ∪ {1,4,7,10} = {5,7} ∪ {1,4,7,10} = {1,4,5,7,10}. ✅ Answer: {1,4,5,7,10}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "A − C removes 7 only (7 ∈ C), giving {3,5,9}; intersecting with B = {1,2,3,8,9} keeps 3,9.",
+      "marks": 1,
+      "question": "Q3(a)(iii). With U, A, B, C as in Q3(a), find (A − C) ∩ B.",
+      "solution": "(A − C) ∩ B = ({3,5,7,9} − {1,4,7,10}) ∩ {1,2,3,8,9} = {3,5,9} ∩ {1,2,3,8,9} = {3,9}. ✅ Answer: {3,9}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Translate each description: A = {6,...,20}, B = {1,...,8}, 'between 10 and 15 exclusive' = {11,12,13,14}.",
+      "marks": 1,
+      "question": "Q3(b)(i). U = {natural numbers up to 20}, A = {x : x ≥ 6}, B = {x : x ≤ 8}, C = {x : 10 < x < 15}. Find B ∪ C.",
+      "solution": "B = {1,...,8}, C = {11,12,13,14}. B ∪ C = {1,2,3,4,5,6,7,8,11,12,13,14}. ✅ Answer: {1,2,3,4,5,6,7,8,11,12,13,14}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Overlap of {6..20} and {1..8} is exactly {6,7,8} — the boundary values 6,7,8 satisfy both x ≥ 6 and x ≤ 8.",
+      "marks": 1,
+      "question": "Q3(b)(ii). With U, A, B, C as in Q3(b), find A ∩ B.",
+      "solution": "A ∩ B = {6,...,20} ∩ {1,...,8} = {6,7,8}. ✅ Answer: {6,7,8}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Remove 11,12,13,14 from A = {6..20}: the survivors are 6–10 and 15–20 (11 elements).",
+      "marks": 1,
+      "question": "Q3(b)(iii). With U, A, B, C as in Q3(b), find A − C.",
+      "solution": "A − C = {6,...,20} − {11,12,13,14} = {6,7,8,9,10,15,16,17,18,19,20}. ✅ Answer: {6,7,8,9,10,15,16,17,18,19,20}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Key insight: A ∪ B = {1..8} ∪ {6..20} = {1..20} = U, so its complement is empty. (The student guide leaves this part unsolved — solved here fresh.)",
+      "marks": 1,
+      "question": "Q3(b)(iv). With U, A, B, C as in Q3(b), find overline{A ∪ B}.",
+      "solution": "A ∪ B = {6,...,20} ∪ {1,...,8} = {1,...,20} = U. Complement of U in itself is empty. ✅ Answer: ∅.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Evaluate the formulae with n ∈ N = {1,2,...}: n ≤ 5 gives A = {3,5,7,9,11}; n ≤ 4 gives B = {1,4,7,10}.",
+      "marks": 1,
+      "question": "Q4(a)(i). A = {x : x = 2n+1, n ≤ 5, n ∈ N}, B = {x : x = 3n−2, n ≤ 4, n ∈ N}. Find A ∪ B.",
+      "solution": "A = {3,5,7,9,11}, B = {1,4,7,10}. A ∪ B = {1,3,4,5,7,9,10,11}. ✅ Answer: {1,3,4,5,7,9,10,11}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "7 is the only common value: 2n+1 = 7 gives n = 3; 3n−2 = 7 gives n = 3. Both valid.",
+      "marks": 1,
+      "question": "Q4(a)(ii). With A, B as in Q4(a), find A ∩ B.",
+      "solution": "A ∩ B = {3,5,7,9,11} ∩ {1,4,7,10} = {7}. ✅ Answer: {7}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Remove A's elements (3,5,7,9,11) from B = {1,4,7,10}: only 7 is removed.",
+      "marks": 1,
+      "question": "Q4(a)(iii). With A, B as in Q4(a), find B − A.",
+      "solution": "B − A = {1,4,7,10} − {3,5,7,9,11} = {1,4,10}. ✅ Answer: {1,4,10}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Multiples of 3 below 20: 3,6,9,12,15,18. Multiples of 6 up to 30: 6,12,18,24,30. Common: 6,12,18.",
+      "marks": 1,
+      "question": "Q4(b)(i). A = multiples of 3 less than 20, B = multiples of 6 less than or equal to 30, U = N. Find A ∩ B.",
+      "solution": "A = {3,6,9,12,15,18}, B = {6,12,18,24,30}. A ∩ B = {6,12,18}. ✅ Answer: {6,12,18}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "A − B drops exactly the common multiples {6,12,18}, leaving the non-multiples-of-6: 3,9,15.",
+      "marks": 1,
+      "question": "Q4(b)(ii). With A, B as in Q4(b), find A − B.",
+      "solution": "A − B = {3,6,9,12,15,18} − {6,12,18,24,30} = {3,9,15}. ✅ Answer: {3,9,15}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Solve −1 ≤ x−2 ≤ 7 by adding 2: 1 ≤ x ≤ 9. So U = {1,...,9}; primes in U are 2,3,5,7; odds are 1,3,5,7,9.",
+      "marks": 1,
+      "question": "Q4(c)(i). U = {x : −1 ≤ x−2 ≤ 7}, A = primes, B = odds (within U). Find elements either prime or odd.",
+      "solution": "U = {1,...,9}, A = {2,3,5,7}, B = {1,3,5,7,9}. 'Either ... or' = union: A ∪ B = {1,2,3,5,7,9}. ✅ Answer: {1,2,3,5,7,9}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "'As well as' = intersection: primes that are also odd — every prime except 2.",
+      "marks": 1,
+      "question": "Q4(c)(ii). With U, A, B as in Q4(c), find elements prime as well as odd.",
+      "solution": "A ∩ B = {2,3,5,7} ∩ {1,3,5,7,9} = {3,5,7}. ✅ Answer: {3,5,7}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "2 is the only even prime — so 'prime but not odd' isolates exactly {2}. A favourite one-mark exam answer.",
+      "marks": 1,
+      "question": "Q4(c)(iii). With U, A, B as in Q4(c), find elements prime but not odd.",
+      "solution": "A − B = {2,3,5,7} − {1,3,5,7,9} = {2}. ✅ Answer: {2}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Distributive law of union over intersection — verified element-wise: both sides equal {a,b,c,d,e,f}.",
+      "marks": 2,
+      "question": "Q5(a). U = {a,...,h}, A = {a,b,c,d}, B = {c,d,e,f}, C = {d,e,f,g,h}. Verify A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).",
+      "solution": "LHS: B ∩ C = {d,e,f}; A ∪ that = {a,b,c,d} ∪ {d,e,f} = {a,b,c,d,e,f}. RHS: (A ∪ B) = {a,b,c,d,e,f}; (A ∪ C) = {a,b,c,d,e,f,g,h} = U... intersect: {a,b,c,d,e,f} ∩ U = {a,b,c,d,e,f}. LHS = RHS. ✅ Verified.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Distributive law of intersection over union — both sides equal {c,d}.",
+      "marks": 2,
+      "question": "Q5(b). With U, A, B, C as in Q5, verify A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).",
+      "solution": "LHS: B ∪ C = {c,d,e,f,g,h}; A ∩ that = {a,b,c,d} ∩ {c,d,e,f,g,h} = {c,d}. RHS: (A ∩ B) = {c,d}; (A ∩ C) = {d}; union = {c,d}. LHS = RHS. ✅ Verified.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "De Morgan's law for sets — both sides equal {g,h}.",
+      "marks": 2,
+      "question": "Q5(c). With U, A, B, C as in Q5, verify overline{A ∪ B} = Ā ∩ B̄.",
+      "solution": "LHS: A ∪ B = {a,b,c,d,e,f}; complement = U − that = {g,h}. RHS: Ā = {e,f,g,h}; B̄ = {a,b,g,h}; intersection = {g,h}. LHS = RHS. ✅ Verified.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Set-difference law: removing a union = keeping what neither set removes. Both sides equal {a,b}.",
+      "marks": 2,
+      "question": "Q5(d). With U, A, B, C as in Q5, verify A − (B ∪ C) = (A − B) ∩ (A − C).",
+      "solution": "LHS: B ∪ C = {c,d,e,f,g,h}; A − that = {a,b,c,d} − {c,d,e,f,g,h} = {a,b}. RHS: (A − B) = {a,b}; (A − C) = {a,b,c}; intersection = {a,b}. LHS = RHS. ✅ Verified.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Inclusion-exclusion for two sets: n(A∪B) = n(A) + n(B) − n(A∩B). Rearranged, the overlap is the sum minus the union. Complement: n(Ā∪B̄) = n(U) − n(A∪B) by De Morgan.",
+      "marks": 3,
+      "question": "Q6(a). If n(U) = 100, n(A) = 75, n(B) = 40 and n(A∪B) = 80, find n(A∩B), n(A−B) and n(overline{A∪B}).",
+      "solution": "Step 1 — Overlap: n(A∩B) = n(A) + n(B) − n(A∪B) = 75 + 40 − 80 = 35. Step 2 — Only-A: n(A−B) = n(A) − n(A∩B) = 75 − 35 = 40 (remove the overlapped part from A). Step 3 — Neither: n(overline{A∪B}) = n(U) − n(A∪B) = 100 − 80 = 20. ✅ Answers: 35, 40, 20. (Book key 6.a) = 35, 40, 20 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "If A ⊆ B (A ⊂ B), every element of A is already in B: the union adds nothing (A∪B = B) and the intersection keeps only A (A∩B = A).",
+      "marks": 2,
+      "question": "Q6(b). If n(A) = 37, n(B) = 50 and A ⊂ B, find n(A∪B) and n(A∩B).",
+      "solution": "Step 1 — Since A ⊂ B, all 37 elements of A lie inside B, so A∪B = B and n(A∪B) = 50. Step 2 — Likewise A∩B = A, so n(A∩B) = 37. ✅ Answers: 50, 37. (Book key 6.b) = 50, 37 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "'At least one' means the union. For two overlapping groups: only-first + only-second + both = total-first + total-second − both.",
+      "marks": 2,
+      "question": "Q7. 32 students play basketball and 25 play volleyball. 13 play both games. How many play at least one game?",
+      "solution": "Step 1 — At least one = n(BB ∪ VB) = n(BB) + n(VB) − n(both) = 32 + 25 − 13. Step 2 — 32 + 25 = 57; 57 − 13 = 44. ✅ Answer: 44. (Book key 7) = 44 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "When every person belongs to at least one of two groups, n(U) = union = 100%. The bilingual overlap is the excess of the sum over 100%.",
+      "marks": 2,
+      "question": "Q8. In a village all people speak Nepali or Newari or both. 60% speak Nepali and 50% speak Newari. How many (percent) speak both?",
+      "solution": "Step 1 — Everyone speaks at least one, so union = 100%. Step 2 — Both = 60% + 50% − 100% = 10%. ✅ Answer: 10%. (Book key 8) = 10% ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "With a 'neither' group, shrink the universe first: union = total − neither. Then both = sum of groups − union.",
+      "marks": 2,
+      "question": "Q9. Of 120 students, 90 take Mathematics and 72 take Statistics. 10 take neither. How many take both?",
+      "solution": "Step 1 — Students taking at least one = 120 − 10 = 110. Step 2 — Both = 90 + 72 − 110 = 162 − 110 = 52. ✅ Answer: 52. (Book key 9) = 52 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "'Tea but not coffee' is the only-tea region: T − both. Read it off first, then both = total-tea − only-tea.",
+      "marks": 2,
+      "question": "Q10(a). In a group of 65 persons, 20 drink tea but not coffee, 38 drink tea and 15 take neither. How many drink both tea and coffee?",
+      "solution": "Step 1 — Only-tea = 20 (given directly). Step 2 — Both = total-tea − only-tea = 38 − 20 = 18. ✅ Answer: 18. (Book key 10.a) = 18 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Partition the whole group: total = only-tea + only-coffee + both + neither. Three are known, so only-coffee drops out.",
+      "marks": 2,
+      "question": "Q10(b). With the data of Q10(a) (65 persons, only-tea 20, tea 38, neither 15), how many drink coffee but not tea?",
+      "solution": "Step 1 — From (a), both = 18. Step 2 — Only-coffee = total − only-tea − both − neither = 65 − 20 − 18 − 15 = 12. ✅ Answer: 12. (Book key 10.b) = 12 ✔; check: 20 + 12 + 18 + 15 = 65 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "For percentages, treat % as the unit and use inclusion-exclusion: failed-at-least-one = fail-M + fail-S − fail-both.",
+      "marks": 2,
+      "question": "Q11(a). 27% failed Mathematics, 31% failed Statistics, 6% failed both. What percentage failed in the examination (at least one subject)?",
+      "solution": "Step 1 — Failed at least one = 27% + 31% − 6% = 52%. ✅ Answer: 52%. (Book key 11.a) = 52% ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Passed-both is the complement of failed-at-least-one: 100% minus the Q11(a) result.",
+      "marks": 2,
+      "question": "Q11(b). With the data of Q11(a), what percentage passed in both subjects?",
+      "solution": "Step 1 — From (a), 52% failed at least one subject. Step 2 — Passed both = 100% − 52% = 48%. ✅ Answer: 48%. (Book key 11.b) = 48% ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "In a three-set Venn, fill regions from the most-constrained set: the set whose four regions have three known values reveals the all-three centre first.",
+      "marks": 2,
+      "question": "Q12(a). 12 read Mathematics, 15 Statistics, 11 Physics; M-only 4, S-only 7, S∩P-only 3, M∩S-only 1. How many read all three subjects?",
+      "solution": "Step 1 — Split Statistics into its 4 regions: S-only (7) + M∩S-only (1) + S∩P-only (3) + all-three (x) = 15. Step 2 — 7 + 1 + 3 + x = 15 → x = 4. ✅ Answer: 4. (Book key 12.a) = 4 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Same region algebra on the next-constrained set: Mathematics gives M∩P-only once the centre is known.",
+      "marks": 2,
+      "question": "Q12(b). With the data of Q12(a) (all-three = 4), how many read Mathematics and Physics only?",
+      "solution": "Step 1 — Split Mathematics: M-only (4) + M∩S-only (1) + M∩P-only (y) + all-three (4) = 12. Step 2 — 4 + 1 + y + 4 = 12 → y = 3. ✅ Answer: 3. (Book key 12.b) = 3 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Last region standing: Physics-only is whatever of the 11 Physics readers is not in any overlap.",
+      "marks": 2,
+      "question": "Q12(c). With the data of Q12(a)-(b) (all-three = 4, M∩P-only = 3), how many read Physics only?",
+      "solution": "Step 1 — Split Physics: P-only (z) + M∩P-only (3) + S∩P-only (3) + all-three (4) = 11. Step 2 — z + 3 + 3 + 4 = 11 → z = 1. ✅ Answer: 1. (Book key 12.c) = 1 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Total = sum of all seven disjoint Venn regions (neither = 0 here, since every region count is accounted for in the three sets).",
+      "marks": 2,
+      "question": "Q12(d). With all regions of Q12(a)-(c) known, how many students are there altogether?",
+      "solution": "Step 1 — Add the seven regions: M-only 4 + S-only 7 + P-only 1 + M∩S-only 1 + S∩P-only 3 + M∩P-only 3 + all-three 4. Step 2 — 4 + 7 + 1 + 1 + 3 + 3 + 4 = 23. ✅ Answer: 23. (Book key 12.d) = 23 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Three-set inclusion-exclusion: union = sum(singles) − sum(pairs) + all-three. With 'neither' known, union = total − neither, and the equation yields the centre.",
+      "marks": 2,
+      "question": "Q13(a). 500 viewers: 285 football, 195 hockey, 115 basketball; F∩B 45, F∩H 70, H∩B 50; 50 watch none. How many watch all three games?",
+      "solution": "Step 1 — Watch at least one = 500 − 50 = 450. Step 2 — 450 = 285 + 195 + 115 − 70 − 45 − 50 + x = 430 + x. Step 3 — x = 450 − 430 = 20. ✅ Answer: 20. (Book key 13) first value = 20 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    },
+    {
+      "knowledgeNote": "Exactly-one region of a set = its total minus its two pairwise overlaps plus the centre back (subtracted twice, belongs once).",
+      "marks": 2,
+      "question": "Q13(b). With the data of Q13(a) (all-three = 20), how many watch exactly one of the three games?",
+      "solution": "Step 1 — Only-football = 285 − 70 − 45 + 20 = 190. Step 2 — Only-hockey = 195 − 70 − 50 + 20 = 95. Step 3 — Only-basketball = 115 − 45 − 50 + 20 = 40. Step 4 — Total exactly-one = 190 + 95 + 40 = 325. ✅ Answer: 325. (Book key 13) second value = 325 ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.1 (printed pp 13-15; answer key p 15)"
+    }
+  ]
+}

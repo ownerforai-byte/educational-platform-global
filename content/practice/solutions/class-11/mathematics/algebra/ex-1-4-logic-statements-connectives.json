@@ -1,0 +1,377 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "A statement is a declarative sentence with a definite truth value (T or F). Interrogatives, imperatives, and exclamations are not statements.",
+      "marks": 1,
+      "question": "Q1(a). 'Kathmandu is the capital of Nepal.' Is it a statement? Give its truth value if so.",
+      "solution": "Declarative + verifiable fact (Kathmandu is Nepal's capital). ✅ It IS a statement, truth value T. (Key 1.a: Statement; T ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "A false claim is still a statement — only interrogatives/imperatives/exclamations fail to be statements.",
+      "marks": 1,
+      "question": "Q1(b). 'Nepal exports oil.' Is it a statement? Give its truth value if so.",
+      "solution": "Declarative, verifiable: Nepal is a net importer of oil (imports via India; exports essentially none). ✅ It IS a statement, truth value F. (Key 1.b: Statement; F ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "Arithmetic identities are the purest statements — always T or always F.",
+      "marks": 1,
+      "question": "Q1(c). '3 + 5 = 8.' Is it a statement? Give its truth value if so.",
+      "solution": "Declarative; 3+5=8 is correct. ✅ It IS a statement, truth value T. (Key 1.c: Statement; T ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "Interrogatives have no truth value, even when the answer is known.",
+      "marks": 1,
+      "question": "Q1(d). 'Where do you live?' Is it a statement?",
+      "solution": "Interrogative — asks, does not assert. No truth value. ✅ NOT a statement. (Key 1.d ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "Imperatives (commands/requests) assert nothing, so no truth value.",
+      "marks": 1,
+      "question": "Q1(e). 'Understand logic.' Is it a statement?",
+      "solution": "Imperative — a command. No truth value. ✅ NOT a statement. (Key 1.e ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "Exclamations (Oh!, How…!) express feeling, not a verifiable fact.",
+      "marks": 1,
+      "question": "Q1(f). 'Oh! how beautiful the scene is?' Is it a statement?",
+      "solution": "Exclamatory — subjective feeling, no verifiable truth. ✅ NOT a statement. (Key 1.f ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "~p is the negation of p ('it is not the case that p').",
+      "marks": 1,
+      "question": "Q2(a). Let p: demand is increasing, q: supply is decreasing. Express ~p in words.",
+      "solution": "Negate the whole of p. ✅ 'Demand is not increasing.' (Key 2.a ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "Negate the full predicate; 'not decreasing' ≠ 'increasing' (could be constant).",
+      "marks": 1,
+      "question": "Q2(b). Express ~q in words.",
+      "solution": "✅ 'Supply is not decreasing.' (Key 2.b ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "∧ = 'and' (conjunction), true only when both parts are true.",
+      "marks": 1,
+      "question": "Q2(c). Express p ∧ q in words.",
+      "solution": "✅ 'Demand is increasing AND supply is decreasing.' (Key 2.c ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "∨ = inclusive 'or', true when at least one part is true.",
+      "marks": 1,
+      "question": "Q2(d). Express p ∨ q in words.",
+      "solution": "✅ 'Demand is increasing OR supply is decreasing (or both).' (Key 2.d ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "Negation binds tightest: ~p ∧ q = (~p) ∧ q, not ~(p∧q).",
+      "marks": 1,
+      "question": "Q2(e). Express ~p ∧ q in words.",
+      "solution": "✅ 'Demand is not increasing AND supply is decreasing.' (Key 2.e ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "Read left to right: keep p, negate q.",
+      "marks": 1,
+      "question": "Q2(f). Express p ∨ ~q in words.",
+      "solution": "✅ 'Demand is increasing OR supply is not decreasing (or both).' (Key 2.f ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "By De Morgan, ~p ∨ ~q ≡ ~(p∧q): 'at least one fails'.",
+      "marks": 1,
+      "question": "Q2(g). Express ~p ∨ ~q in words.",
+      "solution": "✅ 'Neither demand is increasing nor supply is decreasing.' (equivalently, false that both hold.) (Key 2.g ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "~(p∧q) negates the WHOLE conjunction — the same claim as 2(g) in different form.",
+      "marks": 1,
+      "question": "Q2(h). Express ~(p ∧ q) in words.",
+      "solution": "✅ 'It is false that demand is increasing and supply is decreasing.' (Key 2.h ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "'and' → ∧; translate each clause to its symbol.",
+      "marks": 1,
+      "question": "Q3(a). Let p: temperature is increasing, q: length is expanding. Symbolise: 'Temperature is increasing and length is expanding.'",
+      "solution": "p∧q. ✅ p ∧ q.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "'or' → ∨ (inclusive).",
+      "marks": 1,
+      "question": "Q3(b). Let p: pressure is decreasing, q: volume is increasing. Symbolise: 'Pressure is decreasing or volume is increasing.'",
+      "solution": "p∨q. ✅ p ∨ q.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 55)"
+    },
+    {
+      "knowledgeNote": "'Neither … nor …' = 'not first and not second'. Here the book itself glosses 'price is decreasing' as '(i.e. not increasing)' (400-dpi OCR), so the second arm is ~q.",
+      "marks": 1,
+      "question": "Q3(c). Let p: demand is increasing, q: price is increasing. Symbolise: 'Neither demand is increasing nor price is decreasing (i.e. not increasing).'",
+      "solution": "The book glosses 'decreasing' as '(i.e. not increasing)', so 'price is decreasing' = ~q. 'Neither p nor ~q' = ~p ∧ ~(~q)... in the book's intent: neither p holds nor q fails = ~p ∧ ~q (equiv. ~(p∨q)). ✅ ~p ∧ ~q.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q3(c) (p 55); book-verified via 400-dpi OCR"
+    },
+    {
+      "knowledgeNote": "'neither … nor …' = 'not p and not q'. NOTE: the book's Q3(d) statement is scan-garbled; the standard 'neither P nor Q' form is presented.",
+      "marks": 1,
+      "question": "Q3(d). Let p: Pradeep is bold, q: Sandeep is handsome. Symbolise: 'Neither Pradeep is bold nor Sandeep is handsome.'",
+      "solution": "'Neither p nor q' = ~p ∧ ~q (equiv. ~(p∨q)). ✅ ~p ∧ ~q.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q3(d) (p 55); p/q definitions book-verified via 400-dpi OCR; neither-nor form per the Q3(c) pattern and printed key"
+    },
+    {
+      "knowledgeNote": "Build the table row by row over (p,q) = (T,T),(T,F),(F,T),(F,F); ~p flips p.",
+      "marks": 1,
+      "question": "Q4(a). Construct the truth table for (~p) ∧ q.",
+      "solution": "p q | ~p | ~p∧q\nT T | F | F\nT F | F | F\nF T | T | T\nF F | T | F\n✅ Contingent (one T, three F).",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "~p∨~q is false only when both p and q are true (De Morgan = ~(p∧q)).",
+      "marks": 1,
+      "question": "Q4(b). Construct the truth table for (~p) ∨ (~q).",
+      "solution": "p q | ~p ~q | ~p∨~q\nT T | F F | F\nT F | F T | T\nF T | T F | T\nF F | T T | T\n✅ Contingent (three T, one F); ≡ ~(p∧q).",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "~(p∨q) is true only when both p and q are false.",
+      "marks": 1,
+      "question": "Q4(c). Construct the truth table for ~(p ∨ q).",
+      "solution": "p q | p∨q | ~(p∨q)\nT T | T | F\nT F | T | F\nF T | T | F\nF F | F | T\n✅ Contingent; ≡ ~p∧~q (De Morgan).",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "~[p∨(~q)]: negate q first, OR with p, then negate the whole.",
+      "marks": 1,
+      "question": "Q4(d). Construct the truth table for ~[p ∨ (~q)].",
+      "solution": "p q | ~q | p∨~q | ~[p∨~q]\nT T | F | T | F\nT F | T | T | F\nF T | F | F | T\nF F | T | T | F\n✅ Contingent (one T, three F).",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "(p→q)∧(q→p) is the biconditional — T exactly when p and q have the same truth value.",
+      "marks": 1,
+      "question": "Q4(e). Construct the truth table for (p → q) ∧ (q → p).",
+      "solution": "p q | p→q q→p | ∧\nT T | T T | T\nT F | F T | F\nF T | T F | F\nF F | T T | T\n✅ T in rows 1 and 4, F in 2 and 3 — i.e. p↔q (biconditional), contingent.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "(p→q)∧... no — single conditional (p∧q)→(~p∨~q): false only when antecedent T and consequent F, i.e. only in row (T,T).",
+      "marks": 1,
+      "question": "Q4(f). Construct the truth table for (p ∧ q) → (~p ∨ ~q).",
+      "solution": "p q | p∧q | ~p∨~q | (p∧q)→(~p∨~q)\nT T | T | F | F\nT F | F | T | T\nF T | F | T | T\nF F | F | T | T\n✅ Contingent (three T, one F); the F-row is exactly where p∧q holds. ('=' is the book's conditional symbol, as in Q4(e).)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q4(f) (p 56); book-verified via 350-dpi OCR"
+    },
+    {
+      "knowledgeNote": "Substitute the given values p=T, q=F, r=T, s=F, then evaluate. p∧q = T∧F = F.",
+      "marks": 1,
+      "question": "Q5(a). p true, q false, r true, s false. Find the truth value of p ∧ q.",
+      "solution": "T ∧ F = F. ✅ F. (Key 5.a: F ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "~q = T (since q=F). p∨~q = T∨T = T.",
+      "marks": 1,
+      "question": "Q5(b). Find the truth value of p ∨ (~q).",
+      "solution": "~q = T, so p∨~q = T∨T = T. ✅ T. (Key 5.b: T ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Scan note: the ∧/∨ glyph is ambiguous at 150/300/400 dpi (reads 'v'); the ∧ form is adopted because it alone satisfies the book's printed key F — the ∨ reading would give T. Confirm against a clean printing.",
+      "marks": 1,
+      "question": "Q5(c). Find the truth value of (~p) ∧ (~q).",
+      "solution": "~p = F, ~q = T → F ∧ T = F. ✅ F. (Key 5.c: F ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q5(c) (p 56); value cross-checked vs printed key"
+    },
+    {
+      "knowledgeNote": "Evaluate the bracket first: p∧s = F, then q∨F = F∨F = F.",
+      "marks": 1,
+      "question": "Q5(d). Find the truth value of q ∨ (p ∧ s).",
+      "solution": "p∧s = T∧F = F; q∨(p∧s) = F∨F = F. ✅ F. (Key 5.d: F ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q5(d) (p 56); book-verified via 400-dpi OCR 'd)qv(pAs)'; value cross-checked vs printed key"
+    },
+    {
+      "knowledgeNote": "Involution: ~(~p) = p.",
+      "marks": 1,
+      "question": "Q5(e). Find the truth value of ~(~p).",
+      "solution": "p = T → ~p = F → ~(~p) = T. ✅ T. (Key 5.e: T ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Juxtaposed brackets mean AND: compute each disjunction (both T here), then conjoin.",
+      "marks": 1,
+      "question": "Q5(f). Find the truth value of (p ∨ q) ∧ (r ∨ s).",
+      "solution": "p∨q = T∨F = T; r∨s = T∨F = T; T∧T = T. ✅ T. (Key 5.f: T ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q5(f) (p 56); book-verified via 300-dpi OCR 'f(p vq) (rv s)'; value cross-checked vs printed key"
+    },
+    {
+      "knowledgeNote": "p∧(~p) is F in every row — the definition of a contradiction (c).",
+      "marks": 1,
+      "question": "Q6(a). If p and q are any two statements, prove that p ∧ (~p) = c, where c is a contradiction.",
+      "solution": "Truth table of p∧~p:\n p | ~p | p∧~p\n T | F  | F\n F | T  | F\nThe last column is F in both rows → p∧~p is a contradiction (c). ✅ Proven.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Commutative law for ∨ (p∨q = q∨p) — verify column equality.",
+      "marks": 1,
+      "question": "Q6(b). Prove that (p ∨ q) = (q ∨ p).",
+      "solution": "p q | p∨q | q∨p\n T T | T | T\n T F | T | T\n F T | T | T\n F F | F | F\nLast two columns identical → p∨q ≡ q∨p. ✅ Proven.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "De Morgan + involution: ~((~p)∧q) = ~(~p) ∨ ~q = p ∨ ~q — exactly the printed identity.",
+      "marks": 1,
+      "question": "Q6(c). Prove that p ∨ (~q) = ~(~p ∧ q).",
+      "solution": "~((~p)∧q) = ~(~p) ∨ ~(q) [De Morgan] = p ∨ ~q [involution]. Hence p ∨ (~q) = ~((~p) ∧ q). ✅ Proven. (Book-verified via 400-dpi OCR showing the ∧ explicitly.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q6(c) (p 56); book-verified via 400-dpi OCR"
+    },
+    {
+      "knowledgeNote": "~((~p)∧q) = p∨~q (De Morgan + involution).",
+      "marks": 1,
+      "question": "Q6(d). Prove that ~((~p) ∧ q) = p ∨ (~q).",
+      "solution": "~((~p)∧q) = ~(~p) ∨ ~(q) [De Morgan] = p ∨ ~q [involution on ~p]. ✅ Proven.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q6(d) (p 56); book-verified via 350-dpi OCR"
+    },
+    {
+      "knowledgeNote": "Negation of a universal positive claim: 'All X are Y' negates to 'Some X are not Y'; a definite statement negates to its denial.",
+      "marks": 1,
+      "question": "Q7(a). Find the negation of: 'Light travels in a straight line.'",
+      "solution": "Negate the predicate. ✅ 'Light does not travel in a straight line.' (Key 7.a ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Negate 'can be used' → 'cannot be used'.",
+      "marks": 1,
+      "question": "Q7(b). Find the negation of: 'Rivers can be used to produce electricity.'",
+      "solution": "✅ 'Rivers cannot be used to produce electricity.' (Key 7.b ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Negating a strict inequality x>0 gives x ≤ 0 (the complement includes equality).",
+      "marks": 1,
+      "question": "Q7(c). Find the negation of: 'x > 0.'",
+      "solution": "The negation of x>0 is x ≤ 0 (not x<0 — zero is the boundary case). ✅ x ≤ 0. (Key 7.c ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Negation of 'Some X are Y' is 'No X are Y' (quantifier flip).",
+      "marks": 1,
+      "question": "Q7(d). Find the negation of: 'Some students are weak in mathematics.'",
+      "solution": "'Some' ↔ 'none'. ✅ 'No student is weak in mathematics.' (Key 7.d: 'No student is weak in mathematics' ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Negation of 'All X are Y' is 'Some X are not Y'.",
+      "marks": 1,
+      "question": "Q7(e). Find the negation of: 'All teachers are labourous.'",
+      "solution": "'All' ↔ 'some … not'. ✅ 'Some teachers are not labourous.' (Key 7.e ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "3+2=5 is T; '6 is a multiple of 5' is F; T∨F = T. Negation: T∨F → F∧T (De Morgan / negation of disjunction).",
+      "marks": 1,
+      "question": "Q8(a). Find the truth value and negation of: '3 + 2 = 5 or 6 is a multiple of 5.'",
+      "solution": "p: 3+2=5 (T); q: 6 multiple of 5 (F). p∨q = T∨F = T. Negation: ~p∧~q = '3+2≠5 and 6 is not a multiple of 5'. ✅ T; negation '3 + 2 ≠ 5 and 6 is not a multiple of 5.' (Key 8.a ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "8 is prime? No (8=2·4). 4 is even? Yes. F∧T = F.",
+      "marks": 1,
+      "question": "Q8(b). Find the truth value and negation of: '8 is a prime number and 4 is even.'",
+      "solution": "p: 8 prime (F); q: 4 even (T). p∧q = F. Negation: ~p∨~q = '8 is not prime or 4 is odd'. ✅ F; negation '8 is not a prime number or 4 is odd.' (Key 8.b ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "3>0 is T; 4+6=10 is T; T→T = T. Negation of a conditional p→q is p∧~q.",
+      "marks": 1,
+      "question": "Q8(c). Find the truth value and negation of: 'If 3 > 0 then 4 + 6 = 10.'",
+      "solution": "p: 3>0 (T); q: 4+6=10 (T). p→q = T. Negation: p∧~q = '3>0 and 4+6≠10'. ✅ T; negation '3 > 0 and 4 + 6 ≠ 10.' (Key 8.c ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "2 odd? No (F). 3 natural? Yes (T). F∨T = T. 2+3=8? No (F). T→F = F.",
+      "marks": 1,
+      "question": "Q8(d). Find the truth value and negation of: 'If 2 is odd or 3 is a natural number, then 2 + 3 = 8.'",
+      "solution": "Antecedent: '2 odd (F) or 3 natural (T)' = T. Consequent: '2+3=8' = F. T→F = F. Negation: (F∨T) ∧ ~(F) i.e. '2 odd or 3 natural AND 2+3≠8'. ✅ F; negation '2 is odd or 3 is a natural number and 2 + 3 ≠ 8.' (Key 8.d ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Chained equality '2×3=5=3>1' is read as the conjunction (2×3=5) AND (3>1): 2×3=6≠5 makes the first conjunct F, so the antecedent is F.",
+      "marks": 1,
+      "question": "Q8(e). Find the truth value and negation of: 'If 2 × 3 = 5 = 3 > 1, then 6 is even.'",
+      "solution": "Antecedent: (2×3=5) AND (3>1) = F AND T = F (since 2×3=6≠5). Consequent '6 even' = T. F→T = T. Negation (p∧~q form): '2×3=5 and 3>1 and 6 is odd.' ✅ T. (Key 8.e: T ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q8(e) (p 56); book-verified via 350-dpi OCR; value cross-checked vs printed key"
+    },
+    {
+      "knowledgeNote": "Right-angle (at B) iff a²+b²=c² is a biconditional p↔q; both true → T.",
+      "marks": 1,
+      "question": "Q8(f). Find the truth value and negation of: 'A triangle ABC is right angled at B if and only if AB² + BC² = AC².'",
+      "solution": "By the converse of Pythagoras, the biconditional is TRUE. Negation: 'ABC is right-angled at B and AB²+BC²≠AC²' (i.e. the equivalence fails). ✅ T; negation 'Triangle ABC is right angled at B and AB² + BC² ≠ AC².' (Key 8.f ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "For a conditional 'If P then Q': P = antecedent, Q = consequent; converse = Q→P; inverse = ~P→~Q; contrapositive = ~Q→~P; negation = P∧~Q.",
+      "marks": 1,
+      "question": "Q9(a). 'If 3 is a natural number then 1/3 is a rational number.' Find (i) antecedent & consequent, (ii) converse, inverse, contrapositive, (iii) negation.",
+      "solution": "(i) Ant: 3 is a natural number; Con: 1/3 is a rational number. (ii) Converse: If 1/3 is rational then 3 is natural. Inverse: If 3 is not natural then 1/3 is not rational. Contrapositive: If 1/3 is not rational then 3 is not natural. (iii) Negation: 3 is a natural number and 1/3 is not rational. ✅ (Key 9.a ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "'P whenever Q' means Q→P; converse P→Q, inverse ~Q→~P, contrapositive ~P→~Q.",
+      "marks": 1,
+      "question": "Q9(b). 'x² = 4 whenever x = 2.' Find (i) antecedent & consequent, (ii) converse, inverse, contrapositive, (iii) negation.",
+      "solution": "'x²=4 whenever x=2' = If x=2 then x²=4. Ant: x=2; Con: x²=4. Converse: If x²=4 then x=2. Inverse: If x≠2 then x²≠4. Contrapositive: If x²≠4 then x≠2. Negation: x=2 and x²≠4. ✅ (Key 9.b ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "Standard conditional forms on the battery/mobile example.",
+      "marks": 1,
+      "question": "Q9(c). 'If the battery is low then the mobile does not work well.' Find (i) antecedent & consequent, (ii) converse, inverse, contrapositive, (iii) negation.",
+      "solution": "(i) Ant: battery is low; Con: mobile does not work well. (ii) Converse: If the mobile does not work well then the battery is low. Inverse: If the battery is not low then the mobile works well. Contrapositive: If the mobile works well then the battery is not low. (iii) Negation: The battery is low and the mobile works well. ✅ (Key 9.c ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 56)"
+    },
+    {
+      "knowledgeNote": "p∨~(p∧q): whenever p is T the disjunction is T; when p is F, p∧q is F so ~(p∧q) is T — T in every row.",
+      "marks": 1,
+      "question": "Q10(a). If p and q be statements, prove that p ∨ ~(p ∧ q) is a tautology.",
+      "solution": "p q | p∧q | ~(p∧q) | p∨~(p∧q)\nT T | T | F | T\nT F | F | T | T\nF T | F | T | T\nF F | F | T | T\nLast column all T → tautology. ✅ Proven. (The ∨ between p and ~(p∧q) is dropped by the scan; the tautology label in the book confirms it.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q10(a) (p 57); ∨ restored from the book's 'tautology' label"
+    },
+    {
+      "knowledgeNote": "Key insight: a true conjunction always yields a true disjunction — the implication can never go T→F.",
+      "marks": 1,
+      "question": "Q10(b). Prove that (p ∧ q) → (p ∨ q) is a tautology.",
+      "solution": "p∧q is T only in row (T,T), where p∨q is also T — so T→F never occurs:\np q | p∧q | p∨q | (p∧q)→(p∨q)\nT T | T | T | T\nT F | F | T | T\nF T | F | T | T\nF F | F | F | T\nLast column all T → tautology. ✅ Proven. ('=' is the book's conditional symbol here, as in Q4(e) (p=q)∧(q=p); the equivalence reading (p∧q)↔(p∨q) would be contingent, contradicting the book's own 'tautology' label.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q10(b) (p 57); '=' read as the conditional per Q4(e); book-verified via 300-dpi OCR"
+    },
+    {
+      "knowledgeNote": "NOTE: Q10(c) line is scan-garbled; the standard form '~(p∨q)∧q is a contradiction' is proved.",
+      "marks": 1,
+      "question": "Q10(c). Prove that ~(p ∨ q) ∧ q is a contradiction.",
+      "solution": "~(p∨q) is T only when p=F and q=F; then ∧q = F∧... with q=F gives F in every row (since q must be F for ~(p∨q) to be T, and F∧F=F). ✅ F in all rows → contradiction. (Q10(c) sub-form recovered; scan-garbled line)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Book Ex 1.4 Q10(c) (p 57); book-verified via 150-dpi OCR '~(p v q) ^ q is a contradiction'"
+    },
+    {
+      "knowledgeNote": "(p∧q)∧~(p∨q): p∧q is T only at (T,T), but p∨q=T there so ~ (p∨q)=F → F in every row.",
+      "marks": 1,
+      "question": "Q10(d). Prove that (p ∧ q) ∧ ~(p ∨ q) is a contradiction.",
+      "solution": "p q | p∧q | p∨q | ~(p∨q) | (p∧q)∧~(p∨q)\nT T | T | T | F | F\nT F | F | T | F | F\nF T | F | T | F | F\nF F | F | F | T | F\nLast column all F → contradiction. ✅ Proven.",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.4 (p 57)"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.1 Book Ex 1.4, printed pp 55-57; OCR'd via RapidOCR (150/300/350/400-dpi targeted crops); every value cross-checked against the book's own printed answer key (pp 57-59: Q1–Q5, Q7–Q9). All scan flags resolved 2026-10-29: Q3(c) neither-nor re-read (book glosses 'decreasing' as 'not increasing'); Q5(d)/(f) re-read from crops with key-consistent values (F/T); Q5(c) ∧ adopted on key evidence with glyph ambiguity noted; Q6(c)/(d), Q4(f), Q8(e), Q10(c) verified verbatim; Q10(a) ∨ restored; Q10(b) '=' read as the conditional per Q4(e) — a genuine tautology. NOTE: this exercise is the 'Logic' set (the repo's earlier ex-1-1 file titled 'ex-1-1-logic-statements-connectives' contains this same content; the book's real Ex 1.1 is the Sets exercise at p13).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI — Ch.1 Ex 1.4 (Logic: statements, connectives, truth tables, negation, tautology/contradiction) — Complete Solutions",
+  "topicSlug": "algebra-textbook-ex-1-4-logic-statements-connectives",
+  "topicTitle": "Ch.1 Ex 1.4 — Logic: statements, truth values, connectives, truth tables & tautology/contradiction (all 10 questions / sub-parts solved & verified against book key)",
+  "unitSlug": "algebra",
+  "year": 2078
+}

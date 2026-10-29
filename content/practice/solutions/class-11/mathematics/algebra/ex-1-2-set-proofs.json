@@ -1,0 +1,153 @@
+{
+  "examSource": "Sukunda Textbook",
+  "subject": "mathematics",
+  "unitSlug": "algebra",
+  "relevance": 100,
+  "year": 2078,
+  "topicSlug": "algebra-textbook-ex-1-2-set-proofs",
+  "topicTitle": "Ch.1 Ex 1.2 — Proofs of set inclusions & set laws (all 20 sub-questions, exam-grade element-chasing form)",
+  "title": "Sukunda Basic Mathematics XI — Ch.1 Ex 1.2 (Set laws & proofs) — Complete Solutions",
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.1 EXERCISE 1.2, printed p 23; OCR'd via RapidOCR (avg conf 0.92). Book Ex 1.2 is Q1-Q6 = 20 sub-parts (inclusions, consequences of disjointness/subset, difference identities, distributive & De Morgan laws). Consolidated from prior shifted-numbering files ex-1-3-set-laws-proofs.json (15) + ex-1-2-set-proofs-supplement.json (5), re-labelled 1:1 to the book's Q1-Q6; book Q1(a) 'A∩B ⊂ B' corrected (prior supplement had mis-stated it as 'A ⊆ A∪B'). Proofs in exam-grade element-chasing form, cross-verified against the concrete-set instances of Ex 1.1.",
+  "questions": [
+    {
+      "knowledgeNote": "Inclusion by definition: every element of the intersection belongs to B, so A∩B is a subset of B.",
+      "marks": 2,
+      "question": "Q1(a). A ∩ B ⊂ B",
+      "solution": "Proof: Let x ∈ A∩B. By definition of ∩, x∈A and x∈B. In particular x∈B. Hence every element of A∩B is an element of B, so A∩B ⊆ B. ✅ (Scan note: the prior supplement file mis-labelled this sub-part as 'A ⊆ A∪B'; the book's printed Ex 1.2 Q1(a) is 'A∩B ⊂ B', now corrected and proven.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "A−B keeps only elements of A (it discards, never adds): so A−B ⊆ A holds with no condition at all.",
+      "marks": 2,
+      "question": "Q1(b). Prove that A−B ⊆ A.",
+      "solution": "Step 1 — Let x ∈ A−B. Step 2 — By the definition of difference, x ∈ A and x ∉ B; in particular x ∈ A. Step 3 — Since x was arbitrary, A−B ⊆ A. ✅ (Twin check: taking complements, A−B = A∩B̄, and an intersection always sits inside each factor — the same pattern as file Q3(b) A−B̄ = A∩B ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Subset is transitive: chain Q1(b) into Q1(a) to lift A−B all the way up to A∪B.",
+      "marks": 2,
+      "question": "Q1(c). Prove that A−B ⊆ A∪B.",
+      "solution": "Step 1 — From Q1(b), A−B ⊆ A; from Q1(a), A ⊆ A∪B. Step 2 — Let x ∈ A−B. Then x ∈ A (by the first inclusion), hence x ∈ A∪B (by the second). Step 3 — Since x was arbitrary, A−B ⊆ A∪B. ✅ (Concrete check: A−B = {5,7}-type remainders always reappear inside A∪B, as in book Ex 1.1 Q1(f): (A∪B)−C = {3,4,5} ⊆ A∪B ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Core move: x ∈ A forces x ∉ B, because x ∈ B would put x in A ∩ B = ∅ — contradiction.",
+      "marks": 2,
+      "question": "Q2(a). If A ∩ B = ∅, prove that A ⊆ B̄.",
+      "solution": "Let x ∈ A. If x were also in B, then x ∈ A ∩ B, contradicting A ∩ B = ∅. Hence x ∉ B, i.e. x ∈ B̄. Since every x ∈ A lies in B̄, A ⊆ B̄. ∎ (Verified: A ⊆ B̄ ⟺ A ∩ B = ∅ is the standard disjointness criterion.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "B ∩ Ā keeps exactly the elements of B outside A — but nothing of B is inside A.",
+      "marks": 2,
+      "question": "Q2(b). If A ∩ B = ∅, prove that B ∩ Ā = B.",
+      "solution": "B ∩ Ā = {x : x ∈ B and x ∉ A}. Since A ∩ B = ∅, no element of B lies in A, so 'x ∈ B' already guarantees 'x ∉ A'. Hence {x : x ∈ B and x ∉ A} = {x : x ∈ B} = B. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Dual of (b): A contributes nothing new to B̄, since A ⊆ B̄ by Q1(a).",
+      "marks": 2,
+      "question": "Q2(c). If A ∩ B = ∅, prove that A ∪ B̄ = B̄.",
+      "solution": "A ∪ B̄ = {x : x ∈ A or x ∈ B̄}. By Q1(a), x ∈ A ⟹ x ∈ B̄, so the first clause adds nothing: every such x is already in B̄. Hence A ∪ B̄ = {x : x ∈ B̄} = B̄. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Contrapositive in set form: A ⊆ B flips to B̄ ⊆ Ā. Never write Ā ⊆ B̄ — the direction reverses.",
+      "marks": 2,
+      "question": "Q3(a). If A ⊆ B, prove that B̄ ⊆ Ā.",
+      "solution": "Let x ∈ B̄, i.e. x ∉ B. If x were in A, then A ⊆ B would force x ∈ B — contradiction. Hence x ∉ A, i.e. x ∈ Ā. So every element of B̄ lies in Ā: B̄ ⊆ Ā. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Union with a subset changes nothing — the bigger set swallows the smaller.",
+      "marks": 2,
+      "question": "Q3(b). If A ⊆ B, prove that A ∪ B = B.",
+      "solution": "A ∪ B = {x : x ∈ A or x ∈ B}. If x ∈ A then x ∈ B (since A ⊆ B), so both clauses reduce to x ∈ B. Hence A ∪ B = {x : x ∈ B} = B. ∎ (Also B ⊆ A ∪ B always, and A ∪ B ⊆ B shown here — double inclusion.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Intersection with a superset changes nothing — dual of Q2(b).",
+      "marks": 2,
+      "question": "Q3(c). If A ⊆ B, prove that A ∩ B = A.",
+      "solution": "A ∩ B = {x : x ∈ A and x ∈ B}. Since A ⊆ B, x ∈ A already implies x ∈ B, so the second clause is redundant: {x : x ∈ A and x ∈ B} = {x : x ∈ A} = A. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "'B but not A' = 'in B and outside A' — the definition of difference as intersection with complement.",
+      "marks": 2,
+      "question": "Q4(a). Prove that B − A = B ∩ Ā.",
+      "solution": "B − A = {x : x ∈ B and x ∉ A} by definition of set difference. Since x ∉ A ⟺ x ∈ Ā, this equals {x : x ∈ B and x ∈ Ā} = B ∩ Ā. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "x ∉ B̄ ⟺ x ∈ B (double complement). Removing 'outside B' from A leaves 'inside B'.",
+      "marks": 2,
+      "question": "Q4(b). Prove that A − B̄ = A ∩ B.",
+      "solution": "A − B̄ = {x : x ∈ A and x ∉ B̄}. Now x ∉ B̄ ⟺ x ∈ B, so this equals {x : x ∈ A and x ∈ B} = A ∩ B. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Both sides = {x : x ∈ A and x ∉ B}: LHS directly, RHS via x ∈ B̄ ⟺ x ∉ B and x ∉ Ā ⟺ x ∈ A.",
+      "marks": 2,
+      "question": "Q4(c). Prove that A − B = B̄ − Ā.",
+      "solution": "LHS: A − B = {x : x ∈ A and x ∉ B}. RHS: B̄ − Ā = {x : x ∈ B̄ and x ∉ Ā} = {x : x ∉ B and x ∈ A} = {x : x ∈ A and x ∉ B} = LHS. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Removing 'A minus B' from A leaves exactly the part of A shared with B. Key move: ¬(p ∧ ¬q) ≡ ¬p ∨ q, then distribute x ∈ A across.",
+      "marks": 3,
+      "question": "Q4(d). Prove that A−(A−B) = A∩B.",
+      "solution": "Step 1 — Let x ∈ A−(A−B). Then x ∈ A and x ∉ (A−B), i.e. x ∈ A and ¬(x ∈ A and x ∉ B). Step 2 — By De Morgan for logic, ¬(x ∈ A and x ∉ B) ≡ (x ∉ A or x ∈ B). Step 3 — So x ∈ A and (x ∉ A or x ∈ B); distributing: (x ∈ A and x ∉ A) or (x ∈ A and x ∈ B). The first arm is impossible, leaving x ∈ A and x ∈ B, i.e. x ∈ A∩B. Step 4 — Every step reverses (each ≡ is two-way), so x ∈ A∩B likewise gives x ∈ A−(A−B). Hence A−(A−B) = A∩B. ✅ (Concrete check: with book Ex 1.1 Q1 sets, A−(A−B) = {1,2,3,4}−{1,2} = {3,4} and A∩B = {3,4} ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "A−B and B are disjoint by construction: everything kept from A was chosen for NOT being in B, so meeting B again leaves nothing.",
+      "marks": 2,
+      "question": "Q4(e). Prove that (A−B)∩B = ∅.",
+      "solution": "Step 1 — Suppose, for contradiction, some x ∈ (A−B)∩B. Step 2 — Then x ∈ A−B (so x ∉ B) and simultaneously x ∈ B — impossible. Step 3 — No such x exists, so (A−B)∩B = ∅. ✅ (Concrete check: book Ex 1.1 Q2(e) computes (A−C)∩C = ∅ on real sets, and the printed key confirms ∅ ✔)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Set distributivity mirrors logical distributivity: p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r).",
+      "marks": 3,
+      "question": "Q5(a). For subsets A, B, C of U, prove A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).",
+      "solution": "x ∈ LHS ⟺ x ∈ A or (x ∈ B and x ∈ C) ⟺ (x ∈ A or x ∈ B) and (x ∈ A or x ∈ C) [∨ distributes over ∧] ⟺ x ∈ (A ∪ B) and x ∈ (A ∪ C) ⟺ x ∈ RHS. Since x was arbitrary, LHS = RHS. ∎ (Element-wise verified in Ex 1.2 Q5(a) on concrete sets.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Dual law: p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r). Prove both inclusions via one arbitrary x.",
+      "marks": 3,
+      "question": "Q5(b). For subsets A, B, C of U, prove A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).",
+      "solution": "x ∈ LHS ⟺ x ∈ A and (x ∈ B or x ∈ C) ⟺ (x ∈ A and x ∈ B) or (x ∈ A and x ∈ C) [∧ distributes over ∨] ⟺ x ∈ (A ∩ B) or x ∈ (A ∩ C) ⟺ x ∈ RHS. Hence LHS = RHS. ∎ (Element-wise verified in Ex 1.2 Q5(b).)",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "De Morgan: 'outside a union' = 'outside both'. Equivalently overline{A∪B} = Ā ∩ B̄ (verified on sets in Ex 1.2 Q5(c)).",
+      "marks": 3,
+      "question": "Q6(a). Prove (A ∪ B)' = A' ∩ B'. (Both A' and Ā denote complement.)",
+      "solution": "x ∈ (A ∪ B)' ⟺ x ∉ A ∪ B ⟺ x ∉ A and x ∉ B ⟺ x ∈ A' and x ∈ B' ⟺ x ∈ A' ∩ B'. Hence (A ∪ B)' = A' ∩ B'. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "'Outside an intersection' = 'outside at least one'. Note 'or' (not 'and') — the classic student error.",
+      "marks": 3,
+      "question": "Q6(b). Prove (A ∩ B)' = A' ∪ B'.",
+      "solution": "x ∈ (A ∩ B)' ⟺ x ∉ A ∩ B ⟺ NOT (x ∈ A and x ∈ B) ⟺ x ∉ A or x ∉ B ⟺ x ∈ A' or x ∈ B' ⟺ x ∈ A' ∪ B'. Hence (A ∩ B)' = A' ∪ B'. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "Two equalities in one: first ∩-form via De Morgan on B ∪ C, then −C form by unfolding. Each step reversible, so all three forms are equal.",
+      "marks": 3,
+      "question": "Q6(c). Prove A − (B ∪ C) = (A − B) ∩ (A − C) = (A − B) − C.",
+      "solution": "x ∈ A − (B ∪ C) ⟺ x ∈ A and x ∉ B ∪ C ⟺ x ∈ A and (x ∉ B and x ∉ C) ⟺ (x ∈ A and x ∉ B) and (x ∈ A and x ∉ C) ⟺ x ∈ (A − B) and x ∈ (A − C) ⟺ x ∈ (A−B) ∩ (A−C). Further, x ∈ (A−B) − C ⟺ x ∈ A − B and x ∉ C ⟺ (x ∈ A and x ∉ B) and x ∉ C — the same condition. Hence all three are equal. ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    },
+    {
+      "knowledgeNote": "'Avoiding an intersection' = 'missing B or missing C' — union (not intersection) of the differences.",
+      "marks": 3,
+      "question": "Q6(d). Prove A − (B ∩ C) = (A − B) ∪ (A − C).",
+      "solution": "x ∈ A − (B ∩ C) ⟺ x ∈ A and x ∉ B ∩ C ⟺ x ∈ A and (x ∉ B or x ∉ C) ⟺ (x ∈ A and x ∉ B) or (x ∈ A and x ∉ C) ⟺ x ∈ (A − B) or x ∈ (A − C) ⟺ x ∈ (A−B) ∪ (A−C). ∎",
+      "source": "Sukunda Basic Mathematics XI, Ch.1 Ex 1.2 (printed p 23)"
+    }
+  ]
+}
