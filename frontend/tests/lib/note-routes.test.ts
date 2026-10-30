@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { noteRoute, noteRoutes } from "@/lib/note-routes";
+import { noteRoute, noteRoutes, selectCanonicalNoteEntry } from "@/lib/note-routes";
 import type { ImportedNote } from "@/lib/imported-notes";
 
 function note(overrides: Partial<ImportedNote>): ImportedNote {
@@ -77,5 +77,20 @@ describe("noteRoutes", () => {
     const [a, b] = noteRoutes([note({}), note({ unit: undefined })]);
     expect(a.href).toBe("/class-11-notes/physics/chapters/ideal-gas");
     expect(b.href).toBe("/class-11-notes/physics");
+  });
+});
+
+describe("selectCanonicalNoteEntry", () => {
+  it("selects the primary source without exposing secondary variants", () => {
+    const secondary = { filename: "topic-2.json", duplicateType: 2 };
+    const primary = { filename: "topic.json", duplicateType: 1 };
+    expect(selectCanonicalNoteEntry([secondary, primary])).toBe(primary);
+  });
+
+  it("keeps manifest order for equally ranked sources and handles an empty list", () => {
+    const first = { filename: "first.json" };
+    const second = { filename: "second.json" };
+    expect(selectCanonicalNoteEntry([first, second])).toBe(first);
+    expect(selectCanonicalNoteEntry([])).toBeUndefined();
   });
 });

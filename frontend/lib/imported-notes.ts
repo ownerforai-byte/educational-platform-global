@@ -15,6 +15,7 @@ export type ImportedNote = {
 type RavikishanManifestItem = {
   path: string;
   data: { title?: string };
+  dupType?: number;
 };
 
 type RExportManifestItem = {
@@ -100,6 +101,9 @@ function buildImportedNotes(
   };
 
   for (const item of rav) {
+    // The archive exposes the authoritative import only. Secondary payloads
+    // stay in the corpus but must not become a second card for the same note.
+    if ((item.dupType ?? 1) > 1) continue;
     const cls = ravClass(item);
     const subject = ravSubject(item);
     const unitPath = ravUnit(item);

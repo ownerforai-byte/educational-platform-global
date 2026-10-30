@@ -4,7 +4,7 @@ import { test, expect, type Page } from "@playwright/test";
  * E2E SMOKE (owner request 2026-10-27) — one thin pass over the three
  * load-bearing paths:
  *   1. the guest lock on /home,
- *   2. the signed-in owner path (/pyqs reachable + the Veer panel opens),
+ *   2. the signed-in owner path (/notes and /pyqs reachable + Veer opens),
  *   3. the Member-tier Plus gate (locked surface visible + /plans link).
  *
  * The auth tests skip themselves when the SMOKE_* env vars are absent, so a
@@ -39,12 +39,18 @@ test.describe("E2E smoke", () => {
     await expect(page.getByText(/veer/i).first()).toBeVisible();
   });
 
-  test("owner: signs in, /pyqs is reachable and the Veer panel opens", async ({ page }) => {
+  test("owner: signs in, notes and past papers open, and Veer opens", async ({ page }) => {
     // In-body skip, not file-level: a file-level test.skip(cond) marks the
     // WHOLE file skipped (guest test included) whenever the env vars are
     // absent, which broke the documented bare-local-run behaviour.
     test.skip(!OWNER_EMAIL || !OWNER_PASSWORD, "SMOKE_OWNER_EMAIL/PASSWORD not set");
     await signIn(page, OWNER_EMAIL, OWNER_PASSWORD);
+
+    await page.goto("/notes");
+    await expect(page).toHaveURL(/\/notes/);
+    await expect(page.getByRole("heading", { name: "Notes", exact: true })).toBeVisible();
+    await expect(page.getByPlaceholder("Search notes by title, subject, or unit…")).toBeVisible();
+    await expect(page.getByTestId("approval-lock")).toHaveCount(0);
 
     // The past-paper bank is a member+ surface — an approved owner reaches it.
     await page.goto("/pyqs");

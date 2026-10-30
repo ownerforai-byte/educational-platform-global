@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
-import { ImportedNotesSection } from "@/components/content/imported-notes-section";
 import { BackButton } from "@/components/navigation/back-button";
-import type { NotesTrack } from "@/lib/imported-notes";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { getSubjectNav } from "../queries";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
@@ -13,10 +11,6 @@ import {
   GraduationCap,
   Layers,
 } from "lucide-react";
-
-function isNotesTrack(value: string): value is NotesTrack {
-  return value === "class-11-notes" || value === "class-12-notes";
-}
 
 export async function SubjectHubView({
   classSlug,
@@ -150,18 +144,6 @@ export async function SubjectHubView({
         </div>
       </section>
 
-      {/* 3. IMPORTED NOTES SECTION */}
-      <div className="space-y-4 pt-4 border-t border-border/60">
-        <h2 className="text-lg font-bold tracking-tight text-foreground">Complete Notes Index</h2>
-        {isNotesTrack(classSlug) ? (
-          <ImportedNotesSection subject={subjectSlug} target={classSlug} />
-        ) : (
-          <EmptyState
-            title="No notes yet"
-            description="Imported notes are not available for this class track yet."
-          />
-        )}
-      </div>
     </div>
   );
 }

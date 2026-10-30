@@ -1,62 +1,10 @@
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { loadData } from "@/lib/data-loader";
 import { SubjectSearch } from "@/components/layout/subject-search";
-import { getImportedNotesBySubject, type ImportedNote } from "@/lib/imported-notes";
-import { noteRoute } from "@/lib/note-routes";
-import { getSubjectVisual } from "@/lib/ui/subject-visuals";
-import {
-  ArrowRight,
-  BookOpen,
-  FlaskConical,
-  Leaf,
-  Library,
-  NotebookPen,
-  Search,
-  Zap,
-} from "lucide-react";
-
-type RExportManifestItem = {
-  subject: string;
-  chapter: string;
-  id: string;
-  title: string;
-  notes?: string[];
-};
-
-type RavikishanManifestItem = {
-  path: string;
-  data: { title?: string; unitSlug?: string };
-  dupType?: number;
-};
-
-const baseName = (p: string) => p.split(/[\\/]/).pop()?.replace(/\.json$/, "") ?? p;
-
-function noteViewHref(note: {
-  title: string;
-  path: string;
-  subject: string;
-  unit?: string;
-  target: string;
-  source: "ravikishan" | "r-export";
-}): string {
-  const qs = new URLSearchParams({
-    title: note.title,
-    path: note.path,
-    subject: note.subject,
-    target: note.target,
-    source: note.source,
-  });
-  if (note.unit) qs.set("unit", note.unit);
-  return `/notes/view?${qs.toString()}`;
-}
+import { getImportedNotesBySubject } from "@/lib/imported-notes";
+import { ArrowRight, FlaskConical } from "lucide-react";
 
 export default async function NotesPage() {
-  const [rManifest, rkManifest, importedMap] = await Promise.all([
-    loadData<RExportManifestItem[]>("r-export/manifest.json"),
-    loadData<RavikishanManifestItem[]>("content/manifest.json"),
-    getImportedNotesBySubject(),
-  ]);
+  const importedMap = await getImportedNotesBySubject();
 
   const searchSubjects = Object.keys(importedMap).map((slug) => ({
     slug,
@@ -68,30 +16,6 @@ export default async function NotesPage() {
     notes,
   }));
 
-  const rBySubject: Record<string, Array<{ chapter: string; id: string; title: string; noteCount: number }>> = {};
-  for (const item of rManifest) {
-    if (!rBySubject[item.subject]) rBySubject[item.subject] = [];
-    rBySubject[item.subject].push({
-      chapter: item.chapter,
-      id: item.id,
-      title: item.title,
-      noteCount: item.notes?.length ?? 0,
-    });
-  }
-
-  const rkBySubject: Record<string, Array<{ path: string; title: string; unit?: string; dupType: number }>> = {};
-  for (const item of rkManifest) {
-    const [section, subject] = item.path.split("/");
-    const key = `${section}/${subject}`;
-    if (!rkBySubject[key]) rkBySubject[key] = [];
-    rkBySubject[key].push({
-      path: item.path,
-      title: item.data.title ?? baseName(item.path),
-      unit: item.data.unitSlug,
-      dupType: item.dupType ?? 1,
-    });
-  }
-
   return (
     <div className="mx-auto max-w-6xl space-y-10 py-8 md:py-14 px-4">
       <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-background to-background p-8 shadow-lg">
@@ -100,7 +24,7 @@ export default async function NotesPage() {
           Notes
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Imported notes from Ravikishan&apos;s export, organized by class, subject, and chapter. Deep Thoughts: a note is not a souvenir of a lesson — it is the lesson still speaking after the lesson is over.
+          One searchable archive for imported notes. Each result opens its canonical class, subject, and unit destination, with no repeated source sections below.
         </p>
       </div>
 
@@ -151,122 +75,6 @@ export default async function NotesPage() {
         <SubjectSearch subjects={searchSubjects} initialGroups={initialGroups} />
       </section>
 
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold tracking-tight flex items-center gap-2">
-          <span aria-hidden="true">📒</span>
-          R Export Notes
-        </h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {Object.entries(rBySubject).map(([subject, chapters]) => {
-            const visual = getSubjectVisual(subject);
-            return (
-              <Card key={subject}>
-                <CardHeader>
-                  <CardTitle className="text-base flex items-center gap-2">
-                    <span aria-hidden="true">{visual.glyph}</span>
-                    <span>{subject}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {chapters.map((chapter) => (
-                      <div key={chapter.id} className="flex items-stretch gap-2">
-                        <Link
-                          // Legacy /r-notes/{subject}/{chapter} was removed; send
-                          // readers to the subject hub that renders these notes.
-                          href={noteRoute({
-                            title: chapter.title,
-                            path: `${subject}/${chapter.chapter}/${chapter.id}`,
-                            subject,
-                            target: "class-11-notes",
-                            source: "r-export",
-                          })}
-                          className="block flex-1 rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
-                        >
-                          <span className="font-medium">{chapter.title}</span>
-                          <span className="ml-2 text-xs text-muted-foreground">({chapter.noteCount} notes)</span>
-                        </Link>
-                        <Link
-                          href={noteViewHref({
-                            title: chapter.title,
-                            path: `${subject}/${chapter.chapter}/${chapter.id}`,
-                            subject,
-                            target: "class-11-notes",
-                            source: "r-export",
-                          })}
-                          className="flex items-center rounded-md border border-border px-3 py-2 text-xs font-semibold text-primary hover:border-primary transition-colors"
-                        >
-                          <ArrowRight className="mr-1 h-3 w-3" />
-                          Read
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold tracking-tight flex items-center gap-2">
-          <span aria-hidden="true">📚</span>
-          Ravikishan Notes
-        </h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {Object.entries(rkBySubject).map(([key, items]) => {
-            const visual = getSubjectVisual(key);
-            return (
-              <Card key={key}>
-                <CardHeader>
-                  <CardTitle className="text-base flex items-center gap-2">
-                    <span aria-hidden="true">{visual.glyph}</span>
-                    <span>{key}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {items.map((item) => {
-                      // Legacy /ravikishan-notes/{path} was removed; route to the
-                      // matching curriculum chapter (or subject hub).
-                      const [section, subject] = item.path.split("/");
-                      const note: ImportedNote = {
-                        title: item.title,
-                        path: item.path,
-                        subject,
-                        unit: item.unit,
-                        target: section === "class-12" || section === "class-12-notes" ? "class-12-notes" : "class-11-notes",
-                        source: "ravikishan",
-                      };
-                      const href = noteRoute(note);
-                      const dupLabel = item.dupType > 1 ? ` (Type-${item.dupType})` : "";
-                      return (
-                        <div key={item.path} className="flex items-stretch gap-2">
-                          <Link
-                            href={href}
-                            className="block flex-1 rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
-                          >
-                            <span className="font-medium">{item.title}</span>
-                            {dupLabel && <span className="ml-2 text-xs text-muted-foreground">{dupLabel}</span>}
-                          </Link>
-                          <Link
-                            href={noteViewHref(note)}
-                            className="flex items-center rounded-md border border-border px-3 py-2 text-xs font-semibold text-primary hover:border-primary transition-colors"
-                          >
-                            <ArrowRight className="mr-1 h-3 w-3" />
-                            Read
-                          </Link>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-      </section>
     </div>
   );
 }

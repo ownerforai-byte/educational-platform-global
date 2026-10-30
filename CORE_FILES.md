@@ -38,7 +38,10 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/syllabus.ts` | **Curriculum Single Source of Truth**. Contains official class, subject, unit, and topic hierarchies and slugs. |
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
 | `frontend/components/layout/app-shell.tsx` | Main UI layout container and responsive navigation shell. |
-| `frontend/lib/note-routes.ts` | Canonical routing logic for notes, mapping topics and legacy paths to current URLs. |
+| `frontend/lib/note-routes.ts` | Canonical note routing and `duplicateType` source selection. |
+| `frontend/components/content/topic-vertical-notes.tsx` | Single theory presentation surface for every canonical topic note. |
+| `frontend/components/content/content-tabs.tsx` | Companion-only topic tabs; no repeated theory, formulas, summaries, or practice. |
+| `frontend/components/content/ravikishan-topic-resources.tsx` | Resources-panel shortcut to the canonical topic notes; never a second note renderer. |
 | `frontend/lib/access-level.ts` | **Access ladder** (`visitor → member → plus → pro → owner`): rung resolution, rank comparisons, and the hardcoded `TIER_HOME_PATHS` map (`tierHomePathFor`) that every login flow uses to land the viewer on their own tier interface. |
 | `frontend/components/home/tier-home-router.tsx` | **Instant tier router** (root `/`): resolves the session's rung on first paint and replaces the view with the viewer's exact tier page — visitors, and only visitors, see `HomePublic`. |
 | `frontend/components/home/tier-interfaces.tsx` | **Hardcoded tier interfaces** (`MemberHome`, `PlusHome`, `ProHome`, `OwnerHome`) — one shell + per-rung spotlights, gated rails and section rails; rendered by `/home/member|plus|pro|owner`. |
@@ -105,6 +108,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/pyq-bank.ts` | Registry for past year question banks and solved papers. |
 | `frontend/lib/formula-sheet.ts` | Formula vault data and derivation link associations. |
 | `frontend/lib/physics-xi-academic.ts` | Physics XI Academic Companion registry — typed accessors over the 26-unit brief dataset (`frontend/public/data/physics-xi-academic/units.json`) plus the canonical brief/document URL helpers used by the `/resources/physics-xi` routes. The dataset is content; this file is the contract for it. |
+| `frontend/tests/components/content/note-presentation.test.tsx` | Regression gate for one archive, companion-only tabs, and canonical-source resource links without duplicate note bodies. |
 
 ---
 

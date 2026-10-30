@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
+import { selectCanonicalNoteEntry } from "@/lib/note-routes";
 import { EntranceQuiz } from "@/components/content/entrance-quiz";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
 import { FormulaCard } from "@/components/content/formula-card";
@@ -19,15 +20,6 @@ import {
 // first and each panel hydrates behind its own skeleton.
 const SchematicDiagramLazy = dynamic(
   () => import("@/components/lab/schematic-diagram").then((m) => m.SchematicDiagram),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="min-h-[380px] animate-pulse rounded-2xl border border-border/60 bg-background/50" />
-    ),
-  }
-);
-const TopicMindMapLazy = dynamic(
-  () => import("@/components/lab/topic-mindmap").then((m) => m.TopicMindMap),
   {
     ssr: false,
     loading: () => (
@@ -137,8 +129,7 @@ export function TopicVerticalNotes({
   const [sources, setSources] = useState<Array<{ meta: ManifestItem; data: RichTopicConcept }>>([]);
   const [supplementary, setSupplementary] = useState<RichTopicConcept | null>(null);
   const [loading, setLoading] = useState(true);
-  const [activeSourceIndex, setActiveSourceIndex] = useState(0);
-  const [visualTab, setVisualTab] = useState<"schematic" | "mindmap" | "3d">("schematic");
+  const [visualTab, setVisualTab] = useState<"schematic" | "3d">("schematic");
 
   // Interactive self-check quiz state
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
@@ -193,7 +184,7 @@ export function TopicVerticalNotes({
 
   // Visual mode tabs with roving focus (arrow keys move between tabs).
   const visualTabs = useMemo(() => {
-    const tabs: Array<"schematic" | "mindmap" | "3d"> = ["schematic", "mindmap"];
+    const tabs: Array<"schematic" | "3d"> = ["schematic"];
     if (TopicVisual3D) tabs.push("3d");
     return tabs;
   }, [TopicVisual3D]);
@@ -264,8 +255,9 @@ export function TopicVerticalNotes({
           );
           if (!cancelled) {
             const valid = loaded.filter((x): x is { meta: ManifestItem; data: RichTopicConcept } => x !== null);
-            valid.sort((a, b) => (a.meta.duplicateType ?? 1) - (b.meta.duplicateType ?? 1));
-            setSources(valid);
+            const canonicalMeta = selectCanonicalNoteEntry(valid.map((source) => source.meta));
+            const canonical = valid.find((source) => source.meta === canonicalMeta);
+            setSources(canonical ? [canonical] : []);
           }
         }
 
@@ -299,7 +291,7 @@ export function TopicVerticalNotes({
     };
   }, [subjectSlug, unitId, topicSlug]);
 
-  const activeData = sources[activeSourceIndex]?.data || supplementary;
+  const activeData = sources[0]?.data || supplementary;
 
   // Notes the Visual Workspace is built from. Memoised on the objects
   // themselves so the generated mindmap/schematic do not rebuild every render.
@@ -387,7 +379,8 @@ export function TopicVerticalNotes({
   if (loading) {
     return (
       <div
-        className="flex flex-col items-center justify-center gap-3 py-12 sm:py-16"
+        id="topic-notes"
+        className="flex scroll-mt-24 flex-col items-center justify-center gap-3 py-12 sm:py-16"
         role="status"
         aria-live="polite"
         aria-busy="true"
@@ -399,35 +392,7 @@ export function TopicVerticalNotes({
   }
 
   return (
-    <div className="space-y-10">
-      {/* Source Switcher Tabs if multiple versions exist */}
-      {sources.length > 1 && (
-        <div className="rounded-2xl border border-border/70 bg-card p-2 flex items-center justify-between">
-          <span className="text-xs font-semibold text-muted-foreground px-2">
-            Available Note Versions:
-          </span>
-          <div className="flex gap-1.5">
-            {sources.map((s, idx) => {
-              const isSelected = activeSourceIndex === idx;
-              const typeNum = s.meta.duplicateType ?? (idx + 1);
-              return (
-                <button
-                  key={s.meta.filename + idx}
-                  onClick={() => setActiveSourceIndex(idx)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
-                    isSelected
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "bg-muted text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  Version {typeNum} {typeNum === 1 ? "(Primary)" : "(Secondary)"}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
+    <div id="topic-notes" className="scroll-mt-24 space-y-10">
       {/* ── CHEMISTRY QUICK LAUNCH BANNER ── */}
       {(subjectSlug.toLowerCase().includes("chem") ||
         topicTitle.toLowerCase().includes("element") ||
@@ -508,24 +473,6 @@ export function TopicVerticalNotes({
                 <Sparkles className="h-3.5 w-3.5" />
                 <span>Interactive Schematic</span>
               </button>
-              <button
-                type="button"
-                role="tab"
-                id="visual-tab-mindmap"
-                aria-selected={visualTab === 'mindmap'}
-                aria-controls="visual-panel"
-                tabIndex={visualTab === 'mindmap' ? 0 : -1}
-                onKeyDown={onVisualTabKeyDown}
-                onClick={() => setVisualTab("mindmap")}
-                className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
-                  visualTab === "mindmap"
-                    ? "bg-indigo-600 text-white shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                <Workflow className="h-3.5 w-3.5" />
-                <span>Topic Mindmap</span>
-              </button>
               {TopicVisual3D && (
                 <button
                   type="button"
@@ -570,18 +517,6 @@ export function TopicVerticalNotes({
             />
           )}
 
-          {visualTab === "mindmap" && (
-            <TopicMindMapLazy
-              key={`mm-${visualKey}`}
-              subjectSlug={subjectSlug}
-              topicSlug={topicSlug}
-              topicTitle={topicTitle}
-              unitId={unitId}
-              classSlug={classSlug}
-              concepts={visualConcepts}
-            />
-          )}
-
           {visualTab === "3d" && TopicVisual3D && (
             <div key={`3d-${visualKey}`} className="rounded-2xl border border-border/60 bg-background/50 overflow-hidden min-h-[380px] flex flex-col justify-center">
               <TopicVisual3D />
@@ -594,16 +529,12 @@ export function TopicVerticalNotes({
             <span>
               {visualTab === "3d"
                 ? "Drag to rotate · Scroll to zoom · Pinch on touch"
-                : visualTab === "mindmap"
-                  ? "Tap a branch to trace its connections · press and hold a branch to fan out its full hierarchy"
-                  : "Hover or tap a labelled hotspot for exam notes · Walk through tours every part in order"}
+                : "Hover or tap a labelled hotspot for exam notes · Walk through tours every part in order"}
             </span>
             <span className="text-muted-foreground/70">
               {visualTab === "schematic"
                 ? "Interactive Schematic"
-                : visualTab === "mindmap"
-                  ? "Topic Mindmap"
-                  : "3D Visual"}
+                : "3D Visual"}
             </span>
           </div>
         </div>

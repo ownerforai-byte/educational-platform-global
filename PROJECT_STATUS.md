@@ -418,3 +418,25 @@ admin O(N) fixed) · Track 4 tests ✅ (frontend + backend suites in CI) · Trac
 - **Current suites on this tree:** backend 605/605 across 48 files; frontend 946/946
   across 110 files (`npm run test:affected`).
 
+---
+
+## NOTE PRESENTATION (2026-10-30 — supersedes duplicate-source UI notes above)
+
+- `/notes` is the single searchable archive. Secondary Ravikishan imports stay in the
+  corpus but do not become additional archive cards or raw source sections.
+- `TopicVerticalNotes` is the only theory surface. It selects the canonical manifest
+  entry by `duplicateType` and owns notes, formulas, examples, summaries, facts,
+  misconceptions, practice and MCQs. `ContentTabs` contains only non-overlapping
+  companion fields, Journal, and Resources & Docs.
+- `RavikishanTopicResources` is linked from Resources & Docs as a canonical-source
+  shortcut to `#topic-notes`; it does not fetch or render note bodies and exposes no
+  duplicate-type tabs. Subject hubs no longer repeat the imported-note index.
+- The historical warning that stale duplicate files may appear as extra tabs is
+  superseded: those payloads are never selected for presentation. Content-level
+  book-grade authoring remains tracked separately as Notes Rebuild in
+  `SYSTEM_WORK_TRACKER.md`.
+- Regression coverage includes the single archive, canonical source selection, exact
+  companion-tab registry, and approved-account browser access to `/notes`. The access
+  gate remains unchanged: visitors get the sign-in wall and approved sessions get the
+  archive.
+

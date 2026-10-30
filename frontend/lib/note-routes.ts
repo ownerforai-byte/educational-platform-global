@@ -63,6 +63,22 @@ export function noteRoute(note: ImportedNote): string {
   return `/${track}/${encodeURIComponent(note.subject)}`;
 }
 
+/**
+ * Select the single authoritative source from manifest variants. Type 1 is the
+ * primary note; equally ranked entries retain manifest order. Secondary files
+ * remain in the corpus, but readers never have to choose between duplicates.
+ */
+export function selectCanonicalNoteEntry<T extends object>(
+  entries: readonly T[],
+): T | undefined {
+  return entries.reduce<T | undefined>((canonical, entry) => {
+    if (!canonical) return entry;
+    const eDup = (entry as { duplicateType?: number }).duplicateType;
+    const cDup = (canonical as { duplicateType?: number }).duplicateType;
+    return (eDup ?? 1) < (cDup ?? 1) ? entry : canonical;
+  }, undefined);
+}
+
 /** Grouped variant used by listing pages that show one link per note group. */
 export function noteRoutes(notes: ImportedNote[]): Array<{ note: ImportedNote; href: string }> {
   return notes.map((note) => ({ note, href: noteRoute(note) }));

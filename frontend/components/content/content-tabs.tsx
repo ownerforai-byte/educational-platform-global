@@ -4,36 +4,20 @@ import type { ComponentType, ReactNode } from "react";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
-  AlertCircle,
-  AlertTriangle,
   ArrowRight,
   BookMarked,
-  BookOpen,
-  Brain,
-  Calculator,
-  CheckCircle2,
-  ClipboardList,
   Download,
   ExternalLink,
-  FileQuestion,
   FileText,
-  Globe2,
-  Lightbulb,
   Link2,
-  ListChecks,
   Loader2,
   NotebookPen,
-  PanelTop,
-  Pencil,
   Plus,
-  ScrollText,
-  StickyNote,
   Target,
   Trash2,
-  Zap,
 } from "lucide-react";
-import { RavikishanTopicResources } from "./ravikishan-topic-resources";
 import { ConceptFieldPanel, type RavikishanConceptField } from "./ravikishan-concept-panels";
+import { RavikishanTopicResources } from "./ravikishan-topic-resources";
 import { EmptyState } from "./empty-state";
 import { AnalyticalGeometryResources } from "./analytical-geometry-resources";
 import { LimitsContinuityResources } from "./limits-continuity-resources";
@@ -250,19 +234,13 @@ function renderUnitResources(
   );
 }
 
-// ── The tab registry — one tab per content "part" ──────────────────────────
-//
-// Owner request (2026-10-23): "in last of each notes of each chapter and topic
-// … currently there are only four which you have to add all diversities
-// including journal … formulas and journal are different tabs … create all
-// possible tabs which can be classified in the parts and the parts will be
-// tabs … they will be accessed with tier plan." So every part of a topic's
-// content (the concept-JSON fields, plus Notes / Journal / Resources) is its
-// own tab — never an endless column inside one tab — and each tab declares the
-// tier-plan rung that opens it (plan.md §2–§3). Restricted tabs stay visible
-// with muted tier labels; protected content remains inaccessible below its rung.
+// ── Companion tabs — only material not already presented above ─────────────
+// TopicVerticalNotes is the single home for theory, formulas, examples, key
+// points, summaries, facts, misconceptions, practice and MCQs. Do not add those
+// fields here again. These tabs are limited to distinct concept fields and
+// personal/document tools; each still declares its tier-plan rung.
 
-type TabKind = "notes" | "field" | "journal" | "resources";
+type TabKind = "field" | "journal" | "resources";
 
 type ContentTab = {
   id: string;
@@ -276,33 +254,11 @@ type ContentTab = {
   description: string;
 };
 
-function buildTabs(notesTier: AccessLevel): ContentTab[] {
+export function buildCompanionTabs(): ContentTab[] {
   return [
-    // ── Theory (Member rung) ──
-    { id: "notes", label: "Notes", icon: BookOpen, minTier: notesTier, kind: "notes", description: "The full theory notes for this topic." },
-    { id: "summary", label: "Summary", icon: BookMarked, minTier: "member", kind: "field", field: "summary", description: "The short recap of the whole topic." },
-    { id: "formulas", label: "Formulas", icon: Calculator, minTier: "member", kind: "field", field: "formulas", description: "Every formula of the topic." },
-    { id: "key-points", label: "Key Points", icon: CheckCircle2, minTier: "member", kind: "field", field: "keyPoints", description: "The points to remember." },
-    { id: "important-notes", label: "Important Notes", icon: StickyNote, minTier: "member", kind: "field", field: "importantNotes", description: "The notes the exam leans on." },
-    { id: "important-concepts", label: "Important Concepts", icon: Brain, minTier: "member", kind: "field", field: "importantConcepts", description: "The core concepts of the topic." },
-    { id: "important-statements", label: "Important Statements", icon: ScrollText, minTier: "member", kind: "field", field: "importantStatements", description: "Statements worth writing exactly." },
-    { id: "bounds", label: "Bounds & Limits", icon: Target, minTier: "member", kind: "field", field: "bounds", description: "Where each formula stops being valid." },
     { id: "related", label: "Related Topics", icon: Link2, minTier: "member", kind: "field", field: "related", description: "Topics that connect to this one." },
-
-    // ── Exam engine (Plus rung) ──
-    { id: "numericals", label: "Numericals", icon: Pencil, minTier: "plus", kind: "field", field: "numericals", description: "Drill problems for this topic." },
-    { id: "examples", label: "Worked Examples", icon: Lightbulb, minTier: "plus", kind: "field", field: "examples", description: "Solved examples, step by step." },
-    { id: "practice", label: "Practice (Solved)", icon: ClipboardList, minTier: "plus", kind: "field", field: "practice", description: "Solved practice problems." },
-    { id: "practice-questions", label: "Practice Qs", icon: FileQuestion, minTier: "plus", kind: "field", field: "practiceQuestions", description: "Practice questions to attempt yourself." },
-    { id: "important-tasks", label: "Important Tasks", icon: ListChecks, minTier: "plus", kind: "field", field: "importantTasks", description: "The tasks to finish before the exam." },
-    { id: "mcqs", label: "MCQ Bank", icon: PanelTop, minTier: "plus", kind: "field", field: "mcs", description: "Entrance-pattern MCQs with answers." },
-    { id: "exam-tricks", label: "Exam Short Tricks", icon: Zap, minTier: "plus", kind: "field", field: "examShortTricks", description: "10-second shortcuts for the exam hall." },
+    { id: "bounds", label: "Bounds & Limits", icon: Target, minTier: "member", kind: "field", field: "bounds", description: "Where each formula stops being valid." },
     { id: "exam-tips", label: "Exam Tips", icon: BookMarked, minTier: "plus", kind: "field", field: "examNotes", description: "How the exam asks — and how to answer." },
-    { id: "confusions", label: "Confusions & Traps", icon: AlertTriangle, minTier: "plus", kind: "field", field: "confusion", description: "The ❌→✅ misconceptions that cost marks." },
-    { id: "special-notes", label: "Special Notes", icon: AlertCircle, minTier: "plus", kind: "field", field: "specialNotes", description: "The special notes the syllabus keeps returning to." },
-    { id: "facts", label: "Universal Facts", icon: Globe2, minTier: "plus", kind: "field", field: "universalFacts", description: "High-yield facts that hold everywhere." },
-
-    // ── Personal + documents ──
     { id: "journal", label: "Journal", icon: NotebookPen, minTier: "plus", kind: "journal", description: "Your private study journal for this topic." },
     { id: "resources", label: "Resources & Docs", icon: FileText, minTier: "member", kind: "resources", description: "All documents, added PDFs and unit resources." },
   ];
@@ -555,17 +511,6 @@ function TabPanel({
   topicTitle: string;
   topicPath: string;
 }) {
-  if (tab.kind === "notes") {
-    return (
-      <RavikishanTopicResources
-        classSlug={classSlug}
-        subjectSlug={subjectSlug}
-        unitId={unitId}
-        topicSlug={topicSlug}
-      />
-    );
-  }
-
   if (tab.kind === "journal") {
     return <TopicJournalPanel topicTitle={topicTitle} topicPath={topicPath} />;
   }
@@ -573,6 +518,12 @@ function TabPanel({
   if (tab.kind === "resources") {
     return (
       <div className="space-y-4">
+        <RavikishanTopicResources
+          classSlug={classSlug}
+          subjectSlug={subjectSlug}
+          unitId={unitId}
+          topicSlug={topicSlug}
+        />
         <DocumentsAndPdfs subjectSlug={subjectSlug} />
         {renderResources(unitId, subjectSlug, topicSlug, topicTitle)}
       </div>
@@ -607,12 +558,9 @@ export function ContentTabs({
 
   const topicPath = getTopicPath(classSlug, subjectSlug, unitId, topicSlug);
 
-  // Tier-plan access (plan.md §2.1): Class 11 core notes open at Member,
-  // Class 12 at Plus.
-  const notesTier: AccessLevel = /class-12/.test(classSlug) ? "plus" : "member";
-  const tabs = useMemo(() => buildTabs(notesTier), [notesTier]);
+  const tabs = useMemo(() => buildCompanionTabs(), []);
 
-  const [activeTab, setActiveTab] = useState<string>("notes");
+  const [activeTab, setActiveTab] = useState<string>("related");
   const active = tabs.find((t) => t.id === activeTab) ?? tabs[0];
   const unlocked = hasLevel(user, active.minTier);
 
