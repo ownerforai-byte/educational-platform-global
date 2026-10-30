@@ -402,10 +402,10 @@ Store one card per topic at `reports/knowledge-validation/<class>/<subject>/<uni
 
 #### `biomolecules-and-cell-biology` — Biomolecules and Cell Biology (4 topics · 15h · since 2077 BS)
 
-- [ ] Biomolecules: Introduction and functions of carbohydrates, proteins, lipids, nucleic acids, minerals, enzymes and water
-- [ ] Cell: Introduction of cell, concepts of prokaryotic and eukaryotic cells
-- [ ] Detail structure of eukaryotic cells: cell wall, cell membrane, mitochondria, plastids, endoplasmic reticulum, golgi bodies, lysosomes, ribosomes, nucleus, chromosomes, cilia, flagella and cell inclusions
-- [ ] Cell division: Concept of cell cycle, types of cell division (amitosis, mitosis and meiosis) and significances
+- [!] Biomolecules: Introduction and functions of carbohydrates, proteins, lipids, nucleic acids, minerals, enzymes and water
+- [!] Cell: Introduction of cell, concepts of prokaryotic and eukaryotic cells
+- [!] Detail structure of eukaryotic cells: cell wall, cell membrane, mitochondria, plastids, endoplasmic reticulum, golgi bodies, lysosomes, ribosomes, nucleus, chromosomes, cilia, flagella and cell inclusions
+- [!] Cell division: Concept of cell cycle, types of cell division (amitosis, mitosis and meiosis) and significances
 
 #### `floral-diversity` — Floral Diversity (13 topics · 30h · since 2077 BS)
 

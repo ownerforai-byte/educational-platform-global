@@ -1,0 +1,131 @@
+{
+  "title": "Newton's law of cooling",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "newton-s-law-of-cooling",
+  "topicTitle": "Newton's law of cooling",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:14.971Z",
+  "notes": [
+    "# Newton's law of cooling\n\n## 1. Introduction\nPhysical picture of **Newton's law of cooling** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Quantity of Heat fill pass.\n\n## 2. Concepts and laws\n### Newton's law of cooling\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Newton's law of cooling — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Newton's law of cooling — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Newton's law of cooling — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Newton's law of cooling — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Newton's law of cooling",
+    "Practice previous year questions on Newton's law of cooling",
+    "Learn the derivations for Newton's law of cooling thoroughly",
+    "Review common mistakes related to Newton's law of cooling"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Newton's law of cooling formula",
+    "Trick 2: Elimination technique for Newton's law of cooling MCQs",
+    "Trick 3: Dimensional analysis shortcut for Newton's law of cooling",
+    "Trick 4: Memory aid for Newton's law of cooling formulas",
+    "Trick 5: Time-saving approach for Newton's law of cooling problems"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Newton's law of cooling.",
+    "Q3. Differentiate between various aspects of Newton's law of cooling.",
+    "Q4. Derive the key formula related to Newton's law of cooling.",
+    "Q5. What are the applications of Newton's law of cooling?",
+    "state + explain the main idea of \"Newton's law of cooling\" with one example.",
+    "compare \"Newton's law of cooling\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Newton's law of cooling\" and verify the answer is plausible."
+  ],
+  "practice": [
+    "A body at $80^\\circ\\text{C}$ cools in surroundings at $20^\\circ\\text{C}$. Using Newton's law, time to reach $50^\\circ\\text{C}$ is 10 min. How much time does Newton's law predict from $50^\\circ\\text{C}$ to $30^\\circ\\text{C}$? Realistically, which will be faster? [Solution: Newton's law: $T(t) = T_0 + (T_i-T_0)e^{-kt}$. $50 = 20 + 60e^{-10k} \\Rightarrow e^{-10k} = 0.5 \\Rightarrow k = 0.0693\\text{ min}^{-1}$. For $30^\\circ\\text{C}$: $30 = 20 + 60e^{-kt} \\Rightarrow e^{-kt} = 1/6 \\Rightarrow kt = \\ln 6 = 1.791 \\Rightarrow t = 25.8\\text{ min}$. Realistically, radiative cooling accelerates at higher $T$; actual time will be **shorter** than predicted for the $80\\to50$ step.]",
+    "A metal sphere (radius 2 cm, $K = 400\\text{ W/m·K}$, $c = 400\\text{ J/kg·K}$, $\\rho = 8000\\text{ kg/m}^3$) cools in still air ($h = 20\\text{ W/m}^2\\text{K}$). Check if lumped capacitance model (Newton's law) is valid. [Solution: $L_c = V/A = r/3 = 0.667\\text{ cm}$. $Bi = hL_c/K = 20 \\times 0.00667 / 400 = 0.00033 \\ll 1$. Lumped capacitance valid; Newton's law applies.]",
+    "A large concrete slab ($\\rho = 2300\\text{ kg/m}^3$, $c = 750\\text{ J/kg·K}$, $K = 1.7\\text{ W/m·K}$, thickness 30 cm) cools from $60^\\circ\\text{C}$ to $30^\\circ\\text{C}$ in still air ($h = 10\\text{ W/m}^2\\text{K}$). Can Newton's law be applied? [Solution: $L_c = d/2 = 0.15\\text{ m}$. $Bi = 10 \\times 0.15 / 1.7 = 0.88$. Since $Bi \\sim 1$, significant temperature gradient inside. Newton's law (lumped) gives only approximate results; Fourier conduction equation needed for accuracy.]",
+    "At what $\\Delta T$ does radiative cooling deviate by more than 20% from Newton's linear law? [Solution: Stefan-Boltzmann: $P \\propto T^4 - T_0^4 = T_0^4[((T-T_0)/T_0+1)^4 - 1]$. Newton: $P_N \\propto (T-T_0)$. Ratio $R = [(1+x)^4 - 1]/(4x)$ where $x = \\Delta T/T_0$. $R = 1 + x + x^2/3 + x^3/16 + ...$. For $R > 1.2$, need $x + x^2/3 > 0.2 \\Rightarrow x \\approx 0.15$. For $T_0 = 300\\text{ K}$, $\\Delta T > 45\\text{ K} \\approx 45^\\circ\\text{C}$.]",
+    "State three limitations of Newton's law of cooling and explain each with a physical reason. [Solution: (1) Small $\\Delta T$: Radiation follows $T^4-T_0^4$, linear only for small differences. (2) Constant $T_0$: If surroundings change, differential equation changes; $k$ not constant. (3) Lumped capacitance: $Bi \\ll 1$ required; for large bodies, internal thermal gradients make single-$T$ model invalid. (4) No phase change: Latent heat violates single-$c$ assumption. (5) No internal heat generation: Adds to energy balance.]",
+    "A cup of hot coffee ($\\sim 80^\\circ\\text{C}$) in a room ($\\sim 25^\\circ\\text{C}$) cools. Which stages follow Newton's law approximately? [Solution: $80\\to70$: $\\Delta T = 55^\\circ\\text{C}$, some radiation error. $70\\to50$: $\\Delta T = 25\\to45^\\circ\\text{C}$, good approximation. $50\\to30$: $\\Delta T = 5\\to25^\\circ\\circ\\text{C}$, excellent. Evaporation dominates throughout, especially near boiling. Newton's law only a rough guide for coffee.]",
+    "A body cools from $100^\\circ\\text{C}$ to $50^\\circ\\text{C}$ in still air ($T_0 = 20^\\circ\\text{C}$). How does the actual cooling time compare to Newton's law prediction? [Solution: Newton's law (linear): $T(t) = 20 + 80e^{-kt}$. If $t_{100\\to50} = 30\\text{ min}$, then $k = 0.0231\\text{ min}^{-1}$. Stefan-Boltzmann: $\\frac{dT}{dt} \\propto T^4 - T_0^4$. At $T=100^\\circ\\text{C}=373\\text{ K}$, rate $\\propto 373^4 - 293^4 = 1.936\\times10^{10} - 0.736\\times10^{10} = 1.2\\times10^{10}$. At mean $T = 75^\\circ\\text{C} = 348\\text{ K}$, rate $\\propto 348^4 - 293^4 = 1.465 - 0.736 = 0.729\\times10^{10}$. Newton's rate at mean $\\Delta T = 55^\\circ\\text{C}$: normalized to 1.2 at $\\Delta T = 80$. At $\\Delta T = 55$: $55/80 = 0.6875$ of max rate. Actual mean rate $= 0.729$. So radiative rate is ~6% higher. Actual time **slightly shorter** than predicted.]",
+    "Why is Newton's law not applicable to cooling of a lake overnight? [Solution: Lake has enormous thermal capacity, significant solar absorption during day, evaporation, wind mixing, density anomaly of water ($4^\\circ\\text{C}$ maximum density), possible freezing. Temperature gradient from surface to bottom. Not a lumped system; also, $T_0$ (air temperature) changes significantly overnight.]",
+    "The Biot number for a thermometer (glass bulb, radius 2 mm, $K = 1\\text{ W/m·K}$, $h = 50\\text{ W/m}^2\\text{K}$) is very small. What does this imply about its time constant? [Solution: $Bi = hL_c/K = 50 \\times 0.002 / 1 = 0.1$. Small Bi → lumped capacitance valid. Time constant $\\tau = mc/(hA)$. For fast response, we want small $\\tau$ → small thermal mass $mc$, large surface $A$ → small bulb. Indeed, thermometer bulbs are small for quick response.]",
+    "In a Newton's law of cooling experiment, the student uses a temperature range of $80^\\circ\\text{C}$ to $40^\\circ\\text{C}$ (surroundings $25^\\circ\\text{C}$). Is this valid? What range would you recommend? [Solution: At $T=80^\\circ\\text{C}$, $\\Delta T = 55^\\circ\\text{C}$; at $T=40^\\circ\\text{C}$, $\\Delta T = 15^\\circ\\text{C}$. Mean $\\Delta T = 35^\\circ\\text{C}$ — borderline. Mean actual radiative rate vs linear: ~15-20% error. Recommended range: $50\\to35^\\circ\\text{C}$ ($\\Delta T$ from $25$ to $10$, mean $17.5^\\circ\\text{C}$ — within $30^\\circ\\text{C}$ limit with minimal error).",
+    "A copper calorimeter weighs 60 g. Specific heat of copper $= 390\\text{ J/kg·K}$. Find its water equivalent. If filled with 150 g of water, what is total effective thermal capacity? [Solution: $W_{cal} = m_{cal}c_{cal}/c_w = 0.06 \\times 390 / 4186 = 0.00559\\text{ kg} = 5.59\\text{ g}$. Total $C_{eff} = m_w c_w + W c_w = (150 + 5.59) \\times 4.186 = 651.3\\text{ J/°C}$ or $C_{eff} = m_l c_l + W_{cal}c_w = 150\\times4.186 + 5.59\\times4.186 = 651.3\\text{ J/°C}$.]",
+    "A calorimeter of water equivalent 12 g contains 80 g of water at $20^\\circ\\text{C}$. A hot metal piece (mass 50 g, $c = 400\\text{ J/kg·K}$) at $100^\\circ\\text{C}$ is dropped in. Find final equilibrium temperature. [Solution: Heat lost by metal = heat gained by water + calorimeter. $50\\times0.4\\times(100-T) = (80+12)\\times4.2\\times(T-20)$. $20(100-T) = 92\\times4.2\\times(T-20)$. $2000-20T = 386.4T - 7728$. $406.4T = 9728 \\Rightarrow T = 23.94^\\circ\\text{C}$.]",
+    "Two calorimeters A and B have water equivalents $W_A = 8\\text{ g}$ and $W_B = 15\\text{ g}$. Both contain 100 g of water at $25^\\circ\\text{C}$. Equal masses (50 g) of a hot substance ($c = 2000\\text{ J/kg·K}$) at $100^\\circ\\text{C}$ are added to each. Will final temperatures differ? [Solution: A: effective mass $= 100+8 = 108\\text{ g}$. B: $100+15 = 115\\text{ g}$. $50\\times2(100-T_A) = 108\\times4.2\\times(T_A-25) \\Rightarrow T_A = 36.5^\\circ\\text{C}$. B: $100-T_B = 115\\times2.1\\times(T_B-25)/50 \\Rightarrow T_B = 35.8^\\circ\\circ\\text{C}$. Yes, B has slightly lower final $T$ because larger $W$ absorbs more heat.]",
+    "How would you determine the water equivalent of a calorimeter experimentally using the method of cooling? [Solution: (1) Fill calorimeter with mass $m_1$ of water, cool from $T_1$ to $T_2$, record time $t_1$. (2) Repeat with mass $m_2$ of water, same $T_1\\to T_2$, record $t_2$. (3) Method of cooling: $(m_1c_w + Wc_w)/t_1 = (m_2c_w + Wc_w)/t_2$. (4) Solve: $W = c_w(m_2 t_1 - m_1 t_2)/(t_1 - t_2)$.]",
+    "A calorimeter of mass 100 g and $c = 900\\text{ J/kg·K}$ is used. Calculate $W$. Compare with a copper calorimeter of same mass ($c = 390\\text{ J/kg·K}$). [Solution: Aluminum: $W_{Al} = 100\\times900/4186 = 21.5\\text{ g}$. Copper: $W_{Cu} = 100\\times390/4186 = 9.3\\text{ g}$. Same mass, aluminum has $W$ 2.3× larger because $c_{Al} > c_{Cu}$.]",
+    "In a method of cooling experiment, the formula $\\frac{(m_1 + W)c_w}{t_1} = \\frac{(m_2 + W)c_w}{t_2}$ is used. If $m_1 = 100\\text{ g}$, $m_2 = 120\\text{ g}$, $t_1 = 5\\text{ min}$, $t_2 = 4\\text{ min}$, find $W$. [Solution: $(100+W)/5 = (120+W)/4 \\Rightarrow 4(100+W) = 5(120+W) \\Rightarrow 400 + 4W = 600 + 5W \\Rightarrow W = -200\\text{ g}$. Negative $W$ is physically impossible — indicates experimental error, non-Newtonian cooling, or wrong assumptions. Recheck measurements.]",
+    "Steam at $100^\\circ\\text{C}$ is passed into a calorimeter of water equivalent 15 g containing 200 g of water at $20^\\circ\\text{C}$. The mass of condensed steam is 5 g. Find final temperature. (Latent heat of steam $L = 540\\text{ cal/g}$.) [Solution: Heat from condensing steam: $5 \\times 540 = 2700\\text{ cal}$. Heat from cooling condensed water ($100\\to T$): $5\\times(100-T)\\text{ cal}$. Heat gained by water + calorimeter: $(200+15)(T-20)\\text{ cal}$. $2700 + 5(100-T) = 215(T-20) \\Rightarrow 2700 + 500 - 5T = 215T - 4300 \\Rightarrow 220T = 7500 \\Rightarrow T = 34.1^\\circ\\text{C}$.]",
+    "A calorimeter with stirrer ($W = 10\\text{ g}$) contains 150 g of water at $15^\\circ\\text{C}$. When 100 g of a substance at $80^\\circ\\text{C}$ ($c = 800\\text{ J/kg·K}$) is added, equilibrium is $25^\\circ\\text{C}$. Find $W$ again using this data. [Solution: Heat lost by substance: $0.1 \\times 800 \\times 55 = 4400\\text{ J}$. Heat gained by water+calorimeter: $(0.15\\times4200 + W\\times4200)(10) = (630 + 4200W) \\times 10 = 6300 + 42000W\\text{ J}$. $4400 = 6300 + 42000W \\Rightarrow W = -0.0452\\text{ kg} = -45.2\\text{ g}$. Negative! Suggests heat loss to surroundings, incomplete mixing, or wrong $c$.]",
+    "State the physical meaning of water equivalent. A calorimeter of mass 80 g has water equivalent 7.5 g. Find specific heat of calorimeter material. [Solution: Physical meaning: The mass of water that would absorb the same heat as the calorimeter for the same temperature rise. $W = m_{cal}c_{cal}/c_w \\Rightarrow 7.5 = 80 \\times c_{cal} / 4.2 \\Rightarrow c_{cal} = 7.5 \\times 4.2 / 80 = 0.394\\text{ J/g·K} = 394\\text{ J/kg·K}$. Material is likely copper or brass.]",
+    "Two calorimeters of water equivalents $W_1 = 10\\text{ g}$ and $W_2 = 20\\text{ g}$ contain equal masses of water. The same hot solid is added to each. Show that the temperature rise is inversely proportional to $(m + W)$. [Solution: Heat lost by solid $Q = m_s c_s (T_s - T)$. Heat gained: $Q = (m_w + W)c_w (T - T_i)$. $T - T_i = \\frac{m_s c_s}{c_w(m_w + W)}(T_s - T)$. Since $m_s, c_s, T_s, T$ are same for both, $(T - T_i)(m_w + W) = \\text{constant}$. Thus $(T - T_i) \\propto 1/(m_w + W)$. Larger $W$ → smaller $\\Delta T$.]",
+    "In a method of cooling experiment, 100 g of water in a calorimeter (water equivalent 10 g) takes 4 minutes to cool from $60^\\circ\\text{C}$ to $50^\\circ\\text{C}$. When replaced with 120 g of an unknown liquid, the time is 3 minutes. Find specific heat of liquid. [Solution: $(m_w c_w + W c_w)/t_w = (m_l c_l + W c_w)/t_l$. $(100\\times4.2 + 10\\times4.2)/4 = (120\\times c_l + 10\\times4.2)/3 \\Rightarrow 115.5 = 40c_l + 14 \\Rightarrow c_l = 2.5375\\text{ J/g·K} = 2538\\text{ J/kg·K}$]",
+    "A student performs the method of cooling experiment. Water (mass 80 g, $c_w = 4.2\\text{ J/g·K}$) cools from $65^\\circ\\text{C}$ to $55^\\circ\\text{C}$ in 180 s. The same calorimeter with 100 g of oil cools through the same range in 120 s. Water equivalent of calorimeter is 5 g. Find $c$ of oil. [Solution: $(80\\times4.2 + 5\\times4.2)/180 = (100\\times c + 5\\times4.2)/120 \\Rightarrow 1.9833 = (100c + 21)/120 \\Rightarrow 238 = 100c + 21 \\Rightarrow c = 2.17\\text{ J/g·K} = 2170\\text{ J/kg·K}$]",
+    "Equal volumes (100 mL) of water and an unknown liquid are used. Density of water $= 1\\text{ g/mL}$, density of liquid $= 0.8\\text{ g/mL}$. Water cools $60\\to50^\\circ\\text{C}$ in 5 min; liquid in 3 min. Water equivalent of calorimeter $= 8\\text{ g}$. Find $c$ of liquid. [Solution: $m_w = 100\\text{ g}$, $m_l = 80\\text{ g}$. $(100\\times4.2 + 8\\times4.2)/5 = (80\\times c + 8\\times4.2)/3 \\Rightarrow 90.72 = (80c + 33.6)/3 \\Rightarrow 272.16 = 80c + 33.6 \\Rightarrow c = 2.982\\text{ J/g·K} = 2982\\text{ J/kg·K}$]",
+    "Why must the calorimeter be the same for both liquids? [Solution: Cooling constant $k = hA/(mc)$ depends on surface area $A$, heat transfer coefficient $h$, and total thermal capacity $mc$. Same calorimeter $\\to$ same $A$, same $h$ (same surface), same surroundings $\\to$ same $k$. Different calorimeters $\\to$ different $k$ $\\to$ formula invalid.]",
+    "A student forgets to stir the liquid during cooling. How does this affect the result? [Solution: Without stirring, temperature gradient develops — surface cools faster than bulk. Measured $T$ (thermometer at center) lags behind surface $T$. Cooling appears slower $\\to$ measured $t$ larger $\\to$ calculated $c$ larger than true value. Also, cooling curve deviates from exponential.]",
+    "In an experiment, the cooling curve ($T$ vs $t$) for water is plotted. The tangent at $55^\\circ\\text{C}$ gives slope $-0.5^\\circ\\text{C/min}$. For the same calorimeter with unknown liquid, tangent at $55^\\circ\\text{C}$ gives slope $-0.8^\\circ\\text{C/min}$. Masses: water 100 g, liquid 120 g. Water equivalent 5 g. Find $c$ of liquid. [Solution: At same $T$, $(m_w c_w + W c_w)(dT/dt)_w = (m_l c_l + W c_w)(dT/dt)_l$. $(100\\times4.2 + 5\\times4.2)(0.5) = (120 c_l + 5\\times4.2)(0.8) \\Rightarrow 220.5 = 96 c_l + 16.8 \\Rightarrow c_l = 2.122\\text{ J/g·K}$]",
+    "Explain how to determine the water equivalent $W$ of a calorimeter experimentally. [Solution: (1) Cool calorimeter with known mass of water $m_1$ through range $\\Delta T$, measure $t_1$. (2) Cool calorimeter with different mass of water $m_2$ through same $\\Delta T$, measure $t_2$. (3) $(m_1 c_w + W c_w)/t_1 = (m_2 c_w + W c_w)/t_2$. Solve for $W$. Or: cool empty calorimeter (mass $m_{cal}$, known $c_{cal}$) — not practical as $c_{cal}$ may be unknown.]",
+    "The temperature of surroundings $T_0 = 25^\\circ\\text{C}$. A liquid cools from $70^\\circ\\text{C}$ to $60^\\circ\\text{C}$ in 2 min. Is Newton's law applicable? [Solution: Average $T - T_0 = 65 - 25 = 40^\\circ\\text{C} > 30^\\circ\\text{C}$. Newton's law **not** strictly applicable. Radiation $\\propto T^4 - T_0^4$ is non-linear. Error $\\sim 10\text{--}15\\%$. Better range: $55\\to45^\\circ\\text{C}$ (avg $T-T_0 = 25^\\circ\\text{C}$).]",
+    "Two liquids A and B have cooling times $t_A = 4\\text{ min}$, $t_B = 3\\text{ min}$ for same $\\Delta T$. Same masses, same calorimeter. If $c_A = 3000\\text{ J/kg·K}$, find $c_B$. [Solution: $m c_A / t_A = m c_B / t_B \\Rightarrow c_B = c_A (t_B/t_A) = 3000 \\times (3/4) = 2250\\text{ J/kg·K}$]",
+    "Derive the formula for specific heat by method of cooling starting from $dQ/dt = -kA(T-T_0)$ and $dQ = mc dT$. [Solution: $mc \\frac{dT}{dt} = -kA(T-T_0)$. For same calorimeter, $kA$ same. At same $T$: $m_1c_1 (dT/dt)_1 = m_2c_2 (dT/dt)_2$. Average over $\\Delta T$: $m_1c_1 \\frac{\\Delta T}{t_1} = m_2c_2 \\frac{\\Delta T}{t_2} \\Rightarrow c_2 = \\frac{m_1c_1}{m_2}\\frac{t_2}{t_1}$.]",
+    "A body cools from 80°C to 50°C in 3 min in a 20°C room. How long to cool from 50°C to 35°C? $K' = \\frac{1}{3}\\ln\\frac{60}{30} = \\frac{\\ln 2}{3} = 0.231\\text{ min}^{-1}$. Time 50→35: $t = \\frac{1}{K'}\\ln\\frac{30}{15} = \\frac{\\ln 2}{0.231} = 3\\text{ min}$. Same time because the ratio of excesses is the same (2:1).",
+    "A cup of tea at 95°C cools to 75°C in 4 min in a 20°C room. How long until it reaches 40°C (drinkable)? $K' = \\frac{1}{4}\\ln\\frac{75}{55} = \\frac{\\ln 1.364}{4} = 0.0783\\text{ min}^{-1}$. Time to 40°C: $t = \\frac{1}{0.0783}\\ln\\frac{75}{20} = 12.77 \\times 1.322 = 16.9\\text{ min}$ from start.",
+    "Why does adding cold milk to coffee keep it warmer longer? Without milk: coffee at 85°C, excess = 65°C. With milk added immediately: coffee at 70°C, excess = 50°C. The rate of cooling is proportional to excess, so the milk-added coffee cools at a slower RATE from the start, and stays above any given temperature longer.",
+    "A forge-cooled CPU has $k = 0.5\\text{ W/K}$ and dissipates 65 W. If ambient is 25°C, what is the steady-state temperature? At equilibrium, heat generated = heat lost: $P = k(T_{eq} - T_0)$. $65 = 0.5(T_{eq} - 25)$. $T_{eq} = 25 + 130 = 155°C$. This is dangerously hot — a larger heatsink (larger $k$) is needed.",
+    "A metal sphere and a metal cube of the same material and same mass are heated to the same temperature and allowed to cool. Which cools faster? The sphere has the smallest surface area for a given volume. The cube has more surface area. Since $K' = k/(mc)$ and $k \\propto$ surface area, the cube cools faster (larger $A$ → larger $k$).",
+    "In a calorimetry experiment, a hot metal sample is dropped into water. Heat loss to the room causes the measured equilibrium temperature to be lower than the true value. How does Newton's law help correct this? By recording the temperature before and after mixing, you can estimate the heat lost: $Q_{lost} = \\int k(\\theta - \\theta_0)dt \\approx k(\\theta_{avg} - \\theta_0)\\Delta t$. Adding this to the energy balance gives a more accurate specific heat.",
+    "one worked example for \"Newton's law of cooling\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Newton's law of cooling is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Newton's law of cooling, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Newton's law of cooling?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Newton's law of cooling is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Newton's law of cooling\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "topicSlug": "percentage-composition-from-molecular-formula",
   "topicTitle": "Percentage composition from molecular formula",
   "relevance": 100,
-  "source": "generated",
+  "source": "authored-v2",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
     "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
@@ -14,7 +14,13 @@
     "Atoms: basic unit of elements.",
     "Molecules: combinations of atoms.",
     "Mixtures: physical combinations, separable.",
-    "Pure substances: elements and compounds."
+    "Pure substances: elements and compounds.",
+    "# Percentage composition from molecular formula\n\n## 1. Introduction\nA fertilizer bag shouts \"46-0-0\", a medicine strip lists milligrams per tablet, a steel specification demands 0.2% carbon — all are **percentage composition**: the mass share of each element in a compound. It is the most commercial calculation in chemistry, deciding what farmers pay for, what patients swallow, and what factories must guarantee.\n\nThe formula is one line — (element mass ÷ molar mass) × 100 — but it runs both directions: forward from formula to percentages (is this urea really 46% N?), and backward from percentage analysis to empirical and molecular formulae (what is this unknown?). This topic closes the foundation unit by turning every earlier concept into numbers.\n\n**What you will learn:** (i) percentage composition from formula; (ii) the urea 46% derivation; (iii) composition → empirical formula; (iv) composition + molar mass → molecular formula; (v) applications in fertilizers, drugs and industry.\n\n**Learning outcomes.** You can: compute any % composition; prove urea's 46% N; derive empirical and molecular formulae from analysis data; and audit a label claim.",
+    "## 2. Concepts and definitions\n\n### Percentage composition (forward direction)\n1. **Definition and formula.** % of element E = (total mass of E in one mole ÷ molar mass) × 100. The percentages sum to 100 — the built-in answer check.\n2. **Worked core.** H₂SO₄ (M_r 98): %H = 2/98×100 = **2.04%**; %S = 32/98×100 = **32.65%**; %O = 64/98×100 = **65.31%**. Sum: 100.00 ✓.\n3. **Urea proof.** CO(NH₂)₂, M_r = 60: %N = 28/60×100 = **46.67%** — the \"46-0-0\" bag, derived not memorised. %C = 20%, %O = 26.67%, %H = 6.67%.\n4. **Assumptions box.** Formula assumed correct and pure; percentages are mass/mass (w/w); analytical data assumed dry and impurity-free unless stated.\n\n### From analysis back to formula (reverse direction)\n1. **Empirical from %.** % → grams (per 100 g) → moles (÷ A_r) → simplest ratio (÷ smallest, clear decimals by ×2/×3). Example 40% C, 6.7% H, 53.3% O → 3.33 : 6.7 : 3.33 → **CH₂O**.\n2. **Molecular from empirical.** Need M_r (given, or from vapour density / mass spec): n = M_r/E_r; molecular = n × empirical. Glucose: E_r 30, M_r 180 → n = 6 → **C₆H₁₂O₆**.\n3. **Vapour-density bridge.** M_r = 2 × vapour density (H₂ = 2 scale) — the classic route by which NEB supplies M_r: VD 90 → M_r 180.\n4. **Honesty check.** Computed % must reproduce the analysis within experimental error; if not, the assumed formula is wrong — composition audits formulae, not just labels.",
+    "## 3. Reaction and equation block — composition inside equations\n1. **Combustion analysis.** C_xH_y + (x + y/4)O₂ → xCO₂ + (y/2)H₂O: weighing CO₂ and H₂O gives %C and %H directly (C from CO₂: mass × 12/44; H from H₂O: mass × 2/18) — the laboratory source of % data.\n2. **Urea manufacture (conditions).** 2NH₃ + CO₂ →(150–200°C, high pressure) CO(NH₂)₂ + H₂O: the equation behind the 46% bag — conditions decide the economics.\n3. **Lime audit.** CaCO₃ → CaO + CO₂: %Ca in CaCO₃ = 40/100 = **40%**; quicklime purity checked the same way — composition as quality control.\n4. **Reading rule.** Every stoichiometric mass in these equations is a % composition in disguise (56/100 CaO from CaCO₃ = 56% yield logic).\n\n## 4. Figures, bars and the analyst's bench\n- **D1 (authored SVG)** — Composition bars (Fig. 4.1): urea vs ammonium nitrate vs H₂SO₄ element shares.\n- **D2 (authored SVG)** — Analysis-to-formula flow (Fig. 4.2): % → empirical → molecular decision path.\n- **D3 (curated)** — Analytical balance, labelled (Fig. 4.3): where % data begins.\n- **D4 (curated)** — Mole of carbon-12 reference (Fig. 4.4): 12 g ↔ N_A atoms bridge.",
+    "Fig. 4.1 — Percentage-composition bars (authored SVG).\n\n```svg Percentage composition bars\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Percentage composition bars</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<g font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\">\n<text x=\"450\" y=\"50\" fill=\"#0f172a\">% composition: each bar sums to 100</text>\n</g>\n<g>\n<text x=\"140\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#0f172a\">Urea (60)</text>\n<rect x=\"250\" y=\"120\" width=\"280\" height=\"44\" fill=\"#4ade80\" stroke=\"#14532d\" stroke-width=\"2\"/>\n<rect x=\"530\" y=\"120\" width=\"200\" height=\"44\" fill=\"#93c5fd\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<rect x=\"730\" y=\"120\" width=\"40\" height=\"44\" fill=\"#fca5a5\" stroke=\"#991b1b\" stroke-width=\"2\"/>\n<rect x=\"770\" y=\"120\" width=\"40\" height=\"44\" fill=\"#fde68a\" stroke=\"#92400e\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"190\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">N 46.7% · O 26.7% · H 6.7% · C 20%</text>\n<text x=\"140\" y=\"280\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#0f172a\">H₂SO₄ (98)</text>\n<rect x=\"250\" y=\"250\" width=\"326\" height=\"44\" fill=\"#93c5fd\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<rect x=\"576\" y=\"250\" width=\"196\" height=\"44\" fill=\"#fbbf24\" stroke=\"#92400e\" stroke-width=\"2\"/>\n<rect x=\"772\" y=\"250\" width=\"38\" height=\"44\" fill=\"#4ade80\" stroke=\"#14532d\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"320\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">O 65.3% · S 32.7% · H 2.0%</text>\n<text x=\"140\" y=\"410\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#0f172a\">CaCO₃ (100)</text>\n<rect x=\"250\" y=\"380\" width=\"240\" height=\"44\" fill=\"#93c5fd\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<rect x=\"490\" y=\"380\" width=\"240\" height=\"44\" fill=\"#fdba74\" stroke=\"#9a3412\" stroke-width=\"2\"/>\n<rect x=\"730\" y=\"380\" width=\"80\" height=\"44\" fill=\"#fde68a\" stroke=\"#92400e\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"450\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">O 48% · Ca 40% · C 12%</text>\n</g>\n<g font-size=\"14\" text-anchor=\"middle\" fill=\"#0f172a\">\n<rect x=\"180\" y=\"500\" width=\"22\" height=\"22\" fill=\"#4ade80\" stroke=\"#14532d\"/><text x=\"215\" y=\"518\" text-anchor=\"start\">N</text>\n<rect x=\"270\" y=\"500\" width=\"22\" height=\"22\" fill=\"#93c5fd\" stroke=\"#1d4ed8\"/><text x=\"305\" y=\"518\" text-anchor=\"start\">O</text>\n<rect x=\"360\" y=\"500\" width=\"22\" height=\"22\" fill=\"#fca5a5\" stroke=\"#991b1b\"/><text x=\"395\" y=\"518\" text-anchor=\"start\">H</text>\n<rect x=\"450\" y=\"500\" width=\"22\" height=\"22\" fill=\"#fde68a\" stroke=\"#92400e\"/><text x=\"485\" y=\"518\" text-anchor=\"start\">C</text>\n<rect x=\"530\" y=\"500\" width=\"22\" height=\"22\" fill=\"#fbbf24\" stroke=\"#92400e\"/><text x=\"565\" y=\"518\" text-anchor=\"start\">S</text>\n<rect x=\"610\" y=\"500\" width=\"22\" height=\"22\" fill=\"#fdba74\" stroke=\"#9a3412\"/><text x=\"645\" y=\"518\" text-anchor=\"start\">Ca</text>\n</g>\n<text x=\"450\" y=\"580\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Segment length = mass share — read the bag, the tablet and the steel spec off bars</text>\n</svg>\n```\n\nFig. 4.2 — Analysis-to-formula decision flow (authored SVG).\n\n```svg Analysis to formula flow\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Analysis to formula flow</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<g text-anchor=\"middle\" font-size=\"15\">\n<rect x=\"300\" y=\"40\" width=\"300\" height=\"64\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"66\" font-weight=\"bold\" fill=\"#1e3a8a\">% ANALYSIS DATA</text>\n<text x=\"450\" y=\"90\" font-size=\"13\" fill=\"#475569\">e.g. C 40 · H 6.7 · O 53.3</text>\n<rect x=\"300\" y=\"150\" width=\"300\" height=\"64\" rx=\"10\" fill=\"#fefce8\" stroke=\"#a16207\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"176\" font-weight=\"bold\" fill=\"#713f12\">÷ Aᵣ → MOLES</text>\n<text x=\"450\" y=\"200\" font-size=\"13\" fill=\"#475569\">3.33 : 6.7 : 3.33</text>\n<rect x=\"300\" y=\"260\" width=\"300\" height=\"64\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"286\" font-weight=\"bold\" fill=\"#14532d\">÷ SMALLEST → RATIO</text>\n<text x=\"450\" y=\"310\" font-size=\"13\" fill=\"#475569\">1 : 2 : 1 → CH₂O</text>\n<rect x=\"120\" y=\"390\" width=\"300\" height=\"80\" rx=\"10\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"3\"/>\n<text x=\"270\" y=\"416\" font-weight=\"bold\" fill=\"#14532d\">EMPIRICAL DONE</text>\n<text x=\"270\" y=\"442\" font-size=\"13\" fill=\"#14532d\">salts stop here (NaCl)</text>\n<rect x=\"480\" y=\"390\" width=\"300\" height=\"80\" rx=\"10\" fill=\"#fae8ff\" stroke=\"#a21caf\" stroke-width=\"2\"/>\n<text x=\"630\" y=\"416\" font-weight=\"bold\" fill=\"#701a75\">NEED Mᵣ? → n = Mᵣ/Eᵣ</text>\n<text x=\"630\" y=\"442\" font-size=\"13\" fill=\"#701a75\">180/30 = 6 → C₆H₁₂O₆</text>\n</g>\n<g stroke=\"#94a3b8\" stroke-width=\"3\">\n<line x1=\"450\" y1=\"104\" x2=\"450\" y2=\"150\"/><line x1=\"450\" y1=\"214\" x2=\"450\" y2=\"260\"/>\n<line x1=\"330\" y1=\"324\" x2=\"270\" y2=\"390\"/><line x1=\"570\" y1=\"324\" x2=\"630\" y2=\"390\"/>\n</g>\n<text x=\"450\" y=\"530\" text-anchor=\"middle\" font-size=\"15\" fill=\"#0f172a\">Mᵣ from vapour density (×2), mass spec, or the question stem — never assumed</text>\n<text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Clear decimals by ×2/×3 before rounding — 1.5 : 1 becomes 3 : 2, not 2 : 1</text>\n</svg>\n```\n\nFig. 4.3 — Analytical balance, labelled (curated external).\n\n![Labelled photograph of an electronic analytical balance](https://commons.wikimedia.org/wiki/Special:FilePath/Notated%20Analytical%20Balance.jpg)\n*Fig. 4.3 — Electronic analytical balance: percentage analysis begins at ±0.1 mg weighing. Source: Wikimedia Commons, \"Notated Analytical Balance.jpg\" by Chemdiagrams; license CC BY 4.0. File page: https://commons.wikimedia.org/wiki/File:Notated_Analytical_Balance.jpg*\n\nFig. 4.4 — Mole of carbon-12 reference (curated external).\n\n![Diagram depicting one mole based on the carbon-12 reference](https://commons.wikimedia.org/wiki/Special:FilePath/Mole%20carbon-12%20diagram.svg)\n*Fig. 4.4 — The carbon-12 reference: 12 g of C-12 holds N_A atoms — the bridge from weighing (Fig. 4.3) to counting. Source: Wikimedia Commons, \"Mole carbon-12 diagram.svg\" by VectorVoyager; license CC BY-SA 4.0 (note: drawn under the pre-2019 carbon-12 definition; since 2019 the mole is defined by exact N_A, with 12 g of C-12 exact-consistent to all practical purposes). File page: https://commons.wikimedia.org/wiki/File:Mole_carbon-12_diagram.svg*",
+    "## 5. Worked numericals (Given → Formula → Substitution → Answer with unit)\n1. **H₂SO₄ shares.** M_r 98: %H = 2/98×100 = **2.04%**; %S = 32/98×100 = **32.65%**; %O = 64/98×100 = **65.31%**; sum 100.00 ✓.\n2. **Urea proof.** M_r 60: %N = 28/60×100 = **46.67%** ≈ 46 — the bag verified; %C 20%, %O 26.67%, %H 6.67%.\n3. **Ammonium nitrate check.** NH₄NO₃, M_r 80: %N = 28/80×100 = **35%** — poorer than urea per kilogram, the comparison farmers pay for.\n4. **Empirical from analysis.** 40% C, 6.7% H, 53.3% O → 40/12 = 3.33; 6.7/1 = 6.7; 53.3/16 = 3.33 → ÷3.33 → 1:2:1 → **CH₂O**.\n5. **Molecular with M_r.** Above + M_r 180 → E_r 30 → n = 6 → **C₆H₁₂O₆**. With M_r 90 → n = 3 → **C₃H₆O₃** (lactic acid shares the ratio — empirical ≠ identity).\n6. **Combustion analysis.** 4.4 g organic → 8.8 g CO₂ + 3.6 g H₂O: C = 8.8×12/44 = 2.4 g (**54.5%**); H = 3.6×2/18 = 0.4 g (**9.1%**); O by difference 36.4% → C:H:O = 4.54:9.1:2.27 → ÷2.27 → 2:4:1 → **C₂H₄O**.\n\n## 6. Key terms, worked angles and traps\n- **% composition** = (element mass per mole ÷ M_r) × 100; bars must sum to 100.\n- **Urea 46.67%** — 28/60; the number behind \"46-0-0\".\n- **Combustion factors** — C: ×12/44 from CO₂; H: ×2/18 from H₂O; O by difference.\n- **n = M_r/E_r** — needs a measured M_r (vapour density ×2, mass spec); never assumed.\n- **Traps:** % is w/w mass share, not mole share · O by difference assumes C,H,O only · clearing decimals by rounding instead of ×2/×3 · same empirical (CH₂O) hides different molecules.",
+    "## 7. Exam Zone\n**NEB map.** % composition computations are guaranteed numericals; empirical-from-% is the standard long derivation; molecular via vapour density bridges units. Urea 46%, H₂SO₄ shares and combustion-analysis chains recur yearly.\n\n**Short tricks.** \"Sum to 100 or start over\". \"12/44 for C, 2/18 for H, O by difference\". \"M_r = 2×VD\". \"1:2:1 smells like carbohydrate; verify with M_r\".\n\n**Sources:** NEB/CDC Grade 11 Chemistry (foundation chapter); OpenStax *Chemistry 2e* ch. 3 (formula mass and composition); SI Brochure 9th ed. (mole definition note for Fig. 4.4).\n\n## 8. Summary and self-check\n% composition = element mass ÷ molar mass × 100, summing to 100: H₂SO₄ (2.04/32.65/65.31), urea (N 46.67 — the bag proved), CaCO₃ (Ca 40). Backward: % → grams → moles → ratio → empirical (CH₂O); with M_r (often 2×VD): n = M_r/E_r → molecular (C₆H₁₂O₆). Combustion analysis (12/44, 2/18, O by difference) supplies % data; the balance (Fig. 4.3) weighs it and the mole (Fig. 4.4) counts it. Figures: composition bars, analysis flow, balance photo, mole reference.\n\n**Self-check.** (1) Prove urea's 46% and compare with NH₄NO₃'s 35%. (2) 8.8 g CO₂ from 4.4 g sample → %C? (3) From C₂H₄O data plus M_r 88, give the molecular formula. (4) Why must O come \"by difference\"? (5) Audit: a \"40% Ca\" limestone claim — show the true value.\n\n**Common confusions.** Mass % ≠ mole % (convert via A_r first) · empirical gives ratio, never identity (CH₂O ×n family) · vapour density needs the H₂ = 2 scale stated · balance precision (±0.1 mg) decides analysis quality."
   ],
   "confusion": [
     "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
@@ -52,7 +58,9 @@
     "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
     "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
     "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
+    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
+    "Mass % and mole % differ — convert with A_r before comparing.",
+    "O-by-difference assumes only C, H, O present; N/S need separate estimation."
   ],
   "bounds": [
     "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
@@ -100,7 +108,10 @@
   ],
   "examples": [
     "Water: H₂O (compound)",
-    "Air: mixture of N₂, O₂, etc."
+    "Air: mixture of N₂, O₂, etc.",
+    "'46-0-0' bag verified: 28/60 = 46.67% N.",
+    "Limestone audit: 40% Ca expected; less means impurity.",
+    "Lactic acid shares glucose's ratio (CH₂O) — ratio is not identity."
   ],
   "practiceQuestions": [
     "Practice drawing Lewis structures for ionic and covalent compounds.",
@@ -136,7 +147,14 @@
     "Practice solving gas law problems combining multiple variables.",
     "Practice calculating bond energy from reaction enthalpies.",
     "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
+    "SHORT (2 marks): Give the % composition formula and the sum rule.",
+    "SHORT (3 marks): Prove urea is 46.67% nitrogen.",
+    "SHORT (3 marks): Derive CH₂O from 40% C, 6.7% H, 53.3% O data.",
+    "SHORT (2 marks): How is M_r obtained from vapour density?",
+    "SHORT (3 marks): From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H.",
+    "LONG (5 marks): Explain percentage composition with the H₂SO₄ and urea computations.",
+    "LONG (5 marks): Derive empirical and molecular formulae from analysis data with the combustion-analysis route."
   ],
   "formulas": [
     "n = m / M",
@@ -146,12 +164,21 @@
   "numericals": [
     "Use  n = m / M  — pick reasonable values, solve, and check the units.",
     "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
-    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
+    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units.",
+    "H₂SO₄: 2.04 / 32.65 / 65.31 (sum 100).",
+    "Urea: N 46.67, C 20, O 26.67, H 6.67.",
+    "NH₄NO₃: N 35% — poorer per kg than urea.",
+    "40/6.7/53.3 → CH₂O; M_r 180 → C₆H₁₂O₆.",
+    "4.4 g → 8.8 g CO₂ + 3.6 g H₂O: C 54.5%, H 9.1% → C₂H₄O.",
+    "CaCO₃: Ca 40% — audit any limestone claim."
   ],
   "keyPoints": [
-    "• Percentage composition from molecular formula"
+    "• Percentage composition from molecular formula",
+    "%E = (mass of E per mole ÷ M_r) × 100; bars sum to 100.",
+    "Urea N 46.67%; combustion factors 12/44 (C), 2/18 (H), O by difference.",
+    "Empirical from %; molecular = n × empirical via M_r (often 2×VD)."
   ],
-  "summary": "Stoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.\n\nChemical equilibrium: Dynamic equilibrium has equal forward and backward rates; Kc/Kp are temperature-dependent; Le Chatelier's principle predicts response to stress.\n\nThermodynamics: First law (energy conservation); enthalpy changes in reactions; Gibbs free energy determines spontaneity; entropy of universe always increases.\n\nOxidation-reduction: Redox involves electron transfer; oxidation numbers track electron flow; electrochemical cells convert chemical to electrical energy; Faraday's laws quantify electrolysis.\n\nStates of matter: Gas laws relate P, V, T, n; kinetic theory explains gas behavior; real gases deviate due to intermolecular forces and molecular volume.\n\nSolutions: Molarity and molality express concentration; colligative properties depend on particle number; Raoult's law describes vapor pressure of ideal solutions.\n\nChemical bonding: Ionic bonds form from electron transfer; covalent bonds from sharing; VSEPR predicts molecular geometry; hybridization explains bonding orbitals.\n\nOrganic chemistry basics: Carbon's tetravalency and catenation enable millions of compounds; functional groups determine reactivity; IUPAC nomenclature provides systematic naming.\n\nHydrocarbons: Alkanes (CnH2n+2) are saturated; alkenes (CnH2n) have C=C; alkynes (CnH2n-2) have C≡C; aromatic compounds based on benzene ring.\n\nPeriodic table: Elements arranged by atomic number; periodic trends in radius, ionization energy, electronegativity; s, p, d, f blocks based on orbital type.\n\nApplied chemistry: Petrochemical industry, polymer science, green chemistry principles; importance of sustainable chemical manufacturing for environmental protection.",
+  "summary": "Percentage composition = element mass ÷ molar mass × 100, always summing to 100: H₂SO₄ (2.04/32.65/65.31), urea N 46.67% (the bag proved), NH₄NO₃ N 35%, CaCO₃ Ca 40%. Backward: % → grams → moles → ratio → empirical (CH₂O); with M_r (often 2× vapour density): n = M_r/E_r → molecular (C₆H₁₂O₆; M_r 90 → C₃H₆O₃). Combustion analysis gives %C (×12/44) and %H (×2/18), O by difference. Figures: composition bars, analysis-to-formula flow, analytical balance photo, carbon-12 mole reference.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Percentage composition from molecular formula\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -184,5 +211,117 @@
     "component": "MatterClassifier",
     "desc": "Interactive matter classification tool"
   },
-  "visualType": "percentage-composition"
+  "visualType": "percentage-composition",
+  "mcs": [
+    {
+      "question": "%N in urea (M_r 60) is about",
+      "options": [
+        "23%",
+        "35%",
+        "46.7%",
+        "60%"
+      ],
+      "answer": "C",
+      "explanation": "28/60 × 100 = 46.67%."
+    },
+    {
+      "question": "%S in H₂SO₄ (M_r 98) is about",
+      "options": [
+        "2%",
+        "16.3%",
+        "32.7%",
+        "65.3%"
+      ],
+      "answer": "C",
+      "explanation": "32/98 × 100 = 32.65%."
+    },
+    {
+      "question": "M_r from vapour density 90 is",
+      "options": [
+        "90",
+        "180",
+        "45",
+        "360"
+      ],
+      "answer": "B",
+      "explanation": "M_r = 2 × VD."
+    },
+    {
+      "question": "In combustion analysis, carbon mass from CO₂ uses factor",
+      "options": [
+        "2/18",
+        "12/44",
+        "44/12",
+        "18/2"
+      ],
+      "answer": "B",
+      "explanation": "C fraction of CO₂: 12/44."
+    },
+    {
+      "question": "Oxygen in organic analysis is found",
+      "options": [
+        "Directly weighed",
+        "By difference",
+        "From N₂ gas",
+        "By titration"
+      ],
+      "answer": "B",
+      "explanation": "%O = 100 − (%C + %H + others)."
+    },
+    {
+      "question": "CH₂O with M_r 90 is",
+      "options": [
+        "Glucose",
+        "C₃H₆O₃",
+        "Formaldehyde",
+        "Acetic acid"
+      ],
+      "answer": "B",
+      "explanation": "n = 90/30 = 3."
+    },
+    {
+      "question": "%Ca in CaCO₃ (M_r 100) is",
+      "options": [
+        "12%",
+        "20%",
+        "40%",
+        "48%"
+      ],
+      "answer": "C",
+      "explanation": "40/100 × 100."
+    },
+    {
+      "question": "Percentages must sum to",
+      "options": [
+        "50",
+        "100",
+        "1000",
+        "M_r"
+      ],
+      "answer": "B",
+      "explanation": "Built-in answer check."
+    },
+    {
+      "question": "NH₄NO₃ %N vs urea %N:",
+      "options": [
+        "Higher",
+        "Equal",
+        "Lower (35 vs 46.7)",
+        "Zero"
+      ],
+      "answer": "C",
+      "explanation": "28/80 = 35% < 46.67%."
+    },
+    {
+      "question": "NaCl composition work stops at",
+      "options": [
+        "Molecular formula",
+        "Empirical formula",
+        "Structural formula",
+        "No formula"
+      ],
+      "answer": "B",
+      "explanation": "Ionic lattices have simplest ratios only."
+    }
+  ]
 }

@@ -10,7 +10,13 @@
     "Thin lenses in contact have additive powers. A +4 D lens and −1.5 D lens make Peq=+2.5 D, so feq=1/2.5=0.40 m.",
     "Power is not magnification: focal length determines power, while image size and orientation also depend on object distance through the lens equation.",
     "For separated lenses the equivalent power includes separation; the simple algebraic sum applies only when thin lenses are in contact or separation is negligible.",
-    "The lens-maker formula uses the relative index. In water the factor (μ_glass/μ_water − 1) is smaller than (μ_glass − 1) in air, so the same glass lens has a longer focal length and a smaller power. A glass lens does not keep its air power when it is submerged."
+    "The lens-maker formula uses the relative index. In water the factor (μ_glass/μ_water − 1) is smaller than (μ_glass − 1) in air, so the same glass lens has a longer focal length and a smaller power. A glass lens does not keep its air power when it is submerged.",
+    "# Power of a lens\n\n## 1. Introduction\nPhysical picture of **Power of a lens** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Lenses fill pass.\n\n## 2. Concepts and laws\n### Power of a lens\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Power of a lens — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Power of a lens — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Power of a lens — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Power of a lens — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "Using centimetres directly produces a power 100 times too large.",
@@ -198,5 +204,6 @@
       ],
       "answer": "About 1.7 D in water."
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

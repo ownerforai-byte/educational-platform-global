@@ -360,7 +360,13 @@
     "**Relation with the moduli:** σ links Young's modulus E, bulk modulus B and shear modulus G: E = 2G(1 + σ) and E = 3B(1 − 2σ). From these: 1/σ can be used to check material consistency, and σ = (3B − E)/(6B).",
     "**Connection to volume change:** the fractional volume change under uniaxial stretch is ΔV/V = ε(1 − 2σ). For a perfectly incompressible material (σ = 0.5), ΔV/V = 0 — the volume is unchanged.",
     "**Limits on σ:** the thermodynamic bound is −1 < σ < 0.5. Nearly all common materials have 0 < σ < 0.5. Materials with negative Poisson's ratio (auxetics) actually thicken when stretched — rare and exotic.",
-    "**Applications:** σ matters in designing cables, stretching films, and geological materials; cork (σ≈0) is chosen for bottle stoppers because it doesn't change width when squeezed, so it seals without expanding."
+    "**Applications:** σ matters in designing cables, stretching films, and geological materials; cork (σ≈0) is chosen for bottle stoppers because it doesn't change width when squeezed, so it seals without expanding.",
+    "# Poisson's ratio\n\n## 1. Introduction\nPhysical picture of **Poisson's ratio** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Elasticity fill pass.\n\n## 2. Concepts and laws\n### Poisson's ratio\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Poisson's ratio — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Poisson's ratio — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Poisson's ratio — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Poisson's ratio — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "❌ 'Poisson's ratio has units of strain.' ✅ It is a RATIO of two strains — dimensionless.",
@@ -516,5 +522,6 @@
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

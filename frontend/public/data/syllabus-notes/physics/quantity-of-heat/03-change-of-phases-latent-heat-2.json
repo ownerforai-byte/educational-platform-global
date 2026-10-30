@@ -22,7 +22,13 @@
     "**Power and heat rate:** If heat is supplied at a constant rate (power $P$), then $H = Pt$. So $Pt = mc\\Delta\\theta$, which gives $\\Delta\\theta/t = P/(mc)$. A 1500 W kettle heats 1 kg of water at $\\Delta\\theta/t = 1500/(1 \\times 4200) = 0.357\\text{ °C/s}$.",
     "**Change of Phases and Latent Heat:** This topic covers the fundamental concepts of change of phases and latent heat in the physics curriculum.",
     "Understanding change of phases and latent heat is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to change of phases and latent heat should be memorized and practiced regularly."
+    "Key definitions and theorems related to change of phases and latent heat should be memorized and practiced regularly.",
+    "# Change of phases: latent heat\n\n## 1. Introduction\nPhysical picture of **Change of phases** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Quantity of Heat fill pass.\n\n## 2. Concepts and laws\n### Change of phases: latent heat\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Change of phases — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Change of phases — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Change of phases — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Change of phases — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "❌ Heat and temperature are the same thing. ✅ Temperature is the average molecular kinetic energy (intensive). Heat is the total energy transferred (extensive). A spark at 2000°C has tiny heat content; a bathtub at 40°C has huge heat content.",
@@ -157,5 +163,6 @@
       "answer": "C"
     }
   ],
-  "summary": "Change of Phases and Latent Heat is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics."
+  "summary": "Change of Phases and Latent Heat is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "source": "skeleton-v2"
 }

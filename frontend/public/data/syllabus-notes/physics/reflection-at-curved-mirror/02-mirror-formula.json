@@ -10,7 +10,13 @@
     "Using Cartesian distances positive to the right, a concave mirror has f=−15 cm. For u=−30 cm, 1/v=1/f−1/u=−1/15+1/30=−1/30, so v=−30 cm and m=−v/u=−1.",
     "Construct an image with a ray parallel to the principal axis (reflected through F for a concave mirror) and a ray through C (retraces itself). Their intersection locates a real image; backward extensions locate a virtual image.",
     "Spherical aberration occurs when marginal rays focus differently from paraxial rays. A smaller aperture reduces it by excluding marginal rays.",
-    "When an object is closer to a concave mirror than the focus, the formula gives a positive v. In the Cartesian convention that positive image distance is behind the mirror, and the image is virtual, upright and enlarged. The same formula covers both the real and the virtual cases. The sign does the work."
+    "When an object is closer to a concave mirror than the focus, the formula gives a positive v. In the Cartesian convention that positive image distance is behind the mirror, and the image is virtual, upright and enlarged. The same formula covers both the real and the virtual cases. The sign does the work.",
+    "# Mirror formula\n\n## 1. Introduction\nPhysical picture of **Mirror formula** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Reflection at Curved Mirror fill pass.\n\n## 2. Concepts and laws\n### Mirror formula\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Mirror formula — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Mirror formula — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Mirror formula — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Mirror formula — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "Do not substitute the thin-lens equation for the mirror equation.",
@@ -193,5 +199,6 @@
       ],
       "answer": "v = +15 cm, a virtual upright image, 2.5 times as tall."
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

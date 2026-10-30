@@ -1,0 +1,41 @@
+{
+  "title": "Atomic mass; isotopes",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "atomic-mass-isotopes",
+  "topicTitle": "Atomic mass; isotopes",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:15.303Z",
+  "notes": [
+    "# Atomic mass; isotopes\n\n## 1. Introduction\nPhysical picture of **Atomic mass; isotopes** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Nuclear Physics fill pass.\n\n## 2. Concepts and laws\n### Atomic mass\n### isotopes\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Atomic mass; isotopes — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Atomic mass; isotopes — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Atomic mass; isotopes — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Atomic mass; isotopes — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Atomic mass; isotopes\" with one example.",
+    "compare \"Atomic mass\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Atomic mass; isotopes\" and verify the answer is plausible."
+  ],
+  "practice": [
+    "Problem: Chlorine has two isotopes: $^{35}\\\text{Cl}$ (75.78%, exact mass $34.96885\\\\\\\\,\\\text{u}$) and $^{37}\\\text{Cl}$ (24.22%, exact mass $36.96590\\\\\\\\,\\\text{u}$). Calculate the standard atomic weight of chlorine in u. [Solution: $\bar{A} = 0.7578 \\\times 34.96885 + 0.2422 \\\times 36.96590 = 26.495 + 8.953 = 35.448 \\\\\\\\approx 35.45\\\\\\\\,\\\text{u}$, matching the periodic table value.]",
+    "Problem: The mass of a $^{4}\\\text{He}$ nucleus is $4.002603\\\\\\\\,\\\text{u}$. Given $m_p = 1.007276\\\\\\\\,\\\text{u}$ and $m_n = 1.008665\\\\\\\\,\\\text{u}$, find the mass defect and binding energy in MeV. [Solution: $\\\\\\Delta m = 2(1.007276) + 2(1.008665) - 4.002603 = 4.031882 - 4.002603 = 0.029279\\\\\\\\,\\\text{u}$; $BE = 0.029279 \\\times 931.494 \\\\\\\\approx 27.27\\\\\\\\,\\\text{MeV}$; $BE/A = 27.27/4 \\\\\\\\approx 6.82\\\\\\\\,\\\text{MeV/nucleon}$.]",
+    "Problem: A $^{238}\\\text{U}$ sample contains $2.5\\\\\\\\,\\\text{mg}$ of uranium. How many $^{238}\\\text{U}$ atoms are present? (Molar mass $\\\\\\approx 238\\\\\\\\,\\\text{g/mol}$.) [Solution: $n = 2.5\\\times 10^{-3}\\\\\\\\,\\\text{g} / 238\\\\\\\\,\\\text{g/mol} = 1.050 \\\times 10^{-5}\\\\\\\\,\\\text{mol}$; $N = 1.050\\\times 10^{-5} \\\times 6.022\\\times 10^{23} \\\\\\\\approx 6.32\\\times 10^{18}$ atoms.]",
+    "Problem: A $^{14}\\\text{C}$ sample decays to $12.5\\\\\\\\%$ of its original activity in $17{,}190\\\\\\\\,\\\text{years}$. Calculate the half-life of $^{14}\\\text{C}$ and verify it against the known value of $5730\\\\\\\\,\\\text{years}$. [Solution: $12.5\\\\\\\\% = (1/2)^3$, so 3 half-lives have elapsed. $T_{1/2} = 17{,}190 / 3 = 5730\\\\\\\\,\\\text{years}$, which exactly matches the known value.]",
+    "Problem: For the reaction $^{14}\\\text{N} + n \\\rightarrow ^{14}\\\text{C} + p$, use masses $m(^{14}\\\text{N}) = 14.003074\\\\\\\\,\\\text{u}$, $m(^{14}\\\text{C}) = 14.003242\\\\\\\\,\\\text{u}$, $m_n = 1.008665\\\\\\\\,\\\text{u}$, $m_p = 1.007276\\\\\\\\,\\\text{u}$ to determine if the reaction is exothermic or endothermic, and calculate the Q-value. [Solution: Initial mass $= 14.003074 + 1.008665 = 15.011739\\\\\\\\,\\\text{u}$; final mass $= 14.003242 + 1.007276 = 15.010518\\\\\\\\,\\\text{u}$; $\\\\\\Delta m = 15.011739 - 15.010518 = 0.001221\\\\\\\\,\\\text{u} > 0$, so energy is released. $Q = 0.001221 \\\times 931.494 \\\\\\\\approx 1.14\\\\\\\\,\\\text{MeV}$; exothermic.]",
+    "one worked example for \"Atomic mass; isotopes\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Atomic mass; isotopes\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

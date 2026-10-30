@@ -1,0 +1,99 @@
+{
+  "title": "Conditional probability and multiplication theorem",
+  "unitSlug": "probability",
+  "topicSlug": "conditional-probability-and-multiplication-theorem",
+  "topicTitle": "Conditional probability and multiplication theorem",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:00.992Z",
+  "notes": [
+    "# Conditional probability and multiplication theorem\n\n## 1. Introduction and motivation\nWhat the tool **Conditional probability and multiplication theorem** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Probability fill pass.\n\n## 2. Definitions and theorems\n### Conditional probability and multiplication theorem\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
+    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
+    "## 4. Methods and standard forms\n**Table 2 — Counts and distributions**\n\n| Case | Rule or formula | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 5. Figures and graphs\n- **F1** — Conditional probability and multiplication theorem — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Conditional probability and multiplication theorem — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Conditional probability and multiplication theorem — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
+    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
+    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Conditional Probability",
+    "Practice previous year questions on Conditional Probability",
+    "Learn the derivations for Conditional Probability thoroughly",
+    "Review common mistakes related to Conditional Probability"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Conditional Probability formula",
+    "Trick 2: Elimination technique for Conditional Probability MCQs",
+    "Trick 3: Dimensional analysis shortcut for Conditional Probability",
+    "Trick 4: Memory aid for Conditional Probability formulas",
+    "Trick 5: Time-saving approach for Conditional Probability problems"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Conditional Probability.",
+    "Q3. Differentiate between various aspects of Conditional Probability.",
+    "Q4. Derive the key formula related to Conditional Probability.",
+    "Q5. What are the applications of Conditional Probability?",
+    "state + explain the main idea of \"Conditional probability and multiplication theorem\" with one example.",
+    "compare \"Conditional probability\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Conditional probability and multiplication theorem\" and verify the answer is plausible."
+  ],
+  "practice": [
+    "Solve at least 5 problems on conditional probability from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Conditional probability and multiplication theorem\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Conditional Probability is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Conditional Probability, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Conditional Probability?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Conditional Probability is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Conditional probability and multiplication theorem\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

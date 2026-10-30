@@ -4,14 +4,23 @@
   "topicSlug": "importance-and-scope-of-chemistry",
   "topicTitle": "Importance and scope of chemistry",
   "relevance": 100,
-  "source": "generated",
+  "source": "authored-v2",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
     "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
     "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
+    "# Importance and scope of chemistry\n\n## 1. Introduction\nIf the last topic defined chemistry, this one measures its footprint — and the footprint covers the whole economy. The rice that feeds Nepal grew on urea chemistry; the house that shelters it stands on cement chemistry; the child reading this was likely vaccinated, diagnosed or dosed through medicinal chemistry; the phone in her pocket charges a lithium-ion cell. **Importance** is chemistry's value to life and livelihood; **scope** is the range of fields it reaches and the careers it opens.\n\nNepal's numbers tell it plainly: cement plants at Hetauda and Udayapur calcine limestone by the kiln-reaction; NARC field stations test fertilizer doses plot by plot; paper, soap, brewing, biogas and hydropower chemicals employ thousands. The same science also warns — plastics in rivers, pesticide residues, air pollution — which is why green chemistry closes this topic.\n\n**What you will learn:** (i) chemistry in agriculture, industry, medicine and daily life; (ii) chemistry and the environment (both directions); (iii) the scope: pure-to-applied spectrum and careers; (iv) Nepal-specific examples for every sector.\n\n**Learning outcomes.** You can: name two chemical inputs/outputs per sector with a Nepal example; explain fertilizer, drug and cement chemistry in one line each; and argue both the promise and the pollution of chemistry.",
+    "## 2. Concepts and definitions\n\n### Chemistry in agriculture\n1. **Fertilizers.** Urea CO(NH₂)₂ (46% N), DAP (N + P), muriate of potash (K) replace the N-P-K crops remove; NARC trials fix doses per crop and soil — yield chemistry, plot by plot.\n2. **Pesticides and protection.** Insecticides, fungicides, herbicides guard the harvest; the same molecules demand waiting periods and protective gear — benefit and hazard in one bottle.\n3. **Soil chemistry.** pH testing decides lime vs gypsum amendment; saline soils are reclaimed by chemistry before a seed is sown.\n4. **Animal husbandry.** Mineral mixture for dairy cattle, silage fermentation for winter fodder — applied biochemistry in the shed.\n\n### Chemistry in industry\n1. **Cement.** CaCO₃ → CaO + CO₂ (calcination, ~1400°C), then clinker + gypsum → cement; Hetauda/Udayapur kilns run this equation at industrial scale.\n2. **Glass, paper, soap, textiles.** Sand + soda → glass; bamboo/sabai grass → paper pulp; oil + NaOH → soap; dyeing/finishing chemistry colours the garment sector.\n3. **Metals and fuels.** Ore → metal (extraction chemistry, next unit's metallurgy); petroleum refining → fuels, plastics, fertilisers — one barrel, a hundred products.\n4. **Assumptions box.** Industrial equations assume continuous feed, stated T/P/catalyst, and purity specs — classroom equations omit the engineering margins.\n\n### Chemistry in medicine and daily life\n1. **Drugs.** Antibiotics (penicillin blocks wall-building), antimalarials (artemisinin), ORS salts, vaccines — each a molecule with a tested dose.\n2. **Diagnostics.** Blood-glucose strips (enzyme electrodes), pregnancy kits (antibody chemistry), X-ray contrast media — analysis at the bedside.\n3. **Kitchen and home.** Fermentation (gundruk, curd, *jaad*), baking (NaHCO₃ → CO₂ lift), cleaning (surfactants), water treatment (chlorination, alum) — a household runs dozens of reactions daily.\n4. **Scope and careers.** Pure (research, teaching) → applied (QC chemist, pharmacist, agronomist, environmental analyst, forensic chemist) — the spectrum Table 1 maps.",
+    "## 3. Reaction and equation block — sector equations with conditions\n1. **Fertilizer (urea hydrolysis in soil).** CO(NH₂)₂ + H₂O →(urease enzyme) 2NH₃ + CO₂; ammonia → ammonium plants absorb. Condition: soil moisture + urease — why urea is broadcast before rain, not onto dry dust.\n2. **Cement (calcination).** CaCO₃(s) →(Δ ~1400°C kiln) CaO(s) + CO₂(g). Condition: rotary-kiln heat; the CO₂ is the industry's carbon footprint — green-chemistry problem statement included.\n3. **Soap (saponification).** Oil/fat + NaOH →(warm, stir) soap + glycerol. Condition: exact alkali dose — excess burns skin, deficit leaves grease.\n4. **Quantitative reading.** Each equation doubles as a mass budget (next topics' stoichiometry): 100 kg CaCO₃ → 56 kg CaO + 44 kg CO₂ — industry plans in these ratios.\n\n## 4. Figures, sectors and the green balance\n- **D1 (authored SVG)** — Applications wheel (Fig. 2.1): five sectors around chemistry.\n- **D2 (authored SVG)** — Kitchen-to-kiln flow (Fig. 2.2): everyday products traced to reactions.\n- **D3 (curated)** — Granular urea applied by spreader (Fig. 2.3): agriculture's chemistry.\n- **D4 (curated)** — Periodic table scope-map (Fig. 2.4): the 118-element territory chemistry covers.",
+    "Fig. 2.1 — Chemistry's applications wheel (authored SVG).\n\n```svg Chemistry applications wheel\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Chemistry applications wheel</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<ellipse cx=\"450\" cy=\"300\" rx=\"120\" ry=\"55\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"3\"/>\n<text x=\"450\" y=\"293\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"bold\" fill=\"#713f12\">CHEMISTRY</text>\n<text x=\"450\" y=\"320\" text-anchor=\"middle\" font-size=\"14\" fill=\"#713f12\">value × reach</text>\n<g font-size=\"16\" text-anchor=\"middle\">\n<rect x=\"330\" y=\"40\" width=\"240\" height=\"62\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"64\" font-weight=\"bold\" fill=\"#14532d\">AGRICULTURE</text><text x=\"450\" y=\"86\" font-size=\"13\" fill=\"#475569\">urea · pesticides · soil pH</text>\n<rect x=\"620\" y=\"150\" width=\"240\" height=\"62\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<text x=\"740\" y=\"174\" font-weight=\"bold\" fill=\"#1e3a8a\">INDUSTRY</text><text x=\"740\" y=\"196\" font-size=\"13\" fill=\"#475569\">cement · soap · metals</text>\n<rect x=\"620\" y=\"390\" width=\"240\" height=\"62\" rx=\"10\" fill=\"#fae8ff\" stroke=\"#a21caf\" stroke-width=\"2\"/>\n<text x=\"740\" y=\"414\" font-weight=\"bold\" fill=\"#701a75\">MEDICINE</text><text x=\"740\" y=\"436\" font-size=\"13\" fill=\"#475569\">drugs · ORS · diagnostics</text>\n<rect x=\"330\" y=\"500\" width=\"240\" height=\"62\" rx=\"10\" fill=\"#ffedd5\" stroke=\"#c2410c\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"524\" font-weight=\"bold\" fill=\"#7c2d12\">DAILY LIFE</text><text x=\"450\" y=\"546\" font-size=\"13\" fill=\"#475569\">food · cleaning · water</text>\n<rect x=\"40\" y=\"390\" width=\"240\" height=\"62\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/>\n<text x=\"160\" y=\"414\" font-weight=\"bold\" fill=\"#0c4a6e\">ENVIRONMENT</text><text x=\"160\" y=\"436\" font-size=\"13\" fill=\"#475569\">pollution ⇄ green fixes</text>\n<rect x=\"40\" y=\"150\" width=\"240\" height=\"62\" rx=\"10\" fill=\"#fef9c3\" stroke=\"#a16207\" stroke-width=\"2\"/>\n<text x=\"160\" y=\"174\" font-weight=\"bold\" fill=\"#713f12\">CAREERS</text><text x=\"160\" y=\"196\" font-size=\"13\" fill=\"#475569\">QC · pharma · forensic</text>\n</g>\n<g stroke=\"#94a3b8\" stroke-width=\"2\">\n<line x1=\"450\" y1=\"245\" x2=\"450\" y2=\"105\"/><line x1=\"520\" y1=\"265\" x2=\"630\" y2=\"185\"/>\n<line x1=\"520\" y1=\"340\" x2=\"630\" y2=\"415\"/><line x1=\"450\" y1=\"355\" x2=\"450\" y2=\"498\"/>\n<line x1=\"380\" y1=\"340\" x2=\"270\" y2=\"415\"/><line x1=\"380\" y1=\"265\" x2=\"270\" y2=\"185\"/>\n</g>\n<text x=\"450\" y=\"610\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Every spoke: two inputs, one Nepal example — the exam's favourite frame</text>\n</svg>\n```\n\nFig. 2.2 — Kitchen-to-kiln flow (authored SVG).\n\n```svg Everyday products traced to reactions\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Everyday products to reactions</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<g font-size=\"15\" text-anchor=\"middle\">\n<rect x=\"40\" y=\"90\" width=\"240\" height=\"90\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"160\" y=\"120\" font-weight=\"bold\" fill=\"#14532d\">Biogas flame</text>\n<text x=\"160\" y=\"145\" fill=\"#475569\">CH₄ + 2O₂ → CO₂ + H₂O</text>\n<rect x=\"330\" y=\"90\" width=\"240\" height=\"90\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"120\" font-weight=\"bold\" fill=\"#1e3a8a\">Soap bar</text>\n<text x=\"450\" y=\"145\" fill=\"#475569\">oil + NaOH → soap</text>\n<rect x=\"620\" y=\"90\" width=\"240\" height=\"90\" rx=\"10\" fill=\"#fef9c3\" stroke=\"#a16207\" stroke-width=\"2\"/>\n<text x=\"740\" y=\"120\" font-weight=\"bold\" fill=\"#713f12\">Cement bag</text>\n<text x=\"740\" y=\"145\" fill=\"#475569\">CaCO₃ → CaO (1400°C)</text>\n<rect x=\"40\" y=\"280\" width=\"240\" height=\"90\" rx=\"10\" fill=\"#fae8ff\" stroke=\"#a21caf\" stroke-width=\"2\"/>\n<text x=\"160\" y=\"310\" font-weight=\"bold\" fill=\"#701a75\">ORS sachet</text>\n<text x=\"160\" y=\"335\" fill=\"#475569\">salts + glucose → rescue</text>\n<rect x=\"330\" y=\"280\" width=\"240\" height=\"90\" rx=\"10\" fill=\"#ffedd5\" stroke=\"#c2410c\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"310\" font-weight=\"bold\" fill=\"#7c2d12\">Urea granule</text>\n<text x=\"450\" y=\"335\" fill=\"#475569\">→ NH₃ → crop protein</text>\n<rect x=\"620\" y=\"280\" width=\"240\" height=\"90\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/>\n<text x=\"740\" y=\"310\" font-weight=\"bold\" fill=\"#0c4a6e\">Clean water</text>\n<text x=\"740\" y=\"335\" fill=\"#475569\">alum + chlorine dose</text>\n</g>\n<text x=\"450\" y=\"450\" text-anchor=\"middle\" font-size=\"16\" fill=\"#0f172a\">Six products, six equations — chemistry is the ingredient list of modern life</text>\n<text x=\"450\" y=\"500\" text-anchor=\"middle\" font-size=\"15\" fill=\"#7f1d1d\">Same science, second column: plastics in rivers · pesticide residue · kiln CO₂</text>\n<text x=\"450\" y=\"535\" text-anchor=\"middle\" font-size=\"15\" fill=\"#14532d\">Green answer: biogas over firewood · IPM over spray calendars · refill over sachet</text>\n<text x=\"450\" y=\"590\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Importance earns marks; the green balance earns the argument question</text>\n</svg>\n```\n\nFig. 2.3 — Granular urea applied to crop (curated external).\n\n![Tractor-mounted spreader applying granular urea to an oilseed crop](https://commons.wikimedia.org/wiki/Special:FilePath/Granular%20Urea%20application%20-%20geograph.org.uk%20-%201219037.jpg)\n*Fig. 2.3 — Granular urea (46% N) spread on crop — agriculture's leading chemical input. Source: Wikimedia Commons, photo by Michael Trolove via Geograph; license CC BY-SA 2.0. File page: https://commons.wikimedia.org/wiki/File:Granular_Urea_application_-_geograph.org.uk_-_1219037.jpg*\n\nFig. 2.4 — Periodic table: the territory map of chemistry (curated external).\n\n![Simple English periodic table chart of all elements](https://commons.wikimedia.org/wiki/Special:FilePath/Simple%20Periodic%20Table%20Chart-en.svg)\n*Fig. 2.4 — The 118-element scope of chemistry in one chart. Source: Wikimedia Commons, \"Simple Periodic Table Chart-en.svg\" by Offnfopt; license CC0 1.0 Universal. File page: https://commons.wikimedia.org/wiki/File:Simple_Periodic_Table_Chart-en.svg*",
+    "## 5. Worked examples and applications\n1. **Urea dose.** A NARC trial recommends 100 kg urea/ha for wheat: 100 × 0.46 = 46 kg nitrogen per hectare — percentage composition (next topic) deciding the harvest.\n2. **Cement budget.** 100 kg limestone → 56 kg quicklime + 44 kg CO₂: the kiln's mass budget and its carbon bill in one ratio.\n3. **ORS rescue.** One sachet in a litre of clean water replaces the salts and glucose diarrhoea removes — formulation chemistry saving children daily.\n4. **Soap choice.** Hard water (Ca²⁺/Mg²⁺) wastes soap as scum; detergents keep working — water chemistry deciding the product.\n5. **Biogas vs firewood.** A 6 m³ digester gives ~3 hours of flame with no smoke: fermentation chemistry against indoor air pollution and forest pressure.\n6. **Pesticide waiting period.** Spray chemistry protects the crop; the 7–14 day harvest gap protects the eater — same molecule, two rules.\n7. **Paper and forests.** Sabai grass → pulp → paper runs on NaOH/Na₂S cooking; community-forest supply makes it renewable — industry inside ecology.\n\n## 6. Key terms and statements\n- **Importance** — chemistry's value: food, shelter, health, livelihood.\n- **Scope** — chemistry's reach: sectors, fields, careers it opens.\n- **Fertilizer N-P-K** — nitrogen (leaf), phosphorus (root/flower), potassium (health); urea 46% N.\n- **Calcination** — carbonate → oxide + CO₂ by heat (cement's core step).\n- **Saponification** — fat/oil + alkali → soap + glycerol.\n- **Green chemistry** — design that prevents waste and hazard: atom economy, renewables, safer solvents.\n- **QC / QA chemist** — quality control/assurance: industry's analytical gatekeepers.",
+    "## 7. Exam Zone\n**NEB map.** Sector-examples (two per sector) are the standard 5-markers; fertilizer/cement/drug equations with conditions recur; green-chemistry principles close argument questions. \"Scope of chemistry\" and \"importance in agriculture/medicine\" are long-answer staples.\n\n**Short tricks.** \"AIM-DG\": Agriculture, Industry, Medicine, Daily-life, Green-balance — one Nepal example each. \"Urea 46, kiln 1400, ORS 1 litre\".\n\n**Sources:** NEB/CDC Grade 11 Chemistry (foundation chapter); NARC fertilizer recommendations (dose logic); OpenStax *Chemistry 2e* ch. 1 (chemistry in context).\n\n## 8. Summary and self-check\nChemistry's importance is food (urea/DAP/potash, pesticides with waiting periods, soil pH), shelter and goods (cement calcination at ~1400°C, glass, paper, soap, metals), health (antibiotics, ORS, diagnostics) and daily life (fermentation, baking, cleaning, chlorination) — with the green balance (biogas, IPM, refills) answering its pollution. Its scope runs pure→applied into careers from QC chemist to forensic analyst, all mapped on the 118-element periodic territory. Figures: applications wheel, kitchen-to-kiln flow, urea application photo, periodic table.\n\n**Self-check.** (1) Give two chemical inputs and one Nepal example for each of three sectors. (2) Write the urea-hydrolysis and calcination equations with conditions. (3) Why does hard water waste soap? (4) Argue one promise and one pollution of pesticide chemistry. (5) Place forensic chemistry on the pure→applied spectrum.\n\n**Common confusions.** Fertilizer feeds plants, not soil fertility alone (organic matter still matters) · pesticide = benefit + hazard, never one side · green chemistry prevents waste, it doesn't just treat it · scope (reach) vs importance (value) — the question words differ."
   ],
-  "confusion": [],
+  "confusion": [
+    "Fertilizer supplies nutrients; it does not replace organic matter — both build soil.",
+    "Scope is reach (sectors/careers); importance is value (food/health/livelihood) — answer the word asked."
+  ],
   "bounds": [
     "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ],
@@ -21,8 +30,20 @@
     "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "100 kg urea/ha = 46 kg nitrogen — percentage composition deciding wheat yield.",
+    "100 kg limestone → 56 kg quicklime + 44 kg CO₂: kiln budget and carbon bill.",
+    "One ORS sachet per litre: formulation chemistry against dehydration."
+  ],
+  "practiceQuestions": [
+    "SHORT (2 marks): Give two chemical inputs of agriculture with Nepal examples.",
+    "SHORT (2 marks): Write the calcination equation with conditions.",
+    "SHORT (3 marks): Explain saponification with its equation and one hard-water consequence.",
+    "SHORT (2 marks): What is green chemistry? Give two of its aims.",
+    "SHORT (3 marks): Show how ORS chemistry saves lives in diarrhoea.",
+    "LONG (5 marks): Describe the importance of chemistry in agriculture and industry with Nepal examples.",
+    "LONG (5 marks): Discuss the scope of chemistry: sectors, careers and the green balance."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -36,9 +57,12 @@
   ],
   "keyPoints": [
     "• Importance",
-    "• Scope of chemistry"
+    "• Scope of chemistry",
+    "Agriculture: urea/DAP/potash + pesticides with waiting periods + soil pH.",
+    "Industry: cement (CaCO₃→CaO, 1400°C), glass, paper, soap, metals; medicine: drugs, ORS, diagnostics.",
+    "Green balance: prevent waste by design; biogas, IPM, refills."
   ],
-  "summary": "Importance and scope of chemistry (Foundation and Fundamentals, Chemistry, class-11-notes) covers Importance, scope of chemistry. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Chemistry's importance: agriculture (urea 46% N, DAP, potash, pesticides with waiting periods, soil pH), industry (cement calcination ~1400°C, glass, paper, soap, metals, fuels), medicine (antibiotics, ORS, diagnostics), daily life (fermentation, baking, cleaning, chlorination) — balanced by green chemistry (prevent waste by design). Scope: pure→applied careers (QC, pharma, agronomy, forensic) across the 118-element periodic territory. Figures: applications wheel, kitchen-to-kiln flow, urea application photo, periodic table.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Importance and scope of chemistry\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -48,6 +72,118 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "Urea contains about",
+      "options": [
+        "23% N",
+        "46% N",
+        "18% N",
+        "60% N"
+      ],
+      "answer": "B",
+      "explanation": "CO(NH₂)₂: 28/60 ≈ 46% nitrogen."
+    },
+    {
+      "question": "Calcination of limestone gives",
+      "options": [
+        "CaO + CO₂",
+        "Ca(OH)₂",
+        "CaC₂",
+        "CaSO₄"
+      ],
+      "answer": "A",
+      "explanation": "CaCO₃ → CaO + CO₂ at ~1400°C."
+    },
+    {
+      "question": "Saponification needs",
+      "options": [
+        "Acid + alcohol",
+        "Fat/oil + alkali",
+        "Ore + coke",
+        "Salt + water"
+      ],
+      "answer": "B",
+      "explanation": "Triglyceride + NaOH → soap + glycerol."
+    },
+    {
+      "question": "ORS primarily replaces",
+      "options": [
+        "Proteins",
+        "Salts, glucose and water",
+        "Vitamins only",
+        "Fats"
+      ],
+      "answer": "B",
+      "explanation": "Sodium/potassium salts plus glucose drive absorption."
+    },
+    {
+      "question": "Hard water wastes soap because Ca²⁺/Mg²⁺ form",
+      "options": [
+        "Lather",
+        "Insoluble scum",
+        "Perfume",
+        "Glycerol"
+      ],
+      "answer": "B",
+      "explanation": "Calcium/magnesium salts of fatty acids precipitate."
+    },
+    {
+      "question": "A waiting period after pesticide spray protects the",
+      "options": [
+        "Crop",
+        "Eater",
+        "Sprayer only",
+        "Soil pH"
+      ],
+      "answer": "B",
+      "explanation": "Residues decay before harvest."
+    },
+    {
+      "question": "Green chemistry primarily aims to",
+      "options": [
+        "Treat waste afterwards",
+        "Prevent waste and hazard by design",
+        "Ban all chemicals",
+        "Raise yields only"
+      ],
+      "answer": "B",
+      "explanation": "Atom economy, safer solvents, renewables — prevention first."
+    },
+    {
+      "question": "Biogas mainly contains",
+      "options": [
+        "Hydrogen",
+        "Methane",
+        "Oxygen",
+        "Nitrogen"
+      ],
+      "answer": "B",
+      "explanation": "Anaerobic digestion yields CH₄ + CO₂."
+    },
+    {
+      "question": "Which pair is a fertilizer N-P-K set?",
+      "options": [
+        "Urea-DAP-potash",
+        "Soap-glass-paper",
+        "Lime-gypsum-salt",
+        "Petrol-diesel-kerosene"
+      ],
+      "answer": "A",
+      "explanation": "N from urea, P from DAP, K from potash."
+    },
+    {
+      "question": "Forensic chemistry lies on the",
+      "options": [
+        "Pure end",
+        "Applied end",
+        "Outside chemistry",
+        "Physics side"
+      ],
+      "answer": "B",
+      "explanation": "It applies analysis to legal questions."
     }
   ]
 }

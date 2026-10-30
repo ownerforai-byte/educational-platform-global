@@ -10,7 +10,13 @@
     "Worked example: if δy=3° and ω=0.06, the red–violet spread is Δδ=0.18°. A material with twice the dispersive power gives twice the spread at the same mean deviation.",
     "To obtain a purer spectrum, use a narrow slit, collimate the incident beam and focus the dispersed rays with a lens. A wide slit broadens each colour image and causes neighbouring bands to overlap.",
     "A spectrometer uses a collimator slit and telescope to form and inspect a sharp spectrum. Resolution improves when the source image is narrow and the optical alignment is correct.",
-    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately."
+    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately.",
+    "# Pure spectrum and dispersive power\n\n## 1. Introduction\nPhysical picture of **Pure spectrum and dispersive power** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dispersion fill pass.\n\n## 2. Concepts and laws\n### Pure spectrum and dispersive power\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Constants and values**\n\n| Constant or quantity | Value (CODATA/SI 2019) | Where used | Validity note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Pure spectrum and dispersive power — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Pure spectrum and dispersive power — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Pure spectrum and dispersive power — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Pure spectrum and dispersive power — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
@@ -198,5 +204,6 @@
       ],
       "answer": "0.038. A pure spectrum needs a slit, a collimator and a focusing lens so colours do not overlap."
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

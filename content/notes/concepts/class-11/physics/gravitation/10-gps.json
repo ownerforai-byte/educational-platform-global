@@ -1,0 +1,98 @@
+{
+  "title": "GPS",
+  "unitSlug": "gravitation",
+  "topicSlug": "gps",
+  "topicTitle": "GPS",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:14.898Z",
+  "notes": [
+    "# GPS\n\n## 1. Introduction\nPhysical picture of **GPS** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### GPS\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — GPS — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — GPS — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — GPS — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — GPS — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "examNotes": [
+    "The working principle of GPS (time-delay ranging) is a classic short answer.",
+    "Why four satellites — guaranteed exam question.",
+    "GPS orbit parameters (altitude, period) derive from satellite formulas — show the computation.",
+    "Relativistic correction in GPS is a famous applied-physics question.",
+    "Sources of GPS error and how they are corrected appear in applied sections."
+  ],
+  "examShortTricks": [
+    "Four satellites = four unknowns (x, y, z, t) — the key reasoning line.",
+    "1 µs clock error ≈ 300 m of position error — instant conversion.",
+    "GPS altitude 20,200 km / period 12 h — memorise as anchor numbers.",
+    "Relativity numbers: +45 µs (GR slower ground) − 7 µs (SR) → +38 µs/day net.",
+    "Distance = speed of light × delay — always use c ≈ 3×10⁸ m/s."
+  ],
+  "practiceQuestions": [
+    "A GPS satellite orbits at 20,200 km. Find its orbital speed and period.",
+    "Why does a receiver need four satellites instead of three?",
+    "If a GPS signal takes 65 ms to arrive, how far away is that satellite?",
+    "Explain both special and general relativistic corrections to GPS clocks.",
+    "Estimate the daily position error if all relativistic corrections were ignored.",
+    "Explain how dual-frequency GPS removes ionospheric delay."
+  ],
+  "practice": [
+    "Show that a satellite at 20,200 km altitude has a period ≈ 12 h.",
+    "Explain why at least four satellites are needed for a position fix.",
+    "Compute the extra path delay if a signal takes 67 ms to reach a receiver.",
+    "Find the speed of a GPS satellite from GM and r.",
+    "Explain the special and general relativistic clock corrections.",
+    "Estimate the position error if the receiver clock is off by 1 µs."
+  ],
+  "mcs": [
+    {
+      "question": "GPS determines a receiver's position by measuring:",
+      "options": [
+        "signal strength",
+        "signal travel time",
+        "satellite temperature",
+        "Doppler frequency only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A GPS receiver needs at least how many satellites for a full fix?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The altitude of GPS satellites is approximately:",
+      "options": [
+        "36,000 km",
+        "20,200 km",
+        "400 km",
+        "6,400 km"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The relativistic clock shift for GPS satellites is about:",
+      "options": [
+        "38 µs/day",
+        "38 ms/day",
+        "0.38 s/day",
+        "38 s/day"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "GPS satellites are in:",
+      "options": [
+        "geostationary orbit",
+        "inclined medium Earth orbit",
+        "polar low orbit",
+        "lunar orbit"
+      ],
+      "answer": "B"
+    }
+  ]
+}

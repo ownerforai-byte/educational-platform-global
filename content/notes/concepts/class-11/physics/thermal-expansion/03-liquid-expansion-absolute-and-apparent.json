@@ -22,7 +22,13 @@
     "**Why $\\gamma_{liq} > \\gamma_{solid}$ always:** In liquids, molecules are less tightly bound than in solids. Heating gives molecules more kinetic energy to overcome intermolecular forces, leading to larger volume increases per degree.",
     "**Liquid Expansion:** This topic covers the fundamental concepts of liquid expansion in the physics curriculum.",
     "Understanding liquid expansion is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to liquid expansion should be memorized and practiced regularly."
+    "Key definitions and theorems related to liquid expansion should be memorized and practiced regularly.",
+    "# Liquid expansion: absolute and apparent\n\n## 1. Introduction\nPhysical picture of **Liquid expansion** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Thermal Expansion fill pass.\n\n## 2. Concepts and laws\n### Liquid expansion: absolute and apparent\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Liquid expansion — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Liquid expansion — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Liquid expansion — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Liquid expansion — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "❌ Apparent expansion equals absolute expansion. ✅ Apparent expansion is LESS than absolute expansion because the container also expands. $\\gamma_{app} = \\gamma_{liq} - \\gamma_{container} < \\gamma_{liq}$.",
@@ -249,5 +255,6 @@
     "Statement 3: Condition for Liquid Expansion to be valid",
     "Statement 4: Principle governing Liquid Expansion",
     "Statement 5: Corollary or consequence of Liquid Expansion"
-  ]
+  ],
+  "source": "skeleton-v2"
 }

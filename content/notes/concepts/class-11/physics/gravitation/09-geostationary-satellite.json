@@ -1,0 +1,98 @@
+{
+  "title": "Geostationary satellite",
+  "unitSlug": "gravitation",
+  "topicSlug": "geostationary-satellite",
+  "topicTitle": "Geostationary satellite",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:14.895Z",
+  "notes": [
+    "# Geostationary satellite\n\n## 1. Introduction\nPhysical picture of **Geostationary satellite** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### Geostationary satellite\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Geostationary satellite — geometry and force diagram (authored SVG)\n- **D2** — Geostationary satellite — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Geostationary satellite — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Geostationary satellite — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "examNotes": [
+    "Computing the geostationary orbit radius from T = 24 h is a classic numerical.",
+    "Conditions for a geostationary orbit are a frequent short-answer question.",
+    "Geosynchronous vs geostationary distinction appears in MCQs.",
+    "Applications (telecom, weather, broadcasting) are direct marks.",
+    "Energy in geostationary orbit is tested together with satellite topic."
+  ],
+  "examShortTricks": [
+    "Memorise: geostationary altitude ≈ 36,000 km (35,800 km more precisely).",
+    "From T to r: r = (GMT²/4π²)^(1/3) — plug 86400 s directly.",
+    "Speed shortcut: v = 2πr/T or v = √(GM/r); both give ≈ 3 km/s.",
+    "If T = 24 h BUT orbit is inclined — it's geosynchronous, not geostationary (quick MCQ trap).",
+    "Energy: just use E = −GMm/2r; KE = GMm/2r."
+  ],
+  "practiceQuestions": [
+    "Calculate the radius and altitude of a geostationary orbit using G, M and T = 24 h.",
+    "What is the orbital speed of a satellite in geostationary orbit?",
+    "Why must a geostationary satellite lie in the equatorial plane?",
+    "Distinguish between geostationary and geosynchronous satellites with a diagram.",
+    "Find the total energy and kinetic energy of a 2000 kg satellite in geostationary orbit.",
+    "A satellite has a 24-h period but an inclined orbit. Is it geostationary? Explain."
+  ],
+  "practice": [
+    "Verify the geostationary altitude using T = 86400 s, G and M.",
+    "Compute the orbital speed of a geostationary satellite.",
+    "Explain why the orbit must be equatorial for a satellite to be geostationary.",
+    "Distinguish between geostationary and geosynchronous satellites.",
+    "Find the total energy of a 500 kg satellite in geostationary orbit.",
+    "Why are weather and communication satellites placed in geostationary orbits?"
+  ],
+  "mcs": [
+    {
+      "question": "A geostationary satellite has an orbital period of:",
+      "options": [
+        "12 h",
+        "24 h",
+        "90 min",
+        "27 days"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The altitude of a geostationary satellite is approximately:",
+      "options": [
+        "36,000 km",
+        "6,400 km",
+        "1,000 km",
+        "4.22×10⁶ m"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A geostationary satellite must orbit:",
+      "options": [
+        "in any plane",
+        "in the equatorial plane west-to-east",
+        "in polar orbit",
+        "in any inclined plane"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The orbital speed of a geostationary satellite is about:",
+      "options": [
+        "7.9 km/s",
+        "3.07 km/s",
+        "11.2 km/s",
+        "1 km/s"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A satellite with a 24-h period but inclined orbit is called:",
+      "options": [
+        "geostationary",
+        "geosynchronous",
+        "polar",
+        "low Earth orbit"
+      ],
+      "answer": "B"
+    }
+  ]
+}

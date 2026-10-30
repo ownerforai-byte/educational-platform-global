@@ -4,16 +4,25 @@
   "topicSlug": "general-introduction-of-chemistry",
   "topicTitle": "General introduction of chemistry",
   "relevance": 100,
-  "source": "generated",
+  "source": "authored-v2",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
     "**Scope.** General introduction of chemistry — Foundation and Fundamentals, Chemistry (class-11-notes).",
     "**Tested.** define it · list: general introduction of chemistry · one worked example · one misconception each.",
     "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
     "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
-    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.",
+    "# General introduction of chemistry\n\n## 1. Introduction\nEverything you touch is chemistry pausing for a photograph. The water you drink (H₂O), the salt in your dal (NaCl), the air you breathe (N₂ + O₂), the soap that cleans, the cement that builds, the medicine that heals — all are chemicals, and **chemistry** is the science that studies their composition, structure, properties and the changes they undergo. Where physics asks how matter moves, chemistry asks how matter *transforms*.\n\nThe science began in fire and furnaces — Egyptian metallurgy, Indian zinc distillation at Zawar, Chinese gunpowder — and became modern when Antoine Lavoisier (1743–1794) weighed reactions and proved mass is conserved (1789), earning the title \"father of modern chemistry\". Nepal's own chemistry runs from traditional *bhatti* fermentation to the urea research at NARC stations and cement plants at Hetauda and Udayapur.\n\n**What you will learn:** (i) what chemistry is and what it studies; (ii) matter and its states; (iii) the branches of chemistry; (iv) why chemistry matters — the bridge to the next topic on importance and scope.\n\n**Learning outcomes.** You can: define chemistry; distinguish solid/liquid/gas/plasma at particle level; name the five classical branches with one study-object each; and give two Nepal-context examples of chemical change.",
+    "## 2. Concepts and definitions\n\n### What chemistry studies\n1. **Definition.** Chemistry is the branch of natural science dealing with the composition, structure, properties and transformation (reactions) of matter.\n2. **Matter.** Anything with mass occupying space. At particle level: solids (fixed shape, tightly packed vibrating particles), liquids (fixed volume, sliding particles), gases (no fixed shape/volume, free fast particles), plasma (ionised gas — lightning, stars).\n3. **Change.** Physical change (melting ice — same H₂O, reversible) vs chemical change (burning wood — new substances, usually irreversible, energy exchanged). Chemistry owns the second; uses the first as technique (distillation, crystallisation).\n4. **Assumptions box.** Reactions discussed assume closed systems for mass balance (Lavoisier's law needs weighing everything, gases included); purity of reagents assumed unless impurity effects stated.\n\n### Branches of chemistry\n1. **Physical chemistry** — energy and rates: thermodynamics, kinetics, equilibrium, electrochemistry (this year's Stoichiometry, Equilibrium, Kinetics units).\n2. **Inorganic chemistry** — all elements except most carbon compounds: salts, acids, bases, metals, coordination compounds.\n3. **Organic chemistry** — carbon compounds (with exceptions: CO, CO₂, carbonates are inorganic by convention): fuels, plastics, drugs, dyes.\n4. **Analytical chemistry** — what is present and how much: qualitative salt analysis, quantitative titration (your practicals).\n5. **Biochemistry** — chemistry of life: proteins, enzymes, nucleic acids (bridges to Class 12 Biomolecules).\n6. **Newer branches.** Nuclear chemistry, environmental chemistry, polymer chemistry, green chemistry — each slots into Table 1 by the same rule.",
+    "## 3. Reaction and equation block — the language all units will use\n1. **Chemical equation anatomy.** Reactants → products; balanced so atoms conserve (Lavoisier): 2H₂ + O₂ → 2H₂O. State symbols (s, l, g, aq) + conditions over the arrow (Δ heat, Pt catalyst, hv light).\n2. **Example (formation, with conditions).** N₂(g) + 3H₂(g) ⇌ 2NH₃(g); conditions: Fe catalyst, ~450°C, ~200 atm (the Haber conditions — memorise T, P, catalyst as one triple; the full story comes in Chemistry of Non-metals).\n3. **Example (combustion).** CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l); ΔH negative (exothermic) — the biogas flame in a Nepali kitchen as an equation.\n4. **Reading an equation quantitatively.** 2H₂ + O₂ → 2H₂O reads as molecules (2 : 1 : 2), moles, and masses (4 g + 32 g → 36 g) — the mole bridge the next topics build on.\n\n## 4. Figures, apparatus and the chemist's toolkit\n- **D1 (authored SVG)** — Branches-of-chemistry map (Fig. 1.1 below): five classical branches + newer fields.\n- **D2 (authored SVG)** — States of matter at particle level (Fig. 1.2): solid/liquid/gas/plasma panels.\n- **D3 (curated)** — Laboratory glassware reference plate (Fig. 1.3).\n- **D4 (curated)** — Lavoisier portrait, father of modern chemistry (Fig. 1.4).",
+    "Fig. 1.1 — Branches of chemistry map (authored SVG).\n\n```svg Branches of chemistry map\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Branches of chemistry</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<ellipse cx=\"450\" cy=\"300\" rx=\"120\" ry=\"55\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"3\"/>\n<text x=\"450\" y=\"293\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"bold\" fill=\"#713f12\">CHEMISTRY</text>\n<text x=\"450\" y=\"320\" text-anchor=\"middle\" font-size=\"14\" fill=\"#713f12\">composition · change</text>\n<g font-size=\"16\" text-anchor=\"middle\">\n<rect x=\"90\" y=\"80\" width=\"220\" height=\"62\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<text x=\"200\" y=\"105\" font-weight=\"bold\" fill=\"#1e3a8a\">Physical</text><text x=\"200\" y=\"127\" font-size=\"13\" fill=\"#475569\">energy · rates · equilibria</text>\n<rect x=\"590\" y=\"80\" width=\"220\" height=\"62\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"700\" y=\"105\" font-weight=\"bold\" fill=\"#14532d\">Inorganic</text><text x=\"700\" y=\"127\" font-size=\"13\" fill=\"#475569\">salts · acids · metals</text>\n<rect x=\"90\" y=\"480\" width=\"220\" height=\"62\" rx=\"10\" fill=\"#fae8ff\" stroke=\"#a21caf\" stroke-width=\"2\"/>\n<text x=\"200\" y=\"505\" font-weight=\"bold\" fill=\"#701a75\">Organic</text><text x=\"200\" y=\"527\" font-size=\"13\" fill=\"#475569\">carbon compounds</text>\n<rect x=\"590\" y=\"480\" width=\"220\" height=\"62\" rx=\"10\" fill=\"#ffedd5\" stroke=\"#c2410c\" stroke-width=\"2\"/>\n<text x=\"700\" y=\"505\" font-weight=\"bold\" fill=\"#7c2d12\">Analytical</text><text x=\"700\" y=\"527\" font-size=\"13\" fill=\"#475569\">what + how much</text>\n<rect x=\"340\" y=\"510\" width=\"220\" height=\"62\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"535\" font-weight=\"bold\" fill=\"#0c4a6e\">Biochemistry</text><text x=\"450\" y=\"557\" font-size=\"13\" fill=\"#475569\">chemistry of life</text>\n</g>\n<g stroke=\"#94a3b8\" stroke-width=\"2\">\n<line x1=\"360\" y1=\"270\" x2=\"290\" y2=\"145\"/><line x1=\"540\" y1=\"270\" x2=\"610\" y2=\"145\"/>\n<line x1=\"360\" y1=\"340\" x2=\"290\" y2=\"478\"/><line x1=\"540\" y1=\"340\" x2=\"610\" y2=\"478\"/>\n<line x1=\"450\" y1=\"355\" x2=\"450\" y2=\"508\"/>\n</g>\n<text x=\"450\" y=\"620\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Newer: nuclear · environmental · polymer · green — same map, new boxes</text>\n</svg>\n```\n\nFig. 1.2 — States of matter at particle level (authored SVG).\n\n```svg States of matter particle panels\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>States of matter</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<g text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\">\n<text x=\"150\" y=\"60\" fill=\"#0f172a\">SOLID</text><text x=\"390\" y=\"60\" fill=\"#0f172a\">LIQUID</text>\n<text x=\"630\" y=\"60\" fill=\"#0f172a\">GAS</text><text x=\"810\" y=\"60\" fill=\"#0f172a\">PLASMA</text>\n</g>\n<g>\n<rect x=\"40\" y=\"90\" width=\"220\" height=\"300\" rx=\"10\" fill=\"#f1f5f9\" stroke=\"#334155\" stroke-width=\"2\"/>\n<g fill=\"#1d4ed8\"><circle cx=\"90\" cy=\"150\" r=\"14\"/><circle cx=\"140\" cy=\"150\" r=\"14\"/><circle cx=\"190\" cy=\"150\" r=\"14\"/><circle cx=\"115\" cy=\"200\" r=\"14\"/><circle cx=\"165\" cy=\"200\" r=\"14\"/><circle cx=\"215\" cy=\"200\" r=\"14\"/><circle cx=\"90\" cy=\"250\" r=\"14\"/><circle cx=\"140\" cy=\"250\" r=\"14\"/><circle cx=\"190\" cy=\"250\" r=\"14\"/><circle cx=\"115\" cy=\"300\" r=\"14\"/><circle cx=\"165\" cy=\"300\" r=\"14\"/><circle cx=\"215\" cy=\"300\" r=\"14\"/></g>\n<rect x=\"290\" y=\"90\" width=\"220\" height=\"300\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<g fill=\"#1d4ed8\" opacity=\"0.85\"><circle cx=\"330\" cy=\"170\" r=\"14\"/><circle cx=\"390\" cy=\"140\" r=\"14\"/><circle cx=\"450\" cy=\"190\" r=\"14\"/><circle cx=\"350\" cy=\"250\" r=\"14\"/><circle cx=\"420\" cy=\"260\" r=\"14\"/><circle cx=\"470\" cy=\"230\" r=\"14\"/><circle cx=\"330\" cy=\"320\" r=\"14\"/><circle cx=\"400\" cy=\"330\" r=\"14\"/></g>\n<rect x=\"540\" y=\"90\" width=\"180\" height=\"300\" rx=\"10\" fill=\"#fefce8\" stroke=\"#a16207\" stroke-width=\"2\"/>\n<g fill=\"#a16207\" opacity=\"0.7\"><circle cx=\"580\" cy=\"140\" r=\"10\"/><circle cx=\"670\" cy=\"180\" r=\"10\"/><circle cx=\"600\" cy=\"270\" r=\"10\"/><circle cx=\"690\" cy=\"320\" r=\"10\"/><circle cx=\"620\" cy=\"350\" r=\"10\"/></g>\n<rect x=\"750\" y=\"90\" width=\"120\" height=\"300\" rx=\"10\" fill=\"#fae8ff\" stroke=\"#a21caf\" stroke-width=\"2\"/>\n<g><circle cx=\"790\" cy=\"160\" r=\"10\" fill=\"#a21caf\"/><circle cx=\"830\" cy=\"230\" r=\"10\" fill=\"#f59e0b\"/><circle cx=\"790\" cy=\"300\" r=\"10\" fill=\"#a21caf\"/><circle cx=\"830\" cy=\"350\" r=\"10\" fill=\"#f59e0b\"/><text x=\"810\" y=\"180\" font-size=\"20\" fill=\"#0f172a\">+</text><text x=\"810\" y=\"320\" font-size=\"20\" fill=\"#0f172a\">−</text></g>\n</g>\n<g text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">\n<text x=\"150\" y=\"430\">fixed shape · vibrate</text><text x=\"400\" y=\"430\">fixed volume · slide</text>\n<text x=\"630\" y=\"430\">fills all · fast, free</text><text x=\"810\" y=\"430\">ionised gas</text>\n<text x=\"150\" y=\"460\">ice, iron</text><text x=\"400\" y=\"460\">water, oil</text>\n<text x=\"630\" y=\"460\">air, LPG</text><text x=\"810\" y=\"460\">lightning, stars</text>\n</g>\n<text x=\"450\" y=\"540\" text-anchor=\"middle\" font-size=\"15\" fill=\"#0f172a\">Heat: solid → liquid → gas → plasma — particles gain freedom, bonds loosen</text>\n<text x=\"450\" y=\"590\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Physical change moves between panels; chemical change rebuilds the particles</text>\n</svg>\n```\n\nFig. 1.3 — Chemistry laboratory glassware (curated external).\n\n![Photograph of laboratory glassware arranged together](https://commons.wikimedia.org/wiki/Special:FilePath/Laboratory%20Glassware.jpg)\n*Fig. 1.3 — Laboratory glassware: the vessels of analysis and synthesis. Source: Wikimedia Commons, \"Laboratory Glassware.jpg\" by Michael Pereckas; license CC BY 2.0. File page: https://commons.wikimedia.org/wiki/File:Laboratory_Glassware.jpg*\n\nFig. 1.4 — Antoine Lavoisier, father of modern chemistry (curated external).\n\n![Cropped detail of Jacques-Louis David's 1788 portrait of Antoine Lavoisier](https://commons.wikimedia.org/wiki/Special:FilePath/David%20-%20Portrait%20of%20Monsieur%20Lavoisier%20(cropped).jpg)\n*Fig. 1.4 — Antoine Lavoisier (1743–1794), who weighed reactions and established mass conservation (1789). Source: Wikimedia Commons, cropped detail of Jacques-Louis David's 1788 oil portrait; public domain (Public Domain Mark 1.0). File page: https://commons.wikimedia.org/wiki/File:David_-_Portrait_of_Monsieur_Lavoisier_(cropped).jpg*",
+    "## 5. Worked examples and applications\n1. **Burning biogas.** CH₄ + 2O₂ → CO₂ + 2H₂O: a kitchen flame as a balanced equation — atoms conserved, energy released.\n2. **Curd setting.** Milk → curd is chemical (new acids, irreversible); melting ghee is physical (same triglycerides). Classify before you explain.\n3. **Rusting gate.** 4Fe + 3O₂ → 2Fe₂O₃ needs air + moisture — which is why oiled tools in the Terai humidity survive and dry ones pit.\n4. **Cement chemistry.** Limestone (CaCO₃) heated → CaO + CO₂ (calcination); the Hetauda plant runs this kiln reaction at ~1400°C — conditions over the arrow in industry.\n5. **Iodised salt.** KI/KIO₃ added to NaCl prevents goitre: analytical chemistry (dose) serving biochemistry (thyroxine) — the topic's branches shaking hands.\n6. **Zawar zinc.** India's 12th-century zinc distillation and Nepali *bhatti* liquor are pre-modern chemical technology — same transformations, older vessels.\n7. **Soap.** Oil + NaOH → soap + glycerol (saponification): the cleaning reaction every household runs.\n\n## 6. Key terms and statements\n- **Chemistry** — science of composition, structure, properties and transformation of matter.\n- **Matter** — mass occupying space; states: solid, liquid, gas, plasma.\n- **Physical vs chemical change** — same substance rearranged vs new substances formed.\n- **Reactant / product** — consumed / formed; the arrow means \"yields under stated conditions\".\n- **Balanced equation** — equal atoms each side (Lavoisier's conservation in symbols).\n- **Physical / inorganic / organic / analytical / biochemistry** — the five classical branches.\n- **Lavoisier's law (1789)** — mass conserved in a closed chemical change.",
+    "## 7. Exam Zone\n**NEB map.** Definitions (chemistry, matter, branches) as one-markers; solid/liquid/gas distinction and physical-vs-chemical change as two-markers; balanced-equation writing as the skill question. Lavoisier + 1789 is the standard history line.\n\n**Short tricks.** \"P-I-O-A-B\" = Physical, Inorganic, Organic, Analytical, Biochemistry. \"Conserve atoms, state the states (s/l/g/aq), condition the arrow\".\n\n**Sources:** NEB/CDC Grade 11 Chemistry (foundation chapter); OpenStax *Chemistry 2e* ch. 1 (matter and measurement); Britannica (Lavoisier, 1789 conservation).\n\n## 8. Summary and self-check\nChemistry studies matter's composition, structure, properties and transformations — physical change rearranges, chemical change rebuilds (balanced equations with state symbols and conditions). Matter spans solid/liquid/gas/plasma; the science spans five classical branches plus newer fields, born modern when Lavoisier weighed reactions (1789). Nepal runs it daily: biogas flames, cement kilns, iodised salt, soap. Figures: branches map, particle states, glassware plate, Lavoisier portrait.\n\n**Self-check.** (1) Define chemistry and matter in one line each. (2) Classify: melting ghee, curdling milk, rusting iron, boiling water. (3) Write the biogas combustion with states. (4) Name the branch for: reaction rates, salt analysis, drug synthesis. (5) Why must Lavoisier's law specify a closed system?\n\n**Common confusions.** Melting ≠ chemical (same H₂O) · CO/CO₂/carbonates are inorganic despite carbon · plasma is a state, not a substance · the arrow needs conditions to be industrial truth."
   ],
-  "confusion": [],
+  "confusion": [
+    "Oxides of carbon (CO, CO₂) and carbonates are inorganic by convention — carbon presence alone does not make organic.",
+    "A balanced equation without state symbols and conditions is only half an industrial truth."
+  ],
   "bounds": [
     "Covers only: general introduction of chemistry (within Foundation and Fundamentals).",
     "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
@@ -26,8 +35,20 @@
     "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "Biogas flame as CH₄ + 2O₂ → CO₂ + 2H₂O with atoms conserved.",
+    "Hetauda cement kiln: CaCO₃ → CaO + CO₂ at ~1400°C.",
+    "Iodised salt: analytical dosing serving thyroxine biochemistry."
+  ],
+  "practiceQuestions": [
+    "SHORT (2 marks): Define chemistry and matter with one example each.",
+    "SHORT (2 marks): Distinguish physical change from chemical change with two examples.",
+    "SHORT (2 marks): Name the five classical branches of chemistry with one study-object each.",
+    "SHORT (2 marks): Who is the father of modern chemistry and what did he establish in 1789?",
+    "SHORT (3 marks): Write the balanced equations for biogas combustion and iron rusting with state symbols.",
+    "LONG (5 marks): Describe the states of matter at particle level with a diagram.",
+    "LONG (5 marks): Explain the branches of chemistry with examples, including one newer branch."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -40,9 +61,12 @@
     "Use  F = BIL  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• General introduction of chemistry"
+    "• General introduction of chemistry",
+    "Chemistry = composition, structure, properties, transformation of matter; Lavoisier 1789 weighed it modern.",
+    "Physical change rearranges (same substance); chemical change rebuilds (new substances, balanced equation).",
+    "Five branches P-I-O-A-B, plus nuclear/environmental/polymer/green."
   ],
-  "summary": "General introduction of chemistry (Foundation and Fundamentals, Chemistry, class-11-notes) covers General introduction of chemistry. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Chemistry is the science of matter's composition, structure, properties and transformations. Physical change rearranges (melting), chemical change rebuilds (burning, rusting) — written as balanced equations with state symbols and conditions over the arrow. Matter spans solid/liquid/gas/plasma at particle level; the science spans Physical, Inorganic, Organic, Analytical and Biochemistry plus newer fields; Lavoisier's 1789 weighing made it modern. Nepal runs it daily: biogas, cement, iodised salt, soap. Figures: branches map, particle-state panels, glassware plate, Lavoisier portrait.",
   "mcqs": [
     {
       "question": "A common examiner point on \"General introduction of chemistry\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -52,6 +76,118 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "Chemistry primarily deals with",
+      "options": [
+        "Motion of bodies",
+        "Composition and transformation of matter",
+        "Electric circuits",
+        "Celestial objects"
+      ],
+      "answer": "B",
+      "explanation": "Composition, structure, properties and change of matter."
+    },
+    {
+      "question": "Father of modern chemistry",
+      "options": [
+        "Dalton",
+        "Lavoisier",
+        "Avogadro",
+        "Mendeleev"
+      ],
+      "answer": "B",
+      "explanation": "Lavoisier established mass conservation by weighing (1789)."
+    },
+    {
+      "question": "Which is a chemical change?",
+      "options": [
+        "Melting of ice",
+        "Curdling of milk",
+        "Evaporation of water",
+        "Breaking of glass"
+      ],
+      "answer": "B",
+      "explanation": "New acids form irreversibly; the rest are physical."
+    },
+    {
+      "question": "Plasma is",
+      "options": [
+        "A solid",
+        "An ionised gas",
+        "A liquid crystal",
+        "A colloid"
+      ],
+      "answer": "B",
+      "explanation": "Lightning and stars are ionised gases."
+    },
+    {
+      "question": "Study of reaction rates belongs to",
+      "options": [
+        "Organic chemistry",
+        "Physical chemistry",
+        "Inorganic chemistry",
+        "Analytical chemistry"
+      ],
+      "answer": "B",
+      "explanation": "Kinetics is energy-and-rates physical chemistry."
+    },
+    {
+      "question": "CO and CO₂ are classified as",
+      "options": [
+        "Organic",
+        "Inorganic",
+        "Biochemical",
+        "Polymeric"
+      ],
+      "answer": "B",
+      "explanation": "Simple carbon oxides are inorganic by convention."
+    },
+    {
+      "question": "In 2H₂ + O₂ → 2H₂O the mass ratio H₂ : O₂ is",
+      "options": [
+        "1:8",
+        "1:16",
+        "2:16",
+        "1:1"
+      ],
+      "answer": "A",
+      "explanation": "4 g H₂ : 32 g O₂ = 1:8."
+    },
+    {
+      "question": "State symbols (s, l, g, aq) in equations show",
+      "options": [
+        "Catalysts",
+        "Physical states",
+        "Energy changes",
+        "Reaction speed"
+      ],
+      "answer": "B",
+      "explanation": "They fix the physical state of each species."
+    },
+    {
+      "question": "Saponification makes",
+      "options": [
+        "Glass",
+        "Soap and glycerol",
+        "Cement",
+        "Steel"
+      ],
+      "answer": "B",
+      "explanation": "Oil/fat + NaOH → soap + glycerol."
+    },
+    {
+      "question": "Closed system matters for Lavoisier's law because",
+      "options": [
+        "Gases escape otherwise",
+        "Heat escapes",
+        "Light enters",
+        "Catalysts deactivate"
+      ],
+      "answer": "A",
+      "explanation": "Mass balance needs all products weighed, gases included."
     }
   ]
 }

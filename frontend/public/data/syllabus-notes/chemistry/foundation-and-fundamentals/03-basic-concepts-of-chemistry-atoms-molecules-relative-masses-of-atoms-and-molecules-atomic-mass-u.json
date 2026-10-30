@@ -4,14 +4,23 @@
   "topicSlug": "basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u",
   "topicTitle": "Basic concepts of chemistry: atoms, molecules, relative masses of atoms and molecules, atomic mass unit (amu), radicals, molecular formula, empirical formula",
   "relevance": 100,
-  "source": "generated",
+  "source": "authored-v2",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
     "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
     "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100.",
+    "# Basic concepts of chemistry: atoms, molecules, relative masses of atoms and molecules, atomic mass unit (amu), radicals, molecular formula, empirical formula\n\n## 1. Introduction\nBefore chemistry can calculate anything — a fertilizer dose, a gas volume, a percentage — it must count particles it cannot see. The counting system is the **mole**, the weighing scale is the **atomic mass unit**, and the shorthand is the **chemical formula**. This topic builds that entire toolkit: atom vs molecule, relative masses, amu, radicals, and the two formulae (empirical and molecular) that compress analysis into symbols.\n\nA fertilizer bag labelled \"46-0-0\" is this topic compressed: 46% nitrogen by the percentage logic the next topic completes. A 50 kg urea sack holds a countable number of molecules only because the mole makes counting possible — 6.02214076×10²³ of them per mole, exact by the SI 2019 definition.\n\n**What you will learn:** (i) atoms, molecules, ions and radicals; (ii) relative atomic/molecular masses and amu; (iii) the mole and Avogadro's number; (iv) molar volume at STP; (v) empirical vs molecular formula with the n = M/E relation.\n\n**Learning outcomes.** You can: interconvert grams ↔ moles ↔ particles ↔ litres at STP; compute molecular masses and average atomic masses; and derive empirical and molecular formulae from data.",
+    "## 2. Concepts and definitions\n\n### Atoms, molecules, ions, radicals\n1. **Atom.** Smallest unit of an element keeping its identity (H, O, Na). **Molecule.** Two or more atoms bonded acting as one unit: homoatomic (H₂, O₂, O₃) or heteroatomic (H₂O, CO₂, NH₃). **Ion.** Charged atom/group (Na⁺, Cl⁻, SO₄²⁻). **Radical.** Charged group of atoms with collective identity in reactions (NH₄⁺, NO₃⁻, CO₃²⁻, OH⁻) — valency rides on radicals, and salt formulae assemble from them.\n2. **Valency reminder.** Combining capacity: H/Na/Ag = 1, O/Ca/Zn = 2, Al = 3, C = 4. Cation valency × anion valency cross to write formulae (Ca²⁺ + Cl⁻ → CaCl₂).\n3. **Assumptions box.** Relative masses use the C-12 scale; gases assumed ideal at STP for molar volume; Avogadro's number exact (defined, not measured) since SI 2019.\n\n### Relative masses and amu\n1. **Why relative.** Atoms are too light for grams (H ≈ 1.67×10⁻²⁴ g), so masses are quoted relative to a standard: 1 amu (1 u, 1 dalton) = 1/12th the mass of one carbon-12 atom ≈ 1.66×10⁻²⁷ kg.\n2. **Relative atomic mass (A_r).** Average mass of an element's atoms relative to C-12 = 12, weighted by natural abundance: chlorine = 0.75×35 + 0.25×37 ≈ 35.5 — the reason the periodic table shows decimals.\n3. **Relative molecular mass (M_r).** Sum of A_r in the formula: H₂O = 2(1) + 16 = 18; H₂SO₄ = 2 + 32 + 64 = 98; CaCO₃ = 40 + 12 + 48 = 100; urea CO(NH₂)₂ = 12 + 16 + 2(14 + 2) = 60.\n4. **Mole.** Amount containing exactly 6.02214076×10²³ entities (N_A, exact since 2019). Molar mass = mass of one mole in grams = M_r in g·mol⁻¹ (18 g water, 98 g H₂SO₄ per mole).\n5. **Molar volume.** One mole of any ideal gas occupies 22.4 L at 0°C and 1 atm — the NEB STP convention used in every numerical here. (Validity note: IUPAC's current STP is 100 kPa, giving 22.7 L; NEB examinations use 22.4 L at 1 atm unless stated.)\n6. **Empirical vs molecular.** Empirical = simplest whole-number ratio (CH₂O for glucose); molecular = actual numbers (C₆H₁₂O₆); related by molecular = n × empirical with n = M_r/E_r. Ionic salts (NaCl) and giant structures have empirical formulae only.",
+    "## 3. Reaction and equation block — the mole in action\n1. **Formation with masses.** C(s) + O₂(g) → CO₂(g): 12 g + 32 g → 44 g — the equation as a weighing recipe (1 mol : 1 mol : 1 mol).\n2. **Gas formation.** Zn(s) + H₂SO₄(aq) → ZnSO₄(aq) + H₂(g): 65.4 g Zn → 2 g H₂ → 22.4 L H₂ at STP — solid, solution and gas linked by one line.\n3. **Decomposition (with condition).** CaCO₃(s) →(Δ) CaO(s) + CO₂(g): 100 g → 56 g + 44 g — the kiln budget from the last topic, now in moles.\n4. **Reading rule.** Coefficients = particles = moles = (for gases at same T/P) volumes. One memorised line, four interchangeable readings.\n\n## 4. Figures, particles and the mole map\n- **D1 (authored SVG)** — Atom→molecule build (Fig. 3.1): Dalton spheres assembling H₂, O₂, H₂O, CO₂.\n- **D2 (authored SVG)** — Mole triangle (Fig. 3.2): mass ↔ moles ↔ particles ↔ volume.\n- **D3 (curated)** — Dalton's own symbols plate, 1808 (Fig. 3.3).\n- **D4 (curated)** — Bent water molecule with dipole (Fig. 3.4).",
+    "Fig. 3.1 — From atoms to molecules, Dalton-style (authored SVG).\n\n```svg Atoms assembling into molecules\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Atoms to molecules</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<g text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">\n<text x=\"150\" y=\"60\" fill=\"#0f172a\">H + H → H₂</text>\n<text x=\"450\" y=\"60\" fill=\"#0f172a\">O + O → O₂</text>\n<text x=\"730\" y=\"60\" fill=\"#0f172a\">2H + O → H₂O</text>\n</g>\n<g>\n<circle cx=\"100\" cy=\"180\" r=\"30\" fill=\"#e2e8f0\" stroke=\"#334155\" stroke-width=\"3\"/><text x=\"100\" y=\"190\" text-anchor=\"middle\" font-size=\"22\" fill=\"#0f172a\">H</text>\n<text x=\"150\" y=\"190\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">+</text>\n<circle cx=\"200\" cy=\"180\" r=\"30\" fill=\"#e2e8f0\" stroke=\"#334155\" stroke-width=\"3\"/><text x=\"200\" y=\"190\" text-anchor=\"middle\" font-size=\"22\" fill=\"#0f172a\">H</text>\n<text x=\"250\" y=\"190\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">→</text>\n<circle cx=\"300\" cy=\"180\" r=\"30\" fill=\"#e2e8f0\" stroke=\"#334155\" stroke-width=\"3\"/><circle cx=\"360\" cy=\"180\" r=\"30\" fill=\"#e2e8f0\" stroke=\"#334155\" stroke-width=\"3\"/>\n<line x1=\"330\" y1=\"180\" x2=\"330\" y2=\"180\" stroke=\"#334155\" stroke-width=\"6\"/>\n<circle cx=\"420\" cy=\"180\" r=\"36\" fill=\"#fecaca\" stroke=\"#991b1b\" stroke-width=\"3\"/><text x=\"420\" y=\"192\" text-anchor=\"middle\" font-size=\"22\" fill=\"#7f1d1d\">O</text>\n<text x=\"470\" y=\"190\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">+</text>\n<circle cx=\"520\" cy=\"180\" r=\"36\" fill=\"#fecaca\" stroke=\"#991b1b\" stroke-width=\"3\"/><text x=\"520\" y=\"192\" text-anchor=\"middle\" font-size=\"22\" fill=\"#7f1d1d\">O</text>\n<circle cx=\"640\" cy=\"160\" r=\"30\" fill=\"#e2e8f0\" stroke=\"#334155\" stroke-width=\"3\"/>\n<circle cx=\"730\" cy=\"220\" r=\"36\" fill=\"#fecaca\" stroke=\"#991b1b\" stroke-width=\"3\"/>\n<circle cx=\"820\" cy=\"160\" r=\"30\" fill=\"#e2e8f0\" stroke=\"#334155\" stroke-width=\"3\"/>\n<line x1=\"665\" y1=\"185\" x2=\"705\" y2=\"208\" stroke=\"#334155\" stroke-width=\"6\"/>\n<line x1=\"795\" y1=\"185\" x2=\"755\" y2=\"208\" stroke=\"#334155\" stroke-width=\"6\"/>\n<text x=\"730\" y=\"300\" text-anchor=\"middle\" font-size=\"15\" fill=\"#475569\">bent 104.5° — polarity lives here</text>\n</g>\n<g text-anchor=\"middle\" font-size=\"15\" fill=\"#475569\">\n<text x=\"230\" y=\"290\">1 + 1 = 2 amu</text>\n<text x=\"470\" y=\"290\">16 + 16 = 32 amu</text>\n<text x=\"730\" y=\"330\">2(1) + 16 = 18 amu</text>\n</g>\n<text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"16\" fill=\"#0f172a\">Atoms keep identity; molecules keep the bond — mass adds, properties transform</text>\n<text x=\"450\" y=\"450\" text-anchor=\"middle\" font-size=\"16\" fill=\"#0f172a\">CO₂ = 12 + 2(16) = 44 · NH₃ = 14 + 3 = 17 · H₂SO₄ = 98 · CaCO₃ = 100</text>\n<rect x=\"90\" y=\"490\" width=\"720\" height=\"80\" rx=\"10\" fill=\"#fef9c3\" stroke=\"#a16207\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"520\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#713f12\">Radicals ride as units: NH₄⁺ · NO₃⁻ · SO₄²⁻ · CO₃²⁻ · OH⁻</text>\n<text x=\"450\" y=\"548\" text-anchor=\"middle\" font-size=\"15\" fill=\"#713f12\">Ca²⁺ + 2Cl⁻ → CaCl₂ · 2Na⁺ + SO₄²⁻ → Na₂SO₄ — valencies cross</text>\n<text x=\"450\" y=\"610\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Dalton spheres, modern masses — the counting toolkit in one picture</text>\n</svg>\n```\n\nFig. 3.2 — Mole triangle: mass, moles, particles, volume (authored SVG).\n\n```svg Mole interconversion triangle\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Mole triangle</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<polygon points=\"450,110 180,470 720,470\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"3\"/>\n<g text-anchor=\"middle\">\n<text x=\"450\" y=\"230\" font-size=\"21\" font-weight=\"bold\" fill=\"#1e3a8a\">MOLES (n)</text>\n<text x=\"450\" y=\"258\" font-size=\"15\" fill=\"#475569\">the hub of all counting</text>\n<text x=\"250\" y=\"430\" font-size=\"19\" font-weight=\"bold\" fill=\"#1e3a8a\">MASS (m)</text>\n<text x=\"250\" y=\"452\" font-size=\"14\" fill=\"#475569\">m = n × M · g</text>\n<text x=\"650\" y=\"430\" font-size=\"19\" font-weight=\"bold\" fill=\"#1e3a8a\">PARTICLES (N)</text>\n<text x=\"650\" y=\"452\" font-size=\"14\" fill=\"#475569\">N = n × Nₐ</text>\n</g>\n<g font-size=\"14\" fill=\"#0f172a\" text-anchor=\"middle\">\n<text x=\"330\" y=\"340\">÷ M / × M</text>\n<text x=\"575\" y=\"340\">× Nₐ / ÷ Nₐ</text>\n<text x=\"450\" y=\"505\">gases at STP: V = n × 22.4 L</text>\n</g>\n<rect x=\"150\" y=\"520\" width=\"600\" height=\"60\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"450\" y=\"545\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" fill=\"#14532d\">Cover the wanted quantity: neighbours show the operation</text>\n<text x=\"450\" y=\"568\" text-anchor=\"middle\" font-size=\"14\" fill=\"#14532d\">Nₐ = 6.02214076×10²³ mol⁻¹ exact (SI 2019) · 22.4 L at 0°C, 1 atm (NEB STP)</text>\n<text x=\"450\" y=\"615\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Example: 44 g CO₂ → 1 mol → 6.022×10²³ molecules → 22.4 L (gas, STP)</text>\n</svg>\n```\n\nFig. 3.3 — Dalton's symbols and compound compositions, 1808 (curated external).\n\n![Historic plate from Dalton's 1808 work showing element symbols and compound compositions](https://commons.wikimedia.org/wiki/Special:FilePath/A%20New%20System%20of%20Chemical%20Philosophy%20fp.jpg)\n*Fig. 3.3 — Dalton's 1808 plate: his symbols and proposed compositions. Source: Wikimedia Commons (John Dalton's \"A New System of Chemical Philosophy\" frontispiece); public domain (Public Domain Mark 1.0). File page: https://commons.wikimedia.org/wiki/File:A_New_System_of_Chemical_Philosophy_fp.jpg*\n\nFig. 3.4 — Water molecule: bent geometry and dipole (curated external).\n\n![Bent H2O structure with 104.45 degree bond angle and dipole information](https://commons.wikimedia.org/wiki/Special:FilePath/Water%20molecule%20-%20structure%20and%20dipole%20moment.png)\n*Fig. 3.4 — H₂O: bent 104.45°, polar — the shape behind hydrogen bonding. Source: Wikimedia Commons, \"Water molecule - structure and dipole moment.png\" by Arcturus10; license CC BY-SA 4.0. File page: https://commons.wikimedia.org/wiki/File:Water_molecule_-_structure_and_dipole_moment.png*",
+    "## 5. Worked numericals (Given → Formula → Substitution → Answer with unit)\n1. **Molecular mass.** M_r(H₂SO₄) = 2(1) + 32 + 4(16) = **98**; M_r(urea) = 12 + 16 + 2(14+2) = **60**; M_r(CaCO₃) = 40+12+48 = **100**. Unitless — \"98 amu per molecule, 98 g per mole\".\n2. **Average atomic mass.** Chlorine: 75% ³⁵Cl + 25% ³⁷Cl → 0.75×35 + 0.25×37 = 26.25 + 9.25 = **35.5**. Decimals on the table explained.\n3. **Moles from mass.** n = m/M: 49 g H₂SO₄ → 49/98 = **0.5 mol**; contains 0.5×N_A = **3.011×10²³ molecules**.\n4. **Gas volume at STP.** 4.4 g CO₂ → n = 4.4/44 = 0.1 mol → V = 0.1×22.4 = **2.24 L**. (NEB STP: 0°C, 1 atm.)\n5. **Particles to mass.** 1.204×10²³ H₂O molecules → n = 1.204×10²³/6.022×10²³ = 0.2 mol → m = 0.2×18 = **3.6 g**.\n6. **Empirical formula.** Compound: 40% C, 6.7% H, 53.3% O → masses per 100 g: 40/12 = 3.33, 6.7/1 = 6.7, 53.3/16 = 3.33 → ratio 1:2:1 → **CH₂O**. If M_r = 180, n = 180/30 = 6 → molecular **C₆H₁₂O₆** (glucose).\n\n## 6. Key terms, worked angles and traps\n- **amu (u, dalton)** = 1/12th of C-12 ≈ 1.66×10⁻²⁷ kg; the weighing scale of atoms.\n- **A_r / M_r** — relative atomic/molecular mass; weighted average / formula sum; unitless.\n- **Mole** — 6.02214076×10²³ entities (exact, SI 2019); molar mass in g·mol⁻¹ numerically equals M_r.\n- **Molar volume** — 22.4 L·mol⁻¹ at NEB STP (0°C, 1 atm); IUPAC 100 kPa gives 22.7 L.\n- **Empirical (simplest ratio) vs molecular (actual)** — molecular = n × empirical, n = M_r/E_r.\n- **Traps:** M_r unitless vs molar mass g/mol (same number, different meaning) · 22.4 L only for gases at STP · ionic salts have no molecular formula · abundance-weighting, not simple averages.",
+    "## 7. Exam Zone\n**NEB map.** M_r computations and mole conversions are mark-machines; empirical/molecular derivation from % data is the long-answer staple; amu/mole/STP definitions open every paper. The triangle (Fig. 3.2) converts under exam pressure.\n\n**Short tricks.** \"n = m/M = V/22.4 = N/Nₐ — one hub, three spokes\". \"%→mass→moles→ratio→whole (multiply to clear decimals)\". \"Glucose proof: CH₂O ×6\".\n\n**Sources:** NEB/CDC Grade 11 Chemistry (foundation chapter); OpenStax *Chemistry 2e* ch. 3 (composition); SI Brochure 9th ed. (exact N_A; mole definition); IUPAC STP note (22.7 L distinction).\n\n## 8. Summary and self-check\nAtoms (identity) build molecules (bonded units), ions and radicals (charged players, valencies crossing into formulae). Masses go relative: amu = C-12/12, A_r abundance-weighted (Cl 35.5), M_r summed (H₂SO₄ 98, urea 60). The mole (exact N_A) with molar mass (g/mol) and 22.4 L/mol at NEB STP interconverts mass↔moles↔particles↔volume via the triangle. Empirical (CH₂O) ×n = molecular (C₆H₁₂O₆), n = M_r/E_r. Figures: Dalton-sphere builds, mole triangle, Dalton's 1808 plate, bent water molecule.\n\n**Self-check.** (1) Compute M_r of Ca(HCO₃)₂. (2) 11.2 L CO₂ at STP → grams? (3) Derive CH₂O from 40/6.7/53.3 data; if M_r = 90, the molecular formula? (4) Why is chlorine 35.5, not 35 or 36? (5) Distinguish empirical from molecular for NaCl and glucose.\n\n**Common confusions.** amu is a mass (kg), mole is a count — never interchange · 22.4 L needs gas + STP stated · \"% composition\" needs molar mass first (next topic completes the loop)."
   ],
-  "confusion": [],
+  "confusion": [
+    "M_r is a pure number; molar mass carries g/mol — same digits, different quantities.",
+    "22.4 L/mol needs all three: gas, 0°C, 1 atm (NEB STP)."
+  ],
   "bounds": [
     "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
   ],
@@ -21,8 +30,20 @@
     "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
     "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
   ],
-  "examples": [],
-  "practiceQuestions": [],
+  "examples": [
+    "50 kg urea sack holds countable moles only via N_A.",
+    "'46-0-0' bag label is percentage composition compressed.",
+    "CaCO₃ kiln: 100 g → 56 g + 44 g as mole recipe."
+  ],
+  "practiceQuestions": [
+    "SHORT (2 marks): Define amu and mole with their SI-2019 values.",
+    "SHORT (2 marks): Compute M_r of urea and calcium carbonate.",
+    "SHORT (3 marks): 49 g H₂SO₄ → moles and molecules (show steps).",
+    "SHORT (3 marks): Derive the empirical formula from 40% C, 6.7% H, 53.3% O data.",
+    "SHORT (2 marks): Distinguish empirical from molecular formula with two examples.",
+    "LONG (5 marks): Explain the mole concept and interconvert mass, moles, particles and gas volume with examples.",
+    "LONG (5 marks): Derive the molecular formula of glucose from composition data (M_r = 180)."
+  ],
   "formulas": [
     "n = m / M",
     "n = V / 22.4 (g at STP)",
@@ -31,7 +52,13 @@
   "numericals": [
     "Use  n = m / M  — pick reasonable values, solve, and check the units.",
     "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
-    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
+    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units.",
+    "M_r: H₂SO₄ 98, urea 60, CaCO₃ 100.",
+    "Cl average: 0.75×35+0.25×37 = 35.5.",
+    "49 g H₂SO₄ = 0.5 mol = 3.011×10²³ molecules.",
+    "4.4 g CO₂ = 2.24 L at STP.",
+    "1.204×10²³ H₂O molecules = 3.6 g.",
+    "40/6.7/53.3 → CH₂O; M_r 180 → C₆H₁₂O₆."
   ],
   "keyPoints": [
     "• Basic concepts of chemistry: atoms",
@@ -39,9 +66,12 @@
     "• Relative masses of atoms",
     "• Molecules",
     "• Atomic mass unit",
-    "• Radicals"
+    "• Radicals",
+    "amu = C-12/12; A_r weighted (Cl 35.5); M_r summed (H₂SO₄ 98).",
+    "Mole exact N_A; triangle: n = m/M = V/22.4 = N/N_A.",
+    "Empirical simplest ratio; molecular = n × empirical, n = M_r/E_r."
   ],
-  "summary": "Basic concepts of chemistry: atoms, molecules, relative m… (Foundation and Fundamentals, Chemistry, class-11-notes) covers Basic concepts of chemistry: atoms, molecules, relative masses of atoms. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Atoms, molecules, ions and radicals (valencies crossing into formulae) are counted by the mole (exact N_A = 6.02214076×10²³ since SI 2019) and weighed by amu (C-12/12 ≈ 1.66×10⁻²⁷ kg). A_r is abundance-weighted (Cl 35.5); M_r is summed (H₂SO₄ 98, urea 60, CaCO₃ 100). The triangle n = m/M = V/22.4 = N/N_A (22.4 L at NEB STP: 0°C, 1 atm) interconverts everything. Empirical (CH₂O) ×n = molecular (C₆H₁₂O₆), n = M_r/E_r; salts have empirical formulae only. Figures: Dalton-sphere builds, mole triangle, Dalton's 1808 plate, bent H₂O.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Basic concepts of chemistry: atoms, molecules, relative m…\"?",
@@ -62,6 +92,118 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "1 amu equals",
+      "options": [
+        "1 g",
+        "1/12th mass of C-12",
+        "Mass of H atom",
+        "1 kg"
+      ],
+      "answer": "B",
+      "explanation": "1 u = one-twelfth of a carbon-12 atom."
+    },
+    {
+      "question": "Avogadro's number (SI 2019) is",
+      "options": [
+        "Measured yearly",
+        "Exactly 6.02214076×10²³ mol⁻¹",
+        "22.4",
+        "1.66×10⁻²⁷"
+      ],
+      "answer": "B",
+      "explanation": "Exact by definition since the 2019 SI revision."
+    },
+    {
+      "question": "M_r of H₂SO₄ is",
+      "options": [
+        "49",
+        "98",
+        "96",
+        "100"
+      ],
+      "answer": "B",
+      "explanation": "2(1)+32+4(16) = 98."
+    },
+    {
+      "question": "Molar volume at NEB STP is",
+      "options": [
+        "22.4 L at 0°C, 1 atm",
+        "22.7 L at 25°C",
+        "11.2 L always",
+        "1 L"
+      ],
+      "answer": "A",
+      "explanation": "One mole of ideal gas at 0°C and 1 atm."
+    },
+    {
+      "question": "Empirical formula of glucose (C₆H₁₂O₆) is",
+      "options": [
+        "C₆H₁₂O₆",
+        "CH₂O",
+        "CHO",
+        "C₂H₄O₂"
+      ],
+      "answer": "B",
+      "explanation": "Simplest ratio 1:2:1."
+    },
+    {
+      "question": "n = M_r/E_r gives",
+      "options": [
+        "The multiplier to molecular formula",
+        "Avogadro's number",
+        "Molar volume",
+        "Valency"
+      ],
+      "answer": "A",
+      "explanation": "Molecular = n × empirical."
+    },
+    {
+      "question": "3.011×10²³ molecules of H₂SO₄ weigh",
+      "options": [
+        "98 g",
+        "49 g",
+        "9.8 g",
+        "4.9 g"
+      ],
+      "answer": "B",
+      "explanation": "Half a mole: 0.5 × 98 = 49 g."
+    },
+    {
+      "question": "2.24 L of CO₂ at STP is",
+      "options": [
+        "44 g",
+        "4.4 g",
+        "0.44 g",
+        "440 g"
+      ],
+      "answer": "B",
+      "explanation": "0.1 mol × 44 g/mol."
+    },
+    {
+      "question": "NaCl has",
+      "options": [
+        "A molecular formula",
+        "Only an empirical formula",
+        "No formula",
+        "A structural formula only"
+      ],
+      "answer": "B",
+      "explanation": "Giant ionic lattice: simplest ratio only."
+    },
+    {
+      "question": "Chlorine's A_r ≈ 35.5 because",
+      "options": [
+        "It gains electrons",
+        "Abundance-weighted average of isotopes",
+        "It is diatomic",
+        "STP correction"
+      ],
+      "answer": "B",
+      "explanation": "0.75×35 + 0.25×37."
     }
   ]
 }

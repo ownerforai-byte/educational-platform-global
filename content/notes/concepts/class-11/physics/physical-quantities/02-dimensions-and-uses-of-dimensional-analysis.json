@@ -13,7 +13,14 @@
     "**Limitations of dimensional analysis:** (1) it cannot find dimensionless constants ($2\\pi$, ½, sin θ); (2) it fails for quantities related by addition/subtraction or trigonometric, exponential and logarithmic functions; (3) it cannot reveal whether a quantity is scalar or vector; (4) it cannot derive an equation involving more unknown powers than available base dimensions.",
     "**Dimensionless quantities:** angles (radian), strain, refractive index, relative density, coefficient of friction, all pure ratios. They have $[M^0L^0T^0]$ and are unchanged on unit conversion — which is exactly why trigonometric arguments must be dimensionless.",
     "**Dimensional variables commonly asked in NEB:** Planck's constant $[ML^2T^{-1}]$ (same as angular momentum), gravitational constant $[M^{-1}L^3T^{-2}]$, coefficient of viscosity $[ML^{-1}T^{-1}]$, surface tension $[MT^{-2}]$, power $[ML^2T^{-3}]$, pressure/energy density $[ML^{-1}T^{-2}]$.",
-    "**NEB exam focus:** write dimensional formulas of 8–10 standard quantities; check homogeneity of a given equation; derive a relation (pendulum, wave speed on string $v \\propto \\sqrt{T/\\mu}$, or time of flight) using powers method; convert a force/energy value between SI and CGS."
+    "**NEB exam focus:** write dimensional formulas of 8–10 standard quantities; check homogeneity of a given equation; derive a relation (pendulum, wave speed on string $v \\propto \\sqrt{T/\\mu}$, or time of flight) using powers method; convert a force/energy value between SI and CGS.",
+    "# Dimensions and uses of dimensional analysis\n\n## 1. Introduction\nPhysical equations have grammar: the dimensions on the left must match the dimensions on the right, or the sentence is meaningless. **Dimensions** ([M] mass, [L] length, [T] time, [I] current…) are the parts of speech of physics, and **dimensional analysis** is the proofreading — checking homogeneity, converting units, and even discovering new relations such as the pendulum formula before a single experiment is timed.\n\nA Nepali pump-set seller converts 5 HP to watts (5 × 746 = 3730 W) by pure dimensional arithmetic; a pipe fitting ordered as \"2-inch\" arrives as 5.08 cm by the same move. NEB's favourite derivation of Class 11 — T = 2π√(l/g) from dimensions alone — shows the method inventing, not just checking.\n\n**What you will learn:** (i) dimensions and dimensional formulae of common quantities; (ii) the principle of homogeneity; (iii) four uses — checking, deriving, converting, finding dimensions; (iv) the three limitations; (v) the SI-2019 constant-based definitions behind the units.\n\n**Learning outcomes.** You can: write any dimensional formula; test any equation's homogeneity; derive the pendulum period and centripetal force dimensionally; convert N↔dyne and J↔erg; and state exactly where the method goes blind.",
+    "## 2. Concepts and laws\n\n### Dimensions and dimensional formulae\n1. **Definition.** The dimension of a physical quantity is the power to which each base quantity (M, L, T, I, K, mol, cd) is raised to express it: velocity = [M⁰LT⁻¹], force = [MLT⁻²], energy = [ML²T⁻²].\n2. **Reading table.** Area [M⁰L²T⁰], volume [L³], density [ML⁻³], acceleration [LT⁻²], momentum [MLT⁻¹], pressure [ML⁻¹T⁻²], power [ML²T⁻³], charge [IT], Planck constant [ML²T⁻¹], gravitational constant [M⁻¹L³T⁻²] (CODATA 6.674×10⁻¹¹ m³kg⁻¹s⁻² for numericals).\n3. **Dimensionless quantities.** Pure numbers, angles (radian), strain, refractive index, relative density, all trigonometric/exponential ratios — dimensions [M⁰L⁰T⁰]. Dimensional analysis cannot see them (limitation 1).\n4. **SI-2019 validity note.** Since 2019 the base units ride on exact constants: second on ΔνCs (9 192 631 770 Hz), metre on c (299 792 458 m/s), kilogram on h (6.62607015×10⁻³⁴ J·s), ampere on e, mole on N_A (6.02214076×10²³ mol⁻¹), kelvin on k_B. Constants are exact by definition — quote them without error bars.\n\n### Principle of homogeneity (with assumptions)\n1. **Statement.** In a correct physical equation, the dimensions of every term on both sides are identical: [LHS] = [RHS] term by term. Words: you cannot add apples (length) to oranges (time).\n2. **Assumptions box.** Applies to equations linking physical quantities with consistent unit systems; transcendental functions (sin, log, exp) take dimensionless arguments only; the check passes necessary-but-not-sufficient correctness (a wrong dimensionless constant slips through).\n3. **Instant checks.** v = u + at: [LT⁻¹] = [LT⁻¹] + [LT⁻²][T] ✓. s = ut + ½at²: [L] = [L] + [L] ✓. E = mc³? [ML²T⁻²] vs [ML³T⁻³] ✗ — rejected before any lab work.",
+    "## 3. Derivation block — the flagship method\n\n### Derivation 1: period of a simple pendulum (assume → equate → solve)\n1. **Assume** T ∝ m^a · l^b · g^c (mass, length, gravity may matter) with dimensionless constant k: T = k·m^a·l^b·g^c.\n2. **Write dimensions.** [T] = [M]^a·[L]^b·[LT⁻²]^c = [M^a L^(b+c) T^(−2c)].\n3. **Equate powers** (homogeneity): M: a = 0; T: −2c = 1 → c = −1/2; L: b + c = 0 → b = 1/2.\n4. **Result.** T = k·l^(1/2)·g^(−1/2) = k√(l/g). Experiment fixes k = 2π: **T = 2π√(l/g)**. Mass drops out (a = 0) — the famous prediction that the bob's mass doesn't matter.\n5. **Validity condition.** Small amplitudes only (sinθ ≈ θ fails beyond ~10°); massless inextensible string; point bob. NEB's most-asked derivation — memorise the four steps, not just the line.\n\n### Derivation 2: centripetal force (same machine, new result)\n1. **Assume** F ∝ m^a·v^b·r^c: [MLT⁻²] = [M]^a·[LT⁻¹]^b·[L]^c = [M^a L^(b+c) T^(−b)].\n2. **Equate.** M: a = 1; T: −b = −2 → b = 2; L: b + c = 1 → c = −1.\n3. **Result.** F = k·mv²/r; dynamics fixes k = 1: **F = mv²/r**. Two derivations, one machine — that is the method's power.\n\n### Uses and limitations\n1. **Check equations** (above) — catches wrong formulae in seconds.\n2. **Derive relations** — pendulum, centripetal force, wave speed v = √(P/ρ) pattern.\n3. **Convert units** — 1 N = 1 kg·m/s² = 1000 g × 100 cm/s² = 10⁵ dyne; 1 J = 10⁷ erg. General: n₂ = n₁·(M₁/M₂)^a·(L₁/L₂)^b·(T₁/T₂)^c.\n4. **Find dimensions** — of G from F = Gm₁m₂/r² → [M⁻¹L³T⁻²]; of h from E = hν → [ML²T⁻¹]; of k (spring) from F = kx → [MT⁻²].\n5. **Limitations (all three, with reason).** (i) Dimensionless constants invisible (k = 2π never emerges). (ii) Fails for sums of 3+ unknownsBerry-style underdetermined systems and for transcendental/exponential relations (s = ut + ½at² works — three terms but known form; truly unknown 4-variable laws underdetermine). Stated sharply: cannot fix pure numbers, cannot handle functions like sin(ωt) beyond their arguments, cannot separate quantities sharing dimensions (work vs torque both [ML²T⁻²]).",
+    "## 4. Formula and units table\n\n**Table 1 — Dimensional formulae bank**\n\n| Quantity | Formula | Dimensions | SI unit |\n|---|---|---|---|\n| Velocity, speed | v = s/t | [M⁰LT⁻¹] | m/s |\n| Acceleration | a = v/t | [M⁰LT⁻²] | m/s² |\n| Force | F = ma | [MLT⁻²] | N (= kg·m/s²) |\n| Work, energy | W = Fs | [ML²T⁻²] | J |\n| Power | P = W/t | [ML²T⁻³] | W |\n| Momentum | p = mv | [MLT⁻¹] | kg·m/s |\n| Pressure | P = F/A | [ML⁻¹T⁻²] | Pa |\n| Density | ρ = m/V | [ML⁻³] | kg/m³ |\n| Charge | Q = It | [M⁰L⁰TI] | C |\n| Planck constant | h = E/ν | [ML²T⁻¹] | J·s |\n| Gravitational constant | G = Fr²/m² | [M⁻¹L³T⁻²] | N·m²/kg² |\n| Angle, strain, sin θ | ratios | [M⁰L⁰T⁰] | rad (dimensionless) |\n\n**Table 2 — Uses, each with its validity edge**\n\n| Use | Example | Edge (where it stops) |\n|---|---|---|\n| Check homogeneity | v² = u² + 2as | Passes necessity, not sufficiency |\n| Derive relations | T = 2π√(l/g); F = mv²/r | k invisible; small-angle only |\n| Convert units | 1 N = 10⁵ dyne; 1 J = 10⁷ erg | Powers a, b, c handled termwise |\n| Find dimensions | G, h, k from their laws | Shared dimensions confuse (work/torque) |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n|---|---|---|\n| Dimensional formulae | M-L-T powers of everything | Write-the-dimensions 1-markers |\n| Homogeneity | Dimensions match term by term | Check-this-equation numericals |\n| Pendulum derivation | Assume → equate → T = 2π√(l/g) | The flagship long derivation |\n| Centripetal derivation | Same machine → F = mv²/r | Second derivation slot |\n| Conversions | n₂ = n₁(M₁/M₂)^a(L₁/L₂)^b… | N→dyne, J→erg |\n| Limitations | k invisible; transcendental; same-dimension clash | Three-point theory answer |",
+    "## 5. Diagrams and figures\n\nFig. 2.1 — Homogeneity balance schematic (authored SVG; both pans must read alike).\n\n```svg Homogeneity balance schematic\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Homogeneity balance</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<line x1=\"450\" y1=\"120\" x2=\"450\" y2=\"420\" stroke=\"#334155\" stroke-width=\"5\"/>\n<polygon points=\"450,110 430,140 470,140\" fill=\"#334155\"/>\n<line x1=\"200\" y1=\"200\" x2=\"700\" y2=\"200\" stroke=\"#334155\" stroke-width=\"5\"/>\n<g>\n<line x1=\"250\" y1=\"200\" x2=\"250\" y2=\"280\" stroke=\"#334155\" stroke-width=\"3\"/>\n<rect x=\"150\" y=\"280\" width=\"200\" height=\"90\" rx=\"10\" fill=\"#dbeafe\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<text x=\"250\" y=\"315\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#1e3a8a\">LHS</text>\n<text x=\"250\" y=\"345\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1e3a8a\">v² → [L²T⁻²]</text>\n<line x1=\"650\" y1=\"200\" x2=\"650\" y2=\"280\" stroke=\"#334155\" stroke-width=\"3\"/>\n<rect x=\"550\" y=\"280\" width=\"200\" height=\"90\" rx=\"10\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"650\" y=\"315\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#14532d\">RHS</text>\n<text x=\"650\" y=\"345\" text-anchor=\"middle\" font-size=\"15\" fill=\"#14532d\">u² + 2as → [L²T⁻²]</text>\n</g>\n<text x=\"450\" y=\"450\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#15803d\">BALANCED ✓ — equation survives</text>\n<text x=\"450\" y=\"490\" text-anchor=\"middle\" font-size=\"15\" fill=\"#475569\">E = mc³ would tip the beam: [ML²T⁻²] vs [ML³T⁻³] ✗</text>\n<text x=\"450\" y=\"550\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Rule: every added term carries identical dimensions — apples never add to oranges</text>\n</svg>\n```\n\nFig. 2.2 — Pendulum derivation flow (authored SVG; the four machine steps).\n\n```svg Pendulum derivation flow\n<svg viewBox=\"0 0 900 640\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\">\n<title>Pendulum derivation flow</title>\n<rect x=\"0\" y=\"0\" width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n<g font-size=\"15\" text-anchor=\"middle\">\n<rect x=\"60\" y=\"80\" width=\"180\" height=\"110\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n<text x=\"150\" y=\"115\" font-weight=\"bold\" fill=\"#1e3a8a\">1 · ASSUME</text>\n<text x=\"150\" y=\"140\" fill=\"#475569\">T = k·mᵃ·lᵇ·gᶜ</text>\n<text x=\"150\" y=\"165\" fill=\"#475569\">k dimensionless</text>\n<rect x=\"270\" y=\"80\" width=\"180\" height=\"110\" rx=\"10\" fill=\"#fefce8\" stroke=\"#a16207\" stroke-width=\"2\"/>\n<text x=\"360\" y=\"115\" font-weight=\"bold\" fill=\"#713f12\">2 · EXPAND</text>\n<text x=\"360\" y=\"140\" fill=\"#475569\">[T] = MᵃLᵇ⁺ᶜT⁻²ᶜ</text>\n<text x=\"360\" y=\"165\" fill=\"#475569\">collect powers</text>\n<rect x=\"480\" y=\"80\" width=\"180\" height=\"110\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"2\"/>\n<text x=\"570\" y=\"115\" font-weight=\"bold\" fill=\"#14532d\">3 · EQUATE</text>\n<text x=\"570\" y=\"140\" fill=\"#475569\">a = 0 · c = −½</text>\n<text x=\"570\" y=\"165\" fill=\"#475569\">b = ½</text>\n<rect x=\"690\" y=\"80\" width=\"180\" height=\"110\" rx=\"10\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"3\"/>\n<text x=\"780\" y=\"115\" font-weight=\"bold\" fill=\"#14532d\">4 · SOLVE</text>\n<text x=\"780\" y=\"140\" fill=\"#475569\">T = k√(l/g)</text>\n<text x=\"780\" y=\"165\" fill=\"#475569\">k = 2π (lab)</text>\n</g>\n<g stroke=\"#94a3b8\" stroke-width=\"3\"><line x1=\"240\" y1=\"135\" x2=\"270\" y2=\"135\"/><line x1=\"450\" y1=\"135\" x2=\"480\" y2=\"135\"/><line x1=\"660\" y1=\"135\" x2=\"690\" y2=\"135\"/></g>\n<text x=\"450\" y=\"260\" text-anchor=\"middle\" font-size=\"16\" fill=\"#0f172a\">Mass drops out (a = 0): the bob's material never mattered — testable prediction</text>\n<text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"16\" fill=\"#0f172a\">Small angles only · massless string · point bob</text>\n<line x1=\"150\" y1=\"340\" x2=\"150\" y2=\"430\" stroke=\"#7c2d12\" stroke-width=\"4\"/>\n<circle cx=\"150\" cy=\"450\" r=\"22\" fill=\"#7c2d12\"/>\n<text x=\"150\" y=\"500\" text-anchor=\"middle\" font-size=\"15\" fill=\"#7c2d12\">length l, gravity g → period T</text>\n<text x=\"450\" y=\"560\" text-anchor=\"middle\" font-size=\"14\" fill=\"#475569\">Same machine yields F = mv²/r and v = √(tension/density) patterns</text>\n</svg>\n```\n\nFig. 2.3 — SI 2019: base units and their defining constants (curated external).\n\n![Dependency chart of the seven SI base units on the seven defining constants after the 2019 redefinition](https://commons.wikimedia.org/wiki/Special:FilePath/Unit%20relations%20in%20the%20new%20SI.svg)\n*Fig. 2.3 — Base-unit dependencies after the 2019 redefinition (kg←h, m←c, s←ΔνCs …). Source: Wikimedia Commons, \"Unit relations in the new SI.svg\" by Emilio Pisanty; license CC BY-SA 4.0. File page: https://commons.wikimedia.org/wiki/File:Unit_relations_in_the_new_SI.svg*\n\nFig. 2.4 — The seven SI base units (curated external).\n\n![Diagram of the seven SI base units: second, metre, kilogram, ampere, kelvin, mole and candela](https://commons.wikimedia.org/wiki/Special:FilePath/SI%20base%20units.svg)\n*Fig. 2.4 — The seven SI base units. Source: Wikimedia Commons, \"SI base units.svg\" by DePiep; license CC BY-SA 3.0. File page: https://commons.wikimedia.org/wiki/File:SI_base_units.svg*",
+    "## 6. Worked numericals (Given → Formula → Substitution → Answer with unit)\n1. **Check v² = u² + 2as.** [L²T⁻²] vs [L²T⁻²] + [LT⁻²][L] = [L²T⁻²] + [L²T⁻²] ✓ homogeneous — passes the grammar test.\n2. **Dimensions of G.** From F = Gm₁m₂/r²: [G] = [F][r²]/[m²] = [MLT⁻²][L²]/[M²] = **[M⁻¹L³T⁻²]**. Value for numericals: 6.674×10⁻¹¹ N·m²/kg² (CODATA).\n3. **Dimensions of Planck's h.** From E = hν: [h] = [E]/[ν] = [ML²T⁻²]/[T⁻¹] = **[ML²T⁻¹]**; exact 6.62607015×10⁻³⁴ J·s (SI 2019 definition).\n4. **Convert 1 N to dyne.** 1 N = 1 kg·m/s² = (1000 g)(100 cm)/s² = 10⁵ g·cm/s² = **10⁵ dyne**. General rule above handles J→erg (10⁷) the same way.\n5. **Wave speed on a string.** Assume v ∝ T^a·μ^b (tension, mass/length): [LT⁻¹] = [MLT⁻²]^a·[ML⁻¹]^b = [M^(a+b) L^(a−b) T^(−2a)]. M: a+b = 0; T: −2a = −1 → a = 1/2, b = −1/2. v = k√(T/μ) — the derivation machine's third product.\n6. **Spring constant.** From F = kx: [k] = [F]/[x] = [MLT⁻²]/[L] = **[MT⁻²]** — same dimensions as surface tension's cousin? No: surface tension is force/length = [MT⁻²] too — the same-dimension clash that limitation (iii) warns about.\n\n## 7. Key terms, signs and traps\n- **Dimension** = power of M, L, T, I… in a quantity; **dimensional formula** its [M^aL^bT^c…] packet.\n- **Homogeneity** = term-by-term dimensional equality; necessary, not sufficient.\n- **Dimensionless** = [M⁰L⁰T⁰]: angles, strain, ratios, constants like π and 2π.\n- **The machine** = assume (with k) → expand → equate → solve; experiment supplies k.\n- **SI 2019** = units from exact constants (c, h, e, N_A, k_B, ΔνCs, K_cd); prototype kilogram retired.\n- **Traps:** equating work with torque (same dimensions, different physics) · forgetting k is invisible · applying the method to sin/cos/log arguments (must be dimensionless) · dropping the radian (dimensionless but informative).",
+    "## 8. Exam Zone and self-check\n**NEB map.** Write-dimensions 1-markers (G, h, k, η). Homogeneity checks are numerical staples. The pendulum derivation is the flagship long answer; centripetal force the alternate. Conversions (N→dyne, J→erg, km/h→m/s) open every paper. Limitations as a three-point theory answer closes the topic.\n\n**Short tricks.** \"Machine in 4: assume–expand–equate–solve\". \"k is invisible, angles are dimensionless, work≠torque\". \"N→dyne 10⁵, J→erg 10⁷, km/h→m/s ÷3.6\".\n\n**Sources:** NEB/CDC Grade 11 Physics (units & dimensions chapter); BIPM SI Brochure 9th ed. (2019 definitions, exact constants); CODATA (G value); V.K. Jha ladder pattern for conversion problems.\n\n## 9. Summary and self-check\nDimensions [M L T …] are physics grammar; homogeneity (LHS = RHS termwise) proofreads every equation. The four uses: check (v² = u²+2as ✓), derive (pendulum T = 2π√(l/g) with mass dropping out; F = mv²/r), convert (1 N = 10⁵ dyne, 1 J = 10⁷ erg), and find dimensions (G [M⁻¹L³T⁻²], h [ML²T⁻¹]). Blind spots: dimensionless k, transcendental arguments, same-dimension clashes (work/torque). SI 2019 grounds units in exact constants. Figures: balance schematic, pendulum flow, SI dependency and base-unit plates.\n\n**Self-check.** (1) Derive T = 2π√(l/g) stating each validity condition. (2) Test s = ut + ½at² and E = mc³. (3) Find [η] (viscosity) from F = 6πηrv. (4) Convert 72 km/h to m/s and 1 kWh to joule dimensionally. (5) Why can't dimensions distinguish work from torque?\n\n**Common mistakes.** Writing k from dimensions (impossible) · equating coefficients across different dimensions · feeding degrees into sin without converting (arguments dimensionless, but consistency still rules) · citing the prototype kilogram (retired 2019)."
   ],
   "confusion": [
     "❌ 'If an equation is dimensionally correct, it is physically correct.' ✅ Homogeneity is a necessary but not sufficient test — $T = \\sqrt{l/g}$ and $T = 3\\sqrt{l/g}$ are both dimensionally correct; only one is true (the constant $2\\pi$ is invisible to dimensions).",
@@ -21,7 +28,10 @@
     "❌ 'Angle has units but no dimensions, so it is not a physical quantity.' ✅ Angle is a dimensionless $[M^0L^0T^0]$ SUPPLEMENTARY quantity — it has a unit (radian) but zero exponents in M, L, T.",
     "❌ 'Trigonometric, exponential and log functions can be applied to dimensional quantities.' ✅ Their arguments MUST be dimensionless — $\\sin(\\omega t)$ is valid only because $\\omega t$ is an angle (dimensionless).",
     "❌ '1 newton = 1 dyn.' ✅ $1\\,\\\text{N} = 10^5\\,\\\text{dyn}$ — dimensional conversion ($[MLT^{-2}]$: 1000 g × 100 cm) gives the factor $10^5$.",
-    "❌ 'Dimensional analysis can determine the scalar/vector nature of a quantity.' ✅ It cannot — work and torque have identical dimensions $[ML^2T^{-2}]$ yet work is scalar, torque is vector."
+    "❌ 'Dimensional analysis can determine the scalar/vector nature of a quantity.' ✅ It cannot — work and torque have identical dimensions $[ML^2T^{-2}]$ yet work is scalar, torque is vector.",
+    "Homogeneity passing does not prove correctness — wrong dimensionless constants slip through.",
+    "The 2019 SI retired the prototype kilogram: kg now comes from Planck's h, exact.",
+    "Work and torque share [ML²T⁻²] but differ physically — dimensions don't see vectors or points of application."
   ],
   "practice": [
     "Write dimensional formulas: (a) momentum (b) work (c) power (d) pressure (e) coefficient of viscosity. — Answers: (a) $[MLT^{-1}]$, (b) $[ML^2T^{-2}]$, (c) $[ML^2T^{-3}]$, (d) $[ML^{-1}T^{-2}]$, (e) $[ML^{-1}T^{-1}]$.",
@@ -43,14 +53,24 @@
     "Example 2: A sphere of radius $r$ moving slowly with speed $v$ through a fluid of viscosity $\\eta$ experiences drag $F = k\\,\\eta^a r^b v^c$ (Stokes' law). Matching $[MLT^{-2}] = [ML^{-1}T^{-1}]^a [L]^b [LT^{-1}]^c$ gives $a = 1$, $b = 1$, $c = 1$ → $F = 6\\pi\\eta r v$.",
     "Example 3: Convert a pressure of 1 pascal into CGS units: $[ML^{-1}T^{-2}]$ → $1 \\\times 1000 \\\times 10^{-2} = 10$ dyn cm⁻² = 10 barye.",
     "Example 4: The energy $E$ of a photon is $hf$; verify: $h[ML^2T^{-1}] \\\times f[T^{-1}] = [ML^2T^{-2}]$ = dimensions of energy ✓.",
-    "Example 5: Find dimensions of $\\\frac{a}{b}$ in $P = \\\frac{a - b t^2}{x}$, where P = pressure, x = distance, t = time. Numerator must be $[ML^{-1}T^{-2}][L] = [MT^{-2}]$; so $[a] = [MT^{-2}]$ and $[b] = [MT^{-4}]$ → $\\\frac{a}{b} = [T^2]$."
+    "Example 5: Find dimensions of $\\\frac{a}{b}$ in $P = \\\frac{a - b t^2}{x}$, where P = pressure, x = distance, t = time. Numerator must be $[ML^{-1}T^{-2}][L] = [MT^{-2}]$; so $[a] = [MT^{-2}]$ and $[b] = [MT^{-4}]$ → $\\\frac{a}{b} = [T^2]$.",
+    "5 HP pump = 3730 W by dimensional conversion at the shop.",
+    "2-inch pipe = 5.08 cm fitting — conversion that plumbers trust.",
+    "Prototype kilogram retired: mass now flows from Planck's constant."
   ],
   "practiceQuestions": [
     "Q1. Define dimensional formula and dimensional equation with one example each.",
     "Q2. State the principle of homogeneity of dimensions and use it to test the equation $v = u - at$.",
     "Q3. Assuming the period $T$ of a simple pendulum depends on its length $l$ and acceleration due to gravity $g$, derive the relation $T = k\\sqrt{l/g}$ dimensionally.",
     "Q4. Convert 1 newton into dyne using dimensional analysis.",
-    "Q5. Write three limitations of dimensional analysis."
+    "Q5. Write three limitations of dimensional analysis.",
+    "SHORT (2 marks): State the principle of homogeneity with the v = u + at check.",
+    "SHORT (2 marks): Give the dimensional formulae of G, h and surface tension.",
+    "SHORT (3 marks): Convert 1 J into erg using the dimensional conversion rule.",
+    "SHORT (3 marks): Test the homogeneity of v² = u² + 2as and E = mc³.",
+    "SHORT (2 marks): State the three limitations of dimensional analysis with one line each.",
+    "LONG (5 marks): Derive T = 2π√(l/g) dimensionally with assumptions and validity conditions.",
+    "LONG (5 marks): Derive F = mv²/r dimensionally and state two more uses with examples."
   ],
   "formulas": [
     "Force: $[F] = [MLT^{-2}]$",
@@ -65,9 +85,12 @@
     "Quantities with identical dimensions can still be physically different (work vs torque; energy vs moment).",
     "The powers method can only solve for as many unknown exponents as there are independent base dimensions (usually 3: M, L, T).",
     "Angle (radian) and steradian are supplementary, dimensionless $[M^0L^0T^0]$ units.",
-    "Any term inside sin, cos, exp, log must be dimensionless."
+    "Any term inside sin, cos, exp, log must be dimensionless.",
+    "Dimensions: velocity [LT⁻¹], force [MLT⁻²], energy [ML²T⁻²]; dimensionless: angles, strain, π.",
+    "Machine: assume T=k·m^a l^b g^c → expand → equate → T=k√(l/g), mass drops out.",
+    "Uses: check, derive, convert (10⁵, 10⁷), find dimensions; limits: k invisible, transcendental, same-dimension clash."
   ],
-  "summary": "Dimensional analysis expresses every physical quantity as a product of powers of base dimensions (M, L, T, ...). The principle of homogeneity — every term of a valid equation must share the same dimensions — gives three practical tools: checking equations, deriving unknown relations by the method of powers (e.g. $T = k\\sqrt{l/g}$ for a pendulum), and converting numerical values between unit systems ($1\\,\\\text{N} = 10^5\\,\\\text{dyn}$, $1\\,\\\text{J} = 10^7\\,\\\text{erg}$). Its limits matter: dimensionless constants, scalar/vector character, and functional forms (trig/exp/log) lie beyond its reach.",
+  "summary": "Dimensions [M L T I …] are the grammar of equations; homogeneity (LHS = RHS termwise) proofreads them. Uses: check (v²=u²+2as ✓, E=mc³ ✗), derive (pendulum T=2π√(l/g) with mass dropping out; centripetal F=mv²/r; string v=k√(T/μ)), convert (1 N=10⁵ dyne, 1 J=10⁷ erg), find dimensions (G [M⁻¹L³T⁻²], h [ML²T⁻¹]). Blind spots: dimensionless k, transcendental arguments, same-dimension clashes. SI 2019 fixes units to exact constants (c, h, e, N_A, k_B). Figures: homogeneity balance, pendulum derivation flow, SI dependency chart (Pisanty), base-unit plate (DePiep).",
   "specialNotes": [
     "Note 1: Memorise the standard table — NEB asks dimensional formulas of force, momentum, power, pressure, G, h, viscosity and surface tension nearly every year.",
     "Note 2: In derivation questions, ALWAYS begin by writing the assumed product-of-powers form and end by interpreting the exponents.",
@@ -148,6 +171,83 @@
         "Derive the form of a relation"
       ],
       "answer": "C"
+    },
+    {
+      "question": "The dimensional formula of force is",
+      "options": [
+        "[MLT⁻²]",
+        "[ML²T⁻²]",
+        "[MLT⁻¹]",
+        "[ML⁻¹T⁻²]"
+      ],
+      "answer": "A",
+      "explanation": "F = ma: [M][LT⁻²] = [MLT⁻²]."
+    },
+    {
+      "question": "Which pair shares identical dimensions?",
+      "options": [
+        "Force and pressure",
+        "Work and torque",
+        "Power and energy",
+        "Velocity and acceleration"
+      ],
+      "answer": "B",
+      "explanation": "Both [ML²T⁻²] — the classic same-dimension clash."
+    },
+    {
+      "question": "In T = k·l^b·g^c, dimensional analysis gives",
+      "options": [
+        "b = 1, c = −1",
+        "b = 1/2, c = −1/2",
+        "b = 2, c = −2",
+        "b = −1/2, c = 1/2"
+      ],
+      "answer": "B",
+      "explanation": "L: b+c = 0; T: −2c = 1."
+    },
+    {
+      "question": "1 newton equals",
+      "options": [
+        "10³ dyne",
+        "10⁵ dyne",
+        "10⁷ dyne",
+        "10² dyne"
+      ],
+      "answer": "B",
+      "explanation": "1 kg·m/s² = 1000×100 g·cm/s² = 10⁵ dyne."
+    },
+    {
+      "question": "Dimensional analysis CANNOT find",
+      "options": [
+        "Dimensions of G",
+        "Unit conversions",
+        "Dimensionless constants like 2π",
+        "Homogeneity of v = u+at"
+      ],
+      "answer": "C",
+      "explanation": "Pure numbers are invisible to dimensions."
+    },
+    {
+      "question": "The SI kilogram is now defined via",
+      "options": [
+        "A platinum cylinder",
+        "The Planck constant h",
+        "Avogadro's number only",
+        "The speed of light"
+      ],
+      "answer": "B",
+      "explanation": "SI 2019: kg ← h exact; the prototype retired."
+    },
+    {
+      "question": "Arguments of sin, log and exp must be",
+      "options": [
+        "Lengths",
+        "Dimensionless",
+        "Times",
+        "Anything"
+      ],
+      "answer": "B",
+      "explanation": "Transcendental functions accept only pure numbers."
     }
   ],
   "importantConcepts": [
@@ -164,10 +264,19 @@
     "Task 4: Solve the NEB past question on finding the dimensions of a and b in a given equation, and the ratio a/b.",
     "Task 5: Write three physics equations you know and verify each dimensionally — one where it passes, then invent one that fails."
   ],
-    "specificConditions": [
-      "**Homogeneity Constraint:** Only quantities with the same dimensional formula can be added, subtracted, or equated in an equation. Term-by-term analysis is mandatory.",
-      "**Function Argument Constraint:** The arguments of trigonometric (e.g., sin θ, cos θ), exponential (e.g., $e^x$), and logarithmic functions must be dimensionless. This is a critical check for determining the dimensions of unknown constants in an equation.",
-      "**Dimensionless Constant Constraint:** Dimensional analysis inherently cannot identify or verify dimensionless constants (e.g., $2\\pi$, 0.5). These factors must be determined via independent theoretical derivation or experimental calibration."
-    ],
-  "visualType": "dimensional-analysis"
+  "specificConditions": [
+    "**Homogeneity Constraint:** Only quantities with the same dimensional formula can be added, subtracted, or equated in an equation. Term-by-term analysis is mandatory.",
+    "**Function Argument Constraint:** The arguments of trigonometric (e.g., sin θ, cos θ), exponential (e.g., $e^x$), and logarithmic functions must be dimensionless. This is a critical check for determining the dimensions of unknown constants in an equation.",
+    "**Dimensionless Constant Constraint:** Dimensional analysis inherently cannot identify or verify dimensionless constants (e.g., $2\\pi$, 0.5). These factors must be determined via independent theoretical derivation or experimental calibration."
+  ],
+  "visualType": "dimensional-analysis",
+  "source": "authored-v2",
+  "numericals": [
+    "Homogeneity: v²=u²+2as ✓ ([L²T⁻²] both sides); E=mc³ ✗ rejected.",
+    "Dimensions of G: [M⁻¹L³T⁻²] from F=Gm₁m₂/r² (value 6.674×10⁻¹¹ SI).",
+    "Dimensions of h: [ML²T⁻¹] from E=hν (exact 6.62607015×10⁻³⁴ J·s).",
+    "1 N = 10⁵ dyne; 1 J = 10⁷ erg by the n₂ conversion rule.",
+    "String wave: v ∝ T^a μ^b → v = k√(T/μ).",
+    "Spring constant [k] = [MT⁻²] — same as surface tension (the clash)."
+  ]
 }

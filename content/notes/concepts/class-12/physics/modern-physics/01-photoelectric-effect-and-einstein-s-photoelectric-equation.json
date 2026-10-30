@@ -1,0 +1,130 @@
+{
+  "title": "Photoelectric effect and Einstein's photoelectric equation",
+  "unitSlug": "modern-physics",
+  "topicSlug": "photoelectric-effect-and-einstein-s-photoelectric-equation",
+  "topicTitle": "Photoelectric effect and Einstein's photoelectric equation",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:15.873Z",
+  "notes": [
+    "# Photoelectric effect and Einstein's photoelectric equation\n\n## 1. Introduction\nPhysical picture of **Photoelectric effect and Einstein's photoelectric equation** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Modern Physics fill pass.\n\n## 2. Concepts and laws\n### Photoelectric effect and Einstein's photoelectric equation\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Constants and values**\n\n| Constant or quantity | Value (CODATA/SI 2019) | Where used | Validity note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Photoelectric effect and Einstein's photoelectric equation — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Photoelectric effect and Einstein's photoelectric equation — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Photoelectric effect and Einstein's photoelectric equation — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Photoelectric effect and Einstein's photoelectric equation — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Photoelectric Effect",
+    "Practice previous year questions on Photoelectric Effect",
+    "Learn the derivations for Photoelectric Effect thoroughly",
+    "Review common mistakes related to Photoelectric Effect"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Photoelectric Effect formula",
+    "Trick 2: Elimination technique for Photoelectric Effect MCQs",
+    "Trick 3: Dimensional analysis shortcut for Photoelectric Effect",
+    "Trick 4: Memory aid for Photoelectric Effect formulas",
+    "Trick 5: Time-saving approach for Photoelectric Effect problems"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Photoelectric Effect.",
+    "Q3. Differentiate between various aspects of Photoelectric Effect.",
+    "Q4. Derive the key formula related to Photoelectric Effect.",
+    "Q5. What are the applications of Photoelectric Effect?",
+    "state + explain the main idea of \"Photoelectric effect and Einstein's photoelectric equation\" with one example.",
+    "compare \"Photoelectric effect\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Photoelectric effect and Einstein's photoelectric equation\" and verify the answer is plausible."
+  ],
+  "practice": [
+    "Solve at least 5 problems on photoelectric effect from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Photoelectric effect and Einstein's photoelectric equation\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Photoelectric Effect is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Photoelectric Effect, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Photoelectric Effect?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Photoelectric Effect is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Below the threshold frequency",
+      "options": [
+        "A bright beam still ejects electrons",
+        "No electrons are ejected",
+        "K_max is large",
+        "φ is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A brighter beam above threshold",
+      "options": [
+        "Raises K_max",
+        "Ejects more electrons",
+        "Lowers the frequency",
+        "Removes the work function"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "K_max equals",
+      "options": [
+        "h f − φ",
+        "h f + φ",
+        "φ − h f as a positive stored energy",
+        "h λ"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The stopping potential measures",
+      "options": [
+        "The work function directly as a current",
+        "K_max / e",
+        "The brightness",
+        "The threshold wavelength as a voltage of the lamp"
+      ],
+      "answer": "B"
+    }
+  ]
+}

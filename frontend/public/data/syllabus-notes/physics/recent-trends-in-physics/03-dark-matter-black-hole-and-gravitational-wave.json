@@ -27,7 +27,13 @@
     "**Black holes.** Where gravity is so strong that the escape velocity reaches c, nothing — not even light — can leave; the horizon radius is the Schwarzschild radius r_s = 2GM/c².",
     "**Signatures.** A black hole is revealed by its effects: stars orbiting an invisible companion, X-rays from a glowing accretion disc, and gravitational waves from merging black holes (LIGO).",
     "**Modern imaging.** The Event Horizon Telescope photographed the shadow of M87's central black hole, testing general relativity in the strong-field regime.",
-    "Dark matter is unseen mass inferred because galaxies rotate too fast in their outer parts for the bright stars to be all the mass. A black hole is a mass so compact that the escape speed at its horizon is the speed of light. Gravitational waves are ripples of spacetime, detected as a tiny stretching and squeezing of a distance."
+    "Dark matter is unseen mass inferred because galaxies rotate too fast in their outer parts for the bright stars to be all the mass. A black hole is a mass so compact that the escape speed at its horizon is the speed of light. Gravitational waves are ripples of spacetime, detected as a tiny stretching and squeezing of a distance.",
+    "# Dark matter, black hole and gravitational wave\n\n## 1. Introduction\nPhysical picture of **Dark matter** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Recent Trends in Physics fill pass.\n\n## 2. Concepts and laws\n### Dark matter\n### black hole and gravitational wave\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Dark matter — geometry and force diagram (authored SVG)\n- **D2** — Dark matter — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Dark matter — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Dark matter — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "❌ Dark matter is the same as dark energy. ✅ Dark matter (27%) is a form of mass that exerts gravitational attraction — it clumps and forms structure. Dark energy (68%) is a property of space itself that causes accelerated expansion and does not clump. They are fundamentally different.",
@@ -303,5 +309,6 @@
       ],
       "answer": "About four fifths of the interior mass is unseen."
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

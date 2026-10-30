@@ -349,7 +349,13 @@
     "**Why airbags/crumple zones work:** to stop a passenger, $\\Delta p$ is fixed by the crash; extending the collision time $\\Delta t$ cuts the average force $F_{avg} = \\Delta p/\\Delta t$. Bending your knees on landing, catching a cricket ball with draw-back hands, and jumping with flexed legs are all the same physics.",
     "**Worked example:** a 0.15 kg cricket ball at 30 m/s is stopped in 0.1 s. $\\Delta p = 0.15 \\times 30 = 4.5$ kg·m/s → $F_{avg} = 45$ N. If caught in 0.02 s: 225 N — five times the force from the same momentum change.",
     "**Variable force:** when $F(t)$ is a curve, impulse is the area under it; for $F = F_0 e^{-t/\\tau}$-style impacts, $J = F_0\\tau$. NEB usually gives triangular or rectangular force–time pulses — count the areas.",
-    "**NEB exam focus:** define momentum and impulse with units; state and use $F = dp/dt$; compute impulse from force–time graphs; apply $J = \\Delta p$ to catches, kicks and landings; explain safety devices via the force–time argument."
+    "**NEB exam focus:** define momentum and impulse with units; state and use $F = dp/dt$; compute impulse from force–time graphs; apply $J = \\Delta p$ to catches, kicks and landings; explain safety devices via the force–time argument.",
+    "# Conservation of linear momentum\n\n## 1. Introduction\nPhysical picture of **Conservation of linear momentum** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dynamics fill pass.\n\n## 2. Concepts and laws\n### Conservation of linear momentum\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Conservation of linear momentum — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Conservation of linear momentum — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Conservation of linear momentum — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Conservation of linear momentum — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "❌ 'Momentum and kinetic energy are interchangeable measures of motion.' ✅ Momentum $mv$ is a vector conserved in ALL collisions; kinetic energy $\\frac{1}{2}mv^2$ is a scalar conserved only in elastic ones. Both grow with speed but differently.",
@@ -498,5 +504,6 @@
       ],
       "answer": "C"
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

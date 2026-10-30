@@ -1,0 +1,130 @@
+{
+  "title": "Electric current, drift velocity, and relaxation time",
+  "unitSlug": "current-electricity",
+  "topicSlug": "electric-current-drift-velocity-and-relaxation-time",
+  "topicTitle": "Electric current, drift velocity, and relaxation time",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:15.656Z",
+  "notes": [
+    "# Electric current, drift velocity, and relaxation time\n\n## 1. Introduction\nPhysical picture of **Electric current** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Current Electricity fill pass.\n\n## 2. Concepts and laws\n### Electric current\n### drift velocity\n### and relaxation time\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Electric current — motion graphs with slope and area marked (authored SVG, plotted from note data)\n- **D2** — Electric current — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Electric current — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Electric current — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Electric Current and Drift Velocity",
+    "Practice previous year questions on Electric Current and Drift Velocity",
+    "Learn the derivations for Electric Current and Drift Velocity thoroughly",
+    "Review common mistakes related to Electric Current and Drift Velocity"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Electric Current and Drift Velocity formula",
+    "Trick 2: Elimination technique for Electric Current and Drift Velocity MCQs",
+    "Trick 3: Dimensional analysis shortcut for Electric Current and Drift Velocity",
+    "Trick 4: Memory aid for Electric Current and Drift Velocity formulas",
+    "Trick 5: Time-saving approach for Electric Current and Drift Velocity problems"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Electric Current and Drift Velocity.",
+    "Q3. Differentiate between various aspects of Electric Current and Drift Velocity.",
+    "Q4. Derive the key formula related to Electric Current and Drift Velocity.",
+    "Q5. What are the applications of Electric Current and Drift Velocity?",
+    "state + explain the main idea of \"Electric current, drift velocity, and relaxation time\" with one example.",
+    "compare \"Electric current\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Electric current, drift velocity, and relaxation time\" and verify the answer is plausible."
+  ],
+  "practice": [
+    "Solve at least 5 problems on electric current and drift velocity from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Electric current, drift velocity, and relaxation time\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Electric Current and Drift Velocity is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Electric Current and Drift Velocity, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Electric Current and Drift Velocity?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Electric Current and Drift Velocity is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Current in a metal is carried by",
+      "options": [
+        "Protons drifting along the wire",
+        "Electrons",
+        "The lattice ions as the main moving charge",
+        "Neutrons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "I equals",
+      "options": [
+        "n e A v_d",
+        "v_d / n",
+        "E τ",
+        "A only"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Drift speed is typically",
+      "options": [
+        "Near the speed of light",
+        "Very small compared with the random speed",
+        "Zero whenever current flows",
+        "Equal to the signal speed"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Conventional current is",
+      "options": [
+        "Opposite the electron drift",
+        "Along the electron drift",
+        "Perpendicular to the wire",
+        "A magnetic field"
+      ],
+      "answer": "A"
+    }
+  ]
+}

@@ -19,7 +19,13 @@
     "Limiting Reagent Identification: Calculate moles of each reactant. Divide by coefficient in balanced equation. Smallest value identifies limiting reagent. All product calculations based on limiting reagent only. Excess reagent remains partially unreacted.",
     "Theoretical Yield Calculation: Maximum possible product based on limiting reagent and stoichiometry. Actual yield is always less due to incomplete reactions, side reactions, and losses during purification.",
     "Percentage Yield: % yield = (actual yield / theoretical yield) × 100. Industrial processes aim for >90%. Low yields indicate inefficiency, side reactions, or equilibrium limitations. NEB frequently asks numerical problems combining limiting reagent and % yield.",
-    "Percentage Purity: % purity = (mass of pure substance / mass of impure sample) × 100. Impure samples require correction before stoichiometric calculations. Example: 80% pure limestone means only 80 g CaCO₃ per 100 g sample participates in reaction."
+    "Percentage Purity: % purity = (mass of pure substance / mass of impure sample) × 100. Impure samples require correction before stoichiometric calculations. Example: 80% pure limestone means only 80 g CaCO₃ per 100 g sample participates in reaction.",
+    "# Calculations based on mole concept\n\n## 1. Introduction\nChemical picture of **Calculations based on mole concept** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Stoichiometry fill pass.\n\n## 2. Concepts and definitions\n### Calculations based on mole concept\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
+    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
+    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
+    "## 5. Diagrams and figures\n- **D1** — Calculations based on mole concept — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Calculations based on mole concept — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Calculations based on mole concept — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Calculations based on mole concept — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
+    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
   ],
   "specificConditions": [
     "STP Definition: Standard Temperature and Pressure = 0°C (273.15 K) and 1 atm (101.325 kPa). Molar volume 22.4 L applies ONLY at STP. At other conditions use PV = nRT.",
@@ -155,5 +161,6 @@
       "answer": "B",
       "explanation": "% yield = (actual yield / theoretical yield) × 100."
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

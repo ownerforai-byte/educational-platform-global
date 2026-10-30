@@ -144,6 +144,20 @@ work-example answers verified by substitution.
 > question (and sub-part) of each exercise** and tick its box. Exercise IDs are the book's
 > own (`2.3` = Chapter 2, Exercise 3); question IDs stay the book's (`Q4(a)`).
 >
+> **Edition truth (pinned 2026-10-30 from the vendor PDF's own Contents, PDF pp19–24):**
+> the served printing is the **2075 HSEB reprint** (`vendor/books/sukunda-basic-mathematics-xi.pdf`,
+> 661 PDF pages = book pp + 24): **19 chapters + appendix** — CH1 Sets/RNS/Logic pp1–59 ·
+> CH2 Relations/Functions/Graphs pp60–116 · CH3 Curve Sketching pp117–132 · CH4 Trigonometrical
+> Equations pp133–156 · CH5 Inverse Circular Functions pp157–171 · CH6 Properties of Triangle
+> pp172–190 · CH7 Solution of Triangle pp191–197 · CH8 Sequence & Series + Induction pp198–237 ·
+> CH9 Matrices and Determinants pp238–285 · CH10 System of Linear Equations pp286–310 · CH11 Complex
+> Numbers pp311–349 · CH12 Polynomial Equations pp350–371 · CH13 Straight Lines pp372–410 · CH14 Pair
+> of Straight Lines pp411–432 · CH15 Circle pp433–~454 · CH16 Limits and Continuity ~pp455–489 ·
+> CH17 Derivatives pp490–534 · CH18 Application of Derivatives pp535–561 · CH19 Antiderivatives
+> pp562–608 · Appendix p609+. The newer guide-edition reorganises all of this (its Ch4+ differ);
+> **fill sessions solve THIS printing cover-to-cover**, keep guide-edition-only questions as appendices
+> (as done for Ex2.4-A1), and correct the rows below chapter by chapter. Nothing is ever dropped.
+>
 > **Sources (web-verified, Oct 2026):** Grade 11 — two independent chapterwise-solution
 > indexes (nepalieducate.com, nebeducation.com) agree exactly: **23 chapters · 62
 > exercises**; chapter titles from SciPiPupil's Sukunda index; Ch 3 = *Curve Sketching*
@@ -157,10 +171,10 @@ work-example answers verified by substitution.
 | Ch | Chapter | Exercises (☐ = every question still unsolved) | Platform home |
 |---|---|---|---|
 | 1 | Logic, Sets and Real Number System | ☑ 1.1 ☑ 1.2 ☑ 1.3 ☑ 1.4 (book-mapped from PDF 2026-10-29: book Ex 1.1 Sets = 49/49 complete — web-1.2 file 34Q [Q1–Q5] + supplement 15Q [Q6–Q13, every answer matches printed Answers p.15]; book Ex 1.2 proofs = 20/20 complete — web-1.3 file 15 proofs [Q2,Q4a–c,Q5,Q6] + supplement 5 proofs [Q1a–c,Q4d–e]; book Ex 1.3 |·| = 41/41 complete — 26-entry file covers Q1–Q8 [Q2(d) quotient law added, Q3(g) ≤-form fixed, Q6(b) expansion corrected, Q8(c) book-lettered; all vs printed key + 300/350-dpi OCR]; book Ex 1.4 Logic = 52/52 complete (all flags resolved 2026-10-29 via 300/350/400-dpi crops + printed key pp 57–59: Q3c neither-nor re-read, Q5d = q∨(p∧s), Q5f = (p∨q)∧(r∨s), Q5c ∧ adopted on key evidence, Q6c/d + Q4f + Q8e + Q10c verbatim, Q10a ∨ restored, Q10b '=' = conditional → genuine tautology)] — Ch.1 COMPLETE (162/162: 49 + 20 + 41 + 52) | C11 `algebra` — Logic and set · Real numbers |
-| 2 | Relations, Functions, and Graphs | ☑ 2.1 ◐ 2.2 ☐ 2.3 ☐ 2.4 (+ Additional Questions, pp 87–88 — pictures-only on web, via PDF) — map (2075-print PDF pp = book pp + 24): Ex 2.1 = book pp 52–53 (PDF 76–77); Ex 2.2 = book pp 82–84 (PDF 106–109, real Q1–Q10 + printed key recovered 2026-10-29: website 'Ex 2.2' is a different-numbering subset = book Q2–Q3 + later-exercise inverse/composite set); Ex 2.3/2.4/Additional next via header-hunt | C11 `algebra` — Function |
-| 3 | Curve Sketching | ☐ 3.1 | C11 `algebra` — Curve sketching |
-| 4 | Sequence and Series | ☐ 4.1 ☐ 4.2 | C11 `algebra` — Sequence and series |
-| 5 | Matrices and Determinants | ☐ 5.1 ☐ 5.2 ☐ 5.3 | C11 `algebra` — Matrices and determinants |
+| 2 | Relations, Functions, and Graphs | ☑ 2.1 ◐ 2.2 ☑ 2.3 ☑ 2.4 (COMPLETE 2026-10-30: Q1(a–j) + Q2–Q4 in ex-2-4-logarithmic-identities.json, 14 entries incl. guide-edition appendix; every proof by log laws) ☑ Additional (COMPLETE 2026-10-30: Q1–Q8 in ex-2-additional-functions-review-a.json + Q9–Q24 in ex-2-additional-functions-review-b.json; all numeric answers match printed key pp115–116; honest flags: AQ4 figures pending, AQ9(b) onto-R disproved as printed, AQ13 a≠0 added, AQ16(d) reading via key, AQ23 key '2' = dropped ∛) — Ch.2 COMPLETE (book pp112–115 = PDF pp137–143) — map (2075-print PDF pp = book pp + 24): Ex 2.1 = book pp 52–53 (PDF 76–77); Ex 2.2 = book pp 82–84 (PDF 106–109, real Q1–Q10 + printed key recovered 2026-10-29: website 'Ex 2.2' is a different-numbering subset = book Q2–Q3 + later-exercise inverse/composite set); Ex 2.3/2.4/Additional next via header-hunt | C11 `algebra` — Function |
+| 3 | Curve Sketching | ☑ 3.1 (COMPLETE 2026-10-30: Q1–Q8, 40 entries in ex-3-1-curve-sketching.json; every statement via 200-dpi image reads; answers key p129 + figure pp130–132 point-labels matched; flags: Q1(d–f) key letters garbled = Odd ×3 by substitution, Q3(d) period 2π/a vs key '2π') — Ch.3 COMPLETE (book pp128–132 = PDF pp155–159) | C11 `algebra` — Curve sketching |
+| 4 | Trigonometrical Equations and General Values (THIS PRINTING's Ch4, book pp133–156) | ☑ 4.1 (COMPLETE 2026-10-30: Q1–Q13, 22 entries in trigonometry/ex-4-1-trig-identities.json; every statement via 200-dpi image reads; OCR corrections: Q5(c) = 3/2, Q12(a)/Q13(b) half-angles restored) ☑ 4.2 (COMPLETE 2026-10-30: Q1–Q15, 45 entries in trigonometry/ex-4-2-trig-equations.json; statements via image reads; key-checked; flags: Q4(a)/(c) identical in print, Q10(b)/Q13(i) key rows illegible = substitution-verified, Q15(ii) key drops -pi/2) ☑ Additional (COMPLETE 2026-10-30: Q1–Q4, 17 entries in trigonometry/ex-4-additional-trig-equations.json; statements via image reads; key p156 garbled-but-consistent; every restricted answer substitution-verified) — Ch.4 COMPLETE (book pp133–156 = PDF pp160–183) | C11 `trigonometry` |
+| 5 | Inverse Circular Functions (THIS PRINTING's Ch5, book pp157–171) | ☑ 5.1 (COMPLETE 2026-10-30: Q1–Q6, 51 entries in trigonometry/ex-5-1-inverse-values-and-rewrites.json [Q1–Q3, 20] + trigonometry/ex-5-1-inverse-proofs-and-equations.json [Q4–Q6, 31]; statements via 220–600dpi crops + RapidOCR reads of the stacked fractions; every numeric answer key-checked) ☑ Additional (COMPLETE 2026-10-30: Q7–Q12 proofs + AQ1–Q4, 21 entries in trigonometry/ex-5-1-inverse-theorems-and-additional.json; statements via image reads; flags: Q9(i) independently confirmed via NEB video, AQ4(i) as printed (= 0) FALSE — counterexample a=3,b=2,c=1 gives pi, corrected to pi and proved) — Ch.5 COMPLETE (book pp157–171 = PDF pp184–198) | C11 `trigonometry` |
 | 6 | Complex Numbers | ☐ 6.1 ☐ 6.2 ☐ 6.3 ☐ 6.4 | C11 `algebra` — Complex number |
 | 7 | Properties of Triangle | ☐ 7.1 | **enrichment** (sine/cosine/tangent laws — solved & tagged; above the Mat. 007 order) |
 | 8 | Solutions of Triangle | ☐ 8.1 | **enrichment** (same) |

@@ -15,9 +15,45 @@
  */
 
 import groovy.xml.MarkupBuilder
+import java.security.KeyStore
 
 plugins {
     id 'com.android.application'
+}
+
+// ---------------------------------------------------------------------------
+// Google Play upload-keystore signing (Play App Signing upload key).
+// Credentials live in android/key.properties (gitignored). storeFile is
+// resolved relative to the android/ project dir where Gradle runs.
+// A release build without key.properties fails fast so a mis-signed AAB
+// can never reach Play.
+// ---------------------------------------------------------------------------
+def releaseKeystore = null
+def keystorePropsFile = new File(rootProject.projectDir, 'key.properties')
+if (keystorePropsFile.exists()) {
+    def kp = new Properties()
+    keystorePropsFile.withInputStream { kp.load(it) }
+    def ksPath = kp['storeFile']
+    releaseKeystore = [
+        storeFile     : new File(rootProject.projectDir, ksPath).getCanonicalFile(),
+        storePassword : kp['storePassword'],
+        keyAlias      : kp['keyAlias'],
+        keyPassword   : kp['keyPassword']
+    ]
+} else {
+    throw new GradleException('Missing android/key.properties — required to sign the release AAB with the Play upload keystore.')
+}
+
+android {
+    signingConfigs {
+        release {
+            storeFile      releaseKeystore.storeFile
+            storePassword  releaseKeystore.storePassword
+            keyAlias       releaseKeystore.keyAlias
+            keyPassword    releaseKeystore.keyPassword
+            v2SigningEnabled true
+        }
+    }
 }
 
 def twaManifest = [
@@ -153,6 +189,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {

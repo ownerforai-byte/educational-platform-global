@@ -361,7 +361,13 @@
     "**Worked example:** a force of 40 N stretches a spring by 8 cm. k = F/x = 40/0.08 = 500 N/m. A 100 N force will then stretch it by x = 100/500 = 0.2 m = 20 cm.",
     "**Hooke's law on a graph:** the F–x graph is a straight line through the origin while the elastic limit is respected. Beyond it, the graph curves; after plastic deformation, a larger force is needed for the same extension or the body does not return to its original length.",
     "**Application — weight balance (spring balance):** the extension of a calibrated spring measures the applied weight. Since F = kx and weight = mg, the scale can be marked directly in newtons or kilograms.",
-    "**Conditions for Hooke's law to hold:** the deformation must be small, elastic (the body returns to original shape when the load is removed), and within the proportional limit. Overstretching a spring permanently changes its k."
+    "**Conditions for Hooke's law to hold:** the deformation must be small, elastic (the body returns to original shape when the load is removed), and within the proportional limit. Overstretching a spring permanently changes its k.",
+    "# Hooke's law: force constant\n\n## 1. Introduction\nPhysical picture of **Hooke's law** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Elasticity fill pass.\n\n## 2. Concepts and laws\n### Hooke's law: force constant\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Hooke's law — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Hooke's law — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Hooke's law — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Hooke's law — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "❌ 'F = kx means force depends on extension.' ✅ Precisely that — for a spring, doubling the extension doubles the stretching force needed. The spring PULLS back with force kx (restoring force) opposite to the applied load.",
@@ -516,5 +522,6 @@
       ],
       "answer": "B"
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

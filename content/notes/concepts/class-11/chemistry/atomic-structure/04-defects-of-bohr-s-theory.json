@@ -1,0 +1,76 @@
+{
+  "title": "Defects of Bohr's theory",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "defects-of-bohr-s-theory",
+  "topicTitle": "Defects of Bohr's theory",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:23.279Z",
+  "notes": [
+    "# Defects of Bohr's theory\n\n## 1. Introduction\nChemical picture of **Defects of Bohr's theory** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Atomic Structure fill pass.\n\n## 2. Concepts and definitions\n### Defects of Bohr's theory\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
+    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Reaction and preparation sheet**\n\n| Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark |\n| --- | --- | --- | --- | --- |",
+    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
+    "## 5. Diagrams and figures\n- **D1** — Defects of Bohr's theory — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)\n- **D2** — Defects of Bohr's theory — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Defects of Bohr's theory — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Defects of Bohr's theory — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
+    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+  ],
+  "practice": [
+    "State the defects of Bohr's theory, giving the physical reason for each.",
+    "Why does Bohr's theory fail for multi-electron atoms? Use screening and electron–electron repulsion.",
+    "How does Heisenberg's uncertainty principle destroy the concept of a Bohr orbit?",
+    "Distinguish the Zeeman and Stark effects and explain why Bohr's model cannot explain them.",
+    "Describe the modifications by Sommerfeld and Schrödinger that corrected Bohr's model.",
+    "State the Bohr–Bury scheme with the 2n² and octet rules.",
+    "Write the Bohr–Bury configuration of calcium (Z = 20) and point out where the scheme needs 4s before 3d.",
+    "Why does the scheme fail for chromium and copper?",
+    "Show how the octet rule explains the inertness of argon.",
+    "List the defects of Bohr's theory with a one-line reason for each.",
+    "Which defect does the uncertainty principle expose, and how?",
+    "Match each defect with the later theory that repaired it.",
+    "Why does Bohr's model fail for helium but work for He⁺?",
+    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
+    "Verify numerically that exactly one de Broglie wavelength fits the first Bohr orbit of hydrogen.",
+    "Why was mvr = nh/2π considered a defect of the theory?",
+    "How does the uncertainty principle still limit the standing-wave picture?"
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Defects of Bohr's theory\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "According to the Bohr–Bury scheme, the maximum electrons in the outermost shell is:",
+      "options": [
+        "2n²",
+        "8",
+        "18",
+        "32"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Bohr's theory cannot explain the splitting of spectral lines in a magnetic field, known as the:",
+      "options": [
+        "Stark effect",
+        "Zeeman effect",
+        "Raman effect",
+        "Photoelectric effect"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The standing-wave condition for a stable orbit is:",
+      "options": [
+        "nλ = πr",
+        "nλ = 2πr",
+        "λ = 2πr/n²",
+        "nλ = 4πr"
+      ],
+      "answer": "B"
+    }
+  ]
+}

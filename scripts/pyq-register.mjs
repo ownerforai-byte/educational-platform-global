@@ -55,6 +55,11 @@ const CORPUSES = [
   // class, one question per syllabus unit (per-question unitSlug). Same
   // contract, same consumers.
   { dir: path.join(CONTENT, "practicals"), prefix: "practicals" },
+  // Authored textbook exercise solutions (`content/practice/solutions/`): same
+  // file contract (questions with Q&A), so they register like banks and reach
+  // the quiz loader + AI corpus. Non-canonical names (`ex-…json`) only affect
+  // the legacy log line.
+  { dir: path.join(CONTENT, "practice", "solutions"), prefix: "practice/solutions" },
 ];
 const TARGETS = [
   path.join(CONTENT, "_index.json"),

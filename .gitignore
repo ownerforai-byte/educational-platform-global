@@ -136,6 +136,11 @@ test_*.py
 # Legacy/quarantined code backed up during the restructure (not part of the app)
 /scripts/_stale/
 
+# vendor/ — local source books & OCR scratch (e.g. the Sukunda X1 scan + RapidOCR
+# outputs used to build the §6A exercise-solutions layer). The 200MB+ commercial
+# book PDF and its OCR scratch must never be committed to the deployable branch.
+/vendor/
+
 # cell-architecture-studio/ â€” standalone local project (was a git submodule; its
 # remote ownerforai-byte/gitn1 was deleted, so it lives local-only now).
 # Do not track it.

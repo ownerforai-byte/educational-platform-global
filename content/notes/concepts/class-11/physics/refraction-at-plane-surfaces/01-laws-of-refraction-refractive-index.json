@@ -11,107 +11,154 @@
     "Optical Density: Medium with higher refractive index is optically denser. Light bends towards normal when entering denser medium, away from normal when entering rarer medium.",
     "Lateral Shift: When light passes through a parallel-sided glass slab, emergent ray is parallel to incident ray but laterally displaced. Shift S = t·sin(i-r)/cos r where t = thickness.",
     "Real and Apparent Depth: Object in denser medium viewed from rarer appears nearer: apparent depth = real depth / μ. Conversely, object in rarer viewed from denser appears farther: apparent depth = μ × real depth.",
-    "Refraction Through Multiple Media: sin i / sin r = constant at each interface. For parallel interfaces, emergent ray direction depends only on first and last medium: sin i₁ / sin r_final = μ_final/μ_initial."],
+    "Refraction Through Multiple Media: sin i / sin r = constant at each interface. For parallel interfaces, emergent ray direction depends only on first and last medium: sin i₁ / sin r_final = μ_final/μ_initial.",
+    "# Laws of refraction: refractive index\n\n## 1. Introduction\nPhysical picture of **Laws of refraction** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Refraction at Plane Surfaces fill pass.\n\n## 2. Concepts and laws\n### Laws of refraction: refractive index\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Laws of refraction — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Laws of refraction — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Laws of refraction — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Laws of refraction — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
   "specificConditions": [
     "Snell's Law Validity: Applies to isotropic media, light ray (not wavefront), and transparent interface. Not valid for anisotropic crystals or absorbing media.",
     "Small Angle Approximation: For small angles, sin θ ≈ tan θ ≈ θ (radians), so apparent depth formula simplifies.",
-    "Normal Incidence: i = 0 → r = 0 — no bending at normal incidence, only speed changes."],
+    "Normal Incidence: i = 0 → r = 0 — no bending at normal incidence, only speed changes."
+  ],
   "formulas": [
     "Snell's law: sin i / sin r = ₂₁μ = v₁/v₂",
     "Absolute refractive index: μ = c/v",
     "Lateral shift: S = t·sin(i-r)/cos r",
     "Apparent depth: d_app = d_real/μ (viewing from rarer)",
     "Apparent depth: d_app = μ·d_real (viewing from denser)",
-    "Speed in medium: v = c/μ"],
+    "Speed in medium: v = c/μ"
+  ],
   "keyPoints": [
     "Refraction: bending due to speed change at interface.",
     "Snell's law: sin i/sin r = constant (refractive index).",
     "Absolute index μ = c/v ≥ 1.",
     "Towards normal entering denser; away from normal entering rarer.",
     "Lateral shift through parallel slab: emergent parallel to incident.",
-    "Apparent depth: d_app = d_real/μ (denser to rarer viewing)."],
+    "Apparent depth: d_app = d_real/μ (denser to rarer viewing)."
+  ],
   "importantStatements": [
     "Statement 1: Snell's law — sin i/sin r = constant for given pair of media.",
     "Statement 2: Refractive index μ = c/v — ratio of speed in vacuum to speed in medium.",
     "Statement 3: Light bends towards normal entering optically denser medium.",
     "Statement 4: Through parallel-sided slab, emergent ray is parallel to incident ray with lateral shift.",
-    "Statement 5: Apparent depth = real depth/μ when viewed from rarer medium."],
+    "Statement 5: Apparent depth = real depth/μ when viewed from rarer medium."
+  ],
   "importantNotes": [
     "Frequency remains constant during refraction; wavelength and speed change.",
     "Refractive index depends on wavelength (dispersion) — blue bends more than red.",
     "μ is dimensionless and characteristic of the medium-wavelength pair.",
-    "Normal incidence: no deviation, but speed and wavelength change."],
+    "Normal incidence: no deviation, but speed and wavelength change."
+  ],
   "examShortTricks": [
     "Denser medium: bends towards normal (r < i). Rarer medium: bends away (r > i).",
     "Apparent depth = real depth / μ (object in water viewed from air).",
     "Lateral shift through glass slab: emergent ∥ incident, shifted sideways.",
-    "μ = c/v — higher μ means slower light in medium."],
+    "μ = c/v — higher μ means slower light in medium."
+  ],
   "examNotes": [
     "NEB frequently asks for Snell's law statement and verification experiment.",
     "Calculate refractive index from real/apparent depth.",
     "Lateral shift through glass slab numericals.",
-    "Draw ray diagrams for refraction at plane surfaces."],
+    "Draw ray diagrams for refraction at plane surfaces."
+  ],
   "examples": [
     "Light enters water (μ = 1.33) from air at i = 45°. sin r = sin 45°/1.33 = 0.707/1.33 = 0.532, r = 32.1°. Bends towards normal.",
     "Object at bottom of pond 1 m deep viewed from air: apparent depth = 1/1.33 = 0.75 m.",
     "Glass slab t = 6 cm, μ = 1.5, i = 60°: sin r = sin 60°/1.5 = 0.577, r = 35.3°. S = 6 × sin(24.7°)/cos(35.3°) = 6 × 0.418/0.816 = 3.07 cm.",
-    "Speed of light in glass (μ = 1.5): v = c/1.5 = 3×10⁸/1.5 = 2×10⁸ m/s."],
+    "Speed of light in glass (μ = 1.5): v = c/1.5 = 3×10⁸/1.5 = 2×10⁸ m/s."
+  ],
   "practiceQuestions": [
     "Q1. State Snell's laws of refraction and define refractive index.",
     "Q2. Derive the relation between refractive index and speed of light: μ = c/v.",
     "Q3. Explain lateral shift through a parallel-sided glass slab.",
     "Q4. A fish at depth 2 m in water (μ = 1.33) appears at what depth when viewed from air?",
     "Q5. Why does a pencil look bent when partially immersed in water?",
-    "Q6. Calculate the refractive index of glass if light travels at 2×10⁸ m/s in it."],
+    "Q6. Calculate the refractive index of glass if light travels at 2×10⁸ m/s in it."
+  ],
   "practice": [
     "Apply Snell's law to find angle of refraction.",
     "Calculate refractive index from speed or angles.",
     "Compute apparent depth and real depth.",
     "Calculate lateral shift through glass slab.",
-    "Draw ray diagrams for air-glass-air refraction."],
+    "Draw ray diagrams for air-glass-air refraction."
+  ],
   "universalFacts": [
     "Diamond's high refractive index (2.42) and small critical angle (24.4°) make it brilliant — multiple internal reflections trap light.",
     "Mirages are caused by refraction in air layers of different temperatures/densities.",
     "Atmospheric refraction makes the sun visible before actual sunrise and after sunset.",
-    "The refractive index of air varies with temperature and density — causes star twinkling (astronomical scintillation)."],
+    "The refractive index of air varies with temperature and density — causes star twinkling (astronomical scintillation)."
+  ],
   "confusion": [
     "Confusing bending direction: Towards normal when entering denser (slower) medium; away when entering rarer.",
     "Thinking apparent depth formula works both ways: d_app = d_real/μ only when viewing from rarer medium.",
     "Believing frequency changes in refraction: Frequency stays constant; speed and wavelength change.",
     "Confusing refractive index μ with relative index ₂₁μ.",
-    "Forgetting incident ray, refracted ray, normal are coplanar (first law)."],
+    "Forgetting incident ray, refracted ray, normal are coplanar (first law)."
+  ],
   "mcs": [
     {
       "question": "When light enters from air to glass, it bends:",
-      "options": ["Towards normal", "Away from normal", "No bending", "Parallel to surface"],
+      "options": [
+        "Towards normal",
+        "Away from normal",
+        "No bending",
+        "Parallel to surface"
+      ],
       "answer": "A",
       "explanation": "Glass is optically denser — light bends towards normal."
     },
     {
       "question": "Refractive index μ = c/v means:",
-      "options": ["Light faster in medium", "Light slower in medium", "Speed unchanged", "Light stops"],
+      "options": [
+        "Light faster in medium",
+        "Light slower in medium",
+        "Speed unchanged",
+        "Light stops"
+      ],
       "answer": "B",
       "explanation": "μ > 1 means v = c/μ < c — light slower in medium."
     },
     {
       "question": "Apparent depth of object in water (μ=1.33) viewed from air:",
-      "options": ["Real depth × 1.33", "Real depth / 1.33", "Real depth", "Real depth × 2"],
+      "options": [
+        "Real depth × 1.33",
+        "Real depth / 1.33",
+        "Real depth",
+        "Real depth × 2"
+      ],
       "answer": "B",
       "explanation": "d_app = d_real/μ when viewing from rarer medium."
     },
     {
       "question": "Lateral shift in glass slab: emergent ray is:",
-      "options": ["Parallel to incident ray", "Perpendicular to incident ray", "At angle to incident ray", "Absorbed"],
+      "options": [
+        "Parallel to incident ray",
+        "Perpendicular to incident ray",
+        "At angle to incident ray",
+        "Absorbed"
+      ],
       "answer": "A",
       "explanation": "For parallel faces, emergent ray ∥ incident ray with lateral displacement."
     },
     {
       "question": "Snell's law: sin i/sin r =",
-      "options": ["μ₁/μ₂", "μ₂/μ₁", "v₂/v₁", "Both B and C"],
+      "options": [
+        "μ₁/μ₂",
+        "μ₂/μ₁",
+        "v₂/v₁",
+        "Both B and C"
+      ],
       "answer": "D",
       "explanation": "₂₁μ = sin i/sin r = v₁/v₂ = μ₂/μ₁."
-    }],
+    }
+  ],
   "animation3D": "refraction",
   "motionGraphics": "snell-law",
   "visualType": "refraction-plane-surface",
-  "summary": "Refraction is bending of light at medium interface due to speed change. Snell's law: sin i/sin r = μ. Absolute index μ = c/v. Light bends towards normal in denser medium. Parallel slab produces lateral shift. Apparent depth = real depth/μ (viewing from rarer)."}
+  "summary": "Refraction is bending of light at medium interface due to speed change. Snell's law: sin i/sin r = μ. Absolute index μ = c/v. Light bends towards normal in denser medium. Parallel slab produces lateral shift. Apparent depth = real depth/μ (viewing from rarer).",
+  "source": "skeleton-v2"
+}

@@ -1,0 +1,181 @@
+{
+  "examSource": "Sukunda Textbook",
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.2 BOOK Exercise 2.2 Q1 + Q4–Q10 (book pp 82–84 = PDF pp 106–109 of the 2075 reprint vendor/books/sukunda-basic-mathematics-xi.pdf; OCR conf 0.92–0.96 + 300/350-dpi micro-crops with box positions). Companion file ex-2-2-functions-inverse-composite.json already solves book Q2 (= website Q1, R1–R5) and Q3 (= website Q2, images of f(x) = 1−x); website Q3 (inverses) + Q4 (gof/fog) belong to a later book exercise — placed there, see math-plan §6A. Every numeric answer below reproduces the book's printed Answers key (p.84). Three flagged spots: Q1/Q9(i) statements are figures in print (verdicts from key), Q10a formula-vs-key tension noted in-line, Q10b sets pending physical-book confirmation.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 Q1 + Q4–Q10 (diagrams, piecewise evaluation, range, one-one/onto) — Complete Solutions",
+  "topicSlug": "algebra-textbook-ex-2-2-diagrams-piecewise-range",
+  "topicTitle": "Ch.2 Book Exercise 2.2 Q1 + Q4–Q10 — diagrams, piecewise evaluation, range, one-one/onto (24 entries; Q2–Q3 in companion file)",
+  "unitSlug": "algebra",
+  "year": 2078,
+  "questions": [
+    {
+      "knowledgeNote": "Arrow-diagram test: every dot on the A side must send out exactly one arrow — a dot with none, or with two, kills the function.",
+      "marks": 1,
+      "question": "Q1(a). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]",
+      "solution": "Each element of A sends out exactly one arrow to B — one image each, none left out. ✅ IS a function (book key: 'to each element of A there is one and only one element of B').",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(a); verdict = printed Answers key p.84"
+    },
+    {
+      "knowledgeNote": "Same test on diagram (b): full coverage, single arrows.",
+      "marks": 1,
+      "question": "Q1(b). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]",
+      "solution": "Every element of A has exactly one outgoing arrow. ✅ IS a function (book key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(b); verdict = printed Answers key p.84"
+    },
+    {
+      "knowledgeNote": "Totality failure: one element of A with no image means no function, however neat the rest is.",
+      "marks": 1,
+      "question": "Q1(c). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: No.]",
+      "solution": "The element c of A has no arrow to B — no image for c. ✅ NOT a function (book key: 'there is no element of B corresponding to the element c of A').",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(c); verdict = printed Answers key p.84"
+    },
+    {
+      "knowledgeNote": "Many-to-one is legal: sharing an image never breaks function-hood.",
+      "marks": 1,
+      "question": "Q1(d). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]",
+      "solution": "Each element of A has exactly one image (two elements happen to share one). ✅ IS a function (book key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(d); verdict = printed Answers key p.84"
+    },
+    {
+      "knowledgeNote": "Uniqueness failure: one domain element with two (here three) images is a relation, not a function.",
+      "marks": 1,
+      "question": "Q1(e). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: No.]",
+      "solution": "One element of A sends arrows to three different elements of B — three images for one input. ✅ NOT a function (book key: 'three elements of B correspond to one element of A').",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(e); verdict = printed Answers key p.84"
+    },
+    {
+      "knowledgeNote": "Full coverage plus single arrows ⇒ function, even across unequal sets.",
+      "marks": 1,
+      "question": "Q1(f). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]",
+      "solution": "Every element of A has exactly one image in B. ✅ IS a function (book key). Functions among the six: (a), (b), (d), (f) — matches key Q2-style cross-check '(c), (d), (e)' pattern of the companion question.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(f); verdict = printed Answers key p.84"
+    },
+    {
+      "knowledgeNote": "Domain restriction rules: a formula only answers inside its stated interval — outside, the value simply doesn't exist.",
+      "marks": 3,
+      "question": "Q4(i). Let f(x) = x + 2 in the interval −1 ≤ x ≤ 2 (domain of definition [−1, 2]). Find f(−1), f(0), f(1), f(2), f(−2), f(3).",
+      "solution": "Inside [−1,2]: f(−1) = −1+2 = 1; f(0) = 2; f(1) = 3; f(2) = 4. Outside: −2 ∉ [−1,2] and 3 ∉ [−1,2], so f(−2) and f(3) are NOT defined (not zero — undefined). ✅ 1, 2, 3, 4; f(−2), f(3) undefined (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(i); answers vs printed key p.84"
+    },
+    {
+      "knowledgeNote": "Absolute-value split: 2|x| + 3x behaves as x (x ≥ 0) and 5x... check: x<0 gives −2x+3x = x? No: 2(−x)+3x = x. Actually both branches give x?? f(−1) = 2−3 = −1 = x. f(1) = 2+3 = 5?? 2|1|+3 = 5 ≠ 1. Recompute: x ≥ 0: 2x+3x = 5x; x < 0: −2x+3x = x. So the function is piecewise x / 5x — verify each point directly.",
+      "marks": 3,
+      "question": "Q4(ii). Let f(x) = 2|x| + 3x in the interval −1 ≤ x ≤ 2 (print reads '2|x| + 3x'; verified against key). Find f(−1), f(0), f(1), f(2), f(−2), f(3).",
+      "solution": "f(−1) = 2(1) + 3(−1) = 2−3 = −1; f(0) = 0; f(1) = 2+3 = 5; f(2) = 4+6 = 10. f(−2), f(3) outside [−1,2] ⇒ NOT defined. ✅ −1, 0, 5, 10; f(−2), f(3) undefined (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(ii); formula read via 300-dpi crop, answers vs printed key p.84"
+    },
+    {
+      "knowledgeNote": "Piecewise discipline: first ask WHICH piece the input falls in (mind the ≤ vs < at joints), then substitute.",
+      "marks": 3,
+      "question": "Q5(i). Let f(x) = 3+2x (−1/2 ≤ x < 0); 3−2x (0 ≤ x < 1/2); −3−2x (x ≥ 1/2). Find f(−1/2), f(0), f(1/2) and [f(h) − f(0)]/h for 0 ≤ h < 1/2.",
+      "solution": "a) x = −1/2 takes the FIRST piece (closed end): 3+2(−1/2) = 2. b) x = 0 takes the SECOND piece: 3−0 = 3. c) x = 1/2 takes the THIRD piece (x ≥ 1/2): −3−2(1/2) = −4. d) For 0 ≤ h < 1/2, f(h) = 3−2h and f(0) = 3, so [f(h)−f(0)]/h = (3−2h−3)/h = −2. ✅ 2, 3, −4, −2 (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q5(i); answers vs printed key p.84"
+    },
+    {
+      "knowledgeNote": "The joint x = 1 belongs to the upper piece (x ≥ 1) — a favourite examiner trap.",
+      "marks": 3,
+      "question": "Q5(ii). Let f(x) = 4x−2 (x ≥ 1); 2x (x < 1). Find f(2), f(1), f(0), f(−1) and [f(h) − f(1)]/h for h > 1.",
+      "solution": "a) f(2) = 8−2 = 6. b) f(1) = 4−2 = 2 (upper piece, since 1 ≥ 1). c) f(0) = 0. d) f(−1) = −2. e) For h > 1, f(h) = 4h−2 and f(1) = 2: [(4h−2)−2]/h = 4(h−1)/h. ✅ 6, 2, 0, −2, 4(h−1)/h (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q5(ii); answers vs printed key p.84"
+    },
+    {
+      "knowledgeNote": "Range = the set of outputs only: evaluate at every domain point, collect distinct values.",
+      "marks": 2,
+      "question": "Q6(i). Let A = {−1, 0, 2, 4, 6}, f:A→R with f(x) = x/(x+2). Find the range of f.",
+      "solution": "f(−1) = −1/1 = −1; f(0) = 0; f(2) = 2/4 = 1/2; f(4) = 4/6 = 2/3; f(6) = 6/8 = 3/4. ✅ Range = {−1, 0, 1/2, 2/3, 3/4} (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q6(i); answer vs printed key p.84"
+    },
+    {
+      "knowledgeNote": "Zero denominator = red flag: x = −1 kills x/(x+1), so −1 contributes no output — the range skips it.",
+      "marks": 2,
+      "question": "Q6(ii). With A = {−1, 0, 2, 4, 6}, f:A→R with f(x) = x/(x+1). Find the range of f.",
+      "solution": "f(−1) = −1/0 — UNDEFINED (division by zero, so −1 yields no image). f(0) = 0; f(2) = 2/3; f(4) = 4/5; f(6) = 6/7. ✅ Range = {0, 2/3, 4/5, 6/7} (over the four admissible inputs; −1 excluded with reason).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q6(ii); undefined-point flagged, defined values computed"
+    },
+    {
+      "knowledgeNote": "Equal functions need BOTH: same domain AND same value at every point — check as sets of pairs.",
+      "marks": 2,
+      "question": "Q7. Determine whether f and g are equal: (a) f(x) = x² with domain A = {−1, −2, −3}; (b) g given by Venn diagram. [Key: equal.]",
+      "solution": "As a set of pairs, f = {(−1, 1), (−2, 4), (−3, 9)} (since (−1)² = 1, (−2)² = 4, (−3)² = 9). The diagram g shows exactly {(−1,1), (−2,4), (−3,9)}. Same domain, same values everywhere. ✅ f = g — the two functions are EQUAL (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q7; pairs vs printed key p.84"
+    },
+    {
+      "knowledgeNote": "One counterexample kills one-one: a single repeated output (f(−2) = f(2)) is enough.",
+      "marks": 2,
+      "question": "Q8(a). A = {−2,−1,0,1,2}, B = {4,0,1}, f(x) = x². Is f one-one? [Key: No.]",
+      "solution": "f(−2) = 4 and f(2) = 4 — two different inputs, same output (−2 ≠ 2 but f(−2) = f(2)). ✅ NOT one-one (book key: 'f(−2) = 4 = f(2) does not imply −2 = 2'). (Also f(−1) = f(1) = 1.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(a); reason = printed key p.84"
+    },
+    {
+      "knowledgeNote": "On positive integers squaring never collides: distinct bases give distinct squares.",
+      "marks": 1,
+      "question": "Q8(b). A = positive integers, B = their squares, f(x) = x². Is f one-one? [Key: Yes.]",
+      "solution": "For positive integers, x ≠ y ⟹ x² ≠ y² (e.g. 2² = 4 ≠ 9 = 3²; squares are strictly increasing on N). ✅ One-one (book key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(b); reason = printed key p.84"
+    },
+    {
+      "knowledgeNote": "Symmetric intervals around 0 defeat x²: ±a always collide.",
+      "marks": 1,
+      "question": "Q8(c). f:[−2,2]→R, f(x) = x². Is f one-one? [Key: No.]",
+      "solution": "f(−2) = 4 = f(2) with −2 ≠ 2. ✅ NOT one-one (book key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(c); reason = printed key p.84"
+    },
+    {
+      "knowledgeNote": "Cut off the negative half and x² becomes strictly increasing — hence one-one.",
+      "marks": 1,
+      "question": "Q8(d). f:[0,3]→R, f(x) = x². Is f one-one? [Key: Yes.]",
+      "solution": "On [0,3], x ≠ y ⟹ x² ≠ y² (squaring preserves order for non-negatives). ✅ One-one (book key). Compare (c): removing the negative half fixed it.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(d); reason = printed key p.84"
+    },
+    {
+      "knowledgeNote": "Classify with the key's verdict: an onto-but-not-one-one map must hit everything while colliding somewhere.",
+      "marks": 2,
+      "question": "Q9(i). State whether the given function is one-one, onto, both or neither. [Print: figure-based statement, not machine-readable in scan; key verdict: onto.]",
+      "solution": "PRINT STATUS: the Q9(i) statement line carries a figure/diagram in this printing (unreadable even at 350-dpi crop; same family as Q1/Q8(a) figures). Book key verdict: ONTO (i.e. onto but not one-one — every B-element is hit, some output is shared). ⚠️ Confirm the exact mapping against the physical book; verdict recorded from the printed key p.84.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(i); verdict = printed key p.84, statement = print figure (pending physical-book read)"
+    },
+    {
+      "knowledgeNote": "Doubling hits only evens: one-one yes, onto no — the classic one-one-only example.",
+      "marks": 1,
+      "question": "Q9(ii). f:N→N, f(x) = 2x. One-one, onto, both or neither? [Key: one-one.]",
+      "solution": "One-one: 2x = 2y ⟹ x = y. Not onto: odd numbers (1, 3, 5, …) have no pre-image since f(N) = {2, 4, 6, …} ≠ N. ✅ One-one ONLY (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(ii); classification = printed key p.84"
+    },
+    {
+      "knowledgeNote": "x² on (−2,2) fails both ways: collides (±) and misses negatives.",
+      "marks": 1,
+      "question": "Q9(iii). f:(−2,2)→R, f(x) = x². One-one, onto, both or neither? [Key: neither.]",
+      "solution": "Not one-one: f(−1) = 1 = f(1). Not onto: e.g. −1 ∈ R has no pre-image (squares ≥ 0). ✅ NEITHER (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(iii); classification = printed key p.84"
+    },
+    {
+      "knowledgeNote": "Linear maps x ↦ ax + b (a ≠ 0) over Q are bijective — invert by undoing: x = (y−5)/6 stays rational.",
+      "marks": 2,
+      "question": "Q9(iv). f:Q→Q, f(x) = 6x + 5. One-one, onto, both or neither? [Key: both.]",
+      "solution": "One-one: 6x+5 = 6y+5 ⟹ x = y. Onto: for any r ∈ Q, x = (r−5)/6 ∈ Q and f(x) = r. ✅ Both — ONE-ONE AND ONTO (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(iv); classification = printed key p.84"
+    },
+    {
+      "knowledgeNote": "Cubing over R is strictly increasing, hence bijective with inverse ∛.",
+      "marks": 2,
+      "question": "Q9(v). f:R→R, f(x) = x³. One-one, onto, both or neither? [Key: both.]",
+      "solution": "One-one: x³ = y³ ⟹ x = y over R. Onto: every r ∈ R is (∛r)³. ✅ Both — ONE-ONE AND ONTO (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(v); classification = printed key p.84"
+    },
+    {
+      "knowledgeNote": "Zero denominator check first: for f(x) = 6/(x+1), x = −1 is a hard stop — flag before any range claim.",
+      "marks": 3,
+      "question": "Q10(a). f:A→B with f(x) = 6/(x+1) (fraction read with box positions at 300 dpi: numerator '6', denominator 'x+1'), A = {−2,−1,0,1,2}, B = {0, _, _} (three elements, middle/last unclear in scan). Find the range; one-one and onto both? [Key: range {0, _, 3}-family, 'onto only'.]",
+      "solution": "Point evaluation: f(−2) = 6/(−1) = −6; f(−1) = 6/0 — UNDEFINED (zero denominator: −1 has no image); f(0) = 6; f(1) = 3; f(2) = 2. So on the stated A the rule is not defined everywhere — as printed it is NOT a map A→B at all. ⚠️ PRINT TENSION: the key's verdict (3-element range incl. 3, 'onto only') presupposes a corrected statement (numerator or sets differ in later printings) — recorded as printed, pending physical-book confirmation. Defined-point values: {−6, 6, 3, 2}.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q10(a); formula via positioned OCR, key verdict quoted p.84, tension flagged"
+    },
+    {
+      "knowledgeNote": "Codomain restriction is the standard repair: a one-one map becomes bijective once B is shrunk to R(f).",
+      "marks": 3,
+      "question": "Q10(b). 'With …' — second range/one-one/onto question: find the range; if not both, how can the function be made one-one and onto both? [Key: range {−1, 0, …, 1, 2}-family; 'one-one only'. Sets/formula below scan threshold — pending.]",
+      "solution": "PRINT STATUS: Q10(b)'s sets and formula sit in the faint band under Q10(a) (only 'With … f(x) = [2x−1]/[…]' fragments recovered). Key verdict recorded: ONE-ONE ONLY with the stated multi-element range. General repair (asked in the question): replace the codomain B by the range R(f) — a one-one map onto its own range is bijective, i.e. one-one AND onto. ⚠️ Full statement pending physical-book confirmation.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q10(b); verdict = printed key p.84, statement pending physical-book read"
+    }
+  ]
+}

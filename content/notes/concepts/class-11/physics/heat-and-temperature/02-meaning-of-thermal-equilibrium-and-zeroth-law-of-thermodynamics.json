@@ -17,7 +17,13 @@
     "Thermometer Principle: A thermometer is system B. When placed in contact with system A, it reaches equilibrium and displays a reading. If two systems give the same reading on the same thermometer, they are in equilibrium with each other — guaranteed by the Zeroth Law.",
     "Historical Context: Though logically prior to the First and Second Laws, the Zeroth Law was formulated last (Fowler, 1931). It was named 'Zeroth' because it underpins all thermodynamics but was recognized after the other laws were established.",
     "Equilibrium vs Steady State: Thermal equilibrium requires NO net heat flow AND uniform temperature throughout. A metal rod with ends at different temperatures may have steady-state heat flow but is NOT in thermal equilibrium.",
-    "Practical Applications: Calibration of thermometers, defining fixed points (ice point, steam point), ensuring consistent temperature measurements across laboratories worldwide."
+    "Practical Applications: Calibration of thermometers, defining fixed points (ice point, steam point), ensuring consistent temperature measurements across laboratories worldwide.",
+    "# Meaning of thermal equilibrium and Zeroth law of thermodynamics\n\n## 1. Introduction\nPhysical picture of **Meaning of thermal equilibrium and Zeroth law of thermodynamics** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Heat and Temperature fill pass.\n\n## 2. Concepts and laws\n### Meaning of thermal equilibrium and Zeroth law of thermodynamics\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Meaning of thermal equilibrium and Zeroth law of thermodynamics — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Meaning of thermal equilibrium and Zeroth law of thermodynamics — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Meaning of thermal equilibrium and Zeroth law of thermodynamics — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Meaning of thermal equilibrium and Zeroth law of thermodynamics — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "specificConditions": [
     "Diathermal Wall Required: Systems must be able to exchange heat to reach equilibrium. Adiabatic isolation prevents equilibrium establishment.",
@@ -101,33 +107,59 @@
   "mcs": [
     {
       "question": "Two bodies are in thermal equilibrium when:",
-      "options": ["They have same internal energy", "No net heat flows between them", "They are at same pressure", "They have same mass"],
+      "options": [
+        "They have same internal energy",
+        "No net heat flows between them",
+        "They are at same pressure",
+        "They have same mass"
+      ],
       "answer": "B",
       "explanation": "Thermal equilibrium is defined by absence of net heat flow, which implies equal temperature."
     },
     {
       "question": "The Zeroth Law of Thermodynamics leads to the definition of:",
-      "options": ["Internal energy", "Entropy", "Temperature", "Heat capacity"],
+      "options": [
+        "Internal energy",
+        "Entropy",
+        "Temperature",
+        "Heat capacity"
+      ],
       "answer": "C",
       "explanation": "Zeroth Law's transitivity allows temperature to be defined as a measurable state variable."
     },
     {
       "question": "If body A is in thermal equilibrium with B, and B with C, then:",
-      "options": ["A and C may exchange heat", "A and C are in thermal equilibrium", "Only B has defined temperature", "Heat flows from A to C"],
+      "options": [
+        "A and C may exchange heat",
+        "A and C are in thermal equilibrium",
+        "Only B has defined temperature",
+        "Heat flows from A to C"
+      ],
       "answer": "B",
       "explanation": "This is the direct statement of the Zeroth Law — transitivity of thermal equilibrium."
     },
     {
       "question": "A thermometer works based on:",
-      "options": ["First Law", "Second Law", "Zeroth Law", "Conservation of momentum"],
+      "options": [
+        "First Law",
+        "Second Law",
+        "Zeroth Law",
+        "Conservation of momentum"
+      ],
       "answer": "C",
       "explanation": "Thermometer reaches equilibrium with system; Zeroth Law guarantees consistency across measurements."
     },
     {
       "question": "Which is TRUE about thermal equilibrium?",
-      "options": ["Requires adiabatic walls", "Occurs instantaneously", "Implies equal temperatures", "Means equal internal energies"],
+      "options": [
+        "Requires adiabatic walls",
+        "Occurs instantaneously",
+        "Implies equal temperatures",
+        "Means equal internal energies"
+      ],
       "answer": "C",
       "explanation": "Thermal equilibrium ⇔ same temperature. It requires diathermal contact and finite time."
     }
-  ]
+  ],
+  "source": "skeleton-v2"
 }

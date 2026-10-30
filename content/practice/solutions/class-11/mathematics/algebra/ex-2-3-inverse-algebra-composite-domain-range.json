@@ -1,0 +1,307 @@
+{
+  "examSource": "Sukunda Textbook",
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.2 BOOK Exercise 2.3 (book pp 95–97 = PDF pp 120–122 of the 2075 reprint vendor/books/sukunda-basic-mathematics-xi.pdf; OCR conf 0.88–0.94 + 300-dpi micro-crops with box positions). Q1/Q2 statements are print figures (arrow diagram / pair tables) — pairs reconstructed from and verified against the printed Answers key p.97–98; every other answer below reproduces that key exactly. Note: website 'Ex 2.2' Q3 (inverses) + Q4 (gof/fog) = this exercise's Q3 + Q5 — solved in full here as the book's own record (companion file ex-2-2-functions-inverse-composite.json holds the same methods).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.3 (inverse images, algebra of functions, composites, domain & range) — Complete Solutions",
+  "topicSlug": "algebra-textbook-ex-2-3-inverse-algebra-composite-domain-range",
+  "topicTitle": "Ch.2 Book Exercise 2.3 — inverse images, algebra of functions, composites, domain & range (42 entries: Q1–Q10 all solved)",
+  "unitSlug": "algebra",
+  "year": 2078,
+  "questions": [
+    {
+      "knowledgeNote": "Pre-image reads the arrows backwards: f⁻¹(1) collects every domain dot whose arrow lands on 1.",
+      "marks": 1,
+      "question": "Q1. f:A→A (A = {1,2,3,4,5}) is given by the print arrow diagram, i.e. f = {(1,3),(2,1),(3,3),(4,5),(5,3)} (pairs forced by the key verdicts below). Find f⁻¹(1).",
+      "solution": "Only the arrow 2→1 lands on 1. ✅ f⁻¹(1) = {2} (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q1(a); pairs key-reconstructed, answer = printed key"
+    },
+    {
+      "knowledgeNote": "Shared images collect multiple pre-images: 1, 3 and 5 all point at 3.",
+      "marks": 1,
+      "question": "Q1(b). With f as above, find f⁻¹(3).",
+      "solution": "Arrows landing on 3 come from 1, 3 and 5. ✅ f⁻¹(3) = {1, 3, 5} (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q1(b); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Single arrow 4→5 gives a singleton pre-image.",
+      "marks": 1,
+      "question": "Q1(c). With f as above, find f⁻¹(5).",
+      "solution": "Only 4 maps to 5. ✅ f⁻¹(5) = {4} (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q1(c); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Empty pre-image is a legal answer: nothing maps to 2, so write ∅ (the key's φ).",
+      "marks": 1,
+      "question": "Q1(d). With f as above, find f⁻¹(2).",
+      "solution": "No arrow lands on 2 (images are 3,1,3,5,3). ✅ f⁻¹(2) = ∅ (key's φ-fragment).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q1(d); answer = printed key (φ)"
+    },
+    {
+      "knowledgeNote": "Pre-image of a SET unions the individual pre-images — here it swallows the whole domain.",
+      "marks": 2,
+      "question": "Q1(e). With f as above, find f⁻¹({1, 3, 5}).",
+      "solution": "f⁻¹(1) ∪ f⁻¹(3) ∪ f⁻¹(5) = {2} ∪ {1,3,5} ∪ {4} = {1,2,3,4,5}. ✅ f⁻¹({1,3,5}) = {1,2,3,4,5} (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q1(e); answer = printed key"
+    },
+    {
+      "knowledgeNote": "∅ ∪ ∅ = ∅: neither 2 nor 4 is ever hit.",
+      "marks": 2,
+      "question": "Q1(f). With f as above, find f⁻¹({2, 4}).",
+      "solution": "f⁻¹(2) ∪ f⁻¹(4) = ∅ ∪ ∅. ✅ f⁻¹({2,4}) = ∅.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q1(f)"
+    },
+    {
+      "knowledgeNote": "Inverting a pair-set just swaps every pair: (a,b) becomes (b,a).",
+      "marks": 2,
+      "question": "Q2(a). f:X→Y is given in print (figure/table) with f = {(0,10),(1,13),(2,16),(3,19)} (pattern f(x) = 3x+10). Write down f⁻¹:B→A as ordered pairs.",
+      "solution": "Swap each pair: (0,10)→(10,0); (1,13)→(13,1); (2,16)→(16,2); (3,19)→(19,3). ✅ f⁻¹ = {(10,0),(13,1),(16,2),(19,3)} (matches printed key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q2(a); pairs = printed key (statement figure pending physical-book read)"
+    },
+    {
+      "knowledgeNote": "Same swap drill on four pairs — domain and codomain swap roles too.",
+      "marks": 2,
+      "question": "Q2(b). X = {−1,1,2,4} (recovered from scan), f:X→Y with f = {(−1,0),(1,1),(2,2),(4,3)}. Write down f⁻¹:Y→X as ordered pairs.",
+      "solution": "Swap: (−1,0)→(0,−1); (1,1)→(1,1); (2,2)→(2,2); (4,3)→(3,4). ✅ f⁻¹ = {(0,−1),(1,1),(2,2),(3,4)} (matches printed key; Y = {0,1,2,3} as implied).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q2(b); pairs = printed key"
+    },
+    {
+      "knowledgeNote": "Inverse by interchange: y = x+1 ⇒ x = y+1 ⇒ y = x−1.",
+      "marks": 2,
+      "question": "Q3(a). f:R→R, f(x) = x + 1. Find a formula for f⁻¹.",
+      "solution": "y = x+1; interchange: x = y+1; solve: y = x−1. ✅ f⁻¹(x) = x − 1. (Check: (x−1)+1 = x ✔; matches key.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q3(a); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Undo ×2 then −3 in reverse order.",
+      "marks": 2,
+      "question": "Q3(b). f:R→R, f(x) = 2x + 3. Find f⁻¹.",
+      "solution": "y = 2x+3 → x = 2y+3 → y = (x−3)/2. ✅ f⁻¹(x) = (x−3)/2. (Check: 2·((x−3)/2)+3 = x ✔; matches key.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q3(b); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Same template with constant 5.",
+      "marks": 2,
+      "question": "Q3(c). f:R→R, f(x) = 2x + 5. Find f⁻¹.",
+      "solution": "y = 2x+5 → x = 2y+5 → y = (x−5)/2. ✅ f⁻¹(x) = (x−5)/2. (Check ✔; matches key.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q3(c); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Cubic inverse needs the real cube root.",
+      "marks": 2,
+      "question": "Q3(d). f:R→R, f(x) = x³ + 5. Find f⁻¹.",
+      "solution": "y = x³+5 → x = y³+5 → y = ∛(x−5). ✅ f⁻¹(x) = ∛(x−5). (Check: (∛(x−5))³+5 = x ✔; matches key.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q3(d); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Undo 3x−2: add 2, divide by 3.",
+      "marks": 2,
+      "question": "Q3(e). f:R→R, f(x) = 3x − 2. Find f⁻¹.",
+      "solution": "y = 3x−2 → x = 3y−2 → y = (x+2)/3. ✅ f⁻¹(x) = (x+2)/3. (Check ✔; matches key.)",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q3(e); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Scalar multiple minus constant, applied pointwise: (2f−5)(x) = 2·f(x) − 5.",
+      "marks": 2,
+      "question": "Q4(a). f(x) = 4x³ − 1, g(x) = 3x³. Find (2f − 5)(x).",
+      "solution": "(2f−5)(x) = 2(4x³−1) − 5 = 8x³ − 2 − 5. ✅ (2f−5)(x) = 8x³ − 7 (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q4(a); answer = printed key"
+    },
+    {
+      "knowledgeNote": "f² means f·f (pointwise square), not f∘f — square the whole cubic.",
+      "marks": 2,
+      "question": "Q4(b). With f, g as above, find (f²)(x).",
+      "solution": "(f²)(x) = (4x³−1)². ✅ (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q4(b); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Watch the x³ terms cancel: 3f − 4g collapses to a constant — the question's punchline.",
+      "marks": 2,
+      "question": "Q4(c). With f, g as above, find (3f − 4g)(x).",
+      "solution": "(3f−4g)(x) = 3(4x³−1) − 4(3x³) = 12x³ − 3 − 12x³. ✅ = −3 (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q4(c); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Product: (4x³−1)(3x³) — multiply term by term.",
+      "marks": 2,
+      "question": "Q4(d). With f, g as above, find (fg)(x).",
+      "solution": "(fg)(x) = (4x³−1)(3x³) = 12x⁶ − 3x³. ✅ (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q4(d); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Quotient with guard: g(x) = 3x³ = 0 at x = 0, so x ≠ 0.",
+      "marks": 2,
+      "question": "Q4(e). With f, g as above, find (f/g)(x) (g(x) ≠ 0).",
+      "solution": "✅ (f/g)(x) = (4x³−1)/(3x³), x ≠ 0 (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q4(e); answer = printed key"
+    },
+    {
+      "knowledgeNote": "gof applies f first: g(f(x)) = 3(2x+1) − 1.",
+      "marks": 2,
+      "question": "Q5(a-i). f(x) = 2x + 1, g(x) = 3x − 1. Find (gof)(x).",
+      "solution": "g(f(x)) = 3(2x+1) − 1 = 6x + 2. ✅ (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(a) gof; answer = printed key"
+    },
+    {
+      "knowledgeNote": "fog reverses the order — compare with gof.",
+      "marks": 2,
+      "question": "Q5(a-ii). With f, g as above, find (fog)(x).",
+      "solution": "f(g(x)) = 2(3x−1) + 1 = 6x − 1. ✅ (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(a) fog; answer = printed key"
+    },
+    {
+      "knowledgeNote": "Substitute the whole quadratic into the linear outer function.",
+      "marks": 2,
+      "question": "Q5(b-i). f(x) = 3x² − 4, g(x) = 2x − 5. Find (gof)(x).",
+      "solution": "g(f(x)) = 2(3x²−4) − 5 = 6x² − 13. ✅ (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(b) gof; answer = printed key"
+    },
+    {
+      "knowledgeNote": "(2x−5)² = 4x² − 20x + 25 — middle term 2·(2x)(−5).",
+      "marks": 3,
+      "question": "Q5(b-ii). With f, g as above, find (fog)(x).",
+      "solution": "f(g(x)) = 3(2x−5)² − 4 = 3(4x²−20x+25) − 4 = 12x² − 60x + 71. ✅ (matches key; spot-check x=0: f(g(0)) = f(−5) = 71 ✔).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(b) fog; answer = printed key"
+    },
+    {
+      "knowledgeNote": "Power-then-power: square the whole cubic-minus-one.",
+      "marks": 2,
+      "question": "Q5(c-i). f(x) = x³ − 1, g(x) = x². Find (gof)(x).",
+      "solution": "✅ (gof)(x) = (x³−1)² (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(c) gof; answer = printed key"
+    },
+    {
+      "knowledgeNote": "Reverse order collapses: (x²)³ − 1 = x⁶ − 1.",
+      "marks": 2,
+      "question": "Q5(c-ii). With f, g as above, find (fog)(x).",
+      "solution": "✅ (fog)(x) = x⁶ − 1 (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(c) fog; answer = printed key"
+    },
+    {
+      "knowledgeNote": "Outer power 5: substitute the full quadratic-plus-one as the base.",
+      "marks": 2,
+      "question": "Q5(d-i). f(x) = x² + 1, g(x) = x⁵. Find (gof)(x).",
+      "solution": "✅ (gof)(x) = (x²+1)⁵ (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(d) gof; answer = printed key"
+    },
+    {
+      "knowledgeNote": "(x⁵)² + 1 = x¹⁰ + 1 by the power-of-power rule.",
+      "marks": 2,
+      "question": "Q5(d-ii). With f, g as above, find (fog)(x).",
+      "solution": "✅ (fog)(x) = x¹⁰ + 1 (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q5(d) fog; answer = printed key"
+    },
+    {
+      "knowledgeNote": "Composite of pair-sets: chase each input through f then g, keeping pairs that survive both.",
+      "marks": 3,
+      "question": "Q6(a). f = {(1,5),(2,6),(3,7),(4,6)}, g = {(5,1),(6,2),(7,3)}. Find gof and fog.",
+      "solution": "gof: 1→f 5→g 1 ⇒ (1,1); 2→6→2 ⇒ (2,2); 3→7→3 ⇒ (3,3); 4→6→2 ⇒ (4,2). fog: 5→f 1→... wait fog = f∘g: 5→g 1→f 5 ⇒ (5,5); 6→2→6 ⇒ (6,6); 7→3→7 ⇒ (7,7). ✅ gof = {(1,1),(2,2),(3,3),(4,2)}, fog = {(5,5),(6,6),(7,7)} (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q6(a); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Drop pairs whose middle value misses the next map: only chainable inputs survive.",
+      "marks": 3,
+      "question": "Q6(b). f = {(1,2),(3,5),(4,1)}, g = {(2,3),(5,1),(1,3)}. Find gof and fog.",
+      "solution": "gof: 1→2→3 ⇒ (1,3); 3→5→1 ⇒ (3,1); 4→1→3 ⇒ (4,3). fog: 2→3→5 ⇒ (2,5); 5→1→2 ⇒ (5,2); 1→3→5 ⇒ (1,5). ✅ gof = {(1,3),(3,1),(4,3)}, fog = {(2,5),(5,2),(1,5)} (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q6(b); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Self-composite of a Möbius map: clear denominators by multiplying top and bottom by (1−x).",
+      "marks": 3,
+      "question": "Q7(a). f:R→R, f(x) = (x+1)/(1−x) (x ≠ 1; formula band at crop edge, computation exact). Show (fof)(x) = −1/x.",
+      "solution": "(fof)(x) = f(f(x)) = (f+1)/(1−f) = ((x+1+1−x)/(1−x))/((1−x−x−1)/(1−x)) = (2/(1−x))/((−2x)/(1−x)) = 2/(−2x). ✅ (fof)(x) = −1/x.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q7(a); computation verified"
+    },
+    {
+      "knowledgeNote": "Same phenomenon, second map: (x−1)/(x+1) also squares to −1/x — then just plug in 4.",
+      "marks": 3,
+      "question": "Q7(b). f:R→R, f(x) = (x−1)/(x+1) (x ≠ −1). Show (fof)(4) = −1/4.",
+      "solution": "(fof)(x) = (f−1)/(f+1) = ((x−1−x−1)/(x+1))/((x−1+x+1)/(x+1)) = (−2/(x+1))/((2x)/(x+1)) = −1/x. At x = 4: ✅ (fof)(4) = −1/4.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q7(b); computation verified"
+    },
+    {
+      "knowledgeNote": "Non-constant linear maps hit every real, exactly once each.",
+      "marks": 1,
+      "question": "Q8(a). y = 3x + 1 (f:R→R). Find domain and range.",
+      "solution": "Defined for all real x; every real y has x = (y−1)/3. ✅ D(f) = R = (−∞,∞), R(f) = R (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(a); answer = printed key"
+    },
+    {
+      "knowledgeNote": "x² ≥ 0 shifts the range up by the constant: x²−1 ≥ −1.",
+      "marks": 1,
+      "question": "Q8(b). y = x² − 1. Find domain and range.",
+      "solution": "Defined ∀x ∈ R; x² ≥ 0 ⟹ y ≥ −1, and every y ≥ −1 occurs (x = ±√(y+1)). ✅ D = R, R = [−1,∞) (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(b); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Odd powers are onto R: every real has exactly one real cube root.",
+      "marks": 1,
+      "question": "Q8(c). y = x³. Find domain and range.",
+      "solution": "✅ D = R = (−∞,∞), R = R (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(c); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Complete the square to read the maximum: −x²+4x−3 = −(x−2)²+1 ≤ 1.",
+      "marks": 2,
+      "question": "Q8(d). y = −x² + 4x − 3. Find domain and range.",
+      "solution": "Defined ∀x; y = −(x−2)² + 1 ≤ 1 with equality at x = 2. ✅ D = R, R = (−∞,1] (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(d); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Even root needs non-negative radicand: x − 2 ≥ 0 gates the domain.",
+      "marks": 2,
+      "question": "Q8(e). y = √(x−2). Find domain and range.",
+      "solution": "Need x−2 ≥ 0 ⟹ x ≥ 2; outputs cover all ≥ 0. ✅ D = [2,∞), R = [0,∞) (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(e); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Rational maps exclude the zero of the denominator AND miss one value (the horizontal asymptote).",
+      "marks": 2,
+      "question": "Q8(f). y = 1/(x+1) (read at 300 dpi with box positions). Find domain and range.",
+      "solution": "Undefined at x = −1 ⟹ D = R − {−1}. y = 0 never occurs, and every r ≠ 0 has x = 1/r − 1. ✅ D = R−{−1}, R = R−{0} (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(f); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Factor first: (x²−16)/(x−4) = x+4 with the hole x ≠ 4 — range misses 8.",
+      "marks": 2,
+      "question": "Q8(g). y = (x²−16)/(x−4). Find domain and range.",
+      "solution": "x²−16 = (x−4)(x+4), so y = x+4 for x ≠ 4. ✅ D = R−{4}, R = R−{8} (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(g); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Quadratic radicand: factor (x−4)(x+2) ≥ 0 and read the sign chart — outer intervals survive.",
+      "marks": 3,
+      "question": "Q8(h). y = √(x²−2x−8). Find domain and range.",
+      "solution": "x²−2x−8 = (x−4)(x+2) ≥ 0 ⟹ x ≤ −2 or x ≥ 4. Outputs cover [0,∞). ✅ D = (−∞,−2]∪[4,∞), R = [0,∞) (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(h); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Negative quadratic under the root: 21−4x−x² = 25−(x+2)² bounds both sides.",
+      "marks": 3,
+      "question": "Q8(i). y = √(21−4x−x²). Find domain and range.",
+      "solution": "21−4x−x² = 25 − (x+2)² ≥ 0 ⟹ (x+2)² ≤ 25 ⟹ −7 ≤ x ≤ 3. y = √t for t ∈ [0,25] ⟹ y ∈ [0,5]. ✅ D = [−7,3], R = [0,5] (matches key).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(i); answer = printed key"
+    },
+    {
+      "knowledgeNote": "Sign function in disguise: |x−1|/(x−1) is +1 right of 1, −1 left of 1, undefined AT 1.",
+      "marks": 3,
+      "question": "Q8(j). y = |x−1|/(x−1) (key signature D = R−{1}, R = {−1,1}). Find domain and range.",
+      "solution": "Undefined at x = 1 (0/0) ⟹ D = R−{1}. For x > 1: (x−1)/(x−1) = 1; for x < 1: −(x−1)/(x−1) = −1. ✅ R = {−1,1} (matches key; statement attribution via the key's unique signature, pending physical-book confirmation of the exact print form).",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q8(j); answer = printed key"
+    },
+    {
+      "knowledgeNote": "c ≠ 0 is the whole engine: it lets you divide when proving one-one and when solving for onto.",
+      "marks": 3,
+      "question": "Q9. Show f:R→R, f(x) = cx + d (c ≠ 0) is one-one and onto. Find f⁻¹. Also show f(f⁻¹(x)) = f⁻¹(f(x)) = x.",
+      "solution": "One-one: cx₁+d = cx₂+d ⟹ c(x₁−x₂) = 0 ⟹ x₁ = x₂ (c ≠ 0). Onto: for any y, x = (y−d)/c ∈ R gives f(x) = y. So f⁻¹(x) = (x−d)/c (matches key). f(f⁻¹(x)) = c·((x−d)/c)+d = x; f⁻¹(f(x)) = (cx+d−d)/c = x. ✅",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q9; inverse = printed key"
+    },
+    {
+      "knowledgeNote": "Cross-multiply to prove one-one; solve y = 3x/(x−2) for x to prove onto and read off the inverse.",
+      "marks": 4,
+      "question": "Q10. f:R−{2}→R−{3}, f(x) = 3x/(x−2). Show f is bijective and find f⁻¹.",
+      "solution": "One-one: 3x₁/(x₁−2) = 3x₂/(x₂−2) ⟹ x₁(x₂−2) = x₂(x₁−2) ⟹ −2x₁ = −2x₂ ⟹ x₁ = x₂. Onto: y = 3x/(x−2) ⟹ yx−2y = 3x ⟹ x(y−3) = 2y ⟹ x = 2y/(y−3) ∈ R−{2} for y ≠ 3. So ✅ f⁻¹(x) = 2x/(x−3) (matches key) and f is bijective.",
+      "source": "Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.3 Q10; inverse = printed key"
+    }
+  ]
+}

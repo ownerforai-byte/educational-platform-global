@@ -1,0 +1,68 @@
+{
+  "title": "Effect of a dielectric: polarization and displacement",
+  "unitSlug": "capacitor",
+  "topicSlug": "effect-of-a-dielectric-polarization-and-displacement",
+  "topicTitle": "Effect of a dielectric: polarization and displacement",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:15.247Z",
+  "notes": [
+    "# Effect of a dielectric: polarization and displacement\n\n## 1. Introduction\nPhysical picture of **Effect of a dielectric** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Capacitor fill pass.\n\n## 2. Concepts and laws\n### Effect of a dielectric: polarization and displacement\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Effect of a dielectric — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Effect of a dielectric — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Effect of a dielectric — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Effect of a dielectric — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "examNotes": [
+    "Questions on the distinction between polar and non-polar dielectrics and the derivation of $\\kappa = 1 + \\chi_e$ are standard 3 to 4-mark questions in NEB Class 11 Physics exams."
+  ],
+  "examShortTricks": [
+    "Bound charge trick: $\\sigma_p = \\sigma(1 - 1/\\kappa)$; for large $\\kappa$, $\\sigma_p \\approx \\sigma$.",
+    "Relative permittivity identity: $\\kappa = 1 + \\chi_e$.",
+    "Electric displacement in uniform plate capacitor: $D = \\sigma_{free} = Q/A$, completely unaffected by dielectric insertion."
+  ],
+  "practiceQuestions": [
+    "Q1. Differentiate between polar and non-polar dielectrics with two examples of each.",
+    "Q2. Define electric polarization vector P and electric displacement vector D. Write their SI units and dimensional formulas.",
+    "Q3. Derive the relation between dielectric constant κ and electric susceptibility χ_e, showing that κ = 1 + χ_e.",
+    "Q4. A parallel plate capacitor is charged and isolated. Explain what happens to the electric field, potential difference, and capacitance when a dielectric slab fills the plate gap."
+  ],
+  "practice": [
+    "A parallel plate capacitor with plate area 100 cm² and plate separation 2 mm is charged to 100 V with air. A dielectric slab of κ = 5 is inserted with battery disconnected. Find (a) initial capacitance, (b) free surface charge density on plates, (c) net electric field inside dielectric, and (d) induced bound surface charge density. Solution: (a) C₀ = ε₀A/d = (8.854 × 10⁻¹²)(0.01) / (2 × 10⁻³) = 44.27 pF. (b) Q = C₀V₀ = 4.427 nC; σ = Q/A = 4.427 × 10⁻⁷ C/m². (c) E₀ = V₀/d = 50000 V/m; inside dielectric E = E₀/κ = 10000 V/m. (d) Bound charge density σ_p = P = (κ - 1)ε₀E = 4 × (8.854 × 10⁻¹²) × 10000 = 3.542 × 10⁻⁷ C/m²."
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following is an example of a polar dielectric?",
+      "options": [
+        "Oxygen (O₂)",
+        "Water (H₂O)",
+        "Hydrogen (H₂)",
+        "Carbon dioxide (CO₂)"
+      ],
+      "answer": "B",
+      "explanation": "Water (H₂O) possesses an asymmetric bent molecular geometry with a permanent electric dipole moment, making it a polar dielectric."
+    },
+    {
+      "question": "The relation between dielectric constant κ and electric susceptibility χ_e is:",
+      "options": [
+        "κ = χ_e - 1",
+        "κ = 1 + χ_e",
+        "κ = 1 / χ_e",
+        "κ = χ_e / ε₀"
+      ],
+      "answer": "B",
+      "explanation": "From D = ε₀E + P and substituting D = κε₀E and P = χ_e ε₀E, dividing by ε₀E gives κ = 1 + χ_e."
+    },
+    {
+      "question": "The SI unit of the electric polarization vector P is:",
+      "options": [
+        "C·m",
+        "C/m²",
+        "N/C",
+        "V/m"
+      ],
+      "answer": "B",
+      "explanation": "Polarization P is dipole moment per volume: (C·m) / m³ = C/m², identical to surface charge density."
+    }
+  ]
+}

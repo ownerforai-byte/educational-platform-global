@@ -19,7 +19,13 @@
     "**Tension variation around the circle:** at any angle θ from the bottom, T = mv²/r + mg cos θ. At the bottom (θ = 0°): T = mg + mv²/r (maximum). At the top (θ = 180°): T = mv²/r − mg (minimum). The tension difference between bottom and top is always 6mg when the minimum-speed condition holds.",
     "**Worked example — tension at arbitrary point:** a 0.2 kg bob on a 0.8 m string has speed 6 m/s at the bottom. At the top: ½v_t² = ½ × 36 − 9.8 × 1.6 = 18 − 15.68 = 2.32 → v_t = 2.15 m/s. T_top = 0.2 × 4.62/0.8 − 1.96 = 1.16 − 1.96 = −0.80 N. Since T < 0, the string goes slack before reaching the top. The bob cannot complete the circle.",
     "**Rod vs. string — key differences:** a rod can support compression, so the bob can reach the top with v = 0. The rod pushes upward with force mg at the top. Minimum bottom speed for a rod: √(2gr). For a string: √(5gr). The factor 5 versus 2 is the critical distinction tested in NEB.",
-    "**Complete-the-circle condition:** for a string, the condition is v_bottom ≥ √(5gr). For a rod, it is v_bottom ≥ √(2gr). If v_bottom is between √(2gr) and √(5gr), the bob completes the circle with a rod but not with a string."
+    "**Complete-the-circle condition:** for a string, the condition is v_bottom ≥ √(5gr). For a rod, it is v_bottom ≥ √(2gr). If v_bottom is between √(2gr) and √(5gr), the bob completes the circle with a rod but not with a string.",
+    "# Motion in a vertical circle\n\n## 1. Introduction\nPhysical picture of **Motion in a vertical circle** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Circular Motion fill pass.\n\n## 2. Concepts and laws\n### Motion in a vertical circle\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Motion in a vertical circle — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Motion in a vertical circle — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Motion in a vertical circle — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Motion in a vertical circle — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "confusion": [
     "❌ 'The speed is constant in vertical circular motion.' ✅ The speed VARIES — gravity speeds up the body on the way down and slows it on the way up. Only energy is conserved.",
@@ -395,10 +401,11 @@
   },
   "duplicateType": 2,
   "tabGroup": "vertical-circle",
-    "specificConditions": [
-      "**Energy Conservation (No Non-Conservative Work):** Total mechanical energy ($K + U$) is conserved if only gravity and tension act (tension does zero work). $v^2 = u^2 - 2gh$ where $h = R(1 - \\cos\theta)$ from the lowest point.",
-      "**String vs. Rod Constraint:**\n        - **String:** Can only pull (tension $T \\ge 0$). If $T \to 0$, the string goes slack and the particle follows a parabolic projectile path until the string tightens again.\n        - **Rigid Rod:** Can push or pull ($T$ can be negative/compressive). The particle completes the circle even if speed at top is zero (but $v_{top} \\ge 0$ is required).",
-      "**Critical Speeds (String):** $v_{top} \\ge \\sqrt{gR}$ (taut string at top); $v_{bottom} \\ge \\sqrt{5gR}$ (minimum to complete circle). At the horizontal point ($\theta=90^\\circ$), minimum speed is $\\sqrt{2gR}$ for the string to remain taut."
-    ],
-  "visualType": "vertical-circle"
+  "specificConditions": [
+    "**Energy Conservation (No Non-Conservative Work):** Total mechanical energy ($K + U$) is conserved if only gravity and tension act (tension does zero work). $v^2 = u^2 - 2gh$ where $h = R(1 - \\cos\theta)$ from the lowest point.",
+    "**String vs. Rod Constraint:**\n        - **String:** Can only pull (tension $T \\ge 0$). If $T \to 0$, the string goes slack and the particle follows a parabolic projectile path until the string tightens again.\n        - **Rigid Rod:** Can push or pull ($T$ can be negative/compressive). The particle completes the circle even if speed at top is zero (but $v_{top} \\ge 0$ is required).",
+    "**Critical Speeds (String):** $v_{top} \\ge \\sqrt{gR}$ (taut string at top); $v_{bottom} \\ge \\sqrt{5gR}$ (minimum to complete circle). At the horizontal point ($\theta=90^\\circ$), minimum speed is $\\sqrt{2gR}$ for the string to remain taut."
+  ],
+  "visualType": "vertical-circle",
+  "source": "skeleton-v2"
 }

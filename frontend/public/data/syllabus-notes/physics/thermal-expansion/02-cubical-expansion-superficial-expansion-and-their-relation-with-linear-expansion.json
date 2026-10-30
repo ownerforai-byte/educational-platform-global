@@ -12,7 +12,13 @@
     "Isotropic vs Anisotropic: Relations β = 2α, γ = 3α hold for isotropic materials. For anisotropic (crystals), expansion differs along different axes.",
     "Liquid Expansion: Liquids have only cubical expansion (no fixed shape). Apparent expansion differs from real expansion due to container expansion.",
     "Real vs Apparent Expansion of Liquids: γ_real = γ_apparent + γ_container. The container expands too, so apparent rise is less than real expansion.",
-    "Anomalous Expansion of Water: Water contracts from 0°C to 4°C (maximum density at 4°C), then expands above 4°C. Negative expansion coefficient below 4°C."
+    "Anomalous Expansion of Water: Water contracts from 0°C to 4°C (maximum density at 4°C), then expands above 4°C. Negative expansion coefficient below 4°C.",
+    "# Cubical expansion, superficial expansion and their relation with linear expansion\n\n## 1. Introduction\nPhysical picture of **Cubical expansion** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Thermal Expansion fill pass.\n\n## 2. Concepts and laws\n### Cubical expansion\n### superficial expansion and their relation with linear expansion\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Cubical expansion — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Cubical expansion — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Cubical expansion — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Cubical expansion — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
   ],
   "specificConditions": [
     "Isotropic Material: γ = 3α and β = 2α only for isotropic solids. Crystalline anisotropic materials have different α along different axes.",
@@ -147,5 +153,6 @@
   "animation3D": "thermal-expansion",
   "motionGraphics": "expansion-coefficients",
   "visualType": "thermal-expansion",
-  "summary": "Linear ΔL = αL₀ΔT, superficial ΔA = βA₀ΔT (β = 2α), cubical ΔV = γV₀ΔT (γ = 3α) for isotropic solids. α:β:γ = 1:2:3. Liquids have only volume expansion; real = apparent + container. Water shows anomalous expansion below 4°C."
+  "summary": "Linear ΔL = αL₀ΔT, superficial ΔA = βA₀ΔT (β = 2α), cubical ΔV = γV₀ΔT (γ = 3α) for isotropic solids. α:β:γ = 1:2:3. Liquids have only volume expansion; real = apparent + container. Water shows anomalous expansion below 4°C.",
+  "source": "skeleton-v2"
 }

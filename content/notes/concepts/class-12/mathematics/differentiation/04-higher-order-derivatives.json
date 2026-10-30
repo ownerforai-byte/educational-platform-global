@@ -1,0 +1,99 @@
+{
+  "title": "Higher order derivatives",
+  "unitSlug": "differentiation",
+  "topicSlug": "higher-order-derivatives",
+  "topicTitle": "Higher order derivatives",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:00.645Z",
+  "notes": [
+    "# Higher order derivatives\n\n## 1. Introduction and motivation\nWhat the tool **Higher order derivatives** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Differentiation fill pass.\n\n## 2. Definitions and theorems\n### Higher order derivatives\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
+    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
+    "## 4. Methods and standard forms\n**Table 2 — Standard forms and rules**\n\n| Form | Rule | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 5. Figures and graphs\n- **F1** — Higher order derivatives — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Higher order derivatives — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Higher order derivatives — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
+    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
+    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Higher Order Derivatives",
+    "Practice previous year questions on Higher Order Derivatives",
+    "Learn the derivations for Higher Order Derivatives thoroughly",
+    "Review common mistakes related to Higher Order Derivatives"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Higher Order Derivatives formula",
+    "Trick 2: Elimination technique for Higher Order Derivatives MCQs",
+    "Trick 3: Dimensional analysis shortcut for Higher Order Derivatives",
+    "Trick 4: Memory aid for Higher Order Derivatives formulas",
+    "Trick 5: Time-saving approach for Higher Order Derivatives problems"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Higher Order Derivatives.",
+    "Q3. Differentiate between various aspects of Higher Order Derivatives.",
+    "Q4. Derive the key formula related to Higher Order Derivatives.",
+    "Q5. What are the applications of Higher Order Derivatives?",
+    "state + explain the main idea of \"Higher order derivatives\" with one example.",
+    "compare \"Higher order derivatives\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Higher order derivatives\" and verify the answer is plausible."
+  ],
+  "practice": [
+    "Solve at least 5 problems on higher order derivatives from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Higher order derivatives\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Higher Order Derivatives is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Higher Order Derivatives, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Higher Order Derivatives?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Higher Order Derivatives is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Higher order derivatives\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}
