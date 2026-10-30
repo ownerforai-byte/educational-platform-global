@@ -20,6 +20,7 @@ import aiPlatformGuideRoutes from "./api/ai-platform-guide";
 import periodicUnlockRoutes from "./api/periodic-unlock";
 import aiHistoryRoutes from "./api/ai-history";
 import aiQuizHistoryRoutes from "./api/ai-quiz-history";
+import practiceHistoryRoutes from "./api/practice-history";
 import chatHistoryRoutes from "./api/chat-history";
 import bookmarksRoutes from "./api/bookmarks";
 import chaptersRoutes from "./api/chapters";
@@ -142,6 +143,10 @@ export function createApp(): express.Express {
   app.use("/api/periodic-table/unlock", periodicUnlockRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai-quiz-history", aiQuizHistoryRoutes);
+  // Per-question practice attempt log for the textbook solution corpus
+  // (content/practice/solutions/**) — complements /api/progress at the
+  // question grain. Registered before /api/ai so the specific path wins.
+  app.use("/api/practice-history", practiceHistoryRoutes);
   app.use("/api/chat-history", chatHistoryRoutes);
   // Public runtime flags (coin gate on/off) — no auth: every AI surface needs
   // the owner's current gate state before it locks a composer on 0 credits.
