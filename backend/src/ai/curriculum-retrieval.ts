@@ -317,6 +317,15 @@ function scoreRecords(tokens: QueryToken[]): CurriculumHit[] {
     score += Math.min(3, entry.relevance / 34);
     if (entry.dropIn) score += 0.5;
 
+    // Concept-drill recall floor. content/drills/ records are short practice
+    // items whose whole purpose is the unit's own concept; a body-only mention
+    // of it still deserves a small lift so a clearly-on-topic drill can reach
+    // the grounding window. The floor only applies to records that ALREADY
+    // matched a query term (matched.length), is a fixed tiny amount that cannot
+    // cross the strong/weak bar (decided separately by gradeStrength), and
+    // never qualifies an unmatched record.
+    if (matched.length && entry.source.includes("/drills/")) score += 1.5;
+
     hits.push({
       entry,
       score,
