@@ -389,7 +389,7 @@ export const HIGH_YIELD_TOPIC_BANK_LANGUAGES: HighYieldTopicData[] = [
     ],
     // The Language Development units (Education and Humanity, Communication,
     // Media and Society) are the reading texts this entry already covers.
-    unitSlugs: ["reading-and-comprehension", "language-development"],
+    unitSlugs: ["reading-and-comprehension", "language-development", "literature-essays-plays"],
     subject: "english",
     title: "Reading, Short Story, Poetry and Drama Analysis",
     category: "Literature — Reading and Interpretation",

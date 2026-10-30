@@ -41,6 +41,8 @@ function aggregate(subjectSlug: string, classSlug = "class-11-notes"): Map<numbe
   const byYear = new Map<number, YearBucket>();
   for (const [path, file] of Object.entries(index)) {
     if (!path.includes(coord)) continue;
+    // Mirror the loader: textbook solutions never become exam-year PYQ cards.
+    if (path.startsWith("practice/solutions/")) continue;
     const questions = Array.isArray(file.questions) ? file.questions : [];
     if (questions.length === 0) continue;
     const year = typeof file.year === "number" ? file.year : Number.NaN;

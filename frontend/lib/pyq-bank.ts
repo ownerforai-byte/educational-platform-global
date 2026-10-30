@@ -190,6 +190,8 @@ export async function getSubjectPyqBank(
   const byYear = new Map<number, YearBucket>();
 
   const absorb = (path: string, file: ContentIndex[string] | undefined, manifestData?: ManifestItem["data"]) => {
+    // Textbook exercise solutions are practice content, not exam-year papers.
+    if (normPath(path).startsWith("practice/solutions/")) return;
     const questions = Array.isArray(file?.questions) ? file.questions : [];
     if (questions.length === 0) return;
     const declaredYear = file?.year ?? manifestData?.year;

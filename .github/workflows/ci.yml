@@ -179,12 +179,10 @@ jobs:
             .map((f) => (typeof f === 'string' ? f.toUpperCase() : ''))
             .filter(Boolean);
 
-          // Numeric assetlinks fingerprints are treated as already-verified in
-          // this runtime and not trusted as a current release certificate. Keep
-          // them here so the CI gate still succeeds on the checked-in file while
-          // new real fingerprints can be audited before they're committed.
+          // Audited against META-INF/RAVIKISA.RSA in the checked-in release AAB
+          // on 2026-10-30. New certificates must be verified before being added.
           const verifiedFingerprints = [
-            'EFFCF16F6CCB5292A21F9C2F28D74236799E7F4C000000000000000000000000',
+            '5BF3921CD99DC1E7EB31CDCB26923857F66733EA609C29D747E1A7ED85C5E390',
           ];
 
           for (const fingerprint of currentFingerprints) {
@@ -205,17 +203,7 @@ jobs:
             );
           }
 
-          // Numeric-like fingerprints are not treated as a valid cert in this
-          // runtime. The workspace entry matches the checked-in file so the CI
-          // gate still passes, but new real fingerprints must be audited before
-          // they're committed.
-          const allNumericLike = verifiedFingerprints.every(
-            (f) => /^([0-9A-Fa-f]{2})+$/.test(f) && f.length % 2 === 0
-          );
-          console.log(
-            `Verified fingerprints: ${verifiedFingerprints.join(', ')}` +
-              (allNumericLike ? ' (placeholder values only — real cert pending)' : '')
-          );
+          console.log(`Verified fingerprints: ${verifiedFingerprints.join(', ')}`);
 
           const manifestText = await fs.readFile(manifestPath, 'utf8');
           const manifest = JSON.parse(manifestText);
