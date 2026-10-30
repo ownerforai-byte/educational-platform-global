@@ -27,7 +27,7 @@ describe("ErrorBoundary", () => {
     expect(screen.getByText("fine")).toBeTruthy();
   });
 
-  it("catches a render error and shows the shared fallback card", () => {
+  it("catches a render error and shows the typed safe fallback", () => {
     silenceReactErrors();
 
     render(
@@ -36,8 +36,8 @@ describe("ErrorBoundary", () => {
       </ErrorBoundary>,
     );
 
-    expect(screen.getByText("Something went wrong!")).toBeTruthy();
-    expect(screen.getByText("render exploded")).toBeTruthy();
+    expect(screen.getByText("Something broke on our side")).toBeTruthy();
+    expect(screen.queryByText("render exploded")).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Try again" })).toBeTruthy();
   });
 
@@ -55,7 +55,7 @@ describe("ErrorBoundary", () => {
         <Child />
       </ErrorBoundary>,
     );
-    expect(screen.getByText("Something went wrong!")).toBeTruthy();
+    expect(screen.getByText("Something broke on our side")).toBeTruthy();
 
     shouldThrow = false;
     fireEvent.click(screen.getByRole("button", { name: "Try again" }));
@@ -132,7 +132,7 @@ describe("ErrorBoundary", () => {
         <Boom explode />
       </ErrorBoundary>,
     );
-    expect(screen.getByText("Something went wrong!")).toBeTruthy();
+    expect(screen.getByText("Something broke on our side")).toBeTruthy();
 
     rerender(
       <ErrorBoundary name="test" resetKey="/b">

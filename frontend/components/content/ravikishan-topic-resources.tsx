@@ -22,6 +22,7 @@ type Props = {
   subjectSlug: string;
   unitId: string;
   topicSlug: string;
+  onOpenNotes?: () => void;
 };
 
 export function RavikishanTopicResources({
@@ -29,6 +30,7 @@ export function RavikishanTopicResources({
   subjectSlug,
   unitId,
   topicSlug,
+  onOpenNotes,
 }: Props) {
   const [entry, setEntry] = useState<ManifestEntry>();
   const [loading, setLoading] = useState(true);
@@ -86,6 +88,7 @@ export function RavikishanTopicResources({
         </div>
         <Link
           href={href}
+          onClick={onOpenNotes}
           className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 px-4 text-xs font-semibold text-primary transition-colors hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           Open canonical notes

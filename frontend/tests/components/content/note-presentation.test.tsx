@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import NotesPage from "@/app/(app)/notes/page";
 import { buildCompanionTabs } from "@/components/content/content-tabs";
 import { RavikishanTopicResources } from "@/components/content/ravikishan-topic-resources";
@@ -45,15 +45,31 @@ describe("note presentation classification", () => {
     expect(screen.queryByRole("heading", { name: "Ravikishan Notes" })).toBeNull();
   });
 
-  it("keeps only companion fields and tools out of the canonical note", () => {
+  it("opens with the canonical note and keeps each learning activity in its own tab", () => {
     const tabs = buildCompanionTabs();
     const ids = tabs.map((tab) => tab.id);
 
-    expect(ids).toEqual(["related", "bounds", "exam-tips", "journal", "resources"]);
+    expect(ids).toEqual([
+      "notes",
+      "mcq",
+      "numericals",
+      "entrance",
+      "self-check",
+      "related",
+      "bounds",
+      "exam-tips",
+      "journal",
+      "resources",
+    ]);
     expect(new Set(ids).size).toBe(ids.length);
-    expect(ids).not.toContain("notes");
-    expect(ids).not.toContain("summary");
-    expect(ids).not.toContain("formulas");
+    expect(tabs[0]).toMatchObject({ id: "notes", kind: "learning", learningSection: "notes" });
+    expect(tabs.filter((tab) => tab.kind === "learning").map((tab) => tab.learningSection)).toEqual([
+      "notes",
+      "mcq",
+      "numericals",
+      "entrance",
+      "self-check",
+    ]);
   });
 
   it("opens only the canonical source from resources without repeating note content", async () => {
@@ -78,12 +94,14 @@ describe("note presentation classification", () => {
       },
     ]);
 
+    const onOpenNotes = vi.fn();
     render(
       <RavikishanTopicResources
         classSlug="class-11"
         subjectSlug="physics"
         unitId="kinematics"
         topicSlug="motion"
+        onOpenNotes={onOpenNotes}
       />,
     );
 
@@ -92,10 +110,14 @@ describe("note presentation classification", () => {
     expect(screen.queryByText(/Secondary copy/)).toBeNull();
     expect(screen.queryByRole("tab")).toBeNull();
     expect(screen.queryByText(/Type 2|Duplicated/)).toBeNull();
-    expect(screen.getByRole("link", { name: "Open canonical notes" })).toHaveAttribute(
+    const openLink = screen.getByRole("link", { name: "Open canonical notes" });
+    expect(openLink).toHaveAttribute(
       "href",
       "/class-11/physics/chapters/kinematics/topics/motion#topic-notes",
     );
+    openLink.addEventListener("click", (event) => event.preventDefault());
+    fireEvent.click(openLink);
+    expect(onOpenNotes).toHaveBeenCalledTimes(1);
     expect(mocks.loadData).toHaveBeenCalledTimes(1);
   });
 });

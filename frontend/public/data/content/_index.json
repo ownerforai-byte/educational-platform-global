@@ -79226,6 +79226,531 @@
     "unitSlug": "trigonometry",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-6-1-additional-i.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Draw the circumdiameter through C: angle CBD is 90 deg, so sinA = a/(2R).",
+        "marks": 5,
+        "question": "AQ1(i). State and establish the sine law. (T.U. 2055S)",
+        "solution": "Statement: in any triangle ABC, a/sinA = b/sinB = c/sinC = 2R where R is the circumradius. Proof: let O be the circumcentre and extend CO to meet the circumcircle at D, so CD = 2R is a diameter and angle CBD = 90 deg (angle in a semicircle). Angles CAD... angle CDB equals angle CAB = A (angles in the same segment subtend CB). In right triangle CBD, sin(angle CDB) = BC/CD = a/(2R), so sinA = a/(2R), i.e. a/sinA = 2R. The same construction at the other vertices gives b/sinB = c/sinC = 2R.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q1(i) (T.U. 2055S); book p188 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "Projection is sine law + sin(B+C) expansion; tangent law is (sinB - sinC)/(sinB + sinC) plus sum-to-product.",
+        "marks": 5,
+        "question": "AQ1(ii). State the sine law. Use this law to prove the projection law a = b*cosC + c*cosB and the tangent law tan((B-C)/2) = [(b-c)/(b+c)]*cot(A/2) (with cyclic form tan((A-B)/2) = [(a-b)/(a+b)]*cot(C/2)). (T.U. 2057S) (HSEB 2050; cyclic form HSEB 2058)",
+        "solution": "Sine law: a/sinA = b/sinB = c/sinC = 2R. Projection: b*cosC + c*cosB = 2R*sinB*cosC + 2R*sinC*cosB = 2R*sin(B+C) = 2R*sinA = a. Tangent law: (b-c)/(b+c) = (sinB - sinC)/(sinB + sinC) = [2*cos((B+C)/2)*sin((B-C)/2)]/[2*sin((B+C)/2)*cos((B-C)/2)] = tan((B-C)/2)*cot((B+C)/2) = tan((B-C)/2)*tan(A/2) (since (B+C)/2 = (pi-A)/2). Hence tan((B-C)/2) = [(b-c)/(b+c)]*cot(A/2). The cyclic form tan((A-B)/2) = [(a-b)/(a+b)]*cot(C/2) (top of book p189, tags T.U. 2057S, HSEB 2058) follows by the same steps with permuted letters.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q1(ii) (T.U. 2057S) (HSEB 2050); book p188 = PDF p216, cyclic form top of book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "a/sinA = b/sinB = c/sinC is the sine law restated as a continued proportion.",
+        "marks": 2,
+        "question": "AQ2. In any triangle ABC, prove that a/sinA = b/sinB = c/sinC. (HSEB 2058)",
+        "solution": "By the sine law each of a/sinA, b/sinB, c/sinC equals 2R, so all three are equal.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q2 (HSEB 2058); book pp188-189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "The common value 2R is the circumdiameter: each side is a chord subtending its angle at the centre.",
+        "marks": 3,
+        "question": "AQ3. In any triangle, prove that a/sinA = b/sinB = c/sinC = 2R, where R is the radius of the circumcircle. (HSEB 2051, 2052, 2055)",
+        "solution": "From AQ1(i), a/sinA = 2R where 2R is the diameter of the circumcircle through the construction with diameter CD = 2R. Repeating at each vertex, b/sinB = c/sinC = 2R as well, so all four expressions are equal.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q3 (HSEB 2051, 1952... i.e. 2051, 2052, 2055); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "cos(C/2) = sqrt[s(s-c)/(ab)]; the B-forms follow by cyclic permutation: sin(B/2) = sqrt[(s-a)(s-c)/(ac)], tan(B/2) = sqrt[(s-a)(s-c)/(s(s-b))].",
+        "marks": 4,
+        "question": "AQ4. In any triangle ABC, prove that cos(C/2) = sqrt[s(s-c)/(ab)], and write the similar results for sin(B/2) and tan(B/2). (HSEB 2054)",
+        "solution": "cos^2(C/2) = (1+cosC)/2 = [1 + (a^2+b^2-c^2)/(2ab)]/2 = [(a+b)^2 - c^2]/(4ab) = [(a+b-c)(a+b+c)]/(4ab) = [2(s-c)*2s]/(4ab) = s(s-c)/(ab). Since C/2 is acute, cos(C/2) = sqrt[s(s-c)/(ab)]. Similarly sin(B/2) = sqrt[(s-a)(s-c)/(ac)] (from sin^2(B/2) = (1-cosB)/2) and tan(B/2) = sin(B/2)/cos(B/2) = sqrt[(s-a)(s-c)/(s(s-b))].",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q4 (HSEB 2054); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "cos^2(A/2) = (1+cosA)/2 = [(b+c)^2 - a^2]/(4bc) = s(s-a)/(bc).",
+        "marks": 3,
+        "question": "AQ5. Prove that cos(A/2) = sqrt[s(s-a)/(bc)]. (T.U. 2056S) (HSEB 2057)",
+        "solution": "cos^2(A/2) = (1+cosA)/2 = [1 + (b^2+c^2-a^2)/(2bc)]/2 = [(b+c)^2 - a^2]/(4bc) = [(b+c-a)(b+c+a)]/(4bc) = [2(s-a)*2s]/(4bc) = s(s-a)/(bc). Since A/2 is acute, cos(A/2) = sqrt[s(s-a)/(bc)].",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q5 (T.U. 2056S) (HSEB 2057); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "c - a*cosB = 2R*sinC*cosB: expand sinC = sin(A+B) and watch sinB*cosB cancel.",
+        "marks": 4,
+        "question": "AQ6(i). In any triangle ABC, prove that (c - a*cosB)/(b - a*cosC) = sinB/sinC.",
+        "solution": "c - a*cosB = 2R*sinC - 2R*sinA*cosB = 2R*[sin(A+B) - sinA*cosB] = 2R*cosA*sinB. Likewise b - a*cosC = 2R*sinB - 2R*sinA*cosC = 2R*[sin(A+C) - sinA*cosC] = 2R*cosA*sinC. Dividing gives sinB/sinC.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q6(i); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "cos^2B - cos^2C = sin^2C - sin^2B = (c-b)(c+b)/(4R^2): each fraction leaves (c-b)/(4R^2).",
+        "marks": 5,
+        "question": "AQ6(ii). Prove that [(cos^2B - cos^2C)/(b+c)] + [(cos^2C - cos^2A)/(c+a)] + [(cos^2A - cos^2B)/(a+b)] = 0.",
+        "solution": "cos^2B - cos^2C = (1 - sin^2B) - (1 - sin^2C) = sin^2C - sin^2B = (c^2-b^2)/(4R^2). Dividing by (b+c) gives (c-b)/(4R^2). Cyclically the second term is (a-c)/(4R^2) and the third is (b-a)/(4R^2). Adding: [(c-b) + (a-c) + (b-a)]/(4R^2) = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q6(ii); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "sinB + sinC = 2*cos(A/2)*cos((B-C)/2) cancels the cosine, leaving 16R^2*sin^2(A/2)*cos(A/2)*sin((B-C)/2); the sum telescopes via (cosC - cosB)/2.",
+        "marks": 5,
+        "question": "AQ6(iii). Prove that [a^2*sin(B-C)/(sinB + sinC)] + [b^2*sin(C-A)/(sinC + sinA)] + [c^2*sin(A-B)/(sinA + sinB)] = 0.",
+        "solution": "a^2*sin(B-C) = 4R^2*sin^2A*2*sin((B-C)/2)*cos((B-C)/2) and sinB + sinC = 2*cos(A/2)*cos((B-C)/2), so the first term is 16R^2*sin^2(A/2)*cos(A/2)*sin((B-C)/2). Since cos(A/2)*sin((B-C)/2) = [cosC - cosB]/2 (from Q5(d) working), the first term equals 8R^2*sin^2(A/2)*(cosC - cosB). Cyclically summing: 8R^2*[sin^2(A/2)*(cosC - cosB) + sin^2(B/2)*(cosA - cosC) + sin^2(C/2)*(cosB - cosA)]. With sin^2(A/2) = (1-cosA)/2 this is 4R^2*[(1-cosA)(cosC - cosB) + (1-cosB)(cosA - cosC) + (1-cosC)(cosB - cosA)] = 4R^2*[(cosC - cosB + cosA - cosC + cosB - cosA) - (cosA*cosC - cosA*cosB + cosB*cosA - cosB*cosC + cosC*cosB - cosC*cosA)] = 4R^2*[0 - 0] = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q6(iii); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "tan(A/2)*tan(B/2) = r/(s-c)... no: use Delta: tan(A/2)*tan(B/2) = Delta^2/[(s(s-a))(s(s-b))]... simplest is (s-c)/s via r^2 = (s-a)(s-b)(s-c)/s.",
+        "marks": 3,
+        "question": "AQ6(iv). Prove that tan(A/2)*tan(B/2) = (a+b-c)/(a+b+c).",
+        "solution": "tan(A/2)*tan(B/2) = sqrt[(s-b)(s-c)/(s(s-a))] * sqrt[(s-a)(s-c)/(s(s-b))] = (s-c)/s. And (a+b-c)/(a+b+c) = 2(s-c)/(2s) = (s-c)/s. Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q6(iv); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "(b-c)*cot(A/2) = 4R*cos(A/2)*sin((B-C)/2) = 2R*(cosC - cosB): cyclic sum vanishes.",
+        "marks": 4,
+        "question": "AQ6(v). Prove that (b-c)*cot(A/2) + (c-a)*cot(B/2) + (a-b)*cot(C/2) = 0.",
+        "solution": "(b-c)*cot(A/2) = 2R*(sinB - sinC)*cos(A/2)/sin(A/2) = 2R*2*cos((B+C)/2)*sin((B-C)/2)*cos(A/2)/sin(A/2) = 4R*sin((B-C)/2)*cos(A/2) = 2R*[cosC - cosB] (using 2*sin((B-C)/2)*cos(A/2) = cosC - cosB from Q5(d) working). Cyclically the others are 2R*(cosA - cosC) and 2R*(cosB - cosA). Adding: 2R*[(cosC - cosB) + (cosA - cosC) + (cosB - cosA)] = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q6(v); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "Expand with cos^2(C/2) = (s(s-c))/(ab) style halves, or collect: LHS - c^2 = (a-b)^2 - 4ab*sin^2(C/2) - ... = 0 by the cosine rule.",
+        "marks": 4,
+        "question": "AQ6(vi). Prove that (a-b)^2*cos^2(C/2) + (a+b)^2*sin^2(C/2) = c^2.",
+        "solution": "With cos^2(C/2) = (1+cosC)/2 and sin^2(C/2) = (1-cosC)/2, the left side is [(a-b)^2*(1+cosC) + (a+b)^2*(1-cosC)]/2 = [(a-b)^2 + (a+b)^2]/2 + cosC*[(a-b)^2 - (a+b)^2]/2 = (2a^2+2b^2)/2 + cosC*(-4ab)/2 = (a^2+b^2) - 2ab*cosC = c^2 by the cosine rule.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q6(vi); book p189 = PDF p216 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Additional Questions (I) Q1-Q6 (book pp188-189 = PDF p216 of the 2075 reprint; page-region vision reads; every identity proved from the sine/cosine/projection/half-angle laws).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.6 Book Additional Questions (I) Q1-Q6 - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-6-1-additional-i",
+    "topicTitle": "Ch.6 Book Additional Questions (I) Q1-Q6 (12 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-6-1-additional-ii.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Angles 1:2:3 of 180 deg are 30/60/90: sides go as sin30:sin60:sin90 = 1:sqrt(3):2.",
+        "marks": 3,
+        "question": "AQ7(i). If the angles of a triangle are to one another as 1:2:3, prove that the corresponding sides are 1:sqrt(3):2.",
+        "solution": "Let the angles be k, 2k, 3k with k + 2k + 3k = 180 deg, so k = 30 deg: angles 30, 60, 90 deg. By the sine rule a:b:c = sin30:sin60:sin90 = (1/2):(sqrt(3)/2):1 = 1:sqrt(3):2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q7(i); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "Smallest side sqrt(13) is opposite the smallest angle: cosine rule gives cos = sqrt(3)/2.",
+        "marks": 3,
+        "question": "AQ7(ii). If the sides of a triangle are 7 cms, 4*sqrt(3) cms, sqrt(13) cms, prove that the smallest angle is 30 deg.",
+        "solution": "The smallest angle is opposite the smallest side sqrt(13). By the cosine rule, cos = [7^2 + (4*sqrt(3))^2 - (sqrt(13))^2]/[2*7*4*sqrt(3)] = (49 + 48 - 13)/(56*sqrt(3)) = 84/(56*sqrt(3)) = 3/(2*sqrt(3)) = sqrt(3)/2. Hence the smallest angle is 30 deg.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q7(ii); book p189 = PDF p216 (vision read)"
+      },
+      {
+        "knowledgeNote": "Angles in A.P. force the middle to 60 deg; then b:c = sinB:sinC pins C = 45 deg.",
+        "marks": 3,
+        "question": "AQ7(iii). The angles of a triangle ABC are in A.P., and it is given that b:c = sqrt(3):sqrt(2). Find angle A. (Printed Answers line reads '7.(ii) 75 deg' - a label slip for 7.(iii); 7.(ii) is a proof with no numeric answer.)",
+        "solution": "Angles in A.P.: 2B = A + C with A + B + C = 180 deg gives 3B = 180, so B = 60 deg. Then b:c = sinB:sinC gives sqrt(3):sqrt(2) = (sqrt(3)/2):sinC, so sinC = sqrt(2)/2 and C = 45 deg (C = 135 deg impossible with B = 60). Hence A = 180 - 60 - 45 = 75 deg. (Filed: the printed answer '75 deg' belongs to this part (iii), not (ii).)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q7(iii); book p189 = PDF p216-217 (vision read); answer-label slip documented",
+        "answer": "A = 75 deg"
+      },
+      {
+        "knowledgeNote": "Try B = 90 deg first: sinB:sinC = 1:sin60 = 2:sqrt(3) matches instantly.",
+        "marks": 3,
+        "question": "AQ7(iv). In triangle ABC, if angle A = 30 deg and b:c = 2:sqrt(3), find angle B.",
+        "solution": "B + C = 150 deg and sinB:sinC = 2:sqrt(3). With B = 90 deg, C = 60 deg: sinB:sinC = 1:(sqrt(3)/2) = 2:sqrt(3). This satisfies the ratio, and monotonicity of sinB/sin(150 deg - B) on (0, 150 deg) makes it unique. So B = 90 deg. Matches the printed Answers: 90 deg.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q7(iv); book p189 = PDF p216-217 (vision read); matches key",
+        "answer": "B = 90 deg"
+      },
+      {
+        "knowledgeNote": "sin3B = 2sinB gives sinB*(1 - 4sin^2B) = 0: with B under 60 deg, sinB = 1/2.",
+        "marks": 4,
+        "question": "AQ7(v). If a = 2b and A = 3B, find the angles of the triangle.",
+        "solution": "a:b = sinA:sinB gives 2:1 = sin3B:sinB, so sin3B = 2sinB. With sin3B = 3sinB - 4sin^3B: 3sinB - 4sin^3B = 2sinB, i.e. sinB*(1 - 4sin^2B) = 0. Since B is a triangle angle with 3B < 180 deg, sinB != 0, so sin^2B = 1/4 and (B acute) sinB = 1/2: B = 30 deg. Then A = 90 deg, C = 60 deg. Matches the printed Answers: 90, 30, 60 deg.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q7(v); book p189 = PDF p216-217 (vision read); matches key",
+        "answer": "A = 90 deg, B = 30 deg, C = 60 deg"
+      },
+      {
+        "knowledgeNote": "Mirror of Ex Q8 with a, b swapped: (a+c)^2 - b^2 = 3ca factors to cosB = 1/2.",
+        "marks": 4,
+        "question": "AQ8. If 1/(a+b) + 1/(b+c) = 3/(a+b+c), show that angle B = 60 deg.",
+        "solution": "[(b+c) + (a+b)]/[(a+b)(b+c)] = 3/(a+b+c), i.e. (a+2b+c)(a+b+c) = 3(a+b)(b+c). Put s1 = a+c: (s1+2b)(s1+b) = 3[b^2 + b*s1 + ac], i.e. s1^2 + 3b*s1 + 2b^2 = 3b^2 + 3b*s1 + 3ac, so s1^2 = b^2 + 3ac. Hence (a+c)^2 = b^2 + 3ac, i.e. a^2 + c^2 - b^2 = ac, so cosB = 1/2 and B = 60 deg.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q8; book p189 = PDF p216-217 (vision read)"
+      },
+      {
+        "knowledgeNote": "b + c = 2R*(sinB + sinC) = 4R*cos(A/2)*cos((B-C)/2): with A = 60 deg, cos(A/2) = a/(2R).",
+        "marks": 4,
+        "question": "AQ9(i). If in a triangle ABC, A = 60 deg, show that b + c = 2a*cos((B-C)/2).",
+        "solution": "b + c = 2R*(sinB + sinC) = 4R*sin((B+C)/2)*cos((B-C)/2) = 4R*cos(A/2)*cos((B-C)/2). With A = 60 deg, cos(A/2) = cos30 = sqrt(3)/2 and a = 2R*sin60 = 2R*sqrt(3)/2 = R*sqrt(3), so 4R*cos(A/2) = 4R*sqrt(3)/2 = 2*R*sqrt(3) = 2a. Hence b + c = 2a*cos((B-C)/2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q9(i); book p189 = PDF p217 (vision read)"
+      },
+      {
+        "knowledgeNote": "(a+c)^2 - b^2 = 3ca rearranges to a^2 + c^2 - b^2 = ca: read off cosB.",
+        "marks": 4,
+        "question": "AQ9(ii). In a triangle ABC, if angle B = 60 deg, prove that (a+b+c)*(a-b+c) = 3ca.",
+        "solution": "(a+b+c)*(a-b+c) = (a+c)^2 - b^2 = a^2 + c^2 + 2ac - b^2. With B = 60 deg, cosB = (a^2+c^2-b^2)/(2ac) = 1/2 gives a^2 + c^2 - b^2 = ac. Substituting: ac + 2ac = 3ca.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q9(ii); book p189 = PDF p217 (vision read)"
+      },
+      {
+        "knowledgeNote": "a:b:c = 2:3:4 with s = 27 forces a = 12, b = 18, c = 24: Heron gives sqrt(27*15*9*3) = 27*sqrt(15).",
+        "marks": 3,
+        "question": "AQ10(i). If in any triangle a:b:c = 2:3:4 and s = 27, find the area of the triangle.",
+        "solution": "2k + 3k + 4k = 2s = 54 gives k = 6: a = 12, b = 18, c = 24. Delta = sqrt[27*(27-12)*(27-18)*(27-24)] = sqrt(27*15*9*3) = sqrt(10935) = sqrt(729*15) = 27*sqrt(15) sq. units. Matches the printed Answers: 27*sqrt(15) sq. units.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q10(i); book pp189-190 = PDF p217 (vision read); matches key",
+        "answer": "27*sqrt(15) sq. units"
+      },
+      {
+        "knowledgeNote": "Delta = (1/2)*a*b*sinC: (1/2)*5*6*sin30 = 7.5 directly.",
+        "marks": 2,
+        "question": "AQ10(ii). In a triangle ABC, a = 5, b = 6 and C = 30 deg; show that its area is 7.5 sq. units.",
+        "solution": "Delta = (1/2)*a*b*sinC = (1/2)*5*6*sin30 = 15*(1/2) = 7.5 sq. units.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q10(ii); book p190 = PDF p217 (vision read)"
+      },
+      {
+        "knowledgeNote": "2^2 + 3^2 ... (sqrt(2))^2 + (sqrt(3))^2 = (sqrt(5))^2: right triangle, legs sqrt(2), sqrt(3).",
+        "marks": 3,
+        "question": "AQ10(iii). In a triangle ABC, if a = sqrt(2), b = sqrt(3) and c = sqrt(5), show that its area is (1/2)*sqrt(6) sq. units.",
+        "solution": "a^2 + b^2 = 2 + 3 = 5 = c^2, so the triangle is right angled at C. Delta = (1/2)*a*b = (1/2)*sqrt(2)*sqrt(3) = (1/2)*sqrt(6) sq. units.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q10(iii); book p190 = PDF p217 (vision read)"
+      },
+      {
+        "knowledgeNote": "s = 21: sin(A/2) = sqrt[(s-b)(s-c)/(bc)] = sqrt(1/5); everything else follows by doubling.",
+        "marks": 5,
+        "question": "AQ11. In any triangle ABC, if a = 13 cms, b = 14 cms, c = 15 cms, find sin(A/2), cos(A/2), sinA, cosA and tan(A/2).",
+        "solution": "s = (13+14+15)/2 = 21. sin(A/2) = sqrt[(s-b)(s-c)/(bc)] = sqrt[(7*6)/(14*15)] = sqrt(42/210) = 1/sqrt(5). cos(A/2) = sqrt[s(s-a)/(bc)] = sqrt[(21*8)/210] = sqrt(4/5) = 2/sqrt(5). sinA = 2*sin(A/2)*cos(A/2) = 2*(1/sqrt(5))*(2/sqrt(5)) = 4/5. cosA = (b^2+c^2-a^2)/(2bc) = (196+225-169)/(2*14*15) = 252/420 = 3/5. tan(A/2) = sin(A/2)/cos(A/2) = 1/2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q11; book p190 = PDF p217 (vision read)",
+        "answer": "sin(A/2) = 1/sqrt(5), cos(A/2) = 2/sqrt(5), sinA = 4/5, cosA = 3/5, tan(A/2) = 1/2"
+      },
+      {
+        "knowledgeNote": "a, b, c in A.P. means 2sinB = sinA + sinC: divide by 2cos(B/2) to get 2sin(B/2) = cos((A-C)/2), then use tan product formula.",
+        "marks": 4,
+        "question": "AQ12(i). If a, b, c are in A.P., prove that 3*tan(A/2)*tan(C/2) = 1.",
+        "solution": "2b = a + c gives 2sinB = sinA + sinC, i.e. 4*sin(B/2)*cos(B/2) = 2*sin((A+C)/2)*cos((A-C)/2) = 2*cos(B/2)*cos((A-C)/2), so 2*sin(B/2) = cos((A-C)/2). Now tan(A/2)*tan(C/2) = [cos((A-C)/2) - cos((A+C)/2)]/[cos((A-C)/2) + cos((A+C)/2)]. Since cos((A+C)/2) = sin(B/2), this is [2*sin(B/2) - sin(B/2)]/[2*sin(B/2) + sin(B/2)] = sin(B/2)/[3*sin(B/2)] = 1/3. Hence 3*tan(A/2)*tan(C/2) = 1.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q12(i); book p190 = PDF p217 (vision read)"
+      },
+      {
+        "knowledgeNote": "2a = b + c becomes 2sinA = 2cos(A/2)*cos((B-C)/2): cancel cos(A/2).",
+        "marks": 4,
+        "question": "AQ12(ii). If b, a, c are in A.P., prove that cos((B-C)/2) = 2*sin(A/2).",
+        "solution": "2a = b + c gives 2sinA = sinB + sinC = 2*sin((B+C)/2)*cos((B-C)/2) = 2*cos(A/2)*cos((B-C)/2). Since 2sinA = 4*sin(A/2)*cos(A/2), dividing by 2*cos(A/2) gives 2*sin(A/2) = cos((B-C)/2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q12(ii); book p190 = PDF p217 (vision read)"
+      },
+      {
+        "knowledgeNote": "c + (b-a)*cosB = b*(cosA + cosB) = 2b*cos((A+B)/2)*cos((A-B)/2): the sine-rule ratio collapses to cot((B-A)/2).",
+        "marks": 5,
+        "question": "AQ13. If b - a = mc, prove that cot((B-A)/2) = (1 + m*cosB)/(m*sinB).",
+        "solution": "m = (b-a)/c. Then (1 + m*cosB)/(m*sinB) = [c + (b-a)*cosB]/[(b-a)*sinB]. Numerator: c + (b-a)*cosB = (a*cosB + b*cosA) + (b-a)*cosB (projection law) = b*(cosA + cosB) = 2b*cos((A+B)/2)*cos((A-B)/2) = 2b*sin(C/2)*cos((B-A)/2). Denominator: (b-a)*sinB = 2R*(sinB - sinA)*sinB = 2R*2*cos((A+B)/2)*sin((B-A)/2)*sinB = 4R*sin(C/2)*sin((B-A)/2)*sinB. Ratio: [2b*sin(C/2)*cos((B-A)/2)]/[4R*sin(C/2)*sin((B-A)/2)*sinB] = [2*2R*sinB*cos((B-A)/2)]/[4R*sin((B-A)/2)*sinB] = cos((B-A)/2)/sin((B-A)/2) = cot((B-A)/2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Additional Questions (I) Q13; book p190 = PDF p217 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Additional Questions (I) Q7-Q13 (book pp189-190 = PDF pp216-217 of the 2075 reprint; page-region vision reads; numerics key-checked against the printed Answers, p190; answer label-slip 7.(ii)->7.(iii) documented).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.6 Book Additional Questions (I) Q7-Q13 - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-6-1-additional-ii",
+    "topicTitle": "Ch.6 Book Additional Questions (I) Q7-Q13 (15 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-6-1-half-angle-and-area.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "(b-c)/a = sin((B-C)/2)/cos(A/2): sum-to-product on both differences.",
+        "marks": 3,
+        "question": "Q5(a). In any triangle, prove that [(b-c)/a]*cos(A/2) = sin((B-C)/2).",
+        "solution": "(b-c)/a = (sinB - sinC)/sinA = [2*cos((B+C)/2)*sin((B-C)/2)]/[2*sin(A/2)*cos(A/2)] = [2*sin(A/2)*sin((B-C)/2)]/[2*sin(A/2)*cos(A/2)] = sin((B-C)/2)/cos(A/2). Multiplying by cos(A/2) gives sin((B-C)/2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q5(a); book p187 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "cos^2(A/2) = (1+cosA)/2, then the projection law finishes it: b*cosA + a*cosB = c.",
+        "marks": 3,
+        "question": "Q5(b). In any triangle, prove that b*cos^2(A/2) + a*cos^2(B/2) = (a+b+c)/2.",
+        "solution": "b*cos^2(A/2) + a*cos^2(B/2) = b*(1+cosA)/2 + a*(1+cosB)/2 = [(a+b) + (b*cosA + a*cosB)]/2. By the projection law b*cosA + a*cosB = c, so this equals (a+b+c)/2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q5(b); book p187 = PDF p215 (vision read; s written as (a+b+c)/2 in print)"
+      },
+      {
+        "knowledgeNote": "cosB - cosC = -2*cos(A/2)*sin((B-C)/2) and c - b = -4R*sin(A/2)*sin((B-C)/2): the sine factors cancel.",
+        "marks": 4,
+        "question": "Q5(c). In any triangle, prove that a*(cosB - cosC) = 2*(c-b)*cos^2(A/2).",
+        "solution": "Left: a*(cosB - cosC) = 2R*sinA*[-2*sin((B+C)/2)*sin((B-C)/2)] = 2R*2*sin(A/2)*cos(A/2)*[-2*cos(A/2)*sin((B-C)/2)] = -8R*sin(A/2)*cos^2(A/2)*sin((B-C)/2). Right: 2*(c-b)*cos^2(A/2) = 4R*(sinC - sinB)*cos^2(A/2) = 4R*2*cos((B+C)/2)*sin((C-B)/2)*cos^2(A/2) = 8R*sin(A/2)*[-sin((B-C)/2)]*cos^2(A/2). Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q5(c); book p187 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Each weighted term becomes (cosC - cosB)/2: the three differences telescope to zero.",
+        "marks": 5,
+        "question": "Q5(d). In any triangle, prove that [(b-c)/a]*cos^2(A/2) + [(c-a)/b]*cos^2(B/2) + [(a-b)/c]*cos^2(C/2) = 0.",
+        "solution": "From Q5(a), (b-c)/a = sin((B-C)/2)/cos(A/2), so the first term is sin((B-C)/2)*cos(A/2) = [sin((B-C+A)/2) + sin((B-C-A)/2)]/2 = [sin((pi-2C)/2) + sin((-(pi-2B))/2)]/2 = (cosC - cosB)/2. Cyclically the second is (cosA - cosC)/2 and the third is (cosB - cosA)/2. Adding: [(cosC - cosB) + (cosA - cosC) + (cosB - cosA)]/2 = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q5(d); book p187 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Halve with (1+cosA)/2, then use bc*cosA + ca*cosB + ab*cosC = (a^2+b^2+c^2)/2.",
+        "marks": 4,
+        "question": "Q5(e). In any triangle, prove that bc*cos^2(A/2) + ca*cos^2(B/2) + ab*cos^2(C/2) = s^2, where 2s = a+b+c.",
+        "solution": "The left side is [bc*(1+cosA) + ca*(1+cosB) + ab*(1+cosC)]/2 = [(ab+bc+ca) + (bc*cosA + ca*cosB + ab*cosC)]/2. Now bc*cosA = (b^2+c^2-a^2)/2 and cyclically, so the bracket sum is (a^2+b^2+c^2)/2. Hence the left side is [(ab+bc+ca) + (a^2+b^2+c^2)/2]/2 = (a+b+c)^2/4 = s^2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q5(e); book p187 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "tan^2(A/2) = (s-b)(s-c)/[s(s-a)]: multiply the three and one factor cancels.",
+        "marks": 3,
+        "question": "Q5(f). In any triangle, prove that tan^2(A/2)*tan^2(B/2)*tan^2(C/2) = [(s-a)/s]*[(s-b)/s]*[(s-c)/s], where 2s = a+b+c.",
+        "solution": "By the half-angle formula tan^2(A/2) = (s-b)(s-c)/[s(s-a)], and cyclically for B and C. Multiplying: numerator (s-b)(s-c)*(s-c)(s-a)*(s-a)(s-b) = [(s-a)(s-b)(s-c)]^2; denominator s^3*(s-a)(s-b)(s-c). Cancelling one factor (s-a)(s-b)(s-c) gives (s-a)(s-b)(s-c)/s^3 = [(s-a)/s]*[(s-b)/s]*[(s-c)/s].",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q5(f); book p187 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "cot(B/2) + cot(C/2) = sinA/[sin(B/2)*sin(C/2)]: half-angles are compulsory (full angles fail: test the 3-4-5 triangle).",
+        "marks": 4,
+        "question": "Q5(g). In any triangle, prove that (b+c-a)*[cot(B/2) + cot(C/2)] = 2a*cot(A/2).",
+        "solution": "cot(B/2) + cot(C/2) = sin((B+C)/2)/[sin(B/2)*sin(C/2)] = cos(A/2)/[sin(B/2)*sin(C/2)], so the left side is 2(s-a)*cos(A/2)/[sin(B/2)*sin(C/2)]. Now (s-a) = 4R*cos(A/2)*sin(B/2)*sin(C/2) (from r = 4R*sin(A/2)*sin(B/2)*sin(C/2) and tan(A/2) = r/(s-a)). Substituting: 2*4R*cos(A/2)*sin(B/2)*sin(C/2)*cos(A/2)/[sin(B/2)*sin(C/2)] = 8R*cos^2(A/2). The right side is 2a*cot(A/2) = 4R*sinA*cos(A/2)/sin(A/2) = 8R*cos^2(A/2). Both sides agree. (Check on 3-4-5 with A = 90 deg: left = 2*(cot(B/2)+cot(C/2)) = 2*(2.414+0.414) = 5.657 = 2*5*cot45.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q5(g); book p187 = PDF p215 (vision read; half-angles confirmed in print)"
+      },
+      {
+        "knowledgeNote": "a^2*cotA = R*a*(b^2+c^2-a^2)/(bc): summing gives R*(2*sum a^2b^2 - sum a^4)/(abc) = 4*Delta by Heron.",
+        "marks": 5,
+        "question": "Q13(a). In any triangle, prove that a^2*cotA + b^2*cotB + c^2*cotC = 4*Delta.",
+        "solution": "a^2*cotA = a^2*cosA/sinA = a^2*[(b^2+c^2-a^2)/(2bc)]/(a/2R) = R*a*(b^2+c^2-a^2)/(bc) = R*a^2*(b^2+c^2-a^2)/(abc). Summing cyclically gives R/(abc)*[sum a^2*(b^2+c^2-a^2)] = R/(abc)*[2*(a^2*b^2+b^2*c^2+c^2*a^2) - (a^4+b^4+c^4)]. By Heron's form 16*Delta^2 = 2*sum a^2b^2 - sum a^4, so this is R*16*Delta^2/(abc) = 16R*Delta^2/(4R*Delta) = 4*Delta (using abc = 4R*Delta).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q13(a); book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Equality holds because a/sinA = 2R is constant: both sides equal 4R^2*(sum sin^2)^2.",
+        "marks": 4,
+        "question": "Q13(b). In any triangle, prove that (a*sinA + b*sinB + c*sinC)^2 = (a^2+b^2+c^2)*(sin^2A + sin^2B + sin^2C).",
+        "solution": "Since a = 2R*sinA (and cyclically), the left side is [2R*(sin^2A + sin^2B + sin^2C)]^2 = 4R^2*(sin^2A + sin^2B + sin^2C)^2. The right side is [4R^2*(sin^2A + sin^2B + sin^2C)]*(sin^2A + sin^2B + sin^2C), which is the same. (This is Cauchy-Schwarz with equality, because (a, b, c) is proportional to (sinA, sinB, sinC).)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q13(b); book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "sinA + sinB + sinC = (a+b+c)/(2R) = s/R: just add the three sine-rule fractions.",
+        "marks": 3,
+        "question": "Q13(c). In any triangle, prove that sinA + sinB + sinC = s/R, where 2s = a+b+c.",
+        "solution": "sinA + sinB + sinC = a/(2R) + b/(2R) + c/(2R) = (a+b+c)/(2R) = 2s/(2R) = s/R.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q13(c); book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Expand a*cosB*cosC with a = y+z style substitution: sum = [sum a^2 - sum(b-c)^2 ... ]/(4R) = Delta/R.",
+        "marks": 5,
+        "question": "Q13(d). In any triangle, prove that a*cosB*cosC + b*cosC*cosA + c*cosA*cosB = Delta/R.",
+        "solution": "a*cosB*cosC = 2R*sinA*cosB*cosC, so the left side is 2R*[sinA*cosB*cosC + sinB*cosC*cosA + sinC*cosA*cosB]. Dividing the bracket by cosA*cosB*cosC gives tanA + tanB + tanC, which equals tanA*tanB*tanC (standard A+B+C = pi identity). Hence the bracket is cosA*cosB*cosC*tanA*tanB*tanC = sinA*sinB*sinC, and the sum is 2R*sinA*sinB*sinC = 2R*(abc/8R^3) = abc/(4R^2) = Delta/R (using abc = 4R*Delta).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q13(d); book p188 = PDF p215 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Exercise 6.1 Q5 + Q13 (book pp187-188 = PDF p215 of the 2075 reprint; page-region vision reads; every identity proved from the sine/cosine/projection/half-angle laws).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q5 + Q13 (half-angle and area forms) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-6-1-half-angle-area",
+    "topicTitle": "Ch.6 Book Exercise 6.1 Q5 + Q13 - half-angle and area forms (11 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-6-1-special-results.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Move everything left: (a^2+b^2-c^2)^2 = 2a^2b^2, then cosC = +-1/sqrt(2).",
+        "marks": 5,
+        "question": "Q6. If a^4 + b^4 + c^4 = 2c^2*(a^2+b^2), prove that C = 45 deg or 135 deg. (T.U. 2051) (HSEB 2056)",
+        "solution": "a^4 + b^4 + c^4 - 2a^2*c^2 - 2b^2*c^2 = 0. Add 2a^2*b^2 to both sides: (a^4 + b^4 + c^4 + 2a^2*b^2 - 2a^2*c^2 - 2b^2*c^2) = 2a^2*b^2, i.e. (a^2+b^2-c^2)^2 = 2a^2*b^2. So a^2+b^2-c^2 = +-sqrt(2)*ab, and cosC = (a^2+b^2-c^2)/(2ab) = +-sqrt(2)/2. With 0 < C < pi, C = 45 deg or 135 deg.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q6 (T.U. 2051) (HSEB 2056); book pp187-188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "(b+c)^2 - a^2 = 3bc factors to b^2+c^2-a^2 = bc: read off cosA = 1/2.",
+        "marks": 3,
+        "question": "Q7. If (a+b+c)*(b+c-a) = 3bc, show that A = 60 deg.",
+        "solution": "(a+b+c)*(b+c-a) = (b+c)^2 - a^2 = b^2 + c^2 + 2bc - a^2. Setting this equal to 3bc gives b^2 + c^2 - a^2 = bc, so cosA = (b^2+c^2-a^2)/(2bc) = 1/2. With 0 < A < pi, A = 60 deg.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q7; book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Clear denominators: (a+c)+(b+c) over product form collapses to (a+b)^2 = c^2 + 3ab.",
+        "marks": 4,
+        "question": "Q8. If 1/(a+c) + 1/(b+c) = 3/(a+b+c), show that C = 60 deg. (T.U. 2054, HSEB 2053)",
+        "solution": "Combining: [(b+c) + (a+c)]/[(a+c)(b+c)] = 3/(a+b+c), i.e. (a+b+2c)(a+b+c) = 3[(a+c)(b+c)]. Put s1 = a+b: (s1+2c)(s1+c) = 3[c^2 + c*s1 + ab], i.e. s1^2 + 3c*s1 + 2c^2 = 3c^2 + 3c*s1 + 3ab, so s1^2 = c^2 + 3ab. Hence (a+b)^2 = c^2 + 3ab, i.e. a^2 + b^2 - c^2 = ab, so cosC = 1/2 and C = 60 deg.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q8 (T.U. 2054, HSEB 2053); book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "cosA/a = cosB/b becomes sinB*cosA = sinA*cosB, i.e. sin(B-A) = 0.",
+        "marks": 4,
+        "question": "Q9. If the cosines of two of the angles of a triangle are proportional to the opposite sides, prove that the triangle is isosceles.",
+        "solution": "Suppose cosA/a = cosB/b (the same argument works for any pair). Then b*cosA = a*cosB, i.e. 2R*sinB*cosA = 2R*sinA*cosB, so sinB*cosA - sinA*cosB = sin(B-A) = 0. With angles in (0, pi), B - A = 0, so A = B and the triangle is isosceles.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q9; book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Either cosA = 0 (right-angled) or the sine factors force B = C: factor, never divide blindly.",
+        "marks": 5,
+        "question": "Q10. If (cosA + 2cosC):(cosA + 2cosB) = sinB:sinC, prove that the triangle is either isosceles or right-angled.",
+        "solution": "Cross-multiplying: (cosA + 2cosC)*sinC = (cosA + 2cosB)*sinB, i.e. cosA*(sinC - sinB) = 2*(sinB*cosB - sinC*cosC) = sin2B - sin2C. Now sin2B - sin2C = 2*cos(B+C)*sin(B-C) = -2*cosA*sin(B-C), and sinC - sinB = 2*cos((B+C)/2)*sin((C-B)/2) = 2*sin(A/2)*sin((C-B)/2). So 2*cosA*sin(A/2)*sin((C-B)/2) = -2*cosA*sin(B-C) = 4*cosA*sin((C-B)/2)*cos((C-B)/2). If cosA = 0 then A = 90 deg (right-angled). Otherwise divide by 2*cosA*sin((C-B)/2) (zero only if B = C, isosceles): sin(A/2) = 2*cos((C-B)/2). But |(C-B)/2| < (B+C)/2 = (pi-A)/2 gives cos((C-B)/2) > cos((pi-A)/2) = sin(A/2), so 2*cos((C-B)/2) > sin(A/2) always and this case never occurs. Hence B = C (isosceles) or A = 90 deg (right-angled).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q10; book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "2*sinC*cosA = sinB expands to sin(C-A) = 0 via sinB = sin(A+C).",
+        "marks": 4,
+        "question": "Q11. If 2cosA = sinB/sinC, show that the triangle is isosceles.",
+        "solution": "2*sinC*cosA = sinB = sin(A+C) = sinA*cosC + cosA*sinC. Subtracting cosA*sinC: sinC*cosA = sinA*cosC, i.e. sinC*cosA - sinA*cosC = sin(C-A) = 0. With angles in (0, pi), C = A, so the triangle is isosceles.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q11; book p188 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Translate both sides to cos2: the condition becomes cos2A + cos2C = 2cos2B, the AP condition.",
+        "marks": 5,
+        "question": "Q12. Prove that a^2, b^2, c^2 are in A.P. if sinA:sinC = sin(A-B):sin(B-C).",
+        "solution": "a^2, b^2, c^2 in A.P. means 2*sin^2B = sin^2A + sin^2C (dividing by 4R^2), i.e. (1-cos2B) = (1-cos2A)/2 + (1-cos2C)/2, i.e. cos2A + cos2C = 2cos2B. The given condition: sinA*sin(B-C) = sinC*sin(A-B). Left: [cos(A-B+C) - cos(A+B-C)]/2 = [cos(pi-2B) - cos(pi-2C)]/2 = (cos2C - cos2B)/2. Right: [cos(C-A+B) - cos(C+A-B)]/2 = [cos(pi-2A) - cos(pi-2B)]/2 = (cos2B - cos2A)/2. Equality gives cos2C - cos2B = cos2B - cos2A, i.e. cos2A + cos2C = 2cos2B, exactly the A.P. condition.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q12 (condition continues on book p188); book p188 = PDF pp215-216 (vision read)"
+      },
+      {
+        "knowledgeNote": "a^2+b^2+c^2 = 4R^2*(sum sin^2) = 8R^2*(1 + cosA*cosB*cosC): the 8R^2 forces a zero cosine.",
+        "marks": 4,
+        "question": "Q14. If 8R^2 = a^2 + b^2 + c^2, prove that the triangle is right angled. (T.U. 2057S)",
+        "solution": "a^2 + b^2 + c^2 = 4R^2*(sin^2A + sin^2B + sin^2C). Since sin^2A + sin^2B + sin^2C = 2 + 2*cosA*cosB*cosC (standard identity), this equals 8R^2*(1 + cosA*cosB*cosC). Setting it equal to 8R^2 gives cosA*cosB*cosC = 0, so one angle is 90 deg: the triangle is right angled.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q14 (T.U. 2057S); book p188 = PDF p215-216 (vision read)"
+      },
+      {
+        "knowledgeNote": "6-8-10 is the scaled 3-4-5 right triangle: s = 12, Delta = 24, R = 5 fall out immediately.",
+        "marks": 4,
+        "question": "Q15. If a = 10, b = 8, c = 6, find s, Delta, R and sin(B/2).",
+        "solution": "s = (10+8+6)/2 = 12. Delta = sqrt[s(s-a)(s-b)(s-c)] = sqrt[12*2*4*6] = sqrt(576) = 24. R = abc/(4*Delta) = 480/96 = 5. sin(B/2) = sqrt[(s-a)(s-c)/(ac)] = sqrt[(12-10)(12-6)/(10*6)] = sqrt(12/60) = sqrt(1/5) = 1/sqrt(5). Matches the printed Answers (p190): 15. 12, 24, 5, 1/sqrt(5).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q15; book p188 = PDF p216 (vision read); matches key",
+        "answer": "s = 12, Delta = 24, R = 5, sin(B/2) = 1/sqrt(5)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Exercise 6.1 Q6-Q12 + Q14-Q15 (book p188 = PDF pp215-216 of the 2075 reprint; page-region vision reads; every result proved; Q15 key-checked against the printed Answers, p190).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 special results (Q6-Q12, Q14-Q15) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-6-1-special-results",
+    "topicTitle": "Ch.6 Book Exercise 6.1 special results - Q6-Q12, Q14-Q15 (9 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-6-1-triangle-identities-i.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "b*cosC - c*cosB collapses to (b^2-c^2)/a: clear the denominators first.",
+        "marks": 3,
+        "question": "Q1(a). In any triangle, prove that a(b*cosC - c*cosB) = b^2 - c^2.",
+        "solution": "By the cosine rule cosC = (a^2+b^2-c^2)/(2ab) and cosB = (a^2-b^2+c^2)/(2ac). So b*cosC - c*cosB = (a^2+b^2-c^2)/(2a) - (a^2-b^2+c^2)/(2a) = (2b^2-2c^2)/(2a) = (b^2-c^2)/a. Multiplying by a gives a(b*cosC - c*cosB) = b^2 - c^2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q1(a); book p186 = PDF p213 (vision read)"
+      },
+      {
+        "knowledgeNote": "All three expressions equal the same symmetric value (a^2+b^2+c^2)/(2abc): prove one, the others follow by cyclic symmetry.",
+        "marks": 4,
+        "question": "Q1(b). In any triangle, prove that cosA/a + a/(bc) = cosB/b + b/(ca) = cosC/c + c/(ab).",
+        "solution": "cosA/a + a/(bc) = (bc*cosA + a^2)/(abc). Since bc*cosA = bc*(b^2+c^2-a^2)/(2bc) = (b^2+c^2-a^2)/2, the numerator is (b^2+c^2-a^2)/2 + a^2 = (a^2+b^2+c^2)/2. Hence the first expression equals (a^2+b^2+c^2)/(2abc). The second and third are the same computation with cyclically permuted letters, so all three are equal to (a^2+b^2+c^2)/(2abc).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q1(b); book p186 = PDF p213 (vision read)"
+      },
+      {
+        "knowledgeNote": "Put everything over abc and use bc*cosA = (b^2+c^2-a^2)/2: the six terms pair up.",
+        "marks": 3,
+        "question": "Q1(c). In any triangle, prove that cosA/a + cosB/b + cosC/c = (a^2+b^2+c^2)/(2abc).",
+        "solution": "With common denominator abc the left side is (bc*cosA + ca*cosB + ab*cosC)/(abc). Now bc*cosA = (b^2+c^2-a^2)/2, ca*cosB = (c^2+a^2-b^2)/2, ab*cosC = (a^2+b^2-c^2)/2, whose sum is (a^2+b^2+c^2)/2. Dividing by abc gives (a^2+b^2+c^2)/(2abc).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q1(c); book p186 = PDF p213 (vision read)"
+      },
+      {
+        "knowledgeNote": "a^3 = 8R^3*sin^3A turns the whole sum into a telescoping sine product.",
+        "marks": 4,
+        "question": "Q2(a). In any triangle, prove that a^3*(sin^3B - sin^3C) + b^3*(sin^3C - sin^3A) + c^3*(sin^3A - sin^3B) = 0.",
+        "solution": "By the sine rule a = 2R*sinA, so a^3 = 8R^3*sin^3A (and cyclically). The left side becomes 8R^3*[sin^3A*(sin^3B - sin^3C) + sin^3B*(sin^3C - sin^3A) + sin^3C*(sin^3A - sin^3B)] = 8R^3*[sin^3A*sin^3B - sin^3A*sin^3C + sin^3B*sin^3C - sin^3B*sin^3A + sin^3C*sin^3A - sin^3C*sin^3B] = 0, since the six terms cancel in pairs.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q2(a); book p186 = PDF p213 (vision read)"
+      },
+      {
+        "knowledgeNote": "Each fraction simplifies to 4R^2*sinA*sin(B-C); the sine-product sum telescopes to zero.",
+        "marks": 4,
+        "question": "Q2(b). In any triangle, prove that [a^2*sin(B-C)]/sinA + [b^2*sin(C-A)]/sinB + [c^2*sin(A-B)]/sinC = 0. (T.U. 2052)",
+        "solution": "Since a^2 = 4R^2*sin^2A, the first term is 4R^2*sinA*sin(B-C) (and cyclically). Now sinA*sin(B-C) = [cos(A-B+C) - cos(A+B-C)]/2 = [cos(pi-2B) - cos(pi-2C)]/2 = (cos2C - cos2B)/2. Summing cyclically: (1/2)*[(cos2C - cos2B) + (cos2A - cos2C) + (cos2B - cos2A)] = 0. Hence the whole sum is 4R^2*0 = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q2(b) (T.U. 2052); book p186 = PDF p213 (vision read)"
+      },
+      {
+        "knowledgeNote": "Each fraction equals the constant 1/(2R), so all three are equal: b^2-c^2 = 4R^2*sin(B-C)*sinA is the key step.",
+        "marks": 4,
+        "question": "Q2(c). In any triangle, prove that [a*sin(B-C)]/(b^2-c^2) = [b*sin(C-A)]/(c^2-a^2) = [c*sin(A-B)]/(a^2-b^2). (T.U. 2051H)",
+        "solution": "b^2 - c^2 = 4R^2*(sin^2B - sin^2C) = 4R^2*sin(B-C)*sin(B+C) = 4R^2*sin(B-C)*sinA. So the first fraction is 2R*sinA*sin(B-C)/[4R^2*sin(B-C)*sinA] = 1/(2R). The same computation cyclically gives 1/(2R) for the second and third fractions, so all three are equal.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q2(c) (T.U. 2051H); book p186 = PDF p213-214 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Exercise 6.1 Q1-Q2 (book p186 = PDF p213 of the 2075 reprint; page-region vision reads; every identity proved from the sine/cosine laws).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q1-Q2 (triangle identities I) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-6-1-triangle-identities-i",
+    "topicTitle": "Ch.6 Book Exercise 6.1 Q1-Q2 - triangle identities I (6 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-6-1-triangle-identities-ii.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Regroup into the three projection pairs: (b*cosA + a*cosB) = c and friends.",
+        "marks": 4,
+        "question": "Q3(a). In any triangle, prove that (b+c)*cosA + (c+a)*cosB + (a+b)*cosC = a + b + c.",
+        "solution": "Regroup the left side as (b*cosA + a*cosB) + (c*cosB + b*cosC) + (a*cosC + c*cosA). By the projection law b*cosA + a*cosB = c, c*cosB + b*cosC = a, and a*cosC + c*cosA = b. Adding gives c + a + b = a + b + c.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(a); book p186 = PDF p213-214 (vision read)"
+      },
+      {
+        "knowledgeNote": "Write everything with a = 2R*sinA: both sides become 8R^2*sinA*sinB*sinC.",
+        "marks": 4,
+        "question": "Q3(b). In any triangle, prove that b^2*sin2C + c^2*sin2B = 2ab*sinC. (T.U. 2051H)",
+        "solution": "Left side: b^2*2*sinC*cosC + c^2*2*sinB*cosB = 8R^2*sin^2B*sinC*cosC + 8R^2*sin^2C*sinB*cosB = 8R^2*sinB*sinC*(sinB*cosC + cosB*sinC) = 8R^2*sinB*sinC*sin(B+C) = 8R^2*sinA*sinB*sinC. Right side: 2*(2R*sinA)*(2R*sinB)*sinC = 8R^2*sinA*sinB*sinC. Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(b) (T.U. 2051H); book p186 = PDF p214 (vision read)"
+      },
+      {
+        "knowledgeNote": "The trick is (b*cosC + c*cosB)^2 = a^2: expand it to isolate c^2*cos^2B + b^2*cos^2C.",
+        "marks": 5,
+        "question": "Q3(c). In any triangle, prove that c^2*cos^2B + b^2*cos^2C + bc*cos(B-C) = (a^2 + b^2 + c^2)/2. (T.U. 2058S)",
+        "solution": "From the projection law a = b*cosC + c*cosB, squaring gives a^2 = b^2*cos^2C + c^2*cos^2B + 2bc*cosB*cosC, so c^2*cos^2B + b^2*cos^2C = a^2 - 2bc*cosB*cosC. Substituting: left side = a^2 - 2bc*cosB*cosC + bc*cos(B-C) = a^2 - 2bc*cosB*cosC + bc*(cosB*cosC + sinB*sinC) = a^2 - bc*(cosB*cosC - sinB*sinC) = a^2 - bc*cos(B+C) = a^2 + bc*cosA. Since bc*cosA = (b^2+c^2-a^2)/2, this is a^2 + (b^2+c^2-a^2)/2 = (a^2+b^2+c^2)/2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(c) (T.U. 2058S); book p186 = PDF p214 (vision read; the 1/2 on the right confirmed in print)"
+      },
+      {
+        "knowledgeNote": "c - b*cosA = 2R*sinA*cosB: the sinA factor cancels in the ratio.",
+        "marks": 4,
+        "question": "Q3(d). In any triangle, prove that (c - b*cosA)/(b - c*cosA) = cosB/cosC. (HSEB 2064)",
+        "solution": "c - b*cosA = 2R*sinC - 2R*sinB*cosA = 2R*[sin(A+B) - sinB*cosA] = 2R*sinA*cosB. Likewise b - c*cosA = 2R*sinB - 2R*sinC*cosA = 2R*[sin(A+C) - sinC*cosA] = 2R*sinA*cosC. Dividing (cosA != 0; if cosA = 0 both numerator and denominator reduce via the projection law) gives cosB/cosC.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(d) (HSEB 2064); book pp186-187 = PDF pp213-214 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same 2R expansion as Q3(d): a - b*cosC = 2R*sinC*cosB, and the cosB cancels.",
+        "marks": 4,
+        "question": "Q3(e). In any triangle, prove that (a - b*cosC)/(c - b*cosA) = sinC/sinA.",
+        "solution": "a - b*cosC = 2R*sinA - 2R*sinB*cosC = 2R*[sin(B+C) - sinB*cosC] = 2R*cosB*sinC. From Q3(d), c - b*cosA = 2R*sinA*cosB. Dividing gives (2R*sinC*cosB)/(2R*sinA*cosB) = sinC/sinA.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(e); book p187 = PDF p214 (vision read)"
+      },
+      {
+        "knowledgeNote": "Use cosB = (a^2+c^2-b^2)/(2ac): each product a^3*b*cosC collapses to a^2*(a^2+b^2-c^2)/2.",
+        "marks": 4,
+        "question": "Q4(a). In any triangle, prove that a^3*sin(B-C) + b^3*sin(C-A) + c^3*sin(A-B) = 0.",
+        "solution": "Write sin(B-C) = sinB*cosC - cosB*sinC = (b*cosC - c*cosB)/(2R), so a^3*sin(B-C) = a^3*(b*cosC - c*cosB)/(2R). Summing cyclically and multiplying by 2R gives [a^3*b*cosC + b^3*c*cosA + c^3*a*cosB] - [a^3*c*cosB + b^3*a*cosC + c^3*b*cosA]. Now a^3*b*cosC = a^3*b*(a^2+b^2-c^2)/(2ab) = a^2*(a^2+b^2-c^2)/2, and cyclically; their sum is (1/2)*[sum a^4 + sum a^2*b^2 - sum a^2*c^2] = (1/2)*sum a^4 since the two mixed sums are equal. Likewise a^3*c*cosB = a^2*(a^2+c^2-b^2)/2, summing to the same (1/2)*sum a^4. Their difference is 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(a); book p187 = PDF p214 (vision read; cubes confirmed: a^3, b^3, c^3)"
+      },
+      {
+        "knowledgeNote": "[(b^2-c^2)/a^2]*sin2A reduces to 2*sin(B-C)*cosA; then sin(B-C)*cosA = (sin2C - sin2B)/2 telescopes.",
+        "marks": 5,
+        "question": "Q4(b). In any triangle, prove that [(b^2-c^2)/a^2]*sin2A + [(c^2-a^2)/b^2]*sin2B + [(a^2-b^2)/c^2]*sin2C = 0.",
+        "solution": "(b^2-c^2)/a^2 = 4R^2*sin(B-C)*sinA/(4R^2*sin^2A) = sin(B-C)/sinA, so the first term is [sin(B-C)/sinA]*2*sinA*cosA = 2*sin(B-C)*cosA (and cyclically). Now 2*sin(B-C)*cosA = 2*[sin(B-C+A) + sin(B-C-A)]/2 = sin(pi-2C) + sin(-(pi-2B)) = sin2C - sin2B. Summing cyclically: (sin2C - sin2B) + (sin2A - sin2C) + (sin2B - sin2A) = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(b); book p187 = PDF p214 (vision read; denominators a^2, b^2, c^2 confirmed)"
+      },
+      {
+        "knowledgeNote": "Each leg equals abc/R: (a^2-b^2+c^2)*tanB = 2ac*sinB.",
+        "marks": 4,
+        "question": "Q4(c). In any triangle, prove that (a^2-b^2+c^2)*tanB = (a^2+b^2-c^2)*tanC = (b^2+c^2-a^2)*tanA.",
+        "solution": "a^2 - b^2 + c^2 = 2ac*cosB by the cosine rule, so the first expression is 2ac*cosB*tanB = 2ac*sinB = 2ac*(b/2R) = abc/R. Cyclically the second is 2ab*sinC = abc/R and the third is 2bc*sinA = abc/R. All three equal abc/R, hence are equal.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(c); book p187 = PDF pp214-215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Sum-to-product on top and bottom: cosB - cosC = -2*cos(A/2)*sin((B-C)/2), cosA + 1 = 2*cos^2(A/2).",
+        "marks": 4,
+        "question": "Q4(d). In any triangle, prove that (cosB - cosC)/(cosA + 1) = (c - b)/a.",
+        "solution": "cosB - cosC = -2*sin((B+C)/2)*sin((B-C)/2) = -2*cos(A/2)*sin((B-C)/2), and cosA + 1 = 2*cos^2(A/2). So the left side is -sin((B-C)/2)/cos(A/2). Meanwhile (c-b)/a = (sinC - sinB)/sinA = [2*cos((B+C)/2)*sin((C-B)/2)]/[2*sin(A/2)*cos(A/2)] = [2*sin(A/2)*(-sin((B-C)/2))]/[2*sin(A/2)*cos(A/2)] = -sin((B-C)/2)/cos(A/2). Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(d); book p187 = PDF p215 (vision read)"
+      },
+      {
+        "knowledgeNote": "Numerator = 2R*sum sin^2, denominator = abc/(2R^2): their ratio is exactly R*(a^2+b^2+c^2)/(abc).",
+        "marks": 5,
+        "question": "Q4(e). In any triangle, prove that (a*sinA + b*sinB + c*sinC)/(a*cosA + b*cosB + c*cosC) = R*(a^2+b^2+c^2)/(abc).",
+        "solution": "Numerator: a*sinA + b*sinB + c*sinC = 2R*(sin^2A + sin^2B + sin^2C) = 2R*(a^2+b^2+c^2)/(4R^2) = (a^2+b^2+c^2)/(2R). Denominator: a*cosA + b*cosB + c*cosC = 2R*(sinA*cosA + sinB*cosB + sinC*cosC) = R*(sin2A + sin2B + sin2C) = R*4*sinA*sinB*sinC = 4R*(a/2R)*(b/2R)*(c/2R) = abc/(2R^2). Dividing: [(a^2+b^2+c^2)/(2R)]/[abc/(2R^2)] = R*(a^2+b^2+c^2)/(abc).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(e); book p187 = PDF p215 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Exercise 6.1 Q3-Q4 (book pp186-187 = PDF pp213-215 of the 2075 reprint; page-region vision reads; every identity proved from the sine/cosine/projection laws).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q3-Q4 (triangle identities II) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-6-1-triangle-identities-ii",
+    "topicTitle": "Ch.6 Book Exercise 6.1 Q3-Q4 - triangle identities II (10 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
   "pyqs/class-11/biology/biomolecules-and-cell-biology/05-neb-2020.json": {
     "examSource": "[NEB-pattern 2020]",
     "origin": "curated NEB-pattern set filling the 2020 gap for class-11 biomolecules",

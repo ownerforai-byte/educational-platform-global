@@ -1,14 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { ErrorPage } from "@/components/errors/error-page";
 import { reportClientError } from "@/lib/errors/app-error";
 
-/**
- * Section-level crash boundary (PHASE 2, 2026-10-27): PYQs is a heavy,
- * data-dense section; a crash here falls back inside the section instead of
- * the group or root screen.
- */
+/** PYQ-section crash fallback rendered inside the existing AppShell. */
 export default function PyqsError({
   error,
   reset,
@@ -23,15 +19,5 @@ export default function PyqsError({
     });
   }, [error]);
 
-  return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 p-6">
-      <h2 className="text-lg font-semibold">PYQs failed to load</h2>
-      <p className="text-muted-foreground text-sm">
-        {error.message || "An unexpected error occurred."}
-      </p>
-      <Button onClick={reset} variant="default">
-        Try again
-      </Button>
-    </div>
-  );
+  return <ErrorPage error={error} reset={reset} compact />;
 }

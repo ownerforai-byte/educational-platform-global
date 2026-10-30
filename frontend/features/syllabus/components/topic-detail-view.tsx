@@ -8,7 +8,6 @@ import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
-import { TopicVerticalNotes } from "@/components/content/topic-vertical-notes";
 import { TopicProgressControls } from "@/components/progress/topic-progress-controls";
 import { ChevronRight, ArrowLeft, Lightbulb, NotebookPen } from "lucide-react";
 
@@ -107,13 +106,12 @@ export async function TopicDetailView({
         />
       )}
 
-      {/* All Added Notes in Vertical Scroll */}
-      <TopicVerticalNotes
+      <ContentTabs
         classSlug={classSlug}
         subjectSlug={subjectSlug}
         unitId={unitId}
         topicSlug={topic.slug}
-        topicTitle={topic.title}
+        unit={unit}
       />
 
       {/* Topic Mindmap Block */}
@@ -128,15 +126,6 @@ export async function TopicDetailView({
           source={mindmap.source}
         />
       </section>
-
-      {/* Additional Unit / Subject Tools & Resource Panels */}
-      <ContentTabs
-        classSlug={classSlug}
-        subjectSlug={subjectSlug}
-        unitId={unitId}
-        topicSlug={topic.slug}
-        unit={unit}
-      />
 
       {/* Companion pages for this topic: its exercise set (अभ्यास) and its
           Concepts, Legends & Facts sheet (exam shortcuts, time-saving notes and

@@ -6,10 +6,14 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookMarked,
+  BookOpen,
+  Brain,
+  Calculator,
   Download,
   ExternalLink,
   FileText,
   Link2,
+  ListChecks,
   Loader2,
   NotebookPen,
   Plus,
@@ -18,6 +22,7 @@ import {
 } from "lucide-react";
 import { ConceptFieldPanel, type RavikishanConceptField } from "./ravikishan-concept-panels";
 import { RavikishanTopicResources } from "./ravikishan-topic-resources";
+import { TopicVerticalNotes, type TopicLearningSection } from "./topic-vertical-notes";
 import { EmptyState } from "./empty-state";
 import { AnalyticalGeometryResources } from "./analytical-geometry-resources";
 import { LimitsContinuityResources } from "./limits-continuity-resources";
@@ -234,28 +239,26 @@ function renderUnitResources(
   );
 }
 
-// ── Companion tabs — only material not already presented above ─────────────
-// TopicVerticalNotes is the single home for theory, formulas, examples, key
-// points, summaries, facts, misconceptions, practice and MCQs. Do not add those
-// fields here again. These tabs are limited to distinct concept fields and
-// personal/document tools; each still declares its tier-plan rung.
-
-type TabKind = "field" | "journal" | "resources";
+type TabKind = "learning" | "field" | "journal" | "resources";
 
 type ContentTab = {
   id: string;
   label: string;
   icon: ComponentType<{ className?: string }>;
-  /** Tier-plan rung that opens this tab (plan.md §2.1). */
   minTier: AccessLevel;
   kind: TabKind;
-  /** Set for kind "field" — the concept-JSON part this tab shows. */
+  learningSection?: TopicLearningSection;
   field?: RavikishanConceptField;
   description: string;
 };
 
 export function buildCompanionTabs(): ContentTab[] {
   return [
+    { id: "notes", label: "Notes", icon: BookOpen, minTier: "member", kind: "learning", learningSection: "notes", description: "Understand the canonical notes through a guided four-pass learning path." },
+    { id: "mcq", label: "MCQs", icon: ListChecks, minTier: "member", kind: "learning", learningSection: "mcq", description: "Answer topic MCQs vertically with immediate feedback." },
+    { id: "numericals", label: "Step-by-step Numericals", icon: Calculator, minTier: "member", kind: "learning", learningSection: "numericals", description: "Follow worked problems, then try the related practice." },
+    { id: "entrance", label: "Entrance Question Bank", icon: Target, minTier: "member", kind: "learning", learningSection: "entrance", description: "Practise the full entrance bank in Learn or Test mode." },
+    { id: "self-check", label: "Quick 3 Self-check", icon: Brain, minTier: "member", kind: "learning", learningSection: "self-check", description: "Recall three key ideas without reopening the notes." },
     { id: "related", label: "Related Topics", icon: Link2, minTier: "member", kind: "field", field: "related", description: "Topics that connect to this one." },
     { id: "bounds", label: "Bounds & Limits", icon: Target, minTier: "member", kind: "field", field: "bounds", description: "Where each formula stops being valid." },
     { id: "exam-tips", label: "Exam Tips", icon: BookMarked, minTier: "plus", kind: "field", field: "examNotes", description: "How the exam asks — and how to answer." },
@@ -502,6 +505,7 @@ function TabPanel({
   topicSlug,
   topicTitle,
   topicPath,
+  onOpenNotes,
 }: {
   tab: ContentTab;
   classSlug: string;
@@ -510,6 +514,7 @@ function TabPanel({
   topicSlug: string;
   topicTitle: string;
   topicPath: string;
+  onOpenNotes: () => void;
 }) {
   if (tab.kind === "journal") {
     return <TopicJournalPanel topicTitle={topicTitle} topicPath={topicPath} />;
@@ -523,6 +528,7 @@ function TabPanel({
           subjectSlug={subjectSlug}
           unitId={unitId}
           topicSlug={topicSlug}
+          onOpenNotes={onOpenNotes}
         />
         <DocumentsAndPdfs subjectSlug={subjectSlug} />
         {renderResources(unitId, subjectSlug, topicSlug, topicTitle)}
@@ -560,9 +566,11 @@ export function ContentTabs({
 
   const tabs = useMemo(() => buildCompanionTabs(), []);
 
-  const [activeTab, setActiveTab] = useState<string>("related");
+  const [activeTab, setActiveTab] = useState<string>("notes");
   const active = tabs.find((t) => t.id === activeTab) ?? tabs[0];
   const unlocked = hasLevel(user, active.minTier);
+  const canAccessLearning = hasLevel(user, "member");
+  const showLearning = active.kind === "learning" && unlocked;
 
   return (
     <div className="space-y-4">
@@ -603,11 +611,22 @@ export function ContentTabs({
         })}
       </div>
 
-      {/* Tab content */}
       <div className="min-h-[200px]" role="tabpanel">
-        {!unlocked ? (
+        {canAccessLearning && (
+          <div hidden={!showLearning}>
+            <TopicVerticalNotes
+              classSlug={classSlug}
+              subjectSlug={subjectSlug}
+              unitId={unitId}
+              topicSlug={topicSlug}
+              topicTitle={topicTitle}
+              section={active.kind === "learning" ? active.learningSection : "notes"}
+            />
+          </div>
+        )}
+        {!showLearning && (!unlocked ? (
           <LockedTabCard tab={active} />
-        ) : (
+        ) : active.kind !== "learning" ? (
           <div className="space-y-3">
             <div className="flex items-center justify-between gap-2">
               <h3 className="text-lg font-semibold">{active.label}</h3>
@@ -624,9 +643,10 @@ export function ContentTabs({
               topicSlug={topicSlug}
               topicTitle={topicTitle}
               topicPath={topicPath}
+              onOpenNotes={() => setActiveTab("notes")}
             />
           </div>
-        )}
+        ) : null)}
       </div>
 
       {/* Source Info */}

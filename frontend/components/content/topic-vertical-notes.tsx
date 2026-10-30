@@ -1,8 +1,31 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import {
+  AlertTriangle,
+  Atom,
+  BookOpen,
+  Brain,
+  Calculator,
+  CheckCircle2,
+  ExternalLink,
+  FileText,
+  FlaskConical,
+  HelpCircle,
+  Lightbulb,
+  ListChecks,
+  ListOrdered,
+  Maximize2,
+  Minimize2,
+  RotateCcw,
+  Scale,
+  ShieldAlert,
+  Sparkles,
+  Target,
+  XCircle,
+} from "lucide-react";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
@@ -10,14 +33,16 @@ import { selectCanonicalNoteEntry } from "@/lib/note-routes";
 import { EntranceQuiz } from "@/components/content/entrance-quiz";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
 import { FormulaCard } from "@/components/content/formula-card";
-import { emptyHighYieldTopicData, hasHighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
+import {
+  emptyHighYieldTopicData,
+  hasHighYieldTopicData,
+  type HighYieldTopicData,
+} from "@/lib/high-yield-topic-facts-match";
 import {
   ensureHighYieldForSubject,
   getLoadedHighYieldTopicData,
 } from "@/lib/high-yield-topic-facts-lazy";
 
-// Heavy visual panels load client-side on demand — the note text renders
-// first and each panel hydrates behind its own skeleton.
 const SchematicDiagramLazy = dynamic(
   () => import("@/components/lab/schematic-diagram").then((m) => m.SchematicDiagram),
   {
@@ -25,35 +50,8 @@ const SchematicDiagramLazy = dynamic(
     loading: () => (
       <div className="min-h-[380px] animate-pulse rounded-2xl border border-border/60 bg-background/50" />
     ),
-  }
+  },
 );
-import {
-  BookOpen,
-  FlaskConical,
-  CheckCircle2,
-  AlertTriangle,
-  Lightbulb,
-  Sparkles,
-  FileText,
-  Calculator,
-  ListOrdered,
-  Layers,
-  HelpCircle,
-  TrendingUp,
-  Brain,
-  Zap,
-  Atom,
-  ExternalLink,
-  Workflow,
-  Scale,
-  ShieldAlert,
-  Target,
-  RotateCcw,
-  Maximize2,
-  Minimize2,
-} from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 export interface RichTopicConcept {
   title?: string;
@@ -82,9 +80,7 @@ export interface RichTopicConcept {
   duplicateType?: number;
   animation3D?: string;
   motionGraphics?: string;
-  /** Phase 4a: structured formulas with units + solve targets (authoring, opt-in). */
   formulaSpecs?: unknown[];
-  /** Phase 4b: interactive blocks rendered after the notes (authoring, opt-in). */
   blocks?: unknown[];
 }
 
@@ -98,79 +94,88 @@ interface ManifestItem {
   filename: string;
 }
 
+export type TopicLearningSection = "notes" | "mcq" | "numericals" | "entrance" | "self-check";
+
 interface TopicVerticalNotesProps {
   classSlug: string;
   subjectSlug: string;
   unitId: string;
   topicSlug: string;
   topicTitle: string;
+  section?: TopicLearningSection;
 }
 
-// Boilerplate detector to reject placeholder strings
+type LearningSectionProps = {
+  id: string;
+  title: string;
+  description?: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: string;
+  children: React.ReactNode;
+};
+
+function LearningSection({
+  id,
+  title,
+  description,
+  icon: Icon,
+  badge,
+  children,
+}: LearningSectionProps) {
+  return (
+    <section aria-labelledby={id} className="overflow-hidden rounded-3xl border border-border/70 bg-card shadow-sm">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 bg-muted/20 px-5 py-4 sm:px-6">
+        <div className="flex min-w-0 items-start gap-2.5">
+          <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+          <div>
+            <h3 id={id} className="text-base font-bold text-foreground">{title}</h3>
+            {description && <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{description}</p>}
+          </div>
+        </div>
+        {badge && (
+          <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-primary">
+            {badge}
+          </span>
+        )}
+      </div>
+      <div className="space-y-5 p-5 sm:p-6">{children}</div>
+    </section>
+  );
+}
+
 function isBoilerplate(text: string): boolean {
   if (!text) return true;
   return (
     /^Key Formula \d+:/i.test(text) ||
     /^Key Point \d+:/i.test(text) ||
     /^Example \d+:/i.test(text) ||
-    /^Q\d+\.\s*(Define and explain|Solve problems|Differentiate between|Derive the key formula|What are the applications)/i.test(
-      text
-    )
+    /^Q\d+\.\s*(Define and explain|Solve problems|Differentiate between|Derive the key formula|What are the applications)/i.test(text)
   );
 }
 
-export function TopicVerticalNotes({
+function VisualWorkspace({
   classSlug,
   subjectSlug,
   unitId,
   topicSlug,
   topicTitle,
-}: TopicVerticalNotesProps) {
-  const [sources, setSources] = useState<Array<{ meta: ManifestItem; data: RichTopicConcept }>>([]);
-  const [supplementary, setSupplementary] = useState<RichTopicConcept | null>(null);
-  const [loading, setLoading] = useState(true);
+  concepts,
+}: {
+  classSlug: string;
+  subjectSlug: string;
+  unitId: string;
+  topicSlug: string;
+  topicTitle: string;
+  concepts: RichTopicConcept[];
+}) {
   const [visualTab, setVisualTab] = useState<"schematic" | "3d">("schematic");
-
-  // Interactive self-check quiz state
-  const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
-  const [quizRevealed, setQuizRevealed] = useState<Record<number, boolean>>({});
-
-  // Visual Workspace Refresh & Animation Replay state
   const [visualKey, setVisualKey] = useState(0);
   const [isVisualRefreshing, setIsVisualRefreshing] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [fullscreenError, setFullscreenError] = useState<string | null>(null);
+  const [TopicVisual3D, setTopicVisual3D] = useState<React.ComponentType | null>(null);
   const visualPanelRef = useRef<HTMLDivElement>(null);
 
-  const handleRefreshVisualWorkspace = () => {
-    setIsVisualRefreshing(true);
-    setVisualKey((k) => k + 1);
-    setTimeout(() => setIsVisualRefreshing(false), 500);
-  };
-
-  // iOS Safari and some embedded browsers do not implement the Fullscreen API,
-  // so every call is fire-and-forget — the button simply does nothing there
-  // instead of throwing.
-  const handleToggleFullscreen = async () => {
-    setFullscreenError(null);
-    try {
-      if (document.fullscreenElement === visualPanelRef.current) await document.exitFullscreen();
-      else if (visualPanelRef.current?.requestFullscreen) await visualPanelRef.current.requestFullscreen();
-      else setFullscreenError('Fullscreen is not supported in this browser. You can still zoom and pan the diagram.');
-    } catch {
-      setFullscreenError('Fullscreen could not be opened. You can still zoom and pan the diagram.');
-    }
-  };
-
-  useEffect(() => {
-    const sync = () => setIsFullscreen(document.fullscreenElement === visualPanelRef.current);
-    document.addEventListener("fullscreenchange", sync);
-    return () => document.removeEventListener("fullscreenchange", sync);
-  }, []);
-
-  // 1. Resolve 3D component if available — lazy, so the topic-3d-map registry
-  // (which imports every 3D visual) stays out of this page's first chunk.
-  const [TopicVisual3D, setTopicVisual3D] = useState<React.ComponentType | null>(null);
   useEffect(() => {
     let cancelled = false;
     setTopicVisual3D(null);
@@ -182,101 +187,273 @@ export function TopicVerticalNotes({
     };
   }, [topicSlug]);
 
-  // Visual mode tabs with roving focus (arrow keys move between tabs).
-  const visualTabs = useMemo(() => {
-    const tabs: Array<"schematic" | "3d"> = ["schematic"];
-    if (TopicVisual3D) tabs.push("3d");
-    return tabs;
-  }, [TopicVisual3D]);
+  useEffect(() => {
+    const sync = () => setIsFullscreen(document.fullscreenElement === visualPanelRef.current);
+    document.addEventListener("fullscreenchange", sync);
+    return () => document.removeEventListener("fullscreenchange", sync);
+  }, []);
 
-  const onVisualTabKeyDown = (e: React.KeyboardEvent) => {
-    const idx = visualTabs.indexOf(visualTab);
-    if (idx < 0) return;
-    let nextIdx: number | null = null;
-    if (e.key === "ArrowRight") nextIdx = (idx + 1) % visualTabs.length;
-    else if (e.key === "ArrowLeft") nextIdx = (idx - 1 + visualTabs.length) % visualTabs.length;
-    else if (e.key === "Home") nextIdx = 0;
-    else if (e.key === "End") nextIdx = visualTabs.length - 1;
-    if (nextIdx === null) return;
-    e.preventDefault();
-    const next = visualTabs[nextIdx];
+  const visualTabs = useMemo<Array<"schematic" | "3d">>(
+    () => (TopicVisual3D ? ["schematic", "3d"] : ["schematic"]),
+    [TopicVisual3D],
+  );
+
+  const onVisualTabKeyDown = (event: React.KeyboardEvent) => {
+    const index = visualTabs.indexOf(visualTab);
+    if (index < 0) return;
+    let nextIndex: number | null = null;
+    if (event.key === "ArrowRight") nextIndex = (index + 1) % visualTabs.length;
+    if (event.key === "ArrowLeft") nextIndex = (index - 1 + visualTabs.length) % visualTabs.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = visualTabs.length - 1;
+    if (nextIndex === null) return;
+    event.preventDefault();
+    const next = visualTabs[nextIndex];
     setVisualTab(next);
     document.getElementById(`visual-tab-${next}`)?.focus();
   };
 
-  // 2. Resolve High-Yield Topic Engine Data (null when this topic has none yet).
-  // The subject bank loads lazily; `bankVersion` re-runs these memos once the
-  // chunk arrives, so the first paint uses the tiny core bank.
+  const toggleFullscreen = async () => {
+    setFullscreenError(null);
+    try {
+      if (document.fullscreenElement === visualPanelRef.current) await document.exitFullscreen();
+      else if (visualPanelRef.current?.requestFullscreen) await visualPanelRef.current.requestFullscreen();
+      else setFullscreenError("Fullscreen is not supported here. You can still zoom and pan the diagram.");
+    } catch {
+      setFullscreenError("Fullscreen could not be opened. You can still zoom and pan the diagram.");
+    }
+  };
+
+  return (
+    <section
+      ref={visualPanelRef}
+      aria-labelledby="visual-workspace-heading"
+      className={`rounded-3xl border border-border/70 bg-card shadow-sm ${isFullscreen ? "h-screen overflow-y-auto" : "overflow-hidden"}`}
+    >
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 bg-muted/20 px-5 py-4 sm:px-6">
+        <div className="flex items-center gap-2.5">
+          <FlaskConical className="h-5 w-5 text-sky-500" />
+          <div>
+            <h3 id="visual-workspace-heading" className="text-base font-bold">See the concept in action</h3>
+            <p className="mt-1 text-xs text-muted-foreground">Use the labels and hotspots before returning to the explanation.</p>
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              setIsVisualRefreshing(true);
+              setVisualKey((key) => key + 1);
+              setTimeout(() => setIsVisualRefreshing(false), 500);
+            }}
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-primary/30 bg-primary/10 px-3 text-xs font-bold text-primary"
+          >
+            <RotateCcw className={`h-3.5 w-3.5 ${isVisualRefreshing ? "animate-spin" : ""}`} />
+            Refresh
+          </button>
+          <button
+            type="button"
+            onClick={toggleFullscreen}
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/60 px-3 text-xs font-bold text-muted-foreground"
+          >
+            {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+            {isFullscreen ? "Exit" : "Full screen"}
+          </button>
+          <div role="tablist" aria-label="Visual mode" className="flex rounded-xl border border-border/60 bg-background p-1">
+            <button
+              type="button"
+              role="tab"
+              id="visual-tab-schematic"
+              aria-selected={visualTab === "schematic"}
+              aria-controls="visual-panel"
+              tabIndex={visualTab === "schematic" ? 0 : -1}
+              onKeyDown={onVisualTabKeyDown}
+              onClick={() => setVisualTab("schematic")}
+              className={`min-h-10 rounded-lg px-3 text-xs font-bold ${visualTab === "schematic" ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+            >
+              Schematic
+            </button>
+            {TopicVisual3D && (
+              <button
+                type="button"
+                role="tab"
+                id="visual-tab-3d"
+                aria-selected={visualTab === "3d"}
+                aria-controls="visual-panel"
+                tabIndex={visualTab === "3d" ? 0 : -1}
+                onKeyDown={onVisualTabKeyDown}
+                onClick={() => setVisualTab("3d")}
+                className={`min-h-10 rounded-lg px-3 text-xs font-bold ${visualTab === "3d" ? "bg-sky-600 text-white" : "text-muted-foreground"}`}
+              >
+                3D visual
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+      <div id="visual-panel" role="tabpanel" aria-labelledby={`visual-tab-${visualTab}`} className="space-y-4 p-3 sm:p-6">
+        {fullscreenError && <p role="status" className="text-sm text-muted-foreground">{fullscreenError}</p>}
+        {visualTab === "schematic" ? (
+          <SchematicDiagramLazy
+            key={`schematic-${visualKey}`}
+            subjectSlug={subjectSlug}
+            topicSlug={topicSlug}
+            topicTitle={topicTitle}
+            unitId={unitId}
+            classSlug={classSlug}
+            concepts={concepts}
+          />
+        ) : TopicVisual3D ? (
+          <div key={`3d-${visualKey}`} className="flex min-h-[380px] items-center justify-center overflow-hidden rounded-2xl border border-border/60">
+            <TopicVisual3D />
+          </div>
+        ) : null}
+        <p className="rounded-xl border border-border/60 bg-background/70 px-3 py-2 text-[11px] text-muted-foreground">
+          {visualTab === "3d" ? "Drag to rotate · Scroll to zoom · Pinch on touch" : "Hover or tap a labelled hotspot, then walk through the guided tour."}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function FactBank({ factBank }: { factBank: HighYieldTopicData }) {
+  return (
+    <LearningSection
+      id="note-fact-bank"
+      title="Remember the high-yield facts"
+      description="Connect each law to its formula and its validity conditions instead of memorising isolated lines."
+      icon={Target}
+      badge="Exam revision"
+    >
+      <div className="flex flex-wrap gap-2">
+        {[
+          ["Governing laws", factBank.governingLaws.length],
+          ["Constants", factBank.constantsAndValues.length],
+          ["Entrance traps", factBank.entranceTraps.length],
+          ["Speed formulas", factBank.speedFormulas.length],
+        ].filter(([, count]) => Number(count) > 0).map(([label, count]) => (
+          <span key={label} className="rounded-full border border-border/60 bg-muted/30 px-3 py-1 text-[11px] font-semibold text-muted-foreground">
+            <strong className="mr-1 text-foreground">{count}</strong>{label}
+          </span>
+        ))}
+      </div>
+
+      {factBank.governingLaws.length > 0 && (
+        <div className="space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Laws and when they apply</h4>
+          <div className="space-y-3">
+            {factBank.governingLaws.map((law, index) => (
+              <article key={`${law.name}-${index}`} className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+                <div className="flex items-center justify-between gap-3">
+                  <h5 className="text-sm font-bold">{law.name}</h5>
+                  <Scale className="h-4 w-4 shrink-0 text-emerald-500" />
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{law.statement}</p>
+                <div className="mt-3 border-t border-emerald-500/20 pt-3">
+                  <MathMarkdown content={law.formula} className="text-sm font-bold text-emerald-600 dark:text-emerald-400" />
+                  <p className="mt-2 text-xs italic text-muted-foreground">Valid when: {law.conditions}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {factBank.constantsAndValues.length > 0 && (
+        <div className="space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Constants and exact values</h4>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {factBank.constantsAndValues.map((constant, index) => (
+              <div key={`${constant.name}-${index}`} className="rounded-xl border border-border/60 bg-muted/20 p-3">
+                <MathMarkdown content={`$${constant.symbol}$`} className="text-xs font-bold text-primary" />
+                <p className="mt-1 text-sm font-extrabold">{constant.value} <span className="font-normal text-muted-foreground">{constant.unit}</span></p>
+                <p className="mt-1 text-xs text-muted-foreground">{constant.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </LearningSection>
+  );
+}
+
+function answerIndex(answer: string, options: string[]): number {
+  const normalized = answer.trim().toLowerCase();
+  const exact = options.findIndex((option) => option.trim().toLowerCase() === normalized);
+  if (exact >= 0) return exact;
+  const letter = normalized.match(/^[a-d](?:[).:]\s*|\s+)?$/)?.[0]?.[0];
+  return letter ? letter.charCodeAt(0) - 97 : -1;
+}
+
+export function TopicVerticalNotes({
+  classSlug,
+  subjectSlug,
+  unitId,
+  topicSlug,
+  topicTitle,
+  section = "notes",
+}: TopicVerticalNotesProps) {
+  const [sources, setSources] = useState<Array<{ meta: ManifestItem; data: RichTopicConcept }>>([]);
+  const [supplementary, setSupplementary] = useState<RichTopicConcept | null>(null);
+  const [loading, setLoading] = useState(true);
   const [bankVersion, setBankVersion] = useState(0);
+  const [mcqAnswers, setMcqAnswers] = useState<Record<number, number>>({});
+  const [selfCheckAnswers, setSelfCheckAnswers] = useState<Record<number, number>>({});
+
   useEffect(() => {
     let cancelled = false;
     ensureHighYieldForSubject(subjectSlug).then(() => {
-      if (!cancelled) setBankVersion((v) => v + 1);
+      if (!cancelled) setBankVersion((version) => version + 1);
     });
     return () => {
       cancelled = true;
     };
   }, [subjectSlug]);
-  const highYield = useMemo(() => {
-    return getLoadedHighYieldTopicData(subjectSlug, topicSlug, topicTitle, unitId);
-  }, [subjectSlug, topicSlug, topicTitle, unitId, bankVersion]);
-  const hasHighYield = useMemo(() => hasHighYieldTopicData(highYield), [highYield]);
-  const factBank = useMemo(
-    () => highYield ?? emptyHighYieldTopicData(topicTitle, subjectSlug),
-    [highYield, topicTitle, subjectSlug]
-  );
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
+    setSources([]);
+    setSupplementary(null);
+    setMcqAnswers({});
+    setSelfCheckAnswers({});
 
-    // Fetch primary syllabus-notes manifest
-    const manifestPath = `syllabus-notes/${subjectSlug}/_manifest.json`;
-    loadData<ManifestItem[]>(manifestPath)
+    loadData<ManifestItem[]>(`syllabus-notes/${subjectSlug}/_manifest.json`)
       .then(async (manifest) => {
         if (cancelled) return;
-
         const relevant = manifest.filter(
-          (m) => m.unitSlug === unitId && (m.topicSlug === topicSlug || m.filename.includes(topicSlug))
+          (item) => item.unitSlug === unitId && (item.topicSlug === topicSlug || item.filename.includes(topicSlug)),
         );
 
         if (relevant.length > 0) {
           const loaded = await Promise.all(
             relevant.map(async (meta) => {
               try {
-                const data = await loadData<RichTopicConcept>(
-                  `syllabus-notes/${subjectSlug}/${unitId}/${meta.filename}`
-                );
+                const data = await loadData<RichTopicConcept>(`syllabus-notes/${subjectSlug}/${unitId}/${meta.filename}`);
                 return { meta, data };
               } catch {
                 return null;
               }
-            })
+            }),
           );
           if (!cancelled) {
-            const valid = loaded.filter((x): x is { meta: ManifestItem; data: RichTopicConcept } => x !== null);
+            const valid = loaded.filter((item): item is { meta: ManifestItem; data: RichTopicConcept } => item !== null);
             const canonicalMeta = selectCanonicalNoteEntry(valid.map((source) => source.meta));
             const canonical = valid.find((source) => source.meta === canonicalMeta);
             setSources(canonical ? [canonical] : []);
           }
-        }
-
-        // Fetch supplementary from ravikishan manifest only if primary syllabus-notes had no matches
-        if (relevant.length === 0) {
+        } else {
           try {
-            const rkManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>("content/manifest.json");
+            const manifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>("content/manifest.json");
             if (!cancelled) {
-              const rkMatch = rkManifest.find((m) => {
-                const parts = m.path.split("/");
-                return (
-                  parts.includes(unitId) &&
-                  (m.data?.topicSlug === topicSlug || parts[parts.length - 1].includes(topicSlug))
-                );
+              const match = manifest.find((item) => {
+                const parts = item.path.split("/");
+                return parts.includes(unitId) && (item.data?.topicSlug === topicSlug || parts.at(-1)?.includes(topicSlug));
               });
-              if (rkMatch) setSupplementary(rkMatch.data);
+              if (match) setSupplementary(match.data);
             }
           } catch {
-            // Ignore if ravikishan manifest not present
+            // The primary manifest remains the canonical source when available.
           }
         }
 
@@ -291,834 +468,315 @@ export function TopicVerticalNotes({
     };
   }, [subjectSlug, unitId, topicSlug]);
 
-  const activeData = sources[0]?.data || supplementary;
-
-  // Notes the Visual Workspace is built from. Memoised on the objects
-  // themselves so the generated mindmap/schematic do not rebuild every render.
-  const visualConcepts = useMemo(
-    () =>
-      [activeData, supplementary].filter(
-        (c): c is RichTopicConcept => Boolean(c),
-      ),
-    [activeData, supplementary],
+  const highYield = useMemo(() => {
+    void bankVersion;
+    return getLoadedHighYieldTopicData(subjectSlug, topicSlug, topicTitle, unitId);
+  }, [subjectSlug, topicSlug, topicTitle, unitId, bankVersion]);
+  const factBank = useMemo(
+    () => highYield ?? emptyHighYieldTopicData(topicTitle, subjectSlug),
+    [highYield, topicTitle, subjectSlug],
   );
+  const activeData = sources[0]?.data ?? supplementary;
 
-  // Extract raw lists
-  const rawNotes = activeData?.notes ?? supplementary?.notes ?? [];
-  const rawExamples = (activeData?.examples ?? supplementary?.examples ?? []).filter((e) => !isBoilerplate(e));
-  const rawImportantConcepts = activeData?.importantConcepts ?? supplementary?.importantConcepts ?? [];
-  const rawImportantNotes = activeData?.importantNotes ?? supplementary?.importantNotes ?? [];
-  const rawImportantStatements = activeData?.importantStatements ?? supplementary?.importantStatements ?? [];
-  const summary = activeData?.summary ?? supplementary?.summary;
-  const rawUniversalFacts = activeData?.universalFacts ?? supplementary?.universalFacts ?? [];
-  const rawSpecialNotes = activeData?.specialNotes ?? supplementary?.specialNotes ?? [];
-  const rawConfusion = activeData?.confusion ?? supplementary?.confusion ?? [];
-  const rawKeyPoints = (activeData?.keyPoints ?? supplementary?.keyPoints ?? []).filter((kp) => !isBoilerplate(kp));
-  const rawFormulas = (activeData?.formulas ?? supplementary?.formulas ?? []).filter((f) => !isBoilerplate(f));
-  const rawExamShortTricks = activeData?.examShortTricks ?? supplementary?.examShortTricks ?? [];
-  const rawImportantTasks = activeData?.importantTasks ?? supplementary?.importantTasks ?? [];
-  const rawPracticeQuestions = (activeData?.practiceQuestions ?? supplementary?.practiceQuestions ?? []).filter(
-    (q) => !isBoilerplate(q)
+  const rawNotes = activeData?.notes ?? [];
+  const rawExamples = (activeData?.examples ?? []).filter((item) => !isBoilerplate(item));
+  const rawImportantConcepts = activeData?.importantConcepts ?? [];
+  const rawImportantNotes = activeData?.importantNotes ?? [];
+  const rawImportantStatements = activeData?.importantStatements ?? [];
+  const summary = activeData?.summary;
+  const rawUniversalFacts = activeData?.universalFacts ?? [];
+  const rawSpecialNotes = activeData?.specialNotes ?? [];
+  const rawConfusion = activeData?.confusion ?? [];
+  const rawKeyPoints = (activeData?.keyPoints ?? []).filter((item) => !isBoilerplate(item));
+  const rawFormulas = (activeData?.formulas ?? []).filter((item) => !isBoilerplate(item));
+  const rawExamShortTricks = activeData?.examShortTricks ?? [];
+  const rawImportantTasks = activeData?.importantTasks ?? [];
+  const rawPracticeQuestions = (activeData?.practiceQuestions ?? []).filter((item) => !isBoilerplate(item));
+  const rawPractice = activeData?.practice ?? [];
+  const rawNumericals = activeData?.numericals ?? [];
+  const rawMcqs = (activeData?.mcs ?? []).filter((item) => item.question?.trim() && item.options?.length > 0);
+
+  const entranceQuestions = useMemo(() => getEntranceQuestions(subjectSlug, unitId), [subjectSlug, unitId]);
+  const populatedFormulas = useMemo(
+    () => rawFormulas.length > 0
+      ? rawFormulas
+      : factBank.speedFormulas.map((formula) => `**${formula.name}**: $${formula.formula}$ — ${formula.description}${formula.dimensions ? ` [Dimension: $${formula.dimensions}$]` : ""}`),
+    [rawFormulas, factBank],
   );
-  const rawPractice = activeData?.practice ?? supplementary?.practice ?? [];
-  const rawNumericals = activeData?.numericals ?? supplementary?.numericals ?? [];
-
-  // Entrance-bank questions for this unit (every subject carries a bank;
-  // unknown units fall back to the general exam-craft bank).
-  const entranceQuestions = useMemo(
-    () => getEntranceQuestions(subjectSlug, unitId),
-    [subjectSlug, unitId]
+  const structuredFormulas = useMemo(() => rawFormulas.length > 0 ? [] : factBank.speedFormulas, [rawFormulas, factBank]);
+  const populatedExamples = useMemo(
+    () => rawExamples.length > 0
+      ? rawExamples
+      : factBank.workedNumericals.map((example) => `**Problem:** ${example.problem}\n\n**Given:** ${example.given}\n\n${example.steps.map((step, index) => `**Step ${index + 1}:** ${step}`).join("\n\n")}\n\n**Answer:** ${example.answer}`),
+    [rawExamples, factBank],
   );
-
-  // Populate missing or boilerplate content using High-Yield Facts Engine
-  const populatedFormulas = useMemo(() => {
-    if (rawFormulas.length > 0) return rawFormulas;
-    return factBank.speedFormulas.map(
-      (sf) => `**${sf.name}**: $${sf.formula}$ — ${sf.description}${sf.dimensions ? ` [Dimension: $${sf.dimensions}$]` : ""}`
-    );
-  }, [rawFormulas, factBank]);
-
-  /**
-   * Bank formulas keep their structure (name / unit / dimension) and render as
-   * dedicated revision cards. Markdown-provided formulas from the content JSON
-   * have no structure to show, so they keep the plain markdown list.
-   */
-  const structuredFormulas = useMemo(
-    () => (rawFormulas.length > 0 ? [] : factBank.speedFormulas),
-    [rawFormulas, factBank]
+  const populatedKeyPoints = useMemo(
+    () => rawKeyPoints.length > 0
+      ? rawKeyPoints
+      : factBank.keyTermsAndDefinitions.map((item) => `**${item.term}**: ${item.definition} *(Why it matters: ${item.significance})*`),
+    [rawKeyPoints, factBank],
   );
-
-  const populatedExamples = useMemo(() => {
-    if (rawExamples.length > 0) return rawExamples;
-    return factBank.workedNumericals.map(
-      (wn) => `**Problem:** ${wn.problem}\n\n**Given:** $${wn.given}$\n\n${wn.steps.join("\n\n")}\n\n**Result:** $${wn.answer}$`
-    );
-  }, [rawExamples, factBank]);
-
-  const populatedKeyPoints = useMemo(() => {
-    if (rawKeyPoints.length > 0) return rawKeyPoints;
-    return factBank.keyTermsAndDefinitions.map(
-      (kt) => `**${kt.term}**: ${kt.definition} *(Significance: ${kt.significance})*`
-    );
-  }, [rawKeyPoints, factBank]);
-
-  // Generate 3 concept check questions from entrance traps
-  const conceptCheckQuiz = useMemo(() => {
-    return factBank.entranceTraps.slice(0, 3).map((trap, idx) => ({
-      id: idx,
-      question: `Entrance Concept Check: Which statement is scientifically accurate regarding "${trap.trap.slice(0, 40)}..."?`,
-      options: [
-        trap.trap, // The common misconception
-        trap.truth, // The counter-intuitive correct answer
-      ],
-      correctIndex: 1,
+  const conceptCheckQuiz = useMemo(
+    () => factBank.entranceTraps.slice(0, 3).map((trap, index) => ({
+      id: index,
+      question: `Concept check ${index + 1}: which statement is accurate?`,
+      options: [trap.trap, trap.truth],
       explanation: `${trap.truth} (${trap.examRef})`,
-    }));
-  }, [factBank]);
+    })),
+    [factBank],
+  );
 
   if (loading) {
     return (
-      <div
-        id="topic-notes"
-        className="flex scroll-mt-24 flex-col items-center justify-center gap-3 py-12 sm:py-16"
-        role="status"
-        aria-live="polite"
-        aria-busy="true"
-      >
+      <div id="topic-notes" className="flex scroll-mt-24 flex-col items-center justify-center gap-3 py-12" role="status" aria-live="polite" aria-busy="true">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" aria-hidden="true" />
-        <p className="text-sm text-muted-foreground">Loading notes and study materials…</p>
+        <p className="text-sm text-muted-foreground">Loading the canonical notes and learning activities…</p>
+      </div>
+    );
+  }
+
+  if (section === "mcq") {
+    return (
+      <div id="topic-notes" className="scroll-mt-24">
+        <LearningSection
+          id="topic-mcqs-heading"
+          title={`Topic MCQs${rawMcqs.length ? ` — ${rawMcqs.length} questions` : ""}`}
+          description="Choose an answer to reveal the correct option immediately. Scroll down for the next question."
+          icon={ListChecks}
+          badge="Instant feedback"
+        >
+          {rawMcqs.length === 0 ? (
+            <div className="rounded-2xl border border-dashed border-border/70 p-6 text-center">
+              <p className="text-sm font-semibold">No topic-specific MCQs are authored yet.</p>
+              <p className="mt-2 text-xs text-muted-foreground">Use the Entrance Question Bank tab for the available exam-style practice.</p>
+            </div>
+          ) : rawMcqs.map((question, questionIndex) => {
+            const selected = mcqAnswers[questionIndex];
+            const correct = answerIndex(question.answer, question.options);
+            return (
+              <article key={`${question.question}-${questionIndex}`} className="rounded-2xl border border-border/70 bg-muted/20 p-4 sm:p-5">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">{questionIndex + 1}</span>
+                  <h4 className="text-sm font-bold leading-relaxed">{question.question}</h4>
+                </div>
+                <div className="mt-4 space-y-2 sm:pl-9">
+                  {question.options.map((option, optionIndex) => {
+                    const revealed = selected !== undefined;
+                    const isCorrect = optionIndex === correct;
+                    const isSelected = optionIndex === selected;
+                    return (
+                      <button
+                        key={`${option}-${optionIndex}`}
+                        type="button"
+                        onClick={() => setMcqAnswers((answers) => ({ ...answers, [questionIndex]: optionIndex }))}
+                        className={`flex w-full items-start justify-between gap-3 rounded-xl border p-3 text-left text-sm transition-colors ${revealed && isCorrect ? "border-emerald-500/40 bg-emerald-500/10" : revealed && isSelected ? "border-rose-500/40 bg-rose-500/10" : "border-border/60 bg-card hover:border-primary/40"}`}
+                      >
+                        <span>{String.fromCharCode(65 + optionIndex)}. {option}</span>
+                        {revealed && isCorrect && <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />}
+                        {revealed && isSelected && !isCorrect && <XCircle className="h-4 w-4 shrink-0 text-rose-500" />}
+                      </button>
+                    );
+                  })}
+                </div>
+                {selected !== undefined && (
+                  <p className="mt-3 rounded-xl border border-sky-500/20 bg-sky-500/5 p-3 text-xs leading-relaxed sm:ml-9">
+                    <strong>Correct answer: </strong>{question.answer}
+                  </p>
+                )}
+              </article>
+            );
+          })}
+        </LearningSection>
+      </div>
+    );
+  }
+
+  if (section === "numericals") {
+    const additionalNumericals = [...rawNumericals, ...rawPractice];
+    return (
+      <div id="topic-notes" className="scroll-mt-24 space-y-6">
+        <LearningSection
+          id="topic-numericals-heading"
+          title="Step-by-step numericals"
+          description="Follow the given values, reasoning steps and final answer in order. Every problem stays in one vertical reading flow."
+          icon={Calculator}
+          badge={`${populatedExamples.length + additionalNumericals.length} worked sets`}
+        >
+          {populatedExamples.length === 0 && additionalNumericals.length === 0 ? (
+            <p className="rounded-2xl border border-dashed border-border/70 p-6 text-center text-sm text-muted-foreground">No worked numericals are authored for this topic yet.</p>
+          ) : (
+            <>
+              {populatedExamples.map((example, index) => (
+                <article key={`${example}-${index}`} className="rounded-2xl border border-border/60 bg-muted/20 p-4 sm:p-5">
+                  <h4 className="mb-3 flex items-center gap-2 text-sm font-bold"><span className="rounded-full bg-primary/15 px-2 py-1 text-xs text-primary">{index + 1}</span>Worked problem</h4>
+                  <MathMarkdown content={example} className="space-y-3 text-sm leading-relaxed text-foreground" />
+                </article>
+              ))}
+              {additionalNumericals.map((numerical, index) => (
+                <article key={`${numerical}-${index}`} className="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4 sm:p-5">
+                  <h4 className="mb-3 text-sm font-bold text-sky-600 dark:text-sky-400">Additional numerical {index + 1}</h4>
+                  <MathMarkdown content={numerical} className="text-sm leading-relaxed" />
+                </article>
+              ))}
+            </>
+          )}
+        </LearningSection>
+
+        {(rawPracticeQuestions.length > 0 || rawImportantTasks.length > 0) && (
+          <LearningSection id="topic-practice-heading" title="Practice after the worked examples" icon={FileText} badge="Your turn">
+            {rawPracticeQuestions.map((question, index) => (
+              <div key={`${question}-${index}`} className="flex items-start gap-3 rounded-xl border border-border/60 p-4 text-sm leading-relaxed">
+                <strong className="shrink-0 text-primary">Q{index + 1}</strong><span>{question}</span>
+              </div>
+            ))}
+            {rawImportantTasks.map((task, index) => (
+              <div key={`${task}-${index}`} className="flex items-start gap-3 rounded-xl bg-emerald-500/5 p-3 text-sm"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />{task}</div>
+            ))}
+          </LearningSection>
+        )}
+      </div>
+    );
+  }
+
+  if (section === "entrance") {
+    return (
+      <div id="topic-notes" className="scroll-mt-24">
+        <LearningSection
+          id="topic-entrance-heading"
+          title={`Entrance Question Bank — ${entranceQuestions.length} questions`}
+          description="Use Learn mode for immediate explanations or Test mode to attempt the full vertical bank before scoring."
+          icon={Target}
+          badge="CEE / IOE / NEB"
+        >
+          <EntranceQuiz questions={entranceQuestions} title={topicTitle} />
+        </LearningSection>
+      </div>
+    );
+  }
+
+  if (section === "self-check") {
+    return (
+      <div id="topic-notes" className="scroll-mt-24">
+        <LearningSection
+          id="topic-self-check-heading"
+          title="Quick 3-question self-check"
+          description="Answer without reopening the notes. Each choice immediately explains the misconception or confirms the correct idea."
+          icon={Brain}
+          badge="Recall, don't reread"
+        >
+          {conceptCheckQuiz.length === 0 ? (
+            <p className="rounded-2xl border border-dashed border-border/70 p-6 text-center text-sm text-muted-foreground">No self-check questions are available for this topic yet.</p>
+          ) : conceptCheckQuiz.map((question, index) => {
+            const selected = selfCheckAnswers[question.id];
+            return (
+              <article key={question.id} className="rounded-2xl border border-border/70 bg-muted/20 p-4 sm:p-5">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/15 text-xs font-bold text-indigo-500">{index + 1}</span>
+                  <h4 className="text-sm font-bold">{question.question}</h4>
+                </div>
+                <div className="mt-4 space-y-2 sm:pl-9">
+                  {question.options.map((option, optionIndex) => {
+                    const revealed = selected !== undefined;
+                    const isCorrect = optionIndex === 1;
+                    const isSelected = selected === optionIndex;
+                    return (
+                      <button
+                        key={`${option}-${optionIndex}`}
+                        type="button"
+                        onClick={() => setSelfCheckAnswers((answers) => ({ ...answers, [question.id]: optionIndex }))}
+                        className={`flex w-full items-start justify-between gap-3 rounded-xl border p-3 text-left text-sm ${revealed && isCorrect ? "border-emerald-500/40 bg-emerald-500/10" : revealed && isSelected ? "border-rose-500/40 bg-rose-500/10" : "border-border/60 bg-card hover:border-indigo-500/40"}`}
+                      >
+                        <span>{option}</span>
+                        {revealed && isCorrect && <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />}
+                      </button>
+                    );
+                  })}
+                </div>
+                {selected !== undefined && <p className="mt-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-3 text-xs leading-relaxed sm:ml-9"><strong>Explanation: </strong>{question.explanation}</p>}
+              </article>
+            );
+          })}
+        </LearningSection>
       </div>
     );
   }
 
   return (
-    <div id="topic-notes" className="scroll-mt-24 space-y-10">
-      {/* ── CHEMISTRY QUICK LAUNCH BANNER ── */}
-      {(subjectSlug.toLowerCase().includes("chem") ||
-        topicTitle.toLowerCase().includes("element") ||
-        topicTitle.toLowerCase().includes("atom")) && (
-        <div className="rounded-3xl border border-teal-500/30 bg-teal-500/10 p-5 flex flex-wrap items-center justify-between gap-4 shadow-sm">
-          <div className="flex items-center gap-3.5">
-            <div className="h-12 w-12 rounded-2xl bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold shrink-0">
-              <Atom className="h-6 w-6" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">
-                  Entrance &amp; NEB Essential
-                </span>
-                <h4 className="text-sm font-bold text-foreground">Interactive 118-Element Periodic Table &amp; CEE Questions</h4>
-              </div>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Explore electronic configurations, boiling/freezing points, past CEE entrance MCQs, speed formulas, and volatile/coinage metal filters.
-              </p>
-            </div>
-          </div>
-          <Link
-            href="/periodic-table"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold transition-all shadow-md shrink-0"
-          >
-            <span>Open Periodic Table</span>
-            <ExternalLink className="h-3.5 w-3.5" />
-          </Link>
+    <div id="topic-notes" className="scroll-mt-24 space-y-6">
+      {(subjectSlug.toLowerCase().includes("chem") || topicTitle.toLowerCase().includes("element") || topicTitle.toLowerCase().includes("atom")) && (
+        <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-teal-500/30 bg-teal-500/10 p-5">
+          <div className="flex items-center gap-3"><Atom className="h-8 w-8 shrink-0 text-teal-600" /><div><h3 className="text-sm font-bold">Interactive periodic table and CEE questions</h3><p className="mt-1 text-xs text-muted-foreground">Explore configurations, properties and entrance MCQs.</p></div></div>
+          <Link href="/periodic-table" className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-teal-600 px-4 text-xs font-bold text-white">Open periodic table<ExternalLink className="h-3.5 w-3.5" /></Link>
         </div>
       )}
 
-      {/* ── 1. CONCEPTUAL DIAGRAM, CLEAR MINDMAP & 3D INTERACTIVE VISUAL ───────────────── */}
-      <section ref={visualPanelRef} className={`rounded-3xl border border-border/70 bg-card shadow-sm ${isFullscreen ? 'h-screen overflow-y-auto' : 'overflow-hidden'}`}>
-        <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5">
-            <FlaskConical className="h-5 w-5 text-sky-400" />
-            <h3 className="text-base font-bold text-foreground">
-              Visual Workspace: Interactive Schematics, Mindmaps &amp; 3D Simulations
-            </h3>
-          </div>
+      <nav aria-label="Note learning path" className="rounded-3xl border border-primary/20 bg-primary/5 p-4 sm:p-5">
+        <div className="flex items-start gap-3"><BookOpen className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><div><h2 className="text-base font-bold">Understand {topicTitle} in four passes</h2><p className="mt-1 text-xs leading-relaxed text-muted-foreground">Start with the big picture, understand the explanation, lock in the terms and formulas, then remove common traps.</p></div></div>
+        <ol className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["1", "Big picture", "note-start"],
+            ["2", "Understand", "note-explain"],
+            ["3", "Remember", "note-remember"],
+            ["4", "Avoid traps", "note-traps"],
+          ].map(([number, label, target]) => (
+            <li key={target}><a href={`#${target}`} className="flex min-h-11 items-center gap-2 rounded-xl border border-border/60 bg-card px-3 text-xs font-semibold transition-colors hover:border-primary/40"><span className="text-primary">{number}.</span>{label}</a></li>
+          ))}
+        </ol>
+      </nav>
 
-          {/* Visual Mode Switcher Tabs & Refresh Button */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <button
-              onClick={handleRefreshVisualWorkspace}
-              className="px-2.5 py-1 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-primary text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
-              title="Refresh visual simulation, reset WebGL camera, and replay animations"
-            >
-              <RotateCcw className={`h-3.5 w-3.5 ${isVisualRefreshing ? "animate-spin" : ""}`} />
-              <span>Refresh Visual</span>
-            </button>
+      <div id="note-start" className="scroll-mt-24 space-y-6">
+        {(summary || rawImportantConcepts.length > 0 || rawUniversalFacts.length > 0) && (
+          <LearningSection id="note-start-heading" title="1. Start with the big picture" description="Read this first so every later detail has somewhere to fit." icon={Sparkles} badge="Overview">
+            {summary && <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5"><h4 className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Core summary</h4><p className="mt-2 text-sm leading-7">{summary}</p></div>}
+            {rawImportantConcepts.length > 0 && <div><h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Your concept roadmap</h4><ol className="mt-3 space-y-2">{rawImportantConcepts.map((concept, index) => <li key={`${concept}-${index}`} className="flex items-start gap-3 rounded-xl bg-primary/5 p-3 text-sm leading-relaxed"><span className="font-bold text-primary">{index + 1}.</span>{concept}</li>)}</ol></div>}
+            {rawUniversalFacts.length > 0 && <div><h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Facts that anchor the topic</h4><ul className="mt-3 space-y-2">{rawUniversalFacts.map((fact, index) => <li key={`${fact}-${index}`} className="flex items-start gap-2 text-sm leading-relaxed"><Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />{fact}</li>)}</ul></div>}
+          </LearningSection>
+        )}
+        <VisualWorkspace classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} topicSlug={topicSlug} topicTitle={topicTitle} concepts={activeData ? [activeData] : []} />
+      </div>
 
-            <button
-              onClick={handleToggleFullscreen}
-              className="px-2.5 py-1 rounded-xl border border-border/60 bg-background/80 hover:bg-muted text-muted-foreground hover:text-foreground text-xs font-bold transition-all flex items-center gap-1.5"
-              title={isFullscreen ? "Exit full screen" : "Expand this visual to full screen"}
-            >
-              {isFullscreen ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
-              <span>{isFullscreen ? "Exit" : "Full Screen"}</span>
-            </button>
+      <div id="note-explain" className="scroll-mt-24">
+        <LearningSection id="note-explain-heading" title="2. Understand the explanation" description="Read one idea at a time. After each block, pause and explain it in your own words before continuing." icon={BookOpen} badge={`${rawNotes.length} explanation blocks`}>
+          {rawNotes.length === 0 ? <p className="rounded-2xl border border-dashed border-border/70 p-5 text-sm text-muted-foreground">No long-form note blocks are authored here. Use the visual, key terms and worked examples to build the explanation.</p> : rawNotes.map((note, index) => (
+            <article key={`${note}-${index}`} className="rounded-2xl border border-border/60 bg-muted/20 p-5">
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-primary">Idea {index + 1} of {rawNotes.length}</p>
+              <MathMarkdown content={note} className="space-y-3 text-sm leading-7 text-foreground" />
+            </article>
+          ))}
+          <NoteBlocks blocks={activeData?.blocks} formulaSpecs={activeData?.formulaSpecs} />
+        </LearningSection>
+      </div>
 
-            <div role="tablist" aria-label="Visual mode" className="flex flex-wrap items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs [&>button]:min-h-10">
-              <button
-                type="button"
-                role="tab"
-                id="visual-tab-schematic"
-                aria-selected={visualTab === 'schematic'}
-                aria-controls="visual-panel"
-                tabIndex={visualTab === 'schematic' ? 0 : -1}
-                onKeyDown={onVisualTabKeyDown}
-                onClick={() => setVisualTab("schematic")}
-                className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
-                  visualTab === "schematic"
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>Interactive Schematic</span>
-              </button>
-              {TopicVisual3D && (
-                <button
-                  type="button"
-                  role="tab"
-                  id="visual-tab-3d"
-                  aria-selected={visualTab === '3d'}
-                  aria-controls="visual-panel"
-                  tabIndex={visualTab === '3d' ? 0 : -1}
-                  onKeyDown={onVisualTabKeyDown}
-                  onClick={() => setVisualTab("3d")}
-                  className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
-                    visualTab === "3d"
-                      ? "bg-sky-600 text-white shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  <FlaskConical className="h-3.5 w-3.5" />
-                  <span>3D Visual</span>
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
+      <div id="note-remember" className="scroll-mt-24 space-y-6">
+        {hasHighYieldTopicData(highYield) && <FactBank factBank={factBank} />}
+        {populatedKeyPoints.length > 0 && (
+          <LearningSection id="note-key-points-heading" title="3. Remember the key terms" description="Use these definitions to check whether your explanation is precise." icon={ListOrdered} badge="Vocabulary">
+            <ol className="space-y-3">{populatedKeyPoints.map((point, index) => <li key={`${point}-${index}`} className="flex items-start gap-3 rounded-xl border border-border/60 p-4"><span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-xs font-bold text-violet-500">{index + 1}</span><MathMarkdown content={point} className="text-sm leading-relaxed" /></li>)}</ol>
+          </LearningSection>
+        )}
+        {populatedFormulas.length > 0 && (
+          <LearningSection id="note-formulas-heading" title="Formulas and calculation shortcuts" description="Read each formula together with its meaning and conditions, not as an isolated symbol string." icon={Calculator} badge={`${structuredFormulas.length || populatedFormulas.length} formulas`}>
+            {structuredFormulas.length > 0 ? <div className="grid gap-3 lg:grid-cols-2">{structuredFormulas.map((formula, index) => <FormulaCard key={`${formula.name}-${index}`} formula={formula} index={index + 1} />)}</div> : <div className="space-y-3">{populatedFormulas.map((formula, index) => <div key={`${formula}-${index}`} className="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-sky-500">Equation {index + 1}</p><MathMarkdown content={formula} className="mt-2 text-sm font-semibold" /></div>)}</div>}
+            {rawExamShortTricks.length > 0 && <div className="space-y-2 border-t border-border/60 pt-4"><h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Memory shortcuts</h4>{rawExamShortTricks.map((trick, index) => <p key={`${trick}-${index}`} className="rounded-xl bg-amber-500/5 p-3 text-sm leading-relaxed">{trick}</p>)}</div>}
+          </LearningSection>
+        )}
+      </div>
 
-        <div
-          id="visual-panel"
-          role="tabpanel"
-          aria-labelledby={`visual-tab-${visualTab}`}
-          className="relative min-w-0 space-y-6 bg-background/30 p-3 sm:p-6"
-        >
-          {fullscreenError && <p role="status" className="text-sm text-muted-foreground">{fullscreenError}</p>}
-
-          {visualTab === "schematic" && (
-            <SchematicDiagramLazy
-              key={`schem-${visualKey}`}
-              subjectSlug={subjectSlug}
-              topicSlug={topicSlug}
-              topicTitle={topicTitle}
-              unitId={unitId}
-              classSlug={classSlug}
-              concepts={visualConcepts}
-            />
-          )}
-
-          {visualTab === "3d" && TopicVisual3D && (
-            <div key={`3d-${visualKey}`} className="rounded-2xl border border-border/60 bg-background/50 overflow-hidden min-h-[380px] flex flex-col justify-center">
-              <TopicVisual3D />
-            </div>
-          )}
-
-          {/* How to drive the active visual — a static footer strip in normal
-              flow, so the hint can never cover the drawing itself. */}
-          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-border/60 bg-background/70 px-3 py-2 text-[11px] font-medium text-muted-foreground">
-            <span>
-              {visualTab === "3d"
-                ? "Drag to rotate · Scroll to zoom · Pinch on touch"
-                : "Hover or tap a labelled hotspot for exam notes · Walk through tours every part in order"}
-            </span>
-            <span className="text-muted-foreground/70">
-              {visualTab === "schematic"
-                ? "Interactive Schematic"
-                : "3D Visual"}
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. CEE & NEB HIGH-YIELD FACT BANK & CONSTANTS ─────────────────────── */}
-      {hasHighYield && (
-      <section className="rounded-3xl border border-emerald-500/40 bg-card overflow-hidden shadow-sm">
-        <div className="px-6 py-4 border-b border-emerald-500/20 bg-emerald-500/10 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5">
-            <Target className="h-5 w-5 text-emerald-500" />
-            <div>
-              <h3 className="text-base font-bold text-foreground">
-                CEE &amp; NEB High-Yield Fact Bank
-              </h3>
-              <p className="text-xs text-muted-foreground">
-                Governing Principles, Exact Physical Values, and 10-Second Calculation Shortcuts
-              </p>
-            </div>
-          </div>
-          <span className="text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-            Exam Guaranteed Points
-          </span>
-        </div>
-
-        <div className="p-6 space-y-6">
-          {/* At-a-glance revision counts */}
-          <div className="flex flex-wrap gap-2">
-            {[
-              { label: "Governing Laws", count: factBank.governingLaws.length, tone: "text-emerald-600 dark:text-emerald-400" },
-              { label: "Exam Constants", count: factBank.constantsAndValues.length, tone: "text-sky-600 dark:text-sky-400" },
-              { label: "Entrance Traps", count: factBank.entranceTraps.length, tone: "text-rose-600 dark:text-rose-400" },
-              {
-                label: "Speed Formulas",
-                count: structuredFormulas.length || populatedFormulas.length,
-                tone: "text-violet-600 dark:text-violet-400",
-              },
-            ]
-              .filter((chip) => chip.count > 0)
-              .map((chip) => (
-                <span
-                  key={chip.label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/30 px-3 py-1 text-[11px] font-semibold text-muted-foreground"
-                >
-                  <span className={`text-sm font-extrabold ${chip.tone}`}>{chip.count}</span>
-                  {chip.label}
-                </span>
-              ))}
-          </div>
-
-          {/* Governing Laws */}
-          {factBank.governingLaws.length > 0 && (
-            <div className="space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">
-                Official Governing Laws &amp; Validity Conditions:
-              </span>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {factBank.governingLaws.map((law, idx) => (
-                  <div key={idx} className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h4 className="text-xs font-bold text-foreground">{law.name}</h4>
-                      <Scale className="h-3.5 w-3.5 text-emerald-500" />
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{law.statement}</p>
-                    <div className="pt-2 border-t border-emerald-500/20">
-                      <MathMarkdown content={law.formula} className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400" />
-                      <p className="text-[10px] text-muted-foreground italic mt-1">Constraint: {law.conditions}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Physical Constants & Values Table */}
-          {factBank.constantsAndValues.length > 0 && (
-            <div className="space-y-2 pt-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                Standard Physical Values &amp; Metric Constants:
-              </span>
-              <div className="grid gap-2 grid-cols-2 sm:grid-cols-4">
-                {factBank.constantsAndValues.map((c, idx) => (
-                  <div key={idx} className="rounded-xl border border-border/60 bg-muted/20 p-3 text-center">
-                    <div className="text-xs font-mono font-bold text-primary truncate">
-                      <MathMarkdown content={`$${c.symbol}$`} />
-                    </div>
-                    <div className="text-sm font-extrabold text-foreground mt-0.5">{c.value}</div>
-                    <div className="text-[10px] text-muted-foreground truncate">{c.name} ({c.unit})</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* High-Yield Entrance Traps */}
-          {factBank.entranceTraps.length > 0 && (
-            <div className="space-y-3 pt-2">
-              <div className="flex items-center gap-2">
-                <ShieldAlert className="h-4 w-4 text-amber-500" />
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-500">
-                  Entrance Trap Warnings (Past IOE / CEE Exam Goldmine):
-                </span>
-              </div>
-              <div className="space-y-2.5">
-                {factBank.entranceTraps.map((tr, idx) => (
-                  <div key={idx} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 space-y-1.5">
-                    <div className="flex items-start gap-2">
-                      <span className="text-rose-500 font-bold text-xs shrink-0 mt-0.5">TRAP:</span>
-                      <p className="text-xs text-rose-400 line-through font-medium leading-relaxed">{tr.trap}</p>
-                    </div>
-                    <div className="flex items-start gap-2 pt-1 border-t border-amber-500/10">
-                      <span className="text-emerald-500 font-bold text-xs shrink-0 mt-0.5">TRUTH:</span>
-                      <p className="text-xs text-foreground font-semibold leading-relaxed">{tr.truth}</p>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-500 font-bold">
-                        {tr.examRef}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      )}
-
-      {/* ── 3. CONCEPT BLOCK WITH WORKED NUMERICALS ──────────────────────── */}
-      <section className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
-        <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <BookOpen className="h-5 w-5 text-primary" />
-            <h3 className="text-base font-bold text-foreground">
-              Core Concept Explanations &amp; Step-by-Step Worked Problems
-            </h3>
-          </div>
-          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary">
-            Theory &amp; Context
-          </span>
-        </div>
-
-        <div className="p-6 space-y-6">
-          {/* Notes Paragraphs */}
-          {rawNotes.length > 0 ? (
-            <div className="space-y-4">
-              {rawNotes.map((note, idx) => (
-                <div key={idx} className="rounded-2xl border border-border/50 bg-muted/20 p-5">
-                  <MathMarkdown content={note} className="space-y-2 text-sm leading-relaxed text-foreground" />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="rounded-2xl border border-border/50 bg-muted/20 p-5 space-y-2">
-              <p className="text-sm text-foreground leading-relaxed">
-                {factBank.title} covers essential fundamentals in {factBank.category}. Study the governing principles, speed formulas, and worked numericals populated below.
-              </p>
-            </div>
-          )}
-
-          {/* Interactive Blocks (formulaSpecs + blocks, PLANS.md §8) — renders when
-              the loaded note declares them; otherwise a no-op (returns null). */}
-          <NoteBlocks
-            blocks={activeData?.blocks ?? supplementary?.blocks}
-            formulaSpecs={activeData?.formulaSpecs ?? supplementary?.formulaSpecs}
-          />
-
-          {/* Important Concepts — full-width ordered block so each idea finishes on its own line */}
-          {rawImportantConcepts.length > 0 && (
-            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5 w-full">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary block mb-3">
-                Key Conceptual Pillars — in order ({rawImportantConcepts.length}):
-              </span>
-              <ol className="space-y-2">
-                {rawImportantConcepts.map((ic, i) => (
-                  <li key={i} className="text-sm text-foreground flex items-start gap-2.5 leading-[1.8] w-full min-w-0">
-                    <span className="shrink-0 font-bold text-primary text-xs tabular-nums w-6 text-right mt-[3px]">{i + 1}.</span>
-                    <span className="flex-1 min-w-0 break-words">{ic}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
-
-          {/* Worked Examples / Numericals */}
-          {populatedExamples.length > 0 && (
-            <div className="space-y-3 pt-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                Step-by-Step Worked Numerical Problems:
-              </span>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {populatedExamples.map((ex, i) => (
-                  <div key={i} className="rounded-2xl border border-border/60 bg-muted/30 p-4 space-y-2">
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/20 text-primary text-[10px] font-bold">
-                        {i + 1}
-                      </span>
-                      <h4 className="text-xs font-bold text-foreground">Worked Problem #{i + 1}</h4>
-                    </div>
-                    <div className="text-xs text-muted-foreground leading-relaxed">
-                      <MathMarkdown content={ex} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>        </section>
-
-      {/* ── 4. ENTRANCE QUESTION BANK ───────────────────────────────────── */}
-      <section className="rounded-3xl border border-indigo-500/30 bg-card overflow-hidden shadow-sm">
-        <div className="px-6 py-4 border-b border-indigo-500/20 bg-indigo-500/5 flex items-center justify-between flex-wrap gap-2">
-          <div className="flex items-center gap-2.5">
-            <Target className="h-5 w-5 text-indigo-500" />
-            <h3 className="text-base font-bold text-foreground">Entrance Question Bank — {entranceQuestions.length} CEE/IOE-Style Questions</h3>
-          </div>
-          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
-            Exam Drill · Learn / Test mode
-          </span>
-        </div>
-
-        <div className="p-6">
-          <EntranceQuiz questions={entranceQuestions} title={topicTitle} />
-        </div>      </section>
-
-      {/* ── 4. IMPORTANT NOTES BLOCK ────────────────────────────────────── */}
-      {(rawImportantNotes.length > 0 || rawImportantStatements.length > 0) && (
-        <section className="rounded-3xl border border-amber-500/30 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-amber-500/20 bg-amber-500/5 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <AlertTriangle className="h-5 w-5 text-amber-500" />
-              <h3 className="text-base font-bold text-foreground">Important Notes &amp; Governing Principles</h3>
-            </div>
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400">
-              Exam Crucial
-            </span>
-          </div>
-
-          <div className="p-6 space-y-4">
-            {rawImportantNotes.map((inote, idx) => (
-              <div key={idx} className="flex items-start gap-3 rounded-2xl border border-amber-500/20 bg-amber-500/10 p-4">
-                <span className="text-amber-500 font-bold shrink-0 mt-0.5">⚠️</span>
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed">{inote}</p>
-              </div>
-            ))}
-
-            {rawImportantStatements.length > 0 && (
-              <div className="space-y-2 pt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                  Mandatory Formal Statements &amp; Validity Conditions:
-                </span>
-                <div className="space-y-2">
-                  {rawImportantStatements.map((stmt, idx) => (
-                    <div key={idx} className="rounded-xl border border-border/50 bg-muted/30 px-4 py-2.5 text-xs text-foreground flex items-start gap-2">
-                      <span className="text-amber-500 font-mono font-bold shrink-0">{idx + 1}.</span>
-                      <span>{stmt}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* ── 5. SMART SUMMARIES & UNIVERSAL FACTS ─────────────────────────── */}
-      {(summary || rawUniversalFacts.length > 0) && (
-        <section className="rounded-3xl border border-emerald-500/30 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-emerald-500/20 bg-emerald-500/5 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <Sparkles className="h-5 w-5 text-emerald-500" />
-              <h3 className="text-base font-bold text-foreground">Smart Summary &amp; Universal Facts</h3>
-            </div>
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
-              Quick Revision
-            </span>
-          </div>
-
-          <div className="p-6 space-y-4">
-            {summary && (
-              <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-5">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1.5">
-                  Core Summary
-                </h4>
-                <p className="text-sm text-foreground leading-relaxed">{summary}</p>
-              </div>
-            )}
-
-            {rawUniversalFacts.length > 0 && (
-              <div className="space-y-2 pt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                  Universal Concept Truths:
-                </span>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  {rawUniversalFacts.map((fact, idx) => (
-                    <div key={idx} className="flex items-center gap-2.5 rounded-xl border border-border/50 bg-muted/20 p-3 text-xs text-foreground">
-                      <span className="text-emerald-500 font-bold shrink-0">★</span>
-                      <span>{fact}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* ── 6. SPECIAL NOTES & MISCONCEPTION TRAPS ───────────────────────── */}
-      {(rawSpecialNotes.length > 0 || rawConfusion.length > 0) && (
-        <section className="rounded-3xl border border-rose-500/30 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-rose-500/20 bg-rose-500/5 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <HelpCircle className="h-5 w-5 text-rose-500" />
-              <h3 className="text-base font-bold text-foreground">Special Notes &amp; Common Misconceptions</h3>
-            </div>
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-rose-500/15 text-rose-600 dark:text-rose-400">
-              Traps &amp; Nuances
-            </span>
-          </div>
-
-          <div className="p-6 space-y-4">
-            {rawSpecialNotes.length > 0 && (
-              <div className="space-y-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                  Special Context Notes:
-                </span>
-                {rawSpecialNotes.map((sn, idx) => (
-                  <div key={idx} className="rounded-xl border border-border/50 bg-muted/20 p-3.5 text-xs text-foreground flex items-start gap-2.5">
-                    <span className="text-rose-500 font-bold shrink-0">&bull;</span>
-                    <span>{sn}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {rawConfusion.length > 0 && (
-              <div className="space-y-2 pt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 block">
-                  Common Confusion Traps:
-                </span>
-                <div className="space-y-2">
-                  {rawConfusion.map((c, idx) => (
-                    <div key={idx} className="rounded-xl border border-rose-500/20 bg-rose-500/5 p-3.5 text-xs text-foreground leading-relaxed flex items-start gap-2.5">
-                      <span className="text-rose-500 shrink-0 font-bold">❌/✅</span>
-                      <span>{c}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* ── 7. KEY BULLET POINTS & DEFINITIONS ──────────────────────────── */}
-      {populatedKeyPoints.length > 0 && (
-        <section className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <ListOrdered className="h-5 w-5 text-violet-400" />
-              <h3 className="text-base font-bold text-foreground">Key Scientific Terms &amp; Definitions</h3>
-            </div>
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-400">
-              High-Yield Points
-            </span>
-          </div>
-
-          <div className="p-6">
-            <ul className="space-y-3">
-              {populatedKeyPoints.map((kp, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-foreground">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-violet-500/15 text-violet-400 text-[10px] font-bold shrink-0 mt-0.5">
-                    {idx + 1}
-                  </span>
-                  <div className="leading-relaxed">
-                    <MathMarkdown content={kp} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
-      {/* ── 8. FORMULAS & 10-SECOND SPEED TRICKS ─────────────────────────── */}
-      {populatedFormulas.length > 0 && (
-        <section className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <Calculator className="h-5 w-5 text-sky-400" />
-              <h3 className="text-base font-bold text-foreground">Formulas &amp; Calculation Shortcuts</h3>
-            </div>
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-500">
-              {structuredFormulas.length || populatedFormulas.length} Formulas
-            </span>
-          </div>
-
-          <div className="p-6 space-y-4">
-            {structuredFormulas.length > 0 ? (
-              <div className="grid gap-3 sm:grid-cols-2">
-                {structuredFormulas.map((f, idx) => (
-                  <FormulaCard key={`${f.name}-${idx}`} formula={f} index={idx + 1} />
-                ))}
-              </div>
-            ) : (
-              <div className="grid gap-3 sm:grid-cols-2">
-                {populatedFormulas.map((f, idx) => (
-                  <div key={idx} className="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4 space-y-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-sky-500">
-                      Equation #{idx + 1}
-                    </span>
-                    <MathMarkdown content={f} className="text-sm font-semibold text-foreground font-mono" />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {rawExamShortTricks.length > 0 && (
-              <div className="space-y-2 pt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                  Exam Memory Tricks &amp; Mnemonics:
-                </span>
-                {rawExamShortTricks.map((trick, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-2.5 rounded-xl border border-amber-500/25 bg-amber-500/5 p-3 text-xs text-foreground"
-                  >
-                    <span className="shrink-0 rounded-md bg-amber-500/15 px-1.5 py-0.5 text-[10px] font-extrabold text-amber-600 dark:text-amber-400">
-                      #{idx + 1}
-                    </span>
-                    <span className="leading-relaxed">{trick}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* ── 9. INTERACTIVE 3-QUESTION CONCEPT CHECK QUIZ ─────────────────── */}
-      {conceptCheckQuiz.length > 0 && (
-        <section className="rounded-3xl border border-indigo-500/30 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-indigo-500/20 bg-indigo-500/10 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <Brain className="h-5 w-5 text-indigo-400" />
-              <h3 className="text-base font-bold text-foreground">
-                Quick 3-Question Self-Check Concept Quiz
-              </h3>
-            </div>
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400">
-              Self-Test
-            </span>
-          </div>
-
-          <div className="p-6 space-y-5">
-            {conceptCheckQuiz.map((q, idx) => {
-              const selectedAnswer = quizAnswers[q.id];
-              const isRevealed = quizRevealed[q.id];
-
-              return (
-                <div key={q.id} className="rounded-2xl border border-border/70 bg-muted/20 p-4 space-y-3">
-                  <div className="flex items-start gap-2">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-400 text-xs font-bold shrink-0 mt-0.5">
-                      {idx + 1}
-                    </span>
-                    <h4 className="text-xs sm:text-sm font-bold text-foreground leading-snug">
-                      {q.question}
-                    </h4>
-                  </div>
-
-                  <div className="space-y-2 pl-7">
-                    {q.options.map((opt, optIdx) => {
-                      const isChosen = selectedAnswer === optIdx;
-                      const isCorrect = optIdx === q.correctIndex;
-
-                      return (
-                        <button
-                          key={optIdx}
-                          onClick={() => {
-                            setQuizAnswers((prev) => ({ ...prev, [q.id]: optIdx }));
-                            setQuizRevealed((prev) => ({ ...prev, [q.id]: true }));
-                          }}
-                          className={`w-full text-left p-3 rounded-xl border text-xs transition-all flex items-start justify-between gap-2 ${
-                            isRevealed
-                              ? isCorrect
-                                ? "bg-emerald-500/15 border-emerald-500/40 text-foreground font-semibold"
-                                : isChosen
-                                ? "bg-rose-500/15 border-rose-500/40 text-foreground"
-                                : "bg-card/60 border-border text-muted-foreground"
-                              : "bg-card/80 border-border hover:border-primary/50 text-foreground"
-                          }`}
-                        >
-                          <span className="leading-relaxed">{opt}</span>
-                          {isRevealed && isCorrect && (
-                            <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {isRevealed && (
-                    <div className="ml-7 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-foreground">
-                      <span className="font-bold text-emerald-600 dark:text-emerald-400">Explanation: </span>
-                      <span>{q.explanation}</span>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* ── 10. IMPORTANT TASKS & PRACTICE QUESTIONS ─────────────────────── */}
-      {(rawImportantTasks.length > 0 || rawPracticeQuestions.length > 0 || rawPractice.length > 0 || rawNumericals.length > 0) && (
-        <section className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
-          <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-              <h3 className="text-base font-bold text-foreground">
-                Important Tasks, Practice Questions &amp; Numericals
-              </h3>
-            </div>
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500">
-              Practice Tasks
-            </span>
-          </div>
-
-          <div className="p-6 space-y-6">
-            {/* Important Tasks */}
-            {rawImportantTasks.length > 0 && (
-              <div className="space-y-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                  Study Tasks to Complete:
-                </span>
-                <div className="space-y-2">
-                  {rawImportantTasks.map((task, idx) => (
-                    <div key={idx} className="flex items-center gap-3 rounded-xl border border-border/50 bg-muted/20 p-3 text-xs text-foreground">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                      <span>{task}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Practice Questions */}
-            {rawPracticeQuestions.length > 0 && (
-              <div className="space-y-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">
-                  Board-Style Conceptual Questions:
-                </span>
-                <div className="space-y-2">
-                  {rawPracticeQuestions.map((q, idx) => (
-                    <div key={idx} className="rounded-xl border border-border/50 bg-card p-3.5 text-xs text-foreground flex items-start gap-2.5">
-                      <span className="font-bold text-primary shrink-0">Q{idx + 1}:</span>
-                      <span>{q}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Numericals */}
-            {(rawNumericals.length > 0 || rawPractice.length > 0) && (
-              <div className="space-y-2 pt-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-sky-400 block">
-                  Worked Numerical Problems:
-                </span>
-                <div className="space-y-2">
-                  {[...rawNumericals, ...rawPractice].map((num, idx) => (
-                    <div key={idx} className="rounded-xl border border-sky-500/20 bg-sky-500/5 p-3.5 text-xs text-foreground leading-relaxed flex items-start gap-2.5">
-                      <span className="text-sky-500 font-bold shrink-0">→</span>
-                      <MathMarkdown content={num} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
+      <div id="note-traps" className="scroll-mt-24 space-y-6">
+        {(rawImportantNotes.length > 0 || rawImportantStatements.length > 0) && (
+          <LearningSection id="note-important-heading" title="Important conditions and formal statements" icon={AlertTriangle} badge="Check before using">
+            {rawImportantNotes.map((note, index) => <div key={`${note}-${index}`} className="flex items-start gap-3 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 text-sm leading-relaxed"><AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />{note}</div>)}
+            {rawImportantStatements.map((statement, index) => <div key={`${statement}-${index}`} className="flex items-start gap-3 rounded-xl border border-border/60 p-4 text-sm leading-relaxed"><span className="font-bold text-amber-500">{index + 1}.</span>{statement}</div>)}
+          </LearningSection>
+        )}
+        {(rawSpecialNotes.length > 0 || rawConfusion.length > 0 || factBank.entranceTraps.length > 0) && (
+          <LearningSection id="note-traps-heading" title="4. Avoid the common traps" description="Compare the tempting mistake with the correct reasoning so you can catch it in an exam." icon={ShieldAlert} badge="Final check">
+            {rawSpecialNotes.map((note, index) => <p key={`${note}-${index}`} className="rounded-xl border border-border/60 p-4 text-sm leading-relaxed">{note}</p>)}
+            {rawConfusion.map((confusion, index) => <div key={`${confusion}-${index}`} className="flex items-start gap-3 rounded-xl border border-rose-500/20 bg-rose-500/5 p-4 text-sm leading-relaxed"><HelpCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" />{confusion}</div>)}
+            {factBank.entranceTraps.map((trap, index) => <article key={`${trap.trap}-${index}`} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4"><p className="text-xs font-bold uppercase tracking-wide text-rose-500">Trap</p><p className="mt-1 text-sm text-muted-foreground line-through">{trap.trap}</p><p className="mt-3 text-xs font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Correct idea</p><p className="mt-1 text-sm leading-relaxed">{trap.truth}</p><p className="mt-2 text-[10px] text-muted-foreground">{trap.examRef}</p></article>)}
+          </LearningSection>
+        )}
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@
  */
 
 import { Component, type ComponentType, type ErrorInfo, type ReactNode } from "react";
+import { ErrorPage } from "@/components/errors/error-page";
 import { reportClientError } from "@/lib/errors/app-error";
 
 /** Arguments handed to a custom fallback renderer. */
@@ -93,25 +94,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     if (fallback) return fallback;
     if (silent) return null;
 
-    // Same copy + classes as `app/error.tsx`, so the design language is
-    // unchanged — only the layer that renders it is new.
-    return (
-      <div className="flex min-h-screen flex-col items-center justify-center gap-4 p-4">
-        <h2 className="text-lg font-semibold">Something went wrong!</h2>
-        <p className="text-muted-foreground text-sm">
-          {error.message || "An unexpected error occurred."}
-        </p>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={this.reset}
-            className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
-          >
-            Try again
-          </button>
-        </div>
-      </div>
-    );
+    return <ErrorPage error={error} reset={this.reset} compact />;
   }
 }
 

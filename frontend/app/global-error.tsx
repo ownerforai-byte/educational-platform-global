@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-// ADDITIVE (perf/resilience pass): normalized error funnel. Import only.
+import "@/app/globals.css";
+import { ErrorPage } from "@/components/errors/error-page";
 import { reportClientError } from "@/lib/errors/app-error";
 
 export default function GlobalError({
@@ -16,11 +16,6 @@ export default function GlobalError({
     console.error("[GlobalError]", error);
   }, [error]);
 
-  // ADDITIVE (perf/resilience pass): the original console.error above keeps
-  // its exact behaviour; this second effect only adds classification +
-  // correlation so a production report can be joined to the server log.
-  // A client-side failure here is expected to be render-only, so it is
-  // reported once and never re-thrown.
   useEffect(() => {
     reportClientError("global-error-boundary", error, {
       digest: error.digest,
@@ -30,29 +25,8 @@ export default function GlobalError({
 
   return (
     <html lang="en">
-      <body>
-        <div className="flex min-h-screen flex-col items-center justify-center gap-4 p-8 bg-background">
-          <div className="text-center space-y-2">
-            <h2 className="text-xl font-semibold tracking-tight">Something went wrong</h2>
-            <p className="text-sm text-muted-foreground max-w-md">
-              An unexpected error occurred. This may be caused by a render timing issue in a
-              third-party library. Please try again or reload the page.
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <Button onClick={reset} variant="default">
-              Try again
-            </Button>
-            <Button
-              onClick={() => {
-                window.location.reload();
-              }}
-              variant="outline"
-            >
-              Reload page
-            </Button>
-          </div>
-        </div>
+      <body className="bg-background text-foreground">
+        <ErrorPage error={error} reset={reset} />
       </body>
     </html>
   );
