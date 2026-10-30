@@ -78683,548 +78683,548 @@
     "unitSlug": "trigonometry",
     "year": 2078
   },
-  "practice/solutions/class-11/mathematics/trigonometry/ex-5-1-inverse-proofs-and-equations.json": {
-    "examSource": "Sukunda Textbook",
-    "questions": [
-      {
-        "knowledgeNote": "Double-angle backwards: 2x^2-1 is cos2t in disguise; the principal range forces x >= 0.",
-        "marks": 3,
-        "question": "Q4(a). Prove that 2cos-1x = cos-1(2x^2-1).",
-        "solution": "Put t = cos-1x in [0, pi], so x = cost. Then 2x^2-1 = 2cos^2t-1 = cos2t. For 2t to be the principal value we need 2t in [0, pi], i.e. t in [0, pi/2], i.e. x >= 0; then cos-1(2x^2-1) = 2t = 2cos-1x. Proved (valid for 0 <= x <= 1; the book states it without the hypothesis).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(a); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "Triple-angle backwards: 4x^3-3x is cos3t; needs 3t inside [0, pi], i.e. x >= 1/2.",
-        "marks": 3,
-        "question": "Q4(b). Prove that 3cos-1x = cos-1(4x^3-3x).",
-        "solution": "Put t = cos-1x in [0, pi], so x = cost. Then 4x^3-3x = 4cos^3t-3cost = cos3t. For 3t to be the principal value we need 3t in [0, pi], i.e. t in [0, pi/3], i.e. x in [1/2, 1]; then cos-1(4x^3-3x) = 3t = 3cos-1x. Proved (valid for 1/2 <= x <= 1).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(b); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "tan3t expansion with tant = x; needs 3t inside (-pi/2, pi/2), i.e. |x| < 1/sqrt(3).",
-        "marks": 3,
-        "question": "Q4(c). Prove that 3tan-1x = tan-1((3x-x^3)/(1-3x^2)).",
-        "solution": "Put t = tan-1x in (-pi/2, pi/2), so x = tant. Then tan3t = (3tant-tan^3t)/(1-3tan^2t) = (3x-x^3)/(1-3x^2). For 3t to be the principal value we need 3t in (-pi/2, pi/2), i.e. |x| < 1/sqrt(3); then tan-1 of the fraction is 3t = 3tan-1x. Proved (valid for |x| < 1/sqrt(3)).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(c); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "Both sides equal sqrt(1-t^2): each cofunction lands on the non-negative branch.",
-        "marks": 2,
-        "question": "Q4(d). Prove that sin(arccos t) = cos(arcsin t).",
-        "solution": "arccos t lies in [0, pi] where sine is non-negative, so sin(arccos t) = +sqrt(1-t^2). arcsin t lies in [-pi/2, pi/2] where cosine is non-negative, so cos(arcsin t) = +sqrt(1-t^2). Both equal sqrt(1-t^2). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(d); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "Direct cos2t with cost = t: no range subtlety since 2t^2-1 always lies in [-1, 1].",
-        "marks": 2,
-        "question": "Q4(e). Prove that cos(2arccost) = 2t^2-1.",
-        "solution": "Put u = arccost, so cosu = t. Then cos2u = 2cos^2u-1 = 2t^2-1. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(e); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "sin2t = 2sintcost with sint = x and cost = +sqrt(1-x^2) on the sin-1 range. (HSEB 2057)",
-        "marks": 2,
-        "question": "Q4(f). Prove that sin(2sin-1x) = 2x.sqrt(1-x^2). (HSEB 2057)",
-        "solution": "Put t = sin-1x in [-pi/2, pi/2], so sint = x and cost = +sqrt(1-x^2). Then sin2t = 2sintcost = 2x.sqrt(1-x^2). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(f) (HSEB 2057); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "cos(A+B) = cosAcosB-sinAsinB with cosA = sqrt(1-u^2), sinB = sqrt(1-v^2): test u = v = 0 gives cos(pi/2) = 0. (T.U. 2049)",
-        "marks": 3,
-        "question": "Q4(g). Prove that cos(sin-1u+cos-1v) = v.sqrt(1-u^2)-u.sqrt(1-v^2). (T.U. 2049)",
-        "solution": "Put A = sin-1u (sinA = u, cosA = +sqrt(1-u^2)) and B = cos-1v (cosB = v, sinB = +sqrt(1-v^2)). Then cos(A+B) = cosAcosB-sinAsinB = v.sqrt(1-u^2)-u.sqrt(1-v^2). Check u = v = 0: LHS = cos(0+pi/2) = 0, RHS = 0. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(g) (T.U. 2049); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "Sum formula with positive denominator 1-1/35: the sum stays acute.",
-        "marks": 2,
-        "question": "Q4(h). Prove that tan-1(1/5)+tan-1(1/7) = tan-1(6/17).",
-        "solution": "(1/5+1/7)/(1-(1/5)(1/7)) = (12/35)/(34/35) = 12/34 = 6/17. Both angles are acute and their product 1/35 < 1, so the sum is the acute angle tan-1(6/17). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(h); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "Telescoping in disguise: each RHS term is a difference of two tan-1, and the middle terms cancel.",
-        "marks": 3,
-        "question": "Q4(i). Prove that tan-1a-tan-1c = tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc)).",
-        "solution": "Where defined (ab, bc > -1), tan-1((a-b)/(1+ab)) = tan-1a-tan-1b and tan-1((b-c)/(1+bc)) = tan-1b-tan-1c by the difference formula. Adding: the tan-1b terms cancel, leaving tan-1a-tan-1c. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(i); book pp167-168 = PDF pp194-195"
-      },
-      {
-        "knowledgeNote": "tan(A-B) with tanA = u, tanB = v: one line.",
-        "marks": 2,
-        "question": "Q4(j). Prove that tan(arctanu-arctanv) = (u-v)/(1+uv).",
-        "solution": "Put A = arctanu, B = arctanv, so tanA = u and tanB = v. Then tan(A-B) = (tanA-tanB)/(1+tanAtanB) = (u-v)/(1+uv). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(j); book pp167-168 = PDF pp194-195 (image read)"
-      },
-      {
-        "knowledgeNote": "(x+x^3)/(1-x^4) simplifies by cancelling (1+x^2): the x^3 term is there to make this happen. (HSEB 2052)",
-        "marks": 3,
-        "question": "Q4(k). Prove that tan(2tan-1x) = 2tan(tan-1x+tan-1x^3). (HSEB 2052)",
-        "solution": "tan(tan-1x+tan-1x^3) = (x+x^3)/(1-x.x^3) = x(1+x^2)/((1-x^2)(1+x^2)) = x/(1-x^2). Doubling: 2x/(1-x^2) = tan(2tan-1x). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(k) (HSEB 2052); book pp167-168 = PDF pp194-195 (image read)"
-      },
-      {
-        "knowledgeNote": "tan(A+B+C) = (s1-xyz)/(1-s2): expand once, quote forever. (HSEB 2055)",
-        "marks": 3,
-        "question": "Q4(l). Prove that tan-1x+tan-1y+tan-1z = tan-1((x+y+z-xyz)/(1-xy-yz-zx)). (HSEB 2055)",
-        "solution": "Put A = tan-1x, B = tan-1y, C = tan-1z. Then tan(A+B+C) = (tanA+tanB+tanC-tanAtanBtanC)/(1-(tanAtanB+tanBtanC+tanCtanA)) = (x+y+z-xyz)/(1-xy-yz-zx). Taking tan-1 (principal branch where defined) gives the formula. Proved. (Statement via image read of the cut-off line.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(l) (HSEB 2055); book p167 = PDF p194 (image read)"
-      },
-      {
-        "knowledgeNote": "First two angles combine to cos-1(16/65); the third is its complement. (HSEB 2053)",
-        "marks": 3,
-        "question": "Q4(m). Prove that sin-1(4/5)+sin-1(5/13)+sin-1(16/65) = pi/2. (HSEB 2053)",
-        "solution": "sin of the first two summed: (4/5)(12/13)+(3/5)(5/13) = 48/65+15/65 = 63/65; cos: (3/5)(12/13)-(4/5)(5/13) = 36/65-20/65 = 16/65 > 0. So their sum is the acute angle with cosine 16/65, i.e. cos-1(16/65). Adding sin-1(16/65) gives pi/2. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(m) (HSEB 2053); book p167 = PDF p194 (image read)"
-      },
-      {
-        "knowledgeNote": "Put sqrt(x) = tant: both fractions become cos2t and sin2t with 2t in [0, pi/2]. (T.U. 2055 S, HSEB 2054)",
-        "marks": 3,
-        "question": "Q4(n). Prove that tan-1(sqrt(x)) = (1/2)cos-1((1-x)/(1+x)) = (1/2)sin-1(2sqrt(x)/(1+x)). (T.U. 2055 S, HSEB 2054)",
-        "solution": "For 0 <= x < 1 put sqrt(x) = tant with t in [0, pi/4). Then (1-tan^2t)/(1+tan^2t) = cos2t with 2t in [0, pi/2), so cos-1 of it is 2t; and 2tant/(1+tan^2t) = sin2t, so sin-1 of it is 2t. Halving gives t = tan-1(sqrt(x)) in both cases. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(n) (T.U. 2055 S, HSEB 2054); book p168 = PDF p195 (image read)"
-      },
-      {
-        "knowledgeNote": "cos(A+B) with the 3-4-5 and 5-12-13 triangles: 36/65-20/65 = 16/65. (HSEB 2054, 2055)",
-        "marks": 2,
-        "question": "Q5(a). Find cos(sin-1(4/5)+tan-1(5/12)). (HSEB 2054, 2055)",
-        "solution": "sinA = 4/5 gives cosA = 3/5; tanB = 5/12 gives sinB = 5/13, cosB = 12/13. cos(A+B) = cosAcosB-sinAsinB = (3/5)(12/13)-(4/5)(5/13) = 36/65-20/65 = 16/65. Matches the printed Answers key (p169): 16/65.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(a) (HSEB 2054, 2055); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "sin(60deg+A) with sinA = 3/5, cosA = 4/5. (T.U. 2053 H)",
-        "marks": 2,
-        "question": "Q5(b). Find sin(cos-1(1/2)+sin-1(3/5)). (T.U. 2053 H)",
-        "solution": "cos-1(1/2) = 60deg; sinA = 3/5 gives cosA = 4/5. sin(60deg+A) = sin60cosA+cos60sinA = (sqrt(3)/2)(4/5)+(1/2)(3/5) = (4sqrt(3)+3)/10. Matches the printed Answers key (p169): (4sqrt(3)+3)/10.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(b) (T.U. 2053 H); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "tanA = 3/4, tanB = 12/5: the difference formula gives a negative over a positive.",
-        "marks": 3,
-        "question": "Q5(c). Find tan(arccos(4/5)-arcsin(12/13)).",
-        "solution": "cosA = 4/5 gives tanA = 3/4; sinB = 12/13 gives tanB = 12/5. tan(A-B) = (3/4-12/5)/(1+(3/4)(12/5)) = (-33/20)/(56/20) = -33/56. (This key row is illegible in the key scan; verified by substitution: arctan(-33/56) ~ -30.5deg and arccos(4/5)-arcsin(12/13) ~ 36.87-67.38 = -30.5deg.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(c); book p168 = PDF p195 (image read); substitution-verified (key row illegible)"
-      },
-      {
-        "knowledgeNote": "Direct difference formula with second argument 2y. (HSEB 2053)",
-        "marks": 2,
-        "question": "Q5(d). Find tan(tan-1x-tan-12y). i.e. tan(tan-1x-tan-1(2y)). (HSEB 2053)",
-        "solution": "By the tan difference formula with arguments x and 2y: (x-2y)/(1+x.2y) = (x-2y)/(1+2xy). Matches the printed Answers key (p169): (x-2y)/(1+2xy).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(d) (HSEB 2053); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "Product 3.(1/3) = 1: complementary acute angles sum to pi/2.",
-        "marks": 1,
-        "question": "Q5(e). Find tan-13+tan-1(1/3). i.e. tan-1(3)+tan-1(1/3).",
-        "solution": "Both angles are acute and their tangents multiply to 3.(1/3) = 1, so they are complementary: sum = pi/2 (tan-1(3) ~ 71.57deg, tan-1(1/3) ~ 18.43deg). (The key scan shows the value with the /2 cut off; the exact value is pi/2.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(e); book p168 = PDF p195 (image read); exact value pi/2 (key scan cut off)"
-      },
-      {
-        "knowledgeNote": "arccos(-t) = pi-arccost: the pi survives while the rest collapses to pi/2.",
-        "marks": 2,
-        "question": "Q5(f). Find arcsint-arccos(-t). i.e. sin-1t-cos-1(-t).",
-        "solution": "arccos(-t) = pi-arccost. So sin-1t-cos-1(-t) = sin-1t+cos-1t-pi = pi/2-pi = -pi/2. (The key shows a negative value here; the exact value is -pi/2.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(f); book p168 = PDF p195 (image read); exact value -pi/2"
-      },
-      {
-        "knowledgeNote": "Equal inverse values mean the 45-degree angle: both are pi/4, so x = sqrt(2)/2.",
-        "marks": 2,
-        "question": "Q6(a). Solve cos-1x-sin-1x = 0.",
-        "solution": "cos-1x = sin-1x =: t. Then x = cost = sint with t in [0, pi/2], so t = pi/4 and x = sqrt(2)/2 = 1/sqrt(2). Check: pi/4-pi/4 = 0. (The key scan reads 1/2 with the root sign lost; the exact value is 1/sqrt(2).)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(a); book p168 = PDF p195 (image read); exact value 1/sqrt(2)"
-      },
-      {
-        "knowledgeNote": "Difference zero means the two complementary angles are equal: each pi/4.",
-        "marks": 2,
-        "question": "Q6(b). Solve tan-1x-cot-1x = 0.",
-        "solution": "tan-1x = cot-1x; since they sum to pi/2, each is pi/4, so x = tan(pi/4) = 1. Check: pi/4-pi/4 = 0. Matches the printed Answers key (p169): x = 1.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(b); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "One angle, two trig ratios: sin = x/2 and cos = x force x^2/4+x^2 = 1. (HSEB 2052)",
-        "marks": 2,
-        "question": "Q6(c). Solve sin-1(x/2) = cos-1x. (HSEB 2052)",
-        "solution": "Let the common value be t: sint = x/2 and cost = x. Then x^2/4+x^2 = 1, i.e. x^2 = 4/5, and x >= 0 (t in [0, pi/2] from the ranges), so x = 2/sqrt(5). Check: sin-1(1/sqrt(5)) = cos-1(2/sqrt(5)) ~ 26.57deg. Matches the printed Answers key (p169): x = 2/sqrt(5).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(c) (HSEB 2052); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "Equal principal values with the same cosine: x = 1/(2x). (HSEB 2051)",
-        "marks": 2,
-        "question": "Q6(d). Solve cos-1x = cos-1(1/(2x)). (HSEB 2051)",
-        "solution": "Both sides are principal values in [0, pi], so x = 1/(2x), i.e. x^2 = 1/2, i.e. x = +-1/sqrt(2). Both satisfy |1/(2x)| = 1/sqrt(2) <= 1. Matches the printed Answers key (p169): x = +-1/sqrt(2).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(d) (HSEB 2051); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "Take tan of both sides: 2x = 2x/(1-x^2) has only the trivial root.",
-        "marks": 2,
-        "question": "Q6(e). Solve tan-12x = 2tan-1x. i.e. tan-1(2x) = 2tan-1x.",
-        "solution": "Taking tan: 2x = 2x/(1-x^2). Either x = 0 or 1-x^2 = 1, which also gives x = 0. So x = 0 (check: 0 = 0). Matches the printed Answers key (p169): x = 0.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(e); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "cos-12x = sin-1x forces 2x = +sqrt(1-x^2): squaring admits a negative ghost.",
-        "marks": 3,
-        "question": "Q6(f). Solve cos-1x+cos-1(2x) = pi/2.",
-        "solution": "cos-1(2x) = pi/2-cos-1x = sin-1x. Taking cos: 2x = cos(sin-1x) = +sqrt(1-x^2), which needs x >= 0. Squaring: 4x^2 = 1-x^2, i.e. x^2 = 1/5, i.e. x = 1/sqrt(5) (x = -1/sqrt(5) gives LHS = 3pi/2, extraneous). Check x = 1/sqrt(5): sum is pi/2. The printed key lists +-1/sqrt(5); only +1/sqrt(5) satisfies the equation (flagged).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(f); book p168 = PDF p195 (image read); exact x = 1/sqrt(5), negative root extraneous (key overlists)"
-      },
-      {
-        "knowledgeNote": "The complement of sin-1x is cos-1x itself: 1-x must equal x.",
-        "marks": 2,
-        "question": "Q6(g). Solve sin-1x+cos-1(1-x) = pi/2.",
-        "solution": "cos-1(1-x) = pi/2-sin-1x = cos-1x (since pi/2-sin-1x = cos-1x). Both sides principal values gives 1-x = x, i.e. x = 1/2. Check: pi/6+pi/3 = pi/2.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(g); book p168 = PDF p195 (image read); substitution-verified"
-      },
-      {
-        "knowledgeNote": "Both exotic forms are double-angle masks: 2tan-1a minus 2tan-1b. (HSEB 2053)",
-        "marks": 3,
-        "question": "Q6(h). If sin-1(2a/(1+a^2))-cos-1((1-b^2)/(1+b^2)) = 2tan-1x, show that x = (a-b)/(1+ab). (HSEB 2053)",
-        "solution": "sin-1(2a/(1+a^2)) = 2tan-1a and cos-1((1-b^2)/(1+b^2)) = 2tan-1b. So 2tan-1a-2tan-1b = 2tan-1x, i.e. tan-1x = tan-1a-tan-1b = tan-1((a-b)/(1+ab)), giving x = (a-b)/(1+ab). Shown. (The key row is garbled but consistent with (h) x = (a-b)/(1+ab).)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(h) (HSEB 2053); book p168 = PDF p195 (image read)"
-      },
-      {
-        "knowledgeNote": "Sum formula: A+B and 1-AB turn out equal (both 6/7 at the roots), so the sum is genuinely pi/4.",
-        "marks": 3,
-        "question": "Q6(i). Solve tan-1((x-1)/(x-2))+tan-1((x+1)/(x+2)) = tan-1(1).",
-        "solution": "With A = (x-1)/(x-2), B = (x+1)/(x+2): A+B = (2x^2-4)/(x^2-4), 1-AB = -3/(x^2-4). A+B = 1-AB gives 2x^2-4 = -3, i.e. x^2 = 1/2, x = +-1/sqrt(2). At both roots A+B = 6/7 > 0 and 1-AB = 6/7 > 0, so the sum is genuinely pi/4. Both valid. Matches the printed Answers key (p169): x = +-1/sqrt(2).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(i); book p168 = PDF p195 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "5x = 1-6x^2 gives x = 1/6 and x = -1, but only 1/6 keeps A+B and 1-AB positive.",
-        "marks": 3,
-        "question": "Q6(j). Solve tan-12x+tan-13x = pi/4. i.e. tan-1(2x)+tan-1(3x) = pi/4.",
-        "solution": "(2x+3x)/(1-6x^2) = 1 gives 6x^2+5x-1 = 0, i.e. (6x-1)(x+1) = 0, so x = 1/6 or x = -1. x = 1/6: A+B = 5/6 > 0, 1-AB = 5/6 > 0, sum genuinely pi/4, valid. x = -1: LHS = -3pi/4, extraneous. True solution x = 1/6; the printed key lists both roots without the domain check (flagged).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(j); book p168 = PDF p195 (image read); true x = 1/6, x = -1 extraneous (key overlists)"
-      },
-      {
-        "knowledgeNote": "1/(2+sqrt(3)) = 2-sqrt(3) = tan15deg: triple it to land on 45deg.",
-        "marks": 2,
-        "question": "Q6(k). Solve 3tan-1(1/(2+sqrt(3)))-tan-1(1/x) = tan-1(1/3).",
-        "solution": "1/(2+sqrt(3)) = 2-sqrt(3) = tan15deg, so 3tan-1(1/(2+sqrt(3))) = 3.15deg = 45deg = pi/4. Then tan-1(1/x) = pi/4-tan-1(1/3) = tan-1((1-1/3)/(1+1/3)) = tan-1(1/2), so 1/x = 1/2, i.e. x = 2. Check in the original: pi/4-tan-1(1/2) = tan-1(1/3) since (1-1/2)/(1+1/2) = 1/3. Matches the printed Answers key (p169): x = 2.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(k); book p168 = PDF p195 (image read); matches key"
-      }
-    ],
-    "relevance": 100,
-    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.5 BOOK Exercise 5.1 Q4-Q6 (book pp167-168 = PDF pp194-195 of the 2075 reprint; statements via image reads; every numeric answer key-checked, proofs carry validity conditions). Flags: Q6(f) key overlists +- (only + valid); Q6(j) key overlists -1 (extraneous); Q5(e) key scan cut off (exact pi/2); Q5(c)/Q5(f)/Q6(a)/Q6(g)/Q6(h) key rows illegible-or-ambiguous, substitution-verified.",
-    "subject": "mathematics",
-    "title": "Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q4-Q6 (inverse proofs and equations) - Complete Solutions",
-    "topicSlug": "trigonometry-textbook-ex-5-1-proofs-equations",
-    "topicTitle": "Ch.5 Book Exercise 5.1 Q4-Q6 - inverse proofs and equations (31 entries)",
-    "unitSlug": "trigonometry",
-    "year": 2078
-  },
-  "practice/solutions/class-11/mathematics/trigonometry/ex-5-1-inverse-theorems-and-additional.json": {
-    "examSource": "Sukunda Textbook",
-    "questions": [
-      {
-        "knowledgeNote": "tan of the sum is tan(pi) = 0: the numerator x+y+z-xyz must vanish. (T.U. 2050)",
-        "marks": 3,
-        "question": "Q7(a). If tan-1x+tan-1y+tan-1z = pi, prove that x+y+z = xyz. (T.U. 2050)",
-        "solution": "Take tan of both sides: tan(tan-1x+tan-1y+tan-1z) = tan(pi) = 0. The left side is (x+y+z-xyz)/(1-xy-yz-zx), so its numerator is 0 (denominator nonzero): x+y+z = xyz. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q7(a) (T.U. 2050); book p168 = PDF p195 (image read)"
-      },
-      {
-        "knowledgeNote": "tan of pi/2 is undefined: the denominator 1-(xy+yz+zx) must vanish. (T.U. 2048, 2050)",
-        "marks": 3,
-        "question": "Q7(b). If tan-1x+tan-1y+tan-1z = pi/2, prove that xy+yz+zx = 1. (T.U. 2048, 2050)",
-        "solution": "tan of the sum is tan(pi/2), undefined, while the expansion is (x+y+z-xyz)/(1-xy-yz-zx). Hence the denominator is 0: 1-(xy+yz+zx) = 0, i.e. xy+yz+zx = 1. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q7(b) (T.U. 2048, 2050); book p168 = PDF p195 (image read)"
-      },
-      {
-        "knowledgeNote": "cos(A+B) = -cosC, then one squaring: the cross term 2xyz appears. (T.U. 2056 S)",
-        "marks": 3,
-        "question": "Q8. If cos-1x+cos-1y+cos-1z = pi, show that x^2+y^2+z^2+2xyz = 1. (T.U. 2056 S)",
-        "solution": "Put A = cos-1x, B = cos-1y, C = cos-1z with A+B = pi-C. Then cos(A+B) = -cosC, i.e. xy-sqrt((1-x^2)(1-y^2)) = -z, i.e. xy+z = +sqrt((1-x^2)(1-y^2)) (non-negative here). Squaring: x^2y^2+2xyz+z^2 = 1-x^2-y^2+x^2y^2, i.e. x^2+y^2+z^2+2xyz = 1. Shown.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q8 (T.U. 2056 S); book pp168-169 = PDF pp195-196 (image read)"
-      },
-      {
-        "knowledgeNote": "tanA = 3/5 with tanB = 3/4: (27/20)/(11/20) = 27/11, and the sum stays under 90deg.",
-        "marks": 3,
-        "question": "Q9(i). Prove that tan-1(3/5)+sin-1(3/5) = tan-1(27/11).",
-        "solution": "tanA = 3/5 for A = tan-1(3/5); sinB = 3/5 gives cosB = 4/5 and tanB = 3/4 for B = sin-1(3/5). tan(A+B) = (3/5+3/4)/(1-(3/5)(3/4)) = (27/20)/(11/20) = 27/11. A ~ 30.96deg and B ~ 36.87deg are acute with sum ~ 67.8deg < 90deg, so A+B = tan-1(27/11). Proved. (Confirmed against an independent NEB-video statement of the same question.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(i); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "Pair them: (1/3,1/5) -> 4/7 and (1/7,1/8) -> 3/11, then (65/77)/(65/77) = 1.",
-        "marks": 3,
-        "question": "Q9(ii). Prove that tan-1(1/3)+tan-1(1/5)+tan-1(1/7)+tan-1(1/8) = pi/4.",
-        "solution": "tan-1(1/3)+tan-1(1/5) = tan-1((8/15)/(14/15)) = tan-1(4/7); tan-1(1/7)+tan-1(1/8) = tan-1((15/56)/(55/56)) = tan-1(3/11). Then tan-1(4/7)+tan-1(3/11) = tan-1((65/77)/(65/77)) = tan-1(1) = pi/4, all sums acute with positive denominators. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(ii); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "Double 1/3 to 3/4 first (2.(1/3)/(1-1/9) = 3/4), then add 1/7 to reach exactly 1. (HSEB 2051)",
-        "marks": 3,
-        "question": "Q9(iii). Prove that 2tan-1(1/3)+tan-1(1/7) = pi/4. (HSEB 2051)",
-        "solution": "2tan-1(1/3) = tan-1(2.(1/3)/(1-1/9)) = tan-1((2/3)/(8/9)) = tan-1(3/4). Then tan-1(3/4)+tan-1(1/7) = tan-1((3/4+1/7)/(1-3/28)) = tan-1((25/28)/(25/28)) = tan-1(1) = pi/4. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(iii) (HSEB 2051); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "cot-13 = tan-1(1/3) and cosec-1(sqrt(5)) = tan-1(1/2): sum to tan-1(1) = pi/4, times 4. (HSEB 2058)",
-        "marks": 3,
-        "question": "Q9(iv). Prove that 4(cot-13+cosec-1(sqrt(5))) = pi. (HSEB 2058)",
-        "solution": "cot-13 = tan-1(1/3). cosec-1(sqrt(5)) = sin-1(1/sqrt(5)); with sin = 1/sqrt(5), tan = (1/sqrt(5))/(2/sqrt(5)) = 1/2, so it equals tan-1(1/2). Sum: tan-1(1/3)+tan-1(1/2) = tan-1((5/6)/(5/6)) = tan-1(1) = pi/4. Times 4: pi. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(iv) (HSEB 2058); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "tan-12+tan-13 = 3pi/4 (ratio -1 with sum past pi/2); the half-weight inner sum is pi/2. (T.U. 2051, 54)",
-        "marks": 3,
-        "question": "Q9(v). Prove that tan-11+tan-12+tan-13 = pi = 2(tan-11+tan-1(1/2)+tan-1(1/3)). (T.U. 2051, 54)",
-        "solution": "tan-12+tan-13: (2+3)/(1-6) = -1 with both acute and sum in (pi/2, pi), so 3pi/4; plus tan-11 = pi/4 gives pi. Inner: tan-1(1/2)+tan-1(1/3) = tan-1((5/6)/(5/6)) = tan-1(1) = pi/4; plus tan-11 = pi/2; doubled = pi. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(v) (T.U. 2051, 54); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "One parameter t = sin^2 of the first form: cos and tan drop out of 1-t. (T.U. 2057 S)",
-        "marks": 3,
-        "question": "Q10(i). Prove that sin-1(sqrt((x-b)/(a-b))) = cos-1(sqrt((a-x)/(a-b))) = tan-1(sqrt((x-b)/(a-x))). (T.U. 2057 S)",
-        "solution": "For b <= x <= a put t = sin-1(sqrt((x-b)/(a-b))) =: u. Then cosu = +sqrt(1-(x-b)/(a-b)) = sqrt((a-x)/(a-b)), so u = cos-1(sqrt((a-x)/(a-b))); and tanu = sinu/cosu = sqrt((x-b)/(a-x)), so u = tan-1(sqrt((x-b)/(a-x))). All three equal u. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q10(i) (T.U. 2057 S); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "Half-angle in sin^2/cos^2 form with t = cos-1x.",
-        "marks": 2,
-        "question": "Q10(ii). Prove that cos-1x = 2sin-1(sqrt((1-x)/2)) = 2cos-1(sqrt((1+x)/2)).",
-        "solution": "Put t = cos-1x, so x = cost. Then sqrt((1-x)/2) = sqrt((1-cost)/2) = sin(t/2) (t/2 in [0, pi/2], non-negative), so 2sin-1 of it is t. Likewise sqrt((1+x)/2) = cos(t/2), so 2cos-1 of it is t. Both equal cos-1x. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q10(ii); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "sin2A+sin2B+sin2C = 4sinAsinBsinC (proved in Ch.4 Ex 4.1 Q12(b)): halve it. (T.U. 2052)",
-        "marks": 3,
-        "question": "Q11. If sin-1x+sin-1y+sin-1z = pi, prove that x.sqrt(1-x^2)+y.sqrt(1-y^2)+z.sqrt(1-z^2) = 2xyz. (T.U. 2052)",
-        "solution": "Put A = sin-1x, B = sin-1y, C = sin-1z with A+B+C = pi. Then sin2A+sin2B+sin2C = 4sinAsinBsinC (Ch.4 Ex 4.1 Q12(b)), i.e. 2(x.sqrt(1-x^2)+y.sqrt(1-y^2)+z.sqrt(1-z^2)) = 4xyz since sinA = x and cosA = +sqrt(1-x^2) on the sin-1 range. Halving gives the result. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q11 (T.U. 2052); book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "sinC = cos(A+B): move xy over, then square once.",
-        "marks": 3,
-        "question": "Q12. If sin-1x+sin-1y+sin-1z = pi/2, prove that x^2+y^2+z^2+2xyz = 1.",
-        "solution": "Put A = sin-1x, B = sin-1y, C = sin-1z with C = pi/2-(A+B). Then sinC = cos(A+B), i.e. z = sqrt((1-x^2)(1-y^2))-xy, i.e. z+xy = +sqrt((1-x^2)(1-y^2)) (non-negative). Squaring: z^2+2xyz+x^2y^2 = 1-x^2-y^2+x^2y^2, i.e. x^2+y^2+z^2+2xyz = 1. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q12; book p169 = PDF p196 (image read)"
-      },
-      {
-        "knowledgeNote": "tan-1 eats every real number: domain (-inf, inf). (HSEB 2050)",
-        "marks": 1,
-        "question": "AQ1(i). What is the domain of the inverse function tan-1x? (HSEB 2050)",
-        "solution": "tan maps (-pi/2, pi/2) onto all real numbers, so its inverse tan-1x is defined for every real x: domain (-inf, inf). (The printed Answers, p171, confirm: x in (-inf, inf).)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(i) (HSEB 2050); book p170 = PDF p197 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "cos = 1/3 forces sin = 2sqrt(2)/3: the 1-2sqrt(2)-3 triangle. (HSEB 2050)",
-        "marks": 1,
-        "question": "AQ1(ii). Find sin(cos-1(1/3)). (HSEB 2050)",
-        "solution": "Let t = cos-1(1/3) in [0, pi] with cost = 1/3 and sint >= 0. Then sint = sqrt(1-1/9) = sqrt(8/9) = 2sqrt(2)/3. (The printed Answers, p171, confirm: 2sqrt(2)/3.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(ii) (HSEB 2050); book p170 = PDF p197 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "tan of sin-1x is opposite-over-adjacent: x over sqrt(1-x^2). (HSEB 2050)",
-        "marks": 2,
-        "question": "AQ1(iii). Prove that sin-1x = tan-1(x/sqrt(1-x^2)). (HSEB 2050)",
-        "solution": "Put t = sin-1x in [-pi/2, pi/2] with x in (-1, 1), so sint = x and cost = +sqrt(1-x^2) != 0. Then tant = sint/cost = x/sqrt(1-x^2) with t in (-pi/2, pi/2), so t = tan-1(x/sqrt(1-x^2)). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(iii) (HSEB 2050); book p170 = PDF p197 (image read)"
-      },
-      {
-        "knowledgeNote": "Restrict sin to [-pi/2, pi/2], cos to [0, pi], tan to (-pi/2, pi/2): one y per x.",
-        "marks": 2,
-        "question": "AQ2. Explain what the inverse circular function is. What are the domains and ranges of sin-1x, cos-1x and tan-1x so that they are functions of x?",
-        "solution": "y = sinx (and cosx, tanx) is many-to-one, so its x-y swap is not a function. Restricting to one monotone branch gives a function: sin-1x has domain [-1, 1], range [-pi/2, pi/2]; cos-1x has domain [-1, 1], range [0, pi]; tan-1x has domain (-inf, inf), range (-pi/2, pi/2). (The printed Answers, p171, confirm all three domain-range lines.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q2; book p170 = PDF p197 (image read); matches key"
-      },
-      {
-        "knowledgeNote": "Both sides telescope to zero: each sum is three differences that cancel.",
-        "marks": 3,
-        "question": "AQ3. Prove that tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc))+tan-1((c-a)/(1+ca)) = tan-1((a^2-b^2)/(1+a^2b^2))+tan-1((b^2-c^2)/(1+b^2c^2))+tan-1((c^2-a^2)/(1+c^2a^2)).",
-        "solution": "LHS = (tan-1a-tan-1b)+(tan-1b-tan-1c)+(tan-1c-tan-1a) = 0 and RHS = (tan-1a^2-tan-1b^2)+(tan-1b^2-tan-1c^2)+(tan-1c^2-tan-1a^2) = 0 by the difference formula (where all pairwise products exceed -1). Both sides are 0. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q3; book p170 = PDF p197 (image read)"
-      },
-      {
-        "knowledgeNote": "PRINT ERROR with counterexample: a = 3, b = 2, c = 1 gives pi, not 0. The correct identity equals pi.",
-        "marks": 3,
-        "question": "AQ4(i). [Print says = 0: DISPROVED.] cot-1((ab+1)/(a-b))+cot-1((bc+1)/(b-c))+cot-1((ca+1)/(c-a)) = 0.",
-        "solution": "Counterexample a = 3, b = 2, c = 1: arccot(7/1)+arccot(3/1)+arccot(4/(-2)) = arccot7+arccot3+arccot(-2) ~ 8.13deg+18.43deg+153.43deg = 180deg = pi, not 0. So the printed = 0 is false. Correct identity: for a > b > c with ab, bc, ca > -1 the sum is pi, since cot-1(1/t) = tan-1t for t > 0 and = pi+tan-1t for t < 0, and tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc))+tan-1((c-a)/(1+ca)) telescopes to 0. Filed as a print error with correction.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(i); book p170 = PDF p197 (image read); disproved by counterexample, corrected to pi"
-      },
-      {
-        "knowledgeNote": "Each cot-1 is pi/2 minus a tan-1; the three tan-1 sum to pi by Q9(v).",
-        "marks": 2,
-        "question": "AQ4(ii). Prove that cot-11+cot-12+cot-13 = pi/2.",
-        "solution": "cot-1x = pi/2-tan-1x for every nonzero x. So the sum is 3pi/2-(tan-11+tan-12+tan-13) = 3pi/2-pi = pi/2, using Q9(v) (tan-11+tan-12+tan-13 = pi). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(ii); book p170 = PDF p197 (image read)"
-      },
-      {
-        "knowledgeNote": "sec^2 = 1+tan^2 and csc^2 = 1+cot^2: 5+10 = 15.",
-        "marks": 1,
-        "question": "AQ4(iii). Prove that sec^2(tan-12)+cosec^2(cot-13) = 15.",
-        "solution": "sec^2(tan-12) = 1+tan^2(tan-12) = 1+4 = 5. With p = cot-13, cotp = 3, so cosec^2p = 1+cot^2p = 1+9 = 10. Total 5+10 = 15. Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(iii); book p170 = PDF p197 (image read)"
-      },
-      {
-        "knowledgeNote": "Both halves are double-angle masks: (1/2)sin-1(2x/(1+x^2)) = tan-1x and (1/2)cos-1((1-y^2)/(1+y^2)) = tan-1y.",
-        "marks": 3,
-        "question": "AQ4(iv). Prove that tan((1/2)sin-1(2x/(1+x^2))+(1/2)cos-1((1-y^2)/(1+y^2))) = (x+y)/(1-xy).",
-        "solution": "sin-1(2x/(1+x^2)) = 2tan-1x and cos-1((1-y^2)/(1+y^2)) = 2tan-1y (the standard t-substitution masks). Halving gives tan-1x+tan-1y, and tan of that sum is (x+y)/(1-xy). Proved.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(iv); book p170 = PDF p197 (image read)"
-      }
-    ],
-    "relevance": 100,
-    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.5 BOOK Exercise 5.1 Q7-Q12 + Additional Questions (book pp169-170 = PDF pp196-197 of the 2075 reprint; statements via image reads; proofs carry validity conditions). Flags: Q9(i) independently confirmed (NEB video states the same question); AQ4(i) as printed (= 0) is FALSE - counterexample a=3,b=2,c=1 gives pi; corrected identity (= pi) proved.",
-    "subject": "mathematics",
-    "title": "Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q7-Q12 + Additional (sum theorems) - Complete Solutions",
-    "topicSlug": "trigonometry-textbook-ex-5-1-theorems-additional",
-    "topicTitle": "Ch.5 Book Exercise 5.1 Q7-Q12 + Additional - sum theorems (21 entries)",
-    "unitSlug": "trigonometry",
-    "year": 2078
-  },
-  "practice/solutions/class-11/mathematics/trigonometry/ex-5-1-inverse-values-and-rewrites.json": {
-    "examSource": "Sukunda Textbook",
-    "questions": [
-      {
-        "knowledgeNote": "sin = 1 only at the top of the principal arc: pi/2.",
-        "marks": 1,
-        "question": "Q1(a). Evaluate sin-1(1) without using tables.",
-        "solution": "sin-1(1) is the angle t in [-pi/2, pi/2] with sint = 1, i.e. t = pi/2.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(a); book p167 = PDF p194 (600-dpi crop + OCR read)"
-      },
-      {
-        "knowledgeNote": "Negative arguments give negative principal values for sin-1.",
-        "marks": 1,
-        "question": "Q1(b). Evaluate sin-1(-1/2) without using tables.",
-        "solution": "sin-1(-1/2) is t in [-pi/2, pi/2] with sint = -1/2, i.e. t = -pi/6. (Stacked fraction resolved at 600dpi: OCR reads the argument as -1/2.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(b); book p167 = PDF p194 (600-dpi crop + OCR read)"
-      },
-      {
-        "knowledgeNote": "cos-1 of a negative number lands in QII: here 120 degrees.",
-        "marks": 1,
-        "question": "Q1(c). Evaluate cos-1(-1/2) without using tables.",
-        "solution": "cos-1(-1/2) is t in [0, pi] with cost = -1/2, i.e. t = 2pi/3. (Direct 600-dpi read of the stacked argument gives numerator 1 over denominator 2, i.e. -1/2, confirmed at 0.99/1.00 confidence.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(c); book p167 = PDF p194 (600-dpi crop + OCR read)"
-      },
-      {
-        "knowledgeNote": "tan = 1 at the first-quadrant standard angle pi/4.",
-        "marks": 1,
-        "question": "Q1(d). Evaluate tan-1(1) without using tables.",
-        "solution": "tan-1(1) is t in (-pi/2, pi/2) with tant = 1, i.e. t = pi/4.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(d); book p167 = PDF p194 (600-dpi crop + OCR read)"
-      },
-      {
-        "knowledgeNote": "arccot ranges over (0, pi): cot = -1 gives 3pi/4, not -pi/4.",
-        "marks": 1,
-        "question": "Q1(e). Evaluate arccot(-1) without using tables.",
-        "solution": "arccot(-1) is t in (0, pi) with cott = -1, i.e. t = 3pi/4.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(e); book p167 = PDF p194 (600-dpi crop + OCR read)"
-      },
-      {
-        "knowledgeNote": "tan = -1/sqrt(3) is the negative of the 30-degree slope.",
-        "marks": 1,
-        "question": "Q1(f). Evaluate arctan(-1/sqrt(3)) without using tables.",
-        "solution": "arctan(-1/sqrt(3)) is t in (-pi/2, pi/2) with tant = -1/sqrt(3), i.e. t = -pi/6. (The sqrt(3) confirmed by a V3 glyph read in the 600-dpi crop.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(f); book p167 = PDF p194 (600-dpi crop + OCR read)"
-      },
-      {
-        "knowledgeNote": "Draw the right triangle with opposite x, adjacent 1: hypotenuse sqrt(1+x^2).",
-        "marks": 2,
-        "question": "Q2(a). Express cos(tan-1x) in terms of x.",
-        "solution": "Put t = tan-1x, so t is in (-pi/2, pi/2) and tant = x. Then cost = 1/sqrt(1+tan^2t) = 1/sqrt(1+x^2), positive since cost > 0 on (-pi/2, pi/2). Matches the printed Answers key (p169): 1/sqrt(1+x^2).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(a); book p167 = PDF p194 (OCR conf 0.96); matches key"
-      },
-      {
-        "knowledgeNote": "Same triangle read from the cot side: adjacent x, opposite 1.",
-        "marks": 2,
-        "question": "Q2(b). Express sin(cot-1x) in terms of x.",
-        "solution": "Put p = cot-1x, so p is in (0, pi) and cotp = x. Then sinp = 1/sqrt(1+cot^2p) = 1/sqrt(1+x^2), positive since sinp > 0 on (0, pi). Matches the printed Answers key (p169): 1/sqrt(1+x^2).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(b); book p167 = PDF p194 (OCR conf 0.90); matches key"
-      },
-      {
-        "knowledgeNote": "tan and arccot are reciprocal functions: tan(arccot x) = 1/x.",
-        "marks": 2,
-        "question": "Q2(c). Express tan(arccot x) in terms of x.",
-        "solution": "Put p = arccot x, so cotp = x with x != 0. Then tanp = 1/cotp = 1/x. Matches the printed Answers key (p169): 1/x (x != 0).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(c); book p167 = PDF p194 (OCR conf 0.94); matches key"
-      },
-      {
-        "knowledgeNote": "cos is non-negative on the whole sin-1 range, so no sign choice.",
-        "marks": 2,
-        "question": "Q2(d). Express cos(sin-1x) in terms of x.",
-        "solution": "Put t = sin-1x, so t is in [-pi/2, pi/2] and sint = x. Then cost = +sqrt(1-sin^2t) = sqrt(1-x^2), taking the non-negative root since cost >= 0 there. Matches the printed Answers key (p169): sqrt(1-x^2).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(d); book p167 = PDF p194 (OCR conf 0.97); matches key"
-      },
-      {
-        "knowledgeNote": "Double-angle in tan form: tan2t = 2tant/(1-tan^2t) with tant = x.",
-        "marks": 2,
-        "question": "Q2(e). Express tan(2tan-1x) in terms of x.",
-        "solution": "Put t = tan-1x so tant = x. Then tan2t = 2tant/(1-tan^2t) = 2x/(1-x^2), valid for x != +-1. Matches the printed Answers key (p169): 2x/(1-x^2).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(e); book p167 = PDF p194 (OCR conf 0.96); matches key"
-      },
-      {
-        "knowledgeNote": "sin2t via tan: 2tant/(1+tan^2t) - denominator never zero.",
-        "marks": 2,
-        "question": "Q2(f). Express sin(2tan-1x) in terms of x.",
-        "solution": "Put t = tan-1x so tant = x. Then sin2t = 2tant/(1+tan^2t) = 2x/(1+x^2). Matches the printed Answers key (p169): 2x/(1+x^2).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(f); book p167 = PDF p194 (OCR conf 0.93); matches key"
-      },
-      {
-        "knowledgeNote": "cos2p from cot: (cot^2p-1)/(cot^2p+1) - test x = 1 gives cos(pi/2) = 0.",
-        "marks": 2,
-        "question": "Q2(g). Express cos(2cot-1x) in terms of x.",
-        "solution": "Put p = cot-1x so cotp = x. Then cos2p = (cot^2p-1)/(cot^2p+1) = (x^2-1)/(x^2+1). Check x = 1: cos(2.pi/4) = cos(pi/2) = 0 and (1-1)/(1+1) = 0. Matches the printed Answers key (p169): (x^2-1)/(x^2+1).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(g); book p167 = PDF p194 (OCR conf 0.95); matches key"
-      },
-      {
-        "knowledgeNote": "cot2p from cot: (cot^2p-1)/(2cotp) - test x = 1 gives cot(pi/2) = 0.",
-        "marks": 2,
-        "question": "Q2(h). Express cot(2arccot x) in terms of x.",
-        "solution": "Put p = arccot x so cotp = x with x != 0. Then cot2p = (cot^2p-1)/(2cotp) = (x^2-1)/(2x). Check x = 1: cot(2.pi/4) = 0 and (1-1)/2 = 0. Matches the printed Answers key (p169): (x^2-1)/(2x).",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(h); book p167 = PDF p194 (OCR conf 0.97); matches key"
-      },
-      {
-        "knowledgeNote": "3-4-5 triangle: cos = 3/5 forces sin = 4/5.",
-        "marks": 1,
-        "question": "Q3(a). Evaluate sin(cos-1(3/5)).",
-        "solution": "Let t = cos-1(3/5), so cost = 3/5 with t in [0, pi] and hence sint >= 0. Then sint = sqrt(1-9/25) = 4/5. Matches the printed Answers key (p169): 4/5. (Scan shows sin(cos-1(3/...)) with the denominator lost; the value 3/5 is forced by the key 4/5.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(a); book p167 = PDF p194 (statement reconstructed: 3/5 forced by the key 4/5); matches key"
-      },
-      {
-        "knowledgeNote": "Principal-value round trip: cos undoes arccos exactly.",
-        "marks": 1,
-        "question": "Q3(b). Evaluate cos(arccos(2/3)).",
-        "solution": "arccos(2/3) lies in [0, pi], the exact range on which cos inverts arccos, so cos(arccos(2/3)) = 2/3. Matches the printed Answers key (p169): 2/3. (Scan shows cos(arccos(...3)) with the numerator lost; the value 2/3 is forced by the key.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(b); book p167 = PDF p194 (statement reconstructed: 2/3 forced by the key); matches key"
-      },
-      {
-        "knowledgeNote": "arctan undoes tan only inside (-pi/2, pi/2): pi/6 qualifies.",
-        "marks": 1,
-        "question": "Q3(c). Evaluate arctan(tan(pi/6)).",
-        "solution": "pi/6 lies in (-pi/2, pi/2), so arctan(tan(pi/6)) = pi/6. Matches the printed Answers key (p169): pi/6.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(c); book p167 = PDF p194 (statement via 600-dpi crop: the argument reads as pi/6); matches key"
-      },
-      {
-        "knowledgeNote": "3-4-5 triangle read from the tan side: tant = 3/4 forces sint = 3/5.",
-        "marks": 1,
-        "question": "Q3(d). Evaluate sin(tan-1(3/4)).",
-        "solution": "Let t = tan-1(3/4), acute with tant = 3/4. Then sint = 3/5 (opposite 3, hypotenuse 5). Matches the printed Answers key (p169): 3/5.",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(d); book p167 = PDF p194 (statement via 600-dpi crop: tan-1(3/4) read); matches key"
-      },
-      {
-        "knowledgeNote": "cos-1(1/2) is exactly 60 degrees, so double it before taking sin.",
-        "marks": 1,
-        "question": "Q3(e). Evaluate sin(2cos-1(1/2)).",
-        "solution": "cos-1(1/2) = pi/3, so sin(2.pi/3) = sin(120deg) = sqrt(3)/2. Matches the printed Answers key (p169): sqrt(3)/2. (The stacked 1/2 resolved at 600dpi: fraction bar read as 1-2 at 0.85 confidence.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(e); book p167 = PDF p194 (statement via 600-dpi argument crop); matches key"
-      },
-      {
-        "knowledgeNote": "2cos(pi/3) = 1, and sin-1(1) = pi/2: collapse the inside first.",
-        "marks": 1,
-        "question": "Q3(f). Evaluate sin-1(2cos(pi/3)).",
-        "solution": "2cos(pi/3) = 2.(1/2) = 1, so sin-1(1) = pi/2. (This key row is illegible in the key scan; verified by direct substitution instead.)",
-        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(f); book p167 = PDF p194 (600-dpi crop); substitution-verified (key row illegible)"
-      }
-    ],
-    "relevance": 100,
-    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.5 BOOK Exercise 5.1 Q1-Q3 (book p167 = PDF p194 of the 2075 reprint; 220-600dpi crops + RapidOCR reads of the stacked fractions; every answer key-checked against the printed Answers, p169).",
-    "subject": "mathematics",
-    "title": "Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q1-Q3 (inverse values and rewrites) - Complete Solutions",
-    "topicSlug": "trigonometry-textbook-ex-5-1-inverse-values",
-    "topicTitle": "Ch.5 Book Exercise 5.1 Q1-Q3 - inverse values and rewrites (20 entries)",
-    "unitSlug": "trigonometry",
-    "year": 2078
+  "practice/solutions/class-11/mathematics/trigonometry/ex-5-1-inverse-proofs-and-equations.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Double-angle backwards: 2x^2-1 is cos2t in disguise; the principal range forces x >= 0.",
+        "marks": 3,
+        "question": "Q4(a). Prove that 2cos-1x = cos-1(2x^2-1).",
+        "solution": "Put t = cos-1x in [0, pi], so x = cost. Then 2x^2-1 = 2cos^2t-1 = cos2t. For 2t to be the principal value we need 2t in [0, pi], i.e. t in [0, pi/2], i.e. x >= 0; then cos-1(2x^2-1) = 2t = 2cos-1x. Proved (valid for 0 <= x <= 1; the book states it without the hypothesis).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(a); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "Triple-angle backwards: 4x^3-3x is cos3t; needs 3t inside [0, pi], i.e. x >= 1/2.",
+        "marks": 3,
+        "question": "Q4(b). Prove that 3cos-1x = cos-1(4x^3-3x).",
+        "solution": "Put t = cos-1x in [0, pi], so x = cost. Then 4x^3-3x = 4cos^3t-3cost = cos3t. For 3t to be the principal value we need 3t in [0, pi], i.e. t in [0, pi/3], i.e. x in [1/2, 1]; then cos-1(4x^3-3x) = 3t = 3cos-1x. Proved (valid for 1/2 <= x <= 1).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(b); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "tan3t expansion with tant = x; needs 3t inside (-pi/2, pi/2), i.e. |x| < 1/sqrt(3).",
+        "marks": 3,
+        "question": "Q4(c). Prove that 3tan-1x = tan-1((3x-x^3)/(1-3x^2)).",
+        "solution": "Put t = tan-1x in (-pi/2, pi/2), so x = tant. Then tan3t = (3tant-tan^3t)/(1-3tan^2t) = (3x-x^3)/(1-3x^2). For 3t to be the principal value we need 3t in (-pi/2, pi/2), i.e. |x| < 1/sqrt(3); then tan-1 of the fraction is 3t = 3tan-1x. Proved (valid for |x| < 1/sqrt(3)).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(c); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "Both sides equal sqrt(1-t^2): each cofunction lands on the non-negative branch.",
+        "marks": 2,
+        "question": "Q4(d). Prove that sin(arccos t) = cos(arcsin t).",
+        "solution": "arccos t lies in [0, pi] where sine is non-negative, so sin(arccos t) = +sqrt(1-t^2). arcsin t lies in [-pi/2, pi/2] where cosine is non-negative, so cos(arcsin t) = +sqrt(1-t^2). Both equal sqrt(1-t^2). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(d); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "Direct cos2t with cost = t: no range subtlety since 2t^2-1 always lies in [-1, 1].",
+        "marks": 2,
+        "question": "Q4(e). Prove that cos(2arccost) = 2t^2-1.",
+        "solution": "Put u = arccost, so cosu = t. Then cos2u = 2cos^2u-1 = 2t^2-1. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(e); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "sin2t = 2sintcost with sint = x and cost = +sqrt(1-x^2) on the sin-1 range. (HSEB 2057)",
+        "marks": 2,
+        "question": "Q4(f). Prove that sin(2sin-1x) = 2x.sqrt(1-x^2). (HSEB 2057)",
+        "solution": "Put t = sin-1x in [-pi/2, pi/2], so sint = x and cost = +sqrt(1-x^2). Then sin2t = 2sintcost = 2x.sqrt(1-x^2). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(f) (HSEB 2057); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "cos(A+B) = cosAcosB-sinAsinB with cosA = sqrt(1-u^2), sinB = sqrt(1-v^2): test u = v = 0 gives cos(pi/2) = 0. (T.U. 2049)",
+        "marks": 3,
+        "question": "Q4(g). Prove that cos(sin-1u+cos-1v) = v.sqrt(1-u^2)-u.sqrt(1-v^2). (T.U. 2049)",
+        "solution": "Put A = sin-1u (sinA = u, cosA = +sqrt(1-u^2)) and B = cos-1v (cosB = v, sinB = +sqrt(1-v^2)). Then cos(A+B) = cosAcosB-sinAsinB = v.sqrt(1-u^2)-u.sqrt(1-v^2). Check u = v = 0: LHS = cos(0+pi/2) = 0, RHS = 0. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(g) (T.U. 2049); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "Sum formula with positive denominator 1-1/35: the sum stays acute.",
+        "marks": 2,
+        "question": "Q4(h). Prove that tan-1(1/5)+tan-1(1/7) = tan-1(6/17).",
+        "solution": "(1/5+1/7)/(1-(1/5)(1/7)) = (12/35)/(34/35) = 12/34 = 6/17. Both angles are acute and their product 1/35 < 1, so the sum is the acute angle tan-1(6/17). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(h); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "Telescoping in disguise: each RHS term is a difference of two tan-1, and the middle terms cancel.",
+        "marks": 3,
+        "question": "Q4(i). Prove that tan-1a-tan-1c = tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc)).",
+        "solution": "Where defined (ab, bc > -1), tan-1((a-b)/(1+ab)) = tan-1a-tan-1b and tan-1((b-c)/(1+bc)) = tan-1b-tan-1c by the difference formula. Adding: the tan-1b terms cancel, leaving tan-1a-tan-1c. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(i); book pp167-168 = PDF pp194-195"
+      },
+      {
+        "knowledgeNote": "tan(A-B) with tanA = u, tanB = v: one line.",
+        "marks": 2,
+        "question": "Q4(j). Prove that tan(arctanu-arctanv) = (u-v)/(1+uv).",
+        "solution": "Put A = arctanu, B = arctanv, so tanA = u and tanB = v. Then tan(A-B) = (tanA-tanB)/(1+tanAtanB) = (u-v)/(1+uv). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(j); book pp167-168 = PDF pp194-195 (image read)"
+      },
+      {
+        "knowledgeNote": "(x+x^3)/(1-x^4) simplifies by cancelling (1+x^2): the x^3 term is there to make this happen. (HSEB 2052)",
+        "marks": 3,
+        "question": "Q4(k). Prove that tan(2tan-1x) = 2tan(tan-1x+tan-1x^3). (HSEB 2052)",
+        "solution": "tan(tan-1x+tan-1x^3) = (x+x^3)/(1-x.x^3) = x(1+x^2)/((1-x^2)(1+x^2)) = x/(1-x^2). Doubling: 2x/(1-x^2) = tan(2tan-1x). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(k) (HSEB 2052); book pp167-168 = PDF pp194-195 (image read)"
+      },
+      {
+        "knowledgeNote": "tan(A+B+C) = (s1-xyz)/(1-s2): expand once, quote forever. (HSEB 2055)",
+        "marks": 3,
+        "question": "Q4(l). Prove that tan-1x+tan-1y+tan-1z = tan-1((x+y+z-xyz)/(1-xy-yz-zx)). (HSEB 2055)",
+        "solution": "Put A = tan-1x, B = tan-1y, C = tan-1z. Then tan(A+B+C) = (tanA+tanB+tanC-tanAtanBtanC)/(1-(tanAtanB+tanBtanC+tanCtanA)) = (x+y+z-xyz)/(1-xy-yz-zx). Taking tan-1 (principal branch where defined) gives the formula. Proved. (Statement via image read of the cut-off line.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(l) (HSEB 2055); book p167 = PDF p194 (image read)"
+      },
+      {
+        "knowledgeNote": "First two angles combine to cos-1(16/65); the third is its complement. (HSEB 2053)",
+        "marks": 3,
+        "question": "Q4(m). Prove that sin-1(4/5)+sin-1(5/13)+sin-1(16/65) = pi/2. (HSEB 2053)",
+        "solution": "sin of the first two summed: (4/5)(12/13)+(3/5)(5/13) = 48/65+15/65 = 63/65; cos: (3/5)(12/13)-(4/5)(5/13) = 36/65-20/65 = 16/65 > 0. So their sum is the acute angle with cosine 16/65, i.e. cos-1(16/65). Adding sin-1(16/65) gives pi/2. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(m) (HSEB 2053); book p167 = PDF p194 (image read)"
+      },
+      {
+        "knowledgeNote": "Put sqrt(x) = tant: both fractions become cos2t and sin2t with 2t in [0, pi/2]. (T.U. 2055 S, HSEB 2054)",
+        "marks": 3,
+        "question": "Q4(n). Prove that tan-1(sqrt(x)) = (1/2)cos-1((1-x)/(1+x)) = (1/2)sin-1(2sqrt(x)/(1+x)). (T.U. 2055 S, HSEB 2054)",
+        "solution": "For 0 <= x < 1 put sqrt(x) = tant with t in [0, pi/4). Then (1-tan^2t)/(1+tan^2t) = cos2t with 2t in [0, pi/2), so cos-1 of it is 2t; and 2tant/(1+tan^2t) = sin2t, so sin-1 of it is 2t. Halving gives t = tan-1(sqrt(x)) in both cases. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q4(n) (T.U. 2055 S, HSEB 2054); book p168 = PDF p195 (image read)"
+      },
+      {
+        "knowledgeNote": "cos(A+B) with the 3-4-5 and 5-12-13 triangles: 36/65-20/65 = 16/65. (HSEB 2054, 2055)",
+        "marks": 2,
+        "question": "Q5(a). Find cos(sin-1(4/5)+tan-1(5/12)). (HSEB 2054, 2055)",
+        "solution": "sinA = 4/5 gives cosA = 3/5; tanB = 5/12 gives sinB = 5/13, cosB = 12/13. cos(A+B) = cosAcosB-sinAsinB = (3/5)(12/13)-(4/5)(5/13) = 36/65-20/65 = 16/65. Matches the printed Answers key (p169): 16/65.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(a) (HSEB 2054, 2055); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "sin(60deg+A) with sinA = 3/5, cosA = 4/5. (T.U. 2053 H)",
+        "marks": 2,
+        "question": "Q5(b). Find sin(cos-1(1/2)+sin-1(3/5)). (T.U. 2053 H)",
+        "solution": "cos-1(1/2) = 60deg; sinA = 3/5 gives cosA = 4/5. sin(60deg+A) = sin60cosA+cos60sinA = (sqrt(3)/2)(4/5)+(1/2)(3/5) = (4sqrt(3)+3)/10. Matches the printed Answers key (p169): (4sqrt(3)+3)/10.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(b) (T.U. 2053 H); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "tanA = 3/4, tanB = 12/5: the difference formula gives a negative over a positive.",
+        "marks": 3,
+        "question": "Q5(c). Find tan(arccos(4/5)-arcsin(12/13)).",
+        "solution": "cosA = 4/5 gives tanA = 3/4; sinB = 12/13 gives tanB = 12/5. tan(A-B) = (3/4-12/5)/(1+(3/4)(12/5)) = (-33/20)/(56/20) = -33/56. (This key row is illegible in the key scan; verified by substitution: arctan(-33/56) ~ -30.5deg and arccos(4/5)-arcsin(12/13) ~ 36.87-67.38 = -30.5deg.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(c); book p168 = PDF p195 (image read); substitution-verified (key row illegible)"
+      },
+      {
+        "knowledgeNote": "Direct difference formula with second argument 2y. (HSEB 2053)",
+        "marks": 2,
+        "question": "Q5(d). Find tan(tan-1x-tan-12y). i.e. tan(tan-1x-tan-1(2y)). (HSEB 2053)",
+        "solution": "By the tan difference formula with arguments x and 2y: (x-2y)/(1+x.2y) = (x-2y)/(1+2xy). Matches the printed Answers key (p169): (x-2y)/(1+2xy).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(d) (HSEB 2053); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "Product 3.(1/3) = 1: complementary acute angles sum to pi/2.",
+        "marks": 1,
+        "question": "Q5(e). Find tan-13+tan-1(1/3). i.e. tan-1(3)+tan-1(1/3).",
+        "solution": "Both angles are acute and their tangents multiply to 3.(1/3) = 1, so they are complementary: sum = pi/2 (tan-1(3) ~ 71.57deg, tan-1(1/3) ~ 18.43deg). (The key scan shows the value with the /2 cut off; the exact value is pi/2.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(e); book p168 = PDF p195 (image read); exact value pi/2 (key scan cut off)"
+      },
+      {
+        "knowledgeNote": "arccos(-t) = pi-arccost: the pi survives while the rest collapses to pi/2.",
+        "marks": 2,
+        "question": "Q5(f). Find arcsint-arccos(-t). i.e. sin-1t-cos-1(-t).",
+        "solution": "arccos(-t) = pi-arccost. So sin-1t-cos-1(-t) = sin-1t+cos-1t-pi = pi/2-pi = -pi/2. (The key shows a negative value here; the exact value is -pi/2.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q5(f); book p168 = PDF p195 (image read); exact value -pi/2"
+      },
+      {
+        "knowledgeNote": "Equal inverse values mean the 45-degree angle: both are pi/4, so x = sqrt(2)/2.",
+        "marks": 2,
+        "question": "Q6(a). Solve cos-1x-sin-1x = 0.",
+        "solution": "cos-1x = sin-1x =: t. Then x = cost = sint with t in [0, pi/2], so t = pi/4 and x = sqrt(2)/2 = 1/sqrt(2). Check: pi/4-pi/4 = 0. (The key scan reads 1/2 with the root sign lost; the exact value is 1/sqrt(2).)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(a); book p168 = PDF p195 (image read); exact value 1/sqrt(2)"
+      },
+      {
+        "knowledgeNote": "Difference zero means the two complementary angles are equal: each pi/4.",
+        "marks": 2,
+        "question": "Q6(b). Solve tan-1x-cot-1x = 0.",
+        "solution": "tan-1x = cot-1x; since they sum to pi/2, each is pi/4, so x = tan(pi/4) = 1. Check: pi/4-pi/4 = 0. Matches the printed Answers key (p169): x = 1.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(b); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "One angle, two trig ratios: sin = x/2 and cos = x force x^2/4+x^2 = 1. (HSEB 2052)",
+        "marks": 2,
+        "question": "Q6(c). Solve sin-1(x/2) = cos-1x. (HSEB 2052)",
+        "solution": "Let the common value be t: sint = x/2 and cost = x. Then x^2/4+x^2 = 1, i.e. x^2 = 4/5, and x >= 0 (t in [0, pi/2] from the ranges), so x = 2/sqrt(5). Check: sin-1(1/sqrt(5)) = cos-1(2/sqrt(5)) ~ 26.57deg. Matches the printed Answers key (p169): x = 2/sqrt(5).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(c) (HSEB 2052); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "Equal principal values with the same cosine: x = 1/(2x). (HSEB 2051)",
+        "marks": 2,
+        "question": "Q6(d). Solve cos-1x = cos-1(1/(2x)). (HSEB 2051)",
+        "solution": "Both sides are principal values in [0, pi], so x = 1/(2x), i.e. x^2 = 1/2, i.e. x = +-1/sqrt(2). Both satisfy |1/(2x)| = 1/sqrt(2) <= 1. Matches the printed Answers key (p169): x = +-1/sqrt(2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(d) (HSEB 2051); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "Take tan of both sides: 2x = 2x/(1-x^2) has only the trivial root.",
+        "marks": 2,
+        "question": "Q6(e). Solve tan-12x = 2tan-1x. i.e. tan-1(2x) = 2tan-1x.",
+        "solution": "Taking tan: 2x = 2x/(1-x^2). Either x = 0 or 1-x^2 = 1, which also gives x = 0. So x = 0 (check: 0 = 0). Matches the printed Answers key (p169): x = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(e); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "cos-12x = sin-1x forces 2x = +sqrt(1-x^2): squaring admits a negative ghost.",
+        "marks": 3,
+        "question": "Q6(f). Solve cos-1x+cos-1(2x) = pi/2.",
+        "solution": "cos-1(2x) = pi/2-cos-1x = sin-1x. Taking cos: 2x = cos(sin-1x) = +sqrt(1-x^2), which needs x >= 0. Squaring: 4x^2 = 1-x^2, i.e. x^2 = 1/5, i.e. x = 1/sqrt(5) (x = -1/sqrt(5) gives LHS = 3pi/2, extraneous). Check x = 1/sqrt(5): sum is pi/2. The printed key lists +-1/sqrt(5); only +1/sqrt(5) satisfies the equation (flagged).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(f); book p168 = PDF p195 (image read); exact x = 1/sqrt(5), negative root extraneous (key overlists)"
+      },
+      {
+        "knowledgeNote": "The complement of sin-1x is cos-1x itself: 1-x must equal x.",
+        "marks": 2,
+        "question": "Q6(g). Solve sin-1x+cos-1(1-x) = pi/2.",
+        "solution": "cos-1(1-x) = pi/2-sin-1x = cos-1x (since pi/2-sin-1x = cos-1x). Both sides principal values gives 1-x = x, i.e. x = 1/2. Check: pi/6+pi/3 = pi/2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(g); book p168 = PDF p195 (image read); substitution-verified"
+      },
+      {
+        "knowledgeNote": "Both exotic forms are double-angle masks: 2tan-1a minus 2tan-1b. (HSEB 2053)",
+        "marks": 3,
+        "question": "Q6(h). If sin-1(2a/(1+a^2))-cos-1((1-b^2)/(1+b^2)) = 2tan-1x, show that x = (a-b)/(1+ab). (HSEB 2053)",
+        "solution": "sin-1(2a/(1+a^2)) = 2tan-1a and cos-1((1-b^2)/(1+b^2)) = 2tan-1b. So 2tan-1a-2tan-1b = 2tan-1x, i.e. tan-1x = tan-1a-tan-1b = tan-1((a-b)/(1+ab)), giving x = (a-b)/(1+ab). Shown. (The key row is garbled but consistent with (h) x = (a-b)/(1+ab).)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(h) (HSEB 2053); book p168 = PDF p195 (image read)"
+      },
+      {
+        "knowledgeNote": "Sum formula: A+B and 1-AB turn out equal (both 6/7 at the roots), so the sum is genuinely pi/4.",
+        "marks": 3,
+        "question": "Q6(i). Solve tan-1((x-1)/(x-2))+tan-1((x+1)/(x+2)) = tan-1(1).",
+        "solution": "With A = (x-1)/(x-2), B = (x+1)/(x+2): A+B = (2x^2-4)/(x^2-4), 1-AB = -3/(x^2-4). A+B = 1-AB gives 2x^2-4 = -3, i.e. x^2 = 1/2, x = +-1/sqrt(2). At both roots A+B = 6/7 > 0 and 1-AB = 6/7 > 0, so the sum is genuinely pi/4. Both valid. Matches the printed Answers key (p169): x = +-1/sqrt(2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(i); book p168 = PDF p195 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "5x = 1-6x^2 gives x = 1/6 and x = -1, but only 1/6 keeps A+B and 1-AB positive.",
+        "marks": 3,
+        "question": "Q6(j). Solve tan-12x+tan-13x = pi/4. i.e. tan-1(2x)+tan-1(3x) = pi/4.",
+        "solution": "(2x+3x)/(1-6x^2) = 1 gives 6x^2+5x-1 = 0, i.e. (6x-1)(x+1) = 0, so x = 1/6 or x = -1. x = 1/6: A+B = 5/6 > 0, 1-AB = 5/6 > 0, sum genuinely pi/4, valid. x = -1: LHS = -3pi/4, extraneous. True solution x = 1/6; the printed key lists both roots without the domain check (flagged).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(j); book p168 = PDF p195 (image read); true x = 1/6, x = -1 extraneous (key overlists)"
+      },
+      {
+        "knowledgeNote": "1/(2+sqrt(3)) = 2-sqrt(3) = tan15deg: triple it to land on 45deg.",
+        "marks": 2,
+        "question": "Q6(k). Solve 3tan-1(1/(2+sqrt(3)))-tan-1(1/x) = tan-1(1/3).",
+        "solution": "1/(2+sqrt(3)) = 2-sqrt(3) = tan15deg, so 3tan-1(1/(2+sqrt(3))) = 3.15deg = 45deg = pi/4. Then tan-1(1/x) = pi/4-tan-1(1/3) = tan-1((1-1/3)/(1+1/3)) = tan-1(1/2), so 1/x = 1/2, i.e. x = 2. Check in the original: pi/4-tan-1(1/2) = tan-1(1/3) since (1-1/2)/(1+1/2) = 1/3. Matches the printed Answers key (p169): x = 2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q6(k); book p168 = PDF p195 (image read); matches key"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.5 BOOK Exercise 5.1 Q4-Q6 (book pp167-168 = PDF pp194-195 of the 2075 reprint; statements via image reads; every numeric answer key-checked, proofs carry validity conditions). Flags: Q6(f) key overlists +- (only + valid); Q6(j) key overlists -1 (extraneous); Q5(e) key scan cut off (exact pi/2); Q5(c)/Q5(f)/Q6(a)/Q6(g)/Q6(h) key rows illegible-or-ambiguous, substitution-verified.",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q4-Q6 (inverse proofs and equations) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-5-1-proofs-equations",
+    "topicTitle": "Ch.5 Book Exercise 5.1 Q4-Q6 - inverse proofs and equations (31 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-5-1-inverse-theorems-and-additional.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "tan of the sum is tan(pi) = 0: the numerator x+y+z-xyz must vanish. (T.U. 2050)",
+        "marks": 3,
+        "question": "Q7(a). If tan-1x+tan-1y+tan-1z = pi, prove that x+y+z = xyz. (T.U. 2050)",
+        "solution": "Take tan of both sides: tan(tan-1x+tan-1y+tan-1z) = tan(pi) = 0. The left side is (x+y+z-xyz)/(1-xy-yz-zx), so its numerator is 0 (denominator nonzero): x+y+z = xyz. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q7(a) (T.U. 2050); book p168 = PDF p195 (image read)"
+      },
+      {
+        "knowledgeNote": "tan of pi/2 is undefined: the denominator 1-(xy+yz+zx) must vanish. (T.U. 2048, 2050)",
+        "marks": 3,
+        "question": "Q7(b). If tan-1x+tan-1y+tan-1z = pi/2, prove that xy+yz+zx = 1. (T.U. 2048, 2050)",
+        "solution": "tan of the sum is tan(pi/2), undefined, while the expansion is (x+y+z-xyz)/(1-xy-yz-zx). Hence the denominator is 0: 1-(xy+yz+zx) = 0, i.e. xy+yz+zx = 1. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q7(b) (T.U. 2048, 2050); book p168 = PDF p195 (image read)"
+      },
+      {
+        "knowledgeNote": "cos(A+B) = -cosC, then one squaring: the cross term 2xyz appears. (T.U. 2056 S)",
+        "marks": 3,
+        "question": "Q8. If cos-1x+cos-1y+cos-1z = pi, show that x^2+y^2+z^2+2xyz = 1. (T.U. 2056 S)",
+        "solution": "Put A = cos-1x, B = cos-1y, C = cos-1z with A+B = pi-C. Then cos(A+B) = -cosC, i.e. xy-sqrt((1-x^2)(1-y^2)) = -z, i.e. xy+z = +sqrt((1-x^2)(1-y^2)) (non-negative here). Squaring: x^2y^2+2xyz+z^2 = 1-x^2-y^2+x^2y^2, i.e. x^2+y^2+z^2+2xyz = 1. Shown.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q8 (T.U. 2056 S); book pp168-169 = PDF pp195-196 (image read)"
+      },
+      {
+        "knowledgeNote": "tanA = 3/5 with tanB = 3/4: (27/20)/(11/20) = 27/11, and the sum stays under 90deg.",
+        "marks": 3,
+        "question": "Q9(i). Prove that tan-1(3/5)+sin-1(3/5) = tan-1(27/11).",
+        "solution": "tanA = 3/5 for A = tan-1(3/5); sinB = 3/5 gives cosB = 4/5 and tanB = 3/4 for B = sin-1(3/5). tan(A+B) = (3/5+3/4)/(1-(3/5)(3/4)) = (27/20)/(11/20) = 27/11. A ~ 30.96deg and B ~ 36.87deg are acute with sum ~ 67.8deg < 90deg, so A+B = tan-1(27/11). Proved. (Confirmed against an independent NEB-video statement of the same question.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(i); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "Pair them: (1/3,1/5) -> 4/7 and (1/7,1/8) -> 3/11, then (65/77)/(65/77) = 1.",
+        "marks": 3,
+        "question": "Q9(ii). Prove that tan-1(1/3)+tan-1(1/5)+tan-1(1/7)+tan-1(1/8) = pi/4.",
+        "solution": "tan-1(1/3)+tan-1(1/5) = tan-1((8/15)/(14/15)) = tan-1(4/7); tan-1(1/7)+tan-1(1/8) = tan-1((15/56)/(55/56)) = tan-1(3/11). Then tan-1(4/7)+tan-1(3/11) = tan-1((65/77)/(65/77)) = tan-1(1) = pi/4, all sums acute with positive denominators. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(ii); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "Double 1/3 to 3/4 first (2.(1/3)/(1-1/9) = 3/4), then add 1/7 to reach exactly 1. (HSEB 2051)",
+        "marks": 3,
+        "question": "Q9(iii). Prove that 2tan-1(1/3)+tan-1(1/7) = pi/4. (HSEB 2051)",
+        "solution": "2tan-1(1/3) = tan-1(2.(1/3)/(1-1/9)) = tan-1((2/3)/(8/9)) = tan-1(3/4). Then tan-1(3/4)+tan-1(1/7) = tan-1((3/4+1/7)/(1-3/28)) = tan-1((25/28)/(25/28)) = tan-1(1) = pi/4. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(iii) (HSEB 2051); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "cot-13 = tan-1(1/3) and cosec-1(sqrt(5)) = tan-1(1/2): sum to tan-1(1) = pi/4, times 4. (HSEB 2058)",
+        "marks": 3,
+        "question": "Q9(iv). Prove that 4(cot-13+cosec-1(sqrt(5))) = pi. (HSEB 2058)",
+        "solution": "cot-13 = tan-1(1/3). cosec-1(sqrt(5)) = sin-1(1/sqrt(5)); with sin = 1/sqrt(5), tan = (1/sqrt(5))/(2/sqrt(5)) = 1/2, so it equals tan-1(1/2). Sum: tan-1(1/3)+tan-1(1/2) = tan-1((5/6)/(5/6)) = tan-1(1) = pi/4. Times 4: pi. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(iv) (HSEB 2058); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "tan-12+tan-13 = 3pi/4 (ratio -1 with sum past pi/2); the half-weight inner sum is pi/2. (T.U. 2051, 54)",
+        "marks": 3,
+        "question": "Q9(v). Prove that tan-11+tan-12+tan-13 = pi = 2(tan-11+tan-1(1/2)+tan-1(1/3)). (T.U. 2051, 54)",
+        "solution": "tan-12+tan-13: (2+3)/(1-6) = -1 with both acute and sum in (pi/2, pi), so 3pi/4; plus tan-11 = pi/4 gives pi. Inner: tan-1(1/2)+tan-1(1/3) = tan-1((5/6)/(5/6)) = tan-1(1) = pi/4; plus tan-11 = pi/2; doubled = pi. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(v) (T.U. 2051, 54); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "One parameter t = sin^2 of the first form: cos and tan drop out of 1-t. (T.U. 2057 S)",
+        "marks": 3,
+        "question": "Q10(i). Prove that sin-1(sqrt((x-b)/(a-b))) = cos-1(sqrt((a-x)/(a-b))) = tan-1(sqrt((x-b)/(a-x))). (T.U. 2057 S)",
+        "solution": "For b <= x <= a put t = sin-1(sqrt((x-b)/(a-b))) =: u. Then cosu = +sqrt(1-(x-b)/(a-b)) = sqrt((a-x)/(a-b)), so u = cos-1(sqrt((a-x)/(a-b))); and tanu = sinu/cosu = sqrt((x-b)/(a-x)), so u = tan-1(sqrt((x-b)/(a-x))). All three equal u. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q10(i) (T.U. 2057 S); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "Half-angle in sin^2/cos^2 form with t = cos-1x.",
+        "marks": 2,
+        "question": "Q10(ii). Prove that cos-1x = 2sin-1(sqrt((1-x)/2)) = 2cos-1(sqrt((1+x)/2)).",
+        "solution": "Put t = cos-1x, so x = cost. Then sqrt((1-x)/2) = sqrt((1-cost)/2) = sin(t/2) (t/2 in [0, pi/2], non-negative), so 2sin-1 of it is t. Likewise sqrt((1+x)/2) = cos(t/2), so 2cos-1 of it is t. Both equal cos-1x. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q10(ii); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "sin2A+sin2B+sin2C = 4sinAsinBsinC (proved in Ch.4 Ex 4.1 Q12(b)): halve it. (T.U. 2052)",
+        "marks": 3,
+        "question": "Q11. If sin-1x+sin-1y+sin-1z = pi, prove that x.sqrt(1-x^2)+y.sqrt(1-y^2)+z.sqrt(1-z^2) = 2xyz. (T.U. 2052)",
+        "solution": "Put A = sin-1x, B = sin-1y, C = sin-1z with A+B+C = pi. Then sin2A+sin2B+sin2C = 4sinAsinBsinC (Ch.4 Ex 4.1 Q12(b)), i.e. 2(x.sqrt(1-x^2)+y.sqrt(1-y^2)+z.sqrt(1-z^2)) = 4xyz since sinA = x and cosA = +sqrt(1-x^2) on the sin-1 range. Halving gives the result. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q11 (T.U. 2052); book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "sinC = cos(A+B): move xy over, then square once.",
+        "marks": 3,
+        "question": "Q12. If sin-1x+sin-1y+sin-1z = pi/2, prove that x^2+y^2+z^2+2xyz = 1.",
+        "solution": "Put A = sin-1x, B = sin-1y, C = sin-1z with C = pi/2-(A+B). Then sinC = cos(A+B), i.e. z = sqrt((1-x^2)(1-y^2))-xy, i.e. z+xy = +sqrt((1-x^2)(1-y^2)) (non-negative). Squaring: z^2+2xyz+x^2y^2 = 1-x^2-y^2+x^2y^2, i.e. x^2+y^2+z^2+2xyz = 1. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q12; book p169 = PDF p196 (image read)"
+      },
+      {
+        "knowledgeNote": "tan-1 eats every real number: domain (-inf, inf). (HSEB 2050)",
+        "marks": 1,
+        "question": "AQ1(i). What is the domain of the inverse function tan-1x? (HSEB 2050)",
+        "solution": "tan maps (-pi/2, pi/2) onto all real numbers, so its inverse tan-1x is defined for every real x: domain (-inf, inf). (The printed Answers, p171, confirm: x in (-inf, inf).)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(i) (HSEB 2050); book p170 = PDF p197 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "cos = 1/3 forces sin = 2sqrt(2)/3: the 1-2sqrt(2)-3 triangle. (HSEB 2050)",
+        "marks": 1,
+        "question": "AQ1(ii). Find sin(cos-1(1/3)). (HSEB 2050)",
+        "solution": "Let t = cos-1(1/3) in [0, pi] with cost = 1/3 and sint >= 0. Then sint = sqrt(1-1/9) = sqrt(8/9) = 2sqrt(2)/3. (The printed Answers, p171, confirm: 2sqrt(2)/3.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(ii) (HSEB 2050); book p170 = PDF p197 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "tan of sin-1x is opposite-over-adjacent: x over sqrt(1-x^2). (HSEB 2050)",
+        "marks": 2,
+        "question": "AQ1(iii). Prove that sin-1x = tan-1(x/sqrt(1-x^2)). (HSEB 2050)",
+        "solution": "Put t = sin-1x in [-pi/2, pi/2] with x in (-1, 1), so sint = x and cost = +sqrt(1-x^2) != 0. Then tant = sint/cost = x/sqrt(1-x^2) with t in (-pi/2, pi/2), so t = tan-1(x/sqrt(1-x^2)). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(iii) (HSEB 2050); book p170 = PDF p197 (image read)"
+      },
+      {
+        "knowledgeNote": "Restrict sin to [-pi/2, pi/2], cos to [0, pi], tan to (-pi/2, pi/2): one y per x.",
+        "marks": 2,
+        "question": "AQ2. Explain what the inverse circular function is. What are the domains and ranges of sin-1x, cos-1x and tan-1x so that they are functions of x?",
+        "solution": "y = sinx (and cosx, tanx) is many-to-one, so its x-y swap is not a function. Restricting to one monotone branch gives a function: sin-1x has domain [-1, 1], range [-pi/2, pi/2]; cos-1x has domain [-1, 1], range [0, pi]; tan-1x has domain (-inf, inf), range (-pi/2, pi/2). (The printed Answers, p171, confirm all three domain-range lines.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q2; book p170 = PDF p197 (image read); matches key"
+      },
+      {
+        "knowledgeNote": "Both sides telescope to zero: each sum is three differences that cancel.",
+        "marks": 3,
+        "question": "AQ3. Prove that tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc))+tan-1((c-a)/(1+ca)) = tan-1((a^2-b^2)/(1+a^2b^2))+tan-1((b^2-c^2)/(1+b^2c^2))+tan-1((c^2-a^2)/(1+c^2a^2)).",
+        "solution": "LHS = (tan-1a-tan-1b)+(tan-1b-tan-1c)+(tan-1c-tan-1a) = 0 and RHS = (tan-1a^2-tan-1b^2)+(tan-1b^2-tan-1c^2)+(tan-1c^2-tan-1a^2) = 0 by the difference formula (where all pairwise products exceed -1). Both sides are 0. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q3; book p170 = PDF p197 (image read)"
+      },
+      {
+        "knowledgeNote": "PRINT ERROR with counterexample: a = 3, b = 2, c = 1 gives pi, not 0. The correct identity equals pi.",
+        "marks": 3,
+        "question": "AQ4(i). [Print says = 0: DISPROVED.] cot-1((ab+1)/(a-b))+cot-1((bc+1)/(b-c))+cot-1((ca+1)/(c-a)) = 0.",
+        "solution": "Counterexample a = 3, b = 2, c = 1: arccot(7/1)+arccot(3/1)+arccot(4/(-2)) = arccot7+arccot3+arccot(-2) ~ 8.13deg+18.43deg+153.43deg = 180deg = pi, not 0. So the printed = 0 is false. Correct identity: for a > b > c with ab, bc, ca > -1 the sum is pi, since cot-1(1/t) = tan-1t for t > 0 and = pi+tan-1t for t < 0, and tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc))+tan-1((c-a)/(1+ca)) telescopes to 0. Filed as a print error with correction.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(i); book p170 = PDF p197 (image read); disproved by counterexample, corrected to pi"
+      },
+      {
+        "knowledgeNote": "Each cot-1 is pi/2 minus a tan-1; the three tan-1 sum to pi by Q9(v).",
+        "marks": 2,
+        "question": "AQ4(ii). Prove that cot-11+cot-12+cot-13 = pi/2.",
+        "solution": "cot-1x = pi/2-tan-1x for every nonzero x. So the sum is 3pi/2-(tan-11+tan-12+tan-13) = 3pi/2-pi = pi/2, using Q9(v) (tan-11+tan-12+tan-13 = pi). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(ii); book p170 = PDF p197 (image read)"
+      },
+      {
+        "knowledgeNote": "sec^2 = 1+tan^2 and csc^2 = 1+cot^2: 5+10 = 15.",
+        "marks": 1,
+        "question": "AQ4(iii). Prove that sec^2(tan-12)+cosec^2(cot-13) = 15.",
+        "solution": "sec^2(tan-12) = 1+tan^2(tan-12) = 1+4 = 5. With p = cot-13, cotp = 3, so cosec^2p = 1+cot^2p = 1+9 = 10. Total 5+10 = 15. Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(iii); book p170 = PDF p197 (image read)"
+      },
+      {
+        "knowledgeNote": "Both halves are double-angle masks: (1/2)sin-1(2x/(1+x^2)) = tan-1x and (1/2)cos-1((1-y^2)/(1+y^2)) = tan-1y.",
+        "marks": 3,
+        "question": "AQ4(iv). Prove that tan((1/2)sin-1(2x/(1+x^2))+(1/2)cos-1((1-y^2)/(1+y^2))) = (x+y)/(1-xy).",
+        "solution": "sin-1(2x/(1+x^2)) = 2tan-1x and cos-1((1-y^2)/(1+y^2)) = 2tan-1y (the standard t-substitution masks). Halving gives tan-1x+tan-1y, and tan of that sum is (x+y)/(1-xy). Proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(iv); book p170 = PDF p197 (image read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.5 BOOK Exercise 5.1 Q7-Q12 + Additional Questions (book pp169-170 = PDF pp196-197 of the 2075 reprint; statements via image reads; proofs carry validity conditions). Flags: Q9(i) independently confirmed (NEB video states the same question); AQ4(i) as printed (= 0) is FALSE - counterexample a=3,b=2,c=1 gives pi; corrected identity (= pi) proved.",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q7-Q12 + Additional (sum theorems) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-5-1-theorems-additional",
+    "topicTitle": "Ch.5 Book Exercise 5.1 Q7-Q12 + Additional - sum theorems (21 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-5-1-inverse-values-and-rewrites.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "sin = 1 only at the top of the principal arc: pi/2.",
+        "marks": 1,
+        "question": "Q1(a). Evaluate sin-1(1) without using tables.",
+        "solution": "sin-1(1) is the angle t in [-pi/2, pi/2] with sint = 1, i.e. t = pi/2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(a); book p167 = PDF p194 (600-dpi crop + OCR read)"
+      },
+      {
+        "knowledgeNote": "Negative arguments give negative principal values for sin-1.",
+        "marks": 1,
+        "question": "Q1(b). Evaluate sin-1(-1/2) without using tables.",
+        "solution": "sin-1(-1/2) is t in [-pi/2, pi/2] with sint = -1/2, i.e. t = -pi/6. (Stacked fraction resolved at 600dpi: OCR reads the argument as -1/2.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(b); book p167 = PDF p194 (600-dpi crop + OCR read)"
+      },
+      {
+        "knowledgeNote": "cos-1 of a negative number lands in QII: here 120 degrees.",
+        "marks": 1,
+        "question": "Q1(c). Evaluate cos-1(-1/2) without using tables.",
+        "solution": "cos-1(-1/2) is t in [0, pi] with cost = -1/2, i.e. t = 2pi/3. (Direct 600-dpi read of the stacked argument gives numerator 1 over denominator 2, i.e. -1/2, confirmed at 0.99/1.00 confidence.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(c); book p167 = PDF p194 (600-dpi crop + OCR read)"
+      },
+      {
+        "knowledgeNote": "tan = 1 at the first-quadrant standard angle pi/4.",
+        "marks": 1,
+        "question": "Q1(d). Evaluate tan-1(1) without using tables.",
+        "solution": "tan-1(1) is t in (-pi/2, pi/2) with tant = 1, i.e. t = pi/4.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(d); book p167 = PDF p194 (600-dpi crop + OCR read)"
+      },
+      {
+        "knowledgeNote": "arccot ranges over (0, pi): cot = -1 gives 3pi/4, not -pi/4.",
+        "marks": 1,
+        "question": "Q1(e). Evaluate arccot(-1) without using tables.",
+        "solution": "arccot(-1) is t in (0, pi) with cott = -1, i.e. t = 3pi/4.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(e); book p167 = PDF p194 (600-dpi crop + OCR read)"
+      },
+      {
+        "knowledgeNote": "tan = -1/sqrt(3) is the negative of the 30-degree slope.",
+        "marks": 1,
+        "question": "Q1(f). Evaluate arctan(-1/sqrt(3)) without using tables.",
+        "solution": "arctan(-1/sqrt(3)) is t in (-pi/2, pi/2) with tant = -1/sqrt(3), i.e. t = -pi/6. (The sqrt(3) confirmed by a V3 glyph read in the 600-dpi crop.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q1(f); book p167 = PDF p194 (600-dpi crop + OCR read)"
+      },
+      {
+        "knowledgeNote": "Draw the right triangle with opposite x, adjacent 1: hypotenuse sqrt(1+x^2).",
+        "marks": 2,
+        "question": "Q2(a). Express cos(tan-1x) in terms of x.",
+        "solution": "Put t = tan-1x, so t is in (-pi/2, pi/2) and tant = x. Then cost = 1/sqrt(1+tan^2t) = 1/sqrt(1+x^2), positive since cost > 0 on (-pi/2, pi/2). Matches the printed Answers key (p169): 1/sqrt(1+x^2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(a); book p167 = PDF p194 (OCR conf 0.96); matches key"
+      },
+      {
+        "knowledgeNote": "Same triangle read from the cot side: adjacent x, opposite 1.",
+        "marks": 2,
+        "question": "Q2(b). Express sin(cot-1x) in terms of x.",
+        "solution": "Put p = cot-1x, so p is in (0, pi) and cotp = x. Then sinp = 1/sqrt(1+cot^2p) = 1/sqrt(1+x^2), positive since sinp > 0 on (0, pi). Matches the printed Answers key (p169): 1/sqrt(1+x^2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(b); book p167 = PDF p194 (OCR conf 0.90); matches key"
+      },
+      {
+        "knowledgeNote": "tan and arccot are reciprocal functions: tan(arccot x) = 1/x.",
+        "marks": 2,
+        "question": "Q2(c). Express tan(arccot x) in terms of x.",
+        "solution": "Put p = arccot x, so cotp = x with x != 0. Then tanp = 1/cotp = 1/x. Matches the printed Answers key (p169): 1/x (x != 0).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(c); book p167 = PDF p194 (OCR conf 0.94); matches key"
+      },
+      {
+        "knowledgeNote": "cos is non-negative on the whole sin-1 range, so no sign choice.",
+        "marks": 2,
+        "question": "Q2(d). Express cos(sin-1x) in terms of x.",
+        "solution": "Put t = sin-1x, so t is in [-pi/2, pi/2] and sint = x. Then cost = +sqrt(1-sin^2t) = sqrt(1-x^2), taking the non-negative root since cost >= 0 there. Matches the printed Answers key (p169): sqrt(1-x^2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(d); book p167 = PDF p194 (OCR conf 0.97); matches key"
+      },
+      {
+        "knowledgeNote": "Double-angle in tan form: tan2t = 2tant/(1-tan^2t) with tant = x.",
+        "marks": 2,
+        "question": "Q2(e). Express tan(2tan-1x) in terms of x.",
+        "solution": "Put t = tan-1x so tant = x. Then tan2t = 2tant/(1-tan^2t) = 2x/(1-x^2), valid for x != +-1. Matches the printed Answers key (p169): 2x/(1-x^2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(e); book p167 = PDF p194 (OCR conf 0.96); matches key"
+      },
+      {
+        "knowledgeNote": "sin2t via tan: 2tant/(1+tan^2t) - denominator never zero.",
+        "marks": 2,
+        "question": "Q2(f). Express sin(2tan-1x) in terms of x.",
+        "solution": "Put t = tan-1x so tant = x. Then sin2t = 2tant/(1+tan^2t) = 2x/(1+x^2). Matches the printed Answers key (p169): 2x/(1+x^2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(f); book p167 = PDF p194 (OCR conf 0.93); matches key"
+      },
+      {
+        "knowledgeNote": "cos2p from cot: (cot^2p-1)/(cot^2p+1) - test x = 1 gives cos(pi/2) = 0.",
+        "marks": 2,
+        "question": "Q2(g). Express cos(2cot-1x) in terms of x.",
+        "solution": "Put p = cot-1x so cotp = x. Then cos2p = (cot^2p-1)/(cot^2p+1) = (x^2-1)/(x^2+1). Check x = 1: cos(2.pi/4) = cos(pi/2) = 0 and (1-1)/(1+1) = 0. Matches the printed Answers key (p169): (x^2-1)/(x^2+1).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(g); book p167 = PDF p194 (OCR conf 0.95); matches key"
+      },
+      {
+        "knowledgeNote": "cot2p from cot: (cot^2p-1)/(2cotp) - test x = 1 gives cot(pi/2) = 0.",
+        "marks": 2,
+        "question": "Q2(h). Express cot(2arccot x) in terms of x.",
+        "solution": "Put p = arccot x so cotp = x with x != 0. Then cot2p = (cot^2p-1)/(2cotp) = (x^2-1)/(2x). Check x = 1: cot(2.pi/4) = 0 and (1-1)/2 = 0. Matches the printed Answers key (p169): (x^2-1)/(2x).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q2(h); book p167 = PDF p194 (OCR conf 0.97); matches key"
+      },
+      {
+        "knowledgeNote": "3-4-5 triangle: cos = 3/5 forces sin = 4/5.",
+        "marks": 1,
+        "question": "Q3(a). Evaluate sin(cos-1(3/5)).",
+        "solution": "Let t = cos-1(3/5), so cost = 3/5 with t in [0, pi] and hence sint >= 0. Then sint = sqrt(1-9/25) = 4/5. Matches the printed Answers key (p169): 4/5. (Scan shows sin(cos-1(3/...)) with the denominator lost; the value 3/5 is forced by the key 4/5.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(a); book p167 = PDF p194 (statement reconstructed: 3/5 forced by the key 4/5); matches key"
+      },
+      {
+        "knowledgeNote": "Principal-value round trip: cos undoes arccos exactly.",
+        "marks": 1,
+        "question": "Q3(b). Evaluate cos(arccos(2/3)).",
+        "solution": "arccos(2/3) lies in [0, pi], the exact range on which cos inverts arccos, so cos(arccos(2/3)) = 2/3. Matches the printed Answers key (p169): 2/3. (Scan shows cos(arccos(...3)) with the numerator lost; the value 2/3 is forced by the key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(b); book p167 = PDF p194 (statement reconstructed: 2/3 forced by the key); matches key"
+      },
+      {
+        "knowledgeNote": "arctan undoes tan only inside (-pi/2, pi/2): pi/6 qualifies.",
+        "marks": 1,
+        "question": "Q3(c). Evaluate arctan(tan(pi/6)).",
+        "solution": "pi/6 lies in (-pi/2, pi/2), so arctan(tan(pi/6)) = pi/6. Matches the printed Answers key (p169): pi/6.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(c); book p167 = PDF p194 (statement via 600-dpi crop: the argument reads as pi/6); matches key"
+      },
+      {
+        "knowledgeNote": "3-4-5 triangle read from the tan side: tant = 3/4 forces sint = 3/5.",
+        "marks": 1,
+        "question": "Q3(d). Evaluate sin(tan-1(3/4)).",
+        "solution": "Let t = tan-1(3/4), acute with tant = 3/4. Then sint = 3/5 (opposite 3, hypotenuse 5). Matches the printed Answers key (p169): 3/5.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(d); book p167 = PDF p194 (statement via 600-dpi crop: tan-1(3/4) read); matches key"
+      },
+      {
+        "knowledgeNote": "cos-1(1/2) is exactly 60 degrees, so double it before taking sin.",
+        "marks": 1,
+        "question": "Q3(e). Evaluate sin(2cos-1(1/2)).",
+        "solution": "cos-1(1/2) = pi/3, so sin(2.pi/3) = sin(120deg) = sqrt(3)/2. Matches the printed Answers key (p169): sqrt(3)/2. (The stacked 1/2 resolved at 600dpi: fraction bar read as 1-2 at 0.85 confidence.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(e); book p167 = PDF p194 (statement via 600-dpi argument crop); matches key"
+      },
+      {
+        "knowledgeNote": "2cos(pi/3) = 1, and sin-1(1) = pi/2: collapse the inside first.",
+        "marks": 1,
+        "question": "Q3(f). Evaluate sin-1(2cos(pi/3)).",
+        "solution": "2cos(pi/3) = 2.(1/2) = 1, so sin-1(1) = pi/2. (This key row is illegible in the key scan; verified by direct substitution instead.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q3(f); book p167 = PDF p194 (600-dpi crop); substitution-verified (key row illegible)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.5 BOOK Exercise 5.1 Q1-Q3 (book p167 = PDF p194 of the 2075 reprint; 220-600dpi crops + RapidOCR reads of the stacked fractions; every answer key-checked against the printed Answers, p169).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q1-Q3 (inverse values and rewrites) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-5-1-inverse-values",
+    "topicTitle": "Ch.5 Book Exercise 5.1 Q1-Q3 - inverse values and rewrites (20 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
   },
   "practice/solutions/class-11/mathematics/trigonometry/ex-6-1-additional-i.json": {
     "examSource": "Sukunda Textbook",
@@ -79748,6 +79748,138 @@
     "title": "Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q3-Q4 (triangle identities II) - Complete Solutions",
     "topicSlug": "trigonometry-textbook-ex-6-1-triangle-identities-ii",
     "topicTitle": "Ch.6 Book Exercise 6.1 Q3-Q4 - triangle identities II (10 entries)",
+    "unitSlug": "trigonometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/trigonometry/ex-7-1-solution-of-triangle.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Name the two given angles A and C so the computed third angle sits in the middle: a:b:c then reads straight off as sin105:sin60:sin15.",
+        "marks": 3,
+        "question": "Q1(i). The angles of a triangle are 105° and 15°; find the ratio of its sides.",
+        "solution": "The third angle is 180° - (105° + 15°) = 60°. Call the given angles A = 105° and C = 15°, so B = 60°. By the sine rule a:b:c = sinA:sinB:sinC = sin105°:sin60°:sin15°. Now sin105° = sin(60°+45°) = sin60°cos45° + cos60°sin45° = (√6+√2)/4, sin60° = √3/2 = 2√3/4, sin15° = sin(60°-45°) = (√6-√2)/4. Hence a:b:c = (√6+√2):2√3:(√6-√2). Since √6+√2 = √2(√3+1), √6-√2 = √2(√3-1) and 2√3 = √2·√6, dividing by √2 gives a:b:c = (√3+1):√6:(√3-1). Check: largest angle 105° faces the largest side √3+1 ≈ 2.73, smallest angle 15° faces √3-1 ≈ 0.73.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q1(i); book p196 = PDF p223 (vision read)"
+      },
+      {
+        "knowledgeNote": "sin75°/sin45° collapses to (√3+1)/2: expand sin75° = sin(45°+30°) rather than reaching for a calculator.",
+        "marks": 3,
+        "question": "Q1(ii). If A = 45°, B = 60°, show that a:c = 2:(√3+1).",
+        "solution": "C = 180° - (45° + 60°) = 75°. By the sine rule a/c = sinA/sinC = sin45°/sin75°. Now sin75° = sin(45°+30°) = sin45°cos30° + cos45°sin30° = (1/√2)(√3/2) + (1/√2)(1/2) = (√3+1)/(2√2). So a/c = (1/√2) / ((√3+1)/(2√2)) = 2/(√3+1), i.e. a:c = 2:(√3+1). Verified: sin75° ≈ 0.966 and 2/(√3+1) = 2/2.732 ≈ 0.732 = sin45°/sin75° ≈ 0.707/0.966. ✓",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q1(ii); book p196 = PDF p223 (vision read)"
+      },
+      {
+        "knowledgeNote": "Angles in ratio 1:3 with A = 60° give B = 30°, C = 90° at once: assign the 60° to the middle angle so a:b:c reads 1:√3:2.",
+        "marks": 3,
+        "question": "Q1(iii). If one angle of a triangle is 60° and the ratio of the other two is 1:3, find all the angles and the ratio of the sides.",
+        "solution": "Let the other two angles be x and 3x. Then x + 3x = 180° - 60° = 120°, so x = 30°. The three angles are 30°, 60°, 90°. Put B = 60° (the given angle), A = 30°, C = 90°. By the sine rule a:b:c = sin30°:sin60°:sin90° = (1/2):(√3/2):1 = 1:√3:2. Check: hypotenuse c = 2 opposite 90° is the longest side. ✓",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q1(iii); book p196 = PDF p223 (vision read)"
+      },
+      {
+        "knowledgeNote": "2+3+7 = 12 parts, so one part is 15°: the angles are 30°, 45°, 105° and the sine ratio simplifies with a factor of √2.",
+        "marks": 4,
+        "question": "Q1(iv). The angles of a triangle are in the ratio 2:3:7. Prove that the sides are in the ratio √2:2:(√3+1).",
+        "solution": "2 + 3 + 7 = 12 parts = 180°, so one part is 15° and the angles are 30°, 45°, 105°. By the sine rule a:b:c = sin30°:sin45°:sin105° = (1/2):(1/√2):((√6+√2)/4). Multiplying by 4 gives 2:2√2:(√6+√2); dividing by √2 gives √2:2:(√3+1). Largest angle 105° faces √3+1 ≈ 2.73, the longest side. ✓",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q1(iv); book p196 = PDF p223 (vision read)"
+      },
+      {
+        "knowledgeNote": "cosA = 4/5, cosB = 3/5 is the 3-4-5 triangle in disguise: cos(A+B) = 0 forces C = 90°.",
+        "marks": 3,
+        "question": "Q1(v). If cosA = 4/5 and cosB = 3/5, find a:b:c.",
+        "solution": "sinA = 3/5 and sinB = 4/5 (A, B acute). cos(A+B) = cosAcosB - sinAsinB = (4/5)(3/5) - (3/5)(4/5) = 0, so A+B = 90° and C = 90°, sinC = 1. By the sine rule a:b:c = sinA:sinB:sinC = (3/5):(4/5):1 = 3:4:5. Check: 3² + 4² = 5², consistent with C = 90°. ✓",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q1(v); book p196 = PDF p223 (vision read)"
+      },
+      {
+        "knowledgeNote": "c = √3+1 is the longest side, so expect C obtuse: cosine gives C = 105° directly, then sine for A and angle-sum for B.",
+        "marks": 4,
+        "question": "Q2(i). Given a = 2, b = √2, c = √3+1, solve the triangle. (HSEB 2058)",
+        "solution": "c² = (√3+1)² = 4+2√3 ≈ 7.46 > a²+b² = 6, so C is obtuse. cosC = (a²+b²-c²)/(2ab) = (4+2-4-2√3)/(2·2·√2) = (2-2√3)/(4√2) = -(√3-1)/(2√2) = -sin15° = cos105°, so C = 105°. Then sinA = a·sinC/c = 2·sin105°/(√3+1) = 2(√6+√2)/(4(√3+1)) = √2(√3+1)/(2(√3+1)) = √2/2, and since a < c, A is acute: A = 45°. B = 180° - (105°+45°) = 30°. Answer: A = 45°, B = 30°, C = 105° (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q2(i) (HSEB 2058); book p196 = PDF p223 (vision read)"
+      },
+      {
+        "knowledgeNote": "a = 3+√3 is the longest side: cosine gives A = 105° at once; factor √3 out of (3+√3) when simplifying sinB.",
+        "marks": 4,
+        "question": "Q2(ii). If a = 3+√3, b = 2√3, c = √6, solve the triangle.",
+        "solution": "cosA = (b²+c²-a²)/(2bc) = (12+6-(9+3+6√3))/(2·2√3·√6) = (6-6√3)/(4√18) = (1-√3)/(2√2) = -sin15° = cos105°, so A = 105°. Then sinB = b·sinA/a = 2√3·sin105°/(3+√3). Since 3+√3 = √3(√3+1) and sin105° = (√6+√2)/4 = √2(√3+1)/4, sinB = 2√3·√2(√3+1)/(4√3(√3+1)) = √2/2; with b < a, B is acute: B = 45°. C = 180° - (105°+45°) = 30°. Answer: A = 105°, B = 45°, C = 30° (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q2(ii); book p196-197 = PDF p223-224 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same 45°-60°-75° triangle as the worked Example 5: c = √3+1 is longest, so cosine for C first, then sine for A.",
+        "marks": 4,
+        "question": "Q2(iii). If three sides of a triangle are proportional to 2:√6:√3+1, find all the angles. (HSEB 2056)",
+        "solution": "Put a = 2k, b = √6·k, c = (√3+1)k. c² = (4+2√3)k² ≈ 7.46k² is the largest, so C is the largest angle. cosC = (a²+b²-c²)/(2ab) = (4+6-4-2√3)/(2·2·√6)·(1/k² cancels) = (6-2√3)/(4√6) = (3-√3)/(2√6) = √3(√3-1)/(2√6) = (√3-1)/(2√2) = sin15° = cos75°, so C = 75°. Then sinA = a·sinC/c = 2·sin75°/(√3+1) = √2/2 (as in Q2(i)); with a < c, A = 45°. B = 180° - (45°+75°) = 60°. Answer: 45°, 60°, 75° (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q2(iii) (HSEB 2056); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "Two angles given: the third is 105° and both unknown sides scale off c/sinC = 12√2; keep sin105° in surd form until the last step.",
+        "marks": 3,
+        "question": "Q3(i). If C = 30°, B = 45°, c = 6√2, solve the triangle.",
+        "solution": "A = 180° - (30°+45°) = 105°. By the sine rule with c/sinC = 6√2/(1/2) = 12√2: b = 12√2·sin45° = 12√2·(1/√2) = 12; a = 12√2·sin105° = 12√2·(√6+√2)/4 = 3√2(√6+√2) = 3(2√3+2) = 6(√3+1). Answer: A = 105°, b = 12, a = 6(√3+1) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q3(i); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "A = 60° makes a/sinA simplify to 4: b and c then drop out as (√6+√2) and 2√2 with no calculator.",
+        "marks": 3,
+        "question": "Q3(ii). If A = 60°, B = 75°, a = 2√3, solve the triangle.",
+        "solution": "C = 180° - (60°+75°) = 45°. a/sinA = 2√3/(√3/2) = 4. So b = 4·sin75° = 4(√6+√2)/4 = √6+√2, and c = 4·sin45° = 4/√2 = 2√2. Answer: C = 45°, b = √6+√2, c = 2√2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q3(ii); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "Mirror of Q3(i) with the known side b = 2: the common factor b/sinB = 2√2 clears both denominators.",
+        "marks": 3,
+        "question": "Q3(iii). If A = 30°, B = 45°, b = 2, solve the triangle.",
+        "solution": "C = 180° - (30°+45°) = 105°. b/sinB = 2/(1/√2) = 2√2. So a = 2√2·sin30° = 2√2·(1/2) = √2, and c = 2√2·sin105° = 2√2(√6+√2)/4 = (√12+2)/2 = (2√3+2)/2 = √3+1. Answer: C = 105°, a = √2, c = √3+1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q3(iii); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "SAS with a:b = 1:2 and included 60°: c = 2√3 first, then sinA = 1/2 with A < C forces the acute value A = 30°.",
+        "marks": 4,
+        "question": "Q4(i). If a = 2, b = 4, C = 60°, find A and B.",
+        "solution": "c² = a²+b²-2ab·cosC = 4+16-2·2·4·(1/2) = 20-8 = 12, so c = 2√3. Then sinA = a·sinC/c = 2(√3/2)/(2√3) = 1/2, giving A = 30° or 150°; A = 150° is impossible with C = 60° (sum > 180°), and a < c confirms A acute: A = 30°. B = 180° - (30°+60°) = 90°. Answer: A = 30°, B = 90° (matches the printed key; indeed 2²+(2√3)² = 4²).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q4(i); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "The sine rule alone gives sinA ≈ 0.966 (75° or 105°): the cosine rule breaks the tie — a is the longest side, so A = 105°. Classic exam trap.",
+        "marks": 5,
+        "question": "Q4(ii). Two sides of a triangle are √3+1 and √3-1 and the included angle is 60°; solve the triangle.",
+        "solution": "Put a = √3+1, b = √3-1, C = 60°. c² = a²+b²-2ab·cos60° = (4+2√3)+(4-2√3)-(3-1) = 8-2 = 6, so c = √6 (matches the key). By the sine rule sinA = a·sinC/c = (√3+1)(√3/2)/√6 = (√3+1)/(2√2) ≈ 0.966, so A = 75° or 105°. Tie-break with cosine: a² = 4+2√3 ≈ 7.46 > b²+c² = (4-2√3)+6 ≈ 6.54, so A is obtuse: A = 105°. Then B = 180° - (105°+60°) = 15°. Answer: c = √6, A = 105°, B = 15° (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q4(ii); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "Area + cosine rule give bc = 8 and b²+c² = 65: (b+c)² = 81 turns it into the quadratic t²-9t+8 = 0.",
+        "marks": 4,
+        "question": "Q4(iii). Given a = √57, A = 60° and area Δ = 2√3, find b and c.",
+        "solution": "Δ = (1/2)bc·sinA gives 2√3 = (1/2)bc(√3/2), so bc = 8. From the cosine rule a² = b²+c²-2bc·cosA: 57 = b²+c²-2·8·(1/2) = b²+c²-8, so b²+c² = 65. Then (b+c)² = 65+2·8 = 81, so b+c = 9. b, c are the roots of t²-9t+8 = 0, i.e. {8, 1}. Answer: b, c are 8 and 1 in some order (matches the printed key). Check: (1/2)·8·1·sin60° = 2√3. ✓",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q4(iii); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "SSA with a < b but a > b·sinA: two triangles. B = 60° gives the right-angled one (c = 6); B = 120° gives C = 30° and c = a = 3.",
+        "marks": 5,
+        "question": "Q5(i). Given a = 3, b = 3√3, A = 30°, solve the triangle. In which case is the solution ambiguous?",
+        "solution": "sinB = b·sinA/a = 3√3·(1/2)/3 = √3/2, so B = 60° or 120°; both satisfy A+B < 180°, so this case is AMBIGUOUS with two solutions. If B = 60°: C = 90° and c = a/sinA = 3/(1/2) = 6. If B = 120°: C = 30° and c = a·sinC/sinA = 3 (equal angles give equal sides). Answer: B = 60°, C = 90°, c = 6; or B = 120°, C = 30°, c = 3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q5(i) (ambiguous case); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same ambiguous pattern with surds: sinB = (√3+1)/(2√2) ≈ 0.966 gives B = 75°/105°. The printed key writes 'a = √6 / √2' but a = 2 is given — it means c (flag filed).",
+        "marks": 5,
+        "question": "Q5(ii). Given a = 2, b = √3+1, A = 45°, solve the triangle. In which case is the solution ambiguous?",
+        "solution": "sinB = b·sinA/a = (√3+1)(1/√2)/2 = (√3+1)/(2√2) ≈ 0.966, so B = 75° or 105°; A+B = 120° or 150°, both below 180°, so this case is AMBIGUOUS with two solutions. If B = 75°: C = 60° and c = a·sinC/sinA = 2(√3/2)/(1/√2) = √6. If B = 105°: C = 30° and c = 2(1/2)/(1/√2) = √2. Answer: B = 75°, C = 60°, c = √6; or B = 105°, C = 30°, c = √2 (the printed Answers line writes 'a' for these, a label slip since a = 2 is given — verified by substitution: 2·sin60°/sin45° = √6. ✓).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q5(ii) (ambiguous case); book p197 = PDF p224 (vision read)"
+      },
+      {
+        "knowledgeNote": "b < a kills the second value: B is acute (19°30′), C = 130°30′, and sinC = sin49°30′ = 3/4 makes c = 9 exactly.",
+        "marks": 4,
+        "question": "Q5(iii). Given A = 30°, a = 6, b = 4 (take sin19°30′ = 1/3 and sin49°30′ = 3/4), solve the triangle. Is the solution ambiguous?",
+        "solution": "sinB = b·sinA/a = 4(1/2)/6 = 1/3, so B = 19°30′ (taking the given value). Since b < a, B < A = 30°, so B must be acute — only ONE solution. C = 180° - (30°+19°30′) = 130°30′. Then c = a·sinC/sinA = 6·sin130°30′/(1/2) = 12·sin49°30′ = 12·(3/4) = 9. Answer: B = 19°30′, C = 130°30′, c = 9, unique (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.7 Ex 7.1 Q5(iii); book p197 = PDF p224 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.7 BOOK Exercise 7.1 (book pp196-197 = PDF pp223-224 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, p197).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.7 Book Ex 7.1 (Solution of Triangle) - Complete Solutions",
+    "topicSlug": "trigonometry-textbook-ex-7-1-solution-of-triangle",
+    "topicTitle": "Ch.7 Book Exercise 7.1 - solution of triangle (17 entries)",
     "unitSlug": "trigonometry",
     "year": 2078
   },
