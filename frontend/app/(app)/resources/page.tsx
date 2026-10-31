@@ -157,6 +157,24 @@ function isGeneralTopic(topic: string): boolean {
   );
 }
 
+/**
+ * Build the iframe `src` for any resource item.
+ * - PDFs, HTML, MD → frameSrcFor (handles Drive preview URLs and local paths)
+ * - DOCX → Google Docs Viewer so the document is always visible and scrollable
+ *   in the browser without downloading
+ */
+function docIframeSrc(item: ResourceItem): string {
+  if (item.kind === "docx") {
+    // Local docx files need an absolute URL for Google Docs Viewer
+    if (item.src.startsWith("/")) {
+      const origin = typeof window !== "undefined" ? window.location.origin : "";
+      return `https://docs.google.com/gview?url=${encodeURIComponent(origin + item.src)}&embedded=true`;
+    }
+    return `https://docs.google.com/gview?url=${encodeURIComponent(item.src)}&embedded=true`;
+  }
+  return frameSrcFor(item.src);
+}
+
 // Build unified item list
 const ALL_RESOURCE_ITEMS: ResourceItem[] = [
   ...WEBNOTEE_DOCS.map((doc: WebnoteeDoc) => ({
@@ -426,28 +444,15 @@ export default function ResourcesPage() {
                                   </p>
                                 </div>
 
-                                {/* Rectangular Box: Already Opened, Visible & Scrollable */}
+                                {/* Rectangular Box: Always Opened, Visible & Scrollable */}
                                 <div className="relative w-full h-72 sm:h-80 rounded-xl overflow-hidden border border-border/60 bg-slate-50 dark:bg-slate-950 shadow-inner">
-                                  {item.kind === "docx" ? (
-                                    <div className="flex flex-col items-center justify-center h-full p-4 text-center bg-muted/20">
-                                      <File className="h-10 w-10 text-primary/60 mb-2" />
-                                      <p className="text-xs font-semibold text-foreground line-clamp-2">{item.title}</p>
-                                      <p className="text-[11px] text-muted-foreground mt-1">Official Study Document (.docx)</p>
-                                      <Button asChild size="sm" variant="outline" className="mt-3 text-xs">
-                                        <a href={item.src} download>
-                                          <Download className="h-3.5 w-3.5 mr-1" /> Download File
-                                        </a>
-                                      </Button>
-                                    </div>
-                                  ) : (
-                                    <iframe
-                                      src={frameSrcFor(item.src)}
-                                      title={item.title}
-                                      loading="lazy"
-                                      className="w-full h-full border-0 bg-white"
-                                      allow="autoplay; encrypted-media; fullscreen"
-                                    />
-                                  )}
+                                  <iframe
+                                    src={docIframeSrc(item)}
+                                    title={item.title}
+                                    loading="lazy"
+                                    className="w-full h-full border-0 bg-white"
+                                    allow="autoplay; encrypted-media; fullscreen"
+                                  />
                                 </div>
                               </div>
 

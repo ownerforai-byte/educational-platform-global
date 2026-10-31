@@ -12,6 +12,14 @@ export const SUPABASE_ORIGIN =
 
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 120;
+// Next prefetches every in-viewport <Link> as a speculative RSC payload — one
+// pass over the notes index fired 70+ of them on the production build (dev
+// never does, which is why this only ever showed up in CI). Those requests are
+// chosen by page markup, not by the student, so they get their own budget:
+// sharing the interactive cap made ordinary browsing land on plain-text
+// "Too many requests" for pages nobody asked for. The header is client-supplied,
+// so prefetches are capped rather than exempt.
+const RATE_LIMIT_MAX_PREFETCH = 600;
 const RATE_LIMIT_MAX_KEYS = 10_000;
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
@@ -42,7 +50,7 @@ function pruneExpired(now: number) {
   }
 }
 
-function isRateLimited(key: string) {
+function isRateLimited(key: string, max: number) {
   const now = Date.now();
 
   // Opportunistically clean expired entries and keep the map bounded.
@@ -59,7 +67,7 @@ function isRateLimited(key: string) {
   }
 
   entry.count += 1;
-  return entry.count > RATE_LIMIT_MAX;
+  return entry.count > max;
 }
 
 function setSecurityHeaders(response: NextResponse) {
@@ -96,6 +104,14 @@ function setSecurityHeaders(response: NextResponse) {
   );
 }
 
+function isPrefetchRequest(request: NextRequest) {
+  return (
+    request.headers.get("next-router-prefetch") === "1" ||
+    request.headers.get("purpose") === "prefetch" ||
+    request.headers.get("sec-purpose") === "prefetch"
+  );
+}
+
 export function proxy(request: NextRequest) {
   const response = NextResponse.next({ request });
   setSecurityHeaders(response);
@@ -106,7 +122,10 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
-  if (isRateLimited(getClientKey(request))) {
+  const prefetch = isPrefetchRequest(request);
+  const key = `${getClientKey(request)}|${prefetch ? "prefetch" : "visit"}`;
+
+  if (isRateLimited(key, prefetch ? RATE_LIMIT_MAX_PREFETCH : RATE_LIMIT_MAX)) {
     return new NextResponse("Too many requests", { status: 429 });
   }
 
