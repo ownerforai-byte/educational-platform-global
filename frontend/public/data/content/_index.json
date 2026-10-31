@@ -76886,6 +76886,863 @@
     "unitSlug": "algebra",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/algebra/ex-11-1-complex-basics.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "(1,0) is the multiplicative identity: any power stays (1,0) = 1.",
+        "marks": 2,
+        "question": "Q1(a). Evaluate: (1, 0)^2.",
+        "solution": "(1,0) is the ordered-pair form of 1+0i = 1. (1,0)^2 = (1·1-0·0, 1·0+0·1) = (1,0) = 1+0i. Boxed 1 (matches the printed key, book p320).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q1(a); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "1 to any power is 1 — the ordered pair (1,0) behaves exactly like the real 1.",
+        "marks": 2,
+        "question": "Q1(b). Evaluate: (1, 0)^5.",
+        "solution": "(1,0) = 1, and 1^5 = 1 = (1,0). Boxed 1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q1(b); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "(0,1) = i, and powers of i cycle every 4: i^5 = i.",
+        "marks": 2,
+        "question": "Q1(c). Evaluate: (0, 1)^5.",
+        "solution": "(0,1) = i. i^2 = -1, i^4 = 1, so i^5 = i^4·i = i = (0,1). Boxed i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q1(c); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "i^11 = i^(8+3) = i^3 = -i: reduce the exponent mod 4.",
+        "marks": 2,
+        "question": "Q1(d). Evaluate: (0, 1)^11.",
+        "solution": "(0,1) = i. 11 = 4·2+3, so i^11 = (i^4)^2·i^3 = 1·(-i) = -i = (0,-1). Boxed -i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q1(d); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Addition is component-wise: real with real, imaginary with imaginary.",
+        "marks": 2,
+        "question": "Q2(a). If (x, y) = (2, 3) + (3, 2), find x and y.",
+        "solution": "(2+3, 3+2) = (5,5). Boxed x = 5, y = 5 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q2(a); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "(2,1)+(-2,-1) cancels exactly — a number plus its negative is (0,0).",
+        "marks": 2,
+        "question": "Q2(b). If (x, y) = (2, 1) + (-2, -1), find x and y.",
+        "solution": "(2-2, 1-1) = (0,0). Boxed x = 0, y = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q2(b); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Subtraction is component-wise too: (2-3, 3-2).",
+        "marks": 2,
+        "question": "Q2(c). If (x, y) = (2, 3) - (3, 2), find x and y.",
+        "solution": "(2-3, 3-2) = (-1,1). Boxed x = -1, y = 1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q2(c); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Read (2,3) = (1,1)+(x,y) as (x,y) = (2,3)-(1,1).",
+        "marks": 2,
+        "question": "Q2(d). If (2, 3) = (1, 1) + (x, y), find x and y.",
+        "solution": "(x,y) = (2-1, 3-1) = (1,2). Boxed x = 1, y = 2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q2(d); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Ordered-pair multiplication: (a,b)·(c,d) = (ac-bd, ad+bc) — i.e. (1+i)(2+3i).",
+        "marks": 3,
+        "question": "Q2(e). If (x, y) = (1, 1)·(2, 3), find x and y.",
+        "solution": "(1·2-1·3, 1·3+1·2) = (-1,5). Check: (1+i)(2+3i) = 2+3i+2i+3i² = -1+5i ✓. Boxed x = -1, y = 5 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q2(e); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Divide by multiplying top and bottom by the conjugate (3,-4): (1+i)(3-4i)/25.",
+        "marks": 3,
+        "question": "Q2(f). If (x, y) = (1, 1)/(3, 4), find x and y.",
+        "solution": "(1+i)/(3+4i) = (1+i)(3-4i)/((3+4i)(3-4i)) = (3-4i+3i+4)/25 = (7-i)/25. Boxed x = 7/25, y = -1/25 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q2(f); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "√-a = i√a for a > 0: convert each radical before adding.",
+        "marks": 3,
+        "question": "Q3(a). Simplify: √-9 + √-25 - √-36.",
+        "solution": "3i+5i-6i = 2i. Boxed 2i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q3(a); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "(3-2i)(2+3i): FOIL, remembering i² = -1 on the last term.",
+        "marks": 3,
+        "question": "Q3(b). Simplify: (3 - √-4)(2 + √-9).",
+        "solution": "(3-2i)(2+3i) = 6+9i-4i-6i² = 6+5i+6 = 12+5i. Boxed 12+5i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q3(b); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "√-16·√-1 is NOT √16: convert first (4i·i = -4). The product rule for radicals fails for negatives.",
+        "marks": 3,
+        "question": "Q3(c). Simplify: √-16 · √-1.",
+        "solution": "4i·i = 4i² = -4. Boxed -4 (matches the printed key; blindly writing √16 = 4 is the classic trap).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q3(c); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Reduce powers mod 4 first: i² = -1, i³ = -i, i⁴ = 1, i⁷ = -i.",
+        "marks": 3,
+        "question": "Q3(d). Simplify: 3i^2 + i^3 + 9i^4 - i^7.",
+        "solution": "3(-1)+(-i)+9(1)-(-i) = -3-i+9+i = 6. Boxed 6 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q3(d); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "1/i = -i, 1/i² = -1, 1/i³ = i, 1/i⁴ = 1: the reciprocals cycle too.",
+        "marks": 3,
+        "question": "Q3(e). Simplify: 1/i - 1/i^2 + 1/i^3 - 1/i^4.",
+        "solution": "(-i)-(-1)+(i)-(1) = -i+1+i-1 = 0. Boxed 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q3(e); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "All-plus version of (e): -i-1+i+1 = 0 as well.",
+        "marks": 3,
+        "question": "Q3(f). Simplify: 1/i + 1/i^2 + 1/i^3 + 1/i^4.",
+        "solution": "(-i)+(-1)+(i)+(1) = 0. Boxed 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q3(f); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "(1+i)² = 2i doubles the argument; squaring again negates: (1+i)⁴ = -4. Same for (1-i).",
+        "marks": 4,
+        "question": "Q4. Prove that (1 + i)^4 · (1 + 1/i)^4 = 16.",
+        "solution": "1+1/i = 1-i (since 1/i = -i). (1+i)² = 1+2i+i² = 2i, so (1+i)⁴ = (2i)² = -4. (1-i)² = 1-2i+i² = -2i, so (1-i)⁴ = (-2i)² = -4. Product: (-4)(-4) = 16. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q4; book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Multiply out the right side and equate real parts with real parts, imaginary with imaginary.",
+        "marks": 4,
+        "question": "Q5(a). Find x and y if x + iy = (2 - 3i)(3 - 2i).",
+        "solution": "(2-3i)(3-2i) = 6-4i-9i+6i² = 6-13i-6 = -13i = 0-13i. So x = 0, y = -13. Boxed x = 0, y = -13 (matches the printed key, book p320).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q5(a); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "Left side is (y+1)+(x-1)i: the real part is y+1, the imaginary part is x-1 — don't swap them.",
+        "marks": 4,
+        "question": "Q5(b). Find x and y if (x - 1)i + (y + 1) = (1 + i)(4 - 3i).",
+        "solution": "(1+i)(4-3i) = 4-3i+4i-3i² = 4+i+3 = 7+i. Left side = (y+1)+(x-1)i. Equating: y+1 = 7, x-1 = 1. Boxed x = 2, y = 6 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q5(b); book p319 = PDF p346 (vision read)"
+      },
+      {
+        "knowledgeNote": "A sum of conjugates kills the imaginary part: S + S̄ = 2Re(S), always real.",
+        "marks": 4,
+        "question": "Q6. Show that (3 + 2i)/(2 - 5i) + (3 - 2i)/(2 + 5i) is purely a real number.",
+        "solution": "Let S = (3+2i)/(2-5i). The second term is exactly S̄ (conjugate top and bottom). S+S̄ = 2Re(S), purely real. Explicitly: S = (3+2i)(2+5i)/29 = (6+15i+4i-10)/29 = (-4+19i)/29; S̄ = (-4-19i)/29; sum = -8/29, real. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.1 Q6; book p319 = PDF p346 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.11 BOOK Exercise 11.1 (book p319 = PDF p346 of the 2075 reprint; page-region vision reads incl. 200dpi+ zooms; every numeric answer key-checked against the printed Answers, book p320 = PDF p347).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.11 Book Ex 11.1 (Complex Basics) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-11-1-complex-basics",
+    "topicTitle": "Ch.11 Book Exercise 11.1 - complex basics (20 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-11-2-modulus-properties-sqrt.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Add: real+real, imag+imag: (2+1)+(5-1)i.",
+        "marks": 3,
+        "question": "Q1(a). If z = 2 + 5i and w = 1 - i, find z + w.",
+        "solution": "(2+1)+(5-1)i = 3+4i. Boxed 3+4i (matches the printed key, book p330).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(a); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "Subtract component-wise: (2-4)+(5+1)i.",
+        "marks": 3,
+        "question": "Q1(b). If z = 2 + 5i and w = 4 - i, find z - w.",
+        "solution": "(2-4)+(5-(-1))i = -2+6i. Boxed -2+6i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(b); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "FOIL (2+3i)(3-2i); the cross terms give +5i and i² gives +6.",
+        "marks": 3,
+        "question": "Q1(c). If z = 2 + 3i and w = 3 - 2i, find zw.",
+        "solution": "6-4i+9i-6i² = 6+5i+6 = 12+5i. Boxed 12+5i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(c); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "Multiply by the conjugate (4+3i)/25; the numerator collapses to 25i.",
+        "marks": 3,
+        "question": "Q1(d). If z = 3 + 4i and w = 4 - 3i, find z/w.",
+        "solution": "(3+4i)(4+3i)/25 = (12+9i+16i+12i²)/25 = 25i/25 = i. Boxed i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(d); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "i/(2+i): conjugate is (2-i); numerator i(2-i) = 1+2i.",
+        "marks": 3,
+        "question": "Q1(e). Find i/(2 + i).",
+        "solution": "i(2-i)/((2+i)(2-i)) = (2i+1)/5 = 1/5+2i/5. Boxed 1/5+2i/5 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(e); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "(1+i)² = 2i first; then (1-i)/(2i) = -(1+i)/2 via 1/i = -i.",
+        "marks": 3,
+        "question": "Q1(f). Find (1 - i)/(1 + i)^2.",
+        "solution": "(1+i)² = 2i. (1-i)/(2i) = (1-i)(-i)/2 = (-i-1)/2 = -1/2-i/2. Boxed -1/2-i/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(f); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "√-25 = 5i, √-16 = 4i: convert before dividing, then rationalise with (1+4i).",
+        "marks": 4,
+        "question": "Q1(g). Find (2 - √-25)/(1 - √-16).",
+        "solution": "(2-5i)/(1-4i) = (2-5i)(1+4i)/17 = (2+8i-5i+20)/17 = (22+3i)/17. Boxed 22/17+3i/17 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(g); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "(1+i)/(1-i) = i, so this is √i = (1+i)/√2 (first-quadrant root).",
+        "marks": 4,
+        "question": "Q1(h). Find √((1 + i)/(1 - i)).",
+        "solution": "(1+i)/(1-i) = (1+i)²/2 = 2i/2 = i. √i: x²-y² = 0, 2xy = 1, x²+y² = 1 → x = y = 1/√2. Boxed 1/√2+i/√2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q1(h); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "Conjugate first, then square: (2+3i)² + (3-2i)² with (2-3i)² = -5-12i.",
+        "marks": 4,
+        "question": "Q2. If z = 2 - 3i and w = 3 - 2i, show that z̄^2 + w̄^2 = 0.",
+        "solution": "z̄ = 2+3i, z̄² = 4+12i+9i² = -5+12i. w̄ = 3+2i, w̄² = 9+12i+4i² = 5+12i. Sum: -5+12i+5-12i = 0. ∎ (matches the printed key value 0).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q2; book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "|a+bi| = √(a²+b²): Pythagoras on the Argand point.",
+        "marks": 2,
+        "question": "Q3(a). Find |1 + 2i|.",
+        "solution": "√(1+4) = √5. Boxed √5 (matches the printed key, book p330).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q3(a); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "|1+√3i| = √(1+3) = 2.",
+        "marks": 2,
+        "question": "Q3(b). Find |1 + √3 i|.",
+        "solution": "√(1+3) = 2. Boxed 2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q3(b); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "|zw| = |z||w|: √5·√5 = 5 without multiplying out.",
+        "marks": 3,
+        "question": "Q3(c). Find |(1 + 2i)(2 + i)|.",
+        "solution": "|1+2i|·|2+i| = √5·√5 = 5. Boxed 5 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q3(c); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "|3+4i|·|3-4i| = 5·5 = 25.",
+        "marks": 3,
+        "question": "Q3(d). Find |(3 + 4i)(3 - 4i)|.",
+        "solution": "5·5 = 25. Boxed 25 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q3(d); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "|1/z| = 1/|z|: 1/|1+i| = 1/√2.",
+        "marks": 3,
+        "question": "Q3(e). Find |1/(1 + i)|.",
+        "solution": "1/√(1+1) = 1/√2. Boxed 1/√2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q3(e); book p328 = PDF p355 (vision read)"
+      },
+      {
+        "knowledgeNote": "Compute zw = -7-5i and z/w = (13+11i)/25 separately, then verify each identity numerically.",
+        "marks": 4,
+        "question": "Q4(a). If z = 1 + 2i and w = 2 - i, verify that (zw)-bar = z̄·w̄.",
+        "solution": "zw = (1+2i)(2-i) = 2-i+4i+2 = 4+3i, so (zw)-bar = 4-3i. z̄·w̄ = (1-2i)(2+i) = 2+i-4i+2 = 4-3i. Equal ✓.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q4(a); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "z/w = (1+2i)/(2-i) = 5i/5 = i; both sides give -i.",
+        "marks": 4,
+        "question": "Q4(b). If z = 1 + 2i and w = 2 - i, verify that (z/w)-bar = z̄/w̄.",
+        "solution": "z/w = (1+2i)(2+i)/5 = (2+i+4i-2)/5 = 5i/5 = i, so (z/w)-bar = -i. z̄/w̄ = (1-2i)/(2+i) = ((1-2i)(2-i))/5 = (2-i-4i-2)/5 = -5i/5 = -i. Equal ✓.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q4(b); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "|zw| with zw = 4+3i gives 5; |z||w| = √5·√5 = 5.",
+        "marks": 4,
+        "question": "Q4(c). If z = 1 + 2i and w = 2 - i, verify that |zw| = |z||w|.",
+        "solution": "|zw| = |4+3i| = 5. |z| = √5, |w| = √5, product 5. Equal ✓.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q4(c); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "|z+w| = |3+i| = √10 ≤ √5+√5 = 2√5: square both sides (10 ≤ 20).",
+        "marks": 4,
+        "question": "Q4(d). If z = 1 + 2i and w = 2 - i, verify that |z + w| ≤ |z| + |w|.",
+        "solution": "z+w = 3+i, |z+w| = √10 ≈ 3.16. |z|+|w| = 2√5 ≈ 4.47. √10 ≤ 2√5 ⟺ 10 ≤ 20 ✓.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q4(d); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "z·z̄ = |z|², so z·(z̄/|z|²) = 1.",
+        "marks": 4,
+        "question": "Q5. Prove that z̄/|z|^2 is the multiplicative inverse of z.",
+        "solution": "z·(z̄/|z|²) = (z·z̄)/|z|² = |z|²/|z|² = 1 (for z ≠ 0). So z̄/|z|² is the inverse of z. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q5; book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Take moduli of both sides: 5√(x²+y²) = 3√5.",
+        "marks": 4,
+        "question": "Q6(a). If (3 - 4i)(x + iy) = 3√5, show that 5x^2 + 5y^2 = 9.",
+        "solution": "|3-4i|·|x+iy| = |3√5|: 5√(x²+y²) = 3√5, so √(x²+y²) = 3/√5; squaring: x²+y² = 9/5, i.e. 5x²+5y² = 9. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q6(a); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "|x+iy| = |a-ib|/|a+ib| = 1 since numerator and denominator have equal modulus.",
+        "marks": 4,
+        "question": "Q6(b). If x + iy = (a - ib)/(a + ib), show that x^2 + y^2 = 1.",
+        "solution": "Take moduli: √(x²+y²) = √(a²+b²)/√(a²+b²) = 1. Squaring: x²+y² = 1. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q6(b); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same modulus trick: |1-ix| = |1+ix| = √(1+x²).",
+        "marks": 4,
+        "question": "Q6(c). If (1 - ix)/(1 + ix) = a - ib, prove that a^2 + b^2 = 1.",
+        "solution": "√(a²+b²) = |1-ix|/|1+ix| = √(1+x²)/√(1+x²) = 1. So a²+b² = 1. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q6(c); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "|x-iy|² = x²+y²; the fraction (1-i)/(1+i) = -i has modulus 1.",
+        "marks": 4,
+        "question": "Q6(d). If x - iy = √((1 - i)/(1 + i)), prove that x^2 + y^2 = 1.",
+        "solution": "x²+y² = |x-iy|² = |(1-i)/(1+i)| = |1-i|/|1+i| = √2/√2 = 1. ∎ (the square root only takes a modulus-1 number to a modulus-1 number).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q6(d); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "|z+w|² = (z+w)(z̄+w̄): expand and group z·w̄ + z̄·w = 2Re(z·w̄).",
+        "marks": 5,
+        "question": "Q7. If z and w are two complex numbers, prove that |z + w|^2 = |z|^2 + |w|^2 + 2Re(zw̄).",
+        "solution": "|z+w|² = (z+w)(z̄+w̄) = zz̄ + ww̄ + zw̄ + z̄w = |z|²+|w|²+(zw̄ + (zw̄)-bar) = |z|²+|w|²+2Re(zw̄). ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q7; book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "(3+i)² = 8+6i; invert: (8-6i)/100.",
+        "marks": 3,
+        "question": "Q8(a). Find the multiplicative inverse of (3 + i)^2.",
+        "solution": "(3+i)² = 9+6i+i² = 8+6i. Inverse: 1/(8+6i) = (8-6i)/100 = 2/25-3i/50. Check: (8+6i)(8-6i)/100 = 100/100 = 1 ✓ (matches the printed key, book p330).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q8(a); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Inverse of a quotient is the flipped quotient: (6+i)/(2-5i) = (7+32i)/29.",
+        "marks": 3,
+        "question": "Q8(b). Find the multiplicative inverse of (2 - 5i)/(6 + i).",
+        "solution": "(6+i)/(2-5i) = (6+i)(2+5i)/29 = (12+30i+2i+5i²)/29 = (7+32i)/29. Check: ((2-5i)/(6+i))·((6+i)/(2-5i)) = 1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q8(b); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "From Q7 with w → -w: |z-w|² = |z|²+|w|²-2Re(zw̄) ≥ (|z|-|w|)² since Re ≤ |·|.",
+        "marks": 5,
+        "question": "Q9. If z and w are two complex numbers, prove that |z - w| ≥ |z| - |w|.",
+        "solution": "|z-w|² = |z|²+|w|²-2Re(zw̄) ≥ |z|²+|w|²-2|zw̄| = |z|²+|w|²-2|z||w| = (|z|-|w|)². Taking square roots: |z-w| ≥ ||z|-|w|| ≥ |z|-|w|. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q9; book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "x²-y² = 5, 2xy = 12, x²+y² = 13: add to get 2x² = 18.",
+        "marks": 4,
+        "question": "Q10(a). Determine the square roots of 5 + 12i. (T.U. 2051)",
+        "solution": "Let √(5+12i) = x+iy: x²-y² = 5, 2xy = 12, x²+y² = |5+12i| = 13. Adding: 2x² = 18, x = ±3; then y = ±2 (same sign, since xy = 6 > 0). Boxed ±(3+2i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(a) (T.U. 2051); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Norm is still 13; signs: x²-y² = -5 gives x = ±2, and xy > 0 keeps signs together.",
+        "marks": 4,
+        "question": "Q10(b). Determine the square roots of -5 + 12i.",
+        "solution": "x²-y² = -5, 2xy = 12, x²+y² = 13 → 2x² = 8, x = ±2, y = ±3 (same sign). Boxed ±(2+3i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(b); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Norm 10; 2x² = 18 gives x = ±3, y = ±1.",
+        "marks": 4,
+        "question": "Q10(c). Determine the square roots of 8 + 6i.",
+        "solution": "x²-y² = 8, 2xy = 6, x²+y² = 10 → 2x² = 18, x = ±3, y = ±1 (same sign). Boxed ±(3+i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(c); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "xy = 3 > 0 so same signs; x = ±1, y = ±3.",
+        "marks": 4,
+        "question": "Q10(d). Determine the square roots of -8 + 6i.",
+        "solution": "x²-y² = -8, 2xy = 6, x²+y² = 10 → 2x² = 2, x = ±1, y = ±3 (same sign). Check (1+3i)² = 1+6i-9 = -8+6i ✓. Boxed ±(1+3i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(d); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Norm 25; 2x² = 32: x = ±4, y = ∓3 (xy < 0 splits signs).",
+        "marks": 4,
+        "question": "Q10(e). Determine the square roots of 7 - 24i.",
+        "solution": "x²-y² = 7, 2xy = -24, x²+y² = 25 → 2x² = 32, x = ±4, y = ∓3. Check (4-3i)² = 16-24i-9 = 7-24i ✓. Boxed ±(4-3i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(e); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Negate (e): roots negate too — ±(3+4i).",
+        "marks": 4,
+        "question": "Q10(f). Determine the square roots of -7 + 24i.",
+        "solution": "x²-y² = -7, 2xy = 24, x²+y² = 25 → 2x² = 18, x = ±3, y = ±4 (same sign). Check (3+4i)² = 9+24i-16 = -7+24i ✓. Boxed ±(3+4i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(f); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "√i: x = y = 1/√2 — the 45° roots.",
+        "marks": 4,
+        "question": "Q10(g). Determine the square roots of i.",
+        "solution": "x²-y² = 0, 2xy = 1, x²+y² = 1 → x = ±1/√2, y = ±1/√2 (same sign). Boxed ±(1+i)/√2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(g); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Norm 13; xy < 0 splits signs: x = ±5/√2, y = ∓1/√2.",
+        "marks": 4,
+        "question": "Q10(h). Determine the square roots of 12 - 5i.",
+        "solution": "x²-y² = 12, 2xy = -5, x²+y² = 13 → 2x² = 25, x = ±5/√2, y = ∓1/√2. Check ((5-i)/√2)² = (25-10i-1)/2 = 12-5i ✓. Boxed ±(5-i)/√2 (consistent with the key family; verified by substitution).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(h); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "Simplify the quotient first: (2-36i)/(2+3i) = -8-6i; then x = ±1, y = ∓3.",
+        "marks": 5,
+        "question": "Q10(i). Determine the square roots of (2 - 36i)/(2 + 3i).",
+        "solution": "(2-36i)(2-3i)/13 = (4-6i-72i+108i²)/13 = (-104-78i)/13 = -8-6i. Roots: x²-y² = -8, 2xy = -6, x²+y² = 10 → x = ±1, y = ∓3. Check (1-3i)² = 1-6i-9 = -8-6i ✓. Boxed ±(1-3i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(i); book p329 = PDF p356 (vision read)"
+      },
+      {
+        "knowledgeNote": "The quotient (5+12i)/(3-4i) = (-33+56i)/25 has norm 13/5; x = ±4/5, y = ±7/5.",
+        "marks": 5,
+        "question": "Q10(j). Determine the square roots of (5, 12)/(3, -4).",
+        "solution": "(5+12i)/(3-4i) = ((5+12i)(3+4i))/25 = (15+20i+36i-48)/25 = (-33+56i)/25. Roots of -33+56i: x²-y² = -33, 2xy = 56, norm 65 → 2x² = 32, x = ±4, y = ±7 (same sign); divide by 5. Check ((4+7i)/5)² = (16+56i-49)/25 = (-33+56i)/25 ✓. Boxed ±(4+7i)/5 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.2 Q10(j); book p329 = PDF p356 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.11 BOOK Exercise 11.2 (book pp328-329 = PDF pp355-356 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, book p330 = PDF p357).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.11 Book Ex 11.2 (Modulus, Properties, Square Roots) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-11-2-modulus-properties-sqrt",
+    "topicTitle": "Ch.11 Book Exercise 11.2 - modulus, properties, square roots (37 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-11-4-polar-demoivre.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "2+2i: r = 2√2, θ = 45° (first quadrant).",
+        "marks": 3,
+        "question": "Q1(a). Express 2 + 2i in polar form.",
+        "solution": "r = √(4+4) = 2√2; tanθ = 1 with x,y > 0, θ = 45°. Boxed 2√2(cos45°+i sin45°) (matches the printed key, book p346).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(a); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "√3+i: r = 2, θ = 30°.",
+        "marks": 3,
+        "question": "Q1(b). Express √3 + i in polar form.",
+        "solution": "r = √(3+1) = 2; tanθ = 1/√3, first quadrant, θ = 30°. Boxed 2(cos30°+i sin30°) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(b); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "2i lies on the positive imaginary axis: r = 2, θ = 90°.",
+        "marks": 3,
+        "question": "Q1(c). Express 2i in polar form.",
+        "solution": "r = 2, argument 90°. Boxed 2(cos90°+i sin90°) (matches the printed key; the scan renders the question as '2' but the key's 2(cos90°+i sin90°) = 2i fixes the reading).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(c); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "i-√3: x < 0, y > 0 → second quadrant, θ = 150°.",
+        "marks": 3,
+        "question": "Q1(d). Express i - √3 in polar form.",
+        "solution": "r = √(1+3) = 2; tanθ = -1/√3 with second-quadrant position, θ = 150°. Boxed 2(cos150°+i sin150°) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(d); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "1-i: fourth quadrant, θ = 315° (or -45°).",
+        "marks": 3,
+        "question": "Q1(e). Express 1 - i in polar form.",
+        "solution": "r = √2; tanθ = -1, fourth quadrant, θ = 315°. Boxed √2(cos315°+i sin315°) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(e); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "(1+i)/(1-i) = i first: r = 1, θ = 90°.",
+        "marks": 3,
+        "question": "Q1(f). Express (1 + i)/(1 - i) in polar form.",
+        "solution": "(1+i)/(1-i) = (1+i)²/2 = i. r = 1, θ = 90°. Boxed 1·(cos90°+i sin90°) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(f); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "i/(1+i) = (1+i)/2: r = 1/√2, θ = 45°.",
+        "marks": 3,
+        "question": "Q1(g). Express i/(1 + i) in polar form.",
+        "solution": "i(1-i)/2 = (1+i)/2. r = √(1/4+1/4) = 1/√2; tanθ = 1, first quadrant, θ = 45°. Boxed (1/√2)(cos45°+i sin45°) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(g); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "(1-i)/(1+i) = -i; √(-i) = (1-i)/√2: r = 1, θ = 315°.",
+        "marks": 4,
+        "question": "Q1(h). Express √((1 - i)/(1 + i)) in polar form.",
+        "solution": "(1-i)/(1+i) = (1-i)²/2 = -i. √(-i) = (1-i)/√2 (first-quadrant Convention: x²-y² = 0, 2xy = -1 → (1-i)/√2). r = 1, θ = 315°. Boxed 1·(cos315°+i sin315°) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q1(h); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "r(cosθ+i sinθ) = (r cosθ)+i(r sinθ): 3cos60° = 3/2, 3sin60° = 3√3/2.",
+        "marks": 2,
+        "question": "Q2(a). Express 3(cos60° + i sin60°) in x + iy form.",
+        "solution": "3(1/2)+i·3(√3/2) = 3/2+i3√3/2. Boxed 3/2+i3√3/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q2(a); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "cos120° = -1/2, sin120° = √3/2.",
+        "marks": 2,
+        "question": "Q2(b). Express 3(cos120° + i sin120°) in x + iy form.",
+        "solution": "3(-1/2)+i·3(√3/2) = -3/2+i3√3/2. Boxed -3/2+i3√3/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q2(b); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "cos150° = -√3/2, sin150° = 1/2.",
+        "marks": 2,
+        "question": "Q2(c). Express 2(cos150° + i sin150°) in x + iy form.",
+        "solution": "2(-√3/2)+i·2(1/2) = -√3+i. Boxed -√3+i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q2(c); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "2 multiplies the whole bracket: 2cos(-45°)+i·2sin(-45°) = √2-i√2.",
+        "marks": 2,
+        "question": "Q2(d). Express 2(cos(-45°) + i sin(-45°)) in x + iy form.",
+        "solution": "2(1/√2)+i·2(-1/√2) = √2-i√2. Boxed √2-i√2 (matches the printed key; the key confirms the 2 covers the sine term too).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q2(d); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "Multiply: arguments add, 32°+13° = 45°.",
+        "marks": 3,
+        "question": "Q3(a). Simplify: (cos32° + i sin32°)(cos13° + i sin13°).",
+        "solution": "cos45°+i sin45° = (1+i)/√2. Boxed (1+i)/√2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q3(a); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "sin40°+i cos40° = cos50°+i sin50° first; then 50°+40° = 90°.",
+        "marks": 3,
+        "question": "Q3(b). Simplify: (sin40° + i cos40°)(cos40° + i sin40°).",
+        "solution": "First factor = cos(90°-40°)+i sin(90°-40°) = cos50°+i sin50°. Product: cos90°+i sin90° = i. Boxed i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q3(b); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "Divide: arguments subtract, 80°-20° = 60°.",
+        "marks": 3,
+        "question": "Q3(c). Simplify: (cos80° + i sin80°)/(cos20° + i sin20°).",
+        "solution": "cos60°+i sin60° = 1/2+i√3/2. Boxed 1/2+i√3/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q3(c); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "Numerator: 3θ-θ = 2θ; denominator: (cosθ+i sinθ)² = cos2θ+i sin2θ; quotient 1.",
+        "marks": 4,
+        "question": "Q3(d). Simplify: (cos3θ + i sin3θ)(cosθ - i sinθ)/(cosθ + i sinθ)^2.",
+        "solution": "Numerator = cos(3θ-θ)+i sin(3θ-θ) = cos2θ+i sin2θ. Denominator = cos2θ+i sin2θ. Quotient = 1. Boxed 1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q3(d); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "2⁶ = 64; 6·15° = 90°: 64i.",
+        "marks": 3,
+        "question": "Q4(a). Apply De Moivre: [2(cos15° + i sin15°)]^6.",
+        "solution": "2⁶(cos90°+i sin90°) = 64i. Boxed 64i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(a); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "3³ = 27; 3·120° = 360°: 27·1.",
+        "marks": 3,
+        "question": "Q4(b). Apply De Moivre: [3(cos120° + i sin120°)]^3.",
+        "solution": "27(cos360°+i sin360°) = 27. Boxed 27 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(b); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "5·18° = 90°: i.",
+        "marks": 3,
+        "question": "Q4(c). Apply De Moivre: (cos18° + i sin18°)^5.",
+        "solution": "cos90°+i sin90° = i. Boxed i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(c); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "40·9° = 360°: 1.",
+        "marks": 3,
+        "question": "Q4(d). Apply De Moivre: (cos9° + i sin9°)^40.",
+        "solution": "cos360°+i sin360° = 1. Boxed 1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(d); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "(1+i) = √2e^{i45°}; 2^10 = 1024; 20·45° = 900° = 180° mod 360°: -1024.",
+        "marks": 4,
+        "question": "Q4(e). Apply De Moivre: (1 + i)^20.",
+        "solution": "(√2)^20 = 2^10 = 1024. Argument 20·45° = 900° ≡ 180°. 1024(cos180°+i sin180°) = -1024. Boxed -2^10 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(e); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "(-1+i) = √2e^{i135°}; 2^7 = 128; 14·135° = 1890° ≡ 90°: 128i.",
+        "marks": 4,
+        "question": "Q4(f). Apply De Moivre: (-1 + i)^14.",
+        "solution": "(√2)^14 = 2^7 = 128. Argument 14·135° = 1890° = 5·360°+90° ≡ 90°. 128i. Boxed 2^7·i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(f); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "cos30°+i sin30° to the 7th: 210°+... 7·30° = 210°? No — recompute: base angle is 60°? (1/2+i√3/2) = cos60°+i sin60°; 7·60° = 420° ≡ 60°.",
+        "marks": 4,
+        "question": "Q4(g). Apply De Moivre: (1/2 + i√3/2)^7.",
+        "solution": "Base = cos60°+i sin60°. 7·60° = 420° = 360°+60°. Result cos60°+i sin60° = 1/2+i√3/2. Boxed 1/2+i√3/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(g); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "Direct: i² = -1 (De Moivre with r = 1, θ = 90°, n = 2: cos180°+i sin180°).",
+        "marks": 2,
+        "question": "Q4(h). Apply De Moivre: i^2. [Print note: the book labels this part '(i)'; with answers a–h it is the 8th part.]",
+        "solution": "i = cos90°+i sin90°; squared: cos180°+i sin180° = -1. Boxed -1 (matches the printed key 4h).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q4(h); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "√(4+4√3i): norm 8; 2x² = 12: x = ±√6, y = ±√2.",
+        "marks": 4,
+        "question": "Q5(a). Find the square roots of 4 + 4√3 i (De Moivre or algebraic).",
+        "solution": "x²-y² = 4, 2xy = 4√3, x²+y² = 8 → 2x² = 12, x = ±√6, y = ±√2 (same sign). Check (√6+i√2)² = 6+2i√12-2 = 4+4√3i ✓. Boxed ±(√6+i√2) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q5(a); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "Norm 2; 2x² = 1: x = ±1/√2, y = ±√(3/2), opposite signs.",
+        "marks": 4,
+        "question": "Q5(b). Find the square roots of -1 + √3 i.",
+        "solution": "x²-y² = -1, 2xy = √3, x²+y² = 2 → 2x² = 1, x = ±1/√2; y = ±√3/√2 (opposite signs since xy > 0... 2xy = √3 > 0, same sign). Check ((1+i√3)/√2)² = (1+2i√3-3)/2 = -1+i√3 ✓. Boxed ±(1+i√3)/√2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q5(b); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "Norm 4; x = ±1, y = ∓√3.",
+        "marks": 4,
+        "question": "Q5(c). Find the square roots of -2 - 2√3 i.",
+        "solution": "x²-y² = -2, 2xy = -2√3, x²+y² = 4 → 2x² = 2, x = ±1, y = ∓√3. Check (-1+i√3)² = 1-2i√3-3 = -2-2i√3 ✓. Boxed ±(-1+i√3) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q5(c); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "√(2i) = ±(1+i): norm 2, x = y = ±1.",
+        "marks": 4,
+        "question": "Q5(d). Find the square roots of 2i.",
+        "solution": "x²-y² = 0, 2xy = 2, x²+y² = 2 → x = ±1, y = ±1 (same sign). Check (1+i)² = 2i ✓. Boxed ±(1+i) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q5(d); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "√(-i) = ±(1-i)/√2.",
+        "marks": 4,
+        "question": "Q5(e). Find the square roots of -i.",
+        "solution": "x²-y² = 0, 2xy = -1, x²+y² = 1 → x = ±1/√2, y = ∓1/√2. Check ((1-i)/√2)² = (1-2i-1)/2 = -i ✓. Boxed ±(1-i)/√2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q5(e); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "-1 = cos180°+i sin180°; trisect: (180°+k·360°)/3 = 60°, 180°, 300°.",
+        "marks": 4,
+        "question": "Q6. Determine the cube roots of -1.",
+        "solution": "Angles 60°, 180°, 300°: (1±i√3)/2 and -1. Check: ((1+i√3)/2)³ = ? (cos60°+i sin60°)³ = cos180°+i sin180° = -1 ✓. Boxed -1, (1±i√3)/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q6; book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "z⁴ = 1 = e^{i·k·360°}: angles 0°, 90°, 180°, 270°.",
+        "marks": 3,
+        "question": "Q7(a). Solve z^4 = 1.",
+        "solution": "z = cos(k·90°)+i sin(k·90°), k = 0,1,2,3: 1, i, -1, -i. Boxed ±1, ±i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q7(a); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "z⁶ = 1: angles k·60° — the six 6th roots.",
+        "marks": 3,
+        "question": "Q7(b). Solve z^6 = 1.",
+        "solution": "k·60°, k = 0..5: ±1, (1±i√3)/2, (-1±i√3)/2. Boxed as shown (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q7(b); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "z⁴ = -1 = e^{i(180°+k·360°)}: angles 45°, 135°, 225°, 315°.",
+        "marks": 4,
+        "question": "Q7(c). Solve z^4 + 1 = 0.",
+        "solution": "Angles (180°+k·360°)/4 = 45°+k·90°: ±(1+i)/√2, ±(1-i)/√2. Check ((1+i)/√2)⁴ = ((2i)/2)² = i² = -1 ✓. Boxed as shown (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q7(c); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "8i = 8e^{i90°}; cube roots: 2e^{i(30°+k·120°)}.",
+        "marks": 4,
+        "question": "Q7(d). Solve z^3 = 8i.",
+        "solution": "r = 2; angles (90°+k·360°)/3 = 30°, 150°, 270°: 2(cos30°+i sin30°) = √3+i; 2(cos150°+i sin150°) = -√3+i; 2(cos270°+i sin270°) = -2i. Boxed √3+i, -√3+i, -2i (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q7(d); book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "-1/2+i√3/2 = e^{i120°}; fourth roots: e^{i(30°+k·90°)}.",
+        "marks": 4,
+        "question": "Q8. Find the fourth roots of -1/2 + i√3/2.",
+        "solution": "Angles (120°+k·360°)/4 = 30°+k·90°: cos30°+i sin30° = √3/2+i/2; 120°: -1/2+i√3/2; 210°: -√3/2-i/2; 300°: 1/2-i√3/2. Boxed ±(√3/2+i/2), ±(1/2-i√3/2) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q8; book p345 = PDF p372 (vision read)"
+      },
+      {
+        "knowledgeNote": "z̄ = r(cosθ-i sinθ); Arg runs clockwise: 2π-θ.",
+        "marks": 4,
+        "question": "Q9. If z̄ is the conjugate of z, prove that Arg(z̄) = 2π - Arg(z).",
+        "solution": "z = r(cosθ+i sinθ) with θ = Arg(z). z̄ = r(cosθ-i sinθ) = r(cos(2π-θ)+i sin(2π-θ)). So Arg(z̄) = 2π-θ = 2π-Arg(z). ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q9; book p346 = PDF p373 (vision read)"
+      },
+      {
+        "knowledgeNote": "zⁿ = cos nθ+i sin nθ; 1/zⁿ = cos nθ-i sin nθ; subtract: 2i sin nθ.",
+        "marks": 4,
+        "question": "Q10. If z = cosθ + i sinθ, prove that z^n - 1/z^n = 2i sin(nθ).",
+        "solution": "zⁿ = cos nθ+i sin nθ (De Moivre). 1/zⁿ = z̄ⁿ = cos nθ-i sin nθ (since |z| = 1). Subtracting: 2i sin nθ. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Ex 11.4 Q10; book p346 = PDF p373 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.11 BOOK Exercise 11.4 (book pp345-346 = PDF pp372-373 of the 2075 reprint; page-region vision reads incl. 220dpi zooms; every numeric answer key-checked against the printed Answers, book p346).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.11 Book Ex 11.4 (Polar Form, De Moivre) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-11-4-polar-demoivre",
+    "topicTitle": "Ch.11 Book Exercise 11.4 - polar form, De Moivre (37 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-11-additional-complex.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "(1+z)/(1-z) with z = (2+i)/(3-i) = (1+i)/2: gives 1+2i.",
+        "marks": 4,
+        "question": "Q1(i). If z = (2 + i)/(3 - i), find the real and imaginary parts of (1 + z)/(1 - z).",
+        "solution": "z = (2+i)(3+i)/10 = (6+2i+3i-1)/10 = (5+5i)/10 = (1+i)/2. (1+z)/(1-z) = ((3+i)/2)/((1-i)/2) = (3+i)/(1-i) = (3+i)(1+i)/2 = (3+3i+i-1)/2 = (2+4i)/2 = 1+2i. Boxed Re = 1, Im = 2 (matches the printed key, book p348).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q1(i); book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "1/(a+bi) = (a-bi)/(a²+b²): z+1/z telescopes to (3-i)/2.",
+        "marks": 4,
+        "question": "Q1(ii). If z = (2 + i)/(3 - i), find z + 1/z.",
+        "solution": "z = (1+i)/2 (above). 1/z = 2/(1+i) = 1-i. z+1/z = (1+i)/2+(1-i) = (3-i)/2. Boxed 3/2-i/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q1(ii); book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "1/(3-2i) = (3+2i)/13; 1/(4+3i) = (4-3i)/25.",
+        "marks": 3,
+        "question": "Q2. If z1 = 3 - 2i and z2 = 4 + 3i, find (i) 1/z1, (ii) 1/z2, (iii) z1/z2 and z2/z1.",
+        "solution": "(i) (3+2i)/13. (ii) (4-3i)/25. (iii) z1/z2 = (3-2i)(4-3i)/25 = (12-9i-8i-6)/25 = (6-17i)/25; z2/z1 = (4+3i)(3+2i)/13 = (12+8i+9i-6)/13 = (6+17i)/13. (All match the printed key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q2; book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "(2+i)² = 3+4i; invert to (3-4i)/25.",
+        "marks": 3,
+        "question": "Q3(i). Find the multiplicative inverse of (2 + i)^2.",
+        "solution": "(2+i)² = 4+4i+i² = 3+4i. Inverse: (3-4i)/25. Check (3+4i)(3-4i)/25 = 1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q3(i); book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "(4-5i)/(3+4i) = ((4-5i)(3-4i))/25 = (-8-31i)/25.",
+        "marks": 3,
+        "question": "Q3(ii). Find the multiplicative inverse of (3 + 4i)/(4 - 5i).",
+        "solution": "Flip: (4-5i)/(3+4i) = ((4-5i)(3-4i))/25 = (12-16i-15i-20)/25 = (-8-31i)/25. Check: product with original is 1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q3(ii); book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "|a+ib|² = a²+b²: conjugate pairs kill the cross terms.",
+        "marks": 4,
+        "question": "Q4. If a + ib = 1/(1 + i) + 1/(1 - i), prove that a^2 + b^2 = 1.",
+        "solution": "1/(1+i)+1/(1-i) = ((1-i)+(1+i))/2 = 1. So a+ib = 1, a = 1, b = 0, a²+b² = 1. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q4; book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "Take conjugates: √(x-iy) = a-ib follows from uniqueness of the square root pair.",
+        "marks": 4,
+        "question": "Q5. If √(x + iy) = a + ib, prove that √(x - iy) = a - ib.",
+        "solution": "Squaring: x+iy = (a+ib)² = (a²-b²)+2abi. Conjugating: x-iy = (a²-b²)-2abi = (a-ib)². Taking square roots (same branch): √(x-iy) = a-ib. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q5; book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "Conjugate of a product is the product of conjugates — apply twice.",
+        "marks": 4,
+        "question": "Q6. If z = a + ib and w = c + id, prove that (zw̄)-bar = z̄·w.",
+        "solution": "zw̄ = (a+ib)(c-id) = (ac+bd)+i(bc-ad). Conjugating: (ac+bd)-i(bc-ad). z̄·w = (a-ib)(c+id) = (ac+bd)+i(ad-bc) = (ac+bd)-i(bc-ad). Equal ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q6; book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "|z|² = zz̄ ≥ 0: the cross term 2Re(zw̄) is bounded by ±2|z||w|.",
+        "marks": 5,
+        "question": "Q7. If z and w are complex numbers, prove that ||z| - |w|| ≤ |z + w| ≤ |z| + |w|.",
+        "solution": "|z+w|² = |z|²+|w|²+2Re(zw̄) (Ex 11.2 Q7). Since -|zw̄| ≤ Re(zw̄) ≤ |zw̄| = |z||w|: |z|²+|w|²-2|z||w| ≤ |z+w|² ≤ |z|²+|w|²+2|z||w|, i.e. (|z|-|w|)² ≤ |z+w|² ≤ (|z|+|w|)². Square roots give the result. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q7; book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "|z-w|² = |z|²+|w|²-2Re(zw̄) ≥ (|z|-|w|)².",
+        "marks": 5,
+        "question": "Q8. If z and w are complex numbers, prove that |z - w| ≥ ||z| - |w||.",
+        "solution": "As in Ex 11.2 Q9: |z-w|² = |z|²+|w|²-2Re(zw̄) ≥ |z|²+|w|²-2|z||w| = (|z|-|w|)². Hence |z-w| ≥ ||z|-|w||. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q8; book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "(cos75°+i sin75°)(cos15°-i sin15°) = cos60°+i sin60°.",
+        "marks": 4,
+        "question": "Q9(i). Simplify using De Moivre: (cos40° + i sin40°)(cos50° + i sin50°). [Print note: the question line reads 40°/50°; the key's 9(ii) answers the 75°/15° twin below.]",
+        "solution": "cos90°+i sin90° = i. (The key's listed 9(ii) = 1/2+i√3/2 is the value of the 75°/15° twin in Q9(ii).)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q9(i); book p347 = PDF p374, key p348 = PDF p375 (vision read)"
+      },
+      {
+        "knowledgeNote": "Angles subtract: 75°-15° = 60°.",
+        "marks": 4,
+        "question": "Q9(ii). Simplify using De Moivre: (cos75° + i sin75°)(cos15° - i sin15°).",
+        "solution": "cos(75°-15°)+i sin(75°-15°) = cos60°+i sin60° = 1/2+i√3/2. Boxed 1/2+i√3/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q9(ii); book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "(cosθ+i sinθ)⁴/(cosθ-i sinθ)⁵ = e^{i4θ}·e^{i5θ} = e^{i9θ}.",
+        "marks": 4,
+        "question": "Q9(iii). Simplify using De Moivre: (cosθ + i sinθ)^4/(cosθ - i sinθ)^5.",
+        "solution": "Numerator: cos4θ+i sin4θ. 1/(cosθ-i sinθ) = cosθ+i sinθ, so 1/(cosθ-i sinθ)⁵ = cos5θ+i sin5θ. Product: cos9θ+i sin9θ. Boxed cos9θ+i sin9θ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q9(iii); book p347 = PDF p374 (vision read)"
+      },
+      {
+        "knowledgeNote": "Write z = x+iy, expand (x+iy)²+2(x+iy)+2 = 0, split real/imaginary.",
+        "marks": 5,
+        "question": "Q10. If ω is one of the complex cube roots of unity, prove that (i) ω^3 = 1 and (ii) 1 + ω + ω^2 = 0.",
+        "solution": "ω = (-1+i√3)/2. (i) ω² = (1-2i√3-3)/4 = (-1-i√3)/2; ω³ = ω²·ω = (1+3)/4 = 1 ✓. (ii) 1+ω+ω² = 1+(-1+i√3)/2+(-1-i√3)/2 = 0 ✓. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q10; book p348 = PDF p375 (vision read)"
+      },
+      {
+        "knowledgeNote": "Discriminant (2i)²-4·2·(-1-4i) = 28+32i = (6+... ) — cleaner: complete the square or factor with the known root.",
+        "marks": 5,
+        "question": "Q11. Prove that each complex cube root of unity is the reciprocal of the other.",
+        "solution": "Roots: 1, ω = (-1+i√3)/2, ω² = (-1-i√3)/2. 1/1 = 1; 1/ω = ω² and 1/ω² = ω (since ω·ω² = ω³ = 1). So each root's reciprocal is another cube root of unity. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q11; book p348 = PDF p375 (vision read)"
+      },
+      {
+        "knowledgeNote": "Equate: x-1 = -3, y+2 = 1 from (-3+i).",
+        "marks": 3,
+        "question": "Q12. Express a complex number in polar form. State De Moivre's theorem. Using De Moivre find the cube roots of unity. If ω = (-1 + √3 i)/2, prove that ω^2 = (-1 - √3 i)/2.",
+        "solution": "Polar: z = r(cosθ+i sinθ), r = √(x²+y²), tanθ = y/x. De Moivre: (cosθ+i sinθ)ⁿ = cos nθ+i sin nθ. Unity = cos(k·360°)+i sin(k·360°); cube roots at 0°, 120°, 240°: 1, (-1+i√3)/2, (-1-i√3)/2. Squaring ω: ((-1+i√3)/2)² = (1-2i√3-3)/4 = (-1-i√3)/2. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q12; book p348 = PDF p375 (vision read)"
+      },
+      {
+        "knowledgeNote": "Simplify the fraction first: it equals -8-6i; roots ±(1-3i).",
+        "marks": 5,
+        "question": "Q13. What is a complex number? Express it in polar form. Find the square root of (2 - 36i)/(2 + 3i). (T.U. 2053)",
+        "solution": "A complex number is an ordered pair (x,y) written x+iy with i² = -1; polar form x+iy = r(cosθ+i sinθ), r = √(x²+y²), tanθ = y/x. Fraction: (2-36i)(2-3i)/13 = (4-6i-72i+108i²)/13 = (-104-78i)/13 = -8-6i. Roots: x²-y² = -8, 2xy = -6, norm 10, so x = ±1, y = ∓3. Check (1-3i)² = 1-6i-9 = -8-6i ✓. Boxed ±(1-3i) = ±(3i-1) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q13; book p348 = PDF p375 (vision read)"
+      },
+      {
+        "knowledgeNote": "x+iy = (1+2i)(2-i)/5 = (4+3i)/5: read off x, y.",
+        "marks": 4,
+        "question": "Q14. Prove that (i) ((-1 + √-3)/2)^6 + ((-1 - √-3)/2)^9 = 2 and (ii) ((-1 + √-3)/2)^5 + ((-1 - √-3)/2)^5 = -1.",
+        "solution": "Let ω = (-1+i√3)/2, so ω̄ = ω², ω³ = 1, ω+ω² = -1. (i) ω⁶+ω̄⁹ = (ω³)²+(ω³)³ = 1+1 = 2 ✓. (ii) ω⁵+ω̄⁵ = ω²+ω = -1 ✓. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q14; book p348 = PDF p375 (vision read)"
+      },
+      {
+        "knowledgeNote": "Set z = x+iy; the equation forces (x²+y²)² = ... take moduli: |x+iy| = |...|.",
+        "marks": 5,
+        "question": "Q15. Show that (a + ib)/(c + id) is real if ad = bc. [The text prints the full working on book p348.]",
+        "solution": "(a+ib)/(c+id) = (a+ib)(c-id)/(c²+d²) = ((ac+bd)+i(bc-ad))/(c²+d²). Real iff the imaginary part vanishes iff bc-ad = 0 iff ad = bc. ∎ (as worked in the text, book p348 = PDF p375).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q15 (worked in text); book p348 = PDF p375 (vision read)"
+      },
+      {
+        "knowledgeNote": "Square both sides of |z-w| ≤ |z|+|w| and use Re(zw̄) ≤ |zw̄|.",
+        "marks": 5,
+        "question": "Q16. If z and w are two complex numbers, prove that (a) |z - w| ≤ |z| + |w| and (b) |z + w| ≥ |z| - |w|.",
+        "solution": "(a) |z-w|² = |z|²+|w|²-2Re(zw̄) ≤ |z|²+|w|²+2|z||w| = (|z|+|w|)². (b) |z+w|² = |z|²+|w|²+2Re(zw̄) ≥ |z|²+|w|²-2|z||w| = (|z|-|w|)². Square roots give both. ∎ (The text proves (a) in full on book p349; (b) is the same argument with w → -w.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q16 (partly worked in text); book p349 = PDF p376 (vision read)"
+      },
+      {
+        "knowledgeNote": "ω = e^{2πi/3}: 1+ω+ω² = 0 and ω³ = 1 give the two values 2 and -1.",
+        "marks": 4,
+        "question": "Q17. Prove that ((-1 + √-3)/2)^n + ((-1 - √-3)/2)^n = 2 if n is a multiple of 3, and -1 if n is any other integer.",
+        "solution": "ωⁿ+ω̄ⁿ with ω³ = 1. If n = 3k: 1+1 = 2. If n = 3k+1: ω+ω̄ = ω+ω² = -1. If n = 3k+2: ω²+ω̄² = ω²+ω = -1. ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.11 Additional Q17 (worked in text); book p349 = PDF p376 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.11 BOOK Additional Questions (book pp347-349 = PDF pp374-376 of the 2075 reprint; page-region vision reads; numeric answers key-checked against the printed Answers, book p348; Q15-Q17 partly worked in the text itself).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.11 Book Additional Questions (Complex Numbers) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-11-additional-complex",
+    "topicTitle": "Ch.11 Book Additional Questions - complex numbers (21 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
   "practice/solutions/class-11/mathematics/algebra/ex-2-1-ordered-pairs-cartesian-products.json": {
     "examSource": "Sukunda Textbook",
     "questions": [
