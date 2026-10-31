@@ -39,10 +39,11 @@ test.describe("E2E smoke", () => {
     await expect(page.getByText(/veer/i).first()).toBeVisible();
   });
 
-  test("owner: signs in, notes and past papers open, and Veer opens", async ({ page }) => {
+  test("owner: signs in, notes and past papers open, Veer opens, and mobile topic tabs work", async ({ page }) => {
     // In-body skip, not file-level: a file-level test.skip(cond) marks the
     // WHOLE file skipped (guest test included) whenever the env vars are
     // absent, which broke the documented bare-local-run behaviour.
+    test.setTimeout(150_000);
     test.skip(!OWNER_EMAIL || !OWNER_PASSWORD, "SMOKE_OWNER_EMAIL/PASSWORD not set");
     await signIn(page, OWNER_EMAIL, OWNER_PASSWORD);
 
@@ -60,6 +61,27 @@ test.describe("E2E smoke", () => {
     await page.getByRole("button", { name: "Open Veer" }).click();
     await expect(page.getByLabel("Veer chat")).toBeVisible();
     await expect(page.getByText(/quick answers here/i)).toBeVisible();
+
+    // The same approved session now checks the mobile topic learning flow.
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/class-11-notes/physics/chapters/kinematics/topics/projectile-motion-and-its-applications");
+
+    await expect(page.getByRole("tab", { name: "Notes", exact: true })).toHaveAttribute("aria-selected", "true", { timeout: 30_000 });
+    await expect(page.getByRole("heading", { name: /Understand .* in four passes/ })).toBeVisible({ timeout: 30_000 });
+    await expect(page.locator("#topic-notes")).toHaveCount(1);
+
+    await page.getByRole("tab", { name: "MCQs", exact: true }).click();
+    await expect(page.getByRole("heading", { name: /Topic MCQs/ })).toBeVisible();
+    await page.getByRole("tab", { name: "Step-by-step Numericals", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "Step-by-step numericals" })).toBeVisible();
+    await page.getByRole("tab", { name: "Entrance Question Bank", exact: true }).click();
+    await expect(page.getByRole("heading", { name: /Entrance Question Bank/ })).toBeVisible();
+    await page.getByRole("tab", { name: "Quick 3 Self-check", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "Quick 3-question self-check" })).toBeVisible();
+
+    await page.getByRole("tab", { name: "Notes", exact: true }).click();
+    await expect(page.getByRole("heading", { name: /Understand .* in four passes/ })).toBeVisible();
+    await expect(page.locator("#topic-notes")).toHaveCount(1);
   });
 
   test("member: Plus-gated surface is visibly locked and /plans works", async ({ page }) => {
@@ -98,28 +120,4 @@ test.describe("E2E smoke", () => {
     await expect(page.locator('main[data-error-variant="404"]')).toBeVisible();
   });
 
-  test("owner: topic notes and practice tabs work in one mobile learning flow", async ({ page }) => {
-    test.setTimeout(120_000);
-    test.skip(!OWNER_EMAIL || !OWNER_PASSWORD, "SMOKE_OWNER_EMAIL/PASSWORD not set");
-    await page.setViewportSize({ width: 390, height: 844 });
-    await signIn(page, OWNER_EMAIL, OWNER_PASSWORD);
-    await page.goto("/class-11-notes/physics/chapters/kinematics/topics/projectile-motion-and-its-applications");
-
-    await expect(page.getByRole("tab", { name: "Notes", exact: true })).toHaveAttribute("aria-selected", "true", { timeout: 30_000 });
-    await expect(page.getByRole("heading", { name: /Understand .* in four passes/ })).toBeVisible({ timeout: 30_000 });
-    await expect(page.locator("#topic-notes")).toHaveCount(1);
-
-    await page.getByRole("tab", { name: "MCQs", exact: true }).click();
-    await expect(page.getByRole("heading", { name: /Topic MCQs/ })).toBeVisible();
-    await page.getByRole("tab", { name: "Step-by-step Numericals", exact: true }).click();
-    await expect(page.getByRole("heading", { name: "Step-by-step numericals" })).toBeVisible();
-    await page.getByRole("tab", { name: "Entrance Question Bank", exact: true }).click();
-    await expect(page.getByRole("heading", { name: /Entrance Question Bank/ })).toBeVisible();
-    await page.getByRole("tab", { name: "Quick 3 Self-check", exact: true }).click();
-    await expect(page.getByRole("heading", { name: "Quick 3-question self-check" })).toBeVisible();
-
-    await page.getByRole("tab", { name: "Notes", exact: true }).click();
-    await expect(page.getByRole("heading", { name: /Understand .* in four passes/ })).toBeVisible();
-    await expect(page.locator("#topic-notes")).toHaveCount(1);
-  });
 });
