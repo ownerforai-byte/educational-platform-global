@@ -89,7 +89,10 @@ const runners = {
       ? "frontend typecheck + content tests (full gate)"
       : "frontend typecheck + affected tests",
     run() {
-      const t = run("npx", ["tsc", "--noEmit"], { cwd: "frontend", stdio: "inherit" });
+      const t = (() => {
+        spawnSync(process.execPath, ["scripts/bump-deploy-version.mjs"], { cwd: "frontend", stdio: "inherit" });
+        return run("npx", ["tsc", "--noEmit"], { cwd: "frontend", stdio: "inherit" });
+      })()
       if (t.status !== 0) return t.status ?? 1;
       // Scoped edits run ONLY the tests their changes affect (import scan +
       // name convention — see scripts/test-affected.mjs). The full gate keeps

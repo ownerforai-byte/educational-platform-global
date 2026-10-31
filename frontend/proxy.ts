@@ -17,8 +17,8 @@ const RATE_LIMIT_MAX = 120;
 // never does, which is why this only ever showed up in CI). Those requests are
 // chosen by page markup, not by the student, so they get their own budget:
 // sharing the interactive cap made ordinary browsing land on plain-text
-// "Too many requests" for pages nobody asked for. The header is client-supplied,
-// so prefetches are capped rather than exempt.
+// "Too many requests" for pages nobody asked for. Speculative requests are
+// capped rather than exempt because a client can forge their shape.
 const RATE_LIMIT_MAX_PREFETCH = 600;
 const RATE_LIMIT_MAX_KEYS = 10_000;
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -95,7 +95,7 @@ function setSecurityHeaders(response: NextResponse) {
       `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} ${SUPABASE_ORIGIN} wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
       // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
       // Supabase Storage, Google Drive previews, and the video players.
-      "frame-src 'self' " + SUPABASE_ORIGIN + " https://drive.google.com https://www.youtube.com https://player.vimeo.com",
+      "frame-src 'self' " + SUPABASE_ORIGIN + " https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",
@@ -104,12 +104,18 @@ function setSecurityHeaders(response: NextResponse) {
   );
 }
 
-function isPrefetchRequest(request: NextRequest) {
-  return (
-    request.headers.get("next-router-prefetch") === "1" ||
-    request.headers.get("purpose") === "prefetch" ||
-    request.headers.get("sec-purpose") === "prefetch"
-  );
+function isSpeculativeRequest(request: NextRequest) {
+  const { pathname, searchParams } = request.nextUrl;
+  // Next strips its own `RSC` / `Next-Router-Prefetch` request headers before
+  // middleware runs (verified against a production `next start`), so the URL
+  // shape is the only reliable signal that a request is a speculative
+  // client-side payload rather than a page the student asked for.
+  if (searchParams.has("_rsc")) return true;
+  if (pathname.startsWith("/_next/data/")) return true;
+  if (pathname.endsWith(".rsc") || pathname.includes("/.segments/")) return true;
+  // Document-level prefetches do announce themselves, and that header survives.
+  const purpose = request.headers.get("sec-purpose") ?? request.headers.get("purpose");
+  return purpose === "prefetch";
 }
 
 export function proxy(request: NextRequest) {
@@ -122,7 +128,7 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
-  const prefetch = isPrefetchRequest(request);
+  const prefetch = isSpeculativeRequest(request);
   const key = `${getClientKey(request)}|${prefetch ? "prefetch" : "visit"}`;
 
   if (isRateLimited(key, prefetch ? RATE_LIMIT_MAX_PREFETCH : RATE_LIMIT_MAX)) {

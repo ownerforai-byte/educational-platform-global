@@ -97,36 +97,9 @@ export const WEBNOTEE_DOCS: WebnoteeDoc[] = [
     description: "Summation of series, A.M., G.M., H.M. relations, and infinite geometric series.",
     source: "WebNotee.com",
   },
-  {
-    id: "webnotee-math-ex5.1",
-    title: "Matrices — Operations & Properties",
-    subject: "Mathematics",
-    unit: "Matrices & Determinants",
-    exercise: "Matrices",
-    driveUrl: "https://drive.google.com/file/d/1example-matrices-ops/preview",
-    description: "Matrix addition, multiplication, transpose, and algebraic properties.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-math-ex5.2",
-    title: "Determinants — Properties & Expansion",
-    subject: "Mathematics",
-    unit: "Matrices & Determinants",
-    exercise: "Determinants",
-    driveUrl: "https://drive.google.com/file/d/1example-det-props/preview",
-    description: "Cofactor expansion, determinant theorems, and singular vs non-singular matrices.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-math-ex5.3",
-    title: "Inverse Matrices — 2×2 & 3×3 Matrices",
-    subject: "Mathematics",
-    unit: "Matrices & Determinants",
-    exercise: "Inverses",
-    driveUrl: "https://drive.google.com/file/d/1example-inverse-mat/preview",
-    description: "Finding inverses using adjoint method and solving simultaneous linear equations.",
-    source: "WebNotee.com",
-  },
+  
+  
+  
   {
     id: "webnotee-math-ex6.1",
     title: "Exercise 6.1 — Quadratic Equations (Roots & Discriminant)",
@@ -187,36 +160,9 @@ export const WEBNOTEE_DOCS: WebnoteeDoc[] = [
     description: "Equations of straight lines, slope-intercept, double-intercept, normal form, concurrency.",
     source: "WebNotee.com",
   },
-  {
-    id: "webnotee-math-ex10.1",
-    title: "Inverse Trigonometric Functions",
-    subject: "Mathematics",
-    unit: "Trigonometry",
-    exercise: "Inverse Trig",
-    driveUrl: "https://drive.google.com/file/d/1example-trig-inverses/preview",
-    description: "Domain, range, principal value branches, and fundamental inverse trigonometric identities.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-math-ex10.2",
-    title: "Trigonometric Equations",
-    subject: "Mathematics",
-    unit: "Trigonometry",
-    exercise: "Trig Eq",
-    driveUrl: "https://drive.google.com/file/d/1example-trig-eq/preview",
-    description: "General solutions for circular trigonometric equations.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-math-ex11.1",
-    title: "Vectors — Basic Operations & Scalar Product",
-    subject: "Mathematics",
-    unit: "Vectors",
-    exercise: "Vectors",
-    driveUrl: "https://drive.google.com/file/d/1example-vectors-basic/preview",
-    description: "Vector components, magnitude, scalar dot product, and vector angle calculations.",
-    source: "WebNotee.com",
-  },
+  
+  
+  
   {
     id: "webnotee-math-ex15.1",
     title: "Exercise 15.1 — Function & Limits Review",
@@ -355,188 +301,6 @@ export const WEBNOTEE_DOCS: WebnoteeDoc[] = [
     exercise: "Ex 20.1",
     driveUrl: "https://drive.google.com/file/d/1FQDiw_IgwErLheuBYmUTTsTMKkAzRhSZ/preview",
     description: "Trapezoidal rule and Simpson's 1/3 rule numerical approximation.",
-    source: "WebNotee.com",
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────
-  // ── Physics (Curriculum Solutions & Unit Guides) ─────────────────────────
-  // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: "webnotee-physics-mechanics",
-    title: "Mechanics — Complete Unit Solution & Question Bank",
-    subject: "Physics",
-    unit: "Mechanics",
-    driveUrl: "https://drive.google.com/file/d/1example-phy-mechanics/preview",
-    description: "Complete worked solutions for Physical Quantities, Vectors, Kinematics, Dynamics, Work-Energy, Circular Motion, Gravitation, and Elasticity.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-physics-thermodynamics",
-    title: "Heat & Thermodynamics — Solutions & Derivations",
-    subject: "Physics",
-    unit: "Heat & Thermodynamics",
-    driveUrl: "https://drive.google.com/file/d/1example-phy-thermo/preview",
-    description: "Heat and temperature, thermal expansion, calorimetry, heat transfer, and kinetic theory of ideal gases.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-physics-optics",
-    title: "Waves & Geometrical Optics — Solutions Guide",
-    subject: "Physics",
-    unit: "Waves & Optics",
-    driveUrl: "https://drive.google.com/file/d/1example-phy-optics/preview",
-    description: "Reflection at curved mirrors, refraction at plane surfaces, prisms, thin lens formula, and dispersion.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-physics-electricity",
-    title: "Electricity & Magnetism — Model Solutions",
-    subject: "Physics",
-    unit: "Electricity & Magnetism",
-    driveUrl: "https://drive.google.com/file/d/1example-phy-elect/preview",
-    description: "Electrostatics, Coulomb's law, electric field, potential difference, capacitors, and direct-current circuits.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-physics-modern",
-    title: "Modern Physics — Nuclear Physics & Solids",
-    subject: "Physics",
-    unit: "Modern Physics",
-    driveUrl: "https://drive.google.com/file/d/1example-phy-modern/preview",
-    description: "Nuclear physics fundamentals, semiconductor solids, band theory, and contemporary trends in physics.",
-    source: "WebNotee.com",
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────
-  // ── Chemistry (Curriculum Solutions & Unit Guides) ───────────────────────
-  // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: "webnotee-chem-physical",
-    title: "Physical Chemistry — Stoichiometry & Gas Laws Solutions",
-    subject: "Chemistry",
-    unit: "Physical Chemistry",
-    driveUrl: "https://drive.google.com/file/d/1example-chem-physical/preview",
-    description: "Mole concept, chemical arithmetic, stoichiometry, ideal gas equations, and deviations of real gases.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-chem-atomic-bonding",
-    title: "Atomic Structure & Chemical Bonding Guide",
-    subject: "Chemistry",
-    unit: "Physical Chemistry",
-    driveUrl: "https://drive.google.com/file/d/1example-chem-bonding/preview",
-    description: "Bohr's atomic theory, quantum numbers, electronic configuration, Lewis structures, and VSEPR shapes.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-chem-inorganic",
-    title: "Inorganic Chemistry — Non-Metals & Heavy Metals",
-    subject: "Chemistry",
-    unit: "Inorganic Chemistry",
-    driveUrl: "https://drive.google.com/file/d/1example-chem-inorganic/preview",
-    description: "Chemistry of hydrogen, halogens, nitrogen, phosphorus, sulfur, and extraction principles of metals.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-chem-organic",
-    title: "Organic Chemistry — Fundamental Principles & Hydrocarbons",
-    subject: "Chemistry",
-    unit: "Organic Chemistry",
-    driveUrl: "https://drive.google.com/file/d/1example-chem-organic/preview",
-    description: "IUPAC nomenclature, isomerism, reaction mechanisms, alkanes, alkenes, alkynes, and aromatic compounds.",
-    source: "WebNotee.com",
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────
-  // ── Biology (Curriculum Solutions & Unit Guides) ─────────────────────────
-  // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: "webnotee-bio-cell",
-    title: "Cell Biology & Biomolecules Master Guide",
-    subject: "Biology",
-    unit: "Cell Biology",
-    driveUrl: "https://drive.google.com/file/d/1example-bio-cell/preview",
-    description: "Ultra-structure of plant and animal cells, cell organelles, biomolecules, enzyme kinetics, and cell division.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-bio-microbiology",
-    title: "Introductory Microbiology — Monera & Viruses",
-    subject: "Biology",
-    unit: "Microbiology",
-    driveUrl: "https://drive.google.com/file/d/1example-bio-micro/preview",
-    description: "Bacterial structure, nutrition, staining techniques, economic importance, and viral replication.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-bio-botany",
-    title: "Floral Diversity & Cryptogams — Botany Solutions",
-    subject: "Biology",
-    unit: "Botany",
-    driveUrl: "https://drive.google.com/file/d/1example-bio-botany/preview",
-    description: "Life cycles of algae, fungi, bryophytes, pteridophytes, and gymnosperms.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-bio-zoology",
-    title: "Faunal Diversity & Anatomy — Zoology Solutions",
-    subject: "Biology",
-    unit: "Zoology",
-    driveUrl: "https://drive.google.com/file/d/1example-bio-zoology/preview",
-    description: "Systematic classification of non-chordates and chordates, evolutionary trends, and frog anatomy.",
-    source: "WebNotee.com",
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────
-  // ── English (Curriculum Guides & Model Writing) ──────────────────────────
-  // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: "webnotee-eng-grammar",
-    title: "Class 11 English — Grammar & Language Development Guide",
-    subject: "English",
-    unit: "Grammar",
-    driveUrl: "https://drive.google.com/file/d/1example-eng-grammar/preview",
-    description: "Transformation of sentences, concord, voice, reported speech, modal auxiliaries, and prepositions.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-eng-literature",
-    title: "Class 11 English — Literature Walkthrough & Model Answers",
-    subject: "English",
-    unit: "Literature",
-    driveUrl: "https://drive.google.com/file/d/1example-eng-literature/preview",
-    description: "Summary and comprehensive questions and answers for poems, short stories, essays, and one-act plays.",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-eng-writing",
-    title: "Class 11 English — Advanced Writing & Composition",
-    subject: "English",
-    unit: "Writing",
-    driveUrl: "https://drive.google.com/file/d/1example-eng-writing/preview",
-    description: "Essay outlines, formal and informal letters, press releases, report writing, and review techniques.",
-    source: "WebNotee.com",
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────
-  // ── Nepali (Curriculum Guides & Literature Solutions) ────────────────────
-  // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: "webnotee-nepali-grammar",
-    title: "कक्षा ११ नेपाली — भाषा तथा व्याकरण निर्देशिका",
-    subject: "Nepali",
-    unit: "व्याकरण",
-    driveUrl: "https://drive.google.com/file/d/1example-nep-grammar/preview",
-    description: "वर्णविन्यास, शब्दवर्ग, पदसङ्गति, काल, पक्ष, भाव, वाच्य, वाक्य संश्लेषण र विश्लेषणका नियम तथा अभ्यास।",
-    source: "WebNotee.com",
-  },
-  {
-    id: "webnotee-nepali-literature",
-    title: "कक्षा ११ नेपाली — साहित्य अध्ययन तथा अभ्यास प्रश्नोत्तर",
-    subject: "Nepali",
-    unit: "साहित्य",
-    driveUrl: "https://drive.google.com/file/d/1example-nep-literature/preview",
-    description: "पाठ्यपुस्तकका कविता, कथा, निबन्ध र नाटकका मूलभाव, व्याख्या र परीक्षा-उपयोगी सम्पूर्ण प्रश्नोत्तर।",
     source: "WebNotee.com",
   },
 ];
