@@ -76601,6 +76601,291 @@
     "unitSlug": "algebra",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/algebra/ex-10-2-row-equivalent-systems.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Elimination first: multiply to align one variable, add to kill it, back-substitute; the row operations mirror exactly these steps.",
+        "marks": 4,
+        "question": "Q1(a). Solve by both addition method and row-equivalent matrices: 5x - 2y = -2; 2x + 5y = -24.",
+        "solution": "Addition: 5×(first)+2×(second): 25x-10y+4x+10y = -10-48, so 29x = -58, x = -2. In 5x-2y = -2: -10-2y = -2, y = -4. Row-equivalent: [5 -2 : -2; 2 5 : -24] → R1↔R2 → R2→R2-(5/2)R1 → R2→(-2/29)R2 → R1→R1+R2 gives [1 0 : -2; 0 1 : -4]. Boxed (-2,-4). Verify: 5(-2)-2(-4) = -10+8 = -2 ✓; 2(-2)+5(-4) = -4-20 = -24 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q1(a); book p298 = PDF p325 (vision read)"
+      },
+      {
+        "knowledgeNote": "From x - y = 2 read x = 2+y and substitute, or eliminate directly; both give the same single step.",
+        "marks": 4,
+        "question": "Q1(b). Solve by both addition method and row-equivalent matrices: x - y = 2; 2x + 3y = 9.",
+        "solution": "Addition: 2×(first)-(second): 2x-2y-2x-3y = 4-9, so -5y = -5, y = 1; then x = 2+1 = 3. Row-equivalent: [1 -1 : 2; 2 3 : 9] → R2→R2-2R1 = [1 -1 : 2; 0 5 : 5] → R2→R2/5 → R1→R1+R2 gives [1 0 : 3; 0 1 : 1]. Boxed (3,1). Verify: 3-1 = 2 ✓; 6+3 = 9 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q1(b); book p298 = PDF p325 (vision read)"
+      },
+      {
+        "knowledgeNote": "Kill x first from two pairs, leaving a 2×2 in y,z; solve it, then back-substitute up the chain.",
+        "marks": 5,
+        "question": "Q1(c). Solve by both addition method and row-equivalent matrices: x + y - 2z = 7; 2x - 3y - 2z = 0; x - 2y - 3z = 3.",
+        "solution": "Addition: 2×(first)-(second): 5y-2z = 14. (first)-(third): 3y+z = 4, so z = 4-3y; then 5y-2(4-3y) = 14 gives 11y = 22, y = 2, z = -2, x = 7-2-4 = 1. Row-equivalent: reduce [1 1 -2 : 7; 2 -3 -2 : 0; 1 -2 -3 : 3] by R2→R2-2R1, R3→R3-R1, then R3→R3-(3/5)R2, scale and back-eliminate to [I : 1; 2; -2]. Boxed (1,2,-2). Verify in second: 2-6+4 = 0 ✓; third: 1-4+6 = 3 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q1(c); book p298 = PDF p325 (vision read)"
+      },
+      {
+        "knowledgeNote": "2×2 row-reduction: get a leading 1, kill below it, scale the second row, kill above it.",
+        "marks": 3,
+        "question": "Q2(a). Solve by row-equivalent matrices: 8x - 3y = -31; 2x + 6y = 26.",
+        "solution": "[8 -3 : -31; 2 6 : 26] → R1↔R2 → R2→R2-4R1 = [2 6 : 26; 0 -27 : -135] → R2→R2/(-27) = [2 6 : 26; 0 1 : 5] → R1→R1-6R2, R1→R1/2 gives [1 0 : -2; 0 1 : 5]. Boxed (-2,5). Verify: 8(-2)-3(5) = -16-15 = -31 ✓; 2(-2)+6(5) = -4+30 = 26 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(a); book p298 = PDF p325 (vision read)"
+      },
+      {
+        "knowledgeNote": "Fractions are fine mid-way: the (-1/3) survives because 3×(-1/3)-3×(-4) = -1+12 = 11.",
+        "marks": 3,
+        "question": "Q2(b). Solve by row-equivalent matrices: 3x - 3y = 11; 9x - 2y = 5.",
+        "solution": "[3 -3 : 11; 9 -2 : 5] → R1→R1/3 → R2→R2-9R1 = [1 -1 : 11/3; 0 7 : -28] → R2→R2/7 → R1→R1+R2 gives [1 0 : -1/3; 0 1 : -4]. Boxed (-1/3,-4). Verify: 3(-1/3)-3(-4) = -1+12 = 11 ✓; 9(-1/3)-2(-4) = -3+8 = 5 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(b); book p298 = PDF p325 (vision read)"
+      },
+      {
+        "knowledgeNote": "Rewrite x = 2y+3 as x-2y = 3 first so the augmented matrix has constant right sides.",
+        "marks": 3,
+        "question": "Q2(c). Solve by row-equivalent matrices: x = 2y + 3; 3x - 5y = 8.",
+        "solution": "Rewrite as x-2y = 3; 3x-5y = 8. [1 -2 : 3; 3 -5 : 8] → R2→R2-3R1 = [1 -2 : 3; 0 1 : -1] → R1→R1+2R2 gives [1 0 : 1; 0 1 : -1]. Boxed (1,-1). Verify: 1 = 2(-1)+3 ✓; 3(1)-5(-1) = 8 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(c); book p298 = PDF p325 (vision read)"
+      },
+      {
+        "knowledgeNote": "Determinant 3·3-(-2)·5 = 19 ≠ 0, so a unique solution; row ops divide by 19 once.",
+        "marks": 3,
+        "question": "Q2(d). Solve by row-equivalent matrices: 3x - 2y = 8; 5x + 3y = 7.",
+        "solution": "[3 -2 : 8; 5 3 : 7] → R1→R1/3 → R2→R2-5R1 = [1 -2/3 : 8/3; 0 19/3 : -19/3] → R2→(3/19)R2 → R1→R1+(2/3)R2 gives [1 0 : 2; 0 1 : -1]. Boxed (2,-1). Verify: 6+2 = 8 ✓; 10-3 = 7 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(d); book p298 = PDF p325 (vision read)"
+      },
+      {
+        "knowledgeNote": "Determinant 5·2-(-3)·4 = 22; expect halves from -2/22 and 33/22.",
+        "marks": 3,
+        "question": "Q2(e). Solve by row-equivalent matrices: 5x - 3y = -2; 4x + 2y = 5.",
+        "solution": "[5 -3 : -2; 4 2 : 5] → R1→R1/5 → R2→R2-4R1 = [1 -3/5 : -2/5; 0 22/5 : 33/5] → R2→(5/22)R2 → R1→R1+(3/5)R2 gives [1 0 : 1/2; 0 1 : 3/2]. Boxed (1/2,3/2). Verify: 5/2-9/2 = -2 ✓; 2+3 = 5 ✓ (matches the printed key, book p299).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(e); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "6x-4y = 0 gives y = 3x/2; with x+y = 5 the solution must be (2,3).",
+        "marks": 3,
+        "question": "Q2(f). Solve by row-equivalent matrices: 6x - 4y = 0; x + y - 5 = 0.",
+        "solution": "Rewrite second as x+y = 5. [6 -4 : 0; 1 1 : 5] → R1↔R2 → R2→R2-6R1 = [1 1 : 5; 0 -10 : -30] → R2→R2/(-10) → R1→R1-R2 gives [1 0 : 2; 0 1 : 3]. Boxed (2,3). Verify: 12-12 = 0 ✓; 2+3-5 = 0 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(f); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Subtracting eliminates x immediately: (2x+3y)-(2·(x+y)) = 12-10.",
+        "marks": 3,
+        "question": "Q2(g). Solve by row-equivalent matrices: x + y = 5; 2x + 3y = 12.",
+        "solution": "[1 1 : 5; 2 3 : 12] → R2→R2-2R1 = [1 1 : 5; 0 1 : 2] → R1→R1-R2 gives [1 0 : 3; 0 1 : 2]. Boxed (3,2). Verify: 3+2 = 5 ✓; 6+6 = 12 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(g); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Adding kills y: 7x = 28, so x = 4 with no fractions at any step.",
+        "marks": 3,
+        "question": "Q2(h). Solve by row-equivalent matrices: 5x - 3y = 20; 2x + 3y = 8.",
+        "solution": "[5 -3 : 20; 2 3 : 8] → R2→R2+(3/5)R1 is messy; cleaner: R1→R1+R2 = [7 0 : 28; 2 3 : 8] → R1→R1/7 → R2→R2-2R1 = [1 0 : 4; 0 3 : 0] → R2→R2/3 gives [1 0 : 4; 0 1 : 0]. Boxed (4,0). Verify: 20-0 = 20 ✓; 8+0 = 8 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(h); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Scale row 1 by 1/2 first to get the leading 1; the pivot row then clears x below.",
+        "marks": 3,
+        "question": "Q2(i). Solve by row-equivalent matrices: 2x + 12y = 16; 3x + 10y = 8.",
+        "solution": "[2 12 : 16; 3 10 : 8] → R1→R1/2 → R2→R2-3R1 = [1 6 : 8; 0 -8 : -16] → R2→R2/(-8) → R1→R1-6R2 gives [1 0 : -4; 0 1 : 2]. Boxed (-4,2). Verify: -8+24 = 16 ✓; -12+20 = 8 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(i); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "The -x in row 2 is a ready pivot after swapping; one swap avoids all fractions.",
+        "marks": 3,
+        "question": "Q2(j). Solve by row-equivalent matrices: 3x - 2y = -8; -x + 4y = 6.",
+        "solution": "[3 -2 : -8; -1 4 : 6] → R1↔R2 with sign: R1→-R1 = [1 -4 : -6; 3 -2 : -8] → R2→R2-3R1 = [1 -4 : -6; 0 10 : 10] → R2→R2/10 → R1→R1+4R2 gives [1 0 : -2; 0 1 : 1]. Boxed (-2,1). Verify: -6-2 = -8 ✓; 2+4 = 6 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q2(j); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "3×3 plan: column 1 → ones and zeros, column 2 → ones and zeros, scale column 3, back-eliminate.",
+        "marks": 5,
+        "question": "Q3(a). Use row-equivalent matrices to solve: x - y + 2z = 0; x - 2y + 3z = -1; 2x - 2y + z = -3.",
+        "solution": "[1 -1 2 : 0; 1 -2 3 : -1; 2 -2 1 : -3] → R2→R2-R1, R3→R3-2R1 = [1 -1 2 : 0; 0 -1 1 : -1; 0 0 -3 : -3] → R2→-R2, R3→R3/(-3) = [1 -1 2 : 0; 0 1 -1 : 1; 0 0 1 : 1] → R2→R2+R3, R1→R1-2R3, R1→R1+R2 gives [I : 0; 2; 1]. Boxed (0,2,1). Verify in second: 0-4+3 = -1 ✓; third: 0-4+1 = -3 ✓ (matches the printed key, book p299).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(a); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "T.U. 2049: after two eliminations the z-pivot is -9, giving z = -2 cleanly.",
+        "marks": 5,
+        "question": "Q3(b). Use row-equivalent matrices to solve: x + 2y - 3z = 9; 2x - y + 2z = -8; 3x - y - 4z = 3. (T.U. 2049)",
+        "solution": "[1 2 -3 : 9; 2 -1 2 : -8; 3 -1 -4 : 3] → R2→R2-2R1, R3→R3-3R1 = [1 2 -3 : 9; 0 -5 8 : -26; 0 -7 5 : -24] → R2→R2/(-5), then R3→R3+7R2, scale R3, back-eliminate to [I : -1; 2; -2]. Boxed (-1,2,-2). Verify in second: -2-2-4 = -8 ✓; third: -3-2+8 = 3 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(b) (T.U. 2049); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "T.U. 2051: the coefficient matrix is Vandermonde-like; successive differences expose z = 3 first.",
+        "marks": 5,
+        "question": "Q3(c). Use row-equivalent matrices to solve: x + y + z = 1; x + 2y + 3z = 4; x + 3y + 7z = 13. (T.U. 2051)",
+        "solution": "R2→R2-R1: y+2z = 3. R3→R3-R1: 2y+6z = 12, i.e. y+3z = 6. Subtracting: z = 3; then y = 3-6 = -3; x = 1-(-3)-3 = 1. Row-equivalent: same steps on [1 1 1 : 1; 1 2 3 : 4; 1 3 7 : 13] reach [I : 1; -3; 3]. Boxed (1,-3,3). Verify in third: 1-9+21 = 13 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(c) (T.U. 2051); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Missing variables are zero coefficients: write 3x+0y-5z = -7 so no column is skipped.",
+        "marks": 5,
+        "question": "Q3(d). Use row-equivalent matrices to solve: 3x - 5z = -7; 3x + 5y = 3; 3z - 3y = 2.",
+        "solution": "Augmented [3 0 -5 : -7; 3 5 0 : 3; 0 -3 3 : 2] → R2→R2-R1 = [3 0 -5 : -7; 0 5 5 : 10; 0 -3 3 : 2] → R2→R2/5: y+z = 2; with -3y+3z = 2: substituting y = 2-z gives -3(2-z)+3z = 2, 6z = 8, z = 4/3, y = 2/3; then 3x = -7+20/3 = -1/3, x = -1/9. Boxed (-1/9,2/3,4/3). Verify in third: 4-2 = 2 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(d); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Reorder as -5x+9y+0z = 3; x+0y+z = 1; 0x+2y+z = 2, then eliminate x with R2 → 5R2+R1.",
+        "marks": 5,
+        "question": "Q3(e). Use row-equivalent matrices to solve: 9y - 5x = 3; x + z = 1; z + 2y = 2.",
+        "solution": "From x+z = 1, x = 1-z; from z+2y = 2, z = 2-2y, so x = 2y-1. In -5x+9y = 3: -5(2y-1)+9y = 3 gives -y+5 = 3, y = 2; then z = -2, x = 3. Row ops on [-5 9 0 : 3; 1 0 1 : 1; 0 2 1 : 2] reach [I : 3; 2; -2]. Boxed (3,2,-2). Verify: 18-15 = 3 ✓; 3-2 = 1 ✓; -2+4 = 2 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(e); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Row 2 has z = 0, so 3x+9y = 18 gives x = 6-3y first; feed it into the other two.",
+        "marks": 5,
+        "question": "Q3(f). Use row-equivalent matrices to solve: x + 4y + 3z = 6; 3x + 9y = 18; -5x - 6y + 2z = -5.",
+        "solution": "From row 2: x+3y = 6, x = 6-3y. Row 1: 6-3y+4y+3z = 6, so y+3z = 0, y = -3z. Row 3: -5(6-3y)-6y+2z = -5 gives -30+9y+2z = -5, 9y+2z = 25; with y = -3z: -27z+2z = 25, z = -1, y = 3, x = -3. Boxed (-3,3,-1). Verify in row 1: -3+12-3 = 6 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(f); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Adding the first two rows kills y and z at once: 2x = 4.",
+        "marks": 5,
+        "question": "Q3(g). Use row-equivalent matrices to solve: x - y + z = -3; x + y + z = 1; 3x - 4y - z = 1.",
+        "solution": "Adding first+second gives 2x+2z = -2, i.e. x+z = -1. Subtracting first from second: 2y = 4, y = 2. Then x+z = -1 and 3x-z = 1+4y = 9, so 3x-z = 9; with z = -1-x: 3x+1+x = 9, 4x = 8, x = 2, z = -3. Boxed (2,2,-3). Verify in third: 6-8+3 = 1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(g); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Rows 2 and 3 are multiples of 5 and 10: divide them first to get x+2z = 4 and y-2z = 1.",
+        "marks": 5,
+        "question": "Q3(h). Use row-equivalent matrices to solve: x - y - z = -2; 5x + 10z = 20; 10y - 20z = 10.",
+        "solution": "Row 2 ÷ 5: x+2z = 4. Row 3 ÷ 10: y-2z = 1, y = 1+2z. Row 1: x-y-z = -2 gives (4-2z)-(1+2z)-z = -2, 3-5z = -2, z = 1; then x = 2, y = 3. Boxed (2,3,1). Verify: 2-3-1 = -2 ✓; 10+10 = 20 ✓; 30-20 = 10 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(h); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "First two rows involve only y,z: subtract to get y = 4 immediately, then z = -1.",
+        "marks": 5,
+        "question": "Q3(i). Use row-equivalent matrices to solve: 2y + 6z = 2; 3y + 6z = 6; 2x + 4y + 6z = 22.",
+        "solution": "(second)-(first): y = 4. Then 8+6z = 2, z = -1. Third: 2x+16-6 = 22, 2x = 12, x = 6. Boxed (6,4,-1). Verify in third: 12+16-6 = 22 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(i); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      },
+      {
+        "knowledgeNote": "Row 3 gives z = 4y-7; eliminate z from the first two, then solve the 2×2 in x,y.",
+        "marks": 5,
+        "question": "Q3(j). Use row-equivalent matrices to solve: x + 4y + z = 18; 3x + 3y - 2z = 2; -4y + z = -7.",
+        "solution": "z = 4y-7. Row 1: x+4y+4y-7 = 18, x+8y = 25. Row 2: 3x+3y-2(4y-7) = 2, 3x-5y = -12. From first: x = 25-8y; then 3(25-8y)-5y = -12 gives 75-29y = -12, y = 3; x = 1; z = 5. Boxed (1,3,5). Verify in row 2: 3+9-10 = 2 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.2 Q3(j); book p298 = PDF p325 (vision read; answer p299 = PDF p326)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.10 BOOK Exercise 10.2 (book p298 = PDF p325 of the 2075 reprint; page-region vision reads; every answer key-checked against the printed Answers, p299 = PDF p326).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.10 Book Ex 10.2 (Row-Equivalent Systems) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-10-2-row-equivalent-systems",
+    "topicTitle": "Ch.10 Book Exercise 10.2 - row-equivalent systems (23 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-10-3-matrix-cramer-systems.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Cramer's rule 2×2: D = -3, Dx = -9, Dy = -3; one determinant per variable.",
+        "marks": 4,
+        "question": "Q1(a). Apply matrix method or Cramer's rule: 2x - y = 5; x - 2y = 1.",
+        "solution": "A = [2 -1; 1 -2], C = [5; 1]. D = 2(-2)-(-1)(1) = -3. Dx = 5(-2)-(-1)(1) = -9, Dy = 2(1)-5(1) = -3. x = Dx/D = 3, y = Dy/D = 1. Matrix check: A^-1 = (-1/3)[-2 1; -1 2], X = A^-1 C = [3; 1]. Boxed (3,1). Verify: 6-1 = 5 ✓; 3-2 = 1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(a); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "D = 2(-2)-5(5) = -29; the large pivot still divides evenly.",
+        "marks": 4,
+        "question": "Q1(b). Apply matrix method or Cramer's rule: 2x + 5y = 17; 5x - 2y = -1.",
+        "solution": "D = 2(-2)-5(5) = -29. Dx = 17(-2)-5(-1) = -29, Dy = 2(-1)-17(5) = -87. x = -29/-29 = 1, y = -87/-29 = 3. Boxed (1,3). Verify: 2+15 = 17 ✓; 5-6 = -1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(b); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "D = 3(-7)-4(5) = -41; Dx = (-2)(-7)-4(24) = -82.",
+        "marks": 4,
+        "question": "Q1(c). Apply matrix method or Cramer's rule: 3x + 4y = -2; 5x - 7y = 24.",
+        "solution": "D = -21-20 = -41. Dx = (-2)(-7)-4(24) = 14-96 = -82, so x = 2. Dy = 3(24)-(-2)(5) = 82, so y = 82/-41 = -2. Boxed (2,-2). Verify: 6-8 = -2 ✓; 10+14 = 24 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(c); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "D = (-2)(-7)-4(3) = 2; small determinant, halves in the answer.",
+        "marks": 4,
+        "question": "Q1(d). Apply matrix method or Cramer's rule: -2x + 4y = 3; 3x - 7y = 1.",
+        "solution": "D = 14-12 = 2. Dx = 3(-7)-4(1) = -25, x = -25/2. Dy = (-2)(1)-3(3) = -11, y = -11/2. Boxed (-25/2,-11/2). Verify: -2(-25/2)+4(-11/2) = 25-22 = 3 ✓; 3(-25/2)-7(-11/2) = (-75+77)/2 = 1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(d); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "D = 5(2)-(-4)(7) = 38; Dx = (-3)(2)-(-4)(49) = 190.",
+        "marks": 4,
+        "question": "Q1(e). Apply matrix method or Cramer's rule: 5x - 4y = -3; 7x + 2y = 49.",
+        "solution": "D = 10+28 = 38. Dx = -6+196 = 190, x = 5. Dy = 5(49)-(-3)(7) = 245+21 = 266, y = 7. Boxed (5,7). Verify: 25-28 = -3 ✓; 35+14 = 49 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(e); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "Subtracting kills x: 2y = 12, so y = 6 with no determinant needed — then Cramer's rule confirms.",
+        "marks": 4,
+        "question": "Q1(f). Apply matrix method or Cramer's rule: 2x + 5y = 24; 2x + 3y = 12.",
+        "solution": "D = 2(3)-5(2) = -4. Dx = 24(3)-5(12) = 12, x = -3. Dy = 2(12)-24(2) = -24, y = 6. Boxed (-3,6). Verify: -6+30 = 24 ✓; -6+18 = 12 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(f); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "Clear fractions first: ×3 and ×4 give 2x+3y = 48 and 4x+y = 56 — integer Cramer's rule from there.",
+        "marks": 4,
+        "question": "Q1(g). Apply matrix method or Cramer's rule: (2x/3) + y = 16; x + (y/4) = 14.",
+        "solution": "Multiply first by 3: 2x+3y = 48. Multiply second by 4: 4x+y = 56. D = 2(1)-3(4) = -10. Dx = 48(1)-3(56) = -120, x = 12. Dy = 2(56)-48(4) = -80, y = 8. Boxed (12,8). Verify: 8+8 = 16 ✓; 12+2 = 14 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(g); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "Substitute u = 1/y to linearise: 3x+4u = 10; -2x+3u = -1; then y = 1/u.",
+        "marks": 4,
+        "question": "Q1(h). Apply matrix method or Cramer's rule: 3x + (4/y) = 10; -2x + (3/y) = -1.",
+        "solution": "Put u = 1/y: 3x+4u = 10; -2x+3u = -1. D = 9+8 = 17. Dx = 30+4 = 34, x = 2. Du = -3+20 = 17, u = 1, so y = 1. Boxed (2,1). Verify: 6+4 = 10 ✓; -4+3 = -1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q1(h); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "3×3 Cramer's rule: D = 1(0-1)+3(2-4)-7(2-12) = 63; Dx = 63, Dy = 189, Dz = -126.",
+        "marks": 5,
+        "question": "Q2(a). Solve by matrix method or Cramer's rule: x - 3y - 7z = 6; 2x + 3y + z = 9; 4x + y = 7.",
+        "solution": "D = |1 -3 -7; 2 3 1; 4 1 0|: 1×(3×0-1×1) = -1; -(-3)×(2×0-1×4) = -12; +(-7)×(2×1-3×4) = +70; D = -1-12+70 = 57. Dx (constants in column 1): 6×(0-1) = -6; +3×(0-7) = -21; -7×(9-21) = +84; Dx = 57, x = 1. Dy = 171 (same expansion down column 2), y = 171/57 = 3. Dz = -114, z = -114/57 = -2. Boxed (1,3,-2). Verify: 1-9+14 = 6 ✓; 2+9-2 = 9 ✓; 4+3 = 7 ✓ (matches the printed key; D = 57 ≠ 0 confirms uniqueness).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q2(a); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "T.U. 2053: D = 2(-5)-(-3)(3)+(-1)(-1+2) = -2; Dx = -4, Dy = 2, Dz = -6.",
+        "marks": 5,
+        "question": "Q2(b). Solve by matrix method or Cramer's rule: 2x - 3y - z = 4; x - 2y - z = 1; x - y + 2z = 9. (T.U. 2053)",
+        "solution": "D = |2 -3 -1; 1 -2 -1; 1 -1 2| = 2(-4-1)+3(2+1)-(−1+2) = -10+9-1 = -2. Dx = |4 -3 -1; 1 -2 -1; 9 -1 2| = 4(-5)+3(2+9)-(−1+18) = -20+33-17 = -4, x = 2. Dy = |2 4 -1; 1 1 -1; 1 9 2| = 2(2+9)-4(2+1)-(9-1) = 22-12-8 = 2, y = -1. Dz = |2 -3 4; 1 -2 1; 1 -1 9| = 2(-18+1)+3(9-1)+4(-1+2) = -34+24+4 = -6, z = 3. Boxed (2,-1,3). Verify in first: 4+3-3 = 4 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q2(b) (T.U. 2053); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "Elimination is shorter than 3×3 determinants here: row 1 gives 3x = 1+y+2z; substitute down the chain.",
+        "marks": 5,
+        "question": "Q2(c). Solve by matrix method or Cramer's rule: 3x - y - 2z = 1; x - y + 2z = 3; -2x + 3y + z = 8.",
+        "solution": "(second)-(first)÷? Use elimination: from row 2, x = 3+y-2z. In row 1: 3(3+y-2z)-y-2z = 1 gives 9+2y-8z = 1, y-4z = -4. Row 3: -2(3+y-2z)+3y+z = 8 gives -6+y+5z = 8, y+5z = 14. Subtracting: 9z = 18, z = 2; y = 14-10 = 4; x = 3+4-4 = 3. Boxed (3,4,2). Verify in first: 9-4-4 = 1 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q2(c); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "Sparse system: from 2x-3z = -7 get x = (3z-7)/2; from 4y+2z = 2 get y = (1-z)/2; one substitution left.",
+        "marks": 5,
+        "question": "Q2(d). Solve by matrix method or Cramer's rule: 3x + 5y = 2; 2x - 3z = -7; 4y + 2z = 2.",
+        "solution": "y = (1-z)/2, x = (3z-7)/2. In 3x+5y = 2: 3(3z-7)/2+5(1-z)/2 = 2 gives (9z-21+5-5z)/2 = 2, 4z-16 = 4, z = 5; then x = 4, y = -2. Boxed (4,-2,5). Verify: 12-10 = 2 ✓; 8-15 = -7 ✓; -8+10 = 2 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q2(d); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "Key-slip alert: 6y+6z = -1 with y = 2/3 forces z = -5/6, not +5/6 — substitution proves the printed plus is wrong.",
+        "marks": 5,
+        "question": "Q2(e). Solve by matrix method or Cramer's rule: 6y + 6z = -1; 8x + 6z = -1; 4x + 9y = 8. [Print note: the Answers line shows (1/2,2/3,5/6), but 6(2/3)+6(5/6) = 9 ≠ -1; z = -5/6 is correct.]",
+        "solution": "From 4x+9y = 8 and 8x+6z = -1: multiply first by 2, 8x+18y = 16; subtract second: 18y-6z = 17. With 6y+6z = -1 (×3: 18y+18z = -3): subtracting gives -24z = 20, z = -5/6. Then 6y-5 = -1, y = 2/3; 8x-5 = -1, x = 1/2. Boxed (1/2,2/3,-5/6). Verify: 4+(-5) = -1 ✓; 4-5 = -1 ✓; 2+6 = 8 ✓. The printed +5/6 fails the first equation, so it is a sign slip.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q2(e); book p310 = PDF p337 (vision read)"
+      },
+      {
+        "knowledgeNote": "D = 1(3+1)-2(-6-1)-(−2+1) = 4+14+1 = 19; Dx = 19, Dy = -38, Dz = 38.",
+        "marks": 5,
+        "question": "Q2(f). Solve by matrix method or Cramer's rule: x + 2y - z = -5; 2x - y + z = 6; x - y - 3z = -3.",
+        "solution": "D = |1 2 -1; 2 -1 1; 1 -1 -3| = 1(3+1)-2(-6-1)-(−2+1) = 4+14+1 = 19. Dx = |-5 2 -1; 6 -1 1; -3 -1 -3| = -5(3+1)-2(-18+3)-(−6-3) = -20+30+9 = 19, x = 1. Dy = |1 -5 -1; 2 6 1; 1 -3 -3| = 1(-18+3)+5(-6-1)-(−6-6) = -15-35+12 = -38, y = -2. Dz = |1 2 -5; 2 -1 6; 1 -1 -3| = 1(3+6)-2(-6-6)-5(-2+1) = 9+24+5 = 38, z = 2. Boxed (1,-2,2). Verify in second: 2+2+2 = 6 ✓ (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.10 Ex 10.3 Q2(f); book p310 = PDF p337 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.10 BOOK Exercise 10.3 (book p310 = PDF p337 of the 2075 reprint; page-region vision reads; every answer key-checked against the printed Answers, p310; Q2(e) key drops a minus sign, proved by substitution).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.10 Book Ex 10.3 (Matrix Method / Cramer's Rule) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-10-3-matrix-cramer-systems",
+    "topicTitle": "Ch.10 Book Exercise 10.3 - matrix method / Cramer's rule (14 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
   "practice/solutions/class-11/mathematics/algebra/ex-2-1-ordered-pairs-cartesian-products.json": {
     "examSource": "Sukunda Textbook",
     "questions": [
