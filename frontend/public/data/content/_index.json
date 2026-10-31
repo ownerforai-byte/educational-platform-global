@@ -78042,6 +78042,638 @@
     "unitSlug": "algebra",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/algebra/ex-8-1-am-gm-hm-means.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "AP gives ratio 1 (written x/x), GP gives x/y via y^2 = xz, HP gives x/z via y = 2xz/(x+z): one computation, three readings.",
+        "marks": 3,
+        "question": "Q1(a). Prove that x, y, z are in A.P., G.P. or H.P. according as (x-y)/(y-z) = x/x or x/y or x/z respectively.",
+        "solution": "A.P.: (x-y)/(y-z) = x/x = 1 gives x-y = y-z, i.e. 2y = x+z, the A.P. condition. G.P.: (x-y)/(y-z) = x/y gives xy-y^2 = xy-xz, i.e. y^2 = xz, the G.P. condition. H.P.: (x-y)/(y-z) = x/z gives xz-yz = xy-xz, i.e. 2xz = y(x+z), so y = 2xz/(x+z), the H.P. condition. Each step reverses, so the three cases are proved.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q1(a); book p214 = PDF p241 (vision read)"
+      },
+      {
+        "knowledgeNote": "Clear the HP condition 2/y = 2/(x+y) + 2/(y+z): everything cancels except xz = y^2.",
+        "marks": 3,
+        "question": "Q1(b). If (x+y)/2, y and (y+z)/2 are in H.P., show that x, y, z are in G.P.",
+        "solution": "The three means are in H.P., so 2/y = 1/((x+y)/2) + 1/((y+z)/2) = 2/(x+y) + 2/(y+z). Dividing by 2: 1/y = (y+z+x+y)/((x+y)(y+z)) = (x+z+2y)/((x+y)(y+z)). Cross-multiplying: (x+y)(y+z) = y(x+z+2y), i.e. xy+xz+y^2+yz = xy+xz+2y^2, so y^2 = xz. Hence x, y, z are in G.P.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q1(b); book p214 = PDF p241 (vision read)"
+      },
+      {
+        "knowledgeNote": "Substitute G^2 = ab first: the two fractions combine over ab(b-a) and the (b-a) cancels.",
+        "marks": 3,
+        "question": "Q1(c). If G is the geometric mean between a and b, show that 1/(G^2-a^2) + 1/(G^2-b^2) = 1/G^2.",
+        "solution": "G^2 = ab. Then 1/(G^2-a^2) + 1/(G^2-b^2) = 1/(ab-a^2) + 1/(ab-b^2) = 1/(a(b-a)) + 1/(b(a-b)) = (b-a)/(ab(b-a)) = 1/(ab) = 1/G^2 (for a not equal to b).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q1(c); book p214 = PDF p241 (vision read)"
+      },
+      {
+        "knowledgeNote": "Write H = 2ab/(a+b), then 2H-(a+b) = -(a-b)^2/(a+b): the square cancels against the denominator.",
+        "marks": 4,
+        "question": "Q2(a). If H is the harmonic mean between a and b, prove that 1/(H-a) + 1/(H-b) = 1/a + 1/b.",
+        "solution": "H = 2ab/(a+b). Now 1/(H-a) + 1/(H-b) = (2H-a-b)/((H-a)(H-b)). The numerator: 2H-(a+b) = 4ab/(a+b)-(a+b) = (4ab-(a+b)^2)/(a+b) = -(a-b)^2/(a+b). The denominator: (H-a)(H-b) = H^2-H(a+b)+ab = 4a^2b^2/(a+b)^2-2ab+ab = -ab(a-b)^2/(a+b)^2. Dividing: (-(a-b)^2/(a+b))/(-ab(a-b)^2/(a+b)^2) = (a+b)/ab = 1/a+1/b.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q2(a); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "a-A = (a-b)/2 but a-H = a(a-b)/(a+b): each ratio keeps one factor (a+b), and their product is A/H.",
+        "marks": 4,
+        "question": "Q2(b). If A and H are the arithmetic and harmonic means between a and b respectively, prove that (a-A)(b-A)/((a-H)(b-H)) = A/H.",
+        "solution": "A = (a+b)/2, H = 2ab/(a+b). a-A = a-(a+b)/2 = (a-b)/2; a-H = a-2ab/(a+b) = a(a-b)/(a+b). So (a-A)/(a-H) = ((a-b)/2)/(a(a-b)/(a+b)) = (a+b)/(2a). Likewise (b-A)/(b-H) = (a+b)/(2b). Multiplying: (a+b)^2/(4ab). And A/H = ((a+b)/2)/(2ab/(a+b)) = (a+b)^2/(4ab). Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q2(b); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "These conditions force x = y = z (then the HM claim is trivial): derive 2x^2-xy-y^2 = 0, i.e. (x-y)(2x+y) = 0.",
+        "marks": 4,
+        "question": "Q3(a). If x is the A.M. between y and z, and y is the G.M. between z and x, prove that z will be the H.M. between x and y.",
+        "solution": "x = (y+z)/2 and y^2 = zx, so z = 2x-y. Then y^2 = x(2x-y) = 2x^2-xy, i.e. 2x^2-xy-y^2 = 0, so (x-y)(2x+y) = 0. For positive quantities x = y, hence z = 2x-y = x. So x = y = z, for which 2/z = 1/x+1/y holds (2/x = 2/x): z is indeed the H.M. between x and y.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q3(a); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "AP gives c = 2b-a; HP of b,c,a gives 2ab = c(a+b): substituting forces (a+2b)(a-b) = 0, so a = b = c.",
+        "marks": 4,
+        "question": "Q3(b). If a, b, c are in A.P., and b, c, a are in H.P., prove that c, a, b are in G.P.",
+        "solution": "From the A.P., 2b = a+c, so c = 2b-a. From the H.P., 2/c = 1/b+1/a = (a+b)/ab, so 2ab = c(a+b). Substituting c: 2ab = (2b-a)(a+b) = 2ab+2b^2-a^2-ab, giving 0 = 2b^2-a^2-ab = -(a+2b)(a-b). For positive quantities a = b, so c = 2b-a = b. Thus a = b = c, and equal numbers are trivially in G.P.: c, a, b are in G.P.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q3(b); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "Chain the three means: c^2 = bd with d = 2ce/(c+e) and b = (a+c)/2 collapses to c^2 = ae.",
+        "marks": 4,
+        "question": "Q3(c). If a, b, c are in A.P., b, c, d are in G.P. and c, d, e are in H.P., then prove that a, c, e are in G.P.",
+        "solution": "b = (a+c)/2, c^2 = bd, and 2/d = 1/c+1/e gives d = 2ce/(c+e). Then c^2 = b·2ce/(c+e) = (a+c)ce/(c+e). So c^2(c+e) = ce(a+c), i.e. c^3+c^2e = ace+c^2e, giving c^3 = ace, so c^2 = ae. Hence a, c, e are in G.P.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q3(c); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "The AP case is (a-c)^2/4 >= 0; the HP case follows by applying the AP case to the reciprocals.",
+        "marks": 3,
+        "question": "Q4. If a, b, c are in A.P., G.P. or H.P., show that b^2 is >, = or < ac respectively.",
+        "solution": "A.P.: b = (a+c)/2, so b^2-ac = (a+c)^2/4-ac = (a-c)^2/4 >= 0, i.e. b^2 >= ac (> unless a = c). G.P.: b^2 = ac by definition. H.P.: 1/a, 1/b, 1/c are in A.P., so by the A.P. case (1/b)^2 >= (1/a)(1/c), i.e. 1/b^2 >= 1/ac, so b^2 <= ac (< unless a = c).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q4; book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "Sum-product with AM = 25, GM = 20: t^2-50t+400 = 0 splits as (t-10)(t-40).",
+        "marks": 4,
+        "question": "Q5(a). The A.M. of two numbers is 25 and their G.M. is 20. Find the numbers.",
+        "solution": "Let the numbers be a, b. Then a+b = 50 and ab = 20^2 = 400. They are the roots of t^2-50t+400 = 0: t = (50±sqrt(2500-1600))/2 = (50±30)/2, so t = 40 or 10. The numbers are 40 and 10 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q5(a); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "From A-G = 2 and G-H = 1.6 with H = G^2/A: 2G = 1.6(G+2) forces G = 8, A = 10.",
+        "marks": 5,
+        "question": "Q5(b). The difference between the A.M. and G.M. of two numbers is 2, and the difference between the G.M. and the H.M. is 1.6. Find the numbers.",
+        "solution": "Let G be the G.M.; then A = G+2 and ab = G^2. H = ab/A = G^2/(G+2). G-H = 1.6 gives G-G^2/(G+2) = 1.6, i.e. 2G/(G+2) = 1.6, so 2G = 1.6G+3.2, giving G = 8. Then A = 10, a+b = 20, ab = 64: t^2-20t+64 = 0 gives t = (20±sqrt(400-256))/2 = (20±12)/2, so t = 16 or 4. The numbers are 16 and 4 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q5(b); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "AP sum 36 makes the middle term 12; the GP condition 16^2 = (13-d)(55+d) is a quadratic with roots d = 9, -51.",
+        "marks": 5,
+        "question": "Q6. The sum of three numbers in A.P. is 36. Adding 1, 4 and 43 to them respectively, the resulting numbers are in G.P. Find the numbers.",
+        "solution": "Let the numbers be 12-d, 12, 12+d (sum 36 forces middle term 12). After adding: 13-d, 16, 55+d in G.P., so 16^2 = (13-d)(55+d) = 715-42d-d^2. Hence d^2+42d-459 = 0, so d = (-42±sqrt(1764+1836))/2 = (-42±60)/2, giving d = 9 or d = -51. For d = 9: 3, 12, 21. For d = -51: 63, 12, -39. (Matches the printed key, whose '6. a)' line has no 6(b) — filed as a label slip.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q6; book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "Take logs with x = G/r: the lny terms sum to zero and the lnr coefficient is a+c-2b = 0.",
+        "marks": 4,
+        "question": "Q7(a). If a^x = b^y = c^z and a, b, c are in G.P., prove that x, y, z are in H.P.",
+        "solution": "Put a^x = b^y = c^z = k. Then x = lnk/lna, y = lnk/lnb, z = lnk/lnc. Since a, b, c are in G.P., lnb-lna = lnc-lnb. Now 1/x+1/z-2/y = (lna+lnc-2lnb)/lnk = 0, so 2/y = 1/x+1/z: x, y, z are in H.P.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q7(a); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "Two AMs split [a,b] in thirds: 2p-q = a and 2q-p = b recover the endpoints, whose product is G^2.",
+        "marks": 4,
+        "question": "Q7(b). If one G.M. G and two A.M.s p and q are inserted between two given positive numbers, prove that G^2 = (2p-q)(2q-p).",
+        "solution": "Let the numbers be a, b. Then G^2 = ab, p = a+(b-a)/3 = (2a+b)/3, q = a+2(b-a)/3 = (a+2b)/3. Now 2p-q = (4a+2b-a-2b)/3 = a and 2q-p = (2a+4b-2a-b)/3 = b. So (2p-q)(2q-p) = ab = G^2.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q7(b); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "Reciprocate: (b+c)/bc = 1/b+1/c; with 1/a,1/b,1/c as u,u+d,u+2d the three sums are 2u+3d,2u+2d,2u+d.",
+        "marks": 4,
+        "question": "Q8(i). If a, b, c are in H.P., prove that bc/(b+c), ca/(c+a), ab/(a+b) are in H.P.",
+        "solution": "(i) The reciprocals are (b+c)/bc = 1/b+1/c, 1/c+1/a, 1/a+1/b. Since 1/a, 1/b, 1/c are in A.P. (say u, u+d, u+2d), these sums are 2u+3d, 2u+2d, 2u+d — in A.P. — so the originals are in H.P.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q8(i); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "Expand (2a-b)(2c-b) and use 2ac = b(a+c) from the HP condition: everything cancels to b^2.",
+        "marks": 4,
+        "question": "Q8(ii). If a, b, c are in H.P., prove that 2a-b, b, 2c-b are in G.P.",
+        "solution": "(2a-b)(2c-b) = 4ac-2b(a+c)+b^2. From the H.P. condition 1/a+1/c = 2/b we get 2ac = b(a+c). Substituting: 4ac-4ac+b^2 = b^2. So (2a-b)(2c-b) = b^2: the three are in G.P.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q8(ii); book p215 = PDF p242 (vision read)"
+      },
+      {
+        "knowledgeNote": "Successive differences are c(b-a) and a(c-b): equal iff ab+bc = 2ac, the HP condition.",
+        "marks": 4,
+        "question": "Q8(iii). If a, b, c are in H.P., prove that a(b+c), b(c+a), c(a+b) are in A.P.",
+        "solution": "Second minus first: b(c+a)-a(b+c) = c(b-a). Third minus second: c(a+b)-b(c+a) = a(c-b). Equality needs c(b-a) = a(c-b), i.e. ab+bc = 2ac, i.e. 1/c+1/a = 2/b, exactly the H.P. condition. So the three are in A.P.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.1 Q8(iii); book p215 = PDF p242 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.8 BOOK Exercise 8.1 (book pp214-215 = PDF pp241-242 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, p215).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.1 (Means: AM, GM, HM) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-8-1-am-gm-hm-means",
+    "topicTitle": "Ch.8 Book Exercise 8.1 - AM/GM/HM relations (17 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-8-2-infinite-geometric-series.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "r = 2, |r| > 1: partial sums 2^n-1 diverge, no sum.",
+        "marks": 1,
+        "question": "Q1(a). Does 1+2+2^2+2^3+... have a sum?",
+        "solution": "r = 2 with |r| > 1: the partial sums S_n = 2^n-1 grow without bound, so the series has no sum.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q1(a); book p220 = PDF p247 (vision read)"
+      },
+      {
+        "knowledgeNote": "r = -1 oscillates between 1 and 0: no limit, no sum.",
+        "marks": 1,
+        "question": "Q1(b). Does 1+(-1)+1+(-1)+... have a sum?",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q1(b); book p220 = PDF p247 (vision read)",
+        "solution": "r = -1: partial sums alternate 1, 0, 1, 0, ... with no limit, so the series has no sum."
+      },
+      {
+        "knowledgeNote": "r = 1/3: S = 1/(2/3) = 3/2, but the question only asks existence.",
+        "marks": 1,
+        "question": "Q1(c). Does 1+1/3+1/3^2+1/3^3+... have a sum?",
+        "solution": "r = 1/3 with |r| < 1: the series converges (its sum is 1/(1-1/3) = 3/2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q1(c); book p220 = PDF p247 (vision read)"
+      },
+      {
+        "knowledgeNote": "r = 1/2: converges (sum 6).",
+        "marks": 1,
+        "question": "Q1(d). Does 3+3/2+3/4+3/8+... have a sum?",
+        "solution": "r = 1/2 with |r| < 1: the series converges (its sum is 3/(1-1/2) = 6).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q1(d); book p220-221 = PDF pp247-248 (vision read)"
+      },
+      {
+        "knowledgeNote": "0.6+0.06+... has r = 1/10: converges (sum 2/3).",
+        "marks": 1,
+        "question": "Q1(e). Does 0.6+0.06+0.006+... have a sum?",
+        "solution": "r = 1/10 with |r| < 1: the series converges (its sum is 0.6/(1-1/10) = 2/3). Existence key (c), (d), (e) matches the printed Answers, p221.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q1(e); book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "a = 16, r = 1/2: S = 16/(1/2) = 32.",
+        "marks": 2,
+        "question": "Q2(a). Find the sum of 16+8+4+2+...",
+        "solution": "a = 16, r = 1/2 (|r| < 1, so the sum exists). S = a/(1-r) = 16/(1/2) = 32 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q2(a); book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "a = 5, r = 1/2: S = 5/(1/2) = 10.",
+        "marks": 2,
+        "question": "Q2(b). Find the sum of 5+5/2+5/4+5/8+...",
+        "solution": "a = 5, r = 1/2. S = 5/(1-1/2) = 10 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q2(b); book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "Alternating with r = -1/2: S = 1/(3/2) = 2/3.",
+        "marks": 2,
+        "question": "Q2(c). Find the sum of 1-1/2+1/4-1/8+...",
+        "solution": "a = 1, r = -1/2. S = 1/(1+1/2) = 2/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q2(c); book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "a = 1/4, r = 1/4: S = (1/4)/(3/4) = 1/3.",
+        "marks": 2,
+        "question": "Q2(d). Find the sum of 4^(-1)+4^(-2)+4^(-3)+...",
+        "solution": "a = 1/4, r = 1/4. S = (1/4)/(1-1/4) = (1/4)/(3/4) = 1/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q2(d); book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "Rationalise 3/(1-1/√3): multiply by (√3+1) to get (9+3√3)/2.",
+        "marks": 3,
+        "question": "Q2(e). Find the sum of 3+√3+1+...",
+        "solution": "a = 3, r = 1/√3 (|r| < 1). S = 3/(1-1/√3) = 3√3/(√3-1) = 3√3(√3+1)/2 = (9+3√3)/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q2(e); book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "15 = 3/(1-r) gives 1-r = 1/5 at once.",
+        "marks": 3,
+        "question": "Q3. The sum to infinity of a geometric series is 15, and the first term is 3. Find the common ratio.",
+        "solution": "3/(1-r) = 15, so 1-r = 3/15 = 1/5, giving r = 4/5 (matches the printed key; |r| < 1 so the sum is valid).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q3; book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "Divide the square-sum equation by the sum equation: (1-r)/(1+r) = 1/5 forces r = 2/3, a = 5.",
+        "marks": 4,
+        "question": "Q4. The sum of an infinite number of terms in G.P. is 15, and the sum of their squares is 45; find the series.",
+        "solution": "a/(1-r) = 15 and a^2/(1-r^2) = 45. Since 1-r^2 = (1-r)(1+r), the second gives a^2/((1-r)(1+r)) = 45. With a = 15(1-r): 225(1-r)^2/((1-r)(1+r)) = 225(1-r)/(1+r) = 45, so (1-r)/(1+r) = 1/5, giving 5-5r = 1+r, r = 2/3. Then a = 15(1/3) = 5. The series is 5+10/3+20/9+... (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q4; book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "The exponents 1/3+1/9+... sum to 1/2, so the product is 3^(1/2).",
+        "marks": 3,
+        "question": "Q5. Prove that 3^(1/3)·3^(1/9)·3^(1/27)·... = √3.",
+        "solution": "The product equals 3^(1/3+1/9+1/27+...). The exponent is a geometric series with a = 1/3, r = 1/3: sum = (1/3)/(1-1/3) = 1/2. So the product is 3^(1/2) = √3.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q5; book p221 = PDF p248 (vision read)"
+      },
+      {
+        "knowledgeNote": "y > 0 gives 0 < x < 1, so x/(1-x) applies; x = 1/(1+y) turns 1-x into y/(1+y).",
+        "marks": 3,
+        "question": "Q6. If x = 1/(1+y) with y > 0, prove that x+x^2+x^3+... to infinity = 1/y.",
+        "solution": "Since y > 0, 0 < x = 1/(1+y) < 1, so the infinite sum is x/(1-x). Now 1-x = 1-1/(1+y) = y/(1+y) = xy, so x/(1-x) = x/(xy) = 1/y.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.2 Q6; book p221 = PDF p248 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.8 BOOK Exercise 8.2 (book pp220-221 = PDF pp247-248 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, p221).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.2 (Infinite Geometric Series) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-8-2-infinite-geometric-series",
+    "topicTitle": "Ch.8 Book Exercise 8.2 - infinite geometric series (14 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-8-3-misc-series-additional-ii.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "r = -1/2: S = 1/(3/2) = 2/3.",
+        "marks": 2,
+        "question": "Q5(a). Sum to infinity: 1-1/2+1/4-1/8+...",
+        "solution": "a = 1, r = -1/2. S = 1/(1+1/2) = 2/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(a); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "a = 16, r = -1/2: S = 16/(3/2) = 32/3.",
+        "marks": 2,
+        "question": "Q5(b). Sum to infinity: 16-8+4-...",
+        "solution": "a = 16, r = -1/2. S = 16/(1+1/2) = 32/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(b); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "Interlaced 3/5^r and 4/5^r: sum each GP separately, common denominator 24.",
+        "marks": 3,
+        "question": "Q5(c). Sum to infinity: 3/5+4/5^2+3/5^3+4/5^4+3/5^5+4/5^6+...",
+        "solution": "Odd positions: 3/5+3/5^3+... = (3/5)/(1-1/25) = (3/5)/(24/25) = 15/24. Even positions: 4/25+4/5^4+... = (4/25)/(24/25) = 4/24. Total = 19/24 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(c); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "Pair a/x^{2k-1}+b/x^{2k} = (ax+b)/x^{2k}: one GP with ratio 1/x^2.",
+        "marks": 3,
+        "question": "Q5(d). Sum to infinity (|x| > 1): a/x+b/x^2+a/x^3+b/x^4+...",
+        "solution": "Group pairs: (ax+b)/x^2+(ax+b)/x^4+... with first term (ax+b)/x^2 and ratio 1/x^2 (|x| > 1 so it converges). S = ((ax+b)/x^2)/(1-1/x^2) = (ax+b)/(x^2-1) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(d); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "T_r = (2^r-1)/2^{2r-2}: split into 4·(1/2)^r minus (1/4)^{r-1}.",
+        "marks": 4,
+        "question": "Q5(e). Sum to infinity: 1+3/4+7/16+15/64+...",
+        "solution": "T_r = (2^r-1)/2^{2r-2} = 4(1/2)^r-(1/4)^{r-1} (check r = 3: 4/8-1/16 = 7/16). S = 4·(1/2)/(1/2)-1/(1-1/4) = 4-4/3 = 8/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(e); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "(1-x)S shifts the arithmetico-geometric series into a plain GP: S = (1+x)/(1-x)^2.",
+        "marks": 4,
+        "question": "Q6(a). Sum to infinity (-1 < x < 1): 1+3x+5x^2+7x^3+...",
+        "solution": "S = 1+3x+5x^2+...; xS = x+3x^2+5x^3+.... Subtracting: (1-x)S = 1+2x+2x^2+... = 1+2x/(1-x) = (1+x)/(1-x). So S = (1+x)/(1-x)^2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q6(a); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same shift trick with ratio -a: (1+a)S = 1-4a/(1+a).",
+        "marks": 4,
+        "question": "Q6(b). Sum to infinity (-1 < a < 1): 1-5a+9a^2-13a^3+...",
+        "solution": "S = 1-5a+9a^2-...; -aS = -a+5a^2-9a^3+.... Adding: (1+a)S = 1-4a+4a^2-4a^3+... = 1-4a/(1+a) = (1-3a)/(1+a). So S = (1-3a)/(1+a)^2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q6(b); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same shift with x = 1/2: S = 4-(n+2)/2^{n-1}; check n = 1 gives 1.",
+        "marks": 4,
+        "question": "Q7(a). Sum to n terms: 1+2/2+3/2^2+4/2^3+...",
+        "solution": "Arithmetico-geometric with x = 1/2: S = (1-(n+1)/2^n+n/2^{n+1})/(1/2)^2 = 4-(n+1)/2^{n-2}+n/2^{n-1} = 4-n/2^{n-1}-1/2^{n-2} (matches the printed key; n = 1 gives 4-2-1 = 1).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q7(a); book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "x = 1/5 version: constant 3·(25/16)-2·(5/4) = 35/16; check n = 1 gives 1.",
+        "marks": 5,
+        "question": "Q7(b). Sum to n terms: 1+4/5+7/5^2+10/5^3+...",
+        "solution": "T_r = (3r-2)/5^{r-1}. S = 3(1+2x+3x^2+...+nx^{n-1})-2(1+x+...+x^{n-1}) with x = 1/5. Using the finite AG and GP sums: S = 35/16-(12n+7)/(16·5^{n-1}) (matches the printed key; n = 1 gives (35-19)/16 = 1; n = 2 gives 1.8 = 1+4/5).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q7(b); book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "Take logs: the lny coefficient telescopes to zero and the lnr coefficient is a+c-2b = 0.",
+        "marks": 4,
+        "question": "Q8. If a, b, c are in A.P. and x, y, z are in G.P., prove that x^{b-c}·y^{c-a}·z^{a-b} = 1.",
+        "solution": "Put x = y/r, z = yr (common ratio r). log LHS = (b-c)(lny-lnr)+(c-a)lny+(a-b)(lny+lnr) = lny(b-c+c-a+a-b)+lnr(-b+c+a-b) = (a+c-2b)lnr = 0 since a, b, c are in A.P. Hence LHS = 1.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q8; book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "(p+r)/2 = q makes the GM of the pth and rth terms exactly the qth term.",
+        "marks": 4,
+        "question": "Q9. If p, q, r are in A.P., prove that the qth term is the G.M. between the pth and rth terms of the same G.P.",
+        "solution": "G.P.: first term A, ratio R. pth term = AR^{p-1}, rth = AR^{r-1}; their GM = AR^{(p+r-2)/2}. Since p, q, r in A.P., (p+r)/2 = q, so the GM is AR^{q-1}, the qth term.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q9; book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "a/(a-b) vs (a+c)/(a-c): cross-multiplying reduces to ab+bc = 2ac, the HP condition.",
+        "marks": 4,
+        "question": "AQ1. If a, b, c are in H.P., prove that a/(a-b) = (a+c)/(a-c).",
+        "solution": "Cross-multiplying: a(a-c) = (a+c)(a-b) iff a^2-ac = a^2-ab+ac-bc iff ab+bc = 2ac iff 1/c+1/a = 2/b, which is exactly the H.P. condition (1/a, 1/b, 1/c in A.P.).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q1; book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "AM of x^2, y^2 is b(a+c)/2 = b·b: the AP relation a+c = 2b does the whole job.",
+        "marks": 4,
+        "question": "AQ2. If a, b, c are in A.P., x is the G.M. between a and b, and y is the G.M. between b and c, prove that b^2 is the A.M. between x^2 and y^2.",
+        "solution": "x^2 = ab, y^2 = bc. Their AM is (ab+bc)/2 = b(a+c)/2 = b·2b/2 = b^2 (using a+c = 2b).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q2; book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "t+1/t = 4 with t = sqrt(a/b) gives t = 2±sqrt(3); squaring preserves the ratio form.",
+        "marks": 4,
+        "question": "AQ3. If the A.M. of two positive numbers a and b is twice their G.M., show that a:b = (2+sqrt(3)):(2-sqrt(3)).",
+        "solution": "(a+b)/2 = 2sqrt(ab), so a+b = 4sqrt(ab). Put t = sqrt(a/b) > 1: t+1/t = 4, so t^2-4t+1 = 0, t = 2+sqrt(3). Then a:b = t^2:1 = (2+sqrt(3))^2:1 = (2+sqrt(3)):(2-sqrt(3)) since (2+sqrt(3))(2-sqrt(3)) = 1.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q3; book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "16 down + 2×(up GP with a = 12, r = 3/4): 16+2·48 = 112 ft.",
+        "marks": 4,
+        "question": "AQ4. A rubber ball is dropped from 16 ft; each rebound rises to 3/4 of the previous height. Total distance before rest?",
+        "solution": "Down: 16. Up-and-down bounces: 2(16·3/4+16·(3/4)^2+...) = 2·12/(1-3/4) = 2·48 = 96. Total = 16+96 = 112 ft (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q4; book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "Midpoint joining halves the area, so sides shrink by 1/sqrt(2): perimeters form a GP with r = 1/sqrt(2).",
+        "marks": 4,
+        "question": "AQ5. Square side 16 cm; successive squares join midpoints indefinitely. Sum of all perimeters?",
+        "solution": "Sides: 16, 16/sqrt(2), ... (area halves each time). Perimeters: 64, 64/sqrt(2), ... with r = 1/sqrt(2). Sum = 64/(1-1/sqrt(2)) = 64sqrt(2)/(sqrt(2)-1) = 64(2+sqrt(2)) cm (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q5; book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "Second differences triple each time: T_r-4 is a GP with ratio 3.",
+        "marks": 4,
+        "question": "AQ6(a). Find the nth term and sum of 5+7+13+31+85+...",
+        "solution": "Differences 2, 6, 18, 54 (ratio 3): T_r = 4+3^{r-1} (T_1 = 5 ✓). S_n = 4n+(3^n-1)/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q6(a); book p231 = PDF p258 (vision read)"
+      },
+      {
+        "knowledgeNote": "r^2(r+1) = r^3+r^2: cube-sum plus square-sum factor into n(n+1)(n+2)(3n+1)/12.",
+        "marks": 4,
+        "question": "AQ6(b). Find the nth term and sum of 1^2.2+2^2.3+3^2.4+...",
+        "solution": "T_r = r^2(r+1) = r^3+r^2. S_n = [n(n+1)/2]^2+n(n+1)(2n+1)/6 = n(n+1)(3n^2+7n+2)/12 = n(n+1)(n+2)(3n+1)/12 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q6(b); book p231 = PDF p258 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.8 BOOK Exercise 8.3 Q5-Q9 + Additional Q1-Q6 (book pp230-231 = PDF pp257-258 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, p231).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.3 Q5-Q9 + Additional (AG Series, Misc) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-8-3-misc-series-additional-ii",
+    "topicTitle": "Ch.8 Book Exercise 8.3 Q5-Q9 + Additional - misc series (18 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-8-3-power-sums-i.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Constant second difference 2: T_r = r^2; sum is the square-pyramid formula.",
+        "marks": 3,
+        "question": "Q1(a). Find the nth term and the sum of the first n terms of 1+4+9+16+...",
+        "solution": "T_r = r^2. S_n = 1^2+2^2+...+n^2 = n(n+1)(2n+1)/6 (standard formula; matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q1(a); book p229 = PDF p256 (vision read)"
+      },
+      {
+        "knowledgeNote": "r(r+2) = r^2+2r: add the square-sum and twice the natural-sum.",
+        "marks": 3,
+        "question": "Q1(b). Find the nth term and the sum of the first n terms of 1.3+2.4+3.5+...",
+        "solution": "T_r = r(r+2) = r^2+2r. S_n = n(n+1)(2n+1)/6+2·n(n+1)/2 = n(n+1)(2n+1+6)/6 = n(n+1)(2n+7)/6 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q1(b); book p229 = PDF p256 (vision read)"
+      },
+      {
+        "knowledgeNote": "r(r+1) = r^2+r: S_n = square-sum + natural-sum = n(n+1)(n+2)/3.",
+        "marks": 3,
+        "question": "Q1(c). Find the nth term and the sum of the first n terms of 2+6+12+20+...",
+        "solution": "T_r = r(r+1) = r^2+r (2, 6, 12, 20, ...). S_n = n(n+1)(2n+1)/6+n(n+1)/2 = n(n+1)(2n+1+3)/6 = n(n+1)(2n+4)/6 = n(n+1)(n+2)/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q1(c); book p229 = PDF p256 (vision read)"
+      },
+      {
+        "knowledgeNote": "(2r-1)(2r+1) = 4r^2-1: four times the square-sum minus n.",
+        "marks": 3,
+        "question": "Q1(d). Find the nth term and the sum of the first n terms of 1.3+3.5+5.7+...",
+        "solution": "T_r = (2r-1)(2r+1) = 4r^2-1. S_n = 4·n(n+1)(2n+1)/6-n = n(4n^2+6n+2-3)/3 = n(4n^2+6n-1)/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q1(d); book p229 = PDF p256 (vision read)"
+      },
+      {
+        "knowledgeNote": "Each bracket is the sum of the first r odd numbers = r^2: reduces to Q1(a).",
+        "marks": 3,
+        "question": "Q1(e). Find the nth term and the sum of the first n terms of 1+(1+3)+(1+3+5)+...",
+        "solution": "The rth bracket is 1+3+...+(2r-1) = r^2, so T_r = r^2. S_n = n(n+1)(2n+1)/6 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q1(e); book p229 = PDF p256 (vision read)"
+      },
+      {
+        "knowledgeNote": "Differences 4, 6, 8, ... give T_r = r^2+r+1 (check r = 1: 3).",
+        "marks": 4,
+        "question": "Q1(f). Find the nth term and the sum of the first n terms of 3+7+13+21+31+...",
+        "solution": "First differences 4, 6, 8, 10, ... (second difference 2), so T_r = r^2+r+1 (T_1 = 3, T_2 = 7, T_3 = 13 ✓). S_n = n(n+1)(2n+1)/6+n(n+1)/2+n = n(2n^2+6n+10)/6 = n(n^2+3n+5)/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q1(f); book p229 = PDF p256 (vision read)"
+      },
+      {
+        "knowledgeNote": "T_r = r(n-r+1) = (n+1)r-r^2: symmetric in r and (n-r+1), sum doubles cleanly.",
+        "marks": 4,
+        "question": "Q2. Find the general term and the sum of first n terms: 1.n+2.(n-1)+3.(n-2)+...",
+        "solution": "T_r = r(n-r+1) = (n+1)r-r^2 (matches the key's general term). S_n = (n+1)·n(n+1)/2-n(n+1)(2n+1)/6 = n(n+1)[(n+1)/2-(2n+1)/6] = n(n+1)(n+2)/6 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q2; book p229-230 = PDF pp256-257 (vision read)"
+      },
+      {
+        "knowledgeNote": "Odd squares: 4 times square-sum, minus 4 times natural-sum, plus n.",
+        "marks": 4,
+        "question": "Q3(a). Sum to n terms: 1^2+3^2+5^2+...",
+        "solution": "T_r = (2r-1)^2 = 4r^2-4r+1. S_n = 4·n(n+1)(2n+1)/6-4·n(n+1)/2+n = n[(4n^2+6n+2-6n-6+3)/3] = n(4n^2-1)/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q3(a); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "Odd cubes: expand (2r-1)^3 and collect — the linear terms cancel to leave n^2(2n^2-1).",
+        "marks": 4,
+        "question": "Q3(b). Sum to n terms: 1^3+3^3+5^3+...",
+        "solution": "T_r = (2r-1)^3 = 8r^3-12r^2+6r-1. S_n = 8[n(n+1)/2]^2-12·n(n+1)(2n+1)/6+6·n(n+1)/2-n = n^2(2n^2-1) after simplification (matches the printed key; check n = 1: 1 ✓; n = 2: 1+27 = 28 = 4·7 ✓).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q3(b); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "r^2(2r-1) = 2r^3-r^2: twice the cube-sum minus the square-sum.",
+        "marks": 4,
+        "question": "Q3(c). Sum to n terms: 1^2.1+2^2.3+3^2.5+...",
+        "solution": "T_r = r^2(2r-1) = 2r^3-r^2. S_n = 2[n(n+1)/2]^2-n(n+1)(2n+1)/6 = n(n+1)[3n(n+1)-(2n+1)]/6 = n(n+1)(3n^2+n-1)/6 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q3(c); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "(r+2)r^2 = r^3+2r^2: the key's 'n^3+2n^2' is the general term, followed by the sum.",
+        "marks": 4,
+        "question": "Q3(d). Sum to n terms: 3.1^2+4.2^2+5.3^2+...",
+        "solution": "T_r = (r+2)r^2 = r^3+2r^2 (this is the key's 'n^3+2n^2'). S_n = [n(n+1)/2]^2+2·n(n+1)(2n+1)/6 = n(n+1)(3n^2+3n+8n+4)/12 = n(n+1)(3n^2+11n+4)/12 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q3(d); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "Geometric part plus arithmetic part: x(x^n-1)/(x-1) + a·n(n+1)/2.",
+        "marks": 3,
+        "question": "Q4(a). Sum to n terms: (x+a)+(x^2+2a)+(x^3+3a)+...",
+        "solution": "T_r = x^r+ra. S_n = (x+x^2+...+x^n)+a(1+2+...+n) = x(x^n-1)/(x-1)+an(n+1)/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q4(a); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "2+22+... = (2/9)(10^r-1) summed: geometric minus n.",
+        "marks": 4,
+        "question": "Q4(b). Sum to n terms: 2+22+222+2222+...",
+        "solution": "T_r = 2(10^r-1)/9. S_n = (2/9)[(10+10^2+...+10^n)-n] = (2/9)[10(10^n-1)/9-n] = 20(10^n-1)/81-2n/9 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q4(b); book p230 = PDF p257 (vision read)"
+      },
+      {
+        "knowledgeNote": "0.33...3 (r digits) = (1/3)(1-10^{-r}): sum the constant, subtract a GP.",
+        "marks": 4,
+        "question": "Q4(c). Sum to n terms: 0.3+0.33+0.333+0.3333+...",
+        "solution": "T_r = (1/3)(1-10^{-r}). S_n = n/3-(1/3)(1/10)(1-10^{-n})/(1-1/10) = n/3-(1/27)(1-1/10^n) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q4(c); book p230 = PDF p257 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.8 BOOK Exercise 8.3 Q1-Q4 (book pp229-230 = PDF pp256-257 of the 2075 reprint; page-region vision reads; every sum key-checked against the printed Answers, p230).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.3 Q1-Q4 (Power Sums) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-8-3-power-sums-i",
+    "topicTitle": "Ch.8 Book Exercise 8.3 Q1-Q4 - power sums (14 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-8-4-mathematical-induction.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Evaluate P(1), P(2), P(3) directly: (n+1)(n+2) is even for n = 1, 2, 3.",
+        "marks": 2,
+        "question": "Q1(a). If P(n) is '(n+1)(n+2) is an odd number', find P(1), P(2), P(3). Are they true?",
+        "solution": "P(1): 2×3 = 6 (even, not odd — false). P(2): 3×4 = 12 (even — false). P(3): 4×5 = 20 (even — false). None is true: (n+1)(n+2) is always the product of consecutive integers, hence always even.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q1(a); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "1^3+1 = 2 and 2^3+2 = 10 are both even: both statements true.",
+        "marks": 2,
+        "question": "Q1(b). If P(n) is 'n^3+n is divisible by 2', write P(1) and P(2). Are they true?",
+        "solution": "P(1): 1+1 = 2, divisible by 2 — true. P(2): 8+2 = 10, divisible by 2 — true.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q1(b); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "P(1): 1 >= 2 is false; P(2), P(3) hold — a statement can fail at n = 1 yet hold later.",
+        "marks": 2,
+        "question": "Q1(c). If P(n) is 'n^2 >= 2^n', show P(1) is false and P(2), P(3) are true.",
+        "solution": "P(1): 1 >= 2 — false. P(2): 4 >= 4 — true. P(3): 9 >= 8 — true.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q1(c); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "Base n = 1: 1 = 1·2/2; step adds (m+1) to both sides and factors (m+1)(m+2)/2.",
+        "marks": 3,
+        "question": "Q2(i). By induction: 1+2+3+...+n = n(n+1)/2 for all natural n.",
+        "solution": "Base: n = 1 gives 1 = 1·2/2 ✓. Assume true for m; add (m+1): LHS = m(m+1)/2+(m+1) = (m+1)(m+2)/2, the formula at m+1. Hence true for all n by induction.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q2(i); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "Add (2m+1): m^2+2m+1 = (m+1)^2 closes the step.",
+        "marks": 3,
+        "question": "Q2(ii). By induction: 1+3+5+...+(2n-1) = n^2 for all natural n.",
+        "solution": "Base: n = 1 gives 1 = 1^2 ✓. Assume true for m; add (2m+1): LHS = m^2+2m+1 = (m+1)^2, the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q2(ii); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "Add 2(m+1): m(m+1)+2(m+1) = (m+1)(m+2).",
+        "marks": 3,
+        "question": "Q2(iii). By induction: 2+4+6+...+2n = n(n+1) for all natural n.",
+        "solution": "Base: n = 1 gives 2 = 1·2 ✓. Assume true for m; add 2(m+1): LHS = m(m+1)+2(m+1) = (m+1)(m+2), the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q2(iii); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "Add (3m+2): combine over 2 to get (m+1)(3m+4)/2 = (m+1)(3(m+1)+1)/2.",
+        "marks": 3,
+        "question": "Q2(iv). By induction: 2+5+8+...+(3n-1) = n(3n+1)/2 for all natural n.",
+        "solution": "Base: n = 1 gives 2 = 1·4/2 ✓. Assume true for m; add (3m+2): LHS = m(3m+1)/2+(3m+2) = (3m^2+7m+4)/2 = (m+1)(3m+4)/2 = (m+1)(3(m+1)+1)/2, the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q2(iv); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "Add (2m+1)^2 to m(2m-1)(2m+1)/3: factor (2m+1) to reach (m+1)(2m+1)(2m+3)/3.",
+        "marks": 4,
+        "question": "Q2(v). By induction: 1^2+3^2+5^2+...+(2n-1)^2 = n(2n-1)(2n+1)/3 for all natural n.",
+        "solution": "Base: n = 1 gives 1 = 1·1·3/3 ✓. Assume true for m; add (2m+1)^2: LHS = (2m+1)[m(2m-1)/3+(2m+1)] = (2m+1)(2m^2+5m+3)/3 = (2m+1)(m+1)(2m+3)/3 = (m+1)(2(m+1)-1)(2(m+1)+1)/3, the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q2(v); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "Add (m+1)^3 to m^2(m+1)^2/4: perfect square (m+1)^2(m+2)^2/4 emerges.",
+        "marks": 4,
+        "question": "Q2(vi). By induction: 1^3+2^3+3^3+...+n^3 = n^2(n+1)^2/4 for all natural n.",
+        "solution": "Base: n = 1 gives 1 = 1·4/4 ✓. Assume true for m; add (m+1)^3: LHS = (m+1)^2[m^2/4+(m+1)] = (m+1)^2(m+2)^2/4, the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q2(vi); book p236 = PDF p263 (vision read)"
+      },
+      {
+        "knowledgeNote": "(m+1)(m+2) added to m(m+1)(m+2)/3 factors as (m+1)(m+2)(m+3)/3.",
+        "marks": 4,
+        "question": "Q3(i). By induction: 1.2+2.3+3.4+...+n(n+1) = n(n+1)(n+2)/3 for all natural n.",
+        "solution": "Base: n = 1 gives 2 = 1·2·3/3 ✓. Assume true for m; add (m+1)(m+2): LHS = (m+1)(m+2)(m/3+1) = (m+1)(m+2)(m+3)/3, the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q3(i); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "Write 1/(m+1)(m+2) as 1/(m+1)-1/(m+2): telescopes to (m+1)/(m+2).",
+        "marks": 4,
+        "question": "Q3(ii). By induction: 1/(1.2)+1/(2.3)+...+1/(n(n+1)) = n/(n+1) for all natural n.",
+        "solution": "Base: n = 1 gives 1/2 = 1/2 ✓. Assume true for m; add 1/((m+1)(m+2)) = 1/(m+1)-1/(m+2): LHS = m/(m+1)+1/(m+1)-1/(m+2) = 1-1/(m+2) = (m+1)/(m+2), the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q3(ii); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "Add 1/2^{m+1} to 1-1/2^m: halves combine to 1-1/2^{m+1}.",
+        "marks": 3,
+        "question": "Q3(iii). By induction: 1/2+1/4+1/8+...+1/2^n = 1-1/2^n for all natural n.",
+        "solution": "Base: n = 1 gives 1/2 = 1-1/2 ✓. Assume true for m; add 1/2^{m+1}: LHS = 1-1/2^m+1/2^{m+1} = 1-1/2^{m+1}, the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q3(iii); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "Add 2^{m+1}: 2(2^m-1)+2^{m+1} = 2(2^{m+1}-1).",
+        "marks": 3,
+        "question": "Q3(iv). By induction: 2+2^2+2^3+...+2^n = 2(2^n-1) for all natural n.",
+        "solution": "Base: n = 1 gives 2 = 2(2-1) ✓. Assume true for m; add 2^{m+1}: LHS = 2(2^m-1)+2^{m+1} = 2^{m+2}-2 = 2(2^{m+1}-1), the formula at m+1. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q3(iv); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "(m+1)^2+(m+1)-(m^2+m) = 2(m+1): the increment is visibly even.",
+        "marks": 3,
+        "question": "Q4(i). Prove by induction that n^2+n is an even number for all natural n.",
+        "solution": "Base: 1+1 = 2, even ✓. Assume m^2+m even; then (m+1)^2+(m+1) = (m^2+m)+2(m+1), even+even = even. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q4(i); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "Increment: 3m^2+3m+3 = 3(m^2+m+1), a multiple of 3 on top of the hypothesis.",
+        "marks": 3,
+        "question": "Q4(ii). Prove by induction that n^3+2n is divisible by 3 for all natural n.",
+        "solution": "Base: 1+2 = 3 ✓. Assume 3 | m^3+2m; then (m+1)^3+2(m+1) = (m^3+2m)+3m^2+3m+3 = (m^3+2m)+3(m^2+m+1), divisible by 3. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q4(ii); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "Of three consecutive integers one is a multiple of 3 (and one even): use (m+1)(m+2)(m+3)-(previous) = 3(m+1)(m+2).",
+        "marks": 4,
+        "question": "Q4(iii). Prove by induction that n(n+1)(n+2) is a multiple of 6 for all natural n.",
+        "solution": "Base: 1·2·3 = 6 ✓. Assume 6 | m(m+1)(m+2); then (m+1)(m+2)(m+3) = m(m+1)(m+2)+3(m+1)(m+2). Now (m+1)(m+2) is even (consecutive integers), so 3(m+1)(m+2) is a multiple of 6; adding the hypothesis keeps a multiple of 6. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q4(iii); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "3^{2(m+1)}-1 = 9·3^{2m}-9+8: split off a multiple of 8 plus 8.",
+        "marks": 4,
+        "question": "Q5(i). By induction prove that 3^{2n}-1 is divisible by 8 for all natural n.",
+        "solution": "Base: 3^2-1 = 8 ✓. Assume 8 | 3^{2m}-1; then 3^{2(m+1)}-1 = 9·3^{2m}-1 = 9(3^{2m}-1)+8, divisible by 8. Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q5(i); book p237 = PDF p264 (vision read)"
+      },
+      {
+        "knowledgeNote": "x^{m+1}-y^{m+1} = x(x^m-y^m)+y^m(x-y): both pieces carry (x-y).",
+        "marks": 4,
+        "question": "Q5(ii). By induction prove that x^n-y^n is divisible by x-y for all natural n.",
+        "solution": "Base: x-y divides itself ✓. Assume (x-y) | x^m-y^m; then x^{m+1}-y^{m+1} = x(x^m-y^m)+y^m(x-y), and both terms are multiples of (x-y). Hence true for all n.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.4 Q5(ii); book p237 = PDF p264 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.8 BOOK Exercise 8.4 (book pp236-237 = PDF pp263-264 of the 2075 reprint; page-region vision reads; induction proofs verified step by step).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.4 (Mathematical Induction) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-8-4-mathematical-induction",
+    "topicTitle": "Ch.8 Book Exercise 8.4 - mathematical induction (18 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
   "practice/solutions/class-11/mathematics/trigonometry/ex-4-1-trig-identities.json": {
     "examSource": "Sukunda Textbook",
     "questions": [
