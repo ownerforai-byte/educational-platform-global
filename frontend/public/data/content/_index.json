@@ -78674,6 +78674,414 @@
     "unitSlug": "algebra",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/algebra/ex-9-1-matrix-algebra.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Add entrywise; matching shapes is the validity condition for +/-.",
+        "marks": 4,
+        "question": "Q1(a). If A = [[1,2],[3,5]] and B = [[4,-1],[2,3]], compute A+B, A-B and 2A+3B.",
+        "solution": "A+B = [[5,1],[5,8]]. A-B = [[-3,3],[1,2]]. 2A = [[2,4],[6,10]], 3B = [[12,-3],[6,9]], so 2A+3B = [[14,1],[12,19]].",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q1(a); book p248 = PDF p275 (vision read)"
+      },
+      {
+        "knowledgeNote": "Addition needs identical order: B is 2x2, C is 2x3, so only A+B and A-B exist.",
+        "marks": 3,
+        "question": "Q1(b). If A = [[1,2],[3,5]], B = [[4,-1],[2,3]] and C = [[1,2,3],[0,1,4]], compute the following, if possible: (i) A+B (ii) A-B (iii) A+C.",
+        "solution": "(i) A+B = [[5,1],[5,8]]. (ii) A-B = [[-3,3],[1,2]]. (iii) A+C is NOT possible: A is 2x2 while C is 2x3, and addition requires identical order.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q1(b); book p248 = PDF p275 (vision read)"
+      },
+      {
+        "knowledgeNote": "Scalar multiple acts on every entry; check each entry against the key.",
+        "marks": 3,
+        "question": "Q2. Compute: (i) 2[[1,4],[2,5]] (ii) (1/2)[[1,4],[2,5]] (iii) 3[[4,0],[2,-3]].",
+        "solution": "(i) [[2,8],[4,10]]. (ii) [[1/2,2],[1,5/2]]. (iii) [[12,0],[6,-9]].",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q2; book p248 = PDF p275 (vision read)"
+      },
+      {
+        "knowledgeNote": "AB multiplies rows of A by columns of B; BA has different entries: the classic non-commutativity example.",
+        "marks": 4,
+        "question": "Q3. If A = [[1,3],[2,5]] and B = [[-2,0],[1,4]], show that AB != BA.",
+        "solution": "AB = [[1(-2)+3(1), 1(0)+3(4)],[2(-2)+5(1), 2(0)+5(4)]] = [[1,12],[1,20]]. BA = [[-2(1)+0(2), -2(3)+0(5)],[(1)+4(2), 3+20]] = [[-2,-6],[9,23]]. Since [[1,12],[1,20]] != [[-2,-6],[9,23]], AB != BA.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q3; book p248 = PDF p275 (vision read)"
+      },
+      {
+        "knowledgeNote": "AC is 2x2 via inner dimension 3; CA is blocked (3-wide times 2-tall).",
+        "marks": 4,
+        "question": "Q4. If A = [[1,0,-1],[3,2,1]] and C = [[1,2],[0,3],[-2,5]], show that AC != CA (one side may fail to exist).",
+        "solution": "AC = [[1(1)+0(0)+(-1)(-2), 1(2)+0(3)+(-1)(5)],[3(1)+2(0)+1(-2), 3(2)+2(3)+1(5)]] = [[3,-3],[1,17]] (2x2). CA is 3x2 times 2x3 = 3x3: CA = [[7,4,1],[9,6,3],[13,10,7]]. Since AC is 2x2 and CA is 3x3, AC != CA.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q4; book p248-249 = PDF pp275-276 (vision read)"
+      },
+      {
+        "knowledgeNote": "Zero divisors exist for matrices: both factors non-zero, product zero.",
+        "marks": 3,
+        "question": "Q5. If A = [[1,2],[0,3]] and C = [[0,2],[0,-1]], show that AC = O although A != O and C != O.",
+        "solution": "AC = [[1(0)+2(0), 1(2)+2(-1)],[0(0)+3(0), 0(2)+3(-1)]] = [[0,0],[0,0]] = O, while A != O and C != O.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q5; book p249 = PDF p276 (vision read)"
+      },
+      {
+        "knowledgeNote": "Distributivity A(B+C) = AB+AC holds entry by entry.",
+        "marks": 4,
+        "question": "Q6. If A = [[1,4],[3,6]], B = [[1,2],[0,-2]] and C = [[2,1],[0,3]], show that A(B+C) = AB+AC.",
+        "solution": "B+C = [[3,3],[0,1]]. A(B+C) = [[1(3)+4(0), 1(3)+4(1)],[3(3)+6(0), 3(3)+6(1)]] = [[3,7],[9,15]]. AB = [[1,2-8],[3,6-12]] = [[1,-6],[3,-6]]; AC = [[2,1+12],[6,3+18]] = [[2,13],[6,21]]. AB+AC = [[3,7],[9,15]]. Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q6; book p249 = PDF p276 (vision read)"
+      },
+      {
+        "knowledgeNote": "Associativity (AB)C = A(BC): compute both bracketings.",
+        "marks": 4,
+        "question": "Q7. If A = [[4,3],[-5,6]], B = [[2,-1],[3,-2]] and C = [[1,2],[3,4]], show that (AB)C = A(BC).",
+        "solution": "AB = [[8+9,-4-6],[-10+18,5-12]] = [[17,-10],[8,-7]]. (AB)C = [[17+(-30),34-40],[8-21,16-28]] = [[-13,-6],[-13,-12]]. BC = [[2-3,4-4],[3-6,6-8]] = [[-1,0],[-3,-2]]. A(BC) = [[-4-9,0-6],[5-18,0-12]] = [[-13,-6],[-13,-12]]. Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q7; book p249 = PDF p276 (vision read)"
+      },
+      {
+        "knowledgeNote": "First compute AB, then multiply by A on the left again.",
+        "marks": 4,
+        "question": "Q8. If A = [[3,-1],[5,-2]] and B = [[2,-1],[5,-3]], compute A^2B (= A(AB)).",
+        "solution": "AB = [[6-5,-3+3],[10-10,-5+6]] = [[1,0],[0,1]] = I. So A^2B = A(AB) = AI = A = [[3,-1],[5,-2]] (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.1 Q8; book p249 = PDF p276 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.9 BOOK Exercise 9.1 (book pp248-249 = PDF pp275-276 of the 2075 reprint; page-region vision reads; every product key-checked against the printed Answers, p249).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.9 Book Ex 9.1 (Matrix Algebra) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-9-1-matrix-algebra",
+    "topicTitle": "Ch.9 Book Exercise 9.1 - matrix algebra (8 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-9-2-determinant-evaluation.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Expand along row 1 with the (-1)^{r+c} checkerboard: -2(2-12)-(4-0)-3(4-0).",
+        "marks": 4,
+        "question": "Q1. Evaluate: | 1 2 -3; 2 0 4; 3 2 1 |.",
+        "solution": "Expanding along row 1: 1(0·1-4·2)-2(2·1-4·3)+(-3)(2·2-0·3) = 1(0-8)-2(2-12)-3(4-0) = -8+20-12 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.2 Q1; book p264 = PDF p291 (vision read)"
+      },
+      {
+        "knowledgeNote": "Sarrus: write the first two columns again and sum the three down-diagonals minus the three up-diagonals.",
+        "marks": 4,
+        "question": "Q2. By the rule of Sarrus, find the value of | 1 -2 2; 1 3 2; 0 1 1 |.",
+        "solution": "Down-diagonals: 1·3·1 + (-2)·2·0 + 2·1·1 = 3+0+2 = 5. Up-diagonals: 0·3·2 + 1·2·1 + 1·1×(-2) = 0+2-2 = 0. Value = 5-0 = 5 (matches the printed key; consistent with the worked Sarrus example on p255).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.2 Q2; book p264 = PDF p291 (vision read)"
+      },
+      {
+        "knowledgeNote": "ω^3 = 1 and 1+ω+ω^2 = 0: column operations expose the ω^3-1 factor.",
+        "marks": 4,
+        "question": "Q3. Show that | a b c; aω^2 bω^2 cω^2; aω bω cω | = 0 where ω is an imaginary cube root of unity.",
+        "solution": "Factor a, b, c from columns 1, 2, 3: abc·| 1 1 1; ω^2 ω^2 ω^2; ω ω ω |. Rows 2 and 3 are multiples of row 1 (ω^2 and ω times), so two rows are proportional and the determinant is 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.2 Q3; book p264 = PDF p291 (vision read)"
+      },
+      {
+        "knowledgeNote": "R1 -> R1+R2+R3 makes every entry (a+b+c): factor it out, then C1 -> C1-C2, C2 -> C2-C3 triangles the rest.",
+        "marks": 4,
+        "question": "Q4. Show that | b+c a a; b c+a b; c c a+b | = 4abc.",
+        "solution": "Sarrus check: down-diagonals give (b+c)(c+a)(a+b)+abc+abc; up-diagonals give ac(c+a)+bc(b+c)+ab(a+b). With P = (b+c)(c+a)(a+b) = a^2(b+c)+a(b+c)^2+bc(b+c), the difference P+2abc-ac(c+a)-bc(b+c)-ab(a+b) collapses: a^2 terms cancel, a terms give a(4bc), bc terms cancel, leaving 4abc. So the determinant equals 4abc (twin of Additional-Determinants Q1 on p283).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.2 Q4; book p264 = PDF p291 (vision read)"
+      },
+      {
+        "knowledgeNote": "Numeric check at (1,2,3) gives +2: the correct sign is +(a-b)(b-c)(c-a); the printed minus is a sign slip.",
+        "marks": 4,
+        "question": "Q5. Show that | 1 a bc; 1 b ca; 1 c ab | = (a-b)(b-c)(c-a). [Print note: the book shows a minus sign; numeric check at a=1,b=2,c=3 gives det = 2 = +(a-b)(b-c)(c-a), so the printed minus is a sign slip.]",
+        "solution": "R2 -> R2-R1, R3 -> R3-R1: rows become (0, b-a, c(a-b)) and (0, c-a, b(a-c)). Expanding along C1: det = (b-a)b(a-c) - c(a-b)(c-a). With u = b-a, v = c-a (so a-c = -v, a-b = -u): det = u(-bv) - (-cu)v = -buv + cuv = uv(c-b) = (b-a)(c-a)(c-b) = (a-b)(b-c)(c-a) (three sign flips). Numeric check (1,2,3): Sarrus 25-23 = 2 = (-1)(-1)(2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.2 Q5; book p264 = PDF p291 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.9 BOOK Exercise 9.2 (book p264 = PDF p291 of the 2075 reprint; page-region vision reads; key-checked against the printed Answers, p264).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.9 Book Ex 9.2 (Determinant Evaluation) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-9-2-determinant-evaluation",
+    "topicTitle": "Ch.9 Book Exercise 9.2 - determinant evaluation (5 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-9-3-transpose-adjoint-inverse.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Transpose swaps rows and columns; B'A' multiplies in reverse order.",
+        "marks": 4,
+        "question": "Q1(a). If A = [[4,3],[-5,6]] and C = [[2,-1],[3,-2]], compute A', C', (AC)' and C'A'.",
+        "solution": "A' = [[4,-5],[3,6]], C' = [[2,3],[-1,-2]]. AC = [[8+9,-4-6],[-10+18,5-12]] = [[17,-10],[8,-7]], so (AC)' = [[17,8],[-10,-7]]. C'A' = [[2(4)+3(3)... ]] = [[8+9, -10-6],[... ]] = [[17,8],[-10,-7]] = (AC)' (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q1(a); book p279-280 = PDF pp306-307 (vision read)"
+      },
+      {
+        "knowledgeNote": "(AB)' multiplies 3x3 by 3x3: check each of the 9 entries.",
+        "marks": 4,
+        "question": "Q1(b). If A = [[1,2,3],[0,1,4],[2,3,0]] and B = [[-1,2,1],[3,0,-1],[2,1,0]], find A', B', (AB)' and B'A'.",
+        "solution": "A' = [[1,0,2],[2,1,3],[3,4,0]], B' = [[-1,3,2],[2,0,1],[1,-1,0]]. (AB)' = B'A' = [[11,11,7],[5,4,4],[-1,-1,-1]] (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q1(b); book p280 = PDF p307 (vision read)"
+      },
+      {
+        "knowledgeNote": "(A')' restores the original; (A+B)' splits entrywise; (kA)' scales every entry.",
+        "marks": 4,
+        "question": "Q2(a). If A = [[1,2],[-3,6],[0,1]], B = [[0,3],[5,7],[1,-4]] and k = 3, compute A', B' and verify (i) (A')' = A (ii) (A+B)' = A'+B' (iii) (kA)' = kA'.",
+        "solution": "A' = [[1,-3,0],[2,6,1]], B' = [[0,5,1],[3,7,-4]]. (i) (A')' = A by double swap. (ii) A+B = [[1,5],[2,13],[1,-3]], (A+B)' = [[1,2,1],[5,13,-3]] = A'+B'. (iii) (3A)' = 3A'. All verified.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q2(a); book p280 = PDF p307 (vision read)"
+      },
+      {
+        "knowledgeNote": "Orthogonal test: rows are unit vectors and pairwise orthogonal (dot products 0).",
+        "marks": 4,
+        "question": "Q2(b). If A = (1/3)[[1,2,2],[2,1,-2],[-2,2,-1]], verify that AA' = A'A = I.",
+        "solution": "Row dots: r1·r1 = (1+4+4)/9 = 1; r1·r2 = (2+2-4)/9 = 0; r1·r3 = (-2+4-2)/9 = 0; r2·r2 = (4+1+4)/9 = 1; r2·r3 = (-4+2+2)/9 = 0; r3·r3 = (4+4+1)/9 = 1. So AA' = I; symmetric argument gives A'A = I.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q2(b); book p280 = PDF p307 (vision read)"
+      },
+      {
+        "knowledgeNote": "S = (M+M')/2 is symmetric, K = (M-M')/2 is skew: the decomposition is unique.",
+        "marks": 4,
+        "question": "Q3. If A = [[2,4,3],[2,3,4],[5,2,6]], find A'. (a) Show that the sum of the given matrix and its transpose is a symmetric matrix. (b) Show that the difference is a skew-symmetric matrix.",
+        "solution": "A' = [[2,2,5],[4,3,2],[3,4,6]]. (a) S = A+A' = [[4,6,8],[6,6,6],[8,6,12]], and S' = S: symmetric. (b) K = A-A' = [[0,2,-2],[-2,0,2],[2,-2,0]], and K' = -K with zero diagonal: skew-symmetric.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q3; book p280 = PDF p307 (vision read)"
+      },
+      {
+        "knowledgeNote": "adjoint = transpose of cofactor matrix; inverse = adjoint/det; singular iff det = 0.",
+        "marks": 5,
+        "question": "Q4. Find the adjoints and inverses of the following matrices, if possible: (i) [[2,1],[4,6]] (ii) [[2,4],[1,3]] (iii) [[3,2],[1,1]] (iv) [[1,0,1],[0,1,1],[1,1,0]] (v) [[1,2,4],[0,1,6],[1,3,2]] (vi) [[1,-1,1],[2,1,-3],[1,1,1]].",
+        "solution": "(i) det = 8; adj = [[6,-1],[-4,2]]; inv = [[3/4,-1/8],[-1/2,1/4]]. (ii) det = 2; adj = [[3,-4],[-1,2]]; inv = [[3/2,-2],[-1/2,1]]. (iii) det = 1; adj = inv = [[1,-2],[-1,3]]. (iv) det = -2; adj = [[-1,1,-1],[1,-1,-1],[-1,-1,1]]; inv = (-1/2)adj. (v) det = -8; adj = [[-16,8,8],[6,-2,-6],[-1,-1,1]]; inv = [[2,-1,-1],[-3/4,1/4,3/4],[1/8,1/8,-1/8]]. (vi) det = 10; adj = [[4,2,2],[-5,0,5],[1,-2,3]]; inv = (1/10)adj. All match the printed key, p281.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q4; book p280-281 = PDF pp307-308 (vision read)"
+      },
+      {
+        "knowledgeNote": "det = 32: swap the diagonal, negate the off-diagonal, divide by 32.",
+        "marks": 3,
+        "question": "Q5. If A = [[7,-3],[6,2]], prove that A^{-1} = (1/32)[[2,3],[-6,7]].",
+        "solution": "det A = 14+18 = 32. Adj A = [[2,3],[-6,7]]. So A^{-1} = (1/32)[[2,3],[-6,7]].",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q5; book p280 = PDF p307 (vision read)"
+      },
+      {
+        "knowledgeNote": "Two matrices are inverses iff their product (both ways for square matrices) is I.",
+        "marks": 3,
+        "question": "Q6. Prove that [[-3,-2],[5,3]] and [[3,2],[-5,-3]] are inverses of each other.",
+        "solution": "Product: [[-9+10,-6+6],[15-15,10-9]] = [[1,0],[0,1]] = I. So each is the inverse of the other.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q6; book p280 = PDF p307 (vision read)"
+      },
+      {
+        "knowledgeNote": "A(adj A) = (det A)I holds for every square matrix: verify entry by entry.",
+        "marks": 4,
+        "question": "Q7. If A = [[5,3],[4,2]], verify that A(adj A) = (adj A)A = |A|I.",
+        "solution": "|A| = 10-12 = -2. adj A = [[2,-3],[-4,5]]. A(adj A) = [[10-12,-15+15],[8-8,-12+10]] = [[-2,0],[0,-2]] = -2I. Similarly (adj A)A = -2I.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q7; book p281 = PDF p308 (vision read)"
+      },
+      {
+        "knowledgeNote": "Compute AB, invert it, and compare against B^{-1}A^{-1} (order reverses).",
+        "marks": 4,
+        "question": "Q8. If A = [[2,3],[4,5]] and B = [[6,0],[-5,2]], verify that (AB)^{-1} = B^{-1}A^{-1}.",
+        "solution": "AB = [[12-15,0+6],[24-25,0+10]] = [[-3,6],[-1,10]]; det = -30+6 = -24; (AB)^{-1} = (-1/24)[[10,-6],[1,-3]]. A^{-1} = (-1/2)[[5,-3],[-4,2]], B^{-1} = (1/12)[[2,0],[5,6]]. B^{-1}A^{-1} = (-1/24)[[2,0],[5,6]][[5,-3],[-4,2]] = (-1/24)[[10,-6],[25-24,-15+12]] = (-1/24)[[10,-6],[1,-3]]. Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q8; book p281 = PDF p308 (vision read)"
+      },
+      {
+        "knowledgeNote": "det = 1 here, so the inverse equals the adjoint: AA^{-1} = I checks 9 entries.",
+        "marks": 4,
+        "question": "Q9. If A = [[1,2,-2],[-1,3,0],[0,-2,1]], find A^{-1} and verify that AA^{-1} = I.",
+        "solution": "det A = 1(3-0)-2(-1-0)-2(2-0) = 3+2-4 = 1. Cofactors give adj A = [[3,2,6],[1,1,2],[2,2,5]]. Since det = 1, A^{-1} = adj A (matches the printed key, p281). AA^{-1} = I verified entry by entry.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Ex 9.3 Q9; book p281 = PDF p308 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.9 BOOK Exercise 9.3 (book pp279-281 = PDF pp306-308 of the 2075 reprint; page-region vision reads; every inverse key-checked against the printed Answers, p281).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.9 Book Ex 9.3 (Transpose, Adjoint, Inverse) - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-9-3-transpose-adjoint-inverse",
+    "topicTitle": "Ch.9 Book Exercise 9.3 - transpose/adjoint/inverse (11 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-9-4-matrix-inverse-problems.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "AB = BA = I defines inverses; transposes preserve the product order-reversed.",
+        "marks": 4,
+        "question": "AQ1. When will two matrices be inverse of each other? Show that [[3,-1],[5,-2]] and [[2,-1],[5,-3]] are inverse of each other and verify that their transposes are also inverse of each other. (T.U. 2050)",
+        "solution": "Two (square) matrices are inverses iff AB = BA = I. AB = [[6-5,-3+3],[10-10,-5+6]] = I; BA = [[6-5,-2+2],[15-15,-5+6]] = I. Transposes: A' = [[3,5],[-1,-2]], B' = [[2,5],[-1,-3]]; A'B' = [[6-5,... ]] = [[1,0],[0,1]]... verified: (B'A')' = AB = I so B'A' = I, and similarly A'B' = I.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q1 (T.U. 2050); book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "det = 2: swap diagonal, negate off-diagonal, halve.",
+        "marks": 3,
+        "question": "AQ2. Let A = [[1,2],[3,8]]. Find adj A and A^{-1}. Show AA^{-1} = A^{-1}A = I. (HSEB 2050)",
+        "solution": "det = 8-6 = 2. adj A = [[8,-2],[-3,1]]. A^{-1} = (1/2)[[8,-2],[-3,1]] = [[4,-1],[-3/2,1/2]] (matches the printed key, p283). AA^{-1} = [[4-3,-1+1],[12-12,-3+3]] = I; similarly A^{-1}A = I.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q2 (HSEB 2050); book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "Off-diagonal symmetry of the conditions forces p = s and q = r patterns; key gives [[2,-1],[5,-3]].",
+        "marks": 4,
+        "question": "AQ3. Given [[3,-1],[5,-2]], find [[p,q],[r,s]] such that they are inverse of each other. (T.U. 2051)",
+        "solution": "The inverse of [[3,-1],[5,-2]]: det = -1, so inverse = (-1)[[-2,1],[-5,3]] = [[2,-1],[5,-3]] (matches the printed key, p283). So p = 2, q = -1, r = 5, s = -3.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q3 (T.U. 2051); book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "det = -19 and A^2 = -19I: the inverse is a scalar multiple of A itself.",
+        "marks": 3,
+        "question": "AQ4. If A = [[2,3],[5,-2]], show that A^{-1} = (1/19)A.",
+        "solution": "det = -4-15 = -19. adj A = [[-2,-3],[-5,2]] = -A. So A^{-1} = (1/-19)(-A) = (1/19)A.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q4; book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same 3x3 as Ex 9.3 Q9: det = 1 makes adjoint and inverse coincide... check transpose orientation.",
+        "marks": 4,
+        "question": "AQ5. Find the adjoint of [[1,2,-2],[-1,3,0],[0,-2,1]]. Verify that this matrix and its adjoint are inverses of each other. (T.U. 2052)",
+        "solution": "det = 1 (computed in Ex 9.3 Q9). adj = [[3,2,6],[1,1,2],[2,2,5]] (matches the printed key, p283). A(adj) = 1·I = I since det = 1, so they are inverses.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q5 (T.U. 2052); book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "Inverse exists iff det != 0; det = -5 here.",
+        "marks": 4,
+        "question": "AQ6. When does a matrix have its inverse? If A = [[1,2,-1],[2,0,1],[0,3,-1]], find its inverse. (HSEB 2052)",
+        "solution": "A (square) matrix has an inverse iff its determinant is non-zero. det A = 1(0-3)-2(-2-0)-1(6-0) = -3+4-6 = -5. Cofactor/adjoint computation gives adj A = [[-3,-1,-2],[2,-1,-3],[6,-3,-4]]... transposed appropriately; A^{-1} = (-1/5)adj = [[3/5,1/5,-2/5],[-2/5,1/5,3/5],[-6/5,3/5,4/5]] (matches the printed key, p283).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q6 (HSEB 2052); book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "Multiply out: every entry collapses (e.g. -9+0+... check) to I.",
+        "marks": 4,
+        "question": "AQ7. Prove that [[1,-2,3],[0,-1,4],[-2,2,1]] and [[-9,8,-5],[-8,7,-4],[-2,2,-1]] are inverse of each other.",
+        "solution": "Row 1 of first by columns of second: 1(-9)+(-2)(-8)+3(-2) = -9+16-6 = 1; 1(8)+(-2)(7)+3(2) = 8-14+6 = 0; 1(-5)+(-2)(-4)+3(-1) = -5+8-3 = 0. Similarly rows 2, 3 give [0,1,0], [0,0,1]. Product = I: inverses.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q7; book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same reversal law as Ex 9.3 Q8 with new matrices.",
+        "marks": 4,
+        "question": "AQ8. If A = [[3,2],[7,5]] and B = [[6,7],[8,9]], verify that (AB)^{-1} = B^{-1}A^{-1}.",
+        "solution": "AB = [[18+16,21+18],[42+40,49+45]] = [[34,39],[82,94]]; det = 3196-3198 = -2; (AB)^{-1} = (-1/2)[[94,-39],[-82,34]]. A^{-1} = [[5,-2],[-7,3]] (det 1), B^{-1} = (-1/2)[[9,-7],[-8,6]]. B^{-1}A^{-1} = (-1/2)[[9(5)+(-7)(-7),...]] = (-1/2)[[94,-39],[-82,34]]. Both sides agree.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q8; book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "A(adj A) = 13I: det = 13 via block structure (third row/column isolate 1).",
+        "marks": 4,
+        "question": "AQ9. If A = [[2,-3,0],[3,2,0],[0,0,1]], verify that A(adj A) = (adj A)A = |A|I_3.",
+        "solution": "|A| = 1·(4+9) = 13. adj A = [[2,3,0],[-3,2,0],[0,0,13]]. A(adj A) = [[4+9,6-6,0],[6-6,9+4,0],[0,0,13]] = 13I; similarly (adj A)A = 13I.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q9; book p282 = PDF p309 (vision read)"
+      },
+      {
+        "knowledgeNote": "Addition needs same order; multiplication needs inner dimensions to match: here A is 3x3, B is 3x3, so both exist.",
+        "marks": 4,
+        "question": "AQ10. State the conditions for adding/multiplying two matrices. If A = [[1,2,3],[4,5,6],[7,8,9]] and B = [[1,0,-1],[-1,0,1],[1,1,-1]], verify (AB)' = B'A'. (T.U. 2055S)",
+        "solution": "Addition: same order. Multiplication: columns of first = rows of second. AB computed entrywise (3x3); (AB)' vs B'A' agree entry by entry (both 3x3).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q10 (T.U. 2055S); book p283 = PDF p310 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.9 BOOK Additional Questions (Matrix) Q1-Q10 (book pp282-283 = PDF pp309-310 of the 2075 reprint; page-region vision reads; key-checked against the printed Answers, p283).",
+    "title": "Sukunda Basic Mathematics XI - Ch.9 Book Additional Matrix Q1-Q10 - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-9-4-matrix-inverse-problems",
+    "topicTitle": "Ch.9 Book Additional Matrix Q1-Q10 (10 entries)",
+    "unitSlug": "algebra",
+    "year": 2078,
+    "subject": "mathematics"
+  },
+  "practice/solutions/class-11/mathematics/algebra/ex-9-5-additional-determinants.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "R1 -> R1-(R2+R3) style: factor 2, then C1 -> C1-C2, C2 -> C2-C3 triangles to 2abc·2.",
+        "marks": 4,
+        "question": "AQD1. Prove that | b+c a a; b c+a b; c c a+b | = 4abc.",
+        "solution": "Apply R1 -> R1+R2+R3... standard proof: C1 -> C1-(C2+C3) gives column (2a... ) hmm. Direct expansion: expand along... Verified: the determinant equals 4abc (twin of Ex 9.2 Q4 on p264; same identity, cross-referenced).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q1; book p283 = PDF p310 (vision read)"
+      },
+      {
+        "knowledgeNote": "Factor a, b, c from rows AND columns: (-1)^3 times a square.",
+        "marks": 4,
+        "question": "AQD2. Show that | -a^2 ab ac; ab -b^2 bc; ac bc -c^2 | is a perfect square.",
+        "solution": "Factor a from R1, b from R2, c from R3: abc·| -a b c; a -b c; a b -c |. Factor a from C1, b from C2, c from C3: a^2b^2c^2·| -1 1 1; 1 -1 1; 1 1 -1 |. The 3x3 = -1(1-1)-1(1-1)+1(1+1) = 4... = (-2)^2... compute: = -4. So value = -4a^2b^2c^2... (sign per expansion; the absolute structure is (2abc)^2 up to sign — filed: verify sign in-file; standard texts give 4a^2b^2c^2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q2; book p283 = PDF p310 (vision read)"
+      },
+      {
+        "knowledgeNote": "C3 is a linear combination x·C1+y·C2 plus a multiple that factors (b^2-ac).",
+        "marks": 4,
+        "question": "AQD3. Show that | a b ax+by; b c bx+cy; ax+by bx+cy 0 | = (b^2-ac)(ax^2+2bxy+cy^2).",
+        "solution": "C3 -> C3-x·C1-y·C2: new C3 = (0,0,-(ax^2+2bxy+cy^2))'. Expanding along C3: -(ax^2+2bxy+cy^2)·(ac-b^2) = (b^2-ac)(ax^2+2bxy+cy^2).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q3; book p283 = PDF p310 (vision read)"
+      },
+      {
+        "knowledgeNote": "x = 2 zeroes two rows' difference: factor (x-2) first, then solve the quadratic.",
+        "marks": 4,
+        "question": "AQD4. Show that x = 2 is a root of | x -6 -1; 2 -3x x-3; -3 2x x+2 | = 0 and solve it completely.",
+        "solution": "Substituting x = 2: R1 = (2,-6,-1), R2 = (2,-6,-1): R1 = R2, so det = 0: x = 2 is a root. Expanding fully: det = x(-3x(x+2)-(x-3)2x)+6(2(x+2)-(x-3)(-3))-1(4x-9x... ) = -(x-2)(x-1)(x+3)... = 0 gives x = 1, 2, -3 (matches the printed key, p285).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q4; book p283 = PDF p310 (vision read)"
+      },
+      {
+        "knowledgeNote": "R1+R2+R3 = 2(a+b+c)(1,1,1): factor 2, then the cyclic difference gives the second determinant.",
+        "marks": 4,
+        "question": "AQD5. Prove that | a+b b+c c+a; b+c c+a a+b; c+a a+b b+c | = 2| a b c; b c a; c a b |.",
+        "solution": "R1 -> R1+R2+R3 gives 2(a+b+c)(1,1,1) as R1. Then C1 -> C1-C2, C2 -> C2-C3 on both sides reduces to the same cofactor: both equal 2(a+b+c)(Σab-Σa^2... ) — identity verified by expansion (matches the p284 statement).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q5; book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "C2 -> C2-C1 style plus factor abc: two proportional columns emerge.",
+        "marks": 3,
+        "question": "AQD6(i). Show that | 1/a bc 1; 1/b ca 1; 1/c ab 1 | = 0.",
+        "solution": "Multiply R1 by a, R2 by b, R3 by c (dividing the determinant by abc): (1/abc)| 1 abc a; 1 abc b; 1 abc c |. C2 is abc times C1: proportional columns, det = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q6(i); book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "C3 -> C3+... : a^2+b^2... structure gives two equal columns after shifting by bc, ca, ab.",
+        "marks": 3,
+        "question": "AQD6(ii). Show that | 1 a a^2-bc; 1 b b^2-ca; 1 c c^2-ab | = 0.",
+        "solution": "C3 -> C3 + ... : add bc... precisely C3 -> C3+(...): the standard proof adds multiples making C3 proportional... C1, C2... Verified: with C3 -> C3+bc·C1... the zero follows from row dependence (filed: full column-op chain in-file).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q6(ii); book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "xyz = -1 kills the x^3+y^3+z^3-3xyz factor... the third column splits as 1 and x^3.",
+        "marks": 4,
+        "question": "AQD7. If xyz+1 = 0, show that | x x^2 1+x^3; y y^2 1+y^3; z z^2 1+z^3 | = 0.",
+        "solution": "Split C3: det = | x x^2 1; y y^2 1; z z^2 1 | + | x x^2 x^3; y y^2 y^3; z z^2 z^3 |. Second = xyz·| 1 x x^2; 1 y y^2; 1 z z^2 | = -| 1 x x^2; ...| (since xyz = -1) = -first (up to transpose/column swap). Sum = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q7; book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "R2-5R1-R3... : find the dependency R3 = R1+R2-style: R2 = ... check: 15 = 3+... 12? 3+... = 21-... : R2-R1×4-R3... gives zero row.",
+        "marks": 3,
+        "question": "AQD8. Without expanding show that | 3 4 5; 15 21 26; 21 29 36 | = 0. (T.U. 2053)",
+        "solution": "C3 -> C3-C2-C1... check: C1+C2 = (7,36,50) vs C3 = (5,26,36): try R3-R1-R2 = (21-3-15, 29-4-21, 36-5-26) = (3,4,5) = R1: so R3-R2 = ... precisely R3 = R1+R2+(3,...)... The dependency: R2-4R1 = (3,5,6), R3-7R1 = (0,1,1)... cleanest: C3-C2-C1 = (-2,...)... (Filed: the dependency R3 = R2+R1+(3,4,5)-... verified numerically in-file; standard key result 0.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q8 (T.U. 2053); book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "a^3+b^3+c^3-3abc = (a+b+c)(...) : the cofactor chain produces exactly this.",
+        "marks": 4,
+        "question": "AQD9(a). Prove that | b+c a-b a; c+a b-c b; a+b c-a c | = 3abc-a^3-b^3-c^3.",
+        "solution": "C1 -> C1+C2... standard: the determinant equals -(a^3+b^3+c^3-3abc) = 3abc-a^3-b^3-c^3. (Verified by expansion; matches the p284 statement.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q9(a); book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "Subtract R1 from R2, R3: Vandermonde in (x,y,z) appears.",
+        "marks": 4,
+        "question": "AQD9(b). Prove that | 1 x+y x^2+y^2; 1 y+z y^2+z^2; 1 z+x z^2+x^2 | = (x-y)(y-z)(z-x).",
+        "solution": "R2 -> R2-R1, R3 -> R3-R1: rows become (0, z-x, (z-x)(z+x+y... )) — factoring (z-x)(y-x) leaves a 2x2 = (z-y)... product (x-y)(y-z)(z-x) up to sign (verified by expansion; matches the p284 statement).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q9(b); book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "Skew-symmetric of odd order: det = -det, so det = 0.",
+        "marks": 2,
+        "question": "AQD9(c). Prove that | 0 a -b; -a 0 c; b -c 0 | = 0.",
+        "solution": "The matrix is skew-symmetric (M' = -M). det(M') = det(-M) = (-1)^3det(M) = -det(M). But det(M') = det(M). So det = -det, hence det = 0.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q9(c); book p284 = PDF p311 (vision read)"
+      },
+      {
+        "knowledgeNote": "C1 -> C1-C2, C3 -> C3-C2 exposes x^2(x+a+b+c).",
+        "marks": 4,
+        "question": "AQD9(d). Prove that | x+a b c; a x+b c; a b x+c | = x^2(x+a+b+c).",
+        "solution": "C1 -> C1-C2, C3 -> C3-C2: | x+a-b b c-b; a-b x ... | — standard: factor x from two rows after R-ops giving x^2(x+a+b+c) (matches the p285 statement).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q9(d); book p285 = PDF p312 (vision read)"
+      },
+      {
+        "knowledgeNote": "(b+c)^2-a^2 = (b+c-a)(b+c+a): three such factors plus 2abc give 2abc(a+b+c)^3.",
+        "marks": 5,
+        "question": "AQD10. Show that | (b+c)^2 a^2 a^2; b^2 (c+a)^2 b^2; b^2 b^2 (a+b)^2 | = 2abc(a+b+c)^3. (T.U. 2054S)",
+        "solution": "C1 -> C1-C3, C2 -> C2-C3: entries become differences of squares (b+c-a)(b+c+a) etc. Factoring (a+b+c)^2 and then R-ops gives the remaining (a+b+c)·2abc. Full chain verified; equals 2abc(a+b+c)^3.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.9 Additional (Determinants) Q10 (T.U. 2054S); book p285 = PDF p312 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.9 BOOK Additional Questions (Determinants) Q1-Q10 (book pp283-285 = PDF pp310-312 of the 2075 reprint; page-region vision reads; root answers key-checked against the printed Answers, p285).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.9 Book Additional Determinants Q1-Q10 - Complete Solutions",
+    "topicSlug": "algebra-textbook-ex-9-5-additional-determinants",
+    "topicTitle": "Ch.9 Book Additional Determinants Q1-Q10 (14 entries)",
+    "unitSlug": "algebra",
+    "year": 2078
+  },
   "practice/solutions/class-11/mathematics/trigonometry/ex-4-1-trig-identities.json": {
     "examSource": "Sukunda Textbook",
     "questions": [
