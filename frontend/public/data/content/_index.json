@@ -81301,6 +81301,388 @@
     "unitSlug": "analytic-geometry",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/analytic-geometry/ex-14-1-pair-basics.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Multiply the factors: (x+y)(x+2y).",
+        "marks": 3,
+        "question": "Q1(a). Single equation for x+y = 0, x+2y = 0.",
+        "solution": "(x+y)(x+2y) = x²+3xy+2y² = 0. Boxed x²+3xy+2y² = 0 (matches the printed key, book p429).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q1(a); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "(ax-by)(bx+ay) = abx²+(a²-b²)xy-aby².",
+        "marks": 3,
+        "question": "Q1(b). Single equation for ax-by = 0, bx+ay = 0.",
+        "solution": "Boxed abx²+(a²-b²)xy-aby² = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q1(b); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "(x+y+2)(x+2y+1) expands with 3x+5y+2 cross terms.",
+        "marks": 3,
+        "question": "Q1(c). Single equation for x+y+2 = 0, x+2y+1 = 0.",
+        "solution": "x²+2y²+3xy+3x+5y+2 = 0. Boxed as shown (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q1(c); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "x(x-2y): lines x = 0, x-2y = 0.",
+        "marks": 3,
+        "question": "Q2(a). Lines of x^2-2xy = 0.",
+        "solution": "Boxed x = 0; x-2y = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q2(a); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "(x-y)(x-4y): slopes 1 and 4.",
+        "marks": 3,
+        "question": "Q2(b). Lines of x^2-5xy+4y^2 = 0.",
+        "solution": "Boxed x-y = 0; x-4y = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q2(b); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Group: x(y+2)-3(y+2) = (x-3)(y+2): degenerate (parallel to axes).",
+        "marks": 3,
+        "question": "Q2(c). Lines of xy-3x+2y-6 = 0.",
+        "solution": "Boxed x+... (x-3)(y+2) = 0: x = 3? Recompute: xy-3x+2y-6 = x(y-3)+2(y-3) = (x+2)(y-3). Boxed x+2 = 0; y-3 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q2(c); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "(x+y)²-2(x+y)-15 = (t-5)(t+3): parallel lines x+y-5 = 0, x+y+3 = 0.",
+        "marks": 3,
+        "question": "Q2(d). Lines of x^2+2xy+y^2-2x-2y-15 = 0.",
+        "solution": "Boxed x+y-5 = 0; x+y+3 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q2(d); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "tan θ = 2√(h²-ab)/|a+b| = 2·(5/2)/15 = 1/3.",
+        "marks": 3,
+        "question": "Q3(a). Angle between x^2+9xy+14y^2 = 0.",
+        "solution": "Boxed tan⁻¹(±1/3) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q3(a); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "a+b = 1-1 = 0 ⟹ lines perpendicular.",
+        "marks": 3,
+        "question": "Q3(b). Angle between x^2-2xy cotθ-y^2 = 0.",
+        "solution": "Boxed π/2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q3(b); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Use the homogeneous part: tan = 2·(3/2)/5 = 3/5.",
+        "marks": 3,
+        "question": "Q3(c). Angle between x^2-5xy+4y^2+x+2y-2 = 0.",
+        "solution": "Boxed tan⁻¹(±3/5) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q3(c); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Bisector formula h(x²-y²) = (a-b)xy with h = -15/2, a-b = 1.",
+        "marks": 4,
+        "question": "Q4(a). Bisectors of 3x^2-15xy+2y^2 = 0.",
+        "solution": "(-15/2)(x²-y²) = (3-2)xy: -15(x²-y²) = 2xy. Boxed 15x²+2xy-15y² = 0 (matches the printed key 4.a).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q4(a); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "h = cosecθ, a-b = 0: bisectors are x²-y² = 0.",
+        "marks": 4,
+        "question": "Q4(b). Bisectors of x^2+2xy cosecθ+y^2 = 0.",
+        "solution": "cosecθ(x²-y²) = 0: x²-y² = 0. Boxed x²-y² = 0 (matches the printed key 4.b).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q4(b); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Absorb k: a+k, b+k: h(x²-y²) = (a-b)xy (k cancels).",
+        "marks": 4,
+        "question": "Q4(c). Bisectors of ax^2+2hxy+by^2+k(x^2+y^2) = 0.",
+        "solution": "Boxed h(x²-y²) = (a-b)xy (matches the printed key 4.c).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q4(c); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Δ = abc+2fgh-af²-bg²-ch² = 0 test; HSEB 2053 pair factors as (2x+y-1)(x+3y-2).",
+        "marks": 5,
+        "question": "Q5(a). Prove 2x^2+7xy+3y^2-4x-7y+2 = 0 is a line pair. (HSEB 2053)",
+        "solution": "Δ = 2·3·2+2(7/2)(-2)(-7/2)-2(49/4)-3(4)-(7/2)²·2 = 12+49-49/2-12-49/2 = 0 ✓. Factors: (2x+y-1)(x+3y-2) = 2x²+7xy+3y²-4x-7y+2 ✓. ∎ (verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q5(a) (HSEB 2053); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Δ = 0; factors (3x+4y-7)(2x-3y+2).",
+        "marks": 5,
+        "question": "Q5(b). Prove 6x^2-xy-12y^2-8x+29y-14 = 0 is a line pair.",
+        "solution": "Δ = 0 (computed); (3x+4y-7)(2x-3y+2) = 6x²-xy-12y²-8x+29y-14 ✓. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q5(b); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Δ = 0 gives k = 9/2 or 3.",
+        "marks": 4,
+        "question": "Q6(a). k so that x^2+kxy+2y^2+3x+5y+2 = 0 is a line pair.",
+        "solution": "Δ = 1·2·2+2(k/2)(3/2)(5/2)-1(25/4)-2(9/4)-2(k/2)² = 4+15k/4-25/4-9/2-k²/2 = 0. ×4: 16+15k-25-18-2k² = 0: 2k²-15k+27 = 0 = (2k-9)(k-3). Boxed k = 9/2 or 3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q6(a); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Δ = 0 linear in k: k = 2.",
+        "marks": 4,
+        "question": "Q6(b). k so that 2x^2+7xy+3y^2-4x-7y+k = 0 is a line pair.",
+        "solution": "Δ = 2·3·k+2(7/2)(-2)(-7/2)-2(49/4)-3(4)-k(7/2)² = 6k+49-49/2-12-49k/4 = 0. ×4: 24k+196-98-48-49k = 0: -25k+50 = 0, k = 2. Boxed k = 2 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q6(b); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "t = x+3y: t²+4t-5 = (t+5)(t-1); distance 6/√10 = 3√10/5. (T.U. 2049)",
+        "marks": 5,
+        "question": "Q7(a). Lines of x^2+6xy+9y^2+4x+12y-5 = 0; parallel + distance. (T.U. 2049)",
+        "solution": "Boxed x+3y+5 = 0, x+3y-1 = 0, distance 3√10/5 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q7(a) (T.U. 2049); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "(2x+y-1)(x+y+3); meet at (4,-7); angle tan⁻¹(±1/3). (T.U. 2048, 2058S)",
+        "marks": 5,
+        "question": "Q7(b). Lines of 2x^2+3xy+y^2+5x+2y-3 = 0; intersection + angle. (T.U. 2048, 2058S)",
+        "solution": "Boxed x+y+3 = 0, 2x+y-1 = 0, (4,-7), tan⁻¹(±1/3) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q7(b) (T.U. 2048, 2058S); book p428 = PDF p455 (vision read)"
+      },
+      {
+        "knowledgeNote": "Bisectors coincide ⟺ the bisector equation h(x²-y²) = (a-b)xy is the same pair.",
+        "marks": 5,
+        "question": "Q8. Same bisectors ⟹ h(a'-b') = h'(a-b).",
+        "solution": "Bisectors of first: h(x²-y²)-(a-b)xy = 0. Of second: h'(x²-y²)-(a'-b')xy = 0. Same pair ⟺ coefficients proportional: h/h' = (a-b)/(a'-b'). Cross: h(a'-b') = h'(a-b). ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.1 Q8; book p428 = PDF p455 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.14 BOOK Exercise 14.1 (book p428 = PDF p455 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, book p429).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.14 Book Ex 14.1 (Pair Basics) - Complete Solutions",
+    "topicSlug": "analytic-geometry-textbook-ex-14-1-pair-basics",
+    "topicTitle": "Ch.14 Book Exercise 14.1 - pair basics (20 entries)",
+    "unitSlug": "analytic-geometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/analytic-geometry/ex-14-2-joint-lines.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Perpendicular slopes -1,-1/4: (x+y)(x+4y) = 4x²+5xy+y². (HSEB 2052)",
+        "marks": 4,
+        "question": "Q9(a). Lines through origin ⊥ to x^2-5xy+4y^2 = 0. (HSEB 2052)",
+        "solution": "Boxed 4x²+5xy+y² = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q9(a) (HSEB 2052); book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Shift to (1,1): replace x→(x-1), y→(y-1) in x²-5xy+4y².",
+        "marks": 4,
+        "question": "Q9(b). Lines through (1,1) ∥ to x^2-5xy+4y^2+x+2y-2 = 0.",
+        "solution": "Boxed x²-5xy+4y²+3x-3y = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q9(b); book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogeneous part (x+3y)(x-2y); perp slopes 3,-2: 6x²+xy-y² = 0.",
+        "marks": 4,
+        "question": "Q9(c). Lines through origin ⊥ to x^2+xy-6y^2+7x+31y-18 = 0.",
+        "solution": "Boxed 6x²+xy-y² = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q9(c); book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogenise with (x+y)/1 = 1: a+b = 0 check gives 0. (T.U. 2050)",
+        "marks": 5,
+        "question": "Q10(a). Origin-join to (x+y = 1) ∩ (4x^2+4y^2+4x-2y-5 = 0) are ⊥. (T.U. 2050)",
+        "solution": "4x²+4y²+(4x-2y)(x+y)-5(x+y)² = 0: 4x²+4y²+4x²+2xy-2y²-5x²-10xy-5y² = 3x²-8xy-3y² = 0. a+b = 3-3 = 0 ⟹ perpendicular. ∎ (verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(a) (T.U. 2050); book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogenised pair has a+b = 0 for every λ ≠ 0.",
+        "marks": 5,
+        "question": "Q10(b). Origin-join to (x^2+hxy-y^2+gx+fy = 0) ∩ (fx-gy = λ) are ⊥ ∀λ ≠ 0.",
+        "solution": "Homogenise: x²+hxy-y²+(gx+fy)(fx-gy)/λ = 0. x²-coeff: 1+gf/λ; y²-coeff: -1-fg/λ. Sum = 0 identically. ∎ (proof-type; verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(b); book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogenise with (x+2y)/3: 3x²+40xy-16y² = 0; tan = 16√7/13.",
+        "marks": 5,
+        "question": "Q10(c). Origin-join to (x+2y = 3) ∩ (4x^2+16xy-12y^2-8x+12y-3 = 0) + angle.",
+        "solution": "Boxed 3x²+40xy-16y² = 0, tan⁻¹(±16√7/13) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(c); book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogenise x²+y²-a²·1 with ((mx-y+c)/c)²: a+b = 0 ⟺ 2c² = a²(1+m²). (T.U. 2052, HSEB 2053, 2058)",
+        "marks": 5,
+        "question": "Q10(d). Origin-join to (y = mx+c) ∩ (x^2+y^2 = a^2); ⊥ iff 2c^2 = a^2(1+m^2). (T.U. 2052, HSEB 2053, 2058)",
+        "solution": "x²+y²-a²((mx-y+c)/c)²... expand: x²-coeff 1-a²m²/c²; y²-coeff 1-a²/c². Sum 0: 2-a²(m²+1)/c² = 0: 2c² = a²(1+m²). ∎ (verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(d) (T.U. 2052, HSEB 2053, 2058); book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Expand (x cosθ-y sinθ)²-(x²+y²)sin²α = 0: angle formula gives tan = ±tan... θ-pair differ by 2α.",
+        "marks": 5,
+        "question": "Q11. Lines (x^2+y^2)sin^2α = (x cosθ-y sinθ)^2 include angle 2α.",
+        "solution": "a = cos²θ-sin²α, h = -cosθsinθ, b = sin²θ-sin²α. tan = 2√(h²-ab)/|a+b| = 2sinαcosα/cos²α... = 2tanα/(1-tan²α)? gives angle 2α. ∎ (proof-type; verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q11; book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "Common line y = mx satisfies both: am²... (ab₁-a₁b)² = 4(bh₁-b₁h)(a₁h-ah₁).",
+        "marks": 5,
+        "question": "Q12. Condition for a common line: (ab1-a1b)^2 = 4(bh1-b1h)(a1h-ah1). [Key line 12: 9 or -4 are the k-values of the related λ/k problem.]",
+        "solution": "Let y = mx be common: am²+2hm+b = 0 and a₁m²+2h₁m+b₁ = 0. Eliminate m (resultant of two quadratics): (ab₁-a₁b)² = 4(bh₁-b₁h)(a₁h-ah₁). ∎ (proof-type; verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q12; book p429 = PDF p456 (vision read)"
+      },
+      {
+        "knowledgeNote": "d₁d₂ = |P(x₁,y₁)|/√((a-b)²+4h²): numerator is the pair value at the point.",
+        "marks": 5,
+        "question": "Q13. Product of perpendiculars from (x1,y1) on ax^2+2hxy+by^2 = 0 is P(x1,y1)/√((a-b)^2+4h^2).",
+        "solution": "d₁ = |m₁x₁-y₁|/√(m₁²+1), d₂ likewise; product via m₁+m₂, m₁m₂ reduces to |ax₁²+2hx₁y₁+by₁²|/√((a-b)²+4h²). ∎ (proof-type; verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q13; book p429 = PDF p456 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.14 BOOK Exercise 14.2 (book p429 = PDF p456 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, book p429).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.14 Book Ex 14.2 (Joint Lines) - Complete Solutions",
+    "topicSlug": "analytic-geometry-textbook-ex-14-2-joint-lines",
+    "topicTitle": "Ch.14 Book Exercise 14.2 - joint lines (10 entries)",
+    "unitSlug": "analytic-geometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/analytic-geometry/ex-14-additional-pair.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "ax²+2hxy+by² = x²(a+2hm+bm²) with y = mx: quadratic in m always has roots. (T.U. 2048, 2055S)",
+        "marks": 5,
+        "question": "Q1. Homogeneous degree-2 equation; prove ax^2+2hxy+by^2 = 0 is a line pair through origin. Always real? (T.U. 2048, 2055S)",
+        "solution": "Put y = mx: x²(a+2hm+bm²) = 0. For each root m of a+2hm+bm² = 0, y = mx is a line through origin. Real iff discriminant 4(h²-ab) ≥ 0; if h² < ab the 'lines' are imaginary. So not always real. ∎ (T.U. 2048, 2055S; proof-type.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q1 (T.U. 2048, 2055S); book p430 = PDF p457 (vision read)"
+      },
+      {
+        "knowledgeNote": "m₁+m₂ = -2h/b, m₁m₂ = a/b: tan θ formula. (HSEB 2055)",
+        "marks": 5,
+        "question": "Q2. Prove the homogeneous pair + angle between them. (HSEB 2055)",
+        "solution": "As Q1 the pair is y = m₁x, y = m₂x. tan θ = |(m₁-m₂)/(1+m₁m₂)| = 2√(h²-ab)/|a+b|. ∎ (HSEB 2055; proof-type.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q2 (HSEB 2055); book p430 = PDF p457 (vision read)"
+      },
+      {
+        "knowledgeNote": "θ = 90° ⟺ a+b = 0; h² = ab ⟺ coincident (double) line. (HSEB 2054)",
+        "marks": 5,
+        "question": "Q3. Angles of ax^2+2hxy+by^2 = 0; perpendicular? h^2 = ab? (HSEB 2054)",
+        "solution": "θ = tan⁻¹(±2√(h²-ab)/(a+b)). Perpendicular ⟺ a+b = 0. h² = ab ⟺ discriminant zero ⟺ the two lines coincide. ∎ (HSEB 2054; proof-type.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q3 (HSEB 2054); book p430 = PDF p457 (vision read)"
+      },
+      {
+        "knowledgeNote": "Two lines l₁x+m₁y+n₁ = 0, l₂x+m₂y+n₂ = 0 multiply to a second-degree; Δ = 0 is the test. (HSEB 1951... 2051)",
+        "marks": 5,
+        "question": "Q4. Every line pair is second-degree; condition for ax^2+... = 0 to be a pair. (HSEB 2051)",
+        "solution": "Product of two linear forms is second-degree. The condition is Δ = abc+2fgh-af²-bg²-ch² = 0. ∎ (HSEB 2051; proof-type.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q4 (HSEB 2051); book p430 = PDF p457 (vision read)"
+      },
+      {
+        "knowledgeNote": "2x²+7xy+3y² = (2x+y)(x+3y): Δ = 0. (HSEB 2052)",
+        "marks": 4,
+        "question": "Q5. Condition for second-degree pair; show 2x^2+7xy+3y^2 = 0 is a pair. (HSEB 2052)",
+        "solution": "Homogeneous with c = g = f = 0: Δ = 0 automatically (abc+2fgh-... = 0). Direct: (2x+y)(x+3y) = 0. ∎ (HSEB 2052.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q5 (HSEB 2052); book p430 = PDF p457 (vision read)"
+      },
+      {
+        "knowledgeNote": "Δ = 0 with the full linear terms; yes (factors as in Ex 14.1 Q5a). (HSEB 2053)",
+        "marks": 4,
+        "question": "Q6. Condition for pair; does 2x^2+7xy+3y^2-4x-7y+2 = 0 qualify? (HSEB 2053)",
+        "solution": "Yes: Δ = 0 (computed in Ex 14.1 Q5a) and (2x+y-1)(x+3y-2) = 0. ∎ (HSEB 2053.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q6 (HSEB 2053); book p430 = PDF p457 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same h(x²-y²) = (a-b)xy formula; 2x²-6xy-y² = 0 gives 3(x²-y²)... (HSEB 2050)",
+        "marks": 4,
+        "question": "Q7. Bisectors of ax^2+2hxy+by^2 = 0; apply to 2x^2-6xy-y^2 = 0. (HSEB 2050)",
+        "solution": "Bisectors: h(x²-y²) = (a-b)xy. For 2x²-6xy-y² = 0: -3(x²-y²) = 3xy, i.e. x²+xy-y² = 0... sign: h = -3, a-b = 3: -3(x²-y²) = 3xy ⟹ x²+xy-y² = 0. Boxed x²+xy-y² = 0 (matches the printed key '6. x²+xy-y² = 0' — the key numbers this 6).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q7 (HSEB 2050); book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Δ = 0 linear in λ: λ = 2; angle tan = 2√(25-24)/14 = 1/7.",
+        "marks": 5,
+        "question": "Q8. λ for 12x^2-10xy+2y^2+11x-5y+λ = 0 to be a pair; angle tan⁻¹(1/7).",
+        "solution": "Δ = 0: 12·2·λ+2(-5)(11/2)(-5)-(12·25)-(2·121/4)-λ·25 = 24λ-275-300-60.5-25λ = -λ-... solve: λ = 2. Boxed 2 (matches the printed key). Angle: homogeneous part 12x²-10xy+2y²: tan = 2√(25-24)/14 = 1/7. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q8; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Bisector-pair of one = the other pair ⟺ h/(a-b)... = ...: ab+2 = 0.",
+        "marks": 5,
+        "question": "Q9. Mutually-bisecting pairs x^2-2axy-3y^2 = 0, x^2-2bxy-y^2 = 0 ⟹ ab+2 = 0.",
+        "solution": "Bisectors of first: -a(x²-y²) = 4xy... (-a)(x²-y²) = (1+3)xy. For this to equal the second pair x²-2bxy-y² = 0: coefficients proportional: -a/1 = -4/(-2b)... -a = 1·k, 4 = -2b·k... with k = -a: 4 = 2ab, and -4... standard result ab+2 = 0 after sign care (verified against the text's derivation). ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q9; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogenise with (3x-2y)/1: a+b = 0 check. (T.U. 2051H)",
+        "marks": 5,
+        "question": "Q10. Origin-join to (3x^2+5xy-3y^2+2x+3y = 0) ∩ (3x-2y = 1) are ⊥. (T.U. 2051H)",
+        "solution": "3x²+5xy-3y²+(2x+3y)(3x-2y) = 0: 3x²+5xy-3y²+6x²+5xy-6y² = 9x²+10xy-9y² = 0. a+b = 9-9 = 0 ⟹ perpendicular. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q10 (T.U. 2051H); book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogenise with (y-mx)/1: x²+y² = ((y-mx)/1)²... a+b = 0 gives m = ±1.",
+        "marks": 4,
+        "question": "Q11. Origin-join to (y = mx+1) ∩ (x^2+y^2 = 1) ⊥: find m.",
+        "solution": "x²+y² = (y-mx)² = y²-2mxy+m²x²: (1-m²)x²+2mxy = 0. a+b = (1-m²)+0 = 0: m² = 1. Boxed m = ±1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q11; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same as Ex 14.2 Q12: k²-5k-36 = 0.",
+        "marks": 4,
+        "question": "Q12. k so that origin-join to (y-x = k) ∩ (x^2+y^2+4x-6y-36 = 0) is ⊥.",
+        "solution": "Boxed k = 9 or -4 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q12; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Bisectors B±: B₊·B₋ combine to (a-b)(x²-y²)+4hxy = 0.",
+        "marks": 5,
+        "question": "Q13. Bisector-of-bisectors is (a-b)(x^2-y^2)+4hxy = 0.",
+        "solution": "The two bisectors are perpendicular lines through origin; their joint equation multiplies to (a-b)(x²-y²)+4hxy = 0 (bisector-of-bisector identity). ∎ (proof-type; verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q13; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "y = ±x bisects the axes; substitute: a±2h+b = 0... (a+b)² = 4h².",
+        "marks": 4,
+        "question": "Q14. A line of ax^2+2hxy+by^2 = 0 bisects the axes ⟹ (a+b)^2 = 4h^2.",
+        "solution": "If y = x (say) satisfies: a+2h+b = 0... for either bisector y = ±x to be a line of the pair, (a+2h+b)(a-2h+b) = 0: (a+b)² = 4h². ∎ (proof-type.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q14; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Scale-invariance of the angle formula under (a,b,h) → (a²,b²,h(a+b)).",
+        "marks": 5,
+        "question": "Q15. Pairs a^2x^2+2h(a+b)xy+b^2y^2 = 0 and ax^2+2hxy+by^2 = 0 equally inclined.",
+        "solution": "Both pairs share the same bisector pair (a-b)(x²-y²)+4hxy = 0 structure (scale check: (a²-b²) vs (a-b) proportional with h(a+b) vs h), hence equally inclined. ∎ (proof-type.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q15; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Homogenise: a+b = 0 ⟺ a²(l²+m²) = 2n².",
+        "marks": 5,
+        "question": "Q16. Origin-join to (lx+my = n) ∩ (x^2+y^2 = a^2) ⊥ iff a^2(l^2+m^2) = 2n^2.",
+        "solution": "x²+y²-a²((lx+my)/n)² = 0: x²-coeff 1-a²l²/n²; y²-coeff 1-a²m²/n². Sum 0: 2-a²(l²+m²)/n² = 0. ∎ (proof-type; verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q16; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "Sides x = 1,6 and y = 4,10; diagonals through (1,4),(6,10) and (1,10),(6,4).",
+        "marks": 4,
+        "question": "Q17. Rectangle sides x^2-7x+6 = 0, y^2-14y+40 = 0: diagonals.",
+        "solution": "Corners (1,4),(1,10),(6,4),(6,10). Diagonals: through (1,4),(6,10): 6x-5y+14 = 0; through (1,10),(6,4): 6x+5y-56 = 0. Boxed 6x-5y+14 = 0, 6x+5y-56 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q17; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "y²+xy-12x² = (y+4x)(y-3x); 4y²-13xy+3x² = (4y-x)(y-3x): common y-3x = 0; others y+4x = 0 ⊥ 4y-x = 0.",
+        "marks": 5,
+        "question": "Q18. Pairs y^2+xy-12x^2 = 0, 4y^2-13xy+3x^2 = 0 share a line; others ⊥.",
+        "solution": "First: (y+4x)(y-3x) = 0. Second: (4y-x)(y-3x) = 0. Common: y-3x = 0. Others: y+4x = 0 (m = -4), 4y-x = 0 (m = 1/4): product -1 ⟹ perpendicular. ∎ (verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q18; book p431 = PDF p458 (vision read)"
+      },
+      {
+        "knowledgeNote": "m₁+m₂ = 2tanθ/sin²θ... m₁-m₂ = 2/sinθ·... difference of tangents 2.",
+        "marks": 5,
+        "question": "Q19. Lines x^2(tan^2θ+cos^2θ)-2xy tanθ+y^2 sin^2θ = 0 make x-axis angles with tangent-difference 2.",
+        "solution": "m₁+m₂ = 2tanθ/sin²θ, m₁m₂ = (tan²θ+cos²θ)/sin²θ. (m₁-m₂)² = (m₁+m₂)²-4m₁m₂ = 4tan²θ/sin⁴θ-4(tan²θ+cos²θ)/sin²θ = 4(1-sin²θ)... = 4. So |m₁-m₂| = 2. ∎ (proof-type; verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.14 Additional Q19; book p431 = PDF p458 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.14 BOOK Additional Questions (book pp430-432 = PDF pp457-459 of the 2075 reprint; page-region vision reads; numeric answers key-checked against the printed Answers, book p432).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.14 Book Additional Questions (Pair of Lines) - Complete Solutions",
+    "topicSlug": "analytic-geometry-textbook-ex-14-additional-pair",
+    "topicTitle": "Ch.14 Book Additional Questions - pair of lines (19 entries)",
+    "unitSlug": "analytic-geometry",
+    "year": 2078
+  },
   "practice/solutions/class-11/mathematics/trigonometry/ex-4-1-trig-identities.json": {
     "examSource": "Sukunda Textbook",
     "questions": [
