@@ -12,53 +12,65 @@ vi.mock("next/link", () => ({
 }));
 
 describe("ResourcesPage PDF Scrolling & Viewing", () => {
-  it("renders both platform docs and WebNotee reference docs with 'Read in Platform' buttons", () => {
-    render(<ResourcesPage />);
+  it(
+    "renders documents with already opened rectangular scrollable boxes, classified by chapters",
+    () => {
+      const { container } = render(<ResourcesPage />);
 
-    expect(screen.getByText("Resource Vault")).toBeInTheDocument();
+      expect(screen.getByText("Resource Vault")).toBeInTheDocument();
 
-    const readButtons = screen.getAllByRole("button", {
-      name: /read in platform/i,
-    });
-    expect(readButtons.length).toBeGreaterThan(10);
-  });
+      // Verify rectangular iframe boxes are already embedded and visible
+      const iframes = container.querySelectorAll("iframe");
+      expect(iframes.length).toBeGreaterThan(10);
 
-  it("opens an embedded scrollable viewer modal when a WebNotee doc is clicked, without going to Google Drive", () => {
-    render(<ResourcesPage />);
+      // Each iframe has lazy loading for smooth performance
+      expect(iframes[0].getAttribute("loading")).toBe("lazy");
 
-    // Click on Exercise 1.1 WebNotee doc
-    const ex1Card = screen.getByText(/Exercise 1\.1 — Logic/i);
-    fireEvent.click(ex1Card);
+      // Check that Google Drive preview URLs are embedded directly
+      const previewSrcs = Array.from(iframes).map((f) => f.getAttribute("src"));
+      expect(previewSrcs.some((src) => src?.includes("/preview"))).toBe(true);
 
-    // Modal dialog is present
-    const dialog = screen.getByRole("dialog");
-    expect(dialog).toBeInTheDocument();
+      // "Read in Platform" button is completely removed
+      expect(screen.queryByText(/read in platform/i)).toBeNull();
 
-    // The iframe has the Google Drive preview URL (scrollable within platform)
-    const iframe = screen.getByTitle(/Exercise 1\.1 — Logic/i);
-    expect(iframe).toBeInTheDocument();
-    expect(iframe.getAttribute("src")).toContain("drive.google.com/file/d/");
-    expect(iframe.getAttribute("src")).toContain("/preview");
+      // Verify Chapter classification headers are present
+      expect(screen.getByText(/Chapter \/ Unit: Functions/i)).toBeInTheDocument();
+    },
+    20000
+  );
 
-    // Close button works
-    const closeBtn = screen.getByRole("button", { name: /close/i });
-    fireEvent.click(closeBtn);
-    expect(screen.queryByRole("dialog")).toBeNull();
-  });
+  it(
+    "filters documents and rectangular boxes when searching",
+    () => {
+      const { container } = render(<ResourcesPage />);
 
-  it("opens an embedded scrollable viewer modal when a Platform doc is clicked", () => {
-    render(<ResourcesPage />);
+      const searchInput = screen.getByPlaceholderText(/search by chapter/i);
+      fireEvent.change(searchInput, { target: { value: "Logic" } });
 
-    const readButtons = screen.getAllByRole("button", {
-      name: /read in platform/i,
-    });
-    fireEvent.click(readButtons[0]);
+      // Filtered result headers and items
+      expect(screen.getByText(/Exercise 1\.1 — Logic/i)).toBeInTheDocument();
 
-    expect(screen.getByRole("dialog")).toBeInTheDocument();
+      const iframes = container.querySelectorAll("iframe");
+      expect(iframes.length).toBeLessThan(10);
+    },
+    20000
+  );
 
-    const closeBtn = screen.getByRole("button", { name: /close/i });
-    fireEvent.click(closeBtn);
-    expect(screen.queryByRole("dialog")).toBeNull();
-  });
+  it(
+    "provides download and full tab options on each rectangular box card",
+    () => {
+      render(<ResourcesPage />);
+
+      const downloadButtons = screen.getAllByRole("button", {
+        name: /download/i,
+      });
+      expect(downloadButtons.length).toBeGreaterThan(10);
+
+      const fullTabLinks = screen.getAllByRole("link", {
+        name: /full tab/i,
+      });
+      expect(fullTabLinks.length).toBeGreaterThan(10);
+    },
+    20000
+  );
 });
-

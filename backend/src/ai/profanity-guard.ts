@@ -5,7 +5,7 @@
  * you" class of messages — so that instead of engaging the rudeness it replies
  * with one fixed owner-routing line:
  *
- *   "Feeling horny, right. Contact the owner he will teach you this."
+ *   "I am Veer, your academic study tutor. Let's keep our conversation focused on your coursework, syllabus topics, and exams. How can I help you with your studies today?"
  *
  * Two layers give that result:
  *
@@ -31,9 +31,9 @@
  * "retard / retarding force" question is never misfired.
  */
 
-/** The owner's exact routing line for rough input. Single source of truth. */
+/** The academic boundary routing line for rough input. Single source of truth. */
 export const ROUGH_REDFLAG_REPLY =
-  "Feeling horny, right. Contact the owner he will teach you this.";
+  "I am Veer, your academic study tutor. Let's keep our conversation focused on your coursework, syllabus topics, and exams. How can I help you with your studies today?";
 
 /** Whole-word profane tokens. Each fires only on a word boundary. */
 const PROFANE_TOKENS = [

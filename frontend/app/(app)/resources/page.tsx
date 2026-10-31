@@ -1,21 +1,20 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Atom,
   BookOpen,
   Dna,
   Download,
-  Eye,
+  ExternalLink,
   File,
   FileText,
-  Filter,
   FlaskConical,
+  FolderOpen,
   Globe,
   GraduationCap,
   Languages,
-  Layers,
   Search,
   Sigma,
   Sparkles,
@@ -30,11 +29,25 @@ import {
   type Subject,
 } from "@/lib/docs-catalog";
 import { WEBNOTEE_DOCS, type WebnoteeDoc } from "@/lib/webnotee-catalog";
-import { downloadDoc, downloadFileName } from "@/lib/pdf-src";
 import {
-  PlatformPdfViewerModal,
-  type ViewableDocument,
-} from "@/components/content/platform-pdf-viewer-modal";
+  downloadDoc,
+  downloadFileName,
+  frameSrcFor,
+  pdfViewerHref,
+} from "@/lib/pdf-src";
+
+export type ResourceItem = {
+  id: string;
+  title: string;
+  subject: Subject;
+  chapter: string;
+  exercise?: string;
+  kind: Kind;
+  src: string;
+  description: string;
+  sourceType: "platform" | "webnotee";
+  isChapterSpecific: boolean;
+};
 
 const SUBJECT_ICONS: Record<Subject, typeof Dna> = {
   Biology: Dna,
@@ -130,105 +143,117 @@ const ADDITIONAL_RESOURCE_TOOLS = [
 ];
 
 type FilterSubject = Subject | "All";
-type SectionFilter = "all" | "platform" | "webnotee";
+
+// Helper to check if a doc topic represents full-syllabus or general cross-topic reference
+function isGeneralTopic(topic: string): boolean {
+  const t = topic.toLowerCase();
+  return (
+    t.includes("full syllabus") ||
+    t.includes("cross-subject") ||
+    t.includes("exam cram") ||
+    t.includes("study guide") ||
+    t.includes("8-mark") ||
+    t.includes("master")
+  );
+}
+
+// Build unified item list
+const ALL_RESOURCE_ITEMS: ResourceItem[] = [
+  ...WEBNOTEE_DOCS.map((doc: WebnoteeDoc) => ({
+    id: doc.id,
+    title: doc.title,
+    subject: doc.subject,
+    chapter: doc.unit,
+    exercise: doc.exercise,
+    kind: "pdf" as Kind,
+    src: doc.driveUrl,
+    description: doc.description,
+    sourceType: "webnotee" as const,
+    isChapterSpecific: true,
+  })),
+  ...DOCS.map((doc: Doc) => {
+    const isGeneral = isGeneralTopic(doc.topic);
+    return {
+      id: `platform-${doc.key}`,
+      title: doc.title,
+      subject: doc.subject,
+      chapter: isGeneral ? "General & Comprehensive Revision" : doc.topic,
+      exercise: doc.kind.toUpperCase(),
+      kind: doc.kind,
+      src: doc.href,
+      description: doc.description,
+      sourceType: "platform" as const,
+      isChapterSpecific: !isGeneral,
+    };
+  }),
+];
 
 export default function ResourcesPage() {
   const [query, setQuery] = useState("");
   const [selectedSubject, setSelectedSubject] = useState<FilterSubject>("All");
-  const [sectionFilter, setSectionFilter] = useState<SectionFilter>("all");
-  const [activeDoc, setActiveDoc] = useState<ViewableDocument | null>(null);
-
-  // Auto-open if linked with ?src=... or ?view=...
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    const target = params.get("src") || params.get("view");
-    if (!target) return;
-
-    const plat = DOCS.find((d) => d.href === target || d.key === target);
-    if (plat) {
-      setActiveDoc({
-        title: plat.title,
-        src: plat.href,
-        subject: plat.subject,
-        topic: plat.topic,
-        kind: plat.kind,
-      });
-      return;
-    }
-
-    const wn = WEBNOTEE_DOCS.find((d) => d.driveUrl === target || d.id === target);
-    if (wn) {
-      setActiveDoc({
-        title: wn.title,
-        src: wn.driveUrl,
-        subject: wn.subject,
-        topic: wn.exercise ?? wn.unit,
-        kind: "pdf",
-      });
-      return;
-    }
-
-    setActiveDoc({
-      title: params.get("title") || "Study Document",
-      src: target,
-      kind: "pdf",
-    });
-  }, []);
 
   const normalizedQuery = query.trim().toLowerCase();
 
-  // Filter Platform Core Documents
-  const filteredPlatformDocs = useMemo(() => {
-    return DOCS.filter((doc) => {
-      const matchSubject =
-        selectedSubject === "All" || doc.subject === selectedSubject;
-      if (!matchSubject) return false;
-
+  // Filter items by subject and search query
+  const filteredItems = useMemo(() => {
+    return ALL_RESOURCE_ITEMS.filter((item) => {
+      if (selectedSubject !== "All" && item.subject !== selectedSubject) {
+        return false;
+      }
       if (!normalizedQuery) return true;
-      const haystack = `${doc.title} ${doc.subject} ${doc.topic} ${doc.description}`.toLowerCase();
+      const haystack = `${item.title} ${item.subject} ${item.chapter} ${item.exercise ?? ""} ${item.description}`.toLowerCase();
       return haystack.includes(normalizedQuery);
     });
   }, [selectedSubject, normalizedQuery]);
 
-  // Filter WebNotee Reference Documents
-  const filteredWebnoteeDocs = useMemo(() => {
-    return WEBNOTEE_DOCS.filter((doc) => {
-      const matchSubject =
-        selectedSubject === "All" || doc.subject === selectedSubject;
-      if (!matchSubject) return false;
+  // Group items by Subject in canonical curriculum order,
+  // then inside each subject classify into Chapters first, then Others in order.
+  const groupedBySubject = useMemo(() => {
+    return SUBJECT_ORDER.map((subject) => {
+      const subjectItems = filteredItems.filter((i) => i.subject === subject);
+      if (subjectItems.length === 0) return null;
 
-      if (!normalizedQuery) return true;
-      const haystack = `${doc.title} ${doc.subject} ${doc.unit} ${doc.exercise ?? ""} ${doc.description}`.toLowerCase();
-      return haystack.includes(normalizedQuery);
-    });
-  }, [selectedSubject, normalizedQuery]);
+      // 1. Chapters first (specific chapters / units)
+      const chapterItems = subjectItems.filter((i) => i.isChapterSpecific);
+      const otherItems = subjectItems.filter((i) => !i.isChapterSpecific);
 
-  // Grouped by Subject in curriculum order
-  const platformGrouped = useMemo(() => {
-    return SUBJECT_ORDER.map((subject) => ({
-      subject,
-      docs: filteredPlatformDocs.filter((d) => d.subject === subject),
-    })).filter((g) => g.docs.length > 0);
-  }, [filteredPlatformDocs]);
+      const chapterMap = new Map<string, ResourceItem[]>();
+      for (const item of chapterItems) {
+        const list = chapterMap.get(item.chapter) ?? [];
+        list.push(item);
+        chapterMap.set(item.chapter, list);
+      }
 
-  const webnoteeGrouped = useMemo(() => {
-    return SUBJECT_ORDER.map((subject) => ({
-      subject,
-      docs: filteredWebnoteeDocs.filter((d) => d.subject === subject),
-    })).filter((g) => g.docs.length > 0);
-  }, [filteredWebnoteeDocs]);
+      const chapterSections = Array.from(chapterMap.entries()).map(([chapter, items]) => ({
+        title: chapter,
+        isOther: false,
+        items,
+      }));
 
-  const totalResults = filteredPlatformDocs.length + filteredWebnoteeDocs.length;
+      // 2. Others in order (general guides, cross-subject revision)
+      const sections = [...chapterSections];
+      if (otherItems.length > 0) {
+        sections.push({
+          title: "Comprehensive Revision & Other Documents",
+          isOther: true,
+          items: otherItems,
+        });
+      }
+
+      return {
+        subject,
+        totalItems: subjectItems.length,
+        sections,
+      };
+    }).filter(Boolean) as {
+      subject: Subject;
+      totalItems: number;
+      sections: { title: string; isOther: boolean; items: ResourceItem[] }[];
+    }[];
+  }, [filteredItems]);
 
   return (
     <div className="mx-auto max-w-7xl space-y-10 px-4 py-8 md:py-12">
-      {/* In-Platform Scrollable PDF & Document Viewer Modal */}
-      <PlatformPdfViewerModal
-        doc={activeDoc}
-        onClose={() => setActiveDoc(null)}
-      />
-
       {/* ── Page Header & Search ─────────────────────────────────────────── */}
       <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-primary/10 via-background to-background p-6 md:p-10 shadow-sm">
         <div className="relative z-10 max-w-3xl space-y-4">
@@ -240,8 +265,8 @@ export default function ResourcesPage() {
             Resource Vault
           </h1>
           <p className="text-sm text-muted-foreground sm:text-base leading-relaxed">
-            Access, view, and scroll all curated academic study notes, exercise solution sets,
-            and reference PDFs directly inside the platform without going outside.
+            All study documents, reference exercise sets, and PDFs are already opened and scrollable
+            right in their boxes below — classified by chapters first, then revision materials in order.
           </p>
 
           {/* Search Bar */}
@@ -252,15 +277,15 @@ export default function ResourcesPage() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search documents by title, chapter, exercise (e.g., Ex 16.1, Derivatives, Mechanics)..."
+                placeholder="Search by chapter, exercise (e.g., Ex 1.1, Functions, Straight Lines)..."
                 className="h-11 w-full rounded-2xl border border-border/70 bg-background/90 pl-10 pr-9 text-sm text-foreground shadow-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
               {query && (
                 <button
                   type="button"
                   onClick={() => setQuery("")}
-                  aria-label="Clear search"
                   className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
+                  aria-label="Clear search"
                 >
                   <X className="h-3.5 w-3.5" />
                 </button>
@@ -270,33 +295,28 @@ export default function ResourcesPage() {
         </div>
       </div>
 
-      {/* ── Filter & Classification Controls ─────────────────────────────── */}
+      {/* ── Subject Filter Pills ─────────────────────────────────────────── */}
       <div className="space-y-4">
-        {/* Subject Filter Pills */}
         <div className="flex flex-wrap items-center gap-2" aria-label="Filter by subject">
-          {(["All", ...SUBJECT_ORDER] as FilterSubject[]).map((subject) => {
-            const isSelected = selectedSubject === subject;
-            const Icon = subject === "All" ? Filter : SUBJECT_ICONS[subject];
+          {(["All", ...SUBJECT_ORDER] as FilterSubject[]).map((subj) => {
+            const isSelected = selectedSubject === subj;
             const count =
-              subject === "All"
-                ? DOCS.length + WEBNOTEE_DOCS.length
-                : DOCS.filter((d) => d.subject === subject).length +
-                  WEBNOTEE_DOCS.filter((d) => d.subject === subject).length;
+              subj === "All"
+                ? ALL_RESOURCE_ITEMS.length
+                : ALL_RESOURCE_ITEMS.filter((i) => i.subject === subj).length;
 
             return (
               <button
-                key={subject}
+                key={subj}
                 type="button"
-                aria-pressed={isSelected}
-                onClick={() => setSelectedSubject(subject)}
-                className={`inline-flex items-center gap-2 rounded-xl border px-3.5 py-2 text-xs font-semibold transition-all ${
+                onClick={() => setSelectedSubject(subj)}
+                className={`inline-flex items-center gap-2 rounded-xl border px-3.5 py-1.5 text-xs font-semibold transition-all ${
                   isSelected
                     ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                    : "border-border/70 bg-card text-muted-foreground hover:border-primary/40 hover:bg-muted/50 hover:text-foreground"
+                    : "border-border/70 bg-card text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                 }`}
               >
-                <Icon className="h-3.5 w-3.5" />
-                <span>{subject}</span>
+                <span>{subj}</span>
                 <span
                   className={`rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
                     isSelected
@@ -311,327 +331,166 @@ export default function ResourcesPage() {
           })}
         </div>
 
-        {/* Section View Mode Switcher */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-3 text-xs text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <span>Showing:</span>
-            <div className="inline-flex rounded-xl border border-border/70 bg-card p-1">
-              <button
-                type="button"
-                onClick={() => setSectionFilter("all")}
-                className={`rounded-lg px-2.5 py-1 font-semibold transition-colors ${
-                  sectionFilter === "all"
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                All Resources ({totalResults})
-              </button>
-              <button
-                type="button"
-                onClick={() => setSectionFilter("platform")}
-                className={`rounded-lg px-2.5 py-1 font-semibold transition-colors ${
-                  sectionFilter === "platform"
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                Platform Docs ({filteredPlatformDocs.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setSectionFilter("webnotee")}
-                className={`rounded-lg px-2.5 py-1 font-semibold transition-colors ${
-                  sectionFilter === "webnotee"
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                WebNotee PDFs ({filteredWebnoteeDocs.length})
-              </button>
-            </div>
-          </div>
-
-          {query && (
-            <p>
-              Found {totalResults} {totalResults === 1 ? "match" : "matches"} for &ldquo;{query}&rdquo;
-            </p>
-          )}
-        </div>
+        {query && (
+          <p className="text-xs text-muted-foreground">
+            Found {filteredItems.length} {filteredItems.length === 1 ? "document" : "documents"} matching &ldquo;{query}&rdquo;
+          </p>
+        )}
       </div>
 
-      {/* ── SECTION 1: PLATFORM CORE STUDY DOCUMENTS & PDFS ───────────────── */}
-      {(sectionFilter === "all" || sectionFilter === "platform") && (
-        <section className="space-y-6" aria-labelledby="platform-docs-heading">
-          <div className="flex items-center justify-between gap-4 border-b border-border/60 pb-3">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 text-primary shadow-sm">
-                <Layers className="h-5 w-5" />
-              </div>
-              <div>
-                <h2 id="platform-docs-heading" className="text-xl font-bold tracking-tight text-foreground">
-                  1. Platform Core Study Documents &amp; PDFs
-                </h2>
-                <p className="text-xs text-muted-foreground">
-                  Canonical notes, illustrated hubs, MCQ question banks, and master revision guides.
-                </p>
-              </div>
-            </div>
-            <span className="hidden sm:inline-flex rounded-full border border-primary/20 bg-primary/5 px-2.5 py-1 text-xs font-bold text-primary">
-              {filteredPlatformDocs.length} {filteredPlatformDocs.length === 1 ? "Document" : "Documents"}
-            </span>
-          </div>
+      {/* ── Documents Classified by Subject, Chapters First, Then Others ──── */}
+      {groupedBySubject.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-border/70 p-12 text-center">
+          <FolderOpen className="mx-auto h-8 w-8 text-muted-foreground/50 mb-2" />
+          <p className="text-sm font-semibold text-muted-foreground">No documents found matching your filter.</p>
+          <p className="text-xs text-muted-foreground/80 mt-1">Try resetting the subject filter or clearing your search term.</p>
+        </div>
+      ) : (
+        <div className="space-y-12">
+          {groupedBySubject.map(({ subject, totalItems, sections }) => {
+            const colors = SUBJECT_COLORS[subject];
+            const SubjectIcon = SUBJECT_ICONS[subject];
 
-          {platformGrouped.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-border/70 p-8 text-center">
-              <p className="text-sm text-muted-foreground">No platform documents matched your filter.</p>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              {platformGrouped.map(({ subject, docs }) => {
-                const colors = SUBJECT_COLORS[subject];
-                const SubjectIcon = SUBJECT_ICONS[subject];
-
-                return (
-                  <div key={subject} className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <span className={`inline-flex h-7 w-7 items-center justify-center rounded-lg border ${colors.chip}`}>
-                        <SubjectIcon className="h-4 w-4" />
-                      </span>
-                      <h3 className="text-base font-bold text-foreground">{subject}</h3>
-                      <span className="text-xs text-muted-foreground font-medium">
-                        ({docs.length})
-                      </span>
-                    </div>
-
-                    <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-                      {docs.map((doc: Doc) => {
-                        const kindMeta = KIND_META[doc.kind];
-
-                        return (
-                          <div
-                            key={doc.key}
-                            role="button"
-                            tabIndex={0}
-                            onClick={() =>
-                              setActiveDoc({
-                                title: doc.title,
-                                src: doc.href,
-                                subject: doc.subject,
-                                topic: doc.topic,
-                                kind: doc.kind,
-                              })
-                            }
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                setActiveDoc({
-                                  title: doc.title,
-                                  src: doc.href,
-                                  subject: doc.subject,
-                                  topic: doc.topic,
-                                  kind: doc.kind,
-                                });
-                              }
-                            }}
-                            className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md cursor-pointer text-left"
-                          >
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between gap-2">
-                                <span className={`inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${kindMeta.tint} border ${kindMeta.border}`}>
-                                  {kindMeta.label}
-                                </span>
-                                <span className="truncate text-[11px] font-semibold text-muted-foreground">
-                                  {doc.topic}
-                                </span>
-                              </div>
-
-                              <h4 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">
-                                {doc.title}
-                              </h4>
-                              <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                                {doc.description}
-                              </p>
-                            </div>
-
-                            <div className="mt-4 flex items-center gap-2 pt-2 border-t border-border/40">
-                              <Button
-                                size="sm"
-                                className="h-8 flex-1 rounded-xl text-xs font-semibold"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setActiveDoc({
-                                    title: doc.title,
-                                    src: doc.href,
-                                    subject: doc.subject,
-                                    topic: doc.topic,
-                                    kind: doc.kind,
-                                  });
-                                }}
-                              >
-                                <Eye className="h-3.5 w-3.5 mr-1.5" />
-                                Read in Platform
-                              </Button>
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="h-8 rounded-xl px-2.5 text-xs text-muted-foreground hover:text-foreground"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  downloadDoc(doc.href, downloadFileName(doc.href, doc.title));
-                                }}
-                                title="Download file to device directly"
-                              >
-                                <Download className="h-3.5 w-3.5" />
-                                <span className="sr-only">Download</span>
-                              </Button>
-                            </div>
-                          </div>
-                        );
-                      })}
+            return (
+              <section key={subject} className="space-y-8" aria-labelledby={`subject-${subject}`}>
+                {/* Subject Header */}
+                <div className="flex items-center justify-between gap-4 border-b border-border/60 pb-3">
+                  <div className="flex items-center gap-3">
+                    <span className={`inline-flex h-10 w-10 items-center justify-center rounded-2xl border ${colors.chip} shadow-sm`}>
+                      <SubjectIcon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h2 id={`subject-${subject}`} className="text-xl font-bold tracking-tight text-foreground">
+                        {subject}
+                      </h2>
+                      <p className="text-xs text-muted-foreground">
+                        Classified by chapters in order, followed by general and revision references.
+                      </p>
                     </div>
                   </div>
-                );
-              })}
-            </div>
-          )}
-        </section>
-      )}
+                  <span className={`inline-flex rounded-full border px-2.5 py-0.5 text-xs font-bold ${colors.chip}`}>
+                    {totalItems} {totalItems === 1 ? "File" : "Files"}
+                  </span>
+                </div>
 
-      {/* ── SECTION 2: WEBNOTEE CURRICULUM REFERENCE SOLUTIONS & PDFS ─────── */}
-      {(sectionFilter === "all" || sectionFilter === "webnotee") && (
-        <section className="space-y-6 pt-4" aria-labelledby="webnotee-docs-heading">
-          <div className="flex items-center justify-between gap-4 border-b border-border/60 pb-3">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-violet-500/20 bg-violet-500/10 text-violet-600 dark:text-violet-400 shadow-sm">
-                <Globe className="h-5 w-5" />
-              </div>
-              <div>
-                <h2 id="webnotee-docs-heading" className="text-xl font-bold tracking-tight text-foreground">
-                  2. WebNotee Curriculum Reference Solutions &amp; Exercise PDFs
-                </h2>
-                <p className="text-xs text-muted-foreground">
-                  Comprehensive exercise solutions and curriculum references from WebNotee. Scrollable inside platform.
-                </p>
-              </div>
-            </div>
-            <span className="hidden sm:inline-flex rounded-full border border-violet-500/20 bg-violet-500/5 px-2.5 py-1 text-xs font-bold text-violet-600 dark:text-violet-400">
-              {filteredWebnoteeDocs.length} {filteredWebnoteeDocs.length === 1 ? "Resource" : "Resources"}
-            </span>
-          </div>
+                {/* Chapter Sections for this Subject */}
+                <div className="space-y-8 pl-1">
+                  {sections.map(({ title, isOther, items }) => (
+                    <div key={title} className="space-y-4">
+                      {/* Chapter/Unit Header */}
+                      <div className="flex items-center gap-2">
+                        <span className={`h-2 w-2 rounded-full ${isOther ? "bg-amber-500" : "bg-primary"}`} />
+                        <h3 className="text-sm sm:text-base font-bold tracking-tight text-foreground">
+                          {isOther ? title : `Chapter / Unit: ${title}`}
+                        </h3>
+                        <span className="text-xs text-muted-foreground font-medium">
+                          ({items.length} {items.length === 1 ? "document" : "documents"})
+                        </span>
+                      </div>
 
-          {webnoteeGrouped.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-border/70 p-8 text-center">
-              <p className="text-sm text-muted-foreground">No WebNotee reference PDFs matched your filter.</p>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              {webnoteeGrouped.map(({ subject, docs }) => {
-                const colors = SUBJECT_COLORS[subject];
-                const SubjectIcon = SUBJECT_ICONS[subject];
+                      {/* Grid of Rectangular Document Boxes - Already Opened & Visible */}
+                      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                        {items.map((item) => {
+                          const kindMeta = KIND_META[item.kind];
 
-                return (
-                  <div key={subject} className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <span className={`inline-flex h-7 w-7 items-center justify-center rounded-lg border ${colors.chip}`}>
-                        <SubjectIcon className="h-4 w-4" />
-                      </span>
-                      <h3 className="text-base font-bold text-foreground">{subject}</h3>
-                      <span className="text-xs text-muted-foreground font-medium">
-                        ({docs.length} {docs.length === 1 ? "solution" : "solutions"})
-                      </span>
-                    </div>
+                          return (
+                            <div
+                              key={item.id}
+                              className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card p-4 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
+                            >
+                              <div className="space-y-2.5">
+                                {/* Top badges */}
+                                <div className="flex items-center justify-between gap-2">
+                                  <div className="flex items-center gap-1.5 truncate">
+                                    <span className="truncate rounded-md bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
+                                      {item.chapter}
+                                    </span>
+                                    {item.exercise && (
+                                      <span className="shrink-0 rounded-md bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold text-primary">
+                                        {item.exercise}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <span className={`inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${kindMeta.tint} border ${kindMeta.border}`}>
+                                    {kindMeta.label}
+                                  </span>
+                                </div>
 
-                    <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-                      {docs.map((doc: WebnoteeDoc) => {
-                        return (
-                          <div
-                            key={doc.id}
-                            role="button"
-                            tabIndex={0}
-                            onClick={() =>
-                              setActiveDoc({
-                                title: doc.title,
-                                src: doc.driveUrl,
-                                subject: doc.subject,
-                                topic: doc.exercise ?? doc.unit,
-                                kind: "pdf",
-                              })
-                            }
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" || e.key === " ") {
-                                e.preventDefault();
-                                setActiveDoc({
-                                  title: doc.title,
-                                  src: doc.driveUrl,
-                                  subject: doc.subject,
-                                  topic: doc.exercise ?? doc.unit,
-                                  kind: "pdf",
-                                });
-                              }
-                            }}
-                            className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-violet-500/40 hover:shadow-md cursor-pointer text-left"
-                          >
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between gap-2">
-                                <span className="inline-flex items-center gap-1 rounded-md border border-violet-500/20 bg-violet-500/10 px-1.5 py-0.5 text-[10px] font-bold text-violet-600 dark:text-violet-400">
-                                  {doc.exercise ?? "Ref Guide"}
-                                </span>
-                                <span className="truncate text-[11px] font-semibold text-muted-foreground">
-                                  {doc.unit}
-                                </span>
+                                {/* Title and description */}
+                                <div>
+                                  <h4 className="font-bold text-sm text-foreground leading-snug line-clamp-1" title={item.title}>
+                                    {item.title}
+                                  </h4>
+                                  <p className="mt-0.5 text-xs text-muted-foreground line-clamp-1 leading-relaxed">
+                                    {item.description}
+                                  </p>
+                                </div>
+
+                                {/* Rectangular Box: Already Opened, Visible & Scrollable */}
+                                <div className="relative w-full h-72 sm:h-80 rounded-xl overflow-hidden border border-border/60 bg-slate-50 dark:bg-slate-950 shadow-inner">
+                                  {item.kind === "docx" ? (
+                                    <div className="flex flex-col items-center justify-center h-full p-4 text-center bg-muted/20">
+                                      <File className="h-10 w-10 text-primary/60 mb-2" />
+                                      <p className="text-xs font-semibold text-foreground line-clamp-2">{item.title}</p>
+                                      <p className="text-[11px] text-muted-foreground mt-1">Official Study Document (.docx)</p>
+                                      <Button asChild size="sm" variant="outline" className="mt-3 text-xs">
+                                        <a href={item.src} download>
+                                          <Download className="h-3.5 w-3.5 mr-1" /> Download File
+                                        </a>
+                                      </Button>
+                                    </div>
+                                  ) : (
+                                    <iframe
+                                      src={frameSrcFor(item.src)}
+                                      title={item.title}
+                                      loading="lazy"
+                                      className="w-full h-full border-0 bg-white"
+                                      allow="autoplay; encrypted-media; fullscreen"
+                                    />
+                                  )}
+                                </div>
                               </div>
 
-                              <h4 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors leading-snug">
-                                {doc.title}
-                              </h4>
-                              <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                                {doc.description}
-                              </p>
+                              {/* Card Action Controls */}
+                              <div className="mt-3 flex items-center justify-between gap-2 pt-2 border-t border-border/40">
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  className="h-8 flex-1 rounded-xl text-xs font-semibold"
+                                  onClick={() => downloadDoc(item.src, downloadFileName(item.src, item.title))}
+                                  title="Download this document to your device"
+                                >
+                                  <Download className="h-3.5 w-3.5 mr-1.5" />
+                                  Download
+                                </Button>
+                                <Button
+                                  size="sm"
+                                  variant="ghost"
+                                  className="h-8 rounded-xl px-2.5 text-xs text-muted-foreground hover:text-foreground"
+                                  asChild
+                                  title="Open in dedicated tab"
+                                >
+                                  <a
+                                    href={item.kind === "docx" ? item.src : pdfViewerHref(item.src, item.title)}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                  >
+                                    <ExternalLink className="h-3.5 w-3.5 mr-1" />
+                                    Full Tab
+                                  </a>
+                                </Button>
+                              </div>
                             </div>
-
-                            <div className="mt-4 flex items-center gap-2 pt-2 border-t border-border/40">
-                              <Button
-                                size="sm"
-                                className="h-8 flex-1 rounded-xl text-xs font-semibold bg-violet-600 hover:bg-violet-700 text-white dark:bg-violet-500 dark:hover:bg-violet-600"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setActiveDoc({
-                                    title: doc.title,
-                                    src: doc.driveUrl,
-                                    subject: doc.subject,
-                                    topic: doc.exercise ?? doc.unit,
-                                    kind: "pdf",
-                                  });
-                                }}
-                              >
-                                <Eye className="h-3.5 w-3.5 mr-1.5" />
-                                Read in Platform
-                              </Button>
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="h-8 rounded-xl px-2.5 text-xs text-muted-foreground hover:text-foreground"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  downloadDoc(doc.driveUrl, downloadFileName(doc.driveUrl, doc.title));
-                                }}
-                                title="Download file to device directly"
-                              >
-                                <Download className="h-3.5 w-3.5" />
-                                <span className="sr-only">Download</span>
-                              </Button>
-                            </div>
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </section>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
       )}
 
       {/* ── Additional Platform Resources & Exploration ─────────────────── */}

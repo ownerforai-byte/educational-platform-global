@@ -8,8 +8,7 @@ import {
 
 /**
  * Contract suite for the ROUGH-INPUT GUARD (owner request 2026-10-31: "train
- * the outside AI for rough questions like 'fuck you' → 'Feeling horny, right.
- * Contact the owner he will teach you this.'").
+ * the outside AI for rough questions like 'fuck you' → polite academic redirect).
  *
  * Pins:
  *   1. profane input fires the redirect;
@@ -21,9 +20,9 @@ import {
  */
 
 describe("ROUGH_REDFLAG_REPLY", () => {
-  test("is the owner's exact redirect line", () => {
+  test("is the academic boundary redirect line", () => {
     expect(ROUGH_REDFLAG_REPLY).toBe(
-      "Feeling horny, right. Contact the owner he will teach you this.",
+      "I am Veer, your academic study tutor. Let's keep our conversation focused on your coursework, syllabus topics, and exams. How can I help you with your studies today?",
     );
   });
 
