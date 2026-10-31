@@ -87,7 +87,10 @@ function listTestFiles(dir) {
   const walk = (d) => {
     for (const e of fs.readdirSync(d, { withFileTypes: true })) {
       const f = path.join(d, e.name);
-      if (e.isDirectory()) walk(f);
+      if (e.isDirectory()) {
+        // Playwright specs are selected by the E2E runner, never Vitest.
+        if (e.name !== "e2e") walk(f);
+      }
       // repo-relative, forward slashes — same shape as the changed-files set
       else if (/\.(test|spec)\.(tsx?|jsx?|mjs)$/.test(e.name))
         out.push(path.relative(ROOT, f).replace(/\\/g, "/"));

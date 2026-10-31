@@ -75,4 +75,50 @@ test.describe("E2E smoke", () => {
     await expect(page).toHaveURL(/\/plans/);
     await expect(page.getByText(/plan/i).first()).toBeVisible();
   });
+
+  test("errors: every static variant has its own instant page", async ({ page }) => {
+    test.setTimeout(180_000);
+    const variants = ["400", "401", "403", "404", "408", "429", "500", "502", "503", "504", "network", "offline"];
+    for (const variant of variants) {
+      await page.goto(`/${variant}`);
+      await expect(page.locator(`main[data-error-variant="${variant}"]`)).toBeVisible();
+      await expect(page.locator("main h1")).toBeVisible();
+    }
+  });
+
+  test("errors: connectivity changes the page immediately without a reload", async ({ page }) => {
+    await page.goto("/404");
+    await expect(page.locator('main[data-error-variant="404"]')).toBeVisible();
+
+    await page.context().setOffline(true);
+    await expect(page.locator('main[data-error-variant="offline"]')).toBeVisible();
+    await expect(page.getByRole("heading", { name: "You're offline" })).toBeVisible();
+
+    await page.context().setOffline(false);
+    await expect(page.locator('main[data-error-variant="404"]')).toBeVisible();
+  });
+
+  test("owner: topic notes and practice tabs work in one mobile learning flow", async ({ page }) => {
+    test.skip(!OWNER_EMAIL || !OWNER_PASSWORD, "SMOKE_OWNER_EMAIL/PASSWORD not set");
+    await page.setViewportSize({ width: 390, height: 844 });
+    await signIn(page, OWNER_EMAIL, OWNER_PASSWORD);
+    await page.goto("/class-11-notes/physics/chapters/kinematics/topics/projectile-motion-and-its-applications");
+
+    await expect(page.getByRole("tab", { name: "Notes", exact: true })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("heading", { name: /Understand .* in four passes/ })).toBeVisible({ timeout: 30_000 });
+    await expect(page.locator("#topic-notes")).toHaveCount(1);
+
+    await page.getByRole("tab", { name: "MCQs", exact: true }).click();
+    await expect(page.getByRole("heading", { name: /Topic MCQs/ })).toBeVisible();
+    await page.getByRole("tab", { name: "Step-by-step Numericals", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "Step-by-step numericals" })).toBeVisible();
+    await page.getByRole("tab", { name: "Entrance Question Bank", exact: true }).click();
+    await expect(page.getByRole("heading", { name: /Entrance Question Bank/ })).toBeVisible();
+    await page.getByRole("tab", { name: "Quick 3 Self-check", exact: true }).click();
+    await expect(page.getByRole("heading", { name: "Quick 3-question self-check" })).toBeVisible();
+
+    await page.getByRole("tab", { name: "Notes", exact: true }).click();
+    await expect(page.getByRole("heading", { name: /Understand .* in four passes/ })).toBeVisible();
+    await expect(page.locator("#topic-notes")).toHaveCount(1);
+  });
 });

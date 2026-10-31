@@ -1850,11 +1850,11 @@ body {
   0% { transform: scale(0.82); opacity: 0.45; }
   100% { transform: scale(1.45); opacity: 0; }
 }
-.verify-blink { animation: verify-blink 1.05s ease-in-out infinite; }
+.verify-blink { animation: verify-blink 3.4s ease-in-out infinite; }
 .verify-ring { animation: verify-ring 1.4s ease-out infinite; }
 .verify-dots span {
   display: inline-block;
-  animation: verify-blink 1.05s ease-in-out infinite;
+  animation: verify-blink 3.4s ease-in-out infinite;
 }
 .verify-dots span:nth-child(2) { animation-delay: 0.18s; }
 .verify-dots span:nth-child(3) { animation-delay: 0.36s; }

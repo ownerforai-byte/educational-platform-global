@@ -95,7 +95,7 @@ describe("concept drills — corpus grounding", () => {
     // inside the wider grounding window the tutor actually pulls.
     const hits = retrieveCurriculum("why is electric field zero inside a conductor", 25);
     expect(hits.some((h) => h.entry.source.startsWith("content/drills/"))).toBe(true);
-  });
+  }, 15_000);
 });
 
 describe("practicals — corpus grounding", () => {

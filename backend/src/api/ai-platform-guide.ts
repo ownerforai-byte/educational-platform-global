@@ -37,28 +37,54 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
   }
 
   const userText = parsed.data.message;
+  const timeoutMs = Number(process.env.AGNES_PLATFORM_GUIDE_TIMEOUT_MS || 25_000);
+  const retryDelayMs = Number(process.env.AGNES_PLATFORM_GUIDE_RETRY_DELAY_MS || 1_200);
 
   try {
-    const upstream = await fetch(`${AGNES_URL}/v1/chat/completions`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: AGNES_MODEL,
-        messages: [
-          { role: "system", content: PLATFORM_GUIDE_SYSTEM_PROMPT },
-          {
-            role: "user",
-            content: userText,
+    // Short Agnes throttling bursts should not discard an otherwise working
+    // public guide request. Two total attempts bound both quota use and wait.
+    const requestGuide = async () => {
+      for (let attempt = 0; attempt < 2; attempt += 1) {
+        const response = await fetch(`${AGNES_URL}/v1/chat/completions`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
           },
-        ],
-        max_tokens: 90,
-        temperature: 0.35,
-      }),
-      signal: AbortSignal.timeout(Number(process.env.AGNES_PLATFORM_GUIDE_TIMEOUT_MS || 25_000)),
-    });
+          body: JSON.stringify({
+            model: AGNES_MODEL,
+            messages: [
+              { role: "system", content: PLATFORM_GUIDE_SYSTEM_PROMPT },
+              {
+                role: "user",
+                content: userText,
+              },
+            ],
+            max_tokens: 90,
+            temperature: 0.35,
+          }),
+          signal: AbortSignal.timeout(timeoutMs),
+        });
+        if (response.status !== 429 || attempt === 1) return response;
+        await response.text().catch(() => "");
+        const retryAfterMs = Number(response.headers.get("retry-after")) * 1000;
+        await new Promise((resolve) => setTimeout(
+          resolve,
+          Number.isFinite(retryAfterMs) && retryAfterMs > 0
+            ? Math.min(retryAfterMs, 3_000)
+            : retryDelayMs,
+        ));
+      }
+      throw new Error("Agnes retry exhausted");
+    };
+    let upstream: globalThis.Response;
+    try {
+      upstream = await requestGuide();
+    } catch (error) {
+      // One transport retry covers a dropped connection, not a model refusal.
+      if (error instanceof Error && error.name === "AbortError") throw error;
+      upstream = await requestGuide();
+    }
 
     if (!upstream.ok) {
       const detail = await upstream.text().catch(() => "");
