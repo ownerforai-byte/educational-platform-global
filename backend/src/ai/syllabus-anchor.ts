@@ -50,13 +50,16 @@ interface AnchorTopic {
 export type QuestionDepth = "shallow" | "medium" | "deep";
 
 /** The hard floor: no chat reply may ship below this word count for any topic. */
-export const REPLY_FLOOR_WORDS = 250;
+export const REPLY_FLOOR_WORDS = 0;
 
-/** Per-depth floors: the 250-word minimum scales with question depth. */
+/** Per-depth floors: the floor scales with question depth. Owner 2026-10-31: the
+ * reply word limit was REMOVED — a reply is never forced to a minimum length,
+ * so every depth is now 0 (the floor is a no-op) and answers land as short or
+ * long as the question genuinely needs. */
 export const DEPTH_FLOOR_WORDS: Record<QuestionDepth, number> = {
-  shallow: REPLY_FLOOR_WORDS, // 250
-  medium: 350,
-  deep: 500,
+  shallow: REPLY_FLOOR_WORDS, // 0 — no minimum
+  medium: 0,
+  deep: 0,
 };
 
 function escapeRegExp(s: string): string {
@@ -317,6 +320,11 @@ export async function enforceReplyFloor(
   maxRetries?: number,
 ): Promise<FloorEnforcementResult> {
   const originalWords = wordCount(answer);
+  // Owner 2026-10-31: when the floor is removed (<= 0), the reply ships
+  // exactly as the model produced it — no expansion retry, ever.
+  if (floor <= 0) {
+    return { answer, floor, words: originalWords, expanded: false };
+  }
   if (originalWords >= floor) {
     return { answer, floor, words: originalWords, expanded: false };
   }

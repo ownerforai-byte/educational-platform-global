@@ -76,6 +76,16 @@ export const DOCS: Doc[] = [
     kind: "pdf",
   },
   {
+    key: "biology-8mark-core-outlets",
+    title: "Biology — 8-Mark Core Outlets",
+    subject: "Biology",
+    topic: "Class 11 · Model answers",
+    description:
+      "Core 8-mark long-answer outlets with point-by-point diagrams, marking schemes, and revision outlines.",
+    href: `${PDFS_DIR}/biology-8mark-core-outlets.pdf`,
+    kind: "pdf",
+  },
+  {
     key: "intro-microbiology-kingdom-monera",
     title: "Introductory Microbiology — Kingdom Monera",
     subject: "Biology",
@@ -187,6 +197,16 @@ export const DOCS: Doc[] = [
     href: `${MAT_DIR}/physics-conceptual-question-bank.docx`,
     kind: "docx",
   },
+  {
+    key: "neb-physics-all-probable-questions",
+    title: "NEB Physics — All Probable Questions & Diagrams",
+    subject: "Physics",
+    topic: "Full syllabus · Question Bank",
+    description:
+      "Full NEB Class 11 Physics probable questions bank with step-by-step worked answers, formulas, and diagrams.",
+    href: `${MAT_DIR}/neb-physics-all-probable-questions-answers-diagrams.html`,
+    kind: "html",
+  },
 
   // ── Chemistry ─────────────────────────────────────────────────────────
   {
@@ -208,6 +228,16 @@ export const DOCS: Doc[] = [
     href: `${MAT_DIR}/CHEMISTRY_HUB.html`,
     kind: "html",
   },
+  {
+    key: "chemistry-probable-long-qs",
+    title: "Chemistry — Probable Long Questions (Atomic, Bonding, Periodic)",
+    subject: "Chemistry",
+    topic: "Class 11 · Long Questions",
+    description:
+      "Probable long-answer questions and high-yield scoring points covering Atomic Structure, Chemical Bonding, and Periodic Classification.",
+    href: `${MAT_DIR}/neb-chem11-probable-long-qs-atomic-bonding-periodic.docx`,
+    kind: "docx",
+  },
 
   // ── Mathematics ───────────────────────────────────────────────────────
   {
@@ -218,6 +248,76 @@ export const DOCS: Doc[] = [
     description: "Optimised multiple-choice practice set.",
     href: `${MAT_DIR}/math-mcq-test.md`,
     kind: "md",
+  },
+  {
+    key: "math-unit-01-algebra",
+    title: "Math XI Unit 1 — Algebra Master Resource Guide",
+    subject: "Mathematics",
+    topic: "Algebra · Full Notes",
+    description:
+      "Comprehensive master study document covering Logic, Sets, Real Numbers, Functions, Curves, Sequences, Matrices, Quadratics, and Complex Numbers.",
+    href: `${MAT_DIR}/Math_XI_Unit_01_algebra.docx`,
+    kind: "docx",
+  },
+  {
+    key: "math-unit-02-trigonometry",
+    title: "Math XI Unit 2 — Trigonometry Master Guide",
+    subject: "Mathematics",
+    topic: "Trigonometry · Full Notes",
+    description:
+      "Master study document covering Inverse Circular Functions, Trigonometric Equations, and standard identity proofs.",
+    href: `${MAT_DIR}/Math_XI_Unit_02_trigonometry.docx`,
+    kind: "docx",
+  },
+  {
+    key: "math-unit-03-analytic-geometry",
+    title: "Math XI Unit 3 — Analytic Geometry Master Guide",
+    subject: "Mathematics",
+    topic: "Analytic Geometry · Full Notes",
+    description:
+      "Master document covering Straight Lines, Pair of Straight Lines, Concurrency, and 3D Coordinates in Space.",
+    href: `${MAT_DIR}/Math_XI_Unit_03_analytic-geometry.docx`,
+    kind: "docx",
+  },
+  {
+    key: "math-unit-04-vectors",
+    title: "Math XI Unit 4 — Vectors Master Guide",
+    subject: "Mathematics",
+    topic: "Vectors · Full Notes",
+    description:
+      "Master document covering Vector Algebra, Scalar & Vector Products, and Geometric Applications.",
+    href: `${MAT_DIR}/Math_XI_Unit_04_vectors.docx`,
+    kind: "docx",
+  },
+  {
+    key: "math-unit-05-statistics-probability",
+    title: "Math XI Unit 5 — Statistics & Probability Master Guide",
+    subject: "Mathematics",
+    topic: "Statistics & Probability · Full Notes",
+    description:
+      "Master document covering Measures of Dispersion, Probability Axioms, Conditional Probability, and Binomial Distribution.",
+    href: `${MAT_DIR}/Math_XI_Unit_05_statistics-probability.docx`,
+    kind: "docx",
+  },
+  {
+    key: "math-unit-06-calculus",
+    title: "Math XI Unit 6 — Calculus Master Guide",
+    subject: "Mathematics",
+    topic: "Calculus · Full Notes",
+    description:
+      "Master document covering Limits & Continuity, Differentiation, Derivative Applications, and Definite & Indefinite Antiderivatives.",
+    href: `${MAT_DIR}/Math_XI_Unit_06_calculus.docx`,
+    kind: "docx",
+  },
+  {
+    key: "math-unit-07-computational-mechanics",
+    title: "Math XI Unit 7 — Computational Methods & Mechanics",
+    subject: "Mathematics",
+    topic: "Computational Methods · Full Notes",
+    description:
+      "Master document covering Numerical Integration, Linear Programming, and Statics & Dynamics applications.",
+    href: `${MAT_DIR}/Math_XI_Unit_07_computational-mechanics.docx`,
+    kind: "docx",
   },
 
   // English

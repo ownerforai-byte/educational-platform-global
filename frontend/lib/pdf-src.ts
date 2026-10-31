@@ -20,7 +20,7 @@
 export const PDF_VIEWER_PATH = "/pdfs/read";
 
 /** Document roots served from `frontend/public`. */
-const LOCAL_DOC_ROOTS = ["/pdfs/", "/materials/"] as const;
+const LOCAL_DOC_ROOTS = ["/pdfs/", "/materials/", "/resources/"] as const;
 
 /** Hosts the CSP `frame-src` allowlist lets us embed (see `frontend/proxy.ts`). */
 const FRAME_HOSTS = new Set([

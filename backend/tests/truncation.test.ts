@@ -174,8 +174,11 @@ describe("completeAnswer — repair order and bounds", () => {
     expect(res.notes.join(" ")).toContain("continuation failed");
   });
 
-  test("the length floor still applies after truncation repair", async () => {
-    // A short but complete answer must be expanded by the existing floor.
+  test("with the word limit removed, a short complete answer ships without floor expansion", async () => {
+    // Owner 2026-10-31: the reply word limit was removed, so the floor is 0 and
+    // a short-but-complete answer is NOT expanded anymore. The truncation
+    // repair loop still runs, but a complete one-paragraph answer is not
+    // truncated, and there is no floor to satisfy.
     const chat = vi.fn(async (turn: Array<{ content: string }>) => {
       const last = turn[turn.length - 1]?.content ?? "";
       if (last.startsWith("Your previous reply is BELOW")) {
@@ -185,8 +188,10 @@ describe("completeAnswer — repair order and bounds", () => {
     });
 
     const res = await completeAnswer({ chat, messages, question: "explain a capacitor" });
-    expect(res.expanded).toBe(true);
-    expect(res.words).toBeGreaterThanOrEqual(res.floor);
+    expect(res.floor).toBe(0);
+    expect(res.expanded).toBe(false);
+    // Truncation repair still happened at most MAX_CONTINUATIONS times.
+    expect(res.continuations).toBe(0);
   });
 });
 

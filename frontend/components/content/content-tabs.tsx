@@ -46,6 +46,7 @@ import type { SyllabusUnit } from "@/lib/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DOCS, type Doc } from "@/lib/docs-catalog";
+import { pdfViewerHref } from "@/lib/pdf-src";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
 import {
@@ -473,7 +474,7 @@ function DocumentsAndPdfs({ subjectSlug }: { subjectSlug: string }) {
                 </p>
                 <div className="mt-1.5 flex gap-3">
                   <a
-                    href={doc.href}
+                    href={doc.kind === "docx" ? doc.href : pdfViewerHref(doc.href, doc.title)}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:underline"

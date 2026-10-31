@@ -2,7 +2,7 @@ import { getSearchService } from "./search-engine";
 import { ANSWER_GUIDE_RULES } from "./answer-guide";
 import { DIAGRAM_TIMEOUT_MS, fetchDiagramContext } from "./diagram-search";
 import { MASTER_ACADEMIC_RULES } from "./academic-intelligence";
-import { buildSyllabusAnchorBlock, floorWordsForQuestion } from "./syllabus-anchor";
+import { buildSyllabusAnchorBlock } from "./syllabus-anchor";
 import { buildCurriculumContext, DEFAULT_RECORD_LIMIT } from "./curriculum-retrieval";
 import { CLASS_SCOPE_RULES, classifyScope, type ScopeZone } from "./class-scope";
 import { DEEP_ANSWER_RULES } from "./deep-answer";
@@ -14,6 +14,7 @@ import {
   depthDirectiveForMode,
   DEPTH_REGULATION_RULES,
 } from "./depth-regulation";
+import { ROUGH_INPUT_RULE } from "./profanity-guard";
 
 /**
  * PROFESSOR_STYLE_RULES — enforced server-side on every chat reply (auth + guest).
@@ -70,10 +71,11 @@ UNBREAKABLE RULES
 
 /**
  * Web search must not stall a reply, but the engines now return real page
- * extracts and image URLs (deep search), so the old 6s cap was cutting the
- * grounding off too early. 9s still fits the ~2-minute end-to-end envelope.
+ * extracts and image URLs (deep search). Owner 2026-10-31: make replies as
+ * fast as possible, so the research wait is kept short and env-tunable — a
+ * slower grounding is better than the student staring at a spinner for 9s.
  */
-const SITE_TIMEOUT_MS = Number(process.env.AI_SEARCH_TIMEOUT_MS) || 9000;
+const SITE_TIMEOUT_MS = Number(process.env.AI_SEARCH_TIMEOUT_MS) || 4000;
 
 /**
  * MASTER_ACADEMIC_PROMPT — the full server-side system prompt:
@@ -119,6 +121,7 @@ export const MASTER_ACADEMIC_PROMPT = [
   REPLY_CRAFT_RULES,
   CLASS_SCOPE_RULES,
   SOURCE_REGISTRY_RULES,
+  ROUGH_INPUT_RULE,
 ].join("\n\n");
 
 /**
@@ -202,6 +205,10 @@ export async function buildProfessorContext(
       : Promise.resolve("");
   let webPromise: Promise<string> = Promise.resolve("");
   let diagramPromise: Promise<string> = Promise.resolve("");
+  // Owner 2026-10-31: cap the diagram fetch to the same fast research budget as
+  // the web search so the pre-reply research finishes together and first tokens
+  // arrive sooner. A slower-but-truncated fetch beats a longer wait.
+  const diagramCapMs = Math.min(DIAGRAM_TIMEOUT_MS, SITE_TIMEOUT_MS);
   try {
     const svc = getSearchService();
     // A concept the platform does NOT teach needs the wider net most: ask for
@@ -215,7 +222,7 @@ export async function buildProfessorContext(
           ])
         : Promise.resolve("");
     diagramPromise = question
-      ? Promise.race([fetchDiagramContext(question), emptyOnTimeout(DIAGRAM_TIMEOUT_MS)])
+      ? Promise.race([fetchDiagramContext(question), emptyOnTimeout(diagramCapMs)])
       : Promise.resolve("");
   } catch {
     // Search is best-effort: never block the chat on it.
@@ -230,15 +237,13 @@ export async function buildProfessorContext(
   try {
     if (lastUserMessage.trim() && inquiryMode === "academic" && scopeZone !== "non-academic") {
       const anchor = await anchorPromise;
-      const floor = floorWordsForQuestion(lastUserMessage);
+      // Owner 2026-10-31: the reply WORD LIMIT was removed. No minimum word
+      // count is enforced; the reply is as long as the question genuinely
+      // needs and no longer — never padded to hit a floor, never cut short.
       parts.push(
-        `${anchor}\n\n[REPLY FLOOR — ACADEMIC CONCEPT TREATMENT (HARDCODED, ACADEMIC MODE ONLY)] This reply must reach at least ${floor} words ` +
-          `(the 250-word platform minimum per ACADEMIC topic, scaled up for the depth of this question). ` +
-          `It is a HARD MINIMUM, never a ceiling: exhaust the current concept thoroughly with at least 250 words of rich substance — ` +
-          `what it is, its whole biography (who framed it, when, from which earlier ideas, how it reached its present form), ` +
-          `how and why this works (detailed causal mechanism and LaTeX formulas with units named), influencing factors, ` +
-          `defining features, and properties — told ONCE with no repetition — before moving to any subsequent topic. ` +
-          `Deep work runs as long as the work requires.`,
+        `${anchor}\n\n[REPLY LENGTH — NO WORD LIMIT (OWNER LAW 2026-10-31)] There is NO minimum or maximum word count for this reply. ` +
+          `Go only as deep as the concept needs: cover what it is, its origin, mechanism and formula with units, factors, features and properties — ` +
+          `but do NOT pad to reach a number of words. A crisp, complete answer beats a long padded one.`,
       );
     } else if (lastUserMessage.trim() && inquiryMode === "advisory") {
       parts.push(

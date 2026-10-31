@@ -18,6 +18,7 @@ import { appendConsoleRules, buildProfessorContext, withProfessorContext } from 
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
+import { detectRoughInput, ROUGH_REDFLAG_REPLY } from "../ai/profanity-guard";
 import { openSseChannel, streamAnswerToStudent, type StreamState } from "./ai-stream";
 
 const router = Router();
@@ -74,6 +75,31 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
 
     if (!messages.length) {
       res.status(400).json({ error: "messages array is required" });
+      return;
+    }
+
+    // ── Rough-input guard (owner law 2026-10-31) ──
+    // A rude / profane message is answered VERBATIM with the owner-routing
+    // line, before the AI-spark gate and before the slow research step: abuse
+    // is free, deterministic, and byte-for-byte the owner's text (not an LLM
+    // improvise). The prompt-layer ROUGH_INPUT_RULE (in prompts.ts) is the
+    // near-miss backstop for anything this keyword guard does not catch.
+    const roughGuard = detectRoughInput(
+      [...messages].reverse().find((m) => m.role === "user")?.content ?? "",
+    );
+    if (roughGuard.hit) {
+      console.info(
+        `[AI] rough input (${roughGuard.kind}, "${roughGuard.match}") → owner redirect`,
+      );
+      streamState.streamedAny = true; // the student saw the line; no spark was charged
+      if (stream) {
+        const ch = openSseChannel(res);
+        ch.send({ content: ROUGH_REDFLAG_REPLY });
+        ch.send({ done: true, continued: false, continuations: 0 });
+        ch.end();
+      } else {
+        res.json({ response: ROUGH_REDFLAG_REPLY });
+      }
       return;
     }
 

@@ -18,6 +18,7 @@ describe("isViewableSrc", () => {
   it("accepts documents from the site's own document roots", () => {
     expect(isViewableSrc("/pdfs/meiosis.pdf")).toBe(true);
     expect(isViewableSrc("/materials/liquid-state-notes.pdf")).toBe(true);
+    expect(isViewableSrc("/resources/physics-xi/unit-01-physical-quantities.html")).toBe(true);
   });
 
   it("rejects every other same-origin path", () => {

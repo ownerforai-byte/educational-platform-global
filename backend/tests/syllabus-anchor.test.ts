@@ -108,16 +108,16 @@ describe("classifyQuestionDepth", () => {
 });
 
 describe("floorWordsForQuestion", () => {
-  test("the hard minimum is exactly 250 words", () => {
-    expect(REPLY_FLOOR_WORDS).toBe(250);
-    expect(DEPTH_FLOOR_WORDS.shallow).toBe(250);
+  test("the word limit is REMOVED — no minimum floor (owner 2026-10-31)", () => {
+    expect(REPLY_FLOOR_WORDS).toBe(0);
+    expect(DEPTH_FLOOR_WORDS.shallow).toBe(0);
   });
 
-  test("the floor scales UP with question depth, never below 250", () => {
-    expect(floorWordsForQuestion("what is enthalpy?")).toBe(250);
-    expect(floorWordsForQuestion("why does ice float?")).toBe(350);
-    expect(floorWordsForQuestion("derive the lens formula")).toBe(500);
-    for (const v of Object.values(DEPTH_FLOOR_WORDS)) expect(v).toBeGreaterThanOrEqual(250);
+  test("no depth scales a floor — every question has a zero floor", () => {
+    expect(floorWordsForQuestion("what is enthalpy?")).toBe(0);
+    expect(floorWordsForQuestion("why does ice float?")).toBe(0);
+    expect(floorWordsForQuestion("derive the lens formula")).toBe(0);
+    for (const v of Object.values(DEPTH_FLOOR_WORDS)) expect(v).toBe(0);
   });
 });
 
