@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { frameSrcFor } from "@/lib/pdf-src";
 
 import { DOCS, MAT_DIR, SUBJECT_ORDER, type Doc, type Kind, type Subject } from "@/lib/docs-catalog";
 import { isOwnerUser } from "@/lib/owner";
@@ -364,10 +365,11 @@ export default function PdfLibraryPage() {
           ) : (
             <div className="w-full bg-white">
               <iframe
-                src={active.href}
+                src={frameSrcFor(active.href)}
                 title={active.title}
                 className="h-[78vh] min-h-[480px] w-full"
                 style={{ border: 0 }}
+                allow="autoplay; encrypted-media; fullscreen"
               />
             </div>
           )}

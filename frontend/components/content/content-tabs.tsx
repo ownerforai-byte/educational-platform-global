@@ -46,7 +46,9 @@ import type { SyllabusUnit } from "@/lib/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DOCS, type Doc } from "@/lib/docs-catalog";
-import { pdfViewerHref } from "@/lib/pdf-src";
+import { pdfViewerHref, downloadDoc, downloadFileName } from "@/lib/pdf-src";
+import { PlatformPdfViewerModal, type ViewableDocument } from "./platform-pdf-viewer-modal";
+import { Eye } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
 import {
@@ -431,6 +433,7 @@ function TopicJournalPanel({
  * shared catalog (lib/docs-catalog.ts), this subject first.
  */
 function DocumentsAndPdfs({ subjectSlug }: { subjectSlug: string }) {
+  const [activeDoc, setActiveDoc] = useState<ViewableDocument | null>(null);
   const subjectName = subjectSlug.charAt(0).toUpperCase() + subjectSlug.slice(1);
   const sorted = useMemo(() => {
     const own: Doc[] = [];
@@ -473,26 +476,26 @@ function DocumentsAndPdfs({ subjectSlug }: { subjectSlug: string }) {
                   {doc.description}
                 </p>
                 <div className="mt-1.5 flex gap-3">
-                  <a
-                    href={doc.kind === "docx" ? doc.href : pdfViewerHref(doc.href, doc.title)}
-                    target="_blank"
-                    rel="noreferrer noopener"
+                  <button
+                    type="button"
+                    onClick={() => setActiveDoc({ title: doc.title, src: doc.href, subject: doc.subject, topic: doc.topic, kind: doc.kind })}
                     className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:underline"
                   >
-                    Open <ExternalLink className="h-3 w-3" />
-                  </a>
-                  <a
-                    href={doc.href}
-                    download
+                    <Eye className="h-3 w-3" /> Read in Platform
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => downloadDoc(doc.href, downloadFileName(doc.href, doc.title))}
                     className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground"
                   >
                     <Download className="h-3 w-3" /> Download
-                  </a>
+                  </button>
                 </div>
               </div>
             </li>
           ))}
         </ul>
+        <PlatformPdfViewerModal doc={activeDoc} onClose={() => setActiveDoc(null)} />
       </CardContent>
     </Card>
   );

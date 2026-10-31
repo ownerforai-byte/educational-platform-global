@@ -1,13 +1,12 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Atom,
   BookOpen,
   Dna,
   Download,
-  ExternalLink,
   Eye,
   File,
   FileText,
@@ -31,7 +30,11 @@ import {
   type Subject,
 } from "@/lib/docs-catalog";
 import { WEBNOTEE_DOCS, type WebnoteeDoc } from "@/lib/webnotee-catalog";
-import { pdfViewerHref } from "@/lib/pdf-src";
+import { downloadDoc, downloadFileName } from "@/lib/pdf-src";
+import {
+  PlatformPdfViewerModal,
+  type ViewableDocument,
+} from "@/components/content/platform-pdf-viewer-modal";
 
 const SUBJECT_ICONS: Record<Subject, typeof Dna> = {
   Biology: Dna,
@@ -133,6 +136,45 @@ export default function ResourcesPage() {
   const [query, setQuery] = useState("");
   const [selectedSubject, setSelectedSubject] = useState<FilterSubject>("All");
   const [sectionFilter, setSectionFilter] = useState<SectionFilter>("all");
+  const [activeDoc, setActiveDoc] = useState<ViewableDocument | null>(null);
+
+  // Auto-open if linked with ?src=... or ?view=...
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get("src") || params.get("view");
+    if (!target) return;
+
+    const plat = DOCS.find((d) => d.href === target || d.key === target);
+    if (plat) {
+      setActiveDoc({
+        title: plat.title,
+        src: plat.href,
+        subject: plat.subject,
+        topic: plat.topic,
+        kind: plat.kind,
+      });
+      return;
+    }
+
+    const wn = WEBNOTEE_DOCS.find((d) => d.driveUrl === target || d.id === target);
+    if (wn) {
+      setActiveDoc({
+        title: wn.title,
+        src: wn.driveUrl,
+        subject: wn.subject,
+        topic: wn.exercise ?? wn.unit,
+        kind: "pdf",
+      });
+      return;
+    }
+
+    setActiveDoc({
+      title: params.get("title") || "Study Document",
+      src: target,
+      kind: "pdf",
+    });
+  }, []);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -180,23 +222,26 @@ export default function ResourcesPage() {
   const totalResults = filteredPlatformDocs.length + filteredWebnoteeDocs.length;
 
   return (
-    <div className="mx-auto max-w-6xl space-y-10 py-8 md:py-12 px-4">
-      {/* ── Page Header ─────────────────────────────────────────────────── */}
-      <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-primary/10 via-background to-card p-6 md:p-10 shadow-lg">
-        <div className="relative z-10 space-y-3">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Unified Document &amp; Reference Vault</span>
-          </div>
+    <div className="mx-auto max-w-7xl space-y-10 px-4 py-8 md:py-12">
+      {/* In-Platform Scrollable PDF & Document Viewer Modal */}
+      <PlatformPdfViewerModal
+        doc={activeDoc}
+        onClose={() => setActiveDoc(null)}
+      />
 
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
-            Study Documents &amp; Reference PDFs
+      {/* ── Page Header & Search ─────────────────────────────────────────── */}
+      <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-primary/10 via-background to-background p-6 md:p-10 shadow-sm">
+        <div className="relative z-10 max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Complete Academic Study Repository</span>
+          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            Resource Vault
           </h1>
-          <p className="max-w-3xl text-sm md:text-base text-muted-foreground leading-relaxed">
-            All curriculum documents classified in syllabus order. Platform study notes
-            and master guides are listed first, followed by WebNotee reference exercise
-            solutions across all subjects. Every document opens seamlessly in the in-app
-            viewer for instant, distraction-free study.
+          <p className="text-sm text-muted-foreground sm:text-base leading-relaxed">
+            Access, view, and scroll all curated academic study notes, exercise solution sets,
+            and reference PDFs directly inside the platform without going outside.
           </p>
 
           {/* Search Bar */}
@@ -362,13 +407,34 @@ export default function ResourcesPage() {
                     <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
                       {docs.map((doc: Doc) => {
                         const kindMeta = KIND_META[doc.kind];
-                        const viewerHref =
-                          doc.kind === "docx" ? doc.href : pdfViewerHref(doc.href, doc.title);
 
                         return (
                           <div
                             key={doc.key}
-                            className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                            role="button"
+                            tabIndex={0}
+                            onClick={() =>
+                              setActiveDoc({
+                                title: doc.title,
+                                src: doc.href,
+                                subject: doc.subject,
+                                topic: doc.topic,
+                                kind: doc.kind,
+                              })
+                            }
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                setActiveDoc({
+                                  title: doc.title,
+                                  src: doc.href,
+                                  subject: doc.subject,
+                                  topic: doc.topic,
+                                  kind: doc.kind,
+                                });
+                              }
+                            }}
+                            className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md cursor-pointer text-left"
                           >
                             <div className="space-y-2">
                               <div className="flex items-center justify-between gap-2">
@@ -389,26 +455,35 @@ export default function ResourcesPage() {
                             </div>
 
                             <div className="mt-4 flex items-center gap-2 pt-2 border-t border-border/40">
-                              <Button size="sm" className="h-8 flex-1 rounded-xl text-xs font-semibold" asChild>
-                                <a
-                                  href={viewerHref}
-                                  target="_blank"
-                                  rel="noreferrer noopener"
-                                >
-                                  <Eye className="h-3.5 w-3.5 mr-1.5" />
-                                  Open in Viewer
-                                </a>
+                              <Button
+                                size="sm"
+                                className="h-8 flex-1 rounded-xl text-xs font-semibold"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setActiveDoc({
+                                    title: doc.title,
+                                    src: doc.href,
+                                    subject: doc.subject,
+                                    topic: doc.topic,
+                                    kind: doc.kind,
+                                  });
+                                }}
+                              >
+                                <Eye className="h-3.5 w-3.5 mr-1.5" />
+                                Read in Platform
                               </Button>
                               <Button
                                 size="sm"
                                 variant="outline"
                                 className="h-8 rounded-xl px-2.5 text-xs text-muted-foreground hover:text-foreground"
-                                asChild
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  downloadDoc(doc.href, downloadFileName(doc.href, doc.title));
+                                }}
+                                title="Download file to device directly"
                               >
-                                <a href={doc.href} download title="Download file to device">
-                                  <Download className="h-3.5 w-3.5" />
-                                  <span className="sr-only">Download</span>
-                                </a>
+                                <Download className="h-3.5 w-3.5" />
+                                <span className="sr-only">Download</span>
                               </Button>
                             </div>
                           </div>
@@ -436,7 +511,7 @@ export default function ResourcesPage() {
                   2. WebNotee Curriculum Reference Solutions &amp; Exercise PDFs
                 </h2>
                 <p className="text-xs text-muted-foreground">
-                  Comprehensive exercise solutions and curriculum references from WebNotee. Loaded via in-app reader.
+                  Comprehensive exercise solutions and curriculum references from WebNotee. Scrollable inside platform.
                 </p>
               </div>
             </div>
@@ -469,12 +544,33 @@ export default function ResourcesPage() {
 
                     <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
                       {docs.map((doc: WebnoteeDoc) => {
-                        const viewerHref = pdfViewerHref(doc.driveUrl, doc.title);
-
                         return (
                           <div
                             key={doc.id}
-                            className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-violet-500/40 hover:shadow-md"
+                            role="button"
+                            tabIndex={0}
+                            onClick={() =>
+                              setActiveDoc({
+                                title: doc.title,
+                                src: doc.driveUrl,
+                                subject: doc.subject,
+                                topic: doc.exercise ?? doc.unit,
+                                kind: "pdf",
+                              })
+                            }
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                setActiveDoc({
+                                  title: doc.title,
+                                  src: doc.driveUrl,
+                                  subject: doc.subject,
+                                  topic: doc.exercise ?? doc.unit,
+                                  kind: "pdf",
+                                });
+                              }
+                            }}
+                            className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-violet-500/40 hover:shadow-md cursor-pointer text-left"
                           >
                             <div className="space-y-2">
                               <div className="flex items-center justify-between gap-2">
@@ -498,32 +594,32 @@ export default function ResourcesPage() {
                               <Button
                                 size="sm"
                                 className="h-8 flex-1 rounded-xl text-xs font-semibold bg-violet-600 hover:bg-violet-700 text-white dark:bg-violet-500 dark:hover:bg-violet-600"
-                                asChild
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setActiveDoc({
+                                    title: doc.title,
+                                    src: doc.driveUrl,
+                                    subject: doc.subject,
+                                    topic: doc.exercise ?? doc.unit,
+                                    kind: "pdf",
+                                  });
+                                }}
                               >
-                                <a
-                                  href={viewerHref}
-                                  target="_blank"
-                                  rel="noreferrer noopener"
-                                >
-                                  <Eye className="h-3.5 w-3.5 mr-1.5" />
-                                  Open in Viewer
-                                </a>
+                                <Eye className="h-3.5 w-3.5 mr-1.5" />
+                                Read in Platform
                               </Button>
                               <Button
                                 size="sm"
                                 variant="outline"
                                 className="h-8 rounded-xl px-2.5 text-xs text-muted-foreground hover:text-foreground"
-                                asChild
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  downloadDoc(doc.driveUrl, downloadFileName(doc.driveUrl, doc.title));
+                                }}
+                                title="Download file to device directly"
                               >
-                                <a
-                                  href={doc.driveUrl}
-                                  target="_blank"
-                                  rel="noreferrer noopener"
-                                  title="View on Google Drive"
-                                >
-                                  <ExternalLink className="h-3.5 w-3.5" />
-                                  <span className="sr-only">Open Drive source</span>
-                                </a>
+                                <Download className="h-3.5 w-3.5" />
+                                <span className="sr-only">Download</span>
                               </Button>
                             </div>
                           </div>

@@ -37,6 +37,8 @@ const FRAME_HOSTS = new Set([
 export function drivePreviewUrl(url: string): string | null {
   const match = url.match(/drive\.google\.com\/file\/d\/([A-Za-z0-9_-]+)/);
   if (match) return `https://drive.google.com/file/d/${match[1]}/preview`;
+  const idMatch = url.match(/drive\.google\.com\/.*[?&]id=([A-Za-z0-9_-]+)/);
+  if (idMatch) return `https://drive.google.com/file/d/${idMatch[1]}/preview`;
   return null;
 }
 
