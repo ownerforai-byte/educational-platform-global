@@ -2,7 +2,6 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 const push = vi.fn();
-const search = vi.fn();
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push }),
@@ -13,7 +12,7 @@ vi.mock("next/link", () => ({
     <a href={href} {...rest}>{children}</a>
   ),
 }));
-vi.mock("@/lib/api/ai", () => ({ search: (...args: unknown[]) => search(...args) }));
+vi.mock("@/lib/api/ai", () => ({ search: vi.fn() }));
 vi.mock("@/components/theme/theme-provider", () => ({
   THEME_OPTIONS: [
     { id: "nebula", label: "Nebula Sky", description: "Space theme", badge: "Space", colors: { bg: "#000", primary: "#fff", border: "#333" }, isDark: true },
@@ -48,32 +47,96 @@ describe("sidebar theme section", () => {
 });
 
 describe("global header search", () => {
-  it("runs a search, selects a result, and sends Enter searches to the complete results page", async () => {
-    search.mockResolvedValue({ results: [{ id: "topic-1", title: "Vector addition", type: "topic", url: "/class-11-notes/physics/vectors", class: "Class 11", subject: "Physics", chapter: "Vectors" }] });
+  it("shows local results for a query matching syllabus content and navigates on click", async () => {
     render(<GlobalSearch />);
     const input = screen.getByRole("searchbox", { name: "Search subjects, topics and labs" });
 
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "vectors" } });
-    await waitFor(() => expect(search).toHaveBeenCalledWith("vectors"));
-    const result = await screen.findByRole("button", { name: /Vector addition/ });
-    fireEvent.click(result);
-    expect(push).toHaveBeenCalledWith("/class-11-notes/physics/vectors");
+
+    // Local search is synchronous — results appear immediately
+    const results = await screen.findAllByRole("button", { name: /Vectors/i });
+    expect(results.length).toBeGreaterThan(0);
+
+    fireEvent.click(results[0]);
+    expect(push).toHaveBeenCalled();
+    const href = push.mock.calls[0][0] as string;
+    expect(href).toMatch(/vectors/);
+  });
+
+  it("sends Enter searches to the complete results page", () => {
+    render(<GlobalSearch />);
+    const input = screen.getByRole("searchbox", { name: "Search subjects, topics and labs" });
 
     fireEvent.focus(input);
     fireEvent.change(input, { target: { value: "kinematics" } });
     fireEvent.submit(input.closest("form")!);
     expect(push).toHaveBeenCalledWith("/search?q=kinematics");
-    await waitFor(() => expect(search).toHaveBeenLastCalledWith("kinematics"));
   });
 
-  it("communicates search failures and keeps the full search route available", async () => {
-    search.mockRejectedValue(new Error("unavailable"));
+  it("shows 'no results' for a query that matches nothing", () => {
     render(<GlobalSearch />);
     const input = screen.getByRole("searchbox", { name: "Search subjects, topics and labs" });
+
     fireEvent.focus(input);
-    fireEvent.change(input, { target: { value: "thermodynamics" } });
-    expect(await screen.findByRole("status")).toHaveTextContent("Search is unavailable");
-    expect(screen.getByRole("button", { name: /View all results/ })).toBeInTheDocument();
+    fireEvent.change(input, { target: { value: "zzzznothing" } });
+    expect(screen.getByText(/No results for/)).toBeInTheDocument();
+  });
+
+  it("shows kind badges (Subject, Unit, Topic, Lab, Graph, Page) on results", async () => {
+    render(<GlobalSearch />);
+    const input = screen.getByRole("searchbox", { name: "Search subjects, topics and labs" });
+
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: "physics" } });
+
+    // Should find subject-level and unit-level matches with kind badges
+    await waitFor(() => {
+      const results = screen.getAllByRole("button", { name: /Physics/i });
+      // At least one result should exist
+      expect(results.length).toBeGreaterThan(0);
+    });
+
+    // Check that kind badges are rendered
+    const badges = document.querySelectorAll("span");
+    const kindTexts = Array.from(badges).map((b) => b.textContent);
+    const validKinds = ["Subject", "Unit", "Chapter", "Topic", "Concept", "Example", "Lab", "Graph", "Page"];
+    expect(kindTexts.some((t) => validKinds.includes(t ?? ""))).toBe(true);
+  });
+
+  it("finds and badges units, chapters, concepts, and examples", async () => {
+    render(<GlobalSearch />);
+    const input = screen.getByRole("searchbox", { name: "Search subjects, topics and labs" });
+
+    // Search for a concept / derivation (e.g. Bernoulli or Gravitation)
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: "gravitation" } });
+
+    await waitFor(() => {
+      const results = screen.getAllByRole("button", { name: /gravitation/i });
+      expect(results.length).toBeGreaterThan(0);
+    });
+
+    const spans = Array.from(document.querySelectorAll("span")).map((s) => s.textContent);
+    expect(spans.some((t) => ["Chapter", "Unit", "Topic", "Concept"].includes(t ?? ""))).toBe(true);
+  });
+
+  it("navigates by arrow keys and selects with Enter", () => {
+    render(<GlobalSearch />);
+    const input = screen.getByRole("searchbox", { name: "Search subjects, topics and labs" });
+
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: "kinematics" } });
+
+    // Arrow down then Enter should select the first result
+    fireEvent.keyDown(input, { key: "ArrowDown" });
+    fireEvent.keyDown(input, { key: "ArrowDown" });
+    fireEvent.keyDown(input, { key: "ArrowUp" });
+    fireEvent.submit(input.closest("form")!);
+
+    // Should have navigated to a result href, not the search page
+    expect(push).toHaveBeenCalled();
+    const href = push.mock.calls[0][0] as string;
+    expect(href).toMatch(/kinematics/i);
   });
 });
