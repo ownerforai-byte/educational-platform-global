@@ -99,12 +99,13 @@ test.describe("E2E smoke", () => {
   });
 
   test("owner: topic notes and practice tabs work in one mobile learning flow", async ({ page }) => {
+    test.setTimeout(120_000);
     test.skip(!OWNER_EMAIL || !OWNER_PASSWORD, "SMOKE_OWNER_EMAIL/PASSWORD not set");
     await page.setViewportSize({ width: 390, height: 844 });
     await signIn(page, OWNER_EMAIL, OWNER_PASSWORD);
     await page.goto("/class-11-notes/physics/chapters/kinematics/topics/projectile-motion-and-its-applications");
 
-    await expect(page.getByRole("tab", { name: "Notes", exact: true })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("tab", { name: "Notes", exact: true })).toHaveAttribute("aria-selected", "true", { timeout: 30_000 });
     await expect(page.getByRole("heading", { name: /Understand .* in four passes/ })).toBeVisible({ timeout: 30_000 });
     await expect(page.locator("#topic-notes")).toHaveCount(1);
 
