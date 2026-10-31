@@ -14,7 +14,6 @@ import {
   depthDirectiveForMode,
   DEPTH_REGULATION_RULES,
 } from "./depth-regulation";
-import { ROUGH_INPUT_RULE } from "./profanity-guard";
 
 /**
  * PROFESSOR_STYLE_RULES — enforced server-side on every chat reply (auth + guest).
@@ -121,7 +120,6 @@ export const MASTER_ACADEMIC_PROMPT = [
   REPLY_CRAFT_RULES,
   CLASS_SCOPE_RULES,
   SOURCE_REGISTRY_RULES,
-  ROUGH_INPUT_RULE,
 ].join("\n\n");
 
 /**

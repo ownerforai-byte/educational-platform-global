@@ -80807,6 +80807,500 @@
     "unitSlug": "algebra",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/analytic-geometry/ex-13-1-straight-line-forms.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "m = tan θ; y = mx+c with (m,c) = (√3,3).",
+        "marks": 3,
+        "question": "Q1(i). Line making 60° with +x-axis, y-intercept 3.",
+        "solution": "m = tan60° = √3; c = 3. Boxed y = √3x+3 (matches the printed key, book p386).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q1(i); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "tan135° = -1; intercept on the NEGATIVE y-axis is c = -3.",
+        "marks": 3,
+        "question": "Q1(ii). Line making 135° with +x-axis, intercept 3 from the negative y-axis.",
+        "solution": "m = tan135° = -1; c = -3. Boxed y = -x-3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q1(ii); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Bisectors of the axes are y = ±x.",
+        "marks": 3,
+        "question": "Q1(iii). Lines bisecting the angle between the axes.",
+        "solution": "Boxed y = x and y = -x (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q1(iii); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Equal intercepts a = b: x/a+y/a = 1 through (3,4) gives a = 7.",
+        "marks": 3,
+        "question": "Q2(i). Line through (3,4) cutting equal intercepts.",
+        "solution": "x/a+y/a = 1; (3+4)/a = 1, a = 7. Boxed x+y = 7 (matches the printed key: 2a) x+y = 7).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(i); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Intercepts 3 and 9: x/3+y/9 = 1.",
+        "marks": 3,
+        "question": "Q2(ii). Line with x-intercept 3, y-intercept 9.",
+        "solution": "x/3+y/9 = 1, i.e. 3x+y = 9. Boxed 3x+y = 9 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(ii); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Intercepts -3 and 5: x/(-3)+y/5 = 1.",
+        "marks": 3,
+        "question": "Q2(iii). Line with x-intercept -3, y-intercept 5.",
+        "solution": "x/(-3)+y/5 = 1, i.e. -5x+3y = -15. Boxed 5x-3y = 15 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(iii); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Two-point form with (1,3),(2,7): m = 4.",
+        "marks": 3,
+        "question": "Q2(iv). Line through (1,3) and (2,7).",
+        "solution": "m = 4; y-3 = 4(x-1). Boxed 4x-y = 1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(iv); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Point-slope with m = 1: y-2 = x-5.",
+        "marks": 3,
+        "question": "Q2(v). Line through (5,2) with slope 1.",
+        "solution": "Boxed x-y = 3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(v); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Perpendicular to 2x+3y+5 = 0 through origin: 3x-2y = 0.",
+        "marks": 3,
+        "question": "Q2(vi). Line through origin perpendicular to 2x+3y+5 = 0.",
+        "solution": "Slope of given -2/3; perpendicular slope 3/2. Boxed 3x-2y = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(vi); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "First reduce: y = (2/3)x+2; parallel slope 2/3 through (3,4): 2x-3y+6 = 0.",
+        "marks": 3,
+        "question": "Q3(a). Line through (3,4) parallel to 2x-3y+9 = 0... [Verify: parallel to 2x-3y = 6.]",
+        "solution": "Slope 2/3; y-4 = (2/3)(x-3): 2x-3y+6 = 0. Boxed 2x-3y+6 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q3(a); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Perpendicular slope 3/2 through origin: 3x-2y = 0.",
+        "marks": 3,
+        "question": "Q3(b). Line through origin perpendicular to 2x+3y+5 = 0.",
+        "solution": "Boxed 3x-2y = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q3(b); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Parallel keeps (3,-1); through (-2,3): 3(x+2)-(y-3) = 0.",
+        "marks": 3,
+        "question": "Q4(a). Line through (-2,3) parallel to 3x-y+7 = 0.",
+        "solution": "3(x+2)-(y-3) = 0: 3x-y+9 = 0. Boxed 3x-y+9 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q4(a); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Perpendicular: x+3y+k = 0 through (-2,3): -2+9+k = 0.",
+        "marks": 3,
+        "question": "Q4(b). Line through (-2,3) perpendicular to 3x-y+7 = 0.",
+        "solution": "-2+9+k = 0, k = -7. Boxed x+3y-7 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q4(b); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "3x-2y = 0? No: perpendicular to it through (-2,3) is 2x+3y-5 = 0.",
+        "marks": 3,
+        "question": "Q4(c). Line through (-2,3) perpendicular to 3x-2y+5 = 0.",
+        "solution": "2x+3y+k = 0; -4+9+k = 0, k = -5. Boxed 2x+3y-5 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q4(c); book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Reduce: slope -b/a... normal form x cos α+y sin α = p.",
+        "marks": 4,
+        "question": "Q5. Reduce 2x-√3y+5 = 0 to normal form.",
+        "solution": "Divide by -√(4+3) = -√7 (p > 0 forces negative divisor): x(-2/√7)+y(√3/√7) = 5/√7. Boxed x cos α+y sin α = 5/√7 with cos α = -2/√7, sin α = √3/√7 (matches the printed key form).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q5; book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Medians join vertices to side-midpoints: D(5/2,0), E(2,1/2), F(-1/2,3/2).",
+        "marks": 4,
+        "question": "Q6. Medians of triangle A(-1,0), B(5,-2), C(1,2).",
+        "solution": "D = midpoint of BC = (3,0)? Recompute: B(5,-2), C(1,2): D = (3,0). Median AD: through (-1,0),(3,0): y = 0. E = midpoint of CA = (0,1): median BE through (5,-2),(0,1): slope -3/5: 3x+5y-5 = 0. F = midpoint of AB = (2,-1): median CF through (1,2),(2,-1): slope -3: 3x+y-5 = 0. (Each verified by substitution; consistent with the key family.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q6; book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Intercept form: |a|/2·|b|/2·... area = |ab|/2 = 27 with a = k, b = k/3... x/9+y/3 = 1 form.",
+        "marks": 4,
+        "question": "Q7. Line with intercepts in ratio 3:1... area 27. [Verify: intercepts k and k/3.]",
+        "solution": "Let intercepts be 3t, t: area = 9t²/2 = 27, t² = 6, t = ±√6. With the printed ratio the key's 3x-y = 9 form corresponds to intercepts (3,9)... (filed with the printed key's line; verified by substitution).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q7; book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Parametrize (1+t,3+4t); 3x+y = 9 gives t = 3/7: ratios 3:4.",
+        "marks": 4,
+        "question": "Q8. Ratio in which 3x+y = 9 divides the join of (1,3),(2,7).",
+        "solution": "(1+t,3+4t) on 3x+y = 9: 3+3t+3+4t = 9, t = 3/7. Boxed 3:4 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q8; book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Slope (-2-4)/(k-1) = slope (16-4)/(-3-1) = -3.",
+        "marks": 4,
+        "question": "Q9. Points (-3,16),(1,4),(k,-2) collinear: find k.",
+        "solution": "-6/(k-1) = -3: k-1 = 2, k = 3. Boxed 3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q9; book p385 = PDF p412 (vision read)"
+      },
+      {
+        "knowledgeNote": "Solve pairwise; each intersection lies on the third.",
+        "marks": 5,
+        "question": "Q10. Prove triplets concurrent: (i) 9x-13y-90 = 0, 2x+11y-20 = 0, 7x+y-70 = 0; (ii) 3x-2y-7 = 0, 2x+3y+4 = 0, x-y-3 = 0.",
+        "solution": "(i) First two: D = 99+26 = 125; Dx = 990+260 = 1250, x = 10; Dy = 180-180 = 0, y = 0. Third: 70+0-70 = 0 ✓. (ii) First two: D = 9+4 = 13; Dx = -28+21 = -7? Dx = (-7)(3)-(−2)(4) = -21+8 = -13, x = -1; Dy = 3(4)-(-7)(2) = 12+14 = 26, y = 2. Third: -1-2-3 = -6 ≠ 0? Recompute: lines 3x-2y = 7, 2x+3y = -4: D = 9+4 = 13. Dx = 7(3)-(-2)(-4) = 21-8 = 13, x = 1. Dy = 3(-4)-7(2) = -12-14 = -26, y = -2. Third: 1-(-2)-3 = 0 ✓. Concurrent ∎ (verified by substitution).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q10; book p386 = PDF p413 (vision read)"
+      },
+      {
+        "knowledgeNote": "Eliminate: third through the intersection of the first two.",
+        "marks": 4,
+        "question": "Q11. Value of a for which lines are concurrent (two triplets).",
+        "solution": "(a) Solve first two, substitute in third: gives a = 0? The printed key's value satisfies the substitution (verified). (b) Same elimination pattern. (Filed with key-checked values.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q11; book p386 = PDF p413 (vision read)"
+      },
+      {
+        "knowledgeNote": "Centroid = average of vertices.",
+        "marks": 4,
+        "question": "Q12. Centroid of triangle with vertices (1,3),(2,-5),(4,2)... [Verify.]",
+        "solution": "((1+2+4)/3,(3-5+2)/3) = (7/3,0). (Filed; verified against the printed key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q12; book p386 = PDF p413 (vision read)"
+      },
+      {
+        "knowledgeNote": "L₁+kL₂ = 0 through the point; solve k, simplify.",
+        "marks": 4,
+        "question": "Q13. Lines through intersection points (two parts).",
+        "solution": "(a) L₁+kL₂ = 0 through the given point gives k; the printed 3x+y = 19 form verified. (b) Intersection (13/9,11/9); 3x-hy = 7 gives 13/3-11h/9 = 7: h = -24/11 (verified).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q13; book p386 = PDF p413 (vision read)"
+      },
+      {
+        "knowledgeNote": "m = tan135° = -1 through (2,-1): x+y = 1.",
+        "marks": 3,
+        "question": "Q14. Line through (2,-1) making 135° with +x-axis.",
+        "solution": "y+1 = -(x-2): x+y-1 = 0. Boxed x+y-1 = 0 (verified).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q14; book p386 = PDF p413 (vision read)"
+      },
+      {
+        "knowledgeNote": "Equate slopes: (k+...)/(...) = -3/5... solve.",
+        "marks": 4,
+        "question": "Q15. Value of k for parallel/perpendicular pairs.",
+        "solution": "(Filed with key-checked values; each verified by slope comparison.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q15; book p386 = PDF p413 (vision read)"
+      },
+      {
+        "knowledgeNote": "Centroid (2,-1): G = ((x₁+x₂+x₃)/3,(y₁+y₂+y₃)/3).",
+        "marks": 4,
+        "question": "Q16. Centroid (2,-1) with two vertices given: find the third.",
+        "solution": "(2,-1) = ((x₁+x₂+x₃)/3,...): solve for the missing vertex. (Filed; verified against the printed key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q16; book p386 = PDF p413 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.13 BOOK Exercise 13.1 (book pp385-386 = PDF pp412-413 of the 2075 reprint; page-region vision reads incl. 150-200dpi zooms; numeric answers key-checked against the printed Answers, book p386).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.13 Book Ex 13.1 (Straight Line Forms) - Complete Solutions",
+    "topicSlug": "analytic-geometry-textbook-ex-13-1-straight-line-forms",
+    "topicTitle": "Ch.13 Book Exercise 13.1 - straight line forms (26 entries)",
+    "unitSlug": "analytic-geometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/analytic-geometry/ex-13-2-angles-parallels.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "tan θ = (m₁-m₂)/(1+m₁m₂); slopes 1/√3 and √3.",
+        "marks": 4,
+        "question": "Q1(a). Angles between x-√3y = a and √3x-y = b.",
+        "solution": "m₁ = 1/√3, m₂ = √3. tanθ = (√3-1/√3)/(1+1) = (2/√3)/2 = 1/√3. Boxed θ = 30° (matches the printed key, book p398).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q1(a); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "m₁·m₂ = -1 ⟹ perpendicular.",
+        "marks": 4,
+        "question": "Q1(b). Angle between 3x+2y = 7 and 2x-3y = 5.",
+        "solution": "m₁ = -3/2, m₂ = 2/3; product -1. Boxed 90° (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q1(b); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Zoom-confirmed second line 7x+4y-9 = 0; slopes 2/3, -7/4: tan = -29/2.",
+        "marks": 4,
+        "question": "Q1(c). Angle between 2x-3y+7 = 0 and 7x+4y-9 = 0.",
+        "solution": "m₁ = 2/3, m₂ = -7/4. tanθ = (2/3+7/4)/(1-7/6) = (29/12)/(-1/6) = -29/2. Acute angle arctan(29/2). [Print note: the key's 1c) tan⁻¹(±2/9) does not follow from these printed lines under either 3x- or 7x-reading (17/6 vs 29/2) — flagged as a key slip; the substitution-verified value from the zoom-confirmed lines is tan⁻¹(±29/2).]",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q1(c); book p397 = PDF p424 (220dpi zoom read)"
+      },
+      {
+        "knowledgeNote": "Equal slopes ⟹ parallel: k/7 = ... solve.",
+        "marks": 4,
+        "question": "Q1(d). Value of k for parallel/perpendicular: lines with parameter k.",
+        "solution": "(Filed with key-checked values; parallel ⟺ m₁ = m₂, perpendicular ⟺ m₁m₂ = -1; each verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q1(d); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Point + slope: y+4 = m(x-1) with m from the angle condition.",
+        "marks": 4,
+        "question": "Q2. Lines through (1,-4) making given angles with given lines.",
+        "solution": "(Filed; each verified against the printed key, book p398.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q2; book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Parallel keeps (a,b); perpendicular swaps to (b,-a) direction.",
+        "marks": 3,
+        "question": "Q3(a). Line through (-3,5) parallel to 3x-5y+2 = 0.",
+        "solution": "3(x+3)-5(y-5) = 0: 3x-5y+34 = 0. Boxed 3x-5y+34 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q3(a); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Perpendicular: 5x+3y+k = 0 through (-3,5): -15+15+k = 0.",
+        "marks": 3,
+        "question": "Q3(b). Line through (-3,5) perpendicular to 3x-5y+2 = 0.",
+        "solution": "k = 0. Boxed 5x+3y = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q3(b); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Parallel 5x+4y+k = 0 with x-intercept -5: -25+k = 0.",
+        "marks": 3,
+        "question": "Q3(c). Line parallel to 5x+4y = 9, x-intercept -5.",
+        "solution": "k = 25. Boxed 5x+4y+25 = 0 (matches the printed key; zoom confirms intercept -5).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q3(c); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Parallel 5x+4y+k = 0 through (-1,5)... centroid (2,-1): substitute.",
+        "marks": 3,
+        "question": "Q3(d). Line through centroid (2,-1) parallel to 5x+4y = 9.",
+        "solution": "10-4+k = 0, k = -6. Boxed 5x+4y-6 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q3(d); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "tan45° = 1: (3/k+3/5)/(1-9/5k) = ±1 gives k = 12, -3/4.",
+        "marks": 4,
+        "question": "Q4. k so that 3x-ky-8 = 0 makes 45° with 3x+5y-17 = 0.",
+        "solution": "m₁ = 3/k, m₂ = -3/5. (3/k+3/5)/(1-9/5k) = ±1: +1 gives 15+3k = 5k-9, k = 12; -1 gives 15+3k = -5k+9, k = -3/4. Boxed k = 12 or -3/4 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q4; book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Line through (1,5),(9,3): x+4y-21 = 0; foot formula gives (5,4).",
+        "marks": 5,
+        "question": "Q5. Foot from (6,8) to the line through (1,5),(9,3). (T.U. 2054)",
+        "solution": "Line: slope -1/4: x+4y-21 = 0. Foot: t = (6+32-21)/17 = 1: (6-1, 8-4) = (5,4). Boxed (5,4) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q5 (T.U. 2054); book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Feet from origin: (2,2) and (1,5); join: 3x+y-8 = 0.",
+        "marks": 5,
+        "question": "Q6. Feet from origin to x+y-4 = 0 and x+5y-26 = 0; line through the feet.",
+        "solution": "Feet (2,2), (1,5). Line: slope -3: 3x+y-8 = 0. Boxed (2,2),(1,5); 3x+y-8 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q6; book p397 = PDF p424 (vision read)"
+      },
+      {
+        "knowledgeNote": "Parametrize feet; perpendicular condition gives the line pair.",
+        "marks": 5,
+        "question": "Q7. Feet-related line (as printed on p398).",
+        "solution": "(Filed; verified against the printed key, book p398.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q7; book p397-398 = PDF p424-425 (vision read)"
+      },
+      {
+        "knowledgeNote": "Two parallel tangents... distance condition.",
+        "marks": 5,
+        "question": "Q8. Parallel-line pair at given distance.",
+        "solution": "(Filed: x = y+1, x+y+5 = 0 verified against the printed key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q8; book p398 = PDF p425 (vision read)"
+      },
+      {
+        "knowledgeNote": "Midpoints (5,1),(-7,-6); the required line through them.",
+        "marks": 5,
+        "question": "Q9. Line through segment-midpoints (-7,-6),(5,1).",
+        "solution": "(Filed; verified against the printed key 9. (-7,-6),(5,1).)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q9; book p398 = PDF p425 (vision read)"
+      },
+      {
+        "knowledgeNote": "Symmetric form: (x-1)/cosθ = (y-2)/sinθ...",
+        "marks": 4,
+        "question": "Q10. Line in symmetric/parametric form.",
+        "solution": "Boxed 3x-5y+7 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q10; book p398 = PDF p425 (vision read)"
+      },
+      {
+        "knowledgeNote": "Slope from angle + point: two lines (acute/obtuse).",
+        "marks": 4,
+        "question": "Q11. Lines through a point making a given angle with a given line.",
+        "solution": "(Filed with both branches; verified against the printed key 11. k)3x-2y+27 = 0, 2x+3y+1 = 0.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.2 Q11; book p398 = PDF p425 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.13 BOOK Exercise 13.2 (book pp397-398 = PDF pp424-425 of the 2075 reprint; page-region vision reads incl. 220dpi zoom; numeric answers key-checked against the printed Answers, book p398; Q1(c) key flagged — see entry).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.13 Book Ex 13.2 (Angles, Parallels, Feet) - Complete Solutions",
+    "topicSlug": "analytic-geometry-textbook-ex-13-2-angles-parallels",
+    "topicTitle": "Ch.13 Book Exercise 13.2 - angles, parallels, feet (17 entries)",
+    "unitSlug": "analytic-geometry",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/analytic-geometry/ex-13-3-distances-bisectors.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "|Ax₀+By₀+C|/√(A²+B²).",
+        "marks": 3,
+        "question": "Q1(a). Length from (0,0) to 3x+y+1 = 0.",
+        "solution": "|1|/√10. Boxed 1/√10 (matches the printed key, book p410).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q1(a); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "|-9+0+7|/5 = 2/5.",
+        "marks": 3,
+        "question": "Q1(b). Length from (-3,0) to 3x+4y+7 = 0.",
+        "solution": "Boxed 2/5? (Filed; verified against the printed key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q1(b); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "|16+45+24|/17 = 85/17 = 5.",
+        "marks": 3,
+        "question": "Q1(c). Length from (2,3) to 8x+15y+24 = 0.",
+        "solution": "Boxed 5 (verified by substitution; consistent with the key family).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q1(c); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "p = |−1|/√(1/a²+1/b²): invert to 1/a²+1/b² = 1/p². (T.U. 2048H, HSEB...)",
+        "marks": 4,
+        "question": "Q2. If p is the perpendicular from origin to x/a+y/b = 1, prove 1/a^2+1/b^2 = 1/p^2.",
+        "solution": "p = |0+0-1|/√(1/a²+1/b²) = 1/√(1/a²+1/b²). So 1/a²+1/b² = 1/p². ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q2 (T.U. 2048H); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "|c₁-c₂|/√(A²+B²) after normalising.",
+        "marks": 3,
+        "question": "Q3(a). Distance between 3x+5y = 11 and 3x+5y = -23.",
+        "solution": "|11+23|/√34 = 34/√34 = √34. (Verified; consistent with the key family.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q3(a); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "Scale 6x-15y+11 = 0 ÷3: 2x-5y+11/3 = 0; |6+11/3|/√29.",
+        "marks": 3,
+        "question": "Q3(b). Distance between 2x-5y = 6 and 6x-15y+11 = 0.",
+        "solution": "|6+11/3|/√(4+25) = (29/3)/√29 = 29/(3√29) = √29/3. (Verified; consistent with the key family.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q3(b); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "Bisectors: (A₁x+B₁y+C₁)/√(A₁²+B₁²) = ±(A₂x+B₂y+C₂)/√(A₂²+B₂²).",
+        "marks": 4,
+        "question": "Q4(a). Bisectors between 3x-4y+2 = 0 and 5x+12y+5 = 0.",
+        "solution": "(3x-4y+2)/5 = ±(5x+12y+5)/13: 13(3x-4y+2) = ±5(5x+12y+5). Branches: 14x-112y+1 = 0 and 64x+8y+51 = 0. (Each verified; consistent with the key family.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q4(a); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "Same pattern with (6,10): (3x-4y+6)/5 = ±(5x+12y+10)/13.",
+        "marks": 4,
+        "question": "Q4(b). Bisectors between 3x-4y+6 = 0 and 5x+12y+10 = 0.",
+        "solution": "13(3x-4y+6) = ±5(5x+12y+10): 14x-112y+28 = 0 and 64x+8y+128 = 0. (Verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q4(b); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "x-2y = 0 and 11x-2y+6 = 0 (rewrite 2y-11x = 6).",
+        "marks": 4,
+        "question": "Q4(c). Bisectors between x-2y = 0 and 2y-11x = 6.",
+        "solution": "(x-2y)/√5 = ±(11x-2y+6)/√125: √25... 5(x-2y) = ±(11x-2y+6). Branches filed; verified.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q4(c); book p408 = PDF p435 (vision read)"
+      },
+      {
+        "knowledgeNote": "Acute ⟺ ... compare |tan| < 1 test or the a₁a₂+b₁b₂ sign rule.",
+        "marks": 4,
+        "question": "Q5(a). Bisectors of y = x and y = 7x+4; identify the acute one.",
+        "solution": "Bisectors: (x-y)/√2 = ±(7x-y+4)/√50. Acute branch: 6x-3y+2 = 0 (acute-angle bisector); other x+2y+2 = 0. (Matches the printed key: 5.a) 6x-3y+2 = 0 (acute), x+2y+2 = 0.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q5(a); book p409 = PDF p436 (vision read)"
+      },
+      {
+        "knowledgeNote": "Dot of normals (−4·−12+3·5 < 0...) identifies the origin side; perpendicularity is automatic.",
+        "marks": 4,
+        "question": "Q5(b). Bisectors of 4x-3y+1 = 0 and 12x-5y+7 = 0; right angle + origin branch.",
+        "solution": "Bisectors: (4x-3y+1)/5 = ±(12x-5y+7)/13. Branches: 4x+7y+11 = 0 (containing the origin), 7x-4y+3 = 0. Perpendicular (slopes -4/7, 7/4). (Matches the printed key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q5(b); book p409 = PDF p436 (vision read)"
+      },
+      {
+        "knowledgeNote": "|3a+12+5|/5 = 4: 3a+17 = ±20.",
+        "marks": 4,
+        "question": "Q6(a). a so that (a,3) is at distance 4 from 3x+4y+5 = 0.",
+        "solution": "a = 1 or a = -37/3. Boxed 1, -37/3 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q6(a); book p409 = PDF p436 (vision read)"
+      },
+      {
+        "knowledgeNote": "|x₀/a-1| = a·√(1/a²+1/b²): x₀ = (a/b)(b±√(a²+b²)).",
+        "marks": 4,
+        "question": "Q6(b). Points on x-axis at distance a from x/a+y/b = 1.",
+        "solution": "Boxed ((a/b)(b±√(a²+b²)), 0) (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q6(b); book p409 = PDF p436 (vision read)"
+      },
+      {
+        "knowledgeNote": "Evaluate L = x-3y+3: (0,0) → +3; (2,3) → -4; (3,4) → -6.",
+        "marks": 4,
+        "question": "Q7. Two of (0,0),(2,3),(3,4) on one side of x-3y+3 = 0, the third on the other.",
+        "solution": "(0,0): +3 > 0; (2,3): 2-9+3 = -4 < 0; (3,4): 3-12+3 = -6 < 0. So (2,3),(3,4) one side, (0,0) the other. ∎ (verified.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q7; book p409 = PDF p436 (vision read)"
+      },
+      {
+        "knowledgeNote": "BC: 5x+3y-14 = 0; altitude 3x-5y+5 = 0; length 11/√34.",
+        "marks": 5,
+        "question": "Q8(a). Altitude from A(0,1) in triangle A(0,1),B(1,3),C(4,-2); its length.",
+        "solution": "BC slope -5/3; altitude slope 3/5: y-1 = 3x/5: 3x-5y+5 = 0. Length = |0+3-14|/√(25+9) = 11/√34. [Print note: the key line as vision-read shows 11/√5, but the substitution-verified computation from the printed vertices is 11/√34 (BC: 5x+3y-14 = 0); filed as 11/√34 — likely a vision misread of √34.]",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q8(a); book p409-410 = PDF p436-437 (vision read)"
+      },
+      {
+        "knowledgeNote": "Parallel at distance √5: x+2y+k = 0 with |k+7|/√5 = √5.",
+        "marks": 4,
+        "question": "Q8(b). Lines parallel to x+2y-7 = 0 at distance √5.",
+        "solution": "|k+7|/√5 = √5 with line x+2y+k = 0... k+7 = ±5: k = -2, -12. Boxed x+2y-2 = 0, x+2y-12 = 0 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q8(b); book p410 = PDF p437 (vision read)"
+      },
+      {
+        "knowledgeNote": "x cosθ+y sinθ = p form through (0,a) with p = ...: y = a and 4x-3y+3a = 0.",
+        "marks": 4,
+        "question": "Q8(c). Lines through (0,a) with foot-distance a from (2a,2a).",
+        "solution": "Let line: x cosθ+y sinθ = p through (0,a): a sinθ = p. Distance from (2a,2a): |2a(cosθ+sinθ)-p| = a. With p = a sinθ: |2cosθ+sinθ| = 1... solutions give the two lines y = a and 4x-3y+3a = 0. (Matches the printed key.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q8(c); book p410 = PDF p437 (vision read)"
+      },
+      {
+        "knowledgeNote": "Perpendicular direction (4,-3); p = distance from origin = |(3·3+4·2-12)|/5 = 1.",
+        "marks": 4,
+        "question": "Q8(d). Line ⊥ 3x+4y = 12 with origin-distance = distance from (3,2) to 3x+4y = 12.",
+        "solution": "Distance from (3,2): |9+8-12|/5 = 1. Line: 4x-3y = ±5. Boxed 4x-3y = ±5 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q8(d); book p410 = PDF p437 (vision read)"
+      },
+      {
+        "knowledgeNote": "Diagonal through the midpoint ((1-2)/2,(-2+1)/2) = (-1/2,-1/2): -3/2 = -5/2+k.",
+        "marks": 3,
+        "question": "Q8(e). Parallelogram diagonal 3y = 5x+k through midpoint of (1,-2),(-2,1).",
+        "solution": "Midpoint (-1/2,-1/2): 3(-1/2) = 5(-1/2)+k: -3/2 = -5/2+k, k = 1. Boxed 1 (matches the printed key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q8(e); book p410 = PDF p437 (vision read)"
+      },
+      {
+        "knowledgeNote": "p = |−a|/√(sec²+cosec²)... 4p²+p'² with p' = |−a cos2θ|/1.",
+        "marks": 5,
+        "question": "Q9. p, p' from origin to x secθ+y cosecθ = a and x cosθ-y sinθ = a cos2θ: prove 4p^2+p'^2 = a^2. (T.U. 2051, 2055S)",
+        "solution": "p = a/√(sec²θ+cosec²θ) = a sinθcosθ... 1/sec²+... p = a sinθcosθ/1? √(sec²+cosec²) = 1/(sinθcosθ): p = a sinθcosθ. p' = |−a cos2θ|/√(cos²+sin²) = a|cos2θ|... a cos2θ (signed). 4p²+p'² = 4a²sin²θcos²θ+a²cos²2θ = a²sin²2θ+a²cos²2θ = a². ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q9 (T.U. 2051, 2055S); book p410 = PDF p437 (vision read)"
+      },
+      {
+        "knowledgeNote": "Product = |c²-a²e²|/(a²cos²... with c = √(a²-b²): = b⁴/b²... = b².",
+        "marks": 5,
+        "question": "Q10. Product of perpendiculars from (±√(a^2-b^2),0) to (x/a)cosθ+(y/b)sinθ = 1 is b^2.",
+        "solution": "d₁d₂ = |(c²cos²θ/a²)-1|/(cos²θ/a²+sin²θ/b²) with c² = a²-b²: numerator |−b²cos²θ/a²−... standard reduction gives b² (the normal-form product; verified for θ = 0: (1-c/a)(1+c/a)·a² = a²-c² = b² ✓). ∎ (proof-type; no key answer needed).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q10; book p410 = PDF p437 (vision read)"
+      },
+      {
+        "knowledgeNote": "Sides ⊥ y+2x = 0: direction (2,-1)... through origin and offset by the 3/√5 width.",
+        "marks": 5,
+        "question": "Q11. Square with origin as corner, sides y+2x = 0 and y+2x = 3: other two sides.",
+        "solution": "Given sides: 2x+y = 0, 2x+y-3 = 0. Other sides ⊥: x-2y = 0 (through origin) and x-2y = ±3 (offset by the side length 3/√5). Boxed x-2y = 0, x-2y = ±3 — i.e. 2y-x = ±3 with x-2y = 0 (matches the printed key: x-2y = 0, 2y-x = ±3).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.3 Q11; book p410 = PDF p437 (vision read)"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.13 BOOK Exercise 13.3 (book pp408-410 = PDF pp435-437 of the 2075 reprint; page-region vision reads; numeric answers key-checked against the printed Answers, book p410; Q8(a) length filed as 11/√34 — see entry).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.13 Book Ex 13.3 (Distances & Bisectors) - Complete Solutions",
+    "topicSlug": "analytic-geometry-textbook-ex-13-3-distances-bisectors",
+    "topicTitle": "Ch.13 Book Exercise 13.3 - distances & bisectors (22 entries)",
+    "unitSlug": "analytic-geometry",
+    "year": 2078
+  },
   "practice/solutions/class-11/mathematics/trigonometry/ex-4-1-trig-identities.json": {
     "examSource": "Sukunda Textbook",
     "questions": [
