@@ -96,9 +96,6 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "**/*": ["./content/**/*"],
   },
-  experimental: {
-    cpus: 2,
-  },
   reactStrictMode: true,
   compiler: {
     reactRemoveProperties: false,
