@@ -1,0 +1,307 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "First principles for log: [log(ax+ah+b) − log(ax+b)]/h = (1/h)log(1 + ah/(ax+b)) → a/(ax+b) using log(1+u)/u → 1.",
+      "marks": 4,
+      "question": "Q1(i). Find, from the first principle, the derivative of log(ax + b).",
+      "solution": "[log(a(x+h)+b) − log(ax+b)]/h = (1/h)log[(ax+b+ah)/(ax+b)] = (1/h)log[1 + ah/(ax+b)]. Put u = ah/(ax+b): the expression is [a/(ax+b)]·[log(1+u)/u] → a/(ax+b)·1 as h→0. Boxed a/(ax+b) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q1(i); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "log₅x = log x/log 5, so the constant 1/log 5 = log₅e comes along.",
+      "marks": 4,
+      "question": "Q1(ii). Find, from the first principle, the derivative of log₅x.",
+      "solution": "Change of base: log₅x = (log x)/(log 5). Hence d/dx = (1/log 5)·(1/x) = log₅e/x. (First principles: [log₅(x+h) − log₅x]/h = (1/log5)·(1/h)log(1+h/x) → (1/log5)(1/x).) Boxed log₅e/x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q1(ii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "log(x/10) = log x − log 10; the constant vanishes.",
+      "marks": 3,
+      "question": "Q1(iii). Find, from the first principle, the derivative of log(x/10).",
+      "solution": "log(x/10) = log x − log 10, so the derivative is 1/x. Boxed 1/x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q1(iii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "First principles: (e^{a(x+h)+b} − e^{ax+b})/h = e^{ax+b}(e^{ah} − 1)/h → e^{ax+b}·a.",
+      "marks": 4,
+      "question": "Q1(iv). Find, from the first principle, the derivative of e^(ax + b).",
+      "solution": "[e^{ax+ah+b} − e^{ax+b}]/h = e^{ax+b}(e^{ah} − 1)/h. With u = ah, (e^u − 1)/u → 1, so the limit is e^{ax+b}·a = ae^{ax+b}. Boxed ae^{ax+b} (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q1(iv); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Same argument with the inner rate 1/3.",
+      "marks": 3,
+      "question": "Q1(v). Find, from the first principle, the derivative of e^(x/3).",
+      "solution": "[e^{(x+h)/3} − e^{x/3}]/h = e^{x/3}(e^{h/3} − 1)/h → e^{x/3}·(1/3) = (1/3)e^{x/3}. Boxed (1/3)e^{x/3} (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q1(v); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Chain rule: d/dx log u = u'/u with u = sin x.",
+      "marks": 2,
+      "question": "Q2(i). Find the derivative of log(sin x).",
+      "solution": "y' = (cos x)/(sin x) = cot x. Boxed cot x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(i); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "u = x + tan x, u' = 1 + sec²x; the numerator keeps both terms.",
+      "marks": 3,
+      "question": "Q2(ii). Find the derivative of log(x + tan x).",
+      "solution": "y' = (1 + sec²x)/(x + tan x). Boxed (1 + sec²x)/(x + tan x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(ii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "u = 1 + e^{5x}, u' = 5e^{5x}.",
+      "marks": 3,
+      "question": "Q2(iii). Find the derivative of log(1 + e^(5x)).",
+      "solution": "y' = (5e^{5x})/(1 + e^{5x}). Boxed 5e^{5x}/(1 + e^{5x}) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(iii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Nested log: u = log x, u' = 1/x, so y' = 1/(x log x).",
+      "marks": 3,
+      "question": "Q2(iv). Find the derivative of log(log x).",
+      "solution": "y' = (1/x)/(log x) = 1/(x log x). Boxed 1/(x log x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(iv); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "log(sec x) = −log(cos x), so its derivative is tan x — a standard result.",
+      "marks": 3,
+      "question": "Q2(v). Find the derivative of log(sec x).",
+      "solution": "y' = (sec x tan x)/(sec x) = tan x. Boxed tan x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(v); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "u = 1 + sin²x, u' = 2sin x cos x.",
+      "marks": 3,
+      "question": "Q2(vi). Find the derivative of log(1 + sin²x).",
+      "solution": "y' = (2 sin x cos x)/(1 + sin²x). Boxed 2 sin x cos x/(1 + sin²x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(vi); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "u = e^{ax} + e^{−ax}, u' = a(e^{ax} − e^{−ax}).",
+      "marks": 3,
+      "question": "Q2(vii). Find the derivative of ln(e^(ax) + e^(−ax)).",
+      "solution": "y' = [a e^{ax} − a e^{−ax}]/[e^{ax} + e^{−ax}] = a(e^{ax} − e^{−ax})/(e^{ax} + e^{−ax}). Boxed a(e^{ax} − e^{−ax})/(e^{ax} + e^{−ax}) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(vii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "u = √(a²+x²) + b, u' = x/√(a²+x²); the root times the sum stays in the denominator.",
+      "marks": 4,
+      "question": "Q2(viii). Find the derivative of log(√(a² + x²) + b).",
+      "solution": "y' = [x/√(a²+x²)]/[√(a²+x²) + b] = x/[√(a²+x²)(√(a²+x²) + b)]. Boxed x/[√(a²+x²)(√(a²+x²)+b)] (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(viii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "u = √(a+x) + √(a−x), u' = 1/(2√(a+x)) − 1/(2√(a−x)).",
+      "marks": 4,
+      "question": "Q2(ix). Find the derivative of log(√(a + x) + √(a − x)).",
+      "solution": "y' = [1/(2√(a+x)) − 1/(2√(a−x))]/[√(a+x) + √(a−x)] = [1/(2(√(a+x)+√(a−x)))]·[1/√(a+x) − 1/√(a−x)]. Boxed (1/2(√(a+x)+√(a−x)))(1/√(a+x) − 1/√(a−x)) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(ix); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "ln|x−4| differentiates to 1/(x−4); the modulus only changes the sign bookkeeping.",
+      "marks": 2,
+      "question": "Q2(x). Find the derivative of ln|x − 4|.",
+      "solution": "For x > 4, y = ln(x−4) and y' = 1/(x−4); for x < 4, y = ln(4−x) and y' = −1/(4−x) = 1/(x−4). Either way y' = 1/(x−4). Boxed 1/(x−4) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q2(x); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "d/dx e^{u} = e^{u}u' with u = sin x.",
+      "marks": 2,
+      "question": "Q3(i). Find the differential coefficient of e^(sin x).",
+      "solution": "y' = e^{sin x}·cos x. Boxed e^{sin x}cos x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(i); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Two nested chains: u = √(cos x) gives u' = −sin x/(2√(cos x)).",
+      "marks": 4,
+      "question": "Q3(ii). Find the differential coefficient of e^(√cos x).",
+      "solution": "y' = e^{√(cos x)}·[−sin x/(2√(cos x))] = −e^{√(cos x)}sin x/(2√(cos x)). Boxed −e^{√cos x}sin x/(2√cos x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(ii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "e^{1+log x} = e·x, so the derivative is just e — which equals e^{1+log x}/x.",
+      "marks": 3,
+      "question": "Q3(iii). Find the differential coefficient of e^(1 + log x).",
+      "solution": "e^{1+log x} = e·e^{log x} = e·x. Derivative = e. Written in the printed form: e^{1+log x}/x (since e^{1+log x} = ex). Boxed e^{1+log x}/x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(iii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "e^{sin(log x)}: outer e, then cos(log x), then 1/x.",
+      "marks": 4,
+      "question": "Q3(iv). Find the differential coefficient of e^(sin(log x)).",
+      "solution": "y' = e^{sin(log x)}·cos(log x)·(1/x) = (1/x)e^{sin(log x)}cos(log x). Boxed (1/x)e^{sin(log x)}cos(log x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(iv); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "tan(log x) → sec²(log x)·(1/x).",
+      "marks": 3,
+      "question": "Q3(v). Find the differential coefficient of tan(log x).",
+      "solution": "y' = sec²(log x)·(1/x) = sec²(log x)/x. Boxed sec²(log x)/x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(v); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "sin(1+e^{ax}) → cos(1+e^{ax})·a e^{ax}.",
+      "marks": 3,
+      "question": "Q3(vi). Find the differential coefficient of sin(1 + e^(ax)).",
+      "solution": "y' = cos(1+e^{ax})·a e^{ax} = a e^{ax}cos(1 + e^{ax}). Boxed ae^{ax}cos(1+e^{ax}) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(vi); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "cos(log sec x) → −sin(log sec x)·(tan x) because d/dx log(sec x) = tan x.",
+      "marks": 4,
+      "question": "Q3(vii). Find the differential coefficient of cos(log sec x).",
+      "solution": "y' = −sin(log sec x)·d/dx(log sec x) = −sin(log sec x)·tan x. Boxed −tan x·sin(log sec x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(vii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "sec(log tan x) → sec u tan u·u' with u = log tan x, u' = sec²x/tan x.",
+      "marks": 4,
+      "question": "Q3(viii). Find the differential coefficient of sec(log tan x).",
+      "solution": "y' = sec(log tan x)tan(log tan x)·(sec²x/tan x) = sec(log tan x)tan(log tan x)sec²x/tan x. Boxed sec(log tan x)tan(log tan x)sec²x/tan x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(viii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Three nested layers: sin → log → sin → e^{x²}; each supplies its own factor (cos, 1/sin = cot, cos, 2xe^{x²}).",
+      "marks": 5,
+      "question": "Q3(ix). Find the differential coefficient of sin log sin e^(x²).",
+      "solution": "y = sin[log(sin(e^{x²}))]. y' = cos[log sin(e^{x²})]·[cos(e^{x²})·2x e^{x²}]/sin(e^{x²}) = 2x e^{x²}cot(e^{x²})cos[log sin(e^{x²})]. Boxed 2xe^{x²}cot(e^{x²})cos log sin(e^{x²}) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q3(ix); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Product rule: (x²)'log(1+x) + x²(log(1+x))'.",
+      "marks": 3,
+      "question": "Q4(i). Differentiate x² log(1 + x) with respect to x.",
+      "solution": "y' = 2x log(1+x) + x²·1/(1+x) = 2x log(1+x) + x²/(1+x). Boxed 2x log(1+x) + x²/(1+x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q4(i); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Product rule: 5x⁴e^{ax} + x⁵(a e^{ax}).",
+      "marks": 3,
+      "question": "Q4(ii). Differentiate x⁵ e^(ax) with respect to x.",
+      "solution": "y' = 5x⁴e^{ax} + x⁵·a e^{ax} = 5x⁴e^{ax} + ax⁵e^{ax}. Boxed 5x⁴e^{ax} + ax⁵e^{ax} (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q4(ii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Product rule: a cos(ax)log x + sin(ax)/x.",
+      "marks": 3,
+      "question": "Q4(iii). Differentiate sin(ax)·log x with respect to x.",
+      "solution": "y' = a cos(ax)log x + sin(ax)·(1/x). Boxed a cos ax·log x + sin ax/x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q4(iii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Product rule; factor e^{ax} out to get the printed form (a cos bx − b sin bx)e^{ax}.",
+      "marks": 3,
+      "question": "Q4(iv). Differentiate e^(ax) cos(bx) with respect to x.",
+      "solution": "y' = a e^{ax}cos bx + e^{ax}(−b sin bx) = (a cos bx − b sin bx)e^{ax}. Boxed (a cos bx − b sin bx)e^{ax} (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q4(iv); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Product rule with u = tan x + x² and v = log x.",
+      "marks": 4,
+      "question": "Q4(v). Differentiate (tan x + x²) log x with respect to x.",
+      "solution": "y' = (sec²x + 2x)log x + (tan x + x²)(1/x) = (sec²x + 2x)log x + (tan x + x²)/x. Boxed (sec²x + 2x)log x + (tan x + x²)/x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q4(v); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Product rule; both terms keep the e^{ax} factor.",
+      "marks": 4,
+      "question": "Q4(vi). Differentiate (sin x + cos x)e^(ax) with respect to x.",
+      "solution": "y' = (cos x − sin x)e^{ax} + (sin x + cos x)a e^{ax} = (cos x − sin x)e^{ax} + a(sin x + cos x)e^{ax}. Boxed (cos x − sin x)e^{ax} + a(sin x + cos x)e^{ax} (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q4(vi); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Quotient rule with v = sin x; multiplying numerator and denominator by x clears the compound fraction.",
+      "marks": 4,
+      "question": "Q5(i). Calculate the derivative of (log x)/sin x.",
+      "solution": "y' = [(1/x)sin x − log x·cos x]/sin²x. Multiplying top and bottom by x: (sin x − x cos x log x)/(x sin²x). Boxed (sin x − x cos x log x)/(x sin²x) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q5(i); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Quotient rule: numerator a/(ax+b) times e^{px} minus p log(ax+b)e^{px}; clearing (ax+b) gives the printed single fraction.",
+      "marks": 4,
+      "question": "Q5(ii). Calculate the derivative of log(ax + b)/e^(px).",
+      "solution": "y' = [a/(ax+b)·e^{px} − p log(ax+b)e^{px}]/e^{2px} = [a/(ax+b) − p log(ax+b)]/e^{px}. With common denominator (ax+b): [a − p(ax+b)log(ax+b)]/[(ax+b)e^{px}]. Boxed [a − p(ax+b)log(ax+b)]/[(ax+b)e^{px}] (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q5(ii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Quotient rule with denominator cos bx: the minus times −b sin bx turns the second term positive.",
+      "marks": 4,
+      "question": "Q5(iii). Calculate the derivative of e^(ax)/cos(bx).",
+      "solution": "y' = [a e^{ax}cos bx − e^{ax}(−b sin bx)]/cos²bx = (a cos bx + b sin bx)e^{ax}/cos²bx. Boxed (a cos bx + b sin bx)e^{ax}/cos²bx (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q5(iii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Quotient rule with u = sin ax, v = 1 + log x; multiply through by x to match the printed form.",
+      "marks": 5,
+      "question": "Q5(iv). Calculate the derivative of sin(ax)/(1 + log x).",
+      "solution": "y' = [a cos(ax)(1+log x) − sin(ax)(1/x)]/(1+log x)². Multiplying numerator and denominator by x: [ax(1+log x)cos ax − sin ax]/[x(1+log x)²]. Boxed [ax(1+log x)cos ax − sin ax]/[x(1+log x)²] (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q5(iv); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Quotient rule, then multiply through by x: (a²+x²) − 2x²log x over x(a²+x²)².",
+      "marks": 5,
+      "question": "Q5(v). Calculate the derivative of (log x)/(a² + x²).",
+      "solution": "y' = [(1/x)(a²+x²) − 2x log x]/(a²+x²)² = [(a²+x²)/x − 2x log x]/(a²+x²)² = (a² + x² − 2x²log x)/[x(a²+x²)²]. Boxed (a² + x² − 2x²log x)/(x(a²+x²)²) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q5(v); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Write xⁿ/e^{ax+b} = xⁿe^{−(ax+b)} and apply the product rule: e^{−(ax+b)}(nxⁿ⁻¹ − axⁿ).",
+      "marks": 5,
+      "question": "Q5(vi). Calculate the derivative of xⁿ/e^(ax + b).",
+      "solution": "y = xⁿe^{−ax−b}. y' = n xⁿ⁻¹e^{−ax−b} − a xⁿe^{−ax−b} = e^{−ax−b}(nxⁿ⁻¹ − axⁿ) = (n − ax)xⁿ⁻¹/e^{ax+b}. Boxed (n − ax)xⁿ⁻¹/e^{ax+b} (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q5(vi); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "xy = log(x²+y²): differentiate both sides and clear the denominator (x²+y²). (T.U. 2052 H)",
+      "marks": 5,
+      "question": "Q6(i). Find dy/dx when xy = log(x² + y²). (T.U. 2052 H)",
+      "solution": "y + xy' = (2x + 2yy')/(x²+y²). Multiply by (x²+y²): y(x²+y²) + x(x²+y²)y' = 2x + 2yy' → y'[x(x²+y²) − 2y] = 2x − y(x²+y²). Hence y' = (2x − x²y − y³)/(x³ + xy² − 2y). Boxed (2x − x²y − y³)/(x³ + xy² − 2y) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q6(i); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "x²+y² = log(x+y): 2x+2yy' = (1+y')/(x+y); the printed answer comes from clearing (x+y).",
+      "marks": 5,
+      "question": "Q6(ii). Find dy/dx when x² + y² = log(x + y).",
+      "solution": "2x + 2yy' = (1+y')/(x+y). Multiply by (x+y): 2x(x+y) + 2y(x+y)y' = 1 + y' → y'(2xy + 2y² − 1) = 1 − 2x² − 2xy. So y' = (1 − 2x² − 2xy)/(2xy + 2y² − 1). Boxed (1 − 2x² − 2xy)/(2xy + 2y² − 1) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q6(ii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "e^{xy} = xy with u = xy gives e^u = u, so u'(e^u − 1) = 0 and therefore u' = 0. (T.U. 2053 H)",
+      "marks": 5,
+      "question": "Q6(iii). Find dy/dx when e^(xy) = xy. (T.U. 2053 H)",
+      "solution": "Put u = xy. The equation is e^u = u; differentiating: e^u u' = u' → u'(e^u − 1) = 0. At a point of the curve e^u = u ≠ 1, so u' = 0, i.e. y + xy' = 0 → y' = −y/x. Boxed −y/x (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q6(iii); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "Parametric: dx/dt = e^{cos2t}(−2sin2t), dy/dt = e^{sin2t}(2cos2t); the ratio collapses to −e^{sin2t−cos2t}cot2t.",
+      "marks": 5,
+      "question": "Q6(iv). Find dy/dx when x = e^(cos 2t), y = e^(sin 2t).",
+      "solution": "dx/dt = e^{cos2t}(−2sin2t); dy/dt = e^{sin2t}(2cos2t). dy/dx = [e^{sin2t}·2cos2t]/[−e^{cos2t}·2sin2t] = −e^{sin2t−cos2t}cot2t. Boxed −e^{sin2t−cos2t}cot2t (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q6(iv); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "dx/dt = −sin(log t)/t and dy/dt = −tan t; the ratio is t·tan t/sin(log t). (T.U. 2049 H)",
+      "marks": 5,
+      "question": "Q6(v). Find dy/dx when x = cos(log t), y = log(cos t). (T.U. 2049 H)",
+      "solution": "dx/dt = −sin(log t)·(1/t); dy/dt = (−sin t)/cos t = −tan t. dy/dx = (−tan t)/(−sin(log t)/t) = t tan t/sin(log t). Boxed t tan t/sin(log t) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q6(v); book p530 = PDF p557; key book p531 = PDF p558"
+    },
+    {
+      "knowledgeNote": "dx/dt = 1/t + cos t = (1 + t cos t)/t and dy/dt = e^t − sin t.",
+      "marks": 5,
+      "question": "Q6(vi). Find dy/dx when x = log t + sin t, y = e^t + cos t.",
+      "solution": "dx/dt = 1/t + cos t = (1 + t cos t)/t; dy/dt = e^t − sin t. dy/dx = [(e^t − sin t)]/[(1 + t cos t)/t] = t(e^t − sin t)/(1 + t cos t). Boxed t(e^t − sin t)/(1 + t cos t) (matches the printed key, book p531).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.3 Q6(vi); book p530 = PDF p557; key book p531 = PDF p558"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.17 BOOK Exercise 17.3 — derivatives of logarithmic and exponential functions: first principles for log and e^x, the log chain rule, exponential compositions, product and quotient combinations, and implicit/parametric pairs (book p530 = PDF p557 of the 2075 reprint; page-region vision reads at 140 dpi; every answer checked against the printed Answers on book p531 = PDF p558).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.17 Book Ex 17.3 (Logarithmic and Exponential Derivatives) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-17-3-log-exp-derivatives",
+  "topicTitle": "Ch.17 Book Ex 17.3 - log and exponential derivatives (42 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

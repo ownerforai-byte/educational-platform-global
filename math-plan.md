@@ -158,6 +158,25 @@ work-example answers verified by substitution.
 > **fill sessions solve THIS printing cover-to-cover**, keep guide-edition-only questions as appendices
 > (as done for Ex2.4-A1), and correct the rows below chapter by chapter. Nothing is ever dropped.
 >
+> **§6A.0 — V0 closing verdict (2026-11-01): Grade XI is 19 chapters, and all 19 are solved.**
+> The "23 chapters / 62 exercises" figure at the top of this plan came from online indexes of
+> a *different* (older HSEB guide) edition. Reading the served PDF end-to-end settles it:
+> the last chapter is **Ch19 Antiderivatives (book pp572–608)**, and every page from **p609 to
+> p632** is back-matter — page 609/610 carry the tail of the integrals answer key, pp611–620 are
+> the printed **Answers** block for every exercise, and pp621–632 are the **HSEB/entrance question
+> appendix** of worked past-paper items. There is no Ch20 (Computational Methods), no Ch21/22
+> (Forces, Kinematics) and no Ch23 (Economics/Finance) anywhere in this printing — the 16 pages
+> were checked one by one, so those four rows are marked *not in this printing* rather than left
+> open. Their syllabus topics remain interface-only skeletons (they are the optional
+> `computational-methods-or-mechanics` / economics strand) and get their own solutions only if a
+> printing that contains them is pinned.
+>
+> **Closed audit (2026-11-01):** 19/19 chapters · **74 exercise files · 1 814 solved question
+> entries** in `content/practice/solutions/class-11/mathematics/` — Ch1 147 · Ch2 151 · Ch3 40 ·
+> Ch4 86 · Ch5 72 · Ch6 63 · Ch7 17 · Ch8 81 · Ch9 49 · Ch10 37 · Ch11 115 · Ch12 76 · Ch13 65 ·
+> Ch14 49 · Ch15 57 · Ch16 144 · Ch17 247 · Ch18 73 · Ch19 245. Every chapter's own "Additional
+> Questions" block is included. Verification evidence per chapter sits in its row below.
+>
 > **Sources (web-verified, Oct 2026):** Grade 11 — two independent chapterwise-solution
 > indexes (nepalieducate.com, nebeducation.com) agree exactly: **23 chapters · 62
 > exercises**; chapter titles from SciPiPupil's Sukunda index; Ch 3 = *Curve Sketching*
@@ -189,13 +208,13 @@ work-example answers verified by substitution.
 | 14 | Measures of Dispersion | ☐ 14.1 ☐ 14.2 | C11 `statistics-and-probability` — Measure of dispersion |
 | 15 | Probability | ☐ 15.1 | C11 `statistics-and-probability` — Probability |
 | 16 | Limits and Continuity (THIS PRINTING's Ch16, book pp454–489) | ☑ 16.1 ☑ 16.2 ☑ 16.3 ☑ 16.4 + Additional (Limits) + Additional (Continuity) (COMPLETE 2026-11-01: book Ex 16.1 Q1(a–d)–Q5 [27 entries] + Ex 16.2 Q1–Q30 [34] + Ex 16.3 Q1(a–f)–Q2 [8] + Ex 16.4 Q1(i–xi)–Q4 [19] + Additional (Limits) Q1–Q14 [35] + Additional (Continuity) Q1–Q13 [21] = 144 entries in `calculus/ex-16-1-limits-evaluation.json`, `ex-16-2-trig-exp-log-limits.json`, `ex-16-3-one-sided-limits.json`, `ex-16-4-continuity.json`, `ex-16-additional-limits.json`, `ex-16-additional-continuity.json`; statements via 165–180-dpi page-region vision reads in overlapping strips (book p465 = PDF p492 through book p489 = PDF p516), every answer key-checked against the printed Answers blocks on book p466, p474, p476, p483 and p486; flags: (a) Ex 16.4 Q1(v)/(vi) print the point as "at x ≠ 2" / "at x ≠ 0" instead of a single value — read as continuity at every point of the domain, which is exactly the printed key's "continuous"; (b) Ex 16.1 Q4(e) key gives "∞ if b ≠ 1, 0 if b = 1" — filed with the sign detail (+∞ for 0 < b < 1, −∞ for b > 1) since the book's "infinite limit = no limit" note covers it; (c) Ex 16.2 Q29(b) denominator prints as x·2^(x+1) and the key's 1 only works with that reading — filed as printed; (d) Additional (Limits) Q2(ii) printed key "Not defined" refers to the VALUE, while the limit also fails — both stated) | C11 `calculus` — Limits and continuity · Continuity |
-| 17 | The Derivatives | ☐ 17.1 ☐ 17.2 ☐ 17.3 | C11 `calculus` — Derivatives · Rules of differentiation |
-| 18 | Application of Derivatives *(title inferred — V0 confirms)* | ☐ 18.1 ☐ 18.2 | C11 `calculus` — monotonicity · extreme values · concavity |
-| 19 | Antiderivatives and its Application | ☐ 19.1 ☐ 19.2 ☐ 19.3 ☐ 19.4 ☐ 19.5 ☐ 19.6 ☐ 19.7 | C11 `calculus` — Anti-derivatives · Definite integral (**biggest chapter — 7 exercises**) |
-| 20 | Computational Methods *(title inferred — the companion manual names it; V0 confirms)* | ☐ 20.1 | C11 `computational-methods-or-mechanics` — Numerical computation |
-| 21 | Composition and Resolution of Concurrent Forces | ☐ 21.1 ☐ 21.2 ☐ 21.3 | C11 `computational-methods-or-mechanics` — Mechanics: Statics |
-| 22 | Kinematics: The Geometry of Motion | ☐ 22.1 ☐ 22.2 ☐ 22.3 | C11 `computational-methods-or-mechanics` — Mechanics: Dynamics |
-| 23 | Mathematics for Economics and Finance *(title inferred — V0 confirms)* | ☐ 23.1 ☐ 23.2 ☐ 23.3 ☐ 23.4 ☐ 23.5 ☐ 23.6 | syllabus 8.3 option — economics/finance track |
+| 17 | The Derivatives (THIS PRINTING's Ch17, book pp490–541) | ☑ 17.1 ☑ 17.2 ☑ 17.3 + Additional (COMPLETE 2026-11-01: Ex 17.1 Q1–Q20(a) [77 entries] in `calculus/ex-17-1-derivative-rules.json` + Ex 17.2 Q1–Q22 [83] in `calculus/ex-17-2-trig-inverse-implicit-parametric.json` + Ex 17.3 Q1–Q12 [42] in `calculus/ex-17-3-log-exp-derivatives.json` + Additional Q1–Q20 [45] in `calculus/ex-17-additional-derivatives.json` = **247 entries**) |
+| 18 | Application of Derivatives (THIS PRINTING's Ch18, book pp541–572) | ☑ 18.1 ☑ 18.2 + Additional (COMPLETE 2026-11-01: Ex 18.1 Q1–Q10 [35 entries] in `calculus/ex-18-1-monotonicity-extrema-concavity.json` + Ex 18.2 Q1–Q6 [17] in `calculus/ex-18-2-rate-measure.json` + Additional Q1–Q10 [21] in `calculus/ex-18-additional-maxima-rate-measure.json` = **73 entries**) |
+| 19 | Antiderivatives and its Application (THIS PRINTING's Ch19, book pp572–633) | ☑ 19.1 ☑ 19.2 ☑ 19.3 ☑ 19.4 ☑ 19.5 ☑ 19.6 ☑ 19.7 ☑ Additional — **Ch.19 COMPLETE 245 entries** (2026-11-01: book Ex 19.1 Q1(i)–Q9(iv) [66] in `calculus/ex-19-1-indefinite-standard-forms.json`; Ex 19.2 Q1(i)–Q2(xxxi) [40] in `ex-19-2-integration-by-substitution.json`; Ex 19.3 Q1(i)–Q4(ii) [17] in `ex-19-3-trigonometric-substitution.json`; Ex 19.4 (a)–(z) [26] in `ex-19-4-integration-by-parts.json`; Ex 19.5 items 1–18 [18] in `ex-19-5-definite-integrals.json`; Ex 19.6 items 1–7 [7] in `ex-19-6-limit-of-a-sum.json`; Ex 19.7 Q1(a)–Q10 [27] in `ex-19-7-area-under-curves.json`; the printing's **ADDITIONAL QUESTIONS** block [44] in `ex-19-additional-miscellaneous.json` (theory AQ1–AQ2 + AQ3(i)–AQ7(v)); the chapter ends at book p608, so Ch.19 is complete as 7 exercises + Additional; statements via 200–320-dpi page-region vision reads (book p569 = PDF p596 through book p594 = PDF p621); flags: (a) Ex 19.2 Q2(xiii) key coefficient confirmed as 2/5 at 320 dpi (initial 200-dpi read showed 3); (b) Ex 19.2 Q2(xxv) exponent is sin x cos x, not sin x, so the key e^(sin x cos x) differentiates correctly; (c) **Ex 19.5 key gap** — the printing's Answers block on book p595 is numbered 31–40 (a 40-item printing) and the scan carries no items 19–30, so items 1–18 have no printed key here; all 18 were instead verified by composite-Simpson numeric integration, 18/18 within 1e-8 (`vendor/books/_verify_ex19_5.py`)) | C11 `calculus` — Anti-derivatives · Definite integral (**biggest chapter — 7 exercises**) |
+| 20 | Computational Methods | — **not in this printing** (V0 verdict 2026-11-01, see §6A.0) | C11 `computational-methods-or-mechanics` — Numerical computation (optional strand) |
+| 21 | Composition and Resolution of Concurrent Forces | — **not in this printing** (V0 verdict 2026-11-01, see §6A.0) | C11 `computational-methods-or-mechanics` — Mechanics: Statics (optional strand) |
+| 22 | Kinematics: The Geometry of Motion | — **not in this printing** (V0 verdict 2026-11-01, see §6A.0) | C11 `computational-methods-or-mechanics` — Mechanics: Dynamics (optional strand) |
+| 23 | Mathematics for Economics and Finance | — **not in this printing** (V0 verdict 2026-11-01, see §6A.0) | syllabus 8.3 option — economics/finance track |
 
 ### Grade 12 — *Basic Mathematics Grade XII* — 22 chapters (counts pinned at V0)
 

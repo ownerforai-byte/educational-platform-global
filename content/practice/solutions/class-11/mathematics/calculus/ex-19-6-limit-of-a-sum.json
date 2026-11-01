@@ -1,0 +1,62 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "A line through the origin: the sum of the first n natural numbers produces the n(n+1)/2 factor.",
+      "marks": 4,
+      "question": "Q1. Find the area of the plane region bounded by y = x, from x = 0 to x = a and the x-axis, using the limit of a sum.",
+      "solution": "h = a/n, so nh = a and the sample points are x = ih. Divide [0, L] into n equal parts of width h = L/n; the area is A = lim(n->inf) h [f(h) + f(2h) + ... + f(nh)] (right-endpoint rectangles), then use the standard sums 1+2+...+n = n(n+1)/2 and 1^2+2^2+...+n^2 = n(n+1)(2n+1)/6. Here f(x) = x, so A = lim(n->inf) h [h + 2h + ... + nh] = lim h^2 (1 + 2 + ... + n) = lim (a^2/n^2) * n(n+1)/2 = (a^2/2) lim (1 + 1/n) = a^2/2. Boxed (printed key p598). Geometric cross-check: a right triangle with legs a and a has area a^2/2.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q1; book p597 = PDF p624; key book p598 = PDF p625"
+    },
+    {
+      "knowledgeNote": "Constant multiple of Q1's integrand: the 4 comes straight out of the limit.",
+      "marks": 4,
+      "question": "Q2. Find the area of the plane region bounded by y = 4x, from x = 0 to x = a and the x-axis, using the limit of a sum.",
+      "solution": "h = a/n. A = lim(n->inf) h [4h + 4(2h) + ... + 4(nh)] = 4h^2 (1 + 2 + ... + n) -> 4 * (a^2/2) = 2a^2. Boxed (printed key p598). Cross-check: triangle with base a and height 4a has area 2a^2.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q2; book p597 = PDF p624; key book p598 = PDF p625"
+    },
+    {
+      "knowledgeNote": "A decreasing line: the sum splits into h*n (the constant part) minus the arithmetic-sum part.",
+      "marks": 4,
+      "question": "Q3. Find the area of the plane region bounded by y = 1 - x, from x = 0 to x = b and the x-axis, using the limit of a sum.",
+      "solution": "h = b/n. A = lim(n->inf) h [(1 - h) + (1 - 2h) + ... + (1 - nh)] = lim h [n - h(1 + 2 + ... + n)] = lim [nh - h^2 n(n+1)/2] = b - (b^2/2) lim (1 + 1/n) = b - b^2/2. Boxed (printed key p598). Cross-check (for 0 < b <= 1): a trapezium with parallel sides 1 and 1-b over width b, area b(2-b)/2 = b - b^2/2.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q3; book p597 = PDF p624; key book p598 = PDF p625"
+    },
+    {
+      "knowledgeNote": "A parabola: the sum of squares 1^2 + ... + n^2 = n(n+1)(2n+1)/6 supplies the 2/6 = 1/3 factor.",
+      "marks": 4,
+      "question": "Q4. Find the area of the plane region bounded by y = 4x^2, from x = 0 to x = c and the x-axis, using the limit of a sum.",
+      "solution": "h = c/n. A = lim(n->inf) h [4h^2 + 4(2h)^2 + ... + 4(nh)^2] = 4h^3 (1^2 + 2^2 + ... + n^2) = 4h^3 * n(n+1)(2n+1)/6 = (4c^3/6)(1 + 1/n)(2 + 1/n) -> (4c^3/6)(1)(2) = 4c^3/3. Boxed (printed key p598). This is exactly integral 0 to c of 4x^2 dx = 4c^3/3, which is the point of the section.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q4; book p597 = PDF p624; key book p598 = PDF p625"
+    },
+    {
+      "knowledgeNote": "Q4 with the constant 4a in place of 4 and the upper limit named a as well - keep the two roles of a apart.",
+      "marks": 4,
+      "question": "Q5. Find the area of the plane region bounded by y = 4ax^2, from x = 0 to x = a and the x-axis, using the limit of a sum.",
+      "solution": "h = a/n. A = lim(n->inf) h [4a h^2 + 4a(2h)^2 + ... + 4a(nh)^2] = 4a h^3 * n(n+1)(2n+1)/6 = (4a * a^3/6)(1 + 1/n)(2 + 1/n) -> (4a^4/6)(2) = 4a^4/3. Boxed (printed key p598). Equivalent to integral 0 to a of 4ax^2 dx = 4a^4/3.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q5; book p597 = PDF p624; key book p598 = PDF p625"
+    },
+    {
+      "knowledgeNote": "Geometric series instead of power sums: the sum of e^(ih) is a finite G.P. whose limit produces (e^a - 1).",
+      "marks": 4,
+      "question": "Q6. Find the area of the plane region bounded by y = e^x, from x = 0 to x = a and the x-axis, using the limit of a sum.",
+      "solution": "h = a/n. A = lim(n->inf) h [e^h + e^(2h) + ... + e^(nh)]. The bracket is a G.P. with first term e^h and ratio e^h, so it equals e^h (e^(nh) - 1)/(e^h - 1). Hence A = lim h e^h (e^a - 1)/(e^h - 1) = (e^a - 1) * lim [e^h * h/(e^h - 1)] = (e^a - 1) * 1 * 1 = e^a - 1, using lim(h->0) (e^h - 1)/h = 1. Boxed (printed key p598).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q6; book p597 = PDF p624; key book p598 = PDF p625"
+    },
+    {
+      "knowledgeNote": "Same G.P. limit with ratio e^(3h); the h/(e^(3h)-1) factor leaves the 1/3.",
+      "marks": 4,
+      "question": "Q7. Find the area of the plane region bounded by y = e^(3x), from x = 0 to x = b and the x-axis, using the limit of a sum.",
+      "solution": "h = b/n. A = lim(n->inf) h [e^(3h) + e^(6h) + ... + e^(3nh)] = lim h e^(3h) (e^(3b) - 1)/(e^(3h) - 1) = (e^(3b) - 1) lim [e^(3h) * h/(e^(3h) - 1)] = (e^(3b) - 1) * (1/3) = (1/3)(e^(3b) - 1), because lim(h->0) h/(e^(3h) - 1) = 1/3 (from lim (e^(3h)-1)/(3h) = 1). Boxed (printed key p598).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q7; book p597 = PDF p624; key book p598 = PDF p625"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.19 Antiderivatives, BOOK Exercise 19.6 (area as the limit of a sum / Riemann sums): all 7 items, each worked as an explicit Riemann-sum limit with the standard summation formulas, and every result matched to the printed Answers on book p598.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.6 (Area as Limit of a Sum) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-19-6-limit-of-a-sum",
+  "topicTitle": "Ch.19 Book Ex 19.6 - area as the limit of a sum (7 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

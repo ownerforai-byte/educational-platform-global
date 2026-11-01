@@ -1,0 +1,552 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Definition of the derivative: f'(x) = lim(h→0) [f(x+h) − f(x)]/h. Expand, cancel the h, then let h→0.",
+      "marks": 3,
+      "question": "Q1(i). Find, from definition, the derivative of 3x².",
+      "solution": "f(x+h) − f(x) = 3(x+h)² − 3x² = 3(x²+2xh+h²) − 3x² = 6xh + 3h². Divide by h: 6x + 3h. Let h→0: f'(x) = 6x. Boxed 6x (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(i); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "The −2 is a constant, so it differentiates away.",
+      "marks": 3,
+      "question": "Q1(ii). Find, from definition, the derivative of x² − 2.",
+      "solution": "f(x+h) − f(x) = (x+h)² − 2 − (x² − 2) = 2xh + h². Divide by h: 2x + h → 2x as h→0. Boxed 2x (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(ii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Linear term gives its coefficient; the constant dies.",
+      "marks": 3,
+      "question": "Q1(iii). Find, from definition, the derivative of x² + 5x − 3.",
+      "solution": "f(x+h) − f(x) = [(x+h)² + 5(x+h) − 3] − [x² + 5x − 3] = 2xh + h² + 5h. Divide by h: 2x + h + 5 → 2x + 5. Boxed 2x + 5 (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(iii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Differentiate term by term: 3·2x − 2·1 + 0.",
+      "marks": 3,
+      "question": "Q1(iv). Find, from definition, the derivative of 3x² − 2x + 1.",
+      "solution": "f(x+h) − f(x) = 3(2xh+h²) − 2h = 6xh + 3h² − 2h. Divide by h: 6x + 3h − 2 → 6x − 2. Boxed 6x − 2 (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(iv); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "For 1/x the difference quotient is −1/[x(x+h)], whose limit is −1/x².",
+      "marks": 3,
+      "question": "Q1(v). Find, from definition, the derivative of 1/x.",
+      "solution": "f(x+h) − f(x) = 1/(x+h) − 1/x = [x − (x+h)]/[x(x+h)] = −h/[x(x+h)]. Divide by h: −1/[x(x+h)] → −1/x² as h→0. Boxed −1/x² (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(v); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "3/(2x²) = (3/2)x⁻², so the power rule gives (3/2)(−2)x⁻³ = −3/x³.",
+      "marks": 3,
+      "question": "Q1(vi). Find, from definition, the derivative of 3/(2x²).",
+      "solution": "Write f(x) = (3/2)x⁻². Difference quotient: (3/2)[(x+h)⁻² − x⁻²]/h. Expand (x+h)⁻² = x⁻²(1 + h/x)⁻² ≈ x⁻²(1 − 2h/x + 3h²/x² − …), so the bracket ≈ −2h/x³ and the quotient → −3/x³. By the power rule: (3/2)(−2)x⁻³ = −3/x³. Boxed −3/x³ (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(vi); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Chain/power rule on (x−1)⁻¹: −1·(x−1)⁻²·1.",
+      "marks": 3,
+      "question": "Q1(vii). Find, from definition, the derivative of 1/(x − 1).",
+      "solution": "f(x+h) − f(x) = 1/(x+h−1) − 1/(x−1) = [(x−1) − (x+h−1)]/[(x+h−1)(x−1)] = −h/[(x+h−1)(x−1)]. Divide by h and let h→0: −1/(x−1)². Boxed −1/(x−1)² (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(vii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "The inner derivative of (5−x) is −1, and the outer power is −1: two minus signs cancel, giving +1/(5−x)².",
+      "marks": 3,
+      "question": "Q1(viii). Find, from definition, the derivative of 1/(5 − x).",
+      "solution": "f(x+h) − f(x) = 1/(5−x−h) − 1/(5−x) = [(5−x) − (5−x−h)]/[(5−x−h)(5−x)] = h/[(5−x−h)(5−x)]. Divide by h and let h→0: 1/(5−x)². Check by chain rule: −(5−x)⁻²·(−1) = 1/(5−x)². Boxed 1/(5−x)² (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(viii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Outer power −1 times inner derivative 2 gives the numerator −2.",
+      "marks": 3,
+      "question": "Q1(ix). Find, from definition, the derivative of 1/(2x + 3).",
+      "solution": "f(x+h) − f(x) = 1/(2x+2h+3) − 1/(2x+3) = [(2x+3) − (2x+2h+3)]/[(2x+2h+3)(2x+3)] = −2h/[(2x+2h+3)(2x+3)]. Divide by h, let h→0: −2/(2x+3)². Boxed −2/(2x+3)² (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(ix); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "(ax+b)/x = a + b/x, so a drops out (constant) and b/x gives −b/x².",
+      "marks": 3,
+      "question": "Q1(x). Find, from definition, the derivative of (ax + b)/x.",
+      "solution": "Simplify first: (ax+b)/x = a + b x⁻¹. Differentiate: 0 + b(−1)x⁻² = −b/x². By definition: [(a + b/(x+h)) − (a + b/x)]/h = b[(x−x−h)/(x(x+h))]/h = −b/[x(x+h)] → −b/x². Boxed −b/x² (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(x); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "√x = x^(1/2) gives ½x^(−1/2) = 1/(2√x).",
+      "marks": 3,
+      "question": "Q1(xi). Find, from definition, the derivative of x^(1/2).",
+      "solution": "Rationalise the difference quotient: [√(x+h) − √x]/h · [√(x+h)+√x]/[√(x+h)+√x] = [(x+h) − x]/(h[√(x+h)+√x]) = 1/[√(x+h)+√x] → 1/(2√x). Boxed ½x^(−1/2) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xi); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Sum rule: derivative of x is 1, derivative of √x is 1/(2√x).",
+      "marks": 3,
+      "question": "Q1(xii). Find, from definition, the derivative of x + √x.",
+      "solution": "d/dx(x) = 1 and (from Q1(xi)) d/dx(√x) = ½x^(−1/2). Sum: 1 + ½x^(−1/2). By definition the constant part x contributes h/h = 1 and the radical contributes 1/[√(x+h)+√x] → 1/(2√x). Boxed 1 + ½x^(−1/2) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Power rule with the chain rule: ½(1+x)^(−1/2)·(1) — the inner derivative is 1.",
+      "marks": 3,
+      "question": "Q1(xiii). Find, from definition, the derivative of (1 + x)^(1/2).",
+      "solution": "Rationalise: [√(1+x+h) − √(1+x)]/h = [(1+x+h) − (1+x)]/(h[√(1+x+h)+√(1+x)]) = 1/[√(1+x+h)+√(1+x)] → 1/(2√(1+x)). Boxed ½(1+x)^(−1/2) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xiii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Inner derivative of (2x+3) is 2, so ½·2 = 1: the answer is simply 1/√(2x+3).",
+      "marks": 3,
+      "question": "Q1(xiv). Find, from definition, the derivative of (2x + 3)^(1/2).",
+      "solution": "Rationalise: [√(2x+2h+3) − √(2x+3)]/h = (2h)/(h[√(2x+2h+3)+√(2x+3)]) = 2/[√(2x+2h+3)+√(2x+3)] → 2/(2√(2x+3)) = 1/√(2x+3). Boxed (2x+3)^(−1/2) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xiv); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Inner derivative 2x cancels the ½ from the square root: x/√(1+x²).",
+      "marks": 3,
+      "question": "Q1(xv). Find, from definition, the derivative of (1 + x²)^(1/2).",
+      "solution": "Rationalise: [√(1+(x+h)²) − √(1+x²)]/h = [(1+(x+h)²) − (1+x²)]/(h[√(1+(x+h)²)+√(1+x²)]) = (2xh+h²)/(h[√(1+(x+h)²)+√(1+x²)]) = (2x+h)/[√(1+(x+h)²)+√(1+x²)] → 2x/(2√(1+x²)) = x/√(1+x²). Boxed x/√(1+x²) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xv); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "1/√x = x^(−1/2); its derivative is −½x^(−3/2) = −1/(2x√x).",
+      "marks": 3,
+      "question": "Q1(xvi). Find, from definition, the derivative of 1/x^(1/2).",
+      "solution": "Write f(x) = x^(−1/2). Difference quotient: [1/√(x+h) − 1/√x]/h = [√x − √(x+h)]/(h√x√(x+h)). Rationalise the numerator: [(x) − (x+h)]/(h√x√(x+h)[√x+√(x+h)]) = −1/(√x√(x+h)[√x+√(x+h)]) → −1/(x·2√x) = −1/(2x^(3/2)). Boxed −1/(2x^(3/2)) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xvi); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Two minus signs (outer power −½ and inner derivative −1) make the result positive.",
+      "marks": 3,
+      "question": "Q1(xvii). Find, from definition, the derivative of 1/(1 − x)^(1/2).",
+      "solution": "Write f(x) = (1−x)^(−1/2). Chain rule: −½(1−x)^(−3/2)·(−1) = ½(1−x)^(−3/2). By definition: [1/√(1−x−h) − 1/√(1−x)]/h → the same limit, +1/(2(1−x)^(3/2)). Boxed 1/(2(1−x)^(3/2)) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xvii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Outer −½ times inner 3 gives the numerator −3 with the factor 2 in the denominator.",
+      "marks": 3,
+      "question": "Q1(xviii). Find, from definition, the derivative of 1/(3x + 4)^(1/2).",
+      "solution": "Write f(x) = (3x+4)^(−1/2). Chain rule: −½(3x+4)^(−3/2)·3 = −3/(2(3x+4)^(3/2)). Boxed −3/(2(3x+4)^(3/2)) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xviii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Split the fraction as ax/√x + b/√x = a√x + b x^(−1/2), then differentiate each power.",
+      "marks": 4,
+      "question": "Q1(xix). Find, from definition, the derivative of (ax + b)/√x.",
+      "solution": "(ax+b)/√x = a x^(1/2) + b x^(−1/2). Differentiate: a·½x^(−1/2) + b·(−½)x^(−3/2) = a/(2√x) − b/(2x^(3/2)) = (a·x·? ) — put both over 2x^(3/2): a/(2√x) = ax/(2x^(3/2)); so the derivative is (ax − b)/(2x^(3/2)). Boxed (ax − b)/(2x^(3/2)) (matches the printed key, book p510).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q1(xix); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Power rule: d/dx xⁿ = n xⁿ⁻¹.",
+      "marks": 2,
+      "question": "Q2(i). Find the derivative of x⁵.",
+      "solution": "d/dx x⁵ = 5x⁴. Boxed 5x⁴ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(i); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Constants multiply through: 5·7x⁶.",
+      "marks": 2,
+      "question": "Q2(ii). Find the derivative of 5x⁷.",
+      "solution": "d/dx 5x⁷ = 5·7x⁶ = 35x⁶. Boxed 35x⁶ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(ii); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Term by term: 3·2x − 5 + 0.",
+      "marks": 2,
+      "question": "Q2(iii). Find the derivative of 3x² − 5x + 7.",
+      "solution": "d/dx(3x² − 5x + 7) = 6x − 5. Boxed 6x − 5 (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(iii); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Divide first, then differentiate: (3/2)x + x⁻¹ − ½x⁻².",
+      "marks": 3,
+      "question": "Q2(iv). Find the derivative of (3x³ + 2x − 1)/(2x²).",
+      "solution": "(3x³+2x−1)/(2x²) = (3/2)x + x⁻¹ − ½x⁻². Derivative: 3/2 − x⁻² + x⁻³ = (3x³ − 2x + 2)/(2x³) (common denominator 2x³). Boxed (3x³ − 2x + 2)/(2x³) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(iv); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Fractional powers: (3/4)x^(−1/4), (1/2)x^(−1/2), (1/4)x^(−3/4); put over 4x^(3/4).",
+      "marks": 3,
+      "question": "Q2(v). Find the derivative of 2x^(3/4) − 3x^(1/2) − 5x^(1/4).",
+      "solution": "d/dx: 2·(3/4)x^(−1/4) − 3·(1/2)x^(−1/2) − 5·(1/4)x^(−3/4) = (3/2)x^(−1/4) − (3/2)x^(−1/2) − (5/4)x^(−3/4). Over 4x^(3/4): 6x^(1/2) − 6x^(1/4) − 5 over 4x^(3/4). Boxed (6x^(1/2) − 6x^(1/4) − 5)/(4x^(3/4)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(v); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Divide each term by x^(1/4) first: 2x^(3/4) + 3x^(1/2) + x^(1/4) + x^(−1/4).",
+      "marks": 3,
+      "question": "Q2(vi). Find the derivative of (2x + 3x^(3/4) + x^(1/2) + 1)/x^(1/4).",
+      "solution": "Rewrite: 2x^(3/4) + 3x^(1/2) + x^(1/4) + x^(−1/4). Derivative: (3/2)x^(−1/4) + (3/2)x^(−1/2) + (1/4)x^(−3/4) − (1/4)x^(−5/4). Written positively: 3/(2x^(1/4)) + 3/(2x^(1/2)) + 1/(4x^(3/4)) − 1/(4x^(5/4)). Boxed exactly that (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(vi); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Multiply out first — the exponents add — then use the power rule.",
+      "marks": 4,
+      "question": "Q2(vii). Find the derivative of x^(3/4)(x^(2/3) + x^(1/3) + 1).",
+      "solution": "Expand: x^(17/12) + x^(13/12) + x^(3/4). Derivative: (17/12)x^(5/12) + (13/12)x^(1/12) + (3/4)x^(−1/4). Boxed (17/12)x^(5/12) + (13/12)x^(1/12) + ¾x^(−1/4) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(vii); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "(√x + 1/√x)² = x + 2 + 1/x; the middle term is constant.",
+      "marks": 3,
+      "question": "Q2(viii). Find the derivative of (x^(1/2) + x^(−1/2))².",
+      "solution": "Expand: x + 2 + x⁻¹. Derivative: 1 − x⁻² = 1 − 1/x². Boxed 1 − 1/x² (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q2(viii); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Product rule: (uv)' = u'v + uv'. For 3x²(2x−1) the product expands to 6x³ − 3x².",
+      "marks": 3,
+      "question": "Q3(i). Use the product rule to differentiate 3x²(2x − 1).",
+      "solution": "u = 3x², v = 2x−1: u' = 6x, v' = 2. (uv)' = 6x(2x−1) + 3x²(2) = 12x² − 6x + 6x² = 18x² − 6x = 6x(3x−1). Boxed 6x(3x−1) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q3(i); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Product rule with two quadratics: cross terms cancel in pairs.",
+      "marks": 3,
+      "question": "Q3(ii). Use the product rule to differentiate (2x² + 1)(3x² − 2).",
+      "solution": "u = 2x²+1, v = 3x²−2: u' = 4x, v' = 6x. (uv)' = 4x(3x²−2) + (2x²+1)6x = 12x³ − 8x + 12x³ + 6x = 24x³ − 2x = 2x(12x² − 1). Boxed 2x(12x² − 1) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q3(ii); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Product rule on (3x⁴+5)(4x⁵−3); factor out the common 4x³.",
+      "marks": 3,
+      "question": "Q3(iii). Use the product rule to differentiate (3x⁴ + 5)(4x⁵ − 3).",
+      "solution": "u = 3x⁴+5, v = 4x⁵−3: u' = 12x³, v' = 20x⁴. (uv)' = 12x³(4x⁵−3) + (3x⁴+5)20x⁴ = 48x⁸ − 36x³ + 60x⁸ + 100x⁴ = 108x⁸ + 100x⁴ − 36x³ = 4x³(27x⁵ + 25x − 9). Boxed 4x³(27x⁵ + 25x − 9) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q3(iii); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Product rule on (3x²+5x−1)(x²+3); all four terms survive.",
+      "marks": 4,
+      "question": "Q3(iv). Use the product rule to differentiate (3x² + 5x − 1)(x² + 3).",
+      "solution": "u = 3x²+5x−1, v = x²+3: u' = 6x+5, v' = 2x. (uv)' = (6x+5)(x²+3) + (3x²+5x−1)(2x) = 6x³ + 18x + 5x² + 15 + 6x³ + 10x² − 2x = 12x³ + 15x² + 16x + 15. Boxed 12x³ + 15x² + 16x + 15 (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q3(iv); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "(a+√x)(a−√x) = a² − x — a difference of squares, so the derivative is −1.",
+      "marks": 3,
+      "question": "Q3(v). Use the product rule to differentiate (a + √x)(a − √x).",
+      "solution": "Expand: (a+√x)(a−√x) = a² − x. Derivative: −1. By the product rule: (1/(2√x))(a−√x) + (a+√x)(−1/(2√x)) = [a−√x−a−√x]/(2√x) = −2√x/(2√x) = −1 ✓. Boxed −1 (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q3(v); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Product rule with fractional powers; the constants a combine.",
+      "marks": 4,
+      "question": "Q3(vi). Use the product rule to differentiate (a + x^(3/4))(a − x^(1/4)).",
+      "solution": "u = a + x^(3/4): u' = (3/4)x^(−1/4). v = a − x^(1/4): v' = −(1/4)x^(−3/4). (uv)' = (3/4)x^(−1/4)(a − x^(1/4)) + (a + x^(3/4))(−(1/4)x^(−3/4)) = (3a/4)x^(−1/4) − (3/4) + ? — expand fully: (3/4)x^(−1/4)a − (3/4)x^(−1/4)x^(1/4) − (a/4)x^(−3/4) − (1/4)x^(3/4)x^(−3/4) = (3a/4)x^(−1/4) − 3/4 − (a/4)x^(−3/4) − 1/4. Combining the constants: −3/4 − 1/4 = −1. Boxed (3a/4)x^(−1/4) − (a/4)x^(−3/4) − 1 (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q3(vi); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Quotient rule: (u/v)' = (u'v − uv')/v². Here u = x, v = 1+x.",
+      "marks": 3,
+      "question": "Q4(i). Use the quotient rule to differentiate x/(1 + x).",
+      "solution": "u = x, v = 1+x; u' = 1, v' = 1. y' = [1·(1+x) − x·1]/(1+x)² = 1/(1+x)². Boxed 1/(1+x)² (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q4(i); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "Quotient rule: x²/(1−x²) gives 2x/(1−x²)².",
+      "marks": 3,
+      "question": "Q4(ii). Use the quotient rule to differentiate x²/(1 − x²).",
+      "solution": "u = x², v = 1−x²; u' = 2x, v' = −2x. y' = [2x(1−x²) − x²(−2x)]/(1−x²)² = [2x − 2x³ + 2x³]/(1−x²)² = 2x/(1−x²)². Boxed 2x/(1−x²)² (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q4(ii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "The 2x terms cancel partially, leaving 4a²x/(x²+a²)².",
+      "marks": 4,
+      "question": "Q4(iii). Use the quotient rule to differentiate (x² − a²)/(x² + a²).",
+      "solution": "u = x²−a², v = x²+a²; u' = 2x, v' = 2x. y' = [2x(x²+a²) − (x²−a²)2x]/(x²+a²)² = 2x[(x²+a²) − (x²−a²)]/(x²+a²)² = 2x(2a²)/(x²+a²)² = 4a²x/(x²+a²)². Boxed 4a²x/(x²+a²)² (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q4(iii); book p508 = PDF p535; key book p510 = PDF p537"
+    },
+    {
+      "knowledgeNote": "3/x² = 3x⁻², so the power rule gives −6x⁻³.",
+      "marks": 2,
+      "question": "Q4(iv). Use the quotient rule to differentiate 3/x².",
+      "solution": "3/x² = 3x⁻² → derivative −6x⁻³ = −6/x³. (Quotient rule with u = 3, v = x² also gives [0 − 3(2x)]/x⁴ = −6/x³ ✓.) Boxed −6/x³ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q4(iv); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Numerator simplifies to x² + 2x − 2 — no cancellation, so leave it over (x+1)².",
+      "marks": 3,
+      "question": "Q4(v). Use the quotient rule to differentiate (x² − 2x)/(x + 1).",
+      "solution": "u = x²−2x, v = x+1; u' = 2x−2, v' = 1. y' = [(2x−2)(x+1) − (x²−2x)]/(x+1)² = [2x² + 2x − 2x − 2 − x² + 2x]/(x+1)² = (x² + 2x − 2)/(x+1)². Boxed (x² + 2x − 2)/(x+1)² (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q4(v); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Denominator is (x−1)²; the numerator collapses to −4x(x−1), leaving −4x/(x−1)³.",
+      "marks": 4,
+      "question": "Q4(vi). Use the quotient rule to differentiate (x² + 2x − 1)/(x² − 2x + 1).",
+      "solution": "Note x²−2x+1 = (x−1)². u = x²+2x−1, v = (x−1)²; v' = 2(x−1). y' = [(2x+2)(x−1)² − (x²+2x−1)·2(x−1)]/(x−1)⁴ = (x−1)[(2x+2)(x−1) − 2(x²+2x−1)]/(x−1)⁴. Bracket: 2x² − 2 − 2x² − 4x + 2 = −4x. So y' = −4x/(x−1)³ = 4x/(1−x)³. Boxed 4x/(1−x)³ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q4(vi); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "√x/√x = 1 in the numerator: the answer is 1/[2√x(√x+1)²].",
+      "marks": 3,
+      "question": "Q4(vii). Use the quotient rule to differentiate √x/(√x + 1).",
+      "solution": "u = √x, v = √x + 1; u' = v' = 1/(2√x). y' = [(1/(2√x))(√x+1) − √x(1/(2√x))]/(√x+1)² = [(√x + 1 − √x)/(2√x)]/(√x+1)² = 1/[2√x(√x+1)²]. Boxed 1/[2√x(√x+1)²] (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q4(vii); book p508 = PDF p535; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "General power rule: d/dx[uⁿ] = n uⁿ⁻¹ u'. With u = 2x+3, u' = 2.",
+      "marks": 2,
+      "question": "Q5(i). Use the general power rule to differentiate (2x + 3)².",
+      "solution": "2(2x+3)¹·2 = 4(2x+3). Boxed 4(2x+3) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(i); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Inner derivative of (3−2x) is −2, which multiplies the 3.",
+      "marks": 2,
+      "question": "Q5(ii). Use the general power rule to differentiate (3 − 2x)³.",
+      "solution": "3(3−2x)²·(−2) = −6(3−2x)². Boxed −6(3−2x)² (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(ii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "4(6x+2) = 8(3x+1) — factor the inner derivative to match the printed form.",
+      "marks": 3,
+      "question": "Q5(iii). Use the general power rule to differentiate (3x² + 2x − 1)⁴.",
+      "solution": "4(3x²+2x−1)³·(6x+2) = 4(3x²+2x−1)³·2(3x+1) = 8(3x+1)(3x²+2x−1)³. Boxed 8(3x+1)(3x²+2x−1)³ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(iii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Negative exponent: −6u⁻⁷·u', with u' = 4x+3.",
+      "marks": 3,
+      "question": "Q5(iv). Use the general power rule to differentiate (2x² + 3x − 3)⁻⁶.",
+      "solution": "−6(2x²+3x−3)⁻⁷·(4x+3) = −6(4x+3)(2x²+3x−3)⁻⁷. Boxed −6(4x+3)(2x²+3x−3)⁻⁷ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(iv); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "√(8−5x) = (8−5x)^(1/2): ½u^(−1/2)·(−5).",
+      "marks": 2,
+      "question": "Q5(v). Use the general power rule to differentiate √(8 − 5x).",
+      "solution": "½(8−5x)^(−1/2)·(−5) = −5/(2√(8−5x)). Boxed −5/(2√(8−5x)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(v); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "(3/4) times inner derivative (4x−3) gives the (3/4)(4x−3) factor.",
+      "marks": 3,
+      "question": "Q5(vi). Use the general power rule to differentiate (2x² − 3x + 1)^(3/4).",
+      "solution": "(3/4)(2x²−3x+1)^(−1/4)·(4x−3) = ¾(4x−3)(2x²−3x+1)^(−1/4). Boxed ¾(4x−3)(2x²−3x+1)^(−1/4) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(vi); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "1/√(ax²+bx+c) = (ax²+bx+c)^(−1/2): −½(2ax+b)(…)⁻³ᐟ².",
+      "marks": 3,
+      "question": "Q5(vii). Use the general power rule to differentiate 1/√(ax² + bx + c).",
+      "solution": "y = (ax²+bx+c)^(−1/2). y' = −½(ax²+bx+c)^(−3/2)·(2ax+b) = −½(2ax+b)(ax²+bx+c)^(−3/2). Boxed −½(2ax+b)(ax²+bx+c)^(−3/2) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(vii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Cube root in the denominator: y = u^(−1/3), so −⅓u^(−4/3)·(6x−4) = −⅔(3x−2)u^(−4/3).",
+      "marks": 3,
+      "question": "Q5(viii). Use the general power rule to differentiate 1/∛(3x² − 4x − 1).",
+      "solution": "y = (3x²−4x−1)^(−1/3). y' = −⅓(3x²−4x−1)^(−4/3)(6x−4) = −⅔(3x−2)(3x²−4x−1)^(−4/3). Boxed −⅔(3x−2)(3x²−4x−1)^(−4/3) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(viii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Inner derivative of (aⁿ−xⁿ) is −nx^(n−1): two minus signs give +½nx^(n−1).",
+      "marks": 3,
+      "question": "Q5(ix). Use the general power rule to differentiate 1/√(aⁿ − xⁿ).",
+      "solution": "y = (aⁿ−xⁿ)^(−1/2). y' = −½(aⁿ−xⁿ)^(−3/2)(−nx^(n−1)) = ½nx^(n−1)(aⁿ−xⁿ)^(−3/2). Boxed ½nx^(n−1)(aⁿ−xⁿ)^(−3/2) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(ix); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Rationalise the denominator first: dividing by (√(x+a) − √x) multiplies by (√(x+a) + √x)/a.",
+      "marks": 4,
+      "question": "Q5(x). Use the general power rule to differentiate 1/(√(x + a) − √x).",
+      "solution": "Rationalise: y = (√(x+a) + √x)/[(x+a) − x] = (1/a)[√(x+a) + √x]. Differentiate: y' = (1/a)[1/(2√(x+a)) + 1/(2√x)] = (1/2a)[1/√(x+a) + 1/√x]. Boxed (1/2a)(1/√(x+a) + 1/√x) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(x); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Rationalise with (x + √(a²+x²)): the denominator becomes x² − (a²+x²) = −a².",
+      "marks": 4,
+      "question": "Q5(xi). Use the general power rule to differentiate 1/(x − √(a² + x²)).",
+      "solution": "Multiply by (x + √(a²+x²))/(x + √(a²+x²)): y = (x + √(a²+x²))/(x² − a² − x²) = −(x + √(a²+x²))/a². Differentiate: y' = −(1/a²)[1 + x/√(a²+x²)]. Boxed −(1/a²)(1 + x/√(a²+x²)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(xi); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Rationalising gives (1/2a)(√(x+a) − √(x−a)); each root then contributes 1/(2√…).",
+      "marks": 4,
+      "question": "Q5(xii). Use the general power rule to differentiate 1/(√(x + a) + √(x − a)).",
+      "solution": "Rationalise: y = (√(x+a) − √(x−a))/[(x+a) − (x−a)] = (1/2a)(√(x+a) − √(x−a)). Differentiate: y' = (1/2a)[1/(2√(x+a)) − 1/(2√(x−a))] = (1/4a)[1/√(x+a) − 1/√(x−a)]. Boxed (1/4a)(1/√(x+a) − 1/√(x−a)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(xii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Rationalising gives (1/2a²)(√(x²+a²) + √(x²−a²)); the x from each root survives.",
+      "marks": 4,
+      "question": "Q5(xiii). Use the general power rule to differentiate 1/(√(x² + a²) − √(x² − a²)).",
+      "solution": "Rationalise: y = (√(x²+a²) + √(x²−a²))/((x²+a²) − (x²−a²)) = (1/2a²)(√(x²+a²) + √(x²−a²)). Differentiate: y' = (1/2a²)[x/√(x²+a²) + x/√(x²−a²)] = (x/2a²)[1/√(x²+a²) + 1/√(x²−a²)]. Boxed (x/2a²)(1/√(x²+a²) + 1/√(x²−a²)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(xiii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Logarithmic differentiation is cleanest: ln y = ½ln(x²+a²) − ½ln(x²−a²).",
+      "marks": 5,
+      "question": "Q5(xiv). Use the general power rule to differentiate √((x² + a²)/(x² − a²)).",
+      "solution": "Take logs: ln y = ½ln(x²+a²) − ½ln(x²−a²). Then y'/y = x/(x²+a²) − x/(x²−a²) = x[(x²−a²) − (x²+a²)]/[(x²+a²)(x²−a²)] = −2a²x/[(x²+a²)(x²−a²)]. So y' = y·(−2a²x)/[(x²+a²)(x²−a²)] = −2a²x√(x²+a²)/[√(x²−a²)(x²+a²)(x²−a²)] = −2a²x/[√(x²+a²)(x²−a²)^(3/2)]. Boxed −2a²x/[√(x²+a²)(x²−a²)^(3/2)] (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q5(xiv); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Chain rule: dy/dx = (dy/du)(du/dx). Substitute u back at the end.",
+      "marks": 2,
+      "question": "Q6(i). Find dy/dx if y = 2u² − 3u + 1 and u = 2x².",
+      "solution": "dy/du = 4u − 3; du/dx = 4x. dy/dx = (4u−3)(4x) = (8x²−3)(4x) = 4x(8x²−3). Boxed 4x(8x²−3) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q6(i); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "dy/du = 4u = 4(3x²−1); du/dx = 6x.",
+      "marks": 2,
+      "question": "Q6(ii). Find dy/dx if y = 2u² + 3 and u = 3x² − 1.",
+      "solution": "dy/du = 4u; du/dx = 6x. dy/dx = 4(3x²−1)(6x) = 24x(3x²−1). Boxed 24x(3x²−1) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q6(ii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "dy/dt = 10t+6 and dt/dx = 3x²; substituting t = x³−2 gives 6x²(5x³−7).",
+      "marks": 3,
+      "question": "Q6(iii). Find dy/dx if y = 5t² + 6t − 7 and t = x³ − 2.",
+      "solution": "dy/dt = 10t + 6; dt/dx = 3x². dy/dx = (10t+6)(3x²) = 3x²(10(x³−2) + 6) = 3x²(10x³ − 14) = 6x²(5x³ − 7). Boxed 6x²(5x³−7) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q6(iii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "(t−1)/(2t) = ½ − 1/(2t), so dy/dt = 1/(2t²); with dt/dx = 1/(2√(x+1)) and t² = x+1 the result is 1/(4(x+1)^(3/2)).",
+      "marks": 4,
+      "question": "Q6(iv). Find dy/dx if y = (t − 1)/(2t) and t = √(x + 1).",
+      "solution": "y = ½ − 1/(2t) → dy/dt = 1/(2t²). dt/dx = 1/(2√(x+1)). dy/dx = [1/(2t²)]·[1/(2√(x+1))]. Since t² = x+1: dy/dx = 1/(4(x+1)√(x+1)) = 1/(4(x+1)^(3/2)). Boxed 1/(4(x+1)^(3/2)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q6(iv); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "dy/du = (4u/3)(2u²+3)^(−2/3) and du/dx = 1/√(2x+1); the u cancels, leaving (4/3)(2u²+3)^(−2/3).",
+      "marks": 4,
+      "question": "Q6(v). Find dy/dx if y = (2u² + 3)^(1/3) and u = √(2x + 1).",
+      "solution": "dy/du = ⅓(2u²+3)^(−2/3)·4u = (4u/3)(2u²+3)^(−2/3). du/dx = 1/√(2x+1) = 1/u. dy/dx = [(4u/3)(2u²+3)^(−2/3)]·(1/u) = (4/3)(2u²+3)^(−2/3). With u² = 2x+1: 2u²+3 = 4x+5. Boxed (4/3)(4x+5)^(−2/3) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q6(v); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "dy/dt = −(t²+1)/(t²−1)² and dt/dx = 6x; with t = 3x²+1 the t²−1 = 3x²(3x²+2) factorisation produces the printed form.",
+      "marks": 5,
+      "question": "Q6(vi). Find dy/dx if y = t/(t² − 1) and t = 3x² + 1.",
+      "solution": "dy/dt = [(t²−1) − t(2t)]/(t²−1)² = −(t²+1)/(t²−1)²; dt/dx = 6x. dy/dx = −6x(t²+1)/(t²−1)². Now t²+1 = 9x⁴+6x²+2 and t²−1 = 9x⁴+6x² = 3x²(3x²+2). So dy/dx = −6x(9x⁴+6x²+2)/[9x⁴(3x²+2)²] = −2(9x⁴+6x²+2)/[3x³(3x²+2)²]. Boxed −2(9x⁴+6x²+2)/(3x³(3x²+2)²) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q6(vi); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Second derivative = differentiate twice. 7x² → 14x → 14.",
+      "marks": 2,
+      "question": "Q7(i). Find the second derivative of y = 7x² + 6x − 5.",
+      "solution": "y' = 14x + 6; y'' = 14. Boxed 14 (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q7(i); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "3x⁴ → 12x³ → 36x²; −x² → −2x → −2.",
+      "marks": 2,
+      "question": "Q7(ii). Find the second derivative of y = 3x⁴ − x² + 1.",
+      "solution": "y' = 12x³ − 2x; y'' = 36x² − 2. Boxed 36x² − 2 (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q7(ii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "y = 3x⁻²: y' = −6x⁻³, y'' = 18x⁻⁴.",
+      "marks": 2,
+      "question": "Q7(iii). Find the second derivative of y = 3/x².",
+      "solution": "y = 3x⁻²; y' = −6x⁻³; y'' = 18x⁻⁴ = 18/x⁴. Boxed 18/x⁴ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q7(iii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "(2x+1)⁻¹ → −2(2x+1)⁻² → +8(2x+1)⁻³.",
+      "marks": 3,
+      "question": "Q7(iv). Find the second derivative of y = 1/(2x + 1).",
+      "solution": "y = (2x+1)⁻¹; y' = −2(2x+1)⁻²; y'' = −2·(−2)(2x+1)⁻³·2 = 8(2x+1)⁻³ = 8/(2x+1)³. Boxed 8/(2x+1)³ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q7(iv); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Implicit differentiation: differentiate both sides w.r.t. x, treating y as y(x), so every y-term carries y'.",
+      "marks": 2,
+      "question": "Q8(i). Use implicit differentiation to obtain dy/dx for x² + y² = 16.",
+      "solution": "2x + 2y·y' = 0 → y' = −x/y. Boxed −x/y (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(i); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Differentiate x²/a² − y²/b² = 1: 2x/a² − 2yy'/b² = 0.",
+      "marks": 3,
+      "question": "Q8(ii). Use implicit differentiation to obtain dy/dx for x²/a² − y²/b² = 1.",
+      "solution": "2x/a² − (2y/b²)y' = 0 → y' = (2x/a²)(b²/2y) = b²x/(a²y). Boxed b²x/(a²y) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(ii); book p509 = PDF p536; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "y² = 4ax gives 2y y' = 4a.",
+      "marks": 2,
+      "question": "Q8(iii). Use implicit differentiation to obtain dy/dx for y² = 4ax.",
+      "solution": "2y·y' = 4a → y' = 4a/(2y) = 2a/y. Boxed 2a/y (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(iii); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Collect the y' terms: (3x + 4y)y' = −(4x + 3y).",
+      "marks": 3,
+      "question": "Q8(iv). Use implicit differentiation to obtain dy/dx for 2x² + 3xy + 2y² = 0. (T.U. 2051 H)",
+      "solution": "Differentiate: 4x + 3(y + xy') + 4y y' = 0 → 3xy' + 4y y' = −4x − 3y → y' = −(4x+3y)/(3x+4y). Boxed −(4x+3y)/(3x+4y) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(iv); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "x² + 2x²y = y³: 2x + 4xy + 2x²y' = 3y²y' — factor 2x out of the left side.",
+      "marks": 3,
+      "question": "Q8(v). Use implicit differentiation to obtain dy/dx for x² + 2x²y = y³.",
+      "solution": "2x + 4xy + 2x²y' = 3y²y' → 2x(1 + 2y) = y'(3y² − 2x²) → y' = 2x(1+2y)/(3y² − 2x²). Boxed 2x(1+2y)/(3y²−2x²) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(v); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "x³y⁶ = (x+y)⁹ is of the homogeneous form xᵃyᵇ = (x+y)^(a+b); using the constraint, the messy quotient collapses to y/x.",
+      "marks": 5,
+      "question": "Q8(vi). Use implicit differentiation to obtain dy/dx for x³y⁶ = (x + y)⁹. (T.U. 058S)",
+      "solution": "Differentiate: 3x²y⁶ + 6x³y⁵y' = 9(x+y)⁸(1 + y'). Collect y': y'[6x³y⁵ − 9(x+y)⁸] = 9(x+y)⁸ − 3x²y⁶, so y' = [9(x+y)⁸ − 3x²y⁶]/[6x³y⁵ − 9(x+y)⁸]. Use (x+y)⁹ = x³y⁶ ⟹ (x+y)⁸ = x³y⁶/(x+y). Numerator: 3x²y⁶[3x/(x+y) − 1] = 3x²y⁶(2x−y)/(x+y). Denominator: 3x³y⁵[2 − 3y/(x+y)] = 3x³y⁵(2x−y)/(x+y). Their ratio is (x²y⁶)/(x³y⁵) = y/x. Boxed y/x (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(vi); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "x²y + xy² = a³: (2xy + y²) + (x² + 2xy)y' = 0.",
+      "marks": 3,
+      "question": "Q8(vii). Use implicit differentiation to obtain dy/dx for x²y + xy² = a³. (T.U. 052H)",
+      "solution": "2xy + x²y' + y² + 2xyy' = 0 → y'(x² + 2xy) = −(2xy + y²) → y' = −y(2x + y)/[x(x + 2y)]. Boxed −y(2x+y)/(x(x+2y)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(vii); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "x³ + y³ = 3xy²: 3x² + 3y²y' = 3y² + 6xyy'; divide by 3 and rearrange.",
+      "marks": 4,
+      "question": "Q8(viii). Use implicit differentiation to obtain dy/dx for x³ + y³ = 3xy². (T.U. 2049 H, 057 S)",
+      "solution": "3x² + 3y²y' = 3y² + 6xyy' → x² + y²y' = y² + 2xyy' → y'(y² − 2xy) = y² − x² → y' = (y² − x²)/(y(y − 2x)). Boxed (y²−x²)/(y(y−2x)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(viii); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "x²y² = x² + y²: 2xy² + 2x²yy' = 2x + 2yy'; factor x(1−y²) over y(x²−1).",
+      "marks": 4,
+      "question": "Q8(ix). Use implicit differentiation to obtain dy/dx for x²y² = x² + y². (T.U. 2049)",
+      "solution": "2xy² + 2x²yy' = 2x + 2yy' → y'(2x²y − 2y) = 2x − 2xy² → y' = (x − xy²)/(x²y − y) = x(1 − y²)/[y(x² − 1)]. Boxed x(1−y²)/(y(x²−1)) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q8(ix); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "d(u)/d(v) = (du/dx)/(dv/dx) — differentiate both w.r.t. x, then divide.",
+      "marks": 2,
+      "question": "Q9(i). Differentiate x⁶ w.r.t. x².",
+      "solution": "d(x⁶)/dx = 6x⁵; d(x²)/dx = 2x. Ratio = 6x⁵/(2x) = 3x⁴. Boxed 3x⁴ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q9(i); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Here the variable itself is (3x+1) = u, so d(u⁴)/du = 4u³ directly.",
+      "marks": 2,
+      "question": "Q9(ii). Differentiate (3x + 1)⁴ w.r.t. (3x + 1).",
+      "solution": "With u = 3x + 1: d(u⁴)/du = 4u³ = 4(3x+1)³. (Same by the ratio rule: 12(3x+1)³·? /3 = 4(3x+1)³ ✓.) Boxed 4(3x+1)³ (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q9(ii); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "Divide (12x⁵ − 12x³ + 2x) by 3x² term by term.",
+      "marks": 3,
+      "question": "Q9(iii). Differentiate 2x⁶ − 3x⁴ + x² w.r.t. x³.",
+      "solution": "d(2x⁶−3x⁴+x²)/dx = 12x⁵ − 12x³ + 2x; d(x³)/dx = 3x². Ratio = (12x⁵ − 12x³ + 2x)/(3x²) = 4x³ − 4x + 2/(3x). Boxed 4x³ − 4x + 2/(3x) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q9(iii); book p510 = PDF p537; key book p511 = PDF p538"
+    },
+    {
+      "knowledgeNote": "d(x+1)²/dx = 2(x+1) gives the denominator; 30(5x−1)⁵/2(x+1) reduces to 15(5x−1)⁵/(x+1).",
+      "marks": 3,
+      "question": "Q9(iv). Differentiate (5x − 1)⁶ w.r.t. (x + 1)².",
+      "solution": "d(5x−1)⁶/dx = 30(5x−1)⁵; d(x+1)²/dx = 2(x+1). Ratio = 30(5x−1)⁵/[2(x+1)] = 15(5x−1)⁵/(x+1). Boxed 15(5x−1)⁵/(x+1) (matches the printed key, book p511).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.1 Q9(iv); book p510 = PDF p537; key book p511 = PDF p538"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.17 BOOK Exercise 17.1 — derivative from first principles, product/quotient/general-power/chain rules, second derivatives, implicit differentiation and differentiation with respect to a function (book pp508-510 = PDF pp535-537 of the 2075 reprint; page-region vision reads at 130-240 dpi; every answer checked against the printed Answers blocks on book pp510-511 = PDF pp537-538).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.17 Book Ex 17.1 (Derivatives from Definition and the Rules) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-17-1-derivative-rules",
+  "topicTitle": "Ch.17 Book Ex 17.1 - first principles, product/quotient/chain rules, implicit (77 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

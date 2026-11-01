@@ -1,0 +1,139 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Definite integral of a polynomial: antiderivative first, then substitute the upper limit minus the lower limit.",
+      "marks": 2,
+      "question": "Q1. Evaluate the definite integral from 0 to 1 of (x^2 + 5) dx.",
+      "solution": "Antiderivative: x^3/3 + 5x. Evaluate: [x^3/3 + 5x]_0^1 = (1/3 + 5) - 0 = 16/3. Numeric check: 5.333333. Final value: 16/3. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q1; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Same rule term by term; keep the arithmetic in sixths to avoid slips.",
+      "marks": 2,
+      "question": "Q2. Evaluate the definite integral from 1 to 2 of (2x^2 + 3x + 4) dx.",
+      "solution": "Antiderivative: 2x^3/3 + 3x^2/2 + 4x. At x = 2: 16/3 + 6 + 8 = 16/3 + 14. At x = 1: 2/3 + 3/2 + 4 = 2/3 + 11/2. Difference: (16/3 - 2/3) + (14 - 11/2) = 14/3 + 17/2 = (28 + 51)/6 = 79/6. Numeric check: 13.166667. Final value: 79/6. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q2; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Power rule on a linear inner function: antiderivative (x+2)^3/3, no chain factor needed since d(x+2) = dx.",
+      "marks": 2,
+      "question": "Q3. Evaluate the definite integral from -1 to 2 of (x + 2)^2 dx.",
+      "solution": "Antiderivative: (x+2)^3/3. Evaluate: [(x+2)^3/3]_{-1}^{2} = (4^3 - 1^3)/3 = (64 - 1)/3 = 63/3 = 21. Numeric check: 21.000000. (Same as the area under the shifted parabola over a width of 3 centred at 0.5.) Final value: 21. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q3; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "The limits run backwards here, so the answer is negative: swapping limits flips the sign of a definite integral.",
+      "marks": 3,
+      "question": "Q4. Evaluate the definite integral from 0 to -1 of dx/(x + 2).",
+      "solution": "Antiderivative: log|x+2|. Evaluate: [log|x+2|]_0^{-1} = log 1 - log 2 = -log 2 (because 1 < 2, the value is negative, consistent with integrating backwards). Numeric check: -0.693147. Equivalently integral from -1 to 0 of dx/(x+2) = log 2. Final value: -log 2 (about -0.6931). Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q4; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Substitution u = 1 + 2x^4 with du = 8x^3 dx, and change the limits with the variable.",
+      "marks": 3,
+      "question": "Q5. Evaluate the definite integral from 0 to 1 of x^3 sqrt(1 + 2x^4) dx.",
+      "solution": "Let u = 1 + 2x^4, du = 8x^3 dx; when x = 0, u = 1; when x = 1, u = 3. The integral becomes (1/8) integral from 1 to 3 of u^(1/2) du = (1/8)(2/3)[u^(3/2)]_1^3 = (1/12)(3 sqrt 3 - 1). Numeric check: 0.349679. Final value: (3 sqrt 3 - 1)/12 (about 0.3497). Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q5; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "u = 2x^2 - 1 gives du = 4x dx, so the printed 2x dx is du/2; limits move to u(1) = 1 and u(2) = 7.",
+      "marks": 3,
+      "question": "Q6. Evaluate the definite integral from 1 to 2 of e^(2x^2 - 1) 2x dx.",
+      "solution": "Let u = 2x^2 - 1, du = 4x dx, so 2x dx = du/2. Limits: x = 1 gives u = 1; x = 2 gives u = 7. The integral = (1/2) integral from 1 to 7 of e^u du = (1/2)(e^7 - e). Numeric check: 546.957438. Final value: (e^7 - e)/2. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q6; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "u = a^2 + x^2 turns the integrand into (1/2)u^(-3/2) du; the antiderivative is -(a^2+x^2)^(-1/2).",
+      "marks": 3,
+      "question": "Q7. Evaluate the definite integral from 0 to a of x dx/(a^2 + x^2)^(3/2).",
+      "solution": "Let u = a^2 + x^2, du = 2x dx. Antiderivative: -(a^2 + x^2)^(-1/2). Evaluate from 0 to a: -1/sqrt(a^2 + a^2) + 1/sqrt(a^2) = -1/(a sqrt 2) + 1/a = (1/a)(1 - 1/sqrt 2). Numeric check with a = 1: 0.292893. Final value: (1/a)(1 - 1/sqrt 2). Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q7; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Logarithmic form: the numerator is exactly the derivative of the denominator.",
+      "marks": 2,
+      "question": "Q8. Evaluate the definite integral from 0 to 1 of 2x dx/(x^2 + 3).",
+      "solution": "With u = x^2 + 3, du = 2x dx: integral = [log(x^2 + 3)]_0^1 = log 4 - log 3 = log(4/3). Numeric check: 0.287682. Final value: log(4/3). Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q8; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Power rule after u = a^2 + x^2: the antiderivative is (a^2+x^2)^(3/2)/3.",
+      "marks": 3,
+      "question": "Q9. Evaluate the definite integral from 0 to a of x sqrt(a^2 + x^2) dx.",
+      "solution": "With u = a^2 + x^2, du = 2x dx: antiderivative (a^2 + x^2)^(3/2)/3. Evaluate: [(a^2+x^2)^(3/2)/3]_0^a = [(2a^2)^(3/2) - (a^2)^(3/2)]/3 = [2 sqrt 2 a^3 - a^3]/3 = a^3(2 sqrt 2 - 1)/3. Numeric check with a = 1: 0.609476. Final value: a^3(2 sqrt 2 - 1)/3. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q9; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "cos t is even and the interval is symmetric, so the integral is twice the integral from 0 to pi/3.",
+      "marks": 2,
+      "question": "Q10. Evaluate the definite integral from -pi/3 to pi/3 of cos t dt. (HSEB 2057).",
+      "solution": "Antiderivative sin t. Evaluate: [sin t]_{-pi/3}^{pi/3} = sin(pi/3) - sin(-pi/3) = 2 sin(pi/3) = 2(sqrt 3/2) = sqrt 3. Numeric check: 1.732051. Final value: sqrt 3. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q10; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "The antiderivative of sec^2 is tan - the one direct standard form in this set.",
+      "marks": 1,
+      "question": "Q11. Evaluate the definite integral from 0 to pi/4 of sec^2 theta d theta.",
+      "solution": "[tan theta]_0^{pi/4} = tan(pi/4) - tan 0 = 1 - 0 = 1. Numeric check: 1.000000. Final value: 1. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q11; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Linearise the square before integrating: cos^2 u = (1 + cos 2u)/2.",
+      "marks": 3,
+      "question": "Q12. Evaluate the definite integral from 0 to 1 of cos^2(pi x) dx.",
+      "solution": "cos^2(pi x) = (1 + cos 2 pi x)/2, so the integral = [x/2 + sin(2 pi x)/(4 pi)]_0^1 = (1/2 + 0) - 0 = 1/2. The cosine term vanishes because its period 1 fits exactly in [0,1]. Numeric check: 0.500000. Final value: 1/2. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q12; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Linearise: sin^2 x = (1 - cos 2x)/2, then the cosine term integrates to -sin 2x/4.",
+      "marks": 2,
+      "question": "Q13. Evaluate the definite integral from 0 to pi/4 of sin^2 x dx.",
+      "solution": "[x/2 - sin 2x/4]_0^{pi/4} = pi/8 - sin(pi/2)/4 = pi/8 - 1/4 = (pi - 2)/8. Numeric check: 0.142699. Final value: (pi - 2)/8. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q13; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Odd power of cosine: split cos^3 = (1 - sin^2)cos and substitute u = sin x.",
+      "marks": 3,
+      "question": "Q14. Evaluate the definite integral from 0 to pi/6 of cos^3 x dx.",
+      "solution": "cos^3 x = (1 - sin^2 x) cos x, so the antiderivative is sin x - sin^3 x/3. Evaluate from 0 to pi/6: (1/2 - (1/2)^3/3) - 0 = 1/2 - 1/24 = 12/24 - 1/24 = 11/24. Numeric check: 0.458333. Final value: 11/24. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q14; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Same odd-power trick for sine: sin^3 = (1 - cos^2) sin, antiderivative -cos x + cos^3 x/3.",
+      "marks": 3,
+      "question": "Q15. Evaluate the definite integral from 0 to pi/2 of sin^3 x dx.",
+      "solution": "Antiderivative: -cos x + cos^3 x/3. At pi/2 both cosine terms vanish; at 0 the value is -1 + 1/3 = -2/3. So the integral = 0 - (-2/3) = 2/3. (Consistent with Wallis' formula integral of sin^3 over a quarter period = 2/3.) Numeric check: 0.666667. Final value: 2/3. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q15; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Multiply by the conjugate (1 - cos x): the integrand becomes cosec^2 x - cosec x cot x, whose antiderivative is tan(x/2).",
+      "marks": 4,
+      "question": "Q16. Evaluate the definite integral from 0 to pi/3 of dx/(1 + cos x).",
+      "solution": "Multiply numerator and denominator by (1 - cos x): 1/(1+cos x) = (1 - cos x)/(1 - cos^2 x) = (1 - cos x)/sin^2 x = cosec^2 x - cosec x cot x. Antiderivative: -cot x + cosec x = (1 - cos x)/sin x = tan(x/2). Evaluate: tan(pi/6) - tan 0 = 1/sqrt 3. Numeric check: 0.577350. Final value: 1/sqrt 3. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q16; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Use 1 - cos 2x = 2 sin^2 x, whose reciprocal integrates to -cot x/2; the descending limits make the result negative.",
+      "marks": 4,
+      "question": "Q17. Evaluate the definite integral from pi/2 to pi/6 of dx/(1 - cos 2x).",
+      "solution": "1 - cos 2x = 2 sin^2 x, so the integrand is (1/2)cosec^2 x and the antiderivative is -(1/2)cot x. Evaluate from pi/2 to pi/6: -(1/2)[cot(pi/6) - cot(pi/2)] = -(1/2)[sqrt 3 - 0] = -sqrt 3/2. Numeric check: -0.866025. (The function is positive everywhere but the limits are descending, so the value is negative by definition.) Final value: -sqrt 3/2. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q17; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    },
+    {
+      "knowledgeNote": "Multiply by (1 + sin x): the integrand splits into sec^2 x + sec x tan x, both immediate standard forms.",
+      "marks": 4,
+      "question": "Q18. Evaluate the definite integral from 0 to pi/4 of dx/(1 - sin x). (T.U. 2051).",
+      "solution": "Multiply numerator and denominator by (1 + sin x): 1/(1 - sin x) = (1 + sin x)/(1 - sin^2 x) = (1 + sin x)/cos^2 x = sec^2 x + sec x tan x. Antiderivative: tan x + sec x. Evaluate: [tan x + sec x]_0^{pi/4} = (1 + sqrt 2) - (0 + 1) = sqrt 2. Numeric check: 1.414214. Final value: sqrt 2. Verified independently by composite-Simpson numeric integration (200001 nodes, agreement to 1e-8).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.5 Q18; book p594 = PDF p621; value verified by numeric integration (vendor/books/_verify_ex19_5.py)"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.19 Antiderivatives, BOOK Exercise 19.5 (definite integrals, section 19.4 of the chapter): all 18 items printed on book p594 solved with full evaluation steps. Print/scan note: the answer block printed on book p595 is numbered 31-40 (the 40-item numbering of another printing of the same exercise) and the scan carries no items 19-30, so this printing's 1-18 key is not in the PDF; every value here is instead verified by independent numeric integration, 18/18 within 1e-8.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.5 (Definite Integrals) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-19-5-definite-integrals",
+  "topicTitle": "Ch.19 Book Ex 19.5 - definite integrals (18 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

@@ -1,0 +1,195 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "LIATE rule: the logarithm is the u, the algebraic part is dv, so differentiating removes the log entirely.",
+      "marks": 2,
+      "question": "Q1(a). Calculate the integral: integral of x log x dx.",
+      "solution": "By parts with u = log x, dv = x dx, so du = dx/x, v = x^2/2: integral u dv = uv - integral v du gives integral x log x dx = (x^2/2) log x - integral (x^2/2)(dx/x) = (x^2/2) log x - (1/2) integral x dx = (x^2/2) log x - x^2/4 + c = (1/4)x^2 (2 log x - 1) + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(a); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Same LIATE split with a linear factor: u = log x, dv = (5x - 2) dx, v = 5x^2/2 - 2x.",
+      "marks": 3,
+      "question": "Q1(b). Calculate the integral: integral of (5x - 2) log x dx.",
+      "solution": "By parts with u = log x, dv = (5x-2)dx, du = dx/x, v = 5x^2/2 - 2x: integral = (5x^2/2 - 2x) log x - integral (5x^2/2 - 2x)(dx/x) = (5x^2/2 - 2x) log x - integral (5x/2 - 2) dx = (5x^2/2 - 2x) log x - 5x^2/4 + 2x + c = (1/2)x(5x - 4) log x - 5x^2/4 + 2x + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(b); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "The general log-times-power case: v = x^(n+1)/(n+1) and the leftover integral is again a pure power.",
+      "marks": 3,
+      "question": "Q1(c). Calculate the integral: integral of x^n log x dx. (T.U. 2051 H).",
+      "solution": "By parts with u = log x, dv = x^n dx, du = dx/x, v = x^(n+1)/(n+1): integral = x^(n+1)/(n+1) log x - (1/(n+1)) integral x^n dx = x^(n+1)/(n+1) log x - x^(n+1)/(n+1)^2 + c = x^(n+1)/(n+1)^2 [(n+1) log x - 1] + c. Boxed (printed key p588). Note n = -1 is excluded because log x itself would then be the integrand's square.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(c); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Take u = (log x)^2 with dv = dx; one round of by parts leaves integral log x dx, which is a known standard form.",
+      "marks": 3,
+      "question": "Q1(d). Calculate the integral: integral of (log x)^2 dx.",
+      "solution": "By parts with u = (log x)^2, dv = dx, du = 2 log x dx/x, v = x: integral (log x)^2 dx = x(log x)^2 - 2 integral log x dx = x(log x)^2 - 2(x log x - x) + c = x(log x)^2 - 2x log x + 2x + c. (The inner integral is itself by parts: integral log x dx = x log x - x.) Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(d); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "u = log(x - 1), dv = x dx; the leftover integral is an improper fraction, so divide x^2 by (x - 1) first.",
+      "marks": 4,
+      "question": "Q1(e). Calculate the integral: integral of x log(x - 1) dx. (T.U. 049 H).",
+      "solution": "By parts with u = log(x-1), dv = x dx, du = dx/(x-1), v = x^2/2: integral = (x^2/2) log(x-1) - (1/2) integral x^2 dx/(x-1). Polynomial division: x^2/(x-1) = x + 1 + 1/(x-1), so the leftover is (1/2)[x^2/2 + x + log(x-1)]. Hence integral = (x^2/2) log(x-1) - x^2/4 - x/2 - (1/2) log(x-1) + c = (1/2)(x^2 - 1) log(x-1) - x^2/4 - x/2 + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(e); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Exponential beats polynomial in LIATE, so u = x^2 and by parts runs twice, the power dropping 2 -> 1 -> 0.",
+      "marks": 4,
+      "question": "Q1(f). Calculate the integral: integral of x^2 e^(ax) dx. (HSEB 2058).",
+      "solution": "By parts with u = x^2, dv = e^(ax) dx, du = 2x dx, v = e^(ax)/a: integral x^2 e^(ax) dx = x^2 e^(ax)/a - (2/a) integral x e^(ax) dx. Apply by parts again to integral x e^(ax) dx = x e^(ax)/a - e^(ax)/a^2. Therefore the integral = x^2 e^(ax)/a - (2/a)[x e^(ax)/a - e^(ax)/a^2] + c = x^2 e^(ax)/a - 2x e^(ax)/a^2 + 2 e^(ax)/a^3 + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(f); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Single round of by parts with a = 5, then simplify: (5x - 1)e^(5x)/25.",
+      "marks": 2,
+      "question": "Q1(g). Calculate the integral: integral of x e^(5x) dx.",
+      "solution": "By parts with u = x, dv = e^(5x) dx, du = dx, v = e^(5x)/5: integral x e^(5x) dx = x e^(5x)/5 - (1/5) integral e^(5x) dx = x e^(5x)/5 - e^(5x)/25 + c = (5x - 1) e^(5x)/25 + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(g); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "With a linear factor one round of by parts is enough, and the answer collapses to (x - 1)e^(2x).",
+      "marks": 2,
+      "question": "Q1(h). Calculate the integral: integral of (2x - 1) e^(2x) dx. (T.U. 048).",
+      "solution": "By parts with u = 2x - 1, dv = e^(2x) dx, du = 2 dx, v = e^(2x)/2: integral = (2x-1) e^(2x)/2 - integral e^(2x) dx = (2x-1) e^(2x)/2 - e^(2x)/2 + c = (2x - 2) e^(2x)/2 + c = (x - 1) e^(2x) + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(h); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "u = x, dv = sin x dx with v = -cos x; the sign is the usual trap in this classic.",
+      "marks": 2,
+      "question": "Q1(i). Calculate the integral: integral of x sin x dx. (T.U. 2053 H, HSEB 2057).",
+      "solution": "By parts with u = x, dv = sin x dx, du = dx, v = -cos x: integral x sin x dx = -x cos x + integral cos x dx = -x cos x + sin x + c = sin x - x cos x + c. Check: d/dx = cos x - cos x + x sin x = x sin x. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(i); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "dv = sec^2 x dx integrates straight to tan x, and the leftover integral of tan x gives log cos x.",
+      "marks": 2,
+      "question": "Q1(j). Calculate the integral: integral of x sec^2 x dx. (T.U. 048 H).",
+      "solution": "By parts with u = x, dv = sec^2 x dx, du = dx, v = tan x: integral x sec^2 x dx = x tan x - integral tan x dx = x tan x - log|sec x| + c = x tan x + log|cos x| + c. Boxed (printed key p588 prints x tan x + log cos x + c).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(j); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "sec x tan x is the derivative of sec x, so it is the dv; the remaining integral is the standard integral of sec x.",
+      "marks": 3,
+      "question": "Q1(k). Calculate the integral: integral of x sec x tan x dx.",
+      "solution": "By parts with u = x, dv = sec x tan x dx, du = dx, v = sec x: integral x sec x tan x dx = x sec x - integral sec x dx = x sec x - log|sec x + tan x| + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(k); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Linear times cosine: u = x, dv = cos nx dx, and the chain factor 1/n appears twice.",
+      "marks": 3,
+      "question": "Q1(l). Calculate the integral: integral of x cos(nx) dx.",
+      "solution": "By parts with u = x, dv = cos nx dx, du = dx, v = sin nx/n: integral x cos nx dx = x sin nx/n - (1/n) integral sin nx dx = x sin nx/n + cos nx/n^2 + c = (1/n) x sin nx + (1/n^2) cos nx + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(l); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "The general-frequency version of Q1(i); keep the two 1/a factors straight.",
+      "marks": 3,
+      "question": "Q1(m). Calculate the integral: integral of x sin(ax) dx.",
+      "solution": "By parts with u = x, dv = sin(ax) dx, du = dx, v = -cos(ax)/a: integral = -x cos(ax)/a + (1/a) integral cos(ax) dx = -x cos(ax)/a + sin(ax)/a^2 + c = (1/a^2) sin ax - (1/a) x cos ax + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(m); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Phase-shifted cosine: integrate cos(ax - b) to sin(ax - b)/a, then the leftover integrates to cos(ax - b)/a^2.",
+      "marks": 3,
+      "question": "Q1(n). Calculate the integral: integral of x cos(ax - b) dx.",
+      "solution": "By parts with u = x, dv = cos(ax-b) dx, du = dx, v = sin(ax-b)/a: integral = x sin(ax-b)/a - (1/a) integral sin(ax-b) dx = x sin(ax-b)/a + cos(ax-b)/a^2 + c = (1/a) x sin(ax - b) + (1/a^2) cos(ax - b) + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(n); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Two rounds of by parts; the first leaves integral x cos x dx, which Q1(i)-style by parts finishes.",
+      "marks": 3,
+      "question": "Q1(o). Calculate the integral: integral of x^2 sin x dx. (T.U. 2049, HSEB 2057).",
+      "solution": "By parts with u = x^2, dv = sin x dx, du = 2x dx, v = -cos x: integral = -x^2 cos x + 2 integral x cos x dx. For integral x cos x dx take u = x, dv = cos x dx: = x sin x - integral sin x dx = x sin x + cos x. Hence integral x^2 sin x dx = -x^2 cos x + 2x sin x + 2 cos x + c. Check: d/dx = -2x cos x + x^2 sin x + 2 sin x + 2x cos x - 2 sin x = x^2 sin x. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(o); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Same double by-parts as Q1(o) with frequency n: two factors of 1/n and one of 1/n^2 appear.",
+      "marks": 4,
+      "question": "Q1(p). Calculate the integral: integral of x^2 cos(nx) dx.",
+      "solution": "By parts with u = x^2, dv = cos nx dx, du = 2x dx, v = sin nx/n: integral = x^2 sin nx/n - (2/n) integral x sin nx dx. Then integral x sin nx dx = -x cos nx/n + sin nx/n^2. So the integral = x^2 sin nx/n + (2/n)(x cos nx/n - sin nx/n^2) + c = (1/n)x^2 sin nx + (2/n^2)x cos nx - (2/n^3) sin nx + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(p); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Phase-shifted double by-parts: v = -cos(3x-2)/3, then the linear remainder integrates twice more with factors 1/3 and 1/9.",
+      "marks": 4,
+      "question": "Q1(q). Calculate the integral: integral of x^2 sin(3x - 2) dx.",
+      "solution": "By parts with u = x^2, dv = sin(3x-2)dx, du = 2x dx, v = -cos(3x-2)/3: integral = -(x^2/3) cos(3x-2) + (2/3) integral x cos(3x-2) dx. Now by parts with u = x, dv = cos(3x-2)dx: integral x cos(3x-2) dx = (x/3) sin(3x-2) + (1/9) cos(3x-2). Therefore integral = -(1/3)x^2 cos(3x-2) + (2/9)x sin(3x-2) + (2/27) cos(3x-2) + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(q); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Linearise first: sin^2 x = (1 - cos 2x)/2 turns the integrand into x/2 minus x cos 2x/2, and only the second piece needs by parts.",
+      "marks": 3,
+      "question": "Q1(r). Calculate the integral: integral of x sin^2 x dx. (T.U. 2050 H).",
+      "solution": "sin^2 x = (1 - cos 2x)/2, so integral x sin^2 x dx = (1/2) integral x dx - (1/2) integral x cos 2x dx = x^2/4 - (1/2)[x sin 2x/2 + cos 2x/4] + c (by parts with u = x, dv = cos 2x dx) = (1/4)x^2 - (1/4)x sin 2x - (1/8) cos 2x + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(r); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Linearise cos^2 2x = (1 + cos 4x)/2 so only the cosine term needs by parts.",
+      "marks": 3,
+      "question": "Q1(s). Calculate the integral: integral of x cos^2(2x) dx.",
+      "solution": "cos^2(2x) = (1 + cos 4x)/2, so integral x cos^2 2x dx = (1/2) integral x dx + (1/2) integral x cos 4x dx = x^2/4 + (1/2)[x sin 4x/4 + cos 4x/16] + c = (1/4)x^2 + (1/8)x sin 4x + (1/32) cos 4x + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(s); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "General-frequency linearisation: sin^2 nx = (1 - cos 2nx)/2, and every frequency is doubled in the by-parts piece.",
+      "marks": 4,
+      "question": "Q1(t). Calculate the integral: integral of x sin^2(nx) dx.",
+      "solution": "sin^2(nx) = (1 - cos 2nx)/2, so integral x sin^2 nx dx = x^2/4 - (1/2) integral x cos 2nx dx = x^2/4 - (1/2)[x sin 2nx/(2n) + cos 2nx/(4n^2)] + c = (1/4)x^2 - (1/(4n)) x sin 2nx - (1/(8n^2)) cos 2nx + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(t); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "tan^2 = sec^2 - 1: the x sec^2 nx piece is by parts, and integral tan nx dx supplies the logarithm.",
+      "marks": 4,
+      "question": "Q1(u). Calculate the integral: integral of x tan^2(nx) dx.",
+      "solution": "tan^2(nx) = sec^2(nx) - 1. So integral x tan^2 nx dx = integral x sec^2(nx) dx - integral x dx. By parts with u = x, dv = sec^2(nx)dx, v = tan(nx)/n: integral x sec^2(nx) dx = x tan(nx)/n - (1/n) integral tan(nx) dx = x tan(nx)/n + log|cos nx|/n^2. Hence the answer = (1/n) x tan nx + (1/n^2) log|cos nx| - (1/2) x^2 + c. Boxed (printed key p588 prints log cos nx without modulus).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(u); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "The classic cyclic by-parts: u = sec x, dv = sec^2 x dx brings back integral sec^3 x, which is then solved algebraically.",
+      "marks": 4,
+      "question": "Q1(v). Calculate the integral: integral of sec^3 x dx. (T.U. 057) (HSEB 051).",
+      "solution": "Write I = integral sec^3 x dx = integral sec x sec^2 x dx. By parts with u = sec x, dv = sec^2 x dx, du = sec x tan x dx, v = tan x: I = sec x tan x - integral sec x tan^2 x dx = sec x tan x - integral sec x (sec^2 x - 1) dx = sec x tan x - I + integral sec x dx. So 2I = sec x tan x + log|sec x + tan x|, giving I = (1/2) sec x tan x + (1/2) log|sec x + tan x| + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(v); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Same cyclic trick with the co-function; d(cot x) = -cosec^2 x dx puts a minus sign into the recurrence.",
+      "marks": 4,
+      "question": "Q1(w). Calculate the integral: integral of cosec^3 x dx.",
+      "solution": "Write I = integral cosec^3 x dx = integral cosec x cosec^2 x dx. By parts with u = cosec x, dv = cosec^2 x dx, du = -cosec x cot x dx, v = -cot x: I = -cosec x cot x - integral cosec x cot^2 x dx = -cosec x cot x - integral cosec x (cosec^2 x - 1) dx = -cosec x cot x - I + integral cosec x dx. So 2I = -cosec x cot x + log|cosec x - cot x|, giving I = -(1/2) cosec x cot x + (1/2) log|cosec x - cot x| + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(w); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Cyclic by parts: two rounds return the original integral with a minus sign, so it is solved as an equation.",
+      "marks": 4,
+      "question": "Q1(x). Calculate the integral: integral of e^x sin x dx. (T.U. 2050).",
+      "solution": "Let I = integral e^x sin x dx. By parts with u = sin x, dv = e^x dx: I = e^x sin x - integral e^x cos x dx; apply by parts again to integral e^x cos x dx = e^x cos x + integral e^x sin x dx = e^x cos x + I. Therefore I = e^x sin x - e^x cos x - I, so 2I = e^x(sin x - cos x) and I = (1/2) e^x (sin x - cos x) + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(x); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "General cyclic case: dividing by (a^2 + b^2) after two rounds is the standard result to memorise.",
+      "marks": 5,
+      "question": "Q1(y). Calculate the integral: integral of e^(ax) sin(bx) dx. (T.U. 051, 056).",
+      "solution": "Let I = integral e^(ax) sin(bx) dx. By parts with u = sin bx, dv = e^(ax)dx, v = e^(ax)/a: I = e^(ax) sin(bx)/a - (b/a) integral e^(ax) cos(bx) dx. By parts again on the cosine integral (u = cos bx, dv = e^(ax)dx): integral e^(ax) cos(bx) dx = e^(ax) cos(bx)/a + (b/a) I. Substituting: I = e^(ax) sin(bx)/a - (b/a)[e^(ax) cos(bx)/a + (b/a) I] = e^(ax)(a sin bx - b cos bx)/a^2 - (b^2/a^2) I. Hence I(1 + b^2/a^2) = e^(ax)(a sin bx - b cos bx)/a^2, so I = e^(ax)(a sin bx - b cos bx)/(a^2 + b^2) + c. Boxed (printed key p588).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(y); book p587 = PDF p614; key book p588 = PDF p615"
+    },
+    {
+      "knowledgeNote": "Companion of Q1(y): the sign pattern flips in the numerator (b sin bx + a cos bx).",
+      "marks": 5,
+      "question": "Q1(z). Calculate the integral: integral of e^(ax) cos(bx) dx. (T.U. 2053).",
+      "solution": "Let I = integral e^(ax) cos(bx) dx. By parts with u = cos bx, dv = e^(ax)dx: I = e^(ax) cos(bx)/a + (b/a) integral e^(ax) sin(bx) dx. Using integral e^(ax) sin(bx) dx = e^(ax)(a sin bx - b cos bx)/(a^2+b^2) from Q1(y): I = e^(ax) cos(bx)/a + (b/a) * e^(ax)(a sin bx - b cos bx)/(a^2+b^2) = e^(ax)[(a^2+b^2) cos bx + ab sin bx - b^2 cos bx]/[a(a^2+b^2)] = e^(ax)(a cos bx + b sin bx)/(a^2 + b^2) + c. Boxed (printed key p588 prints e^(ax)(b sin bx + a cos bx)/(a^2+b^2) + c - same expression).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.4 Q1(z); book p587 = PDF p614; key book p588 = PDF p615"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.19 Antiderivatives, BOOK Exercise 19.4 (integration by parts, section 19.3 of the chapter): all 26 sub-parts (a)-(z) of the printing, each solved with the by-parts selection shown explicitly and verified against the printed Answers on book p588.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.4 (Integration by Parts) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-19-4-integration-by-parts",
+  "topicTitle": "Ch.19 Book Ex 19.4 - integration by parts (26 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

@@ -1,0 +1,594 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "First principles for sin: [sin(A+h) − sin A] = 2cos(A+h/2)sin(h/2), and sin(ku)/u → k.",
+      "marks": 3,
+      "question": "Q1(i). Find, from first principles, the differential coefficient of sin 4x.",
+      "solution": "[sin(4x+4h) − sin4x]/h = 2cos(4x+2h)sin(2h)/h. As h→0: sin(2h)/h → 2 and cos(4x+2h) → cos4x, so the limit is 2·2cos4x = 4cos4x. Boxed 4cos4x (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(i); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "cos A − cos B = −2sin((A+B)/2)sin((A−B)/2); the inner derivative a comes out.",
+      "marks": 4,
+      "question": "Q1(ii). Find, from first principles, the differential coefficient of cos(ax − b).",
+      "solution": "[cos(ax−b+ah) − cos(ax−b)]/h = −2sin(ax−b+ah/2)sin(ah/2)/h. As h→0: sin(ah/2)/h → a/2 and the sine factor → sin(ax−b), so the limit is −2·sin(ax−b)·(a/2) = −a sin(ax−b). Boxed −a sin(ax−b) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(ii); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "tan A − tan B = sin(A−B)/(cosA cosB), so the quotient is sin(3h)/(h cos cos) and sin(3h)/h → 3.",
+      "marks": 4,
+      "question": "Q1(iii). Find, from first principles, the differential coefficient of tan(3x − 4).",
+      "solution": "[tan(3x−4+3h) − tan(3x−4)]/h = sin(3h)/[h cos(3x−4+3h)cos(3x−4)] → [3h/h]/cos²(3x−4)·? — precisely, sin(3h)/h → 3 while the cosine product → cos²(3x−4), so the limit is 3/cos²(3x−4) = 3sec²(3x−4). Boxed 3sec²(3x−4) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(iii); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "Same first-principles argument as sin 4x with the inner rate 3/2.",
+      "marks": 3,
+      "question": "Q1(iv). Find, from first principles, the differential coefficient of sin(3x/2).",
+      "solution": "[sin(3(x+h)/2) − sin(3x/2)]/h = 2cos(3x/2 + 3h/4)sin(3h/4)/h → 2cos(3x/2)·(3/4) = (3/2)cos(3x/2). Boxed (3/2)cos(3x/2) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(iv); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "tan-derivative with inner rate 5/3: sec²(5x/3)·(5/3).",
+      "marks": 3,
+      "question": "Q1(v). Find, from first principles, the differential coefficient of tan(5x/3).",
+      "solution": "[tan(5(x+h)/3) − tan(5x/3)]/h = sin(5h/3)/[h cos(5(x+h)/3)cos(5x/3)] → (5/3)/cos²(5x/3) = (5/3)sec²(5x/3). Boxed (5/3)sec²(5x/3) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(v); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "cos²x = (1+cos2x)/2, so its derivative is −sin2x — the classic double-angle result. (T.U. 057S, 058S)",
+      "marks": 4,
+      "question": "Q1(vi). Find, from first principles, the differential coefficient of cos²x. (T.U. 057S, 058S)",
+      "solution": "cos²x = (1 + cos2x)/2. First principles on cos2x gives its derivative −2sin2x, so d/dx[(1+cos2x)/2] = (−2sin2x)/2 = −sin2x. Alternatively [cos²(x+h) − cos²x]/h = [cos(x+h)−cosx][cos(x+h)+cosx]/h → (−sinx)(2cosx) = −sin2x. Boxed −sin2x (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(vi); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "sin²3x = (1 − cos6x)/2, so the derivative is 3sin6x.",
+      "marks": 4,
+      "question": "Q1(vii). Find, from first principles, the differential coefficient of sin²3x.",
+      "solution": "sin²3x = (1 − cos6x)/2. Derivative = (6sin6x)/2 = 3sin6x. By first principles: [sin²3(x+h) − sin²3x]/h = [sin3(x+h) − sin3x][sin3(x+h) + sin3x]/h → (3cos3x)(2sin3x) = 3sin6x ✓. Boxed 3sin6x (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(vii); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "√(sin2x) = (sin2x)^(1/2): ½(sin2x)^(−1/2)·2cos2x leaves cos2x/√(sin2x).",
+      "marks": 4,
+      "question": "Q1(viii). Find, from first principles, the differential coefficient of √(sin 2x).",
+      "solution": "Write y = (sin2x)^(1/2). Chain rule: y' = ½(sin2x)^(−1/2)·(cos2x·2) = cos2x/√(sin2x). (The first-principles quotient rationalises to 1/[√(sin2(x+h)) + √(sin2x)] times the sin2x difference, which gives the same limit.) Boxed cos2x/√(sin2x) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(viii); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "√(sec x) = (sec x)^(1/2); ½(sec x)^(−1/2)·sec x tan x = ½√(sec x) tan x.",
+      "marks": 4,
+      "question": "Q1(ix). Find, from first principles, the differential coefficient of √(sec x).",
+      "solution": "y = (sec x)^(1/2). y' = ½(sec x)^(−1/2)·sec x tan x = ½√(sec x)·tan x. Boxed ½√(sec x)·tan x (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q1(ix); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "Chain rule on sin(u) with u = 4x−5: cos(u)·4.",
+      "marks": 2,
+      "question": "Q2(i). Find the derivative of sin(4x − 5).",
+      "solution": "y' = cos(4x−5)·4 = 4cos(4x−5). Boxed 4cos(4x−5) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(i); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "d/dx cos(ax+b) = −a sin(ax+b).",
+      "marks": 2,
+      "question": "Q2(ii). Find the derivative of cos(ax + b).",
+      "solution": "y' = −sin(ax+b)·a = −a sin(ax+b). Boxed −a sin(ax+b) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(ii); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "tan(5x²+6) → sec²(5x²+6)·10x.",
+      "marks": 2,
+      "question": "Q2(iii). Find the derivative of tan(5x² + 6).",
+      "solution": "y' = sec²(5x²+6)·10x = 10x sec²(5x²+6). Boxed 10x sec²(5x²+6) (matches the printed key, book p522).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(iii); book p519 = PDF p546; key book p522 = PDF p549"
+    },
+    {
+      "knowledgeNote": "d/dx cot u = −cosec²u·u' with u = √x.",
+      "marks": 3,
+      "question": "Q2(iv). Find the derivative of cot √x.",
+      "solution": "y' = −cosec²(√x)·(1/(2√x)) = −(1/(2√x))cosec²√x. Boxed −(1/(2√x))cosec²√x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(iv); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "d/dx sec u = sec u tan u·u' with u = 1/x, u' = −1/x².",
+      "marks": 3,
+      "question": "Q2(v). Find the derivative of sec(1/x).",
+      "solution": "y' = sec(1/x)tan(1/x)·(−1/x²) = −(1/x²)sec(1/x)tan(1/x). Boxed −(1/x²)sec(1/x)tan(1/x) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(v); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "d/dx cosec u = −cosec u cot u·u' with u = ax²/b, u' = 2ax/b.",
+      "marks": 3,
+      "question": "Q2(vi). Find the derivative of cosec(ax²/b).",
+      "solution": "y' = −cosec(ax²/b)cot(ax²/b)·(2ax/b) = −(2ax/b)cosec(ax²/b)cot(ax²/b). Boxed −(2ax/b)cosec(ax²/b)cot(ax²/b) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(vi); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "The print's exponent is 5 (confirmed by a 300-dpi zoom and by the key's 10ax): d/dx sin⁵u = 5sin⁴u cos u·u' with u' = 2ax.",
+      "marks": 3,
+      "question": "Q2(vii). Find the derivative of sin⁵(ax² − c).",
+      "solution": "y = sin⁵(ax²−c). y' = 5sin⁴(ax²−c)·cos(ax²−c)·(2ax) = 10ax sin⁴(ax²−c)cos(ax²−c). Boxed 10ax sin⁴(ax²−c)cos(ax²−c) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(vii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "cos³u gives 3cos²u(−sin u)·u' with u' = 2a.",
+      "marks": 3,
+      "question": "Q2(viii). Find the derivative of cos³(2ax − 3b).",
+      "solution": "y' = 3cos²(2ax−3b)·(−sin(2ax−3b))·(2a) = −6a cos²(2ax−3b)sin(2ax−3b). Boxed −6a cos²(2ax−3b)sin(2ax−3b) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(viii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "a√(tan(5x−7)): the constant a stays, and the root contributes 1/(2√tan)·sec²·5.",
+      "marks": 4,
+      "question": "Q2(ix). Find the derivative of a√(tan(5x − 7)).",
+      "solution": "y = a(tan(5x−7))^(1/2). y' = a·½(tan(5x−7))^(−1/2)·sec²(5x−7)·5 = (5a/2)·sec²(5x−7)/√(tan(5x−7)). Boxed 5a sec²(5x−7)/[2√(tan(5x−7))] (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(ix); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "sec⁵u = (sec u)⁵: 5sec⁴u·sec u tan u·u' with u' = a/c; sec⁴·sec collapses to sec⁵.",
+      "marks": 4,
+      "question": "Q2(x). Find the derivative of sec⁵((ax + b)/c).",
+      "solution": "y' = 5sec⁴((ax+b)/c)·sec((ax+b)/c)tan((ax+b)/c)·(a/c) = (5a/c)sec⁵((ax+b)/c)tan((ax+b)/c). Boxed (5a/c)sec⁵((ax+b)/c)tan((ax+b)/c) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(x); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "cosecⁿu gives n cosecⁿ⁻¹u·(−cosec u cot u)·u'; together the powers combine to cosecⁿu cot u.",
+      "marks": 5,
+      "question": "Q2(xi). Find the derivative of cosecⁿ((px² − q)/r). (T.U. 2056 S)",
+      "solution": "u = (px²−q)/r, u' = 2px/r. y' = n cosecⁿ⁻¹u·(−cosec u cot u)·(2px/r) = −(2npx/r)cosecⁿu·cot u = −(2npx/r)cosecⁿ((px²−q)/r)cot((px²−q)/r). Boxed −(2npx/r)cosecⁿ((px²−q)/r)cot((px²−q)/r) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q2(xi); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Outer tan, inner cos 5x: sec²(cos5x)·(−5sin5x).",
+      "marks": 3,
+      "question": "Q3(i). Find the differential coefficient of tan(cos 5x).",
+      "solution": "y' = sec²(cos5x)·d/dx(cos5x) = sec²(cos5x)·(−5sin5x) = −5sec²(cos5x)sin5x. Boxed −5sec²(cos5x)sin5x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(i); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Three nested functions: −sin(sin(3x²+2))·cos(3x²+2)·6x.",
+      "marks": 4,
+      "question": "Q3(ii). Find the differential coefficient of cos(sin(3x² + 2)).",
+      "solution": "y' = −sin(sin(3x²+2))·cos(3x²+2)·6x = −6x sin(sin(3x²+2))cos(3x²+2). Boxed −6x sin(sin(3x²+2))cos(3x²+2) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(ii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "sin(tan u) → cos(tan u)·sec²u·u' with u = ax+b.",
+      "marks": 3,
+      "question": "Q3(iii). Find the differential coefficient of sin(tan(ax + b)).",
+      "solution": "y' = cos(tan(ax+b))·sec²(ax+b)·a = a cos(tan(ax+b))sec²(ax+b). Boxed a cos(tan(ax+b))sec²(ax+b) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(iii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "d/dx sec²u = 2sec²u tan u·u' with u = tan√x, u' = sec²√x/(2√x). (T.U. 2052)",
+      "marks": 4,
+      "question": "Q3(iv). Find the differential coefficient of sec²(tan √x). (T.U. 2052)",
+      "solution": "y = sec²(tan√x). y' = 2sec²(tan√x)tan(tan√x)·sec²(√x)·(1/(2√x)) = (1/√x)sec²(tan√x)tan(tan√x)sec²√x. Boxed (1/√x)sec²(tan√x)tan(tan√x)sec²√x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(iv); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "tan⁵(sin(px−q)): 5tan⁴·sec²·cos(px−q)·p. (T.U. 2050)",
+      "marks": 4,
+      "question": "Q3(v). Find the differential coefficient of tan⁵(sin(px − q)). (T.U. 2050)",
+      "solution": "y' = 5tan⁴(sin(px−q))·sec²(sin(px−q))·cos(px−q)·p = 5p tan⁴(sin(px−q))sec²(sin(px−q))cos(px−q). Boxed 5p tan⁴(sin(px−q))sec²(sin(px−q))cos(px−q) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(v); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "cosec³(cot4x): 3cosec²·(−cosec cot)·(−4cosec²4x) — the two minus signs cancel and 3·4 = 12.",
+      "marks": 4,
+      "question": "Q3(vi). Find the differential coefficient of cosec³(cot 4x).",
+      "solution": "y' = 3cosec²(cot4x)·(−cosec(cot4x)cot(cot4x))·(−4cosec²4x) = 12cosec³(cot4x)cot(cot4x)cosec²4x. Boxed 12cosec³(cot4x)cot(cot4x)cosec²(4x) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(vi); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "cot(√(tan3x)): −cosec²(·)·[1/(2√(tan3x))]·sec²(3x)·3. (T.U. 2049 H)",
+      "marks": 5,
+      "question": "Q3(vii). Find the differential coefficient of cot(√(tan 3x)). (T.U. 2049 H)",
+      "solution": "y' = −cosec²(√(tan3x))·(1/(2√(tan3x)))·sec²(3x)·3 = −3cosec²(√(tan3x))sec²(3x)/[2√(tan3x)]. Boxed −3cosec²(√(tan3x))sec²3x/(2√(tan3x)) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(vii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "sin²(cos6x) → 2sin(cos6x)cos(cos6x)·(−6sin6x); 2sin A cos A = sin 2A.",
+      "marks": 4,
+      "question": "Q3(viii). Find the differential coefficient of sin²(cos 6x).",
+      "solution": "y' = 2sin(cos6x)cos(cos6x)·(−6sin6x) = −6sin(2cos6x)sin6x. Boxed −6 sin(2 cos 6x) sin 6x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q3(viii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Product rule: (x²+3x)'·sin5x + (x²+3x)·(sin5x)'.",
+      "marks": 3,
+      "question": "Q4(i). Find the derivative of (x² + 3x) sin 5x.",
+      "solution": "y' = (2x+3)sin5x + (x²+3x)(5cos5x) = (2x+3)sin5x + 5(x²+3x)cos5x. Boxed (2x+3)sin5x + 5(x²+3x)cos5x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(i); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Product rule: 3x²tan u + x³sec²u·(6x²+3), and 6x²+3 = 3(2x²+1).",
+      "marks": 3,
+      "question": "Q4(ii). Find the derivative of x³ tan(2x³ + 3x).",
+      "solution": "u = 2x³+3x, u' = 6x²+3 = 3(2x²+1). y' = 3x²tan u + x³sec²u·3(2x²+1) = 3x²tan(2x³+3x) + 3x³(2x²+1)sec²(2x³+3x). Boxed 3x²tan(2x³+3x) + 3x³(2x²+1)sec²(2x³+3x) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(ii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Product rule with √x: (a/(2√x))cos u − a√x sin u·2ax.",
+      "marks": 4,
+      "question": "Q4(iii). Find the derivative of a√x cos(ax² − b).",
+      "solution": "u = ax²−b, u' = 2ax. y' = a[(1/(2√x))cos u + √x·(−sin u)(2ax)] = (a/(2√x))cos(ax²−b) − 2a²x^(3/2)sin(ax²−b). Boxed (a/(2√x))cos(ax²−b) − 2a²x^(3/2)sin(ax²−b) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(iii); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Product rule: (1+2cos2x)sec3x² + (x+sin2x)·sec3x²tan3x²·6x.",
+      "marks": 4,
+      "question": "Q4(iv). Find the derivative of (x + sin 2x) sec 3x².",
+      "solution": "y' = (1+2cos2x)sec3x² + (x+sin2x)sec(3x²)tan(3x²)·6x. Boxed (1+2cos2x)sec3x² + 6x(x+sin2x)sec3x²tan3x² (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(iv); book p520 = PDF p547; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "d(cosec u) = −cosec u cot u·(−q) = +q cosec u cot u, so no minus sign survives.",
+      "marks": 4,
+      "question": "Q4(v). Find the derivative of ax³ cosec(p − qx).",
+      "solution": "y' = 3ax²cosec(p−qx) + ax³·(−cosec(p−qx)cot(p−qx))(−q) = 3ax²cosec(p−qx) + aqx³cosec(p−qx)cot(p−qx). Boxed 3ax²cosec(p−qx) + aqx³cosec(p−qx)cot(p−qx) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(v); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Product rule on x^(−1/2)sin√x; the second term's 1/√x cancels into 1/x. (HSEB 2051)",
+      "marks": 4,
+      "question": "Q4(vi). Find the derivative of (1/√x)·sin √x. (HSEB 2051)",
+      "solution": "y = x^(−1/2)sin(x^(1/2)). y' = −½x^(−3/2)sin√x + x^(−1/2)cos√x·(1/(2√x)) = −(1/(2x√x))sin√x + (1/(2x))cos√x = (1/(2x))[cos√x − (1/√x)sin√x]. Boxed (1/2x)(cos√x − (1/√x)sin√x) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(vi); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Quotient rule with v = cos4x: the derivative of the denominator is −4sin4x, so the second term turns positive.",
+      "marks": 4,
+      "question": "Q4(vii). Find the derivative of (x² − 1)/cos 4x.",
+      "solution": "y' = [2x cos4x − (x²−1)(−4sin4x)]/cos²4x = [2x cos4x + 4(x²−1)sin4x]/cos²4x. Boxed [2x cos4x + 4(x²−1)sin4x]/cos²4x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(vii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Quotient rule with u = sec nx (u' = n sec nx tan nx) and v = ax−b.",
+      "marks": 4,
+      "question": "Q4(viii). Find the derivative of sec(nx)/(ax − b).",
+      "solution": "y' = [n sec(nx)tan(nx)(ax−b) − a sec(nx)]/(ax−b)² = [n(ax−b)sec(nx)tan(nx) − a sec(nx)]/(ax−b)². Boxed [n(ax−b)sec nx tan nx − a sec nx]/(ax−b)² (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q4(viii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "(1 − 2sin²(x/2))/cos²x = cos x/cos²x = sec x.",
+      "marks": 4,
+      "question": "Q5(i). Find the differential coefficient of (1 − 2sin²(x/2))/cos²x.",
+      "solution": "1 − 2sin²(x/2) = cos x. So y = cos x/cos²x = sec x, and y' = sec x tan x. Boxed sec x tan x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(i); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "sin2nx = 2sin nx cos nx, so the fraction is 2tan nx.",
+      "marks": 4,
+      "question": "Q5(ii). Find the differential coefficient of sin(2nx)/cos²(nx).",
+      "solution": "sin2nx/cos²nx = 2sin(nx)cos(nx)/cos²(nx) = 2tan(nx). Derivative = 2n sec²(nx). Boxed 2n sec²nx (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(ii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Factor formulas: sinA − sinB = 2cos((A+B)/2)sin((A−B)/2) and cosA + cosB = 2cos((A+B)/2)cos((A−B)/2) — the common factor cancels to tan((a−b)x/2).",
+      "marks": 5,
+      "question": "Q5(iii). Find the differential coefficient of (sin ax − sin bx)/(cos ax + cos bx).",
+      "solution": "Numerator = 2cos((a+b)x/2)sin((a−b)x/2); denominator = 2cos((a+b)x/2)cos((a−b)x/2). Ratio = tan((a−b)x/2). Derivative = ½(a−b)sec²((a−b)x/2). Boxed ½(a−b)sec²½(a−b)x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(iii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "(1−cos x)/(1+cos x) = tan²(x/2), whose derivative is 2tan(x/2)·½sec²(x/2).",
+      "marks": 4,
+      "question": "Q5(iv). Find the differential coefficient of (1 − cos x)/(1 + cos x).",
+      "solution": "(1−cos x)/(1+cos x) = [2sin²(x/2)]/[2cos²(x/2)] = tan²(x/2). Derivative: 2tan(x/2)·½sec²(x/2) = tan(x/2)sec²(x/2). Boxed tan½x sec²½x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(iv); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "√((1−sin x)/(1+sin x)) = sec x − tan x = tan(π/4 − x/2) on the principal branch. (HSEB 2051)",
+      "marks": 5,
+      "question": "Q5(v). Find the differential coefficient of √((1 − sin x)/(1 + sin x)). (HSEB 2051)",
+      "solution": "Multiply numerator and denominator inside the root by (1 − sin x): the radicand becomes (1−sin x)²/cos²x, so the root is (1 − sin x)/cos x = sec x − tan x on the principal branch. Now sec x − tan x = tan(π/4 − x/2), whose derivative is −½sec²(π/4 − x/2). Boxed −½sec²(π/4 − x/2) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(v); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "(cos2x + 1)/sin2x = 2cos²x/(2sin x cos x) = cot x.",
+      "marks": 3,
+      "question": "Q5(vi). Find the differential coefficient of (cos 2x + 1)/sin 2x.",
+      "solution": "cos2x + 1 = 2cos²x; sin2x = 2sin x cos x. Ratio = cot x. Derivative = −cosec²x. Boxed −cosec²x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(vi); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "1 − sin2x = (cos x − sin x)² and cos2x = (cos x − sin x)(cos x + sin x); the ratio is tan(π/4 + x).",
+      "marks": 5,
+      "question": "Q5(vii). Find the differential coefficient of cos 2x/(1 − sin 2x).",
+      "solution": "1 − sin2x = (cos x − sin x)²; cos2x = (cos x − sin x)(cos x + sin x). Ratio = (cos x + sin x)/(cos x − sin x) = tan(π/4 + x). Derivative = sec²(π/4 + x). Boxed sec²(π/4 + x) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(vii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "1/(sec x − tan x) = sec x + tan x — the reciprocal of the Pythagorean pair.",
+      "marks": 4,
+      "question": "Q5(viii). Find the differential coefficient of 1/(sec x − tan x).",
+      "solution": "Multiply by (sec x + tan x)/(sec x + tan x): 1/(sec x − tan x) = (sec x + tan x)/(sec²x − tan²x) = sec x + tan x. Derivative = sec x tan x + sec²x = sec x(tan x + sec x). Boxed sec x(tan x + sec x) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(viii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "(sec x + tan x)/(sec x − tan x) = (sec x + tan x)²; then differentiate the square.",
+      "marks": 5,
+      "question": "Q5(ix). Find the differential coefficient of (sec x + tan x)/(sec x − tan x).",
+      "solution": "As in Q5(viii), dividing by (sec x − tan x) multiplies by (sec x + tan x): y = (sec x + tan x)². y' = 2(sec x + tan x)(sec x tan x + sec²x) = 2sec x(sec x + tan x)². Boxed 2sec x(sec x + tan x)² (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(ix); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "(1+tan x)/(1−tan x) = tan(π/4 + x).",
+      "marks": 4,
+      "question": "Q5(x). Find the differential coefficient of (1 + tan x)/(1 − tan x).",
+      "solution": "By the tan(A+B) formula with A = π/4: (1+tan x)/(1−tan x) = tan(π/4 + x). Derivative = sec²(π/4 + x). Boxed sec²(π/4 + x) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q5(x); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Product-to-sum first: sin6x cos4x = ½[sin10x + sin2x]. Differentiating is then immediate.",
+      "marks": 3,
+      "question": "Q6(i). Find the derivative of sin 6x · cos 4x.",
+      "solution": "sin6x cos4x = ½[sin10x + sin2x]. y' = ½[10cos10x + 2cos2x] = 5cos10x + cos2x. Boxed 5cos10x + cos2x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q6(i); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "sin2mx sin2nx = ½[cos2(m−n)x − cos2(m+n)x].",
+      "marks": 4,
+      "question": "Q6(ii). Find the derivative of sin 2mx · sin 2nx.",
+      "solution": "y = ½[cos2(m−n)x − cos2(m+n)x]. y' = ½[−2(m−n)sin2(m−n)x + 2(m+n)sin2(m+n)x] = (m+n)sin2(m+n)x − (m−n)sin2(m−n)x. Boxed (m+n)sin2(m+n)x − (m−n)sin2(m−n)x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q6(ii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "cos7x cos5x = ½[cos12x + cos2x].",
+      "marks": 3,
+      "question": "Q6(iii). Find the derivative of cos 7x · cos 5x.",
+      "solution": "y = ½[cos12x + cos2x]. y' = ½[−12sin12x − 2sin2x] = −6sin12x − sin2x. Boxed −6sin12x − sin2x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q6(iii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "sin3x cos5x = ½[sin8x − sin2x].",
+      "marks": 3,
+      "question": "Q6(iv). Find the derivative of sin 3x · cos 5x.",
+      "solution": "y = ½[sin8x − sin2x]. y' = ½[8cos8x − 2cos2x] = 4cos8x − cos2x. Boxed 4cos8x − cos2x (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q6(iv); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "d/dx sin⁻¹u = u'/√(1−u²). With u = 3x−4 the denominator contains (3x−4)² literally.",
+      "marks": 3,
+      "question": "Q7(i). Find the derivative of sin⁻¹(3x − 4).",
+      "solution": "y' = 3/√(1 − (3x−4)²). Boxed 3/√(1−(3x−4)²) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(i); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "u = (3x²−2)/2: 1−u² = 3x²(4−3x²)/4, and the x cancels against u' = 3x.",
+      "marks": 5,
+      "question": "Q7(ii). Find the derivative of cos⁻¹((3x² − 2)/2).",
+      "solution": "u = (3x²−2)/2, u' = 3x. 1 − u² = (4 − (3x²−2)²)/4 = (4 − 9x⁴ + 12x² − 4)/4 = 3x²(4−3x²)/4. So √(1−u²) = x√3√(4−3x²)/2 (x > 0). y' = −3x/[x√3√(4−3x²)/2] = −6x/(√3 x √(4−3x²)) = −2√3/√(4−3x²). Boxed −2√3/√(4−3x²) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(ii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "u = 1/(5x−3) gives u' = −5/(5x−3)²; the squared denominator absorbs it.",
+      "marks": 4,
+      "question": "Q7(iii). Find the derivative of tan⁻¹(1/(5x − 3)).",
+      "solution": "u = 1/(5x−3), u' = −5/(5x−3)². y' = u'/(1+u²) = [−5/(5x−3)²]/[1 + 1/(5x−3)²]. Multiplying through by (5x−3)²: y' = −5/[(5x−3)² + 1]. Boxed −5/[1 + (5x−3)²] (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(iii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "d/dx sec⁻¹u = u'/(|u|√(u²−1)) with u = tan x, u' = sec²x.",
+      "marks": 4,
+      "question": "Q7(iv). Find the derivative of sec⁻¹(tan x).",
+      "solution": "u = tan x, u' = sec²x, and √(u²−1) = √(tan²x−1). y' = sec²x/(tan x√(tan²x−1)). Boxed sec²x/[tan x√(tan²x−1)] (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(iv); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "1 − (1−2x²)² = 4x²(1−x²), so the x from u' = −4x cancels. (T.U. 2050 H)",
+      "marks": 5,
+      "question": "Q7(v). Find the derivative of sin⁻¹(1 − 2x²). (T.U. 2050 H)",
+      "solution": "u = 1−2x², u' = −4x. 1 − u² = 1 − (1−4x²+4x⁴) = 4x² − 4x⁴ = 4x²(1−x²), so √(1−u²) = 2x√(1−x²). y' = −4x/[2x√(1−x²)] = −2/√(1−x²). Boxed −2/√(1−x²) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(v); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "4x³−3x is cos3θ for x = cosθ, so the function is 3cos⁻¹x.",
+      "marks": 4,
+      "question": "Q7(vi). Find the derivative of cos⁻¹(4x³ − 3x).",
+      "solution": "Put x = cosθ. Then 4x³−3x = 4cos³θ − 3cosθ = cos3θ, so y = cos⁻¹(cos3θ) = 3θ = 3cos⁻¹x. y' = 3·(−1/√(1−x²)) = −3/√(1−x²). Boxed −3/√(1−x²) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(vi); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "With x = tanθ, (1−x²)/(1+x²) = cos2θ, so the function is 2tan⁻¹x. (T.U. 2057 S)",
+      "marks": 4,
+      "question": "Q7(vii). Find the derivative of cos⁻¹((1 − x²)/(1 + x²)). (T.U. 2057 S)",
+      "solution": "Put x = tanθ. Then (1−x²)/(1+x²) = (1−tan²θ)/(1+tan²θ) = cos2θ, so y = cos⁻¹(cos2θ) = 2θ = 2tan⁻¹x. y' = 2/(1+x²). Boxed 2/(1+x²) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(vii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "u = 1/(1−x²): the 1+u² denominator clears to (1−x²)²+1.",
+      "marks": 4,
+      "question": "Q7(viii). Find the derivative of tan⁻¹(1/(1 − x²)).",
+      "solution": "u = 1/(1−x²), u' = 2x/(1−x²)². y' = [2x/(1−x²)²]/[1 + 1/(1−x²)²] = 2x/[(1−x²)² + 1]. Boxed 2x/[1 + (1−x²)²] (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(viii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "sin2x/(1+cos2x) = tan x, so the whole expression is just x.",
+      "marks": 4,
+      "question": "Q7(ix). Find the derivative of tan⁻¹(sin 2x/(1 + cos 2x)).",
+      "solution": "sin2x/(1+cos2x) = (2sin x cos x)/(2cos²x) = tan x. So y = tan⁻¹(tan x) = x and y' = 1. Boxed 1 (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(ix); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "If x = sinθ then 1/√(1−x²) = secθ, so sec⁻¹ of it is θ = sin⁻¹x.",
+      "marks": 4,
+      "question": "Q7(x). Find the derivative of sec⁻¹(1/√(1 − x²)).",
+      "solution": "Put x = sinθ. Then 1/√(1−x²) = 1/cosθ = secθ, so y = sec⁻¹(secθ) = θ = sin⁻¹x. y' = 1/√(1−x²). Boxed 1/√(1−x²) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(x); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "2x/(1−x²) = tan2θ for x = tanθ, so the expression is 2tan⁻¹x. (T.U. 2056 S)",
+      "marks": 4,
+      "question": "Q7(xi). Find the derivative of tan⁻¹(2x/(1 − x²)). (T.U. 2056 S)",
+      "solution": "Put x = tanθ: 2x/(1−x²) = 2tanθ/(1−tan²θ) = tan2θ. So y = 2θ = 2tan⁻¹x and y' = 2/(1+x²). Boxed 2/(1+x²) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q7(xi); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "Implicit differentiation on x + y = sin y: 1 + y' = cos y·y'.",
+      "marks": 3,
+      "question": "Q8(i). Find dy/dx when x + y = sin y.",
+      "solution": "1 + y' = cos y·y' → 1 = y'(cos y − 1) → y' = 1/(cos y − 1). Boxed 1/(cos y − 1) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(i); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "x + y = cos(x−y): 1 + y' = −sin(x−y)(1 − y'); collect y' on one side.",
+      "marks": 4,
+      "question": "Q8(ii). Find dy/dx when x + y = cos(x − y).",
+      "solution": "Let s = sin(x−y). Differentiate: 1 + y' = −s(1 − y') = −s + s y'. Then 1 + s = y'(s − 1) → y' = (1+s)/(s−1). Boxed (1 + sin(x−y))/(sin(x−y) − 1) (matches the printed key, book p523).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(ii); book p521 = PDF p548; key book p523 = PDF p550"
+    },
+    {
+      "knowledgeNote": "x − y = tan xy: 1 − y' = sec²(xy)(y + xy').",
+      "marks": 4,
+      "question": "Q8(iii). Find dy/dx when x − y = tan xy.",
+      "solution": "1 − y' = sec²(xy)(y + xy') → 1 − y sec²xy = y'(1 + x sec²xy) → y' = (1 − y sec²xy)/(1 + x sec²xy). Boxed (1 − y sec²xy)/(1 + x sec²xy) (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(iii); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "x²y = sec xy²: 2xy + x²y' = sec(xy²)tan(xy²)(y² + 2xyy'). (HSEB 2054)",
+      "marks": 5,
+      "question": "Q8(iv). Find dy/dx when x²y = sec xy². (HSEB 2054)",
+      "solution": "Let S = sec(xy²)tan(xy²). Then 2xy + x²y' = S(y² + 2xyy'). Collect: y'(x² − 2xyS) = y²S − 2xy → y' = (y²S − 2xy)/(x² − 2xyS) = (2xy − y²sec(xy²)tan(xy²))/(2xy sec(xy²)tan(xy²) − x²). Boxed (2xy − y²sec xy² tan xy²)/(2xy sec xy² tan xy² − x²) (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(iv); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "x²y² = tan(ax+by): 2xy² + 2x²yy' = sec²(ax+by)(a + b y').",
+      "marks": 5,
+      "question": "Q8(v). Find dy/dx when x²y² = tan(ax + by).",
+      "solution": "Let T = sec²(ax+by). 2xy² + 2x²yy' = T(a + b y') → 2xy² − aT = y'(bT − 2x²y) → y' = (2xy² − a sec²(ax+by))/(b sec²(ax+by) − 2x²y). Boxed (2xy² − a sec²(ax+by))/(b sec²(ax+by) − 2x²y) (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(v); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "x² + y² = sin xy: 2x + 2yy' = cos(xy)(y + xy').",
+      "marks": 5,
+      "question": "Q8(vi). Find dy/dx when x² + y² = sin xy.",
+      "solution": "2x + 2yy' = cos(xy)(y + xy') → 2x − y cos xy = y'(x cos xy − 2y) → y' = (2x − y cos xy)/(x cos xy − 2y). Boxed (2x − y cos xy)/(x cos xy − 2y) (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(vi); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "x²y² = tan xy with u = xy gives u² = tan u, whose derivative forces u' = 0 (since 2u ≠ sec²u), hence y + xy' = 0. (T.U. 2048)",
+      "marks": 5,
+      "question": "Q8(vii). Find dy/dx when x²y² = tan xy. (T.U. 2048)",
+      "solution": "Put u = xy. Then u² = tan u. Differentiating: 2u u' = sec²u·u' → u'(2u − sec²u) = 0. Since 2u and sec²u cannot be equal at a point of the curve in general (the constraint u² = tan u has isolated solutions), u' = 0: y + xy' = 0 → y' = −y/x. Boxed −y/x (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(vii); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "xy = sec(x−y): y + xy' = sec(x−y)tan(x−y)(1 − y').",
+      "marks": 5,
+      "question": "Q8(viii). Find dy/dx when xy = sec(x − y).",
+      "solution": "Let S = sec(x−y)tan(x−y). y + xy' = S(1 − y') → y'(x + S) = S − y → y' = (S − y)/(x + S) = (sec(x−y)tan(x−y) − y)/(x + sec(x−y)tan(x−y)). Boxed (sec(x−y)tan(x−y) − y)/(x + sec(x−y)tan(x−y)) (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(viii); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "xy = tan(x²+y²): y + xy' = sec²(x²+y²)(2x + 2yy').",
+      "marks": 5,
+      "question": "Q8(ix). Find dy/dx when xy = tan(x² + y²).",
+      "solution": "Let T = sec²(x²+y²). y + xy' = T(2x + 2yy') → y − 2xT = y'(2yT − x) → y' = (y − 2x sec²(x²+y²))/(2y sec²(x²+y²) − x). Boxed (y − 2x sec²(x²+y²))/(2y sec²(x²+y²) − x) (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q8(ix); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "Parametric: dy/dx = (dy/dθ)/(dx/dθ). Here sin²θ' = sin2θ. (T.U. 2055 S)",
+      "marks": 3,
+      "question": "Q9(i). Find dy/dx when x = a cos²θ, y = b sin²θ. (T.U. 2055 S)",
+      "solution": "dx/dθ = −2a cosθ sinθ = −a sin2θ; dy/dθ = 2b sinθcosθ = b sin2θ. dy/dx = (b sin2θ)/(−a sin2θ) = −b/a. (The print's superscript reads 'cos²θ' — confirmed by the key's −b/a, which requires dx/dθ = −a sin2θ, not −2a sin2θ.) Boxed −b/a (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q9(i); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "2sin t cos t = sin2t simplifies x before differentiating. (T.U. 2052 H)",
+      "marks": 3,
+      "question": "Q9(ii). Find dy/dx when x = 2a sin t cos t, y = b cos 2t. (T.U. 2052 H)",
+      "solution": "x = a sin2t → dx/dt = 2a cos2t; dy/dt = −2b sin2t. dy/dx = −2b sin2t/(2a cos2t) = −(b/a)tan2t. Boxed −(b/a)tan2t (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q9(ii); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "x = 2a tanθ, y = a sec²θ: the sec²θ factors cancel.",
+      "marks": 3,
+      "question": "Q9(iii). Find dy/dx when x = 2a tan θ, y = a sec²θ.",
+      "solution": "dx/dθ = 2a sec²θ; dy/dθ = 2a sec²θ tanθ. dy/dx = 2a sec²θ tanθ/(2a sec²θ) = tanθ. Boxed tanθ (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q9(iii); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "y = sin t cos t = ½sin2t gives dy/dt = cos2t; dx/dt = sec²t. (T.U. 2050)",
+      "marks": 3,
+      "question": "Q9(iv). Find dy/dx when x = tan t, y = sin t cos t. (T.U. 2050)",
+      "solution": "dx/dt = sec²t; y = ½sin2t → dy/dt = cos2t. dy/dx = cos2t·cos²t = cos²t(cos²t − sin²t). Boxed cos²t(cos²t − sin²t) (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q9(iv); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "Both derivatives simplify to at·cos t and at·sin t — the classical cycloid pair. (T.U. 2049)",
+      "marks": 5,
+      "question": "Q9(v). Find dy/dx when x = a(cos t + t sin t), y = a(sin t − t cos t). (T.U. 2049)",
+      "solution": "dx/dt = a(−sin t + sin t + t cos t) = a t cos t; dy/dt = a(cos t − cos t + t sin t) = a t sin t. dy/dx = (a t sin t)/(a t cos t) = tan t. Boxed tan t (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q9(v); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "The sec²t terms cancel in dx/dt, leaving −2at sec²t tan t against +2a sec²t tan t. (T.U. 051H, 058 S)",
+      "marks": 5,
+      "question": "Q9(vi). Find dy/dx when x = a(tan t − t sec²t), y = a sec²t. (T.U. 051H, 058 S)",
+      "solution": "dx/dt = a[sec²t − (sec²t + t·2sec²t tan t)] = −2a t sec²t tan t; dy/dt = 2a sec²t tan t. dy/dx = (2a sec²t tan t)/(−2a t sec²t tan t) = −1/t. Boxed −1/t (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q9(vi); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "Classic cycloid: sin t/(1+cos t) = tan(t/2).",
+      "marks": 4,
+      "question": "Q9(vii). Find dy/dx when x = a(t + sin t), y = a(1 − cos t).",
+      "solution": "dx/dt = a(1 + cos t); dy/dt = a sin t. dy/dx = sin t/(1 + cos t) = tan(t/2). Boxed tan½t (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q9(vii); book p521 = PDF p548; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "d(u)/d(v) = (du/dx)/(dv/dx). Here d(sin x)/d(cos x) = cos x/(−sin x).",
+      "marks": 3,
+      "question": "Q10(i). Differentiate sin x with respect to cos x.",
+      "solution": "d(sin x)/dx = cos x; d(cos x)/dx = −sin x. Ratio = −cos x/sin x = −cot x. Boxed −cot x (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q10(i); book p522 = PDF p549; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "sec²x/(sec x tan x) = sec x/tan x = 1/sin x.",
+      "marks": 3,
+      "question": "Q10(ii). Differentiate tan x with respect to sec x.",
+      "solution": "d(tan x)/dx = sec²x; d(sec x)/dx = sec x tan x. Ratio = sec²x/(sec x tan x) = sec x/tan x = 1/sin x = cosec x. Boxed cosec x (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q10(ii); book p522 = PDF p549; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "d(sec²x)/dx = 2sec²x tan x; dividing by sec²x leaves 2tan x.",
+      "marks": 3,
+      "question": "Q10(iii). Differentiate sec²x with respect to tan x.",
+      "solution": "d(sec²x)/dx = 2sec²x tan x; d(tan x)/dx = sec²x. Ratio = 2tan x. Boxed 2tan x (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q10(iii); book p522 = PDF p549; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "(−cosec x cot x)/(−cosec²x) = cot x/cosec x = cos x.",
+      "marks": 3,
+      "question": "Q10(iv). Differentiate cosec x with respect to cot x.",
+      "solution": "d(cosec x)/dx = −cosec x cot x; d(cot x)/dx = −cosec²x. Ratio = cot x/cosec x = cos x. Boxed cos x (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q10(iv); book p522 = PDF p549; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "Degrees are radians scaled by π/180: cos x° = cos(πx/180), so the chain factor π/180 appears.",
+      "marks": 3,
+      "question": "Q11(a). Find the derivative of cos x°.",
+      "solution": "Write x° = πx/180 rad. Then y = cos(πx/180) and y' = −sin(πx/180)·(π/180) = −(π/180)sin x°. Boxed −(π/180)sin x° (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q11(a); book p522 = PDF p549; key book p524 = PDF p551"
+    },
+    {
+      "knowledgeNote": "Product rule with the degree-to-radian factor on the sine part only.",
+      "marks": 4,
+      "question": "Q11(b). Find the derivative of x sin x°.",
+      "solution": "y = x sin(πx/180). y' = sin(πx/180) + x cos(πx/180)·(π/180) = (πx/180)cos x° + sin x°. Boxed (πx/180)cos x° + sin x° (matches the printed key, book p524).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.17 Ex 17.2 Q11(b); book p522 = PDF p549; key book p524 = PDF p551"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.17 BOOK Exercise 17.2 — first principles for trigonometric functions, chain rule through trig/log compositions, product-to-sum identities, inverse-trig derivatives, implicit and parametric differentiation, differentiation w.r.t. another function, and degree-measure derivatives (book pp519-522 = PDF pp546-549 of the 2075 reprint; page-region vision reads at 140-300 dpi; every answer checked against the printed Answers on book pp522-524 = PDF pp549-551).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.17 Book Ex 17.2 (Trigonometric, Inverse-Trig, Implicit and Parametric Derivatives) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-17-2-trig-derivatives",
+  "topicTitle": "Ch.17 Book Ex 17.2 - trig derivatives, inverse trig, implicit, parametric (83 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}
