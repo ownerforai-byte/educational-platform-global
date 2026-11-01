@@ -40,7 +40,7 @@ export function BackButton({
 
   // Home is the destination — the button only appears once something else
   // has been opened on top of it.
-  if (pathname === "/" || pathname === "/home") {
+  if (pathname === "/" || pathname === "/home" || pathname?.startsWith("/home/")) {
     return null;
   }
 

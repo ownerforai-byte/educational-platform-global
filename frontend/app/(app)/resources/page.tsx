@@ -419,28 +419,31 @@ export default function ResourcesPage() {
                               className="flex flex-col justify-between rounded-2xl border border-border/70 bg-card p-4 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
                             >
                               <div className="space-y-2.5">
-                                {/* Top badges */}
+                                {/* Top badges: clean, non-redundant pro presentation */}
                                 <div className="flex items-center justify-between gap-2">
                                   <div className="min-w-0 flex-1 flex items-center gap-1.5 overflow-hidden">
                                     <span
-                                      className={`shrink-0 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${
+                                      className={`inline-flex items-center gap-1.5 shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide uppercase ${
                                         item.sourceType === "webnotee"
-                                          ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20"
-                                          : "bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20"
+                                          ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/25"
+                                          : "bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/25"
                                       }`}
                                     >
+                                      <span
+                                        className={`h-1.5 w-1.5 rounded-full ${
+                                          item.sourceType === "webnotee" ? "bg-amber-500" : "bg-sky-500"
+                                        }`}
+                                      />
                                       {item.sourceType === "webnotee" ? "WebNotee" : "Platform"}
                                     </span>
-                                    <span className="truncate rounded-md bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
-                                      {item.chapter}
-                                    </span>
                                     {item.exercise && (
-                                      <span className="shrink-0 rounded-md bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold text-primary">
+                                      <span className="shrink-0 rounded-full bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20 px-2 py-0.5 text-[10px] font-bold">
                                         {item.exercise}
                                       </span>
                                     )}
                                   </div>
-                                  <span className={`shrink-0 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${kindMeta.tint} border ${kindMeta.border}`}>
+                                  <span className={`shrink-0 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold ${kindMeta.tint} border ${kindMeta.border}`}>
+                                    <kindMeta.icon className="h-3 w-3" />
                                     {kindMeta.label}
                                   </span>
                                 </div>
@@ -455,24 +458,31 @@ export default function ResourcesPage() {
                                   </p>
                                 </div>
 
-                                {/* Rectangular Box: Always Opened, Visible & Scrollable */}
-                                <div className="relative w-full h-72 sm:h-80 rounded-xl overflow-hidden border border-border/60 bg-slate-50 dark:bg-slate-950 shadow-inner">
+                                {/* Rectangular Box: Always Opened, Visible & Scrollable with pro stream bar */}
+                                <div className="relative w-full h-72 sm:h-80 rounded-xl overflow-hidden border border-border/70 bg-slate-900 shadow-inner flex flex-col">
+                                  <div className="flex items-center justify-between px-3 py-1 bg-slate-100 dark:bg-slate-900 border-b border-border/40 text-[10px] font-medium text-muted-foreground select-none">
+                                    <span className="flex items-center gap-1.5">
+                                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                                      <span>Direct Stream</span>
+                                    </span>
+                                    <span className="text-[9px] uppercase tracking-wider font-semibold opacity-75">{item.kind}</span>
+                                  </div>
                                   <iframe
                                     src={docIframeSrc(item)}
                                     title={item.title}
                                     loading="lazy"
-                                    className="w-full h-full border-0 bg-white"
+                                    className="w-full flex-1 border-0 bg-white"
                                     allow="autoplay; encrypted-media; fullscreen"
                                   />
                                 </div>
                               </div>
 
                               {/* Card Action Controls */}
-                              <div className="mt-3 flex items-center justify-between gap-2 pt-2 border-t border-border/40">
+                              <div className="mt-3 flex items-center justify-between gap-2 pt-2.5 border-t border-border/50">
                                 <Button
                                   size="sm"
                                   variant="outline"
-                                  className="h-8 flex-1 rounded-xl text-xs font-semibold"
+                                  className="h-8 flex-1 rounded-xl text-xs font-semibold hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all"
                                   onClick={() => downloadDoc(item.src, downloadFileName(item.src, item.title))}
                                   title="Download this document to your device"
                                 >
@@ -482,7 +492,7 @@ export default function ResourcesPage() {
                                 <Button
                                   size="sm"
                                   variant="ghost"
-                                  className="h-8 rounded-xl px-2.5 text-xs text-muted-foreground hover:text-foreground"
+                                  className="h-8 rounded-xl px-3 text-xs text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all"
                                   asChild
                                   title="Open direct file in dedicated tab"
                                 >
@@ -491,7 +501,7 @@ export default function ResourcesPage() {
                                     target="_blank"
                                     rel="noreferrer noopener"
                                   >
-                                    <ExternalLink className="h-3.5 w-3.5 mr-1" />
+                                    <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
                                     Full Tab
                                   </a>
                                 </Button>

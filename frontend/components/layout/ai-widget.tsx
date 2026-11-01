@@ -104,7 +104,7 @@ export function AIWidget() {
   }, [lines, sending, open, loadingThread]);
 
   if (!mounted || isLoading || !user) return null;
-  if (pathname === "/chat" || pathname.startsWith("/chat/")) return null;
+  if (pathname === "/chat" || pathname.startsWith("/chat/") || pathname?.startsWith("/home/")) return null;
 
   /** Resume a saved conversation here in the sheet. */
   async function openConversation(name: string) {
