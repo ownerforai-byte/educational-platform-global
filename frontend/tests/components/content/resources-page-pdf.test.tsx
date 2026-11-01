@@ -19,6 +19,12 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
+function localDocx() {
+  const doc = DOCS.find((item) => item.kind === "docx" && item.href.startsWith("/"));
+  if (!doc) throw new Error("Expected a local DOCX in the document catalog");
+  return doc;
+}
+
 describe("ResourcesPage PDF Scrolling & Viewing", () => {
   it("allows deployments to configure the DOCX fallback origin", async () => {
     vi.stubEnv("NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN", " https://example.org/// ");
@@ -28,15 +34,16 @@ describe("ResourcesPage PDF Scrolling & Viewing", () => {
   });
 
   it("uses the browser origin for local DOCX previews", () => {
-    const doc = DOCS.find((item) => item.kind === "docx" && item.href.startsWith("/"))!;
+    const doc = localDocx();
     const { container } = render(<ResourcesPage />);
     const sources = Array.from(container.querySelectorAll("iframe"), (frame) => frame.src);
     expect(sources.some((src) => src.includes(encodeURIComponent(window.location.origin + doc.href)))).toBe(true);
   });
 
   it("uses the configured site origin or Next fallback when server rendering DOCX previews", () => {
-    const doc = DOCS.find((item) => item.kind === "docx" && item.href.startsWith("/"))!;
-    vi.stubGlobal("window", undefined);
+    const doc = localDocx();
+    const serverWindow = undefined;
+    vi.stubGlobal("window", serverWindow);
     vi.stubEnv("NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN", nextConfig.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN);
     vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://example.org/");
     expect(renderToString(<ResourcesPage />)).toContain(encodeURIComponent(`https://example.org${doc.href}`));
