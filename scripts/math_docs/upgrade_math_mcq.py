@@ -1,4 +1,3 @@
-import os
 
 def upgrade_math_mcq():
     path = r'c:\Users\ASUS\Desktop\rn\frontend\public\materials\math-mcq-test.md'

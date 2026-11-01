@@ -1,11 +1,9 @@
-import re
-
 with open('frontend/components/derivations/derivation-visual.tsx', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Fix all K > 1 and K < 1 patterns in text elements
-content = content.replace('>K > 1:', '{'>'K < 1:'}')
-content = content.replace('>K < 1:', '{'>'K > 1:'}')
+content = content.replace('>K > 1:', "{'>'}K < 1:")
+content = content.replace('>K < 1:', "{'>'}K > 1:")
 
 # Fix any other problematic comparison operators in text tags
 # Replace patterns like <text ...>K > 1:</text> with proper JSX

@@ -6,9 +6,8 @@ Kept separate so the core JSON pipeline never requires matplotlib/Pillow.
 """
 from __future__ import annotations
 
-import shutil
 from pathlib import Path
-from typing import Callable, Optional
+from typing import Optional
 
 from .assets import VisualAsset
 
@@ -17,7 +16,6 @@ try:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
     HAS_MPL = True
 except Exception:  # pragma: no cover - optional dep
     HAS_MPL = False

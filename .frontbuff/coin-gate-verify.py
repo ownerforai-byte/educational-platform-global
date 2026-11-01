@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import subprocess, sys, re, os
+import subprocess, sys, re
 
 def sh(cmd):
     p = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)

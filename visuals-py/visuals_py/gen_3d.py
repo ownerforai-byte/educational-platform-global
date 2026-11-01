@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from .assets import FrameObject, Frame, MeshSpec, SceneSpec, VisualAsset
+from .assets import MeshSpec, SceneSpec, VisualAsset
 
 
 def _grid_mesh(

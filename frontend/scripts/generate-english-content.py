@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Generate English content for NEB Class 11 syllabus topics."""
 import json
-import os
 from pathlib import Path
 
 # Content templates organized by unit and topic

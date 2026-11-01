@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from .assets import Frame, FrameObject, MeshSpec, SceneSpec, VisualAsset
+from .assets import Frame, FrameObject, SceneSpec, VisualAsset
 from .gen_3d import _grid_mesh
 
 

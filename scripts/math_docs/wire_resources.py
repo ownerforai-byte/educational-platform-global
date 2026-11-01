@@ -1,4 +1,3 @@
-import os
 
 def update_antiderivatives():
     path = r'c:\Users\ASUS\Desktop\rn\frontend\components\content\antiderivatives-resources.tsx'

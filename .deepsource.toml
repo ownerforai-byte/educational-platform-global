@@ -3,3 +3,14 @@ version = 1
 [[analyzers]]
 name = "python"
 enabled = true
+
+  [analyzers.meta]
+  environment = ["python311"]
+
+exclude_patterns = [
+  ".agnes/**",
+  ".frontbuff/**",
+  ".kilo/**",
+  "frontend/scripts/**",
+  "scripts/**"
+]

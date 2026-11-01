@@ -55,8 +55,7 @@ new_entries = '''  {
     "unit": "Unit: Oscillations"
   },
 '''
-marker = '  {
-    "id": "ph-3d-magnetic"'
+marker = '  {\n    "id": "ph-3d-magnetic"'
 content = content.replace(marker, new_entries + marker)
 open(path, "w", encoding="utf-8").write(content)
 print("done")

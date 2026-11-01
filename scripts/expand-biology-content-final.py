@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Expand ALL Class 11 Biology concept files with detailed topic-specific content."""
 import json
-import os
 import sys
 from pathlib import Path
 

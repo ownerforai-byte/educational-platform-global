@@ -1,4 +1,3 @@
-import re
 
 # Read the file
 with open('frontend/components/derivations/derivation-visual.tsx', 'r', encoding='utf-8') as f:
