@@ -189,3 +189,6 @@ tsc-out.txt
 # Playwright E2E artifacts (reports + traces stay local)
 test-results/
 playwright-report/
+
+# graphify knowledge graph (local, rebuilt by git hooks)
+/graphify-out/

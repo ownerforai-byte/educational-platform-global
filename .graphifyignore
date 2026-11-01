@@ -1,0 +1,25 @@
+# .graphifyignore — directories graphify should not index
+# Keep the graph focused on actual source code + agent docs, not data payloads.
+
+# Curriculum corpus (4,300+ JSON files — data, not code)
+content/
+public/
+frontend/public/
+
+# OCR / KB corpora
+backend/.ocr-v2/
+backend/kb/
+
+# Build output & generated data
+*/node_modules/
+frontend/.next/
+.next/
+backend/dist/
+*.map
+
+# Play Store / TWA binaries
+play-store/
+android-twa/
+
+# Graphify's own output
+graphify-out/
