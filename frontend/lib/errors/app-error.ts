@@ -426,6 +426,16 @@ export function reportClientError(
   };
 
   try {
+    if (process.env.NODE_ENV === "production") {
+      console.error(ERROR_LOG_PREFIX, normalized.kind, normalized.errorId);
+    } else {
+      console.error(ERROR_LOG_PREFIX, details, normalized);
+    }
+  } catch {
+    // A broken console must not prevent error reporting or recovery.
+  }
+
+  try {
     void import("@sentry/nextjs")
       .then((Sentry) => {
         Sentry.captureException(normalized.original ?? normalized, {
