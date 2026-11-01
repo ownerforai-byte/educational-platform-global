@@ -220,13 +220,13 @@ describe("reportClientError", () => {
 
   it("logs only the kind and correlation id in production", () => {
     vi.stubEnv("NODE_ENV", "production");
-    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const spy = vi.spyOn(console, "error").mockImplementation(() => undefined);
     reportClientError("private scope", Object.assign(new Error("private message"), {
       status: 500,
       errorId: "err_123",
     }), { secret: "private detail" });
 
-    expect(spy).toHaveBeenCalledWith("[app-error]", "server", "err_123");
+    expect(spy.mock.calls).toEqual([["[app-error]", "server", "err_123"]]);
   });
 
   it("continues when console logging throws", () => {

@@ -1,6 +1,9 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
+import { renderToString } from "react-dom/server";
 import ResourcesPage from "@/app/(app)/resources/page";
+import { DOCS } from "@/lib/docs-catalog";
+import nextConfig from "../../../next.config.mjs";
 
 // Mock next/link
 vi.mock("next/link", () => ({
@@ -11,7 +14,39 @@ vi.mock("next/link", () => ({
   ),
 }));
 
+afterEach(() => {
+  vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
+});
+
 describe("ResourcesPage PDF Scrolling & Viewing", () => {
+  it("allows deployments to configure the DOCX fallback origin", async () => {
+    vi.stubEnv("NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN", " https://example.org/// ");
+    vi.resetModules();
+    const { default: config } = await import("../../../next.config.mjs");
+    expect(config.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN).toBe("https://example.org");
+  });
+
+  it("uses the browser origin for local DOCX previews", () => {
+    const doc = DOCS.find((item) => item.kind === "docx" && item.href.startsWith("/"))!;
+    const { container } = render(<ResourcesPage />);
+    const sources = Array.from(container.querySelectorAll("iframe"), (frame) => frame.src);
+    expect(sources.some((src) => src.includes(encodeURIComponent(window.location.origin + doc.href)))).toBe(true);
+  });
+
+  it("uses the configured site origin or Next fallback when server rendering DOCX previews", () => {
+    const doc = DOCS.find((item) => item.kind === "docx" && item.href.startsWith("/"))!;
+    vi.stubGlobal("window", undefined);
+    vi.stubEnv("NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN", nextConfig.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN);
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://example.org/");
+    expect(renderToString(<ResourcesPage />)).toContain(encodeURIComponent(`https://example.org${doc.href}`));
+
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "");
+    expect(renderToString(<ResourcesPage />)).toContain(
+      encodeURIComponent(nextConfig.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN + doc.href),
+    );
+  });
+
   it(
     "renders documents with already opened rectangular scrollable boxes, classified by chapters",
     () => {

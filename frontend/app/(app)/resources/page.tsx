@@ -130,7 +130,7 @@ function docIframeSrc(item: ResourceItem): string {
       const origin =
         (typeof window !== "undefined" && window.location.origin)
           ? window.location.origin
-          : (process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") || "https://ravikisan.vercel.app");
+          : (process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") || process.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN);
       return `https://docs.google.com/gview?url=${encodeURIComponent(origin + item.src)}&embedded=true`;
     }
     return `https://docs.google.com/gview?url=${encodeURIComponent(item.src)}&embedded=true`;
