@@ -1006,6 +1006,8 @@ export default function ProfilePage() {
             </Card>
           )}
 
+          <SupportRequest kind="account_deletion" />
+
           {/* Actions */}
           <div className="flex flex-wrap gap-2 pt-2">
             <Button asChild size="sm" variant="outline" className="rounded-xl">
@@ -1105,7 +1107,6 @@ export default function ProfilePage() {
           </Card>
         </TabsContent>
       </Tabs>
-      <SupportRequest kind="account_deletion" />
     </div>
   );
 }

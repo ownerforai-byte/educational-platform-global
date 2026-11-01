@@ -4,11 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  // Declare the automatic JSX runtime here so .tsx test files are
-  // transformed correctly by Vite's esbuild pipeline.
-  esbuild: {
-    jsx: "automatic",
-  },
+  // The React plugin configures the automatic JSX runtime for supported Vite versions.
   test: {
     environment: "jsdom",
     globals: true,

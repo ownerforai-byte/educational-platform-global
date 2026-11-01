@@ -13,7 +13,13 @@
 
 <!-- coderabbit-ai-generated-section:v1:6604f0325c1ef42fe9fb34c051ec85cbcbc203103bc22d0fcc1640c6db786d75 -->
 
-Status: repository preparation verified; owner setup and release acceptance pending. Full gate, Android build and final CodeRabbit review passed.
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:47b589f7e1b081bcc7612697a7559a5ce42c07f99a9d96af4bf0c382a1c5b047 -->
+
+Status: repository preparation completed; owner setup and release acceptance remain pending. No commit-bound full-gate, Android-build, or final CodeRabbit-review results are recorded for commit c43fd6c9e9f01e2ea822ae25fb5295e7f2e6d909. Earlier local validation is recorded in the task workspace.
+
+<!-- /coderabbit-ai-generated:v1 -->
 
 <!-- /coderabbit-ai-generated:v1 --> External setup and acceptance remain outstanding.
 

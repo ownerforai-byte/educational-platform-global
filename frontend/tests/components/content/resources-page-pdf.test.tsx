@@ -79,7 +79,7 @@ describe("ResourcesPage PDF Scrolling & Viewing", () => {
       const recoverableError = vi.fn();
       let root: ReturnType<typeof hydrateRoot> | undefined;
       try {
-        await act(async () => {
+        await act(() => {
           root = hydrateRoot(container, <ResourcesPage />, { onRecoverableError: recoverableError });
         });
         const iframe = Array.from(container.querySelectorAll("iframe")).find((frame) => frame.title === doc.title);
@@ -87,7 +87,7 @@ describe("ResourcesPage PDF Scrolling & Viewing", () => {
         expect(recoverableError).not.toHaveBeenCalled();
         expect(errorSpy.mock.calls).toEqual([]);
       } finally {
-        await act(async () => { root?.unmount(); });
+        await act(() => { root?.unmount(); });
         container.remove();
         errorSpy.mockRestore();
       }

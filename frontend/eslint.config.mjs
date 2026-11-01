@@ -1,13 +1,17 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { createRequire } from "module";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+// Next 16 exports a flat config; Next 15 still exposes a legacy config.
+const require = createRequire(import.meta.url);
+const nextConfig = require("eslint-config-next/core-web-vitals");
+const nextRules = Array.isArray(nextConfig)
+  ? nextConfig
+  : new (await import("@eslint/eslintrc")).FlatCompat({ baseDirectory: __dirname })
+      .extends("next/core-web-vitals");
 
 const eslintConfig = [
   {
@@ -26,8 +30,9 @@ const eslintConfig = [
       "*.config.ts",
     ],
   },
-  ...compat.extends("next/core-web-vitals"),
+  ...nextRules,
   {
+    plugins: { "react-hooks": require("eslint-plugin-react-hooks") },
     rules: {
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",

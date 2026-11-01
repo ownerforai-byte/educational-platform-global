@@ -40,7 +40,13 @@ Register the correct personal/organization account; complete identity/contact/de
 
 ## 7. Establish domain verification
 
-Add the actual Play app-signing fingerprint in colon-separated uppercase form to frontend/public/.well-known/assetlinks.json and the verified-fingerprint list in .github/workflows/ci.yml. Current value is only the inspected historical AAB signer; it does not prove the Play-installed signing identity. Keep the upload certificate only if that install path is intentionally trusted. Deploy the JSON publicly over HTTPS without redirects/authentication. Check Google's Digital Asset Links API for linked:true, then install from Play internal testing and verify a full-screen TWA. The PWA's Play related-app declaration should only be advertised when the listing is available.
+Add the actual Play app-signing fingerprint in colon-separated uppercase form to frontend/public/.well-known/assetlinks.json and the verified-fingerprint list in .github/workflows/ci.yml. Current value is only the inspected historical AAB signer; it does not prove the Play-installed signing identity. Keep the upload certificate only if that install path is intentionally trusted. Deploy the JSON publicly over HTTPS without redirects/authentication. Check Google's Digital Asset Links API for linked:true, then install from Play internal testing and verify a full-screen TWA. <!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:c9b1d64a67d8dde200f34dc23279054875eb644808fe9b2eab0c483c774bf605 -->
+
+Keep the Play entry in manifest.json `related_applications` before and after listing: the assetlinks CI gate requires the package declaration. Before the listing is available, keep `prefer_related_applications` false so the browser does not prefer the Play app. Once the listing is available, change that preference only if desired.
+
+<!-- /coderabbit-ai-generated:v1 -->
 
 ## 8. Configure protected Android publishing
 

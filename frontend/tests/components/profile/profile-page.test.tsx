@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 
 // ─── Mocks ──────────────────────────────────────────────────────────────────
 
@@ -181,7 +181,15 @@ describe("ProfilePage", () => {
   it("switches to the Account tab with account details", async () => {
     render(<ProfilePage />);
 
+    expect(screen.queryByText("Request account deletion")).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
+
+    const panel = screen.getByRole("tabpanel", { name: /account/i });
+    expect(within(panel).getByText("Request account deletion")).toBeVisible();
+    fireEvent.click(screen.getByRole("tab", { name: /activity/i }));
+    expect(screen.queryByText("Request account deletion")).not.toBeVisible();
+    fireEvent.click(screen.getByRole("tab", { name: /account/i }));
+    expect(within(screen.getByRole("tabpanel", { name: /account/i })).getByText("Request account deletion")).toBeVisible();
 
     expect(screen.getByText("Full name")).toBeInTheDocument();
     // "PRO" appears in the header badge AND the account row — both present.
@@ -191,7 +199,9 @@ describe("ProfilePage", () => {
     ).toHaveAttribute("href", "/progress");
 
     // Progress panel stays mounted (previous tab content preserved).
-    expect(await screen.findByText("Cell Structure")).toBeInTheDocument();
+    const progressPanel = screen.getByText("My Progress").closest('[role="tabpanel"]');
+    expect(progressPanel).not.toBeNull();
+    expect(await within(progressPanel as HTMLElement).findByText("Cell Structure")).toBeInTheDocument();
   });
 
   it("redirects guests to login with a next return target", () => {

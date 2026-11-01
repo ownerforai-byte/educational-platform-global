@@ -11,7 +11,7 @@ const schema = z.object({
 }).strict();
 const escapeHtml = (text: string) => text.replace(/[&<>"']/g, char => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
-})[char]!);
+})[char] ?? char);
 
 // No premium/approval gate: every authenticated account may request deletion.
 // An account-scoped support limiter follows auth; global IP limits still apply.
