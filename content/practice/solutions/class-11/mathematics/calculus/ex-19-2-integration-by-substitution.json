@@ -1,0 +1,293 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Substitution rule: if the derivative of the inner function appears as a factor, set u = inner function and the integral collapses to integral of u^n du.",
+      "marks": 2,
+      "question": "Q1(i). Find the indefinite integral: integral of 3x^2 (x^3 + 1)^3 dx. (T.U. 052 H)",
+      "solution": "Let u = x^3 + 1, du = 3x^2 dx - exactly the factor present. Then integral 3x^2(x^3+1)^3 dx = integral u^3 du = u^4/4 + c = (1/4)(x^3+1)^4 + c. Check: d/dx[(1/4)(x^3+1)^4] = (1/4)*4(x^3+1)^3*3x^2 = 3x^2(x^3+1)^3. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(i); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Constant-factor adjustment: du carries a constant multiple of x dx, so divide by that constant - never by x itself.",
+      "marks": 2,
+      "question": "Q1(ii). Find the indefinite integral: integral of x (a^2 + x^2)^(3/2) dx.",
+      "solution": "Let u = a^2 + x^2, du = 2x dx, so x dx = du/2. Then integral x(a^2+x^2)^(3/2) dx = (1/2) integral u^(3/2) du = (1/2) * u^(5/2)/(5/2) = (1/5)(a^2+x^2)^(5/2) + c. Check: d/dx = (1/5)(5/2)(a^2+x^2)^(3/2)*2x = x(a^2+x^2)^(3/2). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(ii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "When the numerator is a constant multiple of the inner derivative the result is a logarithm: integral du/u = log|u|.",
+      "marks": 2,
+      "question": "Q1(iii). Find the indefinite integral: integral of x dx / (3x^2 - 4).",
+      "solution": "Let u = 3x^2 - 4, du = 6x dx, so x dx = du/6. Then integral x dx/(3x^2-4) = (1/6) integral du/u = (1/6) log|3x^2 - 4| + c. Check: d/dx = (1/6)*6x/(3x^2-4) = x/(3x^2-4). Boxed (printed key prints log(3x^2-4) without the modulus; the modulus is the correct domain-safe form).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(iii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "The exponent n-1 is deliberately one less than n so that d(a^n + x^n) = n x^(n-1) dx: a textbook substitution.",
+      "marks": 3,
+      "question": "Q1(iv). Find the indefinite integral: integral of x^(n-1) dx / sqrt(a^n + x^n).",
+      "solution": "Let u = a^n + x^n, du = n x^(n-1) dx, so x^(n-1) dx = du/n. Then integral x^(n-1) dx/sqrt(a^n+x^n) = (1/n) integral u^(-1/2) du = (1/n)*2 sqrt(u) = (2/n) sqrt(a^n + x^n) + c. Check: d/dx[(2/n)(a^n+x^n)^(1/2)] = (2/n)*(1/2)(a^n+x^n)^(-1/2)*n x^(n-1) = x^(n-1)/sqrt(a^n+x^n). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(iv); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Match the numerator to the inner derivative up to a constant: (3x^2+9x+5)' = 6x+9 = 3(2x+3).",
+      "marks": 3,
+      "question": "Q1(v). Find the indefinite integral: integral of (2x + 3) dx / (3x^2 + 9x + 5)^3.",
+      "solution": "Let u = 3x^2 + 9x + 5, du = (6x+9) dx = 3(2x+3) dx, so (2x+3) dx = du/3. Then integral (2x+3)u^(-3) dx = (1/3) integral u^(-3) du = (1/3)*u^(-2)/(-2) = -1/(6u^2) + c = -1/[6(3x^2+9x+5)^2] + c. Check: d/dx[-1/(6u^2)] = (1/(3))u^(-3)u' = (2x+3)/u^3. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(v); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Same pattern with a different constant: (3x^2+4x+1)' = 6x+4 = 2(3x+2).",
+      "marks": 3,
+      "question": "Q1(vi). Find the indefinite integral: integral of (3x + 2) dx / (3x^2 + 4x + 1)^3.",
+      "solution": "Let u = 3x^2 + 4x + 1, du = (6x+4) dx = 2(3x+2) dx, so (3x+2) dx = du/2. Then integral (3x+2)u^(-3) dx = (1/2) integral u^(-3) du = (1/2)*u^(-2)/(-2) = -1/(4u^2) + c = -1/[4(3x^2+4x+1)^2] + c. Check by differentiating back. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(vi); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Recognise 3x(x+2) = 3x^2 + 6x = (x^3 + 3x^2 + 1)' - the whole prefactor is the inner derivative.",
+      "marks": 2,
+      "question": "Q1(vii). Find the indefinite integral: integral of 3x(x + 2)(x^3 + 3x^2 + 1)^2 dx.",
+      "solution": "Let u = x^3 + 3x^2 + 1, du = (3x^2 + 6x) dx = 3x(x+2) dx. Then integral 3x(x+2)u^2 dx = integral u^2 du = u^3/3 + c = (1/3)(x^3+3x^2+1)^3 + c. Check: d/dx = (1/3)*3u^2*(3x^2+6x) = 3x(x+2)u^2. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(vii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "The inner derivative 2x+4 = 2(x+2) is twice the numerator, so the answer is the square root itself.",
+      "marks": 2,
+      "question": "Q1(viii). Find the indefinite integral: integral of (x + 2) dx / sqrt(x^2 + 4x + 3).",
+      "solution": "Let u = x^2 + 4x + 3, du = (2x+4) dx = 2(x+2) dx, so (x+2) dx = du/2. Then integral (x+2)u^(-1/2) dx = (1/2) integral u^(-1/2) du = (1/2)*2 sqrt(u) = sqrt(x^2+4x+3) + c. Check: d/dx sqrt(x^2+4x+3) = (2x+4)/(2 sqrt(x^2+4x+3)) = (x+2)/sqrt(...). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(viii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Here (x^3+3x+4)' = 3(x^2+1): the numerator is exactly one third of the inner derivative.",
+      "marks": 2,
+      "question": "Q1(ix). Find the indefinite integral: integral of (x^2 + 1) dx / sqrt(x^3 + 3x + 4).",
+      "solution": "Let u = x^3 + 3x + 4, du = 3(x^2+1) dx, so (x^2+1) dx = du/3. Then integral (x^2+1)u^(-1/2) dx = (1/3) integral u^(-1/2) du = (1/3)*2 sqrt(u) = (2/3) sqrt(x^3+3x+4) + c. Check by differentiating. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q1(ix); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Composite sine with a quadratic argument: u = ax^2 + b turns the integral into -(1/(2a)) cos u.",
+      "marks": 2,
+      "question": "Q2(i). Find the indefinite integral: integral of x sin(ax^2 + b) dx.",
+      "solution": "Let u = ax^2 + b, du = 2ax dx, so x dx = du/(2a). Then integral x sin(ax^2+b) dx = (1/(2a)) integral sin u du = -(1/(2a)) cos(ax^2+b) + c. Check: d/dx = (1/(2a)) sin u * (2ax) = x sin(ax^2+b). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(i); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "d(x^3+1) = 3x^2 dx, so the cube-and-square pattern again gives a single sine term.",
+      "marks": 2,
+      "question": "Q2(ii). Find the indefinite integral: integral of x^2 cos(x^3 + 1) dx.",
+      "solution": "Let u = x^3 + 1, du = 3x^2 dx, so x^2 dx = du/3. Then integral x^2 cos(x^3+1) dx = (1/3) integral cos u du = (1/3) sin(x^3+1) + c. Check: d/dx = (1/3) cos u * 3x^2. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(ii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "d(log x) = dx/x: the logarithmic substitution removes the 1/x factor entirely.",
+      "marks": 2,
+      "question": "Q2(iii). Find the indefinite integral: integral of (1/x) sin(log x) dx.",
+      "solution": "Let u = log x, du = dx/x. Then integral (1/x) sin(log x) dx = integral sin u du = -cos u + c = -cos(log x) + c. Check: d/dx[-cos(log x)] = sin(log x)/x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(iii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Odd power of sine with its derivative present: u = sin x.",
+      "marks": 2,
+      "question": "Q2(iv). Find the indefinite integral: integral of sin^3 x cos x dx.",
+      "solution": "Let u = sin x, du = cos x dx. Then integral sin^3 x cos x dx = integral u^3 du = u^4/4 + c = (1/4) sin^4 x + c. Check: d/dx = sin^3 x cos x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(iv); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "With an odd power of cosine, split off one cos x, convert the remaining even power by cos^2 = 1 - sin^2, then substitute u = sin x.",
+      "marks": 3,
+      "question": "Q2(v). Find the indefinite integral: integral of sin^2 x cos^3 x dx. (T.U. 2049 H)",
+      "solution": "Write cos^3 x = cos^2 x * cos x = (1 - sin^2 x) cos x. Let u = sin x, du = cos x dx: integral sin^2 x (1 - sin^2 x) cos x dx = integral (u^2 - u^4) du = u^3/3 - u^5/5 + c = (1/3) sin^3 x - (1/5) sin^5 x + c. Check: d/dx = sin^2 x cos x - sin^4 x cos x = sin^2 x cos x (1 - sin^2 x) = sin^2 x cos^3 x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(v); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Now the odd power is sine's: keep one sin x as du, write sin^2 = 1 - cos^2, and substitute u = cos x (the minus sign flips the result).",
+      "marks": 3,
+      "question": "Q2(vi). Find the indefinite integral: integral of cos^5 x sin^3 x dx.",
+      "solution": "Write sin^3 x = sin^2 x * sin x = (1 - cos^2 x) sin x. Let u = cos x, du = -sin x dx, so sin x dx = -du: integral cos^5 x (1 - cos^2 x) sin x dx = -integral u^5 (1 - u^2) du = -u^6/6 + u^8/8 + c = (1/8) cos^8 x - (1/6) cos^6 x + c. Check: d/dx = -cos^7 x sin x + cos^5 x sin x = cos^5 x sin x (1 - cos^2 x) = cos^5 x sin^3 x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(vi); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Linear inner function with cos x as its own derivative (over a).",
+      "marks": 3,
+      "question": "Q2(vii). Find the indefinite integral: integral of (a sin x - b)^3 cos x dx.",
+      "solution": "Let u = a sin x - b, du = a cos x dx, so cos x dx = du/a. Then integral u^3 du/a = (1/a) u^4/4 + c = (1/(4a))(a sin x - b)^4 + c. Check: d/dx = (1/(4a))*4(a sin x - b)^3*a cos x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(vii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "d(1 - cos x) = sin x dx, so a power of a cosine-shifted denominator integrates by the power rule (m = 1 is the separate logarithmic case).",
+      "marks": 3,
+      "question": "Q2(viii). Find the indefinite integral: integral of sin x dx / (1 - cos x)^m. (HSEB 2054)",
+      "solution": "Let u = 1 - cos x, du = sin x dx. Then integral u^(-m) du = u^(1-m)/(1-m) + c for m /= 1, i.e. (1/(1-m))(1 - cos x)^(1-m) + c. Check: d/dx = (1/(1-m))*(1-m)(1-cos x)^(-m)*sin x = sin x/(1-cos x)^m. For m = 1 the answer would be log|1 - cos x| + c instead. Boxed (printed key p578, m /= 1).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(viii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "cot x dx = d(log sin x): the whole integrand is u^3 du with u = log sin x.",
+      "marks": 3,
+      "question": "Q2(ix). Find the indefinite integral: integral of cot x (log sin x)^3 dx. (T.U. 2052)",
+      "solution": "Let u = log sin x, then du = (cos x/sin x) dx = cot x dx. So integral u^3 du = u^4/4 + c = (1/4)(log sin x)^4 + c. Check: d/dx = (log sin x)^3 cot x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(ix); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Even power of secant with a tan^2 in front: keep sec^2 theta dtheta for du and convert the remaining sec^2 with sec^2 = 1 + tan^2.",
+      "marks": 3,
+      "question": "Q2(x). Find the indefinite integral: integral of tan^2 theta sec^4 theta dtheta. (T.U. 2050 H)",
+      "solution": "Let u = tan theta, du = sec^2 theta dtheta; sec^4 theta = (1 + u^2) sec^2 theta. Then integral tan^2 theta sec^4 theta dtheta = integral u^2 (1 + u^2) du = u^3/3 + u^5/5 + c = (1/3) tan^3 theta + (1/5) tan^5 theta + c. Check: d/dtheta = tan^2 theta sec^2 theta + tan^4 theta sec^2 theta = tan^2 theta sec^2 theta (1 + tan^2 theta) = tan^2 theta sec^4 theta. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(x); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "sec^2 x is the derivative of tan x; the leftover sec^2 becomes (1 + tan^2).",
+      "marks": 3,
+      "question": "Q2(xi). Find the indefinite integral: integral of tan^3 x sec^4 x dx.",
+      "solution": "Let u = tan x, du = sec^2 x dx; sec^4 x = (1 + u^2)^2. Then integral tan^3 x sec^4 x dx = integral u^3 (1 + u^2) du = integral (u^3 + u^5) du = u^4/4 + u^6/6 + c = (1/4) tan^4 x + (1/6) tan^6 x + c. Check: d/dx = tan^3 x sec^2 x + tan^5 x sec^2 x = tan^3 x sec^2 x (1 + tan^2 x) = tan^3 x sec^4 x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xi); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Here the odd power is tan's: keep sec x tan x for du and rewrite tan^2 = sec^2 - 1 in terms of u = sec x.",
+      "marks": 4,
+      "question": "Q2(xii). Find the indefinite integral: integral of tan^3 x sec^(3/2) x dx.",
+      "solution": "Let u = sec x, du = sec x tan x dx. Write tan^3 x sec^(3/2) x = tan^2 x * sec^(1/2) x * (sec x tan x) = (u^2 - 1) u^(1/2) du. So integral = integral (u^(5/2) - u^(1/2)) du = (2/7) u^(7/2) - (2/3) u^(3/2) + c = (2/7) sec^(7/2) x - (2/3) sec^(3/2) x + c. Check: d/dx = sec^(5/2) x sec x tan x - sec^(1/2) x sec x tan x = tan x sec^(3/2) x (sec^2 x - 1) = tan^3 x sec^(3/2) x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Mirror of Q2(xi) for the co-functions: d(cot x) = -cosec^2 x dx, and cosec^2 = 1 + cot^2.",
+      "marks": 4,
+      "question": "Q2(xiii). Find the indefinite integral: integral of cot^(3/2) x cosec^4 x dx.",
+      "solution": "Let u = cot x, du = -cosec^2 x dx; cosec^4 x = (1 + u^2) cosec^2 x. Then integral cot^(3/2) x cosec^4 x dx = -integral u^(3/2)(1 + u^2) du = -[u^(5/2)/(5/2) + u^(9/2)/(9/2)] = -(2/5) cot^(5/2) x - (2/9) cot^(9/2) x + c. Check: d/dx[-(2/5)cot^(5/2)x] = -(2/5)(5/2)cot^(3/2)x*(-cosec^2 x) = cot^(3/2)x cosec^2 x, and -(2/9)(9/2)cot^(7/2)x*(-cosec^2 x) = cot^(7/2)x cosec^2 x; the sum is cot^(3/2)x cosec^2 x (1 + cot^2 x) = cot^(3/2)x cosec^4 x. Boxed (printed key p578 reads -(2/5)cot^(5/2)x -(2/9)cot^(9/2)x + c - 320-dpi zoom confirms the 5).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xiii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Numerator is (1/a) times the derivative of the denominator - the logarithmic form again.",
+      "marks": 3,
+      "question": "Q2(xiv). Find the indefinite integral: integral of (sin ax + cos ax)/(sin ax - cos ax) dx.",
+      "solution": "d/dx (sin ax - cos ax) = a(cos ax + sin ax) = a(sin ax + cos ax). Hence integral (sin ax + cos ax)/(sin ax - cos ax) dx = (1/a) integral du/u with u = sin ax - cos ax, giving (1/a) log|sin ax - cos ax| + c. Check: d/dx = (1/a)*a(cos ax + sin ax)/(sin ax - cos ax). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xiv); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Standard form: cot x = cos x/sin x, and cos x is the derivative of sin x.",
+      "marks": 1,
+      "question": "Q2(xv). Find the indefinite integral: integral of cot x dx.",
+      "solution": "integral cot x dx = integral cos x dx/sin x. With u = sin x, du = cos x dx: integral du/u = log|sin x| + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xv); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Companion standard form: tan x = sin x/cos x and sin x dx = -d(cos x).",
+      "marks": 1,
+      "question": "Q2(xvi). Find the indefinite integral: integral of tan x dx.",
+      "solution": "integral tan x dx = integral sin x dx/cos x = -integral du/u with u = cos x = -log|cos x| + c = log|sec x| + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xvi); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Multiply and divide by (sec x + tan x) so the top becomes the derivative of the bottom.",
+      "marks": 2,
+      "question": "Q2(xvii). Find the indefinite integral: integral of sec x dx.",
+      "solution": "sec x = sec x (sec x + tan x)/(sec x + tan x). The numerator sec^2 x + sec x tan x = d(sec x + tan x)/dx, so the integral is log|sec x + tan x| + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xvii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Multiply and divide by (cosec x - cot x): its derivative is -cosec x (cosec x - cot x).",
+      "marks": 2,
+      "question": "Q2(xviii). Find the indefinite integral: integral of cosec x dx.",
+      "solution": "Write cosec x = cosec x (cosec x - cot x)/(cosec x - cot x). Since d(cosec x - cot x)/dx = -cosec x cot x + cosec^2 x = cosec x (cosec x - cot x), the integral is log|cosec x - cot x| + c. Equivalently log|tan(x/2)| + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xviii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Peel off tan x sec^2 x (which integrates to tan^2/2) and convert the remaining tan^2 with the identity tan^2 = sec^2 - 1.",
+      "marks": 2,
+      "question": "Q2(xix). Find the indefinite integral: integral of tan^3 x dx.",
+      "solution": "tan^3 x = tan x (sec^2 x - 1) = tan x sec^2 x - tan x. Hence integral tan^3 x dx = (1/2) tan^2 x - integral tan x dx = (1/2) tan^2 x - log|sec x| + c = (1/2) tan^2 x + log|cos x| + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xix); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Mirror image: cot^3 = cot x cosec^2 x - cot x.",
+      "marks": 2,
+      "question": "Q2(xx). Find the indefinite integral: integral of cot^3 x dx.",
+      "solution": "cot^3 x = cot x (cosec^2 x - 1) = cot x cosec^2 x - cot x. The first term integrates to -(1/2) cot^2 x and integral cot x dx = log|sin x|, so integral cot^3 x dx = -(1/2) cot^2 x - log|sin x| + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xx); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Even power of secant: keep sec^2 x for du, express the rest with sec^2 = 1 + tan^2.",
+      "marks": 2,
+      "question": "Q2(xxi). Find the indefinite integral: integral of sec^4 x dx.",
+      "solution": "sec^4 x = (1 + tan^2 x) sec^2 x. With u = tan x, du = sec^2 x dx: integral (1 + u^2) du = u + u^3/3 + c = tan x + (1/3) tan^3 x + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxi); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Even power of tangent: split tan^2 * tan^2 and replace one factor by sec^2 - 1 to expose a perfect derivative.",
+      "marks": 3,
+      "question": "Q2(xxii). Find the indefinite integral: integral of tan^4 x dx. (T.U. 2053)",
+      "solution": "tan^4 x = tan^2 x (sec^2 x - 1) = tan^2 x sec^2 x - tan^2 x. The first term gives tan^3 x/3; for the second write tan^2 x = sec^2 x - 1, so integral tan^2 x dx = tan x - x. Hence integral tan^4 x dx = (1/3) tan^3 x - tan x + x + c. Check: d/dx = tan^2 x sec^2 x - sec^2 x + 1 = tan^2 x sec^2 x - tan^2 x = tan^4 x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Odd power: peel tan x sec^2 x, then the remaining tan^2 integrates as tan x - x.",
+      "marks": 3,
+      "question": "Q2(xxiii). Find the indefinite integral: integral of tan^5 x dx.",
+      "solution": "tan^5 x = tan^3 x (sec^2 x - 1). So integral tan^5 x dx = integral tan^3 x sec^2 x dx - integral tan^3 x dx = tan^4 x/4 - [tan^2 x/2 - log|sec x|] = (1/4) tan^4 x - (1/2) tan^2 x + log|sec x| + c, using Q2(xix). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxiii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Factor the identity: tan^2 + tan^4 = tan^2 (1 + tan^2) = tan^2 x sec^2 x - a perfect derivative.",
+      "marks": 2,
+      "question": "Q2(xxiv). Find the indefinite integral: integral of (tan^2 x + tan^4 x) dx.",
+      "solution": "tan^2 x + tan^4 x = tan^2 x (1 + tan^2 x) = tan^2 x sec^2 x. With u = tan x, du = sec^2 x dx: integral u^2 du = u^3/3 + c = (1/3) tan^3 x + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxiv); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "sin x cos x = (1/2) sin 2x, and its derivative is cos 2x: the exponent's derivative is exactly the multiplier.",
+      "marks": 3,
+      "question": "Q2(xxv). Find the indefinite integral: integral of e^(sin x cos x) cos 2x dx.",
+      "solution": "Let u = sin x cos x = (1/2) sin 2x. Then du = (1/2)*2 cos 2x dx = cos 2x dx, so integral e^u du = e^u + c = e^(sin x cos x) + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxv); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "d(sin^2 x) = 2 sin x cos x = sin 2x, so the multiplier is precisely the derivative of the exponent.",
+      "marks": 3,
+      "question": "Q2(xxvi). Find the indefinite integral: integral of e^(sin^2 x) sin 2x dx. (T.U. 2048 H)",
+      "solution": "Let u = sin^2 x, du = 2 sin x cos x dx = sin 2x dx. Then integral e^u du = e^u + c = e^(sin^2 x) + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxvi); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "d(x + 1/x) = 1 - 1/x^2 - the classic exponent-is-its-own-derivative trick.",
+      "marks": 3,
+      "question": "Q2(xxvii). Find the indefinite integral: integral of (1 - 1/x^2) e^(x + 1/x) dx. (T.U. 2048, 2055 S, 2058 S)",
+      "solution": "Let u = x + 1/x, du = (1 - 1/x^2) dx. Then integral e^u du = e^u + c = e^(x + 1/x) + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxvii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "d(sqrt x) = dx/(2 sqrt x): the 1/sqrt x factor is the derivative up to the constant 2.",
+      "marks": 3,
+      "question": "Q2(xxviii). Find the indefinite integral: integral of sin(sqrt(x))/sqrt(x) dx. (T.U. 2050)",
+      "solution": "Let u = sqrt x, du = dx/(2 sqrt x), so dx/sqrt x = 2 du. Then integral sin u * 2 du = -2 cos u + c = -2 cos(sqrt x) + c. Check: d/dx = -2(-sin sqrt x)*(1/(2 sqrt x)) = sin sqrt x / sqrt x. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxviii); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Substituting u = 1 + e^x turns e^x into u - 1, so the integrand becomes a simple proper fraction.",
+      "marks": 3,
+      "question": "Q2(xxix). Find the indefinite integral: integral of e^(2x) dx/(1 + e^x). (T.U. 2052 H)",
+      "solution": "Let u = 1 + e^x, du = e^x dx. Since e^(2x) = e^x * e^x = (u - 1) du, integral e^(2x)/(1 + e^x) dx = integral (u - 1)/u du = integral (1 - 1/u) du = u - log|u| + c = e^x - log(1 + e^x) + c (since u > 0). Check: d/dx = e^x - e^x/(1 + e^x) = e^x(1 + e^x - 1)/(1 + e^x) = e^(2x)/(1 + e^x). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxix); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "Divide top and bottom by e^(x/2) to reveal tanh(x/2), whose integral is 2 log cosh(x/2).",
+      "marks": 4,
+      "question": "Q2(xxx). Find the indefinite integral: integral of (e^x - 1)/(e^x + 1) dx.",
+      "solution": "Multiply numerator and denominator by e^(-x/2): (e^(x/2) - e^(-x/2))/(e^(x/2) + e^(-x/2)) = tanh(x/2). Then integral tanh(x/2) dx = 2 log|cosh(x/2)| + c = 2 log(e^(x/2) + e^(-x/2)) + c (the log 2 and log cosh constants absorb into c). Check: d/dx[2 log(e^(x/2)+e^(-x/2))] = 2 * ((1/2)e^(x/2) - (1/2)e^(-x/2))/(e^(x/2)+e^(-x/2)) = (e^x - 1)/(e^x + 1). Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxx); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    },
+    {
+      "knowledgeNote": "d(x e^x - e^x) = x e^x dx, so the reciprocal-cosine-squared is a sec^2 of the inner function.",
+      "marks": 4,
+      "question": "Q2(xxxi). Find the indefinite integral: integral of x e^x dx / cos^2 (x e^x - e^x).",
+      "solution": "Let u = x e^x - e^x. Then du = (e^x + x e^x - e^x) dx = x e^x dx - exactly the numerator. So integral sec^2 u du = tan u + c = tan(x e^x - e^x) + c. Boxed (printed key p578).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.2 Q2(xxxi); book p576-577 = PDF p603-604; key book p578 = PDF p605"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.19 Antiderivatives, BOOK Exercise 19.2 (integration by substitution and trigonometric/exponential tricks): every question and sub-part of the printing, solved step by step and verified by differentiation against the printed Answers on book p578.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.2 (Integration by Substitution) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-19-2-integration-by-substitution",
+  "topicTitle": "Ch.19 Book Ex 19.2 - integration by substitution (40 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

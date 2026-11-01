@@ -1,0 +1,132 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Differentiate s once for velocity (m/s) and twice for acceleration (m/s^2); a constant second derivative means uniform acceleration.",
+      "marks": 3,
+      "question": "Q1(a). A particle moves in a straight line. The distance s (in metre) covered in time t (in second) is s = 2t^2 + 5t - 4. Find the velocity and the acceleration of the particle at t = 6 sec.",
+      "solution": "Velocity is the time-derivative of displacement and acceleration the time-derivative of velocity. v = ds/dt = 4t + 5; at t = 6: v = 24 + 5 = 29 m/s. a = dv/dt = d^2s/dt^2 = 4 (constant); at t = 6: a = 4 m/s^2. Boxed 29 m/s and 4 m/s^2 (printed key p559: 29 m/s, 4 m/s^2).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q1(a); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "The displacement is quadratic, so the acceleration is a constant -30 m/s^2 (uniformly retarded motion).",
+      "marks": 3,
+      "question": "Q1(b). The displacement of a particle varies with time as x = -15t^2 + 20t + 30. Find the velocity and the acceleration of the particle at t = 1/2 second (distance in metre, time in second).",
+      "solution": "v = dx/dt = -30t + 20; at t = 1/2: v = -15 + 20 = 5 m/s. a = dv/dt = -30 m/s^2 for every t, so at t = 1/2: a = -30 m/s^2. Boxed 5 m/s and -30 m/s^2 (printed key p559: 5 m/s, -30 m/s^2).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q1(b); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Related rates: differentiate the geometric relation with respect to time, then substitute the instantaneous values.",
+      "marks": 3,
+      "question": "Q2(a). The side of a square sheet is increasing at the rate of 5 cm/min. At what rate is the area increasing when the side is 12 cm long?",
+      "solution": "Let the side be x and the area A = x^2. Differentiate with respect to t: dA/dt = 2x dx/dt. Given dx/dt = 5 cm/min and x = 12 cm: dA/dt = 2(12)(5) = 120. Boxed 120 cm^2/min (printed key p559: 120 cm^2/min).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q2(a); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Note 2 * 52.5 = 105 and 105 / 7 = 15, so the 22/7 cancels neatly to 330.",
+      "marks": 3,
+      "question": "Q2(b). A stone thrown into a pond produces circular ripples which expand from the point of impact. If the radius of the ripple increases at the rate of 3.5 cm/sec, how fast is the area growing when the radius is 15 cm? (pi = 22/7)",
+      "solution": "A = pi r^2, so dA/dt = 2 pi r dr/dt. With r = 15, dr/dt = 3.5 and pi = 22/7: dA/dt = 2 * (22/7) * 15 * 3.5 = 2 * (22/7) * 52.5 = 330. Boxed 330 cm^2/sec (printed key p559: 330 cm^2/sec).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q2(b); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Only the cross-sectional area pi r^2 multiplies dh/dt; the total height 40 cm is redundant data in this printing.",
+      "marks": 4,
+      "question": "Q3(a). From a cylindrical drum containing oil and kept vertical, the oil is leaking so that the level of the oil is decreasing at the rate of 2 cm/min. If the radius and the height of the drum are 10.5 cm and 40 cm respectively, find the rate at which the volume of the oil is decreasing. (pi = 22/7)",
+      "solution": "V = pi r^2 h with r constant (10.5 cm): dV/dt = pi r^2 dh/dt. Given dh/dt = -2 cm/min (level decreasing), dV/dt = (22/7)(10.5)^2(-2) = (22/7)(110.25)(-2) = -(22/7)(220.5) = -693. Hence the volume decreases at 693 cm^3/min. Boxed 693 cm^3/min (printed key p560: 693 cm^3/min). The drum's height 40 cm is not needed: the level is falling with the full cross-section pi r^2 throughout.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q3(a); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "The rising speed is the flow rate divided by the base area 64 pi cm^2.",
+      "marks": 4,
+      "question": "Q3(b). Water is poured into a right circular cylinder of radius 8 cm at the rate of 18 cu.cm/min. Find the rate at which the level of water is rising in the cylinder.",
+      "solution": "V = pi r^2 h with r = 8 cm fixed, so dV/dt = 64 pi dh/dt. Given dV/dt = 18: 64 pi dh/dt = 18, dh/dt = 18/(64 pi) = 9/(32 pi). Boxed 9/(32 pi) cm/min (printed key p560: 9/(32 pi) cm/min).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q3(b); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Same pattern as Q3(b): rate of rise = flow rate / base area (81 pi).",
+      "marks": 4,
+      "question": "Q3(c). Gasoline is pumped into a vertical cylindrical tank at the rate of 24 cu.cm/min. The radius of the tank is 9 cm. How fast is the surface rising?",
+      "solution": "V = pi r^2 h with r = 9 cm fixed: dV/dt = 81 pi dh/dt. Given dV/dt = 24: dh/dt = 24/(81 pi) = 8/(27 pi). Boxed 8/(27 pi) cm/min (printed key p560: 8/(27 pi) cm/min).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q3(c); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "The surface area 4 pi r^2 is the conversion factor between volume rate and radius rate.",
+      "marks": 4,
+      "question": "Q4(a). A spherical balloon is inflated at the rate of 18 cu.cm/sec. At what rate is the radius increasing when the radius is 8 cm?",
+      "solution": "V = (4/3) pi r^3, so dV/dt = 4 pi r^2 dr/dt. With dV/dt = 18 and r = 8: 18 = 4 pi (64) dr/dt = 256 pi dr/dt, so dr/dt = 18/(256 pi) = 9/(128 pi). Boxed 9/(128 pi) cm/sec (printed key p560: 9/(128 pi) cm/sec).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q4(a); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Write dV/dt two ways — as S dr/dt and as -kS — then cancel S; the radius rate is the constant -k.",
+      "marks": 5,
+      "question": "Q4(b). A spherical ball of salt is dissolving in water in such a way that the rate of decrease of volume at any instant is proportional to its surface. Prove that the radius is decreasing at a constant rate.",
+      "solution": "Let r be the radius. Volume V = (4/3) pi r^3 and surface S = 4 pi r^2, so dV/dt = 4 pi r^2 dr/dt = S dr/dt. The hypothesis says dV/dt = -k S for a positive constant k (the rate of decrease is proportional to the surface). Hence S dr/dt = -k S, and since S > 0 for r > 0, dr/dt = -k: the radius decreases at the constant rate k. Boxed (no separate key entry: 'prove that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q4(b); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Eliminate r using r = h/3 first, so V depends on h alone: V = pi h^3/27 and dV/dt = (pi h^2/9) dh/dt.",
+      "marks": 5,
+      "question": "Q5(a). The radius of a conical tank is 1/3 of the height. Water flows into an inverted conical tank at the rate of 4.4 cu.cm/sec. How fast is the level rising when the height of the water is 3.5 cm? (pi = 22/7)",
+      "solution": "With r = h/3, the water volume is V = (1/3) pi r^2 h = (1/3) pi (h^2/9) h = pi h^3/27. Differentiate: dV/dt = (pi h^2/9) dh/dt. Given dV/dt = 4.4 and h = 3.5: (22/7)(12.25)/9 * dh/dt = 4.4, and (22/7)(12.25) = 38.5, so (38.5/9) dh/dt = 4.4, giving dh/dt = 4.4 * 9/38.5 = 39.6/38.5 = 36/35. Boxed 36/35 cm/sec (printed key p560: 36/35 cm/sec).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q5(a); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "The tank's own dimensions fix the cone ratio r/h = 1/2; after that it is the same one-variable computation as Q5(a).",
+      "marks": 5,
+      "question": "Q5(b). Water flows into an inverted conical tank at the rate of 42 cm^3/sec. When the depth of the water is 8 cm, how fast is the level rising? Assume that the height of the tank is 12 cm and the radius of the top is 6 cm.",
+      "solution": "Similar triangles give r/h = 6/12 = 1/2, so r = h/2 and V = (1/3) pi (h^2/4) h = pi h^3/12. Then dV/dt = (pi h^2/4) dh/dt. With dV/dt = 42 and h = 8: 42 = (pi * 64/4) dh/dt = 16 pi dh/dt, so dh/dt = 42/(16 pi) = 21/(8 pi). Boxed 21/(8 pi) cm/sec (printed key p560: 21/(8 pi) cm/sec).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q5(b); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Find the edge from the given surface first, get dx/dt from the volume rate, then convert to dS/dt = 12x dx/dt.",
+      "marks": 4,
+      "question": "Q6. If the volume of the expanding cube is increasing at the rate of 24 cm^3/min, how fast is its surface area increasing when the surface area is 216 cm^2?",
+      "solution": "Surface area S = 6x^2 = 216 gives x^2 = 36, so the edge is x = 6 cm. Volume V = x^3 gives dV/dt = 3x^2 dx/dt: 24 = 3(36) dx/dt = 108 dx/dt, so dx/dt = 2/9 cm/min. Surface area S = 6x^2 gives dS/dt = 12x dx/dt = 12(6)(2/9) = 16. Boxed 16 cm^2/min (printed key p560: 16 cm^2/min).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q6; book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "A = pi(R^2 - r^2): the outer circle gains 210 cm^2/sec of area while the inner loses 240, so the annulus shrinks.",
+      "marks": 4,
+      "question": "Q7. Two concentric circles are expanding in such a way that the radius of the inner circle is increasing at the rate of 10 cm/sec and that of the outer circle at the rate of 7 cm/sec. At a certain time the radii of the inner and the outer circles are respectively 24 cm and 30 cm. At that time, is the area between the circles increasing or decreasing? How fast?",
+      "solution": "Let R be the outer and r the inner radius; the area between them is A = pi(R^2 - r^2). Then dA/dt = 2 pi (R dR/dt - r dr/dt). With R = 30, dR/dt = 7, r = 24, dr/dt = 10: dA/dt = 2 pi (30 * 7 - 24 * 10) = 2 pi (210 - 240) = -60 pi. The negative sign means the area is decreasing at 60 pi cm^2/sec. Boxed decreasing at 60 pi cm^2/sec (printed key p560: '60 pi cm^2/sec (decreasing)').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q7; book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Similar triangles give s = x/2 independently of x; the shadow grows at half the walking speed (the 42 cm data is not needed).",
+      "marks": 5,
+      "question": "Q8. A man of height 1.5 m walks away from a lamp post of height 4.5 m at the rate of 20 cm/sec. How fast is his shadow lengthening when the man is 42 cm from the post?",
+      "solution": "Let x be the man's distance from the post and s the length of his shadow (from his feet to its tip, measured away from the post). The lamp post and the man give similar triangles: s/(x + s) = 1.5/4.5 = 1/3. Hence 3s = x + s, i.e. 2s = x, so s = x/2. Differentiate: ds/dt = (1/2) dx/dt = (1/2)(20) = 10 cm/sec. Boxed 10 cm/sec (printed key p560: 10 cm/sec). The instantaneous distance 42 cm does not affect the answer, because the ratio s = x/2 is fixed for the given heights.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q8; book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Chain rule along the curve gives dy/dt = y'(x) dx/dt = 12 * 2 = 24; then differentiate D^2 to get dD/dt = (x x' + y y')/D at D = 2 sqrt 5.",
+      "marks": 5,
+      "question": "Q9. A point is moving along the curve y = 2x^3 - 3x^2 in such a way that its x-coordinate is increasing at the rate of 2 cm/sec. Find the rate at which the distance of the point from the origin is increasing when the point is at (2, 4).",
+      "solution": "Let the point be (x, y) with y = 2x^3 - 3x^2, and let D be its distance from the origin: D^2 = x^2 + y^2. At (2, 4): D = sqrt(4 + 16) = sqrt(20) = 2 sqrt(5). Differentiate D^2 = x^2 + y^2: 2D dD/dt = 2x dx/dt + 2y dy/dt, i.e. dD/dt = (x dx/dt + y dy/dt)/D. Now dy/dt = (6x^2 - 6x) dx/dt; at x = 2, dy/dx = 24 - 12 = 12, so dy/dt = 12(2) = 24 cm/sec. Hence dD/dt = (2(2) + 4(24))/(2 sqrt 5) = 100/(2 sqrt 5) = 50/sqrt 5 = 10 sqrt 5. Boxed 10 sqrt 5 cm/sec (printed key p560: 10 sqrt 5 cm/sec).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q9; book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Pythagoras with fixed height: at L = 25 the horizontal leg is 7 m, so the cord pays out at (7/25) of the kite's speed.",
+      "marks": 5,
+      "question": "Q10(a). A kite is 24 m high and there are 25 metres of cord out. If the kite moves horizontally at the rate of 36 km/hr directly away from the person who is flying it, how fast is the cord out?",
+      "solution": "Let x be the horizontal distance and L the length of cord; the kite height 24 m stays fixed, so L^2 = x^2 + 24^2. When L = 25: x^2 = 625 - 576 = 49, so x = 7 m. Differentiate: 2L dL/dt = 2x dx/dt, i.e. dL/dt = (x/L) dx/dt = (7/25)(36) = 10.08. Boxed 10.08 km/hr (printed key p560: 10.08 km/hr).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q10(a); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    },
+    {
+      "knowledgeNote": "Keep the units consistent (250 cm, 200 cm, hence 150 cm); the foot speeds up as the top comes down because dx/dt = -(y/x)dy/dt.",
+      "marks": 5,
+      "question": "Q10(b). A 2.5 m ladder leans against a vertical wall. If the top slides downwards at the rate of 12 cm/sec, find the speed of the lower end when it is 2 m from the wall.",
+      "solution": "Let x be the distance of the foot from the wall and y the height of the top, both in cm: x^2 + y^2 = 250^2. When x = 200 cm, y^2 = 62500 - 40000 = 22500, so y = 150 cm. Differentiate: 2x dx/dt + 2y dy/dt = 0, so dx/dt = -(y/x) dy/dt = -(150/200)(-12) = 9 cm/sec. Boxed 9 cm/sec (printed key p560: 9 cm/sec).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.2 (Rate of change / rate measure) Q10(b); book p558-559 = PDF p585-586; key book p559-560 = PDF p586-587"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.18 Application of Derivatives, BOOK Exercise 18.2 (rate measure): velocity and acceleration from displacement, related rates for areas, cylinders, cones, spheres, cubes, an expanding annulus, shadow lengths, a point moving on a curve, the kite and the sliding ladder — all 17 parts from book pp558-559 (PDF pp585-586), every printed answer verified against the book's own Answers, pp559-560.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.18 Book Ex 18.2 (Rate Measure) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-18-2-rate-measure",
+  "topicTitle": "Ch.18 Book Ex 18.2 - related rates and rate measure (17 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

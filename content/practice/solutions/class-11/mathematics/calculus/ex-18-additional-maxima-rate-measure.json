@@ -1,0 +1,160 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Extremum = stationary point where f' changes sign; second derivative decides (f'' < 0 max, f'' > 0 min, 0 inconclusive).",
+      "marks": 4,
+      "question": "Q1. What are the maximum and minimum values of a function at a point? What are the criteria to be satisfied in order to have maximum and minimum values of a function?",
+      "solution": "Definitions. A function f has a local maximum at x = a if f(a) >= f(x) for all x in some open interval around a; it has a local minimum at x = a if f(a) <= f(x) on such an interval. The maximum and minimum values themselves are f(a). Criteria. (1) Necessary condition: if f is differentiable at a and has an extremum there, then f'(a) = 0 (a is a stationary point). (2) First-derivative (sign) test: if f' changes from + to - at a, f(a) is a maximum; if f' changes from - to + at a, f(a) is a minimum; if f' does not change sign, a is a point of inflection. (3) Second-derivative test: at a stationary point, f''(a) < 0 gives a maximum, f''(a) > 0 gives a minimum, and f''(a) = 0 is inconclusive (fall back to the sign test). (4) For an absolute extremum on a closed interval [a, b], compare the values of f at all interior stationary points with f(a) and f(b). Boxed (definition question - no numeric key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q1; book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "An even power: the graph bottoms out at x = 3 with value 0 and rises without bound on both sides.",
+      "marks": 5,
+      "question": "Q2(i). Find the maximum and minimum values of y = (x - 3)^4.",
+      "solution": "y' = 4(x - 3)^3 = 0 gives x = 3. y'' = 12(x - 3)^2 >= 0, and in fact y''(3) = 0, so the second-derivative test is inconclusive; use the sign test: for x < 3, y' < 0, and for x > 3, y' > 0, so y' changes from - to + at x = 3 and the point is a minimum. The value is y(3) = 0. Since y = (x - 3)^4 >= 0 for every x, 0 is also the absolute minimum, and there is no maximum. Boxed minimum value 0 at x = 3 (printed key p561).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q2(i); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Factor out (x + 2): y' = (x+2)(3x), and y'' = 6x + 6 decides which stationary point is which.",
+      "marks": 5,
+      "question": "Q2(ii). Find the maximum and minimum values of y = (x - 1)(x + 2)^2.",
+      "solution": "y' = (x + 2)^2 + 2(x - 1)(x + 2) = (x + 2)[(x + 2) + 2(x - 1)] = (x + 2)(3x) = 3x(x + 2) = 0 at x = 0 and x = -2. y'' = 6x + 6: y''(0) = 6 > 0, so x = 0 gives a minimum y(0) = (-1)(4) = -4; y''(-2) = -6 < 0, so x = -2 gives a maximum y(-2) = (-3)(0) = 0. Boxed minimum -4 at x = 0, maximum 0 at x = -2 (printed key p561: 'min. value = -4 at x = 0; max. value = 0 at x = -2').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q2(ii); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "The sign chart comes from (x-4)(x-16) alone; note the maximum (1) is numerically smaller than the minimum (25) because the branch across x = 10 is separate.",
+      "marks": 5,
+      "question": "Q2(iii). Find the maximum and minimum values of y = (x^2 - 7x + 6)/(x - 10).",
+      "solution": "Quotient rule: y' = [(2x - 7)(x - 10) - (x^2 - 7x + 6)]/(x - 10)^2 = (2x^2 - 27x + 70 - x^2 + 7x - 6)/(x - 10)^2 = (x^2 - 20x + 64)/(x - 10)^2 = (x - 4)(x - 16)/(x - 10)^2. Critical points x = 4 and x = 16 (x = 10 is not in the domain). Values: y(4) = (16 - 28 + 6)/(4 - 10) = (-6)/(-6) = 1; y(16) = (256 - 112 + 6)/(16 - 10) = 150/6 = 25. The denominator (x - 10)^2 > 0, so the sign of y' is the sign of (x - 4)(x - 16): positive outside [4, 16], negative between. Hence x = 4 gives a maximum 1 and x = 16 a minimum 25. Boxed max 1 at x = 4, min 25 at x = 16 (printed key p561).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q2(iii); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "The vertex formula: x = -b/(2a), value (4ac - b^2)/(4a); the sign of a decides maximum versus minimum.",
+      "marks": 5,
+      "question": "Q2(iv). Find the maximum and minimum values of y = ax^2 + bx + c.",
+      "solution": "y' = 2ax + b = 0 gives the single stationary point x = -b/(2a) (a != 0). Its value is y = a b^2/(4a^2) - b^2/(2a) + c = c - b^2/(4a) = (4ac - b^2)/(4a). The second derivative is y'' = 2a, so if a > 0 the parabola opens upward and the point is a minimum; if a < 0 it opens downward and the point is a maximum. Boxed minimum (4ac - b^2)/(4a) at x = -b/(2a) when a > 0; maximum (4ac - b^2)/(4a) at x = -b/(2a) when a < 0 (printed key p561).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q2(iv); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Classic cubic with two turning points symmetric about the origin; f(-1) = 2 and f(1) = -2.",
+      "marks": 5,
+      "question": "Q2(v). Find the maximum and minimum values of f(x) = x^3 - 3x.",
+      "solution": "f'(x) = 3x^2 - 3 = 3(x - 1)(x + 1) = 0 at x = 1 and x = -1. f''(x) = 6x: f''(-1) = -6 < 0, so x = -1 gives a maximum f(-1) = -1 + 3 = 2; f''(1) = 6 > 0, so x = 1 gives a minimum f(1) = 1 - 3 = -2. Boxed maximum 2 at x = -1, minimum -2 at x = 1 (printed key p561).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q2(v); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Both turning points lie on the negative axis, one unit apart; the vertical gap is only 1.",
+      "marks": 5,
+      "question": "Q2(vi). Find the maximum and minimum values of f(x) = 2x^3 + 9x^2 + 12x + 2.",
+      "solution": "f'(x) = 6x^2 + 18x + 12 = 6(x^2 + 3x + 2) = 6(x + 1)(x + 2) = 0 at x = -1 and x = -2. f''(x) = 12x + 18: f''(-2) = -6 < 0, so x = -2 gives a maximum f(-2) = -16 + 36 - 24 + 2 = -2; f''(-1) = 6 > 0, so x = -1 gives a minimum f(-1) = -2 + 9 - 12 + 2 = -3. Boxed maximum -2 at x = -2, minimum -3 at x = -1 (printed key p561).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q2(vi); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Factor the cubic derivative as (x+1)(x-3)(x+2); the quartic has one maximum between two minima, the deeper one at x = 3.",
+      "marks": 5,
+      "question": "Q2(vii). Find the maximum and minimum values of f(x) = x^4 - 14x^2 - 24x + 1.",
+      "solution": "f'(x) = 4x^3 - 28x - 24 = 4(x^3 - 7x - 6) = 4(x + 1)(x - 3)(x + 2) = 0 at x = -1, x = -2 and x = 3. f''(x) = 12x^2 - 28: f''(-1) = -16 < 0, so x = -1 gives a maximum f(-1) = 1 - 14 + 24 + 1 = 12; f''(-2) = 20 > 0, so x = -2 gives a local minimum f(-2) = 16 - 56 + 48 + 1 = 9; f''(3) = 80 > 0, so x = 3 gives a local minimum f(3) = 81 - 126 - 72 + 1 = -116. Boxed maximum 12 at x = -1; minima 9 at x = -2 and -116 at x = 3 (printed key p561: 'max. value = 12 at x = -1; min. value = 9 at x = -2; min. value = -116 at x = 3').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q2(vii); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "The double root x^2 in f' means no sign change at 0; the simple roots 1 and 3 are certified by the second derivative -10 and +90.",
+      "marks": 5,
+      "question": "Q3. Show that x^5 - 5x^4 + 5x^3 - 1 is maximum when x = 1, minimum when x = 3, and neither when x = 0.",
+      "solution": "Let f(x) = x^5 - 5x^4 + 5x^3 - 1. f'(x) = 5x^4 - 20x^3 + 15x^2 = 5x^2(x^2 - 4x + 3) = 5x^2(x - 1)(x - 3), so the stationary points are x = 0 (double root), x = 1, x = 3. f''(x) = 20x^3 - 60x^2 + 30x = 10x(2x^2 - 6x + 3). At x = 1: f''(1) = 20 - 60 + 30 = -10 < 0, so f(1) = 1 - 5 + 5 - 1 = 0 is a maximum. At x = 3: f''(3) = 540 - 540 + 90 = 90 > 0, so f(3) = 243 - 405 + 135 - 1 = -28 is a minimum. At x = 0: f''(0) = 0, and near 0 the factor 5x^2 is positive on both sides while (x - 1)(x - 3) is positive, so f' > 0 immediately left and right of 0: no sign change, hence neither maximum nor minimum (a stationary point of inflection). Boxed as required (no separate key entry: 'show that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q3; book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "A.M. >= G.M. also gives it instantly: x + 100/x >= 2 sqrt(100) = 20 with equality at x = 10.",
+      "marks": 4,
+      "question": "Q4(i). Find two positive numbers whose product is 100 and whose sum is as small as possible. What is the minimum sum?",
+      "solution": "Let the numbers be x and 100/x (positive). Sum S(x) = x + 100/x. S'(x) = 1 - 100/x^2 = 0 gives x^2 = 100, x = 10 (positive). S''(x) = 200/x^3 > 0 at x = 10, so the sum is a minimum there; the other number is also 10 and the sum is 20. Boxed the numbers 10 and 10, minimum sum 20 (printed key p562: '10, 10; 20').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q4(i); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "The sum of squares is convex with vertex at the midpoint: equal halves minimise it.",
+      "marks": 4,
+      "question": "Q4(ii). Divide 60 into two parts such that the sum of the squares of the two parts is minimum.",
+      "solution": "Let the parts be x and 60 - x. Then S(x) = x^2 + (60 - x)^2 = 2x^2 - 120x + 3600. S'(x) = 4x - 120 = 0 gives x = 30, and S''(x) = 4 > 0, so this is a minimum; the other part is 30. Boxed 30 and 30 (printed key p562: '30, 30').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q4(ii); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "An interior maximum of a differentiable function forces f'(1) = 0; the value a = 120 is then confirmed by comparing f(1) = 68 with the endpoints.",
+      "marks": 4,
+      "question": "Q5. It is given that at x = 1 the function x^4 - 62x^2 + ax + 9 attains its maximum value on the interval [0, 2]. Find the value of a.",
+      "solution": "Since the maximum is attained at the interior point x = 1 and the polynomial is differentiable, x = 1 must be a stationary point: f'(x) = 4x^3 - 124x + a, so f'(1) = 4 - 124 + a = 0, giving a = 120. Check: with a = 120, f'(x) = 4x^3 - 124x + 120 and f''(x) = 12x^2 - 124, so f''(1) = -112 < 0 - a maximum, and f(1) = 1 - 62 + 120 + 9 = 68 exceeds f(0) = 9 and f(2) = 16 - 248 + 240 + 9 = 17, so 68 really is the maximum on [0, 2]. Boxed a = 120 (printed key p562: 120).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q5; book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "f'' = 12x(x+2) has roots -2 and 0; upward outside that interval, downward inside it.",
+      "marks": 4,
+      "question": "Q6(i). Determine where the graph of f(x) = x^4 + 4x^3 - 1 is concave upwards and where it is concave downwards.",
+      "solution": "f'(x) = 4x^3 + 12x^2, f''(x) = 12x^2 + 24x = 12x(x + 2). f'' > 0 for x < -2 and for x > 0 (concave upwards); f'' < 0 for -2 < x < 0 (concave downwards). Boxed concave upwards on (-infinity, -2) U (0, infinity), concave downwards on (-2, 0) (printed key p562).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q6(i); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "The product form matters only through the expanded quartic; concavity changes at x = +-1.",
+      "marks": 4,
+      "question": "Q6(ii). Determine where the graph of y = (x^2 - 1)(x^2 - 5) is concave upwards and where it is concave downwards.",
+      "solution": "Expand: y = x^4 - 6x^2 + 5, so y' = 4x^3 - 12x and y'' = 12x^2 - 12 = 12(x - 1)(x + 1). Hence y'' > 0 for x < -1 and x > 1 (concave upwards), y'' < 0 for -1 < x < 1 (concave downwards). Boxed concave upwards on (-infinity, -1) U (1, infinity), concave downwards on (-1, 1) (printed key p562).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q6(ii); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "x^2 y >= 0 on the feasible segment, and u = 0 at x = 0 (y = 7); the interior critical point x = 14/3 is the maximum 1372/27.",
+      "marks": 4,
+      "question": "Q7(i). Find the minimum value of x^2 y when x + y = 7.",
+      "solution": "From x + y = 7 we get y = 7 - x, so the quantity is u(x) = x^2(7 - x) = 7x^2 - x^3. u'(x) = 14x - 3x^2 = x(14 - 3x) = 0 at x = 0 and x = 14/3 (y = 7/3). At x = 14/3, u'' = 14 - 6x = -14 < 0, a maximum, not a minimum. The minimum is at x = 0, where y = 7 and u = 0; indeed u = x^2 y >= 0 whenever y >= 0, and u = 0 also at x = 7, y = 0. Boxed minimum value 0 (printed key p562: 'Min. value = 0').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q7(i); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Splitting a in the ratio 2:1 maximises x^2 y; the value is 4a^3/27.",
+      "marks": 4,
+      "question": "Q7(ii). If x + y = a (a > 0), find the maximum value of x^2 y.",
+      "solution": "y = a - x, so u(x) = x^2(a - x) = ax^2 - x^3. u'(x) = 2ax - 3x^2 = x(2a - 3x) = 0 at x = 0 and x = 2a/3. u''(x) = 2a - 6x: u''(2a/3) = 2a - 4a = -2a < 0, so x = 2a/3 gives the maximum, with y = a - 2a/3 = a/3 and u = (4a^2/9)(a/3) = 4a^3/27. Boxed maximum value 4a^3/27 at x = 2a/3, y = a/3 (printed key p562: 4a^3/27).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q7(ii); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Solving 36x^2 = 4(2-x)^2 gives the two branches x = 1/2 and x = -1; the modulus-free squaring is why both must be examined.",
+      "marks": 5,
+      "question": "Q7(iii). Find the maximum and minimum values of u = 4/x + 36/y where x + y = 2.",
+      "solution": "Put y = 2 - x: u(x) = 4/x + 36/(2 - x). u'(x) = -4/x^2 + 36/(2 - x)^2 = 0 gives 36x^2 = 4(2 - x)^2, i.e. 6x = +-2(2 - x). The positive branch: 6x = 4 - 2x, so x = 1/2 and y = 3/2, giving u = 8 + 24 = 32. The negative branch: 6x = -4 + 2x, so x = -1 and y = 3, giving u = -4 + 12 = 8. Classifying with the second derivative u''(x) = 8/x^3 + 72/(2 - x)^3: at x = 1/2, u'' = 64 + 216/3.375 = 64 + 64 > 0, a minimum; at x = -1, u'' = -8 + 72/27 = -8 + 8/3 < 0, a maximum. Boxed maximum 8 at x = -1, minimum 32 at x = 1/2 (printed key p562: 'Max. value = 8 at x = -1, Min. value = 32 at x = 1/2').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q7(iii); book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Constant dA/dt means dr/dt = k/(2 pi r); multiplying by 2 pi gives dP/dt = k/r.",
+      "marks": 4,
+      "question": "Q8. If the area of a circle increases at a uniform rate, prove that the rate of increase of the perimeter varies inversely as the radius.",
+      "solution": "Let r be the radius, A = pi r^2 the area and P = 2 pi r the perimeter. The hypothesis gives dA/dt = k, a constant. Differentiating A: dA/dt = 2 pi r dr/dt = k, so dr/dt = k/(2 pi r). Then dP/dt = 2 pi dr/dt = 2 pi * k/(2 pi r) = k/r. Hence dP/dt is proportional to 1/r: the perimeter's rate of increase varies inversely as the radius. Boxed (no separate key entry: 'prove that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q8; book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "cos 120 deg = -1/2 makes the cosine rule add: d^2 = 3v^2t^2, so d grows linearly at sqrt(3) v.",
+      "marks": 4,
+      "question": "Q9. Two cars start at the same time from the junction of two roads, one on each road, with uniform speed v m.p.s. If the roads are inclined at 120 degrees, show that the distance between them increases at the rate of sqrt(3) v m.p.s.",
+      "solution": "After t seconds each car has travelled vt metres. The distance d between them satisfies the cosine rule with the included angle 120 degrees: d^2 = (vt)^2 + (vt)^2 - 2(vt)(vt) cos 120 degrees = 2v^2t^2 + v^2t^2 = 3v^2t^2 (since cos 120 degrees = -1/2, so -2(vt)^2(-1/2) = +(vt)^2). Hence d = sqrt(3) vt, and dd/dt = sqrt(3) v. Boxed (no separate key entry: 'show that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q9; book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Positions (9t, 0) and (0, -12(t-1)); differentiate d^2 = 81t^2 + 144(t-1)^2 at t = 2 with d = 6 sqrt 13.",
+      "marks": 5,
+      "question": "Q10. A ship leaves a port at noon and travels east at the rate of 9 km/hr. Another ship leaves the same port after one hour and sails south at the rate of 12 km/hr. How fast are they separating at 2 PM?",
+      "solution": "Measure t in hours after noon. The first ship is at (9t, 0). The second ship has been sailing for (t - 1) hours, so it is at (0, -12(t - 1)). The square of their separation is d^2 = (9t)^2 + [12(t - 1)]^2 = 81t^2 + 144(t - 1)^2. At 2 PM, t = 2: d^2 = 324 + 144 = 468, so d = sqrt(468) = 6 sqrt(13). Differentiate d^2: 2d dd/dt = 162t + 288(t - 1), so at t = 2, 2d dd/dt = 324 + 288 = 612, giving dd/dt = 612/(2 * 6 sqrt 13) = 51/sqrt(13) km/hr. Boxed 51/sqrt(13) km/hr (printed key p562: 51/sqrt(13) km/hr).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q10; book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    },
+    {
+      "knowledgeNote": "Both the man and the shadow tip move, so the tip's speed is (3/2)v = 30 cm/sec, while the shadow only lengthens at v/2 = 10 cm/sec.",
+      "marks": 4,
+      "question": "Q11. A man of height 1.5 m walks away from a lamp post of height 4.5 m at the rate of 20 cm/sec. How fast does the end of his shadow move?",
+      "solution": "Let x be the man's distance from the post at time t and s the shadow length. Similar triangles: s/(x + s) = 1.5/4.5 = 1/3, so 3s = x + s, i.e. s = x/2. The tip of the shadow is at distance x + s = 3x/2 from the post. Differentiate: d/dt(x + s) = (3/2) dx/dt = (3/2)(20) = 30 cm/sec. Boxed 30 cm/sec (printed key p562: 30 cm/sec). Compare Exercise 18.2 Q8, where the shadow's *length* grows at 10 cm/sec: the tip moves three times as fast as the man.",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Additional Questions (Maxima, Minima and Rate Measure) Q11; book p560-561 = PDF p587-588; key book p561-562 = PDF p588-589"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.18 Additional Questions (Maxima, Minima and Rate Measure): the criterion question, seven maxima/minima drills, the 'neither at x = 0' quintic, optimisation of products and sums, concavity, three constrained-extremum problems, and the inverse-variation, 120-degree and shadow-tip rate proofs — all 21 parts from book pp560-561 (PDF pp587-588), every printed answer verified against the book's own Answers, pp561-562.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.18 Additional Questions (Maxima, Minima and Rate Measure) - Complete Solutions",
+  "topicSlug": "calculus-textbook-additional-application-of-derivatives",
+  "topicTitle": "Ch.18 Additional Questions - maxima/minima and rate measure (21 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

@@ -1,0 +1,258 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Sign of f' at the point decides it: f' = 30x - 14 is negative at x = 2/5 and positive at x = 5/2.",
+      "marks": 3,
+      "question": "Q1(i). Examine whether the function f(x) = 15x^2 - 14x + 1 is increasing or decreasing at x = 2/5 and x = 5/2.",
+      "solution": "A differentiable function increases at a point when f'(x) > 0 there and decreases when f'(x) < 0. f'(x) = 30x - 14. At x = 2/5: f'(2/5) = 30(2/5) - 14 = 12 - 14 = -2 < 0, so f is decreasing at x = 2/5. At x = 5/2: f'(5/2) = 30(5/2) - 14 = 75 - 14 = 61 > 0, so f is increasing at x = 5/2. Boxed decreasing at 2/5, increasing at 5/2 (printed key p551: 'Decreasing at x = 2/5 and increasing at x = 5/2').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q1(i); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f' = 6(x^2 - 4): positive outside the interval [-2, 2], negative inside it. 3 lies outside, 3/2 inside.",
+      "marks": 3,
+      "question": "Q1(ii). Show that the function f(x) = 2x^3 - 24x + 15 is increasing at x = 3 and decreasing at x = 3/2.",
+      "solution": "f'(x) = 6x^2 - 24 = 6(x^2 - 4). At x = 3: f'(3) = 6(9 - 4) = 30 > 0, so f is increasing at x = 3. At x = 3/2: f'(3/2) = 6(9/4 - 4) = 6(-7/4) = -21/2 < 0, so f is decreasing at x = 3/2. Boxed as required (no separate key entry: stated as a 'show that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q1(ii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f' = 4(x-1) has a single zero at x = 1; to the right of it the parabola 2x^2-4x+3 rises.",
+      "marks": 3,
+      "question": "Q2(i). Test whether the function f(x) = 2x^2 - 4x + 3 is increasing or decreasing on the interval (1, 4].",
+      "solution": "f'(x) = 4x - 4 = 4(x - 1). For every x in (1, 4], x - 1 > 0, hence f'(x) > 0 on the whole interval: f is increasing on (1, 4]. Boxed increasing (printed key p551: 'Increasing').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q2(i); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f' = 4(4 - x^2) is negative exactly when |x| > 2; the interval (-inf, -2) lies in that region.",
+      "marks": 3,
+      "question": "Q2(ii). Examine whether the function f(x) = 16x - (4/3)x^3 is increasing or decreasing on the interval (-infinity, -2).",
+      "solution": "f'(x) = 16 - 4x^2 = 4(4 - x^2) = 4(2 - x)(2 + x). For x < -2 both factors (2 - x) and (2 + x) are positive and negative respectively: 2 - x > 0 and 2 + x < 0, so f'(x) < 0 throughout (-infinity, -2). Hence f is decreasing there. Boxed decreasing (printed key p551: 'Decreasing').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q2(ii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Complete the square inside the bracket: 3x^2-12x+13 = 3(x-2)^2+1 > 0 always, so f' < 0 identically.",
+      "marks": 3,
+      "question": "Q2(iii). Show that the function f(x) = -x^3 + 6x^2 - 13x + 20 is decreasing for all x in R.",
+      "solution": "f'(x) = -3x^2 + 12x - 13 = -[3x^2 - 12x + 13] = -[3(x - 2)^2 + 1]. The bracket is at least 1 for every real x, so f'(x) <= -1 < 0 for all x. Hence f is strictly decreasing on R. Boxed (no separate key entry: 'show that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q2(iii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f' = 4 + 9/x^2 is always positive; the excluded point x = 0 is simply outside the domain, not a sign change.",
+      "marks": 3,
+      "question": "Q2(iv). Show that the function f(x) = 4x - 9/x + 6 is increasing for all x in R except at x = 0.",
+      "solution": "The function is defined only for x != 0. f'(x) = 4 + 9/x^2. Since 9/x^2 > 0 for every x != 0, f'(x) > 4 > 0 on each of the intervals (-infinity, 0) and (0, infinity). Hence f is increasing on both branches; at x = 0 the function has no value (vertical asymptote). Boxed (no separate key entry: 'show that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q2(iv); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "A single zero at x = 1 for f' = 6(x-1): the parabola falls up to its vertex and rises afterwards.",
+      "marks": 4,
+      "question": "Q3(i). Find the intervals in which f(x) = 3x^2 - 6x + 5 is increasing or decreasing.",
+      "solution": "f'(x) = 6x - 6 = 6(x - 1). Sign chart: f' < 0 for x < 1 and f' > 0 for x > 1. Hence f is decreasing on (-infinity, 1) and increasing on (1, infinity). Boxed (printed key p551: 'Increasing on (1, infinity) and decreasing on (-infinity, 1)').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q3(i); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "x^2 never changes the sign; the turning value is x = 1/4 where 4x - 1 changes sign.",
+      "marks": 4,
+      "question": "Q3(ii). Find the intervals in which f(x) = x^4 - (1/3)x^3 is increasing or decreasing.",
+      "solution": "f'(x) = 4x^3 - x^2 = x^2(4x - 1). The factor x^2 >= 0 always (zero only at x = 0), so the sign of f' is the sign of (4x - 1). Hence f' < 0 for x < 1/4 and f' > 0 for x > 1/4. Thus f is decreasing on (-infinity, 1/4) and increasing on (1/4, infinity). Boxed (printed key p551: 'Increasing on (1/4, infinity) and decreasing on (-infinity, 1/4)').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q3(ii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Up-down-up cubic: the derivative changes sign at x = -3 and x = 3.",
+      "marks": 4,
+      "question": "Q3(iii). Find the intervals in which f(x) = 5x^3 - 135x + 22 is increasing or decreasing.",
+      "solution": "f'(x) = 15x^2 - 135 = 15(x^2 - 9) = 15(x - 3)(x + 3). Sign chart: positive for x < -3, negative for -3 < x < 3, positive for x > 3. Hence f is increasing on (-infinity, -3), decreasing on (-3, 3), increasing on (3, infinity). Boxed (printed key p551: 'Increasing on (-infinity, -3) U (3, infinity) and decreasing on (-3, 3)').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q3(iii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "The leading coefficient is negative, so the pattern is down-up-down; f' > 0 between the roots -1 and 2.",
+      "marks": 4,
+      "question": "Q3(iv). Find the intervals in which f(x) = 6 + 12x + 3x^2 - 2x^3 is increasing or decreasing.",
+      "solution": "f'(x) = 12 + 6x - 6x^2 = -6(x^2 - x - 2) = -6(x - 2)(x + 1). The factor (x - 2)(x + 1) is negative on (-1, 2) and positive outside, so f'(x) > 0 on (-1, 2) and f'(x) < 0 on (-infinity, -1) U (2, infinity). Hence f is increasing on (-1, 2), decreasing on (-infinity, -1) and on (2, infinity). Boxed (printed key p551: 'Decreasing on (-infinity, -1) U (2, infinity) and increasing on (-1, 2)').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q3(iv); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "The cubic's own intervals are intersected with the given domain [-3, 5].",
+      "marks": 4,
+      "question": "Q3(v). Find the intervals in which f(x) = x^3 - 12x is increasing or decreasing, where x is defined on [-3, 5].",
+      "solution": "f'(x) = 3x^2 - 12 = 3(x^2 - 4) = 3(x - 2)(x + 2). On the restricted domain [-3, 5]: f' > 0 for -3 <= x < -2 and for 2 < x <= 5; f' < 0 for -2 < x < 2. Hence f is increasing on [-3, -2) and on (2, 5], and decreasing on (-2, 2). Boxed (printed key p551: 'Increasing on [-3, -2) U (2, 5] and decreasing on (-2, 2)').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q3(v); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "On a closed interval, compare f at the endpoints and at every interior stationary point; here 13 > 4 > 1.",
+      "marks": 4,
+      "question": "Q4(i). Find the absolute maximum and absolute minimum values of f(x) = 3x^2 - 6x + 4 on [-1, 2].",
+      "solution": "Closed-interval method: f'(x) = 6x - 6 = 0 gives x = 1, an interior critical point. Evaluate: f(-1) = 3 + 6 + 4 = 13; f(1) = 3 - 6 + 4 = 1; f(2) = 12 - 12 + 4 = 4. The largest value is 13 and the smallest is 1. Boxed absolute maximum 13, absolute minimum 1 (printed key p551: 'Absolute max = 13, Absolute min = 1').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q4(i); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Two critical points plus two endpoints give the four candidates; the endpoint -2 is where the cubic bottoms out.",
+      "marks": 4,
+      "question": "Q4(ii). Find the absolute maximum and absolute minimum values of f(x) = 2x^3 - 9x^2 on [-2, 4].",
+      "solution": "f'(x) = 6x^2 - 18x = 6x(x - 3) = 0 at x = 0 and x = 3, both inside [-2, 4]. Values: f(-2) = -16 - 36 = -52; f(0) = 0; f(3) = 54 - 81 = -27; f(4) = 128 - 144 = -16. Largest 0, smallest -52. Boxed absolute maximum 0, absolute minimum -52 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q4(ii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Both 0 and 3 give the value 0, so the minimum is attained twice; the maximum is at the right endpoint.",
+      "marks": 4,
+      "question": "Q4(iii). Find the absolute maximum and absolute minimum values of f(x) = x^3 - 6x^2 + 9x on [0, 5].",
+      "solution": "f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3) = 0 at x = 1 and x = 3. Values: f(0) = 0; f(1) = 1 - 6 + 9 = 4; f(3) = 27 - 54 + 27 = 0; f(5) = 125 - 150 + 45 = 20. Largest 20, smallest 0. Boxed absolute maximum 20, absolute minimum 0 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q4(iii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "The endpoint x = 4 wins here: the cubic rises again after x = 3, overtaking the local maximum 38.",
+      "marks": 4,
+      "question": "Q4(iv). Find the absolute maximum and absolute minimum values of f(x) = 2x^3 - 15x^2 + 36x + 10 on [1, 4].",
+      "solution": "f'(x) = 6x^2 - 30x + 36 = 6(x - 2)(x - 3) = 0 at x = 2 and x = 3. Values: f(1) = 2 - 15 + 36 + 10 = 33; f(2) = 16 - 60 + 72 + 10 = 38; f(3) = 54 - 135 + 108 + 10 = 37; f(4) = 128 - 240 + 144 + 10 = 42. Largest 42, smallest 33. Boxed absolute maximum 42, absolute minimum 33 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q4(iv); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Quadratic: f'' is a nonzero constant, so the single stationary point is a minimum and no inflection exists.",
+      "marks": 5,
+      "question": "Q5(i). Find the local maxima and minima and points of inflection of f(x) = 3x^2 - 6x + 3.",
+      "solution": "f'(x) = 6x - 6 = 0 gives x = 1. f''(x) = 6 > 0 at every point, so x = 1 is a local minimum, and the value there is f(1) = 3 - 6 + 3 = 0. A point of inflection needs f''(x) = 0 with a sign change of f''; here f'' = 6 never vanishes, so there is no point of inflection. Boxed minimum value 0 at x = 1, no point of inflection (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(i); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Second-derivative test: f'' < 0 gives the maximum at x = -2, f'' > 0 the minimum at x = 2; f'' changes sign at 0.",
+      "marks": 5,
+      "question": "Q5(ii). Find the local maxima and minima and points of inflection of f(x) = x^3 - 12x + 8.",
+      "solution": "f'(x) = 3x^2 - 12 = 3(x - 2)(x + 2) = 0 at x = -2 and x = 2. f''(x) = 6x: f''(-2) = -12 < 0 so x = -2 gives a local maximum f(-2) = -8 + 24 + 8 = 24; f''(2) = 12 > 0 so x = 2 gives a local minimum f(2) = 8 - 24 + 8 = -8. f''(x) = 0 at x = 0 and changes sign there (- to +), so (0, f(0)) = (0, 8) is the point of inflection. Boxed max 24 at x = -2, min -8 at x = 2, inflection at x = 0 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(ii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f'' = 6x - 12: negative before 2, positive after; the maximum sits at 0, the minimum at 4.",
+      "marks": 5,
+      "question": "Q5(iii). Find the local maxima and minima and points of inflection of f(x) = x^3 - 6x^2 + 3.",
+      "solution": "f'(x) = 3x^2 - 12x = 3x(x - 4) = 0 at x = 0 and x = 4. f''(x) = 6x - 12: f''(0) = -12 < 0, so x = 0 gives a local maximum f(0) = 3; f''(4) = 12 > 0, so x = 4 gives a local minimum f(4) = 64 - 96 + 3 = -29. f''(x) = 0 at x = 2 with a sign change, so (2, f(2)) = (2, -13) is the point of inflection. Boxed max 3 at x = 0, min -29 at x = 4, inflection at x = 2 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(iii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Very flat maximum (33) beside the minimum (32): the two stationary values differ by only 1, which is why the inflection sits exactly midway at 5/2.",
+      "marks": 5,
+      "question": "Q5(iv). Find the local maxima and minima and points of inflection of f(x) = 2x^3 - 15x^2 + 36x + 5. (HSEB 2050, 052)",
+      "solution": "f'(x) = 6x^2 - 30x + 36 = 6(x - 2)(x - 3) = 0 at x = 2 and x = 3. f''(x) = 12x - 30: f''(2) = -6 < 0, so x = 2 gives a local maximum f(2) = 16 - 60 + 72 + 5 = 33; f''(3) = 6 > 0, so x = 3 gives a local minimum f(3) = 54 - 135 + 108 + 5 = 32. f''(x) = 0 at x = 5/2 with a sign change, so (5/2, f(5/2)) = (5/2, 32.5) is the point of inflection. Boxed max 33 at x = 2, min 32 at x = 3, inflection at x = 5/2 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(iv); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f' = 6(x-4)(x+1): up to the maximum at -1, down to the minimum at 4; the inflection is the midpoint 3/2.",
+      "marks": 5,
+      "question": "Q5(v). Find the local maxima and minima and points of inflection of f(x) = 2x^3 - 9x^2 - 24x + 3.",
+      "solution": "f'(x) = 6x^2 - 18x - 24 = 6(x^2 - 3x - 4) = 6(x - 4)(x + 1) = 0 at x = 4 and x = -1. f''(x) = 12x - 18: f''(-1) = -30 < 0, so x = -1 gives a local maximum f(-1) = -2 - 9 + 24 + 3 = 16; f''(4) = 30 > 0, so x = 4 gives a local minimum f(4) = 128 - 144 - 96 + 3 = -109. f''(x) = 0 at x = 3/2 with a sign change, so (3/2, f(3/2)) = (3/2, -36.75) is the point of inflection. Boxed max 16 at x = -1, min -109 at x = 4, inflection at x = 3/2 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(v); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Keep fractional values exact: f(1/2) = 39/4, and the inflection abscissa is the average (1/2 + 2)/2 = 5/4.",
+      "marks": 5,
+      "question": "Q5(vi). Find the local maxima and minima and points of inflection of f(x) = 4x^3 - 15x^2 + 12x + 7. (HSEB 2051)",
+      "solution": "f'(x) = 12x^2 - 30x + 12 = 6(2x^2 - 5x + 2) = 6(2x - 1)(x - 2) = 0 at x = 1/2 and x = 2. f''(x) = 24x - 30: f''(1/2) = -18 < 0, so x = 1/2 gives a local maximum f(1/2) = 1/2 - 15/4 + 6 + 7 = 39/4; f''(2) = 18 > 0, so x = 2 gives a local minimum f(2) = 32 - 60 + 24 + 7 = 3. f''(x) = 0 at x = 5/4 with a sign change, so (5/4, f(5/4)) is the point of inflection. Boxed max 39/4 at x = 1/2, min 3 at x = 2, inflection at x = 5/4 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(vi); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "All three critical abscissas -1/2, 1/2, 3/2 lie in (-1, 2); the maximum and minimum values are 7/2 and -25/2.",
+      "marks": 5,
+      "question": "Q5(vii). Find the local maxima and minima and points of inflection of f(x) = 4x^3 - 6x^2 - 9x + 1 on the interval (-1, 2).",
+      "solution": "f'(x) = 12x^2 - 12x - 9 = 3(4x^2 - 4x - 3) = 3(2x - 3)(2x + 1) = 0 at x = 3/2 and x = -1/2, both inside (-1, 2). f''(x) = 24x - 12: f''(-1/2) = -24 < 0, so x = -1/2 gives a local maximum f(-1/2) = -1/2 - 3/2 + 9/2 + 1 = 7/2; f''(3/2) = 24 > 0, so x = 3/2 gives a local minimum f(3/2) = 27/2 - 27/2 - 27/2 + 1 = -25/2. f''(x) = 0 at x = 1/2, inside the interval and with a sign change, so (1/2, f(1/2)) is the point of inflection. Boxed max 7/2 at x = -1/2, min -25/2 at x = 3/2, inflection at x = 1/2 (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(vii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f' = 1 - 100/x^2 has the two roots +-10; the second derivative has a fixed sign on each branch, so no inflection.",
+      "marks": 5,
+      "question": "Q5(viii). Find the local maxima and minima and points of inflection of f(x) = x + 100/x - 5.",
+      "solution": "Domain x != 0. f'(x) = 1 - 100/x^2 = 0 gives x^2 = 100, i.e. x = 10 or x = -10. f''(x) = 200/x^3: f''(10) = 200/1000 > 0, so x = 10 gives a local minimum f(10) = 10 + 10 - 5 = 15; f''(-10) = -200/1000 < 0, so x = -10 gives a local maximum f(-10) = -10 - 10 - 5 = -25. f''(x) = 200/x^3 is never zero, so there is no point of inflection. Boxed min 15 at x = 10, max -25 at x = -10, no point of inflection (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q5(viii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Complete the square: x^2 - 4x + 8 = (x-2)^2 + 4 > 0, so f' > 0 everywhere — strictly increasing, so no extremum.",
+      "marks": 4,
+      "question": "Q6(i). Show that f(x) = x^3 - 6x^2 + 24x + 4 has neither maximum nor minimum value.",
+      "solution": "f'(x) = 3x^2 - 12x + 24 = 3[(x - 2)^2 + 4] > 0 for every real x (the square is non-negative and 4 > 0). Since f' never vanishes and is always positive, f is strictly increasing on R: there is no point where the function turns, hence neither a maximum nor a minimum. Boxed (no separate key entry: 'show that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q6(i); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f' = 3(x-2)^2 touches zero without changing sign: a horizontal inflection at x = 2, values rise on both sides.",
+      "marks": 4,
+      "question": "Q6(ii). Show that f(x) = x^3 - 6x^2 + 12x - 3 has neither maximum nor minimum value.",
+      "solution": "f'(x) = 3x^2 - 12x + 12 = 3(x - 2)^2 >= 0, and f'(x) = 0 only at x = 2. At x = 2 the derivative does not change sign (it is non-negative on both sides), so x = 2 is a stationary point of inflection, not an extremum. Hence the function has neither a maximum nor a minimum. Boxed (no 'show that' key entry).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q6(ii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f'' = 12x(x-1): positive outside [0,1], negative inside — the curve is a 'cup' outside and a 'cap' between 0 and 1.",
+      "marks": 4,
+      "question": "Q7(i). Determine where the graph of f(x) = x^4 - 2x^3 + 5 is concave upwards and where concave downwards.",
+      "solution": "f'(x) = 4x^3 - 6x^2, f''(x) = 12x^2 - 12x = 12x(x - 1). Concavity follows the sign of f'': f'' > 0 for x < 0 and for x > 1 (concave upwards), f'' < 0 for 0 < x < 1 (concave downwards). Boxed concave upwards on (-infinity, 0) U (1, infinity), concave downwards on (0, 1) (printed key p551: 'Concave upwards for x > 1, concave upwards for x < 0 and concave downwards for 0 < x < 1').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q7(i); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f'' = 12(x-1)(x-3): outside [1,3] the graph is concave up; between 1 and 3 it is concave down.",
+      "marks": 4,
+      "question": "Q7(ii). Determine where the graph of f(x) = x^4 - 8x^3 + 18x^2 - 24 is concave upwards and where concave downwards. (HSEB 2056)",
+      "solution": "f'(x) = 4x^3 - 24x^2 + 36x, f''(x) = 12x^2 - 48x + 36 = 12(x^2 - 4x + 3) = 12(x - 1)(x - 3). Hence f'' > 0 for x < 1 and x > 3 (concave upwards), and f'' < 0 for 1 < x < 3 (concave downwards). Boxed concave upwards on (-infinity, 1) U (3, infinity), concave downwards on (1, 3) (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q7(ii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "y'' = 60x(x^2+1): the quadratic factor is always positive, so only the sign of x matters.",
+      "marks": 4,
+      "question": "Q7(iii). Determine where the graph of y = 3x^5 + 10x^3 + 15x is concave upwards and where concave downwards.",
+      "solution": "y' = 15x^4 + 30x^2 + 15, y'' = 60x^3 + 60x = 60x(x^2 + 1). Since x^2 + 1 > 0 always, the sign of y'' is the sign of x: y'' > 0 for x > 0 (concave upwards), y'' < 0 for x < 0 (concave downwards). Boxed concave upwards on (0, infinity), concave downwards on (-infinity, 0) (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q7(iii); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "f'' = 6(x-3): the concavity changes at x = 3, and the domain cuts the branches at -2 and 5.",
+      "marks": 4,
+      "question": "Q7(iv). Determine where the graph of f(x) = x^3 - 9x^2 is concave upwards and where concave downwards, given x is in [-2, 5].",
+      "solution": "f'(x) = 3x^2 - 18x, f''(x) = 6x - 18 = 6(x - 3). On the stated domain: f'' > 0 for 3 < x <= 5 (concave upwards), f'' < 0 for -2 <= x < 3 (concave downwards). Boxed concave upwards on (3, 5], concave downwards on [-2, 3) (printed key p551).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q7(iv); book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Fixed perimeter means the maximum rectangle is the square: 36 m x 36 m, area 1296 m^2.",
+      "marks": 4,
+      "question": "Q8. A man who has 144 metres of fencing material wishes to enclose a rectangular garden. Find the maximum area he can enclose. (HSEB 2054)",
+      "solution": "Let the sides be x and y with 2(x + y) = 144, so x + y = 72 and y = 72 - x. The area is A(x) = x(72 - x) = 72x - x^2, 0 < x < 72. A'(x) = 72 - 2x = 0 gives x = 36, and A''(x) = -2 < 0, so this is a maximum. Then y = 36 and A = 36 * 36 = 1296. Boxed maximum area 1296 sq. m (printed key p552).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q8; book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "A' = P/2 - 2x gives x = P/4 for both sides — the square — and A'' = -2 confirms a maximum.",
+      "marks": 4,
+      "question": "Q9. Show that the rectangle of largest possible area, for a given perimeter, is a square. (HSEB 2058)",
+      "solution": "Let the perimeter be P (fixed) and the sides x and y, so 2(x + y) = P and y = P/2 - x. Area A(x) = x(P/2 - x) = Px/2 - x^2. A'(x) = P/2 - 2x = 0 gives x = P/4, and A''(x) = -2 < 0, so it is a maximum. Then y = P/2 - P/4 = P/4 = x: the rectangle is a square, with area P^2/16. Boxed (no separate key entry: 'show that').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q9; book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Perimeter 2h + 2r + pi r = 9; substituting h turns A into a quadratic in r, and A' = 9 - (4 + pi)r gives r = 9/(4+pi).",
+      "marks": 5,
+      "question": "Q10. A window is in the form of a rectangle surmounted by a semi-circle. If the total perimeter is 9 metres, find the radius of the semi-circle for the greatest window area. (HSEB 2055)",
+      "solution": "Let the semi-circle have radius r, so the rectangle has width 2r and height h. The perimeter is the two vertical sides, the base, and the semi-circular arc: 2h + 2r + pi r = 9, so h = (9 - 2r - pi r)/2. Area = rectangle + semi-circle = 2rh + (1/2)pi r^2 = 2r * (9 - 2r - pi r)/2 + (1/2)pi r^2 = 9r - (2 + pi)r^2 + (pi/2)r^2 = 9r - (2 + pi/2)r^2. Then A'(r) = 9 - (4 + pi)r = 0, giving r = 9/(4 + pi). A''(r) = -(4 + pi) < 0, so this is a maximum (h = (9 - (2 + pi) * 9/(4 + pi))/2 > 0, so the window is geometrically possible). Boxed r = 9/(4 + pi) metres (printed key p552: 9/(4 + pi) metres).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q10; book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "S = 2 pi r^2 + 104/r; S' = 0 gives r^3 = 26/pi and the volume condition then forces h = 2r.",
+      "marks": 5,
+      "question": "Q11. A closed cylindrical can is to be made so that its volume is 52 cm^3. Find its dimensions if the surface is to be a minimum.",
+      "solution": "Let the radius be r and height h. Volume: pi r^2 h = 52, so h = 52/(pi r^2). The total surface of a closed can is S = 2 pi r^2 + 2 pi r h = 2 pi r^2 + 104/r. Then S'(r) = 4 pi r - 104/r^2 = 0 gives 4 pi r^3 = 104, i.e. r^3 = 26/pi, so r = (26/pi)^(1/3). S''(r) = 4 pi + 208/r^3 > 0, so this is a minimum. The height is h = 52/(pi r^2); using pi r^3 = 26 we get pi r^2 = 26/r, hence h = 52/(26/r) = 2r. Boxed radius (26/pi)^(1/3) cm with height = 2 radius (printed key p552: 'height = 2 radius where radius = (26/pi)^(1/3)').",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q11; book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "Three parallel fences of length y plus two of length x: 2x + 3y = 120; maximising xy gives x = 30, y = 20.",
+      "marks": 5,
+      "question": "Q12. A gardener having 120 m of fencing wishes to enclose a rectangular plot of land and also to erect a fence across the land parallel to two of the sides. Find the maximum area he can enclose.",
+      "solution": "Let the plot be x by y with the dividing fence parallel to the sides of length y. The fencing used is 2x + 3y = 120, so y = (120 - 2x)/3. Area A(x) = xy = x(120 - 2x)/3 = (120x - 2x^2)/3. A'(x) = (120 - 4x)/3 = 0 gives x = 30, hence y = (120 - 60)/3 = 20. A''(x) = -4/3 < 0, so it is a maximum. A = 30 * 20 = 600. Boxed 600 sq. m (printed key p552: 600 m^2).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q12; book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    },
+    {
+      "knowledgeNote": "S = x^2 + (10-x)^2 is a convex quadratic with vertex at x = 5; equal halves minimise the sum of squares.",
+      "marks": 4,
+      "question": "Q13. Find two numbers whose sum is 10 and the sum of whose squares is minimum.",
+      "solution": "Let the numbers be x and 10 - x. Then S(x) = x^2 + (10 - x)^2 = 2x^2 - 20x + 100. S'(x) = 4x - 20 = 0 gives x = 5, and S''(x) = 4 > 0, so this is a minimum. The second number is 10 - 5 = 5. Boxed 5 and 5 (printed key p552: 5, 5).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.18 Exercise 18.1 Q13; book p550-551 = PDF p577-578; key book p551-552 = PDF p578-579"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.18 Application of Derivatives, BOOK Exercise 18.1: increasing/decreasing tests, absolute extrema on closed intervals, local maxima/minima and points of inflection, concavity, and the optimisation word problems — all 35 parts from book pp550-551 (PDF pp577-578), every printed answer verified against the book's own Answers, pp551-552.",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.18 Book Ex 18.1 (Monotonicity, Extrema, Concavity, Optimisation) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-18-1-application-of-derivatives",
+  "topicTitle": "Ch.18 Book Ex 18.1 - increasing/decreasing, extrema, concavity, optimisation (35 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}
