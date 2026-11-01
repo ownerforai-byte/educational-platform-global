@@ -192,3 +192,14 @@ playwright-report/
 
 # graphify knowledge graph (local, rebuilt by git hooks)
 /graphify-out/
+
+# editor / OS junk
+.vscode/*.sln
+.idea/
+*.swp
+.sass-cache/
+
+# extra env variants (never commit real secrets)
+.env.*.local
+!.env.example
+*.local.env
