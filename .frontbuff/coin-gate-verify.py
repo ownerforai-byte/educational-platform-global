@@ -1,9 +1,36 @@
 #!/usr/bin/env python3
-import subprocess, sys, re
+import os, subprocess, sys, re
 
-def sh(cmd):
-    p = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    return p.stdout, p.stderr, p.returncode
+
+def grep_count(pattern, roots, exts=(".tsx", ".ts")):
+    """Cross-platform replacement for the old shell-based grep+wc pipeline.
+
+    Pure-Python (no shell execution, clears the BAN-B602 security finding) and
+    works on Windows where `grep` is unavailable. Handles mixed file/dir roots.
+    Returns (match_count, 0).
+    """
+    rx = re.compile(pattern)
+    count = 0
+    for r in roots:
+        if os.path.isfile(r):
+            candidates = [r]
+        elif os.path.isdir(r):
+            candidates = []
+            for dirpath, _dirs, files in os.walk(r):
+                candidates.extend(os.path.join(dirpath, f) for f in files)
+        else:
+            continue
+        for path in candidates:
+            if not any(path.endswith(e) for e in exts):
+                continue
+            try:
+                with open(path, encoding="utf-8", errors="ignore") as fh:
+                    for _line in fh:
+                        if rx.search(_line):
+                            count += 1
+            except OSError:
+                pass
+    return count, 0
 
 R = ".frontbuff/coin-gate-verify-report.txt"
 lines = []
@@ -36,10 +63,8 @@ files6 = [
     "frontend/features",
 ]
 for p in p6:
-    out, err, rc = sh(
-        f"grep -rE {p!r} {' '.join(files6)} --include='*.tsx' --include='*.ts 2>/dev/null | wc -l"
-    )
-    lines.append(f"'{p}' -> {out.strip()}")
+    out, _rc = grep_count(p, files6)
+    lines.append(f"'{p}' -> {out}")
 
 # --- Step 7a: diff of edited files is clean of old text ---
 lines.append("")
