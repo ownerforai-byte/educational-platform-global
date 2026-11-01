@@ -1,5 +1,5 @@
-# .deepsourceignore — skip heavy data/content so the clone stays under DeepSource's size limit.
-# Source code (frontend/, backend/, scripts/, tools/) is still analyzed.
+# Mirror of heavy-path excludes — also listed in `.deepsource.toml` `exclude_patterns`
+# (DeepSource reads TOML for analysis scope; keep both files aligned).
 
 # Curriculum corpus (4,300+ JSON files)
 content/
