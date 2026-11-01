@@ -1,3 +1,4 @@
+import { randomBytes } from "node:crypto";
 import { type NextRequest, NextResponse } from "next/server";
 
 /**
@@ -70,22 +71,14 @@ function isRateLimited(key: string, max: number) {
   return entry.count > max;
 }
 
-function setSecurityHeaders(response: NextResponse) {
-  // SAMEORIGIN, not DENY: the app frames its own documents in-page (PDF Library,
-  // PdfViewer, video viewer). DENY blocks *same-origin* framing too, which made
-  // every in-app viewer render blank. Cross-site framing stays blocked, so
-  // clickjacking protection is unchanged.
-  response.headers.set("x-frame-options", "SAMEORIGIN");
-  response.headers.set("x-content-type-options", "nosniff");
-  response.headers.set("referrer-policy", "strict-origin-when-cross-origin");
-  response.headers.set(
-    "content-security-policy",
+function buildContentSecurityPolicy(nonce: string) {
+  return (
     [
       "default-src 'self'",
       // puter.js (js.puter.com) is the platform's browser-side AI fallback —
       // image drawing since 2026-09-30 and Mind Studio diagram generation.
       // Without these two origins the CDN script itself never loads.
-      "script-src 'self' https://js.puter.com",
+      `script-src 'self' 'nonce-${nonce}' https://js.puter.com`,
       // fonts.googleapis.com: globals.css @imports Google Fonts — blocking it
       // makes the stylesheet load reject with a raw Event, surfacing as the
       // "[object Event]" unhandled rejection in devtools.
@@ -100,8 +93,19 @@ function setSecurityHeaders(response: NextResponse) {
       // other sites may not frame us.
       "frame-ancestors 'self'",
       "worker-src 'self' blob:",
-    ].join("; ") + ";",
+    ].join("; ") + ";"
   );
+}
+
+function setSecurityHeaders(response: NextResponse, contentSecurityPolicy: string) {
+  // SAMEORIGIN, not DENY: the app frames its own documents in-page (PDF Library,
+  // PdfViewer, video viewer). DENY blocks *same-origin* framing too, which made
+  // every in-app viewer render blank. Cross-site framing stays blocked, so
+  // clickjacking protection is unchanged.
+  response.headers.set("x-frame-options", "SAMEORIGIN");
+  response.headers.set("x-content-type-options", "nosniff");
+  response.headers.set("referrer-policy", "strict-origin-when-cross-origin");
+  response.headers.set("content-security-policy", contentSecurityPolicy);
 }
 
 function isSpeculativeRequest(request: NextRequest) {
@@ -119,8 +123,14 @@ function isSpeculativeRequest(request: NextRequest) {
 }
 
 export function proxy(request: NextRequest) {
-  const response = NextResponse.next({ request });
-  setSecurityHeaders(response);
+  const nonce = randomBytes(16).toString("base64");
+  const contentSecurityPolicy = buildContentSecurityPolicy(nonce);
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("Content-Security-Policy", contentSecurityPolicy);
+  requestHeaders.set("x-nonce", nonce);
+
+  const response = NextResponse.next({ request: { headers: requestHeaders } });
+  setSecurityHeaders(response, contentSecurityPolicy);
 
   // AI chat is unlimited by design (2026-09-20): skip the generic per-IP cap
   // for AI routes; abuse limits live upstream at the provider gateway.

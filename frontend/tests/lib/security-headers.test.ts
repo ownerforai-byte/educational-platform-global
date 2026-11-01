@@ -15,6 +15,19 @@ function requestStatuses(count: number, path: string, headers: Record<string, st
 }
 
 describe("proxy security headers", () => {
+  it("uses a per-request nonce for scripts without enabling eval or inline scripts", () => {
+    const response = proxy(new NextRequest("https://ravikisan.vercel.app/"));
+    const csp = response.headers.get("content-security-policy") ?? "";
+    const scriptSrc = csp.split(";").find((directive) => directive.trim().startsWith("script-src")) ?? "";
+    const nonce = scriptSrc.match(/'nonce-([^']+)'/)?.[1];
+
+    expect(nonce).toBeTruthy();
+    expect(scriptSrc).not.toContain("'unsafe-inline'");
+    expect(scriptSrc).not.toContain("'unsafe-eval'");
+    expect(response.headers.get("x-middleware-request-content-security-policy")).toBe(csp);
+    expect(response.headers.get("x-middleware-request-x-nonce")).toBe(nonce);
+  });
+
   it("lets the app frame its own documents and the supported embeds", () => {
     const csp = headersFor("/pdfs").get("content-security-policy") ?? "";
 

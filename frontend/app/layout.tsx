@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -33,16 +34,23 @@ export const viewport: Viewport = {
   themeColor: "#3b82f6",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
     <meta name="theme-color" content="#3b82f6" />
-    <Script id="theme-bootstrap" src="/theme-bootstrap.js" strategy="beforeInteractive" />
+    <Script
+      id="theme-bootstrap"
+      src="/theme-bootstrap.js"
+      nonce={nonce}
+      strategy="beforeInteractive"
+    />
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
