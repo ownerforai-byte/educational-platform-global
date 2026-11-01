@@ -202,6 +202,7 @@ const ExtendedFields = z.object({
    */
   resources: z
     .record(
+      z.string(),
       z
         .object({
           label: z.string().max(300).optional(),

@@ -34,7 +34,7 @@
     "katex": "^0.18.4",
     "lucide-react": "^0.441.0",
     "mathjs": "^15.2.0",
-    "next": "^16.3.3",
+    "next": "^16.4.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "rehype-highlight": "^7.0.2",
@@ -50,13 +50,18 @@
     "tailwind-merge": "^3.6.0",
     "three": "^0.185.1",
     "unified": "^11.0.5",
-    "zod": "^3.25.0"
+    "zod": "^4.6.7"
   },
   "overrides": {
-    "katex": "$katex"
+    "katex": "$katex",
+    "source-map-js": "1.2.2",
+    "glob": "14.0.3",
+    "minimatch": "11.0.3",
+    "undici": "8.10.2",
+    "sharp": "0.35.5",
+    "postcss-selector-parser": "6.1.5"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.64.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.1",
@@ -67,15 +72,15 @@
     "@types/three": "^0.185.4",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.17",
-    "eslint": "^9.16.0",
-    "eslint-config-next": "^15.5.23",
+    "eslint": "^10.0.0",
+    "eslint-config-next": "^16.0.0",
     "eslint-config-prettier": "^10.1.8",
     "jsdom": "^30.0.1",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.68.0",
-    "vitest": "4.1.11"
+    "vitest": "4.1.12"
   },
   "allowScripts": {
     "esbuild@0.25.4": true,

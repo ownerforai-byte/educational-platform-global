@@ -55,6 +55,11 @@
     "graphify:gods": "node scripts/graphify.mjs god-nodes --top 15",
     "graphify:mcp": "node scripts/graphify-mcp.mjs",
     "graphify:benchmark": "node scripts/graphify.mjs benchmark",
+    "tokenkit:codegraph": "node scripts/tokenkit/codegraph.mjs",
+    "tokenkit:grepai": "node scripts/tokenkit/grepai.mjs",
+    "tokenkit:pack": "node scripts/tokenkit/pack.mjs",
+    "tokenkit:cost": "node scripts/tokenkit/cost.mjs",
+    "tokenkit:mcp": "node scripts/tokenkit/harmony-mcp.mjs",
     "registry:build": "npx tsx frontend/scripts/content/registry.ts",
     "registry:check": "npx tsx frontend/scripts/content/registry.ts --check",
     "ledger:build": "npx tsx frontend/scripts/content/ledger.ts --write",
@@ -71,6 +76,15 @@
     "visuals:py": "python visuals-py/run.py generate",
     "visuals:py:images": "python visuals-py/run.py generate --images",
     "visuals:py:check": "python visuals-py/run.py check"
+  },
+  "overrides": {
+    "body-parser": "1.20.9",
+    "qs": "6.17.1",
+    "glob": "14.0.3",
+    "minimatch": "11.0.3",
+    "source-map-js": "1.2.2",
+    "vite": "8.3.5",
+    "@sentry/node": "11.10.0"
   },
   "devDependencies": {
     "tsx": "^4.23.15"

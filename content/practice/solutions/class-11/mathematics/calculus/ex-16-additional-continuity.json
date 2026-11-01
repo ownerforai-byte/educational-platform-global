@@ -1,0 +1,160 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "A rational function is continuous wherever its denominator is non-zero; a pole always breaks continuity.",
+      "marks": 3,
+      "question": "Q1. Define the continuity of a function at a point, give an example of a continuous function at a point, and say whether f(x) = 1/(1 − x) is continuous at x = 1. [T.U. 2048]",
+      "solution": "Definition. f is continuous at x = a if (i) f(a) is defined, (ii) lim (x→a) f(x) exists, and (iii) lim (x→a) f(x) = f(a).\nExample. f(x) = x² at a = 2: f(2) = 4, the limit is 4, and the two agree, so f is continuous there.\nFor f(x) = 1/(1 − x) at x = 1: f(1) = 1/0 is not defined and the one-sided limits are +∞ (from the left) and −∞ (from the right), so f is not continuous at x = 1. Boxed No (matches the printed key, book p486).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q1; book p486 = PDF p513; key book p486"
+    },
+    {
+      "knowledgeNote": "Two branches meeting at the same value = continuity, even if the formula changes.",
+      "marks": 3,
+      "question": "Q2. When is f(x) said to be continuous at x = a? Discuss the continuity of f(x) = x² + 2 for x ≤ 5 and f(x) = 3x + 12 for x > 5 at x = 5. (HSEB 2054)",
+      "solution": "Condition: f is continuous at x = a iff f(a) is defined, lim (x→a) f(x) exists, and the two are equal.\nHere f(5) = 25 + 2 = 27; left limit 27; right limit 3(5) + 12 = 27. All equal, so f is continuous at x = 5. Boxed continuous (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q2; book p486 = PDF p513; key book p486"
+    },
+    {
+      "knowledgeNote": "Discontinuities of a rational function are exactly the zeros of its denominator (where the numerator stays finite).",
+      "marks": 3,
+      "question": "Q3(i). At what points is f(x) = (x + 1)/[(x − 2)(x − 3)] discontinuous?",
+      "solution": "The denominator vanishes when x − 2 = 0 or x − 3 = 0, i.e. x = 2 and x = 3. At each of these the numerator is non-zero (3 and 4), so the function has a vertical asymptote and no finite value. Hence f is discontinuous at x = 2 and x = 3. Boxed 2 and 3 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q3(i); book p486 = PDF p513; key book p486"
+    },
+    {
+      "knowledgeNote": "Everywhere else the denominator is non-zero, so the quotient of continuous functions is continuous.",
+      "marks": 2,
+      "question": "Q3(ii). At what points is f(x) = (x + 1)/[(x − 2)(x − 3)] continuous?",
+      "solution": "For every x other than 2 and 3 the denominator is non-zero; a quotient of continuous functions with non-zero denominator is continuous. Hence f is continuous at all real x except x = 2 and x = 3. Boxed continuous at all points except x = 2 and x = 3 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q3(ii); book p486 = PDF p513; key book p486"
+    },
+    {
+      "knowledgeNote": "A V-shaped function with the apex value moved off the limit: common limit 0 but value 1.",
+      "marks": 3,
+      "question": "Q4. Discuss the continuity of f(x) at x = 0, where f(x) = x for x > 0, f(x) = 1 for x = 0 and f(x) = −x for x < 0.",
+      "solution": "Right limit: x → 0. Left limit: −x → 0. So lim (x→0) f(x) = 0, but f(0) = 1. Since limit ≠ value, f is discontinuous at x = 0 (a removable discontinuity; f becomes continuous if f(0) is redefined as 0). Boxed discontinuous (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q4; book p486 = PDF p513; key book p486"
+    },
+    {
+      "knowledgeNote": "Compute both one-sided limits first, then compare with the printed value — the answer needs all three numbers.",
+      "marks": 3,
+      "question": "Q5. f(x) = 2x + 1 for x < 1, 2 for x = 1, 3x for x > 1. Calculate the left-hand and right-hand limits at x = 1. Is f continuous at x = 1? (HSEB 2051)",
+      "solution": "LHL: 2(1) + 1 = 3. RHL: 3(1) = 3. The limit is 3, but f(1) = 2 ≠ 3, so f is not continuous at x = 1. Boxed 3, 3, No (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q5; book p487 = PDF p514; key book p486"
+    },
+    {
+      "knowledgeNote": "Here the branches agree (limit −2) but the printed value is 3: removable, repaired by setting f(2) = −2.",
+      "marks": 4,
+      "question": "Q6. f(x) = 2 − x² for x < 2, 3 for x = 2, x − 4 for x > 2. Verify that the limit exists at x = 2. Is f continuous there? If not, how can it be made continuous? (T.U. 2050)",
+      "solution": "LHL: 2 − 4 = −2. RHL: 2 − 4 = −2. The limit exists and equals −2, but f(2) = 3 ≠ −2, so f is not continuous at x = 2. It becomes continuous on redefining f(2) = −2. Boxed No, because lim (x→2) f(x) ≠ f(2); redefine f(2) = −2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q6; book p487 = PDF p514; key book p486"
+    },
+    {
+      "knowledgeNote": "A 0/0 rational function: factor top and bottom, cancel, then compare the limit with the assigned value.",
+      "marks": 4,
+      "question": "Q7. f(x) = (x² − x − 6)/(x² − 2x − 3) for x ≠ 3, f(x) = 5/3 at x = 3. Prove that f is discontinuous at x = 3. Can the definition at x = 3 be modified to make it continuous?",
+      "solution": "Factor: x² − x − 6 = (x − 3)(x + 2) and x² − 2x − 3 = (x − 3)(x + 1). For x ≠ 3, f(x) = (x + 2)/(x + 1), so lim (x→3) f(x) = 5/4. But f(3) = 5/3 ≠ 5/4, so f is discontinuous at x = 3. Since the limit exists, the discontinuity is removable: defining f(3) = 5/4 makes f continuous there. Boxed Yes, by defining f(3) = 5/4 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q7; book p487 = PDF p514; key book p486"
+    },
+    {
+      "knowledgeNote": "Removable discontinuity: both branches meet (limit 1) but the assigned value 1/2 sits below the gap.",
+      "marks": 4,
+      "question": "Q8(i). f(x) = 1/2 + x for 0 < x < 1/2, 1/2 at x = 1/2, 3/2 − x for 1/2 < x < 1. Show that f has a removable discontinuity at x = 1/2.",
+      "solution": "LHL: 1/2 + 1/2 = 1. RHL: 3/2 − 1/2 = 1. The limit is 1, but f(1/2) = 1/2 ≠ 1. A discontinuity whose two-sided limit exists is removable (fill the point with 1). ∎",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(i); book p487 = PDF p514"
+    },
+    {
+      "knowledgeNote": "Piecewise continuity at a join: match the two formulas at the junction point.",
+      "marks": 5,
+      "question": "Q8(ii). f(x) = x² for 0 < x < 1, x for 1 ≤ x < 2, (1/4)x³ for 2 ≤ x < 3. Show that f is continuous at x = 1 and x = 2.",
+      "solution": "At x = 1: f(1) = 1 (middle branch); left limit x² → 1; right limit x → 1. All equal → continuous.\nAt x = 2: f(2) = (1/4)(2)³ = 2 (third branch); left limit x → 2; right limit (1/4)x³ → 2. All equal → continuous. ∎",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(ii); book p487 = PDF p514"
+    },
+    {
+      "knowledgeNote": "One branch continuous, the other jumping: check each join independently.",
+      "marks": 5,
+      "question": "Q8(iii). f(x) = 3 + 2x for −3/2 ≤ x < 0, 3 − 2x for 0 ≤ x < 3/2, −3 − 2x for x ≥ 3/2. Show that f is continuous at x = 0 but discontinuous at x = 3/2. (HSEB 2056)",
+      "solution": "At x = 0: f(0) = 3 − 0 = 3; left limit 3 + 0 = 3; right limit 3 − 0 = 3 → continuous.\nAt x = 3/2: f(3/2) = −3 − 3 = −6 (third branch); left limit 3 − 2(3/2) = 0; right limit −3 − 2(3/2) = −6. Since the left limit 0 ≠ f(3/2) = −6, the limit does not exist and f is discontinuous at x = 3/2. ∎",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(iii); book p487 = PDF p514"
+    },
+    {
+      "knowledgeNote": "The sign function: a jump discontinuity with one-sided limits +1 and −1.",
+      "marks": 3,
+      "question": "Q8(iv). f(x) = 1 for x > 0, 0 for x = 0, −1 for x < 0. Show that f is discontinuous at x = 0.",
+      "solution": "Right limit: 1. Left limit: −1. Since the one-sided limits differ, lim (x→0) f(x) does not exist, so f cannot be continuous at x = 0. ∎",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(iv); book p487 = PDF p514"
+    },
+    {
+      "knowledgeNote": "Set the quadratic branch equal to the constant branch at the join.",
+      "marks": 3,
+      "question": "Q9(i). Find k so that f(x) = kx² (x ≤ 2), f(x) = 3 (x > 2) is continuous at x = 2.",
+      "solution": "Left limit and value: k(2)² = 4k. Right limit: 3. Continuity needs 4k = 3, so k = 3/4. Boxed k = 3/4 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(i); book p487 = PDF p514; key book p486"
+    },
+    {
+      "knowledgeNote": "Only one branch contains the constant: equate the other branch's value at the join to it.",
+      "marks": 3,
+      "question": "Q9(ii). Find a so that g(x) = ax + 5 (x ≤ 2), g(x) = x − 1 (x > 2) is continuous at x = 2.",
+      "solution": "Left limit: 2a + 5. Right limit: 2 − 1 = 1. Continuity needs 2a + 5 = 1, so 2a = −4 and a = −2. Boxed a = −2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(ii); book p487 = PDF p514; key book p486"
+    },
+    {
+      "knowledgeNote": "Linear on the left, quadratic on the right: both formulas contain p, so one equation solves it.",
+      "marks": 3,
+      "question": "Q9(iii). Find p so that f(x) = 2px + 3 (x < 1), f(x) = 1 − px² (x ≥ 1) is continuous at x = 1.",
+      "solution": "Left limit: 2p + 3. Right limit and value: 1 − p. Continuity needs 2p + 3 = 1 − p, so 3p = −2 and p = −2/3. Boxed p = −2/3 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(iii); book p487 = PDF p514; key book p486"
+    },
+    {
+      "knowledgeNote": "The constant must reproduce the removable limit: factor x² − 9 = (x − 3)(x + 3).",
+      "marks": 3,
+      "question": "Q9(iv). Find k so that f(x) = (x² − 9)/(x − 3) for x ≠ 3, f(x) = k for x = 3 is continuous at x = 3.",
+      "solution": "For x ≠ 3, (x² − 9)/(x − 3) = x + 3, so the limit at 3 is 6. Continuity requires k = 6. Boxed k = 6 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(iv); book p487 = PDF p514; key book p486"
+    },
+    {
+      "knowledgeNote": "The hint is the definition: equal one-sided limits that differ from the value = removable.",
+      "marks": 4,
+      "question": "Q10. Let f(x) = 2x (x < 2), 2 (x = 2), x² (x > 2). Show that f has a removable discontinuity at x = 2. [Hint: removable iff lim (x→2⁻) f = lim (x→2⁺) f ≠ f(2).]",
+      "solution": "Left limit: 2(2) = 4. Right limit: 2² = 4. So lim (x→2) f(x) = 4, while f(2) = 2. The one-sided limits are equal but differ from the value, hence the discontinuity at x = 2 is removable (repair by setting f(2) = 4). ∎",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q10; book p488 = PDF p515"
+    },
+    {
+      "knowledgeNote": "Continuity needs three things at once; failing any one of them produces a discontinuity type.",
+      "marks": 5,
+      "question": "Q11. What condition is necessary for f(x) to be continuous at x = a? Under what conditions is f discontinuous at x = a?",
+      "solution": "Necessary and sufficient conditions: (i) f(a) is defined; (ii) lim (x→a) f(x) exists, i.e. lim (x→a⁻) f(x) = lim (x→a⁺) f(x) = L; (iii) L = f(a).\nf is discontinuous at x = a when any one fails: (a) f(a) undefined — e.g. 1/(x − 1) at x = 1 (infinite discontinuity); (b) the one-sided limits differ — e.g. |x|/x at 0 (jump discontinuity); (c) the limit exists but differs from f(a) — e.g. Q10 above (removable discontinuity).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q11; book p488 = PDF p515"
+    },
+    {
+      "knowledgeNote": "Constant function with one moved point: the limit is 1 everywhere, the value at 0 is 2.",
+      "marks": 3,
+      "question": "Q12. f(x) = 1 when x ≠ 0, f(x) = 2 when x = 0. Find lim (x→0) f(x) if it exists. Is f continuous at x = 0?",
+      "solution": "For x ≠ 0 the function equals 1, so both one-sided limits are 1 and lim (x→0) f(x) = 1. But f(0) = 2 ≠ 1, so f is not continuous at x = 0 (removable discontinuity). Boxed 1 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q12; book p488 = PDF p515 (worked in the text, pp488-489); key book p486"
+    },
+    {
+      "knowledgeNote": "Points of discontinuity of a rational function = zeros of the denominator (with a non-zero numerator).",
+      "marks": 2,
+      "question": "Q13(i). Find the points of discontinuity of f(x) = (x + 1)/(x − 1).",
+      "solution": "The denominator x − 1 vanishes at x = 1, where the numerator is 2 ≠ 0, so f has a vertical asymptote there. Discontinuous at x = 1. Boxed x = 1 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q13(i); book p489 = PDF p516; key book p486"
+    },
+    {
+      "knowledgeNote": "Factor the cubic denominator into its three linear roots.",
+      "marks": 3,
+      "question": "Q13(ii). Find the points of discontinuity of f(x) = (3x − 1)/(x³ − 5x² + 6x).",
+      "solution": "Factor: x³ − 5x² + 6x = x(x² − 5x + 6) = x(x − 2)(x − 3). The denominator vanishes at x = 0, 2, 3, and at each the numerator 3x − 1 is non-zero (−1, 5, 8). Hence f is discontinuous at x = 0, 2, 3. Boxed x = 0, 2, 3 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q13(ii); book p489 = PDF p516; key book p486"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 ADDITIONAL QUESTIONS (Continuity) — Q1-Q13 including all sub-parts (book pp486-489 = PDF pp513-516 of the 2075 reprint; page-region vision reads at 180 dpi in overlapping strips; every numeric answer checked against the printed Answers block, book p486).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.16 Additional Questions (Continuity) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-16-additional-continuity",
+  "topicTitle": "Ch.16 Additional Questions (Continuity) - definitions, piecewise tests, constants k (21 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}
