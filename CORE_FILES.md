@@ -7,6 +7,13 @@
 > **DO ONLY WHAT IS ASKED.**
 > When asked to create or edit a file, read ONLY the specific routing and structure files that tell you **WHERE to put it** and **HOW to link/route it**.
 > Once done, you MUST mark whether any touched or newly created file is an **Important Core File** or a **Content File**.
+>
+> **📊 GRAPHIFY-FIRST ORIENTATION (query before cold-reading the codebase):**
+> For "where is X / what depends on Y / how do A and B connect", query the graphify
+> knowledge graph at `graphify-out/graph.json` (code-only; auto-rebuilt by git hooks):
+> - `graphify query "<question>"` · `graphify path "A" "B"` · `graphify explain "<symbol>"` · `graphify god-nodes`
+> - Stale? Run `graphify update .` (no LLM needed). Use `/graphify` in your agent session, or connect the `graphify-mcp` server.
+> - The graph indexes CODE ONLY — `.graphifyignore` excludes `content/**` + `public/data/**` (the curriculum corpus).
 
 ---
 

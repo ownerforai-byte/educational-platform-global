@@ -2,6 +2,8 @@
 
 > **Rule 0 (Targeted Entrypoint — No Doc-Reading Loop):** `CORE_FILES.md` is the primary architecture and routing entrypoint. Read `CORE_FILES.md` and ONLY the 1–2 isolated target/routing files needed for your task. Reference this file (`project-conductor.md`) when assigning roles or task labels, and `BRANCHES.md` when working with git branches.
 >
+> **Rule 0.5 (Graphify-First Orientation):** Before reading scattered source files, query the graphify knowledge graph (`graphify-out/graph.json`, code-only, auto-rebuilt by git hooks): `graphify query "<question>"`, `graphify path "A" "B"`, `graphify explain "<symbol>"`, `graphify god-nodes` (stale? `graphify update .`). It is NOT the curriculum corpus — `content/**` and `public/data/**` are excluded by `.graphifyignore`. Use it to pick the 1–2 files to read.
+>
 > **Rule 0a (CORE ISOLATION & NO MASS READING):** Over 8,000 files in the repo are content payloads (`content/ravikishan/**`). **DO NOT READ ALL FILES.** Only read the isolated routing files needed to place, create, and link your target file. When finished, mark whether touched files are **[IMPORTANT CORE FILE]** or **[CONTENT FILE]**.
 >
 > **Rule 0b (branches):** Read `BRANCHES.md` before creating, checking out, merging, or deleting any branch. It maps every area to one of the 48 area branches (`content/physics`, `feature/ai-chat`, `backend/auth-api`, `test/*`, `ci/*`…), names the 4 reserved worktree branches that must never be touched, and defines the scoped-check commands (`npm run check` / `npm run check:all`).

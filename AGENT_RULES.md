@@ -4,6 +4,16 @@ These rules are mandatory for every agent (orchestrator, `general` subagents,
 `explore` subagents, and Agent Manager sessions) that performs work in this
 repository.
 
+> **📊 GRAPHIFY-FIRST ORIENTATION (mandatory for every agent):** Before reading
+> scattered source files to answer "where is X", "what depends on Y", or "how do A
+> and B connect", query the graphify knowledge graph at `graphify-out/graph.json`
+> (code-only; auto-rebuilt by git hooks; run `graphify update .` if stale):
+> - `graphify query "<question>"` · `graphify path "A" "B"` · `graphify explain "<symbol>"` · `graphify god-nodes`
+> - Or run `npx graphify-mcp` as an MCP server, or use the `/graphify` skill in your agent session.
+> The graph is NOT the curriculum corpus — `content/**` and `public/data/**` are
+> excluded by `.graphifyignore`. Use the graph to find the 1–2 files to read,
+> then read narrowly.
+
 ## 🚨 Hardcoded Boundary Rules: What to Do & What to Avoid
 
 ### 🛑 What Every Agent MUST AVOID (Strictly Forbidden):
