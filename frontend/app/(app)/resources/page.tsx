@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import {
   Atom,
   BookOpen,
@@ -102,44 +101,6 @@ const KIND_META: Record<
   md: { label: "MD", icon: FileText, tint: "bg-emerald-500/10 text-emerald-500", border: "border-emerald-500/20" },
   docx: { label: "DOCX", icon: File, tint: "bg-indigo-500/10 text-indigo-500", border: "border-indigo-500/20" },
 };
-
-const ADDITIONAL_RESOURCE_TOOLS = [
-  {
-    href: "/lab",
-    title: "Interactive Lab",
-    description: "3D simulations, interactive theory panels, and science calculators.",
-    icon: FlaskConical,
-    tint: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
-  },
-  {
-    href: "/resources/physics-xi",
-    title: "Physics XI Academic Companion",
-    description: "26 unit briefs with assertions, boundary conditions, and study guides.",
-    icon: Atom,
-    tint: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20",
-  },
-  {
-    href: "/world-knowledge",
-    title: "World Knowledge",
-    description: "General knowledge, global affairs, and scientific breakthroughs.",
-    icon: Globe,
-    tint: "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20",
-  },
-  {
-    href: "/loksewa",
-    title: "Loksewa Prep",
-    description: "Geography, constitution, history, and administration for Loksewa.",
-    icon: BookOpen,
-    tint: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
-  },
-  {
-    href: "/levels",
-    title: "Education Levels",
-    description: "Browse content structured by education level and curriculum group.",
-    icon: GraduationCap,
-    tint: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-  },
-];
 
 type FilterSubject = Subject | "All";
 
@@ -519,40 +480,6 @@ export default function ResourcesPage() {
         </div>
       )}
 
-      {/* ── Additional Platform Resources & Exploration ─────────────────── */}
-      <section className="space-y-4 pt-4" aria-labelledby="other-tools-heading">
-        <div className="flex items-center justify-between gap-4 border-t border-border/60 pt-6">
-          <h2 id="other-tools-heading" className="text-base font-bold text-foreground">
-            Explore Other Study Tools &amp; Curricular Paths
-          </h2>
-          <Link href="/pdfs" className="text-xs font-semibold text-primary hover:underline">
-            Visit PDF Library →
-          </Link>
-        </div>
-
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {ADDITIONAL_RESOURCE_TOOLS.map((tool) => {
-            const Icon = tool.icon;
-            return (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="group rounded-2xl border border-border/60 bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-sm"
-              >
-                <div className={`mb-2.5 inline-flex h-9 w-9 items-center justify-center rounded-xl border ${tool.tint}`}>
-                  <Icon className="h-4 w-4" />
-                </div>
-                <h3 className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {tool.title}
-                </h3>
-                <p className="mt-1 text-[11px] text-muted-foreground line-clamp-2 leading-relaxed">
-                  {tool.description}
-                </p>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-    </div>
+          </div>
   );
 }
