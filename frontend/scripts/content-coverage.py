@@ -105,7 +105,7 @@ def get_content_files(base_path):
                         'slug': slug,
                         'path': full_path,
                     })
-        except Exception as e:
+        except Exception:
             pass
 
     scan_dir(base_path)
@@ -189,7 +189,7 @@ for subject in ['biology', 'chemistry', 'english', 'mathematics', 'nepali', 'phy
     print(f"  Coverage: {covered_count}/{total_topic_count} ({coverage:.1f}%)")
     if gaps:
         print(f"  Missing: {len(gaps)} topics")
-        print(f"  Sample gaps:")
+        print("  Sample gaps:")
         for g in gaps[:3]:
             print(f"    - {g}")
 

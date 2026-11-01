@@ -34,7 +34,6 @@ def _scene_fig(asset: VisualAsset):
         pos = np.array(m.positions).reshape(-1, 3)
         idx = m.indices
         if len(pos):
-            x, y, z = pos[:, 0], pos[:, 1], pos[:, 2]
             for i in range(0, len(idx), 3):
                 a, b, c = pos[idx[i]], pos[idx[i + 1]], pos[idx[i + 2]]
                 ax.plot([a[0], b[0], c[0], a[0]], [a[1], b[1], c[1], a[1]],
