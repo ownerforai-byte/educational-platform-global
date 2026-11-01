@@ -1,5 +1,10 @@
 # .graphifyignore — directories graphify should not index
 # Keep the graph focused on actual source code + agent docs, not data payloads.
+#
+# NOTE: This graph is built with the SQL extra installed, so the 12 Supabase
+# migrations under backend/src/db/migrations/*.sql ARE indexed (tables, views,
+# relations). To rebuild a fresh graph you must install graphify with the [sql]
+# extra:  uv tool install "graphifyy[sql]"  (plain `graphify` skips .sql files).
 
 # Curriculum corpus (4,300+ JSON files — data, not code)
 content/
