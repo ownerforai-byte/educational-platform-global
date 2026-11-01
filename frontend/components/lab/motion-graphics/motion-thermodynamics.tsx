@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { reportClientError } from "@/lib/errors/app-error";
 import { disposeThreeScene, clearGroup, standardMaterial } from "@/components/lab/three-scene";
 
 type ProcessType = "isothermal" | "adiabatic" | "isobaric" | "isochoric";
@@ -65,8 +66,7 @@ export const MotionGraphicsThermodynamics: React.FC = () => {
           labelRenderer.domElement.style.zIndex = "10";
           mountRef.current!.appendChild(labelRenderer.domElement);
         } catch {
-          console.log("CSS2DRenderer not available");
-        }
+                  }
 
         // Animation loop
         function animate() {
@@ -149,7 +149,7 @@ export const MotionGraphicsThermodynamics: React.FC = () => {
         
         animate();
       } catch (error) {
-        console.error("Error initializing Thermodynamics animation:", error);
+        reportClientError("motion-thermodynamics-init", error);
       }
     }
 

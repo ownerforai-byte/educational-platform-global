@@ -279,7 +279,7 @@ const container = mountRef.current!;
             imageGroup.add(imageLabel);
             labels.push(imageLabel);
           }
-        } catch { console.log("CSS2DRenderer not available"); }
+        } catch { /* CSS2DRenderer optional */ }
 
 
     updateRef.current = (time) => {
@@ -622,7 +622,7 @@ const container = mountRef.current!;
           imageLabel.position.set(imagePosition, 1, 0);
           imageGroup.add(imageLabel);
           labels.push(imageLabel);
-        } catch { console.log("CSS2DRenderer not available"); }
+        } catch { /* CSS2DRenderer optional */ }
 
 
     updateRef.current = (time) => {

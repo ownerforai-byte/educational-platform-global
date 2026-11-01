@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import { KATEX_OPTIONS, prepareKatexExpression } from "@/lib/content/katex";
+import { reportClientError } from "@/lib/errors/app-error";
 
 type KatexProps = {
   math: string;
@@ -22,7 +23,7 @@ export function Katex({ math, displayMode = false, className }: KatexProps) {
         displayMode,
       });
     } catch (error) {
-      console.error("KaTeX rendering error:", error);
+      reportClientError("katex-render", error, { math });
       if (containerRef.current) {
         containerRef.current.innerHTML = `<span style="color: ${KATEX_OPTIONS.errorColor}">Error rendering math</span>`;
       }

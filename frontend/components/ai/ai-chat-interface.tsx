@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import { reportClientError } from "@/lib/errors/app-error";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -708,7 +709,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       }
       refreshAiSparkMeters();
     } catch (err: any) {
-      console.error("AI chat error:", err);
+      reportClientError("ai-chat", err);
       setStreamingText(null);
       setStreamPhase(null);
       // A dead stream that already painted partial text: keep the partial
@@ -798,8 +799,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         document.execCommand("copy");
         document.body.removeChild(ta);
       } catch {
-        console.warn("Clipboard copy unavailable");
-      }
+              }
     }
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);

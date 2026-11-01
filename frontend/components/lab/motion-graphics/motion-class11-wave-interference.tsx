@@ -65,8 +65,7 @@ export const MotionClass11WaveInterference: React.FC = () => {
       labelRenderer.domElement.style.zIndex = "10";
       container.appendChild(labelRenderer.domElement);
     } catch {
-      console.log("CSS2DRenderer not available");
-    }
+          }
 
     const createLabel = (text: string, position: THREE.Vector3, color = "#ffffff") => {
       if (!labelRenderer) return null;

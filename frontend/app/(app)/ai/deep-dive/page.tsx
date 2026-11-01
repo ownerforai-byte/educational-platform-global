@@ -21,6 +21,7 @@ import {
 import { toast } from "sonner";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { apiFetch } from "@/lib/api-client";
+import { reportClientError } from "@/lib/errors/app-error";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 import { GUEST_DAILY_LIMIT, writeGuestCount } from "@/lib/ai/guest-quota";
@@ -127,7 +128,7 @@ export default function DeepDiveStudioPage() {
       recordAiSparkUse();
       toast.success("Deep synthesis complete!");
     } catch (err: any) {
-      console.error(err);
+      reportClientError("ai-deep-dive", err);
       toast.error(err.message || "Failed to analyze concept. Please try again.");
     } finally {
       setLoading(false);

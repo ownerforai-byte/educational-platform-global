@@ -229,7 +229,7 @@ const container = mountRef.current!;
           orbitLabel.position.set(orbitalRadius, 0, 3);
           orbitGroup.add(orbitLabel);
           labels.push(orbitLabel);
-        } catch { console.log("CSS2DRenderer not available"); }
+        } catch { /* CSS2DRenderer optional */ }
 
         let time = 0;
 
@@ -489,7 +489,7 @@ const container = mountRef.current!;
           fieldLabel.position.set(0, -2, 15);
           fieldGroup.add(fieldLabel);
           labels.push(fieldLabel);
-        } catch { console.log("CSS2DRenderer not available"); }
+        } catch { /* CSS2DRenderer optional */ }
 
 
     updateRef.current = (time) => {

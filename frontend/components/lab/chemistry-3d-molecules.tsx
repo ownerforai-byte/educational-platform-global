@@ -193,7 +193,7 @@ export const Chemistry3DMolecules: React.FC = () => {
       labelRenderer.domElement.style.pointerEvents = "none";
       labelRenderer.domElement.style.zIndex = "10";
       mountRef.current!.appendChild(labelRenderer.domElement);
-    } catch { console.log("CSS2DRenderer not available"); }
+    } catch { /* CSS2DRenderer optional */ }
 
     function createMolecule() {
       // Clear previous atoms

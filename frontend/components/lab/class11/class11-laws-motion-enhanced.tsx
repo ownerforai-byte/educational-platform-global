@@ -195,8 +195,7 @@ const container = mountRef.current;
           labels.push(pulleyLabel);
 
         } catch {
-          console.log("CSS2DRenderer not available");
-        }
+                  }
 
         function updateScene() {
           if (!ts) return;

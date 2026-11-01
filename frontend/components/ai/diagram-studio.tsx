@@ -133,8 +133,7 @@ export function DiagramStudio() {
     try {
       await navigator.clipboard.writeText(last.content);
     } catch {
-      console.warn("Clipboard copy unavailable");
-    }
+          }
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

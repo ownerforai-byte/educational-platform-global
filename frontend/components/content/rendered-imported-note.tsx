@@ -3,6 +3,7 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { StatusBadge } from "@/components/content/status-badge";
 import { NOTE_STATUS, getNoteStatus } from "@/lib/content/note-status";
 import { loadData } from "@/lib/data-loader";
+import { reportClientError } from "@/lib/errors/app-error";
 
 type RavikishanIndexEntry = {
   title?: string;
@@ -64,14 +65,17 @@ export async function RenderedImportedNote({ note }: { note: { title: string; pa
       ? await getRavikishanNote(note.path)
       : await getRExportEntry(note.subject, note.path);
   } catch (error) {
-    console.error(`RenderedImportedNote: failed to load "${note.path}"`, error);
+    reportClientError("rendered-imported-note-load", error, { path: note.path });
     return <BrokenNoteCard title={note.title} />;
   }
 
   if (!data) {
     // Listed in the manifest but missing from the runtime index — out-of-sync
     // build artifacts, which is a broken state, not a missing page.
-    console.error(`RenderedImportedNote: "${note.path}" not found in index — run npm run content:build`);
+    reportClientError("rendered-imported-note-missing", new Error("note not in index"), {
+      path: note.path,
+      hint: "run npm run content:build",
+    });
     return <BrokenNoteCard title={note.title} />;
   }
   const status = getNoteStatus(data);

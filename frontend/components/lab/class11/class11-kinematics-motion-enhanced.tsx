@@ -254,8 +254,7 @@ const container = mountRef.current;
           labels.push(accelerationLabel);
 
         } catch {
-          console.log("CSS2DRenderer not available, using fallback labels");
-        }
+                  }
 
         const startTime = performance.now();
 

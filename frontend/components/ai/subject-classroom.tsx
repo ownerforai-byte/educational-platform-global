@@ -351,8 +351,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
     try {
       await navigator.clipboard.writeText(content);
     } catch {
-      console.warn("Clipboard copy unavailable");
-    }
+          }
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
   };

@@ -426,14 +426,21 @@ export function reportClientError(
   };
 
   try {
-    if (process.env.NODE_ENV === "production") {
-      console.warn(`${ERROR_LOG_PREFIX} ${scope} failed`, {
-        kind: normalized.kind,
-        errorId: normalized.errorId,
+    void import("@sentry/nextjs")
+      .then((Sentry) => {
+        Sentry.captureException(normalized.original ?? normalized, {
+          tags: {
+            scope,
+            kind: normalized.kind,
+            ...(normalized.code ? { code: normalized.code } : {}),
+          },
+          extra: details,
+          level: process.env.NODE_ENV === "production" ? "warning" : "error",
+        });
+      })
+      .catch(() => {
+        // Sentry optional (no DSN in local dev); reporting must never throw.
       });
-    } else {
-      console.error(`${ERROR_LOG_PREFIX} ${scope}`, details, normalized.original ?? normalized);
-    }
   } catch {
     // Logging must never become the source of a second failure.
   }

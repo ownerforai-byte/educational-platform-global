@@ -13,6 +13,7 @@ import {
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel, ACCESS_LABELS } from "@/lib/access-level";
 import { apiFetch } from "@/lib/api-client";
+import { reportClientError } from "@/lib/errors/app-error";
 import { BlockExplorer } from "@/components/periodic-table/block-explorer";
 import { CeeSparkGate } from "@/components/periodic-table/cee-spark-gate";
 import {
@@ -178,7 +179,7 @@ export function PeriodicTableView() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Failed to load elements:", err);
+        reportClientError("periodic-table-load", err);
         setLoading(false);
       });
   }, []);
@@ -201,7 +202,7 @@ export function PeriodicTableView() {
         await document.exitFullscreen();
       }
     } catch (err) {
-      console.error("Fullscreen toggle failed:", err);
+      reportClientError("periodic-table-fullscreen", err);
     }
   };
 

@@ -240,7 +240,7 @@ const container = mountRef.current!;
           angleLabel.position.set(-base/2, apexHeight/2 + 1, -height/2);
           prismGroup.add(angleLabel);
           labels.push(angleLabel);
-        } catch { console.log("CSS2DRenderer not available"); }
+        } catch { /* CSS2DRenderer optional */ }
 
 
     updateRef.current = (time) => {

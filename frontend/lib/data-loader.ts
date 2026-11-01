@@ -74,7 +74,7 @@ export function loadData<T>(relPath: string): Promise<T> {
     } catch (err) {
       // In server components, log warning and return empty fallback instead of crashing entire render
       if (!isBrowser) {
-        console.warn(`[loadData] Server fetch fallback failed for "${relPath}":`, (err as Error)?.message);
+        reportClientError("load-data-server-fallback", err, { relPath });
         return ([] as unknown) as T;
       }
       throw err;

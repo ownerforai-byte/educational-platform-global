@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
+import { reportClientError } from "@/lib/errors/app-error";
 
 interface LessonMeta {
   slug: string;
@@ -174,7 +175,7 @@ export default function LessonsLibraryPage() {
         }
       } catch (e: unknown) {
         if (!cancelled) {
-          console.warn("Lessons list fetch failed, using fallback catalog", e);
+          reportClientError("lessons-list-fetch", e);
           setLessons(FALLBACK_LESSONS);
         }
       } finally {

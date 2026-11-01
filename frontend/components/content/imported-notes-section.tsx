@@ -10,6 +10,7 @@ import {
 } from "@/lib/imported-notes";
 import { noteRoute } from "@/lib/note-routes";
 import { FileText } from "lucide-react";
+import { reportClientError } from "@/lib/errors/app-error";
 
 type ImportedNotesSectionProps = {
   subject: string;
@@ -32,7 +33,7 @@ export async function ImportedNotesSection({
         ? await getImportedNotesForUnit(subject, unitId, target)
         : await getImportedNotesForSubject(subject, target);
   } catch (err) {
-    console.warn(`[ImportedNotesSection] Failed to load notes for ${subject}:`, (err as Error)?.message);
+    reportClientError("imported-notes-section", err, { subject, unitId, topicTitle, target });
     notes = [];
   }
 

@@ -20,6 +20,7 @@
  */
 
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import { reportClientError } from "@/lib/errors/app-error";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -795,8 +796,7 @@ export function TutorConsole({
         document.execCommand("copy");
         document.body.removeChild(ta);
       } catch {
-        console.warn("Clipboard copy unavailable");
-      }
+              }
     }
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
@@ -946,7 +946,7 @@ export function TutorConsole({
         }
         refreshAiSparkMeters();
       } catch (err: unknown) {
-        console.error("Tutor console error:", err);
+        reportClientError("tutor-console", err);
         const msg =
           err instanceof Error && err.message
             ? err.message

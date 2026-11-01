@@ -21,6 +21,7 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { apiFetch } from "@/lib/api-client";
+import { reportClientError } from "@/lib/errors/app-error";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 import { GUEST_DAILY_LIMIT, writeGuestCount } from "@/lib/ai/guest-quota";
@@ -126,7 +127,7 @@ export default function MathStudioPage() {
       recordAiSparkUse();
       toast.success("Solution generated successfully!");
     } catch (err: any) {
-      console.error(err);
+      reportClientError("ai-math-solve", err);
       toast.error(err.message || "Failed to solve. Please try again.");
     } finally {
       setLoading(false);

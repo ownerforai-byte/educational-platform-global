@@ -13,10 +13,6 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("[GlobalError]", error);
-  }, [error]);
-
-  useEffect(() => {
     reportClientError("global-error-boundary", error, {
       digest: error.digest,
       route: typeof window !== "undefined" ? window.location.pathname : undefined,

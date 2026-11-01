@@ -12,10 +12,6 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("Application error:", error);
-  }, [error]);
-
-  useEffect(() => {
     reportClientError("app-error-boundary", error, {
       digest: error.digest,
       route: typeof window !== "undefined" ? window.location.pathname : undefined,

@@ -1,5 +1,8 @@
 version = 1
 
+# Autofix clones via a separate GitHub App (not deepsource-io analysis alone):
+# https://github.com/apps/deepsource-autofix — grant this private repo read/write or Autofix shows "Failed to clone repository".
+
 test_patterns = [
   "**/*.test.ts",
   "**/*.test.tsx",
@@ -25,6 +28,8 @@ exclude_patterns = [
   "frontend/.next/**",
   "backend/dist/**",
   "frontend/lib/deploy-version.ts",
+  "frontend/instrumentation.ts",
+  "frontend/lib/color-contrast.ts",
   "*.min.js",
   "*.map",
   "play-store/**",

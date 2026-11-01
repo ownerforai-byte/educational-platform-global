@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import Slider from "@/components/ui/slider";
 import { isWebGLAvailable } from "@/lib/webgl";
+import { reportClientError } from "@/lib/errors/app-error";
 import { disposeThreeScene, clearGroup, standardMaterial } from "@/components/lab/three-scene";
 
 export const MotionGraphicsEMWaves: React.FC = () => {
@@ -67,8 +68,7 @@ export const MotionGraphicsEMWaves: React.FC = () => {
           labelRenderer.domElement.style.zIndex = "10";
           mountRef.current!.appendChild(labelRenderer.domElement);
         } catch {
-          console.log("CSS2DRenderer not available");
-        }
+                  }
 
         // Animation loop
         function animate() {
@@ -280,7 +280,7 @@ export const MotionGraphicsEMWaves: React.FC = () => {
         
         animate();
       } catch (error) {
-        console.error("Error initializing EM Waves animation:", error);
+        reportClientError("motion-em-waves-init", error);
       }
     }
 

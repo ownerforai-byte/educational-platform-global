@@ -1,5 +1,7 @@
 "use client";
 
+import { reportClientError } from "@/lib/errors/app-error";
+
 /**
  * PUTER.JS FALLBACK — the second drawing engine of the "agent picks the
  * engine" policy (owner 2026-09-30): the server-side image models try
@@ -77,10 +79,7 @@ export async function drawFigureWithPuter(prompt: string): Promise<string | null
       (result as { src?: string })?.src ?? (typeof result === "string" ? result : undefined);
     return url && url.length > 0 ? url : null;
   } catch (err) {
-    console.warn(
-      "[puter-image] fallback draw failed:",
-      err instanceof Error ? err.message : err,
-    );
+    reportClientError("puter-image-fallback", err);
     return null;
   }
 }

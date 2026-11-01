@@ -1,4 +1,5 @@
 import { apiFetch, getStoredToken, clearStoredToken } from "../api-client";
+import { reportClientError } from "../errors/app-error";
 import type {
   AIChatMessage,
   AIChatRequest,
@@ -190,10 +191,9 @@ export async function* streamChat(
               } catch {
                 // 5.3: surface the malformed tail instead of silently
                 // dropping it — a truncated final event is a real error.
-                console.warn(
-                  "[AI stream] ignored malformed final SSE event:",
-                  data.slice(0, 120),
-                );
+                reportClientError("ai-stream-malformed-sse", new Error("malformed SSE tail"), {
+                  sample: data.slice(0, 120),
+                });
               }
             }
           }
