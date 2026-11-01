@@ -10,6 +10,7 @@ Consult the other workflow references **only when needed**:
 
 ## Hard rules
 
+- **GRAPHIFY-FIRST ORIENTATION:** Before reading scattered files to answer "where is X", "what depends on Y", or "how do A and B connect", query the graphify knowledge graph at `graphify-out/graph.json` (9,500+ code nodes, auto-rebuilt by git hooks; `.graphifyignore` excludes `content/` data payloads): `graphify query "<question>"`, `graphify path "A" "B"`, `graphify explain "<symbol>"`, `graphify god-nodes`. If stale, `graphify update .` (no LLM needed). Use `/graphify` in your agent session. Use the graph to find the 1–2 files to read, then read narrowly.
 - **HARDCODED BOUNDARY — NEVER READ ALL FILES:** Over 95% of repository files (>8,000 files) are content payloads (`content/ravikishan/**`). Read only `CORE_FILES.md` and the 1 or 2 specific files directly tied to your goal.
 - **WHAT TO AVOID:** Never scan content directories or read unrequested content notes. Never guess routing. Never perform unrequested refactors.
 - **WHAT TO DO:** Do only what is asked. Determine the route/parent link in `frontend/lib/navigation.ts`, place the file, connect the route, and verify.
