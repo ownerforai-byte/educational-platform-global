@@ -1,54 +1,17 @@
 version = 1
 
-# Autofix clones via a separate GitHub App (not deepsource-io analysis alone):
-# https://github.com/apps/deepsource-autofix — grant this private repo read/write or Autofix shows "Failed to clone repository".
-
-test_patterns = [
-  "**/*.test.ts",
-  "**/*.test.tsx",
-  "**/*.spec.ts",
-  "**/*.spec.tsx",
-  "**/__tests__/**",
-  "frontend/tests/**"
-]
-
-# Keep analysis (and Autofix checkout) focused on app code — mirrors `.deepsourceignore`.
+# Skip heavy data / content directories to keep analysis fast
 exclude_patterns = [
-  ".agnes/**",
-  ".frontbuff/**",
-  ".kilo/**",
   "content/**",
-  "frontend/public/data/**",
   "public/**",
   "backend/.ocr-v2/**",
   "backend/kb/**",
-  "node_modules/**",
-  "**/node_modules/**",
-  ".next/**",
-  "frontend/.next/**",
-  "backend/dist/**",
-  "frontend/lib/deploy-version.ts",
-  "frontend/instrumentation.ts",
-  "frontend/lib/color-contrast.ts",
-  "*.min.js",
-  "*.map",
+  "frontend/public/data/**",
+  "visuals-py/**",
   "play-store/**",
   "android-twa/**",
-  "frontend/scripts/**",
-  "scripts/**"
 ]
-
-[[analyzers]]
-name = "javascript"
-enabled = true
-
-  [analyzers.meta]
-  plugins = ["react"]
-  dialect = "typescript"
 
 [[analyzers]]
 name = "python"
 enabled = true
-
-  [analyzers.meta]
-  environment = ["python311"]
