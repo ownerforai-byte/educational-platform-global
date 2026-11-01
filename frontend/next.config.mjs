@@ -4,6 +4,15 @@ import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
+  // The dev preview is proxied through these v0 hostnames; Next otherwise
+  // blocks HMR and other dev-only assets on the preview origin.
+  allowedDevOrigins: [
+    "sb-7625z75elic9.vercel.run",
+    "web-app-optimization-16k6crjc-2.v0.build",
+    "*.vercel.run",
+    "*.v0.build",
+  ],
+
   // Fresh deploys must win — but only for DOCUMENTS. A blanket no-store on
   // "/:path*" also hit everything served out of /public, including the 6 MB
   // notes manifest the app fetches at runtime: that turned a cached edge

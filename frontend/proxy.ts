@@ -72,13 +72,21 @@ function isRateLimited(key: string, max: number) {
 }
 
 function buildContentSecurityPolicy(nonce: string) {
+  const scriptSources = [
+    "'self'",
+    `'nonce-${nonce}'`,
+    // Webpack's dev runtime evaluates modules; keep this permission out of production.
+    ...(process.env.NODE_ENV === "development" ? ["'unsafe-eval'"] : []),
+    "https://js.puter.com",
+  ];
+
   return (
     [
       "default-src 'self'",
       // puter.js (js.puter.com) is the platform's browser-side AI fallback —
       // image drawing since 2026-09-30 and Mind Studio diagram generation.
       // Without these two origins the CDN script itself never loads.
-      `script-src 'self' 'nonce-${nonce}' https://js.puter.com`,
+      `script-src ${scriptSources.join(" ")}`,
       // fonts.googleapis.com: globals.css @imports Google Fonts — blocking it
       // makes the stylesheet load reject with a raw Event, surfacing as the
       // "[object Event]" unhandled rejection in devtools.
