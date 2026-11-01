@@ -33,7 +33,6 @@ import {
   downloadDoc,
   downloadFileName,
   frameSrcFor,
-  pdfViewerHref,
 } from "@/lib/pdf-src";
 
 export type ResourceItem = {
@@ -183,7 +182,7 @@ const ALL_RESOURCE_ITEMS: ResourceItem[] = [
     subject: doc.subject,
     chapter: doc.unit,
     exercise: doc.exercise,
-    kind: "pdf" as Kind,
+    kind: (doc.kind ?? "pdf") as Kind,
     src: doc.driveUrl,
     description: doc.description,
     sourceType: "webnotee" as const,
@@ -420,6 +419,15 @@ export default function ResourcesPage() {
                                 {/* Top badges */}
                                 <div className="flex items-center justify-between gap-2">
                                   <div className="flex items-center gap-1.5 truncate">
+                                    <span
+                                      className={`shrink-0 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${
+                                        item.sourceType === "webnotee"
+                                          ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20"
+                                          : "bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20"
+                                      }`}
+                                    >
+                                      {item.sourceType === "webnotee" ? "WebNotee" : "Platform"}
+                                    </span>
                                     <span className="truncate rounded-md bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
                                       {item.chapter}
                                     </span>
@@ -473,10 +481,10 @@ export default function ResourcesPage() {
                                   variant="ghost"
                                   className="h-8 rounded-xl px-2.5 text-xs text-muted-foreground hover:text-foreground"
                                   asChild
-                                  title="Open in dedicated tab"
+                                  title="Open direct file in dedicated tab"
                                 >
                                   <a
-                                    href={item.kind === "docx" ? item.src : pdfViewerHref(item.src, item.title)}
+                                    href={item.src}
                                     target="_blank"
                                     rel="noreferrer noopener"
                                   >

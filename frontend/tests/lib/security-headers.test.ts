@@ -29,6 +29,7 @@ describe("proxy security headers", () => {
     expect(csp).toContain("https://docs.google.com");
     expect(csp).toContain("https://www.youtube.com");
     expect(csp).toContain("https://player.vimeo.com");
+    expect(csp).toContain("https://webnotee.com");
     expect(csp).toContain(SUPABASE_ORIGIN);
   });
 

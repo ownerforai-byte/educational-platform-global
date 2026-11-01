@@ -31,6 +31,8 @@ const FRAME_HOSTS = new Set([
   "www.youtube.com",
   "youtube.com",
   "player.vimeo.com",
+  "webnotee.com",           // WebNotee article pages embedded for English & Nepali
+  "www.webnotee.com",       // alternate hostname
 ]);
 
 /** Google Drive `/file/d/{id}/…` → the URL that renders inside an iframe. */
