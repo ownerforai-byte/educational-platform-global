@@ -82108,6 +82108,1092 @@
     "unitSlug": "analytic-geometry",
     "year": 2078
   },
+  "practice/solutions/class-11/mathematics/calculus/ex-16-1-limits-evaluation.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "A polynomial is continuous everywhere, so the limit is just the value: substitute x = a.",
+        "marks": 2,
+        "question": "Q1(a). Find the limit: lim (x→2) (2x² + 3x − 14).",
+        "solution": "2x² + 3x − 14 is a polynomial, hence continuous at x = 2. Substitute: 2(2)² + 3(2) − 14 = 8 + 6 − 14 = 0. Boxed 0 (matches the printed key, book p466).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(a); book p465 = PDF p492 (vision read); key book p466 = PDF p493"
+      },
+      {
+        "knowledgeNote": "Same substitution rule for any polynomial.",
+        "marks": 2,
+        "question": "Q1(b). Find the limit: lim (x→5) (x² + 2x − 9).",
+        "solution": "Polynomial → direct substitution: (5)² + 2(5) − 9 = 25 + 10 − 9 = 26. Boxed 26 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(b); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "Quotient of polynomials: substitute, provided the denominator is non-zero.",
+        "marks": 2,
+        "question": "Q1(c). Find the limit: lim (x→1) (3x² + 2x − 4)/(x² + 5x − 4).",
+        "solution": "Denominator at x = 1: 1 + 5 − 4 = 2 ≠ 0, so substitute directly: numerator 3 + 2 − 4 = 1, denominator 2. Value = 1/2. Boxed 1/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(c); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "Check the denominator first: if it is non-zero at the point, just substitute.",
+        "marks": 2,
+        "question": "Q1(d). Find the limit: lim (x→3) (6x² + 3x − 12)/(2x² + x + 1).",
+        "solution": "At x = 3: numerator 6(9) + 9 − 12 = 54 + 9 − 12 = 51; denominator 2(9) + 3 + 1 = 22 ≠ 0. Value = 51/22. Boxed 51/22 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(d); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "0/0 form: cancel the common factor x (x ≠ 0 on the approach).",
+        "marks": 3,
+        "question": "Q2(a). Compute: lim (x→0) (4x³ − x² + 2x)/(3x² + 4x).",
+        "solution": "At x = 0 both numerator and denominator vanish (0/0 form). Factor: numerator = x(4x² − x + 2), denominator = x(3x + 4). For x ≠ 0 cancel x: (4x² − x + 2)/(3x + 4). Now substitute x = 0: 2/4 = 1/2. Boxed 1/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(a); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "x³ − a³ = (x − a)(x² + ax + a²) and x² − a² = (x − a)(x + a): cancel (x − 4).",
+        "marks": 3,
+        "question": "Q2(b). Compute: lim (x→4) (x³ − 64)/(x² − 16).",
+        "solution": "0/0 at x = 4. Factor: x³ − 64 = (x − 4)(x² + 4x + 16); x² − 16 = (x − 4)(x + 4). For x ≠ 4 cancel (x − 4): (x² + 4x + 16)/(x + 4). Substitute x = 4: (16 + 16 + 16)/8 = 48/8 = 6. Boxed 6 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(b); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "Treat x^(2/3) as (x^(1/3))², difference of squares, then x − a = (x^(1/3))³ − (a^(1/3))³.",
+        "marks": 4,
+        "question": "Q2(c). Compute: lim (x→a) (x^(2/3) − a^(2/3))/(x − a).",
+        "solution": "Put u = x^(1/3), c = a^(1/3) (so u³ = x, c³ = a). The quotient becomes (u² − c²)/(u³ − c³) = (u − c)(u + c)/[(u − c)(u² + uc + c²)] = (u + c)/(u² + uc + c²) for u ≠ c. As x → a, u → c: (c + c)/(3c²) = 2c/(3c²) = 2/(3c) = (2/3)a^(−1/3). Boxed (2/3)a^(−1/3) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(c); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "x² + 3x − 4 = (x + 4)(x − 1): cancel the vanishing factor.",
+        "marks": 3,
+        "question": "Q2(d). Compute: lim (x→1) (x² + 3x − 4)/(x − 1).",
+        "solution": "Numerator at x = 1 is 0, denominator 0. Factor: x² + 3x − 4 = (x + 4)(x − 1). Cancel (x − 1) for x ≠ 1: limit = lim (x + 4) = 5. Boxed 5 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(d); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "Factorise top and bottom; the (x − 2) factor cancels.",
+        "marks": 3,
+        "question": "Q2(e). Compute: lim (x→2) (x² − 5x + 6)/(x² − x − 2).",
+        "solution": "0/0 at x = 2. x² − 5x + 6 = (x − 2)(x − 3); x² − x − 2 = (x − 2)(x + 1). Cancel (x − 2): (x − 3)/(x + 1) → (2 − 3)/(2 + 1) = −1/3. Boxed −1/3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(e); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "If the numerator vanishes to a higher order, the limit is 0 — but only after cancelling the common factor.",
+        "marks": 3,
+        "question": "Q2(f). Compute: lim (x→2) (x² − 4x + 4)/(x² − 7x + 10).",
+        "solution": "x² − 4x + 4 = (x − 2)²; x² − 7x + 10 = (x − 2)(x − 5). Cancel one (x − 2): (x − 2)/(x − 5) → 0/(2 − 5) = 0. Boxed 0 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(f); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "√A − √B forms: multiply by the conjugate (√A + √B); the difference of squares frees the (x − a) factor.",
+        "marks": 4,
+        "question": "Q2(g). Compute: lim (x→a) (√(3x) − √(2x + a))/(2(x − a)).",
+        "solution": "At x = a: √(3a) − √(3a) = 0 (0/0 form). Rationalise the numerator: √(3x) − √(2x + a) = [3x − (2x + a)]/[√(3x) + √(2x + a)] = (x − a)/[√(3x) + √(2x + a)]. Therefore the quotient = 1/{2[√(3x) + √(2x + a)]} (for x ≠ a). As x → a: 1/[2(√(3a) + √(3a))] = 1/(4√(3a)). Boxed 1/(4√(3a)) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(g); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "Rationalise BOTH square-root differences; the (x − a) factors cancel and a minus sign survives.",
+        "marks": 5,
+        "question": "Q2(h). Compute: lim (x→a) (√(2x) − √(3x − a))/(√x − √a). [T.U. 2053 H]",
+        "solution": "Numerator: √(2x) − √(3x − a) = [2x − (3x − a)]/[√(2x) + √(3x − a)] = (a − x)/[√(2x) + √(3x − a)]. Denominator: √x − √a = (x − a)/[√x + √a]. Ratio = (a − x)(√x + √a)/[(x − a)(√(2x) + √(3x − a))] = −(√x + √a)/[√(2x) + √(3x − a)] (x ≠ a). As x → a: −(2√a)/(2√(2a)) = −√a/(√2·√a) = −1/√2. Boxed −1/√2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(h); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "After rationalising, x² + 2x − 3 = (x − 1)(x + 3) supplies the cancelling factor.",
+        "marks": 4,
+        "question": "Q2(i). Compute: lim (x→1) (√(2x) − √(3 − x²))/(x − 1).",
+        "solution": "At x = 1: √2 − √2 = 0, and the denominator is 0 (0/0 form). Rationalise: √(2x) − √(3 − x²) = [2x − (3 − x²)]/[√(2x) + √(3 − x²)] = (x² + 2x − 3)/[√(2x) + √(3 − x²)] = (x − 1)(x + 3)/[√(2x) + √(3 − x²)]. Cancel (x − 1): limit = (1 + 3)/(√2 + √2) = 4/(2√2) = √2. Boxed √2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(i); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "x − (6 − x²) = (x − 2)(x + 3): the conjugate frees a factor (x − 2).",
+        "marks": 4,
+        "question": "Q2(j). Compute: lim (x→2) (√x − √(6 − x²))/(x − 2).",
+        "solution": "0/0 at x = 2. Rationalise: √x − √(6 − x²) = [x − (6 − x²)]/[√x + √(6 − x²)] = (x² + x − 6)/[√x + √(6 − x²)] = (x − 2)(x + 3)/[√x + √(6 − x²)]. Cancel (x − 2): limit = (2 + 3)/(√2 + √2) = 5/(2√2). Boxed 5/(2√2) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(j); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "Two different roots of the same x: substitute u = x^(1/6) to turn both into powers of one variable.",
+        "marks": 4,
+        "question": "Q2(k). Compute: lim (x→64) (⁶√x − 2)/(³√x − 4).",
+        "solution": "Put u = x^(1/6), so x = u⁶, ⁶√x = u and ³√x = x^(1/3) = u². As x → 64, u → 2. Quotient = (u − 2)/(u² − 4) = (u − 2)/[(u − 2)(u + 2)] = 1/(u + 2) (u ≠ 2) → 1/4. Boxed 1/4 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(k); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "The conjugate gives (3a − x) − (x + a) = −2(x − a), which cancels the (x − a) in the denominator.",
+        "marks": 4,
+        "question": "Q2(l). Compute: lim (x→a) (√(3a − x) − √(x + a))/(4(x − a)).",
+        "solution": "At x = a the numerator is √(2a) − √(2a) = 0. Rationalise: [ (3a − x) − (x + a) ]/[√(3a − x) + √(x + a)] = (2a − 2x)/[√(3a − x) + √(x + a)] = −2(x − a)/[√(3a − x) + √(x + a)]. Divide by 4(x − a): −1/{2[√(3a − x) + √(x + a)]} → −1/[2(√(2a) + √(2a))] = −1/(4√(2a)). Boxed −1/(4√(2a)) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(l); book p465 = PDF p492; key book p466"
+      },
+      {
+        "knowledgeNote": "Limit at infinity of a rational function: divide by the highest power of x; only the leading coefficients survive.",
+        "marks": 2,
+        "question": "Q3(a). Calculate: lim (x→∞) 2x²/(3x² + 2).",
+        "solution": "Divide numerator and denominator by x²: 2/(3 + 2/x²). As x → ∞, 2/x² → 0, so the limit is 2/3. Boxed 2/3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(a); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "Equal degrees → ratio of leading coefficients.",
+        "marks": 2,
+        "question": "Q3(b). Calculate: lim (x→∞) (3x² − 4)/(4x²).",
+        "solution": "Divide by x²: (3 − 4/x²)/4 → 3/4 as x → ∞. Boxed 3/4 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(b); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "Lower-order terms are negligible at infinity; compare 4x² with 5x².",
+        "marks": 2,
+        "question": "Q3(c). Calculate: lim (x→∞) (4x² + 3x + 2)/(5x² + 4x − 3).",
+        "solution": "Divide by x²: (4 + 3/x + 2/x²)/(5 + 4/x − 3/x²). Every term with 1/x or 1/x² → 0, leaving 4/5. Boxed 4/5 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(c); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "Same degree on both sides: the ratio of leading coefficients is the limit.",
+        "marks": 2,
+        "question": "Q3(d). Calculate: lim (x→∞) (5x² + 2x − 7)/(3x² + 5x + 2).",
+        "solution": "Divide by x²: (5 + 2/x − 7/x²)/(3 + 5/x + 2/x²) → 5/3. Boxed 5/3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(d); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "∞ − ∞ form: rationalise. A fixed difference inside the roots gives 0 because the conjugate grows like 2√x.",
+        "marks": 3,
+        "question": "Q4(a). Calculate: lim (x→∞) (√x − √(x − 3)).",
+        "solution": "Multiply by the conjugate: (x − (x − 3))/(√x + √(x − 3)) = 3/[√x + √(x − 3)]. As x → ∞ the denominator → ∞, so the quotient → 0. Boxed 0 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(a); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "Same argument for constants a, b: the numerator becomes the constant (b − a).",
+        "marks": 3,
+        "question": "Q4(b). Calculate: lim (x→∞) (√(x − a) − √(x − b)). [T.U. 2048 H]",
+        "solution": "Conjugate: [(x − a) − (x − b)]/[√(x − a) + √(x − b)] = (b − a)/[√(x − a) + √(x − b)] → (b − a)/∞ = 0. Boxed 0 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(b); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "Here the two square-root terms have different growth (√(3x) vs √x), so the difference diverges.",
+        "marks": 3,
+        "question": "Q4(c). Calculate: lim (x→∞) (√(3x) − √(x − 5)).",
+        "solution": "Conjugate: [(3x) − (x − 5)]/[√(3x) + √(x − 5)] = (2x + 5)/[√(3x) + √(x − 5)]. Divide top and bottom by √x: (2√x + 5/√x)/(√3 + √(1 − 5/x)) → (2√x)/√3 → ∞. Equivalently √(3x) − √x = (√3 − 1)√x → ∞. Boxed ∞ (matches the key; the printed note adds that an infinite limit means the limit does not exist).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(c); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "√x·(√x − √(x − a)) = a√x/(√x + √(x − a)): divide by √x to see the a/2.",
+        "marks": 4,
+        "question": "Q4(d). Calculate: lim (x→∞) √x(√x − √(x − a)). [T.U. 2052]",
+        "solution": "Inside: √x − √(x − a) = [x − (x − a)]/[√x + √(x − a)] = a/[√x + √(x − a)]. Multiply by √x: a√x/[√x + √(x − a)]. Divide numerator and denominator by √x: a/[1 + √(1 − a/x)] → a/(1 + 1) = a/2. Boxed a/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(d); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "With a coefficient b on the second root the growth rates differ: equality b = 1 is the only case that cancels.",
+        "marks": 4,
+        "question": "Q4(e). Calculate: lim (x→∞) (√(x − a) − √(bx)).",
+        "solution": "Conjugate: [(x − a) − bx]/[√(x − a) + √(bx)] = [(1 − b)x − a]/[√(x − a) + √(bx)]. For b = 1 the numerator is the constant −a, so the quotient → 0. For b ≠ 1 divide by √x: [(1 − b)√x − a/√x]/[√(1 − a/x) + √b] → (1 − b)√x/(1 + √b). This is +∞ when 0 < b < 1, and −∞ when b > 1 (the printed key states ∞ for b ≠ 1 and reminds that an infinite limit means the limit does not exist). Boxed 0 if b = 1; ∞ (i.e. no finite limit) if b ≠ 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(e); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "Double rationalisation: each 0/0 difference of squares yields the same (x² − 4), which cancels.",
+        "marks": 5,
+        "question": "Q5(a). Evaluate: lim (x→2) (x − √(8 − x²))/(√(x² + 12) − 4).",
+        "solution": "At x = 2: (2 − 2)/(4 − 4) — 0/0 form. Numerator: x − √(8 − x²) = [x² − (8 − x²)]/[x + √(8 − x²)] = (2x² − 8)/[x + √(8 − x²)] = 2(x² − 4)/[x + √(8 − x²)]. Denominator: √(x² + 12) − 4 = [x² + 12 − 16]/[√(x² + 12) + 4] = (x² − 4)/[√(x² + 12) + 4]. Ratio = 2(x² − 4)/[x + √(8 − x²)] · [√(x² + 12) + 4]/(x² − 4) = 2[√(x² + 12) + 4]/[x + √(8 − x²)]. At x = 2: 2(4 + 4)/(2 + 2) = 16/4 = 4. Boxed 4 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q5(a); book p466 = PDF p493; key book p466"
+      },
+      {
+        "knowledgeNote": "Both conjugates reduce to 2(x² − 1), so the factors cancel and the limit is the ratio of the remaining sums.",
+        "marks": 5,
+        "question": "Q5(b). Evaluate: lim (x→1) (x − √(2 − x²))/(2x − √(2 + 2x²)).",
+        "solution": "At x = 1: (1 − 1)/(2 − 2) — 0/0 form. Numerator: x − √(2 − x²) = [x² − (2 − x²)]/[x + √(2 − x²)] = (2x² − 2)/[x + √(2 − x²)] = 2(x² − 1)/[x + √(2 − x²)]. Denominator: 2x − √(2 + 2x²) = [4x² − (2 + 2x²)]/[2x + √(2 + 2x²)] = (2x² − 2)/[2x + √(2 + 2x²)] = 2(x² − 1)/[2x + √(2 + 2x²)]. Ratio = [2(x² − 1)/(x + √(2 − x²))] · [(2x + √(2 + 2x²))/(2(x² − 1))] = (2x + √(2 + 2x²))/(x + √(2 − x²)). At x = 1: (2 + 2)/(1 + 1) = 4/2 = 2. Boxed 2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q5(b); book p466 = PDF p493; key book p466"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 BOOK Exercise 16.1 (book pp465-466 = PDF pp492-493 of the 2075 reprint; full-page vision reads at 165-180 dpi, page split into overlapping strips; every numeric answer checked against the printed Answers block on book p466).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.1 (Limits by Substitution, Factorisation and Rationalisation) - Complete Solutions",
+    "topicSlug": "calculus-textbook-ex-16-1-limits-evaluation",
+    "topicTitle": "Ch.16 Book Ex 16.1 - evaluating limits algebraically (27 entries)",
+    "unitSlug": "calculus",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/calculus/ex-16-2-trig-exp-log-limits.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Standard result lim(θ→0) sinθ/θ = 1; rescale the angle to use it.",
+        "marks": 2,
+        "question": "Q1. Evaluate: lim (x→0) sin(ax)/x.",
+        "solution": "Multiply and divide by a: sin(ax)/x = a·sin(ax)/(ax). As x → 0, ax → 0 and sin(ax)/(ax) → 1, so the limit is a·1 = a. Boxed a (matches the printed key, book p474).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q1; book p472 = PDF p499; key book p474 = PDF p501"
+      },
+      {
+        "knowledgeNote": "tan u/u → 1 as u → 0.",
+        "marks": 2,
+        "question": "Q2. Evaluate: lim (x→0) tan(bx)/x.",
+        "solution": "tan(bx)/x = b·tan(bx)/(bx) → b·1 = b. Boxed b (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q2; book p472 = PDF p499; key book p474"
+      },
+      {
+        "knowledgeNote": "Divide numerator and denominator by x; both become standard sine quotients.",
+        "marks": 2,
+        "question": "Q3. Evaluate: lim (x→0) sin(mx)/sin(nx).",
+        "solution": "sin(mx)/sin(nx) = [m·sin(mx)/(mx)]/[n·sin(nx)/(nx)] → m·1/(n·1) = m/n. Boxed m/n (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q3; book p472 = PDF p499; key book p474"
+      },
+      {
+        "knowledgeNote": "Ratio of two tangent quotients: the angle coefficients survive.",
+        "marks": 2,
+        "question": "Q4. Evaluate: lim (x→0) tan(ax)/tan(bx).",
+        "solution": "tan(ax)/tan(bx) = [a·tan(ax)/(ax)]/[b·tan(bx)/(bx)] → a/b. Boxed a/b (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q4; book p472 = PDF p499; key book p474"
+      },
+      {
+        "knowledgeNote": "Convert tan(qx) to sin(qx)/cos(qx); cos(qx) → 1.",
+        "marks": 2,
+        "question": "Q5. Evaluate: lim (x→0) sin(px)/tan(qx).",
+        "solution": "sin(px)/tan(qx) = sin(px)·cos(qx)/sin(qx) = [sin(px)/(px)]·cos(qx)·(px)/[ (qx)·sin(qx)/(qx) ] = (p/q)·[sin(px)/(px)]/[(sin qx)/(qx)]·cos(qx) → (p/q)·1·1 = p/q. Boxed p/q (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q5; book p472 = PDF p499; key book p474"
+      },
+      {
+        "knowledgeNote": "Factor x² − a² = (x − a)(x + a) and use sin(x − a)/(x − a) → 1.",
+        "marks": 3,
+        "question": "Q6. Evaluate: lim (x→a) sin(x − a)/(x² − a²).",
+        "solution": "x² − a² = (x − a)(x + a). So the quotient = [sin(x − a)/(x − a)]·1/(x + a). As x → a the bracket → 1 and 1/(x + a) → 1/(2a). Boxed 1/(2a) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q6; book p472 = PDF p499; key book p474"
+      },
+      {
+        "knowledgeNote": "(x² − p²) = (x − p)(x + p) and tan(x − p)/(x − p) → 1.",
+        "marks": 3,
+        "question": "Q7. Evaluate: lim (x→p) (x² − p²)/tan(x − p).",
+        "solution": "Write the quotient as (x + p)·(x − p)/tan(x − p). Since tan(x − p)/(x − p) → 1, its reciprocal (x − p)/tan(x − p) → 1. Hence the limit is (p + p)·1 = 2p. Boxed 2p (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q7; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Split the product: sin(ax)/sin(cx) gives a/c, and cos(bx) → 1.",
+        "marks": 3,
+        "question": "Q8. Evaluate: lim (x→0) sin(ax)·cos(bx)/sin(cx).",
+        "solution": "Group: [sin(ax)/sin(cx)]·cos(bx) → (a/c)·1 = a/c. Boxed a/c (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q8; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Multiply by (1 + cos x) to turn 1 − cos x into sin²x.",
+        "marks": 3,
+        "question": "Q9. Evaluate: lim (x→0) (1 − cos x)/x².",
+        "solution": "(1 − cos x)/x² = (1 − cos x)(1 + cos x)/[x²(1 + cos x)] = sin²x/[x²(1 + cos x)] = [sin x/x]²·1/(1 + cos x) → 1²·1/2 = 1/2. Boxed 1/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q9; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Same identity with angle 6x: the factor (6x)² = 36x² multiplies the 1/2.",
+        "marks": 3,
+        "question": "Q10. Evaluate: lim (x→0) (1 − cos 6x)/x².",
+        "solution": "1 − cos 6x = 2 sin²(3x). Quotient = 2 sin²(3x)/x² = 18·[sin 3x/(3x)]² → 18·1 = 18. Boxed 18 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q10; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "General pattern: (1 − cos kx)/x² → k²/2.",
+        "marks": 3,
+        "question": "Q11. Evaluate: lim (x→0) (1 − cos 9x)/x².",
+        "solution": "1 − cos 9x = 2 sin²(4.5x) = 2 sin²(9x/2). Quotient = 2·(9/2)²·[sin(9x/2)/(9x/2)]² = (81/2)·1 = 81/2. Boxed 81/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q11; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "cos A − cos B = −2 sin((A+B)/2) sin((A−B)/2); each sine quotient contributes its coefficient.",
+        "marks": 4,
+        "question": "Q12. Evaluate: lim (x→0) (cos ax − cos bx)/x².",
+        "solution": "cos ax − cos bx = 2 sin((a+b)x/2) sin((b−a)x/2). Divide by x²: 2·[(a+b)/2]·[(b−a)/2]·[sin((a+b)x/2)/((a+b)x/2)]·[sin((b−a)x/2)/((b−a)x/2)] → 2·(a+b)(b−a)/4 = (b² − a²)/2. Boxed ½(b² − a²) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q12; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "sin A − sin B = 2 cos((A+B)/2) sin((A−B)/2); one factor cancels x.",
+        "marks": 4,
+        "question": "Q13. Evaluate: lim (x→0) (sin ax − sin bx)/x.",
+        "solution": "sin ax − sin bx = 2 cos((a+b)x/2) sin((a−b)x/2). Divide by x: 2·[(a−b)/2]·cos((a+b)x/2)·[sin((a−b)x/2)/((a−b)x/2)] → (a − b)·1·1 = a − b. Boxed a − b (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q13; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Ratio of two 1 − cos forms: the squared coefficients give p²/q².",
+        "marks": 4,
+        "question": "Q14. Evaluate: lim (x→0) (1 − cos px)/(1 − cos qx).",
+        "solution": "1 − cos px = 2 sin²(px/2), 1 − cos qx = 2 sin²(qx/2). Ratio = [sin(px/2)/(px/2)]²(p²x²/4) ÷ {[sin(qx/2)/(qx/2)]²(q²x²/4)} → p²/q². Boxed p²/q² (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q14; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "tan x − sin x = sin x(1 − cos x)/cos x: use the two standard limits together.",
+        "marks": 4,
+        "question": "Q15. Evaluate: lim (x→0) (tan x − sin x)/x³.",
+        "solution": "tan x − sin x = sin x(1/cos x − 1) = sin x(1 − cos x)/cos x. Divide by x³: [sin x/x]·[(1 − cos x)/x²]·1/cos x → 1·(1/2)·1 = 1/2. Boxed 1/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q15; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Same identity with 2x: each factor contributes its coefficient, giving 2³ = 8 times the x-case.",
+        "marks": 4,
+        "question": "Q16. Evaluate: lim (x→0) (tan 2x − sin 2x)/x³.",
+        "solution": "tan 2x − sin 2x = sin 2x(1 − cos 2x)/cos 2x. Divide by x³: [sin 2x/x]·[(1 − cos 2x)/x²]·1/cos 2x. Now sin 2x/x → 2 and (1 − cos 2x)/x² = 2 sin²x/x² = 2 → 2. Product: 2·2·1 = 4. Boxed 4 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q16; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "sec x − tan x = (1 − sin x)/cos x; multiply by (1 + sin x) to remove the 0/0.",
+        "marks": 3,
+        "question": "Q17. Evaluate: lim (x→π/2) (sec x − tan x).",
+        "solution": "sec x − tan x = (1 − sin x)/cos x = (1 − sin²x)/[cos x(1 + sin x)] = cos²x/[cos x(1 + sin x)] = cos x/(1 + sin x). As x → π/2: 0/(1 + 1) = 0. Boxed 0 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q17; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "sec²x − 2 = tan²x − 1 = (tan x − 1)(tan x + 1): cancel the vanishing factor.",
+        "marks": 3,
+        "question": "Q18. Evaluate: lim (x→π/4) (sec²x − 2)/(tan x − 1).",
+        "solution": "Use sec²x = 1 + tan²x: sec²x − 2 = tan²x − 1 = (tan x − 1)(tan x + 1). Cancel (tan x − 1) (non-zero for x ≠ π/4 near π/4): limit = tan(π/4) + 1 = 1 + 1 = 2. Boxed 2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q18; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "cosec²x = 1 + cot²x, so the numerator factors against (1 − cot x).",
+        "marks": 3,
+        "question": "Q19. Evaluate: lim (x→π/4) (2 − cosec²x)/(1 − cot x).",
+        "solution": "2 − cosec²x = 2 − (1 + cot²x) = 1 − cot²x = (1 − cot x)(1 + cot x). Cancel (1 − cot x): limit = 1 + cot(π/4) = 1 + 1 = 2. Boxed 2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q19; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "y is a constant here: tan x − tan y = sin(x − y)/(cos x cos y), so the (x − y) cancels.",
+        "marks": 4,
+        "question": "Q20. Evaluate: lim (x→y) (tan x − tan y)/(x − y).",
+        "solution": "tan x − tan y = sin x/cos x − sin y/cos y = (sin x cos y − cos x sin y)/(cos x cos y) = sin(x − y)/(cos x cos y). Divide by (x − y): [sin(x − y)/(x − y)]·1/(cos x cos y) → 1/(cos y·cos y) = sec²y. Boxed sec²y (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q20; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "sin x − sin y = 2 cos((x+y)/2) sin((x−y)/2).",
+        "marks": 3,
+        "question": "Q21. Evaluate: lim (x→y) (sin x − sin y)/(x − y). [HSEB 2053, 2057]",
+        "solution": "sin x − sin y = 2 cos((x+y)/2) sin((x−y)/2) = 2 cos((x+y)/2)·[(x−y)/2]·[sin((x−y)/2)/((x−y)/2)]. Divide by (x − y): cos((x+y)/2)·[sin((x−y)/2)/((x−y)/2)] → cos y·1 = cos y. Boxed cos y (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q21; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "cos x − cos y = −2 sin((x+y)/2) sin((x−y)/2): the minus sign survives.",
+        "marks": 3,
+        "question": "Q22. Evaluate: lim (x→y) (cos x − cos y)/(x − y). [T.U. 2049 H]",
+        "solution": "cos x − cos y = −2 sin((x+y)/2) sin((x−y)/2). Divide by (x − y): −sin((x+y)/2)·[sin((x−y)/2)/((x−y)/2)] → −sin y·1 = −sin y. Boxed −sin y (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q22; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Add and subtract θ cot θ, then use cot θ − cot x = sin(x − θ)/(sin θ sin x).",
+        "marks": 5,
+        "question": "Q23. Evaluate: lim (x→θ) (x cot θ − θ cot x)/(x − θ). [T.U. 2049, HSEB 2055]",
+        "solution": "x cot θ − θ cot x = (x − θ)cot θ + θ(cot θ − cot x). Also cot θ − cot x = cos θ/sin θ − cos x/sin x = (cos θ sin x − cos x sin θ)/(sin θ sin x) = sin(x − θ)/(sin θ sin x). So the quotient = cot θ + θ·sin(x − θ)/[sin θ sin x (x − θ)] = cot θ + θ/[sin θ sin x]·[sin(x − θ)/(x − θ)] → cot θ + θ/(sin θ sin θ) = cot θ + θ/sin²θ. Boxed cot θ + θ/sin²θ (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q23; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Add and subtract θ cos θ, then use cos θ − cos x = 2 sin((θ+x)/2) sin((x−θ)/2).",
+        "marks": 5,
+        "question": "Q24. Evaluate: lim (x→θ) (x cos θ − θ cos x)/(x − θ). [T.U. 2052 H, 2057 S]",
+        "solution": "x cos θ − θ cos x = (x − θ)cos θ + θ(cos θ − cos x). And cos θ − cos x = 2 sin((θ+x)/2) sin((x−θ)/2). Quotient = cos θ + θ·2 sin((θ+x)/2)·[sin((x−θ)/2)/(x − θ)] = cos θ + θ·sin((θ+x)/2)·[sin((x−θ)/2)/((x−θ)/2)] → cos θ + θ·sin θ·1 = cos θ + θ sin θ. Boxed cos θ + θ sin θ (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q24; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Shift the origin: t = x − 1; then 1 + cos πx = 1 − cos πt and tan²πx = tan²πt.",
+        "marks": 4,
+        "question": "Q25. Evaluate: lim (x→1) (1 + cos πx)/tan²(πx).",
+        "solution": "Put t = x − 1 → 0, so πx = π + πt. Then cos πx = −cos πt and tan(πx) = tan(πt). Numerator: 1 − cos πt = 2 sin²(πt/2). Denominator: tan²(πt) = sin²(πt)/cos²(πt). Quotient = 2 sin²(πt/2)·cos²(πt)/sin²(πt) = 2 sin²(πt/2)cos²(πt)/[4 sin²(πt/2)cos²(πt/2)] = 1/[2 cos²(πt/2)] → 1/2 (cos 0 = 1). Boxed 1/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q25; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Add and subtract θ tan θ; tan θ − tan x = −sin(x − θ)/(cos θ cos x).",
+        "marks": 5,
+        "question": "Q26. Evaluate: lim (x→θ) (x tan θ − θ tan x)/(x − θ). [T.U. 2050 H]",
+        "solution": "x tan θ − θ tan x = (x − θ)tan θ + θ(tan θ − tan x). And tan θ − tan x = sin(θ − x)/(cos θ cos x) = −sin(x − θ)/(cos θ cos x). Quotient = tan θ − θ·[sin(x − θ)/(x − θ)]/(cos θ cos x) → tan θ − θ/(cos θ cos θ) = tan θ − θ sec²θ. Boxed tan θ − θ sec²θ (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q26; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Shift to π/4: with h = θ − π/4 both cosine and sine expand to the same √2/2 base.",
+        "marks": 4,
+        "question": "Q27. Evaluate: lim (θ→π/4) (cos θ − sin θ)/(θ − π/4).",
+        "solution": "Put h = θ − π/4 → 0. cos θ = cos(π/4 + h) = (cos h − sin h)/√2; sin θ = (cos h + sin h)/√2. Difference = −2 sin h/√2 = −√2 sin h. Divide by h: −√2·(sin h/h) → −√2. Boxed −√2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q27; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Two 0/0 parts: rationalise the root and use (sin x − sin c)/(x − c) → cos c.",
+        "marks": 5,
+        "question": "Q28. Evaluate: lim (x→c) (√x − √c)/(sin x − sin c).",
+        "solution": "Rationalise: √x − √c = (x − c)/(√x + √c). The quotient = (x − c)/[(√x + √c)(sin x − sin c)] = 1/(√x + √c) · (x − c)/(sin x − sin c). Since (sin x − sin c)/(x − c) → cos c, the reciprocal → 1/cos c. Hence the limit = 1/(2√c)·1/cos c = sec c/(2√c). Boxed sec c/(2√c) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q28; book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Standard exponential limit (eᵘ − 1)/u → 1; rescale the exponent.",
+        "marks": 2,
+        "question": "Q29(a). Find the limit: lim (x→0) (e^(6x) − 1)/x.",
+        "solution": "(e^(6x) − 1)/x = 6·(e^(6x) − 1)/(6x) → 6·1 = 6. Boxed 6 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(a); book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Split the quotient: (e^(2x) − 1)/x → 2 and 2^(x+1) → 2.",
+        "marks": 3,
+        "question": "Q29(b). Find the limit: lim (x→0) (e^(2x) − 1)/(x·2^(x+1)).",
+        "solution": "Write it as [(e^(2x) − 1)/x]·1/2^(x+1). The first factor → 2 (standard exponential limit with rescaling), the second → 1/2^(0+1) = 1/2. Product = 2·1/2 = 1. Boxed 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(b); book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Split into two standard limits: (e^(ax) − 1)/x → a and (e^(bx) − 1)/x → b.",
+        "marks": 3,
+        "question": "Q29(c). Find the limit: lim (x→0) (e^(ax) − e^(bx))/x.",
+        "solution": "(e^(ax) − e^(bx))/x = (e^(ax) − 1)/x − (e^(bx) − 1)/x → a − b. Boxed a − b (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(c); book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Split, apply (aˣ − 1)/x → log a for both bases, and add the two logs.",
+        "marks": 3,
+        "question": "Q29(d). Find the limit: lim (x→0) (a^x + b^x − 2)/x.",
+        "solution": "(a^x + b^x − 2)/x = (a^x − 1)/x + (b^x − 1)/x → log a + log b = log(ab). Boxed log(ab) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(d); book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Put t = x − 2; then log(x − 1) = log(1 + t) and log(1 + t)/t → 1.",
+        "marks": 3,
+        "question": "Q30(a). Evaluate: lim (x→2) (x − 2)/log(x − 1).",
+        "solution": "Let t = x − 2 → 0, so x − 1 = 1 + t. The quotient becomes t/log(1 + t) = 1/[log(1 + t)/t] → 1/1 = 1. Boxed 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q30(a); book p473 = PDF p500; key book p474"
+      },
+      {
+        "knowledgeNote": "Put t = x − π/2; cos x = −sin t and log(1 + t) ~ t, so the two leading terms cancel with a minus sign.",
+        "marks": 4,
+        "question": "Q30(b). Evaluate: lim (x→π/2) cos x/log(x − π/2 + 1).",
+        "solution": "Let t = x − π/2 → 0. Then cos x = cos(π/2 + t) = −sin t and log(x − π/2 + 1) = log(1 + t). Quotient = −sin t/log(1 + t) = −[sin t/t]·[t/log(1 + t)] → −1·1 = −1. Boxed −1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q30(b); book p473 = PDF p500; key book p474"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 BOOK Exercise 16.2 — trigonometric, exponential and logarithmic limits (book pp472-473 = PDF pp499-500 of the 2075 reprint; page-region vision reads; every answer checked against the printed Answers block, book p474 = PDF p501).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.2 (Trigonometric, Exponential and Logarithmic Limits) - Complete Solutions",
+    "topicSlug": "calculus-textbook-ex-16-2-trig-exp-log-limits",
+    "topicTitle": "Ch.16 Book Ex 16.2 - trig, exponential and log limits (34 entries)",
+    "unitSlug": "calculus",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/calculus/ex-16-3-one-sided-limits.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Piecewise limits: compute the left limit with the x < a rule and the right limit with the x ≥ a rule; the two-sided limit exists only when they agree.",
+        "marks": 2,
+        "question": "Q1(a). Find the limit at x = 0: f(x) = x + 2 for x ≥ 0; f(x) = 4x + 2 for x < 0.",
+        "solution": "Right-hand limit (x ≥ 0 rule): lim (x→0⁺) (x + 2) = 0 + 2 = 2. Left-hand limit (x < 0 rule): lim (x→0⁻) (4x + 2) = 0 + 2 = 2. Both sides agree, so the limit exists and equals 2. Boxed 2 (matches the printed key, book p476).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(a); book p475 = PDF p502; key book p476 = PDF p503"
+      },
+      {
+        "knowledgeNote": "If the one-sided limits differ, the two-sided limit does not exist.",
+        "marks": 2,
+        "question": "Q1(b). Find the limit at x = 1: f(x) = 3x + 2 for x ≥ 1; f(x) = 2x for x < 1.",
+        "solution": "Right: lim (x→1⁺) (3x + 2) = 3 + 2 = 5. Left: lim (x→1⁻) 2x = 2. Since 5 ≠ 2 the left and right limits differ, so the limit does not exist. Boxed the limit does not exist (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(b); book p475 = PDF p502; key book p476"
+      },
+      {
+        "knowledgeNote": "Both branches meet at the same value here, so the function approaches a single number.",
+        "marks": 2,
+        "question": "Q1(c). Find the limit at x = 2: f(x) = 5x + 2 for x ≥ 2; f(x) = 7x − 2 for x < 2.",
+        "solution": "Right: 5(2) + 2 = 12. Left: 7(2) − 2 = 14 − 2 = 12. Equal, so the limit is 12. Boxed 12 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(c); book p475 = PDF p502; key book p476"
+      },
+      {
+        "knowledgeNote": "Check a linear branch against a quadratic branch at the join.",
+        "marks": 3,
+        "question": "Q1(d). Find the limit at x = 2: f(x) = 3x + 1 for x ≥ 2; f(x) = 2x² − 1 for x < 2. [T.U. 2058 S]",
+        "solution": "Right: 3(2) + 1 = 7. Left: 2(4) − 1 = 8 − 1 = 7. The one-sided limits coincide, so the limit is 7. Boxed 7 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(d); book p475 = PDF p502; key book p476"
+      },
+      {
+        "knowledgeNote": "A quadratic on the left and a linear on the right: evaluate both at the join.",
+        "marks": 3,
+        "question": "Q1(e). Find the limit at x = 1: f(x) = 2x + 1 for x ≥ 1; f(x) = 4x² − 1 for x < 1.",
+        "solution": "Right: 2(1) + 1 = 3. Left: 4(1) − 1 = 3. Both equal 3, so the limit is 3. Boxed 3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(e); book p475 = PDF p502; key book p476"
+      },
+      {
+        "knowledgeNote": "Unequal one-sided limits = no limit, even though both branches are perfectly well defined.",
+        "marks": 3,
+        "question": "Q1(f). Find the limit at x = 2: f(x) = 3x − 2 for x ≥ 2; f(x) = 2x² + 1 for x < 2.",
+        "solution": "Right: 3(2) − 2 = 4. Left: 2(4) + 1 = 9. Since 4 ≠ 9 the limit does not exist. Boxed the limit does not exist (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(f); book p475 = PDF p502; key book p476"
+      },
+      {
+        "knowledgeNote": "|x − a| → 0 from both sides, so the absolute value removes the sign without creating a jump.",
+        "marks": 2,
+        "question": "Q2(a). Evaluate: lim (x→2) |x − 2|.",
+        "solution": "If x → 2⁺ then |x − 2| = x − 2 → 0; if x → 2⁻ then |x − 2| = 2 − x → 0. Both one-sided limits are 0, so the limit is 0. Boxed 0 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q2(a); book p476 = PDF p503; key book p476"
+      },
+      {
+        "knowledgeNote": "|x|/x equals +1 for x > 0 and −1 for x < 0: a jump of 2 at the origin, so the limit fails.",
+        "marks": 3,
+        "question": "Q2(b). Evaluate: lim (x→0) |x|/x.",
+        "solution": "For x > 0: |x|/x = x/x = 1, so the right-hand limit is 1. For x < 0: |x|/x = −x/x = −1, so the left-hand limit is −1. The one-sided limits differ, hence the limit does not exist. Boxed the limit does not exist (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q2(b); book p476 = PDF p503; key book p476"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 BOOK Exercise 16.3 — left/right hand limits and absolute-value limits (book pp475-476 = PDF pp502-503 of the 2075 reprint; page-region vision reads; every answer checked against the printed Answers block on book p476).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.3 (Left/Right Hand Limits) - Complete Solutions",
+    "topicSlug": "calculus-textbook-ex-16-3-one-sided-limits",
+    "topicTitle": "Ch.16 Book Ex 16.3 - one-sided limits and absolute values (8 entries)",
+    "unitSlug": "calculus",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/calculus/ex-16-4-continuity.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "Continuity test at x = a: LHL = RHL = f(a). A polynomial passes automatically.",
+        "marks": 2,
+        "question": "Q1(i). Test the continuity of f(x) = x² at x = 4 by computing the left limit, the right limit and the value of the function.",
+        "solution": "lim (x→4⁻) x² = 16; lim (x→4⁺) x² = 16; f(4) = 16. All three are equal, so f is continuous at x = 4. Boxed continuous (matches the printed key, book p483).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(i); book p482 = PDF p509; key book p483 = PDF p510"
+      },
+      {
+        "knowledgeNote": "A polynomial is continuous at every real point: all three quantities coincide.",
+        "marks": 2,
+        "question": "Q1(ii). Test the continuity of f(x) = 2 − 3x² at x = 0.",
+        "solution": "LHL: 2 − 3(0)² = 2; RHL: 2; f(0) = 2. Equal, so f is continuous at x = 0. Boxed continuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(ii); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "Same polynomial rule for a quadratic at the specified point.",
+        "marks": 2,
+        "question": "Q1(iii). Test the continuity of f(x) = 3x² − 2x + 4 at x = 1.",
+        "solution": "f(1) = 3 − 2 + 4 = 5. Both one-sided limits use the same expression and give 5. LHL = RHL = f(1) = 5, so f is continuous at x = 1. Boxed continuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(iii); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "A finite limit cannot exist where the function blows up: 1/(2x) has no value at x = 0.",
+        "marks": 2,
+        "question": "Q1(iv). Test the continuity of f(x) = 1/(2x) at x = 0.",
+        "solution": "f(0) is not defined (division by zero), and lim (x→0) 1/(2x) fails to be finite (→ +∞ from the right, → −∞ from the left). Since f(0) does not exist, f is discontinuous at x = 0. Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(iv); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "A rational function is continuous at every point of its domain — only poles break continuity.",
+        "marks": 2,
+        "question": "Q1(v). Test the continuity of f(x) = 1/(x − 2) [print: 'at x ≠ 2'].",
+        "solution": "On its domain (x ≠ 2) the function is a quotient of continuous functions with non-zero denominator, so f is continuous at every such point. Boxed continuous (matches the key). Print note: the question line reads 'at x ≠ 2' rather than naming a single point; interpreted as 'at all points x ≠ 2', which is exactly the key's answer.",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(v); book p482 = PDF p509 (vision read of the 'at x ≠ 2' line); key book p483"
+      },
+      {
+        "knowledgeNote": "Same reasoning: continuous wherever the denominator does not vanish.",
+        "marks": 2,
+        "question": "Q1(vi). Test the continuity of f(x) = 1/(3x) [print: 'at x ≠ 0'].",
+        "solution": "For every x ≠ 0 the denominator 3x ≠ 0, so the quotient of continuous functions is continuous there. Boxed continuous (matches the key). Print note: the line reads 'at x ≠ 0', i.e. continuity at all points of the domain — see the flag on Q1(v).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(vi); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "At a pole the one-sided limits are infinite and the value is undefined: an infinite discontinuity.",
+        "marks": 2,
+        "question": "Q1(vii). Test the continuity of f(x) = 1/(1 − x) at x = 1. [T.U. 2048]",
+        "solution": "f(1) = 1/0 is undefined; lim (x→1⁻) 1/(1 − x) → +∞ and lim (x→1⁺) 1/(1 − x) → −∞. No finite limit and no value, so f is discontinuous at x = 1. Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(vii); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "The same vertical-asymptote argument at x = 3.",
+        "marks": 2,
+        "question": "Q1(viii). Test the continuity of f(x) = 1/(x − 3) at x = 3.",
+        "solution": "f(3) is undefined and the one-sided limits are +∞ (right) and −∞ (left). Hence f is discontinuous at x = 3. Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(viii); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "0/0 with a cancelling factor: the limit exists but the value does not — a removable discontinuity.",
+        "marks": 3,
+        "question": "Q1(ix). Test the continuity of f(x) = (x² − 9)/(x − 3) at x = 3.",
+        "solution": "(x² − 9)/(x − 3) = (x − 3)(x + 3)/(x − 3) = x + 3 for x ≠ 3, so lim (x→3⁻) f = 6 = lim (x→3⁺) f. But f(3) = 0/0 is not defined. Since the limit exists while the value does not, f is discontinuous at x = 3 — a removable discontinuity, removed by defining f(3) = 6. Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(ix); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "Identical removable pattern: the hole at x = 4 can be filled with the limit 8.",
+        "marks": 3,
+        "question": "Q1(x). Test the continuity of f(x) = (x² − 16)/(x − 4) at x = 4.",
+        "solution": "For x ≠ 4, (x² − 16)/(x − 4) = x + 4, so both one-sided limits equal 8. But f(4) is undefined (0/0), so f is discontinuous at x = 4 (removable; redefine f(4) = 8 to make it continuous). Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(x); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "|x − a|/(x − a) is the sign function shifted: a jump discontinuity with limits +1 and −1.",
+        "marks": 3,
+        "question": "Q1(xi). Test the continuity of f(x) = |x − 2|/(x − 2) at x = 2.",
+        "solution": "For x > 2: |x − 2|/(x − 2) = 1, so the right limit is 1. For x < 2: |x − 2|/(x − 2) = −1, so the left limit is −1. Also f(2) is undefined. Since the one-sided limits differ, f is discontinuous at x = 2 (jump discontinuity). Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q1(xi); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "For a piecewise function, continuity at the join needs LHL = RHL = f(a).",
+        "marks": 3,
+        "question": "Q2(i). Discuss the continuity of f(x) = 2 − x² for x ≤ 2 and f(x) = x − 4 for x > 2 at x = 2. [T.U. 2053 H]",
+        "solution": "f(2) = 2 − 4 = −2. Left limit (x ≤ 2 rule): 2 − 4 = −2. Right limit (x > 2 rule): 2 − 4 = −2. Since LHL = RHL = f(2) = −2, f is continuous at x = 2. Boxed continuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q2(i); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "Join of a quadratic and a linear branch: evaluate both at x = 2.",
+        "marks": 3,
+        "question": "Q2(ii). Discuss the continuity of f(x) = 2x² + 1 for x ≤ 2 and f(x) = 4x + 1 for x > 2 at x = 2.",
+        "solution": "f(2) = 2(4) + 1 = 9. LHL: 2(4) + 1 = 9. RHL: 4(2) + 1 = 9. All three agree, so f is continuous at x = 2. Boxed continuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q2(ii); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "Two linear branches meeting at x = 3.",
+        "marks": 3,
+        "question": "Q2(iii). Discuss the continuity of f(x) = 2x for x ≤ 3 and f(x) = 3x − 3 for x > 3 at x = 3.",
+        "solution": "f(3) = 2(3) = 6. LHL: 2(3) = 6. RHL: 3(3) − 3 = 6. LHL = RHL = f(3), so f is continuous at x = 3. Boxed continuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q2(iii); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "When the printed value differs from the common limit, the discontinuity is removable: redefine f(a) as the limit.",
+        "marks": 4,
+        "question": "Q2(iv). Discuss the continuity of f(x) = 2x + 1 for x < 1, f(x) = 2 for x = 1, f(x) = 3x for x > 1 at x = 1. (HSEB 2052, 2057, 2058) [T.U. 2051 H, 2056 S]",
+        "solution": "LHL: 2(1) + 1 = 3 from the x < 1 rule; RHL: 3(1) = 3. The limit exists and equals 3, but f(1) = 2 ≠ 3. Hence f is discontinuous at x = 1 (removable discontinuity); it becomes continuous if f(1) is redefined as 3. Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q2(iv); book p482 = PDF p509; key book p483"
+      },
+      {
+        "knowledgeNote": "Removable discontinuity: the limit exists (27) but the printed value (20) sits off the curve.",
+        "marks": 4,
+        "question": "Q3(i). f(x) = x² + 2 for x < 5, 20 for x = 5, 3x + 12 for x > 5. Show that f has a removable discontinuity at x = 5.",
+        "solution": "LHL: 5² + 2 = 27. RHL: 3(5) + 12 = 15 + 12 = 27. The limit exists and equals 27, while f(5) = 20 ≠ 27. Because the two-sided limit exists but differs from the value, the discontinuity is removable (put f(5) = 27 to repair it). ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q3(i); book p483 = PDF p510"
+      },
+      {
+        "knowledgeNote": "Same test: common limit 1 vs printed value 2 → removable, and the repair value is the limit.",
+        "marks": 4,
+        "question": "Q3(ii). f(x) = 2x − 3 for x < 2, 2 for x = 2, 3x − 5 for x > 2. Is f continuous at x = 2? If not, how can it be made continuous there?",
+        "solution": "LHL: 2(2) − 3 = 1. RHL: 3(2) − 5 = 1. Limit = 1, but f(2) = 2. Since limit ≠ value, f is not continuous at x = 2; it is a removable discontinuity. Define f(x) = 2x − 3 for x < 2, f(2) = 1, f(x) = 3x − 5 for x > 2 to make it continuous. Boxed No; redefine f(2) = 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q3(ii); book p483 = PDF p510; key book p483"
+      },
+      {
+        "knowledgeNote": "Find k by equating the two branches at the join (and with the value).",
+        "marks": 3,
+        "question": "Q4(i). f(x) = kx + 3 for x ≥ 2 and f(x) = 3x − 1 for x < 2. Find k so that f is continuous at x = 2.",
+        "solution": "Left limit (x < 2 rule): 3(2) − 1 = 5. Right limit and value: 2k + 3. Continuity requires 2k + 3 = 5, so 2k = 2 and k = 1. Boxed k = 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q4(i); book p483 = PDF p510; key book p483"
+      },
+      {
+        "knowledgeNote": "The constant must equal the removable limit: factor 2x² − 18 = 2(x − 3)(x + 3).",
+        "marks": 3,
+        "question": "Q4(ii). f(x) = (2x² − 18)/(x − 3) for x ≠ 3 and f(x) = k for x = 3. Find k so that f is continuous at x = 3.",
+        "solution": "For x ≠ 3: (2x² − 18)/(x − 3) = 2(x² − 9)/(x − 3) = 2(x + 3). Hence the limit at x = 3 is 2(3 + 3) = 12. Continuity needs f(3) = limit, so k = 12. Boxed k = 12 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.4 Q4(ii); book p483 = PDF p510; key book p483"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 BOOK Exercise 16.4 — continuity tests, piecewise functions and removable discontinuities (book pp482-483 = PDF pp509-510 of the 2075 reprint; page-region vision reads at 180 dpi in overlapping strips; every answer checked against the printed Answers block, book p483).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.4 (Continuity and Discontinuity) - Complete Solutions",
+    "topicSlug": "calculus-textbook-ex-16-4-continuity",
+    "topicTitle": "Ch.16 Book Ex 16.4 - continuity, piecewise tests, removable discontinuities (19 entries)",
+    "unitSlug": "calculus",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/calculus/ex-16-additional-continuity.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "A rational function is continuous wherever its denominator is non-zero; a pole always breaks continuity.",
+        "marks": 3,
+        "question": "Q1. Define the continuity of a function at a point, give an example of a continuous function at a point, and say whether f(x) = 1/(1 − x) is continuous at x = 1. [T.U. 2048]",
+        "solution": "Definition. f is continuous at x = a if (i) f(a) is defined, (ii) lim (x→a) f(x) exists, and (iii) lim (x→a) f(x) = f(a).\nExample. f(x) = x² at a = 2: f(2) = 4, the limit is 4, and the two agree, so f is continuous there.\nFor f(x) = 1/(1 − x) at x = 1: f(1) = 1/0 is not defined and the one-sided limits are +∞ (from the left) and −∞ (from the right), so f is not continuous at x = 1. Boxed No (matches the printed key, book p486).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q1; book p486 = PDF p513; key book p486"
+      },
+      {
+        "knowledgeNote": "Two branches meeting at the same value = continuity, even if the formula changes.",
+        "marks": 3,
+        "question": "Q2. When is f(x) said to be continuous at x = a? Discuss the continuity of f(x) = x² + 2 for x ≤ 5 and f(x) = 3x + 12 for x > 5 at x = 5. (HSEB 2054)",
+        "solution": "Condition: f is continuous at x = a iff f(a) is defined, lim (x→a) f(x) exists, and the two are equal.\nHere f(5) = 25 + 2 = 27; left limit 27; right limit 3(5) + 12 = 27. All equal, so f is continuous at x = 5. Boxed continuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q2; book p486 = PDF p513; key book p486"
+      },
+      {
+        "knowledgeNote": "Discontinuities of a rational function are exactly the zeros of its denominator (where the numerator stays finite).",
+        "marks": 3,
+        "question": "Q3(i). At what points is f(x) = (x + 1)/[(x − 2)(x − 3)] discontinuous?",
+        "solution": "The denominator vanishes when x − 2 = 0 or x − 3 = 0, i.e. x = 2 and x = 3. At each of these the numerator is non-zero (3 and 4), so the function has a vertical asymptote and no finite value. Hence f is discontinuous at x = 2 and x = 3. Boxed 2 and 3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q3(i); book p486 = PDF p513; key book p486"
+      },
+      {
+        "knowledgeNote": "Everywhere else the denominator is non-zero, so the quotient of continuous functions is continuous.",
+        "marks": 2,
+        "question": "Q3(ii). At what points is f(x) = (x + 1)/[(x − 2)(x − 3)] continuous?",
+        "solution": "For every x other than 2 and 3 the denominator is non-zero; a quotient of continuous functions with non-zero denominator is continuous. Hence f is continuous at all real x except x = 2 and x = 3. Boxed continuous at all points except x = 2 and x = 3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q3(ii); book p486 = PDF p513; key book p486"
+      },
+      {
+        "knowledgeNote": "A V-shaped function with the apex value moved off the limit: common limit 0 but value 1.",
+        "marks": 3,
+        "question": "Q4. Discuss the continuity of f(x) at x = 0, where f(x) = x for x > 0, f(x) = 1 for x = 0 and f(x) = −x for x < 0.",
+        "solution": "Right limit: x → 0. Left limit: −x → 0. So lim (x→0) f(x) = 0, but f(0) = 1. Since limit ≠ value, f is discontinuous at x = 0 (a removable discontinuity; f becomes continuous if f(0) is redefined as 0). Boxed discontinuous (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q4; book p486 = PDF p513; key book p486"
+      },
+      {
+        "knowledgeNote": "Compute both one-sided limits first, then compare with the printed value — the answer needs all three numbers.",
+        "marks": 3,
+        "question": "Q5. f(x) = 2x + 1 for x < 1, 2 for x = 1, 3x for x > 1. Calculate the left-hand and right-hand limits at x = 1. Is f continuous at x = 1? (HSEB 2051)",
+        "solution": "LHL: 2(1) + 1 = 3. RHL: 3(1) = 3. The limit is 3, but f(1) = 2 ≠ 3, so f is not continuous at x = 1. Boxed 3, 3, No (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q5; book p487 = PDF p514; key book p486"
+      },
+      {
+        "knowledgeNote": "Here the branches agree (limit −2) but the printed value is 3: removable, repaired by setting f(2) = −2.",
+        "marks": 4,
+        "question": "Q6. f(x) = 2 − x² for x < 2, 3 for x = 2, x − 4 for x > 2. Verify that the limit exists at x = 2. Is f continuous there? If not, how can it be made continuous? (T.U. 2050)",
+        "solution": "LHL: 2 − 4 = −2. RHL: 2 − 4 = −2. The limit exists and equals −2, but f(2) = 3 ≠ −2, so f is not continuous at x = 2. It becomes continuous on redefining f(2) = −2. Boxed No, because lim (x→2) f(x) ≠ f(2); redefine f(2) = −2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q6; book p487 = PDF p514; key book p486"
+      },
+      {
+        "knowledgeNote": "A 0/0 rational function: factor top and bottom, cancel, then compare the limit with the assigned value.",
+        "marks": 4,
+        "question": "Q7. f(x) = (x² − x − 6)/(x² − 2x − 3) for x ≠ 3, f(x) = 5/3 at x = 3. Prove that f is discontinuous at x = 3. Can the definition at x = 3 be modified to make it continuous?",
+        "solution": "Factor: x² − x − 6 = (x − 3)(x + 2) and x² − 2x − 3 = (x − 3)(x + 1). For x ≠ 3, f(x) = (x + 2)/(x + 1), so lim (x→3) f(x) = 5/4. But f(3) = 5/3 ≠ 5/4, so f is discontinuous at x = 3. Since the limit exists, the discontinuity is removable: defining f(3) = 5/4 makes f continuous there. Boxed Yes, by defining f(3) = 5/4 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q7; book p487 = PDF p514; key book p486"
+      },
+      {
+        "knowledgeNote": "Removable discontinuity: both branches meet (limit 1) but the assigned value 1/2 sits below the gap.",
+        "marks": 4,
+        "question": "Q8(i). f(x) = 1/2 + x for 0 < x < 1/2, 1/2 at x = 1/2, 3/2 − x for 1/2 < x < 1. Show that f has a removable discontinuity at x = 1/2.",
+        "solution": "LHL: 1/2 + 1/2 = 1. RHL: 3/2 − 1/2 = 1. The limit is 1, but f(1/2) = 1/2 ≠ 1. A discontinuity whose two-sided limit exists is removable (fill the point with 1). ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(i); book p487 = PDF p514"
+      },
+      {
+        "knowledgeNote": "Piecewise continuity at a join: match the two formulas at the junction point.",
+        "marks": 5,
+        "question": "Q8(ii). f(x) = x² for 0 < x < 1, x for 1 ≤ x < 2, (1/4)x³ for 2 ≤ x < 3. Show that f is continuous at x = 1 and x = 2.",
+        "solution": "At x = 1: f(1) = 1 (middle branch); left limit x² → 1; right limit x → 1. All equal → continuous.\nAt x = 2: f(2) = (1/4)(2)³ = 2 (third branch); left limit x → 2; right limit (1/4)x³ → 2. All equal → continuous. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(ii); book p487 = PDF p514"
+      },
+      {
+        "knowledgeNote": "One branch continuous, the other jumping: check each join independently.",
+        "marks": 5,
+        "question": "Q8(iii). f(x) = 3 + 2x for −3/2 ≤ x < 0, 3 − 2x for 0 ≤ x < 3/2, −3 − 2x for x ≥ 3/2. Show that f is continuous at x = 0 but discontinuous at x = 3/2. (HSEB 2056)",
+        "solution": "At x = 0: f(0) = 3 − 0 = 3; left limit 3 + 0 = 3; right limit 3 − 0 = 3 → continuous.\nAt x = 3/2: f(3/2) = −3 − 3 = −6 (third branch); left limit 3 − 2(3/2) = 0; right limit −3 − 2(3/2) = −6. Since the left limit 0 ≠ f(3/2) = −6, the limit does not exist and f is discontinuous at x = 3/2. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(iii); book p487 = PDF p514"
+      },
+      {
+        "knowledgeNote": "The sign function: a jump discontinuity with one-sided limits +1 and −1.",
+        "marks": 3,
+        "question": "Q8(iv). f(x) = 1 for x > 0, 0 for x = 0, −1 for x < 0. Show that f is discontinuous at x = 0.",
+        "solution": "Right limit: 1. Left limit: −1. Since the one-sided limits differ, lim (x→0) f(x) does not exist, so f cannot be continuous at x = 0. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(iv); book p487 = PDF p514"
+      },
+      {
+        "knowledgeNote": "Set the quadratic branch equal to the constant branch at the join.",
+        "marks": 3,
+        "question": "Q9(i). Find k so that f(x) = kx² (x ≤ 2), f(x) = 3 (x > 2) is continuous at x = 2.",
+        "solution": "Left limit and value: k(2)² = 4k. Right limit: 3. Continuity needs 4k = 3, so k = 3/4. Boxed k = 3/4 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(i); book p487 = PDF p514; key book p486"
+      },
+      {
+        "knowledgeNote": "Only one branch contains the constant: equate the other branch's value at the join to it.",
+        "marks": 3,
+        "question": "Q9(ii). Find a so that g(x) = ax + 5 (x ≤ 2), g(x) = x − 1 (x > 2) is continuous at x = 2.",
+        "solution": "Left limit: 2a + 5. Right limit: 2 − 1 = 1. Continuity needs 2a + 5 = 1, so 2a = −4 and a = −2. Boxed a = −2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(ii); book p487 = PDF p514; key book p486"
+      },
+      {
+        "knowledgeNote": "Linear on the left, quadratic on the right: both formulas contain p, so one equation solves it.",
+        "marks": 3,
+        "question": "Q9(iii). Find p so that f(x) = 2px + 3 (x < 1), f(x) = 1 − px² (x ≥ 1) is continuous at x = 1.",
+        "solution": "Left limit: 2p + 3. Right limit and value: 1 − p. Continuity needs 2p + 3 = 1 − p, so 3p = −2 and p = −2/3. Boxed p = −2/3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(iii); book p487 = PDF p514; key book p486"
+      },
+      {
+        "knowledgeNote": "The constant must reproduce the removable limit: factor x² − 9 = (x − 3)(x + 3).",
+        "marks": 3,
+        "question": "Q9(iv). Find k so that f(x) = (x² − 9)/(x − 3) for x ≠ 3, f(x) = k for x = 3 is continuous at x = 3.",
+        "solution": "For x ≠ 3, (x² − 9)/(x − 3) = x + 3, so the limit at 3 is 6. Continuity requires k = 6. Boxed k = 6 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(iv); book p487 = PDF p514; key book p486"
+      },
+      {
+        "knowledgeNote": "The hint is the definition: equal one-sided limits that differ from the value = removable.",
+        "marks": 4,
+        "question": "Q10. Let f(x) = 2x (x < 2), 2 (x = 2), x² (x > 2). Show that f has a removable discontinuity at x = 2. [Hint: removable iff lim (x→2⁻) f = lim (x→2⁺) f ≠ f(2).]",
+        "solution": "Left limit: 2(2) = 4. Right limit: 2² = 4. So lim (x→2) f(x) = 4, while f(2) = 2. The one-sided limits are equal but differ from the value, hence the discontinuity at x = 2 is removable (repair by setting f(2) = 4). ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q10; book p488 = PDF p515"
+      },
+      {
+        "knowledgeNote": "Continuity needs three things at once; failing any one of them produces a discontinuity type.",
+        "marks": 5,
+        "question": "Q11. What condition is necessary for f(x) to be continuous at x = a? Under what conditions is f discontinuous at x = a?",
+        "solution": "Necessary and sufficient conditions: (i) f(a) is defined; (ii) lim (x→a) f(x) exists, i.e. lim (x→a⁻) f(x) = lim (x→a⁺) f(x) = L; (iii) L = f(a).\nf is discontinuous at x = a when any one fails: (a) f(a) undefined — e.g. 1/(x − 1) at x = 1 (infinite discontinuity); (b) the one-sided limits differ — e.g. |x|/x at 0 (jump discontinuity); (c) the limit exists but differs from f(a) — e.g. Q10 above (removable discontinuity).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q11; book p488 = PDF p515"
+      },
+      {
+        "knowledgeNote": "Constant function with one moved point: the limit is 1 everywhere, the value at 0 is 2.",
+        "marks": 3,
+        "question": "Q12. f(x) = 1 when x ≠ 0, f(x) = 2 when x = 0. Find lim (x→0) f(x) if it exists. Is f continuous at x = 0?",
+        "solution": "For x ≠ 0 the function equals 1, so both one-sided limits are 1 and lim (x→0) f(x) = 1. But f(0) = 2 ≠ 1, so f is not continuous at x = 0 (removable discontinuity). Boxed 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q12; book p488 = PDF p515 (worked in the text, pp488-489); key book p486"
+      },
+      {
+        "knowledgeNote": "Points of discontinuity of a rational function = zeros of the denominator (with a non-zero numerator).",
+        "marks": 2,
+        "question": "Q13(i). Find the points of discontinuity of f(x) = (x + 1)/(x − 1).",
+        "solution": "The denominator x − 1 vanishes at x = 1, where the numerator is 2 ≠ 0, so f has a vertical asymptote there. Discontinuous at x = 1. Boxed x = 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q13(i); book p489 = PDF p516; key book p486"
+      },
+      {
+        "knowledgeNote": "Factor the cubic denominator into its three linear roots.",
+        "marks": 3,
+        "question": "Q13(ii). Find the points of discontinuity of f(x) = (3x − 1)/(x³ − 5x² + 6x).",
+        "solution": "Factor: x³ − 5x² + 6x = x(x² − 5x + 6) = x(x − 2)(x − 3). The denominator vanishes at x = 0, 2, 3, and at each the numerator 3x − 1 is non-zero (−1, 5, 8). Hence f is discontinuous at x = 0, 2, 3. Boxed x = 0, 2, 3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q13(ii); book p489 = PDF p516; key book p486"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 ADDITIONAL QUESTIONS (Continuity) — Q1-Q13 including all sub-parts (book pp486-489 = PDF pp513-516 of the 2075 reprint; page-region vision reads at 180 dpi in overlapping strips; every numeric answer checked against the printed Answers block, book p486).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.16 Additional Questions (Continuity) - Complete Solutions",
+    "topicSlug": "calculus-textbook-ex-16-additional-continuity",
+    "topicTitle": "Ch.16 Additional Questions (Continuity) - definitions, piecewise tests, constants k (21 entries)",
+    "unitSlug": "calculus",
+    "year": 2078
+  },
+  "practice/solutions/class-11/mathematics/calculus/ex-16-additional-limits.json": {
+    "examSource": "Sukunda Textbook",
+    "questions": [
+      {
+        "knowledgeNote": "For a finite limit at a the function must stay bounded near a; 2/(2 + 3x) blows up as x → −2/3.",
+        "marks": 4,
+        "question": "Q1. Prove that lim (x→−2/3) 2/(2 + 3x) does not exist.",
+        "solution": "At x = −2/3 the denominator 2 + 3x = 0, so the expression is undefined there. Approach from the right: x = −2/3 + h with h → 0⁺ gives 2 + 3x = 3h → 0⁺, so 2/(3h) → +∞. Approach from the left: x = −2/3 − h gives 2 + 3x = −3h → 0⁻, so 2/(−3h) → −∞. The one-sided limits are not finite and not equal, hence the limit does not exist. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q1; book p483 = PDF p510"
+      },
+      {
+        "knowledgeNote": "A function is 'defined' at a point when substitution gives a finite real number.",
+        "marks": 2,
+        "question": "Q2(i). Is f(x) = (x − 1)/(x + 2) defined for the value x = 1?",
+        "solution": "f(1) = (1 − 1)/(1 + 2) = 0/3 = 0, a finite real number, and the denominator is non-zero at x = 1. So the function is defined there. Boxed Defined (matches the printed key, book p486).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q2(i); book p484 = PDF p511; key book p486 = PDF p513"
+      },
+      {
+        "knowledgeNote": "A zero denominator at the point means no value is assigned there, even though the limit may exist.",
+        "marks": 2,
+        "question": "Q2(ii). Is f(x) = (x³ + 1)/(x − 1) defined for the value x = 1?",
+        "solution": "At x = 1 the denominator is 1 − 1 = 0, so f(1) = 2/0 is undefined. Boxed Not defined (matches the key). (Note the value, not the limit: lim (x→1) (x³+1)/(x−1) does not exist either, since the numerator tends to 2.)",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q2(ii); book p484 = PDF p511; key book p486"
+      },
+      {
+        "knowledgeNote": "LHL is the value approached through x < a, RHL through x > a; the limit exists iff both exist and are equal.",
+        "marks": 5,
+        "question": "Q3. What is meant by the left-hand and right-hand limit of a function? State the condition for the limit to exist at a point. Prove that lim (x→0) |x| = 0 but lim (x→0) |x|/x does not exist.",
+        "solution": "Definitions. lim (x→a⁻) f(x) = L means f(x) can be made arbitrarily close to L by taking x < a close enough to a; lim (x→a⁺) f(x) = M is the same with x > a. The two-sided limit exists iff both one-sided limits exist and are equal: lim (x→a) f(x) = L ⇔ lim (x→a⁻) f(x) = lim (x→a⁺) f(x) = L.\nProof 1: for x > 0, |x| = x → 0; for x < 0, |x| = −x → 0. Both one-sided limits are 0, so lim (x→0) |x| = 0.\nProof 2: for x > 0, |x|/x = 1, so the right limit is 1; for x < 0, |x|/x = −1, so the left limit is −1. Since 1 ≠ −1, the limit does not exist. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q3; book p484 = PDF p511"
+      },
+      {
+        "knowledgeNote": "The value f(a) is what the function assigns at a; the limit is what it approaches. They can differ (removable discontinuity).",
+        "marks": 5,
+        "question": "Q4. Distinguish between the limit and the value of a function at a point. Given f(x) = (ax + b)/(x + 1), lim (x→0) f(x) = 2 and lim (x→∞) f(x) = 1, prove that f(−2) = 0.",
+        "solution": "Distinction. lim (x→a) f(x) describes the behaviour of f near a and ignores f(a) itself (f need not even be defined at a); f(a) is the single assigned value. A function is continuous at a exactly when the two coincide.\nNow lim (x→0) (ax + b)/(x + 1) = (0 + b)/(0 + 1) = b = 2, so b = 2. And lim (x→∞) (ax + b)/(x + 1) = a (ratio of the leading coefficients) = 1, so a = 1. Then f(x) = (x + 2)/(x + 1) and f(−2) = (−2 + 2)/(−2 + 1) = 0/(−1) = 0. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q4; book p484 = PDF p511"
+      },
+      {
+        "knowledgeNote": "Two limits pin the two constants: the limit at 0 gives one equation, the limit at infinity the other.",
+        "marks": 5,
+        "question": "Q5. Define the limit of a function at a point. Given f(x) = (x + 6)/(cx − d), lim (x→0) f(x) = −6 and lim (x→∞) f(x) = 1/3, prove that f(13) = 1/2.",
+        "solution": "Definition. L = lim (x→a) f(x) if for every ε > 0 there is δ > 0 such that 0 < |x − a| < δ ⇒ |f(x) − L| < ε.\nAt x → 0: (x + 6)/(cx − d) → 6/(−d) = −6/d, so −6/d = −6 ⇒ d = 1. At x → ∞ the quotient tends to the ratio of leading coefficients, 1/c, so 1/c = 1/3 ⇒ c = 3. Hence f(x) = (x + 6)/(3x − 1) and f(13) = (13 + 6)/(39 − 1) = 19/38 = 1/2. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q5; book p484 = PDF p511"
+      },
+      {
+        "knowledgeNote": "Indeterminate forms 0/0, ∞/∞, ∞−∞, 0·∞, 0⁰, 1^∞, ∞⁰ need algebraic rewriting; here a conjugate removes ∞−∞.",
+        "marks": 4,
+        "question": "Q6. What is an indeterminate form? State their different forms. Evaluate lim (x→∞) √x(√x − √(x − a)). [T.U. 2052]",
+        "solution": "An indeterminate form is an expression whose limiting value cannot be read off from the limits of its parts — the answer depends on how the parts approach their limits. The seven standard forms are 0/0, ∞/∞, 0·∞, ∞ − ∞, 0⁰, 1^∞ and ∞⁰.\nEvaluation: √x − √(x − a) = [(x) − (x − a)]/[√x + √(x − a)] = a/[√x + √(x − a)], an ∞ − ∞ form removed by the conjugate. Multiply by √x: a√x/[√x + √(x − a)]. Divide top and bottom by √x: a/[1 + √(1 − a/x)] → a/(1 + 1) = a/2. Boxed a/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q6; book p484 = PDF p511; key book p486"
+      },
+      {
+        "knowledgeNote": "A function can be continuous nowhere yet still have a limit at a point where the nearby non-integer values all give 0.",
+        "marks": 4,
+        "question": "Q7. Let f: R → R be defined by f(x) = x if x is an integer, f(x) = 0 if x is not an integer. Find lim (x→1) f(x). Is it the same as f(1)?",
+        "solution": "Approach x = 1 through non-integers: then f(x) = 0 for every such x, so the limit along that path is 0. Approach through integers: the only integer arbitrarily close to 1 is 1 itself, so this does not produce other values and the two-sided limit is 0. Hence lim (x→1) f(x) = 0. But f(1) = 1 (1 is an integer). Since 0 ≠ 1, the limit is not the same as the value — f is discontinuous at x = 1. Boxed 0, No (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q7; book p484 = PDF p511; key book p486"
+      },
+      {
+        "knowledgeNote": "Combine the fractions over the factorised denominator; the 0/0 factor cancels.",
+        "marks": 4,
+        "question": "Q8(i). Prove that lim (x→3) [1/(x − 3) − 9/(x³ − 3x²)] = 2/3.",
+        "solution": "Write x³ − 3x² = x²(x − 3). Then 1/(x − 3) − 9/[x²(x − 3)] = [x² − 9]/[x²(x − 3)] = (x − 3)(x + 3)/[x²(x − 3)] = (x + 3)/x² for x ≠ 3. Therefore the limit is (3 + 3)/3² = 6/9 = 2/3. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q8(i); book p484 = PDF p511; key book p486"
+      },
+      {
+        "knowledgeNote": "The common denominator is (x − 3)(x + 3); the numerator then collapses to x(x − 3).",
+        "marks": 4,
+        "question": "Q8(ii). Prove that lim (x→3) [ (x² + 9)/(x² − 9) − 3/(x − 3) ] = 1/2.",
+        "solution": "x² − 9 = (x − 3)(x + 3). Combine: (x² + 9)/[(x−3)(x+3)] − 3(x + 3)/[(x−3)(x+3)] = [x² + 9 − 3x − 9]/[(x−3)(x+3)] = (x² − 3x)/[(x−3)(x+3)] = x(x − 3)/[(x−3)(x+3)] = x/(x + 3) for x ≠ 3. Limit: 3/(3 + 3) = 3/6 = 1/2. ∎",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q8(ii); book p484 = PDF p511; key book p486"
+      },
+      {
+        "knowledgeNote": "Difference of powers rule: lim (x^n − a^n)/(x − a) = n·a^(n−1) holds for negative n too.",
+        "marks": 3,
+        "question": "Q9(i). Evaluate: lim (x→2) (x^(−3) − 2^(−3))/(x − 2).",
+        "solution": "This is the difference-of-powers limit with n = −3, a = 2: the limit is n·a^(n−1) = −3·2^(−4) = −3/16. Direct check: x^(−3) − 2^(−3) = (2³ − x³)/(8x³) = −(x − 2)(x² + 2x + 4)/(8x³), so the quotient → −(4 + 4 + 4)/(8·8) = −12/64 = −3/16. Boxed −3/16 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q9(i); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "At infinity only the leading terms matter: (2x)^6 and (3x)^4 over (2x)^10.",
+        "marks": 3,
+        "question": "Q9(ii). Evaluate: lim (x→∞) (2x − 1)^6 (3x − 1)^4/(2x + 1)^10.",
+        "solution": "In the numerator the dominant term is (2x)^6(3x)^4 = 2^6·3^4·x^10; in the denominator it is (2x)^10 = 2^10·x^10. The quotient tends to 2^6·3^4/2^10 = 3^4/2^4 = 81/16. Boxed 81/16 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q9(ii); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Substitute u = 1 + x; both numerator and denominator are then differences of powers divided by x = u − 1.",
+        "marks": 3,
+        "question": "Q9(iii). Evaluate: lim (x→0) [(1 + x)^6 − 1]/[(1 + x)² − 1].",
+        "solution": "Divide numerator and denominator by x: [((1+x)^6 − 1)/x] ÷ [((1+x)² − 1)/x]. With u = 1 + x → 1, each quotient is a difference-of-powers limit: (u^6 − 1)/(u − 1) → 6 and (u² − 1)/(u − 1) → 2. Ratio = 6/2 = 3. Boxed 3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q9(iii); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Difference of powers with a fractional exponent: (u^(5/2) − c^(5/2))/(u − c) → (5/2)c^(3/2).",
+        "marks": 4,
+        "question": "Q9(iv). Evaluate: lim (x→a) [(x + 2)^(5/2) − (a + 2)^(5/2)]/(x − a).",
+        "solution": "Put u = x + 2 and c = a + 2, so x − a = u − c and the quotient becomes (u^(5/2) − c^(5/2))/(u − c). Writing u = c + h and expanding by the binomial theorem, (c + h)^(5/2) = c^(5/2) + (5/2)c^(3/2)h + …, so the quotient → (5/2)c^(3/2) = (5/2)(a + 2)^(3/2). Boxed (5/2)(a + 2)^(3/2) (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q9(iv); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "(x³ − a³)/(x − a) → 3a², so a single given limit becomes an equation in a.",
+        "marks": 3,
+        "question": "Q10. If lim (x→a) (x³ − a³)/(x − a) = 27, find all possible values of a.",
+        "solution": "x³ − a³ = (x − a)(x² + ax + a²), so the quotient is x² + ax + a² → a² + a² + a² = 3a². The condition 3a² = 27 gives a² = 9, hence a = 3 or a = −3. Boxed a = ±3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q10; book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Degrees must be converted to radians before using sin θ/θ → 1: x° = πx/180.",
+        "marks": 3,
+        "question": "Q11(i). Find the limiting value of lim (x→0) sin x°/x.",
+        "solution": "The symbol x° means x degrees = πx/180 radians. So sin x°/x = sin(πx/180)/x = (π/180)·sin(πx/180)/(πx/180) → (π/180)·1 = π/180. Boxed π/180 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(i); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Ratio of two 1 − cos forms: (4θ)²/2 over (6θ)²/2.",
+        "marks": 3,
+        "question": "Q11(ii). Find the limiting value of lim (θ→0) (1 − cos 4θ)/(1 − cos 6θ).",
+        "solution": "Write 1 − cos 4θ = 2 sin²2θ and 1 − cos 6θ = 2 sin²3θ. Ratio = [sin 2θ/2θ]²·(2θ)² ÷ {[sin 3θ/3θ]²·(3θ)²} → 4θ²/9θ² = 4/9. Boxed 4/9 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(ii); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "With t = π/2 − x, cos x = sin t and the denominator becomes t.",
+        "marks": 3,
+        "question": "Q11(iii). Find the limiting value of lim (x→π/2) cos x/(π/2 − x).",
+        "solution": "Put t = π/2 − x → 0, so x = π/2 − t and cos x = cos(π/2 − t) = sin t. The quotient becomes sin t/t → 1. Boxed 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(iii); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Near 0, tan 2x ≈ 2x and sin x ≈ x, so the leading terms decide the limit.",
+        "marks": 3,
+        "question": "Q11(iv). Find the limiting value of lim (x→0) (tan 2x − x)/(3x − sin x).",
+        "solution": "Divide top and bottom by x: [tan 2x/x − 1]/[3 − sin x/x]. Now tan 2x/x = 2·tan 2x/(2x) → 2 and sin x/x → 1. The limit is (2 − 1)/(3 − 1) = 1/2. Boxed 1/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(iv); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Shift to the singular point: with t = π − x, sin(x/2) = cos(t/2) and 1 − cos(t/2) ≈ t²/8.",
+        "marks": 4,
+        "question": "Q11(v). Find the limiting value of lim (x→π) (1 − sin(x/2))/(π − x)².",
+        "solution": "Put t = π − x → 0, so x = π − t and x/2 = π/2 − t/2, hence sin(x/2) = cos(t/2). Numerator: 1 − cos(t/2) = 2 sin²(t/4). Quotient = 2 sin²(t/4)/t² = 2·(1/16)·[sin(t/4)/(t/4)]² → 2/16 = 1/8. Boxed 1/8 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(v); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "With u = π − 2x, cos 2x = −cos u, so 1 + cos 2x = 1 − cos u ≈ u²/2.",
+        "marks": 4,
+        "question": "Q11(vi). Find the limiting value of lim (x→π/2) (1 + cos 2x)/(π − 2x)².",
+        "solution": "Put u = π − 2x → 0, so 2x = π − u and cos 2x = cos(π − u) = −cos u. Then 1 + cos 2x = 1 − cos u = 2 sin²(u/2). Quotient = 2 sin²(u/2)/u² = (1/2)[sin(u/2)/(u/2)]² → 1/2. Boxed 1/2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(vi); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "sin(1/x) oscillates between −1 and +1 however close x gets to 0: no limit.",
+        "marks": 3,
+        "question": "Q11(vii). Find the limiting value of lim (x→0) sin(1/x).",
+        "solution": "Take xₙ = 1/(π/2 + 2nπ) → 0⁺: sin(1/xₙ) = sin(π/2 + 2nπ) = 1 for every n. Take yₙ = 1/(3π/2 + 2nπ) → 0⁺: sin(1/yₙ) = −1. Two sequences tending to 0 give different limits (1 and −1), so the limit does not exist. Boxed does not exist (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(vii); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Squeeze theorem: |x sin(1/x)| ≤ |x| → 0, so the oscillation is crushed.",
+        "marks": 3,
+        "question": "Q11(viii). Find the limiting value of lim (x→0) x sin(1/x).",
+        "solution": "For x ≠ 0, −1 ≤ sin(1/x) ≤ 1, so −|x| ≤ x sin(1/x) ≤ |x|. Both bounds tend to 0 as x → 0, hence by the squeeze theorem the limit is 0. Boxed 0 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(viii); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Split into (sin x − sin a)/(x − a) and (x − a)/(√x − √a) = √x + √a.",
+        "marks": 4,
+        "question": "Q11(ix). Find the limiting value of lim (x→a) (sin x − sin a)/(√x − √a).",
+        "solution": "Rationalise the denominator: √x − √a = (x − a)/(√x + √a). So the quotient = [(sin x − sin a)/(x − a)]·(√x + √a). Since (sin x − sin a)/(x − a) = 2 cos((x+a)/2)·sin((x−a)/2)/(x−a) → cos a, the limit is cos a·(√a + √a) = 2√a·cos a. Boxed 2√a cos a (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(ix); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "With t = a − x, tan(πx/2a) = cot(πt/2a) ≈ 2a/(πt), and the t cancels.",
+        "marks": 4,
+        "question": "Q11(x). Find the limiting value of lim (x→a) (a − x) tan(πx/2a).",
+        "solution": "Put t = a − x → 0, so x = a − t and πx/2a = π/2 − πt/(2a). Then tan(πx/2a) = cot(πt/(2a)) = cos(πt/2a)/sin(πt/2a). The expression = t·cos(πt/2a)/sin(πt/2a) = [πt/(2a)]/sin(πt/2a)·(2a/π)·cos(πt/2a) → 1·(2a/π)·1 = 2a/π. Boxed 2a/π (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(x); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "This is the difference quotient of g(t) = t sec t at t = x, so the limit is g′(x).",
+        "marks": 4,
+        "question": "Q11(xi). Find the limiting value of lim (y→0) [(x + y) sec(x + y) − x sec x]/y.",
+        "solution": "The quotient has the form [g(x + y) − g(x)]/y with g(t) = t sec t, so the limit is g′(x) = sec x + x·sec x tan x (product rule, (sec t)′ = sec t tan t). Equivalently expand: (x + y)sec(x + y) − x sec x = y sec(x + y) + x[sec(x + y) − sec x]; dividing by y and letting y → 0 gives sec x + x·x′(0) where the bracket derivative is sec x tan x. Boxed sec x + x sec x tan x (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q11(xi); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "At a join, substitute each branch and compare.",
+        "marks": 3,
+        "question": "Q12(i). f(x) = 3x² + 2 if x < 1, f(x) = 2x + 3 if x ≥ 1. Find lim (x→1) f(x).",
+        "solution": "Left limit (x < 1 rule): 3(1)² + 2 = 5. Right limit (x ≥ 1 rule): 2(1) + 3 = 5. Both agree, so the limit is 5. Boxed 5 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q12(i); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "Three-branch function: check each join separately; a mismatched pair means no limit there.",
+        "marks": 5,
+        "question": "Q12(ii). f(x) = 3 + 2x for −3/2 ≤ x < 0, f(x) = 3 − 2x for 0 ≤ x < 3/2, f(x) = −3 − 2x for x ≥ 3/2. Find lim (x→0) f(x) and lim (x→3/2) f(x) if they exist.",
+        "solution": "At x = 0: left branch 3 + 2x → 3; right branch 3 − 2x → 3. Equal, so lim (x→0) f(x) = 3. At x = 3/2: left branch 3 − 2x → 3 − 3 = 0; right branch −3 − 2x → −3 − 3 = −6. Since 0 ≠ −6, lim (x→3/2) f(x) does not exist. Boxed 3; does not exist (matches the key: '3, does not exist').",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q12(ii); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "(e^(px) − 1)/(e^(qx) − 1): divide top and bottom by x and use (e^u − 1)/u → 1.",
+        "marks": 3,
+        "question": "Q13(a). Evaluate: lim (x→0) (e^(px) − 1)/(e^(qx) − 1).",
+        "solution": "Divide numerator and denominator by x: [(e^(px) − 1)/x] ÷ [(e^(qx) − 1)/x] = [p·(e^(px) − 1)/(px)] ÷ [q·(e^(qx) − 1)/(qx)] → p/q. Boxed p/q (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q13(a); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "e^x − e^(−x) ≈ 2x near 0; the extra +x makes the numerator 3x.",
+        "marks": 3,
+        "question": "Q13(b). Evaluate: lim (x→0) (e^x − e^(−x) + x)/x.",
+        "solution": "Split: (e^x − e^(−x))/x + 1. Now (e^x − e^(−x))/x = (e^x − 1)/x + (1 − e^(−x))/x = (e^x − 1)/x + (e^(−x) − 1)/(−x) → 1 + 1 = 2. Hence the limit is 2 + 1 = 3. Boxed 3 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q13(b); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "(a^x − 1)/x → log a and (b^x − 1)/x → log b; the ratio is the quotient of the logs.",
+        "marks": 3,
+        "question": "Q13(c). Evaluate: lim (x→0) (a^x − 1)/(b^x − 1).",
+        "solution": "Divide top and bottom by x: [(a^x − 1)/x]/[(b^x − 1)/x] → log a/log b. Boxed log a/log b (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q13(c); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "(2^x − 1)/x → log 2 while sin x/x → 1: split the quotient into two standard limits.",
+        "marks": 3,
+        "question": "Q14(a). Evaluate: lim (x→0) (2^x − 1)/sin x.",
+        "solution": "Write it as [(2^x − 1)/x]·[x/sin x] → (log 2)·1 = log 2. Boxed log 2 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q14(a); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "With u = sin x, e^u − 1 − u ≈ u²/2, so the numerator is of order x² and the x in the denominator wins.",
+        "marks": 4,
+        "question": "Q14(b). Evaluate: lim (x→0) (e^(sin x) − sin x − 1)/x.",
+        "solution": "Put u = sin x → 0. Then e^u = 1 + u + u²/2 + …, so e^u − u − 1 = u²/2 + O(u³). Since u = sin x ~ x, the numerator behaves like x²/2 and the whole quotient like x/2 → 0. Boxed 0 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q14(b); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "With t = π/2 − x, cos x = sin t, and (e^(sin t) − 1)/t → 1.",
+        "marks": 4,
+        "question": "Q14(c). Evaluate: lim (x→π/2) (e^(cos x) − 1)/(π/2 − x).",
+        "solution": "Put t = π/2 − x → 0, so cos x = cos(π/2 − t) = sin t. The quotient becomes (e^(sin t) − 1)/t = [(e^(sin t) − 1)/sin t]·(sin t/t) → 1·1 = 1. Boxed 1 (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q14(c); book p485 = PDF p512; key book p486"
+      },
+      {
+        "knowledgeNote": "log x − log e = log(x/e) and log(1 + h)/h → 1 with h = (x − e)/e.",
+        "marks": 4,
+        "question": "Q14(d). Evaluate: lim (x→e) (log x − 1)/(x − e).",
+        "solution": "Since log e = 1, write log x − 1 = log(x/e). Put x = e(1 + h), so x − e = eh and h → 0. Then log(x/e) = log(1 + h), and the quotient = log(1 + h)/(eh) = (1/e)·[log(1 + h)/h] → (1/e)·1 = 1/e. Boxed 1/e (matches the key).",
+        "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Limits) Q14(d); book p485 = PDF p512; key book p486"
+      }
+    ],
+    "relevance": 100,
+    "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 ADDITIONAL QUESTIONS (Limits) — Q1-Q14 including all sub-parts (book pp483-485 = PDF pp510-512 of the 2075 reprint; page-region vision reads at 180 dpi in overlapping strips; every answer checked against the printed Answers block, book p486 = PDF p513).",
+    "subject": "mathematics",
+    "title": "Sukunda Basic Mathematics XI - Ch.16 Additional Questions (Limits) - Complete Solutions",
+    "topicSlug": "calculus-textbook-ex-16-additional-limits",
+    "topicTitle": "Ch.16 Additional Questions (Limits) - proofs, indeterminate forms, mixed limits (35 entries)",
+    "unitSlug": "calculus",
+    "year": 2078
+  },
   "practice/solutions/class-11/mathematics/trigonometry/ex-4-1-trig-identities.json": {
     "examSource": "Sukunda Textbook",
     "questions": [

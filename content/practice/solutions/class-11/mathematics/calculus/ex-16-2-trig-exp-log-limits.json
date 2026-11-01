@@ -1,0 +1,251 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Standard result lim(θ→0) sinθ/θ = 1; rescale the angle to use it.",
+      "marks": 2,
+      "question": "Q1. Evaluate: lim (x→0) sin(ax)/x.",
+      "solution": "Multiply and divide by a: sin(ax)/x = a·sin(ax)/(ax). As x → 0, ax → 0 and sin(ax)/(ax) → 1, so the limit is a·1 = a. Boxed a (matches the printed key, book p474).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q1; book p472 = PDF p499; key book p474 = PDF p501"
+    },
+    {
+      "knowledgeNote": "tan u/u → 1 as u → 0.",
+      "marks": 2,
+      "question": "Q2. Evaluate: lim (x→0) tan(bx)/x.",
+      "solution": "tan(bx)/x = b·tan(bx)/(bx) → b·1 = b. Boxed b (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q2; book p472 = PDF p499; key book p474"
+    },
+    {
+      "knowledgeNote": "Divide numerator and denominator by x; both become standard sine quotients.",
+      "marks": 2,
+      "question": "Q3. Evaluate: lim (x→0) sin(mx)/sin(nx).",
+      "solution": "sin(mx)/sin(nx) = [m·sin(mx)/(mx)]/[n·sin(nx)/(nx)] → m·1/(n·1) = m/n. Boxed m/n (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q3; book p472 = PDF p499; key book p474"
+    },
+    {
+      "knowledgeNote": "Ratio of two tangent quotients: the angle coefficients survive.",
+      "marks": 2,
+      "question": "Q4. Evaluate: lim (x→0) tan(ax)/tan(bx).",
+      "solution": "tan(ax)/tan(bx) = [a·tan(ax)/(ax)]/[b·tan(bx)/(bx)] → a/b. Boxed a/b (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q4; book p472 = PDF p499; key book p474"
+    },
+    {
+      "knowledgeNote": "Convert tan(qx) to sin(qx)/cos(qx); cos(qx) → 1.",
+      "marks": 2,
+      "question": "Q5. Evaluate: lim (x→0) sin(px)/tan(qx).",
+      "solution": "sin(px)/tan(qx) = sin(px)·cos(qx)/sin(qx) = [sin(px)/(px)]·cos(qx)·(px)/[ (qx)·sin(qx)/(qx) ] = (p/q)·[sin(px)/(px)]/[(sin qx)/(qx)]·cos(qx) → (p/q)·1·1 = p/q. Boxed p/q (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q5; book p472 = PDF p499; key book p474"
+    },
+    {
+      "knowledgeNote": "Factor x² − a² = (x − a)(x + a) and use sin(x − a)/(x − a) → 1.",
+      "marks": 3,
+      "question": "Q6. Evaluate: lim (x→a) sin(x − a)/(x² − a²).",
+      "solution": "x² − a² = (x − a)(x + a). So the quotient = [sin(x − a)/(x − a)]·1/(x + a). As x → a the bracket → 1 and 1/(x + a) → 1/(2a). Boxed 1/(2a) (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q6; book p472 = PDF p499; key book p474"
+    },
+    {
+      "knowledgeNote": "(x² − p²) = (x − p)(x + p) and tan(x − p)/(x − p) → 1.",
+      "marks": 3,
+      "question": "Q7. Evaluate: lim (x→p) (x² − p²)/tan(x − p).",
+      "solution": "Write the quotient as (x + p)·(x − p)/tan(x − p). Since tan(x − p)/(x − p) → 1, its reciprocal (x − p)/tan(x − p) → 1. Hence the limit is (p + p)·1 = 2p. Boxed 2p (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q7; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Split the product: sin(ax)/sin(cx) gives a/c, and cos(bx) → 1.",
+      "marks": 3,
+      "question": "Q8. Evaluate: lim (x→0) sin(ax)·cos(bx)/sin(cx).",
+      "solution": "Group: [sin(ax)/sin(cx)]·cos(bx) → (a/c)·1 = a/c. Boxed a/c (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q8; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Multiply by (1 + cos x) to turn 1 − cos x into sin²x.",
+      "marks": 3,
+      "question": "Q9. Evaluate: lim (x→0) (1 − cos x)/x².",
+      "solution": "(1 − cos x)/x² = (1 − cos x)(1 + cos x)/[x²(1 + cos x)] = sin²x/[x²(1 + cos x)] = [sin x/x]²·1/(1 + cos x) → 1²·1/2 = 1/2. Boxed 1/2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q9; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Same identity with angle 6x: the factor (6x)² = 36x² multiplies the 1/2.",
+      "marks": 3,
+      "question": "Q10. Evaluate: lim (x→0) (1 − cos 6x)/x².",
+      "solution": "1 − cos 6x = 2 sin²(3x). Quotient = 2 sin²(3x)/x² = 18·[sin 3x/(3x)]² → 18·1 = 18. Boxed 18 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q10; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "General pattern: (1 − cos kx)/x² → k²/2.",
+      "marks": 3,
+      "question": "Q11. Evaluate: lim (x→0) (1 − cos 9x)/x².",
+      "solution": "1 − cos 9x = 2 sin²(4.5x) = 2 sin²(9x/2). Quotient = 2·(9/2)²·[sin(9x/2)/(9x/2)]² = (81/2)·1 = 81/2. Boxed 81/2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q11; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "cos A − cos B = −2 sin((A+B)/2) sin((A−B)/2); each sine quotient contributes its coefficient.",
+      "marks": 4,
+      "question": "Q12. Evaluate: lim (x→0) (cos ax − cos bx)/x².",
+      "solution": "cos ax − cos bx = 2 sin((a+b)x/2) sin((b−a)x/2). Divide by x²: 2·[(a+b)/2]·[(b−a)/2]·[sin((a+b)x/2)/((a+b)x/2)]·[sin((b−a)x/2)/((b−a)x/2)] → 2·(a+b)(b−a)/4 = (b² − a²)/2. Boxed ½(b² − a²) (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q12; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "sin A − sin B = 2 cos((A+B)/2) sin((A−B)/2); one factor cancels x.",
+      "marks": 4,
+      "question": "Q13. Evaluate: lim (x→0) (sin ax − sin bx)/x.",
+      "solution": "sin ax − sin bx = 2 cos((a+b)x/2) sin((a−b)x/2). Divide by x: 2·[(a−b)/2]·cos((a+b)x/2)·[sin((a−b)x/2)/((a−b)x/2)] → (a − b)·1·1 = a − b. Boxed a − b (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q13; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Ratio of two 1 − cos forms: the squared coefficients give p²/q².",
+      "marks": 4,
+      "question": "Q14. Evaluate: lim (x→0) (1 − cos px)/(1 − cos qx).",
+      "solution": "1 − cos px = 2 sin²(px/2), 1 − cos qx = 2 sin²(qx/2). Ratio = [sin(px/2)/(px/2)]²(p²x²/4) ÷ {[sin(qx/2)/(qx/2)]²(q²x²/4)} → p²/q². Boxed p²/q² (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q14; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "tan x − sin x = sin x(1 − cos x)/cos x: use the two standard limits together.",
+      "marks": 4,
+      "question": "Q15. Evaluate: lim (x→0) (tan x − sin x)/x³.",
+      "solution": "tan x − sin x = sin x(1/cos x − 1) = sin x(1 − cos x)/cos x. Divide by x³: [sin x/x]·[(1 − cos x)/x²]·1/cos x → 1·(1/2)·1 = 1/2. Boxed 1/2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q15; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Same identity with 2x: each factor contributes its coefficient, giving 2³ = 8 times the x-case.",
+      "marks": 4,
+      "question": "Q16. Evaluate: lim (x→0) (tan 2x − sin 2x)/x³.",
+      "solution": "tan 2x − sin 2x = sin 2x(1 − cos 2x)/cos 2x. Divide by x³: [sin 2x/x]·[(1 − cos 2x)/x²]·1/cos 2x. Now sin 2x/x → 2 and (1 − cos 2x)/x² = 2 sin²x/x² = 2 → 2. Product: 2·2·1 = 4. Boxed 4 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q16; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "sec x − tan x = (1 − sin x)/cos x; multiply by (1 + sin x) to remove the 0/0.",
+      "marks": 3,
+      "question": "Q17. Evaluate: lim (x→π/2) (sec x − tan x).",
+      "solution": "sec x − tan x = (1 − sin x)/cos x = (1 − sin²x)/[cos x(1 + sin x)] = cos²x/[cos x(1 + sin x)] = cos x/(1 + sin x). As x → π/2: 0/(1 + 1) = 0. Boxed 0 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q17; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "sec²x − 2 = tan²x − 1 = (tan x − 1)(tan x + 1): cancel the vanishing factor.",
+      "marks": 3,
+      "question": "Q18. Evaluate: lim (x→π/4) (sec²x − 2)/(tan x − 1).",
+      "solution": "Use sec²x = 1 + tan²x: sec²x − 2 = tan²x − 1 = (tan x − 1)(tan x + 1). Cancel (tan x − 1) (non-zero for x ≠ π/4 near π/4): limit = tan(π/4) + 1 = 1 + 1 = 2. Boxed 2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q18; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "cosec²x = 1 + cot²x, so the numerator factors against (1 − cot x).",
+      "marks": 3,
+      "question": "Q19. Evaluate: lim (x→π/4) (2 − cosec²x)/(1 − cot x).",
+      "solution": "2 − cosec²x = 2 − (1 + cot²x) = 1 − cot²x = (1 − cot x)(1 + cot x). Cancel (1 − cot x): limit = 1 + cot(π/4) = 1 + 1 = 2. Boxed 2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q19; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "y is a constant here: tan x − tan y = sin(x − y)/(cos x cos y), so the (x − y) cancels.",
+      "marks": 4,
+      "question": "Q20. Evaluate: lim (x→y) (tan x − tan y)/(x − y).",
+      "solution": "tan x − tan y = sin x/cos x − sin y/cos y = (sin x cos y − cos x sin y)/(cos x cos y) = sin(x − y)/(cos x cos y). Divide by (x − y): [sin(x − y)/(x − y)]·1/(cos x cos y) → 1/(cos y·cos y) = sec²y. Boxed sec²y (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q20; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "sin x − sin y = 2 cos((x+y)/2) sin((x−y)/2).",
+      "marks": 3,
+      "question": "Q21. Evaluate: lim (x→y) (sin x − sin y)/(x − y). [HSEB 2053, 2057]",
+      "solution": "sin x − sin y = 2 cos((x+y)/2) sin((x−y)/2) = 2 cos((x+y)/2)·[(x−y)/2]·[sin((x−y)/2)/((x−y)/2)]. Divide by (x − y): cos((x+y)/2)·[sin((x−y)/2)/((x−y)/2)] → cos y·1 = cos y. Boxed cos y (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q21; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "cos x − cos y = −2 sin((x+y)/2) sin((x−y)/2): the minus sign survives.",
+      "marks": 3,
+      "question": "Q22. Evaluate: lim (x→y) (cos x − cos y)/(x − y). [T.U. 2049 H]",
+      "solution": "cos x − cos y = −2 sin((x+y)/2) sin((x−y)/2). Divide by (x − y): −sin((x+y)/2)·[sin((x−y)/2)/((x−y)/2)] → −sin y·1 = −sin y. Boxed −sin y (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q22; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Add and subtract θ cot θ, then use cot θ − cot x = sin(x − θ)/(sin θ sin x).",
+      "marks": 5,
+      "question": "Q23. Evaluate: lim (x→θ) (x cot θ − θ cot x)/(x − θ). [T.U. 2049, HSEB 2055]",
+      "solution": "x cot θ − θ cot x = (x − θ)cot θ + θ(cot θ − cot x). Also cot θ − cot x = cos θ/sin θ − cos x/sin x = (cos θ sin x − cos x sin θ)/(sin θ sin x) = sin(x − θ)/(sin θ sin x). So the quotient = cot θ + θ·sin(x − θ)/[sin θ sin x (x − θ)] = cot θ + θ/[sin θ sin x]·[sin(x − θ)/(x − θ)] → cot θ + θ/(sin θ sin θ) = cot θ + θ/sin²θ. Boxed cot θ + θ/sin²θ (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q23; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Add and subtract θ cos θ, then use cos θ − cos x = 2 sin((θ+x)/2) sin((x−θ)/2).",
+      "marks": 5,
+      "question": "Q24. Evaluate: lim (x→θ) (x cos θ − θ cos x)/(x − θ). [T.U. 2052 H, 2057 S]",
+      "solution": "x cos θ − θ cos x = (x − θ)cos θ + θ(cos θ − cos x). And cos θ − cos x = 2 sin((θ+x)/2) sin((x−θ)/2). Quotient = cos θ + θ·2 sin((θ+x)/2)·[sin((x−θ)/2)/(x − θ)] = cos θ + θ·sin((θ+x)/2)·[sin((x−θ)/2)/((x−θ)/2)] → cos θ + θ·sin θ·1 = cos θ + θ sin θ. Boxed cos θ + θ sin θ (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q24; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Shift the origin: t = x − 1; then 1 + cos πx = 1 − cos πt and tan²πx = tan²πt.",
+      "marks": 4,
+      "question": "Q25. Evaluate: lim (x→1) (1 + cos πx)/tan²(πx).",
+      "solution": "Put t = x − 1 → 0, so πx = π + πt. Then cos πx = −cos πt and tan(πx) = tan(πt). Numerator: 1 − cos πt = 2 sin²(πt/2). Denominator: tan²(πt) = sin²(πt)/cos²(πt). Quotient = 2 sin²(πt/2)·cos²(πt)/sin²(πt) = 2 sin²(πt/2)cos²(πt)/[4 sin²(πt/2)cos²(πt/2)] = 1/[2 cos²(πt/2)] → 1/2 (cos 0 = 1). Boxed 1/2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q25; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Add and subtract θ tan θ; tan θ − tan x = −sin(x − θ)/(cos θ cos x).",
+      "marks": 5,
+      "question": "Q26. Evaluate: lim (x→θ) (x tan θ − θ tan x)/(x − θ). [T.U. 2050 H]",
+      "solution": "x tan θ − θ tan x = (x − θ)tan θ + θ(tan θ − tan x). And tan θ − tan x = sin(θ − x)/(cos θ cos x) = −sin(x − θ)/(cos θ cos x). Quotient = tan θ − θ·[sin(x − θ)/(x − θ)]/(cos θ cos x) → tan θ − θ/(cos θ cos θ) = tan θ − θ sec²θ. Boxed tan θ − θ sec²θ (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q26; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Shift to π/4: with h = θ − π/4 both cosine and sine expand to the same √2/2 base.",
+      "marks": 4,
+      "question": "Q27. Evaluate: lim (θ→π/4) (cos θ − sin θ)/(θ − π/4).",
+      "solution": "Put h = θ − π/4 → 0. cos θ = cos(π/4 + h) = (cos h − sin h)/√2; sin θ = (cos h + sin h)/√2. Difference = −2 sin h/√2 = −√2 sin h. Divide by h: −√2·(sin h/h) → −√2. Boxed −√2 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q27; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Two 0/0 parts: rationalise the root and use (sin x − sin c)/(x − c) → cos c.",
+      "marks": 5,
+      "question": "Q28. Evaluate: lim (x→c) (√x − √c)/(sin x − sin c).",
+      "solution": "Rationalise: √x − √c = (x − c)/(√x + √c). The quotient = (x − c)/[(√x + √c)(sin x − sin c)] = 1/(√x + √c) · (x − c)/(sin x − sin c). Since (sin x − sin c)/(x − c) → cos c, the reciprocal → 1/cos c. Hence the limit = 1/(2√c)·1/cos c = sec c/(2√c). Boxed sec c/(2√c) (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q28; book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Standard exponential limit (eᵘ − 1)/u → 1; rescale the exponent.",
+      "marks": 2,
+      "question": "Q29(a). Find the limit: lim (x→0) (e^(6x) − 1)/x.",
+      "solution": "(e^(6x) − 1)/x = 6·(e^(6x) − 1)/(6x) → 6·1 = 6. Boxed 6 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(a); book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Split the quotient: (e^(2x) − 1)/x → 2 and 2^(x+1) → 2.",
+      "marks": 3,
+      "question": "Q29(b). Find the limit: lim (x→0) (e^(2x) − 1)/(x·2^(x+1)).",
+      "solution": "Write it as [(e^(2x) − 1)/x]·1/2^(x+1). The first factor → 2 (standard exponential limit with rescaling), the second → 1/2^(0+1) = 1/2. Product = 2·1/2 = 1. Boxed 1 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(b); book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Split into two standard limits: (e^(ax) − 1)/x → a and (e^(bx) − 1)/x → b.",
+      "marks": 3,
+      "question": "Q29(c). Find the limit: lim (x→0) (e^(ax) − e^(bx))/x.",
+      "solution": "(e^(ax) − e^(bx))/x = (e^(ax) − 1)/x − (e^(bx) − 1)/x → a − b. Boxed a − b (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(c); book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Split, apply (aˣ − 1)/x → log a for both bases, and add the two logs.",
+      "marks": 3,
+      "question": "Q29(d). Find the limit: lim (x→0) (a^x + b^x − 2)/x.",
+      "solution": "(a^x + b^x − 2)/x = (a^x − 1)/x + (b^x − 1)/x → log a + log b = log(ab). Boxed log(ab) (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q29(d); book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Put t = x − 2; then log(x − 1) = log(1 + t) and log(1 + t)/t → 1.",
+      "marks": 3,
+      "question": "Q30(a). Evaluate: lim (x→2) (x − 2)/log(x − 1).",
+      "solution": "Let t = x − 2 → 0, so x − 1 = 1 + t. The quotient becomes t/log(1 + t) = 1/[log(1 + t)/t] → 1/1 = 1. Boxed 1 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q30(a); book p473 = PDF p500; key book p474"
+    },
+    {
+      "knowledgeNote": "Put t = x − π/2; cos x = −sin t and log(1 + t) ~ t, so the two leading terms cancel with a minus sign.",
+      "marks": 4,
+      "question": "Q30(b). Evaluate: lim (x→π/2) cos x/log(x − π/2 + 1).",
+      "solution": "Let t = x − π/2 → 0. Then cos x = cos(π/2 + t) = −sin t and log(x − π/2 + 1) = log(1 + t). Quotient = −sin t/log(1 + t) = −[sin t/t]·[t/log(1 + t)] → −1·1 = −1. Boxed −1 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.2 Q30(b); book p473 = PDF p500; key book p474"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 BOOK Exercise 16.2 — trigonometric, exponential and logarithmic limits (book pp472-473 = PDF pp499-500 of the 2075 reprint; page-region vision reads; every answer checked against the printed Answers block, book p474 = PDF p501).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.2 (Trigonometric, Exponential and Logarithmic Limits) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-16-2-trig-exp-log-limits",
+  "topicTitle": "Ch.16 Book Ex 16.2 - trig, exponential and log limits (34 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}

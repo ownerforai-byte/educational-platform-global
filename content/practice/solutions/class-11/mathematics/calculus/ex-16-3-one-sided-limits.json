@@ -1,0 +1,69 @@
+{
+  "examSource": "Sukunda Textbook",
+  "questions": [
+    {
+      "knowledgeNote": "Piecewise limits: compute the left limit with the x < a rule and the right limit with the x ≥ a rule; the two-sided limit exists only when they agree.",
+      "marks": 2,
+      "question": "Q1(a). Find the limit at x = 0: f(x) = x + 2 for x ≥ 0; f(x) = 4x + 2 for x < 0.",
+      "solution": "Right-hand limit (x ≥ 0 rule): lim (x→0⁺) (x + 2) = 0 + 2 = 2. Left-hand limit (x < 0 rule): lim (x→0⁻) (4x + 2) = 0 + 2 = 2. Both sides agree, so the limit exists and equals 2. Boxed 2 (matches the printed key, book p476).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(a); book p475 = PDF p502; key book p476 = PDF p503"
+    },
+    {
+      "knowledgeNote": "If the one-sided limits differ, the two-sided limit does not exist.",
+      "marks": 2,
+      "question": "Q1(b). Find the limit at x = 1: f(x) = 3x + 2 for x ≥ 1; f(x) = 2x for x < 1.",
+      "solution": "Right: lim (x→1⁺) (3x + 2) = 3 + 2 = 5. Left: lim (x→1⁻) 2x = 2. Since 5 ≠ 2 the left and right limits differ, so the limit does not exist. Boxed the limit does not exist (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(b); book p475 = PDF p502; key book p476"
+    },
+    {
+      "knowledgeNote": "Both branches meet at the same value here, so the function approaches a single number.",
+      "marks": 2,
+      "question": "Q1(c). Find the limit at x = 2: f(x) = 5x + 2 for x ≥ 2; f(x) = 7x − 2 for x < 2.",
+      "solution": "Right: 5(2) + 2 = 12. Left: 7(2) − 2 = 14 − 2 = 12. Equal, so the limit is 12. Boxed 12 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(c); book p475 = PDF p502; key book p476"
+    },
+    {
+      "knowledgeNote": "Check a linear branch against a quadratic branch at the join.",
+      "marks": 3,
+      "question": "Q1(d). Find the limit at x = 2: f(x) = 3x + 1 for x ≥ 2; f(x) = 2x² − 1 for x < 2. [T.U. 2058 S]",
+      "solution": "Right: 3(2) + 1 = 7. Left: 2(4) − 1 = 8 − 1 = 7. The one-sided limits coincide, so the limit is 7. Boxed 7 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(d); book p475 = PDF p502; key book p476"
+    },
+    {
+      "knowledgeNote": "A quadratic on the left and a linear on the right: evaluate both at the join.",
+      "marks": 3,
+      "question": "Q1(e). Find the limit at x = 1: f(x) = 2x + 1 for x ≥ 1; f(x) = 4x² − 1 for x < 1.",
+      "solution": "Right: 2(1) + 1 = 3. Left: 4(1) − 1 = 3. Both equal 3, so the limit is 3. Boxed 3 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(e); book p475 = PDF p502; key book p476"
+    },
+    {
+      "knowledgeNote": "Unequal one-sided limits = no limit, even though both branches are perfectly well defined.",
+      "marks": 3,
+      "question": "Q1(f). Find the limit at x = 2: f(x) = 3x − 2 for x ≥ 2; f(x) = 2x² + 1 for x < 2.",
+      "solution": "Right: 3(2) − 2 = 4. Left: 2(4) + 1 = 9. Since 4 ≠ 9 the limit does not exist. Boxed the limit does not exist (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q1(f); book p475 = PDF p502; key book p476"
+    },
+    {
+      "knowledgeNote": "|x − a| → 0 from both sides, so the absolute value removes the sign without creating a jump.",
+      "marks": 2,
+      "question": "Q2(a). Evaluate: lim (x→2) |x − 2|.",
+      "solution": "If x → 2⁺ then |x − 2| = x − 2 → 0; if x → 2⁻ then |x − 2| = 2 − x → 0. Both one-sided limits are 0, so the limit is 0. Boxed 0 (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q2(a); book p476 = PDF p503; key book p476"
+    },
+    {
+      "knowledgeNote": "|x|/x equals +1 for x > 0 and −1 for x < 0: a jump of 2 at the origin, so the limit fails.",
+      "marks": 3,
+      "question": "Q2(b). Evaluate: lim (x→0) |x|/x.",
+      "solution": "For x > 0: |x|/x = x/x = 1, so the right-hand limit is 1. For x < 0: |x|/x = −x/x = −1, so the left-hand limit is −1. The one-sided limits differ, hence the limit does not exist. Boxed the limit does not exist (matches the key).",
+      "source": "Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.3 Q2(b); book p476 = PDF p503; key book p476"
+    }
+  ],
+  "relevance": 100,
+  "source": "Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 BOOK Exercise 16.3 — left/right hand limits and absolute-value limits (book pp475-476 = PDF pp502-503 of the 2075 reprint; page-region vision reads; every answer checked against the printed Answers block on book p476).",
+  "subject": "mathematics",
+  "title": "Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.3 (Left/Right Hand Limits) - Complete Solutions",
+  "topicSlug": "calculus-textbook-ex-16-3-one-sided-limits",
+  "topicTitle": "Ch.16 Book Ex 16.3 - one-sided limits and absolute values (8 entries)",
+  "unitSlug": "calculus",
+  "year": 2078
+}
