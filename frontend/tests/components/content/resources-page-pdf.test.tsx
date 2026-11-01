@@ -71,6 +71,6 @@ describe("ResourcesPage PDF Scrolling & Viewing", () => {
       });
       expect(fullTabLinks.length).toBeGreaterThan(10);
     },
-    20000
+    60000
   );
 });

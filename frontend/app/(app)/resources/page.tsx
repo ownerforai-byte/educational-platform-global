@@ -166,7 +166,10 @@ function docIframeSrc(item: ResourceItem): string {
   if (item.kind === "docx") {
     // Local docx files need an absolute URL for Google Docs Viewer
     if (item.src.startsWith("/")) {
-      const origin = typeof window !== "undefined" ? window.location.origin : "";
+      const origin =
+        (typeof window !== "undefined" && window.location.origin)
+          ? window.location.origin
+          : (process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") || "https://ravikisan.vercel.app");
       return `https://docs.google.com/gview?url=${encodeURIComponent(origin + item.src)}&embedded=true`;
     }
     return `https://docs.google.com/gview?url=${encodeURIComponent(item.src)}&embedded=true`;
@@ -195,7 +198,7 @@ const ALL_RESOURCE_ITEMS: ResourceItem[] = [
       title: doc.title,
       subject: doc.subject,
       chapter: isGeneral ? "General & Comprehensive Revision" : doc.topic,
-      exercise: doc.kind.toUpperCase(),
+      exercise: undefined,
       kind: doc.kind,
       src: doc.href,
       description: doc.description,
@@ -418,7 +421,7 @@ export default function ResourcesPage() {
                               <div className="space-y-2.5">
                                 {/* Top badges */}
                                 <div className="flex items-center justify-between gap-2">
-                                  <div className="flex items-center gap-1.5 truncate">
+                                  <div className="min-w-0 flex-1 flex items-center gap-1.5 overflow-hidden">
                                     <span
                                       className={`shrink-0 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${
                                         item.sourceType === "webnotee"
@@ -437,17 +440,17 @@ export default function ResourcesPage() {
                                       </span>
                                     )}
                                   </div>
-                                  <span className={`inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${kindMeta.tint} border ${kindMeta.border}`}>
+                                  <span className={`shrink-0 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] font-bold ${kindMeta.tint} border ${kindMeta.border}`}>
                                     {kindMeta.label}
                                   </span>
                                 </div>
 
                                 {/* Title and description */}
-                                <div>
-                                  <h4 className="font-bold text-sm text-foreground leading-snug line-clamp-1" title={item.title}>
+                                <div className="space-y-0.5">
+                                  <h4 className="font-bold text-sm text-foreground leading-snug line-clamp-2 min-h-[2.5rem]" title={item.title}>
                                     {item.title}
                                   </h4>
-                                  <p className="mt-0.5 text-xs text-muted-foreground line-clamp-1 leading-relaxed">
+                                  <p className="text-xs text-muted-foreground line-clamp-1 leading-relaxed">
                                     {item.description}
                                   </p>
                                 </div>
