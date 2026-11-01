@@ -137,7 +137,6 @@ jobs:
           npx tsx <<'EOF'
           import fs from 'node:fs/promises';
           import path from 'node:path';
-          import crypto from 'node:crypto';
 
           const appDir = process.cwd();
           const assetlinksPath = path.join(appDir, 'frontend/public/.well-known/assetlinks.json');
@@ -180,12 +179,16 @@ jobs:
             .filter(Boolean);
 
           // Audited against META-INF/RAVIKISA.RSA in the checked-in release AAB
-          // on 2026-10-30. New certificates must be verified before being added.
+          // on 2026-10-30. This is an upload certificate, not proof of Play signing.
+          // Add the verified Play app-signing certificate before production.
           const verifiedFingerprints = [
-            '5BF3921CD99DC1E7EB31CDCB26923857F66733EA609C29D747E1A7ED85C5E390',
+            '5B:F3:92:1C:D9:9D:C1:E7:EB:31:CD:CB:26:92:38:57:F6:67:33:EA:60:9C:29:D7:47:E1:A7:ED:85:C5:E3:90',
           ];
 
           for (const fingerprint of currentFingerprints) {
+            if (!/^([0-9A-F]{2}:){31}[0-9A-F]{2}$/.test(fingerprint)) {
+              throw new Error("Malformed certificate fingerprint");
+            }
             if (!verifiedFingerprints.includes(fingerprint)) {
               throw new Error(
                 `Unverified SHA-256 fingerprint in assetlinks.json: ${fingerprint}`

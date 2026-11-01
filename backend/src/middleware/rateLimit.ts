@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import type { AuthedRequest } from "./auth";
 import { getClientIp } from "../utils/clientIp";
 
 /**
@@ -44,7 +45,7 @@ const AI_IMAGE_MAX_REQUESTS = positiveNumber(
 
 const hits = new Map<string, { count: number; reset: number }>();
 
-type Tier = "auth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
+type Tier = "support" | "auth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
 
 /** Which tier does this request fall into? */
 function tierFor(originalUrl: string | undefined): Tier {
@@ -92,6 +93,7 @@ interface TierLimit {
 }
 
 const TIERS: Record<Tier, TierLimit> = {
+  support: { max: 5, windowMs: 60 * 60 * 1000 },
   auth: { max: AUTH_MAX_REQUESTS, windowMs: WINDOW_MS },
   "password-reset": { max: PASSWORD_RESET_MAX_REQUESTS, windowMs: PASSWORD_RESET_WINDOW_MS },
   "guest-ai": { max: MAX_REQUESTS, windowMs: WINDOW_MS },
@@ -108,6 +110,17 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
     res.setHeader("Cache-Control", "no-store");
   }
   const tier = tierFor(req.originalUrl);
+  applyLimit(req, res, next, tier, getClientIp(req));
+}
+
+/** Account-scoped support budget; mount only after requireAuth. */
+export function supportRequestLimit(req: Request, res: Response, next: NextFunction) {
+  const user = (req as AuthedRequest).user;
+  if (!user) { res.status(401).json({ error: "Unauthorized" }); return; }
+  applyLimit(req, res, next, "support", user.id);
+}
+
+function applyLimit(req: Request, res: Response, next: NextFunction, tier: Tier, identity: string) {
   const limit = TIERS[tier] ?? TIERS.default;
 
   if (!Number.isFinite(limit.max)) {
@@ -127,7 +140,7 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
   // Per-tier isolation (Greptile review 2026-09-25): one shared counter let a
   // heavy curriculum page (>10 content calls) consume the login/refresh budget
   // and 429 the user's next authentication attempt.
-  const id = `${tier}:${getClientIp(req)}`;
+  const id = `${tier}:${identity}`;
   const entry = hits.get(id);
 
   if (!entry || now > entry.reset) {

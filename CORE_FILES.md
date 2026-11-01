@@ -148,4 +148,17 @@ Before ending any task, an agent MUST state in its output and record whether the
 ```
 
 If a new architecture or routing file was created, add it to Section 2 of `CORE_FILES.md`.
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:43143f2de4f59b82a0ca3db2e13ac7673b8d306b03824e8c0174fc860ada6e56 -->
+
 If a content file was created, future agents will know it is a content file and must ignore it.
+
+## Google Play support and release additions
+- `backend/src/api/support-requests.ts`: authenticated deletion/AI-report delivery mounted at `/api/user/support-requests`; existing mailer, five/hour support rate tier.
+- `frontend/components/support/support-request.tsx`: accessible in-app forms; `/legal/delete-account` is public and linked from legal navigation/footer.
+- `.github/workflows/android-release.yml`: credential-free Android verification and protected main-only internal-test draft uploads.
+- `play-store/OWNER-RELEASE-STEPS.md`: operator prerequisites and release acceptance checklist.
+
+
+<!-- /coderabbit-ai-generated:v1 -->

@@ -1,4 +1,26 @@
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:2c863c31a9998dc418960ee2d675a3c1a53f0aef167559ff71e47f2e67cf1090 -->
+
 # SYSTEM WORK TRACKER
+
+## Google Play readiness — CodeRabbit Agent — 2026-11-01
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:44291c846a3a38637f8a479dcb9f0ad96b25ac641414bd5f031c27b9ba087dd8 -->
+
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:6604f0325c1ef42fe9fb34c051ec85cbcbc203103bc22d0fcc1640c6db786d75 -->
+
+Status: repository preparation verified; owner setup and release acceptance pending. Full gate, Android build and final CodeRabbit review passed.
+
+<!-- /coderabbit-ai-generated:v1 --> External setup and acceptance remain outstanding.
+
+<!-- /coderabbit-ai-generated:v1 --> See play-store/OWNER-RELEASE-STEPS.md.
+
+
+<!-- /coderabbit-ai-generated:v1 -->
 
 PYQ decision (2026-10-24): option B — retire `content/pyq/`.
 The shipped reader (`frontend/lib/pyq-bank.ts`) loads questions only from `content/_index.json` under `practice/questions` (365 banks, 869 solved questions), not from `content/pyq/`.

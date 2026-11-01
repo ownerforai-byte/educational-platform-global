@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { SupportRequest } from "@/components/support/support-request";
 import { useRouter } from "next/navigation";
 import {
   ArrowUpRight,
@@ -1104,6 +1105,7 @@ export default function ProfilePage() {
           </Card>
         </TabsContent>
       </Tabs>
+      <SupportRequest kind="account_deletion" />
     </div>
   );
 }

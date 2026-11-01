@@ -6,8 +6,13 @@
 ---
 
 ## Short description (80 characters max)
-NEB +2 study app: AI tutor Veer, notes, 3D labs, quizzes & PYQs for Class 11–12 Nepal.
-_(Count: 80. Adjust if your app name changes length.)_
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:72f395c4742f39ae04f0e492907d1b86052a29d5ab3da124d5ff1b7fb381bdd7 -->
+
+NEB Class 11–12: notes, quizzes, PYQs, 3D labs and AI tutor Veer.
+
+<!-- /coderabbit-ai-generated:v1 -->
 
 ## Full description (up to 4,000 characters)
 Study smarter for the NEB +2 exam with Ravikisan's Platform — a free,

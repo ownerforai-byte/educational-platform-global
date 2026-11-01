@@ -15,7 +15,7 @@
  */
 
 import groovy.xml.MarkupBuilder
-import java.security.KeyStore
+import groovy.json.JsonSlurper
 
 plugins {
     id 'com.android.application'
@@ -25,8 +25,8 @@ plugins {
 // Google Play upload-keystore signing (Play App Signing upload key).
 // Credentials live in android/key.properties (gitignored). storeFile is
 // resolved relative to the android/ project dir where Gradle runs.
-// A release build without key.properties fails fast so a mis-signed AAB
-// can never reach Play.
+// CI can supply ANDROID_KEYSTORE_* credentials. Verification/debug tasks
+// work without release secrets; signed release tasks fail without them.
 // ---------------------------------------------------------------------------
 def releaseKeystore = null
 def keystorePropsFile = new File(rootProject.projectDir, 'key.properties')
@@ -40,27 +40,43 @@ if (keystorePropsFile.exists()) {
         keyAlias      : kp['keyAlias'],
         keyPassword   : kp['keyPassword']
     ]
-} else {
-    throw new GradleException('Missing android/key.properties — required to sign the release AAB with the Play upload keystore.')
+} else if (System.getenv('ANDROID_KEYSTORE_PATH')) {
+    releaseKeystore = [
+        storeFile: new File(System.getenv('ANDROID_KEYSTORE_PATH')),
+        storePassword: System.getenv('ANDROID_KEYSTORE_PASSWORD'),
+        keyAlias: System.getenv('ANDROID_KEY_ALIAS'),
+        keyPassword: System.getenv('ANDROID_KEY_PASSWORD')
+    ]
 }
 
 android {
     signingConfigs {
-        release {
-            storeFile      releaseKeystore.storeFile
-            storePassword  releaseKeystore.storePassword
-            keyAlias       releaseKeystore.keyAlias
-            keyPassword    releaseKeystore.keyPassword
-            v2SigningEnabled true
+        if (releaseKeystore != null) {
+            release {
+                storeFile releaseKeystore.storeFile
+                storePassword releaseKeystore.storePassword
+                keyAlias releaseKeystore.keyAlias
+                keyPassword releaseKeystore.keyPassword
+            }
         }
     }
 }
+
+gradle.taskGraph.whenReady { graph ->
+    if (graph.allTasks.any { it.project == project && (it.name == 'packageRelease' || it.name == 'signReleaseBundle' || it.name == 'bundleRelease' || it.name == 'assembleRelease') }) {
+        if (releaseKeystore == null || !releaseKeystore.storeFile.isFile() ||
+                !releaseKeystore.storePassword || !releaseKeystore.keyAlias || !releaseKeystore.keyPassword) {
+            throw new GradleException('Signed release requires the upload keystore and all signing credentials.')
+        }
+    }
+}
+def releaseVersion = new JsonSlurper().parse(file('../../twa-manifest.json'))
 
 def twaManifest = [
     applicationId: 'com.ravikisan.platform',
     hostName: 'ravikisan.vercel.app', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
-    name: 'Ravikisan\\\'s Platform', // The application name.
+    name: "Ravikisan\\'s Platform", // The application name.
     launcherName: 'Ravikisan', // The name shown on the Android Launcher.
     themeColor: '#3B82F6', // The color used for the status bar.
     themeColorDark: '#000000', // The color used for the dark status bar.
@@ -93,8 +109,8 @@ android {
         applicationId "com.ravikisan.platform"
         minSdkVersion 30
         targetSdkVersion 36
-        versionCode 1
-        versionName "1"
+        versionCode releaseVersion.appVersionCode as int
+        versionName releaseVersion.appVersionName
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -189,7 +205,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            signingConfig signingConfigs.release
+            if (releaseKeystore != null) signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -197,7 +213,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     lintOptions {
-        checkReleaseBuilds false
+        checkReleaseBuilds true
     }
 }
 

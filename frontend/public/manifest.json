@@ -27,11 +27,14 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["education", "utilities"],
+  "categories": [
+    "education",
+    "utilities"
+  ],
   "lang": "en",
   "dir": "ltr",
   "scope": "/",
-  "prefer_related_applications": true,
+  "prefer_related_applications": false,
   "related_applications": [
     {
       "platform": "play",

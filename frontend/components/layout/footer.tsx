@@ -86,7 +86,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
         <div className="mt-8 flex flex-col gap-4 border-t border-border pt-5 text-xs text-muted-foreground lg:flex-row lg:items-center lg:justify-between">
           <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform.</p>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-3">
-            {[["Privacy", "/legal/privacy"], ["Terms", "/legal/terms"], ["Cookies", "/legal/cookies"], ["Purchases", "/legal/purchases"], ["Data safety", "/legal/data-safety"], ["Content rating", "/legal/content-rating"]].map(([label, href]) => (
+            {[["Delete account", "/legal/delete-account"], ["Privacy", "/legal/privacy"], ["Terms", "/legal/terms"], ["Cookies", "/legal/cookies"], ["Purchases", "/legal/purchases"], ["Data safety", "/legal/data-safety"], ["Content rating", "/legal/content-rating"]].map(([label, href]) => (
               <Link key={href} href={href} className="hover:text-primary focus-visible:ring-2 focus-visible:ring-ring">{label}</Link>
             ))}
           </nav>
