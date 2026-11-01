@@ -13,8 +13,6 @@
     "**Example 3 — ∞/∞:** $\\lim_{x \\to \\infty} \\dfrac{\\ln x}{x} = \\lim_{x \\to \\infty} \\dfrac{1/x}{1} = 0$",
     "**Caution:** L'Hôpital's rule applies ONLY to $\\dfrac{0}{0}$ or $\\dfrac{\\infty}{\\infty}$. Other forms ($0 \\cdot \\infty$, $\\infty - \\infty$, $1^\\infty$, …) must first be rewritten into one of these two forms before differentiating."
   ],
-  "type": "concept",
-  "order": 1,
   "examples": [
     "Example 1: Real-world application of Limits: definition, standard limits, evaluation of limits",
     "Example 2: Practical demonstration of Limits: definition, standard limits, evaluation of limits concepts",

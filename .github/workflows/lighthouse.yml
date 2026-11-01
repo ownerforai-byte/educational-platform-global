@@ -50,4 +50,8 @@ jobs:
           exit 1
 
       - name: Run Lighthouse CI budgets
-        run: npx lhci autorun --config=./lighthouserc.json
+        # @lhci/cli is intentionally NOT a local devDependency (its release 0.15.1
+        # drags in deprecated rimraf/glob/inflight/uuid that pollute every local
+        # `npm install` with deprecation warnings). Fetch it on demand instead;
+        # 0.15.1 is the latest published and is frozen.
+        run: npx --yes -p @lhci/cli@0.15.1 lhci autorun --config=./lighthouserc.json

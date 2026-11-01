@@ -90,8 +90,8 @@ function collect(dir: string, out: string[] = []): string[] {
   return out;
 }
 
-function formatIssues(err: { issues?: { path: (string | number)[]; message: string }[] }): string[] {
-  return (err.issues ?? []).slice(0, 4).map((i) => `${i.path.join(".") || "(root)"}: ${i.message}`);
+function formatIssues(err: { issues?: Array<{ path: PropertyKey[]; message: string }> }): string[] {
+  return (err.issues ?? []).slice(0, 4).map((i) => `${i.path.map(String).join(".") || "(root)"}: ${i.message}`);
 }
 
 const findings: Finding[] = [];
