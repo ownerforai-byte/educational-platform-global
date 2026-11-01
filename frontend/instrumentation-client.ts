@@ -7,13 +7,18 @@
  * lives in SENTRY_DSN (see instrumentation.ts).
  */
 if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
-  const Sentry = await import("@sentry/nextjs");
-  Sentry.init({
-    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
-    environment: process.env.NODE_ENV ?? "development",
-    // Lean free-tier setup: errors only, no tracing.
-    tracesSampleRate: 0,
-  });
+  void import("@sentry/nextjs")
+    .then((Sentry) => {
+      Sentry.init({
+        dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+        environment: process.env.NODE_ENV ?? "development",
+        // Lean free-tier setup: errors only, no tracing.
+        tracesSampleRate: 0,
+      });
+    })
+    .catch(() => {
+      // Optional monitoring must never block client hydration.
+    });
 }
 
 export {};

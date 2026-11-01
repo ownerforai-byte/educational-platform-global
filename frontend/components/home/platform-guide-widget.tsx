@@ -61,7 +61,7 @@ export function PlatformGuideWidget() {
   if (!visible) return null;
 
   return (
-    <div className="fixed right-4 bottom-safe z-[45] flex flex-col items-end gap-2">
+    <div className="fixed right-4 bottom-[calc(env(safe-area-inset-bottom)_+_5rem)] z-[45] flex flex-col items-end gap-2 lg:bottom-safe">
       {open && (
         <div
           className="w-[min(100vw-2rem,320px)] overflow-hidden rounded-2xl border border-border/80 bg-card/95 shadow-xl shadow-black/10 backdrop-blur-md"

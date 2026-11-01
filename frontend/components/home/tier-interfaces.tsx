@@ -79,9 +79,9 @@ interface Spotlight {
 function TierHero({ tier, headline, blurb }: { tier: AccessLevel; headline: string; blurb: string }) {
   const Icon = TIER_ICON[tier];
   return (
-    <section className={`rounded-3xl border border-border/70 bg-gradient-to-br ${TIER_ACCENT[tier]} via-card to-card p-6 sm:p-8`}>
+    <section className={`rounded-2xl border border-border/70 bg-gradient-to-br ${TIER_ACCENT[tier]} via-card to-card p-4 sm:p-6`}>
       <div className="flex flex-wrap items-start justify-between gap-4">
-        <div className="max-w-2xl space-y-2">
+        <div className="flex max-w-2xl flex-col gap-2">
           <div className="flex items-center gap-2">
             <div className="rounded-2xl bg-primary/10 p-2">
               <Icon className="h-5 w-5 text-primary" />
@@ -123,7 +123,7 @@ function SpotlightRow({ items }: { items: Spotlight[] }) {
               <p className="text-xs font-bold">{s.title}</p>
             </div>
             <p className="mt-2 line-clamp-2 text-[10px] leading-relaxed text-muted-foreground">{s.desc}</p>
-            <p className="mt-2 text-[10px] font-semibold text-primary opacity-0 transition group-hover:opacity-100">
+            <p className="mt-auto pt-2 text-[10px] font-semibold text-primary">
               Open →
             </p>
           </Link>
@@ -210,7 +210,7 @@ function OpenSectionsRail({ tier }: { tier: AccessLevel }) {
                 <Check className="h-3 w-3 text-primary" />
               </div>
               <p className="mt-2 text-[11px] font-bold leading-tight">{s.title}</p>
-              <p className="mt-1 line-clamp-2 text-[9px] leading-relaxed text-muted-foreground">{s.description}</p>
+              <p className="mt-1 line-clamp-2 text-[10px] leading-relaxed text-muted-foreground">{s.description}</p>
             </Link>
           );
         })}
@@ -245,7 +245,7 @@ function TierPage({
   spotlights: Spotlight[];
 }) {
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-8 px-4 py-8">
+    <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-0 py-1">
       <TierHero tier={tier} headline={headline} blurb={blurb} />
       <QuickLinksRail tier={tier} />
       <SpotlightRow items={spotlights} />

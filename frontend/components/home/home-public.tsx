@@ -36,63 +36,73 @@ const resources = [
  */
 export function HomePublic() {
   return (
-    <div data-testid="public-home" className="bg-background text-foreground">
-      <div className="mx-auto w-full max-w-6xl space-y-14 px-4 py-12 sm:px-6 sm:py-16">
-        <section aria-labelledby="landing-title" className="max-w-3xl">
-          <p className="text-sm font-semibold tracking-wide text-primary">NEB Class 11 &amp; 12</p>
-          <h1 id="landing-title" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+    <div data-testid="public-home" className="mx-auto w-full max-w-7xl">
+      <header className="mb-5 flex flex-col gap-3 border-b border-border/60 pb-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="max-w-3xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">NEB Class 11 &amp; 12</p>
+          <h1 id="landing-title" className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
             Your NEB syllabus, organized for daily study.
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             A short look at how Class 11 and 12 study is organized. Labs, simulations, and Veer open after you sign in, on the plan that includes them.
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link
-              href="/login"
-              className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              Sign in
-            </Link>
+        </div>
+        <Link
+          href="/login"
+          className="inline-flex min-h-10 w-fit shrink-0 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          Sign in
+        </Link>
+      </header>
+
+      <div className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_22rem]">
+        <section aria-labelledby="guest-study-title" className="min-w-0">
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <div>
+              <h2 id="guest-study-title" className="text-base font-semibold">Guest study space</h2>
+              <p className="mt-1 text-xs text-muted-foreground">Ask a question or preview the study flow.</p>
+            </div>
+            <span className="shrink-0 rounded-full border border-border/70 px-2.5 py-1 text-[11px] text-muted-foreground">Guest view</span>
           </div>
-          <div className="mt-8">
-            <VisitorHomeChat />
-          </div>
+          <VisitorHomeChat />
         </section>
 
-        <section aria-labelledby="resources-title">
-          <div className="max-w-2xl">
-            <h2 id="resources-title" className="text-xl font-semibold tracking-tight">Study resources</h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Everything routes through the same syllabus map — so you always know what to read next.
+        <aside className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
+          <section aria-labelledby="resources-title" className="rounded-xl border border-border bg-card p-4">
+            <h2 id="resources-title" className="text-base font-semibold tracking-tight">Study resources</h2>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+              Follow one syllabus map from unit to topic.
             </p>
-          </div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            {resources.map(({ title, description, icon: Icon }) => (
-              <article key={title} className="rounded-xl border border-border bg-card p-5 sm:p-6">
-                <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                <h3 className="mt-4 text-base font-semibold">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+            <div className="mt-2 flex flex-col divide-y divide-border/70">
+              {resources.map(({ title, description, icon: Icon }) => (
+                <article key={title} className="flex gap-3 py-3 first:pt-2 last:pb-1">
+                  <Icon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold">{title}</h3>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
 
-        <section aria-labelledby="access-title" className="rounded-xl border border-border bg-muted/20 p-5 sm:p-6">
-          <h2 id="access-title" className="flex items-center gap-2 text-base font-semibold">
-            <ShieldCheck className="h-5 w-5 text-primary" aria-hidden="true" />
-            Account access
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-foreground">{ACCESS_NOTICE}</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Sign in after your account has been approved. Available materials and usage limits depend on your plan.{" "}
-            <Link
-              href="/plans"
-              className="font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              How access works
-            </Link>
-          </p>
-        </section>
+          <section aria-labelledby="access-title" className="rounded-xl border border-border bg-muted/20 p-4">
+            <h2 id="access-title" className="flex items-center gap-2 text-sm font-semibold">
+              <ShieldCheck className="size-4 text-primary" aria-hidden="true" />
+              Account access
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-foreground">{ACCESS_NOTICE}</p>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+              Sign in after your account has been approved. Available materials and usage limits depend on your plan.{" "}
+              <Link
+                href="/plans"
+                className="font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                How access works
+              </Link>
+            </p>
+          </section>
+        </aside>
       </div>
     </div>
   );

@@ -194,11 +194,11 @@ export function AIWidget() {
   }
 
   return (
-    <div className="fixed left-4 bottom-safe z-50 flex flex-col items-start gap-2">
+    <div className="fixed left-4 bottom-[calc(env(safe-area-inset-bottom)_+_5rem)] z-50 flex flex-col items-start gap-2 lg:bottom-safe">
       {open && (
         <section
           aria-label="Veer chat"
-          className="flex h-[min(88vh,860px)] w-[min(100vw-2rem,42rem)] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
+          className="flex h-[min(calc(100dvh-10rem),860px)] w-[min(100vw-2rem,42rem)] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl lg:h-[min(88vh,860px)]"
         >
           <header className="flex items-center justify-between gap-2 border-b border-border bg-foreground px-3 py-2.5 text-background">
             <div className="flex min-w-0 items-center gap-2">

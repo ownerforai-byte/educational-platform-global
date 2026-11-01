@@ -107,7 +107,10 @@ export function MobileNav() {
           variant="ghost"
           size="icon"
           className="h-11 w-11 rounded-xl"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            console.log("[v0] Open navigation clicked");
+            setOpen(true);
+          }}
           aria-label="Open navigation"
           aria-expanded={open}
           aria-controls="mobile-nav-drawer"

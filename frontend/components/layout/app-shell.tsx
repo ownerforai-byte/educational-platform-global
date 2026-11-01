@@ -6,6 +6,7 @@ import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen, Atom } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/access-level";
+import { cn } from "@/lib/utils";
 import { sectionById } from "@/lib/sections";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
@@ -78,7 +79,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-dvh flex-col bg-background">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
       <header
         className="pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background translate-y-0"
@@ -109,7 +110,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
                 <span className="text-sm font-extrabold text-white">R</span>
               </div>
-              <span className="font-semibold text-sm tracking-tight text-foreground">Ravikisan&apos;s Platform</span>
+              <span className="font-semibold text-sm tracking-tight text-foreground sm:hidden">NEB</span>
+              <span className="hidden font-semibold text-sm tracking-tight text-foreground sm:inline">Ravikisan&apos;s Platform</span>
             </Link>
           </div>
 
@@ -148,8 +150,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Suspense>
           </div>
         </div>
-        {memberUp && <MobileQuickNav />}
       </header>
+      {memberUp && <MobileQuickNav />}
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}
       <div className="flex flex-1 relative">
@@ -168,7 +170,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <SidebarNavigation collapsed={sidebarCollapsed} />
         </aside>
 
-        <main id="main-content" tabIndex={-1} className="flex-1 min-w-0 px-4 py-5 sm:py-6 md:px-6 lg:px-8 focus:outline-none">
+        <main id="main-content" tabIndex={-1} className={cn("flex-1 min-w-0 px-4 py-5 sm:py-6 md:px-6 lg:px-8 focus:outline-none", memberUp && "pb-24 lg:pb-6")}>
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav aria-label="Breadcrumbs" className="mb-4 flex flex-wrap text-sm text-muted-foreground">
               {breadcrumbs.map((crumb, i) => (
@@ -201,10 +203,10 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       </div>
 
       {/* Site footer (tier-aware directory) */}
-      <Footer user={user} />
+      <Footer user={user} compact={memberUp} />
 
       {/* Back navigation */}
-      <BackButton />
+        <BackButton mobileDockVisible={memberUp} />
 
       <PlatformGuideWidget />
       <AIWidget />

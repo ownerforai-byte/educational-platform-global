@@ -41,10 +41,36 @@ const groups: { title: string; links: FooterLink[] }[] = [
   },
 ];
 
-/** A compact directory; pricing and usage allowances belong on their own pages. */
-export function Footer({ user }: { user?: AiSparkUserLike | null }) {
+function CompactFooter({
+  className = "",
+  dockVisible = false,
+}: {
+  className?: string;
+  dockVisible?: boolean;
+}) {
   return (
-    <footer className="mt-auto border-t border-border bg-background">
+    <footer className={`mt-auto border-t border-border bg-background ${className}`}>
+      <div className={`mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 pt-3 text-xs text-muted-foreground md:px-6 ${dockVisible ? "pb-20 lg:pb-3" : "pb-3"}`}>
+        <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform.</p>
+        <nav aria-label="Workspace footer" className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <Link href="/plans" className="min-h-9 inline-flex items-center hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Plans</Link>
+          <Link href="/legal/privacy" className="min-h-9 inline-flex items-center hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Privacy</Link>
+          <Link href="/legal/terms" className="min-h-9 inline-flex items-center hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Terms</Link>
+        </nav>
+        <span className="text-[11px]" title="Platform version">v{DEPLOY_VERSION}</span>
+      </div>
+    </footer>
+  );
+}
+
+/** A compact directory; pricing and usage allowances belong on their own pages. */
+export function Footer({ user, compact = false }: { user?: AiSparkUserLike | null; compact?: boolean }) {
+  if (compact) return <CompactFooter dockVisible />;
+
+  return (
+    <>
+      <CompactFooter className="md:hidden" />
+      <footer className="mt-auto hidden border-t border-border bg-background md:block">
       <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
@@ -93,6 +119,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           <span className="text-[11px]" title="Platform version">v{DEPLOY_VERSION}</span>
         </div>
       </div>
-    </footer>
+      </footer>
+    </>
   );
 }

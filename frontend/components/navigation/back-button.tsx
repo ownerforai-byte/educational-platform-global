@@ -10,12 +10,14 @@ const IN_APP_NAV_KEY = "neb_inapp_nav";
 
 interface BackButtonProps {
   className?: string;
+  mobileDockVisible?: boolean;
   variant?: "floating" | "inline";
   label?: string;
 }
 
 export function BackButton({
   className,
+  mobileDockVisible = false,
   variant = "floating",
   label = "Back",
 }: BackButtonProps) {
@@ -88,8 +90,11 @@ export function BackButton({
       type="button"
       onClick={handleBack}
       className={cn(
-        "fixed right-6 z-50 h-11 w-11 rounded-full shadow-lg bottom-safe",
+        "fixed right-6 z-50 h-11 w-11 rounded-full shadow-lg",
         "flex items-center justify-center",
+        mobileDockVisible
+          ? "bottom-[calc(env(safe-area-inset-bottom)_+_5rem)] lg:bottom-safe"
+          : "bottom-safe",
         "bg-primary text-primary-foreground",
         "hover:opacity-90 hover:scale-105 active:scale-95",
         "transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40",

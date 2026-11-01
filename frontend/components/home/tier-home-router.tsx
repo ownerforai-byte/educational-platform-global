@@ -37,8 +37,19 @@ function TierSplash() {
   // Neutral, tier-less first frame for SSR/hydration only — never another
   // rung's interface.
   return (
-    <div className="flex min-h-[60vh] items-center justify-center">
-      <div className="h-9 w-9 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+    <div
+      role="status"
+      aria-live="polite"
+      className="flex min-h-[55vh] flex-col items-center justify-center gap-4 px-4 text-center"
+    >
+      <div
+        aria-hidden="true"
+        className="size-9 animate-spin rounded-full border-2 border-primary border-t-transparent"
+      />
+      <div>
+        <p className="text-sm font-semibold text-foreground">Opening your study space</p>
+        <p className="mt-1 text-xs text-muted-foreground">Checking your account access.</p>
+      </div>
     </div>
   );
 }

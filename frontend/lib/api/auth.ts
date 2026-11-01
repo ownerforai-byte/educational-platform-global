@@ -1,4 +1,4 @@
-import { apiFetch, refreshSessionShared, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
+import { apiFetch, apiGet, refreshSessionShared, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
 import {
   clearCachedSession,
   writeCachedSession,
@@ -98,7 +98,11 @@ export async function logout(): Promise<AuthLogoutResponse> {
  * Get the current authenticated session.
  */
 export async function getSession(): Promise<AuthMeResponse> {
-  return apiFetch<AuthMeResponse>("/api/auth/me");
+  return apiGet<AuthMeResponse>("/api/auth/me", {
+    noStore: true,
+    scope: "auth-session",
+    timeoutMs: 15_000,
+  });
 }
 
 /**
