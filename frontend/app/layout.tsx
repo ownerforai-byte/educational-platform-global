@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
@@ -11,8 +12,7 @@ import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-gua
 import { DevContrastAudit } from "@/lib/color-contrast";
 import { FocusTimer } from "@/components/r1/focus-timer";
 import { Toaster } from "sonner";
-
-const THEME_BOOTSTRAP = `(function(){try{var c=document.documentElement,s=localStorage.getItem("neb-theme"),t=s||"system",m={light:0,sepia:0,system:window.matchMedia("(prefers-color-scheme: dark)").matches?1:0,dark:1,cyberpunk:1,emerald:1,nord:1,amber:1,oled:1,nebula:1};if(!(t in m))t="system";var d=!!m[t],n=navigator.connection,l=localStorage.getItem("neb-lite-mode");if(l===null)l=String(!!(n&&(n.saveData||n.effectiveType==="2g"||n.effectiveType==="slow-2g")));c.classList.add(d?"dark":"light",t);c.dataset.theme=t;c.dataset.lite=l;c.style.colorScheme=d?"dark":"light"}catch(e){}})();`;
+import { StarField } from "@/components/theme/star-field";
 
 export const metadata: Metadata = {
   title: "Ravikisan's Platform",
@@ -42,10 +42,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
     <meta name="theme-color" content="#3b82f6" />
-    <script
-      id="theme-bootstrap"
-      dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP }}
-    />
+    <Script id="theme-bootstrap" src="/theme-bootstrap.js" strategy="beforeInteractive" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -55,6 +52,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased">
         <QueryProvider>
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
+            <StarField />
             <AuthProvider>
               <CreditProvider>
                 <RawEventRejectionGuard />

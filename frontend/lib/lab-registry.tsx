@@ -5,6 +5,7 @@ export { LAB_METADATA_LIST, type LabMetadata } from "./lab-metadata";
  */
 
 import type { LabMeta } from "./types/lab";
+import dynamic from "next/dynamic";
 
 // Component imports
 import { PhysicsDynamics3D } from "@/components/lab/physics-dynamics-3d";
@@ -23,12 +24,6 @@ import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-s
 import { BiologySyllabusSuite3D } from "@/components/lab/biology-syllabus-suite-3d";
 import { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-3d";
 import { Physics3DVectors } from "@/components/lab/physics-3d-vectors";
-import {
-  MathModern3D,
-  MathAdvancedMotionLab,
-  MathInteractive,
-  MathGeometry3D,
-} from "@/components/lab";
 import { Class11Math3DPlus } from "@/components/lab/class11/class11-math-3d-plus";
 import {
   MathPerpendicular3D,
@@ -81,6 +76,23 @@ import MathSymbols from "@/components/lab/math-3d-symbols";
 import { Physics3DSyllabusSuite } from "@/components/lab/physics-3d-syllabus-suite";
 import { PythonVisuals, PythonVisualsHub } from "@/components/lab/python-visuals";
 import { BioPythonLabHub, BioPythonUnitLab } from "@/components/lab/bio-python-lab";
+
+const MathModern3D = dynamic(
+  () => import("@/components/lab").then((m) => m.MathModern3D),
+  { ssr: false, loading: () => <div className="skeleton h-64" /> },
+);
+const MathAdvancedMotionLab = dynamic(
+  () => import("@/components/lab").then((m) => m.MathAdvancedMotionLab),
+  { ssr: false, loading: () => <div className="skeleton h-64" /> },
+);
+const MathInteractive = dynamic(
+  () => import("@/components/lab").then((m) => m.MathInteractive),
+  { ssr: false, loading: () => <div className="skeleton h-64" /> },
+);
+const MathGeometry3D = dynamic(
+  () => import("@/components/lab").then((m) => m.MathGeometry3D),
+  { ssr: false, loading: () => <div className="skeleton h-64" /> },
+);
 
 /**
  * Lab registry mapping lab IDs to their component implementations
@@ -1937,4 +1949,3 @@ export function getLabStats() {
 
   return stats;
 }
-

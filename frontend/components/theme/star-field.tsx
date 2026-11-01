@@ -80,7 +80,9 @@ export function StarField() {
     let staticStars: StaticStar[] = [];
     let stars: Star3D[] = [];
     let rafId = 0;
-    let running = true;
+    let running = false;
+    let inViewport = false;
+    let built = false;
     let lastTs = 0;
     let lastDrawTs = 0;
     const TARGET_FRAME_INTERVAL_MS = 32; // ~30 fps cap to keep main thread responsive
@@ -203,36 +205,69 @@ export function StarField() {
       rafId = requestAnimationFrame(paintFrame);
     };
 
-    const onVisibility = () => {
-      running = !document.hidden;
-      if (running) {
-        lastTs = 0;
-        if (reduceMotion.matches) paintStatic();
-        else rafId = requestAnimationFrame(paintFrame);
-      } else {
-        cancelAnimationFrame(rafId);
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(rafId);
+      rafId = 0;
+    };
+
+    const start = () => {
+      if (!inViewport || document.hidden) return;
+      if (!built) {
+        build();
+        built = true;
       }
+      if (reduceMotion.matches) {
+        stop();
+        paintStatic();
+        return;
+      }
+      if (running) return;
+      running = true;
+      lastTs = 0;
+      rafId = requestAnimationFrame(paintFrame);
+    };
+
+    const onVisibility = () => {
+      if (document.hidden) stop();
+      else start();
+    };
+
+    const onMotionChange = () => {
+      stop();
+      start();
     };
 
     const onResize = () => {
+      if (!built) return;
       build();
       if (reduceMotion.matches) paintStatic();
     };
 
-    build();
-    if (reduceMotion.matches) {
-      paintStatic(); // no 3D stream for reduced motion
+    const observer =
+      typeof IntersectionObserver === "undefined"
+        ? null
+        : new IntersectionObserver(([entry]) => {
+            inViewport = entry.isIntersecting;
+            if (inViewport) start();
+            else stop();
+          });
+    if (observer) {
+      observer.observe(canvas);
     } else {
-      rafId = requestAnimationFrame(paintFrame);
+      inViewport = true;
+      start();
     }
     window.addEventListener("resize", onResize);
     document.addEventListener("visibilitychange", onVisibility);
+    reduceMotion.addEventListener("change", onMotionChange);
 
     return () => {
-      running = false;
-      cancelAnimationFrame(rafId);
+      stop();
+      observer?.disconnect();
       window.removeEventListener("resize", onResize);
       document.removeEventListener("visibilitychange", onVisibility);
+      reduceMotion.removeEventListener("change", onMotionChange);
     };
   }, [dark, liteMode]);
 

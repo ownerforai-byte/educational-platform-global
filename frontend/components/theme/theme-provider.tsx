@@ -7,7 +7,9 @@ import { observeLiteResourcePolicy } from "@/lib/perf/low-data-policy";
 // style rule; dropping them shrinks the downloaded subsets (Devanagari
 // especially). Browsers synthesize intermediate weights when needed.
 const GOOGLE_FONTS_URL =
-  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap";
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap";
+const CODE_FONT_CSS_URL =
+  "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap";
 
 export type Theme =
   | "light"
@@ -267,6 +269,45 @@ export function ThemeProvider({
     head.append(stylesheet);
   }, [liteMode]);
 
+  useEffect(() => {
+    if (liteMode) return;
+
+    const preloadCodeFont = () => {
+      if (document.getElementById("ravi-code-fonts")) return;
+      const link = document.createElement("link");
+      link.id = "ravi-code-fonts";
+      link.rel = "preload";
+      link.as = "style";
+      link.href = CODE_FONT_CSS_URL;
+      link.onload = () => {
+        link.rel = "stylesheet";
+      };
+      document.head.append(link);
+    };
+
+    const hasCodeBlock = (node: Node) =>
+      node instanceof Element && (node.matches("pre") || node.querySelector("pre") !== null);
+
+    if (document.querySelector("pre")) {
+      preloadCodeFont();
+      return;
+    }
+
+    const observer = new MutationObserver((records) => {
+      for (const record of records) {
+        for (const node of record.addedNodes) {
+          if (hasCodeBlock(node)) {
+            preloadCodeFont();
+            observer.disconnect();
+            return;
+          }
+        }
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [liteMode]);
+
   // Stable callbacks so the memoized context value never changes on re-render.
   const setTheme = useCallback(
     (newTheme: Theme) => {
@@ -324,4 +365,3 @@ export const useTheme = () => {
     throw new Error("useTheme must be used within a ThemeProvider");
   return context;
 };
-
