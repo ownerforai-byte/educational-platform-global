@@ -4,11 +4,10 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  // Declare the automatic JSX runtime here so .tsx test files are
-  // transformed correctly by Vite's esbuild pipeline.
-  esbuild: {
-    jsx: "automatic",
-  },
+  // .tsx test files get the automatic JSX runtime from @vitejs/plugin-react
+  // above — no separate esbuild override needed (and `esbuild.jsx` is no
+  // longer part of the vitest/vite `ESBuildOptions` type, which breaks the
+  // `next build` type-check with TS2769).
   test: {
     environment: "jsdom",
     globals: true,
