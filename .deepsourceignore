@@ -1,0 +1,31 @@
+# .deepsourceignore — skip heavy data/content so the clone stays under DeepSource's size limit.
+# Source code (frontend/, backend/, scripts/, tools/) is still analyzed.
+
+# Curriculum corpus (4,300+ JSON files)
+content/
+
+# Generated data + visuals
+frontend/public/data/
+public/
+
+# OCR + KB corpora (binary/large)
+backend/.ocr-v2/
+backend/kb/
+
+# Build artifacts / vendor
+node_modules/
+**/node_modules/
+.next/
+frontend/.next/
+backend/dist/
+
+# Generated version badge (rebuilds every deploy, no analysis value)
+frontend/lib/deploy-version.ts
+
+# Large generated JSON
+*.min.js
+*.map
+
+# Play Store + TWA assets (binary)
+play-store/
+android-twa/
