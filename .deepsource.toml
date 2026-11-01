@@ -1,5 +1,16 @@
 version = 1
 
+test_patterns = [
+  "tests/**",
+  "backend/tests/**",
+  "frontend/tests/**",
+  "**/*.test.ts",
+  "**/*.test.tsx",
+  "**/*.test.js",
+  "**/*.spec.ts",
+  "**/*.spec.tsx",
+]
+
 # Skip heavy data / content directories to keep analysis fast
 exclude_patterns = [
   "content/**",
@@ -10,8 +21,39 @@ exclude_patterns = [
   "visuals-py/**",
   "play-store/**",
   "android-twa/**",
+  "node_modules/**",
+  "**/node_modules/**",
+  ".next/**",
+  "frontend/.next/**",
+  "backend/dist/**",
+  "**/*.min.js",
+  "**/*.map",
+]
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+[analyzers.meta]
+environment = [
+  "nodejs",
+  "browser",
+]
+plugins = [
+  "react",
 ]
 
 [[analyzers]]
 name = "python"
+enabled = true
+
+[analyzers.meta]
+runtime_version = "3.x.x"
+
+[[analyzers]]
+name = "secrets"
+enabled = true
+
+[[analyzers]]
+name = "test-coverage"
 enabled = true
