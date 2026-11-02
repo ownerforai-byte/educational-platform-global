@@ -29,9 +29,10 @@ function withLatestImages(messages: AIChatMessage[], body: AIChatRequest): AICha
  */
 export async function chat(
   messages: AIChatMessage[],
-  provider?: string
+  provider?: string,
+  session?: string
 ): Promise<AIChatResponse> {
-  let body: AIChatRequest = { messages };
+  let body: AIChatRequest = { messages, session };
   if (provider) {
     body.provider = provider;
   }
@@ -108,6 +109,7 @@ export type StreamChunk =
 
 export interface StreamChatOptions {
   isGuest?: boolean;
+  session?: string;
   /** Dedicated console id ("nepali" | "grammar") — forwarded to the server. */
   console?: string;
 }
@@ -124,6 +126,7 @@ export async function* streamChat(
   if (options?.console) {
     body.console = options.console;
   }
+  if (options?.session) body.session = options.session;
   body = withLatestImages(messages, body);
 
   const hasAuth =

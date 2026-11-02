@@ -101,6 +101,8 @@ export interface StreamAnswerArgs {
   /** Extra fields merged into the terminal `done` event (credits/remaining). */
   doneExtras: Record<string, unknown>;
   state: StreamState;
+  /** Verified, user-scoped history links appended after the answer. */
+  suffix?: string;
 }
 
 /**
@@ -287,6 +289,10 @@ Continue with the remaining required substance to reach at least ${floor} words 
       }),
     );
 
+    if (args.suffix) {
+      state.streamedAny = true;
+      channel.send({ content: args.suffix });
+    }
     channel.send({
       done: true,
       continued: continued > 0,

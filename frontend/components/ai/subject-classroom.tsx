@@ -248,6 +248,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       return;
     }
 
+    const targetSession = sessionRef.current;
     const userMsg: AIChatMessage = { role: "user", content };
     const outbound = [...messages, userMsg];
     setMessages(outbound);
@@ -283,6 +284,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       };
 
       for await (const chunk of streamChat(payload, undefined, {
+        session: targetSession,
         isGuest: !isLoggedIn,
       })) {
         if (typeof chunk === "string") {
@@ -312,12 +314,16 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       setStreaming(false);
 
       if (isLoggedIn) {
-        saveChatHistory(sessionRef.current, [
-          { role: "user", content },
-          { role: "assistant", content: liveAcc },
-        ])
-          .then(() => refreshSessions())
-          .catch(() => {});
+        try {
+          const saved = await saveChatHistory(targetSession, [
+            { role: "user", content },
+            { role: "assistant", content: liveAcc },
+          ]);
+          if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
+          else void refreshSessions();
+        } catch {
+          setError("Your answer could not be saved to history.");
+        }
       } else {
         const used =
           liveRemaining !== null
@@ -357,7 +363,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
   };
 
   return (
-    <div className="mx-auto flex h-full w-full max-w-4xl flex-col gap-4 px-4 py-6">
+    <div className="mx-auto flex min-h-0 w-full max-w-4xl flex-col gap-4 px-3 py-4 sm:px-4 sm:py-6">
       {/* ── Subject header ─────────────────────────────────────────────── */}
       <div
         className={`rounded-3xl border ${classroom.accentBorder} ${classroom.accentBg} p-5 sm:p-6`}
@@ -463,7 +469,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       )}
 
       {/* ── Thread ─────────────────────────────────────────────────────── */}
-      <div ref={streamRef} className="flex-1 space-y-4 overflow-y-auto">
+      <div ref={streamRef} className="min-w-0 space-y-4">
         {messages.map((message, index) => (
           <div
             key={index}
@@ -472,8 +478,8 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
             <div
               className={
                 message.role === "user"
-                  ? "max-w-[85%] rounded-2xl bg-primary px-4 py-3 text-sm text-primary-foreground"
-                  : "w-full rounded-2xl border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-6 sm:py-6"
+                  ? "max-w-[85%] min-w-0 rounded-2xl bg-primary px-4 py-3 text-sm text-primary-foreground [overflow-wrap:anywhere]"
+                  : "min-w-0 w-full rounded-2xl border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6"
               }
             >
               {message.role === "assistant" ? (
@@ -540,7 +546,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
           }}
           rows={2}
           placeholder={`Ask your ${classroom.subject} question…`}
-          className="w-full resize-none rounded-xl border border-border/60 bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+          className="w-full resize-none rounded-xl border border-border/60 bg-background px-3 py-2 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
         />
         <div className="mt-2 flex items-center justify-between gap-2">
           <button

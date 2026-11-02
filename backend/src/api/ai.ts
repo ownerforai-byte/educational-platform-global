@@ -15,11 +15,11 @@ import {
 // route is closed and answers 403, so only approved members can chat.)
 import { logServerError, newErrorId } from "../middleware/errors";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
-import { completeAnswer } from "../ai/complete-answer";
+import { completeAnswer, deepConceptResearch, relatedHistory, shouldUpgradeAcademic, upgradeMessages } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
 import { detectRoughInput, ROUGH_REDFLAG_REPLY } from "../ai/profanity-guard";
-import { openSseChannel, streamAnswerToStudent, type StreamState } from "./ai-stream";
+import { openSseChannel, streamAnswerToStudent, type SseChannel, type StreamState } from "./ai-stream";
 
 const router = Router();
 
@@ -64,6 +64,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
   // however, metered by AI sparks per tier since 2026-10-13 — see the gate
   // below. streamState survives to know whether the student saw anything.
   const streamState: StreamState = { streamedAny: false };
+  let channel: SseChannel | null = null;
   try {
     const body = req.body;
     let messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
@@ -163,7 +164,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // live status during that wait; previously the headers waited for the
     // research to finish, so the student stared at a frozen spinner and then
     // the answer appeared to land all at once.
-    const channel = stream ? openSseChannel(res) : null;
+    channel = stream ? openSseChannel(res) : null;
     channel?.send({ phase: "searching", label: "Researching the topic…" });
 
     // Professor mode: enforce plain-text style + inject live web results
@@ -190,6 +191,21 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     if (consoleId) console.info(`[AI] console=${consoleId} authed`);
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
+    // Academic answers are rebuilt in a second pass; only that pass is visible.
+    const upgrade = shouldUpgradeAcademic(lastUser, conversationTail);
+    let historyLinks = "";
+    if (upgrade) {
+      channel?.send({ phase: "drafting", label: "Preparing a first draft…" });
+      const [draft, research, related] = await Promise.all([
+        aiService.chat(provider, messages),
+        deepConceptResearch(lastUser),
+        relatedHistory(user.id, lastUser, typeof body?.session === "string" ? body.session : ""),
+      ]);
+      historyLinks = related;
+      const language = consoleId === "nepali" ? "Write the whole answer in Nepali, preserving the original question verbatim." : "";
+      messages = upgradeMessages(lastUser, draft, research, language, conversationTail, images);
+    }
+
     // Live streaming: the connection is already open (above); the pipeline —
     // token-level fence filtering, streamed truncation repair, figure drawing —
     // lives in ai-stream.ts so the guest route streams byte-identically.
@@ -202,6 +218,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
         logLabel: "[AI stream]",
         doneExtras: { credits: creditsLeft ?? undefined },
         state: streamState,
+        suffix: historyLinks,
       });
       channel.end();
       return;
@@ -213,6 +230,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // raised to the 150-word depth-scaled floor. Enforced in code, not prompted.
     const completed = await completeAnswer({
       chat: (turn) => aiService.chat(provider, turn),
+      maxFloorRetries: upgrade ? 0 : undefined,
       finishReason: () => aiService.getLastFinishReason(),
       messages,
       tail: messages.slice(-6),
@@ -222,7 +240,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       console.info(`[AI] reply repair: ${completed.notes.join("; ")}`);
     }
     // Figure fences -> drawn pictures (or an honest inline note on failure).
-    const { text: response, figures } = await resolveFiguresInText(completed.text);
+    const { text: response, figures } = await resolveFiguresInText(completed.text + historyLinks);
     res.json({
       response,
       generatedFigures: figures.map((f) => ({ prompt: f.prompt, url: f.url, reason: f.reason })),
@@ -252,8 +270,9 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
         res.write(
           `event: error\ndata: ${JSON.stringify({ error: "AI request failed", errorId })}\n\n`,
         );
-        res.end();
+        if (!channel) res.end();
       }
+      channel?.end();
       return;
     }
     // Budget-exhaustion/timeouts are a slow-provider condition, not a server

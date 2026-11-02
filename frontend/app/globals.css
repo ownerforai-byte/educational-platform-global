@@ -1056,6 +1056,8 @@ code, kbd, samp, pre {
 
   /* Signed-in Veer replies: a reading box, not a compressed markdown file. */
   .prose.chat-reading {
+    min-width: 0;
+    overflow-wrap: anywhere;
     font-size: 1.0625rem;
     line-height: 1.75;
     color: hsl(var(--foreground));
@@ -1101,6 +1103,11 @@ code, kbd, samp, pre {
   .prose.chat-reading .katex-display {
     margin: 1em 0;
     padding: 0.95em 1.05em;
+  }
+  /* Detailed labels remain legible on phones; scroll the figure, not the page. */
+  @media (max-width: 640px) {
+    .prose.chat-reading .edu-visual { max-width: 100%; overflow-x: auto; }
+    .prose.chat-reading .edu-visual svg { min-width: 520px; max-width: none; }
   }
 }
 
@@ -1850,11 +1857,11 @@ body {
   0% { transform: scale(0.82); opacity: 0.45; }
   100% { transform: scale(1.45); opacity: 0; }
 }
-.verify-blink { animation: verify-blink 3.4s ease-in-out infinite; }
+.verify-blink { animation: verify-blink 1.8s ease-in-out infinite; }
 .verify-ring { animation: verify-ring 1.4s ease-out infinite; }
 .verify-dots span {
   display: inline-block;
-  animation: verify-blink 3.4s ease-in-out infinite;
+  animation: verify-blink 1.8s ease-in-out infinite;
 }
 .verify-dots span:nth-child(2) { animation-delay: 0.18s; }
 .verify-dots span:nth-child(3) { animation-delay: 0.36s; }

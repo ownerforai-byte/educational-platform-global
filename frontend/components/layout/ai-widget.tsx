@@ -177,15 +177,16 @@ export function AIWidget() {
     setLines((prev) => [...prev, { role: "user", content: text }]);
     setSending(true);
     try {
-      const res = await chat(history);
+      const res = await chat(history, undefined, session);
       recordAiSparkUse();
       setLines((prev) => [...prev, { role: "assistant", content: res.response }]);
       // Keep this thread in the shared conversation store under its own
       // session, so the full console's history shows the same conversation.
-      saveChatHistory(session, [
+      const saved = await saveChatHistory(session, [
         { role: "user", content: text },
         { role: "assistant", content: res.response },
-      ]).catch(() => {});
+      ]);
+      if (!saved.migrated || saved.saved !== 2) setError("Your answer was received, but it could not be saved to history.");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Veer could not answer. Try again.");
     } finally {

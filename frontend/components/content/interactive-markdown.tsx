@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
 import { registerVeerArtifact } from "@/components/content/veer-artifact";
@@ -118,7 +118,7 @@ async function copyTextToClipboard(text: string): Promise<boolean> {
  *
  * Drop-in for MathMarkdown: same props, same `.prose` typography.
  */
-export function InteractiveMarkdown({
+export const InteractiveMarkdown = memo(function InteractiveMarkdown({
   content,
   className,
 }: InteractiveMarkdownProps) {
@@ -250,4 +250,4 @@ export function InteractiveMarkdown({
       )}
     </div>
   );
-}
+});

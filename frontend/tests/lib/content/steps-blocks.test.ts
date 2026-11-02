@@ -33,6 +33,17 @@ describe("splitStepBlocks", () => {
     expect(splitStepBlocks("Just prose.")).toEqual([{ kind: "text", text: "Just prose." }]);
   });
 
+  it("keeps long prose without steps byte-for-byte, including long lines and CRLF", () => {
+    const text = `${"A".repeat(20000)}\r\nA formula $F=ma$.\r\n`;
+    expect(splitStepBlocks(text)).toEqual([{ kind: "text", text }]);
+  });
+
+  it("still parses an unclosed and a complete steps fence after ordinary prose", () => {
+    const partial = "Long answer\r\n```steps\r\n### First";
+    expect(splitStepBlocks(partial)).toEqual([{ kind: "text", text: partial }]);
+    expect(splitStepBlocks("Long answer\n```steps\n### First\nbody\n```").map((s) => s.kind)).toEqual(["text", "steps"]);
+  });
+
   it("splits prose, steps and trailing prose in order", () => {
     const reply = [
       "Here is the method.",

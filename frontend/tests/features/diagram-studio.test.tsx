@@ -14,10 +14,12 @@ vi.mock("next/navigation", () => ({
 
 const streamChatMock = vi.fn();
 const enhancePromptMock = vi.fn();
+const saveChatHistoryMock = vi.fn();
 
 vi.mock("@/lib/api/ai", () => ({
   streamChat: (...args: unknown[]) => streamChatMock(...args),
   enhancePrompt: (...args: unknown[]) => enhancePromptMock(...args),
+  saveChatHistory: (...args: unknown[]) => saveChatHistoryMock(...args),
 }));
 
 import { DiagramStudio } from "@/components/ai/diagram-studio";
@@ -30,6 +32,7 @@ beforeEach(() => {
   vi.clearAllMocks();
   streamChatMock.mockImplementation(() => fakeStream());
   enhancePromptMock.mockResolvedValue({ prompt: "Enhanced: labelled heart" });
+  saveChatHistoryMock.mockResolvedValue({ saved: 2, migrated: true });
 });
 
 describe("DiagramStudio", () => {
@@ -43,6 +46,8 @@ describe("DiagramStudio", () => {
       expect(screen.getByRole("button", { name: subject })).toBeInTheDocument();
     }
     expect(screen.getByRole("button", { name: /draw diagram/i })).toBeDisabled();
+    expect(screen.getByPlaceholderText(/name the diagram/i)).toHaveClass("text-base", "sm:text-sm");
+    expect(screen.getByRole("button", { name: "Biology" })).toHaveClass("min-h-11");
   });
 
   it("draws a diagram and renders it as a figure — never as raw code", async () => {
@@ -70,6 +75,8 @@ describe("DiagramStudio", () => {
     });
     // Never raw code: the fence compiles away — no <pre><code> block remains.
     expect(document.querySelector("figure.edu-visual pre")).toBeNull();
+    await waitFor(() => expect(saveChatHistoryMock).toHaveBeenCalledTimes(1));
+    expect(screen.queryByRole("alert")).toBeNull();
   });
 
   it("enhances a rough brief before drawing", async () => {
