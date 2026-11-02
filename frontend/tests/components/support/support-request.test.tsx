@@ -2,8 +2,15 @@ import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/re
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { SupportRequest } from "@/components/support/support-request";
 import { apiFetch } from "@/lib/api-client";
+import { useSession } from "@/features/auth/hooks/use-session";
 vi.mock("@/lib/api-client", () => ({ apiFetch: vi.fn() }));
-beforeEach(() => { vi.mocked(apiFetch).mockReset(); });
+vi.mock("@/features/auth/hooks/use-session", () => ({
+  useSession: vi.fn(() => ({ user: { id: "account-123" }, isLoading: false })),
+}));
+beforeEach(() => {
+  vi.mocked(apiFetch).mockReset();
+  vi.mocked(useSession).mockReturnValue({ user: { id: "account-123" }, isLoading: false } as ReturnType<typeof useSession>);
+});
 afterEach(cleanup);
 it("reports AI content without navigating away", async () => {
   vi.mocked(apiFetch).mockResolvedValue({ message: "Delivered for review" });
@@ -13,6 +20,15 @@ it("reports AI content without navigating away", async () => {
   fireEvent.click(screen.getByRole("button", { name: "Send request" }));
   await waitFor(() => expect(screen.getByRole("status").textContent).toBe("Delivered for review"));
   expect(apiFetch).toHaveBeenCalledWith("/api/user/support-requests", { method: "POST", body: JSON.stringify({ kind: "ai_report", message: "Unsafe answer here" }) });
+});
+it("requires sign-in without attempting a request or triggering session refresh", () => {
+  vi.mocked(useSession).mockReturnValue({ user: null, isLoading: false } as ReturnType<typeof useSession>);
+  render(<SupportRequest kind="ai_report" />);
+  expect(screen.getByRole("link", { name: "Sign in" }).getAttribute("href")).toBe("/login");
+  const button = screen.getByRole("button", { name: "Send request" }) as HTMLButtonElement;
+  expect(button.disabled).toBe(true);
+  fireEvent.submit(screen.getByRole("textbox").closest("form")!);
+  expect(apiFetch).not.toHaveBeenCalled();
 });
 it("shows a failure instead of acknowledging an undelivered request", async () => {
   vi.mocked(apiFetch).mockRejectedValue(new Error("503"));

@@ -20,6 +20,7 @@ import { UserNav } from "./user-nav";
 import { Footer } from "./footer";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
 import { AIWidget } from "./ai-widget";
+import { SupportRequest } from "@/components/support/support-request";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -73,6 +74,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             <div className="h-full w-full">{children}</div>
           </Suspense>
         </main>
+        <SupportRequest kind="ai_report" floating />
       </div>
     );
   }
@@ -202,6 +204,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
       {/* Site footer (tier-aware directory) */}
       <Footer user={user} />
+
+      <SupportRequest kind="ai_report" floating />
 
       {/* Back navigation */}
       <BackButton />

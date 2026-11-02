@@ -34,7 +34,10 @@ router.post("/", requireAuth, supportRequestLimit, async (req, res) => {
     res.status(503).json({ error: "Request delivery is unavailable. Please retry or contact ravikisan1814@gmail.com." });
     return;
   }
-  res.status(202).json({ message: "Your request was delivered to support for review. Account deletion requires identity verification." });
+  const message = parsed.data.kind === "account_deletion"
+    ? "Your account deletion request was delivered to support for review. Identity verification is required before deletion."
+    : "Your AI content report was delivered to support for review.";
+  res.status(202).json({ message });
 });
 
 export default router;

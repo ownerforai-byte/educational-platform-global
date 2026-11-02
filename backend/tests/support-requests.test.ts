@@ -1,10 +1,15 @@
 import express from "express";
 import type { Server } from "node:http";
+import type { NextFunction, Request, Response } from "express";
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 vi.mock("../src/middleware/auth", () => ({
-  requireAuth: (req: any, res: any, next: any) => {
-    if (req.headers.authorization !== "Bearer test") return res.sendStatus(401);
-    req.user = { id: req.headers["x-test-user"] || "account-123", email: "student@example.com" }; next();
+  requireAuth: (req: Request, res: Response, next: NextFunction) => {
+    if (req.headers.authorization !== "Bearer test") {
+      res.sendStatus(401);
+      return;
+    }
+    Object.assign(req, { user: { id: req.header("x-test-user") || "account-123", email: "student@example.com" } });
+    next();
   },
 }));
 vi.mock("../src/utils/mailer", () => ({ sendMail: vi.fn() }));
@@ -21,9 +26,11 @@ beforeAll(async () => {
 });
 afterAll(() => new Promise<void>((resolve, reject) => server.close(err => err ? reject(err) : resolve())));
 beforeEach(() => { resetRateLimits(); vi.mocked(sendMail).mockReset(); });
-function post(body: unknown, auth = true) {
-  return fetch(base, { method: "POST", headers: { "Content-Type": "application/json", ...(auth ? { Authorization: "Bearer test" } : {}) }, body: JSON.stringify(body) });
-}
+const post = (body: unknown, auth = true) => fetch(base, {
+  method: "POST",
+  headers: { "Content-Type": "application/json", ...(auth ? { Authorization: "Bearer test" } : {}) },
+  body: JSON.stringify(body),
+});
 describe("support delivery", () => {
   it("requires authentication", async () => {
     expect((await post({ kind: "ai_report", message: "Unsafe AI answer" }, false)).status).toBe(401);
@@ -33,6 +40,10 @@ describe("support delivery", () => {
     vi.mocked(sendMail).mockResolvedValue({ sent: true });
     const response = await post({ kind, message: "<script>unsafe</script>" });
     expect(response.status).toBe(202);
+    const result = await response.json() as { message: string };
+    expect(result.message).toBe(kind === "account_deletion"
+      ? "Your account deletion request was delivered to support for review. Identity verification is required before deletion."
+      : "Your AI content report was delivered to support for review.");
     const payload = vi.mocked(sendMail).mock.calls[0][0];
     expect(payload.to).toBe("ravikisan1814@gmail.com");
     expect(payload.text).toContain("Account: account-123");

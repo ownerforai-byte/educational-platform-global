@@ -1,4 +1,3 @@
-import { SupportRequest } from "@/components/support/support-request";
 import { AppShell } from "@/components/layout/app-shell";
 import { Suspense } from "react";
 import { RouteCreditGate } from "@/features/credits/route-gate";
@@ -37,7 +36,6 @@ export default function AppLayout({
             chat, profile, …) behind a signed-in, APPROVED account. The notice
             board passes through. Header + nav stay visible above it, so the
             periodic table in the header is present but locked. */}
-        <SupportRequest kind="ai_report" />
         <RequireApproval>
           {/* Coin gate: blurs + overlays every paid route until unlocked for
               20 minutes. Public routes (home, AI chat, auth) pass through. */}
