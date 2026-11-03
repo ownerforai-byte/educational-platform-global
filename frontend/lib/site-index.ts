@@ -261,13 +261,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Community",
-        opening: "A study space for every subject, each with its own page and a way to ask the tutor.",
+        opening: "A study space for every subject with links to its notes and the Ask board. Peer discussion threads are coming soon.",
         href: "/community",
         meta: "Social",
       },
       {
         name: "Ask",
-        opening: "Type a study question and get an answer from the Veer tutor.",
+        opening: "Type a study question and get an answer from the Veer tutor. Peer answers are coming soon.",
         href: "/ask",
         meta: "Q&A",
       },
@@ -285,13 +285,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Billing",
-        opening: "Check your spark balance, plan status and receipt history.",
+        opening: "Check your spark balance and spark transaction history. Online payments are coming soon.",
         href: "/billing",
         meta: "Account",
       },
       {
         name: "Referrals",
-        opening: "Track the friends you invited and the rewards they earn you.",
+        opening: "Referral and reward tracking is coming soon; nothing is recorded yet.",
         href: "/referrals",
         meta: "Rewards",
       },

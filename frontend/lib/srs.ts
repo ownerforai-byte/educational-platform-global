@@ -7,6 +7,7 @@
  */
 
 import type { SubjectPyqBank } from "@/lib/pyq-bank";
+import { key } from "@/lib/scoped-storage";
 
 export const SRS_KEY = "neb-srs:v1";
 
@@ -127,7 +128,7 @@ export function normalizeStore(input: unknown): SrsStore {
 export function readSrsStore(): SrsStore {
   if (typeof window === "undefined") return {};
   try {
-    const raw = window.localStorage.getItem(SRS_KEY);
+    const raw = window.localStorage.getItem(key(SRS_KEY));
     return raw ? normalizeStore(JSON.parse(raw)) : {};
   } catch {
     return {};
@@ -137,7 +138,7 @@ export function readSrsStore(): SrsStore {
 export function writeSrsStore(store: SrsStore): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(SRS_KEY, JSON.stringify(store));
+    window.localStorage.setItem(key(SRS_KEY), JSON.stringify(store));
   } catch {
     /* storage full or blocked: keep working in memory */
   }

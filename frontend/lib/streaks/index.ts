@@ -4,13 +4,16 @@
  * A streak is the number of consecutive calendar days the user has visited
  * or checked in. It resets to 0 if a day is missed.
  *
- * Stored keys (all under the "neb-streak" prefix):
+ * Stored keys (all under the "neb-streak" prefix, then scoped per account by
+ * key() from lib/scoped-storage):
  *   neb-streak:last-check-in  — ISO date string of last check-in
  *   neb-streak:count          — current streak integer
  *
  * Call markCheckIn() once per session (e.g. on page load) to keep the
  * streak alive. The component reads the stored values client-side only.
  */
+
+import { key } from "@/lib/scoped-storage";
 
 const LAST_CHECK_IN_KEY = "neb-streak:last-check-in";
 const COUNT_KEY = "neb-streak:count";
@@ -37,8 +40,8 @@ export function getStreak(): StreakState {
   if (typeof window === "undefined") {
     return { count: 0, lastCheckIn: null, isStreakActive: false };
   }
-  const last = localStorage.getItem(LAST_CHECK_IN_KEY);
-  const raw = localStorage.getItem(COUNT_KEY);
+  const last = localStorage.getItem(key(LAST_CHECK_IN_KEY));
+  const raw = localStorage.getItem(key(COUNT_KEY));
   const count = raw ? parseInt(raw, 10) : 0;
   const today = getToday();
 
@@ -57,22 +60,22 @@ export function getStreak(): StreakState {
 export function markCheckIn(): StreakState {
   if (typeof window === "undefined") return getStreak();
   const today = getToday();
-  const prev = localStorage.getItem(LAST_CHECK_IN_KEY);
+  const prev = localStorage.getItem(key(LAST_CHECK_IN_KEY));
   let newCount = 1;
 
   if (prev === today) {
     // Already checked in today — no change
-    newCount = parseInt(localStorage.getItem(COUNT_KEY) ?? "0", 10);
+    newCount = parseInt(localStorage.getItem(key(COUNT_KEY)) ?? "0", 10);
   } else if (prev !== null && daysBetween(prev, today) === 1) {
     // Consecutive day — increment
-    newCount = (parseInt(localStorage.getItem(COUNT_KEY) ?? "0", 10) + 1);
+    newCount = (parseInt(localStorage.getItem(key(COUNT_KEY)) ?? "0", 10) + 1);
   } else {
     // Streak broken or first visit — reset to 1
     newCount = 1;
   }
 
-  localStorage.setItem(LAST_CHECK_IN_KEY, today);
-  localStorage.setItem(COUNT_KEY, String(newCount));
+  localStorage.setItem(key(LAST_CHECK_IN_KEY), today);
+  localStorage.setItem(key(COUNT_KEY), String(newCount));
   return getStreak();
 }
 

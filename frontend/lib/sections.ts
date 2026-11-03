@@ -389,7 +389,7 @@ export const SECTIONS: PlatformSection[] = [
   {
     id: "community",
     title: "Community",
-    description: "Subject study spaces with a link to the Ask board. Opens at Plus.",
+    description: "Subject study spaces with a link to the Ask board; peer threads are coming soon. Opens at Plus.",
     minTier: "plus",
     icon: Users,
     href: "/community",
@@ -421,7 +421,7 @@ export const SECTIONS: PlatformSection[] = [
   {
     id: "billing",
     title: "Billing",
-    description: "Spark balance, plan status and receipt history. Opens at Member.",
+    description: "Spark balance and transaction history; online payments are coming soon. Opens at Member.",
     minTier: "member",
     icon: Receipt,
     href: "/billing",
@@ -429,7 +429,7 @@ export const SECTIONS: PlatformSection[] = [
   {
     id: "referrals",
     title: "Referrals",
-    description: "Referral and reward tracking. Opens at Plus.",
+    description: "Referral and reward tracking is coming soon. Opens at Plus.",
     minTier: "plus",
     icon: Gift,
     href: "/referrals",
