@@ -230,6 +230,24 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Progress",
       },
       {
+        name: "Weekly Planner",
+        opening: "A seven-day plan from your goals, exam date and the topics you have not finished.",
+        href: "/planner",
+        meta: "Plan",
+      },
+      {
+        name: "Spaced Repetition",
+        opening: "Flashcards from concept notes and past questions, scheduled so you review just before forgetting.",
+        href: "/srs",
+        meta: "Memory",
+      },
+      {
+        name: "Mock Exams",
+        opening: "Timed papers: an OMR sheet scored for you, an answer key, and written past questions.",
+        href: "/mock-exams",
+        meta: "Exam",
+      },
+      {
         name: "Saved Bookmarks",
         opening: "Everything you starred, in the order you saved it.",
         href: "/bookmarks",

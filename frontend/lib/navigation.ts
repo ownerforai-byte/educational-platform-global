@@ -54,6 +54,7 @@ import {
   LayoutDashboard,
   Settings,
   Rocket,
+  Timer,
 } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
@@ -112,6 +113,9 @@ const primaryItems: NavItem[] = [
   { href: "/home", label: "Home", icon: Home, minLevel: "member" },
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, minLevel: "member" },
   { href: "/onboarding", label: "Set Study Goals", icon: Rocket, minLevel: "visitor" },
+  { href: "/planner", label: "Weekly Planner", icon: Calendar, minLevel: "plus" },
+  { href: "/srs", label: "Spaced Repetition", icon: Layers, minLevel: "plus" },
+  { href: "/mock-exams", label: "Mock Exams", icon: Timer, minLevel: "pro" },
   { href: "/site-index", label: "Everything Index", icon: ListTree, minLevel: "pro" },
   { href: "/levels", label: "Curriculum Levels", icon: Compass, minLevel: "pro" },
 ];

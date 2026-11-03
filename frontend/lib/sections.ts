@@ -26,6 +26,9 @@ import {
   Target,
   TrendingUp,
   Brain,
+  Calendar,
+  Timer,
+  Layers,
 } from "lucide-react";
 import { hasLevel, type AccessLevel } from "@/lib/access-level";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
@@ -335,6 +338,30 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "plus",
     icon: FileText,
     href: "/report-card",
+  },
+  {
+    id: "planner",
+    title: "Weekly Planner",
+    description: "A week-by-week plan from your goals, exam date and unfinished topics. Opens at Plus.",
+    minTier: "plus",
+    icon: Calendar,
+    href: "/planner",
+  },
+  {
+    id: "srs",
+    title: "Spaced Repetition",
+    description: "Flashcards from concept notes and past questions on an SM-2 schedule. Opens at Plus.",
+    minTier: "plus",
+    icon: Layers,
+    href: "/srs",
+  },
+  {
+    id: "mock-exams",
+    title: "Mock Exams",
+    description: "Timed mock papers with an OMR sheet, auto scoring and answer key. Opens at Pro.",
+    minTier: "pro",
+    icon: Timer,
+    href: "/mock-exams",
   },
 
   // ── Owner rung ──

@@ -104,6 +104,9 @@ export const PUBLIC_PATHS = [
   "/dashboard",
   "/settings",
   "/report-card",
+  "/planner",
+  "/srs",
+  "/mock-exams",
 ] as const;
 
 /**

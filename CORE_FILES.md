@@ -42,6 +42,9 @@ Whenever you need to know how the platform works and where things route, refer O
 |---|---|
 | `frontend/lib/navigation.ts` | **Global Navigation Registry** (`NAV_SECTIONS`, `NAV_HREFS`). Defines sidebar, mobile drawer, all section hubs, access levels, and route paths. |
 | `frontend/lib/site-index.ts` | **Everything Index Registry** (`/site-index`). Aggregates all routable sections across labs, graphs, syllabus, notes, proofs into a unified index. |
+| `frontend/lib/srs.ts` | **SM-2 Scheduler & Flashcard Builder** (device-local review state, cards derived from `pyq-bank`). Used by `/srs`. |
+| `frontend/lib/study-plan.ts` | **Weekly Plan Generator** (goals + exam date + weak topics from the progress journey). Used by `/planner`. |
+| `frontend/lib/mock-exam.ts` | **Mock Exam Assembler & Scorer** (entrance MCQs for the OMR section, `pyq-bank` for the written section). Used by `/mock-exams`. |
 | `frontend/lib/study-goals.ts` | **Study Goals & Preferences Reader** (device-local). Shared by `/onboarding`, `/settings`, `/dashboard`, `/report-card` (views in `frontend/components/study/`); subject options come from `syllabus.ts`. |
 | `frontend/lib/syllabus.ts` | **Curriculum Single Source of Truth**. Contains official class, subject, unit, and topic hierarchies and slugs. |
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
