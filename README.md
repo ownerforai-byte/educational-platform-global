@@ -114,10 +114,9 @@ never `NEXT_PUBLIC_*`. See `.env.example` for the full list.
 ## Deployment
 
 **Not finalized.** The frontend still produces a Next.js server build (~44 SSR-on-demand
-routes), so the old "static Cloudflare Pages" strategy does not apply. Candidates:
-Cloudflare Pages (the 3 MiB worker limit motivated this split) vs Netlify (`netlify.toml`
-present). Nothing has been deployed yet — see `MIGRATION_COMPLETE.md` (CLOUDFLARE,
-REMAINING ISSUES #10).
+routes), so the old "static Cloudflare Pages" strategy does not apply. Candidate:
+Cloudflare Pages (the 3 MiB worker limit motivated this split). Nothing has been
+deployed yet — see `MIGRATION_COMPLETE.md` (CLOUDFLARE, REMAINING ISSUES #10).
 
 ### Backend → Railway / Render / Fly.io
 

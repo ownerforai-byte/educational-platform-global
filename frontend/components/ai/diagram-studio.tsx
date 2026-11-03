@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { Check, Copy, Send, Shapes, Sparkles, Wand2 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
-import { enhancePrompt, streamChat } from "@/lib/api/ai";
+import { enhancePrompt, saveChatHistory, streamChat } from "@/lib/api/ai";
 import type { AIChatMessage } from "@/types/api";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
@@ -48,6 +48,7 @@ export function DiagramStudio() {
   const [copied, setCopied] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const sessionRef = useRef(`diagram:${Date.now().toString(36)}`);
 
   const handleEnhance = async () => {
     const text = topic.trim();
@@ -101,6 +102,7 @@ export function DiagramStudio() {
 
       for await (const chunk of streamChat(payload, undefined, {
         isGuest: false,
+        session: sessionRef.current,
       })) {
         if (typeof chunk === "string") {
           if (!sawToken) {
@@ -115,6 +117,15 @@ export function DiagramStudio() {
       }
       if (!liveAcc.trim()) throw new Error("No diagram received. Please try again.");
       paintLive(true);
+      try {
+        const saved = await saveChatHistory(sessionRef.current, [
+          { role: "user", content: request.content },
+          { role: "assistant", content: liveAcc },
+        ]);
+        if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
+      } catch {
+        setError("Your answer could not be saved to history.");
+      }
       recordAiSparkUse();
     } catch (err: unknown) {
       const msg =
@@ -139,7 +150,7 @@ export function DiagramStudio() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-5 px-4 py-8">
+    <div className="mx-auto w-full max-w-4xl space-y-5 px-3 py-4 sm:px-4 sm:py-8">
       <div className="rounded-3xl border border-border/70 bg-card p-5 sm:p-6">
         <div className="flex items-center gap-3">
           <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
@@ -160,7 +171,7 @@ export function DiagramStudio() {
               key={s}
               type="button"
               onClick={() => setSubject(s)}
-              className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+              className={`rounded-full min-h-11 px-3 py-1 text-xs font-semibold transition ${
                 subject === s
                   ? "bg-primary text-primary-foreground"
                   : "border border-border/70 text-muted-foreground hover:border-primary/50"
@@ -182,7 +193,7 @@ export function DiagramStudio() {
           }}
           rows={2}
           placeholder="Name the diagram — e.g. 'labelled human heart with chambers and vessels' or 'ray diagram for a concave mirror'"
-          className="mt-3 w-full resize-none rounded-2xl border border-border/70 bg-background px-4 py-3 text-sm placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+          className="mt-3 w-full resize-none rounded-2xl border border-border/70 bg-background px-4 py-3 text-base sm:text-sm placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
         />
         <div className="mt-2 flex items-center justify-between gap-2">
           <button
@@ -224,8 +235,8 @@ export function DiagramStudio() {
             <div
               className={
                 message.role === "user"
-                  ? "max-w-[85%] rounded-2xl bg-primary px-4 py-3 text-sm text-primary-foreground"
-                  : "w-full rounded-2xl border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-6 sm:py-6"
+                  ? "max-w-[85%] min-w-0 rounded-2xl bg-primary px-4 py-3 text-sm text-primary-foreground [overflow-wrap:anywhere]"
+                  : "min-w-0 w-full rounded-2xl border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6"
               }
             >
               {message.role === "assistant" ? (

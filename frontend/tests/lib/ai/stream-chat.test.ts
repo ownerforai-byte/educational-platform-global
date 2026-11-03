@@ -48,6 +48,13 @@ afterEach(() => {
 });
 
 describe("streamChat", () => {
+  it("sends the current history session with the stream request", async () => {
+    const fetchMock = vi.fn(async (_url: string, _options: RequestInit) => sseResponse(['data: {"done":true}\n\n']));
+    vi.stubGlobal("fetch", fetchMock);
+    for await (const _chunk of streamChat([{ role: "user", content: "Explain cells" }], undefined, { isGuest: true, session: "thread-1" })) { /* consume */ }
+    const options = fetchMock.mock.calls[0][1] as RequestInit;
+    expect(JSON.parse(String(options.body)).session).toBe("thread-1");
+  });
   it("yields each delta as it arrives, in order, with progress events", async () => {
     const chunks = await collect([
       'data: {"phase":"searching","label":"Researching the topic…"}\n\n',

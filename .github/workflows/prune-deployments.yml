@@ -1,0 +1,39 @@
+name: Prune Vercel Deployments
+
+# Keep at most 6 retained deployments on the ravikisan project.
+# Vercel has no native "keep N" setting; this is the count-based cap.
+#
+# Trigger modes:
+#   schedule         — daily at 04:00 UTC (09:30 IST) to cap storage between pushes
+#   workflow_dispatch — manual "Run workflow" button
+#   push: main       — immediately after every main deploy lands, so a
+#                      burst of quick pushes doesn't exceed the cap
+#
+# Secret required: VERCEL_TOKEN (a classic Vercel token with
+# Deployments + Projects scopes for the ownerforai-byte team).
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Prune overflow deployments (cap 6, live production always protected)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: team_HGJdEN3XP4NnZY7Gd8xRhD8g
+          VERCEL_PROJECT_ID: prj_U2KKPLkeAOqjzes00oGe1f1of2VV
+          PRUNE_LIMIT: "6"
+        run: node scripts/prune-vercel-deployments.mjs --limit 6

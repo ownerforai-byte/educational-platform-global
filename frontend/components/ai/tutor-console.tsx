@@ -669,8 +669,13 @@ export function TutorConsole({
     }
     if (historyLoadedRef.current) return;
     historyLoadedRef.current = true;
-    const active = readStoredSession();
+    const requested = new URLSearchParams(window.location.search).get("session");
+    const active = requested && requested.length <= 64 ? requested : readStoredSession();
     setSessionName(active);
+    sessionRef.current = active;
+    if (requested) {
+      try { localStorage.setItem(SESSION_STORAGE_KEY, active); } catch { /* storage unavailable */ }
+    }
     void loadSession(active);
     void refreshSessions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -815,6 +820,7 @@ export function TutorConsole({
     ) => {
       // A photo with no typed question still gets an answer: the model is told
       // to read the image, say what it shows, then teach it.
+      const targetSession = sessionRef.current;
       const content = text.trim() || (images.length ? PHOTO_ONLY_PROMPT : "");
       if (!content || sending) return;
 
@@ -877,7 +883,7 @@ export function TutorConsole({
           });
         };
         try {
-          for await (const chunk of streamChat(payload, undefined, { isGuest: !isLoggedIn, console: consoleForMode(effectiveMode) })) {
+          for await (const chunk of streamChat(payload, undefined, { isGuest: !isLoggedIn, console: consoleForMode(effectiveMode), session: targetSession })) {
             if (typeof chunk === "string") {
               if (!sawToken) {
                 sawToken = true;
@@ -931,12 +937,16 @@ export function TutorConsole({
         }
 
         if (isLoggedIn) {
-          saveChatHistory(sessionRef.current, [
-            { role: "user", content },
-            { role: "assistant", content: finalContent },
-          ])
-            .then(() => refreshSessions())
-            .catch(() => {});
+          try {
+            const saved = await saveChatHistory(targetSession, [
+              { role: "user", content },
+              { role: "assistant", content: finalContent },
+            ]);
+            if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
+            else void refreshSessions();
+          } catch {
+            setError("Your answer could not be saved to history.");
+          }
         } else {
           const used = liveRemaining !== null
             ? Math.min(MAX_GUEST_MESSAGES, Math.max(0, MAX_GUEST_MESSAGES - liveRemaining))
@@ -1086,7 +1096,7 @@ export function TutorConsole({
   }
 
   return (
-    <div className="flex h-full min-h-screen sm:min-h-[600px] flex-col overflow-hidden bg-card">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-card">
       {/* ── Header: identity + the green light (kept exactly) + actions ── */}
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
         <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-3">
@@ -1123,7 +1133,7 @@ export function TutorConsole({
             <button
               onClick={startNewChat}
               disabled={sending}
-              className="inline-flex items-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors disabled:opacity-50"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors disabled:opacity-50"
               title="New chat — start a fresh conversation"
               aria-label="New chat"
             >
@@ -1135,7 +1145,7 @@ export function TutorConsole({
               <button
                 onClick={() => setHistoryOpen((v) => !v)}
                 aria-expanded={historyOpen}
-                className="inline-flex items-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
                 title="Your chat histories"
                 aria-label="Chat history"
               >
@@ -1165,7 +1175,7 @@ export function TutorConsole({
               <button
                 onClick={clearChat}
                 disabled={sending}
-                className="p-2 rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors disabled:opacity-50"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors disabled:opacity-50"
                 title="Clear this conversation"
                 aria-label="Clear chat"
               >
@@ -1223,7 +1233,7 @@ export function TutorConsole({
                 onClick={() => chooseMode(m.id)}
                 aria-pressed={active}
                 className={cn(
-                  "flex items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-[11px] font-bold transition-all",
+                  "flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-bold transition-all",
                   active
                     ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 shadow-sm shadow-emerald-500/10"
                     : "border-border/70 bg-background text-muted-foreground hover:text-foreground hover:border-muted-foreground/40",
@@ -1246,7 +1256,7 @@ export function TutorConsole({
       )}
 
       {/* ── Stream ───────────────────────────────────────────────────── */}
-      <div ref={streamRef} onScroll={handleStreamScroll} className="flex-1 overflow-y-auto px-5 sm:px-8 py-6 space-y-6">
+      <div ref={streamRef} onScroll={handleStreamScroll} className="min-h-0 min-w-0 flex-1 overflow-y-auto px-3 sm:px-8 py-4 sm:py-6 space-y-6">
         {!hasConversation && !sending ? (
           <div className="min-h-full flex flex-col justify-center max-w-3xl mx-auto space-y-7 py-8">
             <div className="text-center space-y-2">
@@ -1305,7 +1315,7 @@ export function TutorConsole({
                   <div key={index} className="flex justify-end animate-pop-in">
                     <div className="flex items-end gap-2.5 max-w-[85%]">
                       <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
-                        <p className="text-xs leading-relaxed whitespace-pre-wrap font-medium">
+                        <p className="text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere] font-medium">
                           {msg.content}
                         </p>
                       </div>
@@ -1330,7 +1340,7 @@ export function TutorConsole({
                   </div>
 
                   <div className="min-w-0 w-full">
-                    <div className="rounded-2xl rounded-tl-sm border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-7 sm:py-6">
+                    <div className="min-w-0 rounded-2xl rounded-tl-sm border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-7 sm:py-6">
                       {(assistantSegments[index] ?? []).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
                           <StepCards key={segIndex} steps={segment.steps} />
@@ -1409,7 +1419,7 @@ export function TutorConsole({
 
       {/* ── Thread tools ─────────────────────────────────────────────── */}
       {hasConversation && !sending && (
-        <div className="shrink-0 px-5 sm:px-8 pt-3 flex flex-wrap items-center gap-2 border-t border-border/40">
+        <div className="shrink-0 px-3 sm:px-8 pt-2 flex flex-wrap items-center gap-2 border-t border-border/40">
           <button
             onClick={() => followUp(SUMMARIZE_INSTRUCTION)}
             className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
@@ -1428,7 +1438,7 @@ export function TutorConsole({
       )}
 
       {/* ── Composer ─────────────────────────────────────────────────── */}
-      <div className="shrink-0 border-t border-border/60 bg-muted/20 px-5 sm:px-8 py-4">
+      <div className="shrink-0 border-t border-border/60 bg-muted/20 px-3 sm:px-8 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:py-4">
         {composerLocked && (
           <p className="mb-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-[11px] font-semibold text-amber-600">
             Your free messages for today are used — sign in to continue. Your
@@ -1473,14 +1483,14 @@ export function TutorConsole({
                     : `Ask a ${mode} question… (Enter to send)`
             }
             disabled={composerLocked || sending}
-            className="flex-1 resize-none rounded-2xl border border-input bg-background px-4 py-3 text-sm leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
+            className="min-w-0 flex-1 resize-none rounded-2xl border border-input bg-background px-3 sm:px-4 py-3 text-base sm:text-sm leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
           />
           <button
             onClick={handleEnhance}
             disabled={!input.trim() || sending || enhancing}
             title="Rewrite into a sharper study question"
             aria-label="Enhance question"
-            className="h-9 w-9 shrink-0 rounded-xl border border-border/70 bg-background text-muted-foreground hover:text-emerald-500 hover:border-emerald-500/40 transition-colors flex items-center justify-center disabled:opacity-40"
+            className="h-11 w-11 shrink-0 rounded-xl border border-border/70 bg-background text-muted-foreground hover:text-emerald-500 hover:border-emerald-500/40 transition-colors flex items-center justify-center disabled:opacity-40"
           >
             {enhancing ? (
               <span className="h-4 w-4 animate-spin rounded-full border-2 border-emerald-500 border-t-transparent" />
@@ -1493,7 +1503,7 @@ export function TutorConsole({
             disabled={(!input.trim() && pendingImages.length === 0) || sending || composerLocked}
             title="Send (Enter)"
             aria-label="Send message"
-            className="h-9 w-9 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-primary text-white shadow-md shadow-emerald-500/20 hover:opacity-90 transition-opacity flex items-center justify-center disabled:opacity-40"
+            className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-primary text-white shadow-md shadow-emerald-500/20 hover:opacity-90 transition-opacity flex items-center justify-center disabled:opacity-40"
           >
             {sending ? (
               <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/70 border-t-transparent" />

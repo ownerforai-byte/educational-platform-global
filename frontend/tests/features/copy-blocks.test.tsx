@@ -85,6 +85,15 @@ describe("the copy button in a rendered reply", () => {
     expect(writeText).toHaveBeenCalledWith("The answer is $x = 42$.");
   });
 
+  it("keeps an unchanged answer mounted across parent rerenders and updates when content changes", () => {
+    const { rerender, container } = render(<InteractiveMarkdown content="A stable explanation." />);
+    const paragraph = container.querySelector("p");
+    rerender(<InteractiveMarkdown content="A stable explanation." />);
+    expect(container.querySelector("p")).toBe(paragraph);
+    rerender(<InteractiveMarkdown content="An updated explanation." />);
+    expect(screen.getByText("An updated explanation.")).toBeInTheDocument();
+  });
+
   it("shows no copy button where the reply has no lift-ready chunk", () => {
     render(<InteractiveMarkdown content={"Just a plain explanation. No boxes here."} />);
     expect(screen.queryByRole("button")).toBeNull();

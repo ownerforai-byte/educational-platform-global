@@ -203,3 +203,4 @@ playwright-report/
 .env.*.local
 !.env.example
 *.local.env
+.env.vercel

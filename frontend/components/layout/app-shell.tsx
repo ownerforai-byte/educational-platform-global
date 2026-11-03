@@ -59,7 +59,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   // Chat uses a full-screen layout; its own header provides the back control.
   if (isChatRoom) {
     return (
-      <div className="flex h-screen w-screen flex-col overflow-hidden bg-background">
+      <div className="flex h-[100dvh] w-full flex-col overflow-hidden bg-background">
         <main id="main-content" tabIndex={-1} className="flex-1 min-h-0 focus:outline-none">
           <Suspense
             fallback={

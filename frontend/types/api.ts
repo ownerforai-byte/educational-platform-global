@@ -384,6 +384,8 @@ export interface AIChatRequest {
   messages: AIChatMessage[];
   provider?: string;
   stream?: boolean;
+  /** Current history session, used to exclude the current thread from related links. */
+  session?: string;
   /** Photos for the latest user turn (max 3, data URLs). */
   images?: string[];
   /**

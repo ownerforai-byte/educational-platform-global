@@ -2,6 +2,11 @@ import { describe, expect, it } from "vitest";
 import { renderNoteHtml } from "@/lib/content/pipeline";
 
 describe("renderNoteHtml — universal note pipeline", () => {
+  it("renders deep-concept history links as navigable links", () => {
+    const html = renderNoteHtml("**Related in your history**\n\n[Previous question](/chat?session=previous)");
+    expect(html).toContain('href="/chat?session=previous"');
+    expect(html).toContain("Previous question");
+  });
   it("renders plain markdown", () => {
     const html = renderNoteHtml("# Title\n\n**bold** and _italic_");
     expect(html).toContain("<h1>Title</h1>");

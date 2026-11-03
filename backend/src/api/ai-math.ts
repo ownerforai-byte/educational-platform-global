@@ -3,6 +3,8 @@ import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
 import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
+import { deepConceptResearch, relatedHistory, saveStudioAnswer, upgradeMessages } from "../ai/complete-answer";
+import { randomUUID } from "node:crypto";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
 import { aiSparkGateIfAuthed, requirePlusAiStudio } from "../middleware/aiSparkGate";
@@ -147,7 +149,14 @@ Format with clean KaTeX LaTeX syntax for all equations and expressions.`;
       // Primary provider: Cerebras (qwen-3.8-27b) — industry-leading open-source math reasoning,
       // with automatic fallback to Groq -> Gemini -> Agnes in the configured chain.
       // The math solver owns the Cerebras lane (owner 2026-10-25).
-      const solution = await aiService.chat(getWorkLaneProvider("math"), messages);
+      const user = (req as Partial<AuthedRequest>).user;
+      const [draft, research, links] = await Promise.all([
+        aiService.chat(getWorkLaneProvider("math"), messages),
+        deepConceptResearch(`${cleanProblem} ${subject} class ${classLevel}`),
+        user ? relatedHistory(user.id, cleanProblem) : "",
+      ]);
+      const solution = await aiService.chat(getWorkLaneProvider("math"), upgradeMessages(cleanProblem, draft, research, "", `Subject: ${subject}; class: ${classLevel}; step-by-step: ${stepByStep}; verification: ${verification}.`)) + links;
+      if (user) await saveStudioAnswer(user.id, `studio:math:${randomUUID()}`, cleanProblem, solution);
 
       const guestSlot = (req as GuestGateRequest).guestSlot;
 

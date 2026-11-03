@@ -72,6 +72,9 @@ function finishCard(card: { title: string; lines: string[] }): StepCard {
  * kept verbatim as prose.
  */
 export function splitStepBlocks(content: string): ReplySegment[] {
+  // Most AI replies contain no step cards. Avoid allocating and scanning every
+  // line of the entire conversation on each streamed update in that case.
+  if (!/^```steps\b/m.test(content)) return [{ kind: "text", text: content }];
   const lines = content.split("\n");
   const segments: ReplySegment[] = [];
   let prose: string[] = [];

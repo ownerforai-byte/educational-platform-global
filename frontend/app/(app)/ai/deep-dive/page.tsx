@@ -146,7 +146,7 @@ export default function DeepDiveStudioPage() {
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6 px-3 sm:px-4 py-6 sm:py-10">
       {/* ── Breadcrumb & Navigation ────────────────────────────────────── */}
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href="/ai"
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors"
@@ -191,7 +191,7 @@ export default function DeepDiveStudioPage() {
                 key={s}
                 type="button"
                 onClick={() => setSubject(s)}
-                className={`rounded-full px-3 py-1 text-xs font-medium capitalize transition-all ${
+                className={`rounded-full min-h-11 px-3 py-1 text-xs font-medium capitalize transition-all ${
                   subject === s
                     ? "bg-sky-600 text-white shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -209,7 +209,7 @@ export default function DeepDiveStudioPage() {
                 key={c}
                 type="button"
                 onClick={() => setClassLevel(c)}
-                className={`rounded-full px-2.5 py-1 text-xs font-medium transition-all ${
+                className={`rounded-full min-h-11 px-2.5 py-1 text-xs font-medium transition-all ${
                   classLevel === c
                     ? "bg-primary text-primary-foreground shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -237,7 +237,7 @@ export default function DeepDiveStudioPage() {
                 key={d.key}
                 type="button"
                 onClick={() => setDepth(d.key)}
-                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all ${
                   depth === d.key
                     ? "bg-indigo-600 text-white shadow-sm"
                     : "border border-border/70 bg-muted/30 text-muted-foreground hover:bg-muted"
@@ -266,7 +266,7 @@ export default function DeepDiveStudioPage() {
                   setSubject(p.subject);
                   setClassLevel(p.classLevel);
                 }}
-                className="rounded-xl border border-border/60 bg-muted/30 px-2.5 py-1 text-[11px] font-medium text-foreground hover:border-sky-500/50 hover:bg-sky-500/5 transition-all"
+                className="min-h-11 rounded-xl border border-border/60 bg-muted/30 px-2.5 py-1 text-xs font-medium text-foreground hover:border-sky-500/50 hover:bg-sky-500/5 transition-all"
               >
                 {p.label}
               </button>
@@ -287,23 +287,24 @@ export default function DeepDiveStudioPage() {
             }}
             placeholder="Type any difficult concept, reaction mechanism, theoretical law, or attach a textbook diagram photo to unpack... (e.g. Why is entropy always increasing in spontaneous processes?)"
             rows={4}
-            className="w-full resize-none rounded-2xl border border-border/70 bg-background p-4 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+            className="w-full resize-none rounded-2xl border border-border/70 bg-background p-4 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
           />
         </div>
 
         {/* Optional Diagram / Image Attachment Preview */}
         {imagePreview && (
-          <div className="relative inline-block rounded-2xl border border-border/70 bg-muted/30 p-2">
+          <div className="relative inline-block max-w-full rounded-2xl border border-border/70 bg-muted/30 p-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imagePreview}
               alt="Attached diagram"
-              className="h-28 max-w-xs object-cover rounded-xl"
+              className="h-28 max-w-full object-contain rounded-xl"
             />
             <button
               type="button"
               onClick={removeImage}
-              className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-destructive text-destructive-foreground shadow hover:opacity-90"
+              aria-label="Remove attached diagram"
+              className="absolute -top-2 -right-2 flex h-11 w-11 items-center justify-center rounded-full bg-destructive text-destructive-foreground shadow hover:opacity-90"
             >
               <X className="h-3.5 w-3.5" />
             </button>
@@ -312,7 +313,7 @@ export default function DeepDiveStudioPage() {
 
         {/* Actions bar */}
         <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-          <div className="flex items-center gap-2">
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
             <input
               type="file"
               ref={fileInputRef}
@@ -323,7 +324,7 @@ export default function DeepDiveStudioPage() {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-all"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-all"
             >
               <ImageIcon className="h-3.5 w-3.5 text-sky-500" />
               {imagePreview ? "Change Diagram" : "Attach Diagram / Photo"}
@@ -342,7 +343,7 @@ export default function DeepDiveStudioPage() {
                   removeImage();
                   setResponse(null);
                 }}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-border/70 px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted transition-all"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted transition-all"
               >
                 <RotateCcw className="h-3.5 w-3.5" /> Clear
               </button>
@@ -351,7 +352,7 @@ export default function DeepDiveStudioPage() {
               type="button"
               onClick={handleDeepDive}
               disabled={loading || !topic.trim()}
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 px-5 py-2 text-xs font-bold text-white shadow-md shadow-sky-500/20 hover:from-sky-500 hover:to-indigo-500 disabled:opacity-50 transition-all"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 px-5 py-2 text-xs font-bold text-white shadow-md shadow-sky-500/20 hover:from-sky-500 hover:to-indigo-500 disabled:opacity-50 transition-all"
             >
               {loading ? (
                 <>
@@ -370,9 +371,9 @@ export default function DeepDiveStudioPage() {
 
       {/* ── Solution Output Section ─────────────────────────────────────── */}
       {response && (
-        <div className="rounded-3xl border border-sky-500/30 bg-card p-6 shadow-md space-y-4">
+        <div className="min-w-0 rounded-3xl border border-sky-500/30 bg-card p-3 sm:p-6 shadow-md space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/50 pb-3">
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-500/10 text-sky-500">
                 <BookOpen className="h-4 w-4" />
               </span>
@@ -385,7 +386,7 @@ export default function DeepDiveStudioPage() {
             <button
               type="button"
               onClick={handleCopy}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-all"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-all"
             >
               {copied ? (
                 <>
@@ -399,8 +400,8 @@ export default function DeepDiveStudioPage() {
             </button>
           </div>
 
-          <div className="rounded-2xl bg-muted/20 p-4 border border-border/30 overflow-x-auto">
-            <MathMarkdown content={response.explanation} />
+          <div className="min-w-0 rounded-2xl bg-muted/20 p-3 sm:p-4 border border-border/30">
+            <MathMarkdown content={response.explanation} className="chat-reading" />
           </div>
         </div>
       )}

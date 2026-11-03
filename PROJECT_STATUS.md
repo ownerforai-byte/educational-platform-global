@@ -249,8 +249,7 @@ Full details: `MIGRATION_COMPLETE.md`. Summary:
 - **AI**: providers only in backend (`src/ai/service.ts`, internal keyless fallback);
   frontend proxies to `/api/ai`; keys belong in `backend/.env` only.
 - **Deployment**: UNDECIDED — frontend still produces a Next.js server build, so the old
-  Cloudflare Pages static strategy does not apply as-is; `netlify.toml` exists as an
-  alternative. Nothing deployed.
+  Cloudflare Pages static strategy does not apply as-is. Nothing deployed.
 - **Open items** (11 listed in `MIGRATION_COMPLETE.md`): browser session transport gap
   (protected endpoints 401 for logged-in browser users), resources PATCH unsanitized +
   DELETE without ownership check, controller settings PATCH lost, storage upload not

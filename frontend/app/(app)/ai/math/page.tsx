@@ -149,7 +149,7 @@ export default function MathStudioPage() {
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6 px-3 sm:px-4 py-6 sm:py-10">
       {/* ── Breadcrumb & Navigation ────────────────────────────────────── */}
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href="/ai"
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors"
@@ -194,7 +194,7 @@ export default function MathStudioPage() {
                 key={s}
                 type="button"
                 onClick={() => setSubject(s)}
-                className={`rounded-full px-3 py-1 text-xs font-medium capitalize transition-all ${
+                className={`rounded-full min-h-11 px-3 py-1 text-xs font-medium capitalize transition-all ${
                   subject === s
                     ? "bg-emerald-600 text-white shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -213,7 +213,7 @@ export default function MathStudioPage() {
                 key={c}
                 type="button"
                 onClick={() => setClassLevel(c)}
-                className={`rounded-full px-2.5 py-1 text-xs font-medium transition-all ${
+                className={`rounded-full min-h-11 px-2.5 py-1 text-xs font-medium transition-all ${
                   classLevel === c
                     ? "bg-primary text-primary-foreground shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -241,7 +241,7 @@ export default function MathStudioPage() {
                   setSubject(p.subject);
                   setClassLevel(p.classLevel as any);
                 }}
-                className="rounded-xl border border-border/60 bg-muted/30 px-2.5 py-1 text-[11px] font-medium text-foreground hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
+                className="min-h-11 rounded-xl border border-border/60 bg-muted/30 px-2.5 py-1 text-xs font-medium text-foreground hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
               >
                 {p.label}
               </button>
@@ -257,7 +257,7 @@ export default function MathStudioPage() {
               key={idx}
               type="button"
               onClick={() => insertSymbol(s.insert)}
-              className="rounded-lg border border-border/50 bg-background px-2 py-0.5 text-xs font-mono text-muted-foreground hover:border-emerald-500 hover:text-foreground transition-all"
+              className="min-h-11 min-w-11 rounded-lg border border-border/50 bg-background px-2 py-0.5 text-xs font-mono text-muted-foreground hover:border-emerald-500 hover:text-foreground transition-all"
             >
               {s.label}
             </button>
@@ -277,7 +277,7 @@ export default function MathStudioPage() {
             }}
             placeholder="Type any math equation, word problem, calculus limit, or derivation prompt... (e.g. Find the derivative of f(x) = x^x from first principles)"
             rows={4}
-            className="w-full resize-none rounded-2xl border border-border/70 bg-background p-4 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+            className="w-full resize-none rounded-2xl border border-border/70 bg-background p-4 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
           />
         </div>
 
@@ -294,7 +294,7 @@ export default function MathStudioPage() {
                   setProblem("");
                   setResponse(null);
                 }}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-border/70 px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted transition-all"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted transition-all"
               >
                 <RotateCcw className="h-3.5 w-3.5" /> Clear
               </button>
@@ -303,7 +303,7 @@ export default function MathStudioPage() {
               type="button"
               onClick={handleSolve}
               disabled={loading || !problem.trim()}
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-5 py-2 text-xs font-bold text-white shadow-md shadow-emerald-500/20 hover:from-emerald-500 hover:to-teal-500 disabled:opacity-50 transition-all"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-5 py-2 text-xs font-bold text-white shadow-md shadow-emerald-500/20 hover:from-emerald-500 hover:to-teal-500 disabled:opacity-50 transition-all"
             >
               {loading ? (
                 <>
@@ -322,9 +322,9 @@ export default function MathStudioPage() {
 
       {/* ── Solution Output Section ─────────────────────────────────────── */}
       {response && (
-        <div className="rounded-3xl border border-emerald-500/30 bg-card p-6 shadow-md space-y-4">
+        <div className="min-w-0 rounded-3xl border border-emerald-500/30 bg-card p-3 sm:p-6 shadow-md space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/50 pb-3">
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
                 <BookOpen className="h-4 w-4" />
               </span>
@@ -361,9 +361,9 @@ export default function MathStudioPage() {
               ) : (
                 <div
                   key={index}
-                  className="rounded-2xl bg-muted/20 p-4 border border-border/30 overflow-x-auto"
+                  className="min-w-0 rounded-2xl bg-muted/20 p-3 sm:p-4 border border-border/30"
                 >
-                  <MathMarkdown content={segment.text} />
+                  <MathMarkdown content={segment.text} className="chat-reading" />
                 </div>
               ),
             )}

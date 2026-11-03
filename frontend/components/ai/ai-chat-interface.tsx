@@ -316,7 +316,12 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   // Individual chat histories (per-session conversations, signed-in only).
   const [session, setSession] = useState<string>("default");
   const [sessions, setSessions] = useState<ChatSession[]>([]);
-  const [sidebarOpen, setSidebarOpen] = useState(!embedded);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  // Keep the desktop conversation list open by default without covering the
+  // composer on narrow touch screens. This runs after hydration.
+  useEffect(() => {
+    if (!embedded && window.matchMedia("(min-width: 640px)").matches) setSidebarOpen(true);
+  }, [embedded]);
   // ChatHome starter deck: the deep pool grouped under category chips
   // (deterministic first paint; the rows reshuffle per conversation below).
   const homeGroups = useMemo<ChatHomeGroup[]>(
@@ -478,7 +483,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     }
     if (historyLoadedRef.current) return;
     historyLoadedRef.current = true;
-    const active = readActiveSession();
+    const requested = new URLSearchParams(window.location.search).get("session");
+    const active = requested && requested.length <= 64 ? requested : readActiveSession();
+    if (requested) writeActiveSession(active);
     setSession(active);
     loadSessionHistory(active);
     refreshSessions();
@@ -619,7 +626,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         });
       };
       try {
-        for await (const chunk of streamChat(outbound, undefined, { isGuest: !isLoggedIn })) {
+        for await (const chunk of streamChat(outbound, undefined, { isGuest: !isLoggedIn, session: targetSession })) {
           if (typeof chunk === "string") {
             if (!sawToken) {
               sawToken = true;
@@ -669,10 +676,15 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       const finalReply = liveAcc + figureBlocks();
 
       if (isLoggedIn) {
-        saveChatHistory(targetSession, [
-          { role: "user", content: textToSend },
-          { role: "assistant", content: finalReply },
-        ]).catch(() => {});
+        try {
+          const saved = await saveChatHistory(targetSession, [
+            { role: "user", content: textToSend },
+            { role: "assistant", content: finalReply },
+          ]);
+          if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
+        } catch {
+          setError("Your answer could not be saved to history.");
+        }
         setSessions((prev) => {
           if (prev.some((s) => s.session === targetSession)) {
             return prev.map((s) =>
@@ -934,7 +946,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       className={
         embedded
           ? "relative flex h-full w-full overflow-hidden bg-card"
-          : "flex h-[calc(100vh-10rem)] max-h-[850px] min-h-[500px] rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden"
+          : "relative flex h-[min(850px,calc(100dvh-8rem))] min-h-[24rem] w-full rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden"
       }
     >
       {/* ── Conversations sidebar (individual chat histories) ─────── */}
@@ -956,11 +968,19 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 ? "w-60"
                 : "w-64"
               : "w-0 overflow-hidden border-r-0",
-            embedded && sidebarOpen && "absolute inset-y-0 left-0 z-20 shadow-2xl"
+            sidebarOpen && (embedded ? "absolute inset-y-0 left-0 z-20 shadow-2xl" : "absolute inset-y-0 left-0 z-20 shadow-2xl sm:static sm:z-auto sm:shadow-none")
           )}
           aria-hidden={!sidebarOpen}
         >
           <div className="p-3 border-b border-border/50">
+            <button
+              type="button"
+              onClick={() => setSidebarOpen(false)}
+              className="mb-2 inline-flex min-h-11 items-center rounded-xl px-3 text-xs font-semibold text-muted-foreground hover:bg-muted sm:hidden"
+              aria-label="Close conversations sidebar"
+            >
+              Close
+            </button>
             <button
               onClick={startNewChat}
               className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold py-2.5 hover:opacity-90 transition-opacity"
@@ -1047,7 +1067,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <button
                 data-chat-sidebar-toggle=""
                 onClick={() => setSidebarOpen((v) => !v)}
-                className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 title={sidebarOpen ? "Hide conversations" : "Show conversations"}
                 aria-label="Toggle conversations sidebar"
               >
@@ -1110,7 +1130,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         </div>
 
         {/* Message stream */}
-        <div ref={streamRef} onScroll={handleStreamScroll} className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-5">
+        <div ref={streamRef} onScroll={handleStreamScroll} className="min-h-0 min-w-0 flex-1 overflow-y-auto px-3 sm:px-6 py-5 space-y-5">
           {historyState === "loading" ? (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
               <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
@@ -1137,7 +1157,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <div key={index} className="flex justify-end animate-pop-in">
                     <div className="flex items-end gap-2.5 max-w-[85%]">
                       <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
-                        <p className="text-xs leading-relaxed whitespace-pre-wrap font-medium">{msg.content}</p>
+                        <p className="text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere] font-medium">{msg.content}</p>
                       </div>
                       <div className="h-7 w-7 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
                         <User className="h-3.5 w-3.5" />
@@ -1151,7 +1171,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
-                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-5 py-5 shadow-sm sm:px-6 sm:py-6">
+                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6">
                     <div>
                       {(displaySegments[index] ?? []).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
@@ -1284,7 +1304,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   ? "Guest limit reached — please log in to ask more questions."
                   : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
-              className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
+              className="min-w-0 flex-1 max-h-32 min-h-[44px] py-2.5 px-3 sm:px-4 rounded-2xl border border-border/80 bg-card text-base sm:text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
             />
 
             <VoiceMicButton
