@@ -112,6 +112,8 @@ export interface StreamChatOptions {
   session?: string;
   /** Dedicated console id ("nepali" | "grammar") — forwarded to the server. */
   console?: string;
+  /** Abort the in-flight reply (the Stop button). */
+  signal?: AbortSignal;
 }
 
 export async function* streamChat(
@@ -157,6 +159,7 @@ export async function* streamChat(
       credentials: "include",
       headers,
       body: JSON.stringify(body),
+      signal: options?.signal,
     });
 
     if (response.status === 401 && !isGuest && attempt === 0) {

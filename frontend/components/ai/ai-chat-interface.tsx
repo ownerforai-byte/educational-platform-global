@@ -28,6 +28,7 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUp,
+  Square,
 } from "lucide-react";
 import {
   chat,
@@ -61,6 +62,9 @@ import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { buildChatHomeGroups, ChatHome, type ChatHomeGroup } from "@/components/ai/chat-home";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
+import { AiStatusDot } from "@/components/ai/ai-status-dot";
+import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
+import { appendToDraft, formatDocumentContext } from "@/lib/chat/attach-files";
 import { useLowData } from "@/lib/hooks/use-low-data";
 import { cn } from "@/lib/utils";
 import { CaptainAvatar } from "@/components/ai/captain-logo";
@@ -350,6 +354,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     if (atBottom) setHasNewBelow(false);
   }, []);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  /** Latest voice hand-over handler (the hook keeps callbacks in refs). */
+  const voiceSendRef = useRef<(spoken: string) => void>(() => {});
+  /** Aborts the reply in flight (Stop button). */
+  const abortRef = useRef<AbortController | null>(null);
   const sessionRef = useRef(session);
   sessionRef.current = session;
   const guestThreadsRef = useRef<GuestThread[]>([]);
@@ -365,7 +373,12 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     start: voiceStart,
     stop: voiceStop,
     clear: voiceClear,
-  } = useVoiceInput({ onError: (message) => setError(message) });
+  } = useVoiceInput({
+    onError: (message) => setError(message),
+    // Hands-free: 3.5 s of silence after the last word sends the question.
+    autoSendMs: VOICE_AUTO_SEND_MS,
+    onComplete: (spoken) => voiceSendRef.current(spoken),
+  });
   useEffect(() => {
     if (!voiceTranscript) return;
     voiceClear();
@@ -582,6 +595,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     setPendingImages([]);
     setSending(true);
     setError(null);
+    const controller = new AbortController();
+    abortRef.current = controller;
 
     const targetSession = sessionRef.current;
 
@@ -626,7 +641,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         });
       };
       try {
-        for await (const chunk of streamChat(outbound, undefined, { isGuest: !isLoggedIn, session: targetSession })) {
+        for await (const chunk of streamChat(outbound, undefined, { isGuest: !isLoggedIn, session: targetSession, signal: controller.signal })) {
           if (typeof chunk === "string") {
             if (!sawToken) {
               sawToken = true;
@@ -658,7 +673,15 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           }
         }
       } catch (streamErr) {
-        if (!liveAcc.trim()) throw streamErr;
+        // Stop pressed: keep what was already written and finish normally.
+        if (!liveAcc.trim() && !controller.signal.aborted) throw streamErr;
+      }
+      if (controller.signal.aborted && !liveAcc.trim()) {
+        setStreamingText(null);
+        setStreamPhase(null);
+        setMessages((prev) => (prev[prev.length - 1]?.role === "user" ? prev.slice(0, -1) : prev));
+        setInput(textToSend);
+        return;
       }
       for (const f of figs.values()) {
         if (f.status === "failed") {
@@ -752,12 +775,26 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         ]);
       }
     } finally {
+      if (abortRef.current === controller) abortRef.current = null;
       setSending(false);
     }
   };
 
+  /** Stop the reply in progress (works for typed and voice-sent prompts). */
+  const handleStop = () => {
+    abortRef.current?.abort();
+  };
+
   const handleSend = (customText?: string) => {
     void sendWith(messages, customText ?? input, pendingImages);
+  };
+  voiceSendRef.current = (spoken: string) => {
+    if (sending || composerLocked) {
+      // A reply is still running: keep the words in the draft instead of losing them.
+      setInput((prev) => (prev.trim() ? `${prev.trim()} ${spoken}` : spoken));
+      return;
+    }
+    void sendWith(messages, [input.trim(), spoken].filter(Boolean).join(" "), pendingImages);
   };
 
   /** Drop the stale answer and ask the previous question again. */
@@ -1061,20 +1098,20 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       {/* ── Main column ───────────────────────────────────────────── */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <div className="px-4 sm:px-6 py-3.5 border-b border-border/60 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 flex items-center justify-between gap-3 shrink-0">
+        <div className="px-3 sm:px-4 py-2 border-b border-border/60 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
             {(
               <button
                 data-chat-sidebar-toggle=""
                 onClick={() => setSidebarOpen((v) => !v)}
-                className="flex h-11 w-11 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 title={sidebarOpen ? "Hide conversations" : "Show conversations"}
                 aria-label="Toggle conversations sidebar"
               >
                 {sidebarOpen ? <PanelLeftClose className="h-4 w-4" /> : <PanelLeft className="h-4 w-4" />}
               </button>
             )}
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
+            <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-sm shadow-primary/30 shrink-0">
               <CaptainAvatar className="h-5 w-5" />
             </div>
             <div className="min-w-0">
@@ -1082,13 +1119,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
                   Veer
                 </h2>
-                {/* live dot — the professor is on duty */}
-                <span className="relative flex h-2 w-2 shrink-0" title="Online">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
+                {/* live dot: reflects real AI availability */}
+                <AiStatusDot />
               </div>
-              <p className="text-[11px] text-muted-foreground truncate">
+              <p className="text-[10px] text-muted-foreground truncate leading-tight">
                 Grounded in the NEB Class 11 &amp; 12 syllabus · ask me anything
               </p>
             </div>
@@ -1130,7 +1164,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         </div>
 
         {/* Message stream */}
-        <div ref={streamRef} onScroll={handleStreamScroll} className="min-h-0 min-w-0 flex-1 overflow-y-auto px-3 sm:px-6 py-5 space-y-5">
+        <div ref={streamRef} onScroll={handleStreamScroll} className="min-h-0 min-w-0 flex-1 overflow-y-auto px-3 sm:px-5 py-3 space-y-4">
           {historyState === "loading" ? (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
               <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
@@ -1171,7 +1205,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
-                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6">
+                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-3 shadow-sm sm:px-5 sm:py-4">
                     <div>
                       {(displaySegments[index] ?? []).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
@@ -1269,7 +1303,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
 
           <div ref={chatBottomRef} />
         </div>         {/* Composer */}
-        <div className="px-4 sm:px-6 py-4 border-t border-border/60 bg-muted/10 shrink-0">
+        <div className="px-3 sm:px-4 py-2.5 border-t border-border/60 bg-muted/10 shrink-0">
           <ChatAttachPreview
             images={pendingImages}
             onRemove={(i) => setPendingImages((prev) => prev.filter((_, idx) => idx !== i))}
@@ -1288,6 +1322,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
             <ChatAttachButton
               onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
+              onPickDocument={(name, text) =>
+                setInput((prev) => appendToDraft(prev, formatDocumentContext(name, text)))
+              }
               onError={setError}
               disabled={sending || composerLocked}
               attached={pendingImages.length}
@@ -1304,7 +1341,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   ? "Guest limit reached — please log in to ask more questions."
                   : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
-              className="min-w-0 flex-1 max-h-32 min-h-[44px] py-2.5 px-3 sm:px-4 rounded-2xl border border-border/80 bg-card text-base sm:text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
+              className="min-w-0 flex-1 max-h-32 min-h-[40px] py-2 px-3 rounded-xl border border-border/80 bg-card text-base sm:text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
             />
 
             <VoiceMicButton
@@ -1318,23 +1355,35 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <button
               onClick={handleEnhance}
               disabled={!input.trim() || sending || enhancing || composerLocked}
-              className="h-11 w-11 rounded-2xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              className="h-10 w-10 rounded-xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               title="Enhance my prompt — rewrite it into a sharper study question"
               aria-label="Enhance prompt"
             >
               {enhancing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
             </button>
-            <button
-              onClick={() => handleSend()}
-              disabled={(!input.trim() && pendingImages.length === 0) || sending || composerLocked}
-              className="h-11 w-11 rounded-full bg-gradient-to-r from-primary to-violet-500 text-primary-foreground flex items-center justify-center shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
-              aria-label="Send message"
-            >
-              <ArrowUp className="h-4 w-4" />
-            </button>
+            {sending ? (
+              <button
+                type="button"
+                onClick={handleStop}
+                className="h-10 w-10 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center shadow-md hover:opacity-90 active:scale-95 transition-all shrink-0"
+                aria-label="Stop reply"
+                title="Stop the reply"
+              >
+                <Square className="h-3.5 w-3.5 fill-current" />
+              </button>
+            ) : (
+              <button
+                onClick={() => handleSend()}
+                disabled={(!input.trim() && pendingImages.length === 0) || composerLocked}
+                className="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-violet-500 text-primary-foreground flex items-center justify-center shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+                aria-label="Send message"
+              >
+                <ArrowUp className="h-4 w-4" />
+              </button>
+            )}
           </div>
 
-          <div className="mt-2 text-center text-[10px] text-muted-foreground/60 flex items-center justify-center gap-3 flex-wrap">
+          <div className="mt-1 text-center text-[10px] text-muted-foreground/60 flex items-center justify-center gap-3 flex-wrap">
             {isLoggedIn ? (
               <span className="flex items-center gap-1">
                 <UserRound className="h-3 w-3" />

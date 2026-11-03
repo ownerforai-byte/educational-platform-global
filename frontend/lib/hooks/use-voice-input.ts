@@ -27,6 +27,7 @@
  * nothing — a dead control is worse than no control.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createSilenceTrigger } from "@/lib/chat/silence-trigger";
 
 // ── Browser API shape (SpeechRecognition is not in lib.dom yet) ─────────────
 
@@ -125,6 +126,12 @@ export interface UseVoiceInputOptions {
    * hook simply re-arms so the student can keep talking.
    */
   onComplete?: (transcript: string) => void;
+  /**
+   * Hands-free auto-send: when set, `onComplete` fires this many ms after the
+   * LAST speech event (the composer uses 3500) instead of when the browser
+   * happens to end a pass. Needs `onComplete`.
+   */
+  autoSendMs?: number;
   /** Surface a failure to the student in their own language of UI. */
   onError?: (message: string) => void;
 }
@@ -146,7 +153,7 @@ export interface VoiceInput {
 }
 
 export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
-  const { lang = VOICE_LANGS.english, onComplete, onError } = options;
+  const { lang = VOICE_LANGS.english, onComplete, onError, autoSendMs } = options;
 
   const [supported, setSupported] = useState(false);
   const [listening, setListening] = useState(false);
@@ -162,9 +169,13 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
   const wantListeningRef = useRef(false);
   const transcriptRef = useRef("");
   const restartingRef = useRef(false);
+  const silenceRef = useRef<ReturnType<typeof createSilenceTrigger> | null>(null);
   /** Callbacks live in refs so a new options object never re-arms the mic. */
   const completeRef = useRef(onComplete);
   const errorRef = useRef(onError);
+  const interimRef = useRef("");
+  const autoSendRef = useRef(autoSendMs);
+  autoSendRef.current = autoSendMs;
   completeRef.current = onComplete;
   errorRef.current = onError;
 
@@ -191,6 +202,7 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
 
   const stop = useCallback(() => {
     wantListeningRef.current = false;
+    silenceRef.current?.cancel();
     setListening(false);
     setInterim("");
     const rec = recognitionRef.current;
@@ -224,6 +236,25 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
 
     rec.onstart = () => setListening(true);
 
+    // Auto-send: silence after the last speech hands the finished question over.
+    const silence = createSilenceTrigger(autoSendRef.current ?? 0, () => {
+      const spoken = `${transcriptRef.current} ${interimRef.current}`.trim();
+      if (!spoken || !wantListeningRef.current || !completeRef.current) return;
+      wantListeningRef.current = false;
+      setListening(false);
+      transcriptRef.current = "";
+      interimRef.current = "";
+      setTranscript("");
+      setInterim("");
+      try {
+        rec.stop();
+      } catch {
+        // pass already ended
+      }
+      completeRef.current(spoken);
+    });
+    silenceRef.current = silence;
+
     rec.onresult = (event: SpeechResultEvent) => {
       let partial = "";
       for (let i = event.resultIndex; i < event.results.length; i += 1) {
@@ -237,7 +268,11 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
         }
       }
       setTranscript(transcriptRef.current);
+      interimRef.current = partial.trim();
       setInterim(partial.trim());
+      if (autoSendRef.current && completeRef.current && (transcriptRef.current || partial.trim())) {
+        silenceRef.current?.poke();
+      }
     };
 
     rec.onerror = (event: SpeechErrorEvent) => {
@@ -263,7 +298,9 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
       // A finished question in hands-free mode: hand it over instead of
       // re-arming, or the console would send it and immediately reopen the mic
       // over Veer's own answer.
-      if (spoken && completeRef.current) {
+      // (With autoSendMs the silence timer owns the handover, so a browser-ended
+      // pass just re-arms and the 3.5 s pause is honoured exactly.)
+      if (spoken && completeRef.current && !autoSendRef.current) {
         wantListeningRef.current = false;
         setListening(false);
         const handover = spoken;
@@ -294,6 +331,8 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
     };
 
     return () => {
+      silence.cancel();
+      silenceRef.current = null;
       wantListeningRef.current = false;
       restartingRef.current = false;
       teardown();
