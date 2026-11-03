@@ -99,6 +99,11 @@ export const PUBLIC_PATHS = [
   "/notice",
   "/notifications",
   "/plans",
+  // Study desk pages are tools, not notes: never coin-gated.
+  "/onboarding",
+  "/dashboard",
+  "/settings",
+  "/report-card",
 ] as const;
 
 /**

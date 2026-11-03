@@ -42,6 +42,7 @@ Whenever you need to know how the platform works and where things route, refer O
 |---|---|
 | `frontend/lib/navigation.ts` | **Global Navigation Registry** (`NAV_SECTIONS`, `NAV_HREFS`). Defines sidebar, mobile drawer, all section hubs, access levels, and route paths. |
 | `frontend/lib/site-index.ts` | **Everything Index Registry** (`/site-index`). Aggregates all routable sections across labs, graphs, syllabus, notes, proofs into a unified index. |
+| `frontend/lib/study-goals.ts` | **Study Goals & Preferences Reader** (device-local). Shared by `/onboarding`, `/settings`, `/dashboard`, `/report-card` (views in `frontend/components/study/`); subject options come from `syllabus.ts`. |
 | `frontend/lib/syllabus.ts` | **Curriculum Single Source of Truth**. Contains official class, subject, unit, and topic hierarchies and slugs. |
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
 | `frontend/components/layout/app-shell.tsx` | Main UI layout container and responsive navigation shell. |

@@ -12,6 +12,7 @@ import {
   Globe,
   GraduationCap,
   Image as ImageIcon,
+  LayoutDashboard,
   Library,
   LineChart,
   MessageCircle,
@@ -300,6 +301,40 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "pro",
     icon: Globe,
     href: "/knowledge",
+  },
+
+  // ── Study desk (goals, today hub, settings, report card) ──
+  {
+    id: "onboarding",
+    title: "Set Your Study Goals",
+    description: "Pick subjects, exam date, target and daily study time. Open to everyone.",
+    minTier: "visitor",
+    icon: Target,
+    href: "/onboarding",
+  },
+  {
+    id: "dashboard",
+    title: "Dashboard",
+    description: "Today hub: streak, exam countdown, daily plan and what to open next. Opens at Member.",
+    minTier: "member",
+    icon: LayoutDashboard,
+    href: "/dashboard",
+  },
+  {
+    id: "settings",
+    title: "Settings",
+    description: "Language, theme, study goals, notifications and accessibility. Opens at Member.",
+    minTier: "member",
+    icon: Settings,
+    href: "/settings",
+  },
+  {
+    id: "report-card",
+    title: "Report Card",
+    description: "A printable progress snapshot to share. Opens at Plus.",
+    minTier: "plus",
+    icon: FileText,
+    href: "/report-card",
   },
 
   // ── Owner rung ──

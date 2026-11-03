@@ -206,6 +206,30 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Stats",
       },
       {
+        name: "Dashboard",
+        opening: "Today at a glance: streak, exam countdown, your daily plan and what to open next.",
+        href: "/dashboard",
+        meta: "Today",
+      },
+      {
+        name: "Set Study Goals",
+        opening: "Choose subjects, exam date, target and daily study time. Open to everyone.",
+        href: "/onboarding",
+        meta: "Setup",
+      },
+      {
+        name: "Settings",
+        opening: "Language, theme, study goals, notifications and accessibility.",
+        href: "/settings",
+        meta: "Account",
+      },
+      {
+        name: "Report Card",
+        opening: "A printable snapshot of your progress, ready to save as PDF and share.",
+        href: "/report-card",
+        meta: "Progress",
+      },
+      {
         name: "Saved Bookmarks",
         opening: "Everything you starred, in the order you saved it.",
         href: "/bookmarks",

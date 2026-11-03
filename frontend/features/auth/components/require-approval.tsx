@@ -56,7 +56,7 @@ import { VerifyingStatus } from "./verifying-status";
  * tier homes under it stay safe: TierHomeGate replaces any wrong-rung viewer
  * onto their own home before any interface renders.
  */
-const PUBLIC_PATHS = ["/home", "/plans"] as const;
+const PUBLIC_PATHS = ["/home", "/plans", "/onboarding"] as const;
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));

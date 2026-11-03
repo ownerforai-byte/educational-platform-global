@@ -51,6 +51,9 @@ import {
   NotebookPen,
   Repeat,
   Shapes,
+  LayoutDashboard,
+  Settings,
+  Rocket,
 } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
@@ -107,6 +110,8 @@ const primaryItems: NavItem[] = [
   // pro|owner), so Home opens at Member; the two whole-platform indexes are
   // Pro's "all indexes" headline.
   { href: "/home", label: "Home", icon: Home, minLevel: "member" },
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, minLevel: "member" },
+  { href: "/onboarding", label: "Set Study Goals", icon: Rocket, minLevel: "visitor" },
   { href: "/site-index", label: "Everything Index", icon: ListTree, minLevel: "pro" },
   { href: "/levels", label: "Curriculum Levels", icon: Compass, minLevel: "pro" },
 ];
@@ -173,6 +178,8 @@ const accountItems: NavItem[] = [
   { href: "/profile", label: "My Profile", icon: User },
   { href: "/progress", label: "My Progress", icon: UserCheck },
   { href: "/bookmarks", label: "Saved Bookmarks", icon: Bookmark },
+  { href: "/report-card", label: "Report Card", icon: FileText, minLevel: "plus" },
+  { href: "/settings", label: "Settings", icon: Settings, minLevel: "member" },
   { href: "/credits", label: "Credits & Plan", icon: Coins },
 ];
 
