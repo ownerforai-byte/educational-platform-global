@@ -49,6 +49,7 @@ import {
   Activity,
   CalendarCheck,
   NotebookPen,
+  Download,
   Repeat,
   Shapes,
   LayoutDashboard,
@@ -121,6 +122,8 @@ const primaryItems: NavItem[] = [
   { href: "/streaks", label: "Streaks and Badges", icon: Award, minLevel: "member" },
   { href: "/community", label: "Community", icon: Users, minLevel: "plus" },
   { href: "/ask", label: "Ask Veer", icon: HelpCircle, minLevel: "member" },
+  { href: "/my-notes", label: "My Notes", icon: NotebookPen, minLevel: "member" },
+  { href: "/downloads", label: "Downloads", icon: Download, minLevel: "pro" },
   { href: "/site-index", label: "Everything Index", icon: ListTree, minLevel: "pro" },
   { href: "/levels", label: "Curriculum Levels", icon: Compass, minLevel: "pro" },
 ];

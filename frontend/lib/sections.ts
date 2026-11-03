@@ -18,6 +18,7 @@ import {
   LineChart,
   MessageCircle,
   NotebookPen,
+  Download,
   PenTool,
   Search,
   Settings,
@@ -398,6 +399,22 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "member",
     icon: HelpCircle,
     href: "/ask",
+  },
+  {
+    id: "my-notes",
+    title: "My Notes",
+    description: "Your own notes and annotations, kept apart from the curriculum. Opens at Member.",
+    minTier: "member",
+    icon: NotebookPen,
+    href: "/my-notes",
+  },
+  {
+    id: "downloads",
+    title: "Downloads",
+    description: "Offline unit packs of notes, past questions, drills and formulas. Opens at Pro.",
+    minTier: "pro",
+    icon: Download,
+    href: "/downloads",
   },
 
   // ── Owner rung ──

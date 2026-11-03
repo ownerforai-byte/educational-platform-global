@@ -272,6 +272,18 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Q&A",
       },
       {
+        name: "My Notes",
+        opening: "Write your own notes and annotate passages; they stay on your device.",
+        href: "/my-notes",
+        meta: "Personal",
+      },
+      {
+        name: "Downloads",
+        opening: "Take a unit offline: concept notes, past questions, drills and formulas in one file.",
+        href: "/downloads",
+        meta: "Offline",
+      },
+      {
         name: "Saved Bookmarks",
         opening: "Everything you starred, in the order you saved it.",
         href: "/bookmarks",

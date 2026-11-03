@@ -111,6 +111,8 @@ export const PUBLIC_PATHS = [
   "/streaks",
   "/community",
   "/ask",
+  "/my-notes",
+  "/downloads",
 ] as const;
 
 /**

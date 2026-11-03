@@ -7,6 +7,9 @@ import { addDays, buildCards, dueQueue, normalizeStore, sm2 } from "@/lib/srs";
 import { buildWeeklyPlan, weakTopicsFromJourney } from "@/lib/study-plan";
 import { answerKey, assembleMock, parseMarks, scoreMock } from "@/lib/mock-exam";
 import { DEFAULT_GOALS, listGoalSubjects } from "@/lib/study-goals";
+import { addNote, filterNotes, normalizeNotes, removeNote, updateNote, validateNote, EMPTY_DRAFT } from "@/lib/personal-notes";
+import { buildUnitPack, packFilename, packItemCount, packToMarkdown } from "@/lib/offline-pack";
+import type { SubjectPyqBank } from "@/lib/pyq-bank";
 import { sectionForPath } from "@/lib/sections";
 import { NAV_HREFS } from "@/lib/navigation";
 import { buildSiteIndex } from "@/lib/site-index";
@@ -184,5 +187,65 @@ describe("community and ask", () => {
     const flat = JSON.stringify(buildSiteIndex());
     expect(flat).toContain('"/community"');
     expect(flat).toContain('"/ask"');
+  });
+});
+
+describe("personal notes", () => {
+  const draft = { ...EMPTY_DRAFT, title: " Lens ", body: "f = 1/v", subjectKey: "class-12/physics" };
+  it("validates drafts", () => {
+    expect(validateNote(EMPTY_DRAFT)).not.toBeNull();
+    expect(validateNote({ ...EMPTY_DRAFT, title: "t" })).not.toBeNull();
+    expect(validateNote(draft)).toBeNull();
+  });
+  it("adds, updates, filters and removes", () => {
+    let notes = addNote([], draft, "a", "2026-01-01T00:00:00Z");
+    notes = addNote(notes, { ...draft, title: "Prism", body: "angle", quote: "" }, "b", "2026-01-02T00:00:00Z");
+    expect(notes[0].id).toBe("b");
+    expect(notes[1].title).toBe("Lens");
+    notes = updateNote(notes, "a", { ...draft, body: "changed" }, "2026-01-03T00:00:00Z");
+    expect(filterNotes(notes, "", "")[0].id).toBe("a");
+    expect(filterNotes(notes, "prism", "").map((n) => n.id)).toEqual(["b"]);
+    expect(filterNotes(notes, "", "class-11/x")).toEqual([]);
+    expect(removeNote(notes, "a").map((n) => n.id)).toEqual(["b"]);
+  });
+  it("drops malformed stored rows", () => {
+    expect(normalizeNotes("x")).toEqual([]);
+    expect(normalizeNotes([{ id: 1 }, addNote([], draft, "a", "t")[0]])).toHaveLength(1);
+  });
+});
+
+describe("offline pack", () => {
+  const bank: SubjectPyqBank = {
+    theory: [{ title: "Concept", notes: ["n1"], detail: "d" }],
+    pyqs: [
+      { year: 2080, title: "2080", units: ["u1"], questions: [{ question: "Q1", marks: 2, solution: "A1" }] },
+      { year: 2079, title: "2079", units: ["u2"], questions: [{ question: "Q2" }] },
+    ],
+    drills: [
+      { id: "d1", question: "D1", unit: "u1", kind: "concept" },
+      { id: "d2", question: "D2", unit: "u2", kind: "concept" },
+    ],
+  };
+  it("slices a bank to one unit and renders markdown", () => {
+    const pack = buildUnitPack("Unit One", "u1", bank, null);
+    expect(pack.pyqs.map((y) => y.year)).toEqual([2080]);
+    expect(pack.drills.map((d) => d.id)).toEqual(["d1"]);
+    expect(packItemCount(pack)).toBe(3);
+    const md = packToMarkdown(pack);
+    expect(md).toContain("# Unit One");
+    expect(md).toContain("1. Q1 [2]");
+    expect(md).not.toContain("Q2");
+    expect(packFilename("Unit One: Heat!")).toBe("unit-one-heat.md");
+  });
+});
+
+describe("my-notes and downloads", () => {
+  it("gates /my-notes (member) and /downloads (pro) and links them everywhere", () => {
+    expect(sectionForPath("/my-notes")?.minTier).toBe("member");
+    expect(sectionForPath("/downloads")?.minTier).toBe("pro");
+    expect(NAV_HREFS).toEqual(expect.arrayContaining(["/my-notes", "/downloads"]));
+    const flat = JSON.stringify(buildSiteIndex());
+    expect(flat).toContain('"/my-notes"');
+    expect(flat).toContain('"/downloads"');
   });
 });
