@@ -7,7 +7,7 @@
  * there is no server write because the platform has no notes backend.
  */
 
-import { key } from "@/lib/scoped-storage";
+import { isCurrentScope, key, keyForScope, storageScope } from "@/lib/scoped-storage";
 
 export const MY_NOTES_KEY = "neb-my-notes:v1";
 export const MAX_NOTE_TITLE = 120;
@@ -108,11 +108,25 @@ export function readNotes(): PersonalNote[] {
   }
 }
 
-export function writeNotes(notes: PersonalNote[]): void {
-  if (typeof window === "undefined") return;
+/** The scope notes were loaded under; pass it back to writeNotes. */
+export function notesScope(): string {
+  return storageScope();
+}
+
+/**
+ * Persist notes. When `loadedScope` is given and the account/browser identity
+ * has changed since (another tab signed in as someone else), the write is
+ * REJECTED (returns false) so A's notes never land under B's key; the caller
+ * must reload. Returns true once written (or when storage is unavailable).
+ */
+export function writeNotes(notes: PersonalNote[], loadedScope?: string): boolean {
+  if (typeof window === "undefined") return true;
+  if (loadedScope !== undefined && !isCurrentScope(loadedScope)) return false;
   try {
-    window.localStorage.setItem(key(MY_NOTES_KEY), JSON.stringify(notes));
+    const target = loadedScope !== undefined ? keyForScope(MY_NOTES_KEY, loadedScope) : key(MY_NOTES_KEY);
+    window.localStorage.setItem(target, JSON.stringify(notes));
   } catch {
     /* storage full or blocked: keep working in memory */
   }
+  return true;
 }

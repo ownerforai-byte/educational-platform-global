@@ -41,3 +41,28 @@ export function storageScope(): string {
 export function key(base: string): string {
   return `${base}:${storageScope()}`;
 }
+
+/** Namespace a feature key by an explicit, previously captured scope. */
+export function keyForScope(base: string, scope: string): string {
+  return `${base}:${scope}`;
+}
+
+/** True when the account/browser identity still equals a captured scope. */
+export function isCurrentScope(scope: string): boolean {
+  return storageScope() === scope;
+}
+
+/**
+ * This device's anonymous scope (`anon:<id>`) WITHOUT minting a new id, or
+ * null when none exists. Lets a signed-in session find what the same browser
+ * saved while logged out (guest goals) so it can offer an explicit transfer.
+ */
+export function existingAnonScope(): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const id = window.localStorage.getItem(ANON_ID_KEY);
+    return id ? `anon:${id}` : null;
+  } catch {
+    return null;
+  }
+}

@@ -9,7 +9,7 @@
  */
 
 import { SYLLABUS } from "@/lib/syllabus";
-import { key } from "@/lib/scoped-storage";
+import { existingAnonScope, key, keyForScope, storageScope } from "@/lib/scoped-storage";
 
 export const STUDY_GOALS_KEY = "neb-study-goals:v1";
 
@@ -168,4 +168,70 @@ export function seedDailyPlan(goals: StudyGoals): PlannerSeedItem[] {
     subjectName: byKey.get(key)?.subjectName ?? key,
     minutes: each,
   }));
+}
+
+/**
+ * GUEST GOALS TRANSFER. Goals saved while logged out live under this device's
+ * anonymous key; once signed in the reader switches to the account key, so
+ * they would silently vanish. These helpers surface them for an EXPLICIT
+ * transfer. Nothing here runs implicitly: readGoals/writeGoals never touch the
+ * guest key, and the account key is only written by transferGuestGoals().
+ */
+function guestGoalsKey(): string | null {
+  if (typeof window === "undefined" || !storageScope().startsWith("u:")) return null;
+  const anon = existingAnonScope();
+  return anon ? keyForScope(STUDY_GOALS_KEY, anon) : null;
+}
+
+/** Saved guest goals worth offering (signed in only), else null. */
+export function findGuestGoals(): StudyGoals | null {
+  const guestKey = guestGoalsKey();
+  if (!guestKey) return null;
+  try {
+    const raw = window.localStorage.getItem(guestKey);
+    if (!raw) return null;
+    const goals = normalizeGoals(JSON.parse(raw));
+    const meaningful = goals.onboarded || goals.subjects.length > 0 || goals.examDate !== null || goals.targetPercent !== null;
+    return meaningful ? goals : null;
+  } catch {
+    return null;
+  }
+}
+
+/** True when the signed-in account already has its own saved goals. */
+export function accountHasGoals(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(key(STUDY_GOALS_KEY)) !== null;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Move the guest goals to the account key and clear the guest copy. Call ONLY
+ * after the student confirmed (the UI states when this replaces account goals).
+ */
+export function transferGuestGoals(): StudyGoals | null {
+  const guest = findGuestGoals();
+  const guestKey = guestGoalsKey();
+  if (!guest || !guestKey) return null;
+  const saved = writeGoals(guest);
+  try {
+    window.localStorage.removeItem(guestKey);
+  } catch {
+    /* keep the guest copy if it cannot be cleared */
+  }
+  return saved;
+}
+
+/** Delete the guest goals without transferring (explicit "discard"). */
+export function discardGuestGoals(): void {
+  const guestKey = guestGoalsKey();
+  if (!guestKey) return;
+  try {
+    window.localStorage.removeItem(guestKey);
+  } catch {
+    /* ignore */
+  }
 }

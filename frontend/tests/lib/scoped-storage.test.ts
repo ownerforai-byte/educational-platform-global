@@ -58,3 +58,67 @@ describe("spark layer reaches actual-content exports (R1)", () => {
     (p) => expect(categoryForPath(p)).toBeNull(),
   );
 });
+
+describe("notes scope captured at load (CWE-639 style cross-account write)", () => {
+  it("rejects a save when the account changed after load and writes nothing", async () => {
+    const { notesScope } = await import("@/lib/personal-notes");
+    signIn("a");
+    const scope = notesScope();
+    signIn("b");
+    const notes = addNote([], { ...EMPTY_DRAFT, title: "A only", body: "x" }, "n1", "2025-01-01");
+    expect(writeNotes(notes, scope)).toBe(false);
+    expect(readNotes()).toEqual([]);
+    signIn("a");
+    expect(readNotes()).toEqual([]);
+  });
+
+  it("writes under the captured scope when it is still current", async () => {
+    const { notesScope } = await import("@/lib/personal-notes");
+    signIn("a");
+    const scope = notesScope();
+    expect(writeNotes(addNote([], { ...EMPTY_DRAFT, title: "t", body: "x" }, "n1", "2025-01-01"), scope)).toBe(true);
+    expect(readNotes()).toHaveLength(1);
+  });
+});
+
+describe("guest goals transfer needs explicit confirmation", () => {
+  it("is never implicit: signing in does not move or overwrite anything", async () => {
+    const { findGuestGoals } = await import("@/lib/study-goals");
+    signIn(null);
+    writeGoals({ ...DEFAULT_GOALS, subjects: ["class-11/physics"], onboarded: true });
+    signIn("a");
+    expect(readGoals().onboarded).toBe(false);
+    expect(findGuestGoals()?.onboarded).toBe(true);
+  });
+
+  it("finds nothing when signed out or when no guest goals exist", async () => {
+    const { findGuestGoals } = await import("@/lib/study-goals");
+    signIn(null);
+    expect(findGuestGoals()).toBeNull();
+    signIn("a");
+    expect(findGuestGoals()).toBeNull();
+    expect(readGoals()).toEqual(DEFAULT_GOALS);
+  });
+
+  it("transfer moves guest goals to the account and clears the guest copy", async () => {
+    const { findGuestGoals, transferGuestGoals } = await import("@/lib/study-goals");
+    signIn(null);
+    writeGoals({ ...DEFAULT_GOALS, dailyMinutes: 90, onboarded: true });
+    signIn("a");
+    expect(transferGuestGoals()?.dailyMinutes).toBe(90);
+    expect(readGoals().dailyMinutes).toBe(90);
+    expect(findGuestGoals()).toBeNull();
+  });
+
+  it("discard removes guest goals without touching the account", async () => {
+    const { findGuestGoals, discardGuestGoals } = await import("@/lib/study-goals");
+    signIn("a");
+    writeGoals({ ...DEFAULT_GOALS, dailyMinutes: 120, onboarded: true });
+    signIn(null);
+    writeGoals({ ...DEFAULT_GOALS, dailyMinutes: 30, onboarded: true });
+    signIn("a");
+    discardGuestGoals();
+    expect(findGuestGoals()).toBeNull();
+    expect(readGoals().dailyMinutes).toBe(120);
+  });
+});

@@ -10,6 +10,7 @@ import { getEntranceQuestions } from "@/lib/entrance-questions";
 import type { EntranceQuestion } from "@/lib/entrance-questions/types";
 import { getSubjectSyllabus } from "@/lib/syllabus";
 import { assembleMock, answerKey, OMR_LETTERS, scoreMock, type MockPaper, type OmrAnswers } from "@/lib/mock-exam";
+import { useAttemptHold } from "@/features/credits/attempt-hold";
 import { listGoalSubjects } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { useSubjectBank } from "./use-subject-bank";
@@ -46,6 +47,10 @@ export function MockExamsView() {
   const [submitted, setSubmitted] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(0);
 
+  // Keep this view mounted if the spark window ends mid-attempt (or while the
+  // result is on screen); starting a NEW paper still needs an open window.
+  const { canStart } = useAttemptHold(paper !== null);
+
   useEffect(() => {
     if (!paper || submitted) return;
     const id = window.setInterval(() => {
@@ -62,6 +67,7 @@ export function MockExamsView() {
   }, [paper, submitted]);
 
   const start = () => {
+    if (!canStart) return;
     const next = assembleMock({ mcqPool: pool, pyqs: bank?.pyqs ?? [], seed: Date.now() % 2_147_483_647 });
     setPaper(next);
     setAnswers({});
@@ -93,13 +99,17 @@ export function MockExamsView() {
           value={subjectKey}
           chosen={goals.subjects}
           onChange={(k) => {
+            if (paper && !canStart) return;
             setPicked(k);
             setPaper(null);
           }}
         />
-        <Button onClick={start} disabled={loading || empty}>
+        <Button onClick={start} disabled={loading || empty || !canStart}>
           {paper ? "New paper" : "Start mock"}
         </Button>
+        {!canStart && (
+          <span className="text-xs text-muted-foreground">Unlock window ended. Reopen this page with a new unlock to start another paper.</span>
+        )}
       </div>
 
       {empty && (

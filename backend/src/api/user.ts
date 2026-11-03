@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
+import { canUnlockModule } from "../utils/sectionAccess";
 import { ensureDailyCredits, isCoinGateEnabled, spendCredits } from "../utils/credits";
 
 const router = Router();
@@ -176,6 +177,14 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
 
   const { category, moduleKey } = parsed.data;
   const cost = UNLOCK_COSTS[category] ?? 0;
+
+  // SECTION TIER: refuse before any balance read/write when the viewer's rung
+  // does not open the section behind this key (e.g. a Member unlocking /srs).
+  if (!(await canUnlockModule(user, isOwnerEmail(user.email), moduleKey))) {
+    res.status(403).json({ error: "This section is not available on your plan." });
+    return;
+  }
+
   const expiresAt = Math.floor(Date.now() / 1000) + UNLOCK_WINDOW_SECONDS;
 
   // FREE categories (labs, visuals, Diagram Hub): open the window and return —

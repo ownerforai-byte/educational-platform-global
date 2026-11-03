@@ -22,18 +22,22 @@
  * control surfaces resolve to null and pass straight through untouched.
  */
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { Coins, Loader2, Timer, ShieldCheck } from "lucide-react";
 import {
   TOKEN_MATRIX,
   categoryForPath,
   creditModuleKey,
+  withholdsLockedContent,
   type ContentCategory,
 } from "./constants";
+import { AttemptHoldContext } from "./attempt-hold";
 import { useCredit } from "./credit-provider";
 import { useCoinGateEnabled } from "./use-coin-gate";
 import { isOwnerEmail } from "@/lib/owner";
+import { isSectionUnlocked, sectionForPath } from "@/lib/sections";
+import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 
 export function RouteCreditGate({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -52,6 +56,12 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
   const coinGateEnabled = useCoinGateEnabled();
 
   const [working, setWorking] = useState(false);
+  const overrides = useSectionTierOverrides();
+  // An in-progress attempt (mock paper) keeps the view mounted past expiry.
+  const [held, setHeld] = useState(false);
+  const setHold = useCallback((next: boolean) => setHeld(next), []);
+  const windowOpen = isUnlocked(creditModuleKey(pathname ?? "/"));
+  const holdValue = useMemo(() => ({ windowOpen, setHold }), [windowOpen, setHold]);
   const category = categoryForPath(pathname ?? "/");
   // PDF document tabs (/pdfs/read) share the PDF Library's unlock window.
   const moduleKey = creditModuleKey(pathname ?? "/");
@@ -67,20 +77,37 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
   const rule = TOKEN_MATRIX[category];
   const open = isUnlocked(moduleKey);
 
+  // TIER FIRST: this gate wraps SectionTierGate, so without this check a
+  // signed-in viewer below the section's rung could spend a spark and then
+  // only see the unavailable card. A denied section passes straight through
+  // (SectionTierGate renders the unavailable card): no unlock offered, no
+  // spark spent. The unlock endpoint enforces the same rule server-side.
+  const section = sectionForPath(pathname ?? "/", overrides);
+  const tierDenied = !!user && !!section && !isSectionUnlocked(user, section);
+  if (tierDenied) return <>{children}</>;
+
   // FREE categories (cost 0) render straight through — no disabled state or ask.
   if (rule.cost === 0 && category !== "imagehub") return <>{children}</>;
 
-  // Unlocked window → render content + live countdown badge.
-  if (open) {
+  // Unlocked window (or a held attempt that outlived it) → render content.
+  if (open || held) {
     return (
-      <div className="relative">
-        <div className="pointer-events-none fixed bottom-safe left-4 z-40 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3 py-1.5 text-xs font-bold text-emerald-500 backdrop-blur-sm shadow-lg">
-          <Timer className="h-3.5 w-3.5" />
-          {remainingClock(moduleKey)}
-          <span className="font-medium text-emerald-500/80">until re-lock</span>
+      <AttemptHoldContext.Provider value={holdValue}>
+        <div className="relative">
+          <div className="pointer-events-none fixed bottom-safe left-4 z-40 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3 py-1.5 text-xs font-bold text-emerald-500 backdrop-blur-sm shadow-lg">
+            <Timer className="h-3.5 w-3.5" />
+            {open ? (
+              <>
+                {remainingClock(moduleKey)}
+                <span className="font-medium text-emerald-500/80">until re-lock</span>
+              </>
+            ) : (
+              <span>Window ended: finish your attempt</span>
+            )}
+          </div>
+          {children}
         </div>
-        {children}
-      </div>
+      </AttemptHoldContext.Provider>
     );
   }
 
@@ -108,7 +135,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
         aria-hidden="true"
         className="pointer-events-none select-none blur-[6px] opacity-30"
       >
-        {children}
+        {withholdsLockedContent(pathname ?? "/") ? null : children}
       </div>
 
       {/* Unlock overlay — sticky card stays in the viewport on any page length.

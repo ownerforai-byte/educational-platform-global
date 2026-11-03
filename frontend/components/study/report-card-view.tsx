@@ -74,11 +74,13 @@ export function ReportCardView() {
         </CardContent>
       </Card>
 
-      <ComingSoon
-        title="Weak-topic call-out"
-        kind="Notes"
-        message="Under progress. It awaits per-topic quiz attempt history, which the platform does not record yet."
-      />
+      <div className="print:hidden">
+        <ComingSoon
+          title="Weak-topic call-out"
+          kind="Notes"
+          message="Under progress. The report card does not highlight weak topics yet. Accuracy by topic is already on the Analytics page."
+        />
+      </div>
     </div>
   );
 }

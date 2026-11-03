@@ -143,6 +143,20 @@ export const EXEMPT_PATHS = [
 
 const REFERENCE_ROUTES = /^\/(pyqs|quiz|resources|ai-quiz|exam-countdown|progress)(\/|$)/;
 
+/**
+ * Spark-gated study-desk routes whose view loads protected note/PYQ content
+ * the moment it mounts (flashcards, mock papers, offline packs). While locked
+ * the gate must NOT mount them behind the blur overlay: hidden controls
+ * (e.g. "Show answer") would stay reachable from the console. Other gated
+ * routes keep the blurred preview.
+ */
+export const NO_LOCKED_PREVIEW_PATHS = ["/srs", "/mock-exams", "/downloads"] as const;
+
+export function withholdsLockedContent(pathname: string): boolean {
+  const path = pathname.split("?")[0].replace(/\/+$/, "") || "/";
+  return NO_LOCKED_PREVIEW_PATHS.some((p) => path === p || path.startsWith(`${p}/`));
+}
+
 function matchesList(pathname: string, list: readonly string[]): boolean {
   return list.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 }

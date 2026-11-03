@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NotebookPen, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +12,7 @@ import {
   MAX_NOTE_BODY,
   MAX_NOTE_QUOTE,
   addNote,
+  notesScope,
   filterNotes,
   readNotes,
   removeNote,
@@ -34,11 +35,25 @@ export function MyNotesView() {
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("");
-  useEffect(() => setNotes(readNotes()), []);
+  // Scope the notes were loaded under. A save is only valid in that scope.
+  const loadedScope = useRef<string | null>(null);
+  const load = () => {
+    loadedScope.current = notesScope();
+    setNotes(readNotes());
+  };
+  useEffect(load, []);
 
-  const commit = (next: PersonalNote[]) => {
+  /** Returns false (and reloads) when the account changed since load. */
+  const commit = (next: PersonalNote[]): boolean => {
+    if (!writeNotes(next, loadedScope.current ?? notesScope())) {
+      load();
+      setDraft(EMPTY_DRAFT);
+      setEditing(null);
+      setError("Your account changed in another tab. Your notes were reloaded and this change was not saved.");
+      return false;
+    }
     setNotes(next);
-    writeNotes(next);
+    return true;
   };
 
   const save = () => {
@@ -46,11 +61,12 @@ export function MyNotesView() {
     setError(problem);
     if (problem) return;
     const now = new Date().toISOString();
-    commit(
+    const saved = commit(
       editing
         ? updateNote(notes, editing, draft, now)
         : addNote(notes, draft, `n-${Date.now().toString(36)}-${notes.length}`, now),
     );
+    if (!saved) return;
     setDraft(EMPTY_DRAFT);
     setEditing(null);
   };

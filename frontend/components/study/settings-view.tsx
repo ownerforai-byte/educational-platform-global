@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { DAILY_MINUTES_OPTIONS, type StudyPreferences } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
+import { GuestGoalsPrompt } from "./guest-goals-prompt";
 
 const TOGGLES: Array<{ key: Exclude<keyof StudyPreferences, "language">; label: string }> = [
   { key: "notifyDailyReminder", label: "Daily study reminder" },
@@ -17,7 +18,7 @@ const TOGGLES: Array<{ key: Exclude<keyof StudyPreferences, "language">; label: 
 
 /** /settings: language, theme, study goals, notifications, accessibility. */
 export function SettingsView() {
-  const { goals, save } = useStudyGoals();
+  const { goals, save, guest, adoptGuest, dropGuest, dismissGuest } = useStudyGoals();
   const prefs = goals.preferences;
   const setPrefs = (patch: Partial<StudyPreferences>) =>
     save({ ...goals, preferences: { ...prefs, ...patch } });
@@ -28,6 +29,8 @@ export function SettingsView() {
         <h1 className="text-2xl font-bold tracking-tight">Settings</h1>
         <p className="text-sm text-muted-foreground">Saved on this device only.</p>
       </div>
+
+      <GuestGoalsPrompt guest={guest} onTransfer={adoptGuest} onDiscard={dropGuest} onLater={dismissGuest} />
 
       <Card>
         <CardHeader>

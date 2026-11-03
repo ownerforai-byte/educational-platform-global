@@ -12,11 +12,12 @@ import {
   type StudyGoals,
 } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
+import { GuestGoalsPrompt } from "./guest-goals-prompt";
 
 /** /onboarding: goal setup, saved on this device through lib/study-goals. */
 export function OnboardingView() {
   const router = useRouter();
-  const { goals, ready, save } = useStudyGoals();
+  const { goals, ready, save, guest, adoptGuest, dropGuest, dismissGuest } = useStudyGoals();
   const [draft, setDraft] = useState<StudyGoals>(goals);
   const subjects = listGoalSubjects();
 
@@ -44,6 +45,8 @@ export function OnboardingView() {
           Saved on this device only. You can change everything later in Settings.
         </p>
       </div>
+
+      <GuestGoalsPrompt guest={guest} onTransfer={adoptGuest} onDiscard={dropGuest} onLater={dismissGuest} />
 
       <Card>
         <CardHeader>
