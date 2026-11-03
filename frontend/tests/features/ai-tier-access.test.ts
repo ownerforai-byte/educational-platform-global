@@ -10,21 +10,6 @@ import {
 const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
 
-/**
- * AI access policy (owner 2026-10-13: "restrict the ai spark to 1 for public,
- * 7 for member and unlimited for owner" + "create for plus and pro member
- * also like 25 and 50"). Public guests now get three messages per day. Veer
- * chat is metered per tier by AI sparks. This
- * REPLACES the 2026-10-05 owner-only gate (and its old source pins in
- * ai-owner-gate.test.ts) — the owner chose the open, tier-metered policy on
- * 2026-10-13.
- *
- * 2026-10-17: the floating Veer LAUNCHER is now locked under the spark gate —
- * "lock ai widget under spark gate also". Pro + owner pass and open /chat;
- * visitor / member / plus meet a lock that routes to /plans. The /ai and
- * /chat ROUTES stay public (AI-spark metered), so the gate is on the launcher
- * surface, not an owner allowlist.
- */
 describe("AI spark tier table", () => {
   it("allowances: guest 0 · member 3 · plus 25 · pro 50 · owner unlimited", () => {
     expect(AI_SPARK_LIMITS.guest).toBe(0);
@@ -74,7 +59,7 @@ describe("AI spark tier table", () => {
   });
 });
 
-describe("Veer chat: routes stay metered, launcher is the approved-user panel", () => {
+describe("Veer chat: routes stay metered, professor workspace is Plus-gated", () => {
   it("the /ai and /chat layouts no longer gate on owner emails", () => {
     for (const p of ["app/(app)/ai/layout.tsx", "app/(app)/chat/layout.tsx"]) {
       const src = read(p);
@@ -83,13 +68,23 @@ describe("Veer chat: routes stay metered, launcher is the approved-user panel", 
     }
   });
 
-  it("the Veer launcher is a left-side chat for approved accounts only", () => {
+  it("the floating professor workspace is available at Plus and above", () => {
     const src = read("components/layout/ai-widget.tsx");
-    expect(src).toContain("fixed left-4");
-    expect(src).toContain("if (!mounted || isLoading || !user) return null");
-    expect(src).not.toContain("aria-disabled");
+    expect(src).toContain('hasLevel(user, "plus")');
+    expect(src).toContain("Veer Professor");
     expect(src).not.toContain("/plans");
-    expect(src).toContain('from "@/lib/api/ai"');
+  });
+
+  it("integrates all four professor engines without redirecting deep questions", () => {
+    const src = read("components/layout/ai-widget.tsx");
+    expect(src).toContain("streamChat");
+    expect(src).toContain("saveChatHistory");
+    expect(src).toContain('"/api/ai/solve-math"');
+    expect(src).toContain('"/api/ai/deep-dive"');
+    expect(src).toContain("generateQuestions");
+    expect(src).toContain("evaluateAnswers");
+    expect(src).not.toContain("isDeepQuestion");
+    expect(src).not.toContain("router.push");
   });
 
   it("no Veer nav entry carries ownerOnly", () => {
