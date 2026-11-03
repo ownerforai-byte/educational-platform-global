@@ -7,7 +7,7 @@ import { postPlatformGuideMessage } from "@/lib/api/platform-guide";
 type ChatLine = { role: "user" | "assistant"; content: string };
 
 const OPENING =
-  "Hi — I'm Veer AI. Ask me about this platform, plans, and sign-in. I only answer in text, and I don't teach syllabus topics.";
+  "Hi — I'm Veer AI. Ask me anything: I give the short, general answer here, and full step-by-step study help opens after you sign in.";
 
 /**
  * The free visitor chat: a text box and a send button. It does not spend

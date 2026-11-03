@@ -137,8 +137,10 @@ export function MobileNav() {
             className="absolute left-0 top-0 h-full w-80 max-w-[85vw] border-r border-border bg-card p-4 flex flex-col shadow-2xl animate-slide-in-left focus:outline-none"
           >
             <div className="flex items-center justify-between pb-4 mb-2 border-b border-border/50">
+              {/* Brand opens the welcome entry (owner 2026-11-03), matching the
+                  top header. */}
               <Link
-                href="/home"
+                href="/"
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-2.5"
               >

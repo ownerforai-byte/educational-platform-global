@@ -4,6 +4,7 @@ import { getAgnesKey } from "../ai/config";
 import {
   PLATFORM_GUIDE_SYSTEM_PROMPT,
   clampReplyWords,
+  quoteQuestion,
 } from "../ai/platform-guide-prompt";
 import { rateLimit } from "../middleware/rateLimit";
 
@@ -100,10 +101,13 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       choices?: Array<{ message?: { content?: string } }>;
     };
     const raw = data?.choices?.[0]?.message?.content?.trim() ?? "";
+    // An empty completion still answers the question that was asked — the
+    // fixed "ask about plans or sign-in" line ignored whatever the visitor
+    // typed and read like a dodge.
     const reply =
       raw.length > 0
         ? clampReplyWords(raw)
-        : "I am here to tell you about Ravikisan's NEB study platform. Ask about plans or sign-in.";
+        : `That is a fair question about ${quoteQuestion(userText)} — full step-by-step help with it lives inside Veer on a signed-in plan.`;
 
     res.json({ reply, provider: "agnes" });
   } catch (err) {

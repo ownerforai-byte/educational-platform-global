@@ -151,9 +151,9 @@ export function UniversalWelcome() {
             Welcome to Ravikisan&apos;s Platform
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            The visitor home has one chat: a text box and a send button about
-            this platform. Notes, labs, and Veer open after you sign in, on the
-            plan that includes them.
+            Ask anything in one box: you get the short, general answer here.
+            Full step-by-step help, notes, and labs open after you sign in, on
+            the plan that includes them.
           </p>
           <VisitorHomeChat />
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -174,11 +174,11 @@ export function UniversalWelcome() {
         </div>
       </main>
       <footer className="border-t border-border">
+        {/* No plans link here (owner 2026-11-03): the welcome screens carry the
+            brand line only, so the first thing a visitor reads is the welcome
+            itself, not a price ladder. */}
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <span suppressHydrationWarning>© {new Date().getFullYear()} Ravikisan&apos;s Platform · NEB Class 11 &amp; 12</span>
-          <Link href="/plans" className="hover:text-primary hover:underline">
-            Plans
-          </Link>
         </div>
       </footer>
     </div>

@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 type ChatLine = { role: "user" | "assistant"; content: string };
 
 const OPENING =
-  "Hi — I'm Veer AI. I can explain Ravikisan's NEB platform, plans, and sign-in. I don't teach syllabus topics here.";
+  "Hi — I'm Veer AI. Ask me anything: I give the short, general answer here, and full step-by-step help opens inside the app.";
 
 export function PlatformGuideWidget() {
   const pathname = usePathname() ?? "/";

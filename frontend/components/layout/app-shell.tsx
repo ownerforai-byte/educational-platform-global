@@ -100,10 +100,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               }
             </Button>
 
+            {/* The brand opens the welcome entry (owner 2026-11-03): "/" feeds
+                the welcome flow — the universal welcome for a visitor, the
+                matching tier welcome for a signed-in viewer. */}
             <Link
-              href="/home"
+              href="/"
               className="flex shrink-0 items-center gap-2 rounded-xl px-1.5 py-1 transition-all hover:bg-muted/60 group"
-              aria-label="Ravikisan's Platform home"
+              aria-label="Ravikisan's Platform — welcome"
               title="Ravikisan's Platform"
             >
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
