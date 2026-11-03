@@ -5,6 +5,7 @@ import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import {
   Bot,
   Send,
+  Square,
   Loader2,
   Sparkles,
   BookOpen,
@@ -24,6 +25,10 @@ import {
   clearChatHistory,
   enhancePrompt,
 } from "@/lib/api/ai";
+import { AiStatusDot } from "@/components/ai/ai-status-dot";
+import { VoiceMicButton } from "@/components/ai/voice-mic-button";
+import { useVoiceInput } from "@/lib/hooks/use-voice-input";
+import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { StepCards } from "@/components/chat/step-cards";
@@ -67,6 +72,19 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   ]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
+  const voiceSendRef = useRef<(spoken: string) => void>(() => {});
+  const {
+    supported: voiceSupported,
+    listening: voiceListening,
+    interim: voiceInterim,
+    start: voiceStart,
+    stop: voiceStop,
+  } = useVoiceInput({
+    onError: (message) => setError(message),
+    autoSendMs: VOICE_AUTO_SEND_MS,
+    onComplete: (spoken) => voiceSendRef.current(spoken),
+  });
   // Live server phase ("Researching the topic…", "Continuing the answer…").
   // The stream opens before the web research, so the wait is explained.
   const [streamPhase, setStreamPhase] = useState<string | null>(null);
@@ -130,6 +148,8 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     setInput("");
     setSending(true);
     setError(null);
+    const controller = new AbortController();
+    abortRef.current = controller;
 
     try {
       let accumulated = "";
@@ -157,7 +177,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       };
       setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
-      for await (const chunk of streamChat([...messages, userMsg], undefined, { isGuest: !isLoggedIn })) {
+      for await (const chunk of streamChat([...messages, userMsg], undefined, { isGuest: !isLoggedIn, signal: controller.signal })) {
         if (typeof chunk === "string") {
           accumulated += chunk;
           setStreamPhase(null);
@@ -192,6 +212,14 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
         ]).catch(() => {});
       }
     } catch (e: any) {
+      if (controller.signal.aborted) {
+        // Stop pressed: keep the partial answer, drop an empty bubble.
+        setMessages((prev) => {
+          const last = prev[prev.length - 1];
+          return last?.role === "assistant" && !last.content.trim() ? prev.slice(0, -2) : prev;
+        });
+        return;
+      }
       const errText =
         e.message?.includes("429") || e.message?.includes("limit reached")
           ? "Message limit reached. Sign in to continue."
@@ -203,9 +231,18 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             : "Something went wrong. Please try again.";
       setError(errText);
     } finally {
+      if (abortRef.current === controller) abortRef.current = null;
       setSending(false);
       setStreamPhase(null);
     }
+  };
+
+  voiceSendRef.current = (spoken: string) => {
+    if (sending) {
+      setInput((prev) => (prev.trim() ? `${prev.trim()} ${spoken}` : spoken));
+      return;
+    }
+    void sendMessage([input.trim(), spoken].filter(Boolean).join(" "));
   };
 
   /** Rewrite the drafted prompt into a sharper study question before sending. */
@@ -258,15 +295,15 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   return (
     <div className="flex h-[calc(100vh-9rem)] flex-col rounded-2xl border border-border bg-card overflow-hidden">
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-muted/40 shrink-0">
-        <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+      <div className="flex items-center gap-3 px-3 py-2 border-b border-border bg-muted/40 shrink-0">
+        <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center">
           <Bot className="h-5 w-5 text-primary" />
         </div>
         <div className="flex-1 min-w-0">
           <h2 className="text-xs font-bold leading-none">Veer</h2>
           <p className="text-[10px] text-muted-foreground mt-1 flex items-center gap-1.5">
-            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
-            Online · answers + points you to notes, labs &amp; PYQs
+            <AiStatusDot />
+            Answers + points you to notes, labs &amp; PYQs
           </p>
         </div>
         {isLoggedIn && (
@@ -377,25 +414,44 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             onKeyDown={handleKeyDown}
             placeholder="Ask about notes, formulas, labs, past questions…"
             disabled={sending}
-            className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-xs placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-50"
+            className="flex-1 h-10 rounded-xl border border-border bg-background px-3 text-xs placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-50"
           />
           <button
             onClick={handleEnhance}
             disabled={!input.trim() || sending || enhancing}
-            className="h-11 w-11 rounded-xl border border-primary/40 bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+            className="h-10 w-10 rounded-xl border border-primary/40 bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
             title="Enhance my prompt — rewrite it into a sharper study question"
             aria-label="Enhance prompt"
           >
             {enhancing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Wand2 className="h-4 w-4" />}
           </button>
-          <button
-            onClick={() => sendMessage()}
-            disabled={!input.trim() || sending}
-            className="h-11 px-4 rounded-xl bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 disabled:opacity-50 transition-opacity"
-            aria-label="Send message"
-          >
-            <Send className="h-4 w-4" />
-          </button>
+          <VoiceMicButton
+            supported={voiceSupported}
+            listening={voiceListening}
+            interim={voiceInterim}
+            onStart={voiceStart}
+            onStop={voiceStop}
+            disabled={sending}
+          />
+          {sending ? (
+            <button
+              onClick={() => abortRef.current?.abort()}
+              className="h-10 px-3.5 rounded-xl bg-destructive text-destructive-foreground flex items-center justify-center hover:opacity-90 transition-opacity"
+              aria-label="Stop reply"
+              title="Stop the reply"
+            >
+              <Square className="h-3.5 w-3.5 fill-current" />
+            </button>
+          ) : (
+            <button
+              onClick={() => sendMessage()}
+              disabled={!input.trim()}
+              className="h-10 px-3.5 rounded-xl bg-primary text-primary-foreground flex items-center justify-center hover:opacity-90 disabled:opacity-50 transition-opacity"
+              aria-label="Send message"
+            >
+              <Send className="h-4 w-4" />
+            </button>
+          )}
         </div>
       </div>
     </div>

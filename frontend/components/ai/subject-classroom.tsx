@@ -12,6 +12,7 @@ import {
   Languages,
   Plus,
   Send,
+  Square,
   Sigma,
   Sparkles,
   Wand2,
@@ -98,6 +99,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -255,6 +257,8 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
     setInput("");
     setSending(true);
     setError(null);
+    const controller = new AbortController();
+    abortRef.current = controller;
 
     try {
       const payload: AIChatMessage[] = [
@@ -286,6 +290,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       for await (const chunk of streamChat(payload, undefined, {
         session: targetSession,
         isGuest: !isLoggedIn,
+        signal: controller.signal,
       })) {
         if (typeof chunk === "string") {
           if (!sawToken) {
@@ -334,6 +339,8 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       }
       recordAiSparkUse();
     } catch (err: unknown) {
+      // Stop pressed: the partial answer stays on screen, no error banner.
+      if (controller.signal.aborted) return;
       const msg =
         err instanceof Error && err.message
           ? err.message
@@ -348,6 +355,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
         },
       ]);
     } finally {
+      if (abortRef.current === controller) abortRef.current = null;
       setSending(false);
       setStreaming(false);
     }
@@ -558,15 +566,27 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
             <Wand2 className="h-3.5 w-3.5" />
             {enhancing ? "Enhancing…" : "Enhance"}
           </button>
-          <button
-            type="button"
-            onClick={() => void handleSend()}
-            disabled={sending || !input.trim()}
-            className={`inline-flex min-h-10 items-center gap-2 rounded-xl px-5 text-xs font-bold text-white transition disabled:opacity-50 ${classroom.accentBg.replace("/10", "")}`}
-          >
-            <Send className="h-3.5 w-3.5" />
-            {sending ? "Teaching…" : "Ask"}
-          </button>
+          {sending ? (
+            <button
+              type="button"
+              onClick={() => abortRef.current?.abort()}
+              aria-label="Stop reply"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-destructive px-5 text-xs font-bold text-destructive-foreground transition hover:opacity-90"
+            >
+              <Square className="h-3.5 w-3.5 fill-current" />
+              Stop
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => void handleSend()}
+              disabled={!input.trim()}
+              className={`inline-flex min-h-10 items-center gap-2 rounded-xl px-5 text-xs font-bold text-white transition disabled:opacity-50 ${classroom.accentBg.replace("/10", "")}`}
+            >
+              <Send className="h-3.5 w-3.5" />
+              Ask
+            </button>
+          )}
         </div>
         {!isLoggedIn && (
           <p className="mt-2 text-[10px] text-muted-foreground">

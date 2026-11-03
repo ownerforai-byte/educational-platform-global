@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Check, Copy, Send, Shapes, Sparkles, Wand2 } from "lucide-react";
+import { Check, Copy, Send, Shapes, Sparkles, Square, Wand2 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { enhancePrompt, saveChatHistory, streamChat } from "@/lib/api/ai";
 import type { AIChatMessage } from "@/types/api";
@@ -44,6 +44,7 @@ export function DiagramStudio() {
   const [subject, setSubject] = useState<(typeof SUBJECTS)[number]>("Physics");
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [sending, setSending] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
@@ -77,6 +78,8 @@ export function DiagramStudio() {
     setTopic("");
     setSending(true);
     setError(null);
+    const controller = new AbortController();
+    abortRef.current = controller;
 
     try {
       const payload: AIChatMessage[] = [
@@ -103,6 +106,7 @@ export function DiagramStudio() {
       for await (const chunk of streamChat(payload, undefined, {
         isGuest: false,
         session: sessionRef.current,
+        signal: controller.signal,
       })) {
         if (typeof chunk === "string") {
           if (!sawToken) {
@@ -128,12 +132,14 @@ export function DiagramStudio() {
       }
       recordAiSparkUse();
     } catch (err: unknown) {
+      if (controller.signal.aborted) return;
       const msg =
         err instanceof Error && err.message
           ? err.message
           : "Couldn't draw that diagram. Please try again.";
       setError(msg);
     } finally {
+      if (abortRef.current === controller) abortRef.current = null;
       setSending(false);
     }
   };
@@ -205,15 +211,27 @@ export function DiagramStudio() {
             <Wand2 className="h-3.5 w-3.5" />
             {enhancing ? "Enhancing…" : "Enhance brief"}
           </button>
-          <button
-            type="button"
-            onClick={() => void handleDraw()}
-            disabled={sending || !topic.trim()}
-            className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-primary px-5 text-xs font-bold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
-          >
-            <Send className="h-3.5 w-3.5" />
-            {sending ? "Drawing…" : "Draw diagram"}
-          </button>
+          {sending ? (
+            <button
+              type="button"
+              onClick={() => abortRef.current?.abort()}
+              aria-label="Stop reply"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-destructive px-5 text-xs font-bold text-destructive-foreground transition hover:opacity-90"
+            >
+              <Square className="h-3.5 w-3.5 fill-current" />
+              Stop
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => void handleDraw()}
+              disabled={!topic.trim()}
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-primary px-5 text-xs font-bold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
+            >
+              <Send className="h-3.5 w-3.5" />
+              Draw diagram
+            </button>
+          )}
         </div>
       </div>
 

@@ -25,6 +25,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Send,
+  Square,
   User,
   Sparkles,
   Trash2,
@@ -61,6 +62,11 @@ import {
   ChatAttachPreview,
   MAX_ATTACHMENTS,
 } from "@/components/ai/chat-attachments";
+import { AiStatusDot } from "@/components/ai/ai-status-dot";
+import { VoiceMicButton } from "@/components/ai/voice-mic-button";
+import { useVoiceInput } from "@/lib/hooks/use-voice-input";
+import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
+import { appendToDraft, formatDocumentContext } from "@/lib/chat/attach-files";
 import {
   GO_DEEPER_INSTRUCTION,
   KEEP_IT_SHORT_INSTRUCTION,
@@ -593,6 +599,8 @@ export function TutorConsole({
     if (atBottom) setHasNewBelow(false);
   }, []);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const abortRef = useRef<AbortController | null>(null);
+  const voiceSendRef = useRef<(spoken: string) => void>(() => {});
   const historyLoadedRef = useRef(false);
   const sessionRef = useRef(sessionName);
   sessionRef.current = sessionName;
@@ -841,6 +849,8 @@ export function TutorConsole({
       setPendingImages([]);
       setSending(true);
       setError(null);
+      const controller = new AbortController();
+      abortRef.current = controller;
 
       try {
         const payload = [systemMessageFor(effectiveMode), ...outbound];
@@ -883,7 +893,7 @@ export function TutorConsole({
           });
         };
         try {
-          for await (const chunk of streamChat(payload, undefined, { isGuest: !isLoggedIn, console: consoleForMode(effectiveMode), session: targetSession })) {
+          for await (const chunk of streamChat(payload, undefined, { isGuest: !isLoggedIn, console: consoleForMode(effectiveMode), session: targetSession, signal: controller.signal })) {
             if (typeof chunk === "string") {
               if (!sawToken) {
                 sawToken = true;
@@ -918,7 +928,13 @@ export function TutorConsole({
         } catch (streamErr) {
           // Keep partial text if it reached the bubble; only an empty stream
           // re-throws so the failure banner shows.
-          if (!liveAcc.trim()) throw streamErr;
+          // Stop pressed: keep what was written; an empty aborted stream ends quietly.
+          if (!liveAcc.trim() && !controller.signal.aborted) throw streamErr;
+        }
+        if (controller.signal.aborted && !liveAcc.trim()) {
+          setMessages((prev) => (prev[prev.length - 1]?.role === "user" ? prev.slice(0, -1) : prev));
+          setInput(content);
+          return;
         }
         // Agent picks the engine: anything the server could not draw gets a
         // browser-side puter.js attempt (User-Pays, free for the platform).
@@ -983,6 +999,7 @@ export function TutorConsole({
           ]);
         }
       } finally {
+        if (abortRef.current === controller) abortRef.current = null;
         setSending(false);
         setStreaming(false);
         setStreamPhase(null);
@@ -993,6 +1010,28 @@ export function TutorConsole({
 
   const handleSend = (customText?: string) => {
     void sendWith(messages, customText ?? input, mode, pendingImages);
+  };
+
+  /** Stop the reply in progress (typed or voice-sent). */
+  const handleStop = () => abortRef.current?.abort();
+
+  const {
+    supported: voiceSupported,
+    listening: voiceListening,
+    interim: voiceInterim,
+    start: voiceStart,
+    stop: voiceStop,
+  } = useVoiceInput({
+    onError: (message) => setError(message),
+    autoSendMs: VOICE_AUTO_SEND_MS,
+    onComplete: (spoken) => voiceSendRef.current(spoken),
+  });
+  voiceSendRef.current = (spoken: string) => {
+    if (sending || composerLocked) {
+      setInput((prev) => (prev.trim() ? `${prev.trim()} ${spoken}` : spoken));
+      return;
+    }
+    void sendWith(messages, [input.trim(), spoken].filter(Boolean).join(" "), mode, pendingImages);
   };
 
   /** Drop the stale answer and ask the same question again. */
@@ -1099,7 +1138,7 @@ export function TutorConsole({
     <div className="flex h-full min-h-0 flex-col overflow-hidden bg-card">
       {/* ── Header: identity + the green light (kept exactly) + actions ── */}
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
-        <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-3">
+        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 pt-2.5 pb-2">
           <div className="flex items-center gap-2.5 min-w-0">
             {/* Back — this room is the one app route that skips the shell (and
                 so the shell's floating back button), leaving it a dead end.
@@ -1114,11 +1153,8 @@ export function TutorConsole({
                 <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
                   Veer
                 </h2>
-                {/* live dot — the professor is on duty (do not remove) */}
-                <span className="relative flex h-2 w-2 shrink-0" title="Online">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
+                {/* live dot: reflects real AI availability (shared component) */}
+                <AiStatusDot />
               </div>
               <p className="text-[11px] text-muted-foreground truncate">
                 {mode === "General"
@@ -1462,6 +1498,9 @@ export function TutorConsole({
         <div className="flex items-end gap-2">
           <ChatAttachButton
             onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
+            onPickDocument={(name, text) =>
+              setInput((prev) => appendToDraft(prev, formatDocumentContext(name, text)))
+            }
             onError={setError}
             disabled={sending || composerLocked}
             attached={pendingImages.length}
@@ -1472,7 +1511,7 @@ export function TutorConsole({
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            rows={3}
+            rows={2}
             placeholder={
               mode === "General"
                 ? "Ask any Class 11 & 12 doubt… (Enter to send)"
@@ -1483,7 +1522,7 @@ export function TutorConsole({
                     : `Ask a ${mode} question… (Enter to send)`
             }
             disabled={composerLocked || sending}
-            className="min-w-0 flex-1 resize-none rounded-2xl border border-input bg-background px-3 sm:px-4 py-3 text-base sm:text-sm leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
+            className="min-w-0 flex-1 resize-none rounded-2xl border border-input bg-background px-3 py-2 text-base sm:text-sm leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
           />
           <button
             onClick={handleEnhance}
@@ -1498,19 +1537,35 @@ export function TutorConsole({
               <Wand2 className="h-4 w-4" />
             )}
           </button>
-          <button
-            onClick={() => handleSend()}
-            disabled={(!input.trim() && pendingImages.length === 0) || sending || composerLocked}
-            title="Send (Enter)"
-            aria-label="Send message"
-            className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-primary text-white shadow-md shadow-emerald-500/20 hover:opacity-90 transition-opacity flex items-center justify-center disabled:opacity-40"
-          >
-            {sending ? (
-              <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/70 border-t-transparent" />
-            ) : (
+          <VoiceMicButton
+            supported={voiceSupported}
+            listening={voiceListening}
+            interim={voiceInterim}
+            onStart={voiceStart}
+            onStop={voiceStop}
+            disabled={sending || composerLocked}
+          />
+          {sending ? (
+            <button
+              type="button"
+              onClick={handleStop}
+              title="Stop the reply"
+              aria-label="Stop reply"
+              className="h-10 w-10 shrink-0 rounded-xl bg-destructive text-destructive-foreground shadow-md hover:opacity-90 transition-opacity flex items-center justify-center"
+            >
+              <Square className="h-3.5 w-3.5 fill-current" />
+            </button>
+          ) : (
+            <button
+              onClick={() => handleSend()}
+              disabled={(!input.trim() && pendingImages.length === 0) || composerLocked}
+              title="Send (Enter)"
+              aria-label="Send message"
+              className="h-10 w-10 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-primary text-white shadow-md shadow-emerald-500/20 hover:opacity-90 transition-opacity flex items-center justify-center disabled:opacity-40"
+            >
               <Send className="h-4 w-4" />
-            )}
-          </button>
+            </button>
+          )}
         </div>
         <p className="mt-1.5 text-[10px] text-muted-foreground">
           {isLoggedIn

@@ -20,6 +20,7 @@ import {
   UserRound,
   X,
   type LucideIcon,
+  Square,
 } from "lucide-react";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import {
@@ -45,6 +46,8 @@ import {
   type ChatSession,
 } from "@/lib/api/ai";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
+import { AiStatusDot } from "@/components/ai/ai-status-dot";
+import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
 import { SYLLABUS } from "@/lib/syllabus";
 import type {
   AIChatMessage,
@@ -559,7 +562,13 @@ export function AIWidget() {
     start: voiceStart,
     stop: voiceStop,
     clear: voiceClear,
-  } = useVoiceInput({ onError: (message) => setError(message) });
+  } = useVoiceInput({
+    onError: (message) => setError(message),
+    autoSendMs: VOICE_AUTO_SEND_MS,
+    onComplete: (spoken) => voiceSendRef.current(spoken),
+  });
+  const voiceSendRef = useRef<(spoken: string) => void>(() => {});
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (!voiceTranscript) return;
@@ -642,6 +651,8 @@ export function AIWidget() {
     setView("thread");
     setLines((previous) => [...previous, { role: "user", content: text }]);
     setSending(true);
+    const controller = new AbortController();
+    abortRef.current = controller;
     let liveAcc = "";
     let sawToken = false;
     let lastPaint = 0;
@@ -666,7 +677,7 @@ export function AIWidget() {
     };
     try {
       try {
-        for await (const chunk of streamChat(history, undefined, { session })) {
+        for await (const chunk of streamChat(history, undefined, { session, signal: controller.signal })) {
           if (typeof chunk === "string") {
             if (!sawToken) {
               sawToken = true;
@@ -700,8 +711,16 @@ export function AIWidget() {
           }
         }
       } catch (streamError) {
-        if (!liveAcc.trim()) throw streamError;
-        setError("The connection ended early. The partial lesson is preserved; ask Veer to continue if needed.");
+        if (controller.signal.aborted) {
+          if (!liveAcc.trim()) {
+            setLines((previous) => (previous[previous.length - 1]?.role === "user" ? previous.slice(0, -1) : previous));
+            setInput(text);
+            return;
+          }
+        } else {
+          if (!liveAcc.trim()) throw streamError;
+          setError("The connection ended early. The partial lesson is preserved; ask Veer to continue if needed.");
+        }
       }
       const finalContent = liveAcc + figureBlocks();
       paintLive(true);
@@ -718,10 +737,19 @@ export function AIWidget() {
       reportClientError("professor-widget-teach", err);
       setError(errorMessage(err, "Veer could not prepare this lesson. Please try again."));
     } finally {
+      if (abortRef.current === controller) abortRef.current = null;
       setSending(false);
       setStreamPhase(null);
     }
   }
+
+  voiceSendRef.current = (spoken: string) => {
+    if (sending) {
+      setInput((previous) => (previous.trim() ? `${previous.trim()} ${spoken}` : spoken));
+      return;
+    }
+    void send([input.trim(), spoken].filter(Boolean).join(" "));
+  };
 
   return (
     <div className="fixed bottom-safe left-4 z-50 flex flex-col items-start gap-2">
@@ -740,7 +768,7 @@ export function AIWidget() {
                     <span className="hidden rounded-full border border-violet-400/30 bg-violet-400/10 px-2 py-0.5 text-[9px] font-black uppercase tracking-[0.14em] text-violet-300 sm:inline">Plus Studio</span>
                   </div>
                   <p className="mt-0.5 flex items-center gap-1.5 truncate text-[10px] text-slate-400 sm:text-xs">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <AiStatusDot />
                     Teach · solve · synthesize · practise
                   </p>
                 </div>
@@ -892,9 +920,15 @@ export function AIWidget() {
                     className="max-h-32 min-h-10 flex-1 resize-none bg-transparent px-2 py-2 text-sm leading-relaxed outline-none disabled:opacity-60"
                   />
                   <VoiceMicButton supported={voiceSupported} listening={voiceListening} interim={voiceInterim} onStart={voiceStart} onStop={voiceStop} disabled={sending} />
-                  <button type="submit" disabled={sending || !input.trim()} aria-label="Send to Veer Professor" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-600 text-primary-foreground shadow-md shadow-primary/20 transition hover:scale-[1.03] disabled:scale-100 disabled:opacity-40">
-                    {sending ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowUp className="h-4 w-4" />}
-                  </button>
+                  {sending ? (
+                    <button type="button" onClick={() => abortRef.current?.abort()} aria-label="Stop reply" title="Stop the reply" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-destructive text-destructive-foreground shadow-md transition hover:opacity-90">
+                      <Square className="h-3.5 w-3.5 fill-current" />
+                    </button>
+                  ) : (
+                    <button type="submit" disabled={!input.trim()} aria-label="Send to Veer Professor" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-600 text-primary-foreground shadow-md shadow-primary/20 transition hover:scale-[1.03] disabled:scale-100 disabled:opacity-40">
+                      <ArrowUp className="h-4 w-4" />
+                    </button>
+                  )}
                 </div>
                 <p className="mx-auto mt-2 max-w-4xl px-1 text-center text-[10px] text-muted-foreground">Enter to send · Shift + Enter for a new line · lessons save automatically</p>
               </form>
