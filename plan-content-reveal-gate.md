@@ -21,7 +21,7 @@ Resume rule: find first unchecked box; "NEXT:" line says the exact action.
 - [x] 4. Commit 1 gates green + commit
 - [x] 5. FEAT-003 commit 2: relocate gated bodies out of public/data, update build.ts/ledger/validate/readers/scripts, content:build:check + ledger:check green
 - [x] 6. Commit 2 gates green + commit
-- [ ] 7. Final verification + review + REPORT
+- [x] 7. Final verification + review + REPORT
 
 ## Log
 - (init) Branch created from babe41ae.
@@ -37,3 +37,4 @@ Resume rule: find first unchecked box; "NEXT:" line says the exact action.
 - Step 6 gates: content:build byte-identical (no drift), content:build:check parity OK, ledger:build rewrote data-source path, pyq-register --check passed, npm run check exit 0, frontend typecheck clean, vitest lib+features+components+app 125 files / 1132 tests pass (after test env fix), backend tsc clean + vitest 54 files / 650 pass, `next build` succeeds. ledger:check re-run after commit (it reads HEAD bytes).
 - Not changed: scripts/content-ledger-live.mjs still probes /data/syllabus-notes bodies on the CDN; those now 404 by design (it is effectively a live exposure probe). platform-ledger --check fails on a pre-existing false positive (filename containing "token", tracked in content/ and the runtime mirror before this change too).
 - NEXT: Step 7 final verification/REPORT (orchestrator): manual curl on deployed site; confirm Render deploy ships frontend/content-gated and gated-kinds.json.
+- Step 7 DONE: orchestrator re-verified backend reveal tests (11 pass), tree clean. Manual curl on deployed site remains for orchestrator/user. NEXT: publish branch (orchestrator).
