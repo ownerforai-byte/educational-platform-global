@@ -71,14 +71,47 @@ function isRateLimited(key: string, max: number) {
   return entry.count > max;
 }
 
-function buildContentSecurityPolicy(nonce: string) {
+/**
+ * Pages Next prerenders at build time (`x-nextjs-prerender: 1`).
+ *
+ * A per-request nonce can only be stamped into HTML rendered per request, so a
+ * prerendered page would ship its inline bootstrap scripts without one — and a
+ * nonce-bearing CSP blocks exactly those, leaving the page dead (no hydration,
+ * no offline takeover). These routes render a fixed registry entry with no user
+ * input, so they get a nonce-free policy that permits their own inline scripts
+ * instead of a non-functional nonce.
+ */
+const PRERENDERED_ERROR_PATHS = new Set([
+  "/400",
+  "/401",
+  "/403",
+  "/404",
+  "/408",
+  "/429",
+  "/500",
+  "/502",
+  "/503",
+  "/504",
+  "/network",
+  "/offline",
+]);
+
+function buildContentSecurityPolicy(nonce: string | null) {
+  // puter.js (js.puter.com) is the platform's browser-side AI fallback — image
+  // drawing since 2026-09-30 and Mind Studio diagram generation. Without these
+  // two origins the CDN script itself never loads.
+  //
+  // With a nonce: inline scripts must carry it (CSP3 ignores 'unsafe-inline'
+  // whenever a nonce is present). Without one (prerendered pages, see above):
+  // the page's own inline bootstrap is allowed by 'unsafe-inline'.
+  const scriptSrc = nonce
+    ? `script-src 'self' 'nonce-${nonce}' https://js.puter.com`
+    : "script-src 'self' 'unsafe-inline' https://js.puter.com";
+
   return (
     [
       "default-src 'self'",
-      // puter.js (js.puter.com) is the platform's browser-side AI fallback —
-      // image drawing since 2026-09-30 and Mind Studio diagram generation.
-      // Without these two origins the CDN script itself never loads.
-      `script-src 'self' 'nonce-${nonce}' https://js.puter.com`,
+      scriptSrc,
       // fonts.googleapis.com: globals.css @imports Google Fonts — blocking it
       // makes the stylesheet load reject with a raw Event, surfacing as the
       // "[object Event]" unhandled rejection in devtools.
@@ -123,11 +156,13 @@ function isSpeculativeRequest(request: NextRequest) {
 }
 
 export function proxy(request: NextRequest) {
-  const nonce = randomBytes(16).toString("base64");
+  const nonce = PRERENDERED_ERROR_PATHS.has(request.nextUrl.pathname)
+    ? null
+    : randomBytes(16).toString("base64");
   const contentSecurityPolicy = buildContentSecurityPolicy(nonce);
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("Content-Security-Policy", contentSecurityPolicy);
-  requestHeaders.set("x-nonce", nonce);
+  if (nonce) requestHeaders.set("x-nonce", nonce);
 
   const response = NextResponse.next({ request: { headers: requestHeaders } });
   setSecurityHeaders(response, contentSecurityPolicy);
