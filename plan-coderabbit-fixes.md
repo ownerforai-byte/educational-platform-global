@@ -11,7 +11,7 @@ Base: main 4ecbdc27 + merge of feature/study-pages-hardening (20cee371).
 - [x] 7 study-goals: guest goals transfer with explicit confirmation
 - [x] 8 study-views.test.tsx: expected tier per case, compare to minTier
 - [x] 9 CI content-schema: regenerate ledger, `npm run ledger:check` passes
-- [ ] Gates: typecheck, vitest, ledger:check, root npm run check, frontend build
+- [x] Gates: typecheck, vitest, ledger:check, root npm run check, frontend build
 
 ## Notes
 - 3: client gate checks sectionForPath tier before offering unlock (passes through to SectionTierGate); backend POST /credits/unlock now refuses (403, no balance read/write) when the user's rung is below the srs/mock-exams/downloads minimum (backend/src/utils/sectionAccess.ts, honours owner overrides).
