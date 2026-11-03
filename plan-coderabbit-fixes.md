@@ -10,7 +10,7 @@ Base: main 4ecbdc27 + merge of feature/study-pages-hardening (20cee371).
 - [x] 6 scoped-storage: capture scope at load, reject stale save and reload (MyNotesView)
 - [x] 7 study-goals: guest goals transfer with explicit confirmation
 - [x] 8 study-views.test.tsx: expected tier per case, compare to minTier
-- [ ] 9 CI content-schema: regenerate ledger, `npm run ledger:check` passes
+- [x] 9 CI content-schema: regenerate ledger, `npm run ledger:check` passes
 - [ ] Gates: typecheck, vitest, ledger:check, root npm run check, frontend build
 
 ## Notes
