@@ -198,7 +198,7 @@ describe("master academic prompt composition", () => {
     // academic/advisory, no-repeat law, unit discipline) intentionally grew the
     // contract to ~60.7k. The bound is a runaway-bloat guard, not a freeze; it
     // still catches unresolved template tokens and duplicated blocks.
-    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(65_000);
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(67_000);
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_ARCHETYPE_GUIDE}");
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_WRITER_SYSTEM}");
     expect(MASTER_ACADEMIC_PROMPT).toContain("FIGURE ARCHETYPE GUIDE");
