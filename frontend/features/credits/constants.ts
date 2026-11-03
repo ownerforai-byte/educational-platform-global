@@ -107,6 +107,8 @@ export const PUBLIC_PATHS = [
   "/planner",
   "/srs",
   "/mock-exams",
+  "/analytics",
+  "/streaks",
 ] as const;
 
 /**

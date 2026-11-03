@@ -1,4 +1,7 @@
 import { describe, it, expect } from "vitest";
+import { accuracyBySubject, accuracyByTopic, completionByUnit, overallAccuracy, weeklyTrend } from "@/lib/analytics";
+import { evaluateAchievements, nextMilestone } from "@/lib/achievements";
+import type { QuizHistoryRow } from "@/lib/api/ai-quiz-history";
 import { addDays, buildCards, dueQueue, normalizeStore, sm2 } from "@/lib/srs";
 import { buildWeeklyPlan, weakTopicsFromJourney } from "@/lib/study-plan";
 import { answerKey, assembleMock, parseMarks, scoreMock } from "@/lib/mock-exam";
@@ -112,5 +115,47 @@ describe("registry rows", () => {
     expect(NAV_HREFS).toContain(href);
     const hrefs = JSON.stringify(buildSiteIndex());
     expect(hrefs).toContain(`"${href}"`);
+  });
+});
+
+describe("analytics and achievements", () => {
+  const row = (o: Partial<QuizHistoryRow>): QuizHistoryRow => ({
+    id: "1", title: "t", classSlug: null, subjectSlug: "physics", topic: "Optics",
+    difficulty: null, answered: 10, correct: 5, scorePct: 50, createdat: "2026-03-04T10:00:00Z", ...o,
+  });
+  it("aggregates accuracy weakest first and ignores unanswered rows", () => {
+    const rows = [row({}), row({ id: "2", subjectSlug: "chemistry", topic: "Acids", correct: 9 }), row({ id: "3", answered: 0, correct: 0 })];
+    const s = accuracyBySubject(rows);
+    expect(s.map((b) => b.key)).toEqual(["physics", "chemistry"]);
+    expect(s[0].accuracy).toBe(50);
+    expect(accuracyByTopic(rows)[1].label).toBe("Acids");
+    expect(overallAccuracy(rows)).toEqual({ quizzes: 2, answered: 20, accuracy: 70 });
+  });
+  it("builds a weekly trend keyed by Monday", () => {
+    const entries = [{ id: "a", topicId: "x", completed: true, completedAt: "2026-03-05T00:00:00Z", updatedAt: "" }] as ProgressEntry[];
+    const t = weeklyTrend([row({}), row({ id: "2", createdat: "2026-03-12T10:00:00Z", correct: 10 })], entries);
+    expect(t.map((p) => p.week)).toEqual(["2026-03-02", "2026-03-09"]);
+    expect(t[0].topicsCompleted).toBe(1);
+    expect(t[1].accuracy).toBe(100);
+  });
+  it("groups completion per unit", () => {
+    const e = (u: string, done: boolean) => ({ id: u, topicId: u, completed: done, completedAt: null, updatedAt: "", classSlug: "c", subjectSlug: "s", unitSlug: u }) as ProgressEntry;
+    const r = completionByUnit([e("u1", true), e("u1", false), e("u2", false)]);
+    expect(r[0]).toMatchObject({ key: "c/s/u1", total: 2, completed: 1, percent: 50 });
+  });
+  it("evaluates badges and the next milestone", () => {
+    const list = evaluateAchievements({ streak: 4, topicsCompleted: 0, topicsInProgress: 0, percent: 0 });
+    expect(list.find((a) => a.id === "streak-3")?.earned).toBe(true);
+    expect(list.find((a) => a.id === "streak-7")?.progress).toBe(57);
+    expect(nextMilestone(list)?.id).toBe("streak-7");
+    expect(nextMilestone(list.map((a) => ({ ...a, earned: true })))).toBeNull();
+  });
+  it("registers /analytics (pro) and /streaks (member) everywhere", () => {
+    expect(sectionForPath("/analytics")?.minTier).toBe("pro");
+    expect(sectionForPath("/streaks")?.minTier).toBe("member");
+    expect(NAV_HREFS).toEqual(expect.arrayContaining(["/analytics", "/streaks"]));
+    const flat = JSON.stringify(buildSiteIndex());
+    expect(flat).toContain('"/analytics"');
+    expect(flat).toContain('"/streaks"');
   });
 });

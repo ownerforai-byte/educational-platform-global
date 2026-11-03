@@ -248,6 +248,18 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Exam",
       },
       {
+        name: "Analytics",
+        opening: "Accuracy by subject and topic, unit progress and a weekly trend from your quizzes and progress.",
+        href: "/analytics",
+        meta: "Insight",
+      },
+      {
+        name: "Streaks and Badges",
+        opening: "Your study streak, the badges you have earned and the next milestone to chase.",
+        href: "/streaks",
+        meta: "Habit",
+      },
+      {
         name: "Saved Bookmarks",
         opening: "Everything you starred, in the order you saved it.",
         href: "/bookmarks",

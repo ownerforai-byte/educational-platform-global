@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import {
   Atom,
+  Award,
   BookOpen,
   Calculator,
   CalendarCheck,
@@ -362,6 +363,22 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "pro",
     icon: Timer,
     href: "/mock-exams",
+  },
+  {
+    id: "analytics",
+    title: "Analytics",
+    description: "Accuracy by subject and topic, unit progress and weekly trends. Opens at Pro.",
+    minTier: "pro",
+    icon: LineChart,
+    href: "/analytics",
+  },
+  {
+    id: "streaks",
+    title: "Streaks and Badges",
+    description: "Your study streak, badges and the next milestone. Opens at Member.",
+    minTier: "member",
+    icon: Award,
+    href: "/streaks",
   },
 
   // ── Owner rung ──
