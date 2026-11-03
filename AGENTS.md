@@ -27,7 +27,7 @@ Every repository file belongs to one of these two agent-facing classes:
 Use the classifier without opening file contents:
 
 ```bash
-npm run classify -- frontend/app/\(app\)/home/page.tsx content/ravikishan/class-11-notes/physics/example.json
+npm run classify -- frontend/app/\(app\)/home/page.tsx content/notes/concepts/class-11/physics/example.json
 npm run classify -- --all
 ```
 

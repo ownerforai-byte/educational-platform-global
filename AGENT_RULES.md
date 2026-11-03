@@ -17,7 +17,7 @@ repository.
 ## 🚨 Hardcoded Boundary Rules: What to Do & What to Avoid
 
 ### 🛑 What Every Agent MUST AVOID (Strictly Forbidden):
-1. **DO NOT READ ALL FILES OR BROWSE CONTENT FOLDERS.** Never run blanket directory sweeps or mass file reads on `content/ravikishan/**` or `frontend/public/data/**`. Over 8,000 files are payload data.
+1. **DO NOT READ ALL FILES OR BROWSE CONTENT FOLDERS.** Never run blanket directory sweeps or mass file reads on `content/notes/concepts/**` or `frontend/public/data/**`. Over 8,000 files are payload data.
 2. **DO NOT GUESS OR INVENT ROUTES.** All routing lives in `frontend/lib/navigation.ts` and `frontend/lib/site-index.ts`.
 3. **DO NOT DRIFT OFF-TASK.** Do strictly what is requested. Never perform unrequested refactors, style rewrites, or widespread file renames.
 

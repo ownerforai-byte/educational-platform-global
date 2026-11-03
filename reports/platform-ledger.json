@@ -1,60 +1,52 @@
 {
   "generatedBy": "scripts/platform-ledger.mjs",
-  "generatedAt": "2026-10-10T15:57:19.498Z",
+  "generatedAt": "2026-11-03T12:56:11.806Z",
   "totals": {
-    "files": 7926,
-    "tracked": 6860,
-    "untracked": 1055,
-    "modifiedTracked": 2019,
-    "rootIgnored": 11,
+    "files": 9952,
+    "tracked": 9949,
+    "untracked": 1,
+    "modifiedTracked": 36,
+    "rootIgnored": 2,
     "byClass": {
       "tool-scratch": 7,
-      "config": 22,
-      "ci": 5,
-      "docs": 13,
-      "external-project": 15,
-      "data": 3,
-      "backend-tooling": 1983,
-      "backend-core": 91,
-      "backend-tests": 33,
+      "stray": 86,
+      "config": 18,
+      "ci": 9,
+      "docs": 24,
+      "external-project": 14,
+      "data": 239,
+      "backend-tooling": 1985,
+      "backend-core": 122,
+      "backend-tests": 51,
       "content-tooling": 53,
-      "content-source": 3374,
-      "frontend-config": 74,
-      "frontend-app": 168,
-      "frontend-components": 150,
-      "frontend-lab": 351,
-      "frontend-features": 78,
-      "frontend-lib": 190,
-      "content-runtime": 1073,
-      "content-assets": 21,
-      "frontend-tests": 78,
-      "routed-moved": 1,
-      "tooling-scripts": 134,
-      "reports": 6,
-      "secret": 3
+      "content-source": 4491,
+      "secret": 2,
+      "frontend-config": 118,
+      "frontend-app": 253,
+      "frontend-components": 209,
+      "frontend-lab": 354,
+      "frontend-features": 88,
+      "frontend-lib": 236,
+      "content-runtime": 1140,
+      "content-assets": 133,
+      "frontend-tests": 120,
+      "reports": 10,
+      "tooling-scripts": 190
     }
   },
   "secrets": {
     "files": [
       {
-        "path": ".env",
-        "git": "ignored",
+        "path": "content/notes/concepts/class-11/english/literature-essays-plays/05-essay-5-scientific-research-is-a-token-of-humankind-s-survival-vladimir-keilis-borok.json",
+        "git": "tracked",
         "cls": "secret",
         "area": "n/a — never commit",
         "branch": "n/a",
         "action": "keep ignored; rotate if exposed"
       },
       {
-        "path": "cloudflare-token.txt",
-        "git": "ignored",
-        "cls": "secret",
-        "area": "n/a — never commit",
-        "branch": "n/a",
-        "action": "keep ignored; rotate if exposed"
-      },
-      {
-        "path": "vercel-token.txt",
-        "git": "ignored",
+        "path": "frontend/public/data/syllabus-notes/english/literature-essays-plays/05-essay-5-scientific-research-is-a-token-of-humankind-s-survival-vladimir-keilis-borok.json",
+        "git": "tracked",
         "cls": "secret",
         "area": "n/a — never commit",
         "branch": "n/a",
@@ -62,14 +54,444 @@
       }
     ],
     "grepHits": [],
-    "patternNoise": 48
+    "patternNoise": 81
   },
   "externals": [
     "agnes-bridge",
-    "cell-architecture-studio",
     "visuals-py"
   ],
-  "strays": [],
+  "strays": [
+    {
+      "path": ".commandcode/settings.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": ".commandcode/taste/taste-(global)/taste.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": ".commandcode/taste/taste.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/.gitignore",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/README.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/build.gradle",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/AndroidManifest.xml",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/java/com/ravikisan/platform/Application.java",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/java/com/ravikisan/platform/DelegationService.java",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/java/com/ravikisan/platform/LauncherActivity.java",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-anydpi/shortcut_legacy_background.xml",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-hdpi/ic_notification_icon.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-hdpi/splash.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-mdpi/ic_notification_icon.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-mdpi/splash.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-xhdpi/ic_notification_icon.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-xhdpi/splash.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-xxhdpi/ic_notification_icon.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-xxhdpi/splash.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-xxxhdpi/ic_notification_icon.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/drawable-xxxhdpi/splash.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-hdpi/ic_maskable.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-mdpi/ic_maskable.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-xhdpi/ic_maskable.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-xxhdpi/ic_maskable.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/mipmap-xxxhdpi/ic_maskable.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/raw/web_app_manifest.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/values/colors.xml",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/values/strings.xml",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/xml/filepaths.xml",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/app/src/main/res/xml/shortcuts.xml",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/build.gradle",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/gradle.properties",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/gradle/wrapper/gradle-wrapper.jar",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/gradle/wrapper/gradle-wrapper.properties",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/gradlew",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/gradlew.bat",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/settings.gradle",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/android/store_icon.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/bubblewrap.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/build-release.bat",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/do-build.bat",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/fill-placeholders.cjs",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/generate-twa.js",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/install-sdk.bat",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/package-lock.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/package.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "android-twa/twa-manifest.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "check-thin-class12.mjs",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "eigent-diagnostics-1.0.6-1792514046791.zip",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "plans/AI-STUDY-EXPERIENCE.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "plans/PHYSICS-XI-COMPANION-HANDOFF.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/README.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/app-listing.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/content-rating.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/cookie-policy.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/data-safety.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/host/cookie-policy.html",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/host/privacy-policy.html",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/host/purchase-refund-policy.html",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/host/terms-of-service.html",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/privacy-policy.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/publishing-checklist.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/purchase-refund-policy.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/ravikisan-platform-release.aab",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "play-store/terms-of-service.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "quiz-error-state.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "quiz-page.png",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "requirements.txt",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tokenkit-out/context.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/.env.example",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/.gitignore",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/README.md",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/package-lock.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/package.json",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/src/agent.mjs",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/src/cli.mjs",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/src/curriculum.mjs",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/test/agent.test.mjs",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    },
+    {
+      "path": "tools/cline-tutor-agent/test/curriculum.test.mjs",
+      "git": "tracked",
+      "action": "decide: move, delete, or register a home"
+    }
+  ],
   "content": {
     "gateScopes": [
       "biology/floral-diversity",
@@ -87,103 +509,67 @@
     ],
     "diversity": [
       {
-        "key": "source:class-12-notes/biology",
-        "thin": 63,
+        "key": "source:class-12/chemistry",
+        "thin": 35,
+        "empty": 0,
+        "duplicates": 13,
+        "variants": 0,
+        "legacy": 0,
+        "files": 96
+      },
+      {
+        "key": "source:class-11/physics",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 42,
+        "variants": 3,
+        "legacy": 13,
+        "files": 505
+      },
+      {
+        "key": "source:class-11/mathematics",
+        "thin": 5,
+        "empty": 29,
+        "duplicates": 6,
+        "variants": 0,
+        "legacy": 0,
+        "files": 157
+      },
+      {
+        "key": "source:class-11/chemistry",
+        "thin": 31,
+        "empty": 0,
+        "duplicates": 2,
+        "variants": 0,
+        "legacy": 0,
+        "files": 399
+      },
+      {
+        "key": "source:class-12/mathematics",
+        "thin": 28,
+        "empty": 0,
+        "duplicates": 4,
+        "variants": 1,
+        "legacy": 0,
+        "files": 93
+      },
+      {
+        "key": "source:class-11/nepali",
+        "thin": 19,
+        "empty": 5,
+        "duplicates": 2,
+        "variants": 0,
+        "legacy": 0,
+        "files": 100
+      },
+      {
+        "key": "source:class-12/biology",
+        "thin": 19,
         "empty": 0,
         "duplicates": 6,
         "variants": 0,
         "legacy": 0,
         "files": 90
-      },
-      {
-        "key": "source:class-12-notes/chemistry",
-        "thin": 45,
-        "empty": 0,
-        "duplicates": 10,
-        "variants": 0,
-        "legacy": 0,
-        "files": 93
-      },
-      {
-        "key": "source:class-12-notes/physics",
-        "thin": 48,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 85
-      },
-      {
-        "key": "source:class-11-notes/mathematics",
-        "thin": 6,
-        "empty": 36,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 127
-      },
-      {
-        "key": "source:class-12-notes/mathematics",
-        "thin": 41,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 89
-      },
-      {
-        "key": "source:class-11-notes/chemistry",
-        "thin": 40,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 306
-      },
-      {
-        "key": "source:class-11-notes/physics",
-        "thin": 23,
-        "empty": 13,
-        "duplicates": 2,
-        "variants": 0,
-        "legacy": 0,
-        "files": 306
-      },
-      {
-        "key": "source:class-11/chemistry",
-        "thin": 8,
-        "empty": 29,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 73
-      },
-      {
-        "key": "source:class-11/physics",
-        "thin": 11,
-        "empty": 20,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 78
-      },
-      {
-        "key": "source:class-11-notes/nepali",
-        "thin": 19,
-        "empty": 5,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 44
-      },
-      {
-        "key": "runtime:chemistry/chemistry-of-non-metals",
-        "thin": 3,
-        "empty": 15,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 33
       },
       {
         "key": "runtime:mathematics/limits-and-continuity",
@@ -195,44 +581,35 @@
         "files": 17
       },
       {
-        "key": "source:class-12-notes/nepali",
+        "key": "source:class-12/nepali",
         "thin": 15,
         "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 47
+      },
+      {
+        "key": "runtime:nepali/bhasha-ra-vyakarana",
+        "thin": 0,
+        "empty": 13,
         "duplicates": 0,
         "variants": 0,
         "legacy": 0,
-        "files": 22
+        "files": 24
       },
       {
-        "key": "runtime:chemistry/chemistry-of-metals",
-        "thin": 3,
-        "empty": 8,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 22
-      },
-      {
-        "key": "runtime:mathematics/algebra",
-        "thin": 4,
-        "empty": 7,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 14
-      },
-      {
-        "key": "source:class-12-notes/english",
-        "thin": 10,
+        "key": "source:class-12/physics",
+        "thin": 0,
         "empty": 0,
-        "duplicates": 0,
+        "duplicates": 8,
         "variants": 0,
         "legacy": 0,
-        "files": 29
+        "files": 93
       },
       {
         "key": "runtime:mathematics/vectors",
-        "thin": 2,
+        "thin": 0,
         "empty": 8,
         "duplicates": 0,
         "variants": 0,
@@ -240,85 +617,13 @@
         "files": 11
       },
       {
-        "key": "runtime:biology/faunal-diversity",
-        "thin": 1,
-        "empty": 8,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 19
-      },
-      {
-        "key": "runtime:chemistry/hydrocarbons",
-        "thin": 4,
-        "empty": 5,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 13
-      },
-      {
-        "key": "runtime:chemistry/aromatic-hydrocarbons",
-        "thin": 2,
-        "empty": 5,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 12
-      },
-      {
-        "key": "runtime:nepali/bhasha-ra-vyakarana",
+        "key": "source:class-11/biology",
         "thin": 0,
-        "empty": 7,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 8
-      },
-      {
-        "key": "runtime:physics/nuclear-physics",
-        "thin": 3,
-        "empty": 4,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 12
-      },
-      {
-        "key": "source:class-11-notes/biology",
-        "thin": 6,
         "empty": 0,
-        "duplicates": 0,
+        "duplicates": 6,
         "variants": 0,
         "legacy": 0,
-        "files": 132
-      },
-      {
-        "key": "runtime:chemistry/fundamental-principles-of-organic-chemistry",
-        "thin": 3,
-        "empty": 3,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 13
-      },
-      {
-        "key": "runtime:chemistry/modern-chemical-manufactures",
-        "thin": 1,
-        "empty": 5,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 7
-      },
-      {
-        "key": "runtime:mathematics/calculus",
-        "thin": 5,
-        "empty": 1,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 30
+        "files": 175
       },
       {
         "key": "runtime:nepali/bhasha-tatha-vyakaran",
@@ -330,49 +635,13 @@
         "files": 6
       },
       {
-        "key": "source:class-11-notes/english",
-        "thin": 5,
-        "empty": 0,
-        "duplicates": 0,
+        "key": "runtime:mathematics/analytic-geometry",
+        "thin": 1,
+        "empty": 1,
+        "duplicates": 2,
         "variants": 0,
         "legacy": 0,
-        "files": 76
-      },
-      {
-        "key": "source:class-11e/physics",
-        "thin": 5,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 29
-      },
-      {
-        "key": "runtime:physics/ideal-gas",
-        "thin": 3,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 10
-      },
-      {
-        "key": "runtime:chemistry/bio-inorganic-chemistry",
-        "thin": 0,
-        "empty": 4,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 8
-      },
-      {
-        "key": "runtime:chemistry/fundamentals-of-applied-chemistry",
-        "thin": 2,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 6
+        "files": 9
       },
       {
         "key": "runtime:nepali/lekhan-koushal",
@@ -384,49 +653,22 @@
         "files": 4
       },
       {
-        "key": "source:class-11/mathematics",
-        "thin": 3,
+        "key": "runtime:physics/vectors",
+        "thin": 0,
         "empty": 0,
-        "duplicates": 0,
+        "duplicates": 4,
         "variants": 0,
         "legacy": 0,
-        "files": 22
+        "files": 18
       },
       {
-        "key": "runtime:biology/biota-and-environment",
+        "key": "runtime:mathematics/algebra",
         "thin": 0,
         "empty": 3,
         "duplicates": 0,
         "variants": 0,
         "legacy": 0,
-        "files": 6
-      },
-      {
-        "key": "runtime:biology/conservation-biology",
-        "thin": 1,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 7
-      },
-      {
-        "key": "runtime:chemistry/foundation-and-fundamentals",
-        "thin": 3,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 8
-      },
-      {
-        "key": "runtime:english/language-and-grammar",
-        "thin": 0,
-        "empty": 3,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 3
+        "files": 14
       },
       {
         "key": "runtime:nepali/katha-natak-ra-sanskriti",
@@ -435,7 +677,16 @@
         "duplicates": 0,
         "variants": 0,
         "legacy": 0,
-        "files": 3
+        "files": 11
+      },
+      {
+        "key": "runtime:nepali/lekhan-ra-rachana",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 12
       },
       {
         "key": "runtime:nepali/sanskriti-tatha-samaj",
@@ -447,441 +698,334 @@
         "files": 3
       },
       {
-        "key": "runtime:physics/gravitation",
-        "thin": 2,
-        "empty": 1,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 13
-      },
-      {
-        "key": "runtime:physics/heat-and-temperature",
-        "thin": 1,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 8
-      },
-      {
-        "key": "runtime:physics/optics",
-        "thin": 0,
-        "empty": 3,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 3
-      },
-      {
-        "key": "runtime:physics/quantity-of-heat",
-        "thin": 3,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 13
-      },
-      {
-        "key": "runtime:biology/ecology",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 9
-      },
-      {
-        "key": "runtime:biology/evolutionary-biology",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 9
-      },
-      {
-        "key": "runtime:biology/vegetation",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 5
-      },
-      {
-        "key": "runtime:chemistry/oxidation-and-reduction",
-        "thin": 2,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 6
-      },
-      {
-        "key": "runtime:english/critical-thinking",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 2
-      },
-      {
-        "key": "runtime:mathematics/analytic-geometry",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 6
-      },
-      {
-        "key": "runtime:mathematics/computational-methods-or-mechanics",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 5
-      },
-      {
-        "key": "runtime:mathematics/statistics-and-probability",
-        "thin": 2,
-        "empty": 0,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 2
-      },
-      {
-        "key": "runtime:mathematics/trigonometry",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 3
-      },
-      {
-        "key": "runtime:nepali/lekhan-ra-rachana",
-        "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 2
-      },
-      {
         "key": "runtime:nepali/sahitya-adhyayan",
         "thin": 0,
         "empty": 2,
         "duplicates": 0,
         "variants": 0,
         "legacy": 0,
-        "files": 7
+        "files": 31
       },
       {
-        "key": "runtime:physics/dc-circuits",
-        "thin": 2,
+        "key": "source:class-11/english",
+        "thin": 0,
         "empty": 0,
-        "duplicates": 0,
+        "duplicates": 1,
         "variants": 0,
         "legacy": 0,
-        "files": 12
+        "files": 132
       },
       {
-        "key": "runtime:physics/lenses",
-        "thin": 1,
-        "empty": 1,
-        "duplicates": 0,
+        "key": "runtime:biology/biota-and-environment",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
         "variants": 0,
         "legacy": 0,
-        "files": 4
+        "files": 11
       },
       {
-        "key": "runtime:physics/refraction-through-prisms",
-        "thin": 2,
+        "key": "runtime:biology/conservation-biology",
+        "thin": 0,
         "empty": 0,
-        "duplicates": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:biology/ecology",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 15
+      },
+      {
+        "key": "runtime:biology/faunal-diversity",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 21
+      },
+      {
+        "key": "runtime:biology/vegetation",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
         "variants": 0,
         "legacy": 0,
         "files": 6
       },
       {
-        "key": "runtime:physics/solids",
-        "thin": 1,
-        "empty": 1,
-        "duplicates": 0,
+        "key": "runtime:chemistry/classification-of-elements-and-periodic-table",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
         "variants": 0,
         "legacy": 0,
-        "files": 5
+        "files": 8
+      },
+      {
+        "key": "runtime:chemistry/states-of-matter",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 20
+      },
+      {
+        "key": "runtime:english/writing-and-composition",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 33
+      },
+      {
+        "key": "runtime:mathematics/calculus",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 40
+      },
+      {
+        "key": "runtime:physics/alternating-current",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 7
+      },
+      {
+        "key": "runtime:physics/dynamics",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 16
+      },
+      {
+        "key": "runtime:physics/electric-charges",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:physics/rate-of-heat-flow",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:physics/recent-trends-in-physics",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:physics/refraction-through-prisms",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 7
+      },
+      {
+        "key": "runtime:physics/solids",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 1,
+        "legacy": 0,
+        "files": 7
+      },
+      {
+        "key": "runtime:physics/thermal-expansion",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 1,
+        "variants": 0,
+        "legacy": 0,
+        "files": 10
       },
       {
         "key": "runtime:physics/work-energy-and-power",
         "thin": 0,
-        "empty": 2,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 7
-      },
-      {
-        "key": "runtime:physics/work-energy-power",
-        "thin": 1,
-        "empty": 1,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 4
-      },
-      {
-        "key": "runtime:biology/introductory-microbiology",
-        "thin": 0,
-        "empty": 1,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 6
-      },
-      {
-        "key": "runtime:chemistry/chemical-bonding-and-shapes-of-molecules",
-        "thin": 0,
-        "empty": 1,
-        "duplicates": 0,
+        "empty": 0,
+        "duplicates": 1,
         "variants": 0,
         "legacy": 0,
         "files": 12
       },
       {
-        "key": "runtime:chemistry/chemical-equilibrium",
-        "thin": 0,
-        "empty": 1,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 9
-      },
-      {
         "key": "runtime:physics/dispersion",
         "thin": 0,
-        "empty": 1,
+        "empty": 0,
         "duplicates": 0,
-        "variants": 0,
+        "variants": 1,
         "legacy": 0,
-        "files": 4
+        "files": 7
       },
       {
-        "key": "runtime:physics/reflection-at-curved-mirror",
+        "key": "runtime:physics/heat-and-temperature",
         "thin": 0,
-        "empty": 1,
-        "duplicates": 0,
-        "variants": 0,
-        "legacy": 0,
-        "files": 2
-      },
-      {
-        "key": "runtime:physics/refraction-at-plane-surfaces",
-        "thin": 1,
         "empty": 0,
         "duplicates": 0,
         "variants": 0,
-        "legacy": 0,
-        "files": 6
+        "legacy": 1,
+        "files": 15
       },
       {
-        "key": "runtime:physics/thermal-expansion",
-        "thin": 1,
+        "key": "runtime:physics/mechanics",
+        "thin": 0,
         "empty": 0,
         "duplicates": 0,
         "variants": 0,
+        "legacy": 7,
+        "files": 7
+      },
+      {
+        "key": "runtime:physics/nuclear-physics",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 1,
         "legacy": 0,
+        "files": 15
+      },
+      {
+        "key": "runtime:physics/optics",
+        "thin": 0,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 5,
         "files": 8
       }
     ],
     "totals": {
-      "thin": 407,
-      "empty": 262,
-      "duplicates": 18,
-      "variants": 0,
-      "legacy": 0
+      "thin": 153,
+      "empty": 96,
+      "duplicates": 116,
+      "variants": 7,
+      "legacy": 26
     }
   },
   "links": [
     {
-      "unit": "class-11-notes/biology",
-      "source": "content/ravikishan/**/class-11-notes/biology/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/biology/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
-      "sourceFiles": 132,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-11-notes/chemistry",
-      "source": "content/ravikishan/**/class-11-notes/chemistry/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/chemistry/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
-      "sourceFiles": 306,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-11-notes/english",
-      "source": "content/ravikishan/**/class-11-notes/english/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/english/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
-      "sourceFiles": 76,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-11-notes/mathematics",
-      "source": "content/ravikishan/**/class-11-notes/mathematics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/mathematics/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
-      "sourceFiles": 127,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-11-notes/nepali",
-      "source": "content/ravikishan/**/class-11-notes/nepali/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/nepali/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
-      "sourceFiles": 44,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-11-notes/physics",
-      "source": "content/ravikishan/**/class-11-notes/physics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/physics/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
-      "sourceFiles": 306,
-      "runtimeFiles": 0
-    },
-    {
       "unit": "class-11/biology",
-      "source": "content/ravikishan/**/class-11/biology/",
+      "source": "content/**/class-11/biology/",
       "runtime": "frontend/public/data/syllabus-notes/class-11/biology/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
-      "sourceFiles": 6,
+      "sourceFiles": 175,
       "runtimeFiles": 0
     },
     {
       "unit": "class-11/chemistry",
-      "source": "content/ravikishan/**/class-11/chemistry/",
+      "source": "content/**/class-11/chemistry/",
       "runtime": "frontend/public/data/syllabus-notes/class-11/chemistry/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
-      "sourceFiles": 73,
+      "sourceFiles": 399,
       "runtimeFiles": 0
     },
     {
       "unit": "class-11/english",
-      "source": "content/ravikishan/**/class-11/english/",
+      "source": "content/**/class-11/english/",
       "runtime": "frontend/public/data/syllabus-notes/class-11/english/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
-      "sourceFiles": 10,
+      "sourceFiles": 132,
       "runtimeFiles": 0
     },
     {
       "unit": "class-11/mathematics",
-      "source": "content/ravikishan/**/class-11/mathematics/",
+      "source": "content/**/class-11/mathematics/",
       "runtime": "frontend/public/data/syllabus-notes/class-11/mathematics/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
-      "sourceFiles": 22,
+      "sourceFiles": 157,
       "runtimeFiles": 0
     },
     {
       "unit": "class-11/nepali",
-      "source": "content/ravikishan/**/class-11/nepali/",
+      "source": "content/**/class-11/nepali/",
       "runtime": "frontend/public/data/syllabus-notes/class-11/nepali/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
-      "sourceFiles": 4,
+      "sourceFiles": 100,
       "runtimeFiles": 0
     },
     {
       "unit": "class-11/physics",
-      "source": "content/ravikishan/**/class-11/physics/",
+      "source": "content/**/class-11/physics/",
       "runtime": "frontend/public/data/syllabus-notes/class-11/physics/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
-      "sourceFiles": 78,
+      "sourceFiles": 505,
       "runtimeFiles": 0
     },
     {
-      "unit": "class-11e/biology",
-      "source": "content/ravikishan/**/class-11e/biology/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11e/biology/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11e/_manifest.json",
-      "sourceFiles": 2,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-11e/mathematics",
-      "source": "content/ravikishan/**/class-11e/mathematics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11e/mathematics/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11e/_manifest.json",
-      "sourceFiles": 1,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-11e/physics",
-      "source": "content/ravikishan/**/class-11e/physics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11e/physics/",
-      "manifest": "frontend/public/data/syllabus-notes/class-11e/_manifest.json",
-      "sourceFiles": 29,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-12-notes/biology",
-      "source": "content/ravikishan/**/class-12-notes/biology/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/biology/",
-      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
+      "unit": "class-12/biology",
+      "source": "content/**/class-12/biology/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12/biology/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
       "sourceFiles": 90,
       "runtimeFiles": 0
     },
     {
-      "unit": "class-12-notes/chemistry",
-      "source": "content/ravikishan/**/class-12-notes/chemistry/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/chemistry/",
-      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
-      "sourceFiles": 93,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-12-notes/english",
-      "source": "content/ravikishan/**/class-12-notes/english/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/english/",
-      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
-      "sourceFiles": 29,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-12-notes/mathematics",
-      "source": "content/ravikishan/**/class-12-notes/mathematics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/mathematics/",
-      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
-      "sourceFiles": 89,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-12-notes/nepali",
-      "source": "content/ravikishan/**/class-12-notes/nepali/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/nepali/",
-      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
-      "sourceFiles": 22,
-      "runtimeFiles": 0
-    },
-    {
-      "unit": "class-12-notes/physics",
-      "source": "content/ravikishan/**/class-12-notes/physics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/physics/",
-      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
-      "sourceFiles": 85,
+      "unit": "class-12/chemistry",
+      "source": "content/**/class-12/chemistry/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12/chemistry/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
+      "sourceFiles": 96,
       "runtimeFiles": 0
     },
     {
       "unit": "class-12/english",
-      "source": "content/ravikishan/**/class-12/english/",
+      "source": "content/**/class-12/english/",
       "runtime": "frontend/public/data/syllabus-notes/class-12/english/",
       "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
-      "sourceFiles": 1,
+      "sourceFiles": 70,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12/mathematics",
+      "source": "content/**/class-12/mathematics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12/mathematics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
+      "sourceFiles": 93,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12/nepali",
+      "source": "content/**/class-12/nepali/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12/nepali/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
+      "sourceFiles": 47,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12/physics",
+      "source": "content/**/class-12/physics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12/physics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
+      "sourceFiles": 93,
       "runtimeFiles": 0
     }
   ],
@@ -924,8 +1068,95 @@
     {
       "step": 5,
       "task": "Route strays (see strays[]) into registered homes or delete",
-      "detail": [],
-      "status": "done 2026-10-10 (0 strays left; drift gate green)"
+      "detail": [
+        ".commandcode/settings.json",
+        ".commandcode/taste/taste-(global)/taste.md",
+        ".commandcode/taste/taste.md",
+        "android-twa/.gitignore",
+        "android-twa/README.md",
+        "android-twa/android/app/build.gradle",
+        "android-twa/android/app/src/main/AndroidManifest.xml",
+        "android-twa/android/app/src/main/java/com/ravikisan/platform/Application.java",
+        "android-twa/android/app/src/main/java/com/ravikisan/platform/DelegationService.java",
+        "android-twa/android/app/src/main/java/com/ravikisan/platform/LauncherActivity.java",
+        "android-twa/android/app/src/main/res/drawable-anydpi/shortcut_legacy_background.xml",
+        "android-twa/android/app/src/main/res/drawable-hdpi/ic_notification_icon.png",
+        "android-twa/android/app/src/main/res/drawable-hdpi/splash.png",
+        "android-twa/android/app/src/main/res/drawable-mdpi/ic_notification_icon.png",
+        "android-twa/android/app/src/main/res/drawable-mdpi/splash.png",
+        "android-twa/android/app/src/main/res/drawable-xhdpi/ic_notification_icon.png",
+        "android-twa/android/app/src/main/res/drawable-xhdpi/splash.png",
+        "android-twa/android/app/src/main/res/drawable-xxhdpi/ic_notification_icon.png",
+        "android-twa/android/app/src/main/res/drawable-xxhdpi/splash.png",
+        "android-twa/android/app/src/main/res/drawable-xxxhdpi/ic_notification_icon.png",
+        "android-twa/android/app/src/main/res/drawable-xxxhdpi/splash.png",
+        "android-twa/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "android-twa/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "android-twa/android/app/src/main/res/mipmap-hdpi/ic_maskable.png",
+        "android-twa/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "android-twa/android/app/src/main/res/mipmap-mdpi/ic_maskable.png",
+        "android-twa/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "android-twa/android/app/src/main/res/mipmap-xhdpi/ic_maskable.png",
+        "android-twa/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "android-twa/android/app/src/main/res/mipmap-xxhdpi/ic_maskable.png",
+        "android-twa/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "android-twa/android/app/src/main/res/mipmap-xxxhdpi/ic_maskable.png",
+        "android-twa/android/app/src/main/res/raw/web_app_manifest.json",
+        "android-twa/android/app/src/main/res/values/colors.xml",
+        "android-twa/android/app/src/main/res/values/strings.xml",
+        "android-twa/android/app/src/main/res/xml/filepaths.xml",
+        "android-twa/android/app/src/main/res/xml/shortcuts.xml",
+        "android-twa/android/build.gradle",
+        "android-twa/android/gradle.properties",
+        "android-twa/android/gradle/wrapper/gradle-wrapper.jar",
+        "android-twa/android/gradle/wrapper/gradle-wrapper.properties",
+        "android-twa/android/gradlew",
+        "android-twa/android/gradlew.bat",
+        "android-twa/android/settings.gradle",
+        "android-twa/android/store_icon.png",
+        "android-twa/bubblewrap.json",
+        "android-twa/build-release.bat",
+        "android-twa/do-build.bat",
+        "android-twa/fill-placeholders.cjs",
+        "android-twa/generate-twa.js",
+        "android-twa/install-sdk.bat",
+        "android-twa/package-lock.json",
+        "android-twa/package.json",
+        "android-twa/twa-manifest.json",
+        "check-thin-class12.mjs",
+        "eigent-diagnostics-1.0.6-1792514046791.zip",
+        "plans/AI-STUDY-EXPERIENCE.md",
+        "plans/PHYSICS-XI-COMPANION-HANDOFF.md",
+        "play-store/README.md",
+        "play-store/app-listing.md",
+        "play-store/content-rating.md",
+        "play-store/cookie-policy.md",
+        "play-store/data-safety.md",
+        "play-store/host/cookie-policy.html",
+        "play-store/host/privacy-policy.html",
+        "play-store/host/purchase-refund-policy.html",
+        "play-store/host/terms-of-service.html",
+        "play-store/privacy-policy.md",
+        "play-store/publishing-checklist.md",
+        "play-store/purchase-refund-policy.md",
+        "play-store/ravikisan-platform-release.aab",
+        "play-store/terms-of-service.md",
+        "quiz-error-state.png",
+        "quiz-page.png",
+        "requirements.txt",
+        "tokenkit-out/context.md",
+        "tools/cline-tutor-agent/.env.example",
+        "tools/cline-tutor-agent/.gitignore",
+        "tools/cline-tutor-agent/README.md",
+        "tools/cline-tutor-agent/package-lock.json",
+        "tools/cline-tutor-agent/package.json",
+        "tools/cline-tutor-agent/src/agent.mjs",
+        "tools/cline-tutor-agent/src/cli.mjs",
+        "tools/cline-tutor-agent/src/curriculum.mjs",
+        "tools/cline-tutor-agent/test/agent.test.mjs",
+        "tools/cline-tutor-agent/test/curriculum.test.mjs"
+      ],
+      "status": "pending"
     },
     {
       "step": 6,

@@ -27,7 +27,7 @@ Every file in this project strictly belongs to one of two classes:
 - **Total Count:** ~30 to 40 primary files across the entire platform.
 
 ### 📄 Class 2: Content Files (Data & Topic Payloads)
-- **What they are:** Topic JSON files under `content/ravikishan/**`, individual chapter concept notes, pyq question files, mindmap JSON trees, rail cards, raw textbook data.
+- **What they are:** Topic JSON files under `content/notes/concepts/**`, individual chapter concept notes, pyq question files, mindmap JSON trees, rail cards, raw textbook data.
 - **Agent Behavior:** **IGNORE ALL CONTENT FILES UNLESS EXPLICITLY ORDERED** to edit or read a specific topic/content file! Never scan or mass-read content folders.
 - **Total Count:** 8,000+ files.
 
@@ -139,7 +139,7 @@ When asked to add a new page, feature, or content:
    - **New App Page:** `frontend/app/(app)/<route-name>/page.tsx`
    - **New API Endpoint:** `backend/src/api/<feature>.ts` (mounted in `backend/src/app.ts`)
    - **New UI Component:** `frontend/components/<feature>/<component>.tsx`
-   - **New Content Topic:** `content/ravikishan/<class>/<subject>/<unit>/concepts/<slug>.json`
+   - **New Content Topic:** `content/notes/concepts/<class>/<subject>/<unit>/NN-<slug>.json`
 4. **Link / Route It:**
    - If it is a new user-accessible page, add its link to `frontend/lib/navigation.ts` and ensure it is covered in `frontend/lib/site-index.ts`.
    - If it is a content topic, ensure its `topicSlug` matches `frontend/lib/syllabus.ts`.

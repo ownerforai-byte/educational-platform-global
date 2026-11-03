@@ -7,14 +7,14 @@ This is a monorepo educational platform for NEB (+2) students in Nepal.
 - **Root**: `package.json` with workspaces
 - **Frontend**: Next.js 16 (Turbopack), React 19, TypeScript, shadcn/ui, Tailwind
 - **Backend**: Express + Supabase (API server)
-- **Content**: JSON files under `content/ravikishan/`
+- **Content**: JSON files under `content/notes/concepts/`
 - **Syllabus**: Single source of truth in `frontend/lib/syllabus.ts`
 
 ## Critical Rules
 
 ### 0. HARDCODED AGENT BOUNDARIES: WHAT TO DO & WHAT TO AVOID
 - 🛑 **WHAT TO AVOID:**
-  - **DO NOT READ ALL FILES OR SCAN CONTENT DIRS.** Over 95% of the repository consists of repetitive content JSON files in `content/ravikishan/**`. Mass reading burns context and credits.
+  - **DO NOT READ ALL FILES OR SCAN CONTENT DIRS.** Over 95% of the repository consists of repetitive content JSON files in `content/notes/concepts/**`. Mass reading burns context and credits.
   - Never explore content folders unless specifically ordered by the user for a single note.
   - Never guess routing or create unlinked routes.
 - 🎯 **WHAT TO DO:**
@@ -29,7 +29,7 @@ This is a monorepo educational platform for NEB (+2) students in Nepal.
 All notes, lessons, PYQs, and resources MUST follow the syllabus hierarchy:
 
 ```
-content/ravikishan/{classSlug}/{subjectSlug}/{unitSlug}/
+content/notes/concepts/{classSlug}/{subjectSlug}/{unitSlug}/
   ├── concepts/     ← explanatory notes (one JSON per topic)
   ├── formula/      ← formula sheets
   ├── notes/        ← general fallback notes
@@ -51,7 +51,7 @@ content/ravikishan/{classSlug}/{subjectSlug}/{unitSlug}/
    the home page streams whatever is ready, no frontend edit needed
 
 ### 4. Never Do These Things
-- ❌ Create files outside `content/ravikishan/{class}/{subject}/{unit}/`
+- ❌ Create files outside `content/notes/concepts/{class}/{subject}/{unit}/`
 - ❌ Place content in arbitrary folders ("misc", "general", "other")
 - ❌ Use arbitrary file names instead of `{pad}.{topic-slug}.json`
 - ❌ Skip reading the syllabus before adding content
@@ -87,7 +87,7 @@ node node_modules/tsx/dist/cli.mjs frontend/scripts/content/validate.ts --strict
 - `frontend/lib/syllabus.ts` — **ALL syllabus data** (DO NOT edit without approval)
 - `frontend/features/mindmap/` — Mind map generation system
 - `frontend/features/syllabus/` — Syllabus display components
-- `content/ravikishan/` — All course content (JSON format)
+- `content/notes/concepts/` — All course content (JSON format)
 - `scripts/validate-content.mjs` — content JSON parser (exit 1 on broken files)
 - `scripts/content-health-check.mjs` — BOM repair + `_index.json` completeness scan
 - `frontend/scripts/content/validate.ts` — strict schema gate (corpus + built manifests)
@@ -97,7 +97,7 @@ node node_modules/tsx/dist/cli.mjs frontend/scripts/content/validate.ts --strict
 ### 9. Home Rail Cards (`rails/`) — How Any Agent Adds Slides to the Home Page
 The six home-page subject rails stream one card per syllabus unit. Those cards
 are DATA, not code — any agent adds them without touching the frontend:
-1. Find the unit's file: `content/ravikishan/<class-11-notes|class-12-notes>/<subject>/<unit>/rails/<unit>.rail.json`
+1. Find the unit's file: `content/visuals/rails/<class-11|class-12>/<subject>/<unit>/<unit>--NN-slug-hash.rail.json`
    (missing? run `npx tsx frontend/scripts/content/home-rails.ts` from the repo
    root to scaffold it — never overwrites filled cards). Class 12 cards carry
    a `· Class 12` tag chip and stream after the Class 11 cards; a rail's

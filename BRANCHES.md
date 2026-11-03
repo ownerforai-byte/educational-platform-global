@@ -44,13 +44,13 @@
 ### content/* — data & notes (10)
 | Branch | Scope |
 |---|---|
-| `content/physics` | `content/ravikishan/class-11-notes/physics/**` |
-| `content/chemistry` | `content/ravikishan/class-11-notes/chemistry/**` |
-| `content/biology` | `content/ravikishan/class-11-notes/biology/**` |
-| `content/english` | `content/ravikishan/class-11-notes/english/**` |
-| `content/mathematics` | `content/ravikishan/class-11-notes/mathematics/**` |
-| `content/nepali` | `content/ravikishan/class-11-notes/nepali/**` |
-| `content/class-11` | `content/ravikishan/class-11/**` |
+| `content/physics` | `content/notes/concepts/class-11/physics/**` |
+| `content/chemistry` | `content/notes/concepts/class-11/chemistry/**` |
+| `content/biology` | `content/notes/concepts/class-11/biology/**` |
+| `content/english` | `content/notes/concepts/class-11/english/**` |
+| `content/mathematics` | `content/notes/concepts/class-11/mathematics/**` |
+| `content/nepali` | `content/notes/concepts/class-11/nepali/**` |
+| `content/class-11` | `content/notes/concepts/class-11/**` |
 | `content/class-12` | Class 12 content when it lands |
 | `content/r-export` | `content/r-export/**` |
 | `content/exams-lessons` | `content/exams/**`, `content/lessons/**` |

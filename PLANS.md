@@ -37,7 +37,7 @@ Non-goals (deliberately excluded):
 |---|---|
 | Rich rendering already exists: Markdown, GFM tables/lists, `$…$`/`$$…$$`/`\(…\)`/`\[…\]` KaTeX, mhchem `\ce{…}`, fenced code highlighted, `:::formula`/`:::trick` + `> [!TRAP]` callouts, raw HTML sanitised | `frontend/lib/content/pipeline.ts` (`noteProcessor`, `renderNoteHtml`), `frontend/lib/content/katex.ts` (`KATEX_OPTIONS`, `KATEX_MACROS`, `normalizeMathDelimiters`, `normalizeLatexExpression`), `frontend/lib/content/callouts.ts` |
 | Single render entry point, server component, no client JS | `frontend/components/content/math-markdown.tsx` → `dangerouslySetInnerHTML` of sanitised HTML |
-| Authored content: **1,240 JSON under `content/` in total** — that count also covers `backup-…/`, `exams/`, `lessons/`, `r-export/`. `content/ravikishan/` itself holds **891**: 630 under `{classSlug}-notes/{subject}/{unit}/concepts/NN-slug.json`, 60 `mindmap/`, plus `formula/ notes/ pyqs/ sets/ examples/` and a separate 90-file `class-11/` tree that the in-scope path rules ignore (`CLASS_DIR_TO_SLUG` doesn't exist — see §4.3) | `find content -name '*.json' \| wc -l` |
+| Authored content: **1,240 JSON under `content/` in total** — that count also covers `backup-…/`, `exams/`, `lessons/`, `r-export/`. `content/notes/concepts/` itself holds **891**: 630 under `{classSlug}-notes/{subject}/{unit}/concepts/NN-slug.json`, 60 `mindmap/`, plus `formula/ notes/ pyqs/ sets/ examples/` and a separate 90-file `class-11/` tree that the in-scope path rules ignore (`CLASS_DIR_TO_SLUG` doesn't exist — see §4.3) | `find content -name '*.json' \| wc -l` |
 | Built to **631** JSON + **6** `_manifest.json` (602 entries total) under `frontend/public/data/syllabus-notes/{subject}/` | `find frontend/public/data/syllabus-notes -name '*.json'` |
 | Runtime **fetches** that JSON | `frontend/lib/data-loader.ts` (`/data/${safe}`), `frontend/lib/topic-content-index.ts` |
 | `zod@^3.25` installed. Content now HAS a schema: `frontend/lib/content/schema/{atoms,concept,index,manifest,mindmap}.ts` — `.strict()`, 40 measured fields in three tiers (Required/Authored/Extended). `formula.ts` + `syllabus-ref.ts` (§4.2/§4.6) do **not** exist yet | `ls frontend/lib/content/schema/` |
@@ -51,7 +51,7 @@ Non-goals (deliberately excluded):
 | Duplicate corpus `frontend/content/ravikishan/` — **113 tracked JSON**, not gitignored, never mentioned in this plan; the corpus gate deliberately excludes it. Governance decision open (document as deliberate, or delete) | `find frontend/content/ravikishan -name '*.json' \| wc -l` |
 
 Exact concept-file shape (measured on
-`content/ravikishan/class-11-notes/physics/capacitor/concepts/01-capacitance-and-capacitor.json`):
+`content/notes/concepts/class-11/physics/capacitor/01-capacitance-and-capacitor.json`):
 
 ```
 title: string                  notes: string[6]            (markdown + $…$)
@@ -102,7 +102,7 @@ frontend/components/content/blocks/   ← Phase 4b, whitelisted React widget reg
 frontend/components/content/formula-lab.tsx  ← Phase 4a, client island
 frontend/scripts/content/             ← Phase 1b/2, validator + CLI (runs in the frontend workspace)
 frontend/content-src/                 ← Phase 3, TS authoring modules (compiled to public/data)
-content/ravikishan/                   ← unchanged JSON storage (still the fallback source)
+content/notes/concepts/                   ← unchanged JSON storage (still the fallback source)
 scripts/content-schema-baseline.json  ← ratchet; key `invalid`, empty today (repairs cleared it)
 ```
 
@@ -298,7 +298,7 @@ import { z } from "zod";
 import { MdList, MdString, ShortString, Slug } from "./atoms";
 import { BlockSchema, FormulaSchema } from "./formula";
 
-/** `content/ravikishan/class-11-notes/…` → classSlug `class-11`. */
+/** `content/notes/concepts/class-11/…` → classSlug `class-11`. */
 export const CLASS_DIR_TO_SLUG: Record<string, string> = {
   "class-11-notes": "class-11",
   "class-12-notes": "class-12",
@@ -804,7 +804,7 @@ enforcement is DONE since 2026-09-29.
 
 ```ts
 /**
- * content/ravikishan/** (+ frontend/content-src/**) → frontend/public/data/syllabus-notes/**
+ * content/notes/concepts/** (+ frontend/content-src/**) → frontend/public/data/syllabus-notes/**
  * Behavioural parity with content-tools/build-syllabus-notes.js, plus:
  *  - Zod validation on every input and on the emitted manifest
  *  - content-src/<class>/<subject>/<unit>/ takes precedence over authored JSON
@@ -1014,7 +1014,7 @@ process.exit(Object.values(r).some((l) => l.length > 0) ? 1 : 0);
 ```
 
 `content-src/` precedence rule (Phase 3): **if `frontend/content-src/<class>/<subject>/<unit>/`
-exists, it is the sole source for that unit**; the JSON under `content/ravikishan/…` is ignored
+exists, it is the sole source for that unit**; the JSON under `content/notes/concepts/…` is ignored
 by `build` but stays on disk until you delete it deliberately.
 
 **Gate:** `content:build --check` passes with byte-identical output vs today's tree (after one
@@ -1662,7 +1662,7 @@ index" no longer exists. Everything it worried about is tracked on `main`:
    wrong: `next dev --webpack -p 5173` pins it.
 3. **FIXED (2026-09-29)** — deleted the stale app-side copy
    `frontend/content/ravikishan/` (113 tracked JSON): no code referenced it, and it
-   had drifted from the canonical `content/ravikishan/` tree (all 59 comparable
+   had drifted from the canonical `content/notes/concepts/` tree (all 59 comparable
    mindmaps differed; 54 files existed only there).
 4. **FIXED** — `_manifest.json` is validated in two places: `validate.ts --strict`
    (local gate, proven by negative test) and the corpus test (CI gate). Wiring it

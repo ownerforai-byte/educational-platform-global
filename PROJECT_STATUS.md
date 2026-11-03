@@ -178,7 +178,7 @@ agent file edits) to honor the multi-agent coordination rule.
   - `/api/r-notes`, `/api/ravikishan-notes`, `lib/imported-notes.ts`,
     `components/content/rendered-imported-note.tsx` now import manifests/JSON
     instead of reading the filesystem.
-  - Generated `content/ravikishan/_index.json` (134 notes, forward-slash keys —
+  - Generated `content/_index.json` (134 notes, forward-slash keys —
     also fixes latent Windows-backslash path bug on Linux).
 - `wrangler.jsonc`: `main` → `.vercel/output/static/_worker.js/index.js`; added
   `.vercel/output/static/.assetsignore` containing `_worker.js` so the worker
@@ -243,7 +243,7 @@ Full details: `MIGRATION_COMPLETE.md`. Summary:
   (`supabaseAdmin.auth.getUser` + `profiles.role`).
 - **Database**: Supabase is authoritative (17-table schema, `supabase/migrations/0001`,
   RLS in 0002). Neon/Drizzle vestigial — zero runtime imports; drizzle deps removed.
-- **Content**: `content/ravikishan/**` → `npm run content:build` → `public/data/**`;
+- **Content**: `content/notes/concepts/**` → `npm run content:build` → `public/data/**`;
   fetched at request time by both frontend pages and backend file routes. Raw-HTML notes
   render via restored rehype-raw + sanitize pipeline. Exams from `public/data/exams`.
 - **AI**: providers only in backend (`src/ai/service.ts`, internal keyless fallback);
@@ -261,7 +261,7 @@ Full details: `MIGRATION_COMPLETE.md`. Summary:
 
 ## CONTENT ADDITION (2026-09-21) — Class 11 Chemistry: complete syllabus notes for 4 units
 
-Owner: Cline (coding agent). Scope: `content/ravikishan/class-11-notes/chemistry/**` +
+Owner: Cline (coding agent). Scope: `content/notes/concepts/class-11/chemistry/**` +
 rebuilt `frontend/public/data/syllabus-notes/chemistry/**`.
 
 - 29 syllabus-mapped concept notes authored (web-researched; each note = meaning → concepts
