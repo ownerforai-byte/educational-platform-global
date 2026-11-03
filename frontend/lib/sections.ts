@@ -19,6 +19,8 @@ import {
   MessageCircle,
   NotebookPen,
   Download,
+  Gift,
+  Receipt,
   PenTool,
   Search,
   Settings,
@@ -415,6 +417,22 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "pro",
     icon: Download,
     href: "/downloads",
+  },
+  {
+    id: "billing",
+    title: "Billing",
+    description: "Spark balance, plan status and receipt history. Opens at Member.",
+    minTier: "member",
+    icon: Receipt,
+    href: "/billing",
+  },
+  {
+    id: "referrals",
+    title: "Referrals",
+    description: "Referral and reward tracking. Opens at Plus.",
+    minTier: "plus",
+    icon: Gift,
+    href: "/referrals",
   },
 
   // ── Owner rung ──

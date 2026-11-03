@@ -113,6 +113,8 @@ export const PUBLIC_PATHS = [
   "/ask",
   "/my-notes",
   "/downloads",
+  "/billing",
+  "/referrals",
 ] as const;
 
 /**

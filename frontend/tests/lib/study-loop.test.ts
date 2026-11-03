@@ -8,6 +8,7 @@ import { buildWeeklyPlan, weakTopicsFromJourney } from "@/lib/study-plan";
 import { answerKey, assembleMock, parseMarks, scoreMock } from "@/lib/mock-exam";
 import { DEFAULT_GOALS, listGoalSubjects } from "@/lib/study-goals";
 import { addNote, filterNotes, normalizeNotes, removeNote, updateNote, validateNote, EMPTY_DRAFT } from "@/lib/personal-notes";
+import { buildReceipts, summarizeLedger } from "@/lib/billing";
 import { buildUnitPack, packFilename, packItemCount, packToMarkdown } from "@/lib/offline-pack";
 import type { SubjectPyqBank } from "@/lib/pyq-bank";
 import { sectionForPath } from "@/lib/sections";
@@ -247,5 +248,29 @@ describe("my-notes and downloads", () => {
     const flat = JSON.stringify(buildSiteIndex());
     expect(flat).toContain('"/my-notes"');
     expect(flat).toContain('"/downloads"');
+  });
+});
+
+describe("billing and referrals", () => {
+  const tx = (id: string, type: "GRANT" | "SPEND" | "ADJUST", amount: number, created_at: string, reason: string | null = null) => ({
+    id, user_id: "u", actor_id: null, amount, type, reason, reference_id: null, created_at,
+  });
+  it("builds newest-first receipts and totals", () => {
+    const r = buildReceipts([
+      tx("a", "GRANT", 10, "2026-01-01"),
+      tx("b", "SPEND", 1, "2026-01-03", "Theory unlock"),
+      tx("c", "ADJUST", -2, "2026-01-02"),
+    ]);
+    expect(r.map((x) => x.id)).toEqual(["b", "c", "a"]);
+    expect(r[0].label).toBe("Theory unlock");
+    expect(summarizeLedger(r)).toEqual({ granted: 10, spent: 1, adjusted: -2, net: 7, count: 3 });
+  });
+  it("gates /billing (member) and /referrals (plus) and links them everywhere", () => {
+    expect(sectionForPath("/billing")?.minTier).toBe("member");
+    expect(sectionForPath("/referrals")?.minTier).toBe("plus");
+    expect(NAV_HREFS).toEqual(expect.arrayContaining(["/billing", "/referrals"]));
+    const flat = JSON.stringify(buildSiteIndex());
+    expect(flat).toContain('"/billing"');
+    expect(flat).toContain('"/referrals"');
   });
 });

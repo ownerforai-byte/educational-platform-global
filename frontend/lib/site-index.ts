@@ -284,6 +284,18 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Offline",
       },
       {
+        name: "Billing",
+        opening: "Check your spark balance, plan status and receipt history.",
+        href: "/billing",
+        meta: "Account",
+      },
+      {
+        name: "Referrals",
+        opening: "Track the friends you invited and the rewards they earn you.",
+        href: "/referrals",
+        meta: "Rewards",
+      },
+      {
         name: "Saved Bookmarks",
         opening: "Everything you starred, in the order you saved it.",
         href: "/bookmarks",

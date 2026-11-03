@@ -50,6 +50,8 @@ import {
   CalendarCheck,
   NotebookPen,
   Download,
+  Gift,
+  Receipt,
   Repeat,
   Shapes,
   LayoutDashboard,
@@ -124,6 +126,8 @@ const primaryItems: NavItem[] = [
   { href: "/ask", label: "Ask Veer", icon: HelpCircle, minLevel: "member" },
   { href: "/my-notes", label: "My Notes", icon: NotebookPen, minLevel: "member" },
   { href: "/downloads", label: "Downloads", icon: Download, minLevel: "pro" },
+  { href: "/billing", label: "Billing", icon: Receipt, minLevel: "member" },
+  { href: "/referrals", label: "Referrals", icon: Gift, minLevel: "plus" },
   { href: "/site-index", label: "Everything Index", icon: ListTree, minLevel: "pro" },
   { href: "/levels", label: "Curriculum Levels", icon: Compass, minLevel: "pro" },
 ];
