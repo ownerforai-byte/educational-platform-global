@@ -27,6 +27,7 @@ import { CLASS_DIR_TO_SLUG, ConceptNoteSchema } from "../../lib/content/schema/c
 import { ManifestSchema, contentHasMcqs } from "../../lib/content/schema/manifest";
 import { isPlaceholderContent } from "../../lib/content/placeholders";
 import { stripGeneratorJunk } from "../../lib/content/generator-junk";
+import gatedKinds from "../../lib/content/gated-kinds.json";
 
 /** Works from the repo root AND from the frontend workspace. */
 function findRepoRoot(): string {
@@ -50,7 +51,14 @@ const ROOT = findRepoRoot();
 // The classified tree: content/notes/concepts/<class>/<subject>/<unit>/*.json
 const SRC = path.join(ROOT, "content", "notes", "concepts");
 const TS_SRC = path.join(ROOT, "frontend", "content-src");
+// Metadata (`_manifest.json`) stays public; note BODIES go to the gated root
+// (outside public/, served only by POST /api/content/reveal). The root name is
+// defined once in lib/content/gated-kinds.json.
 const DEST = path.join(ROOT, "frontend", "public", "data", "syllabus-notes");
+const GATED_DEST = path.join(ROOT, "frontend", gatedKinds.gatedDir, "syllabus-notes");
+const PUBLIC_NAME = new Set<string>(gatedKinds.publicNames);
+const isPublicRel = (rel: string) => PUBLIC_NAME.has(path.basename(rel));
+const destFor = (rel: string) => (isPublicRel(rel) ? DEST : GATED_DEST);
 
 const ARGS = process.argv.slice(2);
 const CHECK = ARGS.includes("--check");
@@ -183,7 +191,7 @@ function emit(outRoot: string, rel: string, data: unknown) {
     expected.set(rel.replaceAll(path.sep, "/"), body);
     return;
   }
-  const target = path.join(outRoot, rel);
+  const target = path.join(destFor(rel), rel);
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, body);
 }
@@ -296,23 +304,23 @@ async function buildSubject(subject: string, outRoot: string): Promise<number> {
  */
 function diffTree(): { problems: string[]; extras: string[] } {
   const problems: string[] = [];
-  const walk = (dir: string, out: string[] = []): string[] => {
+  const walk = (dir: string, root: string, out: string[] = []): string[] => {
     if (!fs.existsSync(dir)) return out;
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       const f = path.join(dir, e.name);
-      if (e.isDirectory()) walk(f, out);
-      else if (e.name.endsWith(".json")) out.push(path.relative(DEST, f).replaceAll(path.sep, "/"));
+      if (e.isDirectory()) walk(f, root, out);
+      else if (e.name.endsWith(".json")) out.push(path.relative(root, f).replaceAll(path.sep, "/"));
     }
     return out;
   };
-  const actual = new Set(walk(DEST));
+  const actual = new Set([...walk(DEST, DEST), ...walk(GATED_DEST, GATED_DEST)]);
   for (const [rel, body] of expected) {
     if (!actual.has(rel)) {
       problems.push(`missing: ${rel}`);
       continue;
     }
     actual.delete(rel);
-    const onDisk = fs.readFileSync(path.join(DEST, rel), "utf8");
+    const onDisk = fs.readFileSync(path.join(destFor(rel), rel), "utf8");
     if (onDisk !== body) problems.push(`drift: ${rel}`);
   }
   return { problems, extras: [...actual].sort() };

@@ -20,7 +20,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "public", "data", "syllabus-notes");
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "content-gated", "syllabus-notes");
 
 /** Sections the topic workspace reads. Missing any one renders an empty panel. */
 const REQUIRED = [

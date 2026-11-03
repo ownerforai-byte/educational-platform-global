@@ -41,6 +41,7 @@ import {
   type UnlockMap,
 } from "./unlock-store";
 import { unlockContent } from "@/lib/api/credits";
+import { storeGrant, clearGrant } from "@/lib/content/grant-store";
 import { useSessionTimer } from "./use-session-timer";
 import { AdminApprovalModal } from "./admin-approval-modal";
 
@@ -227,6 +228,7 @@ export function CreditProvider({ children }: { children: ReactNode }) {
         const res = await unlockContent(category, key);
         // Server returns the canonical expiration (epoch + 1200).
         unlockModuleAt(key, res.expiresAt);
+        if (res.grant) storeGrant(key, res.grant, res.expiresAt);
         refresh(); // re-sync the session balance
         return true;
       } catch (err) {
@@ -236,6 +238,7 @@ export function CreditProvider({ children }: { children: ReactNode }) {
             : "Unlock failed. Please try again.";
         setError(message);
         lockModule(key);
+        clearGrant(key);
         return false;
       } finally {
         setPending((prev) => {

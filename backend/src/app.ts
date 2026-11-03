@@ -47,6 +47,7 @@ import storageRoutes from "./api/storage";
 import adminRoutes from "./api/admin";
 import ownerRoutes from "./api/owner";
 import userRoutes from "./api/user";
+import contentRoutes from "./api/content";
 import biologyRoutes from "./api/biology";
 import periodicTableRoutes from "./api/periodic-table";
 import lessonsRoutes from "./api/lessons";
@@ -74,7 +75,7 @@ export function createApp(): express.Express {
         return cb(null, false);
       },
       credentials: true,
-      allowedHeaders: ["Content-Type", "Authorization"],
+      allowedHeaders: ["Content-Type", "Authorization", "X-Unlock-Grant"],
     }),
   );
   app.use(morgan("combined"));
@@ -184,6 +185,7 @@ export function createApp(): express.Express {
   app.use("/api/admin", adminRoutes);
   app.use("/api/owner", ownerRoutes);
   app.use("/api/user", userRoutes);
+  app.use("/api/content", contentRoutes);
   app.use("/api/biology", biologyRoutes);
   app.use("/api/periodic-table", periodicTableRoutes);
   app.use("/api/lessons", lessonsRoutes);

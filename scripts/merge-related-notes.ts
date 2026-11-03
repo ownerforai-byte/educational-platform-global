@@ -673,7 +673,7 @@ if (APPLY) {
   }
 
   // both _index.json copies + the imported-notes manifest
-  const idxPaths = [path.join(RK, "_index.json"), path.join(ROOT, "frontend", "public", "data", "content", "_index.json")];
+  const idxPaths = [path.join(RK, "_index.json"), path.join(ROOT, "frontend", "content-gated", "content", "_index.json")];
   for (const p of idxPaths) {
     if (!fs.existsSync(p)) continue;
     const index = JSON.parse(fs.readFileSync(p, "utf8")) as Record<string, unknown>;
@@ -684,7 +684,7 @@ if (APPLY) {
     }
     fs.writeFileSync(p, serialiseIndex(index));
   }
-  const manifestPath = path.join(ROOT, "frontend", "public", "data", "content", "manifest.json");
+  const manifestPath = path.join(ROOT, "frontend", "content-gated", "content", "manifest.json");
   if (fs.existsSync(manifestPath)) {
     const items = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as { path: string; data: Record<string, unknown> }[];
     const next = items
@@ -698,7 +698,7 @@ if (APPLY) {
   }
 
   // runtime mirror (built tree): delete only emitted names that map to absorbed sources
-  const PUB = path.join(ROOT, "frontend", "public", "data", "syllabus-notes");
+  const PUB = path.join(ROOT, "frontend", "content-gated", "syllabus-notes");
   if (fs.existsSync(PUB)) {
     // replicate build.ts's pairing (pre-merge state) to know which emitted name
     // each source produced; delete the name only when its source is absorbed.

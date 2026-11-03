@@ -143,8 +143,8 @@ function classify(p) {
     return { cls: "content-source", area: "content (other)", branch: "content/* (decide)", action: "classify with corpus" };
 
   // — runtime mirror + content assets —
-  if (p.startsWith("frontend/public/data/syllabus-notes/"))
-    return { cls: "content-runtime", area: p.split("/").slice(4, 6).join("/"), branch: "generated — commit via content/*", action: "never hand-edit; regenerate with npm run content:build" };
+  if (p.startsWith("frontend/public/data/syllabus-notes/") || p.startsWith("frontend/content-gated/"))
+    return { cls: "content-runtime", area: p.split("/").slice(p.startsWith("frontend/content-gated/") ? 3 : 4, p.startsWith("frontend/content-gated/") ? 5 : 6).join("/"), branch: "generated — commit via content/*", action: "never hand-edit; regenerate with npm run content:build" };
   if (/^frontend\/public\/(materials|pdfs)\//.test(p))
     return { cls: "content-assets", area: "study materials", branch: "content/exams-lessons", action: "keep; register in ledger links" };
 
@@ -284,7 +284,7 @@ for (const section of [
 ]) {
   scanContentTree(path.join("content", ...section.split("/")), "source");
 }
-scanContentTree(path.join("frontend", "public", "data", "syllabus-notes"), "runtime");
+scanContentTree(path.join("frontend", "content-gated", "syllabus-notes"), "runtime");
 
 /* ───────────────────────── 4. secrets scan (AGENTS.md Rule 2) ─────────── */
 
@@ -348,7 +348,7 @@ for (const [key, s] of [...contentStats.entries()].sort()) {
   links.push({
     unit: unitKey,
     source: `content/**/${unitKey}/`,
-    runtime: `frontend/public/data/syllabus-notes/${unitKey}/`,
+    runtime: `frontend/content-gated/syllabus-notes/${unitKey}/`,
     manifest: `frontend/public/data/syllabus-notes/${unitKey.split("/")[0]}/_manifest.json`,
     sourceFiles: s.files,
     runtimeFiles: rt?.files ?? 0,

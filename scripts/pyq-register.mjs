@@ -18,7 +18,7 @@
  * Two copies must agree, because they are read by different runtimes:
  *
  *   content/_index.json                      the authored corpus (source of truth)
- *   frontend/public/data/content/_index.json the asset the browser fetches
+ *   frontend/content-gated/content/_index.json the asset the browser fetches
  *
  * `loadData()` prefers a disk read on the server (trying `public/data`,
  * `frontend/public/data` and `../public/data` in turn) and `fetch` in the
@@ -39,6 +39,10 @@ const DRY = ARGS.includes("--dry-run");
 
 const ROOT = process.cwd();
 const CONTENT = path.join(ROOT, "content");
+// The browser-facing mirror lives in the gated dir (served only by /api/content/reveal).
+const GATED_DIR = JSON.parse(
+  fs.readFileSync(path.join(ROOT, "frontend", "lib", "content", "gated-kinds.json"), "utf8"),
+).gatedDir;
 // The bank families this script owns: the classified questions section plus
 // the dedicated subject-wise bank (`content/pyqs/` — one folder per subject,
 // used by the quiz engine and the AI corpus). Both use canonical filenames
@@ -63,7 +67,7 @@ const CORPUSES = [
 ];
 const TARGETS = [
   path.join(CONTENT, "_index.json"),
-  path.join(ROOT, "frontend", "public", "data", "content", "_index.json"),
+  path.join(ROOT, "frontend", GATED_DIR, "content", "_index.json"),
 ];
 
 /** Every bank under the owned families, as content-relative POSIX paths (= index keys). */

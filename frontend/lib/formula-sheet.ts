@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { GATED_DIR } from "./content/paths";
 import { getSubjectSyllabus, type SubjectSyllabus } from "./syllabus";
 import { resolveUnitSlug } from "./syllabus-notes-manifest";
 import { isGeneratorJunkLine } from "./content/generator-junk";
@@ -32,6 +33,11 @@ const __filename = fileURLToPath(import.meta.url);
 
 /** Candidate `public/data` roots, module-relative first (see topic-content-index). */
 const DATA_ROOT_CANDIDATES: readonly string[] = [
+  // Gated note bodies live outside public/ (gated-kinds.json gatedDir).
+  resolve(dirname(__filename), "..", GATED_DIR),
+  join(process.cwd(), GATED_DIR),
+  join(process.cwd(), "frontend", GATED_DIR),
+  resolve(process.cwd(), "..", GATED_DIR),
   resolve(dirname(__filename), "..", "public", "data"),
   join(process.cwd(), "public", "data"),
   join(process.cwd(), "frontend", "public", "data"),

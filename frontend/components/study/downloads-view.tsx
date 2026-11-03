@@ -9,6 +9,8 @@ import { ComingSoon } from "@/components/content/coming-soon";
 import type { FormulaSheetUnit } from "@/lib/formula-sheet";
 import { buildUnitPack, packFilename, packItemCount, packToMarkdown } from "@/lib/offline-pack";
 import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getGrant } from "@/lib/content/grant-store";
+import { creditModuleKey } from "@/features/credits/constants";
 import { listGoalSubjects } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { useSubjectBank } from "./use-subject-bank";
@@ -34,7 +36,13 @@ export function DownloadsView() {
     setFormulaUnit(null);
     if (!activeUnit || !FORMULA_SLUGS.includes(subjectSlug)) return;
     let cancelled = false;
-    fetch(`/api/formula-unit?subject=${encodeURIComponent(subjectSlug)}&unit=${encodeURIComponent(activeUnit.id)}`)
+    const moduleKey = creditModuleKey(window.location.pathname);
+    const grant = getGrant(moduleKey);
+    if (!grant) return;
+    fetch(`/api/formula-unit?subject=${encodeURIComponent(subjectSlug)}&unit=${encodeURIComponent(activeUnit.id)}`, {
+      credentials: "include",
+      headers: { "X-Unlock-Grant": grant, "X-Unlock-Key": moduleKey },
+    })
       .then((res) => (res.ok ? (res.json() as Promise<{ unit: FormulaSheetUnit | null }>) : null))
       .then((r) => !cancelled && setFormulaUnit(r?.unit ?? null))
       .catch(() => !cancelled && setFormulaUnit(null));

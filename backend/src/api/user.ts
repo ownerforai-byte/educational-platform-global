@@ -4,6 +4,7 @@ import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/aut
 import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 import { canUnlockModule } from "../utils/sectionAccess";
+import { signGrant } from "../utils/contentGrant";
 import { ensureDailyCredits, isCoinGateEnabled, spendCredits } from "../utils/credits";
 
 const router = Router();
@@ -146,6 +147,16 @@ const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference" | "image
 
 const UNLOCK_WINDOW_SECONDS = 1200; // 20 minutes
 
+/**
+ * Signed content grant for cost-bearing categories only (theory, reference);
+ * free categories and key-less unlocks get none. Minted ONLY on the success
+ * paths below, i.e. after the tier check and the spend/free decision.
+ */
+function grantFor(userId: string, category: string, moduleKey: string | undefined, expiresAt: number): { grant: string } | {} {
+  if (!moduleKey || (category !== "theory" && category !== "reference")) return {};
+  return { grant: signGrant(userId, moduleKey, expiresAt) };
+}
+
 const unlockSchema = z.object({
   category: z.enum(["lab3d", "visuals", "theory", "reference", "imagehub"]),
   moduleKey: z.string().min(1).max(200).optional(),
@@ -234,18 +245,18 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
         });
         return;
       }
-      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0, ...grantFor(user.id, category, moduleKey, expiresAt) });
       return;
     }
 
     // PRO is unlimited and free. Owners are free only while their toggle is
     // OFF — students/customers always pay from the pool.
     if (premiumStatus) {
-      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0, ...grantFor(user.id, category, moduleKey, expiresAt) });
       return;
     }
     if (owner && !(await isCoinGateEnabled())) {
-      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0, ...grantFor(user.id, category, moduleKey, expiresAt) });
       return;
     }
 
@@ -257,7 +268,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
 
     // OWNER/PRO skip all checks — window still applies for UI consistency.
     if (ensured.unlimited) {
-      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0, ...grantFor(user.id, category, moduleKey, expiresAt) });
       return;
     }
 
@@ -282,7 +293,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       return;
     }
 
-    res.json({ credits: remaining, expiresAt, cost });
+    res.json({ credits: remaining, expiresAt, cost, ...grantFor(user.id, category, moduleKey, expiresAt) });
   } catch (err: any) {
     console.error("Unlock error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });

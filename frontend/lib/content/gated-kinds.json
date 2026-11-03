@@ -1,0 +1,10 @@
+{
+  "$comment": "Paid content bodies served only by POST /api/content/reveal. kind -> path under the gated data root. `gatedDir` is that root (relative to frontend/, NOT under public/, so the CDN never serves it); metadata stays in public/data. Single table shared by lib/content/paths.ts and the backend reveal route. `segments` lists the request fields appended (in order) to `base` for directory kinds. `publicNames` are metadata files that stay public and are never revealed.",
+  "gatedDir": "content-gated",
+  "kinds": {
+    "note": { "base": "syllabus-notes", "segments": ["subject", "unit", "filename"] },
+    "pyq-index": { "base": "content/_index.json", "segments": [] },
+    "pyq-manifest": { "base": "content/manifest.json", "segments": [] }
+  },
+  "publicNames": ["_manifest.json"]
+}

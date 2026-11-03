@@ -52,6 +52,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { isGeneratorJunkLine } from "../../lib/content/generator-junk";
+import gatedKinds from "../../lib/content/gated-kinds.json";
 
 const REPO = (() => {
   const starts = [
@@ -72,10 +73,13 @@ const REPO = (() => {
 
 const DATA = path.join(REPO, "frontend", "public", "data");
 const ROOT = path.join(DATA, "syllabus-notes");
+// Paid bodies live outside public/ (lib/content/gated-kinds.json `gatedDir`).
+const GATED = path.join(REPO, "frontend", gatedKinds.gatedDir);
+const GATED_ROOT = path.join(GATED, "syllabus-notes");
 const LEDGER = path.join(DATA, "content-ledger.json");
-const SUPPLEMENTARY = path.join(DATA, "content", "manifest.json");
+const SUPPLEMENTARY = path.join(GATED, "content", "manifest.json");
 const SOURCES = [
-  path.join(DATA, "content", "_index.json"),
+  path.join(GATED, "content", "_index.json"),
   path.join(DATA, "r-export", "manifest.json"),
 ];
 
@@ -325,7 +329,7 @@ function subjectsScan(): Record<string, SubjectNode> {
     }
     const subjectNode: SubjectNode = { totals: emptyTotals(), units: {} };
     for (const claim of manifest) {
-      const file = path.join(ROOT, subject, claim.unitSlug, claim.filename);
+      const file = path.join(GATED_ROOT, subject, claim.unitSlug, claim.filename);
       if (!fs.existsSync(file)) {
         PROBLEMS.push(`${subject}/${claim.unitSlug}/${claim.filename}: registered but NOT shipped`);
         continue;
@@ -378,7 +382,8 @@ function orphansScan(): Orphans {
   const subjects: Record<string, OrphanNode> = {};
 
   for (const subject of subjectsOnDisk()) {
-    const dir = path.join(ROOT, subject);
+    const dir = path.join(GATED_ROOT, subject);
+    if (!fs.existsSync(dir)) continue;
     const claimed = new Set(
       manifestFor(subject).map((c) => path.posix.join(c.unitSlug, c.filename)),
     );

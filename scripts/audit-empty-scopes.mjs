@@ -34,7 +34,9 @@ const STRICT = ARGS.includes("--strict");
 const WRITE_BASELINE = ARGS.includes("--write-baseline");
 const BASELINE_PATH = path.join(process.cwd(), "scripts", "empty-scopes-baseline.json");
 
-const PUB = path.join(process.cwd(), "frontend", "public", "data", "syllabus-notes");
+// Note bodies live outside public/ (frontend/lib/content/gated-kinds.json gatedDir).
+const GATED_DIR = JSON.parse(fs.readFileSync(path.join(process.cwd(), "frontend", "lib", "content", "gated-kinds.json"), "utf8")).gatedDir;
+const PUB = path.join(process.cwd(), "frontend", GATED_DIR, "syllabus-notes");
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 // Classified sections holding unit-scoped study files. visuals/mindmaps and
 // visuals/rails are excluded (own validators / draft-by-design — see header).

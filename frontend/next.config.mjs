@@ -94,7 +94,7 @@ const nextConfig = {
   // Ensure serverless/Vercel/Cloudflare bundles the content/ directory
   // so server-side reads (theorems.ts, legend.ts, etc.) don't 404 at runtime.
   outputFileTracingIncludes: {
-    "**/*": ["./content/**/*"],
+    "**/*": ["./content/**/*", "./content-gated/**/*"],
   },
   reactStrictMode: true,
   compiler: {
