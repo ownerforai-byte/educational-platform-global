@@ -9,6 +9,7 @@
  */
 
 import { SYLLABUS } from "@/lib/syllabus";
+import { key } from "@/lib/scoped-storage";
 
 export const STUDY_GOALS_KEY = "neb-study-goals:v1";
 
@@ -123,7 +124,7 @@ export function normalizeGoals(input: unknown): StudyGoals {
 export function readGoals(): StudyGoals {
   if (typeof window === "undefined") return DEFAULT_GOALS;
   try {
-    const raw = window.localStorage.getItem(STUDY_GOALS_KEY);
+    const raw = window.localStorage.getItem(key(STUDY_GOALS_KEY));
     return raw ? normalizeGoals(JSON.parse(raw)) : DEFAULT_GOALS;
   } catch {
     return DEFAULT_GOALS;
@@ -135,7 +136,7 @@ export function writeGoals(goals: StudyGoals): StudyGoals {
   const next = normalizeGoals(goals);
   if (typeof window !== "undefined") {
     try {
-      window.localStorage.setItem(STUDY_GOALS_KEY, JSON.stringify(next));
+      window.localStorage.setItem(key(STUDY_GOALS_KEY), JSON.stringify(next));
     } catch {
       /* storage full or blocked: keep working in memory */
     }

@@ -7,6 +7,8 @@
  * there is no server write because the platform has no notes backend.
  */
 
+import { key } from "@/lib/scoped-storage";
+
 export const MY_NOTES_KEY = "neb-my-notes:v1";
 export const MAX_NOTE_TITLE = 120;
 export const MAX_NOTE_BODY = 5000;
@@ -99,7 +101,7 @@ export function normalizeNotes(input: unknown): PersonalNote[] {
 export function readNotes(): PersonalNote[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = window.localStorage.getItem(MY_NOTES_KEY);
+    const raw = window.localStorage.getItem(key(MY_NOTES_KEY));
     return raw ? normalizeNotes(JSON.parse(raw)) : [];
   } catch {
     return [];
@@ -109,7 +111,7 @@ export function readNotes(): PersonalNote[] {
 export function writeNotes(notes: PersonalNote[]): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(MY_NOTES_KEY, JSON.stringify(notes));
+    window.localStorage.setItem(key(MY_NOTES_KEY), JSON.stringify(notes));
   } catch {
     /* storage full or blocked: keep working in memory */
   }

@@ -100,19 +100,29 @@ export const PUBLIC_PATHS = [
   "/notifications",
   "/plans",
   // Study desk pages are tools, not notes: never coin-gated.
+  // Hardening pass R1: /srs, /mock-exams and /downloads are NOT listed. Their
+  // readers (lib/srs.ts cards, lib/mock-exam.ts papers, lib/offline-pack.ts
+  // packs) are all derived from lib/pyq-bank (theory notes, PYQs, drills) and
+  // lib/formula-sheet, i.e. the actual note/PYQ content that costs 1 spark. They
+  // fall through categoryForPath to "theory" ("reference" is not matched), so the
+  // spark layer covers their content export.
+  // Kept public, by data source: /onboarding /settings /dashboard /planner
+  // /streaks /report-card /analytics read only the student's own device state
+  // (goals, streak, quiz history, progress) and export no note or PYQ;
+  // /my-notes is the student's own writing; /billing reads the spark ledger
+  // (lib/billing.ts over credit transactions); /community lists subject spaces
+  // from the syllabus and /ask only builds a Veer prompt (AI sparks meter the
+  // answer); /referrals has no content source. None unlocks a note or PYQ.
   "/onboarding",
   "/dashboard",
   "/settings",
   "/report-card",
   "/planner",
-  "/srs",
-  "/mock-exams",
   "/analytics",
   "/streaks",
   "/community",
   "/ask",
   "/my-notes",
-  "/downloads",
   "/billing",
   "/referrals",
 ] as const;

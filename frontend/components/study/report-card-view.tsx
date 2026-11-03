@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Printer } from "lucide-react";
+import { ComingSoon } from "@/components/content/coming-soon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { groupJourney } from "@/lib/progress/catalog";
@@ -72,6 +73,12 @@ export function ReportCardView() {
           ))}
         </CardContent>
       </Card>
+
+      <ComingSoon
+        title="Weak-topic call-out"
+        kind="Notes"
+        message="Under progress. It awaits per-topic quiz attempt history, which the platform does not record yet."
+      />
     </div>
   );
 }
