@@ -44,6 +44,13 @@ const AI_IMAGE_MAX_REQUESTS = positiveNumber(
 
 const hits = new Map<string, { count: number; reset: number }>();
 
+function pruneExpiredHits(now: number): void {
+  if (hits.size <= 5000) return;
+  for (const [key, entry] of hits) {
+    if (now > entry.reset) hits.delete(key);
+  }
+}
+
 type Tier = "auth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
 
 /** Which tier does this request fall into? */
@@ -118,11 +125,7 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
   // Long-lived process guard: drop expired entries before the Map can grow
   // unbounded under distributed-IP traffic (CDN/corp proxies).
   const now = Date.now();
-  if (hits.size > 5000) {
-    for (const [key, entry] of hits) {
-      if (now > entry.reset) hits.delete(key);
-    }
-  }
+  pruneExpiredHits(now);
 
   // Per-tier isolation (Greptile review 2026-09-25): one shared counter let a
   // heavy curriculum page (>10 content calls) consume the login/refresh budget
