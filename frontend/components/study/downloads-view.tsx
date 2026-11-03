@@ -6,13 +6,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { ComingSoon } from "@/components/content/coming-soon";
-import { getUnitFormulaSheet, isFormulaSubjectSlug, type FormulaSheetUnit } from "@/lib/formula-sheet";
+import type { FormulaSheetUnit } from "@/lib/formula-sheet";
 import { buildUnitPack, packFilename, packItemCount, packToMarkdown } from "@/lib/offline-pack";
 import { getSubjectSyllabus } from "@/lib/syllabus";
 import { listGoalSubjects } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { useSubjectBank } from "./use-subject-bank";
 import { SubjectSelect } from "./subject-select";
+
+// Mirrors FORMULA_SUBJECTS (lib/formula-sheet.ts is server-only: it reads node:fs).
+const FORMULA_SLUGS: string[] = ["physics", "mathematics", "chemistry"];
 
 /** /downloads: offline Markdown packs per unit (notes, PYQs, drills, formulas) from existing readers. */
 export function DownloadsView() {
@@ -29,9 +32,10 @@ export function DownloadsView() {
 
   useEffect(() => {
     setFormulaUnit(null);
-    if (!activeUnit || !isFormulaSubjectSlug(subjectSlug)) return;
+    if (!activeUnit || !FORMULA_SLUGS.includes(subjectSlug)) return;
     let cancelled = false;
-    getUnitFormulaSheet(subjectSlug, activeUnit.id)
+    fetch(`/api/formula-unit?subject=${encodeURIComponent(subjectSlug)}&unit=${encodeURIComponent(activeUnit.id)}`)
+      .then((res) => (res.ok ? (res.json() as Promise<{ unit: FormulaSheetUnit | null }>) : null))
       .then((r) => !cancelled && setFormulaUnit(r?.unit ?? null))
       .catch(() => !cancelled && setFormulaUnit(null));
     return () => {
