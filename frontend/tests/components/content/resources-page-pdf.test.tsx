@@ -1,6 +1,10 @@
-import { describe, expect, it, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { act, render, screen, fireEvent } from "@testing-library/react";
+import { renderToString } from "react-dom/server";
+import { hydrateRoot } from "react-dom/client";
 import ResourcesPage from "@/app/(app)/resources/page";
+import { DOCS } from "@/lib/docs-catalog";
+import nextConfig from "../../../next.config.mjs";
 
 // Mock next/link
 vi.mock("next/link", () => ({
@@ -11,7 +15,86 @@ vi.mock("next/link", () => ({
   ),
 }));
 
+afterEach(() => {
+  vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
+});
+
 describe("ResourcesPage PDF Scrolling & Viewing", () => {
+  const localDocx = () => {
+    const doc = DOCS.find((item) => item.kind === "docx" && item.href.startsWith("/"));
+    if (!doc) throw new Error("Expected a local DOCX in the document catalog");
+    return doc;
+  };
+
+  it("allows deployments to configure the DOCX fallback origin", async () => {
+    vi.stubEnv("NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN", " https://example.org/// ");
+    vi.resetModules();
+    const { default: config } = await import("../../../next.config.mjs");
+    expect(config.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN).toBe("https://example.org");
+  });
+
+  it("uses the browser origin for local DOCX previews", () => {
+    const doc = localDocx();
+    const { container } = render(<ResourcesPage />);
+    const sources = Array.from(container.querySelectorAll("iframe"), (frame) => frame.src);
+    expect(sources.some((src) => src.includes(encodeURIComponent(window.location.origin + doc.href)))).toBe(true);
+  });
+
+  it("uses the configured site origin or Next fallback when server rendering DOCX previews", () => {
+    const doc = localDocx();
+    const serverWindow = undefined;
+    vi.stubGlobal("window", serverWindow);
+    vi.stubEnv("NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN", nextConfig.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN);
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://example.org/");
+    expect(renderToString(<ResourcesPage />)).toContain(encodeURIComponent(`https://example.org${doc.href}`));
+
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "");
+    expect(renderToString(<ResourcesPage />)).toContain(
+      encodeURIComponent(nextConfig.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN + doc.href),
+    );
+  });
+
+  it.each(["", "https://example.org/"])(
+    "hydrates local DOCX previews with the same initial source, then uses the browser origin (site URL: %s)",
+    async (siteUrl) => {
+      const doc = localDocx();
+      const browserWindow = window;
+      const serverWindow = undefined;
+      const fallbackOrigin = "https://fallback.example";
+      vi.stubEnv("NEXT_PUBLIC_SITE_URL", siteUrl);
+      vi.stubEnv("NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN", fallbackOrigin);
+      vi.stubGlobal("window", serverWindow);
+      const serverHtml = renderToString(<ResourcesPage />);
+      vi.stubGlobal("window", browserWindow);
+      const clientHtml = renderToString(<ResourcesPage />);
+      const initialOrigin = siteUrl ? "https://example.org" : fallbackOrigin;
+      expect(serverHtml.includes(encodeURIComponent(initialOrigin + doc.href))).toBe(true);
+      expect(clientHtml.includes(encodeURIComponent(initialOrigin + doc.href))).toBe(true);
+
+      const container = document.createElement("div");
+      document.body.appendChild(container);
+      container.innerHTML = serverHtml;
+      const errorSpy = vi.spyOn(console, "error").mockImplementation(() => undefined);
+      const recoverableError = vi.fn();
+      let root: ReturnType<typeof hydrateRoot> | undefined;
+      try {
+        await act(() => {
+          root = hydrateRoot(container, <ResourcesPage />, { onRecoverableError: recoverableError });
+        });
+        const iframe = Array.from(container.querySelectorAll("iframe")).find((frame) => frame.title === doc.title);
+        expect(iframe?.src).toContain(encodeURIComponent(browserWindow.location.origin + doc.href));
+        expect(recoverableError).not.toHaveBeenCalled();
+        expect(errorSpy.mock.calls).toEqual([]);
+      } finally {
+        await act(() => { root?.unmount(); });
+        container.remove();
+        errorSpy.mockRestore();
+      }
+    },
+    20000,
+  );
+
   it(
     "renders documents with already opened rectangular scrollable boxes, classified by chapters",
     () => {

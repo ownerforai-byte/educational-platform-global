@@ -67,16 +67,14 @@ export function loadGraph() {
 }
 
 // --- TypeScript parser (fallback-safe) ----------------------------------
-let _ts = null;
+let _ts;
 export function loadTS() {
-  if (_ts !== null) return _ts;
-  if (_ts === undefined) {
-    try {
-      const req = createRequire(path.join(REPO_ROOT, "package.json"));
-      _ts = req("typescript");
-    } catch {
-      _ts = false;
-    }
+  if (_ts !== undefined) return _ts;
+  try {
+    const req = createRequire(path.join(REPO_ROOT, "package.json"));
+    _ts = req("typescript");
+  } catch {
+    _ts = false;
   }
   return _ts;
 }
@@ -90,8 +88,10 @@ export function parseSymbols(fileAbs, rel, ts) {
   if (ts) {
     const out = [];
     const sf = ts.createSourceFile(
-      rel, src, ts.ScriptTarget.Latest, false,
-      fileAbs.endsWith(".tsx") ? ts.LanguageVariant.JSX : ts.LanguageVariant.Standard,
+      rel, src, ts.ScriptTarget.Latest, true,
+      fileAbs.endsWith(".tsx") ? ts.ScriptKind.TSX
+        : fileAbs.endsWith(".jsx") ? ts.ScriptKind.JSX
+        : /\.[cm]?js$/.test(fileAbs) ? ts.ScriptKind.JS : ts.ScriptKind.TS,
     );
     (function visit(node) {
       if (ts.isFunctionDeclaration(node) && node.name) {
@@ -104,7 +104,7 @@ export function parseSymbols(fileAbs, rel, ts) {
         out.push(mkSym(node.name.text, "type", node, src));
       } else if (ts.isVariableStatement(node)) {
         for (const decl of node.declarationList.declarations) {
-          if (ts.isIdentifier(decl.name) && (ts.isArrowFunction(decl.initializer) || ts.isFunctionExpression(decl.initializer))) {
+          if (ts.isIdentifier(decl.name) && decl.initializer && (ts.isArrowFunction(decl.initializer) || ts.isFunctionExpression(decl.initializer))) {
             out.push(mkSym(decl.name.text, "const-fn", decl, src));
           }
         }

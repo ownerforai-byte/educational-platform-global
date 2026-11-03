@@ -52,42 +52,42 @@
   ],
   "mcs": [
     {
-      "question": "The primary application of Limits: definition, standard limits, evaluation of limits is in:",
+      "question": "Which indeterminate forms can be considered for L’Hôpital’s rule?",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "0/0 and ∞/∞",
+        "0/∞ only",
+        "∞/0 only",
+        "1/0 only"
       ],
       "answer": "A"
     },
     {
-      "question": "For Limits: definition, standard limits, evaluation of limits, which condition is necessary?",
+      "question": "Using L’Hôpital’s rule, what is the limit of sin(x)/x as x approaches 0?",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "0",
+        "1",
+        "−1",
+        "∞"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "What is the unit/dimension used in Limits: definition, standard limits, evaluation of limits?",
+      "question": "Which derivatives are compared when applying L’Hôpital’s rule to f(x)/g(x)?",
       "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
+        "f(x)/g(x)",
+        "f′(x)/g′(x)",
+        "f′(x)/g(x)",
+        "f(x)/g′(x)"
       ],
-      "answer": "A"
+      "answer": "B"
     },
     {
-      "question": "Which statement about Limits: definition, standard limits, evaluation of limits is FALSE?",
+      "question": "When L’Hôpital’s rule applies, what is the limit of (e^x − 1)/x as x approaches 0?",
       "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
+        "0",
+        "−1",
+        "1",
+        "∞"
       ],
       "answer": "C"
     }

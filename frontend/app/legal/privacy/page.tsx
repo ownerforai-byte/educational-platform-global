@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
   return (
     <LegalDoc
       title="Privacy Policy"
-      updated="14 October 2026"
+      updated="1 November 2026"
       intro="This policy explains what information Ravikisan's Platform (the “App”, “we”, “us”) collects, why, and what choices you have. It is written for Google Play review and for students."
       doc="privacy-policy"
     >
@@ -91,7 +91,10 @@ export default function PrivacyPolicy() {
               <tr><td>Supabase</td><td>Accounts, learning data, uploads, password emails</td><td>Processor / host</td></tr>
               <tr><td>Vercel</td><td>Front-end hosting</td><td>Host</td></tr>
               <tr><td>Render</td><td>Back-end API hosting</td><td>Host</td></tr>
-              <tr><td>AI provider (Veer)</td><td>AI prompt/response processing</td><td>Third-party AI</td></tr>
+              <tr><td>Resend or SendGrid (configured mail provider)</td><td>Account ID, email and support/deletion/report message for delivery</td><td>Email delivery</td></tr>
+              <tr><td>Google Gmail (support inbox)</td><td>Support/deletion/report correspondence</td><td>Support mailbox</td></tr>
+              <tr><td>Sentry (when enabled)</td><td>Error diagnostics and technical request context</td><td>Error monitoring</td></tr>
+              <tr><td>AI providers (Veer; enabled server configuration)</td><td>AI prompt/response processing</td><td>Third-party AI</td></tr>
             </tbody>
           </table>
           <p>
@@ -123,7 +126,7 @@ export default function PrivacyPolicy() {
       <section>
         <h2>8. Your rights</h2>
         <p>
-          You can access, correct, delete, or export your data. Email{" "}
+          You can access, correct, delete, or export your data. <Link href="/legal/delete-account">Request account deletion</Link> or email{" "}
           <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a> from your
           account address.
         </p>

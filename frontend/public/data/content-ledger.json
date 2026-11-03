@@ -7,10 +7,10 @@
     "template": "most of the payload is generator stock (\"Core point for X.\", \"X covers essential principles and applications.\")"
   },
   "totals": {
-    "entries": 937,
-    "authored": 931,
-    "template": 6,
-    "bytes": 12182457
+    "entries": 970,
+    "authored": 935,
+    "template": 35,
+    "bytes": 12213133
   },
   "subjects": {
     "biology": {
@@ -1113,10 +1113,10 @@
     },
     "chemistry": {
       "totals": {
-        "entries": 254,
+        "entries": 283,
         "authored": 254,
-        "template": 0,
-        "bytes": 2634247
+        "template": 29,
+        "bytes": 2655877
       },
       "units": {
         "applied-chemistry": {
@@ -1232,12 +1232,19 @@
         },
         "atomic-structure": {
           "totals": {
-            "entries": 27,
+            "entries": 51,
             "authored": 27,
-            "template": 0,
-            "bytes": 246194
+            "template": 24,
+            "bytes": 264162
           },
           "entries": [
+            {
+              "topicSlug": "01-rutherford-alpha-particle-scattering",
+              "filename": "01-rutherford-alpha-particle-scattering--2.json",
+              "bytes": 806,
+              "sha256": "a38b1b69566080f8b71a7f4dbf1fc3026af2c110a3073b5675c3bee44240f19a",
+              "status": "template"
+            },
             {
               "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
               "filename": "01-rutherford-alpha-particle-scattering.json",
@@ -1274,11 +1281,25 @@
               "status": "authored"
             },
             {
+              "topicSlug": "02-rutherford-stability-crisis",
+              "filename": "02-rutherford-stability-crisis--2.json",
+              "bytes": 758,
+              "sha256": "d2d9722e615d5316af789630976407587569f384fd7725fd2be87688881339fd",
+              "status": "template"
+            },
+            {
               "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
               "filename": "02-rutherford-stability-crisis.json",
               "bytes": 4759,
               "sha256": "2324b084c27bd9e44764b493552289bf46c3471c07ac5fefb7864feb122b7a11",
               "status": "authored"
+            },
+            {
+              "topicSlug": "03-bohr-postulates",
+              "filename": "03-bohr-postulates.json",
+              "bytes": 699,
+              "sha256": "e807aeae8b8a5aea97fc4386772c8f0adb0f0ac3f510c54199fce3e7f92c863f",
+              "status": "template"
             },
             {
               "topicSlug": "spectrum-of-hydrogen-atom",
@@ -1302,11 +1323,25 @@
               "status": "authored"
             },
             {
+              "topicSlug": "04-bohr-practical-application",
+              "filename": "04-bohr-practical-application.json",
+              "bytes": 743,
+              "sha256": "45796845e8f0285fc99fa3be659c47bd059a452dbb3b37437b237f522d72708c",
+              "status": "template"
+            },
+            {
               "topicSlug": "defects-of-bohr-s-theory",
               "filename": "04-defects-of-bohr-s-theory.json",
               "bytes": 5705,
               "sha256": "992332eab104a2f6363f3dc231585d8f3bcc4827510e46ea76c15ffd36261cb3",
               "status": "authored"
+            },
+            {
+              "topicSlug": "05-bohr-defects",
+              "filename": "05-bohr-defects.json",
+              "bytes": 687,
+              "sha256": "854832b29822ba89c92a30e2d1acf61cc2fae3389691a5c80ebec78b669ce367",
+              "status": "template"
             },
             {
               "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
@@ -1323,6 +1358,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "06-bohr-absorption-vs-emission",
+              "filename": "06-bohr-absorption-vs-emission.json",
+              "bytes": 747,
+              "sha256": "4483637bee494bfe1c993ebcf016de2040a484d1ed8be3a71fc451e2d0aedad0",
+              "status": "template"
+            },
+            {
               "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
               "filename": "06-heisenberg-s-uncertainty-principle-and-concept-of-probability.json",
               "bytes": 5141,
@@ -1337,11 +1379,25 @@
               "status": "authored"
             },
             {
+              "topicSlug": "07-bohr-quantization-of-angular-momentum",
+              "filename": "07-bohr-quantization-of-angular-momentum.json",
+              "bytes": 787,
+              "sha256": "61ed56b439850080034591742ecccebc473c16b9f816873a336e73ba9bd7ad83",
+              "status": "template"
+            },
+            {
               "topicSlug": "quantum-numbers",
               "filename": "07-quantum-numbers.json",
               "bytes": 18807,
               "sha256": "6ecbe61d5dd7d79ddf69b2235e86a87f6af56fc283665cc41927546b0bd26db4",
               "status": "authored"
+            },
+            {
+              "topicSlug": "08-hydrogen-spectrum-origin-and-series",
+              "filename": "08-hydrogen-spectrum-origin-and-series.json",
+              "bytes": 767,
+              "sha256": "3ccaec8db1929a552f4f84b87e512348669a178f2ca6e815e4c48ec6c9402ef7",
+              "status": "template"
             },
             {
               "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
@@ -1372,6 +1428,90 @@
               "status": "authored"
             },
             {
+              "topicSlug": "09-hydrogen-spectrum-rydberg-equation",
+              "filename": "09-hydrogen-spectrum-rydberg-equation.json",
+              "bytes": 742,
+              "sha256": "e0f511bfba8012446f5e646cdc3742b1e0a95fe6dace7bee974a77ee479047c6",
+              "status": "template"
+            },
+            {
+              "topicSlug": "10-negative-electronic-energy-and-bohr-critique",
+              "filename": "10-negative-electronic-energy-and-bohr-critique.json",
+              "bytes": 815,
+              "sha256": "31808fea5b272c9577dcd37c520b20305b77d613ffa2e1cd0f396cfbfe63e775",
+              "status": "template"
+            },
+            {
+              "topicSlug": "11-de-broglie-matter-waves",
+              "filename": "11-de-broglie-matter-waves.json",
+              "bytes": 776,
+              "sha256": "b61506a648413b9072322f6e38527eb9a255957d284aac74b5dff7643bd18458",
+              "status": "template"
+            },
+            {
+              "topicSlug": "12-heisenberg-uncertainty-principle",
+              "filename": "12-heisenberg-uncertainty-principle.json",
+              "bytes": 737,
+              "sha256": "c3d741bcf64dd592cf7b064f4c03ae8766ce96165c637455deea80001dd5bd55",
+              "status": "template"
+            },
+            {
+              "topicSlug": "13-schrodinger-wave-equation",
+              "filename": "13-schrodinger-wave-equation.json",
+              "bytes": 775,
+              "sha256": "bac70e3dc5665f4a3ab1fd7b0b1f4dfdec6b309ac48ef40bcedd96f528553f2e",
+              "status": "template"
+            },
+            {
+              "topicSlug": "14-bohr-bury-scheme",
+              "filename": "14-bohr-bury-scheme.json",
+              "bytes": 781,
+              "sha256": "c4673006d7ef0cdde653868a57a1e63be2c2594f028e38de85102eea8927cb04",
+              "status": "template"
+            },
+            {
+              "topicSlug": "15-orbit-vs-orbital-and-s-orbital",
+              "filename": "15-orbit-vs-orbital-and-s-orbital.json",
+              "bytes": 783,
+              "sha256": "64631612d19c8b1ec689814d34a29e8139673e8ad629aa286788355bd8241364",
+              "status": "template"
+            },
+            {
+              "topicSlug": "16-p-orbital-and-four-quantum-numbers",
+              "filename": "16-p-orbital-and-four-quantum-numbers.json",
+              "bytes": 751,
+              "sha256": "e8534a36cf9f935b2275731ae5ded70893768ddce69cca44dbaf54162202a621",
+              "status": "template"
+            },
+            {
+              "topicSlug": "17-quantum-number-origins-and-subshell-metrics",
+              "filename": "17-quantum-number-origins-and-subshell-metrics.json",
+              "bytes": 823,
+              "sha256": "1fad643fd8998ef280dc4430b9e3aa78c4434ad7874bfb71d2db49ff63bd4fc5",
+              "status": "template"
+            },
+            {
+              "topicSlug": "18-orbital-designation-matrix-and-magnetic-spin",
+              "filename": "18-orbital-designation-matrix-and-magnetic-spin.json",
+              "bytes": 812,
+              "sha256": "c80b56c619e5e27d0d75c503ac7d26e8d096a63d3df10b909e07d2df9c871161",
+              "status": "template"
+            },
+            {
+              "topicSlug": "19-electron-spin-notation-and-shell-mapping",
+              "filename": "19-electron-spin-notation-and-shell-mapping.json",
+              "bytes": 793,
+              "sha256": "3a3fe0e8f6e91722acf51250a87fc82c3c4d00de2518633a4b0cab360dfcef41",
+              "status": "template"
+            },
+            {
+              "topicSlug": "20-atom-and-dalton-atomic-theory",
+              "filename": "20-atom-and-dalton-atomic-theory--2.json",
+              "bytes": 688,
+              "sha256": "0ccfe5edaeac92e15e19570bc5af7685d03d5aa1695ed2e0b3dc7bdfe9d2b60c",
+              "status": "template"
+            },
+            {
               "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
               "filename": "20-atom-and-dalton-atomic-theory.json",
               "bytes": 5302,
@@ -1400,6 +1540,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "24-atomic-number",
+              "filename": "24-atomic-number--2.json",
+              "bytes": 624,
+              "sha256": "51c531076e591b96a71047e8f49a0efed0f34d24633d4ac6049198240f07b4e8",
+              "status": "template"
+            },
+            {
               "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
               "filename": "24-atomic-number.json",
               "bytes": 4165,
@@ -1407,11 +1554,32 @@
               "status": "authored"
             },
             {
+              "topicSlug": "25-mass-number-and-isotopes",
+              "filename": "25-mass-number-and-isotopes.json",
+              "bytes": 684,
+              "sha256": "2385962b36b4685b141289756b8826f11e5d599587474f300396a7c13f62cfb3",
+              "status": "template"
+            },
+            {
+              "topicSlug": "26-isobars-isotones-isodiaphers",
+              "filename": "26-isobars-isotones-isodiaphers--2.json",
+              "bytes": 681,
+              "sha256": "5a45d27cc68d3a4b3de6f6d0a8d2c2acd524abf4b718ad9f28dd735c9f3b47aa",
+              "status": "template"
+            },
+            {
               "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
               "filename": "26-isobars-isotones-isodiaphers.json",
               "bytes": 5035,
               "sha256": "37fa7fe568478a3d5c9ce6c11872762368a598aadd8c33d15a025b0e3879b004",
               "status": "authored"
+            },
+            {
+              "topicSlug": "27-thomson-plum-pudding-model",
+              "filename": "27-thomson-plum-pudding-model--2.json",
+              "bytes": 709,
+              "sha256": "23eb1ae57f7b7e91aa3f95af38e2be972cb0b3f2e84127dd8c8d7aa56362a95f",
+              "status": "template"
             },
             {
               "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
@@ -2969,10 +3137,10 @@
         },
         "stoichiometry": {
           "totals": {
-            "entries": 20,
+            "entries": 25,
             "authored": 20,
-            "template": 0,
-            "bytes": 136523
+            "template": 5,
+            "bytes": 140185
           },
           "entries": [
             {
@@ -2990,11 +3158,25 @@
               "status": "authored"
             },
             {
+              "topicSlug": "01-law-of-conservation-of-mass",
+              "filename": "01-law-of-conservation-of-mass--2.json",
+              "bytes": 707,
+              "sha256": "62c0f3b5bf725b3e24de84aaf65c3a3b5bcfc029a23c1abbfabb29de94523584",
+              "status": "template"
+            },
+            {
               "topicSlug": "laws-of-stoichiometry",
               "filename": "01-law-of-conservation-of-mass.json",
               "bytes": 4658,
               "sha256": "0f2ad5d8a8b5579c34577a6c77f40850591f8eac6046e0ffb22dcc26aa3d27ad",
               "status": "authored"
+            },
+            {
+              "topicSlug": "02-law-of-definite-proportions",
+              "filename": "02-law-of-definite-proportions--2.json",
+              "bytes": 740,
+              "sha256": "246c607ed6fc29902c47b156f40728fc7625303a0d21be5b877a05a97dd96ce0",
+              "status": "template"
             },
             {
               "topicSlug": "laws-of-stoichiometry",
@@ -3032,11 +3214,25 @@
               "status": "authored"
             },
             {
+              "topicSlug": "03-law-of-multiple-proportions",
+              "filename": "03-law-of-multiple-proportions--2.json",
+              "bytes": 707,
+              "sha256": "cbc4366020b14b32f2d0accf3517f4e85c434862dd76e692a7e05c37fbc0076a",
+              "status": "template"
+            },
+            {
               "topicSlug": "laws-of-stoichiometry",
               "filename": "03-law-of-multiple-proportions.json",
               "bytes": 4237,
               "sha256": "1692340945a4b82ba2e3ce33a5e220eab04d3a202a92863fcfb883614dc3a971",
               "status": "authored"
+            },
+            {
+              "topicSlug": "04-law-of-reciprocal-proportions",
+              "filename": "04-law-of-reciprocal-proportions--2.json",
+              "bytes": 715,
+              "sha256": "658f6e7a36d1bfe817fa4f02285fab4872ada846274b7df56516b0d4dfe2eccb",
+              "status": "template"
             },
             {
               "topicSlug": "laws-of-stoichiometry",
@@ -3072,6 +3268,13 @@
               "bytes": 9149,
               "sha256": "58688734ebc213b47be9b0b1aad3a25d2b8dd10fef21cccd1882c97fb43671dc",
               "status": "authored"
+            },
+            {
+              "topicSlug": "05-verifying-whole-number-ratios",
+              "filename": "05-verifying-whole-number-ratios--2.json",
+              "bytes": 793,
+              "sha256": "634141363c55be5a4bbe975ba3ea54b8d59f03ff939541dc350f4fa59f78e68e",
+              "status": "template"
             },
             {
               "topicSlug": "laws-of-stoichiometry",
@@ -3751,10 +3954,10 @@
     },
     "mathematics": {
       "totals": {
-        "entries": 97,
-        "authored": 91,
+        "entries": 101,
+        "authored": 95,
         "template": 6,
-        "bytes": 627225
+        "bytes": 636271
       },
       "units": {
         "algebra": {
@@ -3867,17 +4070,31 @@
         },
         "analytic-geometry": {
           "totals": {
-            "entries": 6,
-            "authored": 6,
+            "entries": 9,
+            "authored": 9,
             "template": 0,
-            "bytes": 25378
+            "bytes": 27983
           },
           "entries": [
+            {
+              "topicSlug": "01-angle-bisector-a1a2-plus-b1b2-rule",
+              "filename": "01-angle-bisector-a1a2-plus-b1b2-rule.json",
+              "bytes": 826,
+              "sha256": "3a82bf3cbec975106ee813e3d7b255b8d978342b152d9dfd43512abd92622538",
+              "status": "authored"
+            },
             {
               "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles",
               "filename": "01-straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles.json",
               "bytes": 7148,
               "sha256": "babb6f803e2f11d7b6848f668e4135e9ce7d6efbc071472276935dda5c1c96ca",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "02-angle-bisector-worked-example",
+              "filename": "02-angle-bisector-worked-example--2.json",
+              "bytes": 676,
+              "sha256": "f7a24ac4448addb034400508671695041295c446a2ecbbed4f3b39bd4e903147",
               "status": "authored"
             },
             {
@@ -3892,6 +4109,13 @@
               "filename": "02-pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a.json",
               "bytes": 7824,
               "sha256": "1cf8c6d42292084465b670ee7c698ed5a83b034c0a143ad0d22439c8c40baee4",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "03-angle-bisector-tan-theta-verification",
+              "filename": "03-angle-bisector-tan-theta-verification--2.json",
+              "bytes": 1103,
+              "sha256": "4dcab5275cefa12a82885ec90f992c4e25a29d7f49e5965fc7bd1d05db41f86e",
               "status": "authored"
             },
             {
@@ -3919,12 +4143,19 @@
         },
         "calculus": {
           "totals": {
-            "entries": 39,
-            "authored": 39,
+            "entries": 40,
+            "authored": 40,
             "template": 0,
-            "bytes": 421330
+            "bytes": 427771
           },
           "entries": [
+            {
+              "topicSlug": "limits-definition-standard-limits-evaluation-of-limits",
+              "filename": "01-lhopital-rule.json",
+              "bytes": 6441,
+              "sha256": "730cf5048449f836a5baffeb2509576ec8e905838ffcd49d42bd6df01d2c039e",
+              "status": "authored"
+            },
             {
               "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi",
               "filename": "01-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi.json",
@@ -17072,10 +17303,10 @@
     {
       "path": "frontend/public/data/content/_index.json",
       "kind": "map",
-      "bytes": 6560453,
-      "sha256": "da19a7151c06e69361d1f1abcc6edea7b9b563de52a66873fb34f5cd19a0dec4",
-      "claims": 1122,
-      "authored": 1121,
+      "bytes": 6694931,
+      "sha256": "aa8188cd866c4c028e47d6f30fc17d6fb036f01af62fb4507958e3040ffd326c",
+      "claims": 1130,
+      "authored": 1129,
       "template": 1
     },
     {

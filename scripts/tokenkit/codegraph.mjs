@@ -41,6 +41,7 @@ function importTargets(relFile) {
   const resolve = (fromFile, spec) => {
     if (!spec || !spec.startsWith(".")) return null;
     const base = path.posix.normalize(path.posix.join(path.dirname(fromFile), spec.replace(/\\/g, "/")));
+    if (read(base) != null) return base;
     for (const ext of EXT) { if (read(base + ext) != null) return base + ext; for (const e of EXT) if (read(base + "/index" + e) != null) return base + "/index" + e; }
     return null;
   };

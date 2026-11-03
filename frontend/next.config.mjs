@@ -4,6 +4,12 @@ import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
+  env: {
+    // Server-rendered local DOCX previews need an absolute public URL.
+    NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN:
+      process.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN?.trim().replace(/\/+$/, "") ||
+      "https://ravikisan.vercel.app",
+  },
   // Fresh deploys must win — but only for DOCUMENTS. A blanket no-store on
   // "/:path*" also hit everything served out of /public, including the 6 MB
   // notes manifest the app fetches at runtime: that turned a cached edge

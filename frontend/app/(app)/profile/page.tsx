@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { SupportRequest } from "@/components/support/support-request";
 import { useRouter } from "next/navigation";
 import {
   ArrowUpRight,
@@ -1004,6 +1005,8 @@ export default function ProfilePage() {
               </CardContent>
             </Card>
           )}
+
+          <SupportRequest kind="account_deletion" />
 
           {/* Actions */}
           <div className="flex flex-wrap gap-2 pt-2">

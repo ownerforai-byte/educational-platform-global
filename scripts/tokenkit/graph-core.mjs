@@ -17,6 +17,7 @@ function resolveSpecifier(fromFile, spec) {
   if (!spec || !spec.startsWith(".")) return null;
   const fromDir = path.dirname(fromFile);
   const base = path.posix.normalize(path.posix.join(fromDir, spec.replace(/\\/g, "/")));
+  if (readFileSafe(base) != null) return base;
   for (const ext of EXT_CANDIDATES) {
     if (readFileSafe(base + ext) != null) return base + ext;
     for (const e2 of EXT_CANDIDATES) if (readFileSafe(base + "/index" + e2) != null) return base + "/index" + e2;

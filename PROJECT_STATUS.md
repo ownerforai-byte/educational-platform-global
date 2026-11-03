@@ -437,5 +437,15 @@ admin O(N) fixed) · Track 4 tests ✅ (frontend + backend suites in CI) · Trac
 - Regression coverage includes the single archive, canonical source selection, exact
   companion-tab registry, and approved-account browser access to `/notes`. The access
   gate remains unchanged: visitors get the sign-in wall and approved sessions get the
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:60f22a0ef0fab4d5ecd25435a9e3750ea136a5a86a1b2a95878c9731c2cb015c -->
+
   archive.
+
+## Google Play preparation — 2026-11-01
+Repository implementation adds support-assisted deletion requests, in-app AI reports, public disclosures, SDK36-compatible build tooling and guarded internal-test publishing. Existing premium/approval contracts are preserved. Earlier owner-only legal disclosure presentation is intentionally changed under the current request to repair Play compliance. Manual account/credentials, provider configuration, data purge operations, billing-model decision, real-device acceptance and Play declarations remain owner responsibilities; no production readiness claim.
+
+
+<!-- /coderabbit-ai-generated:v1 -->
 

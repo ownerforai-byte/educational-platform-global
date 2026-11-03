@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Atom,
   BookOpen,
@@ -123,14 +123,12 @@ function isGeneralTopic(topic: string): boolean {
  * - DOCX → Google Docs Viewer so the document is always visible and scrollable
  *   in the browser without downloading
  */
-function docIframeSrc(item: ResourceItem): string {
+function docIframeSrc(item: ResourceItem, browserOrigin: string | null): string {
   if (item.kind === "docx") {
     // Local docx files need an absolute URL for Google Docs Viewer
     if (item.src.startsWith("/")) {
-      const origin =
-        (typeof window !== "undefined" && window.location.origin)
-          ? window.location.origin
-          : (process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") || "https://ravikisan.vercel.app");
+      const origin = browserOrigin ||
+        (process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") || process.env.NEXT_PUBLIC_DOC_VIEWER_DEFAULT_ORIGIN);
       return `https://docs.google.com/gview?url=${encodeURIComponent(origin + item.src)}&embedded=true`;
     }
     return `https://docs.google.com/gview?url=${encodeURIComponent(item.src)}&embedded=true`;
@@ -172,6 +170,11 @@ const ALL_RESOURCE_ITEMS: ResourceItem[] = [
 export default function ResourcesPage() {
   const [query, setQuery] = useState("");
   const [selectedSubject, setSelectedSubject] = useState<FilterSubject>("All");
+  const [browserOrigin, setBrowserOrigin] = useState<string | null>(null);
+
+  useEffect(() => {
+    setBrowserOrigin(window.location.origin);
+  }, []);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -429,7 +432,7 @@ export default function ResourcesPage() {
                                     <span className="text-[9px] uppercase tracking-wider font-semibold opacity-75">{item.kind}</span>
                                   </div>
                                   <iframe
-                                    src={docIframeSrc(item)}
+                                    src={docIframeSrc(item, browserOrigin)}
                                     title={item.title}
                                     loading="lazy"
                                     className="w-full flex-1 border-0 bg-white"

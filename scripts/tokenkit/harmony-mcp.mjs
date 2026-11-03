@@ -13,6 +13,8 @@
 //   {"command":"node","args":["scripts/tokenkit/harmony-mcp.mjs"]}
 // (point at repo root; the server is idempotent + offline)
 
+import { fileURLToPath } from "node:url";
+
 import {
   REPO_ROOT, fs, path, loadTS, parseSymbols, listCodeFiles,
   estTokens, shortHash, normPath, loadGraph,
@@ -62,7 +64,8 @@ function handle(method, params = {}) {
 }
 function packMcp(a) {
   const r = buildPack({ target: a.target, bodies: a.bodies || 0, symbolsOnly: !!a.symbolsOnly });
-  return { ...r, preview: r.text.slice(0, 800) };
+  const { text, ...metadata } = r;
+  return { ...metadata, preview: text.slice(0, 800) };
 }
 function searchMcp(a) { return searchLocal({ query: a.query, top: a.top || 10, pathFilter: a.pathFilter }); }
 function jumpMcp(a) { return jump({ symbol: a.symbol, body: !!a.body, depth: a.depth }); }
@@ -127,25 +130,27 @@ function formatMcp(a) {
 }
 
 // --- stdio JSON-RPC loop ------------------------------------------------
-let buf = "";
-process.stdin.setEncoding("utf8");
-process.stdin.on("data", (chunk) => {
-  buf += chunk;
-  let nl;
-  while ((nl = buf.indexOf("\n")) !== -1) {
-    const line = buf.slice(0, nl).trim();
-    buf = buf.slice(nl + 1);
-    if (!line) continue;
-    let req; try { req = JSON.parse(line); } catch { continue; }
-    if (req.method === "notifications/initialized") continue;
-    if (req.id === undefined) continue; // notification
-    const res = handle(req.method, req.params);
-    const out = res === null
-      ? { jsonrpc: "2.0", id: req.id, error: { code: -32601, message: "Method not found" } }
-      : { jsonrpc: "2.0", id: req.id, result: res };
-    process.stdout.write(JSON.stringify(out) + "\n");
-  }
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  let buf = "";
+  process.stdin.setEncoding("utf8");
+  process.stdin.on("data", (chunk) => {
+    buf += chunk;
+    let nl;
+    while ((nl = buf.indexOf("\n")) !== -1) {
+      const line = buf.slice(0, nl).trim();
+      buf = buf.slice(nl + 1);
+      if (!line) continue;
+      let req; try { req = JSON.parse(line); } catch { continue; }
+      if (req.method === "notifications/initialized") continue;
+      if (req.id === undefined) continue; // notification
+      const res = handle(req.method, req.params);
+      const out = res === null
+        ? { jsonrpc: "2.0", id: req.id, error: { code: -32601, message: "Method not found" } }
+        : { jsonrpc: "2.0", id: req.id, result: res };
+      process.stdout.write(JSON.stringify(out) + "\n");
+    }
+  });
+}
 
 // re-export for testing
 export { budgetMcp, formatMcp, tierFor };

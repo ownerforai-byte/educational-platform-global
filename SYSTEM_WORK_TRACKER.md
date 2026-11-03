@@ -6,6 +6,30 @@ Miscellaneous not part of this task: `.github/workflows/prune-deployments.yml`, 
 
 Deep-concept answer upgrade (2026-11-02): 🟠 Partial — second-pass academic answers, research grounding and user-scoped related history across chat, math and deep-dive. Mocked endpoint and focused frontend tests pass; real provider/search and account-backed history remain unverified, the frontend affected suite timed out, and the local preview became unresponsive. Quiz generation/grading retain their structured-output contracts. Owner: Buffy.
 
+## Google Play readiness — CodeRabbit Agent — 2026-11-01
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:44291c846a3a38637f8a479dcb9f0ad96b25ac641414bd5f031c27b9ba087dd8 -->
+
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:6604f0325c1ef42fe9fb34c051ec85cbcbc203103bc22d0fcc1640c6db786d75 -->
+
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:47b589f7e1b081bcc7612697a7559a5ce42c07f99a9d96af4bf0c382a1c5b047 -->
+
+Status: repository preparation completed; owner setup and release acceptance remain pending. No commit-bound full-gate, Android-build, or final CodeRabbit-review results are recorded for commit c43fd6c9e9f01e2ea822ae25fb5295e7f2e6d909. Earlier local validation is recorded in the task workspace.
+
+<!-- /coderabbit-ai-generated:v1 -->
+
+<!-- /coderabbit-ai-generated:v1 --> External setup and acceptance remain outstanding.
+
+<!-- /coderabbit-ai-generated:v1 --> See play-store/OWNER-RELEASE-STEPS.md.
+
+
+<!-- /coderabbit-ai-generated:v1 -->
+
 PYQ decision (2026-10-24): option B — retire `content/pyq/`.
 The shipped reader (`frontend/lib/pyq-bank.ts`) loads questions only from `content/_index.json` under `practice/questions` (365 banks, 869 solved questions), not from `content/pyq/`.
 `content/pyq/` is not in the tree (0 git files). Its 24-bank successor `content/resources/question-bank/` stays unwired; do not add a second reader path.

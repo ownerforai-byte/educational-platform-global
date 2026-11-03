@@ -12,8 +12,8 @@ export default function DataSafety() {
   return (
     <LegalDoc
       title="Data Safety"
-      updated="14 October 2026"
-      intro="This page summarizes the Google Play Data Safety declaration for Ravikisan's Platform."
+      updated="1 November 2026"
+      intro="This page describes data practices. The Play Console declaration must be checked against enabled production services."
       doc="data-safety"
     >
       <section>
@@ -27,11 +27,13 @@ export default function DataSafety() {
           <li><strong>App interaction</strong> — Yes (features used, errors/crashes)</li>
         </ul>
         <LegalBlurGate>
-          <h3>Data shared with third parties</h3>
+          <h3>Service providers</h3>
           <ul>
             <li><strong>Supabase</strong> — Name, Email, User ID, Other content</li>
             <li><strong>Vercel / Render</strong> — App interaction / technical logs</li>
-            <li><strong>AI provider (Veer)</strong> — Prompts, generated content, and User ID (for logged-in users)</li>
+            <li><strong>Resend or SendGrid (configured mail provider) and the Gmail support inbox</strong> — account ID, email and support/deletion/report message</li>
+            <li><strong>Sentry (when enabled)</strong> — crash diagnostics and technical request context</li>
+            <li><strong>AI provider (Veer)</strong> — Prompts, generated content and context needed to answer; enabled providers depend on server configuration</li>
           </ul>
         </LegalBlurGate>
       </section>
@@ -40,8 +42,8 @@ export default function DataSafety() {
         <h2>2. Data protection practices</h2>
         <ul>
           <li><strong>Data encrypted in transit</strong> — Yes (HTTPS/TLS)</li>
-          <li><strong>Users can delete their data</strong> — Yes</li>
-          <li><strong>Data deleted on account deletion</strong> — Yes</li>
+          <li><strong>Deletion requests</strong> — <a href="/legal/delete-account">Request account and associated data deletion</a>; support verifies ownership and confirms completion.</li>
+
         </ul>
       </section>
 
@@ -49,8 +51,8 @@ export default function DataSafety() {
         <h2>3. Data sensitivity</h2>
         <ul>
           <li><strong>Can identify a person</strong> — Yes (Name/Email/User ID)</li>
-          <li><strong>Sensitive info (health, religion, etc.)</strong> — No</li>
-          <li><strong>Financial info</strong> — No (Google processes payments when IAP enabled)</li>
+          <li><strong>User-provided content</strong> — Prompts and uploads may contain sensitive information. Avoid submitting unnecessary personal data.</li>
+          <li><strong>Payments</strong> — Declarations must match the payment flow actually offered.</li>
         </ul>
       </section>
 
