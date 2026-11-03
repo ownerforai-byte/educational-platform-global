@@ -27,6 +27,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const SRC = path.join(ROOT, "content", "ravikishan", "class-11-notes");
 const DEST = path.join(ROOT, "frontend", "public", "data", "syllabus-notes");
+// Note bodies go to the gated dir (outside public/); only _manifest.json stays public.
+const GATED_DEST = path.join(
+  ROOT,
+  "frontend",
+  require("../frontend/lib/content/gated-kinds.json").gatedDir,
+  "syllabus-notes",
+);
 
 function readJsonSafe(p) {
   try {
@@ -67,7 +74,7 @@ function buildSubject(subject) {
   for (const unit of units) {
     const conceptsDir = path.join(subjectDir, unit, "concepts");
     if (!fs.existsSync(conceptsDir)) continue;
-    const outUnitDir = path.join(DEST, subject, unit);
+    const outUnitDir = path.join(GATED_DEST, subject, unit);
     fs.mkdirSync(outUnitDir, { recursive: true });
 
     const files = fs

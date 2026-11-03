@@ -22,7 +22,7 @@ import { describe, expect, it } from "vitest";
  * below: a year is ONE card spanning every unit that contributed to it.
  */
 
-const ROOT = join(process.cwd(), "public/data/content");
+const ROOT = join(process.cwd(), "content-gated/content");
 const index = JSON.parse(readFileSync(join(ROOT, "_index.json"), "utf8")) as Record<
   string,
   { title?: string; year?: number; examSource?: string; unitSlug?: string; questions?: unknown[] }

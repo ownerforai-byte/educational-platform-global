@@ -11,7 +11,7 @@
  *
  *   1. `content/ravikishan/<class>/<subject>/<unit>/concepts/*.json`
  *      — the authored ConceptNote corpus (schema-validated by `npm run check:schema`).
- *   2. `frontend/public/data/syllabus-notes/<subject>/*.json`
+ *   2. `frontend/content-gated/syllabus-notes/<subject>/*.json`
  *      — the built note payloads shipped to the browser.
  *   3. `backend/kb/` — the OPTIONAL drop-in folder: any nested `.json` file
  *      under it, whose top-level values are strings or arrays of strings, is
@@ -53,6 +53,7 @@
 
 import fs from "fs";
 import path from "path";
+import { loadGatedTable } from "../utils/gatedContent";
 
 /** Which class a record belongs to. `unknown` = the source did not say. */
 export type ClassLevel = "class-11" | "class-12" | "unknown";
@@ -467,6 +468,12 @@ function candidateRoots(): CorpusRoot[] {
   const cwd = process.cwd();
   const up = path.join(cwd, "..");
   const roots: CorpusRoot[] = [];
+  let gatedDir = "content-gated";
+  try {
+    gatedDir = loadGatedTable().gatedDir;
+  } catch {
+    // table missing on a trimmed deploy: fall back to the default name
+  }
 
   for (const base of [cwd, up]) {
     roots.push({
@@ -503,14 +510,15 @@ function candidateRoots(): CorpusRoot[] {
       label: "kb",
       dropIn: true,
     });
+    // Note bodies live in the gated dir, outside public/ (gated-kinds.json gatedDir).
     roots.push({
-      dir: path.join(base, "frontend", "public", "data", "syllabus-notes"),
-      label: "frontend/public/data/syllabus-notes",
+      dir: path.join(base, "frontend", gatedDir, "syllabus-notes"),
+      label: `frontend/${gatedDir}/syllabus-notes`,
       dropIn: false,
     });
     roots.push({
-      dir: path.join(base, "public", "data", "syllabus-notes"),
-      label: "public/data/syllabus-notes",
+      dir: path.join(base, gatedDir, "syllabus-notes"),
+      label: `${gatedDir}/syllabus-notes`,
       dropIn: false,
     });
   }

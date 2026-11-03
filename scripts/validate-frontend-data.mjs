@@ -2,6 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 
 const base = path.join(process.cwd(), "frontend", "public", "data");
+// Note bodies and the content manifest live in the gated dir (outside public/).
+const gated = path.join(
+  process.cwd(),
+  "frontend",
+  JSON.parse(fs.readFileSync(path.join(process.cwd(), "frontend", "lib", "content", "gated-kinds.json"), "utf8")).gatedDir,
+);
 
 function readJSON(p) {
   try {
@@ -55,7 +61,7 @@ for (const s of subjects) {
   const mfile = path.join(base, "syllabus-notes", s, "_manifest.json");
   const m = readJSON(mfile);
   if (!m) { console.log(`${s}: MANIFEST MISSING`); brokenManifests++; continue; }
-  const sdir = path.join(base, "syllabus-notes", s);
+  const sdir = path.join(gated, "syllabus-notes", s);
   const nested = countNested(sdir);
   grandFiles += nested;
   const sc = scanContent(sdir);
@@ -65,7 +71,7 @@ for (const s of subjects) {
 
 console.log(`\nTOTAL note files: ${grandFiles} | WITH real content: ${filledNotes} | EMPTY: ${emptyNotes} | BROKEN: ${brokenFiles} | broken manifests: ${brokenManifests}`);
 
-const rkm = readJSON(path.join(base, "content", "manifest.json"));
+const rkm = readJSON(path.join(gated, "content", "manifest.json"));
 console.log("content/manifest.json:", Array.isArray(rkm) ? `array len ${rkm.length}` : rkm ? `object, keys=${Object.keys(rkm).length}` : "MISSING/INVALID");
 
 const exDir = path.join(base, "exams");

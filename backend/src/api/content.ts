@@ -5,6 +5,7 @@ import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { canUnlockModule } from "../utils/sectionAccess";
 import { grantAllows } from "../utils/contentGrant";
+import { loadGatedTable, gatedDataRoots } from "../utils/gatedContent";
 
 /**
  * Spark-gated content bodies.
@@ -24,44 +25,8 @@ import { grantAllows } from "../utils/contentGrant";
 
 const router = Router();
 
-interface KindSpec {
-  base: string;
-  segments: string[];
-}
-interface GatedTable {
-  kinds: Record<string, KindSpec>;
-  publicNames: string[];
-}
-
-const TABLE_REL = path.join("frontend", "lib", "content", "gated-kinds.json");
-let tableCache: GatedTable | null = null;
-
-function loadTable(): GatedTable {
-  if (tableCache) return tableCache;
-  const candidates = [
-    path.join(process.cwd(), TABLE_REL),
-    path.join(process.cwd(), "..", TABLE_REL),
-    path.join(__dirname, "..", "..", "..", TABLE_REL),
-  ];
-  for (const c of candidates) {
-    if (fs.existsSync(c)) {
-      tableCache = JSON.parse(fs.readFileSync(c, "utf8")) as GatedTable;
-      return tableCache;
-    }
-  }
-  throw new Error("gated-kinds.json not found");
-}
-
-/** Data roots holding the gated bodies, most preferred first. */
-function dataRoots(): string[] {
-  const roots: string[] = [];
-  if (process.env.CONTENT_GATED_DIR) roots.push(path.resolve(process.env.CONTENT_GATED_DIR));
-  for (const base of [process.cwd(), path.join(process.cwd(), "..")]) {
-    roots.push(path.join(base, "frontend", "public", "data"));
-    roots.push(path.join(base, "public", "data"));
-  }
-  return roots;
-}
+const loadTable = loadGatedTable;
+const dataRoots = gatedDataRoots;
 
 const SAFE_SEGMENT = /^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$/;
 const safeSegment = z.string().regex(SAFE_SEGMENT).refine((s) => !s.includes(".."));

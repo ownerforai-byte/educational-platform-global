@@ -240,6 +240,9 @@ export function railsDir(
  * ------------------------------------------------------------------ */
 import gatedKindsTable from "./gated-kinds.json";
 
+/** Gated-body root, relative to `frontend/` (outside `public/`). */
+export const GATED_DIR: string = gatedKindsTable.gatedDir;
+
 export type GatedKind = keyof typeof gatedKindsTable.kinds;
 export const GATED_KINDS = Object.keys(gatedKindsTable.kinds) as GatedKind[];
 

@@ -25,7 +25,7 @@
  *      the schema-validated authored corpus — the tier-1 source.
  *      `npm run check:schema` then `npm run content:build`.
  *
- *   3. frontend/public/data/syllabus-notes/ — built payloads (read-only).
+ *   3. frontend/content-gated/syllabus-notes/ — built payloads (read-only).
  *
  * LARGER SOURCES (a whole textbook, a PYQ bank) → put JSON in backend/kb/;
  * split by unit rather than shipping one enormous file.
@@ -87,7 +87,7 @@ export const SOURCE_REGISTRY: SourceDescriptor[] = [
     kind: "built",
     tier: 2,
     scope: "Browser-shipped note payloads — cross-check and extra detail.",
-    path: "frontend/public/data/syllabus-notes/**/*.json",
+    path: "frontend/content-gated/syllabus-notes/**/*.json",
     howToSupply: "Produced by npm run content:build — never edit by hand.",
     automatic: true,
   },

@@ -108,7 +108,7 @@ describe("POST /api/content/reveal", () => {
     expect(res.status).toBe(200);
     expect(res.headers.get("cache-control")).toContain("no-store");
     const disk = readFileSync(
-      path.join(__dirname, "..", "..", "frontend", "public", "data", "syllabus-notes", "physics", NOTE.unit, NOTE.filename),
+      path.join(__dirname, "..", "..", "frontend", "content-gated", "syllabus-notes", "physics", NOTE.unit, NOTE.filename),
       "utf8",
     );
     expect(await res.text()).toBe(disk);

@@ -128,7 +128,7 @@ describe('Content Coverage', () => {
   it('should find content files for each subject', () => {
     const subjects = ['biology', 'chemistry', 'english', 'mathematics', 'nepali', 'physics'];
     for (const subject of subjects) {
-      const subjectDir = join('public/data/syllabus-notes', subject);
+      const subjectDir = join('content-gated/syllabus-notes', subject);
       try {
         const stats = statSync(subjectDir);
         expect(stats.isDirectory()).toBe(true);
@@ -139,7 +139,7 @@ describe('Content Coverage', () => {
   });
 
   it('should have most content in physics', () => {
-    const physicsDir = join('public/data/syllabus-notes', 'physics');
+    const physicsDir = join('content-gated/syllabus-notes', 'physics');
     let fileCount = 0;
     function countFiles(dir: string) {
       const entries = readdirSync(dir, { withFileTypes: true });
@@ -161,7 +161,7 @@ describe('Content Coverage', () => {
   });
 
   it('should have Nepali content fully covering syllabus', () => {
-    const nepaliDir = join('public/data/syllabus-notes', 'nepali');
+    const nepaliDir = join('content-gated/syllabus-notes', 'nepali');
     let fileCount = 0;
     function countFiles(dir: string) {
       const entries = readdirSync(dir, { withFileTypes: true });

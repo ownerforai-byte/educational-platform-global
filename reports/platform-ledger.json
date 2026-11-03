@@ -1,37 +1,37 @@
 {
   "generatedBy": "scripts/platform-ledger.mjs",
-  "generatedAt": "2026-11-03T12:56:11.806Z",
+  "generatedAt": "2026-11-03T15:32:54.405Z",
   "totals": {
-    "files": 9952,
-    "tracked": 9949,
-    "untracked": 1,
-    "modifiedTracked": 36,
+    "files": 9961,
+    "tracked": 9957,
+    "untracked": 2,
+    "modifiedTracked": 1095,
     "rootIgnored": 2,
     "byClass": {
       "tool-scratch": 7,
       "stray": 86,
       "config": 18,
       "ci": 9,
-      "docs": 24,
+      "docs": 28,
       "external-project": 14,
       "data": 239,
       "backend-tooling": 1985,
-      "backend-core": 122,
-      "backend-tests": 51,
+      "backend-core": 127,
+      "backend-tests": 54,
       "content-tooling": 53,
       "content-source": 4491,
       "secret": 2,
       "frontend-config": 118,
-      "frontend-app": 253,
-      "frontend-components": 209,
+      "frontend-app": 254,
+      "frontend-components": 211,
       "frontend-lab": 354,
-      "frontend-features": 88,
-      "frontend-lib": 236,
       "content-runtime": 1140,
+      "frontend-features": 89,
+      "frontend-lib": 242,
       "content-assets": 133,
-      "frontend-tests": 120,
+      "frontend-tests": 129,
       "reports": 10,
-      "tooling-scripts": 190
+      "tooling-scripts": 168
     }
   },
   "secrets": {
@@ -45,7 +45,7 @@
         "action": "keep ignored; rotate if exposed"
       },
       {
-        "path": "frontend/public/data/syllabus-notes/english/literature-essays-plays/05-essay-5-scientific-research-is-a-token-of-humankind-s-survival-vladimir-keilis-borok.json",
+        "path": "frontend/content-gated/syllabus-notes/english/literature-essays-plays/05-essay-5-scientific-research-is-a-token-of-humankind-s-survival-vladimir-keilis-borok.json",
         "git": "tracked",
         "cls": "secret",
         "area": "n/a — never commit",
@@ -54,7 +54,7 @@
       }
     ],
     "grepHits": [],
-    "patternNoise": 81
+    "patternNoise": 84
   },
   "externals": [
     "agnes-bridge",
@@ -935,7 +935,7 @@
     {
       "unit": "class-11/biology",
       "source": "content/**/class-11/biology/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11/biology/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-11/biology/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
       "sourceFiles": 175,
       "runtimeFiles": 0
@@ -943,7 +943,7 @@
     {
       "unit": "class-11/chemistry",
       "source": "content/**/class-11/chemistry/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11/chemistry/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-11/chemistry/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
       "sourceFiles": 399,
       "runtimeFiles": 0
@@ -951,7 +951,7 @@
     {
       "unit": "class-11/english",
       "source": "content/**/class-11/english/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11/english/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-11/english/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
       "sourceFiles": 132,
       "runtimeFiles": 0
@@ -959,7 +959,7 @@
     {
       "unit": "class-11/mathematics",
       "source": "content/**/class-11/mathematics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11/mathematics/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-11/mathematics/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
       "sourceFiles": 157,
       "runtimeFiles": 0
@@ -967,7 +967,7 @@
     {
       "unit": "class-11/nepali",
       "source": "content/**/class-11/nepali/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11/nepali/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-11/nepali/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
       "sourceFiles": 100,
       "runtimeFiles": 0
@@ -975,7 +975,7 @@
     {
       "unit": "class-11/physics",
       "source": "content/**/class-11/physics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-11/physics/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-11/physics/",
       "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
       "sourceFiles": 505,
       "runtimeFiles": 0
@@ -983,7 +983,7 @@
     {
       "unit": "class-12/biology",
       "source": "content/**/class-12/biology/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12/biology/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-12/biology/",
       "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
       "sourceFiles": 90,
       "runtimeFiles": 0
@@ -991,7 +991,7 @@
     {
       "unit": "class-12/chemistry",
       "source": "content/**/class-12/chemistry/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12/chemistry/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-12/chemistry/",
       "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
       "sourceFiles": 96,
       "runtimeFiles": 0
@@ -999,7 +999,7 @@
     {
       "unit": "class-12/english",
       "source": "content/**/class-12/english/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12/english/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-12/english/",
       "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
       "sourceFiles": 70,
       "runtimeFiles": 0
@@ -1007,7 +1007,7 @@
     {
       "unit": "class-12/mathematics",
       "source": "content/**/class-12/mathematics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12/mathematics/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-12/mathematics/",
       "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
       "sourceFiles": 93,
       "runtimeFiles": 0
@@ -1015,7 +1015,7 @@
     {
       "unit": "class-12/nepali",
       "source": "content/**/class-12/nepali/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12/nepali/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-12/nepali/",
       "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
       "sourceFiles": 47,
       "runtimeFiles": 0
@@ -1023,7 +1023,7 @@
     {
       "unit": "class-12/physics",
       "source": "content/**/class-12/physics/",
-      "runtime": "frontend/public/data/syllabus-notes/class-12/physics/",
+      "runtime": "frontend/content-gated/syllabus-notes/class-12/physics/",
       "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
       "sourceFiles": 93,
       "runtimeFiles": 0

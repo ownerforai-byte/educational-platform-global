@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { readFile, access } from "node:fs/promises";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { GATED_DIR } from "./content/paths";
 
 /**
  * Server-side "does this syllabus topic have authored notes?" index.
@@ -21,6 +22,11 @@ const __filename = fileURLToPath(import.meta.url);
 
 /** Candidate `public/data` roots, module-relative first. */
 const DATA_ROOT_CANDIDATES: readonly string[] = [
+  // Gated note bodies live outside public/ (gated-kinds.json gatedDir).
+  resolve(dirname(__filename), "..", GATED_DIR),
+  join(process.cwd(), GATED_DIR),
+  join(process.cwd(), "frontend", GATED_DIR),
+  resolve(process.cwd(), "..", GATED_DIR),
   resolve(dirname(__filename), "..", "public", "data"),
   join(process.cwd(), "public", "data"),
   join(process.cwd(), "frontend", "public", "data"),

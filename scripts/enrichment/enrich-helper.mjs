@@ -3,7 +3,9 @@ import path from "node:path";
 
 export function writeDual(pubRelPath, rkRelPath, data) {
   const json = JSON.stringify(data, null, 2) + "\n";
-  const pubPath = path.join(process.cwd(), "frontend", "public", "data", "syllabus-notes", pubRelPath);
+  // Bodies live in the gated dir (outside public/); see frontend/lib/content/gated-kinds.json.
+  const gatedDir = JSON.parse(fs.readFileSync(path.join(process.cwd(), "frontend", "lib", "content", "gated-kinds.json"), "utf8")).gatedDir;
+  const pubPath = path.join(process.cwd(), "frontend", gatedDir, "syllabus-notes", pubRelPath);
   const rkPath = path.join(process.cwd(), "content", rkRelPath);
   
   if (fs.existsSync(path.dirname(pubPath))) {

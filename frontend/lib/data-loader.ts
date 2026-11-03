@@ -2,7 +2,7 @@
 // helpers appended below. Import only — nothing below changes.
 import { reportClientError } from "./errors/app-error";
 import { apiFetch } from "./api-client";
-import { gatedRefForDataPath } from "./content/paths";
+import { gatedRefForDataPath, GATED_DIR } from "./content/paths";
 import { getGrant } from "./content/grant-store";
 import { creditModuleKey } from "@/features/credits/constants";
 
@@ -77,6 +77,10 @@ export function loadData<T>(relPath: string): Promise<T> {
         const { join, resolve } = await import("node:path");
         const cwd = process.cwd();
         const candidatePaths = [
+          // Gated bodies live outside public/ (see gated-kinds.json gatedDir).
+          join(cwd, GATED_DIR, safe),
+          join(cwd, "frontend", GATED_DIR, safe),
+          resolve(cwd, "..", GATED_DIR, safe),
           join(cwd, "public", "data", safe),
           join(cwd, "frontend", "public", "data", safe),
           resolve(cwd, "..", "public", "data", safe),
