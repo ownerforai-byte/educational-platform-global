@@ -1,6 +1,10 @@
 // ADDITIVE (perf pass, 2026-09-27): shared error funnel used by the prefetch
 // helpers appended below. Import only — nothing below changes.
 import { reportClientError } from "./errors/app-error";
+import { apiFetch } from "./api-client";
+import { gatedRefForDataPath } from "./content/paths";
+import { getGrant } from "./content/grant-store";
+import { creditModuleKey } from "@/features/credits/constants";
 
 
 const cache = new Map<string, Promise<unknown>>();
@@ -18,6 +22,38 @@ function dataUrl(safe: string): string {
     process.env.NEXT_PUBLIC_SITE_URL ||
     `http://127.0.0.1:${process.env.PORT || 3000}`;
   return new URL(relPath, base).toString();
+}
+
+/** Thrown in the browser when a paid body is requested without a valid unlock grant. */
+export class GatedContentError extends Error {
+  readonly status = 403;
+  constructor(relPath: string) {
+    super(`loadData: "${relPath}" is locked (no active unlock grant)`);
+    this.name = "GatedContentError";
+  }
+}
+
+/** Grant for the current route's unlock key, or null (also null on the server). */
+function currentGrant(): { grant: string; moduleKey: string } | null {
+  if (typeof window === "undefined") return null;
+  const moduleKey = creditModuleKey(window.location.pathname);
+  const grant = getGrant(moduleKey);
+  return grant ? { grant, moduleKey } : null;
+}
+
+/**
+ * Browser read of a paid body through the spark-gated endpoint
+ * (POST /api/content/reveal). 403 comes back as an apiFetch error with no
+ * content; callers' existing catch paths render their locked/empty state.
+ */
+async function revealData<T>(relPath: string, ref: NonNullable<ReturnType<typeof gatedRefForDataPath>>): Promise<T> {
+  const auth = currentGrant();
+  if (!auth) throw new GatedContentError(relPath);
+  return apiFetch<T>("/api/content/reveal", {
+    method: "POST",
+    headers: { "X-Unlock-Grant": auth.grant },
+    body: JSON.stringify({ kind: ref.kind, ...ref.fields, moduleKey: auth.moduleKey }),
+  });
 }
 
 /**
@@ -59,6 +95,18 @@ export function loadData<T>(relPath: string): Promise<T> {
     }
 
     const isBrowser = typeof window !== "undefined";
+    if (isBrowser) {
+      const ref = gatedRefForDataPath(safe);
+      if (ref) {
+        try {
+          return await revealData<T>(relPath, ref);
+        } catch (err) {
+          // Do not keep a locked/failed attempt: the next call after an unlock must retry.
+          cache.delete(relPath);
+          throw err;
+        }
+      }
+    }
     try {
       const res = await fetch(dataUrl(safe), {
         // Browser: allow HTTP-cache reuse of public assets.
@@ -99,6 +147,8 @@ export function prefetchData(relPath: string): void {
   if (typeof document !== "undefined" && document.documentElement.dataset.lite === "true") {
     return;
   }
+  // Never warm a paid body without a grant (it would only 403).
+  if (typeof window !== "undefined" && gatedRefForDataPath(relPath) && !currentGrant()) return;
   try {
     void loadData(relPath).catch((error: unknown) => {
       reportClientError("loadData:prefetch", error, { path: relPath });

@@ -232,3 +232,46 @@ export function railsDir(
 ): string {
   return unitSectionDir(repoRoot, "visuals/rails", classDirOrTrack, subjectSlug, unitSlug);
 }
+
+/* ------------------------------------------------------------------ *
+ * Gated paid bodies. The kind -> path table lives in gated-kinds.json so the
+ * backend reveal route (which cannot import frontend/lib) reads the very same
+ * table at runtime. Metadata (`_manifest.json`) stays public.
+ * ------------------------------------------------------------------ */
+import gatedKindsTable from "./gated-kinds.json";
+
+export type GatedKind = keyof typeof gatedKindsTable.kinds;
+export const GATED_KINDS = Object.keys(gatedKindsTable.kinds) as GatedKind[];
+
+export interface GatedRef {
+  kind: GatedKind;
+  /** Request fields for the reveal endpoint (subject/unit/filename as the kind needs). */
+  fields: Record<string, string>;
+}
+
+/**
+ * Map a data-root-relative path (`syllabus-notes/physics/kinematics/x.json`)
+ * to its gated reference, or null when the path is public metadata.
+ */
+export function gatedRefForDataPath(relPath: string): GatedRef | null {
+  const safe = relPath.replace(/\\/g, "/").replace(/^\/+/, "");
+  const parts = safe.split("/");
+  for (const kind of GATED_KINDS) {
+    const spec = gatedKindsTable.kinds[kind] as { base: string; segments: string[] };
+    const baseParts = spec.base.split("/");
+    if (spec.segments.length === 0) {
+      if (safe === spec.base) return { kind, fields: {} };
+      continue;
+    }
+    if (parts.length !== baseParts.length + spec.segments.length) continue;
+    if (!baseParts.every((b, i) => parts[i] === b)) continue;
+    const fields: Record<string, string> = {};
+    spec.segments.forEach((name, i) => {
+      fields[name] = parts[baseParts.length + i];
+    });
+    const last = parts[parts.length - 1];
+    if ((gatedKindsTable.publicNames as string[]).includes(last)) return null;
+    return { kind, fields };
+  }
+  return null;
+}

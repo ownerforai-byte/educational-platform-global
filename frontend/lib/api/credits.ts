@@ -77,6 +77,8 @@ export interface UnlockResponse {
   expiresAt: number;
   /** Coins actually charged (0 for the owner rung). */
   cost: number;
+  /** Signed content grant (theory/reference only); sent as X-Unlock-Grant to /api/content/reveal. */
+  grant?: string;
 }
 
 /**
