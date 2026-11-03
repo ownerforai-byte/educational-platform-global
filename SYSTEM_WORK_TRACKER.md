@@ -4,6 +4,12 @@
 
 # SYSTEM WORK TRACKER
 
+AI page responsiveness (2026-11-02): ✅ Done (phone + desktop) — chat shell is `100dvh` with `min-h-0` scroll chain (no page-length chat), the conversations list is an overlay below `sm` with a Close control and static from `sm`, controls are ≥44px, composers are 16px on mobile (no iOS zoom), replies wrap long tokens, diagrams scroll horizontally instead of shrinking labels, composers respect the safe-area inset, studio pages use phone padding and mobile-sized chips. Perf: `InteractiveMarkdown` memoized, `splitStepBlocks` short-circuits when a reply has no step cards. Verified: frontend typecheck, 48 focused tests, full frontend suite 113/115 files (the 2 failures are console-spy assertions in untouched `app-error`/`resource-cache` tests and fail in isolation too), backend affected tests 59/59, backend build. Not verified: real phone/desktop layout of the `(app)` AI routes — they sit behind the approved-account wall, so the browser only reaches the sign-in screen. `npm run lint` still cannot run: `eslint.config.mjs` imports `@eslint/eslintrc`, which is neither installed nor declared. Owner: Buffy. Committed 2026-11-02 to `main` (c79c100f): 28 files, 478 added / 101 removed. Unexpected leftover after commit: `frontend/components/ai/diagram-studio.tsx` still has local edits not staged — the same mobile + session + history-diff edits already landed in the commit (same diff), so it is redundant unstaged work. Treated as already committed.
+
+Miscellaneous not part of this task: `.github/workflows/prune-deployments.yml`, `scripts/prune-vercel-deployments.mjs`, `tokenkit-out/` — left untouched and untracked; not committed.
+
+Deep-concept answer upgrade (2026-11-02): 🟠 Partial — second-pass academic answers, research grounding and user-scoped related history across chat, math and deep-dive. Mocked endpoint and focused frontend tests pass; real provider/search and account-backed history remain unverified, the frontend affected suite timed out, and the local preview became unresponsive. Quiz generation/grading retain their structured-output contracts. Owner: Buffy.
+
 ## Google Play readiness — CodeRabbit Agent — 2026-11-01
 <!-- coderabbit-ai-generated:v1 -->
 
@@ -27,12 +33,6 @@ Status: repository preparation completed; owner setup and release acceptance rem
 
 
 <!-- /coderabbit-ai-generated:v1 -->
-AI page responsiveness (2026-11-02): ✅ Done (phone + desktop) — chat shell is `100dvh` with `min-h-0` scroll chain (no page-length chat), the conversations list is an overlay below `sm` with a Close control and static from `sm`, controls are ≥44px, composers are 16px on mobile (no iOS zoom), replies wrap long tokens, diagrams scroll horizontally instead of shrinking labels, composers respect the safe-area inset, studio pages use phone padding and mobile-sized chips. Perf: `InteractiveMarkdown` memoized, `splitStepBlocks` short-circuits when a reply has no step cards. Verified: frontend typecheck, 48 focused tests, full frontend suite 113/115 files (the 2 failures are console-spy assertions in untouched `app-error`/`resource-cache` tests and fail in isolation too), backend affected tests 59/59, backend build. Not verified: real phone/desktop layout of the `(app)` AI routes — they sit behind the approved-account wall, so the browser only reaches the sign-in screen. `npm run lint` still cannot run: `eslint.config.mjs` imports `@eslint/eslintrc`, which is neither installed nor declared. Owner: Buffy. Committed 2026-11-02 to `main` (c79c100f): 28 files, 478 added / 101 removed. Unexpected leftover after commit: `frontend/components/ai/diagram-studio.tsx` still has local edits not staged — the same mobile + session + history-diff edits already landed in the commit (same diff), so it is redundant unstaged work. Treated as already committed.
-
-Miscellaneous not part of this task: `.github/workflows/prune-deployments.yml`, `scripts/prune-vercel-deployments.mjs`, `tokenkit-out/` — left untouched and untracked; not committed.
-
-Deep-concept answer upgrade (2026-11-02): 🟠 Partial — second-pass academic answers, research grounding and user-scoped related history across chat, math and deep-dive. Mocked endpoint and focused frontend tests pass; real provider/search and account-backed history remain unverified, the frontend affected suite timed out, and the local preview became unresponsive. Quiz generation/grading retain their structured-output contracts. Owner: Buffy.
-
 PYQ decision (2026-10-24): option B — retire `content/pyq/`.
 The shipped reader (`frontend/lib/pyq-bank.ts`) loads questions only from `content/_index.json` under `practice/questions` (365 banks, 869 solved questions), not from `content/pyq/`.
 `content/pyq/` is not in the tree (0 git files). Its 24-bank successor `content/resources/question-bank/` stays unwired; do not add a second reader path.
