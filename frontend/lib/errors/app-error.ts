@@ -426,6 +426,18 @@ export function reportClientError(
   };
 
   try {
+    if (process.env.NODE_ENV === "production") {
+      console.error(
+        `${ERROR_LOG_PREFIX} ${scope} kind=${normalized.kind} id=${normalized.errorId ?? "none"}`,
+      );
+    } else {
+      console.error(`${ERROR_LOG_PREFIX} ${scope}`, details, normalized.original ?? normalized);
+    }
+  } catch {
+    // Logging must never become the source of a second failure.
+  }
+
+  try {
     void import("@sentry/nextjs")
       .then((Sentry) => {
         Sentry.captureException(normalized.original ?? normalized, {

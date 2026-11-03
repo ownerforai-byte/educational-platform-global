@@ -7,10 +7,10 @@
     "template": "most of the payload is generator stock (\"Core point for X.\", \"X covers essential principles and applications.\")"
   },
   "totals": {
-    "entries": 937,
-    "authored": 931,
+    "entries": 941,
+    "authored": 935,
     "template": 6,
-    "bytes": 12182457
+    "bytes": 12191604
   },
   "subjects": {
     "biology": {
@@ -3751,10 +3751,10 @@
     },
     "mathematics": {
       "totals": {
-        "entries": 97,
-        "authored": 91,
+        "entries": 101,
+        "authored": 95,
         "template": 6,
-        "bytes": 627225
+        "bytes": 636372
       },
       "units": {
         "algebra": {
@@ -3867,17 +3867,31 @@
         },
         "analytic-geometry": {
           "totals": {
-            "entries": 6,
-            "authored": 6,
+            "entries": 9,
+            "authored": 9,
             "template": 0,
-            "bytes": 25378
+            "bytes": 27983
           },
           "entries": [
+            {
+              "topicSlug": "01-angle-bisector-a1a2-plus-b1b2-rule",
+              "filename": "01-angle-bisector-a1a2-plus-b1b2-rule.json",
+              "bytes": 826,
+              "sha256": "3a82bf3cbec975106ee813e3d7b255b8d978342b152d9dfd43512abd92622538",
+              "status": "authored"
+            },
             {
               "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles",
               "filename": "01-straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles.json",
               "bytes": 7148,
               "sha256": "babb6f803e2f11d7b6848f668e4135e9ce7d6efbc071472276935dda5c1c96ca",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "02-angle-bisector-worked-example",
+              "filename": "02-angle-bisector-worked-example--2.json",
+              "bytes": 676,
+              "sha256": "f7a24ac4448addb034400508671695041295c446a2ecbbed4f3b39bd4e903147",
               "status": "authored"
             },
             {
@@ -3892,6 +3906,13 @@
               "filename": "02-pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a.json",
               "bytes": 7824,
               "sha256": "1cf8c6d42292084465b670ee7c698ed5a83b034c0a143ad0d22439c8c40baee4",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "03-angle-bisector-tan-theta-verification",
+              "filename": "03-angle-bisector-tan-theta-verification--2.json",
+              "bytes": 1103,
+              "sha256": "4dcab5275cefa12a82885ec90f992c4e25a29d7f49e5965fc7bd1d05db41f86e",
               "status": "authored"
             },
             {
@@ -3919,12 +3940,19 @@
         },
         "calculus": {
           "totals": {
-            "entries": 39,
-            "authored": 39,
+            "entries": 40,
+            "authored": 40,
             "template": 0,
-            "bytes": 421330
+            "bytes": 427872
           },
           "entries": [
+            {
+              "topicSlug": "limits-definition-standard-limits-evaluation-of-limits",
+              "filename": "01-lhopital-rule.json",
+              "bytes": 6542,
+              "sha256": "87942672b733a29e02f5f7b3aed5c3ceb9207dc38a8f6a29f85853692f9d3620",
+              "status": "authored"
+            },
             {
               "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi",
               "filename": "01-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi.json",
@@ -17072,10 +17100,10 @@
     {
       "path": "frontend/public/data/content/_index.json",
       "kind": "map",
-      "bytes": 6560453,
-      "sha256": "da19a7151c06e69361d1f1abcc6edea7b9b563de52a66873fb34f5cd19a0dec4",
-      "claims": 1122,
-      "authored": 1121,
+      "bytes": 7089406,
+      "sha256": "6ab3a65df873e8f2397e11ec70c2161aae5ba84c650eb0e72be0464bcdf5d39e",
+      "claims": 1145,
+      "authored": 1144,
       "template": 1
     },
     {

@@ -1,13 +1,19 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+// eslint-config-next v16 ships flat configs only (its legacy `next/core-web-vitals`
+// entry is itself a flat array), so FlatCompat/@eslint/eslintrc can no longer load
+// it. Importing the flat entry directly keeps the same rule set without the
+// legacy bridge.
+/**
+ * Plugins eslint-config-next already registers. Flat config requires a rule to be
+ * declared in a config object that also holds its plugin, so the tuning block at
+ * the end re-registers the same plugin objects (identity-matched) to override
+ * individual rules without adding new dependencies.
+ */
+const inheritedPlugins = Object.assign(
+  {},
+  ...nextCoreWebVitals.map((config) => config.plugins ?? {}),
+);
 
 const eslintConfig = [
   {
@@ -26,8 +32,9 @@ const eslintConfig = [
       "*.config.ts",
     ],
   },
-  ...compat.extends("next/core-web-vitals"),
+  ...nextCoreWebVitals,
   {
+    plugins: inheritedPlugins,
     rules: {
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",

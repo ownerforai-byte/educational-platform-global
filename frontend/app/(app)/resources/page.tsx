@@ -128,9 +128,12 @@ function docIframeSrc(item: ResourceItem): string {
     // Local docx files need an absolute URL for Google Docs Viewer
     if (item.src.startsWith("/")) {
       const origin =
-        (typeof window !== "undefined" && window.location.origin)
-          ? window.location.origin
-          : (process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") || "https://ravikisan.vercel.app");
+        (typeof window !== "undefined" && window.location.origin) ||
+        process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
+      // Google Docs Viewer needs an absolute URL. Without a known origin (server
+      // render with no NEXT_PUBLIC_SITE_URL) load the file directly rather than
+      // guessing a deployment host.
+      if (!origin) return item.src;
       return `https://docs.google.com/gview?url=${encodeURIComponent(origin + item.src)}&embedded=true`;
     }
     return `https://docs.google.com/gview?url=${encodeURIComponent(item.src)}&embedded=true`;
