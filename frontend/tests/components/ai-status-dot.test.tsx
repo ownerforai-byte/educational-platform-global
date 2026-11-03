@@ -9,11 +9,17 @@ describe("AiStatusDot", () => {
     vi.stubGlobal("fetch", vi.fn(async () => ({ ok: true, json: async () => ({ online: true }) })));
     render(<AiStatusDot />);
     await waitFor(() => expect(screen.getByRole("status").getAttribute("data-status")).toBe("online"));
+    expect(screen.getByTestId("ai-status-glow")).toBeTruthy();
+    const dot = screen.getByRole("status").lastElementChild as HTMLElement;
+    expect(dot.className).toContain("bg-emerald-500");
+    expect(dot.className).toContain("shadow-[");
   });
 
   test("turns grey when the probe fails", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => { throw new Error("down"); }));
     render(<AiStatusDot />);
     await waitFor(() => expect(screen.getByRole("status").getAttribute("data-status")).toBe("offline"));
+    expect(screen.queryByTestId("ai-status-glow")).toBeNull();
+    expect((screen.getByRole("status").lastElementChild as HTMLElement).className).toContain("bg-zinc-400");
   });
 });
