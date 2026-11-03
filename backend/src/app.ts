@@ -55,6 +55,7 @@ import { isOriginAllowed } from "./middleware/cors";
 import { securityHeaders, LEGACY_STATIC_PAGE_CSP } from "./middleware/securityHeaders";
 import { errorHandler, notFoundHandler } from "./middleware/errors";
 import { logRegisteredRoutes } from "./utils/routeDebug";
+import { hasAnyLlmKey } from "./ai/config";
 import {
   JSON_BODY_LIMIT,
   STATIC_PUBLIC_DIRS,
@@ -109,6 +110,13 @@ export function createApp(): express.Express {
       // it is checking the release that triggered it (not the previous one).
       commit: process.env.RENDER_GIT_COMMIT ?? null,
     });
+  });
+
+  // Lightweight AI availability probe for the chat status dot: a boolean only,
+  // no key material. Registered before /api/ai so it stays public.
+  app.get("/api/ai/status", (_req, res) => {
+    res.setHeader("Cache-Control", "no-store");
+    res.json({ online: hasAnyLlmKey() });
   });
 
   // Route-table dump: opt-in only (ROUTE_DEBUG=true) and never in production.

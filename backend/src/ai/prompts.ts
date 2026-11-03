@@ -9,6 +9,7 @@ import { DEEP_ANSWER_RULES } from "./deep-answer";
 import { ARTIFACT_RULES } from "./artifact-rules";
 import { REPLY_CRAFT_RULES } from "./reply-craft";
 import { SOURCE_REGISTRY_RULES } from "./source-registry";
+import { COMPLETE_REVEAL_RULES } from "./complete-reveal";
 import {
   classifyInquiryMode,
   depthDirectiveForMode,
@@ -120,6 +121,7 @@ export const MASTER_ACADEMIC_PROMPT = [
   REPLY_CRAFT_RULES,
   CLASS_SCOPE_RULES,
   SOURCE_REGISTRY_RULES,
+  COMPLETE_REVEAL_RULES,
 ].join("\n\n");
 
 /**

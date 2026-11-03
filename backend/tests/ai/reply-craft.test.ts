@@ -70,6 +70,7 @@ describe("reply craft — the ChatGPT/Claude-grade layer", () => {
     // Static rule layers; the 2026-10-25 3-mode depth control (generic /
     // academic / advisory) + no-repeat law added ~1k chars — guard bloat, not a
     // hard quota.
-    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(65_000);
+    // 2026-11: COMPLETE_REVEAL_RULES added ~1.4k chars; cap raised 65k -> 67k.
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(67_000);
   });
 });
