@@ -119,6 +119,8 @@ const primaryItems: NavItem[] = [
   { href: "/mock-exams", label: "Mock Exams", icon: Timer, minLevel: "pro" },
   { href: "/analytics", label: "Analytics", icon: LineChart, minLevel: "pro" },
   { href: "/streaks", label: "Streaks and Badges", icon: Award, minLevel: "member" },
+  { href: "/community", label: "Community", icon: Users, minLevel: "plus" },
+  { href: "/ask", label: "Ask Veer", icon: HelpCircle, minLevel: "member" },
   { href: "/site-index", label: "Everything Index", icon: ListTree, minLevel: "pro" },
   { href: "/levels", label: "Curriculum Levels", icon: Compass, minLevel: "pro" },
 ];

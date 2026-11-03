@@ -260,6 +260,18 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Habit",
       },
       {
+        name: "Community",
+        opening: "A study space for every subject, each with its own page and a way to ask the tutor.",
+        href: "/community",
+        meta: "Social",
+      },
+      {
+        name: "Ask",
+        opening: "Type a study question and get an answer from the Veer tutor.",
+        href: "/ask",
+        meta: "Q&A",
+      },
+      {
         name: "Saved Bookmarks",
         opening: "Everything you starred, in the order you saved it.",
         href: "/bookmarks",

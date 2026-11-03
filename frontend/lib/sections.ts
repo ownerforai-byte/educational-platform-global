@@ -21,6 +21,8 @@ import {
   PenTool,
   Search,
   Settings,
+  Users,
+  HelpCircle,
   Sigma,
   Sparkles,
   Stethoscope,
@@ -379,6 +381,23 @@ export const SECTIONS: PlatformSection[] = [
     minTier: "member",
     icon: Award,
     href: "/streaks",
+  },
+
+  {
+    id: "community",
+    title: "Community",
+    description: "Subject study spaces with a link to the Ask board. Opens at Plus.",
+    minTier: "plus",
+    icon: Users,
+    href: "/community",
+  },
+  {
+    id: "ask",
+    title: "Ask",
+    description: "Ask a study question and get a Veer tutor answer. Opens at Member.",
+    minTier: "member",
+    icon: HelpCircle,
+    href: "/ask",
   },
 
   // ── Owner rung ──

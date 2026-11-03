@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { buildAskPrompt, getCommunitySpace, listCommunitySpaces, MAX_QUESTION_LENGTH, validateQuestion } from "@/lib/community";
 import { accuracyBySubject, accuracyByTopic, completionByUnit, overallAccuracy, weeklyTrend } from "@/lib/analytics";
 import { evaluateAchievements, nextMilestone } from "@/lib/achievements";
 import type { QuizHistoryRow } from "@/lib/api/ai-quiz-history";
@@ -157,5 +158,31 @@ describe("analytics and achievements", () => {
     const flat = JSON.stringify(buildSiteIndex());
     expect(flat).toContain('"/analytics"');
     expect(flat).toContain('"/streaks"');
+  });
+});
+
+describe("community and ask", () => {
+  it("builds one space per syllabus subject and resolves by id", () => {
+    const spaces = listCommunitySpaces();
+    expect(spaces.length).toBe(listGoalSubjects().length);
+    expect(new Set(spaces.map((s) => s.id)).size).toBe(spaces.length);
+    expect(getCommunitySpace(spaces[0].id)).toEqual(spaces[0]);
+    expect(getCommunitySpace("nope")).toBeUndefined();
+  });
+  it("validates and scopes questions", () => {
+    expect(validateQuestion("hi")).not.toBeNull();
+    expect(validateQuestion("x".repeat(MAX_QUESTION_LENGTH + 1))).not.toBeNull();
+    expect(validateQuestion("Why is the sky blue?")).toBeNull();
+    expect(buildAskPrompt("  Why? ", "Physics")).toBe("[NEB Physics] Why?");
+    expect(buildAskPrompt("Why?")).toBe("Why?");
+  });
+  it("gates /community (plus), /community/[id] by prefix and /ask (member)", () => {
+    expect(sectionForPath("/community")?.minTier).toBe("plus");
+    expect(sectionForPath(`/community/${listCommunitySpaces()[0].id}`)?.minTier).toBe("plus");
+    expect(sectionForPath("/ask")?.minTier).toBe("member");
+    expect(NAV_HREFS).toEqual(expect.arrayContaining(["/community", "/ask"]));
+    const flat = JSON.stringify(buildSiteIndex());
+    expect(flat).toContain('"/community"');
+    expect(flat).toContain('"/ask"');
   });
 });

@@ -47,6 +47,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/mock-exam.ts` | **Mock Exam Assembler & Scorer** (entrance MCQs for the OMR section, `pyq-bank` for the written section). Used by `/mock-exams`. |
 | `frontend/lib/analytics.ts` | **Performance Aggregator** (accuracy by subject/topic, unit completion, weekly trend over AI quiz history + progress journey). Used by `/analytics`. |
 | `frontend/lib/achievements.ts` | **Badge & Milestone Rules** (derived from streak + journey, nothing stored). Used by `/streaks`. |
+| `frontend/lib/community.ts` | **Community Spaces & Ask Prompt Helper** (one space per class/subject from `study-goals` / `syllabus.ts`; question validation). Used by `/community`, `/community/[id]`, `/ask`. |
 | `frontend/lib/study-goals.ts` | **Study Goals & Preferences Reader** (device-local). Shared by `/onboarding`, `/settings`, `/dashboard`, `/report-card` (views in `frontend/components/study/`); subject options come from `syllabus.ts`. |
 | `frontend/lib/syllabus.ts` | **Curriculum Single Source of Truth**. Contains official class, subject, unit, and topic hierarchies and slugs. |
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
