@@ -156,6 +156,34 @@ const curriculumItems: NavItem[] = [
   { href: "/practical", label: "Practical Lab Manuals", icon: FlaskConical, minLevel: "plus" },
   { href: "/legend", label: "Concept Legends & Facts", icon: Lightbulb, minLevel: "plus" },
   { href: "/notes", label: "Notes Archive", icon: FileText, minLevel: "plus" },
+  // Class 11 — one entry per subject hub + its theory sub-page
+  { href: "/class-11-notes/physics", label: "Physics (Class 11)", icon: Atom, minLevel: "plus" },
+  { href: "/class-11-notes/physics/theory", label: "Physics Theory (11)", icon: Atom, minLevel: "plus" },
+  { href: "/class-11-notes/chemistry", label: "Chemistry (Class 11)", icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-11-notes/chemistry/theory", label: "Chemistry Theory (11)", icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-11-notes/biology", label: "Biology (Class 11)", icon: BookOpen, minLevel: "plus" },
+  { href: "/class-11-notes/biology/theory", label: "Biology Theory (11)", icon: BookOpen, minLevel: "plus" },
+  { href: "/class-11-notes/mathematics", label: "Mathematics (Class 11)", icon: Sigma, minLevel: "plus" },
+  { href: "/class-11-notes/mathematics/theory", label: "Mathematics Theory (11)", icon: Sigma, minLevel: "plus" },
+  { href: "/class-11-notes/english", label: "English (Class 11)", icon: Languages, minLevel: "plus" },
+  { href: "/class-11-notes/english/theory", label: "English Theory (11)", icon: Languages, minLevel: "plus" },
+  { href: "/class-11-notes/nepali", label: "Nepali (Class 11)", icon: Languages, minLevel: "plus" },
+  { href: "/class-11-notes/nepali/theory", label: "Nepali Theory (11)", icon: Languages, minLevel: "plus" },
+  // Class 12 — one entry per subject hub + its theory sub-page
+  { href: "/class-12-notes/physics", label: "Physics (Class 12)", icon: Atom, minLevel: "plus" },
+  { href: "/class-12-notes/physics/theory", label: "Physics Theory (12)", icon: Atom, minLevel: "plus" },
+  { href: "/class-12-notes/chemistry", label: "Chemistry (Class 12)", icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-12-notes/chemistry/theory", label: "Chemistry Theory (12)", icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-12-notes/biology", label: "Biology (Class 12)", icon: BookOpen, minLevel: "plus" },
+  { href: "/class-12-notes/biology/theory", label: "Biology Theory (12)", icon: BookOpen, minLevel: "plus" },
+  { href: "/class-12-notes/mathematics", label: "Mathematics (Class 12)", icon: Sigma, minLevel: "plus" },
+  { href: "/class-12-notes/mathematics/theory", label: "Mathematics Theory (12)", icon: Sigma, minLevel: "plus" },
+  { href: "/class-12-notes/english", label: "English (Class 12)", icon: Languages, minLevel: "plus" },
+  { href: "/class-12-notes/english/theory", label: "English Theory (12)", icon: Languages, minLevel: "plus" },
+  { href: "/class-12-notes/nepali", label: "Nepali (Class 12)", icon: Languages, minLevel: "plus" },
+  { href: "/class-12-notes/nepali/theory", label: "Nepali Theory (12)", icon: Languages, minLevel: "plus" },
+  { href: "/journal", label: "Study Journal", icon: NotebookPen, minLevel: "pro" },
+  { href: "/search", label: "Search", icon: Search, minLevel: "plus" },
 ];
 
 const stemAndRigorItems: NavItem[] = [
@@ -171,6 +199,10 @@ const stemAndRigorItems: NavItem[] = [
   { href: "/formulas", label: "Formula Sheets", icon: Sigma, minLevel: "plus" },
   { href: "/graphs", label: "Science Graph Bank", icon: LineChart, minLevel: "pro" },
   { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow, minLevel: "plus" },
+  { href: "/lab/theory", label: "Lab Theory Hub", icon: BookOpen, minLevel: "plus" },
+  { href: "/mind-studio", label: "Diagram Studio", icon: Shapes, minLevel: "owner" },
+  { href: "/science-graph-bank", label: "Graph Bank (Legacy)", icon: LineChart, minLevel: "pro" },
+  { href: "/resources/physics-xi", label: "Physics XI Academic", icon: BookOpen, minLevel: "pro" },
 ];
 
 const toolsItems: NavItem[] = [
@@ -190,17 +222,38 @@ const toolsItems: NavItem[] = [
   { href: "/quiz", label: "Practice Quiz Bank", icon: Target, minLevel: "plus" },
   // plan.md §3 row 12: the board-exam suite (countdown, grand tests) is Plus.
   { href: "/exam-countdown", label: "Exam Countdown", icon: Target, minLevel: "pro" },
+  { href: "/exams/neb", label: "NEB Board Exam", icon: GraduationCap, minLevel: "plus" },
+  { href: "/exams/cee", label: "CEE Medical Entrance", icon: Target, minLevel: "plus" },
+  { href: "/exams/ioe", label: "IOE Engineering Entrance", icon: Target, minLevel: "plus" },
+  { href: "/ai/workspace", label: "AI Workspace", icon: Bot, minLevel: "plus" },
+  { href: "/ai/subjects", label: "Subject Classrooms", icon: BookOpen, minLevel: "plus" },
+  { href: "/ai/history", label: "AI History", icon: History, minLevel: "plus" },
+  { href: "/ai-quiz/history", label: "Quiz History", icon: History, minLevel: "plus" },
 ];
 
 const extendedItems: NavItem[] = [
   // plan.md §3 rows 18–23: resources & reference open at Member; the knowledge
   // hubs, Loksewa and the PDF library are Pro.
   { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen, minLevel: "pro" },
+  { href: "/knowledge/pro", label: "Pro Knowledge Hub", icon: BookOpen, minLevel: "pro" },
   { href: "/lessons", label: "Lessons Library", icon: GraduationCap, minLevel: "pro" },
   { href: "/loksewa", label: "Loksewa GK", icon: Users, minLevel: "pro" },
   { href: "/world-knowledge", label: "World Knowledge", icon: Globe, minLevel: "pro" },
   { href: "/resources", label: "Resource Vault", icon: Bookmark, minLevel: "plus" },
   { href: "/pdfs", label: "PDF Library", icon: FileText, minLevel: "pro" },
+  { href: "/knowledge/numerical-physics", label: "Numerical Physics", icon: Sigma, minLevel: "pro" },
+  { href: "/knowledge/numerical-chemistry", label: "Numerical Chemistry", icon: FlaskConical, minLevel: "pro" },
+  { href: "/knowledge/biology-diagrams", label: "Biology Diagrams", icon: BookOpen, minLevel: "pro" },
+  { href: "/knowledge/grammar", label: "English Grammar Hub", icon: BookOpen, minLevel: "pro" },
+  { href: "/knowledge/writing", label: "English Writing Hub", icon: FileText, minLevel: "pro" },
+  { href: "/knowledge/byakaran", label: "Nepali Byakaran", icon: Languages, minLevel: "pro" },
+  { href: "/knowledge/analytical-geometry", label: "Analytical Geometry", icon: Sigma, minLevel: "pro" },
+  { href: "/loksewa/geography-of-nepal", label: "Geography of Nepal", icon: Globe, minLevel: "pro" },
+  { href: "/loksewa/history", label: "Loksewa History", icon: History, minLevel: "pro" },
+  { href: "/loksewa/environment", label: "Loksewa Environment", icon: Globe, minLevel: "pro" },
+  { href: "/world-knowledge/general-knowledge", label: "General Knowledge", icon: Globe, minLevel: "pro" },
+  { href: "/world-knowledge/current-affairs", label: "Current Affairs", icon: Globe, minLevel: "pro" },
+  { href: "/world-knowledge/global-topics", label: "Global Topics", icon: Globe, minLevel: "pro" },
 ];
 
 const accountItems: NavItem[] = [
@@ -210,6 +263,23 @@ const accountItems: NavItem[] = [
   { href: "/report-card", label: "Report Card", icon: FileText, minLevel: "plus" },
   { href: "/settings", label: "Settings", icon: Settings, minLevel: "member" },
   { href: "/credits", label: "Credits & Plan", icon: Coins },
+  { href: "/notifications", label: "Notifications", icon: Bell, minLevel: "member" },
+  { href: "/notice", label: "Notice Board", icon: FileText, minLevel: "member" },
+];
+
+const publicItems: NavItem[] = [
+  { href: "/about", label: "About", icon: HelpCircle, minLevel: "visitor" },
+  { href: "/features", label: "Features", icon: Sparkles, minLevel: "visitor" },
+  { href: "/how-it-works", label: "How It Works", icon: Compass, minLevel: "visitor" },
+  { href: "/blog", label: "Blog", icon: FileText, minLevel: "visitor" },
+  { href: "/neb-updates", label: "NEB Updates", icon: Bell, minLevel: "visitor" },
+  { href: "/contact", label: "Contact Us", icon: MessageSquare, minLevel: "visitor" },
+  { href: "/help", label: "Help Center", icon: HelpCircle, minLevel: "visitor" },
+  { href: "/sitemap-page", label: "Site Map", icon: ListTree, minLevel: "visitor" },
+  { href: "/school", label: "For Schools", icon: GraduationCap, minLevel: "visitor" },
+  { href: "/teachers", label: "For Teachers", icon: Users, minLevel: "visitor" },
+  { href: "/parents", label: "For Parents", icon: Users, minLevel: "visitor" },
+  { href: "/plans", label: "Plans & Pricing", icon: Coins, minLevel: "visitor" },
 ];
 
 const ownerItems: NavItem[] = [
@@ -234,6 +304,7 @@ const r1Items: NavItem[] = [
 export const NAV_SECTIONS: NavSection[] = [
   // Section minLevels are only the default for items without their own; every
   // item above carries its plan.md §3 rung explicitly.
+  { id: "public", label: "About & Info", icon: Globe, minLevel: "visitor", items: publicItems },
   { id: "primary", label: "Quick Access", icon: Compass, minLevel: "member", items: primaryItems },
   { id: "curriculum", label: "Curriculum & Notes", icon: BookOpen, minLevel: "member", items: curriculumItems },
   { id: "stem", label: "Labs & Reference", icon: FlaskConical, minLevel: "visitor", items: stemAndRigorItems },
