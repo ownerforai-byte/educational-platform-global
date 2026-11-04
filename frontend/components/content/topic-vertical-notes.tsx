@@ -27,6 +27,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { loadData } from "@/lib/data-loader";
+import type { ContentKind } from "@/lib/content/paths";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
 import { selectCanonicalNoteEntry } from "@/lib/note-routes";
@@ -385,6 +386,38 @@ function answerIndex(answer: string, options: string[]): number {
   return letter ? letter.charCodeAt(0) - 97 : -1;
 }
 
+/** Map ManifestItem.source to the ContentKind the backend expects. */
+function kindForSource(source: ManifestItem["source"]): ContentKind {
+  if (source === "ravikishan") return "concepts";
+  return "theory";
+}
+
+/**
+ * Fetch one paid note body from the spark-gated server endpoint.
+ * The `moduleKey` passed here is the same key the credits/unlock endpoint
+ * wrote to `profiles.credits_unlock` — the backend verifies the window.
+ */
+async function fetchTopicNoteBody(params: {
+  kind: ContentKind;
+  classSlug: string;
+  subjectSlug: string;
+  unitSlug: string;
+  filename: string;
+  moduleKey?: string;
+}): Promise<RichTopicConcept> {
+  const res = await fetch("/api/content/reveal", {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(params),
+  });
+  if (!res.ok) {
+    const err = (await res.json().catch(() => ({}))) as { error?: string };
+    throw new Error(err.error ?? `content/reveal returned ${res.status}`);
+  }
+  return res.json() as Promise<RichTopicConcept>;
+}
+
 export function TopicVerticalNotes({
   classSlug,
   subjectSlug,
@@ -429,7 +462,16 @@ export function TopicVerticalNotes({
           const loaded = await Promise.all(
             relevant.map(async (meta) => {
               try {
-                const data = await loadData<RichTopicConcept>(`syllabus-notes/${subjectSlug}/${unitId}/${meta.filename}`);
+                const data = await fetchTopicNoteBody({
+                  kind: kindForSource(meta.source),
+                  classSlug,
+                  subjectSlug,
+                  unitSlug: unitId,
+                  filename: meta.filename,
+                  // moduleKey matches the key stored in credits_unlock by
+                  // the /api/user/credits/unlock endpoint.
+                  moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${meta.filename}`,
+                });
                 return { meta, data };
               } catch {
                 return null;

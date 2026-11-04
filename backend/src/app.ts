@@ -3,6 +3,7 @@ import cors from "cors";
 import compression from "compression";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import contentRevealRoutes from "./api/content-reveal";
 import authRoutes from "./api/auth";
 import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
@@ -187,6 +188,9 @@ export function createApp(): express.Express {
   app.use("/api/biology", biologyRoutes);
   app.use("/api/periodic-table", periodicTableRoutes);
   app.use("/api/lessons", lessonsRoutes);
+
+  // Spark-gated content body endpoint — must be mounted BEFORE notFoundHandler.
+  app.use("/api/content", contentRevealRoutes);
 
   logRegisteredRoutes(app, "AFTER API REGISTRATION");
 

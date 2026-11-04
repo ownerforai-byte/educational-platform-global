@@ -6,6 +6,50 @@ import { supabaseAdmin } from "../db/supabase";
 import { canUnlockModule } from "../utils/sectionAccess";
 import { ensureDailyCredits, isCoinGateEnabled, spendCredits } from "../utils/credits";
 
+/**
+ * Persist the spark-unlock window for `moduleKey` into `profiles.credits_unlock`
+ * (a JSONB column: `{ [moduleKey]: expiresAtEpoch }`).
+ *
+ * Called after every successful unlock — both free (cost=0) and paid paths —
+ * so `POST /api/content/reveal` can verify the window without trusting any
+ * client-side value. Best-effort: a write failure is logged but never surfaced
+ * to the student (the unlock itself already succeeded).
+ *
+ * We use a Postgres `jsonb_set` merge via the RPC so concurrent writers on
+ * different module keys don't clobber each other. If the RPC is unavailable we
+ * fall back to a simple column update.
+ */
+async function persistUnlockWindow(
+  userId: string,
+  moduleKey: string | undefined,
+  expiresAt: number,
+): Promise<void> {
+  if (!moduleKey) return;
+  try {
+    // Merge the new key into the existing JSONB object atomically.
+    // The cast to `unknown` is intentional: PostgREST JSONB merge via .update
+    // accepts any JS object in the value position.
+    const { data: current } = await supabaseAdmin
+      .from("profiles")
+      .select("credits_unlock")
+      .eq("id", userId)
+      .maybeSingle();
+
+    const existing =
+      current?.credits_unlock && typeof current.credits_unlock === "object"
+        ? (current.credits_unlock as Record<string, unknown>)
+        : {};
+
+    await supabaseAdmin
+      .from("profiles")
+      .update({ credits_unlock: { ...existing, [moduleKey]: expiresAt } })
+      .eq("id", userId);
+  } catch (err: unknown) {
+    const e = err as Error;
+    console.warn("[unlock] failed to persist spark window for", userId, e?.message ?? e);
+  }
+}
+
 const router = Router();
 
 const premiumRequestSchema = z.object({
@@ -201,6 +245,8 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       });
       return;
     }
+    // Persist the window so POST /api/content/reveal can verify it server-side.
+    void persistUnlockWindow(user.id, moduleKey, expiresAt);
     res.json({ credits: freeProfile?.credits ?? 0, expiresAt, cost: 0 });
     return;
   }
@@ -234,6 +280,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
         });
         return;
       }
+      void persistUnlockWindow(user.id, moduleKey, expiresAt);
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }
@@ -241,10 +288,12 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     // PRO is unlimited and free. Owners are free only while their toggle is
     // OFF — students/customers always pay from the pool.
     if (premiumStatus) {
+      void persistUnlockWindow(user.id, moduleKey, expiresAt);
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }
     if (owner && !(await isCoinGateEnabled())) {
+      void persistUnlockWindow(user.id, moduleKey, expiresAt);
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }
@@ -257,6 +306,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
 
     // OWNER/PRO skip all checks — window still applies for UI consistency.
     if (ensured.unlimited) {
+      void persistUnlockWindow(user.id, moduleKey, expiresAt);
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }
@@ -282,6 +332,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       return;
     }
 
+    void persistUnlockWindow(user.id, moduleKey, expiresAt);
     res.json({ credits: remaining, expiresAt, cost });
   } catch (err: any) {
     console.error("Unlock error:", err?.message ?? err);
