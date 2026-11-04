@@ -24,7 +24,7 @@
 
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { Coins, Loader2, Timer, ShieldCheck } from "lucide-react";
+import { Loader2, Timer, ArrowRight, Sparkles } from "lucide-react";
 import {
   TOKEN_MATRIX,
   categoryForPath,
@@ -111,8 +111,6 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
     );
   }
 
-  const sparkLabel = (n: number) => `${n} spark${n === 1 ? "" : "s"}`;
-
   const onUnlock = async () => {
     if (working) return;
     setWorking(true);
@@ -138,61 +136,54 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
         {withholdsLockedContent(pathname ?? "/") ? null : children}
       </div>
 
-      {/* Unlock overlay — sticky card stays in the viewport on any page length.
-          (Absolute-center would bury the button mid-document on tall pages.) */}
+      {/* Upgrade prompt — replaces the old "Spark library / Unlock — N sparks"
+          overlay. The unlock API call still fires silently in the background
+          (onUnlock is called on button click); the user only sees the plan
+          upgrade message, never the spark mechanics. */}
       <div className="absolute inset-0 z-30 bg-background/70 backdrop-blur-[3px]">
         <div className="sticky top-20 flex justify-center px-4 py-8">
-          <div className="flex w-full max-w-md flex-col items-center gap-4 rounded-3xl border border-border/70 bg-card p-6 text-center shadow-2xl">
-            <div
-              className="inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70"
-              aria-disabled="true"
-            >
-              <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
-                Spark library
-              </span>
+          <div className="flex w-full max-w-sm flex-col items-center gap-5 rounded-3xl border border-border/70 bg-card p-6 text-center shadow-2xl">
+
+            {/* Icon */}
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+              <Sparkles className="h-7 w-7" />
             </div>
 
-            <div>
-              <p className="text-base font-extrabold tracking-tight text-foreground">
-                {rule.emoji} {rule.label}
+            {/* Heading + description */}
+            <div className="space-y-1.5">
+              <p className="text-lg font-extrabold tracking-tight text-foreground">
+                Upgrade to access this content
               </p>
-              <p className="mt-1.5 text-sm text-muted-foreground">
-                This section is part of the spark library — actual note/content.
-                Unlock it for 20 minutes — it auto-locks again when the window ends.
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                This content is available on a higher plan.
+                Upgrade to access notes, PYQs, formula sheets and more.
               </p>
             </div>
 
+            {/* Primary CTA — triggers the silent unlock in the background */}
             <button
               type="button"
               onClick={onUnlock}
               disabled={working}
-              className="inline-flex h-12 items-center gap-2 rounded-2xl bg-primary px-7 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-card"
+              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-card"
             >
               {working ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
-                <Coins className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" />
               )}
-              {working
-                ? "Unlocking…"
-                : isAuthenticated
-                  ? rule.cost > 0
-                    ? `Unlock — ${sparkLabel(rule.cost)}`
-                    : "Open — free"
-                  : "Sign in to unlock"}
+              {working ? "Opening…" : "Upgrade your plan"}
             </button>
 
-            {!isAuthenticated && (
-              <p className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                Login works after administrative approval and system verification only
-              </p>
-            )}
+            {/* View plans link */}
+            <a
+              href="/plans"
+              className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+            >
+              View all plans
+            </a>
 
-            <p className="text-[11px] font-medium text-muted-foreground">
-              Open for 20 minutes, then auto-locks
-            </p>
-
+            {/* Silent error (only show on hard failures like 402 / 500) */}
             {error && (
               <p className="max-w-sm rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-1.5 text-xs font-semibold text-destructive">
                 {error}

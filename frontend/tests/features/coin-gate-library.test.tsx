@@ -53,7 +53,7 @@ const STUDENT_USER = {
 };
 
 /** /notes is not public, not exempt and matches no special route → theory. */
-const LOCK_COPY = /part of the spark library/i;
+const LOCK_COPY = /upgrade to access this content/i;
 
 function setSession(user: Record<string, unknown> | null): void {
   state.credit = {
@@ -108,7 +108,7 @@ describe("RouteCreditGate — whole-library coin gate", () => {
 
     expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /unlock — \d+ sparks?/i }),
+      screen.getByRole("button", { name: /upgrade your plan/i }),
     ).toBeInTheDocument();
   });
 
@@ -120,7 +120,7 @@ describe("RouteCreditGate — whole-library coin gate", () => {
 
     expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /unlock — \d+ sparks?/i }),
+      screen.getByRole("button", { name: /upgrade your plan/i }),
     ).toBeInTheDocument();
   });
 
@@ -132,7 +132,7 @@ describe("RouteCreditGate — whole-library coin gate", () => {
 
     expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /sign in to unlock/i }),
+      screen.getByRole("button", { name: /upgrade your plan/i }),
     ).toBeInTheDocument();
   });
 });
