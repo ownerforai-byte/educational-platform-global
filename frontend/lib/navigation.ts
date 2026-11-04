@@ -1,15 +1,27 @@
 /**
- * Navigation — ONE definition of what the platform's navigation contains.
+ * navigation.ts — THE single list of every page the sidebar and footer link to.
  *
- * The sidebar and the mobile drawer used to keep their own hand-written copies
- * of these item lists and they drifted: the drawer never had "Everything Index",
- * never had the Owner section (so owners on a phone could not reach /owner or
- * /controller), and labels/badges silently diverged. Both surfaces now import
- * from here, so a route can only be added or removed once — and the route tests
- * (tests/lib/navigation.test.ts) can validate the whole menu at once.
+ * BEGINNER GUIDE: How this file works
+ * ─────────────────────────────────────
+ * 1. Every page on the platform is listed here exactly ONCE.
+ * 2. The sidebar, mobile drawer, and footer all read FROM THIS FILE.
+ *    That means you only need to add/remove/rename a link in one place.
+ * 3. Each link has a `minLevel` — the lowest plan tier that can open it:
+ *      "visitor" = everyone (even signed-out guests)
+ *      "member"  = any signed-in account
+ *      "plus"    = Plus plan and above
+ *      "pro"     = Pro plan and above
+ *      "owner"   = owner email only
+ * 4. The `icon` is just a visual; it does not affect access.
  *
- * Icons are plain lucide components so this module stays data-only: it renders
- * nothing itself and can be imported by tests without a DOM.
+ * HOW TO ADD A NEW PAGE
+ * ─────────────────────
+ *   1. Add a `page.tsx` under `frontend/app/(app)/your-page/` (or `frontend/app/your-page/` for public pages).
+ *   2. Add one entry to the correct array below (e.g. `curriculumItems`).
+ *   3. Set the right `minLevel` (who should see it).
+ *   4. Done — the sidebar, drawer and footer pick it up automatically.
+ *
+ * DO NOT duplicate a route. The navigation test will catch it.
  */
 
 import type { ComponentType } from "react";
@@ -63,46 +75,44 @@ import {
   MessageSquare,
 } from "lucide-react";
 
+// ─── Types ───────────────────────────────────────────────────────────────────
+// These describe the shape of each link and each group of links.
+
+/** A single navigation link (one row in the sidebar or footer). */
 export type NavIcon = ComponentType<{ className?: string }>;
 
 export type NavItem = {
-  href: string;
-  label: string;
-  icon: NavIcon;
-  badge?: string;
+  href: string;       // The URL path, e.g. "/class-11-notes"
+  label: string;      // The text shown in the menu
+  icon: NavIcon;      // The small icon shown next to the label
+  badge?: string;     // Optional small badge text (e.g. "New")
   badgeClass?: string;
-  /** Rendered only for allowlisted owner emails (frontend/lib/owner). */
+  /** Only show this item to owner email addresses. */
   ownerOnly?: boolean;
-  /** Rendered only for owner + R1-granted emails (the R1 daily-life layer). */
+  /** Only show this item to owner + R1-granted emails. */
   r1Only?: boolean;
   /**
-   * Minimum ACCESS LEVEL that unlocks this index — the plan.md §3 ladder (the
-   * same rungs the public /plans matrix shows; plan.md supersedes the older
-   * "search-only member" wording). Defaults to the section's level, then
-   * "member". Owner rung reaches all.
+   * The minimum plan tier needed to reach this page.
+   * If missing, the section's default is used, then "member".
    */
   minLevel?: AccessLevel;
 };
 
+/** A collapsible group of navigation links (one section in the sidebar). */
 export type NavSection = {
-  /** Stable key — the sidebar persists per-section collapse on it. */
-  id: string;
-  label: string;
+  id: string;         // Stable key used to save collapse state (don't change these)
+  label: string;      // Section heading shown in the sidebar
   icon: NavIcon;
-  /** Rendered only for allowlisted owner emails (frontend/lib/owner). */
   ownerOnly?: boolean;
-  /** Rendered only for owner + R1-granted emails (the R1 daily-life layer). */
   r1Only?: boolean;
-  /** Default minimum access level for every item in this section (see NavItem). */
   minLevel?: AccessLevel;
   items: NavItem[];
 };
 
 /**
- * Resolve the minimum access level that unlocks an item: the item's own level
- * wins, then its section's, then the signed-in base rung. Shared by the sidebar
- * and the mobile drawer so the two surfaces can never disagree on who sees an
- * index.
+ * Returns the minimum tier for a single item.
+ * Order of priority: item's own setting → section default → "member".
+ * Used by the sidebar and footer so both agree on who sees what.
  */
 export function navMinLevel(
   item: NavItem,
@@ -111,243 +121,293 @@ export function navMinLevel(
   return item.minLevel ?? section?.minLevel ?? "member";
 }
 
-/** Quick shortcuts shown at the very top of both navigation surfaces. */
+// ─── Link groups ─────────────────────────────────────────────────────────────
+// Each array below is ONE section of the navigation.
+// Add new pages to the most appropriate array.
+
+/**
+ * Quick Access — the top links every signed-in user sees first.
+ * These are the most-used destinations: home, dashboard, planner, etc.
+ */
 const primaryItems: NavItem[] = [
-  // plan.md §3: every signed-in rung has its own tier home (/home/member|plus|
-  // pro|owner), so Home opens at Member; the two whole-platform indexes are
-  // Pro's "all indexes" headline.
-  { href: "/home", label: "Home", icon: Home, minLevel: "member" },
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, minLevel: "member" },
-  { href: "/onboarding", label: "Set Study Goals", icon: Rocket, minLevel: "visitor" },
-  { href: "/planner", label: "Weekly Planner", icon: Calendar, minLevel: "plus" },
-  { href: "/srs", label: "Spaced Repetition", icon: Layers, minLevel: "plus" },
-  { href: "/mock-exams", label: "Mock Exams", icon: Timer, minLevel: "pro" },
-  { href: "/analytics", label: "Analytics", icon: LineChart, minLevel: "pro" },
-  { href: "/streaks", label: "Streaks and Badges", icon: Award, minLevel: "member" },
-  { href: "/community", label: "Community", icon: Users, minLevel: "plus" },
-  { href: "/ask", label: "Ask Veer", icon: HelpCircle, minLevel: "member" },
-  { href: "/my-notes", label: "My Notes", icon: NotebookPen, minLevel: "member" },
-  { href: "/downloads", label: "Downloads", icon: Download, minLevel: "pro" },
-  { href: "/billing", label: "Billing", icon: Receipt, minLevel: "member" },
-  { href: "/referrals", label: "Referrals", icon: Gift, minLevel: "plus" },
-  { href: "/site-index", label: "Everything Index", icon: ListTree, minLevel: "pro" },
-  { href: "/levels", label: "Curriculum Levels", icon: Compass, minLevel: "pro" },
-  { href: "/practice", label: "Practice Hub", icon: Target, minLevel: "plus" },
-  { href: "/exams", label: "Exam Hub", icon: GraduationCap, minLevel: "plus" },
-  { href: "/revision", label: "Quick Revision", icon: Repeat, minLevel: "plus" },
-  { href: "/leaderboard", label: "Leaderboard", icon: Award, minLevel: "plus" },
-  { href: "/goals", label: "Study Goals", icon: Target, minLevel: "member" },
-  { href: "/schedule", label: "Study Schedule", icon: Calendar, minLevel: "plus" },
-  { href: "/certificates", label: "Certificates", icon: Award, minLevel: "plus" },
-  { href: "/announcements", label: "Announcements", icon: Bell, minLevel: "member" },
-  { href: "/feedback", label: "Send Feedback", icon: MessageSquare, minLevel: "member" },
-  { href: "/changelog", label: "What's New", icon: Sparkles, minLevel: "member" },
-  { href: "/status", label: "Platform Status", icon: Activity, minLevel: "member" },
-];
-
-const curriculumItems: NavItem[] = [
-  // Class 11, subjects, and notes open at Plus. Members keep the three Veer chats.
-  { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, minLevel: "plus" },
-  { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, minLevel: "plus" },
-  { href: "/subjects", label: "Subjects", icon: Layers, minLevel: "plus" },
-  { href: "/pyqs", label: "Previous Year Questions", icon: History, minLevel: "plus" },
-  { href: "/syllabus", label: "Official CDC Syllabus", icon: GraduationCap, minLevel: "plus" },
-  { href: "/syllabus/additions", label: "Syllabus by Year", icon: Calendar, minLevel: "plus" },
-  { href: "/practical", label: "Practical Lab Manuals", icon: FlaskConical, minLevel: "plus" },
-  { href: "/legend", label: "Concept Legends & Facts", icon: Lightbulb, minLevel: "plus" },
-  { href: "/notes", label: "Notes Archive", icon: FileText, minLevel: "plus" },
-  // Class 11 — one entry per subject hub + its theory sub-page
-  { href: "/class-11-notes/physics", label: "Physics (Class 11)", icon: Atom, minLevel: "plus" },
-  { href: "/class-11-notes/physics/theory", label: "Physics Theory (11)", icon: Atom, minLevel: "plus" },
-  { href: "/class-11-notes/chemistry", label: "Chemistry (Class 11)", icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-11-notes/chemistry/theory", label: "Chemistry Theory (11)", icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-11-notes/biology", label: "Biology (Class 11)", icon: BookOpen, minLevel: "plus" },
-  { href: "/class-11-notes/biology/theory", label: "Biology Theory (11)", icon: BookOpen, minLevel: "plus" },
-  { href: "/class-11-notes/mathematics", label: "Mathematics (Class 11)", icon: Sigma, minLevel: "plus" },
-  { href: "/class-11-notes/mathematics/theory", label: "Mathematics Theory (11)", icon: Sigma, minLevel: "plus" },
-  { href: "/class-11-notes/english", label: "English (Class 11)", icon: Languages, minLevel: "plus" },
-  { href: "/class-11-notes/english/theory", label: "English Theory (11)", icon: Languages, minLevel: "plus" },
-  { href: "/class-11-notes/nepali", label: "Nepali (Class 11)", icon: Languages, minLevel: "plus" },
-  { href: "/class-11-notes/nepali/theory", label: "Nepali Theory (11)", icon: Languages, minLevel: "plus" },
-  // Class 12 — one entry per subject hub + its theory sub-page
-  { href: "/class-12-notes/physics", label: "Physics (Class 12)", icon: Atom, minLevel: "plus" },
-  { href: "/class-12-notes/physics/theory", label: "Physics Theory (12)", icon: Atom, minLevel: "plus" },
-  { href: "/class-12-notes/chemistry", label: "Chemistry (Class 12)", icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-12-notes/chemistry/theory", label: "Chemistry Theory (12)", icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-12-notes/biology", label: "Biology (Class 12)", icon: BookOpen, minLevel: "plus" },
-  { href: "/class-12-notes/biology/theory", label: "Biology Theory (12)", icon: BookOpen, minLevel: "plus" },
-  { href: "/class-12-notes/mathematics", label: "Mathematics (Class 12)", icon: Sigma, minLevel: "plus" },
-  { href: "/class-12-notes/mathematics/theory", label: "Mathematics Theory (12)", icon: Sigma, minLevel: "plus" },
-  { href: "/class-12-notes/english", label: "English (Class 12)", icon: Languages, minLevel: "plus" },
-  { href: "/class-12-notes/english/theory", label: "English Theory (12)", icon: Languages, minLevel: "plus" },
-  { href: "/class-12-notes/nepali", label: "Nepali (Class 12)", icon: Languages, minLevel: "plus" },
-  { href: "/class-12-notes/nepali/theory", label: "Nepali Theory (12)", icon: Languages, minLevel: "plus" },
-  { href: "/journal", label: "Study Journal", icon: NotebookPen, minLevel: "pro" },
-  { href: "/search", label: "Search", icon: Search, minLevel: "plus" },
-];
-
-const stemAndRigorItems: NavItem[] = [
-  // Interactive labs are Pro+; visuals/mindmaps stay open to everyone; proofs
-  // and graph banks are Pro as well.
-  { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, minLevel: "plus" },
-  { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, minLevel: "plus" },
-  { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, minLevel: "plus" },
-  { href: "/ad-p-table", label: "Ad P Table", icon: Atom, minLevel: "plus" },
-  { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, minLevel: "pro" },
-  { href: "/theorems", label: "Theorems & Proofs", icon: Binary, minLevel: "pro" },
-  { href: "/derivations", label: "Formula Derivations", icon: Layers, minLevel: "pro" },
-  { href: "/formulas", label: "Formula Sheets", icon: Sigma, minLevel: "plus" },
-  { href: "/graphs", label: "Science Graph Bank", icon: LineChart, minLevel: "pro" },
-  { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow, minLevel: "plus" },
-  { href: "/lab/theory", label: "Lab Theory Hub", icon: BookOpen, minLevel: "plus" },
-  { href: "/mind-studio", label: "Diagram Studio", icon: Shapes, minLevel: "owner" },
-  { href: "/science-graph-bank", label: "Graph Bank (Legacy)", icon: LineChart, minLevel: "pro" },
-  { href: "/resources/physics-xi", label: "Physics XI Academic", icon: BookOpen, minLevel: "pro" },
-];
-
-const toolsItems: NavItem[] = [
-  // Members get the three chat consoles only (3 messages / day). Every other
-  // Veer tool opens at Plus.
-  { href: "/ai", label: "AI Console", icon: Bot, minLevel: "plus" },
-  { href: "/chat", label: "Veer Study Assistant", icon: Sparkles, minLevel: "member" },
-  { href: "/chat/nepali", label: "Nepali Assistant", icon: Languages, minLevel: "member" },
-  { href: "/chat/grammar", label: "Grammar Console", icon: BookOpen, minLevel: "member" },
-  { href: "/ai/math", label: "Veer Math Solver", icon: Sigma, minLevel: "plus" },
-  { href: "/ai/deep-dive", label: "Deep Concept Studio", icon: Lightbulb, minLevel: "plus" },
-  { href: "/ai/diagrams", label: "Diagram Hub", icon: Shapes, minLevel: "plus" },
-  { href: "/ai/tutor", label: "Veer Tutor Console", icon: Bot, minLevel: "plus" },
-  { href: "/ai/search", label: "Veer Curriculum Search", icon: Search, minLevel: "plus" },
-  { href: "/ai-quiz", label: "Adaptive Veer Quiz", icon: HelpCircle, minLevel: "plus" },
-  // Practice sets open at Plus. Members keep the three chat consoles only.
-  { href: "/quiz", label: "Practice Quiz Bank", icon: Target, minLevel: "plus" },
-  // plan.md §3 row 12: the board-exam suite (countdown, grand tests) is Plus.
-  { href: "/exam-countdown", label: "Exam Countdown", icon: Target, minLevel: "pro" },
-  { href: "/exams/neb", label: "NEB Board Exam", icon: GraduationCap, minLevel: "plus" },
-  { href: "/exams/cee", label: "CEE Medical Entrance", icon: Target, minLevel: "plus" },
-  { href: "/exams/ioe", label: "IOE Engineering Entrance", icon: Target, minLevel: "plus" },
-  { href: "/ai/workspace", label: "AI Workspace", icon: Bot, minLevel: "plus" },
-  { href: "/ai/subjects", label: "Subject Classrooms", icon: BookOpen, minLevel: "plus" },
-  { href: "/ai/history", label: "AI History", icon: History, minLevel: "plus" },
-  { href: "/ai-quiz/history", label: "Quiz History", icon: History, minLevel: "plus" },
-];
-
-const extendedItems: NavItem[] = [
-  // plan.md §3 rows 18–23: resources & reference open at Member; the knowledge
-  // hubs, Loksewa and the PDF library are Pro.
-  { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen, minLevel: "pro" },
-  { href: "/knowledge/pro", label: "Pro Knowledge Hub", icon: BookOpen, minLevel: "pro" },
-  { href: "/lessons", label: "Lessons Library", icon: GraduationCap, minLevel: "pro" },
-  { href: "/loksewa", label: "Loksewa GK", icon: Users, minLevel: "pro" },
-  { href: "/world-knowledge", label: "World Knowledge", icon: Globe, minLevel: "pro" },
-  { href: "/resources", label: "Resource Vault", icon: Bookmark, minLevel: "plus" },
-  { href: "/pdfs", label: "PDF Library", icon: FileText, minLevel: "pro" },
-  { href: "/knowledge/numerical-physics", label: "Numerical Physics", icon: Sigma, minLevel: "pro" },
-  { href: "/knowledge/numerical-chemistry", label: "Numerical Chemistry", icon: FlaskConical, minLevel: "pro" },
-  { href: "/knowledge/biology-diagrams", label: "Biology Diagrams", icon: BookOpen, minLevel: "pro" },
-  { href: "/knowledge/grammar", label: "English Grammar Hub", icon: BookOpen, minLevel: "pro" },
-  { href: "/knowledge/writing", label: "English Writing Hub", icon: FileText, minLevel: "pro" },
-  { href: "/knowledge/byakaran", label: "Nepali Byakaran", icon: Languages, minLevel: "pro" },
-  { href: "/knowledge/analytical-geometry", label: "Analytical Geometry", icon: Sigma, minLevel: "pro" },
-  { href: "/loksewa/geography-of-nepal", label: "Geography of Nepal", icon: Globe, minLevel: "pro" },
-  { href: "/loksewa/history", label: "Loksewa History", icon: History, minLevel: "pro" },
-  { href: "/loksewa/environment", label: "Loksewa Environment", icon: Globe, minLevel: "pro" },
-  { href: "/world-knowledge/general-knowledge", label: "General Knowledge", icon: Globe, minLevel: "pro" },
-  { href: "/world-knowledge/current-affairs", label: "Current Affairs", icon: Globe, minLevel: "pro" },
-  { href: "/world-knowledge/global-topics", label: "Global Topics", icon: Globe, minLevel: "pro" },
-];
-
-const accountItems: NavItem[] = [
-  { href: "/profile", label: "My Profile", icon: User },
-  { href: "/progress", label: "My Progress", icon: UserCheck },
-  { href: "/bookmarks", label: "Saved Bookmarks", icon: Bookmark },
-  { href: "/report-card", label: "Report Card", icon: FileText, minLevel: "plus" },
-  { href: "/settings", label: "Settings", icon: Settings, minLevel: "member" },
-  { href: "/credits", label: "Credits & Plan", icon: Coins },
-  { href: "/notifications", label: "Notifications", icon: Bell, minLevel: "member" },
-  { href: "/notice", label: "Notice Board", icon: FileText, minLevel: "member" },
-];
-
-const publicItems: NavItem[] = [
-  { href: "/about", label: "About", icon: HelpCircle, minLevel: "visitor" },
-  { href: "/features", label: "Features", icon: Sparkles, minLevel: "visitor" },
-  { href: "/how-it-works", label: "How It Works", icon: Compass, minLevel: "visitor" },
-  { href: "/blog", label: "Blog", icon: FileText, minLevel: "visitor" },
-  { href: "/neb-updates", label: "NEB Updates", icon: Bell, minLevel: "visitor" },
-  { href: "/contact", label: "Contact Us", icon: MessageSquare, minLevel: "visitor" },
-  { href: "/help", label: "Help Center", icon: HelpCircle, minLevel: "visitor" },
-  { href: "/sitemap-page", label: "Site Map", icon: ListTree, minLevel: "visitor" },
-  { href: "/school", label: "For Schools", icon: GraduationCap, minLevel: "visitor" },
-  { href: "/teachers", label: "For Teachers", icon: Users, minLevel: "visitor" },
-  { href: "/parents", label: "For Parents", icon: Users, minLevel: "visitor" },
-  { href: "/plans", label: "Plans & Pricing", icon: Coins, minLevel: "visitor" },
-];
-
-const ownerItems: NavItem[] = [
-  { href: "/owner", label: "Owner Console", icon: Crown },
-  { href: "/owner/users", label: "User Management", icon: Users },
-  { href: "/controller", label: "Controller", icon: ShieldCheck },
-];
-
-const r1Items: NavItem[] = [
-  { href: "/r1", label: "R1 Today", icon: Sparkles },
-  { href: "/r1/activities", label: "Daily Activities", icon: Activity },
-  { href: "/r1/plans", label: "My Plans", icon: CalendarCheck },
-  { href: "/r1/journal", label: "Daily Journal", icon: NotebookPen },
-  { href: "/r1/habits", label: "Habit Streaks", icon: Repeat },
+  { href: "/home",          label: "Home",               icon: Home,          minLevel: "member"  },
+  { href: "/dashboard",     label: "Dashboard",          icon: LayoutDashboard, minLevel: "member" },
+  { href: "/onboarding",    label: "Set Study Goals",    icon: Rocket,        minLevel: "visitor" },
+  { href: "/planner",       label: "Weekly Planner",     icon: Calendar,      minLevel: "plus"    },
+  { href: "/srs",           label: "Spaced Repetition",  icon: Layers,        minLevel: "plus"    },
+  { href: "/mock-exams",    label: "Mock Exams",         icon: Timer,         minLevel: "pro"     },
+  { href: "/analytics",     label: "Analytics",          icon: LineChart,     minLevel: "pro"     },
+  { href: "/streaks",       label: "Streaks and Badges", icon: Award,         minLevel: "member"  },
+  { href: "/community",     label: "Community",          icon: Users,         minLevel: "plus"    },
+  { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "member"  },
+  { href: "/my-notes",      label: "My Notes",           icon: NotebookPen,   minLevel: "member"  },
+  { href: "/downloads",     label: "Downloads",          icon: Download,      minLevel: "pro"     },
+  { href: "/billing",       label: "Billing",            icon: Receipt,       minLevel: "member"  },
+  { href: "/referrals",     label: "Referrals",          icon: Gift,          minLevel: "plus"    },
+  { href: "/site-index",    label: "Everything Index",   icon: ListTree,      minLevel: "pro"     },
+  { href: "/levels",        label: "Curriculum Levels",  icon: Compass,       minLevel: "pro"     },
+  { href: "/practice",      label: "Practice Hub",       icon: Target,        minLevel: "plus"    },
+  { href: "/exams",         label: "Exam Hub",           icon: GraduationCap, minLevel: "plus"    },
+  { href: "/revision",      label: "Quick Revision",     icon: Repeat,        minLevel: "plus"    },
+  { href: "/leaderboard",   label: "Leaderboard",        icon: Award,         minLevel: "plus"    },
+  { href: "/goals",         label: "Study Goals",        icon: Target,        minLevel: "member"  },
+  { href: "/schedule",      label: "Study Schedule",     icon: Calendar,      minLevel: "plus"    },
+  { href: "/certificates",  label: "Certificates",       icon: Award,         minLevel: "plus"    },
+  { href: "/announcements", label: "Announcements",      icon: Bell,          minLevel: "member"  },
+  { href: "/feedback",      label: "Send Feedback",      icon: MessageSquare, minLevel: "member"  },
+  { href: "/changelog",     label: "What's New",         icon: Sparkles,      minLevel: "member"  },
+  { href: "/status",        label: "Platform Status",    icon: Activity,      minLevel: "member"  },
 ];
 
 /**
- * Ordered exactly as the menus render it. The sidebar renders `primary` as its
- * own flat block and wraps the rest in collapsible sections; the mobile drawer
- * renders every section, including the owner-only one for owner accounts.
+ * Curriculum & Notes — all class, subject, and syllabus pages.
+ * Opens at Plus (class notes cost 1 content spark to unlock).
  */
-export const NAV_SECTIONS: NavSection[] = [
-  // Section minLevels are only the default for items without their own; every
-  // item above carries its plan.md §3 rung explicitly.
-  { id: "public", label: "About & Info", icon: Globe, minLevel: "visitor", items: publicItems },
-  { id: "primary", label: "Quick Access", icon: Compass, minLevel: "member", items: primaryItems },
-  { id: "curriculum", label: "Curriculum & Notes", icon: BookOpen, minLevel: "member", items: curriculumItems },
-  { id: "stem", label: "Labs & Reference", icon: FlaskConical, minLevel: "visitor", items: stemAndRigorItems },
-  { id: "tools", label: "AI & Practice", icon: Sparkles, minLevel: "visitor", items: toolsItems },
-  { id: "extended", label: "More Resources", icon: Globe, minLevel: "member", items: extendedItems },
-  { id: "account", label: "Student Desk", icon: UserCheck, minLevel: "member", items: accountItems },
-  { id: "r1", label: "R1 · Daily Life", icon: Sparkles, r1Only: true, items: r1Items },
-  { id: "owner", label: "Owner", icon: Crown, ownerOnly: true, items: ownerItems },
+const curriculumItems: NavItem[] = [
+  // Top-level hubs
+  { href: "/class-11-notes",  label: "Class 11 Hub",    icon: BookOpen,    minLevel: "plus" },
+  { href: "/class-12-notes",  label: "Class 12 Hub",    icon: BookOpen,    minLevel: "plus" },
+  { href: "/subjects",        label: "Subjects",        icon: Layers,      minLevel: "plus" },
+  { href: "/pyqs",            label: "Past Year Questions", icon: History,  minLevel: "plus" },
+  { href: "/syllabus",        label: "Official Syllabus",  icon: GraduationCap, minLevel: "plus" },
+  { href: "/syllabus/additions", label: "Syllabus by Year", icon: Calendar, minLevel: "plus" },
+  { href: "/practical",       label: "Practical Manuals",  icon: FlaskConical, minLevel: "plus" },
+  { href: "/legend",          label: "Concept Legends",    icon: Lightbulb, minLevel: "plus" },
+  { href: "/notes",           label: "Notes Archive",      icon: FileText,  minLevel: "plus" },
+  { href: "/journal",         label: "Study Journal",      icon: NotebookPen, minLevel: "pro" },
+  { href: "/search",          label: "Search",             icon: Search,    minLevel: "plus" },
+
+  // Class 11 subjects — each has its own hub page and a theory sub-page
+  { href: "/class-11-notes/physics",           label: "Physics (Class 11)",          icon: Atom,        minLevel: "plus" },
+  { href: "/class-11-notes/physics/theory",    label: "Physics Theory (11)",         icon: Atom,        minLevel: "plus" },
+  { href: "/class-11-notes/chemistry",         label: "Chemistry (Class 11)",        icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-11-notes/chemistry/theory",  label: "Chemistry Theory (11)",       icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-11-notes/biology",           label: "Biology (Class 11)",          icon: BookOpen,    minLevel: "plus" },
+  { href: "/class-11-notes/biology/theory",    label: "Biology Theory (11)",         icon: BookOpen,    minLevel: "plus" },
+  { href: "/class-11-notes/mathematics",       label: "Mathematics (Class 11)",      icon: Sigma,       minLevel: "plus" },
+  { href: "/class-11-notes/mathematics/theory", label: "Mathematics Theory (11)",    icon: Sigma,       minLevel: "plus" },
+  { href: "/class-11-notes/english",           label: "English (Class 11)",          icon: Languages,   minLevel: "plus" },
+  { href: "/class-11-notes/english/theory",    label: "English Theory (11)",         icon: Languages,   minLevel: "plus" },
+  { href: "/class-11-notes/nepali",            label: "Nepali (Class 11)",           icon: Languages,   minLevel: "plus" },
+  { href: "/class-11-notes/nepali/theory",     label: "Nepali Theory (11)",          icon: Languages,   minLevel: "plus" },
+
+  // Class 12 subjects — same pattern as Class 11
+  { href: "/class-12-notes/physics",           label: "Physics (Class 12)",          icon: Atom,        minLevel: "plus" },
+  { href: "/class-12-notes/physics/theory",    label: "Physics Theory (12)",         icon: Atom,        minLevel: "plus" },
+  { href: "/class-12-notes/chemistry",         label: "Chemistry (Class 12)",        icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-12-notes/chemistry/theory",  label: "Chemistry Theory (12)",       icon: FlaskConical, minLevel: "plus" },
+  { href: "/class-12-notes/biology",           label: "Biology (Class 12)",          icon: BookOpen,    minLevel: "plus" },
+  { href: "/class-12-notes/biology/theory",    label: "Biology Theory (12)",         icon: BookOpen,    minLevel: "plus" },
+  { href: "/class-12-notes/mathematics",       label: "Mathematics (Class 12)",      icon: Sigma,       minLevel: "plus" },
+  { href: "/class-12-notes/mathematics/theory", label: "Mathematics Theory (12)",    icon: Sigma,       minLevel: "plus" },
+  { href: "/class-12-notes/english",           label: "English (Class 12)",          icon: Languages,   minLevel: "plus" },
+  { href: "/class-12-notes/english/theory",    label: "English Theory (12)",         icon: Languages,   minLevel: "plus" },
+  { href: "/class-12-notes/nepali",            label: "Nepali (Class 12)",           icon: Languages,   minLevel: "plus" },
+  { href: "/class-12-notes/nepali/theory",     label: "Nepali Theory (12)",          icon: Languages,   minLevel: "plus" },
 ];
 
-/** Flat list of every menu destination, in render order. */
+/**
+ * Labs & Reference — interactive labs, formula sheets, theorems, graphs.
+ * Most open at Plus; advanced indexes open at Pro.
+ */
+const stemAndRigorItems: NavItem[] = [
+  { href: "/lab",                  label: "Virtual 3D Labs",      icon: FlaskConical, minLevel: "plus"  },
+  { href: "/lab/3d",               label: "3D Simulations Hub",   icon: Box,          minLevel: "plus"  },
+  { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D",  icon: Sparkles,     minLevel: "plus"  },
+  { href: "/lab/theory",           label: "Lab Theory Hub",       icon: BookOpen,     minLevel: "plus"  },
+  { href: "/ad-p-table",           label: "Ad P Table",           icon: Atom,         minLevel: "plus"  },
+  { href: "/periodic-table",       label: "Periodic Table & CEE", icon: Atom,         minLevel: "pro"   },
+  { href: "/formulas",             label: "Formula Sheets",       icon: Sigma,        minLevel: "plus"  },
+  { href: "/theorems",             label: "Theorems & Proofs",    icon: Binary,       minLevel: "pro"   },
+  { href: "/derivations",          label: "Formula Derivations",  icon: Layers,       minLevel: "pro"   },
+  { href: "/graphs",               label: "Science Graph Bank",   icon: LineChart,    minLevel: "pro"   },
+  { href: "/mindmap",              label: "Visual Mindmaps",      icon: Workflow,     minLevel: "plus"  },
+  { href: "/mind-studio",          label: "Diagram Studio",       icon: Shapes,       minLevel: "owner" },
+  { href: "/science-graph-bank",   label: "Graph Bank (Legacy)",  icon: LineChart,    minLevel: "pro"   },
+  { href: "/resources/physics-xi", label: "Physics XI Academic",  icon: BookOpen,     minLevel: "pro"   },
+];
+
+/**
+ * AI & Practice — Veer AI chat, quiz tools, exam prep.
+ * Members get 15 Veer chats/day on the three chat consoles.
+ * Plus and above unlock the full AI studio (math, diagrams, deep-dive, etc.).
+ */
+const toolsItems: NavItem[] = [
+  // Available to Members (15 AI sparks/day)
+  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "member" },
+  { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "member" },
+  { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "member" },
+
+  // Available to Plus and above (full AI studio)
+  { href: "/ai",           label: "AI Console",              icon: Bot,        minLevel: "plus"  },
+  { href: "/ai/math",      label: "Veer Math Solver",        icon: Sigma,      minLevel: "plus"  },
+  { href: "/ai/deep-dive", label: "Deep Concept Studio",     icon: Lightbulb,  minLevel: "plus"  },
+  { href: "/ai/diagrams",  label: "Diagram Hub",             icon: Shapes,     minLevel: "plus"  },
+  { href: "/ai/tutor",     label: "Veer Tutor Console",      icon: Bot,        minLevel: "plus"  },
+  { href: "/ai/search",    label: "Veer Curriculum Search",  icon: Search,     minLevel: "plus"  },
+  { href: "/ai/workspace", label: "AI Workspace",            icon: Bot,        minLevel: "plus"  },
+  { href: "/ai/subjects",  label: "Subject Classrooms",      icon: BookOpen,   minLevel: "plus"  },
+  { href: "/ai/history",   label: "AI History",              icon: History,    minLevel: "plus"  },
+  { href: "/ai-quiz",      label: "Adaptive Veer Quiz",      icon: HelpCircle, minLevel: "plus"  },
+  { href: "/ai-quiz/history", label: "Quiz History",         icon: History,    minLevel: "plus"  },
+  { href: "/quiz",         label: "Practice Quiz Bank",      icon: Target,     minLevel: "plus"  },
+  { href: "/exam-countdown", label: "Exam Countdown",        icon: Target,     minLevel: "pro"   },
+
+  // Exam tracks (Plus and above)
+  { href: "/exams/neb",    label: "NEB Board Exam",          icon: GraduationCap, minLevel: "plus" },
+  { href: "/exams/cee",    label: "CEE Medical Entrance",    icon: Target,     minLevel: "plus"  },
+  { href: "/exams/ioe",    label: "IOE Engineering Entrance", icon: Target,    minLevel: "plus"  },
+];
+
+/**
+ * More Resources — knowledge hubs, Loksewa, world knowledge, PDF library.
+ * Most open at Pro.
+ */
+const extendedItems: NavItem[] = [
+  { href: "/knowledge",                    label: "Knowledge Hub",          icon: BookOpen,    minLevel: "pro" },
+  { href: "/knowledge/pro",               label: "Pro Knowledge Hub",       icon: BookOpen,    minLevel: "pro" },
+  { href: "/knowledge/numerical-physics", label: "Numerical Physics",       icon: Sigma,       minLevel: "pro" },
+  { href: "/knowledge/numerical-chemistry", label: "Numerical Chemistry",   icon: FlaskConical, minLevel: "pro" },
+  { href: "/knowledge/biology-diagrams",  label: "Biology Diagrams",        icon: BookOpen,    minLevel: "pro" },
+  { href: "/knowledge/grammar",           label: "English Grammar Hub",     icon: BookOpen,    minLevel: "pro" },
+  { href: "/knowledge/writing",           label: "English Writing Hub",     icon: FileText,    minLevel: "pro" },
+  { href: "/knowledge/byakaran",          label: "Nepali Byakaran",         icon: Languages,   minLevel: "pro" },
+  { href: "/knowledge/analytical-geometry", label: "Analytical Geometry",   icon: Sigma,       minLevel: "pro" },
+  { href: "/lessons",                     label: "Lessons Library",         icon: GraduationCap, minLevel: "pro" },
+  { href: "/loksewa",                     label: "Loksewa GK",              icon: Users,       minLevel: "pro" },
+  { href: "/loksewa/geography-of-nepal",  label: "Geography of Nepal",      icon: Globe,       minLevel: "pro" },
+  { href: "/loksewa/history",             label: "Loksewa History",         icon: History,     minLevel: "pro" },
+  { href: "/loksewa/environment",         label: "Loksewa Environment",     icon: Globe,       minLevel: "pro" },
+  { href: "/world-knowledge",             label: "World Knowledge",         icon: Globe,       minLevel: "pro" },
+  { href: "/world-knowledge/general-knowledge", label: "General Knowledge", icon: Globe,       minLevel: "pro" },
+  { href: "/world-knowledge/current-affairs",   label: "Current Affairs",   icon: Globe,       minLevel: "pro" },
+  { href: "/world-knowledge/global-topics",     label: "Global Topics",     icon: Globe,       minLevel: "pro" },
+  { href: "/resources",                   label: "Resource Vault",          icon: Bookmark,    minLevel: "plus" },
+  { href: "/pdfs",                        label: "PDF Library",             icon: FileText,    minLevel: "pro" },
+];
+
+/**
+ * Student Desk — personal account pages (profile, progress, settings, etc.).
+ * Only shown when the user is signed in.
+ */
+const accountItems: NavItem[] = [
+  { href: "/profile",       label: "My Profile",       icon: User,        minLevel: "member" },
+  { href: "/progress",      label: "My Progress",      icon: UserCheck,   minLevel: "member" },
+  { href: "/bookmarks",     label: "Saved Bookmarks",  icon: Bookmark,    minLevel: "member" },
+  { href: "/report-card",   label: "Report Card",      icon: FileText,    minLevel: "plus"   },
+  { href: "/settings",      label: "Settings",         icon: Settings,    minLevel: "member" },
+  { href: "/credits",       label: "Credits & Plan",   icon: Coins,       minLevel: "member" },
+  { href: "/notifications", label: "Notifications",    icon: Bell,        minLevel: "member" },
+  { href: "/notice",        label: "Notice Board",     icon: FileText,    minLevel: "member" },
+];
+
+/**
+ * About & Info — public pages anyone can read (no account needed).
+ * These also appear in the footer.
+ */
+const publicItems: NavItem[] = [
+  { href: "/about",        label: "About",          icon: HelpCircle,  minLevel: "visitor" },
+  { href: "/features",     label: "Features",       icon: Sparkles,    minLevel: "visitor" },
+  { href: "/how-it-works", label: "How It Works",   icon: Compass,     minLevel: "visitor" },
+  { href: "/blog",         label: "Blog",           icon: FileText,    minLevel: "visitor" },
+  { href: "/neb-updates",  label: "NEB Updates",    icon: Bell,        minLevel: "visitor" },
+  { href: "/contact",      label: "Contact Us",     icon: MessageSquare, minLevel: "visitor" },
+  { href: "/help",         label: "Help Center",    icon: HelpCircle,  minLevel: "visitor" },
+  { href: "/sitemap-page", label: "Site Map",       icon: ListTree,    minLevel: "visitor" },
+  { href: "/school",       label: "For Schools",    icon: GraduationCap, minLevel: "visitor" },
+  { href: "/teachers",     label: "For Teachers",   icon: Users,       minLevel: "visitor" },
+  { href: "/parents",      label: "For Parents",    icon: Users,       minLevel: "visitor" },
+  { href: "/plans",        label: "Plans & Pricing", icon: Coins,      minLevel: "visitor" },
+];
+
+/**
+ * Owner — management surfaces only visible to owner email addresses.
+ * Hidden completely for all other users.
+ */
+const ownerItems: NavItem[] = [
+  { href: "/owner",         label: "Owner Console",   icon: Crown        },
+  { href: "/owner/users",   label: "User Management", icon: Users        },
+  { href: "/controller",    label: "Controller",      icon: ShieldCheck  },
+];
+
+/**
+ * R1 Daily Life — personal habits, journal and plans.
+ * Only shown to owner emails and accounts that have been granted R1 access.
+ */
+const r1Items: NavItem[] = [
+  { href: "/r1",            label: "R1 Today",        icon: Sparkles     },
+  { href: "/r1/activities", label: "Daily Activities", icon: Activity    },
+  { href: "/r1/plans",      label: "My Plans",         icon: CalendarCheck },
+  { href: "/r1/journal",    label: "Daily Journal",    icon: NotebookPen  },
+  { href: "/r1/habits",     label: "Habit Streaks",    icon: Repeat       },
+];
+
+// ─── The master list ──────────────────────────────────────────────────────────
+/**
+ * NAV_SECTIONS — the complete navigation, in the order the sidebar renders it.
+ *
+ * This is the ONE place to add, remove or reorder nav sections.
+ * The sidebar, mobile drawer, and footer ALL read from this.
+ *
+ * Section IDs must be stable — the sidebar saves collapse state by id.
+ * Don't rename them unless you also clear localStorage keys.
+ */
+export const NAV_SECTIONS: NavSection[] = [
+  // id "public" — About & Info pages (always visible, no login needed)
+  { id: "public",     label: "About & Info",       icon: Globe,      minLevel: "visitor", items: publicItems     },
+
+  // id "primary" — Quick Access (shown as a flat list at the top of the sidebar)
+  { id: "primary",    label: "Quick Access",        icon: Compass,    minLevel: "member",  items: primaryItems    },
+
+  // id "curriculum" — Class notes, syllabus, past papers
+  { id: "curriculum", label: "Curriculum & Notes",  icon: BookOpen,   minLevel: "member",  items: curriculumItems },
+
+  // id "stem" — Labs, formulas, theorems, graphs
+  { id: "stem",       label: "Labs & Reference",    icon: FlaskConical, minLevel: "visitor", items: stemAndRigorItems },
+
+  // id "tools" — AI chat, quizzes, exam prep
+  { id: "tools",      label: "AI & Practice",       icon: Sparkles,   minLevel: "visitor", items: toolsItems      },
+
+  // id "extended" — Knowledge hubs, Loksewa, world knowledge
+  { id: "extended",   label: "More Resources",      icon: Globe,      minLevel: "member",  items: extendedItems   },
+
+  // id "account" — Personal account pages (only shown when signed in)
+  { id: "account",    label: "Student Desk",        icon: UserCheck,  minLevel: "member",  items: accountItems    },
+
+  // id "r1" — R1 daily life (only shown to owner + R1-granted accounts)
+  { id: "r1",         label: "R1 · Daily Life",     icon: Sparkles,   r1Only: true,        items: r1Items         },
+
+  // id "owner" — Owner management console (only shown to owner emails)
+  { id: "owner",      label: "Owner",               icon: Crown,      ownerOnly: true,     items: ownerItems      },
+];
+
+/** Flat array of every URL in the nav, in sidebar render order. Used by tests. */
 export const NAV_HREFS: string[] = NAV_SECTIONS.flatMap((section) =>
   section.items.map((item) => item.href),
 );
 
-/* ── Quick links (the compact fast path) ─────────────────────────────────── */
-
+// ─── Quick links ──────────────────────────────────────────────────────────────
 /**
- * THE QUICK-LINKS REGISTRY — one definition for both surfaces that show the
- * compact fast path: the mobile quick-nav strip and the tier home pages'
- * quick-links rail (components/home/tier-interfaces.tsx).
+ * QUICK_LINKS — the compact fast-path strip shown on mobile and tier home pages.
  *
- * Tier rule (owner direction 2026-10-23 + plan.md §4 "locked cards stay
- * visible"): quick links start at the Member rung — visitors get header + body
- * + footer only — and each rung sees what it can reach while the rest stay
- * visible in a muted disabled state. Plans are available from the footer only.
+ * These are the 8 most-used destinations. They appear as pill buttons.
+ * Each one respects the tier ladder: links below the viewer's rung are muted.
  */
 export const QUICK_LINKS = [
-  { href: "/home", label: "Home" },
+  { href: "/home",           label: "Home"     },
   { href: "/class-11-notes", label: "Class 11" },
   { href: "/class-12-notes", label: "Class 12" },
-  { href: "/subjects", label: "Subjects" },
-  { href: "/lab", label: "Labs" },
-  { href: "/quiz", label: "Quiz" },
-  { href: "/chat", label: "AI" },
-  { href: "/ai/math", label: "Math" },
+  { href: "/subjects",       label: "Subjects" },
+  { href: "/lab",            label: "Labs"     },
+  { href: "/quiz",           label: "Quiz"     },
+  { href: "/chat",           label: "AI"       },
+  { href: "/ai/math",        label: "Math"     },
 ] as const;
 
 /**
- * The rung a quick link first opens at — DERIVED from the NAV registry above
- * (the plan.md §3 ladder, one tier per destination), so the quick strip, the
- * tier-home rails and the sidebar/drawer can never disagree on who reaches a
- * link. Used for tier badges and "Unavailable on this plan" copy.
+ * Returns the minimum plan tier needed for a quick link.
+ * Looks up the href in NAV_SECTIONS so quick links and the sidebar
+ * always agree on who can reach a destination.
  */
 export function quickLinkMinTier(href: string): AccessLevel {
   for (const section of NAV_SECTIONS) {
@@ -357,7 +417,7 @@ export function quickLinkMinTier(href: string): AccessLevel {
   return "member";
 }
 
-/** Whether this rung reaches the quick link (owner reaches everything). */
+/** Returns true when a viewer at `level` can open the given quick link. */
 export function quickLinkUnlocked(level: AccessLevel, href: string): boolean {
   return ACCESS_RANK[level] >= ACCESS_RANK[quickLinkMinTier(href)];
 }
