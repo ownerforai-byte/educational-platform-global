@@ -22,8 +22,13 @@ import { describe, expect, it } from "vitest";
  * below: a year is ONE card spanning every unit that contributed to it.
  */
 
+// manifest.json stays in public/data (metadata); _index.json moved to corpus.
 const ROOT = join(process.cwd(), "public/data/content");
-const index = JSON.parse(readFileSync(join(ROOT, "_index.json"), "utf8")) as Record<
+import { existsSync } from "node:fs";
+const INDEX_ROOT = existsSync(join(ROOT, "_index.json"))
+  ? ROOT
+  : join(process.cwd(), "..", "content");
+const index = JSON.parse(readFileSync(join(INDEX_ROOT, "_index.json"), "utf8")) as Record<
   string,
   { title?: string; year?: number; examSource?: string; unitSlug?: string; questions?: unknown[] }
 >;

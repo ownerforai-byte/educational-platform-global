@@ -59,6 +59,18 @@ const DATA_ROOTS: readonly string[] = (() => {
   // so reads still probe rather than silently reading nothing.
   return existing.length > 0 ? existing : deduped;
 })();
+// Corpus roots - fallback once public/data note bodies are removed.
+const CORPUS_ROOT_CANDIDATES: readonly string[] = [
+  resolve(dirname(__filename), '..', '..', 'content', 'notes', 'concepts', 'class-11'),
+  join(process.cwd(), 'content', 'notes', 'concepts', 'class-11'),
+  resolve(process.cwd(), '..', 'content', 'notes', 'concepts', 'class-11'),
+];
+
+const CORPUS_ROOTS: readonly string[] = (() => {
+  const deduped = Array.from(new Set(CORPUS_ROOT_CANDIDATES));
+  const existing = deduped.filter((root) => existsSync(root));
+  return existing.length > 0 ? existing : deduped;
+})();
 
 export type FormulaSubjectSlug = "physics" | "mathematics" | "chemistry";
 
@@ -373,9 +385,20 @@ async function readManifest(subjectSlug: string): Promise<ManifestEntry[]> {
 }
 
 async function readNote(subjectSlug: string, folder: string, filename: string): Promise<NoteFile | null> {
-  return readJson<NoteFile>(join("syllabus-notes", subjectSlug, folder, filename));
+  const fromPublic = await readJson<NoteFile>(join("syllabus-notes", subjectSlug, folder, filename));
+  if (fromPublic) return fromPublic;
+  for (const root of CORPUS_ROOTS) {
+    try {
+      const parsed: unknown = JSON.parse(
+        await readFile(join(root, subjectSlug, folder, filename), "utf8"),
+      );
+      return parsed as NoteFile;
+    } catch {
+      // try next candidate root
+    }
+  }
+  return null;
 }
-
 const sheetCache = new Map<string, Promise<FormulaSheetSubject | null>>();
 
 /**
