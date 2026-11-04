@@ -59,6 +59,8 @@ import {
   Rocket,
   Timer,
   Award,
+  Bell,
+  MessageSquare,
 } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
@@ -130,6 +132,17 @@ const primaryItems: NavItem[] = [
   { href: "/referrals", label: "Referrals", icon: Gift, minLevel: "plus" },
   { href: "/site-index", label: "Everything Index", icon: ListTree, minLevel: "pro" },
   { href: "/levels", label: "Curriculum Levels", icon: Compass, minLevel: "pro" },
+  { href: "/practice", label: "Practice Hub", icon: Target, minLevel: "plus" },
+  { href: "/exams", label: "Exam Hub", icon: GraduationCap, minLevel: "plus" },
+  { href: "/revision", label: "Quick Revision", icon: Repeat, minLevel: "plus" },
+  { href: "/leaderboard", label: "Leaderboard", icon: Award, minLevel: "plus" },
+  { href: "/goals", label: "Study Goals", icon: Target, minLevel: "member" },
+  { href: "/schedule", label: "Study Schedule", icon: Calendar, minLevel: "plus" },
+  { href: "/certificates", label: "Certificates", icon: Award, minLevel: "plus" },
+  { href: "/announcements", label: "Announcements", icon: Bell, minLevel: "member" },
+  { href: "/feedback", label: "Send Feedback", icon: MessageSquare, minLevel: "member" },
+  { href: "/changelog", label: "What's New", icon: Sparkles, minLevel: "member" },
+  { href: "/status", label: "Platform Status", icon: Activity, minLevel: "member" },
 ];
 
 const curriculumItems: NavItem[] = [

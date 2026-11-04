@@ -308,7 +308,9 @@ smoke, deploy `main` (Vercel + Render), verify live.
 >    all notifications are marked read).
 
 Phasing (owner: "do not attempt to implement everything at once"):
-**Phase 1** = this roadmap. **Phase 2** = milestone-by-milestone delivery,each milestone shippable and green. **Phase 3** = optimization + UI polish.
+**Phase 1** = this roadmap. **Phase 2** = milestone-by-milestone delivery,
+
+each milestone shippable and green. **Phase 3** = optimization + UI polish.
 
 ---
 
@@ -419,7 +421,9 @@ guest pool + credit gates verified; no regression in existing quiz tests.
 | 5.4 | Stale `.next/types` tsc errors | regenerate/remove stale validator files |
 | 5.5 | Sweep: duplicate keys, dead state, `useEffect` over-set, `any` leaks | fix as found in audit |
 
-Acceptance: marking all notifications read zeroes every badge (page + bell),raw full suites green, `npm run check:all` green.
+Acceptance: marking all notifications read zeroes every badge (page + bell),
+
+raw full suites green, `npm run check:all` green.
 
 ---
 
@@ -456,3 +460,115 @@ Acceptance: marking all notifications read zeroes every badge (page + bell),ra
       stale `.next/types` validators removed — tsc fully clean.)
 - [x] `npm run check:all` + backend suites green.
       (Backend 562/562 green; frontend suites green; tsc clean both sides.)
+
+
+---
+
+## § Page Architecture — Full Route Map (2026-11)
+
+> Added 2026-11-04. Covers every page type a serious NEB study platform must
+> have. All 8 layers are implemented; empty pages show the 🚧 under-development
+> shell until content is authored. Every route is registered in
+> `frontend/lib/navigation.ts` and `frontend/lib/site-index.ts`.
+
+### Layer 0 — Public / Marketing (no login required)
+
+| Route | Title | Status |
+|---|---|---|
+| `/about` | About the Platform | New |
+| `/features` | Features & Tiers | New |
+| `/how-it-works` | How It Works | New |
+| `/contact` | Contact Us | New |
+| `/school` | Schools & Institutions | New |
+| `/blog` | Blog | New |
+| `/blog/[slug]` | Blog Article | New |
+| `/neb-updates` | NEB & CDC Updates | New |
+| `/sitemap-page` | Site Map | New |
+
+### Layer 1 — Subject Depth (core learning path)
+
+| Route | Title | Status |
+|---|---|---|
+| `/class-11-notes/[subject]/[unit]/[topic]` | Topic Notes Page | New — wires `topic-vertical-notes.tsx` |
+| `/class-12-notes/[subject]/[unit]/[topic]` | Topic Notes Page | New — same pattern |
+| `/class-11-notes/[subject]/pyqs` | Subject PYQ Browser | New |
+| `/class-12-notes/[subject]/pyqs` | Subject PYQ Browser | New |
+| `/class-11-notes/[subject]/formulas` | Subject Formulas | New — redirects to `/formulas/[subject]` |
+
+### Layer 2 — Exam & Entrance Hub
+
+| Route | Title | Status |
+|---|---|---|
+| `/exams` | Exam Hub | New |
+| `/exams/neb` | NEB Board Exam | New |
+| `/exams/cee` | CEE Medical Entrance | New |
+| `/exams/ioe` | IOE Engineering Entrance | New |
+| `/exams/neb/[subject]/model-questions` | Model Questions | New |
+| `/revision` | Quick Revision Mode | New |
+
+### Layer 3 — Practice & Assessment
+
+| Route | Title | Status |
+|---|---|---|
+| `/practice` | Practice Hub | New |
+| `/practice/[subject]` | Subject Practice | New |
+| `/quiz/[subject]` | Subject Quiz | New |
+| `/quiz/[subject]/[unit]` | Unit Quiz | New |
+| `/results/[sessionId]` | Quiz Results | New |
+| `/leaderboard` | Leaderboard | New |
+
+### Layer 4 — Search & Discovery
+
+| Route | Title | Status |
+|---|---|---|
+| `/topics/[topicSlug]` | Topic Landing (SEO) | New |
+| `/tags/[tag]` | Tag Browser | New |
+
+### Layer 5 — Student Progress Depth
+
+| Route | Title | Status |
+|---|---|---|
+| `/progress/[subject]` | Subject Progress | New |
+| `/progress/[subject]/[unit]` | Unit Progress | New |
+| `/goals` | Study Goals | New |
+| `/schedule` | Study Schedule | New |
+| `/certificates` | Certificates | New (stub) |
+
+### Layer 6 — Community & Social
+
+| Route | Title | Status |
+|---|---|---|
+| `/community/[subjectId]/[threadId]` | Discussion Thread | New |
+| `/announcements` | Announcements | New |
+| `/feedback` | Feedback | New |
+
+### Layer 7 — Teacher / Parent Stubs
+
+| Route | Title | Status |
+|---|---|---|
+| `/teachers` | Teacher Portal | New (stub) |
+| `/parents` | Parent Portal | New (stub) |
+| `/school/[code]` | School Dashboard | New (stub) |
+
+### Layer 8 — Support & Trust
+
+| Route | Title | Status |
+|---|---|---|
+| `/help` | Help Center | New |
+| `/help/[articleSlug]` | Help Article | New |
+| `/status` | Platform Status | New |
+| `/changelog` | Changelog | New |
+
+### Implementation Notes
+
+- **Under-development shell**: `frontend/components/ui/under-development.tsx`
+  — used by every stub page. Shows 🚧 + title + standard "will be added in
+  future update" message.
+- **Tier gates**: Layer 1–6 routes inside `(app)/` inherit the existing auth
+  gate; Layer 0, 7, 8 public routes live outside `(app)/`.
+- **Navigation**: all new routes added to `NAV_SECTIONS` in
+  `frontend/lib/navigation.ts`.
+- **Site index**: all new routes added to `buildSiteIndex()` in
+  `frontend/lib/site-index.ts`.
+- **ISR**: topic landing pages (`/topics/[topicSlug]`) use
+  `export const revalidate = 86400`.
