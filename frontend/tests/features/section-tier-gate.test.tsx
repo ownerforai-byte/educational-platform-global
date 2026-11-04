@@ -54,11 +54,13 @@ describe("SectionTierGate — visible-but-dimmed, no dead ends", () => {
     render(<SectionTierGate>{CONTENT}</SectionTierGate>);
 
     expect(screen.queryByTestId("section-content")).toBeNull();
-    expect(screen.getByRole("heading", { name: /upgrade your plan/i })).toBeInTheDocument();
-    // Plans link is now present so students can act immediately.
+    expect(screen.getByRole("heading", { name: /pdf library is unavailable on this plan/i })).toBeInTheDocument();
+    // Plans link lives in footer only — gate card must not carry one.
     const hrefs = screen.getAllByRole("link").map((el) => el.getAttribute("href"));
-    expect(hrefs).toContain("/plans");
+    expect(hrefs).not.toContain("/plans");
     expect(screen.getByRole("link", { name: /go to my home/i })).toHaveAttribute("href", "/home");
+    // Restored disabled state: grayscale + opacity-60
+    expect(screen.getByRole("heading", { name: /pdf library is unavailable on this plan/i }).closest("div")).toHaveClass("grayscale");
   });
 
   it("matches deep routes to their section (the unit page gates like its root)", () => {
@@ -92,6 +94,6 @@ describe("SectionTierGate — visible-but-dimmed, no dead ends", () => {
     pathname.value = "/class-11-notes/physics";
     render(<SectionTierGate>{CONTENT}</SectionTierGate>);
     expect(screen.queryByTestId("section-content")).toBeNull();
-    expect(screen.getByRole("heading", { name: /upgrade your plan/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /class 11 notes is unavailable on this plan/i })).toBeInTheDocument();
   });
 });

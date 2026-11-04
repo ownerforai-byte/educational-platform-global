@@ -175,15 +175,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
               {working ? "Opening…" : "Upgrade your plan"}
             </button>
 
-            {/* View plans link */}
-            <a
-              href="/plans"
-              className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
-            >
-              View all plans
-            </a>
 
-            {/* Silent error (only show on hard failures like 402 / 500) */}
             {error && (
               <p className="max-w-sm rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-1.5 text-xs font-semibold text-destructive">
                 {error}

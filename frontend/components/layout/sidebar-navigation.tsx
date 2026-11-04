@@ -229,7 +229,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
       </div>
 
       {/* Nav sections */}
-      <div className="flex-1 overflow-y-auto px-2 py-3 space-y-1">
+      <div className="flex-1 overflow-y-auto overscroll-contain px-2 py-3 space-y-1">
         {/* Primary destinations */}
         <div className="mb-2 space-y-0.5">
           {primaryItems.filter((item) => hasLevel(viewer, navMinLevel(item))).map((item) => {

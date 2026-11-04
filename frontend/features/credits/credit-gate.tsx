@@ -134,13 +134,6 @@ export function CreditGate({
               {working ? "Opening…" : "Upgrade your plan"}
             </button>
 
-            <a
-              href="/plans"
-              className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
-            >
-              View all plans
-            </a>
-
             {error && (
               <p className="max-w-xs rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-1.5 text-[11px] font-semibold text-destructive">
                 {error}

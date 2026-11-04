@@ -78,7 +78,7 @@ export function requirePlusAiStudio(): (
       res.status(403).json({
         error: "Veer studio opens at Plus",
         message:
-          "Members get 3 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
+          "Members get 15 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
       });
       return;
     }

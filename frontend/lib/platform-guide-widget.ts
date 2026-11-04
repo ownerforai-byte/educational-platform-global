@@ -1,28 +1,29 @@
 import { accessLevelFor, type AccessLevel } from "@/lib/access-level";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 
-const TIER_HOME_PATHS = new Set([
-  "/home/member",
-  "/home/plus",
-  "/home/pro",
-  "/home/owner",
-]);
-
 /**
- * Platform guide widget for signed-in tier homes only.
- * Visitors get VisitorHomeChat on the universal welcome and guest home instead.
- * Does not use AI spark pools.
+ * Personal AI widget visibility.
+ *
+ * Shown for every signed-in user on any app page EXCEPT the full-screen
+ * chat/AI surfaces (where having two chat UIs would be confusing).
+ * Visitors and loading states get nothing.
  */
 export function shouldShowPlatformGuideWidget(
   pathname: string,
   user: AiSparkUserLike | null | undefined,
 ): boolean {
   const path = pathname.split("?")[0].replace(/\/+$/, "") || "/";
-  if (path.startsWith("/chat") || path.startsWith("/ai")) return false;
+
+  // Never show alongside full-screen AI surfaces
+  if (
+    path.startsWith("/chat") ||
+    path.startsWith("/ai") ||
+    path === "/mind-studio" ||
+    path.startsWith("/mind-studio/")
+  ) return false;
 
   const level: AccessLevel = accessLevelFor(user);
 
-  if (level === "visitor") return false;
-
-  return TIER_HOME_PATHS.has(path);
+  // Visitors (signed-out) do not get the personal AI
+  return level !== "visitor";
 }

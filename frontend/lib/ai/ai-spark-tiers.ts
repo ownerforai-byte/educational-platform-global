@@ -24,7 +24,7 @@ export type AiSparkTier = "guest" | "member" | "plus" | "plus_20" | "pro" | "own
 /** Daily Veer message allowance per tier (owner = unlimited). */
 export const AI_SPARK_LIMITS: Record<AiSparkTier, number> = {
   guest: 0,
-  member: 3,
+  member: 15,
   plus: 25,
   plus_20: 25,
   pro: 50,

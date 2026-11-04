@@ -3,6 +3,7 @@ import { z } from "zod";
 import { getAgnesKey } from "../ai/config";
 import {
   PLATFORM_GUIDE_SYSTEM_PROMPT,
+  buildPersonalContext,
   clampReplyWords,
   quoteQuestion,
 } from "../ai/platform-guide-prompt";
@@ -12,6 +13,20 @@ const router = Router();
 
 const bodySchema = z.object({
   message: z.string().trim().min(1).max(500),
+  /** Optional user context for the personal AI mode. */
+  userContext: z.object({
+    plan: z.string().optional(),
+    subjects: z.array(z.string()).optional(),
+    examDate: z.string().nullable().optional(),
+    targetPercent: z.number().nullable().optional(),
+    dailyMinutes: z.number().nullable().optional(),
+    completedTopics: z.number().optional(),
+    inProgressTopics: z.number().optional(),
+    notStartedTopics: z.number().optional(),
+    streakDays: z.number().optional(),
+    weeklyAccuracy: z.number().nullable().optional(),
+    habits: z.array(z.string()).optional(),
+  }).optional(),
 });
 
 const AGNES_URL = (process.env.AGNES_API_URL || "https://apihub.agnes-ai.com").replace(/\/v1\/?$/, "");
@@ -38,6 +53,10 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
   }
 
   const userText = parsed.data.message;
+  const userContext = parsed.data.userContext;
+  const systemPrompt = userContext
+    ? `${PLATFORM_GUIDE_SYSTEM_PROMPT}\n\n${buildPersonalContext(userContext)}`
+    : PLATFORM_GUIDE_SYSTEM_PROMPT;
   const timeoutMs = Number(process.env.AGNES_PLATFORM_GUIDE_TIMEOUT_MS || 25_000);
   const retryDelayMs = Number(process.env.AGNES_PLATFORM_GUIDE_RETRY_DELAY_MS || 1_200);
 
@@ -55,7 +74,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
           body: JSON.stringify({
             model: AGNES_MODEL,
             messages: [
-              { role: "system", content: PLATFORM_GUIDE_SYSTEM_PROMPT },
+              { role: "system", content: systemPrompt },
               {
                 role: "user",
                 content: userText,
