@@ -2,17 +2,13 @@
 
 import type { ReactNode } from "react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { CreditGate } from "@/features/credits";
 import { aiSparkTierFor } from "@/lib/ai/ai-spark-tiers";
+import { ACCESS_LABELS } from "@/lib/access-level";
 
 /**
- * Home features under the Spark gate (owner decision): the owner and Pro
- * members see the home features directly; every other visitor sees the same
- * Spark access gate the rest of the library uses, so the features are only
- * available through the spark/coin flow.
- *
- * While the session is still loading we render nothing, so an owner or Pro
- * member never sees an access-state flash on first paint.
+ * Home features gate — Pro and Owner see the content directly.
+ * Lower tiers get the same muted disabled card used everywhere else:
+ * greyed out, cursor-not-allowed, no glowing button, no plans link.
  */
 export function HomeFeaturesSparkGate({ children }: { children: ReactNode }) {
   const { user, isLoading } = useSession();
@@ -22,12 +18,19 @@ export function HomeFeaturesSparkGate({ children }: { children: ReactNode }) {
   if (tier === "owner" || tier === "pro") return <>{children}</>;
 
   return (
-    <CreditGate
-      moduleKey="home:features"
-      category="reference"
-      label="Home features — Owner & Pro members"
+    <div
+      aria-disabled="true"
+      className="cursor-not-allowed rounded-2xl border border-border/60 bg-muted/40 p-6 text-center opacity-60 grayscale"
     >
-      {children}
-    </CreditGate>
+      <p className="text-sm font-extrabold tracking-tight text-muted-foreground">
+        Home features
+      </p>
+      <p className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground/60">
+        Available to {ACCESS_LABELS["pro"]} and above
+      </p>
+      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+        Subject rails, study tools and the full home dashboard open on the Pro plan.
+      </p>
+    </div>
   );
 }
