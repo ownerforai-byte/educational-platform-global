@@ -8,6 +8,8 @@ import { hasLevel } from "@/lib/access-level";
  * CEE bank, block characteristics, and the other study layers on the periodic
  * table. The 118-element grid itself stays open to members. These layers
  * open at Plus.
+ *
+ * Locked state shows "Upgrade your plan" — no spark mechanics are exposed.
  */
 export function CeeSparkGate({
   children,
@@ -28,7 +30,10 @@ export function CeeSparkGate({
         compact ? "px-2 py-1 text-[10px]" : "px-4 py-3 text-xs"
       }`}
     >
-      CEE questions, block characteristics, and the other study layers open at Plus.
+      <span className="font-semibold">Upgrade your plan</span>
+      {!compact && (
+        <span className="ml-1">to access CEE questions and study layers.</span>
+      )}
     </div>
   );
 }

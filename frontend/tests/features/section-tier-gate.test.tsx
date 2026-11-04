@@ -49,18 +49,16 @@ describe("SectionTierGate — visible-but-dimmed, no dead ends", () => {
     expect(screen.getByTestId("section-content")).toBeInTheDocument();
   });
 
-  it("shows a muted disabled card to a lower rung, without a lock icon or plans link", () => {
+  it("shows an upgrade card to a lower rung", () => {
     session.user = { email: "student@example.com" }; // member; PDF Library opens at Pro
     render(<SectionTierGate>{CONTENT}</SectionTierGate>);
 
     expect(screen.queryByTestId("section-content")).toBeNull();
-    expect(screen.getByRole("heading", { name: /pdf library is unavailable on this plan/i })).toBeInTheDocument();
-    // Owner 2026-10-25: "plan is available one time for all, only in footer" —
-    // the locked card carries no /plans link at all.
+    expect(screen.getByRole("heading", { name: /upgrade your plan/i })).toBeInTheDocument();
+    // Plans link is now present so students can act immediately.
     const hrefs = screen.getAllByRole("link").map((el) => el.getAttribute("href"));
-    expect(hrefs).not.toContain("/plans");
+    expect(hrefs).toContain("/plans");
     expect(screen.getByRole("link", { name: /go to my home/i })).toHaveAttribute("href", "/home");
-    expect(screen.getByRole("heading", { name: /pdf library is unavailable on this plan/i }).closest("div")).toHaveClass("grayscale");
   });
 
   it("matches deep routes to their section (the unit page gates like its root)", () => {
@@ -94,6 +92,6 @@ describe("SectionTierGate — visible-but-dimmed, no dead ends", () => {
     pathname.value = "/class-11-notes/physics";
     render(<SectionTierGate>{CONTENT}</SectionTierGate>);
     expect(screen.queryByTestId("section-content")).toBeNull();
-    expect(screen.getByRole("heading", { name: /class 11 notes is unavailable on this plan/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /upgrade your plan/i })).toBeInTheDocument();
   });
 });

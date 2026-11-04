@@ -108,7 +108,7 @@ export function MockExamsView() {
           {paper ? "New paper" : "Start mock"}
         </Button>
         {!canStart && (
-          <span className="text-xs text-muted-foreground">Unlock window ended. Reopen this page with a new unlock to start another paper.</span>
+          <span className="text-xs text-muted-foreground">Access session ended. Upgrade your plan to continue.</span>
         )}
       </div>
 
