@@ -38,7 +38,7 @@ export function BillingView() {
         </h1>
         <p className="text-sm text-muted-foreground">
           Your spark balance, plan status and receipt history. See <Link href="/credits" className="underline">My Sparks</Link>{" "}
-          and <Link href="/plans" className="underline">Plans</Link> for how sparks and tiers work.
+          for how sparks work.
         </p>
       </div>
 
@@ -114,8 +114,8 @@ export function BillingView() {
         title="Online payments"
         kind="Notes"
         message="Subscription and spark purchases by card or wallet are not available yet. Premium is granted after owner approval; payment invoices appear here once a payment provider is connected."
-        backHref="/plans"
-        backLabel="Plans"
+        backHref="/credits"
+        backLabel="My Sparks"
       />
     </div>
   );

@@ -11,8 +11,8 @@ export default function FeaturesPage() {
     <UnderDevelopment
       title="Features"
       description="A full feature grid showing exactly what each tier unlocks — from free flashcards to full entrance prep."
-      backHref="/plans"
-      backLabel="View Plans"
+      backHref="/home"
+      backLabel="Go to Home"
     />
   );
 }

@@ -47,7 +47,7 @@ export function BottomTabBar() {
           return (
             <li key={tab.href} className="flex-1">
               <Link
-                href={unlocked ? tab.href : "/plans"}
+                href={unlocked ? tab.href : tab.href}
                 aria-current={active ? "page" : undefined}
                 aria-label={
                   unlocked ? tab.label : `${tab.label} — opens at ${tierLabel}`
