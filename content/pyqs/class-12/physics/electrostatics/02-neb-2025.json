@@ -1,0 +1,57 @@
+{
+  "title": "NEB Class 12 Physics — Electrostatics — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "electrostatics",
+  "origin": "curated NEB-pattern set for class-12 physics electrostatics",
+  "questions": [
+    {
+      "id": "phy-est-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Capacitors of $3\\,\\mu\\mathrm{F}$ and $6\\,\\mu\\mathrm{F}$ are joined in series across a $12\\,\\mathrm{V}$ supply. The potential difference across the $3\\,\\mu\\mathrm{F}$ capacitor is: (A) $4\\,\\mathrm{V}$ (B) $6\\,\\mathrm{V}$ (C) $8\\,\\mathrm{V}$ (D) $12\\,\\mathrm{V}$",
+      "solution": "Series capacitance: $\\frac{1}{C_s} = \\frac{1}{3} + \\frac{1}{6} = \\frac{1}{2}\\ \\mu\\mathrm{F}^{-1}$, so $C_s = 2\\,\\mu\\mathrm{F}$.\n\nCharge on each capacitor is the same: $Q = C_s V = 2\\,\\mu\\mathrm{F} \\times 12\\,\\mathrm{V} = 24\\,\\mu\\mathrm{C}$.\n\nAcross the $3\\,\\mu\\mathrm{F}$ capacitor: $V_1 = Q/C_1 = 24/3 = 8\\,\\mathrm{V}$. Answer (C). (Check: $24/6 = 4\\,\\mathrm{V}$, and $8 + 4 = 12\\,\\mathrm{V}$.)"
+    },
+    {
+      "id": "phy-est-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A charge is carried from one point to another on the same equipotential surface. The work done by the external agent is: (A) maximum (B) zero (C) equal to $qV$ (D) negative",
+      "solution": "Work done between two points is $W = q(V_B - V_A)$.\n\nOn an equipotential surface $V_A = V_B$, so $W = 0$. The displacement is everywhere perpendicular to the field, so no force component acts along the path. Answer (B)."
+    },
+    {
+      "id": "phy-est-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "State Coulomb's law in vector form. Two point charges $+4\\,\\mu\\mathrm{C}$ and $-2\\,\\mu\\mathrm{C}$ are placed $30\\,\\mathrm{cm}$ apart in air. Find the magnitude and nature of the force between them.",
+      "solution": "Vector form: $\\vec{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1 q_2}{r^2}\\,\\hat{r}_{12}$, where $\\hat{r}_{12}$ is the unit vector from charge 1 to charge 2. The force acts along the line joining the charges, is repulsive for like charges and attractive for unlike charges, and obeys Newton's third law ($\\vec{F}_{21} = -\\vec{F}_{12}$).\n\nMagnitude: $F = 9\\times10^{9} \\times \\frac{(4\\times10^{-6})(2\\times10^{-6})}{(0.30)^2} = 9\\times10^{9} \\times \\frac{8\\times10^{-12}}{0.09}$.\n\n$F = \\frac{72\\times10^{-3}}{0.09} = 0.8\\,\\mathrm{N}$. The charges are of opposite sign, so the force is attractive — each charge is pulled towards the other."
+    },
+    {
+      "id": "phy-est-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Derive an expression for the electric field intensity at a point on the axial line of an electric dipole. Hence write its value for a short dipole.",
+      "solution": "Take charges $+q$ and $-q$ separated by $2a$, and a point $P$ on the axial line at distance $r$ from the centre ($r > a$).\n\nField due to $+q$: $E_+ = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(r-a)^2}$ away from the dipole. Field due to $-q$: $E_- = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(r+a)^2}$ towards the dipole. Since $E_+ > E_-$, the resultant acts along the dipole axis away from it:\n\n$E = E_+ - E_- = \\frac{q}{4\\pi\\varepsilon_0}\\left[\\frac{1}{(r-a)^2} - \\frac{1}{(r+a)^2}\\right] = \\frac{q}{4\\pi\\varepsilon_0}\\cdot\\frac{4ar}{(r^2-a^2)^2}$.\n\nWith dipole moment $p = q(2a)$: $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2pr}{(r^2-a^2)^2}$. For a short dipole ($r \\gg a$) this reduces to $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2p}{r^3}$ — twice the field on the equatorial line at the same distance, and in the same direction as $\\vec{p}$."
+    },
+    {
+      "id": "phy-est-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Using Gauss's law, find the electric field at a point (i) outside and (ii) inside a uniformly charged thin spherical shell. Sketch how the field varies with distance from the centre.",
+      "solution": "Let the shell have radius $R$ and surface charge density $\\sigma$, so total charge $Q = 4\\pi R^2\\sigma$. Take a spherical Gaussian surface of radius $r$ concentric with the shell; by symmetry $\\vec{E}$ is radial and has the same magnitude everywhere on it, so $\\oint \\vec{E}\\cdot d\\vec{A} = E(4\\pi r^2)$.\n\n(i) Outside ($r > R$): enclosed charge is $Q$, so $E(4\\pi r^2) = Q/\\varepsilon_0$ and $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}$ — the shell behaves as if all its charge were at the centre.\n\n(ii) Inside ($r < R$): the Gaussian surface encloses no charge, so $E(4\\pi r^2) = 0$ and $E = 0$ everywhere inside.\n\nGraph: $E = 0$ for $r < R$, jumps to $E = \\sigma/\\varepsilon_0$ at the surface, then falls as $1/r^2$ outside. This is why a charged conductor's charge resides on its outer surface and why a hollow conductor shields its interior (Faraday cage)."
+    },
+    {
+      "id": "phy-est-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) Derive the capacitance of a parallel-plate capacitor when a dielectric slab of thickness $t$ and dielectric constant $K$ is inserted between plates separated by $d$. (b) A parallel-plate capacitor has plate area $200\\,\\mathrm{cm^2}$ and separation $2\\,\\mathrm{mm}$; a slab of thickness $1\\,\\mathrm{mm}$ and $K = 5$ fills half the gap. Find the new capacitance and the percentage increase.",
+      "solution": "(a) The slab divides the gap into an air part of thickness $(d - t)$ and a dielectric part of thickness $t$, in series. The air part has capacitance per unit area $C_1 = \\frac{\\varepsilon_0 A}{d-t}$ and the dielectric part $C_2 = \\frac{K\\varepsilon_0 A}{t}$. Series combination gives $\\frac{1}{C} = \\frac{1}{C_1} + \\frac{1}{C_2}$:\n\n$C = \\frac{\\varepsilon_0 A}{(d - t) + \\frac{t}{K}}$.\n\n(b) Here $A = 200\\,\\mathrm{cm^2} = 2.0\\times10^{-2}\\,\\mathrm{m^2}$, $d = 2\\times10^{-3}\\,\\mathrm{m}$, $t = 1\\times10^{-3}\\,\\mathrm{m}$, $K = 5$.\n\nDenominator: $(2\\times10^{-3} - 1\\times10^{-3}) + \\frac{1\\times10^{-3}}{5} = 1.0\\times10^{-3} + 0.2\\times10^{-3} = 1.2\\times10^{-3}\\,\\mathrm{m}$.\n\n$C = \\frac{8.85\\times10^{-12} \\times 2.0\\times10^{-2}}{1.2\\times10^{-3}} = \\frac{1.77\\times10^{-13}}{1.2\\times10^{-3}} \\approx 1.48\\times10^{-10}\\,\\mathrm{F} \\approx 148\\,\\mathrm{pF}$.\n\nWithout the slab: $C_0 = \\varepsilon_0 A/d = 1.77\\times10^{-13}/2\\times10^{-3} = 8.85\\times10^{-11}\\,\\mathrm{F} \\approx 88.5\\,\\mathrm{pF}$. Percentage increase $= \\frac{148 - 88.5}{88.5}\\times100 \\approx 67\\%$."
+    }
+  ]
+}

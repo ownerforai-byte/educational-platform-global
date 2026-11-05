@@ -1,0 +1,57 @@
+{
+  "title": "NEB Class 12 Physics — Magnetism And Magnetic Effect — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "origin": "curated NEB-pattern set for class-12 physics magnetism-and-magnetic-effect",
+  "questions": [
+    {
+      "id": "phy-mag-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A charged particle enters a uniform magnetic field with its velocity parallel to the field. The path of the particle is: (A) circular (B) helical (C) straight line (D) parabolic",
+      "solution": "Magnetic force $\\vec{F} = q\\vec{v}\\times\\vec{B}$ is zero when $\\vec{v}\\parallel\\vec{B}$ because $\\sin\\theta = \\sin 0 = 0$.\n\nWith no magnetic force the particle continues in a straight line with unchanged speed. Answer (C). (If $\\vec{v}$ had a component across the field, that component would give a helix.)"
+    },
+    {
+      "id": "phy-mag-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A galvanometer of resistance $100\\,\\Omega$ gives full-scale deflection for $1\\,\\mathrm{mA}$. To convert it into a voltmeter of range $0$–$10\\,\\mathrm{V}$, the series resistance required is: (A) $100\\,\\Omega$ (B) $1000\\,\\Omega$ (C) $9900\\,\\Omega$ (D) $10000\\,\\Omega$",
+      "solution": "For full-scale current, $R_g + R = \\frac{V}{I_g} = \\frac{10}{1\\times10^{-3}} = 10{,}000\\,\\Omega$.\n\n$R = 10{,}000 - 100 = 9900\\,\\Omega$. Answer (C). A high series resistance limits the current through the coil to $I_g$ even at full voltage."
+    },
+    {
+      "id": "phy-mag-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Using Biot–Savart's law, obtain the magnetic flux density at a point near a long straight current-carrying conductor. A long wire carries $10\\,\\mathrm{A}$; find the field at $5\\,\\mathrm{cm}$ from it.",
+      "solution": "Biot–Savart's law: $d\\vec{B} = \\frac{\\mu_0}{4\\pi}\\frac{I\\,d\\vec{l}\\times\\hat{r}}{r^2}$. For an element at distance $x$ along a long wire, the perpendicular distance being $a$, integrating over both directions gives\n\n$B = \\frac{\\mu_0 I}{4\\pi a}\\left[\\sin\\theta_1 + \\sin\\theta_2\\right] \\xrightarrow[\\text{long wire}]{}\\ B = \\frac{\\mu_0 I}{2\\pi a}$.\n\nNumerical: $B = \\frac{4\\pi\\times10^{-7} \\times 10}{2\\pi \\times 0.05} = \\frac{2\\times10^{-6} \\times 10}{0.05} = 4\\times10^{-5}\\,\\mathrm{T}$.\n\nThe field lines are concentric circles around the wire, with direction given by the right-hand grip rule."
+    },
+    {
+      "id": "phy-mag-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Derive an expression for the force per unit length between two infinitely long parallel straight conductors carrying currents $I_1$ and $I_2$. Hence define one ampere.",
+      "solution": "The first wire produces at the second (distance $d$) a field $B_1 = \\frac{\\mu_0 I_1}{2\\pi d}$, perpendicular to both the wire and the separation.\n\nForce on length $l$ of the second wire: $F = B_1 I_2 l$, so the force per unit length is $\\frac{F}{l} = \\frac{\\mu_0 I_1 I_2}{2\\pi d}$.\n\nBy Newton's third law the first wire experiences an equal and opposite force. Currents in the same direction attract; in opposite directions they repel.\n\nDefinition: one ampere is that steady current which, flowing in each of two infinitely long parallel conductors of negligible cross-section placed one metre apart in vacuum, produces between them a force of $2\\times10^{-7}\\,\\mathrm{N}$ per metre of length."
+    },
+    {
+      "id": "phy-mag-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Show that the torque on a rectangular current loop in a uniform magnetic field is $\\tau = NIAB\\sin\\theta$. Why is the magnetic field in a moving-coil galvanometer made radial?",
+      "solution": "Take a rectangular coil with $N$ turns, sides $l$ and $b$, carrying current $I$ in a field $B$, with the normal to the coil at angle $\\theta$ to $\\vec{B}$. The two sides of length $l$ carry opposite currents, so the forces $F = NBIl$ on them are equal, opposite and separated by $b\\sin\\theta$; they form a couple.\n\nTorque: $\\tau = F \\times$ perpendicular distance $= NBIl\\,(b\\sin\\theta) = NIAB\\sin\\theta$, with $A = lb$. In vector form $\\vec{\\tau} = N I \\vec{A}\\times\\vec{B}$.\n\nA radial field keeps the plane of the coil always parallel to the field lines, so $\\theta = 90^\\circ$ for every deflection and the torque $NIAB$ is constant. Then the deflection is directly proportional to the current, giving a uniformly divided linear scale."
+    },
+    {
+      "id": "phy-mag-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) Describe a cyclotron with a labelled sketch and derive the expression for the cyclotron frequency. (b) A cyclotron accelerates protons with a magnetic field of $1.5\\,\\mathrm{T}$. Find the frequency of the alternating voltage and the maximum energy of protons emerging from a dee of radius $0.5\\,\\mathrm{m}$. Take $m_p = 1.67\\times10^{-27}\\,\\mathrm{kg}$.",
+      "solution": "(a) Two hollow D-shaped electrodes (dees) are placed in a uniform magnetic field perpendicular to their plane, with a high-frequency alternating voltage across the gap. A particle injected at the centre is bent into a semicircle inside a dee; crossing the gap it is accelerated, and the larger radius keeps the period the same, so the same frequency continues to work.\n\nDerivation: the magnetic force supplies the centripetal force, $qvB = \\frac{mv^2}{r}$, so $v = \\frac{qBr}{m}$ and the period is $T = \\frac{2\\pi r}{v} = \\frac{2\\pi m}{qB}$ — independent of speed and radius. Cyclotron frequency $f = \\frac{1}{T} = \\frac{qB}{2\\pi m}$.\n\n(b) $f = \\frac{(1.6\\times10^{-19})(1.5)}{2\\pi(1.67\\times10^{-27})} = \\frac{2.4\\times10^{-19}}{1.05\\times10^{-26}} \\approx 2.3\\times10^{7}\\,\\mathrm{Hz} = 23\\,\\mathrm{MHz}$.\n\nMaximum speed at the outer edge: $v = \\frac{qBr}{m} = \\frac{(1.6\\times10^{-19})(1.5)(0.5)}{1.67\\times10^{-27}} = 7.2\\times10^{7}\\,\\mathrm{m\\,s^{-1}}$.\n\nMaximum kinetic energy: $K = \\frac{1}{2}mv^2 = 0.5 \\times 1.67\\times10^{-27} \\times (7.2\\times10^7)^2 \\approx 4.3\\times10^{-12}\\,\\mathrm{J} \\approx 27\\,\\mathrm{MeV}$.\n\nLimitation: relativistic mass increase makes the period drift at high speeds, so synchrocyclotrons or synchrotrons are used above about $20\\,\\mathrm{MeV}$ for protons."
+    }
+  ]
+}

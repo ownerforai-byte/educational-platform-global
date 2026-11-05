@@ -1,0 +1,57 @@
+{
+  "title": "NEB Class 12 Physics — Alternating Current — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "alternating-current",
+  "origin": "curated NEB-pattern set for class-12 physics alternating-current",
+  "questions": [
+    {
+      "id": "phy-ac-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "In a series LCR circuit at resonance: (A) $X_L > X_C$ (B) $X_L = X_C$ and the power factor is unity (C) impedance is maximum (D) current is minimum",
+      "solution": "At resonance $X_L = X_C$, so they cancel: $Z = \\sqrt{R^2 + (X_L - X_C)^2} = R$, which is the minimum possible impedance.\n\nCurrent is then maximum, $I = V/R$, and the phase angle is zero, so $\\cos\\phi = 1$. Answer (B)."
+    },
+    {
+      "id": "phy-ac-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "The peak value of the $220\\,\\mathrm{V}$ mains supply (rms) is about: (A) $110\\,\\mathrm{V}$ (B) $220\\,\\mathrm{V}$ (C) $311\\,\\mathrm{V}$ (D) $440\\,\\mathrm{V}$",
+      "solution": "$V_0 = \\sqrt2\\,V_{\\mathrm{rms}} = 1.414 \\times 220 \\approx 311\\,\\mathrm{V}$. Answer (C).\n\nThe insulation of appliances must withstand this peak, not just the quoted rms value."
+    },
+    {
+      "id": "phy-ac-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Derive the expression for the average power dissipated in a series AC circuit, $P = V_{\\mathrm{rms}} I_{\\mathrm{rms}} \\cos\\phi$, and explain what is meant by wattless current.",
+      "solution": "With $v = V_0\\sin\\omega t$ and $i = I_0\\sin(\\omega t - \\phi)$, the instantaneous power is $p = vi = V_0I_0\\sin\\omega t\\,\\sin(\\omega t-\\phi)$.\n\nUsing $\\sin A\\sin B = \\frac{1}{2}[\\cos(A-B) - \\cos(A+B)]$: $p = \\frac{V_0I_0}{2}[\\cos\\phi - \\cos(2\\omega t - \\phi)]$.\n\nThe cosine term averages to zero over a cycle, so $\\bar{P} = \\frac{V_0I_0}{2}\\cos\\phi = \\frac{V_0}{\\sqrt2}\\cdot\\frac{I_0}{\\sqrt2}\\cos\\phi = V_{\\mathrm{rms}}I_{\\mathrm{rms}}\\cos\\phi$.\n\n$\\cos\\phi$ is the power factor. If $\\phi = 90^\\circ$ (pure inductor or capacitor) the average power is zero even though a large current flows; such a current is called wattless current — it only shuttles energy back and forth between source and reactive element."
+    },
+    {
+      "id": "phy-ac-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "A series circuit has $L = 1\\,\\mathrm{H}$ and $C = 1\\,\\mu\\mathrm{F}$. Find the resonant frequency. What happens to the current at resonance if the resistance is small?",
+      "solution": "At resonance $X_L = X_C$: $\\omega L = \\frac{1}{\\omega C}$, so $\\omega = \\frac{1}{\\sqrt{LC}}$ and $f = \\frac{1}{2\\pi\\sqrt{LC}}$.\n\n$LC = 1 \\times 1\\times10^{-6} = 1\\times10^{-6}\\,\\mathrm{s^2}$, so $\\sqrt{LC} = 1\\times10^{-3}\\,\\mathrm{s}$ and $f = \\frac{1}{2\\pi \\times 10^{-3}} \\approx 159\\,\\mathrm{Hz}$.\n\nAt resonance $Z = R$, so the current peaks at $V/R$. With small $R$ the peak is very sharp and large — the circuit is highly selective, which is how a radio tuner picks out one station."
+    },
+    {
+      "id": "phy-ac-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Why is a choke coil preferred over a resistor for reducing current in an AC circuit?",
+      "solution": "A choke is an inductor of large self-inductance and negligible resistance. Its reactance $X_L = \\omega L$ limits the current without dissipating power, because in a pure inductance the current lags the voltage by $90^\\circ$ and the average power is $V_{\\mathrm{rms}}I_{\\mathrm{rms}}\\cos 90^\\circ = 0$.\n\nA resistor would reduce the current equally well but would dissipate $I^2R$ as heat, wasting energy and heating the appliance.\n\nA real choke has small resistance, so only a little power is lost; that is why chokes are used in tube lights and fans rather than series resistors."
+    },
+    {
+      "id": "phy-ac-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) Draw the phasor diagram for a series LCR circuit and derive the expression for impedance $Z = \\sqrt{R^2 + (X_L - X_C)^2}$. (b) A series circuit with $R = 30\\,\\Omega$, $X_L = 70\\,\\Omega$ and $X_C = 30\\,\\Omega$ is connected to a $220\\,\\mathrm{V}$, $50\\,\\mathrm{Hz}$ supply. Find $Z$, the current, the phase angle and the power consumed.",
+      "solution": "(a) Take current as the reference phasor. $V_R$ is in phase with $I$; $V_L$ leads by $90^\\circ$; $V_C$ lags by $90^\\circ$. Since $V_L$ and $V_C$ are opposite, the resultant reactive voltage is $(V_L - V_C)$ perpendicular to $V_R$.\n\nSo $V^2 = V_R^2 + (V_L - V_C)^2 = I^2R^2 + I^2(X_L - X_C)^2$, giving $V = I\\sqrt{R^2 + (X_L-X_C)^2}$ and hence $Z = \\sqrt{R^2 + (X_L-X_C)^2}$ with $\\tan\\phi = \\frac{X_L - X_C}{R}$.\n\n(b) $X_L - X_C = 70 - 30 = 40\\,\\Omega$, so $Z = \\sqrt{30^2 + 40^2} = 50\\,\\Omega$.\n\nCurrent: $I = V/Z = 220/50 = 4.4\\,\\mathrm{A}$.\n\nPhase angle: $\\tan\\phi = 40/30 = 1.333$, so $\\phi \\approx 53^\\circ$ — the current lags the voltage (inductive circuit).\n\nPower: $P = I^2R = (4.4)^2 \\times 30 = 581\\,\\mathrm{W}$ (equivalently $VI\\cos\\phi = 220 \\times 4.4 \\times 0.6 = 581\\,\\mathrm{W}$)."
+    }
+  ]
+}

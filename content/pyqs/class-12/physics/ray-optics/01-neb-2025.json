@@ -1,0 +1,57 @@
+{
+  "title": "NEB Class 12 Physics — Ray Optics — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "ray-optics",
+  "origin": "curated NEB-pattern set for class-12 physics ray-optics",
+  "questions": [
+    {
+      "id": "phy-ray-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Total internal reflection can occur when light travels from: (A) air to glass (B) glass to air at an angle greater than the critical angle (C) air to water (D) vacuum to glass",
+      "solution": "Total internal reflection needs the ray to travel from a denser to a rarer medium, and the angle of incidence must exceed the critical angle $\\theta_c = \\sin^{-1}(1/n)$.\n\nGoing from air to glass the ray bends towards the normal and can never be totally reflected. Answer (B)."
+    },
+    {
+      "id": "phy-ray-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Two thin lenses of powers $+5\\,\\mathrm{D}$ and $-2\\,\\mathrm{D}$ are placed in contact. The focal length of the combination is: (A) $+33\\,\\mathrm{cm}$ (B) $+20\\,\\mathrm{cm}$ (C) $-33\\,\\mathrm{cm}$ (D) $+50\\,\\mathrm{cm}$",
+      "solution": "For lenses in contact $P = P_1 + P_2 = 5 + (-2) = +3\\,\\mathrm{D}$.\n\n$f = \\frac{1}{P} = \\frac{1}{3}\\,\\mathrm{m} = +33.3\\,\\mathrm{cm}$, converging. Answer (A)."
+    },
+    {
+      "id": "phy-ray-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "An object is placed $20\\,\\mathrm{cm}$ from a concave mirror of focal length $15\\,\\mathrm{cm}$. Find the position, nature and magnification of the image.",
+      "solution": "Sign convention: $u = -20\\,\\mathrm{cm}$, $f = -15\\,\\mathrm{cm}$, and $\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$.\n\n$\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u} = -\\frac{1}{15} + \\frac{1}{20} = \\frac{-4 + 3}{60} = -\\frac{1}{60}$, so $v = -60\\,\\mathrm{cm}$.\n\nThe image is $60\\,\\mathrm{cm}$ in front of the mirror — real and inverted, formed beyond the centre of curvature.\n\nMagnification: $m = -\\frac{v}{u} = -\\frac{-60}{-20} = -3$, i.e. three times magnified and inverted."
+    },
+    {
+      "id": "phy-ray-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Derive the lens maker's formula for a thin lens. A biconvex lens of refractive index $1.5$ has both surfaces of radius $20\\,\\mathrm{cm}$; find its focal length.",
+      "solution": "Refraction at the first surface (radius $R_1$): $\\frac{n_2}{v'} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R_1}$. At the second surface (radius $R_2$), the image $v'$ acts as object: $\\frac{n_1}{v} - \\frac{n_2}{v'} = \\frac{n_1 - n_2}{R_2}$.\n\nAdding and taking the lens in air ($n_1 = 1$, $n_2 = n$): $\\frac{1}{v} - \\frac{1}{u} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$. For an object at infinity $v = f$, so $\\frac{1}{f} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$.\n\nNumerical: $\\frac{1}{f} = (1.5-1)\\left(\\frac{1}{0.20} - \\frac{1}{-0.20}\\right) = 0.5 \\times 10 = 5\\,\\mathrm{m^{-1}}$, so $f = 0.20\\,\\mathrm{m} = 20\\,\\mathrm{cm}$.\n\nCheck with the symmetric form: for equal radii, $\\frac{1}{R_1} - \\frac{1}{R_2} = \\frac{2}{R}$, so $f = \\frac{R}{2(n-1)} = \\frac{20}{1} = 20\\,\\mathrm{cm}$ — the two surfaces contribute equally, which is why a biconvex lens of this glass has $f$ equal to its radius of curvature."
+    },
+    {
+      "id": "phy-ray-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "A prism of angle $60^\\circ$ and refractive index $1.5$ is placed in air. Find the angle of minimum deviation using the prism formula, and the angle of deviation for a small-angle prism.",
+      "solution": "At minimum deviation the ray passes symmetrically, so $r_1 = r_2 = A/2 = 30^\\circ$.\n\n$n = \\frac{\\sin\\frac{A+\\delta_m}{2}}{\\sin\\frac{A}{2}}$ gives $1.5 = \\frac{\\sin\\frac{60^\\circ + \\delta_m}{2}}{\\sin 30^\\circ}$, so $\\sin\\frac{60^\\circ + \\delta_m}{2} = 0.75$ and $\\frac{60^\\circ+\\delta_m}{2} = 48.6^\\circ$.\n\nHence $\\delta_m = 2(48.6^\\circ) - 60^\\circ = 37.2^\\circ$.\n\nFor a thin prism ($A$ small) $\\delta = (n-1)A = 0.5 \\times 60^\\circ = 30^\\circ$, which is smaller than the exact value because the small-angle approximation $\\sin\\theta \\approx \\theta$ is not valid at $30^\\circ$."
+    },
+    {
+      "id": "phy-ray-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) Derive the relation $\\frac{n_2}{v} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R}$ for refraction at a single spherical surface. (b) A point object in air is $30\\,\\mathrm{cm}$ from a convex surface of radius $10\\,\\mathrm{cm}$ bounding glass of refractive index $1.5$. Locate the image.",
+      "solution": "(a) A ray from an object $O$ on the axis meets the surface at $P$ and is refracted towards $I$. For small apertures the angles are small, so Snell's law $n_1\\sin i = n_2\\sin r$ becomes $n_1 i = n_2 r$.\n\nIn the triangle $OPC$, the exterior angle is $i = \\alpha + \\gamma$ (angles measured from the axis, with $\\gamma$ at the centre of curvature $C$); in triangle $IPC$, $r = \\gamma - \\beta$. For small angles $\\alpha \\approx h/u$, $\\beta \\approx h/v$, $\\gamma \\approx h/R$.\n\nSubstituting: $n_1\\left(\\frac{h}{u} + \\frac{h}{R}\\right) = n_2\\left(\\frac{h}{R} - \\frac{h}{v}\\right)$, and cancelling $h$ with signs applied by the Cartesian convention gives $\\frac{n_2}{v} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R}$.\n\n(b) $n_1 = 1$, $n_2 = 1.5$, $u = -30\\,\\mathrm{cm}$, $R = +10\\,\\mathrm{cm}$: $\\frac{1.5}{v} - \\frac{1}{-30} = \\frac{1.5-1}{10}$.\n\n$\\frac{1.5}{v} + 0.0333 = 0.05$, so $\\frac{1.5}{v} = 0.0167$ and $v = +90\\,\\mathrm{cm}$.\n\nThe image is real, on the far side of the surface, $90\\,\\mathrm{cm}$ from it — the glass surface converges the ray because it is convex towards the incident light."
+    }
+  ]
+}

@@ -90770,6 +90770,122 @@
     "unitSlug": "lekhan-koushal",
     "year": 2022
   },
+  "pyqs/class-12/physics/alternating-current/01-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Alternating Current — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "alternating-current",
+    "origin": "curated NEB-pattern set for class-12 physics alternating-current",
+    "questions": [
+      {
+        "id": "phy-ac-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "In a series LCR circuit at resonance: (A) $X_L > X_C$ (B) $X_L = X_C$ and the power factor is unity (C) impedance is maximum (D) current is minimum",
+        "solution": "At resonance $X_L = X_C$, so they cancel: $Z = \\sqrt{R^2 + (X_L - X_C)^2} = R$, which is the minimum possible impedance.\n\nCurrent is then maximum, $I = V/R$, and the phase angle is zero, so $\\cos\\phi = 1$. Answer (B)."
+      },
+      {
+        "id": "phy-ac-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "The peak value of the $220\\,\\mathrm{V}$ mains supply (rms) is about: (A) $110\\,\\mathrm{V}$ (B) $220\\,\\mathrm{V}$ (C) $311\\,\\mathrm{V}$ (D) $440\\,\\mathrm{V}$",
+        "solution": "$V_0 = \\sqrt2\\,V_{\\mathrm{rms}} = 1.414 \\times 220 \\approx 311\\,\\mathrm{V}$. Answer (C).\n\nThe insulation of appliances must withstand this peak, not just the quoted rms value."
+      },
+      {
+        "id": "phy-ac-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Derive the expression for the average power dissipated in a series AC circuit, $P = V_{\\mathrm{rms}} I_{\\mathrm{rms}} \\cos\\phi$, and explain what is meant by wattless current.",
+        "solution": "With $v = V_0\\sin\\omega t$ and $i = I_0\\sin(\\omega t - \\phi)$, the instantaneous power is $p = vi = V_0I_0\\sin\\omega t\\,\\sin(\\omega t-\\phi)$.\n\nUsing $\\sin A\\sin B = \\frac{1}{2}[\\cos(A-B) - \\cos(A+B)]$: $p = \\frac{V_0I_0}{2}[\\cos\\phi - \\cos(2\\omega t - \\phi)]$.\n\nThe cosine term averages to zero over a cycle, so $\\bar{P} = \\frac{V_0I_0}{2}\\cos\\phi = \\frac{V_0}{\\sqrt2}\\cdot\\frac{I_0}{\\sqrt2}\\cos\\phi = V_{\\mathrm{rms}}I_{\\mathrm{rms}}\\cos\\phi$.\n\n$\\cos\\phi$ is the power factor. If $\\phi = 90^\\circ$ (pure inductor or capacitor) the average power is zero even though a large current flows; such a current is called wattless current — it only shuttles energy back and forth between source and reactive element."
+      },
+      {
+        "id": "phy-ac-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "A series circuit has $L = 1\\,\\mathrm{H}$ and $C = 1\\,\\mu\\mathrm{F}$. Find the resonant frequency. What happens to the current at resonance if the resistance is small?",
+        "solution": "At resonance $X_L = X_C$: $\\omega L = \\frac{1}{\\omega C}$, so $\\omega = \\frac{1}{\\sqrt{LC}}$ and $f = \\frac{1}{2\\pi\\sqrt{LC}}$.\n\n$LC = 1 \\times 1\\times10^{-6} = 1\\times10^{-6}\\,\\mathrm{s^2}$, so $\\sqrt{LC} = 1\\times10^{-3}\\,\\mathrm{s}$ and $f = \\frac{1}{2\\pi \\times 10^{-3}} \\approx 159\\,\\mathrm{Hz}$.\n\nAt resonance $Z = R$, so the current peaks at $V/R$. With small $R$ the peak is very sharp and large — the circuit is highly selective, which is how a radio tuner picks out one station."
+      },
+      {
+        "id": "phy-ac-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Why is a choke coil preferred over a resistor for reducing current in an AC circuit?",
+        "solution": "A choke is an inductor of large self-inductance and negligible resistance. Its reactance $X_L = \\omega L$ limits the current without dissipating power, because in a pure inductance the current lags the voltage by $90^\\circ$ and the average power is $V_{\\mathrm{rms}}I_{\\mathrm{rms}}\\cos 90^\\circ = 0$.\n\nA resistor would reduce the current equally well but would dissipate $I^2R$ as heat, wasting energy and heating the appliance.\n\nA real choke has small resistance, so only a little power is lost; that is why chokes are used in tube lights and fans rather than series resistors."
+      },
+      {
+        "id": "phy-ac-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) Draw the phasor diagram for a series LCR circuit and derive the expression for impedance $Z = \\sqrt{R^2 + (X_L - X_C)^2}$. (b) A series circuit with $R = 30\\,\\Omega$, $X_L = 70\\,\\Omega$ and $X_C = 30\\,\\Omega$ is connected to a $220\\,\\mathrm{V}$, $50\\,\\mathrm{Hz}$ supply. Find $Z$, the current, the phase angle and the power consumed.",
+        "solution": "(a) Take current as the reference phasor. $V_R$ is in phase with $I$; $V_L$ leads by $90^\\circ$; $V_C$ lags by $90^\\circ$. Since $V_L$ and $V_C$ are opposite, the resultant reactive voltage is $(V_L - V_C)$ perpendicular to $V_R$.\n\nSo $V^2 = V_R^2 + (V_L - V_C)^2 = I^2R^2 + I^2(X_L - X_C)^2$, giving $V = I\\sqrt{R^2 + (X_L-X_C)^2}$ and hence $Z = \\sqrt{R^2 + (X_L-X_C)^2}$ with $\\tan\\phi = \\frac{X_L - X_C}{R}$.\n\n(b) $X_L - X_C = 70 - 30 = 40\\,\\Omega$, so $Z = \\sqrt{30^2 + 40^2} = 50\\,\\Omega$.\n\nCurrent: $I = V/Z = 220/50 = 4.4\\,\\mathrm{A}$.\n\nPhase angle: $\\tan\\phi = 40/30 = 1.333$, so $\\phi \\approx 53^\\circ$ — the current lags the voltage (inductive circuit).\n\nPower: $P = I^2R = (4.4)^2 \\times 30 = 581\\,\\mathrm{W}$ (equivalently $VI\\cos\\phi = 220 \\times 4.4 \\times 0.6 = 581\\,\\mathrm{W}$)."
+      }
+    ]
+  },
+  "pyqs/class-12/physics/communication-systems/01-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Communication Systems — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "communication-systems",
+    "origin": "curated NEB-pattern set for class-12 physics communication-systems",
+    "questions": [
+      {
+        "id": "phy-com-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "The bandwidth required for an amplitude-modulated wave with modulating frequency $f_m$ is: (A) $f_m$ (B) $2f_m$ (C) $f_m/2$ (D) zero",
+        "solution": "An AM wave carries the carrier plus two sidebands at $f_c + f_m$ and $f_c - f_m$.\n\nBandwidth $= (f_c + f_m) - (f_c - f_m) = 2f_m$. Answer (B)."
+      },
+      {
+        "id": "phy-com-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "Ground wave propagation is best suited for: (A) very high frequency signals (B) low frequency signals (C) satellite communication (D) line-of-sight links",
+        "solution": "Ground waves travel along the surface and are attenuated strongly as frequency rises, so they serve long-distance low-frequency and medium-wave broadcast (up to a few MHz).\n\nHigher frequencies do not diffract around the curvature of the Earth and need line of sight. Answer (B)."
+      },
+      {
+        "id": "phy-com-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Why is modulation necessary in communication? A carrier of $1\\,\\mathrm{MHz}$ is used; find the minimum height of a transmitting antenna.",
+        "solution": "Two reasons. (i) Radiation: an antenna must be comparable with $\\lambda/4$ to radiate efficiently, and a baseband audio signal (kHz) would need an antenna kilometres long; adding a high-frequency carrier reduces the required height. (ii) Multiplexing and noise: different stations can share the medium by using different carriers, and a high-frequency carrier can carry the information over long distances.\n\nWavelength: $\\lambda = \\frac{c}{f} = \\frac{3\\times10^{8}}{1\\times10^{6}} = 300\\,\\mathrm{m}$.\n\nMinimum antenna height $\\approx \\frac{\\lambda}{4} = 75\\,\\mathrm{m}$ — practical for a mast, unlike the tens of kilometres a $1\\,\\mathrm{kHz}$ baseband signal would need."
+      },
+      {
+        "id": "phy-com-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Distinguish between sky wave and space wave propagation. Why is satellite communication limited to frequencies above about $30\\,\\mathrm{MHz}$?",
+        "solution": "Sky waves are reflected by the ionosphere and can travel beyond the horizon by successive hops; this works only below about $30\\,\\mathrm{MHz}$, because higher frequencies pass straight through the ionosphere.\n\nSpace waves travel in a straight line from transmitter to receiver, are not reflected by the ionosphere, and require line of sight — used for VHF/UHF television, microwave links and satellites.\n\nBelow $30\\,\\mathrm{MHz}$ the ionosphere reflects the signal back to Earth rather than letting it reach the satellite, and the ionosphere also introduces severe distortion; hence satellite links use microwaves and above."
+      },
+      {
+        "id": "phy-com-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Explain how an optical fibre carries a signal, and give two advantages over a coaxial cable.",
+        "solution": "Light from a laser or LED enters the core (higher refractive index) surrounded by cladding of lower index. Striking the core–cladding boundary at an angle greater than the critical angle, the ray suffers total internal reflection repeatedly and is guided along the fibre with very little loss.\n\nAdvantages: enormous bandwidth (a single fibre carries thousands of telephone channels) and very low attenuation, so repeaters can be far apart; also immunity to electromagnetic interference and no cross-talk, since the signal is light rather than current."
+      },
+      {
+        "id": "phy-com-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) Draw the block diagram of a communication system and explain the function of each block. (b) A message signal of $5\\,\\mathrm{kHz}$ is amplitude-modulated on a $1\\,\\mathrm{MHz}$ carrier. State the frequencies present in the modulated wave and the bandwidth used.",
+        "diagram": "<svg viewBox=\"0 0 620 260\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:620px\"><rect x=\"20\" y=\"90\" width=\"90\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f9fafb\"/>\n   <rect x=\"130\" y=\"90\" width=\"100\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f3f4f6\"/>\n   <rect x=\"250\" y=\"90\" width=\"100\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#e5e7eb\"/>\n   <rect x=\"400\" y=\"90\" width=\"90\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f3f4f6\"/>\n   <rect x=\"510\" y=\"90\" width=\"90\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f9fafb\"/>\n   <path d=\"M110 118 h20 M230 118 h20 M350 118 h50 M490 118 h20\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" marker-end=\"url(#ar)\"/>\n   <defs><marker id=\"ar\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 z\" fill=\"#374151\"/></marker></defs>\n   <text x=\"34\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Source</text>\n   <text x=\"34\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(message, e.g. speech)</text>\n   <text x=\"146\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Modulator</text>\n   <text x=\"146\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(superimpose on carrier)</text>\n   <text x=\"264\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Transmitter</text>\n   <text x=\"264\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(amplify + antenna)</text>\n   <text x=\"412\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Channel</text>\n   <text x=\"412\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(space / cable / fibre)</text>\n   <text x=\"508\" y=\"88\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Receiver</text>\n   <text x=\"508\" y=\"72\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">demodulator + destination</text>\n   <text x=\"20\" y=\"200\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Noise enters only through the channel, so the received signal is the transmitted signal plus noise.</text>\n   <text x=\"20\" y=\"220\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Modulation is essential because a baseband signal cannot be radiated efficiently by a practical antenna.</text></svg>",
+        "diagramCaption": "Figure: block diagram of a communication system — information source, modulator, transmitter, channel, receiver with demodulator, and destination.",
+        "solution": "(a) Information source produces the message (speech, data, picture). The modulator superimposes it on a high-frequency carrier, changing the carrier's amplitude (AM), frequency (FM) or phase (PM). The transmitter amplifies the modulated wave and feeds the antenna.\n\nThe channel is the physical medium — free space, coaxial cable, optical fibre — and is where noise enters. The receiver picks up the wave, amplifies it and the demodulator recovers the original message, which the destination (loudspeaker, screen, computer) presents.\n\n(b) AM produces three components: the carrier at $1\\,\\mathrm{MHz}$, the upper sideband at $1\\,\\mathrm{MHz} + 5\\,\\mathrm{kHz} = 1.005\\,\\mathrm{MHz}$ and the lower sideband at $0.995\\,\\mathrm{MHz}$.\n\nBandwidth $= 2f_m = 2 \\times 5\\,\\mathrm{kHz} = 10\\,\\mathrm{kHz}$. Suppressing the carrier and one sideband (SSB) would cut this to $5\\,\\mathrm{kHz}$ and save transmitter power."
+      }
+    ]
+  },
   "pyqs/class-12/physics/current-electricity/03-neb-2022.json": {
     "examSource": "[NEB-pattern 2022]",
     "origin": "curated NEB-pattern set for class-12 physics current electricity",
@@ -90811,6 +90927,122 @@
     "unitSlug": "current-electricity",
     "year": 2022
   },
+  "pyqs/class-12/physics/current-electricity/04-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Current Electricity — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "current-electricity",
+    "origin": "curated NEB-pattern set for class-12 physics current-electricity",
+    "questions": [
+      {
+        "id": "phy-cur-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "A wire of resistance $R$ is stretched to double its length at constant volume. Its new resistance is: (A) $R/2$ (B) $2R$ (C) $4R$ (D) $R$",
+        "solution": "Volume is constant, so $A' = A/2$ when $l' = 2l$.\n\n$R' = \\rho\\frac{l'}{A'} = \\rho\\frac{2l}{A/2} = 4\\rho\\frac{l}{A} = 4R$. Resistivity $\\rho$ is unchanged — it is a property of the material, not the shape. Answer (C)."
+      },
+      {
+        "id": "phy-cur-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "A cell of emf $12\\,\\mathrm{V}$ and internal resistance $1\\,\\Omega$ delivers a current of $2\\,\\mathrm{A}$. The terminal potential difference is: (A) $12\\,\\mathrm{V}$ (B) $10\\,\\mathrm{V}$ (C) $14\\,\\mathrm{V}$ (D) $6\\,\\mathrm{V}$",
+        "solution": "$V = \\varepsilon - Ir = 12 - (2)(1) = 10\\,\\mathrm{V}$. Answer (B).\n\nThe $2\\,\\mathrm{V}$ \"lost\" is the drop across the internal resistance; it appears as heat inside the cell."
+      },
+      {
+        "id": "phy-cur-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Define drift velocity and derive the relation $I = neAv_d$. A copper wire of cross-section $1.0\\,\\mathrm{mm^2}$ carries $1.0\\,\\mathrm{A}$; if $n = 8.5\\times10^{28}\\,\\mathrm{m^{-3}}$, find the drift speed and explain why it is so small.",
+        "solution": "Drift velocity is the average velocity with which free electrons move along the wire under an applied field, opposite to the field.\n\nIn time $t$ every electron in a length $v_d t$ crosses a section, so the charge crossing is $q = neA v_d t$, giving $I = q/t = neAv_d$.\n\n$v_d = \\frac{I}{neA} = \\frac{1.0}{(8.5\\times10^{28})(1.6\\times10^{-19})(1.0\\times10^{-6})} = \\frac{1.0}{1.36\\times10^{4}} \\approx 7.4\\times10^{-5}\\,\\mathrm{m\\,s^{-1}}$.\n\nThe drift speed is tiny because electrons collide constantly with the lattice (mean free path ~$10^{-8}\\,\\mathrm{m}$) and their motion is a slow random walk with a small superimposed drift. The lamp still lights instantly because the electric field — and hence the push on every electron — is set up along the wire at nearly the speed of light."
+      },
+      {
+        "id": "phy-cur-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "State the balance condition of a Wheatstone bridge and derive it. Why is the bridge unsuitable for measuring very low resistances?",
+        "solution": "Four resistances $P, Q, R, S$ form a quadrilateral; a cell is connected across one diagonal and a galvanometer across the other. The bridge is balanced when the galvanometer shows no deflection, and then $\\frac{P}{Q} = \\frac{R}{S}$.\n\nAt balance no current flows through the galvanometer, so $B$ and $D$ are at the same potential: $V_A - V_B = V_A - V_D$ and $V_B - V_C = V_D - V_C$. With current $I_1$ through $P$ and $Q$, and $I_2$ through $R$ and $S$: $I_1P = I_2R$ and $I_1Q = I_2S$. Dividing, $\\frac{P}{Q} = \\frac{R}{S}$; the unknown arm is found from the three known ones.\n\nFor very low resistances the resistance of the connecting wires and contact resistance become comparable with the unknown, so the ratio is no longer reliable. A metre bridge or a Kelvin double bridge is used instead."
+      },
+      {
+        "id": "phy-cur-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "A potentiometer wire of length $10\\,\\mathrm{m}$ has a resistance of $20\\,\\Omega$ and carries $0.1\\,\\mathrm{A}$. A cell balances against $60\\,\\mathrm{cm}$ of the wire. Find the emf of the cell, and state one advantage of a potentiometer over a voltmeter.",
+        "solution": "Potential gradient: $k = \\frac{I R}{L} = \\frac{0.1 \\times 20}{10} = 0.2\\,\\mathrm{V\\,m^{-1}}$.\n\nBalancing length $l = 0.60\\,\\mathrm{m}$, so $\\varepsilon = k l = 0.2 \\times 0.60 = 0.12\\,\\mathrm{V}$.\n\nAdvantage: at balance the cell draws no current, so the potentiometer measures the true emf; a voltmeter always draws some current and reads the terminal voltage $\\varepsilon - Ir$, which is less than the emf."
+      },
+      {
+        "id": "phy-cur-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) State Kirchhoff's laws for an electrical network. (b) Two cells of emf $12\\,\\mathrm{V}$ (internal resistance $1\\,\\Omega$) and $6\\,\\mathrm{V}$ ($0.5\\,\\Omega$) are connected in parallel across a $4\\,\\Omega$ resistor. Find the current through the resistor and through each cell.",
+        "solution": "(a) Junction rule: the algebraic sum of currents at a junction is zero (conservation of charge). Loop rule: around any closed loop the algebraic sum of potential differences is zero (conservation of energy).\n\n(b) Let $I_1$ flow from the $12\\,\\mathrm{V}$ cell and $I_2$ from the $6\\,\\mathrm{V}$ cell into the resistor, so the resistor current is $I = I_1 + I_2$.\n\nLoop with $12\\,\\mathrm{V}$ cell and the resistor: $12 - 1I_1 - 4(I_1 + I_2) = 0 \\Rightarrow 5I_1 + 4I_2 = 12$.\n\nLoop with $6\\,\\mathrm{V}$ cell: $6 - 0.5I_2 - 4(I_1 + I_2) = 0 \\Rightarrow 4I_1 + 4.5I_2 = 6$.\n\nSolving: from the first, $I_1 = (12 - 4I_2)/5$. Substituting, $4(12-4I_2)/5 + 4.5I_2 = 6 \\Rightarrow 48 - 16I_2 + 22.5I_2 = 30 \\Rightarrow 6.5I_2 = -18$, so $I_2 = -2.77\\,\\mathrm{A}$ (the $6\\,\\mathrm{V}$ cell is being charged, current driven into it). Then $I_1 = (12 + 11.08)/5 = 4.62\\,\\mathrm{A}$ and $I = I_1 + I_2 = 1.85\\,\\mathrm{A}$.\n\nCheck with the terminal voltage: $V = 4 \\times 1.85 = 7.4\\,\\mathrm{V}$; the $12\\,\\mathrm{V}$ cell gives $12 - 4.62 = 7.4\\,\\mathrm{V}$ and the $6\\,\\mathrm{V}$ cell gives $6 + 2.77\\times0.5 = 7.4\\,\\mathrm{V}$, confirming the result."
+      }
+    ]
+  },
+  "pyqs/class-12/physics/electromagnetic-induction/01-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Electromagnetic Induction — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "electromagnetic-induction",
+    "origin": "curated NEB-pattern set for class-12 physics electromagnetic-induction",
+    "questions": [
+      {
+        "id": "phy-emi-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "Lenz's law is a direct consequence of the conservation of: (A) charge (B) momentum (C) energy (D) mass",
+        "solution": "The induced current always opposes the change producing it. If it helped the change instead, the change would grow by itself and the induced current would do work without any external source — a perpetual motion machine.\n\nSo mechanical work must be done against the opposing magnetic force, and that work appears as electrical energy. Answer (C), energy."
+      },
+      {
+        "id": "phy-emi-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "medium",
+        "question": "A solenoid of $N$ turns, length $l$ and cross-sectional area $A$ has self-inductance: (A) $\\frac{\\mu_0 N A}{l}$ (B) $\\frac{\\mu_0 N^2 A}{l}$ (C) $\\frac{\\mu_0 N^2 l}{A}$ (D) $\\frac{\\mu_0 N A^2}{l}$",
+        "solution": "Field inside a long solenoid: $B = \\frac{\\mu_0 N I}{l}$; flux through one turn $\\phi = BA = \\frac{\\mu_0 N I A}{l}$; total flux linkage $\\Phi = N\\phi = \\frac{\\mu_0 N^2 A}{l} I$.\n\nSince $L = \\Phi/I$, $L = \\frac{\\mu_0 N^2 A}{l}$. Answer (B) — note $N^2$, because both the field and the number of linked turns scale with $N$."
+      },
+      {
+        "id": "phy-emi-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "State Faraday's laws of electromagnetic induction. A rod of length $20\\,\\mathrm{cm}$ moves at $10\\,\\mathrm{m\\,s^{-1}}$ perpendicular to a field of $0.5\\,\\mathrm{T}$. Find the emf induced and identify the end at higher potential.",
+        "solution": "First law: whenever the magnetic flux linked with a circuit changes, an emf is induced; it lasts only while the change lasts. Second law: the magnitude of the induced emf equals the rate of change of flux linkage, $\\varepsilon = -N\\frac{d\\Phi}{dt}$.\n\nMotional emf: $\\varepsilon = Blv = 0.5 \\times 0.20 \\times 10 = 1.0\\,\\mathrm{V}$.\n\nThe free electrons are pushed by $\\vec{F} = -e\\vec{v}\\times\\vec{B}$; using Fleming's right-hand rule (field into the page, motion to the right) the induced current would flow upward in the rod, so the upper end is at higher potential."
+      },
+      {
+        "id": "phy-emi-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "What are eddy currents? Give two useful applications and two ways of reducing the losses they cause.",
+        "solution": "Eddy currents are circulating currents induced in the bulk of a conductor when the magnetic flux through it changes; they flow in closed loops within the metal, like eddies in water.\n\nUses: (i) induction heating and induction furnaces — the currents heat the charge directly; (ii) electromagnetic braking in trains and balances, and eddy-current speedometers, where the opposing force gives smooth braking.\n\nLosses: the currents dissipate energy as $I^2R$ heat in transformer cores and motor armatures. Reduction: laminate the core with thin insulated sheets (this breaks the loops and raises resistance), and use a high-resistivity material such as silicon steel or ferrite."
+      },
+      {
+        "id": "phy-emi-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "A transformer steps down $220\\,\\mathrm{V}$ to $11\\,\\mathrm{V}$ and delivers $5\\,\\mathrm{A}$ to the load. Assuming an ideal transformer, find the primary current and the turns ratio. Why can a transformer not work on direct current?",
+        "solution": "Ideal transformer: $V_p I_p = V_s I_s$, so $I_p = \\frac{11 \\times 5}{220} = 0.25\\,\\mathrm{A}$.\n\nTurns ratio: $\\frac{N_s}{N_p} = \\frac{V_s}{V_p} = \\frac{11}{220} = \\frac{1}{20}$ — a step-down transformer with 20 times fewer secondary turns.\n\nA transformer works only by mutual induction, which needs a changing flux. Direct current gives a steady flux, so no emf is induced in the secondary; the primary then behaves as a low-resistance coil and can overheat."
+      },
+      {
+        "id": "phy-emi-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) With a labelled diagram, derive the expression for the instantaneous emf generated by an AC generator. (b) A coil of 100 turns and area $0.02\\,\\mathrm{m^2}$ rotates at $50$ revolutions per second in a field of $0.5\\,\\mathrm{T}$. Calculate the peak and rms emf.",
+        "diagram": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:560px\"><rect x=\"60\" y=\"30\" width=\"26\" height=\"240\" fill=\"#e5e7eb\" stroke=\"#374151\"/>\n   <rect x=\"474\" y=\"30\" width=\"26\" height=\"240\" fill=\"#e5e7eb\" stroke=\"#374151\"/>\n   <text x=\"52\" y=\"22\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">N</text>\n   <text x=\"472\" y=\"22\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">S</text>\n   <rect x=\"200\" y=\"90\" width=\"160\" height=\"120\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f9fafb\"/>\n   <line x1=\"200\" y1=\"90\" x2=\"360\" y2=\"210\" stroke=\"#6b7280\"/>\n   <line x1=\"360\" y1=\"90\" x2=\"200\" y2=\"210\" stroke=\"#6b7280\"/>\n   <line x1=\"280\" y1=\"150\" x2=\"280\" y2=\"300\" stroke=\"#374151\"/>\n   <circle cx=\"280\" cy=\"150\" r=\"6\" fill=\"#374151\"/>\n   <path d=\"M280 150 q60 -60 6 -110\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke-dasharray=\"4 4\"/>\n   <text x=\"296\" y=\"286\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">to slip rings and brushes</text>\n   <text x=\"196\" y=\"76\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Rectangular coil, N turns, area A</text>\n   <text x=\"360\" y=\"250\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">ω — coil rotates about the axis</text>\n   <text x=\"60\" y=\"292\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Flux Φ = NBA cos ωt → induced emf ε = NBAω sin ωt (peak when the plane is parallel to B).</text></svg>",
+        "diagramCaption": "Figure: principle of the AC generator — a rectangular coil of N turns and area A rotates with angular speed ω in a uniform magnetic field between the poles N and S; the ends connect to slip rings and brushes.",
+        "solution": "(a) The coil of $N$ turns and area $A$ rotates with angular speed $\\omega$ in a field $B$. With the normal to the coil at angle $\\theta = \\omega t$ to the field, the flux linked is $\\Phi = NBA\\cos\\omega t$.\n\nBy Faraday's law, $\\varepsilon = -\\frac{d\\Phi}{dt} = NBA\\omega\\sin\\omega t$. The emf is zero when the coil plane is perpendicular to the field (flux maximum) and maximum when the plane is parallel to the field (flux changing fastest).\n\n(b) Peak emf: $\\varepsilon_0 = NBA\\omega = 100 \\times 0.5 \\times 0.02 \\times (2\\pi \\times 50)$.\n\n$\\varepsilon_0 = 1 \\times 314 = 314\\,\\mathrm{V}$, so rms emf $= \\frac{\\varepsilon_0}{\\sqrt2} = \\frac{314}{1.414} \\approx 222\\,\\mathrm{V}$.\n\nThe emf reverses every half revolution, producing alternating current at the same frequency as the rotation, $50\\,\\mathrm{Hz}$ here."
+      }
+    ]
+  },
   "pyqs/class-12/physics/electrostatics/01-neb-2021.json": {
     "examSource": "[NEB-pattern 2021]",
     "origin": "curated NEB-pattern set for class-12 electrostatics",
@@ -90843,6 +91075,120 @@
     "title": "NEB Class 12 Physics — Electrostatics — 2021",
     "unitSlug": "electrostatics",
     "year": 2021
+  },
+  "pyqs/class-12/physics/electrostatics/02-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Electrostatics — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "electrostatics",
+    "origin": "curated NEB-pattern set for class-12 physics electrostatics",
+    "questions": [
+      {
+        "id": "phy-est-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "Capacitors of $3\\,\\mu\\mathrm{F}$ and $6\\,\\mu\\mathrm{F}$ are joined in series across a $12\\,\\mathrm{V}$ supply. The potential difference across the $3\\,\\mu\\mathrm{F}$ capacitor is: (A) $4\\,\\mathrm{V}$ (B) $6\\,\\mathrm{V}$ (C) $8\\,\\mathrm{V}$ (D) $12\\,\\mathrm{V}$",
+        "solution": "Series capacitance: $\\frac{1}{C_s} = \\frac{1}{3} + \\frac{1}{6} = \\frac{1}{2}\\ \\mu\\mathrm{F}^{-1}$, so $C_s = 2\\,\\mu\\mathrm{F}$.\n\nCharge on each capacitor is the same: $Q = C_s V = 2\\,\\mu\\mathrm{F} \\times 12\\,\\mathrm{V} = 24\\,\\mu\\mathrm{C}$.\n\nAcross the $3\\,\\mu\\mathrm{F}$ capacitor: $V_1 = Q/C_1 = 24/3 = 8\\,\\mathrm{V}$. Answer (C). (Check: $24/6 = 4\\,\\mathrm{V}$, and $8 + 4 = 12\\,\\mathrm{V}$.)"
+      },
+      {
+        "id": "phy-est-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "A charge is carried from one point to another on the same equipotential surface. The work done by the external agent is: (A) maximum (B) zero (C) equal to $qV$ (D) negative",
+        "solution": "Work done between two points is $W = q(V_B - V_A)$.\n\nOn an equipotential surface $V_A = V_B$, so $W = 0$. The displacement is everywhere perpendicular to the field, so no force component acts along the path. Answer (B)."
+      },
+      {
+        "id": "phy-est-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "State Coulomb's law in vector form. Two point charges $+4\\,\\mu\\mathrm{C}$ and $-2\\,\\mu\\mathrm{C}$ are placed $30\\,\\mathrm{cm}$ apart in air. Find the magnitude and nature of the force between them.",
+        "solution": "Vector form: $\\vec{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1 q_2}{r^2}\\,\\hat{r}_{12}$, where $\\hat{r}_{12}$ is the unit vector from charge 1 to charge 2. The force acts along the line joining the charges, is repulsive for like charges and attractive for unlike charges, and obeys Newton's third law ($\\vec{F}_{21} = -\\vec{F}_{12}$).\n\nMagnitude: $F = 9\\times10^{9} \\times \\frac{(4\\times10^{-6})(2\\times10^{-6})}{(0.30)^2} = 9\\times10^{9} \\times \\frac{8\\times10^{-12}}{0.09}$.\n\n$F = \\frac{72\\times10^{-3}}{0.09} = 0.8\\,\\mathrm{N}$. The charges are of opposite sign, so the force is attractive — each charge is pulled towards the other."
+      },
+      {
+        "id": "phy-est-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Derive an expression for the electric field intensity at a point on the axial line of an electric dipole. Hence write its value for a short dipole.",
+        "solution": "Take charges $+q$ and $-q$ separated by $2a$, and a point $P$ on the axial line at distance $r$ from the centre ($r > a$).\n\nField due to $+q$: $E_+ = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(r-a)^2}$ away from the dipole. Field due to $-q$: $E_- = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q}{(r+a)^2}$ towards the dipole. Since $E_+ > E_-$, the resultant acts along the dipole axis away from it:\n\n$E = E_+ - E_- = \\frac{q}{4\\pi\\varepsilon_0}\\left[\\frac{1}{(r-a)^2} - \\frac{1}{(r+a)^2}\\right] = \\frac{q}{4\\pi\\varepsilon_0}\\cdot\\frac{4ar}{(r^2-a^2)^2}$.\n\nWith dipole moment $p = q(2a)$: $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2pr}{(r^2-a^2)^2}$. For a short dipole ($r \\gg a$) this reduces to $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{2p}{r^3}$ — twice the field on the equatorial line at the same distance, and in the same direction as $\\vec{p}$."
+      },
+      {
+        "id": "phy-est-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Using Gauss's law, find the electric field at a point (i) outside and (ii) inside a uniformly charged thin spherical shell. Sketch how the field varies with distance from the centre.",
+        "solution": "Let the shell have radius $R$ and surface charge density $\\sigma$, so total charge $Q = 4\\pi R^2\\sigma$. Take a spherical Gaussian surface of radius $r$ concentric with the shell; by symmetry $\\vec{E}$ is radial and has the same magnitude everywhere on it, so $\\oint \\vec{E}\\cdot d\\vec{A} = E(4\\pi r^2)$.\n\n(i) Outside ($r > R$): enclosed charge is $Q$, so $E(4\\pi r^2) = Q/\\varepsilon_0$ and $E = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r^2}$ — the shell behaves as if all its charge were at the centre.\n\n(ii) Inside ($r < R$): the Gaussian surface encloses no charge, so $E(4\\pi r^2) = 0$ and $E = 0$ everywhere inside.\n\nGraph: $E = 0$ for $r < R$, jumps to $E = \\sigma/\\varepsilon_0$ at the surface, then falls as $1/r^2$ outside. This is why a charged conductor's charge resides on its outer surface and why a hollow conductor shields its interior (Faraday cage)."
+      },
+      {
+        "id": "phy-est-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) Derive the capacitance of a parallel-plate capacitor when a dielectric slab of thickness $t$ and dielectric constant $K$ is inserted between plates separated by $d$. (b) A parallel-plate capacitor has plate area $200\\,\\mathrm{cm^2}$ and separation $2\\,\\mathrm{mm}$; a slab of thickness $1\\,\\mathrm{mm}$ and $K = 5$ fills half the gap. Find the new capacitance and the percentage increase.",
+        "solution": "(a) The slab divides the gap into an air part of thickness $(d - t)$ and a dielectric part of thickness $t$, in series. The air part has capacitance per unit area $C_1 = \\frac{\\varepsilon_0 A}{d-t}$ and the dielectric part $C_2 = \\frac{K\\varepsilon_0 A}{t}$. Series combination gives $\\frac{1}{C} = \\frac{1}{C_1} + \\frac{1}{C_2}$:\n\n$C = \\frac{\\varepsilon_0 A}{(d - t) + \\frac{t}{K}}$.\n\n(b) Here $A = 200\\,\\mathrm{cm^2} = 2.0\\times10^{-2}\\,\\mathrm{m^2}$, $d = 2\\times10^{-3}\\,\\mathrm{m}$, $t = 1\\times10^{-3}\\,\\mathrm{m}$, $K = 5$.\n\nDenominator: $(2\\times10^{-3} - 1\\times10^{-3}) + \\frac{1\\times10^{-3}}{5} = 1.0\\times10^{-3} + 0.2\\times10^{-3} = 1.2\\times10^{-3}\\,\\mathrm{m}$.\n\n$C = \\frac{8.85\\times10^{-12} \\times 2.0\\times10^{-2}}{1.2\\times10^{-3}} = \\frac{1.77\\times10^{-13}}{1.2\\times10^{-3}} \\approx 1.48\\times10^{-10}\\,\\mathrm{F} \\approx 148\\,\\mathrm{pF}$.\n\nWithout the slab: $C_0 = \\varepsilon_0 A/d = 1.77\\times10^{-13}/2\\times10^{-3} = 8.85\\times10^{-11}\\,\\mathrm{F} \\approx 88.5\\,\\mathrm{pF}$. Percentage increase $= \\frac{148 - 88.5}{88.5}\\times100 \\approx 67\\%$."
+      }
+    ]
+  },
+  "pyqs/class-12/physics/magnetism-and-magnetic-effect/01-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Magnetism And Magnetic Effect — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "magnetism-and-magnetic-effect",
+    "origin": "curated NEB-pattern set for class-12 physics magnetism-and-magnetic-effect",
+    "questions": [
+      {
+        "id": "phy-mag-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "A charged particle enters a uniform magnetic field with its velocity parallel to the field. The path of the particle is: (A) circular (B) helical (C) straight line (D) parabolic",
+        "solution": "Magnetic force $\\vec{F} = q\\vec{v}\\times\\vec{B}$ is zero when $\\vec{v}\\parallel\\vec{B}$ because $\\sin\\theta = \\sin 0 = 0$.\n\nWith no magnetic force the particle continues in a straight line with unchanged speed. Answer (C). (If $\\vec{v}$ had a component across the field, that component would give a helix.)"
+      },
+      {
+        "id": "phy-mag-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "A galvanometer of resistance $100\\,\\Omega$ gives full-scale deflection for $1\\,\\mathrm{mA}$. To convert it into a voltmeter of range $0$–$10\\,\\mathrm{V}$, the series resistance required is: (A) $100\\,\\Omega$ (B) $1000\\,\\Omega$ (C) $9900\\,\\Omega$ (D) $10000\\,\\Omega$",
+        "solution": "For full-scale current, $R_g + R = \\frac{V}{I_g} = \\frac{10}{1\\times10^{-3}} = 10{,}000\\,\\Omega$.\n\n$R = 10{,}000 - 100 = 9900\\,\\Omega$. Answer (C). A high series resistance limits the current through the coil to $I_g$ even at full voltage."
+      },
+      {
+        "id": "phy-mag-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Using Biot–Savart's law, obtain the magnetic flux density at a point near a long straight current-carrying conductor. A long wire carries $10\\,\\mathrm{A}$; find the field at $5\\,\\mathrm{cm}$ from it.",
+        "solution": "Biot–Savart's law: $d\\vec{B} = \\frac{\\mu_0}{4\\pi}\\frac{I\\,d\\vec{l}\\times\\hat{r}}{r^2}$. For an element at distance $x$ along a long wire, the perpendicular distance being $a$, integrating over both directions gives\n\n$B = \\frac{\\mu_0 I}{4\\pi a}\\left[\\sin\\theta_1 + \\sin\\theta_2\\right] \\xrightarrow[\\text{long wire}]{}\\ B = \\frac{\\mu_0 I}{2\\pi a}$.\n\nNumerical: $B = \\frac{4\\pi\\times10^{-7} \\times 10}{2\\pi \\times 0.05} = \\frac{2\\times10^{-6} \\times 10}{0.05} = 4\\times10^{-5}\\,\\mathrm{T}$.\n\nThe field lines are concentric circles around the wire, with direction given by the right-hand grip rule."
+      },
+      {
+        "id": "phy-mag-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Derive an expression for the force per unit length between two infinitely long parallel straight conductors carrying currents $I_1$ and $I_2$. Hence define one ampere.",
+        "solution": "The first wire produces at the second (distance $d$) a field $B_1 = \\frac{\\mu_0 I_1}{2\\pi d}$, perpendicular to both the wire and the separation.\n\nForce on length $l$ of the second wire: $F = B_1 I_2 l$, so the force per unit length is $\\frac{F}{l} = \\frac{\\mu_0 I_1 I_2}{2\\pi d}$.\n\nBy Newton's third law the first wire experiences an equal and opposite force. Currents in the same direction attract; in opposite directions they repel.\n\nDefinition: one ampere is that steady current which, flowing in each of two infinitely long parallel conductors of negligible cross-section placed one metre apart in vacuum, produces between them a force of $2\\times10^{-7}\\,\\mathrm{N}$ per metre of length."
+      },
+      {
+        "id": "phy-mag-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Show that the torque on a rectangular current loop in a uniform magnetic field is $\\tau = NIAB\\sin\\theta$. Why is the magnetic field in a moving-coil galvanometer made radial?",
+        "solution": "Take a rectangular coil with $N$ turns, sides $l$ and $b$, carrying current $I$ in a field $B$, with the normal to the coil at angle $\\theta$ to $\\vec{B}$. The two sides of length $l$ carry opposite currents, so the forces $F = NBIl$ on them are equal, opposite and separated by $b\\sin\\theta$; they form a couple.\n\nTorque: $\\tau = F \\times$ perpendicular distance $= NBIl\\,(b\\sin\\theta) = NIAB\\sin\\theta$, with $A = lb$. In vector form $\\vec{\\tau} = N I \\vec{A}\\times\\vec{B}$.\n\nA radial field keeps the plane of the coil always parallel to the field lines, so $\\theta = 90^\\circ$ for every deflection and the torque $NIAB$ is constant. Then the deflection is directly proportional to the current, giving a uniformly divided linear scale."
+      },
+      {
+        "id": "phy-mag-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) Describe a cyclotron with a labelled sketch and derive the expression for the cyclotron frequency. (b) A cyclotron accelerates protons with a magnetic field of $1.5\\,\\mathrm{T}$. Find the frequency of the alternating voltage and the maximum energy of protons emerging from a dee of radius $0.5\\,\\mathrm{m}$. Take $m_p = 1.67\\times10^{-27}\\,\\mathrm{kg}$.",
+        "solution": "(a) Two hollow D-shaped electrodes (dees) are placed in a uniform magnetic field perpendicular to their plane, with a high-frequency alternating voltage across the gap. A particle injected at the centre is bent into a semicircle inside a dee; crossing the gap it is accelerated, and the larger radius keeps the period the same, so the same frequency continues to work.\n\nDerivation: the magnetic force supplies the centripetal force, $qvB = \\frac{mv^2}{r}$, so $v = \\frac{qBr}{m}$ and the period is $T = \\frac{2\\pi r}{v} = \\frac{2\\pi m}{qB}$ — independent of speed and radius. Cyclotron frequency $f = \\frac{1}{T} = \\frac{qB}{2\\pi m}$.\n\n(b) $f = \\frac{(1.6\\times10^{-19})(1.5)}{2\\pi(1.67\\times10^{-27})} = \\frac{2.4\\times10^{-19}}{1.05\\times10^{-26}} \\approx 2.3\\times10^{7}\\,\\mathrm{Hz} = 23\\,\\mathrm{MHz}$.\n\nMaximum speed at the outer edge: $v = \\frac{qBr}{m} = \\frac{(1.6\\times10^{-19})(1.5)(0.5)}{1.67\\times10^{-27}} = 7.2\\times10^{7}\\,\\mathrm{m\\,s^{-1}}$.\n\nMaximum kinetic energy: $K = \\frac{1}{2}mv^2 = 0.5 \\times 1.67\\times10^{-27} \\times (7.2\\times10^7)^2 \\approx 4.3\\times10^{-12}\\,\\mathrm{J} \\approx 27\\,\\mathrm{MeV}$.\n\nLimitation: relativistic mass increase makes the period drift at high speeds, so synchrocyclotrons or synchrotrons are used above about $20\\,\\mathrm{MeV}$ for protons."
+      }
+    ]
   },
   "pyqs/class-12/physics/mechanics/02-neb-2023.json": {
     "examSource": "[NEB-pattern 2023]",
@@ -90884,6 +91230,179 @@
     "title": "NEB Class 12 Physics — Mechanics — 2023",
     "unitSlug": "mechanics",
     "year": 2023
+  },
+  "pyqs/class-12/physics/modern-physics/01-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Modern Physics — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "modern-physics",
+    "origin": "curated NEB-pattern set for class-12 physics modern-physics",
+    "questions": [
+      {
+        "id": "phy-mod-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "In the photoelectric effect, increasing the intensity of the incident light (frequency unchanged) increases: (A) the maximum kinetic energy of photoelectrons (B) the stopping potential (C) the number of photoelectrons per second (D) the threshold frequency",
+        "solution": "Each photon ejects one electron, so doubling the intensity doubles the number of photons and hence the saturation photocurrent.\n\nThe energy of each photon, $h\\nu$, is unchanged, so the maximum kinetic energy $h\\nu - W$ and the stopping potential stay the same; the threshold frequency is a property of the metal. Answer (C)."
+      },
+      {
+        "id": "phy-mod-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "The half-life of radon is $3.8$ days. How much of $1024\\,\\mathrm{mg}$ of radon remains after $38$ days? (A) $1\\,\\mathrm{mg}$ (B) $2\\,\\mathrm{mg}$ (C) $10\\,\\mathrm{mg}$ (D) $512\\,\\mathrm{mg}$",
+        "solution": "Number of half-lives: $n = \\frac{38}{3.8} = 10$.\n\nRemaining mass $= \\frac{1024}{2^{10}} = \\frac{1024}{1024} = 1\\,\\mathrm{mg}$. Answer (A)."
+      },
+      {
+        "id": "phy-mod-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Light of wavelength $400\\,\\mathrm{nm}$ falls on a metal of work function $2.0\\,\\mathrm{eV}$. Find the maximum kinetic energy of the photoelectrons and the stopping potential.",
+        "solution": "Photon energy: $E = \\frac{hc}{\\lambda} = \\frac{1240\\,\\mathrm{eV\\,nm}}{400\\,\\mathrm{nm}} = 3.1\\,\\mathrm{eV}$.\n\nEinstein's photoelectric equation: $K_{\\max} = h\\nu - W = 3.1 - 2.0 = 1.1\\,\\mathrm{eV}$.\n\nStopping potential: $eV_0 = K_{\\max}$, so $V_0 = 1.1\\,\\mathrm{V}$. The threshold wavelength for this metal is $\\lambda_0 = 1240/2.0 = 620\\,\\mathrm{nm}$, so $400\\,\\mathrm{nm}$ light is well above threshold."
+      },
+      {
+        "id": "phy-mod-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Calculate the de Broglie wavelength of an electron accelerated through a potential difference of $100\\,\\mathrm{V}$. Comment on why the wave nature is not observed in everyday objects.",
+        "solution": "Kinetic energy gained: $K = eV$, so momentum $p = \\sqrt{2mK} = \\sqrt{2meV}$.\n\n$\\lambda = \\frac{h}{p} = \\frac{h}{\\sqrt{2meV}} = \\frac{12.27\\,\\mathrm{\\mathring{A}}}{\\sqrt{V}} = \\frac{12.27}{\\sqrt{100}} = 1.23\\,\\mathrm{\\AA} = 0.123\\,\\mathrm{nm}$.\n\nThis is comparable with atomic spacings, so electron diffraction from crystals is easily seen (Davisson–Germer). For a macroscopic object, say a $10\\,\\mathrm{g}$ ball at $1\\,\\mathrm{m\\,s^{-1}}$, $\\lambda = h/p \\approx 6.6\\times10^{-32}\\,\\mathrm{m}$ — far too small to produce observable interference, so the particle picture is adequate."
+      },
+      {
+        "id": "phy-mod-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Using Bohr's model, find the energy and radius of the electron in the second orbit of hydrogen. Why does the model fail for multi-electron atoms?",
+        "solution": "$E_n = -\\frac{13.6}{n^2}\\,\\mathrm{eV}$, so $E_2 = -\\frac{13.6}{4} = -3.4\\,\\mathrm{eV}$.\n\n$r_n = 0.529\\,n^2\\,\\mathrm{\\mathring{A}}$, so $r_2 = 0.529 \\times 4 = 2.12\\,\\mathrm{\\AA}$.\n\nThe model assumes a single electron orbiting a fixed nucleus and ignores electron–electron repulsion, screening of the nuclear charge and the ellipticity of real orbits, so it cannot predict the spectra of helium and heavier atoms (nor fine structure and the Zeeman effect)."
+      },
+      {
+        "id": "phy-mod-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) Derive the law of radioactive decay, $N = N_0 e^{-\\lambda t}$, and hence show that $T_{1/2} = \\frac{0.693}{\\lambda}$. (b) A sample has an activity of $8000$ disintegrations per second initially and $1000$ per second after $30$ days. Find the half-life.",
+        "solution": "(a) The rate of decay is proportional to the number of undecayed nuclei: $\\frac{dN}{dt} = -\\lambda N$. Separating, $\\frac{dN}{N} = -\\lambda\\,dt$, and integrating from $N_0$ at $t = 0$ to $N$ at time $t$ gives $\\ln\\frac{N}{N_0} = -\\lambda t$, i.e. $N = N_0e^{-\\lambda t}$.\n\nAt $t = T_{1/2}$, $N = N_0/2$: $\\frac{1}{2} = e^{-\\lambda T_{1/2}}$, so $\\lambda T_{1/2} = \\ln 2$ and $T_{1/2} = \\frac{\\ln 2}{\\lambda} = \\frac{0.693}{\\lambda}$.\n\n(b) Activity $A = \\lambda N$ is proportional to $N$, so $\\frac{A}{A_0} = e^{-\\lambda t} = \\frac{1000}{8000} = \\frac{1}{8} = \\left(\\frac{1}{2}\\right)^3$.\n\nSo $3$ half-lives have passed in $30$ days: $T_{1/2} = 10$ days, and $\\lambda = 0.693/10 = 0.0693\\,\\mathrm{day^{-1}}$."
+      }
+    ]
+  },
+  "pyqs/class-12/physics/ray-optics/01-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Ray Optics — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "ray-optics",
+    "origin": "curated NEB-pattern set for class-12 physics ray-optics",
+    "questions": [
+      {
+        "id": "phy-ray-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "Total internal reflection can occur when light travels from: (A) air to glass (B) glass to air at an angle greater than the critical angle (C) air to water (D) vacuum to glass",
+        "solution": "Total internal reflection needs the ray to travel from a denser to a rarer medium, and the angle of incidence must exceed the critical angle $\\theta_c = \\sin^{-1}(1/n)$.\n\nGoing from air to glass the ray bends towards the normal and can never be totally reflected. Answer (B)."
+      },
+      {
+        "id": "phy-ray-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "Two thin lenses of powers $+5\\,\\mathrm{D}$ and $-2\\,\\mathrm{D}$ are placed in contact. The focal length of the combination is: (A) $+33\\,\\mathrm{cm}$ (B) $+20\\,\\mathrm{cm}$ (C) $-33\\,\\mathrm{cm}$ (D) $+50\\,\\mathrm{cm}$",
+        "solution": "For lenses in contact $P = P_1 + P_2 = 5 + (-2) = +3\\,\\mathrm{D}$.\n\n$f = \\frac{1}{P} = \\frac{1}{3}\\,\\mathrm{m} = +33.3\\,\\mathrm{cm}$, converging. Answer (A)."
+      },
+      {
+        "id": "phy-ray-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "An object is placed $20\\,\\mathrm{cm}$ from a concave mirror of focal length $15\\,\\mathrm{cm}$. Find the position, nature and magnification of the image.",
+        "solution": "Sign convention: $u = -20\\,\\mathrm{cm}$, $f = -15\\,\\mathrm{cm}$, and $\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$.\n\n$\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u} = -\\frac{1}{15} + \\frac{1}{20} = \\frac{-4 + 3}{60} = -\\frac{1}{60}$, so $v = -60\\,\\mathrm{cm}$.\n\nThe image is $60\\,\\mathrm{cm}$ in front of the mirror — real and inverted, formed beyond the centre of curvature.\n\nMagnification: $m = -\\frac{v}{u} = -\\frac{-60}{-20} = -3$, i.e. three times magnified and inverted."
+      },
+      {
+        "id": "phy-ray-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Derive the lens maker's formula for a thin lens. A biconvex lens of refractive index $1.5$ has both surfaces of radius $20\\,\\mathrm{cm}$; find its focal length.",
+        "solution": "Refraction at the first surface (radius $R_1$): $\\frac{n_2}{v'} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R_1}$. At the second surface (radius $R_2$), the image $v'$ acts as object: $\\frac{n_1}{v} - \\frac{n_2}{v'} = \\frac{n_1 - n_2}{R_2}$.\n\nAdding and taking the lens in air ($n_1 = 1$, $n_2 = n$): $\\frac{1}{v} - \\frac{1}{u} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$. For an object at infinity $v = f$, so $\\frac{1}{f} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$.\n\nNumerical: $\\frac{1}{f} = (1.5-1)\\left(\\frac{1}{0.20} - \\frac{1}{-0.20}\\right) = 0.5 \\times 10 = 5\\,\\mathrm{m^{-1}}$, so $f = 0.20\\,\\mathrm{m} = 20\\,\\mathrm{cm}$.\n\nCheck with the symmetric form: for equal radii, $\\frac{1}{R_1} - \\frac{1}{R_2} = \\frac{2}{R}$, so $f = \\frac{R}{2(n-1)} = \\frac{20}{1} = 20\\,\\mathrm{cm}$ — the two surfaces contribute equally, which is why a biconvex lens of this glass has $f$ equal to its radius of curvature."
+      },
+      {
+        "id": "phy-ray-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "A prism of angle $60^\\circ$ and refractive index $1.5$ is placed in air. Find the angle of minimum deviation using the prism formula, and the angle of deviation for a small-angle prism.",
+        "solution": "At minimum deviation the ray passes symmetrically, so $r_1 = r_2 = A/2 = 30^\\circ$.\n\n$n = \\frac{\\sin\\frac{A+\\delta_m}{2}}{\\sin\\frac{A}{2}}$ gives $1.5 = \\frac{\\sin\\frac{60^\\circ + \\delta_m}{2}}{\\sin 30^\\circ}$, so $\\sin\\frac{60^\\circ + \\delta_m}{2} = 0.75$ and $\\frac{60^\\circ+\\delta_m}{2} = 48.6^\\circ$.\n\nHence $\\delta_m = 2(48.6^\\circ) - 60^\\circ = 37.2^\\circ$.\n\nFor a thin prism ($A$ small) $\\delta = (n-1)A = 0.5 \\times 60^\\circ = 30^\\circ$, which is smaller than the exact value because the small-angle approximation $\\sin\\theta \\approx \\theta$ is not valid at $30^\\circ$."
+      },
+      {
+        "id": "phy-ray-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) Derive the relation $\\frac{n_2}{v} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R}$ for refraction at a single spherical surface. (b) A point object in air is $30\\,\\mathrm{cm}$ from a convex surface of radius $10\\,\\mathrm{cm}$ bounding glass of refractive index $1.5$. Locate the image.",
+        "solution": "(a) A ray from an object $O$ on the axis meets the surface at $P$ and is refracted towards $I$. For small apertures the angles are small, so Snell's law $n_1\\sin i = n_2\\sin r$ becomes $n_1 i = n_2 r$.\n\nIn the triangle $OPC$, the exterior angle is $i = \\alpha + \\gamma$ (angles measured from the axis, with $\\gamma$ at the centre of curvature $C$); in triangle $IPC$, $r = \\gamma - \\beta$. For small angles $\\alpha \\approx h/u$, $\\beta \\approx h/v$, $\\gamma \\approx h/R$.\n\nSubstituting: $n_1\\left(\\frac{h}{u} + \\frac{h}{R}\\right) = n_2\\left(\\frac{h}{R} - \\frac{h}{v}\\right)$, and cancelling $h$ with signs applied by the Cartesian convention gives $\\frac{n_2}{v} - \\frac{n_1}{u} = \\frac{n_2 - n_1}{R}$.\n\n(b) $n_1 = 1$, $n_2 = 1.5$, $u = -30\\,\\mathrm{cm}$, $R = +10\\,\\mathrm{cm}$: $\\frac{1.5}{v} - \\frac{1}{-30} = \\frac{1.5-1}{10}$.\n\n$\\frac{1.5}{v} + 0.0333 = 0.05$, so $\\frac{1.5}{v} = 0.0167$ and $v = +90\\,\\mathrm{cm}$.\n\nThe image is real, on the far side of the surface, $90\\,\\mathrm{cm}$ from it — the glass surface converges the ray because it is convex towards the incident light."
+      }
+    ]
+  },
+  "pyqs/class-12/physics/wave-optics/01-neb-2025.json": {
+    "title": "NEB Class 12 Physics — Wave Optics — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "wave-optics",
+    "origin": "curated NEB-pattern set for class-12 physics wave-optics",
+    "questions": [
+      {
+        "id": "phy-wav-2025-1",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "easy",
+        "question": "In Young's double-slit experiment, if the distance between the slits and the screen is doubled while everything else is unchanged, the fringe width: (A) halves (B) doubles (C) stays the same (D) becomes four times",
+        "solution": "Fringe width $\\beta = \\frac{\\lambda D}{d}$, so $\\beta \\propto D$.\n\nDoubling $D$ doubles $\\beta$. Answer (B). (Doubling the slit separation $d$ would halve it; changing the source intensity affects brightness, not spacing.)"
+      },
+      {
+        "id": "phy-wav-2025-2",
+        "type": "mcq",
+        "marks": 1,
+        "difficulty": "medium",
+        "question": "The Brewster angle for light reflected from glass of refractive index $1.5$ is about: (A) $34^\\circ$ (B) $42^\\circ$ (C) $56^\\circ$ (D) $68^\\circ$",
+        "solution": "At the polarising angle $\\tan\\theta_p = n$, so $\\theta_p = \\tan^{-1}(1.5) = 56.3^\\circ$.\n\nAt this angle the reflected and refracted rays are $90^\\circ$ apart and the reflected light is completely plane-polarised. Answer (C)."
+      },
+      {
+        "id": "phy-wav-2025-3",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "In Young's experiment, light of wavelength $600\\,\\mathrm{nm}$ falls on slits $0.5\\,\\mathrm{mm}$ apart and the screen is $1\\,\\mathrm{m}$ away. Calculate the fringe width and the distance of the third bright fringe from the centre.",
+        "solution": "Fringe width: $\\beta = \\frac{\\lambda D}{d} = \\frac{(600\\times10^{-9})(1.0)}{0.5\\times10^{-3}} = \\frac{6\\times10^{-7}}{5\\times10^{-4}} = 1.2\\times10^{-3}\\,\\mathrm{m} = 1.2\\,\\mathrm{mm}$.\n\nThe $n$th bright fringe is at $y_n = n\\beta$, so the third bright fringe is at $3 \\times 1.2 = 3.6\\,\\mathrm{mm}$ from the central maximum.\n\nIf the whole apparatus were immersed in water ($n = 1.33$), $\\lambda$ would fall and the fringes would close up to $1.2/1.33 \\approx 0.9\\,\\mathrm{mm}$ — a standard way to confirm that the effect depends on wavelength in the medium."
+      },
+      {
+        "id": "phy-wav-2025-4",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "medium",
+        "question": "Two coherent waves, each of intensity $I$, produce an interference pattern. Find the resultant intensity at (i) a point of constructive interference and (ii) a point of destructive interference.",
+        "solution": "For two waves of equal amplitude $a$ with phase difference $\\phi$, the resultant amplitude is $A = 2a\\cos\\frac{\\phi}{2}$, so the intensity is $I_R = 4I\\cos^2\\frac{\\phi}{2}$ (since $I \\propto a^2$).\n\n(i) Constructive: $\\phi = 0, 2\\pi,\\dots$ so $\\cos^2\\frac{\\phi}{2} = 1$ and $I_R = 4I$ — four times a single wave, not twice.\n\n(ii) Destructive: $\\phi = \\pi, 3\\pi,\\dots$ so $\\cos\\frac{\\phi}{2} = 0$ and $I_R = 0$ — the energy is redistributed to the bright fringes, which is why energy is still conserved."
+      },
+      {
+        "id": "phy-wav-2025-5",
+        "type": "short",
+        "marks": 5,
+        "difficulty": "hard",
+        "question": "A monochromatic light of wavelength $5890\\,\\mathrm{\\mathring{A}}$ falls normally on a diffraction grating with $6000$ lines per centimetre. At what angle is the second-order image seen?",
+        "solution": "Grating spacing: $d = \\frac{1\\,\\mathrm{cm}}{6000} = \\frac{1\\times10^{-2}}{6000} = 1.667\\times10^{-6}\\,\\mathrm{m}$.\n\nGrating equation: $d\\sin\\theta = n\\lambda$ with $n = 2$ and $\\lambda = 5890\\,\\mathrm{\\mathring{A}} = 5.89\\times10^{-7}\\,\\mathrm{m}$.\n\n$\\sin\\theta = \\frac{2 \\times 5.89\\times10^{-7}}{1.667\\times10^{-6}} = 0.707$, so $\\theta \\approx 45^\\circ$.\n\nA third-order image would need $\\sin\\theta = 1.06 > 1$, so it does not exist for this grating and wavelength — only orders up to $n = 2$ are visible."
+      },
+      {
+        "id": "phy-wav-2025-6",
+        "type": "long",
+        "marks": 8,
+        "difficulty": "hard",
+        "question": "(a) With a labelled diagram, derive the expression for the fringe width in Young's double-slit experiment, $\\beta = \\lambda D/d$. (b) State two conditions for sustained interference and explain why the two slits must be close together.",
+        "diagram": "<svg viewBox=\"0 0 620 280\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:620px\"><rect x=\"40\" y=\"40\" width=\"10\" height=\"200\" fill=\"#374151\"/>\n   <rect x=\"170\" y=\"40\" width=\"10\" height=\"200\" fill=\"#374151\"/>\n   <circle cx=\"175\" cy=\"110\" r=\"4\" fill=\"#fff\" stroke=\"#111827\"/>\n   <circle cx=\"175\" cy=\"170\" r=\"4\" fill=\"#fff\" stroke=\"#111827\"/>\n   <rect x=\"560\" y=\"20\" width=\"12\" height=\"240\" fill=\"#e5e7eb\" stroke=\"#374151\"/>\n   <rect x=\"560\" y=\"57\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"82\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"107\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"132\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"157\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"182\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"207\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"232\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"257\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/>\n   <line x1=\"50\" y1=\"140\" x2=\"170\" y2=\"110\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <line x1=\"50\" y1=\"140\" x2=\"170\" y2=\"170\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <line x1=\"185\" y1=\"110\" x2=\"560\" y2=\"60\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <line x1=\"185\" y1=\"170\" x2=\"560\" y2=\"60\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <text x=\"26\" y=\"30\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Single source S</text>\n   <text x=\"150\" y=\"266\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">S₁, S₂ (coherent slits)</text>\n   <text x=\"520\" y=\"276\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Screen</text>\n   <text x=\"300\" y=\"150\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">d — slit separation</text>\n   <line x1=\"180\" y1=\"140\" x2=\"180\" y2=\"152\" stroke=\"#9ca3af\"/>\n   <text x=\"576\" y=\"120\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">bright</text>\n   <text x=\"576\" y=\"145\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">dark</text>\n   <text x=\"300\" y=\"40\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">D — slit to screen distance</text>\n   <text x=\"60\" y=\"266\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Path difference at P: S₂P − S₁P ≈ d sinθ = dy/D; bright when it is nλ.</text></svg>",
+        "diagramCaption": "Figure: Young's double-slit arrangement — coherent light from S passes through S₁ and S₂ a distance d apart, and the interference fringes of width β appear on a screen a distance D away.",
+        "solution": "(a) Let the two slits be $d$ apart and the screen at distance $D \\gg d$. For a point $P$ at height $y$ from the centre, the path difference is $\\Delta = S_2P - S_1P \\approx d\\sin\\theta \\approx d\\frac{y}{D}$.\n\nBright fringes occur where $\\Delta = n\\lambda$, so $y_n = \\frac{n\\lambda D}{d}$; dark fringes where $\\Delta = (n + \\frac{1}{2})\\lambda$, so $y_n' = \\frac{(n + \\frac{1}{2})\\lambda D}{d}$.\n\nThe separation between consecutive bright (or dark) fringes is the fringe width: $\\beta = y_{n+1} - y_n = \\frac{\\lambda D}{d}$. All fringes are equally spaced and equally bright, which is what makes the pattern recognisable.\n\n(b) Conditions: the sources must be coherent (constant phase difference) and of comparable amplitude; they must also be monochromatic and close enough for the fringe width to be observable.\n\nThe slits must be close because $\\beta \\propto 1/d$: if $d$ is large the fringes become too narrow to resolve, and the single-slit envelope also narrows until the pattern is lost. Keeping $D$ large and $d$ small is the practical recipe."
+      }
+    ]
   },
   "visuals/graphs/class-11/physics/kinematics/01-projectile-trajectory.json": {
     "graph": {

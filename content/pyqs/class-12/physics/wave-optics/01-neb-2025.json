@@ -1,0 +1,59 @@
+{
+  "title": "NEB Class 12 Physics — Wave Optics — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "wave-optics",
+  "origin": "curated NEB-pattern set for class-12 physics wave-optics",
+  "questions": [
+    {
+      "id": "phy-wav-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "In Young's double-slit experiment, if the distance between the slits and the screen is doubled while everything else is unchanged, the fringe width: (A) halves (B) doubles (C) stays the same (D) becomes four times",
+      "solution": "Fringe width $\\beta = \\frac{\\lambda D}{d}$, so $\\beta \\propto D$.\n\nDoubling $D$ doubles $\\beta$. Answer (B). (Doubling the slit separation $d$ would halve it; changing the source intensity affects brightness, not spacing.)"
+    },
+    {
+      "id": "phy-wav-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "medium",
+      "question": "The Brewster angle for light reflected from glass of refractive index $1.5$ is about: (A) $34^\\circ$ (B) $42^\\circ$ (C) $56^\\circ$ (D) $68^\\circ$",
+      "solution": "At the polarising angle $\\tan\\theta_p = n$, so $\\theta_p = \\tan^{-1}(1.5) = 56.3^\\circ$.\n\nAt this angle the reflected and refracted rays are $90^\\circ$ apart and the reflected light is completely plane-polarised. Answer (C)."
+    },
+    {
+      "id": "phy-wav-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "In Young's experiment, light of wavelength $600\\,\\mathrm{nm}$ falls on slits $0.5\\,\\mathrm{mm}$ apart and the screen is $1\\,\\mathrm{m}$ away. Calculate the fringe width and the distance of the third bright fringe from the centre.",
+      "solution": "Fringe width: $\\beta = \\frac{\\lambda D}{d} = \\frac{(600\\times10^{-9})(1.0)}{0.5\\times10^{-3}} = \\frac{6\\times10^{-7}}{5\\times10^{-4}} = 1.2\\times10^{-3}\\,\\mathrm{m} = 1.2\\,\\mathrm{mm}$.\n\nThe $n$th bright fringe is at $y_n = n\\beta$, so the third bright fringe is at $3 \\times 1.2 = 3.6\\,\\mathrm{mm}$ from the central maximum.\n\nIf the whole apparatus were immersed in water ($n = 1.33$), $\\lambda$ would fall and the fringes would close up to $1.2/1.33 \\approx 0.9\\,\\mathrm{mm}$ — a standard way to confirm that the effect depends on wavelength in the medium."
+    },
+    {
+      "id": "phy-wav-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Two coherent waves, each of intensity $I$, produce an interference pattern. Find the resultant intensity at (i) a point of constructive interference and (ii) a point of destructive interference.",
+      "solution": "For two waves of equal amplitude $a$ with phase difference $\\phi$, the resultant amplitude is $A = 2a\\cos\\frac{\\phi}{2}$, so the intensity is $I_R = 4I\\cos^2\\frac{\\phi}{2}$ (since $I \\propto a^2$).\n\n(i) Constructive: $\\phi = 0, 2\\pi,\\dots$ so $\\cos^2\\frac{\\phi}{2} = 1$ and $I_R = 4I$ — four times a single wave, not twice.\n\n(ii) Destructive: $\\phi = \\pi, 3\\pi,\\dots$ so $\\cos\\frac{\\phi}{2} = 0$ and $I_R = 0$ — the energy is redistributed to the bright fringes, which is why energy is still conserved."
+    },
+    {
+      "id": "phy-wav-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "hard",
+      "question": "A monochromatic light of wavelength $5890\\,\\mathrm{\\mathring{A}}$ falls normally on a diffraction grating with $6000$ lines per centimetre. At what angle is the second-order image seen?",
+      "solution": "Grating spacing: $d = \\frac{1\\,\\mathrm{cm}}{6000} = \\frac{1\\times10^{-2}}{6000} = 1.667\\times10^{-6}\\,\\mathrm{m}$.\n\nGrating equation: $d\\sin\\theta = n\\lambda$ with $n = 2$ and $\\lambda = 5890\\,\\mathrm{\\mathring{A}} = 5.89\\times10^{-7}\\,\\mathrm{m}$.\n\n$\\sin\\theta = \\frac{2 \\times 5.89\\times10^{-7}}{1.667\\times10^{-6}} = 0.707$, so $\\theta \\approx 45^\\circ$.\n\nA third-order image would need $\\sin\\theta = 1.06 > 1$, so it does not exist for this grating and wavelength — only orders up to $n = 2$ are visible."
+    },
+    {
+      "id": "phy-wav-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) With a labelled diagram, derive the expression for the fringe width in Young's double-slit experiment, $\\beta = \\lambda D/d$. (b) State two conditions for sustained interference and explain why the two slits must be close together.",
+      "diagram": "<svg viewBox=\"0 0 620 280\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:620px\"><rect x=\"40\" y=\"40\" width=\"10\" height=\"200\" fill=\"#374151\"/>\n   <rect x=\"170\" y=\"40\" width=\"10\" height=\"200\" fill=\"#374151\"/>\n   <circle cx=\"175\" cy=\"110\" r=\"4\" fill=\"#fff\" stroke=\"#111827\"/>\n   <circle cx=\"175\" cy=\"170\" r=\"4\" fill=\"#fff\" stroke=\"#111827\"/>\n   <rect x=\"560\" y=\"20\" width=\"12\" height=\"240\" fill=\"#e5e7eb\" stroke=\"#374151\"/>\n   <rect x=\"560\" y=\"57\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"82\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"107\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"132\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"157\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"182\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"207\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/><rect x=\"560\" y=\"232\" width=\"12\" height=\"6\" fill=\"none\" stroke=\"#9ca3af\"/><rect x=\"560\" y=\"257\" width=\"12\" height=\"6\" fill=\"#111827\" stroke=\"none\"/>\n   <line x1=\"50\" y1=\"140\" x2=\"170\" y2=\"110\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <line x1=\"50\" y1=\"140\" x2=\"170\" y2=\"170\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <line x1=\"185\" y1=\"110\" x2=\"560\" y2=\"60\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <line x1=\"185\" y1=\"170\" x2=\"560\" y2=\"60\" stroke=\"#9ca3af\" stroke-dasharray=\"4 3\"/>\n   <text x=\"26\" y=\"30\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Single source S</text>\n   <text x=\"150\" y=\"266\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">S₁, S₂ (coherent slits)</text>\n   <text x=\"520\" y=\"276\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Screen</text>\n   <text x=\"300\" y=\"150\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">d — slit separation</text>\n   <line x1=\"180\" y1=\"140\" x2=\"180\" y2=\"152\" stroke=\"#9ca3af\"/>\n   <text x=\"576\" y=\"120\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">bright</text>\n   <text x=\"576\" y=\"145\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">dark</text>\n   <text x=\"300\" y=\"40\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">D — slit to screen distance</text>\n   <text x=\"60\" y=\"266\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Path difference at P: S₂P − S₁P ≈ d sinθ = dy/D; bright when it is nλ.</text></svg>",
+      "diagramCaption": "Figure: Young's double-slit arrangement — coherent light from S passes through S₁ and S₂ a distance d apart, and the interference fringes of width β appear on a screen a distance D away.",
+      "solution": "(a) Let the two slits be $d$ apart and the screen at distance $D \\gg d$. For a point $P$ at height $y$ from the centre, the path difference is $\\Delta = S_2P - S_1P \\approx d\\sin\\theta \\approx d\\frac{y}{D}$.\n\nBright fringes occur where $\\Delta = n\\lambda$, so $y_n = \\frac{n\\lambda D}{d}$; dark fringes where $\\Delta = (n + \\frac{1}{2})\\lambda$, so $y_n' = \\frac{(n + \\frac{1}{2})\\lambda D}{d}$.\n\nThe separation between consecutive bright (or dark) fringes is the fringe width: $\\beta = y_{n+1} - y_n = \\frac{\\lambda D}{d}$. All fringes are equally spaced and equally bright, which is what makes the pattern recognisable.\n\n(b) Conditions: the sources must be coherent (constant phase difference) and of comparable amplitude; they must also be monochromatic and close enough for the fringe width to be observable.\n\nThe slits must be close because $\\beta \\propto 1/d$: if $d$ is large the fringes become too narrow to resolve, and the single-slit envelope also narrows until the pattern is lost. Keeping $D$ large and $d$ small is the practical recipe."
+    }
+  ]
+}

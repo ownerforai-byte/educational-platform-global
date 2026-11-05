@@ -1,0 +1,57 @@
+{
+  "title": "NEB Class 12 Physics — Current Electricity — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "current-electricity",
+  "origin": "curated NEB-pattern set for class-12 physics current-electricity",
+  "questions": [
+    {
+      "id": "phy-cur-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A wire of resistance $R$ is stretched to double its length at constant volume. Its new resistance is: (A) $R/2$ (B) $2R$ (C) $4R$ (D) $R$",
+      "solution": "Volume is constant, so $A' = A/2$ when $l' = 2l$.\n\n$R' = \\rho\\frac{l'}{A'} = \\rho\\frac{2l}{A/2} = 4\\rho\\frac{l}{A} = 4R$. Resistivity $\\rho$ is unchanged — it is a property of the material, not the shape. Answer (C)."
+    },
+    {
+      "id": "phy-cur-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "A cell of emf $12\\,\\mathrm{V}$ and internal resistance $1\\,\\Omega$ delivers a current of $2\\,\\mathrm{A}$. The terminal potential difference is: (A) $12\\,\\mathrm{V}$ (B) $10\\,\\mathrm{V}$ (C) $14\\,\\mathrm{V}$ (D) $6\\,\\mathrm{V}$",
+      "solution": "$V = \\varepsilon - Ir = 12 - (2)(1) = 10\\,\\mathrm{V}$. Answer (B).\n\nThe $2\\,\\mathrm{V}$ \"lost\" is the drop across the internal resistance; it appears as heat inside the cell."
+    },
+    {
+      "id": "phy-cur-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Define drift velocity and derive the relation $I = neAv_d$. A copper wire of cross-section $1.0\\,\\mathrm{mm^2}$ carries $1.0\\,\\mathrm{A}$; if $n = 8.5\\times10^{28}\\,\\mathrm{m^{-3}}$, find the drift speed and explain why it is so small.",
+      "solution": "Drift velocity is the average velocity with which free electrons move along the wire under an applied field, opposite to the field.\n\nIn time $t$ every electron in a length $v_d t$ crosses a section, so the charge crossing is $q = neA v_d t$, giving $I = q/t = neAv_d$.\n\n$v_d = \\frac{I}{neA} = \\frac{1.0}{(8.5\\times10^{28})(1.6\\times10^{-19})(1.0\\times10^{-6})} = \\frac{1.0}{1.36\\times10^{4}} \\approx 7.4\\times10^{-5}\\,\\mathrm{m\\,s^{-1}}$.\n\nThe drift speed is tiny because electrons collide constantly with the lattice (mean free path ~$10^{-8}\\,\\mathrm{m}$) and their motion is a slow random walk with a small superimposed drift. The lamp still lights instantly because the electric field — and hence the push on every electron — is set up along the wire at nearly the speed of light."
+    },
+    {
+      "id": "phy-cur-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "State the balance condition of a Wheatstone bridge and derive it. Why is the bridge unsuitable for measuring very low resistances?",
+      "solution": "Four resistances $P, Q, R, S$ form a quadrilateral; a cell is connected across one diagonal and a galvanometer across the other. The bridge is balanced when the galvanometer shows no deflection, and then $\\frac{P}{Q} = \\frac{R}{S}$.\n\nAt balance no current flows through the galvanometer, so $B$ and $D$ are at the same potential: $V_A - V_B = V_A - V_D$ and $V_B - V_C = V_D - V_C$. With current $I_1$ through $P$ and $Q$, and $I_2$ through $R$ and $S$: $I_1P = I_2R$ and $I_1Q = I_2S$. Dividing, $\\frac{P}{Q} = \\frac{R}{S}$; the unknown arm is found from the three known ones.\n\nFor very low resistances the resistance of the connecting wires and contact resistance become comparable with the unknown, so the ratio is no longer reliable. A metre bridge or a Kelvin double bridge is used instead."
+    },
+    {
+      "id": "phy-cur-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "A potentiometer wire of length $10\\,\\mathrm{m}$ has a resistance of $20\\,\\Omega$ and carries $0.1\\,\\mathrm{A}$. A cell balances against $60\\,\\mathrm{cm}$ of the wire. Find the emf of the cell, and state one advantage of a potentiometer over a voltmeter.",
+      "solution": "Potential gradient: $k = \\frac{I R}{L} = \\frac{0.1 \\times 20}{10} = 0.2\\,\\mathrm{V\\,m^{-1}}$.\n\nBalancing length $l = 0.60\\,\\mathrm{m}$, so $\\varepsilon = k l = 0.2 \\times 0.60 = 0.12\\,\\mathrm{V}$.\n\nAdvantage: at balance the cell draws no current, so the potentiometer measures the true emf; a voltmeter always draws some current and reads the terminal voltage $\\varepsilon - Ir$, which is less than the emf."
+    },
+    {
+      "id": "phy-cur-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) State Kirchhoff's laws for an electrical network. (b) Two cells of emf $12\\,\\mathrm{V}$ (internal resistance $1\\,\\Omega$) and $6\\,\\mathrm{V}$ ($0.5\\,\\Omega$) are connected in parallel across a $4\\,\\Omega$ resistor. Find the current through the resistor and through each cell.",
+      "solution": "(a) Junction rule: the algebraic sum of currents at a junction is zero (conservation of charge). Loop rule: around any closed loop the algebraic sum of potential differences is zero (conservation of energy).\n\n(b) Let $I_1$ flow from the $12\\,\\mathrm{V}$ cell and $I_2$ from the $6\\,\\mathrm{V}$ cell into the resistor, so the resistor current is $I = I_1 + I_2$.\n\nLoop with $12\\,\\mathrm{V}$ cell and the resistor: $12 - 1I_1 - 4(I_1 + I_2) = 0 \\Rightarrow 5I_1 + 4I_2 = 12$.\n\nLoop with $6\\,\\mathrm{V}$ cell: $6 - 0.5I_2 - 4(I_1 + I_2) = 0 \\Rightarrow 4I_1 + 4.5I_2 = 6$.\n\nSolving: from the first, $I_1 = (12 - 4I_2)/5$. Substituting, $4(12-4I_2)/5 + 4.5I_2 = 6 \\Rightarrow 48 - 16I_2 + 22.5I_2 = 30 \\Rightarrow 6.5I_2 = -18$, so $I_2 = -2.77\\,\\mathrm{A}$ (the $6\\,\\mathrm{V}$ cell is being charged, current driven into it). Then $I_1 = (12 + 11.08)/5 = 4.62\\,\\mathrm{A}$ and $I = I_1 + I_2 = 1.85\\,\\mathrm{A}$.\n\nCheck with the terminal voltage: $V = 4 \\times 1.85 = 7.4\\,\\mathrm{V}$; the $12\\,\\mathrm{V}$ cell gives $12 - 4.62 = 7.4\\,\\mathrm{V}$ and the $6\\,\\mathrm{V}$ cell gives $6 + 2.77\\times0.5 = 7.4\\,\\mathrm{V}$, confirming the result."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "title": "NEB Class 12 Physics — Communication Systems — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "communication-systems",
+  "origin": "curated NEB-pattern set for class-12 physics communication-systems",
+  "questions": [
+    {
+      "id": "phy-com-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "The bandwidth required for an amplitude-modulated wave with modulating frequency $f_m$ is: (A) $f_m$ (B) $2f_m$ (C) $f_m/2$ (D) zero",
+      "solution": "An AM wave carries the carrier plus two sidebands at $f_c + f_m$ and $f_c - f_m$.\n\nBandwidth $= (f_c + f_m) - (f_c - f_m) = 2f_m$. Answer (B)."
+    },
+    {
+      "id": "phy-com-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "Ground wave propagation is best suited for: (A) very high frequency signals (B) low frequency signals (C) satellite communication (D) line-of-sight links",
+      "solution": "Ground waves travel along the surface and are attenuated strongly as frequency rises, so they serve long-distance low-frequency and medium-wave broadcast (up to a few MHz).\n\nHigher frequencies do not diffract around the curvature of the Earth and need line of sight. Answer (B)."
+    },
+    {
+      "id": "phy-com-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Why is modulation necessary in communication? A carrier of $1\\,\\mathrm{MHz}$ is used; find the minimum height of a transmitting antenna.",
+      "solution": "Two reasons. (i) Radiation: an antenna must be comparable with $\\lambda/4$ to radiate efficiently, and a baseband audio signal (kHz) would need an antenna kilometres long; adding a high-frequency carrier reduces the required height. (ii) Multiplexing and noise: different stations can share the medium by using different carriers, and a high-frequency carrier can carry the information over long distances.\n\nWavelength: $\\lambda = \\frac{c}{f} = \\frac{3\\times10^{8}}{1\\times10^{6}} = 300\\,\\mathrm{m}$.\n\nMinimum antenna height $\\approx \\frac{\\lambda}{4} = 75\\,\\mathrm{m}$ — practical for a mast, unlike the tens of kilometres a $1\\,\\mathrm{kHz}$ baseband signal would need."
+    },
+    {
+      "id": "phy-com-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Distinguish between sky wave and space wave propagation. Why is satellite communication limited to frequencies above about $30\\,\\mathrm{MHz}$?",
+      "solution": "Sky waves are reflected by the ionosphere and can travel beyond the horizon by successive hops; this works only below about $30\\,\\mathrm{MHz}$, because higher frequencies pass straight through the ionosphere.\n\nSpace waves travel in a straight line from transmitter to receiver, are not reflected by the ionosphere, and require line of sight — used for VHF/UHF television, microwave links and satellites.\n\nBelow $30\\,\\mathrm{MHz}$ the ionosphere reflects the signal back to Earth rather than letting it reach the satellite, and the ionosphere also introduces severe distortion; hence satellite links use microwaves and above."
+    },
+    {
+      "id": "phy-com-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Explain how an optical fibre carries a signal, and give two advantages over a coaxial cable.",
+      "solution": "Light from a laser or LED enters the core (higher refractive index) surrounded by cladding of lower index. Striking the core–cladding boundary at an angle greater than the critical angle, the ray suffers total internal reflection repeatedly and is guided along the fibre with very little loss.\n\nAdvantages: enormous bandwidth (a single fibre carries thousands of telephone channels) and very low attenuation, so repeaters can be far apart; also immunity to electromagnetic interference and no cross-talk, since the signal is light rather than current."
+    },
+    {
+      "id": "phy-com-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) Draw the block diagram of a communication system and explain the function of each block. (b) A message signal of $5\\,\\mathrm{kHz}$ is amplitude-modulated on a $1\\,\\mathrm{MHz}$ carrier. State the frequencies present in the modulated wave and the bandwidth used.",
+      "diagram": "<svg viewBox=\"0 0 620 260\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:620px\"><rect x=\"20\" y=\"90\" width=\"90\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f9fafb\"/>\n   <rect x=\"130\" y=\"90\" width=\"100\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f3f4f6\"/>\n   <rect x=\"250\" y=\"90\" width=\"100\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#e5e7eb\"/>\n   <rect x=\"400\" y=\"90\" width=\"90\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f3f4f6\"/>\n   <rect x=\"510\" y=\"90\" width=\"90\" height=\"56\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" fill=\"#f9fafb\"/>\n   <path d=\"M110 118 h20 M230 118 h20 M350 118 h50 M490 118 h20\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" marker-end=\"url(#ar)\"/>\n   <defs><marker id=\"ar\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 z\" fill=\"#374151\"/></marker></defs>\n   <text x=\"34\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Source</text>\n   <text x=\"34\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(message, e.g. speech)</text>\n   <text x=\"146\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Modulator</text>\n   <text x=\"146\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(superimpose on carrier)</text>\n   <text x=\"264\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Transmitter</text>\n   <text x=\"264\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(amplify + antenna)</text>\n   <text x=\"412\" y=\"122\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Channel</text>\n   <text x=\"412\" y=\"136\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(space / cable / fibre)</text>\n   <text x=\"508\" y=\"88\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Receiver</text>\n   <text x=\"508\" y=\"72\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">demodulator + destination</text>\n   <text x=\"20\" y=\"200\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Noise enters only through the channel, so the received signal is the transmitted signal plus noise.</text>\n   <text x=\"20\" y=\"220\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Modulation is essential because a baseband signal cannot be radiated efficiently by a practical antenna.</text></svg>",
+      "diagramCaption": "Figure: block diagram of a communication system — information source, modulator, transmitter, channel, receiver with demodulator, and destination.",
+      "solution": "(a) Information source produces the message (speech, data, picture). The modulator superimposes it on a high-frequency carrier, changing the carrier's amplitude (AM), frequency (FM) or phase (PM). The transmitter amplifies the modulated wave and feeds the antenna.\n\nThe channel is the physical medium — free space, coaxial cable, optical fibre — and is where noise enters. The receiver picks up the wave, amplifies it and the demodulator recovers the original message, which the destination (loudspeaker, screen, computer) presents.\n\n(b) AM produces three components: the carrier at $1\\,\\mathrm{MHz}$, the upper sideband at $1\\,\\mathrm{MHz} + 5\\,\\mathrm{kHz} = 1.005\\,\\mathrm{MHz}$ and the lower sideband at $0.995\\,\\mathrm{MHz}$.\n\nBandwidth $= 2f_m = 2 \\times 5\\,\\mathrm{kHz} = 10\\,\\mathrm{kHz}$. Suppressing the carrier and one sideband (SSB) would cut this to $5\\,\\mathrm{kHz}$ and save transmitter power."
+    }
+  ]
+}

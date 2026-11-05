@@ -1,0 +1,57 @@
+{
+  "title": "NEB Class 12 Physics — Modern Physics — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "modern-physics",
+  "origin": "curated NEB-pattern set for class-12 physics modern-physics",
+  "questions": [
+    {
+      "id": "phy-mod-2025-1",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "In the photoelectric effect, increasing the intensity of the incident light (frequency unchanged) increases: (A) the maximum kinetic energy of photoelectrons (B) the stopping potential (C) the number of photoelectrons per second (D) the threshold frequency",
+      "solution": "Each photon ejects one electron, so doubling the intensity doubles the number of photons and hence the saturation photocurrent.\n\nThe energy of each photon, $h\\nu$, is unchanged, so the maximum kinetic energy $h\\nu - W$ and the stopping potential stay the same; the threshold frequency is a property of the metal. Answer (C)."
+    },
+    {
+      "id": "phy-mod-2025-2",
+      "type": "mcq",
+      "marks": 1,
+      "difficulty": "easy",
+      "question": "The half-life of radon is $3.8$ days. How much of $1024\\,\\mathrm{mg}$ of radon remains after $38$ days? (A) $1\\,\\mathrm{mg}$ (B) $2\\,\\mathrm{mg}$ (C) $10\\,\\mathrm{mg}$ (D) $512\\,\\mathrm{mg}$",
+      "solution": "Number of half-lives: $n = \\frac{38}{3.8} = 10$.\n\nRemaining mass $= \\frac{1024}{2^{10}} = \\frac{1024}{1024} = 1\\,\\mathrm{mg}$. Answer (A)."
+    },
+    {
+      "id": "phy-mod-2025-3",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Light of wavelength $400\\,\\mathrm{nm}$ falls on a metal of work function $2.0\\,\\mathrm{eV}$. Find the maximum kinetic energy of the photoelectrons and the stopping potential.",
+      "solution": "Photon energy: $E = \\frac{hc}{\\lambda} = \\frac{1240\\,\\mathrm{eV\\,nm}}{400\\,\\mathrm{nm}} = 3.1\\,\\mathrm{eV}$.\n\nEinstein's photoelectric equation: $K_{\\max} = h\\nu - W = 3.1 - 2.0 = 1.1\\,\\mathrm{eV}$.\n\nStopping potential: $eV_0 = K_{\\max}$, so $V_0 = 1.1\\,\\mathrm{V}$. The threshold wavelength for this metal is $\\lambda_0 = 1240/2.0 = 620\\,\\mathrm{nm}$, so $400\\,\\mathrm{nm}$ light is well above threshold."
+    },
+    {
+      "id": "phy-mod-2025-4",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Calculate the de Broglie wavelength of an electron accelerated through a potential difference of $100\\,\\mathrm{V}$. Comment on why the wave nature is not observed in everyday objects.",
+      "solution": "Kinetic energy gained: $K = eV$, so momentum $p = \\sqrt{2mK} = \\sqrt{2meV}$.\n\n$\\lambda = \\frac{h}{p} = \\frac{h}{\\sqrt{2meV}} = \\frac{12.27\\,\\mathrm{\\mathring{A}}}{\\sqrt{V}} = \\frac{12.27}{\\sqrt{100}} = 1.23\\,\\mathrm{\\AA} = 0.123\\,\\mathrm{nm}$.\n\nThis is comparable with atomic spacings, so electron diffraction from crystals is easily seen (Davisson–Germer). For a macroscopic object, say a $10\\,\\mathrm{g}$ ball at $1\\,\\mathrm{m\\,s^{-1}}$, $\\lambda = h/p \\approx 6.6\\times10^{-32}\\,\\mathrm{m}$ — far too small to produce observable interference, so the particle picture is adequate."
+    },
+    {
+      "id": "phy-mod-2025-5",
+      "type": "short",
+      "marks": 5,
+      "difficulty": "medium",
+      "question": "Using Bohr's model, find the energy and radius of the electron in the second orbit of hydrogen. Why does the model fail for multi-electron atoms?",
+      "solution": "$E_n = -\\frac{13.6}{n^2}\\,\\mathrm{eV}$, so $E_2 = -\\frac{13.6}{4} = -3.4\\,\\mathrm{eV}$.\n\n$r_n = 0.529\\,n^2\\,\\mathrm{\\mathring{A}}$, so $r_2 = 0.529 \\times 4 = 2.12\\,\\mathrm{\\AA}$.\n\nThe model assumes a single electron orbiting a fixed nucleus and ignores electron–electron repulsion, screening of the nuclear charge and the ellipticity of real orbits, so it cannot predict the spectra of helium and heavier atoms (nor fine structure and the Zeeman effect)."
+    },
+    {
+      "id": "phy-mod-2025-6",
+      "type": "long",
+      "marks": 8,
+      "difficulty": "hard",
+      "question": "(a) Derive the law of radioactive decay, $N = N_0 e^{-\\lambda t}$, and hence show that $T_{1/2} = \\frac{0.693}{\\lambda}$. (b) A sample has an activity of $8000$ disintegrations per second initially and $1000$ per second after $30$ days. Find the half-life.",
+      "solution": "(a) The rate of decay is proportional to the number of undecayed nuclei: $\\frac{dN}{dt} = -\\lambda N$. Separating, $\\frac{dN}{N} = -\\lambda\\,dt$, and integrating from $N_0$ at $t = 0$ to $N$ at time $t$ gives $\\ln\\frac{N}{N_0} = -\\lambda t$, i.e. $N = N_0e^{-\\lambda t}$.\n\nAt $t = T_{1/2}$, $N = N_0/2$: $\\frac{1}{2} = e^{-\\lambda T_{1/2}}$, so $\\lambda T_{1/2} = \\ln 2$ and $T_{1/2} = \\frac{\\ln 2}{\\lambda} = \\frac{0.693}{\\lambda}$.\n\n(b) Activity $A = \\lambda N$ is proportional to $N$, so $\\frac{A}{A_0} = e^{-\\lambda t} = \\frac{1000}{8000} = \\frac{1}{8} = \\left(\\frac{1}{2}\\right)^3$.\n\nSo $3$ half-lives have passed in $30$ days: $T_{1/2} = 10$ days, and $\\lambda = 0.693/10 = 0.0693\\,\\mathrm{day^{-1}}$."
+    }
+  ]
+}
