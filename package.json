@@ -77,7 +77,9 @@
     "visuals:py:images": "python visuals-py/run.py generate --images",
     "visuals:py:check": "python visuals-py/run.py check",
     "prune:vercel": "node scripts/prune-vercel-deployments.mjs",
-    "prune:vercel:dry": "node scripts/prune-vercel-deployments.mjs --dry-run"
+    "prune:vercel:dry": "node scripts/prune-vercel-deployments.mjs --dry-run",
+    "brief": "node scripts/agent-brief.mjs brief",
+    "impact": "node scripts/agent-brief.mjs impact"
   },
   "overrides": {
     "body-parser": "1.20.9",
