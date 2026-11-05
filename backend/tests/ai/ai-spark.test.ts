@@ -12,9 +12,9 @@ import {
  * and pro member also like 25 and 50").
  */
 describe("AI spark tier table", () => {
-  it("daily allowances: guest 0 · member 3 · plus 25 · pro 50 · owner unlimited", () => {
+  it("daily allowances: guest 0 · member 15 · plus 25 · pro 50 · owner unlimited", () => {
     expect(AI_SPARK_LIMITS.guest).toBe(0);
-    expect(AI_SPARK_LIMITS.member).toBe(3);
+    expect(AI_SPARK_LIMITS.member).toBe(15);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
     expect(AI_SPARK_LIMITS.owner).toBe(Number.POSITIVE_INFINITY);

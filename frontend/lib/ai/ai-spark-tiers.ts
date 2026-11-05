@@ -10,7 +10,7 @@ import { isOwnerEmail } from "@/lib/owner";
  * like 25 and 50":
  *
  *   guest (public, signed out) → no Veer access
- *   member                     → 3 messages / UTC day (the three chat consoles only)
+ *   member                     → 15 messages / UTC day (the three chat consoles only)
  *   plus                       → 25 messages / UTC day
  *   pro                        → 50 messages / UTC day
  *   owner (allowlist emails)   → unlimited

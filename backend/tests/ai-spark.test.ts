@@ -41,7 +41,7 @@ describe("aiSpark — owner is never asked for spark", () => {
 
   it("non-owner tiers stay on their documented daily caps", () => {
     expect(AI_SPARK_LIMITS.guest).toBe(0);
-    expect(AI_SPARK_LIMITS.member).toBe(3);
+    expect(AI_SPARK_LIMITS.member).toBe(15);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.plus_20).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
