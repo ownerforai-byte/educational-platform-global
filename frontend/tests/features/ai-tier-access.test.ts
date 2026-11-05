@@ -140,4 +140,12 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
     expect(quickLinks).not.toContain('{ href: "/search", label: "Search" }');
     expect(quickLinks).toContain('{ href: "/chat", label: "AI" }');
   });
+
+  it("keeps Curriculum Search out of the footer Study links", () => {
+    const footer = read("components/layout/footer.tsx");
+    const studySection = footer.match(
+      /heading: "Study",\s+onlyHrefs: \[([\s\S]*?)\]/,
+    )?.[1] ?? "";
+    expect(studySection).not.toContain('"/search"');
+  });
 });

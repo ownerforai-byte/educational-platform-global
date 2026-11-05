@@ -60,14 +60,40 @@ export function MobileNav() {
       }
     };
     document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const scrollY = window.scrollY;
+    const openedPath = window.location.pathname;
+    const body = document.body;
+    const previousBodyOverflow = body.style.overflow;
+    const previousBodyPosition = body.style.position;
+    const previousBodyTop = body.style.top;
+    const previousBodyWidth = body.style.width;
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    document.documentElement.classList.add("drawer-open");
+    body.classList.add("drawer-open");
+    body.style.overflow = "hidden";
+    if (isIOS) {
+      body.style.position = "fixed";
+      body.style.top = `-${scrollY}px`;
+      body.style.width = "100%";
+    }
+
     // Focus lands inside the drawer so keyboard/screen-reader users start there.
     panelRef.current?.focus();
     const trigger = triggerRef.current;
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      document.documentElement.classList.remove("drawer-open");
+      body.classList.remove("drawer-open");
+      body.style.overflow = previousBodyOverflow;
+      body.style.position = previousBodyPosition;
+      body.style.top = previousBodyTop;
+      body.style.width = previousBodyWidth;
+      if (isIOS && window.location.pathname === openedPath) {
+        window.scrollTo(0, scrollY);
+      }
       trigger?.focus();
     };
   }, [open]);
@@ -127,7 +153,7 @@ export function MobileNav() {
         <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-backdrop-in"
+            className="absolute inset-0 touch-none overscroll-none bg-black/80 backdrop-blur-sm animate-backdrop-in"
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
@@ -188,7 +214,7 @@ export function MobileNav() {
               )}
             </div>
 
-            <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto pr-1 space-y-4">
+            <nav aria-label="Mobile navigation" className="flex-1 touch-pan-y overflow-y-auto overscroll-contain pr-1 space-y-4">
               {/* In-drawer theme customization block */}
               <div className="px-1">
                 <ThemeToggle variant="inline" />
@@ -299,4 +325,3 @@ export function MobileNav() {
     </>
   );
 }
-

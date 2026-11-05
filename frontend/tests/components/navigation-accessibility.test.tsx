@@ -17,6 +17,8 @@ describe('mobile navigation', () => {
     const drawer = screen.getByRole('dialog', { name: 'Navigation menu' });
     const links = within(drawer).getAllByRole('link');
     expect(document.body.style.overflow).toBe('hidden');
+    expect(document.documentElement).toHaveClass('drawer-open');
+    expect(document.body).toHaveClass('drawer-open');
     const last = links[links.length - 1];
     last.focus();
     fireEvent.keyDown(document, { key: 'Tab' });
@@ -27,6 +29,8 @@ describe('mobile navigation', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(trigger).toHaveFocus();
     expect(document.body.style.overflow).toBe(originalOverflow);
+    expect(document.documentElement).not.toHaveClass('drawer-open');
+    expect(document.body).not.toHaveClass('drawer-open');
   });
   it('announces empty results and hides signed-in destinations for guests', () => {
     render(<MobileNav />);

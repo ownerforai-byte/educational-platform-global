@@ -53,7 +53,6 @@ const FOOTER_SECTIONS: Array<{
       "/syllabus",
       "/pyqs",
       "/exams",
-      "/search",
     ],
   },
 
