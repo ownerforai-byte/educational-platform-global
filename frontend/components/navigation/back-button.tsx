@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,21 @@ export function BackButton({
   const router = useRouter();
   const pathname = usePathname();
   const prevPathRef = useRef<string | null>(null);
+  const [overFooter, setOverFooter] = useState(false);
+
+  // The floating button sits exactly where the footer's last legal links land
+  // on a phone. While any part of the footer is on screen, slide it away so
+  // every footer link stays tappable.
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setOverFooter(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, [pathname]);
 
   // Remember in-app navigation: once this session has moved between app
   // routes, history.back() is safe (scroll-exact). A fresh deep-link has no
@@ -88,13 +103,16 @@ export function BackButton({
       type="button"
       onClick={handleBack}
       className={cn(
-        "fixed right-6 z-50 h-11 w-11 rounded-full shadow-lg bottom-safe",
+        "fixed right-4 bottom-safe z-50 h-9 w-9 rounded-full shadow-lg sm:right-6 sm:h-11 sm:w-11",
         "flex items-center justify-center",
         "bg-primary text-primary-foreground",
         "hover:opacity-90 hover:scale-105 active:scale-95",
         "transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40",
+        overFooter && "pointer-events-none translate-y-24 opacity-0",
         className
       )}
+      aria-hidden={overFooter}
+      tabIndex={overFooter ? -1 : 0}
       aria-label="Go back"
       title="Go back (opens the previous page at the header)"
     >

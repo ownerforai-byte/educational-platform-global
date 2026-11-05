@@ -116,25 +116,21 @@ const FOOTER_SECTIONS: Array<{
 export function Footer({ user }: { user?: AiSparkUserLike | null }) {
   return (
     <footer className="mt-auto border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">
+      <div className="mx-auto max-w-7xl px-3 py-6 sm:px-4 md:px-6">
 
-        {/* Top row: brand blurb + nav columns */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr_1fr_1fr]">
+        {/* Brand line — full width so the five nav columns below get the whole row */}
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+          <Link href="/home" className="shrink-0 text-sm font-semibold hover:text-primary">
+            Ravikisan&apos;s Platform
+          </Link>
+          <p className="text-xs leading-relaxed text-muted-foreground sm:text-right">
+            Study resources for NEB Class 11 and 12, organised around the CDC curriculum.
+            <span className="hidden lg:inline"> An approved account is required for the study library; access depends on your plan.</span>
+          </p>
+        </div>
 
-          {/* Brand column */}
-          <div>
-            <Link href="/home" className="text-sm font-semibold hover:text-primary">
-              Ravikisan&apos;s Platform
-            </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Study resources for NEB Class 11 and 12, organised around the CDC curriculum.
-            </p>
-            <p className="mt-2 max-w-xs text-xs leading-relaxed text-muted-foreground">
-              An approved account is required for the study library. Access depends on your plan.
-            </p>
-          </div>
-
-          {/* One nav column per footer section */}
+        {/* All five groups share ONE row, on phones too — no stacked directory. */}
+        <div className="mt-5 grid grid-cols-5 gap-x-2 sm:gap-x-4">
           {FOOTER_SECTIONS.map(({ sectionId, heading, onlyHrefs }) => {
             // Look up the full item list from NAV_SECTIONS
             const section = NAV_SECTIONS.find((s) => s.id === sectionId);
@@ -148,9 +144,9 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
               : section.items;
 
             return (
-              <nav key={sectionId} aria-label={`Footer ${heading}`}>
-                <h2 className="text-sm font-semibold">{heading}</h2>
-                <ul className="mt-3 space-y-1">
+              <nav key={sectionId} aria-label={`Footer ${heading}`} className="min-w-0">
+                <h2 className="text-[11px] font-semibold leading-tight sm:text-sm">{heading}</h2>
+                <ul className="mt-2 space-y-0.5 sm:mt-3">
                   {items.map((item) => {
                     // Determine the minimum tier needed for this link
                     const minTier: AccessLevel = item.minLevel ?? section.minLevel ?? "member";
@@ -164,7 +160,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
                           <span
                             aria-disabled="true"
                             title={`${item.label} opens at ${ACCESS_LABELS[minTier]}`}
-                            className="inline-flex min-h-9 cursor-not-allowed items-center text-sm text-muted-foreground/50 opacity-60 grayscale"
+                            className="inline-flex min-h-8 cursor-not-allowed items-center text-xs leading-tight text-muted-foreground/50 opacity-60 grayscale sm:text-sm"
                           >
                             {item.label}
                           </span>
@@ -177,7 +173,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
                       <li key={item.href}>
                         <Link
                           href={item.href}
-                          className="inline-flex min-h-9 items-center text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                          className="inline-flex min-h-8 items-center text-xs leading-tight break-words text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-sm"
                         >
                           {item.label}
                         </Link>
@@ -191,7 +187,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
         </div>
 
         {/* Bottom bar: copyright, legal links, version */}
-        <div className="mt-8 flex flex-col gap-4 border-t border-border pt-5 text-xs text-muted-foreground lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-5 flex flex-col gap-3 border-t border-border pt-4 text-xs text-muted-foreground lg:flex-row lg:items-center lg:justify-between">
           <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform.</p>
 
           {/* Legal pages — always visible to everyone */}
@@ -207,7 +203,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
               <Link
                 key={href}
                 href={href}
-                className="hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex min-h-8 items-center hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {label}
               </Link>
