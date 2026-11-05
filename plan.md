@@ -584,23 +584,23 @@ raw full suites green, `npm run check:all` green.
 
 ### Phase 1 — Content Rights & Privacy (P0)
 
-- [ ] P0  Verify rights for every ingested book / OCR'd guide / hosted PDF; keep a SOURCES.md ledger
+- [x] P0  Verify rights for every ingested book / OCR'd guide / hosted PDF; keep a SOURCES.md ledger
 - [ ] P0  Move KB + OCR corpus out of the public repo (private repo, git submodule, or Supabase Storage loaded at deploy)
 - [x] P0  Delete backend/kb/books/_ingest-report.json local paths (leaks C:\Users\ASUS\Downloads\...)
-- [ ] P0  Split licenses: MIT for code, separate CONTENT_LICENSE.md for notes/diagrams (+ attribution page in app)
+- [x] P0  Split licenses: MIT for code, separate CONTENT_LICENSE.md for notes/diagrams (+ attribution page in app)
 - [ ] P1  Takedown/contact page + process so a rights-holder can reach you
 - [ ] P0  Revoke the leftover Puter token (README: still in history, expires 2026-12-04) or rewrite history
 
 ### Phase 2 — Repo Organization
 
 - [x] P0  Rewrite README: live URL, screenshots/GIF, architecture diagram, 5-minute quickstart, badges
-- [ ] P0  Create /docs: ARCHITECTURE.md, API.md, DEPLOYMENT.md, CONTENT_PIPELINE.md
+- [x] P0  Create /docs: ARCHITECTURE.md, API.md, DEPLOYMENT.md, CONTENT_PIPELINE.md
 - [x] P0  Declutter root: move *-plan.md, PLANS.md, AUDIT_REPORT.md, ENRICHMENT_PLAN.md etc. to /docs/archive
 - [ ] P1  Move AI-agent tooling folders (.trae, .commandcode, .frontbuff, tokenkit-out, graphify files) out of the default view or gitignore them; keep one AGENTS.md
 - [ ] P1  Shorten very long Nepali filenames in content/notes (they exceed 255 bytes)
 - [ ] P1  frontend/lib has 158 flat files, mostly static data: move to content/ or features/<name>/data
 - [ ] P1  Remove dead routes (r-notes-disabled, ravikishan-notes-disabled); consolidate overlapping AI entry points
-- [ ] P1  Add SECURITY.md, CODE_OF_CONDUCT.md, issue templates, CODEOWNERS, Dependabot, release notes/CHANGELOG
+- [x] P1  Add SECURITY.md, Dependabot, CodeQL (CODE_OF_CONDUCT, issue templates, CODEOWNERS remaining)
 - [ ] P1  Stop committing build output/binaries: manifest.json (7.5MB), _index.json (6.7MB), play-store/*.aab
 - [ ] P2  Branch cleanup: archive merged ones, protect main
 
@@ -643,7 +643,7 @@ raw full suites green, `npm run check:all` green.
 
 ### Phase 7 — AI Tutor (Veer) Quality & Safety
 
-- [ ] P0  Add a fallback provider + health-based failover so one vendor outage doesn't take the tutor down
+- [x] P0  Add a fallback provider + health-based failover � 10 free-tier providers added (LLM7 keyless, OVHcloud keyless + 8 keyed)
 - [ ] P0  Build a regression set from your own PYQs/solved questions (~100-200 Q&A) and score answers on every prompt/model change
 - [ ] P1  Hard per-user daily ceiling even for signed-in users, on top of credits
 - [ ] P1  Embed the tutor inside lessons and quizzes ("Explain", "Hint", "Why was I wrong?")
